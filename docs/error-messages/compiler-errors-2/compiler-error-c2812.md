@@ -1,0 +1,39 @@
+---
+title: "コンパイラ エラー C2812 | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "error-reference"
+f1_keywords: 
+  - "C2812"
+dev_langs: 
+  - "C++"
+helpviewer_keywords: 
+  - "C2812"
+ms.assetid: 22aadb8c-7232-489d-a3ad-60662dda30a8
+caps.latest.revision: 6
+caps.handback.revision: 6
+author: "corob-msft"
+ms.author: "corob"
+manager: "ghogen"
+---
+# コンパイラ エラー C2812
+[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+
+\#import は \/clr:pure および \/clr:safe でサポートされていません  
+  
+ `#import` ではライブラリをサポートするネイティブ コンパイラを使用する必要があるため、[\#import ディレクティブ](../Topic/%23import%20Directive%20\(C++\).md) は **\/clr:pure** および **\/clr:safe** でサポートされません。  
+  
+## 使用例  
+ 次の例では C2812 エラーが生成されます。  
+  
+```  
+// C2812.cpp  
+// compile with: /clr:pure /c  
+#import "importlib.tlb"   // C2812  
+```

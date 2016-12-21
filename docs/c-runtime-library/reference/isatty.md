@@ -1,0 +1,108 @@
+---
+title: "_isatty | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+apiname: 
+  - "_isatty"
+apilocation: 
+  - "msvcrt.dll"
+  - "msvcr80.dll"
+  - "msvcr90.dll"
+  - "msvcr100.dll"
+  - "msvcr100_clr0400.dll"
+  - "msvcr110.dll"
+  - "msvcr110_clr0400.dll"
+  - "msvcr120.dll"
+  - "msvcr120_clr0400.dll"
+  - "ucrtbase.dll"
+  - "api-ms-win-crt-stdio-l1-1-0.dll"
+apitype: "DLLExport"
+f1_keywords: 
+  - "_isatty"
+dev_langs: 
+  - "C++"
+  - "C"
+helpviewer_keywords: 
+  - "_isatty 関数"
+  - "キャラクター デバイスのチェック"
+  - "チェック (キャラクター デバイスを)"
+  - "isatty 関数"
+ms.assetid: 9f1b2e87-0cd7-4079-b187-f2b7ca15fcbe
+caps.latest.revision: 18
+caps.handback.revision: 18
+author: "corob-msft"
+ms.author: "corob"
+manager: "ghogen"
+---
+# _isatty
+[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+
+ファイル記述子が文字デバイスに関連付けられているかどうかを判定します。  
+  
+## 構文  
+  
+```  
+  
+      int _isatty(  
+int fd   
+);  
+```  
+  
+#### パラメーター  
+ `fd`  
+ 調べるデバイスを参照するファイル記述子。  
+  
+## 戻り値  
+ `_isatty` は、記述子がキャラクター デバイスに関連付けられている場合、0 以外の値を返します。  それ以外の場合、`_isatty` は 0 を返します。  
+  
+## 解説  
+ `_isatty` 関数では、`fd` がキャラクター デバイス \(端末、コンソール、プリンター、またはシリアル ポート\) に関連付けられているかどうかを調べます。  
+  
+ この関数は、`fd` パラメーターを検証します。  `fd` が不正なファイル ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EBADF` に設定します。  
+  
+## 必要条件  
+  
+|ルーチン|必須ヘッダー|  
+|----------|------------|  
+|`_isatty`|\<io.h\>|  
+  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+  
+## ライブラリ  
+ [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
+  
+## 使用例  
+  
+```  
+// crt_isatty.c  
+/* This program checks to see whether  
+ * stdout has been redirected to a file.  
+ */  
+  
+#include <stdio.h>  
+#include <io.h>  
+  
+int main( void )  
+{  
+   if( _isatty( _fileno( stdout ) ) )  
+      printf( "stdout has not been redirected to a file\n" );  
+   else  
+      printf( "stdout has been redirected to a file\n");  
+}  
+```  
+  
+## 出力例  
+  
+```  
+stdout has not been redirected to a file  
+```  
+  
+## 参照  
+ [ファイル処理](../../c-runtime-library/file-handling.md)

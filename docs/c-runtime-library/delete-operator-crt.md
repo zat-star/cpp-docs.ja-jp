@@ -1,0 +1,84 @@
+---
+title: "演算子 delete(CRT) | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+apilocation: 
+  - "msvcr90.dll"
+  - "msvcr110_clr0400.dll"
+  - "msvcr110.dll"
+  - "msvcr120.dll"
+  - "msvcr100.dll"
+  - "msvcr80.dll"
+apitype: "DLLExport"
+f1_keywords: 
+  - "delete[]"
+dev_langs: 
+  - "C++"
+  - "C"
+helpviewer_keywords: 
+  - "operator delete[]"
+  - "ベクター型の delete"
+ms.assetid: e91bd0df-3815-40ca-950a-67b470518aed
+caps.latest.revision: 9
+caps.handback.revision: 9
+author: "corob-msft"
+ms.author: "corob"
+manager: "ghogen"
+---
+# 演算子 delete(CRT)
+[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+
+frees ブロックを代入します。  
+  
+## 構文  
+  
+```  
+  
+      void __cdecl operator delete[](void * object);  
+void __cdecl operator delete[](void * object,   
+   void * memory) throw();  
+void __cdecl operator delete[](void * object,   
+   const std::nothrow_t&) throw();  
+```  
+  
+#### パラメーター  
+ *memory*  
+ 解放するメモリ位置。  
+  
+ *object*  
+ 削除したオブジェクトへのポインター。  
+  
+## 解説  
+ **演算子 削除** のこのフォームはスカラー delete のフォーム \([演算子の削除](../c-runtime-library/operator-delete-crt.md)\) とは対照的に、ベクターの削除と呼ばれます。  
+  
+ **演算子** `delete[]` は [新しい演算子&#91;&#93;](../c-runtime-library/new-operator-crt.md)によって割り当てられたメモリを解放します。  
+  
+ この演算子の最初のフォームは nonplacement のフォームと呼ばれます。  この演算子の 2 番目と 3 番目のフォームはコードから呼び出す場合には、通常、仮引数付きの new が失敗すると、存在するコンパイラに一致の削除を許可するが、呼び出されません。  
+  
+ 演算子の最初のフォームはコンパイラによって定義され、new.h をプログラムに含まれる必要がありません。  
+  
+ スローするか、非スローする動作を除き、CRT **演算子** `delete[]` は、標準 C\+\+ ライブラリの [&#91;&#93;演算子の削除](../Topic/operator%20delete\(%3Cnew%3E\).md) と同様に動作します。  
+  
+## 必要条件  
+  
+|ルーチン|必須ヘッダー|  
+|----------|------------|  
+|`delete[]`|\<new.h\>|  
+  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../c-runtime-library/compatibility.md)」を参照してください。  
+  
+## ライブラリ  
+ [C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
+  
+## 使用例  
+ 演算子を使用 **削除**の例については [新しい演算子&#91;&#93;](../c-runtime-library/new-operator-crt.md) を参照してください。  
+  
+## 参照  
+ [メモリ割り当て](../c-runtime-library/memory-allocation.md)

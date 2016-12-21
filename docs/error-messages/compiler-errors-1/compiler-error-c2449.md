@@ -1,0 +1,42 @@
+---
+title: "コンパイラ エラー C2449 | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "error-reference"
+f1_keywords: 
+  - "C2449"
+dev_langs: 
+  - "C++"
+helpviewer_keywords: 
+  - "C2449"
+ms.assetid: 544bf0b6-daa0-40e8-9f21-8e583d472a2d
+caps.latest.revision: 9
+caps.handback.revision: 9
+author: "corob-msft"
+ms.author: "corob"
+manager: "ghogen"
+---
+# コンパイラ エラー C2449
+[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+
+'{' を見つけました \(関数のヘッダーがない可能性があります\)。  
+  
+ ファイル スコープで左中かっこ \({\) が見つかりました。  
+  
+ このエラーは、関数ヘッダーと関数定義の左中かっこ \({\) の間にセミコロンが入っていることが原因で発生する場合があります。  
+  
+ 次の例では警告 C2499 が生成されます。  
+  
+```  
+// C2449.c  
+// compile with: /c  
+void __stdcall func(void) {}   // OK  
+void __stdcall func(void);  // extra semicolon on this line  
+{                         // C2449 detected here  
+```
