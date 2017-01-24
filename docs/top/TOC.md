@@ -1,0 +1,8 @@
+# [Visual Studio 2015 の Visual C++](visual-cpp-in-visual-studio-2015.md)
+# [ユーザー グループのメンバーとしての実行](running-as-a-member-of-the-users-group.md)
+# [C++ REST SDK (Codename "Casablanca")](cpp-rest-sdk-codename-casablanca.md)
+# [C++ のセキュリティ推奨事項](security-best-practices-for-cpp.md)
+# [Visual C++ のサンプル](visual-cpp-samples.md)
+# [Visual C++ のヘルプおよびコミュニティ](visual-cpp-help-and-community.md)
+# [Visual Studio 2015 における Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio-2015.md)
+# [サポートされるプラットフォーム (Visual C++)](supported-platforms-visual-cpp.md)

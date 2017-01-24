@@ -1,0 +1,39 @@
+---
+title: "コンパイラ エラー C2499 | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "error-reference"
+f1_keywords: 
+  - "C2499"
+dev_langs: 
+  - "C++"
+helpviewer_keywords: 
+  - "C2499"
+ms.assetid: b323ff4d-b3c1-4bfd-b052-ae7292d53222
+caps.latest.revision: 8
+caps.handback.revision: 8
+author: "corob-msft"
+ms.author: "corob"
+manager: "ghogen"
+---
+# コンパイラ エラー C2499
+[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+
+'class' : クラスはクラス自身の基本クラスにはなれません。  
+  
+ 指定したクラスは基本クラスとして定義されています。  
+  
+ 次の例では警告 C2499 が生成されます。  
+  
+```  
+// C2499.cpp  
+// compile with: /c  
+class CMyClass : public CMyClass {};   // C2499  
+class CMyClass{};   // OK  
+```

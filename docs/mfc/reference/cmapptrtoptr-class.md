@@ -1,0 +1,98 @@
+---
+title: "CMapPtrToPtr クラス | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "reference"
+f1_keywords: 
+  - "CMapPtrToPtr"
+dev_langs: 
+  - "C++"
+helpviewer_keywords: 
+  - "CMapPtrToPtr クラス"
+  - "コレクション クラス, ポインターのマップ"
+  - "ポインター マップ クラス"
+ms.assetid: 23cbbaec-9d64-48f2-92ae-5e24fa64b926
+caps.latest.revision: 22
+caps.handback.revision: 10
+author: "mikeblome"
+ms.author: "mblome"
+manager: "ghogen"
+---
+# CMapPtrToPtr クラス
+[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+
+void ポインターをキーとした void ポインターのマップをサポートします。  
+  
+## 構文  
+  
+```  
+class CMapPtrToPtr : public CObject  
+```  
+  
+## メンバー  
+ `CMapPtrToPtr` のメンバー関数は [CMapStringToOb](../../mfc/reference/cmapstringtoob-class.md)クラスのメンバー関数に似ています。  メンバー関数については `CMapStringToOb` クラスの説明を参照してください。  関数のパラメーターまたは戻り値として `CObject` のポインターが使われている場合は、`void`へのポインターに置き換えてください。  関数のパラメーターまたは戻り値として `char` に `CString` か **const** のポインターが使われている場合は、`void`へのポインターに置き換えてください。  
+  
+ `BOOL CMapStringToOb::Lookup( const char* <key>,`  
+  
+ `CObject*& <rValue> ) const;`  
+  
+ たとえば、への移動  
+  
+ `BOOL CMapPtrToPtr::Lookup( void* <key>, void*& <rValue> ) const;`  
+  
+### パブリック コンストラクター  
+  
+|名前|説明|  
+|--------|--------|  
+|[CMapStringToOb::CMapStringToOb](../Topic/CMapStringToOb::CMapStringToOb.md)|コンストラクターです。|  
+  
+### パブリック メソッド  
+  
+|名前|説明|  
+|--------|--------|  
+|[CMapStringToOb::GetCount](../Topic/CMapStringToOb::GetCount.md)|このマップ内の要素数を返します。|  
+|[CMapStringToOb::GetHashTableSize](../Topic/CMapStringToOb::GetHashTableSize.md)|ハッシュ テーブルの要素の数を決定します。|  
+|[CMapStringToOb::GetNextAssoc](../Topic/CMapStringToOb::GetNextAssoc.md)|次の要素を順番に取得します。|  
+|[CMapStringToOb::GetSize](../Topic/CMapStringToOb::GetSize.md)|このマップ内の要素数を返します。|  
+|[CMapStringToOb::GetStartPosition](../Topic/CMapStringToOb::GetStartPosition.md)|最初の要素の位置を返します。|  
+|[CMapStringToOb::HashKey](../Topic/CMapStringToOb::HashKey.md)|指定されたキーのハッシュ値を計算します。|  
+|[CMapStringToOb::InitHashTable](../Topic/CMapStringToOb::InitHashTable.md)|ハッシュ テーブルを初期化します。|  
+|[CMapStringToOb::IsEmpty](../Topic/CMapStringToOb::IsEmpty.md)|マップ空の状態 \(要素\) なしのテスト。|  
+|[CMapStringToOb::Lookup](../Topic/CMapStringToOb::Lookup.md)|void ポインターをキーに基づいて void ポインターを検索します。  ポインター値の比較に主に使用するポイントするエンティティではなく。|  
+|[CMapStringToOb::LookupKey](../Topic/CMapStringToOb::LookupKey.md)|指定したキー値に関連付けられているキーへの参照を返します。|  
+|[CMapStringToOb::RemoveAll](../Topic/CMapStringToOb::RemoveAll.md)|このマップからすべての要素を削除します。|  
+|[CMapStringToOb::RemoveKey](../Topic/CMapStringToOb::RemoveKey.md)|キーによって指定された要素を削除します。|  
+|[CMapStringToOb::SetAt](../Topic/CMapStringToOb::SetAt.md)|マップに要素を挿入します; 一致するキーがある場合は、既存の要素を置き換えます。|  
+  
+### パブリック演算子  
+  
+|名前|説明|  
+|--------|--------|  
+|[CMapStringToOb::operator](../Topic/CMapStringToOb::operator.md)|—マップに要素 `SetAt`の演算子の置換を挿入します。|  
+  
+## 解説  
+ `CMapPtrToPtr` は `CDumpContext` ランタイムへのアクセスおよびオブジェクトをダンプすることをサポートするために `IMPLEMENT_DYNAMIC` のマクロが組み込まれています。  個々のマップ要素 \(ポインター値\) をダンプする必要がある場合、は 1 にダンプ コンテキストの深さを設定するより大きい。  
+  
+ ポインターにポインターのマップは、シリアル化されない場合があります。  
+  
+ `CMapPtrToPtr` のオブジェクトを削除または要素が削除されたときに、ポインターだけが削除されます、参照する、エンティティです。  
+  
+ `CMapPtrToPtr`の詳細については、" " [&#91;コレクション&#93;](../../mfc/collections.md)を参照してください。  
+  
+## 継承階層  
+ [CObject](../Topic/CObject%20Class.md)  
+  
+ `CMapPtrToPtr`  
+  
+## 必要条件  
+ **Header:** afxcoll.h  
+  
+## 参照  
+ [CObject クラス](../Topic/CObject%20Class.md)   
+ [階層図](../../mfc/hierarchy-chart.md)

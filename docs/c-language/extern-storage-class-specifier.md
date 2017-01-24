@@ -1,0 +1,88 @@
+---
+title: "extern ストレージ クラス指定子 | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/03/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-cpp"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "C++"
+  - "C"
+helpviewer_keywords: 
+  - "extern キーワード [C]"
+  - "extern キーワード [C], ストレージ クラス指定子"
+  - "外部リンケージ, extern 修飾子"
+  - "外部リンケージ, ストレージ クラス指定子"
+  - "ストレージ クラス指定子, extern"
+ms.assetid: 6e16d927-291f-49e4-986c-9d91a482a441
+caps.latest.revision: 7
+caps.handback.revision: 7
+author: "mikeblome"
+ms.author: "mblome"
+manager: "ghogen"
+---
+# extern ストレージ クラス指定子
+[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+
+`extern` のストレージ クラス指定子で宣言された変数は、プログラムのソース ファイルのいずれかの外部レベルで定義されている同じ名前の変数への参照です。  内部 `extern` 宣言は、ブロック内で外部レベル変数定義を表示するために使用されます。  外部レベルで宣言されていない限り、`extern` キーワードを使用して宣言された変数は、宣言されたブロックでのみ使用できます。  
+  
+## 使用例  
+ この例では、内部および外部レベルの宣言を示しています。  
+  
+```  
+// extern_StorageClassSpecified.c  
+#include <stdio.h>  
+  
+void other( void );  
+  
+int main()  
+{  
+    // Reference to i, defined below:   
+    extern int i;  
+  
+    // Initial value is zero; a is visible only within main:   
+    static int a;  
+  
+    // b is stored in a register, if possible:   
+    register int b = 0;  
+  
+    // Default storage class is auto:   
+    int c = 0;  
+  
+    // Values printed are 1, 0, 0, 0:   
+    printf_s( "%d\n%d\n%d\n%d\n", i, a, b, c );  
+    other();  
+    return;  
+}  
+  
+int i = 1;  
+  
+void other( void )  
+{  
+    // Address of global i assigned to pointer variable:  
+    static int *external_i = &i;  
+  
+    // i is redefined; global i no longer visible:   
+    int i = 16;  
+  
+    // This a is visible only within the other function:   
+    static int a = 2;  
+  
+    a += 2;  
+    // Values printed are 16, 4, and 1:  
+    printf_s( "%d\n%d\n%d\n", i, a, *external_i );  
+}  
+```  
+  
+ この例では、変数 `i` は初期値 1 の外部レベルで定義されます。  `main` 関数内の `extern` 宣言は、外部レベル `i` への参照を宣言するために使用されます。  初期化子は省略されるため、**static** 変数 `a` は、既定で 0 に初期化されます。  `printf` の呼び出しにより、値 1、0、0、および 0 が出力されます。  
+  
+ `other` 関数では、**static** ポインター変数 `external_i` を初期化するために、グローバル変数 `i` のアドレスが使用されます。  グローバル変数の有効期間が **static** である、つまりプログラム実行中にアドレスが変わることがないので、これは機能します。  次に、変数 `i` は、初期値 16 を持つローカル変数として再定義されます。  この再定義は、ローカル変数用にその名前が使用されていることによって隠されている外部レベルの `i` の値には影響しません。  グローバル `i` の値には、ポインター `external_i` を通じて、このブロック内で間接的な方法でのみアクセスできるようになりました。  ポインターに **auto** 変数 `i` のアドレスを割り当てようとしましたが、ブロックが入力されるたびに異なる可能性があるため機能しません。  変数 `a` は **static** 変数として宣言され、2 に初期化されます。  内部レベルの **static** 変数は宣言されているブロック内でのみ表示されるため、`a` は `main` の `a` と競合しません。  
+  
+ 変数 `a` は 2 だけ増加し、結果は 4 です。  `other` 関数が同じプログラムで再び呼び出される場合、`a` の初期値は 4 になります。  内部静的変数は、プログラムが終了したときに値を保持し、値を保持したまま、宣言されているブロックに入ります。  
+  
+## 参照  
+ [内部レベル宣言のストレージ クラス指定子](../c-language/storage-class-specifiers-for-internal-level-declarations.md)
