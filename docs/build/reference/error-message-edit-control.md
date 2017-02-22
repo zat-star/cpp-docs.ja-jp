@@ -1,8 +1,7 @@
 ---
 title: "[エラー メッセージ] エディット コントロール | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "[エラー メッセージ] エディット コントロール"
 ms.assetid: 79320694-c30e-4c37-bb94-6cb36c32d4e6
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # [エラー メッセージ] エディット コントロール
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

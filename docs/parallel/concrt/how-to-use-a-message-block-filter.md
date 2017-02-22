@@ -1,8 +1,7 @@
 ---
 title: "方法: メッセージ ブロック フィルターを使用する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "使用 (メッセージ ブロック フィルターを) [同時実行ランタイム]"
 ms.assetid: db6b99fb-288d-4477-96dc-b9751772ebb2
 caps.latest.revision: 20
-caps.handback.revision: 20
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 20
 ---
 # 方法: メッセージ ブロック フィルターを使用する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

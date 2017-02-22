@@ -1,8 +1,7 @@
 ---
 title: "ビット処理シフト演算子 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "ビットごとの左シフト演算子"
   - "演算子 [C++], ビット処理"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "シフト演算子, ビット処理"
 ms.assetid: d0485785-5c72-47e1-a7c0-0adde03ade23
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # ビット処理シフト演算子
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

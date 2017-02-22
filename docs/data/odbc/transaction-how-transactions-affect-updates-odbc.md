@@ -1,8 +1,7 @@
 ---
 title: "トランザクション: トランザクションが更新処理に与える影響 (ODBC) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "トランザクション, 更新 (レコードセットを)"
 ms.assetid: 9e00bbf4-e9fb-4332-87fc-ec8ac61b3f68
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # トランザクション: トランザクションが更新処理に与える影響 (ODBC)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

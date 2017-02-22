@@ -1,8 +1,7 @@
 ---
 title: "カスタム ビルド ステップまたはビルド イベントの出力の書式設定 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "イベント [C++], ビルド"
 ms.assetid: 92ad3e38-24d7-4b89-90e6-5a16f5f998da
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # カスタム ビルド ステップまたはビルド イベントの出力の書式設定
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

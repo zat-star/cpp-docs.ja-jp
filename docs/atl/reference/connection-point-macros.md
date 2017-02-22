@@ -1,8 +1,7 @@
 ---
 title: "コネクション ポイントに関するマクロ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "コネクション ポイント [C++], マクロ"
 ms.assetid: cc3a6dd3-5538-45df-b027-1f34963c31e5
 caps.latest.revision: 16
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 17
 ---
 # コネクション ポイントに関するマクロ
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

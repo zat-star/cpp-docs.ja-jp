@@ -1,8 +1,7 @@
 ---
 title: "IThreadPoolConfig インターフェイス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "IThreadPoolConfig インターフェイス"
 ms.assetid: 69e642bf-6925-46e6-9a37-cce52231b1cc
 caps.latest.revision: 24
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 27
 ---
 # IThreadPoolConfig インターフェイス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

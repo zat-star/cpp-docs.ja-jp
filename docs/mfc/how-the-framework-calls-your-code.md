@@ -1,8 +1,7 @@
 ---
 title: "フレームワークと記述したコードとの関係 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "MFC [C++], 呼び出し (コードを)"
 ms.assetid: 39e68189-a580-40d0-9e35-bf5cd24a8ecf
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # フレームワークと記述したコードとの関係
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

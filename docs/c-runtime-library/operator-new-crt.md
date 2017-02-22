@@ -1,8 +1,7 @@
 ---
 title: "new 演算子 (CRT) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,16 +18,15 @@ apilocation:
 apitype: "DLLExport"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "new 演算子"
   - "スカラー new"
 ms.assetid: 4ae51618-a4e6-4172-b324-b99d86d1bdca
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # new 演算子 (CRT)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

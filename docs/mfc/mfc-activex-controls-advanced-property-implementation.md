@@ -1,8 +1,7 @@
 ---
 title: "MFC ActiveX コントロール : 高度なプロパティの実装 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "プロパティ [MFC], ActiveX コントロール"
 ms.assetid: ec2e6759-5a8e-41d8-a275-99af8ff6f32e
 caps.latest.revision: 12
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # MFC ActiveX コントロール : 高度なプロパティの実装
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

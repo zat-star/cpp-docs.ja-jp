@@ -1,8 +1,7 @@
 ---
 title: "セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -25,10 +24,10 @@ helpviewer_keywords:
   - "レコードセット [C++], 格納 (リスト ボックスまたはコンボ ボックスに)"
 ms.assetid: 360c0834-da6b-4dc0-bcea-80e9acd611f0
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

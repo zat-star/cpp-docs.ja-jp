@@ -1,8 +1,7 @@
 ---
 title: "コレクションと列挙子のインターフェイスのデザイン上の原則 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "列挙子インターフェイス"
 ms.assetid: ea19a39e-6333-41a1-be62-5435c236640e
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # コレクションと列挙子のインターフェイスのデザイン上の原則
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "MFC ActiveX コントロール : ストック メソッドの追加 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "MFC ActiveX コントロール, ストック メソッド"
 ms.assetid: bc4fad78-cabd-4cc0-a798-464b1a682f0b
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # MFC ActiveX コントロール : ストック メソッドの追加
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

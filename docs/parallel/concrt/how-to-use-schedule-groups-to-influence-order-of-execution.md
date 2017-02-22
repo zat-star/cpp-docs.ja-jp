@@ -1,8 +1,7 @@
 ---
 title: "方法: スケジュール グループを使用して実行順序に影響を与える | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "使用 (スケジュール グループを) [同時実行ランタイム]"
 ms.assetid: 73124194-fc3a-491e-a23f-fbd7b5a4455c
 caps.latest.revision: 15
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # 方法: スケジュール グループを使用して実行順序に影響を与える
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,10 +12,10 @@ dev_langs:
   - "C++"
 ms.assetid: 0336c550-fbeb-4dc4-aa9b-660f9fc45382
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

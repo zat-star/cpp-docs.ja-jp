@@ -1,8 +1,7 @@
 ---
 title: "フレーム ウィンドウ クラス (アーキテクチャ) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "フレーム ウィンドウ クラス, ドキュメント/ビュー アーキテクチャ"
 ms.assetid: 5da01fb4-f531-46cc-914f-e422e4f07f5d
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # フレーム ウィンドウ クラス (アーキテクチャ)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

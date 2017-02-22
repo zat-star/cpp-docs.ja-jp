@@ -1,8 +1,7 @@
 ---
 title: "ワイド文字 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,15 +10,14 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "ワイド文字"
 ms.assetid: 165c4a12-8ab9-45fb-9964-c55e9956194c
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ワイド文字
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "リンク方式の使い分け | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "暗黙のリンク [C++]"
 ms.assetid: 6b6d3fec-4711-4a30-af5b-354b965ecaec
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # リンク方式の使い分け
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

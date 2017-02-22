@@ -1,8 +1,7 @@
 ---
 title: "日付と時刻 : データベース サポート | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "時刻 [C++], データベースのサポート"
 ms.assetid: 4a57a1bb-fad5-4b70-b32c-42ad75c710c8
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # 日付と時刻 : データベース サポート
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

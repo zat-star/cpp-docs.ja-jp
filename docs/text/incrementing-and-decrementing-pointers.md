@@ -1,8 +1,7 @@
 ---
 title: "ポインターのインクリメントとデクリメント | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "ポインター [C++], マルチバイト文字"
 ms.assetid: 0872b4a0-e2bd-4004-8319-070efb76f2fd
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "ghogen"
 ms.author: "ghogen"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ポインターのインクリメントとデクリメント
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

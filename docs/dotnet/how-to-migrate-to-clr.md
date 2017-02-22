@@ -1,8 +1,7 @@
 ---
 title: "方法: /clr に移行する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "アップグレード (Visual C++ アプリケーションの), /clr コンパイラ オプション"
 ms.assetid: c9290b8b-436a-4510-8b56-eae51f4a9afc
 caps.latest.revision: 37
-caps.handback.revision: 37
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 37
 ---
 # 方法: /clr に移行する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

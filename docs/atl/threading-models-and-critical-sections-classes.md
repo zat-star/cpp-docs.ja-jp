@@ -1,8 +1,7 @@
 ---
 title: "スレッド モデルとクリティカル セクション クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "スレッド処理 [ATL], モデル"
 ms.assetid: 759f05ef-6285-4be6-a2cc-78572dd75146
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # スレッド モデルとクリティカル セクション クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

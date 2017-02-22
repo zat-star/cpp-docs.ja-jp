@@ -1,8 +1,7 @@
 ---
 title: "時間を表す文字列形式の指定 : 汎用クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "時刻 [C++], 書式指定"
 ms.assetid: 7fcfee24-f874-4a4d-95b3-adc19a0f2df0
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 時間を表す文字列形式の指定 : 汎用クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

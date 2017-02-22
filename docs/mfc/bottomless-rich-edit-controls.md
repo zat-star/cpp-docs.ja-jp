@@ -1,8 +1,7 @@
 ---
 title: "自動的にサイズ調整されるリッチ エディット コントロール | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "リッチ エディット コントロール, 自動的にサイズ調整される"
 ms.assetid: 2877dd32-1e9a-4fd1-98c0-66dcbbeef1de
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 自動的にサイズ調整されるリッチ エディット コントロール
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

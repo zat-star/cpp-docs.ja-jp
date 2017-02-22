@@ -1,8 +1,7 @@
 ---
 title: "方法: for each を使用してジェネリック コレクションを反復処理する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ジェネリック コレクション, 反復処理"
 ms.assetid: 00288d53-3d41-44d0-be5b-b3033456ceaa
 caps.latest.revision: 13
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # 方法: for each を使用してジェネリック コレクションを反復処理する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

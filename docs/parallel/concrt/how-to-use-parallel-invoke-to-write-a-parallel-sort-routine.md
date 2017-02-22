@@ -1,8 +1,7 @@
 ---
 title: "方法: 並列呼び出しを使用して並列並べ替えルーチンを記述する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "向上 (タスク グループを使用して並行処理のパフォーマンスを) [同時実行ランタイム]"
 ms.assetid: 53979a2a-525d-4437-8952-f1ff85b37673
 caps.latest.revision: 23
-caps.handback.revision: 20
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 20
 ---
 # 方法: 並列呼び出しを使用して並列並べ替えルーチンを記述する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

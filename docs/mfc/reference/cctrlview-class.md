@@ -1,8 +1,7 @@
 ---
 title: "CCtrlView クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "ビュー, およびコモン コントロール"
 ms.assetid: ff488596-1e71-451f-8fec-b0831a7b44e0
 caps.latest.revision: 20
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 21
 ---
 # CCtrlView クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

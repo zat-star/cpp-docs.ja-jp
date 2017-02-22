@@ -1,8 +1,7 @@
 ---
 title: "アクセサーの使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "行セット [C++], アクセサー"
 ms.assetid: 6ce484a6-fbbe-40de-8ff9-5cddcd78d283
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # アクセサーの使用
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

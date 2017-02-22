@@ -1,8 +1,7 @@
 ---
 title: "_rotl、_rotl64、_rotr、_rotr64 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -38,7 +37,6 @@ f1_keywords:
   - "rotl"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "_rotl 関数"
   - "_rotl64 関数"
@@ -52,10 +50,10 @@ helpviewer_keywords:
   - "rotr64 関数"
 ms.assetid: cfce439b-366f-4584-8ab1-d527b13fcfc6
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # _rotl、_rotl64、_rotr、_rotr64
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

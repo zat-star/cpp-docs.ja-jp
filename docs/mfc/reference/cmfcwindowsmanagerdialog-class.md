@@ -1,8 +1,7 @@
 ---
 title: "CMFCWindowsManagerDialog クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "CMFCWindowsManagerDialog クラス"
 ms.assetid: 35b4b0db-33c4-4b22-94d8-5e3396341340
 caps.latest.revision: 25
-caps.handback.revision: 13
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 27
 ---
 # CMFCWindowsManagerDialog クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

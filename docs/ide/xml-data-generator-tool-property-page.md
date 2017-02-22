@@ -1,8 +1,7 @@
 ---
 title: "[XML データ ジェネレーター ツール] プロパティ ページ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "[XML データ ジェネレーター ツール] プロパティ ページ"
 ms.assetid: b2ef1c12-3419-429d-bb9d-bd7d9ffe1ffb
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # [XML データ ジェネレーター ツール] プロパティ ページ
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

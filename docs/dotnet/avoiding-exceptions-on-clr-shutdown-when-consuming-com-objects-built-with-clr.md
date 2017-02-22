@@ -1,8 +1,7 @@
 ---
 title: "/clr で構築された COM オブジェクト使用時における CLR シャットダウンの例外の回避 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "混在アセンブリ [C++], CLR シャットダウンの例外"
 ms.assetid: 41249d83-4b51-4e46-866f-27f475f2498c
 caps.latest.revision: 4
-caps.handback.revision: 4
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 4
 ---
 # /clr で構築された COM オブジェクト使用時における CLR シャットダウンの例外の回避
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

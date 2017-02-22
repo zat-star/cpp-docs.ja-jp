@@ -1,8 +1,7 @@
 ---
 title: "方法: キャンセル処理を使用して並列ループを中断する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "記述 (並列検索アルゴリズムを) [同時実行ランタイム]"
 ms.assetid: 421cd2de-f058-465f-b890-dd8fcc0df273
 caps.latest.revision: 19
-caps.handback.revision: 18
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 18
 ---
 # 方法: キャンセル処理を使用して並列ループを中断する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

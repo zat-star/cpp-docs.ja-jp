@@ -1,8 +1,7 @@
 ---
 title: "/PGD (ガイド付き最適化のプロファイル用のデータベースの指定) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "-PGD リンカー オプション"
 ms.assetid: 9f312498-493b-461f-886f-92652257e443
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # /PGD (ガイド付き最適化のプロファイル用のデータベースの指定)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

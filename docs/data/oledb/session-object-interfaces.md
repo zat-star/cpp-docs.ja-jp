@@ -1,8 +1,7 @@
 ---
 title: "セッション オブジェクト インターフェイス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "セッション オブジェクト [OLE DB], インターフェイス"
 ms.assetid: ac01a958-6dde-4bd7-8b63-94459e488335
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # セッション オブジェクト インターフェイス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

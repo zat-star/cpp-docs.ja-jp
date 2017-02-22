@@ -1,8 +1,7 @@
 ---
 title: "MFC ツール バーの実装 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -28,10 +27,10 @@ helpviewer_keywords:
   - "ツール バー [C++], 実装 (MFC ツール バーを)"
 ms.assetid: af3319ad-c430-4f90-8361-e6a2c06fd084
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # MFC ツール バーの実装
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

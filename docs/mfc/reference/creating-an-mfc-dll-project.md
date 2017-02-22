@@ -1,8 +1,7 @@
 ---
 title: "MFC DLL プロジェクトの作成 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "プロジェクト [C++], 作成"
 ms.assetid: 05540b93-4781-4a90-aadf-55158313f5b2
 caps.latest.revision: 13
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 13
 ---
 # MFC DLL プロジェクトの作成
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

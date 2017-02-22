@@ -1,8 +1,7 @@
 ---
 title: "C 代入演算子 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "%= 演算子"
   - "&= 演算子"
@@ -42,10 +40,10 @@ helpviewer_keywords:
   - "減算演算子, C の代入演算子"
 ms.assetid: 11688dcb-c941-44e7-a636-3fc98e7dac40
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # C 代入演算子
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

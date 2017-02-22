@@ -1,8 +1,7 @@
 ---
 title: "パフォーマンスと診断ハブでのガイド付き最適化のプロファイル | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,10 +12,10 @@ dev_langs:
   - "C++"
 ms.assetid: dc3a1914-dbb6-4401-bc63-10665a8c8943
 caps.latest.revision: 12
-caps.handback.revision: 12
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # パフォーマンスと診断ハブでのガイド付き最適化のプロファイル
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

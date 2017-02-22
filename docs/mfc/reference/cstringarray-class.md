@@ -1,8 +1,7 @@
 ---
 title: "CStringArray クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "文字列 [C++], コレクション"
 ms.assetid: 6c637e06-bba8-4c08-b0fc-cf8cb067ce34
 caps.latest.revision: 24
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 26
 ---
 # CStringArray クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

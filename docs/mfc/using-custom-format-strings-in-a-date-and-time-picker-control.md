@@ -1,8 +1,7 @@
 ---
 title: "日時指定コントロールでのカスタム書式指定文字列の使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "DateTimePicker コントロール [MFC], 表示スタイル"
 ms.assetid: 7d577f03-6ca0-4597-9093-50b78f304719
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 日時指定コントロールでのカスタム書式指定文字列の使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "リスト コントロールのスクロール、整列、並べ替え、検索 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "イメージ リスト [C++], 並べ替え"
 ms.assetid: dcc51e4c-0ca8-4319-bec5-6994cc8ac9e5
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # リスト コントロールのスクロール、整列、並べ替え、検索
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

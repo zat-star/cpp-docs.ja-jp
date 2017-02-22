@@ -1,8 +1,7 @@
 ---
 title: "再帰関数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "関数呼び出し, 再帰"
   - "関数 [C], 呼び出し (再帰的に)"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "再帰関数呼び出し"
 ms.assetid: 59739040-3081-4006-abbc-9d8423992bce
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 再帰関数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

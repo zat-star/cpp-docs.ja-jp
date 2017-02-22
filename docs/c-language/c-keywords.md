@@ -1,8 +1,7 @@
 ---
 title: "C キーワード | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "キーワード [C]"
   - "Microsoft 固有キーワード"
   - "キーワードの再定義"
 ms.assetid: 2d932335-97bf-45cd-b367-4ae00db0ff42
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # C キーワード
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "複合コントロールの挿入 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "複合コントロール, 挿入 (ATL オブジェクト ウィザードを使用しての)"
 ms.assetid: f10b1927-9fc6-40a7-ac29-efdac70584fe
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # 複合コントロールの挿入
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

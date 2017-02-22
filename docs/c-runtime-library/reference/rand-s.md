@@ -1,8 +1,7 @@
 ---
 title: "rand_s | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -28,7 +27,6 @@ f1_keywords:
   - "rand_s"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "暗号として安全な乱数"
   - "生成 (擬似乱数を)"
@@ -40,10 +38,10 @@ helpviewer_keywords:
   - "乱数, 生成"
 ms.assetid: d6a0be60-997d-4904-8411-8aea6839cc94
 caps.latest.revision: 24
-caps.handback.revision: 24
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 24
 ---
 # rand_s
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

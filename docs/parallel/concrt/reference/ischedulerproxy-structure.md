@@ -1,8 +1,7 @@
 ---
 title: "ISchedulerProxy 構造体 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ISchedulerProxy 構造体"
 ms.assetid: af416973-7a1c-4c30-aa3b-4161c2aaea54
 caps.latest.revision: 18
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 18
 ---
 # ISchedulerProxy 構造体
 [!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "CDocItem クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -24,10 +23,10 @@ helpviewer_keywords:
   - "サーバー ドキュメント, ドキュメント アイテム"
 ms.assetid: 84fb8610-a4c8-4211-adc0-e70e8d002c11
 caps.latest.revision: 22
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 23
 ---
 # CDocItem クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "現在の時刻 : 汎用クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "時間, 設定 (現在)"
 ms.assetid: c39e6775-6a92-4b27-95a7-5c86ed371d8a
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 現在の時刻 : 汎用クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

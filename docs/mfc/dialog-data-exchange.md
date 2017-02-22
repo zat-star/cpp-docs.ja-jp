@@ -1,8 +1,7 @@
 ---
 title: "ダイアログ データ エクスチェンジ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -30,10 +29,10 @@ helpviewer_keywords:
   - "ユーザー入力, 取得 (MFC のダイアログ ボックスから)"
 ms.assetid: 4675f63b-41d2-45ed-b6c3-235ad8ab924b
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # ダイアログ データ エクスチェンジ
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

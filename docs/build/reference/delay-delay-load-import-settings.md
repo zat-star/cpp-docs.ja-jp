@@ -1,8 +1,7 @@
 ---
 title: "/DELAY (遅延読み込みのインポート設定) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "遅延読み込み (DLL を), /DELAY オプション"
 ms.assetid: 9334b332-cc58-4dae-b10f-a4c75972d50c
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # /DELAY (遅延読み込みのインポート設定)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

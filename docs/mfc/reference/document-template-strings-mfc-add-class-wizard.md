@@ -1,8 +1,7 @@
 ---
 title: "[ドキュメント テンプレート文字列] ページ (MFC クラス追加ウィザード) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "MFC クラス追加ウィザード、ドキュメント コントロール文字列"
 ms.assetid: 14e1c834-5e79-4dbd-811f-ec8f0a9cdcb2
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # [ドキュメント テンプレート文字列] ページ (MFC クラス追加ウィザード)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

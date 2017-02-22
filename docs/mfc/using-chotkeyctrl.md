@@ -1,8 +1,7 @@
 ---
 title: "CHotKeyCtrl の使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "キー, ホットと CHotKeyCtrl"
 ms.assetid: 9b207117-d848-4224-8888-c3d197bb0c95
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # CHotKeyCtrl の使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

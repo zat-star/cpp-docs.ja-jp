@@ -1,8 +1,7 @@
 ---
 title: "CHeaderCtrl の使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "ヘッダー コントロール, 使用"
 ms.assetid: fb3e512b-9539-43c4-a7e7-3fafd6d0706e
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # CHeaderCtrl の使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

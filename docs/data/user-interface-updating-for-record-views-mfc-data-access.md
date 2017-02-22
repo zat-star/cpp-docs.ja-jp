@@ -1,8 +1,7 @@
 ---
 title: "レコード ビューのユーザー インターフェイスの更新 (MFC データ アクセス) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ユーザー インターフェイス, 更新"
 ms.assetid: 2c7914b6-2dc3-40c3-b2f2-8371da2a4063
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # レコード ビューのユーザー インターフェイスの更新 (MFC データ アクセス)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "マルチスレッドのためのインクルード ファイル | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "スレッド処理 [C++], インクルード ファイル"
 ms.assetid: 98d764f9-71f4-4da5-8f3a-8d2d26e96799
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # マルチスレッドのためのインクルード ファイル
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "方法: WRL を使用してイベントを処理する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,10 +12,10 @@ dev_langs:
   - "C++"
 ms.assetid: 1c77543f-7b0c-4a94-93bf-e3225885ed76
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # 方法: WRL を使用してイベントを処理する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

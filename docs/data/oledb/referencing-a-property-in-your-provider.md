@@ -1,8 +1,7 @@
 ---
 title: "プロバイダーでのプロパティの参照 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "参照 (プロバイダーのプロパティを)"
 ms.assetid: bfbb3851-5eed-467a-a179-4a97a9515525
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # プロバイダーでのプロパティの参照
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

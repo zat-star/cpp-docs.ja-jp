@@ -1,8 +1,7 @@
 ---
 title: "1 つの引数 (int または long) を使用する出力ストリーム マニピュレーター | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "出力ストリーム, int または long 引数のマニピュレーター"
 ms.assetid: 338f3164-b5e2-4c5a-a605-7d9dc3629ca1
 caps.latest.revision: 8
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 1 つの引数 (int または long) を使用する出力ストリーム マニピュレーター
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

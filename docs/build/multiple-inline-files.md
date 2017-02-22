@@ -1,8 +1,7 @@
 ---
 title: "複数のインライン ファイル | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "NMAKE プログラム, インライン ファイル"
 ms.assetid: 6d381dcf-0ed8-45d1-8df3-b4598d860b99
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 複数のインライン ファイル
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

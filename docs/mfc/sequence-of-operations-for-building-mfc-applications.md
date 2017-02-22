@@ -1,8 +1,7 @@
 ---
 title: "MFC アプリケーションの作成手順 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "アプリケーション [MFC], 開発"
 ms.assetid: 6973c714-fe20-48c6-926b-de88356b3a3d
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # MFC アプリケーションの作成手順
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

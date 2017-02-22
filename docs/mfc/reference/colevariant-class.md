@@ -1,8 +1,7 @@
 ---
 title: "COleVariant クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "VARIANT データ型"
 ms.assetid: e1b5cd4a-b066-4b9b-b48b-6215ed52d998
 caps.latest.revision: 24
-caps.handback.revision: 13
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 26
 ---
 # COleVariant クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

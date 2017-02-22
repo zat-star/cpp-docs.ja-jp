@@ -1,8 +1,7 @@
 ---
 title: "レコード ビューを利用するために必要な作業 (MFC データ アクセス) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "レコード ビュー, カスタマイズ (既定のコードを)"
 ms.assetid: 691e89a5-ff21-4ca3-9278-69d4678288bb
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # レコード ビューを利用するために必要な作業 (MFC データ アクセス)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "AFXDLL バージョン | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "MFC ライブラリ [C++], 動的リンク"
 ms.assetid: c078ae8f-85a9-43cb-9ded-c09ca2c45723
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # AFXDLL バージョン
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

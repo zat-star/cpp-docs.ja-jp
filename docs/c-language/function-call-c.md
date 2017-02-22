@@ -1,8 +1,7 @@
 ---
 title: "関数呼び出し (C) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "関数呼び出し"
   - "関数呼び出し, C 関数"
   - "関数 [C], 呼び出し"
 ms.assetid: 35c66719-3f15-4d3b-97da-4e19dc97b308
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 関数呼び出し (C)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "/DELAYLOAD (遅延読み込みのインポート) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "-DELAYLOAD リンカー オプション"
 ms.assetid: 39ea0f1e-5c01-450f-9c75-2d9761ff9b28
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # /DELAYLOAD (遅延読み込みのインポート)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

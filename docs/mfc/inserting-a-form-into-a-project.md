@@ -1,8 +1,7 @@
 ---
 title: "プロジェクトへのフォームの挿入 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "挿入 (フォームを)"
 ms.assetid: f3bd2998-3ce2-496d-ac5c-57ca70eec7cb
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # プロジェクトへのフォームの挿入
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

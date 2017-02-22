@@ -1,8 +1,7 @@
 ---
 title: "パラメーター クエリの実行 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "パラメーター クエリ, 実行 (CCommand クラスを使用して)"
 ms.assetid: aedb0fce-52a4-4c97-a5c9-b2114be6c3b0
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # パラメーター クエリの実行
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

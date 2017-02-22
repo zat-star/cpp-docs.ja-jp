@@ -1,8 +1,7 @@
 ---
 title: "マクロ定義の優先順位 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "NMAKE プログラム, 優先順位 (マクロ定義の)"
 ms.assetid: 0c13182d-83cb-4cbd-af2d-f4c916b62aeb
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # マクロ定義の優先順位
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

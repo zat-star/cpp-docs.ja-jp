@@ -1,8 +1,7 @@
 ---
 title: "/FS (同期 PDB 書き込みの強制) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "/FS コンパイラ オプション [C++]"
 ms.assetid: b2caaffe-f6e1-4963-b068-648f06b105e0
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # /FS (同期 PDB 書き込みの強制)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

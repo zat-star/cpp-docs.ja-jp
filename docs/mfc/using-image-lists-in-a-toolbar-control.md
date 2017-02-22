@@ -1,8 +1,7 @@
 ---
 title: "ツール バー コントロールでのイメージ リストの使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ツール バー コントロール [MFC], イメージ"
 ms.assetid: ccbe8df4-4ed9-4b54-bb93-9a1dcb3b97eb
 caps.latest.revision: 12
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # ツール バー コントロールでのイメージ リストの使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

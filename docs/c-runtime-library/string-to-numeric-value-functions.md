@@ -1,8 +1,7 @@
 ---
 title: "文字列を数値に変換する関数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,16 +21,15 @@ f1_keywords:
   - "_tcstoi64"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "解析, 数値文字列"
   - "文字列変換, 数値への"
 ms.assetid: 11cbd9ce-033b-4914-bf66-029070e7e385
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 文字列を数値に変換する関数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

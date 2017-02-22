@@ -1,8 +1,7 @@
 ---
 title: "コンパイラ組み込み | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "組み込み, コンパイラ"
 ms.assetid: 48bb9929-7d78-4fd8-a092-ae3c9f971858
 caps.latest.revision: 17
-caps.handback.revision: 17
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 17
 ---
 # コンパイラ組み込み
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

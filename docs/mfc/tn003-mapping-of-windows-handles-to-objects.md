@@ -1,8 +1,7 @@
 ---
 title: "テクニカル ノート 3: Windows ハンドルとオブジェクト間のマップ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "Windows ハンドル (オブジェクトに) [C++]"
 ms.assetid: fbea9f38-992c-4091-8dbc-f29e288617d6
 caps.latest.revision: 15
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # テクニカル ノート 3: Windows ハンドルとオブジェクト間のマップ
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

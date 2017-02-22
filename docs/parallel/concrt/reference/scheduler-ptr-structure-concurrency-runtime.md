@@ -1,8 +1,7 @@
 ---
 title: "scheduler_ptr 構造体 (同時実行ランタイム) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ dev_langs:
   - "C++"
 ms.assetid: e88c84af-c306-476d-aef1-f42a0fa0a80f
 caps.latest.revision: 8
-caps.handback.revision: 1
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # scheduler_ptr 構造体 (同時実行ランタイム)
 [!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]

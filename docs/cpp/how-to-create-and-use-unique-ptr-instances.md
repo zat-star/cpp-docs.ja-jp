@@ -1,8 +1,7 @@
 ---
 title: "方法: unique_ptr インスタンスを作成して使用する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,10 +12,10 @@ dev_langs:
   - "C++"
 ms.assetid: 9a373030-e587-452f-b9a5-c5f9d58b7673
 caps.latest.revision: 16
-caps.handback.revision: 16
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 16
 ---
 # 方法: unique_ptr インスタンスを作成して使用する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

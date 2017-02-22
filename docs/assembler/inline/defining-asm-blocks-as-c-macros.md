@@ -1,8 +1,7 @@
 ---
 title: "__asm ブロックの C マクロとしての定義 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "Visual C, マクロ"
 ms.assetid: 677ba11c-21c8-4609-bba7-cd47312243b0
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # __asm ブロックの C マクロとしての定義
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

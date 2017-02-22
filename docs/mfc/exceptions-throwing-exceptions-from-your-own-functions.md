@@ -1,8 +1,7 @@
 ---
 title: "例外処理 : 独自関数からの例外のスロー | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "スロー (例外を), 関数から"
 ms.assetid: 492976e8-8804-4234-8e8f-30dffd0501be
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 例外処理 : 独自関数からの例外のスロー
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

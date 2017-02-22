@@ -1,8 +1,7 @@
 ---
 title: "方法: ネイティブ型のハンドルを宣言する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "型 [C++], 宣言 (ハンドルを)"
 ms.assetid: b8c0eead-17e5-4003-b21f-b673f997d79f
 caps.latest.revision: 14
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # 方法: ネイティブ型のハンドルを宣言する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

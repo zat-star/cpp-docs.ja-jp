@@ -1,8 +1,7 @@
 ---
 title: "プロバイダーでの列の動的な連結 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "プロバイダー [C++], 動的な列バインディング"
 ms.assetid: 45e811e3-f5a7-4627-98cc-bf817c4e556e
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # プロバイダーでの列の動的な連結
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

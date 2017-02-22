@@ -1,8 +1,7 @@
 ---
 title: "下位入出力 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,7 +12,6 @@ f1_keywords:
   - "c.io"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "ファイル ハンドル [C++]"
   - "ファイル ハンドル [C++], I/O 関数"
@@ -22,10 +20,10 @@ helpviewer_keywords:
   - "下位入出力ルーチン"
 ms.assetid: 53e11bdd-6720-481c-8b2b-3a3a569ed534
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # 下位入出力
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

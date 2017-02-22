@@ -1,8 +1,7 @@
 ---
 title: "追跡ハンドルからボックス化変換された値へ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ボックス化された値型, 追跡 (ハンドルを)"
 ms.assetid: 16c92048-5b74-47d5-8eca-dfea3d38879a
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # 追跡ハンドルからボックス化変換された値へ
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

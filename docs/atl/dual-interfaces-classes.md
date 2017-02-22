@@ -1,8 +1,7 @@
 ---
 title: "デュアル インターフェイス クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "デュアル インターフェイス, クラス"
 ms.assetid: c2b1b165-ff39-4e4a-a683-91eca9158304
 caps.latest.revision: 12
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # デュアル インターフェイス クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

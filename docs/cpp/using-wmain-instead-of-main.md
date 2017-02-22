@@ -1,8 +1,7 @@
 ---
 title: "main に代わる wmain の使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "wmain 関数"
 ms.assetid: 7abb1257-b85c-413a-b913-d45b1582a71d
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # main に代わる wmain の使用
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

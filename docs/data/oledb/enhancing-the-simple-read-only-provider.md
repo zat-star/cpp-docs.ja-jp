@@ -1,8 +1,7 @@
 ---
 title: "単純な読み取り専用プロバイダーの機能の拡張 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "単純な読み取り専用プロバイダー [C++]"
 ms.assetid: cba0e09f-44c1-41c1-9456-332aa13dc158
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 単純な読み取り専用プロバイダーの機能の拡張
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

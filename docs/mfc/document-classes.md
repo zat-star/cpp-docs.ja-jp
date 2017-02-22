@@ -1,8 +1,7 @@
 ---
 title: "ドキュメント クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ドキュメント クラス"
 ms.assetid: 4bf19b02-0a4f-4319-b68e-cddcba2705cb
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ドキュメント クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

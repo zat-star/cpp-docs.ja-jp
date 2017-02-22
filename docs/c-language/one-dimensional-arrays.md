@@ -1,8 +1,7 @@
 ---
 title: "1 次元配列 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "配列 [C++], 1 次元"
   - "角かっこ [ ]"
@@ -22,10 +20,10 @@ helpviewer_keywords:
   - "添字式"
 ms.assetid: e28536e5-3b77-46b5-97fd-9b938c771816
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 1 次元配列
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

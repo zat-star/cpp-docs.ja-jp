@@ -1,8 +1,7 @@
 ---
 title: "基本型の格納 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "算術演算 [C++], 型"
   - "データ型 [C], 指定子"
@@ -33,10 +31,10 @@ helpviewer_keywords:
   - "unsigned 型 [C++], ストレージ"
 ms.assetid: bd1f33c1-c6b9-4558-8a72-afb21aef3318
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 基本型の格納
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

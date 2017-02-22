@@ -1,8 +1,7 @@
 ---
 title: "[高度な機能] (MFC アプリケーション ウィザード) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "MFC アプリケーション ウィザード、高度な機能"
 ms.assetid: 8a6681c5-6576-4b12-841a-6862beee76fa
 caps.latest.revision: 17
-caps.handback.revision: 13
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 17
 ---
 # [高度な機能] (MFC アプリケーション ウィザード)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

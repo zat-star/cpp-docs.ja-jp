@@ -1,8 +1,7 @@
 ---
 title: "dllexport と dllimport を使用したインライン C 関数の定義 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "dllexport 属性 [C++]"
   - "dllexport 属性 [C++], インライン関数"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "インライン関数 [C++], dllexport および dllimport の使用"
 ms.assetid: 41418f7c-1c11-470b-bb2e-1f8269a239f0
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # dllexport と dllimport を使用したインライン C 関数の定義
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

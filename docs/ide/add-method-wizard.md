@@ -1,8 +1,7 @@
 ---
 title: "メソッド追加ウィザード | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "メソッド [C++], 追加 (ウィザードを使用して)"
 ms.assetid: b9a71b0e-9ecf-40fa-9f86-4200cb23d671
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # メソッド追加ウィザード
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

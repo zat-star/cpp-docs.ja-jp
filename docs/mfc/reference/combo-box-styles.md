@@ -1,8 +1,7 @@
 ---
 title: "コンボ ボックス スタイル | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -42,10 +41,10 @@ helpviewer_keywords:
   - "CBS_DROPDOWNLIST 定数"
 ms.assetid: d21a5023-e6a2-495b-a6bd-010a515cbc63
 caps.latest.revision: 12
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 13
 ---
 # コンボ ボックス スタイル
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "トランザクション: レコードセットからのトランザクション実行 (ODBC) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "トランザクション, 更新 (レコードセットを)"
 ms.assetid: cf1d6b48-7fb8-4903-84f7-a1822054534d
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # トランザクション: レコードセットからのトランザクション実行 (ODBC)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

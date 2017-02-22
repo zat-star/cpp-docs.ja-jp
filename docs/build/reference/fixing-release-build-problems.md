@@ -1,8 +1,7 @@
 ---
 title: "リリース ビルドの問題の解決 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "トラブルシューティング (Visual C++), リリース ビルド"
 ms.assetid: a0c0818e-4c47-4fe0-a611-50d61a41bd88
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # リリース ビルドの問題の解決
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

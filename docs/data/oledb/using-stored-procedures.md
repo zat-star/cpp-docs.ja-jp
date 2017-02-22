@@ -1,8 +1,7 @@
 ---
 title: "ストアド プロシージャの使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "ストアド プロシージャ, Visual C++"
 ms.assetid: 90507e4c-eca2-46c9-ad8c-07e10dc1d41b
 caps.latest.revision: 16
-caps.handback.revision: 16
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 16
 ---
 # ストアド プロシージャの使用
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

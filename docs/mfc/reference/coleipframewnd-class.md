@@ -1,8 +1,7 @@
 ---
 title: "COleIPFrameWnd クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "OLE, 埋め込み先編集の有効化"
 ms.assetid: 24abb2cb-826c-4dda-a287-d8a8900a5763
 caps.latest.revision: 24
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 26
 ---
 # COleIPFrameWnd クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

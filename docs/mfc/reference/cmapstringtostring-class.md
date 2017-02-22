@@ -1,8 +1,7 @@
 ---
 title: "CMapStringToString クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "文字列 [C++], マップ"
 ms.assetid: b45794c2-fe6b-4edb-a8ca-faa03b57b4a8
 caps.latest.revision: 23
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 25
 ---
 # CMapStringToString クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

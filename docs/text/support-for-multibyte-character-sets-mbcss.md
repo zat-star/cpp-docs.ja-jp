@@ -1,8 +1,7 @@
 ---
 title: "マルチバイト文字セット (MBCS) のサポート | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "マルチバイト文字 [C++]"
 ms.assetid: b498733c-a1e1-45e3-8f26-d6da3cb5f2dd
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "ghogen"
 ms.author: "ghogen"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # マルチバイト文字セット (MBCS) のサポート
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "データ アクセス: ADO および RDO | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "データ バインド コントロール [C++], RDO"
 ms.assetid: 92da8f1e-144b-4605-ac0a-43c25bdc14a7
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # データ アクセス: ADO および RDO
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

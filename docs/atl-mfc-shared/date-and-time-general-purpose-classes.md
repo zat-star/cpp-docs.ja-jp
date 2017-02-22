@@ -1,8 +1,7 @@
 ---
 title: "日付と時刻 : 汎用クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "時刻クラス"
 ms.assetid: b8115d7f-428a-4c41-9970-18502f2caca2
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # 日付と時刻 : 汎用クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

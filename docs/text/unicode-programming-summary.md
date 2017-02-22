@@ -1,8 +1,7 @@
 ---
 title: "Unicode プログラミングの要約 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "Unicode [C++], プログラミング"
 ms.assetid: a4c9770f-6c9c-447c-996b-980920288bed
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "ghogen"
 ms.author: "ghogen"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # Unicode プログラミングの要約
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

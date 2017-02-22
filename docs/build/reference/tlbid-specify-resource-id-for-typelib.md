@@ -1,8 +1,7 @@
 ---
 title: "/TLBID (タイプ ライブラリのリソース ID の指定) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "タイプ ライブラリ, 指定 (リソース ID を)"
 ms.assetid: 434b28a2-4656-4d52-ac82-8b18bf486fb2
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # /TLBID (タイプ ライブラリのリソース ID の指定)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

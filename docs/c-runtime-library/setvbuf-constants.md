@@ -1,8 +1,7 @@
 ---
 title: "setvbuf 定数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,7 +14,6 @@ f1_keywords:
   - "_IOLBF"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "_IOFBF 定数"
   - "_IOLBF 定数"
@@ -25,10 +23,10 @@ helpviewer_keywords:
   - "IONBF 定数"
 ms.assetid: a6ec4dd5-1f24-498c-871a-e874cd28d33c
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # setvbuf 定数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "配列の格納 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "配列 [C]"
   - "配列 [C], ストレージ"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "配列の格納"
 ms.assetid: c1331216-cf51-45f6-8072-a3fedc7cb367
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 配列の格納
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "/LIBPATH (追加ライブラリのパス) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "ライブラリのパス リンカー オプション"
 ms.assetid: 7240af0b-9a3d-4d53-8169-2a92cd6958ba
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # /LIBPATH (追加ライブラリのパス)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

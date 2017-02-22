@@ -1,8 +1,7 @@
 ---
 title: "プロジェクトのプロパティの操作 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "プロジェクト [C++]、プロパティ"
 ms.assetid: 9b0d6f8b-7d4e-4e61-aa75-7d14944816cd
 caps.latest.revision: 45
-caps.handback.revision: 45
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 45
 ---
 # プロジェクトのプロパティの操作
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "ODBC の使用による他のユーザーとの共同作業 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ODBC, 利用 (他のユーザーと)"
 ms.assetid: 8ff18684-f62b-4027-b9b2-7c3b5d52bd89
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # ODBC の使用による他のユーザーとの共同作業
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

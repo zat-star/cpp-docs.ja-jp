@@ -1,8 +1,7 @@
 ---
 title: "符号なし整数型からの変換 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "データ型変換 [C++], 符号付き整数と符号なし整数"
   - "整数, 変換"
@@ -20,10 +18,10 @@ helpviewer_keywords:
   - "型変換 [C++], 符号付き整数と符号なし整数"
 ms.assetid: 60fb7e10-bff9-4a13-8a48-e19f25a36a02
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # 符号なし整数型からの変換
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

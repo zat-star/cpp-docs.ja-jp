@@ -1,8 +1,7 @@
 ---
 title: "テクニカル ノート 26: DDX ルーチンおよび DDV ルーチン | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "TN026"
 ms.assetid: c2eba87a-4b47-4083-b28b-e2fa77dfb4c4
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # テクニカル ノート 26: DDX ルーチンおよび DDV ルーチン
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

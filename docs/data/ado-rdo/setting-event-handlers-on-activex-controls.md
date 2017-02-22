@@ -1,8 +1,7 @@
 ---
 title: "ActiveX コントロールのイベント ハンドラーを設定する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "イベント [C++], ActiveX コントロール"
 ms.assetid: c076386f-c78b-4dc9-9201-a544252d5337
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ActiveX コントロールのイベント ハンドラーを設定する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

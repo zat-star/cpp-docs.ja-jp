@@ -1,8 +1,7 @@
 ---
 title: "再配布する DLL の決定 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "再配布 (DLL を)"
 ms.assetid: f7a2cb42-fb48-42ab-abd2-b35e2fd5601a
 caps.latest.revision: 31
-caps.handback.revision: 31
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 31
 ---
 # 再配布する DLL の決定
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

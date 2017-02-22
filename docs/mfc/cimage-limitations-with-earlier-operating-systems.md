@@ -1,8 +1,7 @@
 ---
 title: "以前のオペレーティング システムにおける CImage の制限 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "CImage クラス, 制限事項"
 ms.assetid: 4bedaab8-7dd1-4c91-ab35-b75fb56765b0
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 以前のオペレーティング システムにおける CImage の制限
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

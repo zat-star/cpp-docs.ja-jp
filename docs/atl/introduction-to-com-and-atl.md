@@ -1,8 +1,7 @@
 ---
 title: "COM および ATL の概要 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "COM, および ATL"
 ms.assetid: 35d6ae9c-abbb-42f0-9344-33f3c19ac3ce
 caps.latest.revision: 11
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # COM および ATL の概要
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

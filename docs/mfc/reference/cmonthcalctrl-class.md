@@ -1,8 +1,7 @@
 ---
 title: "CMonthCalCtrl クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "月間予定表コントロール, CMonthCalCtrl クラス"
 ms.assetid: a42f6bd6-ab5c-4335-82f8-839982fc64a2
 caps.latest.revision: 23
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 25
 ---
 # CMonthCalCtrl クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

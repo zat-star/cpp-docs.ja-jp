@@ -1,8 +1,7 @@
 ---
 title: "浮動小数点定数の制限 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "定数, 浮動小数点"
   - "FLOAT.H ヘッダー ファイル"
@@ -21,10 +19,10 @@ helpviewer_keywords:
   - "範囲, 浮動小数点定数"
 ms.assetid: 2d975868-2af6-45d7-a8af-db79f2c6b67b
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 浮動小数点定数の制限
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

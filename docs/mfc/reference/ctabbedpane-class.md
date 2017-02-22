@@ -1,8 +1,7 @@
 ---
 title: "CTabbedPane クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "CTabbedPane クラス"
 ms.assetid: f4dc5215-b789-4f2d-8c62-477aceda3578
 caps.latest.revision: 27
-caps.handback.revision: 15
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 29
 ---
 # CTabbedPane クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
