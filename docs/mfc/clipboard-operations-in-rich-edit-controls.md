@@ -1,8 +1,7 @@
 ---
 title: "リッチ エディット コントロールでのクリップボード操作 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "リッチ エディット コントロール, クリップボードの操作"
 ms.assetid: 15ce66bc-2636-4a35-a2ae-d52285dc1af6
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # リッチ エディット コントロールでのクリップボード操作
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

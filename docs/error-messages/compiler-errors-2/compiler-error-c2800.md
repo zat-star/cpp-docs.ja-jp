@@ -1,8 +1,7 @@
 ---
 title: "コンパイラ エラー C2800 | Microsoft Docs"
 ms.custom: ""
-ms.date: "11/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "C2800"
 ms.assetid: a2f1a590-9fe6-44cb-ad09-b4505ef47c6a
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # コンパイラ エラー C2800
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

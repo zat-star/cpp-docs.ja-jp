@@ -1,8 +1,7 @@
 ---
 title: "並列パターン ライブラリに関するベスト プラクティス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "並列パターン ライブラリ、ベスト プラクティス"
 ms.assetid: e43e0304-4d54-4bd8-a3b3-b8673559a9d7
 caps.latest.revision: 24
-caps.handback.revision: 24
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 24
 ---
 # 並列パターン ライブラリに関するベスト プラクティス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

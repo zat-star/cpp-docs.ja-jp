@@ -1,8 +1,7 @@
 ---
 title: "ダイアログ ボックスへのコントロールの追加 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,17 +12,16 @@ f1_keywords:
   - "vc.editors.dialog.dialog"
 dev_langs: 
   - "C++"
-  - "C++"
 helpviewer_keywords: 
   - "ダイアログ ボックス、追加 (コントロールの)"
   - "ダイアログ ボックス コントロール、追加 (ダイアログ ボックスに)"
   - "コントロール [C++]、追加 (ダイアログ ボックスに)"
 ms.assetid: b2a26d19-093f-49ca-93da-fef00dfbb381
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ダイアログ ボックスへのコントロールの追加
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

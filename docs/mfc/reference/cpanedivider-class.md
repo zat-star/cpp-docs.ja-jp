@@ -1,8 +1,7 @@
 ---
 title: "CPaneDivider クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "CPaneDivider クラス"
 ms.assetid: 8e828a5d-232f-4127-b8e3-7fa45a7a476e
 caps.latest.revision: 25
-caps.handback.revision: 14
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 27
 ---
 # CPaneDivider クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

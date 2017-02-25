@@ -1,8 +1,7 @@
 ---
 title: "/Gs (スタック チェック呼び出しの制御) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "スタック, スタック プローブ"
 ms.assetid: 40daed7c-f942-4085-b872-01e12b37729e
 caps.latest.revision: 17
-caps.handback.revision: 17
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 17
 ---
 # /Gs (スタック チェック呼び出しの制御)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

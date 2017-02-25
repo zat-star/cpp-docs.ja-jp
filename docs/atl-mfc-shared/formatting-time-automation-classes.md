@@ -1,8 +1,7 @@
 ---
 title: "日付/時刻を表す文字列形式の指定 : オートメーション クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "時刻 [C++], 書式指定"
 ms.assetid: 155c5bef-b555-4bed-9545-29afc49715f1
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 日付/時刻を表す文字列形式の指定 : オートメーション クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

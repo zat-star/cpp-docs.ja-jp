@@ -1,8 +1,7 @@
 ---
 title: "前置インクリメント演算子と前置デクリメント演算子 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "デクリメント演算子"
   - "デクリメント演算子, 構文"
   - "インクリメント演算子, 型"
 ms.assetid: 9a441bb9-d94a-4b6a-9db2-0d0d76bc480d
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 前置インクリメント演算子と前置デクリメント演算子
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "通知フック | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "遅延読み込み (DLL を), 通知フック"
 ms.assetid: e9c291ed-2f2d-4319-a171-09800625256f
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 通知フック
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "/ORDER (関数の順序) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "ページング, 最適化"
 ms.assetid: ecf5eb3e-e404-4e86-9a91-4e5ec157261a
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # /ORDER (関数の順序)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

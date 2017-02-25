@@ -1,8 +1,7 @@
 ---
 title: "アプリケーションでのプロパティ シートの使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "プロパティ シート, プロパティ シートの概要"
 ms.assetid: 240654d4-152b-4e3f-af7b-44234339206e
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # アプリケーションでのプロパティ シートの使用
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "ファイル定数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,7 +18,6 @@ f1_keywords:
   - "_O_WRONLY"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "_O_APPEND 定数"
   - "_O_CREAT 定数"
@@ -37,10 +35,10 @@ helpviewer_keywords:
   - "O_WRONLY 定数"
 ms.assetid: c8fa5548-9ac2-4217-801d-eb45e86f2fa4
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # ファイル定数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

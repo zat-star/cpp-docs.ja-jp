@@ -1,8 +1,7 @@
 ---
 title: "メッセージ処理とコマンド ターゲット | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "メッセージ処理, アクティブ ドキュメント"
 ms.assetid: e45ce14c-e6b6-4262-8f3b-4e891e0ec2a3
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # メッセージ処理とコマンド ターゲット
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

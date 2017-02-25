@@ -1,8 +1,7 @@
 ---
 title: "アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -27,10 +26,10 @@ helpviewer_keywords:
   - "ウィンドウ クラス, フレーム"
 ms.assetid: 9947df73-4470-49a0-ac61-7b6ee401a74e
 caps.latest.revision: 8
-caps.handback.revision: 4
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 4
 ---
 # アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

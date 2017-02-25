@@ -1,8 +1,7 @@
 ---
 title: "リモート オートメーションのスレッド化モデル | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "スレッド処理 [MFC], リモート オートメーション"
 ms.assetid: 8828ccff-12a4-4f7a-865d-d19fbb0a82e2
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # リモート オートメーションのスレッド化モデル
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

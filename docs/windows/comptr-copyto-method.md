@@ -1,8 +1,7 @@
 ---
 title: "ComPtr::CopyTo メソッド | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "CopyTo メソッド"
 ms.assetid: 8801bc49-6db4-4393-a55f-a701ae3b8718
 caps.latest.revision: 4
-caps.handback.revision: 4
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 4
 ---
 # ComPtr::CopyTo メソッド
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

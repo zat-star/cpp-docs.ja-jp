@@ -1,8 +1,7 @@
 ---
 title: "[値] エディット コントロール | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "[値] エディット コントロール"
 ms.assetid: 129d8f74-2629-4a29-981f-ddb3c1e174cd
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # [値] エディット コントロール
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

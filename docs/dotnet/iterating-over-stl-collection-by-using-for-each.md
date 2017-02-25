@@ -1,8 +1,7 @@
 ---
 title: "for each を使用した STL コレクションの反復処理 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "DTL コレクション, 反復処理"
 ms.assetid: 9358ca29-b982-4a19-bbfd-bef50fe66c9a
 caps.latest.revision: 14
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # for each を使用した STL コレクションの反復処理
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

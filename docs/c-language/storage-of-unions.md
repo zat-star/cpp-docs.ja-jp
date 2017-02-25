@@ -1,8 +1,7 @@
 ---
 title: "共用体の格納 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "ストレージ, union"
   - "union キーワード [C]"
   - "union キーワード [C], ストレージ"
 ms.assetid: b33d246a-8d20-41c4-89b2-ab05f1428792
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 共用体の格納
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

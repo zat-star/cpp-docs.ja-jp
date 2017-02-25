@@ -1,8 +1,7 @@
 ---
 title: "テキスト モードとバイナリ モードの Unicode ストリーム入出力 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,7 +12,6 @@ f1_keywords:
   - "c.io"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "I/O [CRT], Unicode ストリーム"
   - "ストリーム入出力ルーチン"
@@ -21,10 +19,10 @@ helpviewer_keywords:
   - "Unicode, ストリーム入出力ルーチン"
 ms.assetid: 68be0c3e-a9e6-4fd5-b34a-1b5207f0e7d6
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # テキスト モードとバイナリ モードの Unicode ストリーム入出力
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "浮動小数点サポート | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,17 +12,16 @@ f1_keywords:
   - "c.math"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "浮動小数点数"
   - "浮動小数点数, 数値演算ルーチン"
   - "数値演算ルーチン"
 ms.assetid: e4fcaf69-5c8e-4854-a9bb-1f412042131e
 caps.latest.revision: 17
-caps.handback.revision: 13
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 13
 ---
 # 浮動小数点サポート
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

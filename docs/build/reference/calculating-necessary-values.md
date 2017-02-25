@@ -1,8 +1,7 @@
 ---
 title: "必要な値の計算 | Microsoft Docs"
 ms.custom: ""
-ms.date: "11/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ヘルパー関数, 計算 (必要な値を)"
 ms.assetid: 4f037d0f-881a-4a48-a9d2-9f8872dfccb7
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 必要な値の計算
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

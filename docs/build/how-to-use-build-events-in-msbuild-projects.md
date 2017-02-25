@@ -1,8 +1,7 @@
 ---
 title: "方法: MSBuild プロジェクトでビルド イベントを使用する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "msbuild (c++), 方法: プロジェクトでビルド イベントを使用する"
 ms.assetid: 2a58dc9d-3d50-4e49-97c1-86c5a05ce218
 caps.latest.revision: 23
-caps.handback.revision: 23
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 23
 ---
 # 方法: MSBuild プロジェクトでビルド イベントを使用する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

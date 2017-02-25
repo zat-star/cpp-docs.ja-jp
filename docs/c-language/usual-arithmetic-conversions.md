@@ -1,8 +1,7 @@
 ---
 title: "通常の算術変換 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "算術変換 [C++]"
   - "算術演算子 [C++], 型変換"
@@ -21,10 +19,10 @@ helpviewer_keywords:
   - "型変換 [C++], 算術"
 ms.assetid: bfa49803-0efd-45d0-b987-111412a140d7
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 通常の算術変換
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

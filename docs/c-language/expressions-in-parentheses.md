@@ -1,8 +1,7 @@
 ---
 title: "かっこで囲んだ式 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "式の評価, 評価順序"
   - "式 [C++], 評価"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "かっこ, 式"
 ms.assetid: b8636147-6982-408c-9e64-29e40678ee43
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # かっこで囲んだ式
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

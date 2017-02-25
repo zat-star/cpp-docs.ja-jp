@@ -1,8 +1,7 @@
 ---
 title: "拡張コンボ ボックス コントロールの作成 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "拡張コンボ ボックス, 作成"
 ms.assetid: a964267e-97b6-4e77-9f89-55bb5c68913f
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 拡張コンボ ボックス コントロールの作成
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

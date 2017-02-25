@@ -1,8 +1,7 @@
 ---
 title: "[アプリケーションの設定] (MFC DLL ウィザード) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "MFC DLL ウィザード、アプリケーションの設定"
 ms.assetid: 0a96b94f-ae36-4975-951b-c9ffb3def21c
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # [アプリケーションの設定] (MFC DLL ウィザード)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

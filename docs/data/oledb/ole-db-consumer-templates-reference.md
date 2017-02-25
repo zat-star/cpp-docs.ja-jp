@@ -1,8 +1,7 @@
 ---
 title: "OLE DB コンシューマー テンプレート リファレンス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "OLE DB コンシューマー テンプレート, クラス"
 ms.assetid: cfc7f698-1a0e-4a09-a4d3-ccb99e6654fe
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # OLE DB コンシューマー テンプレート リファレンス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "C 浮動小数点定数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "定数, 浮動小数点"
   - "Double 型, 浮動小数点定数"
@@ -21,10 +19,10 @@ helpviewer_keywords:
   - "型 [C], 定数"
 ms.assetid: e1bd9b44-d6ab-470c-93e5-07142c7a2062
 caps.latest.revision: 12
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # C 浮動小数点定数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

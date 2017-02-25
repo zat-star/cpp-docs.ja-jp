@@ -1,8 +1,7 @@
 ---
 title: "/IGNOREIDL (属性を MIDL に挿入しない) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "-IGNOREIDL リンカー オプション"
 ms.assetid: 29514098-6a1c-4317-af2f-1dc268972780
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # /IGNOREIDL (属性を MIDL に挿入しない)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

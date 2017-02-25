@@ -1,8 +1,7 @@
 ---
 title: "DLL のエクスポート関数のエントリ ポイント | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "状態管理, エクスポートされた DLL"
 ms.assetid: 3268666e-d24b-44f2-80e8-7c80f73b93ca
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # DLL のエクスポート関数のエントリ ポイント
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

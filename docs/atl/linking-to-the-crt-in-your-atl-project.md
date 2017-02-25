@@ -1,8 +1,7 @@
 ---
 title: "ATL プロジェクトでの CRT へのリンク | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "wWinMainCRTStartup メソッド"
 ms.assetid: 650957ae-362c-4ecf-8b03-5d49138e8b5b
 caps.latest.revision: 12
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ATL プロジェクトでの CRT へのリンク
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "方法 : タイプ セーフなコレクションを作成する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "タイプ セーフなコレクション"
 ms.assetid: 7230b2db-4283-4083-b098-eb231bf5b89e
 caps.latest.revision: 10
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 方法 : タイプ セーフなコレクションを作成する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

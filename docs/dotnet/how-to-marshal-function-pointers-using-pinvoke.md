@@ -1,8 +1,7 @@
 ---
 title: "方法: PInvoke を使用して関数ポインターをマーシャリングする | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "プラットフォーム呼び出し [C++], コールバックとデリゲート"
 ms.assetid: dcf396fd-a91d-49c0-ab0b-1ea160668a89
 caps.latest.revision: 21
-caps.handback.revision: 21
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 21
 ---
 # 方法: PInvoke を使用して関数ポインターをマーシャリングする
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

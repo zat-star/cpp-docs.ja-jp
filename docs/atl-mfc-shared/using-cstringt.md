@@ -1,8 +1,7 @@
 ---
 title: "CStringT の使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "CStringT クラス, 使用"
 ms.assetid: 3a9fffb1-6f90-482a-ab69-4003e6084cb5
 caps.latest.revision: 7
-caps.handback.revision: 3
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 3
 ---
 # CStringT の使用
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

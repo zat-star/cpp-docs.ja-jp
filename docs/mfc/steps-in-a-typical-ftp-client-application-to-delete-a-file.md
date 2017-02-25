@@ -1,8 +1,7 @@
 ---
 title: "ファイルを削除する典型的な FTP クライアント アプリケーションの作成手順 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "WinInet クラス, FTP"
 ms.assetid: 2c347a96-c0a4-4827-98fe-668406e552bc
 caps.latest.revision: 9
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ファイルを削除する典型的な FTP クライアント アプリケーションの作成手順
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "MFC DLL ウィザード | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "MFC DLL [C++], 作成"
 ms.assetid: 4e936031-7e39-4f40-a295-42a09c5ff264
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # MFC DLL ウィザード
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

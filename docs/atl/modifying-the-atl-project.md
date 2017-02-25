@@ -1,8 +1,7 @@
 ---
 title: "ATL プロジェクトの修正 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ダイアログ エディター, 処理 (複合コントロールの)"
 ms.assetid: 59984518-748f-4b8b-875f-3e97d22d0b0f
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ATL プロジェクトの修正
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

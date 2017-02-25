@@ -1,8 +1,7 @@
 ---
 title: "同時実行ランタイムに関する全般的なベスト プラクティス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "同時実行ランタイム、全般的なベスト プラクティス"
 ms.assetid: ce5c784c-051e-44a6-be84-8b3e1139c18b
 caps.latest.revision: 16
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # 同時実行ランタイムに関する全般的なベスト プラクティス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

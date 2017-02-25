@@ -1,8 +1,7 @@
 ---
 title: "置き換え可能パラメーター (レジストラーのプリプロセッサ) の使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "%MODULE%"
 ms.assetid: 0b376994-84a6-4967-8d97-8c01dfc94efe
 caps.latest.revision: 12
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 置き換え可能パラメーター (レジストラーのプリプロセッサ) の使用
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

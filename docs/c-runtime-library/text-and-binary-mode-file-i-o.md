@@ -1,8 +1,7 @@
 ---
 title: "テキスト モードとバイナリ モードのファイル入出力 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,7 +12,6 @@ f1_keywords:
   - "c.io"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "バイナリ アクセス"
   - "バイナリ アクセス, バイナリ モードのファイル I/O"
@@ -27,10 +25,10 @@ helpviewer_keywords:
   - "変換, モード"
 ms.assetid: 3196e321-8b87-4609-b302-cd6f3c516051
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # テキスト モードとバイナリ モードのファイル入出力
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

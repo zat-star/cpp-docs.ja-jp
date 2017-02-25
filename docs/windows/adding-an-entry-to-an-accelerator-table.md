@@ -1,8 +1,7 @@
 ---
 title: "アクセラレータ テーブルへのエントリの追加 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "[新しいアクセラレータ] コマンド"
 ms.assetid: 559c2415-8323-4339-9447-6966665f8288
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # アクセラレータ テーブルへのエントリの追加
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

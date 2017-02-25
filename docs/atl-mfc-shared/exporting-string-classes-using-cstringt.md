@@ -1,8 +1,7 @@
 ---
 title: "CStringT を使用した文字列クラスのエクスポート | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "CStringT クラス, エクスポート (文字列を)"
 ms.assetid: bdfc441e-8d2a-461c-9885-46178066c09f
 caps.latest.revision: 15
-caps.handback.revision: 11
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # CStringT を使用した文字列クラスのエクスポート
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

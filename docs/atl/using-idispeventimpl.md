@@ -1,8 +1,7 @@
 ---
 title: "IDispEventImpl の使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "IDispEventImpl クラス, 使用"
 ms.assetid: 82d53b61-9d0d-45c5-aff9-2fafa468a9ca
 caps.latest.revision: 12
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # IDispEventImpl の使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

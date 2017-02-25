@@ -1,8 +1,7 @@
 ---
 title: "ウィンドウの使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ウィンドウ [C++], ATL"
 ms.assetid: b3b9cc8e-4287-486b-b080-38852bc2943a
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ウィンドウの使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

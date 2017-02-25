@@ -1,8 +1,7 @@
 ---
 title: "行への参照が別のテーブルにある場合に列を更新する方法 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "行セット, 列の更新"
 ms.assetid: abb5db69-055d-431f-b12d-ad2940a661ba
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 行への参照が別のテーブルにある場合に列を更新する方法
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

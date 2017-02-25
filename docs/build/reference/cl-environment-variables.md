@@ -1,8 +1,7 @@
 ---
 title: "環境変数 CL | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "LIBPATH 環境変数"
 ms.assetid: 2606585b-a681-42ee-986e-1c9a2da32108
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # 環境変数 CL
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "[全般] ([MIDL] プロパティ ページ) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -26,10 +25,10 @@ helpviewer_keywords:
   - "MIDL、プロパティ ページ"
 ms.assetid: 0692484c-a7e6-4270-8df7-981589368399
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # [全般] ([MIDL] プロパティ ページ)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

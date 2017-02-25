@@ -1,8 +1,7 @@
 ---
 title: "double 型 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "Double 型"
   - "仮数部, 浮動小数点変数"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "型 double"
 ms.assetid: 17c85b24-1475-4d41-a03c-ddf2d6561d34
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # double 型
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

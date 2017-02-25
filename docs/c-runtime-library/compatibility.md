@@ -1,8 +1,7 @@
 ---
 title: "互換性 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,17 +12,16 @@ f1_keywords:
   - "c.programs"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "互換性"
   - "互換性, C ランタイム ライブラリ"
   - "CRT, 互換性"
 ms.assetid: 346709cb-edda-4909-9a19-3d253eddb6b7
 caps.latest.revision: 18
-caps.handback.revision: 18
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 18
 ---
 # 互換性
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

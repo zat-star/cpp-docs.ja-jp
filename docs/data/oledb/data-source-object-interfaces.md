@@ -1,8 +1,7 @@
 ---
 title: "データ ソース オブジェクト インターフェイス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "OLE DB プロバイダー テンプレート [C++], オブジェクト インターフェイス"
 ms.assetid: 929e100c-c08c-4b64-8437-d8d1357226f6
 caps.latest.revision: 12
-caps.handback.revision: 12
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 12
 ---
 # データ ソース オブジェクト インターフェイス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

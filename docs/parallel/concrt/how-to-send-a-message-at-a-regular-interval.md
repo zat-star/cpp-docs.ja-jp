@@ -1,8 +1,7 @@
 ---
 title: "方法: メッセージを定期的に送信する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "送信 (メッセージを定期的に) [同時実行ランタイム]"
 ms.assetid: 4b60ea6c-97c8-4d69-9f7b-ad79f3548026
 caps.latest.revision: 19
-caps.handback.revision: 19
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 19
 ---
 # 方法: メッセージを定期的に送信する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

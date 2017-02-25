@@ -1,8 +1,7 @@
 ---
 title: "C 言語の構文の概要 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "表記 (C の場合)"
   - "構文"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "Visual C, 構文についてのメモ"
 ms.assetid: 6edccdb7-453b-4820-a5d8-075c19fb8926
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # C 言語の構文の概要
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

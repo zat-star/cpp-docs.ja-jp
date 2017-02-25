@@ -1,8 +1,7 @@
 ---
 title: "型キャスト変換 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "変換 [C++], 型キャスト"
   - "データ型変換 [C++], 型キャストの変換"
@@ -21,10 +19,10 @@ helpviewer_keywords:
   - "型キャストの変換 [C++]"
 ms.assetid: 57ab5902-f12f-4326-a2f6-6282f1d4025a
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 型キャスト変換
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

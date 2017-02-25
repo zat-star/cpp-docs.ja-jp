@@ -1,8 +1,7 @@
 ---
 title: "CSinusoidalTransitionFromRange クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "CSinusoidalTransitionFromRange クラス"
 ms.assetid: 8b66a729-5f10-431a-b055-e3600d0065da
 caps.latest.revision: 18
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 20
 ---
 # CSinusoidalTransitionFromRange クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

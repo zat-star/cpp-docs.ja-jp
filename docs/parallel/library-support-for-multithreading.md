@@ -1,8 +1,7 @@
 ---
 title: "ライブラリのマルチスレッド サポート | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "スレッド処理 [C++], ライブラリのサポート"
 ms.assetid: 54cf10d5-b800-481b-a149-b0ee373f41a1
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # ライブラリのマルチスレッド サポート
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "分離アプリケーションおよび side-by-side アセンブリの概念 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "分離アセンブリ [C++]"
 ms.assetid: 945a885f-cb3e-4c8a-a0b9-2c2e3e02cc50
 caps.latest.revision: 21
-caps.handback.revision: 21
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 21
 ---
 # 分離アプリケーションおよび side-by-side アセンブリの概念
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

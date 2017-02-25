@@ -1,8 +1,7 @@
 ---
 title: "CStrBufT クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "文字列 [C++], カスタム メモリ管理"
 ms.assetid: 6b50fa8f-87e8-4ed4-a229-157ce128710f
 caps.latest.revision: 17
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 18
 ---
 # CStrBufT クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

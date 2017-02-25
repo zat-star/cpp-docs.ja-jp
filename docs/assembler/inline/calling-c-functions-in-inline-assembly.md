@@ -1,8 +1,7 @@
 ---
-title: "インライン アセンブリでの C 関数の呼び出し | Microsoft Docs"
+title: "インライン アセンブリでの C++ 関数の呼び出し | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,17 +12,17 @@ dev_langs:
   - "C++"
 helpviewer_keywords: 
   - "__asm キーワード [C++], 呼び出し (関数を)"
-  - "関数呼び出し, C 関数"
+  - "関数呼び出し, C++ 関数"
   - "関数呼び出し, インライン アセンブラー内"
-  - "関数 [C], インライン アセンブラー内での呼び出し"
+  - "関数 [C++], インライン アセンブラー内での呼び出し"
   - "インライン アセンブラー, 呼び出し (関数を)"
-  - "Visual C, 関数"
+  - "Visual C++, 関数"
 ms.assetid: f8a8d568-d175-4e23-9b24-36ef60a4cab3
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # インライン アセンブリでの C 関数の呼び出し
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

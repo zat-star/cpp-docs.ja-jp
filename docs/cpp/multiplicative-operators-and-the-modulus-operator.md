@@ -1,8 +1,7 @@
 ---
 title: "乗算演算子と剰余演算子 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -26,10 +25,10 @@ helpviewer_keywords:
   - "演算子 [C++], 乗法"
 ms.assetid: b53ea5da-d0b4-40dc-98f3-0aa52d548293
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # 乗算演算子と剰余演算子
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

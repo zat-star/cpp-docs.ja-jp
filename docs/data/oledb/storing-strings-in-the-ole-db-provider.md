@@ -1,8 +1,7 @@
 ---
 title: "OLE DB プロバイダーへの文字列の格納 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ユーザー レコード, 編集"
 ms.assetid: 36cb9635-067c-4cad-8f85-962f28026f6a
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # OLE DB プロバイダーへの文字列の格納
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

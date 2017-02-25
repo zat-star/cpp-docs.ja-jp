@@ -1,8 +1,7 @@
 ---
 title: "C 拡張ストレージ クラス属性 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "__declspec キーワード [C]"
   - "拡張属性"
@@ -19,10 +17,10 @@ helpviewer_keywords:
   - "ストレージ クラス指定子, C のストレージ クラス"
 ms.assetid: 2580735c-f5bf-46ab-9468-0696893d82be
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # C 拡張ストレージ クラス属性
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

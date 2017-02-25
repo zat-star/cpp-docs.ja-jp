@@ -1,8 +1,7 @@
 ---
 title: "ランタイム ライブラリの動作 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -26,10 +25,10 @@ helpviewer_keywords:
   - "実行時 [C++], DLL の起動処理"
 ms.assetid: e06f24ab-6ca5-44ef-9857-aed0c6f049f2
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # ランタイム ライブラリの動作
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "拡張コンボ ボックス コントロールでのイメージ リストの使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "イメージ [C++], コンボ ボックスの項目"
 ms.assetid: dfff25fe-af70-47a2-8032-3901d1e6842d
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 拡張コンボ ボックス コントロールでのイメージ リストの使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

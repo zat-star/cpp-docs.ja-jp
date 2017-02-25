@@ -1,8 +1,7 @@
 ---
 title: "変更した ATL DHTML コントロールのテスト | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "テスト (コントロールを)"
 ms.assetid: 42316118-9433-410f-9d8a-0efcc1eff824
 caps.latest.revision: 11
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # 変更した ATL DHTML コントロールのテスト
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

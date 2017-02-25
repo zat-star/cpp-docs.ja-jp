@@ -1,8 +1,7 @@
 ---
 title: "レコード ビューのデータ交換 (MFC データ アクセス) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "RFX (レコード フィールド エクスチェンジ), レコード ビュー"
 ms.assetid: abc52ca7-6997-47a7-98f3-f347f52b1f72
 caps.latest.revision: 9
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # レコード ビューのデータ交換 (MFC データ アクセス)
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

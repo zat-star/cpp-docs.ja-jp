@@ -1,8 +1,7 @@
 ---
 title: "コンテナー : 高度な機能 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -23,10 +22,10 @@ helpviewer_keywords:
   - "サーバー/コンテナー アプリケーション"
 ms.assetid: 221fd99c-b138-40fa-ad6a-974e3b3ad1f8
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # コンテナー : 高度な機能
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

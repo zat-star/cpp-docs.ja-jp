@@ -1,8 +1,7 @@
 ---
 title: "宣言の概要 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "宣言子の概要の宣言子"
 ms.assetid: 0f2e2312-80bd-4154-8345-718bd9ed2173
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # 宣言の概要
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

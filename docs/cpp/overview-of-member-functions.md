@@ -1,8 +1,7 @@
 ---
 title: "メンバー関数の概要 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "このポインター, および非静的メンバー関数"
 ms.assetid: 9f77a438-500e-40bb-a6c6-544678f3f4c8
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # メンバー関数の概要
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

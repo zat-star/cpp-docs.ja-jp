@@ -1,8 +1,7 @@
 ---
 title: "ATL ウィンドウ クラスの概要 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ウィンドウ クラス"
 ms.assetid: 503efc2c-a269-495d-97cf-3fb300d52f3d
 caps.latest.revision: 11
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # ATL ウィンドウ クラスの概要
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

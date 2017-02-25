@@ -1,8 +1,7 @@
 ---
 title: "ウィンドウの実装 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ウィンドウ [C++], 実装 (ATL で)"
 ms.assetid: eb1ce8d6-72f9-4894-aae7-e60a61665628
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ウィンドウの実装
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "規則の検索パス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "検索パス (NMAKE の推論規則の)"
 ms.assetid: 38feded6-536d-425d-bf40-fff3173a5506
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 規則の検索パス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "テクニカル ノート 40: MFC/OLE 埋め込み先サイズ変更とズーム | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "ズームと埋め込み先編集の有効化"
 ms.assetid: 4d7859bd-0b2e-4254-be62-2735cecf02c6
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # テクニカル ノート 40: MFC/OLE 埋め込み先サイズ変更とズーム
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "ワーカー用原型クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ワーカー用原型クラス"
 ms.assetid: 834145cd-09d3-4149-bc99-620e1871cbfb
 caps.latest.revision: 16
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 16
 ---
 # ワーカー用原型クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

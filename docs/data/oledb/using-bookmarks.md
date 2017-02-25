@@ -1,8 +1,7 @@
 ---
 title: "ブックマークの使用 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "行セット, ブックマーク"
 ms.assetid: 7fa1d1a8-5063-4aa9-93ee-815bb9c98fae
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ブックマークの使用
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

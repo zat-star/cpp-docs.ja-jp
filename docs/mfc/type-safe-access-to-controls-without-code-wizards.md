@@ -1,8 +1,7 @@
 ---
 title: "コード ウィザードを使用しない、コントロールへのタイプ セーフ アクセス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "ダイアログ ボックス, アクセス (コントロールに)"
 ms.assetid: 325b4927-d49b-42b4-8e0b-fc84f31fb059
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # コード ウィザードを使用しない、コントロールへのタイプ セーフ アクセス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

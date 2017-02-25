@@ -1,8 +1,7 @@
 ---
 title: "Rebar コントロールでのダイアログ バーの使い方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "WS_EX_TRANSPARENT スタイル"
 ms.assetid: e528cea0-6b81-4bdf-9643-7c03b6176590
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # Rebar コントロールでのダイアログ バーの使い方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

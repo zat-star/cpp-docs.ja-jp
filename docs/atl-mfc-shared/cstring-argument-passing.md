@@ -1,8 +1,7 @@
 ---
 title: "CString 引数の渡し方 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "文字列 [C++], 関数の入出力としての"
 ms.assetid: a67bebff-edf1-4cf4-bbff-d1cc6a901099
 caps.latest.revision: 13
-caps.handback.revision: 9
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 9
 ---
 # CString 引数の渡し方
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

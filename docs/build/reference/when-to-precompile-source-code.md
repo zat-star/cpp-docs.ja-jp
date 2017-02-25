@@ -1,8 +1,7 @@
 ---
 title: "ソース コードをプリコンパイルする時期 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,10 +17,10 @@ helpviewer_keywords:
   - "ソース コード, プリコンパイル"
 ms.assetid: eb8ba193-fd87-40d3-9545-c75deabe37cb
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ソース コードをプリコンパイルする時期
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

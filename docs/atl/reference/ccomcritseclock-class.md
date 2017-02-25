@@ -1,8 +1,7 @@
 ---
 title: "CComCritSecLock クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "CComCritSecLock クラス"
 ms.assetid: 223152a1-86c3-4ef9-89a7-f455fe791b0e
 caps.latest.revision: 19
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 22
 ---
 # CComCritSecLock クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

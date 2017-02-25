@@ -1,8 +1,7 @@
 ---
 title: "同時実行ランタイムとその他の同時実行モデルの比較 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/08/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "同時実行ランタイム、他のモデルとの比較"
 ms.assetid: d8b9a1f4-f15f-43c3-a5b4-c0991edf9c86
 caps.latest.revision: 18
-caps.handback.revision: 18
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 18
 ---
 # 同時実行ランタイムとその他の同時実行モデルの比較
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

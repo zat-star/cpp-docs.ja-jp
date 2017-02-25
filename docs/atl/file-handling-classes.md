@@ -1,8 +1,7 @@
 ---
 title: "ファイル処理クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "ファイル クラス [C++]"
 ms.assetid: 94355eb1-daa3-4825-b183-7392b3899561
 caps.latest.revision: 10
-caps.handback.revision: 5
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 5
 ---
 # ファイル処理クラス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

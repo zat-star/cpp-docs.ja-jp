@@ -1,8 +1,7 @@
 ---
-title: "_kbhit | Microsoft Docs"
+title: "kbhit | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -25,27 +24,17 @@ apilocation:
   - "api-ms-win-crt-stdio-l1-1-0.dll"
 apitype: "DLLExport"
 f1_keywords: 
-  - "_kbhit"
   - "kbhit"
-  - "conio/_kbhit"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
-  - "_kbhit 関数"
-  - "コンソール"
-  - "コンソール, チェック"
   - "kbhit 関数"
-  - "キーボード入力"
-  - "キーボード, チェック (入力を)"
-  - "キーボード, キーボード入力"
-  - "ユーザー入力, チェック (キーボードを)"
 ms.assetid: e82a1cc9-bbec-4150-b678-a7e433220fe4
 caps.latest.revision: 14
-caps.handback.revision: 14
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # _kbhit
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

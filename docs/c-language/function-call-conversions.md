@@ -1,8 +1,7 @@
 ---
 title: "関数呼び出しでの変換 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "関数呼び出し, 引数の型変換"
   - "関数呼び出し, 変換"
   - "関数 [C], 引数の変換"
 ms.assetid: 04ea0f81-509a-4913-8b12-0937a81babcf
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 関数呼び出しでの変換
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

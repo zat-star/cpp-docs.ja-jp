@@ -1,8 +1,7 @@
 ---
 title: "C 複合代入 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "代入演算子, 複合"
   - "複合代入演算子"
   - "演算子 [C], 割り当て"
 ms.assetid: db7b5893-cd56-4f1c-9981-5a024200ab63
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # C 複合代入
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

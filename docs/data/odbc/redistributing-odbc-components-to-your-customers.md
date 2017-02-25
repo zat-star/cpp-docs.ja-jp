@@ -1,8 +1,7 @@
 ---
 title: "ODBC の構成要素の配布 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "ODBC, 配布 (コンポーネントを)"
 ms.assetid: 17b065b4-a307-4b89-99ac-d05831cfab87
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # ODBC の構成要素の配布
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

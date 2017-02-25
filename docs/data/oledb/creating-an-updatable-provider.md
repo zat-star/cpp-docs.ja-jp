@@ -1,8 +1,7 @@
 ---
 title: "更新可能なプロバイダーの作成 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "OLE DB プロバイダー, 更新可能な"
 ms.assetid: bdfd5c9f-1c6f-4098-822c-dd650e70ab82
 caps.latest.revision: 14
-caps.handback.revision: 14
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 14
 ---
 # 更新可能なプロバイダーの作成
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

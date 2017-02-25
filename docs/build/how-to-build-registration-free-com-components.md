@@ -1,8 +1,7 @@
 ---
 title: "方法 : 登録を必要としない COM をビルドする | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ helpviewer_keywords:
   - "COM コンポーネント, 登録を必要としない"
 ms.assetid: 7e585d6a-0314-45b2-8f1b-cae9ac4df037
 caps.latest.revision: 11
-caps.handback.revision: 11
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 11
 ---
 # 方法 : 登録を必要としない COM をビルドする
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "ファイル読み出し/書き込みアクセス定数 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,7 +12,6 @@ f1_keywords:
   - "c.constants.file"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "アクセス (ファイル読み取り/書き込みの定数に)"
   - "定数 [C++], ファイル属性"
@@ -22,10 +20,10 @@ helpviewer_keywords:
   - "書き込みアクセス定数"
 ms.assetid: 56cd1d22-39a5-4fcf-bea2-7046d249e8ee
 caps.latest.revision: 6
-caps.handback.revision: 6
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # ファイル読み出し/書き込みアクセス定数
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "CWindowDC クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "画面出力クラス"
 ms.assetid: 876a3641-4cde-471c-b0d1-fe58b32af79c
 caps.latest.revision: 22
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 24
 ---
 # CWindowDC クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

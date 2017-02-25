@@ -1,8 +1,7 @@
 ---
 title: "[HLSL] プロパティ ページ | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,10 +14,10 @@ dev_langs:
   - "C++"
 ms.assetid: 0c65f5ec-a2a5-4f5b-8d4c-fa57113a5a1d
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "BrianPeek"
 ms.author: "brpeek"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # [HLSL] プロパティ ページ
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

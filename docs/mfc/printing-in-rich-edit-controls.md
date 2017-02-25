@@ -1,8 +1,7 @@
 ---
 title: "リッチ エディット コントロールでの印刷 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "リッチ エディット コントロール, 印刷"
 ms.assetid: dbda0e40-018f-424e-b5d8-7b489aaf27af
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # リッチ エディット コントロールでの印刷
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "シリアル化 : シリアル化可能なクラスの作成 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -27,10 +26,10 @@ helpviewer_keywords:
   - "VERSIONABLE_SCHEMA マクロ"
 ms.assetid: 59a14d32-1cc8-4275-9829-99639beee27c
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # シリアル化 : シリアル化可能なクラスの作成
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

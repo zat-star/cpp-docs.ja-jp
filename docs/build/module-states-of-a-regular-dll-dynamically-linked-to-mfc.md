@@ -1,8 +1,7 @@
 ---
 title: "MFC と動的にリンクされるレギュラー DLL のモジュール状態 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,10 +18,10 @@ helpviewer_keywords:
   - "標準 DLL [C++], 動的リンク (MFC に)"
 ms.assetid: b4493e79-d25e-4b7f-a565-60de5b32c723
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # MFC と動的にリンクされるレギュラー DLL のモジュール状態
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

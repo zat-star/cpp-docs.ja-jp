@@ -1,8 +1,7 @@
 ---
 title: "クリップボード : Windows クリップボードの使用方法 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -22,10 +21,10 @@ helpviewer_keywords:
   - "Windows クリップボード [C++]"
 ms.assetid: 24415b42-9301-4a70-b69a-44c97918319f
 caps.latest.revision: 10
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 6
 ---
 # クリップボード : Windows クリップボードの使用方法
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

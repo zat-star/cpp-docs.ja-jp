@@ -1,8 +1,7 @@
 ---
 title: "ランタイム オブジェクト モデル サービス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,10 +16,10 @@ helpviewer_keywords:
   - "ランタイム オブジェクト モデル サービス マクロ"
 ms.assetid: 4a3e79df-2ee3-43a4-8193-20298828de85
 caps.latest.revision: 15
-caps.handback.revision: 6
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 16
 ---
 # ランタイム オブジェクト モデル サービス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

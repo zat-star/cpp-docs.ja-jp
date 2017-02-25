@@ -1,8 +1,7 @@
 ---
 title: "PPL における取り消し処理 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "並列処理ツリー [同時実行ランタイム]"
 ms.assetid: baaef417-b2f9-470e-b8bd-9ed890725b35
 caps.latest.revision: 31
-caps.handback.revision: 28
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 28
 ---
 # PPL における取り消し処理
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

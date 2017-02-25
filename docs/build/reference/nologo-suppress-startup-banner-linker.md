@@ -1,8 +1,7 @@
 ---
 title: "/NOLOGO (著作権情報の非表示) (リンカー) | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -24,10 +23,10 @@ helpviewer_keywords:
   - "バージョン番号, 防止 (リンカー表示を)"
 ms.assetid: 3b20dddd-eca6-4545-a331-9f70bf720197
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # /NOLOGO (著作権情報の非表示) (リンカー)
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

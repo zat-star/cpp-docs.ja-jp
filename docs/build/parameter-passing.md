@@ -1,8 +1,7 @@
 ---
 title: "パラメーターの引き渡し | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,10 +12,10 @@ dev_langs:
   - "C++"
 ms.assetid: e838ee5f-c2fe-40b0-9a23-8023c949c820
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # パラメーターの引き渡し
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

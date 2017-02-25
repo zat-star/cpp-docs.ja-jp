@@ -1,8 +1,7 @@
 ---
 title: "構造体宣言 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "無名構造体"
   - "埋め込み構造体"
@@ -20,10 +18,10 @@ helpviewer_keywords:
   - "型 [C], 宣言"
 ms.assetid: 5be3be77-a236-4153-b574-7aa77675df7f
 caps.latest.revision: 10
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 10
 ---
 # 構造体宣言
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

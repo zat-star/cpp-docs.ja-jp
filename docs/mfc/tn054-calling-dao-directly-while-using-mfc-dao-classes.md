@@ -1,8 +1,7 @@
 ---
 title: "テクニカル ノート 54: MFC DAO クラス使用中の DAO の直接呼び出し | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -24,10 +23,10 @@ helpviewer_keywords:
   - "TN054"
 ms.assetid: f7de7d85-8d6c-4426-aa05-2e617c0da957
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # テクニカル ノート 54: MFC DAO クラス使用中の DAO の直接呼び出し
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

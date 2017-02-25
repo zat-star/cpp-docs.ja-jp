@@ -1,8 +1,7 @@
 ---
 title: "COleLinksDialog クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "OLE の [リンクの編集] ダイアログ ボックス"
 ms.assetid: fb2eb638-2809-46db-ac74-392a732affc7
 caps.latest.revision: 22
-caps.handback.revision: 10
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 24
 ---
 # COleLinksDialog クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

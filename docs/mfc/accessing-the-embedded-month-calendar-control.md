@@ -1,8 +1,7 @@
 ---
 title: "埋め込み月間予定表コントロールへのアクセス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,10 +19,10 @@ helpviewer_keywords:
   - "月間予定表コントロール, 埋め込み (日時指定の)"
 ms.assetid: 355e97ed-cf81-4df3-a2f8-9ddbbde93227
 caps.latest.revision: 11
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 埋め込み月間予定表コントロールへのアクセス
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

@@ -1,8 +1,7 @@
 ---
 title: "関数の宣言と定義 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,7 +10,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "宣言 (関数を)"
   - "宣言 (関数を), 関数定義"
@@ -23,10 +21,10 @@ helpviewer_keywords:
   - "ローカル宣言"
 ms.assetid: 43fd98eb-7441-4473-a5d9-fc88c75577f7
 caps.latest.revision: 8
-caps.handback.revision: 8
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 8
 ---
 # 関数の宣言と定義
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

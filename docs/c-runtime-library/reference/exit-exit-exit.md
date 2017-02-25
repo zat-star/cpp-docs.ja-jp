@@ -1,8 +1,7 @@
 ---
 title: "終了、_Exit、_exit | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -34,7 +33,6 @@ f1_keywords:
   - "stdlib/_Exit"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "exit 関数"
   - "_exit 関数"
@@ -43,10 +41,10 @@ helpviewer_keywords:
   - "プロセス終了、呼び出し"
 ms.assetid: b1501fa6-27c2-478c-9e93-cc4fd802a01f
 caps.latest.revision: 17
-caps.handback.revision: 17
 author: "corob-msft"
 ms.author: "corob"
 manager: "ghogen"
+caps.handback.revision: 17
 ---
 # 終了、_Exit、_exit
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

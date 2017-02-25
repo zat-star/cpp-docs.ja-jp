@@ -1,8 +1,7 @@
 ---
 title: "char 型 | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +10,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "C++"
-  - "C"
 helpviewer_keywords: 
   - "char キーワード [C]"
   - "型 char"
   - "unsigned char キーワード [C]"
 ms.assetid: a5da0866-e780-4793-be87-15a8426e7ea0
 caps.latest.revision: 7
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # char 型
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

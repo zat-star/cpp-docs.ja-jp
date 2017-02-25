@@ -1,8 +1,7 @@
 ---
 title: "方法: ダイアログ ボックスにユーザー コントロールおよびホストを作成する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "Windows フォーム [C++], MFC サポート"
 ms.assetid: 03a53032-2f03-4fa2-b567-031615a26011
 caps.latest.revision: 29
-caps.handback.revision: 29
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 29
 ---
 # 方法: ダイアログ ボックスにユーザー コントロールおよびホストを作成する
 [!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]

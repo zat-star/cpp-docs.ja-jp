@@ -1,8 +1,7 @@
 ---
 title: "CDefaultCompareTraits クラス | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,10 +20,10 @@ helpviewer_keywords:
   - "CDefaultCompareTraits クラス"
 ms.assetid: a17e2740-e7b4-48f2-aeb7-c80ce84b63f7
 caps.latest.revision: 19
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 22
 ---
 # CDefaultCompareTraits クラス
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]

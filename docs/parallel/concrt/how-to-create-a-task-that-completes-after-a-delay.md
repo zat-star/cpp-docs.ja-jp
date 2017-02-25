@@ -1,8 +1,7 @@
 ---
 title: "方法: 遅延後に完了するタスクを作成する | Microsoft Docs"
 ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
+ms.date: "11/04/2016"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,10 +15,10 @@ helpviewer_keywords:
   - "例 [C++]、遅延の後に完了するタスクを作成します。"
 ms.assetid: 3fc0a194-3fdb-4eba-8b8a-b890981a985d
 caps.latest.revision: 9
-caps.handback.revision: 7
 author: "mikeblome"
 ms.author: "mblome"
 manager: "ghogen"
+caps.handback.revision: 7
 ---
 # 方法: 遅延後に完了するタスクを作成する
 [!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
