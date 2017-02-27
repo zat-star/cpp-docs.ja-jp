@@ -1,73 +1,93 @@
 ---
 title: "SAL 注釈 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__bcount 注釈"
-  - "__checkreturn 注釈"
-  - "__deref 注釈"
-  - "__deref_opt 注釈"
-  - "__ecount 注釈"
-  - "__full 注釈"
-  - "__in 注釈"
-  - "__inout 注釈"
-  - "__nz 注釈"
-  - "__opt 注釈"
-  - "__out 注釈"
-  - "__part 注釈"
-  - "__ref 注釈"
-  - "__z 注釈"
-  - "_bcount 注釈"
-  - "_CA_SHOULD_CHECK_RETURN"
-  - "_deref 注釈"
-  - "_deref_opt 注釈"
-  - "_ecount 注釈"
-  - "_full 注釈"
-  - "_in 注釈"
-  - "_inout 注釈"
-  - "_nz 注釈"
-  - "_opt 注釈"
-  - "_out 注釈"
-  - "_part 注釈"
-  - "_ref 注釈"
-  - "_z 注釈"
-  - "注釈 [C++]"
-  - "bcount 注釈"
-  - "deref 注釈"
-  - "deref_opt 注釈"
-  - "ecount 注釈"
-  - "full 注釈"
-  - "in 注釈"
-  - "inout 注釈"
-  - "nz 注釈"
-  - "opt 注釈"
-  - "out 注釈"
-  - "part 注釈"
-  - "ref 注釈"
-  - "SAL 注釈"
-  - "SAL 注釈, _CA_SHOULD_CHECK_RETURN"
-  - "z 注釈"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- __z annotation
+- ref annotation
+- _opt annotation
+- __checkreturn annotatioin
+- __deref_opt annotation
+- deref_opt annotation
+- __deref annotation
+- __in annotation
+- annotations [C++]
+- z annotation
+- _inout annotation
+- __ref annotation
+- full annotation
+- _in annotation
+- _ref annotation
+- __out annotation
+- _ecount annotation
+- SAL annotations
+- __opt annotation
+- inout annotation
+- in annotation
+- _CA_SHOULD_CHECK_RETURN
+- __bcount annotation
+- _full annotation
+- _bcount annotation
+- deref annotation
+- part annotation
+- _out annotation
+- __nz annotation
+- __part annotation
+- opt annotation
+- __full annotation
+- _nz annotation
+- _z annotation
+- out annotation
+- __ecount annotation
+- __inout annotation
+- SAL annotations, _CA_SHOULD_CHECK_RETURN
+- _deref_opt annotation
+- _deref annotation
+- nz annotation
+- _part annotation
+- ecount annotation
+- bcount annotation
 ms.assetid: 81893638-010c-41a0-9cb3-666fe360f3e0
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# SAL 注釈
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: bdb69f6744c45cacaf4c403967842302f2dc9865
 
-ライブラリ ヘッダー ファイルを調べると、`_In_z` や `_Out_z_cap_(_Size)` など、通常とは異なる注釈がいくつかあることに気付く場合があります。  これらは、Microsoft のソース コード注釈言語 \(SAL\) の例です。SAL は、関数が自身のパラメーターをどのように使用するかを記述する注釈のセットを提供します。つまり、これらの注釈は、たとえば関数がそのパラメーターについて何を前提としているか、または関数が終了時に何を保証するかを示します。  これらの注釈はヘッダー ファイル \<sal.h\> で定義されています。  
+---
+# <a name="sal-annotations"></a>SAL 注釈
+ライブラリ ヘッダー ファイルを調べると、`_In_z` や `_Out_z_cap_(_Size)` など、通常とは異なる注釈がいくつかあることに気付く場合があります。 これらは、Microsoft のソース コード注釈言語 (SAL) の例です。SAL は、関数が自身のパラメーターをどのように使用するかを記述する注釈のセットを提供します。つまり、これらの注釈は、たとえば関数がそのパラメーターについて何を前提としているか、または関数が終了時に何を保証するかを示します。 これらの注釈はヘッダー ファイル \<sal.h> で定義されています。  
   
- [!INCLUDE[cpp_dev11_long](../build/includes/cpp_dev11_long_md.md)] での SAL 注釈の使用の詳細については、「[SAL 注釈を使って C\/C\+\+ のコード障害を減らす方法](../Topic/Using%20SAL%20Annotations%20to%20Reduce%20C-C++%20Code%20Defects.md)」を参照してください。  
+ Visual Studio での SAL 注釈の使用の詳細については、「[Using SAL Annotations to Reduce C/C++ Code Defects (SAL 注釈を使って C/C++ のコード障害を減らす方法)](/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)
+
+
+<!--HONumber=Feb17_HO4-->
+
+

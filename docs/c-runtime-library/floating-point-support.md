@@ -1,100 +1,279 @@
 ---
-title: "浮動小数点サポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.math"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "浮動小数点数"
-  - "浮動小数点数, 数値演算ルーチン"
-  - "数値演算ルーチン"
+title: "浮動小数点サポート | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.math
+dev_langs:
+- C++
+helpviewer_keywords:
+- floating-point numbers, math routines
+- math routines
+- floating-point numbers
 ms.assetid: e4fcaf69-5c8e-4854-a9bb-1f412042131e
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# 浮動小数点サポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: e289b439f53b987f57face51952d54dc16002edd
+ms.openlocfilehash: f378805dc00885c10816c989da22f13357b8f894
 
-多くの Microsoft ランタイム ライブラリ関数には、数値演算コプロセッサやコンパイラに付随する浮動小数点ライブラリの浮動小数点のサポートが必要となります。  浮動小数点サポート機能は、必要な場合にのみ読み込まれます。  
+---
+# <a name="floating-point-support"></a>浮動小数点サポート
+Microsoft C ランタイム ライブラリ (CRT) では、ISO C99 で必要とされる関数をすべて含む、多数の浮動小数点数値演算ライブラリ関数を提供しています。 これらの関数は、正確性とパフォーマンスのバランスをとるために実装されます。 正確に丸めた結果を生成するには非常にコストがかかる場合があるため、正確に丸めた結果の近似値を効率的に生成できるように当該関数が設計されました。 ほとんどのケースでは、生成される結果は正確に丸めた結果の +/-&1; ulp の誤差範囲内に収まります。ただし、不正確さがそれより大きくなる場合もあります。  
   
- `printf` または `scanf` ファミリの関数の呼び出しの書式指定文字列で浮動小数点型の指定子を使用する場合、浮動小数点サポートが必要であることをコンパイラに示すために、浮動小数点値または引数リスト内の浮動小数点値へのポインターを指定する必要があります。  
+ 浮動小数点数値演算ライブラリ関数の多くは、CPU アーキテクチャの種類に応じて実装の種類も異なります。 たとえば、32 ビット x86 CRT の実装は、64 ビット x64 CRT の実装とは異なります。 さらに、関数の中には特定の CPU アーキテクチャに対して複数の実装が用意されているものもあります。 CPU でサポートされている命令セットに応じて実行時に動的に実装を選択するのが最も効率的な方法です。 たとえば、32 ビット x86 CRT で、一部の関数には x87 実装と SSE2 実装の両方が用意されています。 SSE2 をサポートしている CPU で実行すると、速い方の SSE2 実装が使用されます。 SSE2 をサポートしていない CPU で実行すると、遅い方の x87 実装が使用されます。 数値演算ライブラリ関数の実装の種類が異なると、結果を生成するために使用する CPU 命令およびアルゴリズムも異なる場合があります。このため、CPU 間で、関数の生成する結果が異なる場合があります。 ほとんどの場合、結果は正確に丸めた結果の +/-&1; ulp の誤差範囲内に収まります。ただし、実際の結果は、CPU 間で異なる場合があります。  
   
- 浮動小数点例外の処理方法を示すサンプル コードについては、「[\_fpieee\_flt](../c-runtime-library/reference/fpieee-flt.md)」を参照してください。  
+ 以前の 16 ビット バージョンの Microsoft C/C++ および Microsoft Visual C++ では、80 ビット精度浮動小数点データ型として `long double` 型をサポートしていました。 最近のバージョンの Visual C++ では、`long double` データ型は、`double` 型と同じ 64 ビット精度浮動小数点データ型となっています。 コンパイラは、`long double` と `double` を異なる型として扱いますが、`long double` 関数は、対応する `double` 関数と同じものとなります。 CRT では、ISO C99 ソース コードの互換性を維持するために `long double` バージョンの数値演算関数を提供しています。ただし、そのバイナリ表現は他のコンパイラと異なる場合があるので注意してください。  
   
- 中間値の浮動小数点の精度は、関数 [\_control87、\_controlfp、\_\_control87\_2](../Topic/_control87,%20_controlfp,%20__control87_2.md) によって制御されます。  既定では、`_controlfp` での精度制御は 53 ビット \(\_PC\_53\) に設定されています。  FP10.OBJ を使用してリンクすると、既定の精度制御は 64 ビット \(\_PC\_64\) に変更されます。  リンカーのコマンド ラインで、FP10.OBJ は LIBC.LIB、LIBCMT.LIB、または MSVCRT.LIB の前にある必要があります。  
+ CRT では、以下の浮動小数点関数をサポートしています。  
   
-### 浮動小数点関数  
+ [abs、labs、llabs、_abs64](../c-runtime-library/reference/abs-labs-llabs-abs64.md)  
   
-|ルーチン|用途|同等の .NET Framework 関数|  
-|----------|--------|---------------------------|  
-|[abs](../Topic/abs.md)|`int` の絶対値を返す|[\<caps:sentence id\="tgt14" sentenceid\="9594ba199e25e9de6b463c8efc9fbe95" class\="tgtSentence"\>System::Math::Abs\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.abs.aspx)|  
-|[acos、acosf](../c-runtime-library/reference/acos-acosf-acosl.md)|アークコサインを計算する|[\<caps:sentence id\="tgt17" sentenceid\="954a441495360a1fa8b0170297b2ff38" class\="tgtSentence"\>System::Math::Acos\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.acos.aspx)|  
-|[asin、asinf](../c-runtime-library/reference/asin-asinf-asinl.md)|アークサインを計算する|[\<caps:sentence id\="tgt20" sentenceid\="313917cde9698a0924536719f5bece25" class\="tgtSentence"\>System::Math::Asin\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.asin.aspx)|  
-|[atan、atanf、atan2、atan2f](../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)|アークタンジェントを計算する|[System::Math::Atan](https://msdn.microsoft.com/en-us/library/system.math.atan.aspx)、[System::Math::Atan2](https://msdn.microsoft.com/en-us/library/system.math.atan2.aspx)|  
-|[atof、\_atof\_l、\_wtof、\_wtof\_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|文字列を倍精度浮動小数点値に変換する|[System::Convert::ToSingle](https://msdn.microsoft.com/en-us/library/system.convert.tosingle.aspx)、[System::Convert::ToDouble](https://msdn.microsoft.com/en-us/library/system.convert.todouble.aspx)|  
-|[ベッセル関数](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|ベッセル関数 `_j0`、`_j1`、`_jn`、`_y0`、`_y1`、`_yn` を計算する|該当なし。  標準 C 関数を呼び出すには、`PInvoke` を使用します。  詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。|  
-|[\_cabs](../Topic/_cabs.md)|複素数の絶対値を求める|該当なし。|  
-|[cbrt](../c-runtime-library/reference/cbrt-cbrtf-cbrtl.md)|立方根を計算する|該当なし。|  
-|[ceil、ceilf](../c-runtime-library/reference/ceil-ceilf-ceill.md)|整数の切り上げを求める|[\<caps:sentence id\="tgt39" sentenceid\="656009d71fb974368bded363746de018" class\="tgtSentence"\>System::Math::Ceiling\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.ceiling.aspx)|  
-|[\_chgsign、\_chgsignf、\_chgsignl](../c-runtime-library/reference/chgsign-chgsignf-chgsignl.md)|倍精度浮動小数点または long double 精度浮動小数点引数の符号を反転する|該当なし。|  
-|[\_clear87、\_clearfp](../c-runtime-library/reference/clear87-clearfp.md)|浮動小数点ステータス ワードを取得してクリアする|該当なし。|  
-|[\_control87、\_controlfp、\_\_control87\_2](../Topic/_control87,%20_controlfp,%20__control87_2.md), [\_controlfp\_s](../c-runtime-library/reference/controlfp-s.md)|古い浮動小数点制御ワードを取得して新しい制御ワード値を設定する|該当なし。|  
-|[copysign、copysignf、copysignl、\_copysign、\_copysignf、\_copysignl](../c-runtime-library/reference/copysign-copysignf-copysignl-copysign-copysignf-copysignl.md)|別の符号を持つ値を 1 つ返す|該当なし。|  
-|[cos、cosf、cosh、coshf](../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)|コサインを計算する|[System::Math::Cos](https://msdn.microsoft.com/en-us/library/system.math.cos.aspx)、[System::Math::Cosh](https://msdn.microsoft.com/en-us/library/system.math.cosh.aspx)|  
-|[difftime](../c-runtime-library/reference/difftime-difftime32-difftime64.md)|指定された 2 つの時間値の差を計算する|[\<caps:sentence id\="tgt54" sentenceid\="5f4f365a3cd7f368db2f6ce31b797fdf" class\="tgtSentence"\>System::DateTime::Subtract\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.datetime.subtract.aspx)|  
-|[div](../c-runtime-library/reference/div.md)|1 つの整数を別の整数で除算し、商と剰余を返す|該当なし。|  
-|[\_ecvt](../c-runtime-library/reference/ecvt.md), [\_ecvt\_s](../Topic/_ecvt_s.md)|`double` を指定された長さの文字列に変換する|[\<caps:sentence id\="tgt60" sentenceid\="ed8e24ad5c647dc4efa4fbe1e9bbc5e3" class\="tgtSentence"\>System::Convert::ToString\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)|  
-|[exp、expf](../c-runtime-library/reference/exp-expf.md)|指数関数を計算する|[\<caps:sentence id\="tgt63" sentenceid\="81a65df6ac66cdc4a4b12c2f7e555487" class\="tgtSentence"\>System::Math::Exp\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.exp.aspx)|  
-|[fabs、fabsf](../c-runtime-library/reference/fabs-fabsf-fabsl.md)|絶対値を求める|[\<caps:sentence id\="tgt66" sentenceid\="9594ba199e25e9de6b463c8efc9fbe95" class\="tgtSentence"\>System::Math::Abs\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.abs.aspx)|  
-|[\_fcvt](../Topic/_fcvt.md)、[\_fcvt\_s](../c-runtime-library/reference/fcvt-s.md)|`double` を小数点以下が指定された桁数である文字列に変換する|[\<caps:sentence id\="tgt69" sentenceid\="ed8e24ad5c647dc4efa4fbe1e9bbc5e3" class\="tgtSentence"\>System::Convert::ToString\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)|  
-|[\_finite](../c-runtime-library/reference/finite-finitef.md)|指定された倍精度浮動小数点値が有限かどうかを判別する|[\<caps:sentence id\="tgt72" sentenceid\="8d081c50adeda3dde4cebab81a0b3583" class\="tgtSentence"\>System::Double::IsInfinity\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.double.isinfinity.aspx)|  
-|[floor、floorf](../c-runtime-library/reference/floor-floorf-floorl.md)|引数以下の最大の整数を求める|[\<caps:sentence id\="tgt75" sentenceid\="609db9ab0433b647d5350d3b965d70f9" class\="tgtSentence"\>System::Math::Floor\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.floor.aspx)|  
-|[fmod、fmodf](../Topic/fmod,%20fmodf.md)|浮動小数点の剰余を求める|[\<caps:sentence id\="tgt78" sentenceid\="127a04426267ccb17fb4b566ad56de9c" class\="tgtSentence"\>System::Math::IEEERemainder\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.ieeeremainder.aspx)|  
-|[\_fpclass](../c-runtime-library/reference/fpclass-fpclassf.md)|浮動小数点クラスに関する情報を含むステータス ワードを返す|[System::Double::IsInfinity](https://msdn.microsoft.com/en-us/library/system.double.isinfinity.aspx)、[System::Double::IsNegativeInfinity](https://msdn.microsoft.com/en-us/library/system.double.isnegativeinfinity.aspx)、[System::Double::IsPositiveInfinity](https://msdn.microsoft.com/en-us/library/system.double.ispositiveinfinity.aspx)、[System::Double::IsNan](https://msdn.microsoft.com/en-us/library/system.double.isnan.aspx)|  
-|[\_fpieee\_flt](../c-runtime-library/reference/fpieee-flt.md)|IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出す|該当なし。|  
-|[\_fpreset](../c-runtime-library/reference/fpreset.md)|浮動小数点演算パッケージを再初期化する||  
-|[frexp](../c-runtime-library/reference/frexp.md)|指数値を計算する|該当なし。|  
-|[\_gcvt](../c-runtime-library/reference/gcvt.md)、[\_gcvt\_s](../c-runtime-library/reference/gcvt-s.md)|浮動小数点値を文字列に変換する|[\<caps:sentence id\="tgt92" sentenceid\="ed8e24ad5c647dc4efa4fbe1e9bbc5e3" class\="tgtSentence"\>System::Convert::ToString\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)|  
-|[hypot、hypotf、hypotl、\_hypot、\_hypotf、\_hypotl](../c-runtime-library/reference/hypot-hypotf-hypotl-hypot-hypotf-hypotl.md)|直角三角形の斜辺を計算する|該当なし。|  
-|[\_isnan](../c-runtime-library/reference/isnan-isnan-isnanf.md)|指定された倍精度浮動小数点値が非数 \(NaN\) であることをチェックする|[\<caps:sentence id\="tgt97" sentenceid\="18f7dc07d0c506c23f2f7eb89262d274" class\="tgtSentence"\>System::Double::IsNan\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.double.isnan.aspx)|  
-|[labs](../misc/labs-llabs.md)|`long` の絶対値を返す|[\<caps:sentence id\="tgt100" sentenceid\="9594ba199e25e9de6b463c8efc9fbe95" class\="tgtSentence"\>System::Math::Abs\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.abs.aspx)|  
-|[ldexp](../c-runtime-library/reference/ldexp.md)|引数と 2<sup>exp</sup> \(指定された累乗\) の積を計算する|[\<caps:sentence id\="tgt103" sentenceid\="839e85fe5fb98e8520d40a703d06932b" class\="tgtSentence"\>System::Math::Pow\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.pow.aspx)|  
-|[ldiv](../Topic/ldiv,%20lldiv.md)|1 つの `long` 整数を別の long 整数で除算し、商と剰余を返す|該当なし。|  
-|[log、logf、log10、log10f](../Topic/log,%20logf,%20log10,%20log10f.md)|自然対数または 10 を底とする対数を計算する|[System::Math::Log](https://msdn.microsoft.com/en-us/library/system.math.log.aspx)、[System::Math::Log10](https://msdn.microsoft.com/en-us/library/system.math.log10.aspx)|  
-|[\_logb](../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)|倍精度浮動小数点引数の指数値を抽出する|該当なし。|  
-|[\_lrotl、\_lrotr](../c-runtime-library/reference/lrotl-lrotr.md)|`unsigned long int` を左 \(`_lrotl`\) または右 \(`_lrotr`\) にシフトする|該当なし。|  
-|[\_matherr](../c-runtime-library/reference/matherr.md)|数値演算エラーを処理する|該当なし。|  
-|[\_\_max](../c-runtime-library/reference/max.md)|2 つの値のうち大きい方を返す|[\<caps:sentence id\="tgt121" sentenceid\="6f9dcb228534c3e5b0013615b2b1d003" class\="tgtSentence"\>System::Math::Max\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.max.aspx)|  
-|[\_\_min](../c-runtime-library/reference/min.md)|2 つの値のうち小さい方を返す|[\<caps:sentence id\="tgt124" sentenceid\="ff471983fc666dec7ba58b17a0bf76e6" class\="tgtSentence"\>System::Math::Min\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.min.aspx)|  
-|[modf、modff](../c-runtime-library/reference/modf-modff-modfl.md)|引数を整数部と小数部に分割する|該当なし。|  
-|[nan、nanf、nanl](../c-runtime-library/reference/nan-nanf-nanl.md)|簡易な NaN 値を返す|[\<caps:sentence id\="tgt129" sentenceid\="c251043405ffa73fe857c83428b58fdc" class\="tgtSentence"\>System::Double::NaN\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.double.nan.aspx)|  
-|[\_nextafter](../c-runtime-library/reference/nextafter-functions.md)|次の表現可能なネイバーを返す|該当なし。|  
-|[pow、powf](../Topic/pow,%20powf,%20powl.md)|累乗された値を計算する|[\<caps:sentence id\="tgt135" sentenceid\="839e85fe5fb98e8520d40a703d06932b" class\="tgtSentence"\>System::Math::Pow\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.pow.aspx)|  
-|[printf、\_printf\_l、wprintf、\_wprintf\_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md), [printf\_s、\_printf\_s\_l、wprintf\_s、\_wprintf\_s\_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|指定された書式に従ってデータを `stdout` に書き込む|[System::Console::Write](https://msdn.microsoft.com/en-us/library/system.console.write.aspx)、[System::Console::WriteLine](https://msdn.microsoft.com/en-us/library/system.console.writeline.aspx)|  
-|[rand](../Topic/rand.md)、[rand\_s](../c-runtime-library/reference/rand-s.md)|疑似乱数を取得する|[\<caps:sentence id\="tgt141" sentenceid\="00574fde17be9de3e07567ef5abe0110" class\="tgtSentence"\>System::Random Class\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.random.aspx)|  
-|[rint、rintf、rintl](../c-runtime-library/reference/rint-rintf-rintl.md)|浮動小数点形式で最も近い整数に丸める|[\<caps:sentence id\="tgt143" sentenceid\="1c04aeb4aeff1752cb65adabcee29f53" class\="tgtSentence"\>System::Math::Round\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.round.aspx)|  
-|[\_rotl、\_rotr](../c-runtime-library/reference/rotl-rotl64-rotr-rotr64.md)|`unsigned int` を左 \(`_rotl`\) または右 \(`_rotr`\) にシフトする|該当なし。|  
-|[\_scalb](../c-runtime-library/reference/scalb.md)|引数を 2 の累乗で増減する|該当なし。|  
-|[scalbn、scalbnf、scalbnl、scalbln、scalblnf、scalblnl](../c-runtime-library/reference/scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl.md)|`FLT_RADIX` の累乗を乗算する|該当なし。|  
-|[scanf、wscanf](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)、[scanf\_s、\_scanf\_s\_l、wscanf\_s、\_wscanf\_s\_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)|指定された書式に従ってデータを `stdin` から読み取り、指定された場所にデータを書き込む|[System::Console::Read](https://msdn.microsoft.com/en-us/library/system.console.read.aspx)、[System::Console::ReadLine](https://msdn.microsoft.com/en-us/library/system.console.readline.aspx)|  
-|[\_set\_controlfp](../c-runtime-library/reference/set-controlfp.md)|新しい制御ワード値を設定する|該当なし。|  
-|[sin、sinf、sinh、sinhf](../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)|サインまたはハイパーボリック サインを計算する|[System::Math::Sin](https://msdn.microsoft.com/en-us/library/system.math.sin.aspx)、[System::Math::Sinh](https://msdn.microsoft.com/en-us/library/system.math.sinh.aspx)|  
-|[sqrt](../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)|平方根を求める|[\<caps:sentence id\="tgt162" sentenceid\="1a91af0bd8c63b4be64c7a0bec8dc8c4" class\="tgtSentence"\>System::Math::Sqrt\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.math.sqrt.aspx)|  
-|[srand](../c-runtime-library/reference/srand.md)|疑似乱数列を初期化する|[\<caps:sentence id\="tgt165" sentenceid\="00574fde17be9de3e07567ef5abe0110" class\="tgtSentence"\>System::Random Class\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.random.aspx)|  
-|[\_status87、\_statusfp、\_statusfp2](../c-runtime-library/reference/status87-statusfp-statusfp2.md)|浮動小数点ステータス ワードを取得する|該当なし。|  
-|[strtod、\_strtod\_l、wcstod、\_wcstod\_l](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md)|文字列を倍精度値に変換する|[\<caps:sentence id\="tgt169" sentenceid\="363f8f2cb09f8ca850491a65df66522e" class\="tgtSentence"\>System::Convert::ToDouble\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.convert.todouble.aspx)|  
-|[tan、tanf、tanh、tanhf](../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)|タンジェントまたはハイパーボリック タンジェントを計算する|[System::Math::Tan](https://msdn.microsoft.com/en-us/library/system.math.tan.aspx)、[System::Math::Tanh](https://msdn.microsoft.com/en-us/library/system.math.tanh.aspx)|  
+ [acos、acosf、acosl](../c-runtime-library/reference/acos-acosf-acosl.md)  
   
-## 参照  
+ [acosh、acoshf、acoshl](../c-runtime-library/reference/acosh-acoshf-acoshl.md)  
+  
+ [asin、asinf、asinl](../c-runtime-library/reference/asin-asinf-asinl.md)  
+  
+ [asinh、asinhf、asinhl](../c-runtime-library/reference/asinh-asinhf-asinhl.md)  
+  
+ [atan、atanf、atanl、atan2、atan2f、atan2l](../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)  
+  
+ [atanh、atanhf、atanhl](../c-runtime-library/reference/atanh-atanhf-atanhl.md)  
+  
+ [_atodbl、_atodbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)  
+  
+ [atof、_atof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)  
+  
+ [_atoflt、_atoflt_l、_atoldbl、_atoldbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)  
+  
+ [cbrt、cbrtf、cbrtl](../c-runtime-library/reference/cbrt-cbrtf-cbrtl.md)  
+  
+ [ceil、ceilf、ceill](../c-runtime-library/reference/ceil-ceilf-ceill.md)  
+  
+ [_chgsign、_chgsignf、_chgsignl](../c-runtime-library/reference/chgsign-chgsignf-chgsignl.md)  
+  
+ [_clear87、_clearfp](../c-runtime-library/reference/clear87-clearfp.md)  
+  
+ [compl](../c-runtime-library/reference/compl.md)  
+  
+ [conj、conjf、conjl](../c-runtime-library/reference/conj-conjf-conjl.md)  
+  
+ [_control87、\__control87_2、_controlfp](../c-runtime-library/reference/control87-controlfp-control87-2.md)  
+  
+ [_controlfp_s](../c-runtime-library/reference/controlfp-s.md)  
+  
+ [copysign、copysignf、copysignl、_copysign、_copysignf、_copysignl](../c-runtime-library/reference/copysign-copysignf-copysignl-copysign-copysignf-copysignl.md)  
+  
+ [cos、cosf、cosl](../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)  
+  
+ [cosh、coshf、coshl](../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)  
+  
+ [div](../c-runtime-library/reference/div.md)  
+  
+ [_ecvt](../c-runtime-library/reference/ecvt.md)  
+  
+ [ecvt](../c-runtime-library/reference/posix-ecvt.md)  
+  
+ [_ecvt_s](../c-runtime-library/reference/ecvt-s.md)  
+  
+ [erf、erff、erfl、erfc、erfcf、erfcl](../c-runtime-library/reference/erf-erff-erfl-erfc-erfcf-erfcl.md)  
+  
+ [exp、expf](../c-runtime-library/reference/exp-expf.md)  
+  
+ [exp2、exp2f、exp2l](../c-runtime-library/reference/exp2-exp2f-exp2l.md)  
+  
+ [expm1、expm1f、expm1l](../c-runtime-library/reference/expm1-expm1f-expm1l.md)  
+  
+ [fabs、fabsf](../c-runtime-library/reference/fabs-fabsf-fabsl.md)  
+  
+ [_fcvt](../c-runtime-library/reference/fcvt.md)  
+  
+ [fcvt](../c-runtime-library/reference/posix-fcvt.md)  
+  
+ [_fcvt_s](../c-runtime-library/reference/fcvt-s.md)  
+  
+ [fdim、fdimf、fdiml](../c-runtime-library/reference/fdim-fdimf-fdiml.md)  
+  
+ [feclearexcept](../c-runtime-library/reference/feclearexcept1.md)  
+  
+ [fegetenv](../c-runtime-library/reference/fegetenv1.md)  
+  
+ [fegetexceptflag](../c-runtime-library/reference/fegetexceptflag2.md)  
+  
+ [fegetround](../c-runtime-library/reference/fegetround-fesetround2.md)  
+  
+ [feholdexcept](../c-runtime-library/reference/feholdexcept2.md)  
+  
+ [feraiseexcept](../c-runtime-library/reference/feraiseexcept.md)  
+  
+ [ferror](../c-runtime-library/reference/ferror.md)  
+  
+ [fesetenv](../c-runtime-library/reference/fesetenv1.md)  
+  
+ [fesetexceptflag](../c-runtime-library/reference/fesetexceptflag2.md)  
+  
+ [fesetround](../c-runtime-library/reference/fegetround-fesetround2.md)  
+  
+ [fetestexcept](../c-runtime-library/reference/fetestexcept1.md)  
+  
+ [feupdateenv](../c-runtime-library/reference/feupdateenv.md)  
+  
+ [_finite、_finitef](../c-runtime-library/reference/finite-finitef.md)  
+  
+ [floor、floorf、floorl](../c-runtime-library/reference/floor-floorf-floorl.md)  
+  
+ [fma、fmaf、fmal](../c-runtime-library/reference/fma-fmaf-fmal.md)  
+  
+ [fmax、fmaxf、fmaxl](../c-runtime-library/reference/fmax-fmaxf-fmaxl.md)  
+  
+ [fmin、fminf、fminl](../c-runtime-library/reference/fmin-fminf-fminl.md)  
+  
+ [fmod、fmodf](../c-runtime-library/reference/fmod-fmodf.md)  
+  
+ [_fpclass、_fpclassf](../c-runtime-library/reference/fpclass-fpclassf.md)  
+  
+ [fpclassify](../c-runtime-library/reference/fpclassify.md)  
+  
+ [_fpieee_flt](../c-runtime-library/reference/fpieee-flt.md)  
+  
+ [_fpreset](../c-runtime-library/reference/fpreset.md)  
+  
+ [frexp](../c-runtime-library/reference/frexp.md)  
+  
+ [gcvt](../c-runtime-library/reference/posix-gcvt.md)  
+  
+ [_gcvt](../c-runtime-library/reference/gcvt.md)  
+  
+ [_gcvt_s](../c-runtime-library/reference/gcvt-s.md)  
+  
+ [hypot、hypotf、hypotl、_hypot、_hypotf、_hypotl](../c-runtime-library/reference/hypot-hypotf-hypotl-hypot-hypotf-hypotl.md)  
+  
+ [ilogb、ilogbf、ilogbl](../c-runtime-library/reference/ilogb-ilogbf-ilogbl2.md)  
+  
+ [imaxabs](../c-runtime-library/reference/imaxabs.md)  
+  
+ [imaxdiv](../c-runtime-library/reference/imaxdiv.md)  
+  
+ [isnan、_isnan、_isnanf](../c-runtime-library/reference/isnan-isnan-isnanf.md)  
+  
+ [_j0、_j1、_jn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)  
+  
+ [ldexp](../c-runtime-library/reference/ldexp.md)  
+  
+ [ldiv、lldiv](../c-runtime-library/reference/ldiv-lldiv.md)  
+  
+ [lgamma、lgammaf、lgammal](../c-runtime-library/reference/lgamma-lgammaf-lgammal.md)  
+  
+ [llrint、llrintf、llrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)  
+  
+ [llround、llroundf、llroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)  
+  
+ [log、logf、log10、log10f](../c-runtime-library/reference/log-logf-log10-log10f.md)  
+  
+ [log1p、log1pf、log1pl](../c-runtime-library/reference/log1p-log1pf-log1pl2.md)  
+  
+ [log2、log2f、log2l](../c-runtime-library/reference/log2-log2f-log2l.md)  
+  
+ [logb、logbf、logbl、_logb、_logbf](../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)  
+  
+ [lrint、lrintf、lrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)  
+  
+ [_lrotl、_lrotr](../c-runtime-library/reference/lrotl-lrotr.md)  
+  
+ [lround、lroundf、lroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)  
+  
+ [_matherr](../c-runtime-library/reference/matherr.md)  
+  
+ [__max](../c-runtime-library/reference/max.md)  
+  
+ [__min](../c-runtime-library/reference/min.md)  
+  
+ [modf、modff](../c-runtime-library/reference/modf-modff-modfl.md)  
+  
+ [nan、nanf、nanl](../c-runtime-library/reference/nan-nanf-nanl.md)  
+  
+ [nanf](../c-runtime-library/reference/nan-nanf-nanl.md)  
+  
+ [nanl](../c-runtime-library/reference/nan-nanf-nanl.md)  
+  
+ [nearbyint、nearbyintf、nearbyintl](../c-runtime-library/reference/nearbyint-nearbyintf-nearbyintl1.md)  
+  
+ [nextafter、nextafterf、nextafterl、_nextafter、_nextafterf、nexttoward、nexttowardf、nexttowardl](../c-runtime-library/reference/nextafter-functions.md)  
+  
+ [norm、normf、norml](../c-runtime-library/reference/norm-normf-norml1.md)  
+  
+ [pow、powf、powl](../c-runtime-library/reference/pow-powf-powl.md)  
+  
+ [remainder、remainderf、remainderl](../c-runtime-library/reference/remainder-remainderf-remainderl.md)  
+  
+ [remquo、remquof、remquol](../c-runtime-library/reference/remquo-remquof-remquol.md)  
+  
+ [rint、rintf、rintl](../c-runtime-library/reference/rint-rintf-rintl.md)  
+  
+ [_rotl、_rotl64、_rotr、_rotr64](../c-runtime-library/reference/rotl-rotl64-rotr-rotr64.md)  
+  
+ [round、roundf、roundl](../c-runtime-library/reference/round-roundf-roundl.md)  
+  
+ [_scalb](../c-runtime-library/reference/scalb.md)  
+  
+ [scalbn、scalbnf、scalbnl、scalbln、scalblnf、scalblnl](../c-runtime-library/reference/scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl.md)  
+  
+ [_set_controlfp](../c-runtime-library/reference/set-controlfp.md)  
+  
+ [_set_SSE2_enable](../c-runtime-library/reference/set-sse2-enable.md)  
+  
+ [sin、sinf、sinl](../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)  
+  
+ [sinh、sinhf、sinhl](../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)  
+  
+ [sqrt、sqrtf、sqrtl](../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)  
+  
+ [_status87、_statusfp、_statusfp2](../c-runtime-library/reference/status87-statusfp-statusfp2.md)  
+  
+ [strtof、_strtof_l](../c-runtime-library/reference/strtof-strtof-l-wcstof-wcstof-l.md)  
+  
+ [strtold、_strtold_l](../c-runtime-library/reference/strtold-strtold-l-wcstold-wcstold-l.md)  
+  
+ [tan、tanf、tanl](../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)  
+  
+ [tanh、tanhf、tanhl](../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)  
+  
+ [tgamma、tgammaf、tgammal](../c-runtime-library/reference/tgamma-tgammaf-tgammal.md)  
+  
+ [trunc、truncf、truncl](../c-runtime-library/reference/trunc-truncf-truncl.md)  
+  
+ [_wtof、_wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)  
+  
+ [_y0、_y1、_yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)  
+  
+## <a name="see-also"></a>関連項目  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
+
+
+<!--HONumber=Feb17_HO4-->
+
+
