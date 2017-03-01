@@ -1,96 +1,116 @@
 ---
-title: "CMapPtrToWord クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMapPtrToWord"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "16 ビット ワードの変換"
-  - "CMapPtrToWord クラス"
+title: "CMapPtrToWord クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMapPtrToWord
+dev_langs:
+- C++
+helpviewer_keywords:
+- 16-bit word mapping
+- CMapPtrToWord class
 ms.assetid: 4631c6b6-d49f-49d9-adc0-1e0491e32d7b
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# CMapPtrToWord クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: a1e9604aab0a0488533cacba851d200b87d634b3
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="cmapptrtoword-class"></a>CMapPtrToWord クラス
 void ポインターをキーとした 16 ビット ワードのマップをサポートします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMapPtrToWord : public CObject  
 ```  
   
-## メンバー  
- `CMapPtrToWord` のメンバー関数は [CMapStringToOb](../../mfc/reference/cmapstringtoob-class.md)クラスのメンバー関数に似ています。  メンバー関数については `CMapStringToOb` クラスの説明を参照してください。  関数のパラメーターまたは戻り値として `CObject` のポインターが使われている場合は、別の **word**。  関数のパラメーターまたは戻り値として `char` に `CString` か **const** のポインターが使われている場合は、`void`へのポインターに置き換えてください。  
+## <a name="members"></a>メンバー  
+ メンバー関数は、`CMapPtrToWord`クラスのメンバー関数に似ています[関数](../../mfc/reference/cmapstringtoob-class.md)します。 メンバー関数については `CMapStringToOb` クラスの説明を参照してください。 表示されたら、`CObject`ポインター関数パラメーターまたは戻り値は、次のように置き換えてください。 **WORD**します。 表示されたら、`CString`または**const**へのポインター`char`ように、関数パラメーターまたは戻り値へのポインターを置き換える`void`します。  
   
  `BOOL CMapStringToOb::Lookup( const char* <key>,`  
   
  `CObject*& <rValue> ) const;`  
   
- たとえば、への移動  
+ たとえば、次のように変換します。  
   
  `BOOL CMapPtrToWord::Lookup( const void* <key>, WORD& <rValue> ) const;`  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CMapStringToOb::CMapStringToOb](../Topic/CMapStringToOb::CMapStringToOb.md)|コンストラクターです。|  
+|----------|-----------------|  
+|[CMapStringToOb::CMapStringToOb](../../mfc/reference/cmapstringtoob-class.md#cmapstringtoob)|コンストラクターです。|  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[CMapStringToOb::GetCount](../Topic/CMapStringToOb::GetCount.md)|このマップ内の要素数を返します。|  
-|[CMapStringToOb::GetHashTableSize](../Topic/CMapStringToOb::GetHashTableSize.md)|ハッシュ テーブルの要素の数を決定します。|  
-|[CMapStringToOb::GetNextAssoc](../Topic/CMapStringToOb::GetNextAssoc.md)|次の要素を順番に取得します。|  
-|[CMapStringToOb::GetSize](../Topic/CMapStringToOb::GetSize.md)|このマップ内の要素数を返します。|  
-|[CMapStringToOb::GetStartPosition](../Topic/CMapStringToOb::GetStartPosition.md)|最初の要素の位置を返します。|  
-|[CMapStringToOb::HashKey](../Topic/CMapStringToOb::HashKey.md)|指定されたキーのハッシュ値を計算します。|  
-|[CMapStringToOb::InitHashTable](../Topic/CMapStringToOb::InitHashTable.md)|ハッシュ テーブルを初期化します。|  
-|[CMapStringToOb::IsEmpty](../Topic/CMapStringToOb::IsEmpty.md)|マップ空の状態 \(要素\) なしのテスト。|  
-|[CMapStringToOb::Lookup](../Topic/CMapStringToOb::Lookup.md)|void ポインターをキーに基づいて void ポインターを検索します。  ポインター値の比較に主に使用するポイントするエンティティではなく。|  
-|[CMapStringToOb::LookupKey](../Topic/CMapStringToOb::LookupKey.md)|指定したキー値に関連付けられているキーへの参照を返します。|  
-|[CMapStringToOb::RemoveAll](../Topic/CMapStringToOb::RemoveAll.md)|このマップからすべての要素を削除します。|  
-|[CMapStringToOb::RemoveKey](../Topic/CMapStringToOb::RemoveKey.md)|キーによって指定された要素を削除します。|  
-|[CMapStringToOb::SetAt](../Topic/CMapStringToOb::SetAt.md)|マップに要素を挿入します; 一致するキーがある場合は、既存の要素を置き換えます。|  
-  
-### パブリック演算子  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CMapStringToOb::operator](../Topic/CMapStringToOb::operator.md)|—マップに要素 `SetAt`の演算子の置換を挿入します。|  
+|----------|-----------------|  
+|[CMapStringToOb::GetCount](../../mfc/reference/cmapstringtoob-class.md#getcount)|このマップ内の要素の数を返します。|  
+|[CMapStringToOb::GetHashTableSize](../../mfc/reference/cmapstringtoob-class.md#gethashtablesize)|現在のハッシュ テーブル内の要素数を決定します。|  
+|[CMapStringToOb::GetNextAssoc](../../mfc/reference/cmapstringtoob-class.md#getnextassoc)|反復処理するためには、次の要素を取得します。|  
+|[CMapStringToOb::GetSize](../../mfc/reference/cmapstringtoob-class.md#getsize)|このマップ内の要素の数を返します。|  
+|[CMapStringToOb::GetStartPosition](../../mfc/reference/cmapstringtoob-class.md#getstartposition)|最初の要素の位置を返します。|  
+|[CMapStringToOb::HashKey](../../mfc/reference/cmapstringtoob-class.md#hashkey)|指定したキーのハッシュ値を計算します。|  
+|[CMapStringToOb::InitHashTable](../../mfc/reference/cmapstringtoob-class.md#inithashtable)|ハッシュ テーブルを初期化します。|  
+|[CMapStringToOb::IsEmpty](../../mfc/reference/cmapstringtoob-class.md#isempty)|マップが空の状態 (要素がない) をテストします。|  
+|[CMapStringToOb::Lookup](../../mfc/reference/cmapstringtoob-class.md#lookup)|Void ポインターのキーに基づく void ポインターを検索します。 エンティティではなく、ポインター値は、キーの比較に使用されます。|  
+|[CMapStringToOb::LookupKey](../../mfc/reference/cmapstringtoob-class.md#lookupkey)|指定したキー値に関連付けられているキーへの参照を返します。|  
+|[CMapStringToOb::RemoveAll](../../mfc/reference/cmapstringtoob-class.md#removeall)|このマップからすべての要素を削除します。|  
+|[CMapStringToOb::RemoveKey](../../mfc/reference/cmapstringtoob-class.md#removekey)|キーによって指定される要素を削除します。|  
+|[CMapStringToOb::SetAt](../../mfc/reference/cmapstringtoob-class.md#setat)|マップに要素を挿入します。一致するキーが見つかった場合は、既存の要素を置換します。|  
   
-## 解説  
- `CMapWordToPtr` は `CDumpContext` ランタイムへのアクセスおよびオブジェクトをダンプすることをサポートするために `IMPLEMENT_DYNAMIC` のマクロが組み込まれています。  個々のマップ要素をダンプする必要がある場合、は 1 にダンプ コンテキストの深さを設定するより大きい。  
+### <a name="public-operators"></a>パブリック演算子  
   
- ポインターに Word のマップは、シリアル化されない場合があります。  
+|名前|説明|  
+|----------|-----------------|  
+|[CMapStringToOb::operator](../../mfc/reference/cmapstringtoob-class.md#operator_at)|マップに要素を挿入などの演算子の代替`SetAt`します。|  
   
- `CMapPtrToWord` のオブジェクトを削除または要素が削除されると、ポインターという単語が削除されます。  主要なポインターに参照されるエンティティは削除されません。  
+## <a name="remarks"></a>コメント  
+ `CMapWordToPtr` には、`IMPLEMENT_DYNAMIC` マクロが組み込まれているので、`CDumpContext` オブジェクトへのランタイム型のアクセスとダンプをサポートします。 個々 のマップ要素をダンプする場合は、1 以上、ダンプ コンテキストの深さを設定する必要があります。  
   
- `CMapPtrToWord`の詳細については、" " [&#91;コレクション&#93;](../../mfc/collections.md)を参照してください。  
+ ワード間ポインターのマップは、シリアル化されません。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+ ときに、`CMapPtrToWord`オブジェクトが削除されると、またはその要素が削除された場合、ポインターと、単語が削除されます。 キーのポインターが参照されているエンティティは削除されません。  
+  
+ 詳細については`CMapPtrToWord`、記事を参照して[コレクション](../../mfc/collections.md)します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  `CMapPtrToWord`  
   
-## 必要条件  
- **Header:** afxcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxcoll.h  
   
-## 参照  
- [CObject クラス](../Topic/CObject%20Class.md)   
+## <a name="see-also"></a>関連項目  
+ [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
+
+
+
+
