@@ -1,46 +1,66 @@
 ---
 title: "入出力ストリーム | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "I/O [C++], ストリーム"
-  - "ストリーム入出力"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- I/O [C++], stream
+- stream I/O
 ms.assetid: 21a97566-91a7-42d6-b2f8-a4c16bc926f1
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# 入出力ストリーム
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 4fdfb4ece713c071a4b740127428c16303c0ab10
+ms.lasthandoff: 02/24/2017
 
-`basic_iostream`はヘッダー ファイルの istream\>で \<定義される入出力両方とも文字ベースの I\/O ストリームを処理するオブジェクトのクラス テンプレートです。  
+---
+# <a name="inputoutput-streams"></a>入出力ストリーム
+ヘッダー ファイル \<istream> で定義される `basic_iostream` は、入力および出力の両方の文字ベースの I/O ストリームを処理するオブジェクトのクラス テンプレートです。  
   
- `basic_iostream` の文字固有の特殊化を定義し、読み込み、コードを読みやすくするために役立つ 2 typedef があります: `iostream` \(ヘッダー ファイルの入出力ストリームと \<\>は違います\) `basic_iostream<char>`に基づく I\/O のストリームに; `wiostream` は `basic_iostream<wchar_t>`に基づく I\/O ストリームです。  
+ `basic_iostream` の文字に固有の特殊化を定義し、コードを読みやすくするのに役立つ&2; つの typedef があります。`iostream` (ヘッダー ファイル \<iostream> と混同しないでください) は、`basic_iostream<char>` に基づいている I/O ストリームです。`wiostream` は、`basic_iostream<wchar_t>` に基づいている I/O ストリームです。  
   
- 詳細については、「[basic\_iostream クラス](../standard-library/basic-iostream-class.md)」、「[iostream](../Topic/iostream.md)」、および「[wiostream](../Topic/wiostream.md)」を参照してください。  
+ 詳細については、「[basic_iostream クラス](../standard-library/basic-iostream-class.md)」、「[iostream](../standard-library/basic-iostream-class.md)」、および「[wiostream](../standard-library/basic-iostream-class.md)」を参照してください。  
   
- `basic_iostream` からの派生は、ファイルに対する文字データをストリームに使用されるクラス テンプレート `basic_fstream`です。  
+ `basic_iostream` からはクラス テンプレート `basic_fstream` が派生され、これ、ファイルとの間で文字データをストリーミングするのに使用されます。  
   
- また `basic_fstream`の文字固有の特殊な形式を指定する typedef があります。  これらは、`fstream``char`に基づく、`wfstream`ですファイル I\/O ストリームの、`wchar_t`に基づくファイル I\/O ストリーム。  詳細については、「[basic\_fstream クラス](../standard-library/basic-fstream-class.md)」、「[fstream](../Topic/fstream.md)」、および「[wfstream](../Topic/wfstream.md)」を参照してください。  これらの typedef を使用してヘッダー ファイルの fstream\>のコンテナー \<が必要です。  
+ `basic_fstream` の文字に固有の特殊化を提供する typedef もあります。 `char` に基づくファイルの I/O ストリームである `fstream`、および `wchar_t` に基づくファイルの I/O ストリームである `wfstream` があります。 詳細については、「[basic_fstream クラス](../standard-library/basic-fstream-class.md)」、「[fstream](../standard-library/basic-fstream-class.md)」、および「[wfstream](../standard-library/basic-fstream-class.md)」を参照してください。 これらの typedef を使用するには、ヘッダー ファイル \<fstream> を含める必要があります。  
   
 > [!NOTE]
->  したがって、ファイル I\/O を実行するために `basic_fstream` オブジェクトを使用する場合は、基になるバッファーが読み取りおよび書き込み用の個別に指定位置を含むが、現在の入力と現在の出力の位置は、と一緒に結び付けられ、あるデータが移動出力位置読み取ります。  
+>  `basic_fstream` オブジェクトを使用してファイル I/O を実行する場合、基になるバッファーに、個別に指定された読み取りと書き込みの位置が含まれていても、現在の入力位置と現在の出力位置が一緒に関連付けられるため、一部のデータを読み取ると、出力位置が移動します。  
   
- クラス テンプレート `basic_stringstream` と共通の特殊化、`stringstream`は I\/O ストリーム オブジェクトと同じように、頻繁に使用される文字データを挿入、取得します。  詳細については、「[basic\_stringstream クラス](../standard-library/basic-stringstream-class.md)」を参照してください。  
+ クラス テンプレート `basic_stringstream` とその一般的な特殊化 `stringstream` は、通常、I/O ストリーム オブジェクトで使用して、文字データを挿入および抽出します。 詳細については、「[basic_stringstream クラス](../standard-library/basic-stringstream-class.md)」を参照してください。  
   
-## 参照  
- [stringstream](../Topic/stringstream.md)   
- [basic\_stringstream クラス](../standard-library/basic-stringstream-class.md)   
- [\<sstream\>](../standard-library/sstream.md)   
- [iostream プログラミング](../Topic/iostream%20Programming.md)   
- [C\+\+ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>関連項目  
+ [stringstream](../standard-library/basic-stringstream-class.md)   
+ [basic_stringstream クラス](../standard-library/basic-stringstream-class.md)   
+ [\<sstream>](../standard-library/sstream.md)   
+ [iostream プログラミング](../standard-library/iostream-programming.md)   
+ [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

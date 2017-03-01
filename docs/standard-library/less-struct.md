@@ -1,78 +1,90 @@
 ---
 title: "less 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::less"
-  - "std.less"
-  - "less"
-  - "xfunctional/std::less"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "less 構造体"
-  - "less 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::less
+- std.less
+- less
+- xfunctional/std::less
+dev_langs:
+- C++
+helpviewer_keywords:
+- less struct
+- less function
 ms.assetid: 39349da3-11cd-4774-b2cc-b46af5aae5d7
 caps.latest.revision: 24
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# less 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
+ms.openlocfilehash: ff9530d08066cf0cf9b9421ac8b1b72d1a229bbe
+ms.lasthandoff: 02/24/2017
 
-引数に対して "より小さい" 演算 \(`operator<`\) を実行する二項述語。  
+---
+# <a name="less-struct"></a>less 構造体
+引数に対して "より小さい" 演算 (`operator<`) を実行する二項述語。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template<class Type = void>  
-   struct less : public binary_function <Type, Type, bool>   
-   {  
-      bool operator()(  
-         const Type& Left,   
-         const Type& Right  
-      ) const;  
-   };  
-  
-// specialized transparent functor for operator<  
-template<>  
-   struct less<void>  
-   {  
-      template<class Type1, class Type2>  
-      auto operator()(Type1&& Left, Type2&& Right) const  
-         -> decltype(std::forward<Type1>(Left)  
-            < std::forward<Type2>(Right));  
-   };  
-  
+```
+template <class Type = void>
+struct less : public binary_function <Type, Type, bool>  
+{
+    bool operator()(const Type& Left, const Type& Right) const;
+ };
+
+// specialized transparent functor for operator<
+template <>
+struct less<void>  
+{
+  template <class T, class U>
+  auto operator()(T&& Left, U&& Right) const`
+    -> decltype(std::forward<T>(Left) <std::forward<U>(Right));
+ };
 ```  
   
-#### パラメーター  
- `Type`, `Type1`, `Type2`  
+#### <a name="parameters"></a>パラメーター  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator<` をサポートする任意の型。  
   
  `Left`  
- より小さい演算の左オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type1` の左辺値および右辺値参照引数の完全転送を行います。  
+ より小さい演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- より小さい演算の右オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type2` の左辺値および右辺値参照引数の完全転送を行います。  
+ より小さい演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
-## 戻り値  
- `Left` `<` `Right` の結果。  特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator<` によって返された型が含まれます。  
+## <a name="return-value"></a>戻り値  
+ `Left``<``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator<` によって返された型が含まれます。  
   
-## 解説  
- 二項述語 `less`\<`Type`\> は、型 `Type` の要素値のセットの、等価クラスへの厳密弱順序を提供します。ただし、その型がそのように順序付けられる標準的な数学的要件を満たす場合のみです。  任意のポインター型に対する特殊化によって、要素の完全な順序付けが生成されます。この場合、一意の値を持つすべての要素が、相互の値に基づいて並べ替えられます。  
+## <a name="remarks"></a>コメント  
+ 二項述語 `less`< `Type`> は、型 `Type` の要素値のセットの、等価クラスへの厳密弱順序を提供します。ただし、その型がそのように順序付けられる標準的な数学的要件を満たす場合のみです。 任意のポインター型に対する特殊化によって、要素の完全な順序付けが生成されます。この場合、一意の値を持つすべての要素が、相互の値に基づいて並べ替えられます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_less.cpp  
 // compile with: /EHsc  
 #include <vector>  
@@ -115,17 +127,21 @@ cout << Iter1->m_i << " ";
  }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
-```  
-Original vector v1 = ( 41 18467 6334 26500 19169 15724 11478 )  
-Sorted vector v1 = ( 41 6334 11478 15724 18467 19169 26500 )  
+```
+Original vector v1 = (41 18467 6334 26500 19169 15724 11478)
+Sorted vector v1 = (41 6334 11478 15724 18467 19169 26500)
 ```  
   
-## 必要条件  
- **ヘッダー:** \<functional\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## 参照  
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

@@ -1,74 +1,94 @@
 ---
-title: "&lt;hash_map&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.<hash_map>"
-  - "<hash_map>"
-  - "std::<hash_map>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "hash_map ヘッダー"
+title: '&lt;hash_map&gt; | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std.<hash_map>
+- <hash_map>
+- std::<hash_map>
+dev_langs:
+- C++
+helpviewer_keywords:
+- hash_map header
 ms.assetid: 0765708a-a668-42a2-9800-654c857bdcc2
 caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# &lt;hash_map&gt;
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
+ms.openlocfilehash: 3f9a4705d946831ddee15116676fde9e433288f7
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="lthashmapgt"></a>&lt;hash_map&gt;
 > [!NOTE]
->  このヘッダーは廃止され、互換性のために残されています。 代わりに、[\<unordered\_map\>](../standard-library/unordered-map.md) を使用してください。  
+>  このヘッダーは廃止され、互換性のために残されています。 代わりに、[<unordered_map>](../standard-library/unordered-map.md) を使用してください。  
   
- コンテナーのテンプレート クラス hash\_map と hash\_multimap、およびそのサポート用テンプレートを定義します。  
+ コンテナーのテンプレート クラス hash_map と hash_multimap、およびそのサポート用テンプレートを定義します。  
   
- Visual C\+\+ .NET 2003 では、[\<hash\_map\>](#vclrfhash_map_header_file) ヘッダー ファイルと [\<hash\_set\>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間から stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../Topic/stdext%20Namespace.md)」を参照してください。  
+ Visual C++ .NET 2003 では、<hash_map> ヘッダー ファイルと <hash_set> ヘッダー ファイルのメンバーは std 名前空間に存在しなくなったのではなく、stdext 名前空間に移動されました。 詳細については、「[stdext Namespace](../standard-library/stdext-namespace.md)」(stdext 名前空間) をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 #include <hash_map>  
   
 ```  
   
-### 演算子  
+### <a name="operators"></a>演算子  
   
-|hash\_map バージョン|hash\_multimap バージョン|説明|  
-|---------------------|--------------------------|--------|  
-|[operator\!\= \(hash\_map\)](../Topic/operator!=%20\(hash_map\).md)|[operator\!\= \(hash\_multimap\)](../Topic/operator!=%20\(hash_multimap\).md)|演算子の左側の hash\_map または hash\_multimap オブジェクトが右側の hash\_map または hash\_multimap オブジェクトと等しくないかどうかをテストします。|  
-|[operator\=\= \(hash\_map\)](http://msdn.microsoft.com/ja-jp/f933cb1c-934d-43f5-aa9e-0b325eb95b85)|[operator\=\= \(hash\_multimap\)](http://msdn.microsoft.com/ja-jp/3fa378b1-0250-4e3f-a130-dc14103fc5e9)|演算子の左側の hash\_map または hash\_multimap オブジェクトが右側の hash\_map または hash\_multimap オブジェクトと等しいかどうかをテストします。|  
+|hash_map バージョン|hash_multimap バージョン|説明|  
+|-----------------------|----------------------------|-----------------|  
+|[operator!= (hash_map)](../standard-library/hash-map-operators.md#operator_neq__hash_map_)|[operator!= (hash_multimap)](../standard-library/hash-map-operators.md#operator_neq)|演算子の左側の hash_map または hash_multimap オブジェクトが右側の hash_map または hash_multimap オブジェクトと等しくないかどうかをテストします。|  
+|[operator== (hash_map)](http://msdn.microsoft.com/en-us/f933cb1c-934d-43f5-aa9e-0b325eb95b85)|[operator== (hash_multimap)](http://msdn.microsoft.com/en-us/3fa378b1-0250-4e3f-a130-dc14103fc5e9)|演算子の左側の hash_map または hash_multimap オブジェクトが右側の hash_map または hash_multimap オブジェクトと等しいかどうかをテストします。|  
   
-### 特殊テンプレート関数  
+### <a name="specialized-template-functions"></a>特殊テンプレート関数  
   
-|hash\_map バージョン|hash\_multimap バージョン|説明|  
-|---------------------|--------------------------|--------|  
-|[swap \(hash\_map\)](../Topic/hash_map::swap.md)|[swap \(hash\_multimap\)](../Topic/hash_multimap::swap.md)|2 つの hash\_map または hash\_multimap の要素を交換します。|  
+|hash_map バージョン|hash_multimap バージョン|説明|  
+|-----------------------|----------------------------|-----------------|  
+|[swap (hash_map)](../standard-library/hash-map-class.md#hash_map__swap)|[swap (hash_multimap)](../standard-library/hash-multimap-class.md#hash_multimap__swap)|2 つの hash_map または hash_multimap の要素を交換します。|  
   
-### クラス  
+### <a name="classes"></a>クラス  
   
 |||  
 |-|-|  
-|[hash\_compare クラス](../standard-library/hash-compare-class.md)|任意のハッシュ連想コンテナー \(hash\_map、hash\_multimap、hash\_set、または hash\_multiset\) によって使用可能なオブジェクトを示しています。既定では **Traits** パラメーター オブジェクトを使用して、含まれる要素の順序付けおよびハッシュを行います。|  
-|[value\_compare クラス](../Topic/value_compare%20Class.md)|要素のキーの値を比較し、要素の hash\_map 内の相対順序を決定して、hash\_map の要素を比較できる関数オブジェクトを提供します。|  
-|[hash\_map クラス](../standard-library/hash-map-class.md)|一意の並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
-|[hash\_multimap クラス](../standard-library/hash-multimap-class.md)|必ずしも一意ではない並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
+|[hash_compare クラス](../standard-library/hash-compare-class.md)|任意のハッシュ連想コンテナー (hash_map、hash_multimap、hash_set、または hash_multiset) によって使用可能なオブジェクトを示しています。既定では **Traits** パラメーター オブジェクトを使用して、含まれる要素の順序付けおよびハッシュを行います。|  
+|[value_compare クラス](../standard-library/value-compare-class.md)|要素のキーの値を比較し、要素の hash_map 内の相対順序を決定して、hash_map の要素を比較できる関数オブジェクトを提供します。|  
+|[hash_map クラス](../standard-library/hash-map-class.md)|一意の並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
+|[hash_multimap クラス](../standard-library/hash-multimap-class.md)|必ずしも一意ではない並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
   
-## 必要条件  
- **ヘッダー:** \<hash\_map\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<hash_map>  
   
  **名前空間:** stdext  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

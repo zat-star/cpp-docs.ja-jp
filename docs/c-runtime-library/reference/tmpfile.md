@@ -1,76 +1,93 @@
 ---
-title: "tmpfile | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "tmpfile"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "tmpfile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "一時ファイル"
-  - "tmpfile 関数"
-  - "一時ファイル、作成"
+title: tmpfile | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- tmpfile
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- tmpfile
+dev_langs:
+- C++
+helpviewer_keywords:
+- temporary files
+- tmpfile function
+- temporary files, creating
 ms.assetid: c4a4dc24-70da-438d-ae4e-98352d88e375
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# tmpfile
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 05edefa97701ebd70d86ff4fc78dc6cee7f083fa
+ms.lasthandoff: 02/24/2017
 
-一時ファイルを作成します。  この関数は、より安全なバージョンが空いたらできません。; [tmpfile\_s](../Topic/tmpfile_s.md)を参照してください。  
+---
+# <a name="tmpfile"></a>tmpfile
+一時ファイルを作成します。 セキュリティが強化されたバージョンが提供されたため、この関数は廃止されました。「[tmpfile_s](../../c-runtime-library/reference/tmpfile-s.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 FILE *tmpfile( void );  
 ```  
   
-## 戻り値  
- 成功すると、`tmpfile` はストリーム ポインターを返します。  それ以外の場合は `NULL` のポインターを返します。  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合、`tmpfile` はストリーム ポインターを返します。 それ以外の場合は、`NULL` ポインターを返します。  
   
-## 解説  
- `tmpfile` 関数は一時ファイルを作成し、そのストリームへのポインターを返します。  一時ファイルは、ルート ディレクトリに作成されます。  ルート以外のディレクトリに一時ファイルを作成するには、[tmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) または [tempnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) を [fopen](../../c-runtime-library/reference/fopen-wfopen.md) と共に使用します。  
+## <a name="remarks"></a>コメント  
+ `tmpfile` 関数は一時ファイルを作成し、そのストリームへのポインターを返します。 一時ファイルはルート ディレクトリに作成されます。 ルート ディレクトリ以外のディレクトリに一時ファイルを作成するには、[tmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) または [tempnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) を [fopen](../../c-runtime-library/reference/fopen-wfopen.md) と共に使用します。  
   
- ファイルを開くことができない場合 `tmpfile` は `NULL` のポインターを返します。  この一時ファイルは、ファイルが閉じられたとき、プログラムが正常に終了したとき、または `_rmtmp` が呼び出されたときに、自動的に削除されます。これは、現在の作業ディレクトリが変更されていないことを前提とします。  一時ファイルは `w+b` \(バイナリ読み書き両用\) モードで開かれます。  
+ ファイルを開くことができない場合、`tmpfile` は `NULL` ポインターを返します。 この一時ファイルは、ファイルが閉じられたとき、プログラムが正常に終了したとき、または `_rmtmp` が呼び出されたときに、自動的に削除されます。これは、現在の作業ディレクトリが変更されていないことを前提とします。 一時ファイルは `w+b` (バイナリ読み書き両用) モードで開かれます。  
   
- エラーが TMP\_MAX よりも STDIO.H を \(インクルード\) `tmpfile`"を参照してください。  
+ `tmpfile` で TMP_MAX (STDIO.H を参照) よりも多く呼び出しを試行した場合は、エラーが発生することがあります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`tmpfile`|\<stdio.h\>|  
+|-------------|---------------------|  
+|`tmpfile`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 > [!NOTE]
->  この例を Windows Vista で実行するには管理特権が必要です。  
+>  この例では、Windows Vista を管理者権限で実行する必要があります。  
   
 ```  
 // crt_tmpfile.c  
@@ -99,14 +116,17 @@ int main( void )
 }  
 ```  
   
-  **一時ファイルが作成された 1**  
-**一時ファイルが作成された 2**  
-**一時ファイルが作成された 3**  
-**削除される 3 種類の一時ファイル**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+Temporary file 1 was created  
+Temporary file 2 was created  
+Temporary file 3 was created  
+3 temporary files deleted  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [\_rmtmp](../Topic/_rmtmp.md)   
- [\_tempnam、\_wtempnam、tmpnam、\_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)
+ [_rmtmp](../../c-runtime-library/reference/rmtmp.md)   
+ [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)

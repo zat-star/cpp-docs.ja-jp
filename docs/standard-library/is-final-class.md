@@ -1,54 +1,74 @@
 ---
-title: "つまり is_final クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "is_final"
-  - "std.is_final"
-  - "std::is_final"
-  - "type_traits/std::is_final"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "つまり is_final"
+title: "is_final クラス | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- is_final
+- std.is_final
+- std::is_final
+- type_traits/std::is_final
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_final
 ms.assetid: 9dbad82f-6685-4909-94e8-98e4a93994b9
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# つまり is_final クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 80e0a4e306be90f59a7a84010009c68f6388fec0
+ms.lasthandoff: 02/24/2017
 
-種類がマークされたクラス型であるかどうかをテスト `final`します。  
+---
+# <a name="isfinal-class"></a>is_final クラス
+型が `final` でマークされたクラス型であるかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class T>
+struct is_final;
 ```  
-template<class T>  
-    struct is_final;  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  照会する型。  
   
-## 解説  
- 場合、型述語のインスタンスは true を保持型 `T` クラス型になって `final`, 、それ以外の場合は false を保持します。 場合 `T` クラス型は、完全な型である必要があります。  
+## <a name="remarks"></a>コメント  
+ 型 `T` が `final` でマークされたクラス型である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。 `T` がクラス型の場合、完全な型である必要があります。  
   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
  [final 指定子](../cpp/final-specifier.md)
+
+
+
+

@@ -1,51 +1,68 @@
 ---
 title: "_CrtDbgReport、_CrtDbgReportW | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_CrtDbgReport"
-  - "_CrtDbgReportW"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "CrtDbgReport"
-  - "CrtDbgReportW"
-  - "_CrtDbgReportW"
-  - "_CrtDbgReport"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デバッグ レポート"
-  - "_CrtDbgReport 関数"
-  - "CrtDbgReport 関数"
-  - "CrtDbgReportW 関数"
-  - "_CrtDbgReportW 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _CrtDbgReport
+- _CrtDbgReportW
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- CrtDbgReport
+- CrtDbgReportW
+- _CrtDbgReportW
+- _CrtDbgReport
+dev_langs:
+- C++
+helpviewer_keywords:
+- debug reporting
+- _CrtDbgReport function
+- CrtDbgReport function
+- CrtDbgReportW function
+- _CrtDbgReportW function
 ms.assetid: 6e581fb6-f7fb-4716-9432-f0145d639ecc
 caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# _CrtDbgReport、_CrtDbgReportW
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 6bfbae9b083563f0f9a6b0c30e02fb79f413d52d
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="crtdbgreport-crtdbgreportw"></a>_CrtDbgReport、_CrtDbgReportW
 デバッグ メッセージのあるレポートを生成し、3 つの宛先 (デバッグ バージョンのみ) にレポートを送信します。  
   
 ## <a name="syntax"></a>構文  
@@ -89,14 +106,14 @@ int _CrtDbgReportW(
  `format` で使用される省略可能な代用引数。  
   
 ## <a name="return-value"></a>戻り値  
- レポートのすべての宛先について、`_CrtDbgReport` および `_CrtDbgReportW` は、エラーが発生した場合は –1、エラーが発生しなかった場合は 0 を返します。 ただし、クリックしたレポートの宛先がデバッグ メッセージ ウィンドウとユーザーの場合、 **再試行** ボタン、これらの関数は 1 を返します。 ユーザーがクリックした場合、 **中止** ボタン デバッグ メッセージ ウィンドウでこれらの関数すぐに中止され、値は返されません。  
+ レポートのすべての宛先について、`_CrtDbgReport` および `_CrtDbgReportW` は、エラーが発生した場合は –1、エラーが発生しなかった場合は 0 を返します。 ただし、レポートの宛先がデバッグ メッセージ ウィンドウで、ユーザーが **[再試行]** をクリックすると、これらの関数は 1 を返します。 ユーザーがデバッグ メッセージ ウィンドウの **[中止]** をクリックすると、関数はすぐに中止され、値は返されません。  
   
-  [_RPT、_RPTF](../Topic/_RPT,%20_RPTF,%20_RPTW,%20_RPTFW%20Macros.md) マクロの呼び出しをデバッグ `_CrtDbgReport` レポートをデバッグを生成します。 これらのマクロのワイド文字バージョンと [_ASSERT & #91。&#93;](../Topic/_ASSERT,%20_ASSERTE,%20_ASSERT_EXPR%20Macros.md), 、`_RPTW``n` と `_RPTFW``n`, を使用して `_CrtDbgReportW` レポートをデバッグを生成します。 `_CrtDbgReport` または `_CrtDbgReportW` が 1 を返す場合は、Just-In-Time (JIT) デバッグが有効であれば、これらのマクロ デバッガーが開始しています。  
+ [_RPT、_RPTF](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md) デバッグ マクロは `_CrtDbgReport` を呼び出して、デバッグ レポートを生成します。 これらのマクロのワイド文字バージョンは、[_ASSERT&#91;E&#93;](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、`_RPTW``n`、および `_RPTFW``n` と共に、`_CrtDbgReportW` を使用してデバッグ レポートを生成します。 `_CrtDbgReport` または `_CrtDbgReportW` が 1 を返す場合は、Just-In-Time (JIT) デバッグが有効であれば、これらのマクロ デバッガーが開始しています。  
   
 ## <a name="remarks"></a>コメント  
- `_CrtDbgReport` および `_CrtDbgReportW` は、3 種類の宛先へデバッグ レポートを送信できます。デバッグ レポート ファイル、デバッグ モニター ([!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)] デバッガー)、またはデバッグ メッセージ ウィンドウです。 2 つの構成関数 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) と [_CrtSetReportFile](../Topic/_CrtSetReportFile.md), は、各レポートの種類の宛先の指定に使用します。 これらの関数では、各レポートの種類に対するレポートの宛先を個別に管理できます。 たとえば、`reportType` の `_CRT_WARN` をデバッグ モニターのみに送信したり、`reportType` の `_CRT_ASSERT` をデバッグ メッセージ ウィンドウとユーザー定義のレポート ファイルに送信するよう指定できます。  
+ `_CrtDbgReport` および `_CrtDbgReportW` は、3 種類の宛先へデバッグ レポートを送信できます。デバッグ レポート ファイル、デバッグ モニター ([!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)] デバッガー)、またはデバッグ メッセージ ウィンドウです。 2 つの構成関数 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) および [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) は、各レポートの種類の出力先を指定するために使用されます。 これらの関数では、各レポートの種類に対するレポートの宛先を個別に管理できます。 たとえば、`reportType` の `_CRT_WARN` をデバッグ モニターのみに送信したり、`reportType` の `_CRT_ASSERT` をデバッグ メッセージ ウィンドウとユーザー定義のレポート ファイルに送信するよう指定できます。  
   
- `_CrtDbgReportW` 関数は、`_CrtDbgReport` 関数のワイド文字バージョンです。 すべての出力および文字列のパラメーターは、ワイド文字列内にあり、それ以外の場合は 1 バイト文字バージョンと同じです。  
+ `_CrtDbgReportW` 関数は、`_CrtDbgReport` 関数のワイド文字バージョンです。 すべての出力および文字列のパラメーターは、ワイド文字列内にあり、それ以外の場合は&1; バイト文字バージョンと同じです。  
   
  `_CrtDbgReport` および `_CrtDbgReportW` は、`argument` または `n` 関数により定義されている同じ規則を使用して、`format`[`printf`] 引数を `wprintf` 文字列に置き換えることでデバッグ レポートのユーザー メッセージを作成します。 次にこれらの関数は、`reportType` に定義されている現在のレポート モードおよびファイルに基づいて、デバッグ レポートを生成し、宛先を決定します。 レポートがデバッグ メッセージ ウィンドウに送信される場合、ウィンドウに表示される情報には `filename`、`lineNumber`、および `moduleName` が含まれます。  
   
@@ -104,16 +121,16 @@ int _CrtDbgReportW(
   
 |レポート モード|レポート ファイル|`_CrtDbgReport` および `_CrtDbgReportW` の動作|  
 |-----------------|-----------------|------------------------------------------------|  
-|`_CRTDBG_MODE_DEBUG`|利用不可|Windows を使用して、メッセージを書き込みます [OutputDebugString](http://msdn.microsoft.com/library/windows/desktop/aa363362.aspx) API です。|  
-|`_CRTDBG_MODE_WNDW`|利用不可|Windows を呼び出す [メッセージ ボックス](http://msdn.microsoft.com/library/windows/desktop/ms645505) と共にメッセージを表示するメッセージ ボックスを作成する API **中止**, 、**再試行**, と **無視** ボタン。 ユーザーがクリックすると **中止**, 、`_CrtDbgReport` または `_CrtDbgReport` すぐに中止します。 ユーザーがクリックすると **再試行**, 、1 を返します。 ユーザーがクリックした場合 **を無視する**, 、実行が継続し、 `_CrtDbgReport` と `_CrtDbgReportW` 0 を返します。 クリックすると **無視** 、エラー状態が「未定義の動作」多くの場合、結果に存在する場合|  
-|`_CRTDBG_MODE_FILE`|`__HFILE`|ユーザーが指定したメッセージを書き込みます `HANDLE`, 、Windows を使用して [WriteFile](http://msdn.microsoft.com/library/windows/desktop/aa365747.aspx) API とはファイル ハンドルの有効性を検証しません。 アプリケーションは、レポート ファイルを開くと、有効なファイル ハンドルを渡すことを担当します。|  
+|`_CRTDBG_MODE_DEBUG`|利用不可|Windows [OutputDebugString](http://msdn.microsoft.com/library/windows/desktop/aa363362.aspx) API にメッセージを書き込みます。|  
+|`_CRTDBG_MODE_WNDW`|利用不可|Windows [MessageBox](http://msdn.microsoft.com/library/windows/desktop/ms645505) API を呼び出して、メッセージおよび **[中止]**、**[再試行]**、**[無視]** の各ボタンを表示するメッセージ ボックスを作成します。 ユーザーが **[中止]** をクリックすると、`_CrtDbgReport` または `_CrtDbgReport` はすぐに中止されます。 ユーザーが **[再試行]** をクリックすると、1 を返します。 ユーザーが **[無視]** をクリックすると、実行は継続され、`_CrtDbgReport` および `_CrtDbgReportW` は 0 を返します。 エラー状況が存在するときに **[無視]** をクリックすると、"未定義の動作" という結果になることがよくあります。|  
+|`_CRTDBG_MODE_FILE`|`__HFILE`|Windows [WriteFile](http://msdn.microsoft.com/library/windows/desktop/aa365747.aspx) API を使用して、ユーザーが指定した `HANDLE` にメッセージを書き込みますが、ハンドルの有効性は検証しません。アプリケーションは、レポート ファイルを開き、有効なファイル ハンドルを渡す役割を果たします。|  
 |`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDERR`|`stderr` にメッセージを書き込みます。|  
 |`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDOUT`|
           `stdout` にメッセージを書き込みます。|  
   
- レポートは 1 つ、2 つ、または 3 つの宛先に送信できます。またどの宛先にも送信しないこともできます。 詳細については、レポート モードおよびレポート ファイルを指定する、次を参照してください。、 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) と [_CrtSetReportFile](../Topic/_CrtSetReportFile.md) 関数です。 デバッグ マクロを使用して、レポートなどの機能に関する詳細については、次を参照してください。 [レポート用マクロ](../Topic/Macros%20for%20Reporting.md)します。  
+ レポートは&1; つ、2 つ、または&3; つの宛先に送信できます。またどの宛先にも送信しないこともできます。 レポート モードおよびレポート ファイルを指定する方法の詳細については、「[_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)」および「[_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)」関数を参照してください。 デバッグ マクロおよびレポート関数の使用方法の詳細については、「[レポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
   
- によって提供されるよりさらに柔軟性が、アプリケーションに必要なかどうかは `_CrtDbgReport` と `_CrtDbgReportW`, 、独自のレポート関数を記述し、それをレポート メカニズムを使用して、C ランタイム ライブラリにフック、 [_CrtSetReportHook](../../c-runtime-library/reference/crtsetreporthook.md) 関数です。  
+ アプリケーションで `_CrtDbgReport` および `_CrtDbgReportW` で提供されるよりさらに柔軟性が必要な場合は、独自のレポート関数を書き込み、[_CrtSetReportHook](../../c-runtime-library/reference/crtsetreporthook.md) 関数を使用してそれを C ランタイム ライブラリのレポート機構にフックすることができます。  
   
 ## <a name="requirements"></a>要件  
   
@@ -122,10 +139,10 @@ int _CrtDbgReportW(
 |`_CrtDbgReport`|\<crtdbg.h>|  
 |`_CrtDbgReportW`|\<crtdbg.h>|  
   
- `_CrtDbgReport` および `_CrtDbgReportW` は Microsoft 拡張機能です。 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `_CrtDbgReport` および `_CrtDbgReportW` は Microsoft 拡張機能です。 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
- デバッグ バージョン [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md) のみです。  
+ [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
   
 ## <a name="example"></a>例  
   
@@ -140,7 +157,7 @@ int main(int argc, char *argv[]) {
 }  
 ```  
   
- 参照してください [crt_dbg2](http://msdn.microsoft.com/ja-jp/21e1346a-6a17-4f57-b275-c76813089167) レポート関数を変更する方法の例です。  
+ レポート関数を変更する方法の例については、「[crt_dbg2](http://msdn.microsoft.com/en-us/21e1346a-6a17-4f57-b275-c76813089167)」を参照してください。  
   
 ## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
   
@@ -155,6 +172,6 @@ int main(int argc, char *argv[]) {
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
  [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)   
- [_CrtSetReportFile](../Topic/_CrtSetReportFile.md)   
+ [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)   
  [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [_DEBUG](../Topic/_DEBUG.md)
+ [_DEBUG](../../c-runtime-library/debug.md)

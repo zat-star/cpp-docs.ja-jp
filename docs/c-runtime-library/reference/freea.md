@@ -1,49 +1,66 @@
 ---
-title: "_freea | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_freea"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "freea"
-  - "_freea"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_freea 関数"
-  - "freea 関数"
-  - "メモリ解放"
+title: _freea | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _freea
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- freea
+- _freea
+dev_langs:
+- C++
+helpviewer_keywords:
+- _freea function
+- freea function
+- memory deallocation
 ms.assetid: dcd30584-dd9d-443b-8c4c-13237a1cecac
 caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# _freea
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: b8310730b9b1c700402cc8d6d35eea3abc893dfe
+ms.lasthandoff: 02/24/2017
 
-メモリ ブロックを解放するか、解放します。  
+---
+# <a name="freea"></a>_freea
+メモリ ブロックを割り当て解除または解放します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void _freea(   
@@ -51,46 +68,46 @@ void _freea(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `memblock`  
- 以前は解放される割り当てられたメモリ ブロック。  
+ 以前割り当てられ、解放されるメモリ ブロック。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  なし。  
   
-## 解説  
- `_freea`関数は [\_malloca](../../c-runtime-library/reference/malloca.md)の呼び出しにより前に割り当てられたメモリ ブロック \(`memblock`\) を解放します。  `_freea` は メモリをヒープまたはスタックに割り当てられているかどうかを確認します。  これがスタックに割り当てられている場合、`_freea` は機能しません。  これがヒープに割り当てられ、解放されたバイト数はブロックを割り当てるときに要求されたバイト数と同じです。  `memblock` が `NULL`の場合、ポインターは無視され、`_freea` が直ちに返されます。  無効なポインター \(`_malloca`でないメモリ ブロックへのポインター\) を解放しようとすると、それ以降の割り当て要求に影響し、エラーが発生することがあります。  
+## <a name="remarks"></a>コメント  
+ `_freea` 関数は、以前に [_malloca](../../c-runtime-library/reference/malloca.md) の呼び出しによって割り当てられたメモリ ブロック (`memblock`) を割り当て解除します。 `_freea` は、ヒープまたはスタック上でメモリが割り当てられているかどうかを確認します。 スタック上で割り当てられている場合、`_freea` は何も行いません。 ヒープ上で割り当てられている場合、解放されるバイト数は、ブロックが割り当てられたときに要求されたバイト数と同じです。 `memblock` が `NULL` である場合、ポインターは無視され、`_freea` が直ちに返されます。 無効なポインター (`_malloca` によって割り当てられていないメモリ ブロックへのポインター) を解放しようとすると、以降の割り当て要求に影響を与え、エラーが発生する可能性があります。  
   
- メモリをヒープに割り当てられたことが検出された場合は`freea` は `free` を内部的に呼び出します。  メモリをヒープまたはスタックであるかに割り当てられたメモリのアドレスはメモリ内にあるマーカーによって決まります。  
+ _`freea` は、メモリがヒープ上で割り当てられていることを見つけた場合、`free` を内部的に呼び出します。 メモリが、ヒープまたはスタックのどちらにあるかは、割り当てられたメモリの直前のアドレスにメモリ内で配置されたマーカーによって決まります。  
   
- メモリの解放でエラーが発生すると、エラーの性質に関するオペレーティング システムからの情報が `errno` に設定されます。  詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ メモリの解放でエラーが発生すると、エラーの性質に関するオペレーティング システムからの情報が `errno` に設定されます。 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- メモリ ブロックが解放されると、[\_heapmin](../../c-runtime-library/reference/heapmin.md) は結合し、オペレーティング システムにおいて、を解放することによって、未使用のメモリ ヒープ領域の量を最小限に抑えることができます。  オペレーティング システムに解放されない解放されたメモリは空きプールに復元し、割り当てに再利用できます。  
+ メモリ ブロックを解放すると、[_heapmin](../../c-runtime-library/reference/heapmin.md) が、未使用の領域を結合して、それらをオペレーティング システムに戻すことで、ヒープ上の空きメモリの量を最小限に抑えます。 オペレーティング システムにリリースされない解放されたメモリは、空きプールに復元され、再度割り当てに使用できます。  
   
- `_freea` の呼び出しは `_malloca`へのすべての呼び出しに伴わなければ必要があります。  また、同じメモリの `_freea` を二度呼び出すエラーです。  アプリケーションが C ランタイム ライブラリのデバッグ バージョンとリンクすると、特に [\_malloc\_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能と `_CRTDBG_MAP_ALLOC`の定義で有効になっている `_freea`にパーツが見つからないか、重複している呼び出しを見つけやすくなります。  ヒープのデバッグ中にどのように管理されるかを詳細については、「[CRT のデバッグ ヒープ](../Topic/CRT%20Debug%20Heap%20Details.md)」を参照してください。  
+ `_freea` に対する呼び出しは、`_malloca` に対するすべての呼び出しを伴う必要があります。 同じメモリ上で `_freea` を&2; 回呼び出した場合もエラーになります。 特に、C ランタイム ライブラリのデバッグ バージョン (特に `_CRTDBG_MAP_ALLOC` を定義することで有効になった [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能) とアプリケーションがリンクされている場合、見つからないまたは重複した `_freea` の呼び出しを簡単に見つけることができます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
   
- `_freea` は グローバル変数を変更せずに関数が保証されることを意味するマークされた `__declspec(noalias)`です。  詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
+ `_freea` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`_freea`|\<stdlib.h\> および \<malloc.h\>|  
+|--------------|---------------------|  
+|`_freea`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
- [\_malloca](../../c-runtime-library/reference/malloca.md) 関数の例を参照してください。  
+## <a name="example"></a>例  
+ 「[_malloca](../../c-runtime-library/reference/malloca.md)」の例を参照してください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
- [\_malloca](../../c-runtime-library/reference/malloca.md)   
+ [_malloca](../../c-runtime-library/reference/malloca.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   
  [malloc](../../c-runtime-library/reference/malloc.md)   
- [\_malloc\_dbg](../../c-runtime-library/reference/malloc-dbg.md)   
+ [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)   
  [realloc](../../c-runtime-library/reference/realloc.md)   
- [\_free\_dbg](../../c-runtime-library/reference/free-dbg.md)   
- [\_heapmin](../../c-runtime-library/reference/heapmin.md)
+ [_free_dbg](../../c-runtime-library/reference/free-dbg.md)   
+ [_heapmin](../../c-runtime-library/reference/heapmin.md)

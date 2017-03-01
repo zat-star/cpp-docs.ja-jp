@@ -1,71 +1,82 @@
 ---
 title: "integral_constant クラス、bool_constant クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.tr1.integral_constant"
-  - "integral_constant"
-  - "std::tr1::integral_constant"
-  - "std.integral_constant"
-  - "std::integral_constant"
-  - "type_traits/std::integral_constant"
-  - "std.bool_constant"
-  - "std::bool_constant"
-  - "type_traits/std::bool_constant"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "integral_constant クラス [TR1]"
-  - "integral_constant"
-  - "bool_constant"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- integral_constant
+- std::integral_constant
+- type_traits/std::integral_constant
+- XTR1COMMON/std::integral_constant
+- bool_constant
+- std::bool_constant
+- type_traits/std::bool_constant
+- XTR1COMMON/std::bool_constant
+dev_langs:
+- C++
+helpviewer_keywords:
+- integral_constant class
+- integral_constant
+- bool_constant
 ms.assetid: 11c002c6-4d31-4042-9341-f2543f43e108
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# integral_constant クラス、bool_constant クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 8630a5c0b97b85e0dc75e8b470974bb7d223a511
+ms.openlocfilehash: 6c71c3571e19c57b13c827bbb84e347e3ff26b01
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="integralconstant-class-boolconstant-class"></a>integral_constant クラス、bool_constant クラス
 型および値から整数定数を作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template <class T, T v>  
-    struct integral_constant {  
-        static constexpr T value = v;  
-        typedef T value_type;  
-        typedef integral_constant<T, v> type;  
-        constexpr operator value_type() const noexcept { return (value); }  
-        constexpr value_type operator()() const noexcept { return (value); }  
-    };  
+```
+template<class T, T v>
+struct integral_constant {  
+   static constexpr T value = v;  
+   typedef T value_type;  
+   typedef integral_constant<T, v> type;  
+   constexpr operator value_type() const noexcept;  
+   constexpr value_type operator()() const noexcept;  
+   };  
+```
   
-template <bool v>  
-    using bool_constant = integral_constant<bool, v>;  
+### <a name="parameters"></a>パラメーター  
+*T*  
+定数の型。  
   
-```  
+*v*  
+定数の値。  
   
-#### パラメーター  
- `T`  
- 定数の型。  
+## <a name="remarks"></a>コメント  
+`integral_constant` テンプレート クラスは、整数型 *T* とその型の値 *v* で特殊化されると、指定された値の整数型の定数を保持するオブジェクトを表します。 `type` という名前のメンバーは、生成済みテンプレートの特殊化型のエイリアスです。`value` メンバーは、特殊化を作成するために使用された値 *v* を保持します。  
   
- `v`  
- 定数の値。  
+`bool_constant` テンプレート クラスは、*T* 引数として `bool` を使用する `integral_constant` の明示的な部分的特殊化です。  
   
-## 解説  
- `integral_constant` テンプレート クラスは、整数型に特化された `T` および値 `v` 、その型の指定した値を整数型の定数を保持するオブジェクトを表します。 という名前のメンバー `type` 生成済みテンプレートの特殊化型のエイリアスは、および `value` メンバーの値を保持する `v` 特殊化を作成するために使用します。  
-  
- `bool_constant` テンプレート クラスの明示的な部分的特殊化は、 `integral_constant` を使用する `bool` として、 `T` 引数。  
-  
-## 使用例  
+## <a name="example"></a>例  
   
 ```cpp  
 // std__type_traits__integral_constant.cpp   
@@ -86,15 +97,19 @@ int main()
 ```  
   
 ```Output  
-integral_constant < int, 5 > 5 integral_constant < bool false > = = false = =  
+integral_constant<int, 5> == 5  
+integral_constant<bool, false> == false  
 ```  
   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+
+**ヘッダー:** \<type_traits>
   
- **名前空間:** std  
+**名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [false\_type Typedef](../Topic/false_type%20Typedef.md)   
- [true\_type Typedef](../Topic/true_type%20Typedef.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
+ [false_type Typedef](../standard-library/type-traits-typedefs.md#false_type_typedef)   
+ [true_type Typedef](../standard-library/type-traits-typedefs.md#true_type_typedef)
+
+

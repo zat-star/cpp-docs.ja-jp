@@ -1,42 +1,58 @@
 ---
 title: "コンテナー クラス::value_type | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "value_type typedef"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- value_type typedef
 ms.assetid: e89d5a71-b48c-47fa-aa78-682243e6e97f
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンテナー クラス::value_type
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 91bc5c4a06a8afc7ab02fc548c9c781e157be1bb
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="container-classvaluetype"></a>コンテナー クラス::value_type
 > [!NOTE]
->  このトピックでは、標準 C\+\+ ライブラリで使用されるコンテナーの、機能的な例として、Visual C\+\+ のドキュメントにあります。  詳細については、「[STL コンテナー](../standard-library/stl-containers.md)」を参照してください。  
+>  このトピックは、C++ 標準ライブラリで使用されるコンテナーの例 (実際には機能しない) として、Visual C++ ドキュメントに含まれています。 詳しくは、「[C++ 標準ライブラリのコンテナー](../standard-library/stl-containers.md)」をご覧ください。  
   
- テンプレート パラメーター **Ty**のシノニムを満たします。  
+ テンプレート パラメーター **Ty** のシノニムとして動作します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
+ 
 typedef T4 value_type;  
-  
 ```  
   
-## 解説  
- これは、未指定の型 **T4** \(通常 **Alloc::value\_type**\) のシノニムとしてとして記述されています。  
+## <a name="remarks"></a>コメント  
+ ここでは、指定されていない型 **T4** のシノニムとして記述されています (通常は **Alloc::value_type**)。  
   
-## 参照  
- [サンプル コンテナー クラス](../Topic/Sample%20Container%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [サンプル コンテナー クラス](../standard-library/sample-container-class.md)
+

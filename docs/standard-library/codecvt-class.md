@@ -1,32 +1,48 @@
 ---
 title: "codecvt クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "codecvt"
-  - "std::codecvt"
-  - "std.codecvt"
-  - "xlocale/std::codecvt"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "codecvt クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- codecvt
+- std::codecvt
+- std.codecvt
+- xlocale/std::codecvt
+dev_langs:
+- C++
+helpviewer_keywords:
+- codecvt class
 ms.assetid: 37d3efa1-2b7f-42b6-b04f-7a972c8c2c86
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# codecvt クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 60b86a54be164e896a15ab46584aa6f4339c58ab
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="codecvt-class"></a>codecvt クラス
 ロケールのファセットとして使用できるオブジェクトを表すテンプレート クラス。 プログラム内で文字をエンコードするために使用される値のシーケンスと、プログラム外で文字をエンコードするために使用される値のシーケンスとの変換を制御できます。  
   
 ## <a name="syntax"></a>構文  
@@ -47,15 +63,15 @@ class codecvt : public locale::facet, codecvt_base;
  文字表現の内部型と外部型との変換の中間状態を表すために使用できる型。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスとして使用できるオブジェクトを表します、 [ロケールのファセット](../standard-library/locale-class.md#facet_class), 型の値のシーケンスの間の変換を制御する `CharType` と型の値のシーケンス `Byte`します。 `StateType` クラスは変換を特徴付けます。また、`StateType` クラスのオブジェクトは変換中に必要な状態情報を格納します。  
+ テンプレート クラスは、`CharType` 型の値のシーケンスと `Byte` 型の値のシーケンスとの変換を制御するために、[ロケール ファセット](../standard-library/locale-class.md#facet_class)として使用できるオブジェクトを表します。 `StateType` クラスは変換を特徴付けます。また、`StateType` クラスのオブジェクトは変換中に必要な状態情報を格納します。  
   
  内部エンコードでは、1 文字あたりのバイト数が固定された表現、通常 `char` 型または `wchar_t` 型を使用します。  
   
- すべてのロケールのファセットと同様、静的オブジェクト `id` に最初に格納されている値は 0 です。 一意な正の値を格納する、格納されている値にアクセスする最初の試行 `id`します。  
+ すべてのロケールのファセットと同様、静的オブジェクト `id` に最初に格納されている値は&0; です。 格納されている値に初めてアクセスしようとすると、`id` に一意の正の値が格納されます。  
   
- テンプレートのバージョンの [do_in](#codecvt__do_in) と [do_out](#codecvt__do_out) いつでも `codecvt_base::noconv`します。  
+ [do_in](#codecvt__do_in) と [do_out](#codecvt__do_out) のテンプレート バージョンでは、常に `codecvt_base::noconv` が返されます。  
   
- 標準 C++ ライブラリは複数の明示的な特殊化を定義します。  
+ C++ 標準ライブラリは複数の明示的な特殊化を定義します。  
   
  `template<>`  
   
@@ -81,7 +97,7 @@ class codecvt : public locale::facet, codecvt_base;
 |-|-|  
 |[codecvt](#codecvt__codecvt)|変換を処理するためにロケールのファセットとして機能する `codecvt` クラスのオブジェクトのコンストラクター。|  
   
-### <a name="typedefs"></a>Typedef  
+### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
@@ -101,19 +117,19 @@ class codecvt : public locale::facet, codecvt_base;
 |[do_max_length](#codecvt__do_max_length)|1 つの内部 `CharType` を生成するために必要な最大外部 Byte 数を返す仮想関数。|  
 |[do_out](#codecvt__do_out)|内部の `CharType` のシーケンスを外部の Byte のシーケンスに変換するために呼び出される仮想関数。|  
 |[do_unshift](#codecvt__do_unshift)|状態に依存する変換で、`Byte` のシーケンスの最後の文字を完了するために必要な `Byte` を提供するために呼び出される仮想関数。|  
-|[エンコーディング](#codecvt__encoding)|`Byte` ストリームのエンコードが状態に依存する場合に、使用される `Byte` と生成される `CharType` との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定します。|  
-|[で](#codecvt__in)|`Byte` のシーケンスの外部表現を、`CharType` のシーケンスの内部表現に変換します。|  
-|[長さ](#codecvt__length)|特定の外部 `Byte` シーケンスから生成された内部 `Byte` が特定の数を超えずに最大となる `CharType` 数を特定し、その `Byte` 数を返します。|  
+|[encoding](#codecvt__encoding)|`Byte` ストリームのエンコードが状態に依存する場合に、使用される `Byte` と生成される `CharType` との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定します。|  
+|[in](#codecvt__in)|`Byte` のシーケンスの外部表現を、`CharType` のシーケンスの内部表現に変換します。|  
+|[length](#codecvt__length)|特定の外部 `Byte` シーケンスから生成された内部 `Byte` が特定の数を超えずに最大となる `CharType` 数を特定し、その `Byte` 数を返します。|  
 |[max_length](#codecvt__max_length)|1 つの内部 `Byte` を生成するために必要な最大外部 `CharType` 数を返します。|  
-|[アウト](#codecvt__out)|内部の `CharType` のシーケンスを外部の `Byte` のシーケンスに変換します。|  
+|[out](#codecvt__out)|内部の `CharType` のシーケンスを外部の `Byte` のシーケンスに変換します。|  
 |[unshift](#codecvt__unshift)|状態に依存する変換で、`Byte` のシーケンスの最後の文字を完了するために必要な外部の `Byte` を提供します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** \< ロケール>  
+ **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-##  <a name="a-namecodecvtalwaysnoconva-codecvtalwaysnoconv"></a><a name="codecvt__always_noconv"></a>  codecvt::always_noconv  
+##  <a name="a-namecodecvtalwaysnoconva--codecvtalwaysnoconv"></a><a name="codecvt__always_noconv"></a>  codecvt::always_noconv  
  変換を実行する必要がないかどうかをテストします。  
   
 ```  
@@ -121,14 +137,14 @@ bool always_noconv() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ブール値 **true** 場合、変換を実行する必要はありません **。false** 、少なくとも 1 つ実行する必要があります。  
+ 変換する必要がない場合は **true**、少なくとも&1; 回は変換する必要がある場合は **false** のブール値。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数を返します [do_always_noconv](#codecvt__do_always_noconv)します。  
+ このメンバー関数は、[do_always_noconv](#codecvt__do_always_noconv) を返します。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_always_noconv.cpp  
 // compile with: /EHsc  
 #include <locale>  
@@ -161,8 +177,8 @@ No conversion is needed.
 At least one conversion is required.  
 ```  
   
-##  <a name="a-namecodecvtcodecvta-codecvtcodecvt"></a><a name="codecvt__codecvt"></a>  codecvt::codecvt  
- 変換を処理するためにロケール ファセットとして機能するクラス codecvt のオブジェクトのコンス トラクターです。  
+##  <a name="a-namecodecvtcodecvta--codecvtcodecvt"></a><a name="codecvt__codecvt"></a>  codecvt::codecvt  
+ 変換を処理するためにロケール ファセットとして機能する codecvt クラスのオブジェクトのコンストラクター。  
   
 ```  
 explicit codecvt(size_t _Refs = 0);
@@ -170,20 +186,20 @@ explicit codecvt(size_t _Refs = 0);
   
 ### <a name="parameters"></a>パラメーター  
  `_Refs`  
- オブジェクトのメモリ管理の種類を指定するために使用する整数値です。  
+ オブジェクトのメモリ管理のタイプを指定するために使用する整数値。  
   
 ### <a name="remarks"></a>コメント  
- ような値、 `_Refs` パラメーターとその重要性は。  
+ `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
   
--   0: オブジェクトの有効期間はそれを含むロケールで管理します。  
+-   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \> 0: これらの値が定義されていません。  
+-   \> 0: これらの値は定義されていません。  
   
- コンス トラクターは、その `locale::facet` ベース オブジェクトと **ロケール::**[ファセット](../standard-library/locale-class.md#facet_class)( `_Refs`) *します。*  
+ コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`) * を使用して、その `locale::facet` 基本オブジェクトを初期化します。*  
   
-##  <a name="a-namecodecvtdoalwaysnoconva-codecvtdoalwaysnoconv"></a><a name="codecvt__do_always_noconv"></a>  codecvt::do_always_noconv  
+##  <a name="a-namecodecvtdoalwaysnoconva--codecvtdoalwaysnoconv"></a><a name="codecvt__do_always_noconv"></a>  codecvt::do_always_noconv  
  変換を実行する必要がないかどうかをテストするために呼び出される仮想関数。  
   
 ```  
@@ -191,34 +207,34 @@ virtual bool do_always_noconv() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- プロテクト仮想メンバー関数を返します **true** 場合にのみ、すべての呼び出しに [do_in](#codecvt__do_in) または [do_out](#codecvt__do_out) を返します **noconv**します。  
+ protected 仮想メンバー関数は、[do_in](#codecvt__do_in) または [do_out](#codecvt__do_out) のすべての呼び出しで **noconv** が返された場合にのみ、**true** を返します。  
   
- テンプレートのバージョンを常に返します **true**します。  
+ テンプレート バージョンでは常に **true** が返されます。  
   
 ### <a name="example"></a>例  
-  例を参照してください [always_noconv](#codecvt__always_noconv), 、どの呼び出し `do_always_noconv`します。  
+  [always_noconv](#codecvt__always_noconv) の例 (`do_always_noconv` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdoencodinga-codecvtdoencoding"></a><a name="codecvt__do_encoding"></a>  codecvt::do_encoding  
- 仮想関数をテストのエンコード、 **バイト** ストリームは、状態に依存するをするかどうかがの比率、 **バイト**使用されると、 **CharType**生成されるは定数であり、必要な場合は、比率の値を決定します。  
+##  <a name="a-namecodecvtdoencodinga--codecvtdoencoding"></a><a name="codecvt__do_encoding"></a>  codecvt::do_encoding  
+ **Byte** ストリームのエンコードが状態に依存する場合に、使用される **Byte** と生成される **CharType** との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定する仮想関数。  
   
 ```  
 virtual int do_encoding() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- プロテクト仮想メンバー関数を返します。  
+ protected 仮想メンバー関数は次の値を返します。  
   
--   – 1, 場合型のシーケンスのエンコード `extern_type` は状態が依存しています。  
+-   `extern_type` 型のシーケンスのエンコードが状態に依存する場合は、-1。  
   
--   エンコードのさまざまな長さのシーケンスを含まれている場合は 0。  
+-   エンコードがさまざまな長さのシーケンスに関係する場合は、0。  
   
-- *N*, エンコーディングの長さの唯一のシーケンスを含まれている場合、 *N*  
+- エンコードが長さ *N* のシーケンスのみに関係する場合は、*N*。  
   
 ### <a name="example"></a>例  
-  例を参照してください [エンコーディング](#codecvt__encoding), 、どの呼び出し `do_encoding`します。  
+  [encoding](#codecvt__encoding) の例 (`do_encoding` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdoina-codecvtdoin"></a><a name="codecvt__do_in"></a>  codecvt::do_in  
- 外部のシーケンスに変換する呼び出される仮想関数 **バイト**の内部シーケンスに **CharType**秒です。  
+##  <a name="a-namecodecvtdoina--codecvtdoin"></a><a name="codecvt__do_in"></a>  codecvt::do_in  
+ 外部の **Byte** のシーケンスを内部の **CharType** のシーケンスに変換するために呼び出される仮想関数。  
   
 ```  
 virtual result do_in(
@@ -233,45 +249,45 @@ virtual result do_in(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 変換するシーケンスの先頭へのポインター。  
+ 変換されるシーケンスの先頭へのポインター。  
   
  ` last1`  
- 変換するシーケンスの末尾へのポインター。  
+ 変換されるシーケンスの末尾へのポインター。  
   
  ` next1`  
- 最初の未変換文字への変換されたシーケンスの末尾の次のポインター。  
+ 変換されたシーケンスの末尾の後の、最初の非変換文字へのポインター。  
   
  ` first2`  
- 変換後のシーケンスの先頭へのポインター。  
+ 変換されたシーケンスの先頭へのポインター。  
   
  ` last2`  
- 変換後のシーケンスの末尾へのポインター。  
+ 変換されたシーケンスの末尾へのポインター。  
   
  ` next2`  
- ポインター、 **CharType** 最後が変換された後は、 **CharType**, 、変換先のシーケンスの最初の変更されていない文字にします。  
+ 変換された最後の **CharType** の後の **CharType** (対象シーケンスの変更されていない最初の文字) へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、部分的な成功した場合、または操作の失敗を示す戻り値。 関数を返します。  
+ 操作の成功、一部成功、または失敗を示す戻り値。 この関数では次の値が返されます。  
   
-- **codecvt_base::error** 場合、ソース シーケンスが病気が形成されます。  
+- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
   
-- `codecvt_base::noconv` 場合は、関数には、変換は行われません。  
+- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
   
-- **codecvt_base::ok** 変換が成功した場合。  
+- 変換に成功した場合は、**codecvt_base::ok**。  
   
-- **codecvt_base::partial** ソースが不十分な場合、またはコピー先のサイズが不十分、変換を成功させるためです。  
+- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
   
 ### <a name="remarks"></a>コメント  
- `_State` 新しいソース シーケンスの先頭にある初期の変換状態を表す必要があります。 関数は、変換に成功したは、現在の状態を反映するために必要に応じて、格納されている値を変更します。 格納されているその値は、それ以外の場合指定されません。  
+ `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 それ以外の場合、格納されている値は指定されません。  
   
 ### <a name="example"></a>例  
-  例を参照してください [で](#codecvt__in), 、どの呼び出し `do_in`します。  
+  [in](#codecvt__in) の例 (`do_in` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdolengtha-codecvtdolength"></a><a name="codecvt__do_length"></a>  codecvt::do_length  
- 仮想関数を決定する数 **バイト**外部の指定されたシーケンスから **バイト**生成内部の指定された数よりも **CharType**s しその数を返します **バイト**秒です。  
+##  <a name="a-namecodecvtdolengtha--codecvtdolength"></a><a name="codecvt__do_length"></a>  codecvt::do_length  
+ 特定の外部 **Byte** シーケンスから生成された内部 **CharType** が特定の数を超えずに最大となる **Byte** 数を特定し、その **Byte** 数を返す仮想関数。  
   
 ```  
 virtual int do_length(
@@ -283,48 +299,48 @@ virtual int do_length(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 外部のシーケンスの先頭へのポインター。  
+ 外部シーケンスの先頭へのポインター。  
   
  ` last1`  
- 外部のシーケンスの末尾へのポインター。  
+ 外部シーケンスの末尾へのポインター。  
   
  `_Len2`  
- 最大数 **バイト**s メンバー関数によって返されることができます。  
+ メンバー関数で返すことができる **Byte** の最大数。  
   
 ### <a name="return-value"></a>戻り値  
- 変換では、以下の最大数のカウントを表す整数 `_Len2`, に外部ソース シーケンスで定義されている [ ` first1`, 、` last1`)。  
+ [ ` first1`, ` last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数を表す整数。  
   
 ### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数が効果的に呼び出し `do_in`( `_State`, 、` first1`, 、` last1`, 、` next1`, 、`_Buf`, 、`_Buf` + `_Len2`, 、` next2`) の `_State` (状態のコピー)、一部のバッファー `_Buf`, 、およびポインター ` next1`と ` next2`です。  
+ protected 仮想メンバー関数は、`_State` (状態のコピー)、一部のバッファー `_Buf`、およびポインター ` next1` と ` next2` について、`do_in` (`_State`、` first1`、` last1`、` next1`、`_Buf`、`_Buf` + `_Len2`、` next2`) を呼び出します。  
   
- これは、後、返します ` next2` – **buf**します。 したがって、変換では、以下の最大数をカウント `_Len2`, でソース シーケンスで定義されている [ ` first1`, 、` last1`)。  
+ その後、` next2` – **buf** を返します。 したがって、[ ` first1`, ` last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数がカウントされます。  
   
- テンプレートのバージョンを常に返しますの小さい方の ` last1` – ` first1` と `_Len2`です。  
+ テンプレート バージョンでは常に、` last1` – ` first1` と `_Len2` のいずれか小さい方が返されます。  
   
 ### <a name="example"></a>例  
-  例を参照してください [長さ](#codecvt__length), 、どの呼び出し **do_length**します。  
+  [length](#codecvt__length) の例 (**do_length** を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdomaxlengtha-codecvtdomaxlength"></a><a name="codecvt__do_max_length"></a>  codecvt::do_max_length  
- 外部の最大数を返す仮想関数 **バイト**を 1 つの内部を生成するために必要な s **CharType**します。  
+##  <a name="a-namecodecvtdomaxlengtha--codecvtdomaxlength"></a><a name="codecvt__do_max_length"></a>  codecvt::do_max_length  
+ 1 つの内部 **CharType** を生成するために必要な最大外部 **Byte** 数を返す仮想関数。  
   
 ```  
 virtual int do_max_length() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 最大数 **バイト**いずれかの生成に必要な s **CharType**します。  
+ 1 つの **CharType** を生成するために必要な最大 **Byte** 数。  
   
 ### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数によって返される最大許容値を返す [do_length](#codecvt__do_length)( ` first1`, 、` last1`, 1) の任意の有効な値について ` first1` と ` last1`です。  
+ protected 仮想メンバー関数は、` first1` と ` last1` の任意の有効な値の [do_length](#codecvt__do_length)( ` first1`, ` last1`, 1) で返すことができる最大許容値を返します。  
   
 ### <a name="example"></a>例  
-  例を参照してください [max_length](#codecvt__max_length), 、どの呼び出し `do_max_length`します。  
+  [max_length](#codecvt__max_length) の例 (`do_max_length` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdoouta-codecvtdoout"></a><a name="codecvt__do_out"></a>  codecvt::do_out  
- 内部のシーケンスに変換する呼び出される仮想関数 **CharType**外部のシーケンスに **バイト**秒です。  
+##  <a name="a-namecodecvtdoouta--codecvtdoout"></a><a name="codecvt__do_out"></a>  codecvt::do_out  
+ 内部の **CharType** のシーケンスを外部の **Byte** のシーケンスに変換するために呼び出される仮想関数。  
   
 ```  
 virtual result do_out(
@@ -339,45 +355,45 @@ virtual result do_out(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 変換するシーケンスの先頭へのポインター。  
+ 変換されるシーケンスの先頭へのポインター。  
   
  ` last1`  
- 変換するシーケンスの末尾へのポインター。  
+ 変換されるシーケンスの末尾へのポインター。  
   
  ` next1`  
- 最初へのポインターへの参照に変換しない **CharType**, 、最後に **CharType** 変換します。  
+ 変換された最後の **CharType** の後の、最初の未変換 **CharType** へのポインターの参照。  
   
  ` first2`  
- 変換後のシーケンスの先頭へのポインター。  
+ 変換されたシーケンスの先頭へのポインター。  
   
  ` last2`  
- 変換後のシーケンスの末尾へのポインター。  
+ 変換されたシーケンスの末尾へのポインター。  
   
  ` next2`  
- 最初へのポインターへの参照に変換しない **バイト**, 、最後に **バイト** 変換します。  
+ 変換された最後の **Byte** の後の、最初の未変換 **Byte** へのポインターの参照。  
   
 ### <a name="return-value"></a>戻り値  
- 関数を返します。  
+ この関数では次の値が返されます。  
   
-- **codecvt_base::error** 場合、ソース シーケンスが病気が形成されます。  
+- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
   
-- `codecvt_base::noconv` 場合は、関数には、変換は行われません。  
+- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
   
-- **codecvt_base::ok** 変換が成功した場合。  
+- 変換に成功した場合は、**codecvt_base::ok**。  
   
-- **codecvt_base::partial** ソースが不十分な場合、または変換先が変換を成功させるのに十分な大きさがない場合。  
+- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
   
 ### <a name="remarks"></a>コメント  
- `_State` 新しいソース シーケンスの先頭にある初期の変換状態を表す必要があります。 関数は、変換に成功したは、現在の状態を反映するために必要に応じて、格納されている値を変更します。 格納されているその値は、それ以外の場合指定されません。  
+ `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 それ以外の場合、格納されている値は指定されません。  
   
 ### <a name="example"></a>例  
-  例を参照してください [アウト](#codecvt__out), 、どの呼び出し `do_out`します。  
+  [out](#codecvt__out) の例 (`do_out` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtdounshifta-codecvtdounshift"></a><a name="codecvt__do_unshift"></a>  codecvt::do_unshift  
- 提供する呼び出される仮想関数、 **バイト**状態に依存する変換でのシーケンスの最後の文字を完了するために必要な s **バイト**秒です。  
+##  <a name="a-namecodecvtdounshifta--codecvtdounshift"></a><a name="codecvt__do_unshift"></a>  codecvt::do_unshift  
+ 状態に依存する変換で、**Byte** のシーケンスの最後の文字を完了するために必要な **Byte** を提供するために呼び出される仮想関数。  
   
 ```  
 virtual result do_unshift(
@@ -389,60 +405,60 @@ virtual result do_unshift(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first2`  
- ターゲット範囲内の最初の位置を指すポインター。  
+ 対象範囲内の最初の位置へのポインター。  
   
  ` last2`  
- ターゲット範囲の最後の位置を指すポインター。  
+ 対象範囲内の最後の位置へのポインター。  
   
  ` next2`  
- 移行先のシーケンスの最初の変更されていない要素へのポインター。  
+ 対象シーケンス内の変更されていない最初の要素へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 関数を返します。  
+ この関数では次の値が返されます。  
   
-- **codecvt_base::error** 場合 _ *状態* 無効な状態を表します  
+- _ *State* が無効な状態を表す場合は、**codecvt_base::error**。  
   
-- `codecvt_base::noconv` 関数が変換を実行しない場合  
+- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
   
-- **codecvt_base::ok** 変換が成功した場合  
+- 変換に成功した場合は、**codecvt_base::ok**。  
   
-- **codecvt_base::partial** 、変換先が変換を成功させるのに十分な大きさがない場合  
+- 変換先が、変換を正常に行うのに十分な大きさでない場合は、**codecvt_base::partial**。  
   
 ### <a name="remarks"></a>コメント  
- このプロテクト仮想メンバー関数が、ソース要素を変換しようとしています。 **CharType**(0) 内で格納している移行先のシーケンスに [ ` first2`, 、` last2`)、終端の要素を除く **バイト**(0)。 常に格納 ` next2` 対象シーケンスの最初の変更されていない要素へのポインター。  
+ protected 仮想メンバー関数は、ソース要素 **CharType**(0) を、終了要素 **Byte**(0) 以外の、[ ` first2`, ` last2`) 内に格納されている対象シーケンスに変換しようとします。 対象シーケンス内の変更されていない最初の要素へのポインター ` next2` に常に格納します。  
   
- _ *状態* 新しいソース シーケンスの先頭にある初期の変換状態を表す必要があります。 関数は、変換に成功したは、現在の状態を反映するために必要に応じて、格納されている値を変更します。 通常、ソース要素に変換する **CharType**(0) を初期の変換状態の現在の状態のままです。  
+ _ *State* は、新しいソース シーケンスの先頭で最初の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 通常、ソース要素 **CharType**(0) を変換した場合、現在の状態は初期の変換状態のままになります。  
   
 ### <a name="example"></a>例  
-  例を参照してください [unshift](#codecvt__unshift), 、どの呼び出し `do_unshift`します。  
+  [unshift](#codecvt__unshift) の例 (`do_unshift` を呼び出す) を参照してください。  
   
-##  <a name="a-namecodecvtencodinga-codecvtencoding"></a><a name="codecvt__encoding"></a>  codecvt::encoding  
- かどうかのエンコード、 **バイト** ストリームでは状態に依存する、かどうかの比率、 **バイト**使用されると、 **CharType**生成される定数、および、必要な場合は、決定比率の値。  
+##  <a name="a-namecodecvtencodinga--codecvtencoding"></a><a name="codecvt__encoding"></a>  codecvt::encoding  
+ **Byte** ストリームのエンコードが状態に依存する場合に、使用される **Byte** と生成される **CharType** との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定します。  
   
 ```  
 int encoding() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 戻り値が正の値、その値が一定数の **バイト** 生成に必要な文字、 **CharType** 文字です。  
+ 戻り値が正の値の場合、その値は、**CharType** 文字の生成に必要な **Byte** 文字の定数になります。  
   
- プロテクト仮想メンバー関数を返します。  
+ protected 仮想メンバー関数は次の値を返します。  
   
--   – 1, 場合型のシーケンスのエンコード `extern_type` は状態が依存しています。  
+-   `extern_type` 型のシーケンスのエンコードが状態に依存する場合は、-1。  
   
--   エンコードのさまざまな長さのシーケンスを含まれている場合は 0。  
+-   エンコードがさまざまな長さのシーケンスに関係する場合は、0。  
   
-- *N*, エンコーディングの長さの唯一のシーケンスを含まれている場合、 *n ください。*  
+- エンコードが長さ *N* のシーケンスのみに関係する場合は、*N*。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数を返します [do_encoding](#codecvt__do_encoding)します。  
+ このメンバー関数は、[do_encoding](#codecvt__do_encoding) を返します。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_encoding.cpp  
 // compile with: /EHsc  
 #include <locale>  
@@ -467,7 +483,7 @@ int main( )
 1  
 ```  
   
-##  <a name="a-namecodecvtexterntypea-codecvtexterntype"></a><a name="codecvt__extern_type"></a>  codecvt::extern_type  
+##  <a name="a-namecodecvtexterntypea--codecvtexterntype"></a><a name="codecvt__extern_type"></a>  codecvt::extern_type  
  外部表現に使用される文字型。  
   
 ```  
@@ -475,10 +491,10 @@ typedef Byte extern_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型は、テンプレート パラメーターのシノニム **バイト**します。  
+ この型は、テンプレート パラメーター **Byte** のシノニムです。  
   
-##  <a name="a-namecodecvtina-codecvtin"></a><a name="codecvt__in"></a>  codecvt::in  
- 一連の外部の形式に変換 **バイト**の一連の内部表現に **CharType**秒です。  
+##  <a name="a-namecodecvtina--codecvtin"></a><a name="codecvt__in"></a>  codecvt::in  
+ **Byte** のシーケンスの外部表現を、**CharType** のシーケンスの内部表現に変換します。  
   
 ```  
 result in(
@@ -493,45 +509,45 @@ result in(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 変換するシーケンスの先頭へのポインター。  
+ 変換されるシーケンスの先頭へのポインター。  
   
  ` last1`  
- 変換するシーケンスの末尾へのポインター。  
+ 変換されるシーケンスの末尾へのポインター。  
   
  ` next1`  
- 最初の未変換文字の変換後のシーケンスの末尾の次のポインター。  
+ 変換されたシーケンスの末尾の後の、最初の未変換文字へのポインター。  
   
  ` first2`  
- 変換後のシーケンスの先頭へのポインター。  
+ 変換されたシーケンスの先頭へのポインター。  
   
  ` last2`  
- 変換後のシーケンスの末尾へのポインター。  
+ 変換されたシーケンスの末尾へのポインター。  
   
  ` next2`  
- ポインター、 **CharType** 最後が変換された後は、 **Chartype** 対象シーケンスの最初の変更されていない文字にします。  
+ 変換された最後の **CharType** の後の **CharType** (対象シーケンスの変更されていない最初の文字) へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、部分的な成功または操作の失敗を示す戻り値。 関数を返します。  
+ 操作の成功、一部成功、または失敗を示す戻り値。 この関数では次の値が返されます。  
   
-- **codecvt_base::error** 場合、ソース シーケンスが病気が形成されます。  
+- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
   
-- `codecvt_base::noconv` 場合は、関数には、変換は行われません。  
+- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
   
-- **codecvt_base::ok** 変換が成功した場合。  
+- 変換に成功した場合は、**codecvt_base::ok**。  
   
-- **codecvt_base::partial** ソースが不十分な場合、または変換先が変換を成功させるのに十分な大きさがない場合。  
+- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
   
 ### <a name="remarks"></a>コメント  
- `_State` 新しいソース シーケンスの先頭にある初期の変換状態を表す必要があります。 関数は、変換に成功したは、現在の状態を反映するように、必要に応じて、格納されている値を変更します。 一部の変換後 `_State` を新しい文字が到着したときに再開する変換を許可するために設定する必要があります。  
+ `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 部分変換後に、`_State` は、新しい文字の到着時に変換を再開できるように設定する必要があります。  
   
- メンバー関数を返します [do_in](#codecvt__do_in)( `_State`, 、_ *First1、last1、next1、First2、_Llast2、next2*)。  
+ メンバー関数は、[do_in](#codecvt__do_in)( `_State`, _ *First1,  last1,  next1, First2, _Llast2,  next2*) を返します。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_in.cpp  
 // compile with: /EHsc  
 #define _INTL  
@@ -566,7 +582,7 @@ It worked! The converted string is:
  [This is the string to be converted!]  
 ```  
   
-##  <a name="a-namecodecvtinterntypea-codecvtinterntype"></a><a name="codecvt__intern_type"></a>  codecvt::intern_type  
+##  <a name="a-namecodecvtinterntypea--codecvtinterntype"></a><a name="codecvt__intern_type"></a>  codecvt::intern_type  
  内部表現に使用される文字型。  
   
 ```  
@@ -574,10 +590,10 @@ typedef CharType intern_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型は、テンプレート パラメーターのシノニム **CharType**します。  
+ この型は、テンプレート パラメーター **CharType** のシノニムです。  
   
-##  <a name="a-namecodecvtlengtha-codecvtlength"></a><a name="codecvt__length"></a>  codecvt::length  
- 指定数 **バイト**外部の指定されたシーケンスから **バイト**生成内部の指定された数よりも **CharType**s しその数を返します **バイト**s です。  
+##  <a name="a-namecodecvtlengtha--codecvtlength"></a><a name="codecvt__length"></a>  codecvt::length  
+ 特定の外部 **Byte** シーケンスから生成された内部 **CharType** が特定の数を超えずに最大となる **Byte** 数を特定し、その **Byte** 数を返します。  
   
 ```  
 int length(
@@ -589,26 +605,26 @@ int length(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 外部のシーケンスの先頭へのポインター。  
+ 外部シーケンスの先頭へのポインター。  
   
  ` last1`  
- 外部のシーケンスの末尾へのポインター。  
+ 外部シーケンスの末尾へのポインター。  
   
  `_Len2`  
- メンバー関数によって返されるバイトの最大数。  
+ メンバー関数で返すことができる Byte の最大数。  
   
 ### <a name="return-value"></a>戻り値  
- 変換では、以下の最大数のカウントを表す整数 `_Len2`, に外部ソース シーケンスで定義されている [ ` first1`, 、` last1`)。  
+ [ ` first1`, ` last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数を表す整数。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数を返します [do_length](#codecvt__do_length)( *_State first1*, 、` last1`, 、`_Len2`)。  
+ このメンバー関数は、[do_length](#codecvt__do_length)( *_State,  first1*, ` last1`, `_Len2`) を返します。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_length.cpp  
 // compile with: /EHsc  
 #define _INTL  
@@ -635,22 +651,22 @@ int main( )
 The length of the string is: 50.  
 ```  
   
-##  <a name="a-namecodecvtmaxlengtha-codecvtmaxlength"></a><a name="codecvt__max_length"></a>  codecvt::max_length  
- 外部の最大数を返します **バイト**を 1 つの内部を生成するために必要な s **CharType**します。  
+##  <a name="a-namecodecvtmaxlengtha--codecvtmaxlength"></a><a name="codecvt__max_length"></a>  codecvt::max_length  
+ 1 つの内部 **CharType** を生成するために必要な最大外部 **Byte** 数を返します。  
   
 ```  
 int max_length() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 最大数 **バイト**いずれかの生成に必要な s **CharType**します。  
+ 1 つの **CharType** を生成するために必要な最大 **Byte** 数。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数を返します [do_max_length](#codecvt__do_max_length)します。  
+ このメンバー関数は、[do_max_length](#codecvt__do_max_length) を返します。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_max_length.cpp  
 // compile with: /EHsc  
 #define _INTL  
@@ -671,8 +687,8 @@ int main( )
 1  
 ```  
   
-##  <a name="a-namecodecvtouta-codecvtout"></a><a name="codecvt__out"></a>  codecvt::out  
- 内部シーケンスを変換 **CharType**外部のシーケンスに **バイト**秒です。  
+##  <a name="a-namecodecvtouta--codecvtout"></a><a name="codecvt__out"></a>  codecvt::out  
+ 内部の **CharType** のシーケンスを外部の **Byte** のシーケンスに変換します。  
   
 ```  
 result out(
@@ -687,35 +703,35 @@ result out(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first1`  
- 変換するシーケンスの先頭へのポインター。  
+ 変換されるシーケンスの先頭へのポインター。  
   
  ` last1`  
- 変換するシーケンスの末尾へのポインター。  
+ 変換されるシーケンスの末尾へのポインター。  
   
  ` next1`  
- 最初へのポインターへの参照に変換しない **CharType** 最後後 **CharType** 変換します。  
+ 変換された最後の **CharType** の後の、最初の未変換 **CharType** へのポインターの参照。  
   
  ` first2`  
- 変換後のシーケンスの先頭へのポインター。  
+ 変換されたシーケンスの先頭へのポインター。  
   
  ` last2`  
- 変換後のシーケンスの末尾へのポインター。  
+ 変換されたシーケンスの末尾へのポインター。  
   
  ` next2`  
- 最初へのポインターへの参照に変換しない **バイト** 最後の変換後 **バイト**します。  
+ 変換された最後の **Byte** の後の、最初の未変換 **Byte** へのポインターの参照。  
   
 ### <a name="return-value"></a>戻り値  
- メンバー関数を返します [do_out](#codecvt__do_out)( `_State`, 、` first1`, 、` last1`, 、` next1`, 、` first2`, 、` last2`, 、` next2`)。  
+ このメンバー関数は、[do_out](#codecvt__do_out)( `_State`, ` first1`, ` last1`, ` next1`, ` first2`, ` last2`, ` next2`) を返します。  
   
 ### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [codecvt::do_out](#codecvt__do_out)します。  
+ 詳細については、「[codecvt::do_out](#codecvt__do_out)」を参照してください。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // codecvt_out.cpp  
 // compile with: /EHsc  
 #define _INTL  
@@ -750,7 +766,7 @@ It worked: The converted string is:
  [This is the wchar_t string to be converted.]  
 ```  
   
-##  <a name="a-namecodecvtstatetypea-codecvtstatetype"></a><a name="codecvt__state_type"></a>  codecvt::state_type  
+##  <a name="a-namecodecvtstatetypea--codecvtstatetype"></a><a name="codecvt__state_type"></a>  codecvt::state_type  
  内部表現と外部表現との変換時の中間状態を表すために使用される文字型。  
   
 ```  
@@ -758,10 +774,10 @@ typedef StateType state_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型は、テンプレート パラメーターのシノニム **StateType**します。  
+ この型は、テンプレート パラメーター **StateType** のシノニムです。  
   
-##  <a name="a-namecodecvtunshifta-codecvtunshift"></a><a name="codecvt__unshift"></a>  codecvt::unshift  
- 提供、 **バイト**状態に依存する変換でのシーケンスの最後の文字を完了するために必要な s **バイト**秒です。  
+##  <a name="a-namecodecvtunshifta--codecvtunshift"></a><a name="codecvt__unshift"></a>  codecvt::unshift  
+ 状態に依存する変換で、**Byte** のシーケンスの最後の文字を完了するために必要な **Byte** を提供します。  
   
 ```  
 result unshift(
@@ -773,38 +789,39 @@ result unshift(
   
 ### <a name="parameters"></a>パラメーター  
  `_State`  
- メンバー関数への呼び出しの間で維持されますが、変換状態です。  
+ メンバー関数の呼び出し間で維持される変換の状態。  
   
  ` first2`  
- ターゲット範囲内の最初の位置を指すポインター。  
+ 対象範囲内の最初の位置へのポインター。  
   
  ` last2`  
- ターゲット範囲の最後の位置を指すポインター。  
+ 対象範囲内の最後の位置へのポインター。  
   
  ` next2`  
- 移行先のシーケンスの最初の変更されていない要素へのポインター。  
+ 対象シーケンス内の変更されていない最初の要素へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 関数を返します。  
+ この関数では次の値が返されます。  
   
-- **codecvt_base::error** 状態が無効な状態を表す場合。  
+- 無効な状態を表す場合は、**codecvt_base::error**。  
   
-- `codecvt_base::noconv` 場合は、関数には、変換は行われません。  
+- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
   
-- **codecvt_base::ok** 変換が成功した場合。  
+- 変換に成功した場合は、**codecvt_base::ok**。  
   
-- **codecvt_base::partial** 、変換先が変換を成功させるのに十分な大きさがない場合。  
+- 変換先が、変換を正常に行うのに十分な大きさでない場合は、**codecvt_base::partial**。  
   
 ### <a name="remarks"></a>コメント  
- このプロテクト仮想メンバー関数が、ソース要素を変換しようとしています。 **CharType**(0) 内で格納している移行先のシーケンスに [ ` first2`, 、` last2`)、終端の要素を除く **バイト**(0)。 常に格納 ` next2` 対象シーケンスの最初の変更されていない要素へのポインター。  
+ protected 仮想メンバー関数は、ソース要素 **CharType**(0) を、終了要素 **Byte**(0) 以外の、[ ` first2`, ` last2`) 内に格納されている対象シーケンスに変換しようとします。 対象シーケンス内の変更されていない最初の要素へのポインター ` next2` に常に格納します。  
   
- `_State` 新しいソース シーケンスの先頭にある初期の変換状態を表す必要があります。 関数は、変換に成功したは、現在の状態を反映するように、必要に応じて、格納されている値を変更します。 通常、ソース要素に変換する **CharType**(0) を初期の変換状態の現在の状態のままです。  
+ `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 通常、ソース要素 **CharType**(0) を変換した場合、現在の状態は初期の変換状態のままになります。  
   
- メンバー関数を返します [do_unshift](#codecvt__do_unshift)( `_State`, 、` first2`, 、` last2`, 、` next2` )。  
+ このメンバー関数は、[do_unshift](#codecvt__do_unshift)( `_State`, ` first2`, ` last2`, ` next2` ) を返します。  
   
 ## <a name="see-also"></a>関連項目  
- [\< ロケール>](../standard-library/locale.md)   
+ [\<locale>](../standard-library/locale.md)   
  [コード ページ](../c-runtime-library/code-pages.md)   
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
 

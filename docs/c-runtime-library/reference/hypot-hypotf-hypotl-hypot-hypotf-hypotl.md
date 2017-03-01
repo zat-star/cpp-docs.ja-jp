@@ -1,63 +1,79 @@
 ---
 title: "hypot、hypotf、hypotl、_hypot、_hypotf、_hypotl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_hypotf"
-  - "hypot"
-  - "hypotf"
-  - "_hypot"
-  - "_hypotl"
-  - "hypotl"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "hypotf"
-  - "hypotl"
-  - "_hypotl"
-  - "hypot"
-  - "_hypot"
-  - "_hypotf"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_hypot 関数"
-  - "計算 (直角三角形の斜辺を)"
-  - "hypot 関数"
-  - "直角三角形の斜辺の計算"
-  - "hypotf 関数"
-  - "hypotl 関数"
-  - "三角形, 計算 (直角三角形の斜辺を)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _hypotf
+- hypot
+- hypotf
+- _hypot
+- _hypotl
+- hypotl
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- hypotf
+- hypotl
+- _hypotl
+- hypot
+- _hypot
+- _hypotf
+dev_langs:
+- C++
+helpviewer_keywords:
+- hypotenuse calculation
+- hypot function
+- hypotf function
+- triangles, calculating hypotenuse
+- hypotl function
+- calculating hypotenuses
+- _hypot function
 ms.assetid: 6a13887f-bd53-43fc-9d77-5b42d6e49925
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# hypot、hypotf、hypotl、_hypot、_hypotf、_hypotl
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: c372095f4ae5903f27e5f6add9a79de728a5e202
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="hypot-hypotf-hypotl-hypot-hypotf-hypotl"></a>hypot、hypotf、hypotl、_hypot、_hypotf、_hypotl
 斜辺を計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double hypot(   
@@ -86,29 +102,29 @@ long double _hypotl(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `x`, `y`  
  浮動小数点値。  
   
-## 戻り値  
- 成功した場合、`hypot` は斜辺の長さを返します。オーバーフローについては、`hypot` は INF \(無限\) を返し、`errno` 変数は `ERANGE` に設定されます。  `_matherr` を使用して、エラー処理を修正できます。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合、`hypot` は斜辺の長さを返します。オーバーフローについては、`hypot` は INF (無限) を返し、`errno` 変数は `ERANGE` に設定されます。 `_matherr` を使用して、エラー処理を修正できます。  
   
- リターン コードの詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-## 解説  
- `hypot` 関数は、`x` と `y` の 2 辺の長さが指定された直角三角形の斜辺の長さを計算します \(つまり、`x`<sup>2</sup> \+ `y`<sup>2</sup> の平方根\)。  
+## <a name="remarks"></a>コメント  
+ `hypot` 関数は、`x` と `y` の&2; 辺の長さが指定された直角三角形の斜辺の長さを計算します (つまり、`x`<sup>2</sup> + `y`<sup>2</sup> の平方根)。  
   
- 以前の標準との互換性のために、先頭にアンダースコアがある関数のバージョンが用意されています。  これらの動作は、先頭にアンダースコアがないバージョンと同じです。  新しいコードには、先頭にアンダースコアがないバージョンを使用することをお勧めします。  
+ 以前の標準との互換性のために、先頭にアンダースコアがある関数のバージョンが用意されています。 これらの動作は、先頭にアンダースコアがないバージョンと同じです。 新しいコードには、先頭にアンダースコアがないバージョンを使用することをお勧めします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`hypot`, `hypotf`, `hypotl`, `_hypot`, `_hypotf`, `_hypotl`|\<math.h\>|  
+|-------------|---------------------|  
+|`hypot`, `hypotf`, `hypotl`, `_hypot`, `_hypotf`, `_hypotl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_hypot.c  
@@ -126,11 +142,14 @@ int main( void )
 }  
 ```  
   
-  **直角三角形の二辺が 3.0 と 4.0 の場合、斜辺は 5.0 です**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+If a right triangle has sides 3.0 and 4.0, its hypotenuse is 5.0  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [\_cabs](../Topic/_cabs.md)   
- [\_matherr](../../c-runtime-library/reference/matherr.md)
+ [_cabs](../../c-runtime-library/reference/cabs.md)   
+ [_matherr](../../c-runtime-library/reference/matherr.md)

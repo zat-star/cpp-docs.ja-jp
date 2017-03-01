@@ -1,84 +1,100 @@
 ---
 title: "_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_utime64"
-  - "_utime"
-  - "_wutime"
-  - "_wutime64"
-  - "_wutime32"
-  - "_utime32"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_tutime"
-  - "_utime64"
-  - "wutime"
-  - "utime32"
-  - "wutime64"
-  - "_utime"
-  - "wutime32"
-  - "_wutime"
-  - "utime"
-  - "utime64"
-  - "_wutime64"
-  - "_utime32"
-  - "_tutime64"
-  - "_wutime32"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "tutime 関数"
-  - "utime32 関数"
-  - "utime64 関数"
-  - "_utime 関数"
-  - "_tutime32 関数"
-  - "時刻 [C++]、ファイルの変更"
-  - "wutime 関数"
-  - "_wutime 関数"
-  - "_wutime32 関数"
-  - "_tutime64 関数"
-  - "_tutime 関数"
-  - "ファイル [C++]、変更時刻"
-  - "_wutime64 関数"
-  - "_utime32 関数"
-  - "utime 関数"
-  - "_utime64 関数"
-  - "wutime64 関数"
-  - "wutime32 関数"
-  - "tutime64 関数"
-  - "tutime32 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _utime64
+- _utime
+- _wutime
+- _wutime64
+- _wutime32
+- _utime32
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _tutime
+- _utime64
+- wutime
+- utime32
+- wutime64
+- _utime
+- wutime32
+- _wutime
+- utime
+- utime64
+- _wutime64
+- _utime32
+- _tutime64
+- _wutime32
+dev_langs:
+- C++
+helpviewer_keywords:
+- tutime function
+- utime32 function
+- utime64 function
+- _utime function
+- _tutime32 function
+- time [C++], file modification
+- wutime function
+- _wutime function
+- _wutime32 function
+- _tutime64 function
+- _tutime function
+- files [C++], modification time
+- _wutime64 function
+- _utime32 function
+- utime function
+- _utime64 function
+- wutime64 function
+- wutime32 function
+- tutime64 function
+- tutime32 function
 ms.assetid: 8d482d40-19b9-4591-bfee-5d7f601d1a9e
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# _utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 7d8823bfe5650634d3fb079d2910e98409622ec6
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="utime-utime32-utime64-wutime-wutime32-wutime64"></a>_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
 ファイルの変更時刻を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int _utime(  
@@ -107,69 +123,69 @@ int _wutime64(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `filename`  
- パスまたはファイル名を表す文字列へのポインター。  
+ パスまたはファイル名を含む文字列へのポインター。  
   
  `times`  
  格納されている時刻値へのポインター。  
   
-## 戻り値  
- これらの各関数は、ファイルの変更の時刻が変更された場合で、0 を返します。 戻り値 \-1 はエラーを示します。 無効なパラメーターが渡された場合、無効なパラメーター ハンドラーが呼び出される」の説明に従って [パラメーターの検証](../../c-runtime-library/parameter-validation.md)します。 実行の継続が許可された場合、これらの関数は\-1 を返しますと `errno` は、次の値のいずれかに設定します。  
+## <a name="return-value"></a>戻り値  
+ これらの各関数は、ファイルの変更時刻が変更されると、0 を返します。 戻り値 -1 はエラーを示します。 無効なパラメーターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を次のいずれかの値に設定します。  
   
  `EACCES`  
- パスは、ディレクトリまたは読み取り専用ファイルを指定します。  
+ パスにディレクトリまたは読み取り専用ファイルが指定されている  
   
  `EINVAL`  
  無効な `times` 引数  
   
  `EMFILE`  
- 開いているファイルが多すぎます \(その変更時刻を変更するのには、ファイルを開く必要があります\)  
+ 開いているファイルが多すぎる (変更時刻を変更するにはファイルを開く必要があります)  
   
  `ENOENT`  
- パスまたはファイル名が見つかりません。  
+ パスまたはファイル名が見つからない  
   
- リターン コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- 変更日が 1970 年 1 月 1 日午前 0 時以降後、および使用する関数の終了日より前に、の場合、ファイルの日付を変更できます。`_utime``_wutime` 終了日が UTC の 3000 年 12 月 31 日 23時 59分: 59 秒であるため、64 ビットの時刻の値を使用します。 場合 `_USE_32BIT_TIME_T` が定義されている、終了日の 23時 59分: 59 2038 年 1 月 18 日 \(utc\) が以前の動作を強制的にします。`_utime32` または `_wutime32` かどうかに関係なく 32 ビット時の型を使用して `_USE_32BIT_TIME_T` を定義すると、常に、以前の終了日。`_utime64` または `_wutime64` ため、これらの関数は、以降の終了日を常にサポート、64 ビット時の型を常に使用します。  
+ 変更日が 1970 年 1 月 1 日午前 0 時以降で、使用する関数の終了日より前の場合、ファイルの日付を変更できます。 `_utime` と `_wutime` は 64 ビットの時刻値を使用するため、終了日は UTC の 3000 年 12 月 31 日 23 時 59 分 59 秒になります。 以前の動作を強制するよう `_USE_32BIT_TIME_T` が定義されている場合、終了日は UTC の 2038 年 1 月 18 日 23 時 59 分 59 秒になります。 `_utime32` または `_wutime32` は、`_USE_32BIT_TIME_T` の定義内容に関係なく 32 ビットの時刻型を使用し、常に早いほうの終了日を使用します。 `_utime64` または `_wutime64` は常に 64 ビットの時刻型を使用するため、これらの関数では遅いほうの終了日がサポートされます。  
   
-## 解説  
- `_utime` 関数によって指定されたファイルの修正時間を設定する `filename`*.*プロセスは、時間を変更するために、ファイルに書き込みアクセス権が必要です。 Windows オペレーティング システムでは、アクセス時間との変更時刻を変更できます、 `_utimbuf` 構造体。 場合 `times` は、 `NULL` ポインター、最終更新日は現在の現地時刻に設定します。 それ以外の場合、 `times` 型の構造体をポイントしなければなりません `_utimbuf`, に定義されている。H.  
+## <a name="remarks"></a>コメント  
+ `_utime` 関数は、`filename`* によって指定されたファイルの変更時刻を設定します。* プロセスは、時刻を変更するために、ファイルに対して書き込みアクセス権が必要です。 Windows オペレーティング システムでは、`_utimbuf` 構造体でアクセス時刻および変更時刻を変更できます。 `times` が `NULL` ポインターである場合、変更時刻は現在の現地時刻に設定されます。 それ以外の場合、`times` は、SYS\UTIME.H で定義されている型 `_utimbuf` の構造体を指す必要があります。  
   
- `_utimbuf` 構造体で使用されるファイル アクセス、および変更時刻を格納する `_utime` ファイル変更日を変更します。 構造体には、型のどちらも、次のフィールド `time_t`:  
+ `_utimbuf` 構造体は、`_utime` でファイル変更日を変更するために使用する、ファイルへのアクセス時刻および変更時刻を格納します。 構造体には、いずれも型 `time_t` である次のフィールドがあります。  
   
  `actime`  
- ファイルのアクセス時刻  
+ ファイルへのアクセス時刻  
   
  `modtime`  
  ファイルの変更時刻  
   
- 特定のバージョンの `_utimbuf` 構造 \(`_utimebuf32` と `__utimbuf64`\) は時刻型の 32 ビットおよび 64 ビット バージョンを使用して定義します。 これらは、この関数の 32 ビットおよび 64 ビット特定のバージョンで使用されます。`_utimbuf` 64 ビットの時刻型を使用してしない限り、既定ではそれ自体 `_USE_32BIT_TIME_T` が定義されています。  
+ 特定のバージョンの `_utimbuf` 構造体 (`_utimebuf32` と `__utimbuf64`) は、32 ビット バージョンと 64 ビット バージョンの時刻型を使用して定義されます。 これらは、この関数の 32 ビットおよび 64 ビットの特定バージョンで使用されます。 `_utimbuf` 自体は、`_USE_32BIT_TIME_T` が定義されていない場合、既定で 64 ビットの時刻型を使用します。  
   
- `_utime` 同じ `_futime` する点を除いて、 `filename` の引数 `_utime` は、ファイル名または開いているファイルのファイル記述子ではなく、ファイルへのパス。  
+ `_utime` は `_futime` と同じですが、`_utime` の引数 `filename` が開いているファイルのファイル記述子ではなくファイル名またはファイルへのパスである点が異なります。  
   
  `_wutime` 関数は、`_utime` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wutime` は、ワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tutime`|`_utime`|`_utime`|`_wutime`|  
 |`_tutime32`|`_utime32`|`_utime32`|`_wutime32`|  
 |`_tutime64`|`_utime64`|`_utime64`|`_wutime64`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチン|必要なヘッダー|省略可能なヘッダー|  
-|----------|-------------|---------------|  
-|`_utime`、`_utime32`、`_utime64`|\< sys\/utime.h \>|\<errno.h\>|  
-|`_utime64`|\< sys\/utime.h \>|\<errno.h\>|  
-|`_wutime`|\< utime.h \> または \< wchar.h \>|\<errno.h\>|  
+|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|-------------|----------------------|----------------------|  
+|`_utime`、`_utime32`、`_utime64`|\<sys/utime.h>|\<errno.h>|  
+|`_utime64`|\<sys/utime.h>|\<errno.h>|  
+|`_wutime`|\<utime.h> または \<wchar.h>|\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- このプログラムは `_utime` ファイル変更時刻を現在の時刻に設定します。  
+## <a name="example"></a>例  
+ このプログラムは `_utime` を使用して、ファイル変更時刻を現在の時刻に設定します。  
   
 ```  
 // crt_utime.c  
@@ -216,7 +232,7 @@ int main( void )
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Volume in drive C has no label.  
@@ -238,17 +254,17 @@ File time modified
                0 Dir(s)  20,742,955,008 bytes free  
 ```  
   
-## 同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、`PInvoke` を使用します。 詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   
- [asctime、\_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
- [ctime、\_ctime32、\_ctime64、\_wctime、\_wctime32、\_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
- [\_fstat、\_fstat32、\_fstat64、\_fstati64、\_fstat32i64、\_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
- [\_ftime、\_ftime32、\_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
- [\_futime、\_futime32、\_futime64](../../c-runtime-library/reference/futime-futime32-futime64.md)   
- [gmtime、\_gmtime32、\_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
- [localtime、\_localtime32、\_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
- [\_stat、\_wstat 関数](../../c-runtime-library/reference/stat-functions.md)   
- [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)
+ [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
+ [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
+ [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
+ [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
+ [_futime、_futime32、_futime64](../../c-runtime-library/reference/futime-futime32-futime64.md)   
+ [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
+ [localtime、_localtime32、_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
+ [_stat、_wstat 関数](../../c-runtime-library/reference/stat-functions.md)   
+ [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)

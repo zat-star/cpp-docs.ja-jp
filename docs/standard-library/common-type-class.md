@@ -1,68 +1,80 @@
 ---
 title: "common_type クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.tr1.common_type"
-  - "common_type"
-  - "std::tr1::common_type"
-  - "std.common_type"
-  - "std::common_type"
-  - "type_traits/std::common_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "common_type クラス [TR1]"
-  - "common_type"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- common_type
+- std::common_type
+- type_traits/std::common_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- common_type class
+- common_type
 ms.assetid: 02bc4e7b-c63d-49de-9f8a-511d3a5c1e7f
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# common_type クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
+ms.openlocfilehash: 9166035a7de5414f23149354f0c8fb658f4a30fe
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="commontype-class"></a>common_type クラス
 1 つ以上の型の共通型を決定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
+```
 template <class... T>  
-   struct common_type;  
-  
+struct common_type;
+
 template <class T>  
-   struct common_type<T> {  
-      typedef typename decay<T>::type type;  
-};  
-  
+struct common_type<T> {
+    typedef typename decay<T>::type type;
+};
+
 template <class T, class U>  
-   struct common_type<T, U> {  
-      typedef typename decay<decltype(true ?  declval<T>() :  
-         declval<U>())>::type type;  
-};  
-  
+struct common_type<T, U> {
+    typedef typename decay<decltype(true declval<T>() :
+    declval<U>())>::type type;
+};
+
 template <class T, class U, class... V>  
-   struct common_type<T, U, V...> {  
-      typedef typename common_type<typename common_type<T, U>::type, V...>::type type;  
-};  
+struct common_type<T, U, V...> {
+    typedef typename common_type<typename common_type<T, U>::type, V...>::type type;
+};
 ```  
   
-#### パラメーター  
- [完全型](../Topic/Incomplete%20Types.md)または void である型のリスト。  
+#### <a name="parameters"></a>パラメーター  
+ [完全型](../c-language/incomplete-types.md)または void である型のリスト。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `type` のメンバーは、パラメーター リストのすべての型をその型に変換できる共通型です。  
   
-## 例  
+## <a name="example"></a>例  
  次のプログラムは、適切な用法のシナリオと結果のテストを示します。  
   
 ```cpp  
@@ -104,33 +116,36 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
+```
+Test for typedefs of common_type int
+NumericType: true
+FloatType: false
+ModifiedIntType: true
+ClassType: false
+---------------------------
+Test for typedefs of common_type double
+NumericType: false
+FloatType: true
+ModifiedIntType: false
+ClassType: false
+---------------------------
+Test for typedefs of common_type Base
+NumericType: false
+FloatType: false
+ModifiedIntType: false
+ClassType: true
 ```  
-Test for typedefs of common_type int  
-NumericType: true  
-FloatType: false  
-ModifiedIntType: true  
-ClassType: false  
----------------------------  
-Test for typedefs of common_type double  
-NumericType: false  
-FloatType: true  
-ModifiedIntType: false  
-ClassType: false  
----------------------------  
-Test for typedefs of common_type Base  
-NumericType: false  
-FloatType: false  
-ModifiedIntType: false  
-ClassType: true  
   
-```  
-  
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)
+
+
+
+

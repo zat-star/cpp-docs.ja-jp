@@ -1,49 +1,65 @@
 ---
-title: "clearerr_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "clearerr_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "clearerr_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clearerr_s 関数"
-  - "エラー インジケーター (ストリームの)"
-  - "リセット (ストリーム エラー インジケーターを)"
+title: clearerr_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- clearerr_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- clearerr_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- error indicator for streams
+- resetting stream error indicator
+- clearerr_s function
 ms.assetid: b74d014d-b7a8-494a-a330-e5ffd5614772
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# clearerr_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: a8904000ae9175f0f6d43b70bc8c6af5e5b572dc
+ms.lasthandoff: 02/24/2017
 
-ストリームのエラー インジケーターをリセットします。  これは [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)"に説明されているように、セキュリティが強化された [clearerr](../../c-runtime-library/reference/clearerr.md) のバージョンです。  
+---
+# <a name="clearerrs"></a>clearerr_s
+ストリームのエラー インジケーターをリセットします。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [clearerr](../../c-runtime-library/reference/clearerr.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t clearerr_s(  
@@ -51,27 +67,27 @@ errno_t clearerr_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
- `FILE` 構造体へのポインター。  
+ `FILE` 構造体へのポインター  
   
-## 戻り値  
- 正常終了した場合は; `stream` が NULL の場合 `EINVAL`。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は&0;、`stream` が NULL の場合は `EINVAL`。  
   
-## 解説  
- `clearerr_s` 関数は `stream`のエラー インジケーターと EOF をリセットします。  エラー インジケーターが自動的にオフになりません; 一度指定したストリームのエラー インジケーターが設定されている場合、そのストリームの操作は、`clearerr_s``clearerr`、`fseek`、`fsetpos`までのエラー値を返し、または `rewind` が呼び出されます。  
+## <a name="remarks"></a>コメント  
+ `clearerr_s` 関数は、`stream` のエラー インジケーターとファイルの終わりインジケーターをリセットします。 エラー インジケーターは自動的にクリアされません。指定のストリームのエラー インジケーターを設定すると、そのストリームに対する操作は、`clearerr_s`、`clearerr`、`fseek`、`fsetpos`、または `rewind` が呼び出されるまでエラー値を返し続けます。  
   
- `stream` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+ `stream` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`clearerr_s`|\<stdio.h\>|  
+|-------------|---------------------|  
+|`clearerr_s`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_clearerr_s.c  
@@ -113,16 +129,26 @@ int main( void )
 }  
 ```  
   
-  **`nnWrite の` エラー: 不正なファイル記述子**  
-**入力するとエラーが発生します。n**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
   
-## 参照  
+n  
+  
+```  
+  
+```Output  
+  
+      nWrite error: Bad file descriptor  
+Will input cause an error? n  
+```  
+  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   
- [\_eof](../../c-runtime-library/reference/eof.md)   
+ [_eof](../../c-runtime-library/reference/eof.md)   
  [feof](../../c-runtime-library/reference/feof.md)   
  [ferror](../../c-runtime-library/reference/ferror.md)   
- [perror、\_wperror](../../c-runtime-library/reference/perror-wperror.md)
+ [perror、_wperror](../../c-runtime-library/reference/perror-wperror.md)

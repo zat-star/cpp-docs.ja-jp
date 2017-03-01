@@ -1,42 +1,58 @@
 ---
 title: "入力ストリーム | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [C++], 読み取り (入力ストリームから)"
-  - "入力ストリーム オブジェクト"
-  - "入力ストリーム"
-  - "読み取り (データを) [C++], 入力ストリームから"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- reading data [C++], from input streams
+- data [C++], reading from input stream
+- input streams
+- input stream objects
 ms.assetid: f14d8954-8f8c-4c3c-8b99-14ddb3683f94
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# 入力ストリーム
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 344c0c29531ee44445b89f14396593cdd48a25ad
+ms.lasthandoff: 02/24/2017
 
-入力ストリーム オブジェクトは、バイトのソースです。  3 個の最も重要な入力ストリーム クラスは、[istream](http://msdn.microsoft.com/ja-jp/6801779e-260e-416d-b4ec-fef5ff1b2371)[ifstream](../Topic/ifstream.md)と [istringstream](../Topic/istringstream.md)です。  
+---
+# <a name="input-streams"></a>入力ストリーム
+入力ストリーム オブジェクトは、バイトのソースです。 最も重要な&3; つの入力ストリーム クラスは、[istream](../standard-library/basic-istream-class.md)、[ifstream](../standard-library/basic-ifstream-class.md)、および [istringstream](../standard-library/basic-istringstream-class.md) です。  
   
- `istream` クラスは順次テキスト モードの入力に使用されます。  バッファリングまたはいない操作のクラス `istream` オブジェクトを構成できます。  基本クラス、`ios`のすべての機能は `istream`に含まれています。  まれに `istream`クラスからオブジェクトを作成しません。  代わりに、一般にクラス [ostream](../standard-library/ostream.md)オブジェクトである `cin` の定義済みのなオブジェクトを使用します。  場合によっては、プログラムの起動時に後で他のストリーム オブジェクトに `cin` を割り当てることができます。  
+ `istream` クラスは、順次テキスト モードの入力に対して最も効果的です。 バッファーされた操作またはバッファーされてない操作のクラス `istream` のオブジェクトを構成できます。 基本クラスのすべての機能 `ios` は、`istream` に含まれています。 `istream` クラスからオブジェクトを構築することはほとんどありません。 代わりに、実際には一般的にクラス [ostream](../standard-library/basic-ostream-class.md) のオブジェクトである定義済みの `cin` オブジェクトを使用します。 場合によっては、プログラムの起動後に `cin` を他のストリーム オブジェクトに割り当てることができます。  
   
- `ifstream` クラスは、ディスク ファイルの入力をサポートします。  入力だけをディスク ファイルが必要な場合は、クラス `ifstream`オブジェクトを構築します。  バイナリまたはテキストモード データを指定できます。  コンストラクターにファイル名を指定すると、ファイルは自動的にオブジェクトを作成するときに表示されます。  それ以外の場合は、既定のコンストラクターを呼び出すと `open` 関数を使用できます。  さまざまな書式指定オプションとメンバー関数は `ifstream` にオブジェクトに適用されます。  基本クラス `ios` と `istream` のすべての機能は `ifstream`に含まれます。  
+ `ifstream` クラスは、ディスク ファイルの入力をサポートしています。 入力専用のディスク ファイルが必要な場合は、`ifstream` クラスのオブジェクトを構築します。 バイナリまたはテキスト モードのデータを指定できます。 コンストラクターでファイル名を指定すると、オブジェクトの構築時にそのファイルが自動的に開きます。 あるいは、既定のコンストラクターを起動した後に `open` 関数を使用します。 多くの書式オプションとそのメンバー関数が `ifstream` オブジェクトに適用されます。 基本クラス `ios` および `istream` のすべての機能は、`ifstream` に含まれています。  
   
- `sscanf_s`ライブラリ関数と同様に、`istringstream` クラスは、メモリ内の文字列の入力をサポートします。  null 終端文字を持つ文字配列からデータを取得するには、割り当て、および文字列を初期化し、`istringstream`クラスのオブジェクトを構築します。  
+ ライブラリ関数 `sscanf_s` と同様に、`istringstream` クラスはメモリ内の文字列からの入力をサポートしています。 null 終端文字がある文字配列からデータを抽出するには、文字列を割り当てて初期化し、クラス `istringstream` のオブジェクトを構築します。  
   
-## このセクションの内容  
- [入力ストリーム オブジェクトのコンストラクト](../Topic/Constructing%20Input%20Stream%20Objects.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [入力ストリーム オブジェクトの構築](../standard-library/constructing-input-stream-objects.md)  
   
- [抽出演算子の使用](../Topic/Using%20Extraction%20Operators.md)  
+ [抽出演算子の使用](../standard-library/using-extraction-operators.md)  
   
  [抽出エラーのテスト](../standard-library/testing-for-extraction-errors.md)  
   
@@ -44,7 +60,8 @@ caps.handback.revision: 10
   
  [入力ストリームのメンバー関数](../standard-library/input-stream-member-functions.md)  
   
- [独自クラスのための \>\> 演算子のオーバーロード](../standard-library/overloading-the-input-operator-for-your-own-classes.md)  
+ [独自クラスのための >> 演算子のオーバーロード](../standard-library/overloading-the-input-operator-for-your-own-classes.md)  
   
-## 参照  
- [iostream プログラミング](../Topic/iostream%20Programming.md)
+## <a name="see-also"></a>関連項目  
+ [iostream プログラミング](../standard-library/iostream-programming.md)
+

@@ -1,124 +1,906 @@
 ---
-title: "forward_list クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::forward_list"
-  - "forward_list"
-  - "forward_list/std::forward_list"
-  - "std.forward_list"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "forward_list クラス"
+title: "forward_list クラス | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::forward_list
+- forward_list
+- forward_list/std::forward_list
+- std.forward_list
+dev_langs:
+- C++
+helpviewer_keywords:
+- forward_list class
 ms.assetid: 89a3b805-ab60-4858-b772-5855130c11b1
 caps.latest.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# forward_list クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 198522429f7337a4ee3e5d5cb29ab408950618d5
+ms.lasthandoff: 02/24/2017
 
-要素の可変長シーケンスを制御するオブジェクトを表します。  シーケンスはノードのシングル リンク リストとして格納され、各ノードには型 `Type` のメンバーが含まれます。  
+---
+# <a name="forwardlist-class"></a>forward_list クラス
+要素の可変長シーケンスを制御するオブジェクトを表します。 シーケンスはノードのシングル リンク リストとして格納され、各ノードには型 `Type` のメンバーが含まれます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<  
-    class Type,   
-    class Allocator = allocator<Type>   
->  
+template <class Type,   
+    class Allocator = allocator<Type>>  
 class forward_list   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
-|------------|--------|  
-|`Type`|forward\_list に格納される要素のデータ型。|  
-|`Allocator`|forward\_list によるメモリの割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクト。  このパラメーターは省略できます。  既定値は allocator\<`Type`\> です。|  
+|---------------|-----------------|  
+|`Type`|forward_list に格納される要素のデータ型。|  
+|`Allocator`|forward_list によるメモリの割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクト。 このパラメーターは省略できます。 既定値は allocator< `Type`> です。|  
   
-## 解説  
- `forward_list` オブジェクトは、[allocator クラス](../standard-library/allocator-class.md) \(一般的な呼び方では `std::allocator)`\) に基づくクラス `Allocator` の格納されているオブジェクトを通じて制御しているシーケンスに対して、ストレージの割り当てと解放を行います。  詳細については、「[アロケーター](../Topic/Allocators.md)」をご覧ください。  アロケーター オブジェクトは、`allocator` テンプレート クラスのオブジェクトと同じ外部インターフェイスを持っている必要があります。  
+## <a name="remarks"></a>コメント  
+ `forward_list` オブジェクトは、[allocator](../standard-library/allocator-class.md) クラス (一般的な呼び方では `std::allocator)`) に基づくクラス `Allocator` の格納されているオブジェクトを通じて制御しているシーケンスに対して、ストレージの割り当てと解放を行います。 詳細については、「[アロケーター](../standard-library/allocators.md)」をご覧ください。 アロケーター オブジェクトは、`allocator` テンプレート クラスのオブジェクトと同じ外部インターフェイスを持っている必要があります。  
   
 > [!NOTE]
 >  コンテナー オブジェクトを代入しても、格納されているアロケーター オブジェクトはコピーされません。  
   
- 反復子、ポインター、および参照は、それらの被制御シーケンスの要素が `forward_list` を通じて消去された場合、無効になる可能性があります。  `forward_list` を通じて被制御シーケンスに対して行われた挿入およびスプライスによって反復子が無効になることはありません。  
+ 反復子、ポインター、および参照は、それらの被制御シーケンスの要素が `forward_list` を通じて消去された場合、無効になる可能性があります。 `forward_list` を通じて被制御シーケンスに対して行われた挿入およびスプライスによって反復子が無効になることはありません。  
   
- [forward\_list::insert\_after](../Topic/forward_list::insert_after.md) の呼び出しによって、被制御シーケンスへの追加が発生する場合があります。この関数は、コンストラクター `Type(const _Type&)` を呼び出す唯一のメンバー関数です。  `forward_list` は、移動コンストラクターも呼び出す場合があります。  このような式が例外をスローした場合、コンテナー オブジェクトは新しい要素を挿入せず、例外を再スローします。  したがって、テンプレート クラス `forward_list` のオブジェクトは、このような例外が発生したときに、既知の状態のままになります。  
+ [forward_list::insert_after](#forward_list__insert_after) の呼び出しによって、被制御シーケンスへの追加が発生する場合があります。この関数は、コンストラクター `Type(const  T&)` を呼び出す唯一のメンバー関数です。 `forward_list` は、移動コンストラクターも呼び出す場合があります。 このような式が例外をスローした場合、コンテナー オブジェクトは新しい要素を挿入せず、例外を再スローします。 したがって、テンプレート クラス `forward_list` のオブジェクトは、このような例外が発生したときに、既知の状態のままになります。  
   
-### コンストラクター  
-  
-|||  
-|-|-|  
-|[forward\_list](../Topic/forward_list::forward_list.md)|`forward_list` 型のオブジェクトを構築します。|  
-  
-### Typedefs  
+### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[allocator\_type](../Topic/forward_list::allocator_type.md)|前方リスト オブジェクトのアロケーター クラスを表す型。|  
-|[const\_iterator](../Topic/forward_list::const_iterator.md)|前方リストに定数反復子を提供する型。|  
-|[const\_pointer](../Topic/forward_list::const_pointer.md)|前方リスト内の `const` 要素へのポインターを提供する型。|  
-|[const\_reference](../Topic/forward_list::const_reference.md)|前方リスト内の要素への定数参照を提供する型。|  
-|[difference\_type](../Topic/forward_list::difference_type.md)|前方リストの要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
-|[iterator](../Topic/forward_list::iterator.md)|前方リストの反復子を提供する型。|  
-|[ポインター](../Topic/forward_list::pointer.md)|前方リスト内の要素へのポインターを提供する型。|  
-|[参照](../Topic/forward_list::reference.md)|前方リスト内の要素への参照を提供する型。|  
-|[size\_type](../Topic/forward_list::size_type.md)|2 つの要素間の距離を表す、符号なしの型。|  
-|[value\_type](../Topic/forward_list::value_type.md)|前方リストに格納された要素の型を表す型。|  
+|[forward_list](#forward_list__forward_list)|`forward_list` 型のオブジェクトを構築します。|  
   
-### メンバー関数  
+### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[assign](../Topic/forward_list::assign.md)|前方リストから要素を消去し、対象の前方リストに新しい要素のセットをコピーします。|  
-|[before\_begin](../Topic/forward_list::before_begin.md)|前方リスト内の先頭要素の前の位置を示す反復子を返します。|  
-|[begin](../Topic/forward_list::begin.md)|前方リスト内の最初の要素を指す反復子を返します。|  
-|[cbefore\_begin](../Topic/forward_list::cbefore_begin.md)|前方リスト内の先頭要素の前の位置を示す定数反復子を返します。|  
-|[cbegin](../Topic/forward_list::cbegin.md)|前方リスト内の最初の要素を指す定数反復子を返します。|  
-|[cend](../Topic/forward_list::cend.md)|前方リスト内の最後の要素の次の場所を指す定数反復子を返します。|  
-|[クリア](../Topic/forward_list::clear.md)|前方リストのすべての要素を消去します。|  
-|[emplace\_after](../Topic/forward_list::emplace_after.md)|指定された位置の後に新しい要素を構築します。|  
-|[emplace\_front](../Topic/forward_list::emplace_front.md)|イン プレースで構築された要素をリストの先頭に追加します。|  
-|[\(なし\)](../Topic/forward_list::empty.md)|前方リストが空であるかどうかをテストします。|  
-|[End](../Topic/forward_list::end.md)|前方リスト内の最後の要素の次の場所を指す反復子を返します。|  
-|[erase\_after](../Topic/forward_list::erase_after.md)|前方リストから指定された位置の後の要素を削除します。|  
-|[front](../Topic/forward_list::front.md)|前方リスト内の最初の要素への参照を返します。|  
-|[get\_allocator](../Topic/forward_list::get_allocator.md)|前方リストの構築に使用されるアロケーター オブジェクトのコピーを返します。|  
-|[insert\_after](../Topic/forward_list::insert_after.md)|前方リストの指定された位置の後に要素を追加します。|  
-|[max\_size](../Topic/forward_list::max_size.md)|前方リストの最大長を返します。|  
-|[マージ](../Topic/forward_list::merge.md)|引数リストから要素を削除し、それをターゲットの前方リストに挿入して、新たに組み合わされたセットの要素を昇順またはその他の指定された順序で並べ替えます。|  
-|[pop\_front](../Topic/forward_list::pop_front.md)|前方リストの先頭から要素を削除します。|  
-|[push\_front](../Topic/forward_list::push_front.md)|前方リストの先頭に要素を追加します。|  
-|[削除](../Topic/forward_list::remove.md)|指定された値と一致する前方リスト内の要素を消去します。|  
-|[remove\_if](../Topic/forward_list::remove_if.md)|指定された述語を満たす前方リスト内の要素を消去します。|  
-|[サイズの変更](../Topic/forward_list::resize.md)|前方リストの新しいサイズを指定します。|  
-|[reverse](../Topic/forward_list::reverse.md)|前方リスト内で要素が出現する順序を反転させます。|  
-|[sort](../Topic/forward_list::sort.md)|要素を昇順または述語によって指定された順序で配置します。|  
-|[splice\_after](../Topic/forward_list::splice_after.md)|ノード間のリンクを再接合します。|  
-|[swap](../Topic/forward_list::swap.md)|2 つの前方リストの要素を交換します。|  
-|[unique](../Topic/forward_list::unique.md)|指定されたテストに合格した隣接する要素を削除します。|  
+|[allocator_type](#forward_list__allocator_type)|前方リスト オブジェクトのアロケーター クラスを表す型。|  
+|[const_iterator](#forward_list__const_iterator)|前方リストに定数反復子を提供する型。|  
+|[const_pointer](#forward_list__const_pointer)|前方リスト内の `const` 要素へのポインターを提供する型。|  
+|[const_reference](#forward_list__const_reference)|前方リスト内の要素への定数参照を提供する型。|  
+|[difference_type](#forward_list__difference_type)|前方リストの要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
+|[iterator](#forward_list__iterator)|前方リストの反復子を提供する型。|  
+|[pointer](#forward_list__pointer)|前方リスト内の要素へのポインターを提供する型。|  
+|[reference](#forward_list__reference)|前方リスト内の要素への参照を提供する型。|  
+|[size_type](#forward_list__size_type)|2 つの要素間の距離を表す、符号なしの型。|  
+|[value_type](#forward_list__value_type)|前方リストに格納された要素の型を表す型。|  
   
-### 演算子  
+### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[operator \=](../Topic/forward_list::operator=.md)|別の前方リストのコピーで前方リストの要素を置き換えます。|  
+|[assign](#forward_list__assign)|前方リストから要素を消去し、対象の前方リストに新しい要素のセットをコピーします。|  
+|[before_begin](#forward_list__before_begin)|前方リスト内の先頭要素の前の位置を示す反復子を返します。|  
+|[begin](#forward_list__begin)|前方リスト内の最初の要素を指す反復子を返します。|  
+|[cbefore_begin](#forward_list__cbefore_begin)|前方リスト内の先頭要素の前の位置を示す定数反復子を返します。|  
+|[cbegin](#forward_list__cbegin)|前方リスト内の最初の要素を指す定数反復子を返します。|  
+|[cend](#forward_list__cend)|前方リスト内の最後の要素の次の場所を指す定数反復子を返します。|  
+|[clear](#forward_list__clear)|前方リストのすべての要素を消去します。|  
+|[emplace_after](#forward_list__emplace_after)|指定された位置の後に新しい要素を構築します。|  
+|[emplace_front](#forward_list__emplace_front)|イン プレースで構築された要素をリストの先頭に追加します。|  
+|[empty](#forward_list__empty)|前方リストが空であるかどうかをテストします。|  
+|[end](#forward_list__end)|前方リスト内の最後の要素の次の場所を指す反復子を返します。|  
+|[erase_after](#forward_list__erase_after)|前方リストから指定された位置の後の要素を削除します。|  
+|[front](#forward_list__front)|前方リスト内の最初の要素への参照を返します。|  
+|[get_allocator](#forward_list__get_allocator)|前方リストの構築に使用されるアロケーター オブジェクトのコピーを返します。|  
+|[insert_after](#forward_list__insert_after)|前方リストの指定された位置の後に要素を追加します。|  
+|[max_size](#forward_list__max_size)|前方リストの最大長を返します。|  
+|[merge](#forward_list__merge)|引数リストから要素を削除し、それをターゲットの前方リストに挿入して、新たに組み合わされたセットの要素を昇順またはその他の指定された順序で並べ替えます。|  
+|[pop_front](#forward_list__pop_front)|前方リストの先頭から要素を削除します。|  
+|[push_front](#forward_list__push_front)|前方リストの先頭に要素を追加します。|  
+|[remove](#forward_list__remove)|指定された値と一致する前方リスト内の要素を消去します。|  
+|[remove_if](#forward_list__remove_if)|指定された述語を満たす前方リスト内の要素を消去します。|  
+|[resize](#forward_list__resize)|前方リストの新しいサイズを指定します。|  
+|[reverse](#forward_list__reverse)|前方リスト内で要素が出現する順序を反転させます。|  
+|[sort](#forward_list__sort)|要素を昇順または述語によって指定された順序で配置します。|  
+|[splice_after](#forward_list__splice_after)|ノード間のリンクを再接合します。|  
+|[swap](#forward_list__swap)|2 つの前方リストの要素を交換します。|  
+|[unique](#forward_list__unique)|指定されたテストに合格した隣接する要素を削除します。|  
   
-## 必要条件  
- **ヘッダー:** \<forward\_list\>  
+### <a name="operators"></a>演算子  
+  
+|||  
+|-|-|  
+|[operator=](#forward_list__operator_eq)|別の前方リストのコピーで前方リストの要素を置き換えます。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<forward_list>  
   
  **名前空間:** std  
   
-## 参照  
- [\<forward\_list\>](../standard-library/forward-list.md)
+##  <a name="a-nameforwardlistallocatortypea--forwardlistallocatortype"></a><a name="forward_list__allocator_type"></a>  forward_list::allocator_type  
+ 前方リスト オブジェクトのアロケーター クラスを表す型。  
+  
+```  
+typedef Allocator allocator_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `allocator_type` は、テンプレート パラメーター Allocator のシノニムです。  
+  
+##  <a name="a-nameforwardlistassigna--forwardlistassign"></a><a name="forward_list__assign"></a>  forward_list::assign  
+ 前方リストから要素を消去し、対象の前方リストに新しい要素のセットをコピーします。  
+  
+```  
+ 
+void assign(
+    size_type Count,   
+    const Type& Val);
+void assign(
+    initializer_list<Type> IList);
+template <class InputIterator>  
+void assign(InputIterator First, InputIterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` first`|置換範囲の先頭。|  
+|` last`|置換範囲の末尾。|  
+|` count`|割り当てる要素の数。|  
+|` val`|各要素に割り当てる値。|  
+|`Type`|値の型。|  
+|`IList`|コピーする initializer_list。|  
+  
+### <a name="remarks"></a>コメント  
+ forward_list が整数型の場合、1 つ目のメンバー関数は `assign((size_type)First, (Type)Last)` と同様に動作します。 それ以外の場合、1 つ目のメンバー関数は、`*this` によって制御されているシーケンスをシーケンス [ `First, Last)` に置換します。このシーケンスは、初期状態の被制御シーケンスと重なってはなりません。  
+  
+ 2 つ目のメンバー関数は、`*this` によって制御されているシーケンスを、値 `Count` の `Val` 個の要素の繰り返しで置き換えます。  
+  
+ 3 つ目のメンバー関数は、initializer_list の要素を forward_list にコピーします。  
+  
+##  <a name="a-nameforwardlistbeforebegina--forwardlistbeforebegin"></a><a name="forward_list__before_begin"></a>  forward_list::before_begin  
+ 前方リスト内の先頭要素の前の位置を示す反復子を返します。  
+  
+```  
+const_iterator before_begin() const;
+iterator before_begin();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ シーケンスの最初の要素の直前 (または末尾の空のシーケンスの直前) の位置を示す前方反復子。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistbegina--forwardlistbegin"></a><a name="forward_list__begin"></a>  forward_list::begin  
+ 前方リスト内の最初の要素を指す反復子を返します。  
+  
+```  
+const_iterator begin() const;
+iterator begin();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ シーケンスの最初の要素 (または空のシーケンスの末尾の次の位置) を示す前方反復子。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistcbeforebegina--forwardlistcbeforebegin"></a><a name="forward_list__cbefore_begin"></a>  forward_list::cbefore_begin  
+ 前方リスト内の先頭要素の前の位置を示す定数反復子を返します。  
+  
+```  
+const_iterator cbefore_begin() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ シーケンスの最初の要素の直前 (または末尾の空のシーケンスの直前) の位置を示す前方反復子。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistcbegina--forwardlistcbegin"></a><a name="forward_list__cbegin"></a>  forward_list::cbegin  
+ 範囲内の最初の要素を示す `const` 反復子を返します。  
+  
+```  
+const_iterator cbegin() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 範囲の最初の要素、または空の範囲の末尾の次の位置 (空の範囲の場合、`const`) を指し示す `cbegin() == cend()` 前方アクセス反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `cbegin` の戻り値で範囲内の要素を変更することはできません。  
+  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `const` と `begin()` をサポートする任意の種類の変更可能な (非 `cbegin()`) コンテナーであると見なします。  
+  
+```cpp  
+auto i1 = Container.begin();
+// i1 is Container<T>::iterator   
+auto i2 = Container.cbegin();
+// i2 is Container<T>::const_iterator  
+```  
+  
+##  <a name="a-nameforwardlistcenda--forwardlistcend"></a><a name="forward_list__cend"></a>  forward_list::cend  
+ 範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
+  
+```  
+const_iterator cend() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 範囲の末尾の次の位置を指し示す前方アクセス反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
+  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+  
+```cpp  
+auto i1 = Container.end();
+// i1 is Container<T>::iterator   
+auto i2 = Container.cend();
+
+// i2 is Container<T>::const_iterator  
+```  
+  
+ `cend` によって返された値は逆参照しないでください。  
+  
+##  <a name="a-nameforwardlistcleara--forwardlistclear"></a><a name="forward_list__clear"></a>  forward_list::clear  
+ 前方リストのすべての要素を消去します。  
+  
+```  
+void clear();
+```  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、`erase_after(before_begin(), end()).` を呼び出します。  
+  
+##  <a name="a-nameforwardlistconstiteratora--forwardlistconstiterator"></a><a name="forward_list__const_iterator"></a>  forward_list::const_iterator  
+ 前方リストに定数反復子を提供する型。  
+  
+```  
+typedef implementation-defined const_iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `const_iterator` は、被制御シーケンスの定数前方反復子として使用できるオブジェクトを表します。 ここでは、実装定義型のシノニムとして記述されています。  
+  
+##  <a name="a-nameforwardlistconstpointera--forwardlistconstpointer"></a><a name="forward_list__const_pointer"></a>  forward_list::const_pointer  
+ 前方リスト内の `const` 要素へのポインターを提供する型。  
+  
+```  
+typedef typename Allocator::const_pointer  
+    const_pointer; 
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistconstreferencea--forwardlistconstreference"></a><a name="forward_list__const_reference"></a>  forward_list::const_reference  
+ 前方リスト内の要素への定数参照を提供する型。  
+  
+```  
+typedef typename Allocator::const_reference const_reference;  
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistdifferencetypea--forwardlistdifferencetype"></a><a name="forward_list__difference_type"></a>  forward_list::difference_type  
+ 前方リストの要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。  
+  
+```  
+typedef typename Allocator::difference_type difference_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `difference_type` は、被制御シーケンス内にある任意の&2; つの要素のアドレスの違いを表現できるオブジェクトを記述します。  
+  
+##  <a name="a-nameforwardlistemplaceaftera--forwardlistemplaceafter"></a><a name="forward_list__emplace_after"></a>  forward_list::emplace_after  
+ 指定された位置の後に新しい要素を構築します。  
+  
+```  
+template <class T>  
+iterator emplace_after(const_iterator Where, Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`Where`|新しい要素が構築された、ターゲット前方リスト内の位置。|  
+|` val`|コンストラクターの引数。|  
+  
+### <a name="return-value"></a>戻り値  
+ 新しく挿入される要素を指定する反復子。  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンス内の、`Where` が指す要素の直後にコンストラクター引数 ` val` を持つ要素を挿入します。 それ以外は、[forward_list::insert_after](#forward_list__insert_after) と同じ動作をします。  
+  
+##  <a name="a-nameforwardlistemplacefronta--forwardlistemplacefront"></a><a name="forward_list__emplace_front"></a>  forward_list::emplace_front  
+ イン プレースで構築された要素をリストの先頭に追加します。  
+  
+```  
+template <class Type>  
+void emplace_front(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` val`|前方リストの先頭に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの末尾に、コンストラクター引数 `_ val` を持つ要素を挿入します。  
+  
+ 例外がスローされた場合、コンテナーは変更されず、例外が再度スローされます。  
+  
+##  <a name="a-nameforwardlistemptya--forwardlistempty"></a><a name="forward_list__empty"></a>  forward_list::empty  
+ 前方リストが空であるかどうかをテストします。  
+  
+```  
+bool empty() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 前方リストが空である場合は `true`。それ以外の場合は `false`。  
+  
+##  <a name="a-nameforwardlistenda--forwardlistend"></a><a name="forward_list__end"></a>  forward_list::end  
+ 前方リスト内の最後の要素の次の場所を指す反復子を返します。  
+  
+```  
+const_iterator end() const;
+iterator end();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ シーケンスの末尾の次の位置を指す前方反復子。  
+  
+##  <a name="a-nameforwardlisteraseaftera--forwardlisteraseafter"></a><a name="forward_list__erase_after"></a>  forward_list::erase_after  
+ 前方リストから指定された位置の後の要素を削除します。  
+  
+```  
+iterator erase_after(const_iterator Where);
+iterator erase_after(const_iterator first, const_iterator last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`Where`|要素が削除される、ターゲット前方リスト内の位置。|  
+|` first`|削除する範囲の先頭。|  
+|` last`|削除する範囲の最後。|  
+  
+### <a name="return-value"></a>戻り値  
+ 削除した要素の後に残る最初の要素を指定する反復子。このような要素が存在しない場合は、[forward_list::end](#forward_list__end)。  
+  
+### <a name="remarks"></a>コメント  
+ 1 番目のメンバー関数は `Where` の直後の被制御シーケンスの要素を削除します。  
+  
+ 2 番目のメンバー関数は、範囲 `( first,  last)` (両端は含まない) の被制御シーケンスの要素を削除します。  
+  
+ `N` 個の要素を削除すると、デストラクターが `N` 回呼び出されます。 [再割り当て](../standard-library/forward-list-class.md)が発生するため、反復子と参照は、消去された要素に対して無効になります。  
+  
+ メンバー関数が例外をスローすることはありません。  
+  
+##  <a name="a-nameforwardlistforwardlista--forwardlistforwardlist"></a><a name="forward_list__forward_list"></a>  forward_list::forward_list  
+ `forward_list` 型のオブジェクトを構築します。  
+  
+```  
+forward_list();
+explicit forward_list(const Allocator& Al);
+explicit forward_list(size_type Count);
+forward_list(size_type Count, const Type& Val);
+forward_list(size_type Count, const Type& Val, const Allocator& Al);
+forward_list(const forward_list& Right);
+forward_list(const forward_list& Right, const Allocator& Al);
+forward_list(forward_list&& Right);
+forward_list(forward_list&& Right, const Allocator& Al);
+forward_list(initializer_list<Type> IList, const Alloc& Al);
+template <class InputIterator>  
+forward_list(InputIterator First, InputIterator Last);
+template <class InputIterator>  
+forward_list(InputIterator First, InputIterator Last, const Allocator& Al);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`Al`|このオブジェクトに対して使用するアロケーター クラス。|  
+|`Count`|構築されたリスト内の要素の数。|  
+|`Val`|構築されたリストの要素の値。|  
+|`Right`|構築されたリストがコピーになる元のリスト。|  
+|`First`|コピーする要素範囲内の最初の要素の位置。|  
+|`Last`|コピーする要素範囲を超える最初の要素の位置。|  
+|`IList`|コピーする initializer_list。|  
+  
+### <a name="remarks"></a>コメント  
+ すべてのコンストラクターは[アロケーター](../standard-library/allocator-class.md)を格納し、被制御シーケンスを初期化します。 アロケーター オブジェクトは、引数 `Al` が指定されていれば、この引数です。 コピー コンストラクターの場合は、` right.get_allocator()` です。 それ以外の場合は `Allocator()` です。  
+  
+ 最初の&2; つのコンストラクターは、空の初期被制御シーケンスを指定します。  
+  
+ 3 つ目のコンストラクターは、値 `Count` の `Type()` 個の要素の繰り返しを指定します。  
+  
+ 4 番目と&5; 番目のコンストラクターは、値 `Count` の `Val` 個の要素の繰り返しを指定します。  
+  
+ 6 番目のコンストラクターは、`Right` によって制御されるシーケンスのコピーを指定します。 `InputIterator` が整数型の場合、次の&2; つのコンストラクターは、値 `(size_type)First` の `(Type)Last` 個の要素の繰り返しを指定します。 それ以外の場合、次の&2; つのコンストラクターは、シーケンス `[First, Last)` を指定します。  
+  
+ 9 番目と&10; 番目のコンストラクターは&6; 番目と同じですが、[rvalue](../cpp/rvalue-reference-declarator-amp-amp.md) 参照があります。  
+  
+ 最後のコンストラクターは、クラス `initializer_list<Type>` のオブジェクトによる初期被制御シーケンスを指定します。  
+  
+##  <a name="a-nameforwardlistfronta--forwardlistfront"></a><a name="forward_list__front"></a>  forward_list::front  
+ 前方リスト内の最初の要素への参照を返します。  
+  
+```  
+reference front();
+const_reference front() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 被制御シーケンスの最初の要素への参照。被制御シーケンスを空にすることはできません。  
+  
+##  <a name="a-nameforwardlistgetallocatora--forwardlistgetallocator"></a><a name="forward_list__get_allocator"></a>  forward_list::get_allocator  
+ 前方リストの構築に使用されるアロケーター オブジェクトのコピーを返します。  
+  
+```  
+allocator_type get_allocator() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 格納されている[アロケーター](../standard-library/allocator-class.md) オブジェクトを取得します。  
+  
+##  <a name="a-nameforwardlistinsertaftera--forwardlistinsertafter"></a><a name="forward_list__insert_after"></a>  forward_list::insert_after  
+ 前方リストの指定された位置の後に要素を追加します。  
+  
+```  
+iterator insert_after(const_iterator Where, const Type& Val);
+void insert_after(const_iterator Where, size_type Count, const Type& Val);
+void insert_after(const iterator Where, initializer_list<Type> IList);
+iterator insert_after(const_iterator Where, Type&& Val);
+template <class InputIterator>  
+void insert_after(const_iterator Where, InputIterator First, InputIterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`Where`|最初の要素が挿入される、ターゲット前方リスト内の位置。|  
+|`Count`|挿入する要素の数。|  
+|`First`|挿入範囲の先頭。|  
+|`Last`|挿入範囲の末尾。|  
+|`Val`|前方リストに追加する要素。|  
+|`IList`|挿入する initializer_list。|  
+  
+### <a name="return-value"></a>戻り値  
+ 新しく挿入される要素を指定する反復子 (最初と最後のメンバー関数のみ)。  
+  
+### <a name="remarks"></a>コメント  
+ 各メンバー関数は、被制御シーケンス内の `Where` によって示されている要素の直後に、残りのオペランドによって指定されたシーケンスを挿入します。  
+  
+ 1 番目のメンバー関数は、値 `Val` を持つ要素を挿入し、新しく挿入された要素を指定する反復子を返します。  
+  
+ 2 番目のメンバー関数は、値 `Count` の要素を `Val` 個挿入します。  
+  
+ `InputIterator` が整数型である場合、3 番目のメンバー関数は `insert(it, (size_type)First, (Type)Last)` と同じように動作します。 それ以外の場合は、シーケンス `[First, Last)` を挿入します。このシーケンスは、最初の被制御シーケンスと重複しないようにする必要があります。  
+  
+ 4 番目のメンバー関数は、クラス `initializer_list<Type>` のオブジェクトによって指定されたシーケンスを挿入します。  
+  
+ 最後のメンバー関数は&1; 番目の関数と同じですが、[rvalue](../cpp/rvalue-reference-declarator-amp-amp.md) 参照を受け取ります。  
+  
+ `N` 個の要素を挿入すると、コンストラクターが `N` 回呼び出されます。 [再割り当て](../standard-library/forward-list-class.md)が実行されますが、反復子または参照は無効になりません。  
+  
+ 1 つまたは複数の要素の挿入時に例外がスローされた場合、コンテナーは変更されず、再度例外がスローされます。  
+  
+##  <a name="a-nameforwardlistiteratora--forwardlistiterator"></a><a name="forward_list__iterator"></a>  forward_list::iterator  
+ 前方リストの反復子を提供する型。  
+  
+```  
+typedef implementation-defined iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `iterator` は、被制御シーケンスの前方反復子として使用できるオブジェクトを表します。 ここでは、実装定義型のシノニムとして記述されています。  
+  
+##  <a name="a-nameforwardlistmaxsizea--forwardlistmaxsize"></a><a name="forward_list__max_size"></a>  forward_list::max_size  
+ 前方リストの最大長を返します。  
+  
+```  
+size_type max_size() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ オブジェクトが制御できる最も長いシーケンスの長さ。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistmergea--forwardlistmerge"></a><a name="forward_list__merge"></a>  forward_list::merge  
+ 2 つの並べ替えシーケンスを結合し、線形時間で&1; つの並べ替えシーケンスとします。 引数リストから要素を削除し、それをこの `forward_list` に挿入します。 `merge` を呼び出す前に、2 つのリストを同じ比較関数オブジェクトによって並べ替える必要があります。 結合されたリストは、その比較関数オブジェクトによって並び替えられます。  
+  
+```  
+void merge(forward_list& right);
+template <class Predicate>  
+void merge(forward_list& right, Predicate comp);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` right`|マージする前方リスト。|  
+|` comp`|要素を並べ替えるために使用される比較関数オブジェクト。|  
+  
+### <a name="remarks"></a>コメント  
+ `forward_list`` right``,` は、`forward_list` から要素を削除し、それをこの `forward_list::merge` に挿入します。 以下に示すように、両方のシーケンスを同じ述語に基づいて順序付けする必要があります。 結合されたシーケンスも、その比較関数オブジェクトに基づいて順序付けされます。  
+  
+ `i` および `j` の位置にある要素を指定する反復子 `Pi` および `Pj` がある場合、最初のメンバー関数は、`i < j` のたびに、順序 `!(*Pj < *Pi)` を設定します。 (要素は `ascending`順序で並び替えられます)。2 番目のメンバー関数は、`i < j` のたびに、順序 `! comp(*Pj, *Pi)` を設定します。  
+  
+ 元の被制御シーケンス内の要素ペアは、結果として得られた被制御シーケンス内で順序が反転されることはありません。 結果として得られた被制御シーケンス内の要素ペアが等価である場合 (`!(*Pi < *Pj) && !(*Pj < *Pi)`)、元の被制御シーケンスからの要素は、` right` によって制御されるシーケンスからの要素の前に置かれます。  
+  
+ 例外は、` comp` が例外をスローした場合にのみ発生します。 その場合、被制御シーケンスは順序が指定されないままとされ、例外が再スローされます。  
+  
+##  <a name="a-nameforwardlistoperatoreqa--forwardlistoperator"></a><a name="forward_list__operator_eq"></a>  forward_list::operator=  
+ 別の前方リストのコピーで前方リストの要素を置き換えます。  
+  
+```  
+forward_list& operator=(const forward_list& right);
+forward_list& operator=(initializer_list<Type> IList);
+forward_list& operator=(forward_list&& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` right`|前方リストにコピーする前方リスト。|  
+|`IList`|型 `Type` の要素のシーケンスと同じように動作する中かっこで囲まれた初期化子リスト。|  
+  
+### <a name="remarks"></a>コメント  
+ 最初のメンバー演算子は、被制御シーケンスを ` right` によって制御されるシーケンスのコピーに置き換えます。  
+  
+ 2 番目のメンバー演算子は、クラス `initializer_list<Type>` オブジェクトからの被制御シーケンスを置き換えます。  
+  
+ 3 番目のメンバー演算子は最初のものと同じですが、[rvalue](../cpp/rvalue-reference-declarator-amp-amp.md) を使用します。  
+  
+##  <a name="a-nameforwardlistpointera--forwardlistpointer"></a><a name="forward_list__pointer"></a>  forward_list::pointer  
+ 前方リスト内の要素へのポインターを提供する型。  
+  
+```  
+typedef typename Allocator::pointer pointer;  
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistpopfronta--forwardlistpopfront"></a><a name="forward_list__pop_front"></a>  forward_list::pop_front  
+ 前方リストの先頭から要素を削除します。  
+  
+```  
+void pop_front();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 前方リストの最初の要素は、空にすることができません。  
+  
+ メンバー関数が例外をスローすることはありません。  
+  
+##  <a name="a-nameforwardlistpushfronta--forwardlistpushfront"></a><a name="forward_list__push_front"></a>  forward_list::push_front  
+ 前方リストの先頭に要素を追加します。  
+  
+```  
+void push_front(const Type& val);
+void push_front(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` val`|前方リストの先頭に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、コンテナーは変更されず、例外が再度スローされます。  
+  
+##  <a name="a-nameforwardlistreferencea--forwardlistreference"></a><a name="forward_list__reference"></a>  forward_list::reference  
+ 前方リスト内の要素への参照を提供する型。  
+  
+```  
+typedef typename Allocator::reference reference;  
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistremovea--forwardlistremove"></a><a name="forward_list__remove"></a>  forward_list::remove  
+ 指定された値と一致する前方リスト内の要素を消去します。  
+  
+```  
+void remove(const Type& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` val`|要素によって保持されている場合、リストからその要素が削除される原因となる値。|  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数は、反復子 `P` で指定されたすべての要素を被制御シーケンスから削除します (`*P ==  val`)。  
+  
+ メンバー関数が例外をスローすることはありません。  
+  
+##  <a name="a-nameforwardlistremoveifa--forwardlistremoveif"></a><a name="forward_list__remove_if"></a>  forward_list::remove_if  
+ 指定された述語を満たす前方リスト内の要素を消去します。  
+  
+```  
+template <class Predicate>  
+void remove_if(Predicate pred);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` pred`|要素によって満たされる場合、単項述語は結果的にリストからその要素を削除します。|  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数は、反復子 `P` で指定されたすべての要素を被制御シーケンスから削除します (` pred(*P)` は true)。  
+  
+ 例外は、` pred` が例外をスローした場合にのみ発生します。 その場合、被制御シーケンスは状態が未指定のままとなり、例外が再スローされます。  
+  
+##  <a name="a-nameforwardlistresizea--forwardlistresize"></a><a name="forward_list__resize"></a>  forward_list::resize  
+ 前方リストの新しいサイズを指定します。  
+  
+```  
+void resize(size_type _Newsize);
+void resize(size_type _Newsize, const Type& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`_Newsize`|サイズ指定された前方リストの要素の数。|  
+|` val`|埋め込みで使用する値。|  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数は両方とも、リスト内の要素の数がその後 `_Newsize` であることを確認します。 被制御シーケンスを長くする必要がある場合、最初のメンバー関数では値 `Type()` で要素を追加し、2 番目のメンバー関数では値 ` val` で要素を追加します。 被制御シーケンスを短くするには、両方のメンバー関数とも `erase_after(begin() + _Newsize - 1, end())` を効果的に呼び出します。  
+  
+##  <a name="a-nameforwardlistreversea--forwardlistreverse"></a><a name="forward_list__reverse"></a>  forward_list::reverse  
+ 前方リスト内で要素が出現する順序を反転させます。  
+  
+```  
+void reverse();
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameforwardlistsizetypea--forwardlistsizetype"></a><a name="forward_list__size_type"></a>  forward_list::size_type  
+ 2 つの要素間の距離を表す、符号なしの型。  
+  
+```  
+typedef typename Allocator::size_type size_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ 符号なし整数型は、被制御シーケンスの長さを表すことができるオブジェクトを表します。  
+  
+##  <a name="a-nameforwardlistsorta--forwardlistsort"></a><a name="forward_list__sort"></a>  forward_list::sort  
+ 要素を昇順または述語によって指定された順序で配置します。  
+  
+```  
+void sort();
+template <class Predicate>  
+void sort(Predicate pred);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` pred`|順序付け述語。|  
+  
+### <a name="remarks"></a>コメント  
+ 両方のメンバー関数は、次に説明するように、述語に基づいて被制御シーケンス内の要素を順序付けします。  
+  
+ `i` および `j` の位置にある要素を指定する反復子 `Pi` および `Pj` がある場合、最初のメンバー関数は、`i < j` のたびに、順序 `!(*Pj < *Pi)` を設定します。 (要素は `ascending`順序で並び替えられます)。メンバー テンプレート関数は、`i < j` のたびに、順序 `! pred(*Pj, *Pi)` を設定します。 元の被制御シーケンス内の順序付けされた要素ペアは、結果として得られた被制御シーケンス内で順序が反転されることはありません。 (並べ替えは安定しています)。  
+  
+ 例外は、` pred` が例外をスローした場合にのみ発生します。 その場合、被制御シーケンスは順序が指定されないままとされ、例外が再スローされます。  
+  
+##  <a name="a-nameforwardlistspliceaftera--forwardlistspliceafter"></a><a name="forward_list__splice_after"></a>  forward_list::splice_after  
+ ソースの forward_list から要素を削除して、ターゲットの forward_list に挿入します。  
+  
+```  
+// insert the entire source forward_list  
+void splice_after(const_iterator Where, forward_list& Source);
+void splice_after(const_iterator Where, forward_list&& Source);
+
+// insert one element of the source forward_list  
+void splice_after(const_iterator Where, forward_list& Source, const_iterator Iter);
+void splice_after(const_iterator Where, forward_list&& Source, const_iterator Iter);
+
+// insert a range of elements from the source forward_list  
+void splice_after(
+    const_iterator Where, 
+    forward_list& Source,
+    const_iterator First,
+    const_iterator Last);
+
+void splice_after(
+    const_iterator Where,
+    forward_list&& Source,
+    const_iterator First,
+    const_iterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Where`  
+ ターゲットの forward_list 内の挿入位置の直前の位置。  
+  
+ `Source`  
+ ターゲットの forward_list に挿入されるソースの forward_list。  
+  
+ `Iter`  
+ ソースの forward_list リストから挿入される要素。  
+  
+ `First`  
+ ソースの forward_list リストから挿入される範囲内の最初の要素。  
+  
+ `Last`  
+ ソースの forward_list リストから挿入される範囲を超える最初の位置。  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数の最初のペアは、`Source` によって制御されるシーケンスを、`Where` によって指し示される制御シーケンス内の要素の直後に挿入します。 これはまた、`Source` からすべての要素を削除します (`&Source` を `this` と同じにすることはできません)。  
+  
+ メンバー関数の&2; つ目のペアは、`Iter` によって制御されるシーケンス内の `Source` の直後の要素を削除し、それを `Where` で指し示される制御シーケンス内の要素の直後に挿入します (`Where == Iter || Where == ++Iter` の場合は、何も変わりません)。  
+  
+ メンバー関数の&3; つ目のペア (範囲指定されたスプライス) は、`(First, Last)` で制御されるシーケンスの `Source` で指定されたサブ範囲を、`Where` で指し示される制御シーケンス内の要素の直後に挿入します。 これはまた、`Source` で制御されるシーケンスから元のサブ範囲を削除します (`&Source == this` の場合、範囲 `(First, Last)` に `Where` で指し示される要素を含めることはできません)。  
+  
+ 範囲指定されたスプライスで `N` 個の要素が挿入され、さらに `&Source != this` の場合、クラス [iterator](#forward_list__iterator) のオブジェクトは `N` 回インクリメントされます。  
+  
+ スプライスされた要素を指定している反復子、ポインター、参照は、いずれも無効になりません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// forward_list_splice_after.cpp  
+// compile with: /EHsc /W4  
+#include <forward_list>  
+#include <iostream>  
+  
+using namespace std;  
+  
+template <typename S> void print(const S& s) {  
+    for (const auto& p : s) {  
+        cout << "(" << p << ") ";  
+    }  
+  
+    cout << endl;  
+}  
+  
+int main()  
+{  
+    forward_list<int> c1{ 10, 11 };  
+    forward_list<int> c2{ 20, 21, 22 };  
+    forward_list<int> c3{ 30, 31 };  
+    forward_list<int> c4{ 40, 41, 42, 43 };  
+  
+    forward_list<int>::iterator where_iter;  
+    forward_list<int>::iterator first_iter;  
+    forward_list<int>::iterator last_iter;  
+  
+    cout << "Beginning state of lists:" << endl;  
+    cout << "c1 = ";  
+    print(c1);  
+    cout << "c2 = ";  
+    print(c2);  
+    cout << "c3 = ";  
+    print(c3);  
+    cout << "c4 = ";  
+    print(c4);  
+  
+    where_iter = c2.begin();  
+    ++where_iter; // start at second element  
+    c2.splice_after(where_iter, c1);  
+    cout << "After splicing c1 into c2:" << endl;  
+    cout << "c1 = ";  
+    print(c1);  
+    cout << "c2 = ";  
+    print(c2);  
+  
+    first_iter = c3.begin();  
+    c2.splice_after(where_iter, c3, first_iter);  
+    cout << "After splicing the first element of c3 into c2:" << endl;  
+    cout << "c3 = ";  
+    print(c3);  
+    cout << "c2 = ";  
+    print(c2);  
+  
+    first_iter = c4.begin();  
+    last_iter = c4.end();  
+    // set up to get the middle elements  
+    ++first_iter;  
+    c2.splice_after(where_iter, c4, first_iter, last_iter);  
+    cout << "After splicing a range of c4 into c2:" << endl;  
+    cout << "c4 = ";  
+    print(c4);  
+    cout << "c2 = ";  
+    print(c2);  
+}  
+  
+```  
+  
+```Output  
+Beginning state of lists:c1 = (10) (11)c2 = (20) (21) (22)c3 = (30) (31)c4 = (40) (41) (42) (43)After splicing c1 into c2:c1 =c2 = (20) (21) (10) (11) (22)After splicing the first element of c3 into c2:c3 = (30)c2 = (20) (21) (31) (10) (11) (22)After splicing a range of c4 into c2:c4 = (40) (41)c2 = (20) (21) (42) (43) (31) (10) (11) (22)  
+```  
+  
+##  <a name="a-nameforwardlistswapa--forwardlistswap"></a><a name="forward_list__swap"></a>  forward_list::swap  
+ 2 つの前方リストの要素を交換します。  
+  
+```  
+void swap(forward_list& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` right`|交換する要素を指定する前方リスト。|  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、`*this` と ` right` の間で被制御シーケンスを交換します。 `get_allocator() ==  right.get_allocator()` の場合、この処理は一定時間に実行されます。例外がスローされることはなく、参照や、ポインター、2 つの被制御シーケンス内の要素を指定する反復子が無効にされることもありません。 それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
+  
+##  <a name="a-nameforwardlistuniquea--forwardlistunique"></a><a name="forward_list__unique"></a>  forward_list::unique  
+ 等値要素内の連続するグループのそれぞれから、最初の要素を除くすべてを削除します。  
+  
+```  
+void unique();
+template <class BinaryPredicate>  
+void unique(BinaryPredicate comp);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|` comp`|一連の要素の比較に使用する二項述語。|  
+  
+### <a name="remarks"></a>コメント  
+ 各一意の要素の最初のオブジェクトを保持し、残りは削除します。 値の等しい要素がリスト内で隣接するように、要素を並べ替える必要があります。  
+  
+ 最初のメンバー関数は、直前の要素に一致するすべての要素を被制御シーケンスから削除します。 `i` および `j` の位置にある要素を指定する反復子 `Pi` および `Pj` がある場合、2 番目のメンバー関数は、`i + 1 == j &&  comp(*Pi, *Pj)` の条件を満たすすべての要素を削除します。  
+  
+ 被制御シーケンスの長さが `N` (> 0) である場合、述語 ` comp(*Pi, *Pj)` は評価される時間 `N - 1` となります。  
+  
+ 例外は、` comp` が例外をスローした場合にのみ発生します。 その場合、被制御シーケンスは状態が未指定のままとなり、例外が再スローされます。  
+  
+##  <a name="a-nameforwardlistvaluetypea--forwardlistvaluetype"></a><a name="forward_list__value_type"></a>  forward_list::value_type  
+ 前方リストに格納された要素の型を表す型。  
+  
+```  
+typedef typename Allocator::value_type value_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ この型は、テンプレート パラメーター _ `Ty` のシノニムです。  
+  
+## <a name="see-also"></a>関連項目  
+ [<forward_list>](../standard-library/forward-list.md)
+
+

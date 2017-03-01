@@ -1,0 +1,116 @@
+---
+title: "&lt;system_error&gt; 演算子 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+ms.assetid: c14edefb-bd8a-4e90-88d3-c59c98e6f73c
+caps.latest.revision: 11
+manager: ghogen
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 82f7876aca66524ba50b1e01b74437d8a2117976
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="ltsystemerrorgt-operators"></a>&lt;system_error&gt; 演算子
+||||  
+|-|-|-|  
+|[operator!=](#operator_neq)|[operator&lt;](#operator_lt_)|[operator==](#operator_eq_eq)|  
+  
+##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+ 演算子の左側のオブジェクトが右側のオブジェクトと等しいかどうかを調べます。  
+  
+```
+bool operator==(const error_code& left,
+    const error_condition& right);
+
+bool operator==(const error_condition& left,
+    const error_code& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`left`|等しいかどうかをテストするオブジェクト。|  
+|`right`|等しいかどうかをテストするオブジェクト。|  
+  
+### <a name="return-value"></a>戻り値  
+ オブジェクトが等しい場合は **true**、オブジェクトが等しくない場合は **false**。  
+  
+### <a name="remarks"></a>コメント  
+ この関数は `left.category() == right.category() && left.value() == right.value()` を返します。  
+  
+##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+ 演算子の左側のオブジェクトが右側のオブジェクトと等しくないかどうかを調べます。  
+  
+```
+bool operator!=(const error_code& left,
+    const error_condition& right);
+
+bool operator!=(const error_condition& left,
+    const error_code& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`left`|不等性をテストするオブジェクト。|  
+|`right`|不等性をテストするオブジェクト。|  
+  
+### <a name="return-value"></a>戻り値  
+ `left` で渡されるオブジェクトが `right` で渡されるオブジェクトと等しくない場合は **true**、それ以外の場合は **false**。  
+  
+### <a name="remarks"></a>コメント  
+ この関数は `!(left == right)` を返します。  
+  
+##  <a name="a-nameoperatorlta--operatorlt"></a><a name="operator_lt_"></a>  operator&lt;  
+ オブジェクトが比較のために渡されるオブジェクトより小さいかどうかをテストします。  
+  
+```
+template <class _Enum>  
+inline bool operator<(
+    _Enum left,
+    typename enable_if<is_error_code_enum<_Enum>::value,
+    const error_code&>::type right);
+
+template <class _Enum>  
+inline bool operator<(
+    typename enable_if<is_error_code_enum<_Enum>::value,
+    const error_code&>::type left, _Enum right);
+
+template <class _Enum>  
+inline bool operator<(
+    _Enum left,
+    typename enable_if<is_error_condition_enum<_Enum>::value,
+    const error_condition&>::type right);
+
+template <class _Enum>  
+inline bool operator<(
+    typename enable_if<is_error_condition_enum<_Enum>::value,
+    const error_condition&>::type left, _Enum right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`left`|比較されるオブジェクト。|  
+|`right`|比較されるオブジェクト。|  
+  
+### <a name="return-value"></a>戻り値  
+ `left` で渡されるオブジェクトが `right` で渡されるオブジェクトより小さい場合は **true**、それ以外の場合は **false**。  
+  
+### <a name="remarks"></a>コメント  
+ この関数はエラー順序をテストします。  
+  
+## <a name="see-also"></a>関連項目  
+ [<system_error>](../standard-library/system-error.md)
+
+
+
+

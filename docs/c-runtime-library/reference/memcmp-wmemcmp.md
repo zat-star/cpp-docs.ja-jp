@@ -1,50 +1,66 @@
 ---
 title: "memcmp、wmemcmp | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "memcmp"
-  - "wmemcmp"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ntdll.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "memcmp"
-  - "wmemcmp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "memcmp 関数"
-  - "wmemcmp 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- memcmp
+- wmemcmp
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ntdll.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- memcmp
+- wmemcmp
+dev_langs:
+- C++
+helpviewer_keywords:
+- wmemcmp function
+- memcmp function
 ms.assetid: 0c21c3e3-8ee4-40e5-add1-eb26d225fd8d
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# memcmp、wmemcmp
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 902d19ff7e548fcf2847ab492e1237b36035d06f
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="memcmp-wmemcmp"></a>memcmp、wmemcmp
 2 つのバッファーの文字を比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -60,7 +76,7 @@ int wmemcmp(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buf1`  
  最初のバッファー。  
   
@@ -68,36 +84,37 @@ int wmemcmp(
  2 番目のバッファー。  
   
  `count`  
- 比較する文字数\(`memcmp` の場合はバイト数、`wmemcmp` の場合はワイド文字数を比較します\)。  
+ 比較する文字数 (`memcmp` の場合はバイト数、`wmemcmp` の場合はワイド文字数を比較します)。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  戻り値は、バッファー間の関係を示しています。  
   
 |戻り値|buf1 と buf2 の最初の `count` 文字数の関係|  
-|---------|-------------------------------------|  
-|\< 0|`buf1` が `buf2` より小さい|  
+|------------------|---------------------------------------------------------------|  
+|< 0|`buf1` が `buf2` より小さい|  
 |0|`buf1` が `buf2` と同じ|  
-|\> 0|`buf1` が `buf2` より大きい|  
+|> 0|`buf1` が `buf2` より大きい|  
   
-## 解説  
- `buf1` と `buf2` の最初の `count` 文字数を比較します。  ゼロ以外の戻り値の符号は、バッファー間で最初に異なる値のペアの差の符号です。  値は、`memcmp` の場合は `unsigned char` として解釈され、`wmemcmp` の場合は `wchar_t` として解釈されます。  
+## <a name="remarks"></a>コメント  
+ `count` と `buf1` の最初の `buf2` 文字数を比較します。 ゼロ以外の戻り値の符号は、バッファー間で最初に異なる値のペアの差の符号です。 値は、`unsigned char` の場合は `memcmp` として解釈され、`wchar_t` の場合は `wmemcmp` として解釈されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`memcmp`|\<memory.h\> または \<string.h\>|  
-|`wmemcmp`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`memcmp`|\<memory.h> または \<string.h>|  
+|`wmemcmp`|\<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
-// crt_memcmp.c  
+  
+      // crt_memcmp.c  
 /* This program uses memcmp to compare  
  * the strings named first and second. If the first  
  * 19 bytes of the strings are equal, the program  
@@ -135,7 +152,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Compare '1234567890123456789' to '1234567890123456789':  
@@ -144,14 +161,14 @@ Compare '1,2' to '1,2':
 int_arr1 is equal to int_arr2.  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)   
- [\_memccpy](../../c-runtime-library/reference/memccpy.md)   
- [memchr、wmemchr](../Topic/memchr,%20wmemchr.md)   
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
+ [_memccpy](../../c-runtime-library/reference/memccpy.md)   
+ [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   
  [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)   
- [strcmp、wcscmp、\_mbscmp](../Topic/strcmp,%20wcscmp,%20_mbscmp.md)   
- [strncmp、wcsncmp、\_mbsncmp、\_mbsncmp\_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)
+ [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
+ [strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)

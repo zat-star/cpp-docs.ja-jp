@@ -1,31 +1,49 @@
 ---
 title: "入力ストリーム マニピュレーター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "入力ストリーム オブジェクト"
-  - "入力ストリーム, マニピュレーター"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- input streams, manipulators
+- input stream objects
 ms.assetid: 0addcacb-7b7b-4d70-9775-a59abc400fb3
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 入力ストリーム マニピュレーター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: e1c7e8f5e1075230f008e4cb5f9a6ac843c75502
+ms.lasthandoff: 02/24/2017
 
-多くのマニピュレーターは、[setprecision](../Topic/setprecision.md)などの `ios` クラスに定義され、入力ストリームとして適用されます。  ただし、マニピュレーターは実際には入力ストリーム オブジェクトに影響します。  これは、最上位の入力ストリームから数で使用される変換基数を決定する基数のマニピュレーター、`dec`、`oct`と `hex`です。  
+---
+# <a name="input-stream-manipulators"></a>入力ストリーム マニピュレーター
+[setprecision]--brokenlink--(../Topic/not%20found:3ddde610-70cc-4cfa-8a89-3e83d1d356a8.md#setprecision) などの多くのマニピュレーターは、`ios` クラスに対して定義されており、入力ストリームに適用されます。 ただし、入力ストリーム オブジェクトに実際に影響を与えるマニピュレーターはわずかです。 該当するマニピュレーターのうち最も重要なのは、入力ストリームからの数値で使用される変換ベースを決定する基数マニピュレーターの `dec`、`oct`、および `hex` です。  
   
- 抽出で、`hex` のマニピュレーターはさまざまな形式で入力処理を有効にします。  たとえば、c、C、0xc、0xC、0Xc と 0XC は、10 進整数 12 として解釈されます。  0 ~ 9、A ~ F、および a ~ f x、X 以外の文字が数値変換を終了します。  したがって `"124n5"` シーケンスは [basic\_ios::fail](../Topic/basic_ios::fail.md) のビットが設定されている第 124 に変換されます。  
+ 抽出時に、`hex` マニピュレーターでは、さまざまな入力形式を処理できます。 たとえば、c、C、0xc、0xC、0Xc、および 0XC は、すべて 10 進整数の 12 として解釈されます。 0 から 9、A から F、a から f、x、および X 以外の任意の文字によって、数値変換が終了されます。 したがって、シーケンス `"124n5"` は、[basic_ios::fail](../standard-library/basic-ios-class.md#basic_ios__fail) ビットが設定された数値 124 に変換されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [入力ストリーム](../standard-library/input-streams.md)
+
+

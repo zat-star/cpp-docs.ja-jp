@@ -1,42 +1,60 @@
 ---
 title: "入出力の代替手段 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "I/O [C++], 代替"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- I/O [C++], alternatives
 ms.assetid: 9f8401c7-d90d-4285-8918-63573df74a80
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 入出力の代替手段
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 45cec9f7c4c45ef12c7d22a7c3c311f7ce3f4cb5
+ms.lasthandoff: 02/24/2017
 
-Visual C\+\+ では、I\/O のプログラミングに複数の方法を提供し、T:  
+---
+# <a name="inputoutput-alternatives"></a>入出力の代替手段
+Visual C++ には、入出力のプログラミングのいくつかの代替手段が用意されています。  
   
--   直接 C ランタイム ライブラリいない I\/O。  
+-   C ランタイム ライブラリの直接的なバッファーされない入出力。  
   
--   ANSI C ランタイム ライブラリの I\/O ストリーム。  
+-   ANSI C ランタイム ライブラリのストリーム入出力。  
   
--   コンソールと直接 I\/O ポート。  
+-   コンソールおよびポートの直接入出力。  
   
 -   Microsoft Foundation Class ライブラリ。  
   
--   Microsoft C\+\+ の標準ライブラリ。  
+-   Microsoft C++ 標準ライブラリ。  
   
- iostream クラスはバッファリングされたで役立ちます、書式設定されたテキスト I\/O です。  これらは、.の C\+\+ プログラミング インターフェイスを必要とし、Microsoft Foundation Class \(MFC\) ライブラリを使用しない場合、いないか、バイナリ I\/O でも役立ちます。  iostream クラスは、C ランタイム関数オブジェクト指向 I\/O の方法です。  
+ iostream クラスは、バッファーされた書式設定テキストの入出力に役立ちます。 C++ プログラミング インターフェイスが必要であり、Microsoft Foundation Class (MFC) ライブラリを使用しない場合のバッファーされていない入出力またはバイナリ入出力にも役立ちます。 iostream クラスは、C ランタイム関数のオブジェクト指向の入出力の代替手段です。  
   
- Microsoft Windows オペレーティング システムに iostream クラスを使用できます。  文字列とファイル ストリームは制限なく機能しますが、文字モードのストリーム オブジェクト `cin`、`cout`、`cerr`と `clog` は Windows のグラフィカル ユーザー インターフェイスと矛盾しています。  また Windows 環境と直接やり取りするカスタム ストリーム クラスを派生できます。  
+ iostream クラスは、Microsoft Windows オペレーティング システムで使用できます。 文字列とファイルのストリームは制限なしで動作しますが、文字モード ストリーム オブジェクト `cin`、`cout`、`cerr`、および `clog` には Windows グラフィカル ユーザー インターフェイスとの一貫性がありません。 また、Windows 環境と直接やり取りするカスタム ストリーム クラスを派生させることもできます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリームとは何か](../standard-library/what-a-stream-is.md)
+
+

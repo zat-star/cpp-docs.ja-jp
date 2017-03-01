@@ -1,49 +1,66 @@
 ---
-title: "_aligned_recalloc | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_aligned_recalloc"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-heap-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "aligned_recalloc"
-  - "_aligned_recalloc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "aligned_recalloc 関数"
-  - "_aligned_recalloc 関数"
+title: _aligned_recalloc | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _aligned_recalloc
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-heap-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- aligned_recalloc
+- _aligned_recalloc
+dev_langs:
+- C++
+helpviewer_keywords:
+- aligned_recalloc function
+- _aligned_recalloc function
 ms.assetid: d3da3dcc-79ef-4273-8af5-ac7469420142
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# _aligned_recalloc
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 3f750db538a74cd19571ea8cd107ceb707d33207
+ms.lasthandoff: 02/24/2017
 
-[\_aligned\_malloc](../../c-runtime-library/reference/aligned-malloc.md) または [\_aligned\_offset\_malloc](../../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリに変更し、0 を初期化しますメモリ ブロックのサイズを返します。  
+---
+# <a name="alignedrecalloc"></a>_aligned_recalloc
+[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックのサイズを変更し、メモリを 0 に初期化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void * _aligned_recalloc(  
@@ -54,39 +71,39 @@ void * _aligned_recalloc(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `memblock`  
- 現在のメモリ ブロックのポインター。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `memblock`  
+ 現在のメモリ ブロック ポインター。  
   
- \[入力\] `num`  
+ [入力] `num`  
  要素の数。  
   
- \[入力\] `size`  
- 各要素のサイズ \(バイト単位\)。  
+ [入力] `size`  
+ 各要素のサイズ (バイト単位)。  
   
- \[入力\] `alignment`  
- アラインメント値。2 の整数乗である必要があります。  
+ [入力] `alignment`  
+ 配置の値。2 の累乗の整数である必要があります。  
   
-## 戻り値  
- `_aligned_recalloc` が 再割り当てされる場合 \(移動\) メモリ ブロックの void なポインターを返します。  戻り値は、buffer 引数が `NULL`である場合、または特定のサイズにブロックを展開する十分な使用可能なメモリがサイズがゼロである場合 `NULL` です。  最初のケースでは、元のブロックが解除されます。  2 番目の例では、元のブロックは変更されません。  戻り値は適切にどの型のオブジェクトを格納するために配置されることが保証されるストレージ領域を指します。  void 以外の型へのポインターを取得するには、戻り値の型キャストを使用してください。  
+## <a name="return-value"></a>戻り値  
+ `_aligned_recalloc` は、再割り当てされた (移動された可能性もある) メモリ ブロックへの void ポインターを返します。 サイズが&0; でバッファー引数が `NULL` ではない場合、または特定のサイズにブロックを拡張するのに十分なメモリを使用できない場合、戻り値は `NULL` です。 最初の場合には、元のブロックは解放されます。 2 番目の場合には、元のブロックは変更されません。 戻り値は、どの型のオブジェクトを格納する場合でも適切なアラインメントが保証されるストレージ領域を指します。 void 以外の型へのポインターを取得するには、戻り値の型キャストを使用します。  
   
- これは、メモリの再割り当てされ、ブロックの配置を変更するとエラーになります。  
+ メモリを再割り当てしてブロックのアラインメントを変更すると、エラーになります。  
   
-## 解説  
- `_aligned_recalloc` は `malloc`に基づいています。  `_aligned_offset_malloc`の詳細については、「[malloc](../../c-runtime-library/reference/malloc.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ `_aligned_recalloc` は `malloc` に基づきます。 `_aligned_offset_malloc` の使用方法の詳細については、「[malloc](../../c-runtime-library/reference/malloc.md)」を参照してください。  
   
- この関数は、メモリ割り当てが失敗するか、要求されたサイズが `_HEAP_MAXREQ` より大きかった場合に、`errno` を `ENOMEM` に設定します。  `errno` の詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  また、`_aligned_recalloc` はそのパラメーターを検証します。  `alignment` が 2 の累乗でない場合、この関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
+ この関数は、メモリ割り当てが失敗するか、要求されたサイズが `errno` より大きかった場合に、`ENOMEM` を `_HEAP_MAXREQ` に設定します。 `errno` に関する詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 また、`_aligned_recalloc` はそのパラメーターを検証します。 `alignment` が 2 の累乗でない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_aligned_recalloc`|\<malloc.h\>|  
+|-------------|---------------------|  
+|`_aligned_recalloc`|\<malloc.h>|  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データの整列](../../c-runtime-library/data-alignment.md)   
- [\_recalloc](../../c-runtime-library/reference/recalloc.md)   
- [\_aligned\_offset\_recalloc](../../c-runtime-library/reference/aligned-offset-recalloc.md)
+ [_recalloc](../../c-runtime-library/reference/recalloc.md)   
+ [_aligned_offset_recalloc](../../c-runtime-library/reference/aligned-offset-recalloc.md)

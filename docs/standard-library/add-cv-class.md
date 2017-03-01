@@ -1,80 +1,120 @@
 ---
 title: "add_cv クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.tr1.add_cv"
-  - "add_cv"
-  - "std::tr1::add_cv"
-  - "std.add_cv"
-  - "std::add_cv"
-  - "type_traits/std::add_cv"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "add_cv クラス [TR1]"
-  - "add_cv"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- add_cv
+- std::add_cv
+- type_traits/std::add_cv
+dev_langs:
+- C++
+helpviewer_keywords:
+- add_cv class
+- add_cv
 ms.assetid: a5572c78-a097-45d7-b476-ed4876889dea
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# add_cv クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 8630a5c0b97b85e0dc75e8b470974bb7d223a511
+ms.openlocfilehash: efa1d246eb793cb2d0a64347aa062e7ab908e7c4
+ms.lasthandoff: 02/24/2017
 
-型から const\/volatile 型を作成します。  
+---
+# <a name="addcv-class"></a>add_cv クラス
+型から const volatile 型を作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Ty>  
-    struct add_cv;  
-  
-template<class T>  
+template <class T>  
+struct add_cv;  
+ 
+template <class T>
 using add_cv_t = typename add_cv<T>::type;  
 ```  
   
-#### パラメーター  
- `Ty`  
- 変更する型。  
+#### <a name="parameters"></a>パラメーター  
+*T*  
+変更する型。  
   
-## 解説  
- この型修飾子のインスタンスは、修飾型 [add\_volatile クラス](../standard-library/add-volatile-class.md)`<` [add\_const クラス](../Topic/add_const%20Class.md)`<Ty> >` を保持します。  
+## <a name="remarks"></a>コメント  
+変更後の型 `add_cv<T>` のインスタンスには、[add_volatile](../standard-library/add-volatile-class.md) と [add_const](../standard-library/add-const-class.md) の両方で変更された *T* と同等の `type` メンバー typedef があります。ただし、*T* が CV 修飾子を既に持っている場合、参照の場合、または関数の場合は除きます。  
   
-## 使用例  
+`add_cv_t<T>` ヘルパー型は、`add_cv<T>` メンバー typedef `type` にアクセスするショートカットです。
   
-```  
+## <a name="example"></a>例  
+  
+```cpp  
+// add_cv.cpp
+// compile by using: cl /EHsc /W4 add_cv.cpp
 #include <type_traits>   
 #include <iostream>   
-  
-int main()   
-    {   
-    std::add_cv_t<int> *p = (const volatile int *)0;   
-  
-    p = p;  // to quiet "unused" warning   
-    std::cout << "add_cv<int> == "   
-        << typeid(*p).name() << std::endl;   
-  
-    return (0);   
-    }  
-  
+
+struct S {
+    void f() { 
+        std::cout << "invoked non-cv-qualified S.f()" << std::endl; 
+    }
+    void f() const { 
+        std::cout << "invoked const S.f()" << std::endl; 
+    }
+    void f() volatile { 
+        std::cout << "invoked volatile S.f()" << std::endl; 
+    }
+    void f() const volatile { 
+        std::cout << "invoked const volatile S.f()" << std::endl; 
+    }
+};
+
+template <class T>
+void invoke() {
+    T t;
+    ((T *)&t)->f(); 
+}
+
+int main()
+{
+    invoke<S>();
+    invoke<std::add_const<S>::type>();
+    invoke<std::add_volatile<S>::type>();
+    invoke<std::add_cv<S>::type>();
+}  
 ```  
   
-  **add\_cv\_t\<int\> \=\= int**   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+```Output  
+invoked non-cv-qualified S.f()
+invoked const S.f()
+invoked volatile S.f()
+invoked const volatile S.f()  
+```  
   
- **名前空間:** std  
+## <a name="requirements"></a>要件  
+**ヘッダー:** \<type_traits>  
+**名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [remove\_const クラス](../standard-library/remove-const-class.md)   
- [remove\_volatile クラス](../Topic/remove_volatile%20Class.md)
+## <a name="see-also"></a>関連項目  
+[<type_traits>](../standard-library/type-traits.md)   
+[remove_const クラス](../standard-library/remove-const-class.md)   
+[remove_volatile クラス](../standard-library/remove-volatile-class.md)
+

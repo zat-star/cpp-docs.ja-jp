@@ -1,71 +1,81 @@
 ---
 title: "unary_negate クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "unary_negate"
-  - "std::unary_negate"
-  - "std.unary_negate"
-  - "xfunctional/std::unary_negate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "unary_negate クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- unary_negate
+- std::unary_negate
+- std.unary_negate
+- xfunctional/std::unary_negate
+dev_langs:
+- C++
+helpviewer_keywords:
+- unary_negate class
 ms.assetid: e3b86eec-3205-49b9-ab83-f55225af4e0c
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# unary_negate クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
+ms.openlocfilehash: 078ee71844b0ac5cd02b182287a7a6db6caa04db
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="unarynegate-class"></a>unary_negate クラス
 指定した単項関数の戻り値を否定するメンバー関数を提供するテンプレート クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class Predicate>
+class unary_negate
+    : public unaryFunction<typename Predicate::argument_type, bool>
+{
+public:
+    explicit unary_negate(const Predicate& Func);
+    bool operator()(const typename Predicate::argument_type& left) const;
+};
 ```  
   
-   template<class Predicate>  
-class unary_negate  
-   : public unary_function<  
-      typename Predicate::argument_type,  
-      bool>   
-{  
-public:  
-explicit unary_negate(  
-   const Predicate& _Func  
-);  
-bool operator()(  
-   const typename Predicate::argument_type& _Left ) const;  
-};  
-```  
+#### <a name="parameters"></a>パラメーター  
+ `Func`  
+ 否定する単項関数。  
   
-#### パラメーター  
- `_Func`  
- 単項否定する関数。  
+ `left`  
+ 否定する単項関数のオペランド。  
   
- `_Left`  
- 単項否定する関数のオペランド。  
-  
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  単項関数の否定。  
   
-## 解説  
- このテンプレート クラスは単項関数オブジェクトの\_Func*のコピーを保存します。*これは \#\#\#\!の\_Func *\(\_Left\) を*返すようにメンバー関数 `operator()` を定義します。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスは、単項関数オブジェクト _ *Func* のコピーを格納します。 そのメンバー関数 `operator()` は **!**\_ *Func(left) します。*  
   
- `unary_negate` のコンストラクターは、あまり直接使用されません。  ヘルパー関数 [not1](../Topic/not1%20Function.md) は **unary\_negator** アダプターの述語を宣言して使用する単純な方法を提供します。  
+ `unary_negate` のコンストラクターが直接使用されることはほとんどありません。 **unary_negator** アダプター述語を宣言して使用する場合、ヘルパー関数 [not1](../standard-library/functional-functions.md#not1_function) を利用した方が簡単です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_unary_negate.cpp  
 // compile with: /EHsc  
 #include <vector>  
@@ -108,16 +118,22 @@ int main()
     cout << "The number of elements in v1 not greater than 10 is: "  
          << result2 << "." << endl;  
 }  
+/* Output:  
+The vector v1 = ( 0 5 10 15 20 25 30 35 )  
+The number of elements in v1 greater than 10 is: 5.  
+The number of elements in v1 not greater than 10 is: 3.  
+*/  
 ```  
   
-  **ベクター v1 \= \(0 5 10 15 20 25 30 35\)**   
-**大きな v1 の要素の数は、10 次の操作: 5。**  
-**小さい v1 の要素の数は、10 次の操作: 3。**   
-## 必要条件  
- **ヘッダー:** \<functional\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

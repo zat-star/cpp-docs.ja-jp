@@ -1,51 +1,68 @@
 ---
-title: "_realloc_dbg | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_realloc_dbg"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_realloc_dbg"
-  - "realloc_dbg"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "再割り当て (メモリ ブロックを)"
-  - "realloc_dbg 関数"
-  - "メモリ ブロック、再割り当て"
-  - "メモリ、再割り当て"
-  - "_realloc_dbg 関数"
+title: _realloc_dbg | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _realloc_dbg
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- _realloc_dbg
+- realloc_dbg
+dev_langs:
+- C++
+helpviewer_keywords:
+- reallocating memory blocks
+- realloc_dbg function
+- memory blocks, reallocating
+- memory, reallocating
+- _realloc_dbg function
 ms.assetid: 7c3cb780-51ed-4d9c-9929-cdde606d846a
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# _realloc_dbg
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 80dade4b6e288e80e37c7354fe73d4776227f401
+ms.lasthandoff: 02/24/2017
 
-ブロックの移動やサイズ変更によって、ヒープ内の指定されたメモリのブロックを再割り当てします \(デバッグ バージョンのみ\)。  
+---
+# <a name="reallocdbg"></a>_realloc_dbg
+ブロックの移動やサイズ変更によって、ヒープ内の指定されたメモリのブロックを再割り当てします (デバッグ バージョンのみ)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void *_realloc_dbg(  
@@ -57,12 +74,12 @@ void *_realloc_dbg(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `userData`  
  以前に割り当てられていたメモリ ブロックへのポインター。  
   
  `newSize`  
- 再割り当てされるブロックのために要求するサイズ \(バイト\)。  
+ 再割り当てされるブロックのために要求するサイズ (バイト)。  
   
  `blockType`  
  再割り当てされるブロックのために要求する種類。`_CLIENT_BLOCK` または `_NORMAL_BLOCK`。  
@@ -73,37 +90,37 @@ void *_realloc_dbg(
  `linenumber`  
  `realloc` 操作が要求されたソース ファイル内の行番号または NULL。  
   
- `filename` パラメーターと `linenumber` パラメーターを使用できるのは、`_realloc_dbg` が明示的に呼び出された場合、または [\_CRTDBG\_MAP\_ALLOC](../../c-runtime-library/crtdbg-map-alloc.md) プリプロセッサ定数が定義されている場合だけです。  
+ `filename` パラメーターと `linenumber` パラメーターを使用できるのは、`_realloc_dbg` が明示的に呼び出された場合、または [_CRTDBG_MAP_ALLOC](../../c-runtime-library/crtdbg-map-alloc.md) プリプロセッサ定数が定義されている場合だけです。  
   
-## 戻り値  
- 正常に終了した場合、この関数は再割り当てされたメモリ ブロックのユーザー部分へのポインターを返すか、新しいハンドラー関数を呼び出すか、NULL を返します。  戻る動作の詳細については、後の「解説」のセクションを参照してください。  新しいハンドラー関数がどのように使用されるかの詳細については、[realloc](../../c-runtime-library/reference/realloc.md) 関数を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合、この関数は再割り当てされたメモリ ブロックのユーザー部分へのポインターを返すか、新しいハンドラー関数を呼び出すか、NULL を返します。 戻る動作の詳細については、後の「解説」のセクションを参照してください。 新しいハンドラー関数がどのように使用されるかの詳細については、[realloc](../../c-runtime-library/reference/realloc.md) 関数を参照してください。  
   
-## 解説  
- `_realloc_dbg` は、[realloc](../../c-runtime-library/reference/realloc.md) 関数のデバッグ バージョンです。  [\_DEBUG](../Topic/_DEBUG.md) が定義されない場合、`_realloc_dbg` への各呼び出しは `realloc` への呼び出しになります。  `realloc` と `_realloc_dbg` はベース ヒープ内にメモリ ブロックを再割り当てしますが、`_realloc_dbg` はいくつかのデバッグ機能を提供します。たとえば、リークをテストするための、ブロックのユーザー部分の両側のバッファー、特定の割り当ての種類を追跡するためのブロック型パラメーター、割り当て要求の起点を特定するための `filename`\/`linenumber` 情報などです。  
+## <a name="remarks"></a>コメント  
+ `_realloc_dbg` は、[realloc](../../c-runtime-library/reference/realloc.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_realloc_dbg` への各呼び出しは `realloc` への呼び出しになります。 `realloc` と `_realloc_dbg` はベース ヒープ内にメモリ ブロックを再割り当てしますが、`_realloc_dbg` はいくつかのデバッグ機能を提供しています。たとえば、リークをテストするための、ブロックのユーザー部分の両側のバッファー、特定の割り当ての種類を追跡するためのブロック型パラメーター、割り当て要求の起点を特定するための `filename`/`linenumber` 情報などです。  
   
- `_realloc_dbg` は、要求された `newSize` よりも少し多い領域を使用して指定されたメモリ ブロックを再割り当てします。  `newSize` は、最初に割り当てられたメモリ ブロックのサイズより大きくなったり小さくなったりする場合があります。  追加の領域は、デバッグ メモリ ブロックをリンクし、アプリケーションにデバッグ ヘッダー情報と上書きバッファーを提供するために、デバッグ ヒープ マネージャーによって使用されます。  再割り当てによって、元のメモリ ブロックがヒープ内の別の位置に移動されたり、メモリ ブロックのサイズが変わったりする場合があります。  メモリ ブロックが移動される場合、元のブロックの内容は上書きされます。  
+ `_realloc_dbg` は、要求された `newSize` よりも少し多い領域を使用して指定されたメモリ ブロックを再割り当てします。 `newSize` は、最初に割り当てられたメモリ ブロックのサイズより大きくなったり小さくなったりする場合があります。 追加の領域は、デバッグ メモリ ブロックをリンクし、アプリケーションにデバッグ ヘッダー情報と上書きバッファーを提供するために、デバッグ ヒープ マネージャーによって使用されます。 再割り当てによって、元のメモリ ブロックがヒープ内の別の位置に移動されたり、メモリ ブロックのサイズが変わったりする場合があります。 メモリ ブロックが移動される場合、元のブロックの内容は上書きされます。  
   
- メモリ割り当てが失敗するか、必要なメモリの量 \(前に説明したオーバーヘッドを含む\) が `_HEAP_MAXREQ` を超えると、`_realloc_dbg` は `errno` を `ENOMEM` に設定します。  エラー コードの詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ メモリ割り当てが失敗するか、必要なメモリの量 (前に説明したオーバーヘッドを含む) が `_realloc_dbg` を超えると、`errno` は `ENOMEM` を `_HEAP_MAXREQ` に設定します。 このエラー コードと他のエラーコードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
- デバッグ バージョンのベース ヒープに対するメモリ ブロックの割り当て、初期化、管理方法の詳細については、「[CRT デバッグ ヒープ](../Topic/CRT%20Debug%20Heap%20Details.md)」を参照してください。  割り当てブロック型と、それらがどのように使用されるかについては、「[デバッグ ヒープ上のメモリ ブロックの型](../Topic/CRT%20Debug%20Heap%20Details.md#BKMK_Types_of_blocks_on_the_debug_heap)」を参照してください。  アプリケーションのデバッグ ビルドで標準ヒープ関数を呼び出す場合とデバッグ バージョンを呼び出す場合との違いについては、「[デバッグ バージョンのヒープ割り当て関数](../Topic/Debug%20Versions%20of%20Heap%20Allocation%20Functions.md)」を参照してください。  
+ デバッグ バージョンのベース ヒープに対するメモリ ブロックの割り当て、初期化、管理方法については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 割り当てブロック型と、それらがどのように使用されるかについては、「[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 標準で呼び出すヒープ関数と、アプリケーションのデバッグ ビルドで呼び出すデバッグ バージョンのヒープ関数との違いの詳細については、「[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_realloc_dbg`|\<crtdbg.h\>|  
+|-------------|---------------------|  
+|`_realloc_dbg`|\<crtdbg.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
   
-## 使用例  
- 「[\_msize\_dbg](../../c-runtime-library/reference/msize-dbg.md)」のトピックの例を参照してください。  
+## <a name="example"></a>例  
+ 「[_msize_dbg](../../c-runtime-library/reference/msize-dbg.md)」のトピックの例を参照してください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
- [\_malloc\_dbg](../../c-runtime-library/reference/malloc-dbg.md)
+ [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)
