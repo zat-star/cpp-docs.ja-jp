@@ -1,38 +1,80 @@
 ---
-title: "コンパイラ エラー C3459 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "C3459"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3459"
+title: "コンパイラ エラー C3459 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- C3459
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3459
 ms.assetid: 3d290a20-d313-4c07-9bd8-c5c159cb169f
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C3459
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: 7061d3d633f9b2a4127189e74103141834800bfe
+ms.lasthandoff: 02/24/2017
 
-'attribute': 属性は、クラス インデクサー \(既定のインデックス付きのプロパティ\) のみに使用できます  
+---
+# <a name="compiler-error-c3459"></a>コンパイラ エラー C3459
+'attribute': 属性は、クラス インデクサー (既定のインデックス付きのプロパティ) のみに使用できます  
   
- クラス インデクサー プロパティに適用されるように設計された属性が正しく使用されていません。  
+クラス インデクサー プロパティに適用されるように設計された属性が正しく使用されていません。  
   
- 詳細については、「[方法: インデックス付きプロパティを使用する](../../misc/how-to-use-indexed-properties.md)」を参照してください。  
+詳細については、次を参照してください。[方法: プロパティを使用して C + で/cli CLI](../../dotnet/how-to-use-properties-in-cpp-cli.md)します。  
   
-## 使用例  
- 次の例では C3459 が生成されます。  
+## <a name="example"></a>例  
+次の例では C3459 が生成されます。  
   
 ```  
-// C3459.cpp // compile with: /clr /c public ref class MyString { public: [System::Runtime::CompilerServices::IndexerName("Chars")]   // C3459 property int Prop; }; // OK public ref class MyString2 { array<int>^ MyArr; public: MyString2() { MyArr = gcnew array<int>(5); } [System::Runtime::CompilerServices::IndexerName("Chars")]   // OK property int default[int] { int get(int index) { return MyArr[index]; } void set(int index, int value) { MyArr[index] = value; } } };  
+// C3459.cpp  
+// compile with: /clr /c  
+public ref class MyString {  
+public:  
+   [System::Runtime::CompilerServices::IndexerName("Chars")]   // C3459  
+   property int Prop;  
+};  
+  
+// OK  
+public ref class MyString2 {  
+   array<int>^ MyArr;  
+public:  
+   MyString2() {  
+      MyArr = gcnew array<int>(5);  
+   }  
+  
+   [System::Runtime::CompilerServices::IndexerName("Chars")]   // OK  
+   property int default[int] {  
+      int get(int index) {  
+         return MyArr[index];  
+      }  
+      void set(int index, int value) {  
+         MyArr[index] = value;  
+      }  
+   }  
+};  
 ```

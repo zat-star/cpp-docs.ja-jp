@@ -1,55 +1,85 @@
 ---
-title: "default_scheduler_exists クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "concrt/concurrency::default_scheduler_exists"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "default_scheduler_exists クラス"
+title: "default_scheduler_exists クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- concrt/concurrency::default_scheduler_exists
+dev_langs:
+- C++
+helpviewer_keywords:
+- default_scheduler_exists class
 ms.assetid: f6e575e2-4e0f-455a-9e06-54f462ce0c1c
 caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# default_scheduler_exists クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: 527d02e6b79d86c8a194fffa30351efc944db441
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="defaultschedulerexists-class"></a>default_scheduler_exists クラス
 このクラスは、既定のスケジューラが既にプロセス内に存在するときに `Scheduler::SetDefaultSchedulerPolicy` メソッドが呼び出された場合にスローされる例外を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class default_scheduler_exists : public std::exception;
 ```  
-class default_scheduler_exists : public std::exception;  
-```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[default\_scheduler\_exists::default\_scheduler\_exists コンストラクター](../Topic/default_scheduler_exists::default_scheduler_exists%20Constructor.md)|オーバーロードされます。  `default_scheduler_exists` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[default_scheduler_exists コンス トラクター](#ctor)|オーバーロードされます。 `default_scheduler_exists` オブジェクトを構築します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
   
  `default_scheduler_exists`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)   
- [Scheduler::SetDefaultSchedulerPolicy メソッド](../Topic/Scheduler::SetDefaultSchedulerPolicy%20Method.md)
+##  <a name="a-namectora-defaultschedulerexists"></a><a name="ctor"></a>default_scheduler_exists 
+
+ `default_scheduler_exists` オブジェクトを構築します。  
+  
+```
+explicit _CRTIMP default_scheduler_exists(_In_z_ const char* _Message) throw();
+
+default_scheduler_exists() throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Message`  
+ エラーの説明メッセージ。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)
+

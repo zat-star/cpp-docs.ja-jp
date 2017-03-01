@@ -1,84 +1,236 @@
 ---
-title: "IDataObjectImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "IDataObjectImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ転送 [C++]"
-  - "データ転送 [C++], 汎用データ転送"
-  - "IDataObject, ATL の実装"
-  - "IDataObjectImpl クラス"
+title: "IDataObjectImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IDataObjectImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- data transfer [C++]
+- data transfer [C++], Uniform Data Transfer
+- IDataObjectImpl class
+- IDataObject, ATL implementation
 ms.assetid: b680f0f7-7795-40a1-a0f6-f48768201c89
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# IDataObjectImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: afd5fe7cf9bbac582e59ed46dc33e99de5fc2876
+ms.lasthandoff: 02/24/2017
 
-このクラスには、汎用データ転送をサポートして接続を管理するためのメソッドが用意されています。  
+---
+# <a name="idataobjectimpl-class"></a>IDataObjectImpl クラス
+このクラスは、汎用データ転送をサポートして、接続を管理するためのメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは [!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行されるアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<class T>  
+class IDataObjectImpl
 ```  
   
-      template< class   
-      T  
-      >  
-class IDataObjectImpl  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `IDataObjectImpl`から派生したクラス。  
+ 派生したクラスに、`IDataObjectImpl`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[IDataObjectImpl::DAdvise](../Topic/IDataObjectImpl::DAdvise.md)|データ オブジェクトとアドバイズ シンク間の接続を確立します。  これは、オブジェクトの変更通知の受信をアドバイズ シンクができます。|  
-|[IDataObjectImpl::DUnadvise](../Topic/IDataObjectImpl::DUnadvise.md)|前に `DAdvise`を通じて確立された接続を終了します。|  
-|[IDataObjectImpl::EnumDAdvise](../Topic/IDataObjectImpl::EnumDAdvise.md)|現在のアドバイザリ コネクションを反復処理するための列挙子を作成します。|  
-|[IDataObjectImpl::EnumFormatEtc](../Topic/IDataObjectImpl::EnumFormatEtc.md)|列挙子をデータ オブジェクトでサポート **FORMATETC** の構造を反復処理するに作成します。  ATL 実装は、**E\_NOTIMPL**を返します。|  
-|[IDataObjectImpl::FireDataChange](../Topic/IDataObjectImpl::FireDataChange.md)|各に変更通知をアドバイズ シンクに送り返します。|  
-|[IDataObjectImpl::GetCanonicalFormatEtc](../Topic/IDataObjectImpl::GetCanonicalFormatEtc.md)|より複雑な 1 に **FORMATETC** の論理的に等価の構造体を取得します。  ATL 実装は、**E\_NOTIMPL**を返します。|  
-|[IDataObjectImpl::GetData](../Topic/IDataObjectImpl::GetData.md)|データ オブジェクトからクライアントにデータを転送します。  データは **FORMATETC** の構造に記述され、**STGMEDIUM** の構造を通じて転送されます。|  
-|[IDataObjectImpl::GetDataHere](../Topic/IDataObjectImpl::GetDataHere.md)|クライアントが **STGMEDIUM** の構造を割り当てる必要がある点 `GetData`に似ています。  ATL 実装は、**E\_NOTIMPL**を返します。|  
-|[IDataObjectImpl::QueryGetData](../Topic/IDataObjectImpl::QueryGetData.md)|データ オブジェクトが移動のデータの **FORMATETC** の特定の構造をサポートするかどうかを判定します。  ATL 実装は、**E\_NOTIMPL**を返します。|  
-|[IDataObjectImpl::SetData](../Topic/IDataObjectImpl::SetData.md)|クライアントからデータ オブジェクトにデータを転送します。  ATL 実装は、**E\_NOTIMPL**を返します。|  
+|----------|-----------------|  
+|[IDataObjectImpl::DAdvise](#dadvise)|データ オブジェクトとアドバイズ シンク間の接続を確立します。 これにより、オブジェクトの変更の通知を受信するアドバイズ シンクできます。|  
+|[IDataObjectImpl::DUnadvise](#dunadvise)|以前に確立した接続が終了した`DAdvise`します。|  
+|[IDataObjectImpl::EnumDAdvise](#enumdadvise)|現在のアドバイザリ コネクションを反復処理する列挙子を作成します。|  
+|[IDataObjectImpl::EnumFormatEtc](#enumformatetc)|反復処理する列挙子を作成、 **FORMATETC**データ オブジェクトによってサポートされている構造。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IDataObjectImpl::FireDataChange](#firedatachange)|各アドバイズ シンクに戻るには、変更通知を送信します。|  
+|[IDataObjectImpl::GetCanonicalFormatEtc](#getcanonicalformatetc)|論理的に等しい**FORMATETC**はより複雑な構造です。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IDataObjectImpl::GetData](#getdata)|データ オブジェクトからクライアントにデータを転送します。 内で、データを記述、 **FORMATETC**構造体し、を介して転送、 **STGMEDIUM**構造体。|  
+|[IDataObjectImpl::GetDataHere](#getdatahere)|ような`GetData`を除き、クライアントを割り当てる必要があります、 **STGMEDIUM**構造体。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IDataObjectImpl::QueryGetData](#querygetdata)|データ オブジェクトが特定をサポートするかどうかを決定**FORMATETC**データを転送するためです。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IDataObjectImpl::SetData](#setdata)|クライアントからのデータ オブジェクトにデータを転送します。 ATL の実装を返します**E_NOTIMPL**します。|  
   
-## 解説  
- [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421) のインターフェイスのサポートは均一のデータ転送にメソッドを提供します。  `IDataObject` は、データを取得および格納するために標準書式 [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177) 構造と [STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812) を使用します。  
+## <a name="remarks"></a>コメント  
+ [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421)インターフェイスには、汎用データ転送をサポートするメソッドが用意されています。 `IDataObject`標準書式指定の構造を使用して[FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)と[STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812)を取得してデータを保存します。  
   
- `IDataObject` は、データの変更の通知を処理するアドバイズ シンクするように接続を管理する。  データを受け取るクライアントにデータ オブジェクトからの通知を、クライアント アドバイズ シンクと呼ばれるオブジェクトの [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513) のインターフェイスを実装する。変更します。  クライアントは、**IDataObject::DAdvise**を呼び出すと、接続は、データ オブジェクトとアドバイズ シンク間に確立されます。  
+ `IDataObject`また、アドバイズ シンク データ変更の通知を処理するへの接続を管理します。 クライアント データ オブジェクトからデータ変更の通知を受信するためには、クライアントを実装する必要があります、 [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513)アドバイズ シンクと呼ばれるオブジェクトのインターフェイスです。 クライアントが、呼び出すと**IDataObject::DAdvise**、データ オブジェクトとアドバイズ シンク間の接続を確立します。  
   
- クラス `IDataObjectImpl` は `IDataObject` の既定の実装を提供し、デバッグ ビルドでダンプ デバイスに情報を送信して **IUnknown** を実装します。  
+ クラス`IDataObjectImpl`の既定の実装を提供`IDataObject`を実装および**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
   
- **関連トピック** [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)、[ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
+ **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `IDataObject`  
   
  `IDataObjectImpl`  
   
-## 必要条件  
- **Header:** atlctl.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlctl.h  
   
-## 参照  
+##  <a name="a-namedadvisea--idataobjectimpldadvise"></a><a name="dadvise"></a>IDataObjectImpl::DAdvise  
+ データ オブジェクトとアドバイズ シンク間の接続を確立します。  
+  
+```
+HRESULT DAdvise(
+    FORMATETC* pformatetc,
+    DWORD advf,
+    IAdviseSink* pAdvSink,
+    DWORD* pdwConnection);
+```  
+  
+### <a name="remarks"></a>コメント  
+ これにより、オブジェクトの変更の通知を受信するアドバイズ シンクできます。  
+  
+ 接続を終了するには、呼び出す[に](#dunadvise)します。  
+  
+ 参照してください[IDataObject::DAdvise](http://msdn.microsoft.com/library/windows/desktop/ms692579)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namedunadvisea--idataobjectimpldunadvise"></a><a name="dunadvise"></a>IDataObjectImpl::DUnadvise  
+ 以前に確立した接続が終了した[DAdvise](#dadvise)します。  
+  
+```
+HRESULT DUnadvise(DWORD dwConnection);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::DUnadvise](http://msdn.microsoft.com/library/windows/desktop/ms692448)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nameenumdadvisea--idataobjectimplenumdadvise"></a><a name="enumdadvise"></a>IDataObjectImpl::EnumDAdvise  
+ 現在のアドバイザリ コネクションを反復処理する列挙子を作成します。  
+  
+```
+HRESULT DAdvise(
+    FORMATETC* pformatetc,
+    DWORD advf,
+    IAdviseSink* pAdvSink,
+    DWORD* pdwConnection);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::EnumDAdvise](http://msdn.microsoft.com/library/windows/desktop/ms680127)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nameenumformatetca--idataobjectimplenumformatetc"></a><a name="enumformatetc"></a>IDataObjectImpl::EnumFormatEtc  
+ 反復処理する列挙子を作成、 **FORMATETC**データ オブジェクトによってサポートされている構造。  
+  
+```
+HRESULT EnumFormatEtc(  
+    DWORD dwDirection,
+    IEnumFORMATETC** ppenumFormatEtc);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::EnumFormatEtc](http://msdn.microsoft.com/library/windows/desktop/ms683979)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+### <a name="return-value"></a>戻り値  
+ 返します。 **E_NOTIMPL**します。  
+  
+##  <a name="a-namefiredatachangea--idataobjectimplfiredatachange"></a><a name="firedatachange"></a>IDataObjectImpl::FireDataChange  
+ 現在管理されている各アドバイズ シンクに戻るには、変更通知を送信します。  
+  
+```
+HRESULT FireDataChange();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 標準の `HRESULT` 値。  
+  
+##  <a name="a-namegetcanonicalformatetca--idataobjectimplgetcanonicalformatetc"></a><a name="getcanonicalformatetc"></a>IDataObjectImpl::GetCanonicalFormatEtc  
+ 論理的に等しい**FORMATETC**はより複雑な構造です。  
+  
+```
+HRESULT GetCanonicalFormatEtc(FORMATETC* pformatetcIn, FORMATETC* pformatetcOut);
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 返します。 **E_NOTIMPL**します。  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::GetCanonicalFormatEtc](http://msdn.microsoft.com/library/windows/desktop/ms680685)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namegetdataa--idataobjectimplgetdata"></a><a name="getdata"></a>IDataObjectImpl::GetData  
+ データ オブジェクトからクライアントにデータを転送します。  
+  
+```
+HRESULT GetData(
+    FORMATETC* pformatetcIn,
+    STGMEDIUM* pmedium);
+```  
+  
+### <a name="remarks"></a>コメント  
+ *PformatetcIn*パラメーターでのストレージ メディアの種類を指定する必要があります**TYMED_MFPICT**します。  
+  
+ 参照してください[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namegetdataherea--idataobjectimplgetdatahere"></a><a name="getdatahere"></a>IDataObjectImpl::GetDataHere  
+ ような`GetData`を除き、クライアントを割り当てる必要があります、 **STGMEDIUM**構造体。  
+  
+```
+HRESULT GetDataHere(
+    FORMATETC* pformatetc,
+    STGMEDIUM* pmedium);
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 返します。 **E_NOTIMPL**します。  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::GetDataHere](http://msdn.microsoft.com/library/windows/desktop/ms687266)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namequerygetdataa--idataobjectimplquerygetdata"></a><a name="querygetdata"></a>IDataObjectImpl::QueryGetData  
+ データ オブジェクトが特定をサポートするかどうかを決定**FORMATETC**データを転送するためです。  
+  
+```
+HRESULT QueryGetData(FORMATETC* pformatetc);
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 返します。 **E_NOTIMPL**します。  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::QueryGetData](http://msdn.microsoft.com/library/windows/desktop/ms680637)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namesetdataa--idataobjectimplsetdata"></a><a name="setdata"></a>IDataObjectImpl::SetData  
+ クライアントからのデータ オブジェクトにデータを転送します。  
+  
+```
+HRESULT SetData(
+    FORMATETC* pformatetc,
+    STGMEDIUM* pmedium,
+    BOOL fRelease);
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 返します。 **E_NOTIMPL**します。  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IDataObject::SetData](http://msdn.microsoft.com/library/windows/desktop/ms686626)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+

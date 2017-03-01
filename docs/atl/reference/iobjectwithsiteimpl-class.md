@@ -1,80 +1,142 @@
 ---
-title: "IObjectWithSiteImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::IObjectWithSiteImpl"
-  - "ATL.IObjectWithSiteImpl<T>"
-  - "IObjectWithSiteImpl"
-  - "ATL.IObjectWithSiteImpl"
-  - "ATL::IObjectWithSiteImpl<T>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IObjectWithSiteImpl クラス"
+title: "IObjectWithSiteImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::IObjectWithSiteImpl
+- ATL.IObjectWithSiteImpl<T>
+- IObjectWithSiteImpl
+- ATL.IObjectWithSiteImpl
+- ATL::IObjectWithSiteImpl<T>
+dev_langs:
+- C++
+helpviewer_keywords:
+- IObjectWithSiteImpl class
 ms.assetid: 4e1f774f-bc3d-45ee-9a1c-c3533a511588
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# IObjectWithSiteImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 49c52810417650c3d80fe4d0c09ccb2b67208ad4
+ms.lasthandoff: 02/24/2017
 
-このクラスには、オブジェクトとそのサイトとの情報のやり取りを可能にするメソッドが用意されています。  
+---
+# <a name="iobjectwithsiteimpl-class"></a>IObjectWithSiteImpl クラス
+このクラスは、オブジェクトのサイトと通信するようにするメソッドを提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class T>
+    class ATL_NO_VTABLE IObjectWithSiteImpl :
+    public IObjectWithSite
 ```  
   
-      template<  
-   class T   
->  
-class ATL_NO_VTABLE IObjectWithSiteImpl :  
-   public IObjectWithSite  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `IObjectWithSiteImpl`から派生したクラス。  
+ 派生したクラスに、`IObjectWithSiteImpl`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[IObjectWithSiteImpl::GetSite](../Topic/IObjectWithSiteImpl::GetSite.md)|インターフェイス ポインターのサイトを照会します。|  
-|[IObjectWithSiteImpl::SetChildSite](../Topic/IObjectWithSiteImpl::SetChildSite.md)|サイトの **IUnknown** のポインターをオブジェクトに提供します。|  
-|[IObjectWithSiteImpl::SetSite](../Topic/IObjectWithSiteImpl::SetSite.md)|サイトの **IUnknown** のポインターをオブジェクトに提供します。|  
-  
-### パブリック データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[IObjectWithSiteImpl::m\_spUnkSite](../Topic/IObjectWithSiteImpl::m_spUnkSite.md)|サイトの **IUnknown** のポインターを管理します。|  
+|----------|-----------------|  
+|[IObjectWithSiteImpl::GetSite](#getsite)|インターフェイス ポインターのサイトを照会します。|  
+|[IObjectWithSiteImpl::SetChildSite](#setchildsite)|オブジェクトは、サイトの**IUnknown**ポインター。|  
+|[IObjectWithSiteImpl::SetSite](#setsite)|オブジェクトは、サイトの**IUnknown**ポインター。|  
   
-## 解説  
- [IObjectWithSite](http://msdn.microsoft.com/library/windows/desktop/ms693765) のインターフェイスは、オブジェクトがサイトと通信できるようになります。  クラス `IObjectWithSiteImpl` は、このインターフェイスの既定の実装を提供し、デバッグ ビルドでダンプ デバイスに情報を送信して **IUnknown** を実装します。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
- `IObjectWithSiteImpl` は 2 とおりの方法を指定します。  サイトの **IUnknown** のポインターを渡すクライアントの最初の呼び出し `SetSite`。  このポインターはオブジェクトに格納されて、`GetSite`の呼び出しにより後で取得できます。  
+|名前|説明|  
+|----------|-----------------|  
+|[IObjectWithSiteImpl::m_spUnkSite](#m_spunksite)|サイトの管理**IUnknown**ポインター。|  
   
- 通常、コントロールではないオブジェクトを作成すると、`IObjectWithSiteImpl` からクラスを取得します。  コントロールに、サイトのポインターを提供する [IOleObjectImpl](../../atl/reference/ioleobjectimpl-class.md)からクラスを派生します。  `IObjectWithSiteImpl` と `IOleObjectImpl`両方からクラスを派生せずにします。  
+## <a name="remarks"></a>コメント  
+ [IObjectWithSite](http://msdn.microsoft.com/library/windows/desktop/ms693765)インターフェイスは、オブジェクトをサイトとの通信を許可します。 クラス`IObjectWithSiteImpl`このインターフェイスの既定の実装を提供しを実装する**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
   
-## 継承階層  
+ `IObjectWithSiteImpl`2 つの方法を指定します。 クライアントの最初の呼び出し`SetSite`、サイトを渡す**IUnknown**ポインター。 このポインターが、オブジェクト内では格納されを呼び出すことによって取得できます`GetSite`します。  
+  
+ 通常、クラスを派生させるから`IObjectWithSiteImpl`するオブジェクトを作成する場合は、そのコントロールではありません。 コントロールの派生クラスから[IOleObjectImpl](../../atl/reference/ioleobjectimpl-class.md)サイトへのポインターも提供します。 両方のクラスを派生できません`IObjectWithSiteImpl`と`IOleObjectImpl`です。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `IObjectWithSite`  
   
  `IObjectWithSiteImpl`  
   
-## 必要条件  
- **ヘッダー :** atlcom.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcom.h  
   
-## 参照  
+##  <a name="a-namegetsitea--iobjectwithsiteimplgetsite"></a><a name="getsite"></a>IObjectWithSiteImpl::GetSite  
+ サイトで識別されるインターフェイスへのポインターに問い合わせます`riid`します。  
+  
+```
+STDMETHOD(GetSite)(
+    REFIID riid,
+    void** ppvSite);
+```  
+  
+### <a name="remarks"></a>コメント  
+ サイトでは、このインターフェイスをサポートする場合を使用して、ポインターが返されます。`ppvSite`します。 それ以外の場合、`ppvSite`に設定されている**NULL**します。  
+  
+ 参照してください[IObjectWithSite::GetSite](http://msdn.microsoft.com/library/windows/desktop/ms694452)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namemspunksitea--iobjectwithsiteimplmspunksite"></a><a name="m_spunksite"></a>IObjectWithSiteImpl::m_spUnkSite  
+ サイトの管理**IUnknown**ポインター。  
+  
+```
+CComPtr<IUnknown> m_spUnkSite;
+```  
+  
+### <a name="remarks"></a>コメント  
+ `m_spUnkSite`呼び出すことによってこのポインターを最初に受信[SetSite](#setsite)します。  
+  
+##  <a name="a-namesetchildsitea--iobjectwithsiteimplsetchildsite"></a><a name="setchildsite"></a>IObjectWithSiteImpl::SetChildSite  
+ オブジェクトは、サイトの**IUnknown**ポインター。  
+  
+```
+HRESULT SetChildSite(IUnknown* pUnkSite);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ *pUnkSite*  
+ [in]ポインター、 **IUnknown**このオブジェクトを管理するサイトのインターフェイス ポインター。 NULL の場合、オブジェクトを呼び出す必要があります`IUnknown::Release`この時点でオブジェクトいいえを認識できなくなり、サイトの既存のサイトにします。  
+  
+### <a name="return-value"></a>戻り値  
+ `S_OK` を返します。  
+  
+##  <a name="a-namesetsitea--iobjectwithsiteimplsetsite"></a><a name="setsite"></a>IObjectWithSiteImpl::SetSite  
+ オブジェクトは、サイトの**IUnknown**ポインター。  
+  
+```
+STDMETHOD(SetSite)(IUnknown* pUnkSite);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IObjectWithSite::SetSite](http://msdn.microsoft.com/library/windows/desktop/ms683869)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+

@@ -1,36 +1,52 @@
 ---
-title: "コンパイラ エラー C3379 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3379"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3379"
+title: "コンパイラ エラー C3379 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3379
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3379
 ms.assetid: a66c2c4e-091c-4426-9cde-7c4cfb2ffce1
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# コンパイラ エラー C3379
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: 16c62e48a0190096e04dc4ccf0c17ca66c2f4094
+ms.lasthandoff: 02/24/2017
 
-'class' : 入れ子になったクラスに宣言の一部としてアセンブリ アクセス指定子を含めることはできません。  
+---
+# <a name="compiler-error-c3379"></a>コンパイラ エラー C3379
+'class': 入れ子になったクラス宣言の一部としてアセンブリ アクセス指定子を持つことはできません  
   
- クラスや構造体などのマネージ型に適用されている [public](../../cpp/public-cpp.md) キーワードと [private](../Topic/private%20\(C++\).md) キーワードは、クラスがアセンブリ メタデータを通じて公開されるかどうかを示します。  入れ子になったクラスには `public` または `private` を適用できず、外側のクラスのアセンブリ アクセスを継承します。  
+ クラスまたは構造体などのマネージ型に適用すると、[パブリック](../../cpp/public-cpp.md)と[プライベート](../../cpp/private-cpp.md)キーワードは、クラスがアセンブリ メタデータを通じて公開されるかどうかを指定します。 `public`または`private`外側のクラスのアセンブリのアクセス権を継承する入れ子になったクラスに適用することはできません。  
   
- [\/clr](../../build/reference/clr-common-language-runtime-compilation.md) と共に使用した場合、`ref` キーワードおよび `value` キーワードはクラスがマネージ クラスであることを示します \(「[Classes and Structs](../../windows/classes-and-structs-cpp-component-extensions.md)」を参照してください\)。  
+ 使用すると[/clr](../../build/reference/clr-common-language-runtime-compilation.md)、`ref`と`value`キーワードは、クラスが管理されていることを示します (を参照してください[クラスと構造体](../../windows/classes-and-structs-cpp-component-extensions.md))。  
   
- 次の例では警告 C3379 が生成されます。  
+ 次の例では、c3379 エラーが生成されます。  
   
 ```  
 // C3379a.cpp  
@@ -58,32 +74,4 @@ int main() {
    Console::WriteLine(myBA->ii);  
 }  
 ```  
-  
- 次の例では警告 C3379 が生成されます。  
-  
-```  
-// C3379b.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-  
-public __gc class A {  
-public:  
-   static int i = 9;  
-  
-   public __gc class BA {   // C3379  
-   // try the following line instead  
-   // __gc class BA {  
-   public:  
-      static int ii = 8;  
-   };  
-};  
-  
-int main() {  
-  
-   A *myA = new A;  
-   Console::WriteLine(myA->i);  
-  
-   A::BA *myBA = new A::BA;  
-   Console::WriteLine(myBA->ii);  
-}  
-```
+

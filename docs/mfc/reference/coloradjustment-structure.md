@@ -1,44 +1,59 @@
 ---
-title: "COLORADJUSTMENT 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "COLORADJUSTMENT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COLORADJUSTMENT 構造体"
+title: "COLORADJUSTMENT 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- COLORADJUSTMENT
+dev_langs:
+- C++
+helpviewer_keywords:
+- COLORADJUSTMENT structure
 ms.assetid: 67fc4e63-0e0e-4fcb-8c45-aa5ebfefa013
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# COLORADJUSTMENT 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 7f88877fa009abf4e811ba0a99b7e0e1683f998a
+ms.lasthandoff: 02/24/2017
 
-`COLORADJUSTMENT` 構造体は `StretchBlt` モードが **HALFTONE**の場合は、Windows `StretchBlt` と **StretchDIBits** 関数が使用するカラー補正値を定義します。  
+---
+# <a name="coloradjustment-structure"></a>COLORADJUSTMENT 構造体
+`COLORADJUSTMENT`構造体は、Windows で使用される色の調整値を定義`StretchBlt`と**StretchDIBits**関数と、`StretchBlt`モードは**ハーフトーン**します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      typedef struct  tagCOLORADJUSTMENT {    /* ca */  
-    WORD  caSize;  
-    WORD  caFlags;  
-    WORD  caIlluminantIndex;  
-    WORD  caRedGamma;  
-    WORD  caGreenGamma;  
-    WORD  caBlueGamma;  
-    WORD  caReferenceBlack;  
-    WORD  caReferenceWhite;  
+typedef struct  tagCOLORADJUSTMENT {    /* ca */  
+    WORD caSize;  
+    WORD caFlags;  
+    WORD caIlluminantIndex;  
+    WORD caRedGamma;  
+    WORD caGreenGamma;  
+    WORD caBlueGamma;  
+    WORD caReferenceBlack;  
+    WORD caReferenceWhite;  
     SHORT caContrast;  
     SHORT caBrightness;  
     SHORT caColorfulness;  
@@ -46,76 +61,79 @@ caps.handback.revision: 12
 } COLORADJUSTMENT;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *caSize*  
- 構造体のサイズをバイト単位で指定します。  
+ 構造体のサイズをバイトで指定します。  
   
  *caFlags*  
- 出力イメージをどのように作成するかを指定します。  このメンバーは、次の値の **NULL** または組み合わせに設定できます。:  
+ 出力のイメージを準備する方法を指定します。 このメンバーを設定することができます**NULL**または、次の値の任意の組み合わせ。  
   
--   **CA\_NEGATIVE**は元のイメージの否定を表示する必要があることを指定します。  
+- **CA_NEGATIVE**元のイメージの負の値を表示することを指定します。  
   
--   **CA\_LOG\_FILTER**は対数関数が出力色の最終的な密度に適用されることを指定します。  これは、光が少ないとき色のコントラストが向上します。  
+- **CA_LOG_FILTER**最終的な出力色の濃さを対数関数が適用されることを指定します。 輝度が少なくなると、色コントラストが増加します。  
   
  *caIlluminantIndex*  
- イメージ オブジェクトを示す光源のライトを指定します。  このメンバーは、次の値のいずれか 1 つがに設定できます。:  
+ イメージ オブジェクトが表示される光の光源の輝度を指定します。 このメンバーは、次の値のいずれかに設定できます。  
   
--   **ILLUMINANT\_EQUAL\_ENERGY**  
+- **ILLUMINANT_EQUAL_ENERGY**  
   
--   **ILLUMINANT\_A**  
+- **ILLUMINANT_A**  
   
--   **ILLUMINANT\_B**  
+- **ILLUMINANT_B**  
   
--   **ILLUMINANT\_C**  
+- **ILLUMINANT_C**  
   
--   **ILLUMINANT\_D50**  
+- **ILLUMINANT_D50**  
   
--   **ILLUMINANT\_D55**  
+- **ILLUMINANT_D55**  
   
--   **ILLUMINANT\_D65**  
+- **ILLUMINANT_D65**  
   
--   **ILLUMINANT\_D75**  
+- **ILLUMINANT_D75**  
   
--   **ILLUMINANT\_F2**  
+- **ILLUMINANT_F2**  
   
--   **ILLUMINANT\_TURNGSTEN**  
+- **ILLUMINANT_TURNGSTEN**  
   
--   **ILLUMINANT\_DAYLIGHT**  
+- **ILLUMINANT_DAYLIGHT**  
   
--   **ILLUMINANT\_FLUORESCENT**  
+- **ILLUMINANT_FLUORESCENT**  
   
--   **ILLUMINANT\_NTSC**  
+- **ILLUMINANT_NTSC**  
   
  *caRedGamma*  
- ソース カラーの赤の主に n 次ガンマ補正値を指定します。  値は、2,500 ~ 65,000 の範囲で指定します。  値 10,000 はガンマ補正されません。  
+ ソースの色の赤の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
   
  *caGreenGamma*  
- ソース カラーの主要な緑に n 次ガンマ補正値を指定します。  値は、2,500 ~ 65,000 の範囲で指定します。  値 10,000 はガンマ補正されません。  
+ ソースの色の緑の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
   
  *caBlueGamma*  
- ソース カラーの主要な青で n 次ガンマ補正値を指定します。  値は、2,500 ~ 65,000 の範囲で指定します。  値 10,000 はガンマ補正されません。  
+ ソースの色の青の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
   
  *caReferenceBlack*  
- ソース カラーに黒い参照を指定します。  これにより、暗い色が黒として扱われます。  値は、0 ~ 4,000 の範囲で指定します。  
+ ソース カラーに対して黒の参照を指定します。 これよりも暗い色は黒として扱われます。 値は、0 ~ 4,000 の範囲でなければなりません。  
   
  *caReferenceWhite*  
- ソース カラーに白い参照を指定します。  これよりライトの色が白として扱われます。  値は、6,000 ~ 10,000 の範囲で指定します。  
+ ソース カラーの白の参照を指定します。 これよりも明るい色は白として扱われます。 値は 6,000 から 10,000 の範囲でなければなりません。  
   
  *caContrast*  
- ソース オブジェクトに適用される一方の量を指定します。  値は、\-100 ~ 100 の範囲で指定します。  値が 0 の場合、これは意味しません。  
+ ソース オブジェクトに適用されるコントラストの量を指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 はコントラストの調整がないことを意味します。  
   
  *caBrightness*  
- ソース オブジェクトに適用される明るさの量を指定します。  値は、\-100 ~ 100 の範囲で指定します。  0 という値は、明るさの調整を意味しません。  
+ ソース オブジェクトに適用される明るさを指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 は、明るさの調整がないことを意味します。  
   
  *caColorfulness*  
- ソース オブジェクトに適用する colorfulness の量を指定します。  値は、\-100 ~ 100 の範囲で指定します。  0 という値は colorfulness の調整を意味しません。  
+ ソース オブジェクトに適用される彩度の量を指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 は、彩度の調整がないことを意味します。  
   
  *caRedGreenTint*  
- ソース オブジェクトに適用される赤色または緑色の色合いの調整の量を指定します。  値は、\-100 ~ 100 の範囲で指定します。  正数は赤の方向に調整し、負数は緑の方向に調整します。  0 は色合いの調整を意味しません。  
+ ソース オブジェクトに適用する赤または緑の濃淡の調整の量を指定します。 値は、100 ~-100 の範囲でなければなりません。 正の数値が赤に調整し、負の数値が緑に調整します。 0 は濃淡の補正を意味します。  
   
-## 必要条件  
- **ヘッダー :** wingdi.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** wingdi.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CDC::GetColorAdjustment](../Topic/CDC::GetColorAdjustment.md)
+## <a name="see-also"></a>関連項目  
+ [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CDC::GetColorAdjustment](../../mfc/reference/cdc-class.md#getcoloradjustment)
+
+
+

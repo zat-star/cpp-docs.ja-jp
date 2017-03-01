@@ -1,38 +1,54 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4503 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4503"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4503"
+title: "コンパイラの警告 (レベル 1) C4503 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4503
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4503
 ms.assetid: 7c5a98ae-5b6d-41d8-b881-12d3ffd5e392
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラの警告 (レベル 1) C4503
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: f999fcb73860bfd2fabb3484e78f313a32240dee
+ms.lasthandoff: 02/24/2017
 
-'identifier' : 装飾された名前の長さが限界を越えました。名前は切り捨てられます。  
+---
+# <a name="compiler-warning-level-1-c4503"></a>コンパイラの警告 (レベル 1) C4503
+'identifier': 装飾名の長さを超えると、名前は切り詰められました  
   
- 装飾名の長さがコンパイラの制限 \(4096 文字\) を超えたため、切り捨てられました。  この警告を回避し、名前が切り捨てられないようにするには、引数の数を減らすか、または識別子名を短くしてください。  
+ 装飾名は、コンパイラの制限 (4096) よりも長い、切り捨てられました。 この警告とを切り捨てを回避するには、引数の数または使用される識別子の名の長さを減らしてください。  
   
- この警告が発生する状況の 1 つは、テンプレート上で繰り返し特殊化されるテンプレートがコードに含まれている場合です。たとえば、C\+\+ 標準ライブラリのマップの割り当てなどです。この場合は、typedefs をマップを含む型 \(たとえば構造体など\) にできます。  
+ この警告が発行される状況の&1; つは、コードが含まれているテンプレートに繰り返しテンプレートの特殊化です。  たとえば、マップ (C++ 標準ライブラリ) からのマップです。  このような状況で行うことができます、typedef、マップを含んでいる型 (たとえば構造体など)。  
   
- ただし、コードの再構築をしたくない場合もあります。C4503 を生成するアプリケーションを出荷することはできます。しかし、切り捨てられたシンボルに関するリンク時エラーが発生した場合に、エラーが発生したシンボルの型の特定が通常より困難になります。また、デバッグもより難しくなります。デバッガーがシンボル名を型名に割り当てる操作も困難になるからです。ただし、名前が切り捨てられてもプログラムの正確さには影響しません。  
+ しないコードを再構築する場合、ただし、します。  C4503 を生成するアプリケーションを出荷することが切り捨てられたシンボルにリンク時のエラーが発生するエラー内の記号の種類を特定するにくくあります。  デバッグも難しくなります。デバッガーでは、困難になるからマップ シンボル名の名前を入力することがあります。  ただし、切り捨てられた名前によって影響を受けるは、プログラムの正確性です。  
   
- 次の例では警告 C4503 が生成されます。  
+ 次の例では、C4503 が生成されます。  
   
 ```  
 // C4503.cpp  
@@ -50,7 +66,7 @@ typedef std::map<std::string, WebAppTest> Hello;
 Hello MyWAT;  
 ```  
   
- 次の例は、コードを書き直して C4503 を解決する方法の 1 つを示しています。  
+ 次の例は、C4503 を解決するのには、コードを書き換える方法を示しています。  
   
 ```  
 // C4503b.cpp  

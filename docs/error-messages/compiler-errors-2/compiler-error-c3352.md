@@ -1,36 +1,52 @@
 ---
-title: "コンパイラ エラー C3352 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3352"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3352"
+title: "コンパイラ エラー C3352 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3352
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3352
 ms.assetid: f233bed7-474e-425f-aad2-7801578169d4
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3352
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: fb65402b78f777d4a2dcfce2a4366444a259e5d9
+ms.lasthandoff: 02/24/2017
 
-'function' : 指定された関数は delegate の型 'type' と一致しません。  
+---
+# <a name="compiler-error-c3352"></a>コンパイラ エラー C3352
+'function': 指定された関数にデリゲート型 'type' と一致しません  
   
- `function` のパラメーター リストとデリゲートが一致しません。  
+ パラメーターのリストが`function`と、デリゲートが一致しません。  
   
- 詳細については、「[delegate](../../windows/delegate-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、次を参照してください。[デリゲート (C++ コンポーネント拡張)](../../windows/delegate-cpp-component-extensions.md)します。  
   
- 次の例では警告 C3352 が生成されます。  
+ 次の例では、c3352 エラーが生成されます。  
   
 ```  
 // C3352.cpp  
@@ -51,26 +67,4 @@ int main() {
    System::Delegate^ pD = gcnew D( pC, &C::mf );   // C3352  
 }  
 ```  
-  
- 次の例では警告 C3352 が生成されます。  
-  
-```  
-// C3352_2.cpp  
-// compile with: /clr:oldSyntax  
-__delegate int D(int, int);  
-  
-__gc class C {  
-public:  
-   int mf(int) {  
-      return 1;  
-   }  
-  
-   // Uncomment the following line to resolve.  
-   // int mf(int, int) { return 1; }  
-};  
-  
-int main() {  
-   C *pC = new C;  
-   System::Delegate *pD = new D(pC, &C::mf);   // C3352  
-}  
-```
+

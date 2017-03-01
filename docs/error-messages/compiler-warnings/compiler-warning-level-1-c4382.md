@@ -1,39 +1,57 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4382 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4382"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4382"
+title: "コンパイラの警告 (レベル 1) C4382 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4382
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4382
 ms.assetid: 34be9ad3-bae6-411a-8f80-0c8fd0d2c092
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラの警告 (レベル 1) C4382
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
+ms.openlocfilehash: 4571fe618b0ae89251d2748fbbcdfcb654201054
+ms.lasthandoff: 02/24/2017
 
-type' をスローします : \_\_clrcall デストラクターを伴う型、またはコピー コンストラクターは \/clr:pure モジュールでのみキャッチできます  
+---
+# <a name="compiler-warning-level-1-c4382"></a>コンパイラの警告 (レベル 1) C4382
+'type' をスローします _ _clrcall デストラクターまたはコピー コンス トラクターを持つ型 (/clr の) しかキャッチできません: 純粋なモジュール。  
   
- **\/clr:pure** ではなく **\/clr** を指定してコンパイルした場合、例外処理はネイティブ型のメンバー関数が [\_\_clrcall](../../cpp/clrcall.md) ではなく [\_\_cdecl](../Topic/__cdecl.md) になることを要求します。  `__clrcall` 呼び出し規約を使用するメンバー関数を持つネイティブ型は、**\/clr** を指定してコンパイルされたモジュール内でキャッチできません。  
+ **/Clr: 純粋な**コンパイラ オプションは Visual Studio 2015 で使用されなくなりました。  
   
- **\/clr:pure** を指定してコンパイルされたモジュール内で例外がキャッチされた場合は、この警告を無視できます。  
+ コンパイルされたときに**/clr** (いない**/clr: 純粋な**)、例外処理メンバー関数を必要とするネイティブ型[_ _cdecl](../../cpp/cdecl.md)および not [_ _clrcall](../../cpp/clrcall.md)します。 ネイティブ型を使用してメンバー関数と`__clrcall`でコンパイルされたモジュールの呼び出し規約をキャッチできません**/clr**します。  
   
- 詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ コンパイルされたモジュールで、例外がキャッチされるかどうかは**/clr: 純粋な**、この警告を無視することができます。  
   
-## 使用例  
- 次の例では C4382 エラーが生成されます。  
+ 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+  
+## <a name="example"></a>例  
+ 次の例では、C4382 を生成します。  
   
 ```  
 // C4382.cpp  

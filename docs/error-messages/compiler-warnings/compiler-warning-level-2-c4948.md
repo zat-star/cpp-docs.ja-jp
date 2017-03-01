@@ -1,56 +1,48 @@
 ---
-title: "コンパイラの警告 (レベル 2) C4948 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4948"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4948"
+title: "コンパイラの警告 (レベル 2) C4948 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4948
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4948
 ms.assetid: d006cb17-754a-4c70-ba7f-c3200e2cd8fa
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラの警告 (レベル 2) C4948
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: 6483f704967faa75d9298e0bb7e942e9a8202c00
+ms.lasthandoff: 02/24/2017
 
-'accessor' の戻り値の型が、対応する setter の最後のパラメーターに一致しません。  
+---
+# <a name="compiler-warning-level-2-c4948"></a>コンパイラの警告 (レベル 2) C4948
+'アクセサー' の戻り値の型が対応する setter の最後のパラメーターの型と一致しません  
   
- インデックス付きプロパティで取得および設定されるデータ型に不一致が見つかりました。  
+どのようなデータ型が取得されると、インデックス付きプロパティの設定に不整合が検出されました。  
   
- C4948 が発生するのは **\/clr:oldSyntax** を使用した場合だけです。  
-  
- 次の例では警告 C4948 が生成されます。  
-  
-```  
-// C4948.cpp  
-// compile with: /clr:oldSyntax /LD /W2  
-  
-__gc class MyClass  
-{  
-   int prop __nogc [2];  
-   public:  
-  
-      __property int get_P(int i)  
-      // try the following line instead  
-      // __property char get_P(int i)  
-      {  
-         return prop[i];  
-      }  
-  
-      __property void set_P(int i, char c)  
-      {  
-         prop[i] = c;  
-      }  
-};   // C4948  
-```
+C4948 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
+

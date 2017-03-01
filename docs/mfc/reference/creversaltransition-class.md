@@ -1,70 +1,121 @@
 ---
-title: "CReversalTransition クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "afxanimationcontroller/CReversalTransition"
-  - "CReversalTransition"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CReversalTransition クラス"
+title: "CReversalTransition クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- afxanimationcontroller/CReversalTransition
+- CReversalTransition
+dev_langs:
+- C++
+helpviewer_keywords:
+- CReversalTransition class
 ms.assetid: e89516be-2d07-4885-95a8-fc278f46e3ad
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# CReversalTransition クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: 028ea275cc345513248e76dcf5b0eba931823b7a
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="creversaltransition-class"></a>CReversalTransition クラス
 逆遷移をカプセル化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CReversalTransition : public CBaseTransition;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CReversalTransition::CReversalTransition](../Topic/CReversalTransition::CReversalTransition.md)|逆遷移オブジェクトを構築し、その継続時間を初期化します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CReversalTransition::Create](../Topic/CReversalTransition::Create.md)|遷移ライブラリを呼び出して、カプセル化された遷移 COM オブジェクトを作成します   \([CBaseTransition::Create](../Topic/CBaseTransition::Create.md) をオーバーライドします\)。|  
+|----------|-----------------|  
+|[CReversalTransition::CReversalTransition](#creversaltransition)|逆遷移オブジェクトを構築し、その継続時間を初期化します。|  
   
-### パブリック データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CReversalTransition::m\_duration](../Topic/CReversalTransition::m_duration.md)|遷移の継続時間。|  
+|----------|-----------------|  
+|[CReversalTransition::Create](#create)|カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。 (上書き[CBaseTransition::Create](../../mfc/reference/cbasetransition-class.md#create))。|  
   
-## 解説  
- 逆遷移では、指定した継続時間にわたって方向が滑らかに変化します。  最終値は初期値と同じになり、最終速度は初期速度の負数になります。  遷移はすべて自動的にクリアされるため、遷移の割り当てには new 演算子を使用することをお勧めします。  カプセル化された IUIAnimationTransition COM オブジェクトは CAnimationController::AnimateGroup によって作成され、作成されるまでは NULL になります。  この COM オブジェクトの作成後にメンバー変数を変更しても効力はありません。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[CReversalTransition::m_duration](#m_duration)|遷移の期間です。|  
+  
+## <a name="remarks"></a>コメント  
+ 逆遷移では、指定した期間にわたって方向がスムーズに変わります。 最終的な値は初期値と同じになり、最終の速度が負の初期速度になります。 すべての遷移が自動的にクリアされますが、することが推奨に割り当てられている新しい演算子を使用します。 カプセル化された IUIAnimationTransition COM オブジェクトは、NULL がまで CAnimationController::AnimateGroup、によって作成されます。 この COM オブジェクトの作成には影響を与えません後は、メンバー変数を変更します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CBaseTransition](../../mfc/reference/cbasetransition-class.md)  
   
  [CReversalTransition](../../mfc/reference/creversaltransition-class.md)  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-## 参照  
- [クラス](../Topic/MFC%20Classes.md)
+##  <a name="a-namecreatea--creversaltransitioncreate"></a><a name="create"></a>CReversalTransition::Create  
+ カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
+  
+```  
+virtual BOOL Create(
+    IUIAnimationTransitionLibrary* pLibrary,  
+    IUIAnimationTransitionFactory* \*not used*\);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pLibrary`  
+ これは標準的な遷移の作成を担当する遷移ライブラリへのポインター。  
+  
+### <a name="return-value"></a>戻り値  
+ 移行が正常に作成された場合は TRUE。それ以外の場合は FALSE。  
+  
+##  <a name="a-namecreversaltransitiona--creversaltransitioncreversaltransition"></a><a name="creversaltransition"></a>CReversalTransition::CReversalTransition  
+ 逆遷移オブジェクトを構築し、その継続時間を初期化します。  
+  
+```  
+CReversalTransition(UI_ANIMATION_SECONDS duration);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `duration`  
+ 遷移の期間です。  
+  
+##  <a name="a-namemdurationa--creversaltransitionmduration"></a><a name="m_duration"></a>CReversalTransition::m_duration  
+ 遷移の期間です。  
+  
+```  
+UI_ANIMATION_SECONDS m_duration;  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [クラス](../../mfc/reference/mfc-classes.md)
+

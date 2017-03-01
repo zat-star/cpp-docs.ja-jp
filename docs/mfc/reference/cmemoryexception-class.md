@@ -1,56 +1,72 @@
 ---
-title: "CMemoryException クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMemoryException"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 例外処理, メモリ"
-  - "CMemoryException クラス"
-  - "例外, メモリの型"
-  - "メモリ例外"
-  - "メモリ, 例外処理"
+title: "クラスの関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMemoryException
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMemoryException class
+- memory exceptions
+- exceptions, memory type
+- C++ exception handling, memory
+- memory, exception handling
 ms.assetid: 9af0ed57-d12a-45ca-82b5-c910a60f7edf
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# CMemoryException クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 87be1b16d546791d24bbffa62207ec9ccb350139
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="cmemoryexception-class"></a>関数のクラス
 メモリ不足例外条件を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMemoryException : public CSimpleException  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CMemoryException::CMemoryException](../Topic/CMemoryException::CMemoryException.md)|`CMemoryException` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[CMemoryException::CMemoryException](#cmemoryexception)|`CMemoryException` オブジェクトを構築します。|  
   
-## 解説  
- そのほかの資格はしたりはできません。  メモリ不足の例外が **new**によって自動的にスローされます。  、`malloc`を使用して、独自のメモリ関数を作成する場合など、メモリ不足の例外をスローすることがあります。  
+## <a name="remarks"></a>コメント  
+ さらに認定には、実現できないことも必要はありません。 メモリ不足例外のスローによって自動的に**新しい**します。 使用して、独自のメモリ関数を記述する場合`malloc`例では後、は、メモリ不足例外をスローするためのします。  
   
- `CMemoryException`の詳細については、" " [例外処理 \(MFC\)](../../mfc/exception-handling-in-mfc.md)を参照してください。  
+ 詳細については`CMemoryException`、記事を参照して[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
   
@@ -58,9 +74,23 @@ class CMemoryException : public CSimpleException
   
  `CMemoryException`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-## 参照  
- [CException クラス](../../mfc/reference/cexception-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+##  <a name="a-namecmemoryexceptiona--cmemoryexceptioncmemoryexception"></a><a name="cmemoryexception"></a>CMemoryException::CMemoryException  
+ `CMemoryException` オブジェクトを構築します。  
+  
+```  
+CMemoryException();  
+```  
+  
+### <a name="remarks"></a>コメント  
+ このコンス トラクターを直接使用されませんではなく、グローバル関数を呼び出す[AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception)します。 割り当てられていたメモリ内の例外オブジェクトを構築するのでメモリ不足の状況でこのグローバル関数は成功しています。 例外の処理の詳細については、記事を参照してください。[例外](../exception-handling-in-mfc.md)します。  
+  
+## <a name="see-also"></a>関連項目  
+ [CException クラス](cexception-class.md)   
+ [階層図](../hierarchy-chart.md)
+
+
+
+

@@ -1,104 +1,325 @@
 ---
-title: "IPropertyPageImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "IPropertyPageImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IPropertyPage ATL の実装"
-  - "IPropertyPageImpl クラス"
-  - "プロパティ ページ"
+title: "IPropertyPageImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IPropertyPageImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- property pages
+- IPropertyPage ATL implementation
+- IPropertyPageImpl class
 ms.assetid: f9b7c8b1-7a04-4eab-aa63-63efddb740fa
 caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# IPropertyPageImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 1179e13eb33f09a363c7a3f4425a9ebf13c73b91
+ms.lasthandoff: 02/24/2017
 
-このクラスは、**IUnknown** を実装し、[IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246) インターフェイスの既定の実装を提供します。  
+---
+# <a name="ipropertypageimpl-class"></a>IPropertyPageImpl クラス
+このクラスは実装**IUnknown**の既定の実装を提供し、 [IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246)インターフェイスです。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは [!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行されるアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<class T>  
+class IPropertyPageImpl
 ```  
   
-      template< class   
-      T  
-      >  
-class IPropertyPageImpl  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `IPropertyPageImpl`から派生したクラス。  
+ 派生したクラスに、`IPropertyPageImpl`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[IPropertyPageImpl::IPropertyPageImpl](../Topic/IPropertyPageImpl::IPropertyPageImpl.md)|コンストラクターです。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[IPropertyPageImpl::Activate](../Topic/IPropertyPageImpl::Activate.md)|プロパティ ページのダイアログ ボックス ウィンドウを作成します。|  
-|[IPropertyPageImpl::Apply](../Topic/IPropertyPageImpl::Apply.md)|`SetObjects`で指定された基のオブジェクトには、現在のページのプロパティの値を適用します。  ATL 実装は、`S_OK`を返します。|  
-|[IPropertyPageImpl::Deactivate](../Topic/IPropertyPageImpl::Deactivate.md)|**\[ライセンス認証\]**で作成されたウィンドウを破棄します。|  
-|[IPropertyPageImpl::GetPageInfo](../Topic/IPropertyPageImpl::GetPageInfo.md)|プロパティ ページについての情報を取得します。|  
-|[IPropertyPageImpl::Help](../Topic/IPropertyPageImpl::Help.md)|プロパティ ページの Windows のヘルプを起動します。|  
-|[IPropertyPageImpl::IsPageDirty](../Topic/IPropertyPageImpl::IsPageDirty.md)|アクティブになった時点からプロパティ ページが変更されたかどうかを示します。|  
-|[IPropertyPageImpl::Move](../Topic/IPropertyPageImpl::Move.md)|位置とサイズ変更プロパティ ページ\]ダイアログ ボックス。|  
-|[IPropertyPageImpl::SetDirty](../Topic/IPropertyPageImpl::SetDirty.md)|必要に応じて、そのままプロパティ ページの状態を変更するフラグを設定します。|  
-|[IPropertyPageImpl::SetObjects](../Topic/IPropertyPageImpl::SetObjects.md)|プロパティ ページに関連付けられたオブジェクトに **IUnknown** のポインターの配列を提供します。  これらのオブジェクトは **\[適用\]**の呼び出しによって現在のページのプロパティの値を受け取ります。|  
-|[IPropertyPageImpl::SetPageSite](../Topic/IPropertyPageImpl::SetPageSite.md)|プロパティ ページのプロパティ フレームと通信 `IPropertyPageSite` のポインターをプロパティ ページに示します。|  
-|[IPropertyPageImpl::Show](../Topic/IPropertyPageImpl::Show.md)|プロパティ ページのダイアログ ボックスを表示するか非表示にします。|  
-|[IPropertyPageImpl::TranslateAccelerator](../Topic/IPropertyPageImpl::TranslateAccelerator.md)|指定したキーストロークを処理します。|  
+|----------|-----------------|  
+|[IPropertyPageImpl::IPropertyPageImpl](#ipropertypageimpl)|コンストラクターです。|  
   
-### パブリック データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[IPropertyPageImpl::m\_bDirty](../Topic/IPropertyPageImpl::m_bDirty.md)|プロパティ ページの状態が変更されていないかどうかを指定します。|  
-|[IPropertyPageImpl::m\_dwDocString](../Topic/IPropertyPageImpl::m_dwDocString.md)|プロパティ ページを説明する文字列が関連付けられたリソース識別子を格納します。|  
-|[IPropertyPageImpl::m\_dwHelpContext](../Topic/IPropertyPageImpl::m_dwHelpContext.md)|プロパティ ページに関連付けられたヘルプ トピックのコンテキストの識別子を格納します。|  
-|[IPropertyPageImpl::m\_dwHelpFile](../Topic/IPropertyPageImpl::m_dwHelpFile.md)|プロパティ ページを説明するヘルプ ファイルの名前が付けられたリソース識別子を格納します。|  
-|[IPropertyPageImpl::m\_dwTitle](../Topic/IPropertyPageImpl::m_dwTitle.md)|プロパティ ページのタブに表示される文字列と関連付けられたリソース識別子を格納します。|  
-|[IPropertyPageImpl::m\_nObjects](../Topic/IPropertyPageImpl::m_nObjects.md)|プロパティ ページに関連付けられているオブジェクトの数を格納します。|  
-|[IPropertyPageImpl::m\_pPageSite](../Topic/IPropertyPageImpl::m_pPageSite.md)|プロパティ ページのプロパティ フレームと通信 `IPropertyPageSite` インターフェイスへのポインター。|  
-|[IPropertyPageImpl::m\_ppUnk](../Topic/IPropertyPageImpl::m_ppUnk.md)|オブジェクトへの **IUnknown** のポインターの配列へのポインターは、プロパティ ページに関連付けられています。|  
-|[IPropertyPageImpl::m\_size](../Topic/IPropertyPageImpl::m_size.md)|ピクセルでプロパティ ページのダイアログ ボックスの高さと幅が格納されます。|  
+|----------|-----------------|  
+|[ために](#activate)|プロパティ ページ ダイアログ ボックスのウィンドウを作成します。|  
+|[IPropertyPageImpl::Apply](#apply)|指定された基になるオブジェクトに現在のプロパティ ページの値を適用`SetObjects`します。 ATL の実装を返します`S_OK`します。|  
+|[IPropertyPageImpl::Deactivate](#deactivate)|作成したウィンドウの破棄**Activate**します。|  
+|[IPropertyPageImpl::GetPageInfo](#getpageinfo)|プロパティ ページの情報を取得します。|  
+|[IPropertyPageImpl::Help](#help)|プロパティ ページについては、Windows を起動します。|  
+|[IPropertyPageImpl::IsPageDirty](#ispagedirty)|アクティブ化された後に、プロパティ ページが変更するかどうかを示します。|  
+|[IPropertyPageImpl::Move](#move)|配置し、プロパティ ページ ダイアログ ボックスのサイズを変更します。|  
+|[IPropertyPageImpl::SetDirty](#setdirty)|変更されたか、または変更しないと、プロパティ ページの状態フラグを設定します。|  
+|[ために](#setobjects)|配列を提供**IUnknown**プロパティ ページに関連付けられているオブジェクトのポインター。 これらのオブジェクトを呼び出すことによって現在のプロパティ ページの値が表示される**適用**します。|  
+|[IPropertyPageImpl::SetPageSite](#setpagesite)|プロパティ ページに用意されています、`IPropertyPageSite`プロパティ ページがフレームのプロパティとの通信に使用するポインター。|  
+|[IPropertyPageImpl::Show](#show)|プロパティ ページ ダイアログ ボックスは、表示と非表示になります。|  
+|[IPropertyPageImpl::TranslateAccelerator](#translateaccelerator)|指定されたキーストロークを処理します。|  
   
-## 解説  
- [IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246) のインターフェイスは、オブジェクトがプロパティ シート内の特定のプロパティ ページを管理できます。  クラス `IPropertyPageImpl` は、このインターフェイスの既定の実装を提供し、デバッグ ビルドでダンプ デバイスに情報を送信して **IUnknown** を実装します。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
- **関連トピック** [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)、[ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[IPropertyPageImpl::m_bDirty](#m_bdirty)|プロパティ ページの状態が変更されたかどうかを指定します。|  
+|[IPropertyPageImpl::m_dwDocString](#m_dwdocstring)|プロパティ ページを説明するテキスト文字列に関連付けられたリソース識別子を格納します。|  
+|[IPropertyPageImpl::m_dwHelpContext](#m_dwhelpcontext)|プロパティ ページに関連付けられているヘルプ トピックのコンテキスト識別子を格納します。|  
+|[IPropertyPageImpl::m_dwHelpFile](#m_dwhelpfile)|プロパティ ページを説明するヘルプ ファイルの名前に関連付けられたリソース識別子を格納します。|  
+|[IPropertyPageImpl::m_dwTitle](#m_dwtitle)|プロパティ ページのタブに表示されるテキスト文字列に関連付けられたリソース識別子を格納します。|  
+|[IPropertyPageImpl::m_nObjects](#m_nobjects)|プロパティ ページに関連付けられているオブジェクトの数を格納します。|  
+|[IPropertyPageImpl::m_pPageSite](#m_ppagesite)|指す、`IPropertyPageSite`プロパティ ページがフレームのプロパティとの通信に使用するインターフェイスです。|  
+|[IPropertyPageImpl::m_ppUnk](#m_ppunk)|配列を指す**IUnknown**プロパティ ページに関連付けられているオブジェクトへのポインター。|  
+|[IPropertyPageImpl::m_size](#m_size)|高さと幅のプロパティ ページのダイアログ ボックスをピクセル単位で格納します。|  
   
-## 継承階層  
+## <a name="remarks"></a>コメント  
+ [IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246)インターフェイスにより、オブジェクトのプロパティ シート内で特定のプロパティ ページを管理できます。 クラス`IPropertyPageImpl`このインターフェイスの既定の実装を提供しを実装する**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
+  
+ **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `IPropertyPage`  
   
  `IPropertyPageImpl`  
   
-## 必要条件  
- **Header:** atlctl.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlctl.h  
   
-## 参照  
+##  <a name="a-nameactivatea--ipropertypageimplactivate"></a><a name="activate"></a>ために  
+ プロパティ ページ ダイアログ ボックスのウィンドウを作成します。  
+  
+```
+HRESULT Activate(  
+    HWND hWndParent,
+    LPCRECT pRect,
+    BOOL bModal);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、ダイアログ ボックスはモードレスの値に関係なく、常に、 *bModal*パラメーター。  
+  
+ 参照してください[IPropertyPage::Activate](http://msdn.microsoft.com/library/windows/desktop/ms682250)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nameapplya--ipropertypageimplapply"></a><a name="apply"></a>IPropertyPageImpl::Apply  
+ 指定された基になるオブジェクトに現在のプロパティ ページの値を適用`SetObjects`します。  
+  
+```
+HRESULT Apply();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ `S_OK` を返します。  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::Apply](http://msdn.microsoft.com/library/windows/desktop/ms691284)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namedeactivatea--ipropertypageimpldeactivate"></a><a name="deactivate"></a>IPropertyPageImpl::Deactivate  
+ 作成したダイアログ ボックスのウィンドウの破棄[Activate](#activate)します。  
+  
+```
+HRESULT Deactivate();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::Deactivate](http://msdn.microsoft.com/library/windows/desktop/ms682504)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namegetpageinfoa--ipropertypageimplgetpageinfo"></a><a name="getpageinfo"></a>IPropertyPageImpl::GetPageInfo  
+ 入力、*されている*データ メンバーに含まれる情報を含む構造体。  
+  
+```
+HRESULT GetPageInfo(PROPPAGEINFO* pPageInfo);
+```  
+  
+### <a name="remarks"></a>コメント  
+ `GetPageInfo`関連付けられている文字列リソースを読み込みます[m_dwDocString](#m_dwdocstring)、 [m_dwHelpFile](#m_dwhelpfile)、および[m_dwTitle](#m_dwtitle)します。  
+  
+ 参照してください[文字列](http://msdn.microsoft.com/library/windows/desktop/ms680714)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namehelpa--ipropertypageimplhelp"></a><a name="help"></a>IPropertyPageImpl::Help  
+ プロパティ ページについては、Windows を起動します。  
+  
+```
+HRESULT Help(PROPPAGEINFO* pPageInfo);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::Help](http://msdn.microsoft.com/library/windows/desktop/ms691504)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nameipropertypageimpla--ipropertypageimplipropertypageimpl"></a><a name="ipropertypageimpl"></a>IPropertyPageImpl::IPropertyPageImpl  
+ コンストラクターです。  
+  
+```
+IPropertyPageImpl();
+```  
+  
+### <a name="remarks"></a>コメント  
+ すべてのデータ メンバーを初期化します。  
+  
+##  <a name="a-nameispagedirtya--ipropertypageimplispagedirty"></a><a name="ispagedirty"></a>IPropertyPageImpl::IsPageDirty  
+ アクティブ化された後に、プロパティ ページが変更するかどうかを示します。  
+  
+```
+HRESULT IsPageDirty(void);
+```  
+  
+### <a name="remarks"></a>コメント  
+ `IsPageDirty`返します`S_OK`がアクティブ化されたため、ページが変更された場合。  
+  
+##  <a name="a-namembdirtya--ipropertypageimplmbdirty"></a><a name="m_bdirty"></a>IPropertyPageImpl::m_bDirty  
+ プロパティ ページの状態が変更されたかどうかを指定します。  
+  
+```
+BOOL m_bDirty;
+```  
+  
+##  <a name="a-namemnobjectsa--ipropertypageimplmnobjects"></a><a name="m_nobjects"></a>IPropertyPageImpl::m_nObjects  
+ プロパティ ページに関連付けられているオブジェクトの数を格納します。  
+  
+```
+ULONG m_nObjects;
+```  
+  
+##  <a name="a-namemdwhelpcontexta--ipropertypageimplmdwhelpcontext"></a><a name="m_dwhelpcontext"></a>IPropertyPageImpl::m_dwHelpContext  
+ プロパティ ページに関連付けられているヘルプ トピックのコンテキスト識別子を格納します。  
+  
+```
+DWORD m_dwHelpContext;
+```  
+  
+##  <a name="a-namemdwdocstringa--ipropertypageimplmdwdocstring"></a><a name="m_dwdocstring"></a>IPropertyPageImpl::m_dwDocString  
+ プロパティ ページを説明するテキスト文字列に関連付けられたリソース識別子を格納します。  
+  
+```
+UINT m_dwDocString;
+```  
+  
+##  <a name="a-namemdwhelpfilea--ipropertypageimplmdwhelpfile"></a><a name="m_dwhelpfile"></a>IPropertyPageImpl::m_dwHelpFile  
+ プロパティ ページを説明するヘルプ ファイルの名前に関連付けられたリソース識別子を格納します。  
+  
+```
+UINT m_dwHelpFile;
+```  
+  
+##  <a name="a-namemdwtitlea--ipropertypageimplmdwtitle"></a><a name="m_dwtitle"></a>IPropertyPageImpl::m_dwTitle  
+ プロパティ ページのタブに表示されるテキスト文字列に関連付けられたリソース識別子を格納します。  
+  
+```
+UINT m_dwTitle;
+```  
+  
+##  <a name="a-namemppagesitea--ipropertypageimplmppagesite"></a><a name="m_ppagesite"></a>IPropertyPageImpl::m_pPageSite  
+ 指す、 [IPropertyPageSite](http://msdn.microsoft.com/library/windows/desktop/ms690583)プロパティ ページがフレームのプロパティとの通信に使用するインターフェイスです。  
+  
+```
+IPropertyPageSite* m_pPageSite;
+```  
+  
+##  <a name="a-namemppunka--ipropertypageimplmppunk"></a><a name="m_ppunk"></a>IPropertyPageImpl::m_ppUnk  
+ 配列を指す**IUnknown**プロパティ ページに関連付けられているオブジェクトへのポインター。  
+  
+```
+IUnknown** m_ppUnk;
+```  
+  
+##  <a name="a-namemsizea--ipropertypageimplmsize"></a><a name="m_size"></a>IPropertyPageImpl::m_size  
+ 高さと幅のプロパティ ページのダイアログ ボックスをピクセル単位で格納します。  
+  
+```
+SIZE m_size;
+```  
+  
+##  <a name="a-namemovea--ipropertypageimplmove"></a><a name="move"></a>IPropertyPageImpl::Move  
+ 配置し、プロパティ ページ ダイアログ ボックスのサイズを変更します。  
+  
+```
+HRESULT Move(LPCRECT pRect);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::Move](http://msdn.microsoft.com/library/windows/desktop/ms680118)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namesetdirtya--ipropertypageimplsetdirty"></a><a name="setdirty"></a>IPropertyPageImpl::SetDirty  
+ 変更されたかの値に応じて、変更されていないと、プロパティ ページの状態をフラグ`bDirty`します。  
+  
+```
+void SetDirty(BOOL bDirty);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `bDirty`  
+ [in]場合**TRUE**、プロパティ ページの状態は変更済みとしてマークします。 それ以外の場合、マークされている、変更します。  
+  
+### <a name="remarks"></a>コメント  
+ 必要に応じて、`SetDirty`プロパティ ページが変更されたことをフレームに通知します。  
+  
+##  <a name="a-namesetobjectsa--ipropertypageimplsetobjects"></a><a name="setobjects"></a>ために  
+ 配列を提供**IUnknown**プロパティ ページに関連付けられているオブジェクトのポインター。  
+  
+```
+HRESULT SetObjects(ULONG nObjects, IUnknown** ppUnk);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::SetObjects](http://msdn.microsoft.com/library/windows/desktop/ms678529)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-namesetpagesitea--ipropertypageimplsetpagesite"></a><a name="setpagesite"></a>IPropertyPageImpl::SetPageSite  
+ プロパティ ページに用意されています、 [IPropertyPageSite](http://msdn.microsoft.com/library/windows/desktop/ms690583)プロパティ ページがフレームのプロパティとの通信に使用するポインター。  
+  
+```
+HRESULT SetPageSite(IPropertyPageSite* pPageSite);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::SetPageSite](http://msdn.microsoft.com/library/windows/desktop/ms690413)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nameshowa--ipropertypageimplshow"></a><a name="show"></a>IPropertyPageImpl::Show  
+ プロパティ ページ ダイアログ ボックスは、表示と非表示になります。  
+  
+```
+HRESULT Show(UINT nCmdShow);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::Show](http://msdn.microsoft.com/library/windows/desktop/ms694467)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+##  <a name="a-nametranslateacceleratora--ipropertypageimpltranslateaccelerator"></a><a name="translateaccelerator"></a>IPropertyPageImpl::TranslateAccelerator  
+ 指定されたキーストロークを処理`pMsg`します。  
+  
+```
+HRESULT TranslateAccelerator(MSG* pMsg);
+```  
+  
+### <a name="remarks"></a>コメント  
+ 参照してください[IPropertyPage::TranslateAccelerator](http://msdn.microsoft.com/library/windows/desktop/ms686603)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+## <a name="see-also"></a>関連項目  
  [IPropertyPage2Impl クラス](../../atl/reference/ipropertypage2impl-class.md)   
- [IPerPropertyBrowsingImpl クラス](../Topic/IPerPropertyBrowsingImpl%20Class.md)   
- [ISpecifyPropertyPagesImpl クラス](../Topic/ISpecifyPropertyPagesImpl%20Class.md)   
+ [IPerPropertyBrowsingImpl クラス](../../atl/reference/iperpropertybrowsingimpl-class.md)   
+ [ISpecifyPropertyPagesImpl クラス](../../atl/reference/ispecifypropertypagesimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
+

@@ -1,34 +1,51 @@
 ---
-title: "コンパイラ エラー C3754 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3754"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3754"
+title: "コンパイラ エラー C3754 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3754
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3754
 ms.assetid: 14b877bc-9277-40ec-af1c-196a58b45f10
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3754
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: 2a72db01b88f062f2b8866109cab6375930121ef
+ms.lasthandoff: 02/24/2017
 
-delegate コンストラクター: メンバー関数 '関数' を、型 '型' のインスタンスで呼び出すことはできません  
+---
+# <a name="compiler-error-c3754"></a>コンパイラ エラー C3754
+デリゲート コンス トラクター: 型 'type' のインスタンスで 'function' のメンバー関数を呼び出すことができません  
   
- 関数を含まない型へのポインターを使用して、関数の呼び出しが行われました。  
+ 関数がない型へのポインターを使用して関数呼び出しが行われました。  
   
- 次の例では警告 C3754 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、c3754 エラーが生成されます。  
   
 ```  
 // C3754a.cpp  
@@ -50,27 +67,4 @@ int main() {
 //   MyDel^ q = gcnew MyDel(safe_cast<MyClass^>(p), &MyClass::f);  
 }  
 ```  
-  
- 次の例では警告 C3754 が生成されます。  
-  
-```  
-// C3754b.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-using namespace System;  
-  
-__delegate void MyDel();  
-  
-__gc __interface MyInterface {};  
-  
-__gc struct MyClass : MyInterface {  
-   void f() {}  
-};  
-  
-int main() {  
-   MyInterface* p = new MyClass;  
-   MyDel* q = new MyDel(p, &MyClass::f);   // C3754  
-   // try the following line instead  
-   // MyDel* q = new MyDel(__try_cast<MyClass*>(p), &MyClass::f);  
-}  
-```
+

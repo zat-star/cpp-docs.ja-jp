@@ -1,55 +1,86 @@
 ---
-title: "invalid_oversubscribe_operation クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "concrt/concurrency::invalid_oversubscribe_operation"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "invalid_oversubscribe_operation クラス"
+title: "invalid_oversubscribe_operation クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- concrt/concurrency::invalid_oversubscribe_operation
+dev_langs:
+- C++
+helpviewer_keywords:
+- invalid_oversubscribe_operation class
 ms.assetid: 0a9c5f08-d5e6-4ad0-90a9-517472b3ac28
 caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# invalid_oversubscribe_operation クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: becb02cfd6a052a019ee73e182804c63a286403e
+ms.lasthandoff: 02/24/2017
 
-このクラスは、`_BeginOversubscription` パラメーターが `true` に設定された `Context::Oversubscribe` メソッドを事前に呼び出さずに、`_BeginOversubscription` パラメーターが `false` に設定された `Context::Oversubscribe` メソッドを呼び出した場合にスローされる例外を表します。  
+---
+# <a name="invalidoversubscribeoperation-class"></a>invalid_oversubscribe_operation クラス
+このクラスは、`Context::Oversubscribe` パラメーターが `_BeginOversubscription` に設定された `false` メソッドを事前に呼び出さずに、`Context::Oversubscribe` パラメーターが `_BeginOversubscription` に設定された `true` メソッドを呼び出した場合にスローされる例外を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class invalid_oversubscribe_operation : public std::exception;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[invalid\_oversubscribe\_operation::invalid\_oversubscribe\_operation コンストラクター](../Topic/invalid_oversubscribe_operation::invalid_oversubscribe_operation%20Constructor.md)|オーバーロードされます。  `invalid_oversubscribe_operation` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[invalid_oversubscribe_operation コンス トラクター](#ctor)|オーバーロードされます。 `invalid_oversubscribe_operation` オブジェクトを構築します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
   
  `invalid_oversubscribe_operation`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)   
- [Context::Oversubscribe メソッド](../Topic/Context::Oversubscribe%20Method.md)
+##  <a name="a-namectora-invalidoversubscribeoperation"></a><a name="ctor"></a>invalid_oversubscribe_operation 
+
+ `invalid_oversubscribe_operation` オブジェクトを構築します。  
+  
+```  
+explicit _CRTIMP invalid_oversubscribe_operation(_In_z_ const char* _Message) throw();
+
+ 
+invalid_oversubscribe_operation() throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Message`  
+ エラーの説明メッセージ。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)
+

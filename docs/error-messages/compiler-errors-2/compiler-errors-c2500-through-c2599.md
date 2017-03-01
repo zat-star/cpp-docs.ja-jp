@@ -1,26 +1,42 @@
 ---
-title: "コンパイラ エラーs C2500 Through C2599 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C2500 C2599 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
 ms.assetid: a869aaed-e9f6-49e3-b273-00ea7f45bed7
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# コンパイラ エラーs C2500 Through C2599
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: bdce46b08d44226c3dedef076528d7e46d39365c
+ms.lasthandoff: 02/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。  ここから情報にアクセスできます。または、Visual Studio の**出力**ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c2500-through-c2599"></a>コンパイラ エラー C2500 C2599 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
  [コンパイラ エラー C2500](../../error-messages/compiler-errors-2/compiler-error-c2500.md)  
   
@@ -30,7 +46,7 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2504](../../error-messages/compiler-errors-2/compiler-error-c2504.md)  
   
- [コンパイラ エラー C2505](../Topic/Compiler%20Error%20C2505.md)  
+ [コンパイラ エラー C2505](../../error-messages/compiler-errors-2/compiler-error-c2505.md)  
   
  [コンパイラ エラー C2506](../../error-messages/compiler-errors-2/compiler-error-c2506.md)  
   
@@ -48,7 +64,7 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2516](../../error-messages/compiler-errors-2/compiler-error-c2516.md)  
   
- [コンパイラ エラー C2517](../Topic/Compiler%20Error%20C2517.md)  
+ [コンパイラ エラー C2517](../../error-messages/compiler-errors-2/compiler-error-c2517.md)  
   
  [コンパイラ エラー C2518](../../error-messages/compiler-errors-2/compiler-error-c2518.md)  
   
@@ -60,11 +76,11 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2526](../../error-messages/compiler-errors-2/compiler-error-c2526.md)  
   
- [コンパイラ エラー C2528](../Topic/Compiler%20Error%20C2528.md)  
+ [コンパイラ エラー C2528](../../error-messages/compiler-errors-2/compiler-error-c2528.md)  
   
  [コンパイラ エラー C2529](../../error-messages/compiler-errors-2/compiler-error-c2529.md)  
   
- [コンパイラ エラー C2530](../Topic/Compiler%20Error%20C2530.md)  
+ [コンパイラ エラー C2530](../../error-messages/compiler-errors-2/compiler-error-c2530.md)  
   
  [コンパイラ エラー C2531](../../error-messages/compiler-errors-2/compiler-error-c2531.md)  
   
@@ -76,11 +92,9 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2535](../../error-messages/compiler-errors-2/compiler-error-c2535.md)  
   
- [コンパイラ エラー C2536](../Topic/Compiler%20Error%20C2536.md)  
-  
  [コンパイラ エラー C2537](../../error-messages/compiler-errors-2/compiler-error-c2537.md)  
   
- [コンパイラ エラー C2540](../Topic/Compiler%20Error%20C2540.md)  
+ [コンパイラ エラー C2540](../../error-messages/compiler-errors-2/compiler-error-c2540.md)  
   
  [コンパイラ エラー C2541](../../error-messages/compiler-errors-2/compiler-error-c2541.md)  
   
@@ -96,7 +110,7 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2549](../../error-messages/compiler-errors-2/compiler-error-c2549.md)  
   
- [コンパイラ エラー C2550](../Topic/Compiler%20Error%20C2550.md)  
+ [コンパイラ エラー C2550](../../error-messages/compiler-errors-2/compiler-error-c2550.md)  
   
  [コンパイラ エラー C2552](../../error-messages/compiler-errors-2/compiler-error-c2552.md)  
   
@@ -114,11 +128,9 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2563](../../error-messages/compiler-errors-2/compiler-error-c2563.md)  
   
- [コンパイラ エラー C2564](../Topic/Compiler%20Error%20C2564.md)  
-  
  [コンパイラ エラー C2566](../../error-messages/compiler-errors-2/compiler-error-c2566.md)  
   
- [コンパイラ エラー C2567](../Topic/Compiler%20Error%20C2567.md)  
+ [コンパイラ エラー C2567](../../error-messages/compiler-errors-2/compiler-error-c2567.md)  
   
  [コンパイラ エラー C2568](../../error-messages/compiler-errors-2/compiler-error-c2568.md)  
   
@@ -136,7 +148,7 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2577](../../error-messages/compiler-errors-2/compiler-error-c2577.md)  
   
- [コンパイラ エラー C2579](../Topic/Compiler%20Error%20C2579.md)  
+ [コンパイラ エラー C2579](../../error-messages/compiler-errors-2/compiler-error-c2579.md)  
   
  [コンパイラ エラー C2581](../../error-messages/compiler-errors-2/compiler-error-c2581.md)  
   
@@ -146,17 +158,17 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2584](../../error-messages/compiler-errors-2/compiler-error-c2584.md)  
   
- [コンパイラ エラー C2585](../Topic/Compiler%20Error%20C2585.md)  
+ [コンパイラ エラー C2585](../../error-messages/compiler-errors-2/compiler-error-c2585.md)  
   
- [コンパイラ エラー C2586](../Topic/Compiler%20Error%20C2586.md)  
+ [コンパイラ エラー C2586](../../error-messages/compiler-errors-2/compiler-error-c2586.md)  
   
  [コンパイラ エラー C2587](../../error-messages/compiler-errors-2/compiler-error-c2587.md)  
   
  [コンパイラ エラー C2588](../../error-messages/compiler-errors-2/compiler-error-c2588.md)  
   
- [コンパイラ エラー C2589](../Topic/Compiler%20Error%20C2589.md)  
+ [コンパイラ エラー C2589](../../error-messages/compiler-errors-2/compiler-error-c2589.md)  
   
- [コンパイラ エラー C2592](../Topic/Compiler%20Error%20C2592.md)  
+ [コンパイラ エラー C2592](../../error-messages/compiler-errors-2/compiler-error-c2592.md)  
   
  [コンパイラ エラー C2593](../../error-messages/compiler-errors-2/compiler-error-c2593.md)  
   
@@ -166,4 +178,4 @@ caps.handback.revision: 15
   
  [コンパイラ エラー C2598](../../error-messages/compiler-errors-2/compiler-error-c2598.md)  
   
- [コンパイラ エラー C2599](../Topic/Compiler%20Error%20C2599.md)
+ [コンパイラ エラー C2599](../../error-messages/compiler-errors-2/compiler-error-c2599.md)

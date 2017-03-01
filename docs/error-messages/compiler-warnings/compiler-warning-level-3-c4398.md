@@ -1,39 +1,55 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4398 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4398"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4398"
+title: "コンパイラの警告 (レベル 3) C4398 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4398
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4398
 ms.assetid: b6221432-9fed-4272-a547-a73f587904e6
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラの警告 (レベル 3) C4398
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
+ms.openlocfilehash: 18270bb89bcc5d1855750c572a5b6fb9e51c2ba3
+ms.lasthandoff: 02/24/2017
 
-'変数' : プロセスごとのグローバル オブジェクトは複数の appdomain と共に動作しない可能性があります。\_\_declspec\(appdomain\) を使用することを考慮してください  
+---
+# <a name="compiler-warning-level-3-c4398"></a>コンパイラの警告 (レベル 3) C4398
+'variable': 複数の appdomain でプロセスごとのグローバル オブジェクトが正しく機能しません。__declspec(appdomain) の使用を検討してください。  
   
- [\_\_clrcall](../../cpp/clrcall.md) 呼び出し規約を持つ仮想関数がネイティブ型である場合、アプリケーション ドメインごとの vtable が作成されます。  このような変数は、複数のアプリケーション ドメインで使用される場合に適切に修正されない可能性があります。  
+ 仮想関数を[_ _clrcall](../../cpp/clrcall.md)の作成ネイティブ型で規則を呼び出すと、アプリケーション ドメインの vtable ごとです。 複数のアプリケーション ドメインで使用する場合は、このような変数が適切に修正されない場合があります。  
   
- この警告を解決するには、既定で appdomain ごとにグローバル変数を作成する **\/clr:pure** を指定してコンパイルするか、変数を `__declspec(appdomain)` で明示的にマークします。  
+ この警告を解決するには、変数を明示的にマークすることによって`__declspec(appdomain)`します。 コンパイルしてこの警告を解決するバージョンの Visual Studio 2017 する前に Visual Studio で**/clr: 純粋な**、appdomain ごとのグローバル変数は既定では、これです。  
   
- 詳細については、「[appdomain](../Topic/appdomain.md)」および「[アプリケーション ドメインと Visual C\+\+](../../dotnet/application-domains-and-visual-cpp.md)」を参照してください。  
+ 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)と[アプリケーション ドメインと Visual c](../../dotnet/application-domains-and-visual-cpp.md)します。  
   
-## 使用例  
- 次の例では C4398 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4398 を生成します。  
   
 ```  
 // C4398.cpp  
