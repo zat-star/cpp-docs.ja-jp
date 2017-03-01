@@ -11,7 +11,6 @@
 # [Linux 開発](linux/download-install-and-setup-the-linux-development-workload.md)
 # [C++/CLI による .NET の開発](dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
 # [Visual C++ でのクラウドおよび Web プログラミング](cloud/cloud-and-web-programming-in-visual-cpp.md)
-## [C++ REST SDK (Codename "Casablanca")](cloud/cpp-rest-sdk-codename-casablanca.md)
 # [並列プログラミング](parallel/parallel-programming-in-visual-cpp.md)
 # [データ アクセス](data/data-access-programming-mfc-atl.md)
 # [テキストと文字列](text/text-and-strings-in-visual-cpp.md)
@@ -24,8 +23,3 @@
 # [Visual C++ のサンプル](visual-cpp-samples.md)
 # [Visual C++ のヘルプおよびコミュニティ](visual-cpp-help-and-community.md)
 # [Visual C++ ツールセットで問題を報告する方法](how-to-report-a-problem-with-the-visual-cpp-toolset.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-
