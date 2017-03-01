@@ -1,59 +1,106 @@
 ---
-title: "CD2DPointF クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "afxrendertarget/CD2DPointF"
-  - "CD2DPointF"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CD2DPointF クラス"
+title: "CD2DPointF クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- afxrendertarget/CD2DPointF
+- CD2DPointF
+dev_langs:
+- C++
+helpviewer_keywords:
+- CD2DPointF class
 ms.assetid: 30f72083-1c8a-4f50-adb2-72dbbe3522d4
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# CD2DPointF クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 8449fcadfb72305e9e5b6ed2c6829ba9963ba7ca
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="cd2dpointf-class"></a>CD2DPointF クラス
 `D2D1_POINT_2F`のラッパー。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CD2DPointF : public D2D1_POINT_2F;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CD2DPointF::CD2DPointF](../Topic/CD2DPointF::CD2DPointF.md)|オーバーロードされます。  `D2D1_POINT_2F` のオブジェクトの `CD2DPointF` オブジェクトを構築します。|  
-  
-### パブリック演算子  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CD2DPointF::operator CPoint](../Topic/CD2DPointF::operator%20CPoint.md)|`CPoint` のオブジェクトに変換します `CD2DPointF`。|  
+|----------|-----------------|  
+|[CD2DPointF::CD2DPointF](#cd2dpointf)|オーバーロードされます。 構築、`CD2DPointF`オブジェクトから`D2D1_POINT_2F`オブジェクトです。|  
   
-## 継承階層  
+### <a name="public-operators"></a>パブリック演算子  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CD2DPointF::operator CPoint](#operator_cpoint)|変換`CD2DPointF`に`CPoint`オブジェクトです。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `D2D1_POINT_2F`  
   
- [CD2DPointF](../../mfc/reference/cd2dpointf-class.md)  
+ `CD2DPointF`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-## 参照  
- [クラス](../Topic/MFC%20Classes.md)
+##  <a name="a-namecd2dpointfa--cd2dpointfcd2dpointf"></a><a name="cd2dpointf"></a>CD2DPointF::CD2DPointF  
+ CPoint オブジェクトから CD2DPointF オブジェクトを構築します。  
+  
+```  
+CD2DPointF(const CPoint& pt);    
+CD2DPointF(const D2D1_POINT_2F& pt);    
+CD2DPointF(const D2D1_POINT_2F* pt); 
+CD2DPointF(FLOAT fX = 0., FLOAT fY = 0.);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pt`  
+ ソース ポイント  
+  
+ `fX`  
+ ソース X  
+  
+ `fY`  
+ ソース Y  
+  
+##  <a name="a-nameoperatorcpointa--cd2dpointfoperator-cpoint"></a><a name="operator_cpoint"></a>CD2DPointF::operator CPoint  
+ CD2DPointF を CPoint オブジェクトに変換します。  
+  
+```  
+operator CPoint();
+```   
+  
+### <a name="return-value"></a>戻り値  
+ D2D ポイントの現在の値。  
+  
+## <a name="see-also"></a>関連項目  
+ [クラス](../../mfc/reference/mfc-classes.md)
+

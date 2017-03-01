@@ -1,53 +1,89 @@
 ---
-title: "CD2DRoundedRect クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "afxrendertarget/CD2DRoundedRect"
-  - "CD2DRoundedRect"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CD2DRoundedRect クラス"
+title: "CD2DRoundedRect クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- afxrendertarget/CD2DRoundedRect
+- CD2DRoundedRect
+dev_langs:
+- C++
+helpviewer_keywords:
+- CD2DRoundedRect class
 ms.assetid: 06207fb5-e92b-41c0-bceb-b45d8f466531
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# CD2DRoundedRect クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: f9522f8555c37cd4a15b425c36cfa2d1b1b9851c
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="cd2droundedrect-class"></a>CD2DRoundedRect クラス
 `D2D1_ROUNDED_RECT`のラッパー。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CD2DRoundedRect : public D2D1_ROUNDED_RECT;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CD2DRoundedRect::CD2DRoundedRect](../Topic/CD2DRoundedRect::CD2DRoundedRect.md)|オーバーロードされます。  `D2D1_ROUNDED_RECT` のオブジェクトの `CD2DRoundedRect` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[CD2DRoundedRect::CD2DRoundedRect](#cd2droundedrect)|オーバーロードされます。 構築、`CD2DRoundedRect`オブジェクトから`D2D1_ROUNDED_RECT`オブジェクトです。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `D2D1_ROUNDED_RECT`  
   
  [CD2DRoundedRect](../../mfc/reference/cd2droundedrect-class.md)  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-## 参照  
- [クラス](../Topic/MFC%20Classes.md)
+##  <a name="a-namecd2droundedrecta--cd2droundedrectcd2droundedrect"></a><a name="cd2droundedrect"></a>CD2DRoundedRect::CD2DRoundedRect  
+ CD2DRectF オブジェクトから CD2DRoundedRect オブジェクトを構築します。  
+  
+```  
+CD2DRoundedRect(
+    const CD2DRectF& rectIn,  
+    const CD2DSizeF& sizeRadius);  
+  
+CD2DRoundedRect(const D2D1_ROUNDED_RECT& rectIn);  
+CD2DRoundedRect(const D2D1_ROUNDED_RECT* rectIn);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `rectIn`  
+ 元の四角形  
+  
+ `sizeRadius`  
+ 半径のサイズ  
+  
+## <a name="see-also"></a>関連項目  
+ [クラス](../../mfc/reference/mfc-classes.md)
+

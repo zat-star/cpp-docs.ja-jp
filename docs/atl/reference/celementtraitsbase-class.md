@@ -1,72 +1,146 @@
 ---
-title: "CElementTraitsBase クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CElementTraitsBase"
-  - "ATL::CElementTraitsBase"
-  - "ATL.CElementTraitsBase<T>"
-  - "ATL::CElementTraitsBase<T>"
-  - "ATL.CElementTraitsBase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CElementTraitsBase クラス"
+title: "CElementTraitsBase クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CElementTraitsBase
+- ATL::CElementTraitsBase
+- ATL.CElementTraitsBase<T>
+- ATL::CElementTraitsBase<T>
+- ATL.CElementTraitsBase
+dev_langs:
+- C++
+helpviewer_keywords:
+- CElementTraitsBase class
 ms.assetid: 75284caf-347e-4355-a7d8-efc708dd514a
 caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# CElementTraitsBase クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: a06af7698afb24c1c2391b762673c7e3633018d4
+ms.lasthandoff: 02/24/2017
 
-このクラスには、コレクション クラス用の既定のコピー メソッドと移動メソッドが用意されています。  
+---
+# <a name="celementtraitsbase-class"></a>CElementTraitsBase クラス
+このクラスは、既定のコピーを提供し、コレクション クラスのメソッドに移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<typename T>  
+class CElementTraitsBase
 ```  
   
-      template<  
-   typename T  
->  
-class CElementTraitsBase  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  コレクションに格納されるデータの型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
-  
-|名前|説明|  
-|--------|--------|  
-|[CElementTraitsBase::INARGTYPE](../Topic/CElementTraitsBase::INARGTYPE.md)|コレクション クラス オブジェクトに要素を追加するために使用するデータ型。|  
-|[CElementTraitsBase::OUTARGTYPE](../Topic/CElementTraitsBase::OUTARGTYPE.md)|コレクション クラス オブジェクトから要素を取得するために使用するデータ型。|  
-  
-### パブリック メソッド  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
-|[CElementTraitsBase::CopyElements](../Topic/CElementTraitsBase::CopyElements.md)|コレクション クラス オブジェクトに格納されている要素をコピーする場合に、このメソッドを呼び出します。|  
-|[CElementTraitsBase::RelocateElements](../Topic/CElementTraitsBase::RelocateElements.md)|コレクション クラス オブジェクトに格納されている要素を転送する場合に、このメソッドを呼び出します。|  
+|----------|-----------------|  
+|[CElementTraitsBase::INARGTYPE](#inargtype)|コレクション クラスのオブジェクトに要素を追加するために使用するデータ型。|  
+|[CElementTraitsBase::OUTARGTYPE](#outargtype)|コレクション クラスのオブジェクトから要素を取得するために使用するデータ型。|  
   
-## 解説  
- この基本クラスはコピー メソッドを定義し、コレクション再配置の要素です。  これは、クラス [CDefaultElementTraits](../../atl/reference/cdefaultelementtraits-class.md)、[CStringRefElementTraits](../../atl/reference/cstringrefelementtraits-class.md)と [CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md)によって使用されます。  
+### <a name="public-methods"></a>パブリック メソッド  
   
- 詳細については、[ATL のコレクション クラス](../../atl/atl-collection-classes.md)を参照してください。  
+|名前|説明|  
+|----------|-----------------|  
+|[CElementTraitsBase::CopyElements](#copyelements)|コレクション クラスのオブジェクトに格納されている要素をコピーするには、このメソッドを呼び出します。|  
+|[CElementTraitsBase::RelocateElements](#relocateelements)|コレクション クラスのオブジェクトに格納されている要素を配置する場合に、このメソッドを呼び出します。|  
   
-## 必要条件  
- **Header:** atlcoll.h  
+## <a name="remarks"></a>コメント  
+ この基本クラスでは、コピーして、コレクション クラス内の要素を再配置するためのメソッドを定義します。 クラスによって使用されて[CDefaultElementTraits](../../atl/reference/cdefaultelementtraits-class.md)、 [CStringRefElementTraits](../../atl/reference/cstringrefelementtraits-class.md)、および[CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md)します。  
   
-## 参照  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcoll.h  
+  
+##  <a name="a-namecopyelementsa--celementtraitsbasecopyelements"></a><a name="copyelements"></a>CElementTraitsBase::CopyElements  
+ コレクション クラスのオブジェクトに格納されている要素をコピーするには、このメソッドを呼び出します。  
+  
+```
+static void CopyElements(
+    T* pDest,
+    const T* pSrc,
+    size_t nElements);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pDest`  
+ コピー元のデータを受信する最初の要素へのポインター。  
+  
+ `pSrc`  
+ コピーする最初の要素へのポインター。  
+  
+ `nElements`  
+ コピーする要素の数。  
+  
+### <a name="remarks"></a>コメント  
+ ソースおよびデスティネーションの要素は重複できません。  
+  
+##  <a name="a-nameinargtypea--celementtraitsbaseinargtype"></a><a name="inargtype"></a>CElementTraitsBase::INARGTYPE  
+ データは、コレクションに要素を追加するために使用する型します。  
+  
+```
+typedef const T& INARGTYPE;
+```  
+  
+##  <a name="a-nameoutargtypea--celementtraitsbaseoutargtype"></a><a name="outargtype"></a>CElementTraitsBase::OUTARGTYPE  
+ コレクションから要素を取得するために使用するデータ型。  
+  
+```
+typedef T& OUTARGTYPE;
+```  
+  
+##  <a name="a-namerelocateelementsa--celementtraitsbaserelocateelements"></a><a name="relocateelements"></a>CElementTraitsBase::RelocateElements  
+ コレクション クラスのオブジェクトに格納されている要素を配置する場合に、このメソッドを呼び出します。  
+  
+```
+static void RelocateElements(
+    T* pDest,
+    T* pSrc,
+    size_t nElements);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pDest`  
+ 再配置されたデータを受信する最初の要素へのポインター。  
+  
+ `pSrc`  
+ 配置する場合に最初の要素へのポインター。  
+  
+ `nElements`  
+ 再配置する要素の数。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドを呼び出す[memmove](../../c-runtime-library/reference/memmove-wmemmove.md)、これは、ほとんどのデータ型。 オブジェクトの移動中に、独自のメンバーへのポインターが含まれている場合は、このメソッドをオーバーライドする必要があります。  
+  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+
