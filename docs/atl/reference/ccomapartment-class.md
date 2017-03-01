@@ -1,75 +1,174 @@
 ---
-title: "CComApartment クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::CComApartment"
-  - "CComApartment"
-  - "ATL.CComApartment"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アパートメント (ATL EXE モジュールの)"
-  - "CComApartment クラス"
+title: "CComApartment クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::CComApartment
+- CComApartment
+- ATL.CComApartment
+dev_langs:
+- C++
+helpviewer_keywords:
+- apartments in ATL EXE modules
+- CComApartment class
 ms.assetid: dbc177d7-7ee4-45f2-b563-d578a467ca93
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CComApartment クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
+ms.openlocfilehash: 9359e2ab8c4a84ab66441e3eb8cfd39520fd4e8d
+ms.lasthandoff: 02/24/2017
 
-このクラスは、スレッドがプールされている EXE モジュールのアパートメントを管理するためのサポートを提供します。  
+---
+# <a name="ccomapartment-class"></a>CComApartment クラス
+このクラスは、アパートメント スレッド プールの EXE モジュールでの管理サポートを提供します。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class CComApartment
 ```  
   
-class CComApartment  
+## <a name="members"></a>メンバー  
   
+### <a name="public-constructors"></a>パブリック コンストラクター  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CComApartment::CComApartment](#ccomapartment)|コンストラクターです。|  
+  
+### <a name="public-methods"></a>パブリック メソッド  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CComApartment::Apartment](#apartment)|スレッドの開始アドレスをマークします。|  
+|[CComApartment::GetLockCount](#getlockcount)|スレッドの現在のロック カウントを返します。|  
+|[CComApartment::Lock](#lock)|スレッドのロック カウントをインクリメントします。|  
+|[CComApartment::Unlock](#unlock)|スレッドのロック カウントをデクリメントします。|  
+  
+### <a name="public-data-members"></a>パブリック データ メンバー  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CComApartment::m_dwThreadID](#m_dwthreadid)|スレッドの識別子が含まれています。|  
+|[CComApartment::m_hThread](#m_hthread)|スレッドへのハンドルが含まれています。|  
+|[CComApartment::m_nLockCnt](#m_nlockcnt)|スレッドの現在のロック カウントが含まれています。|  
+  
+## <a name="remarks"></a>コメント  
+ `CComApartment`によって使用される[CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)アパートメント スレッド プールの EXE モジュールを管理します。 `CComApartment`スレッドのカウントがインクリメントおよびデクリメント、ロックするためのメソッドを提供します。  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlbase.h  
+  
+##  <a name="a-nameapartmenta--ccomapartmentapartment"></a><a name="apartment"></a>CComApartment::Apartment  
+ スレッドの開始アドレスをマークします。  
+  
+```
+DWORD Apartment();
 ```  
   
-## メンバー  
+### <a name="return-value"></a>戻り値  
+ 常に 0 です。  
   
-### パブリック コンストラクター  
+### <a name="remarks"></a>コメント  
+ 自動的に設定[CComAutoThreadModule::Init](../../atl/reference/ccomautothreadmodule-class.md#init)します。  
   
-|名前|説明|  
-|--------|--------|  
-|[CComApartment::CComApartment](../Topic/CComApartment::CComApartment.md)|コンストラクターです。|  
+##  <a name="a-nameccomapartmenta--ccomapartmentccomapartment"></a><a name="ccomapartment"></a>CComApartment::CComApartment  
+ コンストラクターです。  
   
-### パブリック メソッド  
+```
+CComApartment();
+```  
   
-|名前|説明|  
-|--------|--------|  
-|[CComApartment::Apartment](../Topic/CComApartment::Apartment.md)|スレッドの開始アドレスをマークします。|  
-|[CComApartment::GetLockCount](../Topic/CComApartment::GetLockCount.md)|スレッドの現在のロック カウントを返します。|  
-|[CComApartment::Lock](../Topic/CComApartment::Lock.md)|スレッドのロック カウントをインクリメントします。|  
-|[CComApartment::Unlock](../Topic/CComApartment::Unlock.md)|スレッドのロック カウントをデクリメントします。|  
+### <a name="remarks"></a>コメント  
+ 初期化、`CComApartment`データ メンバー [m_nLockCnt](#m_nlockcnt)と[で](#m_hthread)します。  
   
-### パブリック データ メンバー  
+##  <a name="a-namegetlockcounta--ccomapartmentgetlockcount"></a><a name="getlockcount"></a>CComApartment::GetLockCount  
+ スレッドの現在のロック カウントを返します。  
   
-|名前|説明|  
-|--------|--------|  
-|[CComApartment::m\_dwThreadID](../Topic/CComApartment::m_dwThreadID.md)|スレッド識別子が含まれます。|  
-|[CComApartment::m\_hThread](../Topic/CComApartment::m_hThread.md)|スレッドのハンドルが含まれます。|  
-|[CComApartment::m\_nLockCnt](../Topic/CComApartment::m_nLockCnt.md)|スレッドの現在のロックの数。|  
+```
+LONG GetLockCount();
+```  
   
-## 解説  
- [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md) によって`CComApartment` がスレッド プールされた EXE モジュールのアパートメントを管理するために使用されます。  `CComApartment` はスレッドでロック カウントをインクリメントおよびデクリメントするためのメソッドを提供します。  
+### <a name="return-value"></a>戻り値  
+ スレッドのロック カウントします。  
   
-## 必要条件  
- atlbase.h**Header:**  
+##  <a name="a-namelocka--ccomapartmentlock"></a><a name="lock"></a>CComApartment::Lock  
+ スレッドのロック カウントをインクリメントします。  
   
-## 参照  
+```
+LONG Lock();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 診断に役に立たないかテスト可能性のある値。  
+  
+### <a name="remarks"></a>コメント  
+ によって呼び出される[CComAutoThreadModule::Lock](../../atl/reference/ccomautothreadmodule-class.md#lock)します。  
+  
+ スレッドのロック カウントは、統計目的のために使用されます。  
+  
+##  <a name="a-namemdwthreadida--ccomapartmentmdwthreadid"></a><a name="m_dwthreadid"></a>CComApartment::m_dwThreadID  
+ スレッドの識別子が含まれています。  
+  
+```
+DWORD m_dwThreadID;
+```  
+  
+##  <a name="a-namemhthreada--ccomapartmentmhthread"></a><a name="m_hthread"></a>CComApartment::m_hThread  
+ スレッドへのハンドルが含まれています。  
+  
+```
+HANDLE m_hThread;
+```  
+  
+##  <a name="a-namemnlockcnta--ccomapartmentmnlockcnt"></a><a name="m_nlockcnt"></a>CComApartment::m_nLockCnt  
+ スレッドの現在のロック カウントが含まれています。  
+  
+```
+LONG m_nLockCnt;
+```  
+  
+##  <a name="a-nameunlocka--ccomapartmentunlock"></a><a name="unlock"></a>CComApartment::Unlock  
+ スレッドのロック カウントをデクリメントします。  
+  
+```
+LONG Unlock();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 診断に役に立たないかテスト可能性のある値。  
+  
+### <a name="remarks"></a>コメント  
+ によって呼び出される[CComAutoThreadModule::Unlock](../../atl/reference/ccomautothreadmodule-class.md#lock)します。  
+  
+ スレッドのロック カウントは、統計目的のために使用されます。  
+  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+

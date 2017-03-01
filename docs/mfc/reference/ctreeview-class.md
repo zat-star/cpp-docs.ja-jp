@@ -1,77 +1,108 @@
 ---
-title: "CTreeView クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CTreeView"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeView クラス"
-  - "CTreeView クラス, コモン コントロール"
-  - "ディレクトリ一覧"
-  - "ファイル リスト [C++]"
-  - "ツリー ビュー コントロール"
+title: "CTreeView クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CTreeView
+dev_langs:
+- C++
+helpviewer_keywords:
+- directory lists
+- tree view controls
+- file lists [C++]
+- CTreeView class, common controls
+- CTreeView class
 ms.assetid: 5df583a6-d69f-42ca-9d8d-57e04558afff
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# CTreeView クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: c317d91a07b5cb45b58ec4c4af2e9ee0f3b24e28
+ms.lasthandoff: 02/24/2017
 
-ツリー コントロールと [CTreeCtrl](../../mfc/reference/ctreectrl-class.md)のツリー コントロールの機能をカプセル化する MFC のドキュメント ビュー アーキテクチャを使用するクラスの使用を単純化します。  
+---
+# <a name="ctreeview-class"></a>CTreeView クラス
+ツリー コントロールとの使用を簡略化[CTreeCtrl](../../mfc/reference/ctreectrl-class.md)MFC のドキュメント/ビュー アーキテクチャのツリー コントロールの機能をカプセル化するクラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CTreeView : public CCtrlView  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CTreeView::CTreeView](../Topic/CTreeView::CTreeView.md)|`CTreeView` オブジェクトを構築します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CTreeView::GetTreeCtrl](../Topic/CTreeView::GetTreeCtrl.md)|ビューに関連付けられているツリー コントロールを返します。|  
+|----------|-----------------|  
+|[CTreeView::CTreeView](#ctreeview)|`CTreeView` オブジェクトを構築します。|  
   
-## 解説  
- このアーキテクチャの詳細には、そこで引用された [&#91;CW2CT&#93;](../Topic/CView%20Class.md) のクラスと相互参照については、" "を参照してください。  
+### <a name="public-methods"></a>パブリック メソッド  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[CTreeView::GetTreeCtrl](#gettreectrl)|ビューに関連付けられているツリー コントロールを返します。|  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+## <a name="remarks"></a>コメント  
+ このアーキテクチャの詳細については、の概要を参照してください、 [CView](../../mfc/reference/cview-class.md)クラスとクロス リファレンスがあります。  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CView](../Topic/CView%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
+  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
+  
+ [CView](../../mfc/reference/cview-class.md)  
   
  [CCtrlView](../../mfc/reference/cctrlview-class.md)  
   
  `CTreeView`  
   
-## 必要条件  
- **Header:** afxcview.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxcview.h  
   
-## 参照  
+##  <a name="a-namectreeviewa--ctreeviewctreeview"></a><a name="ctreeview"></a>CTreeView::CTreeView  
+ `CTreeView` オブジェクトを構築します。  
+  
+```  
+CTreeView();
+```  
+  
+##  <a name="a-namegettreectrla--ctreeviewgettreectrl"></a><a name="gettreectrl"></a>CTreeView::GetTreeCtrl  
+ ビューに関連付けられているツリー コントロールへの参照を返します。  
+  
+```  
+CTreeCtrl& GetTreeCtrl() const;  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
- [CView クラス](../Topic/CView%20Class.md)   
+ [CView クラス](../../mfc/reference/cview-class.md)   
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
  [CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)
+

@@ -1,33 +1,51 @@
 ---
-title: "MFC で使われているコールバック関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.functions"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コールバック関数"
-  - "コールバック関数, MFC"
-  - "関数 [C++], コールバック"
-  - "MFC, コールバック関数"
+title: "MFC で使用するコールバック関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.functions
+dev_langs:
+- C++
+helpviewer_keywords:
+- callback functions, MFC
+- MFC, callback functions
+- functions [C++], callback
+- callback functions
 ms.assetid: b2a6857c-fdd3-45ec-8fd8-2e71fac77582
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# MFC で使われているコールバック関数
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: b4d104fa76347da43c84611672f843511f0f3725
+ms.lasthandoff: 02/24/2017
 
-3 個のコールバック関数は、Microsoft Foundation Class ライブラリに表示されます。  [CDC::EnumObjects](../Topic/CDC::EnumObjects.md)に渡されるコールバック関数、[CDC::GrayString](../Topic/CDC::GrayString.md)と [CDC::SetAbortProc](../Topic/CDC::SetAbortProc.md) の説明は、このトピックに従います。  コールバック関数の一般的な使用方法では、これらのメンバー関数の解説セクションを参照してください。  例外のコールバックの境界を越えてスローすることができないため、すべてのコールバック関数は、Windows に対する戻る前に MFC 例外をフックする必要があります。  例外に関する詳細については、記事 [例外](../../mfc/exception-handling-in-mfc.md)を参照します。  
+---
+# <a name="callback-functions-used-by-mfc"></a>MFC で使われているコールバック関数
+次の&3; つのコールバック関数は、Microsoft Foundation Class ライブラリに表示されます。 渡されるコールバック関数の説明[cdc::enumobjects](../../mfc/reference/cdc-class.md#enumobjects)、 [cdc::graystring](../../mfc/reference/cdc-class.md#graystring)、および[cdc::setabortproc](../../mfc/reference/cdc-class.md#setabortproc)ここに依存しています。 コールバック関数の一般的な使用方法は、これらのメンバー関数の「解説」セクションを参照してください。 すべてのコールバック関数がコールバックの境界を越えて例外がスローされることはできませんので、Windows に復帰する前に MFC の例外をトラップする必要があることに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)します。  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
+## <a name="see-also"></a>関連項目  
+ [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
+
+

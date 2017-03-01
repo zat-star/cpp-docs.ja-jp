@@ -1,41 +1,58 @@
 ---
-title: "ATL COM+ 1.0 コンポーネントの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL COM+ 1.0"
-  - "ATL プロジェクト, 追加 (コンポーネントを)"
-  - "コンポーネント [C++], 追加 (ATL COM+ 1.0 を)"
-  - "オブジェクト [C++], サポート (ATL COM+ 1.0 を)"
+title: "ATL COM + 1.0 コンポーネントを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL COM+ 1.0
+- ATL projects, adding components
+- components [C++], adding ATL COM+ 1.0
+- objects [C++], supporting ATL COM+ 1.0
 ms.assetid: c6c95e64-9ee4-4a6e-8804-5930202ce1b9
 caps.latest.revision: 11
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# ATL COM+ 1.0 コンポーネントの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 21b2f5ef486a7374b7943ab99fc3c60c4b75e2e1
+ms.lasthandoff: 02/24/2017
 
-ATL COM\+ 1.0 コンポーネント ウィザードは、トランザクションを含む COM\+ 1.0 サービスをサポートするオブジェクトをプロジェクトに追加します。  
+---
+# <a name="adding-an-atl-com-10-component"></a>ATL COM + 1.0 コンポーネントを追加します。
+このウィザードでは、トランザクションなどの COM + 1.0 サービスをサポートするプロジェクトにオブジェクトを追加します。  
   
-### ATL COM\+ 1.0 コンポーネントをプロジェクトに追加するには  
+### <a name="to-add-an-atl-com-10-component-to-your-project"></a>ATL COM + 1.0 コンポーネントをプロジェクトに追加するには  
   
-1.  ソリューション エクスプローラーまたは[クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)で、ATL COM\+ 1.0 コンポーネントを追加するプロジェクトの名前を右クリックします。  
+1.  いずれかで**ソリューション エクスプ ローラー**または[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)、ATL COM + 1.0 コンポーネントを追加するプロジェクトの名前を右クリックします。  
   
-2.  ショートカット メニューの \[追加\] をポイントし、\[クラスの追加\] をクリックします。  
+2.  ショートカット メニューをクリックして**追加**、クリックして**クラスの追加**します。  
   
-3.  [&#91;クラスの追加&#93;](../../ide/add-class-dialog-box.md) ダイアログ ボックスの \[テンプレート\] ペインの \[ATL COM\+ 1.0 コンポーネント\] をクリックし、次に \[開く\] をクリックして [ATL COM\+ 1.0 コンポーネント ウィザード](../../atl/reference/atl-com-plus-1-0-component-wizard.md)を表示します。  
+3.  [クラスの追加](../../ide/add-class-dialog-box.md)テンプレート ペインで、ダイアログ ボックスをクリックして**ATL COM + 1.0 コンポーネント**、 をクリックし、**開く**を表示する、 [ATL COM + 1.0 コンポーネント ウィザード](../../atl/reference/atl-com-plus-1-0-component-wizard.md)します。  
   
-## 参照  
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
+## <a name="see-also"></a>関連項目  
+ [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [メソッドの追加](../../ide/adding-a-method-visual-cpp.md)
+
+

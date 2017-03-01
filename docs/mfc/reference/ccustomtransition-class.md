@@ -1,76 +1,177 @@
 ---
-title: "CCustomTransition クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "afxanimationcontroller/CCustomTransition"
-  - "CCustomTransition"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CCustomTransition クラス"
+title: "CCustomTransition クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- afxanimationcontroller/CCustomTransition
+- CCustomTransition
+dev_langs:
+- C++
+helpviewer_keywords:
+- CCustomTransition class
 ms.assetid: 5bd3f492-940f-4290-a38b-fa68eb8f8401
 caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# CCustomTransition クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 73410ae17465880f455e5b15026f6cc010803c19
+ms.openlocfilehash: 483fb2ab84d2c41fe4666a4ea333c0be8b07caee
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="ccustomtransition-class"></a>CCustomTransition クラス
 カスタム遷移を実装します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CCustomTransition : public CBaseTransition;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CCustomTransition::CCustomTransition](../Topic/CCustomTransition::CCustomTransition.md)|カスタムの遷移オブジェクトを構築します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CCustomTransition::Create](../Topic/CCustomTransition::Create.md)|遷移ライブラリを呼び出して、カプセル化された遷移 COM オブジェクトを作成します   \([CBaseTransition::Create](../Topic/CBaseTransition::Create.md) をオーバーライドします\)。|  
-|[CCustomTransition::SetInitialValue](../Topic/CCustomTransition::SetInitialValue.md)|この遷移に関連付けられたアニメーション変数に適用する初期値を設定します。|  
-|[CCustomTransition::SetInitialVelocity](../Topic/CCustomTransition::SetInitialVelocity.md)|この遷移に関連付けられたアニメーション変数に適用する初期速度を設定します。|  
+|----------|-----------------|  
+|[CCustomTransition::CCustomTransition](#ccustomtransition)|カスタム遷移オブジェクトを構築します。|  
   
-### プロテクト データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CCustomTransition::m\_bInitialValueSpecified](../Topic/CCustomTransition::m_bInitialValueSpecified.md)|SetInitialValue で初期値が指定されているかどうかを示します。|  
-|[CCustomTransition::m\_bInitialVelocitySpecified](../Topic/CCustomTransition::m_bInitialVelocitySpecified.md)|SetInitialVelocity で初期速度が指定されているかどうかを示します。|  
-|[CCustomTransition::m\_initialValue](../Topic/CCustomTransition::m_initialValue.md)|初期値を格納します。|  
-|[CCustomTransition::m\_initialVelocity](../Topic/CCustomTransition::m_initialVelocity.md)|初期速度を格納します。|  
-|[CCustomTransition::m\_pInterpolator](../Topic/CCustomTransition::m_pInterpolator.md)|カスタムのインターポレータへのポインターを格納します。|  
+|----------|-----------------|  
+|[CCustomTransition::Create](#create)|カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。 (上書き[CBaseTransition::Create](../../mfc/reference/cbasetransition-class.md#create))。|  
+|[CCustomTransition::SetInitialValue](#setinitialvalue)|この遷移に関連付けられているアニメーション変数に適用される最初の値を設定します。|  
+|[CCustomTransition::SetInitialVelocity](#setinitialvelocity)|この遷移に関連付けられているアニメーション変数に適用される初期の速度を設定します。|  
   
-## 解説  
- CCustomTransitions クラスを使用すると、カスタムの遷移を実装できます。  このクラスは、標準の遷移として作成および使用されますが、コンストラクターはカスタムのインターポレータへのポインターをパラメーターとして受け取ります。  カスタムの遷移を使用するには、次の手順を実行します。1.   CCustomInterpolator の派生クラスを作成し、少なくとも InterpolateValue メソッドは実装します。  2.  カスタムのインターポレータ オブジェクトの有効期間が、これを使用するアニメーションの継続時間より長くなるようにします。  3.  CCustomTransition オブジェクトをインスタンス化し \(new 演算子を使用します\)、コンストラクターでカスタムのインターポレータへのポインターを渡します。  4.  CCustomTransition::SetInitialValue と CCustomTransition::SetInitialVelocity を呼び出します \(カスタムの補間でこれらのパラメーターが必要な場合\)。  5.  カスタムの遷移へのポインターを、カスタム アルゴリズムを使用して値をアニメーション化するアニメーション オブジェクトの AddTransition メソッドに渡します。  6.  アニメーション オブジェクトの値を変更する必要が生じると、Windows Animation API によって CCustomInterpolator の InterpolateValue \(およびその他の関連メソッド\) が呼び出されます。  
+### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[CCustomTransition::m_bInitialValueSpecified](#m_binitialvaluespecified)|SetInitialValue で初期値を指定するかどうかを指定します。|  
+|[CCustomTransition::m_bInitialVelocitySpecified](#m_binitialvelocityspecified)|SetInitialVelocity で初期速度を指定するかどうかを指定します。|  
+|[CCustomTransition::m_initialValue](#m_initialvalue)|初期値を格納します。|  
+|[CCustomTransition::m_initialVelocity](#m_initialvelocity)|初期速度を格納します。|  
+|[CCustomTransition::m_pInterpolator](#m_pinterpolator)|カスタム インターポレーターへのポインターを格納します。|  
+  
+## <a name="remarks"></a>コメント  
+ CCustomTransitions クラスは、開発者がカスタム遷移を実装するを使用します。 作成したので、標準の遷移と使用が、コンス トラクターがパラメーターとしてカスタム インターポレーターへのポインターを受け取ります。 カスタム遷移を使用する次の手順: 1。 CCustomInterpolator からクラスを派生し、実装には、少なくとも InterpolateValue メソッドです。 2. カスタム インターポレーターのオブジェクトの有効期間でなければならないことのアニメーションの期間より長く使用されているを確認します。 3. オブジェクトのインスタンス (新しい演算子を使用して)、CCustomTransition し、コンス トラクターでカスタム インターポレーターにポインターを渡します。 4. これらのパラメーターのカスタム補間に必要な場合は、CCustomTransition::SetInitialValue と CCustomTransition::SetInitialVelocity を呼び出します。 5. カスタム アルゴリズムでアニメーション化する値を持つアニメーション オブジェクトの AddTransition メソッドにカスタムの移行へのポインターを渡します。 6. アニメーション オブジェクトの値を変更する必要がありますとは、Windows Animation API が CCustomInterpolator でに InterpolateValue (およびその他の関連するメソッド) を呼び出します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CBaseTransition](../../mfc/reference/cbasetransition-class.md)  
   
- [CCustomTransition](../../mfc/reference/ccustomtransition-class.md)  
+ `CCustomTransition`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-## 参照  
- [クラス](../Topic/MFC%20Classes.md)
+##  <a name="a-nameccustomtransitiona--ccustomtransitionccustomtransition"></a><a name="ccustomtransition"></a>CCustomTransition::CCustomTransition  
+ カスタム遷移オブジェクトを構築します。  
+  
+```  
+CCustomTransition(CCustomInterpolator* pInterpolator);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pInterpolator`  
+ カスタム インターポレーターへのポインター。  
+  
+##  <a name="a-namecreatea--ccustomtransitioncreate"></a><a name="create"></a>CCustomTransition::Create  
+ カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
+  
+```  
+virtual BOOL Create(
+    IUIAnimationTransitionLibrary* */,  
+    IUIAnimationTransitionFactory* pFactory);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pFactory`  
+ カスタム遷移の作成を担当する遷移ファクトリへのポインター。  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドは、初期値と、この遷移に関連付けられているアニメーション変数に適用する初期速度使用設定することもできます。 この目的のため、フレームワーク (CAnimationController::AnimateGroup を呼び出すときに実行される) 遷移をカプセル化された COM オブジェクトを作成する前に、SetInitialValue と SetInitialVelocity を呼び出す必要があります。  
+  
+##  <a name="a-namembinitialvaluespecifieda--ccustomtransitionmbinitialvaluespecified"></a><a name="m_binitialvaluespecified"></a>CCustomTransition::m_bInitialValueSpecified  
+ SetInitialValue で初期値を指定するかどうかを指定します。  
+  
+```  
+BOOL m_bInitialValueSpecified;  
+```  
+  
+##  <a name="a-namembinitialvelocityspecifieda--ccustomtransitionmbinitialvelocityspecified"></a><a name="m_binitialvelocityspecified"></a>CCustomTransition::m_bInitialVelocitySpecified  
+ SetInitialVelocity で初期速度を指定するかどうかを指定します。  
+  
+```  
+BOOL m_bInitialVelocitySpecified;  
+```  
+  
+##  <a name="a-nameminitialvaluea--ccustomtransitionminitialvalue"></a><a name="m_initialvalue"></a>CCustomTransition::m_initialValue  
+ 初期値を格納します。  
+  
+```  
+DOUBLE m_initialValue;  
+```  
+  
+##  <a name="a-nameminitialvelocitya--ccustomtransitionminitialvelocity"></a><a name="m_initialvelocity"></a>CCustomTransition::m_initialVelocity  
+ 初期速度を格納します。  
+  
+```  
+DOUBLE m_initialVelocity;  
+```  
+  
+##  <a name="a-namempinterpolatora--ccustomtransitionmpinterpolator"></a><a name="m_pinterpolator"></a>CCustomTransition::m_pInterpolator  
+ カスタム インターポレーターへのポインターを格納します。  
+  
+```  
+CCustomInterpolator* m_pInterpolator;  
+```  
+  
+##  <a name="a-namesetinitialvaluea--ccustomtransitionsetinitialvalue"></a><a name="setinitialvalue"></a>CCustomTransition::SetInitialValue  
+ この遷移に関連付けられているアニメーション変数に適用される最初の値を設定します。  
+  
+```  
+void SetInitialValue(DOUBLE initialValue);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `initialValue`  
+  
+##  <a name="a-namesetinitialvelocitya--ccustomtransitionsetinitialvelocity"></a><a name="setinitialvelocity"></a>CCustomTransition::SetInitialVelocity  
+ この遷移に関連付けられているアニメーション変数に適用される初期の速度を設定します。  
+  
+```  
+void SetInitialVelocity(DOUBLE initialVelocity);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `initialVelocity`  
+  
+## <a name="see-also"></a>関連項目  
+ [クラス](../../mfc/reference/mfc-classes.md)
+

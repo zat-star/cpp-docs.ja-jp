@@ -1,50 +1,61 @@
 ---
-title: "CComEnum クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CComEnum"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CComEnum クラス"
+title: "上記のクラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CComEnum
+dev_langs:
+- C++
+helpviewer_keywords:
+- CComEnum class
 ms.assetid: bff7dd7b-eb6e-4d6e-96ed-2706e66c8b3b
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CComEnum クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: 72c172d7a619bb4fd1bd265e465653b691c0bc7b
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="ccomenum-class"></a>上記のクラス
 このクラスは、配列に基づいた COM 列挙子オブジェクトを定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class Base,
+    const IID* piid, class T, class Copy, class ThreadModel = CcomObjectThreadModel>  
+class ATL_NO_VTABLE CComEnum : public CComEnumImpl<Base, piid,
+ T,
+    Copy>,
+ public CComObjectRootEx<ThreadModel>
 ```  
   
-      template <  
-   class Base,  
-   const IID* piid,  
-   class T,  
-   class Copy,  
-   class ThreadModel = CcomObjectThreadModel  
->  
-class ATL_NO_VTABLE CComEnum :  
-   public CComEnumImpl<Base, piid, T, Copy>,  
-   public CComObjectRootEx< ThreadModel >  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Base`  
- COM 列挙子インターフェイス \([IEnumXXXX](https://msdn.microsoft.com/en-us/library/ms680089.aspx)\)。  
+ COM の列挙子 ([として](https://msdn.microsoft.com/library/ms680089.aspx)) インターフェイス。  
   
  `piid`  
  列挙子インターフェイスのインターフェイス ID へのポインター。  
@@ -53,27 +64,27 @@ class ATL_NO_VTABLE CComEnum :
  列挙子インターフェイスによって公開される項目の種類。  
   
  `Copy`  
- 同種 [コピー ポリシー クラス](../Topic/ATL%20Copy%20Policy%20Classes.md)。  
+ 同種[コピー ポリシー クラス](../../atl/atl-copy-policy-classes.md)します。  
   
  `ThreadModel`  
- クラスのスレッド処理モデル。  このパラメーターは、プロジェクトに使用するグローバル オブジェクトのスレッド モデルになります。  
+ クラスのスレッド処理モデル。 このパラメーターの既定値は、プロジェクトで使用されるグローバル オブジェクトのスレッド モデルです。  
   
-## 解説  
- `CComEnum` は、配列に基づいた COM 列挙子オブジェクトを定義します。  STL コンテナーに基づいて列挙子を実装するクラスは、この [CComEnumOnSTL](../../atl/reference/ccomenumonstl-class.md) に似ています。  このクラスを使用する一般的な手順を次説明します。  詳細については、[ATL のコレクションと列挙子](../../atl/atl-collections-and-enumerators.md)を参照してください。  
+## <a name="remarks"></a>コメント  
+ `CComEnum`配列に基づいた COM 列挙子オブジェクトを定義します。 このクラスと似ています[CComEnumOnSTL](../../atl/reference/ccomenumonstl-class.md) C++ 標準ライブラリのコンテナーに基づく列挙子を実装します。 このクラスを使用するための一般的な手順は次のとおりです。 詳細については、次を参照してください。 [ATL のコレクションと列挙子](../../atl/atl-collections-and-enumerators.md)します。  
   
-## このクラスを使用するには、次の手順に従います。  
+## <a name="to-use-this-class"></a>このクラスを使用します。  
   
--   `typedef` このクラスの特殊化。  
+- `typedef`このクラスの特殊化します。  
   
--   `CComObject`の特殊化でテンプレート引数として `typedef` を使用します。  
+-   使用して、`typedef`の特殊化のテンプレート引数として`CComObject`します。  
   
--   `CComObject` の特化型のインスタンスを作成します。  
+-   インスタンスを作成、`CComObject`特殊化します。  
   
--   [CComEnumImpl::Init](../Topic/CComEnumImpl::Init.md)を呼び出して、列挙子オブジェクトを初期化します。  
+-   呼び出して、列挙子オブジェクトを初期化[保ちます](../../atl/reference/ccomenumimpl-class.md#init)します。  
   
--   クライアントに列挙子インターフェイスを返します。  
+-   列挙子インターフェイスをクライアントに返します。  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `CComObjectRootBase`  
   
  `Base`  
@@ -84,22 +95,23 @@ class ATL_NO_VTABLE CComEnum :
   
  `CComEnum`  
   
-## 必要条件  
- **ヘッダー :** atlcom.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcom.h  
   
-## 使用例  
- 以下のコードは、列挙子オブジェクトを作成および初期化するために、再利用可能な関数を提供します。  
+## <a name="example"></a>例  
+ 次に示すコードでは、作成と、列挙子オブジェクトの初期化の再利用可能な機能を提供します。  
   
- [!code-cpp[NVC_ATL_COM#32](../../atl/codesnippet/CPP/ccomenum-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM&#32;](../../atl/codesnippet/cpp/ccomenum-class_1.h)]  
   
- このテンプレート関数は、次に示すように、コレクション インターフェイスの `_NewEnum` のプロパティを実装するために使用できます:  
+ このテンプレート関数を実装するために使用できる、`_NewEnum`次に示すように、コレクション インターフェイスのプロパティ。  
   
- [!code-cpp[NVC_ATL_COM#33](../../atl/codesnippet/CPP/ccomenum-class_2.h)]  
+ [!code-cpp[NVC_ATL_COM&#33;](../../atl/codesnippet/cpp/ccomenum-class_2.h)]  
   
- **IEnumVariant** のインターフェイスを通じて **VARIANT**、のベクターを公開するこのコードは `CComEnum` の `typedef` を作成します。  **CVariantArrayCollection** のクラスはこの型の列挙子オブジェクトを使用するに **CreateEnumerator** を単純に特化して、必要な引数を渡します。  
+ このコードを作成、`typedef`の`CComEnum`のベクターを公開する**VARIANT**s ~、 **IEnumVariant**インターフェイスです。 **CVariantArrayCollection**クラスを特化するだけ**CreateEnumerator**この型と、必要な引数のパスの列挙子オブジェクトを使用します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)   
- [CComObjectThreadModel](../Topic/CComObjectThreadModel.md)   
+ [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)   
  [CComEnumImpl クラス](../../atl/reference/ccomenumimpl-class.md)   
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)
+

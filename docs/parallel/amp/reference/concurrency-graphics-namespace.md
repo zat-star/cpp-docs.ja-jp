@@ -1,97 +1,114 @@
 ---
-title: "Concurrency::graphics 名前空間 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "amp_graphics/Concurrency::graphics"
-  - "amp_short_vectors/Concurrency::graphics"
-dev_langs: 
-  - "C++"
+title: "Concurrency::graphics Namespace |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- amp_graphics/Concurrency::graphics
+- amp_short_vectors/Concurrency::graphics
+dev_langs:
+- C++
 ms.assetid: 4529d3b1-d7da-4ffb-82bf-080915e0f23e
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# Concurrency::graphics 名前空間
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: fd29b427307e336d560a2caf42e4fc5228e8071f
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="concurrencygraphics-namespace"></a>Concurrency::graphics 名前空間
 graphics 名前空間は、グラフィックス プログラミング用に設計された型と関数を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 namespace graphics;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### 名前空間  
-  
-|名前|説明|  
-|--------|--------|  
-|[Concurrency::graphics::direct3d 名前空間](../../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md)|Direct3D の相互運用のための関数を提供します。|  
-  
-### Typedef  
+### <a name="namespaces"></a>名前空間  
   
 |名前|説明|  
-|--------|--------|  
-|`uint`|[uint\_2 クラス](../../../parallel/amp/reference/uint-2-class.md), [uint\_3 クラス](../../../parallel/amp/reference/uint-3-class.md)および [uint\_4 クラス](../../../parallel/amp/reference/uint-4-class.md)の要素型。  `typedef unsigned int uint;` として定義されます。|  
+|----------|-----------------|  
+|[Concurrency::graphics::direct3d Namespace](concurrency-graphics-direct3d-namespace.md)|Direct3D の相互運用のための関数を提供します。|  
   
-### 列挙型  
-  
-|名前|説明|  
-|--------|--------|  
-|[address\_mode 列挙型](../Topic/address_mode%20Enumeration.md)|テクスチャ サンプリングでサポートされているアドレス モードを指定します。|  
-|[filter\_mode 列挙型](../Topic/filter_mode%20Enumeration.md)|テクスチャ サンプリングでサポートされているフィルター モードを指定します。|  
-  
-### クラス  
+### <a name="typedefs"></a>Typedef  
   
 |名前|説明|  
-|--------|--------|  
-|[texture クラス](../Topic/texture%20Class.md)|テクスチャは範囲ドメイン内の accelerator\_view についてのデータ集合体です。  これは、範囲ドメインの各要素に対して 1 つずつの変数のコレクションです。  各変数は、対応する C\+\+ のプリミティブ型 \(unsigned int、int、float、double\)、またはスカラー型の norm、または unorm \(concurrency::graphics で定義\)、または concurrency::graphics で定義されている有効な short ベクター型の値を保持します。|  
-|[writeonly\_texture\_view クラス](../Topic/writeonly_texture_view%20Class.md)|writeonly\_texture\_view はテクスチャへの writeonly アクセスを提供します。|  
-|[double\_2 クラス](../Topic/double_2%20Class.md)|2 個の `double` 値の short ベクターを表します。|  
-|[double\_3 クラス](../../../parallel/amp/reference/double-3-class.md)|3 個の `double` 値の short ベクターを表します。|  
-|[double\_4 クラス](../Topic/double_4%20Class.md)|4 個の `double` 値の short ベクターを表します。|  
-|[float\_2 クラス](../../../parallel/amp/reference/float-2-class.md)|2 個の `float` 値の short ベクターを表します。|  
-|[float\_3 クラス](../../../parallel/amp/reference/float-3-class.md)|3 個の `float` 値の short ベクターを表します。|  
-|[float\_4 クラス](../../../parallel/amp/reference/float-4-class.md)|4 個の `float` 値の short ベクターを表します。|  
-|[int\_2 クラス](../Topic/int_2%20Class.md)|2 個の `int` 値の short ベクターを表します。|  
-|[int\_3 クラス](../../../parallel/amp/reference/int-3-class.md)|3 個の `int` 値の short ベクターを表します。|  
-|[int\_4 クラス](../../../parallel/amp/reference/int-4-class.md)|4 個の `int` 値の short ベクターを表します。|  
-|[norm\_2 クラス](../../../parallel/amp/reference/norm-2-class.md)|2 個の `norm` 値の short ベクターを表します。|  
-|[norm\_3 クラス](../../../parallel/amp/reference/norm-3-class.md)|3 個の `norm` 値の short ベクターを表します。|  
-|[norm\_4 クラス](../../../parallel/amp/reference/norm-4-class.md)|4 個の `norm` 値の short ベクターを表します。|  
-|[uint\_2 クラス](../../../parallel/amp/reference/uint-2-class.md)|2 個の `uint` 値の short ベクターを表します。|  
-|[uint\_3 クラス](../../../parallel/amp/reference/uint-3-class.md)|3 個の `uint` 値の short ベクターを表します。|  
-|[uint\_4 クラス](../../../parallel/amp/reference/uint-4-class.md)|4 個の `uint` 値の short ベクターを表します。|  
-|[unorm\_2 クラス](../../../parallel/amp/reference/unorm-2-class.md)|2 個の `unorm` 値の short ベクターを表します。|  
-|[unorm\_3 クラス](../../../parallel/amp/reference/unorm-3-class.md)|3 個の `unorm` 値の short ベクターを表します。|  
-|[unorm\_4 クラス](../../../parallel/amp/reference/unorm-4-class.md)|4 個の `unorm` 値の short ベクターを表します。|  
-|[sampler クラス](../../../parallel/amp/reference/sampler-class.md)|テクスチャ サンプリングに使用するサンプラー構成を表します。|  
-|[short\_vector 構造体](../../../parallel/amp/reference/short-vector-structure.md)|値の short ベクターの基本実装を提供します。|  
-|[short\_vector\_traits 構造体](../../../parallel/amp/reference/short-vector-traits-structure.md)|short ベクターの長さと型の取得を提供します。|  
-|[texture\_view クラス](../../../parallel/amp/reference/texture-view-class.md)|テクスチャへの読み取りアクセスおよび書き込みアクセスを提供します。|  
+|----------|-----------------|  
+|`uint`|要素の型を[uint_2 クラス](uint-2-class.md)、 [uint_3 クラス](uint-3-class.md)、および[uint_4 クラス](uint-4-class.md)します。 `typedef unsigned int uint;` として定義されます。|  
   
-### 関数  
+### <a name="enumerations"></a>列挙  
   
 |名前|説明|  
-|--------|--------|  
-|[copy 関数](../Topic/copy%20Function.md)|オーバーロードされます。  ソース テクスチャの内容をターゲット ホスト バッファーにコピーします。|  
-|[copy\_async 関数](../Topic/copy_async%20Function.md)|オーバーロードされます。  ソース テクスチャの内容をターゲット ホスト バッファーに非同期にコピーします。|  
+|----------|-----------------|  
+|[address_mode 列挙型](concurrency-graphics-namespace-enums.md#address_mode)します。|テクスチャ サンプリングでサポートされているアドレス モードを指定します。|  
+|[filter_mode 列挙型](concurrency-graphics-namespace-enums.md#filter_mode)|テクスチャ サンプリングでサポートされているフィルター モードを指定します。|  
   
-## 必要条件  
- **ヘッダー:** amp\_graphics.h  
+### <a name="classes"></a>クラス  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[texture クラス](texture-class.md)|テクスチャは範囲ドメイン内の accelerator_view についてのデータ集合体です。 これは、範囲ドメインの各要素に対して&1; つずつの変数のコレクションです。 各変数は、対応する C++ のプリミティブ型 (unsigned int、int、float、double)、またはスカラー型の norm、または unorm (concurrency::graphics で定義)、または concurrency::graphics で定義されている有効な short ベクター型の値を保持します。|  
+|[writeonly_texture_view クラス](writeonly-texture-view-class.md)|writeonly_texture_view はテクスチャへの writeonly アクセスを提供します。|  
+|[double_2 クラス](double-2-class.md)|2 個の `double` 値の short ベクターを表します。|  
+|[double_3 クラス](double-3-class.md)|3 個の short ベクターを表します`double`値。|  
+|[double_4 クラス](double-4-class.md)|4 個の short ベクターを表します`double`値。|  
+|[float_2 クラス](float-2-class.md)|2 個の `float` 値の short ベクターを表します。|  
+|[float_3 クラス](float-3-class.md)|3 個の short ベクターを表します`float`値。|  
+|[float_4 クラス](float-4-class.md)|4 個の short ベクターを表します`float`値。|  
+|[int_2 クラス](int-2-class.md)|2 個の `int` 値の short ベクターを表します。|  
+|[int_3 クラス](int-3-class.md)|3 個の short ベクターを表します`int`値。|  
+|[int_4 クラス](int-4-class.md)|4 個の short ベクターを表します`int`値。|  
+|[norm_2 クラス](norm-2-class.md)|2 個の `norm` 値の short ベクターを表します。|  
+|[norm_3 クラス](norm-3-class.md)|3 個の short ベクターを表します`norm`値。|  
+|[norm_4 クラス](norm-4-class.md)|4 個の short ベクターを表します`norm`値。|  
+|[uint_2 クラス](uint-2-class.md)|2 個の `uint` 値の short ベクターを表します。|  
+|[uint_3 クラス](uint-3-class.md)|3 個の short ベクターを表します`uint`値。|  
+|[uint_4 クラス](uint-4-class.md)|4 個の short ベクターを表します`uint`値。|  
+|[unorm_2 クラス](unorm-2-class.md)|2 個の `unorm` 値の short ベクターを表します。|  
+|[unorm_3 クラス](unorm-3-class.md)|3 個の short ベクターを表します`unorm`値。|  
+|[unorm_4 クラス](unorm-4-class.md)|4 個の short ベクターを表します`unorm`値。|  
+|[sampler クラス](sampler-class.md)|テクスチャ サンプリングに使用するサンプラー構成を表します。|  
+|[short_vector 構造体](short-vector-structure.md)|値の short ベクターの基本実装を提供します。|  
+|[short_vector_traits 構造体](short-vector-traits-structure.md)|short ベクターの長さと型の取得を提供します。|  
+|[texture_view クラス](texture-view-class.md)|テクスチャへの読み取りアクセスおよび書き込みアクセスを提供します。|  
+  
+### <a name="functions"></a>関数  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[copy 関数](concurrency-graphics-namespace-functions.md#copy)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーにコピーします。|  
+|[copy_async 関数](concurrency-graphics-namespace-functions.md#copy_async)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーに非同期にコピーします。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** amp_graphics.h  
   
  **名前空間:** Concurrency  
   
-## 参照  
- [Concurrency 名前空間 \(C\+\+ AMP\)](../../../parallel/amp/reference/concurrency-namespace-cpp-amp.md)
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+

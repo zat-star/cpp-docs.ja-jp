@@ -1,103 +1,124 @@
 ---
-title: "ATL_DRAWINFO 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::ATL_DRAWINFO"
-  - "ATL_DRAWINFO"
-  - "ATL.ATL_DRAWINFO"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL_DRAWINFO 構造体"
+title: "ATL_DRAWINFO 構造 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::ATL_DRAWINFO
+- ATL_DRAWINFO
+- ATL.ATL_DRAWINFO
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL_DRAWINFO structure
 ms.assetid: dd2e2aa8-e8c5-403b-b4df-35c0f6f57fb7
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# ATL_DRAWINFO 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
+ms.openlocfilehash: bc124de97acf85d6e706605afb55b0747a327ade
+ms.lasthandoff: 02/24/2017
 
-プリンター、メタファイル、または ActiveX コントロールなど、さまざまなターゲットに表示に使用される情報が含まれます。  
+---
+# <a name="atldrawinfo-structure"></a>ATL_DRAWINFO 構造体
+プリンター、メタファイル、または ActiveX コントロールなどのさまざまなターゲットへのレンダリングに使用される情報が含まれています。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+struct ATL_DRAWINFO {
+    UINT cbSize;
+    DWORD dwDrawAspect;
+    LONG lindex;
+    DVTARGETDEVICE* ptd;
+    HDC hicTargetDev;
+    HDC hdcDraw;
+    LPCRECTL prcBounds;
+    LPCRECTL prcWBounds;
+    BOOL bOptimize;
+    BOOL bZoomed;
+    BOOL bRectInHimetric;
+    SIZEL ZoomNum;
+    SIZEL ZoomDen;
+};
 ```  
   
-      struct ATL_DRAWINFO{  
-   UINT cbSize;  
-   DWORD dwDrawAspect;  
-   LONG lindex;  
-   DVTARGETDEVICE* ptd;  
-   HDC hicTargetDev;  
-   HDC hdcDraw;  
-   LPCRECTL prcBounds;  
-   LPCRECTL prcWBounds;  
-   BOOL bOptimize;  
-   BOOL bZoomed;  
-   BOOL bRectInHimetric;  
-   SIZEL ZoomNum;  
-   SIZEL ZoomDen;  
-};  
-```  
-  
-## メンバー  
+## <a name="members"></a>メンバー  
  `cbSize`  
- バイトの構造体のサイズ。  
+ バイト単位で、構造体のサイズ。  
   
  **dwDrawAspect**  
- ターゲットが表現する方法を指定します。  表示内容は、アイコン、スケーリング、表示または印刷されたドキュメントを含めることができます。  使用できる値の一覧については、[DVASPECT](http://msdn.microsoft.com/library/windows/desktop/ms690318) と [DVASPECT2](http://msdn.microsoft.com/library/windows/desktop/ms688644)を参照してください。  
+ ターゲットが表示される方法を指定します。 表現には、コンテンツ、アイコン、縮小表示または印刷したドキュメントを含めることができます。 使用可能な値の一覧は、次を参照してください。[型](http://msdn.microsoft.com/library/windows/desktop/ms690318)と[DVASPECT2](http://msdn.microsoft.com/library/windows/desktop/ms688644)します。  
   
  **lindex**  
- 描画操作の対象となる複数の部分。  この解釈は **dwDrawAspect** のメンバーの値によって異なります。  
+ 描画操作の対象は、ターゲットの部分です。 その解釈は、値によって、 **dwDrawAspect**メンバーです。  
   
  **ptd**  
- 指定された要素によって描画の最適化を有効にする [DVTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/ms686613) の構造体へのポインター。  最適化したサポートがインターフェイスを描画このメンバーをサポートすることによって新しいオブジェクトとコンテナー注意してください。  最適化されたコンテナー サポートしないこのメンバーに、古いオブジェクトは、インターフェイスを描画 **null** を必ず指定します。  
+ ポインター、 [DVTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/ms686613)指定されたアスペクトに応じて描画の最適化を使用する構造体。 新しいオブジェクトおよび最適化された描画インターフェイスをサポートするコンテナーが同様に、このメンバーをサポートすることに注意してください。 古いオブジェクトおよびコンテナーを常に最適化された描画インターフェイスをサポートしない指定**NULL**このメンバーにします。  
   
  **hicTargetDev**  
- ターゲット デバイスの情報コンテキストは、オブジェクトがデバイスのメトリックを配置できるポイントして、デバイスの機能をテストします **ptd** によって。  **ptd** が **null**場合、オブジェクトは **hicTargetDev** メンバーの値を無視します。  
+ ターゲット デバイスの情報コンテキストが指す**ptd**元となるオブジェクトはデバイス メトリックを抽出し、デバイスの機能をテストします。 場合**ptd**は**NULL**、オブジェクトの値を無視する、 **hicTargetDev**メンバーです。  
   
  **hdcDraw**  
- 描画するデバイス コンテキスト。  ウィンドウなしのオブジェクト、含むウィンドウのクライアント座標に一致する論理座標のモードをマップする **hdcDraw** のメンバーは `MM_TEXT` にあります。  また、デバイス コンテキストは、通常、`WM_PAINT` のメッセージを渡されたポインターと同じ状態になります。  
+ 描画を行うデバイス コンテキスト。 ウィンドウなしのオブジェクト、 **hdcDraw**内のメンバーは、`MM_TEXT`マッピング モードの論理座標が格納先ウィンドウのクライアント座標に一致するとします。 さらに、デバイス コンテキストが通常と同じ状態にする必要があります、`WM_PAINT`メッセージです。  
   
  **prcBounds**  
- 指定する [RECTL](http://msdn.microsoft.com/library/windows/desktop/dd162907) の構造体へのポインター オブジェクトをで **hdcDraw** で四角形を描画します。  このメンバーは、オブジェクトの配置と伸縮を制御します。  このメンバーは、埋め込み先でアクティブ ウィンドウなしのオブジェクトを描画 **null** 必要があります。  そのほかのすべての状況では、**null** 値は有効にし、`E_INVALIDARG` のエラー コードを生成する必要があります。  コンテナーがウィンドウなしのオブジェクトに**null** に以外の値を渡すと、オブジェクトは指定されたデバイス コンテキストと四角形に必要な側面を表示する必要があります。  コンテナーがウィンドウなしのオブジェクトからこれをオブジェクトの 2 番目の、非活動的な概要を表示するか、オブジェクトを印刷するように要求できます。  
+ ポインター、 [RECTL](http://msdn.microsoft.com/library/windows/desktop/dd162907)に四角形を指定する構造体**hdcDraw**オブジェクトを描画する必要があります。 このメンバーは、移動と、オブジェクトの拡大を制御します。 このメンバーを指定する必要があります**NULL**ウィンドウなしのインプレース アクティブなオブジェクトを描画します。 その他のすべての状況で**NULL**有効な値ではないと、結果である、`E_INVALIDARG`エラー コード。 コンテナーを渡す以外の場合**NULL**ウィンドウなしのオブジェクトはオブジェクトに値が、指定したデバイス コンテキストおよび四角形に要求された外観を表示する必要があります。 コンテナーは、オブジェクトの&2; 番目の非アクティブなビューをレンダリングするか、オブジェクトを印刷するウィンドウなしのオブジェクトからこれを要求できます。  
   
  **prcWBounds**  
- **hdcDraw** がメタファイルのデバイス コンテキスト \( [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の [GetDeviceCaps](http://msdn.microsoft.com/library/windows/desktop/dd144877) を参照\) である場合は、**RECTL** の構造体へ基になるメタファイルに外接する四角形を指定するポインターです。  四角形構造体は、ウィンドウの範囲とウィンドウの原点が含まれます。  これらの値は、メタファイルを描画するために役立ちます。  **prcBounds** に示す四角形は **prcWBounds** のこの四角形内に含まれています; これらは同じ座標空間にあります。  
+ 場合**hdcDraw**メタファイル デバイス コンテキストは、(を参照してください[調べるため](http://msdn.microsoft.com/library/windows/desktop/dd144877)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)])、これへのポインター、 **RECTL**基になるメタファイル内の外接する四角形を指定する構造体。 四角形の構造には、ウィンドウのエクステントとウィンドウの原点が含まれています。 これらの値はメタファイルを描画するために便利です。 示された四角形**prcBounds**内で入れ子になって**prcWBounds**領域の四角形が同じ座標空間。  
   
  **bOptimize**  
- コントロールの描画を最適化する場合は 0 以外を返します。  描画を最適化した場合、デバイス コンテキストの状態が自動的に終了するレンダリングのと同じになります。  
+ コントロールの描画の最適化、それ以外の場合 0 場合 0 以外の値。 描画を最適化すると、デバイス コンテキストの状態は自動的に回復が完了すると表示されます。  
   
  **bZoomed**  
- ターゲットにズームの要因がゼロ以外の場合は 0。  ズームの要素は **ZoomNum**に格納されます。  
+ 以外の場合は、ターゲットがある 0 のそれ以外の場合、ズームの倍率。 ズームの倍率に格納されている**ZoomNum**します。  
   
  **bRectInHimetric**  
- **prcBounds** のサイズが **HIMETRIC**にある場合、ゼロ以外の場合は 0。  
+ 0 以外の値の大きさ**prcBounds**に**HIMETRIC**、それ以外の場合に 0 です。  
   
  **ZoomNum**  
- オブジェクトを表示する四角形の幅と高さ。  ターゲットの x 軸 \(現在の範囲にオブジェクトの自然なサイズの比率\) に沿ってズームの要素は **ZoomDen.cx**の値によって **ZoomNum.cx** の値分割します。  y 軸に沿ってズーム率は同様です。  
+ 幅と、オブジェクトの描画先の四角形の高さ。 ターゲットの x 軸 (現在の大きさに対するオブジェクトの自然なサイズの比率) に倍率の値は、 **ZoomNum.cx**の値で除算した**ZoomDen.cx**します。 Y 軸方向の倍率は、同様の方法で実現されます。  
   
  **ZoomDen**  
- ターゲットの実際の幅と高さ。  
+ 実際の幅とターゲットの高さ。  
   
-## 解説  
- この構造体の一般的な用途は、ターゲット オブジェクトのレンダリング時に情報の検索です。  たとえば、[CComControlBase::OnDrawAdvanced](../Topic/CComControlBase::OnDrawAdvanced.md)のオーバーロードの中の `ATL_DRAWINFO` の値を取得できます。  
+## <a name="remarks"></a>コメント  
+ この構造体の一般的な使用方法は、ターゲット オブジェクトの表示中に情報の取得になります。 たとえばから値を取得できません`ATL_DRAWINFO`のオーバー ロード内[CComControlBase::OnDrawAdvanced](ccomcontrolbase-class.md#ondrawadvanced)します。  
   
- この構造体は、ターゲット デバイスのオブジェクトの外観を表示するために使用する適切な情報を格納します。  表示される情報は画面、プリンター、または、メタファイルへの描画に使用できます。  
+ この構造体は、対象デバイスのオブジェクトの外観を表示するために使用する関連の情報を格納します。 提供された情報は、画面、プリンター、またはメタファイルの描画に使用できます。  
   
-## 必要条件  
- **ヘッダー :** atlctl.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlctl.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [構造体](../../atl/reference/atl-structures.md)   
  [IViewObject::Draw](http://msdn.microsoft.com/library/windows/desktop/ms688655)   
- [CComControlBase::OnDrawAdvanced](../Topic/CComControlBase::OnDrawAdvanced.md)
+ [CComControlBase::OnDrawAdvanced](../../atl/reference/ccomcontrolbase-class.md#ondrawadvanced)
+
+
+
+
+
+

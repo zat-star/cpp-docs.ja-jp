@@ -1,61 +1,77 @@
 ---
-title: "CDC::GrayString 用コールバック関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Callback Function for CDC::GrayString"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コールバック関数, CDC::GrayString の"
+title: "Cdc::graystring 用コールバック関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Callback Function for CDC::GrayString
+dev_langs:
+- C++
+helpviewer_keywords:
+- callback functions, for CDC::GrayString
 ms.assetid: 5217e183-df48-426b-931b-6245022ca36f
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# CDC::GrayString 用コールバック関数
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 3ce3afefae9618420a8a97b27994c33604745677
+ms.lasthandoff: 02/24/2017
 
-*OutputFunc は* アプリケーションに用意されたコールバック関数名のプレースホルダーです。  
+---
+# <a name="callback-function-for-cdcgraystring"></a>CDC::GrayString 用コールバック関数
+*OutputFunc*アプリケーションによって提供されるコールバック関数名のプレース ホルダーです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      BOOL CALLBACK EXPORT OutputFunc(   
-   HDC hDC,   
-   LPARAM lpData,   
-   int nCount    
-);  
+BOOL CALLBACK EXPORT OutputFunc(
+    HDC hDC,  
+    LPARAM lpData,  
+    int nCount);
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hDC`  
- `GrayString`に `nWidth` と `nHeight` で指定された少なくとも幅と高さのビットマップでメモリ デバイス コンテキストを指定します。  
+ 少なくともビットマップ メモリ デバイス コンテキストを識別する幅と高さで指定された`nWidth`と`nHeight`に`GrayString`します。  
   
  `lpData`  
- 描画される文字列へのポインター。  
+ 描画される文字列を指します。  
   
  `nCount`  
- 文字数を出力するように指定します。  
+ 出力する文字数を指定します。  
   
-## 戻り値  
- コールバック関数は、成功を示す **TRUE** ;である必要があります。それ以外の場合は **FALSE**です。  
+## <a name="return-value"></a>戻り値  
+ コールバック関数の戻り値である必要があります**TRUE**成功した場合は以外の場合は**FALSE**します。  
   
-## 解説  
- コールバック関数 \(*OutputFunc*\) は、座標 \(0,0\) に対してではなく、イメージを描画必要があります \(*x*が *y\)* 。  
+## <a name="remarks"></a>コメント  
+ コールバック関数 (*OutputFunc*) 座標 (0,&0;) を基準としたイメージを描画する必要がなく (*x*、 *y*)。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CDC::GrayString](../Topic/CDC::GrayString.md)
+## <a name="see-also"></a>関連項目  
+ [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [Cdc::graystring](../../mfc/reference/cdc-class.md#graystring)
+
+

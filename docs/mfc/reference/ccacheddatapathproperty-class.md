@@ -1,87 +1,136 @@
 ---
-title: "CCachedDataPathProperty クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CCachedDataPathProperty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], 非同期"
-  - "非同期コントロール [C++]"
-  - "CCachedDataPathProperty クラス"
-  - "メモリ ファイル [C++]"
-  - "OLE コントロール [C++], 非同期"
+title: "プロパティ クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CCachedDataPathProperty
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX controls [C++], asynchronous
+- CCachedDataPathProperty class
+- OLE controls [C++], asynchronous
+- asynchronous controls [C++]
+- memory files [C++]
 ms.assetid: 0d81356b-4fe5-43f6-aed2-2eb5a5485706
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CCachedDataPathProperty クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 6e3f54e6429456be24cbe18471abd1705bbe0034
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="ccacheddatapathproperty-class"></a>プロパティ クラス
 非同期で転送し、メモリ ファイルにキャッシュする OLE コントロール プロパティを実装します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CCachedDataPathProperty : public CDataPathProperty  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CCachedDataPathProperty::CCachedDataPathProperty](../Topic/CCachedDataPathProperty::CCachedDataPathProperty.md)|`CCachedDataPathProperty` オブジェクトを構築します。|  
-  
-### パブリック データ メンバー  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CCachedDataPathProperty::m\_Cache](../Topic/CCachedDataPathProperty::m_Cache.md)|データをキャッシュする`CMemFile` のオブジェクト。|  
+|----------|-----------------|  
+|[CCachedDataPathProperty::CCachedDataPathProperty](#ccacheddatapathproperty)|`CCachedDataPathProperty` オブジェクトを構築します。|  
   
-## 解説  
- メモリ ファイルをディスクではなく RAM に格納され、高速一時コピーに便利です。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
- **CAysncMonikerFile** と `CDataPathProperty`とともに、`CCachedDataPathProperty` は、OLE コントロールの非同期モニカーを使用して機能を提供します。  `CCachedDataPathProperty` のオブジェクトによって、URL からデータを非同期的にシフトし、ソース ファイルを、`m_Cache` のパブリック変数によってメモリ ファイルに格納されます。  すべてのデータはメモリのファイルに格納され、通知のかを確認し、応答するには [OnDataAvailable](../Topic/CAsyncMonikerFile::OnDataAvailable.md) をオーバーライドする必要はありません。  より多くのデータを受信したとき、それ自体を再描画する必要があります。たとえば、大きな .gif ファイルを転送、コントロールに通知する場合は、通知をオーバーライドする `OnDataAvailable`。  
+|名前|説明|  
+|----------|-----------------|  
+|[CCachedDataPathProperty::m_Cache](#m_cache)|`CMemFile`データをキャッシュするオブジェクト。|  
   
- クラス `CCachedDataPathProperty` は `CDataPathProperty`から派生します。  
+## <a name="remarks"></a>コメント  
+ メモリ ファイルでは、ディスクではなく、RAM 内に格納され、一時的な高速の転送に適しています。  
   
- インターネット アプリケーションで非同期モニカーと ActiveX コントロールを使用する方法の詳細については、次のトピックを参照:  
+ と共に**CAysncMonikerFile**と`CDataPathProperty`、 `CCachedDataPathProperty` OLE コントロールで非同期モニカーを使用するための機能を提供します。 `CCachedDataPathProperty`オブジェクトの場合、URL またはファイルのソースからデータを非同期的に転送を使用して、メモリ ファイルに格納できる、`m_Cache`パブリック変数です。 メモリ ファイル内のすべてのデータが格納されているし、オーバーライドする必要はありません[OnDataAvailable](../../mfc/reference/casyncmonikerfile-class.md#ondataavailable)通知を監視し、応答するのでない限りです。 たとえば、次のように、大規模なを転送する場合。GIF ファイルおよび自体が再描画するより多くのデータが到着したコントロールに通知するオーバーライド`OnDataAvailable`通知します。  
   
--   [インターネットの対処方法: &#91;ActiveX コントロール&#93;](../../mfc/activex-controls-on-the-internet.md)  
+ クラス`CCachedDataPathProperty`から派生した`CDataPathProperty`します。  
   
--   [インターネットの対処方法: 非同期モニカー](../../mfc/asynchronous-monikers-on-the-internet.md)  
+ インターネット アプリケーションで非同期モニカーと ActiveX コントロールを使用する方法の詳細については、次のトピックを参照してください。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+- [インターネット最初のステップ: ActiveX コントロール](../../mfc/activex-controls-on-the-internet.md)  
+  
+- [インターネット最初のステップ: 非同期モニカー](../../mfc/asynchronous-monikers-on-the-internet.md)  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CFile](../../mfc/reference/cfile-class.md)  
   
- [COleStreamFile](../Topic/COleStreamFile%20Class.md)  
+ [関数](../../mfc/reference/colestreamfile-class.md)  
   
- [CMonikerFile](../Topic/CMonikerFile%20Class.md)  
+ [CMonikerFile](../../mfc/reference/cmonikerfile-class.md)  
   
  [CAsyncMonikerFile](../../mfc/reference/casyncmonikerfile-class.md)  
   
- [CDataPathProperty](../../mfc/reference/cdatapathproperty-class.md)  
+ [関数](../../mfc/reference/cdatapathproperty-class.md)  
   
  `CCachedDataPathProperty`  
   
-## 必要条件  
- **Header:** afxctl.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxctl.h  
   
-## 参照  
- [CDataPathProperty クラス](../../mfc/reference/cdatapathproperty-class.md)   
+##  <a name="a-nameccacheddatapathpropertya--ccacheddatapathpropertyccacheddatapathproperty"></a><a name="ccacheddatapathproperty"></a>CCachedDataPathProperty::CCachedDataPathProperty  
+ `CCachedDataPathProperty` オブジェクトを構築します。  
+  
+```  
+CCachedDataPathProperty(COleControl* pControl = NULL);
+
+ 
+CCachedDataPathProperty(
+    LPCTSTR lpszPath,  
+    COleControl* pControl = NULL);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pControl`  
+ これに関連する ActiveX コントロール オブジェクトへのポインター`CCachedDataPathProperty`オブジェクトです。  
+  
+ `lpszPath`  
+ 可能性のある絶対または相対パス、パスは、プロパティの実際の絶対位置を参照する非同期モニカーの作成に使用します。 `CCachedDataPathProperty`Url はファイル名を使用します。 場合は、`CCachedDataPathProperty`ファイルのオブジェクト、パスに file:// 先頭に追加します。  
+  
+### <a name="remarks"></a>コメント  
+ `COleControl`によって指されるオブジェクト`pControl`によって使用される[開く](../../mfc/reference/cdatapathproperty-class.md#open)派生クラスによって取得します。 場合`pControl`は**NULL**で使用されるコントロール**開く**で設定する必要があります[SetControl](../../mfc/reference/cdatapathproperty-class.md#setcontrol)します。 場合`lpszPath`は**NULL**を使用してパスを渡すことができます**開く**を設定または[SetPath](../../mfc/reference/cdatapathproperty-class.md#setpath)します。  
+  
+##  <a name="a-namemcachea--ccacheddatapathpropertymcache"></a><a name="m_cache"></a>CCachedDataPathProperty::m_Cache  
+ データがキャッシュされる、メモリ ファイルのクラス名が含まれています。  
+  
+```  
+CMemFile m_Cache;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ メモリ ファイルは、ディスクではなく RAM に格納されます。  
+  
+## <a name="see-also"></a>関連項目  
+ [関数のクラス](../../mfc/reference/cdatapathproperty-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
- [CDataPathProperty クラス](../../mfc/reference/cdatapathproperty-class.md)
+ [関数のクラス](../../mfc/reference/cdatapathproperty-class.md)
+

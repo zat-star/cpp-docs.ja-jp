@@ -1,79 +1,127 @@
 ---
-title: "CListView クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CListView"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CListView クラス"
-  - "ビュー, およびコモン コントロール"
+title: "CListView クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CListView
+dev_langs:
+- C++
+helpviewer_keywords:
+- views, and common controls
+- CListView class
 ms.assetid: 7626bdb2-a1b8-4eab-b631-6743710a8432
 caps.latest.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 26
----
-# CListView クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: ebf6c93aa6d88d1942af4ecb9e3373fa57d84b65
+ms.lasthandoff: 02/24/2017
 
-リスト コントロールと [CListCtrl](../Topic/CListCtrl%20Class.md)のリスト コントロールの機能をカプセル化する MFC のドキュメント ビュー アーキテクチャを使用するクラスの使用を単純化します。  
+---
+# <a name="clistview-class"></a>CListView クラス
+リスト コントロールとの使用を簡略化[CListCtrl](../../mfc/reference/clistctrl-class.md)MFC のドキュメント/ビュー アーキテクチャのリスト コントロールの機能をカプセル化するクラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CListView : public CCtrlView  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CListView::CListView](../Topic/CListView::CListView.md)|`CListView` オブジェクトを構築します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CListView::GetListCtrl](../Topic/CListView::GetListCtrl.md)|ビューに関連付けられたコントロールの一覧を返します。|  
+|----------|-----------------|  
+|[CListView::CListView](#clistview)|`CListView` オブジェクトを構築します。|  
   
-### プロテクト メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CListView::RemoveImageList](../Topic/CListView::RemoveImageList.md)|リスト ビューの指定されたイメージ リストを削除します。|  
+|----------|-----------------|  
+|[CListView::GetListCtrl](#getlistctrl)|ビューに関連付けられているリスト コントロールを返します。|  
   
-## 解説  
- このアーキテクチャの詳細には、そこで引用された [&#91;CW2CT&#93;](../Topic/CView%20Class.md) のクラスと相互参照については、" "を参照してください。  
+### <a name="protected-methods"></a>プロテクト メソッド  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[CListView::RemoveImageList](#removeimagelist)|リスト ビューから、指定されたイメージのリストを削除します。|  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+## <a name="remarks"></a>コメント  
+ このアーキテクチャの詳細については、の概要を参照してください、 [CView](../../mfc/reference/cview-class.md)クラスとクロス リファレンスがあります。  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CView](../Topic/CView%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
+  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
+  
+ [CView](../../mfc/reference/cview-class.md)  
   
  [CCtrlView](../../mfc/reference/cctrlview-class.md)  
   
  `CListView`  
   
-## 必要条件  
- **Header:** afxcview.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxcview.h  
   
-## 参照  
- [MFC ROWLIST サンプル](../../top/visual-cpp-samples.md)   
+##  <a name="a-nameclistviewa--clistviewclistview"></a><a name="clistview"></a>CListView::CListView  
+ `CListView` オブジェクトを構築します。  
+  
+```  
+CListView();
+```  
+  
+##  <a name="a-namegetlistctrla--clistviewgetlistctrl"></a><a name="getlistctrl"></a>CListView::GetListCtrl  
+ このメンバー関数を呼び出して、ビューに関連付けられたリスト コントロールへの参照を取得します。  
+  
+```  
+CListCtrl& GetListCtrl() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ ビューに関連付けられているリスト コントロールへの参照。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_MFCListView&#7;](../../atl/reference/codesnippet/cpp/clistview-class_1.cpp)]  
+  
+##  <a name="a-nameremoveimagelista--clistviewremoveimagelist"></a><a name="removeimagelist"></a>CListView::RemoveImageList  
+ リスト ビューから、指定されたイメージのリストを削除します。  
+  
+```  
+void RemoveImageList(int nImageList);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `nImageList`  
+ 削除するイメージの&0; から始まるインデックス。  
+  
+## <a name="see-also"></a>関連項目  
+ [MFC サンプル rowlist で](../../visual-cpp-samples.md)   
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)
+

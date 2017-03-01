@@ -1,77 +1,103 @@
 ---
-title: "CAutoPtrList クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::CAutoPtrList"
-  - "CAutoPtrList"
-  - "ATL.CAutoPtrList"
-  - "ATL::CAutoPtrList<E>"
-  - "ATL.CAutoPtrList<E>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAutoPtrList クラス"
+title: "CAutoPtrList クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::CAutoPtrList
+- CAutoPtrList
+- ATL.CAutoPtrList
+- ATL::CAutoPtrList<E>
+- ATL.CAutoPtrList<E>
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAutoPtrList class
 ms.assetid: 11de4aca-28b0-4ff2-a74a-cb602312ffbd
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CAutoPtrList クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: b39c3c08cf2970036bf8690c46a4f3518a7a55e1
+ms.lasthandoff: 02/24/2017
 
-このクラスには、スマート ポインターのリストを構築するときに役立つメソッドが用意されています。  
+---
+# <a name="cautoptrlist-class"></a>CAutoPtrList クラス
+このクラスは、スマート ポインターのリストを構築するときに役立つメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<typename E>  
+class CAutoPtrList : 
+   public CAtlList<ATL::CAutoPtr<E>, CAutoPtrElementTraits<E>>
 ```  
   
-      template<  
-typename E  
->  
-class CAutoPtrList : public CAtlList<  
-ATL::CAutoPtr< E>,  
-CAutoPtrElementTraits< E>  
->  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `E`  
  ポインター型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CAutoPtrList::CAutoPtrList](../Topic/CAutoPtrList::CAutoPtrList.md)|コンストラクターです。|  
+|----------|-----------------|  
+|[CAutoPtrList::CAutoPtrList](#cautoptrlist)|コンストラクターです。|  
   
-## 解説  
- このクラスは、コンストラクターを提供し、[CAtlList](../Topic/CAtlList%20Class.md) と [CAutoPtrElementTraits](../Topic/CAutoPtrElementTraits%20Class.md) からスマート ポインターを格納するリスト オブジェクトの作成を支援するメソッドを取得します。  クラス [CAutoPtrArray](../../atl/reference/cautoptrarray-class.md) は、配列オブジェクトに似た機能を提供します。  
+## <a name="remarks"></a>コメント  
+ このクラスは、コンス トラクターを提供し、メソッドからの派生元[CAtlList](../../atl/reference/catllist-class.md)と[CAutoPtrElementTraits](../../atl/reference/cautoptrelementtraits-class.md)スマート ポインターを格納するリスト オブジェクトの作成を支援するためにします。 クラス[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)配列オブジェクトの同様の機能を提供します。  
   
- 詳細については、[ATL のコレクション クラス](../../atl/atl-collection-classes.md)を参照してください。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
   
-## 継承階層  
- [CAtlList](../Topic/CAtlList%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CAtlList](../../atl/reference/catllist-class.md)  
   
  `CAutoPtrList`  
   
-## 必要条件  
- **Header:** atlcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcoll.h  
   
-## 参照  
- [CAtlList クラス](../Topic/CAtlList%20Class.md)   
- [CAutoPtrElementTraits クラス](../Topic/CAutoPtrElementTraits%20Class.md)   
+##  <a name="a-namecautoptrlista--cautoptrlistcautoptrlist"></a><a name="cautoptrlist"></a>CAutoPtrList::CAutoPtrList  
+ コンストラクターです。  
+  
+```
+CAutoPtrList(UINT nBlockSize = 10) throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `nBlockSize`  
+ ブロック サイズを既定値は 10 です。  
+  
+### <a name="remarks"></a>コメント  
+ ブロック サイズは、新しい要素が必要なときに割り当てられたメモリの量の測定値です。 ブロック サイズの増加はメモリ割り当てルーチンの呼び出しを減らすためより多くのリソースを使用します。  
+  
+## <a name="see-also"></a>関連項目  
+ [CAtlList クラス](../../atl/reference/catllist-class.md)   
+ [CAutoPtrElementTraits クラス](../../atl/reference/cautoptrelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
+

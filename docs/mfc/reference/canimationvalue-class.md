@@ -1,87 +1,260 @@
 ---
-title: "CAnimationValue クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "afxanimationcontroller/CAnimationValue"
-  - "CAnimationValue"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAnimationValue クラス"
+title: "CAnimationValue クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- afxanimationcontroller/CAnimationValue
+- CAnimationValue
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAnimationValue class
 ms.assetid: 78c5ae19-ede5-4f20-bfbe-68b467b603c2
 caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# CAnimationValue クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 083c8be9a0d9d518d5353b6d02c0050944312805
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="canimationvalue-class"></a>CAnimationValue クラス
 1 つの値を持つアニメーション オブジェクトの機能を実装します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CAnimationValue : public CAnimationBaseObject;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CAnimationValue::CAnimationValue](../Topic/CAnimationValue::CAnimationValue.md)|オーバーロードされます。  CAnimationValue オブジェクトを構築します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CAnimationValue::AddTransition](../Topic/CAnimationValue::AddTransition.md)|値に適用する遷移を追加します。|  
-|[CAnimationValue::GetValue](../Topic/CAnimationValue::GetValue.md)|オーバーロードされます。  現在の値を取得します。|  
-|[CAnimationValue::GetVariable](../Topic/CAnimationValue::GetVariable.md)|カプセル化されたアニメーション変数にアクセスできるようにします。|  
-|[CAnimationValue::SetDefaultValue](../Topic/CAnimationValue::SetDefaultValue.md)|既定値を設定します。|  
+|----------|-----------------|  
+|[CAnimationValue::CAnimationValue](#canimationvalue)|オーバーロードされます。 CAnimationValue オブジェクトを構築します。|  
   
-### プロテクト メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CAnimationValue::GetAnimationVariableList](../Topic/CAnimationValue::GetAnimationVariableList.md)|カプセル化されたアニメーション変数をリストに格納します。  \([CAnimationBaseObject::GetAnimationVariableList](../Topic/CAnimationBaseObject::GetAnimationVariableList.md) をオーバーライドします\)。|  
+|----------|-----------------|  
+|[CAnimationValue::AddTransition](#addtransition)|値に適用するへの遷移を追加します。|  
+|[CAnimationValue::GetValue](#getvalue)|オーバーロードされます。 現在の値を取得します。|  
+|[CAnimationValue::GetVariable](#getvariable)|カプセル化されたアニメーション変数へのアクセスを提供します。|  
+|[CAnimationValue::SetDefaultValue](#setdefaultvalue)|既定値を設定します。|  
   
-### パブリック演算子  
-  
-|名前|説明|  
-|--------|--------|  
-|[CAnimationValue::operator DOUBLE](../Topic/CAnimationValue::operator%20DOUBLE.md)|CAnimationValue と DOUBLE の間で変換を行えるようにします。|  
-|[CAnimationValue::operator INT32](../Topic/CAnimationValue::operator%20INT32.md)|CAnimationValue と INT32 の間で変換を行えるようにします。|  
-|[CAnimationValue::operator\=](../Topic/CAnimationValue::operator=.md)|オーバーロードされます。  CAnimationValue に INT32 値を割り当てます。|  
-  
-### プロテクト データ メンバー  
+### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CAnimationValue::m\_value](../Topic/CAnimationValue::m_value.md)|アニメーションの値を表すカプセル化されたアニメーション変数。|  
+|----------|-----------------|  
+|[CAnimationValue::GetAnimationVariableList](#getanimationvariablelist)|一覧にカプセル化されたアニメーション変数を追加します。 (上書き[CAnimationBaseObject::GetAnimationVariableList](../../mfc/reference/canimationbaseobject-class.md#getanimationvariablelist))。|  
   
-## 解説  
- CAnimationValue クラスは、1 つの CAnimationVariable オブジェクトをカプセル化し、アニメーション化される単一の値をアプリケーションで表すことができます。  このクラスは、たとえば、アニメーション化される透明度 \(フェード効果\) や角度 \(オブジェクトを回転する場合\) など、アニメーション化される単一の値に依存するアニメーションを作成する必要がある場合に使用できます。  このクラスをアプリケーションで使用するには、このクラスのオブジェクトをインスタンス化し、CAnimationController::AddAnimationObject を使用してアニメーション コントローラーに追加し、値に適用する遷移ごとに AddTransition を呼び出します。  
+### <a name="public-operators"></a>パブリック演算子  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+|名前|説明|  
+|----------|-----------------|  
+|[CAnimationValue::operator 倍](#operator_double)|CAnimationValue と DOUBLE との間の変換を提供します。|  
+|[CAnimationValue::operator INT32](#operator_int32)|CAnimationValue と INT32 との間の変換を提供します。|  
+|[CAnimationValue::operator =](#operator_eq)|オーバーロードされます。 CAnimationValue に INT32 値を割り当てます。|  
+  
+### <a name="protected-data-members"></a>プロテクト データ メンバー  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CAnimationValue::m_value](#m_value)|アニメーションの値を表すアニメーションをカプセル化された変数です。|  
+  
+## <a name="remarks"></a>コメント  
+ CAnimationValue クラスは、1 つの CAnimationVariable オブジェクトをカプセル化して、1 つのアニメーション化された値をアプリケーションで表すことができます。 アニメーションの透明度 (フェード効果) の角度 (オブジェクトの回転) をこのクラスを使用するなど、それ以外の場合、1 つのアニメーション化された値によってアニメーションを作成する必要がある場合。 アプリケーションでこのクラスを使用するには、このクラスのオブジェクトをインスタンス化、CAnimationController::AddAnimationObject を使用してアニメーション コント ローラーに追加し、説明しました値に適用される各移行につき AddTransition を呼び出します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CAnimationBaseObject](../../mfc/reference/canimationbaseobject-class.md)  
   
- [CAnimationValue](../../mfc/reference/canimationvalue-class.md)  
+ `CAnimationValue`
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-## 参照  
- [クラス](../Topic/MFC%20Classes.md)
+##  <a name="a-nameaddtransitiona--canimationvalueaddtransition"></a><a name="addtransition"></a>CAnimationValue::AddTransition  
+ 値に適用するへの遷移を追加します。  
+  
+```  
+void AddTransition(CBaseTransition* pTransition);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pTransition`  
+ 遷移のオブジェクトへのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ この関数では、切り替え効果をアニメーション変数に適用する遷移の内部リストに追加します。 切り替え効果を追加すると、いないすぐに適用されるとなり内部リストに格納されています。 遷移 (特定の値のストーリー ボードへの追加) 適用 CAnimationController::AnimateGroup を呼び出すとします。  
+  
+##  <a name="a-namecanimationvaluea--canimationvaluecanimationvalue"></a><a name="canimationvalue"></a>CAnimationValue::CAnimationValue  
+ CAnimationValue オブジェクトを構築します。  
+  
+```  
+CAnimationValue();
+
+ 
+CAnimationValue(
+    DOUBLE dblDefaultValue,  
+    UINT32 nGroupID,  
+    UINT32 nObjectID = (UINT32)-1,  
+    DWORD dwUserData = 0);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `dblDefaultValue`  
+ 既定値を指定します。  
+  
+ `nGroupID`  
+ グループ ID を指定します  
+  
+ `nObjectID`  
+ オブジェクト ID を指定します  
+  
+ `dwUserData`  
+ ユーザー定義データを指定します。  
+  
+### <a name="remarks"></a>コメント  
+ 既定のプロパティを持つ CAnimationValue オブジェクトを作成します。 グループ ID とオブジェクト ID の既定値は 0 に設定されます。  
+  
+##  <a name="a-namegetanimationvariablelista--canimationvaluegetanimationvariablelist"></a><a name="getanimationvariablelist"></a>CAnimationValue::GetAnimationVariableList  
+ 一覧にカプセル化されたアニメーション変数を追加します。  
+  
+```  
+virtual void GetAnimationVariableList(
+    CList<CAnimationVariable*, 
+    CAnimationVariable*>& lst);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `lst`  
+ 関数から返されたときに、アニメーションの値を表す CAnimationVariable へのポインターを格納します。  
+  
+##  <a name="a-namegetvaluea--canimationvaluegetvalue"></a><a name="getvalue"></a>CAnimationValue::GetValue  
+ 現在の値を取得します。  
+  
+```  
+BOOL GetValue(DOUBLE& dblValue);  
+BOOL GetValue(INT32& nValue);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `dblValue`  
+ 出力します。 関数が返す場合、アニメーション変数の現在の値が含まれています。  
+  
+ `nValue`  
+ 出力します。 関数が返す場合、アニメーション変数の現在の値が含まれています。  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の値が正常に取得された場合は TRUE。それ以外の場合は FALSE。  
+  
+### <a name="remarks"></a>コメント  
+ 現在の値を取得するには、この関数を呼び出します。 カプセル化された COM オブジェクトを実装し、呼び出しが失敗すると場合、このメソッドは SetDefaultValue とまたはコンス トラクターで設定されている既定値を返します。  
+  
+##  <a name="a-namegetvariablea--canimationvaluegetvariable"></a><a name="getvariable"></a>CAnimationValue::GetVariable  
+ カプセル化されたアニメーション変数へのアクセスを提供します。  
+  
+```  
+CAnimationVariable& GetVariable();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ カプセル化されたアニメーション変数への参照。  
+  
+### <a name="remarks"></a>コメント  
+ カプセル化されたアニメーション変数にアクセスするのにには、このメソッドを使用します。 CAnimationVariable からは、ポインターが NULL でもかまいませんアニメーション変数が作成されていない場合、IUIAnimationVariable の基になるオブジェクトへのアクセスを取得します。  
+  
+##  <a name="a-namemvaluea--canimationvaluemvalue"></a><a name="m_value"></a>CAnimationValue::m_value  
+ アニメーションの値を表すアニメーションをカプセル化された変数です。  
+  
+```  
+CAnimationVariable m_value;  
+```  
+  
+##  <a name="a-nameoperatordoublea--canimationvalueoperator-double"></a><a name="operator_double"></a>CAnimationValue::operator 倍  
+ CAnimationValue と DOUBLE との間の変換を提供します。  
+  
+```  
+operator DOUBLE();
+```   
+  
+### <a name="return-value"></a>戻り値  
+ アニメーションの値の現在の値。  
+  
+### <a name="remarks"></a>コメント  
+ CAnimationValue と DOUBLE との間の変換を提供します。 このメソッドは、GetValue の呼び出しに、内部的に、エラーをチェックしません。 GetValue が失敗した場合、返される値は、コンス トラクター、または SetDefaultValue で設定した既定値が含まれます。  
+  
+##  <a name="a-nameoperatorint32a--canimationvalueoperator-int32"></a><a name="operator_int32"></a>CAnimationValue::operator INT32  
+ CAnimationValue と INT32 との間の変換を提供します。  
+  
+```  
+operator INT32();
+```   
+  
+### <a name="return-value"></a>戻り値  
+ アニメーションの値を整数としての現在の値。  
+  
+### <a name="remarks"></a>コメント  
+ CAnimationValue と INT32 との間の変換を提供します。 このメソッドは、GetValue の呼び出しに、内部的に、エラーをチェックしません。 GetValue が失敗した場合、返される値は、コンス トラクター、または SetDefaultValue で設定した既定値が含まれます。  
+  
+##  <a name="a-nameoperatoreqa--canimationvalueoperator"></a><a name="operator_eq"></a>CAnimationValue::operator =  
+ CAnimationValue に double 型の値を割り当てます。  
+  
+```  
+void operator=(DOUBLE dblVal);  
+void operator=(INT32 nVal);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `dblVal`  
+ アニメーションの値に割り当てられる値を指定します。  
+  
+ `nVal`  
+ アニメーションの値に割り当てられる値を指定します。  
+  
+### <a name="remarks"></a>コメント  
+ CAnimationValue に double 型の値を割り当てます。 この値は、カプセル化されたアニメーション変数の既定値として設定されます。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
+  
+##  <a name="a-namesetdefaultvaluea--canimationvaluesetdefaultvalue"></a><a name="setdefaultvalue"></a>CAnimationValue::SetDefaultValue  
+ 既定値を設定します。  
+  
+```  
+void SetDefaultValue(DOUBLE dblDefaultValue);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `dblDefaultValue`  
+ 既定値を指定します。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドを使用すると、既定値を設定できます。 既定値は、アニメーションが開始されていない、基になる COM オブジェクトが作成されていないときに、アプリケーションに返されます。 CAnimationVarible にカプセル化された基になる COM オブジェクトが既に作成されて、このメソッドで再作成、したがってする EnableValueChanged/EnableIntegerValueChanged メソッドを再度呼び出す必要があります。  
+  
+## <a name="see-also"></a>関連項目  
+ [クラス](../../mfc/reference/mfc-classes.md)
+

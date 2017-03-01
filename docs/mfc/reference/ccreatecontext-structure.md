@@ -1,79 +1,97 @@
 ---
-title: "CCreateContext 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CCreateContext"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CCreateContext 構造体"
+title: "CCreateContext 構造 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CCreateContext
+dev_langs:
+- C++
+helpviewer_keywords:
+- CCreateContext structure
 ms.assetid: 337a0e44-d910-49a8-afc0-c7207666a9dc
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CCreateContext 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 231f2e44e085d27a2b2cbf289adf7b0521471b0e
+ms.lasthandoff: 02/24/2017
 
-フレームワークは `CCreateContext` 構造体を使って、ドキュメントに関連付けるフレーム ウィンドウとビューを作成します。  
+---
+# <a name="ccreatecontext-structure"></a>CCreateContext 構造体
+フレームワークを使用して、`CCreateContext`フレーム ウィンドウとドキュメントに関連付けられているビューの作成時に構造化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 struct CCreateContext  
 ```  
   
-## 解説  
- `CCreateContext` は構造体で、基本クラスはありません。  
+## <a name="remarks"></a>コメント  
+ `CCreateContext`構造体は、基本クラスではありません。  
   
- ウィンドウを作成すると、この構造体の値によって、ドキュメントのコンポーネントをそのデータのビューに接続するために使用する情報が指定されます。  `CCreateContext` 構造体は、作成処理を部分的にオーバーライドするとき以外は必要ありません。  
+ ウィンドウを作成するときに、この構造体の値は、そのデータのビューに、ドキュメントのコンポーネントを接続するための情報を提供します。 使用する必要があるだけ`CCreateContext`作成プロセスの一部をオーバーライドする場合。  
   
- `CCreateContext` 構造体の内容は、ドキュメント、フレーム ウィンドウ、ビュー、ドキュメント テンプレートのポインターです。  作成するビューのタイプを示す `CRuntimeClass` のポインターもあります。  実行時のクラスの情報と現在のドキュメントへのポインターを使って、動的に新しいビューを作成できます。  次の表に、`CCreateContext` 構造体の各メンバーがいつ、どのように使われるかを示します。  
+ A`CCreateContext`構造体には、ドキュメント、フレーム ウィンドウ、ビュー、およびドキュメント テンプレートへのポインターが含まれます。 ポインターも含まれています、`CRuntimeClass`を作成するビューの種類を識別します。 ランタイム クラス情報と現在のドキュメントのポインターは、新しいビューを動的に作成に使用されます。 次の表を提案する方法とタイミング各`CCreateContext`メンバーを使用する場合があります。  
   
-|メンバー|型|用途|  
-|----------|-------|--------|  
-|`m_pNewViewClass`|`CRuntimeClass*`|作成する新しいビューの `CRuntimeClass`|  
-|`m_pCurrentDoc`|`CDocument*`|新しいビューに関連付ける既存のドキュメント|  
-|`m_pNewDocTemplate`|`CDocTemplate*`|新しい MDI フレーム ウィンドウの作成時に関連付けるドキュメント テンプレート|  
-|`m_pLastView`|`CView*`|分割ウィンドウのビュー、またはドキュメントの別のビューを作成するときに、追加されるビューの原型となるビュー|  
-|`m_pCurrentFrame`|`CFrameWnd*`|ドキュメントの別のフレーム ウィンドウを作成するときに、追加されるフレーム ウィンドウの原型となるフレーム ウィンドウ|  
+|メンバー|型|何が|  
+|------------|----------|--------------------|  
+|`m_pNewViewClass`|`CRuntimeClass*`|`CRuntimeClass`作成する新しいビューです。|  
+|`m_pCurrentDoc`|`CDocument*`|新しいビューに関連付ける既存のドキュメントです。|  
+|`m_pNewDocTemplate`|`CDocTemplate*`|新しい MDI フレーム ウィンドウの作成時に関連付けられているドキュメント テンプレートです。|  
+|`m_pLastView`|`CView*`|その他のビューは、モデル化、分割ウィンドウのビューの作成またはドキュメント上の&2; つ目のビューの作成と同様に、元のビュー|  
+|`m_pCurrentFrame`|`CFrameWnd*`|その他のフレーム ウィンドウは、モデル化、2 つ目のフレーム ウィンドウにドキュメントの作成と同様に、フレーム ウィンドウ。|  
   
- ドキュメント テンプレートによってドキュメントとその関連コンポーネントを作成すると、`CCreateContext` 構造体に格納されている情報が有効になります。  したがって、存在しないドキュメントからビューが作成されることはありません。  
+ 格納されている情報を検証、ドキュメント テンプレートは、ドキュメントとその関連コンポーネントを作成するとき、`CCreateContext`構造体。 たとえば、存在しないドキュメントのビューを作成できません必要があります。  
   
 > [!NOTE]
->  `CCreateContext` のすべてのポインターはオプションであり、指定されていない場合や未知の場合には `NULL` になります。  
+>  すべてのポインターの`CCreateContext`は省略可能であり`NULL`指定されていないか不明な場合です。  
   
- `CCreateContext` 構造体は、"参照" に挙げたメンバー関数で使用されます。これらの関数をオーバーライドするときの詳細については、それぞれの関数の説明を参照してください。  
+ `CCreateContext`下に表示するメンバー関数によって使用される「関連項目」 これらをオーバーライドする場合に、特定の情報をこれらの関数の説明を参照してください。  
   
- 一般的なガイドラインは次のとおりです。  
+ 次に、いくつかの一般的なガイドラインを示します。  
   
--   `CWnd::Create`、`CFrameWnd::Create`、`CFrameWnd::LoadFrame` などのウィンドウ作成関数に引数として渡すと、作成コンテキストは新しいウィンドウの接続先を示します。  大部分のウィンドウでは構造体全体の指定を省略できます。この場合は、`NULL` ポインターを渡します。  
+-   ウィンドウの作成の引数として渡されるときに`CWnd::Create`、`CFrameWnd::Create`と`CFrameWnd::LoadFrame`作成のコンテキストでは、どのような新しいウィンドウへの接続を指定します。 ほとんどのウィンドウ全体の構造は省略可能、および`NULL`ポインターを渡すことができます。  
   
--   `CFrameWnd::OnCreateClient` のようなオーバライドできるメンバー関数では、`CCreateContext` 引数を省略できます。  
+-   オーバーライド可能なメンバー関数の場合など、 `CFrameWnd::OnCreateClient`、`CCreateContext`引数は省略可能です。  
   
--   ビューを作成するメンバー関数に対して、ビューの作成に必要な情報を与えてください。  たとえば、分割ウィンドウの最初のビューでは、ビューのクラス情報と現在のドキュメントを与えます。  
+-   メンバー関数の関連するビューでの作成、入力してください、ビューを作成するには、十分な情報。 たとえば、分割ウィンドウの最初のビューに、クラスの情報を表示したり、現在のドキュメントを指定する必要があります。  
   
- 通常、既定のフレームワークを使うときは、`CCreateContext` を無視できます。  より高度な修正を行うときには、Microsoft Foundation Class ライブラリのソース コード、または、VIEWEX のようなサンプル プログラムが参考になります。  必要なパラメーターを指定し忘れると、フレームワークのアサーションによって不足パラメーターが通知されます。  
+ 一般に、フレームワークの既定値を使用する場合は無視してかまいません`CCreateContext`します。 高度な変更、Microsoft Foundation Class ライブラリのソース コードまたは VIEWEX などのサンプル プログラムをしようとすると、説明します。 必要なパラメーターを忘れると、framework アサートされしていませんが通知されます。  
   
- `CCreateContext`の詳細については、MFC サンプル [VIEWEX](../../top/visual-cpp-samples.md)を参照してください。  
+ 詳細については`CCreateContext`、MFC サンプルを参照して[VIEWEX](../../visual-cpp-samples.md)します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [CFrameWnd::Create](../Topic/CFrameWnd::Create.md)   
- [CFrameWnd::LoadFrame](../Topic/CFrameWnd::LoadFrame.md)   
- [CFrameWnd::OnCreateClient](../Topic/CFrameWnd::OnCreateClient.md)   
- [CSplitterWnd::Create](../Topic/CSplitterWnd::Create.md)   
- [CSplitterWnd::CreateView](../Topic/CSplitterWnd::CreateView.md)   
- [CWnd::Create](../Topic/CWnd::Create.md)
+ [CFrameWnd::Create](../../mfc/reference/cframewnd-class.md#create)   
+ [CFrameWnd::LoadFrame](../../mfc/reference/cframewnd-class.md#loadframe)   
+ [CFrameWnd::OnCreateClient](../../mfc/reference/cframewnd-class.md#oncreateclient)   
+ [CSplitterWnd::Create](../../mfc/reference/csplitterwnd-class.md#create)   
+ [CSplitterWnd::CreateView](../../mfc/reference/csplitterwnd-class.md#createview)   
+ [Cwnd::create](../../mfc/reference/cwnd-class.md#create)
+
+

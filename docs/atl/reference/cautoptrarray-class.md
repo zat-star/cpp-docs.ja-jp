@@ -1,78 +1,101 @@
 ---
-title: "CAutoPtrArray クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::CAutoPtrArray<E>"
-  - "CAutoPtrArray"
-  - "ATL::CAutoPtrArray"
-  - "ATL.CAutoPtrArray<E>"
-  - "ATL.CAutoPtrArray"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAutoPtrArray クラス"
+title: "CAutoPtrArray クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::CAutoPtrArray<E>
+- CAutoPtrArray
+- ATL::CAutoPtrArray
+- ATL.CAutoPtrArray<E>
+- ATL.CAutoPtrArray
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAutoPtrArray class
 ms.assetid: 880a70da-8c81-4427-8ac6-49aa8d424244
 caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# CAutoPtrArray クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 58ee329c7a3925fe3a29cf9738670cfa71df6777
+ms.lasthandoff: 02/24/2017
 
-このクラスには、スマート ポインターの配列を構築するときに役立つメソッドが用意されています。  
+---
+# <a name="cautoptrarray-class"></a>CAutoPtrArray クラス
+このクラスは、スマート ポインターの配列を構築するときに役立つメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <typename E>
+class CAutoPtrArray : public CAtlArray<
+                        ATL::CAutoPtr<E>,
+                        CAutoPtrElementTraits<E>>
 ```  
   
-      template<  
-typename E  
->  
-class CAutoPtrArray : public CAtlArray<  
-ATL::CAutoPtr< E>,  
-CAutoPtrElementTraits< E>  
->  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `E`  
  ポインター型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CAutoPtrArray::CAutoPtrArray](../Topic/CAutoPtrArray::CAutoPtrArray.md)|コンストラクターです。|  
+|----------|-----------------|  
+|[CAutoPtrArray::CAutoPtrArray](#cautoptrarray)|コンストラクターです。|  
   
-## 解説  
- このクラスは、コンストラクターを提供し、[CAtlArray](../../atl/reference/catlarray-class.md) と [CAutoPtrElementTraits](../Topic/CAutoPtrElementTraits%20Class.md) からスマート ポインターを格納するコレクション クラス オブジェクトの作成を支援するメソッドを取得します。  
+## <a name="remarks"></a>コメント  
+ このクラスは、コンス トラクターを提供し、メソッドからの派生元[CAtlArray](../../atl/reference/catlarray-class.md)と[CAutoPtrElementTraits](../../atl/reference/cautoptrelementtraits-class.md)スマート ポインターを格納するコレクション クラスのオブジェクトの作成を支援するためにします。  
   
- 詳細については、[ATL のコレクション クラス](../../atl/atl-collection-classes.md)を参照してください。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `CAtlArray`  
   
  `CAutoPtrArray`  
   
-## 必要条件  
- **Header:** atlcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcoll.h  
   
-## 参照  
+##  <a name="a-namecautoptrarraya--cautoptrarraycautoptrarray"></a><a name="cautoptrarray"></a>CAutoPtrArray::CAutoPtrArray  
+ コンストラクターです。  
+  
+```
+CAutoPtrArray() throw();
+```  
+  
+### <a name="remarks"></a>コメント  
+ スマート ポインターの配列を初期化します。  
+  
+## <a name="see-also"></a>関連項目  
  [CAtlArray クラス](../../atl/reference/catlarray-class.md)   
- [CAutoPtrElementTraits クラス](../Topic/CAutoPtrElementTraits%20Class.md)   
+ [CAutoPtrElementTraits クラス](../../atl/reference/cautoptrelementtraits-class.md)   
  [CAutoPtrList クラス](../../atl/reference/cautoptrlist-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
+
