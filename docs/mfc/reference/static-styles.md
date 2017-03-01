@@ -1,142 +1,160 @@
 ---
-title: "静的コントロール スタイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SS_SUNKEN"
-  - "SS_CENTER"
-  - "SS_ENHMETAFILE"
-  - "SS_RIGHT"
-  - "SS_BLACKRECT"
-  - "SS_LEFTNOWORDWRAP"
-  - "SS_GRAYFRAME"
-  - "SS_USERITEM"
-  - "SS_GRAYRECT"
-  - "SS_WHITEFRAME"
-  - "SS_ETCHEDFRAME"
-  - "SS_ETCHEDVERT"
-  - "SS_WHITERECT"
-  - "SS_PATHELLIPSIS"
-  - "SS_WORDELLIPSIS"
-  - "SS_NOPREFIX"
-  - "SS_BITMAP"
-  - "SS_SIMPLE"
-  - "SS_CENTERIMAGE"
-  - "SS_BLACKFRAME"
-  - "SS_OWNERDRAW"
-  - "SS_REALSIZEIMAGE"
-  - "SS_RIGHTJUST"
-  - "SS_ICON"
-  - "SS_NOTIFY"
-  - "SS_ETCHEDHORZ"
-  - "SS_LEFT"
-  - "SS_ENDELLIPSIS"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SS_BITMAP 定数"
-  - "SS_BLACKFRAME 定数"
-  - "SS_BLACKRECT 定数"
-  - "SS_CENTER 定数"
-  - "SS_CENTERIMAGE 定数"
-  - "SS_ENDELLIPSIS 定数"
-  - "SS_ENHMETAFILE 定数"
-  - "SS_ETCHEDFRAME 定数"
-  - "SS_ETCHEDHORZ 定数"
-  - "SS_ETCHEDVERT 定数"
-  - "SS_GRAYFRAME 定数"
-  - "SS_GRAYRECT 定数"
-  - "SS_ICON 定数"
-  - "SS_LEFT 定数"
-  - "SS_LEFTNOWORDWRAP 定数"
-  - "SS_NOPREFIX 定数"
-  - "SS_NOTIFY 定数"
-  - "SS_OWNERDRAW 定数"
-  - "SS_PATHELLIPSIS 定数"
-  - "SS_REALSIZEIMAGE 定数"
-  - "SS_RIGHT 定数"
-  - "SS_RIGHTJUST 定数"
-  - "SS_SIMPLE 定数"
-  - "SS_SUNKEN 定数"
-  - "SS_USERITEM 定数"
-  - "SS_WHITEFRAME 定数"
-  - "SS_WHITERECT 定数"
-  - "SS_WORDELLIPSIS 定数"
-  - "静的なスタイル"
+title: "静的コントロール スタイル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- SS_SUNKEN
+- SS_CENTER
+- SS_ENHMETAFILE
+- SS_RIGHT
+- SS_BLACKRECT
+- SS_LEFTNOWORDWRAP
+- SS_GRAYFRAME
+- SS_USERITEM
+- SS_GRAYRECT
+- SS_WHITEFRAME
+- SS_ETCHEDFRAME
+- SS_ETCHEDVERT
+- SS_WHITERECT
+- SS_PATHELLIPSIS
+- SS_WORDELLIPSIS
+- SS_NOPREFIX
+- SS_BITMAP
+- SS_SIMPLE
+- SS_CENTERIMAGE
+- SS_BLACKFRAME
+- SS_OWNERDRAW
+- SS_REALSIZEIMAGE
+- SS_RIGHTJUST
+- SS_ICON
+- SS_NOTIFY
+- SS_ETCHEDHORZ
+- SS_LEFT
+- SS_ENDELLIPSIS
+dev_langs:
+- C++
+helpviewer_keywords:
+- SS_ICON constant
+- SS_WHITEFRAME constant
+- SS_BLACKFRAME constant
+- SS_ETCHEDHORZ constant
+- SS_OWNERDRAW constant
+- SS_BITMAP constant
+- SS_NOPREFIX constant
+- SS_NOTIFY constant
+- SS_CENTER constant
+- SS_REALSIZEIMAGE constant
+- SS_ETCHEDFRAME constant
+- SS_CENTERIMAGE constant
+- SS_SUNKEN constant
+- SS_ENDELLIPSIS constant
+- SS_WORDELLIPSIS constant
+- SS_WHITERECT constant
+- SS_ETCHEDVERT constant
+- SS_GRAYFRAME constant
+- SS_LEFTNOWORDWRAP constant
+- SS_LEFT constant
+- SS_SIMPLE constant
+- static styles
+- SS_ENHMETAFILE constant
+- SS_GRAYRECT constant
+- SS_USERITEM constant
+- SS_PATHELLIPSIS constant
+- SS_BLACKRECT constant
+- SS_RIGHT constant
+- SS_RIGHTJUST constant
 ms.assetid: a1114548-fc6d-491d-8c46-21d11b8574f5
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# 静的コントロール スタイル
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: ad34c688fdfd3c2b4c81a0a03fbce53a905162ad
+ms.lasthandoff: 02/24/2017
 
--   **SS\_BITMAP**、ビットマップをスタティック コントロールに表示されるように指定します。  指定したテキストは、リソース ファイルの他の場所で定義されたビットマップではなくファイル名\) の名前です。  スタイルは nWidth nHeight とパラメーターを無視します; コントロールが自動的にビットマップを格納するために合わせて自動的に調整されます。  
+---
+# <a name="static-styles"></a>静的コントロール スタイル
+-   **SS_BITMAP**静的コントロールに表示されるビットマップを指定します。 指定したテキストは、リソース ファイルで定義されているビットマップ (名) の名前です。 スタイル、nWidth とパラメーター nHeight パラメーターは無視されます。コントロールでは、ビットマップが収まるように自動的にサイズします。  
   
--   **SS\_BLACKFRAME**はフレーム ウィンドウと同じ色で描画フレームのボックスを指定します。  既定値は黒です。  
+-   **SS_BLACKFRAME**ウィンドウ フレームと同じ色で描画されたフレームを使用して、ボックスを指定します。 既定値は黒です。  
   
--   **SS\_BLACKRECT**はウィンドウ フレームの描画に使用する色で塗りつぶされた四角形を指定します。  既定値は黒です。  
+-   **SS_BLACKRECT**ウィンドウ フレームの描画に使用する色で塗りつぶされた四角形を指定します。 既定値は黒です。  
   
--   **SS\_CENTER**は単純な四角形を指定し、四角形の中央に指定した文字列を表示します。  テキストが表示される前に書式設定されます。  行の末尾を超えて拡張 Word は次にフォーカスした行の先頭に自動的にラップされます。  
+-   **SS_CENTER**単純な四角形を指定し、四角形の中央に指定したテキストが表示されます。 テキストの書式が表示されるようにします。 行の末尾を越えると単語は、次の中央の行の先頭に自動的に折り返されます。  
   
--   **SS\_CENTERIMAGE**はアイコンまたはビットマップをスタティック コントロールのクライアント領域よりも小さい場合、クライアント領域の他、ビットマップ、アイコンの左上隅のピクセルの色に設定されていることを指定します。  スタティック コントロールは、単一行のテキストが含まれている場合、テキストは、コントロールのクライアント領域の垂直方向に中央揃えします。  
+-   **SS_CENTERIMAGE**ビットマップやアイコンのスタティック コントロールのクライアント領域よりも小さい場合は場合、に、クライアント領域の残りの部分がビットマップやアイコンの左上隅にあるピクセルの色で塗りつぶされたことを指定します。 静的コントロールに&1; 行のテキストが含まれている場合、コントロールのクライアント領域内のテキストが垂直方向に中央揃えです。  
   
--   **SS\_ENDELLIPSIS** または **SS\_PATHELLIPSIS**は省略記号で指定された文字列の一部を、指定された四角形の結果の範囲必要に置き換えます。  
+-   **SS_ENDELLIPSIS**または**SS_PATHELLIPSIS**結果が指定された四角形に収まるように、必要に応じて、省略記号を指定した文字列の一部が置き換えられます。  
   
-     文字列の中にある文字を置き換える文字列の末尾に文字を置き換えるために **SS\_END\_ELLIPSIS** または **SS\_PATHELLIPSIS** を指定できます。  文字列が円記号 \(\\\) 文字が含まれている場合は、最後の有効円記号の後のテキストの **SS\_PATHELLIPSIS** の保存できるだけです。  
+     指定できます**SS_END_ELLIPSIS** 、文字列の末尾の文字を置換または**SS_PATHELLIPSIS**文字列の途中で文字を置換します。 文字列に円記号が含まれている場合 (\\) 文字、 **SS_PATHELLIPSIS**を保持できるだけ多くのテキストの最後のバック スラッシュの後に、できるだけします。  
   
--   **SS\_ENHMETAFILE**は拡張メタファイルをスタティック コントロールに表示されるように指定します。  指定されたテキストはメタファイルの名前です。  拡張メタファイルのスタティック コントロール サイズは固定です; メタファイルは、スタティック コントロールのクライアント領域に合わせてスケーリングされます。  
+-   **SS_ENHMETAFILE**拡張メタファイルが静的コントロールに表示されることを指定します。 指定したテキストは、メタファイルの名前です。 拡張メタファイル静的コントロールが固定サイズです。メタファイルは静的コントロールのクライアント領域に合わせてスケーリングされます。  
   
--   **SS\_ETCHEDFRAME**は  **EDGE\_ETCHED** の末尾のスタイルを使用してスタティック コントロールのフレームを描画します。  
+-   **SS_ETCHEDFRAME**を使用して、スタティック コントロールの枠を描画、 **EDGE_ETCHED**エッジのスタイル。  
   
--   **SS\_ETCHEDHORZ**は  **EDGE\_ETCHED** の末尾のスタイルを使用してスタティック コントロールの上端と下端を描画します。  
+-   **SS_ETCHEDHORZ**を使用して、スタティック コントロールの上端と下端の縁を描画、 **EDGE_ETCHED**エッジのスタイル。  
   
--   **SS\_ETCHEDVERT**は EDGE\_ETCHED の末尾のスタイルを使用してスタティック コントロールの左端を描画します。  
+-   **SS_ETCHEDVERT** EDGE_ETCHED 端のスタイルを使用して静的コントロールの左端と右端の縁を描画します。  
   
--   **SS\_GRAYFRAME**は画面の背景 \(デスクトップ\) と同じ色で描画フレームのボックスを指定します。  既定値は灰色です。  
+-   **SS_GRAYFRAME**画面の背景 (デスクトップ) と同じ色で描画されたフレームを使用して、ボックスを指定します。 既定値は灰色です。  
   
--   **SS\_GRAYRECT**は画面の背景を塗りつぶすために使用する色で塗りつぶされた四角形を指定します。  既定値は灰色です。  
+-   **SS_GRAYRECT**画面の背景の塗りつぶしに使用する色で塗りつぶされた四角形を指定します。 既定値は灰色です。  
   
--   **SS\_ICON**はダイアログ ボックスに表示するアイコンを指定します。  指定したテキストは、リソース ファイルの他の場所で定義されたアイコンではなくファイル名\) の名前です。  `nWidth` と `nHeight` ;パラメーターは無視されます。アイコンが自動的に変更されます。  
+-   **SS_ICON**  ダイアログ ボックスに表示されるアイコンを指定します。 指定したテキストは、リソース ファイルで定義されているアイコン (名) の名前です。 `nWidth`と`nHeight`パラメーターは無視されます。 自動的に、アイコンのサイズ。  
   
--   **SS\_LEFT**は四角形で単純な四角形を指定し、指定したテキストを左寄せになります表示されます。  テキストが表示される前に書式設定されます。  行の末尾を超えて拡張 Word は次の先頭に自動的に左寄せにします行をラップされます。  
+-   **SS_LEFT**単純な四角形を指定し、指定された四角形の左揃えテキストが表示されます。 テキストの書式が表示されるようにします。 行の末尾を越えると単語は、左揃えの次の行の先頭に自動的に折り返されます。  
   
--   **SS\_LEFTNOWORDWRAP**は四角形で単純な四角形を指定し、指定したテキストを左寄せになります表示されます。  タブが展開されますが、Word がラップされません。  テキスト。行の末尾を超えてクリップ拡張。  
+-   **SS_LEFTNOWORDWRAP**単純な四角形を指定し、指定された四角形の左揃えテキストが表示されます。 タブが展開されているが、テキストは折り返されません。 行の末尾を超える長さのテキストが切り取られます。  
   
--   このスタイルが指定されていない場合**SS\_NOPREFIX**、Windows は、アクセラレータの先頭文字になるようにコントロールのテキストにアンパサンド \(&\) 文字を変換します。  この場合、アンパサンドは削除され、文字列の次の文字は下線付きになります。  スタティック コントロールはこの機能は不要であるテキストを含める場合は、**SS\_NOPREFIX** が追加される場合があります。  このスタティック コントロールのスタイルが定義されたスタティック コントロールのいずれかに含まれている場合があります。  他のスタイルとビットごとの OR 演算子を使用して **SS\_NOPREFIX** を結合できます。  これは最も頻繁に使用される時ダイアログ ボックスのスタティック コントロールに表示されるアンパサンドのニーズを含む可能性のある他の文字列またはファイル名。  
+-   **SS_NOPREFIX** Windows がアクセラレータ プレフィックス文字をコントロールのテキストに含まれるアンパサンド (&) の文字を解釈このスタイルを指定しない限り、します。 この場合は、アンパサンドが削除され、文字列内の次の文字に下線が引かれます。 静的コントロールがテキストを格納する、この機能は必要ではない場合、 **SS_NOPREFIX**追加することもできます。 この静的コントロール スタイルは、定義済みのスタティック コントロールのいずれかを含めることができます。 組み合わせることができます**SS_NOPREFIX**ビットごとの OR 演算子を使用して、その他のスタイルを使用します。 アンパサンドを含む可能性のあるその他の文字列またはファイル名 ダイアログ ボックスで静的コントロールに表示する必要がある場合に最もよく使用されるオプションです。  
   
--   **SS\_NOTIFY**は、ユーザーがコントロールをクリックするか、ダブルクリックすると親ウィンドウ **STN\_CLICKED**、**STN\_DBLCLK**、**STN\_DISABLE**と **STN\_ENABLE** 通知メッセージを送信します。  
+-   **SS_NOTIFY**親ウィンドウに送信**STN_CLICKED**、 **STN_DBLCLK**、 **STN_DISABLE**、および**STN_ENABLE**の通知メッセージをクリックするか、コントロールをダブルクリックするとします。  
   
--   **SS\_OWNERDRAW**はスタティック コントロールの所有者がコントロールの描画を行うことを指定します。  オーナー ウィンドウは `WM_DRAWITEM` メッセージをたびに制御が描画されます。  
+-   **SS_OWNERDRAW**のスタティック コントロールの所有者がコントロールの描画を担当することを指定します。 オーナー ウィンドウは、`WM_DRAWITEM`コントロールを描画する必要があるときのメッセージします。  
   
--   **SS\_REALSIZEIMAGE**は、読み込まれるか、描画されるように **SS\_ICON** または **SS\_BITMAP** のスタイルを持つ静的なアイコンまたはビットマップのコントロール \(スタティック コントロール\) にサイズ変更されるようにします。  アイコンまたはビットマップがコピー先領域よりも大きい場合は、イメージがクリップされます。  
+-   **SS_REALSIZEIMAGE**により、静的なアイコンまたはビットマップ コントロール (を持つ静的コントロールは、 **SS_ICON**または**SS_BITMAP**スタイル) のようにロードされるか、描画されるサイズを変更します。 アイコンまたはビットマップがコピー先領域よりも大きい場合、イメージが切り取られます。  
   
--   **SS\_RIGHT**は四角形で単純な四角形を指定し、指定したテキストを右寄せになります表示されます。  テキストが表示される前に書式設定されます。  行の末尾を超えて拡張 Word は次の先頭に自動的に右寄せにします行をラップされます。  
+-   **SS_RIGHT**単純な四角形を指定し、指定したテキストの四角形にフラッシュ右側を表示します。 テキストの書式が表示されるようにします。 行の末尾を越えると単語は、フラッシュ右の次の行の先頭に自動的に折り返されます。  
   
--   **SS\_RIGHTJUST**は  **SS\_BITMAP** または **SS\_ICON** のスタイルのスタティック コントロールの右下隅にコントロールのサイズが変更されたときに固定しておくことを指定します。  上端と左側に新しいビットマップまたはアイコンに合わせて調整されます。  
+-   **SS_RIGHTJUST**ことが指定された静的コントロールの右下隅、 **SS_BITMAP**または**SS_ICON**スタイルが引き続きコントロールのサイズを固定します。 上と左の辺は、新しいビットマップやアイコンに合わせて調整されます。  
   
--   **SS\_SIMPLE**は四角形で単純な四角形を指定し、単一行のテキストを左寄せになります表示されます。  テキスト行では、短くしたり変更したりすることはできません。\(コントロールの親ウィンドウまたはダイアログ ボックスが `WM_CTLCOLOR` メッセージを処理する必要があります\)。  
+-   **SS_SIMPLE**単純な四角形を指定し、単一の行の四角形の左揃えのテキストが表示されます。 行のテキストを簡略化され、または変更されることできません。 (コントロールの親ウィンドウまたはダイアログ ボックスを処理する必要があります、`WM_CTLCOLOR`メッセージです)。  
   
--   **SS\_SUNKEN**はスタティック コントロールの周囲にくぼんだ境界を描画します。  
+-   **SS_SUNKEN**スタティック コントロール周囲の半分くぼんだ境界線を描画します。  
   
--   **SS\_USERITEM**はユーザー定義の項目を指定します。  
+-   **SS_USERITEM**ユーザー定義の項目を指定します。  
   
--   **SS\_WHITEFRAME**はウィンドウの背景と同じ色で描画フレームのボックスを指定します。  既定の色は白です。  
+-   **SS_WHITEFRAME**ウィンドウの背景色と同じ色で描画されたフレームを使用して、ボックスを指定します。 既定の色は白です。  
   
--   **SS\_WHITERECT**はウィンドウの背景を塗りつぶすために使用する色で塗りつぶされた四角形を指定します。  既定の色は白です。  
+-   **SS_WHITERECT**ウィンドウの背景の塗りつぶしに使用する色で塗りつぶされた四角形を指定します。 既定の色は白です。  
   
--   **SS\_WORDELLIPSIS**は収まらない切り捨てて、省略記号をテキストを追加します。  
+-   **SS_WORDELLIPSIS**収まらない場合、省略記号を追加するテキストが切り捨てられます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [MFC で使用するスタイル](../../mfc/reference/styles-used-by-mfc.md)   
- [CStatic::Create](../Topic/CStatic::Create.md)   
+ [CStatic::Create](../../mfc/reference/cstatic-class.md#create)   
  [DrawEdge](http://msdn.microsoft.com/library/windows/desktop/dd162477)   
- [Static Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760773)
+ [静的コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb760773)
+
+

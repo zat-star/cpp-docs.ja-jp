@@ -1,56 +1,72 @@
 ---
-title: "ポイント Structure1 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "POINT"
-  - "LPPOINT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LPPOINT 構造体"
-  - "POINT 構造体"
+title: "ポイント Structure1 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- POINT
+- LPPOINT
+dev_langs:
+- C++
+helpviewer_keywords:
+- LPPOINT structure
+- POINT structure
 ms.assetid: 965736d8-4e53-41b6-9b8b-6961992dd21f
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# POINT 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
+ms.openlocfilehash: d1e2bb05f9bad785b13e79413866d8e0ce1e1faa
+ms.lasthandoff: 02/24/2017
 
-**POINT** 構造体は点の x 座標と y 座標を定義します。  
+---
+# <a name="point-structure1"></a>ポイント Structure1
+**ポイント**構造体定義 x* - *と点の y 座標。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      typedef struct tagPOINT {  
-   LONG x;  
-   LONG y;  
+typedef struct tagPOINT {  
+    LONG x;  
+    LONG y;  
 } POINT;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *x*  
  点の x 座標を指定します。  
   
  *y*  
  点の y 座標を指定します。  
   
-## 使用例  
- [!code-cpp[NVC_MFC_Utilities#37](../../mfc/codesnippet/CPP/point-structure1_1.cpp)]  
+## <a name="example"></a>例  
+ [!code-cpp[NVC_MFC_Utilities #&37;](../../mfc/codesnippet/cpp/point-structure1_1.cpp)]  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** windef.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CPoint クラス](../Topic/CPoint%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CPoint クラス](../../atl-mfc-shared/reference/cpoint-class.md)
+

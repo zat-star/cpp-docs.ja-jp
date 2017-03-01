@@ -1,34 +1,51 @@
 ---
-title: "short_vector_traits 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "amp_short_vectors/Concurrency::graphics::short_vector_traits"
-dev_langs: 
-  - "C++"
+title: "short_vector_traits 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- amp_short_vectors/Concurrency::graphics::short_vector_traits
+dev_langs:
+- C++
 ms.assetid: cd9492da-9e02-4a6e-9d50-b61252cdb460
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# short_vector_traits 構造体
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
+ms.openlocfilehash: aa123da5dfb5675a4b44d386224bf17e79df40a3
+ms.lasthandoff: 02/24/2017
 
-short\_vector\_traits は短いベクター型またはスカラー型の基になるベクターの長さとスカラー型の retrival できます。  
+---
+# <a name="shortvectortraits-structure"></a>short_vector_traits 構造体
+short_vector_traits により、基になるベクトルの長さと短いベクター型のスカラー型、またはスカラー型の取得  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename _Type  
+template<
+    typename T  
 >  
 struct short_vector_traits;  
 template<>  
@@ -81,36 +98,49 @@ template<>
 struct short_vector_traits<double_4>;  
 ```  
   
-#### パラメーター  
- `_Type`  
+#### <a name="parameters"></a>パラメーター  
+ `T`  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |`value_type`||  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[short\_vector\_traits::short\_vector\_traits コンストラクター](../Topic/short_vector_traits::short_vector_traits%20Constructor.md)||  
+|----------|-----------------|  
+|[short_vector_traits::short_vector_traits コンス トラクター](#ctor)||  
   
-### パブリック定数  
+### <a name="public-constants"></a>パブリック定数  
   
 |名前|説明|  
-|--------|--------|  
-|[short\_vector\_traits::size 定数](../Topic/short_vector_traits::size%20Constant.md)||  
+|----------|-----------------|  
+|[short_vector_traits::size 定数](#size)||  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `short_vector_traits`  
   
-## 必要条件  
- **ヘッダー:** amp\_short\_vectors.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** amp_short_vectors.h  
   
- **名前空間:** Concurrency::graphics  
+ **Namespace:** concurrency::graphics  
   
-## 参照  
- [Concurrency::graphics 名前空間](../../../parallel/amp/reference/concurrency-graphics-namespace.md)
+##  <a name="a-namectora--shortvectortraitsshortvectortraits-constructor"></a><a name="ctor"></a>short_vector_traits::short_vector_traits コンス トラクター  
+  
+```  
+short_vector_traits();
+```  
+  
+##  <a name="a-namesizea--shortvectortraitssize-constant"></a><a name="size"></a>short_vector_traits::size 定数  
+  
+```  
+static int const size = 1;  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+

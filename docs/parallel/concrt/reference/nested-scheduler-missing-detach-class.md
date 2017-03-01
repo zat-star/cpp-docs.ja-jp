@@ -1,60 +1,89 @@
 ---
-title: "nested_scheduler_missing_detach クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "concrt/concurrency::nested_scheduler_missing_detach"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "nested_scheduler_missing_detach クラス"
+title: "nested_scheduler_missing_detach クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- concrt/concurrency::nested_scheduler_missing_detach
+dev_langs:
+- C++
+helpviewer_keywords:
+- nested_scheduler_missing_detach class
 ms.assetid: 65d3f277-6d43-4160-97ef-caf8b26c1641
 caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# nested_scheduler_missing_detach クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: 0079fea0b157e194947931f88d1cb500167cb6e2
+ms.lasthandoff: 02/24/2017
 
-このクラスは、`Scheduler` オブジェクトの `Attach` メソッドによって別のスケジューラにアタッチされているコンテキストで `CurrentScheduler::Detach` メソッドが呼び出されなかったことを、同時実行ランタイムが検出した場合にスローされる例外を表します。  
+---
+# <a name="nestedschedulermissingdetach-class"></a>nested_scheduler_missing_detach クラス
+このクラスは、`CurrentScheduler::Detach` オブジェクトの `Attach` メソッドによって別のスケジューラにアタッチされているコンテキストで `Scheduler` メソッドが呼び出されなかったことを、同時実行ランタイムが検出した場合にスローされる例外を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class nested_scheduler_missing_detach : public std::exception;
 ```  
-class nested_scheduler_missing_detach : public std::exception;  
-```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[nested\_scheduler\_missing\_detach::nested\_scheduler\_missing\_detach コンストラクター](../Topic/nested_scheduler_missing_detach::nested_scheduler_missing_detach%20Constructor.md)|オーバーロードされます。  `nested_scheduler_missing_detach` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[nested_scheduler_missing_detach コンス トラクター](#ctor)|オーバーロードされます。 `nested_scheduler_missing_detach` オブジェクトを構築します。|  
   
-## 解説  
- この例外は、既に所有または別のスケジューラにアタッチされているコンテキストの `Scheduler` オブジェクトの `Attach` のメソッドを呼び出して、1 個のスケジューラを別の入れ子になっている場合にスローされます。  同時実行ランタイムでは、該当する状況を検出できた場合に、問題の特定を支援する便宜的な手段として、この例外がスローされます。  `CurrentScheduler::Detach` メソッドが呼び出されなかったからといって、常にこの例外がスローされるわけではありません。  
+## <a name="remarks"></a>コメント  
+ 呼び出して別のスケジューラ内を入れ子にする場合にのみ、この例外がスローされます、`Attach`のメソッド、`Scheduler`既にによって所有されているか、別のスケジューラにアタッチされているコンテキストでのオブジェクト。 同時実行ランタイムは、問題の特定を支援するために、シナリオを検出できるとな場合にこの例外をスローします。 呼び出しを無視していないすべてのインスタンス、`CurrentScheduler::Detach`メソッドがこの例外をスローすることが保証されます。  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
   
  `nested_scheduler_missing_detach`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)   
- [Scheduler クラス](../../../parallel/concrt/reference/scheduler-class.md)   
- [CurrentScheduler::Detach メソッド](../Topic/CurrentScheduler::Detach%20Method.md)   
- [Scheduler::Attach メソッド](../Topic/Scheduler::Attach%20Method.md)
+##  <a name="a-namectora-nestedschedulermissingdetach"></a><a name="ctor"></a>nested_scheduler_missing_detach 
+
+ `nested_scheduler_missing_detach` オブジェクトを構築します。  
+  
+```
+explicit _CRTIMP nested_scheduler_missing_detach(_In_z_ const char* _Message) throw();
+
+nested_scheduler_missing_detach() throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Message`  
+ エラーの説明メッセージ。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)   
+ [Scheduler クラス](scheduler-class.md)
+

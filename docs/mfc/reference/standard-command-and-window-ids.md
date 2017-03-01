@@ -1,43 +1,60 @@
 ---
-title: "標準コマンド ID とウィンドウ ID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.macros"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "標準コマンドと Window ID"
+title: "標準コマンド id とウィンドウ Id |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.macros
+dev_langs:
+- C++
+helpviewer_keywords:
+- standard command and Window IDs
 ms.assetid: 0424805c-fff8-4531-8f0c-15cfb13aa612
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# 標準コマンド ID とウィンドウ ID
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
+ms.openlocfilehash: d308f3f9efc5933124460d9839a0e94fffa60b4a
+ms.lasthandoff: 02/24/2017
 
-Microsoft Foundation Class ライブラリには Afxres.h の標準コマンド ID とウィンドウ ID を定義します。  これらの ID は、リソース エディターとプロパティ ウィンドウ内で最もよく使用されますハンドラー関数にメッセージをマップするために使用します。  すべての標準コマンドに **ID\_** が付きます。  たとえば、メニュー エディターを使用すると、標準 `ID_FILE_OPEN` コマンド ID には、ファイルを開くメニュー項目をバインドします  
+---
+# <a name="standard-command-and-window-ids"></a>標準コマンド ID とウィンドウ ID
+Microsoft Foundation Class ライブラリは、afxres.h 内でさまざまな標準のコマンドとウィンドウ Id を定義します。 これらの Id は、メッセージ ハンドラー関数をマッピングするリソース エディターと [プロパティ] ウィンドウ内で最もよく使用されます。 すべての標準コマンドが、 **id _**プレフィックス。 たとえば、メニュー エディターを使用するときに通常にバインドするファイルを開くメニュー項目、標準`ID_FILE_OPEN`コマンド ID  
   
- ほとんどの標準コマンドに対して、アプリケーション コードはフレームワーク自体が主要フレームワーク クラス \(`CWinThread`、`CWinApp`、`CView`、**CDocument**など\) のメッセージ マップを通じてコマンドを処理するため、コマンド ID を参照する必要はありません。  
+ ほとんどの標準コマンドは、アプリケーション コード必要はありませんコマンド ID を参照するフレームワーク自体がその主な framework クラスのメッセージ マップをコマンドによって処理されるため ( `CWinThread`、 `CWinApp`、 `CView`、 **CDocument**など)。  
   
- 標準コマンド ID に加えて、**AFX\_ID**プレフィックスを持つ他の標準 ID が定義されます。  これらの ID は標準の Windows ID \(プレフィックス **AFX\_IDW\_**\)、文字列の ID \(prefix **AFX\_IDS\_**\) を含む、複数の型を選択します。  
+ プレフィックスである標準コマンド Id だけでなく他の標準的な Id の数が定義されての**AFX_ID**します。 これらの Id は、標準的なウィンドウの Id を含める (プレフィックス**afx_idw _**)、文字列の Id (プレフィックス**afx_ids _**)、およびその他のいくつかの型。  
   
- **AFX\_ID** のプレフィックスで始まる ID は、プログラマによって頻繁にオーバーライド フレームワークが機能する場合は、**AFX\_ID**s.を示すこれらの ID を示す必要があります。使用されません。  
+ 始まる Id を**AFX_ID**プログラマによってプレフィックスが使用されることはほとんどありませんが、参照することも framework 関数をオーバーライドする場合、これらの Id を参照する必要があります、 **AFX_ID**秒です。  
   
- ID は、この参照で個別については説明しません。  テクニカル ノート [20](../../mfc/tn020-id-naming-and-numbering-conventions.md)、[21](../../mfc/tn021-command-and-message-routing.md)と [22](../../mfc/tn022-standard-commands-implementation.md)の詳細な情報を確認できます。  
+ Id がこのリファレンスで個別に記載されていません。 テクニカル ノートで、それらに関する詳細情報を記載できます[20](../../mfc/tn020-id-naming-and-numbering-conventions.md)、 [21](../../mfc/tn021-command-and-message-routing.md)、および[22](../../mfc/tn022-standard-commands-implementation.md)します。  
   
 > [!NOTE]
->  ヘッダー ファイル Afxres.h は Afxwin.h に間接的に含まれます。  アプリケーションのリソース スクリプト \(.rc\) ファイルに明示的に次のステートメントを追加する必要があります:  
+>  (.Rc) ファイルは直接 Afxwin.h で含まれています。 次のステートメントは、アプリケーションのリソース スクリプト (.rc) ファイルに明示的に含める必要があります。  
   
- [!code-cpp[NVC_MFC_Utilities#47](../../mfc/codesnippet/CPP/standard-command-and-window-ids_1.h)]  
+ [!code-cpp[NVC_MFC_Utilities #&47;](../../mfc/codesnippet/cpp/standard-command-and-window-ids_1.h)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+

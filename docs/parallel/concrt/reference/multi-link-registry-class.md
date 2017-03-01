@@ -1,74 +1,193 @@
 ---
-title: "multi_link_registry クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "agents/concurrency::multi_link_registry"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "multi_link_registry クラス"
+title: "multi_link_registry クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- agents/concurrency::multi_link_registry
+dev_langs:
+- C++
+helpviewer_keywords:
+- multi_link_registry class
 ms.assetid: b2aa73a8-e8a6-4255-b117-d07530c328b2
 caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# multi_link_registry クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: 1548d2f920cf5566cced499e189cdcc19bf757ee
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="multilinkregistry-class"></a>multi_link_registry クラス
 `multi_link_registry` オブジェクトは、複数のソース ブロックまたは複数のターゲット ブロックを管理する `network_link_registry` です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template<  
-   class _Block  
->  
-class multi_link_registry : public network_link_registry<_Block>;  
+```
+template<class _Block>
+class multi_link_registry : public network_link_registry<_Block>;
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_Block`  
- `multi_link_registry` オブジェクトに格納されているブロック データ型。  
+ ブロックのデータ型に格納されている、`multi_link_registry`オブジェクトです。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[multi\_link\_registry::multi\_link\_registry コンストラクター](../Topic/multi_link_registry::multi_link_registry%20Constructor.md)|`multi_link_registry` オブジェクトを構築します。|  
-|[multi\_link\_registry::~multi\_link\_registry デストラクター](../Topic/multi_link_registry::~multi_link_registry%20Destructor.md)|`multi_link_registry` オブジェクトを破棄します。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[multi\_link\_registry::add メソッド](../Topic/multi_link_registry::add%20Method.md)|リンクを `multi_link_registry` オブジェクトに追加します。\([network\_link\_registry::add](../Topic/network_link_registry::add%20Method.md) をオーバーライドします。\)|  
-|[multi\_link\_registry::begin メソッド](../Topic/multi_link_registry::begin%20Method.md)|`multi_link_registry` オブジェクトの 1 つ目の要素への反復子を返します。\([network\_link\_registry::begin](../Topic/network_link_registry::begin%20Method.md) をオーバーライドします。\)|  
-|[multi\_link\_registry::contains メソッド](../Topic/multi_link_registry::contains%20Method.md)|指定されたブロックの `multi_link_registry` オブジェクトを検索します。\([network\_link\_registry::contains](../Topic/network_link_registry::contains%20Method.md) をオーバーライドします。\)|  
-|[multi\_link\_registry::count メソッド](../Topic/multi_link_registry::count%20Method.md)|`multi_link_registry` オブジェクト内の項目の数をカウントします。\([network\_link\_registry::count](../Topic/network_link_registry::count%20Method.md) をオーバーライドします。\)|  
-|[multi\_link\_registry::remove メソッド](../Topic/multi_link_registry::remove%20Method.md)|`multi_link_registry` オブジェクトからリンクを削除します。\([network\_link\_registry::remove](../Topic/network_link_registry::remove%20Method.md) をオーバーライドします。\)|  
-|[multi\_link\_registry::set\_bound メソッド](../Topic/multi_link_registry::set_bound%20Method.md)|`multi_link_registry` オブジェクトが保持できるリンク数の上限を設定します。|  
+|----------|-----------------|  
+|[multi_link_registry コンス トラクター](#ctor)|`multi_link_registry` オブジェクトを構築します。|  
+|[~ multi_link_registry デストラクター](#dtor)|`multi_link_registry` オブジェクトを破棄します。|  
   
-## 継承階層  
- [network\_link\_registry](../Topic/network_link_registry%20Class.md)  
+### <a name="public-methods"></a>パブリック メソッド  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[メソッドを追加します。](#add)|リンクを追加、`multi_link_registry`オブジェクトです。 (上書き[network_link_registry::add](network-link-registry-class.md#add))。|  
+|[begin メソッド](#begin)|最初の要素を反復子を返します、`multi_link_registry`オブジェクトです。 (上書き[network_link_registry::begin](network-link-registry-class.md#begin))。|  
+|[メソッドが含まれています](#contains)|検索、`multi_link_registry`の指定されたブロックのオブジェクト。 (上書き[network_link_registry::contains](network-link-registry-class.md#contains))。|  
+|[count メソッド](#count)|内の項目の数をカウント、`multi_link_registry`オブジェクトです。 (上書き[network_link_registry::count](network-link-registry-class.md#count))。|  
+|[remove メソッド](#remove)|リンクを削除、`multi_link_registry`オブジェクトです。 (上書き[network_link_registry::remove](network-link-registry-class.md#remove))。|  
+|[set_bound メソッド](#set_bound)|リンクの数に上限を設定、`multi_link_registry`オブジェクトを保持できます。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [network_link_registry](network-link-registry-class.md)  
   
  `multi_link_registry`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)   
- [single\_link\_registry クラス](../Topic/single_link_registry%20Class.md)
+##  <a name="a-nameadda-add"></a><a name="add"></a>追加 
+
+ リンクを追加、`multi_link_registry`オブジェクトです。  
+  
+```
+virtual void add(_EType _Link);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Link`  
+ 追加するブロックへのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ メソッドをスロー、 [invalid_link_target](invalid-link-target-class.md)例外のリンクが、レジストリに存在する場合、または場合は、バインドが既にで設定された、`set_bound`関数とのリンクは削除されました。  
+  
+##  <a name="a-namebegina-begin"></a><a name="begin"></a>開始 
+
+ 最初の要素を反復子を返します、`multi_link_registry`オブジェクトです。  
+  
+```
+virtual iterator begin();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 最初の要素を指定する反復子、`multi_link_registry`オブジェクトです。  
+  
+### <a name="remarks"></a>コメント  
+ 終了状態で示されます、`NULL`リンクします。  
+  
+##  <a name="a-namecontainsa-contains"></a><a name="contains"></a>含まれています 
+
+ 検索、`multi_link_registry`の指定されたブロックのオブジェクト。  
+  
+```
+virtual bool contains(_EType _Link);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Link`  
+ 内で検索するのには、ブロックへのポインター、`multi_link_registry`オブジェクトです。  
+  
+### <a name="return-value"></a>戻り値  
+ `true`指定されたブロックが見つかった場合`false`それ以外の場合。  
+  
+##  <a name="a-namecounta-count"></a><a name="count"></a>カウント 
+
+ 内の項目の数をカウント、`multi_link_registry`オブジェクトです。  
+  
+```
+virtual size_t count();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 内の項目数、`multi_link_registry`オブジェクトです。  
+  
+##  <a name="a-namectora-multilinkregistry"></a><a name="ctor"></a>multi_link_registry 
+
+ `multi_link_registry` オブジェクトを構築します。  
+  
+```
+multi_link_registry();
+```  
+  
+##  <a name="a-namedtora-multilinkregistry"></a><a name="dtor"></a>~ multi_link_registry 
+
+ `multi_link_registry` オブジェクトを破棄します。  
+  
+```
+virtual ~multi_link_registry();
+```  
+  
+### <a name="remarks"></a>コメント  
+ メソッドをスロー、 [invalid_operation](invalid-operation-class.md)すべてのリンクを削除する前に呼び出す場合に例外です。  
+  
+##  <a name="a-nameremovea-remove"></a><a name="remove"></a>削除します。 
+
+ リンクを削除、`multi_link_registry`オブジェクトです。  
+  
+```
+virtual bool remove(_EType _Link);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Link`  
+ 削除する場合はブロックへのポインターが見つかりました。  
+  
+### <a name="return-value"></a>戻り値  
+ `true`リンクが検出され削除されると、`false`それ以外の場合。  
+  
+##  <a name="a-namesetbounda-setbound"></a><a name="set_bound"></a>set_bound 
+
+ リンクの数に上限を設定、`multi_link_registry`オブジェクトを保持できます。  
+  
+```
+void set_bound(size_t _MaxLinks);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_MaxLinks`  
+ リンクの最大数、`multi_link_registry`オブジェクトを保持できます。  
+  
+### <a name="remarks"></a>コメント  
+ 制限を設定すると、エントリのリンクを解除すると、 `multi_link_registry` 、変更できない状態に移行するオブジェクトへの呼び出しをさらに、`add`をスロー、`invalid_link_target`例外です。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)   
+ [single_link_registry クラス](single-link-registry-class.md)
+

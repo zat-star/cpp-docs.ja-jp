@@ -1,69 +1,101 @@
 ---
-title: "progress_reporter クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ppltasks/concurrency::progress_reporter"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "progress_reporter クラス"
+title: "progress_reporter クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ppltasks/concurrency::progress_reporter
+dev_langs:
+- C++
+helpviewer_keywords:
+- progress_reporter class
 ms.assetid: b836efab-2d05-4649-b6fa-d15236f1f813
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# progress_reporter クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: c6b4dfee5b5f9df98a36fcdac116182ced4cbe30
+ms.lasthandoff: 02/24/2017
 
-progress reporter クラスは、特定の型の進行状況の通知をレポートできます。  各 progress\_reporter オブジェクトが、特定の非同期アクションまたは操作にバインドされます。  
+---
+# <a name="progressreporter-class"></a>progress_reporter クラス
+progress reporter クラスは、特定の型の進行状況の通知をレポートできます。 各 progress_reporter オブジェクトが、特定の非同期アクションまたは操作にバインドされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<typename _ProgressType>
+class progress_reporter;
 ```  
-template<  
-   typename _ProgressType  
->  
-class progress_reporter;  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_ProgressType`  
- progress\_reporter クラスによって報告される進行状況の各通知のペイロードの種類。  
+ progress_reporter クラスによって報告される進行状況の各通知のペイロードの種類。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[progress\_reporter::progress\_reporter コンストラクター](../Topic/progress_reporter::progress_reporter%20Constructor.md)||  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[progress\_reporter::report メソッド](../Topic/progress_reporter::report%20Method.md)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
+|----------|-----------------|  
+|[progress_reporter コンス トラクター](#ctor)||  
   
-## 解説  
+### <a name="public-methods"></a>パブリック メソッド  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[レポート メソッド](#report)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
+  
+## <a name="remarks"></a>コメント  
  このクラスは、Windows ストア アプリでのみ使用できます。  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `progress_reporter`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)   
- [create\_async 関数](../Topic/create_async%20Function.md)
+##  <a name="a-namectora-progressreporter"></a><a name="ctor"></a>progress_reporter 
+
+```
+progress_reporter();
+```  
+  
+##  <a name="a-namereporta-report"></a><a name="report"></a>レポート 
+
+ progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。  
+  
+```
+void report(const _ProgressType& val) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `val`  
+ 進行状況を示す通知によって報告されるペイロード。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)
+

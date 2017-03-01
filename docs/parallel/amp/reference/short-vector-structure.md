@@ -1,35 +1,52 @@
 ---
-title: "short_vector 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "amp_short_vectors/Concurrency::graphics::short_vector"
-dev_langs: 
-  - "C++"
+title: "short_vector 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- amp_short_vectors/Concurrency::graphics::short_vector
+dev_langs:
+- C++
 ms.assetid: e4f50b8f-1150-437d-b58c-79c5fb883708
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# short_vector 構造体
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
+ms.openlocfilehash: f8df5600c8af80b4d279fc1fde0cc4c2ab9337eb
+ms.lasthandoff: 02/24/2017
 
-short\_vector は短いベクターを包括的にプログラムに役立つ metaprogramming 定義を提供します。  
+---
+# <a name="shortvector-structure"></a>short_vector 構造体
+short_vector は short ベクターを包括的プログラミングの有用なメタプログラミングの定義を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename _Scalar_type,  
-   int _Size  
+template<
+    typename _Scalar_type,  
+    int _Size  
 >  
 struct short_vector;  
 template<>  
@@ -82,31 +99,38 @@ template<>
 struct short_vector<double, 4>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_Scalar_type`  
  `_Size`  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |`type`||  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[short\_vector::short\_vector コンストラクター](../Topic/short_vector::short_vector%20Constructor.md)||  
+|----------|-----------------|  
+|[short_vector::short_vector コンス トラクター](#ctor)||  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `short_vector`  
   
-## 必要条件  
- **ヘッダー:** amp\_short\_vectors.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** amp_short_vectors.h  
   
- **名前空間:** Concurrency::graphics  
+ **Namespace:** concurrency::graphics  
   
-## 参照  
- [Concurrency::graphics 名前空間](../../../parallel/amp/reference/concurrency-graphics-namespace.md)
+##  <a name="a-namectora--shortvectorshortvector-constructor"></a><a name="ctor"></a>short_vector::short_vector コンス トラクター  
+  
+```  
+short_vector();
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+
