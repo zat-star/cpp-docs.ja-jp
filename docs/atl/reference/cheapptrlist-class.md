@@ -1,78 +1,104 @@
 ---
-title: "CHeapPtrList クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::CHeapPtrList"
-  - "CHeapPtrList"
-  - "ATL.CHeapPtrList"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CHeapPtrList クラス"
+title: "CHeapPtrList クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::CHeapPtrList
+- CHeapPtrList
+- ATL.CHeapPtrList
+dev_langs:
+- C++
+helpviewer_keywords:
+- CHeapPtrList class
 ms.assetid: cc70e585-362a-4007-81db-c705eb181226
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CHeapPtrList クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
+ms.openlocfilehash: 9acf18d0e0a72f27a335cefca81341c95d530ae5
+ms.lasthandoff: 02/24/2017
 
-このクラスには、ヒープ ポインターのリストを構築するときに役立つメソッドが用意されています。  
+---
+# <a name="cheapptrlist-class"></a>CHeapPtrList クラス
+このクラスは、ヒープのポインターのリストを構築するときに役立つメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<typename E, class Allocator = ATL::CCRTAllocator>  
+class CHeapPtrList 
+   : public CAtlList<ATL::CHeapPtr<E, Allocator>,
+                     CHeapPtrElementTraits<E, Allocator>>
 ```  
   
-      template<  
-typename E,  
-class Allocator = ATL::CCRTAllocator  
->  
-class CHeapPtrList : public CAtlList<  
-ATL::CHeapPtr< E, Allocator>,  
-CHeapPtrElementTraits< E, Allocator>  
->  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `E`  
  コレクション クラスに格納されるオブジェクトの型。  
   
  `Allocator`  
- 使用するメモリ割り当てのクラス。  既定値は [CCRTAllocator](../../atl/reference/ccrtallocator-class.md)です。  
+ メモリの割り当ては、使用するクラス。 既定値は[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CHeapPtrList::CHeapPtrList](../Topic/CHeapPtrList::CHeapPtrList.md)|コンストラクターです。|  
+|----------|-----------------|  
+|[CHeapPtrList::CHeapPtrList](#cheapptrlist)|コンストラクターです。|  
   
-## 解説  
- このクラスは、コンストラクターを提供し、[CAtlList](../Topic/CAtlList%20Class.md) と [CHeapPtrElementTraits](../../atl/reference/cheapptrelementtraits-class.md) からヒープ ポインターを格納するコレクション クラス オブジェクトの作成を支援するメソッドを取得します。  
+## <a name="remarks"></a>コメント  
+ このクラスは、コンス トラクターを提供し、メソッドからの派生元[CAtlList](../../atl/reference/catllist-class.md)と[CHeapPtrElementTraits](../../atl/reference/cheapptrelementtraits-class.md)ヒープ ポインターを格納するコレクション クラスのオブジェクトの作成を支援するためにします。  
   
-## 継承階層  
- [CAtlList](../Topic/CAtlList%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CAtlList](../../atl/reference/catllist-class.md)  
   
  `CHeapPtrList`  
   
-## 必要条件  
- **Header:** atlcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcoll.h  
   
-## 参照  
- [CAtlList クラス](../Topic/CAtlList%20Class.md)   
+##  <a name="a-namecheapptrlista--cheapptrlistcheapptrlist"></a><a name="cheapptrlist"></a>CHeapPtrList::CHeapPtrList  
+ コンストラクターです。  
+  
+```
+CHeapPtrList(UINT nBlockSize = 10) throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `nBlockSize`  
+ ブロック サイズ。  
+  
+### <a name="remarks"></a>コメント  
+ ブロック サイズは、新しい要素が必要なときに割り当てられたメモリの量の測定値です。 ブロック サイズの増加はメモリ割り当てルーチンの呼び出しを減らすためより多くのリソースを使用します。  
+  
+## <a name="see-also"></a>関連項目  
+ [CAtlList クラス](../../atl/reference/catllist-class.md)   
  [CHeapPtr クラス](../../atl/reference/cheapptr-class.md)   
  [CHeapPtrElementTraits クラス](../../atl/reference/cheapptrelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
+

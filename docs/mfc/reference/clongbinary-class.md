@@ -1,76 +1,117 @@
 ---
-title: "CLongBinary クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "BLOB"
-  - "CLongBinary"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "BLOB (バイナリ ラージ オブジェクト)"
-  - "BLOB (バイナリ ラージ オブジェクト), CLongBinary クラス"
-  - "CLongBinary クラス"
+title: "CLongBinary クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- BLOB
+- CLongBinary
+dev_langs:
+- C++
+helpviewer_keywords:
+- BLOB (binary large object)
+- CLongBinary class
+- BLOB (binary large object), CLongBinary class
 ms.assetid: f4320059-aeb4-4ee5-bc2b-25f19d898ef5
 caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# CLongBinary クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: bb73604ee4d15f3a71be8514f348ad265064928a
+ms.lasthandoff: 02/24/2017
 
-データベース上の大きなバイナリ データ オブジェクト \(BLOB または "バイナリ ラージ オブジェクト" と呼びます\) を使った作業を単純にします。  
+---
+# <a name="clongbinary-class"></a>CLongBinary クラス
+データベース上の大きなバイナリ データ オブジェクト (BLOB または "バイナリ ラージ オブジェクト" と呼びます) を使った作業を単純にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CLongBinary : public CObject  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CLongBinary::CLongBinary ](../Topic/CLongBinary::CLongBinary.md)|`CLongBinary` オブジェクトを構築します。|  
-  
-### パブリック データ メンバー  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CLongBinary::m\_dwDataLength](../Topic/CLongBinary::m_dwDataLength.md)|ハンドルが `m_hData`に格納されているデータ オブジェクトのバイト単位のサイズが含まれています。|  
-|[CLongBinary::m\_hData ](../Topic/CLongBinary::m_hData.md)|実際のイメージ オブジェクトに Windows `HGLOBAL` のハンドルが含まれます。|  
+|----------|-----------------|  
+|[CLongBinary::CLongBinary](#clongbinary)|`CLongBinary` オブジェクトを構築します。|  
   
-## 解説  
- たとえば、SQL テーブルのレコードのフィールドは画像を表すビットマップが含まれる場合があります。  `CLongBinary` のオブジェクトは、そのようなオブジェクトを格納およびサイズを追跡します。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CLongBinary::m_dwDataLength](#m_dwdatalength)|実際にそのハンドルが格納されているデータ オブジェクトのバイト サイズを格納`m_hData`します。|  
+|[CLongBinary::m_hData](#m_hdata)|Windows を含む`HGLOBAL`実際のイメージ オブジェクトのハンドルします。|  
+  
+## <a name="remarks"></a>コメント  
+ たとえば、SQL テーブル内のレコード フィールドには、画像のビットマップが含まれます。 A`CLongBinary`オブジェクトがこのようなオブジェクトを格納およびのサイズを追跡します。  
   
 > [!NOTE]
->  一般に、これ [DFX\_Binary](../Topic/DFX_Binary.md) 関数とともに [CByteArray](../../mfc/reference/cbytearray-class.md) を使用するより良い方法です。  まだ `CLongBinary`を使用できますが、一般に `CByteArray` は、Win32 の下に、16 ビットの `CByteArray`で発生するサイズに制限がないため、より多くの機能を提供します。  この通知は Data Access Objects \(DAO\)、ODBC \(Open Database Connectivity\) を使用したプログラミングに適用されます。  
+>  一般に、使用するより良いことを今すぐは[CByteArray](../../mfc/reference/cbytearray-class.md)と組み合わせて、 [DFX_Binary](http://msdn.microsoft.com/library/678021a3-2e46-44d7-8528-71bb692dcc07)関数です。 引き続き使用できます`CLongBinary`が一般に、`CByteArray`は、win32 でより多くの機能がいないためサイズの制限が発生し、16 ビット`CByteArray`します。 このアドバイスは、データ アクセス オブジェクト (DAO) とオープン データベース コネクティビティ (ODBC) を使用したプログラミングに適用されます。  
   
- `CLongBinary` のオブジェクトを使用するには、レコードセットのクラス型 `CLongBinary` のフィールド データ メンバーを宣言します。  このメンバーは、レコードセットを構築するレコードセット クラスの埋め込みメンバーで構築できます。  `CLongBinary` オブジェクトの構築後、レコード フィールド エクスチェンジ \(RFX\) 機構はレコードに戻るレコードを更新するとデータ ソースおよび格納の現在のレコードのフィールドからデータ オブジェクトを読み込み、  RFX は `m_hData`のデータにバイナリ ラージ オブジェクト \(BLOB のサイズのデータ ソースを割り当てます、のストレージ \( `CLongBinary` のオブジェクトの `m_hData` のデータ メンバー\)、および格納 `HGLOBAL` ハンドルを照会します。  RFX は、`m_dwDataLength` のデータ メンバーにデータ オブジェクトの実際のサイズを格納します。  Windows `HGLOBAL` ハンドルに格納されているデータを処理する、一般にある同じ方法を使用して、`m_hData`を使用してオブジェクト データを使用します。  
+ 使用する、`CLongBinary`オブジェクト、型のフィールド データ メンバーを宣言`CLongBinary`レコード セット クラスにします。 このメンバーは、レコード セット クラスの埋め込みメンバーになり、レコード セットを作成するときに作成します。 後に、`CLongBinary`オブジェクトを構築する場合、レコード フィールド エクス (チェンジ RFX) メカニズムは、データ ソースの現在のレコードのフィールドからのデータ オブジェクトを読み込みますレコードが更新されたときに、レコードに格納します。 Rfx 関数では、バイナリ ラージ オブジェクトのサイズでは、ストレージを割り当て、そのに対するデータ ソースがクエリ実行 (を使用して、`CLongBinary`オブジェクトの`m_hData`データ メンバー)、し、格納、`HGLOBAL`内のデータへのハンドル`m_hData`します。 RFX も内のデータ オブジェクトの実際のサイズを格納、`m_dwDataLength`データ メンバーです。 によってオブジェクトのデータの操作`m_hData`、Windows に格納されているデータの操作に通常使用と同じ手法を使用して`HGLOBAL`を処理します。  
   
- 自分のレコードセットを破棄するとき、`CLongBinary` の埋め込みオブジェクトも破棄され、デストラクターは `HGLOBAL` のデータのハンドルを解放します。  
+ 埋め込まれているレコード セットを破棄する`CLongBinary`オブジェクトが破棄されるもと、デストラクターの割り当てを解除、`HGLOBAL`データ ハンドル。  
   
- 大きなオブジェクトの詳細については、`CLongBinary`の使用については、" " [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md) と [レコードセット: 大きなデータ項目 \(ODBC\) を使用](../../data/odbc/recordset-working-with-large-data-items-odbc.md)を参照してください。  
+ ラージ オブジェクトとの使用の詳細については`CLongBinary`、記事を参照して[レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)と[レコード セット: 大規模なデータ項目 (ODBC) での作業](../../data/odbc/recordset-working-with-large-data-items-odbc.md)します。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  `CLongBinary`  
   
-## 必要条件  
- **Header:** afxdb\_.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxdb_.h  
   
-## 参照  
- [CObject クラス](../Topic/CObject%20Class.md)   
+##  <a name="a-nameclongbinarya--clongbinaryclongbinary"></a><a name="clongbinary"></a>CLongBinary::CLongBinary  
+ `CLongBinary` オブジェクトを構築します。  
+  
+```  
+CLongBinary();
+```  
+  
+##  <a name="a-namemdwdatalengtha--clongbinarymdwdatalength"></a><a name="m_dwdatalength"></a>CLongBinary::m_dwDataLength  
+ 格納されたデータのバイト単位の実際のサイズを格納、`HGLOBAL`で処理`m_hData`します。  
+  
+```  
+SQLULEN m_dwDataLength;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ このサイズは、データに割り当てられたメモリ ブロックのサイズより小さくすることがあります。 Win32 を呼び出す[GLobalSize](http://msdn.microsoft.com/library/windows/desktop/aa366593)割り当てサイズを取得します。  
+  
+##  <a name="a-namemhdataa--clongbinarymhdata"></a><a name="m_hdata"></a>CLongBinary::m_hData  
+ Windows の格納`HGLOBAL`実際のバイナリ ラージ オブジェクト データを処理します。  
+  
+```  
+HGLOBAL m_hData;  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
- [CRecordset クラス](../Topic/CRecordset%20Class.md)
+ [CRecordset クラス](../../mfc/reference/crecordset-class.md)
+
