@@ -1,38 +1,55 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4917 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4917"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4917"
+title: "コンパイラの警告 (レベル 1) C4917 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4917
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4917
 ms.assetid: c05e2610-4a5d-4f4b-a99b-c15fd7f1d5f1
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラの警告 (レベル 1) C4917
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4ac033535632e94a365aa8dafd849f2ab28a3af7
+ms.openlocfilehash: 43dce460fb336b09ce39d3e4c0e52b43a175ea36
+ms.lasthandoff: 02/24/2017
 
-'declarator' : GUID はクラス、インターフェイスまたは名前空間のみに関連付けることができます。  
+---
+# <a name="compiler-warning-level-1-c4917"></a>コンパイラの警告 (レベル 1) C4917
+'declarator': GUID だけに関連付けることにより、クラス、インターフェイス、または名前空間  
   
- [class](../../cpp/class-cpp.md)、[interface](../Topic/__interface.md)、または [namespace](../Topic/namespace%20Declaration.md) 以外のユーザー定義の構造体には、GUID を関連付けることができません。  
+ユーザー定義構造体以外の[クラス](../../cpp/class-cpp.md)、[インターフェイス](../../cpp/interface.md)、または[名前空間](../../cpp/namespaces-cpp.md)GUID を持つことはできません。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+既定では、この警告はオフに設定されています。 参照してください[コンパイラの警告ことは既定で無効](../../preprocessor/compiler-warnings-that-are-off-by-default.md)の詳細。  
   
- 次の例では、C4917 警告が生成されます。  
+## <a name="example"></a>例  
+次のコード サンプルには、C4917 が生成されます。  
   
-```  
+```cpp  
 // C4917.cpp  
 // compile with: /W1  
 #pragma warning(default : 4917)  

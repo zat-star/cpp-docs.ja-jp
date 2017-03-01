@@ -1,39 +1,55 @@
 ---
-title: "コンパイラ エラー C2743 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2743"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2743"
+title: "コンパイラ エラー C2743 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2743
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2743
 ms.assetid: 644cd444-21d2-471d-a176-f5f52c5a0b73
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2743
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
+ms.openlocfilehash: 7420231e64515b556cfe81fc695eda5f75231506
+ms.lasthandoff: 02/24/2017
 
-'型' : \_\_clrcall デストラクターまたはコピー コンストラクターを伴うネイティブをキャッチすることはできません  
+---
+# <a name="compiler-error-c2743"></a>コンパイラ エラー C2743
+'type': _ _clrcall デストラクターまたはコピー コンス トラクターを持つネイティブ型をキャッチすることはできません  
   
- **\/clr:pure** ではなく **\/clr** を指定してコンパイルされたモジュールでネイティブ型の例外をキャッチしようとしましたが、その型のデストラクターまたはコピー コンストラクターで \_`_clrcall` 呼び出し規約を使用しています。  
+ コンパイルされたモジュール**/clr**のネイティブ型と型のデストラクターまたはコピー コンス トラクターが使用して例外をキャッチしようとしています。`__clrcall`呼び出し規約です。  
   
- **\/clr:pure** ではなく **\/clr** を指定してコンパイルした場合、例外処理はネイティブ型のメンバー関数が [\_\_clrcall](../../cpp/clrcall.md) ではなく [\_\_cdecl](../Topic/__cdecl.md) になることを要求します。  `__clrcall` 呼び出し規約を使用するメンバー関数を持つネイティブ型は、**\/clr** を指定してコンパイルされたモジュール内でキャッチできません。  
+ コンパイルされたときに**/clr**、例外処理メンバー関数を必要とするネイティブ型[_ _cdecl](../../cpp/cdecl.md)および not [_ _clrcall](../../cpp/clrcall.md)します。 ネイティブ型を使用してメンバー関数と`__clrcall`でコンパイルされたモジュールの呼び出し規約をキャッチできません**/clr**します。  
   
- 詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
-## 使用例  
- 次の例では C2743 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、c2743 エラーを生成します。  
   
 ```  
 // C2743.cpp  

@@ -1,34 +1,50 @@
 ---
-title: "コンパイラ エラー C2879 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2879"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2879"
+title: "コンパイラ エラー C2879 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2879
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2879
 ms.assetid: ac92b645-2394-49de-8632-43d44e0553ed
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2879
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: b09a83e77e906a4a65efa12cf51a067361fad95a
+ms.lasthandoff: 02/24/2017
 
-'symbol' : 存在する名前空間のみが名前空間のエイリアス定義によって別名を得ることができます。  
+---
+# <a name="compiler-error-c2879"></a>コンパイラ エラー C2879
+'symbol': 既存の名前空間名前を指定できます、代替名前空間エイリアス定義でのみ  
   
- 名前空間でないシンボルには[名前空間のエイリアス](../Topic/namespace%20Alias.md)を作成できません。  
+ 作成することはできません、[名前空間の別名](../../cpp/namespaces-cpp.md#namespace_aliases)名前空間以外のシンボルにします。  
   
- 次の例では警告 C2879 が生成されます。  
+ 次の例では、c2879 エラーが生成されます。  
   
 ```  
 // C2879.cpp  

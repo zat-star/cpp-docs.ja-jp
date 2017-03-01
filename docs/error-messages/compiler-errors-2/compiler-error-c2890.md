@@ -1,34 +1,50 @@
 ---
-title: "コンパイラ エラー C2890 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2890"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2890"
+title: "コンパイラ エラー C2890 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2890
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2890
 ms.assetid: 49147375-182c-42b1-b170-f475cd436d47
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2890
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: d29b7a2f9a618639b934a32d92d2655766f094ba
+ms.lasthandoff: 02/24/2017
 
-'クラス' : 'ref クラス' には、インターフェイスでない 1 つの基本クラスのみを指定できます  
+---
+# <a name="compiler-error-c2890"></a>コンパイラ エラー C2890
+'class': ref クラスは、1 つのインターフェイスではない基本クラスを持つのみことができます  
   
- 参照クラスは 1 つの基本クラスのみ持つことができます。  
+ 参照クラスには、基本クラスの&1; つしかありません。  
   
- 次の例では警告 C2890 が生成されます。  
+ 次の例では、c2890 エラーが生成されます。  
   
 ```  
 // C2890.cpp  
@@ -38,18 +54,4 @@ ref class B {};
 ref class C : public A, public B {};   // C2890  
 ref class D : public A {};   // OK  
 ```  
-  
- **C\+\+ マネージ拡張**  
-  
- 次の例では警告 C2890 が生成されます。  
-  
-```  
-// C2890b.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-__gc class A {};  
-__gc class B {};  
-  
-__gc class C : public A, public B {};   // C2890  
-__gc class D : public A {};   // OK  
-```
+

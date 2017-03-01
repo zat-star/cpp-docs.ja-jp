@@ -1,34 +1,50 @@
 ---
-title: "コンパイラ エラー C2815 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2815"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2815"
+title: "コンパイラ エラー C2815 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2815
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2815
 ms.assetid: d0256fd6-0721-4c99-b03c-52d96e77a613
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2815
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: 129ad6a0359fbee402b39c5e7ff498602e97479d
+ms.lasthandoff: 02/24/2017
 
-'operator delete' : 1 番目の実引数は 'void \*' 型でなければなりませんが、'param' が使用されました。  
+---
+# <a name="compiler-error-c2815"></a>コンパイラ エラー C2815
+'operator delete': 最初の仮パラメーターがある必要があります ' void *'、'param' が使用されましたが、  
   
- ユーザー定義関数 [operator delete](../Topic/operator%20delete%20\(%3Cnew%3E\).md) の最初の仮パラメーターは、`void *` 型にする必要があります。  
+ ユーザー定義[delete 演算子](../../standard-library/new-operators.md#operator_delete)関数は、型の最初の正式なパラメーターを受け取る必要があります`void *`します。  
   
- 次の例では警告 C2815 が生成されます。  
+ 次の例では、c2815 エラーが生成されます。  
   
 ```  
 // C2815.cpp  

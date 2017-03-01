@@ -1,69 +1,118 @@
 ---
-title: "CWindowDC クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CWindowDC"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CWindowDC クラス"
-  - "デバイス コンテキスト, ウィンドウ"
-  - "画面出力クラス"
+title: "CWindowDC クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CWindowDC
+dev_langs:
+- C++
+helpviewer_keywords:
+- device contexts, window
+- screen output classes
+- CWindowDC class
 ms.assetid: 876a3641-4cde-471c-b0d1-fe58b32af79c
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# CWindowDC クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 8a941e1b6f8a398706498ec5d1ce1bfc9156f115
+ms.lasthandoff: 02/24/2017
 
-`CDC` の派生クラスです。  
+---
+# <a name="cwindowdc-class"></a>CWindowDC クラス
+`CDC`の派生クラスです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CWindowDC : public CDC  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
-|Name|Description|  
+|名前|説明|  
 |----------|-----------------|  
-|[CWindowDC::CWindowDC](../Topic/CWindowDC::CWindowDC.md)|`CWindowDC` オブジェクトを構築します。|  
+|[CWindowDC::CWindowDC](#cwindowdc)|`CWindowDC` オブジェクトを構築します。|  
   
-### プロテクト データ メンバー  
+### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|Name|Description|  
+|名前|説明|  
 |----------|-----------------|  
-|[CWindowDC::m\_hWnd](../Topic/CWindowDC::m_hWnd.md)|`HWND` の割り当て先である `CWindowDC`。|  
+|[CWindowDC::m_hWnd](#m_hwnd)|`HWND` の割り当て先である `CWindowDC`。|  
   
-## 解説  
- 構築時の [GetWindowDC](http://msdn.microsoft.com/library/windows/desktop/dd144947\(v=vs.85\).aspx) Windows 関数の呼び出しと、破棄時の [ReleaseDC](http://msdn.microsoft.com/library/windows/desktop/dd162920\(v=vs.85\).aspx) の呼び出しを処理します。  つまり、`CWindowDC` オブジェクトは、[CWnd](../Topic/CWnd%20Class.md) の画面全体 \(クライアント領域と非クライアント領域の両方\) にアクセスします。  
+## <a name="remarks"></a>コメント  
+ Windows 関数を呼び出す[GetWindowDC](http://msdn.microsoft.com/library/windows/desktop/dd144947\(v=vs.85\).aspx)構築時に、 [ReleaseDC](http://msdn.microsoft.com/library/windows/desktop/dd162920\(v=vs.85\).aspx)破棄時です。 つまり、`CWindowDC`の全画面領域にアクセスする、 [CWnd](../../mfc/reference/cwnd-class.md) (クライアントおよび非クライアント領域の両方)。  
   
- `CWindowDC` の使い方の詳細については、「[デバイス コンテキスト](../Topic/Device%20Contexts.md)」を参照してください。  
+ 使用する方法について`CWindowDC`を参照してください[デバイス コンテキスト](../../mfc/device-contexts.md)します。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CDC](../Topic/CDC%20Class.md)  
+ [CDC](../../mfc/reference/cdc-class.md)  
   
  `CWindowDC`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  ヘッダー: afxwin.h  
   
-## 参照  
- [CDC クラス](../Topic/CDC%20Class.md)   
+##  <a name="a-namecwindowdca--cwindowdccwindowdc"></a><a name="cwindowdc"></a>CWindowDC::CWindowDC  
+ 構築、`CWindowDC`の全画面領域 (クライアントと非クライアントの両方) にアクセスするオブジェクトを`CWnd`によって指されるオブジェクト`pWnd`します。  
+  
+```  
+explicit CWindowDC(CWnd* pWnd);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `pWnd`  
+ デバイス コンテキスト オブジェクトがアクセス クライアント領域を持つウィンドウです。  
+  
+### <a name="remarks"></a>コメント  
+ コンス トラクターは、Windows の関数を呼び出します。 [GetWindowDC](http://msdn.microsoft.com/library/windows/desktop/dd144947)します。  
+  
+ 例外 (型の`CResourceException`) 場合にスローされますが、Windows`GetWindowDC`呼び出しは失敗します。 Windows が既に割り当てられているすべての使用可能なデバイス コンテキストの場合は、デバイス コンテキストを使用しないことがあります。 共通のディスプレイ コンテキストでは、Windows の特定の時点で利用可能なの&5; つのアプリケーションが行う競合します。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_MFCDocView #&188;](../../mfc/codesnippet/cpp/cwindowdc-class_1.cpp)]  
+  
+##  <a name="a-namemhwnda--cwindowdcmhwnd"></a><a name="m_hwnd"></a>CWindowDC::m_hWnd  
+ `HWND`の`CWnd`ポインターを使用して作成、`CWindowDC`オブジェクトです。  
+  
+```  
+HWND m_hWnd;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `m_hWnd`保護されている型の変数は、`HWND`です。  
+  
+### <a name="example"></a>例  
+  例を参照してください[CWindowDC::CWindowDC](#cwindowdc)します。  
+  
+## <a name="see-also"></a>関連項目  
+ [CDC クラス](../../mfc/reference/cdc-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
- [CDC クラス](../Topic/CDC%20Class.md)
+ [CDC クラス](../../mfc/reference/cdc-class.md)
+

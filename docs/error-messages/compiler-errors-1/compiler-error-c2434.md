@@ -1,35 +1,53 @@
 ---
-title: "コンパイラ エラー C2434 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2434"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2434"
+title: "コンパイラ エラー C2434 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2434
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2434
 ms.assetid: 01329e26-7c74-4219-b74f-69e3a40c9738
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C2434
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
+ms.openlocfilehash: 65aac590a3282f2fd71c460d14927f5695fcdc5a
+ms.lasthandoff: 02/24/2017
 
-'シンボル' : \_\_declspec\(process\) と共に宣言されたシンボルは、\/clr:pure モードで動的に初期化できません  
+---
+# <a name="compiler-error-c2434"></a>コンパイラ エラー C2434
+'symbol': __declspec(process) で宣言されたシンボルは/clr で動的に初期化できません: 純粋なモード  
   
- プロセスごとの変数は **\/clr:pure** 環境で動的に初期化できません。  詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」および「[プロセス](../../cpp/process.md)」を参照してください。  
+ **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは、Visual Studio 2015 で廃止されました。  
   
-## 使用例  
- 次の例では C2434 エラーが生成されます。  
+ Process ごとの変数を動的に初期化することはできません**/clr: 純粋な**です。 詳細については、次を参照してください。 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)と[プロセス](../../cpp/process.md)します。  
+  
+## <a name="example"></a>例  
+ 次の例では、c2434 エラーを生成します。  
   
 ```  
 // C2434.cpp  

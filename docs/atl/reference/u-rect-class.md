@@ -1,64 +1,103 @@
 ---
-title: "_U_RECT クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL::_U_RECT"
-  - "_U_RECT"
-  - "ATL._U_RECT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_U_RECT クラス"
-  - "U_RECT クラス"
+title: "_U_RECT クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::_U_RECT
+- _U_RECT
+- ATL._U_RECT
+dev_langs:
+- C++
+helpviewer_keywords:
+- U_RECT class
+- _U_RECT class
 ms.assetid: 5f880a2d-09cf-4327-bf32-a3519c4dcd63
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# _U_RECT クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
+ms.openlocfilehash: 5a375921fd51b19eb2e9020d3175a56df8549461
+ms.lasthandoff: 02/24/2017
 
-この引数アダプター クラスによって、ポインターとして実装される関数に `RECT` ポインターまたは参照を渡すことができます。  
+---
+# <a name="urect-class"></a>_U_RECT クラス
+この引数アダプター クラスは、いずれかの`RECT`ポインターまたは参照をポインターとして実装されている関数に渡されます。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```
+class _U_RECT```  
   
-class _U_RECT  
+## Members  
   
-```  
+### Public Constructors  
   
-## メンバー  
+|Name|Description|  
+|----------|-----------------|  
+|[_U_RECT::_U_RECT](#_u_rect___u_rect)|The constructor.|  
   
-### パブリック コンストラクター  
+### Public Data Members  
   
-|名前|説明|  
-|--------|--------|  
-|[\_U\_RECT::\_U\_RECT](../Topic/_U_RECT::_U_RECT.md)|コンストラクターです。|  
+|Name|Description|  
+|----------|-----------------|  
+|[_U_RECT::m_lpRect](#_u_rect__m_lprect)|Pointer to a `RECT`.|  
   
-### パブリック データ メンバー  
+## Remarks  
+ The class defines two constructor overloads: one accepts a **RECT&** argument and the other accepts an `LPRECT` argument. The first constructor stores the address of the reference argument in the class's single data member, [m_lpRect](#_u_rect__m_lprect). The argument to the pointer constructor is stored directly without conversion.  
   
-|名前|説明|  
-|--------|--------|  
-|[\_U\_RECT::m\_lpRect](../Topic/_U_RECT::m_lpRect.md)|`RECT`へのポインター。|  
-  
-## 解説  
- クラスは 2 種類のコンストラクター オーバーロードを定義します: 1 つが **RECT&** の引数を受け取り、そのほかのは `LPRECT` の引数を受け取ります。  一つ目のコンストラクターは、クラスの一つのデータ メンバー、[m\_lpRect](../Topic/_U_RECT::m_lpRect.md)で参照引数のアドレスを格納します。  ポインターのコンストラクターへの引数は変換されずに格納されます。  
-  
-## 必要条件  
+## Requirements  
  **Header:** atlwin.h  
   
-## 参照  
- [クラスの概要](../../atl/atl-class-overview.md)
+##  <a name="_u_rect__m_lprect"></a>  _U_RECT::m_lpRect  
+ The class holds the value passed to either of its constructors as a public `LPRECT` data member.  
+  
+```
+LPRECT ある m_lpRect です。
+```  
+  
+##  <a name="_u_rect___u_rect"></a>  _U_RECT::_U_RECT  
+ The address of the reference argument is stored in the class's single data member, [m_lpRect](#_u_rect__m_lprect).  
+  
+```
+(RECT >/reportbuilder/reportbuilder_3_0_0_0.application rc); _U_RECT  
+_U_RECT (LPRECT lpRect) です。
+```  
+  
+### Parameters  
+ `rc`  
+ A `RECT` reference.  
+  
+ `lpRect`  
+ A `RECT` pointer.  
+  
+### Remarks  
+ The argument to the pointer constructor is stored directly without conversion.  
+  
+## See Also  
+ [Class Overview](../../atl/atl-class-overview.md)
+

@@ -1,71 +1,106 @@
 ---
-title: "CMFCWindowsManagerDialog クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMFCWindowsManagerDialog"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMFCWindowsManagerDialog クラス"
+title: "CMFCWindowsManagerDialog クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMFCWindowsManagerDialog
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCWindowsManagerDialog class
 ms.assetid: 35b4b0db-33c4-4b22-94d8-5e3396341340
 caps.latest.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# CMFCWindowsManagerDialog クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 9f1508cfd3844fed413edd69063f1b3e64e80195
+ms.lasthandoff: 02/24/2017
 
-`CMFCWindowsManagerDialog` オブジェクトは、ユーザーが MDI アプリケーションの中で MDI 子ウィンドウを管理できるようにします。  
+---
+# <a name="cmfcwindowsmanagerdialog-class"></a>CMFCWindowsManagerDialog クラス
+`CMFCWindowsManagerDialog`オブジェクトにより、ユーザーが MDI アプリケーションで、MDI 子ウィンドウを管理します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMFCWindowsManagerDialog : public CDialog  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CMFCWindowsManagerDialog::CMFCWindowsManagerDialog](../Topic/CMFCWindowsManagerDialog::CMFCWindowsManagerDialog.md)|`CMFCWindowsManagerDialog` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[CMFCWindowsManagerDialog::CMFCWindowsManagerDialog](#cmfcwindowsmanagerdialog)|`CMFCWindowsManagerDialog` オブジェクトを構築します。|  
   
-## 解説  
- `CMFCWindowsManagerDialog` には、アプリケーションで現在開かれている MDI 子ウィンドウのリストが含まれています。  ユーザーはこのダイアログ ボックスを使用して、MDI 子ウィンドウの状態を手動で制御できます。  
+## <a name="remarks"></a>コメント  
+ `CMFCWindowsManagerDialog`アプリケーション内で現在開いている MDI 子ウィンドウの一覧が含まれています。 このダイアログ ボックスを使用して、MDI 子ウィンドウの状態を手動で制御できます。  
   
- `CMFCWindowsManagerDialog` は [CMDIFrameWndEx クラス](../Topic/CMDIFrameWndEx%20Class.md)内に埋め込まれています。  `CMFCWindowsManagerDialog` は、手動で作成する必要のないクラスです。  代わりに [CMDIFrameWndEx::ShowWindowsDialog](../Topic/CMDIFrameWndEx::ShowWindowsDialog.md) 関数を呼び出します。これにより、`CMFCWindowsManagerDialog` オブジェクトが作成され、表示されます。  
+ `CMFCWindowsManagerDialog`内部に埋め込まれて、 [CMDIFrameWndEx クラス](../../mfc/reference/cmdiframewndex-class.md)します。 `CMFCWindowsManagerDialog`手動で作成する必要がありますクラスではありません。 代わりに、関数を呼び出して[CMDIFrameWndEx::ShowWindowsDialog](../../mfc/reference/cmdiframewndex-class.md#showwindowsdialog)、作成され、表示し、`CMFCWindowsManagerDialog`オブジェクトです。  
   
-## 使用例  
- `CMDIFrameWndEx::ShowWindowsDialog` を呼び出して `CMFCWindowsManagerDialog` オブジェクトを構築する方法を次の例に示します。  このコード スニペットは [Visual Studio のデモのサンプル](../../top/visual-cpp-samples.md)の一部です。  
+## <a name="example"></a>例  
+ 次の例では、構築、`CMFCWindowsManagerDialog`を呼び出してオブジェクト`CMDIFrameWndEx::ShowWindowsDialog`します。 このコード スニペットの一部である、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
   
- [!code-cpp[NVC_MFC_VisualStudioDemo#18](../../mfc/reference/codesnippet/CPP/cmfcwindowsmanagerdialog-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_VisualStudioDemo&#18;](../../mfc/codesnippet/cpp/cmfcwindowsmanagerdialog-class_1.cpp)]  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
   
  [CDialog](../../mfc/reference/cdialog-class.md)  
   
  [CMFCWindowsManagerDialog](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)  
   
-## 必要条件  
- **ヘッダー :** afxWindowsManagerDialog.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxWindowsManagerDialog.h  
   
-## 参照  
+##  <a name="a-namecmfcwindowsmanagerdialoga--cmfcwindowsmanagerdialogcmfcwindowsmanagerdialog"></a><a name="cmfcwindowsmanagerdialog"></a>CMFCWindowsManagerDialog::CMFCWindowsManagerDialog  
+ 構築、 [CMFCWindowsManagerDialog](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)オブジェクトです。  
+  
+```  
+CMFCWindowsManagerDialog(
+    CMDIFrameWndEx* pMDIFrame,  
+    BOOL bHelpButton = FALSE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pMDIFrame`  
+ 親またはオーナー ウィンドウへのポインター。  
+  
+ [入力] `bHelpButton`  
+ フレームワークを表示するかどうかを指定するブール型パラメーター、**ヘルプ** ボタンをクリックします。  
+  
+### <a name="remarks"></a>コメント  
+ ビジュアル マネージャーの詳細については、次を参照してください。[ビジュアル マネージャー](../../mfc/visualization-manager.md)します。  
+  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)   
- [CMDIFrameWndEx クラス](../Topic/CMDIFrameWndEx%20Class.md)   
- [CMDIFrameWndEx::ShowWindowsDialog](../Topic/CMDIFrameWndEx::ShowWindowsDialog.md)
+ [クラス](../../mfc/reference/mfc-classes.md)   
+ [CMDIFrameWndEx クラス](../../mfc/reference/cmdiframewndex-class.md)
+

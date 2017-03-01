@@ -1,70 +1,129 @@
 ---
-title: "COleException クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "COleException"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COleException クラス"
-  - "例外, OLE"
+title: "クラスの関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- COleException
+dev_langs:
+- C++
+helpviewer_keywords:
+- COleException class
+- exceptions, OLE
 ms.assetid: 2571e9fe-26cc-42f0-9ad9-8ad5b4311ec1
 caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# COleException クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
+ms.openlocfilehash: 059c92c8dc8796cf103cc02533ba5f3526720249
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="coleexception-class"></a>関数のクラス
 OLE 操作に関する例外条件を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class COleException : public CException  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[COleException::Process](../Topic/COleException::Process.md)|OLE リターン コードにキャッチされた例外に変換されます。|  
-  
-### パブリック データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[COleException::m\_sc](../Topic/COleException::m_sc.md)|例外の理由を示すステータス コードが含まれています。|  
+|----------|-----------------|  
+|[COleException::Process](#process)|OLE の戻り値にキャッチした例外を変換します。|  
   
-## 解説  
- `COleException` のクラスは、例外の理由を示すステータス コードを保持するパブリック データ メンバーが含まれています。  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
- 一般に、`COleException` のオブジェクトを直接作成する必要はありません; 代わりに、[AfxThrowOleException](../Topic/AfxThrowOleException.md)を呼び出す必要があります。  
+|名前|説明|  
+|----------|-----------------|  
+|[COleException::m_sc](#m_sc)|例外の原因を示すステータス コードが含まれています。|  
   
- 例外の詳細については、" " [例外処理 \(MFC\)](../../mfc/exception-handling-in-mfc.md) と [例外: OLE の例外](../Topic/Exceptions:%20OLE%20Exceptions.md)を参照してください。  
+## <a name="remarks"></a>コメント  
+ `COleException`クラスには、例外の理由を示すステータス コードが含まれるパブリック データ メンバーが含まれています。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+ 一般に、作成してはいけない、`COleException`オブジェクトは、直接呼び出す必要があります[AfxThrowOleException](exception-processing.md#afxthrowoleexception)します。  
+  
+ 例外の詳細については、記事を参照してください。[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)と[例外: OLE の例外](../../mfc/exceptions-ole-exceptions.md)します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
   
  `COleException`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
   
-## 参照  
- [MFC CALCDRIV サンプル](../../top/visual-cpp-samples.md)   
+##  <a name="a-namemsca--coleexceptionmsc"></a><a name="m_sc"></a>COleException::m_sc  
+ 例外の原因を示す OLE ステータス コードを保持します。  
+  
+```  
+SCODE m_sc;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ この変数の値によって設定されます[AfxThrowOleException](exception-processing.md#afxthrowoleexception)します。  
+  
+ 詳細については`SCODE`を参照してください[COM エラー コードの構造体](http://msdn.microsoft.com/library/windows/desktop/ms690088)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_MFCOleContainer #&22;](../../mfc/codesnippet/cpp/coleexception-class_1.cpp)]  
+  
+##  <a name="a-nameprocessa--coleexceptionprocess"></a><a name="process"></a>COleException::Process  
+ 呼び出す、**プロセス**OLE ステータス コードにキャッチした例外に変換します。  
+  
+```  
+static SCODE PASCAL Process(const CException* pAnyException);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ *pAnyException*  
+ キャッチした例外へのポインター。  
+  
+### <a name="return-value"></a>戻り値  
+ OLE のステータス コード。  
+  
+### <a name="remarks"></a>コメント  
+  
+> [!NOTE]
+>  この関数は、**静的**します。  
+  
+ 詳細については`SCODE`を参照してください[COM エラー コードの構造体](http://msdn.microsoft.com/library/windows/desktop/ms690088)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+  
+### <a name="example"></a>例  
+  例を参照してください[COleDispatchDriver::CreateDispatch](../../mfc/reference/coledispatchdriver-class.md#createdispatch)します。  
+  
+## <a name="see-also"></a>関連項目  
+ [MFC サンプル CALCDRIV](../../visual-cpp-samples.md)   
  [CException クラス](../../mfc/reference/cexception-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
+
+
+
+

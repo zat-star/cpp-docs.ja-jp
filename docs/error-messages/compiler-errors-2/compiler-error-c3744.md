@@ -1,67 +1,50 @@
 ---
-title: "コンパイラ エラー C3744 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3744"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3744"
+title: "コンパイラ エラー C3744 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3744
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3744
 ms.assetid: a447d050-80d1-406a-9a6e-f15c527d717c
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3744
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: f6cd256454b51a103d9c4249b050c8c05781bc78
+ms.lasthandoff: 02/24/2017
 
-\_\_unhook は最低 3 つのマネージ イベント引数を必要とします。  
+---
+# <a name="compiler-error-c3744"></a>コンパイラ エラー C3744
+__unhook は最低 3 つのマネージ イベント引数を必要とします。  
   
- [\_\_unhook](../../cpp/unhook.md) 関数を C\+\+ マネージ拡張用にコンパイルするプログラムで使用する場合は、3 つのパラメーターが必要です。  
+ [_ _Unhook](../../cpp/unhook.md)関数は c++ マネージ拡張用にコンパイルするプログラムで使用するときに、3 つのパラメーターを受け取る必要があります。  
   
- `__hook` および `__unhook` は、\/clr プログラミングと互換性がありません。  代わりに、\+\= 演算子および \-\= 演算子を使用してください。  
+ `__hook``__unhook` /clr プログラミングと互換性がありません。 + =、-= 演算子を使用してください。  
   
- C3744 が発生するのは **\/clr:oldSyntax** を使用した場合だけです。  
-  
- 次の例では警告 C3744 が生成されます。  
-  
-```  
-// C3744.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-using namespace System;  
-  
-public __delegate void delegate1();  
-  
-[ event_source(managed) ]  
-public __gc class CPSource {  
-public:  
-   __event delegate1* event1;  
-};  
-  
-[event_receiver(managed)]  
-public __gc class CReceiver {  
-public:  
-   void Handler1() {  
-   }  
-  
-   void UnhookAll1(CPSource* pSrc, CReceiver* pRec) {  
-      pRec;  
-      __unhook(pSrc);   // C3744  
-      // The following line resolves the error.  
-      // __unhook(&CPSource::event1, pSrc, &CReceiver::Handler1);  
-   }  
-};  
-  
-int main() {  
-}  
-```
+ C3744 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
+

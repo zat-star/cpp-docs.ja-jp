@@ -1,78 +1,206 @@
 ---
-title: "combinable クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ppl/concurrency::combinable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "combinable クラス"
+title: "combinable クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ppl/concurrency::combinable
+dev_langs:
+- C++
+helpviewer_keywords:
+- combinable class
 ms.assetid: fe0bfbf6-6250-47da-b8d0-f75369f0b5be
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# combinable クラス
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
+ms.openlocfilehash: 4ed3ce3d441566a0fb301d01123335846d86a8af
+ms.lasthandoff: 02/24/2017
 
-`combinable<T>` オブジェクトは、スレッド プライベートなデータのコピーを提供し、並列アルゴリズムにおいてロック制御不要なスレッド ローカルのサブ計算を実行するために用意されています。  並列操作の最後に、スレッド プライベート サブ計算を最終結果に結合できます。  共有変数に多数の競合が発生する可能性がある場合、共有変数の代わりにこのクラスを使用することにより、パフォーマンスを改善できます。  
+---
+# <a name="combinable-class"></a>combinable クラス
+`combinable<T>` オブジェクトは、スレッド プライベートなデータのコピーを提供し、並列アルゴリズムにおいてロック制御不要なスレッド ローカルのサブ計算を実行するために用意されています。 並列操作の最後に、スレッド プライベート サブ計算を最終結果に結合できます。 共有変数に多数の競合が発生する可能性がある場合、共有変数の代わりにこのクラスを使用することにより、パフォーマンスを改善できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template<typename T>
+class combinable;
 ```  
-template<  
-   typename _Ty  
->  
-class combinable;  
-```  
   
-#### パラメーター  
- `_Ty`  
- 結合された最終結果のデータ型。  この型には、コピー コンストラクターおよび既定のコンストラクターが必要です。  
+#### <a name="parameters"></a>パラメーター  
+ `T`  
+ 最終的なマージされた結果のデータ型。 種類は、コピー コンス トラクターと既定のコンス トラクターが必要です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[combinable::combinable コンストラクター](../Topic/combinable::combinable%20Constructor.md)|オーバーロードされます。  新しい `combinable` オブジェクトを構築します。|  
-|[combinable::~combinable デストラクター](../Topic/combinable::~combinable%20Destructor.md)|`combinable` オブジェクトを破棄します。|  
+|----------|-----------------|  
+|[組み合わせ可能なコンス トラクター](#ctor)|オーバーロードされます。 新しい `combinable` オブジェクトを構築します。|  
+|[~ combinable デストラクター](#dtor)|`combinable` オブジェクトを破棄します。|  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[combinable::clear メソッド](../Topic/combinable::clear%20Method.md)|前回の使用で得た中間の計算結果を消去します。|  
-|[combinable::combine メソッド](../Topic/combinable::combine%20Method.md)|指定された結合ファンクタを呼び出して、スレッド ローカル サブ計算のセットから最終値を計算します。|  
-|[combinable::combine\_each メソッド](../Topic/combinable::combine_each%20Method.md)|指定された結合ファンクタをスレッド ローカル サブ計算ごとに 1 回ずつ呼び出して、スレッド ローカル サブ計算のセットから最終値を計算します。  最終結果の累積計算は関数オブジェクトによって行われます。|  
-|[combinable::local メソッド](../Topic/combinable::local%20Method.md)|オーバーロードされます。  スレッド プライベート サブ計算への参照を返します。|  
-  
-### パブリック演算子  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[combinable::operator\= 演算子](../Topic/combinable::operator=%20Operator.md)|別の `combinable` オブジェクトから `combinable` オブジェクトに代入します。|  
+|----------|-----------------|  
+|[clear メソッド](#clear)|以前の使用法から中間の計算結果をクリアします。|  
+|[combine メソッド](#combine)|指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。|  
+|[combine_each メソッド](#combine_each)|スレッド ローカルのサブ計算ごとに&1; 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトによっては累積されます。|  
+|[ローカル メソッド](#local)|オーバーロードされます。 スレッド プライベート サブ計算への参照を返します。|  
   
-## 解説  
- 詳細については、「[並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)」を参照してください。  
+### <a name="public-operators"></a>パブリック演算子  
   
-## 継承階層  
+|名前|説明|  
+|----------|-----------------|  
+|[operator = 演算子](#operator_eq)|割り当てる、`combinable`オブジェクトから`combinable`オブジェクトです。|  
+  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。[並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `combinable`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ppl.h  
   
  **名前空間:** concurrency  
   
-## 参照  
- [concurrency 名前空間](../../../parallel/concrt/reference/concurrency-namespace.md)
+##  <a name="a-namecleara-clear"></a><a name="clear"></a>オフ 
+
+ 以前の使用法から中間の計算結果をクリアします。  
+  
+```
+void clear();
+```  
+  
+##  <a name="a-namectora-combinable"></a><a name="ctor"></a>組み合わせ可能 
+
+ 新しい `combinable` オブジェクトを構築します。  
+  
+```
+combinable();
+
+template <typename _Function>
+explicit combinable(_Function _FnInitialize);
+
+combinable(const combinable& _Copy);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Function`  
+ 初期化ファンクタ オブジェクトの型。  
+  
+ `_FnInitialize`  
+ 型の新しい各スレッド プライベート値を初期化するために呼び出される関数`T`します。 シグネチャを持つ関数呼び出し演算子をサポートする必要があります`T ()`します。  
+  
+ `_Copy`  
+ 既存の`combinable`この&1; つにコピーされるオブジェクト。  
+  
+### <a name="remarks"></a>コメント  
+ 最初のコンス トラクターが型の既定のコンス トラクターを持つ新しい要素を初期化します`T`します。  
+  
+ 2 番目のコンス トラクターとして指定された初期化ファンクタを使用して新しい要素の初期化、`_FnInitialize`パラメーター。  
+  
+ 3 番目のコンス トラクターは、コピー コンス トラクターです。  
+  
+##  <a name="a-namedtora-combinable"></a><a name="dtor"></a>~ combinable 
+
+ `combinable` オブジェクトを破棄します。  
+  
+```
+~combinable();
+```  
+  
+##  <a name="a-namecombinea-combine"></a><a name="combine"></a>結合 
+
+ 指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。  
+  
+```
+template<typename _Function>
+T combine(_Function _FnCombine) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Function`  
+ 2 つのスレッド ローカルのサブ計算を結合するときに呼び出される関数オブジェクトの型。  
+  
+ `_FnCombine`  
+ サブ計算を結合するためのファンクタ。 シグニチャは`T (T, T)`または`T (const T&, const T&)`と結合規則および可換性があります。  
+  
+### <a name="return-value"></a>戻り値  
+ すべてのスレッド プライベート サブ計算を組み合わせることの最終的な結果です。  
+  
+##  <a name="a-namecombineeacha-combineeach"></a><a name="combine_each"></a>combine_each 
+
+ スレッド ローカルのサブ計算ごとに&1; 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトによっては累積されます。  
+  
+```
+template<typename _Function>
+void combine_each(_Function _FnCombine) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Function`  
+ シングル スレッド ローカルのサブ計算を結合するときに呼び出される関数オブジェクトの型。  
+  
+ `_FnCombine`  
+ 1 つのサブ計算を結合するためのファンクタ。 シグニチャは`void (T)`または`void (const T&)`、結合規則および可換にする必要があります。  
+  
+##  <a name="a-namelocala-local"></a><a name="local"></a>地元の 
+
+ スレッド プライベート サブ計算への参照を返します。  
+  
+```
+T& local();
+
+T& local(bool& _Exists);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Exists`  
+ ブール値への参照。 この引数によって参照されるブール値に設定されます`true`サブ計算が既にこのスレッドに存在し、設定かどうか`false`場合、これは、このスレッドで最初のサブ計算します。  
+  
+### <a name="return-value"></a>戻り値  
+ スレッド プライベート サブ計算への参照。  
+  
+##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+
+ 割り当てる、`combinable`オブジェクトから`combinable`オブジェクトです。  
+  
+```
+combinable& operator= (const combinable& _Copy);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Copy`  
+ 既存の`combinable`この&1; つにコピーされるオブジェクト。  
+  
+### <a name="return-value"></a>戻り値  
+ この `combinable` オブジェクトへの参照。  
+  
+## <a name="see-also"></a>関連項目  
+ [同時実行 Namespace](concurrency-namespace.md)
+
