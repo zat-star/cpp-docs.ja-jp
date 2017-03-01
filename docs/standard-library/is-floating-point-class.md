@@ -1,57 +1,70 @@
 ---
 title: "is_floating_point クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "is_floating_point"
-  - "std.tr1.is_floating_point"
-  - "std::tr1::is_floating_point"
-  - "std.is_floating_point"
-  - "std::is_floating_point"
-  - "type_traits/std::is_floating_point"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is_floating_point クラス [TR1]"
-  - "is_floating_point"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- is_floating_point
+- std::is_floating_point
+- type_traits/std::is_floating_point
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_floating_point class
+- is_floating_point
 ms.assetid: 070679c1-115b-4ee4-8ab7-f52e5d9e157f
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# is_floating_point クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
+ms.openlocfilehash: fad953c57d32b7851cff3083fc133dce5fd2ef10
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="isfloatingpoint-class"></a>is_floating_point クラス
 型が浮動小数点かどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Ty>  
-    struct is_floating_point;  
+template <class Ty>  
+struct is_floating_point;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Ty`  
  照会する型。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  型 `Ty` が浮動小数点型または浮動小数点型の `cv-qualified` 形式である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
   
  浮動小数点型は、`float`、`double`、`long double` のいずれかです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
-// std_tr1__type_traits__is_floating_point.cpp   
+```cpp  
+// std__type_traits__is_floating_point.cpp   
 // compile with: /EHsc   
 #include <type_traits>   
 #include <iostream>   
@@ -75,14 +88,18 @@ int main()
   
 ```  
   
-  **is\_floating\_point\<trivial\> \=\= false**  
-**is\_floating\_point\<int\> \=\= false**  
-**is\_floating\_point\<float\> \=\= true**   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+```Output  
+is_floating_point<trivial> == false  
+is_floating_point<int> == false  
+is_floating_point<float> == true  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [is\_integral クラス](../standard-library/is-integral-class.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
+ [is_integral クラス](../standard-library/is-integral-class.md)
+

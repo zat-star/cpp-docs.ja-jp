@@ -1,59 +1,75 @@
 ---
 title: "isprint、iswprint、_isprint_l、_iswprint_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "iswprint"
-  - "isprint"
-  - "_isprint_l"
-  - "_iswprint_l"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "iswprint"
-  - "_istprint"
-  - "isprint"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_isprint_l 関数"
-  - "_istprint 関数"
-  - "_iswprint_l 関数"
-  - "isprint 関数"
-  - "isprint_l 関数"
-  - "istprint 関数"
-  - "iswprint 関数"
-  - "iswprint_l 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- iswprint
+- isprint
+- _isprint_l
+- _iswprint_l
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- iswprint
+- _istprint
+- isprint
+dev_langs:
+- C++
+helpviewer_keywords:
+- _istprint function
+- iswprint function
+- _iswprint_l function
+- isprint_l function
+- istprint function
+- isprint function
+- iswprint_l function
+- _isprint_l function
 ms.assetid: a8bbcdb0-e8d0-4d8c-ae4e-56d3bdee6ca3
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# isprint、iswprint、_isprint_l、_iswprint_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 3836d13d9f050ebdd7ed7502e11bbde2da76992a
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="isprint-iswprint-isprintl-iswprintl"></a>isprint、iswprint、_isprint_l、_iswprint_l
 整数が印刷可能な文字を表すかどうかを決定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int isprint(  
@@ -72,41 +88,41 @@ int _iswprint_l(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `c`  
  テストする整数。  
   
  `locale`  
  使用するロケール。  
   
-## 戻り値  
- これらのルーチンでは、`c` が印刷可能な文字の特殊表現の場合は 0 以外の値を返します。  `isprint` は、`c` が印刷可能な文字 \(空白文字 \(0x20 – 0x7E\) を含む\) である場合、0 以外の値を返します。  `iswprint` は、`c` が印刷可能なワイド文字 \(空白ワイド文字を含む\) である場合、0 以外の値を返します。  これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+## <a name="return-value"></a>戻り値  
+ これらのルーチンでは、`c` が印刷可能な文字の特殊表現の場合は&0; 以外の値を返します。 `isprint` は、`c` が印刷可能な文字 (空白文字 (0x20 – 0x7E) を含む) である場合、0 以外の値を返します。 `iswprint` は、`c` が印刷可能なワイド文字 (空白ワイド文字を含む) である場合、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
- これらの関数のテスト条件の結果は、ロケールの `LC_CTYPE` カテゴリの設定に依存します。詳細については、「[setlocale、\_wsetlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。  `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ これらの関数のテスト条件結果は、ロケールの `LC_CTYPE` カテゴリの設定に依存します。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
- `isprint` と `_isprint_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。  CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
+ `isprint` と `_isprint_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。 CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_Unicode が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
-|**\_** `istprint`|`isprint`|[\_ismbcprint](../../c-runtime-library/reference/ismbcgraph-functions.md)|`iswprint`|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_Unicode が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
+|**_** `istprint`|`isprint`|[_ismbcprint](../../c-runtime-library/reference/ismbcgraph-functions.md)|`iswprint`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`isprint`|\<ctype.h\>|  
-|`iswprint`|\<ctype.h\> または \<wchar.h\>|  
-|`_isprint_l`|\<ctype.h\>|  
-|`_iswprint_l`|\<ctype.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`isprint`|\<ctype.h>|  
+|`iswprint`|\<ctype.h> または \<wchar.h>|  
+|`_isprint_l`|\<ctype.h>|  
+|`_iswprint_l`|\<ctype.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)

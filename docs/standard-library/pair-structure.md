@@ -1,93 +1,98 @@
 ---
 title: "pair 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "utility/std::pair"
-  - "pair"
-  - "std::pair"
-  - "std.pair"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pair クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- utility/std::pair
+- pair
+- std::pair
+- std.pair
+dev_langs:
+- C++
+helpviewer_keywords:
+- pair class
 ms.assetid: 539d3d67-80a2-4170-b347-783495d42109
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# pair 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
+ms.openlocfilehash: f9f6574029dd40d0c8c2a2ff2a5f73f4744f5ffe
+ms.lasthandoff: 02/24/2017
 
-2 つのオブジェクトを 1 つのオブジェクトとして処理する機能を提供する構造体。  
+---
+# <a name="pair-structure"></a>pair 構造体
+2 つのオブジェクトを&1; つのオブジェクトとして処理する機能を提供する構造体。  
   
-## 構文  
-  
+## <a name="syntax"></a>構文  
 ```  
-template<class T1, class T2>  
-   struct pair   
-   {  
-   typedef T1 first_type;  
-   typedef T2 second_type;  
-   T1 first;  
-   T2 second;  
-  
-   constexpr pair( );  
-   constexpr pair(  
-      const T1& Val1,   
-      const T2& Val2  
-   );  
-  
-   template<class Other1, class Other2>  
-      constexpr pair(  
-         const pair<Other1, Other2>& Right  
-      );  
-  
-template<class Other1, class Other2>  
-      constexpr pair(  
-        const pair <Other1 Val1, Other2 Val2>&& Right  
-      );  
-  
-   template<class Other1, class Other2>  
-      constexpr pair(  
-         Other1&& Val1, Other2&& Val2  
-      );  
-   };  
+struct pair
+{
+    typedef T1 first_type;
+    typedef T2 second_type;
+    T1 first;
+    T2 second;
+    constexpr pair();
+    constexpr pair(
+        const T1& Val1,
+        const T2& Val2);
+
+    template <class Other1, class Other2>
+    constexpr pair(const pair<Other1, Other2>& Right);
+
+    template <class Other1, class Other2>
+    constexpr pair(const pair <Other1 Val1, Other2 Val2>&& Right);
+
+    template <class Other1, class Other2>
+    constexpr pair(Other1&& Val1, Other2&& Val2);
+};
 ```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Val1`  
  `pair` の最初の要素を初期化する値。  
   
  `Val2`  
- `pair` の 2 番目の要素を初期化する値。  
+ `pair` の&2; 番目の要素を初期化する値。  
   
  `Right`  
  別のペアの要素を初期化するために値が使用されるペア。  
   
-## 戻り値  
- 最初の \(既定の\) コンストラクターがペアの最初の要素を既定の **T1** 型に初期化し、2 番目の要素を既定の **T2** 型に初期化します。  
+## <a name="return-value"></a>戻り値  
+ 最初の (既定の) コンストラクターがペアの最初の要素を既定の **T1** 型に初期化し、2 番目の要素を既定の **T2** 型に初期化します。  
   
- 2 番目のコンストラクターは、ペアの最初の要素を `Val1` に初期化し、2 番目の要素を *Val2* に初期化します。  
+ 2 番目のコンストラクターは、ペアの最初の要素を `Val1` に初期化し、2 番目の要素を *Val2.* に初期化します。  
   
- 3 番目の \(テンプレート\) コンストラクターは、ペアの最初の要素を `Right`.**first** に初期化し、2 番目の要素を `Right`.**second** に初期化します。  
+ 3 番目の (テンプレート) コンストラクターは、ペアの最初の要素を `Right`. **first** および&2; つ目の要素を `Right`. **second** に初期化します。  
   
- 4 番目のコンストラクターは、[右辺値参照宣言子: &&](../cpp/rvalue-reference-declarator-amp-amp.md)を使用して、ペアの最初の要素を `Val1` に初期化し、2 番目の要素を *Val2* に初期化します。  
+ 4 番目のコンストラクターは、[右辺値参照宣言子: &&](../cpp/rvalue-reference-declarator-amp-amp.md) を使用して、ペアの最初の要素を `Val1` に初期化し、2 番目の要素を *Val2* に初期化します。  
   
-## 解説  
- テンプレート構造体は、**T1** 型と **T2** 型のオブジェクトのペアをそれぞれ格納します。  **first\_type** 型はテンプレート パラメーター **T1** と同一で、**second\_type** 型はテンプレート パラメーター **T2** と同一です。  **T1** および **T2** には、それぞれ既定のコンストラクター、引数が 1 つのコンストラクター、およびデストラクターのみ指定する必要があります。  `pair` 型は**クラス**としてではなく `struct` として宣言されているため、この型のメンバーはすべてパブリックです。  ペアの最も一般的な用途としては、2 つの値を返す関数の戻り値の型としての用途と、連想コンテナー クラスの [map クラス](../Topic/map%20Class.md)と [multimap クラス](../standard-library/multimap-class.md)の要素としての用途の 2 つが挙げられます。これらのクラスはどちらも、キーと、各要素に関連付けられている値の型を持っています。  後者は、ペアの連想コンテナーの要件を満たしており、`pair`\<**const** `key_type`, `mapped_type`\> 形式の値の型を持っています。  
+## <a name="remarks"></a>コメント  
+ テンプレート構造体は、**T1** 型と **T2** 型のオブジェクトのペアをそれぞれ格納します。 **first_type** 型はテンプレート パラメーター **T1** と同一で、**second_type** 型はテンプレート パラメーター **T2** と同一です。 **T1** および **T2** には、それぞれ既定のコンストラクター、引数が&1; つのコンストラクター、およびデストラクターのみ指定する必要があります。 `pair` 型は**クラス**としてではなく `struct` として宣言されているため、この型のメンバーはすべてパブリックです。 ペアの最も一般的な用途としては、2 つの値を返す関数の戻り値の型としての用途と、連想コンテナー クラスの [map クラス](../standard-library/map-class.md)と [multimap クラス](../standard-library/multimap-class.md)の要素としての用途の&2; つが挙げられます。これらのクラスはどちらも、キーと、各要素に関連付けられている値の型を持っています。 後者は、ペアの連想コンテナーの要件を満たしており、`pair`< **const**`key_type`, `mapped_type`> 形式の値の型を持っています。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // utility_pair.cpp  
 // compile with: /EHsc  
 #include <utility>  
@@ -162,16 +167,26 @@ int main( )
            << " is already in m1,\n so the insertion failed." << endl;  
    }  
 }  
+\* Output:   
+The pair p1 is: ( 10, 0.011 ).  
+The pair p2 is: ( 10, 0.222 ).  
+The pair p3 is: ( 10, 0.011 ).  
+The element pairs of the map m1 are: ( 1, 10 ) ( 2, 20 ) ( 3, 30 ).  
+The element (4,40) was inserted successfully in m1.  
+The element with a key value of  
+ ( (pr2.first) -> first ) = 1 is already in m1,  
+ so the insertion failed.  
+*\  
 ```  
   
-  **ペア p1 は \( 10, 0.011 \)  ペア p2 は \( 10, 0.222 \)  ペア p3 は \( 10, 0.011 \)  マップ m1 の要素ペアは \( 1, 10 \) \( 2, 20 \) \( 3, 30 \)  要素 \(4,40\) は m1 に正常に挿入されました。  キー値**  
- **\( \(pr2.first\) \-\> first \) \= 1 を持つ要素は既に m1 にあるため、**  
- **挿入は失敗しました。**    
-## 必要条件  
- **ヘッダー:** \<utility\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<utility>  
   
  **名前空間:** std  
   
-## 参照  
- [2項論理演算子](../misc/pair-logical-operator.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

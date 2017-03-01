@@ -1,49 +1,65 @@
 ---
-title: "wctob | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "wctob"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "wctob"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文字, 変換"
-  - "wctob 関数"
-  - "ワイド文字, 変換"
+title: wctob | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- wctob
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- wctob
+dev_langs:
+- C++
+helpviewer_keywords:
+- wide characters, converting
+- wctob function
+- characters, converting
 ms.assetid: 46aec98b-c2f2-4e9d-9d89-7db99ba8a9a6
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# wctob
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 6c72cc32c5bd48bc6b7fc9c9187797f056ec7712
+ms.lasthandoff: 02/24/2017
 
-ワイド文字はマルチバイト文字に対応され、マルチバイト文字表現をかどうかを返します。  
+---
+# <a name="wctob"></a>wctob
+ワイド文字がマルチバイト文字に対応し、そのマルチバイト文字の表現を返すかどうかを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int wctob(  
@@ -51,28 +67,28 @@ int wctob(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `wchar`  
- 変換する値。  
+ 変換される値。  
   
-## 戻り値  
- `wctob` が正常にワイド文字を変換する場合、マルチバイト文字が完全に 1 バイト目マルチバイト文字表現を、で返します。  `wctob` マルチバイト文字に変換できないまたはマルチバイト文字が完全に 1 バイトであるワイド文字が検出された場合、–1 を返します。  
+## <a name="return-value"></a>戻り値  
+ `wctob` はワイド文字を正常に変換すると、そのマルチバイト文字が&1; バイト長である場合にのみ、マルチバイト文字の表現を返します。 `wctob` は、マルチバイト文字に変換できないワイド文字を検出した場合やマルチバイト文字が&1; バイト長ではない場合、-1 を返します。  
   
-## 解説  
- `wctob` 関数は `int` リターン値渡しに対応するマルチバイト文字にマルチバイト文字が完全に 1 バイト目 `wchar` に含まれているワイド文字を変換します。  
+## <a name="remarks"></a>コメント  
+ `wctob` 関数は、マルチバイト文字が&1; バイト長である場合、`wchar` に含まれているワイド文字を、戻り値 `int` によって渡された対応するマルチバイト文字に変換します。  
   
- `wctob` がエラーであり、対応するマルチバイト文字が見つからなかった場合、`EILSEQ` と戻りに関数を設定 `errno` \-1。  
+ `wctob` が正常に実行されず、対応するマルチバイト文字が検出されなかった場合、この関数は、`errno` を `EILSEQ` に設定し、-1 を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`wctob`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`wctob`|\<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
- 次のプログラムは、`wcstombs` 関数の動作を示しています。  
+## <a name="example"></a>例  
+ このプログラムは、`wcstombs` 関数の動作を示しています。  
   
 ```  
 // crt_wctob.c  
@@ -101,15 +117,18 @@ int main( void )
   
 ```  
   
-  **対応するマルチバイト文字「A」と判断しました。**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+Determined the corresponding multibyte character to be "A".  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
- [\_mbclen、mblen、\_mblen\_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   
- [mbstowcs、\_mbstowcs\_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md)   
- [mbtowc、\_mbtowc\_l](../Topic/mbtowc,%20_mbtowc_l.md)   
- [wctomb、\_wctomb\_l](../../c-runtime-library/reference/wctomb-wctomb-l.md)   
+ [_mbclen、mblen、_mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   
+ [mbstowcs、_mbstowcs_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md)   
+ [mbtowc、_mbtowc_l](../../c-runtime-library/reference/mbtowc-mbtowc-l.md)   
+ [wctomb、_wctomb_l](../../c-runtime-library/reference/wctomb-wctomb-l.md)   
  [WideCharToMultiByte](http://msdn.microsoft.com/library/windows/desktop/dd374130)

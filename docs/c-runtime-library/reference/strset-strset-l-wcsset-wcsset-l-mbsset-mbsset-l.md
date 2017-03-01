@@ -1,88 +1,104 @@
 ---
 title: "_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wcsset"
-  - "_mbsset"
-  - "_strset_l"
-  - "_strset"
-  - "_wcsset_l"
-  - "_mbsset_l"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-multibyte-l1-1-0.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "mbsset"
-  - "_strset_l"
-  - "_mbsset"
-  - "_strset"
-  - "mbsset_l"
-  - "strset_l"
-  - "_wcsset"
-  - "_ftcsset"
-  - "wcsset_l"
-  - "_tcsset_l"
-  - "_mbsset_l"
-  - "_wcsset_l"
-  - "_fstrset"
-  - "_tcsset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_fstrset 関数"
-  - "_ftcsset 関数"
-  - "_mbsset 関数"
-  - "_mbsset_l 関数"
-  - "_strset 関数"
-  - "_strset_l 関数"
-  - "_tcsset 関数"
-  - "_tcsset_l 関数"
-  - "_wcsset 関数"
-  - "_wcsset_l 関数"
-  - "文字 [C++], 設定"
-  - "fstrset 関数"
-  - "ftcsset 関数"
-  - "mbsset 関数"
-  - "mbsset_l 関数"
-  - "文字列 [C++], 設定 (文字を)"
-  - "strset_l 関数"
-  - "tcsset 関数"
-  - "tcsset_l 関数"
-  - "wcsset_l 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wcsset
+- _mbsset
+- _strset_l
+- _strset
+- _wcsset_l
+- _mbsset_l
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- mbsset
+- _strset_l
+- _mbsset
+- _strset
+- mbsset_l
+- strset_l
+- _wcsset
+- _ftcsset
+- wcsset_l
+- _tcsset_l
+- _mbsset_l
+- _wcsset_l
+- _fstrset
+- _tcsset
+dev_langs:
+- C++
+helpviewer_keywords:
+- _wcsset_l function
+- _tcsset function
+- wcsset_l function
+- _ftcsset function
+- characters [C++], setting
+- _strset function
+- ftcsset function
+- strings [C++], setting characters
+- mbsset function
+- tcsset_l function
+- _fstrset function
+- mbsset_l function
+- strset_l function
+- _wcsset function
+- _mbsset function
+- _mbsset_l function
+- tcsset function
+- _strset_l function
+- fstrset function
+- _tcsset_l function
 ms.assetid: c42ded42-2ed9-4f06-a0a9-247ba305473a
 caps.latest.revision: 31
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 31
----
-# _strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 33fbfa70740b7a179aaf817ad61579d752d351ba
+ms.lasthandoff: 02/24/2017
 
-文字列の文字をある文字に設定します。  これらの関数のセキュリティを強化したバージョンについては、「[\_strset\_s、\_wcsset\_s、\_wcsset\_s\_l、\_mbsset\_s、\_mbsset\_s\_l](../Topic/_strset_s,%20_strset_s_l,%20_wcsset_s,%20_wcsset_s_l,%20_mbsset_s,%20_mbsset_s_l.md)」を参照してください。  
+---
+# <a name="strset-strsetl-wcsset-wcssetl-mbsset-mbssetl"></a>_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l
+文字列の文字をある文字に設定します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_strset_s、_strset_s_l、_wcsset_s、_wcsset_s_l、_mbsset_s、_mbsset_s_l](../../c-runtime-library/reference/strset-s-strset-s-l-wcsset-s-wcsset-s-l-mbsset-s-mbsset-s-l.md)」を参照してください。  
   
 > [!IMPORTANT]
->  `_mbsset` と `_mbsset_l` は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)] で実行するアプリケーションでは使用できません。  詳細については、「[\/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  `_mbsset` と `_mbsset_l` は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)] で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 char *_strset(  
@@ -114,7 +130,7 @@ unsigned char *_mbsset_l(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `str`  
  NULL で終わる、設定される文字列。  
   
@@ -124,39 +140,39 @@ unsigned char *_mbsset_l(
  `locale`  
  使用するロケール。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  変更された文字列へのポインターを返します。  
   
-## 解説  
- `_strset` 関数は `str` のすべての文字 \(終端の NULL 文字を除く\) を `char` に変換された `c` に設定します。  `_wcsset` と `_mbsset_l` は `_strset` のワイド文字バージョンとマルチバイト文字バージョンであり、それに応じて引数と戻り値のデータ型が異なります。  それ以外では、これらの関数の動作は同じです。  
+## <a name="remarks"></a>コメント  
+ `_strset` 関数は `str` のすべての文字 (終端の NULL 文字を除く) を `c` に変換された `char` に設定します。 `_wcsset` と `_mbsset_l` は `_strset` のワイド文字バージョンとマルチバイト文字バージョンであり、それに応じて引数と戻り値のデータ型が異なります。 それ以外では、これらの関数の動作は同じです。  
   
- `_mbsset` はそのパラメーターを検証します。  `str` が null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、`_mbsset` は `NULL` を返し、`errno` を `EINVAL` に設定します。  `_strset` および `_wcsset` は、パラメーターを検証しません。  
+ `_mbsset` はそのパラメーターを検証します。 `str` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`_mbsset` は `NULL` を返し、`errno` を `EINVAL` に設定します。 `_strset` および `_wcsset` は、パラメーターを検証しません。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、\_wsetlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。  `_l` サフィックスが付いていないバージョンは現在のロケールを使用し、`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて、これらの関数のバージョンは同じです。  詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないバージョンが現在のロケールを使用し、`_l` サフィックスが付いているバージョンが渡されたロケール パラメーターを代わりに使用する点を除いて、これらの関数のバージョンは同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
 > [!IMPORTANT]
->  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。  バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。  詳細については、「[Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795)」を参照してください。  
+>  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcsset`|`_strset`|`_mbsset`|`_wcsset`|  
 |`_tcsset_l`|`_strset_l`|`_mbsset_l`|`_wcsset_l`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_strset`|\<string.h\>|  
-|`_strset_l`|\<tchar.h\>|  
-|`_wcsset`|\<string.h\> または \<wchar.h\>|  
-|`_wcsset_l`|\<tchar.h\>|  
-|`_mbsset`, `_mbsset_l`|\<mbstring.h\>|  
+|-------------|---------------------|  
+|`_strset`|\<string.h>|  
+|`_strset_l`|\<tchar.h>|  
+|`_wcsset`|\<string.h> または \<wchar.h>|  
+|`_wcsset_l`|\<tchar.h>|  
+|`_mbsset`, `_mbsset_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_strset.c  
@@ -175,18 +191,21 @@ int main( void )
 }  
 ```  
   
-  **前: 何かで文字列を埋めます。**  
-**後:  \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\***   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+Before: Fill the string with something.  
+After:  *******************************  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [\_mbsnbset、\_mbsnbset\_l](../../c-runtime-library/reference/mbsnbset-mbsnbset-l.md)   
+ [_mbsnbset、_mbsnbset_l](../../c-runtime-library/reference/mbsnbset-mbsnbset-l.md)   
  [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)   
- [strcat、wcscat、\_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   
- [strcmp、wcscmp、\_mbscmp](../Topic/strcmp,%20wcscmp,%20_mbscmp.md)   
- [strcpy、wcscpy、\_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
- [\_strnset、\_strnset\_l、\_wcsnset、\_wcsnset\_l、\_mbsnset、\_mbsnset\_l](../../c-runtime-library/reference/strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)
+ [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   
+ [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
+ [strcpy、wcscpy、_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
+ [_strnset、_strnset_l、_wcsnset、_wcsnset_l、_mbsnset、_mbsnset_l](../../c-runtime-library/reference/strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)

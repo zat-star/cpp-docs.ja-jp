@@ -1,108 +1,107 @@
 ---
 title: "iterator_traits 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::iterator_traits"
-  - "xutility/std::iterator_traits"
-  - "iterator_traits"
-  - "std.iterator_traits"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "iterator_traits クラス"
-  - "iterator_traits 構造体"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::iterator_traits
+- xutility/std::iterator_traits
+- iterator_traits
+- std.iterator_traits
+dev_langs:
+- C++
+helpviewer_keywords:
+- iterator_traits struct
+- iterator_traits class
 ms.assetid: 8b92c2c5-f658-402f-8ca1-e7ae301b8514
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# iterator_traits 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 24cdef3317b1a2c982858a3832e0085ba7ba7d20
+ms.lasthandoff: 02/24/2017
 
-ある反復子が必要とするすべての重要な型定義を指定するために使用するテンプレートのヘルパー構造体。  
+---
+# <a name="iteratortraits-struct"></a>iterator_traits 構造体
+反復子に必要なすべての重要な型定義を指定するために使用されるテンプレート ヘルパー構造体。  
   
-## 構文  
+## <a name="syntax"></a>構文  
+
+```    
+struct iterator_traits {
+   typedef typename Iterator::iterator_category iterator_category;
+   typedef typename Iterator::value_type value_type;
+   typedef typename Iterator::difference_type difference_type;
+   typedef difference_type distance_type;
+   typedef typename Iterator::pointer pointer;
+   typedef typename Iterator::reference reference;
+   };  
+```    
+## <a name="remarks"></a>コメント  
+ テンプレート構造体はメンバーの型を定義します。  
   
-```  
-template<class Iterator>  
-    struct iterator_traits {  
-        typedef typename Iterator::iterator_category iterator_category;  
-        typedef typename Iterator::value_type value_type;  
-        typedef typename Iterator::difference_type difference_type;  
-        typedef difference_type distance_type;  
-        typedef typename Iterator::pointer pointer;  
-        typedef typename Iterator::reference reference;  
-    };  
-template<class Type>  
-    struct iterator_traits<Type*> {  
-        typedef random_access_iterator_tag iterator_category;  
-        typedef Type value_type;  
-        typedef ptrdiff_t difference_type;  
-        typedef difference_type distance_type;  
-        typedef Type *pointer;  
-        typedef Type& reference;  
-    };  
-template<class Type>  
-    struct iterator_traits<const Type*> {  
-        typedef random_access_iterator_tag iterator_category;  
-        typedef Type value_type;  
-        typedef ptrdiff_t difference_type;  
-        typedef difference_type distance_type;  
-        typedef const Type *pointer;  
-        typedef const Type& reference;  
-    };  
-```  
+- **iterator_category**: **Iterator::iterator_category** のシノニム。  
   
-## 解説  
- テンプレートの構造体にメンバー型を定義します。  
+- `value_type`: **Iterator::value_type** のシノニム。  
   
--   **iterator\_category**: **Iterator::iterator\_category**のシノニムです。  
+- `difference_type`: **Iterator::difference_type** のシノニム。  
   
--   `value_type`: **Iterator::value\_type**のシノニムです。  
+- `distance_type`: **Iterator::difference_type** のシノニム。  
   
--   `difference_type`: **Iterator::difference\_type**のシノニムです。  
+- **pointer**: **Iterator::pointer** のシノニム。  
   
--   `distance_type`: **Iterator::difference\_type.**のシノニム  
+- **reference**: **Iterator::reference** のシノニム。  
   
--   **ポインタ**: **Iterator::pointer**のシノニムです。  
+ 部分的特殊化によって、型 **Type \*** または const **Type \*** のオブジェクト ポインターに関連付けられている重要な型が決まります。  
   
--   **リファレンス**: **Iterator::reference**のシノニムです。  
+ この実装では、部分的特殊化を利用しないいくつかのテンプレート関数を利用することもできます。  
   
- 部分的な特化が型 **Type \*** または定数 **Type \***オブジェクト ポインターに関連付けられているすべての重要な型が決まります。  
-  
- この実装では、部分的な特化を使用しない複数のテンプレート関数を使用する場合:  
-  
-```  
-template<class Category, class Type, class Diff>  
-C _Iter_cat(const iterator<Category, Ty, Diff>&);  
-template<class Ty>  
-    random_access_iterator_tag _Iter_cat(const Ty *);  
-  
-template<class Category, class Ty, class Diff>  
-Ty *_Val_type(const iterator<Category, Ty, Diff>&);  
-template<class Ty>  
-    Ty *_Val_type(const Ty *);  
-  
-template<class Category, class Ty, class Diff>  
-Diff *_Dist_type(const iterator<Category, Ty, Diff>&);  
-template<class Ty>  
-    ptrdiff_t *_Dist_type(const Ty *);  
+```cpp  
+template <class Category, class Type, class Diff>
+C _Iter_cat(const iterator<Category, Ty, Diff>&);
+
+template <class Ty>
+random_access_iterator_tag _Iter_cat(const Ty *);
+
+template <class Category, class Ty, class Diff>
+Ty *val_type(const iterator<Category, Ty, Diff>&);
+
+template <class Ty>
+Ty *val_type(const Ty *);
+
+template <class Category, class Ty, class Diff>
+Diff *_Dist_type(const iterator<Category, Ty, Diff>&);
+
+template <class Ty>
+ptrdiff_t *_Dist_type(const Ty *);
 ```  
   
- 同じ型のいくつかが間接的に決定されるかを指定できます。  関数呼び出しの引数としてこれらの関数を使用します。  唯一の目的は、呼び出された関数に役立つクラス テンプレート パラメーターを指定します。  
+ これは、同じ型のいくつかをより間接的に決定します。 これらの関数は、関数呼び出しの引数として使用します。 その唯一の目的は、呼び出された関数に、有効なテンプレート クラスのパラメーターを提供することです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // iterator_traits.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -135,18 +134,24 @@ int main( )
    function( vc.begin( ), vc.end( ) );  
    function( li.begin( ), li.end( ) );  
 }  
+\* Output:   
+struct std::random_access_iterator_tag  
+a a a a a a a a a a   
+struct std::bidirectional_iterator_tag  
+0 0 0 0 0 0 0 0 0 0   
+*\  
 ```  
   
-  **構造体の std::random\_access\_iterator\_tag**  
-**a**  
-**構造体の std::bidirectional\_iterator\_tag**  
-**0 0 0 0 0 0 0 0 0 0**   
-## 必要条件  
- **ヘッダー:** の \<反復子\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
   
-## 参照  
- [\<iterator\>](../standard-library/iterator.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [\<iterator>](../standard-library/iterator.md)   
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

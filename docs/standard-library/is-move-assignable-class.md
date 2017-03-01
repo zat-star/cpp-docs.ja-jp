@@ -1,52 +1,72 @@
 ---
 title: "is_move_assignable クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "is_move_assignable"
-  - "std.is_move_assignable"
-  - "std::is_move_assignable"
-  - "type_traits/std::is_move_assignable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is_move_assignable"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- is_move_assignable
+- std.is_move_assignable
+- std::is_move_assignable
+- type_traits/std::is_move_assignable
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_move_assignable
 ms.assetid: f33137f2-0639-4912-8745-bc0f9fd18d28
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# is_move_assignable クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
+ms.openlocfilehash: db3e621e4638aab864fa897a6f046f81a6549daa
+ms.lasthandoff: 02/24/2017
 
-割り当てられた型かどうかに移動します。  
+---
+# <a name="ismoveassignable-class"></a>is_move_assignable クラス
+型が移動代入可能であるかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class T>
+struct is_move_assignable;
 ```  
-template<class T>  
-    struct is_move_assignable;  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  照会する型。  
   
-## 解説  
- 型では、割り当て可能な移動は型への右辺値参照型への参照に割り当てられる場合です。 型述語と同じ `is_assignable<T&, T&&>`します。 割り当てられた型が参照可能のスカラー型を含めるし、クラス型にコンパイラによって生成されたか、ユーザー定義の移動代入演算子を移動します。  
+## <a name="remarks"></a>コメント  
+ 型への右辺値参照を型の参照に割り当てる事ができる場合、その型は移動代入可能です。 型述語は `is_assignable<T&, T&&>` と同じです。 移動代入できる型には、コンパイラにより生成された移動代入演算子またはユーザー定義の移動代入演算子を含む参照可能なスカラー型やクラス型があります。  
   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)
+
+
+
+

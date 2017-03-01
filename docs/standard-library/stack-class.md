@@ -1,32 +1,48 @@
 ---
 title: "stack クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::stack"
-  - "std.stack"
-  - "stack"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "スタック、stack クラス"
-  - "stack クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::stack
+- std.stack
+- stack
+dev_langs:
+- C++
+helpviewer_keywords:
+- stack, stack class
+- stack class
 ms.assetid: 02151c1e-eab0-41b8-be94-a839ead78ecf
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# stack クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 81467a48b08fab628da94b217c2925010f3118fe
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="stack-class"></a>stack クラス
 基になるコンテナー型に最も新しく追加された要素へのアクセスを制限することにより、機能の制限を提供するテンプレート コンテナーのアダプター クラスです。 stack クラスは、スタック操作のみがコンテナーで実行されることが明確であることが重要な場合に使用されます。  
   
 ## <a name="syntax"></a>構文  
@@ -41,28 +57,28 @@ class stack
  スタックに格納される要素のデータ型。  
   
  `Container`  
- スタックを実装するために使用する基になるコンテナーの型。 既定値は、クラス `deque`*\< 種類>*します。  
+ スタックを実装するために使用する基になるコンテナーの型。 既定値は、クラス `deque`*\<Type>* です。  
   
 ## <a name="remarks"></a>コメント  
- クラスの要素 **型** 最初のテンプレートで規定されているスタック オブジェクトのパラメーターが指定と同じ意味 [value_type](#stack__value_type) 基になるコンテナー クラス内の要素の型を一致させる必要があります **コンテナー** 、2 番目のテンプレート パラメーターで規定します。  **型** その型のオブジェクトをコピーして、その型の変数に値を割り当てることができるように、割り当てることがあります。  
+ stack オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#stack__value_type) と同義で、2 番目のテンプレート パラメーターで指定する基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
   
- スタックの適切なの基になるコンテナー クラスには、 [deque](../standard-library/deque-class.md), 、[list クラス](../standard-library/list-class.md), と [vector クラス](../standard-library/vector-class.md), 、またはその他のシーケンス コンテナーの操作をサポートする **戻る**, 、`push_back`, 、および `pop_back`です。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
+ スタックに適した基になるコンテナー クラスには、[deque](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、および [vector クラス](../standard-library/vector-class.md)、または **back**、`push_back`、および `pop_back` の各操作をサポートするその他すべてのシーケンス コンテナーがあります。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
   
- スタック オブジェクトは比較可能な場合に等しいかどうかと場合にのみ、クラスの要素 **型** は等しいかどうかを比較し、以下の場合にのみと同等の場合よりもクラスの要素 **型** が小さい-匹敵するよりもします。  
+ stack オブジェクトは、クラス **Type** の要素が等価比較できる場合にのみ等価比較でき、クラス **Type** の要素が小なり比較できる場合にのみ小なり比較できます。  
   
 -   stack クラスは、後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
   
--    [Queue クラス](../standard-library/queue-class.md) では、先入れ先出し (FIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 このように一番前と一番後ろの要素にのみアクセスできる制限があることが、queue クラスを使用する理由です。  
+-   [queue クラス](../standard-library/queue-class.md)は、先入れ先出し (FIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 このように一番前と一番後ろの要素にのみアクセスできる制限があることが、queue クラスを使用する理由です。  
   
--    [Priority_queue クラス](../standard-library/priority-queue-class.md) が常に最大の要素上の位置にその要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
+-   [Priority_queue クラス](../standard-library/priority-queue-class.md)は、最も大きな要素が常に先頭の位置になるように、その要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[スタック](#stack__stack)|空であるか、基本のコンテナー オブジェクトのコピーである `stack` を構築します。|  
+|[stack](#stack__stack)|空であるか、基本のコンテナー オブジェクトのコピーである `stack` を構築します。|  
   
-### <a name="typedefs"></a>Typedef  
+### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
@@ -74,45 +90,45 @@ class stack
   
 |||  
 |-|-|  
-|[空](#stack__empty)|`stack` が空かどうかをテストします。|  
+|[empty](#stack__empty)|`stack` が空かどうかをテストします。|  
 |[pop](#stack__pop)|`stack` の先頭から要素を削除します。|  
-|[プッシュ](#stack__push)|`stack` の先頭に要素を追加します。|  
-|[サイズ](#stack__size)|`stack` 内の要素数を返します。|  
-|[ページのトップへ](#stack__top)|`stack` の先頭にある要素への参照を返します。|  
+|[push](#stack__push)|`stack` の先頭に要素を追加します。|  
+|[size](#stack__size)|`stack` 内の要素数を返します。|  
+|[top](#stack__top)|`stack` の先頭にある要素への参照を返します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** \< スタック>  
+ **ヘッダー:** \<stack>  
   
  **名前空間:** std  
   
-##  <a name="a-namestackcontainertypea-stackcontainertype"></a><a name="stack__container_type"></a>  stack::container_type  
- 合わせて実行する基本のコンテナーを提供する型。  
+##  <a name="a-namestackcontainertypea--stackcontainertype"></a><a name="stack__container_type"></a>  stack::container_type  
+ 適合されるように、基本のコンテナーを提供する型。  
   
 ```  
 typedef Container container_type;  
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Container` のシノニムです。 次の 3 つのすべての STL シーケンス コンテナー クラス: vector クラス、list クラス、および既定のクラスの deque: スタック オブジェクトの基本のコンテナーとして使用するための要件を満たしています。 これらの要件を満たすユーザー定義の型も使用できます。  
+ この型は、テンプレート パラメーター `Container` のシノニムです。 3 つの C++ 標準ライブラリ シーケンス コンテナー クラス (vector クラス、list クラス、既定の deque クラス) はすべて、stack オブジェクトの基本のコンテナーとしての使用要件を満たしています。 こうした要件を満たすユーザー定義型を使用することもできます。  
   
- 詳細については `Container`, の「解説」セクションを参照してください、 [stack クラス](../standard-library/stack-class.md) トピックです。  
+ `Container`の詳細については、[stack クラス](../standard-library/stack-class.md)のトピックのコメントに関するセクションを参照してください。  
   
 ### <a name="example"></a>例  
-  例を参照してください [stack::stack](#stack__stack) を宣言および使用する方法の例については `container_type`です。  
+  `container_type` の宣言方法や使用方法の例については、[stack::stack](#stack__stack) の例を参照してください。  
   
-##  <a name="a-namestackemptya-stackempty"></a><a name="stack__empty"></a>  stack::empty  
- スタックが空かどうか。  
+##  <a name="a-namestackemptya--stackempty"></a><a name="stack__empty"></a>  stack::empty  
+ stack が空かどうかをテストします。  
   
 ```  
 bool empty() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- **true** スタックが空である場合 **false** スタックが空でない場合。  
+ set が空の場合は **true**、set が空ではない場合は **false**。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_empty.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -143,19 +159,19 @@ The stack s1 is not empty.
 The stack s2 is empty.  
 ```  
   
-##  <a name="a-namestackpopa-stackpop"></a><a name="stack__pop"></a>  stack::pop  
- スタックの先頭から要素を削除します。  
+##  <a name="a-namestackpopa--stackpop"></a><a name="stack__pop"></a>  stack::pop  
+ stack の先頭から要素を削除します。  
   
 ```  
 void pop();
 ```  
   
 ### <a name="remarks"></a>コメント  
- スタックは、空ではないメンバー関数の適用先である必要があります。 スタックの一番上は最近追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
+ メンバー関数を適用するには、stack を空にすることはできません。 stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_pop.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -197,8 +213,8 @@ After a pop, the stack length is 2.
 After a pop, the element at the top of the stack is 20.  
 ```  
   
-##  <a name="a-namestackpusha-stackpush"></a><a name="stack__push"></a>  stack::push  
- スタックの最上位の末尾に要素を追加します。  
+##  <a name="a-namestackpusha--stackpush"></a><a name="stack__push"></a>  stack::push  
+ stack の先頭に要素を追加します。  
   
 ```  
 void push(const Type& val);
@@ -206,14 +222,14 @@ void push(const Type& val);
   
 ### <a name="parameters"></a>パラメーター  
  ` val`  
- スタックの先頭に追加する要素。  
+ スタックの先頭に追加される要素。  
   
 ### <a name="remarks"></a>コメント  
- スタックの一番上は最近追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
+ stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_push.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -243,19 +259,19 @@ The stack length is 3.
 The element at the top of the stack is 30.  
 ```  
   
-##  <a name="a-namestacksizea-stacksize"></a><a name="stack__size"></a>  stack::size  
- スタック内の要素の数を返します。  
+##  <a name="a-namestacksizea--stacksize"></a><a name="stack__size"></a>  stack::size  
+ stack 内の要素数を返します。  
   
 ```  
 size_type size() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 現在、スタックの長さ。  
+ stack の現在の長さ。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_size.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -282,21 +298,21 @@ The stack length is 1.
 The stack length is now 2.  
 ```  
   
-##  <a name="a-namestacksizetypea-stacksizetype"></a><a name="stack__size_type"></a>  stack::size_type  
- スタック内の要素の数を表すことができる符号なし整数型。  
+##  <a name="a-namestacksizetypea--stacksizetype"></a><a name="stack__size_type"></a>  stack::size_type  
+ stack 内の要素の数を表すことができる符号なし整数型。  
   
 ```  
 typedef typename Container::size_type size_type;  
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型のシノニムは、 `size_type` 、基本適合コンテナーのスタックによってです。  
+ この型は、stack によって採用された基本コンテナーの `size_type` のシノニムです。  
   
 ### <a name="example"></a>例  
-  例を参照してください [サイズ](#stack__size) を宣言および使用する方法の例については `size_type`です。  
+  `size_type` の宣言方法や使用方法の例については、[size](#stack__size) の例を参照してください。  
   
-##  <a name="a-namestackstacka-stackstack"></a><a name="stack__stack"></a>  stack::stack  
- 空またはコンテナーの基本クラスのコピーであるスタックを構築します。  
+##  <a name="a-namestackstacka--stackstack"></a><a name="stack__stack"></a>  stack::stack  
+ 空であるか、基本のコンテナー クラスのコピーである stack を構築します。  
   
 ```  
 stack();
@@ -306,11 +322,11 @@ explicit stack(const container_type& right);
   
 ### <a name="parameters"></a>パラメーター  
  ` right`  
- 構築されたスタックのコピーであることに元のコンテナーです。  
+ 構築される container のコピー元となる container。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_stack.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -347,8 +363,8 @@ int main( )
 The element at the top of stack vsi2 is 1.  
 ```  
   
-##  <a name="a-namestacktopa-stacktop"></a><a name="stack__top"></a>  stack::top  
- スタックの上部にある要素への参照を返します。  
+##  <a name="a-namestacktopa--stacktop"></a><a name="stack__top"></a>  stack::top  
+ stack の先頭にある要素への参照を返します。  
   
 ```  
 reference top();
@@ -357,16 +373,16 @@ const_reference top() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- スタックの上部にあるコンテナーの最後の要素への参照。  
+ stack の先頭にあるコンテナーの最後の要素への参照。  
   
 ### <a name="remarks"></a>コメント  
- スタックは、空ではないメンバー関数の適用先である必要があります。 スタックの一番上は最近追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
+ メンバー関数を適用するには、stack を空にすることはできません。 stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
   
- 場合の戻り値 **上部** に割り当てられている、 `const_reference`, 、スタック オブジェクトは変更できません。 場合の戻り値 **上部** に割り当てられている、 **参照**, 、スタック オブジェクトを変更できます。  
+ **top** の戻り値が `const_reference` に割り当てられている場合、stack オブジェクトを変更することはできません。 **top** の戻り値が **reference** に割り当てられている場合、stack オブジェクトを変更することはできません。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_top.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -395,19 +411,19 @@ The top integer of the stack s1 is 2.
 The next integer down is 1.  
 ```  
   
-##  <a name="a-namestackvaluetypea-stackvaluetype"></a><a name="stack__value_type"></a>  stack::value_type  
- スタック内の要素として格納されるオブジェクトの型を表す型。  
+##  <a name="a-namestackvaluetypea--stackvaluetype"></a><a name="stack__value_type"></a>  stack::value_type  
+ stack 内に要素として格納されるオブジェクトの種類を表す型。  
   
 ```  
 typedef typename Container::value_type value_type;  
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型のシノニムは、 `value_type` 、基本適合コンテナーのスタックによってです。  
+ この型は、stack によって採用された基本コンテナーの `value_type` のシノニムです。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // stack_value_type.cpp  
 // compile with: /EHsc  
 #include <stack>  
@@ -436,5 +452,6 @@ The element at the top of the stack is 69.
   
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
 

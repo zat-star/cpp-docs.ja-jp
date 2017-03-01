@@ -1,75 +1,87 @@
 ---
 title: "minus 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "minus"
-  - "std.minus"
-  - "std::minus"
-  - "xfunctional/std::minus"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "minus 構造体"
-  - "minus クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- minus
+- std.minus
+- std::minus
+- xfunctional/std::minus
+dev_langs:
+- C++
+helpviewer_keywords:
+- minus struct
+- minus class
 ms.assetid: 7bce784e-2be6-413a-b516-004e9ecb2a39
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# minus 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
+ms.openlocfilehash: e2ed81d3d990e9c9f2a9a21d04fabcbbfbb94f9a
+ms.lasthandoff: 02/24/2017
 
-引数に対して減算演算 \(二項 `operator-`\) を実行する定義済みの関数オブジェクト。  
+---
+# <a name="minus-struct"></a>minus 構造体
+引数に対して減算演算 (二項 `operator-`) を実行する定義済みの関数オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template<class Type = void>  
-   struct minus : public binary_function <Type, Type, Type>   
-   {  
-      Type operator()(  
-         const Type& Left,   
-         const Type& Right  
-      ) const;  
-   };  
-  
-// specialized transparent functor for operator-  
-template<>  
-   struct minus<void>  
-   {  
-      template<class Type1, class Type2>  
-      auto operator()(Type1&& Left, Type2&& Right) const  
-         -> decltype(std::forward<Type1>(Left)  
-            - std::forward<Type2>(Right));  
-   };  
-  
+```
+template <class Type = void>
+struct minus : public binary_function <Type, Type, Type>  
+{
+    Type operator()(const Type& Left, const Type& Right) const;
+};
+
+// specialized transparent functor for operator-
+template <>
+struct minus<void>  
+{
+  template <class T, class U>
+  auto operator()(T&& Left, U&& Right) const`
+    -> decltype(std::forward<T>(Left) - std::forward<U>(Right));
+ };
 ```  
   
-#### パラメーター  
- `Type`, `Type1`, `Type2`  
+#### <a name="parameters"></a>パラメーター  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る二項 `operator-` をサポートする型。  
   
  `Left`  
- 演算の左オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type1` の左辺値および右辺値参照引数の完全転送を行います。  
+ 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- 演算の右オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type2` の左辺値および右辺値参照引数の完全転送を行います。  
+ 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
-## 戻り値  
- `Left` `-` `Right` の結果。  特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator-` によって返された型が含まれます。  
+## <a name="return-value"></a>戻り値  
+ `Left``-``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator-` によって返された型が含まれます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_minus.cpp  
 // compile with: /EHsc  
 #include <vector>  
@@ -115,16 +127,22 @@ int main( )
       cout << *Iter3 << " ";  
    cout << ")" << endl;  
 }  
+\* Output:   
+The vector v1 = ( 1 5 9 13 17 21 )  
+The vector v2 = ( -1 2 5 8 11 14 )  
+The element-wise differences between v1 and v2 are: ( 2 3 4 5 6 7 )  
+*\  
 ```  
   
-  **The vector v1 \= \( 1 5 9 13 17 21 \)**  
-**The vector v2 \= \( \-1 2 5 8 11 14 \)**  
-**The element\-wise differences between v1 and v2 are: \( 2 3 4 5 6 7 \)**   
-## 必要条件  
- **ヘッダー:** \<functional\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

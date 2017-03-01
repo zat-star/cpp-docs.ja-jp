@@ -1,116 +1,130 @@
 ---
-title: "_RTC_SetErrorFuncW | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_RTC_SetErrorFuncW"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_RTC_SetErrorFuncW"
-  - "RTC_SetErrorFuncW"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ランタイム エラー"
-  - "RTC_SetErrorFuncW 関数"
-  - "_RTC_error_fnW typedef"
-  - "_RTC_SetErrorFuncW 関数"
-  - "RTC_error_fnW typedef"
+title: _RTC_SetErrorFuncW | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _RTC_SetErrorFuncW
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- _RTC_SetErrorFuncW
+- RTC_SetErrorFuncW
+dev_langs:
+- C++
+helpviewer_keywords:
+- run-time errors
+- RTC_SetErrorFuncW function
+- _RTC_error_fnW typedef
+- _RTC_SetErrorFuncW function
+- RTC_error_fnW typedef
 ms.assetid: b3e0d71f-1bd3-4c37-9ede-2f638eb3c81a
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# _RTC_SetErrorFuncW
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: d71962eca033e5d3994c82e666102f44c62e82be
+ms.lasthandoff: 02/24/2017
 
-実行時エラー チェック \(RTC\) を報告するためのハンドラーとして関数を指定します。  
+---
+# <a name="rtcseterrorfuncw"></a>_RTC_SetErrorFuncW
+実行時エラー チェック (RTC) を報告するためのハンドラーとして関数を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-_RTC_error_fnW _RTC_SetErrorFuncW(  
-   _RTC_error_fnW  
- function   
+      _RTC_error_fnW _RTC_SetErrorFuncW(  
+   _RTC_error_fnW function   
 );  
-  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `function`  
  実行時エラー チェックを処理する関数のアドレス。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  以前に定義されたエラー関数。または、以前に定義された関数がない場合は `NULL`。  
   
-## 解説  
- 新しいコードでは `_RTC_SetErrorFuncW` のみを使用してください。`_RTC_SetErrorFunc` は、下位互換性のためにのみライブラリに含まれています。  
+## <a name="remarks"></a>コメント  
+ 新しいコードでは `_RTC_SetErrorFuncW` のみを使用してください。 `_RTC_SetErrorFunc` は、下位互換性のためにのみライブラリに含まれています。  
   
  `_RTC_SetErrorFuncW` コールバックは、リンクされたコンポーネントにのみ適用され、グローバルには適用されません。  
   
  `_RTC_SetErrorFuncW` に渡すアドレスが有効なエラー処理関数のアドレスであることを確認してください。  
   
- [\_RTC\_SetErrorType](../Topic/_RTC_SetErrorType.md) を使用して種類を \-1 に指定したエラーについては、エラー処理関数は呼び出されません。  
+ [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md) を使用して種類を -1 に指定したエラーについては、エラー処理関数は呼び出されません。  
   
- この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の 1 つを呼び出す必要があります。 詳細については、「[C ランタイム ライブラリなしのランタイム チェックの使用方法](../Topic/Using%20Run-Time%20Checks%20Without%20the%20C%20Run-Time%20Library.md)」を参照してください。  
+ この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の&1; つを呼び出す必要があります。 詳細については、「[C ランタイム ライブラリなしのランタイム チェックの使用方法](/visualstudio/debugger/using-run-time-checks-without-the-c-run-time-library)」をご覧ください。  
   
- **\_RTC\_error\_fnW** は次のように定義されています。  
+ **_RTC_error_fnW** は次のように定義されています。  
   
- **typedef int \(\_\_cdecl \*\_RTC\_error\_fnW\)\(int**  `errorType` **, const wchar\_t \*** *ファイル名* **, int**  *行番号* **, const wchar\_t \*** `moduleName` **, const wchar\_t \*** *format* **, ...\);**  
+ **typedef int (__cdecl \*_RTC_error_fnW)(int**  `errorType` **, const wchar_t \*** *filename* **, int**  *linenumber* **, const wchar_t \*** `moduleName` **, const wchar_t \*** *format* **, ...);**  
   
- それぞれの文字について以下に説明します。  
+ ここで、  
   
  `errorType`  
- [\_RTC\_SetErrorType](../Topic/_RTC_SetErrorType.md) で指定したエラーの種類。  
+ [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md) で指定したエラーの種類。  
   
- *ファイル名*  
+ *filename*  
  障害が発生したソース ファイル。または、使用できるデバッグ情報がない場合は null。  
   
- *行番号*  
- 障害が発生した*ファイル名*内の行番号。または、使用できるデバッグ情報がない場合は 0。  
+ *linenumber*  
+ 障害が発生した *filename* 内の行番号。または、使用できるデバッグ情報がない場合は 0。  
   
  `moduleName`  
  この障害が発生した DLL 名または実行可能ファイル名。  
   
  *format*  
- 残りのパラメーターを使用してエラー メッセージを表示するための printf スタイル文字列。 VA\_ARGLIST の最初の引数は、発生した RTC エラーの番号です。  
+ 残りのパラメーターを使用してエラー メッセージを表示するための printf スタイル文字列。 VA_ARGLIST の最初の引数は、発生した RTC エラーの番号です。  
   
- **\_RTC\_error\_fnW** の使用方法を示す例については「[ネイティブ ランタイム チェックのカスタマイズ](../Topic/Native%20Run-Time%20Checks%20Customization.md)」を参照してください。  
+ **_RTC_error_fnW** の使用例については、「[ネイティブ ランタイム チェックのカスタマイズ](/visualstudio/debugger/native-run-time-checks-customization)」をご覧ください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_RTC_SetErrorFuncW`|\<rtcapi.h\>|  
+|-------------|---------------------|  
+|`_RTC_SetErrorFuncW`|\<rtcapi.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、`PInvoke` を使用します。 詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
- [\_CrtDbgReport、\_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   
- [ランタイム エラー チェック](../Topic/Run-Time%20Error%20Checking.md)
+## <a name="see-also"></a>関連項目  
+ [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   
+ [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)

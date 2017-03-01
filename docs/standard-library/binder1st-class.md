@@ -1,83 +1,95 @@
 ---
 title: "binder1st クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "xfunctional/std::binder1st"
-  - "std::binder1st"
-  - "binder1st"
-  - "std.binder1st"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "binder1st クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- xfunctional/std::binder1st
+- std::binder1st
+- binder1st
+- std.binder1st
+dev_langs:
+- C++
+helpviewer_keywords:
+- binder1st class
 ms.assetid: 6b8ee343-c82f-48f8-867d-06f9d1d324c0
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# binder1st クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
+ms.openlocfilehash: 71d06115b1f6cc0df5a3dee9ce60482e641407ef
+ms.lasthandoff: 02/24/2017
 
-指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
+---
+# <a name="binder1st-class"></a>binder1st クラス
+指定した値に二項関数の&1; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template<class Operation>  
-class binder1st  
-   : public unary_function <  
-      typename Operation::second_argument_type,  
-      typename Operation::result_type>   
-  {  
-   public:  
-   typedef typename Operation::argument_type argument_type;  
-   typedef typename Operation::result_type result_type;  
-   binder1st(  
-      const Operation & _Func,  
-      const typename Operation::first_argument_type& _Left  
-   );  
-   result_type operator()(  
-      const argument_type& _Right  
-   ) const;  
-   result_type operator()(  
-      const argument_type& _Right  
-   ) const;  
-   protected:  
-   Operation op;  
-   typename Operation::first_argument_type value;  
-   };  
+```
+template <class Operation>
+class binder1st
+    : public unaryFunction <typename Operation::second_argument_type,
+                             typename Operation::result_type>
+{
+public:
+    typedef typename Operation::argument_type argument_type;
+    typedef typename Operation::result_type result_type;
+    binder1st(
+        const Operation& Func,
+        const typename Operation::first_argument_type& left);
+
+    result_type operator()(const argument_type& right) const;
+    result_type operator()(const argument_type& right) const;
+
+protected:
+    Operation op;
+    typename Operation::first_argument_type value;
+};
 ```  
   
-#### パラメーター  
- `_Func`  
- 単項関数オブジェクトに変換される二項関数オブジェクト。  
+#### <a name="parameters"></a>パラメーター  
+ `Func`  
+ 単項関数オブジェクトに変換する二項関数オブジェクト。  
   
- `_Left`  
- 二項関数オブジェクトの最初の引数がバインドされる値。  
+ `left`  
+ 二項関数オブジェクトの最初の引数がバインドされている値。  
   
- `_Right`  
- 対応するバイナリ オブジェクトが 2 番目の引数の固定値と比較する引数の値。  
+ `right`  
+ 調整後の二項オブジェクトが&2; つ目の引数の固定値と比較する引数の値。  
   
-## 戻り値  
- 単項関数オブジェクトとバインディングの結果値 `_Left.`への二項関数オブジェクトの最初の引数  
+## <a name="return-value"></a>戻り値  
+ 二項関数オブジェクトの最初の引数を値 `left.` にバインドした結果として生成される単項関数オブジェクト。  
   
-## 解説  
- このテンプレート クラスは **op**で二項関数オブジェクト `_Func` のコピー、および **値**の `_Left` のコピーを保存します。  これは **op** \(**値**、`_Right`\) を返すようにメンバー関数 `operator()` を定義します。  
+## <a name="remarks"></a>コメント  
+ テンプレート クラスは、二項関数オブジェクト `Func` のコピーを **op** に、`left` のコピーを **value** に格納します。 そのメンバー関数 `operator()` は **op**( **value**, `right`) を返すように定義されています。  
   
- `_Func` が型 **操作** オブジェクトであり、`c` を設定している場合、[bind1st](../Topic/bind1st%20Function.md) \(`_Func`、`c`\) は `binder1st` クラス コンストラクター `binder1st`\<**操作**\> \(`_Func`、`c`\) と同等の方が便利です。  
+ `Func` が型 **Operation** のオブジェクトで、`c` が定数の場合、[bind1st](../standard-library/functional-functions.md#bind1st_function) ( `Func`, `c` ) は `binder1st` class constructor `binder1st`\< **Operation**> ( `Func`, `c` ) と等しくなり、より便利です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_binder1st.cpp  
 // compile with: /EHsc  
 #include <vector>  
@@ -118,16 +130,22 @@ int main()
     cout << "The number of elements in v1 less than 10 is: "  
          << result2 << "." << endl;  
 }  
+\* Output:   
+The vector v1 = ( 0 5 10 15 20 25 )  
+The number of elements in v1 greater than 10 is: 3.  
+The number of elements in v1 less than 10 is: 2.  
+*\  
 ```  
   
-  **The vector v1 \= \( 0 5 10 15 20 25 \)**  
-**大きな v1 の要素の数は、10 次の操作: 3。**  
-**v1 の要素の数は、10 未満の次の操作: 2。**   
-## 必要条件  
- **ヘッダー:** \<functional\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+

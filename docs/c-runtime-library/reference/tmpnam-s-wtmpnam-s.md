@@ -1,56 +1,72 @@
 ---
 title: "tmpnam_s、_wtmpnam_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "tmpnam_s"
-  - "_wtmpnam_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "tmpnam_s"
-  - "_wtmpnam_s"
-  - "L_tmpnam_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_wtmpnam_s 関数"
-  - "ファイル名 [C++], 作成 (一時)"
-  - "ファイル名 [C++], 一時"
-  - "L_tmpnam_s 定数"
-  - "一時ファイル, 作成"
-  - "tmpnam_s 関数"
-  - "wtmpnam_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- tmpnam_s
+- _wtmpnam_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- tmpnam_s
+- _wtmpnam_s
+- L_tmpnam_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- tmpnam_s function
+- file names [C++], creating temporary
+- _wtmpnam_s function
+- L_tmpnam_s constant
+- temporary files, creating
+- file names [C++], temporary
+- wtmpnam_s function
 ms.assetid: e70d76dc-49f5-4aee-bfa2-f1baa2bcd29f
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# tmpnam_s、_wtmpnam_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 3635e551e54a36d8eafb0727c7bb4e7056df36f5
+ms.lasthandoff: 02/24/2017
 
-一時ファイルを作成するために使用できる名前を生成します。  これらは [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)"に説明されているように、セキュリティが強化された [tmpnam と\_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) のバージョンです。  
+---
+# <a name="tmpnams-wtmpnams"></a>tmpnam_s、_wtmpnam_s
+一時ファイルの作成に使用できる名前を生成します。 これらは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) の説明にあるとおり、セキュリティが強化されたバージョンの [tmpnam および _wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t tmpnam_s(  
@@ -71,51 +87,51 @@ errno_t _wtmpnam_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[出力\] `str`  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `str`  
  生成された名前を保持するポインター。  
   
- \[入力\] `sizeInChars`  
- 文字の buffer のサイズ。  
+ [入力] `sizeInChars`  
+ バッファーのサイズ (文字単位)。  
   
-## 戻り値  
- これらの関数はエラーの数が正常終了した場合は 0 を返します。  
+## <a name="return-value"></a>戻り値  
+ これらの関数はどちらも、正常終了の場合は 0、エラーの場合はエラー番号を返します。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
 |||||  
 |-|-|-|-|  
-|`str`|`sizeInChars`|**戻り値**|**目次**  `str`|  
+|`str`|`sizeInChars`|**戻り値**|`str` **の内容**|  
 |`NULL`|任意|`EINVAL`|変更されない|  
-|存在しない `NULL` \(有効なメモリへのポインター\)|非常に短い|`ERANGE`|変更されない|  
+|`NULL` ではない (有効なメモリを指す)|短すぎる|`ERANGE`|変更されない|  
   
- `str` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+ `str` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
-## 解説  
- これらの関数は、現在存在しないファイルの名前を返します。  `tmpnam_s` は 現在の作業ディレクトリに一意の名前を返します。  ファイル名が円記号とパス情報と、\\fname21 など、このメモ アタッチされていない場合、名前は現在の作業ディレクトリに対して有効であることを示します。  
+## <a name="remarks"></a>コメント  
+ これらの各関数は、現在存在しないファイルの名前を返します。 `tmpnam_s` は、現在の作業ディレクトリ内で一意である名前を返します。 ファイル名の前に円記号が付いていてパス情報がない場合 (\fname21 など)、その名前は現在の作業ディレクトリに対して有効なので注意してください。  
   
- `tmpnam_s`では、`str`で生成されたファイル名を保存できます。  `tmpnam_s` から返された文字列の最大長は、STDIO.H.で定義されている `L_tmpnam_s`です。  `str` が `NULL`場合、`tmpnam_s` は静的な内部バッファーに結果が保存されます。  したがって、後続の呼び出しは、この値を破棄します。  `tmpnam_s` によって生成された名前は、`tmpnam_s`への最初の呼び出しの後に、基数 32 \(.1\-.1vvvvvu の連続する番号のプログラムで生成されたファイル名と、ファイル拡張子でインクルードの `TMP_MAX_S` が INT\_MAX 時\) で構成されます。  
+ `tmpnam_s` については、この生成されたファイル名を `str` で格納することができます。 `tmpnam_s` によって返される文字列の最大長は、STDIO.H に定義されているとおり `L_tmpnam_s` です。 `str` が `NULL` の場合、`tmpnam_s` は内部の静的バッファーに結果を残します。 したがって後続の呼び出しは、この値を破棄します。 `tmpnam_s` によって生成された名前を構成しているのは、プログラムで生成されたファイル名と、`tmpnam_s` への最初の呼び出しの後は base 32 で連番のファイル拡張子 (STDIO.H 内の `TMP_MAX_S` が INT_MAX の場合、.1-.1vvvvvu) です。  
   
- `tmpnam_s` は 適切な方法で自動的にマルチバイト文字列の引数を処理しま、マルチバイト文字のシーケンスをオペレーティング システムから取得した OEM のコード ページに従ってマルチバイト文字列を認識します。  ワイド文字を扱う場合は、`tmpnam_s` ではなく `_wtmpnam_s` を使用します。`_wtmpnam_s` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  `_wtmpnam_s` と `tmpnam_s` の動作は、`_wtmpnam_s` がマルチバイト文字列を扱わない点を除いて同じです。  
+ `tmpnam_s` は、オペレーティング システムから取得した OEM コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 ワイド文字を扱う場合は、`_wtmpnam_s` ではなく `tmpnam_s` を使用します。`_wtmpnam_s` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 `_wtmpnam_s` がマルチバイト文字列を処理しない点を除き、`_wtmpnam_s` と `tmpnam_s` の動作は同じです。  
   
- C\+\+ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ttmpnam_s`|`tmpnam_s`|`tmpnam_s`|`_wtmpnam_s`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`tmpnam_s`|\<stdio.h\>|  
-|`_wtmpnam_s`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`tmpnam_s`|\<stdio.h>|  
+|`_wtmpnam_s`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_tmpnam_s.c  
@@ -148,12 +164,12 @@ int main( void )
 }  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [\_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
+ [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
  [malloc](../../c-runtime-library/reference/malloc.md)   
- [\_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
- [tmpfile\_s](../Topic/tmpfile_s.md)
+ [_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
+ [tmpfile_s](../../c-runtime-library/reference/tmpfile-s.md)

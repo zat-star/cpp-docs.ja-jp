@@ -1,48 +1,64 @@
 ---
-title: "_matherr | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_matherr"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_matherr"
-  - "matherr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_matherr 関数"
-  - "matherr 関数"
+title: _matherr | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _matherr
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- _matherr
+- matherr
+dev_langs:
+- C++
+helpviewer_keywords:
+- _matherr function
+- matherr function
 ms.assetid: b600d66e-165a-4608-a856-8fb418d46760
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# _matherr
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: bd2ab4ac1c6772a06a2da6ac15f7f4b29f83c120
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="matherr"></a>_matherr
 数値演算エラーを処理します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -51,21 +67,21 @@ caps.handback.revision: 11
 );  
 ```  
   
-#### パラメーター  
- *ただし*  
- エラー情報を含む構造体へのポインター。  
+#### <a name="parameters"></a>パラメーター  
+ *except*  
+ エラー情報を保持する構造体へのポインター。  
   
-## 戻り値  
- \_**matherr** でエラーや成功を示すに 0 以外の値を示すように、\- 0 を返します。  \_**matherr** が 0 を返す場合は、エラー メッセージを表示し、`errno` エラーは適切な値に設定されます。  \_**matherr** が 0 以外の値を返した場合、エラー メッセージは表示されず、`errno` は変更されません。  
+## <a name="return-value"></a>戻り値  
+ _**matherr** は、エラーを示す 0 を返すか、成功を示す 0 以外の値を返します。 \_**matherr** が 0 を返す場合は、エラー メッセージを表示することができ、`errno` が該当するエラー値に設定されます。 \_**matherr** が&0; 以外の値を返す場合は、エラー メッセージは表示されず、`errno` は変更されません。  
   
- リターン コードに関する詳細については、「[" \_doserrno、errno、\_sys\_errlist、および\_sys\_nerr "](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- 数値演算ライブラリの浮動小数点関数によって生成される\_**matherr** 関数にエラー。  エラーが検出されたときにこれらの関数呼び出しの\_**matherr**。  
+## <a name="remarks"></a>コメント  
+ _**matherr** 関数は、数値演算ライブラリの浮動小数点関数によって生成されたエラーを処理します。 これらの関数は、エラーが検出されると \_**matherr** を呼び出します。  
   
- 特殊なエラー処理のために、\_**matherr**の別の定義を提供できます。  C ランタイム ライブラリ \(Msvcr90.dll\) を動的にリンクされたなバージョンを使用する場合は、ユーザー定義のバージョンとクライアント実行可能ファイルの既定の\_**matherr** ルーチンを置き換えることができます。  ただし、DLL Msvcr90.dll のクライアントの既定の `_matherr` ルーチンを置き換えることはできません。  
+ 特殊なエラー処理を行う場合は、_**matherr** の別の定義を指定できます。 動的にリンクされたバージョンの C ランタイム ライブラリ (Msvcr90.dll) を使用する場合は、クライアントの実行可能ファイル内の既定の \_**matherr** ルーチンをユーザー定義のバージョンに置き換えることができます。 しかし、Msvcr90.dll の DLL クライアント内にある既定の `_matherr` ルーチンを置き換えることはできません。  
   
- 数値演算ルーチンでエラーが発生した場合、\_**matherr** は **\_exception** の型構造体へのポインターで引数として \(Math.h で定義\) が呼び出されます。  **\_exception** 構造体には、次の要素が含まれます。  
+ 数値演算ルーチンでエラーが発生した場合は、引数として **_exception** 型の構造体 (Math.h で定義) へのポインターを使用して _**matherr** が呼び出されます。 **_exception** 構造体には次の要素が含まれます。  
   
  **int type**  
  例外の種類。  
@@ -74,47 +90,47 @@ caps.handback.revision: 11
  エラーが発生した関数の名前。  
   
  **double arg1**、**arg2**  
- 関数の 1 番目と 2 番目の引数 \(存在する場合\)。  
+ 関数への最初の引数と&2; 番目の引数 (存在する場合)。  
   
  **double retval**  
- 関数が返される値。  
+ 関数によって返される値。  
   
- **型**、数値演算エラーの種類を指定します。  次の値の 1 と、Math.h で定義されます。  
+ **type** は数値演算エラーの種類を指定します。 Math.h で定義されている、次の値のいずれかになります。  
   
  `_DOMAIN`  
  引数のドメイン エラー。  
   
  `_SING`  
- 引数不適切。  
+ 引数の特異点。  
   
  `_OVERFLOW`  
- オーバーフローののエラー。  
+ オーバーフロー範囲エラー。  
   
  `_PLOSS`  
- 重要度の部分的な消失  
+ 有効桁の部分的損失。  
   
  `_TLOSS`  
- 重要度全体消失  
+ 有効桁の完全損失。  
   
  `_UNDERFLOW`  
- 結果を表すことが小さすぎる。この条件は、現在サポートされていません\)。  
+ 結果が小さすぎて表現できない。 (この条件は現在サポートされていません。)  
   
- 構造体メンバー **名前** は、エラーが発生した関数の名前を含む null で終わる文字列へのポインターです。  構造体メンバー **arg1** と **arg2** はエラーを発生させた値を指定します。1 個の引数を指定した場合 \(、**arg1**に格納されます\)。  
+ 構造体のメンバー **name** は、エラーの原因となった関数の名前を含む null で終わる文字列へのポインターです。 構造体のメンバー **arg1** と **arg2** は、エラーの原因となった値を指定します。 (指定されている引数が&1; つのみの場合は、**arg1** に格納されます。)  
   
- 特定のエラーの既定の戻り値は **retval**です。  戻り値を変更すると、実際にエラーが発生したかどうかを指定する必要があります。  
+ 発生したエラーの既定の戻り値は **retval** です。 戻り値を変更する場合、戻り値はエラーが実際に発生したかどうかを指定する必要があります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_matherr`|\<math.h\>|  
+|-------------|---------------------|  
+|`_matherr`|\<math.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_matherr.c  
@@ -168,7 +184,7 @@ int _matherr( struct _exception *except )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Special: using absolute value: log: _DOMAIN error  
@@ -178,9 +194,8 @@ log10( -5.0 ) = 6.989700e-001
 Normal: log( 0.0 ) = -1.#INF00e+000  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [Long Double 型](../../misc/long-double.md)

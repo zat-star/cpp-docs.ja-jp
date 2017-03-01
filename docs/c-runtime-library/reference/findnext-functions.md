@@ -1,0 +1,266 @@
+---
+title: "_findnext、_findnext32、_findnext32i64、_findnext64、_findnext64i32、_findnexti64、_wfindnext、_wfindnext32、_wfindnext32i64、_wfindnext64、_wfindnext64i32、_wfindnexti64 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wfindnext
+- _findnext
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- findnext
+- _wfindnext32i64
+- _tfindnext64i32
+- findnext32
+- findnext32i64
+- wfindnext64i32
+- _wfindnext
+- tfindnext64
+- findnexti64
+- _findnexti64
+- _tfindnexti64
+- _findnext64i32
+- tfindnexti64
+- tfindnext32
+- _wfindnext64i32
+- findnext64i32
+- _findnext
+- _tfindnext32i64
+- _wfindnext64
+- wfindnext
+- wfindnext32
+- tfindnext32i64
+- _findnext64
+- _tfindnext64
+- _wfindnext32
+- findnext64
+- _findnext32i64
+- tfindnext
+- wfindnexti64
+- tfindnext64i32
+- _tfindnext32
+- wfindnext32i64
+- wfindnext64
+- _wfindnexti64
+- _tfindnext
+- _findnext32
+dev_langs:
+- C++
+helpviewer_keywords:
+- _wfindnexti64 function
+- _tfindnext32 function
+- wfindnexti64 function
+- _wfindnext32i64 function
+- findnext32i64 function
+- tfindnext64i32 function
+- _tfindnext64i32 function
+- _findnext function
+- findnext64i32 function
+- _tfindnext function
+- findnext32 function
+- tfindnext32 function
+- _findnext32 function
+- _tfindnext32i64 function
+- _wfindnext function
+- tfindnext function
+- _findnext64 function
+- findnext64 function
+- _findnext64i32 function
+- wfindnext32i64 function
+- findnext function
+- wfindnext32 function
+- _wfindnext64i32 function
+- findnexti64 function
+- _wfindnext64 function
+- _findnext32i64 function
+- _findnexti64 function
+- _tfindnext64 function
+- wfindnext64i32 function
+- tfindnexti64 function
+- wfindnext64 function
+- wfindnext function
+- tfindnext64 function
+- _wfindnext32 function
+- tfindnext32i64 function
+- _tfindnexti64 function
+ms.assetid: 75d97188-5add-4698-a46c-4c492378f0f8
+caps.latest.revision: 17
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: e1a79f5859d35b324b4469918bf1107da32f651c
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="findnext-findnext32-findnext32i64-findnext64-findnext64i32-findnexti64-wfindnext-wfindnext32-wfindnext32i64-wfindnext64-wfindnext64i32-wfindnexti64"></a>_findnext、_findnext32、_findnext32i64、_findnext64、_findnext64i32、_findnexti64、_wfindnext、_wfindnext32、_wfindnext32i64、_wfindnext64、_wfindnext64i32、_wfindnexti64
+[_findfirst](../../c-runtime-library/reference/findfirst-functions.md) の前の呼び出しで指定された `filespec` 引数と一致する次の名前を検索し、それに応じて `fileinfo` 構造体の内容を変更します。  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+int _findnext(  
+   intptr_t handle,  
+   struct _finddata_t *fileinfo   
+);  
+int _findnext32(  
+   intptr_t handle,  
+   struct _finddata32_t *fileinfo   
+);  
+int _findnext64(  
+   intptr_t handle,  
+   struct __finddata64_t *fileinfo   
+);  
+int _findnexti64(  
+   intptr_t handle,  
+   struct __finddatai64_t *fileinfo   
+);  
+int _findnext32i64(  
+   intptr_t handle,  
+   struct _finddata32i64_t *fileinfo   
+);  
+int _findnext64i32(  
+   intptr_t handle,  
+   struct _finddata64i32_t *fileinfo   
+);  
+int _wfindnext(  
+   intptr_t handle,  
+   struct _wfinddata_t *fileinfo   
+);  
+int _wfindnext32(  
+   intptr_t handle,  
+   struct _wfinddata32_t *fileinfo   
+);  
+int _wfindnext64(  
+   intptr_t handle,  
+   struct _wfinddata64_t *fileinfo   
+);  
+int _wfindnexti64(  
+   intptr_t handle,  
+   struct _wfinddatai64_t *fileinfo   
+);  
+int _wfindnext32i64(  
+   intptr_t handle,  
+   struct _wfinddatai64_t *fileinfo   
+);  
+int _wfindnext64i32(  
+   intptr_t handle,  
+   struct _wfinddata64i32_t *fileinfo   
+);  
+```  
+  
+#### <a name="parameters"></a>パラメーター  
+ `handle`  
+ 以前の `_findfirst` の呼び出しで返された検索ハンドル。  
+  
+ `fileinfo`  
+ ファイル情報バッファー。  
+  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合、0 を返します。 それ以外の場合は -1 を返し、エラーの性質を示す値に `errno` を設定します。 次の表に、発生する可能性のあるエラー コードを示します。  
+  
+ `EINVAL`  
+ 無効なパラメーター: `fileinfo` は `NULL` でした。 または、オペレーティング システムが予期しないエラーを返しました。  
+  
+ `ENOENT`  
+ これ以上一致するファイルが見つかりません。  
+  
+ `ENOMEM`  
+ メモリが不足しているか、ファイル名の長さが `MAX_PATH` を超えています。  
+  
+ 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。  
+  
+## <a name="remarks"></a>コメント  
+ `_findfirst` または `_findnext` 関数 (または任意のバリアント) を完了した後は、[_findclose](../../c-runtime-library/reference/findclose.md) を呼び出す必要があります。 呼び出すと、アプリケーション内でこれらの関数が使用しているリソースが解放されます。  
+  
+ `w` プレフィックスがあるこれらの関数のバリエーションは、ワイド文字バージョンです。それ以外の場合、対応する&1; バイト関数と同じです。  
+  
+ これらの関数のバリエーションは、32 ビットや 64 ビットの時刻型と、32 ビットや 64 ビットのファイル サイズをサポートします。 最初の数字のサフィックス (`32` または `64`) は、使用される時刻型のサイズを示します。2 番目のサフィックスは `i32` または `i64`で、ファイル サイズが 32 ビットの整数として表されるか、それとも 64 ビットの整数として表されるかを示します。 32 ビットと 64 ビットの時刻型とファイル サイズをサポートするバージョンについては、次の表を参照してください。 64 ビットの時刻型を使用するバリエーションでは、3000 年 12 月 31 日 23:59:59 (UTC) までのファイルの作成日を表現できます。32 ビットの時刻型を使用するバリエーションでは、2038 年 1 月 18 日 23:59:59 (UTC) までの日付のみを表現できます。 これらの関数の日付範囲の下限は、いずれも 1970 年 1 月 1 日の午前 0 時です。  
+  
+ 時間のサイズを明示的に指定するバージョンを使う理由が特にない場合は、`_findnext` または `_wfindnext` を使用します。また、3 GB を超えるファイル サイズをサポートする必要がある場合は、`_findnexti64` または `_wfindnexti64` を使用します。 これらの関数はすべて 64 ビットの時刻型です。 以前のバージョンでは、これらの関数は 32 ビットの時刻型を使用していました。 これがアプリケーションの互換性に影響のある変更の場合、古い動作に戻すように `_USE_32BIT_TIME_T` を定義できます。 `_USE_32BIT_TIME_T` を定義する場合、`_findnext`、`_finnexti64`、およびそれに対応する Unicode バージョンは 32 ビット時刻を使用します。  
+  
+### <a name="time-type-and-file-length-type-variations-of-findnext"></a>_findnext の時刻型とファイル長型のバリエーション  
+  
+|関数|`_USE_32BIT_TIME_T` は定義済み?|時刻型|ファイル長型|  
+|---------------|----------------------------------|---------------|----------------------|  
+|`_findnext`, `_wfindnext`|未定義|64 ビット|32 ビット|  
+|`_findnext`, `_wfindnext`|定義済み|32 ビット|32 ビット|  
+|`_findnext32`, `_wfindnext32`|マクロ定義の影響を受けない|32 ビット|32 ビット|  
+|`_findnext64`, `_wfindnext64`|マクロ定義の影響を受けない|64 ビット|64 ビット|  
+|`_findnexti64`, `_wfindnexti64`|未定義|64 ビット|64 ビット|  
+|`_findnexti64`, `_wfindnexti64`|定義済み|32 ビット|64 ビット|  
+|`_findnext32i64`, `_wfindnext32i64`|マクロ定義の影響を受けない|32 ビット|64 ビット|  
+|`_findnext64i32`, `_wfindnext64i32`|マクロ定義の影響を受けない|64 ビット|32 ビット|  
+  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
+  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
+|`_tfindnext`|`_findnext`|`_findnext`|`_wfindnext`|  
+|`_tfindnext32`|`_findnext32`|`_findnext32`|`_wfindnext32`|  
+|`_tfindnext64`|`_findnext64`|`_findnext64`|`_wfindnext64`|  
+|`_tfindnexti64`|`_findnexti64`|`_findnexti64`|`_wfindnexti64`|  
+|`_tfindnext32i64`|`_findnext32i64`|`_findnext32i64`|`_wfindnext32i64`|  
+|`_tfindnext64i32`|`_findnext64i32`|`_findnext64i32`|`_wfindnext64i32`|  
+  
+## <a name="requirements"></a>要件  
+  
+|関数|必須ヘッダー|  
+|--------------|---------------------|  
+|`_findnext`|\<io.h>|  
+|`_findnext32`|\<io.h>|  
+|`_findnext64`|\<io.h>|  
+|`_findnexti64`|\<io.h>|  
+|`_findnext32i64`|\<io.h>|  
+|`_findnext64i32`|\<io.h>|  
+|`_wfindnext`|\<io.h> または \<wchar.h>|  
+|`_wfindnext32`|\<io.h> または \<wchar.h>|  
+|`_wfindnext64`|\<io.h> または \<wchar.h>|  
+|`_wfindnexti64`|\<io.h> または \<wchar.h>|  
+|`_wfindnext32i64`|\<io.h> または \<wchar.h>|  
+|`_wfindnext64i32`|\<io.h> または \<wchar.h>|  
+  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+  
+## <a name="libraries"></a>ライブラリ  
+ [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
+  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
+ [システム コール](../../c-runtime-library/system-calls.md)   
+ [ファイル名検索関数](../../c-runtime-library/filename-search-functions.md)

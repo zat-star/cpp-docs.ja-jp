@@ -1,59 +1,75 @@
 ---
 title: "_mktemp、_wmktemp | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wmktemp"
-  - "_mktemp"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_tmktemp"
-  - "wmktemp"
-  - "tmktemp"
-  - "_wmktemp"
-  - "_mktemp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_mktemp 関数"
-  - "_tmktemp 関数"
-  - "_wmktemp 関数"
-  - "ファイル [C++], 一時"
-  - "mktemp 関数"
-  - "一時ファイル [C++]"
-  - "tmktemp 関数"
-  - "wmktemp 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wmktemp
+- _mktemp
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _tmktemp
+- wmktemp
+- tmktemp
+- _wmktemp
+- _mktemp
+dev_langs:
+- C++
+helpviewer_keywords:
+- _wmktemp function
+- _mktemp function
+- files [C++], temporary
+- tmktemp function
+- _tmktemp function
+- wmktemp function
+- mktemp function
+- temporary files [C++]
 ms.assetid: 055eb539-a8c2-4a7d-be54-f5b6d1eb5c85
 caps.latest.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# _mktemp、_wmktemp
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: b6b5f2f059084e1f5dd66d75b5f5af5f2ade2473
+ms.lasthandoff: 02/24/2017
 
-一意のファイル名を作成します。  これらの関数のセキュリティを強化したバージョンについては、「[\_mktemp\_s、\_wmktemp\_s](../../c-runtime-library/reference/mktemp-s-wmktemp-s.md)」を参照してください。  
+---
+# <a name="mktemp-wmktemp"></a>_mktemp、_wmktemp
+一意のファイル名を作成します。 これらの関数のセキュリティを強化したバージョンについては、「[_mktemp_s、_wmktemp_s](../../c-runtime-library/reference/mktemp-s-wmktemp-s.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 char *_mktemp(  
@@ -72,64 +88,64 @@ wchar_t *_wmktemp(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `template`  
  ファイル名のパターン。  
   
-## 戻り値  
- これらの関数は、変更したテンプレートへのポインターを返します。  `template` が適切形作られればまたはこれ以上の一意の名前が特定のテンプレートから作成できません関数の戻り値 `NULL`。  
+## <a name="return-value"></a>戻り値  
+ これらの各関数は、変更されたテンプレートへのポインターを返します。 この関数は、`template` の形式が正しくないか、指定したテンプレートから一意の名前をこれ以上作成できない場合、`NULL` を返します。  
   
-## 解説  
- `_mktemp` 関数は `template` の引数を変更して、一意のファイル名を作成します。  `_mktemp` 関数は、ランタイム システムで現在使用されているマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。  ワイド文字を扱う場合は、`_mktemp` ではなく `_wmktemp` を使用します。`_wmktemp` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  `_wmktemp` 関数と `_mktemp` 関数の動作は、`_wmktemp` 関数がマルチバイト文字列を扱わない点を除いて同じです。  
+## <a name="remarks"></a>コメント  
+ `_mktemp` 関数は、`template` 引数を変更することで、一意のファイル名を作成します。 `_mktemp` は、ランタイム システムで現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 ワイド文字を扱う場合は、`_wmktemp` ではなく `_mktemp` を使用します。`_wmktemp` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 `_wmktemp` がマルチバイト文字列を処理しない点を除き、`_wmktemp` と `_mktemp` の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tmktemp`|`_mktemp`|`_mktemp`|`_wmktemp`|  
   
- `base` が指定した、X は `_mktemp`で指定された文字のプレースホルダーが新しいファイル名の一部である場合、`template` 引数にフォーム `base`XXXXXX が含まれています。  `template` の各プレースホルダー文字には、大文字の X を指定する必要があります。  `_mktemp` は `base` を保持し、後に続く X のうち先頭の X を英字に置き換えます。  `_mktemp` は 5 桁の値に次の残りの;を置き換えます。この値は、プログラムの呼び出しプロセスを識別する一意の数値呼び出し元スレッドです。  
+ `template` 引数は `base`XXXXXX という形式をしています。ここで `base` は、新しいファイル名の一部として指定される内容で、各 X は `_mktemp` によって指定される文字のプレースホルダーです。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp` では、`base` を保持し、最初の後続の X を英字&1; 文字で置換します。 `_mktemp` は、これに続く残りの X を&5; 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
   
- `_mktemp` への呼び出しが成功 `template`を変更します。  同じ `template` 引数を使用して同じプロセスまたはスレッドから呼び出されると、`_mktemp` は、前の呼び出しで `_mktemp` から返された名前と一致するファイル名を調べます。  指定した名前のファイルが存在しない場合、`_mktemp` はその名前を返します。  以前返されたすべての名前のファイルが存在する場合、`_mktemp` は、その名前の英字部分をアルファベット順の次の小文字に置き換えて、新しい名前を作成します。  たとえば、`base` が次のような場合があります。  
+ 呼び出しが成功した `_mktemp` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp` では、以前の呼び出しで `_mktemp` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp` は、以前返した名前で使用していた英字&1; 文字を、次の使用可能な小文字&1; 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
   
 ```  
 fn  
 ```  
   
- と `_mktemp` で指定した 5 桁の値が 12345 の場合、返される名です:次のとおりです。  
+ `_mktemp` によって提供される 5 桁の値が 12345 の場合、返される最初の名前は、次のようになります。  
   
 ```  
 fna12345  
 ```  
   
- この名前が FNA12345 ファイルの作成に使用され、そのファイルがまだ存在する場合、`template` に同じ `base` を指定して同じプロセスまたはスレッドを呼び出すと、次の名前が返されます。  
+ この名前を使用してファイル FNA12345 が作成され、このファイルがまだ使用されている場合、`template` に同じ `base` を使用する同じプロセスまたはスレッドからの呼び出しで返される次の名前は、次のようになります。  
   
 ```  
 fnb12345  
 ```  
   
- FNA12345 が存在しない場合は、次の名前がもう一度返されます。  
+ FNA12345 が存在しない場合、次に返される名前はもう一度次のようになります。  
   
 ```  
 fna12345  
 ```  
   
- `_mktemp` は、base 値と template 値をどのように組み合わせても、最大で 26 個の一意のファイル名を作成できます。  したがって、この例で使用されている `base` 値と `template` 値に対して `_mktemp` が作成できる最後の一意のファイル名は FNZ12345 になります。  
+ `_mktemp` では、ベース値とテンプレート値の任意の組み合わせから最大 26 通りの一意のファイル名を作成できます。 そのため、FNZ12345 は、この例で使用されている `base` と `template` の値に対して `_mktemp` が作成できる最後の一意のファイル名です。  
   
- 失敗すると、`errno` が設定されます。  `template` に無効な形式 \(数が 6 個の X\) の場合、`errno` は `EINVAL`に設定されます。  26 の有効なファイル名がすべて存在するため `_mktemp` に一意の名前を作成できない場合は、`_mktemp` は空の文字列にテンプレートを設定し、`EEXIST`を返します。  
+ 失敗した場合は、`errno` が設定されます。 `template` の形式が無効な場合 (X が 6 個未満など) は、`errno` が `EINVAL` に設定されます。 候補となる 26 個すべてのファイル名が既に存在していて `_mktemp` が一意の名前を作成できない場合、`_mktemp` はテンプレートを空の文字列に設定し、`EEXIST` を返します。  
   
- C\+\+ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_mktemp`|\<io.h\>|  
-|`_wmktemp`|\<io.h または\> wchar.h \<\>|  
+|-------------|---------------------|  
+|`_mktemp`|\<io.h>|  
+|`_wmktemp`|\<io.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_mktemp.c  
@@ -184,43 +200,46 @@ int main( void )
 }  
 ```  
   
-  **一意のファイル名は fna03912 です**  
-**一意のファイル名は fnb03912 です**  
-**一意のファイル名は fnc03912 です**  
-**一意のファイル名は fnd03912 です**  
-**一意のファイル名は fne03912 です**  
-**一意のファイル名は fnf03912 です**  
-**一意のファイル名は fng03912 です**  
-**一意のファイル名は fnh03912 です**  
-**一意のファイル名は fni03912 です**  
-**一意のファイル名は fnj03912 です**  
-**一意のファイル名は fnk03912 です**  
-**一意のファイル名は fnl03912 です**  
-**一意のファイル名は fnm03912 です**  
-**一意のファイル名は fnn03912 です**  
-**一意のファイル名は fno03912 です**  
-**一意のファイル名は fnp03912 です**  
-**一意のファイル名は fnq03912 です**  
-**一意のファイル名は fnr03912 です**  
-**一意のファイル名は fns03912 です**  
-**一意のファイル名は fnt03912 です**  
-**一意のファイル名は fnu03912 です**  
-**一意のファイル名は fnv03912 です**  
-**一意のファイル名は fnw03912 です**  
-**一意のファイル名は fnx03912 です**  
-**一意のファイル名は fny03912 です**  
-**一意のファイル名は fnz03912 です**  
-**テンプレートを作成する問題を示します。**  
-**一意のファイル名をクリックします。**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+Unique filename is fna03912  
+Unique filename is fnb03912  
+Unique filename is fnc03912  
+Unique filename is fnd03912  
+Unique filename is fne03912  
+Unique filename is fnf03912  
+Unique filename is fng03912  
+Unique filename is fnh03912  
+Unique filename is fni03912  
+Unique filename is fnj03912  
+Unique filename is fnk03912  
+Unique filename is fnl03912  
+Unique filename is fnm03912  
+Unique filename is fnn03912  
+Unique filename is fno03912  
+Unique filename is fnp03912  
+Unique filename is fnq03912  
+Unique filename is fnr03912  
+Unique filename is fns03912  
+Unique filename is fnt03912  
+Unique filename is fnu03912  
+Unique filename is fnv03912  
+Unique filename is fnw03912  
+Unique filename is fnx03912  
+Unique filename is fny03912  
+Unique filename is fnz03912  
+Problem creating the template.  
+Out of unique filenames.  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
- [fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [\_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
- [\_getpid](../Topic/_getpid.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [\_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
- [\_tempnam、\_wtempnam、tmpnam、\_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)   
+ [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
+ [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
+ [_getpid](../../c-runtime-library/reference/getpid.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
+ [_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
+ [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)   
  [tmpfile](../../c-runtime-library/reference/tmpfile.md)

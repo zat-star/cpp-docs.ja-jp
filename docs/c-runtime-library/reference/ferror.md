@@ -1,49 +1,65 @@
 ---
-title: "ferror | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "ferror"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "ferror"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エラー [C++], テスト (ストリームを)"
-  - "ferror 関数"
-  - "ストリーム, テスト (エラーを)"
+title: ferror | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- ferror
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- ferror
+dev_langs:
+- C++
+helpviewer_keywords:
+- ferror function
+- streams, testing for errors
+- errors [C++], testing for stream
 ms.assetid: 528a34bc-f2aa-4c3f-b89a-5b148e6864f7
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# ferror
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 61ceb0f31f41e129eb0047ba8c0de1c44c43f1b1
+ms.lasthandoff: 02/24/2017
 
-ストリームのエラーのテスト。  
+---
+# <a name="ferror"></a>ferror
+ストリームのエラーをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int ferror(   
@@ -51,37 +67,37 @@ int ferror(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  `FILE` 構造体へのポインター。  
   
-## 戻り値  
- エラーが `stream`の `ferror` は 0 で発生します。  それ以外の場合は、0 以外の値を返します。  ストリームが `NULL`の場合、`ferror` は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
+## <a name="return-value"></a>戻り値  
+ `stream` のエラーが発生していない場合、`ferror` は 0 を返します。 それ以外の場合は、0 以外の値を返します。 ストリームが `NULL` の場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`ferror` から無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- 定期的な `ferror` は `stream`に関連付けられたファイルの読み取りまたは書き込みのエラーによって \(関数とマクロとして実装されてを比較しています。  エラーが発生した場合、ストリームのままのエラー インジケーターは、ストリームを閉じるか、巻き戻されるか、`clearerr` がそれに対して呼び出されるまで設定します。  
+## <a name="remarks"></a>コメント  
+ `ferror` ルーチン (関数とマクロの両方として実装されています) は、`stream` に関連付けられているファイルの読み取りエラーまたは書き込みエラーをテストします。 エラーが発生した場合、ストリームが終了するか巻き戻されるまで、または `clearerr` が呼び出されるまで、ストリームのエラー インジケーターは設定されたままになります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`ferror`|\<stdio.h\>|  
+|--------------|---------------------|  
+|`ferror`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- [feof](../../c-runtime-library/reference/feof.md)"の例を参照してください。  
+## <a name="example"></a>例  
+ 「[feof](../../c-runtime-library/reference/feof.md)」の例を参照してください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   
- [\_eof](../../c-runtime-library/reference/eof.md)   
+ [_eof](../../c-runtime-library/reference/eof.md)   
  [feof](../../c-runtime-library/reference/feof.md)   
- [fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [perror、\_wperror](../../c-runtime-library/reference/perror-wperror.md)
+ [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
+ [perror、_wperror](../../c-runtime-library/reference/perror-wperror.md)

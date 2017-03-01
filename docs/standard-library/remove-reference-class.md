@@ -1,56 +1,70 @@
 ---
 title: "remove_reference クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.tr1.remove_reference"
-  - "std::tr1::remove_reference"
-  - "remove_reference"
-  - "std.remove_reference"
-  - "std::remove_reference"
-  - "type_traits/std::remove_reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "remove_reference クラス [TR1]"
-  - "remove_reference"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- remove_reference
+- std::remove_reference
+- type_traits/std::remove_reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- remove_reference class
+- remove_reference
 ms.assetid: 294e1965-3ae3-46ee-bc42-4fdf60c24717
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# remove_reference クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
+ms.openlocfilehash: 873efb477296b9f6765eb9a85d9ac62f63405382
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="removereference-class"></a>remove_reference クラス
 型から非参照型を作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class T>  
-    struct remove_reference;  
-  
-template<class T>  using remove_reference_t = typename remove_reference<T>::type;  
+template <class T>  
+struct remove_reference;  
+ 
+template <class T>  
+using remove_reference_t = typename remove_reference<T>::type;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  変更する型。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `remove_reference<T>` のインスタンスは、`T1` の形式が `T` である場合は、修飾型 `T1&` を保持します。それ以外の場合は、`T` を保持します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 #include <type_traits>   
 #include <iostream>   
   
@@ -64,18 +78,18 @@ int main()
   
     return (0);   
     }  
-  
 ```  
   
 ```Output  
 remove_reference_t<int&> == int  
 ```  
   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [add\_lvalue\_reference クラス](../standard-library/add-lvalue-reference-class.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
+ [add_lvalue_reference クラス](../standard-library/add-lvalue-reference-class.md)
+

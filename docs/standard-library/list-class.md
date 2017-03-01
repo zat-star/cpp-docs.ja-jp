@@ -1,129 +1,2463 @@
 ---
 title: "list クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.list"
-  - "list"
-  - "std::list"
-  - "list/std::list"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "list クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std.list
+- list
+- std::list
+- list/std::list
+dev_langs:
+- C++
+helpviewer_keywords:
+- list class
 ms.assetid: d3707f4a-10fd-444f-b856-f9ca2077c1cd
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# list クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 16d9bb63aac40bc4494f8d748fd752cde85d79d9
+ms.lasthandoff: 02/24/2017
 
-STL list クラスは、要素を線形の配置に維持し、シーケンス内の任意の場所での効率的な挿入と削除を可能にする、シーケンス コンテナーのテンプレート クラスです。  シーケンスは要素の双方向リンク リストとして格納され、各要素には型 *Type* のメンバーが含まれます。  
+---
+# <a name="list-class"></a>list クラス
+C++ 標準ライブラリの list クラスは、要素を線形の配置に維持し、シーケンス内の任意の場所での効率的な挿入と削除を可能にする、シーケンス コンテナーのテンプレート クラスです。 シーケンスは要素の双方向リンク リストとして格納され、各要素には型 *Type* のメンバーが含まれます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
-  
-template <    class Type,     class Allocator=allocator<Type>  > class list  
+template <class Type, class Allocator= allocator<Type>>  
+class list  
 ```  
   
-#### パラメーター  
- *種類*  
+#### <a name="parameters"></a>パラメーター  
+ *Type*  
  list に格納される要素のデータ型。  
   
  `Allocator`  
- メモリの list の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。  この引数は省略可能であり、既定値は **allocator**\<*Type*\> です。  
+ メモリの list の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 この引数は省略可能であり、既定値は **allocator**\< *Type*> * *です。  
   
-## 解説  
- 一般的に、コンテナー型の選択は、アプリケーションにおいて必要な検索および挿入の種類に基づいている必要があります。  ベクターは、任意の要素へのランダム アクセスが優先事項であり、要素の挿入または削除がシーケンスの最後にのみ必要な場合に、シーケンスを管理するための推奨されるコンテナーです。  クラスの deque コンテナーでは、ランダム アクセスが必要であり、シーケンスの先頭と末尾の両方における挿入と削除が優先事項である場合に、より優れたパフォーマンスになります。  
+## <a name="remarks"></a>コメント  
+ 一般的に、コンテナー型の選択は、アプリケーションにおいて必要な検索および挿入の種類に基づいている必要があります。 ベクターは、任意の要素へのランダム アクセスが優先事項であり、要素の挿入または削除がシーケンスの最後にのみ必要な場合に、シーケンスを管理するための推奨されるコンテナーです。 クラスの deque コンテナーでは、ランダム アクセスが必要であり、シーケンスの先頭と末尾の両方における挿入と削除が優先事項である場合に、より優れたパフォーマンスになります。  
   
- list のメンバー関数 [merge](../Topic/list::merge.md)、[reverse](../Topic/list::reverse.md)、[unique](../Topic/list::unique.md)、[remove](../Topic/list::remove.md)、および [remove\_if](../Topic/list::remove_if.md) はリスト オブジェクトの操作用に最適化されており、対応する汎用的な関数に比べて、高いパフォーマンスが提供されます。  
+ list のメンバー関数 [merge](#list__merge)、[reverse](#list__reverse)、[unique](#list__unique)、[remove](#list__remove)、および [remove_if](#list__remove_if) はリスト オブジェクトの操作用に最適化されており、対応する汎用的な関数に比べて、高いパフォーマンスが提供されます。  
   
- リストの再割り当ては、メンバー関数がリストの要素を挿入または消去する必要がある場合に発生します。  このような場合、制御対象シーケンスの消去部分を指す反復子または参照は常に無効になります。  
+ リストの再割り当ては、メンバー関数がリストの要素を挿入または消去する必要がある場合に発生します。 このような場合、制御対象シーケンスの消去部分を指す反復子または参照は常に無効になります。  
   
- STL 標準ヘッダー \<list\> を定義するには、[コンテナー](../standard-library/stl-containers.md) テンプレート クラス list および複数のサポート テンプレートをインクルードします。  
+ C++ 標準ライブラリ標準ヘッダー \<list> を定義するには、[コンテナー](../standard-library/stl-containers.md) テンプレート クラス list および複数のサポート テンプレートをインクルードします。  
   
-### コンストラクター  
-  
-|||  
-|-|-|  
-|[リスト](../Topic/list::list.md)|特定のサイズのリスト、特定の値の要素を持つリスト、特定の `allocator` を持つリストを構築します。または他のリストのコピーとしてリストを構築します。|  
-  
-### Typedef  
+### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[allocator\_type](../Topic/list::allocator_type.md)|リスト オブジェクトの `allocator` クラスを表す型。|  
-|[const\_iterator](../Topic/list::const_iterator.md)|リスト内の 1 つの `const` 要素を読み取ることができる双方向反復子を提供する型。|  
-|[const\_pointer](../Topic/list::const_pointer.md)|リスト内の `const` 要素へのポインターを提供する型。|  
-|[const\_reference](../Topic/list::const_reference.md)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
-|[const\_reverse\_iterator](../Topic/list::const_reverse_iterator.md)|リスト内の任意の `const` 要素を読み取ることができる双方向反復子を提供する型。|  
-|[difference\_type](../Topic/list::difference_type.md)|同じリスト内の要素を参照する 2 反復子の違いを提供する型。|  
-|[iterator](../Topic/list::iterator.md)|リスト内の任意の要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
-|[ポインター](../Topic/list::pointer.md)|リスト内の要素へのポインターを提供する型。|  
-|[参照](../Topic/list::reference.md)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
-|[reverse\_iterator](../Topic/list::reverse_iterator.md)|逆順のリスト内の 1 つの要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
-|[size\_type](../Topic/list::size_type.md)|リスト内の要素の数をカウントする型。|  
-|[value\_type](../Topic/list::value_type.md)|リスト内に格納されているデータ型を表す型。|  
+|[list](#list__list)|特定のサイズのリスト、特定の値の要素を持つリスト、特定の `allocator` を持つリストを構築します。または他のリストのコピーとしてリストを構築します。|  
   
-### メンバー関数  
+### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[assign](../Topic/list::assign.md)|リストから要素を消去し、対象のリストに新しい要素のセットをコピーします。|  
-|[back](../Topic/list::back.md)|リストの最後の要素への参照を返します。|  
-|[begin](../Topic/list::begin.md)|リスト内の最初の要素を指す反復子を返します。|  
-|[list::cbegin](../Topic/list::cbegin.md)|リスト内の最初の要素を指す定数反復子を返します。|  
-|[list::cend](../Topic/list::cend.md)|リスト内の最後の要素の次の場所を指す定数反復子を返します。|  
-|[list::clear](../Topic/list::clear.md)|リストのすべての要素を消去します。|  
-|[list::crbegin](../Topic/list::crbegin.md)|逆順のリスト内の最初の要素を指す定数反復子を返します。|  
-|[list::crend](../Topic/list::crend.md)|逆順のリスト内の最後の要素の次の位置を指す定数反復子を返します。|  
-|[list::emplace](../Topic/list::emplace.md)|指定した位置において、構築された要素をリスト内の適切な場所に挿入します。|  
-|[list::emplace\_back](../Topic/list::emplace_back.md)|イン プレースで構築された要素をリストの末尾に追加します。|  
-|[list::emplace\_front](../Topic/list::emplace_front.md)|イン プレースで構築された要素をリストの先頭に追加します。|  
-|[empty](../Topic/list::empty.md)|リストが空かどうかをテストします。|  
-|[End](../Topic/list::end.md)|リスト内の最後の要素の次の位置を指す反復子を返します。|  
-|[erase](../Topic/list::erase.md)|指定した位置からリスト内の要素または要素範囲を削除します。|  
-|[front](../Topic/list::front.md)|リスト内の最初の要素への参照を返します。|  
-|[get\_allocator](../Topic/list::get_allocator.md)|リストの構築に使用される `allocator` オブジェクトのコピーを返します。|  
-|[insert](../Topic/list::insert.md)|リストの指定した位置に要素、複数の要素、または要素の範囲を挿入します。|  
-|[max\_size](../Topic/list::max_size.md)|リストの最大長を返します。|  
-|[merge](../Topic/list::merge.md)|引数リストから要素を削除し、それを対象のリストに挿入して、新たに組み合わされたセットの要素を昇順またはその他の指定された順序で並べ替えます。|  
-|[pop\_back](../Topic/list::pop_back.md)|リストの末尾の要素を削除します。|  
-|[pop\_front](../Topic/list::pop_front.md)|リストの先頭から要素を削除します。|  
-|[push\_back](../Topic/list::push_back.md)|リストの末尾に要素を追加します。|  
-|[push\_front](../Topic/list::push_front.md)|リストの先頭に要素を追加します。|  
-|[rbegin](../Topic/list::rbegin.md)|逆順のリスト内の最初の要素を指す反復子を返します。|  
-|[remove](../Topic/list::remove.md)|指定された値と一致するリストの要素を消去します。|  
-|[remove\_if](../Topic/list::remove_if.md)|指定した述語の条件を満たすリストから要素を消去します。|  
-|[rend](../Topic/list::rend.md)|逆順のリスト内の最後の要素の次の位置を指す反復子を返します。|  
-|[resize](../Topic/list::resize.md)|リストの新しいサイズを指定します。|  
-|[reverse](../Topic/list::reverse.md)|要素がリストに出現する順序を反転させます。|  
-|[size](../Topic/list::size.md)|リスト内の要素数を返します。|  
-|[sort](../Topic/list::sort.md)|リストの要素を、昇順または他の順序関係に従って整列します。|  
-|[splice](../Topic/list::splice.md)|引数リストから要素を削除し、それらを対象のリストに挿入します。|  
-|[swap](../Topic/list::swap.md)|2 つのリストの要素を交換します。|  
-|[unique](../Topic/list::unique.md)|隣接する重複要素、または他のいずれかの二項述語の条件を満たす、隣接する要素をリストから削除します。|  
+|[allocator_type](#list__allocator_type)|リスト オブジェクトの `allocator` クラスを表す型。|  
+|[const_iterator](#list__const_iterator)|リスト内の&1; つの `const` 要素を読み取ることができる双方向反復子を提供する型。|  
+|[const_pointer](#list__const_pointer)|リスト内の `const` 要素へのポインターを提供する型。|  
+|[const_reference](#list__const_reference)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
+|[const_reverse_iterator](#list__const_reverse_iterator)|リスト内の任意の `const` 要素を読み取ることができる双方向反復子を提供する型。|  
+|[difference_type](#list__difference_type)|同じリスト内の要素を参照する&2; 反復子の違いを提供する型。|  
+|[iterator](#list__iterator)|リスト内の任意の要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
+|[pointer](#list__pointer)|リスト内の要素へのポインターを提供する型。|  
+|[reference](#list__reference)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
+|[reverse_iterator](#list__reverse_iterator)|逆順のリスト内の&1; つの要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
+|[size_type](#list__size_type)|リスト内の要素の数をカウントする型。|  
+|[value_type](#list__value_type)|リスト内に格納されているデータ型を表す型。|  
   
-### 演算子  
+### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[list::operator\=](../Topic/list::operator=.md)|別のリストのコピーでリストの要素を置き換えます。|  
+|[assign](#list__assign)|リストから要素を消去し、対象のリストに新しい要素のセットをコピーします。|  
+|[back](#list__back)|リストの最後の要素への参照を返します。|  
+|[begin](#list__begin)|リスト内の最初の要素を指す反復子を返します。|  
+|[list::cbegin](#list__cbegin)|リスト内の最初の要素を指す定数反復子を返します。|  
+|[list::cend](#list__cend)|リスト内の最後の要素の次の場所を指す定数反復子を返します。|  
+|[list::clear](#list__clear)|リストのすべての要素を消去します。|  
+|[list::crbegin](#list__crbegin)|逆順のリスト内の最初の要素を指す定数反復子を返します。|  
+|[list::crend](#list__crend)|逆順のリスト内の最後の要素の次の位置を指す定数反復子を返します。|  
+|[list::emplace](#list__emplace)|指定した位置において、構築された要素をリスト内の適切な場所に挿入します。|  
+|[list::emplace_back](#list__emplace_back)|イン プレースで構築された要素をリストの末尾に追加します。|  
+|[list::emplace_front](#list__emplace_front)|イン プレースで構築された要素をリストの先頭に追加します。|  
+|[empty](#list__empty)|リストが空かどうかをテストします。|  
+|[end](#list__end)|リスト内の最後の要素の次の位置を指す反復子を返します。|  
+|[erase](#list__erase)|指定した位置からリスト内の要素または要素範囲を削除します。|  
+|[front](#list__front)|リスト内の最初の要素への参照を返します。|  
+|[get_allocator](#list__get_allocator)|リストの構築に使用される `allocator` オブジェクトのコピーを返します。|  
+|[insert](#list__insert)|リストの指定した位置に要素、複数の要素、または要素の範囲を挿入します。|  
+|[max_size](#list__max_size)|リストの最大長を返します。|  
+|[merge](#list__merge)|引数リストから要素を削除し、それを対象のリストに挿入して、新たに組み合わされたセットの要素を昇順またはその他の指定された順序で並べ替えます。|  
+|[pop_back](#list__pop_back)|リストの末尾の要素を削除します。|  
+|[pop_front](#list__pop_front)|リストの先頭から要素を削除します。|  
+|[push_back](#list__push_back)|リストの末尾に要素を追加します。|  
+|[push_front](#list__push_front)|リストの先頭に要素を追加します。|  
+|[rbegin](#list__rbegin)|逆順のリスト内の最初の要素を指す反復子を返します。|  
+|[remove](#list__remove)|指定された値と一致するリストの要素を消去します。|  
+|[remove_if](#list__remove_if)|指定した述語の条件を満たすリストから要素を消去します。|  
+|[rend](#list__rend)|逆順のリスト内の最後の要素の次の位置を指す反復子を返します。|  
+|[resize](#list__resize)|リストの新しいサイズを指定します。|  
+|[reverse](#list__reverse)|要素がリストに出現する順序を反転させます。|  
+|[size](#list__size)|リスト内の要素数を返します。|  
+|[sort](#list__sort)|リストの要素を、昇順または他の順序関係に従って整列します。|  
+|[splice](#list__splice)|引数リストから要素を削除し、それらを対象のリストに挿入します。|  
+|[swap](#list__swap)|2 つのリストの要素を交換します。|  
+|[unique](#list__unique)|隣接する重複要素、または他のいずれかの二項述語の条件を満たす、隣接する要素をリストから削除します。|  
   
-## 必要条件  
- **ヘッダー**: \<list\>  
+### <a name="operators"></a>演算子  
   
-## 参照  
- [\<list\>](../standard-library/list.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+|||  
+|-|-|  
+|[list::operator=](#list__operator_eq)|別のリストのコピーでリストの要素を置き換えます。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー**: \<list>  
+  
+##  <a name="a-namelistallocatortypea--listallocatortype"></a><a name="list__allocator_type"></a>  list::allocator_type  
+ リスト オブジェクトの allocator クラスを表す型。  
+  
+```  
+typedef Allocator allocator_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `allocator_type` は、テンプレート パラメーター **Allocator** のシノニムです。  
+  
+### <a name="example"></a>例  
+  [get_allocator](#list__get_allocator) の例をご覧ください。  
+  
+##  <a name="a-namelistassigna--listassign"></a><a name="list__assign"></a>  list::assign  
+ リストから要素を消去し、対象のリストに新しい要素のセットをコピーします。  
+  
+```  
+void assign(
+    size_type Count,  
+    const Type& Val);
+
+void assign  
+    initializer_list<Type> IList);
+
+template <class InputIterator>  
+void assign(
+    InputIterator First,  
+    InputIterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `First`  
+ 引数リストからコピーされる要素範囲内の最初の要素の位置。  
+  
+ `Last`  
+ 引数リストからコピーされる要素範囲を超える最初の要素の位置。  
+  
+ `Count`  
+ リストに挿入される要素のコピーの数。  
+  
+ `Val`  
+ リストに挿入される要素の値。  
+  
+ `IList`  
+ 挿入される要素を含む initializer_list。  
+  
+### <a name="remarks"></a>コメント  
+ 対象のリスト内にある既存の要素が消去されると、assign によって、元のリストまたは他のリストからコピーされる指定の要素範囲が対象のリストに挿入されるか、指定した値の新しい要素のコピーが対象のリストに挿入されます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_assign.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main()  
+{  
+    using namespace std;  
+    list<int> c1, c2;  
+    list<int>::const_iterator cIter;  
+  
+    c1.push_back(10);  
+    c1.push_back(20);  
+    c1.push_back(30);  
+    c2.push_back(40);  
+    c2.push_back(50);  
+    c2.push_back(60);  
+  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    c1.assign(++c2.begin(), c2.end());  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    c1.assign(7, 4);  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    c1.assign({ 10, 20, 30, 40 });  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+}  
+```  
+  
+```Output  
+c1 = 10 20 30c1 = 50 60c1 = 4 4 4 4 4 4 4c1 = 10 20 30 40  
+```  
+  
+##  <a name="a-namelistbacka--listback"></a><a name="list__back"></a>  list::back  
+ リストの最後の要素への参照を返します。  
+  
+```  
+reference back();
+
+const_reference back() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストの最後の要素。 リストが空の場合、戻り値は定義されません。  
+  
+### <a name="remarks"></a>コメント  
+ **back** の戻り値が `const_reference` に割り当てられている場合、リスト オブジェクトを変更することはできません。 **back** の戻り値が **reference** に割り当てられている場合、リスト オブジェクトを変更できます。  
+  
+ [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を 1 または 2 に定義してコンパイルすると、空のリスト内の要素にアクセスしようとした場合に実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_back.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 11 );  
+  
+   int& i = c1.back( );  
+   const int& ii = c1.front( );  
+  
+   cout << "The last integer of c1 is " << i << endl;  
+   i--;  
+   cout << "The next-to-last integer of c1 is " << ii << endl;  
+}  
+```  
+  
+```Output  
+The last integer of c1 is 11  
+The next-to-last integer of c1 is 10  
+```  
+  
+##  <a name="a-namelistbegina--listbegin"></a><a name="list__begin"></a>  list::begin  
+ リスト内の最初の要素を指す反復子を返します。  
+  
+```  
+const_iterator begin() const;
+
+iterator begin();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リスト内の最初の要素、または空のリストの次の位置を指す双方向反復子。  
+  
+### <a name="remarks"></a>コメント  
+ **begin** の戻り値が `const_iterator` に割り当てられている場合、リスト オブジェクト内の要素は変更できません。 **begin** の戻り値が **iterator** に割り当てられている場合、リスト オブジェクト内の要素を変更できます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_begin.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+   list <int>::const_iterator c1_cIter;  
+  
+   c1.push_back( 1 );  
+   c1.push_back( 2 );  
+  
+   c1_Iter = c1.begin( );  
+   cout << "The first element of c1 is " << *c1_Iter << endl;  
+  
+ *c1_Iter = 20;  
+   c1_Iter = c1.begin( );  
+   cout << "The first element of c1 is now " << *c1_Iter << endl;  
+  
+   // The following line would be an error because iterator is const  
+   // *c1_cIter = 200;  
+}  
+```  
+  
+```Output  
+The first element of c1 is 1  
+The first element of c1 is now 20  
+```  
+  
+##  <a name="a-namelistcbegina--listcbegin"></a><a name="list__cbegin"></a>  list::cbegin  
+ 範囲内の最初の要素を示す `const` 反復子を返します。  
+  
+```  
+const_iterator cbegin() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 範囲の最初の要素、または空の範囲の末尾の次の位置 (空の範囲の場合、`const`) を指し示す `cbegin() == cend()` 双方向アクセス反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `cbegin` の戻り値で範囲内の要素を変更することはできません。  
+  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+  
+```cpp  
+auto i1 = Container.begin();
+// i1 is Container<T>::iterator   
+auto i2 = Container.cbegin();
+
+// i2 is Container<T>::const_iterator  
+```  
+  
+##  <a name="a-namelistcenda--listcend"></a><a name="list__cend"></a>  list::cend  
+ 範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
+  
+```  
+const_iterator cend() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 範囲の末尾の次の位置を指し示す `const` 双方向アクセス反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
+  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+  
+```cpp  
+auto i1 = Container.end();
+// i1 is Container<T>::iterator   
+auto i2 = Container.cend();
+
+// i2 is Container<T>::const_iterator  
+```  
+  
+ `cend` によって返された値は逆参照しないでください。  
+  
+##  <a name="a-namelistcleara--listclear"></a><a name="list__clear"></a>  list::clear  
+ リストのすべての要素を消去します。  
+  
+```  
+void clear();
+```  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_clear.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main() {  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   cout << "The size of the list is initially " << c1.size( ) << endl;  
+   c1.clear( );  
+   cout << "The size of list after clearing is " << c1.size( ) << endl;  
+}  
+```  
+  
+```Output  
+The size of the list is initially 3  
+The size of list after clearing is 0  
+```  
+  
+##  <a name="a-namelistconstiteratora--listconstiterator"></a><a name="list__const_iterator"></a>  list::const_iterator  
+ リスト内の&1; つの **const** 要素を読み取ることができる双方向反復子を提供する型。  
+  
+```  
+typedef implementation-defined const_iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `const_iterator` 型で要素の値を変更することはできません。  
+  
+### <a name="example"></a>例  
+  [back](#list__back) の例をご覧ください。  
+  
+##  <a name="a-namelistconstpointera--listconstpointer"></a><a name="list__const_pointer"></a>  list::const_pointer  
+ リストの `const` 要素へのポインターを提供します。  
+  
+``` 
+typedef typename Allocator::const_pointer const_pointer;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `const_pointer` 型で要素の値を変更することはできません。  
+  
+ ほとんどの場合、リスト オブジェクト内の要素にアクセスするには、[反復子](#list__iterator)を使用する必要があります。  
+  
+##  <a name="a-namelistconstreferencea--listconstreference"></a><a name="list__const_reference"></a>  list::const_reference  
+ 読み取りと **const** 操作の実行のために、リストに格納された **const** 要素への参照を提供する型。  
+  
+```  
+typedef typename Allocator::const_reference const_reference;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `const_reference` 型で要素の値を変更することはできません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_const_ref.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+  
+   const list <int> c2 = c1;  
+   const int &i = c2.front( );  
+   const int &j = c2.back( );  
+   cout << "The first element is " << i << endl;  
+   cout << "The second element is " << j << endl;  
+  
+   // The following line would cause an error because c2 is const  
+   // c2.push_back( 30 );  
+}  
+```  
+  
+```Output  
+The first element is 10  
+The second element is 20  
+```  
+  
+##  <a name="a-namelistconstreverseiteratora--listconstreverseiterator"></a><a name="list__const_reverse_iterator"></a>  list::const_reverse_iterator  
+ リスト内の任意の **const** 要素を読み取ることができる双方向反復子を提供する型。  
+  
+```  
+typedef std::reverse_iterator<const_iterator> const_reverse_iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `const_reverse_iterator` 型は要素の値を変更できず、逆の順序でリストを反復処理するために使用します。  
+  
+### <a name="example"></a>例  
+  [rbegin](#list__rbegin) の例をご覧ください。  
+  
+##  <a name="a-namelistcrbegina--listcrbegin"></a><a name="list__crbegin"></a>  list::crbegin  
+ 逆順のリスト内の最初の要素を指す定数反復子を返します。  
+  
+```  
+const_reverse_iterator rbegin() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 逆順のリスト内の最初の要素を指す定数逆順双方向反復子 (または通常の順序の `list` 内の最後の要素だったものを指す定数逆順双方向反復子)。  
+  
+### <a name="remarks"></a>コメント  
+ `crbegin` は、[list::begin](#list__begin) が `list` で使用されるように、逆順のリストで使用されます。  
+  
+ 戻り値が `crbegin` の場合、リスト オブジェクトは変更できません。 [list::rbegin](#list__rbegin) を使用して、リスト内を後方に向かって反復処理できます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_crbegin.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::const_reverse_iterator c1_crIter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+   c1_crIter = c1.crbegin( );  
+   cout << "The last element in the list is " << *c1_crIter << "." << endl;  
+}  
+```  
+  
+```Output  
+The last element in the list is 30.  
+```  
+  
+##  <a name="a-namelistcrenda--listcrend"></a><a name="list__crend"></a>  list::crend  
+ 逆順のリスト内の最後の要素の次の位置を指す定数反復子を返します。  
+  
+```  
+const_reverse_iterator rend() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 逆順の [list](../standard-library/list-class.md) 内の最後の要素の次の場所 (通常の順序の `list` 内の最初の要素の前の場所) を指す定数逆順双方向反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `crend` は、[list::end](#list__end) が `list` で使用されるように、逆順のリストで使用されます。  
+  
+ 戻り値が `crend` の場合、`list` オブジェクトは変更できません。  
+  
+ `crend` を使用して、逆順反復子が `list` の末尾に達したかどうかをテストできます。  
+  
+ `crend` によって返された値は逆参照しないでください。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_crend.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::const_reverse_iterator c1_crIter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   c1_crIter = c1.crend( );  
+   c1_crIter --;  // Decrementing a reverse iterator moves it forward in   
+                 // the list (to point to the first element here)  
+   cout << "The first element in the list is: " << *c1_crIter << endl;  
+}  
+```  
+  
+```Output  
+The first element in the list is: 10  
+```  
+  
+##  <a name="a-namelistdifferencetypea--listdifferencetype"></a><a name="list__difference_type"></a>  list::difference_type  
+ list の要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。  
+  
+```  
+typedef typename Allocator::difference_type difference_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `difference_type` は、コンテナーの反復子を減算またはインクリメントするときに返される型です。 通常、`difference_type` は、[ ` first`, ` last`) の範囲内で、反復子 ` first` と ` last` の間にある要素の数を表すために使用され、` first` が指す要素と、` last` が指す要素の&1; つ前までの範囲の要素を含みます。  
+  
+ `difference_type` は、入力反復子の要件を満たすすべての反復子 (set などの反転可能なコンテナーによってサポートされる双方向反復子のクラスを含む) に対して使用できますが、反復子間の減算は、[vector クラス](../standard-library/vector-class.md)などのランダム アクセス コンテナーによって提供される、ランダム アクセス反復子によってのみサポートされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_diff_type.cpp  
+// compile with: /EHsc  
+#include <iostream>  
+#include <list>  
+#include <algorithm>  
+  
+int main( )   
+{  
+   using namespace std;  
+  
+   list <int> c1;  
+   list <int>::iterator   c1_Iter, c2_Iter;  
+  
+   c1.push_back( 30 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+   c1.push_back( 10 );  
+   c1.push_back( 30 );  
+   c1.push_back( 20 );  
+  
+   c1_Iter = c1.begin( );  
+   c2_Iter = c1.end( );  
+  
+    list <int>::difference_type df_typ1, df_typ2, df_typ3;  
+  
+   df_typ1 = count( c1_Iter, c2_Iter, 10 );  
+   df_typ2 = count( c1_Iter, c2_Iter, 20 );  
+   df_typ3 = count( c1_Iter, c2_Iter, 30 );  
+   cout << "The number '10' is in c1 collection " << df_typ1 << " times.\n";  
+   cout << "The number '20' is in c1 collection " << df_typ2 << " times.\n";  
+   cout << "The number '30' is in c1 collection " << df_typ3 << " times.\n";  
+}  
+```  
+  
+```Output  
+The number '10' is in c1 collection 1 times.  
+The number '20' is in c1 collection 2 times.  
+The number '30' is in c1 collection 3 times.  
+```  
+  
+##  <a name="a-namelistemplacea--listemplace"></a><a name="list__emplace"></a>  list::emplace  
+ 指定した位置において、構築された要素をリスト内の適切な場所に挿入します。  
+  
+```  
+void emplace_back(iterator Where, Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|`Where`|最初の要素が挿入される、ターゲット [list](../standard-library/list-class.md) 内の位置。|  
+|` val`|`list` の末尾に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、`list` は変更されず、例外が再度スローされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_emplace.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <string> c2;  
+   string str("a");  
+  
+   c2.emplace(c2.begin(), move( str ) );  
+   cout << "Moved first element: " << c2.back( ) << endl;  
+}  
+```  
+  
+```Output  
+Moved first element: a  
+```  
+  
+##  <a name="a-namelistemplacebacka--listemplaceback"></a><a name="list__emplace_back"></a>  list::emplace_back  
+ イン プレースで構築された要素をリストの先頭に追加します。  
+  
+```  
+void emplace_back(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|` val`|[list](../standard-library/list-class.md) の末尾に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、`list` は変更されず、例外が再度スローされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_emplace_back.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <string> c2;  
+   string str("a");  
+  
+   c2.emplace_back( move( str ) );  
+   cout << "Moved first element: " << c2.back( ) << endl;  
+}  
+```  
+  
+```Output  
+Moved first element: a  
+```  
+  
+##  <a name="a-namelistemplacefronta--listemplacefront"></a><a name="list__emplace_front"></a>  list::emplace_front  
+ イン プレースで構築された要素をリストの先頭に追加します。  
+  
+```  
+void emplace_front(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|` val`|[list](../standard-library/list-class.md) の先頭に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、`list` は変更されず、例外が再度スローされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_emplace_front.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <string> c2;  
+   string str("a");  
+  
+   c2.emplace_front( move( str ) );  
+   cout << "Moved first element: " << c2.front( ) << endl;  
+}  
+```  
+  
+```Output  
+Moved first element: a  
+```  
+  
+##  <a name="a-namelistemptya--listempty"></a><a name="list__empty"></a>  list::empty  
+ リストが空かどうかをテストします。  
+  
+```  
+bool empty() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストが空の場合は **true**、リストが空でない場合は **false**。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_empty.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   if ( c1.empty( ) )  
+      cout << "The list is empty." << endl;  
+   else  
+      cout << "The list is not empty." << endl;  
+}  
+```  
+  
+```Output  
+The list is not empty.  
+```  
+  
+##  <a name="a-namelistenda--listend"></a><a name="list__end"></a>  list::end  
+ リスト内の最後の要素の次の位置を指す反復子を返します。  
+  
+```  
+const_iterator end() const;
+iterator end();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リスト内の最後の要素の次の位置を指す双方向反復子。 リストが空の場合は、`list::end == list::begin`。  
+  
+### <a name="remarks"></a>コメント  
+ **end** は、反復子がリストの末尾に達したかどうかをテストするために使用します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_end.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   c1_Iter = c1.end( );  
+   c1_Iter--;  
+   cout << "The last integer of c1 is " << *c1_Iter << endl;  
+  
+   c1_Iter--;  
+ *c1_Iter = 400;  
+   cout << "The new next-to-last integer of c1 is "  
+        << *c1_Iter << endl;  
+  
+   // If a const iterator had been declared instead with the line:  
+   // list <int>::const_iterator c1_Iter;  
+   // an error would have resulted when inserting the 400  
+  
+   cout << "The list is now:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+}  
+```  
+  
+```Output  
+The last integer of c1 is 30  
+The new next-to-last integer of c1 is 400  
+The list is now: 10 400 30  
+```  
+  
+##  <a name="a-namelisterasea--listerase"></a><a name="list__erase"></a>  list::erase  
+ 指定した位置からリスト内の要素または要素範囲を削除します。  
+  
+```  
+iterator erase(iterator Where);
+iterator erase(iterator first, iterator last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Where`  
+ リストから削除される要素の位置。  
+  
+ ` first`  
+ リストから削除される最初の要素の位置。  
+  
+ ` last`  
+ リストから削除される最後の要素の次の位置。  
+  
+### <a name="return-value"></a>戻り値  
+ 削除された要素の後に残る最初の要素を指定する双方向反復子。このような要素が存在しない場合は、リストの末尾へのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ 再割り当ては発生しないため、反復子と参照は、消去された要素に対してのみ無効になります。  
+  
+ **erase** は例外をスローしません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_erase.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator Iter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+   c1.push_back( 40 );  
+   c1.push_back( 50 );  
+   cout << "The initial list is:";  
+   for ( Iter = c1.begin( ); Iter != c1.end( ); Iter++ )  
+      cout << " " << *Iter;  
+   cout << endl;  
+  
+   c1.erase( c1.begin( ) );  
+   cout << "After erasing the first element, the list becomes:";  
+   for ( Iter = c1.begin( ); Iter != c1.end( ); Iter++ )  
+      cout << " " << *Iter;  
+   cout << endl;  
+   Iter = c1.begin( );  
+   Iter++;  
+   c1.erase( Iter, c1.end( ) );  
+   cout << "After erasing all elements but the first, the list becomes: ";  
+   for (Iter = c1.begin( ); Iter != c1.end( ); Iter++ )  
+      cout << " " << *Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The initial list is: 10 20 30 40 50  
+After erasing the first element, the list becomes: 20 30 40 50  
+After erasing all elements but the first, the list becomes:  20  
+```  
+  
+##  <a name="a-namelistfronta--listfront"></a><a name="list__front"></a>  list::front  
+ リスト内の最初の要素への参照を返します。  
+  
+```  
+reference front();
+const_reference front() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストが空の場合、戻り値は定義されません。  
+  
+### <a name="remarks"></a>コメント  
+ `front` の戻り値が `const_reference` に割り当てられている場合、リスト オブジェクトを変更することはできません。 `front` の戻り値が **reference** に割り当てられている場合、リスト オブジェクトを変更できます。  
+  
+ [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を 1 または 2 に定義してコンパイルすると、空のリスト内の要素にアクセスしようとした場合に実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_front.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main() {  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+  
+   int& i = c1.front();  
+   const int& ii = c1.front();  
+  
+   cout << "The first integer of c1 is " << i << endl;  
+   i++;  
+   cout << "The first integer of c1 is " << ii << endl;  
+}  
+```  
+  
+```Output  
+The first integer of c1 is 10  
+The first integer of c1 is 11  
+```  
+  
+##  <a name="a-namelistgetallocatora--listgetallocator"></a><a name="list__get_allocator"></a>  list::get_allocator  
+ リストの構築に使用されるアロケーター オブジェクトのコピーを返します。  
+  
+```  
+Allocator get_allocator() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストで使用されるアロケーター。  
+  
+### <a name="remarks"></a>コメント  
+ list クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 C++ 標準ライブラリ コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の&1; つです。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_get_allocator.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   // The following lines declare objects   
+   // that use the default allocator.  
+   list <int> c1;  
+   list <int, allocator<int> > c2 = list <int, allocator<int> >( allocator<int>( ) );  
+  
+   // c3 will use the same allocator class as c1  
+   list <int> c3( c1.get_allocator( ) );  
+  
+   list<int>::allocator_type xlst = c1.get_allocator( );  
+   // You can now call functions on the allocator class used by c1  
+}  
+```  
+  
+##  <a name="a-namelistinserta--listinsert"></a><a name="list__insert"></a>  list::insert  
+ リストの指定した位置に要素、複数の要素、または要素の範囲を挿入します。  
+  
+```  
+iterator insert(iterator Where, const Type& Val);
+iterator insert(iterator Where, Type&& Val);
+
+void insert(iterator Where, size_type Count, const Type& Val);
+iterator insert(iterator Where, initializer_list<Type> IList);
+
+template <class InputIterator>  
+void insert(iterator Where, InputIterator First, InputIterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|`Where`|最初の要素が挿入される、ターゲット リスト内の位置。|  
+|`Val`|リストに挿入される要素の値。|  
+|`Count`|リストに挿入される要素の数。|  
+|`First`|コピーされる引数リストの要素範囲内にある最初の要素の位置。|  
+|`Last`|コピーされる引数リストの要素範囲外にある最初の要素の位置。|  
+  
+### <a name="return-value"></a>戻り値  
+ 最初の&2; つの insert 関数は、新しい要素がリストに挿入される位置を指す反復子を返します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_class_insert.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main()  
+{  
+    using namespace std;  
+    list <int> c1, c2;  
+    list <int>::iterator Iter;  
+  
+    c1.push_back(10);  
+    c1.push_back(20);  
+    c1.push_back(30);  
+    c2.push_back(40);  
+    c2.push_back(50);  
+    c2.push_back(60);  
+  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    Iter = c1.begin();  
+    Iter++;  
+    c1.insert(Iter, 100);  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    Iter = c1.begin();  
+    Iter++;  
+    Iter++;  
+    c1.insert(Iter, 2, 200);  
+  
+    cout << "c1 =";  
+    for(auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    c1.insert(++c1.begin(), c2.begin(), --c2.end());  
+  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    // initialize a list of strings by moving  
+    list < string > c3;  
+    string str("a");  
+  
+    c3.insert(c3.begin(), move(str));  
+    cout << "Moved first element: " << c3.front() << endl;  
+  
+    // Assign with an initializer_list  
+    list <int> c4{ {1, 2, 3, 4} };  
+    c4.insert(c4.begin(), { 5, 6, 7, 8 });  
+  
+    cout << "c4 =";  
+    for (auto c : c4)  
+        cout << " " << c;  
+    cout << endl;  
+}  
+```  
+  
+##  <a name="a-namelistiteratora--listiterator"></a><a name="list__iterator"></a>  list::iterator  
+ リスト内の任意の要素の読み取りまたは変更ができる双方向反復子を提供する型。  
+  
+```  
+typedef implementation-defined iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ **iterator** 型を使って要素の値を変更できます。  
+  
+### <a name="example"></a>例  
+  [begin](#list__begin) の例をご覧ください。  
+  
+##  <a name="a-namelistlista--listlist"></a><a name="list__list"></a>  list::list  
+ 特定のサイズ、特定の値の要素、または特定のアロケーターを持つリストを構築します。あるいは他のリストの全体または一部のコピーとして構築します。  
+  
+```  
+list();
+explicit list(const Allocator& Al);
+explicit list(size_type Count);
+list(size_type Count, const Type& Val);
+list(size_type Count, const Type& Val, const Allocator& Al);
+
+list(const list& Right);
+list(list&& Right);
+list(initializer_list<Type> IList, const Allocator& Al);
+
+template <class InputIterator>  
+list(InputIterator First, InputIterator Last);
+
+template <class InputIterator>  
+list(InputIterator First, InputIterator Last, const Allocator& Al);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|`Al`|このオブジェクトに対して使用するアロケーター クラス。|  
+|`Count`|構築されたリスト内の要素の数。|  
+|`Val`|リスト内の要素の値。|  
+|`Right`|構築されたリストがコピーになる元のリスト。|  
+|`First`|コピーする要素範囲内の最初の要素の位置。|  
+|`Last`|コピーする要素範囲を超える最初の要素の位置。|  
+|`IList`|コピーされる要素を含む initializer_list。|  
+  
+### <a name="remarks"></a>コメント  
+ すべてのコンストラクターが、アロケーター オブジェクト (`Al`) を格納し、リストを初期化します。  
+  
+ [get_allocator](#list__get_allocator) は、リストの構築に使用されるアロケーター オブジェクトのコピーを返します。  
+  
+ 最初の&2; つのコンストラクターは、空の初期リストを指定し、2 番目のコンストラクターは、使用するアロケーターの型 (`Al`) を指定します。  
+  
+ 3 番目のコンストラクターは、**Type** クラスの、指定された数 (`Count`) の既定値の要素を繰り返すことを指定します。  
+  
+ 4 番目と&5; 番目のコンストラクターは、値 `Val` の `Count` 個の要素の繰り返しを指定します。  
+  
+ 6 番目のコンストラクターは、リスト `Right` のコピーを指定します。  
+  
+ 7 番目のコンストラクターは、リスト `Right` を移動します。  
+  
+ 8 番目のコンストラクターは、initializer_list を使用して要素を指定します。  
+  
+ 次の&2; つのコンストラクターは、リストの範囲 `[First, Last)` をコピーします。  
+  
+ コンストラクターでは、暫定的な再割り当てを実行しません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_class_list.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main()  
+{  
+    using namespace std;  
+    // Create an empty list c0  
+    list <int> c0;  
+  
+    // Create a list c1 with 3 elements of default value 0  
+    list <int> c1(3);  
+  
+    // Create a list c2 with 5 elements of value 2  
+    list <int> c2(5, 2);  
+  
+    // Create a list c3 with 3 elements of value 1 and with the   
+    // allocator of list c2  
+    list <int> c3(3, 1, c2.get_allocator());  
+  
+    // Create a copy, list c4, of list c2  
+    list <int> c4(c2);  
+  
+    // Create a list c5 by copying the range c4[ first,  last)  
+    list <int>::iterator c4_Iter = c4.begin();  
+    c4_Iter++;  
+    c4_Iter++;  
+    list <int> c5(c4.begin(), c4_Iter);  
+  
+    // Create a list c6 by copying the range c4[ first,  last) and with   
+    // the allocator of list c2  
+    c4_Iter = c4.begin();  
+    c4_Iter++;  
+    c4_Iter++;  
+    c4_Iter++;  
+    list <int> c6(c4.begin(), c4_Iter, c2.get_allocator());  
+  
+    cout << "c1 =";  
+    for (auto c : c1)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    cout << "c2 =";  
+    for (auto c : c2)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    cout << "c3 =";  
+    for (auto c : c3)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    cout << "c4 =";  
+    for (auto c : c4)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    cout << "c5 =";  
+    for (auto c : c5)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    cout << "c6 =";  
+    for (auto c : c6)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    // Move list c6 to list c7  
+    list <int> c7(move(c6));  
+    cout << "c7 =";  
+    for (auto c : c7)  
+        cout << " " << c;  
+    cout << endl;  
+  
+    // Construct with initializer_list  
+    list<int> c8({ 1, 2, 3, 4 });  
+    cout << "c8 =";  
+    for (auto c : c8)  
+        cout << " " << c;  
+    cout << endl;  
+}  
+```  
+  
+```Output  
+c1 = 0 0 0c2 = 2 2 2 2 2c3 = 1 1 1c4 = 2 2 2 2 2c5 = 2 2c6 = 2 2 2c7 = 2 2 2c8 = 1 2 3 4  
+```  
+  
+##  <a name="a-namelistmaxsizea--listmaxsize"></a><a name="list__max_size"></a>  list::max_size  
+ リストの最大長を返します。  
+  
+```
+size_type max_size() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストの可能な最大長。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_max_size.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::size_type i;  
+  
+   i = c1.max_size( );  
+   cout << "Maximum possible length of the list is " << i << "." << endl;  
+}  
+```  
+  
+##  <a name="a-namelistmergea--listmerge"></a><a name="list__merge"></a>  list::merge  
+ 引数リストから要素を削除し、それを対象のリストに挿入して、新たに組み合わされたセットの要素を昇順またはその他の指定された順序で並べ替えます。  
+  
+```  
+void merge(list<Type, Allocator>& right);
+
+template <class Traits>  
+void merge(list<Type, Allocator>& right, Traits comp);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` right`  
+ 対象のリストにマージする引数リスト。  
+  
+ ` comp`  
+ 対象のリストの要素の並べ替えに使用する比較演算子。  
+  
+### <a name="remarks"></a>コメント  
+ 引数のリスト ` right` は対象のリストにマージされます。  
+  
+ 引数リストと対象のリストはどちらも、結果のシーケンスを並べ替える場合と同じ比較関係を使用して並べ替える必要があります。 1 つ目のメンバー関数の既定の順序は昇順です。 2 つ目のメンバー関数は、**Traits** クラスのユーザー指定比較演算 ` comp` を強制します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_merge.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1, c2, c3;  
+   list <int>::iterator c1_Iter, c2_Iter, c3_Iter;  
+  
+   c1.push_back( 3 );  
+   c1.push_back( 6 );  
+   c2.push_back( 2 );  
+   c2.push_back( 4 );  
+   c3.push_back( 5 );  
+   c3.push_back( 1 );  
+  
+   cout << "c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   cout << "c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+  
+   c2.merge( c1 );  // Merge c1 into c2 in (default) ascending order  
+   c2.sort( greater<int>( ) );  
+   cout << "After merging c1 with c2 and sorting with >: c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+  
+   cout << "c3 =";  
+   for ( c3_Iter = c3.begin( ); c3_Iter != c3.end( ); c3_Iter++ )  
+      cout << " " << *c3_Iter;  
+   cout << endl;  
+  
+   c2.merge( c3, greater<int>( ) );  
+   cout << "After merging c3 with c2 according to the '>' comparison relation: c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+c1 = 3 6  
+c2 = 2 4  
+After merging c1 with c2 and sorting with >: c2 = 6 4 3 2  
+c3 = 5 1  
+After merging c3 with c2 according to the '>' comparison relation: c2 = 6 5 4 3 2 1  
+```  
+  
+##  <a name="a-namelistoperatoreqa--listoperator"></a><a name="list__operator_eq"></a>  list::operator=  
+ 別のリストのコピーでリストの要素を置き換えます。  
+  
+```  
+list& operator=(const list& right);
+list& operator=(list&& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|` right`|`list` にコピーする [list](../standard-library/list-class.md)。|  
+  
+### <a name="remarks"></a>コメント  
+ `list` 内の既存の要素を消去した後、この演算子は ` right` の内容を `list` 内にコピーまたは移動します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_operator_as.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list<int> v1, v2, v3;  
+   list<int>::iterator iter;  
+  
+   v1.push_back(10);  
+   v1.push_back(20);  
+   v1.push_back(30);  
+   v1.push_back(40);  
+   v1.push_back(50);  
+  
+   cout << "v1 = " ;  
+   for (iter = v1.begin(); iter != v1.end(); iter++)  
+      cout << *iter << " ";  
+   cout << endl;  
+  
+   v2 = v1;  
+   cout << "v2 = ";  
+   for (iter = v2.begin(); iter != v2.end(); iter++)  
+      cout << *iter << " ";  
+   cout << endl;  
+  
+// move v1 into v2  
+   v2.clear();  
+   v2 = forward< list<int> >(v1);  
+   cout << "v2 = ";  
+   for (iter = v2.begin(); iter != v2.end(); iter++)  
+      cout << *iter << " ";  
+   cout << endl;  
+}  
+```  
+  
+##  <a name="a-namelistpointera--listpointer"></a><a name="list__pointer"></a>  list::pointer  
+ リストの要素へのポインターを提供します。  
+  
+```
+typedef typename Allocator::pointer pointer;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ **pointer** 型を使って要素の値を変更できます。  
+  
+ ほとんどの場合、リスト オブジェクト内の要素にアクセスするには、[反復子](#list__iterator)を使用する必要があります。  
+  
+##  <a name="a-namelistpopbacka--listpopback"></a><a name="list__pop_back"></a>  list::pop_back  
+ リストの末尾の要素を削除します。  
+  
+``` 
+void pop_back();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 最後の要素は空でない必要があります。 `pop_back` は例外をスローしません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_pop_back.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 1 );  
+   c1.push_back( 2 );  
+   cout << "The first element is: " << c1.front( ) << endl;  
+   cout << "The last element is: " << c1.back( ) << endl;  
+  
+   c1.pop_back( );  
+   cout << "After deleting the element at the end of the list, "  
+           "the last element is: " << c1.back( ) << endl;  
+}  
+```  
+  
+```Output  
+The first element is: 1  
+The last element is: 2  
+After deleting the element at the end of the list, the last element is: 1  
+```  
+  
+##  <a name="a-namelistpopfronta--listpopfront"></a><a name="list__pop_front"></a>  list::pop_front  
+ リストの先頭から要素を削除します。  
+  
+``` 
+void pop_front();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 最初の要素は空でない必要があります。 `pop_front` は例外をスローしません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_pop_front.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 1 );  
+   c1.push_back( 2 );  
+   cout << "The first element is: " << c1.front( ) << endl;  
+   cout << "The second element is: " << c1.back( ) << endl;  
+  
+   c1.pop_front( );  
+   cout << "After deleting the element at the beginning of the list, "  
+         "the first element is: " << c1.front( ) << endl;  
+}  
+```  
+  
+```Output  
+The first element is: 1  
+The second element is: 2  
+After deleting the element at the beginning of the list, the first element is: 2  
+```  
+  
+##  <a name="a-namelistpushbacka--listpushback"></a><a name="list__push_back"></a>  list::push_back  
+ リストの末尾に要素を追加します。  
+  
+```  
+void push_back(void push_back(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|` val`|リストの末尾に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、リストは変更されず、例外が再度スローされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_push_back.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 1 );  
+   if ( c1.size( ) != 0 )  
+      cout << "Last element: " << c1.back( ) << endl;  
+  
+   c1.push_back( 2 );  
+   if ( c1.size( ) != 0 )  
+      cout << "New last element: " << c1.back( ) << endl;  
+  
+// move initialize a list of strings  
+   list <string> c2;  
+   string str("a");  
+  
+   c2.push_back( move( str ) );  
+   cout << "Moved first element: " << c2.back( ) << endl;  
+}  
+```  
+  
+```Output  
+Last element: 1  
+New last element: 2  
+Moved first element: a  
+```  
+  
+##  <a name="a-namelistpushfronta--listpushfront"></a><a name="list__push_front"></a>  list::push_back  
+ リストの先頭に要素を追加します。  
+  
+```  
+void push_front(const Type& val);
+void push_front(Type&& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|` val`|リストの先頭に追加する要素。|  
+  
+### <a name="remarks"></a>コメント  
+ 例外がスローされた場合、リストは変更されず、例外が再度スローされます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_push_front.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+#include <string>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_front( 1 );  
+   if ( c1.size( ) != 0 )  
+      cout << "First element: " << c1.front( ) << endl;  
+  
+   c1.push_front( 2 );  
+   if ( c1.size( ) != 0 )  
+      cout << "New first element: " << c1.front( ) << endl;  
+  
+// move initialize a list of strings  
+   list <string> c2;  
+   string str("a");  
+  
+   c2.push_front( move( str ) );  
+   cout << "Moved first element: " << c2.front( ) << endl;  
+}  
+```  
+  
+```Output  
+First element: 1  
+New first element: 2  
+Moved first element: a  
+```  
+  
+##  <a name="a-namelistrbegina--listrbegin"></a><a name="list__rbegin"></a>  list::rbegin  
+ 逆順のリスト内の最初の要素を示す反復子を返します。  
+  
+``` 
+const_reverse_iterator rbegin() const;
+reverse_iterator rbegin();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 逆順のリスト内の最初の要素を指す反転双方向反復子 (または通常の順序のリスト内の最後の要素だったものを指す反転双方向反復子)。  
+  
+### <a name="remarks"></a>コメント  
+ `rbegin` は、[begin](#list__begin) がリストで使用されるように、逆順のリストで使用されます。  
+  
+ `rbegin` の戻り値が `const_reverse_iterator` に割り当てられている場合、リスト オブジェクトを変更することはできません。 `rbegin` の戻り値が `reverse_iterator` に割り当てられている場合、リスト オブジェクトを変更できます。  
+  
+ `rbegin` を使用して、リスト内を後方に向かって反復処理できます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_rbegin.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+   list <int>::reverse_iterator c1_rIter;  
+  
+   // If the following line replaced the line above, *c1_rIter = 40;  
+   // (below) would be an error  
+   //list <int>::const_reverse_iterator c1_rIter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+   c1_rIter = c1.rbegin( );  
+   cout << "The last element in the list is " << *c1_rIter << "." << endl;  
+  
+   cout << "The list is:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   // rbegin can be used to start an iteration through a list in   
+   // reverse order  
+   cout << "The reversed list is:";  
+   for ( c1_rIter = c1.rbegin( ); c1_rIter != c1.rend( ); c1_rIter++ )  
+      cout << " " << *c1_rIter;  
+   cout << endl;  
+  
+   c1_rIter = c1.rbegin( );  
+ *c1_rIter = 40;  
+   cout << "The last element in the list is now " << *c1_rIter << "." << endl;  
+}  
+```  
+  
+```Output  
+The last element in the list is 30.  
+The list is: 10 20 30  
+The reversed list is: 30 20 10  
+The last element in the list is now 40.  
+```  
+  
+##  <a name="a-namelistreferencea--listreference"></a><a name="list__reference"></a>  list::reference  
+ list に格納されている要素への参照を提供する型。  
+  
+```  
+typedef typename Allocator::reference reference;  
+```  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_ref.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+  
+   int &i = c1.front( );  
+   int &j = c1.back( );  
+   cout << "The first element is " << i << endl;  
+   cout << "The second element is " << j << endl;  
+}  
+```  
+  
+```Output  
+The first element is 10  
+The second element is 20  
+```  
+  
+##  <a name="a-namelistremovea--listremove"></a><a name="list__remove"></a>  list::remove  
+ 指定された値と一致するリストの要素を消去します。  
+  
+``` 
+void remove(const Type& val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` val`  
+ 要素によって保持されている場合、リストからその要素が削除される原因となる値。  
+  
+### <a name="remarks"></a>コメント  
+ 要素の残りの順序は影響を受けません。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_remove.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter, c2_Iter;  
+  
+   c1.push_back( 5 );  
+   c1.push_back( 100 );  
+   c1.push_back( 5 );  
+   c1.push_back( 200 );  
+   c1.push_back( 5 );  
+   c1.push_back( 300 );  
+  
+   cout << "The initial list is c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   list <int> c2 = c1;  
+   c2.remove( 5 );  
+   cout << "After removing elements with value 5, the list becomes c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The initial list is c1 = 5 100 5 200 5 300  
+After removing elements with value 5, the list becomes c2 = 100 200 300  
+```  
+  
+##  <a name="a-namelistremoveifa--listremoveif"></a><a name="list__remove_if"></a>  list::remove_if  
+ 指定した述語を満たすリストから要素を消去します。  
+  
+``` 
+template <class Predicate>  
+void remove_if(Predicate pred)  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` pred`  
+ 要素によって満たされる場合、単項述語は結果的にリストからその要素を削除します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_remove_if.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+template <class T> class is_odd : public std::unary_function<T, bool>   
+{  
+public:  
+   bool operator( ) ( T& val )   
+   {  
+   return ( val % 2 ) == 1;  
+   }  
+};  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter, c2_Iter;  
+  
+   c1.push_back( 3 );  
+   c1.push_back( 4 );  
+   c1.push_back( 5 );  
+   c1.push_back( 6 );  
+   c1.push_back( 7 );  
+   c1.push_back( 8 );  
+  
+   cout << "The initial list is c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   list <int> c2 = c1;  
+   c2.remove_if( is_odd<int>( ) );  
+  
+   cout << "After removing the odd elements, "  
+        << "the list becomes c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The initial list is c1 = 3 4 5 6 7 8  
+After removing the odd elements, the list becomes c2 = 4 6 8  
+```  
+  
+##  <a name="a-namelistrenda--listrend"></a><a name="list__rend"></a>  list::rend  
+ 逆順のリスト内の最後の要素の次の場所を指す反復子を返します。  
+  
+``` 
+const_reverse_iterator rend() const;
+reverse_iterator rend();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 逆順のリスト内の最後の要素の次の場所 (通常の順序のリスト内の最初の要素の前の場所) を指す逆順双方向反復子。  
+  
+### <a name="remarks"></a>コメント  
+ `rend` は、[end](#list__end) がリストで使用されるように、逆順のリストで使用されます。  
+  
+ `rend` の戻り値が `const_reverse_iterator` に割り当てられている場合、リスト オブジェクトを変更することはできません。 `rend` の戻り値が `reverse_iterator` に割り当てられている場合、リスト オブジェクトを変更できます。  
+  
+ `rend` を使用して、逆順反復子がリストの末尾に達したかどうかをテストできます。  
+  
+ `rend` によって返された値は逆参照しないでください。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_rend.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+   list <int>::reverse_iterator c1_rIter;  
+  
+   // If the following line had replaced the line above, an error would   
+   // have resulted in the line modifying an element (commented below)  
+   // because the iterator would have been const  
+   // list <int>::const_reverse_iterator c1_rIter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   c1_rIter = c1.rend( );  
+   c1_rIter --;  // Decrementing a reverse iterator moves it forward in   
+                 // the list (to point to the first element here)  
+   cout << "The first element in the list is: " << *c1_rIter << endl;  
+  
+   cout << "The list is:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   // rend can be used to test if an iteration is through all of the   
+   // elements of a reversed list  
+   cout << "The reversed list is:";  
+   for ( c1_rIter = c1.rbegin( ); c1_rIter != c1.rend( ); c1_rIter++ )  
+      cout << " " << *c1_rIter;  
+   cout << endl;  
+  
+   c1_rIter = c1.rend( );  
+   c1_rIter--;  // Decrementing the reverse iterator moves it backward   
+                // in the reversed list (to the last element here)  
+  
+ *c1_rIter = 40;  // This modification of the last element would have   
+                    // caused an error if a const_reverse iterator had   
+                    // been declared (as noted above)  
+  
+   cout << "The modified reversed list is:";  
+   for ( c1_rIter = c1.rbegin( ); c1_rIter != c1.rend( ); c1_rIter++ )  
+      cout << " " << *c1_rIter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The first element in the list is: 10  
+The list is: 10 20 30  
+The reversed list is: 30 20 10  
+The modified reversed list is: 30 20 40  
+```  
+  
+##  <a name="a-namelistresizea--listresize"></a><a name="list__resize"></a>  list::resize  
+ リストの新しいサイズを指定します。  
+  
+``` 
+void resize(size_type _Newsize);
+void resize(size_type _Newsize, Type val);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Newsize`  
+ リストの新しいサイズ。  
+  
+ ` val`  
+ 新しいサイズが元のサイズよりも大きい場合に、リストに追加される新しい要素の値。 この値を省略した場合、新しい要素にはそのクラスの既定値が割り当てられます。  
+  
+### <a name="remarks"></a>コメント  
+ リストのサイズが要求されたサイズ (`_Newsize`) よりも小さい場合は、要求されたサイズになるまで、リストに要素が追加されます。  
+  
+ リストのサイズが要求されたサイズよりも大きい場合は、リストのサイズが `_Newsize` になるまで、リストの末尾に近い要素から順に削除されます。  
+  
+ リストの現在のサイズが要求されたサイズと同じ場合は、何も実行されません。  
+  
+ [size](#list__size) はリストの現在のサイズを反映します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_resize.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{   
+   using namespace std;  
+   list <int> c1;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   c1.resize( 4,40 );  
+   cout << "The size of c1 is " << c1.size( ) << endl;  
+   cout << "The value of the last element is " << c1.back( ) << endl;  
+  
+   c1.resize( 5 );  
+   cout << "The size of c1 is now " << c1.size( ) << endl;  
+   cout << "The value of the last element is now " << c1.back( ) << endl;  
+  
+   c1.resize( 2 );  
+   cout << "The reduced size of c1 is: " << c1.size( ) << endl;  
+   cout << "The value of the last element is now " << c1.back( ) << endl;  
+}  
+```  
+  
+```Output  
+The size of c1 is 4  
+The value of the last element is 40  
+The size of c1 is now 5  
+The value of the last element is now 0  
+The reduced size of c1 is: 2  
+The value of the last element is now 20  
+```  
+  
+##  <a name="a-namelistreversea--listreverse"></a><a name="list__reverse"></a>  list::reverse  
+ 要素がリストに出現する順序を反転させます。  
+  
+``` 
+void reverse();
+```  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_reverse.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 30 );  
+  
+   cout << "c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   c1.reverse( );  
+   cout << "Reversed c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+c1 = 10 20 30  
+Reversed c1 = 30 20 10  
+```  
+  
+##  <a name="a-namelistreverseiteratora--listreverseiterator"></a><a name="list__reverse_iterator"></a>  list::reverse_iterator  
+ 逆順のリスト内の&1; つの要素の読み取りまたは変更ができる双方向反復子を提供する型。  
+  
+```  
+typedef std::reverse_iterator<iterator> reverse_iterator;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ 型 `reverse_iterator` は、逆の順序でリストを反復処理するために使用します。  
+  
+### <a name="example"></a>例  
+  [rbegin](#list__rbegin) の例をご覧ください。  
+  
+##  <a name="a-namelistsizea--listsize"></a><a name="list__size"></a>  list::size  
+ リスト内の要素数を返します。  
+  
+``` 
+size_type size() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リストの現在の長さ。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_size.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::size_type i;  
+  
+   c1.push_back( 5 );  
+   i = c1.size( );  
+   cout << "List length is " << i << "." << endl;  
+  
+   c1.push_back( 7 );  
+   i = c1.size( );  
+   cout << "List length is now " << i << "." << endl;  
+}  
+```  
+  
+```Output  
+List length is 1.  
+List length is now 2.  
+```  
+  
+##  <a name="a-namelistsizetypea--listsizetype"></a><a name="list__size_type"></a>  list::size_type  
+ リスト内の要素の数をカウントする型。  
+  
+```  
+typedef typename Allocator::size_type size_type;  
+```  
+  
+### <a name="example"></a>例  
+  [size](#list__size) の例をご覧ください。  
+  
+##  <a name="a-namelistsorta--listsort"></a><a name="list__sort"></a>  list::sort  
+ リストの要素を、昇順またはいくつかの他のユーザー指定の順序で整列します。  
+  
+``` 
+void sort();
+
+template <class Traits>  
+void sort(Traits comp);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` comp`  
+ 連続する要素の並べ替えに使用される比較演算子。  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、最初のメンバー関数は要素を昇順に並べ替えます。  
+  
+ メンバー テンプレート関数は、**Traits** クラスのユーザー指定の比較演算 ` comp` に従って要素を並べ替えます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_sort.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter;  
+  
+   c1.push_back( 20 );  
+   c1.push_back( 10 );  
+   c1.push_back( 30 );  
+  
+   cout << "Before sorting: c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   c1.sort( );  
+   cout << "After sorting c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   c1.sort( greater<int>( ) );  
+   cout << "After sorting with 'greater than' operation, c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+Before sorting: c1 = 20 10 30  
+After sorting c1 = 10 20 30  
+After sorting with 'greater than' operation, c1 = 30 20 10  
+```  
+  
+##  <a name="a-namelistsplicea--listsplice"></a><a name="list__splice"></a>  list::splice  
+ ソース リストから要素を削除して、ターゲット リストに挿入します。  
+  
+```  
+// insert the entire source list  
+void splice(const_iterator Where, list<Type, Allocator>& Source);
+void splice(const_iterator Where, list<Type, Allocator>&& Source); 
+
+// insert one element of the source list  
+void splice(const_iterator Where, list<Type, Allocator>& Source, const_iterator Iter);
+void splice(const_iterator Where, list<Type, Allocator>&& Source, const_iterator Iter);
+ 
+// insert a range of elements from the source list  
+void splice(const_iterator Where, list<Type, Allocator>& Source, const_iterator First, const_iterator Last);
+void splice(const_iterator Where, list<Type, Allocator>&& Source, const_iterator First, const_iterator Last);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Where`  
+ 挿入されるターゲット リスト内の位置。  
+  
+ `Source`  
+ ターゲット リストに挿入されるソース リスト。  
+  
+ `Iter`  
+ ソース リストから挿入される要素。  
+  
+ `First`  
+ ソース リストから挿入される範囲内の最初の要素。  
+  
+ `Last`  
+ ソース リストから挿入される範囲内の最後の要素を超える最初の位置。  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数の最初のペアは、ソース リスト内のすべての要素を、ターゲット リスト内の `Where` で参照される位置の前に挿入し、ソース リストからすべての要素を削除します (`&Source` を `this` と同じにすることはできません)。  
+  
+ メンバー関数の&2; つ目のペアは、`Iter` で参照される要素を、ターゲット リスト内の `Where` で参照される位置の前に挿入し、ソース リストから `Iter` を削除します (`Where == Iter || Where == ++Iter` の場合は、何も変わりません)。  
+  
+ メンバー関数の&3; つ目のペアは、[ `First`, `Last`) で指定された範囲を、ターゲット リスト内の `Where` で参照される要素の前に挿入し、ソース リストからその要素の範囲を削除します。 (`&Source == this` の場合、範囲 `[First, Last)` に `Where` で指し示される要素を含めることはできません)。  
+  
+ 範囲指定されたスプライスで `N` 個の要素が挿入され、さらに `&Source != this` の場合、クラス [iterator](../standard-library/forward-list-class.md#forward_list__iterator) のオブジェクトは `N` 回インクリメントされます。  
+  
+ すべての場合において、スプライスされた要素を参照する反復子、ポインター、参照は有効なままでターゲット コンテナーに転送されます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_splice.cpp  
+// compile with: /EHsc /W4  
+#include <list>  
+#include <iostream>  
+  
+using namespace std;  
+  
+template <typename S> void print(const S& s) {  
+    cout << s.size() << " elements: ";  
+  
+    for (const auto& p : s) {  
+        cout << "(" << p << ") ";  
+    }  
+  
+    cout << endl;  
+}  
+  
+int main()  
+{  
+    list<int> c1{10,11};  
+    list<int> c2{20,21,22};  
+    list<int> c3{30,31};  
+    list<int> c4{40,41,42,43};  
+  
+    list<int>::iterator where_iter;  
+    list<int>::iterator first_iter;  
+    list<int>::iterator last_iter;  
+  
+    cout << "Beginning state of lists:" << endl;  
+    cout << "c1 = ";  
+    print(c1);  
+    cout << "c2 = ";  
+    print(c2);  
+    cout << "c3 = ";  
+    print(c3);  
+    cout << "c4 = ";  
+    print(c4);  
+  
+    where_iter = c2.begin();  
+    ++where_iter; // start at second element  
+    c2.splice(where_iter, c1);  
+    cout << "After splicing c1 into c2:" << endl;  
+    cout << "c1 = ";  
+    print(c1);  
+    cout << "c2 = ";  
+    print(c2);  
+  
+    first_iter = c3.begin();  
+    c2.splice(where_iter, c3, first_iter);  
+    cout << "After splicing the first element of c3 into c2:" << endl;  
+    cout << "c3 = ";  
+    print(c3);  
+    cout << "c2 = ";  
+    print(c2);  
+  
+    first_iter = c4.begin();  
+    last_iter = c4.end();  
+    // set up to get the middle elements  
+    ++first_iter;  
+    --last_iter;  
+    c2.splice(where_iter, c4, first_iter, last_iter);  
+    cout << "After splicing a range of c4 into c2:" << endl;  
+    cout << "c4 = ";  
+    print(c4);  
+    cout << "c2 = ";  
+    print(c2);  
+}  
+  
+```  
+  
+```Output  
+Beginning state of lists:c1 = 2 elements: (10) (11)c2 = 3 elements: (20) (21) (22)c3 = 2 elements: (30) (31)c4 = 4 elements: (40) (41) (42) (43)After splicing c1 into c2:c1 = 0 elements:c2 = 5 elements: (20) (10) (11) (21) (22)After splicing the first element of c3 into c2:c3 = 1 elements: (31)c2 = 6 elements: (20) (10) (11) (30) (21) (22)After splicing a range of c4 into c2:c4 = 2 elements: (40) (43)c2 = 8 elements: (20) (10) (11) (30) (41) (42) (21) (22)  
+```  
+  
+##  <a name="a-namelistswapa--listswap"></a><a name="list__swap"></a>  list::swap  
+ 2 つのリストの要素を交換します。  
+  
+``` 
+void swap(list<Type, Allocator>& right);
+friend void swap(list<Type, Allocator>& left, list<Type, Allocator>& right)  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` right`  
+ 交換する要素を提供するリスト (リスト ` left` と要素を交換するリスト)。  
+  
+ ` left`  
+ 要素が ` right` リストの要素と交換されるリスト。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_swap.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list <int> c1, c2, c3;  
+   list <int>::iterator c1_Iter;  
+  
+   c1.push_back( 1 );  
+   c1.push_back( 2 );  
+   c1.push_back( 3 );  
+   c2.push_back( 10 );  
+   c2.push_back( 20 );  
+   c3.push_back( 100 );  
+  
+   cout << "The original list c1 is:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   c1.swap( c2 );  
+  
+   cout << "After swapping with c2, list c1 is:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   swap( c1,c3 );  
+  
+   cout << "After swapping with c3, list c1 is:";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The original list c1 is: 1 2 3  
+After swapping with c2, list c1 is: 10 20  
+After swapping with c3, list c1 is: 100  
+```  
+  
+##  <a name="a-namelistuniquea--listunique"></a><a name="list__unique"></a>  list::unique  
+ 隣接する重複要素、または他のいずれかの二項述語の条件を満たす隣接する要素を list から削除します。  
+  
+```  
+void unique();
+
+template <class BinaryPredicate>  
+void unique(BinaryPredicate pred);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ ` pred`  
+ 一連の要素の比較に使用する二項述語。  
+  
+### <a name="remarks"></a>コメント  
+ この関数は、すべての重複要素が隣接するように list が並べ替えられていることを前提とします。 隣接していない重複要素は削除されません。  
+  
+ 1 つ目のメンバー関数は、その直前の要素に一致するすべての要素を削除します。  
+  
+ 2 つ目のメンバー関数は、直前の要素と比較したときに述語関数 ` pred` の条件を満たすすべての要素を削除します。 引数 pred には、`<functional>` ヘッダー内で宣言したいずれかの二項関数オブジェクトを使用するか、独自の二項関数オブジェクトを作成できます。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_unique.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )  
+{  
+   using namespace std;  
+   list <int> c1;  
+   list <int>::iterator c1_Iter, c2_Iter,c3_Iter;  
+   not_equal_to<int> mypred;  
+  
+   c1.push_back( -10 );  
+   c1.push_back( 10 );  
+   c1.push_back( 10 );  
+   c1.push_back( 20 );  
+   c1.push_back( 20 );  
+   c1.push_back( -10 );  
+  
+   cout << "The initial list is c1 =";  
+   for ( c1_Iter = c1.begin( ); c1_Iter != c1.end( ); c1_Iter++ )  
+      cout << " " << *c1_Iter;  
+   cout << endl;  
+  
+   list <int> c2 = c1;  
+   c2.unique( );  
+   cout << "After removing successive duplicate elements, c2 =";  
+   for ( c2_Iter = c2.begin( ); c2_Iter != c2.end( ); c2_Iter++ )  
+      cout << " " << *c2_Iter;  
+   cout << endl;  
+  
+   list <int> c3 = c2;  
+   c3.unique( mypred );  
+   cout << "After removing successive unequal elements, c3 =";  
+   for ( c3_Iter = c3.begin( ); c3_Iter != c3.end( ); c3_Iter++ )  
+      cout << " " << *c3_Iter;  
+   cout << endl;  
+}  
+```  
+  
+```Output  
+The initial list is c1 = -10 10 10 20 20 -10  
+After removing successive duplicate elements, c2 = -10 10 20 -10  
+After removing successive unequal elements, c3 = -10 -10  
+```  
+  
+##  <a name="a-namelistvaluetypea--listvaluetype"></a><a name="list__value_type"></a>  list::value_type  
+ リスト内に格納されているデータ型を表す型。  
+  
+```  
+typedef typename Allocator::value_type value_type;  
+```  
+  
+### <a name="remarks"></a>コメント  
+ `value_type` は、テンプレート パラメーター **Type** のシノニムです。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// list_value_type.cpp  
+// compile with: /EHsc  
+#include <list>  
+#include <iostream>  
+  
+int main( )   
+{  
+   using namespace std;  
+   list<int>::value_type AnInt;  
+   AnInt = 44;  
+   cout << AnInt << endl;  
+}  
+```  
+  
+```Output  
+44  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [\<list>](../standard-library/list.md)   
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+

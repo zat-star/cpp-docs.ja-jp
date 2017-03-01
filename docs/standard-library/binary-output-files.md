@@ -1,30 +1,46 @@
 ---
 title: "バイナリ出力ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バイナリ データ, バイナリ出力ファイル"
-  - "ファイル [C++], バイナリ出力ファイル"
-  - "I/O [C++], バイナリ出力ファイル"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- I/O [C++], binary output files
+- files [C++], binary output files
+- binary data, binary output files
 ms.assetid: 180954af-8cd6-444b-9a76-2f630a3389d8
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# バイナリ出力ファイル
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
+ms.openlocfilehash: f566da8ea00f0a52db3539c81bb3d19d6fc9da99
+ms.lasthandoff: 02/24/2017
 
-ストリームは、テキストに最初に設計されているため、既定の出力モードはテキストです。  テキスト モードでは、改行文字 \(16 進数 10\) はキャリッジ return–linefeed \(16 ビットのみ\) に展開します。  展開は次に示すように、問題が発生することがあります:  
+---
+# <a name="binary-output-files"></a>バイナリ出力ファイル
+ストリームは本来、テキスト向けとして設計されており、既定の出力モードはテキストです。 テキスト モードでは、改行文字 (16 進数 10) が拡大し、復帰改行 (16 ビットのみ) になります。 この拡大は次のような問題を起こす可能性があります。  
   
 ```  
 // binary_output_files.cpp  
@@ -39,7 +55,7 @@ int main( )
 }  
 ```  
   
- バイト シーケンス{99、0、10、0 を出力すると、このプログラムが予想される可能性がある; 代わりに、バイナリの入力を要求するプログラムの問題が発生する場合は、{99、0、13、10、0}出力します。  文字が未変換で記述された実際のバイナリ出力が必要な場合は、[ofstream](../Topic/ofstream.md) のコンストラクターの mode 引数を使用してバイナリ出力を指定することがあります:  
+ このプログラムでは、{ 99, 0, 10, 0 } というバイト シーケンスの出力を想定していたところ、{ 99, 0, 13, 10, 0 } が出力されます。バイナリ入力を要求するプログラムで問題が起こります。 文字が変換なしで書き込まれる、本来のバイナリ出力が必要であれば、[ofstream](../standard-library/basic-ofstream-class.md#basic_ofstream__basic_ofstream) コンストラクター オープンモード引数を利用し、バイナリ出力を指定できます。  
   
 ```  
 // binary_output_files2.cpp  
@@ -57,5 +73,7 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [出力ストリーム](../standard-library/output-streams.md)
+
+

@@ -1,73 +1,89 @@
 ---
-title: "terminate (CRT) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "terminate"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-runtime-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "terminate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例外処理, 終了"
-  - "terminate 関数"
+title: terminate (CRT) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- terminate
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-runtime-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- terminate
+dev_langs:
+- C++
+helpviewer_keywords:
+- terminate function
+- exception handling, termination
 ms.assetid: 90e67402-08e9-4b2a-962c-66a8afd3ccb4
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# terminate (CRT)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: a0a8536a1c7e0df05de17e5ee8f083b082b56ccc
+ms.lasthandoff: 02/24/2017
 
-ユーザーが `set_terminate`を使用して指定する関数または呼び出し `abort`。  
+---
+# <a name="terminate-crt"></a>terminate (CRT)
+`abort`、または `set_terminate` を使用して指定した関数を呼び出します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void terminate( void );  
 ```  
   
-## 解説  
- `terminate` 関数は C\+\+ 例外処理との使用され、次の場合に呼び出され、M:  
+## <a name="remarks"></a>コメント  
+ `terminate` 関数が C++ 例外処理で使用され、次の場合に呼び出されます。  
   
--   対応する catch ハンドラーはスローされた C\+\+ 例外の場合に発生することはできません。  
+-   スローされた C++ 例外と一致する catch ハンドラーが見つからない。  
   
--   例外はスタック アンワインド中にデストラクター関数によってスローされます。  
+-   スタック アンワインド中にデストラクター関数によって例外がスローされた。  
   
--   スタックが例外をスローした後破損しています。  
+-   例外をスローした後でスタックが破損した。  
   
- `terminate` の 呼び出し `abort` 既定で。  独自の終了関数を記述し、引数として関数の名前 `set_terminate` を呼び出して、この既定を変更できます。  `terminate` は 最後の関数を `set_terminate`に引数としてから呼び出します。  詳細については、「[未処理の C\+\+ 例外](../../cpp/unhandled-cpp-exceptions.md)」を参照してください。  
+ `terminate` は既定では `abort` を呼び出します。 この既定の設定を変更するには、独自の終了関数を作成し、その関数の名前を引数として `set_terminate` を呼び出します。 `terminate` は、`set_terminate` への引数として渡された最後の関数を呼び出します。 詳細については、「[Unhandled C++ Exceptions](../../cpp/unhandled-cpp-exceptions.md)」(ハンドルされない C++ 例外) を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`terminate`|\<eh.h\>|  
+|-------------|---------------------|  
+|`terminate`|\<eh.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_terminate.cpp  
@@ -109,14 +125,17 @@ void term_func()
 }  
 ```  
   
-  **term\_func\(\) は terminate\(\)で呼び出されました。**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+term_func() was called by terminate().  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
- [\_set\_se\_translator](../../c-runtime-library/reference/set-se-translator.md)   
- [set\_terminate](../../c-runtime-library/reference/set-terminate-crt.md)   
- [set\_unexpected](../../c-runtime-library/reference/set-unexpected-crt.md)   
- [unexpected](../Topic/unexpected%20\(CRT\).md)
+ [_set_se_translator](../../c-runtime-library/reference/set-se-translator.md)   
+ [set_terminate](../../c-runtime-library/reference/set-terminate-crt.md)   
+ [set_unexpected](../../c-runtime-library/reference/set-unexpected-crt.md)   
+ [unexpected](../../c-runtime-library/reference/unexpected-crt.md)

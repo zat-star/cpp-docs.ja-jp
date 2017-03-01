@@ -1,50 +1,66 @@
 ---
-title: "wcrtomb_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "wcrtomb_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "wcrtomb_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ワイド文字を変換します。"
-  - "wcrtomb_s 関数"
-  - "マルチバイト文字"
-  - "変換する文字"
+title: wcrtomb_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- wcrtomb_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- wcrtomb_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- wide characters, converting
+- wcrtomb_s function
+- multibyte characters
+- characters, converting
 ms.assetid: 9a8a1bd0-1d60-463d-a3a2-d83525eaf656
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# wcrtomb_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: eec9f8620ed6533304568704444de6df33503818
+ms.lasthandoff: 02/24/2017
 
-ワイド文字をマルチバイト文字の表現に変換します。 バージョンの [wcrtomb](../../c-runtime-library/reference/wcrtomb.md) 」の説明に従って、セキュリティ強化機能を備えた [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)します。  
+---
+# <a name="wcrtombs"></a>wcrtomb_s
+ワイド文字をマルチバイト文字の表現に変換します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [wcrtomb](../../c-runtime-library/reference/wcrtomb.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t wcrtomb_s(  
@@ -63,38 +79,38 @@ errno_t wcrtomb_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[出力\] `pReturnValue`  
- エラーが発生した場合は、書き込まれたバイト数または\-1 を返します。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `pReturnValue`  
+ 書き込まれたバイト数を返します。エラーが発生した場合は -1 を返します。  
   
- \[出力\] `mbchar`  
- 結果として得られるマルチバイトに変換された文字を指定します。  
+ [出力] `mbchar`  
+ 結果として得られるマルチバイトに変換された文字。  
   
- \[入力\] `sizeOfmbchar`  
- サイズ、 `mbchar` 変数 \(バイト単位\)。  
+ [入力] `sizeOfmbchar`  
+ `mbchar` 変数のサイズ (バイト単位)。  
   
- \[入力\] `wchar`  
+ [入力] `wchar`  
  変換するワイド文字。  
   
- \[入力\] `mbstate`  
+ [入力] `mbstate`  
  `mbstate_t` オブジェクトへのポインター。  
   
-## 戻り値  
- 0 を返すまたは `errno` 値の場合は、エラーが発生します。  
+## <a name="return-value"></a>戻り値  
+ 0、またはエラーが発生した場合は `errno` 値を返します。  
   
-## 解説  
- `wcrtomb_s` 関数以降に含まれる指定された変換の状態で、ワイド文字に変換 `mbstate`, に格納された値から `wchar`, 、によって表されるアドレスに `mbchar`します。`pReturnValue` 値が変換されると、バイトの数になる複数の `MB_CUR_MAX` バイト、またはエラーが発生した場合、\-1 です。  
+## <a name="remarks"></a>コメント  
+ `wcrtomb_s` 関数は、`mbstate` に含まれる指定された変換の状態で始まるワイド文字を、`wchar` に含まれている値から、`mbchar` によって表されるアドレスに変換します。 `pReturnValue` 値は変換されたバイト数になりますが、`MB_CUR_MAX` バイトより多くはなりません。エラーが発生した場合は、-1 が返されます。  
   
- 場合 `mbstate` が null の場合、内部 `mbstate_t` 変換状態を使用します。 文字が含まれる場合 `wchar` 対応するマルチバイト文字の値を持たない `pReturnValue` は\-1 になり、関数は、 `errno` の値 `EILSEQ`です。  
+ `mbstate` が null の場合、内部の `mbstate_t` 変換状態が使用されます。 `wchar` に含まれる文字が対応するマルチバイト文字の値を持たない場合、`pReturnValue` の値は -1 になり、関数は `EILSEQ` の `errno` 値を返します。  
   
- `wcrtomb_s` 関数とは異なります [wctomb\_s、\_wctomb\_s\_l](../../c-runtime-library/reference/wctomb-s-wctomb-s-l.md) によってその再起動します。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。 たとえば、アプリケーションは使用 `wcsrlen` なく `wcslen`, 場合、後続の呼び出しには、 `wcsrtombs_s` の代わりに使用されました。 `wcstombs_s.`  
+ `wcrtomb_s` 関数は、再開できるかどうかの点で [wctomb_s、_wctomb_s_l](../../c-runtime-library/reference/wctomb-s-wctomb-s-l.md) と異なります。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。 たとえば、アプリケーションは `wcsrlen` を使用し、`wcslen` は使用しないことがあります。これは、後続の呼び出しで `wcsrtombs_s` を使用しており、`wcstombs_s.` は使用しない場合です。  
   
- C\+\+ では、この関数を簡単に使用してテンプレートのオーバー ロードオーバー ロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要はありません\)、古くてセキュリティが保護されていない機能、セキュリティで保護された新しいバージョンに自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、この関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## 例外  
- `wcrtomb_s` 関数は、呼び出す関数は、現在のスレッドがない限り、マルチ スレッド セーフ `setlocale` この関数の実行中に、 `mbstate` が null です。  
+## <a name="exceptions"></a>例外  
+ `wcrtomb_s` 関数は、この関数の実行中に現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` が null である限り、マルチスレッド セーフです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_wcrtomb_s.c  
@@ -135,19 +151,19 @@ int main( void )
 ```  
   
 ```Output  
-対応するワイド文字"Q"が変換された、"Q"マルチバイト文字。  
+The corresponding wide character "Q" was converted to a the "Q" multibyte character.  
 ```  
   
-## 同等の .NET Framework 関数  
- 該当しない。 標準 C 関数を呼び出すには、`PInvoke` を使用します。 詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`wcrtomb_s`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`wcrtomb_s`|\<wchar.h>|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

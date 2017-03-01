@@ -1,47 +1,64 @@
 ---
 title: "反復子のデバッグのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "debug 反復子のサポート"
-  - "互換性のない反復子"
-  - "反復子, debug 反復子のサポート"
-  - "反復子, 互換性のない"
-  - "安全なライブラリ"
-  - "安全なライブラリ, 標準 C++ ライブラリ"
-  - "安全な標準 C++ ライブラリ"
-  - "標準 C++ ライブラリ, debug 反復子のサポート"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Safe Libraries
+- Safe Libraries, C++ Standard Library
+- Safe C++ Standard Library
+- C++ Standard Library, debug iterator support
+- iterators, debug iterator support
+- iterators, incompatible
+- incompatible iterators
+- debug iterator support
 ms.assetid: f3f5bd15-4be8-4d64-a4d0-8bc0761c68b6
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# 反復子のデバッグのサポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 9e2bfb1095c28ea3592c5af2b89cb2fbeddcb60c
+ms.openlocfilehash: 37f3450fbd320105781fa5398e838d3a8e317879
+ms.lasthandoff: 02/24/2017
 
-Visual C\+\+ ランタイム ライブラリで実行時に不正な反復子の使用を検出し、ダイアログ ボックスをアサートされ、表示されます。  デバッグ反復子サポートを有効にするには、プログラムをコンパイルするために. C ランタイム ライブラリのデバッグ バージョンを使用する必要があります。  詳細については、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  反復子を使用する方法の詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
+---
+# <a name="debug-iterator-support"></a>Debug Iterator Support
+Visual C++ ランタイム ライブラリは、反復子の不正な使用を検出し、実行時にアサートしてダイアログ ボックスを表示します。 反復子のデバッグのサポートを有効にするには、デバッグ バージョンの C++ 標準ライブラリと C ランタイム ライブラリを使ってプログラムをコンパイルする必要があります。 詳しくは、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」をご覧ください。 チェックを行う反復子を使う方法については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
   
- C\+\+ 標準では、メンバー関数によってどのようにコンテナーに反復子が無効になる可能性について説明します。  2 個の例:  
+ C++ 標準では、メンバー関数によってコンテナーに対する反復子が無効になる状況が説明されています。 次に&2; つの例を示します。  
   
--   コンテナー オフにより反復子はから要素に無効になります。  
+-   コンテナーから要素を消去すると、要素に対する反復子が無効になります。  
   
--   [vector](../standard-library/vector.md) のサイズを大きくすると、`vector` \(プッシュまたは挿入\) を反復子が無効になります。  
+-   プッシュまたは挿入を使って [vector](../standard-library/vector.md) のサイズを大きくすると、`vector` に対する反復子が無効になります。  
   
-## 使用例  
- デバッグ モードで次のプログラムをコンパイルすると、実行時にアサートし、終了します。  
+## <a name="example"></a>例  
+デバッグ モードで次のサンプル プログラムをコンパイルすると、実行時にアサートして終了します。  
   
 ```cpp  
-/* compile with /EHsc /MDd */  
+// iterator_debugging_0.cpp  
+// compile by using /EHsc /MDd  
 #include <vector>  
 #include <iostream>  
   
@@ -58,25 +75,21 @@ int main() {
    std::vector<int>::iterator j = v.end();  
    --j;  
   
-   std::cout<<*j<<'\n';  
+   std::cout << *j << '\n';  
   
    v.insert(i,25);   
   
-   std::cout<<*j<<'\n'; // Using an old iterator after an insert  
+   std::cout << *j << '\n'; // Using an old iterator after an insert  
 }  
-  
 ```  
   
-## 使用例  
- デバッグ ビルドの反復子のデバッグ機能を無効に [\_HAS\_ITERATOR\_DEBUGGING](../Topic/_HAS_ITERATOR_DEBUGGING.md) 記号を使用できます。  次のプログラムは、アサートされませんが、トリガーは動作が定義されていません。  
-  
-> [!IMPORTANT]
->  `_HAS_ITERATOR_DEBUGGING`を制御するために `_ITERATOR_DEBUG_LEVEL` を使用します。  詳細については、「[\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md)」を参照してください。  
+## <a name="example"></a>例  
+プリプロセッサ マクロ [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を使って、デバッグ ビルドで反復子デバッグ機能を無効にできます。 このプログラムはアサートしませんが、それでも未定義の動作をトリガーします。  
   
 ```cpp  
-// iterator_debugging.cpp  
-// compile with: /EHsc /MDd  
-#define _HAS_ITERATOR_DEBUGGING 0  
+// iterator_debugging_1.cpp  
+// compile by using: /EHsc /MDd  
+#define _ITERATOR_DEBUG_LEVEL 0  
 #include <vector>  
 #include <iostream>  
   
@@ -93,23 +106,28 @@ int main() {
    std::vector<int>::iterator j = v.end();  
    --j;  
   
-   std::cout<<*j<<'\n';  
+   std::cout << *j << '\n';  
   
    v.insert(i,25);   
   
-   std::cout<<*j<<'\n'; // Using an old iterator after an insert  
+   std::cout << *j << '\n'; // Using an old iterator after an insert  
 }  
 ```  
   
-  **20**  
-**\-572662307**   
-## 使用例  
- アサートは、初期化される前に次のように反復子を使用しようとした場合にも発生する:  
+```Output  
+20  
+-572662307  
+```  
+  
+## <a name="example"></a>例  
+次の例に示すように、初期化する前に反復子を使おうとした場合も、アサートが発生します。  
   
 ```cpp  
-/* compile with /EHsc /MDd */  
+// iterator_debugging_2.cpp  
+// compile by using: /EHsc /MDd  
 #include <string>  
 using namespace std;  
+  
 int main() {  
    string::iterator i1, i2;  
    if (i1 == i2)  
@@ -117,11 +135,12 @@ int main() {
 }  
 ```  
   
-## 使用例  
- [for\_each](../Topic/for_each.md) アルゴリズムへの 2 反復子が対応していないため、次のコード例によりアサーションが発生します。  アルゴリズムは、指定された反復子が同じコンテナーを参照しているかどうかを確認します。  
+## <a name="example"></a>例  
+次のコード例では、[for_each](../standard-library/algorithm-functions.md#for_each) アルゴリズムに対する&2; つの反復子の間に互換性がないため、アサーションが発生します。 アルゴリズムは、提供された反復子が同じコンテナーを参照しているかどうかを確認します。  
   
 ```cpp  
-/* compile with /EHsc /MDd */  
+// iterator_debugging_3.cpp  
+// compile by using /EHsc /MDd  
 #include <algorithm>  
 #include <vector>  
 using namespace std;  
@@ -137,20 +156,20 @@ int main()
     v2.push_back(10);  
     v2.push_back(20);  
   
-    // The next line will assert because v1 and v2 are  
+    // The next line asserts because v1 and v2 are  
     // incompatible.  
     for_each(v1.begin(), v2.end(), [] (int& elem) { elem *= 2; } );  
 }  
 ```  
   
- この例ではファンクタの代わりにラムダ式 `[] (int& elem) { elem *= 2; }` を使用することに注意してください。  この選択は示しませんが、エラーのようなラムダ ファンクタと同じエラーが簡易関数オブジェクト タスクを実行するための非常に便利な手段なります。  ラムダ式の詳細については、「[ラムダ式](../cpp/lambda-expressions-in-cpp.md)」を参照してください。  
+この例では、ファンクターの代わりにラムダ式 `[] (int& elem) { elem *= 2; }` が使われていることに注意してください。 このようにしてもアサート失敗に影響はありませんが (似たファンクターが同じエラーの原因になります)、ラムダはコンパクトな関数オブジェクト タスクを実行する非常に便利な方法です。 ラムダ式について詳しくは、「[ラムダ式](../cpp/lambda-expressions-in-cpp.md)」をご覧ください。  
   
-## 使用例  
- もチェックするデバッグ反復子により `for` ループ スコープが終了すると `for` ループのスコープ外であると宣言する反復子変数が発生します。  
+## <a name="example"></a>例  
+また、反復子のデバッグのチェックにより、`for` ループで宣言されている反復子変数は、`for` ループのスコープが終了するとスコープ外になります。  
   
 ```cpp  
-// debug_iterator.cpp  
-// compile with: /EHsc /MDd  
+// iterator_debugging_4.cpp  
+// compile by using: /EHsc /MDd  
 #include <vector>  
 #include <iostream>  
 int main() {  
@@ -160,20 +179,21 @@ int main() {
    v.push_back(15);  
    v.push_back(20);  
   
-   for (std::vector<int>::iterator i = v.begin() ; i != v.end(); ++i)  
-   ;  
+   for (std::vector<int>::iterator i = v.begin(); i != v.end(); ++i)  
+      ;   // do nothing  
    --i;   // C2065  
 }  
 ```  
   
-## 使用例  
- デバッグ反復子に重要なデストラクターがあります。  デストラクターが、いかなる理由であれ動作する、アクセス違反やデータ破損が発生する場合があります。  次の例について考えます。  
+## <a name="example"></a>例  
+反復子のデバッグには重要なデストラクターがあります。 何らかの理由でデストラクターが実行されない場合、アクセス違反とデータの破損が発生する可能性があります。 次の例について考えます。  
   
 ```cpp  
-/* compile with: /EHsc /MDd */  
+// iterator_debugging_5.cpp  
+// compile by using: /EHsc /MDd  
 #include <vector>  
 struct base {  
-   // FIX: uncomment the next line  
+   // TO FIX: uncomment the next line  
    // virtual ~base() {}  
 };  
   
@@ -191,5 +211,10 @@ int main() {
 }  
 ```  
   
-## 参照  
- [STL の概要](../standard-library/cpp-standard-library-overview.md)
+## <a name="see-also"></a>関連項目  
+[C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)
+
+
+
+
+

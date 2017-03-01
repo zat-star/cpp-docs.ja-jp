@@ -1,49 +1,66 @@
 ---
-title: "wcsrtombs | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "wcsrtombs"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "wcsrtombs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "wcsrtombs 関数"
-  - "文字列変換、ワイド文字"
-  - "ワイド文字、文字列"
+title: wcsrtombs | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- wcsrtombs
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- wcsrtombs
+dev_langs:
+- C++
+helpviewer_keywords:
+- wcsrtombs function
+- string conversion, wide characters
+- wide characters, strings
 ms.assetid: a8d21fec-0d36-4085-9d81-9b1c61c7259d
 caps.latest.revision: 26
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 26
----
-# wcsrtombs
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 8dcf86093b363bd890e15ba7eb326a4187e65999
+ms.lasthandoff: 02/24/2017
 
-マルチバイト文字の文字列形式にワイド文字列を変換します。  この関数のセキュリティが強化されたバージョンについては、「[wcsrtombs\_s](../../c-runtime-library/reference/wcsrtombs-s.md)」を参照してください。  
+---
+# <a name="wcsrtombs"></a>wcsrtombs
+ワイド文字の文字列をマルチバイト文字の文字列形式に変換します。 この関数のセキュリティが強化されたバージョンについては、「[wcsrtombs_s](../../c-runtime-library/reference/wcsrtombs-s.md)」を参照してください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_t wcsrtombs(  
@@ -61,37 +78,37 @@ size_t wcsrtombs(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[出力\] `mbstr`  
- 変換した結果のマルチバイト文字列のアドレス位置。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `mbstr`  
+ 結果として変換されたマルチバイト文字のアドレスの場所。  
   
- \[入力\] `wcstr`  
- 間接的に変換されるワイド文字列の位置を指定します。  
+ [入力] `wcstr`  
+ 変換されるワイド文字の文字列の場所を間接的に指します。  
   
- \[入力\] `count`  
- 変換する文字数。  
+ [入力] `count`  
+ 変換される文字数。  
   
- \[入力\] `mbstate`  
- `mbstate_t` の変換状態オブジェクトへのポインター。  
+ [入力] `mbstate`  
+ `mbstate_t` 変換状態オブジェクトへのポインター。  
   
-## 戻り値  
- エラーが発生した場合は正常に変換されていない NULL バイト \(存在する場合\)、それ以外は null を含むバイト数を返します。  
+## <a name="return-value"></a>戻り値  
+ 正常に変換されたバイト数を返します (null で終了する null バイトがあっても含まれません)。それ以外の場合は、エラーが発生した場合に -1 を返します。  
   
-## 解説  
- `wcsrtombs` 関数は `mbstr`のアドレスに `wcstr`に値の間接参照先の Miter の `mbstate`に含まれている指定変換状態で始まるワイド文字列を変換します。  変換は各文字にまで続行: と終端の null ワイド文字が検出された非対応する文字に到達するまで、または次の文字が `count`に含まれている制限を超えている場合。  `wcsrtombs` はワイド文字の空白文字 `count` が発生した場合に L'\\0\) の前に発生した場合、または 8 ビット 0 に変換して停止します。  
+## <a name="remarks"></a>コメント  
+ `wcsrtombs` 関数は、`mbstate` に含まれる指定された変換の状態で始まるワイド文字の文字列を、`wcstr` で間接的に指されている値から `mbstr` のアドレスに変換します。 null で終了するワイド文字が発生した後、または対応しない文字が発生するか、次の文字が `count` に含まれる制限を超えるまで、各文字の変換が継続されます。 `wcsrtombs` は、`count` の発生前または発生時にワイド文字の null 文字 (L'\0') を検出すると、それを 8 ビットの 0 に変換して停止します。  
   
- したがって、`mbstr` のマルチバイト文字列は `wcsrtombs` が変換中にワイド文字の空白文字を検出したときにのみ null で終わるです。  `wcstr` と `mbstr` が指す文字列が重なり合う場合、`wcsrtombs` 関数の動作は未定義です。  `wcsrtombs` は 現在のロケールで LC\_TYPE のカテゴリ別に影響されます。  
+ このため、`mbstr` のマルチバイト文字の文字列が null 終了になるのは、`wcsrtombs` が変換中にワイド文字の null 文字を検出した場合だけです。 `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、`wcsrtombs` の動作は未定義です。 `wcsrtombs` は、現在のロケールの LC_TYPE カテゴリの影響を受けます。  
   
- `wcsrtombs` 関数は restartability で [wcstombs、\_wcstombs\_l](../Topic/wcstombs,%20_wcstombs_l.md) とは異なります。  変換状態は同じまたは別の restartable 関数への後続の呼び出しの `mbstate` に格納されます。  結果は restartable と nonrestartable 関数の使用を混在させると undefined になります。たとえば、アプリケーションが `wcsnlen`ではなく `wcsrtombs` への以降の呼び出しが `wcstombs`の代わりに使用すると、`wcsrlen` を使用します。  
+ `wcsrtombs` 関数は、再開できるかどうかの点で [wcstombs、_wcstombs_l](../../c-runtime-library/reference/wcstombs-wcstombs-l.md) と異なります。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。  たとえば、アプリケーションは `wcsrlen` を使用し、`wcsnlen` は使用しないことがあります。これは、後続の呼び出しで `wcsrtombs` を使用しており、`wcstombs` は使用しない場合です。  
   
- `mbstr` の引数が `NULL`の場合、`wcsrtombs` はコピー先文字列のバイトの必要なサイズを返します。  `mbstate` が NULL の場合、`mbstate_t` 変換の内部状態が使用されます。  文字列 `wchar` に対応するマルチバイト文字表現が見つからなかった場合は、戻り `errno` は `EILSEQ`に設定されます。  
+ `mbstr` 引数が `NULL` の場合、`wcsrtombs` は必要な対象文字列のサイズ (バイト数) を返します。 `mbstate` が null の場合、内部の `mbstate_t` 変換状態が使用されます。 文字シーケンス `wchar` に対応するマルチバイト文字の表現がない場合、-1 が返され、`errno` が `EILSEQ` に設定されます。  
   
- C\+\+ では、この関数によって新しい呼び出すのテンプレート オーバーロードが、保護されたこの関数に対応するが含まれます。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、この関数にテンプレートのオーバーロードがあります。このオーバーロードは、この関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## 例外  
- `wcsrtombs` 関数は、関数が実行中、`mbstate` が NULL ではなく、現在のスレッドの関数が `setlocale` を呼び出さない限りマルチスレッド セーフです。  
+## <a name="exceptions"></a>例外  
+ `wcsrtombs` 関数は、この関数の実行中に現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` が null でない限り、マルチスレッド セーフです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_wcsrtombs.cpp  
@@ -133,22 +150,25 @@ int main()
 }  
 ```  
   
-  **文字列が正常に変換されました。**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+The string was successfuly converted.  
+```  
   
-## 必要条件  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`wcsrtombs`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`wcsrtombs`|\<wchar.h>|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [wcrtomb](../../c-runtime-library/reference/wcrtomb.md)   
- [wcrtomb\_s](../../c-runtime-library/reference/wcrtomb-s.md)   
- [wctomb、\_wctomb\_l](../../c-runtime-library/reference/wctomb-wctomb-l.md)   
- [wcstombs、\_wcstombs\_l](../Topic/wcstombs,%20_wcstombs_l.md)   
+ [wcrtomb_s](../../c-runtime-library/reference/wcrtomb-s.md)   
+ [wctomb、_wctomb_l](../../c-runtime-library/reference/wctomb-wctomb-l.md)   
+ [wcstombs、_wcstombs_l](../../c-runtime-library/reference/wcstombs-wcstombs-l.md)   
  [mbsinit](../../c-runtime-library/reference/mbsinit.md)

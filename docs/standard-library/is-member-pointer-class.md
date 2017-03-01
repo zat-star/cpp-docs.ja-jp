@@ -1,55 +1,68 @@
 ---
 title: "is_member_pointer クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::tr1::is_member_pointer"
-  - "is_member_pointer"
-  - "std.tr1.is_member_pointer"
-  - "std.is_member_pointer"
-  - "std::is_member_pointer"
-  - "type_traits/std::is_member_pointer"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is_member_pointer クラス [TR1]"
-  - "is_member_pointer"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- is_member_pointer
+- std::is_member_pointer
+- type_traits/std::is_member_pointer
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_member_pointer class
+- is_member_pointer
 ms.assetid: da07ff4e-9ee0-4baa-ad93-1741f10913d1
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# is_member_pointer クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
+ms.openlocfilehash: 3f6040bd57b98bb79c2e041a8f6f1ce39b90f7eb
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="ismemberpointer-class"></a>is_member_pointer クラス
 型がメンバーへのポインターであるかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Ty>  
-    struct is_member_pointer;  
+template <class Ty>  
+struct is_member_pointer;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Ty`  
- 問い合わせる型。  
+ 照会する型。  
   
-## 解説  
- 型 `Ty` がメンバー関数へのポインター、メンバー オブジェクトへのポインター、または、そのいずれかの `cv-qualified` 形式である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>コメント  
+ 型 `Ty` が メンバー関数へのポインターまたはメンバー オブジェクトへのポインターである場合、あるいはそれらのいずれかの `cv-qualified` 形式である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
-// std_tr1__type_traits__is_member_pointer.cpp   
+```cpp  
+// std__type_traits__is_member_pointer.cpp   
 // compile with: /EHsc   
 #include <type_traits>   
 #include <iostream>   
@@ -84,16 +97,20 @@ int main()
   
 ```  
   
-  **is\_member\_pointertrivial\<\*\> は \=\=**  
-**true\<is\_member\_pointerint の trivial::\*\> \=\=**  
-**true is\_member\_pointerint\< \(functional::\*\) \(\) \> \=\=**   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+```Output  
+is_member_pointer<trivial *> == false  
+is_member_pointer<int trivial::*> == true  
+is_member_pointer<int (functional::*)()> == true  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [is\_member\_function\_pointer クラス](../Topic/is_member_function_pointer%20Class.md)   
- [is\_member\_object\_pointer クラス](../standard-library/is-member-object-pointer-class.md)   
- [is\_pointer クラス](../standard-library/is-pointer-class.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
+ [is_member_function_pointer クラス](../standard-library/is-member-function-pointer-class.md)   
+ [is_member_object_pointer クラス](../standard-library/is-member-object-pointer-class.md)   
+ [is_pointer クラス](../standard-library/is-pointer-class.md)
+

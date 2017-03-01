@@ -1,58 +1,74 @@
 ---
 title: "localtime_s、_localtime32_s、_localtime64_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_localtime64_s"
-  - "_localtime32_s"
-  - "localtime_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_localtime32_s"
-  - "localtime32_s"
-  - "localtime_s"
-  - "localtime64_s"
-  - "_localtime64_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_localtime64_s 関数"
-  - "localtime32_s 関数"
-  - "_localtime32_s 関数"
-  - "localtime64_s 関数"
-  - "時間、値の変換"
-  - "localtime_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _localtime64_s
+- _localtime32_s
+- localtime_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _localtime32_s
+- localtime32_s
+- localtime_s
+- localtime64_s
+- _localtime64_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- _localtime64_s function
+- localtime32_s function
+- _localtime32_s function
+- localtime64_s function
+- time, converting values
+- localtime_s function
 ms.assetid: 842d1dc7-d6f8-41d3-b340-108d4b90df54
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# localtime_s、_localtime32_s、_localtime64_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: bde781215787a1d39a58c69b344eb8d41f7b3c52
+ms.lasthandoff: 02/24/2017
 
-時刻の値を変換し、ローカル タイム ゾーンを修正します。 これらのバージョンは、 [localtime、\_localtime32、\_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md) 」の説明に従って、セキュリティ強化機能を備えた [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)します。  
+---
+# <a name="localtimes-localtime32s-localtime64s"></a>localtime_s、_localtime32_s、_localtime64_s
+時刻値を変換し、ローカル タイム ゾーンに合わせて修正します。 これらは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) で説明されているように、セキュリティが強化されたバージョンの [localtime、_localtime32、_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t localtime_s(  
@@ -69,78 +85,78 @@ errno_t _localtime64_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_tm`  
- 入力する時間の構造体へのポインター。  
+ 目的の情報を格納する時間構造体へのポインター。  
   
  `time`  
  格納されている時刻へのポインター。  
   
-## 戻り値  
- 正常終了した場合は 0 を返します。 戻り値は、障害が発生した場合、エラー コードです。 エラー コードは、Errno.h で定義されます。 これらのエラーの一覧については、次を参照してください。 [errno](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は&0; を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 これらのエラー一覧については、「[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|`_tm`|`time`|戻り値|値します。 `_tm`|無効なパラメーター ハンドラーが呼び出されます|  
-|-----------|------------|---------|-----------------|-----------------------------|  
-|`NULL`|任意|`EINVAL`|変更されません。|はい|  
-|いない `NULL` \(有効なメモリを指す\)|`NULL`|`EINVAL`|すべてのフィールドが\-1 に設定します。|はい|  
-|いない `NULL` \(有効なメモリを指す\)|0 より小さいかより大きい `_MAX__TIME64_T`|`EINVAL`|すべてのフィールドが\-1 に設定します。|Ｘ|  
+|`_tm`|`time`|戻り値|`_tm` の値|無効なパラメーター ハンドラーを呼び出す|  
+|-----------|------------|------------------|--------------------|---------------------------------------|  
+|`NULL`|任意|`EINVAL`|変更されない|はい|  
+|`NULL` ではない (有効なメモリを指す)|`NULL`|`EINVAL`|すべてのフィールドが -1 に設定される|はい|  
+|`NULL` ではない (有効なメモリを指す)|0 より小さいか、または `_MAX__TIME64_T` を超えている|`EINVAL`|すべてのフィールドが -1 に設定される|いいえ|  
   
- 」の説明に従って、最初の 2 つのエラー条件の場合、無効なパラメーター ハンドラーが呼び出される [パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+ 最初の&2; つのエラーの場合は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」 (パラメーターの検証) に説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
-## 解説  
- `_localtime32_s` 関数として格納されている時刻の変換、 [time\_t](../../c-runtime-library/standard-types.md) 値し、結果の種類の構造に格納 `tm`します。`long` 値 `timer` 午前 0 時からの経過秒数を表します \(00: 00:00\)、1970 年 1 月 1 日 \(utc\)。 この値は、通常の取得、 `time` 関数です。  
+## <a name="remarks"></a>コメント  
+ `_localtime32_s` 関数は [time_t](../../c-runtime-library/standard-types.md) 値として格納されている時間を変換して、その結果を `tm` 型として格納します。 `long` 型の値 `timer` は、UTC の 1970 年 1 月 1 日午前 0 時 (00:00:00) からの経過秒数を表します。 通常、この値は `time` 関数で取得されます。  
   
- `_localtime32_s` ユーザーが最初にグローバル環境変数を設定する場合は、ローカル タイム ゾーンの修正 `TZ`します。`TZ` 設定すると、その他の 3 つの環境変数 \(`_timezone`, 、`_daylight`, 、および `_tzname`\) も自動的に設定します。 場合、 `TZ` 変数が設定されていない `localtime32_s` コントロール パネルの \[日付\/時刻で指定されているタイム ゾーン情報を使用します。 この情報を取得できない既定では太平洋標準時タイム ゾーンを表す PST8PDT が使用されます。 参照してください [\_tzset](../Topic/_tzset.md) これらの変数の詳細についてです。`TZ` Microsoft 拡張機能との ANSI 標準の定義の一部ではない `localtime`します。  
+ `_localtime32_s` は、ユーザーが最初にグローバル環境変数 `TZ` を設定している場合、ローカル タイム ゾーンに合わせて修正します。 `TZ` を設定すると、他の&3; つの環境変数 (`_timezone`、`_daylight`、`_tzname`) も自動的に設定されます。 `TZ` 変数が設定されていない場合、`localtime32_s` は [コントロール パネル] の [日付/時刻] アプリケーションでで指定されているタイム ゾーンの情報を使用しようとします。 この情報を取得できない場合、既定では、太平洋タイム ゾーンを表す PST8PDT が使用されます。 これらの変数の説明については、[_tzset](../../c-runtime-library/reference/tzset.md) を参照してください。 `TZ` は、Microsoft 拡張機能であり、`localtime` の ANSI 標準定義の一部ではありません。  
   
 > [!NOTE]
->  ターゲット環境は、夏時間が有効になっているかどうかを判断するください。  
+>  対象の環境によって、夏時間が有効かどうか判断されます。  
   
- `_localtime64_s`, 、が使用される、 `__time64_t` 構造体での日付を世界協定時刻 \(UTC\) で 3000 年 12 月 31 日 23時 59分分 59 秒を表す一方 `_localtime32_s` の 2038 年 1 月 18 日 23時 59分: 59 までの日付を表します。  
+ `__time64_t` 構造体を使用する `_localtime64_s` は、UTC の 3001 年 1 月 18 日の 23 時 59 分 59 秒までの日付を表すことができます。それに対して、`_localtime32_s` は、UTC の 2038 年 1 月 18 日の 23 時 59 分 59 秒までしか表すことができません。  
   
- `localtime_s` 評価されるインライン関数は、 `_localtime64_s`, 、および `time_t` は `__time64_t`です。 コンパイラが `time_t` を古い 32 ビットの `time_t` として解釈するよう強制する必要がある場合には、`_USE_32BIT_TIME_T` を定義します。 これにより、その `localtime_s` を評価する `_localtime32_s`です。 2038 年 1 月 18 日後に、アプリケーションが失敗して、64 ビット プラットフォーム上で許可されていないために、この操作は推奨されません。  
+ `localtime_s` は `_localtime64_s` を求めるインライン関数であり、`time_t` は `__time64_t` と等価です。 コンパイラが `time_t` を古い 32 ビットの `time_t` として解釈するよう強制する必要がある場合には、`_USE_32BIT_TIME_T` を定義します。 これにより、`localtime_s` の値は `_localtime32_s` になります。 ただし、この方法は推奨されません。2038 年 1 月 18 日以降にアプリケーションがエラーになる可能性があり、また、64 ビット プラットフォームでは使用できないためです。  
   
- 構造体の型のフィールド [tm](../../c-runtime-library/standard-types.md) それぞれが、次の値を格納、 `int`です。  
+ 構造体の型 [tm](../../c-runtime-library/standard-types.md) のフィールドは次の値を格納します。値はそれぞれ `int` です。  
   
  `tm_sec`  
- 秒 \(0 ～ 59\)。  
+ 秒 (0 ～ 59)。  
   
  `tm_min`  
- 分 \(0 ～ 59\)。  
+ 分 (0 ～ 59)。  
   
  `tm_hour`  
- 午前 0 時以降後の時間 \(0 ~ 23\)。  
+ 時 (0 から 23)。  
   
  `tm_mday`  
- 日 \(1 ～ 31\)。  
+ 日 (1 ～ 31)。  
   
  `tm_mon`  
- 月 \(0 ～ 11、1 月 \= 0\)。  
+ 月 (0 ～ 11、1 月 = 0)。  
   
  `tm_year`  
- 年 \(実際の西暦から 1900 を引いた数\)  
+ 年 (実際の西暦から 1900 を引いた数)  
   
  `tm_wday`  
- 曜日 \(0 ～ 6、日曜日 \= 0\)。  
+ 曜日 (0 ～ 6、日曜日 = 0)。  
   
  `tm_yday`  
- 年内の通算日 \(0 ～ 365、1 月 1 日 \= 0\)。  
+ 年内の通算日 (0 ～ 365、1 月 1 日 = 0)。  
   
  `tm_isdst`  
- 夏時間が有効です。 正の値夏時間が有効ではない場合は 0夏時間の状態が不明な場合の負の値。 場合、 `TZ` 環境変数が設定されている、C ランタイム ライブラリで規則を前提 United States に適切な夏時間 \(DST\) の計算を実装するためです。  
+ 夏時間が有効な場合は正の値、夏時間が無効な場合は 0、夏時間かどうか状態が不明な場合は負の値。 `TZ` 環境変数が設定されている場合、C ランタイム ライブラリでは、米国に適合した規則を前提に夏時間 (DST) を計算します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`localtime_s`|\<time.h\>|  
-|`_localtime32_s`|\<time.h\>|  
-|`_localtime64_s`|\<time.h\>|  
+|-------------|---------------------|  
+|`localtime_s`|\<time.h>|  
+|`_localtime32_s`|\<time.h>|  
+|`_localtime64_s`|\<time.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_localtime_s.c  
@@ -190,21 +206,22 @@ int main( void )
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Fri Apr 25 01:19:27 PM  
 ```  
   
-## 同等の .NET Framework 関数  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
  [System::DateTime::ToLocalTime](https://msdn.microsoft.com/en-us/library/system.datetime.tolocaltime.aspx)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   
- [asctime\_s、\_wasctime\_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
- [ctime、\_ctime32、\_ctime64、\_wctime、\_wctime32、\_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
- [\_ftime、\_ftime32、\_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
- [gmtime\_s、\_gmtime32\_s、\_gmtime64\_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
- [localtime、\_localtime32、\_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
- [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)   
- [\_tzset](../Topic/_tzset.md)
+ [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
+ [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
+ [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
+ [gmtime_s、_gmtime32_s、_gmtime64_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
+ [localtime、_localtime32、_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
+ [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)   
+ [_tzset](../../c-runtime-library/reference/tzset.md)
+

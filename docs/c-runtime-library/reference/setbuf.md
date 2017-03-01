@@ -1,48 +1,64 @@
 ---
-title: "setbuf | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "setbuf"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "setbuf"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "setbuf 関数"
-  - "ストリームのバッファリング"
+title: setbuf | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- setbuf
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- setbuf
+dev_langs:
+- C++
+helpviewer_keywords:
+- setbuf function
+- stream buffering
 ms.assetid: 13beda22-7b56-455d-8a6c-f2eb636885b9
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# setbuf
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: ce7ea86029a99b5727fa1d7bd033044431a1fbff
+ms.lasthandoff: 02/24/2017
 
-ストリームのバッファリングを制御します。  この関数は使用されなくなりました; [setvbuf](../../c-runtime-library/reference/setvbuf.md) を代わりに使用します。  
+---
+# <a name="setbuf"></a>setbuf
+ストリーム バッファリングを制御します。 この関数は使用されなくなりました。代わりに [setvbuf](../../c-runtime-library/reference/setvbuf.md) をご使用ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void setbuf(  
@@ -51,27 +67,27 @@ void setbuf(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  `FILE` 構造体へのポインター。  
   
  `buffer`  
- ユーザーが割り当てたバッファー。  
+ ユーザー割り当てのバッファー。  
   
-## 解説  
- `setbuf` 関数は `stream`のバッファリングを制御します。  `stream` の引数は読まれなかったし、または作成してファイルを開く必要があります。  `buffer` の引数が `NULL`の場合、ストリームは、バッファリングされます。  そうでない場合、バッファーは `BUFSIZ` がインクルード.で定義されているバッファー サイズである `BUFSIZ`長さの文字配列を指している必要があります。  特定のストリームの既定システムによって割り当てられるバッファーの代わりにユーザーが指定したバッファーは、I\/O のバッファリングするために使用します。  `stderr` のストリームは、既定で非バッファリングされますが、`stderr`にバッファーを割り当てるに `setbuf` を使用できます。  
+## <a name="remarks"></a>コメント  
+ `setbuf` 関数は `stream` のバッファリングを制御します。 `stream` 引数は、読み取りも書き込みもされていないオープン ファイルを指す必要があります。 `buffer` 引数が `NULL` である場合、ストリームはバッファー処理されません。 そうでない場合には、バッファーは長さ `BUFSIZ` の文字配列を指す必要があります。ここで、`BUFSIZ` は STDIO.H で定義されているバッファー サイズです。 所定のストリームに対してシステムによって割り当てられた既定のバッファーではなく、ユーザーが指定したバッファーが I/O バッファー処理に使用されます。 `stderr` ストリームは既定ではバッファー処理されませんが、`setbuf` を使用して `stderr` にバッファーを割り当てることができます。  
   
- `setbuf` は [setvbuf](../../c-runtime-library/reference/setvbuf.md)で置き換えられました、新しいコードの推奨ルーチンです。  `setbuf` は 既存のコードとの互換性のために残されています。  
+ `setbuf` は [setvbuf](../../c-runtime-library/reference/setvbuf.md) によって置き換えられました。これは新しいコード用の優先ルーチンです。 `setbuf` では、既存のコードとの互換性が保持されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`setbuf`|\<stdio.h\>|  
+|-------------|---------------------|  
+|`setbuf`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_setbuf.c  
@@ -105,14 +121,17 @@ int main( void )
 }  
 ```  
   
-  **ユーザー定義のバッファーに設定されている stream1: 0012FCDC**  
-**無効になる stream2 バッファリング**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+stream1 set to user-defined buffer at: 0012FCDC  
+stream2 buffering disabled  
+```  
   
-## 参照  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fclose、\_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
- [fflush](../Topic/fflush.md)   
- [fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
+ [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
+ [fflush](../../c-runtime-library/reference/fflush.md)   
+ [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [setvbuf](../../c-runtime-library/reference/setvbuf.md)

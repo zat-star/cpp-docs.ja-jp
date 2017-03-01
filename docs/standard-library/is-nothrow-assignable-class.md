@@ -1,56 +1,76 @@
 ---
 title: "is_nothrow_assignable クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "is_nothrow_assignable"
-  - "std.is_nothrow_assignable"
-  - "std::is_nothrow_assignable"
-  - "type_traits/std::is_nothrow_assignable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is_nothrow_assignable"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- is_nothrow_assignable
+- std.is_nothrow_assignable
+- std::is_nothrow_assignable
+- type_traits/std::is_nothrow_assignable
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_nothrow_assignable
 ms.assetid: aa3aca92-308b-4b1d-b3f3-c54216c48fe7
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# is_nothrow_assignable クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 8f7cfa4eafda6061e503b5b8495d64c29a19eda8
+ms.lasthandoff: 02/24/2017
 
-値かどうか検査 `From` 型に割り当てることができます `To` 型と、割り当てをスローしないように呼ばれます。  
+---
+# <a name="isnothrowassignable-class"></a>is_nothrow_assignable クラス
+`From` 型の値を `To` 型に代入できるかどうか、および代入でスローしないことが判明しているかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class To, class From>  
+struct is_nothrow_assignable;
 ```  
-template <class To, class From>   
-    struct is_nothrow_assignable;  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  目的  
  代入を受け取るオブジェクトの型。  
   
  提供元  
  値を渡すオブジェクトの型。  
   
-## 解説  
- 式 `declval<To>() = declval<From>()` 整形式である必要があるあり、スローしないようにコンパイラが認識する必要があります。 両方とも `From` と `To` 完全な型にする必要があります `void`, 、または不明なバインドの配列。  
+## <a name="remarks"></a>コメント  
+ 式 `declval<To>() = declval<From>()` は正しい形式である必要があり、スローしないことがコンパイラに判明している必要があります。 `From` と `To` の両方とも完全な型、`void`、または不明なバインドの配列にする必要があります。  
   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)
+
+
+
+

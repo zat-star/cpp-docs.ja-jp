@@ -1,55 +1,68 @@
 ---
 title: "is_unsigned クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::tr1::is_unsigned"
-  - "is_unsigned"
-  - "std.tr1.is_unsigned"
-  - "std.is_unsigned"
-  - "std::is_unsigned"
-  - "type_traits/std::is_unsigned"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is_unsigned クラス [TR1]"
-  - "is_unsigned"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- is_unsigned
+- std::is_unsigned
+- type_traits/std::is_unsigned
+dev_langs:
+- C++
+helpviewer_keywords:
+- is_unsigned class
+- is_unsigned
 ms.assetid: ba5bec3d-796b-4e54-8595-a3941ec6a8dc
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# is_unsigned クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
+ms.openlocfilehash: d3097878bd66a148051865368267b83e7375c399
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="isunsigned-class"></a>is_unsigned クラス
 型が符号なし整数かどうかを調べます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Ty>  
-    struct is_unsigned;  
+template <class Ty>  
+struct is_unsigned;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Ty`  
  照会する型。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  型 `Ty` が符号なし整数型または `cv-qualified` 符号なし整数型である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
-// std_tr1__type_traits__is_unsigned.cpp   
+```cpp  
+// std__type_traits__is_unsigned.cpp   
 // compile with: /EHsc   
 #include <type_traits>   
 #include <iostream>   
@@ -75,15 +88,19 @@ int main()
   
 ```  
   
-  **is\_unsigned\<trivial\> \=\= false**  
-**is\_unsigned\<int\> \=\= false**  
-**is\_unsigned\<unsigned int\> \=\= true**  
-**is\_unsigned\<float\> \=\= false**   
-## 必要条件  
- **ヘッダー:** \<type\_traits\>  
+```Output  
+is_unsigned<trivial> == false  
+is_unsigned<int> == false  
+is_unsigned<unsigned int> == true  
+is_unsigned<float> == false  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## 参照  
- [\<type\_traits\>](../standard-library/type-traits.md)   
- [is\_signed クラス](../Topic/is_signed%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [<type_traits>](../standard-library/type-traits.md)   
+ [is_signed クラス](../standard-library/is-signed-class.md)
+

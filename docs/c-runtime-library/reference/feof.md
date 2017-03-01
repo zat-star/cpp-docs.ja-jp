@@ -1,48 +1,64 @@
 ---
-title: "feof | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "feof"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "feof"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "EOF (ファイル終端), テスト"
-  - "feof 関数"
+title: feof | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- feof
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- feof
+dev_langs:
+- C++
+helpviewer_keywords:
+- end of file, testing for
+- feof function
 ms.assetid: 09081eee-7c4b-4189-861f-2fad95d3ec6d
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# feof
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: aef536d11e6d7902bdaf43ccc3a5257be4522661
+ms.lasthandoff: 02/24/2017
 
-ストリームの EOF のテスト。  
+---
+# <a name="feof"></a>feof
+ストリームのファイルの末尾をテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int feof(   
@@ -50,29 +66,29 @@ int feof(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  `FILE` 構造体へのポインター。  
   
-## 戻り値  
- 読み取り操作はファイルの末尾を超えて読み取ろうとすると `feof` 関数の戻り値 0 以外の値; 長さが 0 以外の場合は false を返します。  ストリーム ポインターが `NULL`の場合、関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続 `errno` は `EINVAL` と `feof` は 0 に設定されます。  
+## <a name="return-value"></a>戻り値  
+ 読み取り操作でファイルの末尾を越えて読み取ろうとした場合、ファイルの`feof` 関数は 0 以外の値を返します。それ以外の場合は 0 を返します。 ストリーム ポインターが `NULL` の場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、`errno` は `EINVAL` に設定され、`feof`は 0 を返します。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `feof` ルーチン \(関数とマクロとして実装される\) `stream` の最後に渡されているかどうかを判定します。  ファイルの終端に達した場合が渡された場合、読み取り操作は、ストリームを閉じるか、`rewind`まで、`fsetpos`、`fseek`、または `clearerr` がそれに対して呼び出されるまで EOF を返します。  
+## <a name="remarks"></a>コメント  
+ `feof` ルーチン (関数とマクロの両方として実装されています) は、`stream` の終わりを越えたかどうかを確認します。 ファイルの末尾を越えると、ストリームが閉じるか、`rewind`、`fsetpos`、`fseek`、または `clearerr` が呼び出されるまで、読み取り操作はファイルの末尾インジケーターを返します。  
   
- たとえば、ファイルが 10 バイトが含まれているファイルの 10 バイトを読み取ると、`feof` は、ファイル ポインターをファイルの末尾にあるが、端を超えて読み取ろうとしていないため、0 を返します。  読み取ろうとした後にのみ、第 11 バイトは `feof` の戻り 0 以外の値。  
+ たとえば、10 バイトが含まれるファイルで、ファイルから 10 バイトを読み取ると、`feof` は 0 を返します。これは、ファイル ポインターがファイルの末尾にあっても、末尾を越えて読み取ろうと試みなかったためです。 11 バイト目を読み取ろうとした場合にのみ、`feof` は 0 以外の値を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`feof`|\<stdio.h\>|  
+|--------------|---------------------|  
+|`feof`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_feof.c  
@@ -112,26 +128,26 @@ int main( void )
 }  
 ```  
   
-## 入力: crt\_feof.txt  
+## <a name="input-crtfeoftxt"></a>入力: crt_feof.txt  
   
 ```  
 Line one.  
 Line two.  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 Number of bytes read = 19  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   
- [\_eof](../../c-runtime-library/reference/eof.md)   
+ [_eof](../../c-runtime-library/reference/eof.md)   
  [ferror](../../c-runtime-library/reference/ferror.md)   
- [perror、\_wperror](../../c-runtime-library/reference/perror-wperror.md)
+ [perror、_wperror](../../c-runtime-library/reference/perror-wperror.md)
