@@ -1,26 +1,43 @@
 ---
-title: "コンパイラ エラーs C3500 through C3999 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C3500 C3999 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
 ms.assetid: bd6f23ad-b300-4e07-8e35-9661cab1585f
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラーs C3500 through C3999
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: ec3dba4995e0df05a1871c73abfbbee5c24b5266
+ms.lasthandoff: 02/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **\[出力\]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c3500-through-c3999"></a>コンパイラ エラー C3500 C3999 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
  [コンパイラ エラー C3500](../../error-messages/compiler-errors-2/compiler-error-c3500.md)  
   
@@ -40,15 +57,13 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3519](../../error-messages/compiler-errors-2/compiler-error-c3519.md)  
   
- [コンパイラ エラー C3530](../Topic/Compiler%20Error%20C3530.md)  
+ [コンパイラ エラー C3530](../../error-messages/compiler-errors-2/compiler-error-c3530.md)  
   
  [コンパイラ エラー C3531](../../error-messages/compiler-errors-2/compiler-error-c3531.md)  
   
  [コンパイラ エラー C3532](../../error-messages/compiler-errors-2/compiler-error-c3532.md)  
   
- [コンパイラ エラー C3533](../Topic/Compiler%20Error%20C3533.md)  
-  
- [コンパイラ エラー C3534](../Topic/Compiler%20Error%20C3534.md)  
+ [コンパイラ エラー C3533](../../error-messages/compiler-errors-2/compiler-error-c3533.md)  
   
  [コンパイラ エラー C3535](../../error-messages/compiler-errors-2/compiler-error-c3535.md)  
   
@@ -58,13 +73,13 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3538](../../error-messages/compiler-errors-2/compiler-error-c3538.md)  
   
- [コンパイラ エラー C3539](../Topic/Compiler%20Error%20C3539.md)  
+ [コンパイラ エラー C3539](../../error-messages/compiler-errors-2/compiler-error-c3539.md)  
   
  [コンパイラ エラー C3540](../../error-messages/compiler-errors-2/compiler-error-c3540.md)  
   
  [コンパイラ エラー C3541](../../error-messages/compiler-errors-2/compiler-error-c3541.md)  
   
- [Compiler Error C3550](../Topic/Compiler%20Error%20C3550.md)  
+ [コンパイラ エラー C3550](../../error-messages/compiler-errors-2/compiler-error-c3550.md)  
   
  [コンパイラ エラー C3603](../../error-messages/compiler-errors-2/compiler-error-c3603.md)  
   
@@ -75,8 +90,6 @@ caps.handback.revision: 12
  [コンパイラ エラー C3611](../../error-messages/compiler-errors-2/compiler-error-c3611.md)  
   
  [コンパイラ エラー C3612](../../error-messages/compiler-errors-2/compiler-error-c3612.md)  
-  
- [コンパイラ エラー C3616](../Topic/Compiler%20Error%20C3616.md)  
   
  [コンパイラ エラー C3618](../../error-messages/compiler-errors-2/compiler-error-c3618.md)  
   
@@ -116,7 +129,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3642](../../error-messages/compiler-errors-2/compiler-error-c3642.md)  
   
- [コンパイラ エラー C3644](../Topic/Compiler%20Error%20C3644.md)  
+ [コンパイラ エラー C3644](../../error-messages/compiler-errors-2/compiler-error-c3644.md)  
   
  [コンパイラ エラー C3645](../../error-messages/compiler-errors-2/compiler-error-c3645.md)  
   
@@ -126,7 +139,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3650](../../error-messages/compiler-errors-2/compiler-error-c3650.md)  
   
- [コンパイラ エラー C3651](../Topic/Compiler%20Error%20C3651.md)  
+ [コンパイラ エラー C3651](../../error-messages/compiler-errors-2/compiler-error-c3651.md)  
   
  [コンパイラ エラー C3652](../../error-messages/compiler-errors-2/compiler-error-c3652.md)  
   
@@ -136,21 +149,19 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3655](../../error-messages/compiler-errors-2/compiler-error-c3655.md)  
   
- [コンパイラ エラー C3656](../Topic/Compiler%20Error%20C3656.md)  
+ [コンパイラ エラー C3656](../../error-messages/compiler-errors-2/compiler-error-c3656.md)  
   
  [コンパイラ エラー C3657](../../error-messages/compiler-errors-2/compiler-error-c3657.md)  
   
- [コンパイラ エラー C3658](../Topic/Compiler%20Error%20C3658.md)  
-  
- [コンパイラ エラー C3661](../Topic/Compiler%20Error%20C3661.md)  
+ [コンパイラ エラー C3661](../../error-messages/compiler-errors-2/compiler-error-c3661.md)  
   
  [コンパイラ エラー C3662](../../error-messages/compiler-errors-2/compiler-error-c3662.md)  
   
  [コンパイラ エラー C3665](../../error-messages/compiler-errors-2/compiler-error-c3665.md)  
   
- [コンパイラ エラー C3666](../Topic/Compiler%20Error%20C3666.md)  
+ [コンパイラ エラー C3666](../../error-messages/compiler-errors-2/compiler-error-c3666.md)  
   
- [コンパイラ エラー C3668](../Topic/Compiler%20Error%20C3668.md)  
+ [コンパイラ エラー C3668](../../error-messages/compiler-errors-2/compiler-error-c3668.md)  
   
  [コンパイラ エラー C3669](../../error-messages/compiler-errors-2/compiler-error-c3669.md)  
   
@@ -178,7 +189,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3704](../../error-messages/compiler-errors-2/compiler-error-c3704.md)  
   
- [コンパイラ エラー C3705](../Topic/Compiler%20Error%20C3705.md)  
+ [コンパイラ エラー C3705](../../error-messages/compiler-errors-2/compiler-error-c3705.md)  
   
  [コンパイラ エラー C3706](../../error-messages/compiler-errors-2/compiler-error-c3706.md)  
   
@@ -186,7 +197,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3708](../../error-messages/compiler-errors-2/compiler-error-c3708.md)  
   
- [コンパイラ エラー C3709](../Topic/Compiler%20Error%20C3709.md)  
+ [コンパイラ エラー C3709](../../error-messages/compiler-errors-2/compiler-error-c3709.md)  
   
  [コンパイラ エラー C3710](../../error-messages/compiler-errors-2/compiler-error-c3710.md)  
   
@@ -196,11 +207,11 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3713](../../error-messages/compiler-errors-2/compiler-error-c3713.md)  
   
- [コンパイラ エラー C3714](../Topic/Compiler%20Error%20C3714.md)  
+ [コンパイラ エラー C3714](../../error-messages/compiler-errors-2/compiler-error-c3714.md)  
   
- [コンパイラ エラー C3715](../Topic/Compiler%20Error%20C3715.md)  
+ [コンパイラ エラー C3715](../../error-messages/compiler-errors-2/compiler-error-c3715.md)  
   
- [コンパイラ エラー C3717](../Topic/Compiler%20Error%20C3717.md)  
+ [コンパイラ エラー C3717](../../error-messages/compiler-errors-2/compiler-error-c3717.md)  
   
  [コンパイラ エラー C3718](../../error-messages/compiler-errors-2/compiler-error-c3718.md)  
   
@@ -216,9 +227,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3727](../../error-messages/compiler-errors-2/compiler-error-c3727.md)  
   
- [コンパイラ エラー C3728](../Topic/Compiler%20Error%20C3728.md)  
-  
- [コンパイラ エラー C3730](../Topic/Compiler%20Error%20C3730.md)  
+ [コンパイラ エラー C3728](../../error-messages/compiler-errors-2/compiler-error-c3728.md)  
   
  [コンパイラ エラー C3731](../../error-messages/compiler-errors-2/compiler-error-c3731.md)  
   
@@ -226,7 +235,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3733](../../error-messages/compiler-errors-2/compiler-error-c3733.md)  
   
- [コンパイラ エラー C3734](../Topic/Compiler%20Error%20C3734.md)  
+ [コンパイラ エラー C3734](../../error-messages/compiler-errors-2/compiler-error-c3734.md)  
   
  [コンパイラ エラー C3736](../../error-messages/compiler-errors-2/compiler-error-c3736.md)  
   
@@ -240,7 +249,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3741](../../error-messages/compiler-errors-2/compiler-error-c3741.md)  
   
- [コンパイラ エラー C3743](../Topic/Compiler%20Error%20C3743.md)  
+ [コンパイラ エラー C3743](../../error-messages/compiler-errors-2/compiler-error-c3743.md)  
   
  [コンパイラ エラー C3744](../../error-messages/compiler-errors-2/compiler-error-c3744.md)  
   
@@ -272,7 +281,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3766](../../error-messages/compiler-errors-2/compiler-error-c3766.md)  
   
- [コンパイラ エラー C3767](../Topic/Compiler%20Error%20C3767.md)  
+ [コンパイラ エラー C3767](../../error-messages/compiler-errors-2/compiler-error-c3767.md)  
   
  [コンパイラ エラー C3768](../../error-messages/compiler-errors-2/compiler-error-c3768.md)  
   
@@ -286,27 +295,21 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3800](../../error-messages/compiler-errors-2/compiler-error-c3800.md)  
   
- [コンパイラ エラー C3802](../Topic/Compiler%20Error%20C3802.md)  
-  
  [コンパイラ エラー C3803](../../error-messages/compiler-errors-2/compiler-error-c3803.md)  
   
  [コンパイラ エラー C3804](../../error-messages/compiler-errors-2/compiler-error-c3804.md)  
   
  [コンパイラ エラー C3805](../../error-messages/compiler-errors-2/compiler-error-c3805.md)  
   
- [コンパイラ エラー C3807](../Topic/Compiler%20Error%20C3807.md)  
+ [コンパイラ エラー C3807](../../error-messages/compiler-errors-2/compiler-error-c3807.md)  
   
  [コンパイラ エラー C3808](../../error-messages/compiler-errors-2/compiler-error-c3808.md)  
   
- [コンパイラ エラー C3809](../Topic/Compiler%20Error%20C3809.md)  
+ [コンパイラ エラー C3809](../../error-messages/compiler-errors-2/compiler-error-c3809.md)  
   
- [コンパイラ エラー C3811](../Topic/Compiler%20Error%20C3811.md)  
-  
- [コンパイラ エラー C3812](../Topic/Compiler%20Error%20C3812.md)  
+ [コンパイラ エラー C3812](../../error-messages/compiler-errors-2/compiler-error-c3812.md)  
   
  [コンパイラ エラー C3813](../../error-messages/compiler-errors-2/compiler-error-c3813.md)  
-  
- [コンパイラ エラー C3814](../Topic/Compiler%20Error%20C3814.md)  
   
  [コンパイラ エラー C3815](../../error-messages/compiler-errors-2/compiler-error-c3815.md)  
   
@@ -314,25 +317,17 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3817](../../error-messages/compiler-errors-2/compiler-error-c3817.md)  
   
- [コンパイラ エラー C3818](../Topic/Compiler%20Error%20C3818.md)  
-  
- [コンパイラ エラー C3819](../Topic/Compiler%20Error%20C3819.md)  
+ [コンパイラ エラー C3818](../../error-messages/compiler-errors-2/compiler-error-c3818.md)  
   
  [コンパイラ エラー C3821](../../error-messages/compiler-errors-2/compiler-error-c3821.md)  
-  
- [コンパイラ エラー C3822](../Topic/Compiler%20Error%20C3822.md)  
-  
- [コンパイラ エラー C3823](../Topic/Compiler%20Error%20C3823.md)  
   
  [コンパイラ エラー C3824](../../error-messages/compiler-errors-2/compiler-error-c3824.md)  
   
  [コンパイラ エラー C3825](../../error-messages/compiler-errors-2/compiler-error-c3825.md)  
   
- [コンパイラ エラー C3826](../Topic/Compiler%20Error%20C3826.md)  
-  
  [コンパイラ エラー C3828](../../error-messages/compiler-errors-2/compiler-error-c3828.md)  
   
- [コンパイラ エラー C3830](../Topic/Compiler%20Error%20C3830.md)  
+ [コンパイラ エラー C3830](../../error-messages/compiler-errors-2/compiler-error-c3830.md)  
   
  [コンパイラ エラー C3831](../../error-messages/compiler-errors-2/compiler-error-c3831.md)  
   
@@ -346,9 +341,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3838](../../error-messages/compiler-errors-2/compiler-error-c3838.md)  
   
- [コンパイラ エラー C3839](../Topic/Compiler%20Error%20C3839.md)  
-  
- [コンパイラ エラー C3840](../Topic/Compiler%20Error%20C3840.md)  
+ [コンパイラ エラー C3839](../../error-messages/compiler-errors-2/compiler-error-c3839.md)  
   
  [コンパイラ エラー C3842](../../error-messages/compiler-errors-2/compiler-error-c3842.md)  
   
@@ -362,7 +355,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3851](../../error-messages/compiler-errors-2/compiler-error-c3851.md)  
   
- [コンパイラ エラー C3852](../Topic/Compiler%20Error%20C3852.md)  
+ [コンパイラ エラー C3852](../../error-messages/compiler-errors-2/compiler-error-c3852.md)  
   
  [コンパイラ エラー C3853](../../error-messages/compiler-errors-2/compiler-error-c3853.md)  
   
@@ -372,11 +365,11 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3856](../../error-messages/compiler-errors-2/compiler-error-c3856.md)  
   
- [コンパイラ エラー C3857](../Topic/Compiler%20Error%20C3857.md)  
+ [コンパイラ エラー C3857](../../error-messages/compiler-errors-2/compiler-error-c3857.md)  
   
  [コンパイラ エラー C3858](../../error-messages/compiler-errors-2/compiler-error-c3858.md)  
   
- [コンパイラ エラー C3859](../Topic/Compiler%20Error%20C3859.md)  
+ [コンパイラ エラー C3859](../../error-messages/compiler-errors-2/compiler-error-c3859.md)  
   
  [コンパイラ エラー C3860](../../error-messages/compiler-errors-2/compiler-error-c3860.md)  
   
@@ -386,7 +379,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3865](../../error-messages/compiler-errors-2/compiler-error-c3865.md)  
   
- [コンパイラ エラー C3866](../Topic/Compiler%20Error%20C3866.md)  
+ [コンパイラ エラー C3866](../../error-messages/compiler-errors-2/compiler-error-c3866.md)  
   
  [コンパイラ エラー C3867](../../error-messages/compiler-errors-2/compiler-error-c3867.md)  
   
@@ -398,7 +391,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3873](../../error-messages/compiler-errors-2/compiler-error-c3873.md)  
   
- [コンパイラ エラー C3874](../Topic/Compiler%20Error%20C3874.md)  
+ [コンパイラ エラー C3874](../../error-messages/compiler-errors-2/compiler-error-c3874.md)  
   
  [コンパイラ エラー C3880](../../error-messages/compiler-errors-2/compiler-error-c3880.md)  
   
@@ -446,7 +439,7 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3912](../../error-messages/compiler-errors-2/compiler-error-c3912.md)  
   
- [コンパイラ エラー C3913](../Topic/Compiler%20Error%20C3913.md)  
+ [コンパイラ エラー C3913](../../error-messages/compiler-errors-2/compiler-error-c3913.md)  
   
  [コンパイラ エラー C3914](../../error-messages/compiler-errors-2/compiler-error-c3914.md)  
   
@@ -460,8 +453,5 @@ caps.handback.revision: 12
   
  [コンパイラ エラー C3920](../../error-messages/compiler-errors-2/compiler-error-c3920.md)  
   
- [コンパイラ エラー C3921](../Topic/Compiler%20Error%20C3921.md)  
-  
  [コンパイラ エラー C3923](../../error-messages/compiler-errors-2/compiler-error-c3923.md)  
-  
- [コンパイラ エラー C3996](../Topic/Compiler%20Error%20C3996.md)
+

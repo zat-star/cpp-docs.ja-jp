@@ -1,40 +1,57 @@
 ---
-title: "コンパイラ エラー C2143 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2143"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2143"
+title: "コンパイラ エラー C2143 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2143
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2143
 ms.assetid: 1d8d1456-e031-4965-9240-09a6e33ba81c
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# コンパイラ エラー C2143
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: faa9361da0091ec86628af19a03eadb133ea43cc
+ms.lasthandoff: 02/24/2017
 
-構文エラー : 'token1' が 'token2' の前にありません。  
+---
+# <a name="compiler-error-c2143"></a>コンパイラ エラー C2143
+構文エラー: 'token2' の前に ' token1' がありません  
   
- 予測していたトークン \(つまり、空白以外の言語要素\) ではないトークンが検出されました。  
+ コンパイラでは、トークン (空白以外の言語要素) を推測され、代わりにトークンが検出されました。  
   
- このエラーの詳細については、"関数 try ブロックを使用する際に発生すると、参照してください [サポート技術情報の文書 241706](http://support.microsoft.com/kb/241706)。  
+ このエラーについては関数 try ブロックを使用している場合を参照してください[サポート技術情報記事 241706](http://support.microsoft.com/kb/241706)します。  
   
- 「[C\+\+ Language Reference](../../cpp/cpp-language-reference.md)」を参照してコードが構文的に正しいかどうかを確認してください。  このエラーは発生した場所よりも後の行で生成されることがあるため、エラー発生行から何行か上のコードも調べてください。  
+ チェック、 [C++ 言語リファレンス](../../cpp/cpp-language-reference.md)コードが正しい構文を確認します。 コンパイラは、問題が発生する行を検出した後、このエラーをレポート可能性があります、するため、エラーの前にいくつかの行のコードを確認してください。  
   
- C2143 エラーは別の状況でも発生します。  
+ C2143 は、さまざまな状況で発生することができます。  
   
- これは、この例に示すように、名前 \(`::`、`->`と `.`\) を修飾する演算子が `template`キーワードを指定する必要があるときに発生する:  
+ 名前に限定できる演算子が発生することができます (`::`、 `->`、および`.`) キーワードを使用して実行する必要があります`template`この例のように。  
   
 ```cpp  
 class MyClass  
@@ -47,7 +64,7 @@ class MyClass
   
 ```  
   
- `Ty::PutFuncType` がテンプレートではない場合既定で、C\+\+ がある、; したがって、次の `<` は不等号として解釈されます。正しく山かっこを解析できるように `PutFuncType` がテンプレートであることをコンパイラに明示的に指示する必要があります。  このエラーを解決するには、次に示すように依存する型の名前の `template` キーワードを使用する:  
+ C++ では既定では、想定される`Ty::PutFuncType`; テンプレートではありません、次にそのため、`<`は小として解釈されます-不等号します。  必要がありますコンパイラに通知する明示的にいる`PutFuncType`テンプレートは、山かっこでは正しく解析できるようにします。 このエラーを修正するには、`template`依存する型の名前を次に示すように、キーワード。  
   
 ```cpp  
 class MyClass  
@@ -60,7 +77,7 @@ class MyClass
   
 ```  
   
- C2143 は **\/clr** が使用され、`using` のディレクティブに構文エラーがあるときに発生する:  
+ C2143 エラーが発生する可能性がときに**/clr**を使用し、`using`ディレクティブは、構文エラー。  
   
 ```cpp  
 // C2143a.cpp  
@@ -69,7 +86,7 @@ using namespace System.Reflection;   // C2143
 using namespace System::Reflection;  
 ```  
   
- また、**\/clr**を使用したりせずに CLR 構文を使用してソース ファイルをコンパイルするときに発生する:  
+ 使用せず、CLR の構文を使用してソース コード ファイルをコンパイルするときにも発生**/clr**:  
   
 ```cpp  
 // C2143b.cpp  
@@ -83,7 +100,7 @@ int main() {
 }  
 ```  
   
- `if` のステートメントの直後の空白以外の文字は左かっこである必要があります。  それ以外の場合は、コンパイラで翻訳できません。  
+ これに続く最初の空白以外の文字、`if`ステートメントは、左かっこをする必要があります。 コンパイラは、その他を変換できません。  
   
 ```cpp  
 // C2143c.cpp  
@@ -98,9 +115,9 @@ int main() {
 }  
 ```  
   
- C2143 は \(}\)、右かっこ、またはセミコロンがエラーが 1 行の一つで、上で検出された行でないと発生する:  
+ C2143 右中かっこ、かっこ、またはセミコロンが、エラーが検出された行に不足している場合に発生したり、行の&1; つ上の真上します。  
   
-```caml  
+```cpp  
 // C2143d.cpp  
 // compile with: /c  
 class X {  
@@ -109,7 +126,7 @@ class X {
 } x;  
 ```  
   
- またはクラス宣言に無効なタグがある場合:  
+ または、クラス宣言に無効なタグが存在する場合。  
   
 ```cpp  
 // C2143e.cpp  
@@ -121,7 +138,7 @@ class + {};   // C2143 + is an invalid tag name
 class ValidName {};   // OK  
 ```  
   
- またはラベルがステートメントから切断されている場合。  ラベルだけを置く必要がある場合 \(複合ステートメントの最後にラベルを置く場合など\) は、null ステートメントを使ってください。  
+ または、ラベルがステートメントにアタッチされていない場合。 場合単独でラベルを配置する必要がありますなどの複合ステートメントの最後にアタッチして null ステートメントにします。  
   
 ```cpp  
 // C2143f.cpp  
@@ -135,7 +152,7 @@ void func1() {
 }  
 ```  
   
- エラーは、不適切な呼び出しは標準 C\+\+ ライブラリの型に対して行われた場合に発生することがあります:  
+ エラーは、C++ 標準ライブラリ内の型を修飾されていない呼び出しが行われたときに発生します。  
   
 ```cpp  
 // C2143g.cpp  
@@ -145,7 +162,7 @@ static vector<char> bad;   // C2143
 static std::vector<char> good;   // OK  
 ```  
   
- または `typename` missing キーワードがあります。:  
+ 指定または`typename`キーワード。  
   
 ```cpp  
 // C2143h.cpp  
@@ -164,7 +181,7 @@ X<T>::Y X<T>::memFunc() {   // C2143
 }  
 ```  
   
- または明示的なインスタンス化を定義しようとする:  
+ 明示的なインスタンス化を定義しようとする場合、または。  
   
 ```cpp  
 // C2143i.cpp  
@@ -177,9 +194,9 @@ template void PrintType(float i, float j){}   // C2143
 template void PrintType(float i, float j);   // OK  
 ```  
   
- C プログラムでは、変数は関数の冒頭で宣言する必要があります。関数で宣言以外の命令を実行した後に、変数を宣言することはできません。  
+ C プログラムでは、関数の先頭にある変数を宣言する必要があり、関数が非宣言命令を実行した後にこれらを宣言することはできません。  
   
-```c  
+```C  
 // C2143j.c  
 int main()   
 {  
@@ -187,5 +204,5 @@ int main()
     i++;  
     int j = 0; // C2143  
 }  
-  
-```
+```  
+

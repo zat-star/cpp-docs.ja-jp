@@ -1,28 +1,44 @@
 ---
-title: "コンパイラ エラーs C2700 Through C2799 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C2700 C2799 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
 ms.assetid: 6ee257bb-94bc-42b9-af2c-3c73926afba4
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# コンパイラ エラーs C2700 Through C2799
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
+ms.openlocfilehash: fd86815cb1f3ef215805bdb96449cb8b7a9b322a
+ms.lasthandoff: 02/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。  ここから情報にアクセスできます。または、Visual Studio の**出力**ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c2700-through-c2799"></a>コンパイラ エラー C2700 C2799 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
- [コンパイラ エラー C2701](../Topic/Compiler%20Error%20C2701.md)  
+ [コンパイラ エラー C2701](../../error-messages/compiler-errors-2/compiler-error-c2701.md)  
   
  [コンパイラ エラー C2702](../../error-messages/compiler-errors-2/compiler-error-c2702.md)  
   
@@ -40,37 +56,31 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2711](../../error-messages/compiler-errors-2/compiler-error-c2711.md)  
   
- [コンパイラ エラー C2712](../Topic/Compiler%20Error%20C2712.md)  
+ [コンパイラ エラー C2712](../../error-messages/compiler-errors-2/compiler-error-c2712.md)  
   
  [コンパイラ エラー C2713](../../error-messages/compiler-errors-2/compiler-error-c2713.md)  
   
- [コンパイラ エラー C2714](../Topic/Compiler%20Error%20C2714.md)  
+ [コンパイラ エラー C2714](../../error-messages/compiler-errors-2/compiler-error-c2714.md)  
   
  [コンパイラ エラー C2715](../../error-messages/compiler-errors-2/compiler-error-c2715.md)  
   
- [コンパイラ エラー C2716](../Topic/Compiler%20Error%20C2716.md)  
-  
- [コンパイラ エラー C2717](../Topic/Compiler%20Error%20C2717.md)  
-  
  [コンパイラ エラー C2718](../../error-messages/compiler-errors-2/compiler-error-c2718.md)  
   
- [コンパイラ エラー C2719](../Topic/Compiler%20Error%20C2719.md)  
+ [コンパイラ エラー C2719](../../error-messages/compiler-errors-2/compiler-error-c2719.md)  
   
  [コンパイラ エラー C2720](../../error-messages/compiler-errors-2/compiler-error-c2720.md)  
   
  [コンパイラ エラー C2721](../../error-messages/compiler-errors-2/compiler-error-c2721.md)  
   
- [コンパイラ エラー C2722](../Topic/Compiler%20Error%20C2722.md)  
+ [コンパイラ エラー C2722](../../error-messages/compiler-errors-2/compiler-error-c2722.md)  
   
  [コンパイラ エラー C2723](../../error-messages/compiler-errors-2/compiler-error-c2723.md)  
   
- [コンパイラ エラー C2724](../Topic/Compiler%20Error%20C2724.md)  
+ [コンパイラ エラー C2724](../../error-messages/compiler-errors-2/compiler-error-c2724.md)  
   
- [コンパイラ エラー C2725](../Topic/Compiler%20Error%20C2725.md)  
+ [コンパイラ エラー C2725](../../error-messages/compiler-errors-2/compiler-error-c2725.md)  
   
  [コンパイラ エラー C2726](../../error-messages/compiler-errors-2/compiler-error-c2726.md)  
-  
- [コンパイラ エラー C2727](../Topic/Compiler%20Error%20C2727.md)  
   
  [コンパイラ エラー C2728](../../error-messages/compiler-errors-2/compiler-error-c2728.md)  
   
@@ -80,7 +90,7 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2733](../../error-messages/compiler-errors-2/compiler-error-c2733.md)  
   
- [コンパイラ エラー C2734](../Topic/Compiler%20Error%20C2734.md)  
+ [コンパイラ エラー C2734](../../error-messages/compiler-errors-2/compiler-error-c2734.md)  
   
  [コンパイラ エラー C2735](../../error-messages/compiler-errors-2/compiler-error-c2735.md)  
   
@@ -96,13 +106,13 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2748](../../error-messages/compiler-errors-2/compiler-error-c2748.md)  
   
- [コンパイラ エラー C2749](../Topic/Compiler%20Error%20C2749.md)  
+ [コンパイラ エラー C2749](../../error-messages/compiler-errors-2/compiler-error-c2749.md)  
   
  [コンパイラ エラー C2750](../../error-messages/compiler-errors-2/compiler-error-c2750.md)  
   
  [コンパイラ エラー C2751](../../error-messages/compiler-errors-2/compiler-error-c2751.md)  
   
- [コンパイラ エラー C2752](../Topic/Compiler%20Error%20C2752.md)  
+ [コンパイラ エラー C2752](../../error-messages/compiler-errors-2/compiler-error-c2752.md)  
   
  [コンパイラ エラー C2753](../../error-messages/compiler-errors-2/compiler-error-c2753.md)  
   
@@ -124,17 +134,17 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2764](../../error-messages/compiler-errors-2/compiler-error-c2764.md)  
   
- [コンパイラ エラー C2765](../Topic/Compiler%20Error%20C2765.md)  
+ [コンパイラ エラー C2765](../../error-messages/compiler-errors-2/compiler-error-c2765.md)  
   
- [コンパイラ エラー C2766](../Topic/Compiler%20Error%20C2766.md)  
+ [コンパイラ エラー C2766](../../error-messages/compiler-errors-2/compiler-error-c2766.md)  
   
  [コンパイラ エラー C2767](../../error-messages/compiler-errors-2/compiler-error-c2767.md)  
   
  [コンパイラ エラー C2768](../../error-messages/compiler-errors-2/compiler-error-c2768.md)  
   
- [コンパイラ エラー C2770](../Topic/Compiler%20Error%20C2770.md)  
+ [コンパイラ エラー C2770](../../error-messages/compiler-errors-2/compiler-error-c2770.md)  
   
- [コンパイラ エラー C2773](../Topic/Compiler%20Error%20C2773.md)  
+ [コンパイラ エラー C2773](../../error-messages/compiler-errors-2/compiler-error-c2773.md)  
   
  [コンパイラ エラー C2774](../../error-messages/compiler-errors-2/compiler-error-c2774.md)  
   
@@ -146,7 +156,7 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2778](../../error-messages/compiler-errors-2/compiler-error-c2778.md)  
   
- [コンパイラ エラー C2779](../Topic/Compiler%20Error%20C2779.md)  
+ [コンパイラ エラー C2779](../../error-messages/compiler-errors-2/compiler-error-c2779.md)  
   
  [コンパイラ エラー C2780](../../error-messages/compiler-errors-2/compiler-error-c2780.md)  
   
@@ -154,7 +164,7 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2782](../../error-messages/compiler-errors-2/compiler-error-c2782.md)  
   
- [コンパイラ エラー C2783](../Topic/Compiler%20Error%20C2783.md)  
+ [コンパイラ エラー C2783](../../error-messages/compiler-errors-2/compiler-error-c2783.md)  
   
  [コンパイラ エラー C2784](../../error-messages/compiler-errors-2/compiler-error-c2784.md)  
   
@@ -162,9 +172,9 @@ caps.handback.revision: 13
   
  [コンパイラ エラー C2786](../../error-messages/compiler-errors-2/compiler-error-c2786.md)  
   
- [コンパイラ エラー C2787](../Topic/Compiler%20Error%20C2787.md)  
+ [コンパイラ エラー C2787](../../error-messages/compiler-errors-2/compiler-error-c2787.md)  
   
- [コンパイラ エラー C2788](../Topic/Compiler%20Error%20C2788.md)  
+ [コンパイラ エラー C2788](../../error-messages/compiler-errors-2/compiler-error-c2788.md)  
   
  [コンパイラ エラー C2790](../../error-messages/compiler-errors-2/compiler-error-c2790.md)  
   

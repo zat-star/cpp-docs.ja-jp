@@ -1,38 +1,52 @@
 ---
-title: "コンパイラ エラー C3917 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3917"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3917"
+title: "コンパイラ エラー C3917 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3917
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3917
 ms.assetid: a24cd0c9-262f-46e5-9488-1c01f945933d
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3917
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: d7ce6fbec9278893fd4f3f6b75c74ef91718646b
+ms.lasthandoff: 02/24/2017
 
-'プロパティ': 古い 'コンストラクト' 宣言のスタイルです  
+---
+# <a name="compiler-error-c3917"></a>コンパイラ エラー C3917
+'property': コンス トラクターの宣言のスタイルの廃止  
   
- 以前のバージョンの構文を使用するプロパティまたはイベント定義です。  
+プロパティまたはイベントの定義は、以前のバージョンの構文を使用します。  
   
- 以前のバージョンの構文を使用する場合は、[\/clr:oldSyntax](../../build/reference/clr-common-language-runtime-compilation.md) を使用します。  
+詳細については、次を参照してください。[プロパティ](../../windows/property-cpp-component-extensions.md)します。  
   
- 詳細については、「[プロパティ](../../windows/property-cpp-component-extensions.md)」を参照してください。  
-  
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // C3917.cpp  

@@ -1,34 +1,51 @@
 ---
-title: "コンパイラ エラー C3846 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3846"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3846"
+title: "コンパイラ エラー C3846 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3846
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3846
 ms.assetid: c470f8a5-106b-4efb-b8dc-e1319e04130f
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3846
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: 04807182611beed23bf388d1f42a4fba0a3acea7
+ms.lasthandoff: 02/24/2017
 
-'symbol' : 'assembly2' からシンボルをインポートできません : 'symbol' は既に別のアセンブリ 'assembly1' からインポートされています。  
+---
+# <a name="compiler-error-c3846"></a>コンパイラ エラー C3846
+'symbol': 'assembly2' を使用してシンボルをインポートすることはできません別のアセンブリ 'assembly1' から 'symbol' は既にインポートされて、。  
   
- シンボルは既に参照アセンブリからインポートされているため、参照アセンブリからはインポートできません。  
+ 以前に参照されたアセンブリからインポートされたために、参照されたアセンブリからシンボルをインポートできませんでした。  
   
- 次の例では警告 C3846 が生成されます。  
+## <a name="example"></a>例
+次の例では、c3846 エラーが生成されます。  
   
 ```  
 // C3846a.cpp  
@@ -38,7 +55,7 @@ public ref struct G
 };  
 ```  
   
- 次に、以下をコンパイルします。  
+ 作成し、これをコンパイルします。  
   
 ```  
 // C3846b.cpp  
@@ -50,31 +67,4 @@ int main()
 {  
 }  
 ```  
-  
- 次の例では警告 C3846 が生成されます。  
-  
-```  
-// C3846c.cpp  
-// compile with: /LD /clr:oldSyntax  
-#using <mscorlib.dll>  
-using namespace System;  
-  
-public __gc struct G  
-{  
-};  
-```  
-  
- 次に、以下をコンパイルします。  
-  
-```  
-// C3846d.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-using namespace System;  
-#using "c3846c.dll"  
-#using "c3846c.obj"   // C3846  
-  
-int main()  
-{  
-}  
-```
+

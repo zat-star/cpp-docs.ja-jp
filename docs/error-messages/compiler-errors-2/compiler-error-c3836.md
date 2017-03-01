@@ -1,34 +1,51 @@
 ---
-title: "コンパイラ エラー C3836 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3836"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3836"
+title: "コンパイラ エラー C3836 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3836
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3836
 ms.assetid: 254f851b-7b7d-4c34-a740-fcf72f6a636a
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3836
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
+ms.openlocfilehash: 0708b8c9bf59e1c2ea3751fbb91192d6b873d8ec
+ms.lasthandoff: 02/24/2017
 
-スタティック コンストラクターに、メンバー初期化子一覧を含めることはできません。  
+---
+# <a name="compiler-error-c3836"></a>コンパイラ エラー C3836
+静的コンス トラクターは、メンバー初期化子リストを含めることできません。  
   
- マネージ クラスには、メンバーの初期化リストを持つ静的コンストラクターを含めることはできません。  静的クラスのコンストラクターは、クラスの初期化を行うために共通言語ランタイムにより呼び出されて、静的データ メンバーを初期化します。  
+ マネージ クラスには、静的コンス トラクターを持つメンバー初期化リストを持つことはできません。 静的クラス コンス トラクターは、クラスの初期化、静的データ メンバーの初期化を行う共通言語ランタイムによって呼び出されます。  
   
- 次の例では警告 C3836 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、c3836 エラーが生成されます。  
   
 ```  
 // C3836a.cpp  
@@ -47,25 +64,4 @@ int main()
 {  
 }  
 ```  
-  
- 次の例では警告 C3836 が生成されます。  
-  
-```  
-// C3836b.cpp  
-// compile with: /clr:oldSyntax  
-#using <mscorlib.dll>  
-  
-__gc class M  
-{  
-   static int s_i;  
-  
-public:  
-   static M() :  s_i(1234)   // C3836, delete initializer to resolve  
-   {  
-   }  
-};  
-  
-int main()  
-{  
-}  
-```
+
