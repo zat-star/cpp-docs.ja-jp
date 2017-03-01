@@ -1,32 +1,48 @@
 ---
 title: "overflow_error クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::overflow_error"
-  - "std.overflow_error"
-  - "overflow_error"
-  - "stdexcept/std::overflow_error"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "overflow_error クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::overflow_error
+- std.overflow_error
+- overflow_error
+- stdexcept/std::overflow_error
+dev_langs:
+- C++
+helpviewer_keywords:
+- overflow_error class
 ms.assetid: bae7128d-e36b-4a45-84f1-2f89da441d20
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# overflow_error クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: cee19153e5110b82758c8e1d77be085accda568d
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="overflowerror-class"></a>overflow_error クラス
 このクラスは、算術オーバーフローを通知するためにスローされる例外すべてに対する基底クラスとして機能します。  
   
 ## <a name="syntax"></a>構文  
@@ -41,12 +57,12 @@ public:
 };  
 ```  
   
-## <a name="remarks"></a>解説  
- によって返される値 [何](../standard-library/exception-class1.md) のコピーである **メッセージ**`.`[データ](../standard-library/basic-string-class.md#basic_string__data)します。  
+## <a name="remarks"></a>コメント  
+ [what](../standard-library/exception-class.md) によって返される値は、**message**`.`[data](../standard-library/basic-string-class.md#basic_string__data) のコピーです。  
   
 ## <a name="example"></a>例  
   
-```  
+```cpp  
 // overflow_error.cpp  
 // compile with: /EHsc /GR  
 #include <bitset>  
@@ -75,12 +91,13 @@ Type class std::overflow_error
 *\  
 ```  
   
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \< stdexcept>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<stdexcept>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>参照  
- [runtime_error クラス](../Topic/runtime_error%20Class.md)   
+## <a name="see-also"></a>関連項目  
+ [runtime_error クラス](../standard-library/runtime-error-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
 

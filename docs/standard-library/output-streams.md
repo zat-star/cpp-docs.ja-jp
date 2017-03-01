@@ -1,47 +1,63 @@
 ---
-title: "出力ストリーム | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "出力ストリーム"
+title: "出力ストリーム |Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- output streams
 ms.assetid: b49410e3-5caa-4153-9d0d-c4266408dc83
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# 出力ストリーム
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 34a37749690fc0e42ba855640d0936fd8a25842f
+ms.lasthandoff: 02/24/2017
 
-出力ストリーム オブジェクトは、バイトのターゲットです。  3 種類の最も重要な出力ストリーム クラスは、`ostream``ofstream`と `ostringstream`です。  
+---
+# <a name="output-streams"></a>出力ストリーム
+出力ストリーム オブジェクトは、バイトのターゲットです。 3 つの最も重要な出力ストリーム クラスは `ostream`、`ofstream`、および `ostringstream` です。  
   
- `ostream` クラスは、派生クラス `basic_ostream`を通じて、定義済みのなストリーム オブジェクトをサポートする:  
+ `ostream` クラスは、派生クラス `basic_ostream` を通して、事前定義されたストリーム オブジェクトをサポートしています。  
   
--   `cout`の標準出力  
+-   `cout`標準出力  
   
--   限られたバッファリングの`cerr`の標準エラー  
+-   `cerr`制限バッファリングでの標準エラー  
   
--   `cerr` に、フル バッファリングと同様`clog`  
+-   `clog``cerr` に類似しているが、完全バッファリング  
   
- オブジェクトは `ostream`からあまり組み立てられません; 定義済みのオブジェクトは一般に使用されます。  場合によっては、プログラム起動後に定義済みのオブジェクトを再割り当てすることもできます。  バッファリングまたはいない操作用に構成できる `ostream` クラスは順次テキスト モードの出力に最も適しています。  基本クラス、`ios`のすべての機能は `ostream`に含まれています。  クラス `ostream`オブジェクトを作成する場合、コンストラクターへの `streambuf` オブジェクトを指定する必要があります。  
+ オブジェクトが `ostream` から構築されることはほとんどありません。一般的に事前定義オブジェクトが使用されます。 場合によっては、プログラムの起動後に事前定義オブジェクトを再割り当てすることができます。 `ostream` クラスは、バッファーあり、バッファーなしのいずれの操作にも構成できますが、連続したテキスト モードの出力に最適です。 基本クラスのすべての機能 `ios` は、`ostream` に含まれています。 `ostream` クラスのオブジェクトを構築する場合、コンストラクターへの `streambuf` オブジェクトを指定する必要があります。  
   
- `ofstream` クラスは、ディスク ファイルの出力をサポートします。  出力だけディスクが必要な場合は、クラス `ofstream`オブジェクトを構築します。  `ofstream` オブジェクトまたは `open` のメンバー関数を呼び出すと、そのオブジェクトの構築時 `ofstream` オブジェクトまたはテキスト モードがバイナリ データを受け入れるかどうかを指定できます。  さまざまな書式指定オプションとメンバー関数は `ofstream` にオブジェクトを適用し、基本クラス `ios` と `ostream` のすべての機能が含まれます。  
+ `ofstream` クラスは、ディスク ファイルの出力をサポートしています。 出力専用のディスクが必要な場合は、`ofstream` クラスのオブジェクトを構築します。 `ofstream` オブジェクトを構築する場合、またはオブジェクトの `open` メンバー関数を呼び出す場合、`ofstream` オブジェクトでバイナリまたはテキスト モードのデータを受け入れるかどうかを指定することができます。 多くの書式設定オプションとメンバー関数が `ofstream` オブジェクトに適用されており、基本クラス `ios` および `ostream` のすべての機能が含まれています。  
   
- コンストラクターにファイル名を指定した場合、そのファイルは自動的にオブジェクトを作成するときに表示されます。  それ以外の場合は、既定のコンストラクターを呼び出すと `open` メンバー関数を使用できます。  
+ コンストラクターでファイル名を指定すると、オブジェクトの構築時にそのファイルが自動的に開きます。 あるいは、既定のコンストラクターを起動した後に `open` メンバー関数を使用します。  
   
- ランタイム `sprintf_s`関数と同様に、`ostringstream` クラスは、メモリ内の文字列に出力をサポートします。  I\/O のストリームの書式を使用してメモリ内に文字列を作成するには、クラス `ostringstream`オブジェクトを構築します。  
+ ランタイム関数 `sprintf_s` と同様に、`ostringstream` クラスはメモリ内の文字列への出力をサポートしています。 入出力ストリームの書式設定を使用して、メモリ内の文字列を作成するには、`ostringstream` クラスのオブジェクトを構築します。  
   
-## このセクションの内容  
- [出力ストリーム オブジェクトのコンストラクト](../Topic/Constructing%20Output%20Stream%20Objects.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [出力ストリーム オブジェクトの構築](../standard-library/constructing-output-stream-objects.md)  
   
  [挿入演算子と制御形式の使用](../standard-library/using-insertion-operators-and-controlling-format.md)  
   
@@ -51,13 +67,13 @@ caps.handback.revision: 11
   
  [バイナリ出力ファイル](../standard-library/binary-output-files.md)  
   
- [独自クラスのための \<\< 演算子のオーバーロード](../Topic/Overloading%20the%20%3C%3C%20Operator%20for%20Your%20Own%20Classes.md)  
+ [独自クラスのための << 演算子のオーバーロード](../standard-library/overloading-the-output-operator-for-your-own-classes.md)  
   
  [引数を使用しない独自マニピュレーターの作成](../standard-library/writing-your-own-manipulators-without-arguments.md)  
   
-## 参照  
- [\<ostream\> Members](http://msdn.microsoft.com/ja-jp/a5afd034-0e3c-41ee-bbd7-468d9188da1d)   
- [ofstream](../Topic/ofstream.md)   
- [ostringstream](../Topic/ostringstream.md)   
- [basic\_ostream Members](http://msdn.microsoft.com/ja-jp/82e5cc91-7c0c-4950-a8ce-ac779cfbbd93)   
- [iostream プログラミング](../Topic/iostream%20Programming.md)
+## <a name="see-also"></a>関連項目 
+ [ofstream](../standard-library/basic-ofstream-class.md)   
+ [ostringstream](../standard-library/basic-ostringstream-class.md)   
+ [iostream プログラミング](../standard-library/iostream-programming.md)
+
+

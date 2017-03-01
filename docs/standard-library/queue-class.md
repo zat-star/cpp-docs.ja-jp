@@ -1,32 +1,48 @@
 ---
 title: "queue クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.queue"
-  - "std::queue"
-  - "queue"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "queue クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std.queue
+- std::queue
+- queue
+dev_langs:
+- C++
+helpviewer_keywords:
+- queue class
 ms.assetid: 28c20ab0-3a72-4185-9e0f-5a44eea0e204
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# queue クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 441f493d8ada3ef232f60d917dc3f95812ba9114
+ms.openlocfilehash: 0db56597dd5d5ce8b68a45a5b53ce1af370134ee
+ms.lasthandoff: 02/24/2017
 
-フロント エンドとバックエンドの要素へのアクセスを制限することによって基になるコンテナー型の機能の制限を提供するテンプレートのコンテナー アダプター クラス。 要素したりすることで追加前面から、削除、キューの先頭または末尾に要素を検査できます。  
+---
+# <a name="queue-class"></a>queue クラス
+基になるコンテナー型のいくつかについて、一番前と一番後ろの要素へのアクセスを制限することで機能を限定するテンプレート コンテナー アダプター クラスです。 要素は一番後ろに追加したり一番前から削除したりすることができ、キューのどちらの端でも要素を検査することができます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,37 +53,37 @@ class queue
   
 #### <a name="parameters"></a>パラメーター  
  *Type*  
- キューに格納される要素のデータ型  
+ キューに格納される要素のデータ型。  
   
  `Container`  
- キューを実装するために使用する基になるコンテナーの型。  
+ キューの実装に使用する基になるコンテナーの型。  
   
 ## <a name="remarks"></a>コメント  
- クラスの要素 **型** 最初のテンプレートで規定されている、キュー オブジェクトのパラメーターが指定と同じ意味 [value_type](#queue__value_type) 基になるコンテナー クラス内の要素の型を一致させる必要があります **コンテナー** 、2 番目のテンプレート パラメーターで規定します。  **型** その型のオブジェクトをコピーして、その型の変数に値を割り当てることができるように、割り当てることがあります。  
+ queue オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#queue__value_type) と同義で、2 番目のテンプレート パラメーターで指定する、基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 対象の型のオブジェクトをコピーし、対象の型の変数に値を割り当てられるように、**Type** は割り当て可能でなければいけません。  
   
- キュー用の適切な基になるコンテナー クラスを含める [deque](../standard-library/deque-class.md) と [リスト](../standard-library/list-class.md), 、またはその他のシーケンス コンテナーの操作をサポートする `front`, 、**戻る**, 、`push_back`, と `pop_front`です。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
+ キューに適した基になるコンテナー クラスには、[deque](../standard-library/deque-class.md) および [list](../standard-library/list-class.md)、または `front`、**back**`push_back`、`pop_front` の操作をサポートするその他のすべてのシーケンス コンテナーが含まれます。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
   
- キュー オブジェクトは比較可能な場合に等しいかどうかと場合にのみ、クラスの要素 **型** は等しいかどうかを比較、および要素が小さい-場合にのみと同等の場合よりもクラスの要素 **型** が小さい-より相当します。  
+ queue オブジェクトは、クラス **Type** の要素が等価比較できる場合にのみ等価比較でき、クラス **Type** の要素が小なり比較できる場合にのみ小なり比較できます。  
   
- STL によって定義されたコンテナー アダプターの 3 つの種類があります。 スタック、キュー、および priority_queue です。 それぞれに、標準的なデータ構造を正確に制御されたインターフェイスを提供するいくつかの基になるコンテナー クラスの機能が制限されます。  
+ C++ 標準ライブラリで定義されたコンテナー アダプターには、stack、queue、および priority_queue の&3; つの種類があります。 それぞれが、基になるコンテナー クラスの機能を制限して、標準的なデータ構造に対して精密に制御されたインターフェイスを提供します。  
   
--    [Stack クラス](../standard-library/stack-class.md) 後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
+-   [stack クラス](../standard-library/stack-class.md) は、後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
   
--   Queue クラスには、先入れ先出し (FIFO) のデータ構造がサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 この方法でフロント エンドとバックエンドの要素のみへのアクセスに制限は、キューのクラスを使用する理由です。  
+-   queue クラスは、先入れ先出し (FIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 このように一番前と一番後ろの要素にのみアクセスできる制限があることが、queue クラスを使用する理由です。  
   
--    [Priority_queue クラス](../standard-library/priority-queue-class.md) が常に最大の要素上の位置にその要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
+-   [priority_queue クラス](../standard-library/priority-queue-class.md)は、最も大きな要素が常に先頭の位置になるように、その要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[キュー](#queue__queue)|空であるか、基本のコンテナー オブジェクトのコピーである `queue` を構築します。|  
+|[queue](#queue__queue)|空であるか、基本のコンテナー オブジェクトのコピーである `queue` を構築します。|  
   
-### <a name="typedefs"></a>Typedef  
+### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#queue__container_type)|調整する基本のコンテナーを提供する型、 `queue`です。|  
+|[container_type](#queue__container_type)|`queue` によって適合されるように、基本のコンテナーを提供する型。|  
 |[size_type](#queue__size_type)|`queue` 内の要素の数を表すことができる符号なし整数型。|  
 |[value_type](#queue__value_type)|`queue` 内に要素として格納されるオブジェクトの種類を表す型。|  
   
@@ -75,20 +91,20 @@ class queue
   
 |||  
 |-|-|  
-|[戻る](#queue__back)|参照が最後に、最も最近追加の背面にある要素を返します。、 `queue`です。|  
-|[空](#queue__empty)|`queue` が空かどうかをテストします。|  
-|[前面](#queue__front)|先頭にある最初の要素への参照を返す、 `queue`です。|  
-|[pop](#queue__pop)|先頭から要素を削除、 `queue`です。|  
-|[プッシュ](#queue__push)|背面に要素を追加、 `queue`です。|  
-|[サイズ](#queue__size)|`queue` 内の要素数を返します。|  
+|[back](#queue__back)|`queue` の後ろに最も直近に追加された要素への参照を返します。|  
+|[empty](#queue__empty)|`queue` が空かどうかをテストします。|  
+|[front](#queue__front)|`queue` の一番前にある最初の要素への参照を返します。|  
+|[pop](#queue__pop)|`queue` の一番前から要素を削除します。|  
+|[push](#queue__push)|`queue` の後ろに要素を追加します。|  
+|[size](#queue__size)|`queue` 内の要素数を返します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** \< キュー>  
+ **ヘッダー:** \<queue>  
   
  **名前空間:** std  
   
-##  <a name="a-namequeuebacka-queueback"></a><a name="queue__back"></a>  queue::back  
- 参照が最後に、最も最近追加キューの末尾の要素を返します。  
+##  <a name="a-namequeuebacka--queueback"></a><a name="queue__back"></a>  queue::back  
+ キューの後ろに最も直近に追加された要素への参照を返します。  
   
 ```  
 reference back();
@@ -97,16 +113,16 @@ const_reference back() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- キューの最後の要素。 キューが空の場合、戻り値は未定義です。  
+ キューの最後の要素。 キューが空の場合、戻り値は定義されません。  
   
 ### <a name="remarks"></a>コメント  
- 場合の戻り値 **戻る** に割り当てられている、 `const_reference`, 、キュー オブジェクトは変更できません。 場合の戻り値 **戻る** に割り当てられている、 **参照**, 、キュー オブジェクトを変更できます。  
+ **back** の戻り値が `const_reference` に割り当てられている場合、queue オブジェクトは変更できません。 **back** の戻り値が **reference** に割り当てられている場合、queue オブジェクトを変更できます。  
   
- _SECURE_SCL 1 でコンパイル、空のキュー内の要素にアクセスしようとすると、ランタイム エラーが発生します。  詳細については、「 [Checked Iterators](../standard-library/checked-iterators.md) 」を参照してください。  
+ [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を 1 または 2 として定義してコンパイルすると、空のキュー内の要素にアクセスしようとした場合に実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_back.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -130,34 +146,34 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namequeuecontainertypea-queuecontainertype"></a><a name="queue__container_type"></a>  queue::container_type  
- 合わせて実行する基本のコンテナーを提供する型。  
+##  <a name="a-namequeuecontainertypea--queuecontainertype"></a><a name="queue__container_type"></a>  queue::container_type  
+ 適合される基本のコンテナーを提供する型。  
   
 ```  
 typedef Container container_type;  
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Container` のシノニムです。 2 つの STL シーケンス コンテナー クラス: リストのクラスと既定の deque クラス-キュー オブジェクトの基本のコンテナーとして使用するための要件を満たしています。 ユーザー定義型の要件を満たすこともできます。  
+ この型は、テンプレート パラメーター `Container` のシノニムです。 2 つの C++ 標準ライブラリ シーケンス コンテナー クラス (list クラスと既定の deque クラス) は、queue オブジェクトの基本のコンテナーとして使用する要件を満たしています。 要件を満たすユーザー定義型を使用することもできます。  
   
- 詳細については `Container`, の「解説」セクションを参照してください、 [queue クラス](../standard-library/queue-class.md) トピックです。  
+ `Container` の詳細については、[queue クラス](../standard-library/queue-class.md)のトピックのコメントのセクションをご覧ください。  
   
 ### <a name="example"></a>例  
-  例を参照してください [キュー](#queue__queue) を宣言および使用する方法の例については `container_type`です。  
+  `container_type` の宣言方法や使用方法の例については、[queue](#queue__queue) の例をご覧ください。  
   
-##  <a name="a-namequeueemptya-queueempty"></a><a name="queue__empty"></a>  queue::empty  
- キューが空かどうか。  
+##  <a name="a-namequeueemptya--queueempty"></a><a name="queue__empty"></a>  queue::empty  
+ キューが空かどうかをテストします。  
   
 ```  
 bool empty() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- **true** キューが空である場合 **false** キューが空でない場合。  
+ キューが空の場合は **true**、キューが空ではない場合は **false**。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_empty.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -189,8 +205,8 @@ The queue q1 is not empty.
 The queue q2 is empty.  
 ```  
   
-##  <a name="a-namequeuefronta-queuefront"></a><a name="queue__front"></a>  queue::front  
- キューの先頭にある最初の要素への参照を返します。  
+##  <a name="a-namequeuefronta--queuefront"></a><a name="queue__front"></a>  queue::front  
+ キューの一番前にある最初の要素への参照を返します。  
   
 ```  
 reference front();
@@ -199,18 +215,18 @@ const_reference front() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- キューの最初の要素。 キューが空の場合、戻り値は未定義です。  
+ キューの最初の要素。 キューが空の場合、戻り値は定義されません。  
   
 ### <a name="remarks"></a>コメント  
- 場合の戻り値 `front` に割り当てられている、 `const_reference`, 、キュー オブジェクトは変更できません。 場合の戻り値 `front` に割り当てられている、 **参照**, 、キュー オブジェクトを変更できます。  
+ `front` の戻り値が `const_reference` に割り当てられている場合、queue オブジェクトは変更できません。 `front` の戻り値が **reference** に割り当てられている場合、queue オブジェクトを変更できます。  
   
- メンバー関数を返します、 **参照** 被制御シーケンスの最初の要素を空にすることです。  
+ このメンバー関数は、被制御シーケンスの最初の要素への**参照**を返します。被制御シーケンスを空にすることはできません。  
   
- _SECURE_SCL 1 でコンパイル、空のキュー内の要素にアクセスしようとすると、ランタイム エラーが発生します。  詳細については、「 [Checked Iterators](../standard-library/checked-iterators.md) 」を参照してください。  
+ [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を 1 または 2 として定義してコンパイルすると、空のキュー内の要素にアクセスしようとした場合に実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_front.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -238,19 +254,19 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namequeuepopa-queuepop"></a><a name="queue__pop"></a>  queue::pop  
- キューの先頭から要素を削除します。  
+##  <a name="a-namequeuepopa--queuepop"></a><a name="queue__pop"></a>  queue::pop  
+ キューの一番前から要素を削除します。  
   
 ```  
 void pop();
 ```  
   
 ### <a name="remarks"></a>コメント  
- キューは、メンバー関数の適用先空でないである必要があります。 キューの先頭は最近追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
+ メンバー関数を適用するには、キューは空でない必要があります。 キューの先頭は最も直近に追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_pop.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -292,8 +308,8 @@ After a pop the queue length is 2.
 After a pop, the element at the front of the queue is 20.  
 ```  
   
-##  <a name="a-namequeuepusha-queuepush"></a><a name="queue__push"></a>  queue::push  
- キューの末尾に要素を追加します。  
+##  <a name="a-namequeuepusha--queuepush"></a><a name="queue__push"></a>  queue::push  
+ キューの一番後ろに要素を追加します。  
   
 ```  
 void push(const Type& val);
@@ -301,14 +317,14 @@ void push(const Type& val);
   
 ### <a name="parameters"></a>パラメーター  
  `val`  
- キューの末尾に追加する要素。  
+ キューの一番後ろに追加する要素。  
   
 ### <a name="remarks"></a>コメント  
- キューの末尾は最近追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
+ キューの一番後ろは最も直近に追加された要素によって占有されている位置で、コンテナーの末尾にある最後の要素です。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_push.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -338,8 +354,8 @@ The queue length is 3.
 The element at the front of the queue is 10.  
 ```  
   
-##  <a name="a-namequeuequeuea-queuequeue"></a><a name="queue__queue"></a>  queue::queue  
- 空か、基本コンテナー オブジェクトのコピーであるキューを作成します。  
+##  <a name="a-namequeuequeuea--queuequeue"></a><a name="queue__queue"></a>  queue::queue  
+ 空であるか、基本のコンテナー オブジェクトのコピーであるキューを構築します。  
   
 ```  
 queue();
@@ -349,14 +365,14 @@ explicit queue(const container_type& right);
   
 ### <a name="parameters"></a>パラメーター  
  ` right`  
-  **Const** が、構築されたキューのコピーであることに元のコンテナーです。  
+ 構築されるキューのコピー元となる **const** コンテナ―。  
   
 ### <a name="remarks"></a>コメント  
- キューの既定の基本コンテナーは、deque です。 基本のコンテナーとしてリストを指定することもできますが、必要があるために、ベクトルを指定することはできません `pop_front` メンバー関数。  
+ キューの既定の基本コンテナーは、deque です。 基本のコンテナーとして list を指定することもできますが、vector を指定することはできません。必要な `pop_front` メンバー関数がないからです。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_queue.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -402,7 +418,7 @@ The element at the front of queue q5 is 1.
 The element at the back of queue q5 is 2.  
 ```  
   
-##  <a name="a-namequeuesizea-queuesize"></a><a name="queue__size"></a>  queue::size  
+##  <a name="a-namequeuesizea--queuesize"></a><a name="queue__size"></a>  queue::size  
  キュー内の要素の数を返します。  
   
 ```  
@@ -410,11 +426,11 @@ size_type size() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 現在、キューの長さ。  
+ キューの現在の長さ。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_size.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -441,7 +457,7 @@ The queue length is 1.
 The queue length is now 2.  
 ```  
   
-##  <a name="a-namequeuesizetypea-queuesizetype"></a><a name="queue__size_type"></a>  queue::size_type  
+##  <a name="a-namequeuesizetypea--queuesizetype"></a><a name="queue__size_type"></a>  queue::size_type  
  キュー内の要素の数を表すことができる符号なし整数型。  
   
 ```  
@@ -449,24 +465,24 @@ typedef typename Container::size_type size_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型のシノニムは、 `size_type` の基本のコンテナー、キューが調整されます。  
+ この型は、キューによって採用された基本コンテナーの `size_type` のシノニムです。  
   
 ### <a name="example"></a>例  
-  例を参照してください [queue::front](#queue__front) を宣言および使用する方法の例については `size_type`です。  
+  `size_type` の宣言方法や使用方法の例については、[queue::front](#queue__front) の例をご覧ください。  
   
-##  <a name="a-namequeuevaluetypea-queuevaluetype"></a><a name="queue__value_type"></a>  queue::value_type  
- キュー内の要素として格納されるオブジェクトの型を表す型。  
+##  <a name="a-namequeuevaluetypea--queuevaluetype"></a><a name="queue__value_type"></a>  queue::value_type  
+ キュー内に要素として格納されるオブジェクトの型を表す型。  
   
 ```  
 typedef typename Container::value_type value_type;  
 ```  
   
 ### <a name="remarks"></a>コメント  
- 型のシノニムは、 `value_type` の基本のコンテナー、キューが調整されます。  
+ この型は、キューによって採用された基本コンテナーの `value_type` のシノニムです。  
   
 ### <a name="example"></a>例  
   
-```  
+```cpp  
 // queue_value_type.cpp  
 // compile with: /EHsc  
 #include <queue>  
@@ -496,5 +512,6 @@ The element at the front of the queue is 69.
   
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
 

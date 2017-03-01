@@ -1,54 +1,71 @@
 ---
-title: "_pipe | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_pipe"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "pipe"
-  - "_pipe"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_pipe 関数"
-  - "pipe 関数"
-  - "パイプ"
-  - "パイプ, 作成"
+title: _pipe | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _pipe
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- pipe
+- _pipe
+dev_langs:
+- C++
+helpviewer_keywords:
+- pipes, creating
+- _pipe function
+- pipes
+- pipe function
 ms.assetid: 8d3e9800-4041-44b5-9e93-2df0b0354a75
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# _pipe
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 0e45008d3f55c11cfa7da2aa4db9ca1277a6f77f
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="pipe"></a>_pipe
 読み取りおよび書き込み用のパイプを作成します。  
   
 > [!IMPORTANT]
->  この API は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  詳細については、「[\/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  この API は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -59,8 +76,8 @@ int textmode
 );  
 ```  
   
-#### パラメーター  
- `pfds`\[2\]  
+#### <a name="parameters"></a>パラメーター  
+ `pfds`[2]  
  読み取りおよび書き込みファイル記述子を格納する配列。  
   
  `psize`  
@@ -69,8 +86,8 @@ int textmode
  `textmode`  
  ファイル モード。  
   
-## 戻り値  
- 処理が正常に終了した場合は 0 を返します。  エラーを示す –1 を返します。  エラーの場合、`errno` は、これらの値のいずれかに設定されます。  
+## <a name="return-value"></a>戻り値  
+ 処理が正常に終了した場合は 0 を返します。 エラーを示す –1 を返します。 エラーの場合、`errno` は、これらの値のいずれかに設定されます。  
   
 -   `EMFILE`、これ以上のファイル記述子が使用できないことを示します。  
   
@@ -78,30 +95,30 @@ int textmode
   
 -   `EINVAL`、配列 `pfds` が null ポインターであるか、または `textmode` に対して無効な値が渡されたことを示します。  
   
- リターン コードの詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `_pipe` 関数は、プログラムの他のプログラムに情報を渡すために使用する人為的な I\/O チャネルである*パイプ*を作成します。  パイプは、ファイル ポインター、ファイル記述子、またはその両方を持つファイルに似ており、標準ライブラリの入出力関数を使用して読み取りや書き込みを行うことができます。  ただし、パイプは、特定のファイルまたはデバイスを表しません。  代わりに、プログラム自体のメモリに関係なく、オペレーティング システムによって完全に制御されるメモリの一時的なストレージを表します。  
+## <a name="remarks"></a>コメント  
+ `_pipe` 関数は、プログラムの他のプログラムに情報を渡すために使用する人為的な I/O チャネルである*パイプ*を作成します。 パイプは、ファイル ポインター、ファイル記述子、またはその両方を持つファイルに似ており、標準ライブラリの入出力関数を使用して読み取りや書き込みを行うことができます。 ただし、パイプは、特定のファイルまたはデバイスを表しません。 代わりに、プログラム自体のメモリに関係なく、オペレーティング システムによって完全に制御されるメモリの一時的なストレージを表します。  
   
- `_pipe` は `_open` に似ていますが、読み取りおよび書き込み用のパイプを開き、ファイル記述子を 1 つではなく 2 つ返します。  プログラムはパイプの両側を使用するか、または必要としない一方の側のパイプを閉じることができます。  たとえば、Windows のコマンド プロセッサは `PROGRAM1 | PROGRAM2` などのコマンドを実行するときにパイプを作成します。  
+ `_pipe` は `_open` に似ていますが、読み取りおよび書き込み用のパイプを開き、ファイル記述子を&1; つではなく&2; つ返します。 プログラムはパイプの両側を使用するか、または必要としない一方の側のパイプを閉じることができます。 たとえば、Windows のコマンド プロセッサは `PROGRAM1 | PROGRAM2` などのコマンドを実行するときにパイプを作成します。  
   
- `PROGRAM1` の標準出力記述子は、パイプの書き込み記述子に添付されます。  `PROGRAM2` の標準入力記述子は、パイプの読み取り記述子に添付されます。  これにより、他のプログラムに情報を渡すための一時ファイルを作成する必要がなくなります。  
+ `PROGRAM1` の標準出力記述子は、パイプの書き込み記述子に添付されます。 `PROGRAM2` の標準入力記述子は、パイプの読み取り記述子に添付されます。 これにより、他のプログラムに情報を渡すための一時ファイルを作成する必要がなくなります。  
   
- `_pipe` 関数は `pfds` 引数でパイプに 2 つのファイル記述子を返します。  要素 `pfds`\[0\] には、読み取り記述子が含まれ、要素 `pfds`\[1\] には書き込み記述子が含まれます。  パイプのファイル記述子は、他のファイル記述子と同様に使用されます。\(低水準入出力関数 `_read` と `_write` はパイプからの読み取りやパイプへの書き込みができます\)。パイプの末尾の状態を検出するには、`_read` 要求が、読み取ったバイト数として 0 を返すかどうかをチェックします。  
+ `_pipe` 関数は `pfds` 引数でパイプに&2; つのファイル記述子を返します。 要素 `pfds`[0] には、読み取り記述子が含まれ、要素 `pfds`[1] には書き込み記述子が含まれます。 パイプのファイル記述子は、他のファイル記述子と同様に使用されます。 (低水準入出力関数 `_read` と `_write` はパイプからの読み取りやパイプへの書き込みができます)。パイプの末尾の状態を検出するには、`_read` 要求が、読み取ったバイト数として 0 を返すかどうかをチェックします。  
   
- `psize` 引数は、パイプに予約するメモリの量をバイト数で指定します。  `textmode` 引数は、パイプの変換モードを指定します。  マニフェスト定数 `_O_TEXT` は、テキスト変換を指定し、定数 `_O_BINARY` はバイナリ変換を指定します\(テキスト モードとバイナリ モードの詳細については、「[fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください\)。`textmode` 引数が 0 の場合、`_pipe` は既定のモード変数 [\_fmode](../../c-runtime-library/fmode.md) により指定されている既定の変換モードを使用します。  
+ `psize` 引数は、パイプに予約するメモリの量をバイト数で指定します。 `textmode` 引数は、パイプの変換モードを指定します。 マニフェスト定数 `_O_TEXT` は、テキスト変換を指定し、定数 `_O_BINARY` はバイナリ変換を指定します (テキスト モードとバイナリ モードの詳細については、「[fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください。)`textmode` 引数が 0 の場合、`_pipe` は既定のモード変数 [_fmode](../../c-runtime-library/fmode.md) により指定されている既定の変換モードを使用します。  
   
- マルチスレッド プログラムでは、ロックは実行されません。  返されたファイル記述子が新しく開き、`_pipe` 呼び出しが完了するまでスレッドでは参照できません。  
+ マルチスレッド プログラムでは、ロックは実行されません。 返されたファイル記述子が新しく開き、`_pipe` 呼び出しが完了するまでスレッドでは参照できません。  
   
- `_pipe` の関数を使用して親プロセスと子プロセスの間で通信するには、各プロセスがパイプで開いている記述子を 1 つだけ持つことが必要です。  記述子は正反対である必要があります。親が開いている読み取り記述子を持つ場合、子は開いている書き込み記述子を持つ必要があります。  これを実行する最も容易な方法は、`OR` \(  `|`\) を `textmode` モードで `_O_NOINHERIT` フラグに対して実行することです。  次に、`_dup` または `_dup2` を使用して、子に渡すパイプ記述子の継承可能なコピーを作成します。  元の記述子を終了し、子プロセスを生成します。  生成の呼び出しから制御が戻ったら、親プロセスの重複記述子を閉じます。  詳細については、この記事で後述する例 2 を参照してください。  
+ `_pipe` の関数を使用して親プロセスと子プロセスの間で通信するには、各プロセスがパイプで開いている記述子を&1; つだけ持つことが必要です。 記述子は正反対である必要があります。親が開いている読み取り記述子を持つ場合、子は開いている書き込み記述子を持つ必要があります。 これを実行するには、`textmode` を使用して `_O_NOINHERIT` フラグを `OR` (`|`) するのが最も簡単な方法です。 次に、`_dup` または `_dup2` を使用して、子に渡すパイプ記述子の継承可能なコピーを作成します。 元の記述子を終了し、子プロセスを生成します。 生成の呼び出しから制御が戻ったら、親プロセスの重複記述子を閉じます。 詳細については、この記事で後述する例 2 を参照してください。  
   
- Windows オペレーティング システムでは、すべての記述子が閉じたときパイプは破棄されます。\(パイプですべての読み取り記述子が閉じられた場合、パイプへの書き込みによりエラーが発生します\)。パイプでのすべての読み取り操作と書き込み操作は、I\/O 要求を完了するために十分なデータまたは十分なバッファー領域が確保されるまで、待機状態になります。  
+ Windows オペレーティング システムでは、すべての記述子が閉じたときパイプは破棄されます。 (パイプですべての読み取り記述子が閉じられた場合、パイプへの書き込みによりエラーが発生します)。パイプでのすべての読み取り操作と書き込み操作は、I/O 要求を完了するために十分なデータまたは十分なバッファー領域が確保されるまで、待機状態になります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_pipe`|\<io.h\>|\<fcntl.h\>,1 \<errno.h\>2|  
+|-------------|---------------------|---------------------|  
+|`_pipe`|\<io.h>|\<fcntl.h>、1 \<errno.h>2|  
   
  1 は `_O_BINARY` 定義と `_O_TEXT` 定義向け。  
   
@@ -109,13 +126,14 @@ int textmode
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 例 1  
+## <a name="example-1"></a>例 1  
   
 ```  
-// crt_pipe.c  
+  
+      // crt_pipe.c  
 /* This program uses the _pipe function to pass streams of  
  * text to spawned processes.  
  */  
@@ -198,7 +216,7 @@ int main( int argc, char *argv[] )
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Son, what is the square root of 1000?  
@@ -219,8 +237,8 @@ Son, what is the square root of 8000?
 Dad, the square root of 8000 is 89.44.  
 ```  
   
-## 例 2  
- これは基本的なフィルター アプリケーションです。  これは、生成されたアプリケーションの標準出力をフィルターに指定するパイプを作成した後、アプリケーションの crt\_pipe\_beeper を生成します。  フィルターは ASCII 7 \(ビープ音\) 文字を削除します。  
+## <a name="example-2"></a>例 2  
+ これは基本的なフィルター アプリケーションです。 これは、生成されたアプリケーションの標準出力をフィルターに指定するパイプを作成した後、アプリケーションの crt_pipe_beeper を生成します。 フィルターは ASCII 7 (ビープ音) 文字を削除します。  
   
 ```  
 // crt_pipe_beeper.c  
@@ -334,7 +352,7 @@ int main(int argc, char** argv)
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 This is speaker beep number 1...  
@@ -349,9 +367,9 @@ This is speaker beep number 9...
 This is speaker beep number 10...  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)

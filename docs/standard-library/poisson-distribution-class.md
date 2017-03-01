@@ -1,62 +1,127 @@
 ---
 title: "poisson_distribution クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "poisson_distribution"
-  - "std.tr1.poisson_distribution"
-  - "random/std::tr1::poisson_distribution"
-  - "std::tr1::poisson_distribution"
-  - "tr1.poisson_distribution"
-  - "tr1::poisson_distribution"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "poisson_distribution クラス"
-  - "poisson_distribution クラス [TR1]"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- poisson_distribution
+- std::poisson_distribution
+- random/std::poisson_distribution
+- std::poisson_distribution::reset
+- random/std::poisson_distribution::reset
+- std::poisson_distribution::mean
+- random/std::poisson_distribution::mean
+- std::poisson_distribution::param
+- random/std::poisson_distribution::param
+- std::poisson_distribution::min
+- random/std::poisson_distribution::min
+- std::poisson_distribution::max
+- random/std::poisson_distribution::max
+- std::poisson_distribution::operator()
+- random/std::poisson_distribution::operator()
+- std::poisson_distribution::param_type
+- random/std::poisson_distribution::param_type
+- std::poisson_distribution::param_type::mean
+- random/std::poisson_distribution::param_type::mean
+- std::poisson_distribution::param_type::operator==
+- random/std::poisson_distribution::param_type::operator==
+- std::poisson_distribution::param_type::operator!=
+- random/std::poisson_distribution::param_type::operator!=
+dev_langs:
+- C++
+helpviewer_keywords:
+- poisson_distribution class
 ms.assetid: 09614281-349a-45f7-8e95-c0196be0a937
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# poisson_distribution クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
+ms.openlocfilehash: 021eaec1ec55add912234f78bac0b9762b4a3444
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="poissondistribution-class"></a>poisson_distribution クラス
 ポワソン分布を生成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class IntType = int> class poisson_distribution { public:     // types     typedef IntType result_type;     struct param_type;     // constructors and reset functions     explicit poisson_distribution(double mean = 1.0);     explicit poisson_distribution(const param_type& parm);     void reset();     // generating functions     template<class URNG>     result_type operator()(URNG& gen);     template<class URNG>     result_type operator()(URNG& gen, const param_type& parm);     // property functions     double mean() const;     param_type param() const;     void param(const param_type& parm);     result_type min() const;     result_type max() const; };  
-```  
+template<class IntType = int>
+class poisson_distribution  
+   {  
+public:  
+   // types  
+   typedef IntType result_type;  
+   struct param_type;  
+   
+   // constructors and reset functions  
+   explicit poisson_distribution(double mean = 1.0);
+   explicit poisson_distribution(const param_type& parm);
+   void reset();
+   
+   // generating functions  
+   template <class URNG>  
+   result_type operator()(URNG& gen);
+   template <class URNG>  
+   result_type operator()(URNG& gen, const param_type& parm);
+   
+   // property functions  
+   double mean() const;
+   param_type param() const;
+   void param(const param_type& parm);
+   result_type min() const;
+   result_type max() const;
+   };  
+``` 
   
-#### パラメーター  
- `IntType`  
- 結果を表す整数型。既定値は `int` です。  使用可能な型については、「[\<random\>](../standard-library/random.md)」を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+*IntType*  
+結果を表す整数型。既定値は `int` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-## 解説  
- このテンプレート クラスは、ポワソン分布を使用してユーザー指定の整数型の値を生成する分布を表します。  次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>コメント  
+このテンプレート クラスは、ポワソン分布を使用してユーザー指定の整数型の値を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
   
 ||||  
 |-|-|-|  
-|[poisson\_distribution::poisson\_distribution](../Topic/poisson_distribution::poisson_distribution.md)|`poisson_distribution::mean`|`poisson_distribution::param`|  
-|`poisson_distribution::operator()`||[poisson\_distribution::param\_type](../Topic/poisson_distribution::param_type.md)|  
+|[poisson_distribution::poisson_distribution](#poisson_distribution__poisson_distribution)|`poisson_distribution::mean`|`poisson_distribution::param`|  
+|`poisson_distribution::operator()`||[poisson_distribution::param_type](#poisson_distribution__param_type)|  
   
- プロパティ関数 `mean()` は、格納されている分布パラメーター `mean` の値を返します。  
+プロパティ関数 `mean()` は、格納されている分布パラメーター *mean* の値を返します。  
   
- 分布クラスとそのメンバーの詳細については、「[\<random\>](../standard-library/random.md)」を参照してください。  
+プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+
+メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
- ポワソン分布の詳細については、Wolfram MathWorld の記事「[ポワソン分布](http://go.microsoft.com/fwlink/?LinkId=401112)」を参照してください。  
+`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
   
-## 使用例  
+`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+  
+ポワソン分布の詳細については、Wolfram MathWorld の記事「[ポワソン分布](http://go.microsoft.com/fwlink/LinkId=401112)」をご覧ください。  
+  
+## <a name="example"></a>例  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -110,46 +175,100 @@ int main()
   
 ```  
   
-## 出力  
- 最初のテスト:  
+最初のテスト:  
   
-  **Use CTRL\-Z to bypass data entry and run using default values.  Enter a floating point value for the 'mean' distribution parameter \(must be greater than zero\): 1**  
-**Enter an integer value for the sample count: 100**  
-**min\(\) \=\= 0**  
-**max\(\) \=\= 2147483647**  
-**p\(\) \=\= 1.0000000000**  
-**Distribution for 100 samples:**  
- **0 ::::::::::::::::::::::::::::::**  
- **1 ::::::::::::::::::::::::::::::::::::::**  
- **2 :::::::::::::::::::::::**  
- **3 ::::::::**  
-**5 :**  2 回目のテスト:  
+```Output  
+Use CTRL-Z to bypass data entry and run using default values.
+Enter a floating point value for the 'mean' distribution parameter (must be greater than zero): 1
+Enter an integer value for the sample count: 100
+min() == 0
+max() == 2147483647
+p() == 1.0000000000
+Distribution for 100 samples:
+    0 ::::::::::::::::::::::::::::::
+    1 ::::::::::::::::::::::::::::::::::::::
+    2 :::::::::::::::::::::::
+    3 ::::::::
+    5 :  
+```  
   
-  **Use CTRL\-Z to bypass data entry and run using default values.  Enter a floating point value for the 'mean' distribution parameter \(must be greater than zero\): 10**  
-**Enter an integer value for the sample count: 100**  
-**min\(\) \=\= 0**  
-**max\(\) \=\= 2147483647**  
-**p\(\) \=\= 10.0000000000**  
-**Distribution for 100 samples:**  
- **3 :**  
- **4 ::**  
- **5 ::**  
- **6 ::::::::**  
- **7 ::::**  
- **8 ::::::::**  
- **9 ::::::::::::::**  
- **10 ::::::::::::**  
- **11 ::::::::::::::::**  
- **12 :::::::::::::::**  
- **13 ::::::::**  
- **14 ::::::**  
- **15 :**  
- **16 ::**  
-**17 :**    
-## 必要条件  
- **ヘッダー:** \<random\>  
+2 回目のテスト:  
+  
+```Output  
+Use CTRL-Z to bypass data entry and run using default values.
+Enter a floating point value for the 'mean' distribution parameter (must be greater than zero): 10
+Enter an integer value for the sample count: 100
+min() == 0
+max() == 2147483647
+p() == 10.0000000000
+Distribution for 100 samples:
+    3 :
+    4 ::
+    5 ::
+    6 ::::::::
+    7 ::::
+    8 ::::::::
+    9 ::::::::::::::
+   10 ::::::::::::
+   11 ::::::::::::::::
+   12 :::::::::::::::
+   13 ::::::::
+   14 ::::::
+   15 :
+   16 ::
+   17 :  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<random>  
   
  **名前空間:** std  
   
-## 参照  
- [\<random\>](../standard-library/random.md)
+##  <a name="a-namepoissondistributionpoissondistributiona--poissondistributionpoissondistribution"></a><a name="poisson_distribution__poisson_distribution"></a>  poisson_distribution::poisson_distribution  
+分布を作成します。  
+  
+```  
+explicit poisson_distribution(RealType mean = 1.0);
+explicit binomial_distribution(const param_type& parm);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+*mean*  
+`mean` 分布パラメーター。  
+  
+*parm*  
+分布の作成に使用されるパラメーターの構造体。  
+  
+### <a name="remarks"></a>コメント  
+ **前提条件:** `0.0 < mean`  
+  
+1 つ目のコンストラクターは、格納されている `mean` の値が *mean* の値を保持するオブジェクトを作成します。  
+  
+2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+  
+##  <a name="a-namepoissondistributionparamtypea--poissondistributionparamtype"></a><a name="poisson_distribution__param_type"></a>  poisson_distribution::param_type  
+分布のパラメーターを格納します。  
+  
+```    
+struct param_type {  
+   typedef poisson_distribution<IntType> distribution_type;  
+   param_type(double mean = 1.0);
+   double mean() const;
+     
+   bool operator==(const param_type& right) const;
+   bool operator!=(const param_type& right) const;
+   };  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+[poisson_distribution](#poisson_distribution__poisson_distribution) のコンストラクター パラメーターをご覧ください。  
+  
+### <a name="remarks"></a>コメント  
+ **前提条件:** `0.0 < mean`  
+  
+この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+  
+## <a name="see-also"></a>関連項目  
+ [\<random>](../standard-library/random.md)
+
+

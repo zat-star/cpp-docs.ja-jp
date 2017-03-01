@@ -1,56 +1,72 @@
 ---
 title: "perror、_wperror | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wperror"
-  - "perror"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-runtime-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_wperror"
-  - "_tperror"
-  - "perror"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_tperror 関数"
-  - "_wperror 関数"
-  - "エラー メッセージ, 印刷"
-  - "perror 関数"
-  - "出力 (エラー メッセージを)"
-  - "tperror 関数"
-  - "wperror 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wperror
+- perror
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-runtime-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _wperror
+- _tperror
+- perror
+dev_langs:
+- C++
+helpviewer_keywords:
+- _tperror function
+- tperror function
+- wperror function
+- error messages, printing
+- printing error messages
+- _wperror function
+- perror function
 ms.assetid: 34fce792-16fd-4673-9849-cd88b54b6cd5
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# perror、_wperror
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: b826a1539581aee3d58f49f68c5ba04139a14328
+ms.lasthandoff: 02/24/2017
 
-エラー メッセージを表示します。  
+---
+# <a name="perror-wperror"></a>perror、_wperror
+エラー メッセージを印刷します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -62,40 +78,40 @@ void _wperror(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `string`  
  印刷する文字列メッセージ。  
   
-## 解説  
- `perror` 関数は `stderr`にエラー メッセージが出力されます。  `_wperror` は **\_perror**のワイド文字バージョンであり、; `_wperror` への `string` の引数はワイド文字列です。  `_wperror` と **\_perror** は別の方法で同様に動作します。  
+## <a name="remarks"></a>コメント  
+ `perror` 関数は、エラー メッセージを `stderr` に印刷します。 `_wperror` は、**_perror** のワイド文字バージョンです。`_wperror` の引数 `string` は、ワイド文字列です。 それ以外では、`_wperror` および **_perror** の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tperror`|`perror`|`perror`|`_wperror`|  
   
- `string`、コロン、およびエラーを生成し、最終的に改行文字で、その後に最初に出力される最後のライブラリの呼び出しのシステム エラー メッセージ。  `string` が null 文字列に null ポインターまたはポインターの場合、`perror` はシステム エラー メッセージだけを印刷します。  
+ `string` が最初に印刷され、コロン、エラーが発生した最後のライブラリの呼び出しのシステム エラー メッセージ、改行文字がそれに続きます。 `string` が null ポインター、または null 文字列へのポインターである場合、`perror` はシステム エラー メッセージのみを印刷します。  
   
- エラー数が変数に格納されます。[errno](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) ERRNO.H\) で定義されます。  システム エラー メッセージは、エラー番号順のメッセージの配列である変数 [\_sys\_errlist](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) を使用してアクセスできます。  `perror` は `_sys_errlist`にインデックスとして `errno` 値を使用して適切なエラー メッセージが出力されます。  変数 [\_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) の値は、`_sys_errlist` の配列の要素の最大数として定義されます。  
+ エラー番号は、変数 [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) (ERRNO.H で定義) に格納されます。 システム エラー メッセージは、エラー番号順のメッセージの配列である変数 [_sys_errlist](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) を使用してアクセスできます。 `perror` は、`errno` の値を `_sys_errlist` のインデックスとして使用して、適切なエラー メッセージを印刷します。 変数 [_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) の値は、`_sys_errlist` の配列の要素の最大数として定義されます。  
   
- 正確な結果を得るために、ライブラリ ルーチンの直後の呼び出し `perror` はエラーが返されます。  それ以外の以降の呼び出しでは `errno` 値を上書きします。  
+ 正確な結果を生成するため、ルーチンがエラーを返した直後に `perror` を呼び出します。 そうしないと、後続の呼び出しが `errno` の値を上書きする可能性があります。  
   
- Windows オペレーティング システムでは、ERRNO.H に示されている `errno` の値は使用されません。  これらの値は、UNIX のオペレーティング システムで使用するために予約されています。  Windows オペレーティング システムで使用される `errno` 値のリスティングの [" \_doserrno、errno、\_sys\_errlist、および\_sys\_nerr "](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) を参照してください。  `perror` は これらのプラットフォームで使用されていない `errno` 値ごとに空の文字列を出力します。  
+ Windows オペレーティングシステムでは、ERRNO.H に一覧表示されている一部の `errno` の値は使用されていません。 これらの値は、UNIX オペレーティング システムで使用するために予約されたものです。 Windows オペレーティング システムで使用される `errno` の値の一覧については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 `perror` は、これらのプラットフォームで使用されていないすべての `errno` の値に対して空白の文字列を印刷します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`perror`|\<stdio.h または\> stdlib.h \<\>|  
-|`_wperror`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`perror`|\<stdio.h> または \<stdlib.h>|  
+|`_wperror`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_perror.c  
@@ -137,7 +153,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 perror says open failed: No such file or directory  
@@ -145,11 +161,11 @@ strerror says open failed: No such file or directory
 _strerror says open failed: No such file or directory  
 ```  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   
  [ferror](../../c-runtime-library/reference/ferror.md)   
- [strerror、\_strerror、\_wcserror、\_\_wcserror](../../c-runtime-library/reference/strerror-strerror-wcserror-wcserror.md)
+ [strerror、_strerror、_wcserror、\__wcserror](../../c-runtime-library/reference/strerror-strerror-wcserror-wcserror.md)

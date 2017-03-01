@@ -1,32 +1,48 @@
 ---
 title: "1 つの引数 (int または long) を使用する出力ストリーム マニピュレーター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "出力ストリーム, int または long 引数のマニピュレーター"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- output streams, int or long argument manipulators
 ms.assetid: 338f3164-b5e2-4c5a-a605-7d9dc3629ca1
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 1 つの引数 (int または long) を使用する出力ストリーム マニピュレーター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
+ms.openlocfilehash: 84cbc5d016f6796a1cab208a1d77b51ea2ac6ecb
+ms.lasthandoff: 02/24/2017
 
-iostream クラス ライブラリはパラメーター化されたなマニピュレーターを作成するためのマクロが用意されています。  `long` の単一の `int` または引数を持つマニピュレーターは特殊なケースです。  一つの `int` を受け入れるか、`long` の引数出力ストリームのマニピュレーターを作成するには \(`setw`など\) を iomanip\>で \<定義されている\_Smanip マクロを使用する必要があります。  この例では、指定した数のストリームに空白を挿入する `fillblank` のマニピュレーターを定義し、T:  
+---
+# <a name="output-stream-manipulators-with-one-argument-int-or-long"></a>1 つの引数 (int または long) を使用する出力ストリーム マニピュレーター
+iostream クラス ライブラリには、パラメーター化したマニピュレーターを作成するためのマクロ セットが用意されています。 単一の `int` 引数または `long` 引数のみを取るマニピュレーターは特殊なケースです。 単一の `int` 引数または `long` 引数を受け取る出力ストリーム マニピュレーター (`setw` など) を作成するには、\<iomanip> で定義される _Smanip マクロを使用する必要があります。 次の例では、指定した数の空白をストリームに挿入する `fillblank` マニピュレーターを定義します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // output_stream_manip.cpp  
 // compile with: /GR /EHsc  
 #include <iostream>  
@@ -55,5 +71,7 @@ int main( )
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [引数を使用するカスタム マニピュレーター](../standard-library/custom-manipulators-with-arguments.md)
+
+
