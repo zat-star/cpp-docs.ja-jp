@@ -1,104 +1,120 @@
 ---
-title: "seed_seq Class | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "tr1::seed_seq"
-  - "std::tr1::seed_seq"
-  - "tr1.seed_seq"
-  - "seed_seq"
-  - "std.tr1.seed_seq"
-  - "random/std::tr1::seed_seq"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "seed_seq クラス"
+title: "seed_seq クラス |Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- seed_seq
+- std::seed_seq
+- random/std::seed_seq
+- std::seed_seq::result_type
+- random/std::seed_seq::result_type
+- std::seed_seq::generate
+- random/std::seed_seq::generate
+- std::seed_seq::size
+- random/std::seed_seq::size
+- std::seed_seq::param
+- random/std::seed_seq::param
+dev_langs:
+- C++
+helpviewer_keywords:
+- seed_seq class
 ms.assetid: cba114f7-9ac6-4f2f-b773-9c84805401d6
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# seed_seq Class
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
+ms.openlocfilehash: b637e311971b71564244f9bbdcfc37973a514710
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="seedseq-class"></a>seed_seq Class
 乱数エンジンにランダム化されたシードを提供できる符号なし整数値のベクターを格納します。  
   
-## 構文  
-  
+## <a name="syntax"></a>構文  
 ```  
 class seed_seq  
-{  
+   {  
 public:  
-    // types  
-    typedef unsigned int result_type;  
-  
-    // constructors  
-    seed_seq();  
-  
-    template<class T>  
-    seed_seq(initializer_list<T> initlist);  
-  
-    template<class InputIterator>  
-    seed_seq(InputIterator begin, InputIterator end);  
-  
-    // generating functions  
-    template<class RandomAccessIterator>  
-    void generate(RandomAccessIterator begin, RandomAccessIterator end);  
-  
-    // property functions  
-    size_t size() const;  
-  
-    template<class OutputIterator>  
-    void param(OutputIterator dest) const;  
-  
-    // no copy functions  
-    seed_seq(const seed_seq&) = delete;  
-    void operator=(const seed_seq&) = delete;  
-};  
+   // types  
+   typedef unsigned int result_type;  
+
+   // constructors  
+   seed_seq();
+   template <class T>  
+      seed_seq(initializer_list<T> initlist);
+   template <class InputIterator>  
+      seed_seq(InputIterator begin, InputIterator end);
+
+   // generating functions  
+   template <class RandomAccessIterator>  
+      void generate(RandomAccessIterator begin, RandomAccessIterator end);
+
+   // property functions  
+   size_t size() const;
+   template <class OutputIterator>  
+      void param(OutputIterator dest) const;
+
+   // no copy functions  
+   seed_seq(const seed_seq&) = delete;  
+   void operator=(const seed_seq&) = delete;  
+   };  
 ```  
-  
-## 型  
+## <a name="types"></a>種類  
  `typedef unsigned int result_type;`   
 シード シーケンスの要素の型。 32 ビット符号なし整数型。  
   
-## コンストラクター  
+## <a name="constructors"></a>コンストラクター  
  `seed_seq();`   
-既定のコンス トラクターは、空の内部シーケンスを初期化します。  
+既定のコンストラクター。空の内部シーケンスを持つために初期化します。  
   
  `template<class T>`   
  `seed_seq(initializer_list<T> initlist);`   
-使用して `initlist` 内部シーケンスを設定します。  
-`T` 整数型である必要があります。  
+内部シーケンスを設定するには、`initlist` を使用します。                   
+`T` は整数型である必要があります。  
   
  `template<class InputIterator>`   
  `seed_seq(InputIterator begin, InputIterator end);`   
-指定された入力反復子の範囲内のすべての要素を使用して、内部シーケンスを初期化します。  
-`iterator_traits<InputIterator>::value_type` 整数型である必要があります。  
+指定された入力反復子の範囲内のすべての要素を使用して、内部シーケンスを初期化します。                  
+`iterator_traits<InputIterator>::value_type` は整数型である必要があります。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### 関数の生成  
- `template<class RandomAccessIterator> void generate(RandomAccessIterator begin, RandomAccessIterator end);`   
-内部アルゴリズムを使用して、指定されたシーケンスの要素を追加します。 このアルゴリズムが使用する内部シーケンスによって影響を受ける `seed_seq` 初期化されました  
-。何も場合 `begin == end`します。  
+### <a name="generating-functions"></a>関数の生成  
+ `template<class RandomAccessIterator> void generate(RandomAccessIterator begin,          RandomAccessIterator end);`   
+内部アルゴリズムを使用して、指定されたシーケンスの要素を設定します。 このアルゴリズムは、`seed_seq` が初期化された内部シーケンスによって影響を受けます。                          
+`begin == end` の場合は何も処理しません。  
   
-### プロパティ関数  
+### <a name="property-functions"></a>プロパティ関数  
  `size_t size() const;`   
-要素の数を返す、 `seed_seq`です。  
+`seed_seq` 内の要素数を返します。  
   
  `template<class OutputIterator> void param(OutputIterator dest) const;`   
-出力反復子を内部シーケンスをコピー `dest`します。  
+内部シーケンスを、出力反復子 `dest` へコピーします。  
   
-## 使用例  
- 次のコード例は、3 つのコンストラクターを実行し、配列に割り当てられたときに結果の `seed_seq` インスタンスから出力を生成します。 使用例について `seed_seq` 、乱数ジェネレーターで、次を参照してください。 [\<random\>](../standard-library/random.md)します。  
+## <a name="example"></a>例  
+ 次のコード例は、3 つのコンストラクターを実行し、配列に割り当てられたときに結果の `seed_seq` インスタンスから出力を生成します。 `seed_seq` を乱数ジェネレーターで使用する例については、「[\<random>](../standard-library/random.md)」をご覧ください。  
   
 ```cpp  
 #include <iostream>  
@@ -136,20 +152,45 @@ int main()
 }  
 ```  
   
-## 出力  
-  
 ```Output  
+seed_seq::size(): 0  
+seed_seq::param():  
+Generating a sequence of 5 elements into an array:  
+505382999  
+163489202  
+3932644188  
+763126080  
+73937346  
   
-seed_seq::size(): 0 seed_seq::param(): 配列に 5 つの要素のシーケンスを生成する: 505382999 163489202 3932644188 763126080 73937346 seed_seq::size(): 3 seed_seq::param(): 1701年 1729年 1791年を配列に 5 つの要素のシーケンスを生成する: 1730669648 1954224479 2809786021 1172893117 2393473414 seed_seq::size(): 7 seed_seq::param(): 65 32 66 32 67 32 68 を配列に 5 つの要素のシーケンスを生成します。: 3139879222 3775111734 1084804564 2485037668 1985355432  
+seed_seq::size(): 3  
+seed_seq::param(): 1701 1729 1791  
+Generating a sequence of 5 elements into an array:  
+1730669648  
+1954224479  
+2809786021  
+1172893117  
+2393473414  
+  
+seed_seq::size(): 7  
+seed_seq::param(): 65 32 66 32 67 32 68  
+Generating a sequence of 5 elements into an array:  
+3139879222  
+3775111734  
+1084804564  
+2485037668  
+1985355432  
 ```  
   
-## 解説  
- このクラスのメンバー関数は、例外をスローしません。  
+## <a name="remarks"></a>コメント  
+ このクラスのメンバー関数は例外をスローしません。  
   
-## 必要条件  
- **ヘッダー:** \<random\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<random>  
   
  **名前空間:** std  
   
-## 参照  
- [\<random\>](../standard-library/random.md)
+## <a name="see-also"></a>関連項目  
+ [\<random>](../standard-library/random.md)
+
+
+

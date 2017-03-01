@@ -1,48 +1,65 @@
 ---
-title: "setjmp | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "setjmp"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "setjmp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プログラム [C++]、状態の保存"
-  - "現在の状態"
-  - "setjmp 関数"
+title: setjmp | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- setjmp
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- setjmp
+dev_langs:
+- C++
+helpviewer_keywords:
+- programs [C++], saving states
+- current state
+- setjmp function
 ms.assetid: 684a8b27-e8eb-455b-b4a8-733ca1cbd7d2
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# setjmp
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: d13a24974a6c722301c6361a13f9d9178cd70220
+ms.lasthandoff: 02/24/2017
 
-プログラムの現在の状態が保存されます。  
+---
+# <a name="setjmp"></a>setjmp
+プログラムの現在の状態を保存します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int setjmp(  
@@ -50,39 +67,39 @@ int setjmp(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `env`  
- 環境を格納する変数。  
+ 環境が格納されている変数。  
   
-## 戻り値  
- スタック環境を保存すると 0 を返します。  `longjmp` の結果として `setjmp` が呼び出すと、`longjmp`の `value` の引数、または `longjmp` の `value` の引数が 0 の場合、`setjmp` は 1.を返します。  エラーの戻り値はありません。  
+## <a name="return-value"></a>戻り値  
+ スタックの環境を保存した後に 0 を返します。 `longjmp` の呼び出しの結果として `setjmp` が値を返す場合は `longjmp` の引数 `value` を返し、`longjmp` の `value` 引数が 0 の場合、`setjmp` は 1 を返します。 エラーの戻り値はありません。  
   
-## 解説  
- `setjmp` 関数は `longjmp`を使用して復元実行可能なスタック環境を格納します。  同時に使用した場合、`setjmp` と `longjmp` は非ローカルな `goto`を実行する方法を示します。  呼び出す場合は通常、標準を使用せずに呼び出しルーチンのエラー処理や復元コードに実行制御を渡すためにまたはサービスの規則が使用されます。  
+## <a name="remarks"></a>コメント  
+ `setjmp` 関数はスタックの環境を保存します。この環境は、`longjmp` を使用して後から復元することができます。 `setjmp` と `longjmp` を一緒に使用すると、非ローカルの `goto` を実行する方法が提供されます。 これらは一般的に、通常の呼び出し規約や復帰規約を使用せず、前に呼び出されたルーチンのエラー処理または回復コードに実行の制御を渡すために使用されます。  
   
- `setjmp` の呼び出しは `env`の現在のスタックに環境を格納します。  `longjmp` への後続の呼び出しで、`setjmp` の対応する呼び出しの直後の位置に格納された環境を処理してコントロールを復元します。  定期的な受信のコントロールにアクセスできるすべての変数 \(レジスタ変数を除く\) `longjmp` がいつが呼び出されたときの値が含まれます。  
+ `setjmp` の呼び出しにより、現在のスタックの環境が `env` で保存されます。 `longjmp` への後続の呼び出しは、保存されている環境を復元し、対応する `setjmp` 呼び出しの直後のポイントにコントロールを返します。 コントロールを受け取るルーチンにアクセスできるすべての変数 (レジスタ変数を除く) には、`longjmp` が呼び出されたときに保持していた値が含まれます。  
   
- ネイティブ コードからマネージ コードにジャンプするために `setjmp` を使用することはできません。  
+ `setjmp` を使用してにネイティブ コードからマネージ コードに移動することはできません。  
   
- **メモ** `setjmp` と `longjmp` は C\+\+ オブジェクトのセマンティクスをサポートしません。  C\+\+ プログラムでは、C\+\+ 例外処理機構を使用します。  
+ **注** `setjmp` と `longjmp` は C++ オブジェクトのセマンティクスをサポートしていません。 C++ プログラムでは、C++ 例外処理機構を使用します。  
   
- 詳細については、「[setjmp および longjmp を使用する](../../cpp/using-setjmp-longjmp.md)」を参照してください。  
+ 詳細については、「[setjmp/longjmp の使用](../../cpp/using-setjmp-longjmp.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`setjmp`|\<setjmp.h\>|  
+|-------------|---------------------|  
+|`setjmp`|\<setjmp.h >|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
- [\_fpreset](../../c-runtime-library/reference/fpreset.md)"の例を参照してください。  
+## <a name="example"></a>例  
+ 「[_fpreset](../../c-runtime-library/reference/fpreset.md)」の例を参照してください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [longjmp](../../c-runtime-library/reference/longjmp.md)   
- [\_setjmp3](../../c-runtime-library/setjmp3.md)
+ [_setjmp3](../../c-runtime-library/setjmp3.md)

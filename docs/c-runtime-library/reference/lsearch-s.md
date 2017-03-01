@@ -1,54 +1,70 @@
 ---
-title: "_lsearch_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_lsearch_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_lsearch_s"
-  - "lsearch_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_lsearch_s 関数"
-  - "配列 [CRT], 検索"
-  - "キー, 検索 (配列の中で)"
-  - "リニア サーチ"
-  - "lsearch_s 関数"
-  - "検索, リニア"
-  - "値, 検索"
+title: _lsearch_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _lsearch_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _lsearch_s
+- lsearch_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- linear searching
+- values, searching for
+- keys, finding in arrays
+- arrays [CRT], searching
+- searching, linear
+- _lsearch_s function
+- lsearch_s function
 ms.assetid: d2db0635-be7a-4799-8660-255f14450882
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# _lsearch_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 6f89899e5fe2c00cf17a7a18c9de2eac2ba8462f
+ms.lasthandoff: 02/24/2017
 
-値のリニア サーチを実行します。  この関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[\_lsearch](../../c-runtime-library/reference/lsearch.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="lsearchs"></a>_lsearch_s
+値の線形探索を実行します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_lsearch](../../c-runtime-library/reference/lsearch.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void *_lsearch_s(  
@@ -61,7 +77,7 @@ void *_lsearch_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `key`  
  検索するオブジェクト。  
   
@@ -72,48 +88,48 @@ void *_lsearch_s(
  要素の数。  
   
  `size`  
- バイトの各配列要素のサイズ。  
+ バイト単位での配列の各要素のサイズ。  
   
  `compare`  
- 比較ルーチンへのポインター。  2 番目のパラメーターは、検索のキーへのポインターです。  3 番目のパラメーターは、キーと比較される配列要素へのポインターです。  
+ 比較ルーチンへのポインター。 2 番目のパラメーターは、検索用のキーへのポインターです。 3 番目のパラメーターは、そのキーと比較する配列要素へのポインターです。  
   
  `context`  
- 比較関数にアクセスできるオブジェクトへのポインター。  
+ 比較関数内でアクセスされることのあるオブジェクトへのポインター。  
   
-## 戻り値  
- `key` がある場合は、`_lsearch_s`は、`base` で配列要素へのポインターを返します。`key`一致  `key` がない場合、`_lsearch_s`は配列の末尾に新しく追加した項目へのポインターを返します。  
+## <a name="return-value"></a>戻り値  
+ `key` が見つかった場合、`_lsearch_s` は `key` と一致する `base` の配列要素のポインターを返します。 `key` が見つからない場合、`_lsearch_s` は新しく追加された項目へのポインターを配列の末尾に返します。  
   
- この関数に無効なパラメーターが渡されると、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続 `errno`は `EINVAL` および関数の戻り値 `NULL`に設定されます。  詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ この関数に無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行を続行できる場合、`errno` が `EINVAL` に設定され、関数から `NULL` が返されます。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
 |`key`|`base`|`compare`|`num`|`size`|`errno`|  
 |-----------|------------|---------------|-----------|------------|-------------|  
 |`NULL`|任意|任意|任意|任意|`EINVAL`|  
-|任意|`NULL`|任意|\!\= 0|任意|`EINVAL`|  
-|任意|任意|任意|任意|0|`EINVAL`|  
-|任意|任意|`NULL`|an|任意|`EINVAL`|  
+|任意|`NULL`|任意|!= 0|任意|`EINVAL`|  
+|任意|任意|任意|任意|ゼロ|`EINVAL`|  
+|任意|任意|`NULL`|1 つ|任意|`EINVAL`|  
   
-## 解説  
- `_lsearch_s` 関数は `num` 要素の配列、`width` の各バイトの値 `key` のリニア サーチを実行します。  `bsearch_s`とは異なり、`_lsearch_s` は配列が並べ替えられるように必要がありません。  `key` がない場合、`_lsearch_s` は配列の末尾に追加し、`num`をインクリメントします。  
+## <a name="remarks"></a>コメント  
+ `_lsearch_s` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch_s` とは異なり、`_lsearch_s` では配列を並べ替える必要がありません。 `key` が見つからない場合、`_lsearch_s` によって配列の末尾に追加され `num` がインクリメントされます。  
   
- `compare` 関数は、2 種類の配列要素を比較し、指定されている値を返す関係ユーザーが指定したルーチンへのポインターです。  `compare` 関数は、最初の引数としてコンテキストへのポインターを渡します。  `_lsearch_s` は 一つ以上の時間各呼び出しの 2 種類の配列要素へのポインターを渡す検索中に `compare` を呼び出します。  `compare` は 要素を比較し、0 以外の \(要素を意味して異なるしてください\) 0 を返す必要があります \(要素を意味して同じにしてください。  
+ `compare` 関数は、2 つの配列要素を比較してそれらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `compare` 関数はまた、最初の引数としてコンテキストへのポインターを受け取ります。 `_lsearch_s` は検索中に `compare` を&1; 回以上呼び出し、各呼び出しにおいて&2; つの配列要素へのポインターを渡します。 `compare` は要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
   
- `context` のポインターはオブジェクトのメンバーにアクセスする検索対象のデータ構造体がオブジェクトと `compare` 関数のニーズに含まれる場合に便利です。  たとえば、`compare` 関数のコードは適切なオブジェクト型に void なポインターにキャストし、そのオブジェクトのメンバーにアクセスできます。  `context` のポインターの操作は、静的変数の使用に関連する再入のバグを避けるには、データを `compare` 関数で使用できるようにするために追加のコンテキストを使用できるため `_lsearch_s` をより安全になります。  
+ `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、`compare` 関数でオブジェクトのメンバーにアクセスする必要がある場合に役立ちます。 たとえば、`compare` 関数のコードは void ポインターを該当するオブジェクト型にキャストして、そのオブジェクトのメンバーにアクセスできます。 `context` ポインターを追加すると、`compare` 関数でデータを使用可能にする静的変数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、`_lsearch_s` がより安全になります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_lsearch_s`|\<search.h\>|  
+|-------------|---------------------|  
+|`_lsearch_s`|\<search.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
+ 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
- [bsearch\_s](../../c-runtime-library/reference/bsearch-s.md)   
- [\_lfind\_s](../Topic/_lfind_s.md)   
- [\_lsearch](../../c-runtime-library/reference/lsearch.md)
+ [bsearch_s](../../c-runtime-library/reference/bsearch-s.md)   
+ [_lfind_s](../../c-runtime-library/reference/lfind-s.md)   
+ [_lsearch](../../c-runtime-library/reference/lsearch.md)

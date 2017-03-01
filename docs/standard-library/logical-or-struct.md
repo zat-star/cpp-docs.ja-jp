@@ -1,78 +1,90 @@
 ---
 title: "logical_or 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std.logical_or"
-  - "std::logical_or"
-  - "logical_or"
-  - "xfunctional/std::logical_or"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "logical_or クラス"
-  - "logical_or 構造体"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std.logical_or
+- std::logical_or
+- logical_or
+- xfunctional/std::logical_or
+dev_langs:
+- C++
+helpviewer_keywords:
+- logical_or class
+- logical_or struct
 ms.assetid: ec8143f8-5755-4e7b-8025-507fb6bf6911
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# logical_or 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
+ms.openlocfilehash: 4928eb5d79877dd4d1e2c1a1c0f25dbc29e4ec1b
+ms.lasthandoff: 02/24/2017
 
-引数に対して論理和演算 \(`operator||`\) を実行する定義済みの関数オブジェクト。  
+---
+# <a name="logicalor-struct"></a>logical_or 構造体
+引数に対して論理和演算 (`operator||`) を実行する定義済みの関数オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-template<class Type = void>  
-   struct logical_or : public binary_function<Type, Type, bool>   
-   {  
-      bool operator()(  
-         const Type& Left,   
-         const Type& Right  
-      ) const;  
-   };  
-  
-// specialized transparent functor for operator||  
-template<>  
-   struct logical_or<void>  
-   {  
-      template<class Type1, class Type2>  
-      auto operator()(Type1&& Left, Type2&& Right) const  
-         -> decltype(std::forward<Type1>(Left)  
-            || std::forward<Type2>(Right));  
-   };  
-  
+```
+template <class Type = void>
+struct logical_or : public binary_function<Type, Type, bool>  
+{
+    bool operator()(const Type& Left, const Type& Right) const;
+ };
+
+// specialized transparent functor for operator||
+template <>
+struct logical_or<void>  
+{
+  template <class T, class U>
+  auto operator()(T&& Left, U&& Right) const`
+    -> decltype(std::forward<T>(Left) || std::forward<U>(Right));
+ };
 ```  
   
-#### パラメーター  
- `Type`, `Type1`, `Type2`  
+#### <a name="parameters"></a>パラメーター  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator||` をサポートする任意の型。  
   
  `Left`  
- 論理和演算の左オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type1` の左辺値および右辺値参照引数の完全転送を行います。  
+ 論理和演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- 論理和演算の右オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type2` の左辺値および右辺値参照引数の完全転送を行います。  
+ 論理和演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
-## 戻り値  
- `Left` `||` `Right` の結果。  特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator||` によって返された型が含まれます。  
+## <a name="return-value"></a>戻り値  
+ `Left``||``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator||` によって返された型が含まれます。  
   
-## 解説  
- ユーザー定義型の場合、オペランドの評価のショートサーキットはありません。  どちらの引数も `operator||` によって評価されます。  
+## <a name="remarks"></a>コメント  
+ ユーザー定義型の場合、オペランドの評価のショートサーキットはありません。 どちらの引数も `operator||` によって評価されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_logical_or.cpp  
 // compile with: /EHsc  
 #include <deque>  
@@ -119,19 +131,26 @@ int main( )
       cout << *iter3 << " ";  
    cout << ")" << endl;  
 }  
+\* Output:   
+Original deque:  
+ d1 = ( true true false false true false false )  
+Original deque:  
+ d2 = ( false false false true true true true )  
+The deque which is the disjuction of d1 & d2 is:  
+ d3 = ( true true false true true true true )  
+*\  
+  
 ```  
   
-  **Original deque:**  
- **d1 \= \( true true false false true false false \)**  
-**Original deque:**  
- **d2 \= \( false false false true true true true \)**  
-**The deque which is the disjuction of d1 & d2 is:**  
- **d3 \= \( true true false true true true true \)**   
-## 必要条件  
- **ヘッダー:** \<functional\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [標準テンプレート ライブラリ](../misc/standard-template-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+
