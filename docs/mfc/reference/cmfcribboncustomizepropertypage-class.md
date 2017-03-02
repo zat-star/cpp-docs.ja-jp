@@ -1,84 +1,100 @@
 ---
-title: "CMFCRibbonCustomizePropertyPage クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "GetThisClass"
-  - "CMFCRibbonCustomizePropertyPage::CreateObject"
-  - "CMFCRibbonCustomizePropertyPage"
-  - "CMFCRibbonCustomizePropertyPage::~CMFCRibbonCustomizePropertyPage"
-  - "CMFCRibbonCustomizePropertyPage.GetThisClass"
-  - "CMFCRibbonCustomizePropertyPage.CreateObject"
-  - "~CMFCRibbonCustomizePropertyPage"
-  - "CreateObject"
-  - "CMFCRibbonCustomizePropertyPage.~CMFCRibbonCustomizePropertyPage"
-  - "CMFCRibbonCustomizePropertyPage::GetThisClass"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "~CMFCRibbonCustomizePropertyPage デストラクター"
-  - "CMFCRibbonCustomizePropertyPage クラス"
-  - "CMFCRibbonCustomizePropertyPage クラス, デストラクター"
-  - "CreateObject メソッド"
-  - "GetThisClass メソッド"
+title: "CMFCRibbonCustomizePropertyPage クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- GetThisClass
+- CMFCRibbonCustomizePropertyPage::CreateObject
+- CMFCRibbonCustomizePropertyPage
+- CMFCRibbonCustomizePropertyPage::~CMFCRibbonCustomizePropertyPage
+- CMFCRibbonCustomizePropertyPage.GetThisClass
+- CMFCRibbonCustomizePropertyPage.CreateObject
+- ~CMFCRibbonCustomizePropertyPage
+- CreateObject
+- CMFCRibbonCustomizePropertyPage.~CMFCRibbonCustomizePropertyPage
+- CMFCRibbonCustomizePropertyPage::GetThisClass
+dev_langs:
+- C++
+helpviewer_keywords:
+- ~CMFCRibbonCustomizePropertyPage destructor
+- CMFCRibbonCustomizePropertyPage class, destructor
+- GetThisClass method
+- CreateObject method
+- CMFCRibbonCustomizePropertyPage class
 ms.assetid: ea32a99a-dfbe-401e-8975-aa191552532f
 caps.latest.revision: 26
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 28
----
-# CMFCRibbonCustomizePropertyPage クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 83323142441de13140383152a32122bf1644003f
+ms.lasthandoff: 02/24/2017
 
-リボン ベースのアプリケーションに **\[カスタマイズ\]** ダイアログ ボックスのカスタム ページを実装します。  
+---
+# <a name="cmfcribboncustomizepropertypage-class"></a>CMFCRibbonCustomizePropertyPage クラス
+カスタム ページを実装して、**カスタマイズ**リボン ベースのアプリケーションでダイアログ ボックス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMFCRibbonCustomizePropertyPage: public CMFCPropertyPage  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |||  
 |-|-|  
 |名前|説明|  
-|[CMFCRibbonCustomizePropertyPage::CMFCRibbonCustomizePropertyPage](../Topic/CMFCRibbonCustomizePropertyPage::CMFCRibbonCustomizePropertyPage.md)|`CMFCRibbonCustomizePropertyPage` オブジェクトを構築します。|  
+|[CMFCRibbonCustomizePropertyPage::CMFCRibbonCustomizePropertyPage](#cmfcribboncustomizepropertypage)|`CMFCRibbonCustomizePropertyPage` オブジェクトを構築します。|  
 |`CMFCRibbonCustomizePropertyPage::~CMFCRibbonCustomizePropertyPage`|デストラクターです。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |||  
 |-|-|  
 |名前|説明|  
-|[CMFCRibbonCustomizePropertyPage::AddCustomCategory](../Topic/CMFCRibbonCustomizePropertyPage::AddCustomCategory.md)|**\[コマンド\]** ボックスにカスタム カテゴリを追加します。|  
-|`CMFCRibbonCustomizePropertyPage::CreateObject`|このクラス型の動的インスタンスを作成するために、フレームワークによって使用されます。|  
-|`CMFCRibbonCustomizePropertyPage::GetThisClass`|このクラス型に関連付けられた [CRuntimeClass](../Topic/CRuntimeClass%20Structure.md) オブジェクトへのポインターを取得するために、フレームワークによって使用されます。|  
-|[CMFCRibbonCustomizePropertyPage::OnOK](../Topic/CMFCRibbonCustomizePropertyPage::OnOK.md)|ユーザーが **\[カスタマイズ\]** ダイアログ ボックスで **\[OK\]** をクリックしたときに呼び出されます。|  
+|[CMFCRibbonCustomizePropertyPage::AddCustomCategory](#addcustomcategory)|カスタム カテゴリを追加、**コマンド**コンボ ボックス。|  
+|`CMFCRibbonCustomizePropertyPage::CreateObject`|このクラス型の動的インスタンスを作成するために、フレームワークで使用されます。|  
+|`CMFCRibbonCustomizePropertyPage::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
+|[CMFCRibbonCustomizePropertyPage::OnOK](#onok)|ユーザーがクリックすると、システムによって呼び出さ**ok**上、**カスタマイズ** ダイアログ ボックス。|  
   
-## 解説  
- **\[ユーザー設定\]** ダイアログ ボックスにカスタム コマンドを追加する場合は、AFX\_WM\_ON\_RIBBON\_CUSTOMIZE メッセージを処理する必要があります。  メッセージ ハンドラーでは、スタックの `CMFCRibbonCustomizePropertyPage` オブジェクトをインスタンス化します。  カスタム コマンドの一覧を作成して、`AddCustomCategory` を呼び出し、**\[カスタマイズ\]** ダイアログ ボックスに新しいページを追加します。  
+## <a name="remarks"></a>コメント  
+ カスタム コマンドを追加する場合、**カスタマイズ**ダイアログ ボックスで、AFX_WM_ON_RIBBON_CUSTOMIZE メッセージを処理する必要があります。 メッセージ ハンドラーでインスタンス化、`CMFCRibbonCustomizePropertyPage`スタック上のオブジェクト。 カスタム コマンドの一覧を作成し、呼び出す`AddCustomCategory`に新しいページを追加する、**カスタマイズ** ダイアログ ボックス。  
   
-## 使用例  
- `CMFCRibbonCustomizePropertyPage` オブジェクトを構築してカスタム カテゴリを追加する方法を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例では、構築、`CMFCRibbonCustomizePropertyPage`オブジェクトとカスタムのカテゴリを追加します。  
   
- [!code-cpp[NVC_MFC_RibbonApp#22](../../mfc/reference/codesnippet/CPP/cmfcribboncustomizepropertypage-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_RibbonApp #&22;](../../mfc/reference/codesnippet/cpp/cmfcribboncustomizepropertypage-class_1.cpp)]  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
   
  [CDialog](../../mfc/reference/cdialog-class.md)  
   
@@ -88,9 +104,51 @@ class CMFCRibbonCustomizePropertyPage: public CMFCPropertyPage
   
  [CMFCRibbonCustomizePropertyPage](../../mfc/reference/cmfcribboncustomizepropertypage-class.md)  
   
-## 必要条件  
- **ヘッダー :** afxribboncustomizedialog.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxribboncustomizedialog.h  
   
-## 参照  
+##  <a name="a-nameaddcustomcategorya--cmfcribboncustomizepropertypageaddcustomcategory"></a><a name="addcustomcategory"></a>CMFCRibbonCustomizePropertyPage::AddCustomCategory  
+ カスタム カテゴリを追加、**コマンド**コンボ ボックス。  
+  
+```  
+void AddCustomCategory(
+    LPCTSTR lpszName,  
+    const CList<UINT, UINT>& lstIDS);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|||  
+|-|-|  
+|パラメーター|説明|  
+|[入力] `lpszName`|カスタムのカテゴリ名を指定します。|  
+|[入力] `lstIDS`|カスタムのカテゴリに表示されるリボン コマンド Id が含まれています。|  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドはという名前のカテゴリを追加`lpszName`に、**コマンド**コンボ ボックス。 コマンドが指定されたユーザーは、カテゴリを選択するときに`lstIDS`コマンドの一覧に表示されます。  
+  
+##  <a name="a-namecmfcribboncustomizepropertypagea--cmfcribboncustomizepropertypagecmfcribboncustomizepropertypage"></a><a name="cmfcribboncustomizepropertypage"></a>CMFCRibbonCustomizePropertyPage::CMFCRibbonCustomizePropertyPage  
+ `CMFCRibbonCustomizePropertyPage` オブジェクトを構築します。  
+  
+```  
+CMFCRibbonCustomizePropertyPage(CMFCRibbonBar* pRibbonBar = NULL);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pRibbonBar`  
+ 対象のリボン コントロールへのポインターをカスタマイズするオプションです。  
+  
+##  <a name="a-nameonoka--cmfcribboncustomizepropertypageonok"></a><a name="onok"></a>CMFCRibbonCustomizePropertyPage::OnOK  
+ ユーザーがクリックしたときに、システムによって Calleld **ok**上、**カスタマイズ** ダイアログ ボックス。  
+  
+```  
+virtual void OnOK();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 既定の実装で選択したオプションの適用、**カスタマイズ**ダイアログ ボックスで、クイック アクセス ツールバーをします。  
+  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)
+ [クラス](../../mfc/reference/mfc-classes.md)
+

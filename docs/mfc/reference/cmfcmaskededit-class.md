@@ -1,103 +1,312 @@
 ---
-title: "CMFCMaskedEdit クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMFCMaskedEdit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMFCMaskedEdit クラス"
-  - "CMFCMaskedEdit コンストラクター"
+title: "CMFCMaskedEdit クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMFCMaskedEdit
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCMaskedEdit class
+- CMFCMaskedEdit constructor
 ms.assetid: 13b1a645-2d5d-4c37-8599-16d5003f23a5
 caps.latest.revision: 30
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 32
----
-# CMFCMaskedEdit クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 174551ecd75df8691d2a6086cbc074516f6d2045
+ms.lasthandoff: 02/24/2017
 
-`CMFCMaskedEdit` クラスは、マスク エディット コントロールをサポートします。これは、ユーザーの入力をマスクと検証し、テンプレートに従って検証結果を表示します。  
+---
+# <a name="cmfcmaskededit-class"></a>CMFCMaskedEdit クラス
+`CMFCMaskedEdit`クラスは、ユーザーの入力をマスクを検証し、テンプレートに従って検証結果を表示するマスク エディット コントロールをサポートしています。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMFCMaskedEdit : public CEdit  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|`CMFCMaskedEdit::CMFCMaskedEdit`|既定のコンストラクターです。|  
+|----------|-----------------|  
+|`CMFCMaskedEdit::CMFCMaskedEdit`|既定のコンストラクター|  
 |`CMFCMaskedEdit::~CMFCMaskedEdit`|デストラクターです。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CMFCMaskedEdit::DisableMask](../Topic/CMFCMaskedEdit::DisableMask.md)|ユーザー入力の検証を無効にします。|  
-|[CMFCMaskedEdit::EnableGetMaskedCharsOnly](../Topic/CMFCMaskedEdit::EnableGetMaskedCharsOnly.md)|`GetWindowText` メソッドでマスク文字のみ取得するかどうかを指定します。|  
-|[CMFCMaskedEdit::EnableMask](../Topic/CMFCMaskedEdit::EnableMask.md)|マスク エディット コントロールを初期化します。|  
-|[CMFCMaskedEdit::EnableSelectByGroup](../Topic/CMFCMaskedEdit::EnableSelectByGroup.md)|マスク エディット コントロールにより、ユーザー入力の特定のグループを選択するか、またはすべてのユーザー入力を選択するかを指定します。|  
-|[CMFCMaskedEdit::EnableSetMaskedCharsOnly](../Topic/CMFCMaskedEdit::EnableSetMaskedCharsOnly.md)|テキスト検証時の比較対象をマスク文字に限定するか、マスク全体にするかを指定します。|  
-|`CMFCMaskedEdit::GetThisClass`|このクラス型に関連付けられた [CRuntimeClass](../Topic/CRuntimeClass%20Structure.md) オブジェクトへのポインターを取得するために、フレームワークによって使用されます。|  
-|[CMFCMaskedEdit::GetWindowText](../Topic/CMFCMaskedEdit::GetWindowText.md)|マスク エディット コントロールから検証済みのテキストを取得します。|  
-|[CMFCMaskedEdit::SetValidChars](../Topic/CMFCMaskedEdit::SetValidChars.md)|ユーザーが入力できる有効な文字の文字列を指定します。|  
-|[CMFCMaskedEdit::SetWindowText](../Topic/CMFCMaskedEdit::SetWindowText.md)|マスク エディット コントロールにプロンプトを表示します。|  
+|----------|-----------------|  
+|[CMFCMaskedEdit::DisableMask](#disablemask)|ユーザー入力の検証を無効にします。|  
+|[CMFCMaskedEdit::EnableGetMaskedCharsOnly](#enablegetmaskedcharsonly)|指定するかどうか、`GetWindowText`メソッドは、マスクされた文字のみを取得します。|  
+|[CMFCMaskedEdit::EnableMask](#enablemask)|エディット コントロールのマスクを初期化します。|  
+|[CMFCMaskedEdit::EnableSelectByGroup](#enableselectbygroup)|マスク エディット コントロールがユーザー入力、またはすべてのユーザー入力の特定のグループを選択するかどうかを指定します。|  
+|[CMFCMaskedEdit::EnableSetMaskedCharsOnly](#enablesetmaskedcharsonly)|マスク全体またはテキストを検証しているだけで、文字をマスクするかどうかを指定します。|  
+|`CMFCMaskedEdit::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
+|[CMFCMaskedEdit::GetWindowText](#getwindowtext)|検証済みのマスク エディット コントロールからテキストを取得します。|  
+|[CMFCMaskedEdit::SetValidChars](#setvalidchars)|ユーザーが入力できる有効な文字の文字列を指定します。|  
+|[CMFCMaskedEdit::SetWindowText](#setwindowtext)|マスク エディット コントロールで、プロンプトを表示します。|  
   
-### プロテクト メソッド  
+### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CMFCMaskedEdit::IsMaskedChar](../Topic/CMFCMaskedEdit::IsMaskedChar.md)|指定された文字を、対応するマスク文字と比較して検証するために、フレームワークによって呼び出されます。|  
+|----------|-----------------|  
+|[CMFCMaskedEdit::IsMaskedChar](#ismaskedchar)|対応するマスク文字に対して指定した文字を検証するためにフレームワークによって呼び出されます。|  
   
-## 解説  
- アプリケーションで `CMFCMaskedEdit` コントロールを使用するには、次の手順を実行します。  
+## <a name="remarks"></a>コメント  
+ 使用する次の手順を実行、`CMFCMaskedEdit`アプリケーションで制御します。  
   
- 1.  ウィンドウ クラスに `CMFCMaskedEdit` オブジェクトを埋め込みます。  
+ 1. 埋め込む、`CMFCMaskedEdit`ウィンドウ クラスのオブジェクト。  
   
- 2.  [CMFCMaskedEdit::EnableMask](../Topic/CMFCMaskedEdit::EnableMask.md) メソッドを呼び出して、マスクを指定します。  
+ 2. 呼び出す、 [CMFCMaskedEdit::EnableMask](#enablemask)マスクを指定します。  
   
- 3.  [CMFCMaskedEdit::SetValidChars](../Topic/CMFCMaskedEdit::SetValidChars.md) メソッドを呼び出して、有効な文字のリストを指定します。  
+ 3. 呼び出す、 [CMFCMaskedEdit::SetValidChars](#setvalidchars)有効な文字の一覧を指定します。  
   
- 4.  [CMFCMaskedEdit::SetWindowText](../Topic/CMFCMaskedEdit::SetWindowText.md) メソッドを呼び出して、マスク エディット コントロールの既定のテキストを指定します。  
+ 4. 呼び出す、 [CMFCMaskedEdit::SetWindowText](#setwindowtext)マスク エディット コントロールの既定のテキストを指定します。  
   
- 5.  [CMFCMaskedEdit::GetWindowText](../Topic/CMFCMaskedEdit::GetWindowText.md) メソッドを呼び出して、検証済みのテキストを取得します。  
+ 5. 呼び出す、 [CMFCMaskedEdit::GetWindowText](#getwindowtext)検証済みのテキストを取得します。  
   
- 1 つ以上のメソッドを呼び出してマスク、有効な文字、および既定のテキストを初期化しない場合、マスク エディット コントロールは標準のエディット コントロールのように動作します。  
+ マスク、有効な文字、および既定のテキストを初期化するために&1; つ以上のメソッドが呼び出されない場合、標準のエディット コントロールの動作と同様、マスク エディット コントロールが動作します。  
   
-## 使用例  
- `EnableMask` メソッドを使用してマスク エディット コントロールのマスクを作成し、`SetValidChars` メソッドを使用してユーザーが入力できる有効な文字の文字列を指定し、さらに `SetWindowText` メソッドを使用してマスク エディット コントロールにプロンプトを表示することで、マスク \(電話番号など\) を設定する方法を次の例に示します。  この例では [新しいコントロールのサンプル](../../top/visual-cpp-samples.md)の一部です。  
+## <a name="example"></a>例  
+ 次の例を使用してマスク (電話番号など) を設定する方法、`EnableMask`マスク エディット コントロールでのマスクを作成する方法、 `SetValidChars` 、入力できる有効な文字の文字列を指定する方法と`SetWindowText`マスクのプロンプトを表示する方法は、コントロールを編集します。 この例は、[新しいコントロールのサンプル](../../visual-cpp-samples.md)します。  
   
- [!CODE [NVC_MFC_NewControls#11](../CodeSnippet/VS_Snippets_Misc/NVC_MFC_NewControls#11)]  
-[!CODE [NVC_MFC_NewControls#12](../CodeSnippet/VS_Snippets_Misc/NVC_MFC_NewControls#12)]  
+ [!code-cpp[NVC_MFC_NewControls&#11;](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_1.h)]  
+[!code-cpp[NVC_MFC_NewControls&#12;](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_2.cpp)]  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
   
- [CEdit](../Topic/CEdit%20Class.md)  
+ [CEdit](../../mfc/reference/cedit-class.md)  
   
  [CMFCMaskedEdit](../../mfc/reference/cmfcmaskededit-class.md)  
   
-## 必要条件  
- **ヘッダー :** afxmaskededit.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxmaskededit.h  
   
-## 参照  
+##  <a name="a-namedisablemaska--cmfcmaskededitdisablemask"></a><a name="disablemask"></a>CMFCMaskedEdit::DisableMask  
+ ユーザー入力の検証を無効にします。  
+  
+```  
+void DisableMask();
+```  
+  
+### <a name="remarks"></a>コメント  
+ ユーザー入力の検証が無効にマスク エディット コントロールでは、標準エディット コントロールと同様に動作します。  
+  
+##  <a name="a-nameenablegetmaskedcharsonlya--cmfcmaskededitenablegetmaskedcharsonly"></a><a name="enablegetmaskedcharsonly"></a>CMFCMaskedEdit::EnableGetMaskedCharsOnly  
+ 指定するかどうか、`GetWindowText`メソッドは、マスクされた文字のみを取得します。  
+  
+```  
+void EnableGetMaskedCharsOnly(BOOL bEnable=TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bEnable`  
+ `TRUE`指定する、 [CMFCMaskedEdit::GetWindowText](#getwindowtext)マスクされた文字のみをメソッドの取得`FALSE`メソッドがテキスト全体を取得することを指定します。 既定値は `TRUE` です。  
+  
+### <a name="remarks"></a>コメント  
+ マスク文字の取得を有効にするのにには、このメソッドを使用します。 (425) 555-0187 などの電話番号に対応するマスク エディット コントロールを作成します。 呼び出した場合、`GetWindowText`メソッドは、「4255550187」返します。 マスク文字の取得を無効にした場合、`GetWindowText`メソッド「(425) 555-0187」などのエディット コントロールに表示されるテキストを返します。  
+  
+##  <a name="a-nameenablemaska--cmfcmaskededitenablemask"></a><a name="enablemask"></a>CMFCMaskedEdit::EnableMask  
+ エディット コントロールのマスクを初期化します。  
+  
+```  
+void EnableMask(
+    LPCTSTR lpszMask,  
+    LPCTSTR lpszInputTemplate,  
+    TCHAR chMaskInputTemplate=_T('_'),  
+    LPCTSTR lpszValid=NULL);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszMask`  
+ ユーザー入力のそれぞれの位置に表示できる文字の種類を指定するマスク文字列。 長さ、`lpszInputTemplate`と`lpszMask`パラメーター文字列は同じである必要があります。 マスク文字の詳細については「解説」セクションを参照してください。  
+  
+ [入力] `lpszInputTemplate`  
+ リテラル文字を指定するマスク テンプレート文字列は、ユーザー入力のそれぞれの位置に表示できます。 文字のプレース ホルダーとしてアンダー スコア文字 (_) を使用します。 長さ、`lpszInputTemplate`と`lpszMask`パラメーター文字列は同じである必要があります。  
+  
+ [入力] `chMaskInputTemplate`  
+ 既定の文字で、フレームワーク、ユーザーの入力に無効な各文字の代わりに使用します。 このパラメーターの既定値は、アンダー スコア (_) です。  
+  
+ [入力] `lpszValid`  
+ 有効な文字のセットを含む文字列です。 `NULL`すべての文字が有効であることを示します。 このパラメーターの既定値は、`NULL` です。  
+  
+### <a name="remarks"></a>コメント  
+ マスク エディット コントロールのマスクを作成するのにには、このメソッドを使用します。 クラスを派生、`CMFCMaskedEdit`クラスさせ、 [CMFCMaskedEdit::IsMaskedChar](#ismaskedchar)カスタム マスクで処理するため、独自のコードを使用する方法です。  
+  
+ 次の表は、既定のマスク文字を一覧表示します。  
+  
+|マスク文字|定義|  
+|--------------------|----------------|  
+|D|数字の文字。|  
+|日|数字または空白。|  
+|+|正符号 ('+ ')、負符号 ('-')、または容量。|  
+|C|アルファベット文字。|  
+|c|アルファベット文字またはスペース。|  
+|A|英数字文字です。|  
+|a|英数字文字またはスペース。|  
+|*|印刷可能な文字です。|  
+  
+##  <a name="a-nameenableselectbygroupa--cmfcmaskededitenableselectbygroup"></a><a name="enableselectbygroup"></a>CMFCMaskedEdit::EnableSelectByGroup  
+ マスク エディット コントロールに特定のグループを選択の入力、またはすべての入力をユーザーができるかどうかを指定します。  
+  
+```  
+void EnableSelectByGroup(BOOL bEnable=TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bEnable`  
+ `TRUE`グループだけを選択するには`FALSE`全体のテキストを選択します。 既定値は `TRUE` です。  
+  
+### <a name="remarks"></a>コメント  
+ この関数を使用すると、マスク エディット コントロールに、ユーザー グループまたはテキスト全体が選択できるかどうかを指定できます。  
+  
+ 既定では、グループでの選択が有効にします。 この場合、ユーザーは、有効な文字の連続するグループのみを選択できます。  
+  
+ たとえば、電話番号の検証を次のマスク エディット コントロールを使用する可能性があります。  
+  
+ `m_wndMaskEdit.EnableMask(`  
+  
+ `_T(" ddd  ddd dddd"),// Mask string`  
+  
+ `_T("(___) ___-____"),// Template string`  
+  
+ `_T(' '));// Default char`  
+  
+ `m_wndMaskEdit.SetValidChars(NULL); // All characters are valid.`  
+  
+ `m_wndMaskEdit.SetWindowText(_T("(425) 555-0187")); // Prompt`  
+  
+ グループでの選択が有効になっている場合、ユーザーはのみ「425」、「555」または「0187」文字列のグループを取得できます。 グループの選択が無効になっている場合、ユーザーが電話番号のテキスト全体を取得できます。"(425) 555-0187"です。  
+  
+##  <a name="a-nameenablesetmaskedcharsonlya--cmfcmaskededitenablesetmaskedcharsonly"></a><a name="enablesetmaskedcharsonly"></a>CMFCMaskedEdit::EnableSetMaskedCharsOnly  
+ 指定またはマスク文字のみに対してマスク全体にテキストを検証するかどうか。  
+  
+```  
+void EnableSetMaskedCharsOnly(BOOL bEnable=TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bEnable`  
+ `TRUE`ユーザーを検証する入力に対してのみマスク文字です。`FALSE`マスク全体を検証します。 既定値は `TRUE` です。  
+  
+##  <a name="a-namegetwindowtexta--cmfcmaskededitgetwindowtext"></a><a name="getwindowtext"></a>CMFCMaskedEdit::GetWindowText  
+ 検証済みのマスク エディット コントロールからテキストを取得します。  
+  
+```  
+int GetWindowText(
+    LPTSTR lpszStringBuf,  
+    int nMaxCount) const;  
+  
+void GetWindowText(CString& rstrString) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [出力] `lpszStringBuf`  
+ エディット コントロールからテキストを受け取るバッファーへのポインター。  
+  
+ [入力] `nMaxCount`  
+ 受信する文字の最大数。  
+  
+ [出力] `rstrString`  
+ エディット コントロールからテキストを受け取る文字列オブジェクトへの参照。  
+  
+### <a name="return-value"></a>戻り値  
+ 最初のメソッドのオーバー ロードがコピーされる文字列のバイト数を返す、`lpszStringBuf`パラメーター バッファー; マスク エディット コントロールにテキストがあるない場合は 0 です。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドは、マスク エディット コントロールからテキストをコピー、`lpszStringBuf`バッファーまたは`rstrString`文字列。  
+  
+ このメソッドを再定義[CWnd::GetWindowText](../../mfc/reference/cwnd-class.md#getwindowtext)します。  
+  
+##  <a name="a-nameismaskedchara--cmfcmaskededitismaskedchar"></a><a name="ismaskedchar"></a>CMFCMaskedEdit::IsMaskedChar  
+ 対応するマスク文字に対して指定した文字を検証するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual BOOL IsMaskedChar(
+    TCHAR chChar,  
+    TCHAR chMaskChar) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `chChar`  
+ 検証する文字。  
+  
+ [入力] `chMaskChar`  
+ マスク文字列から対応する文字。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`場合、`chChar`パラメーターで許可されている文字の型が、`chMaskChar`パラメーター。 そうしないと、`FALSE`です。  
+  
+### <a name="remarks"></a>コメント  
+ 自分で入力文字を検証するのには、このメソッドをオーバーライドします。 マスク文字の詳細については、次を参照してください。、 [CMFCMaskedEdit::EnableMask](#enablemask)メソッドです。  
+  
+##  <a name="a-namesetvalidcharsa--cmfcmaskededitsetvalidchars"></a><a name="setvalidchars"></a>CMFCMaskedEdit::SetValidChars  
+ ユーザーが入力できる有効な文字の文字列を指定します。  
+  
+```  
+void SetValidChars(LPCTSTR lpszValid=NULL);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszValid`  
+ 有効な入力文字のセットを含む文字列。 `NULL`すべての文字が有効であることを意味します。 このパラメーターの既定値は、`NULL` です。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドを使用すると、有効な文字の一覧を定義します。 入力文字がこの一覧にない場合は、マスク エディット コントロールはそれを受け入れません。  
+  
+ 次のコード例では、16 進数のみを受け入れます。  
+  
+ `//Mask: 0xFFFFm_wndMaskEdit.EnableMask( _T(" AAAA"),                // The mask string. _T("0x____"),               // The literal template string. _T('_'));                   // The default character that replaces the backspace character.// Valid string charactersm_wndMaskEdit.SetValidChars(_T("1234567890ABCDEFabcdef"));m_wndMaskEdit.SetWindowText(_T("0x01AF"));`  
+  
+##  <a name="a-namesetwindowtexta--cmfcmaskededitsetwindowtext"></a><a name="setwindowtext"></a>CMFCMaskedEdit::SetWindowText  
+ マスク エディット コントロールで、プロンプトを表示します。  
+  
+```  
+void SetWindowText(LPCTSTR lpszString);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszString`  
+ プロンプトとして使用される null で終わる文字列へのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドは、コントロールのテキストを設定します。  
+  
+ このメソッドを再定義[とき](../../mfc/reference/cwnd-class.md#setwindowtext)します。  
+  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)   
- [CEdit クラス](../Topic/CEdit%20Class.md)
+ [クラス](../../mfc/reference/mfc-classes.md)   
+ [CEdit クラス](../../mfc/reference/cedit-class.md)
+

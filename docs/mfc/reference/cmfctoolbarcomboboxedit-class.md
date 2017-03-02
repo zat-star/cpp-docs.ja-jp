@@ -1,72 +1,104 @@
 ---
-title: "CMFCToolBarComboBoxEdit クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMFCComboEdit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMFCToolBarComboBoxEdit クラス"
-  - "CMFCToolBarComboBoxEdit::PreTranslateMessage メソッド"
+title: "CMFCToolBarComboBoxEdit クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMFCComboEdit
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCToolBarComboBoxEdit class
+- CMFCToolBarComboBoxEdit::PreTranslateMessage method
 ms.assetid: 4789c34a-ce58-48ba-a26f-38748b601352
 caps.latest.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# CMFCToolBarComboBoxEdit クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 3c0f2ade3292fb238a227e881951604606baec79
+ms.lasthandoff: 02/24/2017
 
-`CMFCToolBarComboBoxEdit` クラスを使用して、フレームワークは編集可能なコンボ ボックス コントロールとして動作するツール バーのボタンを作成します。  
+---
+# <a name="cmfctoolbarcomboboxedit-class"></a>CMFCToolBarComboBoxEdit クラス
+フレームワークを使用して、`CMFCToolBarComboBoxEdit`編集可能なコンボ ボックス コントロールと同様に動作するツール バー ボタンを作成するクラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMFCToolBarComboBoxEdit : public CEdit  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CMFCToolBarComboBoxEdit::CMFCToolBarComboBoxEdit](../Topic/CMFCToolBarComboBoxEdit::CMFCToolBarComboBoxEdit.md)|`CMFCToolBarComboBoxEdit` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[CMFCToolBarComboBoxEdit::CMFCToolBarComboBoxEdit](#cmfctoolbarcomboboxedit)|`CMFCToolBarComboBoxEdit` オブジェクトを構築します。|  
 |`CMFCToolBarComboBoxEdit::~CMFCToolBarComboBoxEdit`|デストラクターです。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|`CMFCToolBarComboBoxEdit::PreTranslateMessage`|Windows 関数の [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955) や [DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) にディスパッチする前にウィンドウ メッセージを変換します。  \([CWnd::PreTranslateMessage](../Topic/CWnd::PreTranslateMessage.md) をオーバーライドします\)。|  
+|----------|-----------------|  
+|`CMFCToolBarComboBoxEdit::PreTranslateMessage`|ウィンドウのメッセージの変換にディスパッチされる前に、 [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955)と[DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows 関数です。 (上書き[CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage))。|  
   
-### 解説  
- `CMFCToolBarComboBoxEdit` クラスからクラスを派生させて、その編集操作をカスタマイズします。  
+### <a name="remarks"></a>コメント  
+ クラスを派生、`CMFCToolBarComboBoxEdit`の編集操作をカスタマイズするクラス。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
- [CCmdTarget](../Topic/CCmdTarget%20Class.md)  
+ [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
- [CWnd](../Topic/CWnd%20Class.md)  
+ [CWnd](../../mfc/reference/cwnd-class.md)  
   
- [CEdit](../Topic/CEdit%20Class.md)  
+ [CEdit](../../mfc/reference/cedit-class.md)  
   
  [CMFCToolBarComboBoxEdit](../../mfc/reference/cmfctoolbarcomboboxedit-class.md)  
   
-## 必要条件  
- **ヘッダー :** afxtoolbarcomboboxbutton.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxtoolbarcomboboxbutton.h  
   
-## 参照  
+##  <a name="a-namecmfctoolbarcomboboxedita--cmfctoolbarcomboboxeditcmfctoolbarcomboboxedit"></a><a name="cmfctoolbarcomboboxedit"></a>CMFCToolBarComboBoxEdit::CMFCToolBarComboBoxEdit  
+ `CMFCToolBarComboBoxEdit` オブジェクトを構築します。  
+  
+```  
+CMFCToolBarComboBoxEdit(CMFCToolBarComboBoxButton& combo);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `combo`  
+ 参照、 [CMFCToolBarComboBoxButton](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md)コンボ ボックス コントロールを含むツール バー ボタンであるオブジェクト。  
+  
+### <a name="example"></a>例  
+ 次の例のオブジェクトを構築する方法、`CMFCToolBarComboBoxEdit`クラスです。 このコード スニペットの一部である、 [IE のデモのサンプル](../../visual-cpp-samples.md)します。  
+  
+ [!code-cpp[NVC_MFC_IEDemo&#5;](../../mfc/reference/codesnippet/cpp/cmfctoolbarcomboboxedit-class_1.cpp)]  
+  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)   
- [CMFCToolBarComboBoxButton クラス](../Topic/CMFCToolBarComboBoxButton%20Class.md)   
- [CMFCToolBarComboBoxButton::CreateEdit](../Topic/CMFCToolBarComboBoxButton::CreateEdit.md)
+ [クラス](../../mfc/reference/mfc-classes.md)   
+ [CMFCToolBarComboBoxButton クラス](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md)
+

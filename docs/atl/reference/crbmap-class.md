@@ -1,98 +1,216 @@
 ---
-title: "CRBMap クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL.CRBMap"
-  - "CRBMap"
-  - "ATL::CRBMap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRBMap クラス"
+title: "CRBMap クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL.CRBMap
+- CRBMap
+- ATL::CRBMap
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRBMap class
 ms.assetid: 658e94dc-e835-4356-aed1-1513e1f66969
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# CRBMap クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 7b1cd9e54a18746e26929e9768a990bbe0ba6553
+ms.lasthandoff: 02/24/2017
 
-このクラスは、レッドブラック バイナリ ツリーを使用して、マップ構造体を表します。  
+---
+# <a name="crbmap-class"></a>CRBMap クラス
+このクラスは、レッド ブラック バイナリ ツリーを使用して、マップ構造体を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```
+template <typename K,
+          typename V, 
+          class KTraits = CElementTraits<K>, 
+          class VTraits = CElementTraits<V>> 
+class CRBMap : public CRBTree<K, V, KTraits, VTraits>
+```    
   
-      template<   
-   typename K,  
-   typename V,  
-   class KTraits = CElementTraits< K >,  
-   class VTraits = CElementTraits< V >   
-> class CRBMap : public CRBTree< K, V, KTraits, VTraits >  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `K`  
- キー要素の型。  
+ キーの要素の型。  
   
  *V*  
- 値要素の型。  
+ 値の要素型。  
   
  `KTraits`  
- キー要素のコピーまたは移動するときに使用するコード。  [CElementTraits のクラス](../../atl/reference/celementtraits-class.md) を詳細については、" "を参照してください。  
+ コピーまたは主要な要素を移動するために使用するコードです。 参照してください[CElementTraits クラス](../../atl/reference/celementtraits-class.md)詳細です。  
   
  `VTraits`  
- 要素値をコピーまたは移動するときに使用するコード。  
+ コピーまたは値の要素を移動するために使用するコードです。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[CRBMap::CRBMap](../Topic/CRBMap::CRBMap.md)|コンストラクターです。|  
-|[CRBMap::~CRBMap](../Topic/CRBMap::~CRBMap.md)|デストラクターです。|  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CRBMap::Lookup](../Topic/CRBMap::Lookup.md)|`CRBMap` のオブジェクトのキーまたは値を検索するためにこのメソッドを呼び出します。|  
-|[CRBMap::RemoveKey](../Topic/CRBMap::RemoveKey.md)|キーが存在 `CRBMap` のオブジェクトから要素を削除するには、このメソッドを呼び出します。|  
-|[CRBMap::SetAt](../Topic/CRBMap::SetAt.md)|マップのペアに要素を挿入する場合に、このメソッドを呼び出します。|  
+|----------|-----------------|  
+|[CRBMap::CRBMap](#crbmap)|コンストラクターです。|  
+|[CRBMap:: ~ CRBMap](#dtor)|デストラクターです。|  
   
-## 解説  
- `CRBMap` はキー要素および関連する値の順序の配列を管理する特定の型のマッピングの配列をサポートします。  各キーには 1 種類の関連する値だけを指定できます。  要素は [CRBMap::SetAt](../Topic/CRBMap::SetAt.md) のメソッドを使用してバイナリ ツリーの構造 \(キーと値で構成されます\) が格納されます。  要素は、特定のキー値を持つ要素を削除する [CRBMap::RemoveKey](../Topic/CRBMap::RemoveKey.md) のメソッドを使用して削除できます。  
+### <a name="public-methods"></a>パブリック メソッド  
   
- ツリーを走査することは [CRBTree::GetHeadPosition](../Topic/CRBTree::GetHeadPosition.md)、[CRBTree::GetNext](../Topic/CRBTree::GetNext.md)と [CRBTree::GetNextValue](../Topic/CRBTree::GetNextValue.md)のようなメソッドで有効になっています。  
+|名前|説明|  
+|----------|-----------------|  
+|[CRBMap::Lookup](#lookup)|キーまたは値を検索するには、このメソッドを呼び出して、`CRBMap`オブジェクトです。|  
+|[CRBMap::RemoveKey](#removekey)|要素を削除するには、このメソッドを呼び出して、`CRBMap`キーが指定されたオブジェクト。|  
+|[CRBMap::SetAt](#setat)|要素のペアをマップに挿入するには、このメソッドを呼び出します。|  
   
- `KTraits` と `VTraits` のパラメーターは、要素をコピーするか、または実行に必要な補足コードを含む特性のクラスです。  
+## <a name="remarks"></a>コメント  
+ `CRBMap`主要な要素と関連付けられている値の順序付けられた配列を管理する、指定された型のマッピングの配列のサポートを提供します。 各キーは、1 つだけの関連付けられている値を設定できます。 バイナリ ツリーの要素 (キーおよび値で構成される) が格納されている構造体を使用して、 [CRBMap::SetAt](#setat)メソッドです。 使用して要素を削除できる、 [CRBMap::RemoveKey](#removekey)メソッドで、指定したキー値を持つ要素を削除します。  
   
- `CRBMap` はから派生します [CRBTree](../../atl/reference/crbtree-class.md)、アルゴリズムを使用して、レッドブラック バイナリ ツリーを実行する。  [CRBMultiMap](../../atl/reference/crbmultimap-class.md) は、各キーの複数の値を可能にするさまざまです。  これは `CRBTree`から派生しすぎると、`CRBMap`は多くの機能を共有します。  
+ ツリーの走査を可能にメソッドのなど[CRBTree::GetHeadPosition](../../atl/reference/crbtree-class.md#getheadposition)、 [CRBTree::GetNext](../../atl/reference/crbtree-class.md#getnext)、および[CRBTree::GetNextValue](../../atl/reference/crbtree-class.md#getnextvalue)します。  
   
- 両方の `CRBMap` と `CRBMultiMap` 代わりに、[CAtlMap](../../atl/reference/catlmap-class.md) のクラスによって提供されます。  一部の要素のみを格納する必要がある場合 [CSimpleMap](../../atl/reference/csimplemap-class.md) の代わりにクラスを使用することを検討してください。  
+ `KTraits`と`VTraits`パラメーターは、特徴 (traits) クラスをコピーまたは要素を移動するために必要な補足コードが含まれています。  
   
- さまざまなコレクション クラスおよび機能およびパフォーマンス特性の詳細については、[ATL のコレクション クラス](../../atl/atl-collection-classes.md)を参照してください。  
+ `CRBMap`派生した[CRBTree](../../atl/reference/crbtree-class.md)、レッド ブラック アルゴリズムを使用してバイナリ ツリーを実装します。 [CRBMultiMap](../../atl/reference/crbmultimap-class.md)キーごとに複数の値を許可するバリエーションです。 派生すぎる`CRBTree`、そのために多くの機能を共有し、`CRBMap`します。  
   
-## 継承階層  
+ 基準には、`CRBMap`と`CRBMultiMap`によって提供される、 [CAtlMap](../../atl/reference/catlmap-class.md)クラスです。 要素の数が少ないのみを格納する必要が、ときに、使用を検討して、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスの代わりにします。  
+  
+ さまざまなコレクション クラスとその機能とパフォーマンス特性の詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  [CRBTree](../../atl/reference/crbtree-class.md)  
   
  `CRBMap`  
   
-## 必要条件  
- **Header:** atlcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlcoll.h  
   
-## 参照  
+##  <a name="a-namecrbmapa--crbmapcrbmap"></a><a name="crbmap"></a>CRBMap::CRBMap  
+ コンストラクターです。  
+  
+```
+explicit CRBMap(size_t nBlockSize = 10) throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `nBlockSize`  
+ ブロック サイズ。  
+  
+### <a name="remarks"></a>コメント  
+ `nBlockSize`パラメーターは、新しい要素が必要なときに割り当てられたメモリの量の測定値。 ブロック サイズの増加はメモリ割り当てルーチンの呼び出しを減らすためより多くのリソースを使用します。 既定値に、一度に 10 個の要素の領域を割り当てます。  
+  
+ 基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)利用可能なその他の方法についてです。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities #&81;](../../atl/codesnippet/cpp/crbmap-class_1.cpp)]  
+  
+##  <a name="a-namedtora--crbmapcrbmap"></a><a name="dtor"></a>CRBMap:: ~ CRBMap  
+ デストラクターです。  
+  
+```
+~CRBMap() throw();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 割り当てられたリソースを解放します。  
+  
+ 基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)利用可能なその他の方法についてです。  
+  
+##  <a name="a-namelookupa--crbmaplookup"></a><a name="lookup"></a>CRBMap::Lookup  
+ キーまたは値を検索するには、このメソッドを呼び出して、`CRBMap`オブジェクトです。  
+  
+```
+bool Lookup(KINARGTYPE key, VOUTARGTYPE value) const throw(...);
+const CPair* Lookup(KINARGTYPE key) const throw();
+CPair* Lookup(KINARGTYPE key) throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `key`  
+ 検索する要素を識別するキーを指定します。  
+  
+ *value*  
+ 検索された値を受け取る変数。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドの最初の形式は、キーが見つかった場合は true を返します。 2 番目と&3; 番目のフォームへのポインターを返す、 [CPair](crbtree-class.md#cpair_class)します。  
+  
+### <a name="remarks"></a>コメント  
+ 基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)利用可能なその他の方法についてです。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities #&82;](../../atl/codesnippet/cpp/crbmap-class_2.cpp)]  
+  
+##  <a name="a-nameremovekeya--crbmapremovekey"></a><a name="removekey"></a>CRBMap::RemoveKey  
+ 要素を削除するには、このメソッドを呼び出して、`CRBMap`キーが指定されたオブジェクト。  
+  
+```
+bool RemoveKey(KINARGTYPE key) throw();
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `key`  
+ 削除する要素のペアに対応するキー。  
+  
+### <a name="return-value"></a>戻り値  
+ キーが見つかったと削除された、失敗した場合は false の場合は true を返します。  
+  
+### <a name="remarks"></a>コメント  
+ 基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)利用可能なその他の方法についてです。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities&#83;](../../atl/codesnippet/cpp/crbmap-class_3.cpp)]  
+  
+##  <a name="a-namesetata--crbmapsetat"></a><a name="setat"></a>CRBMap::SetAt  
+ 要素のペアをマップに挿入するには、このメソッドを呼び出します。  
+  
+```
+POSITION SetAt(
+    KINARGTYPE key,
+    VINARGTYPE value) throw(...);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `key`  
+ 追加するキー値、`CRBMap`オブジェクトです。  
+  
+ *value*  
+ 追加する値、`CRBMap`オブジェクトです。  
+  
+### <a name="return-value"></a>戻り値  
+ キー/値要素のペアの位置を返す、`CRBMap`オブジェクトです。  
+  
+### <a name="remarks"></a>コメント  
+ `SetAt`一致するキーが見つかった場合は、既存の要素を置換します。 キーが見つからない場合は、新しいキー/値ペアが作成されます。  
+  
+ 基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)利用可能なその他の方法についてです。  
+  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities #&84;](../../atl/codesnippet/cpp/crbmap-class_4.cpp)]  
+  
+## <a name="see-also"></a>関連項目  
  [CRBTree クラス](../../atl/reference/crbtree-class.md)   
  [CAtlMap クラス](../../atl/reference/catlmap-class.md)   
  [CRBMultiMap クラス](../../atl/reference/crbmultimap-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
+

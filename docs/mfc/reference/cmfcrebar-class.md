@@ -1,76 +1,284 @@
 ---
-title: "CMFCReBar クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CMFCReBar"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMFCReBar クラス"
+title: "CMFCReBar クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMFCReBar
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCReBar class
 ms.assetid: 02a60e29-6224-49c1-9e74-e0a7d9f8d023
 caps.latest.revision: 27
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 29
----
-# CMFCReBar クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 5ec432cb8cf70d31c04c718fd7e802ee9c099763
+ms.lasthandoff: 02/24/2017
 
-`CMFCReBar` オブジェクトは、Rebar コントロールのレイアウト、永続性、および状態の情報を提供するコントロール バーです。  
+---
+# <a name="cmfcrebar-class"></a>CMFCReBar クラス
+A`CMFCReBar`オブジェクトは、レイアウト、永続化、および rebar コントロールの状態情報を提供するコントロール バーです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CMFCReBar : public CPane  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CMFCReBar::AddBar](../Topic/CMFCReBar::AddBar.md)|Rebar にバンドを追加します。|  
-|[CMFCReBar::CalcFixedLayout](../Topic/CMFCReBar::CalcFixedLayout.md)|\([CBasePane::CalcFixedLayout](../Topic/CBasePane::CalcFixedLayout.md) をオーバーライドします。\)|  
-|[CMFCReBar::CanFloat](../Topic/CMFCReBar::CanFloat.md)|\([CBasePane::CanFloat](../Topic/CBasePane::CanFloat.md) をオーバーライドします。\)|  
-|[CMFCReBar::Create](../Topic/CMFCReBar::Create.md)|Rebar コントロールを作成し、`CMFCReBar` オブジェクトに結び付けます。|  
-|[CMFCReBar::EnableDocking](../Topic/CMFCReBar::EnableDocking.md)|\([CBasePane::EnableDocking](../Topic/CBasePane::EnableDocking.md) をオーバーライドします。\)|  
-|[CMFCReBar::GetReBarBandInfoSize](../Topic/CMFCReBar::GetReBarBandInfoSize.md)||  
-|[CMFCReBar::GetReBarCtrl](../Topic/CMFCReBar::GetReBarCtrl.md)|基になるコモン コントロールである [CReBarCtrl](../../mfc/reference/crebarctrl-class.md) に直接アクセスできるようにします。|  
-|[CMFCReBar::OnShowControlBarMenu](../Topic/CMFCReBar::OnShowControlBarMenu.md)|\([CPane::OnShowControlBarMenu](../Topic/CPane::OnShowControlBarMenu.md) をオーバーライドします\)。|  
-|[CMFCReBar::OnToolHitTest](../Topic/CMFCReBar::OnToolHitTest.md)|\([CWnd::OnToolHitTest](../Topic/CWnd::OnToolHitTest.md) をオーバーライドします。\)|  
-|[CMFCReBar::OnUpdateCmdUI](../Topic/CMFCReBar::OnUpdateCmdUI.md)|\([CBasePane::OnUpdateCmdUI](http://msdn.microsoft.com/ja-jp/e139f06a-9793-4ee2-bc3d-517389368c77) をオーバーライドします。\)|  
-|[CMFCReBar::SetPaneAlignment](../Topic/CMFCReBar::SetPaneAlignment.md)|\([CBasePane::SetPaneAlignment](../Topic/CBasePane::SetPaneAlignment.md) をオーバーライドします。\)|  
+|----------|-----------------|  
+|[CMFCReBar::AddBar](#addbar)|Rebar バンドに追加します。|  
+|[CMFCReBar::CalcFixedLayout](#calcfixedlayout)|(上書き[CBasePane::CalcFixedLayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout))。|  
+|[CMFCReBar::CanFloat](#canfloat)|(上書き[CBasePane::CanFloat](../../mfc/reference/cbasepane-class.md#canfloat))。|  
+|[CMFCReBar::Create](#create)|Rebar コントロールを作成し、それをアタッチ、`CMFCReBar`オブジェクトです。|  
+|[CMFCReBar::EnableDocking](#enabledocking)|(上書き[CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking))。|  
+|[CMFCReBar::GetReBarBandInfoSize](#getrebarbandinfosize)||  
+|[CMFCReBar::GetReBarCtrl](#getrebarctrl)|基になるに直接アクセスできる[CReBarCtrl](../../mfc/reference/crebarctrl-class.md)コモン コントロールです。|  
+|[CMFCReBar::OnShowControlBarMenu](#onshowcontrolbarmenu)|(上書き[CPane::OnShowControlBarMenu](../../mfc/reference/cpane-class.md#onshowcontrolbarmenu))。|  
+|[CMFCReBar::OnToolHitTest](#ontoolhittest)|(上書き[CWnd::OnToolHitTest](../../mfc/reference/cwnd-class.md#ontoolhittest))。|  
+|[CMFCReBar::OnUpdateCmdUI](#onupdatecmdui)|(上書き[CBasePane::OnUpdateCmdUI](http://msdn.microsoft.com/en-us/e139f06a-9793-4ee2-bc3d-517389368c77))。|  
+|[CMFCReBar::SetPaneAlignment](#setpanealignment)|(上書き[CBasePane::SetPaneAlignment](../../mfc/reference/cbasepane-class.md#setpanealignment))。|  
   
-## 解説  
- `CMFCReBar` オブジェクトには、さまざまな子ウィンドウを格納できます。  たとえば、エディット ボックス、ツール バー、リスト ボックスなどです。  Rebar のサイズはプログラムで変更できます。ユーザーは、グリップ バーをドラッグして、Rebar のサイズを手動で変更できます。  Rebar オブジェクトの背景を選択したビットマップに設定することもできます。  
+## <a name="remarks"></a>コメント  
+ A`CMFCReBar`オブジェクトは、さまざまな子ウィンドウを含めることができます。 これには、エディット ボックス、ツールバー、およびリスト ボックスが含まれます。 Rebar サイズを変更できるプログラムを使用して、または、手動でユーザーが rebar のグリッパー バーをドラッグしています。 好みのビットマップに rebar オブジェクトの背景を設定することもできます。  
   
- Rebar オブジェクトは、ツール バー オブジェクトに似ています。  Rebar コントロールには、バンドをいくつでも格納できます。バンドごとに、グリップ バー、ビットマップ、テキスト ラベル、子ウィンドウを格納できます。  
+ Rebar オブジェクトは、ツール バー オブジェクトと同様に動作します。 Rebar コントロールは、1 つまたは複数のバンドを含めることができ、各バンドがグリッパー バー、ビットマップ、テキスト ラベル、および子ウィンドウを含めることができます。  
   
-## 使用例  
- 次の例は、`CMFCReBar` クラスのさまざまなメソッドの使用方法を説明しています。  Rebar コントロールを作成し、そのコントロールにバンドを追加する方法を示しています。  バンドは内部ツール バーとして機能します。  このコード スニペットは [rebar のテストの例](../../top/visual-cpp-samples.md)の一部です。  
+## <a name="example"></a>例  
+ 次の例では、さまざまなメソッドを使用する方法、`CMFCReBar`クラスです。 この例では、rebar コントロールを作成し、帯域外を追加する方法を示します。 バンドは、内部ツールバーとして機能します。 このコード スニペットの一部である、 [Rebar テストのサンプル](../../visual-cpp-samples.md)します。  
   
- [!code-cpp[NVC_MFC_RebarTest#1](../../mfc/reference/codesnippet/CPP/cmfcrebar-class_1.h)]  
-[!code-cpp[NVC_MFC_RebarTest#2](../../mfc/reference/codesnippet/CPP/cmfcrebar-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_RebarTest&#1;](../../mfc/reference/codesnippet/cpp/cmfcrebar-class_1.h)]  
+[!code-cpp[NVC_MFC_RebarTest&#2;](../../mfc/reference/codesnippet/cpp/cmfcrebar-class_2.cpp)]  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md) [CCmdTarget](../Topic/CCmdTarget%20Class.md) [CWnd](../Topic/CWnd%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md) [CCmdTarget](../../mfc/reference/ccmdtarget-class.md) [CWnd](../../mfc/reference/cwnd-class.md)  
   
  [CBasePane](../../mfc/reference/cbasepane-class.md) [CPane](../../mfc/reference/cpane-class.md) [CMFCReBar](../../mfc/reference/cmfcrebar-class.md)  
   
-## 必要条件  
- **ヘッダー :** afxRebar.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxRebar.h  
   
-## 参照  
+##  <a name="a-nameaddbara--cmfcrebaraddbar"></a><a name="addbar"></a>CMFCReBar::AddBar  
+ Rebar バンドに追加します。  
+  
+```  
+BOOL AddBar(
+    CWnd* pBar,  
+    LPCTSTR pszText = NULL,  
+    CBitmap* pbmp = NULL,  
+    DWORD dwStyle = RBBS_GRIPPERALWAYS | RBBS_FIXEDBMP);
+
+BOOL AddBar(
+    CWnd* pBar,  
+    COLORREF clrFore,  
+    COLORREF clrBack,  
+    LPCTSTR pszText = NULL,  
+    DWORD dwStyle = RBBS_GRIPPERALWAYS);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [in][out]`pBar`  
+ Rebar に挿入するのには、子ウィンドウへのポインター。 参照先オブジェクトには、 **WS_CHILD**ウィンドウ スタイル。  
+  
+ [入力] `pszText`  
+ Rebar に表示するテキストを指定します。 テキストは子ウィンドウの一部ではありません。 代わりに、rebar 自体に表示されます。  
+  
+ [in][out]`pbmp`  
+ Rebar の背景に表示されるビットマップを指定します。  
+  
+ [入力] `dwStyle`  
+ バンドに適用するスタイルが含まれています。 帯域外スタイルの一覧については、説明を参照してください。`fStyle`で、 [REBARBANDINFO](http://msdn.microsoft.com/library/windows/desktop/bb774393) Windows SDK ドキュメントの構造です。  
+  
+ [入力] `clrFore`  
+ Rebar の前景色を表します。  
+  
+ [入力] `clrBack`  
+ Rebar の背景色を表します。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`バンドが rebar; に正しく追加された場合それ以外の場合、`FALSE`です。  
+  
+##  <a name="a-namecreatea--cmfcrebarcreate"></a><a name="create"></a>CMFCReBar::Create  
+ Rebar コントロールを作成し、それをアタッチ、 [CMFCReBar](../../mfc/reference/cmfcrebar-class.md)オブジェクトです。  
+  
+```  
+BOOL Create(
+    CWnd* pParentWnd,  
+    DWORD dwCtrlStyle = RBS_BANDBORDERS,  
+    DWORD dwStyle = WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_TOP,  
+    UINT nID = AFX_IDW_REBAR);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [in][out]`pParentWnd`  
+ Rebar コントロールの親ウィンドウへのポインター。  
+  
+ [入力] `dwCtrlStyle`  
+ Rebar コントロールのスタイルを指定します。 既定のスタイルの値は**RBS_BANDBORDERS**、絞り込む rebar コントロールの横にあるバンドの区切り線を表示します。 有効なスタイルの一覧は、次を参照してください。 [Rebar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb774377)Windows SDK のドキュメントです。  
+  
+ [入力] `dwStyle`  
+ Rebar コントロールのウィンドウ スタイル。 有効なスタイルの一覧は、次を参照してください。[ウィンドウ スタイル](../../mfc/reference/window-styles.md)します。  
+  
+ [入力] `nID`  
+ Rebar の子ウィンドウの id。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`rebar が正常に作成された場合それ以外の場合、`FALSE`です。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetrebarctrla--cmfcrebargetrebarctrl"></a><a name="getrebarctrl"></a>CMFCReBar::GetReBarCtrl  
+ 直接アクセスできる`CReBarCtrl`の基になる一般的なコントロール`CMFCReBar`オブジェクトです。  
+  
+```  
+CReBarCtrl& GetReBarCtrl() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 基になるへの参照を`CReBarCtrl`オブジェクトです。  
+  
+### <a name="remarks"></a>コメント  
+ 活用するために Windows rebar の一般的なコントロールの機能、rebar をカスタマイズするときに、このメソッドを呼び出します。  
+  
+##  <a name="a-namecalcfixedlayouta--cmfcrebarcalcfixedlayout"></a><a name="calcfixedlayout"></a>CMFCReBar::CalcFixedLayout  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual CSize CalcFixedLayout(
+    BOOL bStretch,  
+    BOOL bHorz);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bStretch`  
+ [入力] `bHorz`  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namecanfloata--cmfcrebarcanfloat"></a><a name="canfloat"></a>CMFCReBar::CanFloat  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual BOOL CanFloat() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameenabledockinga--cmfcrebarenabledocking"></a><a name="enabledocking"></a>CMFCReBar::EnableDocking  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+void EnableDocking(DWORD dwDockStyle);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `dwDockStyle`  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetrebarbandinfosizea--cmfcrebargetrebarbandinfosize"></a><a name="getrebarbandinfosize"></a>CMFCReBar::GetReBarBandInfoSize  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+UINT GetReBarBandInfoSize() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameonshowcontrolbarmenua--cmfcrebaronshowcontrolbarmenu"></a><a name="onshowcontrolbarmenu"></a>CMFCReBar::OnShowControlBarMenu  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual BOOL OnShowControlBarMenu(CPoint);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `CPoint`  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameontoolhittesta--cmfcrebarontoolhittest"></a><a name="ontoolhittest"></a>CMFCReBar::OnToolHitTest  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual INT_PTR OnToolHitTest(
+    CPoint point,  
+    TOOLINFO* pTI) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `point`  
+ [入力] `pTI`  
+  
+### <a name="return-value"></a>戻り値  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameonupdatecmduia--cmfcrebaronupdatecmdui"></a><a name="onupdatecmdui"></a>CMFCReBar::OnUpdateCmdUI  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual void OnUpdateCmdUI(
+    CFrameWnd* pTarget,  
+    BOOL bDisableIfNoHndler);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pTarget`  
+ [入力] `bDisableIfNoHndler`  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namesetpanealignmenta--cmfcrebarsetpanealignment"></a><a name="setpanealignment"></a>CMFCReBar::SetPaneAlignment  
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+  
+```  
+virtual void SetPaneAlignment(DWORD dwAlignment);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `dwAlignment`  
+  
+### <a name="remarks"></a>コメント  
+  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)   
+ [クラス](../../mfc/reference/mfc-classes.md)   
  [CReBarCtrl クラス](../../mfc/reference/crebarctrl-class.md)   
  [CPane クラス](../../mfc/reference/cpane-class.md)
+

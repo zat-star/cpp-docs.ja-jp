@@ -1,103 +1,123 @@
 ---
-title: "CUIntArray クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CUIntArray"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], インデックス付き"
-  - "CUIntArray クラス"
-  - "インデックス付き配列"
-  - "INT"
-  - "UINT"
-  - "WORD データ型"
+title: "CUIntArray クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CUIntArray
+dev_langs:
+- C++
+helpviewer_keywords:
+- INT
+- UINT
+- indexed arrays
+- arrays [C++], indexed
+- WORD data type
+- CUIntArray class
 ms.assetid: d71f3d8f-ef9f-4e48-9b69-7782c0e2ddf7
 caps.latest.revision: 23
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# CUIntArray クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
+ms.openlocfilehash: 901ec011c6371b9c6a58ed71343480fe9a6ffe88
+ms.lasthandoff: 02/24/2017
 
+---
+# <a name="cuintarray-class"></a>CUIntArray クラス
 符号なし整数の配列をサポートします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CUIntArray : public CObject  
 ```  
   
-## メンバー  
- `CUIntArray` のメンバー関数は [CObArray](../../mfc/reference/cobarray-class.md)クラスのメンバー関数に似ています。  メンバー関数については `CObArray` クラスの説明を参照してください。  関数のパラメーターまたは戻り値として `CObject` のポインターが使われている場合は、**uint**に置き換えてください。  
+## <a name="members"></a>メンバー  
+ メンバー関数は、`CUIntArray`クラスのメンバー関数に似ています[CObArray](../../mfc/reference/cobarray-class.md)します。 メンバー関数については `CObArray` クラスの説明を参照してください。 表示されたら、`CObject`ポインターように関数パラメーターまたは戻り値の場合は、置き換える、 **UINT**します。  
   
  `CObject* CObArray::GetAt( int <nIndex> ) const;`  
   
- たとえば、への移動  
+ たとえば、次のように変換します。  
   
  `UINT CUIntArray::GetAt( int <nIndex> ) const;`  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[CObArray::CObArray](../Topic/CObArray::CObArray.md)|空の配列を生成します。|  
+|----------|-----------------|  
+|[CObArray::CObArray](../../mfc/reference/cobarray-class.md#cobarray)|空の配列を生成します。|  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[CObArray::Add](../Topic/CObArray::Add.md)|配列の最後に要素を追加します。必要に応じて配列を拡張します。|  
-|[CObArray::Append](../Topic/CObArray::Append.md)|配列に別の配列を追加します; 配列を必要に応じて。|  
-|[CObArray::Copy](../Topic/CObArray::Copy.md)|配列に別の配列をコピーします。必要に応じて配列を拡張します。|  
-|[CObArray::ElementAt](../Topic/CObArray::ElementAt.md)|配列内のポインター要素への一時的な参照を返します。|  
-|[CObArray::FreeExtra](../Topic/CObArray::FreeExtra.md)|現在の上限を超える領域の未使用メモリ全体を解放します。|  
-|[CObArray::GetAt](../Topic/CObArray::GetAt.md)|指定したインデックス位置にある値を返します。|  
-|[CObArray::GetCount](../Topic/CObArray::GetCount.md)|配列の要素数を取得します。|  
-|[CObArray::GetData](../Topic/CObArray::GetData.md)|配列内の要素にアクセスできます。  **NULL** の場合もあります。|  
-|[CObArray::GetSize](../Topic/CObArray::GetSize.md)|配列の要素数を取得します。|  
-|[CObArray::GetUpperBound](../Topic/CObArray::GetUpperBound.md)|有効なインデックスの最大値を返します。|  
-|[CObArray::InsertAt](../Topic/CObArray::InsertAt.md)|配列の指定したインデックス位置に要素 \(または別の配列のすべての要素\) を挿入します。|  
-|[CObArray::IsEmpty](../Topic/CObArray::IsEmpty.md)|配列が空であるかどうかを判定します。|  
-|[CObArray::RemoveAll](../Topic/CObArray::RemoveAll.md)|配列のすべての要素を削除します。|  
-|[CObArray::RemoveAt](../Topic/CObArray::RemoveAt.md)|指定したインデックス位置にある要素を削除します。|  
-|[CObArray::SetAt](../Topic/CObArray::SetAt.md)|指定したインデックス位置に値を設定します。配列の拡張はできません。|  
-|[CObArray::SetAtGrow](../Topic/CObArray::SetAtGrow.md)|指定したインデックス位置に値を設定します。必要に応じて配列を拡張します。|  
-|[CObArray::SetSize](../Topic/CObArray::SetSize.md)|配列に格納する要素数を設定します。|  
-  
-### パブリック演算子  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[CObArray::operator](../Topic/CObArray::operator.md)|指定したインデックス位置の要素を設定または取得します。|  
+|----------|-----------------|  
+|[CObArray::Add](../../mfc/reference/cobarray-class.md#add)|配列の末尾に要素を追加します。必要に応じて、配列を大きくします。|  
+|[CObArray::Append](../../mfc/reference/cobarray-class.md#append)|配列に別の配列を追加します。必要に応じて、配列を大きくします。|  
+|[CObArray::Copy](../../mfc/reference/cobarray-class.md#copy)|配列に別の配列をコピーします。必要に応じて、配列を大きくします。|  
+|[CObArray::ElementAt](../../mfc/reference/cobarray-class.md#elementat)|配列内の要素ポインターへの一時的な参照を返します。|  
+|[CObArray::FreeExtra](../../mfc/reference/cobarray-class.md#freeextra)|現在の上限を超えている未使用のメモリをすべて解放します。|  
+|[CObArray::GetAt](../../mfc/reference/cobarray-class.md#getat)|指定されたインデックス位置にある値を返します。|  
+|[CObArray::GetCount](../../mfc/reference/cobarray-class.md#getcount)|この配列内の要素の数を取得します。|  
+|[CObArray::GetData](../../mfc/reference/cobarray-class.md#getdata)|配列内の要素へのアクセスを許可します。 できる**NULL**します。|  
+|[CObArray::GetSize](../../mfc/reference/cobarray-class.md#getsize)|この配列内の要素の数を取得します。|  
+|[CObArray::GetUpperBound](../../mfc/reference/cobarray-class.md#getupperbound)|有効な最大のインデックスを返します。|  
+|[CObArray::InsertAt](../../mfc/reference/cobarray-class.md#insertat)|指定されたインデックス位置に要素 (または別の配列内のすべての要素) を挿入します。|  
+|[CObArray::IsEmpty](../../mfc/reference/cobarray-class.md#isempty)|配列が空かどうかを判別します。|  
+|[CObArray::RemoveAll](../../mfc/reference/cobarray-class.md#removeall)|この配列からすべての要素を削除します。|  
+|[CObArray::RemoveAt](../../mfc/reference/cobarray-class.md#removeat)|特定のインデックス位置にある要素を削除します。|  
+|[CObArray::SetAt](../../mfc/reference/cobarray-class.md#setat)|指定されたインデックスの値を設定します。配列は大きくできません。|  
+|[CObArray::SetAtGrow](../../mfc/reference/cobarray-class.md#setatgrow)|指定されたインデックスの値を設定します。必要に応じて、配列を大きくします。|  
+|[CObArray::SetSize](../../mfc/reference/cobarray-class.md#setsize)|この配列に含まれる要素の数を設定します。|  
   
-## 解説  
- **uint** の物理サイズが、対象のオペレーティング環境で変更できる符号なし整数、または **uint**は、Word と、DWORD とは異なります。  **uint** は DWORD と同じサイズです。  
+### <a name="public-operators"></a>パブリック演算子  
   
- `CUIntArray` は [CDumpContext](../../mfc/reference/cdumpcontext-class.md) ランタイムへのアクセスおよびオブジェクトをダンプすることをサポートするために [IMPLEMENT\_DYNAMIC](../Topic/IMPLEMENT_DYNAMIC.md) のマクロが組み込まれています。  個々の符号なし整数の要素をダンプする必要がある場合、は 1 にダンプ コンテキストの深さを設定するより大きい。  符号なし整数の配列はシリアル化できません。  
+|名前|説明|  
+|----------|-----------------|  
+|[CObArray::operator](../../mfc/reference/cobarray-class.md#operator_at)|指定されたインデックス位置にある要素を設定または取得します。|  
+  
+## <a name="remarks"></a>コメント  
+ 符号なし整数または**UINT**、ワード、ダブルワードを異なるの物理サイズ、 **UINT**によっては、ターゲットの実行環境を変更することができます。 A **UINT**ダブルワードと同じサイズです。  
+  
+ `CUIntArray`組み込まれており、 [IMPLEMENT_DYNAMIC](run-time-object-model-services.md#implement_dynamic)実行時の型へのアクセスとダンプをサポートするマクロ、 [CDumpContext](../../mfc/reference/cdumpcontext-class.md)オブジェクトです。 個々 の符号なし整数の要素をダンプする場合は、1 以上、ダンプ コンテキストの深さを設定する必要があります。 符号なし整数の配列をシリアル化できません。  
   
 > [!NOTE]
->  配列を使用する前に、サイズを設定し、そのメモリを割り当てるために `SetSize` を使用します。  `SetSize` を使用せずに要素を配列に追加すると、配列が頻繁に再割り当てされ、コピーされます。  頻繁に再割り当てとコピーを行うとパフォーマンスが低下し、メモリ断片化の原因になります。  
+>  配列を使用する前に、`SetSize` を使用してそのサイズを設定し、メモリを割り当てます。 `SetSize` を使用しない場合、配列に要素を追加すると、配列の再割り当てとコピーが頻繁に発生します。 頻繁な再割り当てとコピーは非効率であり、メモリが断片化される可能性があります。  
   
- `CUIntArray`の使用の詳細については、" " [&#91;コレクション&#93;](../../mfc/collections.md)を参照してください。  
+ 使用する方法について`CUIntArray`、記事を参照して[コレクション](../../mfc/collections.md)します。  
   
-## 継承階層  
- [CObject](../Topic/CObject%20Class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
   
  `CUIntArray`  
   
-## 必要条件  
- **Header:** afxcoll.h  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxcoll.h  
   
-## 参照  
- [CObject クラス](../Topic/CObject%20Class.md)   
+## <a name="see-also"></a>関連項目  
+ [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
+
+
+
+
