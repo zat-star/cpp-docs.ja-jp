@@ -3,6 +3,7 @@
 # [Microsoft Foundation Classes (MFC)](../mfc/TOC.md)
 # [ATL と MFC の共有クラス](../atl-mfc-shared/TOC.md)
 # [ランタイム プラットフォームのコンポーネントの拡張機能](component-extensions-for-runtime-platforms.md)
+## [C++/CX](../cppcx/TOC.md)
 ## [参照演算子の追跡 (C++ コンポーネント拡張)](tracking-reference-operator-cpp-component-extensions.md)
 ## [オブジェクト演算子 (^) へのハンドル (C++ コンポーネント拡張)](handle-to-object-operator-hat-cpp-component-extensions.md)
 ## [abstract (C++ コンポーネント拡張)](abstract-cpp-component-extensions.md)
