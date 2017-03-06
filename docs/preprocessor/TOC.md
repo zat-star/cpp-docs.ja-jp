@@ -57,7 +57,7 @@
 ### [bss_seg](bss-seg.md)
 ### [check_stack](check-stack.md)
 ### [code_seg](code-seg.md)
-### [comment (C/C++)](comment-c-cpp.md)
+### [コメント (C/C++)](comment-c-cpp.md)
 ### [component](component.md)
 ### [conform](conform.md)
 ### [const_seg](const-seg.md)

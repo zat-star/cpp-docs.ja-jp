@@ -1,4 +1,4 @@
-# [C-C++ ビルド エラー](c-cpp-build-errors.md)
+# [C/C++ ビルド エラー](c-cpp-build-errors.md)
 # [コンパイラ エラー (致命的なエラー) C999 から C1999](compiler-fatal-errors-c999-through-c1999.md)
 ## [致命的なエラー C999](fatal-error-c999.md)
 ## [致命的なエラー C1001](fatal-error-c1001.md)

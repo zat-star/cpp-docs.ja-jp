@@ -1,6 +1,7 @@
 # [Visual Studio 2017 RC の Visual C++](visual-cpp-in-visual-studio.md)
 # [Visual Studio 2017 RC における Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)
 # [Visual Studio 2017 での C++ 準拠の改善](cpp-conformance-improvements-2017.md)
+## [Visual C と C++ 言語への準拠](c-cpp-language-conformance.md)
 # [サポートされるプラットフォーム (Visual C++)](supported-platforms-visual-cpp.md)
 # [C 言語](c-language/c-language-reference.md)
 # [C++ 言語](cpp/cpp-language-reference.md)
