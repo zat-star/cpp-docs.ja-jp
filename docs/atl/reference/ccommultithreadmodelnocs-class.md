@@ -38,9 +38,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 718aac826916b977eec4fb8400da81b5e32d4afa
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: dd14e5c941da5383dce19e9f7f539bfb9909759f
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="ccommultithreadmodelnocs-class"></a>CComMultiThreadModelNoCS クラス
@@ -66,13 +66,13 @@ class CComMultiThreadModelNoCS
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComMultiThreadModelNoCS::Decrement](#decrement)|(静的)デクリメント スレッド セーフな方法で指定された変数の値。|  
+|[CComMultiThreadModelNoCS::Decrement](#decrement)|(静的)デクリメント、スレッド セーフな方法で指定された変数の値。|  
 |[CComMultiThreadModelNoCS::Increment](#increment)|(静的)スレッド セーフな方法で指定された変数の値をインクリメントします。|  
   
 ## <a name="remarks"></a>コメント  
- `CComMultiThreadModelNoCS`ような[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)を提供するスレッド セーフであるメソッド インクリメントおよびデクリメントするための変数です。 ただし、を介して、クリティカル セクション クラスを参照する`CComMultiThreadModelNoCS`などのメソッド`Lock`と`Unlock`が何も行いません。  
+ `CComMultiThreadModelNoCS`ような[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)を提供するスレッド セーフな方法インクリメントおよびデクリメントするための変数です。 ただし、を介して、クリティカル セクション クラスを参照する`CComMultiThreadModelNoCS`などのメソッド`Lock`と`Unlock`が何も行いません。  
   
- 通常、使用して`CComMultiThreadModelNoCS`を通じて、`ThreadModelNoCS``typedef`名。 これは、`typedef`で定義された`CComMultiThreadModelNoCS`、 `CComMultiThreadModel`、および[CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)します。  
+ 通常、使用して`CComMultiThreadModelNoCS`を通じて、 `ThreadModelNoCS` `typedef`名。 これは、`typedef`で定義された`CComMultiThreadModelNoCS`、 `CComMultiThreadModel`、および[CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)します。  
   
 > [!NOTE]
 >  グローバル`typedef`名[CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)と[CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)が参照されていない`CComMultiThreadModelNoCS`します。  

@@ -39,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 9660db5ff0d41a31f7d2a4e824df4e4bdf6a00e6
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 961dc75623ec04993d118e46e1d4ba73a9aadcec
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="cstringt-class"></a>CStringT クラス
@@ -186,7 +186,7 @@ public CSimpleStringT<BaseType,
 |**CAtlStringW**|Unicode 文字では、CRT サポートのない文字列を入力します。|  
 |**CAtlString**|CRT をサポートしていない ANSI と Unicode 文字型。|  
   
- 次の文字列で使用できる種類はプロジェクトの場所**ATL_CSTRING_NO_CRT**が定義されていません。  
+ 使用できる種類は次の文字列プロジェクト where **ATL_CSTRING_NO_CRT**が定義されていません。  
   
 |CStringT 型|宣言|  
 |-------------------|-----------------|  
@@ -645,7 +645,7 @@ void __cdecl FormatMessage(PCXSTR pszFormat, [, argument]...);
  省略可能な引数。  
   
 ### <a name="remarks"></a>コメント  
- 関数には、入力としてメッセージの定義が必要です。 メッセージ定義によって決定される`pszFormat`によって識別される文字列リソースまたは`nFormatID`です。 関数は、書式設定されたメッセージ テキストをコピー、`CStringT`オブジェクト、埋め込まれているいずれかの処理が要求された場合、シーケンスを挿入します。  
+ 関数には、入力としてメッセージの定義が必要です。 メッセージ定義によって決定される`pszFormat`によって識別される文字列リソースまたは`nFormatID`です。 関数は、書式設定されたメッセージ テキストをコピー、`CStringT`埋め込まれているいずれかの処理、オブジェクトが要求された場合、シーケンスを挿入します。  
   
 > [!NOTE]
 > `FormatMessage`新しい形式の文字列のシステム メモリを割り当てようとします。 この試行が失敗すると、自動的にメモリ不足例外がスローされます。  
@@ -1340,7 +1340,7 @@ CStringT SpanIncluding(PCXSTR pszCharSet) const;
  文字列は、一連の文字として解釈されます。  
   
 ### <a name="return-value"></a>戻り値  
- 部分文字列に含まれる文字列内の文字を含む`pszCharSet`文字列の最初の文字で始まる、および終了に含まれていない文字列の文字が見つかったときに`pszCharSet.``SpanIncluding`文字列の最初の文字が指定されたセット内にない場合は、空の部分文字列を返します。  
+ 部分文字列に含まれる文字列内の文字を含む`pszCharSet`文字列の最初の文字で始まる、および終了に含まれていない文字列の文字が見つかったときに`pszCharSet`します。 `SpanIncluding`文字列の最初の文字が指定されたセット内にない場合は、空の部分文字列を返します。  
   
 ### <a name="remarks"></a>コメント  
  文字列の最初の文字がない場合、文字セットで、`SpanIncluding`空の文字列を返します。 それ以外の場合は、セット内の連続する文字のシーケンスを返します。  
@@ -1481,7 +1481,7 @@ CStringT& TrimRight();
   
  `CStringT& TrimRight(XCHAR chTarget)`バージョンは、文字の&1; つのパラメーターを受け入れるしの末尾から、その文字のすべてのコピーを削除`CStringT`文字列データです。 文字列の末尾から開始し、先頭近くに動作します。 別の文字が見つかったとき、または停止時`CSTringT`文字データが不足しています。  
   
- `CStringT& TrimRight(PCXSTR pszTargets)`のバージョンでは検索するさまざまなすべての文字を含む null で終わる文字列。 これらの文字のすべてのコピーを削除して、`CStringT`オブジェクトです。 文字列の末尾から開始し、先頭近くに動作します。 対象の文字列に含まれていない文字が見つかったとき、または停止時`CStringT`文字データが不足しています。 最後の部分文字列全体の対象の文字列の一致を試みない`CStringT`します。  
+ `CStringT& TrimRight(PCXSTR pszTargets)`のバージョンでは検索するさまざまなすべての文字を含む null で終わる文字列。 これらの文字のすべてのコピーを削除して、`CStringT`オブジェクトです。 文字列の末尾から開始し、先頭近くに動作します。 対象の文字列に含まれていない文字が見つかったとき、または停止時`CStringT`文字データが不足しています。 最後の部分文字列全体の対象の文字列に一致するように試みない`CStringT`します。  
   
  `CStringT& TrimRight()`バージョン パラメーターは不要です。 末尾から末尾の空白文字をトリム、`CStringT`文字列。 空白文字は、改行文字、スペースやタブにできます。  
   

@@ -40,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 791b9ec18cc71fe19f633c12afdc48c835c2bf14
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: e273aff69b9c8dbea4fb829798b2e9d58351b9dd
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="csimplestringt-class"></a>CSimpleStringT クラス
@@ -95,7 +95,7 @@ class CSimpleStringT
 |[CSimpleStringT::GetAllocLength](#getalloclength)|割り当て済みの長さを取得、`CSimpleStringT`オブジェクトです。|  
 |[CSimpleStringT::GetAt](#getat)|指定された位置に文字を返します。|  
 |[CSimpleStringT::GetBuffer](#getbuffer)|ポインターの文字を返し、`CSimpleStringT`です。|  
-|[CSimpleStringT::GetBufferSetLength](#getbuffersetlength)|ポインターの文字を返し、 `CSimpleStringT`、指定の長さに切り捨てです。|  
+|[CSimpleStringT::GetBufferSetLength](#getbuffersetlength)|ポインターで文字を返し、 `CSimpleStringT`、指定の長さに切り捨てです。|  
 |[CSimpleStringT::GetLength](#getlength)|文字数を返す、`CSimpleStringT`オブジェクトです。|  
 |[CSimpleStringT::GetManager](#getmanager)|メモリ マネージャーの取得、`CSimpleStringT`オブジェクトです。|  
 |[CSimpleStringT::GetString](#getstring)|文字の文字列を取得します。|  
@@ -269,7 +269,7 @@ explicit CSimpleStringT(IAtlStringMgr* pStringMgr) throw();
  新しい `CSimpleStringT` オブジェクトを構築します。 コンス トラクターは、入力データを新しい割り当て済み記憶域にコピー、するために、メモリ不足例外があります。  
   
 ### <a name="example"></a>例  
- 次の例では、使用`CSimpleStringT::CSimpleStringT`ATL を使用して、`typedef``CSimpleString`です。 `CSimpleString`一般的に使用される、クラス テンプレートの特殊`CSimpleStringT`します。  
+ 次の例では、使用`CSimpleStringT::CSimpleStringT`ATL を使用して、 `typedef` `CSimpleString`します。 `CSimpleString`一般的に使用される、クラス テンプレートの特殊`CSimpleStringT`します。  
   
 ```cpp  
 CSimpleString s1(pMgr);
@@ -436,7 +436,7 @@ s.ReleaseBuffer();
 ```
   
 ##  <a name="a-namegetbuffersetlengtha--csimplestringtgetbuffersetlength"></a><a name="getbuffersetlength"></a>CSimpleStringT::GetBufferSetLength  
-内部文字バッファーへのポインターを返す、`CSimpleStringT`の切り捨てまたはで指定された長さと正確に一致する必要がある場合は、その長さを増大しているオブジェクト`nLength`します。  
+内部文字バッファーへのポインターを返す、`CSimpleStringT`オブジェクト、切り捨てまたはで指定された長さと正確に一致する必要がある場合は、その長さを増大している`nLength`します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -551,7 +551,7 @@ _tprintf_s(_T("%s"), str.GetString());
 bool IsEmpty() const throw();  
 ```  
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**場合、`CSimpleStringT`長さは 0 が付きます。 そうしないと**false**します。  
+ 返します。 **true**場合、`CSimpleStringT`オブジェクトには長さが 0 以外の場合**false**します。  
   
 ### <a name="remarks"></a>コメント  
  オブジェクトに、空の文字列が含まれているかどうかは、このメソッドを呼び出します。  

@@ -37,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 5ac891241f29df515864c01fc449197f39bbaedd
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 56b8b5c3574a7a53a4e259412b1b1326973bcac9
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="ctime-class"></a>CTime クラス
@@ -63,7 +63,7 @@ class CTime
   
 |名前|説明|  
 |----------|-----------------|  
-|[CTime::Format](#format)|変換、`CTime`に書式設定された文字列オブジェクト — ローカル タイム ゾーンに基づきます。|  
+|[CTime::Format](#format)|変換、`CTime`オブジェクトを書式設定された文字列に、ローカル タイム ゾーンに基づきます。|  
 |[CTime::FormatGmt](#formatgmt)|変換、`CTime`に書式設定された文字列オブジェクト — UTC に基づきます。|  
 |[CTime::GetAsDBTIMESTAMP](#getasdbtimestamp)|格納されている時間の情報に変換、 `CTime` Win32 と互換性のある DBTIMESTAMP 構造体へのオブジェクト。|  
 |[CTime::GetAsSystemTime](#getassystemtime)|格納されている時間の情報に変換、`CTime`を Win32 互換性のあるオブジェクト[SYSTEMTIME](http://msdn.microsoft.com/library/windows/desktop/ms724950)構造体。|  
@@ -84,8 +84,8 @@ class CTime
   
 |||  
 |-|-|  
-|[演算子: +](#operator_add_-)|これらの演算子は加算し、減算`CTimeSpan`と`CTime`オブジェクトです。|  
-|[演算子 + =、=](#operator_add_eq_-_eq)|これらの演算子は加算し、減算、`CTimeSpan`にオブジェクトがこれから`CTime`オブジェクトです。|  
+|[演算子: +](#operator_add_-)|これらの演算子は加算し、減算`CTimeSpan`と`CTime`のオブジェクト。|  
+|[演算子 + =、=](#operator_add_eq_-_eq)|これらの演算子は加算し、減算、`CTimeSpan`オブジェクトとの間この`CTime`オブジェクトです。|  
 |[演算子 =](#operator_eq)|代入演算子です。|  
 |[演算子 = =、< ,="">](#ctime_comparison_operators)|比較演算子です。|  
   
@@ -134,7 +134,7 @@ bool operator>=(CTime time) const throw();
  [!code-cpp[NVC_ATLMFC_Utilities #&161;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_1.cpp)]  
   
 ##  <a name="a-namectimea--ctimectime"></a><a name="ctime"></a>CTime::CTime  
- 新しい`CTime`指定の時刻で初期化されるオブジェクト。  
+ 新たに作成`CTime`オブジェクトの指定した時刻に初期化します。  
   
 ```  
 CTime() throw(); 
@@ -183,7 +183,7 @@ CTime(const DBTIMESTAMP& dbts,int nDST = -1) throw();
 ### <a name="remarks"></a>コメント  
  各コンス トラクターは、次に示します。  
   
-- **CTime ();**初期化されていない構築`CTime`オブジェクトです。 このコンス トラクターを定義できます。`CTime`オブジェクトの配列。 使用する前に有効な値では、そのような配列を初期化する必要があります。  
+- **CTime() です。**初期化されていない構築`CTime`オブジェクトです。 このコンス トラクターを定義できます。`CTime`オブジェクトの配列。 使用する前に有効な値では、そのような配列を初期化する必要があります。  
   
 - **CTime (const CTime >/documents/report1.rdl」の);**を構築、`CTime`オブジェクトから`CTime`値。  
   
@@ -202,11 +202,11 @@ CTime(const DBTIMESTAMP& dbts,int nDST = -1) throw();
   
      このコンス トラクターは、UTC への適切な変換を使用できます。 Microsoft Foundation Class ライブラリのデバッグ バージョン アサートの場合は、1 つまたは複数時コンポーネントの範囲外です。 呼び出しの前に引数を検証する必要があります。 このコンス トラクターでは、ローカル タイムが必要です。  
   
-- `CTime`( **WORD, WORD** ) **;**構築、 `CTime` MS-DOS 日付と時刻の値は、指定したオブジェクト。 このコンス トラクターでは、ローカル タイムが必要です。  
+- **CTime (WORD、WORD)**を構築、 `CTime` MS-DOS 日付と時刻の値は、指定したオブジェクト。 このコンス トラクターでは、ローカル タイムが必要です。  
   
-- `CTime`( **const SYSTEMTIME&** ) **;**構築、`CTime`オブジェクトから、`SYSTEMTIME`構造体。 このコンス トラクターでは、ローカル タイムが必要です。  
+- **CTime (const SYSTEMTIME >/documents/report1.rdl」の);**を構築、`CTime`からオブジェクトを`SYSTEMTIME`構造体。 このコンス トラクターでは、ローカル タイムが必要です。  
   
-- `CTime`( **const FILETIME&** ) **;**構築、`CTime`オブジェクトから、`FILETIME`構造体。 多くの場合は使用しません`CTime``FILETIME`初期化を直接します。 使用する場合、`CFile`にファイルを操作するオブジェクト`CFile::GetStatus`経由のファイルのタイムスタンプを取得、`CTime`オブジェクトを初期化して、`FILETIME`構造体。 このコンス トラクターは、UTC に基づく時間を想定し、自動的に値を現地時刻に結果を保存する前に変換します。  
+- **CTime (const FILETIME >/documents/report1.rdl」の);**を構築、`CTime`からオブジェクトを`FILETIME`構造体。 多くの場合は使用しません`CTime FILETIME`初期化を直接します。 使用する場合、`CFile`にファイルを操作するオブジェクト`CFile::GetStatus`経由のファイルのタイムスタンプを取得、`CTime`オブジェクトを初期化して、`FILETIME`構造体。 このコンス トラクターは、UTC に基づく時間を想定し、自動的に値を現地時刻に結果を保存する前に変換します。  
   
     > [!NOTE]
     >  コンス トラクターを使用して、 **DBTIMESTAMP**パラメーターは、OLEDB.h が含まれる場合にのみ使用できます。  
@@ -508,7 +508,7 @@ CTime& operator=(__time64_t time) throw();
  このオーバー ロード代入演算子は、これに、元の時刻をコピー`CTime`オブジェクトです。 内部時刻ストレージ、`CTime`オブジェクトはタイム ゾーンに依存しません。 タイム ゾーンの変換は、割り当ての際に必要ではありません。  
   
 ##  <a name="a-nameoperatoradd-a--ctimeoperator---"></a><a name="operator_add_-"></a>CTime::operator +、-  
- これらの演算子は加算し、減算`CTimeSpan`と`CTime`オブジェクトです。  
+ これらの演算子は加算し、減算`CTimeSpan`と`CTime`のオブジェクト。  
   
 ```  
 CTime operator+(CTimeSpan timeSpan) const throw(); 
@@ -533,7 +533,7 @@ CTimeSpan operator-(CTime time) const throw();
  [!code-cpp[NVC_ATLMFC_Utilities #&159;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_13.cpp)]  
   
 ##  <a name="a-nameoperatoraddeq-eqa--ctimeoperator---"></a><a name="operator_add_eq_-_eq"></a>CTime::operator + =、=  
- これらの演算子は加算し、減算、`CTimeSpan`にオブジェクトがこれから`CTime`オブジェクトです。  
+ これらの演算子は加算し、減算、`CTimeSpan`オブジェクトとの間この`CTime`オブジェクトです。  
   
 ```  
 CTime& operator+=(CTimeSpan span) throw();
@@ -548,7 +548,7 @@ CTime& operator-=(CTimeSpan span) throw();
  更新された`CTime`オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
- これらの演算子では、追加または削除することができる、`CTimeSpan`オブジェクトとの間この`CTime`オブジェクトです。  
+ これらの演算子では、追加または削除することができる、`CTimeSpan`にオブジェクトがこれから`CTime`オブジェクトです。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&160;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_14.cpp)]  
