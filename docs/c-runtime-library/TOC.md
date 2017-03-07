@@ -12,7 +12,6 @@
 ### [バイト ストリームとワイド ストリーム](byte-and-wide-streams.md)
 ### [ストリームの制御](controlling-streams.md)
 ### [ストリームの状態](stream-states.md)
-## [ファイルの入力と出力](formatted-input-and-output.md)
 ## [関数またはマクロの選択に関する推奨事項](recommendations-for-choosing-between-functions-and-macros.md)
 ## [型チェック (CRT)](type-checking-crt.md)
 ## [方向フラグ](direction-flag.md)
@@ -171,7 +170,6 @@
 # [機能ファミリの概要](function-family-overviews.md)
 ## [_exec、_wexec 系関数](exec-wexec-functions.md)
 ## [ファイル名検索関数](filename-search-functions.md)
-## [フラグ ディレクティブ](flag-directives.md)
 ## [書式指定構文: printf 関数と wprintf 関数](format-specification-syntax-printf-and-wprintf-functions.md)
 ## [書式指定フィールド: scanf 関数と wscanf 関数](format-specification-fields-scanf-and-wscanf-functions.md)
 ## [is、isw 系ルーチン](is-isw-routines.md)
@@ -181,13 +179,9 @@
 ## [new 演算子 (CRT)](operator-new-crt.md)
 ## [演算子 delete(CRT)](delete-operator-crt.md)
 ## [delete 演算子 (CRT)](operator-delete-crt.md)
-## [精度指定](precision-specification.md)
-## [printf 関数の型フィールド文字](printf-type-field-characters.md)
-## [printf 関数の文字幅指定](printf-width-specification.md)
 ## [printf_p の位置指定パラメーター](printf-p-positional-parameters.md)
 ## [scanf 関数の型フィールド文字](scanf-type-field-characters.md)
 ## [scanf 関数の文字幅指定](scanf-width-specification.md)
-## [サイズ指定](size-specification.md)
 ## [_spawn 系関数と _wspawn 系関数](spawn-wspawn-functions.md)
 ## [strcoll 系関数](strcoll-functions.md)
 ## [文字列を数値に変換する関数](string-to-numeric-value-functions.md)
@@ -207,7 +201,3 @@
 ## [_set_output_format](set-output-format.md)
 ## [_unlock](unlock.md)
 # [関数リファレンス (アルファベット順)](reference/TOC.md)
-
-<!--HONumber=Feb17_HO4-->
-
-
