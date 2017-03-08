@@ -56,7 +56,7 @@ caps.handback.revision: 8
 |`_MAX_PATH`|完全パスの最大長|  
   
 > [!NOTE]
->  長さが 32768 文字までの C ランタイム サポートのパスの長さが、それはオペレーティング システムと、ファイル システムまで、これらの長いパスをサポートするために使用されます。  フィールドの合計は下位互換性のために `_MAX_PATH` を FAT32 ファイル システムと完全に設定する必要があります。  Unicode の API を使用する場合にのみ[!INCLUDE[win2kfamily](../c-runtime-library/includes/win2kfamily_md.md)]、[!INCLUDE[WinXpFamily](../Token/winxpfamily_md.md)]、[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]および Windows Vista NTFS 長さが 32768 文字までファイル システム パスをサポートします。  いつ長いパス名を使用して、文字\\\\とパスの前に追加します。\\は C ランタイム関数の Unicode バージョンを使用します。  
+>  長さが 32768 文字までの C ランタイム サポートのパスの長さが、それはオペレーティング システムと、ファイル システムまで、これらの長いパスをサポートするために使用されます。  フィールドの合計は下位互換性のために `_MAX_PATH` を FAT32 ファイル システムと完全に設定する必要があります。  Unicode の API を使用する場合にのみ[!INCLUDE[win2kfamily](../c-runtime-library/includes/win2kfamily_md.md)]、[!INCLUDE[WinXpFamily](../c-runtime-library/includes/winxpfamily_md.md)]、[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]および Windows Vista NTFS 長さが 32768 文字までファイル システム パスをサポートします。  いつ長いパス名を使用して、文字\\\\とパスの前に追加します。\\は C ランタイム関数の Unicode バージョンを使用します。  
   
 ## 参照  
  [グローバル定数](../c-runtime-library/global-constants.md)
