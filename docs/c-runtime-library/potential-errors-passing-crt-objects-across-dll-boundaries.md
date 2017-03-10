@@ -1,62 +1,68 @@
 ---
 title: "DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL 競合 [C++]"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DLL conflicts [C++]
 ms.assetid: c217ffd2-5d9a-4678-a1df-62a637a96460
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 8953e3bd81158ce183e1abb5dfa969164c1f9ced
+ms.openlocfilehash: 8aadc8b14104b3bc74905b5187c7dfe76fa8d2f4
+ms.lasthandoff: 02/24/2017
 
-成功すると C ランタイム \(\(CRT\)、ファイル ハンドル、ロケール、環境変数などに対応するまたは DLL \(DLL の境界を越えて関数呼び出し DLL、DLL を呼び出すファイルが CRT ライブラリの複数のコピーを使用している場合\)、予期しない動作が発生する可能性があります。  
+---
+# <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー
+ファイル ハンドル、ロケール、環境変数などの C ランタイム (CRT) オブジェクトを DLL の境界を越えて渡す場合 (DLL の境界を越えた関数の呼び出し)、DLL またはその DLL を呼び出すファイルが異なる CRT ライブラリのコピーを使用していると、予想外の動作が発生する可能性があります。  
   
- 関連の問題はメモリ \(明示的に `new` または `malloc`または `strdup`、`strstreambuf::str`と暗黙的など\) 煮割り当て、解放する DLL の境界を越えてポインターを置いたときに発生します。  DLL とユーザーが CRT ライブラリの複数のコピーを使用する場合に、メモリ アクセス違反またはヒープが破損する可能性があります。  
+ メモリを (`new` または `malloc` で明示的に、または `strdup`、`strstreambuf::str` で暗黙的に割り当てるなどして) 割り当てたうえで、DLL の境界を越えてポインターを渡してそこで解放した場合にも、同じような問題が発生する可能性があります。 これは、DLL とそのユーザーが異なる CRT ライブラリのコピー使用している場合、メモリ アクセス違反、またはヒープ破損の原因になります。  
   
- この問題の別の症状は、デバッグ中に出力ウィンドウのエラーなどがあります:  
+ この問題の別の兆候には、次のようなデバッグ中の出力ウィンドウのエラーがあります。  
   
- ヒープ\[\]: RtlValidateHeap に指定された無効なアドレス \(\#、\#\)  
+ HEAP[]: Invalid Address specified to RtlValidateHeap(#,#)  
   
-## 原因  
- CRT ライブラリの各コピーに異なる、別の状態になります。  したがって、CRT、ファイル ハンドル、環境変数など、作成し、ロケールはこれらのオブジェクトを割り当てるか、設定した CRT のコピーに対してのみ有効です。  DLL とユーザーが CRT ライブラリの複数のコピーを使用すると、DLL の境界を越えてこれらの CRT オブジェクトを渡し、反対側に正しく実行されると想定することはできません。  
+## <a name="causes"></a>原因  
+ CRT ライブラリのコピーはそれぞれ状態が異なります。アプリまたは DLL により、スレッド ローカル ストレージに保存されます。 そのため、ファイル ハンドル、環境変数、ロケールなどの CRT オブジェクトは、オブジェクトが割り当てられている、または設定されているアプリまたは DLL の CRT コピーに対してのみ有効になります。 DLL とそのアプリ クライアントで CRT ライブラリの異なるコピーが使用されているとき、DLL 境界を越えてそのような CRT オブジェクトを渡しても、向こう側で正しく取得されることは期待できません。 これは特に、Visual Studio 2015 以降で、Universal CR より前のバージョンの CRT に当てはまります。 Visual C++ 2013 以前で構築されたあらゆるバージョンの Visual Studio について、バージョン固有の CRT ライブラリがありました。 データ構造や命名規則など、CRT の内部実装詳細はバージョンごとに異なります。 あるバージョンの CRT のためにコンパイルされたコードを別のバージョンの CRT DLL に動的にリンクすることは以前はできませんでした。動的にリンクされる場合もありましたが、それは偶然であり、設計によるものではありませんでした。  
   
- また、CRT ライブラリの各コピーに 1 個の CRT ライブラリにメモリを割り当て、合格した独自のヒープ マネージャーがあるため、CRT ライブラリのコピーが解放 DLL の境界を越えてポインターはヒープ破損の考えられる原因です。  
+ また、CRT ライブラリの各コピーには独自のヒープ マネージャーが与えられているため、1 つの CRT ライブラリでメモリを割り当て、DLL 境界を越えてポインターを渡し、CRT ライブラリの別のコピーで解放すると、ヒープ破損の原因になることがあります。 境界を越えて CRT オブジェクトを渡すか、メモリを割り当て、DLL の外でそれを解放することを要求するように DLL を設計する場合、DLL と同じ CRT ライブラリ コピーを使用するように DLL のアプリ クライアントを制限します。 DLL とそのクライアントは通常、読み込み時に両方とも同じバージョンの CRT DLL にリンクされている場合にのみ、CRT ライブラリの同じコピーを使用します。 Windows 10 で Visual Studio 2015 以降により使用される Universal CRT ライブラリの DLL バージョンが現在、一元的に配置される Windows コンポーネント、ucrtbase.dll になったため、Visual Studio 2015 以降のバージョンで開発されたアプリで同じになります。 ただし、CRT コードが同じでも、あるヒープで割り当てられたメモリを別のヒープを使用するコンポーネントに渡すことはできません。  
   
- 境界を越えて CRT オブジェクトを渡すか、メモリの割り当て、DLL の外部で解放されることが予期される場合は、DLL をデザインする場合、DLL と CRT ライブラリの同じコピーを使用する DLL のユーザーを制限します。  両方の CRT DLL と同じバージョンにリンクされている場合のみ、DLL とユーザーは CRT ライブラリの同じコピーを使用します。  これは、ビルドされた Visual C\+\+ 4.1 でまたは以前のビルドされたアプリケーションを DLL の Visual C\+\+ 5.0 が混在する問題になる可能性があります。  Visual C\+\+ 4.1 で使用されている CRT ライブラリの DLL バージョンが msvcrt40.dll であり、ビジュアル 5.0 で使用されている 1 つが msvcrt.dll であるため、これらの DLL に CRT ライブラリの同じコピーを使用するアプリケーションをビルドすることはできません。  
+## <a name="example"></a>例  
   
- ただし、例外もあります。  Windows 2000 の US English エディションと他のいくつかのローカライズ バージョンで、ドイツ語、フランス語とチェコなど、msvcrt40.dll \(Version 4.20\) フォワーダー バージョンが提供されます。  その結果、DLL が msvcrt40.dll とリンクしているユーザーが msvcrt.dll とリンクしますが、msvcrt40.dll へのすべての呼び出しが msvcrt.dll に転送されるので、CRT ライブラリの同じコピーを使用します。  
+### <a name="description"></a>説明  
+ この例では、DLL 境界を越えてファイル ハンドルが渡されます。  
   
- ただし msvcrt40.dll フォワーダーのこのバージョンは、日本語、および韓国語繁体字中国語など、Windows 2000 のあるローカライズ版で使用できません。  したがって、アプリケーションが対象とするこれらのオペレーティング システムのいずれかが必要な場合は、msvcrt40.dll に依存しない get または CRT ライブラリの同じコピーの使用に依存しないようにアプリケーションを変更します。DLL のアップグレード バージョンを示します。  DLL を開発する場合、これは Visual C\+\+ 4.2 以降でリビルドすることを意味します。  これはサード パーティの DLL の場合、アップグレードの販売元に連絡する必要があります。  
+ DLL と .exe ファイルは /MD で開発されます。そのため、1 つのコピーの CRT を共有します。  
   
- msvcrt40.dll \(Version 4.20\) でこのフォワーダー DLL バージョンで再配布できないことに注意してください。  
+ CRT の個別コピーを使用するように /MT で再構築すると、結果的に生成される test1Main.exe を実行したときにアクセス違反が発生します。  
   
-## 例  
-  
-### 説明  
- この例では、DLL の境界を越えてファイル ハンドルを渡します。  
-  
- DLL や .exe ファイルが \/MD でビルドされるため、CRT の一つのコピーを共有します。  
-  
- これらは CRT のコピーを使用する方法 \/MT で再ビルドした場合、生成される test1Main.exe を実行すると、アクセス違反が発生します。  
-  
-### コード  
-  
-```  
+```cpp  
 // test1Dll.cpp  
-// compile with: /MD /LD  
+// compile with: cl /EHsc /W4 /MD /LD test1Dll.cpp  
 #include <stdio.h>  
 __declspec(dllexport) void writeFile(FILE *stream)  
 {  
@@ -66,11 +72,9 @@ __declspec(dllexport) void writeFile(FILE *stream)
 }  
 ```  
   
-### コード  
-  
-```  
+```cpp  
 // test1Main.cpp  
-// compile with: /MD test1dll.lib  
+// compile with: cl /EHsc /W4 /MD test1Main.cpp test1Dll.lib  
 #include <stdio.h>  
 #include <process.h>  
 void writeFile(FILE *stream);  
@@ -84,22 +88,18 @@ int main(void)
 }  
 ```  
   
-### 出力  
-  
-```  
+```Output  
 this is a string  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- この例では、DLL の境界を越えて環境変数を渡します。  
+### <a name="description"></a>説明  
+ この例では、DLL の境界を越えて環境変数が渡されます。  
   
-### コード  
-  
-```  
+```cpp  
 // test2Dll.cpp  
-// compile with: /MT /LD  
+// compile with: cl /EHsc /W4 /MT /LD test2Dll.cpp  
 #include <stdio.h>  
 #include <stdlib.h>  
   
@@ -117,13 +117,11 @@ __declspec(dllexport) void readEnv()
       printf( "MYLIB has not been set.\n");  
    free( libvar );  
 }  
-```  
+```   
   
-### コード  
-  
-```  
+```cpp  
 // test2Main.cpp  
-// compile with: /MT /link test2dll.lib  
+// compile with: cl /EHsc /W4 /MT test2Main.cpp test2dll.lib   
 #include <stdlib.h>  
 #include <stdio.h>  
   
@@ -136,17 +134,15 @@ int main( void )
 }  
 ```  
   
-### 出力  
-  
-```  
+```Output  
 MYLIB has not been set.  
 ```  
   
- CRT のは 1 部のみ使用されることを .exe ファイルと DLL の両方が \/MD を指定してビルドされている場合、プログラムは正常に実行され、次の出力が生成されます。:  
+ CRT のコピーが&1; つだけ使用されるように DLL と .exe ファイルの両方が構築されている場合、このプログラムは正常に実行され、次が出力されます。  
   
 ```  
 New MYLIB variable is: c:\mylib;c:\yourlib  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

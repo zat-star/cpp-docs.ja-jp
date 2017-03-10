@@ -1,46 +1,62 @@
 ---
 title: "検索と並べ替え | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.programs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [CRT], 検索"
-  - "検索 [C++]"
-  - "検索 [C++], CRT 検索関数"
-  - "並べ替え (データの)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.programs
+dev_langs:
+- C++
+helpviewer_keywords:
+- sorting data
+- data [CRT], searching
+- searching [C++], CRT search functions
+- searching [C++]
 ms.assetid: 15e984f0-e155-46f5-8542-51c458792f54
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 検索と並べ替え
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 5ba605d61ddcf1ae6bd2adc24c41737536fa2ce9
+ms.lasthandoff: 02/24/2017
 
-検索および並べ替えるために次の関数を使用します。  
+---
+# <a name="searching-and-sorting"></a>検索と並べ替え
+検索と並べ替えには、次の関数を使用します。  
   
-### 関数を検索し、並べ替えます  
+### <a name="searching-and-sorting-functions"></a>検索と並べ替えの関数  
   
 |関数|検索または並べ替え|同等の .NET Framework 関数|  
-|--------|---------------|---------------------------|  
-|[bsearch](../c-runtime-library/reference/bsearch.md)|バイナリ サーチ|[\<caps:sentence id\="tgt8" sentenceid\="07fe7161f1b3ff07a50d0fdb13bc8ade" class\="tgtSentence"\>System::Collections::ArrayList::BinarySearch\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.binarysearch.aspx)|  
-|[bsearch\_s](../c-runtime-library/reference/bsearch-s.md)|`bsearch`のセキュリティが強化されたバージョンです。|[\<caps:sentence id\="tgt10" sentenceid\="07fe7161f1b3ff07a50d0fdb13bc8ade" class\="tgtSentence"\>System::Collections::ArrayList::BinarySearch\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.binarysearch.aspx)|  
-|[\_lfind](../c-runtime-library/reference/lfind.md)|指定された値のリニア サーチ|[\<caps:sentence id\="tgt13" sentenceid\="2b0a5c761626afecd7137a4eab4525f0" class\="tgtSentence"\>System::Collections::ArrayList::Contains\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx)|  
-|[\_lfind\_s](../Topic/_lfind_s.md)|`_lfind`のセキュリティを強化したバージョン|[\<caps:sentence id\="tgt15" sentenceid\="2b0a5c761626afecd7137a4eab4525f0" class\="tgtSentence"\>System::Collections::ArrayList::Contains\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx)|  
-|[\_lsearch](../c-runtime-library/reference/lsearch.md)|配置するときに追加される指定値のリニア サーチ、見つからない場合|使用できません。  標準 C 関数を呼び出すには、`PInvoke` を使用します。  詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。|  
-|[\_lsearch\_s](../c-runtime-library/reference/lsearch-s.md)|`_lsearch`のセキュリティを強化したバージョン|使用できません。  標準 C 関数を呼び出すには、`PInvoke` を使用します。  詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。|  
-|[qsort](../c-runtime-library/reference/qsort.md)|クイック ソート|[\<caps:sentence id\="tgt27" sentenceid\="f0305a177c6971f2c3c37537da538229" class\="tgtSentence"\>System::Collections::ArrayList::Sort\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.sort.aspx)|  
-|[qsort\_s](../c-runtime-library/reference/qsort-s.md)|`qsort`のセキュリティを強化したバージョン|[\<caps:sentence id\="tgt29" sentenceid\="f0305a177c6971f2c3c37537da538229" class\="tgtSentence"\>System::Collections::ArrayList::Sort\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.sort.aspx)|  
+|--------------|--------------------|-------------------------------|  
+|[bsearch](../c-runtime-library/reference/bsearch.md)|バイナリ検索|[System::Collections::ArrayList::BinarySearch](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.binarysearch.aspx)|  
+|[bsearch_s](../c-runtime-library/reference/bsearch-s.md)|より安全なバージョンの `bsearch`。|[System::Collections::ArrayList::BinarySearch](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.binarysearch.aspx)|  
+|[_lfind](../c-runtime-library/reference/lfind.md)|指定された値の線形探索|[System::Collections::ArrayList::Contains](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx)|  
+|[_lfind_s](../c-runtime-library/reference/lfind-s.md)|より安全なバージョンの `_lfind`|[System::Collections::ArrayList::Contains](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx)|  
+|[_lsearch](../c-runtime-library/reference/lsearch.md)|指定された値の線形探索。見つからない場合は配列に追加されます|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
+|[_lsearch_s](../c-runtime-library/reference/lsearch-s.md)|より安全なバージョンの `_lsearch`|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
+|[qsort](../c-runtime-library/reference/qsort.md)|クイック並べ替え|[System::Collections::ArrayList::Sort](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.sort.aspx)|  
+|[qsort_s](../c-runtime-library/reference/qsort-s.md)|より安全なバージョンの `qsort`|[System::Collections::ArrayList::Sort](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.sort.aspx)|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

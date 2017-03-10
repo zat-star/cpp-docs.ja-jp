@@ -1,33 +1,50 @@
 ---
 title: "static ストレージ クラス指定子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "静的ストレージ クラス指定子"
-  - "静的変数, 指定子"
-  - "ストレージ クラス, static"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- static variables, specifier
+- storage classes, static
+- static storage class specifiers
 ms.assetid: 9bce361e-919b-46b9-8148-40d7ab0eb024
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# static ストレージ クラス指定子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 34f60570d18882ddfb7ebef78977d6b2f5c82000
+ms.lasthandoff: 02/24/2017
 
-**static** のストレージ クラス指定子で内部レベルで宣言された変数には、グローバル有効期間がありますが、宣言されたブロック内でのみ表示されます。  定数文字列の場合、**static** を使用すると、頻繁に呼び出される関数で頻度の高い初期化のオーバーヘッドを軽減するのに役立ちます。  
+---
+# <a name="static-storage-class-specifier"></a>static ストレージ クラス指定子
+**static** のストレージ クラス指定子により内部レベルで宣言された変数には、グローバル有効期間がありますが、宣言されたブロック内でのみ表示されます。 定数文字列の場合、**static** を使用すると、頻繁に呼び出される関数で頻度の高い初期化のオーバーヘッドを軽減するのに役立ちます。  
   
-## 解説  
- 明示的に静的変数を初期化しない場合、既定で 0 に初期化されます。  関数内で、**static** はストレージを割り当てますが、定義として動作します。  内部静的変数は、1 つの関数にのみプライベートの永続ストレージ変数を提供します。  
+## <a name="remarks"></a>コメント  
+明示的に**静的**変数を初期化しない場合、既定で 0 に初期化されます。 関数内で、**static** はストレージを割り当てますが、定義として動作します。 内部静的変数は、1 つの関数にのみプライベートの永続ストレージ変数を提供します。  
   
-## 参照  
- [スタティック](../misc/static-cpp.md)
+## <a name="see-also"></a>関連項目  
+[C ストレージ クラス](c-storage-classes.md)  
+[ストレージ クラス (C++)](../cpp/storage-classes-cpp.md)  
