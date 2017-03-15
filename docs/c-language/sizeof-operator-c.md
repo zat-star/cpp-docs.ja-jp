@@ -1,0 +1,81 @@
+---
+title: "sizeof 演算子 (C) | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- sizeof
+dev_langs:
+- C++
+helpviewer_keywords:
+- sizeof operator
+ms.assetid: 70826d03-3451-41e4-bebb-a820ae66d53f
+caps.latest.revision: 6
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
+ms.openlocfilehash: 051f54958d3ba0523d6047f77d7a8217d60bd51c
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="sizeof-operator-c"></a>sizeof 演算子 (C)
+`sizeof` 演算子はオペランドの型のオブジェクトを格納するために必要なストレージの量をバイト単位で示します。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+sizeof unary-expression  
+sizeof ( type-name )  
+```  
+  
+## <a name="remarks"></a>コメント  
+オペランドは、*unary-expression* の識別子、または型のキャスト式 (つまり、かっこで囲まれた型指定子) のいずれかです。 *unary-expression* は、ビット フィールド オブジェクト、不完全な型、または関数指定子を表すことはできません。 結果は、符号なしの整数定数です。 標準ヘッダー STDDEF.H は、この型を **size_t** として定義します。  
+  
+配列識別子に `sizeof` 演算子を適用した場合、結果は配列識別子によって表されるポインターのサイズではなく、配列全体のサイズとなります。  
+  
+構造体/共用体の型名または構造体/共用体の ID に `sizeof` 演算子を適用した場合、結果は内部と末尾の埋め込みを含む構造体/共用体のバイト数となります。 このサイズには、構造体または共用体のメンバーをメモリ境界に配置するために使用される内部および末尾の埋め込みが含まれる場合があります。 したがって、結果は、個々のメンバーのストレージ要件を加算して計算されたサイズには必ずしも対応しません。  
+  
+可変長配列が構造の最後の要素である場合、`sizeof` 演算子は配列のない構造体のサイズを返します。  
+  
+```  
+buffer = calloc(100, sizeof (int) );  
+```  
+  
+この例では、コンピューターごとに異なる `sizeof` のサイズを `int` という名前のランタイム関数に引数として渡すために、`calloc` 演算子を使用します。 関数によって返された値は `buffer` に格納されます。  
+  
+```  
+static char *strings[] = {  
+      "this is string one",  
+      "this is string two",  
+      "this is string three",  
+   };  
+const int string_no = ( sizeof strings ) / ( sizeof strings[0] );   
+```  
+  
+この例では、`strings` は  `char` へのポインターの配列です。 ポインターの数は、配列の要素の数ですが、指定されていません。 配列の要素数を計算するために `sizeof` 演算子を使用して、ポインターの数を決定する方が簡単です。 **const** の整数値 `string_no` は、この数に初期化されます。 これは **const** 値であるため、`string_no` は変更できません。  
+  
+## <a name="see-also"></a>関連項目  
+[C 演算子](c-operators.md)  
+[C++ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)  
+  

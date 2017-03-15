@@ -1,0 +1,1138 @@
+---
+title: "CMFCToolBarComboBoxButton クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CMFCToolBarComboBoxButton
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCToolBarComboBoxButton class
+ms.assetid: 32fa39f7-8e4e-4f0a-a31d-7b540d969a6c
+caps.latest.revision: 30
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
+ms.openlocfilehash: 43369e8869f9dd58543016bd74547b24fbe183a5
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="cmfctoolbarcomboboxbutton-class"></a>CMFCToolBarComboBoxButton クラス
+コンボ ボックス コントロールを含むツール バー ボタン ( [CComboBox クラス](../../mfc/reference/ccombobox-class.md))。  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+class CMFCToolBarComboBoxButton : public CMFCToolBarButton  
+```  
+  
+## <a name="members"></a>メンバー  
+  
+### <a name="public-constructors"></a>パブリック コンストラクター  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CMFCToolBarComboBoxButton::CMFCToolBarComboBoxButton](#cmfctoolbarcomboboxbutton)|`CMFCToolBarComboBoxButton` を構築します。|  
+  
+### <a name="public-methods"></a>パブリック メソッド  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[CMFCToolBarComboBoxButton::AddItem](#additem)|コンボ ボックスの一覧の最後に、項目を追加します。|  
+|[CMFCToolBarComboBoxButton::AddSortedItem](#addsorteditem)|コンボ ボックスの一覧に項目を追加します。 一覧で項目の順序が指定された`Compare`します。|  
+|[CMFCToolBarComboBoxButton::Compare](#compare)|2 つの項目を比較します。 呼ばれるを並べ替えるアイテム`AddSortedItems`コンボ ボックスの一覧に追加します。|  
+|[CMFCToolBarComboBoxButton::CreateEdit](#createedit)|コンボ ボックス ボタンの新しい編集コントロールを作成します。|  
+|[CMFCToolBarComboBoxButton::DeleteItem](#deleteitem)|コンボ ボックスの一覧から項目を削除します。|  
+|[CMFCToolBarComboBoxButton::FindItem](#finditem)|指定した文字列を含む項目のインデックスを返します。|  
+|[CMFCToolBarComboBoxButton::GetByCmd](#getbycmd)|指定されたコマンド ID を持つコンボ ボックス ボタンへのポインターを返します|  
+|[CMFCToolBarComboBoxButton::GetComboBox](#getcombobox)|コンボ ボックス ボタンに埋め込まれているコンボ ボックス コントロールへのポインターを返します。|  
+|[CMFCToolBarComboBoxButton::GetCount](#getcount)|コンボ ボックスの一覧で項目の数を返します。|  
+|[CMFCToolBarComboBoxButton::GetCountAll](#getcountall)|コンボ ボックス ボタンを持つ指定されたコマンド ID を検索します。 コンボ ボックスでそのボタンのボックスの一覧の項目の数を返します。|  
+|[CMFCToolBarComboBoxButton::GetCurSel](#getcursel)|コンボ ボックス リストで選択した項目のインデックスを返します。|  
+|[CMFCToolBarComboBoxButton::GetCurSelAll](#getcurselall)|コンボ ボックス ボタンを指定されたコマンド ID があり、そのボタンのボックスの一覧をコンボ ボックスで選択した項目のインデックスを返しますを検索します。|  
+|[CMFCToolBarComboBoxButton::GetEditCtrl](#geteditctrl)|コンボ ボックス ボタンに埋め込まれているエディット コントロールへのポインターを返します。|  
+|[CMFCToolBarComboBoxButton::GetItem](#getitem)|コンボ ボックスで指定したインデックスに関連付けられている文字列ボックスの一覧を返します。|  
+|[CMFCToolBarComboBoxButton::GetItemAll](#getitemall)|コンボ ボックス ボタンを指定されたコマンド ID を持ち、そのボタンのコンボ ボックスの一覧内のインデックスに関連付けられている文字列を返しますを検索します。|  
+|[CMFCToolBarComboBoxButton::GetItemData](#getitemdata)|コンボ ボックスで指定したインデックスに関連付けられている 32 ビット値のボックスの一覧を返します。|  
+|[CMFCToolBarComboBoxButton::GetItemDataAll](#getitemdataall)|コンボ ボックス ボタンを指定されたコマンド ID を持ちをそのボタンのコンボ ボックスの一覧内のインデックスに関連付けられている 32 ビット値を返すを検索します。|  
+|[CMFCToolBarComboBoxButton::GetItemDataPtrAll](#getitemdataptrall)|コンボ ボックス ボタンを持つ指定されたコマンド ID を検索します。 取得しますは 32 ビット値には、そのボタン、および 32 ビット値をポインターとして取得のコンボ ボックスの一覧内のインデックスが関連付けられています。|  
+|[CMFCToolBarComboBoxButton::GetText](#gettext)|コンボ ボックスのエディット コントロールからテキストを返します。|  
+|[CMFCToolBarComboBoxButton::GetTextAll](#gettextall)|コンボ ボックス ボタンを指定されたコマンド ID があり、そのボタンの編集コントロールからテキストを返しますを検索します。|  
+|[CMFCToolBarComboBoxButton::IsCenterVert](#iscentervert)|アプリケーションのコンボ ボックス ボタンを中央揃えまたはツールバーの上部に揃えて配置するかどうかを決定します。|  
+|[CMFCToolBarComboBoxButton::IsFlatMode](#isflatmode)|アプリケーションのコンボ ボックス ボタンのフラットな外観かどうかを判断します。|  
+|[CMFCToolBarComboBoxButton::RemoveAllItems](#removeallitems)|すべての項目がリストからボックス、コンボ ボックスのコントロールを編集を削除します。|  
+|[CMFCToolBarComboBoxButton::SelectItem](#selectitem)|インデックス、32 ビット値、または文字列に従ってコンボ ボックスで項目を選択し、選択範囲のコンボ ボックス コントロールを通知します。|  
+|[CMFCToolBarComboBoxButton::SelectItemAll](#selectitemall)|コンボ ボックス ボタンを持つ指定されたコマンド ID を検索します。 呼び出し`SelectItem`に従って、文字列、インデックス、または 32 ビット値には、そのボタンのコンボ ボックス内の項目を選択します。|  
+|[CMFCToolBarComboBoxButton::SetCenterVert](#setcentervert)|アプリケーションのコンボ ボックス ボタンを垂直方向の中央またはツールバーの上部に揃えて配置するかどうかを指定します。|  
+|[CMFCToolBarComboBoxButton::SetDropDownHeight](#setdropdownheight)|ドロップダウン リスト ボックスの高さを設定します。|  
+|[CMFCToolBarComboBoxButton::SetFlatMode](#setflatmode)|アプリケーションのコンボ ボックス ボタンのフラットな外観かどうかを指定します。|  
+  
+## <a name="remarks"></a>コメント  
+ ツールバーにコンボ ボックス ボタンを追加するには、次の手順を実行します。  
+  
+ 1. 親ツール バー リソースでボタンのダミー リソース ID を予約します。  
+  
+ 2. `CMFCToolBarComboBoxButton` オブジェクトを構築します。  
+  
+ 3. 処理するメッセージ ハンドラーで、`AFX_WM_RESETTOOLBAR`メッセージを使用して、ダミー ボタンを新しいコンボ ボックス ボタンに置き換える[CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton)します。  
+  
+ 詳細については、次を参照してください。[チュートリアル: ツールバーにコントロールを配置する](../../mfc/walkthrough-putting-controls-on-toolbars.md)です。 コンボ ボックスのツール バー ボタンの例は、例に示すプロジェクト VisualStudioDemo を参照してください。  
+  
+## <a name="example"></a>例  
+ 次の例では、さまざまなメソッドを使用する方法、`CMFCToolBarComboBoxButton`クラスです。 この例では、編集し、コンボ ボックスの有効化、アプリケーションにボックスのボタンのコンボの垂直方向の位置を設定、アプリケーションでは、コンボ ボックス ボタンのフラット スタイルの外観を設定し、コンボ ボックス ボタンの編集ボックスにテキストを設定、削除されたときに、リスト ボックスの高さを設定する方法を示します。 このコード スニペットの一部である、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
+  
+ [!code-cpp[NVC_MFC_VisualStudioDemo&#36;](../../mfc/codesnippet/cpp/cmfctoolbarcomboboxbutton-class_1.cpp)]  
+[!code-cpp[NVC_MFC_VisualStudioDemo #&37;](../../mfc/codesnippet/cpp/cmfctoolbarcomboboxbutton-class_2.cpp)]  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [CObject](../../mfc/reference/cobject-class.md)  
+  
+ [CMFCToolBarButton](../../mfc/reference/cmfctoolbarbutton-class.md)  
+  
+ [CMFCToolBarComboBoxButton](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md)  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** afxtoolbarcomboboxbutton.h  
+  
+##  <a name="a-nameadditema--cmfctoolbarcomboboxbuttonadditem"></a><a name="additem"></a>CMFCToolBarComboBoxButton::AddItem  
+ リスト ボックスに一意の項目を追加します。  
+  
+```  
+virtual INT_PTR AddItem(
+    LPCTSTR lpszItem,  
+    DWORD_PTR dwData=0);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszItem`  
+ リスト ボックスに追加する項目のテキストです。  
+  
+ [入力] `dwData`  
+ リスト ボックスに追加する項目に関連付けられているデータ。  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックスの最後の項目のインデックス。  
+  
+### <a name="remarks"></a>コメント  
+ リスト ボックスのスタイルが並べ替えられた場合は、このメソッドを使用しないでください。  
+  
+ 項目のテキストが既に場合、リスト ボックスで、既存の項目に新しいデータが格納されます。 項目の検索では、大文字小文字を区別します。  
+  
+##  <a name="a-nameaddsorteditema--cmfctoolbarcomboboxbuttonaddsorteditem"></a><a name="addsorteditem"></a>CMFCToolBarComboBoxButton::AddSortedItem  
+ 定義されている順序でリスト ボックスに項目を追加、[比較](#compare)メソッドです。  
+  
+```  
+virtual INT_PTR AddSortedItem(
+    LPCTSTR lpszItem,  
+    DWORD_PTR dwData=0);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszItem`  
+ リスト ボックスに追加する項目のテキストです。  
+  
+ [入力] `dwData`  
+ リスト ボックスに追加する項目に関連付けられているデータ。  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックスに追加された項目のインデックス。  
+  
+### <a name="remarks"></a>コメント  
+ この関数を使用すると、特定の順序でリスト ボックスに項目を追加できます。  
+  
+##  <a name="a-namecanbestretcheda--cmfctoolbarcomboboxbuttoncanbestretched"></a><a name="canbestretched"></a>CMFCToolBarComboBoxButton::CanBeStretched  
+ コンボ ボックス ボタンのサイズを変更できるかどうかを示します。  
+  
+```  
+virtual BOOL CanBeStretched() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE` を返します。  
+  
+##  <a name="a-namecmfctoolbarcomboboxbuttona--cmfctoolbarcomboboxbuttoncmfctoolbarcomboboxbutton"></a><a name="cmfctoolbarcomboboxbutton"></a>CMFCToolBarComboBoxButton::CMFCToolBarComboBoxButton  
+ 構築、 [CMFCToolBarComboBoxButton](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md)オブジェクトです。  
+  
+```  
+CMFCToolBarComboBoxButton(
+    UINT uiID,  
+    int iImage,  
+    DWORD dwStyle=CBS_DROPDOWNLIST,  
+    int iWidth=0);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiID`  
+ 新しいボタンのコマンド ID。  
+  
+ [入力] `iImage`  
+ 新しいボタンに関連付けられているイメージのイメージのインデックス。  
+  
+ [入力] `dwStyle`  
+ 新しいボタンのスタイル。  
+  
+ [入力] `iWidth`  
+ 新しいボタンのピクセル単位の幅。  
+  
+### <a name="remarks"></a>コメント  
+ 既定の幅は、150 ピクセルです。  
+  
+ ツール バー ボタンのスタイルの一覧については、次を参照してください[ツール バー コントロールのスタイル。](../../mfc/reference/toolbar-control-styles.md)  
+  
+##  <a name="a-namecleardataa--cmfctoolbarcomboboxbuttoncleardata"></a><a name="cleardata"></a>CMFCToolBarComboBoxButton::ClearData  
+ ユーザー定義データを削除します。  
+  
+```  
+virtual void ClearData();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、このメソッドは何もしません。 ユーザー定義データを削除する場合は、派生クラスでは、このメソッドをオーバーライドします。  
+  
+##  <a name="a-namecomparea--cmfctoolbarcomboboxbuttoncompare"></a><a name="compare"></a>CMFCToolBarComboBoxButton::Compare  
+ 2 つの文字列を比較します。  
+  
+```  
+virtual int Compare(
+    LPCTSTR lpszItem1,  
+    LPCTSTR lpszItem2);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszItem1`  
+ 比較する最初の文字列。  
+  
+ [入力] `lpszItem2`  
+ 比較する&2; 番目の文字列。  
+  
+### <a name="return-value"></a>戻り値  
+ 文字列の大文字小文字を区別辞書式の関係を示す値です。 次の表では、指定できる値を示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|\<0|最初の文字列が小さく、1 つ目です。|  
+|0|最初の文字列では、2 番目と同じです。|  
+|>0|最初の文字列は、秒を超えています。|  
+  
+### <a name="remarks"></a>コメント  
+ リスト ボックス内の項目の並べ替え方法を変更するには、このメソッドをオーバーライドします。  
+  
+ 比較では大文字小文字を区別します。  
+  
+ このメソッドはからのみ呼び出さ、 [AddSortedItem](#addsorteditem)メソッドです。  
+  
+##  <a name="a-namecopyfroma--cmfctoolbarcomboboxbuttoncopyfrom"></a><a name="copyfrom"></a>CMFCToolBarComboBoxButton::CopyFrom  
+ 指定した状態をコピー`CMFCToolBarComboBoxButton`を現在のオブジェクト。  
+  
+```  
+virtual void CopyFrom(const CMFCToolBarButton& src);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `src`  
+ ソース `CMFCToolBarComboBoxButton` オブジェクト。  
+  
+##  <a name="a-namecreatecomboa--cmfctoolbarcomboboxbuttoncreatecombo"></a><a name="createcombo"></a>CMFCToolBarComboBoxButton::CreateCombo  
+ コンボ ボックス ボタンの新しいコンボ ボックスを作成します。  
+  
+```  
+virtual CComboBox* CreateCombo(
+    CWnd* pWndParent,  
+    const CRect& rect);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pWndParent`  
+ ボタンの親ウィンドウへのポインター。  
+  
+ [入力] `rect`  
+ コンボ ボックスの外接する四角形。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合は、新しいコンボ ボックスへのポインターそれ以外の場合、`NULL`です。  
+  
+##  <a name="a-namecreateedita--cmfctoolbarcomboboxbuttoncreateedit"></a><a name="createedit"></a>CMFCToolBarComboBoxButton::CreateEdit  
+ コンボ ボックス ボタンの新しいエディット ボックスを作成します。  
+  
+```  
+virtual CMFCToolBarComboBoxEdit* CreateEdit(
+    CWnd* pWndParent,  
+    const CRect& rect,  
+    DWORD dwEditStyle);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pWndParent`  
+ ボタンの親ウィンドウへのポインター。  
+  
+ [入力] `rect`  
+ 新しい編集ボックスの外接する四角形。  
+  
+ [入力] `dwEditStyle`  
+ 新しい編集ボックスのスタイルを制御します。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合は、新しいエディット ボックスへのポインターそれ以外の場合、`NULL`です。  
+  
+### <a name="remarks"></a>コメント  
+ フレームワークは、コンボ ボックス ボタンの新しいエディット ボックスの作成時に、このメソッドを呼び出します。 変更するには、このメソッドをオーバーライドする方法[CMFCToolBarComboBoxEdit](../../mfc/reference/cmfctoolbarcomboboxedit-class.md)が作成されます。  
+  
+##  <a name="a-namedeleteitema--cmfctoolbarcomboboxbuttondeleteitem"></a><a name="deleteitem"></a>CMFCToolBarComboBoxButton::DeleteItem  
+ リスト ボックスから、指定した項目を削除します。  
+  
+```  
+BOOL DeleteItem(int iIndex);  
+BOOL DeleteItem(DWORD_PTR dwData);  
+  BOOL DeleteItem(LPCTSTR lpszText);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iIndex`  
+ 削除する項目の&0; から始まるインデックス。  
+  
+ [入力] `dwData`  
+ 削除するアイテムに関連付けられているデータ。  
+  
+ [入力] `lpszText`  
+ 削除する項目のテキストです。 同じテキストを含む複数の項目がある場合は、最初の項目は削除されます。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`場合は、項目が見つかり、正常に削除されました。それ以外の場合、`FALSE`です。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameduplicatedataa--cmfctoolbarcomboboxbuttonduplicatedata"></a><a name="duplicatedata"></a>CMFCToolBarComboBoxButton::DuplicateData  
+ ユーザー定義データを複製します。  
+  
+```  
+virtual void DuplicateData();
+```  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、このメソッドは何もしません。 ユーザー定義データをコピーする場合は、派生クラスでは、このメソッドをオーバーライドします。  
+  
+##  <a name="a-nameenablewindowa--cmfctoolbarcomboboxbuttonenablewindow"></a><a name="enablewindow"></a>CMFCToolBarComboBoxButton::EnableWindow  
+ 有効または編集し、コンボ ボックスを無効にします。  
+  
+```  
+virtual void EnableWindow(BOOL bEnable = TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bEnable`  
+ `TRUE`編集し、コンボ ボックスを有効にするには`FALSE`を編集し、コンボ ボックスを無効にします。  
+  
+### <a name="remarks"></a>コメント  
+ 無効にすると、コントロールがアクティブになることはできず、ユーザー入力を受け取ることはできません。  
+  
+##  <a name="a-nameexporttomenubuttona--cmfctoolbarcomboboxbuttonexporttomenubutton"></a><a name="exporttomenubutton"></a>CMFCToolBarComboBoxButton::ExportToMenuButton  
+ コピー id コンボ ボックス ボタンのコマンドを使用して指定されたメニューには、アプリケーションの文字列テーブルから文字列です。  
+  
+```  
+virtual BOOL ExportToMenuButton(CMFCToolBarMenuButton& menuButton) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [出力] `menuButton`  
+ メニュー ボタンへの参照。  
+  
+### <a name="return-value"></a>戻り値  
+ 常に `TRUE`。  
+  
+##  <a name="a-namefinditema--cmfctoolbarcomboboxbuttonfinditem"></a><a name="finditem"></a>CMFCToolBarComboBoxButton::FindItem  
+ 指定した文字列を含むリスト ボックスでは、最初の項目のインデックスを返します。  
+  
+```  
+int FindItem(LPCTSTR lpszText) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszText`  
+ リスト ボックスで検索するテキストです。  
+  
+### <a name="return-value"></a>戻り値  
+ 項目のインデックスまたは`CB_ERR`場合は、項目は見つかっていません。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetbycmda--cmfctoolbarcomboboxbuttongetbycmd"></a><a name="getbycmd"></a>CMFCToolBarComboBoxButton::GetByCmd  
+ 指定されたコマンド ID を持つコンボ ボックス ボタンへのポインターを取得します。  
+  
+```  
+static CMFCToolBarComboBoxButton* GetByCmd(
+    UINT uiCmd,  
+    BOOL bIsFocus=FALSE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+ [入力] `bIsFocus`  
+ `TRUE`だけを検索する特定のボタンです。`FALSE`をすべてのボタンを検索します。  
+  
+### <a name="return-value"></a>戻り値  
+ コンボ ボックス ボタンへのポインターまたは`NULL`ボタンが見つからない場合。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetcomboboxa--cmfctoolbarcomboboxbuttongetcombobox"></a><a name="getcombobox"></a>CMFCToolBarComboBoxButton::GetComboBox  
+ コンボ ボックス ボタンに含まれるコンボ ボックスへのポインターを返します。  
+  
+```  
+CComboBox* GetComboBox() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ ポインター、 [CComboBox クラス](../../mfc/reference/ccombobox-class.md)オブジェクトのメソッドが成功、それ以外のかどうかは`NULL`です。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetcontextmenuida--cmfctoolbarcomboboxbuttongetcontextmenuid"></a><a name="getcontextmenuid"></a>CMFCToolBarComboBoxButton::GetContextMenuID  
+ コンボ ボックス ボタンのショートカット メニューのリソース ID を取得します。  
+  
+```  
+UINT GetContextMenuID();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ ショートカット メニューのリソース id。  
+  
+##  <a name="a-namegetcounta--cmfctoolbarcomboboxbuttongetcount"></a><a name="getcount"></a>CMFCToolBarComboBoxButton::GetCount  
+ リスト ボックスで、項目の数を返します。  
+  
+```  
+INT_PTR GetCount() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックス内の項目の数。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetcountalla--cmfctoolbarcomboboxbuttongetcountall"></a><a name="getcountall"></a>CMFCToolBarComboBoxButton::GetCountAll  
+ 指定されたコマンド ID を持つコンボ ボックス ボタンのリスト ボックスに項目の数を取得します。  
+  
+```  
+static int GetCountAll(UINT uiCmd);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックス内の項目数それ以外の場合、`CB_ERR`コンボ ボックス ボタンが見つからない場合。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetcursela--cmfctoolbarcomboboxbuttongetcursel"></a><a name="getcursel"></a>CMFCToolBarComboBoxButton::GetCurSel  
+ リスト ボックスで現在選択されている項目のインデックスを取得します。  
+  
+```  
+int GetCurSel() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックスで現在選択されている項目のインデックスまたは`CB_ERR`項目が選択されていない場合。  
+  
+### <a name="remarks"></a>コメント  
+ リスト ボックス インデックスは&0; です。  
+  
+##  <a name="a-namegetcurselalla--cmfctoolbarcomboboxbuttongetcurselall"></a><a name="getcurselall"></a>CMFCToolBarComboBoxButton::GetCurSelAll  
+ 指定されたコマンド ID を持つボックス ボタン、コンボ ボックスで現在選択されている項目のインデックスを返します  
+  
+```  
+static int GetCurSelAll(UINT uiCmd);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+### <a name="return-value"></a>戻り値  
+ リスト ボックスで現在選択されている項目のインデックスそれ以外の場合、`CB_ERR`項目が選択されていないか、コンボ ボックス ボタンが見つからない場合。  
+  
+### <a name="remarks"></a>コメント  
+ リスト ボックス インデックスは&0; です。  
+  
+##  <a name="a-namegeteditctrla--cmfctoolbarcomboboxbuttongeteditctrl"></a><a name="geteditctrl"></a>CMFCToolBarComboBoxButton::GetEditCtrl  
+ コンボ ボックス ボタンに含まれるエディット ボックスへのポインターを返します。  
+  
+```  
+virtual CEdit* GetEditCtrl();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合は、エディット ボックスへのポインターそれ以外の場合、`NULL`です。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegethwnda--cmfctoolbarcomboboxbuttongethwnd"></a><a name="gethwnd"></a>CMFCToolBarComboBoxButton::GetHwnd  
+ コンボ ボックスのウィンドウ ハンドルを返します。  
+  
+```  
+virtual HWND GetHwnd();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ ウィンドウ ハンドル、または`NULL`コンボ ボックスはウィンドウのオブジェクトに関連付けられていない場合。  
+  
+##  <a name="a-namegetitema--cmfctoolbarcomboboxbuttongetitem"></a><a name="getitem"></a>CMFCToolBarComboBoxButton::GetItem  
+ リスト ボックスで指定したインデックス位置にある項目に関連付けられている文字列を返します。  
+  
+```  
+LPCTSTR GetItem(int iIndex=-1) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+### <a name="return-value"></a>戻り値  
+ アイテムに関連付けられている文字列へのポインターそれ以外の場合、`NULL`インデックス パラメーターが有効でない場合、またはインデックス パラメーターが-1 とコンボ ボックスで選択した項目がない場合。  
+  
+### <a name="remarks"></a>コメント  
+ -1 のインデックス パラメーターは、現在選択されている項目の文字列を返します。  
+  
+##  <a name="a-namegetitemalla--cmfctoolbarcomboboxbuttongetitemall"></a><a name="getitemall"></a>CMFCToolBarComboBoxButton::GetItemAll  
+ 指定されたコマンド ID を持つコンボ ボックス ボタンのリスト ボックスに指定したインデックス位置にある項目に関連付けられている文字列を返します  
+  
+```  
+static LPCTSTR GetItemAll(
+    UINT uiCmd,  
+    int iIndex=-1);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合、項目の文字列へのポインターそれ以外の場合、`NULL`コンボ ボックス ボタンがありませんが、インデックスが有効でない場合、またはインデックスが-1 とコンボ ボックスで選択した項目がない場合。  
+  
+### <a name="remarks"></a>コメント  
+ インデックス値-1 は、現在選択されている項目の文字列を返します。  
+  
+##  <a name="a-namegetitemdataa--cmfctoolbarcomboboxbuttongetitemdata"></a><a name="getitemdata"></a>CMFCToolBarComboBoxButton::GetItemData  
+ リスト ボックスで指定したインデックス位置にある項目に関連付けられているデータを返します。  
+  
+```  
+DWORD_PTR GetItemData(int iIndex=-1) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+### <a name="return-value"></a>戻り値  
+ 項目に関連付けられたデータまたは、項目が存在しない場合は 0 です。  
+  
+### <a name="remarks"></a>コメント  
+ -1 のインデックス パラメーターは、現在選択されているアイテムに関連付けられたデータを返します。  
+  
+##  <a name="a-namegetitemdataalla--cmfctoolbarcomboboxbuttongetitemdataall"></a><a name="getitemdataall"></a>CMFCToolBarComboBoxButton::GetItemDataAll  
+ 特定のコマンド ID を持つコンボ ボックス ボタンのリスト ボックスで指定したインデックス位置にある項目に関連付けられているデータを返す  
+  
+```  
+static DWORD_PTR GetItemDataAll(
+    UINT uiCmd,  
+    int iIndex=-1);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合に、アイテムに関連付けられたデータそれ以外の場合、指定したインデックスが有効でない場合は 0 を返します、コンボ ボックス ボタンが見つかりません。  
+  
+### <a name="remarks"></a>コメント  
+ -1 のインデックス パラメーターは、現在選択されているアイテムに関連付けられたデータを返します。  
+  
+##  <a name="a-namegetitemdataptralla--cmfctoolbarcomboboxbuttongetitemdataptrall"></a><a name="getitemdataptrall"></a>CMFCToolBarComboBoxButton::GetItemDataPtrAll  
+ 特定のコマンド ID を持つコンボ ボックス ボタンのリスト ボックスで指定したインデックス位置にある項目に関連付けられているデータを返す このデータは、ポインターとして返されます。  
+  
+```  
+static void* GetItemDataPtrAll(
+    UINT uiCmd,  
+    int iIndex=-1);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ コンボ ボックス ボタンのコマンド ID。  
+  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合に、アイテムに関連付けられたポインターエラーが発生する場合、それ以外の場合は-1 または`NULL`コンボ ボックス ボタンが見つからない場合。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegetprompta--cmfctoolbarcomboboxbuttongetprompt"></a><a name="getprompt"></a>CMFCToolBarComboBoxButton::GetPrompt  
+ コンボ ボックス ボタンの表示名の文字列を返します。  
+  
+```  
+virtual CString GetPrompt() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ プロンプトの文字列です。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドは現在実装されていません。  
+  
+##  <a name="a-namegettexta--cmfctoolbarcomboboxbuttongettext"></a><a name="gettext"></a>CMFCToolBarComboBoxButton::GetText  
+ エディット ボックスにテキストを取得します。  
+  
+```  
+LPCTSTR GetText() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ エディット ボックスにテキストです。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namegettextalla--cmfctoolbarcomboboxbuttongettextall"></a><a name="gettextall"></a>CMFCToolBarComboBoxButton::GetTextAll  
+ 指定されたコマンド ID を持つコンボ ボックス ボタンの編集ボックスにテキストを取得します。  
+  
+```  
+static LPCTSTR GetTextAll(UINT uiCmd);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ 特定のコンボ ボックス ボタンのコマンド ID。  
+  
+### <a name="return-value"></a>戻り値  
+ メソッドが成功した場合は、エディット ボックスにテキストそれ以外の場合、`NULL`です。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-namehasfocusa--cmfctoolbarcomboboxbuttonhasfocus"></a><a name="hasfocus"></a>CMFCToolBarComboBoxButton::HasFocus  
+ コンボ ボックスで現在フォーカスがあるかどうかを示します。  
+  
+```  
+virtual BOOL HasFocus() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`コンボ ボックス現在フォーカスがある場合それ以外の場合、`FALSE`です。  
+  
+### <a name="remarks"></a>コメント  
+ このメソッドが戻るも`TRUE`コンボ ボックスの任意の子ウィンドウに現在フォーカスがある場合。  
+  
+##  <a name="a-nameiscenterverta--cmfctoolbarcomboboxbuttoniscentervert"></a><a name="iscentervert"></a>CMFCToolBarComboBoxButton::IsCenterVert  
+ アプリケーションでは、コンボ ボックス ボタンの縦方向の位置を返します。  
+  
+```  
+static BOOL IsCenterVert();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`場合は、ボタンが中央に配置します。`FALSE`上部にあるボタンが固定されている場合。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameisflatmodea--cmfctoolbarcomboboxbuttonisflatmode"></a><a name="isflatmode"></a>CMFCToolBarComboBoxButton::IsFlatMode  
+ アプリケーションでは、コンボ ボックス ボタンのフラット スタイルの外観を返します。  
+  
+```  
+static BOOL IsFlatMode();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`ボタンのフラット スタイルを場合それ以外の場合、`FALSE`です。  
+  
+### <a name="remarks"></a>コメント  
+ コンボ ボックス ボタンの既定のフラット スタイルは、します。`FALSE.`  
+  
+##  <a name="a-nameisownerofa--cmfctoolbarcomboboxbuttonisownerof"></a><a name="isownerof"></a>CMFCToolBarComboBoxButton::IsOwnerOf  
+ 指定したハンドルがコンボ ボックス ボタン、またはその子のいずれかに関連付けられているかどうかを示します。  
+  
+```  
+virtual BOOL IsOwnerOf(HWND hwnd);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `hwnd`  
+ ウィンドウ ハンドル。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`ハンドルがコンボ ボックス ボタン、またはその子のいずれかに関連付けられている場合それ以外の場合、`FALSE`です。  
+  
+##  <a name="a-nameisribbonbuttona--cmfctoolbarcomboboxbuttonisribbonbutton"></a><a name="isribbonbutton"></a>CMFCToolBarComboBoxButton::IsRibbonButton  
+ コンボ ボックス ボタンがリボン パネルにあるかどうかを示します。  
+  
+```  
+BOOL IsRibbonButton() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 常に `FALSE`。  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、このメソッドは常`FALSE`、つまり、コンボ ボックス ボタンをリボン パネルに表示されません。  
+  
+##  <a name="a-nameiswindowvisiblea--cmfctoolbarcomboboxbuttoniswindowvisible"></a><a name="iswindowvisible"></a>CMFCToolBarComboBoxButton::IsWindowVisible  
+ 表示状態のコンボ ボックス ボタンを返します。  
+  
+```  
+virtual BOOL IsWindowVisible();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ コンボ ボックス ボタンの表示状態。  
+  
+##  <a name="a-namenotifycommanda--cmfctoolbarcomboboxbuttonnotifycommand"></a><a name="notifycommand"></a>CMFCToolBarComboBoxButton::NotifyCommand  
+ コンボ ボックス ボタンがメッセージを処理するかどうかを示します。  
+  
+```  
+virtual BOOL NotifyCommand(int iNotifyCode);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iNotifyCode`  
+ コマンドに関連付けられている通知メッセージです。  
+  
+### <a name="return-value"></a>戻り値  
+ コンボ ボックス ボタンであるかどうか、メッセージを処理します。  
+  
+##  <a name="a-nameonaddtocustomizepagea--cmfctoolbarcomboboxbuttononaddtocustomizepage"></a><a name="onaddtocustomizepage"></a>CMFCToolBarComboBoxButton::OnAddToCustomizePage  
+ ボタンを追加するときに、フレームワークによって呼び出されます、**カスタマイズ** ダイアログ ボックス。  
+  
+```  
+virtual void OnAddToCustomizePage();
+```  
+  
+##  <a name="a-nameoncalculatesizea--cmfctoolbarcomboboxbuttononcalculatesize"></a><a name="oncalculatesize"></a>CMFCToolBarComboBoxButton::OnCalculateSize  
+ ボタンのサイズを計算するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual SIZE OnCalculateSize(
+    CDC* pDC,  
+    const CSize& sizeDefault,  
+    BOOL bHorz);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pDC`  
+ コンボ ボックス ボタンを表示するデバイス コンテキスト。  
+  
+ [入力] `sizeDefault`  
+ コンボ ボックス ボタンの既定のサイズ。  
+  
+ [入力] `bHorz`  
+ 親ツールバーのドッキング状態です。 `TRUE`ツールバーが水平方向にドッキングおよび`FALSE`ツールバーが垂直方向にドッキングします。  
+  
+### <a name="return-value"></a>戻り値  
+ A`SIZE`コンボ ボックス ボタンのピクセル単位の大きさを格納する構造体。  
+  
+##  <a name="a-nameonchangeparentwnda--cmfctoolbarcomboboxbuttononchangeparentwnd"></a><a name="onchangeparentwnd"></a>CMFCToolBarComboBoxButton::OnChangeParentWnd  
+ 新しいツールバーにコンボ ボックス ボタンが挿入されたときに、フレームワークによって呼び出されます。  
+  
+```  
+virtual void OnChangeParentWnd(CWnd* pWndParent);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pWndParent`  
+ 新しい親ツールバーへのポインター。  
+  
+##  <a name="a-nameonclicka--cmfctoolbarcomboboxbuttononclick"></a><a name="onclick"></a>CMFCToolBarComboBoxButton::OnClick  
+ ユーザーがコンボ ボックス ボタンをクリックしたときに、フレームワークによって呼び出されます。  
+  
+```  
+virtual BOOL OnClick(
+    CWnd* pWnd,  
+    BOOL bDelay = TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pWnd`  
+ コンボ ボックス ボタンの親ウィンドウへのポインター。  
+  
+ [入力] `bDelay`  
+ 派生クラスで使用するために予約されています。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`メソッドがイベントを処理する場合それ以外の場合、`FALSE`です。  
+  
+##  <a name="a-nameonctlcolora--cmfctoolbarcomboboxbuttononctlcolor"></a><a name="onctlcolor"></a>CMFCToolBarComboBoxButton::OnCtlColor  
+ 親ツールバーのコンボ ボックス ボタンの色を設定する色を変更したときに、フレームワークによって呼び出されます。  
+  
+```  
+virtual HBRUSH OnCtlColor(
+    CDC* pDC,  
+    UINT nCtlColor);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pDC`  
+ コンボ ボックス ボタンを表示するデバイス コンテキスト。  
+  
+ [入力] `nCtlColor`  
+ 使用されません。  
+  
+### <a name="return-value"></a>戻り値  
+ フレームワークを使用して、コンボ ボックス ボタンの背景を描画するブラシへのハンドルします。  
+  
+### <a name="remarks"></a>コメント  
+ また、このメソッドは、コンボ ボックス ボタン テキストの色を設定します。  
+  
+##  <a name="a-nameondrawa--cmfctoolbarcomboboxbuttonondraw"></a><a name="ondraw"></a>CMFCToolBarComboBoxButton::OnDraw  
+ 指定したスタイルとオプションを使用して、コンボ ボックス ボタンを描画するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual void OnDraw(
+    CDC* pDC,  
+    const CRect& rect,  
+    CMFCToolBarImages* pImages,  
+    BOOL bHorz = TRUE,  
+    BOOL bCustomizeMode = FALSE,  
+    BOOL bHighlight = FALSE,  
+    BOOL bDrawBorder = TRUE,  
+    BOOL bGrayDisabledButtons = TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `Pdc`  
+ ボタンを表示するデバイス コンテキスト。  
+  
+ [入力] `rect`  
+ ボタンの外接する四角形。  
+  
+ [入力] `pImages`  
+ ボタンに関連付けられているイメージのコレクション。  
+  
+ [入力] `bHorz`  
+ 親ツールバーのドッキング状態です。 `TRUE`ツールバーが水平方向にドッキングおよび`FALSE`ツールバーが垂直方向にドッキングします。  
+  
+ [入力] `bCustomizeMode`  
+ かどうか、アプリケーションがカスタマイズ モードです。  
+  
+ [入力] `bHighlight`  
+ 強調表示されているコンボ ボックス ボタンを描画するかどうか。  
+  
+ [入力] `bDrawBorder`  
+ 境界線付きのコンボ ボックス ボタンを描画するかどうか。  
+  
+ [入力] `bGrayDisabledButtons`  
+ `TRUE`無効になっているボタンの影を描画するには`FALSE`無効な状態を使用するイメージのコレクション。  
+  
+##  <a name="a-nameondrawoncustomizelista--cmfctoolbarcomboboxbuttonondrawoncustomizelist"></a><a name="ondrawoncustomizelist"></a>CMFCToolBarComboBoxButton::OnDrawOnCustomizeList  
+ コンボ ボックス ボタンを描画するためにフレームワークによって呼び出されます、**コマンド**のウィンドウ、**カスタマイズ** ダイアログ ボックス。  
+  
+```  
+virtual int OnDrawOnCustomizeList(
+    CDC* pDC,  
+    const CRect& rect,  
+    BOOL bSelected);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pDC`  
+ コンボ ボックス ボタンを表示するデバイス コンテキスト。  
+  
+ [入力] `rect`  
+ コンボ ボックス ボタンの外接する四角形。  
+  
+ [入力] `bSelected`  
+ `TRUE`コンボ ボックス ボタンが選択されます。それ以外の場合、`FALSE`です。  
+  
+### <a name="return-value"></a>戻り値  
+ コンボ ボックス ボタンのピクセル単位の幅。  
+  
+##  <a name="a-nameonglobalfontschangeda--cmfctoolbarcomboboxbuttononglobalfontschanged"></a><a name="onglobalfontschanged"></a>CMFCToolBarComboBoxButton::OnGlobalFontsChanged  
+ アプリケーションのフォントが変更されたときに、コンボ ボックス ボタンのフォントを設定するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual void OnGlobalFontsChanged();
+```  
+  
+##  <a name="a-nameonmovea--cmfctoolbarcomboboxbuttononmove"></a><a name="onmove"></a>CMFCToolBarComboBoxButton::OnMove  
+ 親ツールバーに移動したときに、コンボ ボックス ボタンの場所を変更するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual void OnMove();
+```  
+  
+##  <a name="a-nameonshowa--cmfctoolbarcomboboxbuttononshow"></a><a name="onshow"></a>CMFCToolBarComboBoxButton::OnShow  
+ コンボ ボックス ボタンを非表示または表示されるときに、フレームワークによって呼び出されます。  
+  
+```  
+virtual void OnShow(BOOL bShow);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bShow`  
+ コンボ ボックス ボタンを表示または非表示するかどうか。  
+  
+##  <a name="a-nameonsizea--cmfctoolbarcomboboxbuttononsize"></a><a name="onsize"></a>CMFCToolBarComboBoxButton::OnSize  
+ 親ツールバーのサイズが変更されたときに、コンボ ボックス ボタンのサイズを変更するためにフレームワークによって呼び出されます。  
+  
+```  
+virtual void OnSize(int iSize);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iSize`  
+ コンボ ボックス ボタンの新しい幅。  
+  
+##  <a name="a-nameonupdatetooltipa--cmfctoolbarcomboboxbuttononupdatetooltip"></a><a name="onupdatetooltip"></a>CMFCToolBarComboBoxButton::OnUpdateToolTip  
+ コンボ ボックス ボタンのツールヒントを変更したときに、フレームワークによって呼び出されます。  
+  
+```  
+virtual BOOL OnUpdateToolTip(
+    CWnd* pWndParent,  
+    int iButtonIndex,  
+    CToolTipCtrl& wndToolTip,  
+    CString& str);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pWndParent`  
+ コンボ ボックス ボタンの親ウィンドウへのポインター。  
+  
+ [入力] `iButtonIndex`  
+ コンボ ボックス ボタンの ID です。  
+  
+ [入力] `wndToolTip`  
+ コンボ ボックス ボタンに関連付けるツールヒント。  
+  
+ [入力] `str`  
+ ツールヒントのテキスト。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`メソッドがイベントを処理する場合それ以外の場合、`FALSE`です。  
+  
+##  <a name="a-nameremoveallitemsa--cmfctoolbarcomboboxbuttonremoveallitems"></a><a name="removeallitems"></a>CMFCToolBarComboBoxButton::RemoveAllItems  
+ リスト ボックスおよびエディット ボックスからすべての項目を削除します。  
+  
+```  
+void RemoveAllItems();
+```  
+  
+### <a name="remarks"></a>コメント  
+ すべての項目がリストからボックス、コンボ ボックスのコントロールの編集を削除します。  
+  
+##  <a name="a-nameselectitema--cmfctoolbarcomboboxbuttonselectitem"></a><a name="selectitem"></a>CMFCToolBarComboBoxButton::SelectItem  
+ リスト ボックスの項目を選択します。  
+  
+```  
+BOOL SelectItem(
+    int iIndex,  
+    BOOL bNotify=TRUE);  
+  
+BOOL SelectItem(DWORD_PTR dwData);  
+BOOL SelectItem(LPCTSTR lpszText);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。  
+  
+ [入力] `bNotify`  
+ `TRUE`選択範囲のコンボ ボックス ボタンに通知するにはそれ以外の場合`FALSE`します。  
+  
+ [入力] `dwData`  
+ リスト ボックス内の項目に関連付けられたデータ。  
+  
+ [入力] `lpszText`  
+ リスト ボックス内の項目のテキストです。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`メソッドが成功した場合それ以外の場合`FALSE`します。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameselectitemalla--cmfctoolbarcomboboxbuttonselectitemall"></a><a name="selectitemall"></a>CMFCToolBarComboBoxButton::SelectItemAll  
+ 指定されたコマンド ID を持つコンボ ボックス ボタンのリスト ボックスで項目を選択します。  
+  
+```  
+static BOOL SelectItemAll(
+    UINT uiCmd,  
+    int iIndex);
+
+ 
+static BOOL SelectItemAll(
+    UINT uiCmd,  
+    DWORD_PTR dwData);
+
+ 
+static BOOL SelectItemAll(
+    UINT uiCmd,  
+    LPCTSTR lpszText);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiCmd`  
+ リスト ボックスを含むコンボ ボックス ボタンのコマンド ID。  
+  
+ [入力] `iIndex`  
+ リスト ボックス内の項目の&0; から始まるインデックス。 値-1 は、リスト ボックス内の現在の選択項目を削除し、編集ボックスをクリアします。  
+  
+ [入力] `dwData`  
+ リスト ボックス内の項目のデータです。  
+  
+ [入力] `lpszText`  
+ リスト ボックス内の項目のテキストです。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`メソッドが成功した場合それ以外の場合`FALSE`します。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="a-nameserializea--cmfctoolbarcomboboxbuttonserialize"></a><a name="serialize"></a>CMFCToolBarComboBoxButton::Serialize  
+ アーカイブからこのオブジェクトを読み取りまたはアーカイブを書き込みます。  
+  
+```  
+virtual void Serialize(CArchive& ar);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力、出力] `ar`  
+ `CArchive`シリアル化するオブジェクト。  
+  
+### <a name="remarks"></a>コメント  
+ 設定、`CArchive`オブジェクトは、このメソッドが読み取りまたはアーカイブを書き込むかどうかを特定します。  
+  
+##  <a name="a-namesetaccdataa--cmfctoolbarcomboboxbuttonsetaccdata"></a><a name="setaccdata"></a>CMFCToolBarComboBoxButton::SetACCData  
+ 指定した設定`CAccessibilityData`ユーザー補助データ コンボ ボックス ボタンを使用してオブジェクトです。  
+  
+```  
+virtual BOOL SetACCData(
+    CWnd* pParent,  
+    CAccessibilityData& data);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `pParent`  
+ コンボ ボックス ボタンの親ウィンドウです。  
+  
+ [出力] `data`  
+ A`CAccessibilityData`コンボ ボックス ボタンからユーザー補助データを受け取るオブジェクト。  
+  
+### <a name="return-value"></a>戻り値  
+ `TRUE`メソッドが成功した場合それ以外の場合`FALSE`します。  
+  
+##  <a name="a-namesetcenterverta--cmfctoolbarcomboboxbuttonsetcentervert"></a><a name="setcentervert"></a>CMFCToolBarComboBoxButton::SetCenterVert  
+ アプリケーションでは、コンボ ボックス ボタンの縦方向の位置を設定します。  
+  
+```  
+static void SetCenterVert(BOOL bCenterVert=TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bCenterVert`  
+ `TRUE`ツールバーのコンボ ボックス ボタンを中央に配置します。`FALSE`ツールバーの上部にコンボ ボックス ボタンを配置します。  
+  
+### <a name="remarks"></a>コメント  
+ 既定では、コンボ ボックス ボタンは上部に配置します。  
+  
+##  <a name="a-namesetcontextmenuida--cmfctoolbarcomboboxbuttonsetcontextmenuid"></a><a name="setcontextmenuid"></a>CMFCToolBarComboBoxButton::SetContextMenuID  
+ コンボ ボックス ボタンのショートカット メニューのリソース ID を設定します。  
+  
+```  
+void SetContextMenuID(UINT uiResID);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `uiResID`  
+ ショートカット メニューのリソース id。  
+  
+##  <a name="a-namesetdropdownheighta--cmfctoolbarcomboboxbuttonsetdropdownheight"></a><a name="setdropdownheight"></a>CMFCToolBarComboBoxButton::SetDropDownHeight  
+ 下へドロップしたときは、リスト ボックスの高さを設定します。  
+  
+```  
+void SetDropDownHeight(int nHeight);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `nHeight`  
+ (ピクセル単位) のリスト ボックスの高さ。  
+  
+### <a name="remarks"></a>コメント  
+ 既定の高さは、150 ピクセルです。  
+  
+##  <a name="a-namesetflatmodea--cmfctoolbarcomboboxbuttonsetflatmode"></a><a name="setflatmode"></a>CMFCToolBarComboBoxButton::SetFlatMode  
+ アプリケーションでは、コンボ ボックス ボタンのフラット スタイルの外観を設定します。  
+  
+```  
+static void SetFlatMode(BOOL bFlat=TRUE);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `bFlat`  
+ `TRUE`フラット スタイルの外観です。それ以外の場合`FALSE`します。  
+  
+### <a name="remarks"></a>コメント  
+ コンボ ボックス ボタンの既定のフラット スタイルは`FALSE`です。  
+  
+##  <a name="a-namesetstylea--cmfctoolbarcomboboxbuttonsetstyle"></a><a name="setstyle"></a>CMFCToolBarComboBoxButton::SetStyle  
+ コンボ ボックス ボタンに指定したスタイルを設定しは無効になっていない場合は、コントロールを再作成します。  
+  
+```  
+virtual void SetStyle(UINT nStyle);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `nStyle`  
+ ツール バー スタイルのビットごとの組み合わせ (OR)。  
+  
+### <a name="remarks"></a>コメント  
+ ツール バー ボタンのスタイルの一覧については、次を参照してください[ツール バー コントロールのスタイル。](../../mfc/reference/toolbar-control-styles.md)  
+  
+##  <a name="a-namesettexta--cmfctoolbarcomboboxbuttonsettext"></a><a name="settext"></a>CMFCToolBarComboBoxButton::SetText  
+ エディット ボックス、コンボ ボックス ボタンでテキストを設定します。  
+  
+```  
+void SetText(LPCTSTR lpszText);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ [入力] `lpszText`  
+ エディット ボックスのテキストを含む文字列へのポインター。  
+  
+## <a name="see-also"></a>関連項目  
+ [階層図](../../mfc/hierarchy-chart.md)   
+ [クラス](../../mfc/reference/mfc-classes.md)   
+ [CMFCToolBarButton クラス](../../mfc/reference/cmfctoolbarbutton-class.md)   
+ [CComboBox クラス](../../mfc/reference/ccombobox-class.md)   
+ [CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton)   
+ [チュートリアル: ツールバーへのコントロールを配置します。](../../mfc/walkthrough-putting-controls-on-toolbars.md)
+
+
+
+

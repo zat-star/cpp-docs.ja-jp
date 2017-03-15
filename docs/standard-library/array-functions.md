@@ -1,0 +1,162 @@
+---
+title: "&lt;array&gt; 関数 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::array::get
+- array/std::array::get
+ms.assetid: e0700a33-a833-4655-8735-16e71175efc8
+caps.latest.revision: 11
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translationtype: Machine Translation
+ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
+ms.openlocfilehash: 38c1f1a593c43ff0fb8434bfcade4dab9740945d
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="ltarraygt-functions"></a>&lt;array&gt; 関数
+\<array> ヘッダーには、`array` オブジェクトで動作する `get` と`swap` の&2; つの非メンバー関数が含まれています。  
+  
+|||  
+|-|-|  
+|[get](#get_function)|[swap](#swap_function)|  
+  
+##  <a name="a-namegetfunctiona--get"></a><a name="get_function"></a>  get  
+配列の指定した要素への参照を返します。  
+  
+```  
+template <int Index, class T, size_t N>  
+constexpr T& get(array<T, N>& arr) noexcept;  
+ 
+template <int Index, class T, size_t N>  
+constexpr const T& get(const array<T, N>& arr) noexcept;  
+ 
+template <int Index, class T, size_t N>  
+constexpr T&& get(array<T, N>&& arr) noexcept;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Index`  
+ 要素のオフセット。  
+  
+ `T`  
+ 要素の型。  
+  
+ `N`  
+ 配列の要素数。  
+  
+ `arr`  
+ 選択する配列。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+#include <array>   
+#include <iostream>   
+  
+using namespace std;  
+  
+typedef array<int, 4> MyArray;  
+  
+int main()  
+{  
+    MyArray c0 { 0, 1, 2, 3 };  
+  
+    // display contents " 0 1 2 3"   
+    for (const auto& e : c0)  
+    {  
+        cout << " " << e;  
+    }  
+    cout << endl;  
+  
+    // display odd elements " 1 3"   
+    cout << " " << get<1>(c0);  
+    cout << " " << get<3>(c0) << endl;  
+}  
+```  
+  
+```Output  
+0 1 2 3  
+1 3  
+```  
+  
+##  <a name="a-nameswapfunctiona--swap"></a><a name="swap_function"></a>  swap  
+2 つの `array` オブジェクトを交換する `std::swap` の非メンバー テンプレートの特殊化。  
+  
+```  
+template <class Ty, std::size_t N>  
+void swap(array<Ty, N>& left, array<Ty, N>& right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Ty`  
+ 要素の型。  
+  
+ `N`  
+ 配列のサイズ。  
+  
+ `left`  
+ 交換する最初の配列。  
+  
+ `right`  
+ 交換する&2; 番目の配列。  
+  
+### <a name="remarks"></a>コメント  
+ このテンプレート関数は、`left.swap(right)` を実行します。  
+  
+### <a name="example"></a>例  
+  
+```cpp  
+// std__array__swap.cpp   
+// compile with: /EHsc   
+#include <array>   
+#include <iostream>   
+  
+typedef std::array<int, 4> Myarray;
+int main()
+{
+    Myarray c0 = { 0, 1, 2, 3 };
+
+    // display contents " 0 1 2 3"   
+    for (Myarray::const_iterator it = c0.begin();
+        it != c0.end(); ++it)
+        std::cout << " " << *it;
+    std::cout << std::endl;
+
+    Myarray c1 = { 4, 5, 6, 7 };
+    c0.swap(c1);
+
+    // display swapped contents " 4 5 6 7"   
+    for (Myarray::const_iterator it = c0.begin();
+        it != c0.end(); ++it)
+        std::cout << " " << *it;
+    std::cout << std::endl;
+
+    swap(c0, c1);
+
+    // display swapped contents " 0 1 2 3"   
+    for (Myarray::const_iterator it = c0.begin();
+        it != c0.end(); ++it)
+        std::cout << " " << *it;
+    std::cout << std::endl;
+
+    return (0);
+}
+```  
+  
+```Output  
+0 1 2 3  
+4 5 6 7  
+0 1 2 3  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [\<array>](../standard-library/array.md)
+
+

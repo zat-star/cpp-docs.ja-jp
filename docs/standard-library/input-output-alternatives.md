@@ -1,0 +1,60 @@
+---
+title: "入出力の代替手段 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- I/O [C++], alternatives
+ms.assetid: 9f8401c7-d90d-4285-8918-63573df74a80
+caps.latest.revision: 8
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 45cec9f7c4c45ef12c7d22a7c3c311f7ce3f4cb5
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="inputoutput-alternatives"></a>入出力の代替手段
+Visual C++ には、入出力のプログラミングのいくつかの代替手段が用意されています。  
+  
+-   C ランタイム ライブラリの直接的なバッファーされない入出力。  
+  
+-   ANSI C ランタイム ライブラリのストリーム入出力。  
+  
+-   コンソールおよびポートの直接入出力。  
+  
+-   Microsoft Foundation Class ライブラリ。  
+  
+-   Microsoft C++ 標準ライブラリ。  
+  
+ iostream クラスは、バッファーされた書式設定テキストの入出力に役立ちます。 C++ プログラミング インターフェイスが必要であり、Microsoft Foundation Class (MFC) ライブラリを使用しない場合のバッファーされていない入出力またはバイナリ入出力にも役立ちます。 iostream クラスは、C ランタイム関数のオブジェクト指向の入出力の代替手段です。  
+  
+ iostream クラスは、Microsoft Windows オペレーティング システムで使用できます。 文字列とファイルのストリームは制限なしで動作しますが、文字モード ストリーム オブジェクト `cin`、`cout`、`cerr`、および `clog` には Windows グラフィカル ユーザー インターフェイスとの一貫性がありません。 また、Windows 環境と直接やり取りするカスタム ストリーム クラスを派生させることもできます。  
+  
+## <a name="see-also"></a>関連項目  
+ [ストリームとは何か](../standard-library/what-a-stream-is.md)
+
+

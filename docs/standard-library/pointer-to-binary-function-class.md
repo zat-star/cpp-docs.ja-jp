@@ -1,0 +1,92 @@
+---
+title: "pointer_to_binary_function クラス | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::pointer_to_binary_function
+- xfunctional/std::pointer_to_binary_function
+- pointer_to_binary_function
+- std.pointer_to_binary_function
+dev_langs:
+- C++
+helpviewer_keywords:
+- pointer_to_binary_function function
+- pointer_to_binary_function class
+ms.assetid: fb50599f-bcb3-4076-a669-6dcc3eb189a5
+caps.latest.revision: 21
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
+ms.openlocfilehash: 9a806934810286e22fdea70c2af982de10f48ee5
+ms.lasthandoff: 02/24/2017
+
+---
+# <a name="pointertobinaryfunction-class"></a>pointer_to_binary_function クラス
+二項関数ポインターを適応性のある二項関数に変換します。  
+  
+## <a name="syntax"></a>構文  
+  
+```
+template <class Arg1, class Arg2, class Result>
+class pointer_to_binary_function
+    : public binary_function <Arg1, Arg2, Result>
+{
+public:
+    explicit pointer_to_binary_function(
+        Result(*pfunc)(Arg1, Arg2));
+    Result operator()(Arg1 left, Arg2 right) const;
+};
+```  
+  
+#### <a name="parameters"></a>パラメーター  
+ `pfunc`  
+ 変換する二項関数。  
+  
+ `left`  
+ *\*pfunc* が呼び出される左辺のオブジェクト。  
+  
+ `right`  
+ *\*pfunc* が呼び出される右側のオブジェクト。  
+  
+## <a name="return-value"></a>戻り値  
+ テンプレート クラスは **pfunc** のコピーを格納します。 そのメンバー関数 `operator()` は (\* **pfunc**)(_ *Left*, \_ *Right*) を返すように定義されています。  
+  
+## <a name="remarks"></a>コメント  
+ 二項関数ポインターは関数オブジェクトであり、パラメーターとして二項関数を想定する C++ 標準ライブラリの任意のアルゴリズムに渡される場合がありますが、適応性はありません。 二項関数ポインターをアダプターと共に使用する (値をバインドしたり否定子と共に使用するなど) には、このような適応を可能にする、入れ子にされた型 (**first_argument_type**、**second_argument_type**、および **result_type**) と共に指定する必要があります。 `pointer_to_binary_function` による変換によって、関数アダプターを二項関数ポインターと共に使用できるようになります。  
+  
+## <a name="example"></a>例  
+ `pointer_to_binary_function` のコンストラクターが直接使用されることはほとんどありません。 `pointer_to_binary_function` アダプターの述語を宣言および使用する方法の例については、ヘルパー関数 [ptr_fun](../standard-library/functional-functions.md#ptr_fun_function) をご覧ください。  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<functional>  
+  
+ **名前空間:** std  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+
+
+
