@@ -399,7 +399,6 @@
 ## [非標準動作](nonstandard-behavior.md)
 ### [コンパイラの制限](compiler-limits.md)
 # [C++ へようこそ (Modern C++)](welcome-back-to-cpp-modern-cpp.md)
-## [C++11/14/17 の機能のサポート (Modern C++)](support-for-cpp11-14-17-features-modern-cpp.md)
 ## [C++ 型システム (Modern C++)](cpp-type-system-modern-cpp.md)
 ### [値型 (Modern C++)](value-types-modern-cpp.md)
 ### [型変換とタイプ セーフ (Modern C++)](type-conversions-and-type-safety-modern-cpp.md)
