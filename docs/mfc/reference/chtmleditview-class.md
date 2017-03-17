@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CHtmlEditView
+- AFXHTML/CHtmlEditView
+- AFXHTML/CHtmlEditView::CHtmlEditView
+- AFXHTML/CHtmlEditView::Create
+- AFXHTML/CHtmlEditView::GetDHtmlDocument
+- AFXHTML/CHtmlEditView::GetStartDocument
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,14 +91,14 @@ class CHtmlEditView : public CHtmlView, public CHtmlEditCtrlBase<CHtmlEditView>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxhtml.h  
   
-##  <a name="a-namechtmleditviewa--chtmleditviewchtmleditview"></a><a name="chtmleditview"></a>CHtmlEditView::CHtmlEditView  
+##  <a name="chtmleditview"></a>CHtmlEditView::CHtmlEditView  
  `CHtmlEditView` オブジェクトを構築します。  
   
 ```  
 CHtmlEditView();
 ```  
   
-##  <a name="a-namecreatea--chtmleditviewcreate"></a><a name="create"></a>CHtmlEditView::Create  
+##  <a name="create"></a>CHtmlEditView::Create  
  新しいウィンドウのオブジェクトを作成します。  
   
 ```  
@@ -132,7 +137,7 @@ virtual BOOL Create(
 ### <a name="remarks"></a>コメント  
  このメソッドは含まれている web ブラウザーも呼び出す**Navigate**を既定のドキュメントを読み込む方法 (を参照してください[CHtmlEditView::GetStartDocument](#getstartdocument))。  
   
-##  <a name="a-namegetdhtmldocumenta--chtmleditviewgetdhtmldocument"></a><a name="getdhtmldocument"></a>CHtmlEditView::GetDHtmlDocument  
+##  <a name="getdhtmldocument"></a>CHtmlEditView::GetDHtmlDocument  
  返します。、 **IHTMLDocument2**現在のドキュメントに対するインターフェイスです。  
   
 ```  
@@ -143,7 +148,7 @@ BOOL GetDHtmlDocument(IHTMLDocument2** ppDocument) const;
  `ppDocument`  
  [IHTMLDocument2](https://msdn.microsoft.com/library/aa752574.aspx)インターフェイスです。  
   
-##  <a name="a-namegetstartdocumenta--chtmleditviewgetstartdocument"></a><a name="getstartdocument"></a>CHtmlEditView::GetStartDocument  
+##  <a name="getstartdocument"></a>CHtmlEditView::GetStartDocument  
  このビューの既定のドキュメントの名前を取得します。  
   
 ```  

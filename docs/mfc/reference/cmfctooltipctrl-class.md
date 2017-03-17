@@ -10,6 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCToolTipCtrl
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::GetIconSize
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::GetParams
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnDrawBorder
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnDrawDescription
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnDrawIcon
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnDrawLabel
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnDrawSeparator
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::OnFillBackground
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::SetDescription
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::SetFixedWidth
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::SetHotRibbonButton
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::SetLocation
+- AFXTOOLTIPCTRL/CMFCToolTipCtrl::SetParams
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -149,7 +163,7 @@ theApp.GetTooltipManager ()->SetTooltipParams (AFX_TOOLTIP_TYPE_ALL,
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxtooltipctrl.h  
   
-##  <a name="a-namecmfctooltipctrla--cmfctooltipctrlcmfctooltipctrl"></a><a name="cmfctooltipctrl"></a>CMFCToolTipCtrl::CMFCToolTipCtrl  
+##  <a name="cmfctooltipctrl"></a>CMFCToolTipCtrl::CMFCToolTipCtrl  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -161,7 +175,7 @@ CMFCToolTipCtrl(CMFCToolTipInfo* pParams = NULL);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegeticonsizea--cmfctooltipctrlgeticonsize"></a><a name="geticonsize"></a>CMFCToolTipCtrl::GetIconSize  
+##  <a name="geticonsize"></a>CMFCToolTipCtrl::GetIconSize  
  ツールヒント内のアイコンのサイズを返します。  
   
 ```  
@@ -171,7 +185,7 @@ virtual CSize GetIconSize();
 ### <a name="return-value"></a>戻り値  
  ピクセル単位で、アイコンのサイズ。  
   
-##  <a name="a-namegetparamsa--cmfctooltipctrlgetparams"></a><a name="getparams"></a>CMFCToolTipCtrl::GetParams  
+##  <a name="getparams"></a>CMFCToolTipCtrl::GetParams  
  ツールヒントの表示設定を返します。  
   
 ```  
@@ -181,7 +195,7 @@ const CMFCToolTipInfo& GetParams() const;
 ### <a name="return-value"></a>戻り値  
  格納されている現在のツールヒントの表示設定、 [CMFCToolTipInfo クラス](../../mfc/reference/cmfctooltipinfo-class.md)オブジェクトです。  
   
-##  <a name="a-nameondrawbordera--cmfctooltipctrlondrawborder"></a><a name="ondrawborder"></a>CMFCToolTipCtrl::OnDrawBorder  
+##  <a name="ondrawborder"></a>CMFCToolTipCtrl::OnDrawBorder  
  ツールヒントの枠線を描画します。  
   
 ```  
@@ -204,7 +218,7 @@ virtual void OnDrawBorder(
 ### <a name="remarks"></a>コメント  
  ツールヒントの境界線の外観をカスタマイズする派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameondrawdescriptiona--cmfctooltipctrlondrawdescription"></a><a name="ondrawdescription"></a>CMFCToolTipCtrl::OnDrawDescription  
+##  <a name="ondrawdescription"></a>CMFCToolTipCtrl::OnDrawDescription  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -223,7 +237,7 @@ virtual CSize OnDrawDescription(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameondrawicona--cmfctooltipctrlondrawicon"></a><a name="ondrawicon"></a>CMFCToolTipCtrl::OnDrawIcon  
+##  <a name="ondrawicon"></a>CMFCToolTipCtrl::OnDrawIcon  
  ツールヒント内にアイコンを表示します。  
   
 ```  
@@ -245,7 +259,7 @@ virtual BOOL OnDrawIcon(
 ### <a name="remarks"></a>コメント  
  カスタム アイコンを表示する派生クラスでは、このメソッドをオーバーライドします。 またをオーバーライドする必要があります[CMFCToolTipCtrl::GetIconSize](#geticonsize)テキストと説明のレイアウトを正しく計算するツール ヒントを有効にします。  
   
-##  <a name="a-nameondrawlabela--cmfctooltipctrlondrawlabel"></a><a name="ondrawlabel"></a>CMFCToolTipCtrl::OnDrawLabel  
+##  <a name="ondrawlabel"></a>CMFCToolTipCtrl::OnDrawLabel  
  ツールヒントのラベルを描画するか、ラベルのサイズを計算します。  
   
 ```  
@@ -271,7 +285,7 @@ virtual CSize OnDrawLabel(
 ### <a name="remarks"></a>コメント  
  ツールヒントのラベルの外観をカスタマイズする場合は、派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameondrawseparatora--cmfctooltipctrlondrawseparator"></a><a name="ondrawseparator"></a>CMFCToolTipCtrl::OnDrawSeparator  
+##  <a name="ondrawseparator"></a>CMFCToolTipCtrl::OnDrawSeparator  
  ツールヒント内のラベルと説明の間の区分線を描画します。  
   
 ```  
@@ -300,7 +314,7 @@ virtual void OnDrawSeparator(
   
  区切り記号の外観をカスタマイズする派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="a-nameonfillbackgrounda--cmfctooltipctrlonfillbackground"></a><a name="onfillbackground"></a>CMFCToolTipCtrl::OnFillBackground  
+##  <a name="onfillbackground"></a>CMFCToolTipCtrl::OnFillBackground  
  ツールヒントの背景を塗りつぶします。  
   
 ```  
@@ -329,7 +343,7 @@ virtual void OnFillBackground(
   
  ツールヒントの外観をカスタマイズする場合は、派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-namesetdescriptiona--cmfctooltipctrlsetdescription"></a><a name="setdescription"></a>CMFCToolTipCtrl::SetDescription  
+##  <a name="setdescription"></a>CMFCToolTipCtrl::SetDescription  
  ツールヒントに表示される説明を設定します。  
   
 ```  
@@ -343,7 +357,7 @@ virtual void SetDescription(const CString strDesrciption);
 ### <a name="remarks"></a>コメント  
  説明テキストは、区切り記号の下のツールヒントに表示されます。  
   
-##  <a name="a-namesetfixedwidtha--cmfctooltipctrlsetfixedwidth"></a><a name="setfixedwidth"></a>CMFCToolTipCtrl::SetFixedWidth  
+##  <a name="setfixedwidth"></a>CMFCToolTipCtrl::SetFixedWidth  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -358,7 +372,7 @@ void SetFixedWidth(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesethotribbonbuttona--cmfctooltipctrlsethotribbonbutton"></a><a name="sethotribbonbutton"></a>CMFCToolTipCtrl::SetHotRibbonButton  
+##  <a name="sethotribbonbutton"></a>CMFCToolTipCtrl::SetHotRibbonButton  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -370,7 +384,7 @@ void SetHotRibbonButton(CMFCRibbonButton* pRibbonButton);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetlocationa--cmfctooltipctrlsetlocation"></a><a name="setlocation"></a>CMFCToolTipCtrl::SetLocation  
+##  <a name="setlocation"></a>CMFCToolTipCtrl::SetLocation  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -382,7 +396,7 @@ void SetLocation(CPoint pt);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetparamsa--cmfctooltipctrlsetparams"></a><a name="setparams"></a>CMFCToolTipCtrl::SetParams  
+##  <a name="setparams"></a>CMFCToolTipCtrl::SetParams  
  使用して、ツールヒントの外観を指定する[CMFCToolTipInfo クラス](../../mfc/reference/cmfctooltipinfo-class.md)オブジェクトです。  
   
 ```  

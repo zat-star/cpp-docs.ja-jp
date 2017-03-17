@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDaoFieldExchange
+- AFXDAO/CDaoFieldExchange
+- AFXDAO/CDaoFieldExchange::IsValidOperation
+- AFXDAO/CDaoFieldExchange::SetFieldType
+- AFXDAO/CDaoFieldExchange::m_nOperation
+- AFXDAO/CDaoFieldExchange::m_prs
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +102,7 @@ class CDaoFieldExchange
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
   
-##  <a name="a-nameisvalidoperationa--cdaofieldexchangeisvalidoperation"></a><a name="isvalidoperation"></a>CDaoFieldExchange::IsValidOperation  
+##  <a name="isvalidoperation"></a>CDaoFieldExchange::IsValidOperation  
  DFX 関数を記述する場合に呼び出す`IsValidOperation`特定のフィールド データ メンバーの種類の現在の操作を実行できるかどうかを判断するための関数の先頭にある (、 **CDaoFieldExchange::outputColumn**または**CDaoFieldExchange::param**)。  
   
 ```  
@@ -112,7 +117,7 @@ BOOL IsValidOperation();
   
  カスタム DFX ルーチンの作成方法の詳細については、次を参照してください。[テクニカル ノート 53](../../mfc/tn053-custom-dfx-routines-for-dao-database-classes.md)します。  
   
-##  <a name="a-namemnoperationa--cdaofieldexchangemnoperation"></a><a name="m_noperation"></a>CDaoFieldExchange::m_nOperation  
+##  <a name="m_noperation"></a>CDaoFieldExchange::m_nOperation  
  実行する操作を識別、 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) field exchange オブジェクトに関連付けられているオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
@@ -141,12 +146,12 @@ BOOL IsValidOperation();
 |**DumpField**|フィールドの内容 (デバッグのみ) にダンプします。|  
 |**MaxDFXOperation**|入力チェックに使用されます。|  
   
-##  <a name="a-namemprsa--cdaofieldexchangemprs"></a><a name="m_prs"></a>CDaoFieldExchange::m_prs  
+##  <a name="m_prs"></a>CDaoFieldExchange::m_prs  
  ポインターを含む、 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)オブジェクトに関連付けられている、`CDaoFieldExchange`オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetfieldtypea--cdaofieldexchangesetfieldtype"></a><a name="setfieldtype"></a>CDaoFieldExchange::SetFieldType  
+##  <a name="setfieldtype"></a>CDaoFieldExchange::SetFieldType  
  呼び出す`SetFieldType`で、`CDaoRecordset`クラスの`DoFieldExchange`をオーバーライドします。  
   
 ```  

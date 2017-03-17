@@ -9,9 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CDynamicChain
-- ATL.CDynamicChain
 - CDynamicChain
+- ATLWIN/ATL::CDynamicChain
+- ATLWIN/ATL::CDynamicChain::CDynamicChain
+- ATLWIN/ATL::CDynamicChain::CallChain
+- ATLWIN/ATL::CDynamicChain::RemoveChainEntry
+- ATLWIN/ATL::CDynamicChain::SetChainEntry
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -98,7 +101,7 @@ class CDynamicChain
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-namecallchaina--cdynamicchaincallchain"></a><a name="callchain"></a>CDynamicChain::CallChain  
+##  <a name="callchain"></a>CDynamicChain::CallChain  
  Windows メッセージを別のオブジェクトのメッセージのマップに指示します。  
   
 ```
@@ -138,14 +141,14 @@ BOOL CallChain(
   
  `CallChain`以前の呼び出しを必要と[SetChainEntry](#setchainentry)に関連付けるには、`dwChainID`値、オブジェクトと、メッセージ マップを使用します。  
   
-##  <a name="a-namecdynamicchaina--cdynamicchaincdynamicchain"></a><a name="cdynamicchain"></a>CDynamicChain::CDynamicChain  
+##  <a name="cdynamicchain"></a>CDynamicChain::CDynamicChain  
  コンストラクターです。  
   
 ```
 CDynamicChain();
 ```  
   
-##  <a name="a-namedtora--cdynamicchaincdynamicchain"></a><a name="dtor"></a>CDynamicChain:: ~ CDynamicChain  
+##  <a name="dtor"></a>CDynamicChain:: ~ CDynamicChain  
  デストラクターです。  
   
 ```
@@ -155,7 +158,7 @@ CDynamicChain();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-nameremovechainentrya--cdynamicchainremovechainentry"></a><a name="removechainentry"></a>CDynamicChain::RemoveChainEntry  
+##  <a name="removechainentry"></a>CDynamicChain::RemoveChainEntry  
  コレクションから指定されたメッセージ マップを削除します。  
   
 ```
@@ -169,7 +172,7 @@ BOOL RemoveChainEntry(DWORD dwChainID);
 ### <a name="return-value"></a>戻り値  
  **TRUE**メッセージ マップは、コレクションから正常に削除された場合。 それ以外の場合、 **FALSE**します。  
   
-##  <a name="a-namesetchainentrya--cdynamicchainsetchainentry"></a><a name="setchainentry"></a>CDynamicChain::SetChainEntry  
+##  <a name="setchainentry"></a>CDynamicChain::SetChainEntry  
  指定されたメッセージ マップをコレクションに追加します。  
   
 ```

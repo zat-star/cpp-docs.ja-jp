@@ -9,8 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxrendertarget/CD2DMesh
 - CD2DMesh
+- AFXRENDERTARGET/CD2DMesh
+- AFXRENDERTARGET/CD2DMesh::CD2DMesh
+- AFXRENDERTARGET/CD2DMesh::Attach
+- AFXRENDERTARGET/CD2DMesh::Create
+- AFXRENDERTARGET/CD2DMesh::Destroy
+- AFXRENDERTARGET/CD2DMesh::Detach
+- AFXRENDERTARGET/CD2DMesh::Get
+- AFXRENDERTARGET/CD2DMesh::IsValid
+- AFXRENDERTARGET/CD2DMesh::Open
+- AFXRENDERTARGET/CD2DMesh::m_pMesh
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,14 +101,14 @@ class CD2DMesh : public CD2DResource;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dmesha--cd2dmeshcd2dmesh"></a><a name="_dtorcd2dmesh"></a>CD2DMesh:: ~ CD2DMesh  
+##  <a name="_dtorcd2dmesh"></a>CD2DMesh:: ~ CD2DMesh  
  デストラクターです。 D2D メッシュ オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DMesh();
 ```  
   
-##  <a name="a-nameattacha--cd2dmeshattach"></a><a name="attach"></a>CD2DMesh::Attach  
+##  <a name="attach"></a>CD2DMesh::Attach  
  オブジェクトにリソース インタ フェースを既存の接続  
   
 ```  
@@ -110,7 +119,7 @@ void Attach(ID2D1Mesh* pResource);
  `pResource`  
  既存のリソースのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namecd2dmesha--cd2dmeshcd2dmesh"></a><a name="cd2dmesh"></a>CD2DMesh::CD2DMesh  
+##  <a name="cd2dmesh"></a>CD2DMesh::CD2DMesh  
  CD2DMesh のオブジェクトを構築します。  
   
 ```  
@@ -126,7 +135,7 @@ CD2DMesh(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namecreatea--cd2dmeshcreate"></a><a name="create"></a>CD2DMesh::Create  
+##  <a name="create"></a>CD2DMesh::Create  
  CD2DMesh を作成します。  
   
 ```  
@@ -140,14 +149,14 @@ virtual HRESULT Create(CRenderTarget* pRenderTarget);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namedestroya--cd2dmeshdestroy"></a><a name="destroy"></a>CD2DMesh::Destroy  
+##  <a name="destroy"></a>CD2DMesh::Destroy  
  CD2DMesh オブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namedetacha--cd2dmeshdetach"></a><a name="detach"></a>CD2DMesh::Detach  
+##  <a name="detach"></a>CD2DMesh::Detach  
  オブジェクトからリソース インタ フェースをデタッチします。  
   
 ```  
@@ -157,7 +166,7 @@ ID2D1Mesh* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたリソース インタ フェースへのポインター。  
   
-##  <a name="a-namegeta--cd2dmeshget"></a><a name="get"></a>CD2DMesh::Get  
+##  <a name="get"></a>CD2DMesh::Get  
  返します。 ID2D1Mesh インターフェイス  
   
 ```  
@@ -167,7 +176,7 @@ ID2D1Mesh* Get();
 ### <a name="return-value"></a>戻り値  
  ID2D1Mesh インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-nameisvalida--cd2dmeshisvalid"></a><a name="isvalid"></a>CD2DMesh::IsValid  
+##  <a name="isvalid"></a>CD2DMesh::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -177,14 +186,14 @@ virtual BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namempmesha--cd2dmeshmpmesh"></a><a name="m_pmesh"></a>CD2DMesh::m_pMesh  
+##  <a name="m_pmesh"></a>CD2DMesh::m_pMesh  
  ID2D1Mesh へのポインター。  
   
 ```  
 ID2D1Mesh* m_pMesh;  
 ```  
   
-##  <a name="a-nameopena--cd2dmeshopen"></a><a name="open"></a>CD2DMesh::Open  
+##  <a name="open"></a>CD2DMesh::Open  
  カタログの作成用のメッシュを開きます。  
   
 ```  
@@ -194,7 +203,7 @@ ID2D1TessellationSink* Open();
 ### <a name="return-value"></a>戻り値  
  メッシュの作成に使用される ID2D1TessellationSink へのポインター。  
   
-##  <a name="a-nameoperatorid2d1meshstara--cd2dmeshoperator-id2d1mesh"></a><a name="operator_id2d1mesh_star"></a>CD2DMesh::operator ID2D1Mesh *  
+##  <a name="operator_id2d1mesh_star"></a>CD2DMesh::operator ID2D1Mesh *  
  返します。 ID2D1Mesh インターフェイス  
   
 ```  

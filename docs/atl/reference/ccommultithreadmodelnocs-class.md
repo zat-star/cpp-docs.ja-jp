@@ -9,9 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComMultiThreadModelNoCS
 - CComMultiThreadModelNoCS
-- ATL.CComMultiThreadModelNoCS
+- ATLBASE/ATL::CComMultiThreadModelNoCS
+- ATLBASE/ATL::CComMultiThreadModelNoCS::AutoCriticalSection
+- ATLBASE/ATL::CComMultiThreadModelNoCS::CriticalSection
+- ATLBASE/ATL::CComMultiThreadModelNoCS::ThreadModelNoCS
+- ATLBASE/ATL::CComMultiThreadModelNoCS::Decrement
+- ATLBASE/ATL::CComMultiThreadModelNoCS::Increment
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -82,7 +86,7 @@ class CComMultiThreadModelNoCS
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameautocriticalsectiona--ccommultithreadmodelnocsautocriticalsection"></a><a name="autocriticalsection"></a>CComMultiThreadModelNoCS::AutoCriticalSection  
+##  <a name="autocriticalsection"></a>CComMultiThreadModelNoCS::AutoCriticalSection  
  使用する場合`CComMultiThreadModelNoCS`、`typedef`名`AutoCriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
   
 ```
@@ -105,7 +109,7 @@ typedef CComFakeCriticalSection AutoCriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
   
-##  <a name="a-namecriticalsectiona--ccommultithreadmodelnocscriticalsection"></a><a name="criticalsection"></a>CComMultiThreadModelNoCS::CriticalSection  
+##  <a name="criticalsection"></a>CComMultiThreadModelNoCS::CriticalSection  
  使用する場合`CComMultiThreadModelNoCS`、`typedef`名`CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
   
 ```
@@ -128,7 +132,7 @@ typedef CComFakeCriticalSection CriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
   
-##  <a name="a-namedecrementa--ccommultithreadmodelnocsdecrement"></a><a name="decrement"></a>CComMultiThreadModelNoCS::Decrement  
+##  <a name="decrement"></a>CComMultiThreadModelNoCS::Decrement  
  この静的関数は、Win32 関数を呼び出して[InterlockedDecrement](http://msdn.microsoft.com/library/windows/desktop/ms683580)、指す変数の値をデクリメント`p`します。  
   
 ```
@@ -145,7 +149,7 @@ static ULONG WINAPI Decrement(LPLONG p) throw();
 ### <a name="remarks"></a>コメント  
  **InterlockedDecrement**複数のスレッドが同時にこの変数を使用することを防止します。  
   
-##  <a name="a-nameincrementa--ccommultithreadmodelnocsincrement"></a><a name="increment"></a>CComMultiThreadModelNoCS::Increment  
+##  <a name="increment"></a>CComMultiThreadModelNoCS::Increment  
  この静的関数は、Win32 関数を呼び出して[InterlockedIncrement](http://msdn.microsoft.com/library/windows/desktop/ms683614)が指す変数の値をインクリメントする`p`です。  
   
 ```
@@ -162,7 +166,7 @@ static ULONG WINAPI Increment(LPLONG p) throw();
 ### <a name="remarks"></a>コメント  
  **InterlockedIncrement**複数のスレッドが同時にこの変数を使用することを防止します。  
   
-##  <a name="a-namethreadmodelnocsa--ccommultithreadmodelnocsthreadmodelnocs"></a><a name="threadmodelnocs"></a>CComMultiThreadModelNoCS::ThreadModelNoCS  
+##  <a name="threadmodelnocs"></a>CComMultiThreadModelNoCS::ThreadModelNoCS  
  使用する場合`CComMultiThreadModelNoCS`、`typedef`名`ThreadModelNoCS`単に参照`CComMultiThreadModelNoCS`します。  
   
 ```

@@ -10,6 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCAutoHideButton
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::BringToTop
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::Create
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetAlignment
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetAutoHideWindow
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetParentToolBar
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetRect
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetSize
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::GetTextSize
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::HighlightButton
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::IsActive
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::IsHighlighted
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::IsHorizontal
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::IsTop
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::IsVisible
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::Move
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::OnDraw
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::OnDrawBorder
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::OnFillBackground
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::ReplacePane
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::ShowAttachedWindow
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::ShowButton
+- AFXAUTOHIDEBUTTON/CMFCAutoHideButton::UnSetAutoHideMode
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +118,7 @@ class CMFCAutoHideButton : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxautohidebutton.h  
   
-##  <a name="a-namebringtotopa--cmfcautohidebuttonbringtotop"></a><a name="bringtotop"></a>CMFCAutoHideButton::BringToTop  
+##  <a name="bringtotop"></a>CMFCAutoHideButton::BringToTop  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -104,7 +127,7 @@ void BringToTop();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecreatea--cmfcautohidebuttoncreate"></a><a name="create"></a>CMFCAutoHideButton::Create  
+##  <a name="create"></a>CMFCAutoHideButton::Create  
  作成し、自動的に隠す ボタンを初期化します。  
   
 ```  
@@ -140,7 +163,7 @@ virtual BOOL Create(
   
 - `CBRS_ALIGN_BOTTOM`  
   
-##  <a name="a-namegetalignmenta--cmfcautohidebuttongetalignment"></a><a name="getalignment"></a>CMFCAutoHideButton::GetAlignment  
+##  <a name="getalignment"></a>CMFCAutoHideButton::GetAlignment  
  自動的に隠すボタンの配置を取得します。  
   
 ```  
@@ -161,7 +184,7 @@ DWORD GetAlignment() const;
   
 - `CBRS_ALIGN_BOTTOM`  
   
-##  <a name="a-namegetautohidewindowa--cmfcautohidebuttongetautohidewindow"></a><a name="getautohidewindow"></a>CMFCAutoHideButton::GetAutoHideWindow  
+##  <a name="getautohidewindow"></a>CMFCAutoHideButton::GetAutoHideWindow  
  返します。、 [CDockablePane](../../mfc/reference/cdockablepane-class.md)を自動的に隠す ボタンに関連付けられているオブジェクト。  
   
 ```  
@@ -174,7 +197,7 @@ CDockablePane* GetAutoHideWindow() const;
 ### <a name="remarks"></a>コメント  
  自動的に隠す ボタンとを関連付けるには、 `CDockablePane`、渡す、`CDockablePane`へのパラメーターとして、 [CMFCAutoHideButton::Create](#create)メソッドです。  
   
-##  <a name="a-namegetparenttoolbara--cmfcautohidebuttongetparenttoolbar"></a><a name="getparenttoolbar"></a>CMFCAutoHideButton::GetParentToolBar  
+##  <a name="getparenttoolbar"></a>CMFCAutoHideButton::GetParentToolBar  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -185,7 +208,7 @@ CMFCAutoHideBar* GetParentToolBar();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetrecta--cmfcautohidebuttongetrect"></a><a name="getrect"></a>CMFCAutoHideButton::GetRect  
+##  <a name="getrect"></a>CMFCAutoHideButton::GetRect  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -196,7 +219,7 @@ CRect GetRect() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetsizea--cmfcautohidebuttongetsize"></a><a name="getsize"></a>CMFCAutoHideButton::GetSize  
+##  <a name="getsize"></a>CMFCAutoHideButton::GetSize  
  自動的に隠すボタンのサイズを調べます。  
   
 ```  
@@ -209,7 +232,7 @@ CSize GetSize() const;
 ### <a name="remarks"></a>コメント  
  計算されたサイズには、自動的に隠す ボタンの境界線のサイズが含まれています。  
   
-##  <a name="a-namegettextsizea--cmfcautohidebuttongettextsize"></a><a name="gettextsize"></a>CMFCAutoHideButton::GetTextSize  
+##  <a name="gettextsize"></a>CMFCAutoHideButton::GetTextSize  
  自動的に隠すボタンのテキスト ラベルのサイズを返します。  
   
 ```  
@@ -219,7 +242,7 @@ virtual CSize GetTextSize() const;
 ### <a name="return-value"></a>戻り値  
  A [CSize](../../atl-mfc-shared/reference/csize-class.md)を自動的に隠す ボタンのテキストのサイズを含むオブジェクト。  
   
-##  <a name="a-nameisactivea--cmfcautohidebuttonisactive"></a><a name="isactive"></a>CMFCAutoHideButton::IsActive  
+##  <a name="isactive"></a>CMFCAutoHideButton::IsActive  
  自動的に隠すボタンがアクティブかどうかを示します。  
   
 ```  
@@ -232,7 +255,7 @@ BOOL IsActive() const;
 ### <a name="remarks"></a>コメント  
  自動的に隠すボタンがアクティブなときに、関連付けられている[CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)ウィンドウが表示されます。  
   
-##  <a name="a-nameishorizontala--cmfcautohidebuttonishorizontal"></a><a name="ishorizontal"></a>CMFCAutoHideButton::IsHorizontal  
+##  <a name="ishorizontal"></a>CMFCAutoHideButton::IsHorizontal  
  自動的に隠すボタンの表示方向が水平と垂直のどちらであるかを判断します。  
   
 ```  
@@ -245,7 +268,7 @@ BOOL IsHorizontal() const;
 ### <a name="remarks"></a>コメント  
  向きを設定するために、フレームワーク、 [CMFCAutoHideButton](../../mfc/reference/cmfcautohidebutton-class.md)オブジェクトを作成するとします。  使用して、印刷の向きを制御する、`dwAlignment`内のパラメーター、 [CMFCAutoHideButton::Create](#create)メソッドです。  
   
-##  <a name="a-nameistopa--cmfcautohidebuttonistop"></a><a name="istop"></a>CMFCAutoHideButton::IsTop  
+##  <a name="istop"></a>CMFCAutoHideButton::IsTop  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -256,7 +279,7 @@ BOOL IsTop() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisvisiblea--cmfcautohidebuttonisvisible"></a><a name="isvisible"></a>CMFCAutoHideButton::IsVisible  
+##  <a name="isvisible"></a>CMFCAutoHideButton::IsVisible  
  自動的に隠す ボタンが表示されているかどうかを示します。  
   
 ```  
@@ -266,7 +289,7 @@ virtual BOOL IsVisible() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`ボタンを表示する場合`FALSE`それ以外の場合。  
   
-##  <a name="a-nameondrawa--cmfcautohidebuttonondraw"></a><a name="ondraw"></a>CMFCAutoHideButton::OnDraw  
+##  <a name="ondraw"></a>CMFCAutoHideButton::OnDraw  
  フレームワークは、自動的に隠すボタンを描画するときにこのメソッドを呼び出します。  
   
 ```  
@@ -280,7 +303,7 @@ virtual void OnDraw(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  アプリケーションで自動的に隠すボタンの外観をカスタマイズする場合から派生する新しいクラスを作成する`CMFCAutoHideButton`です。 派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameondrawbordera--cmfcautohidebuttonondrawborder"></a><a name="ondrawborder"></a>CMFCAutoHideButton::OnDrawBorder  
+##  <a name="ondrawborder"></a>CMFCAutoHideButton::OnDrawBorder  
  フレームワークは、自動的に隠すボタンの境界線を描画するときにこのメソッドを呼び出します。  
   
 ```  
@@ -303,7 +326,7 @@ virtual void OnDrawBorder(
 ### <a name="remarks"></a>コメント  
  アプリケーションの場合は、それぞれ自動的に隠すボタンの境界線をカスタマイズする場合から派生する新しいクラスを作成、`CMFCAutoHideButton`です。 派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameonfillbackgrounda--cmfcautohidebuttononfillbackground"></a><a name="onfillbackground"></a>CMFCAutoHideButton::OnFillBackground  
+##  <a name="onfillbackground"></a>CMFCAutoHideButton::OnFillBackground  
  フレームワークは、自動的に隠すボタンの背景を塗りつぶすときにこのメソッドを呼び出します。  
   
 ```  
@@ -322,7 +345,7 @@ virtual void OnFillBackground(
 ### <a name="remarks"></a>コメント  
  アプリケーションで自動的に隠すボタンの背景をカスタマイズする場合から派生する新しいクラスを作成、`CMFCAutoHideButton`です。 派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameshowattachedwindowa--cmfcautohidebuttonshowattachedwindow"></a><a name="showattachedwindow"></a>CMFCAutoHideButton::ShowAttachedWindow  
+##  <a name="showattachedwindow"></a>CMFCAutoHideButton::ShowAttachedWindow  
  表示と関連付けられた非表示[CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)します。  
   
 ```  
@@ -333,7 +356,7 @@ void ShowAttachedWindow(BOOL bShow);
  [入力] `bShow`  
  このメソッドは、接続されている表示するかどうかを指定するブール値`CDockablePane`です。  
   
-##  <a name="a-nameshowbuttona--cmfcautohidebuttonshowbutton"></a><a name="showbutton"></a>CMFCAutoHideButton::ShowButton  
+##  <a name="showbutton"></a>CMFCAutoHideButton::ShowButton  
  自動的に隠すボタンの表示と非表示を切り替えます。  
   
 ```  
@@ -344,7 +367,7 @@ virtual void ShowButton(BOOL bShow);
  [入力] `bShow`  
  自動的に隠す ボタンを表示するかどうかを指定するブール値。  
   
-##  <a name="a-namemovea--cmfcautohidebuttonmove"></a><a name="move"></a>CMFCAutoHideButton::Move  
+##  <a name="move"></a>CMFCAutoHideButton::Move  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -356,7 +379,7 @@ void Move(int nOffset);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namereplacepanea--cmfcautohidebuttonreplacepane"></a><a name="replacepane"></a>CMFCAutoHideButton::ReplacePane  
+##  <a name="replacepane"></a>CMFCAutoHideButton::ReplacePane  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -368,7 +391,7 @@ void ReplacePane(CDockablePane* pNewBar);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameunsetautohidemodea--cmfcautohidebuttonunsetautohidemode"></a><a name="unsetautohidemode"></a>CMFCAutoHideButton::UnSetAutoHideMode  
+##  <a name="unsetautohidemode"></a>CMFCAutoHideButton::UnSetAutoHideMode  
  自動的に隠すモードを無効にします。  
   
 ```  
@@ -381,7 +404,7 @@ virtual void UnSetAutoHideMode(CDockablePane* pFirstBarInGroup);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehighlightbuttona--cmfcautohidebuttonhighlightbutton"></a><a name="highlightbutton"></a>CMFCAutoHideButton::HighlightButton  
+##  <a name="highlightbutton"></a>CMFCAutoHideButton::HighlightButton  
  自動的に隠す ボタンを強調表示されます。  
   
 ```  
@@ -394,7 +417,7 @@ virtual void HighlightButton(BOOL bHighlight);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameishighlighteda--cmfcautohidebuttonishighlighted"></a><a name="ishighlighted"></a>CMFCAutoHideButton::IsHighlighted  
+##  <a name="ishighlighted"></a>CMFCAutoHideButton::IsHighlighted  
  自動的に隠すボタンの強調表示状態を返します。  
   
 ```  

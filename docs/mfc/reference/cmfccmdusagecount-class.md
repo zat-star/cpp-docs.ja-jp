@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCCmdUsageCount
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::AddCmd
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::GetCount
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::HasEnoughInformation
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::IsFreqeuntlyUsedCmd
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::Reset
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::Serialize
+- AFXCMDUSAGECOUNT/CMFCCmdUsageCount::SetOptions
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +102,7 @@ class CMFCCmdUsageCount : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmdusagecount.h  
   
-##  <a name="a-nameaddcmda--cmfccmdusagecountaddcmd"></a><a name="addcmd"></a>CMFCCmdUsageCount::AddCmd  
+##  <a name="addcmd"></a>CMFCCmdUsageCount::AddCmd  
  指定されたコマンドに関連付けられているカウンターを&1; つずつ増加します。  
   
 ```  
@@ -119,7 +127,7 @@ void AddCmd(UINT uiCmd);
   
 - `uiCmd`標準のコマンドを表します (グローバル`IsStandardCommand`関数は&0; 以外の値を返します)。  
   
-##  <a name="a-namegetcounta--cmfccmdusagecountgetcount"></a><a name="getcount"></a>CMFCCmdUsageCount::GetCount  
+##  <a name="getcount"></a>CMFCCmdUsageCount::GetCount  
  指定されたコマンド ID に関連付けられている使用率カウントを取得します。  
   
 ```  
@@ -136,7 +144,7 @@ UINT GetCount(UINT uiCmd) const;
 ### <a name="return-value"></a>戻り値  
  指定されたコマンド ID に関連付けられている使用率カウント  
   
-##  <a name="a-namehasenoughinformationa--cmfccmdusagecounthasenoughinformation"></a><a name="hasenoughinformation"></a>CMFCCmdUsageCount::HasEnoughInformation  
+##  <a name="hasenoughinformation"></a>CMFCCmdUsageCount::HasEnoughInformation  
  このオブジェクトが追跡データの最小量を受信したかどうかを決定します。  
   
 ```  
@@ -151,7 +159,7 @@ BOOL HasEnoughInformation() const;
   
  このメソッドを使用して[CMFCMenuBar::IsShowAllCommands](../../mfc/reference/cmfcmenubar-class.md#isshowallcommands)をすべての利用可能なメニュー コマンドを表示するかどうかを判断します。  
   
-##  <a name="a-nameisfreqeuntlyusedcmda--cmfccmdusagecountisfreqeuntlyusedcmd"></a><a name="isfreqeuntlyusedcmd"></a>CMFCCmdUsageCount::IsFreqeuntlyUsedCmd  
+##  <a name="isfreqeuntlyusedcmd"></a>CMFCCmdUsageCount::IsFreqeuntlyUsedCmd  
  指定されたコマンドが頻繁に使用されるかどうかを決定します。  
   
 ```  
@@ -173,7 +181,7 @@ BOOL IsFreqeuntlyUsedCmd(UINT uiCmd) const;
   
  [CMFCToolBar::IsCommandRarelyUsed](../../mfc/reference/cmfctoolbar-class.md#iscommandrarelyused)コマンドはほとんど使用されているかどうかを判断するこのメソッドを使用します。  
   
-##  <a name="a-namereseta--cmfccmdusagecountreset"></a><a name="reset"></a>CMFCCmdUsageCount::Reset  
+##  <a name="reset"></a>CMFCCmdUsageCount::Reset  
  すべてのコマンドの使用率カウントをクリアします。  
   
 ```  
@@ -183,7 +191,7 @@ void Reset();
 ### <a name="remarks"></a>コメント  
  コマンドの数のマップの構造からすべてのエントリをクリアするには、このメソッドを呼び出す`m_CmdUsage`、合計のコマンドの使用法をリセットして`m_nTotalUsage`、カウンターを 0 にします。  
   
-##  <a name="a-nameserializea--cmfccmdusagecountserialize"></a><a name="serialize"></a>CMFCCmdUsageCount::Serialize  
+##  <a name="serialize"></a>CMFCCmdUsageCount::Serialize  
  アーカイブからこのオブジェクトを読み取りまたはアーカイブを書き込みます。  
   
 ```  
@@ -202,7 +210,7 @@ virtual void Serialize(CArchive& ar);
   
  シリアル化の例については、次を参照してください。[シリアル化: オブジェクトのシリアル化](../../mfc/serialization-serializing-an-object.md)します。  
   
-##  <a name="a-namesetoptionsa--cmfccmdusagecountsetoptions"></a><a name="setoptions"></a>CMFCCmdUsageCount::SetOptions  
+##  <a name="setoptions"></a>CMFCCmdUsageCount::SetOptions  
  セットの値は共有`CMFCCmdUsageCount`クラスのデータ メンバーです。  
   
 ```  

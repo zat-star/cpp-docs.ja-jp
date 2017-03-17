@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonCheckBox
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::CMFCRibbonCheckBox
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::GetCompactSize
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::GetIntermediateSize
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::GetRegularSize
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::IsDrawTooltipImage
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::OnDraw
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::OnDrawMenuImage
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::OnDrawOnList
+- AFXRIBBONCHECKBOX/CMFCRibbonCheckBox::SetACCData
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -91,7 +101,7 @@ CMFCRibbonCheckBox (UINT nID, LPCTSTR lpszText)
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxribboncheckbox.h  
   
-##  <a name="a-namecmfcribboncheckboxa--cmfcribboncheckboxcmfcribboncheckbox"></a><a name="cmfcribboncheckbox"></a>CMFCRibbonCheckBox::CMFCRibbonCheckBox  
+##  <a name="cmfcribboncheckbox"></a>CMFCRibbonCheckBox::CMFCRibbonCheckBox  
  リボンのチェック ボックス オブジェクトのコンス トラクター  
   
 ```  
@@ -115,7 +125,7 @@ CMFCRibbonCheckBox(
   
  [!code-cpp[NVC_MFC_RibbonApp&17;](../../mfc/reference/codesnippet/cpp/cmfcribboncheckbox-class_1.cpp)]  
   
-##  <a name="a-namegetcompactsizea--cmfcribboncheckboxgetcompactsize"></a><a name="getcompactsize"></a>CMFCRibbonCheckBox::GetCompactSize  
+##  <a name="getcompactsize"></a>CMFCRibbonCheckBox::GetCompactSize  
  オーバーライドされた場合、チェック ボックスのコンパクトなサイズを取得します。  
   
 ```  
@@ -132,7 +142,7 @@ virtual CSize GetCompactSize(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  オーバーライドされていない場合は、チェック ボックスの中間のサイズを返します。  
   
-##  <a name="a-namegetintermediatesizea--cmfcribboncheckboxgetintermediatesize"></a><a name="getintermediatesize"></a>CMFCRibbonCheckBox::GetIntermediateSize  
+##  <a name="getintermediatesize"></a>CMFCRibbonCheckBox::GetIntermediateSize  
  チェック ボックスの中間のサイズを取得します。  
   
 ```  
@@ -149,7 +159,7 @@ virtual CSize GetIntermediateSize(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  オーバーライドされていない場合は、既定のチェック ボックスのサイズとして中間のサイズを計算 ( `AFX_CHECK_BOX_DEFAULT_SIZE`) さらに、テキストのサイズと余白。  
   
-##  <a name="a-namegetregularsizea--cmfcribboncheckboxgetregularsize"></a><a name="getregularsize"></a>CMFCRibbonCheckBox::GetRegularSize  
+##  <a name="getregularsize"></a>CMFCRibbonCheckBox::GetRegularSize  
  チェック ボックスの標準のサイズを取得します。  
   
 ```  
@@ -166,7 +176,7 @@ virtual CSize GetRegularSize(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  オーバーライドされていない場合は、チェック ボックスの中間のサイズを返します。  
   
-##  <a name="a-nameisdrawtooltipimagea--cmfcribboncheckboxisdrawtooltipimage"></a><a name="isdrawtooltipimage"></a>CMFCRibbonCheckBox::IsDrawTooltipImage  
+##  <a name="isdrawtooltipimage"></a>CMFCRibbonCheckBox::IsDrawTooltipImage  
  チェック ボックスに関連付けられているツールヒント イメージがあるかどうかを示します。  
   
 ```  
@@ -178,7 +188,7 @@ virtual BOOL IsDrawTooltipImage() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameondrawa--cmfcribboncheckboxondraw"></a><a name="ondraw"></a>CMFCRibbonCheckBox::OnDraw  
+##  <a name="ondraw"></a>CMFCRibbonCheckBox::OnDraw  
  指定したデバイス コンテキストを使用して、チェック ボックスを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -191,7 +201,7 @@ virtual void OnDraw(CDC* pDC);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameondrawmenuimagea--cmfcribboncheckboxondrawmenuimage"></a><a name="ondrawmenuimage"></a>CMFCRibbonCheckBox::OnDrawMenuImage  
+##  <a name="ondrawmenuimage"></a>CMFCRibbonCheckBox::OnDrawMenuImage  
  チェック ボックスのメニュー画像を描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -211,7 +221,7 @@ virtual BOOL OnDrawMenuImage(CDC*, CRect);
 ### <a name="remarks"></a>コメント  
  オーバーライドされていない場合に返す`FALSE`します。  
   
-##  <a name="a-nameondrawonlista--cmfcribboncheckboxondrawonlist"></a><a name="ondrawonlist"></a>CMFCRibbonCheckBox::OnDrawOnList  
+##  <a name="ondrawonlist"></a>CMFCRibbonCheckBox::OnDrawOnList  
  コマンドのリスト ボックスで、チェック ボックスを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -245,7 +255,7 @@ virtual void OnDrawOnList(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetaccdataa--cmfcribboncheckboxsetaccdata"></a><a name="setaccdata"></a>CMFCRibbonCheckBox::SetACCData  
+##  <a name="setaccdata"></a>CMFCRibbonCheckBox::SetACCData  
  チェック ボックスのユーザー補助データを設定します。  
   
 ```  

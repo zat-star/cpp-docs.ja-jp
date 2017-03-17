@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CBitmapButton
+- AFXEXT/CBitmapButton
+- AFXEXT/CBitmapButton::CBitmapButton
+- AFXEXT/CBitmapButton::AutoLoad
+- AFXEXT/CBitmapButton::LoadBitmaps
+- AFXEXT/CBitmapButton::SizeToContent
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -128,7 +133,7 @@ class CBitmapButton : public CButton
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-nameautoloada--cbitmapbuttonautoload"></a><a name="autoload"></a>CBitmapButton::AutoLoad  
+##  <a name="autoload"></a>CBitmapButton::AutoLoad  
  ダイアログ ボックスのボタンのオブジェクトに関連付け、`CBitmapButton`クラス、名前で、ビットマップを読み込みおよびサイズをビットマップに合わせて ボタンをクリックします。  
   
 ```  
@@ -153,7 +158,7 @@ BOOL AutoLoad(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&75;](../../mfc/codesnippet/cpp/cbitmapbutton-class_1.cpp)]  
   
-##  <a name="a-namecbitmapbuttona--cbitmapbuttoncbitmapbutton"></a><a name="cbitmapbutton"></a>CBitmapButton::CBitmapButton  
+##  <a name="cbitmapbutton"></a>CBitmapButton::CBitmapButton  
  
           `CBitmapButton` オブジェクトを作成します。  
   
@@ -167,7 +172,7 @@ CBitmapButton();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&57;](../../mfc/codesnippet/cpp/cbitmapbutton-class_2.cpp)]  
   
-##  <a name="a-nameloadbitmapsa--cbitmapbuttonloadbitmaps"></a><a name="loadbitmaps"></a>CBitmapButton::LoadBitmaps  
+##  <a name="loadbitmaps"></a>CBitmapButton::LoadBitmaps  
  識別された、リソースの名前または ID 番号を使用できない場合、ビットマップ イメージを読み込む場合、この関数を使用して、 `AutoLoad` 、たとえば、ダイアログ ボックスの一部ではないビットマップ ボタンを作成するために機能します。  
   
 ```  
@@ -216,7 +221,7 @@ BOOL LoadBitmaps(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&58;](../../mfc/codesnippet/cpp/cbitmapbutton-class_3.cpp)]  
   
-##  <a name="a-namesizetocontenta--cbitmapbuttonsizetocontent"></a><a name="sizetocontent"></a>CBitmapButton::SizeToContent  
+##  <a name="sizetocontent"></a>CBitmapButton::SizeToContent  
  ビットマップのサイズをビットマップ ボタンのサイズを変更するには、この関数を呼び出します。  
   
 ```  

@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDataExchange
+- AFXWIN/CDataExchange
+- AFXWIN/CDataExchange::CDataExchange
+- AFXWIN/CDataExchange::Fail
+- AFXWIN/CDataExchange::PrepareCtrl
+- AFXWIN/CDataExchange::PrepareEditCtrl
+- AFXWIN/CDataExchange::PrepareOleCtrl
+- AFXWIN/CDataExchange::m_bSaveAndValidate
+- AFXWIN/CDataExchange::m_pDlgWnd
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +105,7 @@ class CDataExchange
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecdataexchangea--cdataexchangecdataexchange"></a><a name="cdataexchange"></a>CDataExchange::CDataExchange  
+##  <a name="cdataexchange"></a>CDataExchange::CDataExchange  
  作成するには、このメンバー関数を呼び出す、`CDataExchange`オブジェクトです。  
   
 ```  
@@ -119,7 +127,7 @@ CDataExchange(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&70;](../../mfc/codesnippet/cpp/cdataexchange-class_1.cpp)]  
   
-##  <a name="a-namefaila--cdataexchangefail"></a><a name="fail"></a>CDataExchange::Fail  
+##  <a name="fail"></a>CDataExchange::Fail  
  フレームワークは、ダイアログ データ バリデーション (DDV) 操作が失敗したときに、このメンバー関数を呼び出します。  
   
 ```  
@@ -133,7 +141,7 @@ void Fail();
   
  独自の DDX ルーチンおよび DDV ルーチンを記述の詳細については、次を参照してください。[テクニカル ノート 26](../../mfc/tn026-ddx-and-ddv-routines.md)します。 DDX ルーチンおよび DDV の概要については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)と[ダイアログ ボックスに関するトピック](../../mfc/dialog-boxes.md)します。  
   
-##  <a name="a-namembsaveandvalidatea--cdataexchangembsaveandvalidate"></a><a name="m_bsaveandvalidate"></a>CDataExchange::m_bSaveAndValidate  
+##  <a name="m_bsaveandvalidate"></a>CDataExchange::m_bSaveAndValidate  
  このフラグは、ダイアログ データ エクス (チェンジ DDX) 操作の方向を示します。  
   
 ```  
@@ -147,7 +155,7 @@ BOOL m_bSaveAndValidate;
   
  独自の DDX ルーチンおよび DDV ルーチンを記述の詳細については、次を参照してください。[テクニカル ノート 26](../../mfc/tn026-ddx-and-ddv-routines.md)します。 DDX ルーチンおよび DDV の概要については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)と[ダイアログ ボックスに関するトピック](../../mfc/dialog-boxes.md)します。  
   
-##  <a name="a-namempdlgwnda--cdataexchangempdlgwnd"></a><a name="m_pdlgwnd"></a>CDataExchange::m_pDlgWnd  
+##  <a name="m_pdlgwnd"></a>CDataExchange::m_pDlgWnd  
  ポインターを含む、 [CWnd](../../mfc/reference/cwnd-class.md)オブジェクト ダイアログ データ エクス (チェンジ DDX) またはバリデーション (DDV) が行われています。  
   
 ```  
@@ -159,7 +167,7 @@ CWnd* m_pDlgWnd;
   
  独自の DDX ルーチンおよび DDV ルーチンを記述の詳細については、次を参照してください。[テクニカル ノート 26](../../mfc/tn026-ddx-and-ddv-routines.md)します。 DDX ルーチンおよび DDV の概要については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)と[ダイアログ ボックスに関するトピック](../../mfc/dialog-boxes.md)します。  
   
-##  <a name="a-namepreparectrla--cdataexchangepreparectrl"></a><a name="preparectrl"></a>CDataExchange::PrepareCtrl  
+##  <a name="preparectrl"></a>CDataExchange::PrepareCtrl  
  ダイアログ データ エクス (チェンジ DDX) とバリデーション (DDV) の指定したコントロールを準備する、フレームワークが呼び出します。  
   
 ```  
@@ -182,7 +190,7 @@ HWND PrepareCtrl(int nIDC);
   
  独自の DDX ルーチンおよび DDV ルーチンを記述の詳細については、次を参照してください。[テクニカル ノート 26](../../mfc/tn026-ddx-and-ddv-routines.md)します。 DDX ルーチンおよび DDV の概要については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)と[ダイアログ ボックスに関するトピック](../../mfc/dialog-boxes.md)します。  
   
-##  <a name="a-nameprepareeditctrla--cdataexchangeprepareeditctrl"></a><a name="prepareeditctrl"></a>CDataExchange::PrepareEditCtrl  
+##  <a name="prepareeditctrl"></a>CDataExchange::PrepareEditCtrl  
  ダイアログ データ エクス (チェンジ DDX) とバリデーション (DDV) の指定されたエディット コントロールを準備する、フレームワークが呼び出します。  
   
 ```  
@@ -205,7 +213,7 @@ HWND PrepareEditCtrl(int nIDC);
   
  独自の DDX ルーチンおよび DDV ルーチンを記述の詳細については、次を参照してください。[テクニカル ノート 26](../../mfc/tn026-ddx-and-ddv-routines.md)します。 DDX ルーチンおよび DDV の概要については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)と[ダイアログ ボックスに関するトピック](../../mfc/dialog-boxes.md)します。  
   
-##  <a name="a-nameprepareolectrla--cdataexchangeprepareolectrl"></a><a name="prepareolectrl"></a>CDataExchange::PrepareOleCtrl  
+##  <a name="prepareolectrl"></a>CDataExchange::PrepareOleCtrl  
  ダイアログ データ エクス (チェンジ DDX) とバリデーション (DDV) の指定した OLE コントロールを準備する、フレームワークが呼び出します。  
   
 ```  

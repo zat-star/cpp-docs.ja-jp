@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleBusyDialog
+- AFXODLGS/COleBusyDialog
+- AFXODLGS/COleBusyDialog::COleBusyDialog
+- AFXODLGS/COleBusyDialog::DoModal
+- AFXODLGS/COleBusyDialog::GetSelectionType
+- AFXODLGS/COleBusyDialog::m_bz
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +104,7 @@ class COleBusyDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecolebusydialoga--colebusydialogcolebusydialog"></a><a name="colebusydialog"></a>COleBusyDialog::COleBusyDialog  
+##  <a name="colebusydialog"></a>COleBusyDialog::COleBusyDialog  
  この関数は、`COleBusyDialog`オブジェクトです。  
   
 ```  
@@ -134,7 +139,7 @@ explicit COleBusyDialog(
   
  詳細については、次を参照してください。、 [OLEUIBUSY](http://msdn.microsoft.com/library/windows/desktop/ms682493)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedomodala--colebusydialogdomodal"></a><a name="domodal"></a>COleBusyDialog::DoModal  
+##  <a name="domodal"></a>COleBusyDialog::DoModal  
  サーバー ビジー状態であるか、サーバーが応答しません ダイアログ ボックスを表示するには、この関数を呼び出します。  
   
 ```  
@@ -155,7 +160,7 @@ virtual INT_PTR DoModal();
   
  場合`DoModal`返します**IDOK**、他のメンバーの設定やユーザー ダイアログ ボックスに入力した情報を取得する関数を呼び出すことができます。  
   
-##  <a name="a-namegetselectiontypea--colebusydialoggetselectiontype"></a><a name="getselectiontype"></a>COleBusyDialog::GetSelectionType  
+##  <a name="getselectiontype"></a>COleBusyDialog::GetSelectionType  
  サーバーがビジー状態のダイアログ ボックスでユーザーが選択した型を取得するには、この関数を呼び出します。  
   
 ```  
@@ -188,7 +193,7 @@ UINT GetSelectionType() const;
   
 - **COleBusyDialog::callUnblocked**サーバーをアクティブ化の呼び出しが、ブロック解除します。  
   
-##  <a name="a-namembza--colebusydialogmbz"></a><a name="m_bz"></a>COleBusyDialog::m_bz  
+##  <a name="m_bz"></a>COleBusyDialog::m_bz  
  型の構造体**OLEUIBUSY**サーバーがビジー状態のダイアログ ボックスの動作を制御するために使用します。  
   
 ```  

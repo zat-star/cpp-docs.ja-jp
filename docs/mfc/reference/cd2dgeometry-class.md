@@ -10,7 +10,27 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DGeometry
-- afxrendertarget/CD2DGeometry
+- AFXRENDERTARGET/CD2DGeometry
+- AFXRENDERTARGET/CD2DGeometry::CD2DGeometry
+- AFXRENDERTARGET/CD2DGeometry::Attach
+- AFXRENDERTARGET/CD2DGeometry::CombineWithGeometry
+- AFXRENDERTARGET/CD2DGeometry::CompareWithGeometry
+- AFXRENDERTARGET/CD2DGeometry::ComputeArea
+- AFXRENDERTARGET/CD2DGeometry::ComputeLength
+- AFXRENDERTARGET/CD2DGeometry::ComputePointAtLength
+- AFXRENDERTARGET/CD2DGeometry::Destroy
+- AFXRENDERTARGET/CD2DGeometry::Detach
+- AFXRENDERTARGET/CD2DGeometry::FillContainsPoint
+- AFXRENDERTARGET/CD2DGeometry::Get
+- AFXRENDERTARGET/CD2DGeometry::GetBounds
+- AFXRENDERTARGET/CD2DGeometry::GetWidenedBounds
+- AFXRENDERTARGET/CD2DGeometry::IsValid
+- AFXRENDERTARGET/CD2DGeometry::Outline
+- AFXRENDERTARGET/CD2DGeometry::Simplify
+- AFXRENDERTARGET/CD2DGeometry::StrokeContainsPoint
+- AFXRENDERTARGET/CD2DGeometry::Tessellate
+- AFXRENDERTARGET/CD2DGeometry::Widen
+- AFXRENDERTARGET/CD2DGeometry::m_pGeometry
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -103,14 +123,14 @@ class CD2DGeometry : public CD2DResource;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dgeometrya--cd2dgeometrycd2dgeometry"></a><a name="_dtorcd2dgeometry"></a>CD2DGeometry:: ~ CD2DGeometry  
+##  <a name="_dtorcd2dgeometry"></a>CD2DGeometry:: ~ CD2DGeometry  
  デストラクターです。 D2D geometry オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DGeometry();
 ```  
   
-##  <a name="a-nameattacha--cd2dgeometryattach"></a><a name="attach"></a>CD2DGeometry::Attach  
+##  <a name="attach"></a>CD2DGeometry::Attach  
  オブジェクトにリソース インタ フェースを既存の接続  
   
 ```  
@@ -121,7 +141,7 @@ void Attach(ID2D1Geometry* pResource);
  `pResource`  
  既存のリソースのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namecd2dgeometrya--cd2dgeometrycd2dgeometry"></a><a name="cd2dgeometry"></a>CD2DGeometry::CD2DGeometry  
+##  <a name="cd2dgeometry"></a>CD2DGeometry::CD2DGeometry  
  CD2DGeometry のオブジェクトを構築します。  
   
 ```  
@@ -137,7 +157,7 @@ CD2DGeometry(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namecombinewithgeometrya--cd2dgeometrycombinewithgeometry"></a><a name="combinewithgeometry"></a>CD2DGeometry::CombineWithGeometry  
+##  <a name="combinewithgeometry"></a>CD2DGeometry::CombineWithGeometry  
  指定したジオメトリをこの geometry を結合し、その結果、ID2D1SimplifiedGeometrySink に格納します。  
   
 ```  
@@ -168,7 +188,7 @@ BOOL CombineWithGeometry(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecomparewithgeometrya--cd2dgeometrycomparewithgeometry"></a><a name="comparewithgeometry"></a>CD2DGeometry::CompareWithGeometry  
+##  <a name="comparewithgeometry"></a>CD2DGeometry::CompareWithGeometry  
  このジオメトリと指定された geometry の交差部分をについて説明します。 フラット化の指定された許容範囲を使用して比較を実行します。  
   
 ```  
@@ -191,7 +211,7 @@ D2D1_GEOMETRY_RELATION CompareWithGeometry(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecomputeareaa--cd2dgeometrycomputearea"></a><a name="computearea"></a>CD2DGeometry::ComputeArea  
+##  <a name="computearea"></a>CD2DGeometry::ComputeArea  
  ジオメトリの領域が計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
   
 ```  
@@ -214,7 +234,7 @@ BOOL ComputeArea(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecomputelengtha--cd2dgeometrycomputelength"></a><a name="computelength"></a>CD2DGeometry::ComputeLength  
+##  <a name="computelength"></a>CD2DGeometry::ComputeLength  
  各セグメントは直線にロールバックされたかのように、ジオメトリの長さを計算します。  
   
 ```  
@@ -237,7 +257,7 @@ BOOL ComputeLength(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecomputepointatlengtha--cd2dgeometrycomputepointatlength"></a><a name="computepointatlength"></a>CD2DGeometry::ComputePointAtLength  
+##  <a name="computepointatlength"></a>CD2DGeometry::ComputePointAtLength  
  ジオメトリに沿って指定された距離にあるポイントおよびタンジェント ベクトルが計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
   
 ```  
@@ -268,14 +288,14 @@ BOOL ComputePointAtLength(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namedestroya--cd2dgeometrydestroy"></a><a name="destroy"></a>CD2DGeometry::Destroy  
+##  <a name="destroy"></a>CD2DGeometry::Destroy  
  CD2DGeometry オブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namedetacha--cd2dgeometrydetach"></a><a name="detach"></a>CD2DGeometry::Detach  
+##  <a name="detach"></a>CD2DGeometry::Detach  
  オブジェクトからリソース インタ フェースをデタッチします。  
   
 ```  
@@ -285,7 +305,7 @@ ID2D1Geometry* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたリソース インタ フェースへのポインター。  
   
-##  <a name="a-namefillcontainspointa--cd2dgeometryfillcontainspoint"></a><a name="fillcontainspoint"></a>CD2DGeometry::FillContainsPoint  
+##  <a name="fillcontainspoint"></a>CD2DGeometry::FillContainsPoint  
  ジオメトリで埋められた領域はフラット化の指定された許容範囲を指定する指定された時点を含めるかどうかを示します。  
   
 ```  
@@ -312,7 +332,7 @@ BOOL FillContainsPoint(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namegeta--cd2dgeometryget"></a><a name="get"></a>CD2DGeometry::Get  
+##  <a name="get"></a>CD2DGeometry::Get  
  返します。 ID2D1Geometry インターフェイス  
   
 ```  
@@ -322,7 +342,7 @@ ID2D1Geometry* Get();
 ### <a name="return-value"></a>戻り値  
  ID2D1Geometry インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namegetboundsa--cd2dgeometrygetbounds"></a><a name="getbounds"></a>CD2DGeometry::GetBounds  
+##  <a name="getbounds"></a>CD2DGeometry::GetBounds  
   
 ```   
 BOOL GetBounds(
@@ -336,7 +356,7 @@ CD2DRectF& bounds) const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-namegetwidenedboundsa--cd2dgeometrygetwidenedbounds"></a><a name="getwidenedbounds"></a>CD2DGeometry::GetWidenedBounds  
+##  <a name="getwidenedbounds"></a>CD2DGeometry::GetWidenedBounds  
  指定した線の幅とスタイルによって上位変換して指定した行列によって変換された後は、ジオメトリの境界を取得します。  
   
 ```  
@@ -367,7 +387,7 @@ BOOL GetWidenedBounds(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-nameisvalida--cd2dgeometryisvalid"></a><a name="isvalid"></a>CD2DGeometry::IsValid  
+##  <a name="isvalid"></a>CD2DGeometry::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -377,14 +397,14 @@ virtual BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namempgeometrya--cd2dgeometrympgeometry"></a><a name="m_pgeometry"></a>CD2DGeometry::m_pGeometry  
+##  <a name="m_pgeometry"></a>CD2DGeometry::m_pGeometry  
  ID2D1Geometry へのポインター。  
   
 ```  
 ID2D1Geometry* m_pGeometry;  
 ```  
   
-##  <a name="a-nameoperatorid2d1geometrystara--cd2dgeometryoperator-id2d1geometry"></a><a name="operator_id2d1geometry_star"></a>CD2DGeometry::operator ID2D1Geometry *  
+##  <a name="operator_id2d1geometry_star"></a>CD2DGeometry::operator ID2D1Geometry *  
  返します。 ID2D1Geometry インターフェイス  
   
 ```  
@@ -394,7 +414,7 @@ operator ID2D1Geometry*();
 ### <a name="return-value"></a>戻り値  
  ID2D1Geometry インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-nameoutlinea--cd2dgeometryoutline"></a><a name="outline"></a>CD2DGeometry::Outline  
+##  <a name="outline"></a>CD2DGeometry::Outline  
  Geometry の輪郭を計算し、その結果を ID2D1SimplifiedGeometrySink に書き込みます。  
   
 ```  
@@ -417,7 +437,7 @@ BOOL Outline(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namesimplifya--cd2dgeometrysimplify"></a><a name="simplify"></a>CD2DGeometry::Simplify  
+##  <a name="simplify"></a>CD2DGeometry::Simplify  
  線および (必要に応じて)&3; 次ベジエ曲線のみを含み、結果を ID2D1SimplifiedGeometrySink に書き込むジオメトリの簡略版を作成します。  
   
 ```  
@@ -444,7 +464,7 @@ BOOL Simplify(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namestrokecontainspointa--cd2dgeometrystrokecontainspoint"></a><a name="strokecontainspoint"></a>CD2DGeometry::StrokeContainsPoint  
+##  <a name="strokecontainspoint"></a>CD2DGeometry::StrokeContainsPoint  
  ジオメトリのストロークに指定したストロークの太さ、スタイル、および変換を指定する指定された時点が含まれているかどうかを判断します。  
   
 ```  
@@ -479,7 +499,7 @@ BOOL StrokeContainsPoint(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-nametessellatea--cd2dgeometrytessellate"></a><a name="tessellate"></a>CD2DGeometry::Tessellate  
+##  <a name="tessellate"></a>CD2DGeometry::Tessellate  
  指定した行列を使用して変換された後に、geometry をカバーし、指定された許容範囲を使用してフラット化する時計回りの三角形のセットを作成します。  
   
 ```  
@@ -502,7 +522,7 @@ BOOL Tessellate(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namewidena--cd2dgeometrywiden"></a><a name="widen"></a>CD2DGeometry::Widen  
+##  <a name="widen"></a>CD2DGeometry::Widen  
  ジオメトリは拡大し、指定したストロークと、ID2D1SimplifiedGeometrySink を結果に出力しています。 指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
   
 ```  

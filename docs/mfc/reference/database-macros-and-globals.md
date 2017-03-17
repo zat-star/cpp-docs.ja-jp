@@ -9,7 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- vc.mfc.macros.data
+- AFXDB/AFX_ODBC_CALL
+- AFXDB/AFX_SQL_ASYNC
+- AFXDB/AFX_SQL_SYNC
+- AFXDB/AfxGetHENV
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -62,7 +65,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[AfxGetHENV](#afxgethenv)|MFC で使用されている ODBC 環境ハンドルを取得します。 このハンドルは、ODBC の直接の呼び出しで使用できます。|  
   
-##  <a name="a-nameafxodbccalla--afxodbccall"></a><a name="afx_odbc_call"></a>AFX_ODBC_CALL  
+##  <a name="afx_odbc_call"></a>AFX_ODBC_CALL  
  返す可能性のある任意の ODBC API 関数を呼び出すこのマクロを使用して`SQL_STILL_EXECUTING`します。  
   
 ```  
@@ -89,7 +92,7 @@ AFX_ODBC_CALL(SQLFunc)
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-##  <a name="a-nameafxsqlasynca--afxsqlasync"></a><a name="afx_sql_async"></a>AFX_SQL_ASYNC  
+##  <a name="afx_sql_async"></a>AFX_SQL_ASYNC  
  このマクロを MFC 4.2 で変更の実装です。  
   
 ```   
@@ -112,7 +115,7 @@ AFX_SQL_ASYNC(prs, SQLFunc)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxdb.h  
   
-##  <a name="a-nameafxsqlsynca--afxsqlsync"></a><a name="afx_sql_sync"></a>AFX_SQL_SYNC  
+##  <a name="afx_sql_sync"></a>AFX_SQL_SYNC  
  `AFX_SQL_SYNC`マクロは、関数を呼び出すだけ`SQLFunc`します。  
   
 ```   
@@ -139,7 +142,7 @@ AFX_SQL_SYNC(SQLFunc)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxdb.h  
   
-##  <a name="a-nameafxgethenva--afxgethenv"></a><a name="afxgethenv"></a>AfxGetHENV  
+##  <a name="afxgethenv"></a>AfxGetHENV  
  ODBC の直接の呼び出しで返されたハンドルを使用することができますには、いないハンドルを終了するか、ハンドルが有効であり、使用可能なすべての既存の後にあると`CDatabase`- または`CRecordset`-派生オブジェクトが破棄されました。  
   
 ```   

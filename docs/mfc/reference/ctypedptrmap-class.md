@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CTypedPtrMap
+- AFXTEMPL/CTypedPtrMap
+- AFXTEMPL/CTypedPtrMap::GetNextAssoc
+- AFXTEMPL/CTypedPtrMap::Lookup
+- AFXTEMPL/CTypedPtrMap::RemoveKey
+- AFXTEMPL/CTypedPtrMap::SetAt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +100,7 @@ class CTypedPtrMap : public BASE_CLASS
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxtempl.h  
   
-##  <a name="a-namegetnextassoca--ctypedptrmapgetnextassoc"></a><a name="getnextassoc"></a>CTypedPtrMap::GetNextAssoc  
+##  <a name="getnextassoc"></a>CTypedPtrMap::GetNextAssoc  
  位置にあるマップ要素を取得`rNextPosition`、し、更新`rNextPosition`に、マップ内の次の要素を参照してください。  
   
 ```  
@@ -128,7 +133,7 @@ void GetNextAssoc(
   
  このインライン関数が呼び出す`BASE_CLASS` **:: たどる**します。  
   
-##  <a name="a-namelookupa--ctypedptrmaplookup"></a><a name="lookup"></a>CTypedPtrMap::Lookup  
+##  <a name="lookup"></a>CTypedPtrMap::Lookup  
  `Lookup`ハッシュ アルゴリズムを使用して、すばやく正確に一致するキーを使用してマップの要素を検索します。  
   
 ```  
@@ -154,7 +159,7 @@ BOOL Lookup(BASE_CLASS ::BASE_ARG_KEY key, VALUE& rValue) const;
 ### <a name="remarks"></a>コメント  
  このインライン関数が呼び出す`BASE_CLASS` **:: ルックアップ**します。  
   
-##  <a name="a-nameoperatorata--ctypedptrmapoperator--"></a><a name="operator_at"></a>CTypedPtrMap::operator  
+##  <a name="operator_at"></a>CTypedPtrMap::operator  
  この演算子は、代入ステートメント (左辺値) の左側にのみ使用できます。  
   
 ```  
@@ -174,7 +179,7 @@ VALUE& operator[ ](base_class ::base_arg_key key);
 ### <a name="remarks"></a>コメント  
  指定したキーにマップ要素が存在しない、新しい要素が作成されます。 ない「右側」(右辺値) にこの演算子と同じキーがマップに含まれていない可能性があります可能性があるため。 使用して、`Lookup`メンバー関数要素を取得します。  
   
-##  <a name="a-nameremovekeya--ctypedptrmapremovekey"></a><a name="removekey"></a>CTypedPtrMap::RemoveKey  
+##  <a name="removekey"></a>CTypedPtrMap::RemoveKey  
  このメンバー関数を呼び出す`BASE_CLASS` **:: は**です。  
   
 ```  
@@ -194,7 +199,7 @@ BOOL RemoveKey(KEY key);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CMapStringToOb::RemoveKey](../../mfc/reference/cmapstringtoob-class.md#removekey)します。  
   
-##  <a name="a-namesetata--ctypedptrmapsetat"></a><a name="setat"></a>CTypedPtrMap::SetAt  
+##  <a name="setat"></a>CTypedPtrMap::SetAt  
  このメンバー関数を呼び出す`BASE_CLASS` **:: SetAt**します。  
   
 ```  

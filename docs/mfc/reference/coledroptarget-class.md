@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDropTarget
+- AFXOLE/COleDropTarget
+- AFXOLE/COleDropTarget::COleDropTarget
+- AFXOLE/COleDropTarget::OnDragEnter
+- AFXOLE/COleDropTarget::OnDragLeave
+- AFXOLE/COleDropTarget::OnDragOver
+- AFXOLE/COleDropTarget::OnDragScroll
+- AFXOLE/COleDropTarget::OnDrop
+- AFXOLE/COleDropTarget::OnDropEx
+- AFXOLE/COleDropTarget::Register
+- AFXOLE/COleDropTarget::Revoke
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +99,7 @@ class COleDropTarget : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-namecoledroptargeta--coledroptargetcoledroptarget"></a><a name="coledroptarget"></a>COleDropTarget::COleDropTarget  
+##  <a name="coledroptarget"></a>COleDropTarget::COleDropTarget  
  クラスのオブジェクトを構築`COleDropTarget`します。  
   
 ```  
@@ -99,7 +109,7 @@ COleDropTarget();
 ### <a name="remarks"></a>コメント  
  呼び出す[登録](#register)ウィンドウにこのオブジェクトに関連付けることです。  
   
-##  <a name="a-nameondragentera--coledroptargetondragenter"></a><a name="ondragenter"></a>COleDropTarget::OnDragEnter  
+##  <a name="ondragenter"></a>COleDropTarget::OnDragEnter  
  カーソルが最初に、ウィンドウにドラッグされたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -141,7 +151,7 @@ virtual DROPEFFECT OnDragEnter(
   
  詳細については、次を参照してください。 [IDropTarget::DragEnter](http://msdn.microsoft.com/library/windows/desktop/ms680106)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameondragleavea--coledroptargetondragleave"></a><a name="ondragleave"></a>COleDropTarget::OnDragLeave  
+##  <a name="ondragleave"></a>COleDropTarget::OnDragLeave  
  ドラッグ操作の実行中に、カーソルがウィンドウを離れたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -157,7 +167,7 @@ virtual void OnDragLeave(CWnd* pWnd);
   
  詳細については、次を参照してください。 [IDropTarget::DragLeave](http://msdn.microsoft.com/library/windows/desktop/ms680110)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameondragovera--coledroptargetondragover"></a><a name="ondragover"></a>COleDropTarget::OnDragOver  
+##  <a name="ondragover"></a>COleDropTarget::OnDragOver  
  カーソルがウィンドウの上にドラッグされたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -202,7 +212,7 @@ virtual DROPEFFECT OnDragOver(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer #&21;](../../mfc/codesnippet/cpp/coledroptarget-class_1.cpp)]  
   
-##  <a name="a-nameondragscrolla--coledroptargetondragscroll"></a><a name="ondragscroll"></a>COleDropTarget::OnDragScroll  
+##  <a name="ondragscroll"></a>COleDropTarget::OnDragScroll  
  呼び出しの前に、フレームワークによって呼び出さ[OnDragEnter](#ondragenter)または[OnDragOver](#ondragover)を判断するかどうか`point`スクロール可能な領域ができます。  
   
 ```  
@@ -238,7 +248,7 @@ virtual DROPEFFECT OnDragScroll(
 ### <a name="remarks"></a>コメント  
  このイベントの特別な動作を提供する場合に、この関数をオーバーライドします。 この関数の既定の実装[CView::OnDragScroll](../../mfc/reference/cview-class.md#ondragscroll)、返す`DROPEFFECT_NONE`し、カーソルがウィンドウの枠線内の既定のスクロール領域にドラッグされると、ウィンドウをスクロールします。  
   
-##  <a name="a-nameondropa--coledroptargetondrop"></a><a name="ondrop"></a>COleDropTarget::OnDrop  
+##  <a name="ondrop"></a>COleDropTarget::OnDrop  
  ドロップ操作が行われるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -278,7 +288,7 @@ virtual BOOL OnDrop(
   
  詳細については、次を参照してください。 [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameondropexa--coledroptargetondropex"></a><a name="ondropex"></a>COleDropTarget::OnDropEx  
+##  <a name="ondropex"></a>COleDropTarget::OnDropEx  
  ドロップ操作が行われるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -328,7 +338,7 @@ virtual DROPEFFECT OnDropEx(
   
  詳細については、次を参照してください。 [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameregistera--coledroptargetregister"></a><a name="register"></a>COleDropTarget::Register  
+##  <a name="register"></a>COleDropTarget::Register  
  有効なドロップ先として OLE Dll を現在のウィンドウを登録するには、この関数を呼び出します。  
   
 ```  
@@ -347,7 +357,7 @@ BOOL Register(CWnd* pWnd);
   
  詳細については、次を参照してください。 [RegisterDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms678405)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namerevokea--coledroptargetrevoke"></a><a name="revoke"></a>COleDropTarget::Revoke  
+##  <a name="revoke"></a>COleDropTarget::Revoke  
  この関数を呼び出すことによって、ドロップ先として登録されている任意のウィンドウを破棄する前に[登録](#register)ドロップ ターゲットの一覧から削除します。  
   
 ```  

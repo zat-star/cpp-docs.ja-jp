@@ -9,15 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- CMFCBaseToolBar::CreateObject
-- ~CMFCBaseToolBar
 - CMFCBaseToolBar
-- CMFCBaseToolBar::CMFCBaseToolBar
-- CMFCBaseToolBar::~CMFCBaseToolBar
-- CMFCBaseToolBar.~CMFCBaseToolBar
-- CreateObject
-- CMFCBaseToolBar.CMFCBaseToolBar
-- CMFCBaseToolBar.CreateObject
+- AFXBASETOOLBAR/CMFCBaseToolBar
+- AFXBASETOOLBAR/CMFCBaseToolBar::GetDockingMode
+- AFXBASETOOLBAR/CMFCBaseToolBar::GetMinSize
+- AFXBASETOOLBAR/CMFCBaseToolBar::OnAfterChangeParent
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +90,7 @@ class CMFCBaseToolBar : public CPane
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxbasetoolbar.h  
   
-##  <a name="a-namegetdockingmodea--cmfcbasetoolbargetdockingmode"></a><a name="getdockingmode"></a>CMFCBaseToolBar::GetDockingMode  
+##  <a name="getdockingmode"></a>CMFCBaseToolBar::GetDockingMode  
  ドッキングのモードを返します。  
   
 ```  
@@ -104,7 +100,7 @@ virtual AFX_DOCK_TYPE GetDockingMode() const;
 ### <a name="return-value"></a>戻り値  
  ドッキング モードです。  
   
-##  <a name="a-namegetminsizea--cmfcbasetoolbargetminsize"></a><a name="getminsize"></a>CMFCBaseToolBar::GetMinSize  
+##  <a name="getminsize"></a>CMFCBaseToolBar::GetMinSize  
  ツールバーの最小サイズを返します。  
   
 ```  
@@ -115,7 +111,7 @@ virtual void GetMinSize(CSize& size) const;
  [出力] `size`  
  ツールバーの最小サイズ。  
   
-##  <a name="a-nameonafterchangeparenta--cmfcbasetoolbaronafterchangeparent"></a><a name="onafterchangeparent"></a>CMFCBaseToolBar::OnAfterChangeParent  
+##  <a name="onafterchangeparent"></a>CMFCBaseToolBar::OnAfterChangeParent  
  ウィンドウの親の変更された後、フレームワークによって呼び出されます。  
   
 ```  

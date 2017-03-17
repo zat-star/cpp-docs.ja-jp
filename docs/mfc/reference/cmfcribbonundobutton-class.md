@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonUndoButton
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton::CMFCRibbonUndoButton
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton::AddUndoAction
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton::CleanUpUndoList
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton::GetActionNumber
+- AFXRIBBONUNDOBUTTON/CMFCRibbonUndoButton::HasMenu
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +93,7 @@ class CMFCRibbonUndoButton : public CMFCRibbonGallery
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxribbonundobutton.h  
   
-##  <a name="a-nameaddundoactiona--cmfcribbonundobuttonaddundoaction"></a><a name="addundoaction"></a>CMFCRibbonUndoButton::AddUndoAction  
+##  <a name="addundoaction"></a>CMFCRibbonUndoButton::AddUndoAction  
  アクションの一覧に新しいアクションを追加します。  
   
 ```  
@@ -98,14 +104,14 @@ void AddUndoAction(LPCTSTR lpszLabel);
  [入力] `lpszLabel`  
  ドロップダウン リストに表示されるアクション ラベルです。  
   
-##  <a name="a-namecleanupundolista--cmfcribbonundobuttoncleanupundolist"></a><a name="cleanupundolist"></a>CMFCRibbonUndoButton::CleanUpUndoList  
+##  <a name="cleanupundolist"></a>CMFCRibbonUndoButton::CleanUpUndoList  
  ドロップダウン リストは、[操作] の一覧をクリアします。  
   
 ```  
 void CleanUpUndoList();
 ```  
   
-##  <a name="a-namecmfcribbonundobuttona--cmfcribbonundobuttoncmfcribbonundobutton"></a><a name="cmfcribbonundobutton"></a>CMFCRibbonUndoButton::CMFCRibbonUndoButton  
+##  <a name="cmfcribbonundobutton"></a>CMFCRibbonUndoButton::CMFCRibbonUndoButton  
  新しい`CMFCRibbonUndoButton`オブジェクトを指定するコマンド ID、テキスト ラベル、および親オブジェクトのイメージ リストのイメージを使用します。  
   
 ```  
@@ -138,7 +144,7 @@ CMFCRibbonUndoButton(
  [入力] `hIcon`  
  ボタンのイメージとして使用できるアイコンのハンドル。  
   
-##  <a name="a-namegetactionnumbera--cmfcribbonundobuttongetactionnumber"></a><a name="getactionnumber"></a>CMFCRibbonUndoButton::GetActionNumber  
+##  <a name="getactionnumber"></a>CMFCRibbonUndoButton::GetActionNumber  
  ユーザーがドロップダウン リストから選択した項目の数を決定します。  
   
 ```  
@@ -148,7 +154,7 @@ int GetActionNumber() const;
 ### <a name="return-value"></a>戻り値  
  ユーザーが選択した項目の数。  
   
-##  <a name="a-namehasmenua--cmfcribbonundobuttonhasmenu"></a><a name="hasmenu"></a>CMFCRibbonUndoButton::HasMenu  
+##  <a name="hasmenu"></a>CMFCRibbonUndoButton::HasMenu  
  オブジェクトにメニューが含まれるかどうかを示します。  
   
 ```  

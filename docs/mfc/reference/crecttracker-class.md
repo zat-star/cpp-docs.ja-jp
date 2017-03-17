@@ -10,6 +10,23 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRectTracker
+- AFXEXT/CRectTracker
+- AFXEXT/CRectTracker::CRectTracker
+- AFXEXT/CRectTracker::AdjustRect
+- AFXEXT/CRectTracker::Draw
+- AFXEXT/CRectTracker::DrawTrackerRect
+- AFXEXT/CRectTracker::GetHandleMask
+- AFXEXT/CRectTracker::GetTrueRect
+- AFXEXT/CRectTracker::HitTest
+- AFXEXT/CRectTracker::NormalizeHit
+- AFXEXT/CRectTracker::OnChangedRect
+- AFXEXT/CRectTracker::SetCursor
+- AFXEXT/CRectTracker::Track
+- AFXEXT/CRectTracker::TrackRubberBand
+- AFXEXT/CRectTracker::m_nHandleSize
+- AFXEXT/CRectTracker::m_nStyle
+- AFXEXT/CRectTracker::m_rect
+- AFXEXT/CRectTracker::m_sizeMin
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +117,7 @@ class CRectTracker
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-nameadjustrecta--crecttrackeradjustrect"></a><a name="adjustrect"></a>CRectTracker::AdjustRect  
+##  <a name="adjustrect"></a>CRectTracker::AdjustRect  
  サイズ変更ハンドルを使用して追跡四角形のサイズが変更されるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -123,7 +140,7 @@ virtual void AdjustRect(
   
  直接サポートされていない特殊な機能`CRectTracker`など、グリッドにスナップや縦横比の保持は、この関数をオーバーライドすることで実装できます。  
   
-##  <a name="a-namecrecttrackera--crecttrackercrecttracker"></a><a name="crecttracker"></a>利用  
+##  <a name="crecttracker"></a>利用  
  作成して初期化、`CRectTracker`オブジェクトです。  
   
 ```  
@@ -157,7 +174,7 @@ CRectTracker(
 ### <a name="remarks"></a>コメント  
  既定のコンス トラクター、`CRectTracker`から値を持つオブジェクト`lpSrcRect`し、その他のシステムの既定のサイズを初期化します。 パラメーターなしで、オブジェクトが作成された場合、`m_rect`と`m_nStyle`データ メンバーは初期化されていません。  
   
-##  <a name="a-namedrawa--crecttrackerdraw"></a><a name="draw"></a>CRectTracker::Draw  
+##  <a name="draw"></a>CRectTracker::Draw  
  四角形の外枠と内部の領域を描画するには、この関数を呼び出します。  
   
 ```  
@@ -171,7 +188,7 @@ void Draw(CDC* pDC) const;
 ### <a name="remarks"></a>コメント  
  トラッカーのスタイルでは、描画を行う方法を決定します。 コンス トラクターを参照してください`CRectTracker`使用可能なスタイルの詳細についてです。  
   
-##  <a name="a-namedrawtrackerrecta--crecttrackerdrawtrackerrect"></a><a name="drawtrackerrect"></a>CRectTracker::DrawTrackerRect  
+##  <a name="drawtrackerrect"></a>CRectTracker::DrawTrackerRect  
  トラッカーの位置が変更されるたびに、フレームワークが呼び出します内ときに、`Track`または`TrackRubberBand`メンバー関数。  
   
 ```  
@@ -200,7 +217,7 @@ virtual void DrawTrackerRect(
   
  追跡操作中にさまざまなフィードバックを提供するには、この関数をオーバーライドします。  
   
-##  <a name="a-namegethandlemaska--crecttrackergethandlemask"></a><a name="gethandlemask"></a>CRectTracker::GetHandleMask  
+##  <a name="gethandlemask"></a>CRectTracker::GetHandleMask  
  フレームワークでは、四角形のサイズ変更ハンドルのマスクを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -221,7 +238,7 @@ virtual UINT GetHandleMask() const;
   
  指定したサイズ変更ハンドルを表示または非表示には、このメンバー関数をオーバーライドします。  
   
-##  <a name="a-namegettruerecta--crecttrackergettruerect"></a><a name="gettruerect"></a>CRectTracker::GetTrueRect  
+##  <a name="gettruerect"></a>CRectTracker::GetTrueRect  
  四角形の座標を取得するには、この関数を呼び出します。  
   
 ```  
@@ -235,7 +252,7 @@ void GetTrueRect(LPRECT lpTrueRect) const;
 ### <a name="remarks"></a>コメント  
  四角形のディメンションには、外側の境界線上にある任意のサイズ変更ハンドルの幅と高さが含まれます。 `lpTrueRect`デバイス座標で正規化された四角形は、常にします。  
   
-##  <a name="a-namehittesta--crecttrackerhittest"></a><a name="hittest"></a>CRectTracker::HitTest  
+##  <a name="hittest"></a>CRectTracker::HitTest  
  ユーザーがサイズ変更ハンドルを取得したかどうかを確認するには、この関数を呼び出します。  
   
 ```  
@@ -269,7 +286,7 @@ int HitTest(CPoint point) const;
   
 - **CRectTracker::hitMiddle** 8  
   
-##  <a name="a-namemnhandlesizea--crecttrackermnhandlesize"></a><a name="m_nhandlesize"></a>CRectTracker::m_nHandleSize  
+##  <a name="m_nhandlesize"></a>CRectTracker::m_nHandleSize  
  サイズ (ピクセル単位) の`CRectTracker`ハンドルのサイズを変更します。  
   
 ```  
@@ -279,14 +296,14 @@ int m_nHandleSize;
 ### <a name="remarks"></a>コメント  
  システムの既定値で初期化されます。  
   
-##  <a name="a-namemrecta--crecttrackermrect"></a><a name="m_rect"></a>裏返し  
+##  <a name="m_rect"></a>裏返し  
  クライアント座標 (ピクセル単位) で、四角形の現在の位置。  
   
 ```  
 CRect m_rect;  
 ```  
   
-##  <a name="a-namemsizemina--crecttrackermsizemin"></a><a name="m_sizemin"></a>CRectTracker::m_sizeMin  
+##  <a name="m_sizemin"></a>CRectTracker::m_sizeMin  
  四角形の最小サイズ。  
   
 ```  
@@ -296,7 +313,7 @@ CSize m_sizeMin;
 ### <a name="remarks"></a>コメント  
  両方の既定値**cx**と**cy**罫線の幅に関する既定のシステム値から計算されます。 このデータ メンバーのみが使用、`AdjustRect`メンバー関数。  
   
-##  <a name="a-namemnstylea--crecttrackermnstyle"></a><a name="m_nstyle"></a>CRectTracker::m_nStyle  
+##  <a name="m_nstyle"></a>CRectTracker::m_nStyle  
  四角形の現在のスタイル。  
   
 ```  
@@ -306,7 +323,7 @@ UINT m_nStyle;
 ### <a name="remarks"></a>コメント  
  参照してください[利用](#crecttracker)できるスタイルの一覧にします。  
   
-##  <a name="a-namenormalizehita--crecttrackernormalizehit"></a><a name="normalizehit"></a>CRectTracker::NormalizeHit  
+##  <a name="normalizehit"></a>CRectTracker::NormalizeHit  
  反転された可能性があるハンドルを変換するには、この関数を呼び出します。  
   
 ```  
@@ -323,7 +340,7 @@ int NormalizeHit(int nHandle) const;
 ### <a name="remarks"></a>コメント  
  `CRectTracker::Track`または`CRectTracker::TrackRubberBand`と呼びます許可を反転するには、そのは四角形を x 軸、y 軸、またはその両方に反転させることにします。 この場合、`HitTest`は四角形反転がハンドルを返します。 これは、フィードバックが変更される四角形のデータ構造の部分ではなく四角形の画面上の位置に依存するためいないカーソルのフィードバックの描画に適したです。  
   
-##  <a name="a-nameonchangedrecta--crecttrackeronchangedrect"></a><a name="onchangedrect"></a>CRectTracker::OnChangedRect  
+##  <a name="onchangedrect"></a>CRectTracker::OnChangedRect  
  トラッカーの四角形の呼び出し中に変更されるたびに、フレームワークが呼び出します`Track`します。  
   
 ```  
@@ -339,7 +356,7 @@ virtual void OnChangedRect(const CRect& rectOld);
   
  四角形のサイズが変更された後、操作を実行している場合は、この関数をオーバーライドします。  
   
-##  <a name="a-namesetcursora--crecttrackersetcursor"></a><a name="setcursor"></a>CRectTracker::SetCursor  
+##  <a name="setcursor"></a>CRectTracker::SetCursor  
  上では、カーソルの形状を変更するには、この関数を呼び出して、`CRectTracker`のオブジェクトの領域です。  
   
 ```  
@@ -361,7 +378,7 @@ BOOL SetCursor(
 ### <a name="remarks"></a>コメント  
  この関数は、処理するウィンドウの関数内から呼び出す、`WM_SETCURSOR`メッセージ (通常`OnSetCursor`)。  
   
-##  <a name="a-nametracka--crecttrackertrack"></a><a name="track"></a>反転  
+##  <a name="track"></a>反転  
  四角形のサイズを変更するユーザー インターフェイスを表示するには、この関数を呼び出します。  
   
 ```  
@@ -395,7 +412,7 @@ BOOL Track(
   
  場合`bAllowInvert`は**TRUE**が x 軸または y 軸にトラッキング四角形を反転することができます。  
   
-##  <a name="a-nametrackrubberbanda--crecttrackertrackrubberband"></a><a name="trackrubberband"></a>CRectTracker::TrackRubberBand  
+##  <a name="trackrubberband"></a>CRectTracker::TrackRubberBand  
  ラバー バンド選択を行うには、この関数を呼び出します。  
   
 ```  

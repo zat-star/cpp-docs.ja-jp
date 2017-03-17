@@ -10,6 +10,27 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CCmdTarget
+- AFXWIN/CCmdTarget
+- AFXWIN/CCmdTarget::CCmdTarget
+- AFXWIN/CCmdTarget::BeginWaitCursor
+- AFXWIN/CCmdTarget::DoOleVerb
+- AFXWIN/CCmdTarget::EnableAutomation
+- AFXWIN/CCmdTarget::EnableConnections
+- AFXWIN/CCmdTarget::EnableTypeLib
+- AFXWIN/CCmdTarget::EndWaitCursor
+- AFXWIN/CCmdTarget::EnumOleVerbs
+- AFXWIN/CCmdTarget::FromIDispatch
+- AFXWIN/CCmdTarget::GetDispatchIID
+- AFXWIN/CCmdTarget::GetIDispatch
+- AFXWIN/CCmdTarget::GetTypeInfoCount
+- AFXWIN/CCmdTarget::GetTypeInfoOfGuid
+- AFXWIN/CCmdTarget::GetTypeLib
+- AFXWIN/CCmdTarget::GetTypeLibCache
+- AFXWIN/CCmdTarget::IsInvokeAllowed
+- AFXWIN/CCmdTarget::IsResultExpected
+- AFXWIN/CCmdTarget::OnCmdMsg
+- AFXWIN/CCmdTarget::OnFinalRelease
+- AFXWIN/CCmdTarget::RestoreWaitCursor
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -103,7 +124,7 @@ class CCmdTarget : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namebeginwaitcursora--ccmdtargetbeginwaitcursor"></a><a name="beginwaitcursor"></a>CCmdTarget::BeginWaitCursor  
+##  <a name="beginwaitcursor"></a>CCmdTarget::BeginWaitCursor  
  コマンドの実行にかなりの時間を要するが予想される場合は砂時計として表示するには、この関数を呼び出します。  
   
 ```  
@@ -120,14 +141,14 @@ void BeginWaitCursor();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&43;](../../mfc/codesnippet/cpp/ccmdtarget-class_1.cpp)]  
   
-##  <a name="a-nameccmdtargeta--ccmdtargetccmdtarget"></a><a name="ccmdtarget"></a>CCmdTarget::CCmdTarget  
+##  <a name="ccmdtarget"></a>CCmdTarget::CCmdTarget  
  `CCmdTarget` オブジェクトを構築します。  
   
 ```  
 CCmdTarget();
 ```  
   
-##  <a name="a-namedooleverba--ccmdtargetdooleverb"></a><a name="dooleverb"></a>CCmdTarget::DoOleVerb  
+##  <a name="dooleverb"></a>CCmdTarget::DoOleVerb  
  実行する OLE 動詞によって指定されたアクションが発生します。  
   
 ```  
@@ -157,7 +178,7 @@ BOOL DoOleVerb(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、の実装では基本的に[IOleObject::DoVerb](http://msdn.microsoft.com/library/windows/desktop/ms694508)します。 実行可能なアクションによって列挙[CCmdTarget::EnumOleVerbs](#enumoleverbs)します。  
   
-##  <a name="a-nameenableautomationa--ccmdtargetenableautomation"></a><a name="enableautomation"></a>CCmdTarget::EnableAutomation  
+##  <a name="enableautomation"></a>CCmdTarget::EnableAutomation  
  オブジェクトの OLE オートメーションを有効にするには、この関数を呼び出します。  
   
 ```  
@@ -167,7 +188,7 @@ void EnableAutomation();
 ### <a name="remarks"></a>コメント  
  この関数は、通常は、オブジェクトのコンス トラクターから呼び出され、クラスのディスパッチ マップが宣言されている場合にのみ呼び出す必要があります。 オートメーションの詳細については、記事を参照してください。[オートメーション クライアント](../../mfc/automation-clients.md)と[オートメーション サーバー](../../mfc/automation-servers.md)します。  
   
-##  <a name="a-nameenableconnectionsa--ccmdtargetenableconnections"></a><a name="enableconnections"></a>CCmdTarget::EnableConnections  
+##  <a name="enableconnections"></a>CCmdTarget::EnableConnections  
  接続ポイントよりもイベントの発生を使用できます。  
   
 ```  
@@ -177,7 +198,7 @@ void EnableConnections();
 ### <a name="remarks"></a>コメント  
  コネクション ポイントを有効にするには、派生クラスのコンス トラクターでこのメンバー関数を呼び出します。  
   
-##  <a name="a-nameenabletypeliba--ccmdtargetenabletypelib"></a><a name="enabletypelib"></a>CCmdTarget::EnableTypeLib  
+##  <a name="enabletypelib"></a>CCmdTarget::EnableTypeLib  
  オブジェクトのタイプ ライブラリを有効にします。  
   
 ```  
@@ -187,7 +208,7 @@ void EnableTypeLib();
 ### <a name="remarks"></a>コメント  
  コンス トラクターでこのメンバー関数を呼び出して、`CCmdTarget`の型情報を提供する場合は、オブジェクトを派生します。 詳細については、サポート技術情報記事 Q185720 を参照してください"HOWTO: MFC オートメーション サーバーから型情報を入力します。"。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のドキュメントで使用可能な[http://support.microsoft.com](http://support.microsoft.com/)します。  
   
-##  <a name="a-nameendwaitcursora--ccmdtargetendwaitcursor"></a><a name="endwaitcursor"></a>CCmdTarget::EndWaitCursor  
+##  <a name="endwaitcursor"></a>CCmdTarget::EndWaitCursor  
  呼び出した後に、この関数を呼び出して、`BeginWaitCursor`砂時計カーソルから以前のカーソルに戻すためのメンバー関数。  
   
 ```  
@@ -200,7 +221,7 @@ void EndWaitCursor();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&43;](../../mfc/codesnippet/cpp/ccmdtarget-class_1.cpp)]  
   
-##  <a name="a-nameenumoleverbsa--ccmdtargetenumoleverbs"></a><a name="enumoleverbs"></a>CCmdTarget::EnumOleVerbs  
+##  <a name="enumoleverbs"></a>CCmdTarget::EnumOleVerbs  
  オブジェクトの OLE 動詞を列挙します。  
   
 ```  
@@ -217,7 +238,7 @@ BOOL EnumOleVerbs(LPENUMOLEVERB* ppenumOleVerb);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、の実装では基本的に[IOleObject::EnumVerbs](http://msdn.microsoft.com/library/windows/desktop/ms692781)します。  
   
-##  <a name="a-namefromidispatcha--ccmdtargetfromidispatch"></a><a name="fromidispatch"></a>CCmdTarget::FromIDispatch  
+##  <a name="fromidispatch"></a>CCmdTarget::FromIDispatch  
  マップするには、この関数を呼び出して、`IDispatch`ポインター、オートメーション メンバー関数、クラスから受信した、`CCmdTarget`のインターフェイスを実装するオブジェクト、`IDispatch`オブジェクトです。  
   
 ```  
@@ -234,7 +255,7 @@ static CCmdTarget* PASCAL FromIDispatch(LPDISPATCH lpDispatch);
 ### <a name="remarks"></a>コメント  
  この関数の結果はメンバー関数への呼び出しの逆`GetIDispatch`します。  
   
-##  <a name="a-namegetdispatchiida--ccmdtargetgetdispatchiid"></a><a name="getdispatchiid"></a>CCmdTarget::GetDispatchIID  
+##  <a name="getdispatchiid"></a>CCmdTarget::GetDispatchIID  
  プライマリ ディスパッチ インターフェイス ID を取得します  
   
 ```  
@@ -253,7 +274,7 @@ virtual BOOL GetDispatchIID(IID* pIID);
   
  詳細については、サポート技術情報記事 Q185720 を参照してください"HOWTO: MFC オートメーション サーバーから型情報を入力します。"。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のドキュメントで使用可能な[http://support.microsoft.com](http://support.microsoft.com/)します。  
   
-##  <a name="a-namegetidispatcha--ccmdtargetgetidispatch"></a><a name="getidispatch"></a>CCmdTarget::GetIDispatch  
+##  <a name="getidispatch"></a>CCmdTarget::GetIDispatch  
  取得するには、このメンバー関数を呼び出す、`IDispatch`ポインター オートメーション メソッドからはどちらかが返されます、`IDispatch`ポインターまたはでは、`IDispatch`ポインターの参照をします。  
   
 ```  
@@ -270,7 +291,7 @@ LPDISPATCH GetIDispatch(BOOL bAddRef);
 ### <a name="remarks"></a>コメント  
  オブジェクトを呼び出す`EnableAutomation`この関数がの基礎クラスの実装にポインターを返すため、オートメーションを有効にすると、そのコンス トラクターで`IDispatch`経由で通信するクライアントで使用されている、`IDispatch`インターフェイスです。 呼び出しを作成する必要はありませんので、ポインターへの参照を追加する自動的にこの関数を呼び出す[:addref](http://msdn.microsoft.com/library/windows/desktop/ms691379)します。  
   
-##  <a name="a-namegettypeinfocounta--ccmdtargetgettypeinfocount"></a><a name="gettypeinfocount"></a>CCmdTarget::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>CCmdTarget::GetTypeInfoCount  
  オブジェクトが提供する型情報インターフェイスの数を取得します。  
   
 ```  
@@ -285,7 +306,7 @@ virtual UINT GetTypeInfoCount();
   
  派生クラスでは、(0 または 1) を提供する型情報インターフェイスの数を取得するには、この関数をオーバーライドする必要があります。 オーバーライドされなかった場合、**しなかった**0 を返します。 をオーバーライドするを使用して、 [IMPLEMENT_OLETYPELIB](../../mfc/reference/type-library-access.md#implement_oletypelib)も実装されているマクロ`GetTypeLib`と`GetTypeLibCache`です。  
   
-##  <a name="a-namegettypeinfoofguida--ccmdtargetgettypeinfoofguid"></a><a name="gettypeinfoofguid"></a>CCmdTarget::GetTypeInfoOfGuid  
+##  <a name="gettypeinfoofguid"></a>CCmdTarget::GetTypeInfoOfGuid  
  指定された GUID に対応する型の説明を取得します。  
   
 ```  
@@ -308,7 +329,7 @@ HRESULT GetTypeInfoOfGuid(
 ### <a name="return-value"></a>戻り値  
  成功した場合または呼び出しの失敗を示す HRESULT。 成功した場合、*`ppTypeInfo`型情報インターフェイスをポイントします。  
   
-##  <a name="a-namegettypeliba--ccmdtargetgettypelib"></a><a name="gettypelib"></a>CCmdTarget::GetTypeLib  
+##  <a name="gettypelib"></a>CCmdTarget::GetTypeLib  
  タイプ ライブラリへのポインターを取得します。  
   
 ```  
@@ -330,7 +351,7 @@ virtual HRESULT GetTypeLib(
 ### <a name="remarks"></a>コメント  
  派生クラスは、このメンバー関数をオーバーライドする必要があります (オーバーライドされなかった場合、 `GetTypeLib` TYPE_E_CANTLOADLIBRARY を返します)。 使用して、 [IMPLEMENT_OLETYPELIB](../../mfc/reference/type-library-access.md#implement_oletypelib)も実装されているマクロ`GetTypeInfoCount`と`GetTypeLibCache`です。  
   
-##  <a name="a-namegettypelibcachea--ccmdtargetgettypelibcache"></a><a name="gettypelibcache"></a>CCmdTarget::GetTypeLibCache  
+##  <a name="gettypelibcache"></a>CCmdTarget::GetTypeLibCache  
  タイプ ライブラリのキャッシュを取得します。  
   
 ```  
@@ -343,7 +364,7 @@ virtual CTypeLibCache* GetTypeLibCache();
 ### <a name="remarks"></a>コメント  
  派生クラスは、このメンバー関数をオーバーライドする必要があります (オーバーライドされなかった場合、**によりオーバーライド**NULL が返されます)。 使用して、 [IMPLEMENT_OLETYPELIB](../../mfc/reference/type-library-access.md#implement_oletypelib)も実装されているマクロ`GetTypeInfoCount`と`GetTypeLib`です。  
   
-##  <a name="a-nameisinvokealloweda--ccmdtargetisinvokeallowed"></a><a name="isinvokeallowed"></a>CCmdTarget::IsInvokeAllowed  
+##  <a name="isinvokeallowed"></a>CCmdTarget::IsInvokeAllowed  
  この関数は mfc の**idispatch::invoke**場合、指定されたオートメーション メソッド (で識別される`dispid`) 呼び出すことができます。  
   
 ```  
@@ -362,7 +383,7 @@ virtual BOOL IsInvokeAllowed(DISPID dispid);
   
  派生クラスは、適切な値を返すには、この関数をオーバーライドして (オーバーライドされなかった場合、`IsInvokeAllowed`に TRUE を返します)。 具体的にを参照してください[COleControl::IsInvokeAllowed](../../mfc/reference/colecontrol-class.md#isinvokeallowed)します。  
   
-##  <a name="a-nameisresultexpecteda--ccmdtargetisresultexpected"></a><a name="isresultexpected"></a>CCmdTarget::IsResultExpected  
+##  <a name="isresultexpected"></a>CCmdTarget::IsResultExpected  
  使用`IsResultExpected`をクライアントがオートメーション関数の呼び出しからの戻り値を求めているかどうかを確認します。  
   
 ```  
@@ -379,7 +400,7 @@ BOOL IsResultExpected();
   
  `IsResultExpected`オートメーション関数呼び出しが実行されていないときに呼び出された場合は、0 以外の値を返します。  
   
-##  <a name="a-nameoncmdmsga--ccmdtargetoncmdmsg"></a><a name="oncmdmsg"></a>CCmdTarget::OnCmdMsg  
+##  <a name="oncmdmsg"></a>CCmdTarget::OnCmdMsg  
  コマンド メッセージをディスパッチするため、コマンドのユーザー インターフェイス オブジェクトの更新を処理するために framework によって呼び出されます。  
   
 ```  
@@ -428,7 +449,7 @@ virtual BOOL OnCmdMsg(
   
  [!code-cpp[NVC_MFCDocView #&45;](../../mfc/codesnippet/cpp/ccmdtarget-class_3.cpp)]  
   
-##  <a name="a-nameonfinalreleasea--ccmdtargetonfinalrelease"></a><a name="onfinalrelease"></a>CCmdTarget::OnFinalRelease  
+##  <a name="onfinalrelease"></a>CCmdTarget::OnFinalRelease  
  OLE の最後の参照オブジェクト間のリリース時に、フレームワークによって呼び出されます。  
   
 ```  
@@ -438,7 +459,7 @@ virtual void OnFinalRelease();
 ### <a name="remarks"></a>コメント  
  この状況に特別な処理を提供するには、この関数をオーバーライドします。 既定の実装では、オブジェクトを削除します。  
   
-##  <a name="a-namerestorewaitcursora--ccmdtargetrestorewaitcursor"></a><a name="restorewaitcursor"></a>CCmdTarget::RestoreWaitCursor  
+##  <a name="restorewaitcursor"></a>CCmdTarget::RestoreWaitCursor  
  (たとえば、終了後、メッセージ ボックスが開き、時間のかかる操作の途中で終了し、)、システムのカーソルが変更された後に、適切な砂時計カーソルを復元するには、この関数を呼び出します。  
   
 ```  

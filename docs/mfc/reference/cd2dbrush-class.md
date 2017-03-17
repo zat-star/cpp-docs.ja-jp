@@ -10,7 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DBrush
-- afxrendertarget/CD2DBrush
+- AFXRENDERTARGET/CD2DBrush
+- AFXRENDERTARGET/CD2DBrush::CD2DBrush
+- AFXRENDERTARGET/CD2DBrush::Attach
+- AFXRENDERTARGET/CD2DBrush::Destroy
+- AFXRENDERTARGET/CD2DBrush::Detach
+- AFXRENDERTARGET/CD2DBrush::Get
+- AFXRENDERTARGET/CD2DBrush::GetOpacity
+- AFXRENDERTARGET/CD2DBrush::GetTransform
+- AFXRENDERTARGET/CD2DBrush::IsValid
+- AFXRENDERTARGET/CD2DBrush::SetOpacity
+- AFXRENDERTARGET/CD2DBrush::SetTransform
+- AFXRENDERTARGET/CD2DBrush::m_pBrush
+- AFXRENDERTARGET/CD2DBrush::m_pBrushProperties
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,14 +107,14 @@ class CD2DBrush : public CD2DResource;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dbrusha--cd2dbrushcd2dbrush"></a><a name="_dtorcd2dbrush"></a>CD2DBrush:: ~ CD2DBrush  
+##  <a name="_dtorcd2dbrush"></a>CD2DBrush:: ~ CD2DBrush  
  デストラクターです。 D2D brush オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DBrush();
 ```  
   
-##  <a name="a-nameattacha--cd2dbrushattach"></a><a name="attach"></a>CD2DBrush::Attach  
+##  <a name="attach"></a>CD2DBrush::Attach  
  オブジェクトにリソース インタ フェースを既存の接続  
   
 ```  
@@ -113,7 +125,7 @@ void Attach(ID2D1Brush* pResource);
  `pResource`  
  既存のリソースのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namecd2dbrusha--cd2dbrushcd2dbrush"></a><a name="cd2dbrush"></a>CD2DBrush::CD2DBrush  
+##  <a name="cd2dbrush"></a>CD2DBrush::CD2DBrush  
  CD2DBrush オブジェクトを構築します。  
   
 ```  
@@ -133,14 +145,14 @@ CD2DBrush(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namedestroya--cd2dbrushdestroy"></a><a name="destroy"></a>CD2DBrush::Destroy  
+##  <a name="destroy"></a>CD2DBrush::Destroy  
  CD2DBrush オブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namedetacha--cd2dbrushdetach"></a><a name="detach"></a>CD2DBrush::Detach  
+##  <a name="detach"></a>CD2DBrush::Detach  
  オブジェクトからリソース インタ フェースをデタッチします。  
   
 ```  
@@ -150,7 +162,7 @@ ID2D1Brush* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたリソース インタ フェースへのポインター。  
   
-##  <a name="a-namegeta--cd2dbrushget"></a><a name="get"></a>CD2DBrush::Get  
+##  <a name="get"></a>CD2DBrush::Get  
  返します。 ID2D1Brush インターフェイス  
   
 ```  
@@ -160,7 +172,7 @@ ID2D1Brush* Get();
 ### <a name="return-value"></a>戻り値  
  ID2D1Brush インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namegetopacitya--cd2dbrushgetopacity"></a><a name="getopacity"></a>CD2DBrush::GetOpacity  
+##  <a name="getopacity"></a>CD2DBrush::GetOpacity  
  このブラシの不透明度を取得します。  
   
 ```  
@@ -170,7 +182,7 @@ FLOAT GetOpacity() const;
 ### <a name="return-value"></a>戻り値  
  0 ~ ブラシの不透明度を示す 1 の値。 この値は、ブラシで埋められたすべてのピクセルのアルファ値を直線的にスケーリングする定数の乗数です。 乗算は前に不透明度の値が 0 ~ 1 の範囲にクランプされます。  
   
-##  <a name="a-namegettransforma--cd2dbrushgettransform"></a><a name="gettransform"></a>CD2DBrush::GetTransform  
+##  <a name="gettransform"></a>CD2DBrush::GetTransform  
  レンダー ターゲットの現在の変換を取得します。  
   
 ```  
@@ -181,7 +193,7 @@ void GetTransform(D2D1_MATRIX_3X2_F* transform) const;
  `transform`  
  このエラーが返されるときに、レンダー ターゲットの現在の変換が含まれています。 このパラメーターは初期化せずに渡されます  
   
-##  <a name="a-nameisvalida--cd2dbrushisvalid"></a><a name="isvalid"></a>CD2DBrush::IsValid  
+##  <a name="isvalid"></a>CD2DBrush::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -191,21 +203,21 @@ virtual BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namempbrusha--cd2dbrushmpbrush"></a><a name="m_pbrush"></a>CD2DBrush::m_pBrush  
+##  <a name="m_pbrush"></a>CD2DBrush::m_pBrush  
  ID2D1Brush オブジェクトへのポインターを格納します。  
   
 ```  
 ID2D1Brush* m_pBrush;  
 ```  
   
-##  <a name="a-namempbrushpropertiesa--cd2dbrushmpbrushproperties"></a><a name="m_pbrushproperties"></a>CD2DBrush::m_pBrushProperties  
+##  <a name="m_pbrushproperties"></a>CD2DBrush::m_pBrushProperties  
  ブラシのプロパティです。  
   
 ```  
 CD2DBrushProperties* m_pBrushProperties;  
 ```  
   
-##  <a name="a-nameoperatorid2d1brushstara--cd2dbrushoperator-id2d1brush"></a><a name="operator_id2d1brush_star"></a>CD2DBrush::operator ID2D1Brush *  
+##  <a name="operator_id2d1brush_star"></a>CD2DBrush::operator ID2D1Brush *  
  返します。 ID2D1Brush インターフェイス  
   
 ```  
@@ -215,7 +227,7 @@ operator ID2D1Brush*();
 ### <a name="return-value"></a>戻り値  
  ID2D1Brush インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namesetopacitya--cd2dbrushsetopacity"></a><a name="setopacity"></a>CD2DBrush::SetOpacity  
+##  <a name="setopacity"></a>CD2DBrush::SetOpacity  
  このブラシの不透明度を設定します。  
   
 ```  
@@ -226,7 +238,7 @@ void SetOpacity(FLOAT opacity);
  `opacity`  
  0 ~ ブラシの不透明度を示す 1 の値。 この値は、ブラシで埋められたすべてのピクセルのアルファ値を直線的にスケーリングする定数の乗数です。 乗算は前に不透明度の値が 0 ~ 1 の範囲にクランプされます。  
   
-##  <a name="a-namesettransforma--cd2dbrushsettransform"></a><a name="settransform"></a>CD2DBrush::SetTransform  
+##  <a name="settransform"></a>CD2DBrush::SetTransform  
  既存の変換を置き換える、レンダー ターゲットを指定した変換を適用します。 変換後のスペースで後続のすべての描画操作が発生します。  
   
 ```  

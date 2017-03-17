@@ -9,11 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CW2AEX<t_nBufferLength>
 - CW2AEX
-- ATL.CW2AEX<t_nBufferLength>
-- ATL::CW2AEX
-- ATL.CW2AEX
+- ATLCONV/ATL::CW2AEX
+- ATLCONV/ATL::CW2AEX::CW2AEX
+- ATLCONV/ATL::CW2AEX::m_psz
+- ATLCONV/ATL::CW2AEX::m_szBuffer
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -113,7 +113,7 @@ class CW2AEX
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
   
-##  <a name="a-namecw2aexa--cw2aexcw2aex"></a><a name="cw2aex"></a>CW2AEX::CW2AEX  
+##  <a name="cw2aex"></a>CW2AEX::CW2AEX  
  コンストラクターです。  
   
 ```
@@ -131,7 +131,7 @@ CW2AEX(LPCWSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  変換処理で使用するバッファーを割り当てます。  
   
-##  <a name="a-namedtora--cw2aexcw2aex"></a><a name="dtor"></a>CW2AEX:: ~ CW2AEX  
+##  <a name="dtor"></a>CW2AEX:: ~ CW2AEX  
  デストラクターです。  
   
 ```
@@ -141,21 +141,21 @@ CW2AEX(LPCWSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  割り当てられたバッファーを解放します。  
   
-##  <a name="a-namempsza--cw2aexmpsz"></a><a name="m_psz"></a>CW2AEX::m_psz  
+##  <a name="m_psz"></a>CW2AEX::m_psz  
  ソース文字列を格納するデータ メンバー。  
   
 ```
 LPSTR m_psz;
 ```  
   
-##  <a name="a-namemszbuffera--cw2aexmszbuffer"></a><a name="m_szbuffer"></a>CW2AEX::m_szBuffer  
+##  <a name="m_szbuffer"></a>CW2AEX::m_szBuffer  
  静的バッファー、変換後の文字列を格納するために使用します。  
   
 ```
 char m_szBuffer[t_nBufferLength];
 ```  
   
-##  <a name="a-nameoperatorlpstra--cw2aexoperator-lpstr"></a><a name="operator_lpstr"></a>CW2AEX::operator LPSTR  
+##  <a name="operator_lpstr"></a>CW2AEX::operator LPSTR  
  変換演算子。  
   
 ```  

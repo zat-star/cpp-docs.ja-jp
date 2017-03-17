@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleChangeIconDialog
+- AFXODLGS/COleChangeIconDialog
+- AFXODLGS/COleChangeIconDialog::COleChangeIconDialog
+- AFXODLGS/COleChangeIconDialog::DoChangeIcon
+- AFXODLGS/COleChangeIconDialog::DoModal
+- AFXODLGS/COleChangeIconDialog::GetIconicMetafile
+- AFXODLGS/COleChangeIconDialog::m_ci
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +105,7 @@ class COleChangeIconDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecolechangeicondialoga--colechangeicondialogcolechangeicondialog"></a><a name="colechangeicondialog"></a>COleChangeIconDialog::COleChangeIconDialog  
+##  <a name="colechangeicondialog"></a>COleChangeIconDialog::COleChangeIconDialog  
  この関数はのみ、`COleChangeIconDialog`オブジェクトです。  
   
 ```  
@@ -134,7 +140,7 @@ explicit COleChangeIconDialog(
   
  詳細については、次を参照してください。、 [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedochangeicona--colechangeicondialogdochangeicon"></a><a name="dochangeicon"></a>COleChangeIconDialog::DoChangeIcon  
+##  <a name="dochangeicon"></a>COleChangeIconDialog::DoChangeIcon  
  後のダイアログ ボックスで選択した項目を表すアイコンを変更するには、この関数を呼び出す[DoModal](#domodal)返します**IDOK**します。  
   
 ```  
@@ -148,7 +154,7 @@ BOOL DoChangeIcon(COleClientItem* pItem);
 ### <a name="return-value"></a>戻り値  
  変更が成功した場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-namedomodala--colechangeicondialogdomodal"></a><a name="domodal"></a>COleChangeIconDialog::DoModal  
+##  <a name="domodal"></a>COleChangeIconDialog::DoModal  
  OLE の [アイコンの変更] ダイアログ ボックスを表示するには、この関数を呼び出します。  
   
 ```  
@@ -169,7 +175,7 @@ virtual INT_PTR DoModal();
   
  場合`DoModal`返します**IDOK**、他のメンバーの設定やユーザー ダイアログ ボックスに入力した情報を取得する関数を呼び出すことができます。  
   
-##  <a name="a-namegeticonicmetafilea--colechangeicondialoggeticonicmetafile"></a><a name="geticonicmetafile"></a>COleChangeIconDialog::GetIconicMetafile  
+##  <a name="geticonicmetafile"></a>COleChangeIconDialog::GetIconicMetafile  
  選択した項目のアイコンの外観を持つメタファイルを識別するハンドルを取得するには、この関数を呼び出します。  
   
 ```  
@@ -179,7 +185,7 @@ HGLOBAL GetIconicMetafile() const;
 ### <a name="return-value"></a>戻り値  
  選択してダイアログ ボックスを閉じた場合は、新しいアイコンのアイコンの外観を持つメタファイルを識別するハンドル**OK**、それ以外とアイコンが、ダイアログ ボックスが表示される前にします。  
   
-##  <a name="a-namemcia--colechangeicondialogmci"></a><a name="m_ci"></a>COleChangeIconDialog::m_ci  
+##  <a name="m_ci"></a>COleChangeIconDialog::m_ci  
  型の構造体**OLEUICHANGEICON**アイコンの変更 ダイアログ ボックスの動作を制御するために使用します。  
   
 ```  

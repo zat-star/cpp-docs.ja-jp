@@ -10,8 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComMultiThreadModel
-- ATL.CComMultiThreadModel
-- ATL::CComMultiThreadModel
+- ATLBASE/ATL::CComMultiThreadModel
+- ATLBASE/ATL::CComMultiThreadModel::AutoCriticalSection
+- ATLBASE/ATL::CComMultiThreadModel::CriticalSection
+- ATLBASE/ATL::CComMultiThreadModel::ThreadModelNoCS
+- ATLBASE/ATL::CComMultiThreadModel::Decrement
+- ATLBASE/ATL::CComMultiThreadModel::Increment
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +88,7 @@ class CComMultiThreadModel
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameautocriticalsectiona--ccommultithreadmodelautocriticalsection"></a><a name="autocriticalsection"></a>CComMultiThreadModel::AutoCriticalSection  
+##  <a name="autocriticalsection"></a>CComMultiThreadModel::AutoCriticalSection  
  使用する場合`CComMultiThreadModel`、`typedef`名`AutoCriticalSection`クラスを参照[CComAutoCriticalSection](ccomautocriticalsection-class.md)を取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
   
 ```
@@ -148,7 +152,7 @@ private:
 |`InternalAddRef`|増分値は、スレッド セーフではありません。|増分値は、スレッド セーフです。|  
 |`Lock`|何も実行します。クリティカル セクションをロックすることはありません。|何も実行します。クリティカル セクションをロックすることはありません。|  
   
-##  <a name="a-namecriticalsectiona--ccommultithreadmodelcriticalsection"></a><a name="criticalsection"></a>CComMultiThreadModel::CriticalSection  
+##  <a name="criticalsection"></a>CComMultiThreadModel::CriticalSection  
  使用する場合`CComMultiThreadModel`、`typedef`名`CriticalSection`クラスを参照[CComCriticalSection](ccomcriticalsection-class.md)を取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
   
 ```
@@ -169,7 +173,7 @@ typedef CComCriticalSection CriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](#autocriticalsection)します。  
   
-##  <a name="a-namedecrementa--ccommultithreadmodeldecrement"></a><a name="decrement"></a>CComMultiThreadModel::Decrement  
+##  <a name="decrement"></a>CComMultiThreadModel::Decrement  
  この静的関数は、Win32 関数を呼び出して[InterlockedDecrement](http://msdn.microsoft.com/library/windows/desktop/ms683580)、指す変数の値をデクリメント`p`します。  
   
 ```
@@ -186,7 +190,7 @@ static ULONG WINAPI Decrement(LPLONG p) throw ();
 ### <a name="remarks"></a>コメント  
  **InterlockedDecrement**複数のスレッドが同時にこの変数を使用することを防止します。  
   
-##  <a name="a-nameincrementa--ccommultithreadmodelincrement"></a><a name="increment"></a>CComMultiThreadModel::Increment  
+##  <a name="increment"></a>CComMultiThreadModel::Increment  
  この静的関数は、Win32 関数を呼び出して[InterlockedIncrement](http://msdn.microsoft.com/library/windows/desktop/ms683614)が指す変数の値をインクリメントする`p`です。  
   
 ```
@@ -203,7 +207,7 @@ static ULONG WINAPI Increment(LPLONG p) throw ();
 ### <a name="remarks"></a>コメント  
  **InterlockedIncrement**複数のスレッドが同時にこの変数を使用することを防止します。  
   
-##  <a name="a-namethreadmodelnocsa--ccommultithreadmodelthreadmodelnocs"></a><a name="threadmodelnocs"></a>CComMultiThreadModel::ThreadModelNoCS  
+##  <a name="threadmodelnocs"></a>CComMultiThreadModel::ThreadModelNoCS  
  使用する場合`CComMultiThreadModel`、`typedef`名`ThreadModelNoCS`クラスを参照[CComMultiThreadModelNoCS](ccommultithreadmodelnocs-class.md)します。  
   
 ```

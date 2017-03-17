@@ -10,8 +10,38 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRegKey
-- ATL::CRegKey
-- ATL.CRegKey
+- ATLBASE/ATL::CRegKey
+- ATLBASE/ATL::CRegKey::CRegKey
+- ATLBASE/ATL::CRegKey::Attach
+- ATLBASE/ATL::CRegKey::Close
+- ATLBASE/ATL::CRegKey::Create
+- ATLBASE/ATL::CRegKey::DeleteSubKey
+- ATLBASE/ATL::CRegKey::DeleteValue
+- ATLBASE/ATL::CRegKey::Detach
+- ATLBASE/ATL::CRegKey::EnumKey
+- ATLBASE/ATL::CRegKey::Flush
+- ATLBASE/ATL::CRegKey::GetKeySecurity
+- ATLBASE/ATL::CRegKey::NotifyChangeKeyValue
+- ATLBASE/ATL::CRegKey::Open
+- ATLBASE/ATL::CRegKey::QueryBinaryValue
+- ATLBASE/ATL::CRegKey::QueryDWORDValue
+- ATLBASE/ATL::CRegKey::QueryGUIDValue
+- ATLBASE/ATL::CRegKey::QueryMultiStringValue
+- ATLBASE/ATL::CRegKey::QueryQWORDValue
+- ATLBASE/ATL::CRegKey::QueryStringValue
+- ATLBASE/ATL::CRegKey::QueryValue
+- ATLBASE/ATL::CRegKey::RecurseDeleteKey
+- ATLBASE/ATL::CRegKey::SetBinaryValue
+- ATLBASE/ATL::CRegKey::SetDWORDValue
+- ATLBASE/ATL::CRegKey::SetGUIDValue
+- ATLBASE/ATL::CRegKey::SetKeySecurity
+- ATLBASE/ATL::CRegKey::SetKeyValue
+- ATLBASE/ATL::CRegKey::SetMultiStringValue
+- ATLBASE/ATL::CRegKey::SetQWORDValue
+- ATLBASE/ATL::CRegKey::SetStringValue
+- ATLBASE/ATL::CRegKey::SetValue
+- ATLBASE/ATL::CRegKey::m_hKey
+- ATLBASE/ATL::CRegKey::m_pTM
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -126,7 +156,7 @@ class CRegKey
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameattacha--cregkeyattach"></a><a name="attach"></a>CRegKey::Attach  
+##  <a name="attach"></a>CRegKey::Attach  
  HKEY をアタッチするには、このメソッドを呼び出す、`CRegKey`オブジェクトを設定して、 [m_hKey](#m_hkey)メンバーを識別するハンドル`hKey`します。  
   
 ```
@@ -140,7 +170,7 @@ void Attach(HKEY hKey) throw();
 ### <a name="remarks"></a>コメント  
  **アタッチ**場合はアサート`m_hKey`以外の場合します。  
   
-##  <a name="a-nameclosea--cregkeyclose"></a><a name="close"></a>CRegKey::Close  
+##  <a name="close"></a>CRegKey::Close  
  解放するには、このメソッドを呼び出して、 [m_hKey](#m_hkey)メンバーを処理し、NULL に設定します。  
   
 ```
@@ -150,7 +180,7 @@ LONG Close() throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合は、ERROR_SUCCESS; を返しますそれ以外の場合、エラー値を返します。  
   
-##  <a name="a-namecreatea--cregkeycreate"></a><a name="create"></a>CRegKey::Create  
+##  <a name="create"></a>CRegKey::Create  
  としてのサブキーが存在しない場合は、指定したキーを作成するには、このメソッドを呼び出す`hKeyParent`します。  
   
 ```
@@ -192,7 +222,7 @@ LONG Create(
 ### <a name="remarks"></a>コメント  
  **作成**設定、 [m_hKey](#m_hkey)このキーのハンドルへのメンバーです。  
   
-##  <a name="a-namecregkeya--cregkeycregkey"></a><a name="cregkey"></a>CRegKey::CRegKey  
+##  <a name="cregkey"></a>CRegKey::CRegKey  
  コンストラクターです。  
   
 ```
@@ -215,7 +245,7 @@ CRegKey(CAtlTransactionManager* pTM) throw();
 ### <a name="remarks"></a>コメント  
  新しい `CRegKey` オブジェクトを作成します。 既存のオブジェクトを作成することができます`CRegKey`オブジェクト、またはレジストリ キーを識別するハンドル。  
   
-##  <a name="a-namedtora--cregkeycregkey"></a><a name="dtor"></a>CRegKey:: ~ CRegKey  
+##  <a name="dtor"></a>CRegKey:: ~ CRegKey  
  デストラクターです。  
   
 ```
@@ -225,7 +255,7 @@ CRegKey(CAtlTransactionManager* pTM) throw();
 ### <a name="remarks"></a>コメント  
  デストラクターのリリース`m_hKey`します。  
   
-##  <a name="a-namedeletesubkeya--cregkeydeletesubkey"></a><a name="deletesubkey"></a>CRegKey::DeleteSubKey  
+##  <a name="deletesubkey"></a>CRegKey::DeleteSubKey  
  指定したキーをレジストリから削除するには、このメソッドを呼び出します。  
   
 ```
@@ -242,7 +272,7 @@ LONG DeleteSubKey(LPCTSTR lpszSubKey) throw();
 ### <a name="remarks"></a>コメント  
  `DeleteSubKey`サブキーがキーのみ削除できません。 キーにサブキーがある場合は、呼び出す[ある](#recursedeletekey)代わりにします。  
   
-##  <a name="a-namedeletevaluea--cregkeydeletevalue"></a><a name="deletevalue"></a>CRegKey::DeleteValue  
+##  <a name="deletevalue"></a>CRegKey::DeleteValue  
  値フィールドを削除するには、このメソッドを呼び出す[m_hKey](#m_hkey)します。  
   
 ```
@@ -256,7 +286,7 @@ LONG DeleteValue(LPCTSTR lpszValue) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合は、ERROR_SUCCESS を返します。 失敗した場合は、WINERROR.H で定義されている&0; 以外のエラー コードが返されます。  
   
-##  <a name="a-namedetacha--cregkeydetach"></a><a name="detach"></a>CRegKey::Detach  
+##  <a name="detach"></a>CRegKey::Detach  
  デタッチするには、このメソッドを呼び出して、 [m_hKey](#m_hkey)からのメンバーのハンドル、`CRegKey`オブジェクトし、設定`m_hKey`を NULL にします。  
   
 ```
@@ -266,7 +296,7 @@ HKEY Detach() throw();
 ### <a name="return-value"></a>戻り値  
  関連付けられている HKEY、`CRegKey`オブジェクトです。  
   
-##  <a name="a-nameenumkeya--cregkeyenumkey"></a><a name="enumkey"></a>して  
+##  <a name="enumkey"></a>して  
  開いているレジストリ キーのサブキーを列挙するには、このメソッドを呼び出します。  
   
 ```
@@ -296,7 +326,7 @@ LONG EnumKey(
 ### <a name="remarks"></a>コメント  
  サブキーを列挙するには、呼び出す`CRegKey::EnumKey`をゼロから始まるインデックス。 インデックス値をインクリメントし、メソッドが戻る ERROR_NO_MORE_ITEMS までを繰り返します。 詳細については、次を参照してください。 [RegEnumKeyEx](http://msdn.microsoft.com/library/windows/desktop/ms724862)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameflusha--cregkeyflush"></a><a name="flush"></a>CRegKey::Flush  
+##  <a name="flush"></a>CRegKey::Flush  
  すべての開いているレジストリ キーの属性をレジストリに書き込むには、このメソッドを呼び出します。  
   
 ```
@@ -309,7 +339,7 @@ LONG Flush() throw();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [RegEnumFlush](http://msdn.microsoft.com/library/windows/desktop/ms724867)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetkeysecuritya--cregkeygetkeysecurity"></a><a name="getkeysecurity"></a>CRegKey::GetKeySecurity  
+##  <a name="getkeysecurity"></a>CRegKey::GetKeySecurity  
  開いているレジストリ キーを保護するセキュリティ記述子のコピーを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -335,14 +365,14 @@ LONG GetKeySecurity(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [RegGetKeySecurity](http://msdn.microsoft.com/library/windows/desktop/aa379313)します。  
   
-##  <a name="a-namemhkeya--cregkeymhkey"></a><a name="m_hkey"></a>CRegKey::m_hKey  
+##  <a name="m_hkey"></a>CRegKey::m_hKey  
  関連付けられているレジストリ キーのハンドルを含む、`CRegKey`オブジェクトです。  
   
 ```
 HKEY m_hKey;
 ```  
   
-##  <a name="a-namemptma--cregkeymptm"></a><a name="m_ptm"></a>CRegKey::m_pTM  
+##  <a name="m_ptm"></a>CRegKey::m_pTM  
  ポインター、`CAtlTransactionManager`オブジェクトです。  
   
 ```
@@ -351,7 +381,7 @@ CAtlTransactionManager* m_pTM;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namenotifychangekeyvaluea--cregkeynotifychangekeyvalue"></a><a name="notifychangekeyvalue"></a>CRegKey::NotifyChangeKeyValue  
+##  <a name="notifychangekeyvalue"></a>CRegKey::NotifyChangeKeyValue  
  このメソッドでは、属性または開いているレジストリ キーの内容の変更について、呼び出し元に通知します。  
   
 ```
@@ -392,7 +422,7 @@ LONG NotifyChangeKeyValue(
   
  詳細およびサンプル プログラムでは、「 [RegNotifyChangeKeyValue](http://msdn.microsoft.com/library/windows/desktop/ms724892)します。  
   
-##  <a name="a-nameopena--cregkeyopen"></a><a name="open"></a>Cregkey::open  
+##  <a name="open"></a>Cregkey::open  
  指定したキーを開き、設定するには、このメソッドを呼び出す[m_hKey](#m_hkey)をこのキーのハンドル。  
   
 ```
@@ -420,14 +450,14 @@ LONG Open(
   
  異なり[CRegKey::Create](#create)、**開く**が存在しない場合、指定したキーは作成されません。  
   
-##  <a name="a-nameoperatorhkeya--cregkeyoperator-hkey"></a><a name="operator_hkey"></a>CRegKey::operator HKEY  
+##  <a name="operator_hkey"></a>CRegKey::operator HKEY  
  変換、 `CRegKey` HKEY するオブジェクト。  
   
 ```  
 operator HKEY() const throw();
 ```  
   
-##  <a name="a-nameoperatoreqa--cregkeyoperator-"></a><a name="operator_eq"></a>CRegKey::operator =  
+##  <a name="operator_eq"></a>CRegKey::operator =  
  代入演算子。  
   
 ```
@@ -444,7 +474,7 @@ CRegKey& operator= (CRegKey& key) throw();
 ### <a name="remarks"></a>コメント  
  この演算子がデタッチ`key`その現在のオブジェクトからに割り当てます、`CRegKey`オブジェクトの代わりにします。  
   
-##  <a name="a-namequerybinaryvaluea--cregkeyquerybinaryvalue"></a><a name="querybinaryvalue"></a>CRegKey::QueryBinaryValue  
+##  <a name="querybinaryvalue"></a>CRegKey::QueryBinaryValue  
  指定された値の名前のバイナリ データを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -473,7 +503,7 @@ LONG QueryBinaryValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、 [RegQueryValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724911)このメソッドで使用する関数が明示的に NULL 終端の文字列を処理します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namequerydwordvaluea--cregkeyquerydwordvalue"></a><a name="querydwordvalue"></a>CRegKey::QueryDWORDValue  
+##  <a name="querydwordvalue"></a>CRegKey::QueryDWORDValue  
  指定された値の名前の DWORD データを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -498,7 +528,7 @@ LONG QueryDWORDValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、 [RegQueryValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724911)このメソッドで使用する関数が明示的に NULL 終端の文字列を処理します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namequeryguidvaluea--cregkeyqueryguidvalue"></a><a name="queryguidvalue"></a>CRegKey::QueryGUIDValue  
+##  <a name="queryguidvalue"></a>CRegKey::QueryGUIDValue  
  指定された値名の GUID のデータを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -523,7 +553,7 @@ LONG QueryGUIDValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。  
   
-##  <a name="a-namequerymultistringvaluea--cregkeyquerymultistringvalue"></a><a name="querymultistringvalue"></a>CRegKey::QueryMultiStringValue  
+##  <a name="querymultistringvalue"></a>CRegKey::QueryMultiStringValue  
  指定された値名の複数文字列のデータを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -552,7 +582,7 @@ LONG QueryMultiStringValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、 [RegQueryValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724911)このメソッドで使用する関数が明示的に NULL 終端の文字列を処理します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namequeryqwordvaluea--cregkeyqueryqwordvalue"></a><a name="queryqwordvalue"></a>CRegKey::QueryQWORDValue  
+##  <a name="queryqwordvalue"></a>CRegKey::QueryQWORDValue  
  指定された値名の QWORD データを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -577,7 +607,7 @@ LONG QueryQWORDValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、 [RegQueryValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724911)このメソッドで使用する関数が明示的に NULL 終端の文字列を処理します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namequerystringvaluea--cregkeyquerystringvalue"></a><a name="querystringvalue"></a>CRegKey::QueryStringValue  
+##  <a name="querystringvalue"></a>CRegKey::QueryStringValue  
  指定された値名の文字列データを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -606,7 +636,7 @@ LONG QueryStringValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、 [RegQueryValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724911)このメソッドで使用する関数が明示的に NULL 終端の文字列を処理します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namequeryvaluea--cregkeyqueryvalue"></a><a name="queryvalue"></a>CRegKey::QueryValue  
+##  <a name="queryvalue"></a>CRegKey::QueryValue  
  指定した値フィールドのデータを取得するには、このメソッドを呼び出す[m_hKey](#m_hkey)します。 このメソッドの以前のバージョンが現在サポートされていませんしとマークされて**されず**します。  
   
 ```
@@ -662,7 +692,7 @@ ATL_DEPRECATED LONG QueryValue(
 > [!IMPORTANT]
 >  このメソッドは、呼び出し元は、可能性のある信頼性の低いデータの読み取り、レジストリの場所を指定できます。 また、このメソッドで使用する RegQueryValueEx 関数は明示的に文字列は処理しませんは`NULL`は終了します。 呼び出し元のコードの両方の条件を確認する必要があります。  
   
-##  <a name="a-namerecursedeletekeya--cregkeyrecursedeletekey"></a><a name="recursedeletekey"></a>CRegKey::RecurseDeleteKey  
+##  <a name="recursedeletekey"></a>CRegKey::RecurseDeleteKey  
  指定したキーをレジストリから削除し、すべてのサブキーを明示的に削除するには、このメソッドを呼び出します。  
   
 ```
@@ -679,7 +709,7 @@ LONG RecurseDeleteKey(LPCTSTR lpszKey) throw();
 ### <a name="remarks"></a>コメント  
  キーにサブキーがある場合は、キーを削除するには、このメソッドを呼び出す必要があります。  
   
-##  <a name="a-namesetbinaryvaluea--cregkeysetbinaryvalue"></a><a name="setbinaryvalue"></a>CRegKey::SetBinaryValue  
+##  <a name="setbinaryvalue"></a>CRegKey::SetBinaryValue  
  レジストリ キーのバイナリ値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -705,7 +735,7 @@ LONG SetBinaryValue(
 ### <a name="remarks"></a>コメント  
  このメソッドを使用して[RegSetValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724923)に値をレジストリに書き込めません。  
   
-##  <a name="a-namesetdwordvaluea--cregkeysetdwordvalue"></a><a name="setdwordvalue"></a>CRegKey::SetDWORDValue  
+##  <a name="setdwordvalue"></a>CRegKey::SetDWORDValue  
  レジストリ キーの DWORD 値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -725,7 +755,7 @@ LONG SetDWORDValue(LPCTSTR pszValueName, DWORD dwValue) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドを使用して[RegSetValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724923)に値をレジストリに書き込めません。  
   
-##  <a name="a-namesetguidvaluea--cregkeysetguidvalue"></a><a name="setguidvalue"></a>CRegKey::SetGUIDValue  
+##  <a name="setguidvalue"></a>CRegKey::SetGUIDValue  
  レジストリ キーの GUID 値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -745,7 +775,7 @@ LONG SetGUIDValue(LPCTSTR pszValueName, REFGUID guidValue) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドでは、使用`CRegKey::SetStringValue`GUID を使用して文字列に変換し、 [StringFromGUID2](http://msdn.microsoft.com/library/windows/desktop/ms683893)します。  
   
-##  <a name="a-namesetkeyvaluea--cregkeysetkeyvalue"></a><a name="setkeyvalue"></a>CRegKey::SetKeyValue  
+##  <a name="setkeyvalue"></a>CRegKey::SetKeyValue  
  指定したキーの指定した値フィールドにデータを格納するには、このメソッドを呼び出します。  
   
 ```
@@ -771,7 +801,7 @@ LONG SetKeyValue(
 ### <a name="remarks"></a>コメント  
  このメソッドを作成したり開いたり、`lpszKeyName`キーを格納、`lpszValue`内のデータ、`lpszValueName`値フィールドです。  
   
-##  <a name="a-namesetkeysecuritya--cregkeysetkeysecurity"></a><a name="setkeysecurity"></a>CRegKey::SetKeySecurity  
+##  <a name="setkeysecurity"></a>CRegKey::SetKeySecurity  
  レジストリ キーのセキュリティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -798,7 +828,7 @@ LONG SetKeySecurity(SECURITY_INFORMATION si, PSECURITY_DESCRIPTOR psd) throw();
 ### <a name="remarks"></a>コメント  
  キーのセキュリティ属性を設定します。 参照してください[RegSetKeySecurity](http://msdn.microsoft.com/library/windows/desktop/aa379314)詳細です。  
   
-##  <a name="a-namesetmultistringvaluea--cregkeysetmultistringvalue"></a><a name="setmultistringvalue"></a>CRegKey::SetMultiStringValue  
+##  <a name="setmultistringvalue"></a>CRegKey::SetMultiStringValue  
  レジストリ キーの複数文字列の値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -818,7 +848,7 @@ LONG SetMultiStringValue(LPCTSTR pszValueName, LPCTSTR pszValue) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドを使用して[RegSetValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724923)に値をレジストリに書き込めません。  
   
-##  <a name="a-namesetqwordvaluea--cregkeysetqwordvalue"></a><a name="setqwordvalue"></a>CRegKey::SetQWORDValue  
+##  <a name="setqwordvalue"></a>CRegKey::SetQWORDValue  
  レジストリ キーの QWORD 値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -838,7 +868,7 @@ LONG SetQWORDValue(LPCTSTR pszValueName, ULONGLONG qwValue) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドを使用して[RegSetValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724923)に値をレジストリに書き込めません。  
   
-##  <a name="a-namesetstringvaluea--cregkeysetstringvalue"></a><a name="setstringvalue"></a>CRegKey::SetStringValue  
+##  <a name="setstringvalue"></a>CRegKey::SetStringValue  
  レジストリ キーの文字列値を設定します。  
   
 ```
@@ -864,7 +894,7 @@ LONG SetStringValue(
 ### <a name="remarks"></a>コメント  
  このメソッドを使用して[RegSetValueEx](http://msdn.microsoft.com/library/windows/desktop/ms724923\(v=vs.85\).aspx)に値をレジストリに書き込めません。  
   
-##  <a name="a-namesetvaluea--cregkeysetvalue"></a><a name="setvalue"></a>CRegKey::SetValue  
+##  <a name="setvalue"></a>CRegKey::SetValue  
  指定した値フィールドにデータを格納するには、このメソッドを呼び出す[m_hKey](#m_hkey)します。 このメソッドの以前のバージョンが現在サポートされていませんしとマークされて**されず**します。  
   
 ```

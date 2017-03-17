@@ -10,6 +10,28 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComSafeArray
+- ATLSAFE/ATL::CComSafeArray
+- ATLSAFE/ATL::CComSafeArray::CComSafeArray
+- ATLSAFE/ATL::CComSafeArray::Add
+- ATLSAFE/ATL::CComSafeArray::Attach
+- ATLSAFE/ATL::CComSafeArray::CopyFrom
+- ATLSAFE/ATL::CComSafeArray::CopyTo
+- ATLSAFE/ATL::CComSafeArray::Create
+- ATLSAFE/ATL::CComSafeArray::Destroy
+- ATLSAFE/ATL::CComSafeArray::Detach
+- ATLSAFE/ATL::CComSafeArray::GetAt
+- ATLSAFE/ATL::CComSafeArray::GetCount
+- ATLSAFE/ATL::CComSafeArray::GetDimensions
+- ATLSAFE/ATL::CComSafeArray::GetLowerBound
+- ATLSAFE/ATL::CComSafeArray::GetSafeArrayPtr
+- ATLSAFE/ATL::CComSafeArray::GetType
+- ATLSAFE/ATL::CComSafeArray::GetUpperBound
+- ATLSAFE/ATL::CComSafeArray::IsSizable
+- ATLSAFE/ATL::CComSafeArray::MultiDimGetAt
+- ATLSAFE/ATL::CComSafeArray::MultiDimSetAt
+- ATLSAFE/ATL::CComSafeArray::Resize
+- ATLSAFE/ATL::CComSafeArray::SetAt
+- ATLSAFE/ATL::CComSafeArray::m_psa
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -138,7 +160,7 @@ class CComSafeArray
 ## <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&75;](../../atl/codesnippet/cpp/ccomsafearray-class_1.cpp)]  
   
-##  <a name="a-nameadda--ccomsafearrayadd"></a><a name="add"></a>CComSafeArray::Add  
+##  <a name="add"></a>CComSafeArray::Add  
  1 つ以上の要素または&1; つの **SAFEARRAY** 構造体を `CComSafeArray`に追加します。  
   
 ```
@@ -171,7 +193,7 @@ HRESULT Add(const T& t, BOOL bCopy = TRUE);
   
  `bCopy`にフラグが考慮されるときに型の要素`BSTR`または**VARIANT**配列に追加されます。 既定値の**TRUE**により、配列に要素が追加されたときに、データの新しいコピーを作成します。  
   
-##  <a name="a-nameattacha--ccomsafearrayattach"></a><a name="attach"></a>CComSafeArray::Attach  
+##  <a name="attach"></a>CComSafeArray::Attach  
  **SAFEARRAY** 構造体を `CComSafeArray` オブジェクトにアタッチします。  
   
 ```
@@ -188,7 +210,7 @@ HRESULT Attach(const SAFEARRAY* psaSrc);
 ### <a name="remarks"></a>コメント  
  アタッチ、 **SAFEARRAY**構造の`CComSafeArray`オブジェクト、既存の`CComSafeArray`使用可能なメソッドです。  
   
-##  <a name="a-nameccomsafearraya--ccomsafearrayccomsafearray"></a><a name="ccomsafearray"></a>CComSafeArray::CComSafeArray  
+##  <a name="ccomsafearray"></a>CComSafeArray::CComSafeArray  
  コンストラクターです。  
   
 ```
@@ -227,7 +249,7 @@ CComSafeArray(const SAFEARRAY* psaSrc);
  
           `CComSafeArray` オブジェクトを作成します。  
   
-##  <a name="a-namedtora--ccomsafearrayccomsafearray"></a><a name="dtor"></a>CComSafeArray:: ~ CComSafeArray  
+##  <a name="dtor"></a>CComSafeArray:: ~ CComSafeArray  
  デストラクターです。  
   
 ```
@@ -237,7 +259,7 @@ CComSafeArray(const SAFEARRAY* psaSrc);
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namecopyfroma--ccomsafearraycopyfrom"></a><a name="copyfrom"></a>CComSafeArray::CopyFrom  
+##  <a name="copyfrom"></a>CComSafeArray::CopyFrom  
  **SAFEARRAY** 構造体の内容を `CComSafeArray` オブジェクトにコピーします。  
   
 ```
@@ -254,7 +276,7 @@ HRESULT CopyFrom(LPSAFEARRAY* ppArray);
 ### <a name="remarks"></a>コメント  
  このメソッドの内容をコピーする、 **SAFEARRAY**現在`CComSafeArray`オブジェクトです。 配列の既存の内容は置き換えられます。  
   
-##  <a name="a-namecopytoa--ccomsafearraycopyto"></a><a name="copyto"></a>CComSafeArray::CopyTo  
+##  <a name="copyto"></a>CComSafeArray::CopyTo  
  `CComSafeArray` オブジェクトのコピーを作成します。  
   
 ```
@@ -271,7 +293,7 @@ HRESULT CopyTo(LPSAFEARRAY* ppArray);
 ### <a name="remarks"></a>コメント  
  このメソッドの内容をコピーする、`CComSafeArray`オブジェクトを**SAFEARRAY**構造体。  
   
-##  <a name="a-namecreatea--ccomsafearraycreate"></a><a name="create"></a>CComSafeArray::Create  
+##  <a name="create"></a>CComSafeArray::Create  
  
           `CComSafeArray` を作成します。  
   
@@ -299,7 +321,7 @@ HRESULT Create(ULONG ulCount = 0, LONG lLBound = 0);
 ### <a name="remarks"></a>コメント  
  A `CComSafeArray` 、既存のオブジェクトを作成できる**SAFEARRAYBOUND**構造体、または、配列の下限の境界で要素の数を指定することによって、ディメンションの数。 配列は、Visual C からアクセスするのには、下限が 0 になります。 その他の言語には、その他の値の下限の境界 (-10 ~ 10 などの範囲に要素を持つ Visual の基本的なサポート配列など) ことができます。  
   
-##  <a name="a-namedestroya--ccomsafearraydestroy"></a><a name="destroy"></a>CComSafeArray::Destroy  
+##  <a name="destroy"></a>CComSafeArray::Destroy  
  `CComSafeArray` オブジェクトを破棄します。  
   
 ```
@@ -312,7 +334,7 @@ HRESULT Destroy();
 ### <a name="remarks"></a>コメント  
  既存の破棄`CComSafeArray`オブジェクトとすべてのデータが含まれています。  
   
-##  <a name="a-namedetacha--ccomsafearraydetach"></a><a name="detach"></a>CComSafeArray::Detach  
+##  <a name="detach"></a>CComSafeArray::Detach  
  **オブジェクトから** SAFEARRAY `CComSafeArray` をデタッチします。  
   
 ```
@@ -325,7 +347,7 @@ LPSAFEARRAY Detach();
 ### <a name="remarks"></a>コメント  
  このメソッドはデタッチ、 **SAFEARRAY**オブジェクトから、`CComSafeArray`オブジェクトです。  
   
-##  <a name="a-namegetata--ccomsafearraygetat"></a><a name="getat"></a>CComSafeArray::GetAt  
+##  <a name="getat"></a>CComSafeArray::GetAt  
  1 次元配列から&1; つの要素を取得します。  
   
 ```
@@ -339,7 +361,7 @@ T& GetAt(LONG lIndex) const;
 ### <a name="return-value"></a>戻り値  
  要求された配列の要素への参照を返します。  
   
-##  <a name="a-namegetcounta--ccomsafearraygetcount"></a><a name="getcount"></a>CComSafeArray::GetCount  
+##  <a name="getcount"></a>CComSafeArray::GetCount  
  配列内の要素の数を返します。  
   
 ```
@@ -356,7 +378,7 @@ ULONG GetCount(UINT uDim = 0) const;
 ### <a name="remarks"></a>コメント  
  多次元配列を併用すると、このメソッドは特定のディメンションだけで要素の数を返します。  
   
-##  <a name="a-namegetdimensionsa--ccomsafearraygetdimensions"></a><a name="getdimensions"></a>CComSafeArray::GetDimensions  
+##  <a name="getdimensions"></a>CComSafeArray::GetDimensions  
  配列内の次元数を返します。  
   
 ```
@@ -366,7 +388,7 @@ UINT GetDimensions() const;
 ### <a name="return-value"></a>戻り値  
  配列内の次元数を返します。  
   
-##  <a name="a-namegetlowerbounda--ccomsafearraygetlowerbound"></a><a name="getlowerbound"></a>CComSafeArray::GetLowerBound  
+##  <a name="getlowerbound"></a>CComSafeArray::GetLowerBound  
  配列の指定した次元の下限を返します。  
   
 ```
@@ -383,7 +405,7 @@ LONG GetLowerBound(UINT uDim = 0) const;
 ### <a name="remarks"></a>コメント  
  下限が 0 の場合は、この最初の要素は、要素番号 0 C のような配列を示します。 エラーが発生した場合など、無効な次元の引数では、このメソッドを呼び出します`AtlThrow`HRESULT エラーを説明するとします。  
   
-##  <a name="a-namegetsafearrayptra--ccomsafearraygetsafearrayptr"></a><a name="getsafearrayptr"></a>CComSafeArray::GetSafeArrayPtr  
+##  <a name="getsafearrayptr"></a>CComSafeArray::GetSafeArrayPtr  
  `m_psa` データ メンバーのアドレスを返します。  
   
 ```
@@ -393,7 +415,7 @@ LPSAFEARRAY* GetSafeArrayPtr() throw();
 ### <a name="return-value"></a>戻り値  
  ポインターを返す、 [CComSafeArray::m_psa](#m_psa)データ メンバーです。  
   
-##  <a name="a-namegettypea--ccomsafearraygettype"></a><a name="gettype"></a>CComSafeArray::GetType  
+##  <a name="gettype"></a>CComSafeArray::GetType  
  配列に格納されているデータの型を返します。  
   
 ```
@@ -421,7 +443,7 @@ VARTYPE GetType() const;
 |VT_VARIANT|バリアント ポインター|  
 |VT_CY|Currency データ型|  
   
-##  <a name="a-namegetupperbounda--ccomsafearraygetupperbound"></a><a name="getupperbound"></a>CComSafeArray::GetUpperBound  
+##  <a name="getupperbound"></a>CComSafeArray::GetUpperBound  
  配列の任意の次元の上限を返します。  
   
 ```
@@ -438,7 +460,7 @@ LONG GetUpperBound(UINT uDim = 0) const;
 ### <a name="remarks"></a>コメント  
  エラーが発生した場合など、無効な次元の引数では、このメソッドを呼び出します`AtlThrow`HRESULT エラーを説明するとします。  
   
-##  <a name="a-nameissizablea--ccomsafearrayissizable"></a><a name="issizable"></a>CComSafeArray::IsSizable  
+##  <a name="issizable"></a>CComSafeArray::IsSizable  
  `CComSafeArray` オブジェクトのサイズを変更できるかどうかをテストします。  
   
 ```
@@ -448,14 +470,14 @@ bool IsSizable() const;
 ### <a name="return-value"></a>戻り値  
  返します。 **true**場合、`CComSafeArray`サイズを変更できる、 **false**できない場合。  
   
-##  <a name="a-namempsaa--ccomsafearraympsa"></a><a name="m_psa"></a>CComSafeArray::m_psa  
+##  <a name="m_psa"></a>CComSafeArray::m_psa  
  アドレスを保持する、 **SAFEARRAY**構造にアクセスします。  
   
 ```
 LPSAFEARRAY m_psa;
 ```  
   
-##  <a name="a-namemultidimgetata--ccomsafearraymultidimgetat"></a><a name="multidimgetat"></a>CComSafeArray::MultiDimGetAt  
+##  <a name="multidimgetat"></a>CComSafeArray::MultiDimGetAt  
  多次元配列から&1; つの要素を取得します。  
   
 ```
@@ -472,7 +494,7 @@ HRESULT MultiDimGetAt(const LONG* alIndex, T& t);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namemultidimsetata--ccomsafearraymultidimsetat"></a><a name="multidimsetat"></a>CComSafeArray::MultiDimSetAt  
+##  <a name="multidimsetat"></a>CComSafeArray::MultiDimSetAt  
  多次元配列の要素の値を設定します。  
   
 ```
@@ -492,7 +514,7 @@ HRESULT MultiDimSetAt(const LONG* alIndex, const T& t);
 ### <a name="remarks"></a>コメント  
  これは、多次元のバージョンの[CComSafeArray::SetAt](#setat)します。  
   
-##  <a name="a-nameoperatorata--ccomsafearrayoperator-"></a><a name="operator_at"></a>CComSafeArray::operator\[\]  
+##  <a name="operator_at"></a>CComSafeArray::operator\[\]  
  配列から要素を取得します。  
   
 ```
@@ -510,7 +532,7 @@ T& operator[]int nindex) const;
 ### <a name="remarks"></a>コメント  
  同様の機能を実行[CComSafeArray::GetAt](#getat)は、この演算子は、1 次元配列でのみ動作します。  
   
-##  <a name="a-nameoperatoreqa--ccomsafearrayoperator-"></a><a name="operator_eq"></a>CComSafeArray::operator =  
+##  <a name="operator_eq"></a>CComSafeArray::operator =  
  代入演算子。  
   
 ```
@@ -528,7 +550,7 @@ ATL::CComSafeArray<T>& operator=(const SAFEARRAY* psaSrc);
 ### <a name="return-value"></a>戻り値  
  配列に格納されているデータの型を返します。  
   
-##  <a name="a-nameoperatorlpsafearraya--ccomsafearrayoperator-lpsafearray"></a><a name="operator_lpsafearray"></a>CComSafeArray::operator LPSAFEARRAY  
+##  <a name="operator_lpsafearray"></a>CComSafeArray::operator LPSAFEARRAY  
  値を **SAFEARRAY** ポインターにキャストします。  
   
 ```
@@ -538,7 +560,7 @@ operator LPSAFEARRAY() const;
 ### <a name="return-value"></a>戻り値  
  値を **SAFEARRAY** ポインターにキャストします。  
   
-##  <a name="a-nameresizea--ccomsafearrayresize"></a><a name="resize"></a>CComSafeArray::Resize  
+##  <a name="resize"></a>CComSafeArray::Resize  
  `CComSafeArray` オブジェクトのサイズを変更します。  
   
 ```
@@ -562,7 +584,7 @@ HRESULT Resize(ULONG ulCount, LONG lLBound = 0);
 ### <a name="remarks"></a>コメント  
  このメソッドは、右端の次元にだけサイズを変更します。 これは、サイズが変更されない配列を返す**IsResizable**として**false**します。  
   
-##  <a name="a-namesetata--ccomsafearraysetat"></a><a name="setat"></a>CComSafeArray::SetAt  
+##  <a name="setat"></a>CComSafeArray::SetAt  
  1 次元配列の要素の値を設定します。  
   
 ```

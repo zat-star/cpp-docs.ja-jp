@@ -10,6 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IDataObjectImpl
+- ATLCTL/ATL::IDataObjectImpl
+- ATLCTL/ATL::IDataObjectImpl::DAdvise
+- ATLCTL/ATL::IDataObjectImpl::DUnadvise
+- ATLCTL/ATL::IDataObjectImpl::EnumDAdvise
+- ATLCTL/ATL::IDataObjectImpl::EnumFormatEtc
+- ATLCTL/ATL::IDataObjectImpl::FireDataChange
+- ATLCTL/ATL::IDataObjectImpl::GetCanonicalFormatEtc
+- ATLCTL/ATL::IDataObjectImpl::GetData
+- ATLCTL/ATL::IDataObjectImpl::GetDataHere
+- ATLCTL/ATL::IDataObjectImpl::QueryGetData
+- ATLCTL/ATL::IDataObjectImpl::SetData
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -93,7 +104,7 @@ class IDataObjectImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namedadvisea--idataobjectimpldadvise"></a><a name="dadvise"></a>IDataObjectImpl::DAdvise  
+##  <a name="dadvise"></a>IDataObjectImpl::DAdvise  
  データ オブジェクトとアドバイズ シンク間の接続を確立します。  
   
 ```
@@ -111,7 +122,7 @@ HRESULT DAdvise(
   
  参照してください[IDataObject::DAdvise](http://msdn.microsoft.com/library/windows/desktop/ms692579)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedunadvisea--idataobjectimpldunadvise"></a><a name="dunadvise"></a>IDataObjectImpl::DUnadvise  
+##  <a name="dunadvise"></a>IDataObjectImpl::DUnadvise  
  以前に確立した接続が終了した[DAdvise](#dadvise)します。  
   
 ```
@@ -121,7 +132,7 @@ HRESULT DUnadvise(DWORD dwConnection);
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::DUnadvise](http://msdn.microsoft.com/library/windows/desktop/ms692448)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameenumdadvisea--idataobjectimplenumdadvise"></a><a name="enumdadvise"></a>IDataObjectImpl::EnumDAdvise  
+##  <a name="enumdadvise"></a>IDataObjectImpl::EnumDAdvise  
  現在のアドバイザリ コネクションを反復処理する列挙子を作成します。  
   
 ```
@@ -135,7 +146,7 @@ HRESULT DAdvise(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::EnumDAdvise](http://msdn.microsoft.com/library/windows/desktop/ms680127)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameenumformatetca--idataobjectimplenumformatetc"></a><a name="enumformatetc"></a>IDataObjectImpl::EnumFormatEtc  
+##  <a name="enumformatetc"></a>IDataObjectImpl::EnumFormatEtc  
  反復処理する列挙子を作成、 **FORMATETC**データ オブジェクトによってサポートされている構造。  
   
 ```
@@ -150,7 +161,7 @@ HRESULT EnumFormatEtc(
 ### <a name="return-value"></a>戻り値  
  返します。 **E_NOTIMPL**します。  
   
-##  <a name="a-namefiredatachangea--idataobjectimplfiredatachange"></a><a name="firedatachange"></a>IDataObjectImpl::FireDataChange  
+##  <a name="firedatachange"></a>IDataObjectImpl::FireDataChange  
  現在管理されている各アドバイズ シンクに戻るには、変更通知を送信します。  
   
 ```
@@ -160,7 +171,7 @@ HRESULT FireDataChange();
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namegetcanonicalformatetca--idataobjectimplgetcanonicalformatetc"></a><a name="getcanonicalformatetc"></a>IDataObjectImpl::GetCanonicalFormatEtc  
+##  <a name="getcanonicalformatetc"></a>IDataObjectImpl::GetCanonicalFormatEtc  
  論理的に等しい**FORMATETC**はより複雑な構造です。  
   
 ```
@@ -173,7 +184,7 @@ HRESULT GetCanonicalFormatEtc(FORMATETC* pformatetcIn, FORMATETC* pformatetcOut)
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::GetCanonicalFormatEtc](http://msdn.microsoft.com/library/windows/desktop/ms680685)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetdataa--idataobjectimplgetdata"></a><a name="getdata"></a>IDataObjectImpl::GetData  
+##  <a name="getdata"></a>IDataObjectImpl::GetData  
  データ オブジェクトからクライアントにデータを転送します。  
   
 ```
@@ -187,7 +198,7 @@ HRESULT GetData(
   
  参照してください[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetdataherea--idataobjectimplgetdatahere"></a><a name="getdatahere"></a>IDataObjectImpl::GetDataHere  
+##  <a name="getdatahere"></a>IDataObjectImpl::GetDataHere  
  ような`GetData`を除き、クライアントを割り当てる必要があります、 **STGMEDIUM**構造体。  
   
 ```
@@ -202,7 +213,7 @@ HRESULT GetDataHere(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::GetDataHere](http://msdn.microsoft.com/library/windows/desktop/ms687266)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namequerygetdataa--idataobjectimplquerygetdata"></a><a name="querygetdata"></a>IDataObjectImpl::QueryGetData  
+##  <a name="querygetdata"></a>IDataObjectImpl::QueryGetData  
  データ オブジェクトが特定をサポートするかどうかを決定**FORMATETC**データを転送するためです。  
   
 ```
@@ -215,7 +226,7 @@ HRESULT QueryGetData(FORMATETC* pformatetc);
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::QueryGetData](http://msdn.microsoft.com/library/windows/desktop/ms680637)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetdataa--idataobjectimplsetdata"></a><a name="setdata"></a>IDataObjectImpl::SetData  
+##  <a name="setdata"></a>IDataObjectImpl::SetData  
  クライアントからのデータ オブジェクトにデータを転送します。  
   
 ```

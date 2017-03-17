@@ -9,8 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CAnimationStoryboardEventHandler
 - CAnimationStoryboardEventHandler
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler::CAnimationStoryboardEventHandler
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler::CreateInstance
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler::OnStoryboardStatusChanged
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler::OnStoryboardUpdated
+- AFXANIMATIONCONTROLLER/CAnimationStoryboardEventHandler::SetAnimationController
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -79,14 +84,14 @@ class CAnimationStoryboardEventHandler : public CUIAnimationStoryboardEventHandl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-namecanimationstoryboardeventhandlera--canimationstoryboardeventhandlercanimationstoryboardeventhandler"></a><a name="canimationstoryboardeventhandler"></a>CAnimationStoryboardEventHandler::CAnimationStoryboardEventHandler  
+##  <a name="canimationstoryboardeventhandler"></a>CAnimationStoryboardEventHandler::CAnimationStoryboardEventHandler  
  CAnimationStoryboardEventHandler オブジェクトを構築します。  
   
 ```  
 CAnimationStoryboardEventHandler();
 ```  
   
-##  <a name="a-namecreateinstancea--canimationstoryboardeventhandlercreateinstance"></a><a name="createinstance"></a>CAnimationStoryboardEventHandler::CreateInstance  
+##  <a name="createinstance"></a>CAnimationStoryboardEventHandler::CreateInstance  
  CAnimationStoryboardEventHandler コールバックのインスタンスを作成します。  
   
 ```  
@@ -104,7 +109,7 @@ static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-nameonstoryboardstatuschangeda--canimationstoryboardeventhandleronstoryboardstatuschanged"></a><a name="onstoryboardstatuschanged"></a>CAnimationStoryboardEventHandler::OnStoryboardStatusChanged  
+##  <a name="onstoryboardstatuschanged"></a>CAnimationStoryboardEventHandler::OnStoryboardStatusChanged  
  ストーリー ボードの状態が変わったときに発生する OnStoryboardStatusChanged イベントを処理します。  
   
 ```  
@@ -127,7 +132,7 @@ IFACEMETHOD(OnStoryboardStatusChanged) (
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OKそれ以外の場合 E_FAIL します。  
   
-##  <a name="a-nameonstoryboardupdateda--canimationstoryboardeventhandleronstoryboardupdated"></a><a name="onstoryboardupdated"></a>CAnimationStoryboardEventHandler::OnStoryboardUpdated  
+##  <a name="onstoryboardupdated"></a>CAnimationStoryboardEventHandler::OnStoryboardUpdated  
  ストーリー ボードが更新されたときに発生する OnStoryboardUpdated イベントを処理します。  
   
 ```  
@@ -141,7 +146,7 @@ IFACEMETHOD(OnStoryboardUpdated) (__in IUIAnimationStoryboard* storyboard);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OKそれ以外の場合 E_FAIL します。  
   
-##  <a name="a-namesetanimationcontrollera--canimationstoryboardeventhandlersetanimationcontroller"></a><a name="setanimationcontroller"></a>CAnimationStoryboardEventHandler::SetAnimationController  
+##  <a name="setanimationcontroller"></a>CAnimationStoryboardEventHandler::SetAnimationController  
  イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。  
   
 ```  

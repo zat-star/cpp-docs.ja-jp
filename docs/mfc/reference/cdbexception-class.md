@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDBException
+- AFXDB/CDBException
+- AFXDB/CDBException::m_nRetCode
+- AFXDB/CDBException::m_strError
+- AFXDB/CDBException::m_strStateNativeOrigin
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +88,7 @@ class CDBException : public CException
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-##  <a name="a-namemnretcodea--cdbexceptionmnretcode"></a><a name="m_nretcode"></a>CDBException::m_nRetCode  
+##  <a name="m_nretcode"></a>CDBException::m_nRetCode  
  型の ODBC エラー コードを表す**へ**ODBC アプリケーション プログラミング インターフェイス (API) 関数によって返されます。  
   
 ### <a name="remarks"></a>コメント  
@@ -134,13 +138,13 @@ class CDBException : public CException
   
  SQL プレフィックスが付いたコードは、ODBC によって定義されます。 AFX プレフィックスが付いたコードは、AFXDB で定義されます。H に定義しています。  
   
-##  <a name="a-namemstrerrora--cdbexceptionmstrerror"></a><a name="m_strerror"></a>CDBException::m_strError  
+##  <a name="m_strerror"></a>CDBException::m_strError  
  例外の原因となったエラーを説明する文字列が含まれています。  
   
 ### <a name="remarks"></a>コメント  
  文字列は、英数字の用語ではエラーを説明します。 詳細な情報と例についてを参照してください。 **m_strStateNativeOrigin**します。  
   
-##  <a name="a-namemstrstatenativeorigina--cdbexceptionmstrstatenativeorigin"></a><a name="m_strstatenativeorigin"></a>CDBException::m_strStateNativeOrigin  
+##  <a name="m_strstatenativeorigin"></a>CDBException::m_strStateNativeOrigin  
  例外の原因となったエラーを説明する文字列が含まれています。  
   
 ### <a name="remarks"></a>コメント  

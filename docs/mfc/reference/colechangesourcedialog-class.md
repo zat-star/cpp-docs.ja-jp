@@ -10,7 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleChangeSourceDialog
-- OLEUICHANGESOURCE
+- AFXODLGS/COleChangeSourceDialog
+- AFXODLGS/COleChangeSourceDialog::COleChangeSourceDialog
+- AFXODLGS/COleChangeSourceDialog::DoModal
+- AFXODLGS/COleChangeSourceDialog::GetDisplayName
+- AFXODLGS/COleChangeSourceDialog::GetFileName
+- AFXODLGS/COleChangeSourceDialog::GetFromPrefix
+- AFXODLGS/COleChangeSourceDialog::GetItemName
+- AFXODLGS/COleChangeSourceDialog::GetToPrefix
+- AFXODLGS/COleChangeSourceDialog::IsValidSource
+- AFXODLGS/COleChangeSourceDialog::m_cs
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -104,7 +113,7 @@ class COleChangeSourceDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecolechangesourcedialoga--colechangesourcedialogcolechangesourcedialog"></a><a name="colechangesourcedialog"></a>COleChangeSourceDialog::COleChangeSourceDialog  
+##  <a name="colechangesourcedialog"></a>COleChangeSourceDialog::COleChangeSourceDialog  
  この関数は、作成、`COleChangeSourceDialog`オブジェクトです。  
   
 ```  
@@ -125,7 +134,7 @@ explicit COleChangeSourceDialog(
   
  詳細については、次を参照してください。、 [OLEUICHANGESOURCE](http://msdn.microsoft.com/library/windows/desktop/ms682160)構造と[OleUIChangeSource](http://msdn.microsoft.com/library/windows/desktop/ms682497)で[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]します。  
   
-##  <a name="a-namedomodala--colechangesourcedialogdomodal"></a><a name="domodal"></a>COleChangeSourceDialog::DoModal  
+##  <a name="domodal"></a>COleChangeSourceDialog::DoModal  
  OLE の [ソースの変更] ダイアログ ボックスを表示するには、この関数を呼び出します。  
   
 ```  
@@ -152,7 +161,7 @@ virtual INT_PTR DoModal();
   
 - [GetItemName](#getitemname)  
   
-##  <a name="a-namegetdisplaynamea--colechangesourcedialoggetdisplayname"></a><a name="getdisplayname"></a>COleChangeSourceDialog::GetDisplayName  
+##  <a name="getdisplayname"></a>COleChangeSourceDialog::GetDisplayName  
  この関数では、リンクされているクライアント アイテムの完全な表示名を取得します。  
   
 ```  
@@ -162,7 +171,7 @@ CString GetDisplayName();
 ### <a name="return-value"></a>戻り値  
  完全なソース表示名 (moniker)、 [COleClientItem](../../mfc/reference/coleclientitem-class.md)コンス トラクターで指定します。  
   
-##  <a name="a-namegetfilenamea--colechangesourcedialoggetfilename"></a><a name="getfilename"></a>COleChangeSourceDialog::GetFileName  
+##  <a name="getfilename"></a>COleChangeSourceDialog::GetFileName  
  ファイルのモニカーがリンクされているクライアント アイテムの表示名の部分を取得するには、この関数を呼び出します。  
   
 ```  
@@ -175,7 +184,7 @@ CString GetFileName();
 ### <a name="remarks"></a>コメント  
  アイテム モニカーと共にファイル モニカーは、完全な表示名を示します。  
   
-##  <a name="a-namegetfromprefixa--colechangesourcedialoggetfromprefix"></a><a name="getfromprefix"></a>COleChangeSourceDialog::GetFromPrefix  
+##  <a name="getfromprefix"></a>COleChangeSourceDialog::GetFromPrefix  
  この関数では、ソースの以前のプレフィックス文字列を取得します。  
   
 ```  
@@ -192,7 +201,7 @@ CString GetFromPrefix();
   
  詳細については、次を参照してください。、 [OLEUICHANGESOURCE](http://msdn.microsoft.com/library/windows/desktop/ms682160)構造体[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]します。  
   
-##  <a name="a-namegetitemnamea--colechangesourcedialoggetitemname"></a><a name="getitemname"></a>COleChangeSourceDialog::GetItemName  
+##  <a name="getitemname"></a>COleChangeSourceDialog::GetItemName  
  リンクされているクライアント アイテムの表示名のアイテム モニカーの部分を取得するには、この関数を呼び出します。  
   
 ```  
@@ -205,7 +214,7 @@ CString GetItemName();
 ### <a name="remarks"></a>コメント  
  アイテム モニカーと共にファイル モニカーは、完全な表示名を示します。  
   
-##  <a name="a-namegettoprefixa--colechangesourcedialoggettoprefix"></a><a name="gettoprefix"></a>COleChangeSourceDialog::GetToPrefix  
+##  <a name="gettoprefix"></a>COleChangeSourceDialog::GetToPrefix  
  この関数では、ソースの新しいプレフィックス文字列を取得します。  
   
 ```  
@@ -222,7 +231,7 @@ CString GetToPrefix();
   
  詳細については、次を参照してください。、 [OLEUICHANGESOURCE](http://msdn.microsoft.com/library/windows/desktop/ms682160)構造体[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]します。  
   
-##  <a name="a-namemcsa--colechangesourcedialogmcs"></a><a name="m_cs"></a>COleChangeSourceDialog::m_cs  
+##  <a name="m_cs"></a>COleChangeSourceDialog::m_cs  
  このデータ メンバーは型の構造体[OLEUICHANGESOURCE](http://msdn.microsoft.com/library/windows/desktop/ms682160)します。  
   
 ```  
@@ -234,7 +243,7 @@ OLEUICHANGESOURCE m_cs;
   
  詳細については、次を参照してください。、 [OLEUICHANGESOURCE](http://msdn.microsoft.com/library/windows/desktop/ms682160)構造体[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]します。  
   
-##  <a name="a-nameisvalidsourcea--colechangesourcedialogisvalidsource"></a><a name="isvalidsource"></a>COleChangeSourceDialog::IsValidSource  
+##  <a name="isvalidsource"></a>COleChangeSourceDialog::IsValidSource  
  この関数では、新しいソースが有効かを判断します。  
   
 ```  

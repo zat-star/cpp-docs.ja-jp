@@ -10,7 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAtlTransactionManager
-- atltransactionmanager/ATL::CAtlTransactionManager
+- ATLTRANSACTIONMANAGER/ATL::CAtlTransactionManager
+- ATLTRANSACTIONMANAGER/ATL::CAtlTransactionManager
+- ATLTRANSACTIONMANAGER/ATL::Close
+- ATLTRANSACTIONMANAGER/ATL::Commit
+- ATLTRANSACTIONMANAGER/ATL::Create
+- ATLTRANSACTIONMANAGER/ATL::CreateFile
+- ATLTRANSACTIONMANAGER/ATL::DeleteFile
+- ATLTRANSACTIONMANAGER/ATL::FindFirstFile
+- ATLTRANSACTIONMANAGER/ATL::GetFileAttributes
+- ATLTRANSACTIONMANAGER/ATL::GetFileAttributesEx
+- ATLTRANSACTIONMANAGER/ATL::GetHandle
+- ATLTRANSACTIONMANAGER/ATL::IsFallback
+- ATLTRANSACTIONMANAGER/ATL::MoveFile
+- ATLTRANSACTIONMANAGER/ATL::RegCreateKeyEx
+- ATLTRANSACTIONMANAGER/ATL::RegDeleteKey
+- ATLTRANSACTIONMANAGER/ATL::RegOpenKeyEx
+- ATLTRANSACTIONMANAGER/ATL::Rollback
+- ATLTRANSACTIONMANAGER/ATL::SetFileAttributes
+- ATLTRANSACTIONMANAGER/ATL::m_bFallback
+- ATLTRANSACTIONMANAGER/ATL::m_hTransaction
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +116,7 @@ class CAtlTransactionManager;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atltransactionmanager.h  
   
-##  <a name="a-namedtora--catltransactionmanager"></a><a name="dtor"></a>~ CAtlTransactionManager  
+##  <a name="dtor"></a>~ CAtlTransactionManager  
  CAtlTransactionManager デストラクターです。  
   
 ```
@@ -107,7 +126,7 @@ virtual ~CAtlTransactionManager();
 ### <a name="remarks"></a>コメント  
  、通常の処理で、トランザクションが自動的にコミットされ終了します。 例外のアンワインド中にデストラクターが呼び出されると、トランザクションがロールバックされ、終了します。  
   
-##  <a name="a-namecatltransactionmanagera--catltransactionmanager"></a><a name="catltransactionmanager"></a>CAtlTransactionManager  
+##  <a name="catltransactionmanager"></a>CAtlTransactionManager  
  CAtlTransactionManager コンス トラクターです。  
   
 ```
@@ -123,7 +142,7 @@ CAtlTransactionManager(BOOL bFallback = TRUE, BOOL bAutoCreateTransaction = TRUE
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameclosea--close"></a><a name="close"></a>閉じる  
+##  <a name="close"></a>閉じる  
  トランザクション ハンドルを閉じます。  
   
 ```
@@ -136,7 +155,7 @@ inline BOOL Close();
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`CloseHandle`関数です。 メソッドは、デストラクターでは自動的に呼び出されます。  
   
-##  <a name="a-namecommita--commit"></a><a name="commit"></a>コミット  
+##  <a name="commit"></a>コミット  
  トランザクションをコミットすることを要求します。  
   
 ```
@@ -149,7 +168,7 @@ inline BOOL Commit();
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`CommitTransaction`関数です。 メソッドは、デストラクターでは自動的に呼び出されます。  
   
-##  <a name="a-namecreatea--create"></a><a name="create"></a>作成します。  
+##  <a name="create"></a>作成します。  
  トランザクション ハンドルを作成します。  
   
 ```
@@ -162,7 +181,7 @@ inline BOOL Create();
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`CreateTransaction`関数です。 チェックしてください。  
   
-##  <a name="a-namecreatefilea--createfile"></a><a name="createfile"></a>CreateFile  
+##  <a name="createfile"></a>CreateFile  
  作成するか、ファイル、ファイル ストリーム、またはトランザクション処理された操作とディレクトリを開きます。  
   
 ```
@@ -204,7 +223,7 @@ inline HANDLE CreateFile(
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`CreateFileTransacted`関数です。  
   
-##  <a name="a-namedeletefilea--deletefile"></a><a name="deletefile"></a>DeleteFile  
+##  <a name="deletefile"></a>DeleteFile  
  トランザクション処理された操作として、既存のファイルを削除します。  
   
 ```
@@ -218,7 +237,7 @@ inline BOOL DeleteFile(LPCTSTR lpFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`DeleteFileTransacted`関数です。  
   
-##  <a name="a-namefindfirstfilea--findfirstfile"></a><a name="findfirstfile"></a>FindFirstFile  
+##  <a name="findfirstfile"></a>FindFirstFile  
  トランザクション処理された操作として、ディレクトリのファイルまたはサブディレクトリを検索します。  
   
 ```
@@ -240,7 +259,7 @@ inline HANDLE FindFirstFile(
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`FindFirstFileTransacted`関数です。  
   
-##  <a name="a-namegetfileattributesa--getfileattributes"></a><a name="getfileattributes"></a>向上した点  
+##  <a name="getfileattributes"></a>向上した点  
  トランザクション処理された操作として、指定したファイルまたはディレクトリのファイル システム属性を取得します。  
   
 ```
@@ -254,7 +273,7 @@ inline DWORD GetFileAttributes(LPCTSTR lpFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`GetFileAttributesTransacted`関数です。  
   
-##  <a name="a-namegetfileattributesexa--getfileattributesex"></a><a name="getfileattributesex"></a>GetFileAttributesEx  
+##  <a name="getfileattributesex"></a>GetFileAttributesEx  
  トランザクション処理された操作として、指定したファイルまたはディレクトリのファイル システム属性を取得します。  
   
 ```
@@ -277,7 +296,7 @@ inline BOOL GetFileAttributesEx(
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`GetFileAttributesTransacted`関数です。  
   
-##  <a name="a-namegethandlea--gethandle"></a><a name="gethandle"></a>GetHandle  
+##  <a name="gethandle"></a>GetHandle  
  トランザクション ハンドルを返します。  
   
 ```
@@ -289,7 +308,7 @@ HANDLE GetHandle() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisfallbacka--isfallback"></a><a name="isfallback"></a>IsFallback  
+##  <a name="isfallback"></a>IsFallback  
  フォールバックの呼び出しを有効にするかどうかを決定します。  
   
 ```
@@ -301,7 +320,7 @@ BOOL IsFallback() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namembfallbacka--mbfallback"></a><a name="m_bfallback"></a>m_bFallback  
+##  <a name="m_bfallback"></a>m_bFallback  
  `TRUE`フォールバックがサポートされている場合`FALSE`それ以外の場合。  
   
 ```
@@ -310,7 +329,7 @@ BOOL m_bFallback;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemhtransactiona--mhtransaction"></a><a name="m_htransaction"></a>m_hTransaction  
+##  <a name="m_htransaction"></a>m_hTransaction  
  トランザクションのハンドルです。  
   
 ```
@@ -319,7 +338,7 @@ HANDLE m_hTransaction;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemovefilea--movefile"></a><a name="movefile"></a>MoveFile  
+##  <a name="movefile"></a>MoveFile  
  既存のファイルまたはトランザクション処理された操作としてその子を含む、ディレクトリに移動します。  
   
 ```
@@ -336,7 +355,7 @@ inline BOOL MoveFile(LPCTSTR lpOldFileName, LPCTSTR lpNewFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`MoveFileTransacted`関数です。  
   
-##  <a name="a-nameregcreatekeyexa--regcreatekeyex"></a><a name="regcreatekeyex"></a>RegCreateKeyEx  
+##  <a name="regcreatekeyex"></a>RegCreateKeyEx  
  指定されたレジストリ キーを作成し、トランザクションに関連付けます。 キーが既に存在する場合、関数では、それが表示されます。  
   
 ```
@@ -386,7 +405,7 @@ inline LSTATUS RegCreateKeyEx(
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`RegCreateKeyTransacted`関数です。  
   
-##  <a name="a-nameregdeletekeya--regdeletekey"></a><a name="regdeletekey"></a>RegDeleteKey  
+##  <a name="regdeletekey"></a>RegDeleteKey  
  トランザクション処理された操作として、レジストリの指定したプラットフォーム固有のビューからサブキーとその値を削除します。  
   
 ```
@@ -406,7 +425,7 @@ inline LSTATUS RegDeleteKeyEx(HKEY hKey, LPCTSTR lpSubKey);
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`RegDeleteKeyTransacted`関数です。  
   
-##  <a name="a-nameregopenkeyexa--regopenkeyex"></a><a name="regopenkeyex"></a>RegOpenKeyEx  
+##  <a name="regopenkeyex"></a>RegOpenKeyEx  
  指定されたレジストリ キーを開き、トランザクションに関連付けます。  
   
 ```
@@ -440,7 +459,7 @@ inline LSTATUS RegOpenKeyEx(
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`RegOpenKeyTransacted`関数です。  
   
-##  <a name="a-namerollbacka--rollback"></a><a name="rollback"></a>ロールバック  
+##  <a name="rollback"></a>ロールバック  
  トランザクションをロールバックするように要求します。  
   
 ```
@@ -453,7 +472,7 @@ inline BOOL Rollback();
 ### <a name="remarks"></a>コメント  
  このラッパーを呼び出す、`RollbackTransaction`関数です。  
   
-##  <a name="a-namesetfileattributesa--setfileattributes"></a><a name="setfileattributes"></a>SetFileAttributes  
+##  <a name="setfileattributes"></a>SetFileAttributes  
  トランザクション処理された操作として、ファイルまたはディレクトリの属性を設定します。  
   
 ```

@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMetaFileDC
+- AFXEXT/CMetaFileDC
+- AFXEXT/CMetaFileDC::CMetaFileDC
+- AFXEXT/CMetaFileDC::Close
+- AFXEXT/CMetaFileDC::CloseEnhanced
+- AFXEXT/CMetaFileDC::Create
+- AFXEXT/CMetaFileDC::CreateEnhanced
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +100,7 @@ class CMetaFileDC : public CDC
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-nameclosea--cmetafiledcclose"></a><a name="close"></a>CMetaFileDC::Close  
+##  <a name="close"></a>CMetaFileDC::Close  
  メタファイル デバイス コンテキストを閉じを使用してメタファイルを再生するために使用する Windows のメタファイル ハンドルを作成、 [CDC::PlayMetaFile](../../mfc/reference/cdc-class.md#playmetafile)メンバー関数。  
   
 ```  
@@ -109,7 +115,7 @@ HMETAFILE Close();
   
  使用後に、Windows を呼び出すことにより、メタファイルを削除[DeleteMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183537)関数です。  
   
-##  <a name="a-namecloseenhanceda--cmetafiledccloseenhanced"></a><a name="closeenhanced"></a>CMetaFileDC::CloseEnhanced  
+##  <a name="closeenhanced"></a>CMetaFileDC::CloseEnhanced  
  拡張メタファイル デバイス コンテキストを終了し、拡張形式メタファイルを識別するハンドルを返します。  
   
 ```  
@@ -140,7 +146,7 @@ HENHMETAFILE CloseEnhanced();
   
  Win32 を呼び出すことによって、ハンドルを解除する必要があるアプリケーションで拡張メタファイルのハンドルが不要になった場合は、 **DeleteEnhMetaFile**関数です。  
   
-##  <a name="a-namecmetafiledca--cmetafiledccmetafiledc"></a><a name="cmetafiledc"></a>CMetaFileDC::CMetaFileDC  
+##  <a name="cmetafiledc"></a>CMetaFileDC::CMetaFileDC  
  構築、 `CMetaFileDC`&2; つのステップ内のオブジェクト。  
   
 ```  
@@ -150,7 +156,7 @@ CMetaFileDC();
 ### <a name="remarks"></a>コメント  
  最初に、呼び出す`CMetaFileDC`、物書き**作成**、Windows のメタファイル デバイス コンテキストを作成およびそれにアタッチする、`CMetaFileDC`オブジェクトです。  
   
-##  <a name="a-namecreatea--cmetafiledccreate"></a><a name="create"></a>CMetaFileDC::Create  
+##  <a name="create"></a>CMetaFileDC::Create  
  構築、 `CMetaFileDC`&2; つのステップ内のオブジェクト。  
   
 ```  
@@ -167,7 +173,7 @@ BOOL Create(LPCTSTR lpszFilename = NULL);
 ### <a name="remarks"></a>コメント  
  最初に、コンス トラクターを呼び出す`CMetaFileDC`、物書き**作成**、Windows のメタファイル デバイス コンテキストを作成およびそれにアタッチする、`CMetaFileDC`オブジェクトです。  
   
-##  <a name="a-namecreateenhanceda--cmetafiledccreateenhanced"></a><a name="createenhanced"></a>CMetaFileDC::CreateEnhanced  
+##  <a name="createenhanced"></a>CMetaFileDC::CreateEnhanced  
  拡張形式メタファイルのデバイス コンテキストを作成します。  
   
 ```  

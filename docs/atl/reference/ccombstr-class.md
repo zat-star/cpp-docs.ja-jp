@@ -9,9 +9,28 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComBSTR
 - CComBSTR
-- ATL.CComBSTR
+- ATLBASE/ATL::CComBSTR
+- ATLBASE/ATL::CComBSTR::CComBSTR
+- ATLBASE/ATL::CComBSTR::Append
+- ATLBASE/ATL::CComBSTR::AppendBSTR
+- ATLBASE/ATL::CComBSTR::AppendBytes
+- ATLBASE/ATL::CComBSTR::ArrayToBSTR
+- ATLBASE/ATL::CComBSTR::AssignBSTR
+- ATLBASE/ATL::CComBSTR::Attach
+- ATLBASE/ATL::CComBSTR::BSTRToArray
+- ATLBASE/ATL::CComBSTR::ByteLength
+- ATLBASE/ATL::CComBSTR::Copy
+- ATLBASE/ATL::CComBSTR::CopyTo
+- ATLBASE/ATL::CComBSTR::Detach
+- ATLBASE/ATL::CComBSTR::Empty
+- ATLBASE/ATL::CComBSTR::Length
+- ATLBASE/ATL::CComBSTR::LoadString
+- ATLBASE/ATL::CComBSTR::ReadFromStream
+- ATLBASE/ATL::CComBSTR::ToLower
+- ATLBASE/ATL::CComBSTR::ToUpper
+- ATLBASE/ATL::CComBSTR::WriteToStream
+- ATLBASE/ATL::CComBSTR::m_str
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -120,7 +139,7 @@ class CComBSTR
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameappenda--ccombstrappend"></a><a name="append"></a>CComBSTR::Append  
+##  <a name="append"></a>CComBSTR::Append  
  いずれかの追加`lpsz`または`BSTR`のメンバー`bstrSrc`に[m_str](#m_str)します。  
   
 ```
@@ -154,7 +173,7 @@ HRESULT Append(LPCOLESTR lpsz, int nLen) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#32;](../../atl/codesnippet/cpp/ccombstr-class_1.cpp)]  
   
-##  <a name="a-nameappendbstra--ccombstrappendbstr"></a><a name="appendbstr"></a>CComBSTR::AppendBSTR  
+##  <a name="appendbstr"></a>CComBSTR::AppendBSTR  
  指定した追加`BSTR`に[m_str](#m_str)します。  
   
 ```
@@ -174,7 +193,7 @@ HRESULT AppendBSTR(BSTR p) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&33;](../../atl/codesnippet/cpp/ccombstr-class_2.cpp)]  
   
-##  <a name="a-nameappendbytesa--ccombstrappendbytes"></a><a name="appendbytes"></a>CComBSTR::AppendBytes  
+##  <a name="appendbytes"></a>CComBSTR::AppendBytes  
  指定したバイト数の追加[m_str](#m_str)変換なし。  
   
 ```
@@ -194,7 +213,7 @@ HRESULT AppendBytes(const char* lpsz, int nLen) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&34;](../../atl/codesnippet/cpp/ccombstr-class_3.cpp)]  
   
-##  <a name="a-namearraytobstra--ccombstrarraytobstr"></a><a name="arraytobstr"></a>CComBSTR::ArrayToBSTR  
+##  <a name="arraytobstr"></a>CComBSTR::ArrayToBSTR  
  保持されている既存の文字列を解放、`CComBSTR`オブジェクトを作成し、 `BSTR` safearray の各要素の最初の文字からに接続し、`CComBSTR`オブジェクトです。  
   
 ```
@@ -208,7 +227,7 @@ HRESULT ArrayToBSTR(const SAFEARRAY* pSrc) throw();
 ### <a name="return-value"></a>戻り値  
  `S_OK`成功した場合、または任意の標準に`HRESULT`エラー値。  
   
-##  <a name="a-nameassignbstra--ccombstrassignbstr"></a><a name="assignbstr"></a>CComBSTR::AssignBSTR  
+##  <a name="assignbstr"></a>CComBSTR::AssignBSTR  
  代入、`BSTR`に[m_str](#m_str)します。  
   
 ```
@@ -222,7 +241,7 @@ HRESULT AssignBSTR(const BSTR bstrSrc) throw();
 ### <a name="return-value"></a>戻り値  
  `S_OK`成功した場合、または任意の標準に`HRESULT`エラー値。  
   
-##  <a name="a-nameattacha--ccombstrattach"></a><a name="attach"></a>CComBSTR::Attach  
+##  <a name="attach"></a>CComBSTR::Attach  
  アタッチ、`BSTR`に、`CComBSTR`オブジェクトを設定して、 [m_str](#m_str)メンバー *src*します。  
   
 ```
@@ -242,7 +261,7 @@ void Attach(BSTR src) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#35;](../../atl/codesnippet/cpp/ccombstr-class_4.cpp)]  
   
-##  <a name="a-namebstrtoarraya--ccombstrbstrtoarray"></a><a name="bstrtoarray"></a>CComBSTR::BSTRToArray  
+##  <a name="bstrtoarray"></a>CComBSTR::BSTRToArray  
  文字を配列の各要素がここでは&0; から始まる&1; 次元の safearray を作成、`CComBSTR`オブジェクトです。  
   
 ```
@@ -256,7 +275,7 @@ HRESULT BSTRToArray(LPSAFEARRAY* ppArray) throw();
 ### <a name="return-value"></a>戻り値  
  `S_OK`成功した場合、または任意の標準に`HRESULT`エラー値。  
   
-##  <a name="a-namebytelengtha--ccombstrbytelength"></a><a name="bytelength"></a>CComBSTR::ByteLength  
+##  <a name="bytelength"></a>CComBSTR::ByteLength  
  内のバイト数を返します`m_str`、終端の null 文字を除外します。  
   
 ```
@@ -272,7 +291,7 @@ unsigned int ByteLength() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#36;](../../atl/codesnippet/cpp/ccombstr-class_5.cpp)]  
   
-##  <a name="a-nameccombstra--ccombstrccombstr"></a><a name="ccombstr"></a>CComBSTR::CComBSTR  
+##  <a name="ccombstr"></a>CComBSTR::CComBSTR  
  コンストラクターです。 既定のコンス トラクターは、設定、 [m_str](#m_str)メンバー **NULL**します。  
   
 ```
@@ -315,7 +334,7 @@ CComBSTR(CComBSTR&& src) throw(); // (Visual Studio 2017)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&37;](../../atl/codesnippet/cpp/ccombstr-class_6.cpp)]  
   
-##  <a name="a-namedtora--ccombstrccombstr"></a><a name="dtor"></a>CComBSTR:: ~ CComBSTR  
+##  <a name="dtor"></a>CComBSTR:: ~ CComBSTR  
  デストラクターです。  
   
 ```
@@ -325,7 +344,7 @@ CComBSTR(CComBSTR&& src) throw(); // (Visual Studio 2017)
 ### <a name="remarks"></a>コメント  
  デストラクターは、`m_str` が指す文字列を解放します。  
   
-##  <a name="a-namecopya--ccombstrcopy"></a><a name="copy"></a>CComBSTR::Copy  
+##  <a name="copy"></a>CComBSTR::Copy  
  割り当てのコピーを返します`m_str`します。  
   
 ```
@@ -338,7 +357,7 @@ BSTR Copy() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&38;](../../atl/codesnippet/cpp/ccombstr-class_7.cpp)]  
   
-##  <a name="a-namecopytoa--ccombstrcopyto"></a><a name="copyto"></a>CComBSTR::CopyTo  
+##  <a name="copyto"></a>CComBSTR::CopyTo  
  割り当てのコピーを返します[m_str](#m_str)パラメーターを使用しています。  
   
 ```
@@ -363,7 +382,7 @@ HRESULT CopyTo(VARIANT* pvarDest) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#39;](../../atl/codesnippet/cpp/ccombstr-class_8.cpp)]  
   
-##  <a name="a-namedetacha--ccombstrdetach"></a><a name="detach"></a>CComBSTR::Detach  
+##  <a name="detach"></a>CComBSTR::Detach  
  デタッチ[m_str](#m_str)から、`CComBSTR`オブジェクトとセット`m_str`に**NULL**します。  
   
 ```
@@ -376,7 +395,7 @@ BSTR Detach() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&40;](../../atl/codesnippet/cpp/ccombstr-class_9.cpp)]  
   
-##  <a name="a-nameemptya--ccombstrempty"></a><a name="empty"></a>CComBSTR::Empty  
+##  <a name="empty"></a>CComBSTR::Empty  
  解放、 [m_str](#m_str)メンバーです。  
   
 ```
@@ -386,7 +405,7 @@ void Empty() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&41;](../../atl/codesnippet/cpp/ccombstr-class_10.cpp)]  
   
-##  <a name="a-namelengtha--ccombstrlength"></a><a name="length"></a>CComBSTR::Length  
+##  <a name="length"></a>CComBSTR::Length  
  内の文字数を返します`m_str`、終端の null 文字を除外します。  
   
 ```
@@ -399,7 +418,7 @@ unsigned int Length() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&42;](../../atl/codesnippet/cpp/ccombstr-class_11.cpp)]  
   
-##  <a name="a-nameloadstringa--ccombstrloadstring"></a><a name="loadstring"></a>CComBSTR::LoadString  
+##  <a name="loadstring"></a>CComBSTR::LoadString  
  指定された文字列リソースを読み込みます`nID`し、このオブジェクトに格納します。  
   
 ```
@@ -419,7 +438,7 @@ bool LoadString(UINT nID) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&43;](../../atl/codesnippet/cpp/ccombstr-class_12.cpp)]  
   
-##  <a name="a-namemstra--ccombstrmstr"></a><a name="m_str"></a>CComBSTR::m_str  
+##  <a name="m_str"></a>CComBSTR::m_str  
  含む、`BSTR`に関連付けられている、`CComBSTR`オブジェクトです。  
   
 ```
@@ -429,7 +448,7 @@ BSTR m_str;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities 番号&49;](../../atl/codesnippet/cpp/ccombstr-class_13.cpp)]  
   
-##  <a name="a-nameoperatorbstra--ccombstroperator-bstr"></a><a name="operator_bstr"></a>CComBSTR::operator BSTR  
+##  <a name="operator_bstr"></a>CComBSTR::operator BSTR  
  キャスト、`CComBSTR`オブジェクトを`BSTR`です。  
   
 ```  
@@ -442,7 +461,7 @@ operator BSTR() const throw();
 ### <a name="example"></a>例  
  例を参照してください[CComBSTR::m_str](#m_str)します。  
   
-##  <a name="a-nameoperatornota--ccombstroperator-"></a><a name="operator_not"></a>CComBSTR::operator!  
+##  <a name="operator_not"></a>CComBSTR::operator!  
  チェックするかどうか`BSTR`文字列が NULL です。  
   
 ```
@@ -458,7 +477,7 @@ bool operator!() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#35;](../../atl/codesnippet/cpp/ccombstr-class_4.cpp)]  
   
-##  <a name="a-nameoperatorneqa--ccombstroperator-"></a><a name="operator_neq"></a>CComBSTR::operator! =  
+##  <a name="operator_neq"></a>CComBSTR::operator! =  
  論理的に反対の返します[演算子 = =](#operator_eq_eq)です。  
   
 ```
@@ -484,7 +503,7 @@ bool operator!= (int nNull) const throw();
 ### <a name="remarks"></a>コメント  
  `CComBSTR`ユーザーの既定のロケールのコンテキストでは、s がテキストで比較されます。 最後の比較演算子には、格納されている文字列だけを比較して**NULL**します。  
   
-##  <a name="a-nameoperatorampa--ccombstroperator-amp"></a><a name="operator_amp"></a>CComBSTR::operator&amp;  
+##  <a name="operator_amp"></a>CComBSTR::operator&amp;  
  アドレスを返す、`BSTR`に格納されている、 [m_str](#m_str)メンバーです。  
   
 ```
@@ -501,7 +520,7 @@ BSTR* operator&() throw();
   
  [!code-cpp[NVC_ATL_Utilities #&47;](../../atl/codesnippet/cpp/ccombstr-class_15.cpp)]  
   
-##  <a name="a-nameoperatoraddeqa--ccombstroperator-"></a><a name="operator_add_eq"></a>CComBSTR::operator + = 演算子  
+##  <a name="operator_add_eq"></a>CComBSTR::operator + = 演算子  
  文字列を追加、`CComBSTR`オブジェクトです。  
   
 ```
@@ -522,7 +541,7 @@ CComBSTR& operator+= (const LPCOLESTR pszSrc);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&48;](../../atl/codesnippet/cpp/ccombstr-class_16.cpp)]  
   
-##  <a name="a-nameoperatorlta--ccombstroperator-lt"></a><a name="operator_lt"></a>CComBSTR::operator&lt;  
+##  <a name="operator_lt"></a>CComBSTR::operator&lt;  
  比較、`CComBSTR`文字列を使用します。  
   
 ```
@@ -537,7 +556,7 @@ bool operator<(LPCSTR pszSrc) const throw();
 ### <a name="remarks"></a>コメント  
  ユーザーの既定のロケールを使用して比較を実行します。  
   
-##  <a name="a-nameoperatoreqa--ccombstroperator-"></a><a name="operator_eq"></a>CComBSTR::operator =  
+##  <a name="operator_eq"></a>CComBSTR::operator =  
  セット、 [m_str](#m_str)メンバーのコピーを`pSrc`またはのコピーを`BSTR`のメンバー *src*します。 移動代入演算子を移動`src`コピーせずします。   
   
 ```
@@ -553,7 +572,7 @@ CComBSTR& operator= (CComBSTR&& src) throw(); // (Visual Studio 2017)
 ### <a name="example"></a>例  
  例を参照してください[CComBSTR::Copy](#copy)します。  
   
-##  <a name="a-nameoperatoreqeqa--ccombstroperator-"></a><a name="operator_eq_eq"></a>CComBSTR::operator = =  
+##  <a name="operator_eq_eq"></a>CComBSTR::operator = =  
  比較、`CComBSTR`文字列を使用します。 `CComBSTR`ユーザーの既定のロケールのコンテキストでは、s がテキストで比較されます。  
   
 ```
@@ -579,7 +598,7 @@ bool operator== (int nNull) const throw();
 ### <a name="remarks"></a>コメント  
  最後の比較演算子には、格納されている文字列だけを比較して**NULL**します。  
   
-##  <a name="a-nameoperatorgta--ccombstroperator-gt"></a><a name="operator_gt"></a>CComBSTR::operator&gt;  
+##  <a name="operator_gt"></a>CComBSTR::operator&gt;  
  比較、`CComBSTR`文字列を使用します。  
   
 ```
@@ -592,7 +611,7 @@ bool operator>(const CComBSTR& bstrSrc) const throw();
 ### <a name="remarks"></a>コメント  
  ユーザーの既定のロケールを使用して比較を実行します。  
   
-##  <a name="a-namereadfromstreama--ccombstrreadfromstream"></a><a name="readfromstream"></a>CComBSTR::ReadFromStream  
+##  <a name="readfromstream"></a>CComBSTR::ReadFromStream  
  セット、 [m_str](#m_str)メンバーを`BSTR`指定したストリームに格納します。  
   
 ```
@@ -612,7 +631,7 @@ HRESULT ReadFromStream(IStream* pStream) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&44;](../../atl/codesnippet/cpp/ccombstr-class_17.cpp)]  
   
-##  <a name="a-nametolowera--ccombstrtolower"></a><a name="tolower"></a>CComBSTR::ToLower  
+##  <a name="tolower"></a>CComBSTR::ToLower  
  格納されている文字列を小文字に変換します。  
   
 ```
@@ -625,7 +644,7 @@ HRESULT ToLower() throw();
 ### <a name="remarks"></a>コメント  
  参照してください**CharLowerBuff**変換を実行する方法の詳細についてです。  
   
-##  <a name="a-nametouppera--ccombstrtoupper"></a><a name="toupper"></a>CComBSTR::ToUpper  
+##  <a name="toupper"></a>CComBSTR::ToUpper  
  格納されている文字列を大文字に変換します。  
   
 ```
@@ -638,7 +657,7 @@ HRESULT ToUpper() throw();
 ### <a name="remarks"></a>コメント  
  参照してください**CharUpperBuff**変換を実行する方法の詳細についてです。  
   
-##  <a name="a-namewritetostreama--ccombstrwritetostream"></a><a name="writetostream"></a>CComBSTR::WriteToStream  
+##  <a name="writetostream"></a>CComBSTR::WriteToStream  
  保存、 [m_str](#m_str)ストリームへのメンバーです。  
   
 ```

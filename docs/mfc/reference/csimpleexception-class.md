@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSimpleException
+- AFX/CSimpleException
+- AFX/CSimpleException::CSimpleException
+- AFX/CSimpleException::GetErrorMessage
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +90,7 @@ class AFX_NOVTABLE CSimpleException : public CException
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namecsimpleexceptiona--csimpleexceptioncsimpleexception"></a><a name="csimpleexception"></a>CSimpleException::CSimpleException  
+##  <a name="csimpleexception"></a>CSimpleException::CSimpleException  
  コンストラクターです。  
   
 ```  
@@ -102,7 +105,7 @@ explicit CSimpleException(BOOL bAutoDelete);
 ### <a name="remarks"></a>コメント  
  このコンス トラクターを直接呼び出す必要は通常ことはありません。 例外をスローする関数のインスタンスを作成する必要があります、 `CException`-クラスを派生し、呼び出すコンス トラクター、またはそれが、MFC のいずれかの使用をスローする関数など[AfxThrowFileException](exception-processing.md#afxthrowfileexception)、定義済みの型をスローします。  
   
-##  <a name="a-namegeterrormessagea--csimpleexceptiongeterrormessage"></a><a name="geterrormessage"></a>CSimpleException::GetErrorMessage  
+##  <a name="geterrormessage"></a>CSimpleException::GetErrorMessage  
  発生したエラーに関するテキストを提供するには、このメンバー関数を呼び出します。  
   
 ```  

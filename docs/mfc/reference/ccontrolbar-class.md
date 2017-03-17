@@ -10,6 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CControlBar
+- AFXEXT/CControlBar
+- AFXEXT/CControlBar::CControlBar
+- AFXEXT/CControlBar::CalcDynamicLayout
+- AFXEXT/CControlBar::CalcFixedLayout
+- AFXEXT/CControlBar::CalcInsideRect
+- AFXEXT/CControlBar::DoPaint
+- AFXEXT/CControlBar::DrawBorders
+- AFXEXT/CControlBar::DrawGripper
+- AFXEXT/CControlBar::EnableDocking
+- AFXEXT/CControlBar::GetBarStyle
+- AFXEXT/CControlBar::GetBorders
+- AFXEXT/CControlBar::GetCount
+- AFXEXT/CControlBar::GetDockingFrame
+- AFXEXT/CControlBar::IsFloating
+- AFXEXT/CControlBar::OnUpdateCmdUI
+- AFXEXT/CControlBar::SetBarStyle
+- AFXEXT/CControlBar::SetBorders
+- AFXEXT/CControlBar::SetInPlaceOwner
+- AFXEXT/CControlBar::m_bAutoDelete
+- AFXEXT/CControlBar::m_pInPlaceOwner
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -115,7 +135,7 @@ class CControlBar : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-namecalcdynamiclayouta--ccontrolbarcalcdynamiclayout"></a><a name="calcdynamiclayout"></a>CControlBar::CalcDynamicLayout  
+##  <a name="calcdynamiclayout"></a>CControlBar::CalcDynamicLayout  
  フレームワークでは、動的なツールバーのサイズを計算するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -147,7 +167,7 @@ virtual CSize CalcDynamicLayout(
 ### <a name="remarks"></a>コメント  
  派生したクラスで、独自の動的なレイアウトを提供するには、この関数をオーバーライド`CControlBar`します。 派生した MFC クラス`CControlBar`など[CToolbar](../../mfc/reference/ctoolbar-class.md)、このメンバー関数をオーバーライドし、独自の実装を提供します。  
   
-##  <a name="a-namecalcfixedlayouta--ccontrolbarcalcfixedlayout"></a><a name="calcfixedlayout"></a>CControlBar::CalcFixedLayout  
+##  <a name="calcfixedlayout"></a>CControlBar::CalcFixedLayout  
  コントロール バーの水平方向のサイズを計算するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -178,7 +198,7 @@ virtual CSize CalcFixedLayout(
 |**FALSE**|**TRUE**|伸縮しません。|横方向に配置|ドッキング|  
 |**FALSE**|**FALSE**|伸縮しません。|垂直方向|ドッキング|  
   
-##  <a name="a-namecalcinsiderecta--ccontrolbarcalcinsiderect"></a><a name="calcinsiderect"></a>CControlBar::CalcInsideRect  
+##  <a name="calcinsiderect"></a>CControlBar::CalcInsideRect  
  フレームワークでは、コントロール バーのクライアント領域を計算するには、この関数を呼び出します。  
   
 ```  
@@ -199,14 +219,14 @@ virtual void CalcInsideRect(
   
  コントロール バーのグリッパー バー、罫線の描画をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameccontrolbara--ccontrolbarccontrolbar"></a><a name="ccontrolbar"></a>CControlBar::CControlBar  
+##  <a name="ccontrolbar"></a>CControlBar::CControlBar  
  `CControlBar` オブジェクトを構築します。  
   
 ```  
 CControlBar();
 ```  
   
-##  <a name="a-namedopainta--ccontrolbardopaint"></a><a name="dopaint"></a>CControlBar::DoPaint  
+##  <a name="dopaint"></a>CControlBar::DoPaint  
  枠線とコントロール バーのグリッパー バーを表示するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -222,7 +242,7 @@ virtual void DoPaint(CDC* pDC);
   
  他のカスタマイズ方法は、オーバーライドする、`DrawBorders`と`DrawGripper`機能し、境界線およびグリップのカスタムの描画コードを追加します。 既定では、これらのメソッドが呼び出されるため`DoPaint`メソッドをオーバーライドした関数`DoPaint`は必要ありません。  
   
-##  <a name="a-namedrawbordersa--ccontrolbardrawborders"></a><a name="drawborders"></a>CControlBar::DrawBorders  
+##  <a name="drawborders"></a>CControlBar::DrawBorders  
  コントロール バーの境界線をレンダリングするためにフレームワークによって呼び出されます。  
   
 ```  
@@ -241,7 +261,7 @@ virtual void DrawBorders(
 ### <a name="remarks"></a>コメント  
  コントロール バーの境界線の外観をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-namedrawgrippera--ccontrolbardrawgripper"></a><a name="drawgripper"></a>CControlBar::DrawGripper  
+##  <a name="drawgripper"></a>CControlBar::DrawGripper  
  コントロール バーのグリップをレンダリングするためにフレームワークによって呼び出されます。  
   
 ```  
@@ -260,7 +280,7 @@ virtual void DrawGripper(
 ### <a name="remarks"></a>コメント  
  コントロール バーのグリップの外観をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameenabledockinga--ccontrolbarenabledocking"></a><a name="enabledocking"></a>CControlBar::EnableDocking  
+##  <a name="enabledocking"></a>CControlBar::EnableDocking  
  ドッキング コントロール バーを有効にするには、この関数を呼び出します。  
   
 ```  
@@ -288,7 +308,7 @@ void EnableDocking(DWORD dwDockStyle);
 ### <a name="remarks"></a>コメント  
  指定した辺で、移行先のフレーム ウィンドウにドッキングできる辺の&1; つと一致する必要がありますかそのフレーム ウィンドウに、コントロール バーを固定できません。  
   
-##  <a name="a-namegetbarstylea--ccontrolbargetbarstyle"></a><a name="getbarstyle"></a>したとき  
+##  <a name="getbarstyle"></a>したとき  
  決定するためには、この関数を呼び出す**cbrs _** (コントロール バーのスタイル) の設定は、コントロール バーに現在設定されています。  
   
 ```  
@@ -301,7 +321,7 @@ DWORD GetBarStyle();
 ### <a name="remarks"></a>コメント  
  処理されない**ws _** (ウィンドウ スタイル) のスタイル。  
   
-##  <a name="a-namegetbordersa--ccontrolbargetborders"></a><a name="getborders"></a>CControlBar::GetBorders  
+##  <a name="getborders"></a>CControlBar::GetBorders  
  コントロール バーの現在の境界線の値を返します。  
   
 ```  
@@ -311,7 +331,7 @@ CRect GetBorders() const;
 ### <a name="return-value"></a>戻り値  
  A`CRect`コントロール バー オブジェクトの各辺のピクセル単位で現在の幅を格納しているオブジェクト。 値など、 `left` 、メンバーの[CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクト、左の境界線の幅は、です。  
   
-##  <a name="a-namegetcounta--ccontrolbargetcount"></a><a name="getcount"></a>CControlBar::GetCount  
+##  <a name="getcount"></a>CControlBar::GetCount  
  以外の数を返します`HWND`上のアイコン、`CControlBar`オブジェクトです。  
   
 ```  
@@ -324,7 +344,7 @@ int GetCount() const;
 ### <a name="remarks"></a>コメント  
  項目の種類は、派生オブジェクトによって異なります。 ペインについて[CStatusBar](../../mfc/reference/cstatusbar-class.md)オブジェクト、およびボタンおよび区切り記号の[CToolBar](../../mfc/reference/ctoolbar-class.md)オブジェクトです。  
   
-##  <a name="a-namegetdockingframea--ccontrolbargetdockingframe"></a><a name="getdockingframe"></a>CControlBar::GetDockingFrame  
+##  <a name="getdockingframe"></a>CControlBar::GetDockingFrame  
  このメンバー関数を呼び出して、コントロール バーがドッキングされている現在のフレーム ウィンドウへのポインターを取得します。  
   
 ```  
@@ -339,7 +359,7 @@ CFrameWnd* GetDockingFrame() const;
 ### <a name="remarks"></a>コメント  
  ドッキング可能なコントロール バーの詳細については、次を参照してください。 [CControlBar::EnableDocking](#enabledocking)と[CFrameWnd::DockControlBar](../../mfc/reference/cframewnd-class.md#dockcontrolbar)します。  
   
-##  <a name="a-nameisfloatinga--ccontrolbarisfloating"></a><a name="isfloating"></a>CControlBar::IsFloating  
+##  <a name="isfloating"></a>CControlBar::IsFloating  
  このメンバー関数を呼び出して、コントロール バーがフローティングかドッキングかどうかを確認します。  
   
 ```  
@@ -352,7 +372,7 @@ BOOL IsFloating() const;
 ### <a name="remarks"></a>コメント  
  浮動小数点へのドッキング コントロール バーの状態を変更するを呼び出す[切り離すには](../../mfc/reference/cframewnd-class.md#floatcontrolbar)です。  
   
-##  <a name="a-namembautodeletea--ccontrolbarmbautodelete"></a><a name="m_bautodelete"></a>CControlBar::m_bAutoDelete  
+##  <a name="m_bautodelete"></a>CControlBar::m_bAutoDelete  
  ゼロ以外の場合は、Windows のコントロール バーが破棄されると、`CControlBar` オブジェクトが削除されます。  
   
 ```  
@@ -366,14 +386,14 @@ BOOL m_bAutoDelete;
   
  割り当てる場合、この変数を&0; 以外の値に設定、`CControlBar`ヒープでオブジェクトを呼び出すしない**削除**します。  
   
-##  <a name="a-namempinplaceownera--ccontrolbarmpinplaceowner"></a><a name="m_pinplaceowner"></a>CControlBar::m_pInPlaceOwner  
+##  <a name="m_pinplaceowner"></a>CControlBar::m_pInPlaceOwner  
  コントロール バーのインプレース所有者です。  
   
 ```  
 CWnd* m_pInPlaceOwner;  
 ```  
   
-##  <a name="a-nameonupdatecmduia--ccontrolbaronupdatecmdui"></a><a name="onupdatecmdui"></a>CControlBar::OnUpdateCmdUI  
+##  <a name="onupdatecmdui"></a>CControlBar::OnUpdateCmdUI  
  このメンバー関数は、ツールバーやステータス バーの状態を更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -394,7 +414,7 @@ virtual void OnUpdateCmdUI(
   
  `OnUpdateCmdUI`アプリケーションがアイドル状態のときに、フレームワークによって呼び出されます。 フレーム ウィンドウを更新する必要がありますできない子ウィンドウでは、直接には、少なくとも、表示されるフレーム ウィンドウの。 `OnUpdateCmdUI`高度なオーバーライドします。  
   
-##  <a name="a-namesetbarstylea--ccontrolbarsetbarstyle"></a><a name="setbarstyle"></a>CControlBar::SetBarStyle  
+##  <a name="setbarstyle"></a>CControlBar::SetBarStyle  
  この関数を呼び出して、必要な設定**cbrs _**コントロール バーのスタイル。  
   
 ```  
@@ -434,7 +454,7 @@ void SetBarStyle(DWORD dwStyle);
 ### <a name="remarks"></a>コメント  
  影響しません、 **ws _** (ウィンドウ スタイル) 設定します。  
   
-##  <a name="a-namesetbordersa--ccontrolbarsetborders"></a><a name="setborders"></a>CControlBar::SetBorders  
+##  <a name="setborders"></a>CControlBar::SetBorders  
  コントロール バーの境界線のサイズを設定するには、この関数を呼び出します。  
   
 ```  
@@ -468,7 +488,7 @@ void SetBorders(LPCRECT lpRect);
   
  [!code-cpp[NVC_MFCControlLadenDialog&#61;](../../mfc/codesnippet/cpp/ccontrolbar-class_1.cpp)]  
   
-##  <a name="a-namesetinplaceownera--ccontrolbarsetinplaceowner"></a><a name="setinplaceowner"></a>CControlBar::SetInPlaceOwner  
+##  <a name="setinplaceowner"></a>CControlBar::SetInPlaceOwner  
  コントロール バーのインプレース所有者を変更します。  
   
 ```  

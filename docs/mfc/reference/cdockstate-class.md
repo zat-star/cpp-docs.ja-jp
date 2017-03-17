@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDockState
+- AFXADV/CDockState
+- AFXADV/CDockState::Clear
+- AFXADV/CDockState::GetVersion
+- AFXADV/CDockState::LoadState
+- AFXADV/CDockState::SaveState
+- AFXADV/CDockState::m_arrBarInfo
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +95,7 @@ class CDockState : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxadv.h  
   
-##  <a name="a-namecleara--cdockstateclear"></a><a name="clear"></a>CDockState::Clear  
+##  <a name="clear"></a>CDockState::Clear  
  格納されているすべてのドッキング情報を削除するには、この関数を呼び出して、`CDockState`オブジェクトです。  
   
 ```  
@@ -99,7 +105,7 @@ void Clear();
 ### <a name="remarks"></a>コメント  
  これには、バーがドッキングされているか、バーのサイズと位置があるかどうかだけでなくとが表示されているかどうかが含まれます。  
   
-##  <a name="a-namegetversiona--cdockstategetversion"></a><a name="getversion"></a>CDockState::GetVersion  
+##  <a name="getversion"></a>CDockState::GetVersion  
  格納されているのバージョン番号を取得するには、この関数を呼び出すバー状態です。  
   
 ```  
@@ -112,7 +118,7 @@ DWORD GetVersion();
 ### <a name="remarks"></a>コメント  
  バージョンのサポートは、新しい永続的なプロパティを追加しを検出し、バーの以前のバージョンで作成された永続的な状態の読み込みができるバーを改訂版を有効します。  
   
-##  <a name="a-nameloadstatea--cdockstateloadstate"></a><a name="loadstate"></a>CDockState::LoadState  
+##  <a name="loadstate"></a>CDockState::LoadState  
  レジストリから状態情報を取得するには、この関数を呼び出すか。INI ファイルです。  
   
 ```  
@@ -126,14 +132,14 @@ void LoadState(LPCTSTR lpszProfileName);
 ### <a name="remarks"></a>コメント  
  プロファイル名は、アプリケーションのセクションを示します。INI ファイルまたはバーの状態情報を含むレジストリです。 コントロール バーの状態情報をレジストリに保存することができますか。INI ファイルを`SaveState`します。  
   
-##  <a name="a-namemarrbarinfoa--cdockstatemarrbarinfo"></a><a name="m_arrbarinfo"></a>CDockState::m_arrBarInfo  
+##  <a name="m_arrbarinfo"></a>CDockState::m_arrBarInfo  
  A`CPtrArray`の状態情報が保存される各コントロール バーの保存された制御バー情報へのポインターの配列であるオブジェクトを`CDockState`オブジェクトです。  
   
 ```  
 CPtrArray m_arrBarInfo;  
 ```  
   
-##  <a name="a-namesavestatea--cdockstatesavestate"></a><a name="savestate"></a>後  
+##  <a name="savestate"></a>後  
  状態情報をレジストリに保存するには、この関数を呼び出すか。INI ファイルです。  
   
 ```  

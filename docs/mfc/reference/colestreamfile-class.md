@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleStreamFile
+- AFXOLE/COleStreamFile
+- AFXOLE/COleStreamFile::COleStreamFile
+- AFXOLE/COleStreamFile::Attach
+- AFXOLE/COleStreamFile::CreateMemoryStream
+- AFXOLE/COleStreamFile::CreateStream
+- AFXOLE/COleStreamFile::Detach
+- AFXOLE/COleStreamFile::GetStream
+- AFXOLE/COleStreamFile::OpenStream
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +100,7 @@ class COleStreamFile : public CFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-nameattacha--colestreamfileattach"></a><a name="attach"></a>COleStreamFile::Attach  
+##  <a name="attach"></a>COleStreamFile::Attach  
  指定された OLE ストリームを関連付ける、`COleStreamFile`オブジェクトです。  
   
 ```  
@@ -108,7 +116,7 @@ void Attach(LPSTREAM lpStream);
   
  詳細については、次を参照してください。 [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecolestreamfilea--colestreamfilecolestreamfile"></a><a name="colestreamfile"></a>COleStreamFile::COleStreamFile  
+##  <a name="colestreamfile"></a>COleStreamFile::COleStreamFile  
  
           `COleStreamFile` オブジェクトを作成します。  
   
@@ -125,7 +133,7 @@ COleStreamFile(LPSTREAM lpStream = NULL);
   
  詳細については、次を参照してください。 [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecreatememorystreama--colestreamfilecreatememorystream"></a><a name="creatememorystream"></a>COleStreamFile::CreateMemoryStream  
+##  <a name="creatememorystream"></a>COleStreamFile::CreateMemoryStream  
  安全に、通常は失敗、グローバル共有メモリが不足して新しいストリームを作成します。  
   
 ```  
@@ -144,7 +152,7 @@ BOOL CreateMemoryStream(CFileException* pError = NULL);
   
  詳細については、次を参照してください。 [CreateStreamOnHGlobal](http://msdn.microsoft.com/library/windows/desktop/aa378980)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecreatestreama--colestreamfilecreatestream"></a><a name="createstream"></a>COleStreamFile::CreateStream  
+##  <a name="createstream"></a>COleStreamFile::CreateStream  
  指定されたストレージ オブジェクトが、通常は失敗で、新しいストリームを安全に作成します。  
   
 ```  
@@ -176,7 +184,7 @@ BOOL CreateStream(
   
  詳細については、次を参照してください。 [IStorage::CreateStream](http://msdn.microsoft.com/library/windows/desktop/aa380020)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedetacha--colestreamfiledetach"></a><a name="detach"></a>COleStreamFile::Detach  
+##  <a name="detach"></a>COleStreamFile::Detach  
  ストリームを閉じずに、オブジェクトからのストリームの関連付けを解除します。  
   
 ```  
@@ -191,7 +199,7 @@ LPSTREAM Detach();
   
  詳細については、次を参照してください。 [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetstreama--colestreamfilegetstream"></a><a name="getstream"></a>COleStreamFile::GetStream  
+##  <a name="getstream"></a>COleStreamFile::GetStream  
  この関数では、現在のストリームへのポインターを返します。  
   
 ```  
@@ -201,7 +209,7 @@ IStream* GetStream() const;
 ### <a name="return-value"></a>戻り値  
  現在のストリーム インターフェイスへのポインター ( [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034))。  
   
-##  <a name="a-nameopenstreama--colestreamfileopenstream"></a><a name="openstream"></a>COleStreamFile::OpenStream  
+##  <a name="openstream"></a>COleStreamFile::OpenStream  
  既存のストリームを開きます。  
   
 ```  

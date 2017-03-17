@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDocObjectItem
+- AFXOLE/COleDocObjectItem
+- AFXOLE/COleDocObjectItem::COleDocObjectItem
+- AFXOLE/COleDocObjectItem::DoDefaultPrinting
+- AFXOLE/COleDocObjectItem::ExecCommand
+- AFXOLE/COleDocObjectItem::GetActiveView
+- AFXOLE/COleDocObjectItem::GetPageCount
+- AFXOLE/COleDocObjectItem::OnPreparePrinting
+- AFXOLE/COleDocObjectItem::OnPrint
+- AFXOLE/COleDocObjectItem::QueryCommand
+- AFXOLE/COleDocObjectItem::Release
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +112,7 @@ class COleDocObjectItem : public COleClientItem
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-namecoledocobjectitema--coledocobjectitemcoledocobjectitem"></a><a name="coledocobjectitem"></a>COleDocObjectItem::COleDocObjectItem  
+##  <a name="coledocobjectitem"></a>COleDocObjectItem::COleDocObjectItem  
  このメンバー関数を呼び出して初期化、`COleDocObjectItem`オブジェクトです。  
   
 ```  
@@ -113,7 +123,7 @@ COleDocObjectItem(COleDocument* pContainerDoc = NULL);
  `pContainerDoc`  
  ポインター、 `COleDocument` active ドキュメント コンテナーとして機能するオブジェクト。 このパラメーターを指定する必要があります**NULL**を有効にする**IMPLEMENT_SERIALIZE**します。 OLE アイテムが通常以外の構築時は**NULL**ドキュメント ポインター。  
   
-##  <a name="a-namedodefaultprintinga--coledocobjectitemdodefaultprinting"></a><a name="dodefaultprinting"></a>COleDocObjectItem::DoDefaultPrinting  
+##  <a name="dodefaultprinting"></a>COleDocObjectItem::DoDefaultPrinting  
  既定の設定を使用してドキュメントに、フレームワークによって呼び出されます。  
   
 ```  
@@ -129,7 +139,7 @@ static HRESULT DoDefaultPrinting(
  `pInfo`  
  ポインター、 [CPrintInfo](../../mfc/reference/cprintinfo-structure.md)を印刷するジョブを記述するオブジェクト。  
   
-##  <a name="a-nameexeccommanda--coledocobjectitemexeccommand"></a><a name="execcommand"></a>COleDocObjectItem::ExecCommand  
+##  <a name="execcommand"></a>COleDocObjectItem::ExecCommand  
  このメンバー関数を呼び出して、ユーザーが指定したコマンドを実行します。  
   
 ```  
@@ -166,7 +176,7 @@ HRESULT ExecCommand(
 ### <a name="remarks"></a>コメント  
  `pguidCmdGroup`と`nCmdID`のパラメーターを呼び出すコマンドを一意に識別します。 `nCmdExecOpt`パラメーターを実行する正確なアクションを指定します。  
   
-##  <a name="a-namegetactiveviewa--coledocobjectitemgetactiveview"></a><a name="getactiveview"></a>COleDocObjectItem::GetActiveView  
+##  <a name="getactiveview"></a>COleDocObjectItem::GetActiveView  
  ポインターを取得するには、このメンバー関数を呼び出す、`IOleDocumentView`現在アクティブなビューのインターフェイスです。  
   
 ```  
@@ -179,7 +189,7 @@ LPOLEDOCUMENTVIEW GetActiveView() const;
 ### <a name="remarks"></a>コメント  
  返されたの参照カウント`IOleDocumentView`ポインターは、この関数によって返される前に加算されません。  
   
-##  <a name="a-namegetpagecounta--coledocobjectitemgetpagecount"></a><a name="getpagecount"></a>COleDocObjectItem::GetPageCount  
+##  <a name="getpagecount"></a>COleDocObjectItem::GetPageCount  
  このメンバー関数を呼び出して、ドキュメント内のページの数を取得します。  
   
 ```  
@@ -198,7 +208,7 @@ BOOL GetPageCount(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="a-nameonprepareprintinga--coledocobjectitemonprepareprinting"></a><a name="onprepareprinting"></a>COleDocObjectItem::OnPreparePrinting  
+##  <a name="onprepareprinting"></a>COleDocObjectItem::OnPreparePrinting  
  このメンバー関数は、印刷用のドキュメントを用意するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -221,7 +231,7 @@ static BOOL OnPreparePrinting(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="a-nameonprinta--coledocobjectitemonprint"></a><a name="onprint"></a>前述  
+##  <a name="onprint"></a>前述  
  このメンバー関数は、ドキュメントを印刷するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -241,7 +251,7 @@ static void OnPrint(
  `bPrintAll`  
  ドキュメント全体を印刷するかどうかを指定します。  
   
-##  <a name="a-namequerycommanda--coledocobjectitemquerycommand"></a><a name="querycommand"></a>COleDocObjectItem::QueryCommand  
+##  <a name="querycommand"></a>COleDocObjectItem::QueryCommand  
  ユーザー インターフェイスのイベントによって生成された&1; つ以上のコマンドの状態を調べるためにクエリを実行します。  
   
 ```  
@@ -271,7 +281,7 @@ HRESULT QueryCommand(
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 [IOleCommandTarget::QueryStatus](http://msdn.microsoft.com/library/windows/desktop/ms688491)メソッド、」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namereleasea--coledocobjectitemrelease"></a><a name="release"></a>COleDocObjectItem::Release  
+##  <a name="release"></a>COleDocObjectItem::Release  
  OLE リンク アイテムへの接続を解放しが開いていた場合に終了します。 クライアント アイテムは破棄されません。  
   
 ```  

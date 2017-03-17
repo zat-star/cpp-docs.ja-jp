@@ -6,6 +6,9 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: 
+dev_langs:
+- C++
 ms.assetid: 77f1ae17-1eb2-480d-8fe5-66d4c24bb91e
 caps.latest.revision: 9
 author: mikeblome
@@ -24,7 +27,7 @@ ms.lasthandoff: 02/24/2017
 |[operator+](#operator_add)|[operator-](#operator-)|[operator/](#operator_div)|  
 |[operator==](#operator_eq_eq)|  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==   
+##  <a name="operator_eq_eq"></a>  operator==   
  指定した引数が等しいかどうかを判断します。  
   
 ```  
@@ -50,7 +53,7 @@ bool operator== (
 ### <a name="return-value"></a>戻り値  
  タプルが等しい場合は `true`。それ以外の場合は `false`。  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=   
+##  <a name="operator_neq"></a>  operator!=   
  指定した引数が等しくないかどうかを判断します。  
   
 ```  
@@ -76,7 +79,7 @@ bool operator!= (
 ### <a name="return-value"></a>戻り値  
  タプルが等しくない場合は `true`、それ以外の場合は `false`。  
   
-##  <a name="a-nameoperatoradda--operator"></a><a name="operator_add"></a>  operator+   
+##  <a name="operator_add"></a>  operator+   
 
  指定された引数の要素ごとの合計を計算します。  
   
@@ -121,7 +124,7 @@ class _Tuple_type> _Tuple_type<_Rank>   operator+(
 ### <a name="return-value"></a>戻り値  
  指定された引数の要素ごとの合計。  
   
-##  <a name="a-nameoperator-a--operator-"></a><a name="operator-"></a>  operator-   
+##  <a name="operator-"></a>  operator-   
 
  指定された引数の要素ごとの差を計算します。  
   
@@ -166,7 +169,7 @@ _Tuple_type<_Rank>   operator-(
 ### <a name="return-value"></a>戻り値  
  指定された引数の要素ごとの差。  
   
-##  <a name="a-nameoperatorstara--operator"></a><a name="operator_star"></a>  operator*   
+##  <a name="operator_star"></a>  operator*   
 
  指定された引数の要素ごとの積を計算します。  
   
@@ -203,7 +206,7 @@ _Tuple_type<_Rank>   operator*(
  指定された引数の要素ごとの積。  
   
 
-##  <a name="a-nameoperatordiva--operator"></a><a name="operator_div"></a>  operator/   
+##  <a name="operator_div"></a>  operator/   
  指定された引数のコンポーネントごとの商を計算します。  
   
 ```  
@@ -238,7 +241,7 @@ _Tuple_type<_Rank>   operator/(
 ### <a name="return-value"></a>戻り値  
  指定された引数のコンポーネントごとの商。  
   
-##  <a name="a-nameoperatormoda--operator"></a><a name="operator_mod"></a>  operator%   
+##  <a name="operator_mod"></a>  operator%   
 
  2 番目の指定された引数による&1; 番目の指定された引数の剰余を計算します。  
   

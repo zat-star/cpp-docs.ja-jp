@@ -9,11 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CStringElementTraits<T>
-- ATL::CStringElementTraits<T>
 - CStringElementTraits
-- ATL.CStringElementTraits
-- ATL::CStringElementTraits
+- CSTRINGT/ATL::CStringElementTraits
+- CSTRINGT/ATL::CStringElementTraits::INARGTYPE
+- CSTRINGT/ATL::CStringElementTraits::OUTARGTYPE
+- CSTRINGT/ATL::CStringElementTraits::CompareElements
+- CSTRINGT/ATL::CStringElementTraits::CompareElementsOrdered
+- CSTRINGT/ATL::CStringElementTraits::CopyElements
+- CSTRINGT/ATL::CStringElementTraits::Hash
+- CSTRINGT/ATL::CStringElementTraits::RelocateElements
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +88,7 @@ class CStringElementTraits
 ## <a name="requirements"></a>要件  
  **ヘッダー:** cstringt.h  
   
-##  <a name="a-namecompareelementsa--cstringelementtraitscompareelements"></a><a name="compareelements"></a>CStringElementTraits::CompareElements  
+##  <a name="compareelements"></a>CStringElementTraits::CompareElements  
  2 つの文字列要素が等しいかどうかを比較するこの静的関数を呼び出します。  
   
 ```
@@ -101,7 +105,7 @@ static bool CompareElements(INARGTYPE str1, INARGTYPE str2);
 ### <a name="return-value"></a>戻り値  
  要素が false でそれ以外の場合、等しい場合は true を返します。  
   
-##  <a name="a-namecompareelementsordereda--cstringelementtraitscompareelementsordered"></a><a name="compareelementsordered"></a>CStringElementTraits::CompareElementsOrdered  
+##  <a name="compareelementsordered"></a>CStringElementTraits::CompareElementsOrdered  
  2 つの文字列要素の比較にこの静的関数を呼び出します。  
   
 ```
@@ -119,7 +123,7 @@ static int CompareElementsOrdered(INARGTYPE str1, INARGTYPE str2);
  文字列が同じですが、 < 0="" if=""> `str1`がより小さい`str2`、または > 0 場合`str1`よりも大きい`str2`します。 [CStringT::Compare](../../atl-mfc-shared/reference/cstringt-class.md#compare)メソッドは、比較を実行するために使用します。  
 
   
-##  <a name="a-namecopyelementsa--cstringelementtraitscopyelements"></a><a name="copyelements"></a>CStringElementTraits::CopyElements  
+##  <a name="copyelements"></a>CStringElementTraits::CopyElements  
  この静的関数をコピーする`CString`コレクション クラスのオブジェクトに格納されている要素。  
   
 ```
@@ -142,7 +146,7 @@ static void CopyElements(
 ### <a name="remarks"></a>コメント  
  ソースおよびデスティネーションの要素は重複できません。  
   
-##  <a name="a-namehasha--cstringelementtraitshash"></a><a name="hash"></a>CStringElementTraits::Hash  
+##  <a name="hash"></a>CStringElementTraits::Hash  
  指定した文字列の要素のハッシュ値を計算するこの静的関数を呼び出します。  
   
 ```
@@ -156,21 +160,21 @@ static ULONG Hash(INARGTYPE str);
 ### <a name="return-value"></a>戻り値  
  文字列の内容を使用して計算されたハッシュ値を返します。  
   
-##  <a name="a-nameinargtypea--cstringelementtraitsinargtype"></a><a name="inargtype"></a>CStringElementTraits::INARGTYPE  
+##  <a name="inargtype"></a>CStringElementTraits::INARGTYPE  
  コレクション クラスのオブジェクトに要素を追加するために使用するデータ型。  
   
 ```
 typedef T::PCXSTR INARGTYPE;
 ```  
   
-##  <a name="a-nameoutargtypea--cstringelementtraitsoutargtype"></a><a name="outargtype"></a>CStringElementTraits::OUTARGTYPE  
+##  <a name="outargtype"></a>CStringElementTraits::OUTARGTYPE  
  コレクション クラスのオブジェクトから要素を取得するために使用するデータ型。  
   
 ```
 typedef T& OUTARGTYPE;
 ```  
   
-##  <a name="a-namerelocateelementsa--cstringelementtraitsrelocateelements"></a><a name="relocateelements"></a>CStringElementTraits::RelocateElements  
+##  <a name="relocateelements"></a>CStringElementTraits::RelocateElements  
  この静的関数を再配置する`CString`コレクション クラスのオブジェクトに格納されている要素。  
   
 ```

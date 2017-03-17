@@ -9,8 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CParabolicTransitionFromAcceleration
 - CParabolicTransitionFromAcceleration
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration::CParabolicTransitionFromAcceleration
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration::Create
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration::m_dblAcceleration
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration::m_dblFinalValue
+- AFXANIMATIONCONTROLLER/CParabolicTransitionFromAcceleration::m_dblFinalVelocity
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +89,7 @@ class CParabolicTransitionFromAcceleration : public CBaseTransition;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-namecparabolictransitionfromaccelerationa--cparabolictransitionfromaccelerationcparabolictransitionfromacceleration"></a><a name="cparabolictransitionfromacceleration"></a>CParabolicTransitionFromAcceleration::CParabolicTransitionFromAcceleration  
+##  <a name="cparabolictransitionfromacceleration"></a>CParabolicTransitionFromAcceleration::CParabolicTransitionFromAcceleration  
  放物線加速遷移を構築し、指定されたパラメーターで初期化します。  
   
 ```  
@@ -104,7 +109,7 @@ CParabolicTransitionFromAcceleration(
  `dblAcceleration`  
  移行の際にアニメーション変数の加速します。  
   
-##  <a name="a-namecreatea--cparabolictransitionfromaccelerationcreate"></a><a name="create"></a>CParabolicTransitionFromAcceleration::Create  
+##  <a name="create"></a>CParabolicTransitionFromAcceleration::Create  
  カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
   
 ```  
@@ -120,21 +125,21 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  移行が正常に作成された場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namemdblaccelerationa--cparabolictransitionfromaccelerationmdblacceleration"></a><a name="m_dblacceleration"></a>CParabolicTransitionFromAcceleration::m_dblAcceleration  
+##  <a name="m_dblacceleration"></a>CParabolicTransitionFromAcceleration::m_dblAcceleration  
  移行の際にアニメーション変数の加速します。  
   
 ```  
 DOUBLE m_dblAcceleration;  
 ```  
   
-##  <a name="a-namemdblfinalvaluea--cparabolictransitionfromaccelerationmdblfinalvalue"></a><a name="m_dblfinalvalue"></a>CParabolicTransitionFromAcceleration::m_dblFinalValue  
+##  <a name="m_dblfinalvalue"></a>CParabolicTransitionFromAcceleration::m_dblFinalValue  
  移行の最後にアニメーション変数の値。  
   
 ```  
 DOUBLE m_dblFinalValue;  
 ```  
   
-##  <a name="a-namemdblfinalvelocitya--cparabolictransitionfromaccelerationmdblfinalvelocity"></a><a name="m_dblfinalvelocity"></a>CParabolicTransitionFromAcceleration::m_dblFinalVelocity  
+##  <a name="m_dblfinalvelocity"></a>CParabolicTransitionFromAcceleration::m_dblFinalVelocity  
  移行の最後にアニメーション変数の速度。  
   
 ```  

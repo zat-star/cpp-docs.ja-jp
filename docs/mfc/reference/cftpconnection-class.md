@@ -10,6 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFtpConnection
+- AFXINET/CFtpConnection
+- AFXINET/CFtpConnection::CFtpConnection
+- AFXINET/CFtpConnection::Command
+- AFXINET/CFtpConnection::CreateDirectory
+- AFXINET/CFtpConnection::GetCurrentDirectory
+- AFXINET/CFtpConnection::GetCurrentDirectoryAsURL
+- AFXINET/CFtpConnection::GetFile
+- AFXINET/CFtpConnection::OpenFile
+- AFXINET/CFtpConnection::PutFile
+- AFXINET/CFtpConnection::Remove
+- AFXINET/CFtpConnection::RemoveDirectory
+- AFXINET/CFtpConnection::Rename
+- AFXINET/CFtpConnection::SetCurrentDirectory
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +108,7 @@ class CFtpConnection : public CInternetConnection
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namecftpconnectiona--cftpconnectioncftpconnection"></a><a name="cftpconnection"></a>CFtpConnection::CFtpConnection  
+##  <a name="cftpconnection"></a>CFtpConnection::CFtpConnection  
  このメンバー関数が作成すると呼ばれる、`CFtpConnection`オブジェクトです。  
   
 ```  
@@ -151,7 +164,7 @@ CFtpConnection(
 ### <a name="remarks"></a>コメント  
  作成しないで、`CFtpConnection`オブジェクトに直接します。 代わりに、 [CInternetSession::GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection)、作成、 **CFptConnection**オブジェクトです。  
   
-##  <a name="a-namecommanda--cftpconnectioncommand"></a><a name="command"></a>CFtpConnection::Command  
+##  <a name="command"></a>CFtpConnection::Command  
  FTP サーバーに直接コマンドを送信します。  
   
 ```  
@@ -187,7 +200,7 @@ CInternetFile* Command(
   
  エラーが発生する場合、MFC は型の例外をスロー[表す](../../mfc/reference/cinternetexception-class.md)します。  
   
-##  <a name="a-namecreatedirectorya--cftpconnectioncreatedirectory"></a><a name="createdirectory"></a>CFtpConnection::CreateDirectory  
+##  <a name="createdirectory"></a>CFtpConnection::CreateDirectory  
  接続されたサーバーのディレクトリを作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -206,7 +219,7 @@ BOOL CreateDirectory(LPCTSTR pstrDirName);
   
  `pstrDirName`パラメーターには、いずれかを指定できます、部分的にまたは現在のディレクトリに対して相対的な完全修飾ファイル名。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `CreateDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
   
-##  <a name="a-namegetcurrentdirectorya--cftpconnectiongetcurrentdirectory"></a><a name="getcurrentdirectory"></a>CFtpConnection::GetCurrentDirectory  
+##  <a name="getcurrentdirectory"></a>CFtpConnection::GetCurrentDirectory  
  このメンバー関数を呼び出して、現在のディレクトリの名前を取得します。  
   
 ```  
@@ -240,7 +253,7 @@ BOOL GetCurrentDirectory(
   
  パラメーター`pstrDirName`または`strDirName`または完全な現在のディレクトリに対して相対的いずれかの部分修飾ファイル名であることができます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `GetCurrentDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
   
-##  <a name="a-namegetcurrentdirectoryasurla--cftpconnectiongetcurrentdirectoryasurl"></a><a name="getcurrentdirectoryasurl"></a>CFtpConnection::GetCurrentDirectoryAsURL  
+##  <a name="getcurrentdirectoryasurl"></a>CFtpConnection::GetCurrentDirectoryAsURL  
  現在のディレクトリの名前を URL としてを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -274,7 +287,7 @@ BOOL GetCurrentDirectoryAsURL(
   
  パラメーター`strDirName`または完全な現在のディレクトリに対して相対的いずれかの部分修飾ファイル名であることができます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `GetCurrentDirectoryAsURL`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
   
-##  <a name="a-namegetfilea--cftpconnectiongetfile"></a><a name="getfile"></a>CFtpConnection::GetFile  
+##  <a name="getfile"></a>CFtpConnection::GetFile  
  このメンバー関数を呼び出して、FTP サーバーからファイルを取得して、ローカル コンピューターに保存しています。  
   
 ```  
@@ -334,7 +347,7 @@ BOOL GetFile(
   
  `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-nameopenfilea--cftpconnectionopenfile"></a><a name="openfile"></a>CFtpConnection::OpenFile  
+##  <a name="openfile"></a>CFtpConnection::OpenFile  
  読み取りまたは書き込み用に FTP サーバー上にあるファイルを開くには、このメンバー関数を呼び出します。  
   
 ```  
@@ -380,7 +393,7 @@ CInternetFile* OpenFile(
   
  `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-nameputfilea--cftpconnectionputfile"></a><a name="putfile"></a>CFtpConnection::PutFile  
+##  <a name="putfile"></a>CFtpConnection::PutFile  
  FTP サーバー上のファイルを保存するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -412,7 +425,7 @@ BOOL PutFile(
   
  `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-nameremovea--cftpconnectionremove"></a><a name="remove"></a>CFtpConnection::Remove  
+##  <a name="remove"></a>CFtpConnection::Remove  
  接続先のサーバーから、指定したファイルを削除するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -429,7 +442,7 @@ BOOL Remove(LPCTSTR pstrFileName);
 ### <a name="remarks"></a>コメント  
  `pstrFileName`パラメーターは、いずれか、部分的に修飾ファイル名、現在のディレクトリに相対パスまたは完全修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 **削除**関数が使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
   
-##  <a name="a-nameremovedirectorya--cftpconnectionremovedirectory"></a><a name="removedirectory"></a>CFtpConnection::RemoveDirectory  
+##  <a name="removedirectory"></a>CFtpConnection::RemoveDirectory  
  接続先のサーバーから、指定したディレクトリを削除するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -448,7 +461,7 @@ BOOL RemoveDirectory(LPCTSTR pstrDirName);
   
  `pstrDirName`パラメーターは、現在のディレクトリに対して相対的 filename が部分的または完全に修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `RemoveDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
   
-##  <a name="a-namerenamea--cftpconnectionrename"></a><a name="rename"></a>CFtpConnection::Rename  
+##  <a name="rename"></a>CFtpConnection::Rename  
  接続されているサーバー上の指定のファイルの名前を変更するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -470,7 +483,7 @@ BOOL Rename(
 ### <a name="remarks"></a>コメント  
  `pstrExisting`と`pstrNew`パラメーターは、いずれか、部分的に修飾ファイル名、現在のディレクトリに相対パスまたは完全修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 **名前を変更**使用されるように、ディレクトリ名の区切り記号を適切な文字に変換します。  
   
-##  <a name="a-namesetcurrentdirectorya--cftpconnectionsetcurrentdirectory"></a><a name="setcurrentdirectory"></a>CFtpConnection::SetCurrentDirectory  
+##  <a name="setcurrentdirectory"></a>CFtpConnection::SetCurrentDirectory  
  FTP サーバー上の別のディレクトリに変更するには、このメンバー関数を呼び出します。  
   
 ```  

@@ -10,6 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CHttpFile
+- AFXINET/CHttpFile
+- AFXINET/CHttpFile::CHttpFile
+- AFXINET/CHttpFile::AddRequestHeaders
+- AFXINET/CHttpFile::EndRequest
+- AFXINET/CHttpFile::GetFileURL
+- AFXINET/CHttpFile::GetObject
+- AFXINET/CHttpFile::GetVerb
+- AFXINET/CHttpFile::QueryInfo
+- AFXINET/CHttpFile::QueryInfoStatusCode
+- AFXINET/CHttpFile::SendRequest
+- AFXINET/CHttpFile::SendRequestEx
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +103,7 @@ class CHttpFile : public CInternetFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-nameaddrequestheadersa--chttpfileaddrequestheaders"></a><a name="addrequestheaders"></a>CHttpFile::AddRequestHeaders  
+##  <a name="addrequestheaders"></a>CHttpFile::AddRequestHeaders  
  1 つを追加するには、このメンバー関数を呼び出すか、HTTP 要求に複数の HTTP 要求ヘッダーを処理します。  
   
 ```  
@@ -137,7 +148,7 @@ BOOL AddRequestHeaders(
 > [!NOTE]
 >  アプリケーションで複数のヘッダーを渡すことができます`pstrHeaders`または`str`の`AddRequestHeaders`を使用して呼び出す`HTTP_ADDREQ_FLAG_ADD`または`HTTP_ADDREQ_FLAG_ADD_IF_NEW`です。 アプリケーションが削除または置換を使用してヘッダーを試むかどうか**HTTP_ADDREQ_FLAG_REMOVE**または`HTTP_ADDREQ_FLAG_REPLACE`、1 つだけのヘッダーを指定する`lpszHeaders`です。  
   
-##  <a name="a-namechttpfilea--chttpfilechttpfile"></a><a name="chttpfile"></a>CHttpFile::CHttpFile  
+##  <a name="chttpfile"></a>CHttpFile::CHttpFile  
  このメンバー関数が作成すると呼ばれる、`CHttpFile`オブジェクトです。  
   
 ```  
@@ -184,7 +195,7 @@ CHttpFile(
   
  既定値`dwContext`MFC から送信される、`CHttpFile`オブジェクトから、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトの作成、`CHttpFile`オブジェクトです。 呼び出すと`CInternetSession::OpenURL`または`CHttpConnection`を構築する、`CHttpFile`オブジェクトのコンテキスト識別子を独自の値に設定する既定値をオーバーライドすることができます。 コンテキスト識別子が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用するオブジェクトの状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-nameendrequesta--chttpfileendrequest"></a><a name="endrequest"></a>CHttpFile::EndRequest  
+##  <a name="endrequest"></a>CHttpFile::EndRequest  
  HTTP サーバーに送信された要求を終了するには、このメンバー関数を呼び出す、 [SendRequestEx](#sendrequestex)メンバー関数。  
   
 ```  
@@ -210,7 +221,7 @@ BOOL EndRequest(
 ### <a name="remarks"></a>コメント  
  既定値`dwContext`MFC から送信される、`CHttpFile`オブジェクトから、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトの作成、`CHttpFile`オブジェクトです。 呼び出すと[できます](../../mfc/reference/cinternetsession-class.md#openurl)または[関数](../../mfc/reference/chttpconnection-class.md)を構築する、`CHttpFile`オブジェクトのコンテキスト識別子を独自の値に設定する既定値をオーバーライドすることができます。 コンテキスト識別子が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用するオブジェクトの状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-namegetfileurla--chttpfilegetfileurl"></a><a name="getfileurl"></a>CHttpFile::GetFileURL  
+##  <a name="getfileurl"></a>CHttpFile::GetFileURL  
  URL として HTTP ファイルの名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -223,7 +234,7 @@ virtual CString GetFileURL() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用して、呼び出しは成功した後でのみ[SendRequest](#sendrequest)または、`CHttpFile`によって正常に作成されたオブジェクト[OpenURL](../../mfc/reference/cinternetsession-class.md#openurl)します。  
   
-##  <a name="a-namegetobjecta--chttpfilegetobject"></a><a name="getobject"></a>CHttpFile::GetObject  
+##  <a name="getobject"></a>CHttpFile::GetObject  
  これに関連付けられているオブジェクトの名前を取得するには、このメンバー関数を呼び出す`CHttpFile`します。  
   
 ```  
@@ -236,7 +247,7 @@ CString GetObject() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用して、呼び出しは成功した後でのみ[SendRequest](#sendrequest)または、`CHttpFile`によって正常に作成されたオブジェクト[OpenURL](../../mfc/reference/cinternetsession-class.md#openurl)します。  
   
-##  <a name="a-namegetverba--chttpfilegetverb"></a><a name="getverb"></a>CHttpFile::GetVerb  
+##  <a name="getverb"></a>CHttpFile::GetVerb  
  これに関連付けられている HTTP 動詞 (またはメソッド) を取得するには、このメンバー関数を呼び出す`CHttpFile`します。  
   
 ```  
@@ -249,7 +260,7 @@ CString GetVerb() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用して、呼び出しは成功した後でのみ[SendRequest](#sendrequest)または、`CHttpFile`によって正常に作成されたオブジェクト[OpenURL](../../mfc/reference/cinternetsession-class.md#openurl)します。  
   
-##  <a name="a-namequeryinfoa--chttpfilequeryinfo"></a><a name="queryinfo"></a>CHttpFile::QueryInfo  
+##  <a name="queryinfo"></a>CHttpFile::QueryInfo  
  このメンバー関数を呼び出して応答を返すか、HTTP 要求からヘッダーを要求します。  
   
 ```  
@@ -366,7 +377,7 @@ BOOL QueryInfo(
   
 - **HTTP_QUERY_RAW_HEADERS_CRLF**  
   
-##  <a name="a-namequeryinfostatuscodea--chttpfilequeryinfostatuscode"></a><a name="queryinfostatuscode"></a>CHttpFile::QueryInfoStatusCode  
+##  <a name="queryinfostatuscode"></a>CHttpFile::QueryInfoStatusCode  
  HTTP 要求に関連付けられている状態コードを取得するには、このメンバー関数を呼び出すし、指定されたに配置`dwStatusCode`パラメーター。  
   
 ```  
@@ -403,7 +414,7 @@ BOOL QueryInfoStatusCode(DWORD& dwStatusCode) const;
 |500|不明なサーバー エラー|  
 |503|サーバーの容量に達しました|  
   
-##  <a name="a-namesendrequesta--chttpfilesendrequest"></a><a name="sendrequest"></a>Chttpfile::sendrequest  
+##  <a name="sendrequest"></a>Chttpfile::sendrequest  
  HTTP サーバーに要求を送信するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -439,7 +450,7 @@ BOOL SendRequest(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しに失敗した場合は、スローされたエラーの原因を判断する[表す](../../mfc/reference/cinternetexception-class.md)オブジェクトです。  
   
-##  <a name="a-namesendrequestexa--chttpfilesendrequestex"></a><a name="sendrequestex"></a>CHttpFile::SendRequestEx  
+##  <a name="sendrequestex"></a>CHttpFile::SendRequestEx  
  HTTP サーバーに要求を送信するには、このメンバー関数を呼び出します。  
   
 ```  

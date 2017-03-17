@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CClientDC
+- AFXWIN/CClientDC
+- AFXWIN/CClientDC::CClientDC
+- AFXWIN/CClientDC::m_hWnd
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -80,7 +83,7 @@ class CClientDC : public CDC
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecclientdca--cclientdccclientdc"></a><a name="cclientdc"></a>CClientDC::CClientDC  
+##  <a name="cclientdc"></a>CClientDC::CClientDC  
  構築、`CClientDC`のクライアント領域にアクセスするオブジェクトを[CWnd](../../mfc/reference/cwnd-class.md)指す`pWnd`します。  
   
 ```  
@@ -99,7 +102,7 @@ explicit CClientDC(CWnd* pWnd);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&42;](../../mfc/codesnippet/cpp/cclientdc-class_1.cpp)]  
   
-##  <a name="a-namemhwnda--cclientdcmhwnd"></a><a name="m_hwnd"></a>CClientDC::m_hWnd  
+##  <a name="m_hwnd"></a>CClientDC::m_hWnd  
  `HWND`の`CWnd`ポインターの構築に使用される、`CClientDC`オブジェクトです。  
   
 ```  

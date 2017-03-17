@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CShellManager
+- AFXSHELLMANAGER/CShellManager
+- AFXSHELLMANAGER/CShellManager::CShellManager
+- AFXSHELLMANAGER/CShellManager::BrowseForFolder
+- AFXSHELLMANAGER/CShellManager::ConcatenateItem
+- AFXSHELLMANAGER/CShellManager::CopyItem
+- AFXSHELLMANAGER/CShellManager::CreateItem
+- AFXSHELLMANAGER/CShellManager::FreeItem
+- AFXSHELLMANAGER/CShellManager::GetItemCount
+- AFXSHELLMANAGER/CShellManager::GetItemSize
+- AFXSHELLMANAGER/CShellManager::GetNextItem
+- AFXSHELLMANAGER/CShellManager::GetParentItem
+- AFXSHELLMANAGER/CShellManager::ItemFromPath
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +96,7 @@ class CShellManager : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxshellmanager.h  
   
-##  <a name="a-namebrowseforfoldera--cshellmanagerbrowseforfolder"></a><a name="browseforfolder"></a>CShellManager::BrowseForFolder  
+##  <a name="browseforfolder"></a>CShellManager::BrowseForFolder  
  ユーザーがシェル フォルダーを選択できるダイアログ ボックスが表示されます。  
   
 ```  
@@ -127,7 +139,7 @@ BOOL BrowseForFolder(
   
  [!code-cpp[NVC_MFC_Explorer&6;](../../mfc/reference/codesnippet/cpp/cshellmanager-class_1.cpp)]  
   
-##  <a name="a-nameconcatenateitema--cshellmanagerconcatenateitem"></a><a name="concatenateitem"></a>CShellManager::ConcatenateItem  
+##  <a name="concatenateitem"></a>CShellManager::ConcatenateItem  
  2 つの Pidl を含む新しいリストを作成します。  
   
 ```  
@@ -149,7 +161,7 @@ LPITEMIDLIST ConcatenateItem(
 ### <a name="remarks"></a>コメント  
  このメソッドが、新たに作成[ITEMIDLIST](http://msdn.microsoft.com/library/windows/desktop/bb773321)両方を格納するのに十分な大きさ`pidl1`と`pidl2`です。 コピーし、`pidl1`と`pidl2`新しいリストにします。  
   
-##  <a name="a-namecopyitema--cshellmanagercopyitem"></a><a name="copyitem"></a>CShellManager::CopyItem  
+##  <a name="copyitem"></a>CShellManager::CopyItem  
  項目のリストをコピーします。  
   
 ```  
@@ -166,7 +178,7 @@ LPITEMIDLIST CopyItem(LPCITEMIDLIST pidlSource);
 ### <a name="remarks"></a>コメント  
  新しく作成された項目のリストには、元の項目リストと同じサイズがあります。  
   
-##  <a name="a-namecreateitema--cshellmanagercreateitem"></a><a name="createitem"></a>CShellManager::CreateItem  
+##  <a name="createitem"></a>CShellManager::CreateItem  
  新しい PIDL を作成します。  
   
 ```  
@@ -180,7 +192,7 @@ LPITEMIDLIST CreateItem(UINT cbSize);
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は、作成された項目リストへのポインターそれ以外の場合`NULL`します。  
   
-##  <a name="a-namecshellmanagera--cshellmanagercshellmanager"></a><a name="cshellmanager"></a>CShellManager::CShellManager  
+##  <a name="cshellmanager"></a>CShellManager::CShellManager  
  `CShellManager` オブジェクトを構築します。  
   
 ```  
@@ -190,7 +202,7 @@ CShellManager();
 ### <a name="remarks"></a>コメント  
  ほとんどの場合は作成する必要はありません、`CShellManager`直接します。 既定では、フレームワークは自動的に作成します。 ポインターを取得する、 `CShellManager`、呼び出す[CWinAppEx::GetShellManager](../../mfc/reference/cwinappex-class.md#getshellmanager)します。 作成する場合は、 `CShellManager` 、手動でメソッドを使用して初期化する必要があります[CWinAppEx::InitShellManager](../../mfc/reference/cwinappex-class.md#initshellmanager)します。  
   
-##  <a name="a-namefreeitema--cshellmanagerfreeitem"></a><a name="freeitem"></a>CShellManager::FreeItem  
+##  <a name="freeitem"></a>CShellManager::FreeItem  
  項目のリストを削除します。  
   
 ```  
@@ -201,7 +213,7 @@ void FreeItem(LPITEMIDLIST pidl);
  [入力] `pidl`  
  削除する項目の一覧です。  
   
-##  <a name="a-namegetitemcounta--cshellmanagergetitemcount"></a><a name="getitemcount"></a>CShellManager::GetItemCount  
+##  <a name="getitemcount"></a>CShellManager::GetItemCount  
  項目リスト内の項目の数を返します。  
   
 ```  
@@ -215,7 +227,7 @@ UINT GetItemCount(LPCITEMIDLIST pidl);
 ### <a name="return-value"></a>戻り値  
  項目の一覧で項目の数。  
   
-##  <a name="a-namegetitemsizea--cshellmanagergetitemsize"></a><a name="getitemsize"></a>CShellManager::GetItemSize  
+##  <a name="getitemsize"></a>CShellManager::GetItemSize  
  項目リストのサイズを返します。  
   
 ```  
@@ -229,7 +241,7 @@ UINT GetItemSize(LPCITEMIDLIST pidl);
 ### <a name="return-value"></a>戻り値  
  項目リストのサイズ。  
   
-##  <a name="a-namegetnextitema--cshellmanagergetnextitem"></a><a name="getnextitem"></a>CShellManager::GetNextItem  
+##  <a name="getnextitem"></a>CShellManager::GetNextItem  
  項目識別子の一覧 (PIDL) ポインターからの次の項目を取得します。  
   
 ```  
@@ -246,7 +258,7 @@ LPITEMIDLIST GetNextItem(LPCITEMIDLIST pidl);
 ### <a name="remarks"></a>コメント  
  これ以上項目をかどうかは、一覧にある、このメソッドが戻る`NULL`します。  
   
-##  <a name="a-namegetparentitema--cshellmanagergetparentitem"></a><a name="getparentitem"></a>CShellManager::GetParentItem  
+##  <a name="getparentitem"></a>CShellManager::GetParentItem  
  項目識別子の一覧 (PIDL) へのポインターの親を取得します。  
   
 ```  
@@ -268,7 +280,7 @@ int GetParentItem(
 ### <a name="remarks"></a>コメント  
  デスクトップに対する相対パス PIDL のレベルです。 デスクトップの PIDL は、レベルは 0 と見なされます。  
   
-##  <a name="a-nameitemfrompatha--cshellmanageritemfrompath"></a><a name="itemfrompath"></a>CShellManager::ItemFromPath  
+##  <a name="itemfrompath"></a>CShellManager::ItemFromPath  
  項目識別子の一覧 (PIDL) を文字列パスで識別される項目から、ポインターを取得します。  
   
 ```  

@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CContextMenuManager
+- AFXCONTEXTMENUMANAGER/CContextMenuManager
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::CContextMenuManager
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::AddMenu
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::GetMenuById
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::GetMenuByName
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::GetMenuNames
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::LoadState
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::ResetState
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::SaveState
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::SetDontCloseActiveMenu
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::ShowPopupMenu
+- AFXCONTEXTMENUMANAGER/CContextMenuManager::TrackPopupMenu
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +106,7 @@ class CContextMenuManager : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcontextmenumanager.h  
   
-##  <a name="a-nameaddmenua--ccontextmenumanageraddmenu"></a><a name="addmenu"></a>CContextMenuManager::AddMenu  
+##  <a name="addmenu"></a>CContextMenuManager::AddMenu  
  新しいショートカット メニューを追加、 [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)します。  
   
 ```  
@@ -124,7 +136,7 @@ BOOL AddMenu(
 ### <a name="remarks"></a>コメント  
  このメソッドは失敗`uiMenuResId`が無効か、同じ名前の別のメニューに既に存在するかどうか、`CContextMenuManager`です。  
   
-##  <a name="a-nameccontextmenumanagera--ccontextmenumanagerccontextmenumanager"></a><a name="ccontextmenumanager"></a>CContextMenuManager::CContextMenuManager  
+##  <a name="ccontextmenumanager"></a>CContextMenuManager::CContextMenuManager  
  構築、 [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)オブジェクトです。  
   
 ```  
@@ -134,7 +146,7 @@ CContextMenuManager();
 ### <a name="remarks"></a>コメント  
  ほとんどの場合は作成しないで、`CContextMenuManager`手動でします。 アプリケーションのフレームワークを作成、`CContextMenuManager`オブジェクトです。 呼び出す必要があります[CWinAppEx::InitContextMenuManager](../../mfc/reference/cwinappex-class.md#initcontextmenumanager)アプリケーションの初期化中にします。 コンテキスト マネージャーへのポインターを取得する[CWinAppEx::GetContextMenuManager](../../mfc/reference/cwinappex-class.md#getcontextmenumanager)します。  
   
-##  <a name="a-namegetmenubyida--ccontextmenumanagergetmenubyid"></a><a name="getmenubyid"></a>CContextMenuManager::GetMenuById  
+##  <a name="getmenubyid"></a>CContextMenuManager::GetMenuById  
  指定されたリソース ID に関連付けられているメニューへのハンドルを返します  
   
 ```  
@@ -148,7 +160,7 @@ HMENU GetMenuById(UINT nMenuResId) const;
 ### <a name="return-value"></a>戻り値  
  関連付けられている menu へのハンドルまたは`NULL`メニューが見つからない場合。  
   
-##  <a name="a-namegetmenubynamea--ccontextmenumanagergetmenubyname"></a><a name="getmenubyname"></a>CContextMenuManager::GetMenuByName  
+##  <a name="getmenubyname"></a>CContextMenuManager::GetMenuByName  
  特定のメニューには、ハンドルを返します。  
   
 ```  
@@ -170,7 +182,7 @@ HMENU GetMenuByName(
 ### <a name="remarks"></a>コメント  
  このメソッドには、一致するメニューが検出されると`lpszName`、`GetMenuByName`パラメーターでのメニュー リソース ID を格納`puiOrigResID`します。  
   
-##  <a name="a-namegetmenunamesa--ccontextmenumanagergetmenunames"></a><a name="getmenunames"></a>CContextMenuManager::GetMenuNames  
+##  <a name="getmenunames"></a>CContextMenuManager::GetMenuNames  
  追加されたメニュー名のリストを返す、 [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)します。  
   
 ```  
@@ -181,7 +193,7 @@ void GetMenuNames(CStringList& listOfNames) const;
  [出力] `listOfNames`  
  参照、 [CStringList](../../mfc/reference/cstringlist-class.md)パラメーター。 このメソッドは、このパラメーターにあるメニュー名の一覧を書き込みます。  
   
-##  <a name="a-nameloadstatea--ccontextmenumanagerloadstate"></a><a name="loadstate"></a>CContextMenuManager::LoadState  
+##  <a name="loadstate"></a>CContextMenuManager::LoadState  
  関連付けられている情報を読み込み、 [CContextMenuManager クラス](../../mfc/reference/ccontextmenumanager-class.md)Windows レジストリからです。  
   
 ```  
@@ -200,7 +212,7 @@ virtual BOOL LoadState(LPCTSTR lpszProfileName = NULL);
   
  メソッドを使用して[CContextMenuManager::SaveState](#savestate)ショートカット メニューをレジストリに保存します。  
   
-##  <a name="a-nameresetstatea--ccontextmenumanagerresetstate"></a><a name="resetstate"></a>CContextMenuManager::ResetState  
+##  <a name="resetstate"></a>CContextMenuManager::ResetState  
  すべての項目に関連付けられているショートカット メニューから消去、 [CContextMenuManager クラス](../../mfc/reference/ccontextmenumanager-class.md)します。  
   
 ```  
@@ -213,7 +225,7 @@ virtual BOOL ResetState();
 ### <a name="remarks"></a>コメント  
  このメソッドは、ポップアップ メニューをクリアし、削除してから、`CContextMenuManager`です。  
   
-##  <a name="a-namesavestatea--ccontextmenumanagersavestate"></a><a name="savestate"></a>CContextMenuManager::SaveState  
+##  <a name="savestate"></a>CContextMenuManager::SaveState  
  関連付けられている情報を保存、 [CContextMenuManager クラス](../../mfc/reference/ccontextmenumanager-class.md)Windows レジストリにします。  
   
 ```  
@@ -232,7 +244,7 @@ virtual BOOL SaveState(LPCTSTR lpszProfileName = NULL);
   
  メソッドを使用して[CContextMenuManager::LoadState](#loadstate)レジストリからショートカット メニューをロードします。  
   
-##  <a name="a-namesetdontcloseactivemenua--ccontextmenumanagersetdontcloseactivemenu"></a><a name="setdontcloseactivemenu"></a>CContextMenuManager::SetDontCloseActiveMenu  
+##  <a name="setdontcloseactivemenu"></a>CContextMenuManager::SetDontCloseActiveMenu  
  コントロールかどうか、 [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)新しいポップアップ メニューを表示するときに、アクティブなポップアップ メニューを閉じます。  
   
 ```  
@@ -246,7 +258,7 @@ void SetDontCloseActiveMenu (BOOL bSet = TRUE);
 ### <a name="remarks"></a>コメント  
  既定では、`CContextMenuManager`アクティブなポップアップ メニューを閉じます。  
   
-##  <a name="a-nameshowpopupmenua--ccontextmenumanagershowpopupmenu"></a><a name="showpopupmenu"></a>CContextMenuManager::ShowPopupMenu  
+##  <a name="showpopupmenu"></a>CContextMenuManager::ShowPopupMenu  
  指定したショートカット メニューを表示します。  
   
 ```  
@@ -302,7 +314,7 @@ virtual CMFCPopupMenu* ShowPopupMenu(
   
  場合、パラメーター`bAutoDestroy`は`FALSE`、手動で呼び出す必要があります、継承された`DestroyMenu`メモリ リソースを解放します。 既定の実装`ShowPopupMenu`パラメーターを使用しない`bAutoDestroy`します。 将来使用するため、またはから派生したカスタム クラスを提供して、`CContextMenuManager`クラスです。  
   
-##  <a name="a-nametrackpopupmenua--ccontextmenumanagertrackpopupmenu"></a><a name="trackpopupmenu"></a>CContextMenuManager::TrackPopupMenu  
+##  <a name="trackpopupmenu"></a>CContextMenuManager::TrackPopupMenu  
  指定されたショートカット メニューを表示し、選択したショートカット メニュー コマンドのインデックスを返します。  
   
 ```  

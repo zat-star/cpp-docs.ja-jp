@@ -10,6 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl::CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl::Create
+- AFXCMN/CSpinButtonCtrl::CreateEx
+- AFXCMN/CSpinButtonCtrl::GetAccel
+- AFXCMN/CSpinButtonCtrl::GetBase
+- AFXCMN/CSpinButtonCtrl::GetBuddy
+- AFXCMN/CSpinButtonCtrl::GetPos
+- AFXCMN/CSpinButtonCtrl::GetRange
+- AFXCMN/CSpinButtonCtrl::SetAccel
+- AFXCMN/CSpinButtonCtrl::SetBase
+- AFXCMN/CSpinButtonCtrl::SetBuddy
+- AFXCMN/CSpinButtonCtrl::SetPos
+- AFXCMN/CSpinButtonCtrl::SetRange
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +116,7 @@ class CSpinButtonCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecreatea--cspinbuttonctrlcreate"></a><a name="create"></a>CSpinButtonCtrl::Create  
+##  <a name="create"></a>CSpinButtonCtrl::Create  
  スピン ボタン コントロールを作成し、それをアタッチ、`CSpinButtonCtrl`オブジェクト.  
   
 ```  
@@ -134,7 +148,7 @@ virtual BOOL Create(
   
  拡張ウィンドウ スタイルを使用して、スピン ボタン コントロールを作成するには、呼び出す[CSpinButtonCtrl::CreateEx](#createex)の代わりに**作成**します。  
   
-##  <a name="a-namecreateexa--cspinbuttonctrlcreateex"></a><a name="createex"></a>CSpinButtonCtrl::CreateEx  
+##  <a name="createex"></a>CSpinButtonCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けます、`CSpinButtonCtrl`オブジェクトです。  
   
 ```  
@@ -168,14 +182,14 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namecspinbuttonctrla--cspinbuttonctrlcspinbuttonctrl"></a><a name="cspinbuttonctrl"></a>CSpinButtonCtrl::CSpinButtonCtrl  
+##  <a name="cspinbuttonctrl"></a>CSpinButtonCtrl::CSpinButtonCtrl  
  `CSpinButtonCtrl` オブジェクトを構築します。  
   
 ```  
 CSpinButtonCtrl();
 ```  
   
-##  <a name="a-namegetaccela--cspinbuttonctrlgetaccel"></a><a name="getaccel"></a>CSpinButtonCtrl::GetAccel  
+##  <a name="getaccel"></a>CSpinButtonCtrl::GetAccel  
  スピン ボタン コントロールのアクセラレーション情報を取得します。  
   
 ```  
@@ -194,7 +208,7 @@ UINT GetAccel(
 ### <a name="return-value"></a>戻り値  
  アクセラレータの構造体の数を取得します。  
   
-##  <a name="a-namegetbasea--cspinbuttonctrlgetbase"></a><a name="getbase"></a>CSpinButtonCtrl::GetBase  
+##  <a name="getbase"></a>CSpinButtonCtrl::GetBase  
  スピン ボタン コントロールの現在の基数を取得します。  
   
 ```  
@@ -204,7 +218,7 @@ UINT GetBase() const;
 ### <a name="return-value"></a>戻り値  
  現在の基本値。  
   
-##  <a name="a-namegetbuddya--cspinbuttonctrlgetbuddy"></a><a name="getbuddy"></a>CSpinButtonCtrl::GetBuddy  
+##  <a name="getbuddy"></a>CSpinButtonCtrl::GetBuddy  
  現在の関連ウィンドウへのポインターを取得します。  
   
 ```  
@@ -214,7 +228,7 @@ CWnd* GetBuddy() const;
 ### <a name="return-value"></a>戻り値  
  現在の関連ウィンドウへのポインター。  
   
-##  <a name="a-namegetposa--cspinbuttonctrlgetpos"></a><a name="getpos"></a>CSpinButtonCtrl::GetPos  
+##  <a name="getpos"></a>CSpinButtonCtrl::GetPos  
  スピン ボタン コントロールの現在位置を取得します。  
   
 ```  

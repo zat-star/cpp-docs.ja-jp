@@ -10,10 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComCompositeControl
-- ATL::CComCompositeControl
-- ATL.CComCompositeControl<T>
-- ATL.CComCompositeControl
-- ATL::CComCompositeControl<T>
+- ATLCTL/ATL::CComCompositeControl
+- ATLCTL/ATL::CComCompositeControl::CComCompositeControl
+- ATLCTL/ATL::CComCompositeControl::AdviseSinkMap
+- ATLCTL/ATL::CComCompositeControl::CalcExtent
+- ATLCTL/ATL::CComCompositeControl::Create
+- ATLCTL/ATL::CComCompositeControl::CreateControlWindow
+- ATLCTL/ATL::CComCompositeControl::SetBackgroundColorFromAmbient
+- ATLCTL/ATL::CComCompositeControl::m_hbrBackground
+- ATLCTL/ATL::CComCompositeControl::m_hWndFocus
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -117,7 +122,7 @@ class CComCompositeControl : public CComControl<T,CAxDialogImpl<T>>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-nameadvisesinkmapa--ccomcompositecontroladvisesinkmap"></a><a name="advisesinkmap"></a>CComCompositeControl::AdviseSinkMap  
+##  <a name="advisesinkmap"></a>CComCompositeControl::AdviseSinkMap  
  複合コントロールでホストされているすべてのコントロールをアドバイズするか、このメソッドを呼び出します。  
   
 ```
@@ -150,7 +155,7 @@ HRESULT AdviseSinkMap(bool bAdvise);
 ### <a name="remarks"></a>コメント  
  このメソッドの基本実装は、イベント シンク マップのエントリを検索します。 その後、アドバイスまたはアドバイズ シンクのエントリをイベント シンク マップのによって記述された COM オブジェクトに接続ポイント。 また、このメソッドは、派生クラスが&1; つのインスタンスから継承されるという事実に依存`IDispEventImpl`のすべての制御を伝えたかアドバイズ シンク マップします。  
   
-##  <a name="a-namecalcextenta--ccomcompositecontrolcalcextent"></a><a name="calcextent"></a>CComCompositeControl::CalcExtent  
+##  <a name="calcextent"></a>CComCompositeControl::CalcExtent  
  サイズを計算するには、このメソッドを呼び出す**HIMETRIC**複合コントロールをホストするために使用するダイアログ リソースの単位です。  
   
 ```
@@ -167,7 +172,7 @@ BOOL CalcExtent(SIZE& size);
 ### <a name="remarks"></a>コメント  
  返されたサイズ、`size`パラメーター。  
   
-##  <a name="a-namecreatea--ccomcompositecontrolcreate"></a><a name="create"></a>CComCompositeControl::Create  
+##  <a name="create"></a>CComCompositeControl::Create  
  このメソッドは複合コントロールのコントロール ウィンドウを作成します。  
   
 ```
@@ -193,7 +198,7 @@ HWND Create(
 ### <a name="remarks"></a>コメント  
  通常、このメソッドは、コントロールのインプレース アクティブ化時に呼び出されます。  
   
-##  <a name="a-nameccomcompositecontrola--ccomcompositecontrolccomcompositecontrol"></a><a name="ccomcompositecontrol"></a>CComCompositeControl::CComCompositeControl  
+##  <a name="ccomcompositecontrol"></a>CComCompositeControl::CComCompositeControl  
  コンストラクターです。  
   
 ```
@@ -203,7 +208,7 @@ CComCompositeControl();
 ### <a name="remarks"></a>コメント  
  初期化、 [CComCompositeControl::m_hbrBackground](#m_hbrbackground)と[CComCompositeControl::m_hWndFocus](#m_hwndfocus)データ メンバーを NULL にします。  
   
-##  <a name="a-namedtora--ccomcompositecontrolccomcompositecontrol"></a><a name="dtor"></a>CComCompositeControl:: ~ CComCompositeControl  
+##  <a name="dtor"></a>CComCompositeControl:: ~ CComCompositeControl  
  デストラクターです。  
   
 ```
@@ -213,7 +218,7 @@ CComCompositeControl();
 ### <a name="remarks"></a>コメント  
  存在する場合は、バック グラウンド オブジェクトを削除します。  
   
-##  <a name="a-namecreatecontrolwindowa--ccomcompositecontrolcreatecontrolwindow"></a><a name="createcontrolwindow"></a>CComCompositeControl::CreateControlWindow  
+##  <a name="createcontrolwindow"></a>CComCompositeControl::CreateControlWindow  
  コントロールのウィンドウを作成し、ホストされるコントロールをアドバイズするには、このメソッドを呼び出します。  
   
 ```
@@ -235,21 +240,21 @@ virtual HWND CreateControlWindow(
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[CComCompositeControl::Create](#create)と[CComCompositeControl::AdviseSinkMap](#advisesinkmap)します。  
   
-##  <a name="a-namemhbrbackgrounda--ccomcompositecontrolmhbrbackground"></a><a name="m_hbrbackground"></a>CComCompositeControl::m_hbrBackground  
+##  <a name="m_hbrbackground"></a>CComCompositeControl::m_hbrBackground  
  背景のブラシ。  
   
 ```
 HBRUSH m_hbrBackground;
 ```  
   
-##  <a name="a-namemhwndfocusa--ccomcompositecontrolmhwndfocus"></a><a name="m_hwndfocus"></a>CComCompositeControl::m_hWndFocus  
+##  <a name="m_hwndfocus"></a>CComCompositeControl::m_hWndFocus  
  現在フォーカスがあるウィンドウのハンドル。  
   
 ```
 HWND m_hWndFocus;
 ```  
   
-##  <a name="a-namesetbackgroundcolorfromambienta--ccomcompositecontrolsetbackgroundcolorfromambient"></a><a name="setbackgroundcolorfromambient"></a>CComCompositeControl::SetBackgroundColorFromAmbient  
+##  <a name="setbackgroundcolorfromambient"></a>CComCompositeControl::SetBackgroundColorFromAmbient  
  コンテナーの背景色を使用して複合コントロールの背景色を設定するには、このメソッドを呼び出します。  
   
 ```

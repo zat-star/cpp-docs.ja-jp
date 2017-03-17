@@ -10,7 +10,61 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRenderTarget
-- afxrendertarget/CRenderTarget
+- AFXRENDERTARGET/CRenderTarget
+- AFXRENDERTARGET/CRenderTarget::CRenderTarget
+- AFXRENDERTARGET/CRenderTarget::Attach
+- AFXRENDERTARGET/CRenderTarget::BeginDraw
+- AFXRENDERTARGET/CRenderTarget::Clear
+- AFXRENDERTARGET/CRenderTarget::COLORREF_TO_D2DCOLOR
+- AFXRENDERTARGET/CRenderTarget::CreateCompatibleRenderTarget
+- AFXRENDERTARGET/CRenderTarget::Destroy
+- AFXRENDERTARGET/CRenderTarget::Detach
+- AFXRENDERTARGET/CRenderTarget::DrawBitmap
+- AFXRENDERTARGET/CRenderTarget::DrawEllipse
+- AFXRENDERTARGET/CRenderTarget::DrawGeometry
+- AFXRENDERTARGET/CRenderTarget::DrawGlyphRun
+- AFXRENDERTARGET/CRenderTarget::DrawLine
+- AFXRENDERTARGET/CRenderTarget::DrawRectangle
+- AFXRENDERTARGET/CRenderTarget::DrawRoundedRectangle
+- AFXRENDERTARGET/CRenderTarget::DrawText
+- AFXRENDERTARGET/CRenderTarget::DrawTextLayout
+- AFXRENDERTARGET/CRenderTarget::EndDraw
+- AFXRENDERTARGET/CRenderTarget::FillEllipse
+- AFXRENDERTARGET/CRenderTarget::FillGeometry
+- AFXRENDERTARGET/CRenderTarget::FillMesh
+- AFXRENDERTARGET/CRenderTarget::FillOpacityMask
+- AFXRENDERTARGET/CRenderTarget::FillRectangle
+- AFXRENDERTARGET/CRenderTarget::FillRoundedRectangle
+- AFXRENDERTARGET/CRenderTarget::Flush
+- AFXRENDERTARGET/CRenderTarget::GetAntialiasMode
+- AFXRENDERTARGET/CRenderTarget::GetDpi
+- AFXRENDERTARGET/CRenderTarget::GetMaximumBitmapSize
+- AFXRENDERTARGET/CRenderTarget::GetPixelFormat
+- AFXRENDERTARGET/CRenderTarget::GetPixelSize
+- AFXRENDERTARGET/CRenderTarget::GetRenderTarget
+- AFXRENDERTARGET/CRenderTarget::GetSize
+- AFXRENDERTARGET/CRenderTarget::GetTags
+- AFXRENDERTARGET/CRenderTarget::GetTextAntialiasMode
+- AFXRENDERTARGET/CRenderTarget::GetTextRenderingParams
+- AFXRENDERTARGET/CRenderTarget::GetTransform
+- AFXRENDERTARGET/CRenderTarget::IsSupported
+- AFXRENDERTARGET/CRenderTarget::IsValid
+- AFXRENDERTARGET/CRenderTarget::PopAxisAlignedClip
+- AFXRENDERTARGET/CRenderTarget::PopLayer
+- AFXRENDERTARGET/CRenderTarget::PushAxisAlignedClip
+- AFXRENDERTARGET/CRenderTarget::PushLayer
+- AFXRENDERTARGET/CRenderTarget::RestoreDrawingState
+- AFXRENDERTARGET/CRenderTarget::SaveDrawingState
+- AFXRENDERTARGET/CRenderTarget::SetAntialiasMode
+- AFXRENDERTARGET/CRenderTarget::SetDpi
+- AFXRENDERTARGET/CRenderTarget::SetTags
+- AFXRENDERTARGET/CRenderTarget::SetTextAntialiasMode
+- AFXRENDERTARGET/CRenderTarget::SetTextRenderingParams
+- AFXRENDERTARGET/CRenderTarget::SetTransform
+- AFXRENDERTARGET/CRenderTarget::VerifyResource
+- AFXRENDERTARGET/CRenderTarget::m_lstResources
+- AFXRENDERTARGET/CRenderTarget::m_pRenderTarget
+- AFXRENDERTARGET/CRenderTarget::m_pTextFormatDefault
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -140,14 +194,14 @@ class CRenderTarget : public CObject;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcrendertargeta--crendertargetcrendertarget"></a><a name="_dtorcrendertarget"></a>CRenderTarget:: ~ CRenderTarget  
+##  <a name="_dtorcrendertarget"></a>CRenderTarget:: ~ CRenderTarget  
  デストラクターです。 レンダー ターゲット オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CRenderTarget();
 ```  
   
-##  <a name="a-nameattacha--crendertargetattach"></a><a name="attach"></a>CRenderTarget::Attach  
+##  <a name="attach"></a>CRenderTarget::Attach  
  既存の接続は、ターゲット オブジェクトのインターフェイスをレンダリングします。  
   
 ```  
@@ -158,14 +212,14 @@ void Attach(ID2D1RenderTarget* pRenderTarget);
  `pRenderTarget`  
  既存のレンダー ターゲットのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namebegindrawa--crendertargetbegindraw"></a><a name="begindraw"></a>CRenderTarget::BeginDraw  
+##  <a name="begindraw"></a>CRenderTarget::BeginDraw  
  このレンダー ターゲット上に描画を開始します。  
   
 ```  
 void BeginDraw();
 ```  
   
-##  <a name="a-namecleara--crendertargetclear"></a><a name="clear"></a>CRenderTarget::Clear  
+##  <a name="clear"></a>CRenderTarget::Clear  
  指定された色の描画領域をクリアします。  
   
 ```  
@@ -176,7 +230,7 @@ void Clear(D2D1_COLOR_F color);
  `color`  
  描画領域をクリアする色。  
   
-##  <a name="a-namecolorreftod2dcolora--crendertargetcolorreftod2dcolor"></a><a name="colorref_to_d2dcolor"></a>CRenderTarget::COLORREF_TO_D2DCOLOR  
+##  <a name="colorref_to_d2dcolor"></a>CRenderTarget::COLORREF_TO_D2DCOLOR  
  GDI カラーとアルファ値を D2D1_COLOR_F オブジェクトに変換します。  
   
 ```  
@@ -194,7 +248,7 @@ static D2D1_COLOR_F COLORREF_TO_D2DCOLOR(
 ### <a name="return-value"></a>戻り値  
  D2D1_COLOR_F 値です。  
   
-##  <a name="a-namecreatecompatiblerendertargeta--crendertargetcreatecompatiblerendertarget"></a><a name="createcompatiblerendertarget"></a>CRenderTarget::CreateCompatibleRenderTarget  
+##  <a name="createcompatiblerendertarget"></a>CRenderTarget::CreateCompatibleRenderTarget  
  現在のレンダー ターゲットと互換性がある中間のオフスクリーン描画中に使用するため、新しいビットマップ レンダー ターゲットを作成します。  
   
 ```  
@@ -225,14 +279,14 @@ BOOL CreateCompatibleRenderTarget(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecrendertargeta--crendertargetcrendertarget"></a><a name="crendertarget"></a>CRenderTarget::CRenderTarget  
+##  <a name="crendertarget"></a>CRenderTarget::CRenderTarget  
  CRenderTarget オブジェクトを構築します。  
   
 ```  
 CRenderTarget();
 ```  
   
-##  <a name="a-namedestroya--crendertargetdestroy"></a><a name="destroy"></a>CRenderTarget::Destroy  
+##  <a name="destroy"></a>CRenderTarget::Destroy  
  1 つまたは複数のリソースを削除します。  
   
 ```  
@@ -246,7 +300,7 @@ BOOL Destroy(BOOL bDeleteResources = TRUE);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合は FALSE を返します  
   
-##  <a name="a-namedetacha--crendertargetdetach"></a><a name="detach"></a>CRenderTarget::Detach  
+##  <a name="detach"></a>CRenderTarget::Detach  
  レンダー ターゲット インターフェイス オブジェクトからのデタッチします。  
   
 ```  
@@ -256,7 +310,7 @@ ID2D1RenderTarget* Detach ();
 ### <a name="return-value"></a>戻り値  
  デタッチされたへのポインターは、対象のインターフェイスをレンダリングします。  
   
-##  <a name="a-namedrawbitmapa--crendertargetdrawbitmap"></a><a name="drawbitmap"></a>CRenderTarget::DrawBitmap  
+##  <a name="drawbitmap"></a>CRenderTarget::DrawBitmap  
  指定した IDWriteTextLayout オブジェクトによって記述されたフォーマットされたテキストを描画します。  
   
 ```  
@@ -284,7 +338,7 @@ void DrawBitmap(
  `pRectSrc`  
  サイズと位置を描画するビットマップ内の領域のビットマップの座標空間内のデバイスに依存しないピクセルで。  
   
-##  <a name="a-namedrawellipsea--crendertargetdrawellipse"></a><a name="drawellipse"></a>CRenderTarget::DrawEllipse  
+##  <a name="drawellipse"></a>CRenderTarget::DrawEllipse  
  指定した線のスタイルを使用して、指定された楕円のアウトラインを描画します。  
   
 ```  
@@ -308,7 +362,7 @@ void DrawEllipse(
  `strokeStyle`  
  楕円のアウトライン で、または線の描画に NULL を適用する線のスタイル。  
   
-##  <a name="a-namedrawgeometrya--crendertargetdrawgeometry"></a><a name="drawgeometry"></a>CRenderTarget::DrawGeometry  
+##  <a name="drawgeometry"></a>CRenderTarget::DrawGeometry  
  指定した線のスタイルを使用して指定された geometry の輪郭を描画します。  
   
 ```  
@@ -332,7 +386,7 @@ void DrawGeometry(
  `strokeStyle`  
  ジオメトリのアウトライン で、または線の描画に NULL を適用する線のスタイル。  
   
-##  <a name="a-namedrawglyphruna--crendertargetdrawglyphrun"></a><a name="drawglyphrun"></a>CRenderTarget::DrawGlyphRun  
+##  <a name="drawglyphrun"></a>CRenderTarget::DrawGlyphRun  
  指定したグリフを描画します。  
   
 ```  
@@ -356,7 +410,7 @@ void DrawGlyphRun(
  `measuringMode`  
  グリフのメトリックを使用してフォーマットされているときにテキストを測定する方法を示す値です。 既定値は、DWRITE_MEASURING_MODE_NATURAL です。  
   
-##  <a name="a-namedrawlinea--crendertargetdrawline"></a><a name="drawline"></a>CRenderTarget::DrawLine  
+##  <a name="drawline"></a>CRenderTarget::DrawLine  
  指定した線のスタイルを使用して指定した点を結ぶ直線を描画します。  
   
 ```  
@@ -384,7 +438,7 @@ void DrawLine(
  `strokeStyle`  
  ペイントまたは実線の描画に NULL に線のスタイル。  
   
-##  <a name="a-namedrawrectanglea--crendertargetdrawrectangle"></a><a name="drawrectangle"></a>CRenderTarget::DrawRectangle  
+##  <a name="drawrectangle"></a>CRenderTarget::DrawRectangle  
  指定した寸法と線のスタイルを持つ四角形のアウトラインを描画します。  
   
 ```  
@@ -408,7 +462,7 @@ void DrawRectangle(
  `strokeStyle`  
  ペイント、または線の描画に NULL に線のスタイル。  
   
-##  <a name="a-namedrawroundedrectanglea--crendertargetdrawroundedrectangle"></a><a name="drawroundedrectangle"></a>CRenderTarget::DrawRoundedRectangle  
+##  <a name="drawroundedrectangle"></a>CRenderTarget::DrawRoundedRectangle  
  指定した線のスタイルを使用して、指定した角の丸い四角形のアウトラインを描画します。  
   
 ```  
@@ -432,7 +486,7 @@ void DrawRoundedRectangle(
  `strokeStyle`  
  角の丸い四角形のストローク、または線の描画に NULL のスタイル。 既定値は NULL です。  
   
-##  <a name="a-namedrawtexta--crendertargetdrawtext"></a><a name="drawtext"></a>CRenderTarget::DrawText  
+##  <a name="drawtext"></a>CRenderTarget::DrawText  
  IDWriteTextFormat オブジェクトによって提供される形式の情報を使用して、指定したテキストを描画します。  
   
 ```  
@@ -464,7 +518,7 @@ void DrawText(
  `measuringMode`  
  グリフのメトリックを使用してフォーマットされているときにテキストを測定する方法を示す値です。 既定値は、DWRITE_MEASURING_MODE_NATURAL です。  
   
-##  <a name="a-namedrawtextlayouta--crendertargetdrawtextlayout"></a><a name="drawtextlayout"></a>CRenderTarget::DrawTextLayout  
+##  <a name="drawtextlayout"></a>CRenderTarget::DrawTextLayout  
  指定した IDWriteTextLayout オブジェクトによって記述されたフォーマットされたテキストを描画します。  
   
 ```  
@@ -488,7 +542,7 @@ void DrawTextLayout(
  `options`  
  ピクセルの境界にテキストをスナップするかどうかと、レイアウト四角形にテキストをクリップするかどうかを示す値です。 既定値は、D2D1_DRAW_TEXT_OPTIONS_NONE で、テキストは、ピクセルの境界にスナップする必要があり、レイアウト四角形にクリップすることがないことを示します。  
   
-##  <a name="a-nameenddrawa--crendertargetenddraw"></a><a name="enddraw"></a>CRenderTarget::EndDraw  
+##  <a name="enddraw"></a>CRenderTarget::EndDraw  
  レンダー ターゲットに対して描画操作を終了し、現在のエラー状態と関連付けられているタグを示します。  
   
 ```  
@@ -498,7 +552,7 @@ HRESULT EndDraw();
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namefillellipsea--crendertargetfillellipse"></a><a name="fillellipse"></a>CRenderTarget::FillEllipse  
+##  <a name="fillellipse"></a>CRenderTarget::FillEllipse  
  指定された楕円の内部を描画します。  
   
 ```  
@@ -514,7 +568,7 @@ void FillEllipse(
  `pBrush`  
  楕円の内部を描画するブラシ。  
   
-##  <a name="a-namefillgeometrya--crendertargetfillgeometry"></a><a name="fillgeometry"></a>CRenderTarget::FillGeometry  
+##  <a name="fillgeometry"></a>CRenderTarget::FillGeometry  
  指定された geometry の内部を描画します。  
   
 ```  
@@ -534,7 +588,7 @@ void FillGeometry(
  `pOpacityBrush`  
  不透明度マスクのジオメトリ; に適用するにはない不透明度マスクの場合は NULL です。 不透明度マスク (opacityBrush パラメーター) を指定すると、ブラシは D2D1_EXTEND_MODE_CLAMP に設定されている、x および y 拡張モードのある ID2D1BitmapBrush をする必要があります。 詳細については、「解説」を参照してください。  
   
-##  <a name="a-namefillmesha--crendertargetfillmesh"></a><a name="fillmesh"></a>CRenderTarget::FillMesh  
+##  <a name="fillmesh"></a>CRenderTarget::FillMesh  
  指定したメッシュの内部を描画します。  
   
 ```  
@@ -550,7 +604,7 @@ void FillMesh(
  `pBrush`  
  メッシュの描画に使用するブラシ。  
   
-##  <a name="a-namefillopacitymaska--crendertargetfillopacitymask"></a><a name="fillopacitymask"></a>CRenderTarget::FillOpacityMask  
+##  <a name="fillopacitymask"></a>CRenderTarget::FillOpacityMask  
  ブラシへの指定したビットマップが示す不透明度マスクを適用し、そのブラシを使用して、レンダー ターゲットの領域を描画します。  
   
 ```  
@@ -578,7 +632,7 @@ void FillOpacityMask(
  `rectSrc`  
  デバイスに依存しないピクセル単位での不透明度マスクとして使用するビットマップのリージョンです。  
   
-##  <a name="a-namefillrectanglea--crendertargetfillrectangle"></a><a name="fillrectangle"></a>CRenderTarget::FillRectangle  
+##  <a name="fillrectangle"></a>CRenderTarget::FillRectangle  
  指定された四角形の内部を描画します。  
   
 ```  
@@ -594,7 +648,7 @@ void FillRectangle(
  `pBrush`  
  四角形を描画するブラシの内部をします。  
   
-##  <a name="a-namefillroundedrectanglea--crendertargetfillroundedrectangle"></a><a name="fillroundedrectangle"></a>CRenderTarget::FillRoundedRectangle  
+##  <a name="fillroundedrectangle"></a>CRenderTarget::FillRoundedRectangle  
  指定した角の丸い四角形の内部を描画します。  
   
 ```  
@@ -610,7 +664,7 @@ void FillRoundedRectangle(
  `pBrush`  
  角丸四角形の内部を描画するブラシ。  
   
-##  <a name="a-nameflusha--crendertargetflush"></a><a name="flush"></a>CRenderTarget::Flush  
+##  <a name="flush"></a>CRenderTarget::Flush  
  すべての保留中の描画コマンドを実行します。  
   
 ```  
@@ -626,7 +680,7 @@ void Flush(
  `tag2`  
  エラーがない場合は、エラーまたは 0 を原因となった操作を描画するためのタグが含まれています。 このパラメーターは初期化せずに渡されます。  
   
-##  <a name="a-namegetantialiasmodea--crendertargetgetantialiasmode"></a><a name="getantialiasmode"></a>CRenderTarget::GetAntialiasMode  
+##  <a name="getantialiasmode"></a>CRenderTarget::GetAntialiasMode  
  テキスト以外の描画操作の現在の (アンチエイリアシング) モードを取得します。  
   
 ```  
@@ -636,7 +690,7 @@ D2D1_ANTIALIAS_MODE GetAntialiasMode() const;
 ### <a name="return-value"></a>戻り値  
  テキスト以外の描画操作の現在の (アンチエイリアシング) モード。  
   
-##  <a name="a-namegetdpia--crendertargetgetdpi"></a><a name="getdpi"></a>CRenderTarget::GetDpi  
+##  <a name="getdpi"></a>CRenderTarget::GetDpi  
  レンダリング ターゲットのドット/インチ (DPI) を返します  
   
 ```  
@@ -646,7 +700,7 @@ CD2DSizeF GetDpi() const;
 ### <a name="return-value"></a>戻り値  
  レンダー ターゲットのドット/インチ (DPI)。  
   
-##  <a name="a-namegetmaximumbitmapsizea--crendertargetgetmaximumbitmapsize"></a><a name="getmaximumbitmapsize"></a>CRenderTarget::GetMaximumBitmapSize  
+##  <a name="getmaximumbitmapsize"></a>CRenderTarget::GetMaximumBitmapSize  
  レンダー ターゲットでサポートされている任意の&1; つのビットマップ ディメンションのデバイスに依存しない単位 (ピクセル単位) で最大サイズを取得します。  
   
 ```  
@@ -656,7 +710,7 @@ UINT32 GetMaximumBitmapSize() const;
 ### <a name="return-value"></a>戻り値  
  レンダー ターゲットでサポートされている任意の&1; つのビットマップ ディメンションのピクセル単位の最大サイズ  
   
-##  <a name="a-namegetpixelformata--crendertargetgetpixelformat"></a><a name="getpixelformat"></a>CRenderTarget::GetPixelFormat  
+##  <a name="getpixelformat"></a>CRenderTarget::GetPixelFormat  
  レンダー ターゲットのピクセル形式とアルファ モードを取得します。  
   
 ```  
@@ -666,7 +720,7 @@ D2D1_PIXEL_FORMAT GetPixelFormat() const;
 ### <a name="return-value"></a>戻り値  
  レンダー ターゲットのピクセル形式とアルファ モード  
   
-##  <a name="a-namegetpixelsizea--crendertargetgetpixelsize"></a><a name="getpixelsize"></a>CRenderTarget::GetPixelSize  
+##  <a name="getpixelsize"></a>CRenderTarget::GetPixelSize  
  デバイス ピクセル単位で、レンダー ターゲットのサイズを返します  
   
 ```  
@@ -676,7 +730,7 @@ CD2DSizeU GetPixelSize() const;
 ### <a name="return-value"></a>戻り値  
  デバイス ピクセル単位で、レンダー ターゲットのサイズ  
   
-##  <a name="a-namegetrendertargeta--crendertargetgetrendertarget"></a><a name="getrendertarget"></a>CRenderTarget::GetRenderTarget  
+##  <a name="getrendertarget"></a>CRenderTarget::GetRenderTarget  
  返します。 ID2D1RenderTarget インターフェイス  
   
 ```  
@@ -686,7 +740,7 @@ ID2D1RenderTarget* GetRenderTarget();
 ### <a name="return-value"></a>戻り値  
  ID2D1RenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namegetsizea--crendertargetgetsize"></a><a name="getsize"></a>CRenderTarget::GetSize  
+##  <a name="getsize"></a>CRenderTarget::GetSize  
  デバイスに依存しないピクセル単位で、レンダー ターゲットのサイズを返します  
   
 ```  
@@ -696,7 +750,7 @@ CD2DSizeF GetSize() const;
 ### <a name="return-value"></a>戻り値  
  デバイスに依存しないピクセルで、レンダー ターゲットの現在のサイズ  
   
-##  <a name="a-namegettagsa--crendertargetgettags"></a><a name="gettags"></a>CRenderTarget::GetTags  
+##  <a name="gettags"></a>CRenderTarget::GetTags  
  以降の描画操作のラベルを取得します。  
   
 ```  
@@ -712,7 +766,7 @@ void GetTags(
  `tag2`  
  以降の描画操作の&2; 番目のラベルが含まれています。 このパラメーターは初期化せずに渡されます。 NULL が指定されている場合、このパラメーターの値は取得されません。  
   
-##  <a name="a-namegettextantialiasmodea--crendertargetgettextantialiasmode"></a><a name="gettextantialiasmode"></a>CRenderTarget::GetTextAntialiasMode  
+##  <a name="gettextantialiasmode"></a>CRenderTarget::GetTextAntialiasMode  
  テキストとグリフが描画操作の現在の (アンチエイリアシング) モードを取得します。  
   
 ```  
@@ -722,7 +776,7 @@ D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode() const;
 ### <a name="return-value"></a>戻り値  
  テキストとグリフが描画操作の現在の (アンチエイリアシング) モード。  
   
-##  <a name="a-namegettextrenderingparamsa--crendertargetgettextrenderingparams"></a><a name="gettextrenderingparams"></a>CRenderTarget::GetTextRenderingParams  
+##  <a name="gettextrenderingparams"></a>CRenderTarget::GetTextRenderingParams  
  レンダー ターゲットの現在のテキストのレンダリング オプションを取得します。  
   
 ```  
@@ -733,7 +787,7 @@ void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams);
  `textRenderingParams`  
  TextRenderingParamscontains レンダー ターゲットへのポインターのアドレスの現在このメソッドが戻るときにテキストのレンダリング オプション。  
   
-##  <a name="a-namegettransforma--crendertargetgettransform"></a><a name="gettransform"></a>CRenderTarget::GetTransform  
+##  <a name="gettransform"></a>CRenderTarget::GetTransform  
  既存の変換を置き換える、レンダー ターゲットを指定した変換を適用します。 後続のすべての描画操作は、変換された空間で発生します。  
   
 ```  
@@ -744,7 +798,7 @@ void GetTransform(D2D1_MATRIX_3X2_F* transform);
  `transform`  
  レンダー ターゲットに適用する変換です。  
   
-##  <a name="a-nameissupporteda--crendertargetissupported"></a><a name="issupported"></a>CRenderTarget::IsSupported  
+##  <a name="issupported"></a>CRenderTarget::IsSupported  
  レンダー ターゲットが指定されたプロパティをサポートするかどうかを示します  
   
 ```  
@@ -758,7 +812,7 @@ BOOL IsSupported(const D2D1_RENDER_TARGET_PROPERTIES& renderTargetProperties) co
 ### <a name="return-value"></a>戻り値  
  このレンダー ターゲットである、指定されたレンダー ターゲットのプロパティがサポートされている場合は TRUE。それ以外の場合は FALSE  
   
-##  <a name="a-nameisvalida--crendertargetisvalid"></a><a name="isvalid"></a>CRenderTarget::IsValid  
+##  <a name="isvalid"></a>CRenderTarget::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -768,28 +822,28 @@ BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namemlstresourcesa--crendertargetmlstresources"></a><a name="m_lstresources"></a>CRenderTarget::m_lstResources  
+##  <a name="m_lstresources"></a>CRenderTarget::m_lstResources  
  CD2DResource のオブジェクトへのポインターのリスト。  
   
 ```  
 CObList m_lstResources;  
 ```  
   
-##  <a name="a-namemprendertargeta--crendertargetmprendertarget"></a><a name="m_prendertarget"></a>CRenderTarget::m_pRenderTarget  
+##  <a name="m_prendertarget"></a>CRenderTarget::m_pRenderTarget  
  ID2D1RenderTarget オブジェクトへのポインター。  
   
 ```  
 ID2D1RenderTarget* m_pRenderTarget;  
 ```  
   
-##  <a name="a-namemptextformatdefaulta--crendertargetmptextformatdefault"></a><a name="m_ptextformatdefault"></a>CRenderTarget::m_pTextFormatDefault  
+##  <a name="m_ptextformatdefault"></a>CRenderTarget::m_pTextFormatDefault  
  既定のテキスト形式を格納している CD2DTextFormat のオブジェクトへのポインター。  
   
 ```  
 CD2DTextFormat* m_pTextFormatDefault;  
 ```  
   
-##  <a name="a-nameoperatorid2d1rendertargetstara--crendertargetoperator-id2d1rendertarget"></a><a name="operator_id2d1rendertarget_star"></a>CRenderTarget::operator ID2D1RenderTarget *  
+##  <a name="operator_id2d1rendertarget_star"></a>CRenderTarget::operator ID2D1RenderTarget *  
  返します。 ID2D1RenderTarget インターフェイス  
   
 ```  
@@ -799,21 +853,21 @@ operator ID2D1RenderTarget*();
 ### <a name="return-value"></a>戻り値  
  ID2D1RenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namepopaxisalignedclipa--crendertargetpopaxisalignedclip"></a><a name="popaxisalignedclip"></a>CRenderTarget::PopAxisAlignedClip  
+##  <a name="popaxisalignedclip"></a>CRenderTarget::PopAxisAlignedClip  
  レンダー ターゲットから最後の軸に沿ったクリップを削除します。 このメソッドが呼び出された後、クリップが以降の描画操作に適用されていません。  
   
 ```  
 void PopAxisAlignedClip();
 ```  
   
-##  <a name="a-namepoplayera--crendertargetpoplayer"></a><a name="poplayer"></a>CRenderTarget::PopLayer  
+##  <a name="poplayer"></a>CRenderTarget::PopLayer  
  最後の PushLayer で指定されているレイヤーの描画操作のリダイレクトを停止を呼び出します。  
   
 ```  
 void PopLayer();
 ```  
   
-##  <a name="a-namepushaxisalignedclipa--crendertargetpushaxisalignedclip"></a><a name="pushaxisalignedclip"></a>CRenderTarget::PushAxisAlignedClip  
+##  <a name="pushaxisalignedclip"></a>CRenderTarget::PushAxisAlignedClip  
  レンダー ターゲットから最後の軸に沿ったクリップを削除します。 このメソッドが呼び出された後、クリップが以降の描画操作に適用されていません。  
   
 ```  
@@ -829,7 +883,7 @@ void PushAxisAlignedClip(
  `mode`  
  使用してサブピクセル境界があるクリップ四角形のエッジを描画し、シーンの内容でクリップを調和させるアンチ エイリアス処理モードです。 ブレンドに対して実行されるときに PopAxisAlignedClip メソッドが呼び出され、そのレイヤー内の各プリミティブには適用されません。  
   
-##  <a name="a-namepushlayera--crendertargetpushlayer"></a><a name="pushlayer"></a>CRenderTarget::PushLayer  
+##  <a name="pushlayer"></a>CRenderTarget::PushLayer  
  PopLayer が呼び出されるまでは、後続のすべての描画操作を受信できるように、レンダー ターゲットに指定したレイヤーを追加します。  
   
 ```  
@@ -845,7 +899,7 @@ void PushLayer(
  `layer`  
  以降の描画操作を受信するレイヤー。  
   
-##  <a name="a-namerestoredrawingstatea--crendertargetrestoredrawingstate"></a><a name="restoredrawingstate"></a>CRenderTarget::RestoreDrawingState  
+##  <a name="restoredrawingstate"></a>CRenderTarget::RestoreDrawingState  
  指定した ID2D1DrawingStateBlock のレンダー ターゲットの描画状態を設定します。  
   
 ```  
@@ -856,7 +910,7 @@ void RestoreDrawingState(ID2D1DrawingStateBlock& drawingStateBlock);
  `drawingStateBlock`  
  レンダー ターゲットの新しい状態を描画します。  
   
-##  <a name="a-namesavedrawingstatea--crendertargetsavedrawingstate"></a><a name="savedrawingstate"></a>CRenderTarget::SaveDrawingState  
+##  <a name="savedrawingstate"></a>CRenderTarget::SaveDrawingState  
  指定した ID2D1DrawingStateBlock に現在の描画状態を保存します。  
   
 ```  
@@ -867,7 +921,7 @@ void SaveDrawingState(ID2D1DrawingStateBlock& drawingStateBlock) const;
  `drawingStateBlock`  
  このメソッドが戻るとき、レンダー ターゲットの現在の描画状態を格納します。 このパラメーターは、メソッドに渡す前に初期化する必要があります。  
   
-##  <a name="a-namesetantialiasmodea--crendertargetsetantialiasmode"></a><a name="setantialiasmode"></a>CRenderTarget::SetAntialiasMode  
+##  <a name="setantialiasmode"></a>CRenderTarget::SetAntialiasMode  
  レンダー ターゲットの (アンチエイリアシング) モードを設定します。 アンチ エイリアス処理モードは、テキストおよびグリフが描画操作を除く、すべての後続描画操作に適用されます。  
   
 ```  
@@ -878,7 +932,7 @@ void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode);
  `antialiasMode`  
  将来の描画操作 (アンチエイリアシング) モード。  
   
-##  <a name="a-namesetdpia--crendertargetsetdpi"></a><a name="setdpi"></a>CRenderTarget::SetDpi  
+##  <a name="setdpi"></a>CRenderTarget::SetDpi  
  ドット/インチ (DPI) のレンダー ターゲットを設定します。  
   
 ```  
@@ -889,7 +943,7 @@ void SetDpi(const CD2DSizeF& sizeDPI);
  `sizeDPI`  
  レンダー ターゲットの水平方向/verticalDPI を指定する&0; 以上の値です。  
   
-##  <a name="a-namesettagsa--crendertargetsettags"></a><a name="settags"></a>CRenderTarget::SetTags  
+##  <a name="settags"></a>CRenderTarget::SetTags  
  以降の描画操作のラベルを指定します。  
   
 ```  
@@ -905,7 +959,7 @@ void SetTags(
  `tag2`  
  以降の描画操作に適用するラベルです。  
   
-##  <a name="a-namesettextantialiasmodea--crendertargetsettextantialiasmode"></a><a name="settextantialiasmode"></a>CRenderTarget::SetTextAntialiasMode  
+##  <a name="settextantialiasmode"></a>CRenderTarget::SetTextAntialiasMode  
  後続のテキストおよびグリフの描画操作を使用する (アンチエイリアシング) モードを指定します。  
   
 ```  
@@ -916,7 +970,7 @@ void SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
  `textAntialiasMode`  
  後続のテキストおよびグリフが描画操作を使用する (アンチエイリアシング) モード。  
   
-##  <a name="a-namesettextrenderingparamsa--crendertargetsettextrenderingparams"></a><a name="settextrenderingparams"></a>CRenderTarget::SetTextRenderingParams  
+##  <a name="settextrenderingparams"></a>CRenderTarget::SetTextRenderingParams  
  すべての後続のテキストとグリフが描画操作に適用するテキストのレンダリング オプションを指定します。  
   
 ```  
@@ -927,7 +981,7 @@ void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams = NULL);
  `textRenderingParams`  
  すべての後続のテキストとグリフが描画操作に適用するテキストのレンダリング オプション現在のテキストのレンダリング オプションをオフにする場合は NULL です。  
   
-##  <a name="a-namesettransforma--crendertargetsettransform"></a><a name="settransform"></a>CRenderTarget::SetTransform  
+##  <a name="settransform"></a>CRenderTarget::SetTransform  
  既存の変換を置き換える、レンダー ターゲットを指定した変換を適用します。 後続のすべての描画操作は、変換された空間で発生します。  
   
 ```  
@@ -939,7 +993,7 @@ void SetTransform(const D2D1_MATRIX_3X2_F& transform);
  `transform`  
  レンダー ターゲットに適用する変換です。  
   
-##  <a name="a-nameverifyresourcea--crendertargetverifyresource"></a><a name="verifyresource"></a>CRenderTarget::VerifyResource  
+##  <a name="verifyresource"></a>CRenderTarget::VerifyResource  
  CD2DResource オブジェクトの有効性; を検証します。存在しない場合は、オブジェクトを作成します。  
   
 ```  

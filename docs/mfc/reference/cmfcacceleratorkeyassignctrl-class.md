@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCAcceleratorKeyAssignCtrl
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::CMFCAcceleratorKeyAssignCtrl
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::GetAccel
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::IsFocused
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::IsKeyDefined
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::PreTranslateMessage
+- AFXACCELERATORKEYASSIGNCTRL/CMFCAcceleratorKeyAssignCtrl::ResetKey
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,14 +97,14 @@ class CMFCAcceleratorKeyAssignCtrl : public CEdit
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxacceleratorkeyassignctrl.h  
   
-##  <a name="a-namecmfcacceleratorkeyassignctrla--cmfcacceleratorkeyassignctrlcmfcacceleratorkeyassignctrl"></a><a name="cmfcacceleratorkeyassignctrl"></a>CMFCAcceleratorKeyAssignCtrl::CMFCAcceleratorKeyAssignCtrl  
+##  <a name="cmfcacceleratorkeyassignctrl"></a>CMFCAcceleratorKeyAssignCtrl::CMFCAcceleratorKeyAssignCtrl  
  構築、 [CMFCAcceleratorKeyAssignCtrl](../../mfc/reference/cmfcacceleratorkeyassignctrl-class.md)オブジェクトです。  
   
 ```  
 CMFCAcceleratorKeyAssignCtrl();
 ```  
   
-##  <a name="a-namegetaccela--cmfcacceleratorkeyassignctrlgetaccel"></a><a name="getaccel"></a>CMFCAcceleratorKeyAssignCtrl::GetAccel  
+##  <a name="getaccel"></a>CMFCAcceleratorKeyAssignCtrl::GetAccel  
  取得、`ACCEL`のショートカット キーが押されるを構造体、 [CMFCAcceleratorKeyAssignCtrl](../../mfc/reference/cmfcacceleratorkeyassignctrl-class.md)オブジェクトです。  
   
 ```  
@@ -110,7 +117,7 @@ ACCEL const* GetAccel() const;
 ### <a name="remarks"></a>コメント  
  この関数を使用して取得、 `ACCEL` 、ユーザーに入力したショートカット キーの構造、`CMFCAcceleratorKeyAssignCtrl`オブジェクトです。  
   
-##  <a name="a-nameisfocuseda--cmfcacceleratorkeyassignctrlisfocused"></a><a name="isfocused"></a>CMFCAcceleratorKeyAssignCtrl::IsFocused  
+##  <a name="isfocused"></a>CMFCAcceleratorKeyAssignCtrl::IsFocused  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -121,7 +128,7 @@ BOOL IsFocused() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameiskeydefineda--cmfcacceleratorkeyassignctrliskeydefined"></a><a name="iskeydefined"></a>CMFCAcceleratorKeyAssignCtrl::IsKeyDefined  
+##  <a name="iskeydefined"></a>CMFCAcceleratorKeyAssignCtrl::IsKeyDefined  
  ショートカット キーが定義されているかどうかを判断、 [CMFCAcceleratorKeyAssignCtrl](../../mfc/reference/cmfcacceleratorkeyassignctrl-class.md)オブジェクトです。  
   
 ```  
@@ -134,7 +141,7 @@ BOOL IsKeyDefined() const;
 ### <a name="remarks"></a>コメント  
  ユーザーが有効なショートカット キーを入力するかどうかを判断するこの関数を使用して、`CMFCAcceleratorKeyAssignCtrl`オブジェクトです。 ショートカット キーが存在する場合を使用できます[CMFCAcceleratorKeyAssignCtrl::GetAccel](#getaccel)を入手する方法、`ACCEL`このショートカット キーに関連付けられている構造体。  
   
-##  <a name="a-namepretranslatemessagea--cmfcacceleratorkeyassignctrlpretranslatemessage"></a><a name="pretranslatemessage"></a>CMFCAcceleratorKeyAssignCtrl::PreTranslateMessage  
+##  <a name="pretranslatemessage"></a>CMFCAcceleratorKeyAssignCtrl::PreTranslateMessage  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -148,7 +155,7 @@ virtual BOOL PreTranslateMessage(MSG* pMsg);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameresetkeya--cmfcacceleratorkeyassignctrlresetkey"></a><a name="resetkey"></a>CMFCAcceleratorKeyAssignCtrl::ResetKey  
+##  <a name="resetkey"></a>CMFCAcceleratorKeyAssignCtrl::ResetKey  
  ショートカット キーをリセットします。  
   
 ```  

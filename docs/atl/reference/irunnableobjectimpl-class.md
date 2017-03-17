@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IRunnableObjectImpl
+- ATLCTL/ATL::IRunnableObjectImpl
+- ATLCTL/ATL::IRunnableObjectImpl::GetRunningClass
+- ATLCTL/ATL::IRunnableObjectImpl::IsRunning
+- ATLCTL/ATL::IRunnableObjectImpl::LockRunning
+- ATLCTL/ATL::IRunnableObjectImpl::Run
+- ATLCTL/ATL::IRunnableObjectImpl::SetContainedObject
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,7 +91,7 @@ class IRunnableObjectImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namegetrunningclassa--irunnableobjectimplgetrunningclass"></a><a name="getrunningclass"></a>IRunnableObjectImpl::GetRunningClass  
+##  <a name="getrunningclass"></a>IRunnableObjectImpl::GetRunningClass  
  実行中のコントロールの CLSID が返されます。  
   
 ```
@@ -98,7 +104,7 @@ HRESULT GetRunningClass(LPCLSID lpClsid);
 ### <a name="remarks"></a>コメント  
  参照してください[IRunnableObject::GetRunningClass](http://msdn.microsoft.com/library/windows/desktop/ms693734)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameisrunninga--irunnableobjectimplisrunning"></a><a name="isrunning"></a>IRunnableObjectImpl::IsRunning  
+##  <a name="isrunning"></a>IRunnableObjectImpl::IsRunning  
  コントロールが実行されているかどうかを判断します。  
   
 ```
@@ -111,7 +117,7 @@ virtual BOOL IsRunning();
 ### <a name="remarks"></a>コメント  
  参照してください[IRunnableObject::IsRunning](http://msdn.microsoft.com/library/windows/desktop/ms678496)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namelockrunninga--irunnableobjectimpllockrunning"></a><a name="lockrunning"></a>IRunnableObjectImpl::LockRunning  
+##  <a name="lockrunning"></a>IRunnableObjectImpl::LockRunning  
  実行中の状態には、コントロールをロックします。  
   
 ```
@@ -124,7 +130,7 @@ HRESULT LockRunning(BOOL fLock, BOOL fLastUnlockCloses);
 ### <a name="remarks"></a>コメント  
  参照してください[IRunnableObject::LockRunning](http://msdn.microsoft.com/library/windows/desktop/ms693361)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameruna--irunnableobjectimplrun"></a><a name="run"></a>IRunnableObjectImpl::Run  
+##  <a name="run"></a>IRunnableObjectImpl::Run  
  そのコントロールが実行を強制します。  
   
 ```
@@ -137,7 +143,7 @@ HRESULT Run(LPBINDCTX lpbc);
 ### <a name="remarks"></a>コメント  
  参照してください[IRunnableObject::Run](http://msdn.microsoft.com/library/windows/desktop/ms694517)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetcontainedobjecta--irunnableobjectimplsetcontainedobject"></a><a name="setcontainedobject"></a>IRunnableObjectImpl::SetContainedObject  
+##  <a name="setcontainedobject"></a>IRunnableObjectImpl::SetContainedObject  
  コントロールが埋め込まれていることを示します。  
   
 ```

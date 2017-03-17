@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCDropDownFrame
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame::Create
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame::GetParentMenuBar
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame::GetParentPopupMenu
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame::RecalcLayout
+- AFXDROPDOWNTOOLBAR/CMFCDropDownFrame::SetAutoDestroy
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -98,7 +104,7 @@ class CMFCDropDownFrame : public CMiniFrameWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdropdowntoolbar.h  
   
-##  <a name="a-namecreatea--cmfcdropdownframecreate"></a><a name="create"></a>CMFCDropDownFrame::Create  
+##  <a name="create"></a>CMFCDropDownFrame::Create  
  
           `CMFCDropDownFrame` オブジェクトを作成します。  
   
@@ -128,7 +134,7 @@ virtual BOOL Create(
   
  `CMFCDropDownFrame`クラスが用意されているコピーを作成`CMFCDropDownToolBar`パラメーター。 このメソッドは、ボタンの状態から、ボタンのイメージをコピー、`pWndOriginToolbar`パラメーターを`m_pWndOriginToolbar`データ メンバーです。  
   
-##  <a name="a-namegetparentmenubara--cmfcdropdownframegetparentmenubar"></a><a name="getparentmenubar"></a>CMFCDropDownFrame::GetParentMenuBar  
+##  <a name="getparentmenubar"></a>CMFCDropDownFrame::GetParentMenuBar  
  ドロップダウン フレームの親のメニュー バーを取得します。  
   
 ```  
@@ -141,7 +147,7 @@ CMFCMenuBar* GetParentMenuBar() const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、親ボタンから親メニュー バーを取得します。 このメソッドが戻る`NULL`ドロップダウン フレームには、親ボタンがないか、親のボタンはメニュー バーの親を持たない場合です。  
   
-##  <a name="a-namegetparentpopupmenua--cmfcdropdownframegetparentpopupmenu"></a><a name="getparentpopupmenu"></a>CMFCDropDownFrame::GetParentPopupMenu  
+##  <a name="getparentpopupmenu"></a>CMFCDropDownFrame::GetParentPopupMenu  
  ドロップダウン フレームの親のポップアップ メニューを取得します。  
   
 ```  
@@ -154,7 +160,7 @@ CMFCDropDownFrame* GetParentPopupMenu() const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、親ボタンから、親メニューを取得します。 このメソッドが戻る`NULL`ドロップダウン フレームには、親ボタンがないか、親ボタンには、親メニューがない場合。  
   
-##  <a name="a-namerecalclayouta--cmfcdropdownframerecalclayout"></a><a name="recalclayout"></a>CMFCDropDownFrame::RecalcLayout  
+##  <a name="recalclayout"></a>CMFCDropDownFrame::RecalcLayout  
  ドロップダウンのフレームを再配置します。  
   
 ```  
@@ -171,7 +177,7 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 ### <a name="remarks"></a>コメント  
  フレームワークは、ドロップダウン フレームが作成されるか、親ウィンドウのサイズが変更されたときに、このメソッドを呼び出します。 このメソッドは、親ウィンドウのサイズと位置を使用して、ドロップダウン フレームのサイズと位置を計算します。  
   
-##  <a name="a-namesetautodestroya--cmfcdropdownframesetautodestroy"></a><a name="setautodestroy"></a>CMFCDropDownFrame::SetAutoDestroy  
+##  <a name="setautodestroy"></a>CMFCDropDownFrame::SetAutoDestroy  
  子のツールバーのドロップダウン ウィンドウが自動的に破棄されるかどうかを設定します。  
   
 ```  

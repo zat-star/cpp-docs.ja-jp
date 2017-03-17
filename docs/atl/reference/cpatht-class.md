@@ -9,11 +9,50 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CPathT
 - CPathT
-- ATL::CPathT<StringType>
-- ATL::CPathT
-- ATL.CPathT<StringType>
+- ATLPATH/ATL::CPathT
+- ATLPATH/ATL::CPathT::PCXSTR
+- ATLPATH/ATL::CPathT::PXSTR
+- ATLPATH/ATL::CPathT::XCHAR
+- ATLPATH/ATL::CPathT::CPathT
+- ATLPATH/ATL::CPathT::AddBackslash
+- ATLPATH/ATL::CPathT::AddExtension
+- ATLPATH/ATL::CPathT::Append
+- ATLPATH/ATL::CPathT::BuildRoot
+- ATLPATH/ATL::CPathT::Canonicalize
+- ATLPATH/ATL::CPathT::Combine
+- ATLPATH/ATL::CPathT::CommonPrefix
+- ATLPATH/ATL::CPathT::CompactPath
+- ATLPATH/ATL::CPathT::CompactPathEx
+- ATLPATH/ATL::CPathT::FileExists
+- ATLPATH/ATL::CPathT::FindExtension
+- ATLPATH/ATL::CPathT::FindFileName
+- ATLPATH/ATL::CPathT::GetDriveNumber
+- ATLPATH/ATL::CPathT::GetExtension
+- ATLPATH/ATL::CPathT::IsDirectory
+- ATLPATH/ATL::CPathT::IsFileSpec
+- ATLPATH/ATL::CPathT::IsPrefix
+- ATLPATH/ATL::CPathT::IsRelative
+- ATLPATH/ATL::CPathT::IsRoot
+- ATLPATH/ATL::CPathT::IsSameRoot
+- ATLPATH/ATL::CPathT::IsUNC
+- ATLPATH/ATL::CPathT::IsUNCServer
+- ATLPATH/ATL::CPathT::IsUNCServerShare
+- ATLPATH/ATL::CPathT::MakePretty
+- ATLPATH/ATL::CPathT::MatchSpec
+- ATLPATH/ATL::CPathT::QuoteSpaces
+- ATLPATH/ATL::CPathT::RelativePathTo
+- ATLPATH/ATL::CPathT::RemoveArgs
+- ATLPATH/ATL::CPathT::RemoveBackslash
+- ATLPATH/ATL::CPathT::RemoveBlanks
+- ATLPATH/ATL::CPathT::RemoveExtension
+- ATLPATH/ATL::CPathT::RemoveFileSpec
+- ATLPATH/ATL::CPathT::RenameExtension
+- ATLPATH/ATL::CPathT::SkipRoot
+- ATLPATH/ATL::CPathT::StripPath
+- ATLPATH/ATL::CPathT::StripToRoot
+- ATLPATH/ATL::CPathT::UnquoteSpaces
+- ATLPATH/ATL::CPathT::m_strPath
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -145,7 +184,7 @@ class CPathT
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlpath.h  
   
-##  <a name="a-nameaddbackslasha--cpathtaddbackslash"></a><a name="addbackslash"></a>CPathT::AddBackslash  
+##  <a name="addbackslash"></a>CPathT::AddBackslash  
  パスの正しい構文を作成するための文字列の末尾に円記号を追加するには、このメソッドを呼び出します。 パスは、末尾に円記号を既に持っている場合は、円記号は追加されません。  
   
 ```
@@ -155,7 +194,7 @@ void AddBackslash();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathAddBackSlash](http://msdn.microsoft.com/library/windows/desktop/bb773561)します。  
   
-##  <a name="a-nameaddextensiona--cpathtaddextension"></a><a name="addextension"></a>CPathT::AddExtension  
+##  <a name="addextension"></a>CPathT::AddExtension  
  パスにファイル拡張子を追加するには、このメソッドを呼び出します。  
   
 ```
@@ -172,7 +211,7 @@ BOOL AddExtension(PCXSTR pszExtension);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)します。  
   
-##  <a name="a-nameappenda--cpathtappend"></a><a name="append"></a>CPathT::Append  
+##  <a name="append"></a>CPathT::Append  
  現在のパスに文字列を追加するには、このメソッドを呼び出します。  
   
 ```
@@ -189,7 +228,7 @@ BOOL Append(PCXSTR pszMore);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)します。  
   
-##  <a name="a-namebuildroota--cpathtbuildroot"></a><a name="buildroot"></a>CPathT::BuildRoot  
+##  <a name="buildroot"></a>CPathT::BuildRoot  
  特定のドライブ数からルートのパスを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -203,7 +242,7 @@ void BuildRoot(int iDrive);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)します。  
   
-##  <a name="a-namecanonicalizea--cpathtcanonicalize"></a><a name="canonicalize"></a>CPathT::Canonicalize  
+##  <a name="canonicalize"></a>CPathT::Canonicalize  
  パスを正規の形式に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -213,7 +252,7 @@ void Canonicalize();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)します。  
   
-##  <a name="a-namecombinea--cpathtcombine"></a><a name="combine"></a>CPathT::Combine  
+##  <a name="combine"></a>CPathT::Combine  
  ディレクトリ名を表す文字列とファイルのパス名を&1; つのパスを表す文字列を連結するには、このメソッドを呼び出します。  
   
 ```
@@ -230,7 +269,7 @@ void Combine(PCXSTR pszDir, PCXSTR  pszFile);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathCombine](http://msdn.microsoft.com/library/windows/desktop/bb773571)します。  
   
-##  <a name="a-namecommonprefixa--cpathtcommonprefix"></a><a name="commonprefix"></a>CPathT::CommonPrefix  
+##  <a name="commonprefix"></a>CPathT::CommonPrefix  
  指定されたパスが現在のパスと共通プレフィックスを共有するかどうかを判断するには、このメソッドを呼び出します。  
   
 ```
@@ -247,7 +286,7 @@ CPathT<StringType> CommonPrefix(PCXSTR pszOther);
 ### <a name="remarks"></a>コメント  
  プレフィックスは、これらの型の&1; つです:"c:\\\\「,」です","..","..。\\\\". 詳細については、次を参照してください。 [PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)します。  
   
-##  <a name="a-namecompactpatha--cpathtcompactpath"></a><a name="compactpath"></a>CPathT::CompactPath  
+##  <a name="compactpath"></a>CPathT::CompactPath  
  省略記号をパス コンポーネントを置き換えることで、指定したピクセル幅に収まるようにファイル パスを短くには、このメソッドを呼び出します。  
   
 ```
@@ -267,7 +306,7 @@ BOOL CompactPath(HDC hDC, UINT nWidth);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)します。  
   
-##  <a name="a-namecompactpathexa--cpathtcompactpathex"></a><a name="compactpathex"></a>CPathT::CompactPathEx  
+##  <a name="compactpathex"></a>CPathT::CompactPathEx  
  省略記号をパス コンポーネントを置き換えることで、指定した文字数に収まるようにファイル パスを短くには、このメソッドを呼び出します。  
   
 ```
@@ -287,7 +326,7 @@ BOOL CompactPathEx(UINT nMaxChars, DWORD dwFlags = 0);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)します。  
   
-##  <a name="a-namecpathta--cpathtcpatht"></a><a name="cpatht"></a>CPathT::CPathT  
+##  <a name="cpatht"></a>CPathT::CPathT  
  コンストラクターです。  
   
 ```
@@ -303,7 +342,7 @@ CPathT() throw();
  *path*  
  パス文字列。  
   
-##  <a name="a-namefileexistsa--cpathtfileexists"></a><a name="fileexists"></a>CPathT::FileExists  
+##  <a name="fileexists"></a>CPathT::FileExists  
  このメソッドでは、このパス名でファイルが存在するかどうかを確認します。  
   
 ```
@@ -316,7 +355,7 @@ BOOL FileExists() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)します。  
   
-##  <a name="a-namefindextensiona--cpathtfindextension"></a><a name="findextension"></a>CPathT::FindExtension  
+##  <a name="findextension"></a>CPathT::FindExtension  
  パス内のファイル拡張子の位置を検索するには、このメソッドを呼び出します。  
   
 ```
@@ -329,7 +368,7 @@ int FindExtension() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)します。  
   
-##  <a name="a-namefindfilenamea--cpathtfindfilename"></a><a name="findfilename"></a>CPathT::FindFileName  
+##  <a name="findfilename"></a>CPathT::FindFileName  
  パス内のファイル名の位置を検索するには、このメソッドを呼び出します。  
   
 ```
@@ -342,7 +381,7 @@ int FindFileName() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)します。  
   
-##  <a name="a-namegetdrivenumbera--cpathtgetdrivenumber"></a><a name="getdrivenumber"></a>CPathT::GetDriveNumber  
+##  <a name="getdrivenumber"></a>CPathT::GetDriveNumber  
  このメソッドを呼び出して 'Z' を 'A' の範囲内のドライブ文字のパスを検索し、対応するドライブの数を返します。  
   
 ```
@@ -355,7 +394,7 @@ int GetDriveNumber() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)します。  
   
-##  <a name="a-namegetextensiona--cpathtgetextension"></a><a name="getextension"></a>CPathT::GetExtension  
+##  <a name="getextension"></a>CPathT::GetExtension  
  パスからファイルの拡張子を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -365,7 +404,7 @@ StringType GetExtension() const;
 ### <a name="return-value"></a>戻り値  
  ファイル拡張子を返します。  
   
-##  <a name="a-nameisdirectorya--cpathtisdirectory"></a><a name="isdirectory"></a>CPathT::IsDirectory  
+##  <a name="isdirectory"></a>CPathT::IsDirectory  
  パスが有効なディレクトリであるかどうかを確認するには、このメソッドを呼び出します。  
   
 ```
@@ -378,7 +417,7 @@ BOOL IsDirectory() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsDirectory](http://msdn.microsoft.com/library/windows/desktop/bb773621)します。  
   
-##  <a name="a-nameisfilespeca--cpathtisfilespec"></a><a name="isfilespec"></a>CPathT::IsFileSpec  
+##  <a name="isfilespec"></a>CPathT::IsFileSpec  
  パス区切り文字のパスを検索するには、このメソッドを呼び出す (たとえば、':' または '\\')。 パス区切り文字がない場合、パスがファイルの仕様のパスと見なされます。  
   
 ```
@@ -391,7 +430,7 @@ BOOL IsFileSpec() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)します。  
   
-##  <a name="a-nameisprefixa--cpathtisprefix"></a><a name="isprefix"></a>CPathT::IsPrefix  
+##  <a name="isprefix"></a>CPathT::IsPrefix  
  パスにによって渡される種類の有効なプレフィックスが含まれるかどうか確認するには、このメソッドを呼び出す`pszPrefix`します。  
   
 ```
@@ -408,7 +447,7 @@ BOOL IsPrefix(PCXSTR pszPrefix) const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)します。  
   
-##  <a name="a-nameisrelativea--cpathtisrelative"></a><a name="isrelative"></a>CPathT::IsRelative  
+##  <a name="isrelative"></a>CPathT::IsRelative  
  このメソッドでは、パスが相対かを判断します。  
   
 ```
@@ -421,7 +460,7 @@ BOOL IsRelative() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)します。  
   
-##  <a name="a-nameisroota--cpathtisroot"></a><a name="isroot"></a>CPathT::IsRoot  
+##  <a name="isroot"></a>CPathT::IsRoot  
  パスがディレクトリのルートであるかを判断するには、このメソッドを呼び出します。  
   
 ```
@@ -434,7 +473,7 @@ BOOL IsRoot() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)します。  
   
-##  <a name="a-nameissameroota--cpathtissameroot"></a><a name="issameroot"></a>CPathT::IsSameRoot  
+##  <a name="issameroot"></a>CPathT::IsSameRoot  
  別のパスが現在のパスと、共通のルート コンポーネントを持つかどうかを判断するには、このメソッドを呼び出します。  
   
 ```
@@ -451,7 +490,7 @@ BOOL IsSameRoot(PCXSTR pszOther) const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)します。  
   
-##  <a name="a-nameisunca--cpathtisunc"></a><a name="isunc"></a>CPathT::IsUNC  
+##  <a name="isunc"></a>CPathT::IsUNC  
  パスが、サーバーの有効な UNC (汎用名前付け規則) パスであるかどうかを確認するには、このメソッドを呼び出すし、共有します。  
   
 ```
@@ -464,7 +503,7 @@ BOOL IsUNC() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)します。  
   
-##  <a name="a-nameisuncservera--cpathtisuncserver"></a><a name="isuncserver"></a>CPathT::IsUNCServer  
+##  <a name="isuncserver"></a>CPathT::IsUNCServer  
  このメソッドでは、パスがサーバーだけを表す有効な UNC (汎用名前付け規則) パスであるかどうかを確認します。  
   
 ```
@@ -477,7 +516,7 @@ BOOL IsUNCServer() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)します。  
   
-##  <a name="a-nameisuncserversharea--cpathtisuncservershare"></a><a name="isuncservershare"></a>CPathT::IsUNCServerShare  
+##  <a name="isuncservershare"></a>CPathT::IsUNCServerShare  
  パスが有効な UNC (汎用名前付け規則) 共有パスであるかどうかを確認するには、このメソッドを呼び出す\\ \  *server*\ *共有*します。  
   
 ```
@@ -490,7 +529,7 @@ BOOL IsUNCServerShare() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)します。  
   
-##  <a name="a-namemstrpatha--cpathtmstrpath"></a><a name="m_strpath"></a>CPathT::m_strPath  
+##  <a name="m_strpath"></a>CPathT::m_strPath  
  パス。  
   
 ```
@@ -500,7 +539,7 @@ StringType m_strPath;
 ### <a name="remarks"></a>コメント  
  `StringType`テンプレート パラメーターは、`CPathT`です。  
   
-##  <a name="a-namemakeprettya--cpathtmakepretty"></a><a name="makepretty"></a>CPathT::MakePretty  
+##  <a name="makepretty"></a>CPathT::MakePretty  
  パスをパスの外観を一貫性のある文字をすべて小文字に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -513,7 +552,7 @@ BOOL MakePretty();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)します。  
   
-##  <a name="a-namematchspeca--cpathtmatchspec"></a><a name="matchspec"></a>CPathT::MatchSpec  
+##  <a name="matchspec"></a>CPathT::MatchSpec  
  ワイルドカード一致の種類を含む文字列へのパスを検索するには、このメソッドを呼び出します。  
   
 ```
@@ -530,7 +569,7 @@ BOOL MatchSpec(PCXSTR pszSpec) const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)します。  
   
-##  <a name="a-nameoperatoraddeqa--cpathtoperator-"></a><a name="operator_add_eq"></a>CPathT::operator + = 演算子  
+##  <a name="operator_add_eq"></a>CPathT::operator + = 演算子  
  この演算子は、パスに文字列を追加します。  
   
 ```
@@ -544,7 +583,7 @@ CPathT<StringType>& operator+=(PCXSTR pszMore);
 ### <a name="return-value"></a>戻り値  
  更新されたパスを返します。  
   
-##  <a name="a-nameoperatorconststringtypeampa--cpathtoperator-const-stringtype-amp"></a><a name="operator_const_stringtype_amp"></a>CPathT::operator const 文字列型&amp;  
+##  <a name="operator_const_stringtype_amp"></a>CPathT::operator const 文字列型&amp;  
  この演算子は、文字列のように扱われ、オブジェクトを使用します。  
   
 ```
@@ -554,7 +593,7 @@ CPathT<StringType>& operator+=(PCXSTR pszMore);
 ### <a name="return-value"></a>戻り値  
  このオブジェクトによって管理されている現在のパスを表す文字列を返します。  
   
-##  <a name="a-nameoperatorcpathtpcxstra--cpathtoperator-cpathtpcxstr"></a><a name="operator_cpatht__pcxstr"></a>CPathT::operator CPathT::PCXSTR  
+##  <a name="operator_cpatht__pcxstr"></a>CPathT::operator CPathT::PCXSTR  
  この演算子は、文字列のように扱われ、オブジェクトを使用します。  
   
 ```
@@ -564,7 +603,7 @@ CPathT<StringType>& operator+=(PCXSTR pszMore);
 ### <a name="return-value"></a>戻り値  
  このオブジェクトによって管理されている現在のパスを表す文字列を返します。  
   
-##  <a name="a-nameoperatorstringtypeampa--cpathtoperator-stringtype-amp"></a><a name="operator_stringtype__amp"></a>CPathT::operator 文字列型&amp;  
+##  <a name="operator_stringtype__amp"></a>CPathT::operator 文字列型&amp;  
  この演算子は、文字列のように扱われ、オブジェクトを使用します。  
   
 ```
@@ -574,7 +613,7 @@ CPathT<StringType>& operator+=(PCXSTR pszMore);
 ### <a name="return-value"></a>戻り値  
  このオブジェクトによって管理されている現在のパスを表す文字列を返します。  
   
-##  <a name="a-namepcxstra--cpathtpcxstr"></a><a name="pcxstr"></a>CPathT::PCXSTR  
+##  <a name="pcxstr"></a>CPathT::PCXSTR  
  文字列定数の型。  
   
 ```
@@ -584,7 +623,7 @@ typedef StringType::PCXSTR PCXSTR;
 ### <a name="remarks"></a>コメント  
  `StringType`テンプレート パラメーターは、`CPathT`です。  
   
-##  <a name="a-namepxstra--cpathtpxstr"></a><a name="pxstr"></a>CPathT::PXSTR  
+##  <a name="pxstr"></a>CPathT::PXSTR  
  文字列型です。  
   
 ```
@@ -594,7 +633,7 @@ typedef StringType::PXSTR PXSTR;
 ### <a name="remarks"></a>コメント  
  `StringType`テンプレート パラメーターは、`CPathT`です。  
   
-##  <a name="a-namequotespacesa--cpathtquotespaces"></a><a name="quotespaces"></a>CPathT::QuoteSpaces  
+##  <a name="quotespaces"></a>CPathT::QuoteSpaces  
  このメソッドを呼び出して、スペースが含まれている場合は、パスを引用符で囲みます。  
   
 ```
@@ -604,7 +643,7 @@ void QuoteSpaces();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)します。  
   
-##  <a name="a-namerelativepathtoa--cpathtrelativepathto"></a><a name="relativepathto"></a>CPathT::RelativePathTo  
+##  <a name="relativepathto"></a>CPathT::RelativePathTo  
  1 つのファイルまたはフォルダーから別の相対パスを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -634,7 +673,7 @@ BOOL RelativePathTo(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)します。  
   
-##  <a name="a-nameremoveargsa--cpathtremoveargs"></a><a name="removeargs"></a>CPathT::RemoveArgs  
+##  <a name="removeargs"></a>CPathT::RemoveArgs  
  パスから、コマンドライン引数を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -644,7 +683,7 @@ void RemoveArgs();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)します。  
   
-##  <a name="a-nameremovebackslasha--cpathtremovebackslash"></a><a name="removebackslash"></a>CPathT::RemoveBackslash  
+##  <a name="removebackslash"></a>CPathT::RemoveBackslash  
  パスから、末尾に円記号を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -654,7 +693,7 @@ void RemoveBackslash();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)します。  
   
-##  <a name="a-nameremoveblanksa--cpathtremoveblanks"></a><a name="removeblanks"></a>CPathT::RemoveBlanks  
+##  <a name="removeblanks"></a>CPathT::RemoveBlanks  
  パスのすべての先頭および末尾のスペースを削除するには、このメソッドを呼び出します。  
   
 ```
@@ -664,7 +703,7 @@ void RemoveBlanks();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)します。  
   
-##  <a name="a-nameremoveextensiona--cpathtremoveextension"></a><a name="removeextension"></a>CPathT::RemoveExtension  
+##  <a name="removeextension"></a>CPathT::RemoveExtension  
  1 つを使用する必要がある場合は、パスからファイルの拡張子を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -674,7 +713,7 @@ void RemoveExtension();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)します。  
   
-##  <a name="a-nameremovefilespeca--cpathtremovefilespec"></a><a name="removefilespec"></a>CPathT::RemoveFileSpec  
+##  <a name="removefilespec"></a>CPathT::RemoveFileSpec  
  それらがある場合は、パスの末尾にファイル名と円記号を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -687,7 +726,7 @@ BOOL RemoveFileSpec();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)します。  
   
-##  <a name="a-namerenameextensiona--cpathtrenameextension"></a><a name="renameextension"></a>CPathT::RenameExtension  
+##  <a name="renameextension"></a>CPathT::RenameExtension  
  このメソッドを呼び出して、新しい拡張機能で、パスにファイル名拡張子を置き換えます。 ファイル名に拡張子が含まれていない場合は、パスの末尾に拡張子が添付されます。  
   
 ```
@@ -704,7 +743,7 @@ BOOL RenameExtension(PCXSTR pszExtension);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)します。  
   
-##  <a name="a-nameskiproota--cpathtskiproot"></a><a name="skiproot"></a>CPathT::SkipRoot  
+##  <a name="skiproot"></a>CPathT::SkipRoot  
  ドライブ文字または UNC (汎用名前付け規則) サーバー/共有パスの一部を無視して、パスを解析するには、このメソッドを呼び出します。  
   
 ```
@@ -717,7 +756,7 @@ int SkipRoot() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)します。  
   
-##  <a name="a-namestrippatha--cpathtstrippath"></a><a name="strippath"></a>CPathT::StripPath  
+##  <a name="strippath"></a>CPathT::StripPath  
  完全修飾パスとファイル名のパス部分を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -727,7 +766,7 @@ void StripPath();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)します。  
   
-##  <a name="a-namestriptoroota--cpathtstriptoroot"></a><a name="striptoroot"></a>CPathT::StripToRoot  
+##  <a name="striptoroot"></a>CPathT::StripToRoot  
  ただし、ルート情報、パスのすべての部分を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -740,7 +779,7 @@ BOOL StripToRoot();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)します。  
   
-##  <a name="a-nameunquotespacesa--cpathtunquotespaces"></a><a name="unquotespaces"></a>CPathT::UnquoteSpaces  
+##  <a name="unquotespaces"></a>CPathT::UnquoteSpaces  
  先頭と末尾のパスから引用符を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -750,7 +789,7 @@ void UnquoteSpaces();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)します。  
   
-##  <a name="a-namexchara--cpathtxchar"></a><a name="xchar"></a>CPathT::XCHAR  
+##  <a name="xchar"></a>CPathT::XCHAR  
  文字型です。  
   
 ```

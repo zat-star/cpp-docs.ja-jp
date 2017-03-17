@@ -10,6 +10,41 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAsyncSocket
+- AFXSOCK/CAsyncSocket
+- AFXSOCK/CAsyncSocket::CAsyncSocket
+- AFXSOCK/CAsyncSocket::Accept
+- AFXSOCK/CAsyncSocket::AsyncSelect
+- AFXSOCK/CAsyncSocket::Attach
+- AFXSOCK/CAsyncSocket::Bind
+- AFXSOCK/CAsyncSocket::Close
+- AFXSOCK/CAsyncSocket::Connect
+- AFXSOCK/CAsyncSocket::Create
+- AFXSOCK/CAsyncSocket::Detach
+- AFXSOCK/CAsyncSocket::FromHandle
+- AFXSOCK/CAsyncSocket::GetLastError
+- AFXSOCK/CAsyncSocket::GetPeerName
+- AFXSOCK/CAsyncSocket::GetPeerNameEx
+- AFXSOCK/CAsyncSocket::GetSockName
+- AFXSOCK/CAsyncSocket::GetSockNameEx
+- AFXSOCK/CAsyncSocket::GetSockOpt
+- AFXSOCK/CAsyncSocket::IOCtl
+- AFXSOCK/CAsyncSocket::Listen
+- AFXSOCK/CAsyncSocket::Receive
+- AFXSOCK/CAsyncSocket::ReceiveFrom
+- AFXSOCK/CAsyncSocket::ReceiveFromEx
+- AFXSOCK/CAsyncSocket::Send
+- AFXSOCK/CAsyncSocket::SendTo
+- AFXSOCK/CAsyncSocket::SendToEx
+- AFXSOCK/CAsyncSocket::SetSockOpt
+- AFXSOCK/CAsyncSocket::ShutDown
+- AFXSOCK/CASyncSocket::Socket
+- AFXSOCK/CAsyncSocket::OnAccept
+- AFXSOCK/CAsyncSocket::OnClose
+- AFXSOCK/CAsyncSocket::OnConnect
+- AFXSOCK/CAsyncSocket::OnOutOfBandData
+- AFXSOCK/CAsyncSocket::OnReceive
+- AFXSOCK/CAsyncSocket::OnSend
+- AFXSOCK/CAsyncSocket::m_hSocket
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -136,7 +171,7 @@ class CAsyncSocket : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxsock.h  
   
-##  <a name="a-nameaccepta--casyncsocketaccept"></a><a name="accept"></a>CAsyncSocket::Accept  
+##  <a name="accept"></a>CAsyncSocket::Accept  
  ソケットで接続を許可するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -184,7 +219,7 @@ virtual BOOL Accept(
   
  引数`lpSockAddr`ソケット接続のアドレスを使用して読み込まれた結果のパラメーターは、通信レイヤーに認識されています。 **そのまま使用**など、接続ベースのソケットの種類と組み合わせて、 **SOCK_STREAM**します。  
   
-##  <a name="a-nameasyncselecta--casyncsocketasyncselect"></a><a name="asyncselect"></a>CAsyncSocket::AsyncSelect  
+##  <a name="asyncselect"></a>CAsyncSocket::AsyncSelect  
  このメンバー関数を呼び出して、ソケットのイベント通知を要求します。  
   
 ```  
@@ -221,7 +256,7 @@ BOOL AsyncSelect(long lEvent = FD_READ | FD_WRITE | FD_OOB | FD_ACCEPT | FD_CONN
 ### <a name="remarks"></a>コメント  
  この関数は、ソケットの MFC コールバック通知関数を呼び出すは指定するために使用されます。 `AsyncSelect`非ブロッキング モード ソケットが自動的に設定します。 詳細については、記事を参照してください。 [Windows ソケット: ソケット通知](../../mfc/windows-sockets-socket-notifications.md)します。  
   
-##  <a name="a-nameattacha--casyncsocketattach"></a><a name="attach"></a>CAsyncSocket::Attach  
+##  <a name="attach"></a>CAsyncSocket::Attach  
  アタッチするには、このメンバー関数を呼び出す、`hSocket`へのハンドル、`CAsyncSocket`オブジェクトです。  
   
 ```  
@@ -254,7 +289,7 @@ BOOL Attach(
 ### <a name="remarks"></a>コメント  
  **ソケット**ハンドルが、オブジェクトに格納されている[m_hSocket](#m_hsocket)データ メンバーです。  
   
-##  <a name="a-namebinda--casyncsocketbind"></a><a name="bind"></a>CAsyncSocket::Bind  
+##  <a name="bind"></a>CAsyncSocket::Bind  
  ソケットにローカル アドレスを関連付けるには、このメンバー関数を呼び出します。  
   
 ```  
@@ -305,7 +340,7 @@ BOOL Bind (
 ### <a name="remarks"></a>コメント  
  このルーチンは前に接続されていないデータグラムまたはストリーム ソケットで使用後続**接続**または`Listen`呼び出しです。 接続要求を受け取る前にサーバー ソケットをリッスンしている必要がありますポート番号を選択となる Windows ソケットを呼び出すことによって**バインド**します。 **バインド**名前のないソケットにローカル名を割り当てることによって、ソケットのローカルの関連付け (ホスト アドレスとポート番号) を確立します。  
   
-##  <a name="a-namecasyncsocketa--casyncsocketcasyncsocket"></a><a name="casyncsocket"></a>CAsyncSocket::CAsyncSocket  
+##  <a name="casyncsocket"></a>CAsyncSocket::CAsyncSocket  
  空のソケット オブジェクトを構築します。  
   
 ```  
@@ -315,7 +350,7 @@ CAsyncSocket();
 ### <a name="remarks"></a>コメント  
  オブジェクトを構築後に呼び出す必要があります、**作成**を作成するメンバー関数、**ソケット**データ構造体し、そのアドレスをバインドします。 (待機中のソケットで使用するソケットを作成する場合は、Windows ソケット通信のサーバー側で、 **Accept**呼び出し、呼び出す必要はありません**作成**ソケットのです)。  
   
-##  <a name="a-nameclosea--casyncsocketclose"></a><a name="close"></a>CAsyncSocket::Close  
+##  <a name="close"></a>CAsyncSocket::Close  
  ソケットを閉じます。  
   
 ```  
@@ -327,7 +362,7 @@ virtual void Close();
   
  `CAsyncSocket`のではなく`CSocket`、セマンティクスの**閉じる**ソケット オプションの影響を受ける**SO_LINGER**と**SO_DONTLINGER**します。 詳細については、メンバー関数を参照してください。`GetSockOpt`します。  
   
-##  <a name="a-nameconnecta--casyncsocketconnect"></a><a name="connect"></a>不要なため  
+##  <a name="connect"></a>不要なため  
  接続されていないストリームまたはデータグラム ソケットへの接続を確立するためにこのメンバー関数を呼び出します。  
   
 ```  
@@ -398,7 +433,7 @@ BOOL Connect(
   
  データグラム ソケットに関して (型**SOCK_DGRAM**)、既定の出力先を設定すると、以後のどちらを使用する**送信**と**受信**呼び出しです。  
   
-##  <a name="a-namecreatea--casyncsocketcreate"></a><a name="create"></a>CAsyncSocket::Create  
+##  <a name="create"></a>CAsyncSocket::Create  
  呼び出す、**作成**メンバー関数の後に、Windows ソケットを作成し、接続のソケット オブジェクトを構築します。  
   
 ```  
@@ -470,14 +505,14 @@ BOOL Create(
   
  ストリームとデータグラム ソケットの詳細については、記事を参照してください。 [Windows ソケット: バック グラウンド](../../mfc/windows-sockets-background.md)と[Windows ソケット: ポートとソケット アドレス](../../mfc/windows-sockets-ports-and-socket-addresses.md)と[Windows Sockets 2 API](http://msdn.microsoft.com/library/windows/desktop/ms740673)します。  
   
-##  <a name="a-namedetacha--casyncsocketdetach"></a><a name="detach"></a>CAsyncSocket::Detach  
+##  <a name="detach"></a>CAsyncSocket::Detach  
  デタッチするには、このメンバー関数を呼び出す、**ソケット**で処理、`m_hSocket`からそのデータ メンバー、`CAsyncSocket`オブジェクトし、設定`m_hSocket`に**NULL**します。  
   
 ```  
 SOCKET Detach();
 ```  
   
-##  <a name="a-namefromhandlea--casyncsocketfromhandle"></a><a name="fromhandle"></a>CAsyncSocket::FromHandle  
+##  <a name="fromhandle"></a>CAsyncSocket::FromHandle  
  ポインターを返す、`CAsyncSocket`オブジェクトです。  
   
 ```  
@@ -494,7 +529,7 @@ static CAsyncSocket* PASCAL FromHandle(SOCKET hSocket);
 ### <a name="remarks"></a>コメント  
  指定されている場合、**ソケット**を処理する場合、`CAsyncSocket`ハンドルには、オブジェクトはアタッチされていない、メンバー関数を返します**NULL**します。  
   
-##  <a name="a-namegetlasterrora--casyncsocketgetlasterror"></a><a name="getlasterror"></a>CAsyncSocket::GetLastError  
+##  <a name="getlasterror"></a>CAsyncSocket::GetLastError  
  このメンバー関数を呼び出して、最後の失敗した操作のエラー状態を取得します。  
   
 ```  
@@ -509,7 +544,7 @@ static int PASCAL GetLastError();
   
  エラー コードの詳細については、次を参照してください。 [Windows Sockets 2 API](http://msdn.microsoft.com/library/windows/desktop/ms740673)します。  
   
-##  <a name="a-namegetpeernamea--casyncsocketgetpeername"></a><a name="getpeername"></a>で  
+##  <a name="getpeername"></a>で  
  このソケットが接続されているピア ソケットのアドレスを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -554,7 +589,7 @@ BOOL GetPeerName(
 ### <a name="remarks"></a>コメント  
  IPv6 アドレスを処理する[CAsyncSocket::GetPeerNameEx](#getpeernameex)します。  
   
-##  <a name="a-namegetpeernameexa--casyncsocketgetpeernameex"></a><a name="getpeernameex"></a>CAsyncSocket::GetPeerNameEx  
+##  <a name="getpeernameex"></a>CAsyncSocket::GetPeerNameEx  
  このソケットが接続されている (ハンドルの IPv6 アドレス) をピア ソケットのアドレスを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -588,7 +623,7 @@ BOOL GetPeerNameEx(
 ### <a name="remarks"></a>コメント  
  この関数は、同じ[で](#getpeername)IPv6 を処理する点を除いて、従来のプロトコルに対応します。  
   
-##  <a name="a-namegetsocknamea--casyncsocketgetsockname"></a><a name="getsockname"></a>で  
+##  <a name="getsockname"></a>で  
  このメンバー関数を呼び出して、ソケットのローカル名を取得します。  
   
 ```  
@@ -635,7 +670,7 @@ BOOL GetSockName(
   
  IPv6 アドレスを処理する[CAsyncSocket::GetSockNameEx](#getsocknameex)  
   
-##  <a name="a-namegetsocknameexa--casyncsocketgetsocknameex"></a><a name="getsocknameex"></a>CAsyncSocket::GetSockNameEx  
+##  <a name="getsocknameex"></a>CAsyncSocket::GetSockNameEx  
  ソケット (ハンドルの IPv6 アドレス) のローカル名を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -671,7 +706,7 @@ BOOL GetSockNameEx(
   
  この呼び出しは特に便利な場合に、**接続**コマンドを実行せずに呼び出しが行われた、**バインド**先にこの呼び出しのシステムで設定されているローカルの関連付けを判断できますのみ手段を提供します。  
   
-##  <a name="a-namegetsockopta--casyncsocketgetsockopt"></a><a name="getsockopt"></a>CAsyncSocket::GetSockOpt  
+##  <a name="getsockopt"></a>CAsyncSocket::GetSockOpt  
  ソケット オプションを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -745,7 +780,7 @@ BOOL GetSockOpt(
   
  呼び出す`GetSockOpt`サポートされていないオプションを使用してがのエラー コード**WSAENOPROTOOPT**から返される`GetLastError`です。  
   
-##  <a name="a-nameioctla--casyncsocketioctl"></a><a name="ioctl"></a>CAsyncSocket::IOCtl  
+##  <a name="ioctl"></a>CAsyncSocket::IOCtl  
  このメンバー関数を呼び出して、ソケットのモードを制御します。  
   
 ```  
@@ -785,7 +820,7 @@ BOOL IOCtl(
   
  この関数のサブセットである**レジスタ**Berkeley ソケットで使用されるためです。 具体的には、コマンドと同じですがない**FIOASYNC**、中に**SIOCATMARK**はサポートされているソケット レベルだけコマンドです。  
   
-##  <a name="a-namelistena--casyncsocketlisten"></a><a name="listen"></a>CAsyncSocket::Listen  
+##  <a name="listen"></a>CAsyncSocket::Listen  
  接続要求をリッスンするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -826,14 +861,14 @@ BOOL Listen(int nConnectionBacklog = 5);
   
  `Listen`使用可能なポート (記述子) がない場合に、合理的に続行を試行します。 キューが空にするまでは接続を受け入れます。 ポートが利用可能になった場合に、後で呼び出さ`Listen`または**Accept**はキューを現在または最新の「バックログ」補充 (リフィル) 可能であれば、および着信接続のリッスンを再開します。  
   
-##  <a name="a-namemhsocketa--casyncsocketmhsocket"></a><a name="m_hsocket"></a>CAsyncSocket::m_hSocket  
+##  <a name="m_hsocket"></a>CAsyncSocket::m_hSocket  
  含む、**ソケット**これによってカプセル化されたソケットのハンドル`CAsyncSocket`オブジェクトです。  
   
 ```  
 SOCKET m_hSocket;  
 ```  
   
-##  <a name="a-nameonaccepta--casyncsocketonaccept"></a><a name="onaccept"></a>CAsyncSocket::OnAccept  
+##  <a name="onaccept"></a>CAsyncSocket::OnAccept  
  呼び出すことによって保留中の接続要求を受け付けられる待機中のソケットに通知するフレームワークによって呼び出され、 [Accept](#accept)メンバー関数。  
   
 ```  
@@ -851,7 +886,7 @@ virtual void OnAccept(int nErrorCode);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [Windows ソケット: ソケット通知](../../mfc/windows-sockets-socket-notifications.md)します。  
   
-##  <a name="a-nameonclosea--casyncsocketonclose"></a><a name="onclose"></a>CAsyncSocket::OnClose  
+##  <a name="onclose"></a>CAsyncSocket::OnClose  
  そのプロセスによって接続されたソケットが閉じているソケットに通知するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -873,7 +908,7 @@ virtual void OnClose(int nErrorCode);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [Windows ソケット: ソケット通知](../../mfc/windows-sockets-socket-notifications.md)します。  
   
-##  <a name="a-nameonconnecta--casyncsocketonconnect"></a><a name="onconnect"></a>CAsyncSocket::OnConnect  
+##  <a name="onconnect"></a>CAsyncSocket::OnConnect  
  その接続の試行が完了したこと、正常にまたはエラーが発生するかどうかを接続しているソケットに通知するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -924,7 +959,7 @@ virtual void OnConnect(int nErrorCode);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAsyncSocket&#1;](../../mfc/reference/codesnippet/cpp/casyncsocket-class_1.cpp)]  
   
-##  <a name="a-nameonoutofbanddataa--casyncsocketonoutofbanddata"></a><a name="onoutofbanddata"></a>CAsyncSocket::OnOutOfBandData  
+##  <a name="onoutofbanddata"></a>CAsyncSocket::OnOutOfBandData  
  送信側のソケットが帯域外のデータを送信する受信側のソケットに通知するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -944,7 +979,7 @@ virtual void OnOutOfBandData(int nErrorCode);
   
  MFC クラスのユーザーが、帯域外のデータをサポートしています`CAsyncSocket`を使用する推奨されていません。 簡単な方法では、このようなデータを渡すための&2; つ目のソケットを作成します。 帯域外のデータの詳細については、次を参照してください。 [Windows ソケット: ソケット通知](../../mfc/windows-sockets-socket-notifications.md)します。  
   
-##  <a name="a-nameonreceivea--casyncsocketonreceive"></a><a name="onreceive"></a>CAsyncSocket::OnReceive  
+##  <a name="onreceive"></a>CAsyncSocket::OnReceive  
  ソケットに呼び出すことによって取得できる、バッファーにデータがあることを通知するためにフレームワークによって呼び出される、**受信**メンバー関数。  
   
 ```  
@@ -965,7 +1000,7 @@ virtual void OnReceive(int nErrorCode);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAsyncSocket&#2;](../../mfc/reference/codesnippet/cpp/casyncsocket-class_2.cpp)]  
   
-##  <a name="a-nameonsenda--casyncsocketonsend"></a><a name="onsend"></a>CAsyncSocket::OnSend  
+##  <a name="onsend"></a>CAsyncSocket::OnSend  
  ソケットに呼び出すことによってデータを送信できるようになりましたことを通知するためにフレームワークによって呼び出される、**送信**メンバー関数。  
   
 ```  
@@ -986,7 +1021,7 @@ virtual void OnSend(int nErrorCode);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAsyncSocket&#3;](../../mfc/reference/codesnippet/cpp/casyncsocket-class_3.cpp)]  
   
-##  <a name="a-nameoperatoreqa--casyncsocketoperator-"></a><a name="operator_eq"></a>CAsyncSocket::operator =  
+##  <a name="operator_eq"></a>CAsyncSocket::operator =  
  新しい値を代入する`CAsyncSocket`オブジェクトです。  
   
 ```  
@@ -1000,7 +1035,7 @@ void operator=(const CAsyncSocket& rSrc);
 ### <a name="remarks"></a>コメント  
  この関数を呼び出して、既存のコピー`CAsyncSocket`オブジェクト間`CAsyncSocket`オブジェクトです。  
   
-##  <a name="a-nameoperatorsocketa--casyncsocketoperator-socket"></a><a name="operator_socket"></a>CAsyncSocket::operator ソケット  
+##  <a name="operator_socket"></a>CAsyncSocket::operator ソケット  
  この演算子を使用して取得する、**ソケット**の処理、`CAsyncSocket`オブジェクトです。  
   
 ```  
@@ -1013,7 +1048,7 @@ operator SOCKET() const;
 ### <a name="remarks"></a>コメント  
  ハンドルを使用して、Windows Api を直接呼び出すことができます。  
   
-##  <a name="a-namereceivea--casyncsocketreceive"></a><a name="receive"></a>CAsyncSocket::Receive  
+##  <a name="receive"></a>CAsyncSocket::Receive  
  このメンバー関数を呼び出して、ソケットからデータを受信します。  
   
 ```  
@@ -1078,7 +1113,7 @@ virtual int Receive(
 ### <a name="example"></a>例  
   例を参照してください[CAsyncSocket::OnReceive](#onreceive)します。  
   
-##  <a name="a-namereceivefroma--casyncsocketreceivefrom"></a><a name="receivefrom"></a>で  
+##  <a name="receivefrom"></a>で  
  データグラムを受信およびの送信元アドレスを格納するには、このメンバー関数を呼び出して、 [SOCKADDR](../../mfc/reference/sockaddr-structure.md)構造または`rSocketAddress`です。  
   
 ```  
@@ -1166,7 +1201,7 @@ int ReceiveFrom(
   
  型の場合は、ソケット**SOCK_STREAM**リモート側が、接続を正常にシャット ダウンし、`ReceiveFrom`は 0 バイトを受信して直ちに完了します。  
   
-##  <a name="a-namereceivefromexa--casyncsocketreceivefromex"></a><a name="receivefromex"></a>CAsyncSocket::ReceiveFromEx  
+##  <a name="receivefromex"></a>CAsyncSocket::ReceiveFromEx  
  データグラムを受信およびの送信元アドレスを格納するには、このメンバー関数を呼び出して、 [SOCKADDR](../../mfc/reference/sockaddr-structure.md)構造または`rSocketAddress`(IPv6 アドレスのハンドル)。  
   
 ```  
@@ -1240,7 +1275,7 @@ int ReceiveFromEx(
   
  型の場合は、ソケット**SOCK_STREAM**リモート側が、接続を正常にシャット ダウンし、`ReceiveFromEx`は 0 バイトを受信して直ちに完了します。  
   
-##  <a name="a-namesenda--casyncsocketsend"></a><a name="send"></a>CAsyncSocket::Send  
+##  <a name="send"></a>CAsyncSocket::Send  
  このメンバー関数を呼び出して、接続されたソケットにデータを送信します。  
   
 ```  
@@ -1309,7 +1344,7 @@ virtual int Send(
 ### <a name="example"></a>例  
   例を参照してください[CAsyncSocket::OnSend](#onsend)します。  
   
-##  <a name="a-namesendtoa--casyncsocketsendto"></a><a name="sendto"></a>で  
+##  <a name="sendto"></a>で  
  特定の宛先にデータを送信するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1409,7 +1444,7 @@ int SendTo(
   
  IPv6 アドレスを処理する[CAsyncSocket::SendToEx](#sendtoex)します。  
   
-##  <a name="a-namesendtoexa--casyncsocketsendtoex"></a><a name="sendtoex"></a>CAsyncSocket::SendToEx  
+##  <a name="sendtoex"></a>CAsyncSocket::SendToEx  
  特定の送信先 (ハンドルの IPv6 アドレス) にデータを送信するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1495,7 +1530,7 @@ int SendToEx(
   
  ブロードキャストを送信する (上、 **SOCK_DGRAM**のみ)、内のアドレス、`lpSockAddr`パラメーターは、特別な IP アドレスを使用して作成する必要があります**INADDR_BROADCAST** (WINSOCK Windows ソケットのヘッダー ファイルで定義されます。H) と共に目的のポート番号。 または、`lpszHostAddress`パラメーターは**NULL**ソケットがブロードキャスト用に構成します。 ブロードキャスト データグラムを断片化が発生することが、サイズを超えたことをお勧めはできません (ヘッダーを除く) のデータグラムのデータ部分が 512 バイトを超えていないことが含まれています。  
   
-##  <a name="a-namesetsockopta--casyncsocketsetsockopt"></a><a name="setsockopt"></a>CAsyncSocket::SetSockOpt  
+##  <a name="setsockopt"></a>CAsyncSocket::SetSockOpt  
  ソケット オプションを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1586,7 +1621,7 @@ BOOL SetSockOpt(
 |**SO_TYPE**|`int`|ソケットの種類です。|  
 |**なる**||IP ヘッダーには、オプションのフィールドを設定します。|  
   
-##  <a name="a-nameshutdowna--casyncsocketshutdown"></a><a name="shutdown"></a>CAsyncSocket::ShutDown  
+##  <a name="shutdown"></a>CAsyncSocket::ShutDown  
  呼び出しを無効にするには、このメンバー関数は、次の送信、受信すると、ソケットにまたはその両方です。  
   
 ```  
@@ -1628,7 +1663,7 @@ BOOL ShutDown(int nHow = sends);
 ### <a name="example"></a>例  
   例を参照してください[CAsyncSocket::OnReceive](#onreceive)します。  
   
-##  <a name="a-namesocketa--casyncsocketsocket"></a><a name="socket"></a>CASyncSocket::Socket  
+##  <a name="socket"></a>CASyncSocket::Socket  
  ソケットのハンドルを割り当てます。  
   
 ```  

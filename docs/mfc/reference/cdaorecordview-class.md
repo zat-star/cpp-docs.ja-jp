@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDaoRecordView
+- AFXDAO/CDaoRecordView
+- AFXDAO/CDaoRecordView::CDaoRecordView
+- AFXDAO/CDaoRecordView::IsOnFirstRecord
+- AFXDAO/CDaoRecordView::IsOnLastRecord
+- AFXDAO/CDaoRecordView::OnGetRecordset
+- AFXDAO/CDaoRecordView::OnMove
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -106,7 +112,7 @@ class AFX_NOVTABLE CDaoRecordView : public CFormView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
   
-##  <a name="a-namecdaorecordviewa--cdaorecordviewcdaorecordview"></a><a name="cdaorecordview"></a>指定して  
+##  <a name="cdaorecordview"></a>指定して  
  派生した型のオブジェクトを作成する場合`CDaoRecordView`、どちらの形式のビュー オブジェクトを初期化し、ビューの基になるダイアログ リソースの特定にコンス トラクターを呼び出します。  
   
 ```  
@@ -134,7 +140,7 @@ explicit CDaoRecordView(UINT nIDTemplate);
   
  [!code-cpp[NVC_MFCDatabase&#35;](../../mfc/codesnippet/cpp/cdaorecordview-class_1.cpp)]  
   
-##  <a name="a-nameisonfirstrecorda--cdaorecordviewisonfirstrecord"></a><a name="isonfirstrecord"></a>CDaoRecordView::IsOnFirstRecord  
+##  <a name="isonfirstrecord"></a>CDaoRecordView::IsOnFirstRecord  
  このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクト内の最初のレコードであるかどうかを確認します。  
   
 ```  
@@ -149,7 +155,7 @@ BOOL IsOnFirstRecord();
   
  ユーザーは、最初のレコードに移動、framework 無効になりますが、ユーザー インターフェイス オブジェクト (メニュー項目やツール バー ボタンなど) がある場合、最初のページと前のレコードに移動するためです。  
   
-##  <a name="a-nameisonlastrecorda--cdaorecordviewisonlastrecord"></a><a name="isonlastrecord"></a>CDaoRecordView::IsOnLastRecord  
+##  <a name="isonlastrecord"></a>CDaoRecordView::IsOnLastRecord  
  このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクトの最後のレコードであるかどうかを確認します。  
   
 ```  
@@ -165,7 +171,7 @@ BOOL IsOnLastRecord();
 > [!CAUTION]
 >  この関数の結果は信頼性がする点を除いて、ビューがそれ以降、ユーザーに移動されるまで、レコード セットの末尾を検出できません。 ユーザーは、レコード ビューは次または最後のレコードに移動するためのユーザー インターフェイス オブジェクトを無効にする必要があることを確認する前に、最後のレコードを超える移動する必要があります。 最後のレコードの後ろに移動し、バックアップの最後に移動レコード (またはその前に)、レコード ビューは、レコード セット内のユーザーの位置を追跡し、ユーザー インターフェイス オブジェクトを正しく無効にできます。  
   
-##  <a name="a-nameongetrecordseta--cdaorecordviewongetrecordset"></a><a name="ongetrecordset"></a>CDaoRecordView::OnGetRecordset  
+##  <a name="ongetrecordset"></a>CDaoRecordView::OnGetRecordset  
  ポインターを返す、 `CDaoRecordset`-レコード ビューに関連付けられているオブジェクトを派生します。  
   
 ```  
@@ -180,7 +186,7 @@ virtual CDaoRecordset* OnGetRecordset() = 0;
   
  詳細と例については、記事を参照して[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。  
   
-##  <a name="a-nameonmovea--cdaorecordviewonmove"></a><a name="onmove"></a>CDaoRecordView::OnMove  
+##  <a name="onmove"></a>CDaoRecordView::OnMove  
  このメンバー関数を呼び出して、レコード セット内の別のレコードに移動し、レコード ビューのコントロールにそのフィールドを表示します。  
   
 ```  

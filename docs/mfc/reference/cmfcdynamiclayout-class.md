@@ -8,6 +8,19 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: reference
+f1_keywords:
+- CMFCDynamicLayout
+- AFXLAYOUT/CMFCDynamicLayout
+- AFXLAYOUT/CMFCDynamicLayout::AddItem
+- AFXLAYOUT/CMFCDynamicLayout::Adjust
+- AFXLAYOUT/CMFCDynamicLayout::Create
+- AFXLAYOUT/CMFCDynamicLayout::GetHostWnd
+- AFXLAYOUT/CMFCDynamicLayout::GetMinSize
+- AFXLAYOUT/CMFCDynamicLayout::GetWindowRect
+- AFXLAYOUT/CMFCDynamicLayout::HasItem
+- AFXLAYOUT/CMFCDynamicLayout::IsEmpty
+- AFXLAYOUT/CMFCDynamicLayout::LoadResource
+- AFXLAYOUT/CMFCDynamicLayout::SetMinSize
 dev_langs:
 - C++
 ms.assetid: c2df2976-f049-47fc-9cf0-abe3e01948bc
@@ -94,7 +107,7 @@ class CMFCDynamicLayout : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxlayout.h  
   
-##  <a name="a-nameadditema--cmfcdynamiclayoutadditem"></a><a name="additem"></a>CMFCDynamicLayout::AddItem  
+##  <a name="additem"></a>CMFCDynamicLayout::AddItem  
  子ウィンドウ (通常はコントロール) を、動的レイアウト マネージャーによって制御されているウィンドウのリストに追加します。  
   
 ```  
@@ -127,7 +140,7 @@ BOOL AddItem(
 ### <a name="remarks"></a>コメント  
  ホスティング ウィンドウのサイズを変更するとき、子コントロールの位置とサイズが動的に変更されます。  
   
-##  <a name="a-nameadjusta--cmfcdynamiclayoutadjust"></a><a name="adjust"></a>CMFCDynamicLayout::Adjust  
+##  <a name="adjust"></a>CMFCDynamicLayout::Adjust  
  子ウィンドウ (通常はコントロール) を、動的レイアウト マネージャーによって制御されているウィンドウのリストに追加します。  
   
 ```  
@@ -137,7 +150,7 @@ void Adjust();
 ### <a name="remarks"></a>コメント  
  ホスティング ウィンドウのサイズを変更するとき、子コントロールの位置とサイズが動的に変更されます。  
   
-##  <a name="a-namecreatea--cmfcdynamiclayoutcreate"></a><a name="create"></a>CMFCDynamicLayout::Create  
+##  <a name="create"></a>CMFCDynamicLayout::Create  
  ホスト ウィンドウを格納し、検証します。  
   
 ```  
@@ -153,7 +166,7 @@ BOOL Create(CWnd* pHostWnd);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegethostwnda--cmfcdynamiclayoutgethostwnd"></a><a name="gethostwnd"></a>CMFCDynamicLayout::GetHostWnd  
+##  <a name="gethostwnd"></a>CMFCDynamicLayout::GetHostWnd  
  ホスト ウィンドウへのポインターを返します。  
   
 ```  
@@ -166,7 +179,7 @@ CWnd* GetHostWnd();
 ### <a name="remarks"></a>コメント  
  既定では、すべての子コントロールの位置はこのウィンドウに合わせて再計算されます。  
   
-##  <a name="a-namegetminsizea--cmfcdynamiclayoutgetminsize"></a><a name="getminsize"></a>CMFCDynamicLayout::GetMinSize  
+##  <a name="getminsize"></a>CMFCDynamicLayout::GetMinSize  
  レイアウト調整の下限のウィンドウ サイズを返します。  
   
 ```  
@@ -179,7 +192,7 @@ CSize GetMinSize();
 ### <a name="remarks"></a>コメント  
  ホスティング ウィンドウのサイズ変更が行われると、子コントロールの位置とサイズが動的に変更されます。ただし、コントロールは最小サイズが決まっており、これを下回った場合にはレイアウトが調整されません。 ウィンドウ サイズをこの最小サイズよりも小さくすることは可能ですが、その場合、ウィンドウの一部がビューに表示されなくなります。  
   
-##  <a name="a-namegetwindowrecta--cmfcdynamiclayoutgetwindowrect"></a><a name="getwindowrect"></a>CMFCDynamicLayout::GetWindowRect  
+##  <a name="getwindowrect"></a>CMFCDynamicLayout::GetWindowRect  
  ウィンドウの現在のクライアント領域の長方形を取得します。  
   
 ```  
@@ -192,7 +205,7 @@ void GetHostWndRect(CRect& rect,);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehasitema--cmfcdynamiclayouthasitem"></a><a name="hasitem"></a>CMFCDynamicLayout::HasItem  
+##  <a name="hasitem"></a>CMFCDynamicLayout::HasItem  
  子コントロールが動的レイアウトに追加されたかどうかを確認します。  
   
 ```  
@@ -208,7 +221,7 @@ BOOL HasItem(HWND hwnd);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisemptya--cmfcdynamiclayoutisempty"></a><a name="isempty"></a>CMFCDynamicLayout::IsEmpty  
+##  <a name="isempty"></a>CMFCDynamicLayout::IsEmpty  
  動的なレイアウトに子ウィンドウが追加されていないことを確認します。  
   
 ```  
@@ -220,7 +233,7 @@ BOOL IsEmpty();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameloadresourcea--cmfcdynamiclayoutloadresource"></a><a name="loadresource"></a>CMFCDynamicLayout::LoadResource  
+##  <a name="loadresource"></a>CMFCDynamicLayout::LoadResource  
  AFX_DIALOG_LAYOUT リソースから動的レイアウトを読み取り、ホスト ウィンドウにそのレイアウトを適用します。  
   
 ```  
@@ -244,7 +257,7 @@ static BOOL LoadResource(CWnd* pHostWnd,
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemovehorizontala--cmfcdynamiclayoutmovehorizontal"></a><a name="movehorizontal"></a>CMFCDynamicLayout::MoveHorizontal  
+##  <a name="movehorizontal"></a>CMFCDynamicLayout::MoveHorizontal  
  取得、 [MoveSettings](#movesettings_structure)どれだけの子コントロールは、ホスト ウィンドウが変わると、水平方向に移動を定義する値。  
   
 ```  
@@ -260,7 +273,7 @@ static MoveSettings MoveHorizontal(int nRatio);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemovehorizontalandverticala--cmfcdynamiclayoutmovehorizontalandvertical"></a><a name="movehorizontalandvertical"></a>CMFCDynamicLayout::MoveHorizontalAndVertical  
+##  <a name="movehorizontalandvertical"></a>CMFCDynamicLayout::MoveHorizontalAndVertical  
  取得、 [MoveSettings](#movesettings_structure)どれだけの子コントロールは、ホスト ウィンドウが変わると、水平方向に移動を定義する値。  
   
 ```  
@@ -279,7 +292,7 @@ static MoveSettings MoveHorizontalAndVertical(int nXRatio int nYRatio);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemovenonea--cmfcdynamiclayoutmovenone"></a><a name="movenone"></a>CMFCDynamicLayout::MoveNone  
+##  <a name="movenone"></a>CMFCDynamicLayout::MoveNone  
  取得、 [MoveSettings](#movesettings_structure)なしを表すモーション、垂直または水平方向、子コントロールの値。  
   
 ```  
@@ -291,7 +304,7 @@ static MoveSettings MoveNone();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemovesettingsstructurea--cmfcdynamiclayoutmovesettings-structure"></a><a name="movesettings_structure"></a>CMFCDynamicLayout::MoveSettings 構造体  
+##  <a name="movesettings_structure"></a>CMFCDynamicLayout::MoveSettings 構造体  
  動的レイアウトでのコントロールの移動データをカプセル化します。  
   
 ```  
@@ -332,7 +345,7 @@ BOOL IsVertical() const
 ## <a name="return-value"></a>戻り値  
  `MoveSettings` オブジェクトが&0; 以外の垂直方向の移動を指定している場合は TRUE です。  
 
-##  <a name="a-namemoveverticala--cmfcdynamiclayoutmovevertical"></a><a name="movevertical"></a>CMFCDynamicLayout::MoveVertical  
+##  <a name="movevertical"></a>CMFCDynamicLayout::MoveVertical  
  取得、 [MoveSettings](#movesettings_structure)ユーザーそのホスト ウィンドウのサイズ変更時にどの程度、子コントロールは垂直方向に移動を定義する値。  
   
 ```  
@@ -348,7 +361,7 @@ static MoveSettings MoveVertical(int nRatio);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetminsizea--cmfcdynamiclayoutsetminsize"></a><a name="setminsize"></a>CMFCDynamicLayout::SetMinSize  
+##  <a name="setminsize"></a>CMFCDynamicLayout::SetMinSize  
  ウィンドウ サイズをレイアウト調整の下限に設定します。  
   
 ```  
@@ -362,7 +375,7 @@ void SetMinSize(const CSize& size);
 ### <a name="remarks"></a>コメント  
  ホスティング ウィンドウのサイズ変更が行われると、子コントロールの位置とサイズが動的に変更されます。ただし、コントロールは最小サイズが決まっており、これを下回った場合にはレイアウトが調整されません。 ウィンドウ サイズをこの最小サイズよりも小さくすることは可能ですが、その場合、ウィンドウの一部がビューに表示されなくなります。  
   
-##  <a name="a-namesizehorizontala--cmfcdynamiclayoutsizehorizontal"></a><a name="sizehorizontal"></a>CMFCDynamicLayout::SizeHorizontal  
+##  <a name="sizehorizontal"></a>CMFCDynamicLayout::SizeHorizontal  
  取得、 [SizeSettings](#sizesettings_structure)がそのホスト ウィンドウが変わると、水平方向にどの程度、子コントロールのサイズを定義する値。  
   
 ```  
@@ -378,7 +391,7 @@ static SizeSettings SizeHorizontal(int nRatio);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesizehorizontalandverticala--cmfcdynamiclayoutsizehorizontalandvertical"></a><a name="sizehorizontalandvertical"></a>CMFCDynamicLayout::SizeHorizontalAndVertical  
+##  <a name="sizehorizontalandvertical"></a>CMFCDynamicLayout::SizeHorizontalAndVertical  
  取得、 [SizeSettings](#sizesettings_structure)がそのホスト ウィンドウが変わると、水平方向にどの程度、子コントロールのサイズを定義する値。  
   
 ```  
@@ -397,7 +410,7 @@ static SizeSettings SizeHorizontalAndVertical(int nXRatio int nYRatio);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesizenonea--cmfcdynamiclayoutsizenone"></a><a name="sizenone"></a>CMFCDynamicLayout::SizeNone  
+##  <a name="sizenone"></a>CMFCDynamicLayout::SizeNone  
  取得、 [SizeSettings](#sizesettings_structure)値を表す子コントロールのサイズの変更はありません。  
   
 ```  
@@ -409,7 +422,7 @@ static SizeSettings SizeNone();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesizesettingsstructurea--cmfcdynamiclayoutsizesettings-structure"></a><a name="sizesettings_structure"></a>CMFCDynamicLayout::SizeSettings 構造体  
+##  <a name="sizesettings_structure"></a>CMFCDynamicLayout::SizeSettings 構造体  
  動的レイアウトでのコントロールのサイズ変更データをカプセル化します。  
   
 ```  
@@ -449,7 +462,7 @@ BOOL IsVertical() const
 ## <a name="return-value"></a>戻り値  
  `SizeSettings` オブジェクトが、0 以外の垂直方向のサイズ変更枠を指定している場合は TRUE です。  
 
-##  <a name="a-namesizeverticala--cmfcdynamiclayoutsizevertical"></a><a name="sizevertical"></a>CMFCDynamicLayout::SizeVertical  
+##  <a name="sizevertical"></a>CMFCDynamicLayout::SizeVertical  
  取得、 [SizeSettings](#sizesettings_structure)がそのホスト ウィンドウが変わると、垂直方向にどの程度、子コントロールのサイズを定義する値。  
   
 ```  

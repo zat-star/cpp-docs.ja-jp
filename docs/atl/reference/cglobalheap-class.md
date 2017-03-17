@@ -9,9 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CGlobalHeap
-- ATL::CGlobalHeap
 - CGlobalHeap
+- ATLMEM/ATL::CGlobalHeap
+- ATLMEM/ATL::CGlobalHeap::Allocate
+- ATLMEM/ATL::CGlobalHeap::Free
+- ATLMEM/ATL::CGlobalHeap::GetSize
+- ATLMEM/ATL::CGlobalHeap::Reallocate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -81,7 +84,7 @@ class CGlobalHeap : public IAtlMemMgr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlmem.h  
   
-##  <a name="a-nameallocatea--cglobalheapallocate"></a><a name="allocate"></a>CGlobalHeap::Allocate  
+##  <a name="allocate"></a>CGlobalHeap::Allocate  
  メモリ ブロックを割り当てるには、このメソッドを呼び出します。  
   
 ```
@@ -100,7 +103,7 @@ virtual __declspec(allocator) void* Allocate(size_t nBytes) throw();
   
  使用して実装[GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574)のフラグ パラメーターを持つ**GMEM_FIXED**します。  
   
-##  <a name="a-namefreea--cglobalheapfree"></a><a name="free"></a>CGlobalHeap::Free  
+##  <a name="free"></a>CGlobalHeap::Free  
  メモリ マネージャーによって割り当てられたメモリ ブロックを解放するには、このメソッドを呼び出します。  
   
 ```
@@ -114,7 +117,7 @@ virtual void Free(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[GlobalFree](http://msdn.microsoft.com/library/windows/desktop/aa366579)します。  
   
-##  <a name="a-namegetsizea--cglobalheapgetsize"></a><a name="getsize"></a>CGlobalHeap::GetSize  
+##  <a name="getsize"></a>CGlobalHeap::GetSize  
  メモリ マネージャーによって割り当てられたメモリ ブロックの割り当てのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -131,7 +134,7 @@ virtual size_t GetSize(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[GlobalSize](http://msdn.microsoft.com/library/windows/desktop/aa366593)します。  
   
-##  <a name="a-namereallocatea--cglobalheapreallocate"></a><a name="reallocate"></a>CGlobalHeap::Reallocate  
+##  <a name="reallocate"></a>CGlobalHeap::Reallocate  
  このメソッドを呼び出し、このメモリ マネージャーによって割り当てられたメモリの再割り当てを行います。  
   
 ```

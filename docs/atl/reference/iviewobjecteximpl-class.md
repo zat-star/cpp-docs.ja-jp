@@ -9,11 +9,20 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::IViewObjectExImpl<T>
-- ATL.IViewObjectExImpl
-- ATL::IViewObjectExImpl
-- ATL.IViewObjectExImpl<T>
 - IViewObjectExImpl
+- ATLCTL/ATL::IViewObjectExImpl
+- ATLCTL/ATL::IViewObjectExImpl::Draw
+- ATLCTL/ATL::IViewObjectExImpl::Freeze
+- ATLCTL/ATL::IViewObjectExImpl::GetAdvise
+- ATLCTL/ATL::IViewObjectExImpl::GetColorSet
+- ATLCTL/ATL::IViewObjectExImpl::GetExtent
+- ATLCTL/ATL::IViewObjectExImpl::GetNaturalExtent
+- ATLCTL/ATL::IViewObjectExImpl::GetRect
+- ATLCTL/ATL::IViewObjectExImpl::GetViewStatus
+- ATLCTL/ATL::IViewObjectExImpl::QueryHitPoint
+- ATLCTL/ATL::IViewObjectExImpl::QueryHitRect
+- ATLCTL/ATL::IViewObjectExImpl::SetAdvise
+- ATLCTL/ATL::IViewObjectExImpl::Unfreeze
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +103,7 @@ class ATL_NO_VTABLE IViewObjectExImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namedrawa--iviewobjecteximpldraw"></a><a name="draw"></a>IViewObjectExImpl::Draw  
+##  <a name="draw"></a>IViewObjectExImpl::Draw  
  デバイス コンテキスト上にコントロールの内部表現を描画します。  
   
 ```
@@ -115,7 +124,7 @@ STDMETHOD(Draw)(
   
  参照してください[IViewObject::Draw](http://msdn.microsoft.com/library/windows/desktop/ms688655)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namefreezea--iviewobjecteximplfreeze"></a><a name="freeze"></a>IViewObjectExImpl::Freeze  
+##  <a name="freeze"></a>IViewObjectExImpl::Freeze  
  コントロールの描画された画像をフリーズするまで変更できないように、`Unfreeze`です。 ATL の実装を返します**E_NOTIMPL**します。  
   
 ```
@@ -129,7 +138,7 @@ STDMETHOD(Freeze)(
 ### <a name="remarks"></a>コメント  
  参照してください[IViewObject::Freeze](http://msdn.microsoft.com/library/windows/desktop/ms688728)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetadvisea--iviewobjecteximplgetadvise"></a><a name="getadvise"></a>IViewObjectExImpl::GetAdvise  
+##  <a name="getadvise"></a>IViewObjectExImpl::GetAdvise  
  1 つを使用する必要がある場合は、コントロールで、既存のアドバイズ シンクの接続を取得します。  
   
 ```
@@ -144,7 +153,7 @@ STDMETHOD(GetAdvise)(
   
  参照してください[IViewObject::GetAdvise](http://msdn.microsoft.com/library/windows/desktop/ms692772)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetcolorseta--iviewobjecteximplgetcolorset"></a><a name="getcolorset"></a>IViewObjectExImpl::GetColorSet  
+##  <a name="getcolorset"></a>IViewObjectExImpl::GetColorSet  
  コントロールによって描画に使用される論理パレットを返します。 ATL の実装を返します**E_NOTIMPL**します。  
   
 ```
@@ -160,7 +169,7 @@ STDMETHOD(GetColorSet)(
 ### <a name="remarks"></a>コメント  
  参照してください[IViewObject::GetColorSet](http://msdn.microsoft.com/library/windows/desktop/ms686553)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetextenta--iviewobjecteximplgetextent"></a><a name="getextent"></a>IViewObjectExImpl::GetExtent  
+##  <a name="getextent"></a>IViewObjectExImpl::GetExtent  
  コントロール クラスのデータ メンバーから、コントロールの表示サイズを HIMETRIC 単位 (0.01 ミリメートル単位) を取得[この](../../atl/reference/ccomcontrolbase-class.md#m_sizeextent)します。  
   
 ```
@@ -174,7 +183,7 @@ STDMETHOD(GetExtent)(
 ### <a name="remarks"></a>コメント  
  参照してください[IViewObject2::GetExtent](http://msdn.microsoft.com/library/windows/desktop/ms684032)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetnaturalextenta--iviewobjecteximplgetnaturalextent"></a><a name="getnaturalextent"></a>IViewObjectExImpl::GetNaturalExtent  
+##  <a name="getnaturalextent"></a>IViewObjectExImpl::GetNaturalExtent  
  ユーザーがサイズを変更とを使用するオブジェクトのコンテナーからサイズ変更のヒントを提供します。  
   
 ```
@@ -192,7 +201,7 @@ STDMETHOD(GetNaturalExtent)(
   
  参照してください[IViewObjectEx::GetNaturalExtent](http://msdn.microsoft.com/library/windows/desktop/ms683718)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetrecta--iviewobjecteximplgetrect"></a><a name="getrect"></a>IViewObjectExImpl::GetRect  
+##  <a name="getrect"></a>IViewObjectExImpl::GetRect  
  要求された描画の外観を示す四角形を返します。 ATL の実装を返します**E_NOTIMPL**します。  
   
 ```
@@ -202,7 +211,7 @@ STDMETHOD(GetRect)(DWORD /* dwAspect */, LPRECTL /* pRect */);
 ### <a name="remarks"></a>コメント  
  参照してください[IViewObjectEx::GetRect](http://msdn.microsoft.com/library/windows/desktop/ms695246)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetviewstatusa--iviewobjecteximplgetviewstatus"></a><a name="getviewstatus"></a>IViewObjectExImpl::GetViewStatus  
+##  <a name="getviewstatus"></a>IViewObjectExImpl::GetViewStatus  
  オブジェクトとどのような描画の側面がサポートされているの不透明度に関する情報を返します。  
   
 ```
@@ -214,7 +223,7 @@ STDMETHOD(GetViewStatus)(DWORD* pdwStatus);
   
  参照してください[IViewObjectEx::GetViewStatus](http://msdn.microsoft.com/library/windows/desktop/ms693371)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namequeryhitpointa--iviewobjecteximplqueryhitpoint"></a><a name="queryhitpoint"></a>IViewObjectExImpl::QueryHitPoint  
+##  <a name="queryhitpoint"></a>IViewObjectExImpl::QueryHitPoint  
  指定したポイントで指定された四角形はし、返すことを確認、[中](http://msdn.microsoft.com/library/windows/desktop/ms682187)値`pHitResult`です。  
   
 ```
@@ -233,7 +242,7 @@ STDMETHOD(QueryHitPoint)(
   
  参照してください[IViewObjectEx::QueryHitPoint](http://msdn.microsoft.com/library/windows/desktop/ms691209)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namequeryhitrecta--iviewobjecteximplqueryhitrect"></a><a name="queryhitrect"></a>IViewObjectExImpl::QueryHitRect  
+##  <a name="queryhitrect"></a>IViewObjectExImpl::QueryHitRect  
  セルの内容かどうか、コントロールの表示する四角形の指定した場所の四角形と重なっている返します、[中](http://msdn.microsoft.com/library/windows/desktop/ms682187)値`pHitResult`です。  
   
 ```
@@ -252,7 +261,7 @@ STDMETHOD(QueryHitRect)(
   
  参照してください[IViewObjectEx::QueryHitRect](http://msdn.microsoft.com/library/windows/desktop/ms693797)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetadvisea--iviewobjecteximplsetadvise"></a><a name="setadvise"></a>IViewObjectExImpl::SetAdvise  
+##  <a name="setadvise"></a>IViewObjectExImpl::SetAdvise  
  シンクは、コントロールのビューでの変更について通知できるように、コントロールとアドバイズ シンク間の接続を設定します。  
   
 ```
@@ -269,7 +278,7 @@ STDMETHOD(SetAdvise)(
   
  参照してください[IViewObject::SetAdvise](http://msdn.microsoft.com/library/windows/desktop/ms683950)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameunfreezea--iviewobjecteximplunfreeze"></a><a name="unfreeze"></a>IViewObjectExImpl::Unfreeze  
+##  <a name="unfreeze"></a>IViewObjectExImpl::Unfreeze  
  コントロールの描画の表示を解除します。 ATL の実装を返します**E_NOTIMPL**します。  
   
 ```
@@ -279,7 +288,7 @@ STDMETHOD(Unfreeze)(DWORD /* dwFreeze */);
 ### <a name="remarks"></a>コメント  
  参照してください[IViewObject::Unfreeze](http://msdn.microsoft.com/library/windows/desktop/ms686641)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameclosehandlea--iworkerthreadclientclosehandle"></a><a name="closehandle"></a>IWorkerThreadClient::CloseHandle  
+##  <a name="closehandle"></a>IWorkerThreadClient::CloseHandle  
  このオブジェクトに関連付けられたハンドルを終了するには、このメソッドを実装します。  
   
 ```
@@ -301,7 +310,7 @@ HRESULT CloseHandle(HANDLE hHandle);
   
  [!code-cpp[NVC_ATL_Utilities #&135;](../../atl/codesnippet/cpp/iviewobjecteximpl-class_1.cpp)]  
   
-##  <a name="a-nameexecutea--iworkerthreadclientexecute"></a><a name="execute"></a>IWorkerThreadClient::Execute  
+##  <a name="execute"></a>IWorkerThreadClient::Execute  
  このオブジェクトに関連付けられたハンドルがシグナル状態にコードを実行するには、このメソッドを実装します。  
   
 ```

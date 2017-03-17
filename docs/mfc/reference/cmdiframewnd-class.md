@@ -10,6 +10,21 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMDIFrameWnd
+- AFXWIN/CMDIFrameWnd
+- AFXWIN/CMDIFrameWnd::CMDIFrameWnd
+- AFXWIN/CMDIFrameWnd::CreateClient
+- AFXWIN/CMDIFrameWnd::CreateNewChild
+- AFXWIN/CMDIFrameWnd::GetWindowMenuPopup
+- AFXWIN/CMDIFrameWnd::MDIActivate
+- AFXWIN/CMDIFrameWnd::MDICascade
+- AFXWIN/CMDIFrameWnd::MDIGetActive
+- AFXWIN/CMDIFrameWnd::MDIIconArrange
+- AFXWIN/CMDIFrameWnd::MDIMaximize
+- AFXWIN/CMDIFrameWnd::MDINext
+- AFXWIN/CMDIFrameWnd::MDIPrev
+- AFXWIN/CMDIFrameWnd::MDIRestore
+- AFXWIN/CMDIFrameWnd::MDISetMenu
+- AFXWIN/CMDIFrameWnd::MDITile
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -126,7 +141,7 @@ class CMDIFrameWnd : public CFrameWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecmdiframewnda--cmdiframewndcmdiframewnd"></a><a name="cmdiframewnd"></a>CMDIFrameWnd::CMDIFrameWnd  
+##  <a name="cmdiframewnd"></a>CMDIFrameWnd::CMDIFrameWnd  
  `CMDIFrameWnd` オブジェクトを構築します。  
   
 ```  
@@ -139,7 +154,7 @@ CMDIFrameWnd();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#13;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_1.cpp)]  
   
-##  <a name="a-namecreateclienta--cmdiframewndcreateclient"></a><a name="createclient"></a>CMDIFrameWnd::CreateClient  
+##  <a name="createclient"></a>CMDIFrameWnd::CreateClient  
  管理する MDI クライアント ウィンドウを作成、`CMDIChildWnd`オブジェクトです。  
   
 ```  
@@ -164,7 +179,7 @@ virtual BOOL CreateClient(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#14;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_2.cpp)]  
   
-##  <a name="a-namecreatenewchilda--cmdiframewndcreatenewchild"></a><a name="createnewchild"></a>CMDIFrameWnd::CreateNewChild  
+##  <a name="createnewchild"></a>CMDIFrameWnd::CreateNewChild  
  新しい子ウィンドウを作成します。  
   
 ```  
@@ -196,7 +211,7 @@ CMDIChildWnd* CreateNewChild(
   
  この例は、サポート技術情報記事 Q201045 からの抜粋"HOWTO: 非ドキュメント/ビュー MDI アプリケーションに複数のウィンドウの種類を追加します"。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のドキュメントで使用可能な[http://support.microsoft.com](http://support.microsoft.com/)します。  
   
-##  <a name="a-namegetwindowmenupopupa--cmdiframewndgetwindowmenupopup"></a><a name="getwindowmenupopup"></a>CMDIFrameWnd::GetWindowMenuPopup  
+##  <a name="getwindowmenupopup"></a>CMDIFrameWnd::GetWindowMenuPopup  
  「ウィンドウ」(MDI ウィンドウの管理のためのメニュー項目を含むポップアップ メニュー) という名前の現在のポップアップ メニューへのハンドルを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -218,7 +233,7 @@ virtual HMENU GetWindowMenuPopup(HMENU hMenuBar);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#16;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_4.cpp)]  
   
-##  <a name="a-namemdiactivatea--cmdiframewndmdiactivate"></a><a name="mdiactivate"></a>CMDIFrameWnd::MDIActivate  
+##  <a name="mdiactivate"></a>CMDIFrameWnd::MDIActivate  
  別の MDI 子ウィンドウをアクティブにします。  
   
 ```  
@@ -240,7 +255,7 @@ void MDIActivate(CWnd* pWndActivate);
 ### <a name="example"></a>例  
  例を参照してください[CMDIFrameWnd::GetWindowMenuPopup](#getwindowmenupopup)します。  
   
-##  <a name="a-namemdicascadea--cmdiframewndmdicascade"></a><a name="mdicascade"></a>CMDIFrameWnd::MDICascade  
+##  <a name="mdicascade"></a>CMDIFrameWnd::MDICascade  
  Cascade 形式でのすべての MDI 子ウィンドウを整列します。  
   
 ```  
@@ -258,7 +273,7 @@ void MDICascade(int nType);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&17;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_5.cpp)]  
   
-##  <a name="a-namemdigetactivea--cmdiframewndmdigetactive"></a><a name="mdigetactive"></a>CMDIFrameWnd::MDIGetActive  
+##  <a name="mdigetactive"></a>CMDIFrameWnd::MDIGetActive  
  現在アクティブな MDI 子ウィンドウ、と共に子ウィンドウを最大化するかどうかを示すフラグを取得します。  
   
 ```  
@@ -275,7 +290,7 @@ CMDIChildWnd* MDIGetActive(BOOL* pbMaximized = NULL) const;
 ### <a name="example"></a>例  
  例を参照してください[CMDIChildWnd::MDIMaximize](../../mfc/reference/cmdichildwnd-class.md#mdimaximize)します。  
   
-##  <a name="a-namemdiiconarrangea--cmdiframewndmdiiconarrange"></a><a name="mdiiconarrange"></a>ある最小化されました。  
+##  <a name="mdiiconarrange"></a>ある最小化されました。  
  最小化されたドキュメントのすべての子ウィンドウを整列します。  
   
 ```  
@@ -288,7 +303,7 @@ void MDIIconArrange();
 ### <a name="example"></a>例  
  例を参照してください[CMDIFrameWnd::MDICascade](#mdicascade)します。  
   
-##  <a name="a-namemdimaximizea--cmdiframewndmdimaximize"></a><a name="mdimaximize"></a>CMDIFrameWnd::MDIMaximize  
+##  <a name="mdimaximize"></a>CMDIFrameWnd::MDIMaximize  
  指定の MDI 子ウィンドウを最大化します。  
   
 ```  
@@ -307,7 +322,7 @@ void MDIMaximize(CWnd* pWnd);
 ### <a name="example"></a>例  
  例を参照してください[CMDIChildWnd::MDIMaximize](../../mfc/reference/cmdichildwnd-class.md#mdimaximize)します。  
   
-##  <a name="a-namemdinexta--cmdiframewndmdinext"></a><a name="mdinext"></a>CMDIFrameWnd::MDINext  
+##  <a name="mdinext"></a>CMDIFrameWnd::MDINext  
  現在アクティブな子ウィンドウの背後にすぐに子ウィンドウをアクティブにし、その他のすべての子ウィンドウの後ろに、現在アクティブな子ウィンドウを配置します。  
   
 ```  
@@ -320,7 +335,7 @@ void MDINext();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#18;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_6.cpp)]  
   
-##  <a name="a-namemdipreva--cmdiframewndmdiprev"></a><a name="mdiprev"></a>CMDIFrameWnd::MDIPrev  
+##  <a name="mdiprev"></a>CMDIFrameWnd::MDIPrev  
  前の子ウィンドウをアクティブにし、すぐ後ろに、現在アクティブな子ウィンドウを置きます。  
   
 ```  
@@ -330,7 +345,7 @@ void MDIPrev();
 ### <a name="remarks"></a>コメント  
  現在アクティブな MDI 子ウィンドウが最大化されている場合、メンバー関数は現在アクティブな子を復元し、新しくアクティブ化の子を最大化します。  
   
-##  <a name="a-namemdirestorea--cmdiframewndmdirestore"></a><a name="mdirestore"></a>CMDIFrameWnd::MDIRestore  
+##  <a name="mdirestore"></a>CMDIFrameWnd::MDIRestore  
  MDI 子ウィンドウを最大化または最小化されているサイズから復元します。  
   
 ```  
@@ -344,7 +359,7 @@ void MDIRestore(CWnd* pWnd);
 ### <a name="example"></a>例  
  例を参照してください[CMDIChildWnd::MDIRestore](../../mfc/reference/cmdichildwnd-class.md#mdirestore)します。  
   
-##  <a name="a-namemdisetmenua--cmdiframewndmdisetmenu"></a><a name="mdisetmenu"></a>CMDIFrameWnd::MDISetMenu  
+##  <a name="mdisetmenu"></a>CMDIFrameWnd::MDISetMenu  
  MDI フレーム ウィンドウのメニューのウィンドウのポップアップ メニューで、またはその両方を置き換えます。  
   
 ```  
@@ -377,7 +392,7 @@ CMenu* MDISetMenu(
   
  [!code-cpp[NVC_MFCWindowing&#20;](../../mfc/reference/codesnippet/cpp/cmdiframewnd-class_8.cpp)]  
   
-##  <a name="a-namemditilea--cmdiframewndmditile"></a><a name="mditile"></a>CMDIFrameWnd::MDITile  
+##  <a name="mditile"></a>CMDIFrameWnd::MDITile  
  タイル化された形式でのすべての子ウィンドウを整列します。  
   
 ```  

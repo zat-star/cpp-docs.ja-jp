@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleConvertDialog
+- AFXODLGS/COleConvertDialog
+- AFXODLGS/COleConvertDialog::COleConvertDialog
+- AFXODLGS/COleConvertDialog::DoConvert
+- AFXODLGS/COleConvertDialog::DoModal
+- AFXODLGS/COleConvertDialog::GetClassID
+- AFXODLGS/COleConvertDialog::GetDrawAspect
+- AFXODLGS/COleConvertDialog::GetIconicMetafile
+- AFXODLGS/COleConvertDialog::GetSelectionType
+- AFXODLGS/COleConvertDialog::m_cv
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +111,7 @@ class COleConvertDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecoleconvertdialoga--coleconvertdialogcoleconvertdialog"></a><a name="coleconvertdialog"></a>COleConvertDialog::COleConvertDialog  
+##  <a name="coleconvertdialog"></a>COleConvertDialog::COleConvertDialog  
  のみを構築、`COleConvertDialog`オブジェクトです。  
   
 ```  
@@ -141,7 +150,7 @@ explicit COleConvertDialog (
   
  詳細については、次を参照してください。 [CLSID キー](http://msdn.microsoft.com/library/windows/desktop/ms691424)と[使わ](http://msdn.microsoft.com/library/windows/desktop/ms686657)構造体。  
   
-##  <a name="a-namedoconverta--coleconvertdialogdoconvert"></a><a name="doconvert"></a>COleConvertDialog::DoConvert  
+##  <a name="doconvert"></a>COleConvertDialog::DoConvert  
  この関数の呼び出しから正常に戻った後[DoModal](#domodal)変換するか、型のオブジェクトをアクティブにするか、 [COleClientItem](../../mfc/reference/coleclientitem-class.md)します。  
   
 ```  
@@ -158,7 +167,7 @@ BOOL DoConvert(COleClientItem* pItem);
 ### <a name="remarks"></a>コメント  
  項目を変換または変換 ダイアログ ボックスでユーザーが選択されている情報に従って有効にします。  
   
-##  <a name="a-namedomodala--coleconvertdialogdomodal"></a><a name="domodal"></a>COleConvertDialog::DoModal  
+##  <a name="domodal"></a>COleConvertDialog::DoModal  
  OLE の [変換] ダイアログ ボックスを表示するには、この関数を呼び出します。  
   
 ```  
@@ -179,7 +188,7 @@ virtual INT_PTR DoModal();
   
  場合`DoModal`返します**IDOK**、他のメンバーの設定やユーザー ダイアログ ボックスに入力した情報を取得する関数を呼び出すことができます。  
   
-##  <a name="a-namegetclassida--coleconvertdialoggetclassid"></a><a name="getclassid"></a>COleConvertDialog::GetClassID  
+##  <a name="getclassid"></a>COleConvertDialog::GetClassID  
  取得するには、この関数を呼び出す、 **CLSID**変換 ダイアログ ボックスで選択された項目に関連付けられています。  
   
 ```  
@@ -194,7 +203,7 @@ REFCLSID GetClassID() const;
   
  詳細については、次を参照してください。 [CLSID キー](http://msdn.microsoft.com/library/windows/desktop/ms691424)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetdrawaspecta--coleconvertdialoggetdrawaspect"></a><a name="getdrawaspect"></a>COleConvertDialog::GetDrawAspect  
+##  <a name="getdrawaspect"></a>COleConvertDialog::GetDrawAspect  
  ユーザーがアイコンとして選択した項目を表示する選択したかどうかを判断するには、この関数を呼び出します。  
   
 ```  
@@ -213,7 +222,7 @@ DVASPECT GetDrawAspect() const;
   
  縦横の描画の詳細については、次を参照してください。、 [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)で構造化データ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegeticonicmetafilea--coleconvertdialoggeticonicmetafile"></a><a name="geticonicmetafile"></a>COleConvertDialog::GetIconicMetafile  
+##  <a name="geticonicmetafile"></a>COleConvertDialog::GetIconicMetafile  
  選択した項目のアイコンの外観を持つメタファイルを識別するハンドルを取得するには、この関数を呼び出します。  
   
 ```  
@@ -223,7 +232,7 @@ HGLOBAL GetIconicMetafile() const;
 ### <a name="return-value"></a>戻り値  
  選択して、ダイアログが終了したときにオンの場合はアイコンで表示 チェック ボックスが選択した項目のアイコンの外観を持つメタファイル ハンドル**OK**。 そうしないと**NULL**します。  
   
-##  <a name="a-namegetselectiontypea--coleconvertdialoggetselectiontype"></a><a name="getselectiontype"></a>COleConvertDialog::GetSelectionType  
+##  <a name="getselectiontype"></a>COleConvertDialog::GetSelectionType  
  この関数では、[変換] ダイアログ ボックスで選択された変換の種類を判断します。  
   
 ```  
@@ -256,7 +265,7 @@ UINT GetSelectionType() const;
   
 - **COleConvertDialog::activateAs**をアクティブ化すると、別の項目をユーザーが選択したオプション ボタンが選択した場合、返されると`DoModal`返される**IDOK**します。  
   
-##  <a name="a-namemcva--coleconvertdialogmcv"></a><a name="m_cv"></a>COleConvertDialog::m_cv  
+##  <a name="m_cv"></a>COleConvertDialog::m_cv  
  型の構造体**使わ**変換 ダイアログ ボックスの動作を制御するために使用します。  
   
 ```  

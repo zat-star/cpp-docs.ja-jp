@@ -9,9 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CComSingleThreadModel
 - CComSingleThreadModel
-- ATL::CComSingleThreadModel
+- ATLBASE/ATL::CComSingleThreadModel
+- ATLBASE/ATL::CComSingleThreadModel::AutoCriticalSection
+- ATLBASE/ATL::CComSingleThreadModel::CriticalSection
+- ATLBASE/ATL::CComSingleThreadModel::ThreadModelNoCS
+- ATLBASE/ATL::CComSingleThreadModel::Decrement
+- ATLBASE/ATL::CComSingleThreadModel::Increment
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +91,7 @@ class CComSingleThreadModel
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameautocriticalsectiona--ccomsinglethreadmodelautocriticalsection"></a><a name="autocriticalsection"></a>CComSingleThreadModel::AutoCriticalSection  
+##  <a name="autocriticalsection"></a>CComSingleThreadModel::AutoCriticalSection  
  使用する場合`CComSingleThreadModel`、`typedef`名`AutoCriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
   
 ```
@@ -110,7 +114,7 @@ typedef CComFakeCriticalSection AutoCriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
   
-##  <a name="a-namecriticalsectiona--ccomsinglethreadmodelcriticalsection"></a><a name="criticalsection"></a>CComSingleThreadModel::CriticalSection  
+##  <a name="criticalsection"></a>CComSingleThreadModel::CriticalSection  
  使用する場合`CComSingleThreadModel`、`typedef`名`CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
   
 ```
@@ -133,7 +137,7 @@ typedef CComFakeCriticalSection CriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
   
-##  <a name="a-namedecrementa--ccomsinglethreadmodeldecrement"></a><a name="decrement"></a>CComSingleThreadModel::Decrement  
+##  <a name="decrement"></a>CComSingleThreadModel::Decrement  
  この静的関数デクリメント、変数の値が指す`p`します。  
   
 ```
@@ -147,7 +151,7 @@ static ULONG WINAPI Decrement(LPLONG p) throw();
 ### <a name="return-value"></a>戻り値  
  減算の結果です。  
   
-##  <a name="a-nameincrementa--ccomsinglethreadmodelincrement"></a><a name="increment"></a>CComSingleThreadModel::Increment  
+##  <a name="increment"></a>CComSingleThreadModel::Increment  
  この静的関数デクリメント、変数の値が指す`p`します。  
   
 ```
@@ -161,7 +165,7 @@ static ULONG WINAPI Increment(LPLONG p) throw();
 ### <a name="return-value"></a>戻り値  
  増分の結果です。  
   
-##  <a name="a-namethreadmodelnocsa--ccomsinglethreadmodelthreadmodelnocs"></a><a name="threadmodelnocs"></a>CComSingleThreadModel::ThreadModelNoCS  
+##  <a name="threadmodelnocs"></a>CComSingleThreadModel::ThreadModelNoCS  
  使用する場合`CComSingleThreadModel`、`typedef`名`ThreadModelNoCS`単に参照`CComSingleThreadModel`します。  
   
 ```

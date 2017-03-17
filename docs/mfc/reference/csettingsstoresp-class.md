@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSettingsStoreSP
+- AFXSETTINGSSTORE/CSettingsStoreSP
+- AFXSETTINGSSTORE/CSettingsStoreSP::CSettingsStoreSP
+- AFXSETTINGSSTORE/CSettingsStoreSP::Create
+- AFXSETTINGSSTORE/CSettingsStoreSP::SetRuntimeClass
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -88,7 +92,7 @@ class CSettingsStoreSP
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxsettingsstore.h  
   
-##  <a name="a-namecreatea--csettingsstorespcreate"></a><a name="create"></a>CSettingsStoreSP::Create  
+##  <a name="create"></a>CSettingsStoreSP::Create  
  派生したオブジェクトの新しいインスタンスを作成、 [CSettingsStore クラス](../../mfc/reference/csettingsstore-class.md)します。  
   
 ```  
@@ -119,7 +123,7 @@ CSettingsStore& CSettingsStoreSP Create(
   
  [!code-cpp[NVC_MFC_RibbonApp #&33;](../../mfc/reference/codesnippet/cpp/csettingsstoresp-class_1.cpp)]  
   
-##  <a name="a-namecsettingsstorespa--csettingsstorespcsettingsstoresp"></a><a name="csettingsstoresp"></a>CSettingsStoreSP::CSettingsStoreSP  
+##  <a name="csettingsstoresp"></a>CSettingsStoreSP::CSettingsStoreSP  
  構築、 [CSettingsStoreSP クラス](../../mfc/reference/csettingsstoresp-class.md)オブジェクトです。  
   
 ```  
@@ -133,7 +137,7 @@ CSettingsStoreSP::CSettingsStoreSP(DWORD dwUserData = 0);
 ### <a name="remarks"></a>コメント  
  `CSettingsStoreSP`オブジェクトからデータを格納する`dwUserData`プロテクト メンバー変数に`m_dwUserData`します。  
   
-##  <a name="a-namesetruntimeclassa--csettingsstorespsetruntimeclass"></a><a name="setruntimeclass"></a>CSettingsStoreSP::SetRuntimeClass  
+##  <a name="setruntimeclass"></a>CSettingsStoreSP::SetRuntimeClass  
  ランタイム クラスを設定します。 メソッド[CSettingsStoreSP::Create](#create)ランタイム クラスを使用して作成するオブジェクトの種類を決定します。  
   
 ```  

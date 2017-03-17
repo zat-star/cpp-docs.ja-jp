@@ -9,9 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CPrivateObjectSecurityDesc
-- ATL::CPrivateObjectSecurityDesc
 - CPrivateObjectSecurityDesc
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc::CPrivateObjectSecurityDesc
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc::ConvertToAutoInherit
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Create
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Get
+- ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Set
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +91,7 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="a-nameconverttoautoinherita--cprivateobjectsecuritydescconverttoautoinherit"></a><a name="converttoautoinherit"></a>CPrivateObjectSecurityDesc::ConvertToAutoInherit  
+##  <a name="converttoautoinherit"></a>CPrivateObjectSecurityDesc::ConvertToAutoInherit  
  セキュリティ記述子とそのアクセス制御リスト (Acl) を継承可能なアクセス制御エントリ (Ace) の自動適用をサポートする形式に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -117,7 +121,7 @@ bool ConvertToAutoInherit(
 ### <a name="remarks"></a>コメント  
  このメソッドが随意アクセス制御の Ace が (DACL) を一覧表示するかどうかを決定しようと現在のセキュリティ記述子のシステム アクセス制御リスト (SACL) は、親のセキュリティ記述子から継承されました。 呼び出す、 [ConvertToAutoInheritPrivateObjectSecurity](http://msdn.microsoft.com/library/windows/desktop/aa376403)関数です。  
   
-##  <a name="a-namecprivateobjectsecuritydesca--cprivateobjectsecuritydesccprivateobjectsecuritydesc"></a><a name="cprivateobjectsecuritydesc"></a>CPrivateObjectSecurityDesc::CPrivateObjectSecurityDesc  
+##  <a name="cprivateobjectsecuritydesc"></a>CPrivateObjectSecurityDesc::CPrivateObjectSecurityDesc  
  コンストラクターです。  
   
 ```
@@ -127,7 +131,7 @@ CPrivateObjectSecurityDesc() throw();
 ### <a name="remarks"></a>コメント  
  初期化、`CPrivateObjectSecurityDesc`オブジェクトです。  
   
-##  <a name="a-namedtora--cprivateobjectsecuritydesccprivateobjectsecuritydesc"></a><a name="dtor"></a>CPrivateObjectSecurityDesc:: ~ CPrivateObjectSecurityDesc  
+##  <a name="dtor"></a>CPrivateObjectSecurityDesc:: ~ CPrivateObjectSecurityDesc  
  デストラクターです。  
   
 ```
@@ -137,7 +141,7 @@ CPrivateObjectSecurityDesc() throw();
 ### <a name="remarks"></a>コメント  
  デストラクターは、割り当てられているすべてのリソースを解放し、プライベート オブジェクトのセキュリティ記述子を削除します。  
   
-##  <a name="a-namecreatea--cprivateobjectsecuritydesccreate"></a><a name="create"></a>CPrivateObjectSecurityDesc::Create  
+##  <a name="create"></a>CPrivateObjectSecurityDesc::Create  
  割り当ておよび呼び出し元のリソース マネージャーによって作成されるプライベート オブジェクトの自己相対セキュリティ記述子を初期化するには、このメソッドを呼び出します。  
   
 ```
@@ -194,7 +198,7 @@ bool Create(
 > [!NOTE]
 >  自己相対セキュリティ記述子は、連続するメモリ ブロックにすべてのセキュリティ情報を格納するセキュリティ記述子です。  
   
-##  <a name="a-namegeta--cprivateobjectsecuritydescget"></a><a name="get"></a>CPrivateObjectSecurityDesc::Get  
+##  <a name="get"></a>CPrivateObjectSecurityDesc::Get  
  このメソッドでは、プライベート オブジェクトのセキュリティ記述子から情報を取得します。  
   
 ```
@@ -216,7 +220,7 @@ bool Get(
 ### <a name="remarks"></a>コメント  
  セキュリティ記述子には、構造と関連データがセキュリティ保護可能なオブジェクトのセキュリティ情報が含まれています。  
   
-##  <a name="a-nameoperatoreqa--cprivateobjectsecuritydescoperator-"></a><a name="operator_eq"></a>CPrivateObjectSecurityDesc::operator =  
+##  <a name="operator_eq"></a>CPrivateObjectSecurityDesc::operator =  
  代入演算子。  
   
 ```
@@ -230,7 +234,7 @@ CPrivateObjectSecurityDesc& operator= (const CPrivateObjectSecurityDesc& rhs) th
 ### <a name="return-value"></a>戻り値  
  取得、更新された`CPrivateObjectSecurityDesc`オブジェクトです。  
   
-##  <a name="a-nameseta--cprivateobjectsecuritydescset"></a><a name="set"></a>CPrivateObjectSecurityDesc::Set  
+##  <a name="set"></a>CPrivateObjectSecurityDesc::Set  
  プライベート オブジェクトのセキュリティ記述子を変更するには、このメソッドを呼び出します。  
   
 ```

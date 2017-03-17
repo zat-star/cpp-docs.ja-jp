@@ -10,9 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAutoHideDockSite
-- AllowShowOnPaneMenu
-- CAutoHideDockSite::AllowShowOnPaneMenu
-- CAutoHideDockSite.AllowShowOnPaneMenu
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::CanAcceptPane
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::DockPane
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::GetAlignRect
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::RepositionPanes
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::SetOffsetLeft
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::SetOffsetRight
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::UnSetAutoHideMode
+- AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::m_nExtraSpace
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -108,7 +114,7 @@ class CAutoHideDockSite : public CDockSite
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxautohidedocksite.h  
   
-##  <a name="a-namecanacceptpanea--cautohidedocksitecanacceptpane"></a><a name="canacceptpane"></a>CAutoHideDockSite::CanAcceptPane  
+##  <a name="canacceptpane"></a>CAutoHideDockSite::CanAcceptPane  
  基本のペインがあるかどうかを判断、 [CMFCAutoHideBar](../../mfc/reference/cmfcautohidebar-class.md)から派生したオブジェクト、または`CMFCAutoHideBar`です。  
   
 ```  
@@ -128,7 +134,7 @@ virtual BOOL CanAcceptPane(const CBasePane* pBar) const;
 ### <a name="remarks"></a>コメント  
  基本ウィンドウ オブジェクトの派生元場合`CMFCAutoHideBar`、含めることができます、`CAutoHideDockSite`です。  
   
-##  <a name="a-namedockpanea--cautohidedocksitedockpane"></a><a name="dockpane"></a>CAutoHideDockSite::DockPane  
+##  <a name="dockpane"></a>CAutoHideDockSite::DockPane  
  このペインをドッキング[CAutoHideDockSite](../../mfc/reference/cautohidedocksite-class.md)オブジェクトです。  
   
 ```  
@@ -152,7 +158,7 @@ virtual void DockPane(
   
  場合`lpRect`は`NULL`フレームワークは、ドッキング サイトの既定の場所に、ウィンドウを配置します。 ドッキング サイトが水平方向の場合は、既定の場所は、ドッキング サイトの一番左にあるです。 それ以外の場合、既定の場所は、ドッキング サイトの上部には。  
   
-##  <a name="a-namegetalignrecta--cautohidedocksitegetalignrect"></a><a name="getalignrect"></a>CAutoHideDockSite::GetAlignRect  
+##  <a name="getalignrect"></a>CAutoHideDockSite::GetAlignRect  
  画面座標でドッキング サイトのサイズを取得します。  
   
 ```  
@@ -169,7 +175,7 @@ void GetAlignRect(CRect& rect) const;
 ### <a name="remarks"></a>コメント  
  四角形は、含まれていないようにオフセット余白が調整されます。  
   
-##  <a name="a-namemnextraspacea--cautohidedocksitemnextraspace"></a><a name="m_nextraspace"></a>CAutoHideDockSite::m_nExtraSpace  
+##  <a name="m_nextraspace"></a>CAutoHideDockSite::m_nExtraSpace  
  境界間の領域のサイズ、 [CAutoHideDockSite クラス](../../mfc/reference/cautohidedocksite-class.md)と[CMFCAutoHideBar クラス](../../mfc/reference/cmfcautohidebar-class.md)オブジェクトです。  
   
 ```  
@@ -179,7 +185,7 @@ static int m_nExtraSpace;
 ### <a name="remarks"></a>コメント  
  ときに、`CMFCAutoHideBar`にドッキングされている場合は、 `CAutoHideDockSite`、全体のドッキング サイトを占有する必要があります。 このグローバル変数の左端または上端境界線間の余白を制御する、`CMFCAutoHideBar`と、対応する`CAutoHideDockSite`エッジです。 上または左のエッジを使用するかどうかは、現在の配置によって異なります。  
   
-##  <a name="a-namesetoffsetlefta--cautohidedocksitesetoffsetleft"></a><a name="setoffsetleft"></a>CAutoHideDockSite::SetOffsetLeft  
+##  <a name="setoffsetleft"></a>CAutoHideDockSite::SetOffsetLeft  
  ドッキング バーの左側にある余白を設定します。  
   
 ```  
@@ -193,7 +199,7 @@ void SetOffsetLeft(int nOffset);
 ### <a name="remarks"></a>コメント  
  [CMFCAutoHideBar](../../mfc/reference/cmfcautohidebar-class.md)オブジェクトが静的に配置されている、`CAutoHideDockSite`オブジェクトです。 つまり、ユーザーは、の場所に手動で変更できません`CMFCAutoHideBar`オブジェクトです。 `SetOffsetLeft`メソッドは、一番左の左側にある間の間隔を制御`CMFCAutoHideBar`およびの左側にある、`CAutoHideDockSite`です。  
   
-##  <a name="a-namesetoffsetrighta--cautohidedocksitesetoffsetright"></a><a name="setoffsetright"></a>CAutoHideDockSite::SetOffsetRight  
+##  <a name="setoffsetright"></a>CAutoHideDockSite::SetOffsetRight  
  ドッキング バーの右側にある余白を設定します。  
   
 ```  
@@ -207,7 +213,7 @@ void SetOffsetRight(int nOffset);
 ### <a name="remarks"></a>コメント  
  [CMFCAutoHideBar](../../mfc/reference/cmfcautohidebar-class.md)オブジェクトが静的に配置されている、`CAutoHideDockSite`オブジェクトです。 つまり、ユーザーがの場所を手動で変更できないこと、`CMFCAutoHideBar`オブジェクトです。 `SetOffsetRight`メソッドは、最も右側の右側にある間の間隔を制御`CMFCAutoHideBar`およびの右側にある、`CAutoHideDockSite`です。  
   
-##  <a name="a-namerepositionpanesa--cautohidedocksiterepositionpanes"></a><a name="repositionpanes"></a>CAutoHideDockSite::RepositionPanes  
+##  <a name="repositionpanes"></a>CAutoHideDockSite::RepositionPanes  
  上ペインを再描画、 [CAutoHideDockSite](../../mfc/reference/cautohidedocksite-class.md)します。  
   
 ```  
@@ -224,7 +230,7 @@ virtual void RepositionPanes(CRect& rectNewClientArea);
 ### <a name="remarks"></a>コメント  
  既定の実装を使わない`rectNewClientArea`します。 [グローバル] ツールバーの余白とボタン間のスペースを使用して、ペインが再描画します。  
   
-##  <a name="a-nameunsetautohidemodea--cautohidedocksiteunsetautohidemode"></a><a name="unsetautohidemode"></a>CAutoHideDockSite::UnSetAutoHideMode  
+##  <a name="unsetautohidemode"></a>CAutoHideDockSite::UnSetAutoHideMode  
  呼び出し[CMFCAutoHideBar::UnSetAutoHideMode](../../mfc/reference/cmfcautohidebar-class.md#unsetautohidemode)ドッキング サイト上のオブジェクト。  
   
 ```  

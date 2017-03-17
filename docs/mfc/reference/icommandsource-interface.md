@@ -10,6 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - ICommandSource
+- AFXWINFORMS/ICommandSource
+- AFXWINFORMS/ICommandSource::AddCommandHandler
+- AFXWINFORMS/ICommandSource::AddCommandRangeHandler
+- AFXWINFORMS/ICommandSource::AddCommandRangeUIHandler
+- AFXWINFORMS/ICommandSource::AddCommandUIHandler
+- AFXWINFORMS/ICommandSource::PostCommand
+- AFXWINFORMS/ICommandSource::RemoveCommandHandler
+- AFXWINFORMS/ICommandSource::RemoveCommandRangeHandler
+- AFXWINFORMS/ICommandSource::RemoveCommandRangeUIHandler
+- AFXWINFORMS/ICommandSource::RemoveCommandUIHandler
+- AFXWINFORMS/ICommandSource::SendCommand
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -75,7 +86,7 @@ interface class ICommandSource
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxwinforms.h (アセンブリ atlmfc\lib\mfcmifc80.dll で定義)  
   
-## <a name="a-nameaddcommandhandlera--icommandsourceaddcommandhandler"></a><a name="addcommandhandler"></a>ICommandSource::AddCommandHandler
+## <a name="addcommandhandler"></a>ICommandSource::AddCommandHandler
 コマンド ソース オブジェクトには、コマンド ハンドラーを追加します。
 ```
 void AddCommandHandler(
@@ -93,7 +104,7 @@ void AddCommandHandler(
 このメソッドでは、コマンド ハンドラー cmdHandler をコマンド ソース オブジェクトに追加し、cmdID ハンドラーにマップします。
 参照してください[方法: Windows フォーム コントロールへのコマンド ルーティングの追加](https://msdn.microsoft.com/library/y33d8624.aspx)AddCommandHandler を使用する方法の例についてです。
 
-## <a name="a-nameaddcommandrangehandlera-icommandsourceaddcommandrangehandler"></a><a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler
+## <a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler
 
 コマンド ソース オブジェクトに一連のコマンド ハンドラーを追加します。
 ```
@@ -112,7 +123,7 @@ void AddCommandRangeHandler(
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンド Id の連続する範囲を&1; つのメッセージ ハンドラーにマップし、コマンド ソース オブジェクトに追加します。 1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。
 
-## <a name="a-nameaddcommandrangeuihandlera-icommandsourceaddcommandrangeuihandler"></a><a name="addcommandrangeuihandler"></a>ICommandSource::AddCommandRangeUIHandler
+## <a name="addcommandrangeuihandler"></a>ICommandSource::AddCommandRangeUIHandler
 コマンド ソース オブジェクトに一連のユーザー インターフェイス コマンド メッセージ ハンドラーを追加します。
 ```
 void AddCommandRangeUIHandler(
@@ -131,7 +142,7 @@ void AddCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンド Id の連続する範囲を&1; 人のユーザー インターフェイス コマンド メッセージのハンドラーにマップし、コマンド ソース オブジェクトに追加します。 1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。
 
-## <a name="a-nameaddcommanduihandlera-icommandsourceaddcommanduihandler"></a><a name="addcommanduihandler"></a>ICommandSource::AddCommandUIHandler
+## <a name="addcommanduihandler"></a>ICommandSource::AddCommandUIHandler
 コマンド ソース オブジェクトには、ユーザー インターフェイス コマンド メッセージのハンドラーを追加します。
 ```
 void AddCommandUIHandler(
@@ -147,7 +158,7 @@ void AddCommandUIHandler(
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンド ソース オブジェクトにユーザー インターフェイス コマンド メッセージ ハンドラー cmdHandler を追加し、ハンドラーを cmdID にマップします。
 
-## <a name="a-namepostcommanda-icommandsourcepostcommand"></a><a name="postcommand"></a>ICommandSource::PostCommand
+## <a name="postcommand"></a>ICommandSource::PostCommand
 処理されるまで待つことがなく、メッセージをポストします。
 ```
 void PostCommand(unsigned int command);
@@ -159,7 +170,7 @@ void PostCommand(unsigned int command);
 このメソッドは、コマンドで指定した ID に割り当てられたメッセージを非同期的にポストします。 ウィンドウのメッセージ キューにメッセージを配置する CWnd::PostMessage を呼び出すし、メッセージの処理に対応するウィンドウを待たずに戻ります。
 
 
-## <a name="a-nameremovecommandhandlera-icommandsourceremovecommandhandler"></a><a name="removecommandhandler"></a>ICommandSource::RemoveCommandHandler
+## <a name="removecommandhandler"></a>ICommandSource::RemoveCommandHandler
 コマンド ソース オブジェクトから、コマンド ハンドラーを削除します。
 ```
 void RemoveCommandHandler(unsigned int cmdID);
@@ -171,7 +182,7 @@ void RemoveCommandHandler(unsigned int cmdID);
 このメソッドは、コマンド ソース オブジェクトから cmdID に割り当てられたコマンド ハンドラーを削除します。
 
 
-## <a name="a-nameremovecommandrangecommandhandlera-icommandsourceremovecommandrangehandler"></a><a name="removecommandrangecommandhandler"></a>ICommandSource::RemoveCommandRangeHandler 
+## <a name="removecommandrangecommandhandler"></a>ICommandSource::RemoveCommandRangeHandler 
 コマンド ソース オブジェクトから一連のコマンド ハンドラーを削除します。
 ```
 void RemoveCommandRangeUIHandler(
@@ -186,7 +197,7 @@ void RemoveCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント
 このメソッドは、一連のコマンド ソース オブジェクトから cmdIDMin および cmdIDMax で指定されたコマンド Id に割り当て、メッセージのハンドラーを削除します。
 
-## <a name="a-nameremovecommandrangeuihandlera-icommandsourceremovecommandrangeuihandler"></a><a name="removecommandrangeuihandler"></a>ICommandSource::RemoveCommandRangeUIHandler 
+## <a name="removecommandrangeuihandler"></a>ICommandSource::RemoveCommandRangeUIHandler 
 コマンド ソース オブジェクトからのユーザー インターフェイス コマンド メッセージ ハンドラーのグループを削除します。
 ```
 void RemoveCommandRangeUIHandler(
@@ -201,7 +212,7 @@ void RemoveCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント
 このメソッドは、一連のコマンド ソース オブジェクトから cmdIDMin および cmdIDMax で指定されたコマンド Id に割り当て、ユーザー インターフェイス コマンド メッセージ ハンドラーを削除します。
 
-## <a name="a-nameremovecommanduihandlera-icommandsourceremovecommanduihandler"></a><a name="removecommanduihandler"></a>ICommandSource::RemoveCommandUIHandler 
+## <a name="removecommanduihandler"></a>ICommandSource::RemoveCommandUIHandler 
 コマンド ソース オブジェクトからのユーザー インターフェイス コマンド メッセージのハンドラーを削除します。
 ```
 void RemoveCommandUIHandler(unsigned int cmdID);
@@ -212,7 +223,7 @@ void RemoveCommandUIHandler(unsigned int cmdID);
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンド ソース オブジェクトから cmdID に割り当てられたユーザー インターフェイス コマンド メッセージ ハンドラーを削除します。
 
-## <a name="a-namesendcommanda-icommandsourcesendcommand"></a><a name="sendcommand"></a>ICommandSource::SendCommand 
+## <a name="sendcommand"></a>ICommandSource::SendCommand 
 メッセージを送信し、戻る前に処理されるまで待機します。
 ```
 void SendCommand(unsigned int command);

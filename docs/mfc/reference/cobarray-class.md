@@ -10,6 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CObArray
+- AFXCOLL/CObArray
+- AFXCOLL/CObArray::CObArray
+- AFXCOLL/CObArray::Add
+- AFXCOLL/CObArray::Append
+- AFXCOLL/CObArray::Copy
+- AFXCOLL/CObArray::ElementAt
+- AFXCOLL/CObArray::FreeExtra
+- AFXCOLL/CObArray::GetAt
+- AFXCOLL/CObArray::GetCount
+- AFXCOLL/CObArray::GetData
+- AFXCOLL/CObArray::GetSize
+- AFXCOLL/CObArray::GetUpperBound
+- AFXCOLL/CObArray::InsertAt
+- AFXCOLL/CObArray::IsEmpty
+- AFXCOLL/CObArray::RemoveAll
+- AFXCOLL/CObArray::RemoveAt
+- AFXCOLL/CObArray::SetAt
+- AFXCOLL/CObArray::SetAtGrow
+- AFXCOLL/CObArray::SetSize
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -118,7 +137,7 @@ class CObArray : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcoll.h  
   
-##  <a name="a-nameadda--cobarrayadd"></a><a name="add"></a>CObArray::Add  
+##  <a name="add"></a>CObArray::Add  
  新しい要素を 1 ずつ配列の拡張は、配列の末尾に追加します。  
   
 ```  
@@ -159,7 +178,7 @@ INT_PTR Add(CObject* newElement);
   
  `[1] = a CAge at $4468 40`  
   
-##  <a name="a-nameappenda--cobarrayappend"></a><a name="append"></a>CObArray::Append  
+##  <a name="append"></a>CObArray::Append  
  指定された配列の末尾に別の配列の内容を追加するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -194,7 +213,7 @@ INT_PTR Append(const CObArray& src);
   
  [!code-cpp[NVC_MFCCollections #&76;](../../mfc/codesnippet/cpp/cobarray-class_2.cpp)]  
   
-##  <a name="a-namecopya--cobarraycopy"></a><a name="copy"></a>CObArray::Copy  
+##  <a name="copy"></a>CObArray::Copy  
  同じ型の別の配列の要素で指定された配列の要素を上書きするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -224,7 +243,7 @@ void Copy(const CObArray& src);
   
  [!code-cpp[NVC_MFCCollections #&77;](../../mfc/codesnippet/cpp/cobarray-class_3.cpp)]  
   
-##  <a name="a-namecobarraya--cobarraycobarray"></a><a name="cobarray"></a>CObArray::CObArray  
+##  <a name="cobarray"></a>CObArray::CObArray  
  空の構築`CObject`ポインターの配列。  
   
 ```  
@@ -248,7 +267,7 @@ CObArray();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&78;](../../mfc/codesnippet/cpp/cobarray-class_4.cpp)]  
   
-##  <a name="a-nameelementata--cobarrayelementat"></a><a name="elementat"></a>CObArray::ElementAt  
+##  <a name="elementat"></a>CObArray::ElementAt  
  配列内の要素ポインターへの一時的な参照を返します。  
   
 ```  
@@ -279,7 +298,7 @@ CObject*& ElementAt(INT_PTR nIndex);
 ### <a name="example"></a>例  
   例を参照してください[CObArray::GetSize](#getsize)します。  
   
-##  <a name="a-namefreeextraa--cobarrayfreeextra"></a><a name="freeextra"></a>CObArray::FreeExtra  
+##  <a name="freeextra"></a>CObArray::FreeExtra  
  配列が拡張されたときに割り当てられたすべての余分なメモリを解放します。  
   
 ```  
@@ -303,7 +322,7 @@ void FreeExtra();
 ### <a name="example"></a>例  
   例を参照してください[CObArray::GetData](#getdata)します。  
   
-##  <a name="a-namegetata--cobarraygetat"></a><a name="getat"></a>CObArray::GetAt  
+##  <a name="getat"></a>CObArray::GetAt  
  指定したインデックスにある配列要素を返します。  
   
 ```  
@@ -338,7 +357,7 @@ CObject* GetAt(INT_PTR nIndex) const;
   
  [!code-cpp[NVC_MFCCollections #&79;](../../mfc/codesnippet/cpp/cobarray-class_5.cpp)]  
   
-##  <a name="a-namegetcounta--cobarraygetcount"></a><a name="getcount"></a>CObArray::GetCount  
+##  <a name="getcount"></a>CObArray::GetCount  
  配列要素の数を返します。  
   
 ```  
@@ -367,7 +386,7 @@ INT_PTR GetCount() const;
   
  [!code-cpp[NVC_MFCCollections #&80;](../../mfc/codesnippet/cpp/cobarray-class_6.cpp)]  
   
-##  <a name="a-namegetdataa--cobarraygetdata"></a><a name="getdata"></a>CObArray::GetData  
+##  <a name="getdata"></a>CObArray::GetData  
  このメンバー関数を使用して、配列内の要素に直接アクセスします。  
   
 ```  
@@ -400,7 +419,7 @@ CObject** GetData();
   
  [!code-cpp[NVC_MFCCollections #&81;](../../mfc/codesnippet/cpp/cobarray-class_7.cpp)]  
   
-##  <a name="a-namegetsizea--cobarraygetsize"></a><a name="getsize"></a>CObArray::GetSize  
+##  <a name="getsize"></a>CObArray::GetSize  
  配列のサイズを返します。  
   
 ```  
@@ -426,7 +445,7 @@ INT_PTR GetSize() const;
   
  [!code-cpp[NVC_MFCCollections #&82;](../../mfc/codesnippet/cpp/cobarray-class_8.cpp)]  
   
-##  <a name="a-namegetupperbounda--cobarraygetupperbound"></a><a name="getupperbound"></a>CObArray::GetUpperBound  
+##  <a name="getupperbound"></a>CObArray::GetUpperBound  
  この配列の現在の上限値を返します。  
   
 ```  
@@ -457,7 +476,7 @@ INT_PTR GetUpperBound() const;
   
  [!code-cpp[NVC_MFCCollections&#83;](../../mfc/codesnippet/cpp/cobarray-class_9.cpp)]  
   
-##  <a name="a-nameinsertata--cobarrayinsertat"></a><a name="insertat"></a>CObArray::InsertAt  
+##  <a name="insertat"></a>CObArray::InsertAt  
  指定されたインデックス位置に要素 (または別の配列内のすべての要素) を挿入します。  
   
 ```  
@@ -521,7 +540,7 @@ void InsertAt(
   
  `[2] = a CAge at $4606 40`  
   
-##  <a name="a-nameisemptya--cobarrayisempty"></a><a name="isempty"></a>CObArray::IsEmpty  
+##  <a name="isempty"></a>CObArray::IsEmpty  
  配列が空かどうかを判別します。  
   
 ```  
@@ -531,7 +550,7 @@ BOOL IsEmpty() const;
 ### <a name="return-value"></a>戻り値  
  配列が空である場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-nameoperatorata--cobarrayoperator--"></a><a name="operator_at"></a>CObArray::operator  
+##  <a name="operator_at"></a>CObArray::operator  
  これらの添字演算子の便利な代替手段は、`SetAt`と`GetAt`関数です。  
   
 ```  
@@ -560,7 +579,7 @@ CObject* operator[](int_ptr nindex) const;
   
  [!code-cpp[NVC_MFCCollections #&88;](../../mfc/codesnippet/cpp/cobarray-class_11.cpp)]  
   
-##  <a name="a-nameremovealla--cobarrayremoveall"></a><a name="removeall"></a>CObArray::RemoveAll  
+##  <a name="removeall"></a>CObArray::RemoveAll  
  この配列からすべてのポインターを削除しますが、実際には削除されません、`CObject`オブジェクトです。  
   
 ```  
@@ -588,7 +607,7 @@ void RemoveAll();
   
  [!code-cpp[NVC_MFCCollections #&85;](../../mfc/codesnippet/cpp/cobarray-class_12.cpp)]  
   
-##  <a name="a-nameremoveata--cobarrayremoveat"></a><a name="removeat"></a>CObArray::RemoveAt  
+##  <a name="removeat"></a>CObArray::RemoveAt  
  配列内の指定したインデックスから始まる&1; つまたは複数の要素を削除します。  
   
 ```  
@@ -633,7 +652,7 @@ void RemoveAt(
   
  `[0] = a CAge at $4606 40`  
   
-##  <a name="a-namesetata--cobarraysetat"></a><a name="setat"></a>CObArray::SetAt  
+##  <a name="setat"></a>CObArray::SetAt  
  指定したインデックス位置にある配列要素を設定します。  
   
 ```  
@@ -678,7 +697,7 @@ void SetAt(
   
  `[1] = a CAge at $47A0 40`  
   
-##  <a name="a-namesetatgrowa--cobarraysetatgrow"></a><a name="setatgrow"></a>CObArray::SetAtGrow  
+##  <a name="setatgrow"></a>CObArray::SetAtGrow  
  指定したインデックス位置にある配列要素を設定します。  
   
 ```  
@@ -725,7 +744,7 @@ void SetAtGrow(
   
  `[3] = a CAge at $4840 65`  
   
-##  <a name="a-namesetsizea--cobarraysetsize"></a><a name="setsize"></a>CObArray::SetSize  
+##  <a name="setsize"></a>CObArray::SetSize  
  空または既存の配列のサイズを設定します必要な場合は、メモリを割り当てます。  
   
 ```  

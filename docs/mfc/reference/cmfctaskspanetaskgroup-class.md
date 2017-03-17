@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCTasksPaneTaskGroup
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::SetACCData
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_bIsBottom
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_bIsCollapsed
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_bIsSpecial
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_lstTasks
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_rect
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_rectGroup
+- AFXTASKSPANE/CMFCTasksPaneTaskGroup::m_strName
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +110,7 @@ class CMFCTasksPaneTaskGroup : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxTasksPane.h  
   
-##  <a name="a-namecmfctaskspanetaskgroupa--cmfctaskspanetaskgroupcmfctaskspanetaskgroup"></a><a name="cmfctaskspanetaskgroup"></a>CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup  
+##  <a name="cmfctaskspanetaskgroup"></a>CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup  
  `CMFCTasksPaneTaskGroup` オブジェクトを構築します。  
   
 ```  
@@ -134,7 +144,7 @@ CMFCTasksPaneTaskGroup(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namembisbottoma--cmfctaskspanetaskgroupmbisbottom"></a><a name="m_bisbottom"></a>CMFCTasksPaneTaskGroup::m_bIsBottom  
+##  <a name="m_bisbottom"></a>CMFCTasksPaneTaskGroup::m_bIsBottom  
  タスク グループはタスク ペインのコントロールの下部に配置されているかどうかを決定します。  
   
 ```  
@@ -144,7 +154,7 @@ BOOL m_bIsBottom;
 ### <a name="remarks"></a>コメント  
  1 つのグループは、作業ウィンドウ コントロールの下に配置できます。 このタスク グループは、最後に追加する必要があります。 詳細については、次を参照してください。 [CMFCTasksPane::AddGroup](../../mfc/reference/cmfctaskspane-class.md#addgroup)します。  
   
-##  <a name="a-namembiscollapseda--cmfctaskspanetaskgroupmbiscollapsed"></a><a name="m_biscollapsed"></a>CMFCTasksPaneTaskGroup::m_bIsCollapsed  
+##  <a name="m_biscollapsed"></a>CMFCTasksPaneTaskGroup::m_bIsCollapsed  
  タスク グループが折りたたまれているかどうかを決定します。  
   
 ```  
@@ -154,7 +164,7 @@ BOOL m_bIsCollapsed;
 ### <a name="remarks"></a>コメント  
  有効にするかを呼び出すことによって、タスク ウィンドウでグループを折りたたむ機能を無効にする[CMFCTasksPane::EnableGroupCollapse](../../mfc/reference/cmfctaskspane-class.md#enablegroupcollapse)します。  
   
-##  <a name="a-namembisspeciala--cmfctaskspanetaskgroupmbisspecial"></a><a name="m_bisspecial"></a>CMFCTasksPaneTaskGroup::m_bIsSpecial  
+##  <a name="m_bisspecial"></a>CMFCTasksPaneTaskGroup::m_bIsSpecial  
  タスク グループがあるかどうかを判断*特別な*異なる色で特殊なタスク グループのキャプションを指定するかどうか。  
   
 ```  
@@ -164,7 +174,7 @@ BOOL m_bIsSpecial;
 ### <a name="remarks"></a>コメント  
  アプリケーションが Windows XP のテーマを使用していると`m_bIsSpecial`は`FALSE`、フレームワークによって`DrawThemeBackground`で、`EBP_NORMALGROUPBACKGROUND`フラグ。 場合`m_bIsSpecial`は`TRUE`、フレームワークによって`DrawThemeBackground`で、`EBP_SPECIALGROUPBACKGROUND`フラグ。  
   
-##  <a name="a-namemlsttasksa--cmfctaskspanetaskgroupmlsttasks"></a><a name="m_lsttasks"></a>CMFCTasksPaneTaskGroup::m_lstTasks  
+##  <a name="m_lsttasks"></a>CMFCTasksPaneTaskGroup::m_lstTasks  
  タスクの内部の一覧が含まれています。  
   
 ```  
@@ -174,7 +184,7 @@ CObList m_lstTasks;
 ### <a name="remarks"></a>コメント  
  この一覧に、呼び出す[CMFCTasksPane::AddTask](../../mfc/reference/cmfctaskspane-class.md#addtask)します。  
   
-##  <a name="a-namemrecta--cmfctaskspanetaskgroupmrect"></a><a name="m_rect"></a>CMFCTasksPaneTaskGroup::m_rect  
+##  <a name="m_rect"></a>CMFCTasksPaneTaskGroup::m_rect  
  グループのキャプションの外接する四角形を指定します。  
   
 ```  
@@ -184,7 +194,7 @@ CRect m_rect;
 ### <a name="remarks"></a>コメント  
  この値は、フレームワークによって自動的に計算されます。  
   
-##  <a name="a-namemrectgroupa--cmfctaskspanetaskgroupmrectgroup"></a><a name="m_rectgroup"></a>CMFCTasksPaneTaskGroup::m_rectGroup  
+##  <a name="m_rectgroup"></a>CMFCTasksPaneTaskGroup::m_rectGroup  
  グループの外接する四角形を指定します。  
   
 ```  
@@ -194,7 +204,7 @@ CRect m_rectGroup;
 ### <a name="remarks"></a>コメント  
  この値は、フレームワークによって自動的に計算されます。  
   
-##  <a name="a-namemstrnamea--cmfctaskspanetaskgroupmstrname"></a><a name="m_strname"></a>CMFCTasksPaneTaskGroup::m_strName  
+##  <a name="m_strname"></a>CMFCTasksPaneTaskGroup::m_strName  
  グループの名前を指定します。  
   
 ```  
@@ -204,7 +214,7 @@ CString m_strName;
 ### <a name="remarks"></a>コメント  
  この値が空の場合は、グループのキャプションは表示されず、グループを折りたたむことができません。  
   
-##  <a name="a-namesetaccdataa--cmfctaskspanetaskgroupsetaccdata"></a><a name="setaccdata"></a>CMFCTasksPaneTaskGroup::SetACCData  
+##  <a name="setaccdata"></a>CMFCTasksPaneTaskGroup::SetACCData  
  現在のタスク グループのユーザー補助データを決定します。  
   
 ```  

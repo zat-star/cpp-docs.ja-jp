@@ -9,11 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CAtlDllModuleT
-- ATL::CAtlDllModuleT<T>
-- ATL::CAtlDllModuleT
-- ATL.CAtlDllModuleT<T>
 - CAtlDllModuleT
+- ATLBASE/ATL::CAtlDllModuleT
+- ATLBASE/ATL::CAtlDllModuleT::CAtlDllModuleT
+- ATLBASE/ATL::CAtlDllModuleT::DllCanUnloadNow
+- ATLBASE/ATL::CAtlDllModuleT::DllGetClassObject
+- ATLBASE/ATL::CAtlDllModuleT::DllMain
+- ATLBASE/ATL::CAtlDllModuleT::DllRegisterServer
+- ATLBASE/ATL::CAtlDllModuleT::DllUnregisterServer
+- ATLBASE/ATL::CAtlDllModuleT::GetClassObject
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,21 +99,21 @@ class ATL_NO_VTABLE CAtlDllModuleT : public CAtlModuleT<T>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namecatldllmoduleta--catldllmoduletcatldllmodulet"></a><a name="catldllmodulet"></a>CAtlDllModuleT::CAtlDllModuleT  
+##  <a name="catldllmodulet"></a>CAtlDllModuleT::CAtlDllModuleT  
  コンストラクターです。  
   
 ```
 CAtlDllModuleT() throw();
 ```  
   
-##  <a name="a-namedtora--catldllmoduletcatldllmodulet"></a><a name="dtor"></a>CAtlDllModuleT:: ~ CAtlDllModuleT  
+##  <a name="dtor"></a>CAtlDllModuleT:: ~ CAtlDllModuleT  
  デストラクターです。  
   
 ```
 ~CAtlDllModuleT() throw();
 ```  
   
-##  <a name="a-namedllcanunloadnowa--catldllmoduletdllcanunloadnow"></a><a name="dllcanunloadnow"></a>CAtlDllModuleT::DllCanUnloadNow  
+##  <a name="dllcanunloadnow"></a>CAtlDllModuleT::DllCanUnloadNow  
  DLL をアンロードできるかどうか。  
   
 ```
@@ -119,7 +123,7 @@ HRESULT DllCanUnloadNow() throw();
 ### <a name="return-value"></a>戻り値  
  できない場合は、DLL をアンロードすると、できる場合は S_OK または S_FALSE を返します。  
   
-##  <a name="a-namedllgetclassobjecta--catldllmoduletdllgetclassobject"></a><a name="dllgetclassobject"></a>CAtlDllModuleT::DllGetClassObject  
+##  <a name="dllgetclassobject"></a>CAtlDllModuleT::DllGetClassObject  
  クラス ファクトリを返します。  
   
 ```
@@ -142,7 +146,7 @@ HRESULT DllGetClassObject(
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namedllmaina--catldllmoduletdllmain"></a><a name="dllmain"></a>CAtlDllModuleT::DllMain  
+##  <a name="dllmain"></a>CAtlDllModuleT::DllMain  
  ダイナミック リンク ライブラリ (DLL) への省略可能なエントリ ポイントです。  
   
 ```
@@ -162,7 +166,7 @@ BOOL WINAPI DllMain(DWORD dwReason, LPVOID /* lpReserved*/) throw();
 ### <a name="remarks"></a>コメント  
  DLL_THREAD_ATTACH と DLL_THREAD_DETACH を無効にすると通知の呼び出しは多くの Dll、Dll を持つでは、これらの添付ファイル/デタッチ スレッド レベルの通知は必要はありませんし、頻繁に作成して、スレッドを削除することがあるマルチ スレッド アプリケーションの有効な最適化を指定できます。  
   
-##  <a name="a-namedllregisterservera--catldllmoduletdllregisterserver"></a><a name="dllregisterserver"></a>CAtlDllModuleT::DllRegisterServer  
+##  <a name="dllregisterserver"></a>CAtlDllModuleT::DllRegisterServer  
  DLL 内のオブジェクトのシステム レジストリにエントリを追加します。  
   
 ```
@@ -176,7 +180,7 @@ HRESULT DllRegisterServer(BOOL bRegTypeLib = TRUE) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namedllunregisterservera--catldllmoduletdllunregisterserver"></a><a name="dllunregisterserver"></a>CAtlDllModuleT::DllUnregisterServer  
+##  <a name="dllunregisterserver"></a>CAtlDllModuleT::DllUnregisterServer  
  DLL 内のオブジェクトのシステム レジストリのエントリを削除します。  
   
 ```
@@ -190,7 +194,7 @@ HRESULT DllUnregisterServer(BOOL bUnRegTypeLib = TRUE) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetclassobjecta--catldllmoduletgetclassobject"></a><a name="getclassobject"></a>CAtlDllModuleT::GetClassObject  
+##  <a name="getclassobject"></a>CAtlDllModuleT::GetClassObject  
  指定された CLSID のオブジェクトを作成します。  
   
 ```

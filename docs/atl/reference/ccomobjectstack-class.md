@@ -9,11 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComObjectStack
-- ATL.CComObjectStack
-- ATL::CComObjectStack<Base>
-- ATL.CComObjectStack<Base>
 - CComObjectStack
+- ATLCOM/ATL::CComObjectStack
+- ATLCOM/ATL::CComObjectStack::CComObjectStack
+- ATLCOM/ATL::CComObjectStack::AddRef
+- ATLCOM/ATL::CComObjectStack::QueryInterface
+- ATLCOM/ATL::CComObjectStack::Release
+- ATLCOM/ATL::CComObjectStack::m_hResFinalConstruct
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -98,7 +100,7 @@ class CComObjectStack
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameaddrefa--ccomobjectstackaddref"></a><a name="addref"></a>CComObjectStack::AddRef  
+##  <a name="addref"></a>CComObjectStack::AddRef  
  0 を返します。  
   
 ```
@@ -111,7 +113,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="remarks"></a>コメント  
  デバッグ モードで`_ASSERTE`します。  
   
-##  <a name="a-nameccomobjectstacka--ccomobjectstackccomobjectstack"></a><a name="ccomobjectstack"></a>CComObjectStack::CComObjectStack  
+##  <a name="ccomobjectstack"></a>CComObjectStack::CComObjectStack  
  コンストラクターです。  
   
 ```
@@ -121,7 +123,7 @@ CComObjectStack(void* = NULL);
 ### <a name="remarks"></a>コメント  
  呼び出し`FinalConstruct`し、設定[m_hResFinalConstruct](#m_hresfinalconstruct)に、`HRESULT`によって返される`FinalConstruct`です。 基本クラスを派生していない場合[CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)、独自に指定する必要があります`FinalConstruct`メソッドです。 このデストラクターは `FinalRelease` を呼び出します。  
   
-##  <a name="a-namedtora--ccomobjectstackccomobjectstack"></a><a name="dtor"></a>CComObjectStack:: ~ CComObjectStack  
+##  <a name="dtor"></a>CComObjectStack:: ~ CComObjectStack  
  デストラクターです。  
   
 ```
@@ -131,14 +133,14 @@ CComObjectStack();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)します。  
   
-##  <a name="a-namemhresfinalconstructa--ccomobjectstackmhresfinalconstruct"></a><a name="m_hresfinalconstruct"></a>CComObjectStack::m_hResFinalConstruct  
+##  <a name="m_hresfinalconstruct"></a>CComObjectStack::m_hResFinalConstruct  
  含む、`HRESULT`呼び出しで返される`FinalConstruct`の構築中に、`CComObjectStack`オブジェクトです。  
   
 ```
 HRESULT    m_hResFinalConstruct;
 ```  
   
-##  <a name="a-namequeryinterfacea--ccomobjectstackqueryinterface"></a><a name="queryinterface"></a>CComObjectStack::QueryInterface  
+##  <a name="queryinterface"></a>CComObjectStack::QueryInterface  
  返します。 **E_NOINTERFACE**します。  
   
 ```
@@ -152,7 +154,7 @@ HRESULT    QueryInterface(REFIID, void**)
 ### <a name="remarks"></a>コメント  
  デバッグ モードで`_ASSERTE`します。  
   
-##  <a name="a-namereleasea--ccomobjectstackrelease"></a><a name="release"></a>CComObjectStack::Release  
+##  <a name="release"></a>CComObjectStack::Release  
  0 を返します。  
   
 ```

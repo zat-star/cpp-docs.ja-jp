@@ -10,8 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComCoClass
-- ATL.CComCoClass
-- ATL::CComCoClass
+- ATLCOM/ATL::CComCoClass
+- ATLCOM/ATL::CComCoClass::CreateInstance
+- ATLCOM/ATL::CComCoClass::Error
+- ATLCOM/ATL::CComCoClass::GetObjectCLSID
+- ATLCOM/ATL::CComCoClass::GetObjectDescription
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +89,7 @@ class CComCoClass
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namecreateinstancea--ccomcoclasscreateinstance"></a><a name="createinstance"></a>あって  
+##  <a name="createinstance"></a>あって  
  これらを使用して`CreateInstance`COM のインスタンスを作成する関数オブジェクトし、COM API を使用せずにインターフェイス ポインターを取得します。  
   
 ```
@@ -124,7 +127,7 @@ static HRESULT CreateInstance(IUnknown* punkOuter, Q** pp);
   
  [!code-cpp[NVC_ATL_COM&#11;](../../atl/codesnippet/cpp/ccomcoclass-class_2.cpp)]  
   
-##  <a name="a-nameerrora--ccomcoclasserror"></a><a name="error"></a>CComCoClass::Error  
+##  <a name="error"></a>CComCoClass::Error  
  この静的関数、`IErrorInfo`をクライアントにエラー情報を提供するインターフェイスです。  
   
 ```
@@ -197,7 +200,7 @@ static HRESULT Error(
   
  場合、`hRes`パラメーターは、0 以外、`Error`の値を返します`hRes`します。 場合`hRes`が&0; の場合、最初の&4; つのバージョンの`Error`返す`DISP_E_EXCEPTION`します。 最後の 2 つのバージョンは、マクロの結果を返す**MAKE_HRESULT (1, FACILITY_ITF、** `nID` **)**します。  
   
-##  <a name="a-namegetobjectclsida--ccomcoclassgetobjectclsid"></a><a name="getobjectclsid"></a>CComCoClass::GetObjectCLSID  
+##  <a name="getobjectclsid"></a>CComCoClass::GetObjectCLSID  
  一貫性のあるオブジェクトの CLSID を取得する方法を提供します。  
   
 ```
@@ -207,7 +210,7 @@ static const CLSID& WINAPI GetObjectCLSID();
 ### <a name="return-value"></a>戻り値  
  オブジェクトのクラスの識別子です。  
   
-##  <a name="a-namegetobjectdescriptiona--ccomcoclassgetobjectdescription"></a><a name="getobjectdescription"></a>CComCoClass::GetObjectDescription  
+##  <a name="getobjectdescription"></a>CComCoClass::GetObjectDescription  
  この静的関数は、クラス オブジェクトのテキストの説明を取得します。  
   
 ```

@@ -10,6 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSmartDockingInfo
+- AFXDOCKINGMANAGER/CSmartDockingInfo
+- AFXDOCKINGMANAGER/CSmartDockingInfo::CopyTo
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_bUseThemeColorInShading
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_clrBaseBackground
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_clrToneDest
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_clrToneSrc
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_clrTransparent
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_nCentralGroupOffset
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_sizeTotal
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_uiMarkerBmpResID
+- AFXDOCKINGMANAGER/CSmartDockingInfo::m_uiMarkerLightBmpResID
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -107,7 +118,7 @@ class CSmartDockingInfo : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxDockingManager.h  
   
-##  <a name="a-namecopytoa--csmartdockinginfocopyto"></a><a name="copyto"></a>CSmartDockingInfo::CopyTo  
+##  <a name="copyto"></a>CSmartDockingInfo::CopyTo  
  現在のスマート ドッキングのパラメーターに指定されたコピー [CSmartDockingInfo](../../mfc/reference/csmartdockinginfo-class.md)オブジェクトです。  
   
 ```  
@@ -118,7 +129,7 @@ void CopyTo(CSmartDockingInfo& params);
  [出力] `params`  
  型のオブジェクト`CSmartDockingInfo`を現在のスマート ドッキングのパラメーターが設定されます。  
   
-##  <a name="a-namembusethemecolorinshadinga--csmartdockinginfombusethemecolorinshading"></a><a name="m_busethemecolorinshading"></a>CSmartDockingInfo::m_bUseThemeColorInShading  
+##  <a name="m_busethemecolorinshading"></a>CSmartDockingInfo::m_bUseThemeColorInShading  
  フレームワークのスマート ドッキング マーカーを表示するときに、現在のテーマの色を使用するかどうかを指定します。  
   
 ```  
@@ -130,14 +141,14 @@ BOOL m_bUseThemeColorInShading;
   
  既定値は `FALSE` です。  
   
-##  <a name="a-namemclrbasebackgrounda--csmartdockinginfomclrbasebackground"></a><a name="m_clrbasebackground"></a>CSmartDockingInfo::m_clrBaseBackground  
+##  <a name="m_clrbasebackground"></a>CSmartDockingInfo::m_clrBaseBackground  
  スマート ドッキング マーカーの基本の背景色を指定します。  
   
 ```  
 COLORREF m_clrBaseBackground;  
 ```  
   
-##  <a name="a-namemclrtonedesta--csmartdockinginfomclrtonedest"></a><a name="m_clrtonedest"></a>CSmartDockingInfo::m_clrToneDest  
+##  <a name="m_clrtonedest"></a>CSmartDockingInfo::m_clrToneDest  
  置換される色を指定する`m_clrToneSrc`スマート ドッキング マーカー ビットマップにします。  
   
 ```  
@@ -149,7 +160,7 @@ COLORREF m_clrToneDest;
   
  カスタム マーカーの色を変更する、両方を指定する必要があります`m_clrToneDest`と`m_clrToneSrc`です。  
   
-##  <a name="a-namemclrtonesrca--csmartdockinginfomclrtonesrc"></a><a name="m_clrtonesrc"></a>CSmartDockingInfo::m_clrToneSrc  
+##  <a name="m_clrtonesrc"></a>CSmartDockingInfo::m_clrToneSrc  
  スマート ドッキング マーカー ビットマップの色を指定します。  
   
 ```  
@@ -161,7 +172,7 @@ COLORREF m_clrToneSrc;
   
  使用`(COLORREF)-1`スマート ドッキングのグループのメンバーを空のままにします。  
   
-##  <a name="a-namemclrtransparenta--csmartdockinginfomclrtransparent"></a><a name="m_clrtransparent"></a>CSmartDockingInfo::m_clrTransparent  
+##  <a name="m_clrtransparent"></a>CSmartDockingInfo::m_clrTransparent  
  透過的にいるときに、スマート ドッキング マーカー ビットマップの色を指定します。  
   
 ```  
@@ -171,7 +182,7 @@ COLORREF m_clrTransparent;
 ### <a name="remarks"></a>コメント  
  ドッキングのグループにカスタム マーカーとカスタムのビットマップを表示する場合は、この値を設定する必要があります。  
   
-##  <a name="a-namemncentralgroupoffseta--csmartdockinginfomncentralgroupoffset"></a><a name="m_ncentralgroupoffset"></a>CSmartDockingInfo::m_nCentralGroupOffset  
+##  <a name="m_ncentralgroupoffset"></a>CSmartDockingInfo::m_nCentralGroupOffset  
  スマート ドッキング マーカーの中央のグループとサーバーの全体のグループの四角形の境界間のオフセットを指定します。  
   
 ```  
@@ -181,7 +192,7 @@ int m_nCentralGroupOffset;
 ### <a name="remarks"></a>コメント  
  カスタム マーカーとスマート ドッキング マーカーの中央のグループの境界間の既定オフセットを変更する場合は、この値を指定します。 既定のオフセットは、5 ピクセルです。  
   
-##  <a name="a-namemsizetotala--csmartdockinginfomsizetotal"></a><a name="m_sizetotal"></a>CSmartDockingInfo::m_sizeTotal  
+##  <a name="m_sizetotal"></a>CSmartDockingInfo::m_sizeTotal  
  中央のグループ内のすべてのスマート ドッキング マーカーを囲む外接する四角形の合計サイズを指定します。  
   
 ```  
@@ -191,7 +202,7 @@ CSize m_sizeTotal;
 ### <a name="remarks"></a>コメント  
  設定`m_sizeTotal`サーバーの全体のグループのマーカーの外接する四角形のサイズにします。 マーカーについて、カスタムのビットマップを使用している場合は、この値を指定する必要があります。  
   
-##  <a name="a-namemuimarkerbmpresida--csmartdockinginfomuimarkerbmpresid"></a><a name="m_uimarkerbmpresid"></a>CSmartDockingInfo::m_uiMarkerBmpResID  
+##  <a name="m_uimarkerbmpresid"></a>CSmartDockingInfo::m_uiMarkerBmpResID  
  強調表示されている非カスタム スマート ドッキング マーカーに使用されるビットマップのリソース Id を定義します。  
   
 ```  
@@ -211,7 +222,7 @@ UINT m_uiMarkerBmpResID[AFX_SD_MARKERS_NUM];
   
  `params.m_uiMarkerBmpResID[4] = IDB_MARKER_CENTER;`  
   
-##  <a name="a-namemuimarkerlightbmpresida--csmartdockinginfomuimarkerlightbmpresid"></a><a name="m_uimarkerlightbmpresid"></a>CSmartDockingInfo::m_uiMarkerLightBmpResID  
+##  <a name="m_uimarkerlightbmpresid"></a>CSmartDockingInfo::m_uiMarkerLightBmpResID  
  強調表示されているカスタム スマート ドッキング マーカーに使用されるビットマップのリソース Id を定義します。  
   
 ```  

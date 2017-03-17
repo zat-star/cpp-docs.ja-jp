@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDBRecordView
+- AFXOLEDB/COleDBRecordView
+- AFXOLEDB/COleDBRecordView::COleDBRecordView
+- AFXOLEDB/COleDBRecordView::OnGetRowset
+- AFXOLEDB/COleDBRecordView::OnMove
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +98,7 @@ class COleDBRecordView : public CFormView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxoledb.h  
   
-##  <a name="a-namecoledbrecordviewa--coledbrecordviewcoledbrecordview"></a><a name="coledbrecordview"></a>COleDBRecordView::COleDBRecordView  
+##  <a name="coledbrecordview"></a>COleDBRecordView::COleDBRecordView  
  `COleDBRecordView` オブジェクトを構築します。  
   
 ```  
@@ -115,7 +119,7 @@ COleDBRecordView(UINT nIDTemplate);
 > [!NOTE]
 >  派生クラス*必要があります*独自のコンス トラクターを指定します。 コンス トラクターで、コンス トラクターを呼び出す`COleDBRecordView::COleDBRecordView`リソースの名前または ID を引数として使用します。  
   
-##  <a name="a-nameongetrowseta--coledbrecordviewongetrowset"></a><a name="ongetrowset"></a>COleDBRecordView::OnGetRowset  
+##  <a name="ongetrowset"></a>COleDBRecordView::OnGetRowset  
  ハンドルを返します、 **CRowset<> </> ** 、レコード ビューに関連付けられているオブジェクト。  
   
 ```  
@@ -137,7 +141,7 @@ virtual CRowset<>* OnGetRowset(Â) = 0;
   
  詳細と例については、記事を参照して[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。  
   
-##  <a name="a-nameonmovea--coledbrecordviewonmove"></a><a name="onmove"></a>COleDBRecordView::OnMove  
+##  <a name="onmove"></a>COleDBRecordView::OnMove  
  行セットと表示内のレコードに移動、レコードのコントロールでは、そのフィールドを表示します。  
   
 ```  

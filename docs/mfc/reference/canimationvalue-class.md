@@ -9,8 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CAnimationValue
 - CAnimationValue
+- AFXANIMATIONCONTROLLER/CAnimationValue
+- AFXANIMATIONCONTROLLER/CAnimationValue::CAnimationValue
+- AFXANIMATIONCONTROLLER/CAnimationValue::AddTransition
+- AFXANIMATIONCONTROLLER/CAnimationValue::GetValue
+- AFXANIMATIONCONTROLLER/CAnimationValue::GetVariable
+- AFXANIMATIONCONTROLLER/CAnimationValue::SetDefaultValue
+- AFXANIMATIONCONTROLLER/CAnimationValue::GetAnimationVariableList
+- AFXANIMATIONCONTROLLER/CAnimationValue::m_value
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +106,7 @@ class CAnimationValue : public CAnimationBaseObject;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-nameaddtransitiona--canimationvalueaddtransition"></a><a name="addtransition"></a>CAnimationValue::AddTransition  
+##  <a name="addtransition"></a>CAnimationValue::AddTransition  
  値に適用するへの遷移を追加します。  
   
 ```  
@@ -113,7 +120,7 @@ void AddTransition(CBaseTransition* pTransition);
 ### <a name="remarks"></a>コメント  
  この関数では、切り替え効果をアニメーション変数に適用する遷移の内部リストに追加します。 切り替え効果を追加すると、いないすぐに適用されるとなり内部リストに格納されています。 遷移 (特定の値のストーリー ボードへの追加) 適用 CAnimationController::AnimateGroup を呼び出すとします。  
   
-##  <a name="a-namecanimationvaluea--canimationvaluecanimationvalue"></a><a name="canimationvalue"></a>CAnimationValue::CAnimationValue  
+##  <a name="canimationvalue"></a>CAnimationValue::CAnimationValue  
  CAnimationValue オブジェクトを構築します。  
   
 ```  
@@ -143,7 +150,7 @@ CAnimationValue(
 ### <a name="remarks"></a>コメント  
  既定のプロパティを持つ CAnimationValue オブジェクトを作成します。 グループ ID とオブジェクト ID の既定値は 0 に設定されます。  
   
-##  <a name="a-namegetanimationvariablelista--canimationvaluegetanimationvariablelist"></a><a name="getanimationvariablelist"></a>CAnimationValue::GetAnimationVariableList  
+##  <a name="getanimationvariablelist"></a>CAnimationValue::GetAnimationVariableList  
  一覧にカプセル化されたアニメーション変数を追加します。  
   
 ```  
@@ -156,7 +163,7 @@ virtual void GetAnimationVariableList(
  `lst`  
  関数から返されたときに、アニメーションの値を表す CAnimationVariable へのポインターを格納します。  
   
-##  <a name="a-namegetvaluea--canimationvaluegetvalue"></a><a name="getvalue"></a>CAnimationValue::GetValue  
+##  <a name="getvalue"></a>CAnimationValue::GetValue  
  現在の値を取得します。  
   
 ```  
@@ -177,7 +184,7 @@ BOOL GetValue(INT32& nValue);
 ### <a name="remarks"></a>コメント  
  現在の値を取得するには、この関数を呼び出します。 カプセル化された COM オブジェクトを実装し、呼び出しが失敗すると場合、このメソッドは SetDefaultValue とまたはコンス トラクターで設定されている既定値を返します。  
   
-##  <a name="a-namegetvariablea--canimationvaluegetvariable"></a><a name="getvariable"></a>CAnimationValue::GetVariable  
+##  <a name="getvariable"></a>CAnimationValue::GetVariable  
  カプセル化されたアニメーション変数へのアクセスを提供します。  
   
 ```  
@@ -190,14 +197,14 @@ CAnimationVariable& GetVariable();
 ### <a name="remarks"></a>コメント  
  カプセル化されたアニメーション変数にアクセスするのにには、このメソッドを使用します。 CAnimationVariable からは、ポインターが NULL でもかまいませんアニメーション変数が作成されていない場合、IUIAnimationVariable の基になるオブジェクトへのアクセスを取得します。  
   
-##  <a name="a-namemvaluea--canimationvaluemvalue"></a><a name="m_value"></a>CAnimationValue::m_value  
+##  <a name="m_value"></a>CAnimationValue::m_value  
  アニメーションの値を表すアニメーションをカプセル化された変数です。  
   
 ```  
 CAnimationVariable m_value;  
 ```  
   
-##  <a name="a-nameoperatordoublea--canimationvalueoperator-double"></a><a name="operator_double"></a>CAnimationValue::operator 倍  
+##  <a name="operator_double"></a>CAnimationValue::operator 倍  
  CAnimationValue と DOUBLE との間の変換を提供します。  
   
 ```  
@@ -210,7 +217,7 @@ operator DOUBLE();
 ### <a name="remarks"></a>コメント  
  CAnimationValue と DOUBLE との間の変換を提供します。 このメソッドは、GetValue の呼び出しに、内部的に、エラーをチェックしません。 GetValue が失敗した場合、返される値は、コンス トラクター、または SetDefaultValue で設定した既定値が含まれます。  
   
-##  <a name="a-nameoperatorint32a--canimationvalueoperator-int32"></a><a name="operator_int32"></a>CAnimationValue::operator INT32  
+##  <a name="operator_int32"></a>CAnimationValue::operator INT32  
  CAnimationValue と INT32 との間の変換を提供します。  
   
 ```  
@@ -223,7 +230,7 @@ operator INT32();
 ### <a name="remarks"></a>コメント  
  CAnimationValue と INT32 との間の変換を提供します。 このメソッドは、GetValue の呼び出しに、内部的に、エラーをチェックしません。 GetValue が失敗した場合、返される値は、コンス トラクター、または SetDefaultValue で設定した既定値が含まれます。  
   
-##  <a name="a-nameoperatoreqa--canimationvalueoperator"></a><a name="operator_eq"></a>CAnimationValue::operator =  
+##  <a name="operator_eq"></a>CAnimationValue::operator =  
  CAnimationValue に double 型の値を割り当てます。  
   
 ```  
@@ -241,7 +248,7 @@ void operator=(INT32 nVal);
 ### <a name="remarks"></a>コメント  
  CAnimationValue に double 型の値を割り当てます。 この値は、カプセル化されたアニメーション変数の既定値として設定されます。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
   
-##  <a name="a-namesetdefaultvaluea--canimationvaluesetdefaultvalue"></a><a name="setdefaultvalue"></a>CAnimationValue::SetDefaultValue  
+##  <a name="setdefaultvalue"></a>CAnimationValue::SetDefaultValue  
  既定値を設定します。  
   
 ```  

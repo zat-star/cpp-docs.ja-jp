@@ -10,6 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonButtonsGroup
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::CMFCRibbonButtonsGroup
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::AddButton
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::AddButtons
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::GetButton
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::GetCount
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::GetImageSize
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::GetRegularSize
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::HasImages
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::OnDrawImage
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::RemoveAll
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::SetImages
+- AFXRIBBONBUTTONSGROUP/CMFCRibbonButtonsGroup::SetParentCategory
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -91,7 +104,7 @@ class CMFCRibbonButtonsGroup : public CMFCRibbonBaseElement
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxribbonbuttonsgroup.h  
   
-##  <a name="a-nameaddbuttona--cmfcribbonbuttonsgroupaddbutton"></a><a name="addbutton"></a>CMFCRibbonButtonsGroup::AddButton  
+##  <a name="addbutton"></a>CMFCRibbonButtonsGroup::AddButton  
  ボタンをグループに追加します。  
   
 ```  
@@ -102,7 +115,7 @@ void AddButton(CMFCRibbonBaseElement* pButton);
  [入力] `pButton`  
  追加するボタンへのポインター。  
   
-##  <a name="a-nameaddbuttonsa--cmfcribbonbuttonsgroupaddbuttons"></a><a name="addbuttons"></a>CMFCRibbonButtonsGroup::AddButtons  
+##  <a name="addbuttons"></a>CMFCRibbonButtonsGroup::AddButtons  
  ボタンのリストをグループに追加します。  
   
 ```  
@@ -114,7 +127,7 @@ void AddButtons(
  [入力] `lstButtons`  
  追加するボタンへのポインターのリスト。  
   
-##  <a name="a-namecmfcribbonbuttonsgroupa--cmfcribbonbuttonsgroupcmfcribbonbuttonsgroup"></a><a name="cmfcribbonbuttonsgroup"></a>CMFCRibbonButtonsGroup::CMFCRibbonButtonsGroup  
+##  <a name="cmfcribbonbuttonsgroup"></a>CMFCRibbonButtonsGroup::CMFCRibbonButtonsGroup  
  `CMFCRibbonButtonsGroup` オブジェクトを構築します。  
   
 ```  
@@ -130,7 +143,7 @@ CMFCRibbonButtonsGroup(CMFCRibbonBaseElement* pButton);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetbuttona--cmfcribbonbuttonsgroupgetbutton"></a><a name="getbutton"></a>CMFCRibbonButtonsGroup::GetButton  
+##  <a name="getbutton"></a>CMFCRibbonButtonsGroup::GetButton  
  指定したインデックス位置にあるボタンへのポインターを返します。  
   
 ```  
@@ -146,7 +159,7 @@ CMFCRibbonBaseElement* GetButton(int i) const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetcounta--cmfcribbonbuttonsgroupgetcount"></a><a name="getcount"></a>CMFCRibbonButtonsGroup::GetCount  
+##  <a name="getcount"></a>CMFCRibbonButtonsGroup::GetCount  
  グループ内のボタンの数を返します。  
   
 ```  
@@ -156,7 +169,7 @@ int GetCount() const;
 ### <a name="return-value"></a>戻り値  
  グループ内のボタンの数。  
   
-##  <a name="a-namegetimagesizea--cmfcribbonbuttonsgroupgetimagesize"></a><a name="getimagesize"></a>CMFCRibbonButtonsGroup::GetImageSize  
+##  <a name="getimagesize"></a>CMFCRibbonButtonsGroup::GetImageSize  
  保護対象のソース イメージのサイズを取得`CMFCToolBarImages`メンバー`m_Images`します。  
   
 ```  
@@ -168,7 +181,7 @@ const CSize GetImageSize() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetregularsizea--cmfcribbonbuttonsgroupgetregularsize"></a><a name="getregularsize"></a>CMFCRibbonButtonsGroup::GetRegularSize  
+##  <a name="getregularsize"></a>CMFCRibbonButtonsGroup::GetRegularSize  
  リボン グループの要素で使用できる最大サイズを取得します。  
   
 ```  
@@ -183,7 +196,7 @@ virtual CSize GetRegularSize(CDC* pDC);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehasimagesa--cmfcribbonbuttonsgrouphasimages"></a><a name="hasimages"></a>CMFCRibbonButtonsGroup::HasImages  
+##  <a name="hasimages"></a>CMFCRibbonButtonsGroup::HasImages  
  レポートするかどうか、`CMFCRibbonButtonsGroup`オブジェクトには、ツール バー イメージが含まれています。  
   
 ```  
@@ -195,7 +208,7 @@ BOOL HasImages() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameondrawimagea--cmfcribbonbuttonsgroupondrawimage"></a><a name="ondrawimage"></a>CMFCRibbonButtonsGroup::OnDrawImage  
+##  <a name="ondrawimage"></a>CMFCRibbonButtonsGroup::OnDrawImage  
  ボタンは、標準、強調表示されているか無効になっているかどうかに応じて、指定したボタンの適切なイメージを描画します。  
   
 ```  
@@ -221,7 +234,7 @@ virtual void OnDrawImage(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameremovealla--cmfcribbonbuttonsgroupremoveall"></a><a name="removeall"></a>CMFCRibbonButtonsGroup::RemoveAll  
+##  <a name="removeall"></a>CMFCRibbonButtonsGroup::RemoveAll  
  すべてのボタンの削除、`CMFCRibbonButtonsGroup`オブジェクトです。  
   
 ```  
@@ -230,7 +243,7 @@ void RemoveAll();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetimagesa--cmfcribbonbuttonsgroupsetimages"></a><a name="setimages"></a>CMFCRibbonButtonsGroup::SetImages  
+##  <a name="setimages"></a>CMFCRibbonButtonsGroup::SetImages  
  リボンのボタンのグループには、イメージを割り当てます。  
   
 ```  
@@ -256,7 +269,7 @@ void SetImages(
 > [!NOTE]
 >  ホット イメージとは、ボタン上に置いたときに表示されるイメージです。 無効なイメージとは、ボタンが無効になっているときに表示されるイメージです。  
   
-##  <a name="a-namesetparentcategorya--cmfcribbonbuttonsgroupsetparentcategory"></a><a name="setparentcategory"></a>CMFCRibbonButtonsGroup::SetParentCategory  
+##  <a name="setparentcategory"></a>CMFCRibbonButtonsGroup::SetParentCategory  
  親を設定`CMFCRibbonCategory`の`CMFCRibbonButtonsGroup`オブジェクトとその中のすべてのボタンです。  
   
 ```  

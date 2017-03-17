@@ -10,6 +10,57 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFrameWnd
+- AFXWIN/CFrameWnd
+- AFXWIN/CFrameWnd::CFrameWnd
+- AFXWIN/CFrameWnd::ActivateFrame
+- AFXWIN/CFrameWnd::BeginModalState
+- AFXWIN/CFrameWnd::Create
+- AFXWIN/CFrameWnd::CreateView
+- AFXWIN/CFrameWnd::DockControlBar
+- AFXWIN/CFrameWnd::EnableDocking
+- AFXWIN/CFrameWnd::EndModalState
+- AFXWIN/CFrameWnd::FloatControlBar
+- AFXWIN/CFrameWnd::GetActiveDocument
+- AFXWIN/CFrameWnd::GetActiveFrame
+- AFXWIN/CFrameWnd::GetActiveView
+- AFXWIN/CFrameWnd::GetControlBar
+- AFXWIN/CFrameWnd::GetDockState
+- AFXWIN/CFrameWnd::GetMenuBarState
+- AFXWIN/CFrameWnd::GetMenuBarVisibility
+- AFXWIN/CFrameWnd::GetMessageBar
+- AFXWIN/CFrameWnd::GetMessageString
+- AFXWIN/CFrameWnd::GetTitle
+- AFXWIN/CFrameWnd::InitialUpdateFrame
+- AFXWIN/CFrameWnd::InModalState
+- AFXWIN/CFrameWnd::IsTracking
+- AFXWIN/CFrameWnd::LoadAccelTable
+- AFXWIN/CFrameWnd::LoadBarState
+- AFXWIN/CFrameWnd::LoadFrame
+- AFXWIN/CFrameWnd::NegotiateBorderSpace
+- AFXWIN/CFrameWnd::OnBarCheck
+- AFXWIN/CFrameWnd::OnContextHelp
+- AFXWIN/CFrameWnd::OnSetPreviewMode
+- AFXWIN/CFrameWnd::OnUpdateControlBarMenu
+- AFXWIN/CFrameWnd::RecalcLayout
+- AFXWIN/CFrameWnd::SaveBarState
+- AFXWIN/CFrameWnd::SetActivePreviewView
+- AFXWIN/CFrameWnd::SetActiveView
+- AFXWIN/CFrameWnd::SetDockState
+- AFXWIN/CFrameWnd::SetMenuBarState
+- AFXWIN/CFrameWnd::SetMenuBarVisibility
+- AFXWIN/CFrameWnd::SetMessageText
+- AFXWIN/CFrameWnd::SetProgressBarPosition
+- AFXWIN/CFrameWnd::SetProgressBarRange
+- AFXWIN/CFrameWnd::SetProgressBarState
+- AFXWIN/CFrameWnd::SetTaskbarOverlayIcon
+- AFXWIN/CFrameWnd::SetTitle
+- AFXWIN/CFrameWnd::ShowControlBar
+- AFXWIN/CFrameWnd::ShowOwnedWindows
+- AFXWIN/CFrameWnd::OnCreateClient
+- AFXWIN/CFrameWnd::OnHideMenuBar
+- AFXWIN/CFrameWnd::OnShowMenuBar
+- AFXWIN/CFrameWnd::m_bAutoMenuEnable
+- AFXWIN/CFrameWnd::rectDefault
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -182,7 +233,7 @@ class CFrameWnd : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-nameactivateframea--cframewndactivateframe"></a><a name="activateframe"></a>CFrameWnd::ActivateFrame  
+##  <a name="activateframe"></a>CFrameWnd::ActivateFrame  
  このメンバー関数を呼び出してアクティブ化しが表示され、使用可能なユーザーに、フレーム ウィンドウを復元します。  
   
 ```  
@@ -203,14 +254,14 @@ virtual void ActivateFrame(int nCmdShow = -1);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#1;](../../mfc/reference/codesnippet/cpp/cframewnd-class_1.cpp)]  
   
-##  <a name="a-namebeginmodalstatea--cframewndbeginmodalstate"></a><a name="beginmodalstate"></a>CFrameWnd::BeginModalState  
+##  <a name="beginmodalstate"></a>CFrameWnd::BeginModalState  
  フレーム ウィンドウをモーダルにします。  
   
 ```  
 virtual void BeginModalState();
 ```  
   
-##  <a name="a-namecframewnda--cframewndcframewnd"></a><a name="cframewnd"></a>CFrameWnd::CFrameWnd  
+##  <a name="cframewnd"></a>CFrameWnd::CFrameWnd  
  構築、`CFrameWnd`オブジェクトは、表示されるフレーム ウィンドウを作成しません。  
   
 ```  
@@ -220,7 +271,7 @@ CFrameWnd();
 ### <a name="remarks"></a>コメント  
  呼び出す**作成**表示のウィンドウを作成します。  
   
-##  <a name="a-namecreatea--cframewndcreate"></a><a name="create"></a>CFrameWnd::Create  
+##  <a name="create"></a>CFrameWnd::Create  
  作成し、初期化に関連付けられている Windows のフレーム ウィンドウへの呼び出し、`CFrameWnd`オブジェクトです。  
   
 ```  
@@ -268,7 +319,7 @@ virtual BOOL Create(
   
  使用`LoadFrame`なく**作成**フレーム ウィンドウを引数を指定する代わりに、そのリソースから読み込めません。  
   
-##  <a name="a-namecreateviewa--cframewndcreateview"></a><a name="createview"></a>CFrameWnd::CreateView  
+##  <a name="createview"></a>CFrameWnd::CreateView  
  呼び出す`CreateView`フレーム内でビューを作成します。  
   
 ```  
@@ -290,7 +341,7 @@ CWnd* CreateView(
 ### <a name="remarks"></a>コメント  
  「ビュー」を作成するこのれないメンバー関数を使用して`CView`-フレーム内で派生します。 呼び出した後`CreateView`、手動でアクティブにビューを設定し、表示されるように設定する必要があります。 によってこれらのタスクが自動的に実行されない`CreateView`します。  
   
-##  <a name="a-namedockcontrolbara--cframewnddockcontrolbar"></a><a name="dockcontrolbar"></a>CFrameWnd::DockControlBar  
+##  <a name="dockcontrolbar"></a>CFrameWnd::DockControlBar  
  フレーム ウィンドウにドッキングするコントロール バーが発生します。  
   
 ```  
@@ -323,7 +374,7 @@ void DockControlBar(
 ### <a name="remarks"></a>コメント  
  コントロール バーは両方への呼び出しで指定されたフレーム ウィンドウの横のいずれかにドッキングする[CControlBar::EnableDocking](../../mfc/reference/ccontrolbar-class.md#enabledocking)と[CFrameWnd::EnableDocking](#enabledocking)します。 選択された側はによって決まります`nDockBarID`します。  
   
-##  <a name="a-nameenabledockinga--cframewndenabledocking"></a><a name="enabledocking"></a>CFrameWnd::EnableDocking  
+##  <a name="enabledocking"></a>CFrameWnd::EnableDocking  
  フレーム ウィンドウのドッキング コントロール バーを有効にするには、この関数を呼び出します。  
   
 ```  
@@ -350,7 +401,7 @@ void EnableDocking(DWORD dwDockStyle);
 ### <a name="example"></a>例  
   例を参照してください[用意されて](../../mfc/reference/ctoolbar-class.md#create)します。  
   
-##  <a name="a-nameendmodalstatea--cframewndendmodalstate"></a><a name="endmodalstate"></a>CFrameWnd::EndModalState  
+##  <a name="endmodalstate"></a>CFrameWnd::EndModalState  
  フレーム ウィンドウをモーダルからモードレスに変更します。  
   
 ```  
@@ -360,7 +411,7 @@ virtual void EndModalState();
 ### <a name="remarks"></a>コメント  
  `EndModalState`により、すべてのウィンドウで無効になっている[BeginModalState](#beginmodalstate)します。  
   
-##  <a name="a-namefloatcontrolbara--cframewndfloatcontrolbar"></a><a name="floatcontrolbar"></a>切り離すには  
+##  <a name="floatcontrolbar"></a>切り離すには  
  この関数では、フレーム ウィンドウにドッキングされずに、コントロール バーが発生します。  
   
 ```  
@@ -395,7 +446,7 @@ void FloatControlBar(
   
  この関数は、フレームワークによって、ユーザーがドッキングの利用可能な場所に、コントロール バーをドラッグするときにマウスの左ボタンを離すドロップ操作が発生します。  
   
-##  <a name="a-namegetactivedocumenta--cframewndgetactivedocument"></a><a name="getactivedocument"></a>CFrameWnd::GetActiveDocument  
+##  <a name="getactivedocument"></a>CFrameWnd::GetActiveDocument  
  現在へのポインターを取得するには、このメンバー関数を呼び出す**CDocument**現在アクティブなビューにアタッチします。  
   
 ```  
@@ -405,7 +456,7 @@ virtual CDocument* GetActiveDocument();
 ### <a name="return-value"></a>戻り値  
  現在へのポインター [CDocument](../../mfc/reference/cdocument-class.md)します。 現在のドキュメントがない場合は、返す**NULL**します。  
   
-##  <a name="a-namegetactiveframea--cframewndgetactiveframe"></a><a name="getactiveframe"></a>CFrameWnd::GetActiveFrame  
+##  <a name="getactiveframe"></a>CFrameWnd::GetActiveFrame  
  マルチ ドキュメント インターフェイス (MDI) 子ウィンドウの MDI フレーム ウィンドウのアクティブなへのポインターを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -418,7 +469,7 @@ virtual CFrameWnd* GetActiveFrame();
 ### <a name="remarks"></a>コメント  
  アクティブな MDI 子がないかどうか、またはアプリケーションは、暗黙的なシングル ドキュメント インターフェイス (SDI)**この**ポインターが返されます。  
   
-##  <a name="a-namegetactiveviewa--cframewndgetactiveview"></a><a name="getactiveview"></a>CFrameWnd::GetActiveView  
+##  <a name="getactiveview"></a>CFrameWnd::GetActiveView  
  フレーム ウィンドウにアタッチされているアクティブなビュー (もしあれば) へのポインターを取得するには、このメンバー関数を呼び出します ( `CFrameWnd`)。  
   
 ```  
@@ -433,7 +484,7 @@ CView* GetActiveView() const;
   
  [!code-cpp[NVC_MFCWindowing&#2;](../../mfc/reference/codesnippet/cpp/cframewnd-class_2.cpp)]  
   
-##  <a name="a-namegetcontrolbara--cframewndgetcontrolbar"></a><a name="getcontrolbar"></a>CFrameWnd::GetControlBar  
+##  <a name="getcontrolbar"></a>CFrameWnd::GetControlBar  
  呼び出す`GetControlBar`ID に関連付けられているコントロール バーにアクセスするには  
   
 ```  
@@ -452,7 +503,7 @@ CControlBar* GetControlBar(UINT nID);
   
  `GetControlBar`固定されていない、したがってが現在存在しない子ウィンドウ フレームの場合でも、コントロール バーを戻ります。  
   
-##  <a name="a-namegetdockstatea--cframewndgetdockstate"></a><a name="getdockstate"></a>CFrameWnd::GetDockState  
+##  <a name="getdockstate"></a>CFrameWnd::GetDockState  
  フレーム ウィンドウのコントロール バーの状態情報を格納するには、このメンバー関数を呼び出す、`CDockState`オブジェクトです。  
   
 ```  
@@ -466,7 +517,7 @@ void GetDockState(CDockState& state) const;
 ### <a name="remarks"></a>コメント  
  内容を記述することができますし、`CDockState`を使用してストレージに`CDockState::SaveState`または`Serialize`です。 後で、コントロール バーを以前の状態に復元する場合での状態を読み込む`CDockState::LoadState`または`Serialize`、まず`SetDockState`フレーム ウィンドウのコントロール バーに以前の状態を適用します。  
   
-##  <a name="a-namegetmenubarstatea--cframewndgetmenubarstate"></a><a name="getmenubarstate"></a>CFrameWnd::GetMenuBarState  
+##  <a name="getmenubarstate"></a>CFrameWnd::GetMenuBarState  
  現在の MFC アプリケーションのメニューの表示状態を取得します。  
   
 ```  
@@ -483,7 +534,7 @@ virtual DWORD GetMenuBarState();
 ### <a name="remarks"></a>コメント  
  実行時エラーが発生した場合、このメソッドはデバッグ モードでアサートしから派生する例外を発生させる、 [CException](../../mfc/reference/cexception-class.md)クラスです。  
   
-##  <a name="a-namegetmenubarvisibilitya--cframewndgetmenubarvisibility"></a><a name="getmenubarvisibility"></a>CFrameWnd::GetMenuBarVisibility  
+##  <a name="getmenubarvisibility"></a>CFrameWnd::GetMenuBarVisibility  
  現在の MFC アプリケーションのメニューの既定の状態を表示または非表示にするかどうかを示します。  
   
 ```  
@@ -502,7 +553,7 @@ virtual DWORD CFrameWnd::GetMenuBarVisibility();
 ### <a name="remarks"></a>コメント  
  実行時エラーが発生した場合、このメソッドはデバッグ モードでアサートしから派生する例外を発生させる、 [CException](../../mfc/reference/cexception-class.md)クラスです。  
   
-##  <a name="a-namegetmessagebara--cframewndgetmessagebar"></a><a name="getmessagebar"></a>CFrameWnd::GetMessageBar  
+##  <a name="getmessagebar"></a>CFrameWnd::GetMessageBar  
  ステータス バーにポインターを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -512,7 +563,7 @@ virtual CWnd* GetMessageBar();
 ### <a name="return-value"></a>戻り値  
  ステータス バー ウィンドウへのポインター。  
   
-##  <a name="a-namegetmessagestringa--cframewndgetmessagestring"></a><a name="getmessagestring"></a>CFrameWnd::GetMessageString  
+##  <a name="getmessagestring"></a>CFrameWnd::GetMessageString  
  コマンド Id のカスタム文字列を提供するには、この関数をオーバーライドします。  
   
 ```  
@@ -531,7 +582,7 @@ virtual void GetMessageString(
 ### <a name="remarks"></a>コメント  
  既定の実装で指定された文字列を読み込みのみ`nID`リソース ファイルからです。 ステータス バーにメッセージ文字列の更新が必要なときに、この関数がフレームワークによって呼び出されます。  
   
-##  <a name="a-namegettitlea--cframewndgettitle"></a><a name="gettitle"></a>CFrameWnd::GetTitle  
+##  <a name="gettitle"></a>CFrameWnd::GetTitle  
  ウィンドウ オブジェクトのタイトルを取得します。  
   
 ```  
@@ -541,7 +592,7 @@ CString GetTitle() const;
 ### <a name="return-value"></a>戻り値  
  A [CString](../../atl-mfc-shared/reference/cstringt-class.md)ウィンドウ オブジェクトの現在のタイトルを格納するオブジェクト。  
   
-##  <a name="a-nameinitialupdateframea--cframewndinitialupdateframe"></a><a name="initialupdateframe"></a>CFrameWnd::InitialUpdateFrame  
+##  <a name="initialupdateframe"></a>CFrameWnd::InitialUpdateFrame  
  呼び出す**IntitialUpdateFrame**と新しいフレームを作成した後**作成**します。  
   
 ```  
@@ -562,7 +613,7 @@ void InitialUpdateFrame(
   
  また、存在していなかった以前アクティブなビュー、フレーム ウィンドウの主要なビューがアクティブなが作成されます。 プライマリ ビューの子の ID では、ビューは、 **AFX_IDW_PANE_FIRST**します。 最後に、フレーム ウィンドウが表示される場合は`bMakeVisible`は&0; 以外。 場合`bMakeVisible`が 0 の場合、現在フォーカスをフレーム ウィンドウの表示状態は変更されません。 新しいファイルとファイルを開くのフレームワークの実装を使用する場合は、この関数を呼び出す必要はありません。  
   
-##  <a name="a-nameinmodalstatea--cframewndinmodalstate"></a><a name="inmodalstate"></a>CFrameWnd::InModalState  
+##  <a name="inmodalstate"></a>CFrameWnd::InModalState  
  フレーム ウィンドウをモーダルまたはモードレス チェックするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -572,7 +623,7 @@ BOOL InModalState() const;
 ### <a name="return-value"></a>戻り値  
  以外の場合は yes です。それ以外の場合 0 を返します。  
   
-##  <a name="a-nameistrackinga--cframewndistracking"></a><a name="istracking"></a>CFrameWnd::IsTracking  
+##  <a name="istracking"></a>CFrameWnd::IsTracking  
  ウィンドウでスプリッター バーが動いている現在かどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -582,7 +633,7 @@ BOOL IsTracking() const;
 ### <a name="return-value"></a>戻り値  
  分割操作の実行中の場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-nameloadacceltablea--cframewndloadacceltable"></a><a name="loadacceltable"></a>CFrameWnd::LoadAccelTable  
+##  <a name="loadacceltable"></a>CFrameWnd::LoadAccelTable  
  指定されたアクセラレータ テーブルの読み込みの呼び出しです。  
   
 ```  
@@ -603,7 +654,7 @@ BOOL LoadAccelTable(LPCTSTR lpszResourceName);
   
  呼び出した場合`LoadFrame`フレーム ウィンドウを作成するには、フレームワークはメニューやアイコンのリソースと一緒にアクセラレータ テーブルを読み込みます。 および後続の呼び出し、このメンバー関数に必要はありません。  
   
-##  <a name="a-nameloadbarstatea--cframewndloadbarstate"></a><a name="loadbarstate"></a>CFrameWnd::LoadBarState  
+##  <a name="loadbarstate"></a>CFrameWnd::LoadBarState  
  フレーム ウィンドウによって所有されている各コントロール バーの設定を復元するには、この関数を呼び出します。  
   
 ```  
@@ -619,7 +670,7 @@ void LoadBarState(LPCTSTR lpszProfileName);
   
  呼び出す前に、レジストリに書き込まれる、設定を復元する`LoadBarState`です。 呼び出して情報をレジストリに書き込む[書き込むに](../../mfc/reference/cwinapp-class.md#setregistrykey)します。 INI ファイルを呼び出すことにより、情報を書き込む[に](#savebarstate)します。  
   
-##  <a name="a-nameloadframea--cframewndloadframe"></a><a name="loadframe"></a>CFrameWnd::LoadFrame  
+##  <a name="loadframe"></a>CFrameWnd::LoadFrame  
  リソースの情報からフレーム ウィンドウを動的に作成する呼び出しです。  
   
 ```  
@@ -652,7 +703,7 @@ virtual BOOL LoadFrame(
   
  フレームワークを使用して、`pContext`をいずれかを含む、フレーム ウィンドウに接続されているオブジェクトを指定する引数には、オブジェクト表示にはが含まれています。 設定することができます、`pContext`引数**NULL**を呼び出すと`LoadFrame`です。  
   
-##  <a name="a-namembautomenuenablea--cframewndmbautomenuenable"></a><a name="m_bautomenuenable"></a>CFrameWnd::m_bAutoMenuEnable  
+##  <a name="m_bautomenuenable"></a>CFrameWnd::m_bAutoMenuEnable  
  このデータ メンバーには、(既定である) が有効な場合は、メニュー項目がない`ON_UPDATE_COMMAND_UI`または`ON_COMMAND`ハンドラーは、ユーザーがメニューをプルダウンときに自動的に無効です。  
   
 ```  
@@ -672,7 +723,7 @@ BOOL m_bAutoMenuEnable;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#3;](../../mfc/reference/codesnippet/cpp/cframewnd-class_3.cpp)]  
   
-##  <a name="a-namenegotiateborderspacea--cframewndnegotiateborderspace"></a><a name="negotiateborderspace"></a>CFrameWnd::NegotiateBorderSpace  
+##  <a name="negotiateborderspace"></a>CFrameWnd::NegotiateBorderSpace  
  OLE インプレース アクティブ化時にフレーム ウィンドウの境界領域をネゴシエートする場合は、このメンバー関数を呼び出します。  
   
 ```  
@@ -700,7 +751,7 @@ virtual BOOL NegotiateBorderSpace(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、 **CFrameWnd** OLE 境界領域の調整を実装します。  
   
-##  <a name="a-nameonbarchecka--cframewndonbarcheck"></a><a name="onbarcheck"></a>CFrameWnd::OnBarCheck  
+##  <a name="onbarcheck"></a>CFrameWnd::OnBarCheck  
  指定したコントロール バーで、アクションが実行されるたびに呼び出されます。  
   
 ```  
@@ -714,7 +765,7 @@ afx_msg BOOL OnBarCheck(UINT nID);
 ### <a name="return-value"></a>戻り値  
  コントロール バーが存在する場合は 0 以外それ以外の場合 0 を返します。  
   
-##  <a name="a-nameoncontexthelpa--cframewndoncontexthelp"></a><a name="oncontexthelp"></a>受信  
+##  <a name="oncontexthelp"></a>受信  
  埋め込み先アイテムについては、shift キーを押しながら f1 キーを処理します。  
   
 ```  
@@ -730,7 +781,7 @@ afx_msg void OnContextHelp();
   
  アプリケーションが OLE コンテナー、`OnContextHelp`ヘルプ モードには、フレーム ウィンドウ オブジェクト内に含まれるすべての埋め込み先アイテムを配置します。 矢印と疑問符 () と、ユーザーがカーソルの変更はマウス ポインターを移動し、 ダイアログ ボックス、ウィンドウ、メニューのまたはコマンド ボタンを選択するマウスの左ボタンを押します。 このメンバー関数は、Windows の関数を呼び出す`WinHelp`カーソルでは、オブジェクトのヘルプ コンテキストを使用します。  
   
-##  <a name="a-nameoncreateclienta--cframewndoncreateclient"></a><a name="oncreateclient"></a>CFrameWnd::OnCreateClient  
+##  <a name="oncreateclient"></a>CFrameWnd::OnCreateClient  
  実行中に、フレームワークによって呼び出されます`OnCreate`します。  
   
 ```  
@@ -759,7 +810,7 @@ virtual BOOL OnCreateClient(
 > [!NOTE]
 >  渡される値を置き換えないで、`CREATESTRUCT`構造体。 これらは情報目的のみです。 最初のウィンドウの四角形をオーバーライドする場合は、たとえば、オーバーライド、`CWnd`メンバー関数[PreCreateWindow](../../mfc/reference/cwnd-class.md#precreatewindow)します。  
   
-##  <a name="a-nameonhidemenubara--cframewndonhidemenubar"></a><a name="onhidemenubar"></a>CFrameWnd::OnHideMenuBar  
+##  <a name="onhidemenubar"></a>CFrameWnd::OnHideMenuBar  
  システムが現在の MFC アプリケーションでメニュー バーを非表示にすると、この関数が呼び出されます。  
   
 ```  
@@ -769,7 +820,7 @@ virtual void OnHideMenuBar();
 ### <a name="remarks"></a>コメント  
  このイベント ハンドラーでは、アプリケーションで、システムが、メニューを非表示にすると、カスタム アクションを実行できます。 非表示、メニューを防ぐことはできませんが、たとえば、メニューのスタイルまたは状態を取得するには、その他のメソッドを呼び出すことはできます。  
   
-##  <a name="a-nameonsetpreviewmodea--cframewndonsetpreviewmode"></a><a name="onsetpreviewmode"></a>CFrameWnd::OnSetPreviewMode  
+##  <a name="onsetpreviewmode"></a>CFrameWnd::OnSetPreviewMode  
  印刷プレビュー モードの内外にアプリケーションのメイン フレーム ウィンドウを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -790,7 +841,7 @@ virtual void OnSetPreviewMode(
   
  コントロール バーやその他のフレーム ウィンドウの一部の印刷プレビュー期間中の表示や非表示をカスタマイズするには、このメンバー関数をオーバーライドします。 オーバーライドした関数内から基本クラス実装を呼び出します。  
   
-##  <a name="a-nameonshowmenubara--cframewndonshowmenubar"></a><a name="onshowmenubar"></a>CFrameWnd::OnShowMenuBar  
+##  <a name="onshowmenubar"></a>CFrameWnd::OnShowMenuBar  
  現在の MFC アプリケーションでメニュー バーを表示しようとして、システムは、この関数が呼び出されます。  
   
 ```  
@@ -800,7 +851,7 @@ virtual void OnShowMenuBar();
 ### <a name="remarks"></a>コメント  
  このイベント ハンドラーでは、アプリケーションでメニューが表示される直前にある場合は、カスタム アクションを実行できます。 表示されてから、メニューを防ぐことはできませんが、たとえば、メニューのスタイルまたは状態を取得するには、その他のメソッドを呼び出すことはできます。  
   
-##  <a name="a-nameonupdatecontrolbarmenua--cframewndonupdatecontrolbarmenu"></a><a name="onupdatecontrolbarmenu"></a>CFrameWnd::OnUpdateControlBarMenu  
+##  <a name="onupdatecontrolbarmenu"></a>CFrameWnd::OnUpdateControlBarMenu  
  関連するメニューが更新されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -811,7 +862,7 @@ afx_msg void OnUpdateControlBarMenu(CCmdUI* pCmdUI);
  `pCmdUI`  
  ポインター、 [CCmdUI](../../mfc/reference/ccmdui-class.md)更新コマンドを作成するメニューを表すオブジェクト。 更新ハンドラーは、[を有効にする](../../mfc/reference/ccmdui-class.md#enable)のメンバー関数、`CCmdUI`オブジェクト`pCmdUI`ユーザー インターフェイスを更新します。  
   
-##  <a name="a-namerecalclayouta--cframewndrecalclayout"></a><a name="recalclayout"></a>表示  
+##  <a name="recalclayout"></a>表示  
  オンまたはオフに標準のコントロール バーが切り替えられたときに、またはフレーム ウィンドウのサイズが変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -827,14 +878,14 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
   
  フレーム ウィンドウのレイアウトが変更された後に、コントロール バーの動作と外観を制御するには、この関数をオーバーライドします。 たとえば、コントロール バーを有効または無効にするか、別のコントロール バーを追加するときに、それを呼び出します。  
   
-##  <a name="a-namerectdefaulta--cframewndrectdefault"></a><a name="rectdefault"></a>CFrameWnd::rectDefault  
+##  <a name="rectdefault"></a>CFrameWnd::rectDefault  
  静的に渡す`CRect`ウィンドウの初期サイズと位置を選択するウィンドウを許可するようにウィンドウを作成する際に、パラメーターとして。  
   
 ```  
 static AFX_DATA const CRect rectDefault;  
 ```  
   
-##  <a name="a-namesavebarstatea--cframewndsavebarstate"></a><a name="savebarstate"></a>CFrameWnd::SaveBarState  
+##  <a name="savebarstate"></a>CFrameWnd::SaveBarState  
  フレーム ウィンドウによって所有されている各コントロール バーの情報を格納するには、この関数を呼び出します。  
   
 ```  
@@ -848,7 +899,7 @@ void SaveBarState(LPCTSTR lpszProfileName) const;
 ### <a name="remarks"></a>コメント  
  この情報を使用して、初期化ファイルから読み取ることができます[戻す](#loadbarstate)します。 格納されている情報には、可視性、水平、垂直方向、ドッキング状態、およびコントロール バーの位置が含まれています。  
   
-##  <a name="a-namesetactivepreviewviewa--cframewndsetactivepreviewview"></a><a name="setactivepreviewview"></a>CFrameWnd::SetActivePreviewView  
+##  <a name="setactivepreviewview"></a>CFrameWnd::SetActivePreviewView  
  リッチ プレビュー用のアクティブなビューに指定されたビューを指定します。  
   
 ```  
@@ -861,7 +912,7 @@ void SetActivePreviewView(CView* pViewNew);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetactiveviewa--cframewndsetactiveview"></a><a name="setactiveview"></a>CFrameWnd::SetActiveView  
+##  <a name="setactiveview"></a>CFrameWnd::SetActiveView  
  アクティブなビューを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -880,7 +931,7 @@ void SetActiveView(
 ### <a name="remarks"></a>コメント  
  フレームワークは、この関数のフレーム ウィンドウ内のビューにフォーカスを変更すると自動的に呼び出します。 明示的に呼び出すことができます`SetActiveView`に指定されたビューにフォーカスを変更します。  
   
-##  <a name="a-namesetdockstatea--cframewndsetdockstate"></a><a name="setdockstate"></a>CFrameWnd::SetDockState  
+##  <a name="setdockstate"></a>CFrameWnd::SetDockState  
  格納されている状態情報を適用するには、このメンバー関数を呼び出して、`CDockState`フレーム ウィンドウのコントロール バーへのオブジェクト。  
   
 ```  
@@ -894,7 +945,7 @@ void SetDockState(const CDockState& state);
 ### <a name="remarks"></a>コメント  
  コントロール バーの以前の状態を復元するに格納されている状態を読み込むことができます`CDockState::LoadState`または`Serialize`を使用して`SetDockState`フレーム ウィンドウのコントロール バーに適用します。 以前の状態が格納されている、`CDockState`でオブジェクトです。`GetDockState`  
   
-##  <a name="a-namesetmenubarstatea--cframewndsetmenubarstate"></a><a name="setmenubarstate"></a>CFrameWnd::SetMenuBarState  
+##  <a name="setmenubarstate"></a>CFrameWnd::SetMenuBarState  
  非表示または表示は、現在の MFC アプリケーションのメニューの表示状態を設定します。  
   
 ```  
@@ -913,7 +964,7 @@ virtual BOOL SetMenuBarState(DWORD nState);
 ### <a name="remarks"></a>コメント  
  実行時エラーが発生した場合、このメソッドはデバッグ モードでアサートしから派生する例外を発生させる、 [CException](../../mfc/reference/cexception-class.md)クラスです。  
   
-##  <a name="a-namesetmenubarvisibilitya--cframewndsetmenubarvisibility"></a><a name="setmenubarvisibility"></a>CFrameWnd::SetMenuBarVisibility  
+##  <a name="setmenubarvisibility"></a>CFrameWnd::SetMenuBarVisibility  
  非表示または非表示には、現在の MFC アプリケーションで、メニューの既定の動作を設定します。  
   
 ```  
@@ -931,7 +982,7 @@ virtual void SetMenuBarVisibility(DWORD nStyle);
   
  このメソッドに記述されたアプリケーションでメニューの状態に影響[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]以降。  
   
-##  <a name="a-namesetmessagetexta--cframewndsetmessagetext"></a><a name="setmessagetext"></a>CFrameWnd::SetMessageText  
+##  <a name="setmessagetext"></a>CFrameWnd::SetMessageText  
  ステータス バー ペインを持つ ID は 0 で文字列を配置するには、この関数を呼び出します。  
   
 ```  
@@ -949,7 +1000,7 @@ void SetMessageText(UINT nID);
 ### <a name="remarks"></a>コメント  
  これは、通常、ステータス バーの最も長い、左端、ウィンドウです。  
   
-##  <a name="a-namesetprogressbarpositiona--cframewndsetprogressbarposition"></a><a name="setprogressbarposition"></a>CFrameWnd::SetProgressBarPosition  
+##  <a name="setprogressbarposition"></a>CFrameWnd::SetProgressBarPosition  
  タスク バーに表示される Windows 7 の進行状況バーの現在の位置を設定します。  
   
 ```  
@@ -962,7 +1013,7 @@ void SetProgressBarPosition(int nProgressPos);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetprogressbarrangea--cframewndsetprogressbarrange"></a><a name="setprogressbarrange"></a>CFrameWnd::SetProgressBarRange  
+##  <a name="setprogressbarrange"></a>CFrameWnd::SetProgressBarRange  
  タスク バーに表示される Windows 7 の進行状況バーの範囲を設定します。  
   
 ```  
@@ -980,7 +1031,7 @@ void SetProgressBarRange(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetprogressbarstatea--cframewndsetprogressbarstate"></a><a name="setprogressbarstate"></a>CFrameWnd::SetProgressBarState  
+##  <a name="setprogressbarstate"></a>CFrameWnd::SetProgressBarState  
  タスク バー ボタンに表示される進行状況インジケーターの状態の種類を設定します。  
   
 ```  
@@ -993,7 +1044,7 @@ void SetProgressBarState(TBPFLAG tbpFlags);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesettaskbaroverlayicona--cframewndsettaskbaroverlayicon"></a><a name="settaskbaroverlayicon"></a>CFrameWnd::SetTaskbarOverlayIcon  
+##  <a name="settaskbaroverlayicon"></a>CFrameWnd::SetTaskbarOverlayIcon  
  オーバーロードされます。 アプリケーションの状態を示すために、またはユーザーに通知するのには、タスク バー ボタンにオーバーレイを適用します。  
   
 ```  
@@ -1022,7 +1073,7 @@ BOOL SetTaskbarOverlayIcon(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesettitlea--cframewndsettitle"></a><a name="settitle"></a>CFrameWnd::SetTitle  
+##  <a name="settitle"></a>CFrameWnd::SetTitle  
  ウィンドウ オブジェクトのタイトルを設定します。  
   
 ```  
@@ -1033,7 +1084,7 @@ void SetTitle(LPCTSTR lpszTitle);
  `lpszTitle`  
  ウィンドウ オブジェクトのタイトルを含む文字列へのポインター。  
   
-##  <a name="a-nameshowcontrolbara--cframewndshowcontrolbar"></a><a name="showcontrolbar"></a>CFrameWnd::ShowControlBar  
+##  <a name="showcontrolbar"></a>CFrameWnd::ShowControlBar  
  コントロール バーを非表示には、このメンバー関数を呼び出します。  
   
 ```  
@@ -1053,7 +1104,7 @@ void ShowControlBar(
  *bDelay*  
  場合**TRUE**、遅延、コントロール バーを表示します。 場合**FALSE**、バーのすぐにコントロールを表示します。  
   
-##  <a name="a-nameshowownedwindowsa--cframewndshowownedwindows"></a><a name="showownedwindows"></a>CFrameWnd::ShowOwnedWindows  
+##  <a name="showownedwindows"></a>CFrameWnd::ShowOwnedWindows  
  子孫であるすべてのウィンドウを表示するには、このメンバー関数を呼び出す、`CFrameWnd`オブジェクトです。  
   
 ```  

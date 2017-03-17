@@ -9,9 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CHeapPtrElementTraits
 - CHeapPtrElementTraits
-- ATL::CHeapPtrElementTraits
+- ATLCOLL/ATL::CHeapPtrElementTraits
+- ATLCOLL/ATL::CHeapPtrElementTraits::INARGTYPE
+- ATLCOLL/ATL::CHeapPtrElementTraits::OUTARGTYPE
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,14 +91,14 @@ class CHeapPtrElementTraits :
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="a-nameinargtypea--cheapptrelementtraitsinargtype"></a><a name="inargtype"></a>CHeapPtrElementTraits::INARGTYPE  
+##  <a name="inargtype"></a>CHeapPtrElementTraits::INARGTYPE  
  コレクション クラスのオブジェクトに要素を追加するために使用するデータ型。  
   
 ```
 typedef CHeapPtr<T, Allocator>& INARGTYPE;
 ```  
   
-##  <a name="a-nameoutargtypea--cheapptrelementtraitsoutargtype"></a><a name="outargtype"></a>CHeapPtrElementTraits::OUTARGTYPE  
+##  <a name="outargtype"></a>CHeapPtrElementTraits::OUTARGTYPE  
  コレクション クラスのオブジェクトから要素を取得するために使用するデータ型。  
   
 ```

@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IOleInPlaceActiveObjectImpl
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::ContextSensitiveHelp
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::EnableModeless
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::GetWindow
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::OnDocWindowActivate
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::OnFrameWindowActivate
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::ResizeBorder
+- ATLCTL/ATL::IOleInPlaceActiveObjectImpl::TranslateAccelerator
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +94,7 @@ class IOleInPlaceActiveObjectImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namecontextsensitivehelpa--ioleinplaceactiveobjectimplcontextsensitivehelp"></a><a name="contextsensitivehelp"></a>IOleInPlaceActiveObjectImpl::ContextSensitiveHelp  
+##  <a name="contextsensitivehelp"></a>IOleInPlaceActiveObjectImpl::ContextSensitiveHelp  
  状況依存のヘルプを有効にします。  
   
 ```
@@ -99,7 +107,7 @@ HRESULT ContextSensitiveHelp(BOOL fEnterMode);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleWindow::ContextSensitiveHelp](http://msdn.microsoft.com/library/windows/desktop/ms680059)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameenablemodelessa--ioleinplaceactiveobjectimplenablemodeless"></a><a name="enablemodeless"></a>IOleInPlaceActiveObjectImpl::EnableModeless  
+##  <a name="enablemodeless"></a>IOleInPlaceActiveObjectImpl::EnableModeless  
  モードレス ダイアログ ボックスを有効にします。  
   
 ```
@@ -112,7 +120,7 @@ HRESULT EnableModeless(BOOL fEnable);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceActiveObject::EnableModeless](http://msdn.microsoft.com/library/windows/desktop/ms680115)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetwindowa--ioleinplaceactiveobjectimplgetwindow"></a><a name="getwindow"></a>IOleInPlaceActiveObjectImpl::GetWindow  
+##  <a name="getwindow"></a>IOleInPlaceActiveObjectImpl::GetWindow  
  コンテナーは、コントロールのウィンドウ ハンドルを取得するには、この関数を呼び出します。  
   
 ```
@@ -124,7 +132,7 @@ HRESULT GetWindow(HWND* phwnd);
   
  参照してください[IOleWindow::GetWindow](http://msdn.microsoft.com/library/windows/desktop/ms687282)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameondocwindowactivatea--ioleinplaceactiveobjectimplondocwindowactivate"></a><a name="ondocwindowactivate"></a>IOleInPlaceActiveObjectImpl::OnDocWindowActivate  
+##  <a name="ondocwindowactivate"></a>IOleInPlaceActiveObjectImpl::OnDocWindowActivate  
  コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。  
   
 ```
@@ -137,7 +145,7 @@ HRESULT OnDocWindowActivate(BOOL fActivate);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceActiveObject::OnDocWindowActivate](http://msdn.microsoft.com/library/windows/desktop/ms687281)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameonframewindowactivatea--ioleinplaceactiveobjectimplonframewindowactivate"></a><a name="onframewindowactivate"></a>IOleInPlaceActiveObjectImpl::OnFrameWindowActivate  
+##  <a name="onframewindowactivate"></a>IOleInPlaceActiveObjectImpl::OnFrameWindowActivate  
  コンテナーの最上位のフレーム ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。  
   
 ```
@@ -150,7 +158,7 @@ HRESULT OnFrameWindowActivate(BOOL fActivate);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceActiveObject::OnFrameWindowActivate](http://msdn.microsoft.com/library/windows/desktop/ms683969)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameresizebordera--ioleinplaceactiveobjectimplresizeborder"></a><a name="resizeborder"></a>IOleInPlaceActiveObjectImpl::ResizeBorder  
+##  <a name="resizeborder"></a>IOleInPlaceActiveObjectImpl::ResizeBorder  
  境界線のサイズを変更する必要があるコントロールに通知します。  
   
 ```
@@ -166,7 +174,7 @@ HRESULT ResizeBorder(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceActiveObject::ResizeBorder](http://msdn.microsoft.com/library/windows/desktop/ms680053)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nametranslateacceleratora--ioleinplaceactiveobjectimpltranslateaccelerator"></a><a name="translateaccelerator"></a>IOleInPlaceActiveObjectImpl::TranslateAccelerator  
+##  <a name="translateaccelerator"></a>IOleInPlaceActiveObjectImpl::TranslateAccelerator  
  コンテナーのメニューのアクセラレータ キー メッセージを処理します。  
   
 ```

@@ -9,13 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- GetThisClass
-- CMFCRibbonSeparator::GetThisClass
-- CMFCRibbonSeparator.CreateObject
-- CMFCRibbonSeparator::CreateObject
 - CMFCRibbonSeparator
-- CreateObject
-- CMFCRibbonSeparator.GetThisClass
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::CMFCRibbonSeparator
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::AddToListBox
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::CopyFrom
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::GetRegularSize
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::IsSeparator
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::IsTabStop
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::OnDraw
+- AFXBASERIBBONELEMENT/CMFCRibbonSeparator::OnDrawOnList
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -111,7 +114,7 @@ pMainPanel->Add(new CMFCRibbonSeparator(TRUE));
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxbaseribbonelement.h  
   
-##  <a name="a-nameaddtolistboxa--cmfcribbonseparatoraddtolistbox"></a><a name="addtolistbox"></a>CMFCRibbonSeparator::AddToListBox  
+##  <a name="addtolistbox"></a>CMFCRibbonSeparator::AddToListBox  
  区分線を追加、**コマンド**リストに、**カスタマイズ** ダイアログ ボックス。  
   
 ```  
@@ -130,7 +133,7 @@ virtual int AddToListBox(
 ### <a name="return-value"></a>戻り値  
  0 から始まるインデックスで指定されたリスト ボックス内の文字列に`pWndListBox`します。  
   
-##  <a name="a-namecmfcribbonseparatora--cmfcribbonseparatorcmfcribbonseparator"></a><a name="cmfcribbonseparator"></a>CMFCRibbonSeparator::CMFCRibbonSeparator  
+##  <a name="cmfcribbonseparator"></a>CMFCRibbonSeparator::CMFCRibbonSeparator  
  `CMFCRibbonSeparator` オブジェクトを構築します。  
   
 ```  
@@ -149,7 +152,7 @@ CMFCRibbonSeparator(BOOL bIsHoriz = FALSE);
   
  [!code-cpp[NVC_MFC_RibbonApp&#19;](../../mfc/reference/codesnippet/cpp/cmfcribbonseparator-class_1.cpp)]  
   
-##  <a name="a-namecopyfroma--cmfcribbonseparatorcopyfrom"></a><a name="copyfrom"></a>CMFCRibbonSeparator::CopyFrom  
+##  <a name="copyfrom"></a>CMFCRibbonSeparator::CopyFrom  
  別のオブジェクトから区切り記号のメンバー変数を設定するコピー メソッド。  
   
 ```  
@@ -160,7 +163,7 @@ virtual void CopyFrom(const CMFCRibbonBaseElement& src);
  [入力] `Src`  
  コピー元ソース リボン要素。  
   
-##  <a name="a-namegetregularsizea--cmfcribbonseparatorgetregularsize"></a><a name="getregularsize"></a>CMFCRibbonSeparator::GetRegularSize  
+##  <a name="getregularsize"></a>CMFCRibbonSeparator::GetRegularSize  
  区切り記号のサイズを返します。  
   
 ```  
@@ -174,7 +177,7 @@ virtual CSize GetRegularSize(CDC* pDC);
 ### <a name="return-value"></a>戻り値  
  指定したデバイス コンテキストで区切り記号のサイズ。  
   
-##  <a name="a-nameisseparatora--cmfcribbonseparatorisseparator"></a><a name="isseparator"></a>CMFCRibbonSeparator::IsSeparator  
+##  <a name="isseparator"></a>CMFCRibbonSeparator::IsSeparator  
  これが、区切り記号であるかどうかを示します。  
   
 ```  
@@ -184,7 +187,7 @@ virtual BOOL IsSeparator() const;
 ### <a name="return-value"></a>戻り値  
  常に`TRUE`このクラスにします。  
   
-##  <a name="a-nameistabstopa--cmfcribbonseparatoristabstop"></a><a name="istabstop"></a>CMFCRibbonSeparator::IsTabStop  
+##  <a name="istabstop"></a>CMFCRibbonSeparator::IsTabStop  
  タブ ストップであるかどうかを示します。  
   
 ```  
@@ -197,7 +200,7 @@ virtual BOOL IsTabStop() const;
 ### <a name="remarks"></a>コメント  
  リボンの区切り記号は、タブ ストップではありません。  
   
-##  <a name="a-nameondrawa--cmfcribbonseparatorondraw"></a><a name="ondraw"></a>CMFCRibbonSeparator::OnDraw  
+##  <a name="ondraw"></a>CMFCRibbonSeparator::OnDraw  
  リボンまたはクイック アクセス ツールバーに区分線を描画する、システムによって呼び出されます。  
   
 ```  
@@ -208,7 +211,7 @@ virtual void OnDraw(CDC* pDC);
  [入力] `pDC`  
  デバイス コンテキストへのポインター。  
   
-##  <a name="a-nameondrawonlista--cmfcribbonseparatorondrawonlist"></a><a name="ondrawonlist"></a>CMFCRibbonSeparator::OnDrawOnList  
+##  <a name="ondrawonlist"></a>CMFCRibbonSeparator::OnDrawOnList  
  区分線を描画する、システムによって呼び出さ、**コマンド** ボックスの一覧です。  
   
 ```  

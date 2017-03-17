@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCColorPopupMenu
+- AFXCOLORPOPUPMENU/CMFCColorPopupMenu
+- AFXCOLORPOPUPMENU/CMFCColorPopupMenu::CMFCColorPopupMenu
+- AFXCOLORPOPUPMENU/CMFCColorPopupMenu::CreateTearOffBar
+- AFXCOLORPOPUPMENU/CMFCColorPopupMenu::GetMenuBar
+- AFXCOLORPOPUPMENU/CMFCColorPopupMenu::SetPropList
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +104,7 @@ class CMFCColorPopupMenu : public CMFCPopupMenu
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcolorpopupmenu.h  
   
-##  <a name="a-namecmfccolorpopupmenua--cmfccolorpopupmenucmfccolorpopupmenu"></a><a name="cmfccolorpopupmenu"></a>CMFCColorPopupMenu::CMFCColorPopupMenu  
+##  <a name="cmfccolorpopupmenu"></a>CMFCColorPopupMenu::CMFCColorPopupMenu  
  `CMFCColorPopupMenu` オブジェクトを構築します。  
   
 ```  
@@ -195,7 +200,7 @@ CMFCColorPopupMenu(
   
  [!code-cpp[NVC_MFC_RibbonApp #&34;](../../mfc/reference/codesnippet/cpp/cmfccolorpopupmenu-class_1.cpp)]  
   
-##  <a name="a-namecreatetearoffbara--cmfccolorpopupmenucreatetearoffbar"></a><a name="createtearoffbar"></a>CMFCColorPopupMenu::CreateTearOffBar  
+##  <a name="createtearoffbar"></a>CMFCColorPopupMenu::CreateTearOffBar  
  ドッキング可能なティアオフ カラー バーを作成します。  
   
 ```  
@@ -220,7 +225,7 @@ virtual CPane* CreateTearOffBar(
 ### <a name="remarks"></a>コメント  
  このメソッドは、作成、 [CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)オブジェクトおよびにキャスト、 [CPane クラス](../../mfc/reference/cpane-class.md)ポインター。 この値をキャストすることに、 [CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)で説明するキャスト マクロのいずれかを使用してポインター [MFC クラス オブジェクトの型キャスト](../../mfc/reference/type-casting-of-mfc-class-objects.md)します。  
   
-##  <a name="a-namegetmenubara--cmfccolorpopupmenugetmenubar"></a><a name="getmenubar"></a>CMFCColorPopupMenu::GetMenuBar  
+##  <a name="getmenubar"></a>CMFCColorPopupMenu::GetMenuBar  
  返します。、 [CMFCPopupMenuBar](../../mfc/reference/cmfcpopupmenubar-class.md) 、ポップアップ メニュー内に埋め込まれています。  
   
 ```  
@@ -233,7 +238,7 @@ virtual CMFCPopupMenuBar* GetMenuBar();
 ### <a name="remarks"></a>コメント  
  色のポップアップ メニューが、埋め込み[CMFCPopupMenuBar クラス](../../mfc/reference/cmfcpopupmenubar-class.md)オブジェクトです。 アプリケーションが別の埋め込み型を使用する場合は、派生クラスでは、このメソッドをオーバーライドします。  
   
-##  <a name="a-namesetproplista--cmfccolorpopupmenusetproplist"></a><a name="setproplist"></a>CMFCColorPopupMenu::SetPropList  
+##  <a name="setproplist"></a>CMFCColorPopupMenu::SetPropList  
  埋め込みのプロパティ グリッド コントロール オブジェクトを設定`CMFCColorBar`オブジェクトです。  
   
 ```  

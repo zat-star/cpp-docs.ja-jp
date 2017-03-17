@@ -9,11 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComCritSecLock
-- ATL.CComCritSecLock<TLock>
-- ATL::CComCritSecLock<TLock>
-- ATL.CComCritSecLock
 - CComCritSecLock
+- ATLBASE/ATL::CComCritSecLock
+- ATLBASE/ATL::CComCritSecLock::CComCritSecLock
+- ATLBASE/ATL::CComCritSecLock::Lock
+- ATLBASE/ATL::CComCritSecLock::Unlock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -78,7 +78,7 @@ template<class TLock> class CComCritSecLock
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namectora--ccomcritseclockccomcritseclock"></a><a name="ctor"></a>CComCritSecLock::CComCritSecLock  
+##  <a name="ctor"></a>CComCritSecLock::CComCritSecLock  
  コンストラクターです。  
   
 ```
@@ -95,7 +95,7 @@ CComCritSecLock(TLock& cs, bool bInitialLock = true);
 ### <a name="remarks"></a>コメント  
  クリティカル セクション オブジェクトを初期化します。  
   
-##  <a name="a-namedtora--ccomcritseclockccomcritseclock"></a><a name="dtor"></a>CComCritSecLock:: ~ CComCritSecLock  
+##  <a name="dtor"></a>CComCritSecLock:: ~ CComCritSecLock  
  デストラクターです。  
   
 ```
@@ -105,7 +105,7 @@ CComCritSecLock(TLock& cs, bool bInitialLock = true);
 ### <a name="remarks"></a>コメント  
  クリティカル セクション オブジェクトのロックを解除します。  
   
-##  <a name="a-namelocka--ccomcritseclocklock"></a><a name="lock"></a>CComCritSecLock::Lock  
+##  <a name="lock"></a>CComCritSecLock::Lock  
  クリティカル セクション オブジェクトをロックするには、このメソッドを呼び出します。  
   
 ```
@@ -118,7 +118,7 @@ HRESULT Lock() throw();
 ### <a name="remarks"></a>コメント  
  オブジェクトが既にロックされているデバッグ ビルドで ASSERT エラーが発生します。  
   
-##  <a name="a-nameunlocka--ccomcritseclockunlock"></a><a name="unlock"></a>CComCritSecLock::Unlock  
+##  <a name="unlock"></a>CComCritSecLock::Unlock  
  クリティカル セクション オブジェクトのロックを解除するには、このメソッドを呼び出します。  
   
 ```

@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IAtlStringMgr
+- ATLSIMPSTR/ATL::IAtlStringMgr
+- ATLSIMPSTR/ATL::Allocate
+- ATLSIMPSTR/ATL::Clone
+- ATLSIMPSTR/ATL::Free
+- ATLSIMPSTR/ATL::GetNilString
+- ATLSIMPSTR/ATL::Reallocate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -70,7 +76,7 @@ __interface IAtlStringMgr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpstr.h  
   
-##  <a name="a-nameallocatea--iatlstringmgrallocate"></a><a name="allocate"></a>IAtlStringMgr::Allocate  
+##  <a name="allocate"></a>IAtlStringMgr::Allocate  
  新しい文字列データ構造体が割り当てられます。  
   
 ```
@@ -96,7 +102,7 @@ CStringData* Allocate(int nAllocLength,int nCharSize) throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
   
-##  <a name="a-nameclonea--iatlstringmgrclone"></a><a name="clone"></a>IAtlStringMgr::Clone  
+##  <a name="clone"></a>IAtlStringMgr::Clone  
  別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返します`CSimpleStringT`します。  
   
 ```
@@ -114,7 +120,7 @@ IAtlStringMgr* Clone() throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
   
-##  <a name="a-namefreea--iatlstringmgrfree"></a><a name="free"></a>IAtlStringMgr::Free  
+##  <a name="free"></a>IAtlStringMgr::Free  
  文字列データの構造体を解放します。  
   
 ```
@@ -131,7 +137,7 @@ void Free(CStringData* pData) throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
   
-##  <a name="a-namegetnilstringa--iatlstringmgrgetnilstring"></a><a name="getnilstring"></a>IAtlStringMgr::GetNilString  
+##  <a name="getnilstring"></a>IAtlStringMgr::GetNilString  
  空の文字列の文字列データの構造体へのポインターを返します。  
   
 ```
@@ -150,7 +156,7 @@ CStringData* GetNilString() throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
   
-##  <a name="a-namereallocatea--iatlstringmgrreallocate"></a><a name="reallocate"></a>IAtlStringMgr::Reallocate  
+##  <a name="reallocate"></a>IAtlStringMgr::Reallocate  
  文字列データ構造を再割り当てします。  
   
 ```

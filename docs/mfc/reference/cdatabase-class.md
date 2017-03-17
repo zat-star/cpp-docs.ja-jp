@@ -10,6 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDatabase
+- AFXDB/CDatabase
+- AFXDB/CDatabase::CDatabase
+- AFXDB/CDatabase::BeginTrans
+- AFXDB/CDatabase::BindParameters
+- AFXDB/CDatabase::Cancel
+- AFXDB/CDatabase::CanTransact
+- AFXDB/CDatabase::CanUpdate
+- AFXDB/CDatabase::Close
+- AFXDB/CDatabase::CommitTrans
+- AFXDB/CDatabase::ExecuteSQL
+- AFXDB/CDatabase::GetBookmarkPersistence
+- AFXDB/CDatabase::GetConnect
+- AFXDB/CDatabase::GetCursorCommitBehavior
+- AFXDB/CDatabase::GetCursorRollbackBehavior
+- AFXDB/CDatabase::GetDatabaseName
+- AFXDB/CDatabase::IsOpen
+- AFXDB/CDatabase::OnSetOptions
+- AFXDB/CDatabase::Open
+- AFXDB/CDatabase::OpenEx
+- AFXDB/CDatabase::Rollback
+- AFXDB/CDatabase::SetLoginTimeout
+- AFXDB/CDatabase::SetQueryTimeout
+- AFXDB/CDatabase::m_hdbc
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -110,7 +133,7 @@ class CDatabase : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-##  <a name="a-namebegintransa--cdatabasebegintrans"></a><a name="begintrans"></a>CDatabase::BeginTrans  
+##  <a name="begintrans"></a>CDatabase::BeginTrans  
  このメンバー関数を呼び出して、接続されているデータ ソースでトランザクションを開始します。  
   
 ```  
@@ -142,7 +165,7 @@ BOOL BeginTrans();
 ### <a name="example"></a>例  
   記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
   
-##  <a name="a-namebindparametersa--cdatabasebindparameters"></a><a name="bindparameters"></a>CDatabase::BindParameters  
+##  <a name="bindparameters"></a>CDatabase::BindParameters  
  オーバーライド`BindParameters`を呼び出す前にパラメーターをバインドする必要がある場合[CDatabase::ExecuteSQL](#executesql)します。  
   
 ```  
@@ -158,7 +181,7 @@ virtual void BindParameters(HSTMT hstmt);
   
  オーバーライドの中で呼び出して**SQLBindParameters**および関連するパラメーターを連結する ODBC 関数です。 MFC は、呼び出しの前に上書きを呼び出して`ExecuteSQL`します。 呼び出す必要はありません**SQLPrepare**です。`ExecuteSQL`呼び出し**SQLExecDirect**を破棄し、 **hstmt**、これは一度だけ使用します。  
   
-##  <a name="a-namecancela--cdatabasecancel"></a><a name="cancel"></a>CDatabase::Cancel  
+##  <a name="cancel"></a>CDatabase::Cancel  
  実行中の非同期操作または&2; つ目のスレッドからのプロセスのいずれかのデータ ソースのキャンセルを要求するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -168,7 +191,7 @@ void Cancel();
 ### <a name="remarks"></a>コメント  
  MFC ODBC クラスが、非同期処理の使用を不要になったことに注意してください。非同期操作を実行する ODBC API 関数を直接に呼び出す必要があります[SQLSetConnectOption](https://msdn.microsoft.com/library/ms713564.aspx)します。 詳細については、次を参照してください。[非同期実行](https://msdn.microsoft.com/library/ms713563.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecantransacta--cdatabasecantransact"></a><a name="cantransact"></a>CDatabase::CanTransact  
+##  <a name="cantransact"></a>CDatabase::CanTransact  
  このメンバー関数を呼び出して、データベースはトランザクションを許可するかどうかを決定します。  
   
 ```  
@@ -181,7 +204,7 @@ BOOL CanTransact() const;
 ### <a name="remarks"></a>コメント  
  トランザクションの詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)します。  
   
-##  <a name="a-namecanupdatea--cdatabasecanupdate"></a><a name="canupdate"></a>CDatabase::CanUpdate  
+##  <a name="canupdate"></a>CDatabase::CanUpdate  
  判断するには、このメンバー関数を呼び出すかどうか、`CDatabase`オブジェクトの更新が許可されます。  
   
 ```  
@@ -194,7 +217,7 @@ BOOL CanUpdate() const;
 ### <a name="remarks"></a>コメント  
  すべてのドライバーでは、更新をサポートします。  
   
-##  <a name="a-namecdatabasea--cdatabasecdatabase"></a><a name="cdatabase"></a>CDatabase::CDatabase  
+##  <a name="cdatabase"></a>CDatabase::CDatabase  
  `CDatabase` オブジェクトを構築します。  
   
 ```  
@@ -213,7 +236,7 @@ CDatabase();
   
  [!code-cpp[NVC_MFCDatabase&#10;](../../mfc/codesnippet/cpp/cdatabase-class_2.cpp)]  
   
-##  <a name="a-nameclosea--cdatabaseclose"></a><a name="close"></a>CDatabase::Close  
+##  <a name="close"></a>CDatabase::Close  
  データ ソースから切断する場合は、このメンバー関数を呼び出します。  
   
 ```  
@@ -228,7 +251,7 @@ virtual void Close();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#12;](../../mfc/codesnippet/cpp/cdatabase-class_3.cpp)]  
   
-##  <a name="a-namecommittransa--cdatabasecommittrans"></a><a name="committrans"></a>CDatabase::CommitTrans  
+##  <a name="committrans"></a>CDatabase::CommitTrans  
  トランザクションを完了すると、このメンバー関数を呼び出します。  
   
 ```  
@@ -248,7 +271,7 @@ BOOL CommitTrans();
 ### <a name="example"></a>例  
   記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
   
-##  <a name="a-nameexecutesqla--cdatabaseexecutesql"></a><a name="executesql"></a>CDatabase::ExecuteSQL  
+##  <a name="executesql"></a>CDatabase::ExecuteSQL  
  SQL コマンドを直接実行する必要がある場合は、このメンバー関数を呼び出します。  
   
 ```  
@@ -267,7 +290,7 @@ void ExecuteSQL(LPCTSTR lpszSQL);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#13;](../../mfc/codesnippet/cpp/cdatabase-class_4.cpp)]  
   
-##  <a name="a-namegetbookmarkpersistencea--cdatabasegetbookmarkpersistence"></a><a name="getbookmarkpersistence"></a>CDatabase::GetBookmarkPersistence  
+##  <a name="getbookmarkpersistence"></a>CDatabase::GetBookmarkPersistence  
  特定の操作の後で、レコードセット オブジェクトでのブックマークの永続性を判別するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -294,7 +317,7 @@ DWORD GetBookmarkPersistence() const;
   
  この戻り値の詳細については、ODBC API 関数を参照してください。 **SQLGetInfo**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 ブックマークの詳細については、記事を参照してください。[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)します。  
   
-##  <a name="a-namegetconnecta--cdatabasegetconnect"></a><a name="getconnect"></a>Cdatabase::getconnect  
+##  <a name="getconnect"></a>Cdatabase::getconnect  
  このメンバー関数を呼び出すことで、`OpenEx` オブジェクトをデータ ソースに接続した `Open` または `CDatabase` の呼び出し時に使用された接続文字列を取得します。  
   
 ```  
@@ -307,7 +330,7 @@ const CString GetConnect() const;
 ### <a name="remarks"></a>コメント  
  参照してください[cdatabase::open](#open)接続文字列を作成する方法の詳細についてです。  
   
-##  <a name="a-namegetcursorcommitbehaviora--cdatabasegetcursorcommitbehavior"></a><a name="getcursorcommitbehavior"></a>CDatabase::GetCursorCommitBehavior  
+##  <a name="getcursorcommitbehavior"></a>CDatabase::GetCursorCommitBehavior  
  判断するには、このメンバー関数を呼び出す方法、 [CommitTrans](#committrans)操作は、開いているレコード セット オブジェクトのカーソルに影響します。  
   
 ```  
@@ -328,7 +351,7 @@ int GetCursorCommitBehavior() const;
   
  この戻り値の詳細については、ODBC API 関数を参照してください。 **SQLGetInfo**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 トランザクションの詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)します。  
   
-##  <a name="a-namegetcursorrollbackbehaviora--cdatabasegetcursorrollbackbehavior"></a><a name="getcursorrollbackbehavior"></a>CDatabase::GetCursorRollbackBehavior  
+##  <a name="getcursorrollbackbehavior"></a>CDatabase::GetCursorRollbackBehavior  
  判断するには、このメンバー関数を呼び出す方法、[ロールバック](#rollback)操作は、開いているレコード セット オブジェクトのカーソルに影響します。  
   
 ```  
@@ -349,7 +372,7 @@ int GetCursorRollbackBehavior() const;
   
  この戻り値の詳細については、ODBC API 関数を参照してください。 **SQLGetInfo**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 トランザクションの詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)します。  
   
-##  <a name="a-namegetdatabasenamea--cdatabasegetdatabasename"></a><a name="getdatabasename"></a>CDatabase::GetDatabaseName  
+##  <a name="getdatabasename"></a>CDatabase::GetDatabaseName  
  (データ ソースでは、「データベース」と呼ばれる、名前付きオブジェクトを定義) を指定した、現在接続しているデータベースの名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -364,7 +387,7 @@ CString GetDatabaseName() const;
   
  たとえば、見出しにこの名前を表示するがあります。 ODBC から名前を取得中にエラーが発生した場合`GetDatabaseName`は空白を返します**Cstring**します。  
   
-##  <a name="a-nameisopena--cdatabaseisopen"></a><a name="isopen"></a>CDatabase::IsOpen  
+##  <a name="isopen"></a>CDatabase::IsOpen  
  判断するには、このメンバー関数を呼び出すかどうか、`CDatabase`オブジェクトが現在のデータ ソースに接続しています。  
   
 ```  
@@ -374,7 +397,7 @@ BOOL IsOpen() const;
 ### <a name="return-value"></a>戻り値  
  0 以外の値、`CDatabase`オブジェクトが現在接続されている場合は 0 です。  
   
-##  <a name="a-namemhdbca--cdatabasemhdbc"></a><a name="m_hdbc"></a>CDatabase::m_hdbc  
+##  <a name="m_hdbc"></a>CDatabase::m_hdbc  
  」のには ODBC データ ソース接続へのパブリックのハンドルが含まれています"、「接続ハンドルです」。  
   
 ### <a name="remarks"></a>コメント  
@@ -385,7 +408,7 @@ BOOL IsOpen() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#15;](../../mfc/codesnippet/cpp/cdatabase-class_5.cpp)]  
   
-##  <a name="a-nameonsetoptionsa--cdatabaseonsetoptions"></a><a name="onsetoptions"></a>CDatabase::OnSetOptions  
+##  <a name="onsetoptions"></a>CDatabase::OnSetOptions  
  含む SQL ステートメントを直接実行するときに、フレームワークが、このメンバー関数を呼び出す、`ExecuteSQL`メンバー関数。  
   
 ```  
@@ -408,7 +431,7 @@ virtual void OnSetOptions(HSTMT hstmt);
   
  オーバーライド`OnSetOptions`追加のオプションを設定する場合。 オーバーライドは基本クラスを呼び出す必要があります`OnSetOptions`前に、または ODBC API 関数を呼び出した後で**SQLSetStmtOption**します。 次のフレームワークの既定の実装に示すメソッド`OnSetOptions`します。  
   
-##  <a name="a-nameopena--cdatabaseopen"></a><a name="open"></a>Cdatabase::open  
+##  <a name="open"></a>Cdatabase::open  
  このメンバー関数を呼び出して、新しく構築された初期化`CDatabase`オブジェクトです。  
   
 ```  
@@ -456,7 +479,7 @@ virtual BOOL Open(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#14;](../../mfc/codesnippet/cpp/cdatabase-class_6.cpp)]  
   
-##  <a name="a-nameopenexa--cdatabaseopenex"></a><a name="openex"></a>Cdatabase::openex  
+##  <a name="openex"></a>Cdatabase::openex  
  このメンバー関数を呼び出して、新しく構築された初期化`CDatabase`オブジェクトです。  
   
 ```  
@@ -499,7 +522,7 @@ virtual BOOL OpenEx(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#11;](../../mfc/codesnippet/cpp/cdatabase-class_7.cpp)]  
   
-##  <a name="a-namerollbacka--cdatabaserollback"></a><a name="rollback"></a>CDatabase::Rollback  
+##  <a name="rollback"></a>CDatabase::Rollback  
  トランザクション中に行われた変更を反転するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -519,7 +542,7 @@ BOOL Rollback();
 ### <a name="example"></a>例  
   記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
   
-##  <a name="a-namesetlogintimeouta--cdatabasesetlogintimeout"></a><a name="setlogintimeout"></a>CDatabase::SetLoginTimeout  
+##  <a name="setlogintimeout"></a>CDatabase::SetLoginTimeout  
  このメンバー関数 â € を呼び出す"を呼び出す前に`OpenEx`または**開く**â €"ソースの接続タイムアウトになるまで実行されたデータに許容される秒数の既定をオーバーライドします。  
   
 ```  
@@ -535,7 +558,7 @@ void SetLoginTimeout(DWORD dwSeconds);
   
  ログイン タイムアウトの既定値は、15 秒です。 すべてのデータ ソースでは、ログイン タイムアウト値を指定する機能をサポートします。 データ ソースがタイムアウトをサポートしていない場合は、トレース出力でもない例外を取得します。 値が 0 の場合「無制限」。  
   
-##  <a name="a-namesetquerytimeouta--cdatabasesetquerytimeout"></a><a name="setquerytimeout"></a>CDatabase::SetQueryTimeout  
+##  <a name="setquerytimeout"></a>CDatabase::SetQueryTimeout  
  後続の処理を接続されているデータ ソースのタイムアウトになるまでの秒数の既定をオーバーライドする場合は、このメンバー関数を呼び出します。  
   
 ```  

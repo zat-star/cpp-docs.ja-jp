@@ -9,9 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CSimpleArray
-- ATL::CSimpleArray
 - CSimpleArray
+- ATLSIMPCOLL/ATL::CSimpleArray
+- ATLSIMPCOLL/ATL::CSimpleArray::CSimpleArray
+- ATLSIMPCOLL/ATL::CSimpleArray::Add
+- ATLSIMPCOLL/ATL::CSimpleArray::Find
+- ATLSIMPCOLL/ATL::CSimpleArray::GetData
+- ATLSIMPCOLL/ATL::CSimpleArray::GetSize
+- ATLSIMPCOLL/ATL::CSimpleArray::Remove
+- ATLSIMPCOLL/ATL::CSimpleArray::RemoveAll
+- ATLSIMPCOLL/ATL::CSimpleArray::RemoveAt
+- ATLSIMPCOLL/ATL::CSimpleArray::SetAtIndex
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -101,7 +109,7 @@ class CSimpleArray
 ## <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&86;](../../atl/codesnippet/cpp/csimplearray-class_1.cpp)]  
   
-##  <a name="a-nameadda--csimplearrayadd"></a><a name="add"></a>CSimpleArray::Add  
+##  <a name="add"></a>CSimpleArray::Add  
  新しい要素を配列に追加します。  
   
 ```
@@ -118,7 +126,7 @@ BOOL Add(const T& t);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&87;](../../atl/codesnippet/cpp/csimplearray-class_2.cpp)]  
   
-##  <a name="a-namecsimplearraya--csimplearraycsimplearray"></a><a name="csimplearray"></a>CSimpleArray::CSimpleArray  
+##  <a name="csimplearray"></a>CSimpleArray::CSimpleArray  
  配列オブジェクトのコンス トラクターです。  
   
 ```
@@ -133,7 +141,7 @@ CSimpleArray();
 ### <a name="remarks"></a>コメント  
  新しい空の作成、データ メンバーは初期化`CSimpleArray`オブジェクト、または、既存のコピー`CSimpleArray`オブジェクトです。  
   
-##  <a name="a-namedtora--csimplearraycsimplearray"></a><a name="dtor"></a>CSimpleArray:: ~ CSimpleArray  
+##  <a name="dtor"></a>CSimpleArray:: ~ CSimpleArray  
  デストラクターです。  
   
 ```
@@ -143,7 +151,7 @@ CSimpleArray();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namefinda--csimplearrayfind"></a><a name="find"></a>CSimpleArray::Find  
+##  <a name="find"></a>CSimpleArray::Find  
  配列の要素を検索します。  
   
 ```
@@ -160,7 +168,7 @@ int Find(const T& t) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&88;](../../atl/codesnippet/cpp/csimplearray-class_3.cpp)]  
   
-##  <a name="a-namegetdataa--csimplearraygetdata"></a><a name="getdata"></a>CSimpleArray::GetData  
+##  <a name="getdata"></a>CSimpleArray::GetData  
  配列に格納されているデータへのポインターを返します。  
   
 ```
@@ -170,7 +178,7 @@ T* GetData() const;
 ### <a name="return-value"></a>戻り値  
  配列内のデータへのポインターを返します。  
   
-##  <a name="a-namegetsizea--csimplearraygetsize"></a><a name="getsize"></a>CSimpleArray::GetSize  
+##  <a name="getsize"></a>CSimpleArray::GetSize  
  配列に格納されている要素の数を返します。  
   
 ```
@@ -180,7 +188,7 @@ int GetSize() const;
 ### <a name="return-value"></a>戻り値  
  配列に格納されている要素の数を返します。  
   
-##  <a name="a-nameoperatorata--csimplearrayoperator-"></a><a name="operator_at"></a>CSimpleArray::operator\[\]  
+##  <a name="operator_at"></a>CSimpleArray::operator\[\]  
  配列から要素を取得します。  
   
 ```
@@ -197,7 +205,7 @@ T& operator[](int nindex);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&89;](../../atl/codesnippet/cpp/csimplearray-class_4.cpp)]  
   
-##  <a name="a-nameoperatoreqa--csimplearrayoperator-"></a><a name="operator_eq"></a>CSimpleArray::operator =  
+##  <a name="operator_eq"></a>CSimpleArray::operator =  
  代入演算子。  
   
 ```
@@ -219,7 +227,7 @@ CSimpleArray<T, TEqual>
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&90;](../../atl/codesnippet/cpp/csimplearray-class_5.cpp)]  
   
-##  <a name="a-nameremovea--csimplearrayremove"></a><a name="remove"></a>CSimpleArray::Remove  
+##  <a name="remove"></a>CSimpleArray::Remove  
  配列から指定された要素を削除します。  
   
 ```
@@ -236,7 +244,7 @@ BOOL Remove(const T& t);
 ### <a name="remarks"></a>コメント  
  要素が削除されると、配列内の残りの要素が空の領域がいっぱいに番号が変更されます。  
   
-##  <a name="a-nameremovealla--csimplearrayremoveall"></a><a name="removeall"></a>CSimpleArray::RemoveAll  
+##  <a name="removeall"></a>CSimpleArray::RemoveAll  
  配列からすべての要素を削除します。  
   
 ```
@@ -246,7 +254,7 @@ void RemoveAll();
 ### <a name="remarks"></a>コメント  
  配列に格納されているすべての要素を削除します。  
   
-##  <a name="a-nameremoveata--csimplearrayremoveat"></a><a name="removeat"></a>CSimpleArray::RemoveAt  
+##  <a name="removeat"></a>CSimpleArray::RemoveAt  
  配列から指定された要素を削除します。  
   
 ```
@@ -263,7 +271,7 @@ BOOL RemoveAtint nIndex);
 ### <a name="remarks"></a>コメント  
  要素が削除されると、配列内の残りの要素が空の領域がいっぱいに番号が変更されます。  
   
-##  <a name="a-namesetatindexa--csimplearraysetatindex"></a><a name="setatindex"></a>CSimpleArray::SetAtIndex  
+##  <a name="setatindex"></a>CSimpleArray::SetAtIndex  
  配列の指定した要素を設定します。  
   
 ```

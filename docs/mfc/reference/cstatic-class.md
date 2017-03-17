@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CStatic
+- AFXWIN/CStatic
+- AFXWIN/CStatic::CStatic
+- AFXWIN/CStatic::Create
+- AFXWIN/CStatic::DrawItem
+- AFXWIN/CStatic::GetBitmap
+- AFXWIN/CStatic::GetCursor
+- AFXWIN/CStatic::GetEnhMetaFile
+- AFXWIN/CStatic::GetIcon
+- AFXWIN/CStatic::SetBitmap
+- AFXWIN/CStatic::SetCursor
+- AFXWIN/CStatic::SetEnhMetaFile
+- AFXWIN/CStatic::SetIcon
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +111,7 @@ class CStatic : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecreatea--cstaticcreate"></a><a name="create"></a>CStatic::Create  
+##  <a name="create"></a>CStatic::Create  
  Windows のスタティック コントロールを作成し、それをアタッチ、`CStatic`オブジェクトです。  
   
 ```  
@@ -156,7 +168,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#1;](../../mfc/reference/codesnippet/cpp/cstatic-class_1.cpp)]  
   
-##  <a name="a-namecstatica--cstaticcstatic"></a><a name="cstatic"></a>CStatic::CStatic  
+##  <a name="cstatic"></a>CStatic::CStatic  
  `CStatic` オブジェクトを構築します。  
   
 ```  
@@ -166,7 +178,7 @@ CStatic();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#2;](../../mfc/reference/codesnippet/cpp/cstatic-class_2.cpp)]  
   
-##  <a name="a-namedrawitema--cstaticdrawitem"></a><a name="drawitem"></a>CStatic::DrawItem  
+##  <a name="drawitem"></a>CStatic::DrawItem  
  オーナー描画のスタティック コントロールを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -180,7 +192,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 ### <a name="remarks"></a>コメント  
  オーナー描画の描画を実装するには、この関数をオーバーライド**CStatic**オブジェクト (コントロールにスタイルがある**SS_OWNERDRAW**)。  
   
-##  <a name="a-namegetbitmapa--cstaticgetbitmap"></a><a name="getbitmap"></a>CStatic::GetBitmap  
+##  <a name="getbitmap"></a>CStatic::GetBitmap  
  以前、ビットマップのハンドルを取得[SetBitmap](#setbitmap)、つまりに関連付けられている`CStatic`します。  
   
 ```  
@@ -193,7 +205,7 @@ HBITMAP GetBitmap() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#3;](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
   
-##  <a name="a-namegetcursora--cstaticgetcursor"></a><a name="getcursor"></a>CStatic::GetCursor  
+##  <a name="getcursor"></a>CStatic::GetCursor  
  以前、カーソルのハンドルを取得[以前](#setcursor)、つまりに関連付けられている`CStatic`します。  
   
 ```  
@@ -206,7 +218,7 @@ HCURSOR GetCursor();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&4;](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
   
-##  <a name="a-namegetenhmetafilea--cstaticgetenhmetafile"></a><a name="getenhmetafile"></a>CStatic::GetEnhMetaFile  
+##  <a name="getenhmetafile"></a>CStatic::GetEnhMetaFile  
  以前は、拡張メタファイルのハンドルを取得[SetEnhMetafile](#setenhmetafile)、つまりに関連付けられている`CStatic`します。  
   
 ```  
@@ -219,7 +231,7 @@ HENHMETAFILE GetEnhMetaFile() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#5;](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
   
-##  <a name="a-namegeticona--cstaticgeticon"></a><a name="geticon"></a>CStatic::GetIcon  
+##  <a name="geticon"></a>CStatic::GetIcon  
  以前のアイコンのハンドルを取得[SetIcon](#seticon)、つまりに関連付けられている`CStatic`します。  
   
 ```  
@@ -232,7 +244,7 @@ HICON GetIcon() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&6;](../../mfc/reference/codesnippet/cpp/cstatic-class_6.cpp)]  
   
-##  <a name="a-namesetbitmapa--cstaticsetbitmap"></a><a name="setbitmap"></a>CStatic::SetBitmap  
+##  <a name="setbitmap"></a>CStatic::SetBitmap  
  静的コントロールには、新しいビットマップを関連付けます。  
   
 ```  
@@ -269,7 +281,7 @@ MyStaticControl.SetBitmap(HBITMAP(MyBitmap));
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#3;](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
   
-##  <a name="a-namesetcursora--cstaticsetcursor"></a><a name="setcursor"></a>CStatic::SetCursor  
+##  <a name="setcursor"></a>CStatic::SetCursor  
  静的のコントロールに新しいカーソル イメージを関連付けます。  
   
 ```  
@@ -295,7 +307,7 @@ HCURSOR SetCursor(HCURSOR hCursor);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&4;](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
   
-##  <a name="a-namesetenhmetafilea--cstaticsetenhmetafile"></a><a name="setenhmetafile"></a>CStatic::SetEnhMetaFile  
+##  <a name="setenhmetafile"></a>CStatic::SetEnhMetaFile  
  新しい拡張メタファイル イメージを静的コントロールに関連付けます。  
   
 ```  
@@ -319,7 +331,7 @@ HENHMETAFILE SetEnhMetaFile(HENHMETAFILE hMetaFile);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatic&#5;](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
   
-##  <a name="a-nameseticona--cstaticseticon"></a><a name="seticon"></a>CStatic::SetIcon  
+##  <a name="seticon"></a>CStatic::SetIcon  
  静的のコントロールに新しいアイコン イメージを関連付けます。  
   
 ```  

@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CPaintDC
+- AFXWIN/CPaintDC
+- AFXWIN/CPaintDC::CPaintDC
+- AFXWIN/CPaintDC::m_ps
+- AFXWIN/CPaintDC::m_hWnd
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +91,7 @@ class CPaintDC : public CDC
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecpaintdca--cpaintdccpaintdc"></a><a name="cpaintdc"></a>CPaintDC::CPaintDC  
+##  <a name="cpaintdc"></a>CPaintDC::CPaintDC  
  構築、`CPaintDC`オブジェクト、描画、するため、アプリケーション ウィンドウを準備し、保管、 [PAINTSTRUCT](../../mfc/reference/paintstruct-structure.md)構造体、[塗りつぶす対象となる](#m_ps)メンバー変数です。  
   
 ```  
@@ -104,7 +108,7 @@ explicit CPaintDC(CWnd* pWnd);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&97;](../../mfc/codesnippet/cpp/cpaintdc-class_1.cpp)]  
   
-##  <a name="a-namemhwnda--cpaintdcmhwnd"></a><a name="m_hwnd"></a>CPaintDC::m_hWnd  
+##  <a name="m_hwnd"></a>CPaintDC::m_hWnd  
  `HWND`先である`CPaintDC`オブジェクトがアタッチされています。  
   
 ```  
@@ -117,7 +121,7 @@ HWND m_hWnd;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&98;](../../mfc/codesnippet/cpp/cpaintdc-class_2.cpp)]  
   
-##  <a name="a-namempsa--cpaintdcmps"></a><a name="m_ps"></a>CPaintDC::m_ps  
+##  <a name="m_ps"></a>CPaintDC::m_ps  
  `m_ps`型のパブリック メンバー変数[PAINTSTRUCT](../../mfc/reference/paintstruct-structure.md)します。  
   
 ```  

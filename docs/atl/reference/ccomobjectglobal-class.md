@@ -10,10 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComObjectGlobal
-- ATL::CComObjectGlobal<Base>
-- ATL::CComObjectGlobal
-- ATL.CComObjectGlobal
-- ATL.CComObjectGlobal<Base>
+- ATLCOM/ATL::CComObjectGlobal
+- ATLCOM/ATL::CComObjectGlobal::CComObjectGlobal
+- ATLCOM/ATL::CComObjectGlobal::AddRef
+- ATLCOM/ATL::CComObjectGlobal::QueryInterface
+- ATLCOM/ATL::CComObjectGlobal::Release
+- ATLCOM/ATL::CComObjectGlobal::m_hResFinalConstruct
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -93,7 +95,7 @@ class CComObjectGlobal : public Base
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameaddrefa--ccomobjectglobaladdref"></a><a name="addref"></a>CComObjectGlobal::AddRef  
+##  <a name="addref"></a>CComObjectGlobal::AddRef  
  1 には、オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -106,7 +108,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="remarks"></a>コメント  
  既定では、`AddRef`呼び出し**_Module::Lock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラスです。  
   
-##  <a name="a-nameccomobjectglobala--ccomobjectglobalccomobjectglobal"></a><a name="ccomobjectglobal"></a>CComObjectGlobal::CComObjectGlobal  
+##  <a name="ccomobjectglobal"></a>CComObjectGlobal::CComObjectGlobal  
  コンストラクターです。 呼び出し`FinalConstruct`し、設定[m_hResFinalConstruct](#m_hresfinalconstruct)に、`HRESULT`によって返される`FinalConstruct`です。  
   
 ```
@@ -116,7 +118,7 @@ CComObjectGlobal(void* = NULL));
 ### <a name="remarks"></a>コメント  
  基本クラスを派生していない場合[CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)、独自に指定する必要があります`FinalConstruct`メソッドです。 このデストラクターは `FinalRelease` を呼び出します。  
   
-##  <a name="a-namedtora--ccomobjectglobalccomobjectglobal"></a><a name="dtor"></a>CComObjectGlobal:: ~ CComObjectGlobal  
+##  <a name="dtor"></a>CComObjectGlobal:: ~ CComObjectGlobal  
  デストラクターです。  
   
 ```
@@ -126,14 +128,14 @@ CComObjectGlobal();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)します。  
   
-##  <a name="a-namemhresfinalconstructa--ccomobjectglobalmhresfinalconstruct"></a><a name="m_hresfinalconstruct"></a>CComObjectGlobal::m_hResFinalConstruct  
+##  <a name="m_hresfinalconstruct"></a>CComObjectGlobal::m_hResFinalConstruct  
  含む、`HRESULT`呼び出しから`FinalConstruct`の構築中に、`CComObjectGlobal`オブジェクトです。  
   
 ```
 HRESULT m_hResFinalConstruct;
 ```  
   
-##  <a name="a-namequeryinterfacea--ccomobjectglobalqueryinterface"></a><a name="queryinterface"></a>CComObjectGlobal::QueryInterface  
+##  <a name="queryinterface"></a>CComObjectGlobal::QueryInterface  
  要求されたインターフェイス ポインターへのポインターを取得します。  
   
 ```
@@ -153,7 +155,7 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
 ### <a name="remarks"></a>コメント  
  `QueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。  
   
-##  <a name="a-namereleasea--ccomobjectglobalrelease"></a><a name="release"></a>CComObjectGlobal::Release  
+##  <a name="release"></a>CComObjectGlobal::Release  
  1 で、オブジェクトの参照カウントをデクリメントします。  
   
 ```

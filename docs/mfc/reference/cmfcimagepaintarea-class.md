@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCImagePaintArea
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea::CMFCImagePaintArea
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea::GetMode
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea::SetBitmap
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea::SetColor
+- AFXIMAGEPAINTAREA/CMFCImagePaintArea::SetMode
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +98,7 @@ class CMFCImagePaintArea : public CButton
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afximagepaintarea.h  
   
-##  <a name="a-namecmfcimagepaintareaa--cmfcimagepaintareacmfcimagepaintarea"></a><a name="cmfcimagepaintarea"></a>CMFCImagePaintArea::CMFCImagePaintArea  
+##  <a name="cmfcimagepaintarea"></a>CMFCImagePaintArea::CMFCImagePaintArea  
  `CMFCImagePaintArea` オブジェクトを構築します。  
   
 ```  
@@ -106,7 +112,7 @@ CMFCImagePaintArea(CMFCImageEditorDialog* pParentDlg);
 |パラメーター|説明|  
 |[入力] `pParentDlg`|イメージ エディターの親である ダイアログ ボックスへのポインター。|  
   
-##  <a name="a-namegetmodea--cmfcimagepaintareagetmode"></a><a name="getmode"></a>CMFCImagePaintArea::GetMode  
+##  <a name="getmode"></a>CMFCImagePaintArea::GetMode  
  現在の描画モードを取得します。  
   
 ```  
@@ -116,7 +122,7 @@ IMAGE_EDIT_MODE GetMode() const;
 ### <a name="return-value"></a>戻り値  
  [IMAGE_EDIT_MODE](cmfcimagepaintarea-image-edit-mode-enumeration.md)現在の描画モードを指定する値。  
   
-##  <a name="a-namesetbitmapa--cmfcimagepaintareasetbitmap"></a><a name="setbitmap"></a>CMFCImagePaintArea::SetBitmap  
+##  <a name="setbitmap"></a>CMFCImagePaintArea::SetBitmap  
  ピクチャの領域のビットマップ イメージを設定します。  
   
 ```  
@@ -133,7 +139,7 @@ void SetBitmap(CBitmap* pBitmap);
 ### <a name="remarks"></a>コメント  
  場合`pBitmap`は`NULL`、このメソッドは、可変描画領域のサイズを&0; に設定します。 それ以外の場合、指定されたビットマップ イメージのサイズ変更可能な描画領域のサイズに設定します。  
   
-##  <a name="a-namesetcolora--cmfcimagepaintareasetcolor"></a><a name="setcolor"></a>CMFCImagePaintArea::SetColor  
+##  <a name="setcolor"></a>CMFCImagePaintArea::SetColor  
  現在の描画の色を設定します。  
   
 ```  
@@ -152,7 +158,7 @@ void SetColor(COLORREF color);
   
  イメージ エディター ダイアログ ボックスで以外のすべての描画モードの描画の色が使用される`IMAGE_EDIT_MODE_COLOR`します。 描画モードの詳細については、次を参照してください。 [cmfcimagepaintarea::image_edit_mode 列挙体](cmfcimagepaintarea-image-edit-mode-enumeration.md)します。  
   
-##  <a name="a-namesetmodea--cmfcimagepaintareasetmode"></a><a name="setmode"></a>CMFCImagePaintArea::SetMode  
+##  <a name="setmode"></a>CMFCImagePaintArea::SetMode  
  現在の描画モードを設定します。  
   
 ```  

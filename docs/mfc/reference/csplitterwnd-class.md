@@ -10,6 +10,40 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSplitterWnd
+- AFXEXT/CSplitterWnd
+- AFXEXT/CSplitterWnd::CSplitterWnd
+- AFXEXT/CSplitterWnd::ActivateNext
+- AFXEXT/CSplitterWnd::CanActivateNext
+- AFXEXT/CSplitterWnd::Create
+- AFXEXT/CSplitterWnd::CreateScrollBarCtrl
+- AFXEXT/CSplitterWnd::CreateStatic
+- AFXEXT/CSplitterWnd::CreateView
+- AFXEXT/CSplitterWnd::DeleteColumn
+- AFXEXT/CSplitterWnd::DeleteRow
+- AFXEXT/CSplitterWnd::DeleteView
+- AFXEXT/CSplitterWnd::DoKeyboardSplit
+- AFXEXT/CSplitterWnd::DoScroll
+- AFXEXT/CSplitterWnd::DoScrollBy
+- AFXEXT/CSplitterWnd::GetActivePane
+- AFXEXT/CSplitterWnd::GetColumnCount
+- AFXEXT/CSplitterWnd::GetColumnInfo
+- AFXEXT/CSplitterWnd::GetPane
+- AFXEXT/CSplitterWnd::GetRowCount
+- AFXEXT/CSplitterWnd::GetRowInfo
+- AFXEXT/CSplitterWnd::GetScrollStyle
+- AFXEXT/CSplitterWnd::IdFromRowCol
+- AFXEXT/CSplitterWnd::IsChildPane
+- AFXEXT/CSplitterWnd::IsTracking
+- AFXEXT/CSplitterWnd::RecalcLayout
+- AFXEXT/CSplitterWnd::SetActivePane
+- AFXEXT/CSplitterWnd::SetColumnInfo
+- AFXEXT/CSplitterWnd::SetRowInfo
+- AFXEXT/CSplitterWnd::SetScrollStyle
+- AFXEXT/CSplitterWnd::SplitColumn
+- AFXEXT/CSplitterWnd::SplitRow
+- AFXEXT/CSplitterWnd::OnDraw
+- AFXEXT/CSplitterWnd::OnDrawSplitter
+- AFXEXT/CSplitterWnd::OnInvertTracker
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -158,7 +192,7 @@ class CSplitterWnd : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-nameactivatenexta--csplitterwndactivatenext"></a><a name="activatenext"></a>CSplitterWnd::ActivateNext  
+##  <a name="activatenext"></a>CSplitterWnd::ActivateNext  
  次のペインまたは前のペインのコマンドを実行するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -172,7 +206,7 @@ virtual void ActivateNext(BOOL bPrev = FALSE);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は高レベルのコマンドで使用される、 [CView](../../mfc/reference/cview-class.md)に委任するクラス、`CSplitterWnd`実装します。  
   
-##  <a name="a-namecanactivatenexta--csplitterwndcanactivatenext"></a><a name="canactivatenext"></a>CSplitterWnd::CanActivateNext  
+##  <a name="canactivatenext"></a>CSplitterWnd::CanActivateNext  
  次のペインまたは前のペインのコマンドが現在可能かどうかを確認するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -189,7 +223,7 @@ virtual BOOL CanActivateNext(BOOL bPrev = FALSE);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は高レベルのコマンドで使用される、 [CView](../../mfc/reference/cview-class.md)に委任するクラス、`CSplitterWnd`実装します。  
   
-##  <a name="a-namecreatea--csplitterwndcreate"></a><a name="create"></a>CSplitterWnd::Create  
+##  <a name="create"></a>CSplitterWnd::Create  
  動的分割ウィンドウを作成するには、**作成**メンバー関数。  
   
 ```  
@@ -246,7 +280,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing #&125;](../../mfc/reference/codesnippet/cpp/csplitterwnd-class_1.cpp)]  
   
-##  <a name="a-namecreatescrollbarctrla--csplitterwndcreatescrollbarctrl"></a><a name="createscrollbarctrl"></a>CSplitterWnd::CreateScrollBarCtrl  
+##  <a name="createscrollbarctrl"></a>CSplitterWnd::CreateScrollBarCtrl  
  共有のスクロール バー コントロールを作成するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -268,7 +302,7 @@ virtual BOOL CreateScrollBarCtrl(
 ### <a name="remarks"></a>コメント  
  オーバーライド`CreateScrollBarCtrl`にスクロール バーの横にあるコントロールを付加します。 既定の動作では、通常の Windows のスクロール バー コントロールを作成します。  
   
-##  <a name="a-namecreatestatica--csplitterwndcreatestatic"></a><a name="createstatic"></a>CSplitterWnd::CreateStatic  
+##  <a name="createstatic"></a>CSplitterWnd::CreateStatic  
  静的な分割ウィンドウを作成するには、`CreateStatic`メンバー関数。  
   
 ```  
@@ -318,7 +352,7 @@ virtual BOOL CreateStatic(
   
  アーティクルの「分割ウィンドウ」を参照してください[複数のドキュメント タイプ、ビュー、およびフレーム ウィンドウ](../../mfc/multiple-document-types-views-and-frame-windows.md)、[テクニカル ノート 29:](../../mfc/tn029-splitter-windows.md)、および`CSplitterWnd`の詳細については、静的な分割ウィンドウ クラスの概要です。  
   
-##  <a name="a-namecreateviewa--csplitterwndcreateview"></a><a name="createview"></a>CSplitterWnd::CreateView  
+##  <a name="createview"></a>CSplitterWnd::CreateView  
  静的な分割ウィンドウの枠を作成します。  
   
 ```  
@@ -357,7 +391,7 @@ virtual BOOL CreateView(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&4;](../../mfc/reference/codesnippet/cpp/csplitterwnd-class_2.cpp)]  
   
-##  <a name="a-namecsplitterwnda--csplitterwndcsplitterwnd"></a><a name="csplitterwnd"></a>CSplitterWnd::CSplitterWnd  
+##  <a name="csplitterwnd"></a>CSplitterWnd::CSplitterWnd  
  構築する呼び出し、`CSplitterWnd`オブジェクトです。  
   
 ```  
@@ -367,7 +401,7 @@ CSplitterWnd();
 ### <a name="remarks"></a>コメント  
  構築、 `CSplitterWnd`&2; つのステップ内のオブジェクト。 最初に、作成するコンス トラクターを呼び出す、`CSplitterWnd`オブジェクトし、しを呼び出す、[作成](#create)分割ウィンドウを作成してそれにアタッチするメンバー関数、`CSplitterWnd`オブジェクトです。  
   
-##  <a name="a-namedeletecolumna--csplitterwnddeletecolumn"></a><a name="deletecolumn"></a>CSplitterWnd::DeleteColumn  
+##  <a name="deletecolumn"></a>CSplitterWnd::DeleteColumn  
  分割ウィンドウから列を削除します。  
   
 ```  
@@ -381,7 +415,7 @@ virtual void DeleteColumn(int colDelete);
 ### <a name="remarks"></a>コメント  
  動的分割ウィンドウのロジックを実装するためにフレームワークによって呼び出されます (分割ウィンドウがある場合に、 **SPLS_DYNAMIC_SPLIT**スタイル)。 これはカスタマイズ可能な仮想関数と共に[CreateView](#createview)により高度な動的分割ウィンドウを実装します。  
   
-##  <a name="a-namedeleterowa--csplitterwnddeleterow"></a><a name="deleterow"></a>CSplitterWnd::DeleteRow  
+##  <a name="deleterow"></a>CSplitterWnd::DeleteRow  
  分割ウィンドウから行を削除します。  
   
 ```  
@@ -395,7 +429,7 @@ virtual void DeleteRow(int rowDelete);
 ### <a name="remarks"></a>コメント  
  動的分割ウィンドウのロジックを実装するためにフレームワークによって呼び出されます (分割ウィンドウがある場合に、 **SPLS_DYNAMIC_SPLIT**スタイル)。 これはカスタマイズ可能な仮想関数と共に[CreateView](#createview)により高度な動的分割ウィンドウを実装します。  
   
-##  <a name="a-namedeleteviewa--csplitterwnddeleteview"></a><a name="deleteview"></a>CSplitterWnd::DeleteView  
+##  <a name="deleteview"></a>CSplitterWnd::DeleteView  
  分割ウィンドウのビューを削除します。  
   
 ```  
@@ -416,7 +450,7 @@ virtual void DeleteView(
   
  動的分割ウィンドウのロジックを実装するためにフレームワークによって呼び出されます (分割ウィンドウがある場合に、 **SPLS_DYNAMIC_SPLIT**スタイル)。 これはカスタマイズ可能な仮想関数と共に[CreateView](#createview)により高度な動的分割ウィンドウを実装します。  
   
-##  <a name="a-namedokeyboardsplita--csplitterwnddokeyboardsplit"></a><a name="dokeyboardsplit"></a>あると  
+##  <a name="dokeyboardsplit"></a>あると  
  キーボードの分割コマンド、通常「ウィンドウの分割です」の実行します。  
   
 ```  
@@ -429,7 +463,7 @@ virtual BOOL DoKeyboardSplit();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は高レベルのコマンドで使用される、 [CView](../../mfc/reference/cview-class.md)に委任するクラス、`CSplitterWnd`実装します。  
   
-##  <a name="a-namedoscrolla--csplitterwnddoscroll"></a><a name="doscroll"></a>CSplitterWnd::DoScroll  
+##  <a name="doscroll"></a>CSplitterWnd::DoScroll  
  分割ウィンドウのスクロールを同期を実行します。  
   
 ```  
@@ -467,7 +501,7 @@ virtual BOOL DoScroll(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、ビューは、スクロール メッセージを受け取ったときに、分割ウィンドウの同期スクロールを実行するためにフレームワークによって呼び出されます。 同期スクロールを許可する前に、ユーザーによる操作を必要とするためにオーバーライドします。  
   
-##  <a name="a-namedoscrollbya--csplitterwnddoscrollby"></a><a name="doscrollby"></a>CSplitterWnd::DoScrollBy  
+##  <a name="doscrollby"></a>CSplitterWnd::DoScrollBy  
  指定された数のピクセル単位で分割ウィンドウをスクロールします。  
   
 ```  
@@ -495,7 +529,7 @@ virtual BOOL DoScrollBy(
   
  スクロールを許可する前に、ユーザーによる操作を必要とするためにオーバーライドします。  
   
-##  <a name="a-namegetactivepanea--csplitterwndgetactivepane"></a><a name="getactivepane"></a>CSplitterWnd::GetActivePane  
+##  <a name="getactivepane"></a>CSplitterWnd::GetActivePane  
  フォーカスまたはアクティブなビュー、フレーム内のアクティブなペインを決定します。  
   
 ```  
@@ -517,7 +551,7 @@ virtual CWnd* GetActivePane(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、分割ウィンドウのアクティブなペインを調べるためにフレームワークによって呼び出されます。 アクティブなペインを取得する前に、ユーザーによる操作を必要とするためにオーバーライドします。  
   
-##  <a name="a-namegetcolumncounta--csplitterwndgetcolumncount"></a><a name="getcolumncount"></a>CSplitterWnd::GetColumnCount  
+##  <a name="getcolumncount"></a>CSplitterWnd::GetColumnCount  
  現在のウィンドウの列数を返します。  
   
 ```  
@@ -527,7 +561,7 @@ int GetColumnCount() const;
 ### <a name="return-value"></a>戻り値  
  分割ウィンドウの現在の列数を返します。 静的な分割では、列の最大数の場合はもします。  
   
-##  <a name="a-namegetcolumninfoa--csplitterwndgetcolumninfo"></a><a name="getcolumninfo"></a>CSplitterWnd::GetColumnInfo  
+##  <a name="getcolumninfo"></a>CSplitterWnd::GetColumnInfo  
  指定された列に関する情報を返します。  
   
 ```  
@@ -547,7 +581,7 @@ void GetColumnInfo(
  `cxMin`  
  参照、`int`列の現在の最小幅に設定します。  
   
-##  <a name="a-namegetpanea--csplitterwndgetpane"></a><a name="getpane"></a>CSplitterWnd::GetPane  
+##  <a name="getpane"></a>CSplitterWnd::GetPane  
  指定した行と列にあるペインを返します。  
   
 ```  
@@ -566,7 +600,7 @@ CWnd* GetPane(
 ### <a name="return-value"></a>戻り値  
  指定した行と列にあるペインを返します。 返されるペインは、通常、 [CView](../../mfc/reference/cview-class.md)-クラスを派生します。  
   
-##  <a name="a-namegetrowcounta--csplitterwndgetrowcount"></a><a name="getrowcount"></a>CSplitterWnd::GetRowCount  
+##  <a name="getrowcount"></a>CSplitterWnd::GetRowCount  
  現在のウィンドウの行の数を返します。  
   
 ```  
@@ -576,7 +610,7 @@ int GetRowCount() const;
 ### <a name="return-value"></a>戻り値  
  分割ウィンドウの行の現在の数を返します。 静的な分割ウィンドウでは、行の最大数の場合はもします。  
   
-##  <a name="a-namegetrowinfoa--csplitterwndgetrowinfo"></a><a name="getrowinfo"></a>CSplitterWnd::GetRowInfo  
+##  <a name="getrowinfo"></a>CSplitterWnd::GetRowInfo  
  指定された行に関する情報を返します。  
   
 ```  
@@ -599,7 +633,7 @@ void GetRowInfo(
 ### <a name="remarks"></a>コメント  
  このメンバー関数を呼び出して、指定された行に関する情報を取得します。 `cyCur`パラメーターが指定された行の現在の高さが渡され、`cyMin`行の高さの最小値が入力されます。  
   
-##  <a name="a-namegetscrollstylea--csplitterwndgetscrollstyle"></a><a name="getscrollstyle"></a>CSplitterWnd::GetScrollStyle  
+##  <a name="getscrollstyle"></a>CSplitterWnd::GetScrollStyle  
  分割ウィンドウで、共有のスクロール バー スタイルを返します。  
   
 ```  
@@ -615,7 +649,7 @@ DWORD GetScrollStyle() const;
   
  0 の場合、分割ウィンドウは、共有スクロール バーを現在管理しません。  
   
-##  <a name="a-nameidfromrowcola--csplitterwndidfromrowcol"></a><a name="idfromrowcol"></a>CSplitterWnd::IdFromRowCol  
+##  <a name="idfromrowcol"></a>CSplitterWnd::IdFromRowCol  
  子の指定した行と列にあるウィンドウのウィンドウの ID を取得します。  
   
 ```  
@@ -640,7 +674,7 @@ int IdFromRowCol(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&#5;](../../mfc/reference/codesnippet/cpp/csplitterwnd-class_3.cpp)]  
   
-##  <a name="a-nameischildpanea--csplitterwndischildpane"></a><a name="ischildpane"></a>CSplitterWnd::IsChildPane  
+##  <a name="ischildpane"></a>CSplitterWnd::IsChildPane  
  指定するかどうか`pWnd`分割ウィンドウの子ウィンドウは、現在です。  
   
 ```  
@@ -670,7 +704,7 @@ BOOL IsChildPane(
   
  このバージョンは廃止されており使用しないでください。  
   
-##  <a name="a-nameistrackinga--csplitterwndistracking"></a><a name="istracking"></a>CSplitterWnd::IsTracking  
+##  <a name="istracking"></a>CSplitterWnd::IsTracking  
  ウィンドウでスプリッター バーが動いている現在かどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -680,7 +714,7 @@ BOOL IsTracking();
 ### <a name="return-value"></a>戻り値  
  分割操作の実行中の場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-nameondrawsplittera--csplitterwndondrawsplitter"></a><a name="ondrawsplitter"></a>CSplitterWnd::OnDrawSplitter  
+##  <a name="ondrawsplitter"></a>CSplitterWnd::OnDrawSplitter  
  分割ウィンドウのイメージをレンダリングします。  
   
 ```  
@@ -713,7 +747,7 @@ virtual void OnDrawSplitter(
   
  動的分割ウィンドウの詳細は、資料の「分割ウィンドウ」を参照してください。[複数のドキュメント タイプ、ビュー、およびフレーム ウィンドウ](../../mfc/multiple-document-types-views-and-frame-windows.md)、[テクニカル ノート 29:](../../mfc/tn029-splitter-windows.md)、および`CSplitterWnd`クラスの概要です。  
   
-##  <a name="a-nameoninverttrackera--csplitterwndoninverttracker"></a><a name="oninverttracker"></a>CSplitterWnd::OnInvertTracker  
+##  <a name="oninverttracker"></a>CSplitterWnd::OnInvertTracker  
  同じのサイズと形状、フレーム ウィンドウに分割ウィンドウの画像をレンダリングします。  
   
 ```  
@@ -729,7 +763,7 @@ virtual void OnInvertTracker(const CRect& rect);
   
  動的分割ウィンドウの詳細は、資料の「分割ウィンドウ」を参照してください。[複数のドキュメント タイプ、ビュー、およびフレーム ウィンドウ](../../mfc/multiple-document-types-views-and-frame-windows.md)、[テクニカル ノート 29:](../../mfc/tn029-splitter-windows.md)、および`CSplitterWnd`クラスの概要です。  
   
-##  <a name="a-namerecalclayouta--csplitterwndrecalclayout"></a><a name="recalclayout"></a>CSplitterWnd::RecalcLayout  
+##  <a name="recalclayout"></a>CSplitterWnd::RecalcLayout  
  分割ウィンドウを表示し、行または列のサイズを調整した後の呼び出しです。  
   
 ```  
@@ -744,7 +778,7 @@ virtual void RecalcLayout();
 ### <a name="example"></a>例  
   例を参照してください[CSplitterWnd::SetColumnInfo](#setcolumninfo)します。  
   
-##  <a name="a-namesetactivepanea--csplitterwndsetactivepane"></a><a name="setactivepane"></a>CSplitterWnd::SetActivePane  
+##  <a name="setactivepane"></a>CSplitterWnd::SetActivePane  
  アクティブなフレーム内になるウィンドウを設定します。  
   
 ```  
@@ -769,7 +803,7 @@ virtual void SetActivePane(
   
  行と列のいずれかでウィンドウを指定**または**により`pWnd`します。  
   
-##  <a name="a-namesetcolumninfoa--csplitterwndsetcolumninfo"></a><a name="setcolumninfo"></a>CSplitterWnd::SetColumnInfo  
+##  <a name="setcolumninfo"></a>CSplitterWnd::SetColumnInfo  
  指定した列の情報を設定する呼び出しです。  
   
 ```  
@@ -797,7 +831,7 @@ void SetColumnInfo(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing&6;](../../mfc/reference/codesnippet/cpp/csplitterwnd-class_4.cpp)]  
   
-##  <a name="a-namesetrowinfoa--csplitterwndsetrowinfo"></a><a name="setrowinfo"></a>CSplitterWnd::SetRowInfo  
+##  <a name="setrowinfo"></a>CSplitterWnd::SetRowInfo  
  指定した行の情報を設定する呼び出しです。  
   
 ```  
@@ -822,7 +856,7 @@ void SetRowInfo(
   
  フレームワークでは、分割ウィンドウを表示するときは、分割ウィンドウのクライアント領域の右下隅から左上隅に向かってその最適な大きさに基づいて列と行でウィンドウをレイアウトします。  
   
-##  <a name="a-namesetscrollstylea--csplitterwndsetscrollstyle"></a><a name="setscrollstyle"></a>CSplitterWnd::SetScrollStyle  
+##  <a name="setscrollstyle"></a>CSplitterWnd::SetScrollStyle  
  分割ウィンドウの新しいスクロール スタイル スクロール バーのサポートの共有を指定します。  
   
 ```  
@@ -840,7 +874,7 @@ void SetScrollStyle(DWORD dwStyle);
 ### <a name="remarks"></a>コメント  
  スクロール バーを作成した後は破棄されない場合でも`SetScrollStyle`そのスタイルなしで呼び出される代わりに、スクロール バーが非表示になっています。 これにより、非表示になっている場合でも、その状態を保持するスクロール バーです。 呼び出した後`SetScrollStyle`を呼び出す必要がある[RecalcLayout](#recalclayout)のすべての変更を有効にします。  
   
-##  <a name="a-namesplitcolumna--csplitterwndsplitcolumn"></a><a name="splitcolumn"></a>CSplitterWnd::SplitColumn  
+##  <a name="splitcolumn"></a>CSplitterWnd::SplitColumn  
  フレーム ウィンドウを垂直方向に分割する位置を示します。  
   
 ```  
@@ -859,7 +893,7 @@ virtual BOOL SplitColumn(int cxBefore);
   
  `SplitColumn`動的分割ウィンドウのロジックを実装するためにフレームワークによって呼び出されます (分割ウィンドウがある場合に、 **SPLS_DYNAMIC_SPLIT**スタイル)。 これはカスタマイズ可能な仮想関数と共に[CreateView](#createview)により高度な動的分割ウィンドウを実装します。  
   
-##  <a name="a-namesplitrowa--csplitterwndsplitrow"></a><a name="splitrow"></a>CSplitterWnd::SplitRow  
+##  <a name="splitrow"></a>CSplitterWnd::SplitRow  
  フレーム ウィンドウを水平方向に分割する位置を示します。  
   
 ```  
@@ -878,7 +912,7 @@ virtual BOOL SplitRow(int cyBefore);
   
  `SplitRow`動的分割ウィンドウのロジックを実装するためにフレームワークによって呼び出されます (分割ウィンドウがある場合に、 **SPLS_DYNAMIC_SPLIT**スタイル)。 これはカスタマイズ可能な仮想関数と共に[CreateView](#createview)により高度な動的分割ウィンドウを実装します。  
   
-##  <a name="a-nameondrawa--csplitterwndondraw"></a><a name="ondraw"></a>CSplitterWnd::OnDraw  
+##  <a name="ondraw"></a>CSplitterWnd::OnDraw  
  分割ウィンドウを描画するためにフレームワークによって呼び出されます。  
   
 ```  

@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonQuickAccessToolBarDefaultState
+- AFXRIBBONQUICKACCESSTOOLBAR/CMFCRibbonQuickAccessToolBarDefaultState
+- AFXRIBBONQUICKACCESSTOOLBAR/CMFCRibbonQuickAccessToolBarDefaultState::CMFCRibbonQuickAccessToolBarDefaultState
+- AFXRIBBONQUICKACCESSTOOLBAR/CMFCRibbonQuickAccessToolBarDefaultState::AddCommand
+- AFXRIBBONQUICKACCESSTOOLBAR/CMFCRibbonQuickAccessToolBarDefaultState::CopyFrom
+- AFXRIBBONQUICKACCESSTOOLBAR/CMFCRibbonQuickAccessToolBarDefaultState::RemoveAll
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -78,7 +83,7 @@ class CMFCRibbonQuickAccessToolBarDefaultState
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxribbonquickaccesstoolbar.h  
   
-##  <a name="a-nameaddcommanda--cmfcribbonquickaccesstoolbardefaultstateaddcommand"></a><a name="addcommand"></a>CMFCRibbonQuickAccessToolBarDefaultState::AddCommand  
+##  <a name="addcommand"></a>CMFCRibbonQuickAccessToolBarDefaultState::AddCommand  
  既定の状態に、クイック アクセス ツールバーのコマンドを追加します。  
   
 ```  
@@ -97,7 +102,7 @@ void AddCommand(
 ### <a name="remarks"></a>コメント  
  コマンドを CMFCRibbonQuickAccessToolBarDefaultState に追加するには、3 つの結果が実現しています。 最初に、追加した各コマンドは、クイック アクセス ツールバーの右側にあるドロップダウン リストに表示されます。 この方法で、ユーザーが簡単に追加またはクイック アクセス ツールバーからコマンドを削除できます。 表示する記載されているコマンドのみ表示するよう既定の状態で、ユーザーがクリックすると、クイック アクセス ツールバーをリセットする&2; 番目に、**リセット**ボタンをクリックして、**カスタマイズ** ダイアログ ボックス。 3 つ目の状態が呼び出さない場合[CMFCRibbonBar::SetQuickAccessCommands](../../mfc/reference/cmfcribbonbar-class.md#setquickaccesscommands)、クイック アクセス ツールバー コマンドを使用して、表示されているこの一覧から既定の表示コマンドとして初めて、ユーザーがアプリケーションを実行します。 必要なすべてのコマンドを追加した後で呼び出す[CMFCRibbonBar::SetQuickAccessDefaultState](../../mfc/reference/cmfcribbonbar-class.md#setquickaccessdefaultstate)そのリボン バーのクイック アクセス ツールバーの既定の状態としてこのインスタンスを設定します。  
   
-##  <a name="a-namecopyfroma--cmfcribbonquickaccesstoolbardefaultstatecopyfrom"></a><a name="copyfrom"></a>CMFCRibbonQuickAccessToolBarDefaultState::CopyFrom  
+##  <a name="copyfrom"></a>CMFCRibbonQuickAccessToolBarDefaultState::CopyFrom  
  別の&1; つのクイック アクセス ツールバーのプロパティをコピーします。  
   
 ```  
@@ -111,7 +116,7 @@ void CopyFrom(const CMFCRibbonQuickAccessToolBarDefaultState& src);
 ### <a name="remarks"></a>コメント  
  このメソッドでは、各コマンドをコピー元の`CMFCRibbonQuickAccessToolBarDefaultState`オブジェクトがこのオブジェクトを使用して、 [CMFCRibbonQuickAccessToolBarDefaultState::AddCommand](#addcommand)メソッドです。  
   
-##  <a name="a-namecmfcribbonquickaccesstoolbardefaultstatea--cmfcribbonquickaccesstoolbardefaultstatecmfcribbonquickaccesstoolbardefaultstate"></a><a name="cmfcribbonquickaccesstoolbardefaultstate"></a>CMFCRibbonQuickAccessToolBarDefaultState::CMFCRibbonQuickAccessToolBarDefaultState  
+##  <a name="cmfcribbonquickaccesstoolbardefaultstate"></a>CMFCRibbonQuickAccessToolBarDefaultState::CMFCRibbonQuickAccessToolBarDefaultState  
  クイック アクセス ツールバーの既定の状態オブジェクトを構築します。  
   
 ```  
@@ -121,7 +126,7 @@ CMFCRibbonQuickAccessToolBarDefaultState();
 ### <a name="remarks"></a>コメント  
  既定では、一連のコマンドの新しいインスタンス[CMFRibbonQuickAccessToolBarDefaultState](../../mfc/reference/cmfcribbonquickaccesstoolbardefaultstate-class.md)が含まれていますが空です。  
   
-##  <a name="a-nameremovealla--cmfcribbonquickaccesstoolbardefaultstateremoveall"></a><a name="removeall"></a>CMFCRibbonQuickAccessToolBarDefaultState::RemoveAll  
+##  <a name="removeall"></a>CMFCRibbonQuickAccessToolBarDefaultState::RemoveAll  
  クイック アクセス ツールバーの既定のコマンドの一覧をクリアします。  
   
 ```  

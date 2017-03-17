@@ -10,7 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CHwndRenderTarget
-- afxrendertarget/CHwndRenderTarget
+- AFXRENDERTARGET/CHwndRenderTarget
+- AFXRENDERTARGET/CHwndRenderTarget::CHwndRenderTarget
+- AFXRENDERTARGET/CHwndRenderTarget::Attach
+- AFXRENDERTARGET/CHwndRenderTarget::CheckWindowState
+- AFXRENDERTARGET/CHwndRenderTarget::Create
+- AFXRENDERTARGET/CHwndRenderTarget::Detach
+- AFXRENDERTARGET/CHwndRenderTarget::GetHwnd
+- AFXRENDERTARGET/CHwndRenderTarget::GetHwndRenderTarget
+- AFXRENDERTARGET/CHwndRenderTarget::ReCreate
+- AFXRENDERTARGET/CHwndRenderTarget::Resize
+- AFXRENDERTARGET/CHwndRenderTarget::m_pHwndRenderTarget
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +102,7 @@ class CHwndRenderTarget : public CRenderTarget;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-nameattacha--chwndrendertargetattach"></a><a name="attach"></a>CHwndRenderTarget::Attach  
+##  <a name="attach"></a>CHwndRenderTarget::Attach  
  既存の接続は、ターゲット オブジェクトのインターフェイスを表示します。  
   
 ```  
@@ -103,7 +113,7 @@ void Attach(ID2D1HwndRenderTarget* pTarget);
  `pTarget`  
  既存のレンダー ターゲットのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namecheckwindowstatea--chwndrendertargetcheckwindowstate"></a><a name="checkwindowstate"></a>CHwndRenderTarget::CheckWindowState  
+##  <a name="checkwindowstate"></a>CHwndRenderTarget::CheckWindowState  
  このレンダー ターゲットに関連付けられている HWND が遮蔽かどうかを示します。  
   
 ```  
@@ -113,7 +123,7 @@ D2D1_WINDOW_STATE CheckWindowState() const;
 ### <a name="return-value"></a>戻り値  
  これに関連付けられている HWND がターゲットをレンダリングするかどうかを示す値が遮蔽されます。  
   
-##  <a name="a-namechwndrendertargeta--chwndrendertargetchwndrendertarget"></a><a name="chwndrendertarget"></a>CHwndRenderTarget::CHwndRenderTarget  
+##  <a name="chwndrendertarget"></a>CHwndRenderTarget::CHwndRenderTarget  
  Hwnd の分離 CHwndRenderTarget オブジェクトを構築します。  
   
 ```  
@@ -124,7 +134,7 @@ CHwndRenderTarget(HWND hwnd = NULL);
  `hwnd`  
  これに関連付けられている HWND レンダリング ターゲット  
   
-##  <a name="a-namecreatea--chwndrendertargetcreate"></a><a name="create"></a>CHwndRenderTarget::Create  
+##  <a name="create"></a>CHwndRenderTarget::Create  
  ウィンドウに関連付けられているレンダー ターゲットを作成します。  
   
 ```  
@@ -138,7 +148,7 @@ BOOL Create(HWND hWnd);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合は FALSE を返します  
   
-##  <a name="a-namedetacha--chwndrendertargetdetach"></a><a name="detach"></a>CHwndRenderTarget::Detach  
+##  <a name="detach"></a>CHwndRenderTarget::Detach  
  レンダー ターゲットのインターフェイス、オブジェクトからのデタッチします。  
   
 ```  
@@ -148,7 +158,7 @@ ID2D1HwndRenderTarget* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたへのポインターは、対象のインターフェイスをレンダリングします。  
   
-##  <a name="a-namegethwnda--chwndrendertargetgethwnd"></a><a name="gethwnd"></a>CHwndRenderTarget::GetHwnd  
+##  <a name="gethwnd"></a>CHwndRenderTarget::GetHwnd  
  これに関連付けられている HWND を返します。 は、ターゲットをレンダリングします。  
   
 ```  
@@ -158,7 +168,7 @@ HWND GetHwnd() const;
 ### <a name="return-value"></a>戻り値  
  これに関連付けられている HWND では、ターゲットをレンダリングします。  
   
-##  <a name="a-namegethwndrendertargeta--chwndrendertargetgethwndrendertarget"></a><a name="gethwndrendertarget"></a>CHwndRenderTarget::GetHwndRenderTarget  
+##  <a name="gethwndrendertarget"></a>CHwndRenderTarget::GetHwndRenderTarget  
  ID2D1HwndRenderTarget インターフェイスを返します。  
   
 ```  
@@ -168,14 +178,14 @@ ID2D1HwndRenderTarget* GetHwndRenderTarget();
 ### <a name="return-value"></a>戻り値  
  ID2D1HwndRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namemphwndrendertargeta--chwndrendertargetmphwndrendertarget"></a><a name="m_phwndrendertarget"></a>CHwndRenderTarget::m_pHwndRenderTarget  
+##  <a name="m_phwndrendertarget"></a>CHwndRenderTarget::m_pHwndRenderTarget  
  ID2D1HwndRenderTarget オブジェクトへのポインター。  
   
 ```  
 ID2D1HwndRenderTarget* m_pHwndRenderTarget;  
 ```  
   
-##  <a name="a-nameoperatorid2d1hwndrendertargetstara--chwndrendertargetoperator-id2d1hwndrendertarget"></a><a name="operator_id2d1hwndrendertarget_star"></a>CHwndRenderTarget::operator ID2D1HwndRenderTarget *  
+##  <a name="operator_id2d1hwndrendertarget_star"></a>CHwndRenderTarget::operator ID2D1HwndRenderTarget *  
  ID2D1HwndRenderTarget インターフェイスを返します。  
   
 ```  
@@ -185,7 +195,7 @@ operator ID2D1HwndRenderTarget*();
 ### <a name="return-value"></a>戻り値  
  ID2D1HwndRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namerecreatea--chwndrendertargetrecreate"></a><a name="recreate"></a>CHwndRenderTarget::ReCreate  
+##  <a name="recreate"></a>CHwndRenderTarget::ReCreate  
  ウィンドウに関連付けられているレンダー ターゲットを再作成します。  
   
 ```  
@@ -199,7 +209,7 @@ BOOL ReCreate(HWND hWnd);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-nameresizea--chwndrendertargetresize"></a><a name="resize"></a>CHwndRenderTarget::Resize  
+##  <a name="resize"></a>CHwndRenderTarget::Resize  
  指定したピクセル サイズにレンダー ターゲットのサイズを変更します。  
   
 ```  

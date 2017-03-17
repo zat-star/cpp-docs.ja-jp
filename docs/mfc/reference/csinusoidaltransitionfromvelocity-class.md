@@ -10,7 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSinusoidalTransitionFromVelocity
-- afxanimationcontroller/CSinusoidalTransitionFromVelocity
+- AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromVelocity
+- AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromVelocity::CSinusoidalTransitionFromVelocity
+- AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromVelocity::Create
+- AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromVelocity::m_duration
+- AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromVelocity::m_period
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -83,7 +87,7 @@ class CSinusoidalTransitionFromVelocity : public CBaseTransition;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-namecreatea--csinusoidaltransitionfromvelocitycreate"></a><a name="create"></a>CSinusoidalTransitionFromVelocity::Create  
+##  <a name="create"></a>CSinusoidalTransitionFromVelocity::Create  
  カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
   
 ```  
@@ -99,7 +103,7 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  移行が正常に作成された場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namecsinusoidaltransitionfromvelocitya--csinusoidaltransitionfromvelocitycsinusoidaltransitionfromvelocity"></a><a name="csinusoidaltransitionfromvelocity"></a>CSinusoidalTransitionFromVelocity::CSinusoidalTransitionFromVelocity  
+##  <a name="csinusoidaltransitionfromvelocity"></a>CSinusoidalTransitionFromVelocity::CSinusoidalTransitionFromVelocity  
  遷移のオブジェクトを構築します。  
   
 ```  
@@ -115,14 +119,14 @@ CSinusoidalTransitionFromVelocity(
  `period`  
  秒単位で正弦波形の振幅の期間。  
   
-##  <a name="a-namemdurationa--csinusoidaltransitionfromvelocitymduration"></a><a name="m_duration"></a>CSinusoidalTransitionFromVelocity::m_duration  
+##  <a name="m_duration"></a>CSinusoidalTransitionFromVelocity::m_duration  
  遷移の期間です。  
   
 ```  
 UI_ANIMATION_SECONDS m_duration;  
 ```  
   
-##  <a name="a-namemperioda--csinusoidaltransitionfromvelocitymperiod"></a><a name="m_period"></a>CSinusoidalTransitionFromVelocity::m_period  
+##  <a name="m_period"></a>CSinusoidalTransitionFromVelocity::m_period  
  秒単位で正弦波形の振幅の期間。  
   
 ```  

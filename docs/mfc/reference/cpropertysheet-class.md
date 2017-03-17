@@ -10,6 +10,30 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CPropertySheet
+- AFXDLGS/CPropertySheet
+- AFXDLGS/CPropertySheet::CPropertySheet
+- AFXDLGS/CPropertySheet::AddPage
+- AFXDLGS/CPropertySheet::Construct
+- AFXDLGS/CPropertySheet::Create
+- AFXDLGS/CPropertySheet::DoModal
+- AFXDLGS/CPropertySheet::EnableStackedTabs
+- AFXDLGS/CPropertySheet::EndDialog
+- AFXDLGS/CPropertySheet::GetActiveIndex
+- AFXDLGS/CPropertySheet::GetActivePage
+- AFXDLGS/CPropertySheet::GetPage
+- AFXDLGS/CPropertySheet::GetPageCount
+- AFXDLGS/CPropertySheet::GetPageIndex
+- AFXDLGS/CPropertySheet::GetTabControl
+- AFXDLGS/CPropertySheet::MapDialogRect
+- AFXDLGS/CPropertySheet::OnInitDialog
+- AFXDLGS/CPropertySheet::PressButton
+- AFXDLGS/CPropertySheet::RemovePage
+- AFXDLGS/CPropertySheet::SetActivePage
+- AFXDLGS/CPropertySheet::SetFinishText
+- AFXDLGS/CPropertySheet::SetTitle
+- AFXDLGS/CPropertySheet::SetWizardButtons
+- AFXDLGS/CPropertySheet::SetWizardMode
+- AFXDLGS/CPropertySheet::m_psh
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -140,7 +164,7 @@ class CPropertySheet : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdlgs.h  
   
-##  <a name="a-nameaddpagea--cpropertysheetaddpage"></a><a name="addpage"></a>が  
+##  <a name="addpage"></a>が  
  プロパティ シートで指定した右端のタブ ページを追加します。  
   
 ```  
@@ -165,7 +189,7 @@ void AddPage(CPropertyPage* pPage);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&129;](../../mfc/codesnippet/cpp/cpropertysheet-class_1.cpp)]  
   
-##  <a name="a-nameconstructa--cpropertysheetconstruct"></a><a name="construct"></a>まず、  
+##  <a name="construct"></a>まず、  
  `CPropertySheet` オブジェクトを構築します。  
   
 ```  
@@ -233,7 +257,7 @@ void Construct(
   
  [!code-cpp[NVC_MFCDocView #&130;](../../mfc/codesnippet/cpp/cpropertysheet-class_2.cpp)]  
   
-##  <a name="a-namecpropertysheeta--cpropertysheetcpropertysheet"></a><a name="cpropertysheet"></a>呼び出します  
+##  <a name="cpropertysheet"></a>呼び出します  
  `CPropertySheet` オブジェクトを構築します。  
   
 ```  
@@ -302,7 +326,7 @@ CPropertySheet(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&131;](../../mfc/codesnippet/cpp/cpropertysheet-class_3.cpp)]  
   
-##  <a name="a-namecreatea--cpropertysheetcreate"></a><a name="create"></a>CPropertySheet::Create  
+##  <a name="create"></a>CPropertySheet::Create  
  モードレス プロパティ シートを表示します。  
   
 ```  
@@ -340,7 +364,7 @@ virtual BOOL Create(CWnd* pParentWnd = NULL,
   
  [!code-cpp[NVC_MFCDocView #&133;](../../mfc/codesnippet/cpp/cpropertysheet-class_5.cpp)]  
   
-##  <a name="a-namedomodala--cpropertysheetdomodal"></a><a name="domodal"></a>する  
+##  <a name="domodal"></a>する  
  モーダル プロパティ シートを表示します。  
   
 ```  
@@ -383,7 +407,7 @@ virtual INT_PTR DoModal();
 ### <a name="example"></a>例  
   例を参照してください[が](#addpage)です。  
   
-##  <a name="a-nameenablestackedtabsa--cpropertysheetenablestackedtabs"></a><a name="enablestackedtabs"></a>CPropertySheet::EnableStackedTabs  
+##  <a name="enablestackedtabs"></a>CPropertySheet::EnableStackedTabs  
  プロパティ シートのタブの行をスタックするかどうかを示します。  
   
 ```  
@@ -402,7 +426,7 @@ void EnableStackedTabs(BOOL bStacked);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&134;](../../mfc/codesnippet/cpp/cpropertysheet-class_6.cpp)]  
   
-##  <a name="a-nameenddialoga--cpropertysheetenddialog"></a><a name="enddialog"></a>CPropertySheet::EndDialog  
+##  <a name="enddialog"></a>CPropertySheet::EndDialog  
  プロパティ シートを終了します。  
   
 ```  
@@ -421,7 +445,7 @@ void EndDialog(int nEndID);
 ### <a name="example"></a>例  
   例を参照してください[CPropertySheet::PressButton](#pressbutton)します。  
   
-##  <a name="a-namegetactiveindexa--cpropertysheetgetactiveindex"></a><a name="getactiveindex"></a>CPropertySheet::GetActiveIndex  
+##  <a name="getactiveindex"></a>CPropertySheet::GetActiveIndex  
  インデックスのプロパティ シート ウィンドウのアクティブなページ数を取得しをパラメーターとして返されるインデックス番号を使用し、`GetPage`です。  
   
 ```  
@@ -434,7 +458,7 @@ int GetActiveIndex() const;
 ### <a name="example"></a>例  
   例を参照してください[CPropertySheet::GetActivePage](#getactivepage)します。  
   
-##  <a name="a-namegetactivepagea--cpropertysheetgetactivepage"></a><a name="getactivepage"></a>CPropertySheet::GetActivePage  
+##  <a name="getactivepage"></a>CPropertySheet::GetActivePage  
  プロパティ シート ウィンドウのアクティブ ページを取得します。  
   
 ```  
@@ -450,7 +474,7 @@ CPropertyPage* GetActivePage() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&135;](../../mfc/codesnippet/cpp/cpropertysheet-class_7.cpp)]  
   
-##  <a name="a-namegetpagea--cpropertysheetgetpage"></a><a name="getpage"></a>CPropertySheet::GetPage  
+##  <a name="getpage"></a>CPropertySheet::GetPage  
  このプロパティ シートで指定したページへのポインターを返します。  
   
 ```  
@@ -467,7 +491,7 @@ CPropertyPage* GetPage(int nPage) const;
 ### <a name="example"></a>例  
   例を参照してください[CPropertyPage::OnWizardFinish](../../mfc/reference/cpropertypage-class.md#onwizardfinish)します。  
   
-##  <a name="a-namegetpagecounta--cpropertysheetgetpagecount"></a><a name="getpagecount"></a>CPropertySheet::GetPageCount  
+##  <a name="getpagecount"></a>CPropertySheet::GetPageCount  
  プロパティ シートの現在のページの数を決定します。  
   
 ```  
@@ -480,7 +504,7 @@ int GetPageCount() const;
 ### <a name="example"></a>例  
   例を参照してください[CPropertyPage::OnWizardFinish](../../mfc/reference/cpropertypage-class.md#onwizardfinish)します。  
   
-##  <a name="a-namegetpageindexa--cpropertysheetgetpageindex"></a><a name="getpageindex"></a>CPropertySheet::GetPageIndex  
+##  <a name="getpageindex"></a>CPropertySheet::GetPageIndex  
  プロパティ シートで指定したページのインデックス番号を取得します。  
   
 ```  
@@ -500,7 +524,7 @@ int GetPageIndex(CPropertyPage* pPage);
 ### <a name="example"></a>例  
   例を参照してください[CPropertySheet::GetActivePage](#getactivepage)します。  
   
-##  <a name="a-namegettabcontrola--cpropertysheetgettabcontrol"></a><a name="gettabcontrol"></a>CPropertySheet::GetTabControl  
+##  <a name="gettabcontrol"></a>CPropertySheet::GetTabControl  
  タブ コントロールに固有の作業を行うタブ コントロールへのポインターを取得 (つまり、すべての Api を使用して[CTabCtrl](../../mfc/reference/ctabctrl-class.md))。  
   
 ```  
@@ -516,7 +540,7 @@ CTabCtrl* GetTabControl() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&136;](../../mfc/codesnippet/cpp/cpropertysheet-class_8.cpp)]  
   
-##  <a name="a-namempsha--cpropertysheetmpsh"></a><a name="m_psh"></a>CPropertySheet::m_psh  
+##  <a name="m_psh"></a>CPropertySheet::m_psh  
  構造体のメンバーの特性を保持する[PROPSHEETHEADER](http://msdn.microsoft.com/library/windows/desktop/bb774546)します。  
   
 ### <a name="remarks"></a>コメント  
@@ -527,7 +551,7 @@ CTabCtrl* GetTabControl() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&143;](../../mfc/codesnippet/cpp/cpropertysheet-class_9.cpp)]  
   
-##  <a name="a-namemapdialogrecta--cpropertysheetmapdialogrect"></a><a name="mapdialogrect"></a>CPropertySheet::MapDialogRect  
+##  <a name="mapdialogrect"></a>CPropertySheet::MapDialogRect  
  四角形のダイアログ ボックスの単位を画面単位に変換します。  
   
 ```  
@@ -545,7 +569,7 @@ void MapDialogRect(LPRECT lpRect) const;
   
  `MapDialogRect`メンバー関数は、ダイアログ ボックスの単位を置き換えます`lpRect`で画面の [作成] ダイアログ ボックスに、ボックス内のコントロールの位置四角形を使用できるようにする単位 (ピクセル単位)。  
   
-##  <a name="a-nameoninitdialoga--cpropertysheetoninitdialog"></a><a name="oninitdialog"></a>CPropertySheet::OnInitDialog  
+##  <a name="oninitdialog"></a>CPropertySheet::OnInitDialog  
  プロパティ シートの初期化処理を強化するよりも優先されます。  
   
 ```  
@@ -562,7 +586,7 @@ virtual BOOL OnInitDialog();
   
  このメンバー関数のメッセージ マップ エントリが不要です。  
   
-##  <a name="a-namepressbuttona--cpropertysheetpressbutton"></a><a name="pressbutton"></a>CPropertySheet::PressButton  
+##  <a name="pressbutton"></a>CPropertySheet::PressButton  
  プロパティ シートで指定したボタンの選択をシミュレートします。  
   
 ```  
@@ -595,7 +619,7 @@ void PressButton(int nButton);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&137;](../../mfc/codesnippet/cpp/cpropertysheet-class_10.cpp)]  
   
-##  <a name="a-nameremovepagea--cpropertysheetremovepage"></a><a name="removepage"></a>CPropertySheet::RemovePage  
+##  <a name="removepage"></a>CPropertySheet::RemovePage  
  プロパティ シートからページを削除し、関連するウィンドウを破棄します。  
   
 ```  
@@ -613,7 +637,7 @@ void RemovePage(int nPage);
 ### <a name="remarks"></a>コメント  
  [CPropertyPage](../../mfc/reference/cpropertypage-class.md)までの所有者はオブジェクト自体は破棄されません、`CPropertySheet`期間が終了します。  
   
-##  <a name="a-namesetactivepagea--cpropertysheetsetactivepage"></a><a name="setactivepage"></a>CPropertySheet::SetActivePage  
+##  <a name="setactivepage"></a>CPropertySheet::SetActivePage  
  作業中のページを変更します。  
   
 ```  
@@ -637,7 +661,7 @@ BOOL SetActivePage(CPropertyPage* pPage);
 ### <a name="example"></a>例  
   例を参照してください[CPropertySheet::GetActivePage](#getactivepage)します。  
   
-##  <a name="a-namesetfinishtexta--cpropertysheetsetfinishtext"></a><a name="setfinishtext"></a>CPropertySheet::SetFinishText  
+##  <a name="setfinishtext"></a>CPropertySheet::SetFinishText  
  [完了] コマンド ボタンのテキストを設定します。  
   
 ```  
@@ -654,7 +678,7 @@ void SetFinishText(LPCTSTR lpszText);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&138;](../../mfc/codesnippet/cpp/cpropertysheet-class_11.cpp)]  
   
-##  <a name="a-namesettitlea--cpropertysheetsettitle"></a><a name="settitle"></a>CPropertySheet::SetTitle  
+##  <a name="settitle"></a>CPropertySheet::SetTitle  
  プロパティ シートのキャプション (フレーム ウィンドウのタイトル バーに表示されるテキスト) を指定します。  
   
 ```  
@@ -676,7 +700,7 @@ void SetTitle(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&139;](../../mfc/codesnippet/cpp/cpropertysheet-class_12.cpp)]  
   
-##  <a name="a-namesetwizardbuttonsa--cpropertysheetsetwizardbuttons"></a><a name="setwizardbuttons"></a>CPropertySheet::SetWizardButtons  
+##  <a name="setwizardbuttons"></a>CPropertySheet::SetWizardButtons  
  有効またはウィザードのプロパティ シートに戻る、Next、または [完了] ボタンを無効にします。  
   
 ```  
@@ -709,7 +733,7 @@ void SetWizardButtons(DWORD dwFlags);
   
  [!code-cpp[NVC_MFCDocView #&138;](../../mfc/codesnippet/cpp/cpropertysheet-class_11.cpp)]  
   
-##  <a name="a-namesetwizardmodea--cpropertysheetsetwizardmode"></a><a name="setwizardmode"></a>CPropertySheet::SetWizardMode  
+##  <a name="setwizardmode"></a>CPropertySheet::SetWizardMode  
  ウィザードとしてのプロパティ ページを設定します。  
   
 ```  

@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonMiniToolBar
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar::IsContextMenuMode
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar::IsRibbonMiniToolBar
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar::SetCommands
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar::Show
+- AFXRIBBONMINITOOLBAR/CMFCRibbonMiniToolBar::ShowWithContextMenu
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +100,7 @@ class CMFCRibbonMiniToolBar : public CMFCRibbonPanelMenu
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxRibbonMiniToolBar.h  
   
-##  <a name="a-namesetcommandsa--cmfcribbonminitoolbarsetcommands"></a><a name="setcommands"></a>CMFCRibbonMiniToolBar::SetCommands  
+##  <a name="setcommands"></a>CMFCRibbonMiniToolBar::SetCommands  
  ツール バーに表示するコマンドのリストを設定します。  
   
 ```  
@@ -118,7 +124,7 @@ void SetCommands(
   
  [!code-cpp[NVC_MFC_MSOffice2007Demo&#9;](../../mfc/reference/codesnippet/cpp/cmfcribbonminitoolbar-class_1.cpp)]  
   
-##  <a name="a-nameshowa--cmfcribbonminitoolbarshow"></a><a name="show"></a>CMFCRibbonMiniToolBar::Show  
+##  <a name="show"></a>CMFCRibbonMiniToolBar::Show  
  指定した画面座標に、ミニ ツール バーを表示します。  
   
 ```  
@@ -137,7 +143,7 @@ BOOL Show(
 ### <a name="return-value"></a>戻り値  
  `TRUE`ミニ ツールバーが正常に表示された場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameshowwithcontextmenua--cmfcribbonminitoolbarshowwithcontextmenu"></a><a name="showwithcontextmenu"></a>CMFCRibbonMiniToolBar::ShowWithContextMenu  
+##  <a name="showwithcontextmenu"></a>CMFCRibbonMiniToolBar::ShowWithContextMenu  
  コンテキスト メニューとミニ ツール バーが表示されます。  
   
 ```  
@@ -167,7 +173,7 @@ BOOL ShowWithContextMenu(
 ### <a name="remarks"></a>コメント  
  コンテキスト メニューを持つミニ ツールバーを表示するのにには、この関数を使用します。 コンテキスト メニューは、ミニ ツールバーの下の位置指定の 15 ピクセルです。  
   
-##  <a name="a-nameiscontextmenumodea--cmfcribbonminitoolbariscontextmenumode"></a><a name="iscontextmenumode"></a>CMFCRibbonMiniToolBar::IsContextMenuMode  
+##  <a name="iscontextmenumode"></a>CMFCRibbonMiniToolBar::IsContextMenuMode  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -178,7 +184,7 @@ BOOL IsContextMenuMode() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisribbonminitoolbara--cmfcribbonminitoolbarisribbonminitoolbar"></a><a name="isribbonminitoolbar"></a>CMFCRibbonMiniToolBar::IsRibbonMiniToolBar  
+##  <a name="isribbonminitoolbar"></a>CMFCRibbonMiniToolBar::IsRibbonMiniToolBar  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  

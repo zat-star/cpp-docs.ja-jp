@@ -10,7 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAnimationColor
-- afxanimationcontroller/CAnimationColor
+- AFXANIMATIONCONTROLLER/CAnimationColor
+- AFXANIMATIONCONTROLLER/CAnimationColor::CAnimationColor
+- AFXANIMATIONCONTROLLER/CAnimationColor::AddTransition
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetB
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetDefaultValue
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetG
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetR
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetValue
+- AFXANIMATIONCONTROLLER/CAnimationColor::SetDefaultValue
+- AFXANIMATIONCONTROLLER/CAnimationColor::GetAnimationVariableList
+- AFXANIMATIONCONTROLLER/CAnimationColor::m_bValue
+- AFXANIMATIONCONTROLLER/CAnimationColor::m_gValue
+- AFXANIMATIONCONTROLLER/CAnimationColor::m_rValue
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -103,7 +115,7 @@ class CAnimationColor : public CAnimationBaseObject;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-nameaddtransitiona--canimationcoloraddtransition"></a><a name="addtransition"></a>CAnimationColor::AddTransition  
+##  <a name="addtransition"></a>CAnimationColor::AddTransition  
  赤、緑、および青のコンポーネントの遷移を追加します。  
   
 ```  
@@ -126,7 +138,7 @@ void AddTransition(
 ### <a name="remarks"></a>コメント  
  色要素を表すアニメーション変数に適用する遷移の内部リストに指定された遷移を追加するには、この関数を呼び出します。 切り替え効果を追加すると、いないすぐに適用されるとなり内部リストに格納されています。 遷移 (特定の値のストーリー ボードへの追加) 適用 CAnimationController::AnimateGroup を呼び出すとします。 色の要素のいずれかに遷移を適用する必要としない場合は、NULL を渡すことができます。  
   
-##  <a name="a-namecanimationcolora--canimationcolorcanimationcolor"></a><a name="canimationcolor"></a>CAnimationColor::CAnimationColor  
+##  <a name="canimationcolor"></a>CAnimationColor::CAnimationColor  
  CAnimationColor オブジェクトを構築します。  
   
 ```  
@@ -155,7 +167,7 @@ CAnimationColor(
 ### <a name="remarks"></a>コメント  
  オブジェクトの構築の既定値で赤、緑、青、オブジェクト ID およびグループ ID は、0 に設定されます。 SetDefaultValue と SetID を使用して実行時に後で変更できます。  
   
-##  <a name="a-namegetanimationvariablelista--canimationcolorgetanimationvariablelist"></a><a name="getanimationvariablelist"></a>CAnimationColor::GetAnimationVariableList  
+##  <a name="getanimationvariablelist"></a>CAnimationColor::GetAnimationVariableList  
  一覧にカプセル化されたアニメーション変数を追加します。  
   
 ```  
@@ -166,7 +178,7 @@ virtual void GetAnimationVariableList(CList<CAnimationVariable*>& lst);
  `lst`  
  関数から返されたときに、赤、緑、青のコンポーネントを表す&3; つの CAnimationVariable オブジェクトへのポインターを格納します。  
   
-##  <a name="a-namegetba--canimationcolorgetb"></a><a name="getb"></a>CAnimationColor::GetB  
+##  <a name="getb"></a>CAnimationColor::GetB  
  青の要素を表す CAnimationVariable へのアクセスを提供します。  
   
 ```  
@@ -179,7 +191,7 @@ CAnimationVariable& GetB();
 ### <a name="remarks"></a>コメント  
  青の要素を表す、基になる CAnimationVariable への直接アクセスを取得するには、このメソッドを呼び出すことができます。  
   
-##  <a name="a-namegetdefaultvaluea--canimationcolorgetdefaultvalue"></a><a name="getdefaultvalue"></a>CAnimationColor::GetDefaultValue  
+##  <a name="getdefaultvalue"></a>CAnimationColor::GetDefaultValue  
  色の要素の既定値を返します。  
   
 ```  
@@ -192,7 +204,7 @@ COLORREF GetDefaultValue();
 ### <a name="remarks"></a>コメント  
  コンス トラクターまたは SetDefaultValue で以前に設定された既定値を取得するには、この関数を呼び出します。  
   
-##  <a name="a-namegetga--canimationcolorgetg"></a><a name="getg"></a>CAnimationColor::GetG  
+##  <a name="getg"></a>CAnimationColor::GetG  
  緑の成分を表す CAnimationVariable へのアクセスを提供します。  
   
 ```  
@@ -205,7 +217,7 @@ CAnimationVariable& GetG();
 ### <a name="remarks"></a>コメント  
  基になる CAnimationVariable を表す緑の要素への直接アクセスを取得するには、このメソッドを呼び出すことができます。  
   
-##  <a name="a-namegetra--canimationcolorgetr"></a><a name="getr"></a>CAnimationColor::GetR  
+##  <a name="getr"></a>CAnimationColor::GetR  
  赤の要素を表す CAnimationVariable へのアクセスを提供します。  
   
 ```  
@@ -218,7 +230,7 @@ CAnimationVariable& GetR();
 ### <a name="remarks"></a>コメント  
  赤の要素を表す、基になる CAnimationVariable への直接アクセスを取得するには、このメソッドを呼び出すことができます。  
   
-##  <a name="a-namegetvaluea--canimationcolorgetvalue"></a><a name="getvalue"></a>CAnimationColor::GetValue  
+##  <a name="getvalue"></a>CAnimationColor::GetValue  
  現在の値を返します。  
   
 ```  
@@ -235,28 +247,28 @@ BOOL GetValue(COLORREF& color);
 ### <a name="remarks"></a>コメント  
  アニメーションの色の現在の値を取得するには、この関数を呼び出します。 このメソッドは失敗、または色の要素の基になる COM オブジェクトが初期化されていない、色には、コンス トラクターまたは SetDefaultValue によって以前に設定された既定値が含まれています。  
   
-##  <a name="a-namembvaluea--canimationcolormbvalue"></a><a name="m_bvalue"></a>CAnimationColor::m_bValue  
+##  <a name="m_bvalue"></a>CAnimationColor::m_bValue  
  アニメーションの色の青の要素を表すアニメーションをカプセル化された変数です。  
   
 ```  
 CAnimationVariable m_bValue;  
 ```  
   
-##  <a name="a-namemgvaluea--canimationcolormgvalue"></a><a name="m_gvalue"></a>CAnimationColor::m_gValue  
+##  <a name="m_gvalue"></a>CAnimationColor::m_gValue  
  アニメーションの色の緑の成分を表すアニメーションをカプセル化された変数です。  
   
 ```  
 CAnimationVariable m_gValue;  
 ```  
   
-##  <a name="a-namemrvaluea--canimationcolormrvalue"></a><a name="m_rvalue"></a>CAnimationColor::m_rValue  
+##  <a name="m_rvalue"></a>CAnimationColor::m_rValue  
  アニメーションの色の赤の要素を表すアニメーションをカプセル化された変数です。  
   
 ```  
 CAnimationVariable m_rValue;  
 ```  
   
-##  <a name="a-nameoperatorcolorrefa--canimationcoloroperator-colorref"></a><a name="operator_colorref"></a>CAnimationColor::operator COLORREF  
+##  <a name="operator_colorref"></a>CAnimationColor::operator COLORREF  
   
 ```  
 operator COLORREF();
@@ -264,7 +276,7 @@ operator COLORREF();
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-nameoperatoreqa--canimationcoloroperator"></a><a name="operator_eq"></a>CAnimationColor::operator =  
+##  <a name="operator_eq"></a>CAnimationColor::operator =  
  CAnimationColor に色を割り当てます。  
   
 ```  
@@ -278,7 +290,7 @@ void operator=(COLORREF color);
 ### <a name="remarks"></a>コメント  
  お勧めするアニメーションの開始する前にこの演算子は、作成された場合は、色の要素の基になる COM オブジェクトを作成し直さ SetDefaultValue を呼び出すためです。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
   
-##  <a name="a-namesetdefaultvaluea--canimationcolorsetdefaultvalue"></a><a name="setdefaultvalue"></a>CAnimationColor::SetDefaultValue  
+##  <a name="setdefaultvalue"></a>CAnimationColor::SetDefaultValue  
  既定値を設定します。  
   
 ```  

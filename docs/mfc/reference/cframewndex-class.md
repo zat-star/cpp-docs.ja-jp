@@ -10,6 +10,93 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFrameWndEx
+- AFXFRAMEWNDEX/CFrameWndEx
+- AFXFRAMEWNDEX/CFrameWndEx::ActiveItemRecalcLayout
+- AFXFRAMEWNDEX/CFrameWndEx::AddPane
+- AFXFRAMEWNDEX/CFrameWndEx::AdjustDockingLayout
+- AFXFRAMEWNDEX/CFrameWndEx::DelayUpdateFrameMenu
+- AFXFRAMEWNDEX/CFrameWndEx::DockPane
+- AFXFRAMEWNDEX/CFrameWndEx::DockPaneLeftOf
+- AFXFRAMEWNDEX/CFrameWndEx::EnableAutoHidePanes
+- AFXFRAMEWNDEX/CFrameWndEx::EnableDocking
+- AFXFRAMEWNDEX/CFrameWndEx::EnableFullScreenMainMenu
+- AFXFRAMEWNDEX/CFrameWndEx::EnableFullScreenMode
+- AFXFRAMEWNDEX/CFrameWndEx::EnableLoadDockState
+- AFXFRAMEWNDEX/CFrameWndEx::EnablePaneMenu
+- AFXFRAMEWNDEX/CFrameWndEx::GetActivePopup
+- AFXFRAMEWNDEX/CFrameWndEx::GetDefaultResId
+- AFXFRAMEWNDEX/CFrameWndEx::GetDockingManager
+- AFXFRAMEWNDEX/CFrameWndEx::GetMenuBar
+- AFXFRAMEWNDEX/CFrameWndEx::GetPane
+- AFXFRAMEWNDEX/CFrameWndEx::GetRibbonBar
+- AFXFRAMEWNDEX/CFrameWndEx::GetTearOffBars
+- AFXFRAMEWNDEX/CFrameWndEx::GetToolbarButtonToolTipText
+- AFXFRAMEWNDEX/CFrameWndEx::InsertPane
+- AFXFRAMEWNDEX/CFrameWndEx::IsFullScreen
+- AFXFRAMEWNDEX/CFrameWndEx::IsMenuBarAvailable
+- AFXFRAMEWNDEX/CFrameWndEx::IsPointNearDockSite
+- AFXFRAMEWNDEX/CFrameWndEx::IsPrintPreview
+- AFXFRAMEWNDEX/CFrameWndEx::LoadFrame
+- AFXFRAMEWNDEX/CFrameWndEx::NegotiateBorderSpace
+- AFXFRAMEWNDEX/CFrameWndEx::OnActivate
+- AFXFRAMEWNDEX/CFrameWndEx::OnActivateApp
+- AFXFRAMEWNDEX/CFrameWndEx::OnChangeVisualManager
+- AFXFRAMEWNDEX/CFrameWndEx::OnClose
+- AFXFRAMEWNDEX/CFrameWndEx::OnCloseDockingPane
+- AFXFRAMEWNDEX/CFrameWndEx::OnCloseMiniFrame
+- AFXFRAMEWNDEX/CFrameWndEx::OnClosePopupMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnCmdMsg
+- AFXFRAMEWNDEX/CFrameWndEx::OnContextHelp
+- AFXFRAMEWNDEX/CFrameWndEx::OnCreate
+- AFXFRAMEWNDEX/CFrameWndEx::OnDestroy
+- AFXFRAMEWNDEX/CFrameWndEx::OnDrawMenuImage
+- AFXFRAMEWNDEX/CFrameWndEx::OnDrawMenuLogo
+- AFXFRAMEWNDEX/CFrameWndEx::OnDWMCompositionChanged
+- AFXFRAMEWNDEX/CFrameWndEx::OnExitSizeMove
+- AFXFRAMEWNDEX/CFrameWndEx::OnGetMinMaxInfo
+- AFXFRAMEWNDEX/CFrameWndEx::OnIdleUpdateCmdUI
+- AFXFRAMEWNDEX/CFrameWndEx::OnLButtonDown
+- AFXFRAMEWNDEX/CFrameWndEx::OnLButtonUp
+- AFXFRAMEWNDEX/CFrameWndEx::OnMenuButtonToolHitTest
+- AFXFRAMEWNDEX/CFrameWndEx::OnMenuChar
+- AFXFRAMEWNDEX/CFrameWndEx::OnMouseMove
+- AFXFRAMEWNDEX/CFrameWndEx::OnMoveMiniFrame
+- AFXFRAMEWNDEX/CFrameWndEx::OnNcActivate
+- AFXFRAMEWNDEX/CFrameWndEx::OnNcCalcSize
+- AFXFRAMEWNDEX/CFrameWndEx::OnNcHitTest
+- AFXFRAMEWNDEX/CFrameWndEx::OnNcMouseMove
+- AFXFRAMEWNDEX/CFrameWndEx::OnNcPaint
+- AFXFRAMEWNDEX/CFrameWndEx::OnPaneCheck
+- AFXFRAMEWNDEX/CFrameWndEx::OnPostPreviewFrame
+- AFXFRAMEWNDEX/CFrameWndEx::OnPowerBroadcast
+- AFXFRAMEWNDEX/CFrameWndEx::OnSetMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnSetPreviewMode
+- AFXFRAMEWNDEX/CFrameWndEx::OnSetText
+- AFXFRAMEWNDEX/CFrameWndEx::OnShowCustomizePane
+- AFXFRAMEWNDEX/CFrameWndEx::OnShowPanes
+- AFXFRAMEWNDEX/CFrameWndEx::OnShowPopupMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnSize
+- AFXFRAMEWNDEX/CFrameWndEx::OnSizing
+- AFXFRAMEWNDEX/CFrameWndEx::OnSysColorChange
+- AFXFRAMEWNDEX/CFrameWndEx::OnTearOffMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnToolbarContextMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnToolbarCreateNew
+- AFXFRAMEWNDEX/CFrameWndEx::OnToolbarDelete
+- AFXFRAMEWNDEX/CFrameWndEx::OnUpdateFrameMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnUpdateFrameTitle
+- AFXFRAMEWNDEX/CFrameWndEx::OnUpdatePaneMenu
+- AFXFRAMEWNDEX/CFrameWndEx::OnWindowPosChanged
+- AFXFRAMEWNDEX/CFrameWndEx::PaneFromPoint
+- AFXFRAMEWNDEX/CFrameWndEx::PreTranslateMessage
+- AFXFRAMEWNDEX/CFrameWndEx::RecalcLayout
+- AFXFRAMEWNDEX/CFrameWndEx::RemovePaneFromDockManager
+- AFXFRAMEWNDEX/CFrameWndEx::SetDockState
+- AFXFRAMEWNDEX/CFrameWndEx::SetPrintPreviewFrame
+- AFXFRAMEWNDEX/CFrameWndEx::SetupToolbarMenu
+- AFXFRAMEWNDEX/CFrameWndEx::ShowFullScreen
+- AFXFRAMEWNDEX/CFrameWndEx::ShowPane
+- AFXFRAMEWNDEX/CFrameWndEx::UpdateCaption
+- AFXFRAMEWNDEX/CFrameWndEx::WinHelp
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -162,7 +249,7 @@ class CFrameWndEx : public CFrameWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxframewndex.h  
   
-##  <a name="a-nameactiveitemrecalclayouta--cframewndexactiveitemrecalclayout"></a><a name="activeitemrecalclayout"></a>CFrameWndEx::ActiveItemRecalcLayout  
+##  <a name="activeitemrecalclayout"></a>CFrameWndEx::ActiveItemRecalcLayout  
  OLE クライアント アイテムとフレームのクライアント領域のレイアウトを調整します。  
   
 ```  
@@ -171,7 +258,7 @@ void ActiveItemRecalcLayout();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameaddpanea--cframewndexaddpane"></a><a name="addpane"></a>CFrameWndEx::AddPane  
+##  <a name="addpane"></a>CFrameWndEx::AddPane  
  コントロール バーをドッキング マネージャーに登録します。  
   
 ```  
@@ -190,7 +277,7 @@ BOOL AddPane(
 ### <a name="return-value"></a>戻り値  
  `TRUE`場合は、コントロール バーが正常に登録されました。`FALSE`それ以外の場合。  
   
-##  <a name="a-nameadjustdockinglayouta--cframewndexadjustdockinglayout"></a><a name="adjustdockinglayout"></a>CFrameWndEx::AdjustDockingLayout  
+##  <a name="adjustdockinglayout"></a>CFrameWndEx::AdjustDockingLayout  
  フレーム ウィンドウにドッキングされているすべてのペインのレイアウトを再計算します。  
   
 ```  
@@ -204,7 +291,7 @@ virtual void AdjustDockingLayout(HDWP hdwp=NULL);
 ### <a name="remarks"></a>コメント  
  によって hdwp 構造体を初期化、 [BeginDeferWindowPos](http://msdn.microsoft.com/library/windows/desktop/ms632672)メソッドです。  
   
-##  <a name="a-namedelayupdateframemenua--cframewndexdelayupdateframemenu"></a><a name="delayupdateframemenu"></a>CFrameWndEx::DelayUpdateFrameMenu  
+##  <a name="delayupdateframemenu"></a>CFrameWndEx::DelayUpdateFrameMenu  
  フレームのメニューを設定し、コマンドの処理がアイドル状態のときに更新します。  
   
 ```  
@@ -217,7 +304,7 @@ virtual void DelayUpdateFrameMenu(HMENU hMenuAlt);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedockpanea--cframewndexdockpane"></a><a name="dockpane"></a>CFrameWndEx::DockPane  
+##  <a name="dockpane"></a>CFrameWndEx::DockPane  
  フレーム ウィンドウに、指定したウィンドウをドッキングします。  
   
 ```  
@@ -248,7 +335,7 @@ void DockPane(
   
 -   AFX_IDW_DOCKBAR_RIGHT  
   
-##  <a name="a-namedockpaneleftofa--cframewndexdockpaneleftof"></a><a name="dockpaneleftof"></a>CFrameWndEx::DockPaneLeftOf  
+##  <a name="dockpaneleftof"></a>CFrameWndEx::DockPaneLeftOf  
  別のペインの左側に指定されたウィンドウをドッキングします。  
   
 ```  
@@ -270,7 +357,7 @@ BOOL DockPaneLeftOf(
 ### <a name="remarks"></a>コメント  
  このメソッドで指定されたツールバーには、`pBar`パラメーターとドッキング ツールバーの左側にあるオプションで指定されて`pLeftOf`パラメーター。  
   
-##  <a name="a-nameenableautohidepanesa--cframewndexenableautohidepanes"></a><a name="enableautohidepanes"></a>CFrameWndEx::EnableAutoHidePanes  
+##  <a name="enableautohidepanes"></a>CFrameWndEx::EnableAutoHidePanes  
  により自動的に隠すペインのモード メイン フレーム ウィンドウの指定した辺にドッキングされている場合。  
   
 ```  
@@ -295,7 +382,7 @@ BOOL EnableAutoHidePanes(DWORD dwDockStyle);
   
 -   CBRS_ALIGN_RIGHT:、フレーム ウィンドウのクライアント領域の右側にドッキングするコントロール バーができるようにします。  
   
-##  <a name="a-nameenabledockinga--cframewndexenabledocking"></a><a name="enabledocking"></a>CFrameWndEx::EnableDocking  
+##  <a name="enabledocking"></a>CFrameWndEx::EnableDocking  
  フレーム ウィンドウのペインのドッキングを有効にします。  
   
 ```  
@@ -320,7 +407,7 @@ BOOL EnableDocking(DWORD dwDockStyle);
   
 -   CBRS_ALIGN_RIGHT  
   
-##  <a name="a-nameenablefullscreenmainmenua--cframewndexenablefullscreenmainmenu"></a><a name="enablefullscreenmainmenu"></a>CFrameWndEx::EnableFullScreenMainMenu  
+##  <a name="enablefullscreenmainmenu"></a>CFrameWndEx::EnableFullScreenMainMenu  
  全画面表示モードのメイン メニューの表示と非表示を切り替えます。  
   
 ```  
@@ -331,7 +418,7 @@ void EnableFullScreenMainMenu(BOOL bEnableMenu);
  [入力] `bEnableMenu`  
  `TRUE`全画面表示モードでは、メインのメニューを表示する`FALSE`それ以外の場合。  
   
-##  <a name="a-nameenablefullscreenmodea--cframewndexenablefullscreenmode"></a><a name="enablefullscreenmode"></a>CFrameWndEx::EnableFullScreenMode  
+##  <a name="enablefullscreenmode"></a>CFrameWndEx::EnableFullScreenMode  
  フレーム ウィンドウの全画面表示モードを有効にします。  
   
 ```  
@@ -349,7 +436,7 @@ void EnableFullScreenMode(UINT uiFullScreenCmd);
   
  画面にメインのメニューを保持する場合は、呼び出す[CFrameWndEx::EnableFullScreenMainMenu](#enablefullscreenmainmenu)します。  
   
-##  <a name="a-nameenableloaddockstatea--cframewndexenableloaddockstate"></a><a name="enableloaddockstate"></a>CFrameWndEx::EnableLoadDockState  
+##  <a name="enableloaddockstate"></a>CFrameWndEx::EnableLoadDockState  
  有効またはドッキング状態の読み込みを無効にします。  
   
 ```  
@@ -360,7 +447,7 @@ void EnableLoadDockState(BOOL bEnable=TRUE);
  [入力] `bEnable`  
  `TRUE`ドッキング状態の読み込みを有効にする`FALSE`ドッキング状態の読み込みを無効にします。  
   
-##  <a name="a-nameenablepanemenua--cframewndexenablepanemenu"></a><a name="enablepanemenu"></a>CFrameWndEx::EnablePaneMenu  
+##  <a name="enablepanemenu"></a>CFrameWndEx::EnablePaneMenu  
  有効または、ウィンドウのメニューの自動処理を無効にします。  
   
 ```  
@@ -392,7 +479,7 @@ void EnablePaneMenu(
  [入力] `bViewMenuShowsToolbarsOnly`  
  場合`TRUE`、コントロール バーのメニューには、ツールバーをのみの一覧が表示されます。 場合`FALSE`メニュー、ツールバーとドッキング バーの一覧に表示します。  
   
-##  <a name="a-namegetactivepopupa--cframewndexgetactivepopup"></a><a name="getactivepopup"></a>CFrameWndEx::GetActivePopup  
+##  <a name="getactivepopup"></a>CFrameWndEx::GetActivePopup  
  現在表示されているポップアップ メニューへのポインターを返します。  
   
 ```  
@@ -402,7 +489,7 @@ CMFCPopupMenu* GetActivePopup() const;
 ### <a name="return-value"></a>戻り値  
  現在表示されている、ポップアップ メニューへのポインターそれ以外の場合`NULL`します。  
   
-##  <a name="a-namegetdefaultresida--cframewndexgetdefaultresid"></a><a name="getdefaultresid"></a>CFrameWndEx::GetDefaultResId  
+##  <a name="getdefaultresid"></a>CFrameWndEx::GetDefaultResId  
  フレームワークには、フレーム ウィンドウが読み込まれたときに指定したリソース ID を返します。  
   
 ```  
@@ -412,7 +499,7 @@ UINT GetDefaultResId() const;
 ### <a name="return-value"></a>戻り値  
  フレームワークが、フレーム ウィンドウに読み込まれるときに、ユーザーが指定されているリソース ID の値。 フレーム ウィンドウには、メニュー バーにいない場合は&0; を返します。  
   
-##  <a name="a-namegetdockingmanagera--cframewndexgetdockingmanager"></a><a name="getdockingmanager"></a>CFrameWndEx::GetDockingManager  
+##  <a name="getdockingmanager"></a>CFrameWndEx::GetDockingManager  
  取得、 [CDockingManager クラス](../../mfc/reference/cdockingmanager-class.md)フレーム ウィンドウのオブジェクト。  
   
 ```  
@@ -425,7 +512,7 @@ CDockingManager* GetDockingManager();
 ### <a name="remarks"></a>コメント  
  フレーム ウィンドウを作成し、使用、 [CDockingManager クラス](../../mfc/reference/cdockingmanager-class.md)子ウィンドウのドッキングを管理するオブジェクト。  
   
-##  <a name="a-namegetmenubara--cframewndexgetmenubar"></a><a name="getmenubar"></a>CFrameWndEx::GetMenuBar  
+##  <a name="getmenubar"></a>CFrameWndEx::GetMenuBar  
  フレーム ウィンドウにアタッチされているメニュー バーのオブジェクトへのポインターを返します。  
   
 ```  
@@ -435,7 +522,7 @@ const CMFCMenuBar* GetMenuBar() const;
 ### <a name="return-value"></a>戻り値  
  メニュー バー オブジェクトが接続されているフレーム ウィンドウへのポインター。  
   
-##  <a name="a-namegetpanea--cframewndexgetpane"></a><a name="getpane"></a>CFrameWndEx::GetPane  
+##  <a name="getpane"></a>CFrameWndEx::GetPane  
  指定した ID を持つペインへのポインターを返します  
   
 ```  
@@ -449,7 +536,7 @@ CBasePane* GetPane(UINT nID);
 ### <a name="return-value"></a>戻り値  
  指定した ID を持つペインへのポインター `NULL`このようなウィンドウが存在しない場合。  
   
-##  <a name="a-namegetribbonbara--cframewndexgetribbonbar"></a><a name="getribbonbar"></a>CFrameWndEx::GetRibbonBar  
+##  <a name="getribbonbar"></a>CFrameWndEx::GetRibbonBar  
  フレームのリボン バー コントロールを取得します。  
   
 ```  
@@ -461,7 +548,7 @@ CMFCRibbonBar* GetRibbonBar();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegettearoffbarsa--cframewndexgettearoffbars"></a><a name="gettearoffbars"></a>CFrameWndEx::GetTearOffBars  
+##  <a name="gettearoffbars"></a>CFrameWndEx::GetTearOffBars  
  ティアオフ状態にあるウィンドウ オブジェクトの一覧を返します。  
   
 ```  
@@ -471,7 +558,7 @@ const CObList& GetTearOffBars() const;
 ### <a name="return-value"></a>戻り値  
  参照を`CObList`ティアオフ状態にあるウィンドウ オブジェクトへのポインターのコレクションを格納するオブジェクト。  
   
-##  <a name="a-namegettoolbarbuttontooltiptexta--cframewndexgettoolbarbuttontooltiptext"></a><a name="gettoolbarbuttontooltiptext"></a>CFrameWndEx::GetToolbarButtonToolTipText  
+##  <a name="gettoolbarbuttontooltiptext"></a>CFrameWndEx::GetToolbarButtonToolTipText  
  アプリケーション ツールバーのボタンのツールヒントを表示するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -493,7 +580,7 @@ virtual BOOL GetToolbarButtonToolTipText(
 ### <a name="remarks"></a>コメント  
  既定では、このメソッドは何もしません。 ツール バー ボタンのツールヒントを表示する場合は、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameinsertpanea--cframewndexinsertpane"></a><a name="insertpane"></a>CFrameWndEx::InsertPane  
+##  <a name="insertpane"></a>CFrameWndEx::InsertPane  
  コントロール バーのリストにウィンドウを挿入し、ドッキング マネージャーに登録します。  
   
 ```  
@@ -519,7 +606,7 @@ BOOL InsertPane(
 ### <a name="remarks"></a>コメント  
  各コントロール バーを使用して登録する必要があります、 [CDockingManager クラス](../../mfc/reference/cdockingmanager-class.md)ドッキング レイアウトの一部を利用します。  
   
-##  <a name="a-nameisfullscreena--cframewndexisfullscreen"></a><a name="isfullscreen"></a>CFrameWndEx::IsFullScreen  
+##  <a name="isfullscreen"></a>CFrameWndEx::IsFullScreen  
  フレーム ウィンドウが全画面表示モードになっているかどうかを判断します。  
   
 ```  
@@ -532,7 +619,7 @@ BOOL IsFullScreen() const;
 ### <a name="remarks"></a>コメント  
  全画面表示モードを設定するには呼び出すことによって、 [CFrameWndEx::EnableFullScreenMode](#enablefullscreenmode)メソッドです。  
   
-##  <a name="a-nameismenubaravailablea--cframewndexismenubaravailable"></a><a name="ismenubaravailable"></a>CFrameWndEx::IsMenuBarAvailable  
+##  <a name="ismenubaravailable"></a>CFrameWndEx::IsMenuBarAvailable  
  メニュー バーのオブジェクトへのポインターが有効かどうかを判断します。  
   
 ```  
@@ -542,7 +629,7 @@ BOOL IsMenuBarAvailable() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`フレーム ウィンドウにメニュー バーです。それ以外の場合`FALSE`します。  
   
-##  <a name="a-nameispointneardocksitea--cframewndexispointneardocksite"></a><a name="ispointneardocksite"></a>CFrameWndEx::IsPointNearDockSite  
+##  <a name="ispointneardocksite"></a>CFrameWndEx::IsPointNearDockSite  
  配置ゾーンに、ポイントがあるかどうかを決定します。  
   
 ```  
@@ -580,7 +667,7 @@ BOOL IsPointNearDockSite(
  `CBRS_ALIGN_LEFT`  
  左側に配置されます。  
   
-##  <a name="a-nameisprintpreviewa--cframewndexisprintpreview"></a><a name="isprintpreview"></a>CFrameWndEx::IsPrintPreview  
+##  <a name="isprintpreview"></a>CFrameWndEx::IsPrintPreview  
  フレーム ウィンドウが印刷プレビュー モードになっているかどうかを判断します。  
   
 ```  
@@ -592,7 +679,7 @@ BOOL IsPrintPreview();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameloadframea--cframewndexloadframe"></a><a name="loadframe"></a>CFrameWndEx::LoadFrame  
+##  <a name="loadframe"></a>CFrameWndEx::LoadFrame  
  このメソッドは、構造のフレーム ウィンドウを作成し、そのリソースの読み込み後に呼び出されます。  
   
 ```  
@@ -621,7 +708,7 @@ virtual BOOL LoadFrame(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namenegotiateborderspacea--cframewndexnegotiateborderspace"></a><a name="negotiateborderspace"></a>CFrameWndEx::NegotiateBorderSpace  
+##  <a name="negotiateborderspace"></a>CFrameWndEx::NegotiateBorderSpace  
  実装して OLE クライアント罫線調整します。  
   
 ```  
@@ -652,7 +739,7 @@ virtual BOOL NegotiateBorderSpace(
  `borderSet`  
  OLE クライアント領域を設定します。  
   
-##  <a name="a-nameonactivatea--cframewndexonactivate"></a><a name="onactivate"></a>CFrameWndEx::OnActivate  
+##  <a name="onactivate"></a>CFrameWndEx::OnActivate  
  フレームワークは、ユーザー入力が切り替えられたにまたはフレームを離れたときに、このメソッドを呼び出します。  
   
 ```  
@@ -684,7 +771,7 @@ afx_msg void OnActivate(
  `WA_INACTIVE`  
  フレームが選択されていません。  
   
-##  <a name="a-nameonactivateappa--cframewndexonactivateapp"></a><a name="onactivateapp"></a>CFrameWndEx::OnActivateApp  
+##  <a name="onactivateapp"></a>CFrameWndEx::OnActivateApp  
  アプリケーションが選択または選択解除されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -702,7 +789,7 @@ afx_msg void OnActivateApp(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonchangevisualmanagera--cframewndexonchangevisualmanager"></a><a name="onchangevisualmanager"></a>CFrameWndEx::OnChangeVisualManager  
+##  <a name="onchangevisualmanager"></a>CFrameWndEx::OnChangeVisualManager  
  フレームへの変更がビジュアル マネージャーへの変更が必要な場合に、フレームワークによって呼び出されます。  
   
 ```  
@@ -723,7 +810,7 @@ afx_msg LRESULT OnChangeVisualManager(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonclosea--cframewndexonclose"></a><a name="onclose"></a>CFrameWndEx::OnClose  
+##  <a name="onclose"></a>CFrameWndEx::OnClose  
  フレームワークでは、フレームを終了するには、このメソッドを呼び出します。  
   
 ```  
@@ -733,7 +820,7 @@ afx_msg void OnClose();
 ### <a name="remarks"></a>コメント  
  印刷プレビューを終了する Windows メッセージを送信、フレームが印刷プレビュー モードである場合は、それ以外の場合、フレームでは、OLE クライアントをホストしている場合、クライアントが非アクティブ化します。  
   
-##  <a name="a-nameonclosedockingpanea--cframewndexonclosedockingpane"></a><a name="onclosedockingpane"></a>CFrameWndEx::OnCloseDockingPane  
+##  <a name="onclosedockingpane"></a>CFrameWndEx::OnCloseDockingPane  
  ユーザーがクリックしたときに、フレームワークによって呼び出されます、**閉じる**ドッキング ペインでボタンをクリックします。  
   
 ```  
@@ -746,7 +833,7 @@ virtual BOOL OnCloseDockingPane(CDockablePane* pPane);
 ### <a name="remarks"></a>コメント  
  既定の実装では、何も行われません。 ドッキング バーの非表示を処理する場合は、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameoncloseminiframea--cframewndexoncloseminiframe"></a><a name="oncloseminiframe"></a>CFrameWndEx::OnCloseMiniFrame  
+##  <a name="oncloseminiframe"></a>CFrameWndEx::OnCloseMiniFrame  
  ユーザーがクリックしたときに、フレームワークによって呼び出されます、**閉じる**浮動ミニフレーム ウィンドウのボタンをクリックします。  
   
 ```  
@@ -759,7 +846,7 @@ virtual BOOL OnCloseMiniFrame(CPaneFrameWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  既定の実装では、何も行われません。 浮動ミニフレーム ウィンドウの非表示を処理する場合は、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameonclosepopupmenua--cframewndexonclosepopupmenu"></a><a name="onclosepopupmenu"></a>CFrameWndEx::OnClosePopupMenu  
+##  <a name="onclosepopupmenu"></a>CFrameWndEx::OnClosePopupMenu  
  アクティブなポップアップ メニューが WM_DESTROY メッセージを処理するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -773,7 +860,7 @@ virtual void OnClosePopupMenu(CMFCPopupMenu* pMenuPopup);
 ### <a name="remarks"></a>コメント  
  フレームワークは、ウィンドウを閉じるしようとしているときに、WM_DESTROY メッセージを送信します。 通知を処理する場合は、このメソッドをオーバーライド`CMFCPopupMenu`フレーム ウィンドウに属しているオブジェクトと、`CMFCPopupMenu`オブジェクトの処理、`WM_DESTROY`ウィンドウが閉じるときに、フレームワークによって送信されたメッセージ。  
   
-##  <a name="a-nameoncmdmsga--cframewndexoncmdmsg"></a><a name="oncmdmsg"></a>CFrameWndEx::OnCmdMsg  
+##  <a name="oncmdmsg"></a>CFrameWndEx::OnCmdMsg  
  コマンド メッセージをディスパッチします。  
   
 ```  
@@ -802,7 +889,7 @@ virtual BOOL OnCmdMsg(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameoncontexthelpa--cframewndexoncontexthelp"></a><a name="oncontexthelp"></a>CFrameWndEx::OnContextHelp  
+##  <a name="oncontexthelp"></a>CFrameWndEx::OnContextHelp  
  コンテキストに関連するヘルプを表示するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -811,7 +898,7 @@ afx_msg void OnContextHelp();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameoncreatea--cframewndexoncreate"></a><a name="oncreate"></a>CFrameWndEx::OnCreate  
+##  <a name="oncreate"></a>CFrameWndEx::OnCreate  
  フレームを作成した後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -827,7 +914,7 @@ afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameondestroya--cframewndexondestroy"></a><a name="ondestroy"></a>CFrameWndEx::OnDestroy  
+##  <a name="ondestroy"></a>CFrameWndEx::OnDestroy  
  フレームが破棄されるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -837,7 +924,7 @@ afx_msg void OnDestroy();
 ### <a name="remarks"></a>コメント  
  アクセラレータ テーブルとすべてのウィンドウが破棄されます。  
   
-##  <a name="a-nameondrawmenuimagea--cframewndexondrawmenuimage"></a><a name="ondrawmenuimage"></a>CFrameWndEx::OnDrawMenuImage  
+##  <a name="ondrawmenuimage"></a>CFrameWndEx::OnDrawMenuImage  
  アプリケーションは、メニュー項目に関連付けられているイメージを描画するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -863,7 +950,7 @@ virtual BOOL OnDrawMenuImage(
 ### <a name="remarks"></a>コメント  
  このメソッドをオーバーライドしてが所有するメニュー バーに属しているメニュー項目のイメージの描画をカスタマイズする場合、`CFrameWndEx`派生オブジェクト。  
   
-##  <a name="a-nameondrawmenulogoa--cframewndexondrawmenulogo"></a><a name="ondrawmenulogo"></a>CFrameWndEx::OnDrawMenuLogo  
+##  <a name="ondrawmenulogo"></a>CFrameWndEx::OnDrawMenuLogo  
  フレームワークによって呼び出されるときに、`CMFCPopupMenu`オブジェクトは、WM_PAINT メッセージを処理します。  
   
 ```  
@@ -886,7 +973,7 @@ virtual void OnDrawMenuLogo(
 ### <a name="remarks"></a>コメント  
  所有するメニュー バーのポップアップ メニューにロゴを表示する場合は、この関数をオーバーライド、`CFrameWndEx`派生オブジェクト。  
   
-##  <a name="a-nameondwmcompositionchangeda--cframewndexondwmcompositionchanged"></a><a name="ondwmcompositionchanged"></a>CFrameWndEx::OnDWMCompositionChanged  
+##  <a name="ondwmcompositionchanged"></a>CFrameWndEx::OnDWMCompositionChanged  
  デスクトップ ウィンドウ マネージャー (DWM) の構成を有効になっているか、無効になっているときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -907,7 +994,7 @@ afx_msg LRESULT OnDWMCompositionChanged(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonexitsizemovea--cframewndexonexitsizemove"></a><a name="onexitsizemove"></a>CFrameWndEx::OnExitSizeMove  
+##  <a name="onexitsizemove"></a>CFrameWndEx::OnExitSizeMove  
  移動またはサイズ変更、フレームが停止したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -928,7 +1015,7 @@ LRESULT OnExitSizeMove(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameongetminmaxinfoa--cframewndexongetminmaxinfo"></a><a name="ongetminmaxinfo"></a>CFrameWndEx::OnGetMinMaxInfo  
+##  <a name="ongetminmaxinfo"></a>CFrameWndEx::OnGetMinMaxInfo  
  ウィンドウのサイズ制限を設定する、フレームのサイズが変更されるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -941,7 +1028,7 @@ afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonidleupdatecmduia--cframewndexonidleupdatecmdui"></a><a name="onidleupdatecmdui"></a>CFrameWndEx::OnIdleUpdateCmdUI  
+##  <a name="onidleupdatecmdui"></a>CFrameWndEx::OnIdleUpdateCmdUI  
  コマンドの処理がアイドル状態のときに、フレームの表示を更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -962,7 +1049,7 @@ afx_msg LRESULT OnIdleUpdateCmdUI(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonlbuttondowna--cframewndexonlbuttondown"></a><a name="onlbuttondown"></a>CFrameWndEx::OnLButtonDown  
+##  <a name="onlbuttondown"></a>CFrameWndEx::OnLButtonDown  
  フレームワークは、ユーザーがマウスの左ボタンを押したときに、このメソッドを呼び出します。  
   
 ```  
@@ -980,7 +1067,7 @@ afx_msg void OnLButtonDown(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonlbuttonupa--cframewndexonlbuttonup"></a><a name="onlbuttonup"></a>CFrameWndEx::OnLButtonUp  
+##  <a name="onlbuttonup"></a>CFrameWndEx::OnLButtonUp  
  フレームワークは、マウスの左ボタンを離したときに、このメソッドを呼び出します。  
   
 ```  
@@ -998,7 +1085,7 @@ afx_msg void OnLButtonUp(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonmenubuttontoolhittesta--cframewndexonmenubuttontoolhittest"></a><a name="onmenubuttontoolhittest"></a>CFrameWndEx::OnMenuButtonToolHitTest  
+##  <a name="onmenubuttontoolhittest"></a>CFrameWndEx::OnMenuButtonToolHitTest  
  フレームワークによって呼び出されますときに、`CMFCToolBarButton`プロセスのオブジェクト、`WM_NCHITTEST`メッセージです。  
   
 ```  
@@ -1020,7 +1107,7 @@ virtual BOOL OnMenuButtonToolHitTest(
 ### <a name="remarks"></a>コメント  
  特定のメニュー項目のツールヒント情報を提供する場合は、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameonmenuchara--cframewndexonmenuchar"></a><a name="onmenuchar"></a>CFrameWndEx::OnMenuChar  
+##  <a name="onmenuchar"></a>CFrameWndEx::OnMenuChar  
  メニューが表示され、ユーザーがコマンドに対応しないキーを押したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1054,7 +1141,7 @@ afx_msg LRESULT OnMenuChar(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonmousemovea--cframewndexonmousemove"></a><a name="onmousemove"></a>CFrameWndEx::OnMouseMove  
+##  <a name="onmousemove"></a>CFrameWndEx::OnMouseMove  
  フレームワークは、ポインターを移動すると、このメソッドを呼び出します。  
   
 ```  
@@ -1072,7 +1159,7 @@ afx_msg void OnMouseMove(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonmoveminiframea--cframewndexonmoveminiframe"></a><a name="onmoveminiframe"></a>CFrameWndEx::OnMoveMiniFrame  
+##  <a name="onmoveminiframe"></a>CFrameWndEx::OnMoveMiniFrame  
  ウィンドウ枠に移動したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1088,7 +1175,7 @@ virtual BOOL OnMoveMiniFrame(CWnd* pFrame);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonncactivatea--cframewndexonncactivate"></a><a name="onncactivate"></a>CFrameWndEx::OnNcActivate  
+##  <a name="onncactivate"></a>CFrameWndEx::OnNcActivate  
  アクティブな状態の変化を示すために、フレームの非クライアント領域が再描画されるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1104,7 +1191,7 @@ afx_msg BOOL OnNcActivate(BOOL bActive);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonnccalcsizea--cframewndexonnccalcsize"></a><a name="onnccalcsize"></a>CFrameWndEx::OnNcCalcSize  
+##  <a name="onnccalcsize"></a>CFrameWndEx::OnNcCalcSize  
  クライアント領域の位置とサイズを計算する必要があるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1122,7 +1209,7 @@ afx_msg void OnNcCalcSize(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonnchittesta--cframewndexonnchittest"></a><a name="onnchittest"></a>CFrameWndEx::OnNcHitTest  
+##  <a name="onnchittest"></a>CFrameWndEx::OnNcHitTest  
  ポインターを移動する、またはマウス ボタンが押されたまたは離されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1138,7 +1225,7 @@ afx_msg LRESULT OnNcHitTest(CPoint point);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonncmousemovea--cframewndexonncmousemove"></a><a name="onncmousemove"></a>CFrameWndEx::OnNcMouseMove  
+##  <a name="onncmousemove"></a>CFrameWndEx::OnNcMouseMove  
  マウス ポインターが非クライアント領域内に移動するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1156,7 +1243,7 @@ afx_msg void OnNcMouseMove(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonncpainta--cframewndexonncpaint"></a><a name="onncpaint"></a>CFrameWndEx::OnNcPaint  
+##  <a name="onncpaint"></a>CFrameWndEx::OnNcPaint  
  非クライアント領域を描画する必要があるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1165,7 +1252,7 @@ afx_msg void OnNcPaint();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonpanechecka--cframewndexonpanecheck"></a><a name="onpanecheck"></a>CFrameWndEx::OnPaneCheck  
+##  <a name="onpanecheck"></a>CFrameWndEx::OnPaneCheck  
  ペインの表示を制御するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1181,7 +1268,7 @@ afx_msg BOOL OnPaneCheck(UINT nID);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonpostpreviewframea--cframewndexonpostpreviewframe"></a><a name="onpostpreviewframe"></a>CFrameWndEx::OnPostPreviewFrame  
+##  <a name="onpostpreviewframe"></a>CFrameWndEx::OnPostPreviewFrame  
  印刷プレビュー モードを変更したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1202,7 +1289,7 @@ afx_msg LRESULT OnPostPreviewFrame(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonpowerbroadcasta--cframewndexonpowerbroadcast"></a><a name="onpowerbroadcast"></a>CFrameWndEx::OnPowerBroadcast  
+##  <a name="onpowerbroadcast"></a>CFrameWndEx::OnPowerBroadcast  
  電源管理イベントが発生したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1223,7 +1310,7 @@ afx_msg LRESULT OnPowerBroadcast(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonsetmenua--cframewndexonsetmenu"></a><a name="onsetmenu"></a>CFrameWndEx::OnSetMenu  
+##  <a name="onsetmenu"></a>CFrameWndEx::OnSetMenu  
  フレーム ウィンドウ メニューを置き換えるため、フレームワークによって呼び出されます。  
   
 ```  
@@ -1251,7 +1338,7 @@ BOOL OnSetMenu(HMENU hmenu);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonsetpreviewmodea--cframewndexonsetpreviewmode"></a><a name="onsetpreviewmode"></a>CFrameWndEx::OnSetPreviewMode  
+##  <a name="onsetpreviewmode"></a>CFrameWndEx::OnSetPreviewMode  
  フレームの印刷プレビュー モードを設定するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1269,7 +1356,7 @@ virtual void OnSetPreviewMode(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonsettexta--cframewndexonsettext"></a><a name="onsettext"></a>CFrameWndEx::OnSetText  
+##  <a name="onsettext"></a>CFrameWndEx::OnSetText  
  ウィンドウのテキストを設定するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1290,7 +1377,7 @@ afx_msg LRESULT OnSetText(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonshowcustomizepanea--cframewndexonshowcustomizepane"></a><a name="onshowcustomizepane"></a>CFrameWndEx::OnShowCustomizePane  
+##  <a name="onshowcustomizepane"></a>CFrameWndEx::OnShowCustomizePane  
  表示するときに、フレームワークによって呼び出され、`QuickCustomizePane`です。  
   
 ```  
@@ -1312,7 +1399,7 @@ virtual BOOL OnShowCustomizePane(
 ### <a name="remarks"></a>コメント  
  簡易カスタマイズ メニューは、ツールバーのカスタマイズ ボタンをクリックするときに表示されるポップアップ メニュー  
   
-##  <a name="a-nameonshowpanesa--cframewndexonshowpanes"></a><a name="onshowpanes"></a>CFrameWndEx::OnShowPanes  
+##  <a name="onshowpanes"></a>CFrameWndEx::OnShowPanes  
  ペインを非表示を切り替えるために、フレームワークによって呼び出されます。  
   
 ```  
@@ -1333,7 +1420,7 @@ virtual BOOL OnShowPanes(BOOL bShow);
   
  フレームワークを選択すると表示のウィンドウを非表示にするときに、カスタム コードを実行する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="a-nameonshowpopupmenua--cframewndexonshowpopupmenu"></a><a name="onshowpopupmenu"></a>CFrameWndEx::OnShowPopupMenu  
+##  <a name="onshowpopupmenu"></a>CFrameWndEx::OnShowPopupMenu  
  ポップアップ メニューを表示するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1350,7 +1437,7 @@ virtual BOOL OnShowPopupMenu(CMFCPopupMenu* pMenu);
 ### <a name="remarks"></a>コメント  
  フレームワークは、ポップアップ メニューを表示するときに、カスタム コードを実行する派生クラスでこのメソッドをオーバーライドします。 たとえば、ポップアップ メニューにコマンドの背景色を変更するには、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameonsizea--cframewndexonsize"></a><a name="onsize"></a>CFrameWndEx::OnSize  
+##  <a name="onsize"></a>CFrameWndEx::OnSize  
  フレームのサイズが変更された後、フレームワークによって呼び出されます。  
   
 ```  
@@ -1372,7 +1459,7 @@ afx_msg void OnSize(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonsizinga--cframewndexonsizing"></a><a name="onsizing"></a>CFrameWndEx::OnSizing  
+##  <a name="onsizing"></a>CFrameWndEx::OnSizing  
  ユーザーのフレーム サイズを変更するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1390,7 +1477,7 @@ afx_msg void OnSizing(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonsyscolorchangea--cframewndexonsyscolorchange"></a><a name="onsyscolorchange"></a>CFrameWndEx::OnSysColorChange  
+##  <a name="onsyscolorchange"></a>CFrameWndEx::OnSysColorChange  
  システム カラーが変更するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1399,7 +1486,7 @@ void OnSysColorChange();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameontearoffmenua--cframewndexontearoffmenu"></a><a name="ontearoffmenu"></a>CFrameWndEx::OnTearOffMenu  
+##  <a name="ontearoffmenu"></a>CFrameWndEx::OnTearOffMenu  
  アプリケーションには、ティアオフ バーを持つメニューが表示されます。 ときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1423,7 +1510,7 @@ virtual BOOL OnTearOffMenu(
   
  既定の実装では nothing を返します`TRUE`します。  
   
-##  <a name="a-nameontoolbarcontextmenua--cframewndexontoolbarcontextmenu"></a><a name="ontoolbarcontextmenu"></a>CFrameWndEx::OnToolbarContextMenu  
+##  <a name="ontoolbarcontextmenu"></a>CFrameWndEx::OnToolbarContextMenu  
  ツールバーのポップアップ メニューを作成するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -1444,7 +1531,7 @@ afx_msg LRESULT OnToolbarContextMenu(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameontoolbarcreatenewa--cframewndexontoolbarcreatenew"></a><a name="ontoolbarcreatenew"></a>CFrameWndEx::OnToolbarCreateNew  
+##  <a name="ontoolbarcreatenew"></a>CFrameWndEx::OnToolbarCreateNew  
  フレームワークでは、新しいツールバーを作成するには、このメソッドを呼び出します。  
   
 ```  
@@ -1465,7 +1552,7 @@ afx_msg LRESULT OnToolbarCreateNew(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameontoolbardeletea--cframewndexontoolbardelete"></a><a name="ontoolbardelete"></a>CFrameWndEx::OnToolbarDelete  
+##  <a name="ontoolbardelete"></a>CFrameWndEx::OnToolbarDelete  
  ツールバーが削除されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1486,7 +1573,7 @@ afx_msg LRESULT OnToolbarDelete(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonupdateframemenua--cframewndexonupdateframemenu"></a><a name="onupdateframemenu"></a>CFrameWndEx::OnUpdateFrameMenu  
+##  <a name="onupdateframemenu"></a>CFrameWndEx::OnUpdateFrameMenu  
  フレームのメニューを設定するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1499,7 +1586,7 @@ virtual void OnUpdateFrameMenu(HMENU hMenuAlt);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonupdateframetitlea--cframewndexonupdateframetitle"></a><a name="onupdateframetitle"></a>CFrameWndEx::OnUpdateFrameTitle  
+##  <a name="onupdateframetitle"></a>CFrameWndEx::OnUpdateFrameTitle  
  フレームワークでは、フレーム ウィンドウのタイトル バーを更新するには、このメソッドを呼び出します。  
   
 ```  
@@ -1512,7 +1599,7 @@ virtual void OnUpdateFrameTitle(BOOL bAddToTitle);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonupdatepanemenua--cframewndexonupdatepanemenu"></a><a name="onupdatepanemenu"></a>CFrameWndEx::OnUpdatePaneMenu  
+##  <a name="onupdatepanemenu"></a>CFrameWndEx::OnUpdatePaneMenu  
  ウィンドウ メニューを更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1525,7 +1612,7 @@ afx_msg void OnUpdatePaneMenu(CCmdUI* pCmdUI);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonwindowposchangeda--cframewndexonwindowposchanged"></a><a name="onwindowposchanged"></a>CFrameWndEx::OnWindowPosChanged  
+##  <a name="onwindowposchanged"></a>CFrameWndEx::OnWindowPosChanged  
  ウィンドウ管理メソッドの呼び出しのためのフレーム サイズ、位置、または z オーダーが変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1538,7 +1625,7 @@ afx_msg void OnWindowPosChanged(WINDOWPOS FAR* lpwndpos);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namepanefrompointa--cframewndexpanefrompoint"></a><a name="panefrompoint"></a>CFrameWndEx::PaneFromPoint  
+##  <a name="panefrompoint"></a>CFrameWndEx::PaneFromPoint  
  各ペインで指定したポイントを検索します。  
   
 ```  
@@ -1579,7 +1666,7 @@ CBasePane* PaneFromPoint(
   
  使用`nSensitivity`検索領域のサイズを大ききます。 使用する`pRTCBarType`メソッドを検索するコントロール バーの種類を制限します。  
   
-##  <a name="a-namepretranslatemessagea--cframewndexpretranslatemessage"></a><a name="pretranslatemessage"></a>CFrameWndEx::PreTranslateMessage  
+##  <a name="pretranslatemessage"></a>CFrameWndEx::PreTranslateMessage  
  ディスパッチされる前に、特定のウィンドウ メッセージを処理します。  
   
 ```  
@@ -1595,7 +1682,7 @@ virtual BOOL PreTranslateMessage(MSG* pMsg);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namerecalclayouta--cframewndexrecalclayout"></a><a name="recalclayout"></a>CFrameWndEx::RecalcLayout  
+##  <a name="recalclayout"></a>CFrameWndEx::RecalcLayout  
  フレームとその子ウィンドウのレイアウトを調整します。  
   
 ```  
@@ -1609,7 +1696,7 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 ### <a name="remarks"></a>コメント  
  フレーム ウィンドウのサイズが変更されたとき、またはコントロール バーの表示/非表示には、このメソッドが呼び出されます。  
   
-##  <a name="a-nameremovepanefromdockmanagera--cframewndexremovepanefromdockmanager"></a><a name="removepanefromdockmanager"></a>CFrameWndEx::RemovePaneFromDockManager  
+##  <a name="removepanefromdockmanager"></a>CFrameWndEx::RemovePaneFromDockManager  
  ペインの登録を解除し、ドッキング マネージャーから削除されます。  
   
 ```  
@@ -1642,7 +1729,7 @@ void RemovePaneFromDockManager(
   
  [CDockingManager クラス](../../mfc/reference/cdockingmanager-class.md)コントロール バーのレイアウトを処理します。 使用して、各コントロール バーをドッキング マネージャーに登録する必要があります、 [CFrameWndEx::AddPane](#addpane)メソッドまたは[CFrameWndEx::InsertPane](#insertpane)メソッドです。  
   
-##  <a name="a-namesetdockstatea--cframewndexsetdockstate"></a><a name="setdockstate"></a>CFrameWndEx::SetDockState  
+##  <a name="setdockstate"></a>CFrameWndEx::SetDockState  
  ドッキング レイアウトをレジストリに格納されているドッキング状態に復元します。  
   
 ```  
@@ -1653,7 +1740,7 @@ void SetDockState(const CDockState& state);
  `state`  
  ドッキング状態。 このパラメーターは無視されます。  
   
-##  <a name="a-namesetprintpreviewframea--cframewndexsetprintpreviewframe"></a><a name="setprintpreviewframe"></a>CFrameWndEx::SetPrintPreviewFrame  
+##  <a name="setprintpreviewframe"></a>CFrameWndEx::SetPrintPreviewFrame  
  印刷プレビューのフレーム ウィンドウを設定します。  
   
 ```  
@@ -1666,7 +1753,7 @@ void SetPrintPreviewFrame(CFrameWnd* pWnd);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetuptoolbarmenua--cframewndexsetuptoolbarmenu"></a><a name="setuptoolbarmenu"></a>CFrameWndEx::SetupToolbarMenu  
+##  <a name="setuptoolbarmenu"></a>CFrameWndEx::SetupToolbarMenu  
  ユーザー定義コマンドをツール バー メニューに挿入します。  
   
 ```  
@@ -1689,14 +1776,14 @@ void SetupToolbarMenu(
 ### <a name="remarks"></a>コメント  
  フレームワークでは、ユーザー定義のコマンドを一覧に格納します。 使用`uiViewUserToolbarCmdFirst`と`uiViewUserToolbarCmdList`を挿入するコマンドのインデックスを指定します。  
   
-##  <a name="a-nameshowfullscreena--cframewndexshowfullscreen"></a><a name="showfullscreen"></a>CFrameWndEx::ShowFullScreen  
+##  <a name="showfullscreen"></a>CFrameWndEx::ShowFullScreen  
  メインフレームの全画面表示モードと通常モードに切り替えます。  
   
 ```  
 void ShowFullScreen();
 ```  
   
-##  <a name="a-nameshowpanea--cframewndexshowpane"></a><a name="showpane"></a>CFrameWndEx::ShowPane  
+##  <a name="showpane"></a>CFrameWndEx::ShowPane  
  指定したウィンドウの表示と非表示を切り替えます。  
   
 ```  
@@ -1720,7 +1807,7 @@ void ShowPane(
  [入力] `bActivate`  
  場合`TRUE`、コントロール バーをアクティブにします。 それ以外の場合、非アクティブな状態でコントロール バーを表示します。  
   
-##  <a name="a-nameupdatecaptiona--cframewndexupdatecaption"></a><a name="updatecaption"></a>CFrameWndEx::UpdateCaption  
+##  <a name="updatecaption"></a>CFrameWndEx::UpdateCaption  
  ウィンドウ フレームのキャプションを更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1729,7 +1816,7 @@ void UpdateCaption();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namewinhelpa--cframewndexwinhelp"></a><a name="winhelp"></a>CFrameWndEx::WinHelp  
+##  <a name="winhelp"></a>CFrameWndEx::WinHelp  
  WinHelp アプリケーションとコンテキストのいずれかを呼び出す関連ヘルプ。  
   
 ```  

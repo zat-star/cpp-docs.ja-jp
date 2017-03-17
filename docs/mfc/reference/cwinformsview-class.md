@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CWinFormsView
+- AFXWINFORMS/CWinFormsView
+- AFXWINFORMS/CWinFormsView::CWinFormsView
+- AFXWINFORMS/CWinFormsView::GetControl
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +87,7 @@ class CWinFormsView : public CView;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwinforms.h  
   
-##  <a name="a-namecwinformsviewa--cwinformsviewcwinformsview"></a><a name="cwinformsview"></a>CWinFormsView::CWinFormsView  
+##  <a name="cwinformsview"></a>CWinFormsView::CWinFormsView  
  `CWinFormsView` オブジェクトを構築します。  
   
 ```  
@@ -102,7 +105,7 @@ CWinFormsView(System::Type^ pManagedViewType);
   
  [!code-cpp[NVC_MFC_Managed&#2;](../../mfc/reference/codesnippet/cpp/cwinformsview-class_2.cpp)]  
   
-##  <a name="a-namegetcontrola--cwinformsviewgetcontrol"></a><a name="getcontrol"></a>CWinFormsView::GetControl  
+##  <a name="getcontrol"></a>CWinFormsView::GetControl  
  Windows フォーム コントロールへのポインターを取得します。  
   
 ```  
@@ -115,7 +118,7 @@ System::Windows::Forms::Control^ GetControl() const;
 ### <a name="remarks"></a>コメント  
  Windows フォームを使用する方法の例は、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
   
-##  <a name="a-nameoperatorcontrola--cwinformsviewoperator-control"></a><a name="operator_control"></a>CWinFormsView::operator コントロール ^  
+##  <a name="operator_control"></a>CWinFormsView::operator コントロール ^  
  Windows フォーム コントロールへのポインターとして型をキャストします。  
   
 ```  

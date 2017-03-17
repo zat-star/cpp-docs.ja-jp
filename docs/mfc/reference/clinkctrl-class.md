@@ -10,6 +10,21 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CLinkCtrl
+- AFXCMN/CLinkCtrl
+- AFXCMN/CLinkCtrl::CLinkCtrl
+- AFXCMN/CLinkCtrl::Create
+- AFXCMN/CLinkCtrl::CreateEx
+- AFXCMN/CLinkCtrl::GetIdealHeight
+- AFXCMN/CLinkCtrl::GetIdealSize
+- AFXCMN/CLinkCtrl::GetItem
+- AFXCMN/CLinkCtrl::GetItemID
+- AFXCMN/CLinkCtrl::GetItemState
+- AFXCMN/CLinkCtrl::GetItemUrl
+- AFXCMN/CLinkCtrl::HitTest
+- AFXCMN/CLinkCtrl::SetItem
+- AFXCMN/CLinkCtrl::SetItemID
+- AFXCMN/CLinkCtrl::SetItemState
+- AFXCMN/CLinkCtrl::SetItemUrl
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,14 +112,14 @@ class CLinkCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-nameclinkctrla--clinkctrlclinkctrl"></a><a name="clinkctrl"></a>CLinkCtrl::CLinkCtrl  
+##  <a name="clinkctrl"></a>CLinkCtrl::CLinkCtrl  
  `CLinkCtrl` オブジェクトを構築します。  
   
 ```  
 CLinkCtrl();
 ```  
   
-##  <a name="a-namecreatea--clinkctrlcreate"></a><a name="create"></a>CLinkCtrl::Create  
+##  <a name="create"></a>CLinkCtrl::Create  
  リンク コントロールを作成し、それをアタッチ、`CLinkCtrl`オブジェクトです。  
   
 ```  
@@ -156,7 +171,7 @@ virtual BOOL Create(DWORD dwStyle,
   
  [!code-cpp[NVC_MFC_CLinkCtrl_s&#1;1](../../mfc/reference/codesnippet/cpp/clinkctrl-class_2.cpp)]  
   
-##  <a name="a-namecreateexa--clinkctrlcreateex"></a><a name="createex"></a>適用  
+##  <a name="createex"></a>適用  
  拡張スタイルを使用してリンク コントロールを作成し、それをアタッチ、`CLinkCtrl`オブジェクトです。  
   
 ```  
@@ -203,7 +218,7 @@ virtual BOOL CreateEx(DWORD  dwExStyle,
   
  2 番目の形式、`CreateEx`メソッドは使用されなくなりました。 指定する最初のフォームを使用して、`lpszLinkMarkup`パラメーター。  
   
-##  <a name="a-namegetidealheighta--clinkctrlgetidealheight"></a><a name="getidealheight"></a>CLinkCtrl::GetIdealHeight  
+##  <a name="getidealheight"></a>CLinkCtrl::GetIdealHeight  
  リンク コントロールの適切な高さを取得します。  
   
 ```  
@@ -216,7 +231,7 @@ int GetIdealHeight() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[LM_GETIDEALHEIGHT](http://msdn.microsoft.com/library/windows/desktop/bb760716)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetidealsizea--clinkctrlgetidealsize"></a><a name="getidealsize"></a>CLinkCtrl::GetIdealSize  
+##  <a name="getidealsize"></a>CLinkCtrl::GetIdealSize  
  リンクの指定した幅に応じて、現在のリンク コントロールのリンク テキストの適切な高さを計算します。  
   
 ```  
@@ -240,7 +255,7 @@ int GetIdealSize(
   
  このメソッドは、送信、 [LM_GETIDEALSIZE](http://msdn.microsoft.com/library/windows/desktop/bb760718)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetitema--clinkctrlgetitem"></a><a name="getitem"></a>CLinkCtrl::GetItem  
+##  <a name="getitem"></a>CLinkCtrl::GetItem  
  リンク コントロールの項目の属性の状態を取得します。  
   
 ```  
@@ -257,7 +272,7 @@ BOOL GetItem(PLITEM pItem) const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[LM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760720)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetitemida--clinkctrlgetitemid"></a><a name="getitemid"></a>CLinkCtrl::GetItemID  
+##  <a name="getitemid"></a>CLinkCtrl::GetItemID  
  リンク コントロールの項目の ID を取得します。  
   
 ```  
@@ -293,7 +308,7 @@ BOOL GetItemID(
 ### <a name="remarks"></a>コメント  
  特定のリンク コントロールの項目の ID を取得します。 詳細については、Win32 メッセージを参照してください。 [LM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760720)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetitemstatea--clinkctrlgetitemstate"></a><a name="getitemstate"></a>CLinkCtrl::GetItemState  
+##  <a name="getitemstate"></a>CLinkCtrl::GetItemState  
  リンク コントロールの項目の状態を取得します。  
   
 ```  
@@ -319,7 +334,7 @@ BOOL GetItemState(
 ### <a name="remarks"></a>コメント  
  特定のリンク コントロールの項目の状態を指定した項目の値を取得します。 詳細については、Win32 メッセージを参照してください。 [LM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760720)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetitemurla--clinkctrlgetitemurl"></a><a name="getitemurl"></a>CLinkCtrl::GetItemUrl  
+##  <a name="getitemurl"></a>CLinkCtrl::GetItemUrl  
  リンク コントロールの項目で表される URL を取得します。  
   
 ```  
@@ -355,7 +370,7 @@ BOOL GetItemUrl(
 ### <a name="remarks"></a>コメント  
  指定したリンク コントロールの項目で表される URL を取得します。 詳細については、Win32 メッセージを参照してください。 [LM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760720)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namehittesta--clinkctrlhittest"></a><a name="hittest"></a>CLinkCtrl::HitTest  
+##  <a name="hittest"></a>CLinkCtrl::HitTest  
  ユーザーが、指定されたリンクをクリックしたかどうかを判断します。  
   
 ```  
@@ -372,7 +387,7 @@ BOOL HitTest(PLHITTESTINFO phti) const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[LM_HITTEST](http://msdn.microsoft.com/library/windows/desktop/bb760722)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetitema--clinkctrlsetitem"></a><a name="setitem"></a>CLinkCtrl::SetItem  
+##  <a name="setitem"></a>CLinkCtrl::SetItem  
  状態とリンク コントロールの項目の属性を設定します。  
   
 ```  
@@ -389,7 +404,7 @@ BOOL SetItem(PLITEM pItem);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[LM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760724)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetitemida--clinkctrlsetitemid"></a><a name="setitemid"></a>CLinkCtrl::SetItemID  
+##  <a name="setitemid"></a>CLinkCtrl::SetItemID  
  リンク コントロールの項目の ID を取得します。  
   
 ```  
@@ -411,7 +426,7 @@ BOOL SetItemID(
 ### <a name="remarks"></a>コメント  
  特定のリンク コントロールの項目の ID を設定します。 詳細については、Win32 メッセージを参照してください。 [LM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760724)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetitemstatea--clinkctrlsetitemstate"></a><a name="setitemstate"></a>CLinkCtrl::SetItemState  
+##  <a name="setitemstate"></a>CLinkCtrl::SetItemState  
  リンク コントロールの項目の状態を取得します。  
   
 ```  
@@ -437,7 +452,7 @@ BOOL SetItemState(
 ### <a name="remarks"></a>コメント  
  特定のリンク コントロールの項目の状態を指定した項目の値を設定します。 詳細については、Win32 メッセージを参照してください。 [LM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760724)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetitemurla--clinkctrlsetitemurl"></a><a name="setitemurl"></a>CLinkCtrl::SetItemUrl  
+##  <a name="setitemurl"></a>CLinkCtrl::SetItemUrl  
  リンク コントロールの項目で表される URL を設定します。  
   
 ```  

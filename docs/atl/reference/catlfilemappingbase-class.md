@@ -9,9 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CAtlFileMappingBase
-- ATL::CAtlFileMappingBase
 - CAtlFileMappingBase
+- ATLFILE/ATL::CAtlFileMappingBase
+- ATLFILE/ATL::CAtlFileMappingBase::CAtlFileMappingBase
+- ATLFILE/ATL::CAtlFileMappingBase::CopyFrom
+- ATLFILE/ATL::CAtlFileMappingBase::GetData
+- ATLFILE/ATL::CAtlFileMappingBase::GetHandle
+- ATLFILE/ATL::CAtlFileMappingBase::GetMappingSize
+- ATLFILE/ATL::CAtlFileMappingBase::MapFile
+- ATLFILE/ATL::CAtlFileMappingBase::MapSharedMem
+- ATLFILE/ATL::CAtlFileMappingBase::OpenMapping
+- ATLFILE/ATL::CAtlFileMappingBase::Unmap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +97,7 @@ class CAtlFileMappingBase
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlfile.h  
   
-##  <a name="a-namecatlfilemappingbasea--catlfilemappingbasecatlfilemappingbase"></a><a name="catlfilemappingbase"></a>CAtlFileMappingBase::CAtlFileMappingBase  
+##  <a name="catlfilemappingbase"></a>CAtlFileMappingBase::CAtlFileMappingBase  
  コンストラクターです。  
   
 ```
@@ -107,7 +115,7 @@ CAtlFileMappingBase() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&71;](../../atl/codesnippet/cpp/catlfilemappingbase-class_1.cpp)]  
   
-##  <a name="a-namedtora--catlfilemappingbasecatlfilemappingbase"></a><a name="dtor"></a>CAtlFileMappingBase:: ~ CAtlFileMappingBase  
+##  <a name="dtor"></a>CAtlFileMappingBase:: ~ CAtlFileMappingBase  
  デストラクターです。  
   
 ```
@@ -117,7 +125,7 @@ CAtlFileMappingBase() throw();
 ### <a name="remarks"></a>コメント  
  クラスとの呼び出しによって割り当てられているリソースを解放、 [CAtlFileMappingBase::Unmap](#unmap)メソッドです。  
   
-##  <a name="a-namecopyfroma--catlfilemappingbasecopyfrom"></a><a name="copyfrom"></a>CAtlFileMappingBase::CopyFrom  
+##  <a name="copyfrom"></a>CAtlFileMappingBase::CopyFrom  
  ファイル マッピング オブジェクトからコピーするには、このメソッドを呼び出します。  
   
 ```
@@ -131,7 +139,7 @@ HRESULT CopyFrom(CAtlFileMappingBase& orig) throw();
 ### <a name="return-value"></a>戻り値  
  返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
   
-##  <a name="a-namegetdataa--catlfilemappingbasegetdata"></a><a name="getdata"></a>CAtlFileMappingBase::GetData  
+##  <a name="getdata"></a>CAtlFileMappingBase::GetData  
  ファイル マッピング オブジェクトからデータを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -141,7 +149,7 @@ void* GetData() const throw();
 ### <a name="return-value"></a>戻り値  
  データへのポインターを返します。  
   
-##  <a name="a-namegethandlea--catlfilemappingbasegethandle"></a><a name="gethandle"></a>CAtlFileMappingBase::GetHandle  
+##  <a name="gethandle"></a>CAtlFileMappingBase::GetHandle  
  ファイル マッピング オブジェクトにハンドルを返すには、このメソッドを呼び出します。  
   
 ```
@@ -151,7 +159,7 @@ HANDLE GetHandle() throw ();
 ### <a name="return-value"></a>戻り値  
  ファイル マッピング オブジェクトへのハンドルを返します。  
   
-##  <a name="a-namegetmappingsizea--catlfilemappingbasegetmappingsize"></a><a name="getmappingsize"></a>CAtlFileMappingBase::GetMappingSize  
+##  <a name="getmappingsize"></a>CAtlFileMappingBase::GetMappingSize  
  ファイル マッピング オブジェクトからマップのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -164,7 +172,7 @@ SIZE_T GetMappingSize() throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)します。  
   
-##  <a name="a-namemapfilea--catlfilemappingbasemapfile"></a><a name="mapfile"></a>CAtlFileMappingBase::MapFile  
+##  <a name="mapfile"></a>CAtlFileMappingBase::MapFile  
  開くか、指定したファイルのファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -201,7 +209,7 @@ HRESULT MapFile(
 ### <a name="example"></a>例  
  例を参照してください[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)します。  
   
-##  <a name="a-namemapsharedmema--catlfilemappingbasemapsharedmem"></a><a name="mapsharedmem"></a>CAtlFileMappingBase::MapSharedMem  
+##  <a name="mapsharedmem"></a>CAtlFileMappingBase::MapSharedMem  
  すべてのプロセスへのフル アクセスを許可するファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -239,7 +247,7 @@ HRESULT MapSharedMem(
 ### <a name="remarks"></a>コメント  
  **MapShareMem**によって作成された既存のファイル マッピング オブジェクトは、 [CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)プロセス間で共有します。  
   
-##  <a name="a-nameopenmappinga--catlfilemappingbaseopenmapping"></a><a name="openmapping"></a>CAtlFileMappingBase::OpenMapping  
+##  <a name="openmapping"></a>CAtlFileMappingBase::OpenMapping  
  指定したファイルの名前付きファイル マッピング オブジェクトを開くには、このメソッドを呼び出します。  
   
 ```
@@ -269,7 +277,7 @@ HRESULT OpenMapping(
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドでは、入力パラメーターが無効な場合に、アサーション エラーが発生します。  
   
-##  <a name="a-nameoperatoreqa--catlfilemappingbaseoperator-"></a><a name="operator_eq"></a>CAtlFileMappingBase::operator =  
+##  <a name="operator_eq"></a>CAtlFileMappingBase::operator =  
  現在のファイル マッピング オブジェクトを別のファイル マッピング オブジェクトに設定します。  
   
 ```
@@ -283,7 +291,7 @@ CAtlFileMappingBase& operator=(CAtlFileMappingBase& orig);
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照を返します。  
   
-##  <a name="a-nameunmapa--catlfilemappingbaseunmap"></a><a name="unmap"></a>CAtlFileMappingBase::Unmap  
+##  <a name="unmap"></a>CAtlFileMappingBase::Unmap  
  ファイル マッピング オブジェクトをマップ解除するには、このメソッドを呼び出します。  
   
 ```

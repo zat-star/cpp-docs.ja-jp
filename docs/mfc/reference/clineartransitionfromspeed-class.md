@@ -9,8 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CLinearTransitionFromSpeed
 - CLinearTransitionFromSpeed
+- AFXANIMATIONCONTROLLER/CLinearTransitionFromSpeed
+- AFXANIMATIONCONTROLLER/CLinearTransitionFromSpeed::CLinearTransitionFromSpeed
+- AFXANIMATIONCONTROLLER/CLinearTransitionFromSpeed::Create
+- AFXANIMATIONCONTROLLER/CLinearTransitionFromSpeed::m_dblFinalValue
+- AFXANIMATIONCONTROLLER/CLinearTransitionFromSpeed::m_dblSpeed
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -83,7 +87,7 @@ class CLinearTransitionFromSpeed : public CBaseTransition;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-nameclineartransitionfromspeeda--clineartransitionfromspeedclineartransitionfromspeed"></a><a name="clineartransitionfromspeed"></a>CLinearTransitionFromSpeed::CLinearTransitionFromSpeed  
+##  <a name="clineartransitionfromspeed"></a>CLinearTransitionFromSpeed::CLinearTransitionFromSpeed  
  直線速度遷移オブジェクトを構築し、速度と最終的な値で初期化します。  
   
 ```  
@@ -99,7 +103,7 @@ CLinearTransitionFromSpeed(
  `dblFinalValue`  
  移行の最後にアニメーション変数の値。  
   
-##  <a name="a-namecreatea--clineartransitionfromspeedcreate"></a><a name="create"></a>CLinearTransitionFromSpeed::Create  
+##  <a name="create"></a>CLinearTransitionFromSpeed::Create  
  カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
   
 ```  
@@ -115,14 +119,14 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  移行が正常に作成された場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namemdblfinalvaluea--clineartransitionfromspeedmdblfinalvalue"></a><a name="m_dblfinalvalue"></a>CLinearTransitionFromSpeed::m_dblFinalValue  
+##  <a name="m_dblfinalvalue"></a>CLinearTransitionFromSpeed::m_dblFinalValue  
  移行の最後にアニメーション変数の値。  
   
 ```  
 DOUBLE m_dblFinalValue;  
 ```  
   
-##  <a name="a-namemdblspeeda--clineartransitionfromspeedmdblspeed"></a><a name="m_dblspeed"></a>CLinearTransitionFromSpeed::m_dblSpeed  
+##  <a name="m_dblspeed"></a>CLinearTransitionFromSpeed::m_dblSpeed  
  変数の速度の絶対値。  
   
 ```  

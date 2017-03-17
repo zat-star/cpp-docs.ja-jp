@@ -9,8 +9,21 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- atlpreviewctrlimpl/ATL::CAtlPreviewCtrlImpl
 - CAtlPreviewCtrlImpl
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::CAtlPreviewCtrlImpl
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::Create
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::Destroy
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::Focus
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::OnPaint
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::Redraw
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::SetHost
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::SetPreviewVisuals
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::SetRect
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::DoPaint
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::m_plf
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::m_clrBack
+- ATLPREVIEWCTRLIMPL/ATL::CAtlPreviewCtrlImpl::m_clrText
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -114,7 +127,7 @@ class CAtlPreviewCtrlImpl : public CWindowImpl<CAtlPreviewCtrlImpl>, public IPre
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlpreviewctrlimpl.h  
   
-##  <a name="a-namecatlpreviewctrlimpla--catlpreviewctrlimplcatlpreviewctrlimpl"></a><a name="catlpreviewctrlimpl"></a>CAtlPreviewCtrlImpl::CAtlPreviewCtrlImpl  
+##  <a name="catlpreviewctrlimpl"></a>CAtlPreviewCtrlImpl::CAtlPreviewCtrlImpl  
  プレビュー コントロール オブジェクトを構築します。  
   
 ```
@@ -124,7 +137,7 @@ CAtlPreviewCtrlImpl(void) : m_clrText(0),
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedtora--catlpreviewctrlimplcatlpreviewctrlimpl"></a><a name="dtor"></a>CAtlPreviewCtrlImpl:: ~ CAtlPreviewCtrlImpl  
+##  <a name="dtor"></a>CAtlPreviewCtrlImpl:: ~ CAtlPreviewCtrlImpl  
  プレビュー コントロール オブジェクトを破棄します。  
   
 ```
@@ -133,7 +146,7 @@ virtual ~CAtlPreviewCtrlImpl(void);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecreatea--catlpreviewctrlimplcreate"></a><a name="create"></a>CAtlPreviewCtrlImpl::Create  
+##  <a name="create"></a>CAtlPreviewCtrlImpl::Create  
  Windows のウィンドウを作成する豊富なプレビュー ハンドラーによって呼び出されます。  
   
 ```
@@ -152,7 +165,7 @@ virtual BOOL Create(HWND hWndParent, const RECT* prc);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedestroya--catlpreviewctrlimpldestroy"></a><a name="destroy"></a>CAtlPreviewCtrlImpl::Destroy  
+##  <a name="destroy"></a>CAtlPreviewCtrlImpl::Destroy  
  このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーが呼び出されます。  
   
 ```
@@ -161,7 +174,7 @@ virtual void Destroy();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedopainta--catlpreviewctrlimpldopaint"></a><a name="dopaint"></a>CAtlPreviewCtrlImpl::DoPaint  
+##  <a name="dopaint"></a>CAtlPreviewCtrlImpl::DoPaint  
  プレビューを表示するためにフレームワークによって呼び出されます。  
   
 ```
@@ -174,7 +187,7 @@ virtual void DoPaint(HDC hdc);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namefocusa--catlpreviewctrlimplfocus"></a><a name="focus"></a>CAtlPreviewCtrlImpl::Focus  
+##  <a name="focus"></a>CAtlPreviewCtrlImpl::Focus  
  このコントロールにフォーカスが入力を設定します。  
   
 ```
@@ -183,7 +196,7 @@ virtual void Focus();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemclrbacka--catlpreviewctrlimplmclrback"></a><a name="m_clrback"></a>CAtlPreviewCtrlImpl::m_clrBack  
+##  <a name="m_clrback"></a>CAtlPreviewCtrlImpl::m_clrBack  
  プレビュー ウィンドウの背景色です。  
   
 ```
@@ -192,7 +205,7 @@ COLORREF m_clrBack;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemclrtexta--catlpreviewctrlimplmclrtext"></a><a name="m_clrtext"></a>CAtlPreviewCtrlImpl::m_clrText  
+##  <a name="m_clrtext"></a>CAtlPreviewCtrlImpl::m_clrText  
  プレビュー ウィンドウのテキストの色。  
   
 ```
@@ -201,7 +214,7 @@ COLORREF m_clrText;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namemplfa--catlpreviewctrlimplmplf"></a><a name="m_plf"></a>CAtlPreviewCtrlImpl::m_plf  
+##  <a name="m_plf"></a>CAtlPreviewCtrlImpl::m_plf  
  プレビュー ウィンドウにテキストを表示するために使用するフォントです。  
   
 ```
@@ -210,7 +223,7 @@ const LOGFONTW* m_plf;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameonpainta--catlpreviewctrlimplonpaint"></a><a name="onpaint"></a>CAtlPreviewCtrlImpl::OnPaint  
+##  <a name="onpaint"></a>CAtlPreviewCtrlImpl::OnPaint  
  WM_PAINT メッセージを処理します。  
   
 ```
@@ -239,7 +252,7 @@ LRESULT OnPaint(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameredrawa--catlpreviewctrlimplredraw"></a><a name="redraw"></a>CAtlPreviewCtrlImpl::Redraw  
+##  <a name="redraw"></a>CAtlPreviewCtrlImpl::Redraw  
  このコントロールを再描画するように指示します。  
   
 ```
@@ -248,7 +261,7 @@ virtual void Redraw();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesethosta--catlpreviewctrlimplsethost"></a><a name="sethost"></a>CAtlPreviewCtrlImpl::SetHost  
+##  <a name="sethost"></a>CAtlPreviewCtrlImpl::SetHost  
  このコントロールの新しい親を設定します。  
   
 ```
@@ -261,7 +274,7 @@ virtual void SetHost(HWND hWndParent);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetpreviewvisualsa--catlpreviewctrlimplsetpreviewvisuals"></a><a name="setpreviewvisuals"></a>CAtlPreviewCtrlImpl::SetPreviewVisuals  
+##  <a name="setpreviewvisuals"></a>CAtlPreviewCtrlImpl::SetPreviewVisuals  
  リッチ プレビュー ハンドラーによってコンテンツとき呼び出されます豊富なプレビュー機能のビジュアルを設定する必要があります。  
   
 ```
@@ -283,7 +296,7 @@ virtual void SetPreviewVisuals(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetrecta--catlpreviewctrlimplsetrect"></a><a name="setrect"></a>CAtlPreviewCtrlImpl::SetRect  
+##  <a name="setrect"></a>CAtlPreviewCtrlImpl::SetRect  
  このコントロールの新しい外接する四角形を設定します。  
   
 ```

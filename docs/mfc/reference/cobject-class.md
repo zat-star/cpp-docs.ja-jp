@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CObject
+- AFX/CObject
+- AFX/CObject::CObject
+- AFX/CObject::AssertValid
+- AFX/CObject::Dump
+- AFX/CObject::GetRuntimeClass
+- AFX/CObject::IsKindOf
+- AFX/CObject::IsSerializable
+- AFX/CObject::Serialize
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -104,7 +112,7 @@ class AFX_NOVTABLE CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-nameassertvalida--cobjectassertvalid"></a><a name="assertvalid"></a>Cobject::assertvalid  
+##  <a name="assertvalid"></a>Cobject::assertvalid  
  このオブジェクトの整合性を検証します。  
   
 ```  
@@ -127,7 +135,7 @@ virtual void AssertValid() const;
   
  別の例では、次を参照してください。 [AfxDoForAllObjects](diagnostic-services.md#afxdoforallobjects)します。  
   
-##  <a name="a-namecobjecta--cobjectcobject"></a><a name="cobject"></a>CObject::CObject  
+##  <a name="cobject"></a>CObject::CObject  
  これらの関数は、標準`CObject`のコンス トラクターです。  
   
 ```  
@@ -151,7 +159,7 @@ CObject(const CObject& objectSrc);
   
  [!code-cpp[NVC_MFCCObjectSample&#8;](../../mfc/codesnippet/cpp/cobject-class_2.cpp)]  
   
-##  <a name="a-namedumpa--cobjectdump"></a><a name="dump"></a>CObject::Dump  
+##  <a name="dump"></a>CObject::Dump  
  オブジェクトの内容をダンプする[CDumpContext](../../mfc/reference/cdumpcontext-class.md)オブジェクトです。  
   
 ```  
@@ -181,7 +189,7 @@ virtual void Dump(CDumpContext& dc) const;
   
  [!code-cpp[NVC_MFCCObjectSample&#9;](../../mfc/codesnippet/cpp/cobject-class_3.cpp)]  
   
-##  <a name="a-namegetruntimeclassa--cobjectgetruntimeclass"></a><a name="getruntimeclass"></a>CObject::GetRuntimeClass  
+##  <a name="getruntimeclass"></a>CObject::GetRuntimeClass  
  返します。、`CRuntimeClass`このオブジェクトのクラスに対応する構造体。  
   
 ```  
@@ -213,7 +221,7 @@ virtual CRuntimeClass* GetRuntimeClass() const;
   
  [!code-cpp[NVC_MFCCObjectSample&#10;](../../mfc/codesnippet/cpp/cobject-class_4.cpp)]  
   
-##  <a name="a-nameiskindofa--cobjectiskindof"></a><a name="iskindof"></a>使うため  
+##  <a name="iskindof"></a>使うため  
  所定のクラスにこのオブジェクトの関係をテストします。  
   
 ```  
@@ -237,7 +245,7 @@ BOOL IsKindOf(const CRuntimeClass* pClass) const;
   
  [!code-cpp[NVC_MFCCObjectSample&#11;](../../mfc/codesnippet/cpp/cobject-class_5.cpp)]  
   
-##  <a name="a-nameisserializablea--cobjectisserializable"></a><a name="isserializable"></a>CObject::IsSerializable  
+##  <a name="isserializable"></a>CObject::IsSerializable  
  このオブジェクトはシリアル化に適しているかどうかをテストします。  
   
 ```  
@@ -258,7 +266,7 @@ BOOL IsSerializable() const;
   
  [!code-cpp[NVC_MFCCObjectSample&#12;](../../mfc/codesnippet/cpp/cobject-class_6.cpp)]  
   
-##  <a name="a-nameoperatordeletea--cobjectoperator-delete"></a><a name="operator_delete"></a>CObject::operator の削除  
+##  <a name="operator_delete"></a>CObject::operator の削除  
  ライブラリのリリース版に関する演算子**削除**演算子によって割り当てられたメモリを解放**新しい**します。  
   
 ```  
@@ -294,7 +302,7 @@ void PASCAL operator delete(
   
  [!code-cpp[NVC_MFCCObjectSample&#15;](../../mfc/codesnippet/cpp/cobject-class_8.cpp)]  
   
-##  <a name="a-nameoperatornewa--cobjectoperator-new"></a><a name="operator_new"></a>新しい CObject::operator  
+##  <a name="operator_new"></a>新しい CObject::operator  
  ライブラリのリリース版に関する演算子**新しい**と同様の方法で最適なメモリ割り当てを実行`malloc`します。  
   
 ```  
@@ -327,7 +335,7 @@ void* PASCAL operator new(
   
  [!code-cpp[NVC_MFCCObjectSample&#16;](../../mfc/codesnippet/cpp/cobject-class_9.h)]  
   
-##  <a name="a-nameserializea--cobjectserialize"></a><a name="serialize"></a>指定  
+##  <a name="serialize"></a>指定  
  アーカイブに対して、このオブジェクトの読み取りまたは書き込みを行います。  
   
 ```  

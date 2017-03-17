@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amprt/Concurrency::uninitialized_object
+- uninitialized_object
+- AMPRT/uninitialized_object
+- AMPRT/Concurrency::uninitialized_object
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -69,7 +71,7 @@ class uninitialized_object : public runtime_exception;
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
-## <a name="a-nameuninitializedobjectctora-unsupportedfeature"></a><a name="uninitialized_object__ctor"></a>unsupported_feature 
+## <a name="uninitialized_object__ctor"></a>unsupported_feature 
 
 unsupported_feature 例外の新しいインスタンスを構築します。  
   

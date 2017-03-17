@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleUpdateDialog
+- AFXODLGS/COleUpdateDialog
+- AFXODLGS/COleUpdateDialog::COleUpdateDialog
+- AFXODLGS/COleUpdateDialog::DoModal
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,7 +93,7 @@ class COleUpdateDialog : public COleLinksDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecoleupdatedialoga--coleupdatedialogcoleupdatedialog"></a><a name="coleupdatedialog"></a>COleUpdateDialog::COleUpdateDialog  
+##  <a name="coleupdatedialog"></a>COleUpdateDialog::COleUpdateDialog  
  `COleUpdateDialog` オブジェクトを構築します。  
   
 ```  
@@ -117,7 +120,7 @@ explicit COleUpdateDialog(
 ### <a name="remarks"></a>コメント  
  この関数はのみ、`COleUpdateDialog`オブジェクトです。 ダイアログ ボックスを表示するには、呼び出す[DoModal](../../mfc/reference/colelinksdialog-class.md#domodal)します。 このクラスは、の代わりに使用する必要があります`COleLinksDialog`リンクまたは埋め込みアイテムの既存のだけを更新する場合。  
   
-##  <a name="a-namedomodala--coleupdatedialogdomodal"></a><a name="domodal"></a>COleUpdateDialog::DoModal  
+##  <a name="domodal"></a>COleUpdateDialog::DoModal  
  [リンクの編集] ダイアログ ボックスに表示は更新モードです。  
   
 ```  

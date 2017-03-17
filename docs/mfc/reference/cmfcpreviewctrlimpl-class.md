@@ -10,7 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCPreviewCtrlImpl
-- afxwin/CMFCPreviewCtrlImpl
+- AFXWIN/CMFCPreviewCtrlImpl
+- AFXWIN/CMFCPreviewCtrlImpl::CMFCPreviewCtrlImpl
+- AFXWIN/CMFCPreviewCtrlImpl::Create
+- AFXWIN/CMFCPreviewCtrlImpl::Destroy
+- AFXWIN/CMFCPreviewCtrlImpl::Focus
+- AFXWIN/CMFCPreviewCtrlImpl::GetDocument
+- AFXWIN/CMFCPreviewCtrlImpl::Redraw
+- AFXWIN/CMFCPreviewCtrlImpl::SetDocument
+- AFXWIN/CMFCPreviewCtrlImpl::SetHost
+- AFXWIN/CMFCPreviewCtrlImpl::SetPreviewVisuals
+- AFXWIN/CMFCPreviewCtrlImpl::SetRect
+- AFXWIN/CMFCPreviewCtrlImpl::DoPaint
+- AFXWIN/CMFCPreviewCtrlImpl::m_clrBackColor
+- AFXWIN/CMFCPreviewCtrlImpl::m_clrTextColor
+- AFXWIN/CMFCPreviewCtrlImpl::m_font
+- AFXWIN/CMFCPreviewCtrlImpl::m_pDocument
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,13 +114,13 @@ class CMFCPreviewCtrlImpl : public CWnd;
   
  [CMFCPreviewCtrlImpl](../../mfc/reference/cmfcpreviewctrlimpl-class.md)
 
-## <a name="a-namecmfcpreviewctrlimpla-cmfcpreviewctrlimplcmfcpreviewctrlimpl"></a><a name="cmfcpreviewctrlimpl"></a>CMFCPreviewCtrlImpl::CMFCPreviewCtrlImpl
+## <a name="cmfcpreviewctrlimpl"></a>CMFCPreviewCtrlImpl::CMFCPreviewCtrlImpl
 プレビュー コントロール オブジェクトを構築します。
 
 ### <a name="syntax"></a>構文
 CMFCPreviewCtrlImpl() です。  
 
-## <a name="a-namecreatea-cmfcpreviewctrlimplcreate"></a><a name="create"></a>CMFCPreviewCtrlImpl::Create
+## <a name="create"></a>CMFCPreviewCtrlImpl::Create
 オーバーロードされます。 Windows のウィンドウを作成する豊富なプレビュー ハンドラーによって呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -135,7 +150,7 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  `TRUE`作成が成功した場合それ以外の場合`FALSE`します。  
   
-## <a name="a-namedestroya-cmfcpreviewctrlimpldestroy"></a><a name="destroy"></a>CMFCPreviewCtrlImpl::Destroy
+## <a name="destroy"></a>CMFCPreviewCtrlImpl::Destroy
 このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーが呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -144,7 +159,7 @@ virtual BOOL Create(
 virtual void Destroy();  
 ```  
   
-## <a name="a-namedopainta-cmfcpreviewctrlimpldopaint"></a><a name="dopaint"></a>CMFCPreviewCtrlImpl::DoPaint  
+## <a name="dopaint"></a>CMFCPreviewCtrlImpl::DoPaint  
 プレビューを表示するためにフレームワークによって呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -160,7 +175,7 @@ virtual void DoPaint(
  描画するためのデバイス コンテキストへのポインター。  
 
 
-## <a name="a-namefocusa-cmfcpreviewctrlimplfocus"></a><a name="focus"></a>CMFCPreviewCtrlImpl::Focus  
+## <a name="focus"></a>CMFCPreviewCtrlImpl::Focus  
 このコントロールにフォーカスが入力を設定します。  
   
 ### <a name="syntax"></a>構文  
@@ -168,7 +183,7 @@ virtual void DoPaint(
 ```  
 virtual void Focus();  
 ```  
-## <a name="a-namegetdocumenta-cmfcpreviewctrlimplgetdocument"></a><a name="getdocument"></a>CMFCPreviewCtrlImpl::GetDocument
+## <a name="getdocument"></a>CMFCPreviewCtrlImpl::GetDocument
 このプレビューのコントロールに接続されているドキュメントを返します。  
   
 ### <a name="syntax"></a>構文  
@@ -180,7 +195,7 @@ ATL::IDocument* GetDocument();
 ### <a name="return-value"></a>戻り値  
  コントロールにコンテンツを持つがプレビューされているドキュメントへのポインター。
 
-## <a name="a-namemclrbackcolora-cmfcpreviewctrlimplmclrbackcolor"></a><a name="m_clrbackcolor"></a>CMFCPreviewCtrlImpl::m_clrBackColor  
+## <a name="m_clrbackcolor"></a>CMFCPreviewCtrlImpl::m_clrBackColor  
 プレビュー ウィンドウの背景色です。  
   
 ### <a name="syntax"></a>構文  
@@ -189,7 +204,7 @@ ATL::IDocument* GetDocument();
 COLORREF m_clrBackColor;  
 ```  
 
-## <a name="a-namemclrtextcolora-cmfcpreviewctrlimplmclrtextcolor"></a><a name="m_clrtextcolor"></a>CMFCPreviewCtrlImpl::m_clrTextColor
+## <a name="m_clrtextcolor"></a>CMFCPreviewCtrlImpl::m_clrTextColor
 プレビュー ウィンドウのテキストの色。  
   
 ### <a name="syntax"></a>構文  
@@ -197,14 +212,14 @@ COLORREF m_clrBackColor;
 ```  
 COLORREF m_clrTextColor;  
 ```  
-## <a name="a-namemfonta-cmfcpreviewctrlimplmfont--font-used-to-display-text-in-the-preview-window"></a><a name="m_font"></a>CMFCPreviewCtrlImpl::m_font フォントがプレビュー ウィンドウにテキストを表示するために使用します。  
+## <a name="m_font"></a>CMFCPreviewCtrlImpl::m_font フォントがプレビュー ウィンドウにテキストを表示するために使用します。  
   
 ### <a name="syntax"></a>構文  
   
 ```  
 CFont m_font;  
 ```  
-## <a name="a-namempdocumenta-cmfcpreviewctrlimplmpdocument"></a><a name="m_pdocument"></a>CMFCPreviewCtrlImpl::m_pDocument  
+## <a name="m_pdocument"></a>CMFCPreviewCtrlImpl::m_pDocument  
 コントロールにコンテンツを持つがプレビューされているドキュメントへのポインター。  
   
 ### <a name="syntax"></a>構文  
@@ -213,7 +228,7 @@ CFont m_font;
 ATL::IDocument* m_pDocument;  
 ```  
 
-## <a name="a-nameredrawa-cmfcpreviewctrlimplredraw"></a><a name="redraw"></a>CMFCPreviewCtrlImpl::Redraw  
+## <a name="redraw"></a>CMFCPreviewCtrlImpl::Redraw  
 このコントロールを再描画するように指示します。  
   
 ### <a name="syntax"></a>構文  
@@ -221,7 +236,7 @@ ATL::IDocument* m_pDocument;
 ```  
 virtual void Redraw();  
 ```  
-## <a name="a-namesetdocumenta-cmfcpreviewctrlimplsetdocument"></a><a name="setdocument"></a>CMFCPreviewCtrlImpl::SetDocument 
+## <a name="setdocument"></a>CMFCPreviewCtrlImpl::SetDocument 
 ドキュメントの実装と、プレビュー コントロールの間のリレーションシップを作成、プレビュー ハンドラーによって呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -236,7 +251,7 @@ void SetDocument(
  `pDocument`  
  ドキュメントの実装へのポインター。  
 
-## <a name="a-namesethosta-cmfcpreviewctrlimplsethost"></a><a name="sethost"></a>CMFCPreviewCtrlImpl::SetHost  
+## <a name="sethost"></a>CMFCPreviewCtrlImpl::SetHost  
 このコントロールの新しい親を設定します。  
   
 ### <a name="syntax"></a>構文  
@@ -251,7 +266,7 @@ virtual void SetHost(
  `hWndParent`  
  新しい親ウィンドウへのハンドル。  
 
-## <a name="a-namesetpreviewvisualsa-cmfcpreviewctrlimplsetpreviewvisuals"></a><a name="setpreviewvisuals"></a>CMFCPreviewCtrlImpl::SetPreviewVisuals  
+## <a name="setpreviewvisuals"></a>CMFCPreviewCtrlImpl::SetPreviewVisuals  
 リッチ プレビュー ハンドラーによってコンテンツとき呼び出されます豊富なプレビュー機能のビジュアルを設定する必要があります。  
   
 ### <a name="syntax"></a>構文  
@@ -274,7 +289,7 @@ virtual void SetPreviewVisuals(
  `plf`  
  プレビュー ウィンドウにテキストを表示するために使用するフォントです。 
 
-##  <a name="a-namesetrecta-cmfcpreviewctrlimplsetrect"></a><a name="setrect"></a>CMFCPreviewCtrlImpl::SetRect  
+##  <a name="setrect"></a>CMFCPreviewCtrlImpl::SetRect  
 このコントロールの新しい外接する四角形を設定します。  
   
 ### <a name="syntax"></a>構文  
@@ -296,7 +311,7 @@ virtual void SetRect(
 ### <a name="remarks"></a>コメント  
  通常、ホスト コントロールがサイズ変更されると、新しい外接する四角形が設定されます。  
 
-## <a name="a-namedtora-cmfcpreviewctrlimplcmfcpreviewctrlimpl"></a><a name="dtor"></a>CMFCPreviewCtrlImpl:: ~ CMFCPreviewCtrlImpl  
+## <a name="dtor"></a>CMFCPreviewCtrlImpl:: ~ CMFCPreviewCtrlImpl  
 プレビュー コントロール オブジェクトを破棄します。  
   
 ### <a name="syntax"></a>構文  

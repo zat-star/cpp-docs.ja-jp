@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CInternetConnection
+- AFXINET/CInternetConnection
+- AFXINET/CInternetConnection::CInternetConnection
+- AFXINET/CInternetConnection::GetContext
+- AFXINET/CInternetConnection::GetServerName
+- AFXINET/CInternetConnection::GetSession
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +92,7 @@ class CInternetConnection : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namecinternetconnectiona--cinternetconnectioncinternetconnection"></a><a name="cinternetconnection"></a>CInternetConnection::CInternetConnection  
+##  <a name="cinternetconnection"></a>CInternetConnection::CInternetConnection  
  このメンバー関数が呼び出されます、`CInternetConnection`オブジェクトを作成します。  
   
 ```  
@@ -122,7 +127,7 @@ CInternetConnection(
   
  既定値`dwContext`MFC から送信される、 `CInternetConnection`-派生オブジェクトから、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトの作成、**です**-派生オブジェクト。 既定値を 1 に設定します。、、特定のコンテキストでの識別子が明示的に指定することができます、 [CInternetSession](../../mfc/reference/cinternetsession-class.md#cinternetsession)接続のコンス トラクターです。 オブジェクトとその動作はそのコンテキスト ID に関連付けられる コンテキスト識別子が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用するオブジェクトの状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-namegetcontexta--cinternetconnectiongetcontext"></a><a name="getcontext"></a>CInternetConnection::GetContext  
+##  <a name="getcontext"></a>CInternetConnection::GetContext  
  このセッションのコンテキスト ID を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -137,7 +142,7 @@ DWORD_PTR GetContext() const;
   
  方法の詳細についての**GetContext**ユーザーのステータス情報を提供するためには、記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-namegetservernamea--cinternetconnectiongetservername"></a><a name="getservername"></a>CInternetConnection::GetServerName  
+##  <a name="getservername"></a>CInternetConnection::GetServerName  
  このインターネット接続に関連付けられているサーバーの名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -147,7 +152,7 @@ CString GetServerName() const;
 ### <a name="return-value"></a>戻り値  
  この接続オブジェクトを使用するサーバーの名前。  
   
-##  <a name="a-namegetsessiona--cinternetconnectiongetsession"></a><a name="getsession"></a>CInternetConnection::GetSession  
+##  <a name="getsession"></a>CInternetConnection::GetSession  
  ポインターを取得するには、このメンバー関数を呼び出す、`CInternetSession`この接続に関連付けられているオブジェクト。  
   
 ```  
@@ -157,7 +162,7 @@ CInternetSession* GetSession() const;
 ### <a name="return-value"></a>戻り値  
  ポインター、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)インターネット接続オブジェクトに関連付けられているオブジェクト。  
   
-##  <a name="a-nameoperatorhinterneta--cinternetconnectionoperator-hinternet"></a><a name="operator_hinternet"></a>CInternetConnection::operator HINTERNET  
+##  <a name="operator_hinternet"></a>CInternetConnection::operator HINTERNET  
  この演算子を使用して、現在のインターネット セッションの API レベルのハンドルを取得します。  
   
 ```  

@@ -9,9 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CAtlComModule
 - CAtlComModule
-- ATL::CAtlComModule
+- ATLBASE/ATL::CAtlComModule
+- ATLBASE/ATL::CAtlComModule::CAtlComModule
+- ATLBASE/ATL::CAtlComModule::RegisterServer
+- ATLBASE/ATL::CAtlComModule::RegisterTypeLib
+- ATLBASE/ATL::CAtlComModule::UnregisterServer
+- ATLBASE/ATL::CAtlComModule::UnRegisterTypeLib
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -81,7 +85,7 @@ class CAtlComModule : public _ATL_COM_MODULE
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namecatlcommodulea--catlcommodulecatlcommodule"></a><a name="catlcommodule"></a>CAtlComModule::CAtlComModule  
+##  <a name="catlcommodule"></a>CAtlComModule::CAtlComModule  
  コンストラクターです。  
   
 ```
@@ -91,7 +95,7 @@ CAtlComModule() throw();
 ### <a name="remarks"></a>コメント  
  モジュールを初期化します。  
   
-##  <a name="a-namedtora--catlcommodulecatlcommodule"></a><a name="dtor"></a>CAtlComModule:: ~ CAtlComModule  
+##  <a name="dtor"></a>CAtlComModule:: ~ CAtlComModule  
  デストラクターです。  
   
 ```
@@ -101,7 +105,7 @@ CAtlComModule() throw();
 ### <a name="remarks"></a>コメント  
  すべてのクラス ファクトリを解放します。  
   
-##  <a name="a-nameregisterservera--catlcommoduleregisterserver"></a><a name="registerserver"></a>CAtlComModule::RegisterServer  
+##  <a name="registerserver"></a>CAtlComModule::RegisterServer  
  オブジェクト マップ内の各オブジェクトのシステム レジストリを更新するには、このメソッドを呼び出します。  
   
 ```
@@ -121,7 +125,7 @@ HRESULT RegisterServer(BOOL bRegTypeLib = FALSE, const CLSID* pCLSID = NULL);
 ### <a name="remarks"></a>コメント  
  グローバル関数を呼び出す[AtlComModuleRegisterServer](http://msdn.microsoft.com/library/d11a0c91-0c56-4b1b-a5f5-1287970f798b)します。  
   
-##  <a name="a-nameregistertypeliba--catlcommoduleregistertypelib"></a><a name="registertypelib"></a>CAtlComModule::RegisterTypeLib  
+##  <a name="registertypelib"></a>CAtlComModule::RegisterTypeLib  
  タイプ ライブラリを登録するには、このメソッドを呼び出します。  
   
 ```
@@ -139,7 +143,7 @@ HRESULT RegisterTypeLib();
 ### <a name="remarks"></a>コメント  
  タイプ ライブラリについての情報をシステム レジストリに追加します。 モジュールのインスタンスに複数のタイプ ライブラリが含まれている場合は、このメソッドの最初のバージョンを使用して、どのタイプ ライブラリを使用するかを指定します。  
   
-##  <a name="a-nameunregisterservera--catlcommoduleunregisterserver"></a><a name="unregisterserver"></a>CAtlComModule::UnregisterServer  
+##  <a name="unregisterserver"></a>CAtlComModule::UnregisterServer  
  オブジェクト マップ内の各オブジェクトの登録を解除するには、このメソッドを呼び出します。  
   
 ```
@@ -161,7 +165,7 @@ HRESULT UnregisterServer(
 ### <a name="remarks"></a>コメント  
  グローバル関数を呼び出す[AtlComModuleUnregisterServer](http://msdn.microsoft.com/library/c4ef3da4-def7-4aaf-b005-573a02e389d5)します。  
   
-##  <a name="a-nameunregistertypeliba--catlcommoduleunregistertypelib"></a><a name="unregistertypelib"></a>CAtlComModule::UnRegisterTypeLib  
+##  <a name="unregistertypelib"></a>CAtlComModule::UnRegisterTypeLib  
  タイプ ライブラリの登録を解除するには、このメソッドを呼び出します。  
   
 ```

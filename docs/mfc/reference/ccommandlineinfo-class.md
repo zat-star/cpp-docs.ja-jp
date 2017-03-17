@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CCommandLineInfo
+- AFXWIN/CCommandLineInfo
+- AFXWIN/CCommandLineInfo::CCommandLineInfo
+- AFXWIN/CCommandLineInfo::ParseParam
+- AFXWIN/CCommandLineInfo::m_bRunAutomated
+- AFXWIN/CCommandLineInfo::m_bRunEmbedded
+- AFXWIN/CCommandLineInfo::m_bShowSplash
+- AFXWIN/CCommandLineInfo::m_nShellCommand
+- AFXWIN/CCommandLineInfo::m_strDriverName
+- AFXWIN/CCommandLineInfo::m_strFileName
+- AFXWIN/CCommandLineInfo::m_strPortName
+- AFXWIN/CCommandLineInfo::m_strPrinterName
+- AFXWIN/CCommandLineInfo::m_strRestartIdentifier
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -108,7 +120,7 @@ class CCommandLineInfo : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-nameccommandlineinfoa--ccommandlineinfoccommandlineinfo"></a><a name="ccommandlineinfo"></a>CCommandLineInfo::CCommandLineInfo  
+##  <a name="ccommandlineinfo"></a>CCommandLineInfo::CCommandLineInfo  
  このコンス トラクターを作成、`CCommandLineInfo`既定値を持つオブジェクト。  
   
 ```  
@@ -123,7 +135,7 @@ CCommandLineInfo();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&54;](../../mfc/codesnippet/cpp/ccommandlineinfo-class_1.cpp)]  
   
-##  <a name="a-namembrunautomateda--ccommandlineinfombrunautomated"></a><a name="m_brunautomated"></a>CCommandLineInfo::m_bRunAutomated  
+##  <a name="m_brunautomated"></a>CCommandLineInfo::m_bRunAutomated  
  示して、 **/Automation**フラグは、コマンドラインで見つかりました。  
   
 ```  
@@ -133,7 +145,7 @@ BOOL m_bRunAutomated;
 ### <a name="remarks"></a>コメント  
  場合**TRUE**、つまり、OLE オートメーション サーバーとして起動します。  
   
-##  <a name="a-namembrunembeddeda--ccommandlineinfombrunembedded"></a><a name="m_brunembedded"></a>CCommandLineInfo::m_bRunEmbedded  
+##  <a name="m_brunembedded"></a>CCommandLineInfo::m_bRunEmbedded  
  示します、 **埋め込み/**フラグは、コマンドラインで見つかりました。  
   
 ```  
@@ -143,7 +155,7 @@ BOOL m_bRunEmbedded;
 ### <a name="remarks"></a>コメント  
  場合**TRUE**、つまり OLE 埋め込みアイテムの編集開始します。  
   
-##  <a name="a-namembshowsplasha--ccommandlineinfombshowsplash"></a><a name="m_bshowsplash"></a>CCommandLineInfo::m_bShowSplash  
+##  <a name="m_bshowsplash"></a>CCommandLineInfo::m_bShowSplash  
  スプラッシュ スクリーンを表示することを示します。  
   
 ```  
@@ -153,7 +165,7 @@ BOOL m_bShowSplash;
 ### <a name="remarks"></a>コメント  
  場合**TRUE**、スプラッシュ スクリーンをつまり起動中にこのアプリケーションを表示する必要があります。 既定の実装[ParseParam](#parseparam)このデータ メンバーを設定**TRUE**場合[m_nShellCommand](#m_nshellcommand)に等しい**CCommandLineInfo::FileNew**します。  
   
-##  <a name="a-namemnshellcommanda--ccommandlineinfomnshellcommand"></a><a name="m_nshellcommand"></a>CCommandLineInfo::m_nShellCommand  
+##  <a name="m_nshellcommand"></a>CCommandLineInfo::m_nShellCommand  
  アプリケーションのこのインスタンスのシェル コマンドを示します。  
   
 ```  
@@ -208,7 +220,7 @@ m_nShellCommand;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&55;](../../mfc/codesnippet/cpp/ccommandlineinfo-class_2.cpp)]  
   
-##  <a name="a-namemstrdrivernamea--ccommandlineinfomstrdrivername"></a><a name="m_strdrivername"></a>CCommandLineInfo::m_strDriverName  
+##  <a name="m_strdrivername"></a>CCommandLineInfo::m_strDriverName  
  コマンドラインでは、3 番目のフラグでないパラメーターの値を格納します。  
   
 ```  
@@ -218,7 +230,7 @@ CString m_strDriverName;
 ### <a name="remarks"></a>コメント  
  このパラメーターは、通常、印刷シェル コマンドのプリンタ ドライバの名前です。 既定の実装[ParseParam](#parseparam)設定データ メンバー場合のみ、この、 **/pt**フラグは、コマンドラインで見つかりました。  
   
-##  <a name="a-namemstrfilenamea--ccommandlineinfomstrfilename"></a><a name="m_strfilename"></a>CCommandLineInfo::m_strFileName  
+##  <a name="m_strfilename"></a>CCommandLineInfo::m_strFileName  
  コマンドラインでは、最初のフラグでないパラメーターの値を格納します。  
   
 ```  
@@ -228,7 +240,7 @@ CString m_strFileName;
 ### <a name="remarks"></a>コメント  
  このパラメーターは、通常、開くファイルの名前です。  
   
-##  <a name="a-namemstrportnamea--ccommandlineinfomstrportname"></a><a name="m_strportname"></a>CCommandLineInfo::m_strPortName  
+##  <a name="m_strportname"></a>CCommandLineInfo::m_strPortName  
  コマンドラインでは、4 番目のフラグでないパラメーターの値を格納します。  
   
 ```  
@@ -238,7 +250,7 @@ CString m_strPortName;
 ### <a name="remarks"></a>コメント  
  このパラメーターは、通常、印刷シェル コマンドのプリンター ポートの名前です。 既定の実装[ParseParam](#parseparam)設定データ メンバー場合のみ、この、 **/pt**フラグは、コマンドラインで見つかりました。  
   
-##  <a name="a-namemstrprinternamea--ccommandlineinfomstrprintername"></a><a name="m_strprintername"></a>CCommandLineInfo::m_strPrinterName  
+##  <a name="m_strprintername"></a>CCommandLineInfo::m_strPrinterName  
  コマンドラインでは、2 番目のフラグでないパラメーターの値を格納します。  
   
 ```  
@@ -248,7 +260,7 @@ CString m_strPrinterName;
 ### <a name="remarks"></a>コメント  
  このパラメーターは、通常、印刷シェル コマンドのプリンターの名前です。 既定の実装[ParseParam](#parseparam)設定データ メンバー場合のみ、この、 **/pt**フラグは、コマンドラインで見つかりました。  
   
-##  <a name="a-namemstrrestartidentifiera--ccommandlineinfomstrrestartidentifier"></a><a name="m_strrestartidentifier"></a>CCommandLineInfo::m_strRestartIdentifier  
+##  <a name="m_strrestartidentifier"></a>CCommandLineInfo::m_strRestartIdentifier  
  コマンド ライン上の識別子を一意に再起動します。  
   
 ```  
@@ -260,7 +272,7 @@ CString m_strRestartIdentifier;
   
  再起動マネージャーは、アプリケーションを終了するし、再起動するように構成、再起動マネージャーは、省略可能なパラメーターとして再起動識別子を使用してコマンドラインからアプリケーションを実行します。 再起動マネージャーは、再起動の識別子を使用する場合、アプリケーションが開いていたドキュメントを再び開くしたり、自動保存されたファイルを回復します。  
   
-##  <a name="a-nameparseparama--ccommandlineinfoparseparam"></a><a name="parseparam"></a>その  
+##  <a name="parseparam"></a>その  
  フレームワークでは、コマンドラインからの個々 のパラメーターの解析/解釈には、この関数を呼び出します。 最初の&2; つ目のバージョンと一致しない Unicode プロジェクトでのみです。  
   
 ```  

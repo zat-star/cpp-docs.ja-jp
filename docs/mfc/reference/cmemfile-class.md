@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMemFile
+- AFX/CMemFile
+- AFX/CMemFile::CMemFile
+- AFX/CMemFile::Attach
+- AFX/CMemFile::Detach
+- AFX/CMemFile::Alloc
+- AFX/CMemFile::Free
+- AFX/CMemFile::GrowFile
+- AFX/CMemFile::Memcpy
+- AFX/CMemFile::Realloc
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +111,7 @@ class CMemFile : public CFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namealloca--cmemfilealloc"></a><a name="alloc"></a>CMemFile::Alloc  
+##  <a name="alloc"></a>CMemFile::Alloc  
  この関数は`CMemFile`メンバー関数。  
   
 ```  
@@ -121,7 +130,7 @@ virtual BYTE* Alloc(SIZE_T nBytes);
   
  既定の実装は、ランタイム ライブラリ関数を使用して[malloc](../../c-runtime-library/reference/malloc.md)メモリを割り当てられません。  
   
-##  <a name="a-nameattacha--cmemfileattach"></a><a name="attach"></a>CMemFile::Attach  
+##  <a name="attach"></a>CMemFile::Attach  
  メモリ ブロックをアタッチするには、この関数を呼び出す`CMemFile`します。  
   
 ```  
@@ -150,7 +159,7 @@ void Attach(
   
  場合`nGrowBytes`は 0 より大きく、`CMemFile`アタッチしたメモリ ブロックの内容は無視されます。 スクラッチを使用して、メモリ ファイルの内容を記述する必要があります、`CMemFile`のオーバーライド`CFile::Write`します。 ファイルの末尾を超えて書き込みまたはを呼び出して、ファイルを拡張しようとすると、`CMemFile`のオーバーライド`CFile::SetLength`、`CMemFile`単位でメモリの割り当てを成長`nGrowBytes`します。 メモリの割り当ての成長にメモリ ブロックを渡す場合は失敗**アタッチ**と互換性のあるメソッドを使用して割り当てられていない[アロケーション](#alloc)です。 既定の実装と互換性がある`Alloc`、ランタイム ライブラリ関数でメモリを割り当てる必要があります[malloc](../../c-runtime-library/reference/malloc.md)または[calloc](../../c-runtime-library/reference/calloc.md)します。  
   
-##  <a name="a-namecmemfilea--cmemfilecmemfile"></a><a name="cmemfile"></a>CMemFile::CMemFile  
+##  <a name="cmemfile"></a>CMemFile::CMemFile  
  最初のオーバー ロードは、空のメモリのファイルを開きます。  
   
 ```  
@@ -181,7 +190,7 @@ CMemFile(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#36;](../../atl-mfc-shared/reference/codesnippet/cpp/cmemfile-class_1.cpp)]  
   
-##  <a name="a-namedetacha--cmemfiledetach"></a><a name="detach"></a>CMemFile::Detach  
+##  <a name="detach"></a>CMemFile::Detach  
  によって使用されているメモリ ブロックへのポインターを取得するには、この関数を呼び出す`CMemFile`します。  
   
 ```  
@@ -194,7 +203,7 @@ BYTE* Detach();
 ### <a name="remarks"></a>コメント  
  この関数も閉じ、`CMemFile`です。 メモリ ブロックを再アタッチできる`CMemFile`を呼び出して[アタッチ](#attach)します。 ファイルを再アタッチし、データを使用する場合を呼び出す必要があります[結び付けてその中](../../mfc/reference/cfile-class.md#getlength)を呼び出す前にファイルの長さを取得する**デタッチ**します。 メモリ ブロックをアタッチする場合は、`CMemFile`のデータを使用できるように ( `nGrowBytes` 0 = =)、メモリ ファイルを拡張することはできませんし、します。  
   
-##  <a name="a-namefreea--cmemfilefree"></a><a name="free"></a>CMemFile::Free  
+##  <a name="free"></a>CMemFile::Free  
  この関数は`CMemFile`メンバー関数。  
   
 ```  
@@ -208,7 +217,7 @@ virtual void Free(BYTE* lpMem);
 ### <a name="remarks"></a>コメント  
  カスタム メモリの解放を実装するには、この関数をオーバーライドします。 この関数をオーバーライドする場合はおそらくにしておくオーバーライド[アロケーション](#alloc)と[Realloc](#realloc)もします。  
   
-##  <a name="a-namegrowfilea--cmemfilegrowfile"></a><a name="growfile"></a>CMemFile::GrowFile  
+##  <a name="growfile"></a>CMemFile::GrowFile  
  この関数は、いくつかの`CMemFile`メンバー関数。  
   
 ```  
@@ -222,7 +231,7 @@ virtual void GrowFile(SIZE_T dwNewLen);
 ### <a name="remarks"></a>コメント  
  変更する場合にオーバーライドできる方法`CMemFile`そのファイルを拡張します。 既定の実装[Realloc](#realloc)既存のブロックを拡張する (または[アロケーション](#alloc)メモリ ブロックを作成する) の倍数でメモリを割り当て、`nGrowBytes`コンス トラクターで指定された値または[アタッチ](#attach)呼び出します。  
   
-##  <a name="a-namememcpya--cmemfilememcpy"></a><a name="memcpy"></a>CMemFile::Memcpy  
+##  <a name="memcpy"></a>CMemFile::Memcpy  
  この関数は、`CMemFile`のオーバーライド[:read](../../mfc/reference/cfile-class.md#read)と[CFile::Write](../../mfc/reference/cfile-class.md#write)メモリ ファイル間でデータを転送します。  
   
 ```  
@@ -248,7 +257,7 @@ virtual BYTE* Memcpy(
 ### <a name="remarks"></a>コメント  
  方法を変更する場合は、この関数をオーバーライドする`CMemFile`はメモリをコピーします。  
   
-##  <a name="a-namerealloca--cmemfilerealloc"></a><a name="realloc"></a>CMemFile::Realloc  
+##  <a name="realloc"></a>CMemFile::Realloc  
  この関数は`CMemFile`メンバー関数。  
   
 ```  

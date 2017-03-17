@@ -9,11 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CStrBufT<TCharType>
-- ATL.CStrBufT
 - CStrBufT
-- ATL::CStrBufT
-- ATL.CStrBufT<TCharType>
+- ATLSIMPSTR/ATL::CStrBufT
+- ATLSIMPSTR/ATL::CStrBufT::CStrBufT
+- ATLSIMPSTR/ATL::CStrBufT::SetLength
+- ATLSIMPSTR/ATL::CStrBufT::AUTO_LENGTH
+- ATLSIMPSTR/ATL::CStrBufT::SET_LENGTH
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -109,7 +110,7 @@ class CStrBufT
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpstr.h  
   
-##  <a name="a-nameautolengtha--cstrbuftautolength"></a><a name="auto_length"></a>CStrBufT::AUTO_LENGTH  
+##  <a name="auto_length"></a>CStrBufT::AUTO_LENGTH  
  リリース時に、文字列の長さを自動的に決定します。  
   
 ```
@@ -119,7 +120,7 @@ static const DWORD AUTO_LENGTH = 0x01;
 ### <a name="remarks"></a>コメント  
  リリース時に、文字列の長さを自動的に決定します。 Null で終わる文字列でなければなりません。  
   
-##  <a name="a-namecstrbufta--cstrbuftcstrbuft"></a><a name="cstrbuft"></a>CStrBufT::CStrBufT  
+##  <a name="cstrbuft"></a>CStrBufT::CStrBufT  
  バッファー オブジェクトを構築します。  
   
 ```
@@ -146,7 +147,7 @@ explicit CStrBufT(StringType& str) throw(...);
   
  コピー コンス トラクターは`private`です。  
   
-##  <a name="a-nameoperatorpcxstra--cstrbuftoperator-pcxstr"></a><a name="operator_pcxstr"></a>CStrBufT::operator PCXSTR  
+##  <a name="operator_pcxstr"></a>CStrBufT::operator PCXSTR  
  関連付けられている文字列オブジェクトを C スタイルの文字列として格納される文字に直接アクセスします。  
   
 ```  
@@ -159,7 +160,7 @@ operator PCXSTR() const throw();
 ### <a name="remarks"></a>コメント  
  この関数では、文字列オブジェクトの文字バッファーへのポインターを返します。 このポインターでは、文字列オブジェクトの内容を変更することはできません。  
   
-##  <a name="a-nameoperatorpxstra--cstrbuftoperator-pxstr"></a><a name="operator_pxstr"></a>CStrBufT::operator PXSTR  
+##  <a name="operator_pxstr"></a>CStrBufT::operator PXSTR  
  関連付けられている文字列オブジェクトを C スタイルの文字列として格納される文字に直接アクセスします。  
   
 ```
@@ -172,21 +173,21 @@ operator PXSTR() throw();
 ### <a name="remarks"></a>コメント  
  この関数では、文字列オブジェクトの文字バッファーへのポインターを返します。 開発者は、このポインターを持つ文字列オブジェクトの内容を変更できます。  
   
-##  <a name="a-namepcxstra--cstrbuftpcxstr"></a><a name="pcxstr"></a>CStrBufT::PCXSTR  
+##  <a name="pcxstr"></a>CStrBufT::PCXSTR  
  定数文字列へのポインター。  
   
 ```
 typedef CSimpleStringT<TCharType>::PCXSTR PCXSTR;
 ```  
   
-##  <a name="a-namepxstra--cstrbuftpxstr"></a><a name="pxstr"></a>CStrBufT::PXSTR  
+##  <a name="pxstr"></a>CStrBufT::PXSTR  
  文字列へのポインター。  
   
 ```
 typedef CSimpleStringT<TCharType>::PXSTR PXSTR;
 ```  
   
-##  <a name="a-namesetlengtha--cstrbuftsetlength"></a><a name="set_length"></a>CStrBufT::SET_LENGTH  
+##  <a name="set_length"></a>CStrBufT::SET_LENGTH  
  文字列オブジェクトの長さを設定`GetBuffer`時間です。  
   
 ```
@@ -198,7 +199,7 @@ static const DWORD SET_LENGTH = 0x02;
   
  かどうかを[CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)文字列バッファー オブジェクトの構築時に呼び出されます。  
   
-##  <a name="a-namesetlengtha--cstrbuftsetlength"></a><a name="setlength"></a>CStrBufT::SetLength  
+##  <a name="setlength"></a>CStrBufT::SetLength  
  文字バッファーの長さを設定します。  
   
 ```
@@ -215,7 +216,7 @@ void SetLength(int nLength);
 ### <a name="remarks"></a>コメント  
  バッファー オブジェクトで表される文字列の長さを設定するには、この関数を呼び出します。  
   
-##  <a name="a-namestringtypea--cstrbuftstringtype"></a><a name="stringtype"></a>CStrBufT::StringType  
+##  <a name="stringtype"></a>CStrBufT::StringType  
  このクラス テンプレートの特殊化で操作するためのバッファーは、文字列型です。  
   
 ```

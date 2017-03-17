@@ -10,8 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFirePropNotifyEvent
-- ATL::CFirePropNotifyEvent
-- ATL.CFirePropNotifyEvent
+- ATLCTL/ATL::CFirePropNotifyEvent
+- ATLCTL/ATL::CFirePropNotifyEvent::FireOnChanged
+- ATLCTL/ATL::CFirePropNotifyEvent::FireOnRequestEdit
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -74,7 +75,7 @@ class CFirePropNotifyEvent
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namefireonchangeda--cfirepropnotifyeventfireonchanged"></a><a name="fireonchanged"></a>CFirePropNotifyEvent::FireOnChanged  
+##  <a name="fireonchanged"></a>CFirePropNotifyEvent::FireOnChanged  
  通知すべて接続されている[IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)インターフェイス (オブジェクトのすべての接続ポイント) 上に、指定したオブジェクトのプロパティが変更されたことです。  
   
 ```
@@ -94,7 +95,7 @@ static HRESULT FireOnChanged(IUnknown* pUnk, DISPID dispID);
 ### <a name="remarks"></a>コメント  
  この関数は、コントロールはコネクション ポイントをサポートしていない場合でもを呼び出しても安全です。  
   
-##  <a name="a-namefireonrequestedita--cfirepropnotifyeventfireonrequestedit"></a><a name="fireonrequestedit"></a>CFirePropNotifyEvent::FireOnRequestEdit  
+##  <a name="fireonrequestedit"></a>CFirePropNotifyEvent::FireOnRequestEdit  
  通知すべて接続されている[IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)指定したオブジェクトのプロパティが変更されようとしています (オブジェクトのコネクション ポイントがすべて) 上のインターフェイスです。  
   
 ```

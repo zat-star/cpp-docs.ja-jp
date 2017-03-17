@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCLinkCtrl
+- AFXLINKCTRL/CMFCLinkCtrl
+- AFXLINKCTRL/CMFCLinkCtrl::SetURL
+- AFXLINKCTRL/CMFCLinkCtrl::SetURLPrefix
+- AFXLINKCTRL/CMFCLinkCtrl::SizeToContent
+- AFXLINKCTRL/CMFCLinkCtrl::OnDrawFocusRect
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +94,7 @@ class CMFCLinkCtrl : public CMFCButton
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxlinkctrl.h  
   
-##  <a name="a-nameondrawfocusrecta--cmfclinkctrlondrawfocusrect"></a><a name="ondrawfocusrect"></a>CMFCLinkCtrl::OnDrawFocusRect  
+##  <a name="ondrawfocusrect"></a>CMFCLinkCtrl::OnDrawFocusRect  
  フォーカスされたボタンの四角形が描画される前に、フレームワークによって呼び出されます。  
   
 ```  
@@ -108,7 +113,7 @@ virtual void OnDrawFocusRect(
 ### <a name="remarks"></a>コメント  
  ボタンのフォーカスされた四角形を描画する独自のコードを使用する場合は、このメソッドをオーバーライドします。  
   
-##  <a name="a-nameseturla--cmfclinkctrlseturl"></a><a name="seturl"></a>CMFCLinkCtrl::SetURL  
+##  <a name="seturl"></a>CMFCLinkCtrl::SetURL  
  ボタンのテキストとして指定された URL を表示します。  
   
 ```  
@@ -121,7 +126,7 @@ void SetURL(LPCTSTR lpszURL);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameseturlprefixa--cmfclinkctrlseturlprefix"></a><a name="seturlprefix"></a>CMFCLinkCtrl::SetURLPrefix  
+##  <a name="seturlprefix"></a>CMFCLinkCtrl::SetURLPrefix  
  暗黙的なプロトコルを設定します (たとえば、"http:") の URL のです。  
   
 ```  
@@ -135,7 +140,7 @@ void SetURLPrefix(LPCTSTR lpszPrefix);
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、URL プレフィックスを設定できます。 プレフィックスは、ボタンの表面に表示されませんが、URL のターゲットへの参照を使用することができます。  
   
-##  <a name="a-namesizetocontenta--cmfclinkctrlsizetocontent"></a><a name="sizetocontent"></a>CMFCLinkCtrl::SizeToContent  
+##  <a name="sizetocontent"></a>CMFCLinkCtrl::SizeToContent  
  ボタンのテキストまたはビットマップを含むボタンのサイズを変更します。  
   
 ```  

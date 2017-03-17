@@ -10,7 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DRectU
-- afxrendertarget/CD2DRectU
+- AFXRENDERTARGET/CD2DRectU
+- AFXRENDERTARGET/CD2DRectU::CD2DRectU
+- AFXRENDERTARGET/CD2DRectU::IsNull
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -77,7 +79,7 @@ class CD2DRectU : public D2D1_RECT_U;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namecd2drectua--cd2drectucd2drectu"></a><a name="cd2drectu"></a>CD2DRectU::CD2DRectU  
+##  <a name="cd2drectu"></a>CD2DRectU::CD2DRectU  
  CRect オブジェクトから CD2DRectU オブジェクトを構築します。  
   
 ```  
@@ -109,7 +111,7 @@ CD2DRectU(
  `uBottom`  
  ソースの下部にある座標  
   
-##  <a name="a-nameisnulla--cd2drectuisnull"></a><a name="isnull"></a>CD2DRectU::IsNull  
+##  <a name="isnull"></a>CD2DRectU::IsNull  
  式に有効なデータ (Null) が含まれていないかどうかを示すブール値を返します。  
   
 ```  
@@ -119,7 +121,7 @@ BOOL IsNull() const;
 ### <a name="return-value"></a>戻り値  
  四角形の上、左、下、および適切な値はすべて 0 に等しい場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-nameoperatorcrecta--cd2drectuoperator-crect"></a><a name="operator_crect"></a>CD2DRectU::operator CRect  
+##  <a name="operator_crect"></a>CD2DRectU::operator CRect  
  CD2DRectU を含む CRect オブジェクトに変換します。  
   
 ```  

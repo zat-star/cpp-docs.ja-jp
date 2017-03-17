@@ -10,7 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DGradientBrush
-- afxrendertarget/CD2DGradientBrush
+- AFXRENDERTARGET/CD2DGradientBrush
+- AFXRENDERTARGET/CD2DGradientBrush::CD2DGradientBrush
+- AFXRENDERTARGET/CD2DGradientBrush::Destroy
+- AFXRENDERTARGET/CD2DGradientBrush::m_arGradientStops
+- AFXRENDERTARGET/CD2DGradientBrush::m_colorInterpolationGamma
+- AFXRENDERTARGET/CD2DGradientBrush::m_extendMode
+- AFXRENDERTARGET/CD2DGradientBrush::m_pGradientStops
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,14 +91,14 @@ class CD2DGradientBrush : public CD2DBrush;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dgradientbrusha--cd2dgradientbrushcd2dgradientbrush"></a><a name="_dtorcd2dgradientbrush"></a>CD2DGradientBrush:: ~ CD2DGradientBrush  
+##  <a name="_dtorcd2dgradientbrush"></a>CD2DGradientBrush:: ~ CD2DGradientBrush  
  デストラクターです。 D2D グラデーション ブラシのオブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DGradientBrush();
 ```  
   
-##  <a name="a-namecd2dgradientbrusha--cd2dgradientbrushcd2dgradientbrush"></a><a name="cd2dgradientbrush"></a>CD2DGradientBrush::CD2DGradientBrush  
+##  <a name="cd2dgradientbrush"></a>CD2DGradientBrush::CD2DGradientBrush  
  CD2DGradientBrush オブジェクトを構築します。  
   
 ```  
@@ -128,35 +134,35 @@ CD2DGradientBrush(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namedestroya--cd2dgradientbrushdestroy"></a><a name="destroy"></a>CD2DGradientBrush::Destroy  
+##  <a name="destroy"></a>CD2DGradientBrush::Destroy  
  CD2DGradientBrush のオブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namemargradientstopsa--cd2dgradientbrushmargradientstops"></a><a name="m_argradientstops"></a>CD2DGradientBrush::m_arGradientStops  
+##  <a name="m_argradientstops"></a>CD2DGradientBrush::m_arGradientStops  
  D2D1_GRADIENT_STOP 構造体の配列。  
   
 ```  
 CArray<D2D1_GRADIENT_STOP, D2D1_GRADIENT_STOP> m_arGradientStops;  
 ```  
   
-##  <a name="a-namemcolorinterpolationgammaa--cd2dgradientbrushmcolorinterpolationgamma"></a><a name="m_colorinterpolationgamma"></a>CD2DGradientBrush::m_colorInterpolationGamma  
+##  <a name="m_colorinterpolationgamma"></a>CD2DGradientBrush::m_colorInterpolationGamma  
  どの色のグラデーションの分岐点間の補間が実行される領域です。  
   
 ```  
 D2D1_GAMMA m_colorInterpolationGamma;  
 ```  
   
-##  <a name="a-namemextendmodea--cd2dgradientbrushmextendmode"></a><a name="m_extendmode"></a>CD2DGradientBrush::m_extendMode  
+##  <a name="m_extendmode"></a>CD2DGradientBrush::m_extendMode  
  [0,&1;] の正規化された範囲外のグラデーションの動作です。  
   
 ```  
 D2D1_EXTEND_MODE m_extendMode;  
 ```  
   
-##  <a name="a-namempgradientstopsa--cd2dgradientbrushmpgradientstops"></a><a name="m_pgradientstops"></a>CD2DGradientBrush::m_pGradientStops  
+##  <a name="m_pgradientstops"></a>CD2DGradientBrush::m_pGradientStops  
  D2D1_GRADIENT_STOP 構造体の配列へのポインター。  
   
 ```  

@@ -10,6 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CStatusBar
+- AFXEXT/CStatusBar
+- AFXEXT/CStatusBar::CStatusBar
+- AFXEXT/CStatusBar::CommandToIndex
+- AFXEXT/CStatusBar::Create
+- AFXEXT/CStatusBar::CreateEx
+- AFXEXT/CStatusBar::DrawItem
+- AFXEXT/CStatusBar::GetItemID
+- AFXEXT/CStatusBar::GetItemRect
+- AFXEXT/CStatusBar::GetPaneInfo
+- AFXEXT/CStatusBar::GetPaneStyle
+- AFXEXT/CStatusBar::GetPaneText
+- AFXEXT/CStatusBar::GetStatusBarCtrl
+- AFXEXT/CStatusBar::SetIndicators
+- AFXEXT/CStatusBar::SetPaneInfo
+- AFXEXT/CStatusBar::SetPaneStyle
+- AFXEXT/CStatusBar::SetPaneText
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -122,7 +138,7 @@ class CStatusBar : public CControlBar
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-namecommandtoindexa--cstatusbarcommandtoindex"></a><a name="commandtoindex"></a>CStatusBar::CommandToIndex  
+##  <a name="commandtoindex"></a>CStatusBar::CommandToIndex  
  指定された ID のインジケーターのインデックスを取得します。  
   
 ```  
@@ -139,7 +155,7 @@ int CommandToIndex(UINT nIDFind) const;
 ### <a name="remarks"></a>コメント  
  最初のインジケーターのインデックスは 0 です。  
   
-##  <a name="a-namecreatea--cstatusbarcreate"></a><a name="create"></a>CStatusBar::Create  
+##  <a name="create"></a>CStatusBar::Create  
  ステータス バー (子ウィンドウ) を作成し、関連付けます、`CStatusBar`オブジェクトです。  
   
 ```  
@@ -171,7 +187,7 @@ virtual BOOL Create(
 ### <a name="remarks"></a>コメント  
  初期のフォントを設定し、状態を設定もバーの高さを既定値です。  
   
-##  <a name="a-namecreateexa--cstatusbarcreateex"></a><a name="createex"></a>CStatusBar::CreateEx  
+##  <a name="createex"></a>CStatusBar::CreateEx  
  ステータス バー (子ウィンドウ) を作成し、それをするには、この関数を呼び出して、`CStatusBar`オブジェクトです。  
   
 ```  
@@ -209,14 +225,14 @@ virtual BOOL CreateEx(
   
  使用`CreateEx`の代わりに[作成](#create)、特定のスタイルが埋め込まれたステータス バー コントロールの作成時に存在する必要がある場合。 たとえば、設定`dwCtrlStyle`に**には**ステータス バー オブジェクトにツールヒントを表示します。  
   
-##  <a name="a-namecstatusbara--cstatusbarcstatusbar"></a><a name="cstatusbar"></a>CStatusBar::CStatusBar  
+##  <a name="cstatusbar"></a>CStatusBar::CStatusBar  
  構築、`CStatusBar`オブジェクトは、必要に応じて、既定のステータス バーのフォントを作成し、フォントの特性を既定値に設定します。  
   
 ```  
 CStatusBar();
 ```  
   
-##  <a name="a-namedrawitema--cstatusbardrawitem"></a><a name="drawitem"></a>CStatusBar::DrawItem  
+##  <a name="drawitem"></a>CStatusBar::DrawItem  
  このメンバー関数は、オーナー描画ステータス バーの変更のビジュアルな部分と、フレームワークによって呼び出されます。  
   
 ```  
@@ -230,7 +246,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 ### <a name="remarks"></a>コメント  
  **ItemAction**のメンバー、`DRAWITEMSTRUCT`構造体を実行するのには、描画の動作を定義します。 オーナー描画の描画を実装するには、この関数をオーバーライド`CStatusBar`オブジェクトです。 アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する必要があります`lpDrawItemStruct`このメンバー関数が終了する前にします。  
   
-##  <a name="a-namegetitemida--cstatusbargetitemid"></a><a name="getitemid"></a>CStatusBar::GetItemID  
+##  <a name="getitemid"></a>CStatusBar::GetItemID  
  指定したインジケーターの ID を返す`nIndex`します。  
   
 ```  
@@ -244,7 +260,7 @@ UINT GetItemID(int nIndex) const;
 ### <a name="return-value"></a>戻り値  
  指定したインジケーターの ID`nIndex`します。  
   
-##  <a name="a-namegetitemrecta--cstatusbargetitemrect"></a><a name="getitemrect"></a>CStatusBar::GetItemRect  
+##  <a name="getitemrect"></a>CStatusBar::GetItemRect  
  指定したインジケーターの座標をコピー`nIndex`が指す構造体に`lpRect`します。  
   
 ```  
@@ -263,7 +279,7 @@ void GetItemRect(
 ### <a name="remarks"></a>コメント  
  座標は、ステータス バーの左上隅に対して相対的 (ピクセル単位)。  
   
-##  <a name="a-namegetpaneinfoa--cstatusbargetpaneinfo"></a><a name="getpaneinfo"></a>CStatusBar::GetPaneInfo  
+##  <a name="getpaneinfo"></a>CStatusBar::GetPaneInfo  
  セット`nID`、 `nStyle`、および`cxWidth`ID、スタイル、およびによって指定された位置にインジケーター ウィンドウの幅を`nIndex`します。  
   
 ```  
@@ -287,7 +303,7 @@ void GetPaneInfo(
  `cxWidth`  
  ウィンドウの幅に設定されている整数への参照。  
   
-##  <a name="a-namegetpanestylea--cstatusbargetpanestyle"></a><a name="getpanestyle"></a>CStatusBar::GetPaneStyle  
+##  <a name="getpanestyle"></a>CStatusBar::GetPaneStyle  
  ステータス バーのウィンドウのスタイルを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -306,7 +322,7 @@ UINT GetPaneStyle(int nIndex) const;
   
  ステータス バーで使用可能なスタイルの一覧は、次を参照してください。[作成](#create)します。  
   
-##  <a name="a-namegetpanetexta--cstatusbargetpanetext"></a><a name="getpanetext"></a>CStatusBar::GetPaneText  
+##  <a name="getpanetext"></a>CStatusBar::GetPaneText  
  ステータス バー ペインに表示されるテキストを取得するには、このメンバー関数を呼び出します。  
   
 ```  

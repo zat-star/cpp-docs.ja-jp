@@ -10,8 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IDispEventSimpleImpl
-- ATL::IDispEventSimpleImpl
-- ATL.IDispEventSimpleImpl
+- ATLCOM/ATL::IDispEventSimpleImpl
+- ATLCOM/ATL::IDispEventSimpleImpl::Advise
+- ATLCOM/ATL::IDispEventSimpleImpl::DispEventAdvise
+- ATLCOM/ATL::IDispEventSimpleImpl::DispEventUnadvise
+- ATLCOM/ATL::IDispEventSimpleImpl::GetIDsOfNames
+- ATLCOM/ATL::IDispEventSimpleImpl::GetTypeInfo
+- ATLCOM/ATL::IDispEventSimpleImpl::GetTypeInfoCount
+- ATLCOM/ATL::IDispEventSimpleImpl::Invoke
+- ATLCOM/ATL::IDispEventSimpleImpl::Unadvise
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -113,7 +120,7 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameadvisea--idispeventsimpleimpladvise"></a><a name="advise"></a>IDispEventSimpleImpl::Advise  
+##  <a name="advise"></a>IDispEventSimpleImpl::Advise  
  によって表されるイベント ソースに接続を確立するには、このメソッドを呼び出す*pUnk*します。  
   
 ```
@@ -135,7 +142,7 @@ HRESULT Advise(IUnknown* pUnk);
   
  `Advise`接続を確立によって決定されるオブジェクトの既定のイベント ソースの IID を取得して既定のイベント ソースと[AtlGetObjectSourceInterface](http://msdn.microsoft.com/library/a8528f45-fbfb-4e24-ad1a-1d69b2897155)します。  
   
-##  <a name="a-namedispeventadvisea--idispeventsimpleimpldispeventadvise"></a><a name="dispeventadvise"></a>IDispEventSimpleImpl::DispEventAdvise  
+##  <a name="dispeventadvise"></a>IDispEventSimpleImpl::DispEventAdvise  
  によって表されるイベント ソースに接続を確立するには、このメソッドを呼び出す*pUnk*します。  
   
 ```
@@ -160,7 +167,7 @@ HRESULT DispEventAdvise(IUnknown* pUnk  const IID* piid);
   
  `DispEventAdvise`指定されたイベント ソースとの接続を確立`pdiid`します。  
   
-##  <a name="a-namedispeventunadvisea--idispeventsimpleimpldispeventunadvise"></a><a name="dispeventunadvise"></a>IDispEventSimpleImpl::DispEventUnadvise  
+##  <a name="dispeventunadvise"></a>IDispEventSimpleImpl::DispEventUnadvise  
  によって表されるイベント ソースに、接続が切断*pUnk*します。  
   
 ```
@@ -185,7 +192,7 @@ HRESULT DispEventUnadvise(IUnknown* pUnk  const IID* piid);
   
  `DispEventAdvise`指定されたイベント ソースによって確立された接続が切断`pdiid`します。  
   
-##  <a name="a-namegetidsofnamesa--idispeventsimpleimplgetidsofnames"></a><a name="getidsofnames"></a>IDispEventSimpleImpl::GetIDsOfNames  
+##  <a name="getidsofnames"></a>IDispEventSimpleImpl::GetIDsOfNames  
  この実装の**IDispatch::GetIDsOfNames**返します**E_NOTIMPL**します。  
   
 ```
@@ -200,7 +207,7 @@ STDMETHOD(GetIDsOfNames)(
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetIDsOfNames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegettypeinfoa--idispeventsimpleimplgettypeinfo"></a><a name="gettypeinfo"></a>IDispEventSimpleImpl::GetTypeInfo  
+##  <a name="gettypeinfo"></a>IDispEventSimpleImpl::GetTypeInfo  
  この実装の**が**返します**E_NOTIMPL**します。  
   
 ```
@@ -213,7 +220,7 @@ STDMETHOD(GetTypeInfo)(
 ### <a name="remarks"></a>コメント  
  参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegettypeinfocounta--idispeventsimpleimplgettypeinfocount"></a><a name="gettypeinfocount"></a>IDispEventSimpleImpl::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>IDispEventSimpleImpl::GetTypeInfoCount  
  この実装の**IDispatch::GetTypeInfoCount**返します**E_NOTIMPL**します。  
   
 ```
@@ -223,7 +230,7 @@ STDMETHOD(GetTypeInfoCount)(UINT* /* pctinfo */);
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameinvokea--idispeventsimpleimplinvoke"></a><a name="invoke"></a>IDispEventSimpleImpl::Invoke  
+##  <a name="invoke"></a>IDispEventSimpleImpl::Invoke  
  この実装の**idispatch::invoke**イベント シンク マップに示されたイベント ハンドラーの呼び出しです。  
   
 ```
@@ -241,7 +248,7 @@ STDMETHOD(Invoke)(
 ### <a name="remarks"></a>コメント  
  参照してください[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)します。  
   
-##  <a name="a-nameunadvisea--idispeventsimpleimplunadvise"></a><a name="unadvise"></a>IDispEventSimpleImpl::Unadvise  
+##  <a name="unadvise"></a>IDispEventSimpleImpl::Unadvise  
  によって表されるイベント ソースに、接続が切断*pUnk*します。  
   
 ```

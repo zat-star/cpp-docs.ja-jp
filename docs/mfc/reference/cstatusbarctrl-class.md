@@ -10,6 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CStatusBarCtrl
+- AFXCMN/CStatusBarCtrl
+- AFXCMN/CStatusBarCtrl::CStatusBarCtrl
+- AFXCMN/CStatusBarCtrl::Create
+- AFXCMN/CStatusBarCtrl::CreateEx
+- AFXCMN/CStatusBarCtrl::DrawItem
+- AFXCMN/CStatusBarCtrl::GetBorders
+- AFXCMN/CStatusBarCtrl::GetIcon
+- AFXCMN/CStatusBarCtrl::GetParts
+- AFXCMN/CStatusBarCtrl::GetRect
+- AFXCMN/CStatusBarCtrl::GetText
+- AFXCMN/CStatusBarCtrl::GetTextLength
+- AFXCMN/CStatusBarCtrl::GetTipText
+- AFXCMN/CStatusBarCtrl::IsSimple
+- AFXCMN/CStatusBarCtrl::SetBkColor
+- AFXCMN/CStatusBarCtrl::SetIcon
+- AFXCMN/CStatusBarCtrl::SetMinHeight
+- AFXCMN/CStatusBarCtrl::SetParts
+- AFXCMN/CStatusBarCtrl::SetSimple
+- AFXCMN/CStatusBarCtrl::SetText
+- AFXCMN/CStatusBarCtrl::SetTipText
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +120,7 @@ class CStatusBarCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecreatea--cstatusbarctrlcreate"></a><a name="create"></a>CStatusBarCtrl::Create  
+##  <a name="create"></a>CStatusBarCtrl::Create  
  ステータス バー コントロールを作成し、それをアタッチ、`CStatusBarCtrl`オブジェクトです。  
   
 ```  
@@ -137,7 +157,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#1;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_1.cpp)]  
   
-##  <a name="a-namecreateexa--cstatusbarctrlcreateex"></a><a name="createex"></a>CStatusBarCtrl::CreateEx  
+##  <a name="createex"></a>CStatusBarCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けます、`CStatusBarCtrl`オブジェクトです。  
   
 ```  
@@ -171,14 +191,14 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namecstatusbarctrla--cstatusbarctrlcstatusbarctrl"></a><a name="cstatusbarctrl"></a>CStatusBarCtrl::CStatusBarCtrl  
+##  <a name="cstatusbarctrl"></a>CStatusBarCtrl::CStatusBarCtrl  
  `CStatusBarCtrl` オブジェクトを構築します。  
   
 ```  
 CStatusBarCtrl();
 ```  
   
-##  <a name="a-namedrawitema--cstatusbarctrldrawitem"></a><a name="drawitem"></a>CStatusBarCtrl::DrawItem  
+##  <a name="drawitem"></a>CStatusBarCtrl::DrawItem  
  オーナー描画ステータス バー コントロールの変更のビジュアルな部分のときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -196,7 +216,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
   
  アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する必要があります`lpDrawItemStruct`関数はこのメンバーの前に終了します。  
   
-##  <a name="a-namegetbordersa--cstatusbarctrlgetborders"></a><a name="getborders"></a>CStatusBarCtrl::GetBorders  
+##  <a name="getborders"></a>CStatusBarCtrl::GetBorders  
  水平および垂直方向の境界線のおよび四角形の領域のステータス バー コントロールの現在の幅を取得します。  
   
 ```  
@@ -230,7 +250,7 @@ BOOL GetBorders(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#2;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_2.cpp)]  
   
-##  <a name="a-namegeticona--cstatusbarctrlgeticon"></a><a name="geticon"></a>CStatusBarCtrl::GetIcon  
+##  <a name="geticon"></a>CStatusBarCtrl::GetIcon  
  現在のステータス バー コントロールのパーツ (ウィンドウとも呼ばれます) のアイコンを取得します。  
   
 ```  
@@ -261,7 +281,7 @@ HICON GetIcon(int iPart) const;
   
  [!code-cpp[NVC_MFC_CStatusBarCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_4.cpp)]  
   
-##  <a name="a-namegetpartsa--cstatusbarctrlgetparts"></a><a name="getparts"></a>CStatusBarCtrl::GetParts  
+##  <a name="getparts"></a>CStatusBarCtrl::GetParts  
  ステータス バー コントロールのパーツの数を取得します。  
   
 ```  
@@ -286,7 +306,7 @@ int GetParts(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#3;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_5.cpp)]  
   
-##  <a name="a-namegetrecta--cstatusbarctrlgetrect"></a><a name="getrect"></a>CStatusBarCtrl::GetRect  
+##  <a name="getrect"></a>CStatusBarCtrl::GetRect  
  ステータス バー コントロール内のパーツの外接する四角形を取得します。  
   
 ```  
@@ -308,7 +328,7 @@ BOOL GetRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&4;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_6.cpp)]  
   
-##  <a name="a-namegettexta--cstatusbarctrlgettext"></a><a name="gettext"></a>CStatusBarCtrl::GetText  
+##  <a name="gettext"></a>CStatusBarCtrl::GetText  
  ステータス バー コントロールの特定の部分からテキストを取得します。  
   
 ```  
@@ -346,7 +366,7 @@ int GetText(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#5;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_7.cpp)]  
   
-##  <a name="a-namegettextlengtha--cstatusbarctrlgettextlength"></a><a name="gettextlength"></a>CStatusBarCtrl::GetTextLength  
+##  <a name="gettextlength"></a>CStatusBarCtrl::GetTextLength  
  ステータス バー コントロールの特定の部分のテキストの文字の長さを取得します。  
   
 ```  
@@ -376,7 +396,7 @@ int GetTextLength(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&6;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_8.cpp)]  
   
-##  <a name="a-namegettiptexta--cstatusbarctrlgettiptext"></a><a name="gettiptext"></a>CStatusBarCtrl::GetTipText  
+##  <a name="gettiptext"></a>CStatusBarCtrl::GetTipText  
  ステータス バー内のウィンドウのツールヒントのテキストを取得します。  
   
 ```  
@@ -396,7 +416,7 @@ CString GetTipText(int nPane) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#7;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_9.cpp)]  
   
-##  <a name="a-nameissimplea--cstatusbarctrlissimple"></a><a name="issimple"></a>CStatusBarCtrl::IsSimple  
+##  <a name="issimple"></a>CStatusBarCtrl::IsSimple  
  簡易モードではステータス ウィンドウのコントロールを確認します。  
   
 ```  
@@ -409,7 +429,7 @@ BOOL IsSimple() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[SB_ISSIMPLE](http://msdn.microsoft.com/library/windows/desktop/bb760753)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetbkcolora--cstatusbarctrlsetbkcolor"></a><a name="setbkcolor"></a>CStatusBarCtrl::SetBkColor  
+##  <a name="setbkcolor"></a>CStatusBarCtrl::SetBkColor  
  ステータス バーの背景色を設定します。  
   
 ```  
@@ -429,7 +449,7 @@ COLORREF SetBkColor(COLORREF cr);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#8;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_10.cpp)]  
   
-##  <a name="a-nameseticona--cstatusbarctrlseticon"></a><a name="seticon"></a>CStatusBarCtrl::SetIcon  
+##  <a name="seticon"></a>CStatusBarCtrl::SetIcon  
  ステータス バー ペインのアイコンを設定します。  
   
 ```  
@@ -454,7 +474,7 @@ BOOL SetIcon(
 ### <a name="example"></a>例  
   例を参照してください[CStatusBarCtrl::SetBkColor](#setbkcolor)します。  
   
-##  <a name="a-namesetminheighta--cstatusbarctrlsetminheight"></a><a name="setminheight"></a>CStatusBarCtrl::SetMinHeight  
+##  <a name="setminheight"></a>CStatusBarCtrl::SetMinHeight  
  バー コントロールの描画領域には、状態の最小の高さを設定します。  
   
 ```  
@@ -471,7 +491,7 @@ void SetMinHeight(int nMin);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#9;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_11.cpp)]  
   
-##  <a name="a-namesetpartsa--cstatusbarctrlsetparts"></a><a name="setparts"></a>CStatusBarCtrl::SetParts  
+##  <a name="setparts"></a>CStatusBarCtrl::SetParts  
  ステータス バー コントロールと各部分の右端の座標の部分の数を設定します。  
   
 ```  
@@ -493,7 +513,7 @@ BOOL SetParts(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#10;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_12.cpp)]  
   
-##  <a name="a-namesetsimplea--cstatusbarctrlsetsimple"></a><a name="setsimple"></a>CStatusBarCtrl::SetSimple  
+##  <a name="setsimple"></a>CStatusBarCtrl::SetSimple  
  ステータス バー コントロールが単純なテキストが表示されますか、設定を以前の呼び出しによってすべてのコントロール パーツが表示されるかどうかを指定[呼び出した](#setparts)します。  
   
 ```  
@@ -510,7 +530,7 @@ BOOL SetSimple(BOOL bSimple = TRUE);
 ### <a name="remarks"></a>コメント  
  アプリケーションが変更された場合、ステータス バー コントロールから単純ではない単純なまたはその逆システムで、コントロールがすぐに再描画します。  
   
-##  <a name="a-namesettexta--cstatusbarctrlsettext"></a><a name="settext"></a>CStatusBarCtrl::SetText  
+##  <a name="settext"></a>CStatusBarCtrl::SetText  
  ステータス バー コントロールの特定の部分にテキストを設定します。  
   
 ```  
@@ -539,7 +559,7 @@ BOOL SetText(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CStatusBarCtrl&#11;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_13.cpp)]  
   
-##  <a name="a-namesettiptexta--cstatusbarctrlsettiptext"></a><a name="settiptext"></a>CStatusBarCtrl::SetTipText  
+##  <a name="settiptext"></a>CStatusBarCtrl::SetTipText  
  ステータス バー ペインのツールヒント テキストを設定します。  
   
 ```  

@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CCheckListBox
+- AFXWIN/CCheckListBox
+- AFXWIN/CCheckListBox::CCheckListBox
+- AFXWIN/CCheckListBox::Create
+- AFXWIN/CCheckListBox::DrawItem
+- AFXWIN/CCheckListBox::Enable
+- AFXWIN/CCheckListBox::GetCheck
+- AFXWIN/CCheckListBox::GetCheckStyle
+- AFXWIN/CCheckListBox::IsEnabled
+- AFXWIN/CCheckListBox::MeasureItem
+- AFXWIN/CCheckListBox::OnGetCheckPosition
+- AFXWIN/CCheckListBox::SetCheck
+- AFXWIN/CCheckListBox::SetCheckStyle
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -113,7 +125,7 @@ class CCheckListBox : public CListBox
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecchecklistboxa--cchecklistboxcchecklistbox"></a><a name="cchecklistbox"></a>サンプル  
+##  <a name="cchecklistbox"></a>サンプル  
  `CCheckListBox` オブジェクトを構築します。  
   
 ```  
@@ -126,7 +138,7 @@ CCheckListBox();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog&#60;](../../mfc/codesnippet/cpp/cchecklistbox-class_1.cpp)]  
   
-##  <a name="a-namecreatea--cchecklistboxcreate"></a><a name="create"></a>CCheckListBox::Create  
+##  <a name="create"></a>CCheckListBox::Create  
  Windows チェックリスト ボックスを作成し、それをアタッチ、`CCheckListBox`オブジェクトです。  
   
 ```  
@@ -176,7 +188,7 @@ virtual BOOL Create(
   
 - **WS_TABSTOP**コントロールのタブ オーダーを許可するには  
   
-##  <a name="a-namedrawitema--cchecklistboxdrawitem"></a><a name="drawitem"></a>:Drawitem  
+##  <a name="drawitem"></a>:Drawitem  
  オーナー描画のチェックリスト ボックスの変更のビジュアルな部分のときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -196,7 +208,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
   
  チェックリスト ボックス スタイルのチェックリスト ボックスの項目はすべて同じ高さではない場合、(で指定されている**作成**) する必要があります**一定**をオーバーライドする必要があります、 [MeasureItem](#measureitem)関数です。  
   
-##  <a name="a-nameenablea--cchecklistboxenable"></a><a name="enable"></a>CCheckListBox::Enable  
+##  <a name="enable"></a>CCheckListBox::Enable  
  この関数では、有効またはチェックリスト ボックス アイテムを無効にします。  
   
 ```  
@@ -212,7 +224,7 @@ void Enable(
  `bEnabled`  
  項目が有効になっているかどうかを指定します。  
   
-##  <a name="a-namegetchecka--cchecklistboxgetcheck"></a><a name="getcheck"></a>CCheckListBox::GetCheck  
+##  <a name="getcheck"></a>CCheckListBox::GetCheck  
  指定されたチェック ボックスの状態を取得します。  
   
 ```  
@@ -232,7 +244,7 @@ int GetCheck(int nIndex);
 |`BST_UNCHECKED`|チェック ボックスをオフにするとします。|  
 |`BST_INDETERMINATE`|チェック ボックスの状態は予測できません。|  
   
-##  <a name="a-namegetcheckstylea--cchecklistboxgetcheckstyle"></a><a name="getcheckstyle"></a>CCheckListBox::GetCheckStyle  
+##  <a name="getcheckstyle"></a>CCheckListBox::GetCheckStyle  
  チェックリスト ボックスのスタイルを取得するには、この関数を呼び出します。  
   
 ```  
@@ -245,7 +257,7 @@ UINT GetCheckStyle();
 ### <a name="remarks"></a>コメント  
  有効なスタイルについては、次を参照してください。[有効なスタイル](#setcheckstyle)します。  
   
-##  <a name="a-nameisenableda--cchecklistboxisenabled"></a><a name="isenabled"></a>CCheckListBox::IsEnabled  
+##  <a name="isenabled"></a>CCheckListBox::IsEnabled  
  アイテムが有効になっているかどうかを判断するには、この関数を呼び出します。  
   
 ```  
@@ -259,7 +271,7 @@ BOOL IsEnabled(int nIndex);
 ### <a name="return-value"></a>戻り値  
  項目が有効な場合は 0 以外それ以外の場合 0 を返します。  
   
-##  <a name="a-namemeasureitema--cchecklistboxmeasureitem"></a><a name="measureitem"></a>CCheckListBox::MeasureItem  
+##  <a name="measureitem"></a>CCheckListBox::MeasureItem  
  既定以外のスタイルとチェックリスト ボックスが作成されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -273,7 +285,7 @@ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 ### <a name="remarks"></a>コメント  
  既定では、このメンバー関数は何もしません。 このメンバー関数をオーバーライドし、入力、`MEASUREITEMSTRUCT`構造チェックリスト ボックス アイテムのディメンションの Windows に通知します。 チェックリスト ボックスが作成された場合、 [LBS_OWNERDRAWVARIABLE](../../mfc/reference/list-box-styles.md)リスト ボックス内の各項目のスタイル、フレームワークと記述します。 それ以外の場合、このメンバーは、1 回だけ呼び出されます。  
   
-##  <a name="a-nameongetcheckpositiona--cchecklistboxongetcheckposition"></a><a name="ongetcheckposition"></a>CCheckListBox::OnGetCheckPosition  
+##  <a name="ongetcheckposition"></a>CCheckListBox::OnGetCheckPosition  
  フレームワークでは、アイテムのチェック ボックスのサイズと位置を取得するには、この関数を呼び出します。  
   
 ```  
@@ -295,7 +307,7 @@ virtual CRect OnGetCheckPosition(
 ### <a name="remarks"></a>コメント  
  既定の実装は、既定の位置とチェック ボックスのサイズにのみを返します ( `rectCheckBox`)。 既定では、チェック ボックスをアイテムの左上隅に配置する、標準のチェック ボックスのサイズ。 場合は、右側のチェック ボックスや、拡大または縮小のチェック ボックスがある可能性があります。 このような場合は、オーバーライド`OnGetCheckPosition` チェック ボックスの位置とサイズ内に項目を変更します。  
   
-##  <a name="a-namesetchecka--cchecklistboxsetcheck"></a><a name="setcheck"></a>CCheckListBox::SetCheck  
+##  <a name="setcheck"></a>CCheckListBox::SetCheck  
  指定されたチェック ボックスの状態を設定します。  
   
 ```  
@@ -320,7 +332,7 @@ void SetCheck(
 |**設定されています。**|指定されたチェック ボックスをオフにします。|  
 |**BST_INDETERMINATE**|不確定なに指定のチェック ボックスの状態を設定します。<br /><br /> この状態は場合のみ表示 チェック ボックスのスタイルは`BS_AUTO3STATE`または`BS_3STATE`です。 詳細については、次を参照してください。[ボタン スタイル](../../mfc/reference/button-styles.md)します。|  
   
-##  <a name="a-namesetcheckstylea--cchecklistboxsetcheckstyle"></a><a name="setcheckstyle"></a>CCheckListBox::SetCheckStyle  
+##  <a name="setcheckstyle"></a>CCheckListBox::SetCheckStyle  
  チェックリスト ボックス内のチェック ボックスのスタイルを設定するには、この関数を呼び出します。  
   
 ```  

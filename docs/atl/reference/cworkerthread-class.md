@@ -9,11 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CWorkerThread<ThreadTraits>
-- ATL::CWorkerThread
-- ATL.CWorkerThread
-- ATL.CWorkerThread<ThreadTraits>
 - CWorkerThread
+- ATLUTIL/ATL::CWorkerThread
+- ATLUTIL/ATL::CWorkerThread::CWorkerThread
+- ATLUTIL/ATL::CWorkerThread::AddHandle
+- ATLUTIL/ATL::CWorkerThread::AddTimer
+- ATLUTIL/ATL::CWorkerThread::GetThreadHandle
+- ATLUTIL/ATL::CWorkerThread::GetThreadId
+- ATLUTIL/ATL::CWorkerThread::Initialize
+- ATLUTIL/ATL::CWorkerThread::RemoveHandle
+- ATLUTIL/ATL::CWorkerThread::Shutdown
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -110,7 +115,7 @@ class CWorkerThread
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-##  <a name="a-nameaddhandlea--cworkerthreadaddhandle"></a><a name="addhandle"></a>CWorkerThread::AddHandle  
+##  <a name="addhandle"></a>CWorkerThread::AddHandle  
  待機可能オブジェクトのハンドルをワーカー スレッドによって管理されるリストに追加するには、このメソッドを呼び出します。  
   
 ```
@@ -136,7 +141,7 @@ HRESULT AddHandle(
 ### <a name="remarks"></a>コメント  
  [IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute)を介して呼び出す`pClient`ときに、ハンドル`hObject`、通知されます。  
   
-##  <a name="a-nameaddtimera--cworkerthreadaddtimer"></a><a name="addtimer"></a>CWorkerThread::AddTimer  
+##  <a name="addtimer"></a>CWorkerThread::AddTimer  
  定期的な待機可能なタイマーをワーカー スレッドによって管理されるリストに追加するには、このメソッドを呼び出します。  
   
 ```
@@ -168,14 +173,14 @@ HRESULT AddTimer(
   
  タイマーのハンドルを渡す`phTimer`に[CWorkerThread::RemoveHandle](#removehandle)タイマーを閉じます。  
   
-##  <a name="a-namecworkerthreada--cworkerthreadcworkerthread"></a><a name="cworkerthread"></a>CWorkerThread::CWorkerThread  
+##  <a name="cworkerthread"></a>CWorkerThread::CWorkerThread  
  コンストラクターです。  
   
 ```
 CWorkerThread() throw();
 ```  
   
-##  <a name="a-namedtora--cworkerthreadcworkerthread"></a><a name="dtor"></a>使用:: ~ 使用  
+##  <a name="dtor"></a>使用:: ~ 使用  
  デストラクターです。  
   
 ```
@@ -185,7 +190,7 @@ CWorkerThread() throw();
 ### <a name="remarks"></a>コメント  
  呼び出し[CWorkerThread::Shutdown](#shutdown)します。  
   
-##  <a name="a-namegetthreadhandlea--cworkerthreadgetthreadhandle"></a><a name="getthreadhandle"></a>CWorkerThread::GetThreadHandle  
+##  <a name="getthreadhandle"></a>CWorkerThread::GetThreadHandle  
  ワーカー スレッドのスレッド ハンドルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -195,7 +200,7 @@ HANDLE GetThreadHandle() throw();
 ### <a name="return-value"></a>戻り値  
  ワーカー スレッドが初期化されていない場合は、スレッド ハンドルまたは NULL を返します。  
   
-##  <a name="a-namegetthreadida--cworkerthreadgetthreadid"></a><a name="getthreadid"></a>CWorkerThread::GetThreadId  
+##  <a name="getthreadid"></a>CWorkerThread::GetThreadId  
  ワーカー スレッドのスレッド ID を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -205,7 +210,7 @@ DWORD GetThreadId() throw();
 ### <a name="return-value"></a>戻り値  
  ワーカー スレッドが初期化されていない場合は、スレッド ID または NULL を返します。  
   
-##  <a name="a-nameinitializea--cworkerthreadinitialize"></a><a name="initialize"></a>CWorkerThread::Initialize  
+##  <a name="initialize"></a>CWorkerThread::Initialize  
  このメソッドでは、ワーカー スレッドを初期化します。  
   
 ```
@@ -228,7 +233,7 @@ HRESULT Initialize(CWorkerThread<ThreadTraits>* pThread) throw();
   
  参照してください[CWorkerThread::Shutdown](#shutdown)については、既存のオブジェクトへのポインターを使用して初期化されるときに、そのメソッドの動作がどのように変化するかをします。  
   
-##  <a name="a-nameremovehandlea--cworkerthreadremovehandle"></a><a name="removehandle"></a>CWorkerThread::RemoveHandle  
+##  <a name="removehandle"></a>CWorkerThread::RemoveHandle  
  ハンドルを待機可能オブジェクトの一覧から削除するには、このメソッドを呼び出します。  
   
 ```
@@ -245,7 +250,7 @@ HRESULT RemoveHandle(HANDLE hObject) throw();
 ### <a name="remarks"></a>コメント  
  ハンドルが削除されたとき[IWorkerThreadClient::CloseHandle](../../atl/reference/iworkerthreadclient-interface.md#closehandle)に渡された関連付けられているオブジェクトで呼び出される[AddHandle](#addhandle)します。 この呼び出しが失敗した場合、 `CWorkerThread` 、Windows を呼び出す[CloseHandle](http://msdn.microsoft.com/library/windows/desktop/ms724211)処理関数です。  
   
-##  <a name="a-nameshutdowna--cworkerthreadshutdown"></a><a name="shutdown"></a>CWorkerThread::Shutdown  
+##  <a name="shutdown"></a>CWorkerThread::Shutdown  
  ワーカー スレッドをシャット ダウンするには、このメソッドを呼び出します。  
   
 ```

@@ -9,12 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATLCONV/CA2WEX
-- ATL.CA2WEX
-- ATL.CA2WEX<t_nBufferLength>
-- ATL::CA2WEX
-- ATL::CA2WEX<t_nBufferLength>
 - CA2WEX
+- ATLCONV/ATL::CA2WEX
+- ATLCONV/ATL::CA2WEX::CA2WEX
+- ATLCONV/ATL::CA2WEX::m_psz
+- ATLCONV/ATL::CA2WEX::m_szBuffer
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -115,7 +114,7 @@ class CA2WEX
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
   
-##  <a name="a-nameca2wexa--ca2wexca2wex"></a><a name="ca2wex"></a>CA2WEX::CA2WEX  
+##  <a name="ca2wex"></a>CA2WEX::CA2WEX  
  コンストラクターです。  
   
 ```
@@ -133,7 +132,7 @@ CA2WEX(LPCSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  変換処理で使用するバッファーを割り当てます。  
   
-##  <a name="a-namedtora--ca2wexca2wex"></a><a name="dtor"></a>CA2WEX:: ~ CA2WEX  
+##  <a name="dtor"></a>CA2WEX:: ~ CA2WEX  
  デストラクターです。  
   
 ```
@@ -143,21 +142,21 @@ CA2WEX(LPCSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  割り当てられたバッファーを解放します。  
   
-##  <a name="a-namempsza--ca2wexmpsz"></a><a name="m_psz"></a>CA2WEX::m_psz  
+##  <a name="m_psz"></a>CA2WEX::m_psz  
  ソース文字列を格納するデータ メンバー。  
   
 ```
 LPWSTR m_psz;
 ```  
   
-##  <a name="a-namemszbuffera--ca2wexmszbuffer"></a><a name="m_szbuffer"></a>CA2WEX::m_szBuffer  
+##  <a name="m_szbuffer"></a>CA2WEX::m_szBuffer  
  静的バッファー、変換後の文字列を格納するために使用します。  
   
 ```
 wchar_t m_szBuffer[t_nBufferLength];
 ```  
   
-##  <a name="a-nameoperatorlpwstra--ca2wexoperator-lpwstr"></a><a name="operator_lpwstr"></a>CA2WEX::operator LPWSTR  
+##  <a name="operator_lpwstr"></a>CA2WEX::operator LPWSTR  
  変換演算子。  
   
 ```  

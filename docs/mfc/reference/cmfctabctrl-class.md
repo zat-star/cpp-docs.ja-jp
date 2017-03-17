@@ -10,6 +10,56 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCTabCtrl
+- AFXTABCTRL/CMFCTabCtrl
+- AFXTABCTRL/CMFCTabCtrl::ActivateMDITab
+- AFXTABCTRL/CMFCTabCtrl::AllowDestroyEmptyTabbedPane
+- AFXTABCTRL/CMFCTabCtrl::AutoSizeWindow
+- AFXTABCTRL/CMFCTabCtrl::CalcRectEdit
+- AFXTABCTRL/CMFCTabCtrl::Create
+- AFXTABCTRL/CMFCTabCtrl::EnableActiveTabCloseButton
+- AFXTABCTRL/CMFCTabCtrl::EnableInPlaceEdit
+- AFXTABCTRL/CMFCTabCtrl::EnableTabDocumentsMenu
+- AFXTABCTRL/CMFCTabCtrl::EnsureVisible
+- AFXTABCTRL/CMFCTabCtrl::GetDocumentIcon
+- AFXTABCTRL/CMFCTabCtrl::GetFirstVisibleTabNum
+- AFXTABCTRL/CMFCTabCtrl::GetResizeMode
+- AFXTABCTRL/CMFCTabCtrl::GetScrollBar
+- AFXTABCTRL/CMFCTabCtrl::GetTabArea
+- AFXTABCTRL/CMFCTabCtrl::GetTabMaxWidth
+- AFXTABCTRL/CMFCTabCtrl::GetTabsHeight
+- AFXTABCTRL/CMFCTabCtrl::GetTabsRect
+- AFXTABCTRL/CMFCTabCtrl::GetWndArea
+- AFXTABCTRL/CMFCTabCtrl::HideActiveWindowHorzScrollBar
+- AFXTABCTRL/CMFCTabCtrl::HideInactiveWindow
+- AFXTABCTRL/CMFCTabCtrl::HideNoTabs
+- AFXTABCTRL/CMFCTabCtrl::HideSingleTab
+- AFXTABCTRL/CMFCTabCtrl::IsActiveInMDITabGroup
+- AFXTABCTRL/CMFCTabCtrl::IsActiveTabBoldFont
+- AFXTABCTRL/CMFCTabCtrl::IsActiveTabCloseButton
+- AFXTABCTRL/CMFCTabCtrl::IsDrawFrame
+- AFXTABCTRL/CMFCTabCtrl::IsFlatFrame
+- AFXTABCTRL/CMFCTabCtrl::IsFlatTab
+- AFXTABCTRL/CMFCTabCtrl::IsLeftRightRounded
+- AFXTABCTRL/CMFCTabCtrl::IsMDITabGroup
+- AFXTABCTRL/CMFCTabCtrl::IsOneNoteStyle
+- AFXTABCTRL/CMFCTabCtrl::IsSharedScroll
+- AFXTABCTRL/CMFCTabCtrl::IsTabDocumentsMenu
+- AFXTABCTRL/CMFCTabCtrl::IsVS2005Style
+- AFXTABCTRL/CMFCTabCtrl::ModifyTabStyle
+- AFXTABCTRL/CMFCTabCtrl::OnDragEnter
+- AFXTABCTRL/CMFCTabCtrl::OnDragOver
+- AFXTABCTRL/CMFCTabCtrl::OnShowTabDocumentsMenu
+- AFXTABCTRL/CMFCTabCtrl::SetActiveInMDITabGroup
+- AFXTABCTRL/CMFCTabCtrl::SetActiveTab
+- AFXTABCTRL/CMFCTabCtrl::SetActiveTabBoldFont
+- AFXTABCTRL/CMFCTabCtrl::SetDrawFrame
+- AFXTABCTRL/CMFCTabCtrl::SetFlatFrame
+- AFXTABCTRL/CMFCTabCtrl::SetImageList
+- AFXTABCTRL/CMFCTabCtrl::SetResizeMode
+- AFXTABCTRL/CMFCTabCtrl::SetTabMaxWidth
+- AFXTABCTRL/CMFCTabCtrl::StopResize
+- AFXTABCTRL/CMFCTabCtrl::SynchronizeScrollBar
+- AFXTABCTRL/CMFCTabCtrl::m_bEnableActivate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -182,7 +232,7 @@ class CMFCTabCtrl : public CMFCBaseTabCtrl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxtabctrl.h  
   
-##  <a name="a-nameactivatemditaba--cmfctabctrlactivatemditab"></a><a name="activatemditab"></a>CMFCTabCtrl::ActivateMDITab  
+##  <a name="activatemditab"></a>CMFCTabCtrl::ActivateMDITab  
  現在のタブ コントロールの指定したタブを表示し、そのタブにフォーカスを設定します。  
   
 ```  
@@ -193,7 +243,7 @@ void ActivateMDITab(int nTab = -1);
  [入力] `nTab`  
  表示、または現在アクティブなタブを指定する場合は-1 タブの&0; から始まるインデックス。  
   
-##  <a name="a-nameallowdestroyemptytabbedpanea--cmfctabctrlallowdestroyemptytabbedpane"></a><a name="allowdestroyemptytabbedpane"></a>CMFCTabCtrl::AllowDestroyEmptyTabbedPane  
+##  <a name="allowdestroyemptytabbedpane"></a>CMFCTabCtrl::AllowDestroyEmptyTabbedPane  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -205,7 +255,7 @@ virtual BOOL AllowDestroyEmptyTabbedPane() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameautosizewindowa--cmfctabctrlautosizewindow"></a><a name="autosizewindow"></a>CMFCTabCtrl::AutoSizeWindow  
+##  <a name="autosizewindow"></a>CMFCTabCtrl::AutoSizeWindow  
  フレームワークがときに、タブ コントロールの変更のユーザー インターフェイス要素のタブ コントロール ウィンドウのすべてのクライアント領域のサイズを変更するかどうかを指定します。  
   
 ```  
@@ -218,7 +268,7 @@ void AutoSizeWindow(BOOL bAutoSize = TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecreatea--cmfctabctrlcreate"></a><a name="create"></a>CMFCTabCtrl::Create  
+##  <a name="create"></a>CMFCTabCtrl::Create  
  タブ コントロールを作成し、それをアタッチ、`CMFCTabCtrl`オブジェクトです。  
   
 ```  
@@ -279,7 +329,7 @@ BOOL Create(
  [!code-cpp[NVC_MFC_StateCollection&#1;](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_1.h)]  
 [!code-cpp[NVC_MFC_StateCollection&#2;](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_3.cpp)]  
   
-##  <a name="a-namecalcrectedita--cmfctabctrlcalcrectedit"></a><a name="calcrectedit"></a>CMFCTabCtrl::CalcRectEdit  
+##  <a name="calcrectedit"></a>CMFCTabCtrl::CalcRectEdit  
  指定したタブ領域のサイズを縮小します。  
   
 ```  
@@ -293,7 +343,7 @@ virtual void CalcRectEdit(CRect& rectEdit);
 ### <a name="remarks"></a>コメント  
  タブのラベルを変更することによってこのメソッドが呼び出されます。 このメソッドは、現在タブ高さを&30; 分で指定された四角形の左側および右側を縮小し、1 単位の上下を縮小します。  
   
-##  <a name="a-nameenableactivetabclosebuttona--cmfctabctrlenableactivetabclosebutton"></a><a name="enableactivetabclosebutton"></a>CMFCTabCtrl::EnableActiveTabCloseButton  
+##  <a name="enableactivetabclosebutton"></a>CMFCTabCtrl::EnableActiveTabCloseButton  
  [閉じる] ボタンの表示と非表示を切り替えます ( **X**) アクティブなタブにします。  
   
 ```  
@@ -304,7 +354,7 @@ void EnableActiveTabCloseButton(BOOL bEnable=TRUE);
  [入力] `bEnable`  
  `TRUE`アクティブなタブに [閉じる] ボタンを表示するには`FALSE`タブ領域の右上隅にある閉じるボタンを表示します。 既定値は `TRUE` です。  
   
-##  <a name="a-nameenableinplaceedita--cmfctabctrlenableinplaceedit"></a><a name="enableinplaceedit"></a>CMFCTabCtrl::EnableInPlaceEdit  
+##  <a name="enableinplaceedit"></a>CMFCTabCtrl::EnableInPlaceEdit  
  有効またはラベルの編集可能なタブを無効にします。  
   
 ```  
@@ -317,7 +367,7 @@ virtual void EnableInPlaceEdit(BOOL bEnable);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameenabletabdocumentsmenua--cmfctabctrlenabletabdocumentsmenu"></a><a name="enabletabdocumentsmenu"></a>CMFCTabCtrl::EnableTabDocumentsMenu  
+##  <a name="enabletabdocumentsmenu"></a>CMFCTabCtrl::EnableTabDocumentsMenu  
  ウィンドウのタブをスクロールする&2; つのボタンを使用するユーザー インターフェイスとタブ付きウィンドウのポップアップ メニューを表示するインターフェイス間で切り替えます。  
   
 ```  
@@ -331,7 +381,7 @@ void EnableTabDocumentsMenu(BOOL bEnable=TRUE);
 ### <a name="remarks"></a>コメント  
  ユーザーには、タブのラベルがクリックすると、フレームワークに対応するタブ付きウィンドウが表示されます。 タブ ラベルが表示されている場合の位置を変更することがなく、タブ付きウィンドウが開きます。 ユーザーが、ポップアップ メニューからドキュメントを選択し、対応するタブ付きウィンドウが画面外には、タブ付きウィンドウには、最初のタブになります。  
   
-##  <a name="a-nameensurevisiblea--cmfctabctrlensurevisible"></a><a name="ensurevisible"></a>CMFCTabCtrl::EnsureVisible  
+##  <a name="ensurevisible"></a>CMFCTabCtrl::EnsureVisible  
  タブが表示されるようにします。  
   
 ```  
@@ -348,7 +398,7 @@ virtual BOOL EnsureVisible(int iTab);
 ### <a name="remarks"></a>コメント  
  指定したタブが表示されることを保証するために、このメソッドを使用します。 必要な場合、タブ コントロールにスクロールします。  
   
-##  <a name="a-namegetdocumenticona--cmfctabctrlgetdocumenticon"></a><a name="getdocumenticon"></a>CMFCTabCtrl::GetDocumentIcon  
+##  <a name="getdocumenticon"></a>CMFCTabCtrl::GetDocumentIcon  
  タブ付きウィンドウのポップアップ メニューのタブに関連付けられているイメージを取得します。  
   
 ```  
@@ -362,7 +412,7 @@ static HICON __stdcall GetDocumentIcon(UINT nCmdID);
 ### <a name="return-value"></a>戻り値  
  ビットマップ イメージのハンドル。  
   
-##  <a name="a-namegetfirstvisibletabnuma--cmfctabctrlgetfirstvisibletabnum"></a><a name="getfirstvisibletabnum"></a>CMFCTabCtrl::GetFirstVisibleTabNum  
+##  <a name="getfirstvisibletabnum"></a>CMFCTabCtrl::GetFirstVisibleTabNum  
  現在のタブ コントロールに表示されている最初のタブのインデックスを取得します。  
   
 ```  
@@ -375,7 +425,7 @@ virtual int GetFirstVisibleTabNum() const;
 ### <a name="remarks"></a>コメント  
  Microsoft OneNote のスタイルでタブ コントロールが表示された場合のみ、このメソッドを使用します。 使用して、 [CMFCTabCtrl::IsOneNoteStyle](#isonenotestyle)スタイルを決定する方法です。  
   
-##  <a name="a-namegetresizemodea--cmfctabctrlgetresizemode"></a><a name="getresizemode"></a>CMFCTabCtrl::GetResizeMode  
+##  <a name="getresizemode"></a>CMFCTabCtrl::GetResizeMode  
  現在のタブ コントロールのサイズを変更できる方法を指定する値を取得します。  
   
 ```  
@@ -385,7 +435,7 @@ ResizeMode GetResizeMode() const;
 ### <a name="return-value"></a>戻り値  
  いずれか、`CMFCTabCtrl::ResizeMode`タブ コントロールのサイズを変更できる方法を指定する列挙値。 使用可能な値の一覧は、の「解説」セクションを参照してください、 [CMFCTabCtrl::SetResizeMode](#setresizemode)メソッドです。  
   
-##  <a name="a-namegetscrollbara--cmfctabctrlgetscrollbar"></a><a name="getscrollbar"></a>CMFCTabCtrl::GetScrollBar  
+##  <a name="getscrollbar"></a>CMFCTabCtrl::GetScrollBar  
  タブ コントロールに関連付けられているスクロール バー オブジェクトへのポインターを取得します。  
   
 ```  
@@ -398,7 +448,7 @@ CScrollBar* GetScrollBar();
 ### <a name="remarks"></a>コメント  
  タブ コントロールの埋め込みのスクロール バーにアクセスするのにには、このメソッドを使用します。 タブ コントロールがある場合のみ、スクロール バー オブジェクトが作成された、`STYLE_FLAT_SHARED_HORZ_SCROLL`スタイル。  
   
-##  <a name="a-namegettabareaa--cmfctabctrlgettabarea"></a><a name="gettabarea"></a>CMFCTabCtrl::GetTabArea  
+##  <a name="gettabarea"></a>CMFCTabCtrl::GetTabArea  
  上部またはタブ コントロールの下部にあるタブ ラベル領域に外接する四角形を取得します。  
   
 ```  
@@ -417,7 +467,7 @@ void GetTabArea(
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、サイズおよびタブ付きウィンドウ内のタブ領域の位置を決定します。  
   
-##  <a name="a-namegettabmaxwidtha--cmfctabctrlgettabmaxwidth"></a><a name="gettabmaxwidth"></a>CMFCTabCtrl::GetTabMaxWidth  
+##  <a name="gettabmaxwidth"></a>CMFCTabCtrl::GetTabMaxWidth  
  タブの最大幅を取得します。  
   
 ```  
@@ -430,7 +480,7 @@ int GetTabMaxWidth() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCTabCtrl::SetTabMaxWidth](#settabmaxwidth)タブの最大幅を設定します。  
   
-##  <a name="a-namegettabsheighta--cmfctabctrlgettabsheight"></a><a name="gettabsheight"></a>CMFCTabCtrl::GetTabsHeight  
+##  <a name="gettabsheight"></a>CMFCTabCtrl::GetTabsHeight  
  現在のタブ コントロールのタブ領域の高さを取得します。  
   
 ```  
@@ -440,7 +490,7 @@ virtual int GetTabsHeight() const;
 ### <a name="return-value"></a>戻り値  
  いずれかのタブが表示されている、または場合は&0; タブが表示されていない場合は、タブ領域の高さ。  
   
-##  <a name="a-namegettabsrecta--cmfctabctrlgettabsrect"></a><a name="gettabsrect"></a>CMFCTabCtrl::GetTabsRect  
+##  <a name="gettabsrect"></a>CMFCTabCtrl::GetTabsRect  
  現在のタブ コントロールのタブ領域に外接する四角形を取得します。  
   
 ```  
@@ -451,7 +501,7 @@ virtual void GetTabsRect(CRect& rect) const;
  [出力] `rect`  
  このメソッドが戻るとき、`rect`パラメーターには、タブ領域に外接する四角形が含まれています。  
   
-##  <a name="a-namegetwndareaa--cmfctabctrlgetwndarea"></a><a name="getwndarea"></a>CMFCTabCtrl::GetWndArea  
+##  <a name="getwndarea"></a>CMFCTabCtrl::GetWndArea  
  現在のタブ コントロールのクライアント領域の境界を取得します。  
   
 ```  
@@ -464,7 +514,7 @@ void GetWndArea(CRect& rect) const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehideactivewindowhorzscrollbara--cmfctabctrlhideactivewindowhorzscrollbar"></a><a name="hideactivewindowhorzscrollbar"></a>CMFCTabCtrl::HideActiveWindowHorzScrollBar  
+##  <a name="hideactivewindowhorzscrollbar"></a>CMFCTabCtrl::HideActiveWindowHorzScrollBar  
  アクティブなウィンドウに存在する場合は、水平スクロール バーを非表示にします。  
   
 ```  
@@ -474,7 +524,7 @@ void HideActiveWindowHorzScrollBar();
 ### <a name="remarks"></a>コメント  
  タブ コントロールがユーザー コントロールのタブ ページに切り替えたときに点滅しないようにするのにには、このメソッドを使用します。  
   
-##  <a name="a-namehideinactivewindowa--cmfctabctrlhideinactivewindow"></a><a name="hideinactivewindow"></a>CMFCTabCtrl::HideInactiveWindow  
+##  <a name="hideinactivewindow"></a>CMFCTabCtrl::HideInactiveWindow  
  フレームワークは非アクティブなタブ コントロール ウィンドウを表示するかどうかを指定します。  
   
 ```  
@@ -487,7 +537,7 @@ void HideInactiveWindow(BOOL bHide = TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehidenotabsa--cmfctabctrlhidenotabs"></a><a name="hidenotabs"></a>CMFCTabCtrl::HideNoTabs  
+##  <a name="hidenotabs"></a>CMFCTabCtrl::HideNoTabs  
  有効または表示されているタブがない場合は、タブ領域の描画を無効にします。  
   
 ```  
@@ -500,7 +550,7 @@ void HideNoTabs(BOOL bHide=TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namehidesingletaba--cmfctabctrlhidesingletab"></a><a name="hidesingletab"></a>CMFCTabCtrl::HideSingleTab  
+##  <a name="hidesingletab"></a>CMFCTabCtrl::HideSingleTab  
  有効または&1; つのタブ付きウィンドウがある場合は、タブの描画を無効にします。  
   
 ```  
@@ -513,7 +563,7 @@ virtual void HideSingleTab(BOOL bHide=TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisactiveinmditabgroupa--cmfctabctrlisactiveinmditabgroup"></a><a name="isactiveinmditabgroup"></a>CMFCTabCtrl::IsActiveInMDITabGroup  
+##  <a name="isactiveinmditabgroup"></a>CMFCTabCtrl::IsActiveInMDITabGroup  
  タブ コントロールの現在のタブがマルチ ドキュメント インターフェイスのタブ グループのアクティブなタブであるかどうかを示します。  
   
 ```  
@@ -526,7 +576,7 @@ BOOL IsActiveInMDITabGroup() const;
 ### <a name="remarks"></a>コメント  
  いずれかの垂直または水平タブ グループに複数のドキュメント ウィンドウを整理し、1 つのタブ グループから別のドキュメントを簡単に移動できます。  
   
-##  <a name="a-nameisactivetabboldfonta--cmfctabctrlisactivetabboldfont"></a><a name="isactivetabboldfont"></a>CMFCTabCtrl::IsActiveTabBoldFont  
+##  <a name="isactivetabboldfont"></a>CMFCTabCtrl::IsActiveTabBoldFont  
  太字のフォントを使用して、アクティブなタブのテキストを表示するかどうかを示します。  
   
 ```  
@@ -539,7 +589,7 @@ BOOL IsActiveTabBoldFont() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCTabCtrl::SetActiveTabBoldFont](#setactivetabboldfont)アクティブなタブのフォントを変更する方法です。  
   
-##  <a name="a-nameisactivetabclosebuttona--cmfctabctrlisactivetabclosebutton"></a><a name="isactivetabclosebutton"></a>CMFCTabCtrl::IsActiveTabCloseButton  
+##  <a name="isactivetabclosebutton"></a>CMFCTabCtrl::IsActiveTabCloseButton  
  示すかどうか閉じるボタン ( **X**) が、アクティブなタブまたはタブ領域の右上隅に表示されます。  
   
 ```  
@@ -551,7 +601,7 @@ virtual BOOL IsActiveTabCloseButton() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisdrawframea--cmfctabctrlisdrawframe"></a><a name="isdrawframe"></a>CMFCTabCtrl::IsDrawFrame  
+##  <a name="isdrawframe"></a>CMFCTabCtrl::IsDrawFrame  
  タブ付きウィンドウが埋め込みペインの周囲のフレームの四角形を描画するかどうかを示します。  
   
 ```  
@@ -564,7 +614,7 @@ BOOL IsDrawFrame() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCTabCtrl::SetDrawFrame](#setdrawframe)メソッドを有効または無効のフレームの四角形を描画します。  
   
-##  <a name="a-nameisflatframea--cmfctabctrlisflatframe"></a><a name="isflatframe"></a>CMFCTabCtrl::IsFlatFrame  
+##  <a name="isflatframe"></a>CMFCTabCtrl::IsFlatFrame  
  タブ領域の周りにフレームをフラットまたは 3D にするかどうかを示します。  
   
 ```  
@@ -577,7 +627,7 @@ BOOL IsFlatFrame() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCTabCtrl::SetFlatFrame](#setflatframe)メソッドで、フレームの描画方法を変更します。  
   
-##  <a name="a-nameisflattaba--cmfctabctrlisflattab"></a><a name="isflattab"></a>CMFCTabCtrl::IsFlatTab  
+##  <a name="isflattab"></a>CMFCTabCtrl::IsFlatTab  
  現在のタブ コントロールのタブの外観がフラットかどうかを示します。  
   
 ```  
@@ -587,7 +637,7 @@ virtual BOOL IsFlatTab() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`現在のタブ コントロールのタブの外観がフラットな場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameisleftrightroundeda--cmfctabctrlisleftrightrounded"></a><a name="isleftrightrounded"></a>CMFCTabCtrl::IsLeftRightRounded  
+##  <a name="isleftrightrounded"></a>CMFCTabCtrl::IsLeftRightRounded  
  現在のタブ コントロールのタブの右側にある左右の外観が丸められるかどうかを示します。  
   
 ```  
@@ -597,7 +647,7 @@ virtual BOOL IsLeftRightRounded() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`場合は、それぞれのタブの両側は丸められます。それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameismditabgroupa--cmfctabctrlismditabgroup"></a><a name="ismditabgroup"></a>CMFCTabCtrl::IsMDITabGroup  
+##  <a name="ismditabgroup"></a>CMFCTabCtrl::IsMDITabGroup  
  マルチ ドキュメント インターフェイス ウィンドウのクライアント領域の現在のタブ コントロールが含まれているかどうかを示します。  
   
 ```  
@@ -607,7 +657,7 @@ virtual BOOL IsMDITabGroup() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`現在のタブ コントロールが MDI クライアント領域のウィンドウ; の場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameisonenotestylea--cmfctabctrlisonenotestyle"></a><a name="isonenotestyle"></a>CMFCTabCtrl::IsOneNoteStyle  
+##  <a name="isonenotestyle"></a>CMFCTabCtrl::IsOneNoteStyle  
  Microsoft OneNote のスタイルで現在のタブ コントロールを表示するかどうかを示します。  
   
 ```  
@@ -617,7 +667,7 @@ virtual BOOL IsOneNoteStyle() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`タブ コントロールが Microsoft OneNote; の形式で表示された場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameissharedscrolla--cmfctabctrlissharedscroll"></a><a name="issharedscroll"></a>CMFCTabCtrl::IsSharedScroll  
+##  <a name="issharedscroll"></a>CMFCTabCtrl::IsSharedScroll  
  現在のタブ コントロールがグループとしてのタブをスクロールできるスクロール バーを持つかどうかを示します。  
   
 ```  
@@ -630,7 +680,7 @@ BOOL IsSharedScroll() const;
 ### <a name="remarks"></a>コメント  
  このメソッドが戻る`TRUE`場合、`style`のパラメーター、 [CMFCTabCtrl::Create](#create)メソッドは STYLE_FLAT_SHARED_HORZ_SCROLL です。  
   
-##  <a name="a-nameistabdocumentsmenua--cmfctabctrlistabdocumentsmenu"></a><a name="istabdocumentsmenu"></a>CMFCTabCtrl::IsTabDocumentsMenu  
+##  <a name="istabdocumentsmenu"></a>CMFCTabCtrl::IsTabDocumentsMenu  
  タブ コントロールはスクロール ボタンまたはタブ付きウィンドウのメニューを表示するボタンを表示するかどうかを示します。  
   
 ```  
@@ -643,7 +693,7 @@ BOOL IsTabDocumentsMenu() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCTabCtrl::EnableTabDocumentsMenu](#enabletabdocumentsmenu)タブ付きウィンドウをスクロールしてメソッドを指定します。  
   
-##  <a name="a-nameisvs2005stylea--cmfctabctrlisvs2005style"></a><a name="isvs2005style"></a>CMFCTabCtrl::IsVS2005Style  
+##  <a name="isvs2005style"></a>CMFCTabCtrl::IsVS2005Style  
  Visual Studio 2005 のスタイルを使用してタブを描画するかどうかを示します。  
   
 ```  
@@ -656,7 +706,7 @@ virtual BOOL IsVS2005Style() const;
 ### <a name="remarks"></a>コメント  
  使用して、`style`のパラメーター、 [CMFCTabCtrl::Create](#create)タブを描画する方法を指定します。  
   
-##  <a name="a-namembenableactivatea--cmfctabctrlmbenableactivate"></a><a name="m_benableactivate"></a>CMFCTabCtrl::m_bEnableActivate  
+##  <a name="m_benableactivate"></a>CMFCTabCtrl::m_bEnableActivate  
  アクティブなビューが新しいタブが挿入され、有効になっているときに、フォーカスを失うを防ぎます。  
   
 ```  
@@ -666,7 +716,7 @@ static BOOL m_bEnableActivate;
 ### <a name="remarks"></a>コメント  
  通常、フォーカスは新しいタブ付きウィンドウによって取得されます、タブが挿入され、アクティブになったとき。 設定、`CMFCTabCtrl::m_bEnableActivate`メンバー変数に`FALSE`元のフォーカスを保持します。 既定値は `TRUE` です。  
   
-##  <a name="a-namemodifytabstylea--cmfctabctrlmodifytabstyle"></a><a name="modifytabstyle"></a>CMFCTabCtrl::ModifyTabStyle  
+##  <a name="modifytabstyle"></a>CMFCTabCtrl::ModifyTabStyle  
  現在のタブ コントロールのタブの外観を指定します。  
   
 ```  
@@ -694,7 +744,7 @@ BOOL ModifyTabStyle(Style style);
 |STYLE_FLAT|左辺と右辺が斜めになった&2; 次元のタブが表示されます。|  
 |STYLE_FLAT_SHARED_HORZ_SCROLL|2 次元のタブが表示されます。 同時に表示できる数以上のタブがある場合、フレームワークは、タブ領域の末尾にあるスクロール バーの矢印を表示します。|  
   
-##  <a name="a-nameondragentera--cmfctabctrlondragenter"></a><a name="ondragenter"></a>CMFCTabCtrl::OnDragEnter  
+##  <a name="ondragenter"></a>CMFCTabCtrl::OnDragEnter  
  カーソルが最初に現在のタブ コントロールのウィンドウに入ったとき、ドラッグ アンド ドロップ操作中に、フレームワークが呼び出します。  
   
 ```  
@@ -722,7 +772,7 @@ virtual DROPEFFECT OnDragEnter(
   
  既定では、このメソッドのみを呼び出して`CMFCTabCtrl::OnDragOver`、これは常に返します`DROPEFFECT_NONE`します。  
   
-##  <a name="a-nameondragovera--cmfctabctrlondragover"></a><a name="ondragover"></a>CMFCTabCtrl::OnDragOver  
+##  <a name="ondragover"></a>CMFCTabCtrl::OnDragOver  
  マウスをドロップ ターゲットのウィンドウに移動するドラッグ操作中に、フレームワークが呼び出します。  
   
 ```  
@@ -748,7 +798,7 @@ virtual DROPEFFECT OnDragOver(
 ### <a name="remarks"></a>コメント  
  このメソッドをカスタム実装をオーバーライドします。 詳細については、次を参照してください。、[直前](../../mfc/reference/cview-class.md#ondragover)メソッドです。  
   
-##  <a name="a-nameonshowtabdocumentsmenua--cmfctabctrlonshowtabdocumentsmenu"></a><a name="onshowtabdocumentsmenu"></a>CMFCTabCtrl::OnShowTabDocumentsMenu  
+##  <a name="onshowtabdocumentsmenu"></a>CMFCTabCtrl::OnShowTabDocumentsMenu  
  ユーザーがタブを選択し、選択されているタブは、アクティブなタブまで待機する、タブ付きウィンドウのポップアップ メニューを表示します。  
   
 ```  
@@ -761,7 +811,7 @@ virtual void OnShowTabDocumentsMenu(CPoint point);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetactiveinmditabgroupa--cmfctabctrlsetactiveinmditabgroup"></a><a name="setactiveinmditabgroup"></a>CMFCTabCtrl::SetActiveInMDITabGroup  
+##  <a name="setactiveinmditabgroup"></a>CMFCTabCtrl::SetActiveInMDITabGroup  
  マルチ ドキュメント インターフェイスのタブ グループのアクティブなタブとして、タブ コントロールの現在のタブを設定します。  
   
 ```  
@@ -775,7 +825,7 @@ void SetActiveInMDITabGroup(BOOL bActive);
 ### <a name="remarks"></a>コメント  
  いずれかの垂直または水平タブ グループに複数のドキュメント ウィンドウを整理し、1 つのタブ グループから別のドキュメントを簡単に移動できます。  
   
-##  <a name="a-namesetactivetaba--cmfctabctrlsetactivetab"></a><a name="setactivetab"></a>CMFCTabCtrl::SetActiveTab  
+##  <a name="setactivetab"></a>CMFCTabCtrl::SetActiveTab  
  タブをアクティブにします。  
   
 ```  
@@ -794,7 +844,7 @@ virtual BOOL SetActiveTab(int iTab);
   
  `SetActiveTab`メソッドを自動的に呼び出して、 [CMFCTabCtrl::HideActiveWindowHorzScrollBar](#hideactivewindowhorzscrollbar)画面が点滅していることを防ぐためのメソッドです。  
   
-##  <a name="a-namesetactivetabboldfonta--cmfctabctrlsetactivetabboldfont"></a><a name="setactivetabboldfont"></a>CMFCTabCtrl::SetActiveTabBoldFont  
+##  <a name="setactivetabboldfont"></a>CMFCTabCtrl::SetActiveTabBoldFont  
  有効またはアクティブなタブでの太字のフォントの使用を無効にします。  
   
 ```  
@@ -807,7 +857,7 @@ void SetActiveTabBoldFont(BOOL bIsBold=TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetdrawframea--cmfctabctrlsetdrawframe"></a><a name="setdrawframe"></a>CMFCTabCtrl::SetDrawFrame  
+##  <a name="setdrawframe"></a>CMFCTabCtrl::SetDrawFrame  
  埋め込まれたバーの周囲にフレームの四角形を描画するかどうかを指定します。  
   
 ```  
@@ -820,7 +870,7 @@ void SetDrawFrame(BOOL bDraw=TRUE);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetflatframea--cmfctabctrlsetflatframe"></a><a name="setflatframe"></a>CMFCTabCtrl::SetFlatFrame  
+##  <a name="setflatframe"></a>CMFCTabCtrl::SetFlatFrame  
  タブ領域の周りにフラットまたは 3D のフレームを描画するかどうかを指定します。  
   
 ```  
@@ -838,7 +888,7 @@ void SetFlatFrame(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetimagelista--cmfctabctrlsetimagelist"></a><a name="setimagelist"></a>CMFCTabCtrl::SetImageList  
+##  <a name="setimagelist"></a>CMFCTabCtrl::SetImageList  
  イメージ リストを指定します。  
   
 ```  
@@ -871,7 +921,7 @@ virtual BOOL SetImageList(HIMAGELIST hImageList);
   
  使用して、 [CMFCBaseTabCtrl::AddTab](../../mfc/reference/cmfcbasetabctrl-class.md#addtab)を表示するイメージのインデックスを指定するタブ コントロールによって継承されるメソッドです。  
   
-##  <a name="a-namesetresizemodea--cmfctabctrlsetresizemode"></a><a name="setresizemode"></a>CMFCTabCtrl::SetResizeMode  
+##  <a name="setresizemode"></a>CMFCTabCtrl::SetResizeMode  
  現在のタブ コントロールのサイズを変更できる方法を指定し、コントロールを再表示します。  
   
 ```  
@@ -891,7 +941,7 @@ void SetResizeMode(ResizeMode resizeMode);
 |RESIZE_VERT|縦方向にしない、垂直方向に、タブ コントロールのサイズを変更できます。|  
 |RESIZE_HORIZ|縦方向にしないが、水平方向に、タブ コントロールのサイズを変更できます。|  
   
-##  <a name="a-namesettabmaxwidtha--cmfctabctrlsettabmaxwidth"></a><a name="settabmaxwidth"></a>CMFCTabCtrl::SetTabMaxWidth  
+##  <a name="settabmaxwidth"></a>CMFCTabCtrl::SetTabMaxWidth  
  タブ付きウィンドウでタブの最大幅を指定します。  
   
 ```  
@@ -905,7 +955,7 @@ void SetTabMaxWidth(int nTabMaxWidth);
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、各タブにタブ付きウィンドウの幅を制限できます。 このメソッドは、タブのラベルが非常に長い場合に便利です。 [CMFCTabCtrl](../../mfc/reference/cmfctabctrl-class.md)クラスのコンス トラクターは、実際には、幅が無制限であることを意味する 0 のタブの最大幅を初期化します。  
   
-##  <a name="a-namestopresizea--cmfctabctrlstopresize"></a><a name="stopresize"></a>CMFCTabCtrl::StopResize  
+##  <a name="stopresize"></a>CMFCTabCtrl::StopResize  
  タブ コントロールの現在のサイズ変更操作を終了します。  
   
 ```  
@@ -916,7 +966,7 @@ void StopResize(BOOL bCancel);
  [入力] `bCancel`  
  `TRUE`現在のサイズ変更操作を破棄するには`FALSE`現在を完了するには、操作をサイズ変更します。 いずれの場合は、フレームワークは、サイズの四角形の描画を停止します。  
   
-##  <a name="a-namesynchronizescrollbara--cmfctabctrlsynchronizescrollbar"></a><a name="synchronizescrollbar"></a>CMFCTabCtrl::SynchronizeScrollBar  
+##  <a name="synchronizescrollbar"></a>CMFCTabCtrl::SynchronizeScrollBar  
  フラット タブを表示するタブ コントロールの水平スクロール バーを描画します。  
   
 ```  

@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCColorDialog
+- AFXCOLORDIALOG/CMFCColorDialog
+- AFXCOLORDIALOG/CMFCColorDialog::CMFCColorDialog
+- AFXCOLORDIALOG/CMFCColorDialog::GetColor
+- AFXCOLORDIALOG/CMFCColorDialog::GetPalette
+- AFXCOLORDIALOG/CMFCColorDialog::RebuildPalette
+- AFXCOLORDIALOG/CMFCColorDialog::SetCurrentColor
+- AFXCOLORDIALOG/CMFCColorDialog::SetNewColor
+- AFXCOLORDIALOG/CMFCColorDialog::SetPageOne
+- AFXCOLORDIALOG/CMFCColorDialog::SetPageTwo
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -126,7 +135,7 @@ class CMFCColorDialog : public CDialogEx
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcolordialog.h  
   
-##  <a name="a-namecmfccolordialoga--cmfccolordialogcmfccolordialog"></a><a name="cmfccolordialog"></a>CMFCColorDialog::CMFCColorDialog  
+##  <a name="cmfccolordialog"></a>CMFCColorDialog::CMFCColorDialog  
  `CMFCColorDialog` オブジェクトを構築します。  
   
 ```  
@@ -154,7 +163,7 @@ CMFCColorDialog(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetcolora--cmfccolordialoggetcolor"></a><a name="getcolor"></a>CMFCColorDialog::GetColor  
+##  <a name="getcolor"></a>CMFCColorDialog::GetColor  
  カラー ダイアログ ボックスで、ユーザーが選択した色を取得します。  
   
 ```  
@@ -167,7 +176,7 @@ COLORREF GetColor() const;
 ### <a name="remarks"></a>コメント  
  呼び出した後に、この関数を呼び出して、`DoModal`メソッドです。  
   
-##  <a name="a-namegetpalettea--cmfccolordialoggetpalette"></a><a name="getpalette"></a>CMFCColorDialog::GetPalette  
+##  <a name="getpalette"></a>CMFCColorDialog::GetPalette  
  現在の色のダイアログ ボックスで使用可能なカラー パレットを取得します。  
   
 ```  
@@ -180,14 +189,14 @@ CPalette* GetPalette() const;
 ### <a name="remarks"></a>コメント  
  カラー パレットでは、ユーザーが選択できる色を指定します。  
   
-##  <a name="a-namerebuildpalettea--cmfccolordialogrebuildpalette"></a><a name="rebuildpalette"></a>CMFCColorDialog::RebuildPalette  
+##  <a name="rebuildpalette"></a>CMFCColorDialog::RebuildPalette  
  パレットをシステム パレットから派生しています。  
   
 ```  
 void RebuildPalette();
 ```  
   
-##  <a name="a-namesetcurrentcolora--cmfccolordialogsetcurrentcolor"></a><a name="setcurrentcolor"></a>CMFCColorDialog::SetCurrentColor  
+##  <a name="setcurrentcolor"></a>CMFCColorDialog::SetCurrentColor  
  ダイアログ ボックスの現在の色を設定します。  
   
 ```  
@@ -200,7 +209,7 @@ void SetCurrentColor(COLORREF rgb);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetnewcolora--cmfccolordialogsetnewcolor"></a><a name="setnewcolor"></a>CMFCColorDialog::SetNewColor  
+##  <a name="setnewcolor"></a>CMFCColorDialog::SetNewColor  
  現在の色を最も近い現在パレットの色に設定します。  
   
 ```  
@@ -213,7 +222,7 @@ void SetNewColor(COLORREF rgb);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetpageonea--cmfccolordialogsetpageone"></a><a name="setpageone"></a>CMFCColorDialog::SetPageOne  
+##  <a name="setpageone"></a>CMFCColorDialog::SetPageOne  
  色のダイアログ ボックスの最初のプロパティ ページで選択した色の赤、緑、および青のコンポーネントを明示的に指定します。  
   
 ```  
@@ -235,7 +244,7 @@ void SetPageOne(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetpagetwoa--cmfccolordialogsetpagetwo"></a><a name="setpagetwo"></a>CMFCColorDialog::SetPageTwo  
+##  <a name="setpagetwo"></a>CMFCColorDialog::SetPageTwo  
  カラー ダイアログ ボックスの&2; 番目のプロパティ ページで選択した色の赤、緑、および青のコンポーネントを明示的に指定します。  
   
 ```  

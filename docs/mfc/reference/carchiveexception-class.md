@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CArchiveException
+- AFX/CArchiveException
+- AFX/CArchiveException::CArchiveException
+- AFX/CArchiveException::m_cause
+- AFX/CArchiveException::m_strFileName
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -82,7 +86,7 @@ class CArchiveException : public CException
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namecarchiveexceptiona--carchiveexceptioncarchiveexception"></a><a name="carchiveexception"></a>CArchiveException::CArchiveException  
+##  <a name="carchiveexception"></a>CArchiveException::CArchiveException  
  構築、`CArchiveException`の値を格納するオブジェクト`cause`オブジェクトです。  
   
 ```  
@@ -103,7 +107,7 @@ CArchiveException(
   
  このコンス トラクターを直接使用しないでください。代わりに、グローバル関数を呼び出す`AfxThrowArchiveException`します。  
   
-##  <a name="a-namemcausea--carchiveexceptionmcause"></a><a name="m_cause"></a>CArchiveException::m_cause  
+##  <a name="m_cause"></a>CArchiveException::m_cause  
  例外の原因を指定します。  
   
 ```  
@@ -135,7 +139,7 @@ int m_cause;
     > [!NOTE]
     > **CArchiveException::generic**は使用されなくなりました。 使用**代わり**代わりにします。 場合**汎用**アプリケーションで使用され、ビルドは/clr ではエラーが発生する構文は、簡単に解読できません。  
   
-##  <a name="a-namemstrfilenamea--carchiveexceptionmstrfilename"></a><a name="m_strfilename"></a>CArchiveException::m_strFileName  
+##  <a name="m_strfilename"></a>CArchiveException::m_strFileName  
  この例外の状態のファイルの名前を指定します。  
   
 ```  

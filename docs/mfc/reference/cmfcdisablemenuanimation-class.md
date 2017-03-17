@@ -10,6 +10,8 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCDisableMenuAnimation
+- AFXPOPUPMENU/CMFCDisableMenuAnimation
+- AFXPOPUPMENU/CMFCDisableMenuAnimation::Restore
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -91,7 +93,7 @@ class CMFCDisableMenuAnimation
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxpopupmenu.h  
   
-##  <a name="a-namerestorea--cmfcdisablemenuanimationrestore"></a><a name="restore"></a>CMFCDisableMenuAnimation::Restore  
+##  <a name="restore"></a>CMFCDisableMenuAnimation::Restore  
  ポップアップ メニューを表示するフレームワークが使用される前のアニメーションを復元します。  
   
 ```  

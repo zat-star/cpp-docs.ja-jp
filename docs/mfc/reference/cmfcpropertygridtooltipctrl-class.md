@@ -9,13 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- CMFCPropertyGridToolTipCtrl::PreTranslateMessage
-- ~CMFCPropertyGridToolTipCtrl
-- PreTranslateMessage
-- CMFCPropertyGridToolTipCtrl.~CMFCPropertyGridToolTipCtrl
 - CMFCPropertyGridToolTipCtrl
-- CMFCPropertyGridToolTipCtrl.PreTranslateMessage
-- CMFCPropertyGridToolTipCtrl::~CMFCPropertyGridToolTipCtrl
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::Create
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::Deactivate
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::GetLastRect
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::Hide
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::SetTextMargin
+- AFXPROPERTYGRIDTOOLTIPCTRL/CMFCPropertyGridToolTipCtrl::Track
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,14 +104,14 @@ class CMFCPropertyGridToolTipCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxpropertygridtooltipctrl.h  
   
-##  <a name="a-namecmfcpropertygridtooltipctrla--cmfcpropertygridtooltipctrlcmfcpropertygridtooltipctrl"></a><a name="cmfcpropertygridtooltipctrl"></a>CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl  
+##  <a name="cmfcpropertygridtooltipctrl"></a>CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl  
  `CMFCPropertyGridToolTipCtrl` オブジェクトを構築します。  
   
 ```  
 CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl();
 ```  
   
-##  <a name="a-namecreatea--cmfcpropertygridtooltipctrlcreate"></a><a name="create"></a>CMFCPropertyGridToolTipCtrl::Create  
+##  <a name="create"></a>CMFCPropertyGridToolTipCtrl::Create  
  ツール ヒント コントロールのウィンドウを作成します。  
   
 ```  
@@ -123,7 +125,7 @@ BOOL Create(CWnd* pWndParent);
 ### <a name="return-value"></a>戻り値  
  ウィンドウが作成された場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namedeactivatea--cmfcpropertygridtooltipctrldeactivate"></a><a name="deactivate"></a>CMFCPropertyGridToolTipCtrl::Deactivate  
+##  <a name="deactivate"></a>CMFCPropertyGridToolTipCtrl::Deactivate  
  非アクティブ化し、tooltip コントロールを非表示にします。  
   
 ```  
@@ -133,7 +135,7 @@ void Deactivate();
 ### <a name="remarks"></a>コメント  
  このメソッドの最後の位置とテキストに設定の空白値ように呼び出しを将来[CMFCPropertyGridToolTipCtrl::Track](#track)ツールヒントを表示します。  
   
-##  <a name="a-namegetlastrecta--cmfcpropertygridtooltipctrlgetlastrect"></a><a name="getlastrect"></a>CMFCPropertyGridToolTipCtrl::GetLastRect  
+##  <a name="getlastrect"></a>CMFCPropertyGridToolTipCtrl::GetLastRect  
  ツール ヒント コントロールの最後の位置の座標を返します。  
   
 ```  
@@ -144,14 +146,14 @@ void GetLastRect(CRect& rect) const;
  [出力] `rect`  
  ツール ヒント コントロールの最後の位置が含まれています。  
   
-##  <a name="a-namehidea--cmfcpropertygridtooltipctrlhide"></a><a name="hide"></a>CMFCPropertyGridToolTipCtrl::Hide  
+##  <a name="hide"></a>CMFCPropertyGridToolTipCtrl::Hide  
  Tooltip コントロールを非表示にします。  
   
 ```  
 void Hide();
 ```  
   
-##  <a name="a-namesettextmargina--cmfcpropertygridtooltipctrlsettextmargin"></a><a name="settextmargin"></a>CMFCPropertyGridToolTipCtrl::SetTextMargin  
+##  <a name="settextmargin"></a>CMFCPropertyGridToolTipCtrl::SetTextMargin  
  ツールヒントのテキストと、ヒント ウィンドウの枠線の間隔を設定します。  
   
 ```  
@@ -162,7 +164,7 @@ void SetTextMargin(int nTextMargin);
  [入力] `nTextMargin`  
  ツール ヒント コントロールのテキストと、ヒント ウィンドウの枠線の間隔を指定します。 既定値は、10 ピクセルです。  
   
-##  <a name="a-nametracka--cmfcpropertygridtooltipctrltrack"></a><a name="track"></a>CMFCPropertyGridToolTipCtrl::Track  
+##  <a name="track"></a>CMFCPropertyGridToolTipCtrl::Track  
  Tooltip コントロールが表示されます。  
   
 ```  

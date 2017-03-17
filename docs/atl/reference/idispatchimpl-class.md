@@ -10,8 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IDispatchImpl
-- ATL.IDispatchImpl
-- ATL::IDispatchImpl
+- ATLCOM/ATL::IDispatchImpl
+- ATLCOM/ATL::IDispatchImpl::IDispatchImpl
+- ATLCOM/ATL::IDispatchImpl::GetIDsOfNames
+- ATLCOM/ATL::IDispatchImpl::GetTypeInfo
+- ATLCOM/ATL::IDispatchImpl::GetTypeInfoCount
+- ATLCOM/ATL::IDispatchImpl::Invoke
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -116,7 +120,7 @@ class ATL_NO_VTABLE IDispatchImpl : public T
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namegetidsofnamesa--idispatchimplgetidsofnames"></a><a name="getidsofnames"></a>IDispatchImpl::GetIDsOfNames  
+##  <a name="getidsofnames"></a>IDispatchImpl::GetIDsOfNames  
  一連の名前を対応する一連のディスパッチ識別子に割り当てます。  
   
 ```
@@ -131,7 +135,7 @@ STDMETHOD(GetIDsOfNames)(
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetIDsOfNames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegettypeinfoa--idispatchimplgettypeinfo"></a><a name="gettypeinfo"></a>IDispatchImpl::GetTypeInfo  
+##  <a name="gettypeinfo"></a>IDispatchImpl::GetTypeInfo  
  デュアル インターフェイスの型情報を取得します。  
   
 ```
@@ -144,7 +148,7 @@ STDMETHOD(GetTypeInfo)(
 ### <a name="remarks"></a>コメント  
  参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegettypeinfocounta--idispatchimplgettypeinfocount"></a><a name="gettypeinfocount"></a>IDispatchImpl::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>IDispatchImpl::GetTypeInfoCount  
  デュアル インターフェイスの使用可能な型情報があるかどうかを決定します。  
   
 ```
@@ -154,14 +158,14 @@ STDMETHOD(GetTypeInfoCount)(UINT* pctinfo);
 ### <a name="remarks"></a>コメント  
  See `IDispatch::GetTypeInfoCount` in the [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)].  
   
-##  <a name="a-nameidispatchimpla--idispatchimplidispatchimpl"></a><a name="idispatchimpl"></a>IDispatchImpl::IDispatchImpl  
+##  <a name="idispatchimpl"></a>IDispatchImpl::IDispatchImpl  
  コンストラクターです。 呼び出し`AddRef`デュアル インターフェイスの型情報を管理する、プロテクト メンバー変数にします。 デストラクターの呼び出し**リリース**します。  
   
 ```
 IDispatchImpl();
 ```  
   
-##  <a name="a-nameinvokea--idispatchimplinvoke"></a><a name="invoke"></a>IDispatchImpl::Invoke  
+##  <a name="invoke"></a>IDispatchImpl::Invoke  
  メソッドとデュアル インターフェイスによって公開されるプロパティにアクセスを提供します。  
   
 ```

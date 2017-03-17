@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CScrollView
+- AFXWIN/CScrollView
+- AFXWIN/CScrollView::CScrollView
+- AFXWIN/CScrollView::CheckScrollBars
+- AFXWIN/CScrollView::FillOutsideRect
+- AFXWIN/CScrollView::GetDeviceScrollPosition
+- AFXWIN/CScrollView::GetDeviceScrollSizes
+- AFXWIN/CScrollView::GetScrollPosition
+- AFXWIN/CScrollView::GetTotalSize
+- AFXWIN/CScrollView::ResizeParentToFit
+- AFXWIN/CScrollView::ScrollToPosition
+- AFXWIN/CScrollView::SetScaleToFitSize
+- AFXWIN/CScrollView::SetScrollSizes
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -122,7 +134,7 @@ class CScrollView : public CView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecheckscrollbarsa--cscrollviewcheckscrollbars"></a><a name="checkscrollbars"></a>CScrollView::CheckScrollBars  
+##  <a name="checkscrollbars"></a>CScrollView::CheckScrollBars  
  スクロール ビューが水平方向および垂直のバーを確認するのには、このメンバー関数を呼び出します。  
   
 ```  
@@ -138,7 +150,7 @@ void CheckScrollBars(
  *bHasVertBar*  
  アプリケーションが、垂直スクロール バーを持つことを示します。  
   
-##  <a name="a-namecscrollviewa--cscrollviewcscrollview"></a><a name="cscrollview"></a>CScrollView::CScrollView  
+##  <a name="cscrollview"></a>CScrollView::CScrollView  
  `CScrollView` オブジェクトを構築します。  
   
 ```  
@@ -148,7 +160,7 @@ CScrollView();
 ### <a name="remarks"></a>コメント  
  いずれかを呼び出す必要があります`SetScrollSizes`または`SetScaleToFitSize`スクロールする前にビューが使用されます。  
   
-##  <a name="a-namefilloutsiderecta--cscrollviewfilloutsiderect"></a><a name="filloutsiderect"></a>CScrollView::FillOutsideRect  
+##  <a name="filloutsiderect"></a>CScrollView::FillOutsideRect  
  呼び出す`FillOutsideRect`スクロール領域の外側に表示されるビューの領域を塗りつぶします。  
   
 ```  
@@ -170,7 +182,7 @@ void FillOutsideRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&164;](../../mfc/codesnippet/cpp/cscrollview-class_1.cpp)]  
   
-##  <a name="a-namegetdevicescrollpositiona--cscrollviewgetdevicescrollposition"></a><a name="getdevicescrollposition"></a>CScrollView::GetDeviceScrollPosition  
+##  <a name="getdevicescrollposition"></a>CScrollView::GetDeviceScrollPosition  
  呼び出す`GetDeviceScrollPosition`水平および垂直方向の現在の位置のスクロール ボックス、スクロール バーの必要があります。  
   
 ```  
@@ -185,7 +197,7 @@ CPoint GetDeviceScrollPosition() const;
   
  `GetDeviceScrollPosition`デバイス単位で値を返します。 論理ユニットを実行する場合に、使用`GetScrollPosition`代わりにします。  
   
-##  <a name="a-namegetdevicescrollsizesa--cscrollviewgetdevicescrollsizes"></a><a name="getdevicescrollsizes"></a>CScrollView::GetDeviceScrollSizes  
+##  <a name="getdevicescrollsizes"></a>CScrollView::GetDeviceScrollSizes  
  `GetDeviceScrollSizes`現在のマップ モード、サイズの合計をスクロール可能なビューの行とページのサイズを取得します。  
   
 ```  
@@ -212,7 +224,7 @@ void GetDeviceScrollSizes(
 ### <a name="remarks"></a>コメント  
  サイズは、デバイス単位。 このメンバー関数と呼ばれることはほとんどありません。  
   
-##  <a name="a-namegetscrollpositiona--cscrollviewgetscrollposition"></a><a name="getscrollposition"></a>CScrollView::GetScrollPosition  
+##  <a name="getscrollposition"></a>CScrollView::GetScrollPosition  
  呼び出す`GetScrollPosition`水平および垂直方向の現在の位置のスクロール ボックス、スクロール バーの必要があります。  
   
 ```  
@@ -227,7 +239,7 @@ CPoint GetScrollPosition() const;
   
  `GetScrollPosition`論理単位で値を返します。 デバイス単位にする場合は、使用`GetDeviceScrollPosition`代わりにします。  
   
-##  <a name="a-namegettotalsizea--cscrollviewgettotalsize"></a><a name="gettotalsize"></a>CScrollView::GetTotalSize  
+##  <a name="gettotalsize"></a>CScrollView::GetTotalSize  
  呼び出す`GetTotalSize`スクロール ビューの現在の水平および垂直方向のサイズを取得します。  
   
 ```  
@@ -237,7 +249,7 @@ CSize GetTotalSize() const;
 ### <a name="return-value"></a>戻り値  
  論理単位でスクロール ビューの合計サイズ。 水平方向のサイズは、 **cx**のメンバー、`CSize`の値を返します。 垂直方向のサイズは、 **cy**メンバーです。  
   
-##  <a name="a-nameresizeparenttofita--cscrollviewresizeparenttofit"></a><a name="resizeparenttofit"></a>CScrollView::ResizeParentToFit  
+##  <a name="resizeparenttofit"></a>CScrollView::ResizeParentToFit  
  呼び出す`ResizeParentToFit`フレーム ウィンドウのサイズに合う、ビューのサイズをできるようにします。  
   
 ```  
@@ -255,7 +267,7 @@ void ResizeParentToFit(BOOL bShrinkOnly = TRUE);
   
  [!code-cpp[NVC_MFCDocView #&165;](../../mfc/codesnippet/cpp/cscrollview-class_2.cpp)]  
   
-##  <a name="a-namescrolltopositiona--cscrollviewscrolltoposition"></a><a name="scrolltoposition"></a>CScrollView::ScrollToPosition  
+##  <a name="scrolltoposition"></a>CScrollView::ScrollToPosition  
  呼び出す`ScrollToPosition`ビューの特定の時点までスクロールします。  
   
 ```  
@@ -269,7 +281,7 @@ void ScrollToPosition(POINT pt);
 ### <a name="remarks"></a>コメント  
  このポイントがウィンドウの左上隅にあるように、ビューがスクロールされます。 ビューに合わせてスケーリングされる場合、このメンバー関数は呼び出されません必要があります。  
   
-##  <a name="a-namesetscaletofitsizea--cscrollviewsetscaletofitsize"></a><a name="setscaletofitsize"></a>CScrollView::SetScaleToFitSize  
+##  <a name="setscaletofitsize"></a>CScrollView::SetScaleToFitSize  
  呼び出す`SetScaleToFitSize`を現在のウィンドウのサイズにビューポートのサイズを自動的にスケール変更する場合します。  
   
 ```  
@@ -291,7 +303,7 @@ void SetScaleToFitSize(SIZE sizeTotal);
   
  [!code-cpp[NVC_MFCDocView #&165;](../../mfc/codesnippet/cpp/cscrollview-class_2.cpp)]  
   
-##  <a name="a-namesetscrollsizesa--cscrollviewsetscrollsizes"></a><a name="setscrollsizes"></a>CScrollView::SetScrollSizes  
+##  <a name="setscrollsizes"></a>CScrollView::SetScrollSizes  
  呼び出す`SetScrollSizes`とビューが更新しようとしています。  
   
 ```  

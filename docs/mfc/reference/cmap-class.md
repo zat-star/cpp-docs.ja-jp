@@ -10,6 +10,23 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMap
+- AFXTEMPL/CMap
+- AFXTEMPL/CMap::CPair
+- AFXTEMPL/CMap::CMap
+- AFXTEMPL/CMap::GetCount
+- AFXTEMPL/CMap::GetHashTableSize
+- AFXTEMPL/CMap::GetNextAssoc
+- AFXTEMPL/CMap::GetSize
+- AFXTEMPL/CMap::GetStartPosition
+- AFXTEMPL/CMap::InitHashTable
+- AFXTEMPL/CMap::IsEmpty
+- AFXTEMPL/CMap::Lookup
+- AFXTEMPL/CMap::PGetFirstAssoc
+- AFXTEMPL/CMap::PGetNextAssoc
+- AFXTEMPL/CMap::PLookup
+- AFXTEMPL/CMap::RemoveAll
+- AFXTEMPL/CMap::RemoveKey
+- AFXTEMPL/CMap::SetAt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -125,7 +142,7 @@ template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>class CMap : pub
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxtempl.h  
   
-##  <a name="a-namecmapa--cmapcmap"></a><a name="cmap"></a>CMap::CMap  
+##  <a name="cmap"></a>CMap::CMap  
  空のマップを構築します。  
   
 ```  
@@ -142,7 +159,7 @@ CMap(INT_PTR nBlockSize = 10);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&56;](../../mfc/codesnippet/cpp/cmap-class_1.cpp)]  
   
-##  <a name="a-namecpaira--cmapcpair"></a><a name="cpair"></a>CMap::CPair  
+##  <a name="cpair"></a>CMap::CPair  
  キーの値と関連付けられているオブジェクトの値が含まれています。  
   
 ### <a name="remarks"></a>コメント  
@@ -159,7 +176,7 @@ CMap(INT_PTR nBlockSize = 10);
 ### <a name="example"></a>例  
  使用状況の例は、の使用例を参照してください。[例](#plookup)します。  
   
-##  <a name="a-namegetcounta--cmapgetcount"></a><a name="getcount"></a>CMap::GetCount  
+##  <a name="getcount"></a>CMap::GetCount  
  マップ内の要素の数を取得します。  
   
 ```  
@@ -172,7 +189,7 @@ INT_PTR GetCount() const;
 ### <a name="example"></a>例  
  例を参照してください[CMap::Lookup](#lookup)します。  
   
-##  <a name="a-namegethashtablesizea--cmapgethashtablesize"></a><a name="gethashtablesize"></a>CMap::GetHashTableSize  
+##  <a name="gethashtablesize"></a>CMap::GetHashTableSize  
  マップのハッシュ テーブル内の要素の数が決まります。  
   
 ```  
@@ -185,7 +202,7 @@ UINT GetHashTableSize() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&57;](../../mfc/codesnippet/cpp/cmap-class_2.cpp)]  
   
-##  <a name="a-namegetnextassoca--cmapgetnextassoc"></a><a name="getnextassoc"></a>CMap::GetNextAssoc  
+##  <a name="getnextassoc"></a>CMap::GetNextAssoc  
  位置にあるマップ要素を取得`rNextPosition`、し、更新`rNextPosition`に、マップ内の次の要素を参照してください。  
   
 ```  
@@ -219,7 +236,7 @@ void GetNextAssoc(
 ### <a name="example"></a>例  
  例を参照してください[CMap::SetAt](#setat)します。  
   
-##  <a name="a-namegetsizea--cmapgetsize"></a><a name="getsize"></a>CMap::GetSize  
+##  <a name="getsize"></a>CMap::GetSize  
  マップ要素の数を返します。  
   
 ```  
@@ -235,7 +252,7 @@ INT_PTR GetSize() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&58;](../../mfc/codesnippet/cpp/cmap-class_3.cpp)]  
   
-##  <a name="a-namegetstartpositiona--cmapgetstartposition"></a><a name="getstartposition"></a>CMap::GetStartPosition  
+##  <a name="getstartposition"></a>CMap::GetStartPosition  
  返すことによって、マップの反復処理を開始、**位置**値を渡すことができる、`GetNextAssoc`呼び出します。  
   
 ```  
@@ -251,7 +268,7 @@ POSITION GetStartPosition() const;
 ### <a name="example"></a>例  
  例を参照してください[CMap::SetAt](#setat)します。  
   
-##  <a name="a-nameinithashtablea--cmapinithashtable"></a><a name="inithashtable"></a>CMap::InitHashTable  
+##  <a name="inithashtable"></a>CMap::InitHashTable  
  ハッシュ テーブルを初期化します。  
   
 ```  
@@ -271,7 +288,7 @@ void InitHashTable(UINT hashSize, BOOL  bAllocNow = TRUEÂ);
 ### <a name="example"></a>例  
  例を参照してください[CMap::Lookup](#lookup)します。  
   
-##  <a name="a-nameisemptya--cmapisempty"></a><a name="isempty"></a>CMap::IsEmpty  
+##  <a name="isempty"></a>CMap::IsEmpty  
  マップが空かどうかを決定します。  
   
 ```  
@@ -284,7 +301,7 @@ BOOL IsEmpty() const;
 ### <a name="example"></a>例  
  例を参照してください[CMap::RemoveAll](#removeall)します。  
   
-##  <a name="a-namelookupa--cmaplookup"></a><a name="lookup"></a>CMap::Lookup  
+##  <a name="lookup"></a>CMap::Lookup  
  指定されたキーにマップされている値を検索します。  
   
 ```  
@@ -313,7 +330,7 @@ BOOL Lookup(ARG_KEY key, VALUE& rValue) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&58;](../../mfc/codesnippet/cpp/cmap-class_3.cpp)]  
   
-##  <a name="a-nameoperatorata--cmapoperator--"></a><a name="operator_at"></a>CMap::operator  
+##  <a name="operator_at"></a>CMap::operator  
  便利な代用、`SetAt`メンバー関数。  
   
 ```  
@@ -338,7 +355,7 @@ VALUE& operator[](arg_key key);
 ### <a name="example"></a>例  
  例を参照してください[CMap::Lookup](#lookup)します。  
   
-##  <a name="a-namepgetfirstassoca--cmappgetfirstassoc"></a><a name="pgetfirstassoc"></a>CMap::PGetFirstAssoc  
+##  <a name="pgetfirstassoc"></a>CMap::PGetFirstAssoc  
  マップ オブジェクトの最初のエントリを返します。  
   
 ```  
@@ -354,7 +371,7 @@ const CPair* PGetFirstAssoc() const;Â CPair* PGetFirstAssoc();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&59;](../../mfc/codesnippet/cpp/cmap-class_4.cpp)]  
   
-##  <a name="a-namepgetnextassoca--cmappgetnextassoc"></a><a name="pgetnextassoc"></a>CMap::PGetNextAssoc  
+##  <a name="pgetnextassoc"></a>CMap::PGetNextAssoc  
  指すに基づいてマップ要素を取得`pAssocRec`します。  
   
 ```  
@@ -376,7 +393,7 @@ CPair *PGetNextAssoc(const CPair* pAssocRet);
 ### <a name="example"></a>例  
  例を参照してください[CMap::PGetFirstAssoc](#pgetfirstassoc)します。  
   
-##  <a name="a-nameplookupa--cmapplookup"></a><a name="plookup"></a>例  
+##  <a name="plookup"></a>例  
  指定されたキーにマップされている値を検索します。  
   
 ```  

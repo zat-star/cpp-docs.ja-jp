@@ -9,8 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxrendertarget/CD2DLayer
 - CD2DLayer
+- AFXRENDERTARGET/CD2DLayer
+- AFXRENDERTARGET/CD2DLayer::CD2DLayer
+- AFXRENDERTARGET/CD2DLayer::Attach
+- AFXRENDERTARGET/CD2DLayer::Create
+- AFXRENDERTARGET/CD2DLayer::Destroy
+- AFXRENDERTARGET/CD2DLayer::Detach
+- AFXRENDERTARGET/CD2DLayer::Get
+- AFXRENDERTARGET/CD2DLayer::GetSize
+- AFXRENDERTARGET/CD2DLayer::IsValid
+- AFXRENDERTARGET/CD2DLayer::m_pLayer
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,14 +101,14 @@ class CD2DLayer : public CD2DResource;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dlayera--cd2dlayercd2dlayer"></a><a name="_dtorcd2dlayer"></a>CD2DLayer:: ~ CD2DLayer  
+##  <a name="_dtorcd2dlayer"></a>CD2DLayer:: ~ CD2DLayer  
  デストラクターです。 D2D layer オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DLayer();
 ```  
   
-##  <a name="a-nameattacha--cd2dlayerattach"></a><a name="attach"></a>CD2DLayer::Attach  
+##  <a name="attach"></a>CD2DLayer::Attach  
  オブジェクトにリソース インタ フェースを既存の接続  
   
 ```  
@@ -110,7 +119,7 @@ void Attach(ID2D1Layer* pResource);
  `pResource`  
  既存のリソースのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namecd2dlayera--cd2dlayercd2dlayer"></a><a name="cd2dlayer"></a>CD2DLayer::CD2DLayer  
+##  <a name="cd2dlayer"></a>CD2DLayer::CD2DLayer  
  CD2DLayer オブジェクトを構築します。  
   
 ```  
@@ -126,7 +135,7 @@ CD2DLayer(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namecreatea--cd2dlayercreate"></a><a name="create"></a>CD2DLayer::Create  
+##  <a name="create"></a>CD2DLayer::Create  
  CD2DLayer を作成します。  
   
 ```  
@@ -140,14 +149,14 @@ virtual HRESULT Create(CRenderTarget* pRenderTarget);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namedestroya--cd2dlayerdestroy"></a><a name="destroy"></a>CD2DLayer::Destroy  
+##  <a name="destroy"></a>CD2DLayer::Destroy  
  CD2DLayer オブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namedetacha--cd2dlayerdetach"></a><a name="detach"></a>CD2DLayer::Detach  
+##  <a name="detach"></a>CD2DLayer::Detach  
  オブジェクトからリソース インタ フェースをデタッチします。  
   
 ```  
@@ -157,7 +166,7 @@ ID2D1Layer* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたリソース インタ フェースへのポインター。  
   
-##  <a name="a-namegeta--cd2dlayerget"></a><a name="get"></a>CD2DLayer::Get  
+##  <a name="get"></a>CD2DLayer::Get  
  返します。 ID2D1Layer インターフェイス  
   
 ```  
@@ -167,7 +176,7 @@ ID2D1Layer* Get();
 ### <a name="return-value"></a>戻り値  
  ID2D1Layer インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namegetsizea--cd2dlayergetsize"></a><a name="getsize"></a>CD2DLayer::GetSize  
+##  <a name="getsize"></a>CD2DLayer::GetSize  
  デバイスに依存しないピクセル単位で、レンダー ターゲットのサイズを返します  
   
 ```  
@@ -177,7 +186,7 @@ CD2DSizeF GetSize() const;
 ### <a name="return-value"></a>戻り値  
  デバイスに依存しないピクセルで、レンダー ターゲットの現在のサイズ  
   
-##  <a name="a-nameisvalida--cd2dlayerisvalid"></a><a name="isvalid"></a>CD2DLayer::IsValid  
+##  <a name="isvalid"></a>CD2DLayer::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -187,14 +196,14 @@ virtual BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namemplayera--cd2dlayermplayer"></a><a name="m_player"></a>CD2DLayer::m_pLayer  
+##  <a name="m_player"></a>CD2DLayer::m_pLayer  
  ID2D1Layer オブジェクトへのポインターを格納します。  
   
 ```  
 ID2D1Layer* m_pLayer;  
 ```  
   
-##  <a name="a-nameoperatorid2d1layerstara--cd2dlayeroperator-id2d1layer"></a><a name="operator_id2d1layer_star"></a>CD2DLayer::operator ID2D1Layer *  
+##  <a name="operator_id2d1layer_star"></a>CD2DLayer::operator ID2D1Layer *  
  返します。 ID2D1Layer インターフェイス  
   
 ```  

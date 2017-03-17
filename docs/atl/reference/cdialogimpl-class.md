@@ -10,8 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDialogImpl
-- ATL.CDialogImpl
-- ATL::CDialogImpl
+- ATLWIN/ATL::CDialogImpl
+- ATLWIN/ATL::Create
+- ATLWIN/ATL::DestroyWindow
+- ATLWIN/ATL::DoModal
+- ATLWIN/ATL::EndDialog
+- ATLWIN/ATL::GetDialogProc
+- ATLWIN/ATL::MapDialogRect
+- ATLWIN/ATL::OnFinalMessage
+- ATLWIN/ATL::DialogProc
+- ATLWIN/ATL::StartDialogProc
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -115,7 +123,7 @@ template <class T,
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-namecreatea--cdialogimplcreate"></a><a name="create"></a>CDialogImpl::Create  
+##  <a name="create"></a>CDialogImpl::Create  
  モードレス ダイアログ ボックスを作成します。  
   
 ```  
@@ -145,7 +153,7 @@ HWND Create(
 ### <a name="remarks"></a>コメント  
  このダイアログ ボックスが自動的に接続されている、`CDialogImpl`オブジェクトです。 モーダル ダイアログ ボックスを作成するには[DoModal](#domodal)します。 上記の&2; 番目のオーバーライドはでのみ使用[CComControl](../../atl/reference/ccomcontrol-class.md)します。  
   
-##  <a name="a-namedestroywindowa--cdialogimpldestroywindow"></a><a name="destroywindow"></a>CDialogImpl::DestroyWindow  
+##  <a name="destroywindow"></a>CDialogImpl::DestroyWindow  
  モードレス ダイアログ ボックスを破棄します。  
   
 ```  
@@ -161,7 +169,7 @@ BOOL DestroyWindow();
 ### <a name="remarks"></a>コメント  
  返します。 **TRUE**ダイアログ ボックスが正常に破棄された、それ以外の場合**FALSE**します。  
   
-##  <a name="a-namedialogproca--cdialogimpldialogproc"></a><a name="dialogproc"></a>CDialogImpl::DialogProc  
+##  <a name="dialogproc"></a>CDialogImpl::DialogProc  
  この静的関数では、ダイアログ ボックス プロシージャを実装します。  
   
 ```  
@@ -196,7 +204,7 @@ static LRESULT CALLBACK DialogProc(
   
  オーバーライドできます`DialogProc`メッセージを処理するためのさまざまなメカニズムを提供します。  
   
-##  <a name="a-namedomodala--cdialogimpldomodal"></a><a name="domodal"></a>CDialogImpl::DoModal  
+##  <a name="domodal"></a>CDialogImpl::DoModal  
  モーダル ダイアログ ボックスを作成します。  
   
 ```   
@@ -220,7 +228,7 @@ INT_PTR DoModal(
   
  モードレス ダイアログ ボックスを作成するには[作成](#create)します。  
   
-##  <a name="a-nameenddialoga--cdialogimplenddialog"></a><a name="enddialog"></a>CDialogImpl::EndDialog  
+##  <a name="enddialog"></a>CDialogImpl::EndDialog  
  モーダル ダイアログ ボックスを破棄します。  
   
 ```   
@@ -240,7 +248,7 @@ BOOL EndDialog(int nRetCode);
 > [!NOTE]
 >  呼び出す必要はありません`EndDialog`モードレス ダイアログ ボックスを破棄します。 呼び出す[CWindow::DestroyWindow](../../atl/reference/cwindow-class.md#destroywindow)代わりにします。  
   
-##  <a name="a-namegetdialogproca--cdialogimplgetdialogproc"></a><a name="getdialogproc"></a>CDialogImpl::GetDialogProc  
+##  <a name="getdialogproc"></a>CDialogImpl::GetDialogProc  
  返します。 `DialogProc`、現在のダイアログ ボックス プロシージャです。  
   
 ```   
@@ -253,7 +261,7 @@ virtual WNDPROC GetDialogProc();
 ### <a name="remarks"></a>コメント  
  独自のダイアログのプロシージャを置換するには、このメソッドをオーバーライドします。  
   
-##  <a name="a-namemapdialogrecta--cdialogimplmapdialogrect"></a><a name="mapdialogrect"></a>CDialogImpl::MapDialogRect  
+##  <a name="mapdialogrect"></a>CDialogImpl::MapDialogRect  
  (Maps) 画面に指定された四角形のダイアログ ボックスの単位の単位 (ピクセル単位) に変換します。  
   
 ```   
@@ -270,7 +278,7 @@ BOOL MapDialogRect(LPRECT lpRect);
 ### <a name="remarks"></a>コメント  
  関数は、指定した座標の置き換えます`RECT`変換された座標を持つ構造体、構造の作成 ダイアログ ボックスまたはダイアログ ボックス内でコントロールを配置するために使用できるようにします。  
   
-##  <a name="a-nameonfinalmessagea--cdialogimplonfinalmessage"></a><a name="onfinalmessage"></a>CDialogImpl::OnFinalMessage  
+##  <a name="onfinalmessage"></a>CDialogImpl::OnFinalMessage  
  最後のメッセージの受信後に呼び出されます (通常`WM_NCDESTROY`)。  
   
 ```   
@@ -284,7 +292,7 @@ virtual void OnFinalMessage(HWND hWnd);
 ### <a name="remarks"></a>コメント  
  ウィンドウの破棄後にオブジェクトを自動的に削除する場合は呼び出すことに注意してください`delete this;`ここです。  
   
-##  <a name="a-namestartdialogproca--cdialogimplstartdialogproc"></a><a name="startdialogproc"></a>CDialogImpl::StartDialogProc  
+##  <a name="startdialogproc"></a>CDialogImpl::StartDialogProc  
  ダイアログ ボックスに送信されたメッセージを処理する最初のメッセージを受信すると、1 回だけ呼び出されます。  
   
 ```   

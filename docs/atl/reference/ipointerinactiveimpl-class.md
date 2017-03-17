@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IPointerInactiveImpl
+- ATLCTL/ATL::IPointerInactiveImpl
+- ATLCTL/ATL::IPointerInactiveImpl::GetActivationPolicy
+- ATLCTL/ATL::IPointerInactiveImpl::OnInactiveMouseMove
+- ATLCTL/ATL::IPointerInactiveImpl::OnInactiveSetCursor
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,7 +89,7 @@ class IPointerInactiveImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namegetactivationpolicya--ipointerinactiveimplgetactivationpolicy"></a><a name="getactivationpolicy"></a>IPointerInactiveImpl::GetActivationPolicy  
+##  <a name="getactivationpolicy"></a>IPointerInactiveImpl::GetActivationPolicy  
  オブジェクトの現在のアクティブ化ポリシーを取得します。  
   
 ```
@@ -98,7 +102,7 @@ HRESULT GetActivationPolicy(DWORD* pdwPolicy);
 ### <a name="remarks"></a>コメント  
  参照してください[IPointerInactive::GetActivationPolicy](http://msdn.microsoft.com/library/windows/desktop/ms692470)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameoninactivemousemovea--ipointerinactiveimploninactivemousemove"></a><a name="oninactivemousemove"></a>IPointerInactiveImpl::OnInactiveMouseMove  
+##  <a name="oninactivemousemove"></a>IPointerInactiveImpl::OnInactiveMouseMove  
  マウス ポインターが上に移動されたオブジェクトを示すオブジェクトは、マウス イベントを発生させることを通知します。  
   
 ```
@@ -115,7 +119,7 @@ HRESULT OnInactiveMouseMove(
 ### <a name="remarks"></a>コメント  
  参照してください[IPointerInactive::OnInactiveMouseMove](http://msdn.microsoft.com/library/windows/desktop/ms693374)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameoninactivesetcursora--ipointerinactiveimploninactivesetcursor"></a><a name="oninactivesetcursor"></a>IPointerInactiveImpl::OnInactiveSetCursor  
+##  <a name="oninactivesetcursor"></a>IPointerInactiveImpl::OnInactiveSetCursor  
  アクティブでないオブジェクトにマウス ポインターを設定します。  
   
 ```

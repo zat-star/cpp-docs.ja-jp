@@ -10,6 +10,57 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleControlSite
+- AFXOCC/COleControlSite
+- AFXOCC/COleControlSite::COleControlSite
+- AFXOCC/COleControlSite::BindDefaultProperty
+- AFXOCC/COleControlSite::BindProperty
+- AFXOCC/COleControlSite::CreateControl
+- AFXOCC/COleControlSite::DestroyControl
+- AFXOCC/COleControlSite::DoVerb
+- AFXOCC/COleControlSite::EnableDSC
+- AFXOCC/COleControlSite::EnableWindow
+- AFXOCC/COleControlSite::FreezeEvents
+- AFXOCC/COleControlSite::GetDefBtnCode
+- AFXOCC/COleControlSite::GetDlgCtrlID
+- AFXOCC/COleControlSite::GetEventIID
+- AFXOCC/COleControlSite::GetExStyle
+- AFXOCC/COleControlSite::GetProperty
+- AFXOCC/COleControlSite::GetStyle
+- AFXOCC/COleControlSite::GetWindowText
+- AFXOCC/COleControlSite::InvokeHelper
+- AFXOCC/COleControlSite::InvokeHelperV
+- AFXOCC/COleControlSite::IsDefaultButton
+- AFXOCC/COleControlSite::IsWindowEnabled
+- AFXOCC/COleControlSite::ModifyStyle
+- AFXOCC/COleControlSite::ModifyStyleEx
+- AFXOCC/COleControlSite::MoveWindow
+- AFXOCC/COleControlSite::QuickActivate
+- AFXOCC/COleControlSite::SafeSetProperty
+- AFXOCC/COleControlSite::SetDefaultButton
+- AFXOCC/COleControlSite::SetDlgCtrlID
+- AFXOCC/COleControlSite::SetFocus
+- AFXOCC/COleControlSite::SetProperty
+- AFXOCC/COleControlSite::SetPropertyV
+- AFXOCC/COleControlSite::SetWindowPos
+- AFXOCC/COleControlSite::SetWindowText
+- AFXOCC/COleControlSite::ShowWindow
+- AFXOCC/COleControlSite::GetControlInfo
+- AFXOCC/COleControlSite::m_bIsWindowless
+- AFXOCC/COleControlSite::m_ctlInfo
+- AFXOCC/COleControlSite::m_dwEventSink
+- AFXOCC/COleControlSite::m_dwMiscStatus
+- AFXOCC/COleControlSite::m_dwPropNotifySink
+- AFXOCC/COleControlSite::m_dwStyle
+- AFXOCC/COleControlSite::m_hWnd
+- AFXOCC/COleControlSite::m_iidEvents
+- AFXOCC/COleControlSite::m_nID
+- AFXOCC/COleControlSite::m_pActiveObject
+- AFXOCC/COleControlSite::m_pCtrlCont
+- AFXOCC/COleControlSite::m_pInPlaceObject
+- AFXOCC/COleControlSite::m_pObject
+- AFXOCC/COleControlSite::m_pWindowlessObject
+- AFXOCC/COleControlSite::m_pWndCtrl
+- AFXOCC/COleControlSite::m_rect
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -135,7 +186,7 @@ class COleControlSite : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxocc.h  
   
-##  <a name="a-namebinddefaultpropertya--colecontrolsitebinddefaultproperty"></a><a name="binddefaultproperty"></a>COleControlSite::BindDefaultProperty  
+##  <a name="binddefaultproperty"></a>COleControlSite::BindDefaultProperty  
  データ ソース コントロールのデータ ソース、ユーザー名、パスワード、および SQL のプロパティで定義されている基になるのカーソル位置まで呼び出し元のオブジェクトの既定単純なバインドされたプロパティ、タイプ ライブラリでマークされているようにバインドします。  
   
 ```  
@@ -162,7 +213,7 @@ virtual void BindDefaultProperty(
 ### <a name="remarks"></a>コメント  
  `CWnd`この関数を呼び出すオブジェクトは、データ バインド コントロールである必要があります。  
   
-##  <a name="a-namebindpropertya--colecontrolsitebindproperty"></a><a name="bindproperty"></a>COleControlSite::BindProperty  
+##  <a name="bindproperty"></a>COleControlSite::BindProperty  
  呼び出し元のオブジェクトの単純なバインドされたプロパティ、タイプ ライブラリでマークされたをデータ ソース コントロールのデータ ソース、ユーザー名、パスワード、および SQL のプロパティで定義されている基になっているカーソルにバインドします。  
   
 ```  
@@ -181,7 +232,7 @@ virtual void BindProperty(
 ### <a name="remarks"></a>コメント  
  `CWnd`この関数を呼び出すオブジェクトは、データ バインド コントロールである必要があります。  
   
-##  <a name="a-namecolecontrolsitea--colecontrolsitecolecontrolsite"></a><a name="colecontrolsite"></a>COleControlSite::COleControlSite  
+##  <a name="colecontrolsite"></a>COleControlSite::COleControlSite  
  新しい `COleControlSite` オブジェクトを構築します。  
   
 ```  
@@ -195,7 +246,7 @@ explicit COleControlSite(COleControlContainer* pCtrlCont);
 ### <a name="remarks"></a>コメント  
  この関数は、 [COccManager::CreateContainer](../../mfc/reference/coccmanager-class.md#createcontainer)関数です。 コンテナーの作成をカスタマイズする方法の詳細については、次を参照してください。 [COccManager::CreateSite](../../mfc/reference/coccmanager-class.md#createsite)します。  
   
-##  <a name="a-namecreatecontrola--colecontrolsitecreatecontrol"></a><a name="createcontrol"></a>COleControlSite::CreateControl  
+##  <a name="createcontrol"></a>COleControlSite::CreateControl  
  によってホストされている、ActiveX コントロールを作成、`COleControlSite`オブジェクトです。  
   
 ```  
@@ -276,7 +327,7 @@ virtual HRESULT CreateControl(
   
  2 番目のオーバー ロードを使用すると、既定のサイズのコントロールを作成できます。  
   
-##  <a name="a-namedestroycontrola--colecontrolsitedestroycontrol"></a><a name="destroycontrol"></a>COleControlSite::DestroyControl  
+##  <a name="destroycontrol"></a>COleControlSite::DestroyControl  
  `COleControlSite` オブジェクトを破棄します。  
   
 ```  
@@ -289,7 +340,7 @@ virtual BOOL DestroyControl();
 ### <a name="remarks"></a>コメント  
  完了すると、オブジェクトがメモリから解放され、オブジェクトへのポインターは無効になります。  
   
-##  <a name="a-namedoverba--colecontrolsitedoverb"></a><a name="doverb"></a>COleControlSite::DoVerb  
+##  <a name="doverb"></a>COleControlSite::DoVerb  
  指定した動詞を実行します。  
   
 ```  
@@ -324,7 +375,7 @@ virtual HRESULT DoVerb(
   
  詳細については、次を参照してください。 [IOleObject::DoVerb](http://msdn.microsoft.com/library/windows/desktop/ms694508)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameenabledsca--colecontrolsiteenabledsc"></a><a name="enabledsc"></a>COleControlSite::EnableDSC  
+##  <a name="enabledsc"></a>COleControlSite::EnableDSC  
  コントロール サイトをソースとなるデータを有効にします。  
   
 ```  
@@ -334,7 +385,7 @@ virtual void EnableDSC();
 ### <a name="remarks"></a>コメント  
  有効にして、コントロールのサイトのソースとなるデータを初期化するために、フレームワークによって呼び出されます。 カスタマイズされた動作を提供するには、この関数をオーバーライドします。  
   
-##  <a name="a-nameenablewindowa--colecontrolsiteenablewindow"></a><a name="enablewindow"></a>COleControlSite::EnableWindow  
+##  <a name="enablewindow"></a>COleControlSite::EnableWindow  
  有効またはマウスおよびキーボード コントロール サイトへの入力を無効にします。  
   
 ```  
@@ -348,7 +399,7 @@ virtual BOOL EnableWindow(BOOL bEnable);
 ### <a name="return-value"></a>戻り値  
  ウィンドウが既に無効になっている場合は 0 以外。 それ以外の場合に 0 です。  
   
-##  <a name="a-namefreezeeventsa--colecontrolsitefreezeevents"></a><a name="freezeevents"></a>COleControlSite::FreezeEvents  
+##  <a name="freezeevents"></a>COleControlSite::FreezeEvents  
  コントロール サイトを処理またはコントロールから発生したイベントを無視するかどうかを指定します。  
   
 ```  
@@ -365,7 +416,7 @@ void FreezeEvents(BOOL bFreeze);
 > [!NOTE]
 >  コントロールは、コントロールのサイトから要求される場合のイベントの発生を停止する必要はありません。 起動処理を続行できますが、コントロールのサイトですべての後続のイベントは無視されます。  
   
-##  <a name="a-namegetcontrolinfoa--colecontrolsitegetcontrolinfo"></a><a name="getcontrolinfo"></a>COleControlSite::GetControlInfo  
+##  <a name="getcontrolinfo"></a>COleControlSite::GetControlInfo  
  コントロールのニーモニックおよびキーボード動作に関する情報を取得します。  
   
 ```  
@@ -375,7 +426,7 @@ void GetControlInfo();
 ### <a name="remarks"></a>コメント  
  情報が格納されている[COleControlSite::m_ctlInfo](#m_ctlinfo)します。  
   
-##  <a name="a-namegetdefbtncodea--colecontrolsitegetdefbtncode"></a><a name="getdefbtncode"></a>COleControlSite::GetDefBtnCode  
+##  <a name="getdefbtncode"></a>COleControlSite::GetDefBtnCode  
  コントロールが既定のプッシュ ボタンであるかどうかを判断します。  
   
 ```  
@@ -391,7 +442,7 @@ DWORD GetDefBtnCode();
   
 - **0**コントロールがボタンではありません。  
   
-##  <a name="a-namegetdlgctrlida--colecontrolsitegetdlgctrlid"></a><a name="getdlgctrlid"></a>COleControlSite::GetDlgCtrlID  
+##  <a name="getdlgctrlid"></a>COleControlSite::GetDlgCtrlID  
  コントロールの識別子を取得します。  
   
 ```  
@@ -401,7 +452,7 @@ virtual int GetDlgCtrlID() const;
 ### <a name="return-value"></a>戻り値  
  コントロールのダイアログの項目の識別子です。  
   
-##  <a name="a-namegeteventiida--colecontrolsitegeteventiid"></a><a name="geteventiid"></a>COleControlSite::GetEventIID  
+##  <a name="geteventiid"></a>COleControlSite::GetEventIID  
  コントロールの既定のイベント インターフェイスへのポインターを取得します。  
   
 ```  
@@ -415,7 +466,7 @@ BOOL GetEventIID(IID* piid);
 ### <a name="return-value"></a>戻り値  
  成功した場合、0 以外。 それ以外の場合に 0 です。 成功した場合、`piid`コントロールの既定のイベント インターフェイスのインターフェイス ID が含まれています。  
   
-##  <a name="a-namegetexstylea--colecontrolsitegetexstyle"></a><a name="getexstyle"></a>COleControlSite::GetExStyle  
+##  <a name="getexstyle"></a>COleControlSite::GetExStyle  
  ウィンドウの拡張スタイルを取得します。  
   
 ```  
@@ -428,7 +479,7 @@ virtual DWORD GetExStyle() const;
 ### <a name="remarks"></a>コメント  
  標準のスタイルを取得する[COleControlSite::GetStyle](#getstyle)します。  
   
-##  <a name="a-namegetpropertya--colecontrolsitegetproperty"></a><a name="getproperty"></a>COleControlSite::GetProperty  
+##  <a name="getproperty"></a>COleControlSite::GetProperty  
  指定されたコントロール プロパティを取得`dwDispID`します。  
   
 ```  
@@ -451,7 +502,7 @@ virtual void GetProperty(
 ### <a name="remarks"></a>コメント  
  返される値`pvProp`です。  
   
-##  <a name="a-namegetstylea--colecontrolsitegetstyle"></a><a name="getstyle"></a>COleControlSite::GetStyle  
+##  <a name="getstyle"></a>COleControlSite::GetStyle  
  コントロール サイトのスタイルを取得します。  
   
 ```  
@@ -464,7 +515,7 @@ virtual DWORD GetStyle() const;
 ### <a name="remarks"></a>コメント  
  使用可能な値の一覧は、次を参照してください。 [Windows スタイル](../../mfc/reference/window-styles.md)します。 コントロール サイトの拡張スタイルを取得する[COleControlSite::GetExStyle](#getexstyle)します。  
   
-##  <a name="a-namegetwindowtexta--colecontrolsitegetwindowtext"></a><a name="getwindowtext"></a>COleControlSite::GetWindowText  
+##  <a name="getwindowtext"></a>COleControlSite::GetWindowText  
  コントロールの現在のテキストを取得します。  
   
 ```  
@@ -478,7 +529,7 @@ virtual void GetWindowText(CString& str) const;
 ### <a name="remarks"></a>コメント  
  コントロールは、キャプションのストック プロパティをサポートする場合は、この値が返されます。 キャプションのストック プロパティがサポートされていない場合は、Text プロパティに値が返されます。  
   
-##  <a name="a-nameinvokehelpera--colecontrolsiteinvokehelper"></a><a name="invokehelper"></a>COleControlSite::InvokeHelper  
+##  <a name="invokehelper"></a>COleControlSite::InvokeHelper  
  メソッドまたはプロパティで指定された呼び出します`dwDispID`で指定されたコンテキストで`wFlags`します。  
   
 ```  
@@ -514,7 +565,7 @@ virtual void AFX_CDECL InvokeHelper(
   
  パラメーターを変換する**VARIANTARG**数値を使用する、起動、 **idispatch::invoke**コントロールのメソッドです。 場合に、呼び出し**idispatch::invoke**失敗した場合、この関数には、例外がスローされます。 によって、状態コードが返された場合**idispatch::invoke**は`DISP_E_EXCEPTION`、この関数がスロー、**メンバー**オブジェクトがスローされた、それ以外の場合、`COleException`です。  
   
-##  <a name="a-nameinvokehelperva--colecontrolsiteinvokehelperv"></a><a name="invokehelperv"></a>COleControlSite::InvokeHelperV  
+##  <a name="invokehelperv"></a>COleControlSite::InvokeHelperV  
  メソッドまたはプロパティで指定された呼び出します`dwDispID`で指定されたコンテキストで`wFlags`します。  
   
 ```  
@@ -551,7 +602,7 @@ virtual void InvokeHelperV(
   
  通常、この関数は`COleControlSite::InvokeHelper`です。  
   
-##  <a name="a-nameisdefaultbuttona--colecontrolsiteisdefaultbutton"></a><a name="isdefaultbutton"></a>COleControlSite::IsDefaultButton  
+##  <a name="isdefaultbutton"></a>COleControlSite::IsDefaultButton  
  コントロールが既定のボタンであるかどうかを判断します。  
   
 ```  
@@ -561,7 +612,7 @@ BOOL IsDefaultButton();
 ### <a name="return-value"></a>戻り値  
  コントロールがある場合は&0; 以外。 ウィンドウで、既定のボタン以外の場合&0; です。  
   
-##  <a name="a-nameiswindowenableda--colecontrolsiteiswindowenabled"></a><a name="iswindowenabled"></a>COleControlSite::IsWindowEnabled  
+##  <a name="iswindowenabled"></a>COleControlSite::IsWindowEnabled  
  コントロール サイトが有効になっているかどうかを判断します。  
   
 ```  
@@ -574,7 +625,7 @@ virtual BOOL IsWindowEnabled() const;
 ### <a name="remarks"></a>コメント  
  値は、コントロールの Enabled のストック プロパティから取得されます。  
   
-##  <a name="a-namembiswindowlessa--colecontrolsitembiswindowless"></a><a name="m_biswindowless"></a>COleControlSite::m_bIsWindowless  
+##  <a name="m_biswindowless"></a>COleControlSite::m_bIsWindowless  
  オブジェクトがウィンドウなしのコントロールであるかどうかを判断します。  
   
 ```  
@@ -584,7 +635,7 @@ BOOL m_bIsWindowless;
 ### <a name="remarks"></a>コメント  
  0 以外の値、コントロールにウィンドウがあるない場合は&0; です。  
   
-##  <a name="a-namemctlinfoa--colecontrolsitemctlinfo"></a><a name="m_ctlinfo"></a>COleControlSite::m_ctlInfo  
+##  <a name="m_ctlinfo"></a>COleControlSite::m_ctlInfo  
  コントロールでキーボード入力を処理する方法について説明します。  
   
 ```  
@@ -594,14 +645,14 @@ CONTROLINFO m_ctlInfo;
 ### <a name="remarks"></a>コメント  
  この情報は、 [CONTROLINFO](http://msdn.microsoft.com/library/windows/desktop/ms680734)構造体。  
   
-##  <a name="a-namemdweventsinka--colecontrolsitemdweventsink"></a><a name="m_dweventsink"></a>COleControlSite::m_dwEventSink  
+##  <a name="m_dweventsink"></a>COleControlSite::m_dwEventSink  
  コントロールのイベント シンクのコネクション ポイントの cookie が含まれています。  
   
 ```  
 DWORD m_dwEventSink;  
 ```  
   
-##  <a name="a-namemdwmiscstatusa--colecontrolsitemdwmiscstatus"></a><a name="m_dwmiscstatus"></a>COleControlSite::m_dwMiscStatus  
+##  <a name="m_dwmiscstatus"></a>COleControlSite::m_dwMiscStatus  
  コントロールに関するその他の情報が含まれています。  
   
 ```  
@@ -611,91 +662,91 @@ DWORD m_dwMiscStatus;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[入ります](http://msdn.microsoft.com/library/windows/desktop/ms678497)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namemdwpropnotifysinka--colecontrolsitemdwpropnotifysink"></a><a name="m_dwpropnotifysink"></a>COleControlSite::m_dwPropNotifySink  
+##  <a name="m_dwpropnotifysink"></a>COleControlSite::m_dwPropNotifySink  
  含む、 [IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638) cookie です。  
   
 ```  
 DWORD m_dwPropNotifySink;  
 ```  
   
-##  <a name="a-namemdwstylea--colecontrolsitemdwstyle"></a><a name="m_dwstyle"></a>COleControlSite::m_dwStyle  
+##  <a name="m_dwstyle"></a>COleControlSite::m_dwStyle  
  コントロールのウィンドウ スタイルが含まれています。  
   
 ```  
 DWORD m_dwStyle;  
 ```  
   
-##  <a name="a-namemhwnda--colecontrolsitemhwnd"></a><a name="m_hwnd"></a>COleControlSite::m_hWnd  
+##  <a name="m_hwnd"></a>COleControlSite::m_hWnd  
  含む、 `HWND` 、コントロールのまたは**NULL**コントロールがウィンドウなしの場合。  
   
 ```  
 HWND m_hWnd;  
 ```  
   
-##  <a name="a-namemiideventsa--colecontrolsitemiidevents"></a><a name="m_iidevents"></a>COleControlSite::m_iidEvents  
+##  <a name="m_iidevents"></a>COleControlSite::m_iidEvents  
  コントロールの既定のイベント シンク インターフェイスのインターフェイス ID を表します。  
   
 ```  
 IID m_iidEvents;  
 ```  
   
-##  <a name="a-namemnida--colecontrolsitemnid"></a><a name="m_nid"></a>COleControlSite::m_nID  
+##  <a name="m_nid"></a>COleControlSite::m_nID  
  コントロールのダイアログのアイテム ID が含まれています  
   
 ```  
 UINT m_nID;  
 ```  
   
-##  <a name="a-namempactiveobjecta--colecontrolsitempactiveobject"></a><a name="m_pactiveobject"></a>COleControlSite::m_pActiveObject  
+##  <a name="m_pactiveobject"></a>COleControlSite::m_pActiveObject  
  含む、 [IOleInPlaceActiveObject](http://msdn.microsoft.com/library/windows/desktop/ms691299)コントロールのインターフェイスです。  
   
 ```  
 LPOLEINPLACEACTIVEOBJECT m_pActiveObject;  
 ```  
   
-##  <a name="a-namempctrlconta--colecontrolsitempctrlcont"></a><a name="m_pctrlcont"></a>COleControlSite::m_pCtrlCont  
+##  <a name="m_pctrlcont"></a>COleControlSite::m_pCtrlCont  
  コントロールのコンテナー (フォームを表す) が含まれています。  
   
 ```  
 COleControlContainer* m_pCtrlCont;  
 ```  
   
-##  <a name="a-namempinplaceobjecta--colecontrolsitempinplaceobject"></a><a name="m_pinplaceobject"></a>COleControlSite::m_pInPlaceObject  
+##  <a name="m_pinplaceobject"></a>COleControlSite::m_pInPlaceObject  
  含む、 `IOleInPlaceObject` [IOleInPlaceObject](http://msdn.microsoft.com/library/windows/desktop/ms692646)コントロールのインターフェイスです。  
   
 ```  
 LPOLEINPLACEOBJECT m_pInPlaceObject;  
 ```  
   
-##  <a name="a-namempobjecta--colecontrolsitempobject"></a><a name="m_pobject"></a>COleControlSite::m_pObject  
+##  <a name="m_pobject"></a>COleControlSite::m_pObject  
  含む、 **IOleObjectInterface**コントロールのインターフェイスです。  
   
 ```  
 LPOLEOBJECT m_pObject;  
 ```  
   
-##  <a name="a-namempwindowlessobjecta--colecontrolsitempwindowlessobject"></a><a name="m_pwindowlessobject"></a>COleControlSite::m_pWindowlessObject  
+##  <a name="m_pwindowlessobject"></a>COleControlSite::m_pWindowlessObject  
  含む、 `IOleInPlaceObjectWindowless` [IOleInPlaceObjectWindowless](http://msdn.microsoft.com/library/windows/desktop/ms687304)コントロールのインターフェイスです。  
   
 ```  
 IOleInPlaceObjectWindowless* m_pWindowlessObject;  
 ```  
   
-##  <a name="a-namempwndctrla--colecontrolsitempwndctrl"></a><a name="m_pwndctrl"></a>COleControlSite::m_pWndCtrl  
+##  <a name="m_pwndctrl"></a>COleControlSite::m_pWndCtrl  
  ポインターを含む、`CWnd`コントロール自体を表すオブジェクト。  
   
 ```  
 CWnd* m_pWndCtrl;  
 ```  
   
-##  <a name="a-namemrecta--colecontrolsitemrect"></a><a name="m_rect"></a>COleControlSite::m_rect  
+##  <a name="m_rect"></a>COleControlSite::m_rect  
  コンテナーのウィンドウの相対のコントロールの境界が含まれています。  
   
 ```  
 CRect m_rect;  
 ```  
   
-##  <a name="a-namemodifystylea--colecontrolsitemodifystyle"></a><a name="modifystyle"></a>COleControlSite::ModifyStyle  
+##  <a name="modifystyle"></a>COleControlSite::ModifyStyle  
  コントロールのスタイルを変更します。  
   
 ```  
@@ -735,7 +786,7 @@ virtual BOOL ModifyStyle(
   
  ウィンドウを変更するのスタイルを拡張[は](#modifystyleex)です。  
   
-##  <a name="a-namemodifystyleexa--colecontrolsitemodifystyleex"></a><a name="modifystyleex"></a>COleControlSite::ModifyStyleEx  
+##  <a name="modifystyleex"></a>COleControlSite::ModifyStyleEx  
  コントロールの拡張スタイルを変更します。  
   
 ```  
@@ -775,7 +826,7 @@ virtual BOOL ModifyStyleEx(
   
  ウィンドウを変更するのスタイルを拡張[は](#modifystyle)です。  
   
-##  <a name="a-namemovewindowa--colecontrolsitemovewindow"></a><a name="movewindow"></a>COleControlSite::MoveWindow  
+##  <a name="movewindow"></a>COleControlSite::MoveWindow  
  コントロールの位置を変更します。  
   
 ```  
@@ -799,7 +850,7 @@ virtual void MoveWindow(
  `nHeight`  
  ウィンドウの新しい高さ。  
   
-##  <a name="a-namequickactivatea--colecontrolsitequickactivate"></a><a name="quickactivate"></a>COleControlSite::QuickActivate  
+##  <a name="quickactivate"></a>COleControlSite::QuickActivate  
  簡易には、コンテナー内のコントロールがアクティブになります。  
   
 ```  
@@ -814,7 +865,7 @@ virtual BOOL QuickActivate();
   
  `IPersist*::Load`と`IPersist*::InitNew`迅速なアクティブ化が発生した後、メソッドを呼び出す必要があります。 コントロールは、迅速なアクティブ化中に、コンテナーのシンクへの接続を確立する必要があります。 ただし、これらの接続が提供されていないまで`IPersist*::Load`または`IPersist*::InitNew`が呼び出されています。  
   
-##  <a name="a-namesafesetpropertya--colecontrolsitesafesetproperty"></a><a name="safesetproperty"></a>COleControlSite::SafeSetProperty  
+##  <a name="safesetproperty"></a>COleControlSite::SafeSetProperty  
  指定されたコントロール プロパティを設定`dwDispID`します。  
   
 ```  
@@ -841,7 +892,7 @@ virtual BOOL AFX_CDECL SafeSetProperty(
 > [!NOTE]
 >  異なり`SetProperty`と`SetPropertyV`エラーが発生した場合 (存在しないプロパティを設定しようとしています) など、例外はスローされません。  
   
-##  <a name="a-namesetdefaultbuttona--colecontrolsitesetdefaultbutton"></a><a name="setdefaultbutton"></a>COleControlSite::SetDefaultButton  
+##  <a name="setdefaultbutton"></a>COleControlSite::SetDefaultButton  
  コントロールは、既定のボタンとして設定します。  
   
 ```  
@@ -857,7 +908,7 @@ void SetDefaultButton(BOOL bDefault);
 > [!NOTE]
 >  コントロールが必要、 **OLEMISC_ACTSLIKEBUTTON**ステータス ビットが設定されます。  
   
-##  <a name="a-namesetdlgctrlida--colecontrolsitesetdlgctrlid"></a><a name="setdlgctrlid"></a>COleControlSite::SetDlgCtrlID  
+##  <a name="setdlgctrlid"></a>COleControlSite::SetDlgCtrlID  
  コントロールのダイアログのアイテム id の値を変更します。  
   
 ```  
@@ -873,7 +924,7 @@ virtual int SetDlgCtrlID(int nID);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetfocusa--colecontrolsitesetfocus"></a><a name="setfocus"></a>COleControlSite::SetFocus  
+##  <a name="setfocus"></a>COleControlSite::SetFocus  
  コントロールにフォーカスを設定します。  
   
 ```  
@@ -888,7 +939,7 @@ virtual CWnd* SetFocus(LPMSG lpmsg);
 ### <a name="return-value"></a>戻り値  
  フォーカスを持っていたウィンドウへのポインター。  
   
-##  <a name="a-namesetpropertya--colecontrolsitesetproperty"></a><a name="setproperty"></a>COleControlSite::SetProperty  
+##  <a name="setproperty"></a>COleControlSite::SetProperty  
  指定されたコントロール プロパティを設定`dwDispID`します。  
   
 ```  
@@ -912,7 +963,7 @@ virtual void AFX_CDECL SetProperty(
   
  例外の種類については、メソッドまたはプロパティを設定しようとするの戻り値によって決まります。 戻り値の場合`DISP_E_EXCEPTION`、 **COleDispatchExcpetion**がスローされます。 それ以外の場合、`COleException`です。  
   
-##  <a name="a-namesetpropertyva--colecontrolsitesetpropertyv"></a><a name="setpropertyv"></a>COleControlSite::SetPropertyV  
+##  <a name="setpropertyv"></a>COleControlSite::SetPropertyV  
  指定されたコントロール プロパティを設定`dwDispID`します。  
   
 ```  
@@ -937,7 +988,7 @@ virtual void SetPropertyV(
   
  例外の種類については、メソッドまたはプロパティを設定しようとするの戻り値によって決まります。 戻り値の場合`DISP_E_EXCEPTION`、 **COleDispatchExcpetion**がスローされます。 それ以外の場合、`COleException`です。  
   
-##  <a name="a-namesetwindowposa--colecontrolsitesetwindowpos"></a><a name="setwindowpos"></a>COleControlSite::SetWindowPos  
+##  <a name="setwindowpos"></a>COleControlSite::SetWindowPos  
  サイズ、位置、およびコントロールのサイトの Z オーダーを設定します。  
   
 ```  
@@ -972,7 +1023,7 @@ virtual BOOL SetWindowPos(
 ### <a name="return-value"></a>戻り値  
  0 以外の値が成功した場合は&0; です。  
   
-##  <a name="a-namesetwindowtexta--colecontrolsitesetwindowtext"></a><a name="setwindowtext"></a>COleControlSite::SetWindowText  
+##  <a name="setwindowtext"></a>COleControlSite::SetWindowText  
  コントロール サイトのテキストを設定します。  
   
 ```  
@@ -986,7 +1037,7 @@ virtual void SetWindowText(LPCTSTR lpszString);
 ### <a name="remarks"></a>コメント  
  この関数は、まず Caption ストック プロパティを設定しようとします。 キャプションのストック プロパティがサポートされていない場合、Text プロパティは代わりに設定されます。  
   
-##  <a name="a-nameshowwindowa--colecontrolsiteshowwindow"></a><a name="showwindow"></a>COleControlSite::ShowWindow  
+##  <a name="showwindow"></a>COleControlSite::ShowWindow  
  ウィンドウの表示状態を設定します。  
   
 ```  

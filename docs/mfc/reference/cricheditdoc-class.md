@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRichEditDoc
+- AFXRICH/CRichEditDoc
+- AFXRICH/CRichEditDoc::CreateClientItem
+- AFXRICH/CRichEditDoc::GetStreamFormat
+- AFXRICH/CRichEditDoc::GetView
+- AFXRICH/CRichEditDoc::m_bRTF
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +100,7 @@ class CRichEditDoc : public COleServerDoc
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrich.h  
   
-##  <a name="a-namecreateclientitema--cricheditdoccreateclientitem"></a><a name="createclientitem"></a>CRichEditDoc::CreateClientItem  
+##  <a name="createclientitem"></a>CRichEditDoc::CreateClientItem  
  作成するには、この関数を呼び出して、`CRichEditCntrItem`オブジェクトし、このドキュメントに追加します。  
   
 ```  
@@ -114,7 +119,7 @@ virtual CRichEditCntrItem* CreateClientItem(REOBJECT* preo = NULL) const = 0;
   
  詳細については、次を参照してください。、 [REOBJECT](http://msdn.microsoft.com/library/windows/desktop/bb787946)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetstreamformata--cricheditdocgetstreamformat"></a><a name="getstreamformat"></a>CRichEditDoc::GetStreamFormat  
+##  <a name="getstreamformat"></a>CRichEditDoc::GetStreamFormat  
  この関数では、豊富な編集のコンテンツをストリーミング用のテキスト形式を決定します。  
   
 ```  
@@ -131,7 +136,7 @@ int GetStreamFormat() const;
 ### <a name="remarks"></a>コメント  
  戻り値がに基づいて、 [m_bRTF](#m_brtf)データ メンバーです。 この関数を返します`SF_RTF`場合`m_bRTF`は**TRUE**。 そうしないと、`SF_TEXT`です。  
   
-##  <a name="a-namegetviewa--cricheditdocgetview"></a><a name="getview"></a>CRichEditDoc::GetView  
+##  <a name="getview"></a>CRichEditDoc::GetView  
  アクセスするには、この関数を呼び出して、 [CRichEditView](../../mfc/reference/cricheditview-class.md)オブジェクトに関連付けられた`CRichEditDoc`オブジェクトです。  
   
 ```  
@@ -144,7 +149,7 @@ virtual CRichEditView* GetView() const;
 ### <a name="remarks"></a>コメント  
  テキストと書式情報に含まれる、`CRichEditView`オブジェクトです。 `CRichEditDoc`オブジェクトはシリアル化のための OLE アイテムを保持します。 1 つだけあります`CRichEditView`各`CRichEditDoc`します。  
   
-##  <a name="a-namembrtfa--cricheditdocmbrtf"></a><a name="m_brtf"></a>CRichEditDoc::m_bRTF  
+##  <a name="m_brtf"></a>CRichEditDoc::m_bRTF  
  **TRUE**、ことを示します[CRichEditCtrl::StreamIn](../../mfc/reference/cricheditctrl-class.md#streamin)と[CRichEditCtrl::StreamOut](../../mfc/reference/cricheditctrl-class.md#streamout)段落と文字の書式設定特性を格納する必要があります。  
   
 ```  

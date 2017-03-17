@@ -10,6 +10,27 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRgn
+- AFXWIN/CRgn
+- AFXWIN/CRgn::CRgn
+- AFXWIN/CRgn::CombineRgn
+- AFXWIN/CRgn::CopyRgn
+- AFXWIN/CRgn::CreateEllipticRgn
+- AFXWIN/CRgn::CreateEllipticRgnIndirect
+- AFXWIN/CRgn::CreateFromData
+- AFXWIN/CRgn::CreateFromPath
+- AFXWIN/CRgn::CreatePolygonRgn
+- AFXWIN/CRgn::CreatePolyPolygonRgn
+- AFXWIN/CRgn::CreateRectRgn
+- AFXWIN/CRgn::CreateRectRgnIndirect
+- AFXWIN/CRgn::CreateRoundRectRgn
+- AFXWIN/CRgn::EqualRgn
+- AFXWIN/CRgn::FromHandle
+- AFXWIN/CRgn::GetRegionData
+- AFXWIN/CRgn::GetRgnBox
+- AFXWIN/CRgn::OffsetRgn
+- AFXWIN/CRgn::PtInRegion
+- AFXWIN/CRgn::RectInRegion
+- AFXWIN/CRgn::SetRectRgn
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -105,7 +126,7 @@ class CRgn : public CGdiObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecombinergna--crgncombinergn"></a><a name="combinergn"></a>CRgn::CombineRgn  
+##  <a name="combinergn"></a>CRgn::CombineRgn  
  既存の&2; つの領域を組み合わせることによって、新しい GDI 領域を作成します。  
   
 ```  
@@ -158,7 +179,7 @@ int CombineRgn(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&144;](../../mfc/codesnippet/cpp/crgn-class_1.cpp)]  
   
-##  <a name="a-namecopyrgna--crgncopyrgn"></a><a name="copyrgn"></a>CRgn::CopyRgn  
+##  <a name="copyrgn"></a>CRgn::CopyRgn  
  によって定義される領域をコピー`pRgnSrc`に、`CRgn`オブジェクトです。  
   
 ```  
@@ -186,7 +207,7 @@ int CopyRgn(CRgn* pRgnSrc);
 ### <a name="example"></a>例  
   例を参照してください[CRgn::CreateEllipticRgn](#createellipticrgn)します。  
   
-##  <a name="a-namecreateellipticrgna--crgncreateellipticrgn"></a><a name="createellipticrgn"></a>CRgn::CreateEllipticRgn  
+##  <a name="createellipticrgn"></a>CRgn::CreateEllipticRgn  
  楕円の領域を作成します。  
   
 ```  
@@ -223,7 +244,7 @@ BOOL CreateEllipticRgn(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&145;](../../mfc/codesnippet/cpp/crgn-class_2.cpp)]  
   
-##  <a name="a-namecreateellipticrgnindirecta--crgncreateellipticrgnindirect"></a><a name="createellipticrgnindirect"></a>CRgn::CreateEllipticRgnIndirect  
+##  <a name="createellipticrgnindirect"></a>CRgn::CreateEllipticRgnIndirect  
  楕円の領域を作成します。  
   
 ```  
@@ -247,7 +268,7 @@ BOOL CreateEllipticRgnIndirect(LPCRECT lpRect);
 ### <a name="example"></a>例  
   例を参照してください[CRgn::CreateRectRgnIndirect](#createrectrgnindirect)します。  
   
-##  <a name="a-namecreatefromdataa--crgncreatefromdata"></a><a name="createfromdata"></a>CRgn::CreateFromData  
+##  <a name="createfromdata"></a>CRgn::CreateFromData  
  指定された領域と変換のデータから領域を作成します。  
   
 ```  
@@ -273,7 +294,7 @@ BOOL CreateFromData(
 ### <a name="remarks"></a>コメント  
  アプリケーションでは、地域のデータを呼び出すことによって取得できます、`CRgn::GetRegionData`関数です。  
   
-##  <a name="a-namecreatefrompatha--crgncreatefrompath"></a><a name="createfrompath"></a>CRgn::CreateFromPath  
+##  <a name="createfrompath"></a>CRgn::CreateFromPath  
  指定したデバイス コンテキストに選択されているパスからの領域を作成します。  
   
 ```  
@@ -290,7 +311,7 @@ BOOL CreateFromPath(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  識別されるデバイス コンテキスト、`pDC`パラメーターは、閉じたパスを含める必要があります。 後`CreateFromPath`領域、Windows をパスに変換がデバイス コンテキストから閉じたパスを破棄します。  
   
-##  <a name="a-namecreatepolygonrgna--crgncreatepolygonrgn"></a><a name="createpolygonrgn"></a>CRgn::CreatePolygonRgn  
+##  <a name="createpolygonrgn"></a>CRgn::CreatePolygonRgn  
  多角形の領域を作成します。  
   
 ```  
@@ -335,7 +356,7 @@ BOOL CreatePolygonRgn(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&146;](../../mfc/codesnippet/cpp/crgn-class_3.cpp)]  
   
-##  <a name="a-namecreatepolypolygonrgna--crgncreatepolypolygonrgn"></a><a name="createpolypolygonrgn"></a>CRgn::CreatePolyPolygonRgn  
+##  <a name="createpolypolygonrgn"></a>CRgn::CreatePolyPolygonRgn  
  一連の閉じた多角形で構成される領域を作成します。  
   
 ```  
@@ -383,7 +404,7 @@ BOOL CreatePolyPolygonRgn(
   
  アプリケーションが終了した場合に作成された領域を使用して、`CreatePolyPolygonRgn`関数の場合、デバイス コンテキストのリージョンを選択する必要があります、 [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)メンバー関数を削除します。  
   
-##  <a name="a-namecreaterectrgna--crgncreaterectrgn"></a><a name="createrectrgn"></a>CRgn::CreateRectRgn  
+##  <a name="createrectrgn"></a>CRgn::CreateRectRgn  
  格納されている四角形の領域を作成、`CRgn`オブジェクトです。  
   
 ```  
@@ -420,7 +441,7 @@ BOOL CreateRectRgn(
   
  たとえば、次を参照してください。 [CRgn::CombineRgn](#combinergn)します。  
   
-##  <a name="a-namecreaterectrgnindirecta--crgncreaterectrgnindirect"></a><a name="createrectrgnindirect"></a>CRgn::CreateRectRgnIndirect  
+##  <a name="createrectrgnindirect"></a>CRgn::CreateRectRgnIndirect  
  格納されている四角形の領域を作成、`CRgn`オブジェクトです。  
   
 ```  
@@ -454,7 +475,7 @@ BOOL CreateRectRgnIndirect(LPCRECT lpRect);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&148;](../../mfc/codesnippet/cpp/crgn-class_5.cpp)]  
   
-##  <a name="a-namecreateroundrectrgna--crgncreateroundrectrgn"></a><a name="createroundrectrgn"></a>CRgn::CreateRoundRectRgn  
+##  <a name="createroundrectrgn"></a>CRgn::CreateRoundRectRgn  
  格納されている角の丸い四角形の領域を作成、`CRgn`オブジェクトです。  
   
 ```  
@@ -497,7 +518,7 @@ BOOL CreateRoundRectRgn(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&149;](../../mfc/codesnippet/cpp/crgn-class_6.cpp)]  
   
-##  <a name="a-namecrgna--crgncrgn"></a><a name="crgn"></a>CRgn::CRgn  
+##  <a name="crgn"></a>CRgn::CRgn  
  `CRgn` オブジェクトを構築します。  
   
 ```  
@@ -510,7 +531,7 @@ CRgn();
 ### <a name="example"></a>例  
   例を参照してください[CRgn::CreateRoundRectRgn](#createroundrectrgn)します。  
   
-##  <a name="a-nameequalrgna--crgnequalrgn"></a><a name="equalrgn"></a>CRgn::EqualRgn  
+##  <a name="equalrgn"></a>CRgn::EqualRgn  
  指定された領域に格納されている領域に相当するかどうかを判断、`CRgn`オブジェクトです。  
   
 ```  
@@ -527,7 +548,7 @@ BOOL EqualRgn(CRgn* pRgn) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&150;](../../mfc/codesnippet/cpp/crgn-class_7.cpp)]  
   
-##  <a name="a-namefromhandlea--crgnfromhandle"></a><a name="fromhandle"></a>CRgn::FromHandle  
+##  <a name="fromhandle"></a>CRgn::FromHandle  
  ポインターを返す、 `CRgn` Windows 領域へのハンドルが指定されるとします。  
   
 ```  
@@ -544,7 +565,7 @@ static CRgn* PASCAL FromHandle(HRGN hRgn);
 ### <a name="remarks"></a>コメント  
  場合、`CRgn`オブジェクトが、一時的なハンドルに既にアタッチされていない`CRgn`オブジェクトが作成され、接続されています。 この一時`CRgn`だけですべて一時的なグラフィックを時間があるオブジェクトは削除されるまで、次回、アプリケーションのアイドル時間のイベント ループで、オブジェクトが有効です。 言い換えると、別の方法は、1 つのウィンドウ メッセージを処理中に一時オブジェクトが有効でのみことです。  
   
-##  <a name="a-namegetregiondataa--crgngetregiondata"></a><a name="getregiondata"></a>CRgn::GetRegionData  
+##  <a name="getregiondata"></a>CRgn::GetRegionData  
  データ領域を説明するには、指定したバッファーを設定します。  
   
 ```  
@@ -566,7 +587,7 @@ int GetRegionData(
 ### <a name="remarks"></a>コメント  
  このデータには、領域を構成する四角形のディメンションが含まれています。 この関数は組み合わせて使用、`CRgn::CreateFromData`関数です。  
   
-##  <a name="a-namegetrgnboxa--crgngetrgnbox"></a><a name="getrgnbox"></a>CRgn::GetRgnBox  
+##  <a name="getrgnbox"></a>CRgn::GetRgnBox  
  外接する四角形の座標を取得、`CRgn`オブジェクトです。  
   
 ```  
@@ -603,7 +624,7 @@ int GetRgnBox(LPRECT lpRect) const;
 ### <a name="example"></a>例  
   例を参照してください[CRgn::CreatePolygonRgn](#createpolygonrgn)します。  
   
-##  <a name="a-nameoffsetrgna--crgnoffsetrgn"></a><a name="offsetrgn"></a>CRgn::OffsetRgn  
+##  <a name="offsetrgn"></a>CRgn::OffsetRgn  
  格納されている領域を移動、`CRgn`指定されたオフセットでのオブジェクト。  
   
 ```  
@@ -643,7 +664,7 @@ int OffsetRgn(POINT point);
 ### <a name="example"></a>例  
   例を参照してください[CRgn::CreateEllipticRgn](#createellipticrgn)します。  
   
-##  <a name="a-nameoperatorhrgna--crgnoperator-hrgn"></a><a name="operator_hrgn"></a>CRgn::operator HRGN  
+##  <a name="operator_hrgn"></a>CRgn::operator HRGN  
  この演算子の接続されている Windows GDI ハンドルの取得を使用して、`CRgn`オブジェクトです。  
   
 ```  
@@ -658,7 +679,7 @@ operator HRGN() const;
   
  グラフィック オブジェクトの使い方の詳細については、記事を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameptinregiona--crgnptinregion"></a><a name="ptinregion"></a>CRgn::PtInRegion  
+##  <a name="ptinregion"></a>CRgn::PtInRegion  
  チェックするかどうかで指定したポイント*x*と*y*に格納されている地域では、`CRgn`オブジェクトです。  
   
 ```  
@@ -682,7 +703,7 @@ BOOL PtInRegion(POINT point) const;
 ### <a name="return-value"></a>戻り値  
  ポイントがリージョンにある場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-namerectinregiona--crgnrectinregion"></a><a name="rectinregion"></a>CRgn::RectInRegion  
+##  <a name="rectinregion"></a>CRgn::RectInRegion  
  四角形の任意の部分がで指定されたかどうかを判断`lpRect`に格納されている領域の境界内にあり、`CRgn`オブジェクトです。  
   
 ```  
@@ -708,7 +729,7 @@ BOOL RectInRegion(LPCRECT lpRect) const;
 ### <a name="return-value"></a>戻り値  
  指定された四角形の任意の部分が、領域の境界内にある場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="a-namesetrectrgna--crgnsetrectrgn"></a><a name="setrectrgn"></a>CRgn::SetRectRgn  
+##  <a name="setrectrgn"></a>CRgn::SetRectRgn  
  四角形の領域を作成します。  
   
 ```  

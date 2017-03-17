@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSocket
+- AFXSOCK/CSocket
+- AFXSOCK/CSocket::CSocket
+- AFXSOCK/CSocket::Attach
+- AFXSOCK/CSocket::CancelBlockingCall
+- AFXSOCK/CSocket::Create
+- AFXSOCK/CSocket::FromHandle
+- AFXSOCK/CSocket::IsBlocking
+- AFXSOCK/CSocket::OnMessagePending
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -105,7 +113,7 @@ class CSocket : public CAsyncSocket
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxsock.h  
   
-##  <a name="a-nameattacha--csocketattach"></a><a name="attach"></a>Csocket::attach  
+##  <a name="attach"></a>Csocket::attach  
  アタッチするには、このメンバー関数を呼び出す、`hSocket`へのハンドル、`CSocket`オブジェクトです。  
   
 ```  
@@ -131,7 +139,7 @@ BOOL Attach(SOCKET hSocket);
   
  [!code-cpp[NVC_MFCSocketThread&#3;](../../mfc/reference/codesnippet/cpp/csocket-class_4.cpp)]  
   
-##  <a name="a-namecancelblockingcalla--csocketcancelblockingcall"></a><a name="cancelblockingcall"></a>CSocket::CancelBlockingCall  
+##  <a name="cancelblockingcall"></a>CSocket::CancelBlockingCall  
  現在実行中のブロッキング呼び出しをキャンセルするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -147,7 +155,7 @@ void CancelBlockingCall();
   
  詳細については、次を参照してください。 [Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)します。  
   
-##  <a name="a-namecreatea--csocketcreate"></a><a name="create"></a>CSocket::Create  
+##  <a name="create"></a>CSocket::Create  
  呼び出す、**作成**メンバー関数の後に、Windows ソケットを作成し、接続のソケット オブジェクトを構築します。  
   
 ```  
@@ -182,7 +190,7 @@ BOOL Create(
   
  ストリームとデータグラム ソケットの詳細については、記事を参照してください。 [Windows ソケット: バック グラウンド](../../mfc/windows-sockets-background.md)、 [Windows ソケット: ポートとソケット アドレス](../../mfc/windows-sockets-ports-and-socket-addresses.md)、および[Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)します。  
   
-##  <a name="a-namecsocketa--csocketcsocket"></a><a name="csocket"></a>CSocket::CSocket  
+##  <a name="csocket"></a>CSocket::CSocket  
  `CSocket` オブジェクトを構築します。  
   
 ```  
@@ -194,7 +202,7 @@ CSocket();
   
  詳細については、次を参照してください。 [Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)します。  
   
-##  <a name="a-namefromhandlea--csocketfromhandle"></a><a name="fromhandle"></a>CSocket::FromHandle  
+##  <a name="fromhandle"></a>CSocket::FromHandle  
  ポインターを返す、`CSocket`オブジェクトです。  
   
 ```  
@@ -213,7 +221,7 @@ static CSocket* PASCAL FromHandle(SOCKET hSocket);
   
  詳細については、次を参照してください。 [Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)します。  
   
-##  <a name="a-nameisblockinga--csocketisblocking"></a><a name="isblocking"></a>CSocket::IsBlocking  
+##  <a name="isblocking"></a>CSocket::IsBlocking  
  このメンバー関数を呼び出してブロッキング呼び出しが行われているかを決定します。  
   
 ```  
@@ -226,7 +234,7 @@ BOOL IsBlocking();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)します。  
   
-##  <a name="a-nameonmessagependinga--csocketonmessagepending"></a><a name="onmessagepending"></a>種類  
+##  <a name="onmessagepending"></a>種類  
  Windows からの特定のメッセージを確認して、ソケットに対応するには、この関数をオーバーライドします。  
   
 ```  

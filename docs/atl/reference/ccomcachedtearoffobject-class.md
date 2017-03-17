@@ -9,11 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComCachedTearOffObject
-- ATL.CComCachedTearOffObject
-- ATL.CComCachedTearOffObject<contained>
 - CComCachedTearOffObject
-- ATL::CComCachedTearOffObject<contained>
+- ATLCOM/ATL::CComCachedTearOffObject
+- ATLCOM/ATL::CComCachedTearOffObject::CComCachedTearOffObject
+- ATLCOM/ATL::CComCachedTearOffObject::AddRef
+- ATLCOM/ATL::CComCachedTearOffObject::FinalConstruct
+- ATLCOM/ATL::CComCachedTearOffObject::FinalRelease
+- ATLCOM/ATL::CComCachedTearOffObject::QueryInterface
+- ATLCOM/ATL::CComCachedTearOffObject::Release
+- ATLCOM/ATL::CComCachedTearOffObject::m_contained
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -106,7 +110,7 @@ public CComObjectRootEx<contained
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameaddrefa--ccomcachedtearoffobjectaddref"></a><a name="addref"></a>CComCachedTearOffObject::AddRef  
+##  <a name="addref"></a>CComCachedTearOffObject::AddRef  
  参照カウントをインクリメント、 `CComCachedTearOffObject` 1 オブジェクト。  
   
 ```
@@ -116,7 +120,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="return-value"></a>戻り値  
  診断に役立ちますしテスト可能性のある値。  
   
-##  <a name="a-nameccomcachedtearoffobjecta--ccomcachedtearoffobjectccomcachedtearoffobject"></a><a name="ccomcachedtearoffobject"></a>CComCachedTearOffObject::CComCachedTearOffObject  
+##  <a name="ccomcachedtearoffobject"></a>CComCachedTearOffObject::CComCachedTearOffObject  
  コンストラクターです。  
   
 ```
@@ -130,7 +134,7 @@ CComCachedTearOffObject(void* pv);
 ### <a name="remarks"></a>コメント  
  初期化、`CComContainedObject`メンバー、[で呼び出され](#m_contained)します。  
   
-##  <a name="a-namedtora--ccomcachedtearoffobjectccomcachedtearoffobject"></a><a name="dtor"></a>ティアオフ:: ~ ティアオフ  
+##  <a name="dtor"></a>ティアオフ:: ~ ティアオフ  
  デストラクターです。  
   
 ```
@@ -140,7 +144,7 @@ CComCachedTearOffObject(void* pv);
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放[FinalRelease](#finalrelease)します。  
   
-##  <a name="a-namefinalconstructa--ccomcachedtearoffobjectfinalconstruct"></a><a name="finalconstruct"></a>CComCachedTearOffObject::FinalConstruct  
+##  <a name="finalconstruct"></a>CComCachedTearOffObject::FinalConstruct  
  呼び出し**m_contained::FinalConstruct**を作成する`m_contained`、 `CComContainedObject` <  `contained`> ティアオフ クラスによって実装されるインターフェイスにアクセスするために使用します。  
   
 ```
@@ -150,14 +154,14 @@ HRESULT FinalConstruct();
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namefinalreleasea--ccomcachedtearoffobjectfinalrelease"></a><a name="finalrelease"></a>CComCachedTearOffObject::FinalRelease  
+##  <a name="finalrelease"></a>CComCachedTearOffObject::FinalRelease  
  呼び出し**m_contained::FinalRelease**を解放する`m_contained`、 `CComContainedObject` <  `contained`> オブジェクトです。  
   
 ```
 void FinalRelease();
 ```  
   
-##  <a name="a-namemcontaineda--ccomcachedtearoffobjectmcontained"></a><a name="m_contained"></a>CComCachedTearOffObject::m_contained  
+##  <a name="m_contained"></a>CComCachedTearOffObject::m_contained  
  A[した](../../atl/reference/ccomcontainedobject-class.md)ティアオフ クラスから派生するオブジェクト。  
   
 ```
@@ -171,7 +175,7 @@ CcomContainedObject <contained> m_contained;
 ### <a name="remarks"></a>コメント  
  メソッド`m_contained`継承ではキャッシュされたティアオフ オブジェクトのティアオフ クラスにティアオフ インターフェイスにアクセスするため`QueryInterface`、 `FinalConstruct`、および`FinalRelease`です。  
   
-##  <a name="a-namequeryinterfacea--ccomcachedtearoffobjectqueryinterface"></a><a name="queryinterface"></a>CComCachedTearOffObject::QueryInterface  
+##  <a name="queryinterface"></a>CComCachedTearOffObject::QueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -192,7 +196,7 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
  要求されたインターフェイスの場合**IUnknown**へのポインターを返します、`CComCachedTearOffObject`の独自**IUnknown**し、参照カウントをインクリメントします。 それ以外の場合、ティアオフ クラスを使用して、上のインターフェイスに対してクエリを実行、 [InternalQueryInterface](ccomobjectrootex-class.md#internalqueryinterface)から継承されたメソッド`CComObjectRootEx`します。  
 
   
-##  <a name="a-namereleasea--ccomcachedtearoffobjectrelease"></a><a name="release"></a>CComCachedTearOffObject::Release  
+##  <a name="release"></a>CComCachedTearOffObject::Release  
  参照カウントを 1 つデクリメントし、参照カウントが 0 の場合は、削除、`CComCachedTearOffObject`オブジェクトです。  
   
 ```

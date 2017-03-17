@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCPropertyGridFontProperty
+- AFXPROPERTYGRIDCTRL/CMFCPropertyGridFontProperty
+- AFXPROPERTYGRIDCTRL/CMFCPropertyGridFontProperty::CMFCPropertyGridFontProperty
+- AFXPROPERTYGRIDCTRL/CMFCPropertyGridFontProperty::GetColor
+- AFXPROPERTYGRIDCTRL/CMFCPropertyGridFontProperty::GetLogFont
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -81,7 +85,7 @@ class CMFCPropertyGridFontProperty : public CMFCPropertyGridProperty
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxpropertygridctrl.h  
   
-##  <a name="a-namecmfcpropertygridfontpropertya--cmfcpropertygridfontpropertycmfcpropertygridfontproperty"></a><a name="cmfcpropertygridfontproperty"></a>CMFCPropertyGridFontProperty::CMFCPropertyGridFontProperty  
+##  <a name="cmfcpropertygridfontproperty"></a>CMFCPropertyGridFontProperty::CMFCPropertyGridFontProperty  
  `CMFCPropertyGridFontProperty` オブジェクトを構築します。  
   
 ```  
@@ -121,7 +125,7 @@ CMFCPropertyGridFontProperty(
   
  [!code-cpp[NVC_MFC_NewControls #&26;](../../mfc/reference/codesnippet/cpp/cmfcpropertygridfontproperty-class_1.cpp)]  
   
-##  <a name="a-namegetcolora--cmfcpropertygridfontpropertygetcolor"></a><a name="getcolor"></a>CMFCPropertyGridFontProperty::GetColor  
+##  <a name="getcolor"></a>CMFCPropertyGridFontProperty::GetColor  
  ユーザーが、[フォント] ダイアログ ボックスから選択したフォントの色を取得します。  
   
 ```  
@@ -133,7 +137,7 @@ COLORREF GetColor() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetlogfonta--cmfcpropertygridfontpropertygetlogfont"></a><a name="getlogfont"></a>CMFCPropertyGridFontProperty::GetLogFont  
+##  <a name="getlogfont"></a>CMFCPropertyGridFontProperty::GetLogFont  
  ユーザーが、[フォント] ダイアログ ボックスから選択したフォントを取得します。  
   
 ```  

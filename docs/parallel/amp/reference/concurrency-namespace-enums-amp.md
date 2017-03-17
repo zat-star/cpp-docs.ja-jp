@@ -6,6 +6,11 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- amp/Concurrency::access_type
+- amp/Concurrency::queuing_mode
+dev_langs:
+- C++
 ms.assetid: 4c87457e-184f-4992-81ab-ca75e7d524ab
 caps.latest.revision: 8
 author: mikeblome
@@ -22,7 +27,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[access_type 列挙型](#access_type)|[queuing_mode 列挙型](#queuing_mode)|  
   
-##  <a name="a-nameaccesstypea--accesstype-enumeration"></a><a name="access_type"></a>access_type 列挙型  
+##  <a name="access_type"></a>access_type 列挙型  
  データへのさまざまな種類のアクセスを示すために使用される列挙型。  
   
 ```  
@@ -39,7 +44,7 @@ enum access_type;
 |`access_type_write`|共有。 割り当ては、アクセラレータ上でアクセスでき、CPU 上では読み取りおよび書き込みの両方ができます。|  
 
   
-##  <a name="a-namequeuingmodea--queuingmode-enumeration"></a><a name="queuing_mode"></a>queuing_mode 列挙型  
+##  <a name="queuing_mode"></a>queuing_mode 列挙型  
  アクセラレータでサポートされているキュー モードを指定します。  
   
 ```  

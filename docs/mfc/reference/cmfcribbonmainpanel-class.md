@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCRibbonMainPanel
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel::Add
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel::AddRecentFilesList
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel::AddToBottom
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel::AddToRight
+- AFXRIBBONMAINPANEL/CMFCRibbonMainPanel::GetCommandsFrame
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -88,7 +94,7 @@ class CMFCRibbonMainPanel : public CMFCRibbonPanel
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxRibbonMainPanel.h  
   
-##  <a name="a-nameadda--cmfcribbonmainpaneladd"></a><a name="add"></a>CMFCRibbonMainPanel::Add  
+##  <a name="add"></a>CMFCRibbonMainPanel::Add  
  アプリケーション ボタン パネルの左側のウィンドウにリボン要素を追加します。  
   
 ```  
@@ -102,7 +108,7 @@ virtual void Add(CMFCRibbonBaseElement* pElem);
 ### <a name="remarks"></a>コメント  
  パネルにリボン要素を追加します。 このメソッドを使用して追加された要素は、メイン パネルの左側の列に格納されます。  
   
-##  <a name="a-nameaddrecentfileslista--cmfcribbonmainpaneladdrecentfileslist"></a><a name="addrecentfileslist"></a>CMFCRibbonMainPanel::AddRecentFilesList  
+##  <a name="addrecentfileslist"></a>CMFCRibbonMainPanel::AddRecentFilesList  
  最近のファイルの一覧のメニューにテキスト文字列を追加します。  
   
 ```  
@@ -120,7 +126,7 @@ void AddRecentFilesList(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameaddtobottoma--cmfcribbonmainpaneladdtobottom"></a><a name="addtobottom"></a>CMFCRibbonMainPanel::AddToBottom  
+##  <a name="addtobottom"></a>CMFCRibbonMainPanel::AddToBottom  
  リボン アプリケーション パネルの下部ウィンドウにリボン要素を追加します。  
   
 ```  
@@ -133,7 +139,7 @@ void AddToBottom(CMFCRibbonMainPanelButton* pElem);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameaddtorighta--cmfcribbonmainpaneladdtoright"></a><a name="addtoright"></a>CMFCRibbonMainPanel::AddToRight  
+##  <a name="addtoright"></a>CMFCRibbonMainPanel::AddToRight  
  アプリケーション ボタン パネルの右側のウィンドウにリボン要素を追加します。  
   
 ```  
@@ -152,7 +158,7 @@ void AddToRight(
 ### <a name="remarks"></a>コメント  
  この関数を使用すると、右側のパネルをリボン要素を追加できます。 右側のパネルには、最近使ったファイル で、通常が表示されますが、リボンの要素を追加することができます。  
   
-##  <a name="a-namegetcommandsframea--cmfcribbonmainpanelgetcommandsframe"></a><a name="getcommandsframe"></a>CMFCRibbonMainPanel::GetCommandsFrame  
+##  <a name="getcommandsframe"></a>CMFCRibbonMainPanel::GetCommandsFrame  
  リボンのメイン パネルの領域を表す四角形を返します。  
   
 ```  

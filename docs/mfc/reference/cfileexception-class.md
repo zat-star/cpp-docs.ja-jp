@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFileException
+- AFX/CFileException
+- AFX/CFileException::CFileException
+- AFX/CFileException::ErrnoToException
+- AFX/CFileException::GetErrorMessage
+- AFX/CFileException::OsErrorToException
+- AFX/CFileException::ThrowErrno
+- AFX/CFileException::ThrowOsError
+- AFX/CFileException::m_cause
+- AFX/CFileException::m_lOsError
+- AFX/CFileException::m_strFileName
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -91,7 +101,7 @@ class CFileException : public CException
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namecfileexceptiona--cfileexceptioncfileexception"></a><a name="cfileexception"></a>CFileException::CFileException  
+##  <a name="cfileexception"></a>CFileException::CFileException  
  構築、`CFileException`原因コードとオペレーティング システムのコードをオブジェクトに格納するオブジェクト。  
   
 ```  
@@ -117,7 +127,7 @@ CFileException(
 > [!NOTE]
 >  変数`lOsError`にのみ適用されます`CFile`と`CStdioFile`オブジェクトです。 `CMemFile`クラスは、このエラー コードを処理しません。  
   
-##  <a name="a-nameerrnotoexceptiona--cfileexceptionerrnotoexception"></a><a name="errnotoexception"></a>CFileException::ErrnoToException  
+##  <a name="errnotoexception"></a>CFileException::ErrnoToException  
  特定のランタイム ライブラリのエラー値に変換、`CFileException`エラー値を列挙します。  
   
 ```  
@@ -137,7 +147,7 @@ static int PASCAL ErrnoToException(int nErrno);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&26;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_1.cpp)]  
   
-##  <a name="a-namegeterrormessagea--cfileexceptiongeterrormessage"></a><a name="geterrormessage"></a>CFileException::GetErrorMessage  
+##  <a name="geterrormessage"></a>CFileException::GetErrorMessage  
  例外を説明するテキストを取得します。  
   
 ```  
@@ -168,7 +178,7 @@ virtual BOOL GetErrorMessage(
   
  [!code-cpp[NVC_MFCExceptions #&22;](../../mfc/codesnippet/cpp/cfileexception-class_2.cpp)]  
   
-##  <a name="a-namemcausea--cfileexceptionmcause"></a><a name="m_cause"></a>については、「  
+##  <a name="m_cause"></a>については、「  
  `CFileException` 列挙型によって定義された値が含まれます。  
   
 ```  
@@ -217,7 +227,7 @@ int m_cause;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&30;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_3.cpp)]  
   
-##  <a name="a-namemloserrora--cfileexceptionmloserror"></a><a name="m_loserror"></a>CFileException::m_lOsError  
+##  <a name="m_loserror"></a>CFileException::m_lOsError  
  この例外のオペレーティング システムのエラー コードが含まれています。  
   
 ```  
@@ -227,14 +237,14 @@ LONG m_lOsError;
 ### <a name="remarks"></a>コメント  
  エラー コードの一覧については、オペレーティング システム技術マニュアルを参照してください。 このデータ メンバーは型のパブリック変数**長い**します。  
   
-##  <a name="a-namemstrfilenamea--cfileexceptionmstrfilename"></a><a name="m_strfilename"></a>CFileException::m_strFileName  
+##  <a name="m_strfilename"></a>CFileException::m_strFileName  
  この例外の状態のファイルの名前が含まれています。  
   
 ```  
 CString m_strFileName;  
 ```  
   
-##  <a name="a-nameoserrortoexceptiona--cfileexceptionoserrortoexception"></a><a name="oserrortoexception"></a>CFileException::OsErrorToException  
+##  <a name="oserrortoexception"></a>CFileException::OsErrorToException  
  対応する列挙子を返します、指定された`lOsError`値。 エラー コードは不明でかどうかは、この関数を返します**定義**します。  
   
 ```  
@@ -251,7 +261,7 @@ static int PASCAL OsErrorToException(LONG lOsError);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&27;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_4.cpp)]  
   
-##  <a name="a-namethrowerrnoa--cfileexceptionthrowerrno"></a><a name="throwerrno"></a>CFileException::ThrowErrno  
+##  <a name="throwerrno"></a>CFileException::ThrowErrno  
  構築、`CFileException`オブジェクトに対応する、指定された`nErrno`し、例外をスローします。  
   
 ```  
@@ -268,7 +278,7 @@ static void PASCAL ThrowErrno(int nErrno, LPCTSTR lpszFileName = NULL);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&28;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_5.cpp)]  
   
-##  <a name="a-namethrowoserrora--cfileexceptionthrowoserror"></a><a name="throwoserror"></a>CFileException::ThrowOsError  
+##  <a name="throwoserror"></a>CFileException::ThrowOsError  
  スロー、`CFileException`に対応する、指定された`lOsError`値。 エラー コードが不明、し、関数としてコード化された例外をスローするかどうかは**定義**します。  
   
 ```  

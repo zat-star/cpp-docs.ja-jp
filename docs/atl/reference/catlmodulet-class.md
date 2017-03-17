@@ -9,11 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CAtlModuleT<T>
-- ATL.CAtlModuleT
-- ATL.CAtlModuleT<T>
-- ATL::CAtlModuleT
 - CAtlModuleT
+- ATLBASE/ATL::CAtlModuleT
+- ATLBASE/ATL::CAtlModuleT::CAtlModuleT
+- ATLBASE/ATL::CAtlModuleT::InitLibId
+- ATLBASE/ATL::CAtlModuleT::RegisterAppId
+- ATLBASE/ATL::CAtlModuleT::RegisterServer
+- ATLBASE/ATL::CAtlModuleT::UnregisterAppId
+- ATLBASE/ATL::CAtlModuleT::UnregisterServer
+- ATLBASE/ATL::CAtlModuleT::UpdateRegistryAppId
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +96,7 @@ class ATL_NO_VTABLE CAtlModuleT : public CAtlModule
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namecatlmoduleta--catlmoduletcatlmodulet"></a><a name="catlmodulet"></a>CAtlModuleT::CAtlModuleT  
+##  <a name="catlmodulet"></a>CAtlModuleT::CAtlModuleT  
  コンストラクターです。  
   
 ```
@@ -102,7 +106,7 @@ CAtlModuleT() throw();
 ### <a name="remarks"></a>コメント  
  呼び出し[CAtlModuleT::InitLibId](#initlibid)します。  
   
-##  <a name="a-nameinitlibida--catlmoduletinitlibid"></a><a name="initlibid"></a>CAtlModuleT::InitLibId  
+##  <a name="initlibid"></a>CAtlModuleT::InitLibId  
  現在のモジュールの GUID を表すデータ メンバーを初期化します。  
   
 ```
@@ -112,7 +116,7 @@ static void InitLibId() throw();
 ### <a name="remarks"></a>コメント  
  コンス トラクターによって呼び出される[CAtlModuleT::CAtlModuleT](#catlmodulet)します。  
   
-##  <a name="a-nameregisterappida--catlmoduletregisterappid"></a><a name="registerappid"></a>CAtlModuleT::RegisterAppId  
+##  <a name="registerappid"></a>CAtlModuleT::RegisterAppId  
  レジストリに、実行可能ファイルを追加します。  
   
 ```
@@ -122,7 +126,7 @@ HRESULT RegisterAppId() throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameregisterservera--catlmoduletregisterserver"></a><a name="registerserver"></a>CAtlModuleT::RegisterServer  
+##  <a name="registerserver"></a>CAtlModuleT::RegisterServer  
  レジストリにサービスを追加します。  
   
 ```
@@ -141,7 +145,7 @@ HRESULT RegisterServer(
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameunregisterappida--catlmoduletunregisterappid"></a><a name="unregisterappid"></a>CAtlModuleT::UnregisterAppId  
+##  <a name="unregisterappid"></a>CAtlModuleT::UnregisterAppId  
  レジストリから、実行可能ファイルを削除します。  
   
 ```
@@ -151,7 +155,7 @@ HRESULT UnregisterAppId() throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameunregisterservera--catlmoduletunregisterserver"></a><a name="unregisterserver"></a>CAtlModuleT::UnregisterServer  
+##  <a name="unregisterserver"></a>CAtlModuleT::UnregisterServer  
  レジストリからサービスを削除します。  
   
 ```
@@ -170,7 +174,7 @@ HRESULT UnregisterServer(
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameupdateregistryappida--catlmoduletupdateregistryappid"></a><a name="updateregistryappid"></a>CAtlModuleT::UpdateRegistryAppId  
+##  <a name="updateregistryappid"></a>CAtlModuleT::UpdateRegistryAppId  
  レジストリの EXE の情報を更新します。  
   
 ```

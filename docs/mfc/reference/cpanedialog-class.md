@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CPaneDialog
+- AFXPANEDIALOG/CPaneDialog
+- AFXPANEDIALOG/CPaneDialog::Create
+- AFXPANEDIALOG/CPaneDialog::HandleInitDialog
+- AFXPANEDIALOG/CPaneDialog::SetOccDialogInfo
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +104,7 @@ class CPaneDialog : public CDockablePane
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxpanedialog.h  
   
-##  <a name="a-namecreatea--cpanedialogcreate"></a><a name="create"></a>CPaneDialog::Create  
+##  <a name="create"></a>CPaneDialog::Create  
  ドッキングのダイアログ ボックスを作成し、それにアタッチ、`CPaneDialog`オブジェクトです。  
   
 ```  
@@ -177,7 +181,7 @@ BOOL Create(
  [!code-cpp[NVC_MFC_SetPaneSize&#2;](../../mfc/reference/codesnippet/cpp/cpanedialog-class_1.h)]  
 [!code-cpp[NVC_MFC_SetPaneSize&#3;](../../mfc/reference/codesnippet/cpp/cpanedialog-class_2.cpp)]  
   
-##  <a name="a-namehandleinitdialoga--cpanedialoghandleinitdialog"></a><a name="handleinitdialog"></a>CPaneDialog::HandleInitDialog  
+##  <a name="handleinitdialog"></a>CPaneDialog::HandleInitDialog  
  処理、 [WM_INITDIALOG](http://msdn.microsoft.com/library/windows/desktop/ms645428)メッセージです。  
   
 ```  
@@ -199,7 +203,7 @@ afx_msg LRESULT HandleInitDialog(
 ### <a name="remarks"></a>コメント  
  フレームワークでは、このメソッドを使用して、コントロールとダイアログ ボックスの外観を初期化します。 フレームワークは、ダイアログ ボックスが表示される前に、このメソッドを呼び出します。  
   
-##  <a name="a-namesetoccdialoginfoa--cpanedialogsetoccdialoginfo"></a><a name="setoccdialoginfo"></a>CPaneDialog::SetOccDialogInfo  
+##  <a name="setoccdialoginfo"></a>CPaneDialog::SetOccDialogInfo  
  OLE コントロール コンテナーである ダイアログ ボックスのテンプレートを指定します。  
   
 ```  

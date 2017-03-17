@@ -10,6 +10,80 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRichEditCtrl
+- AFXCMN/CRichEditCtrl
+- AFXCMN/CRichEditCtrl::CRichEditCtrl
+- AFXCMN/CRichEditCtrl::CanPaste
+- AFXCMN/CRichEditCtrl::CanRedo
+- AFXCMN/CRichEditCtrl::CanUndo
+- AFXCMN/CRichEditCtrl::CharFromPos
+- AFXCMN/CRichEditCtrl::Clear
+- AFXCMN/CRichEditCtrl::Copy
+- AFXCMN/CRichEditCtrl::Create
+- AFXCMN/CRichEditCtrl::CreateEx
+- AFXCMN/CRichEditCtrl::Cut
+- AFXCMN/CRichEditCtrl::DisplayBand
+- AFXCMN/CRichEditCtrl::EmptyUndoBuffer
+- AFXCMN/CRichEditCtrl::FindText
+- AFXCMN/CRichEditCtrl::FindWordBreak
+- AFXCMN/CRichEditCtrl::FormatRange
+- AFXCMN/CRichEditCtrl::GetCharPos
+- AFXCMN/CRichEditCtrl::GetDefaultCharFormat
+- AFXCMN/CRichEditCtrl::GetEventMask
+- AFXCMN/CRichEditCtrl::GetFirstVisibleLine
+- AFXCMN/CRichEditCtrl::GetIRichEditOle
+- AFXCMN/CRichEditCtrl::GetLimitText
+- AFXCMN/CRichEditCtrl::GetLine
+- AFXCMN/CRichEditCtrl::GetLineCount
+- AFXCMN/CRichEditCtrl::GetModify
+- AFXCMN/CRichEditCtrl::GetOptions
+- AFXCMN/CRichEditCtrl::GetParaFormat
+- AFXCMN/CRichEditCtrl::GetPunctuation
+- AFXCMN/CRichEditCtrl::GetRect
+- AFXCMN/CRichEditCtrl::GetRedoName
+- AFXCMN/CRichEditCtrl::GetSel
+- AFXCMN/CRichEditCtrl::GetSelectionCharFormat
+- AFXCMN/CRichEditCtrl::GetSelectionType
+- AFXCMN/CRichEditCtrl::GetSelText
+- AFXCMN/CRichEditCtrl::GetTextLength
+- AFXCMN/CRichEditCtrl::GetTextLengthEx
+- AFXCMN/CRichEditCtrl::GetTextMode
+- AFXCMN/CRichEditCtrl::GetTextRange
+- AFXCMN/CRichEditCtrl::GetUndoName
+- AFXCMN/CRichEditCtrl::GetWordWrapMode
+- AFXCMN/CRichEditCtrl::HideSelection
+- AFXCMN/CRichEditCtrl::LimitText
+- AFXCMN/CRichEditCtrl::LineFromChar
+- AFXCMN/CRichEditCtrl::LineIndex
+- AFXCMN/CRichEditCtrl::LineLength
+- AFXCMN/CRichEditCtrl::LineScroll
+- AFXCMN/CRichEditCtrl::Paste
+- AFXCMN/CRichEditCtrl::PasteSpecial
+- AFXCMN/CRichEditCtrl::PosFromChar
+- AFXCMN/CRichEditCtrl::Redo
+- AFXCMN/CRichEditCtrl::ReplaceSel
+- AFXCMN/CRichEditCtrl::RequestResize
+- AFXCMN/CRichEditCtrl::SetAutoURLDetect
+- AFXCMN/CRichEditCtrl::SetBackgroundColor
+- AFXCMN/CRichEditCtrl::SetDefaultCharFormat
+- AFXCMN/CRichEditCtrl::SetEventMask
+- AFXCMN/CRichEditCtrl::SetModify
+- AFXCMN/CRichEditCtrl::SetOLECallback
+- AFXCMN/CRichEditCtrl::SetOptions
+- AFXCMN/CRichEditCtrl::SetParaFormat
+- AFXCMN/CRichEditCtrl::SetPunctuation
+- AFXCMN/CRichEditCtrl::SetReadOnly
+- AFXCMN/CRichEditCtrl::SetRect
+- AFXCMN/CRichEditCtrl::SetSel
+- AFXCMN/CRichEditCtrl::SetSelectionCharFormat
+- AFXCMN/CRichEditCtrl::SetTargetDevice
+- AFXCMN/CRichEditCtrl::SetTextMode
+- AFXCMN/CRichEditCtrl::SetUndoLimit
+- AFXCMN/CRichEditCtrl::SetWordCharFormat
+- AFXCMN/CRichEditCtrl::SetWordWrapMode
+- AFXCMN/CRichEditCtrl::StopGroupTyping
+- AFXCMN/CRichEditCtrl::StreamIn
+- AFXCMN/CRichEditCtrl::StreamOut
+- AFXCMN/CRichEditCtrl::Undo
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -165,7 +239,7 @@ class CRichEditCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecanpastea--cricheditctrlcanpaste"></a><a name="canpaste"></a>CRichEditCtrl::CanPaste  
+##  <a name="canpaste"></a>CRichEditCtrl::CanPaste  
  リッチ エディット コントロールが指定のクリップボード形式を貼り付けることができるかどうかを判断します。  
   
 ```  
@@ -187,7 +261,7 @@ BOOL CanPaste(UINT nFormat = 0) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#1;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_1.cpp)]  
   
-##  <a name="a-namecanredoa--cricheditctrlcanredo"></a><a name="canredo"></a>CRichEditCtrl::CanRedo  
+##  <a name="canredo"></a>CRichEditCtrl::CanRedo  
  すべてのアクションが再実行キューに含まれているかどうかを判断します。  
   
 ```  
@@ -202,7 +276,7 @@ BOOL CanRedo() const;
   
  詳細については、次を参照してください。 [EM_CANREDO](http://msdn.microsoft.com/library/windows/desktop/bb787995)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecanundoa--cricheditctrlcanundo"></a><a name="canundo"></a>CRichEditCtrl::CanUndo  
+##  <a name="canundo"></a>CRichEditCtrl::CanUndo  
  最後の編集操作を元に戻すことができるかどうかを決定します。  
   
 ```  
@@ -218,7 +292,7 @@ BOOL CanUndo() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#2;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_2.cpp)]  
   
-##  <a name="a-namecharfromposa--cricheditctrlcharfrompos"></a><a name="charfrompos"></a>CRichEditCtrl::CharFromPos  
+##  <a name="charfrompos"></a>CRichEditCtrl::CharFromPos  
  パラメーターに指定された位置の文字に関する情報を取得`pt`します。  
   
 ```  
@@ -237,7 +311,7 @@ int CharFromPos(CPoint pt) const;
   
  詳細については、次を参照してください。 [EM_CHARFROMPOS](http://msdn.microsoft.com/library/windows/desktop/bb761566)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecleara--cricheditctrlclear"></a><a name="clear"></a>CRichEditCtrl::Clear  
+##  <a name="clear"></a>CRichEditCtrl::Clear  
  削除 (クリア)、リッチで現在の選択 (存在する場合) は、コントロールを編集します。  
   
 ```  
@@ -254,7 +328,7 @@ void Clear();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#3;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_3.cpp)]  
   
-##  <a name="a-namecopya--cricheditctrlcopy"></a><a name="copy"></a>CRichEditCtrl::Copy  
+##  <a name="copy"></a>CRichEditCtrl::Copy  
  現在の選択 (存在する場合) リッチ エディット コントロールでクリップボードにコピーします。  
   
 ```  
@@ -267,7 +341,7 @@ void Copy();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&4;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_4.cpp)]  
   
-##  <a name="a-namecreatea--cricheditctrlcreate"></a><a name="create"></a>CRichEditCtrl::Create  
+##  <a name="create"></a>CRichEditCtrl::Create  
  Windows のリッチ エディット コントロールを作成し、この関連付けます`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -320,7 +394,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#5;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_5.cpp)]  
   
-##  <a name="a-namecreateexa--cricheditctrlcreateex"></a><a name="createex"></a>CRichEditCtrl::CreateEx  
+##  <a name="createex"></a>CRichEditCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けます、`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -354,7 +428,7 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに**作成**、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namecricheditctrla--cricheditctrlcricheditctrl"></a><a name="cricheditctrl"></a>CRichEditCtrl::CRichEditCtrl  
+##  <a name="cricheditctrl"></a>CRichEditCtrl::CRichEditCtrl  
  `CRichEditCtrl` オブジェクトを構築します。  
   
 ```  
@@ -367,7 +441,7 @@ CRichEditCtrl();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&6;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_6.cpp)]  
   
-##  <a name="a-namecuta--cricheditctrlcut"></a><a name="cut"></a>CRichEditCtrl::Cut  
+##  <a name="cut"></a>CRichEditCtrl::Cut  
  削除 (切り取り)、現在選択 (存在する場合)、リッチ エディット コントロールや、削除されたテキストをクリップボードにコピーします。  
   
 ```  
@@ -384,7 +458,7 @@ void Cut();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#7;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_7.cpp)]  
   
-##  <a name="a-namedisplaybanda--cricheditctrldisplayband"></a><a name="displayband"></a>CRichEditCtrl::DisplayBand  
+##  <a name="displayband"></a>CRichEditCtrl::DisplayBand  
  リッチ エディット コントロール (テキストと OLE アイテム) の内容の一部を前に書式設定された表示[FormatRange](#formatrange)します。  
   
 ```  
@@ -406,7 +480,7 @@ BOOL DisplayBand(LPRECT pDisplayRect);
 ### <a name="example"></a>例  
   例を参照してください[CRichEditCtrl::FormatRange](#formatrange)します。  
   
-##  <a name="a-nameemptyundobuffera--cricheditctrlemptyundobuffer"></a><a name="emptyundobuffer"></a>CRichEditCtrl::EmptyUndoBuffer  
+##  <a name="emptyundobuffer"></a>CRichEditCtrl::EmptyUndoBuffer  
  リッチ エディット コントロールの取り消しのフラグをリセット (クリア) します。  
   
 ```  
@@ -423,7 +497,7 @@ void EmptyUndoBuffer();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#8;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_8.cpp)]  
   
-##  <a name="a-namefindtexta--cricheditctrlfindtext"></a><a name="findtext"></a>CRichEditCtrl::FindText  
+##  <a name="findtext"></a>CRichEditCtrl::FindText  
  リッチ エディット コントロール内のテキストを検索します。  
   
 ```  
@@ -450,7 +524,7 @@ long FindText(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#9;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_9.cpp)]  
   
-##  <a name="a-namefindwordbreaka--cricheditctrlfindwordbreak"></a><a name="findwordbreak"></a>CRichEditCtrl::FindWordBreak  
+##  <a name="findwordbreak"></a>CRichEditCtrl::FindWordBreak  
  指定した位置の前後に次の単語分割を検索`nStart`します。  
   
 ```  
@@ -472,7 +546,7 @@ DWORD FindWordBreak(
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用すると、指定された位置に文字に関する情報を取得します。  
   
-##  <a name="a-nameformatrangea--cricheditctrlformatrange"></a><a name="formatrange"></a>CRichEditCtrl::FormatRange  
+##  <a name="formatrange"></a>CRichEditCtrl::FormatRange  
  特定のデバイスのリッチ エディット コントロール内のテキストの範囲の書式を設定します。  
   
 ```  
@@ -499,7 +573,7 @@ long FormatRange(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#10;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_10.cpp)]  
   
-##  <a name="a-namegetcharposa--cricheditctrlgetcharpos"></a><a name="getcharpos"></a>CRichEditCtrl::GetCharPos  
+##  <a name="getcharpos"></a>CRichEditCtrl::GetCharPos  
  この特定の文字の位置 (左上隅) を取得`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -518,7 +592,7 @@ CPoint GetCharPos(long lChar) const;
   
  詳細については、次を参照してください。 [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetdefaultcharformata--cricheditctrlgetdefaultcharformat"></a><a name="getdefaultcharformat"></a>CRichEditCtrl::GetDefaultCharFormat  
+##  <a name="getdefaultcharformat"></a>CRichEditCtrl::GetDefaultCharFormat  
  既定の文字の属性の書式を取得`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -709,7 +783,7 @@ DWORD GetParaFormat(PARAFORMAT& pf) const です。 DWORD GetParaFormat(PARAFORM
 ### <a name="example"></a>例  
   例を参照してください[CRichEditCtrl::SetParaFormat](#setparaformat)します。  
   
-##  <a name="a-namegetpunctuationa--cricheditctrlgetpunctuation"></a><a name="getpunctuation"></a>CRichEditCtrl::GetPunctuation  
+##  <a name="getpunctuation"></a>CRichEditCtrl::GetPunctuation  
  リッチ エディット コントロールで現在の区切り文字を取得します。  
   
 ```  
@@ -731,7 +805,7 @@ BOOL GetPunctuation(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、アジア系言語バージョンのオペレーティング システムのみで使用できます。  
   
-##  <a name="a-namegetrecta--cricheditctrlgetrect"></a><a name="getrect"></a>CRichEditCtrl::GetRect  
+##  <a name="getrect"></a>CRichEditCtrl::GetRect  
  この書式指定の四角形を取得`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -750,7 +824,7 @@ void GetRect(LPRECT lpRect) const;
 ### <a name="example"></a>例  
   例を参照してください[LimitText](#limittext)します。  
   
-##  <a name="a-namegetredonamea--cricheditctrlgetredoname"></a><a name="getredoname"></a>CRichEditCtrl::GetRedoName  
+##  <a name="getredoname"></a>CRichEditCtrl::GetRedoName  
  存在する場合は、再実行キューに次のアクションの種類を取得します。  
   
 ```  
@@ -763,7 +837,7 @@ UNDONAMEID GetRedoName() const;
 ### <a name="remarks"></a>コメント  
  元に戻すまたは再実行できるアクションの種類は、入力、削除、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、アンドゥ操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作の拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
   
-##  <a name="a-namegetsela--cricheditctrlgetsel"></a><a name="getsel"></a>CRichEditCtrl::GetSel  
+##  <a name="getsel"></a>CRichEditCtrl::GetSel  
  この現在の選択範囲の境界を取得`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -798,7 +872,7 @@ void GetSel(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#15;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_15.cpp)]  
   
-##  <a name="a-namegetselectioncharformata--cricheditctrlgetselectioncharformat"></a><a name="getselectioncharformat"></a>CRichEditCtrl::GetSelectionCharFormat  
+##  <a name="getselectioncharformat"></a>CRichEditCtrl::GetSelectionCharFormat  
  現在の選択項目の属性を書式設定文字を取得できます。  
   
 ```  
@@ -872,7 +946,7 @@ WORD GetSelectionType() const です。
 ### <a name="example"></a>例  
   例を参照してください[CRichEditCtrl::GetSelectionType](#getselectiontype)します。  
   
-##  <a name="a-namegettextlengtha--cricheditctrlgettextlength"></a><a name="gettextlength"></a>CRichEditCtrl::GetTextLength  
+##  <a name="gettextlength"></a>CRichEditCtrl::GetTextLength  
  これで、文字内のテキストの長さを取得`CRichEditCtrl`終端の null 文字を含まないオブジェクトです。  
   
 ```  
@@ -888,7 +962,7 @@ long GetTextLength() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&17;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_17.cpp)]  
   
-##  <a name="a-namegettextlengthexa--cricheditctrlgettextlengthex"></a><a name="gettextlengthex"></a>CRichEditCtrl::GetTextLengthEx  
+##  <a name="gettextlengthex"></a>CRichEditCtrl::GetTextLengthEx  
  リッチ エディット コントロール内のテキストの長さを計算します。  
   
 ```  
@@ -910,7 +984,7 @@ long GetTextLengthEx(
 ### <a name="remarks"></a>コメント  
  `GetTextLengthEx`別のテキストの長さを決定する方法を提供します。 リッチ エディット 2.0 の機能がサポートしています。 参照してください[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-namegettextmodea--cricheditctrlgettextmode"></a><a name="gettextmode"></a>CRichEditCtrl::GetTextMode  
+##  <a name="gettextmode"></a>CRichEditCtrl::GetTextMode  
  リッチ エディット コントロールの現在のテキスト モードと元に戻すレベルを取得します。  
   
 ```  
@@ -920,7 +994,7 @@ UINT GetTextMode() const;
 ### <a name="return-value"></a>戻り値  
  ビット フラグのセット、 [TEXTMODE](http://msdn.microsoft.com/library/windows/desktop/bb774364)列挙型の場合」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 フラグは、現在のテキスト モードを示し、コントロールのレベルを元に戻します。  
   
-##  <a name="a-namegettextrangea--cricheditctrlgettextrange"></a><a name="gettextrange"></a>CRichEditCtrl::GetTextRange  
+##  <a name="gettextrange"></a>CRichEditCtrl::GetTextRange  
  指定された文字の範囲を取得します。  
   
 ```  
@@ -948,7 +1022,7 @@ int GetTextRange(
   
  `GetTextRange`リッチ エディット 2.0 の機能をサポートしています。 参照してください[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-namegetundonamea--cricheditctrlgetundoname"></a><a name="getundoname"></a>CRichEditCtrl::GetUndoName  
+##  <a name="getundoname"></a>CRichEditCtrl::GetUndoName  
  存在する場合は、元に戻すキューに次のアクションの種類を取得します。  
   
 ```  
@@ -961,7 +1035,7 @@ UNDONAMEID GetUndoName() const;
 ### <a name="remarks"></a>コメント  
  元に戻すまたは再実行できるアクションの種類は、入力、削除、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、元に戻す/やり直すなどの操作を取り消すことができるアクションのドロップダウン リスト ボックス拡張ユーザー インターフェイスを提供するアプリケーションに便利です。  
   
-##  <a name="a-namegetwordwrapmodea--cricheditctrlgetwordwrapmode"></a><a name="getwordwrapmode"></a>CRichEditCtrl::GetWordWrapMode  
+##  <a name="getwordwrapmode"></a>CRichEditCtrl::GetWordWrapMode  
  リッチ エディット コントロールのワード区切りオプションの現在のワード ラップを取得します。  
   
 ```  
@@ -974,7 +1048,7 @@ UINT GetWordWrapMode() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、オペレーティング システムのアジア言語のバージョンでのみ使用できます。  
   
-##  <a name="a-namehideselectiona--cricheditctrlhideselection"></a><a name="hideselection"></a>CRichEditCtrl::HideSelection  
+##  <a name="hideselection"></a>CRichEditCtrl::HideSelection  
  選択範囲の表示/非表示を変更します。  
   
 ```  
@@ -998,7 +1072,7 @@ void HideSelection(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#18;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_18.cpp)]  
   
-##  <a name="a-namelimittexta--cricheditctrllimittext"></a><a name="limittext"></a>CRichEditCtrl::LimitText  
+##  <a name="limittext"></a>CRichEditCtrl::LimitText  
  エディット コントロールに入力できるテキストの長さを制限します。  
   
 ```  
@@ -1020,7 +1094,7 @@ void LimitText(long nChars = 0);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#19;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_19.cpp)]  
   
-##  <a name="a-namelinefromchara--cricheditctrllinefromchar"></a><a name="linefromchar"></a>CRichEditCtrl::LineFromChar  
+##  <a name="linefromchar"></a>CRichEditCtrl::LineFromChar  
  指定した文字のインデックスを含む行の行番号を取得します。  
   
 ```  
@@ -1042,7 +1116,7 @@ long LineFromChar(long nIndex) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#20;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_20.cpp)]  
   
-##  <a name="a-namelineindexa--cricheditctrllineindex"></a><a name="lineindex"></a>CRichEditCtrl::LineIndex  
+##  <a name="lineindex"></a>CRichEditCtrl::LineIndex  
  この行の文字のインデックスを取得`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1064,7 +1138,7 @@ int LineIndex(int nLine = -1) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&21;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_21.cpp)]  
   
-##  <a name="a-namelinelengtha--cricheditctrllinelength"></a><a name="linelength"></a>CRichEditCtrl::LineLength  
+##  <a name="linelength"></a>CRichEditCtrl::LineLength  
  リッチ エディット コントロール内の行の長さを取得します。  
   
 ```  
@@ -1086,7 +1160,7 @@ int LineLength(int nLine = -1) const;
 ### <a name="example"></a>例  
   例を参照してください[LineIndex](#lineindex)します。  
   
-##  <a name="a-namelinescrolla--cricheditctrllinescroll"></a><a name="linescroll"></a>CRichEditCtrl::LineScroll  
+##  <a name="linescroll"></a>CRichEditCtrl::LineScroll  
  複数行のエディット コントロールのテキストをスクロールします。  
   
 ```  
@@ -1112,7 +1186,7 @@ void LineScroll(
 ### <a name="example"></a>例  
   例を参照してください[GetFirstVisibleLine](#getfirstvisibleline)します。  
   
-##  <a name="a-namepastea--cricheditctrlpaste"></a><a name="paste"></a>CRichEditCtrl::Paste  
+##  <a name="paste"></a>CRichEditCtrl::Paste  
  クリップボードからデータを挿入、`CRichEditCtrl`カーソルの位置、カレットの位置にします。  
   
 ```  
@@ -1127,7 +1201,7 @@ void Paste();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&22;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_22.cpp)]  
   
-##  <a name="a-namepastespeciala--cricheditctrlpastespecial"></a><a name="pastespecial"></a>CRichEditCtrl::PasteSpecial  
+##  <a name="pastespecial"></a>CRichEditCtrl::PasteSpecial  
  これに特定のクリップボード形式でデータを貼り付けます`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1155,7 +1229,7 @@ void PasteSpecial(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl 第&23;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_23.cpp)]  
   
-##  <a name="a-nameposfromchara--cricheditctrlposfromchar"></a><a name="posfromchar"></a>CRichEditCtrl::PosFromChar  
+##  <a name="posfromchar"></a>CRichEditCtrl::PosFromChar  
  エディット コントロールで指定した文字のクライアント領域の座標を取得します。  
   
 ```  
@@ -1172,7 +1246,7 @@ CPoint PosFromChar(UINT nChar) const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameredoa--cricheditctrlredo"></a><a name="redo"></a>CRichEditCtrl::Redo  
+##  <a name="redo"></a>CRichEditCtrl::Redo  
  コントロールの再実行キューでは、次の操作をやり直します。  
   
 ```  
@@ -1185,7 +1259,7 @@ BOOL Redo();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [EM_REDO](http://msdn.microsoft.com/library/windows/desktop/bb774218)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namereplacesela--cricheditctrlreplacesel"></a><a name="replacesel"></a>CRichEditCtrl::ReplaceSel  
+##  <a name="replacesel"></a>CRichEditCtrl::ReplaceSel  
  この現在の選択項目を置き換えます`CRichEditCtrl`テキストが指定されたオブジェクト。  
   
 ```  
@@ -1213,7 +1287,7 @@ void ReplaceSel(
 ### <a name="example"></a>例  
   例を参照してください[LineIndex](#lineindex)します。  
   
-##  <a name="a-namerequestresizea--cricheditctrlrequestresize"></a><a name="requestresize"></a>CRichEditCtrl::RequestResize  
+##  <a name="requestresize"></a>CRichEditCtrl::RequestResize  
  これにより`CRichEditCtrl`を送信するオブジェクト**EN_REQUESTRESIZE**通知メッセージを親ウィンドウです。  
   
 ```  
@@ -1225,7 +1299,7 @@ void RequestResize();
   
  詳細については、次を参照してください。、 [EM_REQUESTRESIZE](http://msdn.microsoft.com/library/windows/desktop/bb774220)メッセージおよび**ボトムレス リッチ エディット コントロール**の[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetautourldetecta--cricheditctrlsetautourldetect"></a><a name="setautourldetect"></a>CRichEditCtrl::SetAutoURLDetect  
+##  <a name="setautourldetect"></a>CRichEditCtrl::SetAutoURLDetect  
  URL を自動的に検出するリッチ エディット コントロールを設定します。  
   
 ```  
@@ -1245,7 +1319,7 @@ BOOL SetAutoURLDetect(BOOL bEnable = TRUE);
 > [!NOTE]
 >  設定しない`SetAutoURLDetect`に**TRUE**エディット コントロールで使用する場合、 **CFE_LINK** Url 以外のテキストの効果です。 `SetAutoURLDetect`Url に対してこの効果を有効にし、その他のすべてのテキストを上書きします。 参照してください[EN_LINK](http://msdn.microsoft.com/library/windows/desktop/bb787970)の詳細については、 **CFE_LINK**影響します。  
   
-##  <a name="a-namesetbackgroundcolora--cricheditctrlsetbackgroundcolor"></a><a name="setbackgroundcolor"></a>CRichEditCtrl::SetBackgroundColor  
+##  <a name="setbackgroundcolor"></a>CRichEditCtrl::SetBackgroundColor  
  この背景色を設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1272,7 +1346,7 @@ COLORREF SetBackgroundColor(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&24;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_24.cpp)]  
   
-##  <a name="a-namesetdefaultcharformata--cricheditctrlsetdefaultcharformat"></a><a name="setdefaultcharformat"></a>CRichEditCtrl::SetDefaultCharFormat  
+##  <a name="setdefaultcharformat"></a>CRichEditCtrl::SetDefaultCharFormat  
  これで新しいテキストの属性を書式設定文字`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1297,7 +1371,7 @@ BOOL SetDefaultCharFormat(CHARFORMAT2& cf);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#25;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_25.cpp)]  
   
-##  <a name="a-nameseteventmaska--cricheditctrlseteventmask"></a><a name="seteventmask"></a>CRichEditCtrl::SetEventMask  
+##  <a name="seteventmask"></a>CRichEditCtrl::SetEventMask  
  このイベント マスクを設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1319,7 +1393,7 @@ DWORD SetEventMask(DWORD dwEventMask);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&26;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_26.cpp)]  
   
-##  <a name="a-namesetmodifya--cricheditctrlsetmodify"></a><a name="setmodify"></a>CRichEditCtrl::SetModify  
+##  <a name="setmodify"></a>CRichEditCtrl::SetModify  
  設定または編集コントロールの変更フラグをクリアします。  
   
 ```  
@@ -1338,7 +1412,7 @@ void SetModify(BOOL bModified = TRUE);
 ### <a name="example"></a>例  
   例を参照してください[この](#getmodify)します。  
   
-##  <a name="a-namesetolecallbacka--cricheditctrlsetolecallback"></a><a name="setolecallback"></a>CRichEditCtrl::SetOLECallback  
+##  <a name="setolecallback"></a>CRichEditCtrl::SetOLECallback  
  これは、`CRichEditCtrl`オブジェクト、 **IRichEditOleCallback** OLE に関連するリソースと情報にアクセスに使用するオブジェクト。  
   
 ```  
@@ -1357,7 +1431,7 @@ BOOL SetOLECallback(IRichEditOleCallback* pCallback);
   
  詳細については、次を参照してください。 [EM_SETOLECALLBACK](http://msdn.microsoft.com/library/windows/desktop/bb774252)メッセージと[IRichEditOleCallback](http://msdn.microsoft.com/library/windows/desktop/bb774308)インターフェイスで、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetoptionsa--cricheditctrlsetoptions"></a><a name="setoptions"></a>CRichEditCtrl::SetOptions  
+##  <a name="setoptions"></a>CRichEditCtrl::SetOptions  
  このオプションを設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1405,7 +1479,7 @@ void SetOptions(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&27;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_27.cpp)]  
   
-##  <a name="a-namesetparaformata--cricheditctrlsetparaformat"></a><a name="setparaformat"></a>CRichEditCtrl::SetParaFormat  
+##  <a name="setparaformat"></a>CRichEditCtrl::SetParaFormat  
  段落の現在の選択の属性を設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1430,7 +1504,7 @@ BOOL SetParaFormat(PARAFORMAT2& pf);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&28;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_28.cpp)]  
   
-##  <a name="a-namesetpunctuationa--cricheditctrlsetpunctuation"></a><a name="setpunctuation"></a>CRichEditCtrl::SetPunctuation  
+##  <a name="setpunctuation"></a>CRichEditCtrl::SetPunctuation  
  リッチ エディット コントロールに区切り記号を設定します。  
   
 ```  
@@ -1452,7 +1526,7 @@ BOOL SetPunctuation(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、オペレーティング システムのアジア言語バージョンでだけ使用できます。  
   
-##  <a name="a-namesetreadonlya--cricheditctrlsetreadonly"></a><a name="setreadonly"></a>CRichEditCtrl::SetReadOnly  
+##  <a name="setreadonly"></a>CRichEditCtrl::SetReadOnly  
  変更、`ECO_READONLY`適しています。 この`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1474,7 +1548,7 @@ BOOL SetReadOnly(BOOL bReadOnly = TRUE);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&29;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_29.cpp)]  
   
-##  <a name="a-namesetrecta--cricheditctrlsetrect"></a><a name="setrect"></a>CRichEditCtrl::SetRect  
+##  <a name="setrect"></a>CRichEditCtrl::SetRect  
  この書式指定の四角形を設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1493,7 +1567,7 @@ void SetRect(LPCRECT lpRect);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&30;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_30.cpp)]  
   
-##  <a name="a-namesetsela--cricheditctrlsetsel"></a><a name="setsel"></a>CRichEditCtrl::SetSel  
+##  <a name="setsel"></a>CRichEditCtrl::SetSel  
  この選択内容が設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1530,7 +1604,7 @@ void SetSel(CHARRANGE& cr);
 ### <a name="example"></a>例  
   例を参照してください[GetSel](#getsel)します。  
   
-##  <a name="a-namesetselectioncharformata--cricheditctrlsetselectioncharformat"></a><a name="setselectioncharformat"></a>CRichEditCtrl::SetSelectionCharFormat  
+##  <a name="setselectioncharformat"></a>CRichEditCtrl::SetSelectionCharFormat  
  この現在の選択範囲内のテキストの属性を書式設定文字`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1555,7 +1629,7 @@ BOOL SetSelectionCharFormat(CHARFORMAT2& cf);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&31;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_31.cpp)]  
   
-##  <a name="a-namesettargetdevicea--cricheditctrlsettargetdevice"></a><a name="settargetdevice"></a>CRichEditCtrl::SetTargetDevice  
+##  <a name="settargetdevice"></a>CRichEditCtrl::SetTargetDevice  
  WYSIWYG の使用対象デバイスと線の幅を設定 (表示されるは取得する) で書式設定`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1590,7 +1664,7 @@ BOOL SetTargetDevice(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl&#32;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_32.cpp)]  
   
-##  <a name="a-namesettextmodea--cricheditctrlsettextmode"></a><a name="settextmode"></a>CRichEditCtrl::SetTextMode  
+##  <a name="settextmode"></a>CRichEditCtrl::SetTextMode  
  リッチ エディット コントロールのテキスト モードまたは元に戻す/やり直しのレベルを設定します。  
   
 ```  
@@ -1609,7 +1683,7 @@ BOOL SetTextMode(UINT fMode);
   
  このメンバー関数は、コントロールにテキストが含まれている場合に失敗します。 コントロールが空であることを確認するには、送信、[によって](http://msdn.microsoft.com/library/windows/desktop/ms632644)に空の文字列メッセージ。  
   
-##  <a name="a-namesetundolimita--cricheditctrlsetundolimit"></a><a name="setundolimit"></a>CRichEditCtrl::SetUndoLimit  
+##  <a name="setundolimit"></a>CRichEditCtrl::SetUndoLimit  
  元に戻すキューに格納できる操作の最大数を設定します。  
   
 ```  
@@ -1626,7 +1700,7 @@ UINT SetUndoLimit(UINT nLimit);
 ### <a name="remarks"></a>コメント  
  既定では、元に戻すキュー内のアクションの最大数は 100 です。 この数を増やす場合は、使用可能なメモリ不足のため、新しい番号に対応する必要があります。 パフォーマンス向上のためには、最小有効値に制限を設定します。  
   
-##  <a name="a-namesetwordcharformata--cricheditctrlsetwordcharformat"></a><a name="setwordcharformat"></a>CRichEditCtrl::SetWordCharFormat  
+##  <a name="setwordcharformat"></a>CRichEditCtrl::SetWordCharFormat  
  これで、現在選択されている単語に対して属性を書式設定文字`CRichEditCtrl`オブジェクトです。  
   
 ```  
@@ -1651,7 +1725,7 @@ BOOL SetWordCharFormat(CHARFORMAT2& cf);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CRichEditCtrl #&33;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_33.cpp)]  
   
-##  <a name="a-namesetwordwrapmodea--cricheditctrlsetwordwrapmode"></a><a name="setwordwrapmode"></a>CRichEditCtrl::SetWordWrapMode  
+##  <a name="setwordwrapmode"></a>CRichEditCtrl::SetWordWrapMode  
  ワード ラップや単語区切り、豊富なオプションを設定では、コントロールを編集します。  
   
 ```  
@@ -1668,7 +1742,7 @@ UINT SetWordWrapMode(UINT uFlags) const;
 ### <a name="remarks"></a>コメント  
  このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。  
   
-##  <a name="a-namestopgrouptypinga--cricheditctrlstopgrouptyping"></a><a name="stopgrouptyping"></a>CRichEditCtrl::StopGroupTyping  
+##  <a name="stopgrouptyping"></a>CRichEditCtrl::StopGroupTyping  
  収集からに元に戻す操作の現在のアクションを入力するその他のコントロールを停止します。  
   
 ```  
@@ -1680,7 +1754,7 @@ void StopGroupTyping();
   
  詳細については、次を参照してください。 [EM_STOPGROUPTYPING](http://msdn.microsoft.com/library/windows/desktop/bb774300)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namestreamina--cricheditctrlstreamin"></a><a name="streamin"></a>CRichEditCtrl::StreamIn  
+##  <a name="streamin"></a>CRichEditCtrl::StreamIn  
  このテキストを置換`CRichEditCtrl`指定した入力ストリームからテキストを持つオブジェクト。  
   
 ```  
@@ -1717,7 +1791,7 @@ long StreamIn(
   
  [!code-cpp[NVC_MFC_CRichEditCtrl&#35;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_35.cpp)]  
   
-##  <a name="a-namestreamouta--cricheditctrlstreamout"></a><a name="streamout"></a>CRichEditCtrl::StreamOut  
+##  <a name="streamout"></a>CRichEditCtrl::StreamOut  
  このコンテンツを書き出しますが`CRichEditCtrl`を指定した出力ストリーム オブジェクト。  
   
 ```  
@@ -1758,7 +1832,7 @@ long StreamOut(
   
  [!code-cpp[NVC_MFC_CRichEditCtrl #&37;](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_37.cpp)]  
   
-##  <a name="a-nameundoa--cricheditctrlundo"></a><a name="undo"></a>CRichEditCtrl::Undo  
+##  <a name="undo"></a>CRichEditCtrl::Undo  
  リッチ エディット コントロールの最後の操作を元に戻します。  
   
 ```  

@@ -9,8 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- CAxWindowT
 - CAxWindow
+- ATLWIN/ATL::CAxWindow
+- ATLWIN/ATL::AttachControl
+- ATLWIN/ATL::CAxWindow
+- ATLWIN/ATL::CreateControl
+- ATLWIN/ATL::CreateControlEx
+- ATLWIN/ATL::GetWndClassName
+- ATLWIN/ATL::QueryControl
+- ATLWIN/ATL::QueryHost
+- ATLWIN/ATL::SetExternalDispatch
+- ATLWIN/ATL::SetExternalUIHandler
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +96,7 @@ class CAxWindow : public CWindow
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-nameattachcontrola--caxwindowattachcontrol"></a><a name="attachcontrol"></a>CAxWindow::AttachControl  
+##  <a name="attachcontrol"></a>CAxWindow::AttachControl  
  いずれかが既に存在しないし、ホストに指定したコントロールをアタッチする場合は、新しいホスト オブジェクトを作成します。  
   
 ```
@@ -109,7 +118,7 @@ HRESULT AttachControl(
 ### <a name="remarks"></a>コメント  
  アタッチされるコントロール オブジェクトを呼び出す前に正しく初期化する必要があります`AttachControl`します。  
   
-##  <a name="a-namecaxwindowa--caxwindowcaxwindow"></a><a name="caxwindow"></a>CAxWindow::CAxWindow  
+##  <a name="caxwindow"></a>CAxWindow::CAxWindow  
  構築、`CAxWindow`オブジェクトの既存のウィンドウ オブジェクトのハンドルを使用します。  
   
 ```
@@ -120,7 +129,7 @@ CAxWindow(HWND hWnd = NULL);
  `hWnd`  
  既存のウィンドウ オブジェクトへのハンドル。  
   
-##  <a name="a-namecreatecontrola--caxwindowcreatecontrol"></a><a name="createcontrol"></a>については  
+##  <a name="createcontrol"></a>については  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 ```
@@ -176,7 +185,7 @@ HRESULT CreateControl(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CreateControl`です。  
   
-##  <a name="a-namecreatecontrolexa--caxwindowcreatecontrolex"></a><a name="createcontrolex"></a>CAxWindow::CreateControlEx  
+##  <a name="createcontrolex"></a>CAxWindow::CreateControlEx  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 ```
@@ -243,7 +252,7 @@ HRESULT CreateControlEx(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CreateControlEx`です。  
   
-##  <a name="a-namegetwndclassnamea--caxwindowgetwndclassname"></a><a name="getwndclassname"></a>CAxWindow::GetWndClassName  
+##  <a name="getwndclassname"></a>CAxWindow::GetWndClassName  
  ウィンドウ クラスの名前を取得します。  
   
 ```
@@ -253,7 +262,7 @@ static LPCTSTR GetWndClassName();
 ### <a name="return-value"></a>戻り値  
  ない ActiveX コントロールをホストできるウィンドウ クラスの名前を含む文字列へのポインター。  
   
-##  <a name="a-nameoperatoreqa--caxwindowoperator-"></a><a name="operator_eq"></a>CAxWindow::operator =  
+##  <a name="operator_eq"></a>CAxWindow::operator =  
  代入、`HWND`既存`CAxWindow`オブジェクトです。  
   
 ```
@@ -267,7 +276,7 @@ CAxWindow<TBase>& operator=(HWND hWnd);
 ### <a name="return-value"></a>戻り値  
  現在の `CAxWindow` オブジェクトへの参照を返します。  
   
-##  <a name="a-namequerycontrola--caxwindowquerycontrol"></a><a name="querycontrol"></a>CAxWindow::QueryControl  
+##  <a name="querycontrol"></a>CAxWindow::QueryControl  
  ホストされるコントロールの指定されたインターフェイスを取得します。  
   
 ```
@@ -289,7 +298,7 @@ HRESULT QueryControl(Q** ppUnk);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namequeryhosta--caxwindowqueryhost"></a><a name="queryhost"></a>CAxWindow::QueryHost  
+##  <a name="queryhost"></a>CAxWindow::QueryHost  
  ホストの指定したインターフェイスを返します。  
   
 ```
@@ -314,7 +323,7 @@ HRESULT QueryHost(Q** ppUnk);
 ### <a name="remarks"></a>コメント  
  ホストのインターフェイスによって実装される、ホスト ウィンドウのコードの基になる機能にアクセスを許可する**AxWin**します。  
   
-##  <a name="a-namesetexternaldispatcha--caxwindowsetexternaldispatch"></a><a name="setexternaldispatch"></a>CAxWindow::SetExternalDispatch  
+##  <a name="setexternaldispatch"></a>CAxWindow::SetExternalDispatch  
  外部のディスパッチ インターフェイスを設定、`CAxWindow`オブジェクトです。  
   
 ```
@@ -328,7 +337,7 @@ HRESULT SetExternalDispatch(IDispatch* pDisp);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namesetexternaluihandlera--caxwindowsetexternaluihandler"></a><a name="setexternaluihandler"></a>CAxWindow::SetExternalUIHandler  
+##  <a name="setexternaluihandler"></a>CAxWindow::SetExternalUIHandler  
  外部の設定[IDocHostUIHandlerDispatch](../../atl/reference/idochostuihandlerdispatch-interface.md)のためのインターフェイス、`CAxWindow`オブジェクトです。  
   
 ```

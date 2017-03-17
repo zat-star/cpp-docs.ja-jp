@@ -10,6 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CInternetSession
+- AFXINET/CInternetSession
+- AFXINET/CInternetSession::CInternetSession
+- AFXINET/CInternetSession::Close
+- AFXINET/CInternetSession::EnableStatusCallback
+- AFXINET/CInternetSession::GetContext
+- AFXINET/CInternetSession::GetCookie
+- AFXINET/CInternetSession::GetCookieLength
+- AFXINET/CInternetSession::GetFtpConnection
+- AFXINET/CInternetSession::GetGopherConnection
+- AFXINET/CInternetSession::GetHttpConnection
+- AFXINET/CInternetSession::OnStatusCallback
+- AFXINET/CInternetSession::OpenURL
+- AFXINET/CInternetSession::SetCookie
+- AFXINET/CInternetSession::SetOption
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -110,7 +124,7 @@ class CInternetSession : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namecinternetsessiona--cinternetsessioncinternetsession"></a><a name="cinternetsession"></a>CInternetSession::CInternetSession  
+##  <a name="cinternetsession"></a>CInternetSession::CInternetSession  
  このメンバー関数が呼び出されます、`CInternetSession`オブジェクトを作成します。  
   
 ```  
@@ -162,7 +176,7 @@ CInternetSession(
 ### <a name="example"></a>例  
   例を参照してください[関数](../../mfc/reference/cftpfilefind-class.md)します。  
   
-##  <a name="a-nameclosea--cinternetsessionclose"></a><a name="close"></a>CInternetSession::Close  
+##  <a name="close"></a>CInternetSession::Close  
  使用して、アプリケーションが終了すると、このメンバー関数を呼び出して、`CInternetSession`オブジェクトです。  
   
 ```  
@@ -172,7 +186,7 @@ virtual void Close();
 ### <a name="example"></a>例  
   例を参照してください[関数](../../mfc/reference/cftpfilefind-class.md)します。  
   
-##  <a name="a-nameenablestatuscallbacka--cinternetsessionenablestatuscallback"></a><a name="enablestatuscallback"></a>CInternetSession::EnableStatusCallback  
+##  <a name="enablestatuscallback"></a>CInternetSession::EnableStatusCallback  
  ステータス コールバックを有効にするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -195,7 +209,7 @@ BOOL EnableStatusCallback(BOOL bEnable = TRUE);
   
  すべての操作を非同期的に処理するためには、独自のスレッドを作成するか、MFC を使わない WinInet 関数を使用する必要があります。  
   
-##  <a name="a-namegetcontexta--cinternetsessiongetcontext"></a><a name="getcontext"></a>CInternetSession::GetContext  
+##  <a name="getcontext"></a>CInternetSession::GetContext  
  このメンバー関数を呼び出して、特定のアプリケーション セッションのコンテキスト値を取得します。  
   
 ```  
@@ -210,7 +224,7 @@ DWORD_PTR GetContext() const;
   
  非同期操作の詳細については、記事を参照してください。[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)します。  
   
-##  <a name="a-namegetcookiea--cinternetsessiongetcookie"></a><a name="getcookie"></a>CInternetSession::GetCookie  
+##  <a name="getcookie"></a>CInternetSession::GetCookie  
  このメンバー関数は、Win32 関数の動作を実装して[InternetGetCookie](http://msdn.microsoft.com/library/windows/desktop/aa384710)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -250,7 +264,7 @@ static BOOL GetCookie(
 ### <a name="remarks"></a>コメント  
  2 番目のオーバー ロードでは、MFC、cookie にデータを取得、指定された`CString`オブジェクトです。  
   
-##  <a name="a-namegetcookielengtha--cinternetsessiongetcookielength"></a><a name="getcookielength"></a>CInternetSession::GetCookieLength  
+##  <a name="getcookielength"></a>CInternetSession::GetCookieLength  
  このメンバー関数を呼び出して、バッファーに格納されているクッキーの長さを取得します。  
   
 ```  
@@ -272,7 +286,7 @@ static DWORD GetCookieLength(
 ### <a name="remarks"></a>コメント  
  この値を使用して[GetCookie](#getcookie)します。  
   
-##  <a name="a-namegetftpconnectiona--cinternetsessiongetftpconnection"></a><a name="getftpconnection"></a>CInternetSession::GetFtpConnection  
+##  <a name="getftpconnection"></a>CInternetSession::GetFtpConnection  
  FTP 接続を確立しへのポインターを取得するには、このメンバー関数を呼び出して、`CFtpConnection`オブジェクトです。  
   
 ```  
@@ -316,7 +330,7 @@ CFtpConnection* GetFtpConnection(
 ### <a name="example"></a>例  
   例を参照してください[関数](../../mfc/reference/cftpfilefind-class.md)します。  
   
-##  <a name="a-namegetgopherconnectiona--cinternetsessiongetgopherconnection"></a><a name="getgopherconnection"></a>代わり  
+##  <a name="getgopherconnection"></a>代わり  
  Gopher の新しい接続を確立しへのポインターを取得するには、このメンバー関数を呼び出して、`CGopherConnection`オブジェクトです。  
   
 ```  
@@ -346,7 +360,7 @@ CGopherConnection* GetGopherConnection(
 ### <a name="remarks"></a>コメント  
  `GetGopherConnection`gopher サーバーに接続しを作成してへのポインターを返します、`CGopherConnection`オブジェクトです。 サーバー上の特定の操作は行われません。 データを読み取ったり書き込んだりする場合は、たとえば、別の手順としてこれらの操作を実行する必要があります。 クラスを参照してください[関数](../../mfc/reference/cgopherconnection-class.md)、 [CGopherFile](../../mfc/reference/cgopherfile-class.md)、および[関数](../../mfc/reference/cgopherfilefind-class.md)ファイルの検索について、ファイルを開くと読み取り/書き込みファイルにします。 FTP サイトを参照する方法については、メンバー関数を参照してください。 [OpenURL](#openurl)します。 記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)gopher 接続の一般的なタスクを実行する手順についてです。  
   
-##  <a name="a-namegethttpconnectiona--cinternetsessiongethttpconnection"></a><a name="gethttpconnection"></a>代わりに  
+##  <a name="gethttpconnection"></a>代わりに  
  HTTP 接続を確立しへのポインターを取得するには、このメンバー関数を呼び出して、`CHttpConnection`オブジェクトです。  
   
 ```  
@@ -387,7 +401,7 @@ CHttpConnection* GetHttpConnection(
 ### <a name="remarks"></a>コメント  
  `GetHttpConnection`HTTP サーバーに接続しを作成してへのポインターを返します、`CHttpConnection`オブジェクトです。 サーバー上の特定の操作は行われません。 たとえば、HTTP ヘッダーを照会する場合は、個別の手順としては、この操作を実行する必要があります。 クラスを参照してください[関数](../../mfc/reference/chttpconnection-class.md)と[CHttpFile](../../mfc/reference/chttpfile-class.md)操作については、HTTP サーバーへの接続を使用して行うことができます。 HTTP サイトを参照する方法については、メンバー関数を参照してください。 [OpenURL](#openurl)します。 記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)一般的な HTTP 接続のタスクを実行する手順についてです。  
   
-##  <a name="a-nameonstatuscallbacka--cinternetsessiononstatuscallback"></a><a name="onstatuscallback"></a>:Onstatuscallback  
+##  <a name="onstatuscallback"></a>:Onstatuscallback  
  ステータス コールバックを有効にして、操作が保留中の状態を更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -440,7 +454,7 @@ virtual void OnStatusCallback(
   
  非同期操作の詳細については、記事を参照してください。[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)します。  
   
-##  <a name="a-nameopenurla--cinternetsessionopenurl"></a><a name="openurl"></a>できます  
+##  <a name="openurl"></a>できます  
  HTTP サーバーを指定された要求を送信し、MIME 追加 RFC822 を指定するクライアントを許可するには、関数、または、要求と共に送信する HTTP ヘッダーは、このメンバーを呼び出します。  
   
 ```  
@@ -501,14 +515,14 @@ CStdioFile* OpenURL(
   
  特定の接続を使用する (つまり、プロトコル固有) 関数、ファイルへの書き込みなどする必要がありますセッションを開始し、特定の種類の接続を開くその接続を使用して、目的のモードでファイルを開きます。 参照してください`CInternetConnection`の接続に固有の関数に関する詳細情報。  
   
-##  <a name="a-nameoperatorhinterneta--cinternetsessionoperator-hinternet"></a><a name="operator_hinternet"></a>CInternetSession::operator HINTERNET  
+##  <a name="operator_hinternet"></a>CInternetSession::operator HINTERNET  
  この演算子を使用して、現在のインターネット セッションの Windows ハンドルを取得します。  
   
 ```  
 operator HINTERNET() const;  
 ```  
   
-##  <a name="a-namesetcookiea--cinternetsessionsetcookie"></a><a name="setcookie"></a>CInternetSession::SetCookie  
+##  <a name="setcookie"></a>CInternetSession::SetCookie  
  指定された URL の cookie を設定します。  
   
 ```  
@@ -534,7 +548,7 @@ static BOOL SetCookie(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[InternetSetCookie](http://msdn.microsoft.com/library/windows/desktop/aa385107)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetoptiona--cinternetsessionsetoption"></a><a name="setoption"></a>CInternetSession::SetOption  
+##  <a name="setoption"></a>CInternetSession::SetOption  
  インターネット セッションのオプションを設定するには、このメンバー関数を呼び出します。  
   
 ```  

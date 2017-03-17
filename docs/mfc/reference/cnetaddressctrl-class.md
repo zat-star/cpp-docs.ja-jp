@@ -8,6 +8,16 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: reference
+f1_keywords:
+- CNetAddressCtrl
+- AFXCMN/CNetAddressCtrl
+- AFXCMN/CNetAddressCtrl::CNetAddressCtrl
+- AFXCMN/CNetAddressCtrl::Create
+- AFXCMN/CNetAddressCtrl::CreateEx
+- AFXCMN/CNetAddressCtrl::DisplayErrorTip
+- AFXCMN/CNetAddressCtrl::GetAddress
+- AFXCMN/CNetAddressCtrl::GetAllowType
+- AFXCMN/CNetAddressCtrl::SetAllowType
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +112,7 @@ class CNetAddressCtrl : public CEdit
   
  このクラスの他の要件については、「[ビルド要件の Windows Vista コモン コントロール](../../mfc/build-requirements-for-windows-vista-common-controls.md)します。  
   
-##  <a name="a-namecnetaddressctrla--cnetaddressctrlcnetaddressctrl"></a><a name="cnetaddressctrl"></a>CNetAddressCtrl::CNetAddressCtrl  
+##  <a name="cnetaddressctrl"></a>CNetAddressCtrl::CNetAddressCtrl  
  `CNetAddressCtrl` オブジェクトを構築します。  
   
 ```  
@@ -112,7 +122,7 @@ CNetAddressCtrl();
 ### <a name="remarks"></a>コメント  
  使用して、 [CNetAddressCtrl::Create](#create)または[CNetAddressCtrl::CreateEx](#createex)コントロールを作成し、ネットワークにアタッチ メソッド、`CNetAddressCtrl`オブジェクトです。  
   
-##  <a name="a-namecreatea--cnetaddressctrlcreate"></a><a name="create"></a>CNetAddressCtrl::Create  
+##  <a name="create"></a>CNetAddressCtrl::Create  
  指定したスタイルを使用してネットワーク アドレス コントロールを作成し、現在アタッチ`CNetAddressCtrl`オブジェクトです。  
   
 ```  
@@ -135,7 +145,7 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  `true`このメソッドが成功した場合それ以外の場合、`false`です。  
   
-##  <a name="a-namecreateexa--cnetaddressctrlcreateex"></a><a name="createex"></a>CNetAddressCtrl::CreateEx  
+##  <a name="createex"></a>CNetAddressCtrl::CreateEx  
  指定された拡張スタイルを使用してネットワーク アドレス コントロールを作成し、現在アタッチ`CNetAddressCtrl`オブジェクトです。  
   
 ```  
@@ -160,7 +170,7 @@ virtual BOOL CreateEx(
 ### <a name="return-value"></a>戻り値  
  `true`このメソッドが成功した場合それ以外の場合、`false`です。  
   
-##  <a name="a-namedisplayerrortipa--cnetaddressctrldisplayerrortip"></a><a name="displayerrortip"></a>CNetAddressCtrl::DisplayErrorTip  
+##  <a name="displayerrortip"></a>CNetAddressCtrl::DisplayErrorTip  
  現在のネットワーク アドレス コントロールに関連付けられているバルーンのヒントには、エラー メッセージを表示します。  
   
 ```  
@@ -175,7 +185,7 @@ HRESULT DisplayErrorTip();
   
  このメッセージを呼び出す、 [NetAddr_DisplayErrorTip](http://msdn.microsoft.com/library/windows/desktop/bb774314)で説明されているマクロ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 そのマクロを送信、`NCM_DISPLAYERRORTIP`メッセージです。  
   
-##  <a name="a-namegetaddressa--cnetaddressctrlgetaddress"></a><a name="getaddress"></a>CNetAddressCtrl::GetAddress  
+##  <a name="getaddress"></a>CNetAddressCtrl::GetAddress  
  現在のネットワーク アドレス コントロールに関連付けられているネットワーク アドレスの検証、解析された表現を取得します。  
   
 ```  
@@ -198,7 +208,7 @@ HRESULT GetAddress(PNC_ADDRESS pAddress) const;
   
  このメソッドは、 [NetAddr_GetAddress](http://msdn.microsoft.com/library/windows/desktop/bb774316)で説明されているマクロ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 そのマクロを送信、`NCM_GETADDRESS`メッセージです。  
   
-##  <a name="a-namegetallowtypea--cnetaddressctrlgetallowtype"></a><a name="getallowtype"></a>CNetAddressCtrl::GetAllowType  
+##  <a name="getallowtype"></a>CNetAddressCtrl::GetAllowType  
  現在のネットワーク アドレス コントロールをサポートするネットワーク アドレスの種類を取得します。  
   
 ```  
@@ -211,7 +221,7 @@ DWORD GetAllowType() const;
 ### <a name="remarks"></a>コメント  
  このメッセージを呼び出す、 [NetAddr_GetAllowType](http://msdn.microsoft.com/library/windows/desktop/bb774318)で説明されているマクロ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 そのマクロを送信、`NCM_GETALLOWTYPE`メッセージです。  
   
-##  <a name="a-namesetallowtypea--cnetaddressctrlsetallowtype"></a><a name="setallowtype"></a>CNetAddressCtrl::SetAllowType  
+##  <a name="setallowtype"></a>CNetAddressCtrl::SetAllowType  
  現在のネットワーク アドレス コントロールをサポートするネットワーク アドレスの種類を設定します。  
   
 ```  

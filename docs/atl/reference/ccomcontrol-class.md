@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComControl
+- ATLCTL/ATL::CComControl
+- ATLCTL/ATL::CComControl::CComControl
+- ATLCTL/ATL::CComControl::ControlQueryInterface
+- ATLCTL/ATL::CComControl::CreateControlWindow
+- ATLCTL/ATL::CComControl::FireOnChanged
+- ATLCTL/ATL::CComControl::FireOnRequestEdit
+- ATLCTL/ATL::CComControl::MessageBox
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -101,7 +108,7 @@ class ATL_NO_VTABLE CComControl : public CComControlBase,
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-nameccomcontrola--ccomcontrolccomcontrol"></a><a name="ccomcontrol"></a>CComControl::CComControl  
+##  <a name="ccomcontrol"></a>CComControl::CComControl  
  コンストラクターです。  
   
 ```
@@ -111,7 +118,7 @@ CComControl();
 ### <a name="remarks"></a>コメント  
  呼び出し、 [CComControlBase](ccomcontrolbase-class.md#ccomcontrolbase)コンス トラクターを渡して、`m_hWnd`を通じてデータ メンバーが継承[CWindowImpl](../../atl/reference/cwindowimpl-class.md)します。  
   
-##  <a name="a-namecontrolqueryinterfacea--ccomcontrolcontrolqueryinterface"></a><a name="controlqueryinterface"></a>CComControl::ControlQueryInterface  
+##  <a name="controlqueryinterface"></a>CComControl::ControlQueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -131,7 +138,7 @@ virtual HRESULT ControlQueryInterface(const IID& iid, void** ppv);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#15;](../../atl/codesnippet/cpp/ccomcontrol-class_1.cpp)]  
   
-##  <a name="a-namecreatecontrolwindowa--ccomcontrolcreatecontrolwindow"></a><a name="createcontrolwindow"></a>CComControl::CreateControlWindow  
+##  <a name="createcontrolwindow"></a>CComControl::CreateControlWindow  
  既定では、呼び出すことによって、コントロールのウィンドウを作成`CWindowImpl::Create`します。  
   
 ```
@@ -151,7 +158,7 @@ virtual HWND CreateControlWindow(HWND hWndParent, RECT& rcPos);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#16;](../../atl/codesnippet/cpp/ccomcontrol-class_2.cpp)]  
   
-##  <a name="a-namefireonchangeda--ccomcontrolfireonchanged"></a><a name="fireonchanged"></a>CComControl::FireOnChanged  
+##  <a name="fireonchanged"></a>CComControl::FireOnChanged  
  コントロールのプロパティが変更されたコンテナーのシンクに通知します。  
   
 ```
@@ -173,7 +180,7 @@ HRESULT FireOnChanged(DISPID dispID);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&17;](../../atl/codesnippet/cpp/ccomcontrol-class_3.cpp)]  
   
-##  <a name="a-namefireonrequestedita--ccomcontrolfireonrequestedit"></a><a name="fireonrequestedit"></a>CComControl::FireOnRequestEdit  
+##  <a name="fireonrequestedit"></a>CComControl::FireOnRequestEdit  
  コントロールのプロパティが変更されようとしてがあると、オブジェクトが要求している、シンクの続行方法は、コンテナーのシンクを通知します。  
   
 ```
@@ -196,7 +203,7 @@ HRESULT FireOnRequestEdit(DISPID dispID);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&18;](../../atl/codesnippet/cpp/ccomcontrol-class_4.cpp)]  
   
-##  <a name="a-namemessageboxa--ccomcontrolmessagebox"></a><a name="messagebox"></a>CComControl::MessageBox  
+##  <a name="messagebox"></a>CComControl::MessageBox  
  作成、表示、およびメッセージ ボックスを操作するには、このメソッドを呼び出します。  
   
 ```

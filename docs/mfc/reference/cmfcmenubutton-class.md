@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCMenuButton
+- AFXMENUBUTTON/CMFCMenuButton
+- AFXMENUBUTTON/CMFCMenuButton::CMFCMenuButton
+- AFXMENUBUTTON/CMFCMenuButton::PreTranslateMessage
+- AFXMENUBUTTON/CMFCMenuButton::SizeToContent
+- AFXMENUBUTTON/CMFCMenuButton::m_bOSMenu
+- AFXMENUBUTTON/CMFCMenuButton::m_bRightArrow
+- AFXMENUBUTTON/CMFCMenuButton::m_bStayPressed
+- AFXMENUBUTTON/CMFCMenuButton::m_hMenu
+- AFXMENUBUTTON/CMFCMenuButton::m_nMenuResult
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -101,14 +110,14 @@ class CMFCMenuButton : public CMFCButton
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxmenubutton.h  
   
-##  <a name="a-namecmfcmenubuttona--cmfcmenubuttoncmfcmenubutton"></a><a name="cmfcmenubutton"></a>CMFCMenuButton::CMFCMenuButton  
+##  <a name="cmfcmenubutton"></a>CMFCMenuButton::CMFCMenuButton  
  新しい[CMFCMenuButton](../../mfc/reference/cmfcmenubutton-class.md)オブジェクトです。  
   
 ```  
 CMFCMenuButton();
 ```  
   
-##  <a name="a-namembosmenua--cmfcmenubuttonmbosmenu"></a><a name="m_bosmenu"></a>CMFCMenuButton::m_bOSMenu  
+##  <a name="m_bosmenu"></a>CMFCMenuButton::m_bOSMenu  
  ポップアップ メニューを示すブール型のメンバー変数、フレームワークが表示されます。  
   
 ```  
@@ -118,7 +127,7 @@ BOOL m_bOSMenu;
 ### <a name="remarks"></a>コメント  
  場合`m_bOSMenu`は`TRUE`、継承したフレームワークと記述`TrackPopupMenu`このオブジェクトのメソッドです。 それ以外の場合、フレームワーク[CContextMenuManager::TrackPopupMenu](../../mfc/reference/ccontextmenumanager-class.md#trackpopupmenu)します。  
   
-##  <a name="a-namembrightarrowa--cmfcmenubuttonmbrightarrow"></a><a name="m_brightarrow"></a>CMFCMenuButton::m_bRightArrow  
+##  <a name="m_brightarrow"></a>CMFCMenuButton::m_bRightArrow  
  ポップアップ メニューの場所を示すブール型のメンバー変数。  
   
 ```  
@@ -128,7 +137,7 @@ BOOL m_bRightArrow;
 ### <a name="remarks"></a>コメント  
  ユーザーは、メニュー ボタンを押すと、アプリケーションは、ポップアップ メニューを表示します。 フレームワークは、ボタンの下、または、ボタンの右側に、ポップアップ メニューに表示されます。 ボタンには、ポップアップ メニューが表示される場所を示す小さな矢印もあります。 場合`m_bRightArrow`は`TRUE`フレームワークは、ボタンの右側にポップアップ メニューを表示します。 それ以外の場合、ボタンの下のポップアップ メニューが表示されます。  
   
-##  <a name="a-namembstaypresseda--cmfcmenubuttonmbstaypressed"></a><a name="m_bstaypressed"></a>CMFCMenuButton::m_bStayPressed  
+##  <a name="m_bstaypressed"></a>CMFCMenuButton::m_bStayPressed  
  メニュー ボタンが表示されるかどうかを示すブール型のメンバー変数を押した、ユーザーは、ポップアップ メニューから選択します。  
   
 ```  
@@ -140,7 +149,7 @@ BOOL m_bStayPressed;
   
  場合、`m_bStayPressed`メンバーは`TRUE`ユーザーがボタンをクリックしたときに、メニュー ボタンが押されるになります。 ユーザーがいずれか、選択を行ったか、取り消すことによって、ポップアップ メニューを閉じた後まで押されたままです。  
   
-##  <a name="a-namemhmenua--cmfcmenubuttonmhmenu"></a><a name="m_hmenu"></a>CMFCMenuButton::m_hMenu  
+##  <a name="m_hmenu"></a>CMFCMenuButton::m_hMenu  
  関連付けられたメニューへのハンドル。  
   
 ```  
@@ -150,7 +159,7 @@ HMENU m_hMenu;
 ### <a name="remarks"></a>コメント  
  フレームワークには、ユーザーがメニュー ボタンをクリックすると、このメンバー変数で示されたメニューが表示されます。  
   
-##  <a name="a-namemnmenuresulta--cmfcmenubuttonmnmenuresult"></a><a name="m_nmenuresult"></a>CMFCMenuButton::m_nMenuResult  
+##  <a name="m_nmenuresult"></a>CMFCMenuButton::m_nMenuResult  
  どの項目を示す整数をユーザーは、ポップアップ メニューから選択します。  
   
 ```  
@@ -160,7 +169,7 @@ int m_nMenuResult;
 ### <a name="remarks"></a>コメント  
  ユーザーが選択を行わず、メニューをキャンセルするか、エラーが発生した場合、このメンバー変数の値は&0; です。  
   
-##  <a name="a-namepretranslatemessagea--cmfcmenubuttonpretranslatemessage"></a><a name="pretranslatemessage"></a>CMFCMenuButton::PreTranslateMessage  
+##  <a name="pretranslatemessage"></a>CMFCMenuButton::PreTranslateMessage  
  ディスパッチされる前に、ウィンドウ メッセージを変換するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -176,7 +185,7 @@ virtual BOOL PreTranslateMessage(MSG* pMsg);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesizetocontenta--cmfcmenubuttonsizetocontent"></a><a name="sizetocontent"></a>CMFCMenuButton::SizeToContent  
+##  <a name="sizetocontent"></a>CMFCMenuButton::SizeToContent  
  そのテキストのサイズとイメージのサイズに応じてボタンのサイズを変更します。  
   
 ```  

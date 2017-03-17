@@ -10,6 +10,40 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDaoTableDef
+- AFXDAO/CDaoTableDef
+- AFXDAO/CDaoTableDef::CDaoTableDef
+- AFXDAO/CDaoTableDef::Append
+- AFXDAO/CDaoTableDef::CanUpdate
+- AFXDAO/CDaoTableDef::Close
+- AFXDAO/CDaoTableDef::Create
+- AFXDAO/CDaoTableDef::CreateField
+- AFXDAO/CDaoTableDef::CreateIndex
+- AFXDAO/CDaoTableDef::DeleteField
+- AFXDAO/CDaoTableDef::DeleteIndex
+- AFXDAO/CDaoTableDef::GetAttributes
+- AFXDAO/CDaoTableDef::GetConnect
+- AFXDAO/CDaoTableDef::GetDateCreated
+- AFXDAO/CDaoTableDef::GetDateLastUpdated
+- AFXDAO/CDaoTableDef::GetFieldCount
+- AFXDAO/CDaoTableDef::GetFieldInfo
+- AFXDAO/CDaoTableDef::GetIndexCount
+- AFXDAO/CDaoTableDef::GetIndexInfo
+- AFXDAO/CDaoTableDef::GetName
+- AFXDAO/CDaoTableDef::GetRecordCount
+- AFXDAO/CDaoTableDef::GetSourceTableName
+- AFXDAO/CDaoTableDef::GetValidationRule
+- AFXDAO/CDaoTableDef::GetValidationText
+- AFXDAO/CDaoTableDef::IsOpen
+- AFXDAO/CDaoTableDef::Open
+- AFXDAO/CDaoTableDef::RefreshLink
+- AFXDAO/CDaoTableDef::SetAttributes
+- AFXDAO/CDaoTableDef::SetConnect
+- AFXDAO/CDaoTableDef::SetName
+- AFXDAO/CDaoTableDef::SetSourceTableName
+- AFXDAO/CDaoTableDef::SetValidationRule
+- AFXDAO/CDaoTableDef::SetValidationText
+- AFXDAO/CDaoTableDef::m_pDAOTableDef
+- AFXDAO/CDaoTableDef::m_pDatabase
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -149,7 +183,7 @@ class CDaoTableDef : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
   
-##  <a name="a-nameappenda--cdaotabledefappend"></a><a name="append"></a>CDaoTableDef::Append  
+##  <a name="append"></a>CDaoTableDef::Append  
  呼び出した後に、このメンバー関数を呼び出して[作成](#create)データベースにテーブル定義を保存する新しいテーブル定義オブジェクトを作成します。  
   
 ```  
@@ -164,7 +198,7 @@ virtual void Append();
   
  関連情報については、DAO ヘルプの「メソッドの追加」を参照してください。  
   
-##  <a name="a-namecanupdatea--cdaotabledefcanupdate"></a><a name="canupdate"></a>CDaoTableDef::CanUpdate  
+##  <a name="canupdate"></a>CDaoTableDef::CanUpdate  
  判断するには、このメンバー関数を呼び出すかどうか基になるテーブルの定義、`CDaoTableDef`オブジェクトを変更できます。  
   
 ```  
@@ -179,7 +213,7 @@ BOOL CanUpdate();
   
  関連情報については、DAO ヘルプの「更新可能なプロパティ」を参照してください。  
   
-##  <a name="a-namecdaotabledefa--cdaotabledefcdaotabledef"></a><a name="cdaotabledef"></a>CDaoTableDef::CDaoTableDef  
+##  <a name="cdaotabledef"></a>CDaoTableDef::CDaoTableDef  
  構築、**どちら**オブジェクトです。  
   
 ```  
@@ -193,7 +227,7 @@ CDaoTableDef(CDaoDatabase* pDatabase);
 ### <a name="remarks"></a>コメント  
  オブジェクトを構築後に呼び出す必要があります、[作成](#create)または[開く](#open)メンバー関数。 オブジェクトを終了するときに呼び出す必要があります、[閉じる](#close)メンバー関数し、破棄、`CDaoTableDef`オブジェクトです。  
   
-##  <a name="a-nameclosea--cdaotabledefclose"></a><a name="close"></a>CDaoTableDef::Close  
+##  <a name="close"></a>CDaoTableDef::Close  
  このメンバー関数を呼び出してを閉じるし、テーブル定義のオブジェクトを解放します。  
   
 ```  
@@ -207,7 +241,7 @@ virtual void Close();
   
  関連情報については、DAO ヘルプの「閉じるメソッド」を参照してください。  
   
-##  <a name="a-namecreatea--cdaotabledefcreate"></a><a name="create"></a>CDaoTableDef::Create  
+##  <a name="create"></a>CDaoTableDef::Create  
  このメンバー関数を呼び出して新しい保存されているテーブルを作成します。  
   
 ```  
@@ -243,7 +277,7 @@ virtual void Create(
   
  関連情報については、DAO ヘルプの「CreateTableDef メソッド」を参照してください。  
   
-##  <a name="a-namecreatefielda--cdaotabledefcreatefield"></a><a name="createfield"></a>CDaoTableDef::CreateField  
+##  <a name="createfield"></a>CDaoTableDef::CreateField  
  テーブルにフィールドを追加するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -313,7 +347,7 @@ void CreateField(CDaoFieldInfo& fieldinfo);
   
  関連情報については、DAO ヘルプの「CreateField メソッド」を参照してください。  
   
-##  <a name="a-namecreateindexa--cdaotabledefcreateindex"></a><a name="createindex"></a>CDaoTableDef::CreateIndex  
+##  <a name="createindex"></a>CDaoTableDef::CreateIndex  
  テーブルにインデックスを追加するには、この関数を呼び出します。  
   
 ```  
@@ -339,7 +373,7 @@ void CreateIndex(CDaoIndexInfo& indexinfo);
   
  残りのメンバーは無視される場合に設定されます**FALSE**します。 さらに、 **m_lDistinctCount**メンバーは、インデックスの作成時に無視されます。  
   
-##  <a name="a-namedeletefielda--cdaotabledefdeletefield"></a><a name="deletefield"></a>CDaoTableDef::DeleteField  
+##  <a name="deletefield"></a>CDaoTableDef::DeleteField  
  フィールドを削除し、アクセスできないようにするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -359,7 +393,7 @@ void DeleteField(int nIndex);
   
  関連情報については、DAO ヘルプの「メソッドの削除」を参照してください。  
   
-##  <a name="a-namedeleteindexa--cdaotabledefdeleteindex"></a><a name="deleteindex"></a>CDaoTableDef::DeleteIndex  
+##  <a name="deleteindex"></a>CDaoTableDef::DeleteIndex  
  基になるテーブルのインデックスを削除するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -379,7 +413,7 @@ void DeleteIndex(int nIndex);
   
  関連情報については、DAO ヘルプの「メソッドの削除」を参照してください。  
   
-##  <a name="a-namegetattributesa--cdaotabledefgetattributes"></a><a name="getattributes"></a>CDaoTableDef::GetAttributes  
+##  <a name="getattributes"></a>CDaoTableDef::GetAttributes  
  `CDaoTableDef`オブジェクト、戻り値の指定によって表されるテーブルの特性、`CDaoTableDef`オブジェクトし、これらの定数を加えた値を指定できます。  
   
 ```  
@@ -406,7 +440,7 @@ long GetAttributes();
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetconnecta--cdaotabledefgetconnect"></a><a name="getconnect"></a>CDaoTableDef::GetConnect  
+##  <a name="getconnect"></a>CDaoTableDef::GetConnect  
  データ ソースの接続文字列を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -429,7 +463,7 @@ CString GetConnect();
   
  関連情報については、DAO のヘルプ「プロパティの接続」を参照してください。  
   
-##  <a name="a-namegetdatecreateda--cdaotabledefgetdatecreated"></a><a name="getdatecreated"></a>CDaoTableDef::GetDateCreated  
+##  <a name="getdatecreated"></a>CDaoTableDef::GetDateCreated  
  テーブルの基になる日付と時刻を判断するには、この関数を呼び出して、`CDaoTableDef`オブジェクトが作成されました。  
   
 ```  
@@ -444,7 +478,7 @@ COleDateTime GetDateCreated();
   
  関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
   
-##  <a name="a-namegetdatelastupdateda--cdaotabledefgetdatelastupdated"></a><a name="getdatelastupdated"></a>CDaoTableDef::GetDateLastUpdated  
+##  <a name="getdatelastupdated"></a>CDaoTableDef::GetDateLastUpdated  
  テーブルの基になる日付と時刻を判断するには、この関数を呼び出して、**どちら**オブジェクトが最後に更新します。  
   
 ```  
@@ -459,7 +493,7 @@ COleDateTime GetDateLastUpdated();
   
  関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
   
-##  <a name="a-namegetfieldcounta--cdaotabledefgetfieldcount"></a><a name="getfieldcount"></a>CDaoTableDef::GetFieldCount  
+##  <a name="getfieldcount"></a>CDaoTableDef::GetFieldCount  
  テーブルで定義されたフィールドの数を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -474,7 +508,7 @@ short GetFieldCount();
   
  関連情報については、DAO ヘルプの「Count プロパティ」を参照してください。  
   
-##  <a name="a-namegetfieldinfoa--cdaotabledefgetfieldinfo"></a><a name="getfieldinfo"></a>CDaoTableDef::GetFieldInfo  
+##  <a name="getfieldinfo"></a>CDaoTableDef::GetFieldInfo  
  各種のテーブル定義で定義されたフィールドに関する情報を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -516,7 +550,7 @@ void GetFieldInfo(
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetindexcounta--cdaotabledefgetindexcount"></a><a name="getindexcount"></a>CDaoTableDef::GetIndexCount  
+##  <a name="getindexcount"></a>CDaoTableDef::GetIndexCount  
  このメンバー関数を呼び出して、テーブルのインデックスの数を取得します。  
   
 ```  
@@ -531,7 +565,7 @@ short GetIndexCount();
   
  関連情報については、DAO ヘルプの「Count プロパティ」を参照してください。  
   
-##  <a name="a-namegetindexinfoa--cdaotabledefgetindexinfo"></a><a name="getindexinfo"></a>CDaoTableDef::GetIndexInfo  
+##  <a name="getindexinfo"></a>CDaoTableDef::GetIndexInfo  
  各種のテーブル定義で定義されているインデックスに関する情報を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -573,7 +607,7 @@ void GetIndexInfo(
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetnamea--cdaotabledefgetname"></a><a name="getname"></a>CDaoTableDef::GetName  
+##  <a name="getname"></a>CDaoTableDef::GetName  
  基になるテーブルのユーザー定義名を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -588,7 +622,7 @@ CString GetName();
   
  関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
   
-##  <a name="a-namegetrecordcounta--cdaotabledefgetrecordcount"></a><a name="getrecordcount"></a>CDaoTableDef::GetRecordCount  
+##  <a name="getrecordcount"></a>CDaoTableDef::GetRecordCount  
  レコードの数を調べるには、このメンバー関数を呼び出す、`CDaoTableDef`オブジェクトです。  
   
 ```  
@@ -603,7 +637,7 @@ long GetRecordCount();
   
  関連情報については、DAO ヘルプの「RecordCount プロパティ」を参照してください。  
   
-##  <a name="a-namegetsourcetablenamea--cdaotabledefgetsourcetablename"></a><a name="getsourcetablename"></a>CDaoTableDef::GetSourceTableName  
+##  <a name="getsourcetablename"></a>CDaoTableDef::GetSourceTableName  
  ソース データベースのアタッチ テーブルの名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -618,7 +652,7 @@ CString GetSourceTableName();
   
  関連情報については、DAO ヘルプの「SourceTableName プロパティ」を参照してください。  
   
-##  <a name="a-namegetvalidationrulea--cdaotabledefgetvalidationrule"></a><a name="getvalidationrule"></a>CDaoTableDef::GetValidationRule  
+##  <a name="getvalidationrule"></a>CDaoTableDef::GetValidationRule  
  テーブル定義の検証規則を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -633,7 +667,7 @@ CString GetValidationRule();
   
  関連情報については、DAO ヘルプの「ValidationRule プロパティ」を参照してください。  
   
-##  <a name="a-namegetvalidationtexta--cdaotabledefgetvalidationtext"></a><a name="getvalidationtext"></a>CDaoTableDef::GetValidationText  
+##  <a name="getvalidationtext"></a>CDaoTableDef::GetValidationText  
  検証規則に一致しないデータが入力されたときに表示する文字列を取得するには、この関数を呼び出します。  
   
 ```  
@@ -648,7 +682,7 @@ CString GetValidationText();
   
  関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-nameisopena--cdaotabledefisopen"></a><a name="isopen"></a>CDaoTableDef::IsOpen  
+##  <a name="isopen"></a>CDaoTableDef::IsOpen  
  判断するには、このメンバー関数を呼び出すかどうか、`CDaoTableDef`オブジェクトが現在開いています。  
   
 ```  
@@ -660,18 +694,18 @@ BOOL IsOpen() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namempdatabasea--cdaotabledefmpdatabase"></a><a name="m_pdatabase"></a>CDaoTableDef::m_pDatabase  
+##  <a name="m_pdatabase"></a>CDaoTableDef::m_pDatabase  
  ポインターを含む、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)このテーブルのオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namempdaotabledefa--cdaotabledefmpdaotabledef"></a><a name="m_pdaotabledef"></a>CDaoTableDef::m_pDAOTableDef  
+##  <a name="m_pdaotabledef"></a>CDaoTableDef::m_pDAOTableDef  
  DAO tabledef オブジェクト基になるは、OLE インターフェイスへのポインターを含む、`CDaoTableDef`オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
  DAO インターフェイスに直接アクセスする必要がある場合は、このポインターを使用します。  
   
-##  <a name="a-nameopena--cdaotabledefopen"></a><a name="open"></a>CDaoTableDef::Open  
+##  <a name="open"></a>CDaoTableDef::Open  
  テーブル定義を開くには、このメンバー関数は、データベースに以前保存した呼び出しはのテーブル定義のコレクションです。  
   
 ```  
@@ -684,7 +718,7 @@ virtual void Open(LPCTSTR lpszName);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namerefreshlinka--cdaotabledefrefreshlink"></a><a name="refreshlink"></a>CDaoTableDef::RefreshLink  
+##  <a name="refreshlink"></a>CDaoTableDef::RefreshLink  
  接続されているテーブルの接続情報を更新するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -698,7 +732,7 @@ void RefreshLink();
   
  関連情報については、DAO ヘルプの「RefreshLink メソッド」を参照してください。  
   
-##  <a name="a-namesetattributesa--cdaotabledefsetattributes"></a><a name="setattributes"></a>CDaoTableDef::SetAttributes  
+##  <a name="setattributes"></a>CDaoTableDef::SetAttributes  
  1 つまたは複数の特性を示す値を設定、`CDaoTableDef`オブジェクトです。  
   
 ```  
@@ -725,7 +759,7 @@ void SetAttributes(long lAttributes);
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namesetconnecta--cdaotabledefsetconnect"></a><a name="setconnect"></a>CDaoTableDef::SetConnect  
+##  <a name="setconnect"></a>CDaoTableDef::SetConnect  
  `CDaoTableDef`接続されているテーブルの文字列オブジェクトを表すオブジェクトは、1 つまたは&2; つの部分 (データベースの型指定子およびデータベースへのパス) で構成されます。  
   
 ```  
@@ -774,7 +808,7 @@ void SetConnect(LPCTSTR lpszConnect);
   
  関連情報については、DAO のヘルプ「プロパティの接続」を参照してください。  
   
-##  <a name="a-namesetnamea--cdaotabledefsetname"></a><a name="setname"></a>CDaoTableDef::SetName  
+##  <a name="setname"></a>CDaoTableDef::SetName  
  このメンバー関数を呼び出して、テーブルのユーザー定義の名前を設定します。  
   
 ```  
@@ -790,7 +824,7 @@ void SetName(LPCTSTR lpszName);
   
  関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
   
-##  <a name="a-namesetsourcetablenamea--cdaotabledefsetsourcetablename"></a><a name="setsourcetablename"></a>CDaoTableDef::SetSourceTableName  
+##  <a name="setsourcetablename"></a>CDaoTableDef::SetSourceTableName  
  接続されているテーブルの名前またはベース テーブルの名前を指定するには、このメンバー関数を呼び出す、`CDaoTableDef`オブジェクトが基のデータの元のソース内に存在します。  
   
 ```  
@@ -806,7 +840,7 @@ void SetSourceTableName(LPCTSTR lpszSrcTableName);
   
  関連情報については、DAO ヘルプの「SourceTableName プロパティ」を参照してください。  
   
-##  <a name="a-namesetvalidationrulea--cdaotabledefsetvalidationrule"></a><a name="setvalidationrule"></a>CDaoTableDef::SetValidationRule  
+##  <a name="setvalidationrule"></a>CDaoTableDef::SetValidationRule  
  テーブル定義の検証規則を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -828,7 +862,7 @@ void SetValidationRule(LPCTSTR lpszValidationRule);
   
  関連情報については、DAO ヘルプの「ValidationRule プロパティ」を参照してください。  
   
-##  <a name="a-namesetvalidationtexta--cdaotabledefsetvalidationtext"></a><a name="setvalidationtext"></a>CDaoTableDef::SetValidationText  
+##  <a name="setvalidationtext"></a>CDaoTableDef::SetValidationText  
  検証規則の例外のテキストを設定するには、このメンバー関数を呼び出す、 `CDaoTableDef` Microsoft Jet データベース エンジンでサポートされている、基になるベース テーブルを持つオブジェクト。  
   
 ```  

@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleCmdUI
+- AFXDOCOBJ/COleCmdUI
+- AFXDOCOBJ/COleCmdUI::COleCmdUI
+- AFXDOCOBJ/COleCmdUI::Enable
+- AFXDOCOBJ/COleCmdUI::SetCheck
+- AFXDOCOBJ/COleCmdUI::SetText
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +89,7 @@ class COleCmdUI : public CCmdUI
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdocobj.h  
   
-##  <a name="a-namecolecmduia--colecmduicolecmdui"></a><a name="colecmdui"></a>COleCmdUI::COleCmdUI  
+##  <a name="colecmdui"></a>COleCmdUI::COleCmdUI  
  構築、`COleCmdUI`特定のユーザー インターフェイス コマンドに関連付けられたオブジェクト。  
   
 ```  
@@ -107,7 +112,7 @@ COleCmdUI(
 ### <a name="remarks"></a>コメント  
  `COleCmdUI`オブジェクトは、メニュー項目やコントロール バーのボタンなどの DocObject ユーザー インターフェイス オブジェクトを更新するためのプログラム インターフェイスを提供します。 ユーザー インターフェイス オブジェクトを有効になっている、無効になっている、オンになっているおよびをオフになって、`COleCmdUI`オブジェクトです。  
   
-##  <a name="a-nameenablea--colecmduienable"></a><a name="enable"></a>COleCmdUI::Enable  
+##  <a name="enable"></a>COleCmdUI::Enable  
  コマンド フラグを設定するには、この関数を呼び出す、`COleCmdUI`オブジェクトを**OLECOMDF_ENABLED**インターフェイスを指定すると、コマンドは、利用可能で、有効になっている、またはコマンドのフラグをクリアします。  
   
 ```  
@@ -118,7 +123,7 @@ virtual void Enable(BOOL bOn);
  `bOn`  
  コマンドに関連付けられているかどうかを示す、`COleCmdUI`オブジェクトを有効または無効にする必要があります。 0 以外、コマンドを使用します。0 は、コマンドを無効にします。  
   
-##  <a name="a-namesetchecka--colecmduisetcheck"></a><a name="setcheck"></a>COleCmdUI::SetCheck  
+##  <a name="setcheck"></a>COleCmdUI::SetCheck  
  この関数のオン/オフ切り替えの状態を設定するコマンドです。  
   
 ```  
@@ -135,7 +140,7 @@ virtual void SetCheck(int nCheck);
 |**2**|不確定コマンドを設定します。両方の内外で関連する選択項目の状態、コマンドの属性がであるために、状態を特定できません。|  
 |その他の値|コマンドをオフに設定します。|  
   
-##  <a name="a-namesettexta--colecmduisettext"></a><a name="settext"></a>COleCmdUI::SetText  
+##  <a name="settext"></a>COleCmdUI::SetText  
  この関数では、コマンドのテキストの名前または状態文字列を取得します。  
   
 ```  

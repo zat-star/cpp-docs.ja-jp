@@ -9,11 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComTearOffObject<Base>
-- ATL::CComTearOffObject
-- ATL.CComTearOffObject
-- ATL.CComTearOffObject<Base>
 - CComTearOffObject
+- ATLCOM/ATL::CComTearOffObject
+- ATLCOM/ATL::CComTearOffObject::CComTearOffObject
+- ATLCOM/ATL::CComTearOffObject::AddRef
+- ATLCOM/ATL::CComTearOffObject::QueryInterface
+- ATLCOM/ATL::CComTearOffObject::Release
+- ATLCOM/ATL::CComTearOffObjectBase
+- ATLCOM/ATL::m_pOwner
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -109,7 +112,7 @@ class CComTearOffObject : public Base
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameaddrefa--ccomtearoffobjectaddref"></a><a name="addref"></a>CComTearOffObject::AddRef  
+##  <a name="addref"></a>CComTearOffObject::AddRef  
  参照カウントをインクリメント、`CComTearOffObject`を&1; つのオブジェクト。  
   
 ```
@@ -119,7 +122,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="return-value"></a>戻り値  
  診断に役立ちますしテスト可能性のある値。  
   
-##  <a name="a-nameccomtearoffobjecta--ccomtearoffobjectccomtearoffobject"></a><a name="ccomtearoffobject"></a>CComTearOffObject::CComTearOffObject  
+##  <a name="ccomtearoffobject"></a>CComTearOffObject::CComTearOffObject  
  コンストラクターです。  
   
 ```
@@ -133,7 +136,7 @@ CComTearOffObject(void* pv);
 ### <a name="remarks"></a>コメント  
  いずれかで所有者の参照カウントをインクリメントします。  
   
-##  <a name="a-namedtora--ccomtearoffobjectccomtearoffobject"></a><a name="dtor"></a>CComTearOffObject:: ~ CComTearOffObject  
+##  <a name="dtor"></a>CComTearOffObject:: ~ CComTearOffObject  
  デストラクターです。  
   
 ```
@@ -143,7 +146,7 @@ CComTearOffObject(void* pv);
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放、モジュールをデクリメントし、FinalRelease を呼び出してロック カウントします。  
   
-##  <a name="a-nameccomtearoffobjectbasea--ccomtearoffobjectccomtearoffobjectbase"></a><a name="ccomtearoffobjectbase"></a>CComTearOffObject::CComTearOffObjectBase  
+##  <a name="ccomtearoffobjectbase"></a>CComTearOffObject::CComTearOffObjectBase  
  コンストラクターです。  
   
 ```
@@ -153,7 +156,7 @@ CComTearOffObjectBase();
 ### <a name="remarks"></a>コメント  
  初期化、 [m_pOwner](#m_powner)メンバー **NULL**します。  
   
-##  <a name="a-namempownera--ccomtearoffobjectmpowner"></a><a name="m_powner"></a>CComTearOffObject::m_pOwner  
+##  <a name="m_powner"></a>CComTearOffObject::m_pOwner  
  ポインター、[と](../../atl/reference/ccomobject-class.md)から派生したオブジェクト*所有者*します。  
   
 ```
@@ -167,7 +170,7 @@ CComObject<Owner>* m_pOwner;
 ### <a name="remarks"></a>コメント  
  ポインターを初期化**NULL**の構築時にします。  
   
-##  <a name="a-namequeryinterfacea--ccomtearoffobjectqueryinterface"></a><a name="queryinterface"></a>CComTearOffObject::QueryInterface  
+##  <a name="queryinterface"></a>CComTearOffObject::QueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -187,7 +190,7 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
 ### <a name="remarks"></a>コメント  
  まず、ティアオフ クラス上のインターフェイスを照会します。 インターフェイスがない場合、所有者オブジェクトのインターフェイスを照会します。 要求されたインターフェイスの場合**IUnknown**、返します、 **IUnknown**所有者のです。  
   
-##  <a name="a-namereleasea--ccomtearoffobjectrelease"></a><a name="release"></a>CComTearOffObject::Release  
+##  <a name="release"></a>CComTearOffObject::Release  
  参照カウントが&1; つデクリメントし、参照カウントが&0; の場合は、削除、`CComTearOffObject`です。  
   
 ```

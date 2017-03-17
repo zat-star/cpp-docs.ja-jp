@@ -9,9 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CSimpleMapEqualHelperFalse
 - CSimpleMapEqualHelperFalse
-- ATL.CSimpleMapEqualHelperFalse
+- ATLSIMPCOLL/ATL::CSimpleMapEqualHelperFalse
+- ATLSIMPCOLL/ATL::CSimpleMapEqualHelperFalse::IsEqualKey
+- ATLSIMPCOLL/ATL::CSimpleMapEqualHelperFalse::IsEqualValue
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -68,7 +69,7 @@ class CSimpleMapEqualHelperFalse
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpcoll.h  
   
-##  <a name="a-nameisequalkeya--csimplemapequalhelperfalseisequalkey"></a><a name="isequalkey"></a>CSimpleMapEqualHelperFalse::IsEqualKey  
+##  <a name="isequalkey"></a>CSimpleMapEqualHelperFalse::IsEqualKey  
  2 つのキーが等しいかどうかをテストします。  
   
 ```
@@ -88,7 +89,7 @@ static bool IsEqualKey(const TKey& k1, const TKey& k2);
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[CSimpleArrayEqualHelper](../../atl/reference/csimplearrayequalhelper-class.md)します。  
   
-##  <a name="a-nameisequalvaluea--csimplemapequalhelperfalseisequalvalue"></a><a name="isequalvalue"></a>CSimpleMapEqualHelperFalse::IsEqualValue  
+##  <a name="isequalvalue"></a>CSimpleMapEqualHelperFalse::IsEqualValue  
  false を返します。  
   
 ```

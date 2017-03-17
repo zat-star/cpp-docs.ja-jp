@@ -9,8 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CAnimationVariableChangeHandler
 - CAnimationVariableChangeHandler
+- AFXANIMATIONCONTROLLER/CAnimationVariableChangeHandler
+- AFXANIMATIONCONTROLLER/CAnimationVariableChangeHandler::OnValueChanged
+- AFXANIMATIONCONTROLLER/CAnimationVariableChangeHandler::SetAnimationController
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -79,7 +81,7 @@ class CAnimationVariableChangeHandler : public CUIAnimationVariableChangeHandler
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-nameonvaluechangeda--canimationvariablechangehandleronvaluechanged"></a><a name="onvaluechanged"></a>CAnimationVariableChangeHandler::OnValueChanged  
+##  <a name="onvaluechanged"></a>CAnimationVariableChangeHandler::OnValueChanged  
  アニメーション変数の値が変更されたときに呼び出されます。  
   
 ```  
@@ -106,7 +108,7 @@ IFACEMETHOD(OnValueChanged) (
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namesetanimationcontrollera--canimationvariablechangehandlersetanimationcontroller"></a><a name="setanimationcontroller"></a>CAnimationVariableChangeHandler::SetAnimationController  
+##  <a name="setanimationcontroller"></a>CAnimationVariableChangeHandler::SetAnimationController  
  イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。  
   
 ```  

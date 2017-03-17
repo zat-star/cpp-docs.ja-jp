@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CConnectionPoint
+- AFXDISP/CConnectionPoint
+- AFXDISP/CConnectionPoint::CConnectionPoint
+- AFXDISP/CConnectionPoint::GetConnections
+- AFXDISP/CConnectionPoint::GetContainer
+- AFXDISP/CConnectionPoint::GetIID
+- AFXDISP/CConnectionPoint::GetMaxConnections
+- AFXDISP/CConnectionPoint::GetNextConnection
+- AFXDISP/CConnectionPoint::GetStartPosition
+- AFXDISP/CConnectionPoint::OnAdvise
+- AFXDISP/CConnectionPoint::QuerySinkInterface
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -106,14 +116,14 @@ class CConnectionPoint : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
   
-##  <a name="a-namecconnectionpointa--cconnectionpointcconnectionpoint"></a><a name="cconnectionpoint"></a>CConnectionPoint::CConnectionPoint  
+##  <a name="cconnectionpoint"></a>CConnectionPoint::CConnectionPoint  
  `CConnectionPoint` オブジェクトを構築します。  
   
 ```  
 CConnectionPoint();
 ```  
   
-##  <a name="a-namegetconnectionsa--cconnectionpointgetconnections"></a><a name="getconnections"></a>は  
+##  <a name="getconnections"></a>は  
  コネクション ポイントのすべてのアクティブな接続を取得するには、この関数を呼び出します。  
   
 ```  
@@ -123,7 +133,7 @@ const CPtrArray* GetConnections();
 ### <a name="return-value"></a>戻り値  
  アクティブな接続 (シンク) の配列へのポインター。 NULL ポインター、配列内のいくつかの可能性があります。 この配列内の各 NULL ポインターは、キャスト演算子を使用して、シンク インターフェイスへのポインターに安全に変換できます。  
   
-##  <a name="a-namegetcontainera--cconnectionpointgetcontainer"></a><a name="getcontainer"></a>CConnectionPoint::GetContainer  
+##  <a name="getcontainer"></a>CConnectionPoint::GetContainer  
  取得するためにフレームワークによって呼び出される、 **IConnectionPointContainer**コネクション ポイントのです。  
   
 ```  
@@ -136,7 +146,7 @@ virtual LPCONNECTIONPOINTCONTAINER GetContainer();
 ### <a name="remarks"></a>コメント  
  この関数は、通常実装、`BEGIN_CONNECTION_PART`マクロです。  
   
-##  <a name="a-namegetiida--cconnectionpointgetiid"></a><a name="getiid"></a>CConnectionPoint::GetIID  
+##  <a name="getiid"></a>CConnectionPoint::GetIID  
  接続ポイントのインターフェイス ID を取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -149,7 +159,7 @@ virtual REFIID GetIID() = 0;
 ### <a name="remarks"></a>コメント  
  この接続ポイントのインターフェイス ID を返す関数をオーバーライドします。  
   
-##  <a name="a-namegetmaxconnectionsa--cconnectionpointgetmaxconnections"></a><a name="getmaxconnections"></a>CConnectionPoint::GetMaxConnections  
+##  <a name="getmaxconnections"></a>CConnectionPoint::GetMaxConnections  
  接続ポイントでサポートされている接続の最大数を取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -164,7 +174,7 @@ virtual int GetMaxConnections();
   
  コントロールに接続できるシンクの数を制限する場合は、この関数をオーバーライドします。  
   
-##  <a name="a-namegetnextconnectiona--cconnectionpointgetnextconnection"></a><a name="getnextconnection"></a>CConnectionPoint::GetNextConnection  
+##  <a name="getnextconnection"></a>CConnectionPoint::GetNextConnection  
  接続要素へのポインターを取得`pos`します。  
   
 ```  
@@ -184,7 +194,7 @@ LPUNKNOWN GetNextConnection(POSITION& pos) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCConnectionPoints&4;](../../mfc/codesnippet/cpp/cconnectionpoint-class_3.cpp)]  
   
-##  <a name="a-namegetstartpositiona--cconnectionpointgetstartposition"></a><a name="getstartposition"></a>CConnectionPoint::GetStartPosition  
+##  <a name="getstartposition"></a>CConnectionPoint::GetStartPosition  
  返すことによって、マップの反復処理を開始、**位置**値を渡すことができる、[順次アクセス](#getnextconnection)呼び出します。  
   
 ```  
@@ -200,7 +210,7 @@ POSITION GetStartPosition() const;
 ### <a name="example"></a>例  
   例を参照してください[CConnectionPoint::GetNextConnection](#getnextconnection)します。  
   
-##  <a name="a-nameonadvisea--cconnectionpointonadvise"></a><a name="onadvise"></a>CConnectionPoint::OnAdvise  
+##  <a name="onadvise"></a>CConnectionPoint::OnAdvise  
  確立または切断されているは、接続時にフレームワークによって呼び出されます。  
   
 ```  
@@ -216,7 +226,7 @@ virtual void OnAdvise(BOOL bAdvise);
   
  通知をシンクに接続するか、接続ポイントから切断するときに使用する場合は、この関数をオーバーライドします。  
   
-##  <a name="a-namequerysinkinterfacea--cconnectionpointquerysinkinterface"></a><a name="querysinkinterface"></a>CConnectionPoint::QuerySinkInterface  
+##  <a name="querysinkinterface"></a>CConnectionPoint::QuerySinkInterface  
  要求されたシンク インターフェイスへのポインターを取得します。  
   
 ```  

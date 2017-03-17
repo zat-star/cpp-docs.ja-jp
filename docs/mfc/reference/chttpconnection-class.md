@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CHttpConnection
+- AFXINET/CHttpConnection
+- AFXINET/CHttpConnection::CHttpConnection
+- AFXINET/CHttpConnection::OpenRequest
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -93,7 +96,7 @@ class CHttpConnection : public CInternetConnection
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namechttpconnectiona--chttpconnectionchttpconnection"></a><a name="chttpconnection"></a>CHttpConnection::CHttpConnection  
+##  <a name="chttpconnection"></a>CHttpConnection::CHttpConnection  
  このメンバー関数が作成すると呼ばれる、`CHttpConnection`オブジェクトです。  
   
 ```  
@@ -158,7 +161,7 @@ CHttpConnection(
 ### <a name="remarks"></a>コメント  
  作成しないで、`CHttpConnection`直接します。 呼び出してオブジェクトを作成する代わりに、[代わりに](../../mfc/reference/cinternetsession-class.md#gethttpconnection)します。  
   
-##  <a name="a-nameopenrequesta--chttpconnectionopenrequest"></a><a name="openrequest"></a>しないで  
+##  <a name="openrequest"></a>しないで  
  このメンバー関数を呼び出して HTTP 接続を開きます。  
   
 ```  

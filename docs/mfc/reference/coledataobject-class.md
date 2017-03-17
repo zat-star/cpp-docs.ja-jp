@@ -9,8 +9,19 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- IDataObject
 - COleDataObject
+- AFXOLE/COleDataObject
+- AFXOLE/COleDataObject::COleDataObject
+- AFXOLE/COleDataObject::Attach
+- AFXOLE/COleDataObject::AttachClipboard
+- AFXOLE/COleDataObject::BeginEnumFormats
+- AFXOLE/COleDataObject::Detach
+- AFXOLE/COleDataObject::GetData
+- AFXOLE/COleDataObject::GetFileData
+- AFXOLE/COleDataObject::GetGlobalData
+- AFXOLE/COleDataObject::GetNextFormat
+- AFXOLE/COleDataObject::IsDataAvailable
+- AFXOLE/COleDataObject::Release
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +111,7 @@ class COleDataObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-nameattacha--coledataobjectattach"></a><a name="attach"></a>COleDataObject::Attach  
+##  <a name="attach"></a>COleDataObject::Attach  
  この関数に関連付けるには、 `COleDataObject` OLE データ オブジェクトを含むオブジェクト。  
   
 ```  
@@ -119,7 +130,7 @@ void Attach(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameattachclipboarda--coledataobjectattachclipboard"></a><a name="attachclipboard"></a>COleDataObject::AttachClipboard  
+##  <a name="attachclipboard"></a>COleDataObject::AttachClipboard  
  クリップボードに置かれているデータ オブジェクトをアタッチするには、この関数を呼び出して、`COleDataObject`オブジェクトです。  
   
 ```  
@@ -134,7 +145,7 @@ BOOL AttachClipboard();
 > [!NOTE]
 >  この関数を呼び出すことでは、このデータ オブジェクトが解放されるまでに、クリップボードをロックします。 デストラクターではデータ オブジェクトの解放、`COleDataObject`です。 詳細については、次を参照してください。 [OpenClipboard](http://msdn.microsoft.com/library/windows/desktop/ms649048)と[CloseClipboard](http://msdn.microsoft.com/library/windows/desktop/ms649035)の Win32 ドキュメントです。  
   
-##  <a name="a-namebeginenumformatsa--coledataobjectbeginenumformats"></a><a name="beginenumformats"></a>COleDataObject::BeginEnumFormats  
+##  <a name="beginenumformats"></a>COleDataObject::BeginEnumFormats  
  以降の呼び出しを準備するには、この関数を呼び出す`GetNextFormat`項目からのデータ形式の一覧を取得するためです。  
   
 ```  
@@ -148,7 +159,7 @@ void BeginEnumFormats();
   
  詳細については、次を参照してください。 [IDataObject::EnumFormatEtc](http://msdn.microsoft.com/library/windows/desktop/ms683979)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecoledataobjecta--coledataobjectcoledataobject"></a><a name="coledataobject"></a>COleDataObject::COleDataObject  
+##  <a name="coledataobject"></a>COleDataObject::COleDataObject  
  `COleDataObject` オブジェクトを構築します。  
   
 ```  
@@ -161,7 +172,7 @@ COleDataObject();
 > [!NOTE]
 >  ポインターをドラッグ アンド ドロップ ハンドラーのパラメーターの&1; つは、 `COleDataObject`、ドラッグ アンド ドロップをサポートするためにこのコンス トラクターを呼び出す必要はありません。  
   
-##  <a name="a-namedetacha--coledataobjectdetach"></a><a name="detach"></a>COleDataObject::Detach  
+##  <a name="detach"></a>COleDataObject::Detach  
  デタッチするには、この関数を呼び出して、`COleDataObject`データ オブジェクトを解放せず、関連する OLE データ オブジェクトからのオブジェクト。  
   
 ```  
@@ -173,7 +184,7 @@ LPDATAOBJECT Detach();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetdataa--coledataobjectgetdata"></a><a name="getdata"></a>COleDataObject::GetData  
+##  <a name="getdata"></a>COleDataObject::GetData  
  この関数では、指定した形式で項目からデータを取得します。  
   
 ```  
@@ -201,7 +212,7 @@ BOOL GetData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetfiledataa--coledataobjectgetfiledata"></a><a name="getfiledata"></a>COleDataObject::GetFileData  
+##  <a name="getfiledata"></a>COleDataObject::GetFileData  
  作成するには、この関数を呼び出して、`CFile`または`CFile`-派生オブジェクトに指定された形式でデータを取得して、`CFile`ポインター。  
   
 ```  
@@ -230,7 +241,7 @@ CFile* GetFileData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetglobaldataa--coledataobjectgetglobaldata"></a><a name="getglobaldata"></a>COleDataObject::GetGlobalData  
+##  <a name="getglobaldata"></a>COleDataObject::GetGlobalData  
  グローバル メモリ ブロックを割り当てるとに指定された形式でデータの取得には、この関数を呼び出して、`HGLOBAL`です。  
   
 ```  
@@ -254,7 +265,7 @@ HGLOBAL GetGlobalData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetnextformata--coledataobjectgetnextformat"></a><a name="getnextformat"></a>COleDataObject::GetNextFormat  
+##  <a name="getnextformat"></a>COleDataObject::GetNextFormat  
  この関数では、繰り返しを項目からデータを取得するために使用できるすべての形式を取得します。  
   
 ```  
@@ -275,7 +286,7 @@ BOOL GetNextFormat(LPFORMATETC lpFormatEtc);
   
  詳細については、次を参照してください。 [IEnumXXXX::Next](https://msdn.microsoft.com/library/ms695273.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameisdataavailablea--coledataobjectisdataavailable"></a><a name="isdataavailable"></a>COleDataObject::IsDataAvailable  
+##  <a name="isdataavailable"></a>COleDataObject::IsDataAvailable  
  この関数では、特定の形式が OLE アイテムからデータを取得するために使用できるかを判断します。  
   
 ```  
@@ -304,7 +315,7 @@ BOOL IsDataAvailable(
 ### <a name="example"></a>例  
   例を参照してください[CRichEditView::QueryAcceptData](../../mfc/reference/cricheditview-class.md#queryacceptdata)します。  
   
-##  <a name="a-namereleasea--coledataobjectrelease"></a><a name="release"></a>COleDataObject::Release  
+##  <a name="release"></a>COleDataObject::Release  
  所有権を解放するには、この関数を呼び出して、 [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421)が以前関連付けられているオブジェクト、`COleDataObject`オブジェクトです。  
   
 ```  

@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSharedFile
+- AFXADV/CSharedFile
+- AFXADV/CSharedFile::CSharedFile
+- AFXADV/CSharedFile::Detach
+- AFXADV/CSharedFile::SetHandle
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,7 +94,7 @@ class CSharedFile : public CMemFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxadv.h  
   
-##  <a name="a-namecsharedfilea--csharedfilecsharedfile"></a><a name="csharedfile"></a>CSharedFile::CSharedFile  
+##  <a name="csharedfile"></a>CSharedFile::CSharedFile  
  構築、`CSharedFile`オブジェクトし、メモリを割り当てます。  
   
 ```  
@@ -106,7 +110,7 @@ CSharedFile(
  `nGrowBytes`  
  バイト単位でメモリ割り当てインクリメントします。  
   
-##  <a name="a-namedetacha--csharedfiledetach"></a><a name="detach"></a>CSharedFile::Detach  
+##  <a name="detach"></a>CSharedFile::Detach  
  この関数では、ファイルを閉じて、メモリ、メモリ ブロックからデタッチします。  
   
 ```  
@@ -119,7 +123,7 @@ HGLOBAL Detach();
 ### <a name="remarks"></a>コメント  
  呼び出して開くことができます[SetHandle](#sethandle)、によって返されるハンドルを使用して**デタッチ**します。  
   
-##  <a name="a-namesethandlea--csharedfilesethandle"></a><a name="sethandle"></a>CSharedFile::SetHandle  
+##  <a name="sethandle"></a>CSharedFile::SetHandle  
  グローバル メモリ ブロックをアタッチするには、この関数を呼び出す、`CSharedFile`オブジェクトです。  
   
 ```  

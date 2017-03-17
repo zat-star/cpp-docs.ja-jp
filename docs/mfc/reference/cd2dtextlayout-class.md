@@ -10,7 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DTextLayout
-- afxrendertarget/CD2DTextLayout
+- AFXRENDERTARGET/CD2DTextLayout
+- AFXRENDERTARGET/CD2DTextLayout::CD2DTextLayout
+- AFXRENDERTARGET/CD2DTextLayout::Create
+- AFXRENDERTARGET/CD2DTextLayout::Destroy
+- AFXRENDERTARGET/CD2DTextLayout::Get
+- AFXRENDERTARGET/CD2DTextLayout::GetFontFamilyName
+- AFXRENDERTARGET/CD2DTextLayout::GetLocaleName
+- AFXRENDERTARGET/CD2DTextLayout::IsValid
+- AFXRENDERTARGET/CD2DTextLayout::ReCreate
+- AFXRENDERTARGET/CD2DTextLayout::SetFontFamilyName
+- AFXRENDERTARGET/CD2DTextLayout::SetLocaleName
+- AFXRENDERTARGET/CD2DTextLayout::m_pTextLayout
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,14 +105,14 @@ class CD2DTextLayout : public CD2DResource;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namedtorcd2dtextlayouta--cd2dtextlayoutcd2dtextlayout"></a><a name="_dtorcd2dtextlayout"></a>CD2DTextLayout:: ~ CD2DTextLayout  
+##  <a name="_dtorcd2dtextlayout"></a>CD2DTextLayout:: ~ CD2DTextLayout  
  デストラクターです。 D2D テキスト レイアウト オブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CD2DTextLayout();
 ```  
   
-##  <a name="a-namecd2dtextlayouta--cd2dtextlayoutcd2dtextlayout"></a><a name="cd2dtextlayout"></a>CD2DTextLayout::CD2DTextLayout  
+##  <a name="cd2dtextlayout"></a>CD2DTextLayout::CD2DTextLayout  
  CD2DTextLayout オブジェクトを構築します。  
   
 ```  
@@ -129,7 +140,7 @@ CD2DTextLayout(
  `bAutoDestroy`  
  所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
   
-##  <a name="a-namecreatea--cd2dtextlayoutcreate"></a><a name="create"></a>CD2DTextLayout::Create  
+##  <a name="create"></a>CD2DTextLayout::Create  
  CD2DTextLayout を作成します。  
   
 ```  
@@ -139,14 +150,14 @@ virtual HRESULT Create(CRenderTarget* */);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namedestroya--cd2dtextlayoutdestroy"></a><a name="destroy"></a>CD2DTextLayout::Destroy  
+##  <a name="destroy"></a>CD2DTextLayout::Destroy  
  CD2DTextLayout オブジェクトを破棄します。  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="a-namegeta--cd2dtextlayoutget"></a><a name="get"></a>CD2DTextLayout::Get  
+##  <a name="get"></a>CD2DTextLayout::Get  
  返します。 IDWriteTextLayout インターフェイス  
   
 ```  
@@ -156,7 +167,7 @@ IDWriteTextLayout* Get();
 ### <a name="return-value"></a>戻り値  
  IDWriteTextLayout インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namegetfontfamilynamea--cd2dtextlayoutgetfontfamilyname"></a><a name="getfontfamilyname"></a>CD2DTextLayout::GetFontFamilyName  
+##  <a name="getfontfamilyname"></a>CD2DTextLayout::GetFontFamilyName  
  指定した位置にあるテキストのフォント ファミリ名をコピーします。  
   
 ```  
@@ -175,7 +186,7 @@ CString GetFontFamilyName(
 ### <a name="return-value"></a>戻り値  
  現在のフォント ファミリ名を含む CString オブジェクト。  
   
-##  <a name="a-namegetlocalenamea--cd2dtextlayoutgetlocalename"></a><a name="getlocalename"></a>CD2DTextLayout::GetLocaleName  
+##  <a name="getlocalename"></a>CD2DTextLayout::GetLocaleName  
  指定した位置にあるテキストのロケール名を取得します。  
   
 ```  
@@ -194,7 +205,7 @@ CString GetLocaleName(
 ### <a name="return-value"></a>戻り値  
  現在のロケール名を含む CString オブジェクト。  
   
-##  <a name="a-nameisvalida--cd2dtextlayoutisvalid"></a><a name="isvalid"></a>CD2DTextLayout::IsValid  
+##  <a name="isvalid"></a>CD2DTextLayout::IsValid  
  リソースの有効性のチェック  
   
 ```  
@@ -204,14 +215,14 @@ virtual BOOL IsValid() const;
 ### <a name="return-value"></a>戻り値  
  リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namemptextlayouta--cd2dtextlayoutmptextlayout"></a><a name="m_ptextlayout"></a>CD2DTextLayout::m_pTextLayout  
+##  <a name="m_ptextlayout"></a>CD2DTextLayout::m_pTextLayout  
  IDWriteTextLayout へのポインター。  
   
 ```  
 IDWriteTextLayout* m_pTextLayout;  
 ```  
   
-##  <a name="a-nameoperatoridwritetextlayoutstara--cd2dtextlayoutoperator-idwritetextlayout"></a><a name="operator_idwritetextlayout_star"></a>CD2DTextLayout::operator IDWriteTextLayout *  
+##  <a name="operator_idwritetextlayout_star"></a>CD2DTextLayout::operator IDWriteTextLayout *  
  返します。 IDWriteTextLayout インターフェイス  
   
 ```  
@@ -221,7 +232,7 @@ operator IDWriteTextLayout*();
 ### <a name="return-value"></a>戻り値  
  IDWriteTextLayout インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namerecreatea--cd2dtextlayoutrecreate"></a><a name="recreate"></a>CD2DTextLayout::ReCreate  
+##  <a name="recreate"></a>CD2DTextLayout::ReCreate  
  CD2DTextLayout を再作成されます。  
   
 ```  
@@ -231,7 +242,7 @@ virtual HRESULT ReCreate(CRenderTarget* */);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-##  <a name="a-namesetfontfamilynamea--cd2dtextlayoutsetfontfamilyname"></a><a name="setfontfamilyname"></a>CD2DTextLayout::SetFontFamilyName  
+##  <a name="setfontfamilyname"></a>CD2DTextLayout::SetFontFamilyName  
  指定したテキスト範囲内のテキストの null で終わるフォント ファミリ名を設定  
   
 ```  
@@ -250,7 +261,7 @@ BOOL SetFontFamilyName(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合は FALSE を返します  
   
-##  <a name="a-namesetlocalenamea--cd2dtextlayoutsetlocalename"></a><a name="setlocalename"></a>CD2DTextLayout::SetLocaleName  
+##  <a name="setlocalename"></a>CD2DTextLayout::SetLocaleName  
  指定したテキスト範囲内のテキストのロケール名を設定します。  
   
 ```  

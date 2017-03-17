@@ -10,6 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComboBoxEx
+- AFXCMN/CComboBoxEx
+- AFXCMN/CComboBoxEx::CComboBoxEx
+- AFXCMN/CComboBoxEx::Create
+- AFXCMN/CComboBoxEx::CreateEx
+- AFXCMN/CComboBoxEx::DeleteItem
+- AFXCMN/CComboBoxEx::GetComboBoxCtrl
+- AFXCMN/CComboBoxEx::GetEditCtrl
+- AFXCMN/CComboBoxEx::GetExtendedStyle
+- AFXCMN/CComboBoxEx::GetImageList
+- AFXCMN/CComboBoxEx::GetItem
+- AFXCMN/CComboBoxEx::HasEditChanged
+- AFXCMN/CComboBoxEx::InsertItem
+- AFXCMN/CComboBoxEx::SetExtendedStyle
+- AFXCMN/CComboBoxEx::SetImageList
+- AFXCMN/CComboBoxEx::SetItem
+- AFXCMN/CComboBoxEx::SetWindowTheme
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -118,14 +134,14 @@ class CComboBoxEx : public CComboBox
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-nameccomboboxexa--ccomboboxexccomboboxex"></a><a name="ccomboboxex"></a>CComboBoxEx::CComboBoxEx  
+##  <a name="ccomboboxex"></a>CComboBoxEx::CComboBoxEx  
  作成するには、このメンバー関数を呼び出す、`CComboBoxEx`オブジェクトです。  
   
 ```  
 CComboBoxEx();
 ```  
   
-##  <a name="a-namecreatea--ccomboboxexcreate"></a><a name="create"></a>CComboBoxEx::Create  
+##  <a name="create"></a>CComboBoxEx::Create  
  コンボ ボックスを作成し、それにアタッチ、`CComboBoxEx`オブジェクトです。  
   
 ```  
@@ -177,7 +193,7 @@ virtual BOOL Create(
   
  コントロールで拡張ウィンドウ スタイルを使用する場合は、呼び出す[CreateEx](#createex)の代わりに**作成**します。  
   
-##  <a name="a-namecreateexa--ccomboboxexcreateex"></a><a name="createex"></a>CComboBoxEx::CreateEx  
+##  <a name="createex"></a>CComboBoxEx::CreateEx  
  拡張コンボ ボックス コントロール (子ウィンドウ) を作成し、それをするには、この関数を呼び出して、`CComboBoxEx`オブジェクトです。  
   
 ```  
@@ -213,7 +229,7 @@ virtual BOOL CreateEx(
   
  `CreateEx`指定された拡張ウィンドウ スタイルを使用してコントロールが作成され`dwExStyle`します。 必要があります拡張スタイルに固有の設定拡張コンボ ボックス コントロールを使用して、[拡張](#setextendedstyle)します。 などを使用して`CreateEx`としてこのようなスタイルを設定する**WS_EX_CONTEXTHELP**を使用して、`SetExtendedStyle`としてこのようなスタイルを設定する**CBES_EX_CASESENSITIVE**します。 詳細については、トピックに記載されているスタイルを参照してください。 [ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedeleteitema--ccomboboxexdeleteitem"></a><a name="deleteitem"></a>CComboBoxEx::DeleteItem  
+##  <a name="deleteitem"></a>CComboBoxEx::DeleteItem  
  項目を削除、 **ComboBoxEx**コントロールです。  
   
 ```  
@@ -230,7 +246,7 @@ int DeleteItem(int iIndex);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、メッセージの機能を実装して[CBEM_DELETEITEM](http://msdn.microsoft.com/library/windows/desktop/bb775768)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 DeleteItem を呼び出すときに、 [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)メッセージを**CBEN_DELETEITEM**を親ウィンドウに通知が送信されます。  
   
-##  <a name="a-namegetcomboboxctrla--ccomboboxexgetcomboboxctrl"></a><a name="getcomboboxctrl"></a>CComboBoxEx::GetComboBoxCtrl  
+##  <a name="getcomboboxctrl"></a>CComboBoxEx::GetComboBoxCtrl  
  内のコンボ ボックス コントロールへのポインターを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`オブジェクトです。  
   
 ```  
@@ -245,7 +261,7 @@ CComboBox* GetComboBoxCtrl();
   
  `CComboBox`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
   
-##  <a name="a-namegeteditctrla--ccomboboxexgeteditctrl"></a><a name="geteditctrl"></a>CComboBoxEx::GetEditCtrl  
+##  <a name="geteditctrl"></a>CComboBoxEx::GetEditCtrl  
  コンボ ボックスのエディット コントロールへのポインターを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -260,7 +276,7 @@ CEdit* GetEditCtrl();
   
  `CEdit`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
   
-##  <a name="a-namegetextendedstylea--ccomboboxexgetextendedstyle"></a><a name="getextendedstyle"></a>CComboBoxEx::GetExtendedStyle  
+##  <a name="getextendedstyle"></a>CComboBoxEx::GetExtendedStyle  
  使用する拡張スタイルを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`コントロールです。  
   
 ```  
@@ -273,7 +289,7 @@ DWORD GetExtendedStyle() const;
 ### <a name="remarks"></a>コメント  
  参照してください[ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、これらのスタイル。  
   
-##  <a name="a-namegetimagelista--ccomboboxexgetimagelist"></a><a name="getimagelist"></a>CComboBoxEx::GetImageList  
+##  <a name="getimagelist"></a>CComboBoxEx::GetImageList  
  使用されるイメージ リストへのポインターを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`コントロールです。  
   
 ```  
@@ -286,7 +302,7 @@ CImageList* GetImageList() const;
 ### <a name="remarks"></a>コメント  
  `CImageList`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
   
-##  <a name="a-namegetitema--ccomboboxexgetitem"></a><a name="getitem"></a>CComboBoxEx::GetItem  
+##  <a name="getitem"></a>CComboBoxEx::GetItem  
  項目の情報の取得、指定された**ComboBoxEx**項目。  
   
 ```  
@@ -303,7 +319,7 @@ BOOL GetItem(COMBOBOXEXITEM* pCBItem);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、メッセージの機能を実装して[CBEM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775779)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namehaseditchangeda--ccomboboxexhaseditchanged"></a><a name="haseditchanged"></a>CComboBoxEx::HasEditChanged  
+##  <a name="haseditchanged"></a>CComboBoxEx::HasEditChanged  
  内容をユーザーが変更されたかどうかを判断、 **ComboBoxEx** 」と入力してコントロールを編集します。  
   
 ```  
@@ -316,7 +332,7 @@ BOOL HasEditChanged();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、メッセージの機能を実装して[CBEM_HASEDITCHANGED](http://msdn.microsoft.com/library/windows/desktop/bb775782)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameinsertitema--ccomboboxexinsertitem"></a><a name="insertitem"></a>CComboBoxEx::InsertItem  
+##  <a name="insertitem"></a>CComboBoxEx::InsertItem  
  新しい項目を挿入、 **ComboBoxEx**コントロールです。  
   
 ```  
@@ -333,7 +349,7 @@ int InsertItem(const COMBOBOXEXITEM* pCBItem);
 ### <a name="remarks"></a>コメント  
  呼び出すと`InsertItem`、 [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)メッセージを[CBEN_INSERTITEM](http://msdn.microsoft.com/library/windows/desktop/bb775764)を親ウィンドウに通知が送信されます。  
   
-##  <a name="a-namesetextendedstylea--ccomboboxexsetextendedstyle"></a><a name="setextendedstyle"></a>CComboBoxEx::SetExtendedStyle  
+##  <a name="setextendedstyle"></a>CComboBoxEx::SetExtendedStyle  
  コンボ ボックス コントロールを拡張するための拡張スタイルを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -357,7 +373,7 @@ DWORD SetExtendedStyle(
   
  拡張ウィンドウ スタイルを使用してコントロールを拡張コンボ ボックスを作成するには使用[CreateEx](#createex)します。  
   
-##  <a name="a-namesetimagelista--ccomboboxexsetimagelist"></a><a name="setimagelist"></a>CComboBoxEx::SetImageList  
+##  <a name="setimagelist"></a>CComboBoxEx::SetImageList  
  用のイメージ リストの設定、 **ComboBoxEx**コントロールです。  
   
 ```  
@@ -376,7 +392,7 @@ CImageList* SetImageList(CImageList* pImageList);
   
  `CImageList`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
   
-##  <a name="a-namesetitema--ccomboboxexsetitem"></a><a name="setitem"></a>CComboBoxEx::SetItem  
+##  <a name="setitem"></a>CComboBoxEx::SetItem  
  内の項目の属性を設定、 **ComboBoxEx**コントロールです。  
   
 ```  
@@ -393,7 +409,7 @@ BOOL SetItem(const COMBOBOXEXITEM* pCBItem);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、メッセージの機能を実装して[CBEM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775788)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetwindowthemea--ccomboboxexsetwindowtheme"></a><a name="setwindowtheme"></a>CComboBoxEx::SetWindowTheme  
+##  <a name="setwindowtheme"></a>CComboBoxEx::SetWindowTheme  
  Visual スタイル拡張コンボ ボックス コントロールを設定します。  
   
 ```  

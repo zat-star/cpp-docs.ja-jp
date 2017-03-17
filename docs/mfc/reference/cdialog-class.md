@@ -10,6 +10,24 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDialog
+- AFXWIN/CDialog
+- AFXWIN/CDialog::CDialog
+- AFXWIN/CDialog::Create
+- AFXWIN/CDialog::CreateIndirect
+- AFXWIN/CDialog::DoModal
+- AFXWIN/CDialog::EndDialog
+- AFXWIN/CDialog::GetDefID
+- AFXWIN/CDialog::GotoDlgCtrl
+- AFXWIN/CDialog::InitModalIndirect
+- AFXWIN/CDialog::MapDialogRect
+- AFXWIN/CDialog::NextDlgCtrl
+- AFXWIN/CDialog::OnInitDialog
+- AFXWIN/CDialog::OnSetFont
+- AFXWIN/CDialog::PrevDlgCtrl
+- AFXWIN/CDialog::SetDefID
+- AFXWIN/CDialog::SetHelpID
+- AFXWIN/CDialog::OnCancel
+- AFXWIN/CDialog::OnOK
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -135,7 +153,7 @@ class CDialog : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecdialoga--cdialogcdialog"></a><a name="cdialog"></a>詳細  
+##  <a name="cdialog"></a>詳細  
  リソース ベースのモーダル ダイアログ ボックスを作成するには、どちらのパブリック コンス トラクターの形式を呼び出します。  
   
 ```  
@@ -170,7 +188,7 @@ CDialog();
   
  モードレス ダイアログ ボックスを作成するには、保護対象のフォームを使用して、`CDialog`コンス トラクターです。 モードレス ダイアログ ボックスを実装する独自のダイアログ ボックス クラスを派生させる必要がありますので、コンス トラクターは保護されています。 モードレス ダイアログ ボックスの構築は、2 段階のプロセスです。 コンス トラクターの最初の呼び出し物書き、**作成**リソース ベースのダイアログ ボックスを作成するメンバー関数を呼び出したり`CreateIndirect`メモリ上のテンプレートから、ダイアログ ボックスを作成します。  
   
-##  <a name="a-namecreatea--cdialogcreate"></a><a name="create"></a>CDialog::Create  
+##  <a name="create"></a>CDialog::Create  
  呼び出す**作成**リソースからダイアログ ボックス テンプレートを使用して、モードレス ダイアログ ボックスを作成します。  
   
 ```  
@@ -213,7 +231,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&62;](../../mfc/codesnippet/cpp/cdialog-class_1.cpp)]  
   
-##  <a name="a-namecreateindirecta--cdialogcreateindirect"></a><a name="createindirect"></a>CDialog::CreateIndirect  
+##  <a name="createindirect"></a>CDialog::CreateIndirect  
  メモリ内のダイアログ ボックスのテンプレートからモードレス ダイアログ ボックスを作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -253,7 +271,7 @@ virtual BOOL CreateIndirect(
   
  ActiveX コントロールを含むダイアログ ボックスで提供される追加情報を必要とする**DLGINIT**リソースです。 詳細については、サポート技術情報記事 Q231591 を参照してください"HOWTO: ActiveX コントロールと MFC ダイアログを作成するダイアログ テンプレートを使用します。"。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のドキュメントで使用可能な[http://support.microsoft.com](http://support.microsoft.com/)します。  
   
-##  <a name="a-namedomodala--cdialogdomodal"></a><a name="domodal"></a>CDialog::DoModal  
+##  <a name="domodal"></a>CDialog::DoModal  
  モーダル ダイアログ ボックスを起動し、[完了] ダイアログ ボックスの結果を返すには、このメンバー関数を呼び出します。  
   
 ```  
@@ -274,7 +292,7 @@ virtual INT_PTR DoModal();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&63;](../../mfc/codesnippet/cpp/cdialog-class_2.cpp)]  
   
-##  <a name="a-nameenddialoga--cdialogenddialog"></a><a name="enddialog"></a>CDialog::EndDialog  
+##  <a name="enddialog"></a>CDialog::EndDialog  
  モーダル ダイアログ ボックスを終了するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -297,7 +315,7 @@ void EndDialog(int nResult);
   
  [!code-cpp[NVC_MFCControlLadenDialog #&65;](../../mfc/codesnippet/cpp/cdialog-class_4.cpp)]  
   
-##  <a name="a-namegetdefida--cdialoggetdefid"></a><a name="getdefid"></a>CDialog::GetDefID  
+##  <a name="getdefid"></a>CDialog::GetDefID  
  呼び出す、 `GetDefID`  ダイアログ ボックスの既定のプッシュ ボタン コントロールの ID を取得します。  
   
 ```  
@@ -310,7 +328,7 @@ DWORD GetDefID() const;
 ### <a name="remarks"></a>コメント  
  これは、通常、[ok] ボタンです。  
   
-##  <a name="a-namegotodlgctrla--cdialoggotodlgctrl"></a><a name="gotodlgctrl"></a>CDialog::GotoDlgCtrl  
+##  <a name="gotodlgctrl"></a>CDialog::GotoDlgCtrl  
  ダイアログ ボックスで指定したコントロールにフォーカスを移動します。  
   
 ```  
@@ -327,7 +345,7 @@ void GotoDlgCtrl(CWnd* pWndCtrl);
 ### <a name="example"></a>例  
   例を参照してください[:getdlgitem](../../mfc/reference/cwnd-class.md#getdlgitem)します。  
   
-##  <a name="a-nameinitmodalindirecta--cdialoginitmodalindirect"></a><a name="initmodalindirect"></a>CDialog::InitModalIndirect  
+##  <a name="initmodalindirect"></a>CDialog::InitModalIndirect  
  このメンバー関数を呼び出してメモリ上に作成 ダイアログ ボックス テンプレートを使用してモーダル ダイアログ オブジェクトを初期化します。  
   
 ```  
@@ -363,7 +381,7 @@ BOOL InitModalIndirect(
   
  ActiveX コントロールを含むダイアログ ボックスで提供される追加情報を必要とする**DLGINIT**リソースです。 詳細については、サポート技術情報記事 Q231591 を参照してください"HOWTO: ActiveX コントロールと MFC ダイアログを作成するダイアログ テンプレートを使用します。"。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のドキュメントで使用可能な[http://support.microsoft.com](http://support.microsoft.com/)します。  
   
-##  <a name="a-namemapdialogrecta--cdialogmapdialogrect"></a><a name="mapdialogrect"></a>CDialog::MapDialogRect  
+##  <a name="mapdialogrect"></a>CDialog::MapDialogRect  
  四角形のダイアログ ボックスの単位を画面単位に変換する呼び出しです。  
   
 ```  
@@ -381,7 +399,7 @@ void MapDialogRect(LPRECT lpRect) const;
   
  `MapDialogRect`メンバー関数は、ダイアログ ボックスの単位を置き換えます`lpRect`で画面の [作成] ダイアログ ボックスに、ボックス内のコントロールの位置四角形を使用できるようにする単位 (ピクセル単位)。  
   
-##  <a name="a-namenextdlgctrla--cdialognextdlgctrl"></a><a name="nextdlgctrl"></a>CDialog::NextDlgCtrl  
+##  <a name="nextdlgctrl"></a>CDialog::NextDlgCtrl  
  ダイアログ ボックスで次のコントロールにフォーカスを移動します。  
   
 ```  
@@ -391,7 +409,7 @@ void NextDlgCtrl() const;
 ### <a name="remarks"></a>コメント  
  ダイアログ ボックスの最後のコントロールにフォーカスがある場合は、最初のコントロールに移動します。  
   
-##  <a name="a-nameoncancela--cdialogoncancel"></a><a name="oncancel"></a>CDialog::OnCancel  
+##  <a name="oncancel"></a>CDialog::OnCancel  
  フレームワークが、ユーザーがクリックすると、このメソッドを呼び出します**キャンセル**か、モーダルまたはモードレスのダイアログ ボックスで、ESC キーを押します。  
   
 ```  
@@ -409,7 +427,7 @@ virtual void OnCancel();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&66;](../../mfc/codesnippet/cpp/cdialog-class_5.cpp)]  
   
-##  <a name="a-nameoninitdialoga--cdialogoninitdialog"></a><a name="oninitdialog"></a>CDialog::OnInitDialog  
+##  <a name="oninitdialog"></a>CDialog::OnInitDialog  
  応答でこのメソッドは、`WM_INITDIALOG`メッセージです。  
   
 ```  
@@ -432,7 +450,7 @@ virtual BOOL OnInitDialog();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&67;](../../mfc/codesnippet/cpp/cdialog-class_6.cpp)]  
   
-##  <a name="a-nameonoka--cdialogonok"></a><a name="onok"></a>CDialog::OnOK  
+##  <a name="onok"></a>CDialog::OnOK  
  ユーザーがクリックしたときに呼び出されます、 **OK** (ID が idok のボタン) ボタンをクリックします。  
   
 ```  
@@ -450,7 +468,7 @@ virtual void OnOK();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog #&68;](../../mfc/codesnippet/cpp/cdialog-class_7.cpp)]  
   
-##  <a name="a-nameonsetfonta--cdialogonsetfont"></a><a name="onsetfont"></a>CDialog::OnSetFont  
+##  <a name="onsetfont"></a>CDialog::OnSetFont  
  テキストを描画するときに、ダイアログ ボックス コントロールを使用するフォントを指定します。  
   
 ```  
@@ -469,7 +487,7 @@ Virtual void OnSetFont(CFont* pFont);
 > [!NOTE]
 >  使用する場合は、このメソッドをオーバーライドすることはできません、`CFileDialog`でコンパイルされたプログラムでオブジェクト[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]します。 変更の詳細については`CFileDialog`[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)します。  
   
-##  <a name="a-nameprevdlgctrla--cdialogprevdlgctrl"></a><a name="prevdlgctrl"></a>CDialog::PrevDlgCtrl  
+##  <a name="prevdlgctrl"></a>CDialog::PrevDlgCtrl  
  ダイアログ ボックスで前のコントロールにフォーカスを設定します。  
   
 ```  
@@ -479,7 +497,7 @@ void PrevDlgCtrl() const;
 ### <a name="remarks"></a>コメント  
  ダイアログ ボックスの最初のコントロールにフォーカスがある場合最後のコントロールに移動します。  
   
-##  <a name="a-namesetdefida--cdialogsetdefid"></a><a name="setdefid"></a>CDialog::SetDefID  
+##  <a name="setdefid"></a>CDialog::SetDefID  
  ダイアログ ボックスの既定のプッシュ ボタン コントロールを変更します。  
   
 ```  
@@ -490,7 +508,7 @@ void SetDefID(UINT nID);
  `nID`  
  既定値になるプッシュ ボタン コントロールの ID を指定します。  
   
-##  <a name="a-namesethelpida--cdialogsethelpid"></a><a name="sethelpid"></a>CDialog::SetHelpID  
+##  <a name="sethelpid"></a>CDialog::SetHelpID  
  ダイアログ ボックスの状況依存のヘルプ ID を設定します。  
   
 ```  

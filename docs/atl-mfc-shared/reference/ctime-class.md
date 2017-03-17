@@ -9,9 +9,25 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CTime
 - CTime
-- ATL::CTime
+- ATLTIME/ATL::CTime
+- ATLTIME/ATL::CTime::CTime
+- ATLTIME/ATL::CTime::Format
+- ATLTIME/ATL::CTime::FormatGmt
+- ATLTIME/ATL::CTime::GetAsDBTIMESTAMP
+- ATLTIME/ATL::CTime::GetAsSystemTime
+- ATLTIME/ATL::CTime::GetCurrentTime
+- ATLTIME/ATL::CTime::GetDay
+- ATLTIME/ATL::CTime::GetDayOfWeek
+- ATLTIME/ATL::CTime::GetGmtTm
+- ATLTIME/ATL::CTime::GetHour
+- ATLTIME/ATL::CTime::GetLocalTm
+- ATLTIME/ATL::CTime::GetMinute
+- ATLTIME/ATL::CTime::GetMonth
+- ATLTIME/ATL::CTime::GetSecond
+- ATLTIME/ATL::CTime::GetTime
+- ATLTIME/ATL::CTime::GetYear
+- ATLTIME/ATL::CTime::Serialize64
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -111,7 +127,7 @@ class CTime
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atltime.h  
   
-##  <a name="a-namectimecomparisonoperatorsa--ctime-comparison-operators"></a><a name="ctime_comparison_operators"></a>CTime 比較演算子  
+##  <a name="ctime_comparison_operators"></a>CTime 比較演算子  
  比較演算子です。  
   
 ```  
@@ -133,7 +149,7 @@ bool operator>=(CTime time) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&161;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_1.cpp)]  
   
-##  <a name="a-namectimea--ctimectime"></a><a name="ctime"></a>CTime::CTime  
+##  <a name="ctime"></a>CTime::CTime  
  新たに作成`CTime`オブジェクトの指定した時刻に初期化します。  
   
 ```  
@@ -216,7 +232,7 @@ CTime(const DBTIMESTAMP& dbts,int nDST = -1) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&148;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_2.cpp)]  
   
-##  <a name="a-nameformata--ctimeformat"></a><a name="format"></a>CTime::Format  
+##  <a name="format"></a>CTime::Format  
  日付/時刻値の書式設定された表現を作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -242,7 +258,7 @@ CString Format(UINT nFormatID) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&149;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_3.cpp)]  
   
-##  <a name="a-nameformatgmta--ctimeformatgmt"></a><a name="formatgmt"></a>CTime::FormatGmt  
+##  <a name="formatgmt"></a>CTime::FormatGmt  
  これに対応する書式設定された文字列を生成`CTime`オブジェクトです。  
   
 ```  
@@ -268,7 +284,7 @@ CString FormatGmt(UINT nFormatID) const;
 ### <a name="example"></a>例  
  例を参照してください[CTime::Format](#format)します。  
   
-##  <a name="a-namegetasdbtimestampa--ctimegetasdbtimestamp"></a><a name="getasdbtimestamp"></a>CTime::GetAsDBTIMESTAMP  
+##  <a name="getasdbtimestamp"></a>CTime::GetAsDBTIMESTAMP  
  格納されている時刻情報に変換するには、このメンバー関数を呼び出す、 `CTime` Win32 と互換性のある DBTIMESTAMP 構造体へのオブジェクト。  
   
 ```  
@@ -288,7 +304,7 @@ bool GetAsDBTIMESTAMP(DBTIMESTAMP& dbts) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&150;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_4.cpp)]  
   
-##  <a name="a-namegetassystemtimea--ctimegetassystemtime"></a><a name="getassystemtime"></a>CTime::GetAsSystemTime  
+##  <a name="getassystemtime"></a>CTime::GetAsSystemTime  
  格納されている時刻情報に変換するには、このメンバー関数を呼び出す、`CTime`を Win32: 互換性のあるオブジェクト[SYSTEMTIME](http://msdn.microsoft.com/library/windows/desktop/ms724950)構造体。  
   
 ```  
@@ -308,7 +324,7 @@ bool GetAsSystemTime(SYSTEMTIME& st) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[最適な NVC_ATLMFC_Utilities](../../atl-mfc-shared/codesnippet/cpp/ctime-class_5.cpp)]  
   
-##  <a name="a-namegetcurrenttimea--ctimegetcurrenttime"></a><a name="getcurrenttime"></a>CTime::GetCurrentTime  
+##  <a name="getcurrenttime"></a>CTime::GetCurrentTime  
  返します。、`CTime`を現在の時刻を表すオブジェクト。  
   
 ```  
@@ -321,7 +337,7 @@ static CTime WINAPI GetCurrentTime() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&152;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_6.cpp)]  
   
-##  <a name="a-namegetdaya--ctimegetday"></a><a name="getday"></a>CTime::GetDay  
+##  <a name="getday"></a>CTime::GetDay  
  によって表される日を返す、`CTime`オブジェクトです。  
   
 ```  
@@ -337,7 +353,7 @@ int GetDay() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&153;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_7.cpp)]  
   
-##  <a name="a-namegetdayofweeka--ctimegetdayofweek"></a><a name="getdayofweek"></a>CTime::GetDayOfWeek  
+##  <a name="getdayofweek"></a>CTime::GetDayOfWeek  
  によって表される曜日を返す、`CTime`オブジェクトです。  
   
 ```  
@@ -353,7 +369,7 @@ int GetDayOfWeek() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&154;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_8.cpp)]  
   
-##  <a name="a-namegetgmttma--ctimegetgmttm"></a><a name="getgmttm"></a>CTime::GetGmtTm  
+##  <a name="getgmttm"></a>CTime::GetGmtTm  
  取得、**構造体 tm**これに含まれている時間の分解を格納している`CTime`オブジェクトです。  
   
 ```  
@@ -375,7 +391,7 @@ struct tm* GetGmtTm(struct tm* ptm) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&155;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_9.cpp)]  
   
-##  <a name="a-namegethoura--ctimegethour"></a><a name="gethour"></a>CTime::GetHour  
+##  <a name="gethour"></a>CTime::GetHour  
  表す時要素を返す、`CTime`オブジェクトです。  
   
 ```  
@@ -391,7 +407,7 @@ int GetHour() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&156;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_10.cpp)]  
   
-##  <a name="a-namegetlocaltma--ctimegetlocaltm"></a><a name="getlocaltm"></a>CTime::GetLocalTm  
+##  <a name="getlocaltm"></a>CTime::GetLocalTm  
  取得、**構造体 tm**これに含まれている時間の分解を含む`CTime`オブジェクトです。  
   
 ```  
@@ -413,7 +429,7 @@ struct tm* GetLocalTm(struct tm* ptm) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&157;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_11.cpp)]  
   
-##  <a name="a-namegetminutea--ctimegetminute"></a><a name="getminute"></a>CTime::GetMinute  
+##  <a name="getminute"></a>CTime::GetMinute  
  によって表される分が返されます、`CTime`オブジェクトです。  
   
 ```  
@@ -429,7 +445,7 @@ int GetMinute() const throw();
 ### <a name="example"></a>例  
  例を参照してください[GetHour](#gethour)します。  
   
-##  <a name="a-namegetmontha--ctimegetmonth"></a><a name="getmonth"></a>渡して  
+##  <a name="getmonth"></a>渡して  
  表される月を返す、`CTime`オブジェクトです。  
   
 ```  
@@ -445,7 +461,7 @@ int GetMonth() const throw();
 ### <a name="example"></a>例  
  例を参照してください[GetDay](#getday)します。  
   
-##  <a name="a-namegetseconda--ctimegetsecond"></a><a name="getsecond"></a>CTime::GetSecond  
+##  <a name="getsecond"></a>CTime::GetSecond  
  によって表される&2; 番目、`CTime`オブジェクトです。  
   
 ```  
@@ -461,7 +477,7 @@ int GetSecond() const throw();
 ### <a name="example"></a>例  
  例を参照してください[GetHour](#gethour)します。  
   
-##  <a name="a-namegettimea--ctimegettime"></a><a name="gettime"></a>CTime::GetTime  
+##  <a name="gettime"></a>CTime::GetTime  
  返します。、 **_ _time64_t**値を、指定された`CTime`オブジェクトです。  
   
 ```  
@@ -474,7 +490,7 @@ __time64_t GetTime() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&158;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_12.cpp)]  
   
-##  <a name="a-namegetyeara--ctimegetyear"></a><a name="getyear"></a>CTime::GetYear  
+##  <a name="getyear"></a>CTime::GetYear  
  によって表される年を返し、`CTime`オブジェクトです。  
   
 ```  
@@ -490,7 +506,7 @@ int GetYear();
 ### <a name="example"></a>例  
  例を参照してください[GetDay](#getday)します。  
   
-##  <a name="a-nameoperatoreqa--ctimeoperator-"></a><a name="operator_eq"></a>CTime::operator =  
+##  <a name="operator_eq"></a>CTime::operator =  
  代入演算子です。  
   
 ```  
@@ -507,7 +523,7 @@ CTime& operator=(__time64_t time) throw();
 ### <a name="remarks"></a>コメント  
  このオーバー ロード代入演算子は、これに、元の時刻をコピー`CTime`オブジェクトです。 内部時刻ストレージ、`CTime`オブジェクトはタイム ゾーンに依存しません。 タイム ゾーンの変換は、割り当ての際に必要ではありません。  
   
-##  <a name="a-nameoperatoradd-a--ctimeoperator---"></a><a name="operator_add_-"></a>CTime::operator +、-  
+##  <a name="operator_add_-"></a>CTime::operator +、-  
  これらの演算子は加算し、減算`CTimeSpan`と`CTime`のオブジェクト。  
   
 ```  
@@ -532,7 +548,7 @@ CTimeSpan operator-(CTime time) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&159;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_13.cpp)]  
   
-##  <a name="a-nameoperatoraddeq-eqa--ctimeoperator---"></a><a name="operator_add_eq_-_eq"></a>CTime::operator + =、=  
+##  <a name="operator_add_eq_-_eq"></a>CTime::operator + =、=  
  これらの演算子は加算し、減算、`CTimeSpan`オブジェクトとの間この`CTime`オブジェクトです。  
   
 ```  
@@ -553,7 +569,7 @@ CTime& operator-=(CTimeSpan span) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities #&160;](../../atl-mfc-shared/codesnippet/cpp/ctime-class_14.cpp)]  
   
-##  <a name="a-nameserialize64a--ctimeserialize64"></a><a name="serialize64"></a>CTime::Serialize64  
+##  <a name="serialize64"></a>CTime::Serialize64  
   
 > [!NOTE]
 >  このメソッドを MFC プロジェクトで使用できるだけです。  

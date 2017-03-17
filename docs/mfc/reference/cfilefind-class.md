@@ -10,6 +10,32 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFileFind
+- AFX/CFileFind
+- AFX/CFileFind::CFileFind
+- AFX/CFileFind::Close
+- AFX/CFileFind::FindFile
+- AFX/CFileFind::FindNextFile
+- AFX/CFileFind::GetCreationTime
+- AFX/CFileFind::GetFileName
+- AFX/CFileFind::GetFilePath
+- AFX/CFileFind::GetFileTitle
+- AFX/CFileFind::GetFileURL
+- AFX/CFileFind::GetLastAccessTime
+- AFX/CFileFind::GetLastWriteTime
+- AFX/CFileFind::GetLength
+- AFX/CFileFind::GetRoot
+- AFX/CFileFind::IsArchived
+- AFX/CFileFind::IsCompressed
+- AFX/CFileFind::IsDirectory
+- AFX/CFileFind::IsDots
+- AFX/CFileFind::IsHidden
+- AFX/CFileFind::IsNormal
+- AFX/CFileFind::IsReadOnly
+- AFX/CFileFind::IsSystem
+- AFX/CFileFind::IsTemporary
+- AFX/CFileFind::MatchesMask
+- AFX/CFileFind::CloseContext
+- AFX/CFileFind::m_pTM
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -121,7 +147,7 @@ class CFileFind : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namecfilefinda--cfilefindcfilefind"></a><a name="cfilefind"></a>CFileFind::CFileFind  
+##  <a name="cfilefind"></a>CFileFind::CFileFind  
  このメンバー関数が呼び出されます、`CFileFind`オブジェクトを構築します。  
   
 ```  
@@ -136,7 +162,7 @@ CFileFind(CAtlTransactionManager* pTM);
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-nameclosea--cfilefindclose"></a><a name="close"></a>CFileFind::Close  
+##  <a name="close"></a>CFileFind::Close  
  このメンバー関数を呼び出して検索を終了し、コンテキストをリセットし、すべてのリソースを解放します。  
   
 ```  
@@ -149,7 +175,7 @@ void Close();
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-nameclosecontexta--cfilefindclosecontext"></a><a name="closecontext"></a>CFileFind::CloseContext  
+##  <a name="closecontext"></a>CFileFind::CloseContext  
  現在の検索ハンドルで指定されたファイルを閉じます。  
   
 ```  
@@ -161,7 +187,7 @@ virtual void CloseContext();
   
  呼び出す必要があります、 [FindFile](#findfile)または[FindNextFile](#findnextfile)関数を&1; 回以上する有効な検索ハンドルを取得します。 **FindFile**と`FindNextFile`関数では、検索のハンドルを使用して、指定した名前に一致する名前を持つファイルを検索します。  
   
-##  <a name="a-namefindfilea--cfilefindfindfile"></a><a name="findfile"></a>CFileFind::FindFile  
+##  <a name="findfile"></a>CFileFind::FindFile  
  ファイル検索を開始するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -224,7 +250,7 @@ virtual BOOL FindFile(
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
   
-##  <a name="a-namefindnextfilea--cfilefindfindnextfile"></a><a name="findnextfile"></a>呼び出しておく  
+##  <a name="findnextfile"></a>呼び出しておく  
  以前の呼び出しからファイル検索を続行するには、このメンバー関数を呼び出す[FindFile](#findfile)します。  
   
 ```  
@@ -280,7 +306,7 @@ virtual BOOL FindNextFile();
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
   
-##  <a name="a-namegetcreationtimea--cfilefindgetcreationtime"></a><a name="getcreationtime"></a>CFileFind::GetCreationTime  
+##  <a name="getcreationtime"></a>CFileFind::GetCreationTime  
  指定したファイルが作成された時刻を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -307,7 +333,7 @@ virtual BOOL GetCreationTime(CTime& refTime) const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-namegetfilenamea--cfilefindgetfilename"></a><a name="getfilename"></a>CFileFind::GetFileName  
+##  <a name="getfilename"></a>CFileFind::GetFileName  
  このメンバー関数を呼び出して、検索されたファイルの名前を取得します。  
   
 ```  
@@ -331,7 +357,7 @@ virtual CString GetFileName() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#32;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_2.cpp)]  
   
-##  <a name="a-namegetfilepatha--cfilefindgetfilepath"></a><a name="getfilepath"></a>CFileFind::GetFilePath  
+##  <a name="getfilepath"></a>CFileFind::GetFilePath  
  指定されたファイルの完全なパスを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -355,7 +381,7 @@ virtual CString GetFilePath() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-namegetfiletitlea--cfilefindgetfiletitle"></a><a name="getfiletitle"></a>CFileFind::GetFileTitle  
+##  <a name="getfiletitle"></a>CFileFind::GetFileTitle  
  検索したファイルのタイトルを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -379,7 +405,7 @@ virtual CString GetFileTitle() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-namegetfileurla--cfilefindgetfileurl"></a><a name="getfileurl"></a>CFileFind::GetFileURL  
+##  <a name="getfileurl"></a>CFileFind::GetFileURL  
  指定された URL を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -397,7 +423,7 @@ virtual CString GetFileURL() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-namegetlastaccesstimea--cfilefindgetlastaccesstime"></a><a name="getlastaccesstime"></a>CFileFind::GetLastAccessTime  
+##  <a name="getlastaccesstime"></a>CFileFind::GetLastAccessTime  
  指定したファイルの最終アクセス時刻を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -424,7 +450,7 @@ virtual BOOL GetLastAccessTime(FILETIME* pTimeStamp) const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-namegetlastwritetimea--cfilefindgetlastwritetime"></a><a name="getlastwritetime"></a>CFileFind::GetLastWriteTime  
+##  <a name="getlastwritetime"></a>CFileFind::GetLastWriteTime  
  最後に、ファイルが変更された時刻を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -451,7 +477,7 @@ virtual BOOL GetLastWriteTime(CTime& refTime) const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-namegetlengtha--cfilefindgetlength"></a><a name="getlength"></a>CFileFind::GetLength  
+##  <a name="getlength"></a>CFileFind::GetLength  
  このメンバー関数を呼び出して、見つかったファイルのバイトの長さを取得します。  
   
 ```  
@@ -472,7 +498,7 @@ ULONGLONG GetLength() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&33;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_3.cpp)]  
   
-##  <a name="a-namegetroota--cfilefindgetroot"></a><a name="getroot"></a>CFileFind::GetRoot  
+##  <a name="getroot"></a>CFileFind::GetRoot  
  検索したファイルのルートを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -490,7 +516,7 @@ virtual CString GetRoot() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetFileName](#getfilename)します。  
   
-##  <a name="a-nameisarchiveda--cfilefindisarchived"></a><a name="isarchived"></a>CFileFind::IsArchived  
+##  <a name="isarchived"></a>CFileFind::IsArchived  
  検索したファイルがアーカイブになっているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -510,7 +536,7 @@ BOOL IsArchived() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameiscompresseda--cfilefindiscompressed"></a><a name="iscompressed"></a>CFileFind::IsCompressed  
+##  <a name="iscompressed"></a>CFileFind::IsCompressed  
  検索したファイルが圧縮されているかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -530,7 +556,7 @@ BOOL IsCompressed() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameisdirectorya--cfilefindisdirectory"></a><a name="isdirectory"></a>CFileFind::IsDirectory  
+##  <a name="isdirectory"></a>CFileFind::IsDirectory  
  検索したファイルがディレクトリであるかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -552,7 +578,7 @@ BOOL IsDirectory() const;
   
  [!code-cpp[NVC_MFCFiles #&34;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_4.cpp)]  
   
-##  <a name="a-nameisdotsa--cfilefindisdots"></a><a name="isdots"></a>CFileFind::IsDots  
+##  <a name="isdots"></a>CFileFind::IsDots  
  ファイル反復処理中に現在のディレクトリとその親ディレクトリのマーカーをテストするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -568,7 +594,7 @@ virtual BOOL IsDots() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
   
-##  <a name="a-nameishiddena--cfilefindishidden"></a><a name="ishidden"></a>CFileFind::IsHidden  
+##  <a name="ishidden"></a>CFileFind::IsHidden  
  検索したファイルが非表示を決定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -588,7 +614,7 @@ BOOL IsHidden() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameisnormala--cfilefindisnormal"></a><a name="isnormal"></a>CFileFind::IsNormal  
+##  <a name="isnormal"></a>CFileFind::IsNormal  
  検索したファイルが通常のファイルであるかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -608,7 +634,7 @@ BOOL IsNormal() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameisreadonlya--cfilefindisreadonly"></a><a name="isreadonly"></a>CFileFind::IsReadOnly  
+##  <a name="isreadonly"></a>CFileFind::IsReadOnly  
  このメンバー関数を呼び出して、検索されたファイルが読み取り専用であるかどうか。  
   
 ```  
@@ -628,7 +654,7 @@ BOOL IsReadOnly() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameissystema--cfilefindissystem"></a><a name="issystem"></a>CFileFind::IsSystem  
+##  <a name="issystem"></a>CFileFind::IsSystem  
  検索したファイルがシステム ファイルであるかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -648,7 +674,7 @@ BOOL IsSystem() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-nameistemporarya--cfilefindistemporary"></a><a name="istemporary"></a>CFileFind::IsTemporary  
+##  <a name="istemporary"></a>CFileFind::IsTemporary  
  検索したファイルが一時ファイルを確認するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -668,7 +694,7 @@ BOOL IsTemporary() const;
 ### <a name="example"></a>例  
   例を参照してください[CFileFind::GetLength](#getlength)します。  
   
-##  <a name="a-namemptma--cfilefindmptm"></a><a name="m_ptm"></a>CFileFind::m_pTM  
+##  <a name="m_ptm"></a>CFileFind::m_pTM  
  ポインター、`CAtlTransactionManager`オブジェクトです。  
   
 ```  
@@ -677,7 +703,7 @@ CAtlTransactionManager* m_pTM;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namematchesmaska--cfilefindmatchesmask"></a><a name="matchesmask"></a>CFileFind::MatchesMask  
+##  <a name="matchesmask"></a>CFileFind::MatchesMask  
  検索したファイルのファイル属性をテストするには、このメンバー関数を呼び出します。  
   
 ```  

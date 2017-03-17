@@ -10,6 +10,40 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleControlContainer
+- AFXOCC/COleControlContainer
+- AFXOCC/COleControlContainer::COleControlContainer
+- AFXOCC/COleControlContainer::AttachControlSite
+- AFXOCC/COleControlContainer::BroadcastAmbientPropertyChange
+- AFXOCC/COleControlContainer::CheckDlgButton
+- AFXOCC/COleControlContainer::CheckRadioButton
+- AFXOCC/COleControlContainer::CreateControl
+- AFXOCC/COleControlContainer::CreateOleFont
+- AFXOCC/COleControlContainer::FindItem
+- AFXOCC/COleControlContainer::FreezeAllEvents
+- AFXOCC/COleControlContainer::GetAmbientProp
+- AFXOCC/COleControlContainer::GetDlgItem
+- AFXOCC/COleControlContainer::GetDlgItemInt
+- AFXOCC/COleControlContainer::GetDlgItemText
+- AFXOCC/COleControlContainer::HandleSetFocus
+- AFXOCC/COleControlContainer::HandleWindowlessMessage
+- AFXOCC/COleControlContainer::IsDlgButtonChecked
+- AFXOCC/COleControlContainer::OnPaint
+- AFXOCC/COleControlContainer::OnUIActivate
+- AFXOCC/COleControlContainer::OnUIDeactivate
+- AFXOCC/COleControlContainer::ScrollChildren
+- AFXOCC/COleControlContainer::SendDlgItemMessage
+- AFXOCC/COleControlContainer::SetDlgItemInt
+- AFXOCC/COleControlContainer::SetDlgItemText
+- AFXOCC/COleControlContainer::m_crBack
+- AFXOCC/COleControlContainer::m_crFore
+- AFXOCC/COleControlContainer::m_listSitesOrWnds
+- AFXOCC/COleControlContainer::m_nWindowlessControls
+- AFXOCC/COleControlContainer::m_pOleFont
+- AFXOCC/COleControlContainer::m_pSiteCapture
+- AFXOCC/COleControlContainer::m_pSiteFocus
+- AFXOCC/COleControlContainer::m_pSiteUIActive
+- AFXOCC/COleControlContainer::m_pWnd
+- AFXOCC/COleControlContainer::m_siteMap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -115,7 +149,7 @@ class COleControlContainer : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxocc.h  
   
-##  <a name="a-nameattachcontrolsitea--colecontrolcontainerattachcontrolsite"></a><a name="attachcontrolsite"></a>COleControlContainer::AttachControlSite  
+##  <a name="attachcontrolsite"></a>COleControlContainer::AttachControlSite  
  作成し、コントロールのサイトに接続するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -142,7 +176,7 @@ void AttachControlSite(
 > [!NOTE]
 >  MFC ライブラリに静的にリンクしている場合は、この関数の最初の形式を使用します。 MFC ライブラリに動的にリンクしている場合は、2 番目の形式を使用します。  
   
-##  <a name="a-namebroadcastambientpropertychangea--colecontrolcontainerbroadcastambientpropertychange"></a><a name="broadcastambientpropertychange"></a>COleControlContainer::BroadcastAmbientPropertyChange  
+##  <a name="broadcastambientpropertychange"></a>COleControlContainer::BroadcastAmbientPropertyChange  
  アンビエント プロパティが変更されたホストされるすべてのコントロールに通知します。  
   
 ```  
@@ -156,7 +190,7 @@ virtual void BroadcastAmbientPropertyChange(DISPID dispid);
 ### <a name="remarks"></a>コメント  
  アンビエント プロパティの値が変更されたときに、この関数は、フレームワークによって呼び出されます。 この動作をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-namecheckdlgbuttona--colecontrolcontainercheckdlgbutton"></a><a name="checkdlgbutton"></a>COleControlContainer::CheckDlgButton  
+##  <a name="checkdlgbutton"></a>COleControlContainer::CheckDlgButton  
  ボタンの現在の状態を変更します。  
   
 ```  
@@ -178,7 +212,7 @@ virtual void CheckDlgButton(
   
 - **設定されている**ボタンの状態をオフに設定します。  
   
-##  <a name="a-namecheckradiobuttona--colecontrolcontainercheckradiobutton"></a><a name="checkradiobutton"></a>COleControlContainer::CheckRadioButton  
+##  <a name="checkradiobutton"></a>COleControlContainer::CheckRadioButton  
  グループ内の指定されたオプション ボタンを選択し、グループ内の残りのボタンをクリアします。  
   
 ```  
@@ -198,7 +232,7 @@ virtual void CheckRadioButton(
  `nIDCheckButton`  
  チェックするオプション ボタンの識別子を指定します。  
   
-##  <a name="a-namecolecontrolcontainera--colecontrolcontainercolecontrolcontainer"></a><a name="colecontrolcontainer"></a>COleControlContainer::COleControlContainer  
+##  <a name="colecontrolcontainer"></a>COleControlContainer::COleControlContainer  
  `COleControlContainer` オブジェクトを構築します。  
   
 ```  
@@ -212,7 +246,7 @@ explicit COleControlContainer(CWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  オブジェクトが正常に作成される追加のカスタム コントロール サイトへの呼び出しを`AttachControlSite`します。  
   
-##  <a name="a-namecreatecontrola--colecontrolcontainercreatecontrol"></a><a name="createcontrol"></a>COleControlContainer::CreateControl  
+##  <a name="createcontrol"></a>COleControlContainer::CreateControl  
  指定したホストされている、ActiveX コントロールを作成`COleControlSite`オブジェクトです。  
   
 ```  
@@ -298,7 +332,7 @@ BOOL CreateControl(
   
  2 番目のオーバー ロードを使用すると、既定のサイズのコントロールを作成できます。  
   
-##  <a name="a-namecreateolefonta--colecontrolcontainercreateolefont"></a><a name="createolefont"></a>COleControlContainer::CreateOleFont  
+##  <a name="createolefont"></a>COleControlContainer::CreateOleFont  
  OLE フォントを作成します。  
   
 ```  
@@ -309,7 +343,7 @@ void CreateOleFont(CFont* pFont);
  `pFont`  
  コントロール コンテナーで使用するフォントへのポインター。  
   
-##  <a name="a-namefinditema--colecontrolcontainerfinditem"></a><a name="finditem"></a>COleControlContainer::FindItem  
+##  <a name="finditem"></a>COleControlContainer::FindItem  
  指定した項目をホストするカスタムのサイトを検索します。  
   
 ```  
@@ -323,7 +357,7 @@ virtual COleControlSite* FindItem(UINT nID) const;
 ### <a name="return-value"></a>戻り値  
  指定した項目のカスタムのサイトへのポインター。  
   
-##  <a name="a-namefreezealleventsa--colecontrolcontainerfreezeallevents"></a><a name="freezeallevents"></a>COleControlContainer::FreezeAllEvents  
+##  <a name="freezeallevents"></a>COleControlContainer::FreezeAllEvents  
  かどうかは、コンテナーは関連付けられたコントロールのサイトからのイベントを無視するか、ライセンス条項に同意を決定します。  
   
 ```  
@@ -339,7 +373,7 @@ void FreezeAllEvents(BOOL bFreeze);
 > [!NOTE]
 >  コントロールは、コントロール コンテナーによって要求された場合のイベントの発生を停止する必要はありません。 起動処理を続行できますが、コントロール コンテナーで後続のすべてのイベントは無視されます。  
   
-##  <a name="a-namegetambientpropa--colecontrolcontainergetambientprop"></a><a name="getambientprop"></a>COleControlContainer::GetAmbientProp  
+##  <a name="getambientprop"></a>COleControlContainer::GetAmbientProp  
  指定されたアンビエント プロパティの値を取得します。  
   
 ```  
@@ -362,7 +396,7 @@ virtual BOOL GetAmbientProp(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="a-namegetdlgitema--colecontrolcontainergetdlgitem"></a><a name="getdlgitem"></a>COleControlContainer::GetDlgItem  
+##  <a name="getdlgitem"></a>COleControlContainer::GetDlgItem  
  ダイアログ ボックスで指定されたコントロールまたは子ウィンドウまたはその他のウィンドウへのポインターを取得します。  
   
 ```  
@@ -383,7 +417,7 @@ virtual void GetDlgItem(
 ### <a name="return-value"></a>戻り値  
  ダイアログのアイテムのウィンドウへのポインター。  
   
-##  <a name="a-namegetdlgiteminta--colecontrolcontainergetdlgitemint"></a><a name="getdlgitemint"></a>COleControlContainer::GetDlgItemInt  
+##  <a name="getdlgitemint"></a>COleControlContainer::GetDlgItemInt  
  指定されたコントロールの翻訳されたテキストの値を取得します。  
   
 ```  
@@ -415,7 +449,7 @@ virtual UINT GetDlgItemInt(
   
  変換された値がより大きい場合、この関数は&0; を返します**INT_MAX**の符号付き数値または**UINT_MAX** (の符号なしの数値)。  
   
-##  <a name="a-namegetdlgitemtexta--colecontrolcontainergetdlgitemtext"></a><a name="getdlgitemtext"></a>COleControlContainer::GetDlgItemText  
+##  <a name="getdlgitemtext"></a>COleControlContainer::GetDlgItemText  
  指定されたコントロールのテキストを取得します。  
   
 ```  
@@ -440,7 +474,7 @@ virtual int GetDlgItemText(
   
  関数が失敗した場合は、0 を返します。 拡張エラー情報を取得する[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
   
-##  <a name="a-namehandlesetfocusa--colecontrolcontainerhandlesetfocus"></a><a name="handlesetfocus"></a>COleControlContainer::HandleSetFocus  
+##  <a name="handlesetfocus"></a>COleControlContainer::HandleSetFocus  
  コンテナーが処理を決定`WM_SETFOCUS`メッセージです。  
   
 ```  
@@ -450,7 +484,7 @@ virtual BOOL HandleSetFocus();
 ### <a name="return-value"></a>戻り値  
  コンテナーが処理する場合は&0; 以外。`WM_SETFOCUS`メッセージ。 それ以外の場合&0; です。  
   
-##  <a name="a-namehandlewindowlessmessagea--colecontrolcontainerhandlewindowlessmessage"></a><a name="handlewindowlessmessage"></a>COleControlContainer::HandleWindowlessMessage  
+##  <a name="handlewindowlessmessage"></a>COleControlContainer::HandleWindowlessMessage  
  ウィンドウなしのコントロールのウィンドウ メッセージを処理します。  
   
 ```  
@@ -480,7 +514,7 @@ virtual BOOL HandleWindowlessMessage(
 ### <a name="remarks"></a>コメント  
  ウィンドウなしのコントロール メッセージの処理をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameisdlgbuttoncheckeda--colecontrolcontainerisdlgbuttonchecked"></a><a name="isdlgbuttonchecked"></a>COleControlContainer::IsDlgButtonChecked  
+##  <a name="isdlgbuttonchecked"></a>COleControlContainer::IsDlgButtonChecked  
  指定したボタンの状態を判断します。  
   
 ```  
@@ -503,77 +537,77 @@ virtual UINT IsDlgButtonChecked(int nIDButton) const;
 ### <a name="remarks"></a>コメント  
  メンバー関数は、決定するかどうか、淡色表示をオンになっているボタンが&3; つの状態のコントロールの場合は、どちらかです。  
   
-##  <a name="a-namemcrbacka--colecontrolcontainermcrback"></a><a name="m_crback"></a>COleControlContainer::m_crBack  
+##  <a name="m_crback"></a>COleControlContainer::m_crBack  
  コンテナーの背景色。  
   
 ```  
 COLORREF m_crBack;  
 ```  
   
-##  <a name="a-namemcrforea--colecontrolcontainermcrfore"></a><a name="m_crfore"></a>COleControlContainer::m_crFore  
+##  <a name="m_crfore"></a>COleControlContainer::m_crFore  
  コンテナーの前景色。  
   
 ```  
 COLORREF m_crFore;  
 ```  
   
-##  <a name="a-namemlistsitesorwndsa--colecontrolcontainermlistsitesorwnds"></a><a name="m_listsitesorwnds"></a>COleControlContainer::m_listSitesOrWnds  
+##  <a name="m_listsitesorwnds"></a>COleControlContainer::m_listSitesOrWnds  
  コンテナーによってホストされるコントロールのサイトの一覧。  
   
 ```  
 CTypedPtrList<CPtrList, COleControlSiteOrWnd*> m_listSitesOrWnds;  
 ```  
   
-##  <a name="a-namemnwindowlesscontrolsa--colecontrolcontainermnwindowlesscontrols"></a><a name="m_nwindowlesscontrols"></a>COleControlContainer::m_nWindowlessControls  
+##  <a name="m_nwindowlesscontrols"></a>COleControlContainer::m_nWindowlessControls  
  コントロール コンテナーでホストされているウィンドウなしのコントロールの数。  
   
 ```  
 int m_nWindowlessControls;  
 ```  
   
-##  <a name="a-namempolefonta--colecontrolcontainermpolefont"></a><a name="m_polefont"></a>COleControlContainer::m_pOleFont  
+##  <a name="m_polefont"></a>COleControlContainer::m_pOleFont  
  OLE フォントのカスタム コントロール サイトへのポインター。  
   
 ```  
 LPFONTDISP m_pOleFont;  
 ```  
   
-##  <a name="a-namempsitecapturea--colecontrolcontainermpsitecapture"></a><a name="m_psitecapture"></a>COleControlContainer::m_pSiteCapture  
+##  <a name="m_psitecapture"></a>COleControlContainer::m_pSiteCapture  
  キャプチャ コントロール サイトへのポインター。  
   
 ```  
 COleControlSite* m_pSiteCapture;  
 ```  
   
-##  <a name="a-namempsitefocusa--colecontrolcontainermpsitefocus"></a><a name="m_psitefocus"></a>COleControlContainer::m_pSiteFocus  
+##  <a name="m_psitefocus"></a>COleControlContainer::m_pSiteFocus  
  現在入力フォーカス コントロール サイトへのポインター。  
   
 ```  
 COleControlSite* m_pSiteFocus;  
 ```  
   
-##  <a name="a-namempsiteuiactivea--colecontrolcontainermpsiteuiactive"></a><a name="m_psiteuiactive"></a>COleControlContainer::m_pSiteUIActive  
+##  <a name="m_psiteuiactive"></a>COleControlContainer::m_pSiteUIActive  
  インプレース アクティブ化は、コントロール サイトへのポインター。  
   
 ```  
 COleControlSite* m_pSiteUIActive;  
 ```  
   
-##  <a name="a-namempwnda--colecontrolcontainermpwnd"></a><a name="m_pwnd"></a>COleControlContainer::m_pWnd  
+##  <a name="m_pwnd"></a>COleControlContainer::m_pWnd  
  コンテナーに関連付けられたウィンドウ オブジェクトへのポインター。  
   
 ```  
 CWnd* m_pWnd;  
 ```  
   
-##  <a name="a-namemsitemapa--colecontrolcontainermsitemap"></a><a name="m_sitemap"></a>COleControlContainer::m_siteMap  
+##  <a name="m_sitemap"></a>COleControlContainer::m_siteMap  
  サイト マップします。  
   
 ```  
 CMapPtrToPtr m_siteMap;  
 ```  
   
-##  <a name="a-nameonpainta--colecontrolcontaineronpaint"></a><a name="onpaint"></a>COleControlContainer::OnPaint  
+##  <a name="onpaint"></a>COleControlContainer::OnPaint  
  処理するためにフレームワークによって呼び出される`WM_PAINT`要求します。  
   
 ```  
@@ -590,7 +624,7 @@ virtual BOOL OnPaint(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  描画プロセスをカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameonuiactivatea--colecontrolcontaineronuiactivate"></a><a name="onuiactivate"></a>COleControlContainer::OnUIActivate  
+##  <a name="onuiactivate"></a>COleControlContainer::OnUIActivate  
  フレームワークによって呼び出されますとコントロール サイトが指す`pSite`、しようインプレース アクティブ化します。  
   
 ```  
@@ -604,7 +638,7 @@ virtual void OnUIActivate(COleControlSite* pSite);
 ### <a name="remarks"></a>コメント  
  インプレース アクティブ化では、コンテナーのメイン メニューがインプレースで複合メニューに置き換えられることを意味します。  
   
-##  <a name="a-nameonuideactivatea--colecontrolcontaineronuideactivate"></a><a name="onuideactivate"></a>COleControlContainer::OnUIDeactivate  
+##  <a name="onuideactivate"></a>COleControlContainer::OnUIDeactivate  
  フレームワークによって呼び出されるとコントロール サイトが指す`pSite`が非アクティブ化しようとしています。  
   
 ```  
@@ -618,7 +652,7 @@ virtual void OnUIDeactivate(COleControlSite* pSite);
 ### <a name="remarks"></a>コメント  
  この通知を受信すると、コンテナーは、ユーザー インターフェイスを再インストールし、フォーカスを取得する必要があります。  
   
-##  <a name="a-namescrollchildrena--colecontrolcontainerscrollchildren"></a><a name="scrollchildren"></a>COleControlContainer::ScrollChildren  
+##  <a name="scrollchildren"></a>COleControlContainer::ScrollChildren  
  子ウィンドウからスクロール メッセージを受信するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -634,7 +668,7 @@ virtual void ScrollChildren(
  *dy*  
  Y 軸方向のスクロールの (ピクセル単位) の量。  
   
-##  <a name="a-namesenddlgitemmessagea--colecontrolcontainersenddlgitemmessage"></a><a name="senddlgitemmessage"></a>COleControlContainer::SendDlgItemMessage  
+##  <a name="senddlgitemmessage"></a>COleControlContainer::SendDlgItemMessage  
  指定されたコントロールにメッセージを送信します。  
   
 ```  
@@ -658,7 +692,7 @@ virtual LRESULT SendDlgItemMessage(
  `lParam`  
  その他のメッセージに固有の情報を指定します。  
   
-##  <a name="a-namesetdlgiteminta--colecontrolcontainersetdlgitemint"></a><a name="setdlgitemint"></a>COleControlContainer::SetDlgItemInt  
+##  <a name="setdlgitemint"></a>COleControlContainer::SetDlgItemInt  
  指定した整数値の文字列形式にダイアログ ボックスで、コントロールのテキストを設定します。  
   
 ```  
@@ -678,7 +712,7 @@ virtual void SetDlgItemInt(
  `bSigned`  
  指定するかどうか、`nValue`パラメーターの符号付きまたは符号なし。 このパラメーターがある場合**TRUE**、`nValue`が署名されています。 このパラメーターがある場合**TRUE**と`nValue`は&0; より小さく、マイナス記号は、文字列の最初の桁の前に置かれます。 このパラメーターは、する場合**FALSE**、`nValue`が署名されていません。  
   
-##  <a name="a-namesetdlgitemtexta--colecontrolcontainersetdlgitemtext"></a><a name="setdlgitemtext"></a>COleControlContainer::SetDlgItemText  
+##  <a name="setdlgitemtext"></a>COleControlContainer::SetDlgItemText  
  含まれているテキストを使用して、指定したコントロールのテキストを設定`lpszString`します。  
   
 ```  

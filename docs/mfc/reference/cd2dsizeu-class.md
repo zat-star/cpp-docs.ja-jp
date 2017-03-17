@@ -10,7 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CD2DSizeU
-- afxrendertarget/CD2DSizeU
+- AFXRENDERTARGET/CD2DSizeU
+- AFXRENDERTARGET/CD2DSizeU::CD2DSizeU
+- AFXRENDERTARGET/CD2DSizeU::IsNull
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -77,7 +79,7 @@ class CD2DSizeU : public D2D1_SIZE_U;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-namecd2dsizeua--cd2dsizeucd2dsizeu"></a><a name="cd2dsizeu"></a>CD2DSizeU::CD2DSizeU  
+##  <a name="cd2dsizeu"></a>CD2DSizeU::CD2DSizeU  
  CSize オブジェクトから CD2DSizeU オブジェクトを構築します。  
   
 ```  
@@ -101,7 +103,7 @@ CD2DSizeU(
  `cy`  
  元の高さ  
   
-##  <a name="a-nameisnulla--cd2dsizeuisnull"></a><a name="isnull"></a>CD2DSizeU::IsNull  
+##  <a name="isnull"></a>CD2DSizeU::IsNull  
  式に有効なデータ (Null) が含まれていないかどうかを示すブール値を返します。  
   
 ```  
@@ -111,7 +113,7 @@ BOOL IsNull() const;
 ### <a name="return-value"></a>戻り値  
  幅と高さが空です。 TRUE の場合それ以外の場合は FALSE。  
   
-##  <a name="a-nameoperatorcsizea--cd2dsizeuoperator-csize"></a><a name="operator_csize"></a>CD2DSizeU::operator CSize  
+##  <a name="operator_csize"></a>CD2DSizeU::operator CSize  
  CD2DSizeU を CSize オブジェクトに変換します。  
   
 ```  

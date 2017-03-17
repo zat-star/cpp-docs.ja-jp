@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCTabDropTarget
+- AFXBASETABCTRL/CMFCTabDropTarget
+- AFXBASETABCTRL/CMFCTabDropTarget::OnDragEnter
+- AFXBASETABCTRL/CMFCTabDropTarget::OnDragLeave
+- AFXBASETABCTRL/CMFCTabDropTarget::OnDragOver
+- AFXBASETABCTRL/CMFCTabDropTarget::OnDropEx
+- AFXBASETABCTRL/CMFCTabDropTarget::Register
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,7 +96,7 @@ class CMFCTabDropTarget : public COleDropTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxbasetabctrl.h  
   
-##  <a name="a-nameondragentera--cmfctabdroptargetondragenter"></a><a name="ondragenter"></a>CMFCTabDropTarget::OnDragEnter  
+##  <a name="ondragenter"></a>CMFCTabDropTarget::OnDragEnter  
  ユーザーがタブ ウィンドウにオブジェクトをドラッグしたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -129,7 +135,7 @@ virtual DROPEFFECT OnDragEnter(
   
  カスタマイズ モードの詳細については、次を参照してください。 [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode)します。 クリップボード データ形式の詳細については、次を参照してください。 [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable)します。  
   
-##  <a name="a-nameondragleavea--cmfctabdroptargetondragleave"></a><a name="ondragleave"></a>CMFCTabDropTarget::OnDragLeave  
+##  <a name="ondragleave"></a>CMFCTabDropTarget::OnDragLeave  
  ユーザーは、フォーカスのあるタブ ウィンドウ以外でオブジェクトをドラッグしたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -146,7 +152,7 @@ virtual void OnDragLeave(CWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  このメソッドは、`CMFCBaseTabCtrl::OnDragLeave`ドラッグ操作を実行するメソッドです。  
   
-##  <a name="a-nameondragovera--cmfctabdroptargetondragover"></a><a name="ondragover"></a>CMFCTabDropTarget::OnDragOver  
+##  <a name="ondragover"></a>CMFCTabDropTarget::OnDragOver  
  ユーザーは、フォーカスのあるタブ ウィンドウの上にオブジェクトをドラッグしたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -185,7 +191,7 @@ virtual DROPEFFECT OnDragOver(
   
  カスタマイズ モードの詳細については、次を参照してください。 [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode)します。 クリップボード データ形式の詳細については、次を参照してください。 [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable)します。  
   
-##  <a name="a-nameondropexa--cmfctabdroptargetondropex"></a><a name="ondropex"></a>CMFCTabDropTarget::OnDropEx  
+##  <a name="ondropex"></a>CMFCTabDropTarget::OnDropEx  
  ドラッグ操作の最後に、マウス ボタンを離したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -226,7 +232,7 @@ virtual DROPEFFECT OnDropEx(
   
  カスタマイズ モードの詳細については、次を参照してください。 [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode)します。 クリップボード データ形式の詳細については、次を参照してください。 [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable)します。  
   
-##  <a name="a-nameregistera--cmfctabdroptargetregister"></a><a name="register"></a>CMFCTabDropTarget::Register  
+##  <a name="register"></a>CMFCTabDropTarget::Register  
  OLE ドラッグ アンド ドロップ操作の対象にすることができますが、コントロールを登録します。  
   
 ```  

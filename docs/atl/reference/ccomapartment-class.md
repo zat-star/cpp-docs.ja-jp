@@ -9,9 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CComApartment
 - CComApartment
-- ATL.CComApartment
+- ATLBASE/ATL::CComApartment
+- ATLBASE/ATL::CComApartment::CComApartment
+- ATLBASE/ATL::CComApartment::Apartment
+- ATLBASE/ATL::CComApartment::GetLockCount
+- ATLBASE/ATL::CComApartment::Lock
+- ATLBASE/ATL::CComApartment::Unlock
+- ATLBASE/ATL::CComApartment::m_dwThreadID
+- ATLBASE/ATL::CComApartment::m_hThread
+- ATLBASE/ATL::CComApartment::m_nLockCnt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,7 +92,7 @@ class CComApartment
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameapartmenta--ccomapartmentapartment"></a><a name="apartment"></a>CComApartment::Apartment  
+##  <a name="apartment"></a>CComApartment::Apartment  
  スレッドの開始アドレスをマークします。  
   
 ```
@@ -98,7 +105,7 @@ DWORD Apartment();
 ### <a name="remarks"></a>コメント  
  自動的に設定[CComAutoThreadModule::Init](../../atl/reference/ccomautothreadmodule-class.md#init)します。  
   
-##  <a name="a-nameccomapartmenta--ccomapartmentccomapartment"></a><a name="ccomapartment"></a>CComApartment::CComApartment  
+##  <a name="ccomapartment"></a>CComApartment::CComApartment  
  コンストラクターです。  
   
 ```
@@ -108,7 +115,7 @@ CComApartment();
 ### <a name="remarks"></a>コメント  
  初期化、`CComApartment`データ メンバー [m_nLockCnt](#m_nlockcnt)と[で](#m_hthread)します。  
   
-##  <a name="a-namegetlockcounta--ccomapartmentgetlockcount"></a><a name="getlockcount"></a>CComApartment::GetLockCount  
+##  <a name="getlockcount"></a>CComApartment::GetLockCount  
  スレッドの現在のロック カウントを返します。  
   
 ```
@@ -118,7 +125,7 @@ LONG GetLockCount();
 ### <a name="return-value"></a>戻り値  
  スレッドのロック カウントします。  
   
-##  <a name="a-namelocka--ccomapartmentlock"></a><a name="lock"></a>CComApartment::Lock  
+##  <a name="lock"></a>CComApartment::Lock  
  スレッドのロック カウントをインクリメントします。  
   
 ```
@@ -133,28 +140,28 @@ LONG Lock();
   
  スレッドのロック カウントは、統計目的のために使用されます。  
   
-##  <a name="a-namemdwthreadida--ccomapartmentmdwthreadid"></a><a name="m_dwthreadid"></a>CComApartment::m_dwThreadID  
+##  <a name="m_dwthreadid"></a>CComApartment::m_dwThreadID  
  スレッドの識別子が含まれています。  
   
 ```
 DWORD m_dwThreadID;
 ```  
   
-##  <a name="a-namemhthreada--ccomapartmentmhthread"></a><a name="m_hthread"></a>CComApartment::m_hThread  
+##  <a name="m_hthread"></a>CComApartment::m_hThread  
  スレッドへのハンドルが含まれています。  
   
 ```
 HANDLE m_hThread;
 ```  
   
-##  <a name="a-namemnlockcnta--ccomapartmentmnlockcnt"></a><a name="m_nlockcnt"></a>CComApartment::m_nLockCnt  
+##  <a name="m_nlockcnt"></a>CComApartment::m_nLockCnt  
  スレッドの現在のロック カウントが含まれています。  
   
 ```
 LONG m_nLockCnt;
 ```  
   
-##  <a name="a-nameunlocka--ccomapartmentunlock"></a><a name="unlock"></a>CComApartment::Unlock  
+##  <a name="unlock"></a>CComApartment::Unlock  
  スレッドのロック カウントをデクリメントします。  
   
 ```

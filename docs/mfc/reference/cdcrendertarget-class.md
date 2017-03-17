@@ -9,8 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxrendertarget/CDCRenderTarget
 - CDCRenderTarget
+- AFXRENDERTARGET/CDCRenderTarget
+- AFXRENDERTARGET/CDCRenderTarget::CDCRenderTarget
+- AFXRENDERTARGET/CDCRenderTarget::Attach
+- AFXRENDERTARGET/CDCRenderTarget::BindDC
+- AFXRENDERTARGET/CDCRenderTarget::Create
+- AFXRENDERTARGET/CDCRenderTarget::Detach
+- AFXRENDERTARGET/CDCRenderTarget::GetDCRenderTarget
+- AFXRENDERTARGET/CDCRenderTarget::m_pDCRenderTarget
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +96,7 @@ class CDCRenderTarget : public CRenderTarget;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxrendertarget.h  
   
-##  <a name="a-nameattacha--cdcrendertargetattach"></a><a name="attach"></a>CDCRenderTarget::Attach  
+##  <a name="attach"></a>CDCRenderTarget::Attach  
  既存の接続は、ターゲット オブジェクトのインターフェイスをレンダリングします。  
   
 ```  
@@ -100,7 +107,7 @@ void Attach(ID2D1DCRenderTarget* pTarget);
  `pTarget`  
  既存のレンダー ターゲットのインターフェイスです。 NULL にすることはできません。  
   
-##  <a name="a-namebinddca--cdcrendertargetbinddc"></a><a name="binddc"></a>CDCRenderTarget::BindDC  
+##  <a name="binddc"></a>CDCRenderTarget::BindDC  
  レンダー ターゲットを描画コマンドを発行先デバイス コンテキストにバインドします。  
   
 ```  
@@ -119,14 +126,14 @@ BOOL BindDC(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namecdcrendertargeta--cdcrendertargetcdcrendertarget"></a><a name="cdcrendertarget"></a>CDCRenderTarget::CDCRenderTarget  
+##  <a name="cdcrendertarget"></a>CDCRenderTarget::CDCRenderTarget  
  CDCRenderTarget オブジェクトを構築します。  
   
 ```  
 CDCRenderTarget();
 ```  
   
-##  <a name="a-namecreatea--cdcrendertargetcreate"></a><a name="create"></a>CDCRenderTarget::Create  
+##  <a name="create"></a>CDCRenderTarget::Create  
  CDCRenderTarget を作成します。  
   
 ```  
@@ -140,7 +147,7 @@ BOOL Create(const D2D1_RENDER_TARGET_PROPERTIES& props);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-##  <a name="a-namedetacha--cdcrendertargetdetach"></a><a name="detach"></a>CDCRenderTarget::Detach  
+##  <a name="detach"></a>CDCRenderTarget::Detach  
  レンダー ターゲット インターフェイス オブジェクトからのデタッチします。  
   
 ```  
@@ -150,7 +157,7 @@ ID2D1DCRenderTarget* Detach();
 ### <a name="return-value"></a>戻り値  
  デタッチされたへのポインターは、対象のインターフェイスをレンダリングします。  
   
-##  <a name="a-namegetdcrendertargeta--cdcrendertargetgetdcrendertarget"></a><a name="getdcrendertarget"></a>CDCRenderTarget::GetDCRenderTarget  
+##  <a name="getdcrendertarget"></a>CDCRenderTarget::GetDCRenderTarget  
  返します。 ID2D1DCRenderTarget インターフェイス  
   
 ```  
@@ -160,14 +167,14 @@ ID2D1DCRenderTarget* GetDCRenderTarget();
 ### <a name="return-value"></a>戻り値  
  ID2D1DCRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
   
-##  <a name="a-namempdcrendertargeta--cdcrendertargetmpdcrendertarget"></a><a name="m_pdcrendertarget"></a>CDCRenderTarget::m_pDCRenderTarget  
+##  <a name="m_pdcrendertarget"></a>CDCRenderTarget::m_pDCRenderTarget  
  ID2D1DCRenderTarget オブジェクトへのポインター。  
   
 ```  
 ID2D1DCRenderTarget* m_pDCRenderTarget;  
 ```  
   
-##  <a name="a-nameoperatorid2d1dcrendertargetstara--cdcrendertargetoperator-id2d1dcrendertarget"></a><a name="operator_id2d1dcrendertarget_star"></a>CDCRenderTarget::operator ID2D1DCRenderTarget *  
+##  <a name="operator_id2d1dcrendertarget_star"></a>CDCRenderTarget::operator ID2D1DCRenderTarget *  
  返します。 ID2D1DCRenderTarget インターフェイス  
   
 ```  

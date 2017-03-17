@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDocObjectServerItem
+- AFXDOCOB/CDocObjectServerItem
+- AFXDOCOB/CDocObjectServerItem::CDocObjectServerItem
+- AFXDOCOB/CDocObjectServerItem::GetDocument
+- AFXDOCOB/CDocObjectServerItem::OnHide
+- AFXDOCOB/CDocObjectServerItem::OnShow
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +100,7 @@ class CDocObjectServerItem : public COleServerItem
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdocob.h  
   
-##  <a name="a-namecdocobjectserveritema--cdocobjectserveritemcdocobjectserveritem"></a><a name="cdocobjectserveritem"></a>CDocObjectServerItem::CDocObjectServerItem  
+##  <a name="cdocobjectserveritem"></a>CDocObjectServerItem::CDocObjectServerItem  
  `CDocObjectServerItem` オブジェクトを構築します。  
   
 ```  
@@ -109,7 +114,7 @@ CDocObjectServerItem(COleServerDoc* pServerDoc, BOOL bAutoDelete);
  `bAutoDelete`  
  リンクがリリースされたときに、オブジェクトを削除するかどうかを示します。 引数に設定します**FALSE**場合、`CDocObjectServerItem`オブジェクトは、ドキュメントのデータに不可欠な要素です。 設定**TRUE**オブジェクトが、ドキュメントのデータを削除するには、フレームワークを内の範囲を識別するために使用されるセカンダリ構造体である場合。  
   
-##  <a name="a-namegetdocumenta--cdocobjectserveritemgetdocument"></a><a name="getdocument"></a>CDocObjectServerItem::GetDocument  
+##  <a name="getdocument"></a>CDocObjectServerItem::GetDocument  
  項目を含むドキュメントへのポインターを取得します。  
   
 ```  
@@ -122,7 +127,7 @@ COleServerDoc* GetDocument() const;
 ### <a name="remarks"></a>コメント  
  これは、引数として渡された server ドキュメントへのアクセス、 [CDocObjectServerItem](#cdocobjectserveritem)コンス トラクターです。  
   
-##  <a name="a-nameonhidea--cdocobjectserveritemonhide"></a><a name="onhide"></a>CDocObjectServerItem::OnHide  
+##  <a name="onhide"></a>CDocObjectServerItem::OnHide  
  アイテムを非表示にするために、フレームワークによって呼び出されます。  
   
 ```  
@@ -132,7 +137,7 @@ virtual void OnHide();
 ### <a name="remarks"></a>コメント  
  既定の実装では、項目が DocObject は例外をスローします。 ビュー全体を受け取るのでは、アクティブな DocObject アイテムを非表示にすることはできません。 非表示にする DocObject アイテムを非アクティブ化する必要があります。 アイテムが DocObject でない場合は、既定の実装を呼び出す[COleServerItem::OnHide](../../mfc/reference/coleserveritem-class.md#onhide)します。  
   
-##  <a name="a-nameonshowa--cdocobjectserveritemonshow"></a><a name="onshow"></a>CDocObjectServerItem::OnShow  
+##  <a name="onshow"></a>CDocObjectServerItem::OnShow  
  サーバー アプリケーションは、アイテムの埋め込みを DocObject に実行を指示するために、フレームワークによって呼び出されますアクティブです。  
   
 ```  

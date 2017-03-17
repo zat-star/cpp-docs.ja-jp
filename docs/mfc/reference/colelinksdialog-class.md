@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleLinksDialog
+- AFXODLGS/COleLinksDialog
+- AFXODLGS/COleLinksDialog::COleLinksDialog
+- AFXODLGS/COleLinksDialog::DoModal
+- AFXODLGS/COleLinksDialog::m_el
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +103,7 @@ class COleLinksDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namedomodala--colelinksdialogdomodal"></a><a name="domodal"></a>COleLinksDialog::DoModal  
+##  <a name="domodal"></a>COleLinksDialog::DoModal  
  OLE の [リンクの編集] ダイアログ ボックスが表示されます。  
   
 ```  
@@ -118,7 +122,7 @@ virtual INT_PTR DoModal();
 ### <a name="remarks"></a>コメント  
  メンバーを設定して、さまざまなダイアログ ボックス コントロールを初期化する場合、[各](#m_el)構造体、行う必要があります、呼び出す前に`DoModal`はダイアログ オブジェクトを構築します。  
   
-##  <a name="a-namecolelinksdialoga--colelinksdialogcolelinksdialog"></a><a name="colelinksdialog"></a>COleLinksDialog::COleLinksDialog  
+##  <a name="colelinksdialog"></a>COleLinksDialog::COleLinksDialog  
  `COleLinksDialog` オブジェクトを構築します。  
   
 ```  
@@ -145,7 +149,7 @@ COleLinksDialog (
 ### <a name="remarks"></a>コメント  
  この関数はのみ、`COleLinksDialog`オブジェクトです。 ダイアログ ボックスを表示するには[DoModal](#domodal)関数です。  
   
-##  <a name="a-namemela--colelinksdialogmel"></a><a name="m_el"></a>COleLinksDialog::m_el  
+##  <a name="m_el"></a>COleLinksDialog::m_el  
  型の構造体**される**リンクの編集 ダイアログ ボックスの動作を制御するために使用します。  
   
 ```  

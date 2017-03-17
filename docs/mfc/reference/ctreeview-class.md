@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CTreeView
+- AFXCVIEW/CTreeView
+- AFXCVIEW/CTreeView::CTreeView
+- AFXCVIEW/CTreeView::GetTreeCtrl
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,14 +88,14 @@ class CTreeView : public CCtrlView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcview.h  
   
-##  <a name="a-namectreeviewa--ctreeviewctreeview"></a><a name="ctreeview"></a>CTreeView::CTreeView  
+##  <a name="ctreeview"></a>CTreeView::CTreeView  
  `CTreeView` オブジェクトを構築します。  
   
 ```  
 CTreeView();
 ```  
   
-##  <a name="a-namegettreectrla--ctreeviewgettreectrl"></a><a name="gettreectrl"></a>CTreeView::GetTreeCtrl  
+##  <a name="gettreectrl"></a>CTreeView::GetTreeCtrl  
  ビューに関連付けられているツリー コントロールへの参照を返します。  
   
 ```  

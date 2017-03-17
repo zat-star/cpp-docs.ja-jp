@@ -9,9 +9,27 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CAtlArray
-- ATL.CAtlArray
 - CAtlArray
+- ATLCOLL/ATL::CAtlArray
+- ATLCOLL/ATL::Add
+- ATLCOLL/ATL::Append
+- ATLCOLL/ATL::AssertValid
+- ATLCOLL/ATL::CAtlArray
+- ATLCOLL/ATL::Copy
+- ATLCOLL/ATL::FreeExtra
+- ATLCOLL/ATL::GetAt
+- ATLCOLL/ATL::GetCount
+- ATLCOLL/ATL::GetData
+- ATLCOLL/ATL::InsertArrayAt
+- ATLCOLL/ATL::InsertAt
+- ATLCOLL/ATL::IsEmpty
+- ATLCOLL/ATL::RemoveAll
+- ATLCOLL/ATL::RemoveAt
+- ATLCOLL/ATL::SetAt
+- ATLCOLL/ATL::SetAtGrow
+- ATLCOLL/ATL::SetCount
+- ATLCOLL/ATL::INARGTYPE
+- ATLCOLL/ATL::OUTARGTYPE
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -109,7 +127,7 @@ class CAtlArray
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="a-nameadda--catlarrayadd"></a><a name="add"></a>CAtlArray::Add  
+##  <a name="add"></a>CAtlArray::Add  
  配列オブジェクトに要素を追加するには、このメソッドを呼び出します。  
   
 ```
@@ -130,7 +148,7 @@ size_t Add();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#1;](../../atl/codesnippet/cpp/catlarray-class_1.cpp)]  
   
-##  <a name="a-nameappenda--catlarrayappend"></a><a name="append"></a>CAtlArray::Append  
+##  <a name="append"></a>CAtlArray::Append  
  別の end に&1; つの配列の内容を追加するには、このメソッドを呼び出します。  
   
 ```
@@ -154,7 +172,7 @@ size_t Append(const CAtlArray<E, ETraits>& aSrc);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#2;](../../atl/codesnippet/cpp/catlarray-class_2.cpp)]  
   
-##  <a name="a-nameassertvalida--catlarrayassertvalid"></a><a name="assertvalid"></a>CAtlArray::AssertValid  
+##  <a name="assertvalid"></a>CAtlArray::AssertValid  
  Array オブジェクトが有効であることを確認するには、このメソッドを呼び出します。  
   
 ```
@@ -167,7 +185,7 @@ void AssertValid() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#3;](../../atl/codesnippet/cpp/catlarray-class_3.cpp)]  
   
-##  <a name="a-namecatlarraya--catlarraycatlarray"></a><a name="catlarray"></a>CAtlArray::CAtlArray  
+##  <a name="catlarray"></a>CAtlArray::CAtlArray  
  コンストラクターです。  
   
 ```
@@ -180,7 +198,7 @@ CAtlArray() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&4;](../../atl/codesnippet/cpp/catlarray-class_4.cpp)]  
   
-##  <a name="a-namedtora--catlarraycatlarray"></a><a name="dtor"></a>CAtlArray:: ~ CAtlArray  
+##  <a name="dtor"></a>CAtlArray:: ~ CAtlArray  
  デストラクターです。  
   
 ```
@@ -190,7 +208,7 @@ CAtlArray() throw();
 ### <a name="remarks"></a>コメント  
  配列オブジェクトによって使用されているリソースを解放します。  
   
-##  <a name="a-namecopya--catlarraycopy"></a><a name="copy"></a>CAtlArray::Copy  
+##  <a name="copy"></a>CAtlArray::Copy  
  別の&1; つの配列の要素をコピーするには、このメソッドを呼び出します。  
   
 ```
@@ -214,7 +232,7 @@ void Copy(const CAtlArray<E, ETraits>& aSrc);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#5;](../../atl/codesnippet/cpp/catlarray-class_5.cpp)]  
   
-##  <a name="a-namefreeextraa--catlarrayfreeextra"></a><a name="freeextra"></a>CAtlArray::FreeExtra  
+##  <a name="freeextra"></a>CAtlArray::FreeExtra  
  配列から空の要素を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -226,7 +244,7 @@ void FreeExtra() throw();
   
  デバッグ ビルドでは CAtlArray オブジェクトが有効でない場合、または配列の最大サイズを超えてしまう場合、atlassert されます。  
   
-##  <a name="a-namegetata--catlarraygetat"></a><a name="getat"></a>CAtlArray::GetAt  
+##  <a name="getat"></a>CAtlArray::GetAt  
  呼び出しには、このメソッドは、配列オブジェクトから&1; つの要素を取得します。  
   
 ```
@@ -247,7 +265,7 @@ E& GetAt(size_t iElement) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&6;](../../atl/codesnippet/cpp/catlarray-class_6.cpp)]  
   
-##  <a name="a-namegetcounta--catlarraygetcount"></a><a name="getcount"></a>CAtlArray::GetCount  
+##  <a name="getcount"></a>CAtlArray::GetCount  
  このメソッドでは、配列に格納されている要素の数を取得します。  
   
 ```
@@ -263,7 +281,7 @@ size_t GetCount() const throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlArray::GetAt](#getat)します。  
   
-##  <a name="a-namegetdataa--catlarraygetdata"></a><a name="getdata"></a>CAtlArray::GetData  
+##  <a name="getdata"></a>CAtlArray::GetData  
  このメソッドを呼び出して配列の最初の要素へのポインターを返します。  
   
 ```
@@ -277,14 +295,14 @@ const E* GetData() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#7;](../../atl/codesnippet/cpp/catlarray-class_7.cpp)]  
   
-##  <a name="a-nameinargtypea--catlarrayinargtype"></a><a name="inargtype"></a>CAtlArray::INARGTYPE  
+##  <a name="inargtype"></a>CAtlArray::INARGTYPE  
  データは、配列に要素を追加するために使用する型します。  
   
 ```
 typedef ETraits::INARGTYPE INARGTYPE;
 ```  
   
-##  <a name="a-nameinsertarrayata--catlarrayinsertarrayat"></a><a name="insertarrayat"></a>CAtlArray::InsertArrayAt  
+##  <a name="insertarrayat"></a>CAtlArray::InsertArrayAt  
  1 つの配列を挿入するには、このメソッドを呼び出します。  
   
 ```
@@ -309,7 +327,7 @@ void InsertArrayAt(size_t iStart, const CAtlArray<E, ETraits>* paNew);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#8;](../../atl/codesnippet/cpp/catlarray-class_8.cpp)]  
   
-##  <a name="a-nameinsertata--catlarrayinsertat"></a><a name="insertat"></a>CAtlArray::InsertAt  
+##  <a name="insertat"></a>CAtlArray::InsertAt  
  配列オブジェクトに新しい要素 (または要素の複数のコピー) を挿入するには、このメソッドを呼び出します。  
   
 ```
@@ -334,7 +352,7 @@ void InsertAt(size_t iElement, INARGTYPE element, size_t nCount = 1);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#9;](../../atl/codesnippet/cpp/catlarray-class_9.cpp)]  
   
-##  <a name="a-nameisemptya--catlarrayisempty"></a><a name="isempty"></a>CAtlArray::IsEmpty  
+##  <a name="isempty"></a>CAtlArray::IsEmpty  
  配列が空の場合は、テストするには、このメソッドを呼び出します。  
   
 ```
@@ -350,7 +368,7 @@ bool IsEmpty() const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#10;](../../atl/codesnippet/cpp/catlarray-class_10.cpp)]  
   
-##  <a name="a-nameoperatorata--catlarrayoperator-"></a><a name="operator_at"></a>CAtlArray::operator  
+##  <a name="operator_at"></a>CAtlArray::operator  
  配列の要素への参照を返すには、この演算子を呼び出します。  
   
 ```
@@ -370,14 +388,14 @@ const E& operator[](size_t ielement) const throw();
   
  デバッグ ビルドは atlassert 場合`iElement`配列内の要素の合計数を超えています。 製品版ビルドでは、予期しない結果が無効なパラメーターにあります。  
   
-##  <a name="a-nameoutargtypea--catlarrayoutargtype"></a><a name="outargtype"></a>CAtlArray::OUTARGTYPE  
+##  <a name="outargtype"></a>CAtlArray::OUTARGTYPE  
  配列から要素を取得するために使用するデータ型。  
   
 ```
 typedef ETraits::OUTARGTYPE OUTARGTYPE;
 ```  
   
-##  <a name="a-nameremovealla--catlarrayremoveall"></a><a name="removeall"></a>CAtlArray::RemoveAll  
+##  <a name="removeall"></a>CAtlArray::RemoveAll  
  配列オブジェクトからすべての要素を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -392,7 +410,7 @@ void RemoveAll() throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlArray::IsEmpty](#isempty)します。  
   
-##  <a name="a-nameremoveata--catlarrayremoveat"></a><a name="removeat"></a>CAtlArray::RemoveAt  
+##  <a name="removeat"></a>CAtlArray::RemoveAt  
  配列から&1; つまたは複数の要素を削除するには、このメソッドを呼び出します。  
   
 ```
@@ -414,7 +432,7 @@ void RemoveAt(size_t iElement, size_t nCount = 1);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities&#11;](../../atl/codesnippet/cpp/catlarray-class_11.cpp)]  
   
-##  <a name="a-namesetata--catlarraysetat"></a><a name="setat"></a>CAtlArray::SetAt  
+##  <a name="setat"></a>CAtlArray::SetAt  
  配列オブジェクト内に要素の値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -434,7 +452,7 @@ void SetAt(size_t iElement, INARGTYPE element);
 ### <a name="example"></a>例  
  例を参照してください[CAtlArray::GetAt](#getat)します。  
   
-##  <a name="a-namesetcounta--catlarraysetcount"></a><a name="setcount"></a>CAtlArray::SetCount  
+##  <a name="setcount"></a>CAtlArray::SetCount  
  配列オブジェクトのサイズを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -459,7 +477,7 @@ bool SetCount(size_t nNewSize, int nGrowBy = - 1);
 ### <a name="example"></a>例  
  例を参照してください[CAtlArray::GetData](#getdata)します。  
   
-##  <a name="a-namesetatgrowa--catlarraysetatgrow"></a><a name="setatgrow"></a>CAtlArray::SetAtGrow  
+##  <a name="setatgrow"></a>CAtlArray::SetAtGrow  
  必要に応じて、配列を展開する、配列オブジェクト内の要素の値を設定するには、このメソッドを呼び出します。  
   
 ```
