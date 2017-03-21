@@ -47,9 +47,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: ab3c60c735fbca972ff544a31918698f4afffa0e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: 57de8d43336f8fd5c82da17f42cf6f8292600148
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="crt-library-features"></a>CRT ライブラリの機能
@@ -58,7 +58,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="c-run-time-libraries-crt"></a>C ランタイム ライブラリ (CRT)  
  C ランタイム ライブラリ (CRT) は、ISO C99 標準ライブラリが組み込まれている C++ 標準ライブラリの一部です。 この CRT を実装する Visual C++ ライブラリは、ネイティブ コード開発と、ネイティブとマネージの混合コードと .NET 向けの純粋マネージ コードの両方の開発をサポートします。 CRT のすべてのバージョンがマルチスレッド開発をサポートします。 ほとんどのライブラリが、ライブラリを直接コードにリンクする静的リンクと、コードで共通 DLL ファイルを使用できるようにする動的リンクの両方をサポートします。  
   
- Visual Studio 2015 では、CRT が新しいバイナリにリファクタリングされました。 ユニバーサル CRT (UCRT) には、標準の C99 CRT ライブラリからエクスポートされた関数とグローバルが含まれています。 UCRT は Windows コンポーネントであり、Windows 10 の一部として出荷されます。 UCRT 用のスタティック ライブラリ、DLL インポート ライブラリ、およびヘッダー ファイルが Windows 10 SDK に含まれています。 Visual C++ をインストールすると、Visual Studio セットアップによって、UCRT を使用するために必要な Windows 10 SDK のサブセットがインストールされます。 UCRT は、Visual Studio 2015 でサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist を使用して再配布することができます。 詳細については、「[Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
+ Visual Studio 2015 より、CRT が新しいバイナリにリファクタリングされました。 ユニバーサル CRT (UCRT) には、標準の C99 CRT ライブラリからエクスポートされた関数とグローバルが含まれています。 UCRT は Windows コンポーネントであり、Windows 10 の一部として出荷されます。 UCRT 用のスタティック ライブラリ、DLL インポート ライブラリ、およびヘッダー ファイルが Windows 10 SDK に含まれています。 Visual C++ をインストールすると、Visual Studio セットアップによって、UCRT を使用するために必要な Windows 10 SDK のサブセットがインストールされます。 UCRT は、Visual Studio 2015 以降のバージョンでサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist を使用して再配布することができます。 詳細については、「[Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
   
  次の表に、UCRT を実装するライブラリの一覧を示します。  
   
@@ -103,7 +103,7 @@ ms.lasthandoff: 02/24/2017
   
  **/clr** コンパイラ スイッチを使用すると、コードはスタティック ライブラリ msvcmrt.lib とリンクされます。 このスタティック ライブラリは、マネージ コードとネイティブ CRT 間のプロキシを提供します。 **/MT** は、静的にリンクされる CRT ( **/MTd** オプションまたは **/clr**オプション) と一緒には使用できません。 代わりに、動的にリンクされるライブラリ (**/MD** または **/MDd**) を使用してください。  
   
- **/clr:pure** コンパイラ スイッチを使用すると、コードはスタティック ライブラリ msvcurt.lib とリンクされます。 **/clr**と同様、静的にリンクされるライブラリにはリンクできません。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ **/clr:pure** コンパイラ スイッチを使用すると、コードはスタティック ライブラリ msvcurt.lib とリンクされます。 **/clr**と同様、静的にリンクされるライブラリにはリンクできません。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 以降では使用されていません。  
   
  **/clr** と共に CTR を使用する方法の詳細については、「[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)」を参照してください。**/clr:pure** については、「[純粋で検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)」を参照してください。  
   
