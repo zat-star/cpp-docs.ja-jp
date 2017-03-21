@@ -33,8 +33,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e51b0bda5ef7d68476d0536e7b79987e5da9ec84
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: 7ff37399842c7c8d41f8b7d15660c73b8a11f19f
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
@@ -58,9 +59,9 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 4.  [同時実行ランタイムの互換性に影響する変更点](#BK_ConcRT)  
   
-## <a name="a-namevc2015a-visual-c-2015-conformance-changes"></a><a name="VC_2015"></a> Visual C++ 2015 の準拠に関する変更  
+## <a name="VC_2015"></a> Visual C++ 2015 の準拠に関する変更  
   
-###  <a name="a-namebkcrta-c-runtime-library-crt"></a><a name="BK_CRT"></a> C ランタイム ライブラリ (CRT)  
+###  <a name="BK_CRT"></a> C ランタイム ライブラリ (CRT)  
   
 #### <a name="general-changes"></a>一般的な変更  
   
@@ -180,7 +181,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **%A と %a の有効桁数** %A と %a の書式指定子の既定の有効桁数は、以前のバージョンのライブラリでは 6 桁でした。 現在、既定の有効桁数は、C 標準に準拠して 13 桁です。  
   
-     これは、%A または %a を持つ書式文字列を使用する関数の出力におけるランタイム動作の変更です。 従来の動作では、%A 指定子を使用する出力は "1.1A2B3Cp+111" でした。 現在、同じ値の出力は "1.1A2B3C4D5E6F7p+111" です。 従来の動作を取得するには、有効桁数を指定します (たとえば %.6A)。 「[精度指定](../c-runtime-library/precision-specification.md)」を参照してください。  
+     これは、%A または %a を持つ書式文字列を使用する関数の出力におけるランタイム動作の変更です。 従来の動作では、%A 指定子を使用する出力は "1.1A2B3Cp+111" でした。 現在、同じ値の出力は "1.1A2B3C4D5E6F7p+111" です。 従来の動作を取得するには、有効桁数を指定します (たとえば %.6A)。 「[精度指定](../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md#precision)」を参照してください。  
   
 -   **%F 指定子** 現在、%F 書式/変換指定子がサポートされています。 無限大と NaNs が大文字で書式設定される点を除き、機能的には %f 書式指定子と同等です。  
   
@@ -252,7 +253,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **CLOCKS_PER_SEC** 現在、CLOCKS_PER_SEC マクロは type clock_t の型の整数に拡張されており、これは C 言語で必要です。  
   
-####  <a name="a-namebkstla-c-standard-library"></a><a name="BK_STL"></a> C++ 標準ライブラリ  
+####  <a name="BK_STL"></a> C++ 標準ライブラリ  
  新しい最適化とデバッグのチェックを有効にするために、C++ 標準ライブラリの Visual Studio の実装では、バイナリの互換性がバージョンごとに意図的に保たれていません。 そのため、C++ 標準ライブラリを使用すると、異なるバージョンを使用してコンパイルされたオブジェクト ファイルとスタティック ライブラリは&1; つのバイナリ (EXE または DLL) に混在させることができず、C++ 標準ライブラリ オブジェクトは異なるバージョンを使用してコンパイルされたバイナリ間で渡すことができません。 混在があると、_MSC_VER の不一致に関するリンカー エラーが発生します  (_MSC_VER はコンパイラのメジャー バージョンを含むマクロです。たとえば Visual Studio 2013 では 1800 です)。このチェックでは、DLL の混在を検出できず、Visual C++ 2008 以前のバージョンが関係する混在も検出できません。  
   
 -   **C++ 標準ライブラリ インクルード ファイル** C++ 標準ライブラリ ヘッダーのインクルード構造に対していくつかの変更が加えられました。 C++ 標準ライブラリ ヘッダーは、指定されていない方法での相互インクルードを許可されています。 一般に、C++ 標準に応じて必要なすべてのヘッダーを注意深くインクルードし、どの C++ 標準ライブラリ ヘッダーにどの C++ 標準ライブラリ ヘッダーが含まれるかは関係ないようにするようコードを記述する必要があります。 これにより、バージョン間およびプラットフォーム間でのコードの移植が可能になります。 少なくとも [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] でのヘッダーに関する&2; つの変更がユーザー コードに影響を与えます。 1 つ目として、\<string> に \<iterator> が含まれなくなりました。 2 つ目として、現在、\<tuple> は、すべての \<array> は含まない std::array を宣言します。これは、次のコード構成体の組み合わせによってコードに障害を起こす可能性があります。コードに "array" という名前の変数があり、using-directive "using namespace std;" があります。\<tuple> を含む C++ 標準ライブラリ ヘッダー (\<functional> など) を組み込みますが、これは現在、std::array を宣言します。  
@@ -315,13 +316,13 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **launch::any ポリシーと launch::sync ポリシー** The nonstandard launch::any ポリシーと launch::sync ポリシー were removed. 代わりに、launch::any では、launch:async &#124; launch:deferred を使用します。 launch::sync では、launch::deferred を使用します。 「[launch 列挙型](../standard-library/future-enums.md#launch_enumeration)」を参照してください。  
   
-####  <a name="a-namebkmfca-mfc-and-atl"></a><a name="BK_MFC"></a> MFC と ATL  
+####  <a name="BK_MFC"></a> MFC と ATL  
   
 -   **Microsoft Foundation Classes (MFC)** はサイズが大きすぎるため、Visual Studio の "標準" インストールから除外されました。 MFC をインストールするには、Visual Studio 2015 セットアップでカスタム インストール オプションを選択します。 Visual Studio 2015 が既にインストールされている場合、MFC をインストールできます。そのためには、Visual Studio セットアップを再実行し、カスタム インストール オプションを選択し、Microsoft Foundation Classes を選択します。 Visual Studio セットアップの再実行は、コントロール パネル、プログラムと機能か、インストール メディアからすることができます。  
   
      Visual C++ 再頒布可能パッケージにも、引き続きこのライブラリが含まれています。  
   
-####  <a name="a-namebkconcrta-concurrency-runtime"></a><a name="BK_ConcRT"></a> 同時実行ランタイム  
+####  <a name="BK_ConcRT"></a> 同時実行ランタイム  
   
 -   **concurrency::Context::Yield と競合する Windows.h の Yield マクロ** 以前、同時実行ランタイムは #undef を使用して Yield マクロの定義を解除し、Windows.h h で定義されている Yield マクロと concurrency::Context::Yield 関数の間の競合を回避していました。 この #undef は削除され、競合しない同等の新しい API 呼び出し [concurrency::Context::YieldExecution](../parallel/concrt/reference/context-class.md#yieldexecution) が追加されました。 Yield との競合を回避するには、コードを更新して代わりに YieldExecution 関数を呼び出すか、次の例に示すように、呼び出しサイトで Yield 関数名を括弧で囲みます。  
   
@@ -346,7 +347,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   [更新プログラム 3 の準拠の強化](#VS_Update3)  
   
-###  <a name="a-namevsrtma-conformance-improvements-in-visual-c-2015"></a><a name="VS_RTM"></a> Visual C++ 2015 の準拠の強化  
+###  <a name="VS_RTM"></a> Visual C++ 2015 の準拠の強化  
   
 -   /Zc:forScope - オプション  
   
@@ -861,7 +862,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
      [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)]の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
   
-###  <a name="a-namevsupdate1a-conformance-improvements-in-update-1"></a><a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
+###  <a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
   
 -   **プライベートの仮想基底クラスと間接継承**  
   
@@ -1408,7 +1409,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-###  <a name="a-namevsupdate2a-conformance-improvements-in-update-2"></a><a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
+###  <a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
   
 -   **SFINAE 式の部分的なサポートの結果として、追加の警告とエラーが発行される場合がある**  
   
@@ -1693,7 +1694,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
      この方法で記述されたコードを修正するには、演算子の定義をヘッダー ファイルから対応するソース ファイルに移動することが必要な場合があります。  
   
-###  <a name="a-namevsupdate3a-conformance-improvements-in-update-3"></a><a name="VS_Update3"></a> 更新プログラム 3 の準拠の強化  
+###  <a name="VS_Update3"></a> 更新プログラム 3 の準拠の強化  
   
 -   **std::is_convertable は self-assignment** (標準ライブラリ) を検出するようになりました  
   
@@ -2793,8 +2794,3 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 ## <a name="see-also"></a>関連項目  
 [Visual Studio における Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-
