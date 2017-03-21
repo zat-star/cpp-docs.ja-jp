@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio での Visual C++ の新機能 | Microsoft Docs"
 ms.custom: 
-ms.date: 11/16/2016
+ms.date: 3/7/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -27,8 +27,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 39648d170fc189168d5f199fff8b3c2012456b82
-ms.openlocfilehash: 89fceaf02fe2b02bfe2ce6ff1de90bcd2bf66006
+ms.sourcegitcommit: d3ac5f5e54334e42ad48304d26a4f32b1b598459
+ms.openlocfilehash: dbed9eaf443d7392373d1eeba81bc0095c5bd1b4
+ms.lasthandoff: 03/07/2017
 
 ---
 
@@ -36,7 +37,7 @@ ms.openlocfilehash: 89fceaf02fe2b02bfe2ce6ff1de90bcd2bf66006
 
 [!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] には、Visual C++ 環境に対する多くの更新プログラムと修正プログラムが導入されています。 250 以上のバグを修正し、コンパイラおよびツールの問題をレポートしてきました。その多くは [Microsoft Connect](https://connect.microsoft.com/VisualStudio "Microsoft Connect") を通じてお客様から寄せられたものです。 バグ レポートをお寄せいただきありがとうございました。  Visual Studio 全体の新機能について詳しくは、「[[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] の新機能](https://go.microsoft.com/fwlink/?linkid=834481)」をご覧ください。
 
-[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] のコンパイラおよびツールのバージョン番号は 14.10.24629 です。 
+<!--The compiler and tools version number in [!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] is 14.10.24629. -->
 
 
 ## <a name="c-compiler"></a>C++ コンパイラ
@@ -63,8 +64,9 @@ ms.openlocfilehash: 89fceaf02fe2b02bfe2ce6ff1de90bcd2bf66006
 - ループのコード生成の向上: 定数整数の除算の自動ベクター化がサポートされるようになりました。また、memset パターンの識別機能が向上しています。
 - コード セキュリティの向上: バッファー オーバーラン コンパイラ診断の出力が向上し、/guard:cf によりジャンプ テーブルを生成する switch ステートメントが保護されるようになりました。
 - バージョン管理: 組み込みプリプロセッサ マクロ _MSC_VER の値が、Visual C++ ツールセットの更新のたびに単調に更新されるようになりました。 詳しくは、「[Visual C++ Compiler Version](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/visual-c-compiler-version/)」(Visual C++ コンパイラのバージョン) をご覧ください。
-- 新しいツールセット レイアウト: 開発用コンピューターでのコンパイラおよび関連するビルド ツールの場所とディレクトリ構造が新しくなりました。 新しいレイアウトでは、複数のバージョンのコンパイラのサイド バイ サイド インストールが可能です。 詳しくは、「[Compiler Tools Layout in Visual Studio “15”](https://blogs.msdn.microsoft.com/vcblog/2016/10/07/compiler-tools-layout-in-visual-studio-15/)」(Visual Studio "15" でのコンパイラ ツール レイアウト) をご覧ください。
-- 診断の強化: 出力ウィンドウにエラーが発生した列が表示されるようになりました。 詳しくは、「[C++ compiler diagnostics improvements in VS “15” Preview 5](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/c-compiler-diagnostics-improvements-in-vs-15-rc/)」(VS "15" Preview 5 での C++ コンパイラの診断の機能強化) をご覧ください。
+- 新しいツールセット レイアウト: 開発用コンピューターでのコンパイラおよび関連するビルド ツールの場所とディレクトリ構造が新しくなりました。 新しいレイアウトでは、複数のバージョンのコンパイラのサイド バイ サイド インストールが可能です。 詳細については、「[Compiler Tools Layout in Visual Studio "15" (Visual Studio "15" でのコンパイラ ツール レイアウト) ](https://blogs.msdn.microsoft.com/vcblog/2016/10/07/compiler-tools-layout-in-visual-studio-15/)」をご覧ください。
+- 診断の強化: 出力ウィンドウにエラーが発生した列が表示されるようになりました。 詳細については、「[C++ compiler diagnostics improvements in VS "15" Preview 5 (VS "15" Preview 5 での C++ コンパイラの診断の機能強化)](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/c-compiler-diagnostics-improvements-in-vs-15-rc/)」をご覧ください。
+- コルーチンの使用時、試験的キーワード "yield" (/await switch の下にあります) は削除されています。 代わりにコードを書き直し、"co_yield" を使用する必要があります。 詳細については、Visual C++ チーム ブログをご覧ください。 
 
 ## <a name="c-libraries"></a>C++ ライブラリ
 
@@ -89,6 +91,7 @@ ms.openlocfilehash: 89fceaf02fe2b02bfe2ce6ff1de90bcd2bf66006
 * コンパイラのスループットを上げるため、C++ 標準ライブラリ ヘッダーで不要なコンパイラ組み込みの宣言を含むことが回避されるようになりました。
 * 間違った bind() 呼び出しのコンパイラ診断が若干向上しています。
 * std::string/std::wstring の移動コンストラクターのパフォーマンスが 3 倍以上に向上しました。
+* STL の改善点の詳細については、[Visual Studio 2017 RTM における STL の修正](https://blogs.msdn.microsoft.com/vcblog/2017/02/06/stl-fixes-in-vs-2017-rtm/)に関する記事をご覧ください。
 
 ### <a name="open-source-library-support"></a>オープン ソース ライブラリのサポート  
 Vcpkg は、Visual Studio でオープン ソースの C++ スタティック ライブラリと DLL を取得してビルドするプロセスを大幅に単純化するオープン ソースのコマンド ライン ツールです。 詳しくは、「[Vcpkg updates: Static linking is now available](https://blogs.msdn.microsoft.com/vcblog/2016/11/01/vcpkg-updates-static-linking-is-now-available/)」(Vcpkg の更新: 静的リンクを使用できるようになりました) をご覧ください。
@@ -100,9 +103,14 @@ C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、�
 * もう&1; つの名前検索の適合性が解決しました
 * 既存の移動コンストラクターと移動代入演算子が非スローとして正しくマークされるようになりました。
 * atlstr.h のローカルな静的変数のスレッド セーフな init に関する有効な警告 (C4640) の抑制が解除されました。
-* XP ツールセットで、ローカルな静的変数のスレッド セーフな初期化が自動的に無効になっていました (ATL を使用し DLL をビルドするとき)。 現在のバージョンには該当しません。 スレッド セーフな初期化をオフにすることを希望する場合は、[プロジェクト] 設定で /Zc:threadSafeInit- を追加することができます。 
+* XP ツールセットで、ローカルな静的変数のスレッド セーフな初期化が自動的に無効になっていました (ATL を使用し DLL をビルドするとき)。 現在のバージョンには該当しません。 スレッド セーフな初期化をオフにすることを希望する場合は、プロジェクト設定で /Zc:threadSafeInit- を追加することができます。 
+
+### <a name="visual-c-runtime"></a>Visual C++ ランタイム
+* コントロール フロー ガード シンボルに新しいヘッダー "cfguard.h" が追加されました。 
 
 ## <a name="c-ide"></a>C++ IDE
+
+* C++ ネイティブ プロジェクトの構成変更が簡単になりました。C++/CLI プロジェクトの場合、さらに簡単です。 ソリューション構成を初めて有効にするとき、そのプロセスが以前より速やかに進行し、そのソリューション構成の後続のアクティベーションがすべて即座に完了します。
 
 ### <a name="intellisense"></a>Intellisense  
 * SQLite ベースの新しいデータベース エンジンが、既定で使用されるようになりました。 これにより、[定義に移動] や [すべての参照を検索] などのデータベース操作が高速化され、ソリューションの初期解析時間も大幅に短縮されます。 設定は、[ツール] > [オプション] > [テキスト エディター] > [C/C++] > [詳細設定] に移動しました (以前は、... [C/C++] > [試験的] の下)。
@@ -123,29 +131,28 @@ C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、�
 
 * [すべての参照の検索] (Shift + F12) を使って、複雑なコードベースでも簡単に参照できるようになりました。 高度なグループ化、フィルター処理、並べ替え、結果内の検索と色づけ (一部の言語) が提供され、参照を明確に理解できます。 C++ では、新しい UI に、変数から読み取っているのか、または変数に書き込んでいるのかに関する情報が含まれます。
 
-* _**RC の新機能**_ Dot-to-Arrow IntelliSense 機能が試験段階から進んだ段階に移り、既定で有効になっています。 エディターの [Expand Scopes (スコープの展開)] および [Expand Precedence (優先順位の展開)] 機能が試験段階から進んだ段階に移ります。
+* Dot-to-Arrow IntelliSense 機能が試験段階から進んだ段階に移り、既定で有効になっています。 エディターの [Expand Scopes (スコープの展開)] および [Expand Precedence (優先順位の展開)] 機能が試験段階から進んだ段階に移ります。
 
-* _**RC の新機能**_ 試験的なリファクタリング機能である "署名の変更" および "関数の抽出" が既定で使用可能になりました。
+* 試験的なリファクタリング機能である "署名の変更" および "関数の抽出" が既定で使用可能になりました。
 
-* _**RC の新機能**_ C++ プロジェクトの "迅速なプロジェクトの読み込み" の実現に向けた試験的な新しい機能が有効になりました。 C++ プロジェクトを次回に開いた際に、読み込みが速くなり、またそれ以降、読み込みが非常に速くなります。
+* C++ プロジェクトの "迅速なプロジェクトの読み込み" の実現に向けた試験的な新しい機能が有効になりました。 C++ プロジェクトを次回に開いた際に、読み込みが速くなり、またそれ以降、読み込みが非常に速くなります。
 
 他の言語と共通の機能と、C++ に固有の機能があります。 これらの新機能について詳しくは、「[Announcing Visual Studio “15”](https://blogs.msdn.microsoft.com/visualstudio/2016/10/05/announcing-visual-studio-15-preview-5/)」(Visual Studio "15" のご案内) をご覧ください。 
 
 ### <a name="support-for-non-msbuild-projects-with-open-folder"></a>[フォルダーを開く] での非 MSBuild プロジェクトのサポート
 Visual Studio 2017 で導入された [フォルダーを開く] 機能を使うと、ソリューションまたはプロジェクトを作成することなく、ソース コードを含むフォルダーでコーディング、ビルド、デバッグを行うことができます。 これにより、プロジェクトが MSBuild ベースではない場合でも、Visual Studio を簡単に使い始めることができます。 [フォルダーを開く] では、Visual Studio で MSBuild プロジェクトに対して既に提供されている、強力なコード理解、編集、ビルド、デバッグの機能にアクセスできます。 詳しくは、「[Bring your C++ codebase to Visual Studio with “Open Folder”](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/bring-your-c-codebase-to-visual-studio-with-open-folder/)」([フォルダーを開く] で C++ コードベースを Visual Studio に取り込む) をご覧ください。
 
-* _**RC の新機能**_ [フォルダーを開く] のエクスペリエンスが改善されました。     
-以下の json ファイルを使って、エクスペリエンスをカスタマイズできます。
+* [フォルダーを開く] のエクスペリエンスが改善されました。 以下の json ファイルを使って、エクスペリエンスをカスタマイズできます。
   -    CppProperties.json: IntelliSense および参照エクスペリエンスをカスタマイズします。
   -    Tasks.json: ビルド ステップをカスタマイズします。 
   -    Launch.json: デバッグ エクスペリエンスをカスタマイズします。
 
 ### <a name="cmake-support-via-open-folder"></a>[フォルダーを開く] での CMake のサポート
-Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) を変換しなくても、CMake プロジェクトを使用できるようになりました。 詳しくは、「[CMake support in Visual Studio](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/cmake-support-in-visual-studio/)」(Visual Studio での CMake のサポート) をご覧ください。 [フォルダーを開く] で CMake プロジェクトを開くと、C++ の編集、ビルド、およびデバッグ用の環境が自動的に構成されます。
+Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) を変換しなくても、CMake プロジェクトを使用できるようになりました。 詳細については、「[CMake support in Visual Studio (Visual Studio での CMake のサポート)](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/cmake-support-in-visual-studio/)」と「[CMake support in Visual Studio 2017 – what’s new in the RC.2 update (Visual Studio 2017 での CMake のサポート – RC.2 更新の新機能)](https://blogs.msdn.microsoft.com/vcblog/2016/12/20/cmake-support-in-visual-studio-2017-whats-new-in-the-rc-update/)」をご覧ください。 [フォルダーを開く] で CMake プロジェクトを開くと、C++ の編集、ビルド、およびデバッグ用の環境が自動的に構成されます。
 
-* _**RC の新機能**_ C++ の IntelliSense は、ルート フォルダーに CppProperties.json ファイルを作成しなくても動作します。 これに加えて、CMake に用意された構成と CppProperties.json ファイルをユーザーが簡単に切り替えることができるように新しいドロップダウンが追加されました。
+* C++ の IntelliSense は、ルート フォルダーに CppProperties.json ファイルを作成しなくても動作します。 これに加えて、CMake に用意された構成と CppProperties.json ファイルをユーザーが簡単に切り替えることができるように新しいドロップダウンが追加されました。
 
-* _**RC の新機能**_ CMakeLists.txt ファイルと同じフォルダーに配置される CMakeSettings.json ファイルにより、追加の構成がサポートされます。
+* CMakeLists.txt ファイルと同じフォルダーに配置される CMakeSettings.json ファイルにより、追加の構成がサポートされます。
 
   ![Cmake の [フォルダーを開く]](media/cmake_cpp.png "CMake Open Folder")
 
@@ -153,7 +160,9 @@ Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) �
 ## <a name="c-installation-workloads"></a>C++ インストール ワークロード 
 
 ### <a name="windows-desktop-development-with-c"></a>C++ による Windows デスクトップ開発:  
-元の C++ ワークロードのインストールに対して、より詳細なインストール エクスペリエンスを提供します。 必要なツールだけをインストールできる選択可能なコンポーネントが追加されました。  インストーラーの UI のコンポーネント一覧で示されるインストール サイズは正確ではなく、合計サイズが少なめに表示されることに注意してください。  
+元の C++ ワークロードのインストールに対して、より詳細なインストール エクスペリエンスを提供します。 必要なツールだけをインストールできる選択可能なコンポーネントが追加されました。  インストーラーの UI のコンポーネント一覧で示されるインストール サイズは正確ではなく、合計サイズが少なめに表示されることに注意してください。
+
+C++ デスクトップ ワークロードで Win32 プロジェクトを作成するには、ツールセットと Windows SDK の両方をインストールする必要があります。 推奨される (選択されている) コンポーネント "VC++ 2017 v141 toolset (x86, x64)" と "Windows 10 SDK (10.0.14393)" をインストールすれば、確実に実行できます。 必要なツールがインストールされていない場合、プロジェクトは正常に作成されず、ウィザードがハングします。
 
 ### <a name="linux-development-with-c"></a>C++ による Linux 開発:  
 よく利用される拡張機能である [Visual C++ for Linux Development](https://visualstudiogallery.msdn.microsoft.com/725025cf-7067-45c2-8d01-1e0fd359ae6e) が Visual Studio に組み込まれます。 このインストールでは、Linux 環境で実行する C++ アプリケーションの開発とデバッグに必要なすべてのものが提供されます。  
@@ -165,7 +174,7 @@ C++ を最大限に活用して DirectX または Cocos2d で駆動するプロ�
 Android および iOS を対象とするモバイル アプリを、Visual Studio を使用して作成およびデバッグできるようになりました。  
 
 ### <a name="universal-windows-apps"></a>ユニバーサル Windows アプリ:  
-ユニバーサル Windows アプリ ワークロードのオプション コンポーネントとして、C++ が提供されます。  
+ユニバーサル Windows アプリ ワークロードのオプション コンポーネントとして、C++ が提供されます。  C++ プロジェクトのアップグレードは、現在のところ、手動で行う必要があります。 v140 をターゲットとする UWP プロジェクトを Visual Studio 2017 で開くときに、Visual Studio 2015 がインストールされていない場合はプロジェクト プロパティ ページで v141 プラットフォーム ツールセットを選択する必要があります。
 
 ## <a name="new-options-for-c-on-universal-windows-platform"></a>ユニバーサル Windows プラットフォームでの C++ の新しいオプション
 ユニバーサル Windows プラットフォームおよび Windows ストア用の C++ アプリケーションを記述およびパッケージ化するための新しいオプションが追加されました。Desktop App Converter を使うと、Windows ストアを通してデプロイできるように既存のデスクトップ アプリケーションをパッケージ化できます。 詳しくは、「[Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)」(Centennial プロジェクトでの Visual C++ ランタイムの使用) および「[Bring your desktop app to the Universal Windows Platform (UWP) with the Desktop Bridge](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)」(Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 対応にする) をご覧ください。
@@ -230,8 +239,4 @@ Visual Studio のグラフィックス診断は、Direct3D アプリのレンダ
 
 
  
-
-
-<!--HONumber=Feb17_HO4-->
-
 

@@ -41,8 +41,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: 220ecd24c6056737d0338cc584663e4664ac81b1
-ms.openlocfilehash: 014391806f47e7d39ffe09e30feecaabe26f6a36
+ms.sourcegitcommit: da3c2e6ce7247d3e8c9a401bc0a133cb8d46a970
+ms.openlocfilehash: 81a7d724a4a3b2e5aa7de47461d20cc3385896eb
+ms.lasthandoff: 03/15/2017
 
 ---
 # <a name="visual-c-in-visual-studio"></a>Visual Studio の Visual C++
@@ -65,7 +66,10 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  [Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md) 
  Visual Studio 2017 の C++ 準拠の強化について説明します。 
 
- [Visual C++ 2003 ～ 2015 の変更履歴](porting/visual-cpp-change-history-2003-2015.md)  
+ [Visual C++ 言語への準拠](visual-cpp-language-conformance.md)  
+ Visual C++ の各機能の準拠状態を一覧にしています。
+
+ [2003 から 2015 の Visual C++ の履歴の変更](porting/visual-cpp-change-history-2003-2015.md)  
  前のバージョンの互換性に影響する変更点について説明します。  
   
  [C++ へようこそ](cpp/welcome-back-to-cpp-modern-cpp.md)  
@@ -76,9 +80,6 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
   
  [Visual C++ 移植とアップグレードのガイド](porting/visual-cpp-porting-and-upgrading-guide.md)  
  Windows 10 とユニバーサル Windows プラットフォームに C++ コードを移植するなど、Visual Studio 2017 の Visual C++ へのコードの移植およびプロジェクトのアップグレードのガイダンス。  
-  
- [C++11/14/17 の機能のサポート (Modern C++)](cpp/support-for-cpp11-14-17-features-modern-cpp.md)  
- Visual C++ の C++11 と C++14 機能のサポートに関する情報。  
   
  [Visual C++ チーム ブログ](http://blogs.msdn.com/b/vcblog/)  
  [!INCLUDE[vcprvc](build/includes/vcprvc_md.md)] の開発者による新機能と最新の情報に関する詳細。  
@@ -183,9 +184,4 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  [C 言語リファレンス](c-language/c-language-reference.md)   
  [C ランタイム ライブラリ リファレンス](c-runtime-library/c-run-time-library-reference.md)   
  [コンパイラの組み込みとアセンブリ言語](intrinsics/compiler-intrinsics-and-assembly-language.md)
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 
