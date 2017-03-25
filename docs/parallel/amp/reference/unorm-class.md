@@ -9,8 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp_short_vectors/Concurrency::graphics::unorm
-- amp/Concurrency::graphics::unorm
+- unorm
+- AMP_SHORT_VECTORS/unorm
+- AMP_SHORT_VECTORS/Concurrency::graphics::unorm Constructor
 dev_langs:
 - C++
 ms.assetid: bc30bd20-6452-4d5f-9158-3b11c4c16ed2
@@ -34,9 +35,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: aae5de80bed3b2d3d5c15285c2d12f2f6771a251
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 6817568b7dc111776033e935fd2ba3ad5dc4a69a
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="unorm-class"></a>unorm クラス
@@ -60,14 +61,14 @@ class unorm;
   
 |名前|説明|  
 |----------|-----------------|  
-|unorm::operator--演算子||  
-|unorm::operator float 演算子|変換演算子。 Unorm 数に変換、浮動小数点値。|  
-|unorm::operator * = 演算子||  
-|unorm::operator/= 演算子||  
-|unorm::operator:operator++ 演算子||  
+|unorm::operator--||  
+|unorm::operator float|変換演算子。 Unorm 数に変換、浮動小数点値。|  
+|unorm::operator * =||  
+|unorm::operator/=||  
+|unorm::operator + +||  
 |unorm::operator + = 演算子||  
-|unorm::operator = 演算子||  
-|unorm::operator-= 演算子||  
+|unorm::operator =||  
+|unorm::operator =||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm`  
@@ -77,7 +78,7 @@ class unorm;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-unorm"></a><a name="ctor"></a>unorm 
+##  <a name="ctor"></a>unorm 
 
  既定のコンストラクター 0.0 f を初期化します。  
   
@@ -125,5 +126,5 @@ inline explicit unorm(
  初期化に使用される標準オブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

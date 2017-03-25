@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::task_canceled
+- task_canceled
+- CONCRT/concurrency::task_canceled
+- CONCRT/concurrency::task_canceled::task_canceled
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: dcf930c7efd1a7d7b015919b2009440045dd18fe
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 8f84564a96557c14eb9491b9d1a1d369326751fd
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="taskcanceled-class"></a>task_canceled クラス
@@ -54,7 +56,7 @@ class task_canceled : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[task_canceled コンス トラクター](#ctor)|オーバーロードされます。 `task_canceled` オブジェクトを構築します。|  
+|[task_canceled](#ctor)|オーバーロードされます。 `task_canceled` オブジェクトを構築します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
@@ -66,7 +68,7 @@ class task_canceled : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-taskcanceled"></a><a name="ctor"></a>task_canceled 
+##  <a name="ctor"></a>task_canceled 
 
  `task_canceled` オブジェクトを構築します。  
   
@@ -81,5 +83,5 @@ task_canceled() throw();
  エラーの説明メッセージ。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

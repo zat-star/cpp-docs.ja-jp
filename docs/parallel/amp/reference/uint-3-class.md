@@ -100,9 +100,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 4bb1f7e1a971050dfc1616deb178c8fe834bc351
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 034478144d77abcc9dba8bf1a1909c4711f7119c
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="uint3-class"></a>uint_3 クラス
@@ -132,61 +132,61 @@ class uint_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|uint_3::get_x メソッド||  
-|uint_3::get_xy メソッド||  
-|uint_3::get_xyz メソッド||  
-|uint_3::get_xz メソッド||  
-|uint_3::get_xzy メソッド||  
-|uint_3::get_y メソッド||  
-|uint_3::get_yx メソッド||  
-|uint_3::get_yxz メソッド||  
-|uint_3::get_yz メソッド||  
-|uint_3::get_yzx メソッド||  
-|uint_3::get_z メソッド||  
-|uint_3::get_zx メソッド||  
-|uint_3::get_zxy メソッド||  
-|uint_3::get_zy メソッド||  
-|uint_3::get_zyx メソッド||  
-|uint_t::ref_b メソッド||  
-|uint_t::ref_g メソッド||  
-|uint_t::ref_r メソッド||  
-|uint_t::ref_x メソッド||  
-|uint_t::ref_y メソッド||  
-|uint_t::ref_z メソッド||  
-|uint_3::set_x メソッド||  
-|uint_3::set_xy メソッド||  
-|uint_3::set_xyz メソッド||  
-|uint_3::set_xz メソッド||  
-|uint_3::set_xzy メソッド||  
-|uint_3::set_y メソッド||  
-|uint_3::set_yx メソッド||  
-|uint_3::set_yxz メソッド||  
-|uint_3::set_yz メソッド||  
-|uint_3::set_yzx メソッド||  
-|uint_3::set_z メソッド||  
-|uint_3::set_zx メソッド||  
-|uint_3::set_zxy メソッド||  
-|uint_3::set_zy メソッド||  
-|uint_3::set_zyx メソッド||  
+|uint_3::get_x||  
+|uint_3::get_xy||  
+|uint_3::get_xyz||  
+|uint_3::get_xz||  
+|uint_3::get_xzy||  
+|uint_3::get_y||  
+|uint_3::get_yx||  
+|uint_3::get_yxz||  
+|uint_3::get_yz||  
+|uint_3::get_yzx||  
+|uint_3::get_z||  
+|uint_3::get_zx||  
+|uint_3::get_zxy||  
+|uint_3::get_zy||  
+|uint_3::get_zyx||  
+|uint_t::ref_b||  
+|uint_t::ref_g||  
+|uint_t::ref_r||  
+|uint_t::ref_x||  
+|uint_t::ref_y||  
+|uint_t::ref_z||  
+|uint_3::set_x||  
+|uint_3::set_xy||  
+|uint_3::set_xyz||  
+|uint_3::set_xz||  
+|uint_3::set_xzy||  
+|uint_3::set_y||  
+|uint_3::set_yx||  
+|uint_3::set_yxz||  
+|uint_3::set_yz||  
+|uint_3::set_yzx||  
+|uint_3::set_z||  
+|uint_3::set_zx||  
+|uint_3::set_zxy||  
+|uint_3::set_zy||  
+|uint_3::set_zyx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|uint_3::operator-- 演算子||  
-|uint_3::operator%= 演算子||  
-|uint_3::operator&= 演算子||  
-|uint_3::operator*= 演算子||  
-|uint_3::operator/= 演算子||  
-|uint_3::operator^= 演算子||  
-|uint_3::operator | = 演算子||  
-|uint_3::operator~ 演算子||  
-|uint_3::operator++ 演算子||  
-|uint_3::operator+= 演算子||  
-|uint_3::operator\<= 演算子||  
-|uint_3::operator= 演算子||  
-|uint_3::operator-= 演算子||  
-|uint_3::operator >> = 演算子||  
+|uint_3:--||  
+|uint_3::operator % =||  
+|uint_3::operator = >/documents/report1.rdl」||  
+|uint_3::operator * =||  
+|uint_3::operator/=||  
+|uint_3::operator ^ =||  
+|uint_3::operator | =||  
+|uint_3::operator ~||  
+|uint_3::operator++||  
+|uint_3::operator + = 演算子||  
+|uint_3:\<=||  
+|uint_3::operator =||  
+|uint_3::operator-=||  
+|uint_3::operator >> =||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -198,36 +198,36 @@ class uint_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|uint_3::b データ メンバー||  
-|uint_3::bg データ メンバー||  
-|uint_3::bgr データ メンバー||  
-|uint_3::br データ メンバー||  
-|uint_3::brg データ メンバー||  
-|uint_3::g データ メンバー||  
-|uint_3::gb データ メンバー||  
-|uint_3::gbr データ メンバー||  
-|uint_3::gr データ メンバー||  
-|uint_3::grb データ メンバー||  
-|uint_3::r データ メンバー||  
-|uint_3::rb データ メンバー||  
-|uint_3::rbg データ メンバー||  
-|uint_3::rg データ メンバー||  
-|uint_3::rgb データ メンバー||  
-|uint_3::x データ メンバー||  
-|uint_3::xy データ メンバー||  
-|uint_3::xyz データ メンバー||  
-|uint_3::xz データ メンバー||  
-|uint_3::xzy データ メンバー||  
-|uint_3::y データ メンバー||  
-|uint_3::yx データ メンバー||  
-|uint_3::yxz データ メンバー||  
-|uint_3::yz データ メンバー||  
-|uint_3::yzx データ メンバー||  
-|uint_3::z データ メンバー||  
-|uint_3::zx データ メンバー||  
-|uint_3::zxy データ メンバー||  
-|uint_3::zy データ メンバー||  
-|uint_3::zyx データ メンバー||  
+|uint_3::b||  
+|uint_3::bg||  
+|uint_3::bgr||  
+|uint_3::br||  
+|uint_3::brg||  
+|uint_3::g||  
+|uint_3::gb||  
+|uint_3::gbr||  
+|uint_3::gr||  
+|uint_3::grb||  
+|uint_3::r||  
+|uint_3::rb||  
+|uint_3::rbg||  
+|uint_3::rg||  
+|uint_3::rgb||  
+|uint_3::x||  
+|uint_3::xy||  
+|uint_3::xyz||  
+|uint_3::xz||  
+|uint_3::xzy||  
+|uint_3::y||  
+|uint_3::yx||  
+|uint_3::yxz||  
+|uint_3::yz||  
+|uint_3::yzx||  
+|uint_3::z||  
+|uint_3::zx||  
+|uint_3::zxy||  
+|uint_3::zy||  
+|uint_3::zyx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `uint_3`  
@@ -237,7 +237,7 @@ class uint_3;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-uint3"></a><a name="ctor"></a>uint_3 
+##  <a name="ctor"></a>uint_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -304,12 +304,12 @@ explicit inline uint_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-nameuint3sizea-size"></a><a name="uint_3__size"></a>サイズ 
+##  <a name="uint_3__size"></a>サイズ 
 
 ```  
 static const int size = 3;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

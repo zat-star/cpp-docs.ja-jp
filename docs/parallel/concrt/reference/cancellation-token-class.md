@@ -9,7 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- pplcancellation_token/concurrency::cancellation_token
+- cancellation_token
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::cancellation_token
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::deregister_callback
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::is_cancelable
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::is_canceled
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::none
+- PPLCANCELLATION_TOKEN/concurrency::cancellation_token::register_callback
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 93d5abe132203a53f3ffac8490fe32604e7e896e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: d17505a117c0affd8106afad9004e6ec86602a26
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="cancellationtoken-class"></a>cancellation_token クラス
@@ -54,26 +61,26 @@ class cancellation_token;
   
 |名前|説明|  
 |----------|-----------------|  
-|[cancellation_token コンス トラクター](#ctor)||  
+|[cancellation_token](#ctor)||  
 |[~ cancellation_token デストラクター](#dtor)||  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[deregister_callback メソッド](#deregister_callback)|登録時に返された `register` オブジェクトに基づく `cancellation_token_registration` メソッドによって以前に登録されたコールバックを削除します。|  
-|[is_cancelable メソッド](#is_cancelable)|このトークンを取り消すことができるかどうかを示す値を返します。|  
-|[is_canceled メソッド](#is_canceled)|トークンが取り消された場合は `true` を返します。|  
-|[none メソッド](#none)|取り消しの対象とはならないキャンセル トークンを返します。|  
-|[register_callback メソッド](#register_callback)|コールバック関数をトークンに登録します。 トークンが取り消された場合、コールバックが行われます。 このメソッドが呼び出された時点で既にコールバックが取り消されている場合、コールバックは即座に同期的に行われることに注意してください。|  
+|[deregister_callback](#deregister_callback)|登録時に返された `register` オブジェクトに基づく `cancellation_token_registration` メソッドによって以前に登録されたコールバックを削除します。|  
+|[is_cancelable](#is_cancelable)|このトークンを取り消すことができるかどうかを示す値を返します。|  
+|[is_canceled](#is_canceled)|トークンが取り消された場合は `true` を返します。|  
+|[none](#none)|取り消しの対象とはならないキャンセル トークンを返します。|  
+|[register_callback](#register_callback)|コールバック関数をトークンに登録します。 トークンが取り消された場合、コールバックが行われます。 このメソッドが呼び出された時点で既にコールバックが取り消されている場合、コールバックは即座に同期的に行われることに注意してください。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator! = 演算子](#operator_neq)||  
-|[operator = 演算子](#operator_eq)||  
-|[operator = 演算子](#operator_eq_eq)||  
+|[operator!=](#operator_neq)||  
+|[operator=](#operator_eq)||  
+|[operator==](#operator_eq_eq)||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `cancellation_token`  
@@ -83,13 +90,13 @@ class cancellation_token;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namedtora-cancellationtoken"></a><a name="dtor"></a>~ cancellation_token 
+##  <a name="dtor"></a>~ cancellation_token 
 
 ```
 ~cancellation_token();
 ```  
   
-##  <a name="a-namectora-cancellationtoken"></a><a name="ctor"></a>cancellation_token 
+##  <a name="ctor"></a>cancellation_token 
 
 ```
 cancellation_token(const cancellation_token& _Src);
@@ -100,7 +107,7 @@ cancellation_token(cancellation_token&& _Src);
 ### <a name="parameters"></a>パラメーター  
  `_Src`  
   
-##  <a name="a-namederegistercallbacka-deregistercallback"></a><a name="deregister_callback"></a>deregister_callback 
+##  <a name="deregister_callback"></a>deregister_callback 
 
  登録時に返された `register` オブジェクトに基づく `cancellation_token_registration` メソッドによって以前に登録されたコールバックを削除します。  
   
@@ -112,7 +119,7 @@ void deregister_callback(const cancellation_token_registration& _Registration) c
  `_Registration`  
  登録解除されるコールバックに対応する `cancellation_token_registration` オブジェクト。 このトークンは、`register` メソッドの呼び出しによって既に返されている必要があります。  
   
-##  <a name="a-nameiscancelablea-iscancelable"></a><a name="is_cancelable"></a>is_cancelable 
+##  <a name="is_cancelable"></a>is_cancelable 
 
  このトークンを取り消すことができるかどうかを示す値を返します。  
   
@@ -123,7 +130,7 @@ bool is_cancelable() const;
 ### <a name="return-value"></a>戻り値  
  このトークンを取り消すことができるかどうかを示す値。  
   
-##  <a name="a-nameiscanceleda-iscanceled"></a><a name="is_canceled"></a>is_canceled 
+##  <a name="is_canceled"></a>is_canceled 
 
  トークンが取り消された場合は `true` を返します。  
   
@@ -134,7 +141,7 @@ bool is_canceled() const;
 ### <a name="return-value"></a>戻り値  
  トークンが取り消されている場合は、値 `true` を返します。それ以外の場合は、値 `false` を返します。  
   
-##  <a name="a-namenonea-none"></a><a name="none"></a>[なし] 
+##  <a name="none"></a>[なし] 
 
  取り消しの対象とはならないキャンセル トークンを返します。  
   
@@ -145,7 +152,7 @@ static cancellation_token none();
 ### <a name="return-value"></a>戻り値  
  取り消すことができないキャンセル トークン。  
   
-##  <a name="a-nameoperatorneqa-operator"></a><a name="operator_neq"></a>operator! = 
+##  <a name="operator_neq"></a>operator! = 
 
 ```
 bool operator!= (const cancellation_token& _Src) const;
@@ -156,7 +163,7 @@ bool operator!= (const cancellation_token& _Src) const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
 ```
 cancellation_token& operator= (const cancellation_token& _Src);
@@ -169,7 +176,7 @@ cancellation_token& operator= (cancellation_token&& _Src);
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-nameoperatoreqeqa-operator"></a><a name="operator_eq_eq"></a>演算子 = = 
+##  <a name="operator_eq_eq"></a>演算子 = = 
 
 ```
 bool operator== (const cancellation_token& _Src) const;
@@ -180,7 +187,7 @@ bool operator== (const cancellation_token& _Src) const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-nameregistercallbacka-registercallback"></a><a name="register_callback"></a>register_callback 
+##  <a name="register_callback"></a>register_callback 
 
  コールバック関数をトークンに登録します。 トークンが取り消された場合、コールバックが行われます。 このメソッドが呼び出された時点で既にトークンが取り消されている場合、コールバックは即座に同期的に行われることに注意してください。  
   
@@ -200,5 +207,5 @@ template<typename _Function>
  `cancellation_token_registration` メソッドで利用できる `deregister` オブジェクト。その利用目的は、以前に登録されたコールバックの登録を解除し、コールバックが行われないようにすることです。 メソッドがスローされます、 [invalid_operation](invalid-operation-class.md)例外に対してを呼び出すと、`cancellation_token`を使用して作成されたオブジェクト、 [cancellation_token::none](#none)メソッドです。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

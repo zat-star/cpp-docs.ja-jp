@@ -56,9 +56,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 05707bd43a8f9b89a93c0da0011c46d67361fc84
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 4bc5d2138d3ec8e9a0b173d2a60847e92bb8a3b9
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="float2-class"></a>float_2 クラス
@@ -88,31 +88,31 @@ class float_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|float_2::get_x メソッド||  
-|float_2::get_xy メソッド||  
-|float_2::get_y メソッド||  
-|float_2::get_yx メソッド||  
-|float_2::ref_g メソッド||  
-|float_2::ref_r メソッド||  
-|float_2::ref_x メソッド||  
-|float_2::ref_y メソッド||  
-|float_2::set_x メソッド||  
-|float_2::set_xy メソッド||  
-|float_2::set_y メソッド||  
-|float_2::set_yx メソッド||  
+|float_2::get_x||  
+|float_2::get_xy||  
+|float_2::get_y||  
+|float_2::get_yx||  
+|float_2::ref_g||  
+|float_2::ref_r||  
+|float_2::ref_x||  
+|float_2::ref_y||  
+|float_2::set_x||  
+|float_2::set_xy||  
+|float_2::set_y||  
+|float_2::set_yx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|float_2::operator- 演算子||  
-|float_2::operator-- 演算子||  
-|float_2::operator*= 演算子||  
-|float_2::operator/= 演算子||  
-|float_2::operator++ 演算子||  
-|float_2::operator+= 演算子||  
-|float_2::operator= 演算子||  
-|float_2::operator-= 演算子||  
+|float_2:-||  
+|float_2:--||  
+|float_2::operator * =||  
+|float_2::operator/=||  
+|float_2::operator++||  
+|float_2::operator + = 演算子||  
+|float_2::operator =||  
+|float_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -124,14 +124,14 @@ class float_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|float_2::g データ メンバー||  
-|float_2::gr データ メンバー||  
-|float_2::r データ メンバー||  
-|float_2::rg データ メンバー||  
-|float_2::x データ メンバー||  
-|float_2::xy データ メンバー||  
-|float_2::y データ メンバー||  
-|float_2::yx データ メンバー||  
+|float_2::g||  
+|float_2::gr||  
+|float_2::r||  
+|float_2::rg||  
+|float_2::x||  
+|float_2::xy||  
+|float_2::y||  
+|float_2::yx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `float_2`  
@@ -141,7 +141,7 @@ class float_2;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-float2"></a><a name="ctor"></a>float_2 
+##  <a name="ctor"></a>float_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -204,12 +204,12 @@ explicit inline float_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-namefloat2sizea-size"></a><a name="float_2__size"></a>サイズ 
+##  <a name="float_2__size"></a>サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

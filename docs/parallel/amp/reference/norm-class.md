@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp_short_vectors/Concurrency::graphics::norm
+- norm
+- AMP_SHORT_VECTORS/norm
+- AMP_SHORT_VECTORS/Concurrency::graphics::norm Constructor
 dev_langs:
 - C++
 ms.assetid: 73002f3d-c25e-4119-bcd3-4c46c9b6abf1
@@ -33,9 +35,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 8ff5a99136a75d17d914783496205f1dd1eb4a06
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 6f6477f37a94a0c2a093fd3a63fa8e87463a5a7b
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="norm-class"></a>norm クラス
@@ -59,15 +61,15 @@ class norm;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm::operator 演算子||  
-|norm::operator--演算子||  
-|norm::operator float 演算子|変換演算子。 Norm 数、浮動小数点に変換する値をポイントします。|  
-|norm::operator * = 演算子||  
-|norm::operator/= 演算子||  
-|norm::operator:operator++ 演算子||  
+|norm::operator-||  
+|norm::operator--||  
+|norm::operator float|変換演算子。 Norm 数、浮動小数点に変換する値をポイントします。|  
+|norm::operator * =||  
+|norm::operator/=||  
+|norm::operator + +||  
 |norm::operator + = 演算子||  
-|norm::operator = 演算子||  
-|norm::operator-= 演算子||  
+|norm::operator =||  
+|norm::operator =||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm`  
@@ -77,7 +79,7 @@ class norm;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-norm"></a><a name="ctor"></a>norm 
+##  <a name="ctor"></a>norm 
 
  既定のコンストラクター 0.0 f を初期化します。  
   
@@ -125,5 +127,5 @@ norm(
  初期化するために使用するオブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

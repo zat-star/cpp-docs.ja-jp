@@ -9,7 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::IExecutionContext
+- IExecutionContext
+- CONCRTRM/concurrency::IExecutionContext
+- CONCRTRM/concurrency::IExecutionContext::IExecutionContext::Dispatch
+- CONCRTRM/concurrency::IExecutionContext::IExecutionContext::GetId
+- CONCRTRM/concurrency::IExecutionContext::IExecutionContext::GetProxy
+- CONCRTRM/concurrency::IExecutionContext::IExecutionContext::GetScheduler
+- CONCRTRM/concurrency::IExecutionContext::IExecutionContext::SetProxy
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 5ad3f21e55371b904ac8a597a7a66d5c5deb8339
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 4c4301d7afe46249d6d67ab2a6ec0a9fc2c7935e
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="iexecutioncontext-structure"></a>IExecutionContext 構造体
@@ -54,11 +60,11 @@ struct IExecutionContext;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Iexecutioncontext::dispatch メソッド](#dispatch)|スレッド プロキシが特定の実行コンテキストの実行を開始するときに呼び出されるメソッド。 スケジューラのメイン ワーカー ルーチンがあります。|  
-|[Iexecutioncontext::getid メソッド](#getid)|実行コンテキストの一意の識別子を返します。|  
-|[Iexecutioncontext::getproxy メソッド](#getproxy)|このコンテキストを実行しているスレッド プロキシへのインターフェイスを返します。|  
-|[Iexecutioncontext::getscheduler メソッド](#getscheduler)|この実行コンテキストが属するスケジューラへのインターフェイスを返します。|  
-|[Iexecutioncontext::setproxy メソッド](#setproxy)|この実行コンテキストには、スレッド プロキシを関連付けます。 関連付けられたスレッド プロキシが、コンテキストの実行を開始する前に、このメソッドの権限を呼び出す`Dispatch`メソッドです。|  
+|[Iexecutioncontext::dispatch](#dispatch)|スレッド プロキシが特定の実行コンテキストの実行を開始するときに呼び出されるメソッド。 スケジューラのメイン ワーカー ルーチンがあります。|  
+|[Iexecutioncontext::getid](#getid)|実行コンテキストの一意の識別子を返します。|  
+|[Iexecutioncontext::getproxy](#getproxy)|このコンテキストを実行しているスレッド プロキシへのインターフェイスを返します。|  
+|[Iexecutioncontext::getscheduler](#getscheduler)|この実行コンテキストが属するスケジューラへのインターフェイスを返します。|  
+|[Iexecutioncontext::setproxy](#setproxy)|この実行コンテキストには、スレッド プロキシを関連付けます。 関連付けられたスレッド プロキシが、コンテキストの実行を開始する前に、このメソッドの権限を呼び出す`Dispatch`メソッドです。|  
   
 ## <a name="remarks"></a>コメント  
  カスタム スケジューラを同時実行ランタイムのリソース マネージャーでのインターフェイスを実装する場合を実装する必要があります、`IExecutionContext`インターフェイスです。 リソース マネージャーによって作成されたスレッドが実行することにより、スケジューラの代わりの作業を実行、`IExecutionContext::Dispatch`メソッドです。  
@@ -71,7 +77,7 @@ struct IExecutionContext;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namedispatcha--iexecutioncontextdispatch-method"></a><a name="dispatch"></a>Iexecutioncontext::dispatch メソッド  
+##  <a name="dispatch"></a>Iexecutioncontext::dispatch メソッド  
  スレッド プロキシが特定の実行コンテキストの実行を開始するときに呼び出されるメソッド。 スケジューラのメイン ワーカー ルーチンがあります。  
   
 ```
@@ -82,7 +88,7 @@ virtual void Dispatch(_Inout_ DispatchState* pDispatchState) = 0;
  `pDispatchState`  
  この実行コンテキストがディスパッチされる状態へのポインター。 ディスパッチの状態の詳細については、次を参照してください。 [DispatchState](dispatchstate-structure.md)します。  
   
-##  <a name="a-namegetida--iexecutioncontextgetid-method"></a><a name="getid"></a>Iexecutioncontext::getid メソッド  
+##  <a name="getid"></a>Iexecutioncontext::getid メソッド  
  実行コンテキストの一意の識別子を返します。  
   
 ```
@@ -97,7 +103,7 @@ virtual unsigned int GetId() const = 0;
   
  別のソースから取得した識別子は、未定義の動作になる可能性があります。  
   
-##  <a name="a-namegetproxya--iexecutioncontextgetproxy-method"></a><a name="getproxy"></a>Iexecutioncontext::getproxy メソッド  
+##  <a name="getproxy"></a>Iexecutioncontext::getproxy メソッド  
  このコンテキストを実行しているスレッド プロキシへのインターフェイスを返します。  
   
 ```
@@ -110,7 +116,7 @@ virtual IThreadProxy* GetProxy() = 0;
 ### <a name="remarks"></a>コメント  
  リソース マネージャーを起動、`SetProxy`実行コンテキストのメソッドで、`IThreadProxy`インターフェイスを入力する前に、パラメーターとして、`Dispatch`メソッドをコンテキストにします。 この引数を格納して呼び出しで返すことが求め`GetProxy()`します。  
   
-##  <a name="a-namegetschedulera--iexecutioncontextgetscheduler-method"></a><a name="getscheduler"></a>Iexecutioncontext::getscheduler メソッド  
+##  <a name="getscheduler"></a>Iexecutioncontext::getscheduler メソッド  
  この実行コンテキストが属するスケジューラへのインターフェイスを返します。  
   
 ```
@@ -123,7 +129,7 @@ virtual IScheduler* GetScheduler() = 0;
 ### <a name="remarks"></a>コメント  
  有効な実行コンテキストを初期化するために必要な`IScheduler`インターフェイスのメソッドにパラメーターとして使用する前に、リソース マネージャーでの提供します。  
   
-##  <a name="a-namesetproxya--iexecutioncontextsetproxy-method"></a><a name="setproxy"></a>Iexecutioncontext::setproxy メソッド  
+##  <a name="setproxy"></a>Iexecutioncontext::setproxy メソッド  
  この実行コンテキストには、スレッド プロキシを関連付けます。 関連付けられたスレッド プロキシが、コンテキストの実行を開始する前に、このメソッドの権限を呼び出す`Dispatch`メソッドです。  
   
 ```

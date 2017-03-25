@@ -9,8 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp_graphics/Concurrency::graphics
-- amp_short_vectors/Concurrency::graphics
+- AMP_GRAPHICS/Concurrency
 dev_langs:
 - C++
 ms.assetid: 4529d3b1-d7da-4ffb-82bf-080915e0f23e
@@ -33,9 +32,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: fd29b427307e336d560a2caf42e4fc5228e8071f
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: e08a9bc52b7ce519508bb1682287e75070d341a1
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrencygraphics-namespace"></a>Concurrency::graphics 名前空間
@@ -53,7 +52,7 @@ namespace graphics;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Concurrency::graphics::direct3d Namespace](concurrency-graphics-direct3d-namespace.md)|Direct3D の相互運用のための関数を提供します。|  
+|[Concurrency::graphics::direct3d 名前空間](concurrency-graphics-direct3d-namespace.md)|Direct3D の相互運用のための関数を提供します。|  
   
 ### <a name="typedefs"></a>Typedef  
   
@@ -101,8 +100,8 @@ namespace graphics;
   
 |名前|説明|  
 |----------|-----------------|  
-|[copy 関数](concurrency-graphics-namespace-functions.md#copy)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーにコピーします。|  
-|[copy_async 関数](concurrency-graphics-namespace-functions.md#copy_async)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーに非同期にコピーします。|  
+|[copy](concurrency-graphics-namespace-functions.md#copy)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーにコピーします。|  
+|[copy_async](concurrency-graphics-namespace-functions.md#copy_async)|オーバーロードされます。 ソース テクスチャの内容をターゲット ホスト バッファーに非同期にコピーします。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** amp_graphics.h  
@@ -110,5 +109,5 @@ namespace graphics;
  **名前空間:** Concurrency  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
 

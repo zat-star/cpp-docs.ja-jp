@@ -8,6 +8,10 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- scoped_d3d_access_lock
+- AMPRT/scoped_d3d_access_lock
+- AMPRT/concurrency::direct3d::scoped_d3d_access_lock::scoped_d3d_access_lock
 dev_langs:
 - C++
 ms.assetid: 0ad333e6-9839-4736-a722-16d95d70c4b1
@@ -30,9 +34,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: c5bc6183b3abc7a5598159717b0dbfa1dae2a05d
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: fd7f377e1dfe4e99f566da4782be5c2ccfdddbff
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="scopedd3daccesslock-class"></a>scoped_d3d_access_lock クラス
@@ -57,7 +61,7 @@ class scoped_d3d_access_lock;
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|別の `scoped_d3d_access_lock` からロックの所有権を取得します。|  
+|[operator=](#operator_eq)|別の `scoped_d3d_access_lock` からロックの所有権を取得します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `scoped_d3d_access_lock`  
@@ -67,7 +71,7 @@ class scoped_d3d_access_lock;
   
  **Namespace:** concurrency::direct3d  
 
-##  <a name="a-namectora-scopedd3daccesslock"></a><a name="ctor"></a>scoped_d3d_access_lock 
+##  <a name="ctor"></a>scoped_d3d_access_lock 
 
  `scoped_d3d_access_lock` オブジェクトを構築します。 このオブジェクトがスコープから外れると、ロックは解放されます。  
  
@@ -106,14 +110,14 @@ scoped_d3d_access_lock(// [3] move constructor
  別の `scoped_d3d_access_lock` オブジェクトから既存の D3D アクセスのロックを受け取ります。 構造体はブロックを行いません。  
 
   
-##  <a name="a-namedtora-scopedd3daccesslock"></a><a name="dtor"></a>~ scoped_d3d_access_lock 
+##  <a name="dtor"></a>~ scoped_d3d_access_lock 
 
  関連付けられた `accelerator_view` オブジェクトに対する D3D アクセスのロックを解除します。  
   
 ```  
 ~scoped_d3d_access_lock();
 ```  
-## <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+## <a name="operator_eq"></a>演算子 = 
 
 以前のロックを解放して、別の `scoped_d3d_access_lock` オブジェクトから D3D アクセスのロックの所有権を取得します。  
  
@@ -129,5 +133,5 @@ scoped_d3d_access_lock& operator= (scoped_d3d_access_lock&& _Other);
  この `scoped_accelerator_view_lock` への参照。  
 
 ## <a name="see-also"></a>関連項目  
- [Concurrency::direct3d Namespace](concurrency-direct3d-namespace.md)
+ [Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)
 

@@ -100,9 +100,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: ce64e15c062f04df6c9f7671bd820ee188af0111
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 14c85a46b8026878c3b5502931f937e2cf6196cd
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="unorm3-class"></a>unorm_3 クラス
@@ -132,54 +132,54 @@ class unorm_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|unorm_3::get_x メソッド||  
-|unorm_3::get_xy メソッド||  
-|unorm_3::get_xyz メソッド||  
-|unorm_3::get_xz メソッド||  
-|unorm_3::get_xzy メソッド||  
-|unorm_3::get_y メソッド||  
-|unorm_3::get_yx メソッド||  
-|unorm_3::get_yxz メソッド||  
-|unorm_3::get_yz メソッド||  
-|unorm_3::get_yzx メソッド||  
-|unorm_3::get_z メソッド||  
-|unorm_3::get_zx メソッド||  
-|unorm_3::get_zxy メソッド||  
-|unorm_3::get_zy メソッド||  
-|unorm_3::get_zyx メソッド||  
-|unorm_3::ref_b メソッド||  
-|unorm_3::ref_g メソッド||  
-|unorm_3::ref_r メソッド||  
-|unorm_3::ref_x メソッド||  
-|unorm_3::ref_y メソッド||  
-|unorm_3::ref_z メソッド||  
-|unorm_3::set_x メソッド||  
-|unorm_3::set_xy メソッド||  
-|unorm_3::set_xyz メソッド||  
-|unorm_3::set_xz メソッド||  
-|unorm_3::set_xzy メソッド||  
-|unorm_3::set_y メソッド||  
-|unorm_3::set_yx メソッド||  
-|unorm_3::set_yxz メソッド||  
-|unorm_3::set_yz メソッド||  
-|unorm_3::set_yzx メソッド||  
-|unorm_3::set_z メソッド||  
-|unorm_3::set_zx メソッド||  
-|unorm_3::set_zxy メソッド||  
-|unorm_3::set_zy メソッド||  
-|unorm_3::set_zyx メソッド||  
+|unorm_3::get_x||  
+|unorm_3::get_xy||  
+|unorm_3::get_xyz||  
+|unorm_3::get_xz||  
+|unorm_3::get_xzy||  
+|unorm_3::get_y||  
+|unorm_3::get_yx||  
+|unorm_3::get_yxz||  
+|unorm_3::get_yz||  
+|unorm_3::get_yzx||  
+|unorm_3::get_z||  
+|unorm_3::get_zx||  
+|unorm_3::get_zxy||  
+|unorm_3::get_zy||  
+|unorm_3::get_zyx||  
+|Unorm_3::ref_b||  
+|Unorm_3::ref_g||  
+|Unorm_3::ref_r||  
+|Unorm_3::ref_x||  
+|Unorm_3::ref_y||  
+|Unorm_3::ref_z||  
+|unorm_3::set_x||  
+|unorm_3::set_xy||  
+|unorm_3::set_xyz||  
+|unorm_3::set_xz||  
+|unorm_3::set_xzy||  
+|unorm_3::set_y||  
+|unorm_3::set_yx||  
+|unorm_3::set_yxz||  
+|unorm_3::set_yz||  
+|unorm_3::set_yzx||  
+|unorm_3::set_z||  
+|unorm_3::set_zx||  
+|unorm_3::set_zxy||  
+|unorm_3::set_zy||  
+|unorm_3::set_zyx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|unorm_3::operator-- 演算子||  
-|unorm_3::operator*= 演算子||  
-|unorm_3::operator/= 演算子||  
-|unorm_3::operator++ 演算子||  
-|unorm_3::operator+= 演算子||  
-|unorm_3::operator= 演算子||  
-|unorm_3::operator-= 演算子||  
+|unorm_3:--||  
+|unorm_3::operator * =||  
+|unorm_3::operator/=||  
+|unorm_3::operator++||  
+|unorm_3::operator + = 演算子||  
+|unorm_3::operator =||  
+|unorm_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -191,36 +191,36 @@ class unorm_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|unorm_3::b データ メンバー||  
-|unorm_3::bg データ メンバー||  
-|unorm_3::bgr データ メンバー||  
-|unorm_3::br データ メンバー||  
-|unorm_3::brg データ メンバー||  
-|unorm_3::g データ メンバー||  
-|unorm_3::gb データ メンバー||  
-|unorm_3::gbr データ メンバー||  
-|unorm_3::gr データ メンバー||  
-|unorm_3::grb データ メンバー||  
-|unorm_3::r データ メンバー||  
-|unorm_3::rb データ メンバー||  
-|unorm_3::rbg データ メンバー||  
-|unorm_3::rg データ メンバー||  
-|unorm_3::rgb データ メンバー||  
-|unorm_3::x データ メンバー||  
-|unorm_3::xy データ メンバー||  
-|unorm_3::xyz データ メンバー||  
-|unorm_3::xz データ メンバー||  
-|unorm_3::xzy データ メンバー||  
-|unorm_3::y データ メンバー||  
-|unorm_3::yx データ メンバー||  
-|unorm_3::yxz データ メンバー||  
-|unorm_3::yz データ メンバー||  
-|unorm_3::yzx データ メンバー||  
-|unorm_3::z データ メンバー||  
-|unorm_3::zx データ メンバー||  
-|unorm_3::zxy データ メンバー||  
-|unorm_3::zy データ メンバー||  
-|unorm_3::zyx データ メンバー||  
+|unorm_3::b||  
+|unorm_3::bg||  
+|unorm_3::bgr||  
+|unorm_3::br||  
+|unorm_3::brg||  
+|unorm_3::g||  
+|unorm_3::gb||  
+|unorm_3::gbr||  
+|unorm_3::gr||  
+|unorm_3::grb||  
+|unorm_3::r||  
+|unorm_3::rb||  
+|unorm_3::rbg||  
+|unorm_3::rg||  
+|unorm_3::rgb||  
+|unorm_3::x||  
+|unorm_3::xy||  
+|unorm_3::xyz||  
+|unorm_3::xz||  
+|unorm_3::xzy||  
+|unorm_3::y||  
+|unorm_3::yx||  
+|unorm_3::yxz||  
+|unorm_3::yz||  
+|unorm_3::yzx||  
+|unorm_3::z||  
+|unorm_3::zx||  
+|unorm_3::zxy||  
+|unorm_3::zy||  
+|unorm_3::zyx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm_3`  
@@ -230,7 +230,7 @@ class unorm_3;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-unorm3"></a><a name="ctor"></a>unorm_3 
+##  <a name="ctor"></a>unorm_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -309,12 +309,12 @@ explicit inline unorm_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-nameunorm3sizea-size"></a><a name="unorm_3__size"></a>サイズ 
+##  <a name="unorm_3__size"></a>サイズ 
 
 ```  
 static const int size = 3;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

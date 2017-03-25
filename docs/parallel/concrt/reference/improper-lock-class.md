@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::improper_lock
+- improper_lock
+- CONCRT/concurrency::improper_lock
+- CONCRT/concurrency::improper_lock::improper_lock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 5a68573b8963fed90a4346fd421ef479c35dc247
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 336cd222ee70253954905b1ea01144160eeb2f06
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="improperlock-class"></a>improper_lock クラス
@@ -54,7 +56,7 @@ class improper_lock : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[improper_lock コンス トラクター](#ctor)|オーバーロードされます。 `improper_lock exception` を構築します。|  
+|[improper_lock](#ctor)|オーバーロードされます。 `improper_lock exception` を構築します。|  
   
 ## <a name="remarks"></a>コメント  
  通常、同じコンテキストで再帰的に再入不可能なロックの取得を試みときにこの例外がスローされます。  
@@ -69,7 +71,7 @@ class improper_lock : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-improperlock"></a><a name="ctor"></a>improper_lock 
+##  <a name="ctor"></a>improper_lock 
 
  `improper_lock exception` を構築します。  
   

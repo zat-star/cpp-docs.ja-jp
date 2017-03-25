@@ -56,9 +56,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 7ff9cb756ca17633aa90e2f35c6f6f02da6cc884
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: f37610aa77cb17fa574444cec43465ffc5ba3498
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="norm2-class"></a>norm_2 クラス
@@ -88,31 +88,31 @@ class norm_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_2::get_x メソッド||  
-|norm_2::get_xy メソッド||  
-|norm_2::get_y メソッド||  
-|norm_2::get_yx メソッド||  
-|norm_2::ref_g メソッド||  
-|norm_2::ref_r メソッド||  
-|norm_2::ref_x メソッド||  
-|norm_2::ref_y メソッド||  
-|norm_2::set_x メソッド||  
-|norm_2::set_xy メソッド||  
-|norm_2::set_y メソッド||  
-|norm_2::set_yx メソッド||  
+|norm_2::get_x||  
+|norm_2::get_xy||  
+|norm_2::get_y||  
+|norm_2::get_yx||  
+|norm_2::ref_g||  
+|norm_2::ref_r||  
+|norm_2::ref_x||  
+|norm_2::ref_y||  
+|norm_2::set_x||  
+|norm_2::set_xy||  
+|norm_2::set_y||  
+|norm_2::set_yx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_2::operator- 演算子||  
-|norm_2::operator-- 演算子||  
-|norm_2::operator*= 演算子||  
-|norm_2::operator/= 演算子||  
-|norm_2::operator++ 演算子||  
-|norm_2::operator+= 演算子||  
-|norm_2::operator= 演算子||  
-|norm_2::operator-= 演算子||  
+|norm_2:-||  
+|norm_2:--||  
+|norm_2::operator * =||  
+|norm_2::operator/=||  
+|norm_2::operator++||  
+|norm_2::operator + = 演算子||  
+|norm_2::operator =||  
+|norm_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -124,14 +124,14 @@ class norm_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_2::g データ メンバー||  
-|norm_2::gr データ メンバー||  
-|norm_2::r データ メンバー||  
-|norm_2::rg データ メンバー||  
-|norm_2::x データ メンバー||  
-|norm_2::xy データ メンバー||  
-|norm_2::y データ メンバー||  
-|norm_2::yx データ メンバー||  
+|norm_2::g||  
+|norm_2::gr||  
+|norm_2::r||  
+|norm_2::rg||  
+|norm_2::x||  
+|norm_2::xy||  
+|norm_2::y||  
+|norm_2::yx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm_2`  
@@ -141,7 +141,7 @@ class norm_2;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-norm2"></a><a name="ctor"></a>norm_2 
+##  <a name="ctor"></a>norm_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -221,12 +221,12 @@ explicit inline norm_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-namenorm2sizea-size"></a><a name="norm_2__size"></a>サイズ 
+##  <a name="norm_2__size"></a>サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

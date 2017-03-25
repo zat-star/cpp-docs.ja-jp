@@ -9,7 +9,21 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- agents/concurrency::propagator_block
+- propagator_block
+- AGENTS/concurrency::propagator_block
+- AGENTS/concurrency::propagator_block::propagator_block
+- AGENTS/concurrency::propagator_block::propagate
+- AGENTS/concurrency::propagator_block::send
+- AGENTS/concurrency::propagator_block::decline_incoming_messages
+- AGENTS/concurrency::propagator_block::initialize_source_and_target
+- AGENTS/concurrency::propagator_block::link_source
+- AGENTS/concurrency::propagator_block::process_input_messages
+- AGENTS/concurrency::propagator_block::propagate_message
+- AGENTS/concurrency::propagator_block::register_filter
+- AGENTS/concurrency::propagator_block::remove_network_links
+- AGENTS/concurrency::propagator_block::send_message
+- AGENTS/concurrency::propagator_block::unlink_source
+- AGENTS/concurrency::propagator_block::unlink_sources
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +48,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: b53577fc187d699f50b4095518e9bc3562dcc7f3
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: a34d127baf13434435c9ab359cf75b7b93c21f6d
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="propagatorblock-class"></a>propagator_block クラス
@@ -73,30 +87,30 @@ class propagator_block : public source_block<_TargetLinkRegistry,
   
 |名前|説明|  
 |----------|-----------------|  
-|[propagator_block コンス トラクター](#ctor)|`propagator_block` オブジェクトを構築します。|  
+|[propagator_block](#ctor)|`propagator_block` オブジェクトを構築します。|  
 |[~ propagator_block デストラクター](#dtor)|`propagator_block` オブジェクトを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[propagate メソッド](#propagate)|このターゲット ブロックに、ソース ブロックからメッセージを非同期的に渡します。|  
-|[send メソッド](#send)|このブロックにメッセージを同期的に開始します。 によって呼び出される、`ISource`ブロックします。 この関数が完了したら、メッセージは既にブロックに伝達が。|  
+|[伝達](#propagate)|このターゲット ブロックに、ソース ブロックからメッセージを非同期的に渡します。|  
+|[送信](#send)|このブロックにメッセージを同期的に開始します。 によって呼び出される、`ISource`ブロックします。 この関数が完了したら、メッセージは既にブロックに伝達が。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[decline_incoming_messages メソッド](#decline_incoming_messages)|ブロックに新しいメッセージを拒否することを示します。|  
-|[initialize_source_and_target メソッド](#initialize_source_and_target)|ベース オブジェクトを初期化します。 具体的には、`message_processor`オブジェクトを初期化する必要があります。|  
-|[link_source メソッド](#link_source)|これに指定されたソース ブロックをリンク`propagator_block`オブジェクトです。|  
-|[process_input_messages メソッド](#process_input_messages)|入力メッセージを処理します。 これは、伝達子ブロック source_block から派生するのに便利です (オーバーライド[source_block::process_input_messages](source-block-class.md#process_input_messages))。|  
-|[propagate_message メソッド](#propagate_message)|派生クラスでオーバーライドされると、このメソッドは非同期的に渡しますからのメッセージ、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`propagate`メソッドは、ソース ブロックによって呼び出されるとします。|  
-|[register_filter メソッド](#register_filter)|すべての受信メッセージで呼び出されるフィルター メソッドを登録します。|  
-|[remove_network_links メソッド](#remove_network_links)|これからのすべてのソースとターゲット ネットワーク リンクの削除`propagator_block`オブジェクトです。|  
-|[send_message メソッド](#send_message)|このメソッドがからのメッセージを同期的には派生クラスでオーバーライドされると、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`send`メソッドは、ソース ブロックによって呼び出されるとします。|  
-|[unlink_source メソッド](#unlink_source)|これから指定されたソース ブロックのリンクを解除`propagator_block`オブジェクトです。|  
-|[unlink_sources メソッド](#unlink_sources)|これからのすべてのソース ブロックのリンクを解除`propagator_block`オブジェクトです。 (上書き[itarget::unlink_sources](itarget-class.md#unlink_sources))。|  
+|[decline_incoming_messages](#decline_incoming_messages)|ブロックに新しいメッセージを拒否することを示します。|  
+|[initialize_source_and_target](#initialize_source_and_target)|ベース オブジェクトを初期化します。 具体的には、`message_processor`オブジェクトを初期化する必要があります。|  
+|[link_source](#link_source)|これに指定されたソース ブロックをリンク`propagator_block`オブジェクトです。|  
+|[process_input_messages](#process_input_messages)|入力メッセージを処理します。 これは、伝達子ブロック source_block から派生するのに便利です (オーバーライド[source_block::process_input_messages](source-block-class.md#process_input_messages))。|  
+|[propagate_message](#propagate_message)|派生クラスでオーバーライドされると、このメソッドは非同期的に渡しますからのメッセージ、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`propagate`メソッドは、ソース ブロックによって呼び出されるとします。|  
+|[register_filter](#register_filter)|すべての受信メッセージで呼び出されるフィルター メソッドを登録します。|  
+|[remove_network_links](#remove_network_links)|これからのすべてのソースとターゲット ネットワーク リンクの削除`propagator_block`オブジェクトです。|  
+|[send_message](#send_message)|このメソッドがからのメッセージを同期的には派生クラスでオーバーライドされると、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`send`メソッドは、ソース ブロックによって呼び出されるとします。|  
+|[unlink_source](#unlink_source)|これから指定されたソース ブロックのリンクを解除`propagator_block`オブジェクトです。|  
+|[unlink_sources](#unlink_sources)|これからのすべてのソース ブロックのリンクを解除`propagator_block`オブジェクトです。 (上書き[itarget::unlink_sources](itarget-class.md#unlink_sources))。|  
   
 ## <a name="remarks"></a>コメント  
  多重継承を避けるために、`propagator_block`クラスから継承、`source_block`クラスと`ITarget`抽象クラスです。 機能のほとんどの`target_block`クラスがここでレプリケートします。  
@@ -115,7 +129,7 @@ class propagator_block : public source_block<_TargetLinkRegistry,
   
  **名前空間:** concurrency  
   
-##  <a name="a-namedeclineincomingmessagesa-declineincomingmessages"></a><a name="decline_incoming_messages"></a>decline_incoming_messages 
+##  <a name="decline_incoming_messages"></a>decline_incoming_messages 
 
  ブロックに新しいメッセージを拒否することを示します。  
   
@@ -126,7 +140,7 @@ void decline_incoming_messages();
 ### <a name="remarks"></a>コメント  
  このメソッドは、破棄が進行中は、新しいメッセージが却下されたことを確認するデストラクターが呼び出されます。  
   
-##  <a name="a-nameinitializesourceandtargeta-initializesourceandtarget"></a><a name="initialize_source_and_target"></a>initialize_source_and_target 
+##  <a name="initialize_source_and_target"></a>initialize_source_and_target 
 
  ベース オブジェクトを初期化します。 具体的には、`message_processor`オブジェクトを初期化する必要があります。  
   
@@ -143,7 +157,7 @@ void initialize_source_and_target(
  `_PScheduleGroup`  
  タスクのスケジューリングに使用するスケジュール グループです。  
   
-##  <a name="a-namelinksourcea-linksource"></a><a name="link_source"></a>link_source 
+##  <a name="link_source"></a>link_source 
 
  これに指定されたソース ブロックをリンク`propagator_block`オブジェクトです。  
   
@@ -155,7 +169,7 @@ virtual void link_source(_Inout_ ISource<_Source_type>* _PSource);
  `_PSource`  
  ポインター、`ISource`をリンクできるはブロックされます。  
   
-##  <a name="a-nameprocessinputmessagesa-processinputmessages"></a><a name="process_input_messages"></a>process_input_messages 
+##  <a name="process_input_messages"></a>process_input_messages 
 
  入力メッセージを処理します。 これは、伝達子ブロック source_block から派生するのに便利です。  
   
@@ -166,7 +180,7 @@ virtual void process_input_messages(_Inout_ message<_Target_type>* _PMessage);
 ### <a name="parameters"></a>パラメーター  
  `_PMessage`  
   
-##  <a name="a-namepropagatea-propagate"></a><a name="propagate"></a>伝達 
+##  <a name="propagate"></a>伝達 
 
  このターゲット ブロックに、ソース ブロックからメッセージを非同期的に渡します。  
   
@@ -191,7 +205,7 @@ virtual message_status propagate(
   
  メソッドをスロー、 [invalid_argument](../../../standard-library/invalid-argument-class.md)いずれかの例外、`_PMessage`または`_PSource`パラメーターは`NULL`です。  
   
-##  <a name="a-namepropagatemessagea-propagatemessage"></a><a name="propagate_message"></a>propagate_message 
+##  <a name="propagate_message"></a>propagate_message 
 
  派生クラスでオーバーライドされると、このメソッドは非同期的に渡しますからのメッセージ、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`propagate`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -211,7 +225,7 @@ virtual message_status propagate_message(
 ### <a name="return-value"></a>戻り値  
  A [message_status](concurrency-namespace-enums.md)の関係を決定するターゲットを示す値。  
   
-##  <a name="a-namectora-propagatorblock"></a><a name="ctor"></a>propagator_block 
+##  <a name="ctor"></a>propagator_block 
 
  `propagator_block` オブジェクトを構築します。  
   
@@ -219,7 +233,7 @@ virtual message_status propagate_message(
 propagator_block();
 ```  
   
-##  <a name="a-namedtora-propagatorblock"></a><a name="dtor"></a>~ propagator_block 
+##  <a name="dtor"></a>~ propagator_block 
 
  `propagator_block` オブジェクトを破棄します。  
   
@@ -227,7 +241,7 @@ propagator_block();
 virtual ~propagator_block();
 ```  
   
-##  <a name="a-nameregisterfiltera-registerfilter"></a><a name="register_filter"></a>register_filter 
+##  <a name="register_filter"></a>register_filter 
 
  すべての受信メッセージで呼び出されるフィルター メソッドを登録します。  
   
@@ -239,7 +253,7 @@ void register_filter(filter_method const& _Filter);
  `_Filter`  
  Filter メソッドです。  
   
-##  <a name="a-nameremovenetworklinksa-removenetworklinks"></a><a name="remove_network_links"></a>remove_network_links 
+##  <a name="remove_network_links"></a>remove_network_links 
 
  これからのすべてのソースとターゲット ネットワーク リンクの削除`propagator_block`オブジェクトです。  
   
@@ -247,7 +261,7 @@ void register_filter(filter_method const& _Filter);
 void remove_network_links();
 ```  
   
-##  <a name="a-namesenda-send"></a><a name="send"></a>送信 
+##  <a name="send"></a>送信 
 
  このブロックにメッセージを同期的に開始します。 によって呼び出される、`ISource`ブロックします。 この関数が完了したら、メッセージは既にブロックに伝達が。  
   
@@ -270,7 +284,7 @@ virtual message_status send(
 ### <a name="remarks"></a>コメント  
  このメソッドは、 [invalid_argument](../../../standard-library/invalid-argument-class.md)いずれかの例外、`_PMessage`または`_PSource`パラメーターは`NULL`です。  
   
-##  <a name="a-namesendmessagea-sendmessage"></a><a name="send_message"></a>send_message 
+##  <a name="send_message"></a>send_message 
 
  このメソッドがからのメッセージを同期的には派生クラスでオーバーライドされると、`ISource`このブロック`propagator_block`オブジェクトです。 によって呼び出される、`send`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -286,7 +300,7 @@ virtual message_status send_message(
 ### <a name="remarks"></a>コメント  
  既定では、このブロックが返す`declined`派生クラスによってオーバーライドされない限りです。  
   
-##  <a name="a-nameunlinksourcea-unlinksource"></a><a name="unlink_source"></a>unlink_source 
+##  <a name="unlink_source"></a>unlink_source 
 
  これから指定されたソース ブロックのリンクを解除`propagator_block`オブジェクトです。  
   
@@ -298,7 +312,7 @@ virtual void unlink_source(_Inout_ ISource<_Source_type>* _PSource);
  `_PSource`  
  ポインター、`ISource`リンクを解除するのには、ブロックします。  
   
-##  <a name="a-nameunlinksourcesa-unlinksources"></a><a name="unlink_sources"></a>unlink_sources 
+##  <a name="unlink_sources"></a>unlink_sources 
 
  これからのすべてのソース ブロックのリンクを解除`propagator_block`オブジェクトです。  
   

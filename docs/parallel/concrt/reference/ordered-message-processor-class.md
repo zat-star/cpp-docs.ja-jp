@@ -9,7 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- agents/concurrency::ordered_message_processor
+- ordered_message_processor
+- AGENTS/concurrency::ordered_message_processor
+- AGENTS/concurrency::ordered_message_processor::ordered_message_processor
+- AGENTS/concurrency::ordered_message_processor::async_send
+- AGENTS/concurrency::ordered_message_processor::initialize
+- AGENTS/concurrency::ordered_message_processor::initialize_batched_processing
+- AGENTS/concurrency::ordered_message_processor::sync_send
+- AGENTS/concurrency::ordered_message_processor::wait
+- AGENTS/concurrency::ordered_message_processor::process_incoming_message
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +42,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: a9653c8eb5f05e56fd7812d334575e62dc101d63
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 1c3147001db16b610992d2501ed12ad4bd001fc9
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="orderedmessageprocessor-class"></a>ordered_message_processor クラス
@@ -65,24 +73,24 @@ class ordered_message_processor : public message_processor<T>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[ordered_message_processor コンス トラクター](#ctor)|`ordered_message_processor` オブジェクトを構築します。|  
+|[ordered_message_processor](#ctor)|`ordered_message_processor` オブジェクトを構築します。|  
 |[~ ordered_message_processor デストラクター](#dtor)|`ordered_message_processor` オブジェクトを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[async_send メソッド](#async_send)|非同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。 (上書き[message_processor::async_send](message-processor-class.md#async_send))。|  
-|[initialize メソッド](#initialize)|初期化、`ordered_message_processor`適切なコールバック関数、スケジューラ、およびスケジュール グループを持つオブジェクト。|  
-|[initialize_batched_processing メソッド](#initialize_batched_processing)|バッチ処理されるメッセージの処理を初期化します。|  
-|[sync_send メソッド](#sync_send)|同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。 (上書き[message_processor::sync_send](message-processor-class.md#sync_send))。|  
-|[wait メソッド](#wait)|すべてのタスクの非同期処理がブロックを破棄する前に完了するのに時間があることを確認するメッセージ ブロックのデストラクターで使用されるプロセッサ固有のスピン待ちします。 (上書き[message_processor::wait](message-processor-class.md#wait))。|  
+|[async_send](#async_send)|非同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。 (上書き[message_processor::async_send](message-processor-class.md#async_send))。|  
+|[初期化します。](#initialize)|初期化、`ordered_message_processor`適切なコールバック関数、スケジューラ、およびスケジュール グループを持つオブジェクト。|  
+|[initialize_batched_processing](#initialize_batched_processing)|バッチ処理されるメッセージの処理を初期化します。|  
+|[sync_send](#sync_send)|同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。 (上書き[message_processor::sync_send](message-processor-class.md#sync_send))。|  
+|[待機](#wait)|すべてのタスクの非同期処理がブロックを破棄する前に完了するのに時間があることを確認するメッセージ ブロックのデストラクターで使用されるプロセッサ固有のスピン待ちします。 (上書き[message_processor::wait](message-processor-class.md#wait))。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[process_incoming_message メソッド](#process_incoming_message)|非同期的に呼び出される処理関数です。 メッセージをデキューし、それらの処理を開始します。 (上書き[message_processor::process_incoming_message](message-processor-class.md#process_incoming_message))。|  
+|[process_incoming_message](#process_incoming_message)|非同期的に呼び出される処理関数です。 メッセージをデキューし、それらの処理を開始します。 (上書き[message_processor::process_incoming_message](message-processor-class.md#process_incoming_message))。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [message_processor](message-processor-class.md)  
@@ -94,7 +102,7 @@ class ordered_message_processor : public message_processor<T>;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nameasyncsenda-asyncsend"></a><a name="async_send"></a>async_send 
+##  <a name="async_send"></a>async_send 
 
  非同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。  
   
@@ -106,7 +114,7 @@ virtual void async_send(_Inout_opt_ message<T>* _Msg);
  `_Msg`  
  メッセージへのポインター。  
   
-##  <a name="a-nameinitializea-initialize"></a><a name="initialize"></a>初期化します。 
+##  <a name="initialize"></a>初期化します。 
 
  初期化、`ordered_message_processor`適切なコールバック関数、スケジューラ、およびスケジュール グループを持つオブジェクト。  
   
@@ -127,7 +135,7 @@ void initialize(
  `_Handler`  
  コールバック時に呼び出されるハンドラー ファンクタ。  
   
-##  <a name="a-nameinitializebatchedprocessinga-initializebatchedprocessing"></a><a name="initialize_batched_processing"></a>initialize_batched_processing 
+##  <a name="initialize_batched_processing"></a>initialize_batched_processing 
 
  バッチ処理されるメッセージの処理を初期化します。  
   
@@ -144,7 +152,7 @@ virtual void initialize_batched_processing(
  `_Propagator`  
  伝達子ファンクタ コールバック中に呼び出されます。  
   
-##  <a name="a-namectora-orderedmessageprocessor"></a><a name="ctor"></a>ordered_message_processor 
+##  <a name="ctor"></a>ordered_message_processor 
 
  `ordered_message_processor` オブジェクトを構築します。  
   
@@ -155,7 +163,7 @@ ordered_message_processor();
 ### <a name="remarks"></a>コメント  
  これは、`ordered_message_processor`まで同期または非同期のハンドラーをスケジュールできませんが、`initialize`関数が呼び出されます。  
   
-##  <a name="a-namedtora-orderedmessageprocessor"></a><a name="dtor"></a>~ ordered_message_processor 
+##  <a name="dtor"></a>~ ordered_message_processor 
 
  `ordered_message_processor` オブジェクトを破棄します。  
   
@@ -166,7 +174,7 @@ virtual ~ordered_message_processor();
 ### <a name="remarks"></a>コメント  
  プロセッサを破棄する前にすべての未解決の非同期操作を待機します。  
   
-##  <a name="a-nameprocessincomingmessagea-processincomingmessage"></a><a name="process_incoming_message"></a>process_incoming_message 
+##  <a name="process_incoming_message"></a>process_incoming_message 
 
  非同期的に呼び出される処理関数です。 メッセージをデキューし、それらの処理を開始します。  
   
@@ -174,7 +182,7 @@ virtual ~ordered_message_processor();
 virtual void process_incoming_message();
 ```  
   
-##  <a name="a-namesyncsenda-syncsend"></a><a name="sync_send"></a>sync_send 
+##  <a name="sync_send"></a>sync_send 
 
  同期的にメッセージをキューに登録しがまだ実行されている場合は、処理タスクを開始します。  
   
@@ -186,7 +194,7 @@ virtual void sync_send(_Inout_opt_ message<T>* _Msg);
  `_Msg`  
  メッセージへのポインター。  
   
-##  <a name="a-namewaita-wait"></a><a name="wait"></a>待機 
+##  <a name="wait"></a>待機 
 
  すべてのタスクの非同期処理がブロックを破棄する前に完了するのに時間があることを確認するメッセージ ブロックのデストラクターで使用されるプロセッサ固有のスピン待ちします。  
   
@@ -195,5 +203,5 @@ virtual void wait();
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

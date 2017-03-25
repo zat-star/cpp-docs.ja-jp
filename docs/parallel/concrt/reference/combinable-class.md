@@ -9,7 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ppl/concurrency::combinable
+- combinable
+- PPL/concurrency::combinable
+- PPL/concurrency::combinable::combinable
+- PPL/concurrency::combinable::clear
+- PPL/concurrency::combinable::combine
+- PPL/concurrency::combinable::combine_each
+- PPL/concurrency::combinable::local
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 4ed3ce3d441566a0fb301d01123335846d86a8af
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: a491f8eef59978808608917531a5237cceacdb21
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="combinable-class"></a>combinable クラス
@@ -59,23 +65,23 @@ class combinable;
   
 |名前|説明|  
 |----------|-----------------|  
-|[組み合わせ可能なコンス トラクター](#ctor)|オーバーロードされます。 新しい `combinable` オブジェクトを構築します。|  
+|[組み合わせ可能](#ctor)|オーバーロードされます。 新しい `combinable` オブジェクトを構築します。|  
 |[~ combinable デストラクター](#dtor)|`combinable` オブジェクトを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[clear メソッド](#clear)|以前の使用法から中間の計算結果をクリアします。|  
-|[combine メソッド](#combine)|指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。|  
-|[combine_each メソッド](#combine_each)|スレッド ローカルのサブ計算ごとに&1; 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトによっては累積されます。|  
-|[ローカル メソッド](#local)|オーバーロードされます。 スレッド プライベート サブ計算への参照を返します。|  
+|[clear](#clear)|以前の使用法から中間の計算結果をクリアします。|  
+|[combine](#combine)|指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。|  
+|[combine_each](#combine_each)|スレッド ローカルのサブ計算ごとに&1; 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトによっては累積されます。|  
+|[地元の](#local)|オーバーロードされます。 スレッド プライベート サブ計算への参照を返します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|割り当てる、`combinable`オブジェクトから`combinable`オブジェクトです。|  
+|[operator=](#operator_eq)|割り当てる、`combinable`オブジェクトから`combinable`オブジェクトです。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)します。  
@@ -88,7 +94,7 @@ class combinable;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namecleara-clear"></a><a name="clear"></a>オフ 
+##  <a name="clear"></a>オフ 
 
  以前の使用法から中間の計算結果をクリアします。  
   
@@ -96,7 +102,7 @@ class combinable;
 void clear();
 ```  
   
-##  <a name="a-namectora-combinable"></a><a name="ctor"></a>組み合わせ可能 
+##  <a name="ctor"></a>組み合わせ可能 
 
  新しい `combinable` オブジェクトを構築します。  
   
@@ -126,7 +132,7 @@ combinable(const combinable& _Copy);
   
  3 番目のコンス トラクターは、コピー コンス トラクターです。  
   
-##  <a name="a-namedtora-combinable"></a><a name="dtor"></a>~ combinable 
+##  <a name="dtor"></a>~ combinable 
 
  `combinable` オブジェクトを破棄します。  
   
@@ -134,7 +140,7 @@ combinable(const combinable& _Copy);
 ~combinable();
 ```  
   
-##  <a name="a-namecombinea-combine"></a><a name="combine"></a>結合 
+##  <a name="combine"></a>結合 
 
  指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。  
   
@@ -153,7 +159,7 @@ T combine(_Function _FnCombine) const;
 ### <a name="return-value"></a>戻り値  
  すべてのスレッド プライベート サブ計算を組み合わせることの最終的な結果です。  
   
-##  <a name="a-namecombineeacha-combineeach"></a><a name="combine_each"></a>combine_each 
+##  <a name="combine_each"></a>combine_each 
 
  スレッド ローカルのサブ計算ごとに&1; 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトによっては累積されます。  
   
@@ -169,7 +175,7 @@ void combine_each(_Function _FnCombine) const;
  `_FnCombine`  
  1 つのサブ計算を結合するためのファンクタ。 シグニチャは`void (T)`または`void (const T&)`、結合規則および可換にする必要があります。  
   
-##  <a name="a-namelocala-local"></a><a name="local"></a>地元の 
+##  <a name="local"></a>地元の 
 
  スレッド プライベート サブ計算への参照を返します。  
   
@@ -186,7 +192,7 @@ T& local(bool& _Exists);
 ### <a name="return-value"></a>戻り値  
  スレッド プライベート サブ計算への参照。  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  割り当てる、`combinable`オブジェクトから`combinable`オブジェクトです。  
   
@@ -202,5 +208,5 @@ combinable& operator= (const combinable& _Copy);
  この `combinable` オブジェクトへの参照。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

@@ -9,7 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concurrent_priority_queue/concurrency::concurrent_priority_queue
+- concurrent_priority_queue
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::concurrent_priority_queue
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::clear
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::empty
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::get_allocator
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::push
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::size
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::swap
+- CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::try_pop
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +43,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 59bbd25f78294e1363b8acb49e45f364a9ae026e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 95b52911135513b0b1e4d84509c80ed3262c1765
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrentpriorityqueue-class"></a>concurrent_priority_queue クラス
@@ -78,25 +87,25 @@ template <typename T,
   
 |名前|説明|  
 |----------|-----------------|  
-|[concurrent_priority_queue コンス トラクター](#ctor)|オーバーロードされます。 同時実行の優先度のキューを作成します。|  
+|[concurrent_priority_queue](#ctor)|オーバーロードされます。 同時実行の優先度のキューを作成します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[clear メソッド](#clear)|同時実行の優先度のすべての要素を消去します。 このメソッドは同時実行セーフではありません。|  
-|[empty メソッド](#empty)|テスト時に、同時実行の優先順位キューが空の場合、このメソッドが呼び出されます。 このメソッドは同時実行セーフです。|  
-|[get_allocator メソッド](#get_allocator)|同時実行の優先順位キューの構築に使用されるアロケーターのコピーを返します。 このメソッドは同時実行セーフです。|  
-|[push メソッド](#push)|オーバーロードされます。 同時実行の優先順位キューに要素を追加します。 このメソッドは同時実行セーフです。|  
-|[サイズ メソッド](#size)|同時実行の優先順位キュー内の要素の数を返します。 このメソッドは同時実行セーフです。|  
-|[swap メソッド](#swap)|2 つの同時実行の優先順位キューの内容を交換します。 このメソッドは同時実行セーフではありません。|  
-|[try_pop メソッド](#try_pop)|削除し、キューが空でない場合は、キューから最高の優先度要素を返します。 このメソッドは同時実行セーフです。|  
+|[clear](#clear)|同時実行の優先度のすべての要素を消去します。 このメソッドは同時実行セーフではありません。|  
+|[empty](#empty)|テスト時に、同時実行の優先順位キューが空の場合、このメソッドが呼び出されます。 このメソッドは同時実行セーフです。|  
+|[get_allocator](#get_allocator)|同時実行の優先順位キューの構築に使用されるアロケーターのコピーを返します。 このメソッドは同時実行セーフです。|  
+|[push](#push)|オーバーロードされます。 同時実行の優先順位キューに要素を追加します。 このメソッドは同時実行セーフです。|  
+|[size](#size)|同時実行の優先順位キュー内の要素の数を返します。 このメソッドは同時実行セーフです。|  
+|[swap](#swap)|2 つの同時実行の優先順位キューの内容を交換します。 このメソッドは同時実行セーフではありません。|  
+|[try_pop](#try_pop)|削除し、キューが空でない場合は、キューから最高の優先度要素を返します。 このメソッドは同時実行セーフです。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|オーバーロードされます。 別の `concurrent_priority_queue` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。|  
+|[operator=](#operator_eq)|オーバーロードされます。 別の `concurrent_priority_queue` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、`concurrent_priority_queue`を参照してください[並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)します。  
@@ -109,7 +118,7 @@ template <typename T,
   
  **名前空間:** concurrency  
   
-##  <a name="a-namecleara-clear"></a><a name="clear"></a>オフ 
+##  <a name="clear"></a>オフ 
 
  同時実行の優先度のすべての要素を消去します。 このメソッドは同時実行セーフではありません。  
   
@@ -120,7 +129,7 @@ void clear();
 ### <a name="remarks"></a>コメント  
  `clear`同時実行セーフではありません。 他のスレッド メソッドを呼び出していない、同時実行の優先順位キューでこのメソッドを呼び出すとを確認する必要があります。 `clear`メモリは解放されません。  
   
-##  <a name="a-namectora-concurrentpriorityqueue"></a><a name="ctor"></a>concurrent_priority_queue 
+##  <a name="ctor"></a>concurrent_priority_queue 
 
  同時実行の優先度のキューを作成します。  
   
@@ -184,7 +193,7 @@ concurrent_priority_queue(
   
  6 番目と&7; 番目のコンス トラクターは、優先順位キューの移動を指定します。`_Src`します。  
   
-##  <a name="a-nameemptya-empty"></a><a name="empty"></a>空 
+##  <a name="empty"></a>空 
 
  テスト時に、同時実行の優先順位キューが空の場合、このメソッドが呼び出されます。 このメソッドは同時実行セーフです。  
   
@@ -195,7 +204,7 @@ bool empty() const;
 ### <a name="return-value"></a>戻り値  
  `true`関数が呼び出された時点で、優先順位キューが空の場合`false`それ以外の場合。  
   
-##  <a name="a-namegetallocatora-getallocator"></a><a name="get_allocator"></a>get_allocator 
+##  <a name="get_allocator"></a>get_allocator 
 
  同時実行の優先順位キューの構築に使用されるアロケーターのコピーを返します。 このメソッドは同時実行セーフです。  
   
@@ -206,7 +215,7 @@ allocator_type get_allocator() const;
 ### <a name="return-value"></a>戻り値  
  構築するために使用するアロケーターのコピー、`concurrent_priority_queue`オブジェクトです。  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  別の `concurrent_priority_queue` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。  
   
@@ -223,7 +232,7 @@ concurrent_priority_queue& operator= (concurrent_priority_queue&& _Src);
 ### <a name="return-value"></a>戻り値  
  この `concurrent_priority_queue` オブジェクトへの参照。  
   
-##  <a name="a-namepusha-push"></a><a name="push"></a>プッシュ 
+##  <a name="push"></a>プッシュ 
 
  同時実行の優先順位キューに要素を追加します。 このメソッドは同時実行セーフです。  
   
@@ -237,7 +246,7 @@ void push(value_type&& _Elem);
  `_Elem`  
  同時実行の優先順位キューに追加する要素。  
   
-##  <a name="a-namesizea-size"></a><a name="size"></a>サイズ 
+##  <a name="size"></a>サイズ 
 
  同時実行の優先順位キュー内の要素の数を返します。 このメソッドは同時実行セーフです。  
   
@@ -251,7 +260,7 @@ size_type size() const;
 ### <a name="remarks"></a>コメント  
  返されるサイズが、関数への呼び出しによって追加されたすべての要素を含めることが保証`push`します。 ただし、保留中の同時操作の結果は反映されません可能性があります。  
   
-##  <a name="a-nameswapa-swap"></a><a name="swap"></a>スワップ 
+##  <a name="swap"></a>スワップ 
 
  2 つの同時実行の優先順位キューの内容を交換します。 このメソッドは同時実行セーフではありません。  
   
@@ -263,7 +272,7 @@ void swap(concurrent_priority_queue& _Queue);
  `_Queue`  
  `concurrent_priority_queue`の内容を交換するオブジェクト。  
   
-##  <a name="a-nametrypopa-trypop"></a><a name="try_pop"></a>try_pop 
+##  <a name="try_pop"></a>try_pop 
 
  削除し、キューが空でない場合は、キューから最高の優先度要素を返します。 このメソッドは同時実行セーフです。  
   

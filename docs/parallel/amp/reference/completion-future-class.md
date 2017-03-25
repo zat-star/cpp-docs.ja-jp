@@ -9,7 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amprt/Concurrency::completion_future
+- completion_future
+- AMPRT/completion_future
+- AMPRT/Concurrency::completion_future::completion_future
+- AMPRT/Concurrency::completion_future::get
+- AMPRT/Concurrency::completion_future::then
+- AMPRT/Concurrency::completion_future::to_task
+- AMPRT/Concurrency::completion_future::valid
+- AMPRT/Concurrency::completion_future::wait
+- AMPRT/Concurrency::completion_future::wait_for
+- AMPRT/Concurrency::completion_future::wait_until
 dev_langs:
 - C++
 ms.assetid: 1303c62e-546d-4b02-a578-251ed3fc0b6b
@@ -32,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: a9a77c3cf3c183021b70789b0e17a6b8ad8d786c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 1c6d8e880fbdb784b22b1e9c879473efa7bc9802
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="completionfuture-class"></a>completion_future クラス
@@ -59,20 +68,20 @@ class completion_future;
   
 |名前|説明|  
 |----------|-----------------|  
-|[get メソッド](#get)|関連する非同期操作が完了するまで待機します。|  
-|[then メソッド](#then)|関連する非同期操作の実行が終了するときに、実行される `completion_future` オブジェクトにコールバック関数オブジェクトを継承します。|  
-|[to_task メソッド](#to_task)|関連する非同期操作に対応する `task` オブジェクトを返します。|  
-|[有効なメソッド](#valid)|オブジェクトが非同期操作に関連するかどうかを示すブール値を取得します。|  
-|[wait メソッド](#wait)|関連する非同期操作が完了するまでブロックします。|  
-|[wait_for メソッド](#wait_for)|関連する非同期操作が完了するまで、または `_Rel_time` で指定された時間が経過するまで、ブロックします。|  
-|[wait_until メソッド](#wait_until)|関連する非同期操作が完了するまで、または現在の時間が `_Abs_time` によって指定された値を超過するまで、ブロックします。|  
+|[get](#get)|関連する非同期操作が完了するまで待機します。|  
+|[そうしたら](#then)|関連する非同期操作の実行が終了するときに、実行される `completion_future` オブジェクトにコールバック関数オブジェクトを継承します。|  
+|[to_task](#to_task)|関連する非同期操作に対応する `task` オブジェクトを返します。|  
+|[有効です](#valid)|オブジェクトが非同期操作に関連するかどうかを示すブール値を取得します。|  
+|[待機](#wait)|関連する非同期操作が完了するまでブロックします。|  
+|[wait_for](#wait_for)|関連する非同期操作が完了するまで、または `_Rel_time` で指定された時間が経過するまで、ブロックします。|  
+|[wait_until](#wait_until)|関連する非同期操作が完了するまで、または現在の時間が `_Abs_time` によって指定された値を超過するまで、ブロックします。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[演算子 std::shared_future\<void > 演算子](#operator_shared_future)|`completion_future` オブジェクトを `std::shared_future` オブジェクトに暗黙的に変換します。|  
-|[operator = 演算子](#operator_eq)|指定された `completion_future` オブジェクトの内容をこのオブジェクトにコピーします。|  
+|[演算子 std::shared_future\<void >](#operator_shared_future)|`completion_future` オブジェクトを `std::shared_future` オブジェクトに暗黙的に変換します。|  
+|[operator=](#operator_eq)|指定された `completion_future` オブジェクトの内容をこのオブジェクトにコピーします。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `completion_future`  
@@ -83,7 +92,7 @@ class completion_future;
  **名前空間:** concurrency  
 
 
-## <a name="a-namectora-completionfuture"></a><a name="ctor"></a>completion_future 
+## <a name="ctor"></a>completion_future 
 
 `completion_future` クラスの新しいインスタンスを初期化します。  
   
@@ -111,7 +120,7 @@ completion_future(
 |`completion_future(const completion_future& _Other);`|新しいインスタンスを初期化、`completion_future`クラス コンス トラクターをコピーしています。|  
 |`completion_future(completion_future&& _Other);`|新しいインスタンスを初期化、`completion_future`クラス コンス トラクターを移動しています。|  
   
-## <a name="a-namegeta-get"></a><a name="get"></a>取得 
+## <a name="get"></a>取得 
 
 関連する非同期操作が完了するまで待機します。 非同期の操作中にいずれかが発生した場合は、ストアドの例外をスローします。  
   
@@ -121,7 +130,7 @@ completion_future(
 void get() const;  
 ```  
   
-## <a name="a-nameoperatorsharedfuturea-operator-stdsharedfuturevoid"></a><a name="operator_shared_future"></a>演算子 std::shared_future<void> 
+## <a name="operator_shared_future"></a>演算子 std::shared_future<void> 
 
 `completion_future` オブジェクトを `std::shared_future` オブジェクトに暗黙的に変換します。  
   
@@ -134,7 +143,7 @@ operator std::shared_future<void>() const;
 ### <a name="return-value"></a>戻り値  
  `std::shared_future` オブジェクト。  
   
-## <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+## <a name="operator_eq"></a>演算子 = 
 
 指定された `completion_future` オブジェクトの内容をこのオブジェクトにコピーします。  
   
@@ -159,7 +168,7 @@ completion_future&  operator= (completion_future&& _Other );
 |`completion_future& operator=(const completion_future& _Other);`|指定した内容をコピー`completion_future`オブジェクトのディープ コピーを使用してこの&1; つにします。|  
 |`completion_future& operator=(completion_future&& _Other);`|指定した内容をコピー`completion_future`オブジェクトを移動代入を使用して、この&1; つにします。|  
   
-## <a name="a-namethena-then"></a><a name="then"></a>そうしたら 
+## <a name="then"></a>そうしたら 
 
 関連する非同期操作の実行が終了するときに、実行される `completion_future` オブジェクトにコールバック関数オブジェクトを継承します。  
   
@@ -177,7 +186,7 @@ void then(const _Functor & _Func ) const;
  `_Func`  
  コールバック関数オブジェクト。  
   
-## <a name="a-nametotaska-totask"></a><a name="to_task"></a>to_task 
+## <a name="to_task"></a>to_task 
 
 関連する非同期操作に対応する `task` オブジェクトを返します。  
   
@@ -190,7 +199,7 @@ concurrency::task<void> to_task() const;
 ### <a name="return-value"></a>戻り値  
  A`task`関連する非同期操作に対応するオブジェクト。  
   
-## <a name="a-namevalida-valid"></a><a name="valid"></a>有効です 
+## <a name="valid"></a>有効です 
 
 オブジェクトが、非同期操作に関連付けられているかどうかを示すブール値を取得します。  
   
@@ -203,7 +212,7 @@ bool valid() const;
 ### <a name="return-value"></a>戻り値  
  `true`オブジェクトが、非同期操作; に関連付けられている場合それ以外の場合、`false`です。  
   
-## <a name="a-namewaita-wait"></a><a name="wait"></a>待機 
+## <a name="wait"></a>待機 
 
 関連する非同期操作が完了するまでブロックします。  
   
@@ -213,7 +222,7 @@ bool valid() const;
 void wait() const;  
 ```  
   
-## <a name="a-namewaitfora-waitfor"></a><a name="wait_for"></a>wait_for 
+## <a name="wait_for"></a>wait_for 
 
 関連する非同期操作が完了するまで、または `_Rel_time` で指定された時間が経過するまで、ブロックします。  
   
@@ -247,7 +256,7 @@ std::future_status::future_status wait_for(
   
 -   指定した期間が経過した場合、`std::future_status::timeout`。  
   
-## <a name="a-namewaituntila-waituntil"></a><a name="wait_until"></a>wait_until 
+## <a name="wait_until"></a>wait_until 
 
 関連する非同期操作が完了するまで、または現在の時間が `_Abs_time` によって指定された値を超過するまで、ブロックします。  
   
@@ -281,7 +290,7 @@ std::future_status::future_status wait_until(
   
 3.  指定された期間が経過した場合、`std::future_status::timeout`。  
   
-## <a name="a-namedtora-completionfuture"></a><a name="dtor"></a>~ completion_future 
+## <a name="dtor"></a>~ completion_future 
 
 `completion_future` オブジェクトを破棄します。  
   
@@ -292,5 +301,5 @@ std::future_status::future_status wait_until(
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
 

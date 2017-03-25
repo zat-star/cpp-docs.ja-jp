@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::context_unblock_unbalanced
+- context_unblock_unbalanced
+- CONCRT/concurrency::context_unblock_unbalanced
+- CONCRT/concurrency::context_unblock_unbalanced::context_unblock_unbalanced
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 7341ff5d10b7f7752c49f18ea9b810824e347b1c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 21c26658e347fa35209677e15ddcb48bbe8d1235
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="contextunblockunbalanced-class"></a>context_unblock_unbalanced クラス
@@ -54,7 +56,7 @@ class context_unblock_unbalanced : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[context_unblock_unbalanced コンス トラクター](#ctor)|オーバーロードされます。 `context_unblock_unbalanced` オブジェクトを構築します。|  
+|[context_unblock_unbalanced](#ctor)|オーバーロードされます。 `context_unblock_unbalanced` オブジェクトを構築します。|  
   
 ## <a name="remarks"></a>コメント  
  呼び出し、`Block`と`Unblock`のメソッド、`Context`オブジェクトのペアを正しく常にする必要があります。 同時実行ランタイムは、操作を任意の順序で実行できます。 呼び出しなど`Block`への呼び出しを続けて`Unblock`、またはその逆です。 たとえば、2 回の呼び出しをする場合は、この例外がスローされます、`Unblock`メソッドで発生した行の`Context`ブロックされていないオブジェクトです。  
@@ -69,7 +71,7 @@ class context_unblock_unbalanced : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-contextunblockunbalanced"></a><a name="ctor"></a>context_unblock_unbalanced 
+##  <a name="ctor"></a>context_unblock_unbalanced 
 
  `context_unblock_unbalanced` オブジェクトを構築します。  
   
@@ -85,5 +87,5 @@ context_unblock_unbalanced() throw();
  エラーの説明メッセージ。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

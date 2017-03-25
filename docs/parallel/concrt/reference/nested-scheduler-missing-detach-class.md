@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::nested_scheduler_missing_detach
+- nested_scheduler_missing_detach
+- CONCRT/concurrency::nested_scheduler_missing_detach
+- CONCRT/concurrency::nested_scheduler_missing_detach::nested_scheduler_missing_detach
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 0079fea0b157e194947931f88d1cb500167cb6e2
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 7ab8dc3761c6f11529b70ec4d71bbaebdfea0493
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="nestedschedulermissingdetach-class"></a>nested_scheduler_missing_detach クラス
@@ -54,7 +56,7 @@ class nested_scheduler_missing_detach : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[nested_scheduler_missing_detach コンス トラクター](#ctor)|オーバーロードされます。 `nested_scheduler_missing_detach` オブジェクトを構築します。|  
+|[nested_scheduler_missing_detach](#ctor)|オーバーロードされます。 `nested_scheduler_missing_detach` オブジェクトを構築します。|  
   
 ## <a name="remarks"></a>コメント  
  呼び出して別のスケジューラ内を入れ子にする場合にのみ、この例外がスローされます、`Attach`のメソッド、`Scheduler`既にによって所有されているか、別のスケジューラにアタッチされているコンテキストでのオブジェクト。 同時実行ランタイムは、問題の特定を支援するために、シナリオを検出できるとな場合にこの例外をスローします。 呼び出しを無視していないすべてのインスタンス、`CurrentScheduler::Detach`メソッドがこの例外をスローすることが保証されます。  
@@ -69,7 +71,7 @@ class nested_scheduler_missing_detach : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-nestedschedulermissingdetach"></a><a name="ctor"></a>nested_scheduler_missing_detach 
+##  <a name="ctor"></a>nested_scheduler_missing_detach 
 
  `nested_scheduler_missing_detach` オブジェクトを構築します。  
   

@@ -9,7 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ppltasks/concurrency::task
+- task
+- PPLTASKS/concurrency::task
+- PPLTASKS/concurrency::task::task
+- PPLTASKS/concurrency::task::get
+- PPLTASKS/concurrency::task::is_apartment_aware
+- PPLTASKS/concurrency::task::is_done
+- PPLTASKS/concurrency::task::scheduler
+- PPLTASKS/concurrency::task::then
+- PPLTASKS/concurrency::task::wait
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +42,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 7bbe0445c59279423665cd7df4eb5972f23ecf78
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: e6c568b0b6a5f07df51980e1e440f31482f45846
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="task-class-concurrency-runtime"></a>task クラス (同時実行ランタイム)
@@ -73,26 +81,26 @@ class task;
   
 |名前|説明|  
 |----------|-----------------|  
-|[タスク コンス トラクター](#ctor)|オーバーロードされます。 `task` オブジェクトを構築します。|  
+|[タスク](#ctor)|オーバーロードされます。 `task` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[get メソッド](#get)|オーバーロードされます。 このタスクによって生成された結果を返します。 タスクが終了状態にない場合、`get` への呼び出しは、そのタスクが完了するまで待機します。 このメソッドは、`result_type` が `void` に指定されたタスクで呼び出された場合は値を返しません。|  
-|[is_apartment_aware メソッド](#is_apartment_aware)|タスクが Windows ランタイム `IAsyncInfo` インターフェイスをラップ解除するか、こうしたタスクの子であるかを決定します。|  
-|[is_done メソッド](#is_done)|タスクが完了したかどうかを決定します。|  
-|[スケジューラ メソッド](#scheduler)|このタスクのスケジューラを返します|  
-|[then メソッド](#then)|オーバーロードされます。 継続タスクをこのタスクに追加します。|  
-|[wait メソッド](#wait)|このタスクが終了状態になるまで待機します。 タスクの依存関係すべてが満たされ、バックグラウンド ワーカーによって実行用にまだ検出されていない場合、`wait` はタスクをインラインで実行できます。|  
+|[get](#get)|オーバーロードされます。 このタスクによって生成された結果を返します。 タスクが終了状態にない場合、`get` への呼び出しは、そのタスクが完了するまで待機します。 このメソッドは、`result_type` が `void` に指定されたタスクで呼び出された場合は値を返しません。|  
+|[is_apartment_aware](#is_apartment_aware)|タスクが Windows ランタイム `IAsyncInfo` インターフェイスをラップ解除するか、こうしたタスクの子であるかを決定します。|  
+|[is_done](#is_done)|タスクが完了したかどうかを決定します。|  
+|[スケジューラ](#scheduler)|このタスクのスケジューラを返します|  
+|[そうしたら](#then)|オーバーロードされます。 継続タスクをこのタスクに追加します。|  
+|[待機](#wait)|このタスクが終了状態になるまで待機します。 タスクの依存関係すべてが満たされ、バックグラウンド ワーカーによって実行用にまだ検出されていない場合、`wait` はタスクをインラインで実行できます。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator! = 演算子](#operator_neq)|オーバーロードされます。 2 つの `task` オブジェクトが異なる内部タスクを表すかどうかを決定します。|  
-|[operator = 演算子](#operator_eq)|オーバーロードされます。 ある `task` オブジェクトの内容を別のオブジェクトの内容で置き換えます。|  
-|[operator = 演算子](#operator_eq_eq)|オーバーロードされます。 2 つの `task` オブジェクトが同じ内部タスクを表すかどうかを決定します。|  
+|[operator!=](#operator_neq)|オーバーロードされます。 2 つの `task` オブジェクトが異なる内部タスクを表すかどうかを決定します。|  
+|[operator=](#operator_eq)|オーバーロードされます。 ある `task` オブジェクトの内容を別のオブジェクトの内容で置き換えます。|  
+|[operator==](#operator_eq_eq)|オーバーロードされます。 2 つの `task` オブジェクトが同じ内部タスクを表すかどうかを決定します。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
@@ -105,7 +113,7 @@ class task;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegeta-get"></a><a name="get"></a>取得 
+##  <a name="get"></a>取得 
 
  このタスクによって生成された結果を返します。 タスクが終了状態にない場合、`get` への呼び出しは、そのタスクが完了するまで待機します。 このメソッドは、`result_type` が `void` に指定されたタスクで呼び出された場合は値を返しません。  
   
@@ -124,7 +132,7 @@ void get() const;
 > [!IMPORTANT]
 >  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)]アプリを呼び出す必要はありません[concurrency::task::wait](#wait)または`get`(`wait`呼び出し`get`) STA で実行されるコードで それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、これらのメソッドは、現在のスレッドをブロックし、アプリが反応しなくなる可能性があります。 ただし、結果は直ちに使用できるため、タスク ベースの継続で継続元タスクの結果を受け取るために `get` メソッドを呼び出すことができます。  
   
-##  <a name="a-nameisapartmentawarea-isapartmentaware"></a><a name="is_apartment_aware"></a>is_apartment_aware 
+##  <a name="is_apartment_aware"></a>is_apartment_aware 
 
  タスクが Windows ランタイム `IAsyncInfo` インターフェイスをラップ解除するか、こうしたタスクの子であるかを決定します。  
   
@@ -135,7 +143,7 @@ bool is_apartment_aware() const;
 ### <a name="return-value"></a>戻り値  
  タスクが `true` インターフェイスをラップ解除するか、こうしたタスクの子である場合は `IAsyncInfo` を返します。それ以外の場合は、`false` を返します。  
   
-##  <a name="a-nameisdonea--taskisdone-method-concurrency-runtime"></a><a name="is_done"></a>task::is_done メソッド (同時実行ランタイム)  
+##  <a name="is_done"></a>task::is_done メソッド (同時実行ランタイム)  
  タスクが完了したかどうかを決定します。  
   
 ```
@@ -148,7 +156,7 @@ bool is_done() const;
 ### <a name="remarks"></a>コメント  
  関数は、タスクが完了した場合または取り消された場合に true を返します (ユーザー例外の有無は問いません)。  
   
-##  <a name="a-nameoperatorneqa-operator"></a><a name="operator_neq"></a>operator! = 
+##  <a name="operator_neq"></a>operator! = 
 
  2 つの `task` オブジェクトが異なる内部タスクを表すかどうかを決定します。  
   
@@ -164,7 +172,7 @@ bool operator!= (const task<void>& _Rhs) const;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが異なる基本タスクを参照する場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  ある `task` オブジェクトの内容を別のオブジェクトの内容で置き換えます。  
   
@@ -183,7 +191,7 @@ task& operator= (task&& _Other);
 ### <a name="remarks"></a>コメント  
  `task` がスマート ポインターのように動作すると、コピーの代入の後では、この `task` オブジェクトは `_Other` が実行する実際のタスクと同じタスクを表します。  
   
-##  <a name="a-nameoperatoreqeqa-operator"></a><a name="operator_eq_eq"></a>演算子 = = 
+##  <a name="operator_eq_eq"></a>演算子 = = 
 
  2 つの `task` オブジェクトが同じ内部タスクを表すかどうかを決定します。  
   
@@ -199,7 +207,7 @@ bool operator== (const task<void>& _Rhs) const;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが同じ基本タスクを参照する場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="a-nameschedulera--taskscheduler-method-concurrency-runtime"></a><a name="scheduler"></a>task::scheduler メソッド (同時実行ランタイム)  
+##  <a name="scheduler"></a>task::scheduler メソッド (同時実行ランタイム)  
  このタスクのスケジューラを返します  
   
 ```
@@ -209,7 +217,7 @@ scheduler_ptr scheduler() const;
 ### <a name="return-value"></a>戻り値  
  スケジューラへのポインター  
   
-##  <a name="a-namectora-task"></a><a name="ctor"></a>タスク 
+##  <a name="ctor"></a>タスク 
 
  `task` オブジェクトを構築します。  
   
@@ -259,7 +267,7 @@ task(
   
  詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
   
-##  <a name="a-namethena-then"></a><a name="then"></a>そうしたら 
+##  <a name="then"></a>そうしたら 
 
  継続タスクをこのタスクに追加します。  
   
@@ -320,7 +328,7 @@ __declspec(
   
  タスクの継続を使用して、非同期操作を構成する方法の詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
   
-##  <a name="a-namewaita-wait"></a><a name="wait"></a>待機 
+##  <a name="wait"></a>待機 
 
  このタスクが終了状態になるまで待機します。 タスクの依存関係すべてが満たされ、バックグラウンド ワーカーによって実行用にまだ検出されていない場合、`wait` はタスクをインラインで実行できます。  
   
@@ -337,5 +345,5 @@ task_status wait() const;
 >  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、STA で実行されるコードで `wait` を呼び出さないでください。 それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、このメソッドは、現在のスレッドをブロックし、アプリが反応しなくなる可能性があります。 ただし、呼び出すことができます、 [concurrency::task_canceled](#get)タスク ベースの継続で継続元タスクの結果を受信するメソッドです。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

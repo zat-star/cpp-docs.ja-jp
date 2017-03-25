@@ -9,7 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- agents/concurrency::message_processor
+- message_processor
+- AGENTS/concurrency::message_processor
+- AGENTS/concurrency::message_processor::async_send
+- AGENTS/concurrency::message_processor::sync_send
+- AGENTS/concurrency::message_processor::wait
+- AGENTS/concurrency::message_processor::process_incoming_message
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 98f1c1072916c4cf3670e40ce0c6ddd1a17f1b63
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: dff934584179cc58d884be65fdb96cb6c646a4ac
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="messageprocessor-class"></a>message_processor クラス
@@ -65,15 +70,15 @@ class message_processor;
   
 |名前|説明|  
 |----------|-----------------|  
-|[async_send メソッド](#async_send)|派生クラスでオーバーライドされると、非同期的にブロックにメッセージを配置します。|  
-|[sync_send メソッド](#sync_send)|派生クラスでオーバーライドされると、同期的にブロックにメッセージを配置します。|  
-|[wait メソッド](#wait)|派生クラスでオーバーライドされると、すべての非同期操作が完了するを待機します。|  
+|[async_send](#async_send)|派生クラスでオーバーライドされると、非同期的にブロックにメッセージを配置します。|  
+|[sync_send](#sync_send)|派生クラスでオーバーライドされると、同期的にブロックにメッセージを配置します。|  
+|[待機](#wait)|派生クラスでオーバーライドされると、すべての非同期操作が完了するを待機します。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[process_incoming_message メソッド](#process_incoming_message)|派生クラスでオーバーライドされた場合は、ブロックにメッセージの転送処理を実行します。 新しいメッセージが追加され、キューが空にすることが検出するたびに&1; 回呼び出されます。|  
+|[process_incoming_message](#process_incoming_message)|派生クラスでオーバーライドされた場合は、ブロックにメッセージの転送処理を実行します。 新しいメッセージが追加され、キューが空にすることが検出するたびに&1; 回呼び出されます。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `message_processor`  
@@ -83,7 +88,7 @@ class message_processor;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nameasyncsenda-asyncsend"></a><a name="async_send"></a>async_send 
+##  <a name="async_send"></a>async_send 
 
  派生クラスでオーバーライドされると、非同期的にブロックにメッセージを配置します。  
   
@@ -98,7 +103,7 @@ virtual void async_send(_Inout_opt_ message<T>* _Msg) = 0;
 ### <a name="remarks"></a>コメント  
  プロセッサの実装では、このメソッドをオーバーライドする必要があります。  
   
-##  <a name="a-nameprocessincomingmessagea-processincomingmessage"></a><a name="process_incoming_message"></a>process_incoming_message 
+##  <a name="process_incoming_message"></a>process_incoming_message 
 
  派生クラスでオーバーライドされた場合は、ブロックにメッセージの転送処理を実行します。 新しいメッセージが追加され、キューが空にすることが検出するたびに&1; 回呼び出されます。  
   
@@ -109,7 +114,7 @@ virtual void process_incoming_message() = 0;
 ### <a name="remarks"></a>コメント  
  メッセージ ブロックの実装では、このメソッドをオーバーライドする必要があります。  
   
-##  <a name="a-namesyncsenda-syncsend"></a><a name="sync_send"></a>sync_send 
+##  <a name="sync_send"></a>sync_send 
 
  派生クラスでオーバーライドされると、同期的にブロックにメッセージを配置します。  
   
@@ -124,7 +129,7 @@ virtual void sync_send(_Inout_opt_ message<T>* _Msg) = 0;
 ### <a name="remarks"></a>コメント  
  プロセッサの実装では、このメソッドをオーバーライドする必要があります。  
   
-##  <a name="a-namewaita-wait"></a><a name="wait"></a>待機 
+##  <a name="wait"></a>待機 
 
  派生クラスでオーバーライドされると、すべての非同期操作が完了するを待機します。  
   

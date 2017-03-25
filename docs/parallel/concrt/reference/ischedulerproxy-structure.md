@@ -9,7 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::ISchedulerProxy
+- ISchedulerProxy
+- CONCRTRM/concurrency::ISchedulerProxy
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::BindContext
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::CreateOversubscriber
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::RequestInitialVirtualProcessors
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::Shutdown
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::SubscribeCurrentThread
+- CONCRTRM/concurrency::ISchedulerProxy::ISchedulerProxy::UnbindContext
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: a282e397186ee4ab3eda4f882b9c9fc89ff353f2
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 3dd95150022ad94f50b456c84f7dacd2d3cef7c5
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="ischedulerproxy-structure"></a>ISchedulerProxy 構造体
@@ -54,12 +61,12 @@ struct ISchedulerProxy;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Ischedulerproxy::bindcontext メソッド](#bindcontext)|いずれかで関連付けられていない場合は、スレッド プロキシを実行コンテキストを関連付けます。|  
-|[Ischedulerproxy::createoversubscriber メソッド](#createoversubscriber)|既存の実行リソースに関連付けられているハードウェア スレッドに新しい仮想プロセッサ ルートを作成します。|  
-|[Ischedulerproxy::requestinitialvirtualprocessors メソッド](#requestinitialvirtualprocessors)|仮想プロセッサ ルートの最初の割り当てを要求します。 すべての仮想プロセッサ ルートでは、スケジューラの作業を実行できる&1; つのスレッドを実行する機能を表します。|  
-|[Ischedulerproxy::shutdown メソッド](#shutdown)|スケジューラがシャット ダウンしているリソース マネージャーに通知します。 これは、結果、リソース マネージャーは、スケジューラに付与されるすべてのリソースを直ちに解放します。|  
-|[Ischedulerproxy::subscribecurrentthread メソッド](#subscribecurrentthread)|このスケジューラに関連付けられた、リソース マネージャーで、現在のスレッドを登録します。|  
-|[Ischedulerproxy::unbindcontext メソッド](#unbindcontext)|指定された実行コンテキストのスレッド プロキシの関連付けを解除、`pContext`パラメーター、スレッド プロキシ ファクトリの空きプールに返します。 このメソッドを使用してバインドされた実行コンテキストにのみ呼び出すことが、 [ischedulerproxy::bindcontext](#bindcontext)メソッド中でまだ開始されていないと、`pContext`のパラメーター、 [ithreadproxy::switchto](ithreadproxy-structure.md#switchto)メソッドの呼び出しです。|  
+|[Ischedulerproxy::bindcontext](#bindcontext)|いずれかで関連付けられていない場合は、スレッド プロキシを実行コンテキストを関連付けます。|  
+|[Ischedulerproxy::createoversubscriber](#createoversubscriber)|既存の実行リソースに関連付けられているハードウェア スレッドに新しい仮想プロセッサ ルートを作成します。|  
+|[Ischedulerproxy::requestinitialvirtualprocessors](#requestinitialvirtualprocessors)|仮想プロセッサ ルートの最初の割り当てを要求します。 すべての仮想プロセッサ ルートでは、スケジューラの作業を実行できる&1; つのスレッドを実行する機能を表します。|  
+|[Ischedulerproxy::shutdown](#shutdown)|スケジューラがシャット ダウンしているリソース マネージャーに通知します。 これは、結果、リソース マネージャーは、スケジューラに付与されるすべてのリソースを直ちに解放します。|  
+|[Ischedulerproxy::subscribecurrentthread](#subscribecurrentthread)|このスケジューラに関連付けられた、リソース マネージャーで、現在のスレッドを登録します。|  
+|[Ischedulerproxy::unbindcontext](#unbindcontext)|指定された実行コンテキストのスレッド プロキシの関連付けを解除、`pContext`パラメーター、スレッド プロキシ ファクトリの空きプールに返します。 このメソッドを使用してバインドされた実行コンテキストにのみ呼び出すことが、 [ischedulerproxy::bindcontext](#bindcontext)メソッド中でまだ開始されていないと、`pContext`のパラメーター、 [ithreadproxy::switchto](ithreadproxy-structure.md#switchto)メソッドの呼び出しです。|  
   
 ## <a name="remarks"></a>コメント  
  リソース マネージャーに渡して、`ISchedulerProxy`インターフェイスを使用して登録するすべてのスケジューラを[iresourcemanager::registerscheduler](iresourcemanager-structure.md#registerscheduler)メソッドです。  
@@ -72,7 +79,7 @@ struct ISchedulerProxy;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namebindcontexta--ischedulerproxybindcontext-method"></a><a name="bindcontext"></a>Ischedulerproxy::bindcontext メソッド  
+##  <a name="bindcontext"></a>Ischedulerproxy::bindcontext メソッド  
  いずれかで関連付けられていない場合は、スレッド プロキシを実行コンテキストを関連付けます。  
   
 ```
@@ -88,7 +95,7 @@ virtual void BindContext(_Inout_ IExecutionContext* pContext) = 0;
   
  `invalid_argument`場合にスローされますが、パラメーター`pContext`プロパティ値を持つ`NULL`です。  
   
-##  <a name="a-namecreateoversubscribera--ischedulerproxycreateoversubscriber-method"></a><a name="createoversubscriber"></a>Ischedulerproxy::createoversubscriber メソッド  
+##  <a name="createoversubscriber"></a>Ischedulerproxy::createoversubscriber メソッド  
  既存の実行リソースに関連付けられているハードウェア スレッドに新しい仮想プロセッサ ルートを作成します。  
   
 ```
@@ -107,7 +114,7 @@ virtual IVirtualProcessorRoot* CreateOversubscriber(_Inout_ IExecutionResource* 
   
  既存の仮想プロセッサ ルートを oversubscribe でも、`IVirtualProcessorRoot`インターフェイスから継承、`IExecutionResource`インターフェイスです。  
   
-##  <a name="a-namerequestinitialvirtualprocessorsa--ischedulerproxyrequestinitialvirtualprocessors-method"></a><a name="requestinitialvirtualprocessors"></a>Ischedulerproxy::requestinitialvirtualprocessors メソッド  
+##  <a name="requestinitialvirtualprocessors"></a>Ischedulerproxy::requestinitialvirtualprocessors メソッド  
  仮想プロセッサ ルートの最初の割り当てを要求します。 すべての仮想プロセッサ ルートでは、スケジューラの作業を実行できる&1; つのスレッドを実行する機能を表します。  
   
 ```
@@ -132,7 +139,7 @@ virtual IExecutionResource* RequestInitialVirtualProcessors(bool doSubscribeCurr
   
  スレッドをサブスクライブは、基になるハードウェア スレッドのサブスクリプション レベルを&1; ずつ増加します。 サブスクリプションが終了した場合に、サブスクリプション レベルを&1; つ消費します。 サブスクリプション レベルの詳細については、次を参照してください。 [iexecutionresource::currentsubscriptionlevel](iexecutionresource-structure.md#currentsubscriptionlevel)します。  
   
-##  <a name="a-nameshutdowna--ischedulerproxyshutdown-method"></a><a name="shutdown"></a>Ischedulerproxy::shutdown メソッド  
+##  <a name="shutdown"></a>Ischedulerproxy::shutdown メソッド  
  スケジューラがシャット ダウンしているリソース マネージャーに通知します。 これは、結果、リソース マネージャーは、スケジューラに付与されるすべてのリソースを直ちに解放します。  
   
 ```
@@ -146,7 +153,7 @@ virtual void Shutdown() = 0;
   
  スケジューラへの呼び出しによって付与リソース マネージャーを個別に返すすべての仮想プロセッサ ルートがする必要はありません、`Remove`メソッドすべての仮想プロセッサ ルートはシャット ダウン時にリソース マネージャーに返されるためです。  
   
-##  <a name="a-namesubscribecurrentthreada--ischedulerproxysubscribecurrentthread-method"></a><a name="subscribecurrentthread"></a>Ischedulerproxy::subscribecurrentthread メソッド  
+##  <a name="subscribecurrentthread"></a>Ischedulerproxy::subscribecurrentthread メソッド  
  このスケジューラに関連付けられた、リソース マネージャーで、現在のスレッドを登録します。  
   
 ```
@@ -163,7 +170,7 @@ virtual IExecutionResource* SubscribeCurrentThread() = 0;
   
  スレッドをサブスクライブは、基になるハードウェア スレッドのサブスクリプション レベルを&1; ずつ増加します。 サブスクリプションが終了した場合に、サブスクリプション レベルを&1; つ消費します。 サブスクリプション レベルの詳細については、次を参照してください。 [iexecutionresource::currentsubscriptionlevel](iexecutionresource-structure.md#currentsubscriptionlevel)します。  
   
-##  <a name="a-nameunbindcontexta--ischedulerproxyunbindcontext-method"></a><a name="unbindcontext"></a>Ischedulerproxy::unbindcontext メソッド  
+##  <a name="unbindcontext"></a>Ischedulerproxy::unbindcontext メソッド  
  指定された実行コンテキストのスレッド プロキシの関連付けを解除、`pContext`パラメーター、スレッド プロキシ ファクトリの空きプールに返します。 このメソッドを使用してバインドされた実行コンテキストにのみ呼び出すことが、 [ischedulerproxy::bindcontext](#bindcontext)メソッド中でまだ開始されていないと、`pContext`のパラメーター、 [ithreadproxy::switchto](ithreadproxy-structure.md#switchto)メソッドの呼び出しです。  
   
 ```

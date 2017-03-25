@@ -9,7 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::critical_section
+- critical_section
+- CONCRT/concurrency::critical_section
+- CONCRT/concurrency::critical_section::critical_section::scoped_lock Class
+- CONCRT/concurrency::critical_section::critical_section
+- CONCRT/concurrency::critical_section::lock
+- CONCRT/concurrency::critical_section::native_handle
+- CONCRT/concurrency::critical_section::try_lock
+- CONCRT/concurrency::critical_section::try_lock_for
+- CONCRT/concurrency::critical_section::unlock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +42,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 20a150c1aedbd9d78c84187bf29e6284a248fbc7
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 58821589a4b7596b80179a77dfd6a5772531f053
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="criticalsection-class"></a>critical_section クラス
@@ -66,18 +74,18 @@ class critical_section;
   
 |名前|説明|  
 |----------|-----------------|  
-|[critical_section コンス トラクター](#ctor)|新しい重要なセクションを作成します。|  
+|[critical_section](#ctor)|新しい重要なセクションを作成します。|  
 |[~ critical_section デストラクター](#dtor)|クリティカル セクションを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[lock メソッド](#lock)|この重要なセクションを取得します。|  
-|[native_handle メソッド](#native_handle)|1 つが存在する場合は、プラットフォーム固有のネイティブ ハンドルを返します。|  
-|[try_lock メソッド](#try_lock)|ブロックすることがなく、ロックの取得を試みます。|  
-|[try_lock_for メソッド](#try_lock_for)|ミリ秒数を特定のブロックすることがなく、ロックの取得を試みます。|  
-|[unlock メソッド](#unlock)|クリティカル セクションのロックを解除します。|  
+|[lock](#lock)|この重要なセクションを取得します。|  
+|[native_handle](#native_handle)|1 つが存在する場合は、プラットフォーム固有のネイティブ ハンドルを返します。|  
+|[try_lock](#try_lock)|ブロックすることがなく、ロックの取得を試みます。|  
+|[try_lock_for](#try_lock_for)|ミリ秒数を特定のブロックすることがなく、ロックの取得を試みます。|  
+|[unlock](#unlock)|クリティカル セクションのロックを解除します。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[同期データ構造](../../../parallel/concrt/synchronization-data-structures.md)します。  
@@ -90,7 +98,7 @@ class critical_section;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-criticalsection"></a><a name="ctor"></a>critical_section 
+##  <a name="ctor"></a>critical_section 
 
  新しい重要なセクションを作成します。  
   
@@ -98,7 +106,7 @@ class critical_section;
 critical_section();
 ```  
   
-##  <a name="a-namedtora-criticalsection"></a><a name="dtor"></a>~ critical_section 
+##  <a name="dtor"></a>~ critical_section 
 
  クリティカル セクションを破棄します。  
   
@@ -109,7 +117,7 @@ critical_section();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるときに、ロックが保持されなく必要です。 ロックを消滅させるためにクリティカル セクションを保持した未定義の動作です。  
   
-##  <a name="a-namelocka-lock"></a><a name="lock"></a>ロック 
+##  <a name="lock"></a>ロック 
 
  この重要なセクションを取得します。  
   
@@ -122,7 +130,7 @@ void lock();
   
  ロックが呼び出し元のコンテキストによって既に保持されている場合、 [improper_lock](improper-lock-class.md)例外がスローされます。  
   
-##  <a name="a-namenativehandlea-nativehandle"></a><a name="native_handle"></a>native_handle 
+##  <a name="native_handle"></a>native_handle 
 
  1 つが存在する場合は、プラットフォーム固有のネイティブ ハンドルを返します。  
   
@@ -136,14 +144,14 @@ native_handle_type native_handle();
 ### <a name="remarks"></a>コメント  
  A`critical_section`オブジェクトは、Windows オペレーティング システムのプラットフォームの特定ネイティブ ハンドルに関連付けられていません。 メソッドは、単にオブジェクト自体への参照を返します。  
   
-##  <a name="a-namecriticalsectionscopedlockclassa--criticalsectionscopedlock-class"></a><a name="critical_section__scoped_lock_class"></a>critical_section::scoped_lock クラス  
+##  <a name="critical_section__scoped_lock_class"></a>critical_section::scoped_lock クラス  
  例外安全な RAII ラッパー、`critical_section`オブジェクトです。  
   
 ```
 class scoped_lock;
 ```  
   
-##  <a name="a-namecriticalsectionscopedlockctora-scopedlockscopedlock"></a><a name="critical_section__scoped_lock_ctor"></a>scoped_lock::scoped_lock 
+##  <a name="critical_section__scoped_lock_ctor"></a>scoped_lock::scoped_lock 
 
  構築、`scoped_lock`オブジェクトを取得し、`critical_section`で渡されるオブジェクト、`_Critical_section`パラメーター。 クリティカル セクションが別のスレッドによって保持されている場合、この呼び出しはブロックされます。  
   
@@ -155,7 +163,7 @@ explicit _CRTIMP scoped_lock(critical_section& _Critical_section);
  `_Critical_section`  
  ロックするクリティカル セクションです。  
   
-##  <a name="a-namecriticalsectionscopedlockdtora-scopedlockscopedlock"></a><a name="critical_section__scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
+##  <a name="critical_section__scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
 
  破棄、`scoped_lock`オブジェクトし、そのコンス トラクターでクリティカル セクションを解放します。  
   
@@ -163,7 +171,7 @@ explicit _CRTIMP scoped_lock(critical_section& _Critical_section);
 ~scoped_lock();
 ```  
   
-##  <a name="a-nametrylocka-trylock"></a><a name="try_lock"></a>try_lock 
+##  <a name="try_lock"></a>try_lock 
 
  ブロックすることがなく、ロックの取得を試みます。  
   
@@ -174,7 +182,7 @@ bool try_lock();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`。 そうしないと、値`false`です。  
   
-##  <a name="a-nametrylockfora-trylockfor"></a><a name="try_lock_for"></a>try_lock_for 
+##  <a name="try_lock_for"></a>try_lock_for 
 
  ミリ秒数を特定のブロックすることがなく、ロックの取得を試みます。  
   
@@ -189,7 +197,7 @@ bool try_lock_for(unsigned int _Timeout);
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`。 そうしないと、値`false`です。  
   
-##  <a name="a-nameunlocka-unlock"></a><a name="unlock"></a>ロックを解除します。 
+##  <a name="unlock"></a>ロックを解除します。 
 
  クリティカル セクションのロックを解除します。  
   

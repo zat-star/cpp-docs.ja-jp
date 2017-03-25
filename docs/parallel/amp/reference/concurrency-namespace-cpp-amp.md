@@ -9,7 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp/Concurrency
+- AMP/Concurrency
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +34,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
-ms.openlocfilehash: a62955c94771320a64027f4f820434dd5e7984a1
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 38c3154244b163202bcb8e271f96b393231247ca
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrency-namespace-c-amp"></a>Concurrency 名前空間 (C++ AMP)
@@ -54,10 +54,10 @@ namespace Concurrency;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Concurrency::direct3d Namespace](concurrency-direct3d-namespace.md)|D3D の相互運用性をサポートする関数を提供します。 AMP コードでの計算に D3D のリソースをシームレスに使用できるようになり、AMP で作成したリソースを D3D コードで使用することができ、冗長な中間コピーを作成する必要がありません。 C++ AMP を使用して、DirectX アプリケーションの計算中心のセクションの処理をインクリメントに加速し、AMP の計算から生成されるデータに対して D3D API を使用することができます。|  
-|[Concurrency::fast_math Namespace](concurrency-fast-math-namespace.md)|`fast_math` 名前空間の関数は C99 に準拠していません。 各関数の各単精度のバージョンのみが用意されています。 これらの関数は DirectX 組み込み関数を使用します。これは、`precise_math` 名前空間の対応する関数よりも高速で、アクセラレータでの倍精度の拡張サポートを必要としませんが、正確さに欠けます。 C99 コードとのソース レベルの互換性のための各関数には&2; つのバージョンがあります。どちらのバージョンも単精度の値を受け取り、返します。|  
-|[Concurrency::graphics Namespace](concurrency-graphics-namespace.md)|グラフィックス プログラミング用に設計された型と関数を提供します。|  
-|[Concurrency::precise_math Namespace](concurrency-precise-math-namespace.md)|`precise_math` 名前空間の関数は C99 に準拠しています。 各関数の単精度バージョンと倍精度のバージョンの両方が含まれます。 単精度関数を含む、これらの関数ではアクセラレータでの倍精度の拡張サポートが必要です。|  
+|[Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)|D3D の相互運用性をサポートする関数を提供します。 AMP コードでの計算に D3D のリソースをシームレスに使用できるようになり、AMP で作成したリソースを D3D コードで使用することができ、冗長な中間コピーを作成する必要がありません。 C++ AMP を使用して、DirectX アプリケーションの計算中心のセクションの処理をインクリメントに加速し、AMP の計算から生成されるデータに対して D3D API を使用することができます。|  
+|[Concurrency::fast_math 名前空間](concurrency-fast-math-namespace.md)|`fast_math` 名前空間の関数は C99 に準拠していません。 各関数の各単精度のバージョンのみが用意されています。 これらの関数は DirectX 組み込み関数を使用します。これは、`precise_math` 名前空間の対応する関数よりも高速で、アクセラレータでの倍精度の拡張サポートを必要としませんが、正確さに欠けます。 C99 コードとのソース レベルの互換性のための各関数には&2; つのバージョンがあります。どちらのバージョンも単精度の値を受け取り、返します。|  
+|[Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)|グラフィックス プログラミング用に設計された型と関数を提供します。|  
+|[Concurrency::precise_math 名前空間](concurrency-precise-math-namespace.md)|`precise_math` 名前空間の関数は C99 に準拠しています。 各関数の単精度バージョンと倍精度のバージョンの両方が含まれます。 単精度関数を含む、これらの関数ではアクセラレータでの倍精度の拡張サポートが必要です。|  
   
 ### <a name="classes"></a>クラス  
   
@@ -103,27 +103,27 @@ namespace Concurrency;
   
 |名前|説明|  
 |----------|-----------------|  
-|[all_memory_fence 関数](concurrency-namespace-functions-amp.md#all_memory_fence)|すべてのメモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
-|[amp_uninitialize 関数](concurrency-namespace-functions-amp.md#amp_uninitialize)|C++ AMP ランタイムを初期化前の状態に戻します。|  
-|[atomic_compare_exchange 関数](concurrency-namespace-functions-amp.md#atomic_compare_exchange)|オーバーロードされます。 指定した位置に格納されている値が&1; 番目の指定された値と同じ場合、2 番目の指定された値は分割不可能な操作として同じ位置に格納されます。|  
-|[atomic_exchange 関数](concurrency-namespace-functions-amp.md#atomic_exchange)|オーバーロードされます。 指定した位置に格納された値を分割不可能な操作として指定された値に設定します。|  
-|[atomic_fetch_add 関数](concurrency-namespace-functions-amp.md#atomic_fetch_add)|オーバーロードされます。 指定した位置に格納された値をその値および分割不可能な操作として指定された値の合計に設定します。|  
-|[atomic_fetch_and 関数](concurrency-namespace-functions-amp.md#atomic_fetch_and)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `and` に設定します。|  
-|[atomic_fetch_dec 関数](concurrency-namespace-functions-amp.md#atomic_fetch_dec)|オーバーロードされます。 指定した位置に格納されている値をデクリメントし、分割不可能な操作としてしてその結果を同じ位置に格納します。|  
-|[atomic_fetch_inc 関数](concurrency-namespace-functions-amp.md#atomic_fetch_inc)|オーバーロードされます。 指定した位置に格納されている値をインクリメントし、分割不可能な操作としてその結果を同じ位置に格納します。|  
-|[atomic_fetch_max 関数](concurrency-namespace-functions-amp.md#atomic_fetch_max)|オーバーロードされます。 指定された位置に格納された値を、その値および分割不可能な操作として指定された値の大きい方の値に設定します。|  
-|[atomic_fetch_min 関数](concurrency-namespace-functions-amp.md#atomic_fetch_min)|オーバーロードされます。 指定された位置に格納された値をその値および分割不可能な操作として指定された値の小さい方の値に設定します。|  
-|[atomic_fetch_or 関数](concurrency-namespace-functions-amp.md#atomic_fetch_or)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `or` に設定します。|  
-|[atomic_fetch_sub 関数](concurrency-namespace-functions-amp.md#atomic_fetch_sub)|オーバーロードされます。 指定された位置に格納された値を、その値と分割不可能な操作として指定された値の差に設定します。|  
-|[atomic_fetch_xor 関数](concurrency-namespace-functions-amp.md#atomic_fetch_xor)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `xor` に設定します。|  
-|[copy 関数](concurrency-namespace-functions-amp.md#copy)|C++ AMP オブジェクトをコピーします。 すべての同期データ転送の条件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
-|[copy_async 関数](concurrency-namespace-functions-amp.md#copy_async)|C++ AMP オブジェクトをコピーし、返します[completion_future](completion-future-class.md)待機できます。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
-|[direct3d_abort 関数](concurrency-namespace-functions-amp.md#direct3d_abort)|制限句 `restrict(amp)` がある関数の実行を中止します。|  
-|[direct3d_errorf 関数](concurrency-namespace-functions-amp.md#direct3d_errorf)|書式指定文字列を Visual Studio**出力**ウィンドウおよびを発生させる、 [runtime_exception](runtime-exception-class.md)がある、同じ書式指定文字列します。|  
-|[direct3d_printf 関数](concurrency-namespace-functions-amp.md#direct3d_printf)|Visual Studio に書式指定文字列出力**出力**ウィンドウです。 これは制限句 `restrict(amp)` がある関数から呼び出されます。|  
-|[global_memory_fence 関数](concurrency-namespace-functions-amp.md#global_memory_fence)|すべてのグローバル メモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
+|[all_memory_fence](concurrency-namespace-functions-amp.md#all_memory_fence)|すべてのメモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
+|[amp_uninitialize](concurrency-namespace-functions-amp.md#amp_uninitialize)|C++ AMP ランタイムを初期化前の状態に戻します。|  
+|[atomic_compare_exchange](concurrency-namespace-functions-amp.md#atomic_compare_exchange)|オーバーロードされます。 指定した位置に格納されている値が&1; 番目の指定された値と同じ場合、2 番目の指定された値は分割不可能な操作として同じ位置に格納されます。|  
+|[atomic_exchange](concurrency-namespace-functions-amp.md#atomic_exchange)|オーバーロードされます。 指定した位置に格納された値を分割不可能な操作として指定された値に設定します。|  
+|[atomic_fetch_add](concurrency-namespace-functions-amp.md#atomic_fetch_add)|オーバーロードされます。 指定した位置に格納された値をその値および分割不可能な操作として指定された値の合計に設定します。|  
+|[atomic_fetch_and](concurrency-namespace-functions-amp.md#atomic_fetch_and)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `and` に設定します。|  
+|[atomic_fetch_dec](concurrency-namespace-functions-amp.md#atomic_fetch_dec)|オーバーロードされます。 指定した位置に格納されている値をデクリメントし、分割不可能な操作としてしてその結果を同じ位置に格納します。|  
+|[atomic_fetch_inc](concurrency-namespace-functions-amp.md#atomic_fetch_inc)|オーバーロードされます。 指定した位置に格納されている値をインクリメントし、分割不可能な操作としてその結果を同じ位置に格納します。|  
+|[atomic_fetch_max](concurrency-namespace-functions-amp.md#atomic_fetch_max)|オーバーロードされます。 指定された位置に格納された値を、その値および分割不可能な操作として指定された値の大きい方の値に設定します。|  
+|[atomic_fetch_min](concurrency-namespace-functions-amp.md#atomic_fetch_min)|オーバーロードされます。 指定された位置に格納された値をその値および分割不可能な操作として指定された値の小さい方の値に設定します。|  
+|[atomic_fetch_or](concurrency-namespace-functions-amp.md#atomic_fetch_or)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `or` に設定します。|  
+|[atomic_fetch_sub](concurrency-namespace-functions-amp.md#atomic_fetch_sub)|オーバーロードされます。 指定された位置に格納された値を、その値と分割不可能な操作として指定された値の差に設定します。|  
+|[atomic_fetch_xor](concurrency-namespace-functions-amp.md#atomic_fetch_xor)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `xor` に設定します。|  
+|[copy](concurrency-namespace-functions-amp.md#copy)|C++ AMP オブジェクトをコピーします。 すべての同期データ転送の条件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
+|[copy_async](concurrency-namespace-functions-amp.md#copy_async)|C++ AMP オブジェクトをコピーし、返します[completion_future](completion-future-class.md)待機できます。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
+|[direct3d_abort](concurrency-namespace-functions-amp.md#direct3d_abort)|制限句 `restrict(amp)` がある関数の実行を中止します。|  
+|[direct3d_errorf](concurrency-namespace-functions-amp.md#direct3d_errorf)|書式指定文字列を Visual Studio**出力**ウィンドウおよびを発生させる、 [runtime_exception](runtime-exception-class.md)がある、同じ書式指定文字列します。|  
+|[direct3d_printf](concurrency-namespace-functions-amp.md#direct3d_printf)|Visual Studio に書式指定文字列出力**出力**ウィンドウです。 これは制限句 `restrict(amp)` がある関数から呼び出されます。|  
+|[global_memory_fence](concurrency-namespace-functions-amp.md#global_memory_fence)|すべてのグローバル メモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
 |[parallel_for_each 関数 (C++ AMP)](concurrency-namespace-functions-amp.md#parallel_for_each)|計算ドメインを越えて関数を実行します。|  
-|[tile_static_memory_fence 関数](concurrency-namespace-functions-amp.md#tile_static_memory_fence)|`tile_static` メモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
+|[tile_static_memory_fence](concurrency-namespace-functions-amp.md#tile_static_memory_fence)|`tile_static` メモリ アクセスが完了するまでタイルのすべてのスレッドの実行をブロックします。|  
   
 ## <a name="constants"></a>定数  
   

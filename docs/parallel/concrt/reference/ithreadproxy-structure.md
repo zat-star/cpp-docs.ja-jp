@@ -9,7 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::IThreadProxy
+- IThreadProxy
+- CONCRTRM/concurrency::IThreadProxy
+- CONCRTRM/concurrency::IThreadProxy::IThreadProxy::GetId
+- CONCRTRM/concurrency::IThreadProxy::IThreadProxy::SwitchOut
+- CONCRTRM/concurrency::IThreadProxy::IThreadProxy::SwitchTo
+- CONCRTRM/concurrency::IThreadProxy::IThreadProxy::YieldToSystem
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: baa3266d1068672df96595fa8b9bcc974d52e7fa
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 0a002dc4440b4784dee7f808a9e3be8dd4f89124
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="ithreadproxy-structure"></a>IThreadProxy 構造体
@@ -54,10 +59,10 @@ struct IThreadProxy;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Ithreadproxy::getid メソッド](#getid)|スレッド プロキシの一意識別子を返します。|  
-|[Ithreadproxy::switchout メソッド](#switchout)|基になる仮想プロセッサ ルートからコンテキストの関連付けを解除します。|  
-|[Ithreadproxy::switchto メソッド](#switchto)|現在実行中のコンテキストから別の名前への協調的なコンテキスト切り替えを実行します。|  
-|[Ithreadproxy::yieldtosystem メソッド](#yieldtosystem)|呼び出し元のスレッドから、現在のプロセッサ上で実行する準備が整っている別のスレッドに実行を切り替えます。 オペレーティング システムでは、実行するのには、次のスレッドを選択します。|  
+|[Ithreadproxy::getid](#getid)|スレッド プロキシの一意識別子を返します。|  
+|[Ithreadproxy::switchout](#switchout)|基になる仮想プロセッサ ルートからコンテキストの関連付けを解除します。|  
+|[Ithreadproxy::switchto](#switchto)|現在実行中のコンテキストから別の名前への協調的なコンテキスト切り替えを実行します。|  
+|[Ithreadproxy::yieldtosystem](#yieldtosystem)|呼び出し元のスレッドから、現在のプロセッサ上で実行する準備が整っている別のスレッドに実行を切り替えます。 オペレーティング システムでは、実行するのには、次のスレッドを選択します。|  
   
 ## <a name="remarks"></a>コメント  
  スレッド プロキシはインターフェイスによって表される実行コンテキストに関連付けられた`IExecutionContext`処理をディスパッチする手段として。  
@@ -70,7 +75,7 @@ struct IThreadProxy;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegetida--ithreadproxygetid-method"></a><a name="getid"></a>Ithreadproxy::getid メソッド  
+##  <a name="getid"></a>Ithreadproxy::getid メソッド  
  スレッド プロキシの一意識別子を返します。  
   
 ```
@@ -80,7 +85,7 @@ virtual unsigned int GetId() const = 0;
 ### <a name="return-value"></a>戻り値  
  一意の整数識別子です。  
   
-##  <a name="a-nameswitchouta--ithreadproxyswitchout-method"></a><a name="switchout"></a>Ithreadproxy::switchout メソッド  
+##  <a name="switchout"></a>Ithreadproxy::switchout メソッド  
  基になる仮想プロセッサ ルートからコンテキストの関連付けを解除します。  
   
 ```
@@ -94,7 +99,7 @@ virtual void SwitchOut(SwitchingProxyState switchState = Blocking) = 0;
 ### <a name="remarks"></a>コメント  
  なんらかの理由で、実行している仮想プロセッサ ルートからコンテキストの関連付けを解除する必要がある場合には、`SwitchOut` を使用します。 パラメーター `switchState` に渡す値によって、または仮想プロセッサ ルート上で実行されるかどうかによって、呼び出しはすぐに制御を返すか、またはコンテキストに関連付けられたスレッド プロキシをブロックします。 パラメーターを `SwitchOut` に設定して `Idle` を呼び出すと、エラーになります。 これを行う発生は、 [invalid_argument](../../../standard-library/invalid-argument-class.md)例外です。  
   
- `SwitchOut` は、リソース マネージャーから指示があった場合か、オーバーサブスクリプション状態の一時仮想プロセッサ ルートを要求した後、その処理が終了した場合に、スケジューラの仮想プロセッサ ルートの数を減らす必要があるときに便利です。 この場合、メソッドを呼び出す必要があります[IVirtualProcessorRoot::Remove メソッド](http://msdn.microsoft.com/en-us/ad699b4a-1972-4390-97ee-9c083ba7d9e4)への呼び出しを行う前に、仮想プロセッサ ルートで`SwitchOut`パラメーターと共に`switchState`に設定`Blocking`します。 これによってスレッド プロキシはブロックされ、スケジューラの別の仮想プロセッサ ルートが処理を実行できるようになると、実行を再開します。 ブロック状態のスレッド プロキシを再開するには、`SwitchTo` 関数を呼び出してこのスレッド プロキシの実行コンテキストに切り替えます。 関連付けられているコンテキストを使用して仮想プロセッサ ルートをアクティブ化することにより、スレッド プロキシを再開することもできます。 これを行う方法の詳細については、次を参照してください。 [ivirtualprocessorroot::activate](ivirtualprocessorroot-structure.md#activate)します。  
+ `SwitchOut` は、リソース マネージャーから指示があった場合か、オーバーサブスクリプション状態の一時仮想プロセッサ ルートを要求した後、その処理が終了した場合に、スケジューラの仮想プロセッサ ルートの数を減らす必要があるときに便利です。 この場合、メソッドを呼び出す必要があります[IVirtualProcessorRoot::Remove](http://msdn.microsoft.com/en-us/ad699b4a-1972-4390-97ee-9c083ba7d9e4)への呼び出しを行う前に、仮想プロセッサ ルートで`SwitchOut`パラメーターと共に`switchState`に設定`Blocking`します。 これによってスレッド プロキシはブロックされ、スケジューラの別の仮想プロセッサ ルートが処理を実行できるようになると、実行を再開します。 ブロック状態のスレッド プロキシを再開するには、`SwitchTo` 関数を呼び出してこのスレッド プロキシの実行コンテキストに切り替えます。 関連付けられているコンテキストを使用して仮想プロセッサ ルートをアクティブ化することにより、スレッド プロキシを再開することもできます。 これを行う方法の詳細については、次を参照してください。 [ivirtualprocessorroot::activate](ivirtualprocessorroot-structure.md#activate)します。  
   
  また、`SwitchOut` を使用して、仮想プロセッサを再初期化することもできます。これによって、スレッド プロキシをブロックするか、または一時的に実行している仮想プロセッサ ルートと処理をディスパッチしているスケジューラからデタッチしながら、後でアクティブ化可能なようにできます。 スレッド プロキシをブロックする場合には、パラメーター `SwitchOut` を `switchState` に設定して `Blocking` を使用します。 既に説明したように、`SwitchTo` か `IVirtualProcessorRoot::Activate` を使用して後で再開できます。 このスレッド プロキシが実行されている仮想プロセッサ ルートから、そのスレッド プロキシと、仮想プロセッサが関連付けられているスケジューラとを一時的にデタッチする必要がある場合は、パラメーターを `SwitchOut` に設定して `Nesting` を使用します。 仮想プロセッサ ルートで実行中に `SwitchOut` パラメーターを `switchState` に設定して `Nesting` を呼び出した場合、ルートは再初期化され、現在のスレッド プロキシはそれを必要とせずに実行を継続します。 スレッド プロキシは、スケジューラに呼び出されるまでと見なされます、 [ithreadproxy::switchout](#switchout)メソッドを`Blocking`後の時点でします。 パラメーターを `SwitchOut` に設定して `Blocking` を再び呼び出すと、コンテキストをブロックされた状態に戻し、`SwitchTo` またはデタッチされたスケジューラの `IVirtualProcessorRoot::Activate` によって再開できるようにします。 これは仮想プロセッサ ルートで実行されていないため、再初期化は行われません。  
   
@@ -104,7 +109,7 @@ virtual void SwitchOut(SwitchingProxyState switchState = Blocking) = 0;
   
  Visual Studio 2010 に付属のライブラリとヘッダーでは、このメソッドはパラメーターを受け取らず、仮想プロセッサ ルートを再初期化しませんでした。 従来の動作を保持するために、既定のパラメーター値 `Blocking` が用意されています。  
   
-##  <a name="a-nameswitchtoa--ithreadproxyswitchto-method"></a><a name="switchto"></a>Ithreadproxy::switchto メソッド  
+##  <a name="switchto"></a>Ithreadproxy::switchto メソッド  
  現在実行中のコンテキストから別の名前への協調的なコンテキスト切り替えを実行します。  
   
 ```
@@ -131,7 +136,7 @@ virtual void SwitchTo(
   
  `SwitchTo` は、現在実行中のスレッドを表す `IThreadProxy` インターフェイスで呼び出す必要があります。それ以外の場合、結果は保証されません。 関数はスロー`invalid_argument`場合、パラメーター`pContext`に設定されている`NULL`します。  
   
-##  <a name="a-nameyieldtosystema--ithreadproxyyieldtosystem-method"></a><a name="yieldtosystem"></a>Ithreadproxy::yieldtosystem メソッド  
+##  <a name="yieldtosystem"></a>Ithreadproxy::yieldtosystem メソッド  
  呼び出し元のスレッドから、現在のプロセッサ上で実行する準備が整っている別のスレッドに実行を切り替えます。 オペレーティング システムでは、実行するのには、次のスレッドを選択します。  
   
 ```

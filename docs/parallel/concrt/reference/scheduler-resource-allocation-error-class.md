@@ -9,7 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::scheduler_resource_allocation_error
+- scheduler_resource_allocation_error
+- CONCRT/concurrency::scheduler_resource_allocation_error
+- CONCRT/concurrency::scheduler_resource_allocation_error::scheduler_resource_allocation_error
+- CONCRT/concurrency::scheduler_resource_allocation_error::get_error_code
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 52233a99e1d1a715fc7d52599ffeff18a3c2c34b
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 84f32bb6192057c9d5872147cc8ef0bd2c13b349
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="schedulerresourceallocationerror-class"></a>scheduler_resource_allocation_error クラス
@@ -54,13 +57,13 @@ class scheduler_resource_allocation_error : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[scheduler_resource_allocation_error コンス トラクター](#ctor)|オーバーロードされます。 `scheduler_resource_allocation_error` オブジェクトを構築します。|  
+|[scheduler_resource_allocation_error](#ctor)|オーバーロードされます。 `scheduler_resource_allocation_error` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[get_error_code メソッド](#get_error_code)|例外が発生したエラー コードを返します。|  
+|[get_error_code](#get_error_code)|例外が発生したエラー コードを返します。|  
   
 ## <a name="remarks"></a>コメント  
  同時実行ランタイムの内部からオペレーティング システムへの呼び出しが失敗した場合、この例外はスロー通常。 Win32 メソッドの呼び出しから返されるエラー コード`GetLastError`型の値に変換`HRESULT`とを使用して取得できる、`get_error_code`メソッドです。  
@@ -75,7 +78,7 @@ class scheduler_resource_allocation_error : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegeterrorcodea-geterrorcode"></a><a name="get_error_code"></a>get_error_code 
+##  <a name="get_error_code"></a>get_error_code 
 
  例外が発生したエラー コードを返します。  
   
@@ -86,7 +89,7 @@ HRESULT get_error_code() const throw();
 ### <a name="return-value"></a>戻り値  
  `HRESULT`例外が発生したエラーの値。  
   
-##  <a name="a-namectora-schedulerresourceallocationerror"></a><a name="ctor"></a>scheduler_resource_allocation_error 
+##  <a name="ctor"></a>scheduler_resource_allocation_error 
 
  `scheduler_resource_allocation_error` オブジェクトを構築します。  
   
@@ -107,5 +110,5 @@ explicit _CRTIMP scheduler_resource_allocation_error(
  `HRESULT`例外が発生したエラーの値。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

@@ -56,9 +56,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 1fb9eba97f469aa407dfe3287a216ceb8f707faf
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 58eb9db3ee67830d6f69028c6c83be8640450205
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="int2-class"></a>int_2 クラス
@@ -88,38 +88,38 @@ class int_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|int_2::get_x メソッド||  
-|int_2::get_xy メソッド||  
-|int_2::get_y メソッド||  
-|int_2::get_yx メソッド||  
-|int_2::ref_g メソッド||  
-|int_2::ref_r メソッド||  
-|int_2::ref_x メソッド||  
-|int_2::ref_y メソッド||  
-|int_2::set_x メソッド||  
-|int_2::set_xy メソッド||  
-|int_2::set_y メソッド||  
-|int_2::set_yx メソッド||  
+|int_2::get_x||  
+|int_2::get_xy||  
+|int_2::get_y||  
+|int_2::get_yx||  
+|int_2::ref_g||  
+|int_2::ref_r||  
+|int_2::ref_x||  
+|int_2::ref_y||  
+|int_2::set_x||  
+|int_2::set_xy||  
+|int_2::set_y||  
+|int_2::set_yx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|int_2::operator- 演算子||  
-|int_2::operator-- 演算子||  
-|int_2::operator%= 演算子||  
-|int_2::operator&= 演算子||  
-|int_2::operator*= 演算子||  
-|int_2::operator/= 演算子||  
-|int_2::operator^= 演算子||  
-|int_2::operator | = 演算子||  
-|int_2::operator~ 演算子||  
-|int_2::operator++ 演算子||  
-|int_2::operator+= 演算子||  
-|int_2::operator\<= 演算子||  
-|int_2::operator= 演算子||  
-|int_2::operator-= 演算子||  
-|int_2::operator >> = 演算子||  
+|int_2:-||  
+|int_2:--||  
+|int_2::operator % =||  
+|int_2::operator = >/documents/report1.rdl」||  
+|int_2::operator * =||  
+|int_2::operator/=||  
+|int_2::operator ^ =||  
+|int_2::operator | =||  
+|int_2::operator ~||  
+|int_2::operator++||  
+|int_2::operator + = 演算子||  
+|int_2:\<=||  
+|int_2::operator =||  
+|int_2::operator-=||  
+|int_2::operator >> =||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -131,14 +131,14 @@ class int_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|int_2::g データ メンバー||  
-|int_2::gr データ メンバー||  
-|int_2::r データ メンバー||  
-|int_2::rg データ メンバー||  
-|int_2::x データ メンバー||  
-|int_2::xy データ メンバー||  
-|int_2::y データ メンバー||  
-|int_2::yx データ メンバー||  
+|int_2::g||  
+|int_2::gr||  
+|int_2::r||  
+|int_2::rg||  
+|int_2::x||  
+|int_2::xy||  
+|int_2::y||  
+|int_2::yx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `int_2`  
@@ -148,7 +148,7 @@ class int_2;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-int2"></a><a name="ctor"></a>int_2 
+##  <a name="ctor"></a>int_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -211,12 +211,12 @@ explicit inline int_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-nameint2sizea-size"></a><a name="int_2__size"></a>サイズ 
+##  <a name="int_2__size"></a>サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

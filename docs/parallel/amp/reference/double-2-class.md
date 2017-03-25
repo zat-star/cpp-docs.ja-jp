@@ -56,9 +56,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 003cf8a4e1803154b4224c30524f8a302f10ea8f
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: cb780d4164099b9b2b609a0d430054af8cd8aa25
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="double2-class"></a>double_2 クラス
@@ -82,37 +82,37 @@ class double_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|[double_2 のコンス トラクター](#ctor)|オーバーロードされます。 既定のコンストラクター。すべての要素を 0 で初期化します。|  
+|[double_2 コンス トラクター](#ctor)|オーバーロードされます。 既定のコンストラクター。すべての要素を 0 で初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|double_2::get_x メソッド||  
-|double_2::get_xy メソッド||  
-|double_2::get_y メソッド||  
-|double_2::get_yx メソッド||  
-|double_2::ref_g メソッド||  
-|double_2::ref_r メソッド||  
-|double_2::ref_x メソッド||  
-|double_2::ref_y メソッド||  
-|double_2::set_x メソッド||  
-|double_2::set_xy メソッド||  
-|double_2::set_y メソッド||  
-|double_2::set_yx メソッド||  
+|double_2::get_x||  
+|double_2::get_xy||  
+|double_2::get_y||  
+|double_2::get_yx||  
+|double_2::ref_g||  
+|double_2::ref_r||  
+|double_2::ref_x||  
+|double_2::ref_y||  
+|double_2::set_x||  
+|double_2::set_xy||  
+|double_2::set_y||  
+|double_2::set_yx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|double_2::operator- 演算子||  
-|double_2::operator-- 演算子||  
-|double_2::operator*= 演算子||  
-|double_2::operator/= 演算子||  
-|double_2::operator++ 演算子||  
-|double_2::operator+= 演算子||  
-|double_2::operator= 演算子||  
-|double_2::operator-= 演算子||  
+|double_2:-||  
+|double_2:--||  
+|double_2::operator * =||  
+|double_2::operator/=||  
+|double_2::operator++||  
+|double_2::operator + = 演算子||  
+|double_2::operator =||  
+|double_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -124,14 +124,14 @@ class double_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|double_2::g データ メンバー||  
-|double_2::gr データ メンバー||  
-|double_2::r データ メンバー||  
-|double_2::rg データ メンバー||  
-|double_2::x データ メンバー||  
-|double_2::xy データ メンバー||  
-|double_2::y データ メンバー||  
-|double_2::yx データ メンバー||  
+|double_2::g||  
+|double_2::gr||  
+|double_2::r||  
+|double_2::rg||  
+|double_2::x||  
+|double_2::xy||  
+|double_2::y||  
+|double_2::yx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `double_2`  
@@ -141,7 +141,7 @@ class double_2;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-double2"></a><a name="ctor"></a>double_2 
+##  <a name="ctor"></a>double_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -204,12 +204,12 @@ explicit inline double_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-namedouble2sizea-size"></a><a name="double_2__size"></a>サイズ 
+##  <a name="double_2__size"></a>サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::bad_target
+- bad_target
+- CONCRT/concurrency::bad_target
+- CONCRT/concurrency::bad_target::bad_target
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: a22ebb69195dcea91799dc1c2e301a578dd227bc
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 145aa17b4589fb572f3b6594360ec69db5e15287
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="badtarget-class"></a>bad_target クラス
@@ -54,7 +56,7 @@ class bad_target : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[bad_target コンス トラクター](#ctor)|オーバーロードされます。 `bad_target` オブジェクトを構築します。|  
+|[bad_target](#ctor)|オーバーロードされます。 `bad_target` オブジェクトを構築します。|  
   
 ## <a name="remarks"></a>コメント  
  保持していない予約を解放したり、別のターゲットで予約されているメッセージが処理しようとしています。 ターゲットなどの理由には、通常この例外がスローされます。  
@@ -69,7 +71,7 @@ class bad_target : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-badtarget"></a><a name="ctor"></a>bad_target 
+##  <a name="ctor"></a>bad_target 
 
  `bad_target` オブジェクトを構築します。  
   

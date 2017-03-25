@@ -9,7 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ppltasks/concurrency::task_completion_event
+- task_completion_event
+- PPLTASKS/concurrency::task_completion_event
+- PPLTASKS/concurrency::task_completion_event::task_completion_event
+- PPLTASKS/concurrency::task_completion_event::set
+- PPLTASKS/concurrency::task_completion_event::set_exception
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +38,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 2cd3e7381402cc65f3220010a71c969cda1c7e2d
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: b37ecb250c0794370fc586f0463f93023ca47603
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="taskcompletionevent-class"></a>task_completion_event クラス
@@ -64,14 +68,14 @@ class task_completion_event<void>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[task_completion_event コンス トラクター](#ctor)|`task_completion_event` オブジェクトを構築します。|  
+|[task_completion_event](#ctor)|`task_completion_event` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[set メソッド](#set)|オーバーロードされます。 タスクの完了イベントを設定します。|  
-|[set_exception メソッド](#set_exception)|オーバーロードされます。 このイベントに関連付けられているすべてのタスクに例外を反映します。|  
+|[set](#set)|オーバーロードされます。 タスクの完了イベントを設定します。|  
+|[set_exception](#set_exception)|オーバーロードされます。 このイベントに関連付けられているすべてのタスクに例外を反映します。|  
   
 ## <a name="remarks"></a>コメント  
  タスクを作成するシナリオで、将来のいずれかの時点でタスクが終了し、そのタスクの継続が実行されるようにスケジュールする必要がある場合、タスクの完了イベントから作成されるタスクを使用します。 `task_completion_event` には、作成するタスクと同じ型を含める必要があります。また、その型の値を使用し、タスクの完了イベントで set メソッドを呼び出すと、関連するタスクが完了し、その値が結果としてタスクの継続に渡されます。  
@@ -88,7 +92,7 @@ class task_completion_event<void>;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nameseta-set"></a><a name="set"></a>設定 
+##  <a name="set"></a>設定 
 
  タスクの完了イベントを設定します。  
   
@@ -108,7 +112,7 @@ bool set() const ;
 ### <a name="remarks"></a>コメント  
  `set` の複数呼び出しまたは同時呼び出しがある場合、最初の呼び出しだけが成功し、その結果 (結果が返される場合) はタスクの完了イベントに格納されます。 その他の set は無視され、メソッドは false を返します。 タスクの完了イベントを設定すると、そのイベントから作成されたすべてのタスクは直ちに完了します。また継続が存在する場合は、その継続がスケジュールされます。 タスクの完了オブジェクトを持つ、`_ResultType`以外の`void`を継続に値を渡します。  
   
-##  <a name="a-namesetexceptiona-setexception"></a><a name="set_exception"></a>set_exception 
+##  <a name="set_exception"></a>set_exception 
 
  このイベントに関連付けられているすべてのタスクに例外を反映します。  
   
@@ -126,7 +130,7 @@ __declspec(noinline) bool set_exception(std::exception_ptr _ExceptionPtr) const 
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-namectora-taskcompletionevent"></a><a name="ctor"></a>task_completion_event 
+##  <a name="ctor"></a>task_completion_event 
 
  `task_completion_event` オブジェクトを構築します。  
   
@@ -135,5 +139,5 @@ task_completion_event();
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

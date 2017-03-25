@@ -9,7 +9,18 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- agents/concurrency::multitype_join
+- multitype_join
+- AGENTS/concurrency::multitype_join
+- AGENTS/concurrency::multitype_join::multitype_join
+- AGENTS/concurrency::multitype_join::accept
+- AGENTS/concurrency::multitype_join::acquire_ref
+- AGENTS/concurrency::multitype_join::consume
+- AGENTS/concurrency::multitype_join::link_target
+- AGENTS/concurrency::multitype_join::release
+- AGENTS/concurrency::multitype_join::release_ref
+- AGENTS/concurrency::multitype_join::reserve
+- AGENTS/concurrency::multitype_join::unlink_target
+- AGENTS/concurrency::multitype_join::unlink_targets
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +45,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 71f644331cbaef8322176e554c52a14d59f6d75a
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 03cb8520f9c4511aaff238f672f77b74b623b349
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="multitypejoin-class"></a>multitype_join クラス
@@ -71,22 +82,22 @@ class multitype_join: public ISource<typename _Unwrap<T>::type>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[multitype_join コンス トラクター](#ctor)|オーバーロードされます。 `multitype_join` メッセージング ブロックを構築します。|  
+|[multitype_join](#ctor)|オーバーロードされます。 `multitype_join` メッセージング ブロックを構築します。|  
 |[~ multitype_join デストラクター](#dtor)|破棄、`multitype_join`メッセージング ブロックします。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[accept メソッド](#accept)|これによって提供されたメッセージを受け入れ`multitype_join`ブロック、呼び出し元に所有権を移譲します。|  
-|[acquire_ref メソッド](#acquire_ref)|この参照カウントを取得し`multitype_join`メッセージング ブロックは、削除を禁止します。|  
-|[consume メソッド](#consume)|によって以前に提供メッセージを使用して、`multitype_join`メッセージング ブロックし、所有権を呼び出し元に移動するターゲットが正常に予約されています。|  
-|[link_target メソッド](#link_target)|これにターゲット ブロックをリンク`multitype_join`メッセージング ブロックします。|  
-|[release メソッド](#release)|以前に成功したメッセージの予約を解放します。|  
-|[release_ref メソッド](#release_ref)|この参照カウントを解放`multiple_join`メッセージング ブロックします。|  
-|[reserve メソッド](#reserve)|これによって以前に提供メッセージを予約`multitype_join`メッセージング ブロックします。|  
-|[unlink_target メソッド](#unlink_target)|これから、ターゲット ブロックのリンクを解除`multitype_join`メッセージング ブロックします。|  
-|[unlink_targets メソッド](#unlink_targets)|これからすべてのターゲットのリンクを解除`multitype_join`メッセージング ブロックします。 (上書き[isource::unlink_targets](isource-class.md#unlink_targets))。|  
+|[そのまま使用します。](#accept)|これによって提供されたメッセージを受け入れ`multitype_join`ブロック、呼び出し元に所有権を移譲します。|  
+|[acquire_ref](#acquire_ref)|この参照カウントを取得し`multitype_join`メッセージング ブロックは、削除を禁止します。|  
+|[使用します。](#consume)|によって以前に提供メッセージを使用して、`multitype_join`メッセージング ブロックし、所有権を呼び出し元に移動するターゲットが正常に予約されています。|  
+|[link_target](#link_target)|これにターゲット ブロックをリンク`multitype_join`メッセージング ブロックします。|  
+|[release](#release)|以前に成功したメッセージの予約を解放します。|  
+|[release_ref](#release_ref)|この参照カウントを解放`multiple_join`メッセージング ブロックします。|  
+|[reserve](#reserve)|これによって以前に提供メッセージを予約`multitype_join`メッセージング ブロックします。|  
+|[unlink_target](#unlink_target)|これから、ターゲット ブロックのリンクを解除`multitype_join`メッセージング ブロックします。|  
+|[unlink_targets](#unlink_targets)|これからすべてのターゲットのリンクを解除`multitype_join`メッセージング ブロックします。 (上書き[isource::unlink_targets](isource-class.md#unlink_targets))。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)します。  
@@ -101,7 +112,7 @@ class multitype_join: public ISource<typename _Unwrap<T>::type>;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nameaccepta-accept"></a><a name="accept"></a>そのまま使用します。 
+##  <a name="accept"></a>そのまま使用します。 
 
  これによって提供されたメッセージを受け入れ`multitype_join`ブロック、呼び出し元に所有権を移譲します。  
   
@@ -121,7 +132,7 @@ virtual message<_Destination_type>* accept(
 ### <a name="return-value"></a>戻り値  
  所有権が呼び出し元は、メッセージへのポインター。  
   
-##  <a name="a-nameacquirerefa-acquireref"></a><a name="acquire_ref"></a>acquire_ref 
+##  <a name="acquire_ref"></a>acquire_ref 
 
  この参照カウントを取得し`multitype_join`メッセージング ブロックは、削除を禁止します。  
   
@@ -136,7 +147,7 @@ virtual void acquire_ref(_Inout_ ITarget<_Destination_type>* _PTarget);
 ### <a name="remarks"></a>コメント  
  このメソッドは、`ITarget`中にこのソースにリンクされているオブジェクト、`link_target`メソッドです。  
   
-##  <a name="a-nameconsumea-consume"></a><a name="consume"></a>使用します。 
+##  <a name="consume"></a>使用します。 
 
  によって以前に提供メッセージを使用して、`multitype_join`メッセージング ブロックし、所有権を呼び出し元に移動するターゲットが正常に予約されています。  
   
@@ -154,12 +165,12 @@ virtual message<_Destination_type>* consume(
  呼び出しているターゲット ブロックへのポインター、`consume`メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- ポインター、`message`呼び出し元がここでの所有権を持っているオブジェクトします。  
+ ポインター、`message`オブジェクトの呼び出し元が今すぐの所有権を持っています。  
   
 ### <a name="remarks"></a>コメント  
  `consume`メソッドは`accept`への呼び出しで前に必ず必要がありますが、`reserve`返さ`true`します。  
   
-##  <a name="a-namelinktargeta-linktarget"></a><a name="link_target"></a>link_target 
+##  <a name="link_target"></a>link_target 
 
  これにターゲット ブロックをリンク`multitype_join`メッセージング ブロックします。  
   
@@ -171,7 +182,7 @@ virtual void link_target(_Inout_ ITarget<_Destination_type>* _PTarget);
  `_PTarget`  
  ポインター、`ITarget`リンク先のブロック`multitype_join`メッセージング ブロックします。  
   
-##  <a name="a-namectora-multitypejoin"></a><a name="ctor"></a>multitype_join 
+##  <a name="ctor"></a>multitype_join 
 
  `multitype_join` メッセージング ブロックを構築します。  
   
@@ -212,7 +223,7 @@ multitype_join(
   
  移動の構築はロックの状況では行われません。ということは、移動時に処理中の軽量タスクがないことを確認するのはユーザーの責任です。 そうしないと、例外または不整合な状態で、多数の競合が発生します。  
   
-##  <a name="a-namedtora-multitypejoin"></a><a name="dtor"></a>~ multitype_join 
+##  <a name="dtor"></a>~ multitype_join 
 
  破棄、`multitype_join`メッセージング ブロックします。  
   
@@ -220,7 +231,7 @@ multitype_join(
 ~multitype_join();
 ```  
   
-##  <a name="a-namereleasea-release"></a><a name="release"></a>リリース 
+##  <a name="release"></a>リリース 
 
  以前に成功したメッセージの予約を解放します。  
   
@@ -237,7 +248,7 @@ virtual void release(
  `_PTarget`  
  呼び出しているターゲット ブロックへのポインター、`release`メソッドです。  
   
-##  <a name="a-namereleaserefa-releaseref"></a><a name="release_ref"></a>release_ref 
+##  <a name="release_ref"></a>release_ref 
 
  この参照カウントを解放`multiple_join`メッセージング ブロックします。  
   
@@ -252,7 +263,7 @@ virtual void release_ref(_Inout_ ITarget<_Destination_type>* _PTarget);
 ### <a name="remarks"></a>コメント  
  このメソッドは、`ITarget`このソースからリンクが解除されるオブジェクト。 ターゲット ブロック用に予約されたリソースを解放できるは、ソース ブロックです。  
   
-##  <a name="a-namereservea-reserve"></a><a name="reserve"></a>予約 
+##  <a name="reserve"></a>予約 
 
  これによって以前に提供メッセージを予約`multitype_join`メッセージング ブロックします。  
   
@@ -275,7 +286,7 @@ virtual bool reserve(
 ### <a name="remarks"></a>コメント  
  呼び出した後`reserve`、成功した場合、いずれかを呼び出す必要があります`consume`または`release`かかるまたはそれぞれのメッセージを所有しているを断念するためにします。  
   
-##  <a name="a-nameunlinktargeta-unlinktarget"></a><a name="unlink_target"></a>unlink_target 
+##  <a name="unlink_target"></a>unlink_target 
 
  これから、ターゲット ブロックのリンクを解除`multitype_join`メッセージング ブロックします。  
   
@@ -287,7 +298,7 @@ virtual void unlink_target(_Inout_ ITarget<_Destination_type>* _PTarget);
  `_PTarget`  
  ポインター、`ITarget`このリンクを解除するブロック`multitype_join`メッセージング ブロックします。  
   
-##  <a name="a-nameunlinktargetsa-unlinktargets"></a><a name="unlink_targets"></a>unlink_targets 
+##  <a name="unlink_targets"></a>unlink_targets 
 
  これからすべてのターゲットのリンクを解除`multitype_join`メッセージング ブロックします。  
   
@@ -298,5 +309,5 @@ virtual void unlink_targets();
 ## <a name="see-also"></a>関連項目  
  [同時実行 Namespace](concurrency-namespace.md)   
  [choice クラス](choice-class.md)   
- [クラスを結合します。](join-class.md)
+ [join クラス](join-class.md)
 
