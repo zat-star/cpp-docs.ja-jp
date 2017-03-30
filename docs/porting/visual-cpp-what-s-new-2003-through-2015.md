@@ -24,6 +24,7 @@ translation.priority.mt:
 translationtype: Human Translation
 ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
 ms.openlocfilehash: c6ac9fb7400bd0c37d1da5a0c6bd66ccbf7abd6c
+ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 2003 ～ 2015 の新機能
@@ -44,7 +45,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
 -   [更新プログラム 3 の準拠の強化](#VS_Update3)  
   
-##  <a name="a-namevsrtma-conformance-improvements-in-visual-c-2015"></a><a name="VS_RTM"></a> Visual C++ 2015 の準拠の強化  
+##  <a name="VS_RTM"></a> Visual C++ 2015 の準拠の強化  
   
 -   /Zc:forScope - オプション  
   
@@ -527,7 +528,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
      [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)]の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
   
-##  <a name="a-namevsupdate1a-conformance-improvements-in-update-1"></a><a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
+##  <a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
   
 -   **プライベートの仮想基底クラスと間接継承**  
   
@@ -605,7 +606,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
      また、コンパイラは特定の診断を行いませんが、インラインの operator new の形式は不適切であると見なされます。  
   
--   **非クラス型で 'operator *type*()' (ユーザー定義の変換) を呼び出す  
+-   **非クラス型で 'operator*type*()' (ユーザー定義の変換) を呼び出す  
   
      以前のバージョンのコンパイラでは 'operator *type*()' を非クラス型で呼び出すことが許可されていましたが、それは何の警告もなく無視されていました。 この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2228 を発行します。  
   
@@ -1038,7 +1039,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     }  
     ```  
   
-##  <a name="a-namevsupdate2a-conformance-improvements-in-update-2"></a><a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
+##  <a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
   
 -   **SFINAE 式の部分的なサポートの結果として、追加の警告とエラーが発行される場合がある**  
   
@@ -1303,7 +1304,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
      この方法で記述されたコードを修正するには、演算子の定義をヘッダー ファイルから対応するソース ファイルに移動することが必要な場合があります。  
   
-##  <a name="a-namevsupdate3a-conformance-improvements-in-update-3"></a><a name="VS_Update3"></a> 更新プログラム 3 の準拠の強化  
+##  <a name="VS_Update3"></a> 更新プログラム 3 の準拠の強化  
   
 -   **std::is_convertable は self-assignment** (標準ライブラリ) を検出するようになりました  
   
@@ -1542,8 +1543,3 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     cl /c /Wall /Ycc.h -I.. X.cpp  
     cl /c /Wall /Yuc.h -I.. Z.cpp  
     ```
-
-
-<!--HONumber=Feb17_HO4-->
-
-
