@@ -39,8 +39,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: fc61db0c2078432ab32030ce897884275d8d2084
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 41e3f6151dc3bec38cd672deee681c37e090507f
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="debug-routines"></a>デバッグ ルーチン
@@ -58,43 +59,43 @@ C ランタイム ライブラリのデバッグ バージョンには、プロ�
   
 ### <a name="debug-versions-of-the-c-run-time-library-routines"></a>C ランタイム ライブラリ ルーチンのデバッグ バージョン  
   
-|ルーチン|用途|同等の .NET Framework 関数|  
-|-------------|---------|-------------------------------|  
-|[_ASSERT](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|式を評価し、結果が FALSE の場合はデバッグ レポートを生成します|[System::Diagnostics::Debug::Assert](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.assert.aspx)|  
-|[_ASSERTE](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|`_ASSERT` に似ていますが、生成されるレポートに失敗した式が含まれます|[System::Diagnostics::Debug::Assert](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.assert.aspx)|  
-|[_CrtCheckMemory](../c-runtime-library/reference/crtcheckmemory.md)|デバッグ ヒープに割り当てられたメモリ ブロックの整合性を確認します|[System::Diagnostics::PerformanceCounter](https://msdn.microsoft.com/en-us/library/system.diagnostics.performancecounter.aspx)|  
-|[_CrtDbgBreak](../c-runtime-library/reference/crtdbgbreak.md)|ブレークポイントを設定します。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtDbgReport、_CrtDbgReportW](../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)|ユーザー メッセージのあるデバッグ レポートを生成し、3 つの宛先にレポートを送信します|[System::Diagnostics::Debug::Write](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.write.aspx)、[System::Diagnostics::Debug::Writeline](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writeline.aspx)、[System::Diagnostics::Debug::WriteIf](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writeif.aspx)、[System::Diagnostics::Debug::WriteLineIf](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writelineif.aspx)|  
-|[_CrtDoForAllClientObjects](../c-runtime-library/reference/crtdoforallclientobjects.md)|ヒープ内のすべての `_CLIENT_BLOCK` 型に対して、アプリケーションによって提供される関数を呼び出します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtDumpMemoryLeaks](../c-runtime-library/reference/crtdumpmemoryleaks.md)|重大なメモリ リークが発生したときに、デバッグ ヒープ内のすべてのメモリ ブロックをダンプします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtIsMemoryBlock](../c-runtime-library/reference/crtismemoryblock.md)|指定されたメモリ ブロックがローカル ヒープ内にあり、有効なデバッグ ヒープ ブロック型識別子が設定されていることを確認します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtIsValidHeapPointer](../c-runtime-library/reference/crtisvalidheappointer.md)|指定したポインターがローカル ヒープ内にあることを検証します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtIsValidPointer](../c-runtime-library/reference/crtisvalidpointer.md)|指定したメモリ範囲で読み取りおよび書き込みが可能であることを確認します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtMemCheckpoint](../c-runtime-library/reference/crtmemcheckpoint.md)|デバッグ ヒープの現在の状態を取得し、アプリケーションが指定した `_CrtMemState` 構造体に格納します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtMemDifference](../c-runtime-library/reference/crtmemdifference.md)|2 つのメモリ状態の大幅な違いを比較し、結果を返します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtMemDumpAllObjectsSince](../c-runtime-library/reference/crtmemdumpallobjectssince.md)|指定されたチェックポイントの取得以降、またはプログラムの実行開始以降の、ヒープ上のオブジェクトに関する情報をダンプします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtMemDumpStatistics](../c-runtime-library/reference/crtmemdumpstatistics.md)|指定されたメモリ状態のデバッグ ヘッダー情報をユーザーが判読できる形式でダンプします|[System::Diagnostics::PerformanceCounter](https://msdn.microsoft.com/en-us/library/system.diagnostics.performancecounter.aspx)|  
-|[_CrtReportBlockType](../c-runtime-library/reference/crtreportblocktype.md)|特定のデバッグ ヒープ ブロック ポインターに関連付けられたブロックの型および細分化された型を返します。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetAllocHook](../c-runtime-library/reference/crtsetallochook.md)|C ランタイム デバッグ メモリ割り当てプロセスにフックして、クライアント定義割り当て関数をインストールします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetBreakAlloc](../c-runtime-library/reference/crtsetbreakalloc.md)|指定されたオブジェクト割り当て順序番号にブレークポイントを設定します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetDbgFlag](../c-runtime-library/reference/crtsetdbgflag.md)|`_crtDbgFlag` フラグの状態を取得または変更して、デバッグ ヒープ マネージャーの割り当て動作を制御します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetDumpClient](../c-runtime-library/reference/crtsetdumpclient.md)|`_CLIENT_BLOCK` 型のメモリ ブロックをダンプするためにデバッグ ダンプ関数が呼び出されるたびに呼び出されるアプリケーション定義関数をインストールします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetReportFile](../c-runtime-library/reference/crtsetreportfile.md)|`_CrtDbgReport` による特定の種類のレポートの出力先として使用されるファイルまたはストリームを特定します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetReportHook](../c-runtime-library/reference/crtsetreporthook.md)|C ランタイム デバッグ レポート プロセスにフックして、クライアント定義レポート関数をインストールします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetReportHook2、_CrtSetReportHookW2](../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md)|C ランタイム デバッグ レポート プロセスにフックして、クライアント定義レポート関数をインストールまたはアンインストールします。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_CrtSetReportMode](../c-runtime-library/reference/crtsetreportmode.md)|`_CrtDbgReport` によって生成される特定の種類のレポートの一般的な出力先を指定します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_RPT&#91;0,1,2,3,4&#93;](../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)|書式指定文字列と可変数の引数と共に `_CrtDbgReport` を呼び出してデバッグ レポートを生成することによって、アプリケーションの進行状況を追跡します。 ソース ファイルと行番号の情報は提供されません。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_RPTF&#91;0,1,2,3,4&#93;](../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)|`_RPTn` マクロに似ていますが、レポート要求の発生元となったソース ファイル名と行番号を提供します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_calloc_dbg](../c-runtime-library/reference/calloc-dbg.md)|デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ、指定された数のメモリ ブロックをヒープに割り当てます|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_expand_dbg](../c-runtime-library/reference/expand-dbg.md)|ブロックの拡張や縮小によって、ヒープ内の指定されたメモリのブロックをサイズ変更します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_free_dbg](../c-runtime-library/reference/free-dbg.md)|ヒープ上のメモリのブロックを解放します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
+|ルーチン|用途|  
+|-------------|---------|  
+|[_ASSERT](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|式を評価し、結果が FALSE の場合はデバッグ レポートを生成します|  
+|[_ASSERTE](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|`_ASSERT` に似ていますが、生成されるレポートに失敗した式が含まれます|  
+|[_CrtCheckMemory](../c-runtime-library/reference/crtcheckmemory.md)|デバッグ ヒープに割り当てられたメモリ ブロックの整合性を確認します|  
+|[_CrtDbgBreak](../c-runtime-library/reference/crtdbgbreak.md)|ブレークポイントを設定します。|  
+|[_CrtDbgReport、_CrtDbgReportW](../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)|ユーザー メッセージのあるデバッグ レポートを生成し、3 つの宛先にレポートを送信します|  
+|[_CrtDoForAllClientObjects](../c-runtime-library/reference/crtdoforallclientobjects.md)|ヒープ内のすべての `_CLIENT_BLOCK` 型に対して、アプリケーションによって提供される関数を呼び出します|  
+|[_CrtDumpMemoryLeaks](../c-runtime-library/reference/crtdumpmemoryleaks.md)|重大なメモリ リークが発生したときに、デバッグ ヒープ内のすべてのメモリ ブロックをダンプします|  
+|[_CrtIsMemoryBlock](../c-runtime-library/reference/crtismemoryblock.md)|指定されたメモリ ブロックがローカル ヒープ内にあり、有効なデバッグ ヒープ ブロック型識別子が設定されていることを確認します|  
+|[_CrtIsValidHeapPointer](../c-runtime-library/reference/crtisvalidheappointer.md)|指定したポインターがローカル ヒープ内にあることを検証します|  
+|[_CrtIsValidPointer](../c-runtime-library/reference/crtisvalidpointer.md)|指定したメモリ範囲で読み取りおよび書き込みが可能であることを確認します|  
+|[_CrtMemCheckpoint](../c-runtime-library/reference/crtmemcheckpoint.md)|デバッグ ヒープの現在の状態を取得し、アプリケーションが指定した `_CrtMemState` 構造体に格納します|  
+|[_CrtMemDifference](../c-runtime-library/reference/crtmemdifference.md)|2 つのメモリ状態の大幅な違いを比較し、結果を返します|  
+|[_CrtMemDumpAllObjectsSince](../c-runtime-library/reference/crtmemdumpallobjectssince.md)|指定されたチェックポイントの取得以降、またはプログラムの実行開始以降の、ヒープ上のオブジェクトに関する情報をダンプします|  
+|[_CrtMemDumpStatistics](../c-runtime-library/reference/crtmemdumpstatistics.md)|指定されたメモリ状態のデバッグ ヘッダー情報をユーザーが判読できる形式でダンプします|  
+|[_CrtReportBlockType](../c-runtime-library/reference/crtreportblocktype.md)|特定のデバッグ ヒープ ブロック ポインターに関連付けられたブロックの型および細分化された型を返します。|  
+|[_CrtSetAllocHook](../c-runtime-library/reference/crtsetallochook.md)|C ランタイム デバッグ メモリ割り当てプロセスにフックして、クライアント定義割り当て関数をインストールします|  
+|[_CrtSetBreakAlloc](../c-runtime-library/reference/crtsetbreakalloc.md)|指定されたオブジェクト割り当て順序番号にブレークポイントを設定します|  
+|[_CrtSetDbgFlag](../c-runtime-library/reference/crtsetdbgflag.md)|`_crtDbgFlag` フラグの状態を取得または変更して、デバッグ ヒープ マネージャーの割り当て動作を制御します|  
+|[_CrtSetDumpClient](../c-runtime-library/reference/crtsetdumpclient.md)|`_CLIENT_BLOCK` 型のメモリ ブロックをダンプするためにデバッグ ダンプ関数が呼び出されるたびに呼び出されるアプリケーション定義関数をインストールします|  
+|[_CrtSetReportFile](../c-runtime-library/reference/crtsetreportfile.md)|`_CrtDbgReport` による特定の種類のレポートの出力先として使用されるファイルまたはストリームを特定します|  
+|[_CrtSetReportHook](../c-runtime-library/reference/crtsetreporthook.md)|C ランタイム デバッグ レポート プロセスにフックして、クライアント定義レポート関数をインストールします|  
+|[_CrtSetReportHook2、_CrtSetReportHookW2](../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md)|C ランタイム デバッグ レポート プロセスにフックして、クライアント定義レポート関数をインストールまたはアンインストールします。|  
+|[_CrtSetReportMode](../c-runtime-library/reference/crtsetreportmode.md)|`_CrtDbgReport` によって生成される特定の種類のレポートの一般的な出力先を指定します|  
+|[_RPT&#91;0,1,2,3,4&#93;](../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)|書式指定文字列と可変数の引数と共に `_CrtDbgReport` を呼び出してデバッグ レポートを生成することによって、アプリケーションの進行状況を追跡します。 ソース ファイルと行番号の情報は提供されません。|  
+|[_RPTF&#91;0,1,2,3,4&#93;](../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)|`_RPTn` マクロに似ていますが、レポート要求の発生元となったソース ファイル名と行番号を提供します|  
+|[_calloc_dbg](../c-runtime-library/reference/calloc-dbg.md)|デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ、指定された数のメモリ ブロックをヒープに割り当てます|  
+|[_expand_dbg](../c-runtime-library/reference/expand-dbg.md)|ブロックの拡張や縮小によって、ヒープ内の指定されたメモリのブロックをサイズ変更します|  
+|[_free_dbg](../c-runtime-library/reference/free-dbg.md)|ヒープ上のメモリのブロックを解放します|  
 |[_fullpath_dbg、_wfullpath_dbg](../c-runtime-library/reference/fullpath-dbg-wfullpath-dbg.md)|指定された相対パス名の絶対または完全パス名を作成します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|[System::IO::File::Create](https://msdn.microsoft.com/en-us/library/system.io.file.create.aspx)|  
-|[_getcwd_dbg、_wgetcwd_dbg](../c-runtime-library/reference/getcwd-dbg-wgetcwd-dbg.md)|現在の作業ディレクトリを取得します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md)|デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ、メモリ ブロックをヒープに割り当てます|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_msize_dbg](../c-runtime-library/reference/msize-dbg.md)|ヒープ内のメモリ ブロックのサイズを計算します|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_realloc_dbg](../c-runtime-library/reference/realloc-dbg.md)|ブロックの移動やサイズ変更によって、ヒープ内の指定されたメモリのブロックを再割り当てします|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
-|[_strdup_dbg、_wcsdup_dbg](../c-runtime-library/reference/strdup-dbg-wcsdup-dbg.md)|文字列を複製します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|[System::String::Clone](https://msdn.microsoft.com/en-us/library/system.string.clone.aspx)|  
-|[_tempnam_dbg、_wtempnam_dbg](../c-runtime-library/reference/tempnam-dbg-wtempnam-dbg.md)|一時ファイルを作成するために使用できる名前を生成します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳しくは、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。|  
+|[_getcwd_dbg、_wgetcwd_dbg](../c-runtime-library/reference/getcwd-dbg-wgetcwd-dbg.md)|現在の作業ディレクトリを取得します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|  
+|[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md)|デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ、メモリ ブロックをヒープに割り当てます|  
+|[_msize_dbg](../c-runtime-library/reference/msize-dbg.md)|ヒープ内のメモリ ブロックのサイズを計算します|  
+|[_realloc_dbg](../c-runtime-library/reference/realloc-dbg.md)|ブロックの移動やサイズ変更によって、ヒープ内の指定されたメモリのブロックを再割り当てします|  
+|[_strdup_dbg、_wcsdup_dbg](../c-runtime-library/reference/strdup-dbg-wcsdup-dbg.md)|文字列を複製します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|  
+|[_tempnam_dbg、_wtempnam_dbg](../c-runtime-library/reference/tempnam-dbg-wtempnam-dbg.md)|一時ファイルを作成するために使用できる名前を生成します。メモリを割り当てるために、[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md) が使われます。|  
   
  デバッグ ルーチンを使用して、デバッグ プロセス中にほとんどの他の C ランタイム ルーチンのソース コードをステップ実行することができます。 ただし、一部のテクノロジは Microsoft によって所有物と見なされるため、これらのルーチンにソース コードが提供されません。 これらのルーチンのほとんどは例外処理または浮動小数点処理のグループに属していますが、他のグループに属しているものもあります。 次の表は、これらのルーチンの一覧です。  
   
@@ -133,8 +134,3 @@ C ランタイム ライブラリのデバッグ バージョンには、プロ�
 ## <a name="see-also"></a>関連項目  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)   
  [ランタイム エラー チェック](../c-runtime-library/run-time-error-checking.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

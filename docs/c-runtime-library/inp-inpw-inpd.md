@@ -58,12 +58,13 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 54325f60b0d1714cab68f17152609a8980bc2a60
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: b0dabfdf6540a09a08f7b7a3dec05fd5aa9d07fa
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="inp-inpw-inpd"></a>_inp、_inpw、_inpd
-ポートから&1; バイト (`_inp`)、1 ワード (`_inpw`)、または&1; ダブルワード (`_inpd`) のいずれかを読み込みます。  
+ポートから 1 バイト (`_inp`)、1 ワード (`_inpw`)、または 1 ダブルワード (`_inpd`) のいずれかを読み込みます。  
   
 > [!IMPORTANT]
 >  これらは古い関数です。 Visual Studio 2015 以降では、CRT で使用できません。  
@@ -93,7 +94,7 @@ unsigned long _inpd(
  これらの関数は、 `port`から読み込んだバイト、ワード、またはダブルワードを返します。 エラーの戻り値はありません。  
   
 ## <a name="remarks"></a>コメント  
- `_inp`、 `_inpw`、 `_inpd` の各関数は、指定された入力ポートからそれぞれバイト、ワード、ダブルワードを&1; つ読み込みます。 ポート番号として、0 ～ 65,535 の unsigned short 型整数を入力できます。  
+ `_inp`、 `_inpw`、 `_inpd` の各関数は、指定された入力ポートからそれぞれバイト、ワード、ダブルワードを 1 つ読み込みます。 ポート番号として、0 ～ 65,535 の unsigned short 型整数を入力できます。  
   
  これらの関数は I/O ポートから直接読み出すため、Windows NT、Windows 2000、Windows XP、および Windows Server 2003 のユーザー コードでは使用できない場合があります。  
   
@@ -110,14 +111,6 @@ unsigned long _inpd(
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
-  
 ## <a name="see-also"></a>関連項目  
  [コンソール入出力とポート入出力](../c-runtime-library/console-and-port-i-o.md)   
  [_outp、_outpw、_outpd](../c-runtime-library/outp-outpw-outpd.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

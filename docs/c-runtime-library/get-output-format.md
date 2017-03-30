@@ -49,9 +49,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
-ms.openlocfilehash: 23646d03e920ae187286885dbd24e1d312973048
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 389704142fe6d6f5806542cd2bdf6cdd4482172b
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="getoutputformat"></a>_get_output_format
@@ -70,7 +70,7 @@ unsigned int _get_output_format();
  出力形式フラグの現在の値。  
   
 ## <a name="remarks"></a>コメント  
- 出力形式フラグは、書式付き I/O の機能を制御します。 現在、このフラグに指定できるのは 0 と `_TWO_DIGIT_EXPONENT`という 2 つの値です。 `_TWO_DIGIT_EXPONENT` に設定すると、指数部の大きさによって&3; 桁目が必要になる場合を除いて、浮動小数点数の指数部は&2; 桁のみで出力されます。 このフラグを&0; に設定すると、浮動小数点数の指数部は&3; 桁で出力され、必要な場合は&0; を埋め込んで&3; 桁にされます。  
+ 出力形式フラグは、書式付き I/O の機能を制御します。 現在、このフラグに指定できるのは 0 と `_TWO_DIGIT_EXPONENT`という 2 つの値です。 `_TWO_DIGIT_EXPONENT` に設定すると、指数部の大きさによって 3 桁目が必要になる場合を除いて、浮動小数点数の指数部は 2 桁のみで出力されます。 このフラグを 0 に設定すると、浮動小数点数の指数部は 3 桁で出力され、必要な場合は 0 を埋め込んで 3 桁にされます。  
   
 ## <a name="requirements"></a>要件  
   
@@ -79,9 +79,6 @@ unsigned int _get_output_format();
 |`_get_output_format`|\<stdio.h>|  
   
  互換性について詳しくは、概要の「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
 [書式指定構文: printf 関数と wprintf 関数](../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)  
