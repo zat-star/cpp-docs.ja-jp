@@ -13,7 +13,7 @@
 # [C++/CLI による .NET の開発](dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
 # [Visual C++ でのクラウドおよび Web プログラミング](cloud/cloud-and-web-programming-in-visual-cpp.md)
 # [並列プログラミング](parallel/parallel-programming-in-visual-cpp.md)
-# [データ アクセス](data/index.md)
+# [データ アクセス](data/data-access-in-cpp.md)
 # [テキストと文字列](text/text-and-strings-in-visual-cpp.md)
 # [C++ 用 Visual Studio IDE の使用](ide/ide-and-tools-for-visual-cpp-development.md)
 # [コンパイラおよびビルド ツール](build/building-c-cpp-programs.md)

@@ -1,7 +1,7 @@
 ---
 title: "コンパイラ エラー C2668 |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 03/28/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -34,21 +34,21 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: efb9abfa44a9c90d44a87046a6320a5e4ace8f57
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
+ms.openlocfilehash: 6bb1dc7c1dbf26a4ff8ec25a46fe7128e0fb6aa8
+ms.lasthandoff: 03/29/2017
 
 ---
-# <a name="compiler-error-c2668"></a>コンパイラ エラー C2668
+# <a name="compiler-error-c2668"></a>コンパイラ エラー c2668 を発行
 'function': オーバー ロードされた関数のあいまいな呼び出し  
   
  指定されたオーバー ロードされた関数の呼び出しを解決できませんでした。 1 つ以上の実際のパラメーターを明示的にキャストすることがあります。  
   
- テンプレートを使用して、このエラーを取得することもできます。 同じクラスには、通常のメンバー関数と同じシグネチャを持つ template 宣言されたメンバー関数がある場合、テンプレート化された&1; つを最初に記述する必要があります。 これは、Visual C の現在の実装の制限です。  
+ このエラーは、テンプレートを使用して取得することもできます。 同じクラスである場合は、通常のメンバー関数と同じシグネチャを持つ template 宣言されたメンバー関数場合、テンプレートのいずれかが先にする必要があります。 これは、Visual C の現在の実装の制限です。  
   
  関数テンプレートの部分的な順序付けの詳細については、サポート技術情報資料 Q240869 を参照してください。  
   
- サポートする COM オブジェクトを含む ATL プロジェクトを作成するかどうかは`ISupportErrorInfo`、サポート技術情報記事 Q243298 を参照してください。  
+ サポートする COM オブジェクトを格納している ATL プロジェクトをビルドするかどうかは`ISupportErrorInfo`、サポート技術情報の記事 Q243298 を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では C2668 が生成されます。  
@@ -70,7 +70,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- このエラーを解決するのには別の方法として、[宣言を使用して](../../cpp/using-declaration.md):  
+ このエラーを解決する別の方法は、[宣言を使用して](../../cpp/using-declaration.md):  
   
 ```  
 // C2668b.cpp  
@@ -112,9 +112,9 @@ class MyTestCase : public AppTestCase {
 ```  
   
 ## <a name="example"></a>例  
- このエラーは、Visual Studio .NET 2003 で行ったコンパイラへの準拠作業の結果として生成することもできます。: 定数 0 のキャストにあいまいな変換です。  
+ このエラーは、Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成することもできます: 定数 0 のキャストであいまいな変換です。  
   
- Long 型と void * int の両方への変換が必要なために、0 の定数を使用してキャストの変換はあいまいです。 このエラーを解決するには、変換を実行 (このコードと Visual Studio .NET 2003 および Visual Studio .NET のバージョンの Visual C で有効である場合は) 必要がないようにするは使用されているが、関数のパラメーターの正確な型に 0 をキャストします。  
+ Int では、時間、および void * を両方への変換が必要なために、定数 0 を使用してキャストの変換があいまいです。 このエラーを解決するには、0 に変換する必要がありますされません (このコードが有効になります、Visual Studio .NET 2003 バージョンと Visual Studio .NET バージョンの Visual C で) 実行されるようには、使用されている関数のパラメーターの正確な型をキャストします。  
   
 ```  
 // C2668c.cpp  
@@ -135,7 +135,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- このエラーは、CRT は浮動小数点演算とすべての数値演算関数の&2; つのフォームを持つために発生することができます。  
+ このエラーは、CRT は float 型とすべての数値演算関数の 2 つのフォームを持つために発生することができます。  
   
 ```  
 // C2668d.cpp  
@@ -149,7 +149,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- (Int、int) pow は CRT の math.h から削除されたために、このエラーが発生することができます。  
+ Pow (int, int) は、CRT で math.h から削除されたために、このエラーが発生することができます。  
   
 ```  
 // C2668e.cpp  
@@ -158,4 +158,26 @@ int main() {
    pow(9,9);   // C2668  
    pow((double)9,9);   // OK  
 }  
+```
+
+## <a name="example"></a>例  
+このコードは、Visual Studio 2015 では成功しますが、c2668 を発行の後で使用して、Visual Studio 2017 では失敗します。 Visual Studio 2015 では、コンパイラは、誤って copy-list-initialization を通常の copy-initialization と同じ方法で処理しました。これは、単なるオーバーロードの解決のためのコンストラクターの変換と見なされます。 
+
+```
+C++
+struct A {
+    explicit A(int) {}
+};
+
+struct B {
+    B(int) {}
+};
+
+void f(const A&) {}
+void f(const B&) {}
+
+int main()
+{
+    f({ 1 }); // error C2668: 'f': ambiguous call to overloaded function
+}
 ```
