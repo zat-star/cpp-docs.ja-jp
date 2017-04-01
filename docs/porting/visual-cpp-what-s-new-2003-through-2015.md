@@ -1020,7 +1020,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     {   
         auto iter = std::find(v.begin(), v.end(), 5);   
     }   
-    catch(…)   
+    catch(...)   
     {   
         do_something();  // ok   
     }  
@@ -1033,7 +1033,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     {   
         auto iter = std::find(v.begin(), v.end(), 5);   
     }   
-    catch(…)   
+    catch(...)   
     {   
         do_something();  // warning C4702: unreachable code  
     }  

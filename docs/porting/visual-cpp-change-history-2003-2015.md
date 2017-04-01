@@ -1388,11 +1388,10 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
     {  
         auto iter = std::find(v.begin(), v.end(), 5);  
     }  
-    catch (…)  
+    catch (...)  
     {  
         do_something();   // ok  
     }  
-  
     ```  
   
      例 (変更後)  
@@ -1402,11 +1401,10 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
     {  
         auto iter = std::find(v.begin(), v.end(), 5);  
     }  
-    catch (…)  
+    catch (...)  
     {  
         do_something();   // warning C4702: unreachable code  
     }  
-  
     ```  
   
 ###  <a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
