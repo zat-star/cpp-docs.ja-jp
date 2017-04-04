@@ -172,17 +172,14 @@ HRESULT Init(
   
  `flags`パラメーターでは、列挙子が渡された配列の要素を処理する方法を指定することができます。 `flags`値のいずれかを実行、**使用**列挙型を次に示します。  
   
- `enum CComEnumFlags`  
-  
- `{`  
-  
- `AtlFlagNoCopy = 0,`  
-  
- `AtlFlagTakeOwnership = 2, // BitOwn`  
-  
- `AtlFlagCopy = 3           // BitOwn | BitCopy`  
-  
- `};`  
+```  
+enum CComEnumFlags  
+   {  
+   AtlFlagNoCopy = 0,  
+   AtlFlagTakeOwnership = 2, // BitOwn  
+   AtlFlagCopy = 3           // BitOwn | BitCopy  
+   };  
+```  
   
  **AtlFlagNoCopy**配列の有効期間が列挙子によって制御されていないことを意味します。 この場合は、いずれか、配列となりますで識別されるオブジェクトが静的または*pUnk*不要になったときに、配列を解放する責任があります。  
   

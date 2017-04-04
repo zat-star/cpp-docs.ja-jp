@@ -71,35 +71,19 @@ struct in_addr sin_addr;
   
  この構造体の IP アドレスのコンポーネントのタイプは**IN_ADDR**します。 **IN_ADDR** WINSOCK Windows ソケットのヘッダー ファイルの構造を定義します。次のように H:  
   
- `struct   in_addr {`  
-  
- `union   {`  
-  
- `struct{`  
-  
- `unsigned  char   s_b1,`  
-  
- `s_b2,`  
-  
- `s_b3,`  
-  
- `s_b4;`  
-  
- `}  S_un_b;`  
-  
- `struct  {`  
-  
- `unsigned  short  s_w1,`  
-  
- `s_w2;`  
-  
- `}  S_un_w;`  
-  
- `unsigned long  S_addr;`  
-  
- `} S_un;`  
-  
- `};`  
+```  
+struct in_addr {
+    union {
+        struct {  
+            unsigned char s_b1, s_b2, s_b3, s_b4;  
+        } S_un_b;  
+        struct {  
+            unsigned short s_w1, s_w2;
+        } S_un_w;
+        unsigned long S_addr;
+    } S_un;  
+};  
+```  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** winsock2.h  

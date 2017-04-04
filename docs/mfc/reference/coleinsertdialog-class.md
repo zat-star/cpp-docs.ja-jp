@@ -266,17 +266,13 @@ UINT GetSelectionType() const;
 ### <a name="remarks"></a>コメント  
  戻り値の型の値がで指定された、**選択**で宣言された列挙型、`COleInsertDialog`クラスです。  
   
- `enum Selection`  
-  
- `{`  
-  
- `createNewItem,`  
-  
- `insertFromFile,`  
-  
- `linkToFile`  
-  
- `};`  
+```  
+enum Selection {
+    createNewItem,
+    insertFromFile,
+    linkToFile
+    };  
+```  
   
  これらの値の簡単な説明に従ってください。  
   

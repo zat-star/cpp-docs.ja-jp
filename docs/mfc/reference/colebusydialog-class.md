@@ -173,17 +173,13 @@ UINT GetSelectionType() const;
 ### <a name="remarks"></a>コメント  
  戻り値の型の値がで指定された、**選択**で宣言された列挙型、`COleBusyDialog`クラスです。  
   
- `enum Selection`  
-  
- `{`  
-  
- `switchTo,`  
-  
- `retry,`  
-  
- `callUnblocked`  
-  
- `};`  
+```  
+enum Selection {
+    switchTo,
+    retry,
+    callUnblocked
+    };
+```  
   
  これらの値の簡単な説明に従ってください。  
   

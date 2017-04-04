@@ -395,23 +395,17 @@ virtual Confidence MatchDocType(
 ### <a name="return-value"></a>戻り値  
  値、**信頼**列挙体は、次のように定義されています。  
   
- `enum Confidence`  
-  
- `{`  
-  
- `noAttempt,`  
-  
- `maybeAttemptForeign,`  
-  
- `maybeAttemptNative,`  
-  
- `yesAttemptForeign,`  
-  
- `yesAttemptNative,`  
-  
- `yesAlreadyOpen`  
-  
- `};`  
+```  
+enum Confidence  
+    {  
+    noAttempt,
+    maybeAttemptForeign,
+    maybeAttemptNative,
+    yesAttemptForeign,
+    yesAttemptNative,
+    yesAlreadyOpen
+    };  
+```  
   
 ### <a name="remarks"></a>コメント  
  この関数を使用して、ファイルを開くときに使用するドキュメント テンプレートの種類を決定します。 アプリケーションでは、複数のファイルの種類をサポートする場合などできますこの関数を使用する決定を呼び出すことで特定のファイルに対して適切な使用可能なドキュメント テンプレートのどれが`MatchDocType`を有効にすると、信頼度の値に従ってテンプレートを選択するには、各テンプレートが返されます。  

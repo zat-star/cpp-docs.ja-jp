@@ -62,7 +62,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlhost.h  
 
-##  <a name="a-nameatlaxdialogboxa--atlaxdialogbox"></a><a name="atlaxdialogbox"></a>AtlAxDialogBox  
+##  <a name="atlaxdialogbox"></a>AtlAxDialogBox  
  ユーザーが用意するダイアログ テンプレートからモーダル ダイアログ ボックスを作成します。  
    
 ```
@@ -96,15 +96,16 @@ ATLAPI_(int) AtlAxDialogBox(
 ### <a name="remarks"></a>コメント  
  使用する**AtlAxDialogBox** 、ActiveX コントロールを含むダイアログ テンプレートに指定する有効な**CLSID**、 **APPID**または URL の文字列として、*テキスト*のフィールド、**コントロール**"AtlAxWin80 としてと共に、ダイアログ リソースのセクションで、*クラス名*同じセクションにあるフィールドです。 次にどのような有効な示します**コントロール**セクションのようになります。  
   
- `CONTROL    "{04FE35E9-ADBC-4f1d-83FE-8FA4D1F71C7F}", IDC_TEST,`  
-  
- `"AtlAxWin80", WS_GROUP | WS_TABSTOP, 0, 0, 100, 100`  
+```  
+CONTROL    "{04FE35E9-ADBC-4f1d-83FE-8FA4D1F71C7F}", IDC_TEST,  
+    "AtlAxWin80", WS_GROUP | WS_TABSTOP, 0, 0, 100, 100  
+```  
   
  リソースのスクリプトの編集の詳細については、次を参照してください。[方法: テキスト形式でリソース スクリプト ファイルを開く](../../windows/how-to-open-a-resource-script-file-in-text-format.md)します。 コントロールのリソース定義ステートメントの詳細については、次を参照してください。[コントロールに共通のパラメーター](http://msdn.microsoft.com/library/windows/desktop/aa380902)  [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] *: SDK ツール*します。  
   
  一般のダイアログ ボックスの詳細についてを参照してください[DialogBox](http://msdn.microsoft.com/library/windows/desktop/ms645452)と[CreateDialogParam](http://msdn.microsoft.com/library/windows/desktop/ms645445)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameatlaxcreatedialoga--atlaxcreatedialog"></a><a name="atlaxcreatedialog"></a>AtlAxCreateDialog  
+##  <a name="atlaxcreatedialog"></a>AtlAxCreateDialog  
  ユーザーが用意するダイアログ テンプレートからモードレス ダイアログ ボックスを作成します。  
   
 ```
@@ -140,7 +141,7 @@ ATLAPI_(HWND) AtlAxCreateDialog(
   
  参照してください[:createdialog](http://msdn.microsoft.com/library/windows/desktop/ms645434)と[CreateDialogParam](http://msdn.microsoft.com/library/windows/desktop/ms645445)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameatlaxcreatecontrola--atlaxcreatecontrol"></a><a name="atlaxcreatecontrol"></a>して  
+##  <a name="atlaxcreatecontrol"></a>して  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 
@@ -186,7 +187,7 @@ ATLAPI AtlAxCreateControl(
   
  ライセンスされた ActiveX コントロールを作成するを参照してください。[して](#atlaxcreatecontrollic)します。  
   
-##  <a name="a-nameatlaxcreatecontrolexa--atlaxcreatecontrolex"></a><a name="atlaxcreatecontrolex"></a>行うに  
+##  <a name="atlaxcreatecontrolex"></a>行うに  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。 新しいコントロールのインターフェイス ポインターとイベント シンクも作成されます。  
   
 ```
@@ -243,7 +244,7 @@ ATLAPI AtlAxCreateControlEx(
   
  ライセンスされた ActiveX コントロールを作成するを参照してください。 [AtlAxCreateControlLicEx](#atlaxcreatecontrollicex)します。  
   
-##  <a name="a-nameatlaxcreatecontrollica--atlaxcreatecontrollic"></a><a name="atlaxcreatecontrollic"></a>して  
+##  <a name="atlaxcreatecontrollic"></a>して  
  ライセンスされた ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
 
 ```
@@ -290,7 +291,7 @@ ATLAPI AtlAxCreateControlLic(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用する方法のサンプルについては`AtlAxCreateControlLic`です。  
   
-##  <a name="a-nameatlaxcreatecontrollicexa--atlaxcreatecontrollicex"></a><a name="atlaxcreatecontrollicex"></a>AtlAxCreateControlLicEx  
+##  <a name="atlaxcreatecontrollicex"></a>AtlAxCreateControlLicEx  
  ライセンスされた ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。 新しいコントロールのインターフェイス ポインターとイベント シンクも作成されます。  
   
 ```
@@ -352,7 +353,7 @@ ATLAPI AtlAxCreateControlLicEx(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用する方法のサンプルについては`AtlAxCreateControlLicEx`です。  
   
-##  <a name="a-nameatlaxattachcontrola--atlaxattachcontrol"></a><a name="atlaxattachcontrol"></a>関連付け  
+##  <a name="atlaxattachcontrol"></a>関連付け  
  事前に作成されたコントロールを指定されたウィンドウにアタッチします。  
   
 ```
@@ -381,7 +382,7 @@ ATLAPI AtlAxAttachControl(
 > [!NOTE]
 >  アタッチされるコントロール オブジェクトを呼び出す前に正しく初期化する必要があります`AtlAxAttachControl`します。  
   
-##  <a name="a-nameatlaxgethosta--atlaxgethost"></a><a name="atlaxgethost"></a>AtlAxGetHost  
+##  <a name="atlaxgethost"></a>AtlAxGetHost  
  ハンドルが与えられた指定のウィンドウに対するコンテナーへのダイレクト インターフェイス ポインターを取得します。  
   
 ```
@@ -398,7 +399,7 @@ ATLAPI AtlAxGetHost(HWND h, IUnknown** pp);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値の&1; つ。  
   
-##  <a name="a-nameatlaxgetcontrola--atlaxgetcontrol"></a><a name="atlaxgetcontrol"></a>AtlAxGetControl  
+##  <a name="atlaxgetcontrol"></a>AtlAxGetControl  
  ハンドルが与えられた指定のウィンドウ内に含まれるコントロールへのダイレクト インターフェイス ポインターを取得します。  
   
 ```
@@ -415,7 +416,7 @@ ATLAPI AtlAxGetControl(HWND h, IUnknown** pp);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値の&1; つ。  
   
-##  <a name="a-nameatlsetchildsitea--atlsetchildsite"></a><a name="atlsetchildsite"></a>AtlSetChildSite  
+##  <a name="atlsetchildsite"></a>AtlSetChildSite  
  子オブジェクトのサイトを設定するには、この関数を呼び出す、 **IUnknown**の親オブジェクトです。  
   
 ```
@@ -432,7 +433,7 @@ HRESULT AtlSetChildSite(IUnknown* punkChild, IUnknown* punkParent);
 ### <a name="return-value"></a>戻り値  
  標準的な HRESULT 値。  
   
-##  <a name="a-nameatlaxwininita--atlaxwininit"></a><a name="atlaxwininit"></a>な  
+##  <a name="atlaxwininit"></a>な  
  この関数は、ホスティング コードを登録することにより、ATL のコントロールを初期化、 **"AtlAxWin80**と**"AtlAxWinLic80"**ウィンドウは、さらに、いくつかのカスタム ウィンドウ メッセージのクラスです。  
   
 ```
@@ -445,7 +446,7 @@ ATLAPI_(BOOL) AtlAxWinInit();
 ### <a name="remarks"></a>コメント  
  ATL コントロール ホスト API を使用する前に、この関数を呼び出す必要があります。 この関数への呼び出しの後、 **"AtlAxWin"**への呼び出しでウィンドウ クラスを使用することができます[CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679)または[CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
 
-##  <a name="a-nameatlaxwinterma--atlaxwinterm"></a><a name="atlaxwinterm"></a>AtlAxWinTerm  
+##  <a name="atlaxwinterm"></a>AtlAxWinTerm  
  この関数には、ATL のコントロールの登録を解除してコードをホストが初期化されません、 **"AtlAxWin80**と**"AtlAxWinLic80"**ウィンドウ クラスです。  
   
 ```
@@ -460,7 +461,7 @@ inline BOOL AtlAxWinTerm();
   
  この関数を呼び出した場合に既存のすべてのホスト ウィンドウが破棄された後にクリーンアップ[な](#atlaxwininit)不要になったホスト ウィンドウを作成する必要があります。 この関数が呼び出されない場合、ウィンドウ クラスが登録解除する自動的にプロセスが終了したときにします。  
   
-##  <a name="a-nameatlgetobjectsourceinterfacea--atlgetobjectsourceinterface"></a><a name="atlgetobjectsourceinterface"></a>AtlGetObjectSourceInterface  
+##  <a name="atlgetobjectsourceinterface"></a>AtlGetObjectSourceInterface  
  オブジェクトの既定のソース インターフェイスに関する情報を取得します。  
   
 ```

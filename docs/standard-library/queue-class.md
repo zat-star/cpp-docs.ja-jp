@@ -103,7 +103,7 @@ class queue
   
  **名前空間:** std  
   
-##  <a name="a-namequeuebacka--queueback"></a><a name="queue__back"></a>  queue::back  
+##  <a name="queue__back"></a>  queue::back  
  キューの後ろに最も直近に追加された要素への参照を返します。  
   
 ```  
@@ -146,7 +146,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namequeuecontainertypea--queuecontainertype"></a><a name="queue__container_type"></a>  queue::container_type  
+##  <a name="queue__container_type"></a>  queue::container_type  
  適合される基本のコンテナーを提供する型。  
   
 ```  
@@ -161,7 +161,7 @@ typedef Container container_type;
 ### <a name="example"></a>例  
   `container_type` の宣言方法や使用方法の例については、[queue](#queue__queue) の例をご覧ください。  
   
-##  <a name="a-namequeueemptya--queueempty"></a><a name="queue__empty"></a>  queue::empty  
+##  <a name="queue__empty"></a>  queue::empty  
  キューが空かどうかをテストします。  
   
 ```  
@@ -205,7 +205,7 @@ The queue q1 is not empty.
 The queue q2 is empty.  
 ```  
   
-##  <a name="a-namequeuefronta--queuefront"></a><a name="queue__front"></a>  queue::front  
+##  <a name="queue__front"></a>  queue::front  
  キューの一番前にある最初の要素への参照を返します。  
   
 ```  
@@ -254,7 +254,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namequeuepopa--queuepop"></a><a name="queue__pop"></a>  queue::pop  
+##  <a name="queue__pop"></a>  queue::pop  
  キューの一番前から要素を削除します。  
   
 ```  
@@ -308,7 +308,7 @@ After a pop the queue length is 2.
 After a pop, the element at the front of the queue is 20.  
 ```  
   
-##  <a name="a-namequeuepusha--queuepush"></a><a name="queue__push"></a>  queue::push  
+##  <a name="queue__push"></a>  queue::push  
  キューの一番後ろに要素を追加します。  
   
 ```  
@@ -354,7 +354,7 @@ The queue length is 3.
 The element at the front of the queue is 10.  
 ```  
   
-##  <a name="a-namequeuequeuea--queuequeue"></a><a name="queue__queue"></a>  queue::queue  
+##  <a name="queue__queue"></a>  queue::queue  
  空であるか、基本のコンテナー オブジェクトのコピーであるキューを構築します。  
   
 ```  
@@ -364,7 +364,7 @@ explicit queue(const container_type& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  構築されるキューのコピー元となる **const** コンテナ―。  
   
 ### <a name="remarks"></a>コメント  
@@ -418,7 +418,7 @@ The element at the front of queue q5 is 1.
 The element at the back of queue q5 is 2.  
 ```  
   
-##  <a name="a-namequeuesizea--queuesize"></a><a name="queue__size"></a>  queue::size  
+##  <a name="queue__size"></a>  queue::size  
  キュー内の要素の数を返します。  
   
 ```  
@@ -457,7 +457,7 @@ The queue length is 1.
 The queue length is now 2.  
 ```  
   
-##  <a name="a-namequeuesizetypea--queuesizetype"></a><a name="queue__size_type"></a>  queue::size_type  
+##  <a name="queue__size_type"></a>  queue::size_type  
  キュー内の要素の数を表すことができる符号なし整数型。  
   
 ```  
@@ -470,7 +470,7 @@ typedef typename Container::size_type size_type;
 ### <a name="example"></a>例  
   `size_type` の宣言方法や使用方法の例については、[queue::front](#queue__front) の例をご覧ください。  
   
-##  <a name="a-namequeuevaluetypea--queuevaluetype"></a><a name="queue__value_type"></a>  queue::value_type  
+##  <a name="queue__value_type"></a>  queue::value_type  
  キュー内に要素として格納されるオブジェクトの型を表す型。  
   
 ```  

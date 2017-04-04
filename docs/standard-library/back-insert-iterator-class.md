@@ -85,7 +85,7 @@ class back_insert_iterator;
   
  **名前空間:** std  
   
-##  <a name="a-namebackinsertiteratorbackinsertiteratora--backinsertiteratorbackinsertiterator"></a><a name="back_insert_iterator__back_insert_iterator"></a>  back_insert_iterator::back_insert_iterator  
+##  <a name="back_insert_iterator__back_insert_iterator"></a>  back_insert_iterator::back_insert_iterator  
  コンテナー内の最後の要素の後に要素を挿入する `back_insert_iterator` を構築します。  
   
 ```   
@@ -147,7 +147,7 @@ The initial vector vec is: ( 1 2 3 ).
 After the insertions, the vector vec is: ( 1 2 3 40 50 600 700 ).  
 ```  
   
-##  <a name="a-namebackinsertiteratorcontainertypea--backinsertiteratorcontainertype"></a><a name="back_insert_iterator__container_type"></a>  back_insert_iterator::container_type  
+##  <a name="back_insert_iterator__container_type"></a>  back_insert_iterator::container_type  
  `back_insert_iterator` にコンテナーを提供する型。  
   
 ```   
@@ -199,7 +199,7 @@ The original vector vec is: ( 1 2 3 ).
 After the insertion, the vector is: ( 1 2 3 40 ).  
 ```  
   
-##  <a name="a-namebackinsertiteratoroperatorstara--backinsertiteratoroperator"></a><a name="back_insert_iterator__operator_star"></a>  back_insert_iterator::operator*  
+##  <a name="back_insert_iterator__operator_star"></a>  back_insert_iterator::operator*  
  出力反復子式 \* *i* = *x* を実装するために使用される逆参照演算子。  
   
 ```  
@@ -256,7 +256,7 @@ The vector vec is: ( 1 2 3 ).
 After the insertions, the vector vec becomes: ( 1 2 3 10 20 ).  
 ```  
   
-##  <a name="a-namebackinsertiteratoroperatoraddadda--backinsertiteratoroperator"></a><a name="back_insert_iterator__operator_add_add"></a>  back_insert_iterator::operator++  
+##  <a name="back_insert_iterator__operator_add_add"></a>  back_insert_iterator::operator++  
  値を格納できる次の位置に `back_insert_iterator` をインクリメントします。  
   
 ```  
@@ -314,7 +314,7 @@ The vector vec is: ( 10 20 ).
 After the insertions, the vector vec becomes: ( 10 20 30 40 ).  
 ```  
   
-##  <a name="a-namebackinsertiteratoroperatoreqa--backinsertiteratoroperator"></a><a name="back_insert_iterator__operator_eq"></a>  back_insert_iterator::operator=  
+##  <a name="back_insert_iterator__operator_eq"></a>  back_insert_iterator::operator=  
  値をコンテナーのバック エンドに追加またはプッシュします。  
   
 ```  
@@ -323,7 +323,7 @@ back_insert_iterator<Container>& operator=(typename Container::value_type&& val)
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` val`  
+ `val`  
  コンテナーに挿入される値。  
   
 ### <a name="return-value"></a>戻り値  
@@ -377,7 +377,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namebackinsertiteratorreferencea--backinsertiteratorreference"></a><a name="back_insert_iterator__reference"></a>  back_insert_iterator::reference  
+##  <a name="back_insert_iterator__reference"></a>  back_insert_iterator::reference  
  `back_insert_iterator` に参照を提供する型。  
   
 ```  

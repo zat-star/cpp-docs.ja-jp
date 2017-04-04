@@ -245,17 +245,13 @@ UINT GetSelectionType() const;
 ### <a name="remarks"></a>コメント  
  戻り値の型の値がで指定された、**選択**で宣言された列挙型、`COleConvertDialog`クラスです。  
   
- `enum Selection`  
-  
- `{`  
-  
- `noConversion,`  
-  
- `convertItem,`  
-  
- `activateAs`  
-  
- `};`  
+```  
+enum Selection {
+    noConversion,
+    convertItem,
+    activateAs
+    };  
+```  
   
  これらの値の簡単な説明に従ってください。  
   

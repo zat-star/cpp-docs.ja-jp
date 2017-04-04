@@ -198,15 +198,13 @@ CurrencyStatus GetStatus() const;
 ### <a name="remarks"></a>コメント  
  戻り値は、`CurrencyStatus`列挙内で定義されている型、 **COleCurrency**クラスです。  
   
- `enum CurrencyStatus{`  
-  
- `valid = 0,`  
-  
- `invalid = 1,`  
-  
- `null = 2,`  
-  
- `};`  
+```  
+enum CurrencyStatus {
+    valid = 0,
+    invalid = 1,
+    null = 2
+    };  
+```  
   
  これらのステータス値の簡単な説明は、次の一覧を参照してください。  
   
@@ -530,15 +528,13 @@ void SetStatus(CurrencyStatus  status  );
 ### <a name="remarks"></a>コメント  
  *ステータス*でパラメーターの値が定義されている、`CurrencyStatus`列挙型で、内で定義された、 **COleCurrency**クラスです。  
   
- `enum CurrencyStatus{`  
-  
- `valid = 0,`  
-  
- `invalid = 1,`  
-  
- `null = 2,`  
-  
- `};`  
+```  
+enum CurrencyStatus {
+    valid = 0,
+    invalid = 1,
+    null = 2
+    };  
+```  
   
  これらのステータス値の簡単な説明は、次の一覧を参照してください。  
   

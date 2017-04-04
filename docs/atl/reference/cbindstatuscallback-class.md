@@ -275,15 +275,13 @@ ATL_PDATAAVAILABLE m_pFunc;
 ### <a name="remarks"></a>コメント  
  関数が指す`m_pFunc`オブジェクトのクラスのメンバーであるし、は、次の構文。  
   
- `void Function_Name(`  
-  
- `CBindStatusCallback<T>* pbsc,`  
-  
- `BYTE* pBytes,`  
-  
- `DWORD dwSize`  
-  
- `);`  
+```  
+void Function_Name(  
+   CBindStatusCallback<T>* pbsc,  
+   BYTE* pBytes,  
+   DWORD dwSize  
+   );  
+```  
   
 ##  <a name="m_pt"></a>CBindStatusCallback::m_pT  
  非同期データ転送を要求しているオブジェクトへのポインター。  

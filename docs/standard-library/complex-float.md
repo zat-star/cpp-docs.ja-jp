@@ -73,7 +73,7 @@ constexpr complex(
  `_ImagVal`  
  構築される複素数の虚数部の **float** 型の値。  
   
- ` complexNum`  
+ `complexNum`  
  **double** 型または `long double` 型で、その実数部と虚数部の値が、構築される **float** 型の複素数の初期化に使用される複素数。  
   
 ## <a name="return-value"></a>戻り値  

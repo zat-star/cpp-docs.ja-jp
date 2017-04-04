@@ -175,27 +175,19 @@ m_nShellCommand;
 ### <a name="remarks"></a>コメント  
  このデータ メンバーの型は、次の列挙型で定義されている、`CCommandLineInfo`クラスです。  
   
- `enum{`  
-  
- `FileNew,`  
-  
- `FileOpen,`  
-  
- `FilePrint,`  
-  
- `FilePrintTo,`  
-  
- `FileDDE,`  
-  
- `AppRegister,`  
-  
- `AppUnregister,`  
-  
- `RestartByRestartManager,`  
-  
- `FileNothing = -1`  
-  
- `};`  
+```  
+enum {  
+    FileNew,
+    FileOpen,
+    FilePrint,
+    FilePrintTo,
+    FileDDE,
+    AppRegister,
+    AppUnregister,
+    RestartByRestartManager,
+    FileNothing = -1  
+    };  
+```  
   
  これらの値の簡単な説明は、次の一覧を参照してください。  
   

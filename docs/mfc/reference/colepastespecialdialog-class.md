@@ -335,19 +335,14 @@ UINT GetSelectionType() const;
 ### <a name="remarks"></a>コメント  
  戻り値の型の値がで指定された、**選択**で宣言された列挙型、`COlePasteSpecialDialog`クラスです。  
   
- `enum Selection`  
-  
- `{`  
-  
- `pasteLink,`  
-  
- `pasteNormal,`  
-  
- `pasteOther,`  
-  
- `pasteStatic`  
-  
- `};`  
+```  
+enum Selection {
+    pasteLink,
+    pasteNormal,
+    pasteOther,
+    pasteStatic
+    };  
+```  
   
  次のこれらの値の簡単に説明します。  
   

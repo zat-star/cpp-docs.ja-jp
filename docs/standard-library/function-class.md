@@ -150,7 +150,7 @@ public:
   
  **名前空間:** std  
   
-##  <a name="a-namefunctionassigna--functionassign"></a><a name="function__assign"></a>  function::assign  
+##  <a name="function__assign"></a>  function::assign  
  呼び出し可能オブジェクトをこの関数オブジェクトに割り当てます。  
   
 ```  
@@ -178,7 +178,7 @@ template <class Fx, class Alloc>
 ### <a name="remarks"></a>コメント  
  各メンバー関数は、`*this` によって保持されている `callable object` を `operand` として渡される呼び出し可能オブジェクトに置き換えます。 ストレージとアロケーターオブジェクト `Ax` の両方を割り当てます。  
   
-##  <a name="a-namefunctionfunctiona--functionfunction"></a><a name="function__function"></a>  function::function  
+##  <a name="function__function"></a>  function::function  
  空のラッパーまたは固定のシグネチャを持つ任意の型の呼び出し可能オブジェクトを格納するラッパーを作成します。  
   
 ```  
@@ -201,7 +201,7 @@ template <class Fx, class Alloc>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  コピーする関数オブジェクト。  
   
  `Fx`  
@@ -292,7 +292,7 @@ f is non-empty (correct).
 g is empty (correct).  
 ```  
   
-##  <a name="a-namefunctionoperatorunspecifieda--functionoperator-unspecified"></a><a name="function__operator_unspecified"></a>  function::operator unspecified  
+##  <a name="function__operator_unspecified"></a>  function::operator unspecified  
  格納されている呼び出し可能オブジェクトが存在するかどうかをテストします。  
   
 ```  
@@ -332,7 +332,7 @@ not empty == false
 not empty == true  
 ```  
   
-##  <a name="a-namefunctionoperatora--functionoperator"></a><a name="function__operator__"></a>  function::operator()  
+##  <a name="function__operator__"></a>  function::operator()  
  呼び出し可能オブジェクトを呼び出します。  
   
 ```  
@@ -380,7 +380,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="a-namefunctionoperatoreqa--functionoperator"></a><a name="function__operator_eq"></a>  function::operator=  
+##  <a name="function__operator_eq"></a>  function::operator=  
  格納されている呼び出し可能オブジェクトを置き換えます。  
   
 ```  
@@ -459,7 +459,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="a-namefunctionresulttypea--functionresulttype"></a><a name="function__result_type"></a>  function::result_type  
+##  <a name="function__result_type"></a>  function::result_type  
  格納された呼び出し可能オブジェクトの戻り値の型。  
   
 ```  
@@ -499,7 +499,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="a-namefunctionswapa--functionswap"></a><a name="function__swap"></a>  function::swap  
+##  <a name="function__swap"></a>  function::swap  
  2 つの呼び出し可能オブジェクトを入れ替えます。  
   
 ```  
@@ -555,7 +555,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="a-namefunctiontargeta--functiontarget"></a><a name="function__target"></a>  function::target  
+##  <a name="function__target"></a>  function::target  
  格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。  
   
 ```  
@@ -614,7 +614,7 @@ empty == true
 no target == true  
 ```  
   
-##  <a name="a-namefunctiontargettypea--functiontargettype"></a><a name="function__target_type"></a>  function::target_type  
+##  <a name="function__target_type"></a>  function::target_type  
  呼び出し可能オブジェクトの型情報を取得します。  
   
 ```  
