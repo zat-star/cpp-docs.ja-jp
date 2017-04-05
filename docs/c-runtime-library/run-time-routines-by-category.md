@@ -1,51 +1,65 @@
 ---
 title: "カテゴリ別ランタイム ルーチン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.runtime"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カテゴリ, ランタイム関数"
-  - "関数 [CRT]"
-  - "関数 [CRT], ランタイム"
-  - "ルーチン, ランタイム"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.runtime
+dev_langs:
+- C++
+helpviewer_keywords:
+- routines, run-time
+- functions [CRT], run-time
+- categories, run-time functions
+- functions [CRT]
 ms.assetid: de6f5ac4-2226-4dad-be9f-deeb31138c9d
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# カテゴリ別ランタイム ルーチン
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 2e9fdeff96af536b1e742b6b15f59805ab231608
+ms.lasthandoff: 03/29/2017
 
-ここでは、Microsoft ランタイム ライブラリ ルーチンをカテゴリ別の一覧にして説明します。  参照しやすいように、複数のカテゴリに挙げられているルーチンもあります。  マルチバイト文字ルーチンやワイド文字ルーチンは、対応する 1 バイト文字ルーチンと一緒にまとめてあります。  
+---
+# <a name="run-time-routines-by-category"></a>カテゴリ別ランタイム ルーチン
+このセクションでは、Microsoft ランタイム ライブラリ ルーチンの一覧をカテゴリ別に示して説明します。 参照しやすいように、一部のルーチンは複数のカテゴリに記載されています。 マルチバイト文字ルーチンとワイド文字ルーチンは、対応する 1 バイト文字ルーチンと共にグループ化されています (存在する場合)。  
   
- ここではまた、同等の .NET Framework メソッドやクラスが利用可能な場合は、それらについても説明します。  
-  
- Microsoft ランタイム ライブラリ ルーチンの主要カテゴリは以下のとおりです。  
+ Microsoft ランタイム ライブラリ ルーチンの主なカテゴリは次のとおりです。  
   
 |||  
 |-|-|  
-|[引数へのアクセス](../c-runtime-library/argument-access.md)|[バッファー操作](../Topic/Buffer%20Manipulation.md)|  
+|[引数へのアクセス](../c-runtime-library/argument-access.md)|[バッファー操作](../c-runtime-library/buffer-manipulation.md)|  
 |[バイト分類](../c-runtime-library/byte-classification.md)|[文字分類](../c-runtime-library/character-classification.md)|  
 |[データの整列](../c-runtime-library/data-alignment.md)|[データ変換](../c-runtime-library/data-conversion.md)|  
 |[デバッグ ルーチン](../c-runtime-library/debug-routines.md)|[ディレクトリ制御](../c-runtime-library/directory-control.md)|  
 |[エラー処理](../c-runtime-library/error-handling-crt.md)|[例外処理ルーチン](../c-runtime-library/exception-handling-routines.md)|  
 |[ファイル処理](../c-runtime-library/file-handling.md)|[浮動小数点サポート](../c-runtime-library/floating-point-support.md)|  
-|[入出力](../Topic/Input%20and%20Output.md)|[国際化](../c-runtime-library/internationalization.md)|  
+|[入出力](../c-runtime-library/input-and-output.md)|[国際化](../c-runtime-library/internationalization.md)|  
 |[メモリ割り当て](../c-runtime-library/memory-allocation.md)|[プロセス制御と環境制御](../c-runtime-library/process-and-environment-control.md)|  
-|[保全性](../c-runtime-library/robustness.md)|[ランタイム エラー チェック](../Topic/Run-Time%20Error%20Checking.md)|  
+|[保全性](../c-runtime-library/robustness.md)|[ランタイム エラー チェック](../c-runtime-library/run-time-error-checking.md)|  
 |[検索と並べ替え](../c-runtime-library/searching-and-sorting.md)|[文字列操作](../c-runtime-library/string-manipulation-crt.md)|  
-|[システム コール](../Topic/System%20Calls.md)|[時間管理](../c-runtime-library/time-management.md)|  
+|[システム コール](../c-runtime-library/system-calls.md)|[時間管理](../c-runtime-library/time-management.md)|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)
