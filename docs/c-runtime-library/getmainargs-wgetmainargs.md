@@ -1,46 +1,63 @@
 ---
 title: "__getmainargs、__wgetmainargs | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "__wgetmainargs"
-  - "__getmainargs"
-apilocation: 
-  - "msvcr100.dll"
-  - "msvcrt.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr80.dll"
-  - "msvcr110.dll"
-  - "msvcr90.dll"
-  - "msvcr120.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "__wgetmainargs"
-  - "__getmainargs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__wgetmainargs"
-  - "__getmainargs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- __wgetmainargs
+- __getmainargs
+apilocation:
+- msvcr100.dll
+- msvcrt.dll
+- msvcr110_clr0400.dll
+- msvcr80.dll
+- msvcr110.dll
+- msvcr90.dll
+- msvcr120.dll
+apitype: DLLExport
+f1_keywords:
+- __wgetmainargs
+- __getmainargs
+dev_langs:
+- C++
+helpviewer_keywords:
+- __wgetmainargs
+- __getmainargs
 ms.assetid: f72f54eb-9509-4bdf-8752-40fc49055439
 caps.latest.revision: 3
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 3
----
-# __getmainargs、__wgetmainargs
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 7580d75e24f9291a3cb6943785b387a5ae67254f
+ms.lasthandoff: 04/01/2017
 
-解析するコマンド ラインを呼び出し、`main()` の戻るに渡されたポインターを通じて引数をコピーします。  
+---
+# <a name="getmainargs-wgetmainargs"></a>__getmainargs、__wgetmainargs
+コマンドライン解析を呼び出し、渡されたポインターを通して引数を `main()` にコピーし直します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 int __getmainargs(  
@@ -59,31 +76,31 @@ _startupinfo * _StartInfo);
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_Argc`  
- `argv`でない引数の数を含む整数。  `argc` パラメーターは 1.より大きいか等しい常に。  
+ これに続いて `argv` で渡される引数の数を格納した整数。 `argc` パラメーターは、必ず 1 以上になります。  
   
  `_Argv`  
- プログラムにユーザーが入力したコマンド ライン引数を表す NULL で終わる文字列の配列。  規則では、`argv[0]` はプログラムを起動するコマンド argv 1 \[\]で最初のコマンド ライン引数など、常に NULL の argv \[\] argc までです。  最初のコマンド ライン引数 `argv[1]` は常に、最後の 1 つが `argv[argc – 1]`です。  
+ プログラムのユーザーが入力したコマンド ライン引数を表す、null で終了する文字列配列。 規則により、`argv[0]` はプログラムが起動されるコマンドになります。argv[1] が最初のコマンド ライン引数で、以降、必ず NULL となる argv[argc] までの間、順に引数が続きます。 最初のコマンド ライン引数は、必ず `argv[1]` となり、最後のコマンド ライン引数は、`argv[argc - 1]` になります。  
   
  `_Env`  
- 変数を表す文字列の配列はユーザー環境で設定します。  この配列は空のエントリで終了します。  
+ ユーザーの環境で設定された変数を表す文字列の配列です。 この配列は NULL エントリで終了します。  
   
  `_DoWildCard`  
- 1 に設定するとコマンド ライン引数のワイルドカードを展開するか、0 に設定すると何もする整数。  
+ 整数。1 に設定されている場合はコマンドライン引数にあるワイルドカードを展開し、0 に設定されているの場合は何もしません。  
   
  `_StartInfo`  
- CRT DLL に渡す他の情報。  
+ CRT DLL に渡される他の情報です。  
   
-## 戻り値  
- 正常終了した場合は 0; 失敗した場合は負の値を返します。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合は 0、失敗した場合は負の値です。  
   
-## 解説  
- 非ワイド文字プラットフォームの `__getmainargs`、ワイド文字 \(Unicode\) プラットフォームの `__wgetmainargs` を使用します。  
+## <a name="remarks"></a>コメント  
+ `__getmainargs` は非ワイド文字プラットフォーム、`__wgetmainargs` はワイド文字 (Unicode) プラットフォームで使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|\_\_getmainargs|internal.h|  
-|\_\_wgetmainargs|internal.h|
+|-------------|---------------------|  
+|__getmainargs|internal.h|  
+|__wgetmainargs|internal.h|
