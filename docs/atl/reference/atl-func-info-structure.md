@@ -37,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
-ms.openlocfilehash: c18e1c5a41ef910cfe327fdbdd8d8885ef30a092
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 7bc607931c486f3dd7a398b277048db77e9b2f62
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="atlfuncinfo-structure"></a>_ATL_FUNC_INFO 構造体
@@ -58,7 +58,7 @@ struct _ATL_FUNC_INFO {
   
 ## <a name="members"></a>メンバー  
  **[cc]**  
- 呼び出し規則 この構造で使用する場合、[されます](../../atl/reference/idispeventsimpleimpl-class.md)クラスでは、このメンバーでなければなりません**CC_STDCALL**します。 `CC_CDECL`Windows ce のサポートされている唯一のオプションは、`CALLCONV`のフィールド、`_ATL_FUNC_INFO`構造体。 その他の値はサポートされていませんので、動作が定義されていません。  
+ 呼び出し規則 この構造体を使用する場合、[されます](../../atl/reference/idispeventsimpleimpl-class.md)このメンバーである必要がありますクラス、 **CC_STDCALL**です。 `CC_CDECL`Windows CE でサポートされる唯一のオプションは、`CALLCONV`のフィールド、`_ATL_FUNC_INFO`構造体。 その他の値はサポートされていないためその動作が定義されていません。  
   
  **vtReturn**  
  関数のバリアント型は、値を返します。  
@@ -67,19 +67,19 @@ struct _ATL_FUNC_INFO {
  関数パラメーターの数。  
   
  **pVarTypes**  
- 関数パラメーターのバリアント型の配列。  
+ 関数のパラメーターのバリアント型の配列。  
   
 ## <a name="remarks"></a>コメント  
- 内部的には、ATL は、タイプ ライブラリから取得した情報を保持するためにこの構造体を使用します。 使用されるイベント ハンドラーの型情報を提供する場合は、この構造体を直接操作する必要があります、[されます](../../atl/reference/idispeventsimpleimpl-class.md)クラスと[SINK_ENTRY_INFO](http://msdn.microsoft.com/library/1a0ae260-2c82-4926-a537-db01e5f206a7)マクロです。  
+ 内部的には、ATL は、タイプ ライブラリから取得した情報を保持するためにこの構造を使用します。 使用するイベント ハンドラーの型情報を提供する場合は、この構造体を直接操作する必要があります、[されます](../../atl/reference/idispeventsimpleimpl-class.md)クラスと[SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)マクロです。  
   
 ## <a name="example"></a>例  
- IDL で定義されているディスパッチ インターフェイス メソッドを指定します。  
+ IDL で定義されたディスパッチ インターフェイス メソッドを指定します。  
   
- [!code-cpp[NVC_ATL_Windowing #&139;](../../atl/codesnippet/cpp/atl-func-info-structure_1.idl)]  
+ [!code-cpp[NVC_ATL_Windowing # 139](../../atl/codesnippet/cpp/atl-func-info-structure_1.idl)]  
   
  定義して、`_ATL_FUNC_INFO`構造体。  
   
- [!code-cpp[NVC_ATL_Windowing #&140;](../../atl/codesnippet/cpp/atl-func-info-structure_2.h)]  
+ [!code-cpp[NVC_ATL_Windowing # 140](../../atl/codesnippet/cpp/atl-func-info-structure_2.h)]  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
@@ -87,7 +87,7 @@ struct _ATL_FUNC_INFO {
 ## <a name="see-also"></a>関連項目  
  [構造体](../../atl/reference/atl-structures.md)   
  [されますクラス](../../atl/reference/idispeventsimpleimpl-class.md)   
- [SINK_ENTRY_INFO](http://msdn.microsoft.com/library/1a0ae260-2c82-4926-a537-db01e5f206a7)
+ [SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)
 
 
 

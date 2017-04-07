@@ -34,16 +34,16 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 76cd62fdcbdc8bdc052f37f2bb13642d613402c2
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 0c60aeabc7e3a486514bb9c54e75ae94aa733011
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="nmake-fatal-error-u1078"></a>NMAKE の致命的なエラー U1078
-'expression' の定数がオーバーフローしました  
+'expression' にある定数がオーバーフローしました  
   
- 指定された式には、– 2,147, 483,648 を 2,147, 483,647 の範囲を超えています定数が含まれています。 定数は、次のような状況のいずれかで表示されました。  
+ 指定された式には、2,147, 483,648 を 2,147, 483,647 の範囲を超えています定数が含まれています。 定数は、次のいずれか。  
   
--   プリプロセッサ ディレクティブで指定された式  
+-   プリプロセス ディレクティブで指定された式  
   
 -   ダッシュ ボードで指定されたエラー レベル (**-**) コマンド修飾子

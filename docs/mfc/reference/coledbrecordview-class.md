@@ -39,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: 8269a71e9528da5c3468b5eb37f5dce3a16b14fd
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6129ad49f58cecb099927fe3d422fe215d143b67
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="coledbrecordview-class"></a>COleDBRecordView クラス
@@ -76,7 +76,7 @@ class COleDBRecordView : public CFormView
 > [!NOTE]
 >  OLE DB コンシューマー テンプレート クラスではなく、データ アクセス オブジェクト (DAO) クラスで作業している場合は、クラスを使用して[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)代わりにします。 詳細については、記事を参照してください。[概要: データベース プログラミング](../../data/data-access-programming-mfc-atl.md)です。  
   
- `COleDBRecordView`追跡、行セット内のユーザーの位置、レコード ビューは、ユーザー インターフェイスを更新できるようにします。 行セットは、メニュー項目などレコード ビューを無効にユーザー インターフェイス オブジェクト \u2012 または移動するためのツール バー ボタン \u2012 の先頭または末尾に移動するユーザー、さらに、同じ方向にします。  
+ `COleDBRecordView`追跡、行セット内のユーザーの位置、レコード ビューは、ユーザー インターフェイスを更新できるようにします。 ユーザーは、行セットの先頭または末尾に移動、レコード ビュー、ユーザー インターフェイス オブジェクトを無効になります: メニュー項目またはツール バー ボタンなど — を移動する同じ方向にさらにします。  
   
  行セット クラスの詳細については、次を参照してください。、[を使用して OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)資料です。  
   
@@ -152,13 +152,13 @@ virtual BOOL OnMove(UINT nIDMoveCommand);
  `nIDMoveCommand`  
  標準コマンド ID 値は次のいずれかです。  
   
-- `ID_RECORD_FIRST`\u2012 は、レコード セットの最初のレコードに移動します。  
+- `ID_RECORD_FIRST`レコード セットの最初のレコードに移動します。  
   
-- `ID_RECORD_LAST`\u2012 レコードに移動最後のレコード セットにします。  
+- `ID_RECORD_LAST`— レコードに移動最後のレコード セットにします。  
   
-- `ID_RECORD_NEXT`\u2012 は、レコード セットの次のレコードに移動します。  
+- `ID_RECORD_NEXT`レコード セットの次のレコードに移動します。  
   
-- `ID_RECORD_PREV`\u2012 は、レコード セットの前のレコードに移動します。  
+- `ID_RECORD_PREV`レコード セットの前のレコードに移動します。  
   
 ### <a name="return-value"></a>戻り値  
  移動が成功した場合は 0 以外。移動要求が拒否された場合は、それ以外の場合 0 を返します。  

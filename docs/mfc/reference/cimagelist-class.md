@@ -1,5 +1,5 @@
 ---
-title: "CImageList クラス |Microsoft ドキュメント"
+title: "CImageList クラス |Microsoft Docs"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -71,9 +71,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: e61d99d6d68b1c68cd5e306dd0fcd10d6fe4324d
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4f7f53d6398219c069fb1a6949ff609b4e38b4db
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="cimagelist-class"></a>CImageList クラス
@@ -98,56 +98,56 @@ class CImageList : public CObject
 |名前|説明|  
 |----------|-----------------|  
 |[CImageList::Add](#add)|イメージ リストに、イメージまたはイメージを追加します。|  
-|[CImageList::Attach](#attach)|イメージ リストのアタッチ、`CImageList`オブジェクトです。|  
+|[CImageList::Attach](#attach)|イメージ リストへのアタッチ、`CImageList`オブジェクト。|  
 |[CImageList::BeginDrag](#begindrag)|イメージのドラッグを開始します。|  
-|[CImageList::Copy](#copy)|内のイメージをコピー、`CImageList`オブジェクトです。|  
-|[CImageList::Create](#create)|イメージ リストを初期化し、それを`CImageList`オブジェクトです。|  
+|[CImageList::Copy](#copy)|内のイメージをコピー、`CImageList`オブジェクト。|  
+|[CImageList::Create](#create)|イメージ リストを初期化し、それにアタッチ、`CImageList`オブジェクト。|  
 |[CImageList::DeleteImageList](#deleteimagelist)|イメージ リストを削除します。|  
-|[CImageList::DeleteTempMap](#deletetempmap)|によって呼び出される、 [CWinApp](../../mfc/reference/cwinapp-class.md)アイドル時間のハンドラーを一時的なを削除する`CImageList`によって作成されたオブジェクト`FromHandle`します。|  
-|[CImageList::Detach](#detach)|イメージ リスト オブジェクトのデタッチ、`CImageList`オブジェクトし、イメージ リストへのハンドルを返します。|  
+|[CImageList::DeleteTempMap](#deletetempmap)|によって呼び出される、 [CWinApp](../../mfc/reference/cwinapp-class.md)を一時的なを削除するアイドル処理ハンドラー`CImageList`によって作成されたオブジェクト`FromHandle`です。|  
+|[CImageList::Detach](#detach)|イメージ リスト オブジェクトからのデタッチ、`CImageList`オブジェクトし、イメージ リストへのハンドルを返します。|  
 |[CImageList::DragEnter](#dragenter)|ドラッグ操作中に更新プログラムをロックし、指定した位置にドラッグ イメージを表示します。|  
 |[生じたとき](#dragleave)|ウィンドウのロックを解除し、ウィンドウを更新できるように、ドラッグ イメージを非表示にします。|  
 |[CImageList::DragMove](#dragmove)|ドラッグ アンド ドロップ操作中にドラッグされているイメージを移動します。|  
-|[CImageList::DragShowNolock](#dragshownolock)|ドラッグ操作中にウィンドウをロックすることがなくドラッグ イメージの表示と非表示を切り替えます。|  
+|[CImageList::DragShowNolock](#dragshownolock)|ドラッグ操作中にウィンドウをロックしないでドラッグ イメージの表示と非表示を切り替えます。|  
 |[:Draw](#draw)|ドラッグ アンド ドロップ操作中にドラッグされているイメージを描画します。|  
-|[CImageList::DrawEx](#drawex)|指定したデバイス コンテキストでのイメージ リストのアイテムを描画します。 関数は、指定の描画スタイルを使用し、指定した色を使用してイメージを統合します。|  
-|[CImageList::DrawIndirect](#drawindirect)|イメージ リストからイメージを描画します。|  
+|[CImageList::DrawEx](#drawex)|指定したデバイス コンテキストでイメージ リストのアイテムを描画します。 関数は、指定された描画スタイルを使用し、指定された色と画像を混ぜ合わせます。|  
+|[CImageList::DrawIndirect](#drawindirect)|イメージ リストのイメージを描画します。|  
 |[CImageList::EndDrag](#enddrag)|ドラッグ操作を終了します。|  
-|[CImageList::ExtractIcon](#extracticon)|イメージとイメージ リスト内のマスクに基づいてアイコンを作成します。|  
-|[CImageList::FromHandle](#fromhandle)|ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。 `CImageList` オブジェクトがハンドルに関連付けられていない場合は、一時的な `CImageList` オブジェクトが生成され、関連付けられます。|  
-|[CImageList::FromHandlePermanent](#fromhandlepermanent)|ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。 場合、`CImageList`オブジェクトは、ハンドルに関連付けられていない**NULL**が返されます。|  
+|[CImageList::ExtractIcon](#extracticon)|イメージとイメージ リスト内のマスクを基にアイコンを作成します。|  
+|[CImageList::FromHandle](#fromhandle)|ポインターを返します、`CImageList`イメージ リストへのハンドルが指定されるとします。 `CImageList` オブジェクトがハンドルに関連付けられていない場合は、一時的な `CImageList` オブジェクトが生成され、関連付けられます。|  
+|[CImageList::FromHandlePermanent](#fromhandlepermanent)|ポインターを返します、`CImageList`イメージ リストへのハンドルが指定されるとします。 場合、`CImageList`オブジェクトがハンドルに関連付けられていない**NULL**返されます。|  
 |[CImageList::GetBkColor](#getbkcolor)|イメージ リストの現在の背景色を取得します。|  
-|[CImageList::GetDragImage](#getdragimage)|ドラッグすることに使用される一時的なイメージ リストを取得します。|  
+|[CImageList::GetDragImage](#getdragimage)|ドラッグするために使用される一時イメージ リストを取得します。|  
 |[CImageList::GetImageCount](#getimagecount)|イメージ リスト内のイメージの数を取得します。|  
 |[CImageList::GetImageInfo](#getimageinfo)|イメージに関する情報を取得します。|  
-|[CImageList::GetSafeHandle](#getsafehandle)|取得**m_hImageList**します。|  
+|[CImageList::GetSafeHandle](#getsafehandle)|取得**m_hImageList**です。|  
 |[CImageList::Read](#read)|アーカイブからのイメージ リストを読み取ります。|  
-|[CImageList::Remove](#remove)|イメージ リストからイメージを削除します。|  
-|[CImageList::Replace](#replace)|イメージ リスト内のイメージを新しいイメージで置き換えます。|  
+|[CImageList::Remove](#remove)|イメージ リストのイメージを削除します。|  
+|[CImageList::Replace](#replace)|イメージ リスト内のイメージを新しいイメージに置き換えます。|  
 |[CImageList::SetBkColor](#setbkcolor)|イメージ リストの背景色を設定します。|  
 |[CImageList::SetDragCursorImage](#setdragcursorimage)|新しいドラッグ イメージを作成します。|  
-|[CImageList::SetImageCount](#setimagecount)|イメージ リストのイメージのカウントをリセットします。|  
-|[CImageList::SetOverlayImage](#setoverlayimage)|オーバーレイ マスクとして使用するイメージの一覧にイメージの&0; から始まるインデックスを追加します。|  
+|[CImageList::SetImageCount](#setimagecount)|イメージ リスト内のイメージの数をリセットします。|  
+|[CImageList::SetOverlayImage](#setoverlayimage)|イメージの 0 から始まるインデックスをオーバーレイ マスクとして使用するイメージの一覧に追加します。|  
 |[CImageList::Write](#write)|イメージ リストをアーカイブに書き込みます。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CImageList::operator HIMAGELIST](#operator_himagelist)|返します。、`HIMAGELIST`に接続されている、`CImageList`です。|  
+|[CImageList::operator HIMAGELIST](#operator_himagelist)|返します、`HIMAGELIST`にアタッチされている、`CImageList`です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CImageList::m_hImageList](#m_himagelist)|このオブジェクトにアタッチされているイメージ リストのハンドル。|  
+|[CImageList::m_hImageList](#m_himagelist)|このオブジェクトにアタッチされているイメージ リストを含むハンドルです。|  
   
 ## <a name="remarks"></a>コメント  
- 「イメージ リスト」は、0 から始まるインデックスを使用してをそれぞれ参照でき、同じサイズのイメージのコレクションです。 イメージ リストを使用して、アイコンまたはビットマップの大規模なセットを効率的に管理できます。 画面デバイス形式の&1; つの大きなビットマップのイメージ リスト内のすべてのイメージが含まれています。 イメージ リストには、透過的にイメージを描画するためのマスク (アイコンのスタイル) を含むモノクロ ビットマップを含めることもできます。 Microsoft Win32 アプリケーション プログラミング インターフェイス (API) を使用すると、イメージを描画を作成し、イメージ リストを破棄、追加しイメージを削除する、イメージを置き換える、イメージのマージ、およびイメージのドラッグ イメージ リストの関数を提供します。  
+ 「イメージ リスト」は、それぞれが参照できます 0 から始まるインデックスを使用して、同じサイズのイメージのコレクションです。 イメージ リストを使用して、多数のアイコンまたはビットマップを効率的に管理できます。 イメージ リスト内のすべてのイメージは、単一のワイド画面デバイス形式のビットマップに格納されます。 イメージ リストは、モノクロ ビットマップを透過的にイメージを描画するためのマスク (アイコンのスタイル) を含むもあります。 Microsoft Win32 アプリケーション プログラミング インターフェイス (API) を使用すると、イメージの描画、作成しイメージ リストを破棄、および追加および削除イメージ、イメージを置き換える、イメージのマージ、イメージのドラッグ イメージ リストの関数を提供します。  
   
- このコントロール (つまり、`CImageList`クラス) は以降、Windows 95/98 および Windows NT version 3.51 で実行するプログラムにのみ使用できます。  
+ このコントロール (したがって、`CImageList`クラス) は、Windows 95/98 および Windows NT 3.51 の下で実行されているプログラムにのみ使用可能な以降。  
   
- 使用する方法について`CImageList`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CImageList](../../mfc/using-cimagelist.md)します。  
+ 使用する方法についての`CImageList`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CImageList](../../mfc/using-cimagelist.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -178,25 +178,25 @@ int Add(HICON hIcon);
  イメージまたはイメージを含むビットマップへのポインター。 イメージの数は、ビットマップの幅から推測されます。  
   
  `pbmMask`  
- マスクを持つビットマップへのポインター。 イメージ リストとマスクを使用しない場合は、このパラメーターは無視されます。  
+ マスクを含むビットマップへのポインター。 イメージ リスト、マスクが使用されていない場合、このパラメーターは無視されます。  
   
  `crMask`  
- マスクを生成するために使用する色。 与えられたビットマップにこの色は、各ピクセルは黒に変更し、マスクの対応するビットは&1; に設定します。  
+ マスクを生成するために使用する色です。 各ピクセルの指定したビットマップでこの色が黒に変更され、マスクの対応するビットは 1 に設定します。  
   
  `hIcon`  
- ビットマップと、新しいイメージのマスクに含まれているアイコンのハンドル。  
+ ビットマップと、新しいイメージをマスクに含まれているアイコンのハンドルです。  
   
 ### <a name="return-value"></a>戻り値  
- 正常終了した場合は、最初の新しいイメージの 0 から始まるインデックスそれ以外の場合 – 1 です。  
+ 正常終了した場合は、最初の新しいイメージの 0 から始まるインデックスそれ以外の場合 - 1。  
   
 ### <a name="remarks"></a>コメント  
- 関連付けが済んだら、アイコンのハンドルを外すを担当しています。  
+ 関連付けが完了したら、アイコンのハンドルを解放を担当しています。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#1;](../../mfc/reference/codesnippet/cpp/cimagelist-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #1](../../mfc/reference/codesnippet/cpp/cimagelist-class_1.cpp)]  
   
 ##  <a name="attach"></a>CImageList::Attach  
- イメージ リストをアタッチするには、この関数を呼び出す、`CImageList`オブジェクトです。  
+ イメージ リストをアタッチするには、この関数を呼び出して、`CImageList`オブジェクト。  
   
 ```  
 BOOL Attach(HIMAGELIST hImageList);
@@ -207,10 +207,10 @@ BOOL Attach(HIMAGELIST hImageList);
  イメージ リスト オブジェクトへのハンドル。  
   
 ### <a name="return-value"></a>戻り値  
- 添付ファイルが正常に実行された場合は 0 以外それ以外の場合 0 を返します。  
+ 添付ファイルが成功した場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#2;](../../mfc/reference/codesnippet/cpp/cimagelist-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #2](../../mfc/reference/codesnippet/cpp/cimagelist-class_2.cpp)]  
   
 ##  <a name="begindrag"></a>CImageList::BeginDrag  
  イメージのドラッグを開始するには、この関数を呼び出します。  
@@ -223,19 +223,19 @@ BOOL BeginDrag(
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- ドラッグするイメージの&0; から始まるインデックス。  
+ ドラッグするイメージの 0 から始まるインデックス。  
   
  `ptHotSpot`  
- ドラッグの開始位置 (通常は、カーソル位置) の座標です。 座標は、イメージの左上隅を基準としました。  
+ ドラッグの開始位置 (通常は、カーソル位置) の座標。 座標は、イメージの左上隅を基準としました。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- この関数では、ドラッグすることに使用される一時的なイメージ リストを作成します。 イメージは、現在のカーソルで指定されたイメージとマスクを結合します。 それ以降に応答`WM_MOUSEMOVE`、メッセージを使用してドラッグ イメージを行うことができます、`DragMove`メンバー関数。 ドラッグ操作を終了するには、使用することができます、`EndDrag`メンバー関数。  
+ この関数は、ドラッグするために使用される一時イメージ リストを作成します。 イメージは、現在のカーソルに指定されたイメージとそのマスクを結合します。 その後に応答`WM_MOUSEMOVE`メッセージ、ドラッグ イメージを使用して移動することができます、`DragMove`メンバー関数。 使用することができます、ドラッグ操作を終了するため、`EndDrag`メンバー関数。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#3;](../../mfc/reference/codesnippet/cpp/cimagelist-class_3.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #3](../../mfc/reference/codesnippet/cpp/cimagelist-class_3.cpp)]  
   
 ##  <a name="cimagelist"></a>CImageList::CImageList  
  `CImageList` オブジェクトを構築します。  
@@ -245,7 +245,7 @@ CImageList();
 ```  
   
 ##  <a name="copy"></a>CImageList::Copy  
- このメンバー関数は、Win32 関数の動作を実装して[ImageList_Copy](http://msdn.microsoft.com/library/windows/desktop/bb761520)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 関数の動作を実装して[ImageList_Copy](http://msdn.microsoft.com/library/windows/desktop/bb761520)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
 BOOL Copy(
@@ -263,30 +263,30 @@ BOOL Copy(
   
 ### <a name="parameters"></a>パラメーター  
  *iDst*  
- コピー操作のコピー先として使用するイメージの&0; から始まるインデックス。  
+ コピー操作のコピー先として使用するイメージの 0 から始まるインデックス。  
   
  `iSrc`  
- コピー操作のソースとして使用するイメージの&0; から始まるインデックス。  
+ コピー操作のソースとして使用するイメージの 0 から始まるインデックス。  
   
  `uFlags`  
- ビット フラグの値にするコピー操作の種類を指定します。 このパラメーターは、次の値のいずれかになります。  
+ に対するコピー操作の種類を指定するビット フラグの値です。 このパラメーターには、次の値のいずれかを指定できます。  
   
 |値|説明|  
 |-----------|-------------|  
-|`ILCF_MOVE`|ソース イメージは、コピー先の画像のインデックスにコピーされます。 この操作により、既存のイメージの複数のインスタンス。 `ILCF_MOVE` が既定値です。|  
-|`ILCF_SWAP`|ソースとコピー先のイメージは、イメージ リスト内の位置を交換します。|  
+|`ILCF_MOVE`|ソース イメージは、移行先のイメージのインデックス位置にコピーされます。 この操作は、指定したイメージの複数のインスタンスになります。 `ILCF_MOVE` が既定値です。|  
+|`ILCF_SWAP`|送信元と送信先のイメージは、イメージ リスト内の位置を交換します。|  
   
  `pSrc`  
  ポインター、`CImageList`コピー操作の対象となっているオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&6;](../../mfc/reference/codesnippet/cpp/cimagelist-class_4.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #6](../../mfc/reference/codesnippet/cpp/cimagelist-class_4.cpp)]  
   
 ##  <a name="create"></a>CImageList::Create  
- イメージ リストを初期化し、それを[CImageList](../../mfc/reference/cimagelist-class.md)オブジェクトです。  
+ イメージ リストを初期化しにアタッチ、 [CImageList](../../mfc/reference/cimagelist-class.md)オブジェクト。  
   
 ```  
 BOOL Create(
@@ -324,36 +324,36 @@ BOOL Create(CImageList* pImageList);
   
 ### <a name="parameters"></a>パラメーター  
  `cx`  
- ピクセル単位で各イメージのサイズ。  
+ ピクセル単位で、各イメージのサイズ。  
   
  `cy`  
- ピクセル単位で各イメージのサイズ。  
+ ピクセル単位で、各イメージのサイズ。  
   
  `nFlags`  
- 作成するイメージ リストの種類を指定します。 このパラメーターは、次の値の組み合わせを指定できますが、1 つだけを含めること、`ILC_COLOR`値。  
+ 作成するイメージ リストの種類を指定します。 このパラメーターは、次の値の組み合わせを指定できますのいずれかのみを含めることができますが、`ILC_COLOR`値。  
   
 |値|説明|  
 |-----------|-------------|  
-|`ILC_COLOR`|その他の何もしない場合は、既定の動作を使用して`ILC_COLOR`* フラグを指定します。 既定値は、通常、 `ILC_COLOR4`; 既定では古いディスプレイ ドライバーが、`ILC_COLORDDB`です。|  
-|`ILC_COLOR4`|イメージの一覧については、ビットマップとして 4 ビット (16 色) のデバイスに依存しないビットマップ (DIB) セクションを使用します。|  
-|`ILC_COLOR8`|8 ビットの DIB セクションを使用します。 カラー テーブルに使用される色は、ハーフトーン パレットの色と同じです。|  
-|`ILC_COLOR16`|16 ビット (32/64 k の色) の DIB セクションです。|  
-|`ILC_COLOR24`|24 ビットの DIB セクションを使用します。|  
-|`ILC_COLOR32`|32 ビットの DIB セクションを使用します。|  
-|`ILC_COLORDDB`|デバイス依存ビットマップを使用します。|  
-|`ILC_MASK`|マスクを使用します。 イメージ リストには、マスクとして使用されるモノクロ ビットマップは、うちの&1; つ、2 つのビットマップが含まれています。 この値が含まれない場合、イメージ リストには、1 つだけのビットマップが含まれています。 参照してください[はイメージ リストのイメージを描画](../../mfc/drawing-images-from-an-image-list.md)マスクされたイメージの詳細についてです。|  
+|`ILC_COLOR`|他の場合は、既定の動作を使用して`ILC_COLOR`* フラグを指定します。 既定値は、通常、 `ILC_COLOR4`; が、古いディスプレイ ドライバーの既定値は`ILC_COLORDDB`します。|  
+|`ILC_COLOR4`|イメージ リストのビットマップとして 4 ビット (16 色) デバイスに依存しないビットマップ (DIB) セクションを使用します。|  
+|`ILC_COLOR8`|8 ビット DIB セクションを使用します。 カラー テーブルに使用される色は、ハーフトーン パレットの色と同じです。|  
+|`ILC_COLOR16`|16 ビット (32/64 k 色) DIB セクションです。|  
+|`ILC_COLOR24`|24 ビット DIB セクションを使用します。|  
+|`ILC_COLOR32`|32 ビット DIB セクションを使用します。|  
+|`ILC_COLORDDB`|デバイスに依存しないビットマップを使用します。|  
+|`ILC_MASK`|マスクを使用します。 イメージ リストには、マスクとして使用されるモノクロ ビットマップは、1 つ、2 つのビットマップが含まれています。 この値が含まれていない場合は、イメージ リストには、1 つだけのビットマップが含まれています。 参照してください[はイメージ リストのイメージを描画](../../mfc/drawing-images-from-an-image-list.md)マスクされたイメージの詳細についてはします。|  
   
  `nInitial`  
- イメージ リストが最初に格納されるイメージの数です。  
+ イメージ リストを含む最初にイメージの数。  
   
  `nGrow`  
- イメージ リストできます拡張を許可する、システムは、新しいイメージを格納するためにリストのサイズを変更する必要があるときにイメージの数。 このパラメーターは、サイズを変更したイメージ リストを含めることができる新しいイメージの数を表します。  
+ イメージのイメージ リストできます拡張を許可する、システムは、新しいイメージを格納するためにリストのサイズを変更する必要がある場合の数。 このパラメーターは、イメージのサイズを変更したリストには、新しいイメージの数を表します。  
   
  `nBitmapID`  
- イメージ リストと関連付けられているビットマップのリソース Id です。  
+ イメージ リストに関連するビットマップのリソース Id です。  
   
  `crMask`  
- マスクの生成に使用される色。 黒に、各ピクセルを指定したビットマップにこの色を変更し、マスクの対応するビットは&1; に設定します。  
+ マスクの生成に使用される色。 指定したビットマップでこの色の各ピクセルは黒に変更し、マスクの対応するビットは 1 に設定します。  
   
  `lpszBitmapID`  
  イメージのリソース Id を含む文字列。  
@@ -371,22 +371,22 @@ BOOL Create(CImageList* pImageList);
  2 つ目の既存のイメージのインデックス。  
   
  `dx`  
- 最初の画像のピクセル単位でのリレーションシップにおける&2; 番目の画像の x 軸のオフセットします。  
+ 最初のイメージのピクセル単位でのリレーションシップにおける 2 番目のイメージの x 軸のオフセットします。  
   
  `dy`  
- 最初の画像のピクセル単位でのリレーションシップにおける&2; 番目の画像の y 軸のオフセットします。  
+ 最初のイメージのピクセル単位でのリレーションシップにおける 2 番目のイメージの y 軸のオフセットします。  
   
  `pImageList`  
- ポインター、`CImageList`オブジェクトです。  
+ ポインター、`CImageList`オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 構築する、`CImageList`で&2; つの手順を実行します。 最初に、コンス トラクターを呼び出すし、まず`Create`、イメージ リストを作成およびそれにアタッチする、`CImageList`オブジェクトです。  
+ 構築する、 `CImageList` 2 つの手順でします。 最初に、コンス トラクターを呼び出すし、まず`Create`、イメージ リストを作成しにアタッチする、`CImageList`オブジェクト。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#7;](../../mfc/reference/codesnippet/cpp/cimagelist-class_5.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #7](../../mfc/reference/codesnippet/cpp/cimagelist-class_5.cpp)]  
   
 ##  <a name="deleteimagelist"></a>CImageList::DeleteImageList  
  イメージ リストを削除するには、この関数を呼び出します。  
@@ -399,20 +399,20 @@ BOOL DeleteImageList();
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#8;](../../mfc/reference/codesnippet/cpp/cimagelist-class_6.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #8](../../mfc/reference/codesnippet/cpp/cimagelist-class_6.cpp)]  
   
 ##  <a name="deletetempmap"></a>CImageList::DeleteTempMap  
- により自動的に呼び出さ、`CWinApp`アイドル ハンドラー`DeleteTempMap`一時的な削除`CImageList`によって作成されたオブジェクト[FromHandle](#fromhandle)、すべてのハンドルを破棄しません ( `hImageList`) に一時的に関連付けられている、 **ImageList**オブジェクトです。  
+ によって自動的に呼び出されます、`CWinApp`アイドル処理ハンドラー`DeleteTempMap`一時的な削除`CImageList`によって作成されたオブジェクト[FromHandle](#fromhandle)がすべてのハンドルを破棄しません ( `hImageList`) に一時的に関連付けられている、 **ImageList**オブジェクト。  
   
 ```  
 static void PASCAL DeleteTempMap();
 ```  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#9;](../../mfc/reference/codesnippet/cpp/cimagelist-class_7.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #9](../../mfc/reference/codesnippet/cpp/cimagelist-class_7.cpp)]  
   
 ##  <a name="detach"></a>CImageList::Detach  
- イメージ リスト オブジェクトをデタッチするには、この関数を呼び出して、`CImageList`オブジェクトです。  
+ イメージ リスト オブジェクトをデタッチするには、この関数を呼び出して、`CImageList`オブジェクト。  
   
 ```  
 HIMAGELIST Detach();
@@ -425,10 +425,10 @@ HIMAGELIST Detach();
  この関数は、イメージ リストのオブジェクトへのハンドルを返します。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::Attach](#attach)します。  
+  例を参照して[CImageList::Attach](#attach)です。  
   
 ##  <a name="dragenter"></a>CImageList::DragEnter  
- ドラッグ操作中にロックの更新で指定されたウィンドウを`pWndLock`で指定された位置にドラッグ イメージを表示および`point`です。  
+ ドラッグ操作中にロック更新で指定されたウィンドウを`pWndLock`で指定された位置にドラッグ イメージを表示および`point`です。  
   
 ```  
 static BOOL PASCAL DragEnter(
@@ -441,23 +441,23 @@ static BOOL PASCAL DragEnter(
  ドラッグ イメージを所有するウィンドウへのポインター。  
   
  `point`  
- ドラッグ イメージを表示する位置。 (クライアント領域ではなく) ウィンドウの左上隅に対する相対座標とは。  
+ ドラッグ イメージを表示する位置。 座標は、(クライアント領域ではなく) ウィンドウの左上隅に対して相対的です。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 座標は、座標を指定するときに枠線やタイトル バー、メニュー バーなどのウィンドウの要素の幅を補う必要がありますので、ウィンドウの左上隅を基準としました。  
+ 座標は、座標を指定するときに、境界線、タイトル バー、メニュー バーなどのウィンドウの要素の幅を補正する必要がありますので、ウィンドウの左上隅を基準としました。  
   
- 場合`pWndLock`は**NULL**、この関数は、デスクトップ ウィンドウに関連付けられている表示のコンテキストで、イメージを描画し、画面の左上隅に対する相対座標は、です。  
+ 場合`pWndLock`は**NULL**、この関数は、デスクトップのウィンドウに関連付けられている表示のコンテキストで、イメージを描画し、画面の左上隅に対する相対座標は、します。  
   
- この関数は、ドラッグ操作中に指定されたウィンドウにあるその他のすべての更新をロックします。 ドラッグ アンド ドロップ操作のターゲットを強調表示などのドラッグ操作中に描画を実行する必要がある場合は一時的に非表示にするドラッグされているイメージを使用して、[生じたとき](#dragleave)関数です。  
+ この関数は、ドラッグ操作中に指定されたウィンドウを他のすべての更新プログラムをロックします。 ドラッグ アンド ドロップ操作のターゲットを強調表示などのドラッグ操作中に描画を実行する必要がある場合を一時的に非表示にするドラッグされているイメージを使用して、[生じたとき](#dragleave)関数。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::BeginDrag](#begindrag)します。  
+  例を参照して[CImageList::BeginDrag](#begindrag)です。  
   
 ##  <a name="dragleave"></a>生じたとき  
- 指定されたウィンドウのロックを解除`pWndLock`し、ドラッグ イメージを更新するウィンドウを非表示にします。  
+ 指定されたウィンドウのロックを解除`pWndLock`ドラッグ イメージを更新するウィンドウを非表示にします。  
   
 ```  
 static BOOL PASCAL DragLeave(CWnd* pWndLock);
@@ -471,7 +471,7 @@ static BOOL PASCAL DragLeave(CWnd* pWndLock);
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::EndDrag](#enddrag)します。  
+  例を参照して[CImageList::EndDrag](#enddrag)です。  
   
 ##  <a name="dragmove"></a>CImageList::DragMove  
  ドラッグ アンド ドロップ操作中にドラッグされているイメージを移動するには、この関数を呼び出します。  
@@ -488,13 +488,13 @@ static BOOL PASCAL DragMove(CPoint pt);
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- この関数は通常に応えてと呼ばれる、`WM_MOUSEMOVE`メッセージです。 ドラッグ操作を開始するを使用して、`BeginDrag`メンバー関数。  
+ この関数と通常呼ばれるへの応答、`WM_MOUSEMOVE`メッセージ。 を開始するには、ドラッグ操作を使用して、`BeginDrag`メンバー関数。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&4;](../../mfc/reference/codesnippet/cpp/cimagelist-class_8.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList 4](../../mfc/reference/codesnippet/cpp/cimagelist-class_8.cpp)]  
   
 ##  <a name="dragshownolock"></a>CImageList::DragShowNolock  
- ドラッグ操作中にウィンドウをロックすることがなくドラッグ イメージの表示と非表示を切り替えます。  
+ ドラッグ操作中にウィンドウをロックしないでドラッグ イメージの表示と非表示を切り替えます。  
   
 ```  
 static BOOL PASCAL DragShowNolock(BOOL bShow);
@@ -508,7 +508,7 @@ static BOOL PASCAL DragShowNolock(BOOL bShow);
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- [CImageList::DragEnter](#dragenter)関数は、ドラッグ操作中にウィンドウに対するすべての更新をロックします。 ただし、この関数では、ウィンドウはロックされません。  
+ [CImageList::DragEnter](#dragenter)関数は、ドラッグ操作中にウィンドウにすべての更新プログラムをロックします。 ただし、この関数では、ウィンドウはロックされません。  
   
 ##  <a name="draw"></a>:Draw  
  ドラッグ アンド ドロップ操作中にドラッグされているイメージを描画するには、この関数を呼び出します。  
@@ -526,30 +526,30 @@ BOOL Draw(
  コピー先デバイス コンテキストへのポインター。  
   
  `nImage`  
- 描画するイメージの&0; から始まるインデックス。  
+ 描画するイメージの 0 から始まるインデックス。  
   
  `pt`  
- 指定したデバイス コンテキスト内に描画する場所です。  
+ 指定したデバイス コンテキスト内で描画する場所です。  
   
  `nStyle`  
- 描画スタイルを指定するフラグします。 これらの値の&1; つ以上を指定できます。  
+ 描画スタイルを指定するフラグします。 これらの値の 1 つ以上を指定できます。  
   
 |値|説明|  
 |-----------|-------------|  
-|`ILD_BLEND25`、 **ILD_FOCUS**|システムの強調表示色を 25% を混合して、イメージを描画します。 イメージ リストには、マスクが含まれていない場合は、この値を指定しても効果はありません。|  
-|`ILD_BLEND50`、 **ILD_SELECTED**、 **ILD_BLEND**|システムの強調表示色を 50% を混合して、イメージを描画します。 イメージ リストには、マスクが含まれていない場合は、この値を指定しても効果はありません。|  
+|`ILD_BLEND25`、 **ILD_FOCUS**|システムの強調表示色を 25% を混合して、イメージを描画します。 この値はイメージ リストには、マスクが含まれていない場合に影響しません。|  
+|`ILD_BLEND50`、 **ILD_SELECTED**、 **ILD_BLEND**|システムの強調表示色を 50% を混合して、イメージを描画します。 この値はイメージ リストには、マスクが含まれていない場合に影響しません。|  
 |**ILD_MASK**|マスクを描画します。|  
-|`ILD_NORMAL`|イメージ リストの背景色を使用してイメージを描画します。 背景色がある場合、`CLR_NONE`透過的にマスクを使用して値、イメージを描画します。|  
+|`ILD_NORMAL`|イメージ リストの背景色を使用してイメージを描画します。 背景色がある場合、`CLR_NONE`マスクを使用して、透過的に値、イメージを描画します。|  
 |`ILD_TRANSPARENT`|透過的に背景色に関係なく、マスクを使用して、イメージを描画します。|  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::SetOverlayImage](#setoverlayimage)します。  
+  例を参照して[CImageList::SetOverlayImage](#setoverlayimage)です。  
   
 ##  <a name="drawex"></a>CImageList::DrawEx  
- 指定したデバイス コンテキストでのイメージ リストのアイテムを描画します。  
+ 指定したデバイス コンテキストでイメージ リストのアイテムを描画します。  
   
 ```  
 BOOL DrawEx(
@@ -567,34 +567,34 @@ BOOL DrawEx(
  コピー先デバイス コンテキストへのポインター。  
   
  `nImage`  
- 描画するイメージの&0; から始まるインデックス。  
+ 描画するイメージの 0 から始まるインデックス。  
   
  `pt`  
- 指定したデバイス コンテキスト内に描画する場所です。  
+ 指定したデバイス コンテキスト内で描画する場所です。  
   
  `sz`  
- イメージの左上隅に対して相対的に描画するイメージの部分のサイズ。 参照してください`dx`と*dy*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
+ イメージの左上隅に対して相対的に描画するイメージの部分のサイズ。 参照してください`dx`と*dy*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  *clrBk*  
- イメージの背景色です。 参照してください*rgbBk*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
+ イメージの背景色です。 参照してください*rgbBk*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  *clrFg*  
- イメージの前景色。 参照してください*rgbFg*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
+ イメージの前景色。 参照してください*rgbFg*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  `nStyle`  
- 描画スタイルを指定するフラグします。 参照してください*は*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
+ 描画スタイルを指定するフラグします。 参照してください*は*で[ImageList_DrawEx](http://msdn.microsoft.com/library/windows/desktop/bb761536)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 関数は、指定の描画スタイルを使用し、指定した色を使用してイメージを統合します。  
+ 関数は、指定された描画スタイルを使用し、指定された色と画像を混ぜ合わせます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#10;](../../mfc/reference/codesnippet/cpp/cimagelist-class_9.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #10](../../mfc/reference/codesnippet/cpp/cimagelist-class_9.cpp)]  
   
 ##  <a name="drawindirect"></a>CImageList::DrawIndirect  
- イメージの一覧からイメージを描画するには、このメンバー関数を呼び出します。  
+ イメージ リストのイメージを描画するには、このメンバー関数を呼び出します。  
   
 ```  
 BOOL DrawIndirect(IMAGELISTDRAWPARAMS* pimldp);
@@ -620,71 +620,71 @@ BOOL DrawIndirect(
  ポインター、[された](http://msdn.microsoft.com/library/windows/desktop/bb761395)描画操作に関する情報を格納する構造体。  
   
  `pDC`  
- コピー先デバイス コンテキストへのポインター。 これを削除する必要があります[CDC](../../mfc/reference/cdc-class.md)オブジェクトの操作が終了します。  
+ コピー先デバイス コンテキストへのポインター。 これを削除する必要があります[CDC](../../mfc/reference/cdc-class.md)オブジェクトが完了したことがあるときです。  
   
  `nImage`  
- 描画するイメージの&0; から始まるインデックス。  
+ 描画するイメージの 0 から始まるインデックス。  
   
  `pt`  
- A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)イメージを描画する x および y 座標を含む構造体。  
+ A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)イメージを描画する x 座標と y 座標を含む構造体。  
   
  `sz`  
- A[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)描画するイメージのサイズを示す構造体。  
+ A[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造体を描画するイメージのサイズを示すです。  
   
  *ptOrigin*  
- A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)イメージ自体を基準として描画操作の左上隅を指定する x および y 座標を含む構造体。 左側の指定した x 座標と y 座標の上に配置されているイメージのピクセルは描画されません。  
+ A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)イメージ自体に関して描画操作の左上隅を指定する x 座標と y 座標を含む構造体。 左側の x 座標と y 座標の上に配置されている画像のピクセルは描画されません。  
   
  `fStyle`  
- 描画スタイルと、必要に応じて、オーバーレイのイメージを指定するフラグします。 オーバーレイのイメージの詳細については「解説」セクションを参照してください。 MFC の既定の実装`ILD_NORMAL`、イメージ リストの背景色を使用してイメージを描画します。 背景色がある場合、`CLR_NONE`マスクを透過的に使用する値、イメージを描画します。  
+ 描画スタイルと、必要に応じて、オーバーレイのイメージを指定するフラグします。 オーバーレイ イメージについては「解説」セクションを参照してください。 MFC の既定の実装`ILD_NORMAL`、イメージ リストの背景色を使用してイメージを描画します。 背景色がある場合、`CLR_NONE`マスクを使用して、透過的に値、イメージを描画します。  
   
- 可能なその他のスタイルは、「、**は**のメンバー、[された](http://msdn.microsoft.com/library/windows/desktop/bb761395)構造体。  
+ 考えられる他のスタイルは、「、**は**のメンバー、[された](http://msdn.microsoft.com/library/windows/desktop/bb761395)構造体。  
   
  *dwRop*  
- ラスター オペレーション コードを指定する値。 これらのコードでは、最終的な色を実現するために、移行先の四角形の色データの元の四角形の色データの結合方法を定義します。 MFC の既定の実装、 **SRCCOPY**元の四角形をコピー先の四角形に直接コピーします。 場合にこのパラメーターは無視、`fStyle`パラメーターは含まれません、 **ILD_ROP**フラグ。  
+ ラスター オペレーション コードを指定する値。 これらのコードでは、最終的な色を実現するために、移行先の四角形の色データの元の四角形の色データの結合方法を定義します。 MFC の既定の実装、 **SRCCOPY**元の四角形を先の四角形に直接コピーします。 場合、このパラメーターは無視されます、`fStyle`パラメーターを含まない、 **ILD_ROP**フラグ。  
   
- 他の有効値は、「、 **dwRop**のメンバー、[された](http://msdn.microsoft.com/library/windows/desktop/bb761395)構造体。  
+ その他の使用可能な値は、「、 **dwRop**のメンバー、[された](http://msdn.microsoft.com/library/windows/desktop/bb761395)構造体。  
   
  *rgbBack*  
- 既定では、画像の背景色`CLR_DEFAULT`します。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
+ 既定では、画像の背景色`CLR_DEFAULT`です。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
   
 |値|説明|  
 |-----------|-------------|  
-|`CLR_DEFAULT`|既定の背景色。 イメージ リストの背景色を使用してイメージを描画します。|  
-|`CLR_NONE`|背景色がありません。 イメージが透過的に描画します。|  
+|`CLR_DEFAULT`|既定の背景色。 イメージがイメージ リストの背景色を使用して描画します。|  
+|`CLR_NONE`|背景色がありません。 イメージは透過的に描画されます。|  
   
  *rgbFore*  
- 既定では、前景色をイメージ`CLR_DEFAULT`します。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
+ 既定では、前景色をイメージ`CLR_DEFAULT`です。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
   
 |値|説明|  
 |-----------|-------------|  
-|`CLR_DEFAULT`|既定の前景の色。 前景色としてシステムの強調表示色を使用してイメージを描画します。|  
+|`CLR_DEFAULT`|既定の前景の色。 イメージは、システムの強調表示色を使用して、前景色として描画されます。|  
 |`CLR_NONE`|ディザー カラーなし。 イメージは、コピー先デバイス コンテキストの色とブレンドされます。|  
   
  場合にのみ、このパラメーターは使用`fStyle`を含む、`ILD_BLEND25`または`ILD_BLEND50`フラグ。  
   
  *fState*  
- 描画状態を指定するフラグを設定します。 このメンバーは、1 つまたは複数のイメージ リストの状態フラグを含めることができます。  
+ 描画の状態を指定するフラグします。 このメンバーは、1 つまたは複数のイメージ リストの状態フラグを含めることができます。  
   
  *フレーム*  
  飽和とアルファ ブレンドの効果の動作に影響します。  
   
- 使用すると**ILS_SATURATE**、このメンバーは、アイコン内の各ピクセルの RGB の組の各色コンポーネントに追加されている値を保持します。  
+ 使用すると**ILS_SATURATE**、このメンバーは、アイコンでは、各ピクセルの RGB トリプレットの各色コンポーネントに追加される値を保持します。  
   
- 使用すると**ILS_APLHA**、このメンバーは、アルファ チャネルに値を保持します。 この値は、0 から 255 で、0 が完全に透明、255 が完全に不透明に指定できます。  
+ 使用すると**ILS_APLHA**、このメンバーはアルファ チャネルの値を保持します。 この値は、255 0 が完全に透明で、255 が完全に不透明の 0 から指定できます。  
   
  *crEffect*  
- A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)光彩とシャドウ効果を使用する値。  
+ A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)光彩とシャドウ効果で使用される値。  
   
 ### <a name="return-value"></a>戻り値  
- **TRUE**イメージが正常に描画された、それ以外の場合**FALSE**します。  
+ **TRUE**場合は、イメージが正常にそれ以外の描画**FALSE**です。  
   
 ### <a name="remarks"></a>コメント  
- Win32 構造を手動で入力する場合は、最初のバージョンを使用します。 MFC の既定の引数の&1; つ以上の利用または構造体を操作しないようにする場合は、2 番目のバージョンを使用します。  
+ Win32 構造を手動で入力する場合は、最初のバージョンを使用します。 MFC の既定の引数の 1 つ以上の利用、または構造体を操作を回避する場合は、2 番目のバージョンを使用します。  
   
- オーバーレイ イメージは、このメンバー関数で指定されたプライマリのイメージの上に描画される画像、`nImage`パラメーター。 使用してオーバーレイ マスクを描画、[描画](#draw)オーバーレイ マスクを使用して指定の&1; から始まるインデックスを持つメンバー関数、[から](http://msdn.microsoft.com/library/windows/desktop/bb761408)マクロです。  
+ オーバーレイ イメージでは、このメンバー関数で指定したプライマリのイメージの上に描画されるイメージとは、`nImage`パラメーター。 オーバーレイ マスクを使用して、描画、[描画](#draw)オーバーレイ マスクを使用して指定の 1 から始まるインデックスを持つメンバー関数、[から](http://msdn.microsoft.com/library/windows/desktop/bb761408)マクロです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#11;](../../mfc/reference/codesnippet/cpp/cimagelist-class_10.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #11](../../mfc/reference/codesnippet/cpp/cimagelist-class_10.cpp)]  
   
 ##  <a name="enddrag"></a>CImageList::EndDrag  
  ドラッグ操作を終了するには、この関数を呼び出します。  
@@ -694,10 +694,10 @@ static void PASCAL EndDrag();
 ```  
   
 ### <a name="remarks"></a>コメント  
- ドラッグ操作を開始するを使用して、`BeginDrag`メンバー関数。  
+ を開始するには、ドラッグ操作を使用して、`BeginDrag`メンバー関数。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#5;](../../mfc/reference/codesnippet/cpp/cimagelist-class_11.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #5](../../mfc/reference/codesnippet/cpp/cimagelist-class_11.cpp)]  
   
 ##  <a name="extracticon"></a>CImageList::ExtractIcon  
  イメージとイメージ リストに関連するマスクに基づいてアイコンを作成するには、この関数を呼び出します。  
@@ -708,19 +708,19 @@ HICON ExtractIcon(int nImage);
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- イメージの&0; から始まるインデックス。  
+ イメージの 0 から始まるインデックス。  
   
 ### <a name="return-value"></a>戻り値  
- 正常終了した場合は、アイコンのハンドルそれ以外の場合**NULL**します。  
+ 正常終了した場合は、アイコンのハンドルそれ以外の場合**NULL**です。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドでの動作に依存している、 [ImageList_ExtractIcon](http://msdn.microsoft.com/library/windows/desktop/bb761401)マクロをアイコンを作成します。 参照してください、 [ImageList_ExtractIcon](http://msdn.microsoft.com/library/windows/desktop/bb761401)用のマクロの詳細については、アイコンの作成と削除をします。  
+ このメソッドは、の動作に依存している、 [ImageList_ExtractIcon](http://msdn.microsoft.com/library/windows/desktop/bb761401)マクロをアイコンを作成します。 参照してください、 [ImageList_ExtractIcon](http://msdn.microsoft.com/library/windows/desktop/bb761401)アイコンの作成とクリーンアップの詳細についてマクロです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#12;](../../mfc/reference/codesnippet/cpp/cimagelist-class_12.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #12](../../mfc/reference/codesnippet/cpp/cimagelist-class_12.cpp)]  
   
 ##  <a name="fromhandle"></a>CImageList::FromHandle  
- ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。  
+ ポインターを返します、`CImageList`イメージ リストへのハンドルが指定されるとします。  
   
 ```  
 static CImageList* PASCAL FromHandle(HIMAGELIST hImageList);
@@ -731,16 +731,16 @@ static CImageList* PASCAL FromHandle(HIMAGELIST hImageList);
  イメージ リストを指定します。  
   
 ### <a name="return-value"></a>戻り値  
- ポインター、`CImageList`成功以外の場合は、オブジェクト**NULL**します。  
+ ポインター、`CImageList`それ以外の成功した場合は、オブジェクト**NULL**です。  
   
 ### <a name="remarks"></a>コメント  
- 場合、`CImageList`ハンドルが一時的に既にアタッチされていない`CImageList`オブジェクトが作成され、接続されています。 この一時`CImageList`オブジェクトは、次回アプリケーションは、イベント ループでのアイドル時間を持つ、までれた時点ですべての一時オブジェクトは削除のみ有効です。  
+ 場合、`CImageList`ハンドル、一時的なに既にアタッチされていない`CImageList`オブジェクトが作成され、接続されています。 この一時`CImageList`オブジェクトが有効では、次回アプリケーションがある移動するまでのアイドル時間イベント ループで、どの時にすべての一時オブジェクトが削除専用です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#13;](../../mfc/reference/codesnippet/cpp/cimagelist-class_13.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #13](../../mfc/reference/codesnippet/cpp/cimagelist-class_13.cpp)]  
   
 ##  <a name="fromhandlepermanent"></a>CImageList::FromHandlePermanent  
- ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。  
+ ポインターを返します、`CImageList`イメージ リストへのハンドルが指定されるとします。  
   
 ```  
 static CImageList* PASCAL FromHandlePermanent(HIMAGELIST hImageList);
@@ -751,13 +751,13 @@ static CImageList* PASCAL FromHandlePermanent(HIMAGELIST hImageList);
  イメージ リストを指定します。  
   
 ### <a name="return-value"></a>戻り値  
- ポインター、`CImageList`成功以外の場合は、オブジェクト**NULL**します。  
+ ポインター、`CImageList`それ以外の成功した場合は、オブジェクト**NULL**です。  
   
 ### <a name="remarks"></a>コメント  
- 場合、`CImageList`オブジェクトは、ハンドルに関連付けられていない**NULL**が返されます。  
+ 場合、`CImageList`オブジェクトがハンドルに関連付けられていない**NULL**返されます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#14;](../../mfc/reference/codesnippet/cpp/cimagelist-class_14.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #14](../../mfc/reference/codesnippet/cpp/cimagelist-class_14.cpp)]  
   
 ##  <a name="getbkcolor"></a>CImageList::GetBkColor  
  イメージ リストの現在の背景色を取得するには、この関数を呼び出します。  
@@ -770,10 +770,10 @@ COLORREF GetBkColor() const;
  RGB 色の値の`CImageList`オブジェクトの背景色。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::SetBkColor](#setbkcolor)します。  
+  例を参照して[CImageList::SetBkColor](#setbkcolor)です。  
   
 ##  <a name="getdragimage"></a>CImageList::GetDragImage  
- ドラッグすることに使用される一時的なイメージ リストを取得します。  
+ ドラッグするために使用される一時イメージ リストを取得します。  
   
 ```  
 static CImageList* PASCAL GetDragImage(
@@ -783,13 +783,13 @@ static CImageList* PASCAL GetDragImage(
   
 ### <a name="parameters"></a>パラメーター  
  `lpPoint`  
- アドレス、[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)を現在を受け取る構造体の位置にドラッグします。  
+ アドレス、[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)受け取る現在位置にドラッグします。  
   
  *lpPointHotSpot*  
- アドレス、**ポイント**ドラッグ位置からドラッグ イメージのオフセットを受け取る構造体。  
+ アドレス、**ポイント**ドラッグの位置に対してドラッグ イメージのオフセットを受け取る。  
   
 ### <a name="return-value"></a>戻り値  
- かどうかは成功すると、一時イメージへのポインターを一覧表示されるドラッグ; で使用それ以外の場合、 **NULL**します。  
+ かどうか成功すると、一時的なイメージへのポインターを一覧表示されるドラッグ; の使用それ以外の場合、 **NULL**です。  
   
 ##  <a name="getimagecount"></a>CImageList::GetImageCount  
  イメージ リスト内のイメージの数を取得するには、この関数を呼び出します。  
@@ -802,7 +802,7 @@ int GetImageCount() const;
  イメージの数。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::ExtractIcon](#extracticon)します。  
+  例を参照して[CImageList::ExtractIcon](#extracticon)です。  
   
 ##  <a name="getimageinfo"></a>CImageList::GetImageInfo  
  この関数では、イメージに関する情報を取得します。  
@@ -815,16 +815,16 @@ BOOL GetImageInfo(
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- イメージの&0; から始まるインデックス。  
+ イメージの 0 から始まるインデックス。  
   
  *pImageInfo*  
- ポインター、 [IMAGEINFO](http://msdn.microsoft.com/library/windows/desktop/bb761393)イメージに関する情報を受け取る構造体。 イメージのビットマップを直接操作は、この構造体の情報を使用できます。  
+ ポインター、 [IMAGEINFO](http://msdn.microsoft.com/library/windows/desktop/bb761393)イメージに関する情報を受け取る構造体。 この構造体の情報は、イメージのビットマップを直接操作に使用できます。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- `IMAGEINFO`構造体には、イメージ リスト内のイメージに関する情報が含まれています。  
+ `IMAGEINFO`構造がイメージ リスト内のイメージに関する情報を格納します。  
   
 ##  <a name="getsafehandle"></a>CImageList::GetSafeHandle  
  取得するには、この関数を呼び出して、 **m_hImageList**データ メンバーです。  
@@ -834,10 +834,10 @@ HIMAGELIST GetSafeHandle() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- は、接続されているイメージ リストへのハンドルそれ以外の場合**NULL**オブジェクトがアタッチされていない場合。  
+ 接続されているイメージ リストへのハンドルそれ以外の場合**NULL**オブジェクトがアタッチされていない場合。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#15;](../../mfc/reference/codesnippet/cpp/cimagelist-class_15.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #15](../../mfc/reference/codesnippet/cpp/cimagelist-class_15.cpp)]  
   
 ##  <a name="m_himagelist"></a>CImageList::m_hImageList  
  このオブジェクトにアタッチされているイメージ リストのハンドル。  
@@ -845,26 +845,26 @@ HIMAGELIST GetSafeHandle() const;
  **HIMAGELIST m_hImageList です。**  
   
 ### <a name="remarks"></a>コメント  
- **M_hImageList**データ メンバーは型のパブリック変数`HIMAGELIST`します。  
+ **M_hImageList**データ メンバーは型のパブリック変数`HIMAGELIST`です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList 第&23;](../../mfc/reference/codesnippet/cpp/cimagelist-class_16.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList # 23](../../mfc/reference/codesnippet/cpp/cimagelist-class_16.cpp)]  
   
 ##  <a name="operator_himagelist"></a>CImageList::operator HIMAGELIST  
- この演算子を使用して、接続されているハンドルの取得、`CImageList`オブジェクトです。  
+ この演算子を使用して接続されているハンドルの取得、`CImageList`オブジェクト。  
   
 ```  
 operator HIMAGELIST() const;  
 ```  
   
 ### <a name="return-value"></a>戻り値  
- かどうかは成功すると、イメージ リストへのハンドルによって表される、`CImageList`オブジェクト。 それ以外の場合**NULL**します。  
+ かどうかは成功すると、イメージ リストへのハンドルによって表される、`CImageList`オブジェクト。 それ以外の場合**NULL**です。  
   
 ### <a name="remarks"></a>コメント  
- この演算子はキャスト演算子の`HIMAGELIST`オブジェクトです。  
+ この演算子はキャスト演算子の`HIMAGELIST`オブジェクト。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#16;](../../mfc/reference/codesnippet/cpp/cimagelist-class_17.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #16](../../mfc/reference/codesnippet/cpp/cimagelist-class_17.cpp)]  
   
 ##  <a name="read"></a>CImageList::Read  
  この関数では、アーカイブからのイメージ リストを読み込みます。  
@@ -875,13 +875,13 @@ BOOL Read(CArchive* pArchive);
   
 ### <a name="parameters"></a>パラメーター  
  `pArchive`  
- ポインター、`CArchive`イメージ リストが読み込まれる元となるオブジェクト。  
+ ポインター、`CArchive`元のイメージ リストが読み取られるオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#18;](../../mfc/reference/codesnippet/cpp/cimagelist-class_18.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList # 18](../../mfc/reference/codesnippet/cpp/cimagelist-class_18.cpp)]  
   
 ##  <a name="remove"></a>CImageList::Remove  
  イメージ リスト オブジェクトからイメージを削除するには、この関数を呼び出します。  
@@ -892,19 +892,19 @@ BOOL Remove(int nImage);
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- 削除するイメージの&0; から始まるインデックス。  
+ 削除するイメージの 0 から始まるインデックス。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 次のすべてのアイテム`nImage`下の&1; つの位置に移動するようになりました。 などのイメージ リストに&2; つの項目が含まれている場合の最初の項目を削除すると、最初の位置で今すぐに残りの項目。 `nImage`=&0; の最初の位置に項目を入力します。  
+ 次のすべての項目`nImage`で 1 つ下に移動します。 たとえば、イメージ リストに 2 つの項目が含まれている場合の最初の項目を削除できるようになります、残りの項目に最初の位置になります。 `nImage`最初の位置の項目の 0 を = です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#19;](../../mfc/reference/codesnippet/cpp/cimagelist-class_19.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #19](../../mfc/reference/codesnippet/cpp/cimagelist-class_19.cpp)]  
   
 ##  <a name="replace"></a>CImageList::Replace  
- この関数では、新しいイメージをイメージ リスト内のイメージを置き換えます。  
+ 新しいイメージを含むイメージ リスト内のイメージを置き換えるには、この関数を呼び出します。  
   
 ```  
 BOOL Replace(
@@ -920,27 +920,27 @@ int Replace(
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- 置換するイメージの&0; から始まるインデックス。  
+ 置換するイメージの 0 から始まるインデックス。  
   
  `pbmImage`  
  イメージを含むビットマップへのポインター。  
   
  `pbmMask`  
- マスクを持つビットマップへのポインター。 イメージ リストとマスクを使用しない場合は、このパラメーターは無視されます。  
+ マスクを含むビットマップへのポインター。 イメージ リスト、マスクが使用されていない場合、このパラメーターは無視されます。  
   
  `hIcon`  
- ビットマップと、新しいイメージのマスクに含まれているアイコンへのハンドル。  
+ ビットマップと、新しいイメージのマスクを含むアイコンへのハンドル。  
   
 ### <a name="return-value"></a>戻り値  
- 返すバージョン**BOOL**成功。 それ以外の場合 0 の場合は、0 以外を返します。  
+ 返すバージョン**BOOL**成功、0 以外の場合は 0 以外を返します。  
   
- 返すバージョン`int`成功した場合は – イメージの 0 から始まるインデックスを返す 1 です。  
+ 返すバージョン`int`成功した場合、それ以外の場合は、イメージの 0 から始まるインデックスを返します 1 です。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数を呼び出した後に呼び出して[呼び出す前](#setimagecount)プレース ホルダーを有効なイメージを割り当てるには、新しいには、イメージのインデックス番号。  
+ このメンバー関数を呼び出した後に呼び出す[呼び出す前](#setimagecount)プレース ホルダーを有効なイメージを割り当てるには、新しいには、イメージのインデックス番号します。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CImageList::SetImageCount](#setimagecount)します。  
+  例を参照して[CImageList::SetImageCount](#setimagecount)です。  
   
 ##  <a name="setbkcolor"></a>CImageList::SetBkColor  
  イメージ リストの背景色を設定するには、この関数を呼び出します。  
@@ -951,16 +951,16 @@ COLORREF SetBkColor(COLORREF cr);
   
 ### <a name="parameters"></a>パラメーター  
  `cr`  
- 背景色を設定します。 できます`CLR_NONE`します。 その場合は、イメージが透過的にマスクを使用して描画されます。  
+ 背景色を設定します。 できます`CLR_NONE`です。 その場合は、イメージは、透過的にマスクを使用して描画されます。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は、直前の背景色それ以外の場合`CLR_NONE`します。  
+ 成功した場合は、直前の背景色それ以外の場合`CLR_NONE`です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&#20;](../../mfc/reference/codesnippet/cpp/cimagelist-class_20.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList #20](../../mfc/reference/codesnippet/cpp/cimagelist-class_20.cpp)]  
   
 ##  <a name="setdragcursorimage"></a>CImageList::SetDragCursorImage  
- 現在のドラッグ イメージと指定したイメージ (通常はマウス カーソル イメージ) を組み合わせることによって、新しいドラッグ イメージを作成します。  
+ 現在のドラッグ イメージと指定したイメージ (通常はマウス カーソル イメージ) を組み合わせることによって新しいドラッグ イメージを作成します。  
   
 ```  
 BOOL SetDragCursorImage(
@@ -970,7 +970,7 @@ BOOL SetDragCursorImage(
   
 ### <a name="parameters"></a>パラメーター  
  *nDrag*  
- ドラッグ イメージに対して結合される新しいイメージのインデックス。  
+ ドラッグ イメージと組み合わせることを新しいイメージのインデックス。  
   
  `ptHotSpot`  
  新しいイメージ内のホット スポットの位置。  
@@ -979,10 +979,10 @@ BOOL SetDragCursorImage(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- ドラッグの関数は、ドラッグ操作中に、新しいイメージを使用するため、Windows を使用する必要があります[ShowCursor](http://msdn.microsoft.com/library/windows/desktop/ms648396)関数を呼び出した後、実際のマウス カーソルを非表示に`CImageList::SetDragCursorImage`します。 それ以外の場合、システムは、ドラッグ操作の実行中の&2; つのマウス カーソルがあるように見える場合があります。  
+ ドラッグ関数は、ドラッグ操作中に、新しいイメージを使用するため、Windows を使用する必要があります[ShowCursor](http://msdn.microsoft.com/library/windows/desktop/ms648396)関数を呼び出した後、実際のマウス カーソルを非表示に`CImageList::SetDragCursorImage`です。 それ以外の場合、システム、ドラッグ操作の期間に対して 2 つのマウス カーソルを表示されます。  
   
 ##  <a name="setimagecount"></a>CImageList::SetImageCount  
- 内のイメージの番号をリセットするには、このメンバー関数を呼び出す、`CImageList`オブジェクトです。  
+ 内のイメージの番号をリセットするには、このメンバー関数を呼び出す、`CImageList`オブジェクト。  
   
 ```  
 BOOL SetImageCount(UINT uNewCount);
@@ -993,18 +993,18 @@ BOOL SetImageCount(UINT uNewCount);
  イメージ リストのイメージの新しいの合計数を指定する値。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- イメージ リストのイメージの数を増やすには、このメンバー関数を呼び出した場合、呼び出す[置換](#replace)に新しいインデックスを有効なイメージに割り当てる各追加のイメージにします。 有効なイメージに、インデックスの割り当てに失敗した場合は、新しいイメージを作成する描画操作は予測できません。  
+ イメージ リストのイメージの数を増やすには、このメンバー関数を呼び出す場合は、まず[置換](#replace)に有効なイメージに新しいインデックスを割り当てる各追加したイメージにします。 有効なイメージに、インデックスの割り当てに失敗した場合は、新しいイメージを作成する描画操作は予測できません。  
   
  イメージ リストのサイズを小さくには、この関数を使用して、切り捨てられたイメージが解放されます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList #&21;](../../mfc/reference/codesnippet/cpp/cimagelist-class_21.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList # 21](../../mfc/reference/codesnippet/cpp/cimagelist-class_21.cpp)]  
   
 ##  <a name="setoverlayimage"></a>CImageList::SetOverlayImage  
- オーバーレイ マスクとして使用するイメージの一覧にイメージの&0; から始まるインデックスを追加するには、この関数を呼び出します。  
+ イメージの 0 から始まるインデックスをオーバーレイ マスクとして使用するイメージの一覧に追加するには、この関数を呼び出します。  
   
 ```  
 BOOL SetOverlayImage(
@@ -1014,24 +1014,24 @@ BOOL SetOverlayImage(
   
 ### <a name="parameters"></a>パラメーター  
  `nImage`  
- オーバーレイ マスクとして使用するイメージの&0; から始まるインデックス。  
+ オーバーレイ マスクとして使用するイメージの 0 から始まるインデックス。  
   
  *nOverlay*  
- オーバーレイ マスクの&1; から始まるインデックス。  
+ オーバーレイ マスクの 1 から始まるインデックス。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 一覧には、最大で&4; つのインデックスを追加できます。  
+ 一覧には、最大で 4 つのインデックスを追加できます。  
   
- オーバーレイ マスクは、別のイメージ上に透過的に描画されるイメージです。 使用してイメージ上のオーバーレイ マスクを描画、 [:draw](#draw)オーバーレイ マスクを使用して指定の&1; から始まるインデックスを持つメンバー関数、**から**マクロです。  
+ オーバーレイ マスクは、別のイメージ上に透過的に描画されるイメージです。 使用してイメージ上のオーバーレイ マスクを描画、 [:draw](#draw)オーバーレイ マスクを使用して指定の 1 から始まるインデックスを持つメンバー関数、**から**マクロです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList #&22;](../../mfc/reference/codesnippet/cpp/cimagelist-class_22.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList # 22](../../mfc/reference/codesnippet/cpp/cimagelist-class_22.cpp)]  
   
 ##  <a name="write"></a>CImageList::Write  
- イメージ リスト オブジェクトをアーカイブに書き込むには、この関数を呼び出します。  
+ アーカイブにイメージ リスト オブジェクトを書き込むには、この関数を呼び出します。  
   
 ```  
 BOOL Write(CArchive* pArchive);
@@ -1045,7 +1045,7 @@ BOOL Write(CArchive* pArchive);
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CImageList&17;](../../mfc/reference/codesnippet/cpp/cimagelist-class_23.cpp)]  
+ [!code-cpp[NVC_MFC_CImageList 17](../../mfc/reference/codesnippet/cpp/cimagelist-class_23.cpp)]  
   
 ## <a name="see-also"></a>関連項目  
  [CObject クラス](../../mfc/reference/cobject-class.md)   

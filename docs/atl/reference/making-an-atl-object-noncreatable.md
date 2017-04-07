@@ -35,19 +35,19 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: b812c2d4bfeb0663d62051c05829f25dc7139faf
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 9ee276d86478bb4a7b6c9839378183bfd49533d6
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="making-an-atl-object-noncreatable"></a>ATL オブジェクトを作成できないを行う
-ATL ベースの COM オブジェクトの属性を変更するには、クライアントからオブジェクトを直接作成することはできませんようにします。 この場合、オブジェクトが別のオブジェクトのメソッド呼び出しによって返されるのではなく直接作成します。  
+クライアントは、オブジェクトを直接作成できないように、ATL ベースの COM オブジェクトの属性を変更することができます。 ここでは、オブジェクトとする別のオブジェクトのメソッド呼び出しによって返されるではなく直接作成します。  
   
 ### <a name="to-make-an-object-noncreatable"></a>オブジェクトを作成できないようにするには  
   
-1.  削除、[は](http://msdn.microsoft.com/library/5a0f4fa5-0905-43d2-b337-e22f979c9e4c)オブジェクトです。 Noncreatable が登録されるコントロール オブジェクトを適用する場合の置換では[役立つ](http://msdn.microsoft.com/library/abdc093c-6502-42de-8419-b7ebf45299d1)します。  
+1.  削除、 [OBJECT_ENTRY_AUTO](object-map-macros.md#object_entry_auto)オブジェクト。 Noncreatable が登録するコントロールであるオブジェクトを実行する場合に、置換の OBJECT_ENTRY_AUTO[役立つ](object-map-macros.md#object_entry_non_createable_ex_auto)です。  
   
-2.  追加、 [noncreatable](../../windows/noncreatable.md)コクラス .idl ファイルにするための属性です。 例:  
+2.  追加、 [noncreatable](../../windows/noncreatable.md) .idl ファイルのコクラスの属性です。 例:  
   
  ```  
  [  
@@ -63,9 +63,9 @@ ATL ベースの COM オブジェクトの属性を変更するには、クラ�
 ## <a name="see-also"></a>関連項目  
  [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)   
  [Visual C プロジェクトの種類](../../ide/visual-cpp-project-types.md)   
- [アプリケーション ウィザードを使用して、デスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   
+ [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   
  [ATL および C ランタイム コードによるプログラミング](../../atl/programming-with-atl-and-c-run-time-code.md)   
- [ATL COM オブジェクトの基礎](../../atl/fundamentals-of-atl-com-objects.md)   
+ [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)   
  [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)
 
 

@@ -1,34 +1,50 @@
 ---
-title: "コンパイラ エラー C3741 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3741"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3741"
+title: "コンパイラ エラー C3741 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3741
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3741
 ms.assetid: ed311315-cc32-49c9-97fa-01b293d81526
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3741
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: e7744a62cce2fddf27026ea453643063da9d9757
+ms.lasthandoff: 04/04/2017
 
-'class' : event\_receiver の 'layout\_dependent' パラメーターが True の場合、コクラスでなければなりません。  
+---
+# <a name="compiler-error-c3741"></a>コンパイラ エラー C3741
+'class': コクラスに指定する必要がありますと event_receiver の 'layout_dependent' パラメーターは、true を =  
   
- [event\_receiver](../../windows/event-receiver.md) クラスが `layout_dependent=true`の場合、そのクラスには [coclass](../../windows/coclass.md) 属性も必要です。  
+ ときに`layout_dependent=true`の[event_receiver](../../windows/event-receiver.md)クラス、そのクラスも必要、[コクラス](../../windows/coclass.md)属性。  
   
- 次の例では C3741 エラーが生成されます。  
+ 次のサンプルの生成 C3741  
   
 ```  
 // C3741.cpp  

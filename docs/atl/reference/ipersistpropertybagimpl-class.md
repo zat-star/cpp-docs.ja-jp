@@ -39,13 +39,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 901a6a6bf4097b6aa78a898254766f122bb2f959
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: abef2ffa759cf74ee2316c7e0c9dd84f5c76b1d7
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="ipersistpropertybagimpl-class"></a>IPersistPropertyBagImpl クラス
-このクラスは実装**IUnknown**でき、そのプロパティをクライアントが指定したプロパティ バッグに保存するオブジェクト。  
+このクラスは実装**IUnknown**でき、そのプロパティをクライアントが提供するプロパティ バッグに保存するオブジェクト。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
@@ -59,7 +59,7 @@ class ATL_NO_VTABLE IPersistPropertyBagImpl : public IPersistPropertyBag
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- 派生したクラスに、`IPersistPropertyBagImpl`です。  
+ 派生したクラス、`IPersistPropertyBagImpl`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -68,14 +68,14 @@ class ATL_NO_VTABLE IPersistPropertyBagImpl : public IPersistPropertyBag
 |名前|説明|  
 |----------|-----------------|  
 |[IPersistPropertyBagImpl::GetClassID](#getclassid)|オブジェクトの CLSID を取得します。|  
-|[IPersistPropertyBagImpl::InitNew](#initnew)|新しく作成されたオブジェクトを初期化します。 ATL の実装を返します`S_OK`します。|  
+|[IPersistPropertyBagImpl::InitNew](#initnew)|新しく作成されたオブジェクトを初期化します。 ATL の実装を返します`S_OK`です。|  
 |[IPersistPropertyBagImpl::Load](#load)|クライアントが提供するプロパティ バッグからのオブジェクトのプロパティを読み込みます。|  
-|[IPersistPropertyBagImpl::Save](#save)|オブジェクトのプロパティをクライアントが指定したプロパティ バッグに保存します。|  
+|[IPersistPropertyBagImpl::Save](#save)|オブジェクトのプロパティは、クライアントが提供するプロパティ バッグに保存されます。|  
   
 ## <a name="remarks"></a>コメント  
- [IPersistPropertyBag](https://msdn.microsoft.com/library/aa768205.aspx)インターフェイスにより、オブジェクトのプロパティをクライアントが指定したプロパティ バッグに保存できます。 クラス`IPersistPropertyBagImpl`このインターフェイスの既定の実装を提供しを実装する**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
+ [IPersistPropertyBag](https://msdn.microsoft.com/library/aa768205.aspx)インターフェイスにより、そのプロパティをクライアントが提供するプロパティ バッグに保存するオブジェクト。 クラス`IPersistPropertyBagImpl`このインターフェイスの既定の実装を提供し、実装**IUnknown**ダンプ情報を送信することによってデバッグ デバイスのビルドします。  
   
- **IPersistPropertyBag**と組み合わせて動作[IPropertyBag](https://msdn.microsoft.com/library/aa768196.aspx)と[IErrorLog](https://msdn.microsoft.com/library/aa768231.aspx)します。 これら後者の&2; つのインターフェイスは、クライアントによって実装する必要があります。 を通じて`IPropertyBag`クライアントは、保存し、オブジェクトの個々 のプロパティを読み込みます。 を通じて**IErrorLog**オブジェクトとクライアントの両方が発生するエラーを報告できます。  
+ **IPersistPropertyBag**と連携して[IPropertyBag](https://msdn.microsoft.com/library/aa768196.aspx)と[IErrorLog](https://msdn.microsoft.com/library/aa768231.aspx)です。 クライアントによって後者 2 つのインターフェイスを実装する必要があります。 を通じて`IPropertyBag`クライアントを保存し、オブジェクトの個々 のプロパティを読み込みます。 を通じて**IErrorLog**オブジェクトとクライアントの両方が発生したエラーを報告できます。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -123,7 +123,7 @@ STDMETHOD(Load)(LPPROPERTYBAG pPropBag, LPERRORLOG pErrorLog);
  参照してください[IPersistPropertyBag::Load](https://msdn.microsoft.com/library/aa768206.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ##  <a name="save"></a>IPersistPropertyBagImpl::Save  
- オブジェクトのプロパティをクライアントが指定したプロパティ バッグに保存します。  
+ オブジェクトのプロパティは、クライアントが提供するプロパティ バッグに保存されます。  
   
 ```
 STDMETHOD(Save)(
@@ -133,11 +133,11 @@ STDMETHOD(Save)(
 ```  
   
 ### <a name="remarks"></a>コメント  
- ATL では、オブジェクトのプロパティ マップを使用して、この情報を格納します。 このメソッドは既定では、値に関係なく、すべてのプロパティを保存*fSaveAllProperties*します。  
+ ATL は、この情報を格納するのにオブジェクトのプロパティ マップを使用します。 既定では、このメソッドの値に関係なく、すべてのプロパティを保存*fSaveAllProperties*です。  
   
  参照してください[IPersistPropertyBag::Save](https://msdn.microsoft.com/library/aa768207.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ## <a name="see-also"></a>関連項目  
- [あり、その場合](http://msdn.microsoft.com/library/bfe30be6-62c3-4dc2-bd49-21ef96f15427)   
+ [あり、その場合](property-map-macros.md#begin_prop_map)   
  [クラスの概要](../../atl/atl-class-overview.md)
 

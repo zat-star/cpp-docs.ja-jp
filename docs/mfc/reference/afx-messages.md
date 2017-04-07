@@ -93,9 +93,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: 3d2a811f850ca2779066f39fefd8312eb268f603
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 67fa0c6355443bcee478e9cd8d22b50813c0a4b0
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="afx-messages"></a>AFX メッセージ
@@ -108,7 +108,7 @@ ms.lasthandoff: 03/29/2017
 |-|-|-|-|-|  
 |メッセージ|説明|[入力] `wParam`|`lParam`(すべてのパラメーターは、[in] 明記しない限り。)|戻り値|  
 |AFX_WM_ACCGETOBJECT|使用しません。|使用しません。|該当なし。|該当なし。|  
-|AFX_WM_ACCGETSTATE|ユーザー補助のサポートのために使用します。 このメッセージを送信して`CMFCPopupMenu`または`CMFCRibbonPanelMenu`現在の要素の状態を取得します。|メニュー ボタンまたは区切り記号の場合も、要素のインデックス。|使用しません。|要素の状態。 インデックスが有効でない場合は-1 メニュー ボタンが特別な属性を持っていない場合は 0 です。 それ以外の場合、次のフラグの組み合わせです。<br /><br /> TBBS_DISABLED \u2012 項目が無効になっています<br /><br /> TBBS_CHECKED \u2012 項目がチェックします。<br /><br /> TBBS_BUTTON \u2012 アイテムは、標準のプッシュ ボタンです。<br /><br /> TBBS_PRESSED \u2012 ボタンが押されました。<br /><br /> TBBS_INDETERMINATE \u2012 未定義の状態<br /><br /> TBBS_SEPARATOR - ではなくメニュー ボタンでは、他のメニュー項目間の分離をこの要素のフォーム|  
+|AFX_WM_ACCGETSTATE|ユーザー補助のサポートのために使用します。 このメッセージを送信して`CMFCPopupMenu`または`CMFCRibbonPanelMenu`現在の要素の状態を取得します。|メニュー ボタンまたは区切り記号の場合も、要素のインデックス。|使用しません。|要素の状態。 インデックスが有効でない場合は-1 メニュー ボタンが特別な属性を持っていない場合は 0 です。 それ以外の場合、次のフラグの組み合わせです。<br /><br /> TBBS_DISABLED: 項目が無効になっています<br /><br /> 項目がチェックされて TBBS_CHECKED:<br /><br /> TBBS_BUTTON: 項目が標準のプッシュ ボタンです。<br /><br /> TBBS_PRESSED: ボタンが押されました。<br /><br /> TBBS_INDETERMINATE: 未定義の状態<br /><br /> TBBS_SEPARATOR - ではなくメニュー ボタンでは、他のメニュー項目間の分離をこの要素のフォーム|  
 |AFX_WM_CHANGE_ACTIVE_TAB|フレームワークは、このメッセージをサイズ変更可能なコントロール バー コントロールに送信します。 通知を受信するには、このメッセージを処理`CMFCTabCtrl`オブジェクトをユーザーには、アクティブなタブが変更されたときにします。|タブのインデックス。|使用しません。|0 以外。|  
 |AFX_WM_CHANGE_CURRENT_FOLDER|フレームワークでは、このメッセージを送信の親に`CMFCShellListCtrl`ユーザーが、現在のフォルダーに変更されたとき。|使用しません。|使用しません。|使用しません。|  
 |AFX_WM_CHANGEVISUALMANAGER|フレームワークは、ユーザーが現在のビジュアル マネージャーを変更したときに、すべてのフレーム ウィンドウにこのメッセージを送信します。 このメッセージに応答してでは、フレーム ウィンドウは、領域を再計算し、必要に応じてその他のパラメーターを調整します。 このイベントに関する通知を受ける必要がある場合は、アプリケーションで AFX_WM_CHANGEVISUALMANAGER メッセージを処理できます。 基本クラスのハンドラーを呼び出す必要があります (`OnChangeVisualManager`) フレームワークの内部であることを確認する処理は、このイベントが実行されます。|使用しません。|使用しません。|使用しません。|  
@@ -121,7 +121,7 @@ ms.lasthandoff: 03/29/2017
 |AFX_WM_GETDOCUMENTCOLORS|`CMFCColorMenuButton`メイン フレーム ウィンドウをドキュメントの色を取得するには、このメッセージを送信します。|使用しません。|[入力、出力].ポインター、`CList<COLORREF, COLORREF>`オブジェクト。|0 を返します。|  
 |AFX_WM_GETDRAGBOUNDS|内部使用のみ。|該当なし。|該当なし。|該当なし。|  
 |AFX_WM_HIGHLIGHT_RIBBON_LIST_ITEM|ユーザーがリボンのリスト項目を強調表示したときに、メイン フレーム ウィンドウに送信されます。|強調表示されている項目のインデックス|ポインター`CMFCBaseRibbonElement`|使用しません。|  
-|AFX_WM_ON_AFTER_SHELL_COMMAND|親に送信される`CMFCShellListCtrl`または`CMFCShellTreeCtrl`ユーザーのシェル コマンドの実行が終了したときを制御します。|ユーザーが実行したコマンドの ID|使用しません。|アプリケーションでは、このメッセージを処理する場合、0 を返します。|  
+|AFX_WM_ON_AFTER_SHELL_COMMAND|親に送信される`CMFCShellListCtrl`または`CMFCShellTreeCtrl`ユーザーのシェル コマンドの実行が終了したときを制御します。|ユーザーが実行したコマンドの ID|使用しません。|アプリケーションでは、このメッセージを処理する場合は 0 を返します。|  
 |AFX_WM_ON_BEFORE_SHOW_RIBBON_ITEM_MENU|フレームワークは、ポップアップ メニューを表示する前に、リボンの親にこのメッセージを送信します。 このメッセージを処理し、ポップアップ メニューをいつでも変更できます。|使用しません。|ポインター`CMFCBaseRibbonElement`|使用しません。|  
 |AFX_WM_ON_CANCELTABMOVE|内部使用のみ。|該当なし。|該当なし。||  
 |AFX_WM_ON_CHANGE_RIBBON_CATEGORY|フレームワークでは、ユーザーがアクティブのリボン コントロールの分類を変更したときに、このメッセージをメイン フレームに送信します。|使用しません。|ポインター、`CMFCRibbonBar`カテゴリが変更されています。|使用しません。|  
@@ -133,7 +133,7 @@ ms.lasthandoff: 03/29/2017
 |AFX_WM_ON_MOVETABCOMPLETE|内部使用のみ。|該当なし。|該当なし。|該当なし。|  
 |AFX_WM_ON_MOVETOTABGROUP|ユーザーでは、1 つのタブ付きグループ間 MDI 子ウィンドウを移動するときに、メイン フレーム ウィンドウに送信されます。|タブ付きウィンドウのハンドル (`CMFCTabCtrl`) から MDI 子ウィンドウが削除されました。|[out]タブ付きウィンドウのハンドル (`CMFCTabCtrl`) MDI 子ウィンドウに挿入されました。|無視されます。|  
 |AFX_WM_ON_PRESS_CLOSE_BUTTON|親に送信される`CDockablePane`ユーザーがクリックしたとき、**閉じる**コントロール バーのキャプションのボタンをクリックします。|使用しません。|ユーザーがクリックされたドッキング可能ペインへのポインター、**閉じる**ボタンをクリックします。|`TRUE`場合は、ウィンドウを閉じることができません。それ以外の場合は FALSE。|  
-|AFX_WM_ON_RENAME_TAB|ユーザーが編集可能なタブを名前変更後に、タブ付きウィンドウの親に送信されます。|名前を変更したタブの 0 から始まるインデックス。|[out]新しいタブ名を表す文字列へのポインター。|アプリケーションは、このメッセージを処理する場合は 0 以外。フレームワークでの呼び出しを抑制する`CMFCBaseTabCtrl::SetTabLabel`です。  0 が返された場合、し`CMFCBaseTabCtrl::SetTabLabel`フレームワークによって呼び出されます。|  
+|AFX_WM_ON_RENAME_TAB|ユーザーが編集可能なタブを名前変更後に、タブ付きウィンドウの親に送信されます。|名前を変更したタブの 0 から始まるインデックス。|[out]新しいタブ名を表す文字列へのポインター。|アプリケーションは、このメッセージを処理する場合は 0 以外。フレームワークでの呼び出しを抑制する`CMFCBaseTabCtrl::SetTabLabel`です。  場合は、0 が返される`CMFCBaseTabCtrl::SetTabLabel`フレームワークによって呼び出されます。|  
 |AFX_WM_ON_RIBBON_CUSTOMIZE|ユーザーがカスタマイズを開始するときに、親のフレームに送信されます。 独自のカスタマイズ ダイアログ ボックスを表示する場合は、このメッセージを処理します。|使用しません。|カスタマイズするリボン コントロールへのポインター。|以外の場合は、アプリケーションは、このメッセージを処理し、独自のカスタマイズ ダイアログ ボックスが表示されます。 アプリケーションでは、0 を返します、フレームワークにより、組み込みのカスタマイズ ダイアログ ボックスが表示されます。|  
 |AFX_WM_ON_TABGROUPMOUSEMOVE|内部使用のみ。|該当なし。|該当なし。|該当なし。|  
 |AFX_WM_POSTSETPREVIEWFRAME|ユーザーが印刷プレビュー モードを変更することをメイン フレームに通知されます。|`TRUE`印刷プレビュー モードが設定されていることを示します。 `FALSE`印刷プレビュー モードがになっていることを示します。|使用しません。|使用しません。|  
@@ -164,7 +164,7 @@ ms.lasthandoff: 03/29/2017
 |SB_THUMBTRACK|ユーザーがスクロール ボックスをドラッグします。 AFX_WM_ON_HSCROLL メッセージは、ユーザーがマウス ボタンを離すまでこの値を持つ繰り返し送信されます。 上位ワードは、スクロール ボックスをドラッグして位置を示します。|  
   
 > [!NOTE]
->  上位ワード、`lParam`下位ワードが SB_THUMBPOSITION または SB_THUMBTRACK 場合パラメーターをスクロール ボックスの現在の位置を指定します。 それ以外の場合、この単語は使用されません。  
+>  上位ワード、`lParam`下位ワードが SB_THUMBPOSITION または SB_THUMBTRACK の場合、パラメーターをスクロール ボックスの現在の位置を指定します。 それ以外の場合、この単語は使用されません。  
   
  次の表に、フラグ値、 `lParam` AFX_WM_UPDATETOOLTIPS メッセージのパラメーター。  
   

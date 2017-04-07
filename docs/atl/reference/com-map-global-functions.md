@@ -32,9 +32,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: c37f722267107ad06fb51dc78bd682603161a476
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: d6f23de1a5fd13d61d376acded35f9217d0a898d
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="com-map-global-functions"></a>COM マップ グローバル関数
@@ -42,14 +42,14 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[AtlInternalQueryInterface](#atlinternalqueryinterface)|デリゲート、 **IUnknown**の非集約オブジェクトです。|  
-|[InlineIsEqualIUnknown](#inlineisequaliunknown)|インターフェイスを比較するための効率的なコードを生成**IUnknown**します。|  
+|[AtlInternalQueryInterface](#atlinternalqueryinterface)|デリゲート、 **IUnknown**の非集約オブジェクト。|  
+|[InlineIsEqualIUnknown](#inlineisequaliunknown)|に対するインターフェイスを比較するための効率的なコードを生成**IUnknown**です。|  
 
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
 
-##  <a name="a-nameatlinternalqueryinterfacea--atlinternalqueryinterface"></a><a name="atlinternalqueryinterface"></a>AtlInternalQueryInterface  
+##  <a name="atlinternalqueryinterface"></a>AtlInternalQueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -62,10 +62,10 @@ HRESULT AtlInternalQueryInterface(
   
 ### <a name="parameters"></a>パラメーター  
  `pThis`  
- [in]公開されるインターフェイスの COM マップを含んでいるオブジェクトへのポインター`QueryInterface`します。  
+ [in]公開されるインターフェイスの COM マップを含んでいるオブジェクトへのポインター`QueryInterface`です。  
   
  `pEntries`  
- [in]配列**_ATL_INTMAP_ENTRY**構造体の使用可能なインターフェイス マップにアクセスします。  
+ [in]配列**_ATL_INTMAP_ENTRY**使用可能なインターフェイスのマップにアクセスする構造体。  
   
  `iid`  
  [in]要求されているインターフェイスの GUID です。  
@@ -74,16 +74,16 @@ HRESULT AtlInternalQueryInterface(
  [out]指定されたインターフェイス ポインターへのポインター `iid`、または**NULL**インターフェイスが見つからない場合。  
   
 ### <a name="return-value"></a>戻り値  
- 標準の HRESULT 値の&1; つ。  
+ 標準の HRESULT 値のいずれか。  
   
 ### <a name="remarks"></a>コメント  
- `AtlInternalQueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。 オブジェクトを集約すると場合、`AtlInternalQueryInterface`外部への委任しません。 インターフェイスを入力するには、マクロを使用した、COM マップ テーブルに[COM_INTERFACE_ENTRY](http://msdn.microsoft.com/library/19dcb768-2e1f-4b8d-a618-453a01a4bd00)またはそのバリエーションの&1; つです。  
+ `AtlInternalQueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。 オブジェクトを集約すると場合、`AtlInternalQueryInterface`外部への委任しません。 インターフェイスを入力するには、COM マップ テーブルにマクロを持つ[COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry)またはそのバリエーションの 1 つです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing #&94;](../../atl/codesnippet/cpp/com-map-global-functions_1.cpp)]  
+ [!code-cpp[NVC_ATL_Windowing # 94](../../atl/codesnippet/cpp/com-map-global-functions_1.cpp)]  
   
-##  <a name="a-nameinlineisequaliunknowna--inlineisequaliunknown"></a><a name="inlineisequaliunknown"></a>InlineIsEqualIUnknown  
- この関数の呼び出しのためのテストの特殊なケースの**IUnknown**します。  
+##  <a name="inlineisequaliunknown"></a>InlineIsEqualIUnknown  
+ この関数の呼び出しのためのテストの特殊なケースの**IUnknown**です。  
   
 ```
 BOOL InlineIsEqualUnknown(REFGUID rguid1);
@@ -91,9 +91,9 @@ BOOL InlineIsEqualUnknown(REFGUID rguid1);
   
 ### <a name="parameters"></a>パラメーター  
  *rguid1*  
- [in]GUID と比較する**IID_IUnknown**します。  
+ [in]比較する GUID **IID_IUnknown**です。  
   
 ## <a name="see-also"></a>関連項目  
  [関数](../../atl/reference/atl-functions.md)   
- [COM マップ マクロ](../../atl/reference/com-map-macros.md)
+ [COM マップに関するマクロ](../../atl/reference/com-map-macros.md)
 

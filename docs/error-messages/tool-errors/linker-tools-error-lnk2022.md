@@ -34,23 +34,23 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 91fb85679fd6c66bc97974912a2de688f494d5e9
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6f12c53d7dd1383ad8f994a713c7226ab038cb19
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="linker-tools-error-lnk2022"></a>リンカ ツール エラー LNK2022
 メタデータの操作に失敗しました (HRESULT): error_message  
   
- リンカーでは、メタデータのマージ中にエラーが検出されました。 正常にリンクには、メタデータのエラーを解決する必要があります。  
+ リンカーでは、メタデータのマージ中にエラーが検出されました。 正常にリンクするメタデータのエラーを解決する必要があります。  
   
- この問題を診断する方法の&1; つは、実行する**ildasm – トークン**である種類を検索するオブジェクト ファイルにトークンが表示されている`error_message`、し、相違点を探します。  メタデータ、LayoutType の属性が異なる場合でも同じ名前の&2; つのさまざまな種類が有効でありません。  
+ 実行するにはこの問題を診断する方法**ildasm-トークン**にある種類を検索するオブジェクト ファイルで、トークンが一覧表示`error_message`、し、相違点を探します。  メタデータ、LayoutType の属性が異なる場合でもと同じ名前の 2 つのさまざまな種類が正しくありません。  
   
- LNK2022 (構造体などの型と同じ名前が競合している定義は、複数のコンパイル単位に存在する場合とでコンパイルするときに理由の&1; つ[/clr](../../build/reference/clr-common-language-runtime-compilation.md)します。  ここで、型はすべてのコンパイル単位の同一の定義を持っていることを確認します。  型名が表示されて`error_message`します。  
+ LNK2022 (構造体) などの型が、同じ名前ではなく、競合する定義は、複数のコンパイル単位に存在する場合とでコンパイルするときにいずれかの理由[/clr](../../build/reference/clr-common-language-runtime-compilation.md)です。  この場合、型が、すべてのコンパイル単位内の同一の定義を持つことを確認します。  型名が表示されて`error_message`です。  
   
- LNK2022 のもう&1; つの考えられる原因は、リンカーがコンパイラに指定された以外に、別の場所にメタデータ ファイルを検出 (と[#using](../../preprocessor/hash-using-directive-cpp.md) )。 あったため、コンパイラに渡されたときに、メタデータ ファイル (.dll または .netmodule) が、リンカーに渡される場合は、同じ場所があることを確認します。  
+ LNK2022 の他の考えられる原因は、リンカーは、コンパイラに指定された数より、別の場所で、メタデータ ファイルを見つけたとき (で[#using](../../preprocessor/hash-using-directive-cpp.md) )。 メタデータ ファイル (.dll または .netmodule) がリンカーに渡されるときに、同じ場所に、コンパイラに渡されたときに確認してください。  
   
- ATL アプリケーションの使用を作成するときに[_ATL_MIXED](http://msdn.microsoft.com/Library/11b59a83-7098-43e2-9f7b-408299930966)少なくとも&1; つで使用されている場合はすべてのコンパイル単位が必要です。  
+ ATL アプリケーションの使用を構築するときに[_ATL_MIXED](http://msdn.microsoft.com/Library/11b59a83-7098-43e2-9f7b-408299930966)少なくとも 1 つで使用されている場合は、すべてのコンパイル単位が必要です。  
   
 ## <a name="example"></a>例  
  次の例では、空の型を定義します。  
@@ -62,7 +62,7 @@ public ref class Test {};
 ```  
   
 ## <a name="example"></a>例  
- このサンプルでは、異なる定義は同じ名前の型を含む&2; つのソース コード ファイルをリンクできませんを示します。  
+ このサンプルでは、名前が同じで異なる定義の型を含む 2 つのソース コード ファイルをリンクすることはできないことを示します。  
   
  次の例では、LNK2022 を生成します。  
   

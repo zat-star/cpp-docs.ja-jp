@@ -38,13 +38,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 6db3ae9e610605524683e984f2aba602b1daf0d4
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: f2d5e28f39159b097c4e00e11518295b2872a84b
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="catlwinmodule-class"></a>CAtlWinModule クラス
-このクラスは、ATL ウィンドウ処理コンポーネントのサポートを提供します。  
+このクラスは、ATL の windowing コンポーネントのサポートを提供します。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -72,7 +72,7 @@ class CAtlWinModule : public _ATL_WIN_MODULE
 |[CAtlWinModule::ExtractCreateWndData](#extractcreatewnddata)|ウィンドウのモジュールのデータ オブジェクトへのポインターを返します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、ウィンドウ機能を必要とするすべての ATL クラスのサポートを提供します。  
+ このクラスは、windowing 機能を必要とするすべての ATL クラスのサポートを提供します。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)  
@@ -91,13 +91,13 @@ void AddCreateWndData(_AtlCreateWndData* pData, void* pObject);
   
 ### <a name="parameters"></a>パラメーター  
  `pData`  
- ポインター、`_AtlCreateWndData`構造が初期化され、現在のモジュールに追加します。  
+ ポインター、`_AtlCreateWndData`構造体を初期化し、現在のモジュールに追加します。  
   
  `pObject`  
  オブジェクトへのポインター**この**ポインター。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドを呼び出す[AtlWinModuleAddCreateWndData](http://msdn.microsoft.com/library/8463a6ed-07ea-4aad-92ec-ded681601b32)どの初期化、 [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md)構造体。 この構造体を格納する、**この**ポインター、ウィンドウ プロシージャ内のクラスのインスタンスを取得するために使用します。  
+ このメソッドを呼び出す[AtlWinModuleAddCreateWndData](winmodule-global-functions.md#atlwinmoduleaddcreatewnddata)どの初期化、 [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md)構造体。 この構造体を格納する、**この**ポインター、ウィンドウ プロシージャ内のクラスのインスタンスを取得するために使用します。  
   
 ##  <a name="catlwinmodule"></a>CAtlWinModule::CAtlWinModule  
  コンストラクターです。  
@@ -120,14 +120,14 @@ CAtlWinModule();
  割り当てられているすべてのリソースを解放します。  
   
 ##  <a name="extractcreatewnddata"></a>CAtlWinModule::ExtractCreateWndData  
- このメソッドが戻るへのポインター、`_AtlCreateWndData`構造体。  
+ このメソッドへのポインターを返します、`_AtlCreateWndData`構造体。  
   
 ```
 void* ExtractCreateWndData();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ポインターを返す、`_AtlCreateWndData`構造体で既に追加されて[CAtlWinModule::AddCreateWndData](#addcreatewnddata)、またはオブジェクトがない場合は NULL です。  
+ ポインターを返します、`_AtlCreateWndData`構造に追加した[CAtlWinModule::AddCreateWndData](#addcreatewnddata)、またはオブジェクトがない場合は NULL です。  
   
 ## <a name="see-also"></a>関連項目  
  [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)   

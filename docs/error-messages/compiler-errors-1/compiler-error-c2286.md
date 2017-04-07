@@ -1,37 +1,53 @@
 ---
-title: "コンパイラ エラー C2286 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2286"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2286"
+title: "コンパイラ エラー C2286 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2286
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2286
 ms.assetid: 078e0201-35cc-42e2-8dbc-6f8cf557b098
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2286
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: c745afd370bd444614fc216ab42fda0f584295e7
+ms.lasthandoff: 04/01/2017
 
-'identifier' のメンバーへのポインターは既に 'inheritance' へ設定しています。宣言を無視します。  
+---
+# <a name="compiler-error-c2286"></a>コンパイラ エラー C2286
+'identifier' の形式のメンバーへのポインターは、既に '継承の' 宣言は無視に設定します。  
   
- クラスにはメンバーへのポインターの 2 つの異なる形式が存在します。  
+ クラスには、次の 2 つの異なるメンバーへのポインター表現が存在します。  
   
- 詳細については、「[継承キーワード](../../cpp/inheritance-keywords.md)」を参照してください。  
+ 詳細については、次を参照してください。[継承キーワード](../../cpp/inheritance-keywords.md)です。  
   
-## 使用例  
- 次の例では警告 C2286 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では C2286 が生成されます。  
   
 ```  
 // C2286.cpp  

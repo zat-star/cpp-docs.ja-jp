@@ -38,13 +38,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 65637b63cf23d2e7433b575e95d3f53a53ed76a1
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 979e06cbb4386f61f6490342f16d48739be55e95
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="ca2aex-class"></a>CA2AEX クラス
-このクラスは、文字列変換マクロによって使用`CA2TEX`と`CT2AEX`、および typedef **CA2A**します。  
+このクラスは、文字列変換マクロによって使用`CA2TEX`と`CT2AEX`、および typedef **CA2A**です。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -58,7 +58,7 @@ class CA2AEX
   
 #### <a name="parameters"></a>パラメーター  
  `t_nBufferLength`  
- 変換プロセスで使用されるバッファーのサイズ。 既定の長さは、128 バイトです。  
+ 変換プロセスで使用するバッファーのサイズ。 既定の長さは 128 バイトです。  
   
 ## <a name="members"></a>メンバー  
   
@@ -73,23 +73,23 @@ class CA2AEX
   
 |名前|説明|  
 |----------|-----------------|  
-|[CA2AEX::operator LPSTR](#operator_lpstr)|変換演算子。|  
+|[CA2AEX::operator LPSTR](#operator_lpstr)|変換演算子です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CA2AEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバー。|  
+|[CA2AEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバーです。|  
 |[CA2AEX::m_szBuffer](#m_szbuffer)|静的バッファー、変換後の文字列を格納するために使用します。|  
   
 ## <a name="remarks"></a>コメント  
- 追加の機能が必要な場合を除き、使用`CA2TEX`、 `CT2AEX`、または**CA2A**独自のコードにします。  
+ 追加の機能が必要な場合を除き、使用`CA2TEX`、 `CT2AEX`、または**CA2A**自分のコード。  
   
- このクラスには、変換の結果を格納するために使用される固定サイズの静的バッファーが含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループ内で使用して、スタックがオーバーフローすることはありませんの以前のバージョンで使用できる変換マクロ。  
+ このクラスには、変換の結果を格納するために使用が固定サイズの静的バッファーが含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループで使用して、スタックがオーバーフローするされませんの以前のバージョンで使用できる変換マクロです。  
   
- クラスは、失敗、ヒープにメモリを割り当てるしようとすると、それが呼び出す`AtlThrow`の引数を持つ**E_OUTOFMEMORY**します。  
+ クラスは、失敗をヒープにメモリを割り当てるしようとするが呼び出されます`AtlThrow`の引数を持つ**E_OUTOFMEMORY**です。  
   
- 既定では、ATL 変換クラスとマクロは、変換のため現在のスレッドの ANSI コード ページを使用します。  
+ 既定では、ATL 変換クラスとマクロは、変換の現在のスレッドの ANSI コード ページを使用します。  
   
  次のマクロは、このクラスに基づいています。  
   
@@ -101,10 +101,10 @@ class CA2AEX
   
 - **CA2A**  
   
- これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)します。  
+ これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL および MFC 文字列変換マクロ](string-conversion-macros.md)です。  
   
 ## <a name="example"></a>例  
- 参照してください[ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)のこれらの文字列変換マクロを使用する例です。  
+ 参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
@@ -122,7 +122,7 @@ CA2AEX(LPCSTR psz) throw(...);
  変換するテキスト文字列。  
   
  `nCodePage`  
- このクラスで使用されていません。  
+ このクラスでは使用しません。  
   
 ### <a name="remarks"></a>コメント  
  変換に必要なバッファーを作成します。  
@@ -138,7 +138,7 @@ CA2AEX(LPCSTR psz) throw(...);
  割り当てられたバッファーを解放します。  
   
 ##  <a name="m_psz"></a>CA2AEX::m_psz  
- ソース文字列を格納するデータ メンバー。  
+ ソース文字列を格納するデータ メンバーです。  
   
 ```
 LPSTR m_psz;
@@ -152,14 +152,14 @@ char m_szBuffer[ t_nBufferLength];
 ```  
   
 ##  <a name="operator_lpstr"></a>CA2AEX::operator LPSTR  
- 変換演算子。  
+ 変換演算子です。  
   
 ```
 operator LPSTR() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 文字列を型として返します**LPSTR**します。  
+ 種類としてテキスト文字列を返す**LPSTR**です。  
   
 ## <a name="see-also"></a>関連項目  
  [CA2CAEX クラス](../../atl/reference/ca2caex-class.md)   

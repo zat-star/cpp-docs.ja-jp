@@ -53,9 +53,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: c567d97c613ad517372b454456535165fadbd3ae
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 24f2c70210db2d0179f3234f18c3fcbd3bf093f2
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cmap-class"></a>CMap クラス
@@ -111,13 +111,13 @@ template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>class CMap : pub
 |[例](#plookup)|値が指定の値に一致するキーへのポインターを返します。|  
 |[CMap::RemoveAll](#removeall)|このマップからすべての要素を削除します。|  
 |[CMap::RemoveKey](#removekey)|キーで指定された要素を削除します。|  
-|[CMap::SetAt](#setat)|マップに要素を挿入します。一致するキーが見つかった場合は、既存の要素を置換します。|  
+|[CMap::SetAt](#setat)|マップに要素を挿入します。一致するキーが見つかった場合は、既存の要素を置き換えます。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CMap::operator](#operator_at)|要素のマップ \u2012 演算子の代替文字列を挿入`SetAt`です。|  
+|[CMap::operator](#operator_at)|Map に要素を挿入などの演算子の代替`SetAt`です。|  
   
 ## <a name="remarks"></a>コメント  
  マップにキー/値ペア (要素) を挿入すると効率的に取得したりへのアクセス キーを使用してペアリングが削除することができます。 マップ内のすべての要素を繰り返すこともできます。  
@@ -154,7 +154,7 @@ CMap(INT_PTR nBlockSize = 10);
  マップを拡張するためのメモリ割り当ての粒度を指定します。  
   
 ### <a name="remarks"></a>コメント  
- 単位でメモリが割り当てられているマップするにつれて、`nBlockSize`エントリです。  
+ 単位でメモリが割り当てられます、マップするにつれて、`nBlockSize`エントリです。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections # 56](../../mfc/codesnippet/cpp/cmap-class_1.cpp)]  
@@ -203,7 +203,7 @@ UINT GetHashTableSize() const;
  [!code-cpp[NVC_MFCCollections # 57](../../mfc/codesnippet/cpp/cmap-class_2.cpp)]  
   
 ##  <a name="getnextassoc"></a>CMap::GetNextAssoc  
- 位置にあるマップ要素を取得`rNextPosition`、し、更新`rNextPosition`をマップ内の次の要素を参照してください。  
+ 位置にあるマップ要素を取得`rNextPosition`、更新し、`rNextPosition`をマップ内の次の要素を参照してください。  
   
 ```  
 void GetNextAssoc(
@@ -231,7 +231,7 @@ void GetNextAssoc(
 ### <a name="remarks"></a>コメント  
  この関数は、マップ内のすべての要素の反復処理に最も役立ちます。 位置シーケンスがないとは限りませんキーの値のシーケンスと同じに注意してください。  
   
- 場合は、取得した最後の要素をマップではの新しい値`rNextPosition`に設定されている**NULL**です。  
+ 場合は、取得した最後の要素をマップでは、次の新しい値`rNextPosition`に設定されている**NULL**です。  
   
 ### <a name="example"></a>例  
  例を参照して[CMap::SetAt](#setat)です。  
@@ -348,7 +348,7 @@ VALUE& operator[](arg_key key);
  マップの値を取得するために使用するキー。  
   
 ### <a name="remarks"></a>コメント  
- したがって、代入ステートメント (左辺値) の左側にのみ使用できます。 指定されたキーにマップ要素がない場合は、新しい要素が作成されます。  
+ したがって、代入ステートメント (左辺値) の左側にのみ使用できます。 指定されたキーにマップ要素は、新しい要素が作成されます。  
   
  ありません「右側にある」(右辺値) この演算子をキーがマップに見つからない可能性がある可能性があるためです。 使用して、`Lookup`要素を取得します。  
   
@@ -452,7 +452,7 @@ BOOL RemoveKey(ARG_KEY key);
  例を参照して[CMap::SetAt](#setat)です。  
   
 ##  <a name="setat"></a>CMap::SetAt  
- プライマリは、マップの要素を挿入することを意味します。  
+ プライマリでは、マップの要素を挿入することを意味します。  
   
 ```  
 void SetAt(ARG_KEY key, ARG_VALUE newValue);

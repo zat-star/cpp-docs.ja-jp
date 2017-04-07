@@ -34,32 +34,32 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
-ms.openlocfilehash: 7b6a6220a33890d99e6fb2bd81ce832b38720c50
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 72a8644d81857b722fd50a7e852d215bb25a2fb2
+ms.lasthandoff: 03/31/2017
 
 ---
-# <a name="adding-an-atl-property-page"></a>ATL プロパティ ページの追加
-プロジェクトには、アクティブ テンプレート ライブラリ (ATL) のプロパティ ページを追加するにプロジェクト必要がありますが作成されたら、ATL アプリケーションまたは ATL サポートを持つ MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーション用の ATL サポートを実装します。  
+# <a name="adding-an-atl-property-page"></a>ATL プロパティ ページを追加します。
+プロジェクトに、アクティブ テンプレート ライブラリ (ATL) のプロパティ ページを追加するには、プロジェクト必要がありますを作成して、ATL アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーションに対する ATL のサポートを実装します。  
   
- コントロールがコントロールのプロパティ ページを追加する場合をサポートする必要があります、 [ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md)インターフェイスです。 このインターフェイスは、コントロールの派生リストで、既定では、クラス、 [ATL コントロールを作成する](../../atl/reference/adding-an-atl-control.md)を使用して、 [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)します。  
+ コントロールのプロパティ ページを追加する場合、コントロールをサポートする必要があります、 [ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md)インターフェイスです。 このインターフェイスは、コントロールの派生リストで、既定では、クラスを[ATL コントロールを作成する](../../atl/reference/adding-an-atl-control.md)を使用して、 [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)です。  
   
 > [!NOTE]
 >  コントロール クラスがない場合[ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md)の派生リストにする必要があります手動で追加します。  
   
-### <a name="to-add-an-atl-property-page-to-your-project"></a>ATL プロパティ ページをプロジェクトに追加するには  
+### <a name="to-add-an-atl-property-page-to-your-project"></a>プロジェクトに ATL プロパティ ページを追加するには  
   
 1.  いずれかで**ソリューション エクスプ ローラー**または[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)、ATL プロパティ ページを追加するプロジェクトの名前を右クリックします。  
   
-2.  ショートカット メニューをクリックして**追加** をクリックし、**クラスの追加**します。  
+2.  ショートカット メニューから [**追加**] をクリックし、**クラスの追加**です。  
   
-3.  [クラスの追加](../../ide/add-class-dialog-box.md)テンプレート ペインで、ダイアログ ボックスをクリックして**ATL プロパティ ページ** をクリックし、**開く**を表示する、 [ATL プロパティ ページ ウィザード](../../atl/reference/atl-property-page-wizard.md)します。  
+3.  [クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスの [テンプレート] ペインで、クリックして**ATL プロパティ ページ**順にクリック**開く**を表示する、 [ATL プロパティ ページ ウィザード](../../atl/reference/atl-property-page-wizard.md)です。  
   
- 指定する必要があります、コントロールのプロパティ ページを作成すると、 [PROP_PAGE](http://msdn.microsoft.com/library/2155973e-b96c-4385-bf85-5d6112c969b8)コントロールのプロパティ マップ内のエントリ。  
+ コントロールのプロパティ ページを作成すると、指定する必要あります、 [PROP_PAGE](property-map-macros.md#prop_page)コントロールのプロパティ マップ内のエントリ。  
   
 ## <a name="see-also"></a>関連項目  
  [プロパティ ページ](../../atl/atl-com-property-pages.md)   
- [ATL COM オブジェクトの基礎](../../atl/fundamentals-of-atl-com-objects.md)   
+ [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)   
  [例: プロパティ ページの実装](../../atl/example-implementing-a-property-page.md)
 
 

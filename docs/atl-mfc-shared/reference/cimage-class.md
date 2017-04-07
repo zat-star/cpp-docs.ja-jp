@@ -82,13 +82,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f74e5952401d6f9608425681cd91120b648e7b13
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 3f208b2937f2f19d87777b7158e5b765b784bb5d
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cimage-class"></a>CImage クラス
-`CImage`読み込んで、画像を JPEG、GIF、BMP、およびポータブル ネットワーク グラフィックス (PNG) 形式で保存する機能など、ビットマップの拡張サポートを提供します。  
+`CImage`読み込み、JPEG、GIF、BMP、およびポータブル ネットワーク グラフィックス (PNG) 形式で画像を保存する機能を含む、ビットマップの拡張サポートを提供します。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -112,53 +112,53 @@ class CImage
 |名前|説明|  
 |----------|-----------------|  
 |[CImage::AlphaBlend](#alphablend)|透明または半透明ピクセルのビットマップを表示します。|  
-|[CImage::Attach](#attach)|アタッチ、`HBITMAP`に、`CImage`オブジェクトです。 非 DIB セクション ビットマップまたは DIB セクション ビットマップのいずれかで使用できます。|  
-|[CImage::BitBlt](#bitblt)|コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。|  
-|[CImage::Create](#create)|DIB セクション ビットマップを作成し、構築済みにアタッチします。`CImage`オブジェクトです。|  
-|[CImage::CreateEx](#createex)|(追加のパラメーター) の DIB セクション ビットマップを作成し、構築済みにアタッチします。`CImage`オブジェクトです。|  
-|[CImage::Destroy](#destroy)|ビットマップからのデタッチ、`CImage`オブジェクトし、ビットマップを破棄します。|  
-|[CImage::Detach](#detach)|ビットマップからのデタッチ、`CImage`オブジェクトです。|  
-|[:Draw](#draw)|コピー先の四角形に、元の四角形からビットマップをコピーします。 **描画**拡大または変換先の四角形の大きさに合わせて必要に応じて、ビットマップを圧縮し、アルファ ブレンドと透明色を処理します。|  
+|[CImage::Attach](#attach)|アタッチ、`HBITMAP`を`CImage`オブジェクト。 非 DIB セクション ビットマップや DIB セクション ビットマップのいずれかで使用できます。|  
+|[CImage::BitBlt](#bitblt)|現在のデバイス コンテキストを元のデバイス コンテキストからビットマップをコピーします。|  
+|[CImage::Create](#create)|DIB セクション ビットマップを作成し、構築済みにアタッチします。`CImage`オブジェクト。|  
+|[CImage::CreateEx](#createex)|パラメーターを持つ追加 DIB セクション ビットマップを作成し、構築済みにアタッチします。`CImage`オブジェクト。|  
+|[CImage::Destroy](#destroy)|ビットマップからのデタッチ、`CImage`オブジェクトをビットマップを破棄します。|  
+|[CImage::Detach](#detach)|ビットマップからのデタッチ、`CImage`オブジェクト。|  
+|[:Draw](#draw)|元の四角形から転送先の四角形にビットマップをコピーします。 **描画**拡大または必要に応じて、対象の四角形の寸法に合わせてビットマップの圧縮し、処理アルファ ブレンド透明色。|  
 |[CImage::GetBits](#getbits)|ビットマップの実際のピクセル値へのポインターを取得します。|  
 |[CImage::GetBPP](#getbpp)|ピクセルごとのビットを取得します。|  
-|[CImage::GetColorTable](#getcolortable)|カラー テーブル内のエントリの範囲から、赤、緑、青 (RGB) の色の値を取得します。|  
+|[CImage::GetColorTable](#getcolortable)|カラー テーブル内のエントリの範囲から赤、緑、青 (RGB) の色の値を取得します。|  
 |[CImage::GetDC](#getdc)|現在のビットマップが選択されているデバイス コンテキストを取得します。|  
 |[CImage::GetExporterFilterString](#getexporterfilterstring)|使用可能なイメージ形式とその説明を検索します。|  
-|[CImage::GetHeight](#getheight)|ピクセル単位で現在のイメージの高さを取得します。|  
+|[CImage::GetHeight](#getheight)|現在のイメージの高さ (ピクセル単位) を取得します。|  
 |[CImage::GetImporterFilterString](#getimporterfilterstring)|使用可能なイメージ形式とその説明を検索します。|  
 |[CImage::GetMaxColorTableEntries](#getmaxcolortableentries)|カラー テーブル内のエントリの最大数を取得します。|  
-|[CImage::GetPitch](#getpitch)|バイト単位で、現在のイメージの音の高さを取得します。|  
-|[CImage::GetPixel](#getpixel)|指定されたピクセルの色を取得*x*と*y*します。|  
+|[CImage::GetPitch](#getpitch)|(バイト単位)、現在のイメージの声の高さを取得します。|  
+|[CImage::GetPixel](#getpixel)|指定されたピクセルの色を取得*x*と*y*です。|  
 |[CImage::GetPixelAddress](#getpixeladdress)|特定のピクセルのアドレスを取得します。|  
 |[CImage::GetTransparentColor](#gettransparentcolor)|透明色のカラー テーブル内の位置を取得します。|  
-|[CImage::GetWidth](#getwidth)|ピクセル単位で現在のイメージの幅を取得します。|  
+|[CImage::GetWidth](#getwidth)|現在のイメージの幅 (ピクセル単位) を取得します。|  
 |[CImage::IsDIBSection](#isdibsection)|割り当てられているビットマップが DIB セクションであるかどうかを判断します。|  
 |[CImage::IsIndexed](#isindexed)|インデックス付きのパレットにビットマップの色がマップされていることを示します。|  
 |[CImage::IsNull](#isnull)|元のビットマップが現在読み込まれているかどうかを示します。|  
 |[CImage::IsTransparencySupported](#istransparencysupported)|アプリケーションが透明なビットマップをサポートし、Windows 2000 またはそれ以降にコンパイルされたかどうかを示します。|  
 |[CImage::Load](#load)|指定したファイルからイメージを読み込みます。|  
-|[CImage::LoadFromResource](#loadfromresource)|指定したリソースからイメージを読み込みます。|  
+|[CImage::LoadFromResource](#loadfromresource)|指定されたリソースからイメージを読み込みます。|  
 |[CImage::MaskBlt](#maskblt)|指定したマスクとラスター オペレーションを使用する元とコピー先のビットマップの色のデータを結合します。|  
-|[CImage::PlgBlt](#plgblt)|転送元デバイス コンテキスト内の四角形からコピー先デバイス コンテキストで指定した平行四辺形にビット ブロック転送を実行します。|  
-|[CImage::ReleaseDC](#releasedc)|取得したデバイス コンテキストを解放[CImage::GetDC](#getdc)します。|  
-|[CImage::ReleaseGDIPlus](#releasegdiplus)|GDI + で使用されているリソースを解放します。 グローバル カタログ サーバーによって作成された無償のリソースを呼び出す必要があります`CImage`オブジェクトです。|  
+|[CImage::PlgBlt](#plgblt)|コピー先デバイス コンテキストで指定した平行四辺形に元デバイス コンテキスト内の四角形からのビット ブロック転送を実行します。|  
+|[CImage::ReleaseDC](#releasedc)|取得されたデバイス コンテキストを解放[CImage::GetDC](#getdc)です。|  
+|[CImage::ReleaseGDIPlus](#releasegdiplus)|GDI + で使用されるリソースを解放します。 グローバルによって作成されたリソースの解放を呼び出す必要がある`CImage`オブジェクト。|  
 |[CImage::Save](#save)|指定した型と、イメージを保存します。 **保存**イメージのオプションを指定することはできません。|  
-|[CImage::SetColorTable](#setcolortable)|赤、緑、青の RGB の設定) DIB セクションのカラー テーブル内のエントリの範囲の値の色します。|  
+|[CImage::SetColorTable](#setcolortable)|赤、緑、青の RGB を設定します)、DIB セクションのカラー テーブル内のエントリの範囲内の値の色します。|  
 |[CImage::SetPixel](#setpixel)|指定した色の指定した座標にあるピクセルに設定します。|  
-|[CImage::SetPixelIndexed](#setpixelindexed)|カラー パレットの指定したインデックス位置に指定した座標にあるピクセルに設定します。|  
-|[CImage::SetPixelRGB](#setpixelrgb)|指定された赤、緑、青 (RGB) の値の指定した座標にあるピクセルに設定します。|  
-|[CImage::SetTransparentColor](#settransparentcolor)|透明色として扱われ、色のインデックスを設定します。 パレットの&1; つだけの色を透明になることができます。|  
-|[CImage::StretchBlt](#stretchblt)|先の四角形を拡大または変換先の四角形の寸法に合わせてビットマップを圧縮すると、必要な場合に、元の四角形からビットマップをコピーします。|  
-|[CImage::TransparentBlt](#transparentblt)|現在のデバイス コンテキストを元デバイス コンテキストからの透明色を持つビットマップをコピーします。|  
+|[CImage::SetPixelIndexed](#setpixelindexed)|色パレットの指定したインデックス位置に指定した座標にあるピクセルに設定します。|  
+|[CImage::SetPixelRGB](#setpixelrgb)|指定された赤、緑、青 (RGB) の値を指定した座標にあるピクセルに設定します。|  
+|[CImage::SetTransparentColor](#settransparentcolor)|透明として扱われる色のインデックスを設定します。 パレットの 1 つだけの色を透明にすることができます。|  
+|[CImage::StretchBlt](#stretchblt)|元の四角形から先に四角形を拡大または移行先の四角形の寸法に合わせてビットマップを縮小して必要な場合にビットマップをコピーします。|  
+|[CImage::TransparentBlt](#transparentblt)|現在のデバイス コンテキストを元のデバイス コンテキストからの透明色のビットマップをコピーします。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CImage::operator HBITMAP](#operator_hbitmap)|接続されている Windows ハンドルを返す、`CImage`オブジェクトです。|  
+|[CImage::operator HBITMAP](#operator_hbitmap)|接続されている Windows ハンドルを返します、`CImage`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CImage`ありません。 またはデバイスに依存しないビットマップ (DIB) のセクションではどちらになっているビットマップは、します。ただし、使用することができます[作成](#create)または[CImage::Load](#load) DIB セクションのみを使用します。 非 DIB セクション ビットマップを割り当てることができます、`CImage`オブジェクトを使用して[アタッチ](#attach)、以下を使用することはできませんが、 `CImage` DIB セクション ビットマップだけをサポートするメソッドで。  
+ `CImage`ビットマップかのいずれかのデバイスに依存しないビットマップ (DIB) セクションではありません。ただし、使用することができます[作成](#create)または[CImage::Load](#load) DIB セクションのみを含むです。 非 DIB セクション ビットマップをアタッチすることができます、`CImage`オブジェクトを使用して[アタッチ](#attach)、し、以下を使用することはできませんが、 `CImage` DIB セクション ビットマップのみをサポートするメソッド。  
   
 - [GetBits](#getbits)  
   
@@ -174,15 +174,15 @@ class CImage
   
 - [SetColorTable](#setcolortable)  
   
- 割り当てられているビットマップが DIB セクションを確認するには、呼び出す[IsDibSection](#isdibsection)**します。**  
+ 割り当てられているビットマップが DIB セクションを確認するには、呼び出す[IsDibSection](#isdibsection)**です。**  
   
 > [!NOTE]
-> **注**Visual Studio .NET 2003 で、このクラスは、数のカウントを保持`CImage`オブジェクトを作成します。 カウントが 0 になったときに**オブジェクト**は GDI + で使用されるリソースを解放する自動的に呼び出されます。 これにより、いずれかの`CImage`Dll によって直接的または間接的に作成されたオブジェクトが正しく破棄される常に、**オブジェクト**からは呼び出されません`DllMain`します。  
+> **注**Visual Studio .NET 2003 で、このクラスは、数のカウントを保持`CImage`オブジェクトを作成します。 カウントが 0 の場合、関数になるたびに**オブジェクト**GDI + で使用されるリソースを解放する、自動的に呼び出されます。 これにより、いずれかの`CImage`Dll が直接または間接的を作成したオブジェクトが正しく破棄される常に、**オブジェクト**からは呼び出されません`DllMain`です。  
   
 > [!NOTE]
->  グローバル`CImage`DLL 内のオブジェクトはお勧めしません。 グローバル カタログ サーバーを使用する必要がある場合`CImage`呼び出し、DLL 内のオブジェクト[CImage::ReleaseGDIPlus](#releasegdiplus)を明示的に GDI + で使用されているリソースを解放します。  
+>  グローバルを使用して`CImage`DLL 内のオブジェクトはお勧めしません。 グローバルを使用する必要がある場合`CImage`呼び出し、DLL 内のオブジェクト[CImage::ReleaseGDIPlus](#releasegdiplus)を明示的に GDI + で使用されるリソースを解放します。  
   
- `CImage`新しい選択できない[CDC](../../mfc/reference/cdc-class.md)します。 `CImage`独自に作成**HDC**イメージにします。 `HBITMAP`いずれかにのみ選択可能**HDC** 、時に、`HBITMAP`に関連付けられている、`CImage`別に選択することはできません**HDC**します。 必要がある場合、 `CDC`、取得、 **HDC**から、`CImage`し [CDC::FromHandle] (../../mfc/reference/cdc-class.md#cdc__fromhandle します。  
+ `CImage`新しいに選択することはできません[CDC](../../mfc/reference/cdc-class.md)です。 `CImage`独自に作成**HDC**イメージにします。 `HBITMAP`を 1 つにのみ選択できます**HDC** 、時に、`HBITMAP`に関連付けられている、`CImage`別に選択することはできません**HDC**です。 必要がある場合、 `CDC`、取得、 **HDC**から、`CImage`し、[CDC::FromHandle] (../../mfc/reference/cdc-class.md#cdc__fromhandle です。  
   
 ## <a name="example"></a>例  
 ```cpp  
@@ -194,7 +194,7 @@ pDC->Rectangle(0, 40, 100, 50);
 m_myImage.ReleaseDC();
 ```  
   
- 使用すると`CImage`MFC プロジェクトで、プロジェクトのメンバー関数へのポインターの期待に注意してください、 [CBitmap](../../mfc/reference/cbitmap-class.md)オブジェクトです。 使用する場合`CImage`でこのような関数の場合のような[CMenu::AppendMenu](../../mfc/reference/cmenu-class.md#appendmenu)を使用して[CBitmap::FromHandle](../../mfc/reference/cbitmap-class.md#fromhandle)、渡すこと、 `CImage` `HBITMAP`、して返された`CBitmap*`です。  
+ 使用すると`CImage`MFC プロジェクトでは、プロジェクトのどのメンバー関数へのポインターの期待に注意してください、 [CBitmap](../../mfc/reference/cbitmap-class.md)オブジェクト。 使用する場合`CImage`このような関数を使用と同様に[CMenu::AppendMenu](../../mfc/reference/cmenu-class.md#appendmenu)、使用[CBitmap::FromHandle](../../mfc/reference/cbitmap-class.md#fromhandle)、渡すこと、 `CImage` `HBITMAP`、使用して、返された`CBitmap*`です。  
 
   
 ## <a name="example"></a>例  
@@ -212,25 +212,25 @@ void CMyDlg::OnRButtonDown(UINT nFlags, CPoint point)
 ```  
 
   
- を通じて`CImage`、DIB セクションの実際のビットへのアクセス権があります。 使用することができます、 `CImage` Win32 HBITMAP または DIB のセクションを使用していたオブジェクトの任意の場所。  
+ を通じて`CImage`、DIB セクションの実際のビットへのアクセス権があります。 使用することができます、 `CImage` Win32 HBITMAP や dib でもセクションを使用していたオブジェクトの任意の場所。  
   
 > [!NOTE]
 >  次`CImage`方法、使用に関する制限があります。  
   
 |メソッド|制限|  
 |------------|----------------|  
-|[PlgBlt](#plgblt)|Windows NT 4.0 のみおよびそれ以降は動作します。 Windows 95/98 以降が実行されるアプリケーションでは機能しません。|  
-|[MaskBlt](#maskblt)|Windows NT 4.0 のみおよびそれ以降は動作します。 Windows 95/98 以降が実行されるアプリケーションでは機能しません。|  
-|[AlphaBlend](#alphablend)|Windows 2000、Windows 98、およびそれ以降のシステムで機能します。|  
-|[TransparentBlt](#transparentblt)|Windows 2000、Windows 98、およびそれ以降のシステムで機能します。|  
-|[描画](#draw)|Windows 2000、Windows 98、およびそれ以降のシステムの透過性をサポートしています。|  
+|[PlgBlt](#plgblt)|Windows NT 4.0 だけで、または後で機能します。 Windows 95/98 以降を実行しているアプリケーションでは機能しません。|  
+|[MaskBlt](#maskblt)|Windows NT 4.0 だけで、または後で機能します。 Windows 95/98 以降を実行しているアプリケーションでは機能しません。|  
+|[およびアルファブレンド](#alphablend)|Windows 2000、Windows 98、およびそれ以降のシステムのみで動作します。|  
+|[TransparentBlt](#transparentblt)|Windows 2000、Windows 98、およびそれ以降のシステムのみで動作します。|  
+|[描画します。](#draw)|Windows 2000、Windows 98、およびそれ以降のシステムの透過性をサポートしています。|  
   
- 使用する`CImage`MFC または ATL のいずれかから  
+ 使用することができます`CImage`MFC または ATL のいずれかから  
   
 > [!NOTE]
->  使用してプロジェクトを作成すると`CImage`を定義する必要があります`CString`インクルードする前に`atlimage.h`します。 プロジェクトでは、MFC を使わない ATL を使用する場合は含める`atlstr.h`インクルードする前に`atlimage.h`します。 プロジェクトでは、MFC (MFC サポートを ATL プロジェクトのかどうか) を使用する場合は含める`afxstr.h`インクルードする前に`atlimage.h`します。  
+>  使用してプロジェクトを作成する場合`CImage`、定義する必要があります`CString`インクルードする前に`atlimage.h`です。 プロジェクトでは、MFC を使わない ATL を使用する場合は、`atlstr.h`インクルードする前に`atlimage.h`です。 プロジェクトでは、MFC (MFC サポートを使用して、ATL プロジェクトであるかどうか) を使用する場合は、`afxstr.h`インクルードする前に`atlimage.h`です。  
 >   
->  同様に、含める必要があります`atlimage.h`インクルードする前に`atlimpl.cpp`します。 これを実現する簡単に含める`atlimage.h`で、`stdafx.h`です。  
+>  同様に、含める必要があります`atlimage.h`インクルードする前に`atlimpl.cpp`です。 これを実現する簡単に含める`atlimage.h`で、`stdafx.h`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlimage.h  
@@ -278,25 +278,25 @@ BOOL AlphaBlend(
  コピー先デバイス コンテキストへのハンドルします。  
   
  `xDest`  
- X 座標、コピー先の四角形の左上隅の論理単位です。  
+ X 座標、先の四角形の左上隅の論理単位です。  
   
  `yDest`  
- Y 座標、コピー先の四角形の左上隅の論理単位です。  
+ Y 座標を論理単位で、移行先の四角形の左上隅にあるのです。  
   
  *bSrcAlpha*  
- 元のビットマップ全体で使用するアルファ透明度値。 既定値 0 xff (255) には、イメージが不透明であると、ピクセルごとのアルファ値のみを使用することが想定しています。  
+ 元のビットマップ全体で使用するアルファ透明度値。 既定値 0 xff (255) は、イメージが不透明であることと、ピクセルごとのアルファ値のみを使用することを想定します。  
   
  `bBlendOp`  
- ソースとコピー先ビットマップ、ソース全体のビットマップ、および元のビットマップの書式情報に適用されるグローバルなアルファ値のアルファ ブレンド関数。 送信元と送信先の blend 関数は、現時点**ビットマップ**します。  
+ ソースと、コピー先ビットマップを全体の元のビットマップ、および元のビットマップの書式情報に適用されるグローバルなアルファ値のアルファ ブレンド関数。 送信元と送信先の blend 関数に制限されて**ビットマップ**です。  
   
  `pointDest`  
  参照、[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)論理単位で、移行先の四角形の左上隅を識別する構造体。  
   
  `nDestWidth`  
- 論理ユニットは、コピー先の四角形の幅。  
+ 論理ユニットは、先の四角形の幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形の高さ。  
+ 論理ユニットは、先の四角形の高さ。  
   
  `xSrc`  
  元の四角形の左上隅の論理 x 座標。  
@@ -311,21 +311,21 @@ BOOL AlphaBlend(
  論理ユニットは、元の四角形の高さ。  
   
  `rectDest`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、送信先を識別します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、変換先を識別します。  
   
  `rectSrc`  
- 参照、`RECT`構造のソースを特定します。  
+ 参照、`RECT`構造体、ソースを特定します。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- アルファ ブレンド ビットマップの色が、ピクセル単位でブレンドをサポートしています。  
+ アルファ ブレンドのビットマップは、ピクセル単位で色の混合をサポートします。  
   
- `bBlendOp`の既定値に設定されている**ビットマップ**、ソース ピクセルのアルファ値に基づいて、コピー先ビットマップにコピー元のビットマップを配置します。  
+ ときに`bBlendOp`の既定値に設定されている**ビットマップ**元のピクセルのアルファ値に基づいて、コピー先ビットマップに元のビットマップが配置されます。  
 
 ##  <a name="attach"></a>CImage::Attach  
- アタッチ`hBitmap`に、`CImage`オブジェクトです。  
+ アタッチ`hBitmap`を`CImage`オブジェクト。  
   
 ```
 void Attach(HBITMAP hBitmap, DIBOrientation eOrientation = DIBOR_DEFAULT) throw();
@@ -338,17 +338,17 @@ void Attach(HBITMAP hBitmap, DIBOrientation eOrientation = DIBOR_DEFAULT) throw(
  *eOrientation*  
  ビットマップの向きを指定します。 次のいずれかの値を指定します。  
   
-- **DIBOR_DEFAULT**ビットマップの向きは、オペレーティング システムによって決定されます。 ただし、このことはできません常に想定される結果をすべてのオペレーティング システム。 これに関する詳細については、次のサポート技術情報記事を参照してください ( **Q186586**): [prb]: 概念常に返します正高さの DIB セクションです。  
+- **DIBOR_DEFAULT**ビットマップの向きは、オペレーティング システムによって決定されます。 ただし、このことはできません常に目的の結果にすべてのオペレーティング システム。 詳細については、次のサポート技術情報の記事を参照してください ( **Q186586**): [prb]: 概念常に返します正高さの DIB のセクションでします。  
   
-- **DIBOR_BOTTOMUP**ビットマップの行は逆の順序で。 これにより、 [CImage::GetBits](#getbits)ビットマップ バッファーの末尾付近のポインターを返すと[CImage::GetPitch](#getpitch)負の数を取得します。  
+- **DIBOR_BOTTOMUP**ビットマップの行は逆の順序でです。 これにより、 [CImage::GetBits](#getbits)ビットマップ バッファーの末尾付近のポインターを返すと[CImage::GetPitch](#getpitch)を負の数を返します。  
   
-- **DIBOR_TOPDOWN**上下からに、ビットマップの行ができます。 これにより、 [CImage::GetBits](#getbits)をビットマップ バッファーの最初のバイトへのポインターを返すと[CImage::GetPitch](#getpitch)正の数を取得します。  
+- **DIBOR_TOPDOWN**上下からにビットマップの行があります。 これにより、 [CImage::GetBits](#getbits)をビットマップ バッファーの最初のバイトへのポインターを返すと[CImage::GetPitch](#getpitch)を正の数値を返します。  
   
 ### <a name="remarks"></a>コメント  
- ビットマップには、非 DIB セクション ビットマップまたは DIB セクション ビットマップのいずれかを指定できます。 参照してください[IsDIBSection](#isdibsection) DIB でのみ使用できるメソッドの一覧については、ビットマップをセクションです。  
+ ビットマップには、非 DIB セクション ビットマップや DIB セクション ビットマップのいずれかを指定できます。 参照してください[IsDIBSection](#isdibsection) DIB でのみ使用できるメソッドの一覧については、ビットマップをセクションです。  
   
 ##  <a name="bitblt"></a>CImage::BitBlt  
- コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
+ 現在のデバイス コンテキストを元のデバイス コンテキストからビットマップをコピーします。  
   
 ```
 BOOL BitBlt(
@@ -381,25 +381,25 @@ BOOL BitBlt(
   
 ### <a name="parameters"></a>パラメーター  
  `hDestDC`  
- 宛先**HDC**します。  
+ 転送先**HDC**です。  
   
  `xDest`  
- コピー先の四角形の左上隅の論理 x 座標。  
+ 移行先の四角形の左上隅の論理 x 座標。  
   
  `yDest`  
- コピー先の四角形の左上隅の論理 y 座標。  
+ 移行先の四角形の左上隅の論理 y 座標。  
   
  `dwROP`  
- 実行するラスター オペレーションです。 ラスター オペレーション コードは、変換先を形成する、ソース、変換先、およびパターンのビットで定義された、現在選択されているブラシ) を組み合わせる方法を定義します。 参照してください[BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]の他のラスター オペレーション コードとその説明の一覧です。  
+ 実行するラスター オペレーションです。 ラスター オペレーション コードは、変換先を形成する、ソース、変換先、およびパターンのビット (で定義されている、現在選択されているブラシ) を組み合わせる方法を定義します。 参照してください[BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]その他のラスター オペレーション コードとその説明の一覧についてはします。  
   
  `pointDest`  
- A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)コピー先の四角形の左上隅を示す構造体。  
+ A[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)先の四角形の左上隅を示す構造体。  
   
  `nDestWidth`  
- 論理ユニットは、コピー先の四角形の幅。  
+ 論理ユニットは、先の四角形の幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形の高さ。  
+ 論理ユニットは、先の四角形の高さ。  
   
  `xSrc`  
  元の四角形の左上隅の論理 x 座標。  
@@ -408,13 +408,13 @@ BOOL BitBlt(
  元の四角形の左上隅の論理 y 座標。  
   
  `rectDest`  
- A [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)コピー先の四角形を示す構造体。  
+ A [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)先の四角形を示す構造体。  
   
  `pointSrc`  
  A**ポイント**元の四角形の左上隅を示す構造体。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
@@ -429,12 +429,12 @@ CImage() throw();
 ### <a name="remarks"></a>コメント  
  オブジェクトを作成した後で呼び出す[作成](#create)、[ロード](#load)、 [LoadFromResource](#loadfromresource)、または[アタッチ](#attach)ビットマップをオブジェクトにアタッチします。  
   
- **注**Visual Studio では、このクラスは、数のカウントを保持`CImage`オブジェクトを作成します。 カウントが 0 になったときに**オブジェクト**は GDI + で使用されるリソースを解放する自動的に呼び出されます。 これにより、いずれかの`CImage`Dll によって直接的または間接的に作成されたオブジェクトが正しく破棄される常に、**オブジェクト**DllMain からは呼び出されません。  
+ **注**Visual Studio では、このクラスは、数のカウントを保持`CImage`オブジェクトを作成します。 カウントが 0 の場合、関数になるたびに**オブジェクト**GDI + で使用されるリソースを解放する、自動的に呼び出されます。 これにより、いずれかの`CImage`Dll によって直接的または間接的を作成したオブジェクトが正しく破棄される常に、**オブジェクト**DllMain からは呼び出されません。  
   
- グローバル`CImage`DLL 内のオブジェクトはお勧めしません。 グローバル カタログ サーバーを使用する必要がある場合`CImage`呼び出し、DLL 内のオブジェクト[CImage::ReleaseGDIPlus](#releasegdiplus)を明示的に GDI + で使用されているリソースを解放します。  
+ グローバルを使用して`CImage`DLL 内のオブジェクトはお勧めしません。 グローバルを使用する必要がある場合`CImage`呼び出し、DLL 内のオブジェクト[CImage::ReleaseGDIPlus](#releasegdiplus)を明示的に GDI + で使用されるリソースを解放します。  
   
 ##  <a name="create"></a>CImage::Create  
- 作成、`CImage`ビットマップし、構築済みにアタッチ`CImage`オブジェクトです。  
+ 作成、`CImage`ビットマップし、構築済みにアタッチ`CImage`オブジェクト。  
   
 ```
 BOOL Create(
@@ -446,27 +446,27 @@ BOOL Create(
   
 ### <a name="parameters"></a>パラメーター  
  `nWidth`  
- 幅、`CImage`ピクセルのビットマップです。  
+ 幅、 `CImage` (ピクセル単位) のビットマップ。  
   
  `nHeight`  
- 高さ、`CImage`ピクセルのビットマップです。 場合`nHeight`が正の場合、ビットマップはボトムアップ DIB と原点は左下隅です。 場合`nHeight`は負の場合、ビットマップはトップダウンの DIB を起点と左上隅です。  
+ 高さ、 `CImage` (ピクセル単位) のビットマップ。 場合`nHeight`が正の値、ビットマップはボトムアップ DIB と原点は左下隅です。 場合`nHeight`は負の場合、ビットマップが上から下へ DIB を起点と左上隅です。  
   
  `nBPP`  
- ビットマップのピクセルごとのビット数が表示されます。 通常、4、8、16、24、または 32 です。 モノクロ ビットマップやマスクの 1 にすることができます。  
+ ビットマップのピクセルごとのビット数。 通常、4、8、16、24、または 32 です。 モノクロ ビットマップやマスクを 1 にすることができます。  
   
  `dwFlags`  
- Bitmap オブジェクトがアルファ チャネル構成を指定します。 次の値の&0; 個以上の組み合わせになります。  
+ かどうか、ビットマップ オブジェクトはアルファ チャネルを指定します。 次の値の 0 個以上の組み合わせが可能です。  
   
-- **createAlphaChannel**場合にのみ使用できます`nBPP`32、および`eCompression`は**値**です。 指定した場合、(英数字以外の 32 ビット イメージで使用されていない) の各ピクセルの第 4 バイトに格納されている、各ピクセルのアルファ (透明度) 値を作成したイメージがあります。 呼び出すときに自動的に、このアルファ チャネルが使用[CImage::AlphaBlend](#alphablend)します。  
+- **createAlphaChannel**場合にのみ使用できます`nBPP`32、および`eCompression`は**値**です。 指定した場合、各ピクセル (英数字以外の 32 ビットのイメージで使用されていない) の第 4 バイトに格納されている、各ピクセルのアルファ (透明度) 値を作成したイメージがあります。 呼び出すときに自動的に、このアルファ チャネルが使用[CImage::AlphaBlend](#alphablend)です。  
   
 > [!NOTE]
->  呼び出しで[:draw](#draw)、アルファ チャネルを持つイメージは自動的にアルファ、変換先にブレンドします。  
+>  呼び出しで[:draw](#draw)、アルファ チャネルを持つイメージは自動的にアルファ、変換先に統合します。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ##  <a name="createex"></a>CImage::CreateEx  
- 作成、`CImage`ビットマップし、構築済みにアタッチ`CImage`オブジェクトです。  
+ 作成、`CImage`ビットマップし、構築済みにアタッチ`CImage`オブジェクト。  
   
 ```
 BOOL CreateEx(
@@ -480,37 +480,37 @@ BOOL CreateEx(
   
 ### <a name="parameters"></a>パラメーター  
  `nWidth`  
- 幅、`CImage`ピクセルのビットマップです。  
+ 幅、 `CImage` (ピクセル単位) のビットマップ。  
   
  `nHeight`  
- 高さ、`CImage`ピクセルのビットマップです。 場合`nHeight`が正の場合、ビットマップはボトムアップ DIB と原点は左下隅です。 場合`nHeight`は負の場合、ビットマップはトップダウンの DIB を起点と左上隅です。  
+ 高さ、 `CImage` (ピクセル単位) のビットマップ。 場合`nHeight`が正の値、ビットマップはボトムアップ DIB と原点は左下隅です。 場合`nHeight`は負の場合、ビットマップが上から下へ DIB を起点と左上隅です。  
   
  `nBPP`  
- ビットマップのピクセルごとのビット数が表示されます。 通常、4、8、16、24、または 32 です。 モノクロ ビットマップやマスクの 1 にすることができます。  
+ ビットマップのピクセルごとのビット数。 通常、4、8、16、24、または 32 です。 モノクロ ビットマップやマスクを 1 にすることができます。  
   
  `eCompression`  
- (上から下の Dib を圧縮することはできません)、圧縮されたボトムアップのビットマップの圧縮の種類を指定します。 次のいずれかの値になります。  
+ (上から下へ Dib は圧縮できません)、圧縮されたボトムアップ ビットマップの圧縮の種類を指定します。 次のいずれかの値になります。  
   
-- **値**形式は圧縮されていません。 呼び出すときに、この値を指定する`CImage::CreateEx`は呼び出すことと同じ`CImage::Create`します。  
+- **値**形式に圧縮されていません。 呼び出すときに、この値を指定する`CImage::CreateEx`は呼び出すことと同じ`CImage::Create`です。  
   
-- **BI_BITFIELDS**形式は圧縮されていないと、カラー テーブルから成る&3;`DWORD`赤を指定するカラー マスクを選択し、緑、青のコンポーネントがそれぞれ、各ピクセルのです。 これは、16、32 bpp のビットマップを使用すると有効です。  
+- **BI_BITFIELDS**形式に圧縮されていないと、カラー テーブルから成る 3`DWORD`赤を指定するカラー マスク、緑、青のコンポーネントがそれぞれ、各ピクセルのです。 これは、16、32 bpp のビットマップを使用すると有効です。  
   
  *pdwBitfields*  
- 場合にのみ使用`eCompression`に設定されている**BI_BITFIELDS**、それ以外の場合があります**NULL**します。 3 つの配列へのポインター`DWORD`のどのビットごとのピクセルは、赤の使用を指定するビットマスクが緑、および青の色のコンポーネントがそれぞれします。 ビット フィールドの制限については、次を参照してください。 [BITMAPINFOHEADER](http://msdn.microsoft.com/library/windows/desktop/dd183376)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
+ 場合にのみ使用`eCompression`に設定されている**BI_BITFIELDS**、それ以外の場合があります**NULL**です。 3 つの配列へのポインター`DWORD`のどのビットごとのピクセルは、赤の使用を指定するビットマスクが、緑、青の色のコンポーネントがそれぞれします。 ビット フィールドの制限については、次を参照してください。 [BITMAPINFOHEADER](http://msdn.microsoft.com/library/windows/desktop/dd183376)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
  `dwFlags`  
- Bitmap オブジェクトがアルファ チャネル構成を指定します。 次の値の&0; 個以上の組み合わせになります。  
+ かどうか、ビットマップ オブジェクトはアルファ チャネルを指定します。 次の値の 0 個以上の組み合わせが可能です。  
   
-- **createAlphaChannel**場合にのみ使用できます`nBPP`32、および`eCompression`は**値**です。 指定した場合、(英数字以外の 32 ビット イメージで使用されていない) の各ピクセルの第 4 バイトに格納されている、各ピクセルのアルファ (透明度) 値を作成したイメージがあります。 呼び出すときに自動的に、このアルファ チャネルが使用[CImage::AlphaBlend](#alphablend)します。  
+- **createAlphaChannel**場合にのみ使用できます`nBPP`32、および`eCompression`は**値**です。 指定した場合、各ピクセル (英数字以外の 32 ビットのイメージで使用されていない) の第 4 バイトに格納されている、各ピクセルのアルファ (透明度) 値を作成したイメージがあります。 呼び出すときに自動的に、このアルファ チャネルが使用[CImage::AlphaBlend](#alphablend)です。  
   
     > [!NOTE]
-    >  呼び出しで[:draw](#draw)、アルファ チャネルを持つイメージは自動的にアルファ、変換先にブレンドします。  
+    >  呼び出しで[:draw](#draw)、アルファ チャネルを持つイメージは自動的にアルファ、変換先に統合します。  
   
 ### <a name="return-value"></a>戻り値  
- **TRUE**正常終了した場合。 それ以外の場合**FALSE**します。  
+ **TRUE**正常終了した場合。 それ以外の場合**FALSE**です。  
   
 ### <a name="example"></a>例  
- 次の例では、ピクセルごとに 16 ビットを使用して、100 x 100 ピクセルのビットマップを作成します。 指定した 16 ビットのピクセル ビット 0 ~ 3 は赤の要素をエンコード、4 ~ 7 ビット エンコード緑、および 8 ~ 11 ビットは青をエンコードします。 残りの 4 ビットは、使用されません。  
+ 次の例では、各ピクセルのエンコードに 16 ビットを使用して、100 x 100 ピクセルのビットマップを作成します。 指定した 16 ビットのピクセルでは、赤の要素のエンコード ビット 0-3、4 ~ 7 ビット エンコード緑、および 8 ~ 11 ビット エンコード青。 残りの 4 ビットは、使用されません。  
 
 ```cpp  
 DWORD adwBitmasks[3] = { 0x0000000f, 0x000000f0, 0x00000f00 };
@@ -519,24 +519,24 @@ m_myImage.CreateEx(100, 100, 16, BI_BITFIELDS, adwBitmasks, 0);
 
 
 ##  <a name="destroy"></a>CImage::Destroy  
- ビットマップからのデタッチ、`CImage`オブジェクトし、ビットマップを破棄します。  
+ ビットマップからのデタッチ、`CImage`オブジェクトをビットマップを破棄します。  
   
 ```
 void Destroy() throw();
 ```  
   
 ##  <a name="detach"></a>CImage::Detach  
- ビットマップからのデタッチ、`CImage`オブジェクトです。  
+ ビットマップからのデタッチ、`CImage`オブジェクト。  
   
 ```
 HBITMAP Detach() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- デタッチするには、ビットマップを識別するハンドルまたは**NULL**ビットマップがアタッチされていない場合。  
+ デタッチ、ビットマップへのハンドルまたは**NULL**ビットマップが添付されていない場合。  
   
 ##  <a name="draw"></a>:Draw  
- コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
+ 現在のデバイス コンテキストを元のデバイス コンテキストからビットマップをコピーします。  
   
 ```
 BOOL Draw(
@@ -581,16 +581,16 @@ BOOL Draw(
  コピー先デバイス コンテキストへのハンドル。  
   
  `xDest`  
- X 座標、コピー先の四角形の左上隅の論理単位です。  
+ X 座標、先の四角形の左上隅の論理単位です。  
   
  `yDest`  
- Y 座標、コピー先の四角形の左上隅の論理単位です。  
+ Y 座標を論理単位で、移行先の四角形の左上隅にあるのです。  
   
  `nDestWidth`  
- 論理ユニットは、コピー先の四角形の幅。  
+ 論理ユニットは、先の四角形の幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形の高さ。  
+ 論理ユニットは、先の四角形の高さ。  
   
  `xSrc`  
  X 座標、元の四角形の左上隅の論理単位です。  
@@ -605,10 +605,10 @@ BOOL Draw(
  論理ユニットは、元の四角形の高さ。  
   
  `rectDest`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、送信先を識別します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、変換先を識別します。  
   
  `rectSrc`  
- 参照、`RECT`構造のソースを特定します。  
+ 参照、`RECT`構造体、ソースを特定します。  
   
  `pointDest`  
  参照、[ポイント](http://msdn.microsoft.com/library/windows/desktop/dd162805)論理単位で、移行先の四角形の左上隅を識別する構造体。  
@@ -617,43 +617,43 @@ BOOL Draw(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- **描画**と同じ操作を実行[StretchBlt](#stretchblt)透明色またはアルファ チャネルにイメージが含まれていない場合、します。 その場合は、**描画**いずれかと同じ操作を実行[TransparentBlt](#transparentblt)または[AlphaBlend](#alphablend)必須とします。  
+ **描画**と同じ操作を実行[StretchBlt](#stretchblt)イメージには、透明色のアルファ チャネルが含まれている場合を除き、します。 その場合は、**描画**いずれかと同じ操作を実行[TransparentBlt](#transparentblt)または[およびアルファブレンド](#alphablend)必要に応じて。  
   
- バージョンの**描画**元の四角形を指定しない、ソース イメージ全体が既定値です。 バージョンの**描画**先の四角形のサイズを指定しませんが、ソース イメージのサイズは、既定または縮小が行われます。  
+ バージョンの**描画**元の四角形を指定しない、ソース イメージ全体は、既定値です。 バージョンの**描画**する先の四角形のサイズが指定されていません、ソース イメージのサイズは、既定または縮小が行われます。  
   
 ##  <a name="getbits"></a>CImage::GetBits  
- ビットマップのピクセルの実際のビット値へのポインターを取得します。  
+ ビットマップ内の特定のピクセルの実際のビット値へのポインターを取得します。  
   
 ```
 void* GetBits() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ビットマップ バッファーへのポインター。 ビットマップがボトムアップ DIB の場合は、ポインターは、バッファーの最後に記載します。 ビットマップがトップダウン DIB の場合、ポインターは、バッファーの最初のバイトを指します。  
+ ビットマップ バッファーへのポインター。 ビットマップがボトムアップ DIB の場合は、バッファーの末尾の近くポインター。 場合は、トップダウン DIB、バッファーの最初のバイトを指すポインターです。  
   
 ### <a name="remarks"></a>コメント  
- によって返される値と共にこのポインターを使用して[GetPitch](#getpitch)を検索して、イメージ内の個々 のピクセルを変更します。  
+ によって返される値と共に、このポインターを使用して[GetPitch](#getpitch)を検索し、画像内の個々 のピクセルを変更できます。  
   
 > [!NOTE]
->  このメソッドは、DIB セクション ビットマップだけをサポートしています。その結果のピクセルにアクセスする、 `CImage` DIB セクションのピクセルのと同様のオブジェクトします。 返されたポインターが指す位置 (0, 0)、ピクセルです。  
+>  このメソッドは、DIB セクション ビットマップのみをサポートしています。したがって、アクセスするアクセスのピクセル、 `CImage` DIB セクションのピクセルのと同様のオブジェクトします。 返されるポインターが指す位置 (0, 0)、ピクセルです。  
   
 ##  <a name="getbpp"></a>CImage::GetBPP  
- ビット/ピクセル値を取得します。  
+ ピクセルあたりのビット値を取得します。  
   
 ```
 int GetBPP() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ビット/ピクセルの数。  
+ 1 ピクセルあたりのビット数。  
   
 ### <a name="remarks"></a>コメント  
- この値は、各ピクセルを定義するビット数と、ビットマップの色の最大数を決定します。  
+ この値は、各ピクセルを定義するビットの数とビットマップの色の最大数を決定します。  
   
- 1、4、8、16、24、または 32 ビット/ピクセルは通常です。 参照してください、 **biBitCount**のメンバー [BITMAPINFOHEADER](http://msdn.microsoft.com/library/windows/desktop/dd183376)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]の詳細については、この値にします。  
+ ピクセルごとのビットは 1、4、8、16、24、または 32 では通常です。 参照してください、 **biBitCount**のメンバー [BITMAPINFOHEADER](http://msdn.microsoft.com/library/windows/desktop/dd183376)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]この値の詳細についてはします。  
   
 ##  <a name="getcolortable"></a>CImage::GetColorTable  
- DIB セクションのパレット内のエントリの範囲から、赤、緑、青 (RGB) の色の値を取得します。  
+ DIB セクションのパレット内のエントリの範囲から赤、緑、青 (RGB) の色の値を取得します。  
   
 ```
 void GetColorTable(UINT iFirstColor,
@@ -672,7 +672,7 @@ void GetColorTable(UINT iFirstColor,
  配列へのポインター [RGBQUAD](http://msdn.microsoft.com/library/windows/desktop/dd162938)構造体の色を取得するテーブルのエントリ。  
   
 ##  <a name="getdc"></a>CImage::GetDC  
- 現在選択されているイメージを持っているデバイス コンテキストを取得します。  
+ 現在選択されているイメージのあるデバイス コンテキストを取得します。  
   
 ```
 HDC GetDC() const throw();
@@ -682,10 +682,10 @@ HDC GetDC() const throw();
  デバイス コンテキストを識別するハンドル。  
   
 ### <a name="remarks"></a>コメント  
- 呼び出しごとに`GetDC`、後続の呼び出しにする必要があります[ReleaseDC](#releasedc)します。  
+ 呼び出しごとに`GetDC`、後続の呼び出しにする必要があります[ReleaseDC](#releasedc)です。  
   
 ##  <a name="getexporterfilterstring"></a>CImage::GetExporterFilterString  
- イメージを保存するためには、使用可能なイメージ形式を検索します。  
+ イメージを保存するためには、使用できるイメージ形式を検索します。  
   
 ```
 static HRESULT GetExporterFilterString(CSimpleString& strExporters,
@@ -697,16 +697,16 @@ static HRESULT GetExporterFilterString(CSimpleString& strExporters,
   
 ### <a name="parameters"></a>パラメーター  
  *strExporters*  
- 参照、 **CSimpleString**オブジェクトです。 参照してください**解説**の詳細。  
+ 参照、 **CSimpleString**オブジェクト。 参照してください**解説**詳細についてはします。  
   
  `aguidFileTypes`  
- 文字列内のファイルの種類のいずれかに対応する各要素に、Guid の配列。 例では`pszAllFilesDescription`下`aguidFileTypes`[0] は`GUID_NULL`残りの配列値は、現在のオペレーティング システムでサポートされているイメージ ファイル形式とします。  
+ 文字列内のファイルの種類のいずれかに対応する各要素に、Guid の配列。 例では`pszAllFilesDescription`下、 `aguidFileTypes`[0] は`GUID_NULL`残りの配列値は、現在のオペレーティング システムでサポートされているイメージ ファイル形式とします。  
   
 > [!NOTE]
->  定数の一覧については、次を参照してください。**イメージ ファイル形式の定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
+>  定数の完全な一覧を参照してください。**イメージ ファイル形式定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
  `pszAllFilesDescription`  
- このパラメーターがない場合**NULL**、フィルター文字列では、一覧の先頭に追加の&1; つのフィルターができます。 このフィルターは、現在の値が`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
+ このパラメーターがない場合**NULL**、フィルター文字列は、一覧の先頭に追加の 1 つのフィルターがします。 このフィルターはの現在の値に`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
   
  例:  
 
@@ -722,49 +722,49 @@ CImage::GetExporterFilterString(
  `dwExclude`  
  一覧から除外するファイルの種類を指定するビット フラグのセット。 指定できるフラグは次のとおりです。  
   
-- **excludeGIF** = 0x01 除外 GIF ファイルです。  
+- **excludeGIF** 0x01 除外 GIF ファイルを = です。  
   
-- **excludeBMP** = 0x02 除外 BMP (Windows ビットマップ) ファイルです。  
+- **excludeBMP** 0x02 除外 BMP (Windows ビットマップ) ファイルを = です。  
   
-- **excludeEMF** = 0x04 除外 EMF (拡張メタファイル) ファイルです。  
+- **excludeEMF** = 0x04 除外 EMF (拡張メタファイル) ファイル。  
   
-- **excludeWMF** = 0x08 除外 WMF (Windows のメタファイル) ファイルです。  
+- **excludeWMF** 0x08 除外 WMF (Windows メタファイル) ファイルを = です。  
   
-- **excludeJPEG** = 0x10 除外 JPEG ファイルです。  
+- **excludeJPEG** 0x10 除外 JPEG ファイルを = です。  
   
-- **excludePNG** = 0x20 除外 PNG ファイルです。  
+- **excludePNG** 0x20 除外 PNG ファイルを = です。  
   
-- **excludeTIFF** = 0x40 除外 TIFF ファイルです。  
+- **excludeTIFF** 0x40 除外 TIFF ファイルを = です。  
   
-- **excludeIcon** = 0x80 除外 ICO (Windows のアイコン) ファイルです。  
+- **excludeIcon** 0x80 除外 ICO (Windows のアイコン) ファイルを = です。  
   
 - **excludeOther** = 0x80000000 が上記以外の他のファイル種類を除外します。  
   
-- **excludeDefaultLoad** = 0 の種類は、既定で含まれるすべてのファイルの負荷を  
+- **excludeDefaultLoad** load]、[既定の型が含まれているすべてのファイルの場合は 0 を =  
   
-- **excludeDefaultSave** = **excludeIcon | excludeEMF | excludeWMF**特別な要件があるために、これらのファイルを既定で除外するよう、保存するためです。  
+- **excludeDefaultSave** = **excludeIcon | excludeEMF | excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
   
  `chSeparator`  
- イメージ形式の間で使用される区切り記号。 参照してください**解説**の詳細。  
+ イメージ形式の間で使用される区切り記号。 参照してください**解説**詳細についてはします。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT`。  
   
 ### <a name="remarks"></a>コメント  
- Mfc は、結果の書式指定文字列を渡すことができます[CFileDialog](../../mfc/reference/cfiledialog-class.md)ファイル名を付けて保存 ダイアログ ボックスで使用可能なイメージ ファイルの拡張機能を公開するオブジェクトの書式します。  
+ MFC には、結果の書式指定文字列を渡すことができます[CFileDialog](../../mfc/reference/cfiledialog-class.md)ファイル名を付けて保存 ダイアログ ボックスで使用可能なイメージ ファイルの拡張機能を公開するオブジェクトの書式します。  
   
  パラメーター *strExporter*形式があります。  
   
- ファイルの description0 |\*.ext0 | filedescription1 |\*.ext1 |. ファイルの説明*n*|\*します。ext *n*||  
+ ファイルの description0 |\*.ext0 | filedescription1 |\*.ext1 |... ファイルの説明*n*|\*です。ext *n*||  
   
- ここで ' |' で指定された区切り記号`chSeparator`します。 例:  
+ ここで ' |' 区切り記号がで指定された`chSeparator`です。 例:  
   
  `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`  
   
- 既定の区切り記号を使用して ' |' MFC にこの文字列を渡す場合`CFileDialog`オブジェクトです。 一般的な名前を付けて保存 ダイアログ ボックスにこの文字列を渡す場合は、null の区切り記号 '\0' を使用します。  
+ 既定の区切り記号 ' |'、MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 一般的な名前を付けて保存 ダイアログ ボックスにこの文字列を渡す場合は、null の区切り記号 '\0' を使用します。  
   
 ##  <a name="getheight"></a>CImage::GetHeight  
- イメージのピクセルの高さを取得します。  
+ イメージのピクセル単位の高さを取得します。  
   
 ```
 int GetHeight() const throw();
@@ -786,16 +786,16 @@ static HRESULT GetImporterFilterString(CSimpleString& strImporters,
   
 ### <a name="parameters"></a>パラメーター  
  *strImporters*  
- 参照、 **CSimpleString**オブジェクトです。 参照してください**解説**の詳細。  
+ 参照、 **CSimpleString**オブジェクト。 参照してください**解説**詳細についてはします。  
   
  `aguidFileTypes`  
- 文字列内のファイルの種類のいずれかに対応する各要素に、Guid の配列。 例では`pszAllFilesDescription`下`aguidFileTypes`[0] は`GUID_NULL`残りの配列を含む値は、現在のオペレーティング システムでサポートされているイメージ ファイル形式です。  
+ 文字列内のファイルの種類のいずれかに対応する各要素に、Guid の配列。 例では`pszAllFilesDescription`下、 `aguidFileTypes`[0] は`GUID_NULL`残りの配列を持つ値は、現在のオペレーティング システムでサポートされているイメージ ファイル形式。  
   
 > [!NOTE]
->  定数の一覧については、次を参照してください。**イメージ ファイル形式の定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
+>  定数の完全な一覧を参照してください。**イメージ ファイル形式定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
  `pszAllFilesDescription`  
- このパラメーターがない場合**NULL**、フィルター文字列では、一覧の先頭に追加の&1; つのフィルターができます。 このフィルターは、現在の値が`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
+ このパラメーターがない場合**NULL**、フィルター文字列は、一覧の先頭に追加の 1 つのフィルターがします。 このフィルターはの現在の値に`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
   
  例:  
 
@@ -811,43 +811,43 @@ CImage::GetImporterFilterString(
  `dwExclude`  
  一覧から除外するファイルの種類を指定するビット フラグのセット。 指定できるフラグは次のとおりです。  
   
-- **excludeGIF** = 0x01 除外 GIF ファイルです。  
+- **excludeGIF** 0x01 除外 GIF ファイルを = です。  
   
-- **excludeBMP** = 0x02 除外 BMP (Windows ビットマップ) ファイルです。  
+- **excludeBMP** 0x02 除外 BMP (Windows ビットマップ) ファイルを = です。  
   
-- **excludeEMF** = 0x04 除外 EMF (拡張メタファイル) ファイルです。  
+- **excludeEMF** = 0x04 除外 EMF (拡張メタファイル) ファイル。  
   
-- **excludeWMF** = 0x08 除外 WMF (Windows のメタファイル) ファイルです。  
+- **excludeWMF** 0x08 除外 WMF (Windows メタファイル) ファイルを = です。  
   
-- **excludeJPEG** = 0x10 除外 JPEG ファイルです。  
+- **excludeJPEG** 0x10 除外 JPEG ファイルを = です。  
   
-- **excludePNG** = 0x20 除外 PNG ファイルです。  
+- **excludePNG** 0x20 除外 PNG ファイルを = です。  
   
-- **excludeTIFF** = 0x40 除外 TIFF ファイルです。  
+- **excludeTIFF** 0x40 除外 TIFF ファイルを = です。  
   
-- **excludeIcon** = 0x80 除外 ICO (Windows のアイコン) ファイルです。  
+- **excludeIcon** 0x80 除外 ICO (Windows のアイコン) ファイルを = です。  
   
 - **excludeOther** = 0x80000000 が上記以外の他のファイル種類を除外します。  
   
-- **excludeDefaultLoad** = 0 の種類は、既定で含まれるすべてのファイルの負荷を  
+- **excludeDefaultLoad** load]、[既定の型が含まれているすべてのファイルの場合は 0 を =  
   
-- **excludeDefaultSave** = **excludeIcon | excludeEMF | excludeWMF**特別な要件があるために、これらのファイルを既定で除外するよう、保存するためです。  
+- **excludeDefaultSave** = **excludeIcon | excludeEMF | excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
   
  `chSeparator`  
- イメージ形式の間で使用される区切り記号。 参照してください**解説**の詳細。  
+ イメージ形式の間で使用される区切り記号。 参照してください**解説**詳細についてはします。  
   
 ### <a name="remarks"></a>コメント  
- Mfc は、結果の書式指定文字列を渡すことができます[CFileDialog](../../mfc/reference/cfiledialog-class.md)で使用可能なイメージ ファイルの拡張機能を公開するオブジェクトの書式、**ファイルを開く** ダイアログ ボックス。  
+ MFC には、結果の書式指定文字列を渡すことができます[CFileDialog](../../mfc/reference/cfiledialog-class.md)で使用可能なイメージ ファイルの拡張機能を公開するオブジェクトの書式、**ファイルを開く** ダイアログ ボックス。  
   
  パラメーター *strImporter*形式があります。  
   
- ファイルの description0 |\*.ext0 | filedescription1 |\*.ext1 |. ファイルの説明*n*|\*します。ext *n*||  
+ ファイルの description0 |\*.ext0 | filedescription1 |\*.ext1 |... ファイルの説明*n*|\*です。ext *n*||  
   
- ここで ' |' で指定された区切り記号`chSeparator`します。 例:  
+ ここで ' |' 区切り記号がで指定された`chSeparator`です。 例:  
   
  `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`  
   
- 既定の区切り記号を使用して ' |' MFC にこの文字列を渡す場合`CFileDialog`オブジェクトです。 共通にこの文字列を渡す場合は、null の区切り記号 '\0' を使用して**ファイルを開く** ダイアログ ボックス。  
+ 既定の区切り記号 ' |'、MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 共通にこの文字列を渡す場合、null の区切り記号 '\0' を使用して**ファイルを開く** ダイアログ ボックス。  
   
 ##  <a name="getmaxcolortableentries"></a>CImage::GetMaxColorTableEntries  
  カラー テーブル内のエントリの最大数を取得します。  
@@ -860,28 +860,28 @@ int GetMaxColorTableEntries() const throw();
  カラー テーブル内のエントリの数。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、DIB セクション ビットマップだけをサポートします。  
+ このメソッドは、DIB セクション ビットマップのみをサポートします。  
   
 ##  <a name="getpitch"></a>CImage::GetPitch  
- イメージの高さを取得します。  
+ イメージの声の高さを取得します。  
   
 ```
 int GetPitch() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- イメージのピッチです。 戻り値が負の場合は、ビットマップはボトムアップの DIB を起点と左下隅です。 戻り値が正の場合は、ビットマップはトップダウン DIB と原点は左上隅です。  
+ イメージのピッチです。 戻り値が負の場合、ビットマップはボトムアップ DIB を起点と左下隅です。 戻り値が正の場合は、ビットマップが上から下へ DIB を起点と左上隅です。  
   
 ### <a name="remarks"></a>コメント  
- 音の高さは、2 つのメモリ アドレスを&1; つのビットマップの行の先頭を表すと次のビットマップ行の先頭の間のバイト単位の距離です。 声の高さは、バイト単位で測定されるため、イメージの声の高さでは、ピクセル形式を決定することができます。 声の高さには、ビットマップ用に予約の追加のメモリを含めることもできます。  
+ ピッチは、(バイト単位) を 1 つのビットマップの行の先頭を表す 2 つのメモリ アドレスとビットマップの次の行の先頭の間の距離です。 声の高さは、バイト単位で測定されるため、イメージのピッチでは、ピクセル形式を決定することができます。 ピッチでは、ビットマップ用に予約の追加のメモリを含めることもできます。  
   
- 使用`GetPitch`と[GetBits](#getbits)を個々 のピクセルの画像を検索します。  
+ 使用して`GetPitch`で[GetBits](#getbits)を個々 のピクセルの画像を検索します。  
   
 > [!NOTE]
->  このメソッドは、DIB セクション ビットマップだけをサポートします。  
+>  このメソッドは、DIB セクション ビットマップのみをサポートします。  
   
 ##  <a name="getpixel"></a>CImage::GetPixel  
- 指定された位置にあるピクセルの色を取得*x*と*y*します。  
+ 指定された位置のピクセルの色を取得*x*と*y*です。  
   
 ```
 COLORREF GetPixel(int x,int y) const throw();
@@ -895,7 +895,7 @@ COLORREF GetPixel(int x,int y) const throw();
  ピクセルの y 座標。  
   
 ### <a name="return-value"></a>戻り値  
- 赤、緑、青 (RGB) の値、ピクセル。 戻り値は、ピクセルが現在のクリップ領域の外部にある場合は、 **CLR_INVALID**します。  
+ 赤、緑、青 (RGB) の値、ピクセルです。 戻り値は、ピクセルが現在のクリップ領域外にある場合は、 **CLR_INVALID**です。  
   
 ##  <a name="getpixeladdress"></a>CImage::GetPixelAddress  
  ピクセルの正確なアドレスを取得します。  
@@ -912,15 +912,15 @@ void* GetPixelAddress(int x,int y) throw();
  ピクセルの y 座標。  
   
 ### <a name="remarks"></a>コメント  
- アドレスは、ピクセルの座標、ビットマップ、およびピクセルごとのビットのピッチに従って決定されます。  
+ アドレスは、ピクセルの座標、ビットマップ、およびピクセルあたりのビットのピッチに従って決定されます。  
   
- ピクセルあたり 8 ビット未満のある形式の場合は、このメソッドは、ピクセルを含むバイトのアドレスを返します。 たとえば、イメージ形式は 4 ビット/ピクセル、`GetPixelAddress`を返します。 バイトごとの 2 ピクセルの最初のピクセルにすると、バイトのアドレスを計算する必要があります。  
+ 1 ピクセルあたり 8 ビット未満のある形式の場合は、このメソッドは、ピクセルを含むバイトのアドレスを返します。 たとえば、イメージの形式は 4 ビット/ピクセル、`GetPixelAddress`を返します。 1 バイトの 2 つのピクセルの最初のピクセルにすると、バイトのアドレスを計算する必要があります。  
   
 > [!NOTE]
->  このメソッドは、DIB セクション ビットマップだけをサポートします。  
+>  このメソッドは、DIB セクション ビットマップのみをサポートします。  
   
 ##  <a name="gettransparentcolor"></a>CImage::GetTransparentColor  
- 透明色カラー パレット内の位置を示すインデックスを取得します。  
+ カラー パレットの透明色の位置を示すインデックスを取得します。  
   
 ```
 LONG GetTransparentColor() const throw();
@@ -930,7 +930,7 @@ LONG GetTransparentColor() const throw();
  透明色のインデックス。  
   
 ##  <a name="getwidth"></a>CImage::GetWidth  
- イメージのピクセルの幅を取得します。  
+ イメージのピクセル単位の幅を取得します。  
   
 ```
 int GetWidth() const throw();
@@ -947,10 +947,10 @@ bool IsDIBSection() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- **true**割り当てられているビットマップが DIB セクションである場合。 それ以外の場合**false**します。  
+ **true**アタッチされているビットマップは DIB セクション場合。 それ以外の場合**false**です。  
   
 ### <a name="remarks"></a>コメント  
- ビットマップは DIB のセクションではない場合は、以下を使用することはできません`CImage`メソッドで、DIB セクション ビットマップだけをサポートします。  
+ ビットマップは DIB セクションではない場合は、以下を使用することはできません`CImage`DIB セクション ビットマップのみをサポートするメソッド。  
   
 - [GetBits](#getbits)  
   
@@ -967,20 +967,20 @@ bool IsDIBSection() const throw();
 - [SetColorTable](#setcolortable)  
   
 ##  <a name="isindexed"></a>CImage::IsIndexed  
- ビットマップのピクセルがカラー パレットにマップするかどうかを決定します。  
+ カラー パレットにビットマップのピクセルを割り当てるかどうかを判断します。  
   
 ```
 bool IsIndexed() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- **true**インデックス以外の場合**false**します。  
+ **true**それ以外のインデックス付き**false**です。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドが戻る**true**ビットマップが 8 ビットである場合にのみ (256 色) 以内です。  
+ このメソッドが戻る**true**ビットマップが 8 ビットである場合にのみ (256 色) 以下です。  
   
 > [!NOTE]
->  このメソッドは、DIB セクション ビットマップだけをサポートします。  
+>  このメソッドは、DIB セクション ビットマップのみをサポートします。  
   
 ##  <a name="isnull"></a>CImage::IsNull  
  ビットマップが現在読み込まれているかどうかを判断します。  
@@ -990,7 +990,7 @@ bool IsNull() const throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメソッドが戻る**True**ビットマップ現在ない場合ロード以外の場合**False**します。  
+ このメソッドが戻る**True**いる場合は、ビットマップそれ以外の読み込まれた**False**です。  
   
 ##  <a name="istransparencysupported"></a>CImage::IsTransparencySupported  
  アプリケーションが透明なビットマップをサポートし、Windows 2000 またはそれ以降にコンパイルされたかどうかを示します。  
@@ -1000,12 +1000,12 @@ static BOOL IsTransparencySupported() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 以外の場合は、現在のプラットフォームは、透過性をサポートしています。 それ以外の場合 0 を返します。  
+ 現在のプラットフォームの透過性をサポートする場合は 0 以外の値。 それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 戻り値は&0; 以外の値、および透過性がサポートされている場合への呼び出し[AlphaBlend](#alphablend)、 [TransparentBlt](#transparentblt)、または[描画](#draw)透明色を処理します。  
+ 場合は、戻り値は 0 以外の場合、透過性をサポートするへの呼び出し[およびアルファブレンド](#alphablend)、 [TransparentBlt](#transparentblt)、または[描画](#draw)透明色を処理します。  
   
- Windows 2000 または Windows 98 の前にオペレーティング システムで使用するアプリケーションをコンパイルすると、このメソッドは新しいオペレーティング システムであっても、0 を常に返します。  
+ 場合は、アプリケーションがコンパイルされるオペレーティング システムで使用する Windows 2000 または Windows 98 の前に、このメソッドは常に新しいオペレーティング システム上であっても、0 を返します。  
   
 
 ##  <a name="load"></a>CImage::Load  
@@ -1027,12 +1027,12 @@ HRESULT Load(IStream* pStream) throw();
  標準の `HRESULT`。  
   
 ### <a name="remarks"></a>コメント  
- 指定されたイメージを読み込み*pszFileName*または`pStream`です。  
+ 指定されたイメージを読み込みます*pszFileName*または`pStream`です。  
   
- 有効なイメージの種類は、BMP、GIF、JPEG、PNG、TIFF およびです。  
+ 有効なイメージの種類は、BMP、GIF、JPEG、PNG、TIFF です。  
   
 ##  <a name="loadfromresource"></a>CImage::LoadFromResource  
- イメージを読み込み、`BITMAP`リソースです。  
+ イメージを読み込み、`BITMAP`リソース。  
   
 ```
 void LoadFromResource(
@@ -1049,13 +1049,13 @@ void LoadFromResource(
  読み込まれるイメージが含まれるモジュールのインスタンスへのハンドルします。  
   
  `pszResourceName`  
- 読み込むイメージが含まれるリソースの名前を含む文字列へのポインター。  
+ 読み込む画像が含まれるリソースの名前を含む文字列へのポインター。  
   
  `nIDResource`  
  読み込むリソースの ID。  
   
 ### <a name="remarks"></a>コメント  
- リソースは、型でなければなりません`BITMAP`します。  
+ リソースは、型でなければなりません`BITMAP`です。  
   
 ##  <a name="maskblt"></a>CImage::MaskBlt  
  指定したマスクとラスター オペレーションを使用する元とコピー先のビットマップの色のデータを結合します。  
@@ -1098,19 +1098,19 @@ BOOL MaskBlt(
   
 ### <a name="parameters"></a>パラメーター  
  `hDestDC`  
- 実行可能ファイルは、リソースを含むモジュールへのハンドル。  
+ 実行可能ファイルがリソースを含むモジュールへのハンドル。  
   
  `xDest`  
- X 座標、コピー先の四角形の左上隅の論理単位です。  
+ X 座標、先の四角形の左上隅の論理単位です。  
   
  `yDest`  
- Y 座標、コピー先の四角形の左上隅の論理単位です。  
+ Y 座標を論理単位で、移行先の四角形の左上隅にあるのです。  
   
  `nDestWidth`  
  論理ユニットは、コピー先の四角形と元のビットマップの幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形と元のビットマップの高さ。  
+ 論理単位で、対象の四角形と元のビットマップの高さ。  
   
  `xSrc`  
  元のビットマップの左上隅の論理 x 座標。  
@@ -1119,19 +1119,19 @@ BOOL MaskBlt(
  元のビットマップの左上隅の論理 y 座標。  
   
  `hbmMask`  
- 転送元デバイス コンテキストで、カラー ビットマップと組み合わせて、モノクロ マスク ビットマップへのハンドルします。  
+ 元のデバイス コンテキストのカラー ビットマップと組み合わせるモノクロのマスク ビットマップへのハンドルします。  
   
  `xMask`  
- 指定されたマスク ビットマップの水平方向のピクセルのオフセット、`hbmMask`パラメーター。  
+ 指定されたマスク ビットマップのピクセルの水平方向のオフセット、`hbmMask`パラメーター。  
   
  `yMask`  
- 指定されたマスク ビットマップの垂直方向のピクセルのオフセット、`hbmMask`パラメーター。  
+ 指定されたマスク ビットマップのピクセルの垂直オフセット、`hbmMask`パラメーター。  
   
  `dwROP`  
- ソースおよび変換先データの組み合わせを制御するメソッドを使用する前景色と背景の両方の三項ラスター オペレーション コードを指定します。 バック グラウンドのラスター オペレーション コードは、この値には、この値の上位ワードの高位バイトで格納されます。フォア グラウンド ラスター オペレーション コードは、この値には、この値の上位ワードの下位バイトで格納されます。この値の下位ワードは無視され、0 にする必要があります。 前景色と背景がこのメソッドのコンテキストでの詳細については、次を参照してください。`MaskBlt`で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。 共通のラスター オペレーション コードの一覧は、次を参照してください。`BitBlt`で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
+ ソースおよび変換先データの組み合わせを制御するメソッドを使用する前景色と背景の両方の三項ラスター オペレーション コードを指定します。 バック グラウンド ラスター オペレーション コードがこの値の上位ワードの高位バイトに格納されています。フォア グラウンド ラスター オペレーション コードはこの値の上位ワードの下位バイトに格納されています。この値の下位ワードは無視され、0 にする必要があります。 前景色および背景でこのメソッドのコンテキストの詳細については、次を参照してください。`MaskBlt`で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。 一般的なラスター オペレーション コードの一覧は、次を参照してください。`BitBlt`で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
  `rectDest`  
- 参照、`RECT`構造体、送信先を識別します。  
+ 参照、`RECT`構造体、変換先を識別します。  
   
  `pointSrc`  
  A`POINT`元の四角形の左上隅を示す構造体。  
@@ -1146,13 +1146,13 @@ BOOL MaskBlt(
  成功した場合、0 以外。 それ以外の場合に 0 です。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、Windows NT では、バージョン 4.0 以降のみに適用されます。  
+ このメソッドは、Windows NT、バージョン 4.0 以降のみに適用されます。  
   
 ##  <a name="operator_hbitmap"></a>CImage::operator HBITMAP  
- この演算子の接続されている Windows GDI ハンドルの取得を使用して、`CImage`オブジェクトです。 この演算子はキャスト演算子の`HBITMAP`オブジェクトです。  
+ この演算子のアタッチされた Windows GDI ハンドルの取得を使用して、`CImage`オブジェクト。 この演算子はキャスト演算子の`HBITMAP`オブジェクト。  
   
 ##  <a name="plgblt"></a>CImage::PlgBlt  
- 転送元デバイス コンテキスト内の四角形からコピー先デバイス コンテキストで指定した平行四辺形にビット ブロック転送を実行します。  
+ コピー先デバイス コンテキストで指定した平行四辺形に元デバイス コンテキスト内の四角形からのビット ブロック転送を実行します。  
   
 ```
 BOOL PlgBlt(
@@ -1184,10 +1184,10 @@ BOOL PlgBlt(
  コピー先デバイス コンテキストへのハンドル。  
   
  *pPoints*  
- 先の平行四辺形の&3; つの角を識別する論理空間内の次の&3; つの点の配列へのポインター。 元の四角形の左上隅は、この配列、配列内の&2; つ目のポイントを右上隅および&3; 番目のポイントを左下隅の最初の要素にマップされます。 元の四角形の右下隅は、暗黙の型の&4; 番目の点、平行四辺形内にマップされます。  
+ 平行四辺形の 3 つの角を識別する論理空間内の次の 3 つの点の配列へのポインター。 元の四角形の左上隅は、この配列、配列内の 2 番目のポイントを右上隅および 3 番目のポイントを左下隅の最初のポイントにマップされます。 元の四角形の右下隅は、暗黙的な 4 番目のポイント、平行四辺形内にマップされます。  
   
  `hbmMask`  
- 元の四角形の色をマスクするために使用されるオプションのモノクロ ビットマップへのハンドル。  
+ 元の四角形の色をマスクに使用されるオプションのモノクロ ビットマップへのハンドル。  
   
  `xSrc`  
  X 座標、元の四角形の左上隅の論理単位です。  
@@ -1202,10 +1202,10 @@ BOOL PlgBlt(
  論理ユニットは、元の四角形の高さ。  
   
  `xMask`  
- モノクロ ビットマップの左上隅の x 座標。  
+ モノクロのビットマップの左上隅の x 座標。  
   
  `yMask`  
- モノクロ ビットマップの左上隅の y 座標。  
+ モノクロのビットマップの左上隅の y 座標。  
   
  `rectSrc`  
  参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体の元の四角形の座標を指定します。  
@@ -1217,9 +1217,9 @@ BOOL PlgBlt(
  成功した場合、0 以外。 それ以外の場合に 0 です。  
   
 ### <a name="remarks"></a>コメント  
- 場合`hbmMask`モノクロ ビットマップが有効**PlgBit**元の四角形からの色データのビット マスクをこのビットマップを使用します。  
+ 場合`hbmMask`モノクロのビットマップが有効**PlgBit**このビットマップを使用して、元の四角形の色データのビットをマスクします。  
   
- このメソッドは、Windows NT では、バージョン 4.0 以降のみに適用されます。 参照してください[PlgBlt](http://msdn.microsoft.com/library/windows/desktop/dd162804)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]より詳細な情報です。  
+ このメソッドは、Windows NT、バージョン 4.0 以降のみに適用されます。 参照してください[PlgBlt](http://msdn.microsoft.com/library/windows/desktop/dd162804)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]詳細についてはします。  
   
 ##  <a name="releasedc"></a>CImage::ReleaseDC  
  デバイス コンテキストを解放します。  
@@ -1229,20 +1229,20 @@ void ReleaseDC() const throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- デバイス コンテキストに一度に選択する&1; つだけのビットマップを呼び出す必要があります`ReleaseDC`呼び出しごとに[GetDC](#getdc)します。  
+ デバイス コンテキストに一度に選択できる 1 つだけのビットマップ、呼び出す必要があります`ReleaseDC`呼び出しごとに[GetDC](#getdc)です。  
   
 ##  <a name="releasegdiplus"></a>CImage::ReleaseGDIPlus  
- GDI + で使用されているリソースを解放します。  
+ GDI + で使用されるリソースを解放します。  
   
 ```
 void ReleaseGDIPlus() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメソッドを呼び出すをグローバル カタログ サーバーによって割り当てられたリソースを解放する必要があります`CImage`オブジェクトです。 参照してください[CImage::CImage](#cimage)します。  
+ このメソッドを呼び出すグローバルによって割り当てられたリソースを解放する必要があります`CImage`オブジェクト。 参照してください[CImage::CImage](#cimage)です。  
   
 ##  <a name="save"></a>CImage::Save  
- 指定したストリームまたはファイルをディスクに画像を保存します。  
+ 指定したストリームまたはディスク上のファイルにイメージを保存します。  
   
 ```
 HRESULT Save(IStream* pStream,
@@ -1254,7 +1254,7 @@ HRESULT Save(LPCTSTR pszFileName,
   
 ### <a name="parameters"></a>パラメーター  
  `pStream`  
- ファイルのイメージ データを含む COM IStream オブジェクトへのポインター。  
+ ファイル イメージ データを含む COM IStream オブジェクトへのポインター。  
   
  *pszFileName*  
  イメージのファイル名へのポインター。  
@@ -1271,16 +1271,16 @@ HRESULT Save(LPCTSTR pszFileName,
 - **ImageFormatGIF** A GIF 圧縮されたイメージ。  
   
 > [!NOTE]
->  定数の一覧については、次を参照してください。**イメージ ファイル形式の定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
+>  定数の完全な一覧を参照してください。**イメージ ファイル形式定数**で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT`。  
   
 ### <a name="remarks"></a>コメント  
- 指定した名前と型を使用してイメージを保存するには、この関数を呼び出します。 場合、`guidFileType`パラメーターが含まれていない、ファイル名のファイルの拡張機能を使用して、イメージ形式を決定します。 拡張機能が指定されていない場合、イメージが BMP 形式で保存されます。  
+ 指定した名前と型を使用してイメージを保存するには、この関数を呼び出します。 場合、`guidFileType`パラメーターが含まれていない、イメージの形式を決定するファイル名の拡張子が使用されます。 拡張機能が指定されていない場合は、bmp ファイル形式にイメージが保存されます。  
   
 ##  <a name="setcolortable"></a>CImage::SetColorTable  
- DIB セクションのパレットのエントリの範囲の赤、緑、青 (RGB) の色値を設定します。  
+ DIB セクションのパレット内のエントリの範囲の赤、緑、青 (RGB) の色値を設定します。  
   
 ```
 void SetColorTable(
@@ -1300,10 +1300,10 @@ void SetColorTable(
  配列へのポインター [RGBQUAD](http://msdn.microsoft.com/library/windows/desktop/dd162938)テーブル エントリの色を設定する構造体。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、DIB セクション ビットマップだけをサポートします。  
+ このメソッドは、DIB セクション ビットマップのみをサポートします。  
   
 ##  <a name="setpixel"></a>CImage::SetPixel  
- ビットマップ内の指定の場所には、ピクセルの色を設定します。  
+ ビットマップ内で特定の場所のピクセルの色を設定します。  
   
 ```
 void SetPixel(int x, int y, COLORREF color) throw();
@@ -1311,19 +1311,19 @@ void SetPixel(int x, int y, COLORREF color) throw();
   
 ### <a name="parameters"></a>パラメーター  
  *x*  
- 設定するピクセルの水平方向の位置。  
+ 設定するピクセルの水平位置です。  
   
  *y*  
  設定するピクセルの垂直方向の位置。  
   
  `color`  
- ピクセルを設定する色。  
+ ピクセルを設定する色です。  
   
 ### <a name="remarks"></a>コメント  
  このメソッドは、ピクセルの座標が選択されているクリッピング領域の外にある場合に失敗します。  
   
 ##  <a name="setpixelindexed"></a>CImage::SetPixelIndexed  
- ある色ピクセルの色を設定`iIndex`カラー パレットにします。  
+ ある色にピクセルの色を設定`iIndex`カラー パレットにします。  
   
 ```
 void SetPixelIndexed(int x, int y, int iIndex) throw();
@@ -1331,7 +1331,7 @@ void SetPixelIndexed(int x, int y, int iIndex) throw();
   
 ### <a name="parameters"></a>パラメーター  
  *x*  
- 設定するピクセルの水平方向の位置。  
+ 設定するピクセルの水平位置です。  
   
  *y*  
  設定するピクセルの垂直方向の位置。  
@@ -1353,7 +1353,7 @@ void SetPixelRGB(
   
 ### <a name="parameters"></a>パラメーター  
  *x*  
- 設定するピクセルの水平方向の位置。  
+ 設定するピクセルの水平位置です。  
   
  *y*  
  設定するピクセルの垂直方向の位置。  
@@ -1368,10 +1368,10 @@ void SetPixelRGB(
  青の色の彩度。  
   
 ### <a name="remarks"></a>コメント  
- 赤、緑、および青のパラメーターは、それぞれ 0 ~ 255 の数値で表されます。 すべての&3; つのパラメーターを&0; に設定した場合、色は黒です。 すべての 3 つのパラメーターを 255 に設定した場合、色は白です。  
+ 赤、緑、および青のパラメーターは、それぞれ 0 ~ 255 の数値で表されます。 3 つすべてのパラメーターを 0 に設定した場合、色は黒です。 次の 3 つのすべてのパラメーターを 255 に設定した場合、色は白です。  
   
 ##  <a name="settransparentcolor"></a>CImage::SetTransparentColor  
- 透明色として指定したインデックス位置にある、色を設定します。  
+ 透過的と指定したインデックス位置にある、色を設定します。  
   
 ```
 LONG SetTransparentColor(LONG iTransparentColor) throw();
@@ -1379,13 +1379,13 @@ LONG SetTransparentColor(LONG iTransparentColor) throw();
   
 ### <a name="parameters"></a>パラメーター  
  *iTransparentColor*  
- 透過色に設定する色のカラー パレット内のインデックス。 –&1;、色が設定されていない場合透過的なです。  
+ 透過色に設定する色のカラー パレット内のインデックス。 -1 の場合、色が設定されていない透過的です。  
   
 ### <a name="return-value"></a>戻り値  
- 以前、色のインデックスに透明として設定します。  
+ 以前の色のインデックスに透明として設定します。  
   
 ##  <a name="stretchblt"></a>CImage::StretchBlt  
- コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
+ 現在のデバイス コンテキストを元のデバイス コンテキストからビットマップをコピーします。  
   
 ```
 BOOL StretchBlt(
@@ -1425,22 +1425,22 @@ BOOL StretchBlt(
  コピー先デバイス コンテキストへのハンドル。  
   
  `xDest`  
- X 座標、コピー先の四角形の左上隅の論理単位です。  
+ X 座標、先の四角形の左上隅の論理単位です。  
   
  `yDest`  
- Y 座標、コピー先の四角形の左上隅の論理単位です。  
+ Y 座標を論理単位で、移行先の四角形の左上隅にあるのです。  
   
  `nDestWidth`  
- 論理ユニットは、コピー先の四角形の幅。  
+ 論理ユニットは、先の四角形の幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形の高さ。  
+ 論理ユニットは、先の四角形の高さ。  
   
  `dwROP`  
- 実行するラスター オペレーションです。 ラスター オペレーション コードは、変換先を形成する、ソース、変換先、およびパターンのビットで定義された、現在選択されているブラシ) を組み合わせる方法を定義します。 参照してください[BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]の他のラスター オペレーション コードとその説明の一覧です。  
+ 実行するラスター オペレーションです。 ラスター オペレーション コードは、変換先を形成する、ソース、変換先、およびパターンのビット (で定義されている、現在選択されているブラシ) を組み合わせる方法を定義します。 参照してください[BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]その他のラスター オペレーション コードとその説明の一覧についてはします。  
   
  `rectDest`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、送信先を識別します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、変換先を識別します。  
   
  `xSrc`  
  X 座標、元の四角形の左上隅の論理単位です。  
@@ -1455,7 +1455,7 @@ BOOL StretchBlt(
  論理ユニットは、元の四角形の高さ。  
   
  `rectSrc`  
- 参照、`RECT`構造のソースを特定します。  
+ 参照、`RECT`構造体、ソースを特定します。  
   
 ### <a name="return-value"></a>戻り値  
  成功した場合、0 以外。 それ以外の場合に 0 です。  
@@ -1464,7 +1464,7 @@ BOOL StretchBlt(
  詳細については、次を参照してください。 [StretchBlt](http://msdn.microsoft.com/library/windows/desktop/dd145120)で、[!INCLUDE[winSDK](./includes/winsdk_md.md)]です。  
   
 ##  <a name="transparentblt"></a>CImage::TransparentBlt  
- コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
+ 現在のデバイス コンテキストを元のデバイス コンテキストからビットマップをコピーします。  
   
 ```
 BOOL TransparentBlt(
@@ -1504,22 +1504,22 @@ BOOL TransparentBlt(
  コピー先デバイス コンテキストへのハンドル。  
   
  `xDest`  
- X 座標、コピー先の四角形の左上隅の論理単位です。  
+ X 座標、先の四角形の左上隅の論理単位です。  
   
  `yDest`  
- Y 座標、コピー先の四角形の左上隅の論理単位です。  
+ Y 座標を論理単位で、移行先の四角形の左上隅にあるのです。  
   
  `nDestWidth`  
- 論理ユニットは、コピー先の四角形の幅。  
+ 論理ユニットは、先の四角形の幅。  
   
  `nDestHeight`  
- 論理ユニットは、コピー先の四角形の高さ。  
+ 論理ユニットは、先の四角形の高さ。  
   
  *crTransparent*  
- コピー元のビットマップが透明として扱うの色。 既定では、 **CLR_INVALID**、現在は、イメージの透明色として設定する色を使用することを示します。  
+ 透明として処理する元のビットマップの色。 既定では、 **CLR_INVALID**、現在は、イメージの透明色として設定する色を使用することを示すです。  
   
  `rectDest`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、送信先を識別します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体、変換先を識別します。  
   
  `xSrc`  
  X 座標、元の四角形の左上隅の論理単位です。  
@@ -1534,13 +1534,13 @@ BOOL TransparentBlt(
  論理ユニットは、元の四角形の高さ。  
   
  `rectSrc`  
- 参照、`RECT`構造のソースを特定します。  
+ 参照、`RECT`構造体、ソースを特定します。  
   
 ### <a name="return-value"></a>戻り値  
- **TRUE**成功した場合、それ以外の場合**FALSE**します。  
+ **TRUE**成功した場合、それ以外の場合**FALSE**です。  
   
 ### <a name="remarks"></a>コメント  
- `TransparentBlt`4 ビット/ピクセルと 8 ビット/ピクセルのビットマップをソースに対応します。 使用[CImage::AlphaBlend](#alphablend)を透明に 32 ビット/ピクセルのビットマップを指定します。  
+ `TransparentBlt`ピクセルあたり 8 ビット、およびピクセルごとの 4 ビットの元のビットマップはサポートされます。 使用して[CImage::AlphaBlend](#alphablend)透過性の 32 ビット/ピクセルのビットマップを指定します。  
   
   
 ### <a name="example"></a>例  

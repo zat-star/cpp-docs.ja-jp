@@ -40,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 50f10ab765648d4b587a941ccf24726b53f14c88
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: bd9ef9932938cfe5ec65965b3a40116da7f43b90
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="csacl-class"></a>CSacl クラス
@@ -70,10 +70,10 @@ class CSacl : public CAcl
   
 |名前|説明|  
 |----------|-----------------|  
-|[CSacl::AddAuditAce](#addauditace)|監査のアクセス制御エントリ (ACE) を追加する、`CSacl`オブジェクトです。|  
-|[CSacl::GetAceCount](#getacecount)|アクセス制御エントリ (Ace) の数を取得、`CSacl`オブジェクトです。|  
-|[CSacl::RemoveAce](#removeace)|特定の ACE (アクセス制御エントリ) の削除、 **CSacl**オブジェクトです。|  
-|[CSacl::RemoveAllAces](#removeallaces)|すべてに含まれている Ace の削除、`CSacl`オブジェクトです。|  
+|[CSacl::AddAuditAce](#addauditace)|監査アクセス制御エントリ (ACE) を追加、`CSacl`オブジェクト。|  
+|[CSacl::GetAceCount](#getacecount)|アクセス制御エントリ (Ace) の数を返します、`CSacl`オブジェクト。|  
+|[CSacl::RemoveAce](#removeace)|特定の ACE (アクセス制御エントリ) を削除、 **CSacl**オブジェクト。|  
+|[CSacl::RemoveAllAces](#removeallaces)|含まれている Ace のすべてを削除、`CSacl`オブジェクト。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -82,13 +82,13 @@ class CSacl : public CAcl
 |[CSacl::operator =](#operator_eq)|代入演算子。|  
   
 ## <a name="remarks"></a>コメント  
- SACL には、ドメイン コント ローラーのセキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 SACL がログ エントリへのアクセス試行が発生したドメイン コント ローラーでのみ、オブジェクトのレプリカが含まれているすべてのドメイン コント ローラーではなくを生成することに注意してください。  
+ SACL には、ドメイン コント ローラーのセキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 SACL がドメイン コント ローラーへのアクセス試行が発生した場所にのみ、オブジェクトのレプリカが含まれているすべてのドメイン コント ローラーではなく、ログ エントリを生成することに注意してください。  
   
- を設定またはオブジェクトのセキュリティ記述子の SACL を取得するには、スレッドを要求するアクセス トークンで SE_SECURITY_NAME 特権を有効にする必要があります。 Administrators グループはこの権限が既定では、与えられてを持ち、それを他のユーザーまたはグループに付与されることができます。 権限を持っている許可されただけではありませんが必要です: 反映するために特権セキュリティのアクセス トークンで有効化する特権によって定義された操作を実行する前にします。 モデルは、特定のシステム操作にのみ有効になり、不要になったときに、無効にするには特権を使用できます。 参照してください[AtlGetSacl](http://msdn.microsoft.com/library/1d69611f-d8a7-467b-9d57-cbe2f1610bf8)と[AtlSetSacl](http://msdn.microsoft.com/library/54daab9a-8c69-45fd-86c4-18eb30d59547) SE_SECURITY_NAME を有効にする例です。  
+ を設定またはオブジェクトのセキュリティ記述子の SACL を取得するには、スレッドを要求するアクセス トークンで SE_SECURITY_NAME 特権を有効にする必要があります。 管理者グループにはこの権限が既定では、与えられておよびその他のユーザーまたはグループに許可されていることができます。 権限を持っている付与が必要とされるすべて: 権限によって定義された操作を実行することができます、前に、特権必要がありますで有効にするセキュリティのアクセス トークンを有効するためにします。 モデルは、特定のシステム操作に対してのみ有効にして、不要になったときに、無効にする特権を使用できます。 参照してください[AtlGetSacl](security-global-functions.md#atlgetsacl)と[AtlSetSacl](security-global-functions.md#atlsetsacl) SE_SECURITY_NAME の有効化の例についてはします。  
   
- 追加、削除、作成、およびから Ace を削除するクラスのメソッドを使用して、 **SACL**オブジェクトです。 関連項目[AtlGetSacl](http://msdn.microsoft.com/library/1d69611f-d8a7-467b-9d57-cbe2f1610bf8)と[AtlSetSacl](http://msdn.microsoft.com/library/54daab9a-8c69-45fd-86c4-18eb30d59547)します。  
+ 追加、削除、作成、およびから Ace を削除する指定されたクラスのメソッドを使用して、 **SACL**オブジェクト。 関連項目[AtlGetSacl](security-global-functions.md#atlgetsacl)と[AtlSetSacl](security-global-functions.md#atlsetsacl)です。  
   
- Windows のアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CAcl](../../atl/reference/cacl-class.md)  
@@ -99,7 +99,7 @@ class CSacl : public CAcl
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="addauditace"></a>CSacl::AddAuditAce  
- 監査のアクセス制御エントリ (ACE) を追加する、`CSacl`オブジェクトです。  
+ 監査アクセス制御エントリ (ACE) を追加、`CSacl`オブジェクト。  
   
 ```
 bool AddAuditAce(
@@ -121,13 +121,13 @@ bool AddAuditAce(
   
 ### <a name="parameters"></a>パラメーター  
  `rSid`  
- [CSid](../../atl/reference/csid-class.md)オブジェクトです。  
+ [CSid](../../atl/reference/csid-class.md)オブジェクト。  
   
  `AccessMask`  
- 監査するアクセス権のマスクを指定指定した`CSid`オブジェクトです。  
+ 監査するアクセス権のマスクを指定します、指定された`CSid`オブジェクト。  
   
  `bSuccess`  
- 許可されているアクセス試行を監査するかどうかを指定します。 監査を有効にします。 true の場合に、このフラグを設定します。それ以外の場合、false に設定します。  
+ 許可されるアクセス試行を監査するかどうかを指定します。 監査を有効にします。 true の場合に、このフラグを設定します。それ以外の場合、false に設定します。  
   
  *bFailure*  
  拒否されたアクセス試行を監査するかどうかを指定します。 監査を有効にします。 true の場合に、このフラグを設定します。それ以外の場合、false に設定します。  
@@ -142,10 +142,10 @@ bool AddAuditAce(
  継承されたオブジェクトの型。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**に ACE を追加する場合、`CSacl`オブジェクト、 **false**失敗します。  
+ 返します**true**に ACE が追加された場合、`CSacl`オブジェクト、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードが生成されるアクセスの種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドは、このようなするように ACE を追加、`CSacl`オブジェクトです。 2 番目の形式の`AddAuditAce`のみ利用可能で、Windows 2000 でそれ以降。  
+ A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドにそのような ACE を追加、`CSacl`オブジェクト。 2 番目の形式の`AddAuditAce`は Windows 2000 で利用可能な以降のみです。  
   
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
@@ -159,10 +159,10 @@ CSacl(const ACL& rhs) throw(...);
   
 ### <a name="parameters"></a>パラメーター  
  `rhs`  
- 既存の**ACL** (アクセス制御リスト) の構造体。  
+ 既存の**ACL** (アクセス制御リスト) 構造体。  
   
 ### <a name="remarks"></a>コメント  
- `CSacl`オブジェクトを既存を使用して必要に応じて作成できる**ACL**構造体。 このパラメーターは、システム アクセス制御リスト (SACL) と随意アクセス制御リスト (DACL) ではなくことを確認します。 DACL が指定した場合のデバッグ ビルドでは、アサーションが発生します。 リリース ビルドでは、DACL からすべてのエントリは無視されます。  
+ `CSacl`オブジェクトを必要に応じて作成する、既存を使用して**ACL**構造体。 このパラメーターは、システム アクセス制御リスト (SACL) と随意アクセス制御リスト (DACL) ではなくことを確認します。 DACL が指定される場合のデバッグ ビルドでは、アサーションが発生します。 リリース ビルドでは、DACL からすべてのエントリが無視されます。  
   
 ##  <a name="dtor"></a>CSacl:: ~ CSacl  
  デストラクターです。  
@@ -172,17 +172,17 @@ CSacl(const ACL& rhs) throw(...);
 ```  
   
 ### <a name="remarks"></a>コメント  
- デストラクターは、すべてのアクセス制御エントリ (Ace) を含む、オブジェクトが取得したすべてのリソースを解放します。  
+ デストラクターは、すべてのアクセス制御エントリ (Ace) を含む、オブジェクトが取得した任意のリソースを解放します。  
   
 ##  <a name="getacecount"></a>CSacl::GetAceCount  
- アクセス制御エントリ (Ace) の数を取得、`CSacl`オブジェクトです。  
+ アクセス制御エントリ (Ace) の数を返します、`CSacl`オブジェクト。  
   
 ```
 UINT GetAceCount() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 含まれている Ace の数を返す、`CSacl`オブジェクトです。  
+ 含まれている Ace の数を返します、`CSacl`オブジェクト。  
   
 ##  <a name="operator_eq"></a>CSacl::operator =  
  代入演算子。  
@@ -193,13 +193,13 @@ CSacl& operator=(const ACL& rhs) throw(...);
   
 ### <a name="parameters"></a>パラメーター  
  `rhs`  
- **ACL**を既存のオブジェクトを割り当てる (アクセス制御リスト)。  
+ **ACL**を既存のオブジェクトに割り当て (アクセス制御リスト)。  
   
 ### <a name="return-value"></a>戻り値  
- 更新されたへの参照を返します`CSacl`オブジェクトです。 いることを確認、 **ACL**パラメーターは実際には、システム アクセス制御リスト (SACL) と随意アクセス制御リスト (DACL) ではなく。 アサーションが発生すると、デバッグ ビルドでは、リリース ビルドでは、 **ACL**パラメーターは無視されます。  
+ 更新されたへの参照を返します`CSacl`オブジェクト。 いることを確認、 **ACL**パラメーターは実際には、システム アクセス制御リスト (SACL) および随意アクセス制御リスト (DACL) ではなくです。 アサーションが発生すると、デバッグ ビルドとリリース ビルドでは、 **ACL**パラメーターは無視されます。  
   
 ##  <a name="removeace"></a>CSacl::RemoveAce  
- 特定の ACE (アクセス制御エントリ) の削除、 **CSacl**オブジェクトです。  
+ 特定の ACE (アクセス制御エントリ) を削除、 **CSacl**オブジェクト。  
   
 ```
 void RemoveAce(UINT nIndex) throw();
@@ -210,17 +210,17 @@ void RemoveAce(UINT nIndex) throw();
  削除する ACE エントリのインデックスです。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドから派生した[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)します。  
+ このメソッドはから派生[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)です。  
   
 ##  <a name="removeallaces"></a>CSacl::RemoveAllAces  
- すべてに含まれるアクセス制御エントリ (Ace) の削除、`CSacl`オブジェクトです。  
+ 格納されているアクセス制御エントリ (Ace) のすべてを削除、`CSacl`オブジェクト。  
   
 ```
 void RemoveAllAces() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 削除ごと**ACE**構造体 (存在する場合)、`CSacl`オブジェクトです。  
+ 削除ごと**ACE**構造体 (存在する場合)、`CSacl`オブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
  [CAcl クラス](../../atl/reference/cacl-class.md)   

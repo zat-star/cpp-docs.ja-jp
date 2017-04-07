@@ -39,13 +39,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 377e7f2fa6d8377d46e98b52e9c8f075b10956a8
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 04946d07bea39eb739c31a3254355d3527d2e9c3
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ccomsimplethreadallocator-class"></a>CComSimpleThreadAllocator クラス
-このクラスは、クラスのスレッドの選択、管理`CComAutoThreadModule`します。  
+このクラスは、クラスのスレッドの選択を管理`CComAutoThreadModule`です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -62,7 +62,7 @@ class CComSimpleThreadAllocator
 |[CComSimpleThreadAllocator::GetThread](#getthread)|スレッドを選択します。|  
   
 ## <a name="remarks"></a>コメント  
- `CComSimpleThreadAllocator`スレッドの選択を管理する[CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)します。 `CComSimpleThreadAllocator::GetThread`単に各スレッドが繰り返しをシーケンス内の次の&1; つを返します。  
+ `CComSimpleThreadAllocator`スレッドの選択を管理する[は](../../atl/reference/ccomautothreadmodule-class.md)します。 `CComSimpleThreadAllocator::GetThread`各スレッドを単に循環参照し、シーケンスの次の 1 つを返します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
@@ -82,12 +82,12 @@ int GetThread(CComApartment* /* pApt */, int nThreads);
  EXE モジュール内のスレッドの最大数。  
   
 ### <a name="return-value"></a>戻り値  
- 0 までの整数と ( `nThreads` – 1)。 EXE モジュールのスレッドの&1; つを識別します。  
+ 0 までの整数と ( `nThreads` - 1)。 EXE モジュール内のスレッドのいずれかを識別します。  
   
 ### <a name="remarks"></a>コメント  
- オーバーライドできます`GetThread`選択範囲のさまざまなメソッドを提供したり、使用、`pApt`パラメーター。  
+ オーバーライドできます`GetThread`選択範囲のさまざまなメソッドを提供したりの使用、`pApt`パラメーター。  
   
- `GetThread`によって呼び出される[CComAutoThreadModule::CreateInstance](../../atl/reference/ccomautothreadmodule-class.md#createinstance)します。  
+ `GetThread`によって呼び出される[CComAutoThreadModule::CreateInstance](../../atl/reference/ccomautothreadmodule-class.md#createinstance)です。  
   
 ## <a name="see-also"></a>関連項目  
  [CComApartment クラス](../../atl/reference/ccomapartment-class.md)   

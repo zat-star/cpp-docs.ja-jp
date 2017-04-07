@@ -42,9 +42,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: 66b5e6cbfaadd4b57d301de74fc2e0b815956952
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 4a82f66f0b6f6535de8e9707c2d68b94b7eb69c5
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="cdbexception-class"></a>CDBException クラス
@@ -98,7 +98,7 @@ class CDBException : public CException
   
 - **AFX_SQL_ERROR_CONNECT_FAIL**データ ソースに接続できませんでした。 渡されたする、 **NULL** `CDatabase` 、レコード セットのコンス トラクターと接続を作成する後続の試行へのポインターがに基づいて`GetDefaultConnect`できませんでした。  
   
-- **AFX_SQL_ERROR_DATA_TRUNCATED**の記憶域を提供するよりも多くのデータを要求します。 指定されたデータ記憶域を増やす方法について`CString`または`CByteArray`データ型を参照してください、`nMaxLength`引数[RFX_Text](http://msdn.microsoft.com/library/de3c7581-d26c-40cb-81f3-c492ef4809f6)と[RFX_Binary](http://msdn.microsoft.com/library/908ff945-3ad0-43a1-9932-cdcdc8b14915) 「マクロとグローバルです」。  
+- **AFX_SQL_ERROR_DATA_TRUNCATED**の記憶域を提供するよりも多くのデータを要求します。 指定されたデータ記憶域を増やす方法について`CString`または`CByteArray`データ型を参照してください、`nMaxLength`引数[RFX_Text](record-field-exchange-functions.md#rfx_text)と[RFX_Binary](record-field-exchange-functions.md#rfx_binary) 「マクロとグローバルです」。  
   
 - **AFX_SQL_ERROR_DYNASET_NOT_SUPPORTED**への呼び出し`CRecordset::Open`ダイナセットの要求に失敗しました。 ダイナセットを使う場合は、ドライバーによってサポートされていません。  
   
@@ -124,7 +124,7 @@ class CDBException : public CException
   
 - **AFX_SQL_ERROR_RECORDSET_FORWARD_ONLY**スクロールしようとすると、ときに、データ ソースは後方スクロールをサポートしていないために失敗しました。  
   
-- **AFX_SQL_ERROR_SNAPSHOT_NOT_SUPPORTED**への呼び出し`CRecordset::Open`スナップショットを要求に失敗しました。 ドライバーでは、スナップショットはサポートされていません。 (これにのみ発生ときに、ODBC カーソル ライブラリ ODBCCURS です。DLL が存在しません。)  
+- **AFX_SQL_ERROR_SNAPSHOT_NOT_SUPPORTED**への呼び出し`CRecordset::Open`スナップショットを要求に失敗しました。 ドライバーでは、スナップショットはサポートされていません。 (これにのみ発生時に ODBC カーソル ライブラリ ODBCCURS です。DLL が存在しません。)  
   
 - **AFX_SQL_ERROR_SQL_CONFORMANCE**用のドライバー、`CDatabase::OpenEx`または`CDatabase::Open`呼び出しが「最小」の必要な ODBC SQL への準拠レベルに準拠していない (**以上でなければなりません**)。  
   
@@ -134,7 +134,7 @@ class CDBException : public CException
   
 - **SQL_ERROR**関数が失敗しました。 ODBC 関数から返されたエラー メッセージ**SQLError**に格納されて、 **m_strError**データ メンバーです。  
   
-- **SQL_INVALID_HANDLE**関数が無効な環境ハンドル、接続ハンドル、またはステートメント ハンドルのために失敗しました。 これは、プログラミング エラーを示します。 ODBC 関数から追加情報がない**SQLError**です。  
+- **SQL_INVALID_HANDLE**関数に無効な環境ハンドル、接続ハンドル、またはステートメント ハンドルのため失敗しました。 これは、プログラミング エラーを示します。 ODBC 関数から追加情報がない**SQLError**です。  
   
  SQL プレフィックスが付いたコードは、ODBC によって定義されます。 AFX プレフィックスが付いたコードは、AFXDB で定義されます。H に定義してください。  
   
