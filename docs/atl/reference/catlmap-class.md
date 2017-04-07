@@ -9,9 +9,38 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CAtlMap
 - CAtlMap
-- ATL::CAtlMap
+- ATLCOLL/ATL::CAtlMap
+- ATLCOLL/ATL::CAtlMap::KINARGTYPE
+- ATLCOLL/ATL::CAtlMap::KOUTARGTYPE
+- ATLCOLL/ATL::CAtlMap::VINARGTYPE
+- ATLCOLL/ATL::CAtlMap::VOUTARGTYPE
+- ATLCOLL/ATL::CPair::m_key
+- ATLCOLL/ATL::CPair::m_value
+- ATLCOLL/ATL::CAtlMap::CAtlMap
+- ATLCOLL/ATL::CAtlMap::AssertValid
+- ATLCOLL/ATL::CAtlMap::DisableAutoRehash
+- ATLCOLL/ATL::CAtlMap::EnableAutoRehash
+- ATLCOLL/ATL::CAtlMap::GetAt
+- ATLCOLL/ATL::CAtlMap::GetCount
+- ATLCOLL/ATL::CAtlMap::GetHashTableSize
+- ATLCOLL/ATL::CAtlMap::GetKeyAt
+- ATLCOLL/ATL::CAtlMap::GetNext
+- ATLCOLL/ATL::CAtlMap::GetNextAssoc
+- ATLCOLL/ATL::CAtlMap::GetNextKey
+- ATLCOLL/ATL::CAtlMap::GetNextValue
+- ATLCOLL/ATL::CAtlMap::GetStartPosition
+- ATLCOLL/ATL::CAtlMap::GetValueAt
+- ATLCOLL/ATL::CAtlMap::InitHashTable
+- ATLCOLL/ATL::CAtlMap::IsEmpty
+- ATLCOLL/ATL::CAtlMap::Lookup
+- ATLCOLL/ATL::CAtlMap::Rehash
+- ATLCOLL/ATL::CAtlMap::RemoveAll
+- ATLCOLL/ATL::CAtlMap::RemoveAtPos
+- ATLCOLL/ATL::CAtlMap::RemoveKey
+- ATLCOLL/ATL::CAtlMap::SetAt
+- ATLCOLL/ATL::CAtlMap::SetOptimalLoad
+- ATLCOLL/ATL::CAtlMap::SetValueAt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -150,7 +179,7 @@ class CAtlMap
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="a-nameassertvalida--catlmapassertvalid"></a><a name="assertvalid"></a>CAtlMap::AssertValid  
+##  <a name="assertvalid"></a>CAtlMap::AssertValid  
  アサートが発生する場合にこのメソッドを呼び出して、`CAtlMap`オブジェクトが無効です。  
   
 ```
@@ -163,7 +192,7 @@ void AssertValid() const;
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namecatlmapa--catlmapcatlmap"></a><a name="catlmap"></a>CAtlMap::CAtlMap  
+##  <a name="catlmap"></a>CAtlMap::CAtlMap  
  コンストラクターです。  
   
 ```
@@ -209,7 +238,7 @@ CAtlMap(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&72;](../../atl/codesnippet/cpp/catlmap-class_1.cpp)]  
   
-##  <a name="a-namedtora--catlmapcatlmap"></a><a name="dtor"></a>CAtlMap:: ~ CAtlMap  
+##  <a name="dtor"></a>CAtlMap:: ~ CAtlMap  
  デストラクターです。  
   
 ```
@@ -219,7 +248,7 @@ CAtlMap(
 ### <a name="remarks"></a>コメント  
  割り当てられたリソースを解放します。  
   
-##  <a name="a-namecpairclassa--catlmapcpair-class"></a><a name="cpair_class"></a>CAtlMap::CPair クラス  
+##  <a name="cpair_class"></a>CAtlMap::CPair クラス  
  キーと値の要素を含むクラスです。  
   
 ```
@@ -229,7 +258,7 @@ class CPair : public __POSITION
 ### <a name="remarks"></a>コメント  
  このクラスは、メソッドによって使用[で](#getnext)と[CAtlMap::Lookup](#lookup)マップの構造体に格納されているキーと値の要素にアクセスします。  
   
-##  <a name="a-namedisableautorehasha--catlmapdisableautorehash"></a><a name="disableautorehash"></a>CAtlMap::DisableAutoRehash  
+##  <a name="disableautorehash"></a>CAtlMap::DisableAutoRehash  
  自動再ハッシュを無効にするには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -241,7 +270,7 @@ void DisableAutoRehash() throw();
   
  `DisableAutoRehash`最も役立つ多数の要素を一度にマップに追加されます。 呼び出す方が効率的です rehashing プロセスをトリガーする制限を超えるたびに、代わりに`DisableAutoRehash`、要素を追加し、最後を呼び出して、 [CAtlMap::EnableAutoRehash](#enableautorehash)します。  
   
-##  <a name="a-nameenableautorehasha--catlmapenableautorehash"></a><a name="enableautorehash"></a>CAtlMap::EnableAutoRehash  
+##  <a name="enableautorehash"></a>CAtlMap::EnableAutoRehash  
  自動再ハッシュを有効にするには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -253,7 +282,7 @@ void EnableAutoRehash() throw();
   
  **EnableAutoRefresh**への呼び出し後に最も頻繁に使用[CAtlMap::DisableAutoRehash](#disableautorehash)します。  
   
-##  <a name="a-namegetata--catlmapgetat"></a><a name="getat"></a>CAtlMap::GetAt  
+##  <a name="getat"></a>CAtlMap::GetAt  
  マップの指定した位置にある要素を返すには、このメソッドを呼び出します。  
   
 ```
@@ -281,7 +310,7 @@ CPair* GetAt(POSITION& pos) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合`pos`が NULL です。  
   
-##  <a name="a-namegetcounta--catlmapgetcount"></a><a name="getcount"></a>CAtlMap::GetCount  
+##  <a name="getcount"></a>CAtlMap::GetCount  
  マップ内の要素の数を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -294,7 +323,7 @@ size_t GetCount() const throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namegethashtablesizea--catlmapgethashtablesize"></a><a name="gethashtablesize"></a>CAtlMap::GetHashTableSize  
+##  <a name="gethashtablesize"></a>CAtlMap::GetHashTableSize  
  マップのハッシュ テーブル内のビンの数を確認するには、このメソッドを呼び出します。  
   
 ```
@@ -304,7 +333,7 @@ UINT GetHashTableSize() const throw();
 ### <a name="return-value"></a>戻り値  
  ハッシュ テーブルには、ビンの数を返します。 参照してください[CAtlMap::CAtlMap](#catlmap)説明します。  
   
-##  <a name="a-namegetkeyata--catlmapgetkeyat"></a><a name="getkeyat"></a>CAtlMap::GetKeyAt  
+##  <a name="getkeyat"></a>CAtlMap::GetKeyAt  
  指定された位置に格納されているキーを取得するには、このメソッドを呼び出す、`CAtlMap`オブジェクトです。  
   
 ```
@@ -321,7 +350,7 @@ const K& GetKeyAt(POSITION pos) const throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namegetnexta--catlmapgetnext"></a><a name="getnext"></a>で  
+##  <a name="getnext"></a>で  
  ペアが格納されている次の要素へのポインターを取得するには、このメソッドを呼び出す、`CAtlMap`オブジェクトです。  
   
 ```
@@ -336,7 +365,7 @@ const CPair* GetNext(POSITION& pos) const throw();
 ### <a name="return-value"></a>戻り値  
  マップに格納されているキー/値要素の次の組み合わせへのポインターを返します。 `pos`位置カウンターは、各呼び出しの後に更新します。 取得した要素が、マップ内の最後の場合`pos`は NULL に設定します。  
   
-##  <a name="a-namegetnextassoca--catlmapgetnextassoc"></a><a name="getnextassoc"></a>CAtlMap::GetNextAssoc  
+##  <a name="getnextassoc"></a>CAtlMap::GetNextAssoc  
  反復処理するためには、次の要素を取得します。  
   
 ```
@@ -359,7 +388,7 @@ void GetNextAssoc(
 ### <a name="remarks"></a>コメント  
  `pos`位置カウンターは、各呼び出しの後に更新します。 取得した要素が、マップ内の最後の場合`pos`は NULL に設定します。  
   
-##  <a name="a-namegetnextkeya--catlmapgetnextkey"></a><a name="getnextkey"></a>CAtlMap::GetNextKey  
+##  <a name="getnextkey"></a>CAtlMap::GetNextKey  
  次のキーを取得するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -376,7 +405,7 @@ const K& GetNextKey(POSITION& pos) const throw();
 ### <a name="remarks"></a>コメント  
  現在の位置のカウンターを更新`pos`します。 マップのエントリがある場合、位置カウンターは NULL に設定します。  
   
-##  <a name="a-namegetnextvaluea--catlmapgetnextvalue"></a><a name="getnextvalue"></a>CAtlMap::GetNextValue  
+##  <a name="getnextvalue"></a>CAtlMap::GetNextValue  
  次の値を取得するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -397,7 +426,7 @@ const V& GetNextValue(POSITION& pos) const throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namegetstartpositiona--catlmapgetstartposition"></a><a name="getstartposition"></a>CAtlMap::GetStartPosition  
+##  <a name="getstartposition"></a>CAtlMap::GetStartPosition  
  マップの反復処理を開始するには、このメソッドを呼び出します。  
   
 ```
@@ -416,7 +445,7 @@ POSITION GetStartPosition() const throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namegetvalueata--catlmapgetvalueat"></a><a name="getvalueat"></a>CAtlMap::GetValueAt  
+##  <a name="getvalueat"></a>CAtlMap::GetValueAt  
  指定された位置に格納されている値を取得するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -431,7 +460,7 @@ const V& GetValueAt(POSITION pos) const throw();
 ### <a name="return-value"></a>戻り値  
  指定された位置に格納されている値への参照を返す、`CAtlMap`オブジェクトです。  
   
-##  <a name="a-nameinithashtablea--catlmapinithashtable"></a><a name="inithashtable"></a>格納します。  
+##  <a name="inithashtable"></a>格納します。  
  このメソッドでは、ハッシュ テーブルを初期化します。  
   
 ```
@@ -458,7 +487,7 @@ bool InitHashTable(
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-nameisemptya--catlmapisempty"></a><a name="isempty"></a>CAtlMap::IsEmpty  
+##  <a name="isempty"></a>CAtlMap::IsEmpty  
  空のマップ オブジェクトをテストするには、このメソッドを呼び出します。  
   
 ```
@@ -468,21 +497,21 @@ bool IsEmpty() const throw();
 ### <a name="return-value"></a>戻り値  
  返します。 **true**マップが空である場合**false**それ以外の場合。  
   
-##  <a name="a-namekinargtypea--catlmapkinargtype"></a><a name="kinargtype"></a>CAtlMap::KINARGTYPE  
+##  <a name="kinargtype"></a>CAtlMap::KINARGTYPE  
  キーが入力引数として渡されるときに使用される型。  
   
 ```
 typedef KTraits::INARGTYPE KINARGTYPE;
 ```  
   
-##  <a name="a-namekoutargtypea--catlmapkoutargtype"></a><a name="koutargtype"></a>CAtlMap::KOUTARGTYPE  
+##  <a name="koutargtype"></a>CAtlMap::KOUTARGTYPE  
  キーが出力引数として返されるときに使用される型。  
   
 ```
 typedef KTraits::OUTARGTYPE KOUTARGTYPE;
 ```  
   
-##  <a name="a-namelookupa--catlmaplookup"></a><a name="lookup"></a>CAtlMap::Lookup  
+##  <a name="lookup"></a>CAtlMap::Lookup  
  キーまたは値を検索するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -504,7 +533,7 @@ CPair* Lookup(KINARGTYPE key) throw();
 ### <a name="remarks"></a>コメント  
  `Lookup`ハッシュ アルゴリズムを使用して、指定されたキー パラメーターを正確に一致するキーを含むマップの要素を簡単に検索します。  
   
-##  <a name="a-nameoperatorata--catlmapoperator-"></a><a name="operator_at"></a>CAtlMap::operator\[\]  
+##  <a name="operator_at"></a>CAtlMap::operator\[\]  
  置換したり、新しい要素を追加したり、`CAtlMap`です。  
   
 ```
@@ -521,7 +550,7 @@ V& operator[](kinargtype key) throw();
 ### <a name="example"></a>例  
  キーが既に存在する場合は、要素が置き換えられます。 キーが存在しない場合は、新しい要素が追加されます。 例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namerehasha--catlmaprehash"></a><a name="rehash"></a>CAtlMap::Rehash  
+##  <a name="rehash"></a>CAtlMap::Rehash  
  Rehash にこのメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -535,7 +564,7 @@ void Rehash(UINT nBins = 0);
 ### <a name="remarks"></a>コメント  
  場合`nBins`は 0、`CAtlMap`マップおよび最適な読み込み設定内の要素の数に基づいて適切な数を計算します。 Rehashing プロセスは自動に通常場合に、 [CAtlMap::DisableAutoRehash](#disableautorehash)が呼び出されると、このメソッドが実行するために必要なサイズを変更します。  
   
-##  <a name="a-nameremovealla--catlmapremoveall"></a><a name="removeall"></a>CAtlMap::RemoveAll  
+##  <a name="removeall"></a>CAtlMap::RemoveAll  
  すべての要素を削除するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -545,7 +574,7 @@ void RemoveAll() throw();
 ### <a name="remarks"></a>コメント  
  クリアして、`CAtlMap`オブジェクトの要素を格納するために使用するメモリを解放します。  
   
-##  <a name="a-nameremoveatposa--catlmapremoveatpos"></a><a name="removeatpos"></a>CAtlMap::RemoveAtPos  
+##  <a name="removeatpos"></a>CAtlMap::RemoveAtPos  
  指定された位置に要素を削除するには、このメソッドを呼び出す、`CAtlMap`オブジェクトです。  
   
 ```
@@ -559,7 +588,7 @@ void RemoveAtPos(POSITION pos) throw();
 ### <a name="remarks"></a>コメント  
  指定した位置に格納されているキー/値ペアを削除します。 要素の格納に使用されるメモリは解放されます。 によって参照される位置`pos`、無効になり、マップ内の他の要素の位置が有効ですが、必ずしもそれらの間は、同じ順序を保持します。  
   
-##  <a name="a-nameremovekeya--catlmapremovekey"></a><a name="removekey"></a>CAtlMap::RemoveKey  
+##  <a name="removekey"></a>CAtlMap::RemoveKey  
  要素を削除するには、このメソッドを呼び出して、`CAtlMap`キーが指定されたオブジェクト。  
   
 ```
@@ -576,7 +605,7 @@ bool RemoveKey(KINARGTYPE key) throw();
 ### <a name="example"></a>例  
  例を参照してください[CAtlMap::CAtlMap](#catlmap)します。  
   
-##  <a name="a-namesetata--catlmapsetat"></a><a name="setat"></a>CAtlMap::SetAt  
+##  <a name="setat"></a>CAtlMap::SetAt  
  要素のペアをマップに挿入するには、このメソッドを呼び出します。  
   
 ```
@@ -598,7 +627,7 @@ POSITION SetAt(
 ### <a name="remarks"></a>コメント  
  `SetAt`一致するキーが見つかった場合は、既存の要素を置換します。 キーが見つからない場合は、新しいキー/値ペアが作成されます。  
   
-##  <a name="a-namesetoptimalloada--catlmapsetoptimalload"></a><a name="setoptimalload"></a>CAtlMap::SetOptimalLoad  
+##  <a name="setoptimalload"></a>CAtlMap::SetOptimalLoad  
  最適なロードを設定するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -625,7 +654,7 @@ void SetOptimalLoad(
 ### <a name="remarks"></a>コメント  
  このメソッドの最適な読み込みの値を再定義、`CAtlMap`オブジェクトです。 参照してください[CAtlMap::CAtlMap](#catlmap)については、さまざまなパラメーターです。 場合`bRehashNow`が true の場合、要素の数が最小値と最大値の範囲外、ハッシュ テーブルを再計算します。  
   
-##  <a name="a-namesetvalueata--catlmapsetvalueat"></a><a name="setvalueat"></a>CAtlMap::SetValueAt  
+##  <a name="setvalueat"></a>CAtlMap::SetValueAt  
  内の指定位置に格納された値を変更するには、このメソッドを呼び出して、`CAtlMap`オブジェクトです。  
   
 ```
@@ -644,21 +673,21 @@ void SetValueAt(
 ### <a name="remarks"></a>コメント  
  指定された位置に格納されている値を変更、`CAtlMap`オブジェクトです。  
   
-##  <a name="a-namevinargtypea--catlmapvinargtype"></a><a name="vinargtype"></a>CAtlMap::VINARGTYPE  
+##  <a name="vinargtype"></a>CAtlMap::VINARGTYPE  
  値が入力引数として渡されるときに使用される型。  
   
 ```
 typedef VTraits::INARGTYPE VINARGTYPE;
 ```  
   
-##  <a name="a-namevoutargtypea--catlmapvoutargtype"></a><a name="voutargtype"></a>CAtlMap::VOUTARGTYPE  
+##  <a name="voutargtype"></a>CAtlMap::VOUTARGTYPE  
  値が出力引数として渡されるときに使用される型。  
   
 ```
 typedef VTraits::OUTARGTYPE VOUTARGTYPE;
 ```  
   
-##  <a name="a-namemkeya--catlmapcpairmkey"></a><a name="m_key"></a>CAtlMap::CPair::m_key  
+##  <a name="m_key"></a>CAtlMap::CPair::m_key  
  キーの要素を格納するデータ メンバーです。  
   
 ```
@@ -669,7 +698,7 @@ const K m_key;
  `K`  
  キーの要素の型。  
   
-##  <a name="a-namemvaluea--catlmapcpairmvalue"></a><a name="m_value"></a>CAtlMap::CPair::m_value  
+##  <a name="m_value"></a>CAtlMap::CPair::m_value  
  値の要素を格納するデータ メンバーです。  
   
 ```

@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CException
+- AFX/CException
+- AFX/CException::CException
+- AFX/CException::Delete
+- AFX/CException::ReportError
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -113,7 +117,7 @@ class AFX_NOVTABLE CException : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-namecexceptiona--cexceptioncexception"></a><a name="cexception"></a>CException::CException  
+##  <a name="cexception"></a>CException::CException  
  このメンバー関数を作成、`CException`オブジェクトです。  
   
 ```  
@@ -127,7 +131,7 @@ explicit CException(BOOL bAutoDelete);
 ### <a name="remarks"></a>コメント  
  このコンス トラクターを直接呼び出す必要は通常ことはありません。 例外をスローする関数のインスタンスを作成する必要があります、 `CException`-クラスを派生し、呼び出すコンス トラクター、またはそれが、MFC のいずれかの使用をスローする関数など[AfxThrowFileException](exception-processing.md#afxthrowfileexception)、定義済みの型をスローします。 このドキュメントは完全を期すのためだけに提供します。  
   
-##  <a name="a-namedeletea--cexceptiondelete"></a><a name="delete"></a>CException::Delete  
+##  <a name="delete"></a>CException::Delete  
  この関数はかどうかをチェック、 **CException** 、ヒープのオブジェクトを作成したし、場合は、**削除**演算子をオブジェクトにします。  
   
 ```  
@@ -191,7 +195,7 @@ if (pFile != NULL)
 }   
  ```
   
-##  <a name="a-namereporterrora--cexceptionreporterror"></a><a name="reporterror"></a>CException::ReportError  
+##  <a name="reporterror"></a>CException::ReportError  
  ユーザーにメッセージ ボックスにエラー テキストをレポートするには、このメンバー関数を呼び出します。  
   
 ```  

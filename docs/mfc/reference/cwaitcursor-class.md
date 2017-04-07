@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CWaitCursor
+- AFXWIN/CWaitCursor
+- AFXWIN/CWaitCursor::CWaitCursor
+- AFXWIN/CWaitCursor::Restore
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +95,7 @@ class CWaitCursor
 ## <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing #&62;](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_1.cpp)]  
   
-##  <a name="a-namecwaitcursora--cwaitcursorcwaitcursor"></a><a name="cwaitcursor"></a>CWaitCursor::CWaitCursor  
+##  <a name="cwaitcursor"></a>CWaitCursor::CWaitCursor  
  待機カーソルを表示するだけ宣言、`CWaitCursor`時間のかかる操作を実行するコードの前にオブジェクトです。  
   
 ```  
@@ -112,7 +115,7 @@ CWaitCursor();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing #&63;](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_2.cpp)]  
   
-##  <a name="a-namerestorea--cwaitcursorrestore"></a><a name="restore"></a>CWaitCursor::Restore  
+##  <a name="restore"></a>CWaitCursor::Restore  
  待機カーソルを復元するには、メッセージ ボックスや待機カーソルを別のカーソルに変わることがあります ダイアログ ボックスを表示するなどの操作を実行する後にこの関数を呼び出します。  
   
 ```  

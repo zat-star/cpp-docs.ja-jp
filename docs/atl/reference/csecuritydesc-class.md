@@ -9,9 +9,35 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CSecurityDesc
-- ATL.CSecurityDesc
 - CSecurityDesc
+- ATLSECURITY/ATL::CSecurityDesc
+- ATLSECURITY/ATL::CSecurityDesc::CSecurityDesc
+- ATLSECURITY/ATL::CSecurityDesc::FromString
+- ATLSECURITY/ATL::CSecurityDesc::GetControl
+- ATLSECURITY/ATL::CSecurityDesc::GetDacl
+- ATLSECURITY/ATL::CSecurityDesc::GetGroup
+- ATLSECURITY/ATL::CSecurityDesc::GetOwner
+- ATLSECURITY/ATL::CSecurityDesc::GetPSECURITY_DESCRIPTOR
+- ATLSECURITY/ATL::CSecurityDesc::GetSacl
+- ATLSECURITY/ATL::CSecurityDesc::IsDaclAutoInherited
+- ATLSECURITY/ATL::CSecurityDesc::IsDaclDefaulted
+- ATLSECURITY/ATL::CSecurityDesc::IsDaclPresent
+- ATLSECURITY/ATL::CSecurityDesc::IsDaclProtected
+- ATLSECURITY/ATL::CSecurityDesc::IsGroupDefaulted
+- ATLSECURITY/ATL::CSecurityDesc::IsOwnerDefaulted
+- ATLSECURITY/ATL::CSecurityDesc::IsSaclAutoInherited
+- ATLSECURITY/ATL::CSecurityDesc::IsSaclDefaulted
+- ATLSECURITY/ATL::CSecurityDesc::IsSaclPresent
+- ATLSECURITY/ATL::CSecurityDesc::IsSaclProtected
+- ATLSECURITY/ATL::CSecurityDesc::IsSelfRelative
+- ATLSECURITY/ATL::CSecurityDesc::MakeAbsolute
+- ATLSECURITY/ATL::CSecurityDesc::MakeSelfRelative
+- ATLSECURITY/ATL::CSecurityDesc::SetControl
+- ATLSECURITY/ATL::CSecurityDesc::SetDacl
+- ATLSECURITY/ATL::CSecurityDesc::SetGroup
+- ATLSECURITY/ATL::CSecurityDesc::SetOwner
+- ATLSECURITY/ATL::CSecurityDesc::SetSacl
+- ATLSECURITY/ATL::CSecurityDesc::ToString
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -110,7 +136,7 @@ class CSecurityDesc
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="a-namecsecuritydesca--csecuritydesccsecuritydesc"></a><a name="csecuritydesc"></a>CSecurityDesc::CSecurityDesc  
+##  <a name="csecuritydesc"></a>CSecurityDesc::CSecurityDesc  
  コンストラクターです。  
   
 ```
@@ -126,7 +152,7 @@ CSecurityDesc(const SECURITY_DESCRIPTOR& rhs) throw(...);
 ### <a name="remarks"></a>コメント  
  `CSecurityDesc`を使用してオブジェクトを作成することができます必要に応じて、 **SECURITY_DESCRIPTOR**構造体または以前に定義された`CSecurityDesc`オブジェクトです。  
   
-##  <a name="a-namedtora--csecuritydesccsecuritydesc"></a><a name="dtor"></a>CSecurityDesc:: ~ CSecurityDesc  
+##  <a name="dtor"></a>CSecurityDesc:: ~ CSecurityDesc  
  デストラクターです。  
   
 ```
@@ -136,7 +162,7 @@ virtual ~CSecurityDesc() throw();
 ### <a name="remarks"></a>コメント  
  デストラクターは、割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namefromstringa--csecuritydescfromstring"></a><a name="fromstring"></a>CSecurityDesc::FromString  
+##  <a name="fromstring"></a>CSecurityDesc::FromString  
  有効な機能のセキュリティ記述子には、文字列形式のセキュリティ記述子を変換します。  
   
 ```
@@ -155,7 +181,7 @@ bool FromString(LPCTSTR pstr) throw(...);
   
  このメソッドは使用可能な Windows 2000 以降のバージョンとを呼び出すので[convertstringsecuritydescriptortosecuritydescriptor が](http://msdn.microsoft.com/library/windows/desktop/aa376401)です。  
   
-##  <a name="a-namegetcontrola--csecuritydescgetcontrol"></a><a name="getcontrol"></a>CSecurityDesc::GetControl  
+##  <a name="getcontrol"></a>CSecurityDesc::GetControl  
  取得は、セキュリティ記述子から情報を制御します。  
   
 ```
@@ -172,7 +198,7 @@ bool GetControl(SECURITY_DESCRIPTOR_CONTROL* psdc) const throw();
 ### <a name="remarks"></a>コメント  
  このメソッドは Windows 2000 を使用するときに意味のある以降のみ、なさ[GetSecurityDescriptorControl](http://msdn.microsoft.com/library/windows/desktop/aa446647)します。  
   
-##  <a name="a-namegetdacla--csecuritydescgetdacl"></a><a name="getdacl"></a>CSecurityDesc::GetDacl  
+##  <a name="getdacl"></a>CSecurityDesc::GetDacl  
  セキュリティ記述子から随意アクセス制御リスト (DACL) の情報を取得します。  
   
 ```
@@ -195,7 +221,7 @@ bool GetDacl(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、false、失敗した場合に true を返します。  
   
-##  <a name="a-namegetgroupa--csecuritydescgetgroup"></a><a name="getgroup"></a>CSecurityDesc::GetGroup  
+##  <a name="getgroup"></a>CSecurityDesc::GetGroup  
  セキュリティ記述子からプライマリ グループの情報を取得します。  
   
 ```
@@ -214,7 +240,7 @@ bool GetGroup(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、false、失敗した場合に true を返します。  
   
-##  <a name="a-namegetownera--csecuritydescgetowner"></a><a name="getowner"></a>CSecurityDesc::GetOwner  
+##  <a name="getowner"></a>CSecurityDesc::GetOwner  
  セキュリティ記述子から所有者の情報を取得します。  
   
 ```
@@ -233,7 +259,7 @@ bool GetOwner(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、false、失敗した場合に true を返します。  
   
-##  <a name="a-namegetpsecuritydescriptora--csecuritydescgetpsecuritydescriptor"></a><a name="getpsecurity_descriptor"></a>CSecurityDesc::GetPSECURITY_DESCRIPTOR  
+##  <a name="getpsecurity_descriptor"></a>CSecurityDesc::GetPSECURITY_DESCRIPTOR  
  ポインターを返す、 **SECURITY_DESCRIPTOR**構造体。  
   
 ```
@@ -243,7 +269,7 @@ const SECURITY_DESCRIPTOR* GetPSECURITY_DESCRIPTOR() const throw();
 ### <a name="return-value"></a>戻り値  
  ポインターを返す、 [SECURITY_DESCRIPTOR](http://msdn.microsoft.com/library/windows/desktop/aa379561)構造体。  
   
-##  <a name="a-namegetsacla--csecuritydescgetsacl"></a><a name="getsacl"></a>CSecurityDesc::GetSacl  
+##  <a name="getsacl"></a>CSecurityDesc::GetSacl  
  セキュリティ記述子からシステム アクセス制御リスト (SACL) 情報を取得します。  
   
 ```
@@ -266,7 +292,7 @@ bool GetSacl(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合、false、失敗した場合に true を返します。  
   
-##  <a name="a-nameisdaclautoinheriteda--csecuritydescisdaclautoinherited"></a><a name="isdaclautoinherited"></a>CSecurityDesc::IsDaclAutoInherited  
+##  <a name="isdaclautoinherited"></a>CSecurityDesc::IsDaclAutoInherited  
  随意アクセス制御リスト (DACL) が自動伝達をサポートするために構成されているかどうかを判断します。  
   
 ```
@@ -279,7 +305,7 @@ bool IsDaclAutoInherited() const throw();
 ### <a name="remarks"></a>コメント  
  オブジェクトとの既存の子オブジェクトの自動的な継承アルゴリズムを実行するときに、このビットが設定されます。  
   
-##  <a name="a-nameisdacldefaulteda--csecuritydescisdacldefaulted"></a><a name="isdacldefaulted"></a>CSecurityDesc::IsDaclDefaulted  
+##  <a name="isdacldefaulted"></a>CSecurityDesc::IsDaclDefaulted  
  セキュリティ記述子が既定の随意アクセス制御リスト (DACL) に設定されているかどうかを判断します。  
   
 ```
@@ -296,7 +322,7 @@ bool IsDaclDefaulted() const throw();
   
  このフラグを設定するには、使用、 [CSecurityDesc::SetDacl](#setdacl)メソッドです。  
   
-##  <a name="a-nameisdaclpresenta--csecuritydescisdaclpresent"></a><a name="isdaclpresent"></a>CSecurityDesc::IsDaclPresent  
+##  <a name="isdaclpresent"></a>CSecurityDesc::IsDaclPresent  
  セキュリティ記述子に随意アクセス制御リスト (DACL) が含まれているかどうかを判断します。  
   
 ```
@@ -313,7 +339,7 @@ bool IsDaclPresent() const throw();
   
  このフラグを設定するには、使用、 [CSecurityDesc::SetDacl](#setdacl)メソッドです。  
   
-##  <a name="a-nameisdaclprotecteda--csecuritydescisdaclprotected"></a><a name="isdaclprotected"></a>CSecurityDesc::IsDaclProtected  
+##  <a name="isdaclprotected"></a>CSecurityDesc::IsDaclProtected  
  変更を防ぐ随意アクセス制御リスト (DACL) が構成されているかどうかを判断します。  
   
 ```
@@ -328,7 +354,7 @@ bool IsDaclProtected() const throw();
   
  このメソッドはのみ意味のある Windows 2000 またはそれ以降、Windows 2000 のみが継承可能な Ace の自動適用をサポートしています。  
   
-##  <a name="a-nameisgroupdefaulteda--csecuritydescisgroupdefaulted"></a><a name="isgroupdefaulted"></a>CSecurityDesc::IsGroupDefaulted  
+##  <a name="isgroupdefaulted"></a>CSecurityDesc::IsGroupDefaulted  
  既定で設定されたセキュリティ記述子のグループ セキュリティ識別子 (SID) を決定します。  
   
 ```
@@ -341,7 +367,7 @@ bool IsGroupDefaulted() const throw();
 ### <a name="remarks"></a>コメント  
  このフラグを設定するには、使用、 [CSecurityDesc::SetGroup](#setgroup)メソッドです。  
   
-##  <a name="a-nameisownerdefaulteda--csecuritydescisownerdefaulted"></a><a name="isownerdefaulted"></a>CSecurityDesc::IsOwnerDefaulted  
+##  <a name="isownerdefaulted"></a>CSecurityDesc::IsOwnerDefaulted  
  既定で設定されたセキュリティ記述子の所有者セキュリティ識別子 (SID) を決定します。  
   
 ```
@@ -354,7 +380,7 @@ bool IsOwnerDefaulted() const throw();
 ### <a name="remarks"></a>コメント  
  このフラグを設定するには、使用、 [CSecurityDesc::SetOwner](#setowner)メソッドです。  
   
-##  <a name="a-nameissaclautoinheriteda--csecuritydescissaclautoinherited"></a><a name="issaclautoinherited"></a>CSecurityDesc::IsSaclAutoInherited  
+##  <a name="issaclautoinherited"></a>CSecurityDesc::IsSaclAutoInherited  
  自動適用をサポートするために、システム アクセス制御リスト (SACL) が構成されているかどうかを判断します。  
   
 ```
@@ -367,7 +393,7 @@ bool IsSaclAutoInherited() const throw();
 ### <a name="remarks"></a>コメント  
  オブジェクトとの既存の子オブジェクトの自動的な継承アルゴリズムを実行するときに、このビットが設定されます。  
   
-##  <a name="a-nameissacldefaulteda--csecuritydescissacldefaulted"></a><a name="issacldefaulted"></a>CSecurityDesc::IsSaclDefaulted  
+##  <a name="issacldefaulted"></a>CSecurityDesc::IsSaclDefaulted  
  セキュリティ記述子が既定のシステム アクセス制御リスト (SACL) に設定されているかどうかを判断します。  
   
 ```
@@ -382,7 +408,7 @@ bool IsSaclDefaulted() const throw();
   
  このフラグを設定するには、使用、 [CSecurityDesc::SetSacl](#setsacl)メソッドです。  
   
-##  <a name="a-nameissaclpresenta--csecuritydescissaclpresent"></a><a name="issaclpresent"></a>CSecurityDesc::IsSaclPresent  
+##  <a name="issaclpresent"></a>CSecurityDesc::IsSaclPresent  
  セキュリティ記述子に、システム アクセス制御リスト (SACL) が含まれているかどうかを判断します。  
   
 ```
@@ -395,7 +421,7 @@ bool IsSaclPresent() const throw();
 ### <a name="remarks"></a>コメント  
  このフラグを設定するには、使用、 [CSecurityDesc::SetSacl](#setsacl)メソッドです。  
   
-##  <a name="a-nameissaclprotecteda--csecuritydescissaclprotected"></a><a name="issaclprotected"></a>CSecurityDesc::IsSaclProtected  
+##  <a name="issaclprotected"></a>CSecurityDesc::IsSaclProtected  
  変更を防ぐシステム アクセス制御リスト (SACL) が構成されているかどうかを判断します。  
   
 ```
@@ -410,7 +436,7 @@ bool IsSaclProtected() const throw();
   
  このメソッドはのみ意味のある Windows 2000 またはそれ以降、Windows 2000 のみが継承可能な Ace の自動適用をサポートしています。  
   
-##  <a name="a-nameisselfrelativea--csecuritydescisselfrelative"></a><a name="isselfrelative"></a>CSecurityDesc::IsSelfRelative  
+##  <a name="isselfrelative"></a>CSecurityDesc::IsSelfRelative  
  セキュリティ記述子が自己相対形式のかどうかを判断します。  
   
 ```
@@ -420,7 +446,7 @@ bool IsSelfRelative() const throw();
 ### <a name="return-value"></a>戻り値  
  連続するメモリ ブロックのすべてのセキュリティ情報とセキュリティ記述子には自己相対形式の場合は true を返します。 セキュリティ記述子には絶対形式の場合は false を返します。 詳細については、次を参照してください。[絶対パスと Self-Relative ムタ糺揵](http://msdn.microsoft.com/library/windows/desktop/aa374807)します。  
   
-##  <a name="a-namemakeabsolutea--csecuritydescmakeabsolute"></a><a name="makeabsolute"></a>CSecurityDesc::MakeAbsolute  
+##  <a name="makeabsolute"></a>CSecurityDesc::MakeAbsolute  
  セキュリティ記述子を絶対形式に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -433,7 +459,7 @@ bool MakeAbsolute() throw(...);
 ### <a name="remarks"></a>コメント  
  絶対形式のセキュリティ記述子には、情報自体ではなく、ユーザーが含まれる情報へのポインターが含まれています。 自己相対形式のセキュリティ記述子には、連続するメモリ ブロック内の情報が含まれています。 自己相対セキュリティ記述子で、 **SECURITY_DESCRIPTOR**構造は常に、情報を起動しますが、セキュリティ記述子の他のコンポーネントは任意の順序で構造に従うことができます。 メモリ アドレスを使用する代わりに、自己相対セキュリティ記述子のコンポーネントは、セキュリティ記述子の先頭からのオフセットによって識別されます。 この形式は、セキュリティ記述子をディスクに保存または通信プロトコルを使用して送信される必要がある場合に便利です。 詳細については、次を参照してください。[絶対パスと Self-Relative ムタ糺揵](http://msdn.microsoft.com/library/windows/desktop/aa374807)します。  
   
-##  <a name="a-namemakeselfrelativea--csecuritydescmakeselfrelative"></a><a name="makeselfrelative"></a>CSecurityDesc::MakeSelfRelative  
+##  <a name="makeselfrelative"></a>CSecurityDesc::MakeSelfRelative  
  セキュリティ記述子を自己相対形式に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -446,7 +472,7 @@ bool MakeSelfRelative() throw(...);
 ### <a name="remarks"></a>コメント  
  絶対形式のセキュリティ記述子には、情報自体が含まれているのではなく、それに含まれる情報へのポインターが含まれています。 自己相対形式のセキュリティ記述子には、連続するメモリ ブロック内の情報が含まれています。 自己相対セキュリティ記述子で、 **SECURITY_DESCRIPTOR**構造は常に、情報を起動しますが、セキュリティ記述子の他のコンポーネントは任意の順序で構造に従うことができます。 メモリ アドレスを使用する代わりに、セキュリティ記述子のコンポーネントは、セキュリティ記述子の先頭からのオフセットによって識別されます。 この形式は、セキュリティ記述子をディスクに保存または通信プロトコルを使用して送信される必要がある場合に便利です。 詳細については、次を参照してください。[絶対パスと Self-Relative ムタ糺揵](http://msdn.microsoft.com/library/windows/desktop/aa374807)します。  
   
-##  <a name="a-nameoperatoreqa--csecuritydescoperator-"></a><a name="operator_eq"></a>CSecurityDesc::operator =  
+##  <a name="operator_eq"></a>CSecurityDesc::operator =  
  代入演算子。  
   
 ```
@@ -461,14 +487,14 @@ CSecurityDesc& operator= (const CSecurityDesc& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  取得、更新された`CSecurityDesc`オブジェクトです。  
   
-##  <a name="a-nameoperatorconstsecuritydescriptorstara--csecuritydescoperator-const-securitydescriptor-"></a><a name="operator_const_security_descriptor__star"></a>CSecurityDesc::operator const SECURITY_DESCRIPTOR *  
+##  <a name="operator_const_security_descriptor__star"></a>CSecurityDesc::operator const SECURITY_DESCRIPTOR *  
  値へのポインターをキャスト、 **SECURITY_DESCRIPTOR**構造体。  
   
 ```  
 operator const SECURITY_DESCRIPTOR *() const throw();
 ```  
   
-##  <a name="a-namesetcontrola--csecuritydescsetcontrol"></a><a name="setcontrol"></a>CSecurityDesc::SetControl  
+##  <a name="setcontrol"></a>CSecurityDesc::SetControl  
  セキュリティ記述子の制御ビットを設定します。  
   
 ```
@@ -490,7 +516,7 @@ bool SetControl(
 ### <a name="remarks"></a>コメント  
  このメソッドは、使用可能な Windows 2000 でのみと、後でなさ[SetSecurityDescriptorControl](http://msdn.microsoft.com/library/windows/desktop/aa379582\(v=vs.85\).aspx)します。  
   
-##  <a name="a-namesetdacla--csecuritydescsetdacl"></a><a name="setdacl"></a>CSecurityDesc::SetDacl  
+##  <a name="setdacl"></a>CSecurityDesc::SetDacl  
  随意アクセス制御リスト (DACL) で情報を設定します。 既に DACL が表示されている、セキュリティ記述子で置き換えられます。  
   
 ```
@@ -519,7 +545,7 @@ inline void SetDacl(
 ### <a name="remarks"></a>コメント  
  空と存在しない DACL の重要な違いがあります。 DACL が空の場合は、アクセス制御エントリが含まれていないとへのアクセス権明示的に与えられていません。 その結果、オブジェクトへのアクセスが暗黙的に拒否されます。 その一方で、オブジェクトに DACL がしない場合は、保護は、オブジェクトに割り当てられませんし、アクセス要求が許可されます。  
   
-##  <a name="a-namesetgroupa--csecuritydescsetgroup"></a><a name="setgroup"></a>CSecurityDesc::SetGroup  
+##  <a name="setgroup"></a>CSecurityDesc::SetGroup  
  既にあるすべてのプライマリ グループ情報を交換絶対形式のセキュリティ記述子のプライマリ グループの情報を設定します。  
   
 ```
@@ -536,7 +562,7 @@ bool SetGroup(const CSid& Sid, bool bDefaulted = false) throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="a-namesetownera--csecuritydescsetowner"></a><a name="setowner"></a>CSecurityDesc::SetOwner  
+##  <a name="setowner"></a>CSecurityDesc::SetOwner  
  絶対形式のセキュリティ記述子の所有者の情報を設定します。 所有者の情報が既に組み込まれているが置き換えられます。  
   
 ```
@@ -553,7 +579,7 @@ bool SetOwner(const CSid& Sid, bool bDefaulted = false) throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="a-namesetsacla--csecuritydescsetsacl"></a><a name="setsacl"></a>CSecurityDesc::SetSacl  
+##  <a name="setsacl"></a>CSecurityDesc::SetSacl  
  システム アクセス制御リスト (SACL) の情報を設定します。 既に SACL が表示されている、セキュリティ記述子で置き換えられます。  
   
 ```
@@ -570,7 +596,7 @@ bool SetSacl(const CSacl& Sacl, bool bDefaulted = false) throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="a-nametostringa--csecuritydesctostring"></a><a name="tostring"></a>CSecurityDesc::ToString  
+##  <a name="tostring"></a>CSecurityDesc::ToString  
  セキュリティ記述子を文字列形式に変換します。  
   
 ```

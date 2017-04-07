@@ -9,7 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::DispatchState
+- DispatchState
+- CONCRTRM/concurrency::DispatchState
+- CONCRTRM/concurrency::DispatchState::DispatchState::DispatchState
+- CONCRTRM/concurrency::DispatchState::DispatchState::m_dispatchStateSize
+- CONCRTRM/concurrency::DispatchState::DispatchState::m_fIsPreviousContextAsynchronouslyBlocked
+- CONCRTRM/concurrency::DispatchState::DispatchState::m_reserved
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 46c2219464e57da4931596e970199549405d02ec
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: a617d1f1d7f68c00c7011daffc6ba59f08c43a1e
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="dispatchstate-structure"></a>DispatchState 構造体
@@ -54,15 +59,15 @@ struct DispatchState;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Dispatchstate::dispatchstate コンス トラクター](#ctor)|新しい `DispatchState` オブジェクトを構築します。|  
+|[Dispatchstate::dispatchstate](#ctor)|新しい `DispatchState` オブジェクトを構築します。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Dispatchstate::m_dispatchstatesize データ メンバー](#m_dispatchstatesize)|バージョン管理に使用するこの構造体のサイズ。|  
-|[Dispatchstate::m_fispreviouscontextasynchronouslyblocked データ メンバー](#m_fispreviouscontextasynchronouslyblocked)|このコンテキストが入力されているかどうかを指示、`Dispatch`メソッド以前のコンテキストが非同期的にブロックされているためです。 これは、UMS スケジュール コンテキストでのみ使用され、値に設定されている`0`他のすべての実行コンテキスト。|  
-|[Dispatchstate::m_reserved データ メンバー](#m_reserved)|将来の情報を渡すために予約されてビットです。|  
+|[Dispatchstate::m_dispatchstatesize](#m_dispatchstatesize)|バージョン管理に使用するこの構造体のサイズ。|  
+|[Dispatchstate::m_fispreviouscontextasynchronouslyblocked](#m_fispreviouscontextasynchronouslyblocked)|このコンテキストが入力されているかどうかを指示、`Dispatch`メソッド以前のコンテキストが非同期的にブロックされているためです。 これは、UMS スケジュール コンテキストでのみ使用され、値に設定されている`0`他のすべての実行コンテキスト。|  
+|[Dispatchstate::m_reserved](#m_reserved)|将来の情報を渡すために予約されてビットです。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `DispatchState`  
@@ -72,28 +77,28 @@ struct DispatchState;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora--dispatchstatedispatchstate-constructor"></a><a name="ctor"></a>Dispatchstate::dispatchstate コンス トラクター  
+##  <a name="ctor"></a>Dispatchstate::dispatchstate コンス トラクター  
  新しい `DispatchState` オブジェクトを構築します。  
   
 ```
 DispatchState();
 ```  
   
-##  <a name="a-namemdispatchstatesizea--dispatchstatemdispatchstatesize-data-member"></a><a name="m_dispatchstatesize"></a>Dispatchstate::m_dispatchstatesize データ メンバー  
+##  <a name="m_dispatchstatesize"></a>Dispatchstate::m_dispatchstatesize データ メンバー  
  バージョン管理に使用するこの構造体のサイズ。  
   
 ```
 unsigned long m_dispatchStateSize;
 ```  
   
-##  <a name="a-namemfispreviouscontextasynchronouslyblockeda--dispatchstatemfispreviouscontextasynchronouslyblocked-data-member"></a><a name="m_fispreviouscontextasynchronouslyblocked"></a>Dispatchstate::m_fispreviouscontextasynchronouslyblocked データ メンバー  
+##  <a name="m_fispreviouscontextasynchronouslyblocked"></a>Dispatchstate::m_fispreviouscontextasynchronouslyblocked データ メンバー  
  このコンテキストが入力されているかどうかを指示、`Dispatch`メソッド以前のコンテキストが非同期的にブロックされているためです。 これは、UMS スケジュール コンテキストでのみ使用され、値に設定されている`0`他のすべての実行コンテキスト。  
   
 ```
 unsigned int m_fIsPreviousContextAsynchronouslyBlocked : 1;
 ```  
   
-##  <a name="a-namemreserveda--dispatchstatemreserved-data-member"></a><a name="m_reserved"></a>Dispatchstate::m_reserved データ メンバー  
+##  <a name="m_reserved"></a>Dispatchstate::m_reserved データ メンバー  
  将来の情報を渡すために予約されてビットです。  
   
 ```
@@ -101,5 +106,5 @@ unsigned int m_reserved : 31;
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

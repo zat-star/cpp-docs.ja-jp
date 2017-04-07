@@ -10,6 +10,87 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDaoRecordset
+- AFXDAO/CDaoRecordset
+- AFXDAO/CDaoRecordset::CDaoRecordset
+- AFXDAO/CDaoRecordset::AddNew
+- AFXDAO/CDaoRecordset::CanAppend
+- AFXDAO/CDaoRecordset::CanBookmark
+- AFXDAO/CDaoRecordset::CancelUpdate
+- AFXDAO/CDaoRecordset::CanRestart
+- AFXDAO/CDaoRecordset::CanScroll
+- AFXDAO/CDaoRecordset::CanTransact
+- AFXDAO/CDaoRecordset::CanUpdate
+- AFXDAO/CDaoRecordset::Close
+- AFXDAO/CDaoRecordset::Delete
+- AFXDAO/CDaoRecordset::DoFieldExchange
+- AFXDAO/CDaoRecordset::Edit
+- AFXDAO/CDaoRecordset::FillCache
+- AFXDAO/CDaoRecordset::Find
+- AFXDAO/CDaoRecordset::FindFirst
+- AFXDAO/CDaoRecordset::FindLast
+- AFXDAO/CDaoRecordset::FindNext
+- AFXDAO/CDaoRecordset::FindPrev
+- AFXDAO/CDaoRecordset::GetAbsolutePosition
+- AFXDAO/CDaoRecordset::GetBookmark
+- AFXDAO/CDaoRecordset::GetCacheSize
+- AFXDAO/CDaoRecordset::GetCacheStart
+- AFXDAO/CDaoRecordset::GetCurrentIndex
+- AFXDAO/CDaoRecordset::GetDateCreated
+- AFXDAO/CDaoRecordset::GetDateLastUpdated
+- AFXDAO/CDaoRecordset::GetDefaultDBName
+- AFXDAO/CDaoRecordset::GetDefaultSQL
+- AFXDAO/CDaoRecordset::GetEditMode
+- AFXDAO/CDaoRecordset::GetFieldCount
+- AFXDAO/CDaoRecordset::GetFieldInfo
+- AFXDAO/CDaoRecordset::GetFieldValue
+- AFXDAO/CDaoRecordset::GetIndexCount
+- AFXDAO/CDaoRecordset::GetIndexInfo
+- AFXDAO/CDaoRecordset::GetLastModifiedBookmark
+- AFXDAO/CDaoRecordset::GetLockingMode
+- AFXDAO/CDaoRecordset::GetName
+- AFXDAO/CDaoRecordset::GetParamValue
+- AFXDAO/CDaoRecordset::GetPercentPosition
+- AFXDAO/CDaoRecordset::GetRecordCount
+- AFXDAO/CDaoRecordset::GetSQL
+- AFXDAO/CDaoRecordset::GetType
+- AFXDAO/CDaoRecordset::GetValidationRule
+- AFXDAO/CDaoRecordset::GetValidationText
+- AFXDAO/CDaoRecordset::IsBOF
+- AFXDAO/CDaoRecordset::IsDeleted
+- AFXDAO/CDaoRecordset::IsEOF
+- AFXDAO/CDaoRecordset::IsFieldDirty
+- AFXDAO/CDaoRecordset::IsFieldNull
+- AFXDAO/CDaoRecordset::IsFieldNullable
+- AFXDAO/CDaoRecordset::IsOpen
+- AFXDAO/CDaoRecordset::Move
+- AFXDAO/CDaoRecordset::MoveFirst
+- AFXDAO/CDaoRecordset::MoveLast
+- AFXDAO/CDaoRecordset::MoveNext
+- AFXDAO/CDaoRecordset::MovePrev
+- AFXDAO/CDaoRecordset::Open
+- AFXDAO/CDaoRecordset::Requery
+- AFXDAO/CDaoRecordset::Seek
+- AFXDAO/CDaoRecordset::SetAbsolutePosition
+- AFXDAO/CDaoRecordset::SetBookmark
+- AFXDAO/CDaoRecordset::SetCacheSize
+- AFXDAO/CDaoRecordset::SetCacheStart
+- AFXDAO/CDaoRecordset::SetCurrentIndex
+- AFXDAO/CDaoRecordset::SetFieldDirty
+- AFXDAO/CDaoRecordset::SetFieldNull
+- AFXDAO/CDaoRecordset::SetFieldValue
+- AFXDAO/CDaoRecordset::SetFieldValueNull
+- AFXDAO/CDaoRecordset::SetLockingMode
+- AFXDAO/CDaoRecordset::SetParamValue
+- AFXDAO/CDaoRecordset::SetParamValueNull
+- AFXDAO/CDaoRecordset::SetPercentPosition
+- AFXDAO/CDaoRecordset::Update
+- AFXDAO/CDaoRecordset::m_bCheckCacheForDirtyFields
+- AFXDAO/CDaoRecordset::m_nFields
+- AFXDAO/CDaoRecordset::m_nParams
+- AFXDAO/CDaoRecordset::m_pDAORecordset
+- AFXDAO/CDaoRecordset::m_pDatabase
+- AFXDAO/CDaoRecordset::m_strFilter
+- AFXDAO/CDaoRecordset::m_strSort
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -193,7 +274,7 @@ class CDaoRecordset : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
   
-##  <a name="a-nameaddnewa--cdaorecordsetaddnew"></a><a name="addnew"></a>CDaoRecordset::AddNew  
+##  <a name="addnew"></a>CDaoRecordset::AddNew  
  テーブル型またはダイナセット タイプのレコード セットに新しいレコードを追加するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -231,7 +312,7 @@ virtual void AddNew();
   
  関連情報については、「AddNew メソッド」、"ただし Method"、「LastModified プロパティ」および"EditMode Property"DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namecanappenda--cdaorecordsetcanappend"></a><a name="canappend"></a>CDaoRecordset::CanAppend  
+##  <a name="canappend"></a>CDaoRecordset::CanAppend  
  以前に開いたレコード セットが呼び出すことによって新しいレコードを追加することができるかどうかを判断するには、このメンバー関数を呼び出す、 [AddNew](#addnew)メンバー関数。  
   
 ```  
@@ -244,7 +325,7 @@ BOOL CanAppend() const;
 ### <a name="remarks"></a>コメント  
  関連情報については、DAO ヘルプの「メソッドの追加」を参照してください。  
   
-##  <a name="a-namecanbookmarka--cdaorecordsetcanbookmark"></a><a name="canbookmark"></a>CDaoRecordset::CanBookmark  
+##  <a name="canbookmark"></a>CDaoRecordset::CanBookmark  
  以前に開いたレコード セットが個別にブックマークを使用してレコードを指定することができるかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -259,7 +340,7 @@ BOOL CanBookmark();
   
  関連情報については、DAO のヘルプでは、「ブックマークを設定のプロパティ」を参照してください。  
   
-##  <a name="a-namecancelupdatea--cdaorecordsetcancelupdate"></a><a name="cancelupdate"></a>CDaoRecordset::CancelUpdate  
+##  <a name="cancelupdate"></a>CDaoRecordset::CancelUpdate  
  `CancelUpdate`メンバー関数は、期限に保留中の更新プログラムをキャンセル、[編集](#edit)または[AddNew](#addnew)操作します。  
   
 ```  
@@ -276,7 +357,7 @@ virtual void CancelUpdate();
   
  関連情報については、DAO ヘルプの「ただしメソッド」を参照してください。  
   
-##  <a name="a-namecanrestarta--cdaorecordsetcanrestart"></a><a name="canrestart"></a>CDaoRecordset::CanRestart  
+##  <a name="canrestart"></a>CDaoRecordset::CanRestart  
  レコード セットを呼び出して、クエリを (レコードを更新する) を再起動できるかどうかを判断するには、このメンバー関数を呼び出す、 **Requery**メンバー関数。  
   
 ```  
@@ -293,7 +374,7 @@ BOOL CanRestart();
   
  関連情報については、DAO ヘルプの「再開可能なプロパティ」を参照してください。  
   
-##  <a name="a-namecanscrolla--cdaorecordsetcanscroll"></a><a name="canscroll"></a>CDaoRecordset::CanScroll  
+##  <a name="canscroll"></a>CDaoRecordset::CanScroll  
  このメンバー関数を呼び出して、レコード セットでは、スクロールできるかどうかを決定します。  
   
 ```  
@@ -308,7 +389,7 @@ BOOL CanScroll() const;
   
  関連情報については、"配置の現在のレコード ポインターと DAO"DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namecantransacta--cdaorecordsetcantransact"></a><a name="cantransact"></a>CDaoRecordset::CanTransact  
+##  <a name="cantransact"></a>CDaoRecordset::CanTransact  
  このメンバー関数を呼び出して、レコード セットにトランザクションができるかどうかを決定します。  
   
 ```  
@@ -321,7 +402,7 @@ BOOL CanTransact();
 ### <a name="remarks"></a>コメント  
  関連情報については、DAO ヘルプの「トランザクション プロパティ」を参照してください。  
   
-##  <a name="a-namecanupdatea--cdaorecordsetcanupdate"></a><a name="canupdate"></a>CDaoRecordset::CanUpdate  
+##  <a name="canupdate"></a>CDaoRecordset::CanUpdate  
  このメンバー関数を呼び出して、レコード セットを更新できるかどうかを判断します。  
   
 ```  
@@ -336,7 +417,7 @@ BOOL CanUpdate() const;
   
  関連情報については、「AddNew メソッド」、「メソッドの編集」、「メソッドの削除」、"Update Method"、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
   
-##  <a name="a-namecdaorecordseta--cdaorecordsetcdaorecordset"></a><a name="cdaorecordset"></a>CDaoRecordset::CDaoRecordset  
+##  <a name="cdaorecordset"></a>CDaoRecordset::CDaoRecordset  
  `CDaoRecordset` オブジェクトを構築します。  
   
 ```  
@@ -355,7 +436,7 @@ CDaoRecordset(CDaoDatabase* pDatabase = NULL);
   
  渡す**NULL**してレコード セット コンス トラクターに、`CDaoDatabase`オブジェクトが構築され、自動的に結合します。 これは、構築し、接続を必要としないための便利なショートカット、`CDaoDatabase`レコード セットを構築する前にオブジェクトです。 場合、`CDaoDatabase`オブジェクトが開いていない、 [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)オブジェクトは、既定のワークスペースを使用するのも作成されます。 詳細については、次を参照してください。 [CDaoDatabase::CDaoDatabase](../../mfc/reference/cdaodatabase-class.md#cdaodatabase)します。  
   
-##  <a name="a-nameclosea--cdaorecordsetclose"></a><a name="close"></a>CDaoRecordset::Close  
+##  <a name="close"></a>CDaoRecordset::Close  
  閉じる、`CDaoRecordset`オブジェクトが関連付けられているデータベースで開いているレコード セットのコレクションから削除します。  
   
 ```  
@@ -371,7 +452,7 @@ virtual void Close();
   
  関連情報については、DAO ヘルプの「閉じるメソッド」を参照してください。  
   
-##  <a name="a-namedeletea--cdaorecordsetdelete"></a><a name="delete"></a>CDaoRecordset::Delete  
+##  <a name="delete"></a>CDaoRecordset::Delete  
  開いているダイナセット型またはテーブル型のレコード セット オブジェクトの現在のレコードを削除するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -392,7 +473,7 @@ virtual void Delete();
   
  関連情報については、「AddNew メソッド」、「メソッドの編集」、「メソッドの削除」、"Update Method"、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
   
-##  <a name="a-namedofieldexchangea--cdaorecordsetdofieldexchange"></a><a name="dofieldexchange"></a>CDaoRecordset::DoFieldExchange  
+##  <a name="dofieldexchange"></a>CDaoRecordset::DoFieldExchange  
  フレームワークでは、自動的にデータ ソースの現在のレコードの対応する列とレコード セット オブジェクトのフィールド データ メンバーの間でデータを交換するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -412,7 +493,7 @@ virtual void DoFieldExchange(CDaoFieldExchange* pFX);
   
  [!code-cpp[NVC_MFCDatabase&#2;](../../mfc/codesnippet/cpp/cdaorecordset-class_2.cpp)]  
   
-##  <a name="a-nameedita--cdaorecordsetedit"></a><a name="edit"></a>CDaoRecordset::Edit  
+##  <a name="edit"></a>CDaoRecordset::Edit  
  現在のレコードを変更できるようにするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -452,7 +533,7 @@ virtual void Edit();
   
  関連情報については、「AddNew メソッド」、「メソッドの編集」、「メソッドの削除」、"Update Method"、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
   
-##  <a name="a-namefillcachea--cdaorecordsetfillcache"></a><a name="fillcache"></a>CDaoRecordset::FillCache  
+##  <a name="fillcache"></a>CDaoRecordset::FillCache  
  指定された数のレコード セットからレコードをキャッシュするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -481,7 +562,7 @@ void FillCache(
   
  関連情報については、DAO ヘルプの「FillCache メソッド」を参照してください。  
   
-##  <a name="a-namefinda--cdaorecordsetfind"></a><a name="find"></a>CDaoRecordset::Find  
+##  <a name="find"></a>CDaoRecordset::Find  
  比較演算子を使用してダイナセット型またはスナップショットのレコード セット内で特定の文字列を検索するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -520,7 +601,7 @@ virtual BOOL Find(
   
  関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプでできます。  
   
-##  <a name="a-namefindfirsta--cdaorecordsetfindfirst"></a><a name="findfirst"></a>CDaoRecordset::FindFirst  
+##  <a name="findfirst"></a>CDaoRecordset::FindFirst  
  このメンバー関数を呼び出して、指定した条件に一致する最初のレコードを検索します。  
   
 ```  
@@ -570,7 +651,7 @@ BOOL FindFirst(LPCTSTR lpszFilter);
   
  関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプでできます。  
   
-##  <a name="a-namefindlasta--cdaorecordsetfindlast"></a><a name="findlast"></a>CDaoRecordset::FindLast  
+##  <a name="findlast"></a>CDaoRecordset::FindLast  
  このメンバー関数を呼び出して、指定した条件に一致する最後のレコードを検索します。  
   
 ```  
@@ -608,7 +689,7 @@ BOOL FindLast(LPCTSTR lpszFilter);
   
  関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプでできます。  
   
-##  <a name="a-namefindnexta--cdaorecordsetfindnext"></a><a name="findnext"></a>CDaoRecordset::FindNext  
+##  <a name="findnext"></a>CDaoRecordset::FindNext  
  このメンバー関数を呼び出して、指定した条件に一致する次のレコードを検索します。  
   
 ```  
@@ -646,7 +727,7 @@ BOOL FindNext(LPCTSTR lpszFilter);
   
  関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプでできます。  
   
-##  <a name="a-namefindpreva--cdaorecordsetfindprev"></a><a name="findprev"></a>CDaoRecordset::FindPrev  
+##  <a name="findprev"></a>CDaoRecordset::FindPrev  
  このメンバー関数を呼び出して、指定した条件に一致する以前のレコードを検索します。  
   
 ```  
@@ -684,7 +765,7 @@ BOOL FindPrev(LPCTSTR lpszFilter);
   
  関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプでできます。  
   
-##  <a name="a-namegetabsolutepositiona--cdaorecordsetgetabsoluteposition"></a><a name="getabsoluteposition"></a>CDaoRecordset::GetAbsolutePosition  
+##  <a name="getabsoluteposition"></a>CDaoRecordset::GetAbsolutePosition  
  レコード セット オブジェクトの現在のレコードのレコード数を返します。  
   
 ```  
@@ -707,7 +788,7 @@ long GetAbsolutePosition();
   
  関連情報については、DAO ヘルプの「AbsolutePosition プロパティ」を参照してください。  
   
-##  <a name="a-namegetbookmarka--cdaorecordsetgetbookmark"></a><a name="getbookmark"></a>CDaoRecordset::GetBookmark  
+##  <a name="getbookmark"></a>CDaoRecordset::GetBookmark  
  このメンバー関数を呼び出して、特定のレコードのブックマークの値を取得します。  
   
 ```  
@@ -727,7 +808,7 @@ COleVariant GetBookmark();
   
  関連情報については、DAO ヘルプの「ブックマーク プロパティ」を参照してください。  
   
-##  <a name="a-namegetcachesizea--cdaorecordsetgetcachesize"></a><a name="getcachesize"></a>CDaoRecordset::GetCacheSize  
+##  <a name="getcachesize"></a>CDaoRecordset::GetCacheSize  
  キャッシュされたレコードの数を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -744,7 +825,7 @@ long GetCacheSize();
   
  関連情報については、DAO のヘルプ トピック「CacheSize、CacheStart プロパティ」を参照してください。  
   
-##  <a name="a-namegetcachestarta--cdaorecordsetgetcachestart"></a><a name="getcachestart"></a>CDaoRecordset::GetCacheStart  
+##  <a name="getcachestart"></a>CDaoRecordset::GetCacheStart  
  キャッシュされるレコード セットの最初のレコードのブックマークの値を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -762,7 +843,7 @@ COleVariant GetCacheStart();
   
  関連情報については、DAO のヘルプ トピック「CacheSize、CacheStart プロパティ」を参照してください。  
   
-##  <a name="a-namegetcurrentindexa--cdaorecordsetgetcurrentindex"></a><a name="getcurrentindex"></a>CDaoRecordset::GetCurrentIndex  
+##  <a name="getcurrentindex"></a>CDaoRecordset::GetCurrentIndex  
  インデックス付きのテーブル型で使用されているインデックスを確認するには、このメンバー関数を呼び出す`CDaoRecordset`オブジェクトです。  
   
 ```  
@@ -779,7 +860,7 @@ CString GetCurrentIndex();
   
  関連情報については、トピック「インデックス オブジェクト」と定義の DAO のヘルプでは、"現在のインデックス"を参照してください。  
   
-##  <a name="a-namegetdatecreateda--cdaorecordsetgetdatecreated"></a><a name="getdatecreated"></a>CDaoRecordset::GetDateCreated  
+##  <a name="getdatecreated"></a>CDaoRecordset::GetDateCreated  
  ベース テーブルが作成された日時を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -794,7 +875,7 @@ COleDateTime GetDateCreated();
   
  関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
   
-##  <a name="a-namegetdatelastupdateda--cdaorecordsetgetdatelastupdated"></a><a name="getdatelastupdated"></a>CDaoRecordset::GetDateLastUpdated  
+##  <a name="getdatelastupdated"></a>CDaoRecordset::GetDateLastUpdated  
  このメンバー関数を呼び出して、スキーマの最終更新日時を取得します。  
   
 ```  
@@ -809,7 +890,7 @@ COleDateTime GetDateLastUpdated();
   
  関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
   
-##  <a name="a-namegetdefaultdbnamea--cdaorecordsetgetdefaultdbname"></a><a name="getdefaultdbname"></a>CDaoRecordset::GetDefaultDBName  
+##  <a name="getdefaultdbname"></a>CDaoRecordset::GetDefaultDBName  
  このレコード セットに対して、データベースの名前を確認するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -826,7 +907,7 @@ virtual CString GetDefaultDBName();
   
  [!code-cpp[NVC_MFCDatabase&4;](../../mfc/codesnippet/cpp/cdaorecordset-class_4.cpp)]  
   
-##  <a name="a-namegetdefaultsqla--cdaorecordsetgetdefaultsql"></a><a name="getdefaultsql"></a>CDaoRecordset::GetDefaultSQL  
+##  <a name="getdefaultsql"></a>CDaoRecordset::GetDefaultSQL  
  フレームワークでは、レコード セットの基になる既定の SQL ステートメントを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -843,7 +924,7 @@ virtual CString GetDefaultSQL();
   
  Null SQL 文字列を渡す場合[開く](#open)、この関数は、レコード セットのテーブル名または SQL の決定に呼び出されます。  
   
-##  <a name="a-namegeteditmodea--cdaorecordsetgeteditmode"></a><a name="geteditmode"></a>CDaoRecordset::GetEditMode  
+##  <a name="geteditmode"></a>CDaoRecordset::GetEditMode  
  このメンバー関数を呼び出して、編集の状態を確認する次の値の&1; つであります。  
   
 ```  
@@ -863,7 +944,7 @@ short GetEditMode();
   
  関連情報については、DAO ヘルプの「EditMode プロパティ」を参照してください。  
   
-##  <a name="a-namegetfieldcounta--cdaorecordsetgetfieldcount"></a><a name="getfieldcount"></a>CDaoRecordset::GetFieldCount  
+##  <a name="getfieldcount"></a>CDaoRecordset::GetFieldCount  
  このメンバー関数を呼び出して、レコード セットで定義されたフィールド (列) の数を取得します。  
   
 ```  
@@ -876,7 +957,7 @@ short GetFieldCount();
 ### <a name="remarks"></a>コメント  
  関連情報については、DAO ヘルプの「Count プロパティ」を参照してください。  
   
-##  <a name="a-namegetfieldinfoa--cdaorecordsetgetfieldinfo"></a><a name="getfieldinfo"></a>CDaoRecordset::GetFieldInfo  
+##  <a name="getfieldinfo"></a>CDaoRecordset::GetFieldInfo  
  このメンバー関数を呼び出してレコード セット内のフィールドに関する情報を取得します。  
   
 ```  
@@ -918,7 +999,7 @@ void GetFieldInfo(
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetfieldvaluea--cdaorecordsetgetfieldvalue"></a><a name="getfieldvalue"></a>CDaoRecordset::GetFieldValue  
+##  <a name="getfieldvalue"></a>CDaoRecordset::GetFieldValue  
  このメンバー関数を呼び出してレコード セット内のデータを取得します。  
   
 ```  
@@ -960,7 +1041,7 @@ virtual COleVariant GetFieldValue(int nIndex);
   
  関連情報については、"フィールド Object"、「値プロパティ」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namegetindexcounta--cdaorecordsetgetindexcount"></a><a name="getindexcount"></a>CDaoRecordset::GetIndexCount  
+##  <a name="getindexcount"></a>CDaoRecordset::GetIndexCount  
  このメンバー関数を呼び出して、テーブル型のレコード セットで使用できるインデックスの数を決定します。  
   
 ```  
@@ -975,7 +1056,7 @@ short GetIndexCount();
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetindexinfoa--cdaorecordsetgetindexinfo"></a><a name="getindexinfo"></a>CDaoRecordset::GetIndexInfo  
+##  <a name="getindexinfo"></a>CDaoRecordset::GetIndexInfo  
  さまざまな種類のレコード セットを基になるベース テーブルで定義されているインデックスに関する情報を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1017,7 +1098,7 @@ void GetIndexInfo(
   
  関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
   
-##  <a name="a-namegetlastmodifiedbookmarka--cdaorecordsetgetlastmodifiedbookmark"></a><a name="getlastmodifiedbookmark"></a>CDaoRecordset::GetLastModifiedBookmark  
+##  <a name="getlastmodifiedbookmark"></a>CDaoRecordset::GetLastModifiedBookmark  
  最も最近追加または更新されたレコードのブックマークを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1034,7 +1115,7 @@ COleVariant GetLastModifiedBookmark();
   
  関連情報については、DAO ヘルプの「LastModified プロパティ」を参照してください。  
   
-##  <a name="a-namegetlockingmodea--cdaorecordsetgetlockingmode"></a><a name="getlockingmode"></a>CDaoRecordset::GetLockingMode  
+##  <a name="getlockingmode"></a>CDaoRecordset::GetLockingMode  
  このメンバー関数を呼び出して、レコード セットに対して有効でロックの種類を決定します。  
   
 ```  
@@ -1053,7 +1134,7 @@ BOOL GetLockingMode();
   
  関連情報については、"LockEdits Property"と「ロック動作に複数のユーザー アプリケーション」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namegetnamea--cdaorecordsetgetname"></a><a name="getname"></a>CDaoRecordset::GetName  
+##  <a name="getname"></a>CDaoRecordset::GetName  
  このメンバー関数を呼び出して、レコード セットの名前を取得します。  
   
 ```  
@@ -1068,7 +1149,7 @@ CString GetName();
   
  関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
   
-##  <a name="a-namegetparamvaluea--cdaorecordsetgetparamvalue"></a><a name="getparamvalue"></a>CDaoRecordset::GetParamValue  
+##  <a name="getparamvalue"></a>CDaoRecordset::GetParamValue  
  基になる DAOParameter のオブジェクトに格納されている指定されたパラメーターの現在の値を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1091,7 +1172,7 @@ virtual COleVariant GetParamValue(LPCTSTR lpszName);
   
  関連情報については、DAO ヘルプの「パラメーター オブジェクト」を参照してください。  
   
-##  <a name="a-namegetpercentpositiona--cdaorecordsetgetpercentposition"></a><a name="getpercentposition"></a>CDaoRecordset::GetPercentPosition  
+##  <a name="getpercentposition"></a>CDaoRecordset::GetPercentPosition  
  呼び出すと、ダイナセット タイプまたはスナップショットの種類のレコード セットを使用しているときに`GetPercentPosition`、レコード セットを完全に設定するには、前に、移動の量が呼び出すことによって示されるアクセスできるレコードの数を基準としたが[GetRecordCount](#getrecordcount)します。  
   
 ```  
@@ -1108,7 +1189,7 @@ float GetPercentPosition();
   
  関連情報については、DAO ヘルプの「PercentPosition プロパティ」を参照してください。  
   
-##  <a name="a-namegetrecordcounta--cdaorecordsetgetrecordcount"></a><a name="getrecordcount"></a>CDaoRecordset::GetRecordCount  
+##  <a name="getrecordcount"></a>CDaoRecordset::GetRecordCount  
  レコード セットからレコードの数のアクセスを確認するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1133,7 +1214,7 @@ long GetRecordCount();
   
  関連情報については、DAO ヘルプの「RecordCount プロパティ」を参照してください。  
   
-##  <a name="a-namegetsqla--cdaorecordsetgetsql"></a><a name="getsql"></a>CDaoRecordset::GetSQL  
+##  <a name="getsql"></a>CDaoRecordset::GetSQL  
  開いたときに、レコード セットのレコードを選択するために使用された SQL ステートメントを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1153,7 +1234,7 @@ CString GetSQL() const;
   
  関連情報については、DAO ヘルプの「SQL プロパティ」を参照してください。  
   
-##  <a name="a-namegettypea--cdaorecordsetgettype"></a><a name="gettype"></a>CDaoRecordset::GetType  
+##  <a name="gettype"></a>CDaoRecordset::GetType  
  レコード セット オブジェクトの種類を決定するレコード セットを開いた後に、このメンバー関数を呼び出します。  
   
 ```  
@@ -1172,7 +1253,7 @@ short GetType();
 ### <a name="remarks"></a>コメント  
  関連情報については、DAO ヘルプの「型プロパティ」を参照してください。  
   
-##  <a name="a-namegetvalidationrulea--cdaorecordsetgetvalidationrule"></a><a name="getvalidationrule"></a>CDaoRecordset::GetValidationRule  
+##  <a name="getvalidationrule"></a>CDaoRecordset::GetValidationRule  
  データの検証に使用されるルールを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1189,7 +1270,7 @@ CString GetValidationRule();
   
  関連情報については、DAO ヘルプの「ValidationRule プロパティ」を参照してください。  
   
-##  <a name="a-namegetvalidationtexta--cdaorecordsetgetvalidationtext"></a><a name="getvalidationtext"></a>CDaoRecordset::GetValidationText  
+##  <a name="getvalidationtext"></a>CDaoRecordset::GetValidationText  
  このメンバー関数を呼び出して、基になるフィールド オブジェクトのプロパティのテキストを取得します。  
   
 ```  
@@ -1202,7 +1283,7 @@ CString GetValidationText();
 ### <a name="remarks"></a>コメント  
  関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-nameisbofa--cdaorecordsetisbof"></a><a name="isbof"></a>CDaoRecordset::IsBOF  
+##  <a name="isbof"></a>CDaoRecordset::IsBOF  
  レコードからレコード セットの最初のレコードの前に終了したかどうかを学習するレコードにスクロールする前に、このメンバー関数を呼び出します。  
   
 ```  
@@ -1249,7 +1330,7 @@ BOOL IsBOF() const;
   
  関連情報については、トピックを参照して「BOF, EOF プロパティ」DAO のヘルプでできます。  
   
-##  <a name="a-nameisdeleteda--cdaorecordsetisdeleted"></a><a name="isdeleted"></a>CDaoRecordset::IsDeleted  
+##  <a name="isdeleted"></a>CDaoRecordset::IsDeleted  
  現在のレコードが削除されているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1269,7 +1350,7 @@ BOOL IsDeleted() const;
   
  関連情報については、「メソッドの削除」、「LastModified プロパティ」および"EditMode Property"DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-nameiseofa--cdaorecordsetiseof"></a><a name="iseof"></a>CDaoRecordset::IsEOF  
+##  <a name="iseof"></a>CDaoRecordset::IsEOF  
  レコードからレコード セットの最後のレコードを越えているかどうかについては、レコードをスクロールするときに、このメンバー関数を呼び出します。  
   
 ```  
@@ -1316,7 +1397,7 @@ BOOL IsEOF() const;
   
  関連情報については、トピックを参照して「BOF, EOF プロパティ」DAO のヘルプでできます。  
   
-##  <a name="a-nameisfielddirtya--cdaorecordsetisfielddirty"></a><a name="isfielddirty"></a>CDaoRecordset::IsFieldDirty  
+##  <a name="isfielddirty"></a>CDaoRecordset::IsFieldDirty  
  ダイナセットの指定されたフィールド データ メンバーを「ダーティ」としてマークされているかどうかを判断する (変更) このメンバー関数を呼び出します。  
   
 ```  
@@ -1335,7 +1416,7 @@ BOOL IsFieldDirty(void* pv);
   
  `IsFieldDirty`によって実装され`DoFieldExchange`します。  
   
-##  <a name="a-nameisfieldnulla--cdaorecordsetisfieldnull"></a><a name="isfieldnull"></a>CDaoRecordset::IsFieldNull  
+##  <a name="isfieldnull"></a>CDaoRecordset::IsFieldNull  
  このメンバー関数を呼び出してレコード セットの指定されたフィールド データ メンバーを Null としてマークされているかどうかを決定します。  
   
 ```  
@@ -1360,7 +1441,7 @@ BOOL IsFieldNull(void* pv);
 > [!NOTE]
 >  派生することがなく動的レコードのバインドを使用しているかどうかは`CDaoRecordset`を使用してください**VT_**の例で示すようにします。  
   
-##  <a name="a-nameisfieldnullablea--cdaorecordsetisfieldnullable"></a><a name="isfieldnullable"></a>CDaoRecordset::IsFieldNullable  
+##  <a name="isfieldnullable"></a>CDaoRecordset::IsFieldNullable  
  指定されたフィールド データ メンバーが「null を許容」かどうかを判断する (するには、Null 値に設定しますC++ **NULL** Null の場合、データベース用語では、これと同じではありません「値を持たない」) です。  
   
 ```  
@@ -1377,7 +1458,7 @@ BOOL IsFieldNullable(void* pv);
 ### <a name="remarks"></a>コメント  
  Null 値は、フィールド値が必要です。 このようなフィールドを追加するか、レコードを更新する場合は Null に設定しようとすると、データ ソースは追加や更新を拒否し、**更新**は例外をスローします。 呼び出すときに、例外が発生した**更新**を呼び出すときではなく、`SetFieldNull`です。  
   
-##  <a name="a-nameisopena--cdaorecordsetisopen"></a><a name="isopen"></a>CDaoRecordset::IsOpen  
+##  <a name="isopen"></a>CDaoRecordset::IsOpen  
  このメンバー関数を呼び出して、レコード セットが開いているかどうか判断します。  
   
 ```  
@@ -1389,7 +1470,7 @@ BOOL IsOpen() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namembcheckcachefordirtyfieldsa--cdaorecordsetmbcheckcachefordirtyfields"></a><a name="m_bcheckcachefordirtyfields"></a>CDaoRecordset::m_bCheckCacheForDirtyFields  
+##  <a name="m_bcheckcachefordirtyfields"></a>CDaoRecordset::m_bCheckCacheForDirtyFields  
  かどうかキャッシュされているフィールドとして自動的にマーク ダーティ (変更) を示すフラグを格納し、Null です。  
   
 ### <a name="remarks"></a>コメント  
@@ -1397,7 +1478,7 @@ BOOL IsOpen() const;
   
  呼び出しの前にこのデータ メンバーを設定**開く**します。 このメカニズムは、主に使いやすさです。 変更が行われると、フィールドのダブル バッファリングにより遅いことがあります。  
   
-##  <a name="a-namemnfieldsa--cdaorecordsetmnfields"></a><a name="m_nfields"></a>CDaoRecordset::m_nFields  
+##  <a name="m_nfields"></a>CDaoRecordset::m_nFields  
  レコード セット クラスのフィールド データ メンバーの数と、データ ソースからレコード セットが選択した列の数が含まれています。  
   
 ### <a name="remarks"></a>コメント  
@@ -1410,7 +1491,7 @@ BOOL IsOpen() const;
   
  動作によって動的に列をバインドする`CDaoRecordset::GetFieldValue`と`CDaoRecordset::SetFieldValue`です。 これを行う場合は カウントをインクリメントする必要はありません`m_nFields`の呼び出しを DFX 関数の数を反映するように、`DoFieldExchange`メンバー関数。  
   
-##  <a name="a-namemnparamsa--cdaorecordsetmnparams"></a><a name="m_nparams"></a>CDaoRecordset::m_nParams  
+##  <a name="m_nparams"></a>CDaoRecordset::m_nParams  
  レコード セット クラスでパラメーター データ メンバーの数が含まれています: レコード セットのクエリで渡されるパラメーターの数。  
   
 ### <a name="remarks"></a>コメント  
@@ -1423,7 +1504,7 @@ BOOL IsOpen() const;
   
  関連情報については、DAO ヘルプの「パラメーター オブジェクト」を参照してください。  
   
-##  <a name="a-namempdaorecordseta--cdaorecordsetmpdaorecordset"></a><a name="m_pdaorecordset"></a>CDaoRecordset::m_pDAORecordset  
+##  <a name="m_pdaorecordset"></a>CDaoRecordset::m_pDAORecordset  
  DAO レコード セット オブジェクトの基になるは、OLE インターフェイスへのポインターを含む、`CDaoRecordset`オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
@@ -1431,7 +1512,7 @@ BOOL IsOpen() const;
   
  関連情報については、「レコード セット オブジェクト」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namempdatabasea--cdaorecordsetmpdatabase"></a><a name="m_pdatabase"></a>CDaoRecordset::m_pDatabase  
+##  <a name="m_pdatabase"></a>CDaoRecordset::m_pDatabase  
  ポインターを含む、`CDaoDatabase`データ ソースに使用されるレコード セットが接続されているオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
@@ -1441,7 +1522,7 @@ BOOL IsOpen() const;
   
  関連情報については、「データベースのオブジェクト」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namemstrfiltera--cdaorecordsetmstrfilter"></a><a name="m_strfilter"></a>CDaoRecordset::m_strFilter  
+##  <a name="m_strfilter"></a>CDaoRecordset::m_strFilter  
  構築するために使用する文字列を含む、 **、** SQL ステートメントの句。  
   
 ### <a name="remarks"></a>コメント  
@@ -1451,7 +1532,7 @@ BOOL IsOpen() const;
   
  関連情報については、DAO ヘルプの「フィルター プロパティ」を参照してください。  
   
-##  <a name="a-namemstrsorta--cdaorecordsetmstrsort"></a><a name="m_strsort"></a>CDaoRecordset::m_strSort  
+##  <a name="m_strsort"></a>CDaoRecordset::m_strSort  
  含む文字列を含む、 **ORDERBY**予約語を含まない SQL ステートメントの句**ORDERBY**します。  
   
 ### <a name="remarks"></a>コメント  
@@ -1463,7 +1544,7 @@ BOOL IsOpen() const;
   
  関連情報については、DAO ヘルプの「並べ替えプロパティ」を参照してください。  
   
-##  <a name="a-namemovea--cdaorecordsetmove"></a><a name="move"></a>CDaoRecordset::Move  
+##  <a name="move"></a>CDaoRecordset::Move  
  このメンバー関数を呼び出してレコード セットに移動`lRows`現在のレコードからのレコードです。  
   
 ```  
@@ -1492,7 +1573,7 @@ virtual void Move(long lRows);
   
  関連情報については、トピックを参照して、「Move メソッド」および"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
   
-##  <a name="a-namemovefirsta--cdaorecordsetmovefirst"></a><a name="movefirst"></a>CDaoRecordset::MoveFirst  
+##  <a name="movefirst"></a>CDaoRecordset::MoveFirst  
  このメンバー関数を呼び出して、レコード セットでの最初のレコードを (ある場合)、現在のレコードです。  
   
 ```  
@@ -1520,7 +1601,7 @@ void MoveFirst();
   
  関連情報については、トピックを参照して、「Move メソッド」および"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
   
-##  <a name="a-namemovelasta--cdaorecordsetmovelast"></a><a name="movelast"></a>CDaoRecordset::MoveLast  
+##  <a name="movelast"></a>CDaoRecordset::MoveLast  
  レコード セットの現在のレコードの (存在する場合) は、最後のレコードを作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1545,7 +1626,7 @@ void MoveLast();
   
  関連情報については、トピックを参照して、「Move メソッド」および"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
   
-##  <a name="a-namemovenexta--cdaorecordsetmovenext"></a><a name="movenext"></a>CDaoRecordset::MoveNext  
+##  <a name="movenext"></a>CDaoRecordset::MoveNext  
  このメンバー関数を呼び出してレコード セットの現在のレコード内の次のレコードを作成します。  
   
 ```  
@@ -1569,7 +1650,7 @@ void MoveNext();
   
  関連情報については、トピックを参照して、「Move メソッド」および"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
   
-##  <a name="a-namemovepreva--cdaorecordsetmoveprev"></a><a name="moveprev"></a>CDaoRecordset::MovePrev  
+##  <a name="moveprev"></a>CDaoRecordset::MovePrev  
  このメンバー関数を呼び出してレコード セットの現在のレコードの前のレコードを作成します。  
   
 ```  
@@ -1595,7 +1676,7 @@ void MovePrev();
   
  関連情報については、トピックを参照して、「Move メソッド」および"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
   
-##  <a name="a-nameopena--cdaorecordsetopen"></a><a name="open"></a>Cdaorecordset::open  
+##  <a name="open"></a>Cdaorecordset::open  
  レコード セットのレコードを取得するには、このメンバー関数を呼び出す必要があります。  
   
 ```  
@@ -1717,7 +1798,7 @@ virtual void Open(
   
  関連情報については、DAO ヘルプの「OpenRecordset メソッド」を参照してください。  
   
-##  <a name="a-namerequerya--cdaorecordsetrequery"></a><a name="requery"></a>CDaoRecordset::Requery  
+##  <a name="requery"></a>CDaoRecordset::Requery  
  レコード セット (更新) を再構築するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1745,7 +1826,7 @@ virtual void Requery();
   
  関連情報については、「Requery メソッド」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-nameseeka--cdaorecordsetseek"></a><a name="seek"></a>CDaoRecordset::Seek  
+##  <a name="seek"></a>CDaoRecordset::Seek  
  現在の指定された条件は、インデックスし、そのレコードを現在のレコードを満たしているインデックス付きのテーブル型のレコード セット オブジェクト内でレコードを検索するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1806,7 +1887,7 @@ BOOL Seek(
   
  関連情報については、「Seek メソッド」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namesetabsolutepositiona--cdaorecordsetsetabsoluteposition"></a><a name="setabsoluteposition"></a>CDaoRecordset::SetAbsolutePosition  
+##  <a name="setabsoluteposition"></a>CDaoRecordset::SetAbsolutePosition  
  レコード セット オブジェクトの現在のレコードの相対レコード番号を設定します。  
   
 ```  
@@ -1832,7 +1913,7 @@ void SetAbsolutePosition(long lPosition);
   
  関連情報については、DAO ヘルプの「AbsolutePosition プロパティ」を参照してください。  
   
-##  <a name="a-namesetbookmarka--cdaorecordsetsetbookmark"></a><a name="setbookmark"></a>CDaoRecordset::SetBookmark  
+##  <a name="setbookmark"></a>CDaoRecordset::SetBookmark  
  指定されたブックマークを含むレコードをレコード セットを配置するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1853,7 +1934,7 @@ void SetBookmark(COleVariant varBookmark);
   
  関連情報については、トピックを参照して、「ブックマーク プロパティ」とブックマークを設定のプロパティ"DAO のヘルプでできます。  
   
-##  <a name="a-namesetcachesizea--cdaorecordsetsetcachesize"></a><a name="setcachesize"></a>CDaoRecordset::SetCacheSize  
+##  <a name="setcachesize"></a>CDaoRecordset::SetCacheSize  
  キャッシュするレコードの数を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1871,7 +1952,7 @@ void SetCacheSize(long lSize);
   
  関連情報については、DAO のヘルプ トピック「CacheSize、CacheStart プロパティ」を参照してください。  
   
-##  <a name="a-namesetcachestarta--cdaorecordsetsetcachestart"></a><a name="setcachestart"></a>CDaoRecordset::SetCacheStart  
+##  <a name="setcachestart"></a>CDaoRecordset::SetCacheStart  
  キャッシュすることをレコード セット内の最初のレコードのブックマークを指定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1895,7 +1976,7 @@ void SetCacheStart(COleVariant varBookmark);
   
  関連情報については、トピックを参照して、CacheSize、CacheStart プロパティ"DAO のヘルプでできます。  
   
-##  <a name="a-namesetcurrentindexa--cdaorecordsetsetcurrentindex"></a><a name="setcurrentindex"></a>CDaoRecordset::SetCurrentIndex  
+##  <a name="setcurrentindex"></a>CDaoRecordset::SetCurrentIndex  
  テーブル型のレコード セットのインデックスを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1915,7 +1996,7 @@ void SetCurrentIndex(LPCTSTR lpszIndex);
   
  関連情報については、トピック「インデックス オブジェクト」と定義の DAO のヘルプでは、"現在のインデックス"を参照してください。  
   
-##  <a name="a-namesetfielddirtya--cdaorecordsetsetfielddirty"></a><a name="setfielddirty"></a>CDaoRecordset::SetFieldDirty  
+##  <a name="setfielddirty"></a>CDaoRecordset::SetFieldDirty  
  このメンバー関数を呼び出して、変更の有無、レコード セットのフィールド データ メンバーにフラグを設定します。  
   
 ```  
@@ -1955,7 +2036,7 @@ void SetFieldDirty(
   
  `SetFieldDirty`によって実装され`DoFieldExchange`します。  
   
-##  <a name="a-namesetfieldnulla--cdaorecordsetsetfieldnull"></a><a name="setfieldnull"></a>CDaoRecordset::SetFieldNull  
+##  <a name="setfieldnull"></a>CDaoRecordset::SetFieldNull  
  このメンバー関数を呼び出してレコード セット (具体的には値を持たない) Null または null 以外のフィールド データ メンバーにフラグを設定します。  
   
 ```  
@@ -1991,7 +2072,7 @@ void SetFieldNull(
   
  セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドが影響を受けません。  
   
-##  <a name="a-namesetfieldvaluea--cdaorecordsetsetfieldvalue"></a><a name="setfieldvalue"></a>たび  
+##  <a name="setfieldvalue"></a>たび  
  順序位置で、または文字列の値を変更することで、フィールドの値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -2035,7 +2116,7 @@ void SetFieldValue(
   
  関連情報については、"フィールド Object"、「値プロパティ」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namesetfieldvaluenulla--cdaorecordsetsetfieldvaluenull"></a><a name="setfieldvaluenull"></a>CDaoRecordset::SetFieldValueNull  
+##  <a name="setfieldvaluenull"></a>CDaoRecordset::SetFieldValueNull  
  フィールドを Null 値に設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -2055,7 +2136,7 @@ void SetFieldValueNull(LPCTSTR lpszName);
   
  関連情報については、"フィールド Object"、「値プロパティ」DAO ヘルプのトピックを参照してください。  
   
-##  <a name="a-namesetlockingmodea--cdaorecordsetsetlockingmode"></a><a name="setlockingmode"></a>CDaoRecordset::SetLockingMode  
+##  <a name="setlockingmode"></a>CDaoRecordset::SetLockingMode  
  レコード セットのロックの種類を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -2077,7 +2158,7 @@ void SetLockingMode(BOOL bPessimistic);
   
  ODBC データ ソースを使用する場合、ロックのモードは常にオプティミスティックです。  
   
-##  <a name="a-namesetparamvaluea--cdaorecordsetsetparamvalue"></a><a name="setparamvalue"></a>CDaoRecordset::SetParamValue  
+##  <a name="setparamvalue"></a>CDaoRecordset::SetParamValue  
  このメンバー関数を呼び出してレコード セットの実行時にパラメーターの値を設定します。  
   
 ```  
@@ -2106,7 +2187,7 @@ virtual void SetParamValue(
   
  として設定する値を指定して、`COleVariant`オブジェクトです。 目的の値と型の設定については、`COleVariant`オブジェクト、クラスを参照して[COleVariant](../../mfc/reference/colevariant-class.md)します。 UNICODE のレコード セットを作成していない場合、`COleVariant`オブジェクト必要が明示的に宣言する ANSI です。 使用してそのため、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`に設定`VT_BSTRT`(ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**と`vtSrc`に設定`VT_BSTRT`します。  
   
-##  <a name="a-namesetparamvaluenulla--cdaorecordsetsetparamvaluenull"></a><a name="setparamvaluenull"></a>CDaoRecordset::SetParamValueNull  
+##  <a name="setparamvaluenull"></a>CDaoRecordset::SetParamValueNull  
  このメンバー関数を呼び出して、パラメーターを Null 値に設定します。  
   
 ```  
@@ -2124,7 +2205,7 @@ void SetParamValueNull(LPCTSTR lpszName);
 ### <a name="remarks"></a>コメント  
  C++ **NULL** Null の場合、データベース用語では、これと同じではありません「値を持たない」。  
   
-##  <a name="a-namesetpercentpositiona--cdaorecordsetsetpercentposition"></a><a name="setpercentposition"></a>CDaoRecordset::SetPercentPosition  
+##  <a name="setpercentposition"></a>CDaoRecordset::SetPercentPosition  
  このメンバー関数を呼び出して、レコード セット内のレコードの割合に基づいているレコード セット オブジェクトの現在のレコードのおおよその位置を変更する値を設定します。  
   
 ```  
@@ -2145,7 +2226,7 @@ void SetPercentPosition(float fPosition);
   
  関連情報については、DAO ヘルプの「PercentPosition プロパティ」を参照してください。  
   
-##  <a name="a-nameupdatea--cdaorecordsetupdate"></a><a name="update"></a>CDaoRecordset::Update  
+##  <a name="update"></a>CDaoRecordset::Update  
  このメンバー関数を呼び出した後、`AddNew`または**編集**メンバー関数。  
   
 ```  

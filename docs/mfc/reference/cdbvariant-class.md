@@ -10,6 +10,21 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDBVariant
+- AFXDB/CDBVariant
+- AFXDB/CDBVariant::CDBVariant
+- AFXDB/CDBVariant::Clear
+- AFXDB/CDBVariant::m_dwType
+- AFXDB/CDBVariant::m_boolVal
+- AFXDB/CDBVariant::m_chVal
+- AFXDB/CDBVariant::m_dblVal
+- AFXDB/CDBVariant::m_fltVal
+- AFXDB/CDBVariant::m_iVal
+- AFXDB/CDBVariant::m_lVal
+- AFXDB/CDBVariant::m_pbinary
+- AFXDB/CDBVariant::m_pdate
+- AFXDB/CDBVariant::m_pstring
+- AFXDB/CDBVariant::m_pstringA
+- AFXDB/CDBVariant::m_pstringW
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -98,7 +113,7 @@ class CDBVariant
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-##  <a name="a-namecdbvarianta--cdbvariantcdbvariant"></a><a name="cdbvariant"></a>CDBVariant::CDBVariant  
+##  <a name="cdbvariant"></a>CDBVariant::CDBVariant  
  Null 値を作成`CDBVariant`オブジェクトです。  
   
 ```  
@@ -108,7 +123,7 @@ CDBVariant();
 ### <a name="remarks"></a>コメント  
  セット、 [m_dwType](#m_dwtype)データ メンバーを**DBVT_NULL**します。  
   
-##  <a name="a-namecleara--cdbvariantclear"></a><a name="clear"></a>CDBVariant::Clear  
+##  <a name="clear"></a>CDBVariant::Clear  
  オフにするには、このメンバー関数を呼び出す、`CDBVariant`オブジェクトです。  
   
 ```  
@@ -120,25 +135,25 @@ void Clear();
   
  `CDBVariant`デストラクター呼び出し**クリア**します。  
   
-##  <a name="a-namemboolvala--cdbvariantmboolval"></a><a name="m_boolval"></a>CDBVariant::m_boolVal  
+##  <a name="m_boolval"></a>CDBVariant::m_boolVal  
  型の値が格納**BOOL**します。  
   
 ### <a name="remarks"></a>コメント  
  **M_boolVal**共用体データ メンバーが所属します。 アクセスする前に**m_boolVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_BOOL**、し**m_boolVal**有効な値が含まれます。 それ以外の場合、にアクセスする**m_boolVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namemchvala--cdbvariantmchval"></a><a name="m_chval"></a>CDBVariant::m_chVal  
+##  <a name="m_chval"></a>CDBVariant::m_chVal  
  型の値が格納`unsigned char`します。  
   
 ### <a name="remarks"></a>コメント  
  **M_chVal**共用体データ メンバーが所属します。 アクセスする前に**m_chVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_UCHAR**、し**m_chVal**有効な値が含まれています。 それ以外の場合、にアクセスする**m_chVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namemdblvala--cdbvariantmdblval"></a><a name="m_dblval"></a>CDBVariant::m_dblVal  
+##  <a name="m_dblval"></a>CDBVariant::m_dblVal  
  型の値が格納**二重**します。  
   
 ### <a name="remarks"></a>コメント  
  **M_dblVal**共用体データ メンバーが所属します。 アクセスする前に**m_dblVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_DOUBLE**、し**m_dblVal**有効な値が含まれています。 それ以外の場合、にアクセスする**m_dblVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namemdwtypea--cdbvariantmdwtype"></a><a name="m_dwtype"></a>CDBVariant::m_dwType  
+##  <a name="m_dwtype"></a>CDBVariant::m_dwType  
  このデータ メンバーに現在格納されている値のデータ型を格納する、`CDBVariant`オブジェクトの共用体データ メンバーです。  
   
 ### <a name="remarks"></a>コメント  
@@ -159,31 +174,31 @@ void Clear();
 |**DBVT_ASTRING**|[m_pstringA](#m_pstringa)|  
 |**DBVT_WSTRING**|[m_pstringW](#m_pstringw)|  
   
-##  <a name="a-namemfltvala--cdbvariantmfltval"></a><a name="m_fltval"></a>CDBVariant::m_fltVal  
+##  <a name="m_fltval"></a>CDBVariant::m_fltVal  
  型の値が格納**float**します。  
   
 ### <a name="remarks"></a>コメント  
  **M_fltVal**共用体データ メンバーが所属します。 アクセスする前に**m_fltVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_SINGLE**、し**m_fltVal**有効な値が含まれています。 それ以外の場合、にアクセスする**m_fltVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namemivala--cdbvariantmival"></a><a name="m_ival"></a>CDBVariant::m_iVal  
+##  <a name="m_ival"></a>CDBVariant::m_iVal  
  型の値が格納**短い**します。  
   
 ### <a name="remarks"></a>コメント  
  **M_iVal**共用体データ メンバーが所属します。 アクセスする前に**m_iVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_SHORT**、し**m_iVal**有効な値が含まれています。 それ以外の場合、にアクセスする**m_iVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namemlvala--cdbvariantmlval"></a><a name="m_lval"></a>CDBVariant::m_lVal  
+##  <a name="m_lval"></a>CDBVariant::m_lVal  
  型の値が格納**長い**します。  
   
 ### <a name="remarks"></a>コメント  
  **M_lVal**共用体データ メンバーが所属します。 アクセスする前に**m_lVal**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_LONG**、し**m_lVal**有効な値が含まれています。 それ以外の場合、にアクセスする**m_lVal**信頼できない結果が生成されます。  
   
-##  <a name="a-namempbinarya--cdbvariantmpbinary"></a><a name="m_pbinary"></a>CDBVariant::m_pbinary  
+##  <a name="m_pbinary"></a>CDBVariant::m_pbinary  
  型のオブジェクトへのポインターを格納[CLongBinary](../../mfc/reference/clongbinary-class.md)します。  
   
 ### <a name="remarks"></a>コメント  
  **M_pbinary**共用体データ メンバーが所属します。 アクセスする前に**m_pbinary**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_BINARY**、し**m_pbinary**の有効なポインターが含まれています。 それ以外の場合、にアクセスする**m_pbinary**信頼できない結果が生成されます。  
   
-##  <a name="a-namempdatea--cdbvariantmpdate"></a><a name="m_pdate"></a>CDBVariant::m_pdate  
+##  <a name="m_pdate"></a>CDBVariant::m_pdate  
  型のオブジェクトへのポインターを格納**TIMESTAMP_STRUCT**します。  
   
 ### <a name="remarks"></a>コメント  
@@ -191,19 +206,19 @@ void Clear();
   
  詳細については、 **TIMESTAMP_STRUCT**トピックを参照してデータ型、 [C データ型](https://msdn.microsoft.com/library/ms714556.aspx)の付録 D に、 *ODBC プログラマ リファレンス*で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namempstringa--cdbvariantmpstring"></a><a name="m_pstring"></a>CDBVariant::m_pstring  
+##  <a name="m_pstring"></a>CDBVariant::m_pstring  
  型のオブジェクトへのポインターを格納[CString](../../atl-mfc-shared/reference/cstringt-class.md)します。  
   
 ### <a name="remarks"></a>コメント  
  **M_pstring**共用体データ メンバーが所属します。 アクセスする前に**m_pstring**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_STRING**、し**m_pstring**の有効なポインターが含まれています。 それ以外の場合、にアクセスする**m_pstring**信頼できない結果が生成されます。  
   
-##  <a name="a-namempstringaa--cdbvariantmpstringa"></a><a name="m_pstringa"></a>CDBVariant::m_pstringA  
+##  <a name="m_pstringa"></a>CDBVariant::m_pstringA  
  ASCII へのポインターを格納[CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
  **M_pstringA**共用体データ メンバーが所属します。 アクセスする前に**m_pstringA**、最初の値をチェック[CDBVariant::m_dwType](#m_dwtype)します。 場合`m_dwType`に設定されている**DBVT_ASTRING**、し**m_pstringA**の有効なポインターが含まれています。 それ以外の場合、にアクセスする**m_pstringA**信頼できない結果が生成されます。  
   
-##  <a name="a-namempstringwa--cdbvariantmpstringw"></a><a name="m_pstringw"></a>CDBVariant::m_pstringW  
+##  <a name="m_pstringw"></a>CDBVariant::m_pstringW  
  幅広いへのポインターを格納[CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  

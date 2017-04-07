@@ -9,7 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::reader_writer_lock
+- reader_writer_lock
+- CONCRT/concurrency::reader_writer_lock
+- CONCRT/concurrency::reader_writer_lock::scoped_lock
+- CONCRT/concurrency::reader_writer_lock::scoped_lock_read
+- CONCRT/concurrency::reader_writer_lock::reader_writer_lock
+- CONCRT/concurrency::reader_writer_lock::lock
+- CONCRT/concurrency::reader_writer_lock::lock_read
+- CONCRT/concurrency::reader_writer_lock::try_lock
+- CONCRT/concurrency::reader_writer_lock::try_lock_read
+- CONCRT/concurrency::reader_writer_lock::unlock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +43,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: d5d2fde890b0836621fcd1db5bb87b1933bb2a04
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: b5107923baa7d22e6a98c6617a22a883c4d84125
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="readerwriterlock-class"></a>reader_writer_lock クラス
@@ -61,18 +70,18 @@ class reader_writer_lock;
   
 |名前|説明|  
 |----------|-----------------|  
-|[reader_writer_lock コンス トラクター](#ctor)|新しい `reader_writer_lock` オブジェクトを構築します。|  
+|[reader_writer_lock](#ctor)|新しい `reader_writer_lock` オブジェクトを構築します。|  
 |[~ reader_writer_lock デストラクター](#dtor)|`reader_writer_lock` オブジェクトを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[lock メソッド](#lock)|ライターとしてのリーダー ライター ロックを取得します。|  
-|[lock_read メソッド](#lock_read)|閲覧者のリーダー ライター ロックを取得します。 ライターがある場合は、アクティブなリーダーは、終了するまで待機しなければいけなくします。 リーダーは単に、ロックに関心を登録し、ライターによって解放されるまで待機します。|  
-|[try_lock メソッド](#try_lock)|ブロックすることがなく、ライターとしてのリーダー ライター ロックを取得しようとしています。|  
-|[try_lock_read メソッド](#try_lock_read)|ブロックせずに閲覧者としてのリーダー ライター ロックを取得しようとします。|  
-|[unlock メソッド](#unlock)|リーダーまたはライターがロックされているユーザーに基づいてのリーダー ライター ロックを解除します。|  
+|[lock](#lock)|ライターとしてのリーダー ライター ロックを取得します。|  
+|[lock_read](#lock_read)|閲覧者のリーダー ライター ロックを取得します。 ライターがある場合は、アクティブなリーダーは、終了するまで待機しなければいけなくします。 リーダーは単に、ロックに関心を登録し、ライターによって解放されるまで待機します。|  
+|[try_lock](#try_lock)|ブロックすることがなく、ライターとしてのリーダー ライター ロックを取得しようとしています。|  
+|[try_lock_read](#try_lock_read)|ブロックせずに閲覧者としてのリーダー ライター ロックを取得しようとします。|  
+|[unlock](#unlock)|リーダーまたはライターがロックされているユーザーに基づいてのリーダー ライター ロックを解除します。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[同期データ構造](../../../parallel/concrt/synchronization-data-structures.md)します。  
@@ -85,7 +94,7 @@ class reader_writer_lock;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namelocka-lock"></a><a name="lock"></a>ロック 
+##  <a name="lock"></a>ロック 
 
  ライターとしてのリーダー ライター ロックを取得します。  
   
@@ -102,7 +111,7 @@ void lock();
   
  ロックが呼び出し元のコンテキストによって既に保持されている場合、 [improper_lock](improper-lock-class.md)例外がスローされます。  
   
-##  <a name="a-namelockreada-lockread"></a><a name="lock_read"></a>lock_read 
+##  <a name="lock_read"></a>lock_read 
 
  閲覧者のリーダー ライター ロックを取得します。 ライターがある場合は、アクティブなリーダーは、終了するまで待機しなければいけなくします。 リーダーは単に、ロックに関心を登録し、ライターによって解放されるまで待機します。  
   
@@ -115,7 +124,7 @@ void lock_read();
   
  ライター ロックを待機している場合は、リーダーはすべてのライターを取得およびロックを解放するまで待機します。 このロックはライターには偏りがあり、ライターの継続的な負荷の下での閲覧者が餓死することです。  
   
-##  <a name="a-namectora-readerwriterlock"></a><a name="ctor"></a>reader_writer_lock 
+##  <a name="ctor"></a>reader_writer_lock 
 
  新しい `reader_writer_lock` オブジェクトを構築します。  
   
@@ -123,7 +132,7 @@ void lock_read();
 reader_writer_lock();
 ```  
   
-##  <a name="a-namedtora-readerwriterlock"></a><a name="dtor"></a>~ reader_writer_lock 
+##  <a name="dtor"></a>~ reader_writer_lock 
 
  `reader_writer_lock` オブジェクトを破棄します。  
   
@@ -134,13 +143,13 @@ reader_writer_lock();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるときに、ロックが保持されなく必要です。 未定義の動作に結果を保持もロックを消滅させるためにリーダー ライター ロックを許可します。  
   
-##  <a name="a-namescopedlockclassa--readerwriterlockscopedlock-class"></a><a name="scoped_lock_class"></a>reader_writer_lock::scoped_lock クラス  
+##  <a name="scoped_lock_class"></a>reader_writer_lock::scoped_lock クラス  
  取得するために使用できる例外安全な RAII ラッパー`reader_writer_lock`ライターとしてオブジェクトをロックします。  
   
 ```
 class scoped_lock;
 ``` 
-## <a name="a-namescopedlockctora-scopedlockscopedlock"></a><a name="scoped_lock_ctor"></a>scoped_lock::scoped_lock 
+## <a name="scoped_lock_ctor"></a>scoped_lock::scoped_lock 
 
 構築、`scoped_lock`オブジェクトを取得し、`reader_writer_lock`で渡されるオブジェクト、`_Reader_writer_lock`ライターとしてパラメーター。 ロックが別のスレッドによって保持されている場合、この呼び出しはブロックされます。  
   
@@ -153,7 +162,7 @@ explicit _CRTIMP scoped_lock(reader_writer_lock& _Reader_writer_lock);
  `_Reader_writer_lock`  
  `reader_writer_lock`ライターとしてを取得するオブジェクト。  
   
-## <a name="a-namescopedlockdtora-scopedlockscopedlock"></a><a name="scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
+## <a name="scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
 
 破棄、`reader_writer_lock`オブジェクトし、そのコンス トラクターでロックを解放します。   
 
@@ -161,18 +170,18 @@ explicit _CRTIMP scoped_lock(reader_writer_lock& _Reader_writer_lock);
 ~scoped_lock();
 ```  
   
-##  <a name="a-namescopedlockreadclassa--readerwriterlockscopedlockread-class"></a><a name="scoped_lock_read_class"></a>reader_writer_lock::scoped_lock_read クラス  
+##  <a name="scoped_lock_read_class"></a>reader_writer_lock::scoped_lock_read クラス  
  取得するために使用できる例外安全な RAII ラッパー`reader_writer_lock`リーダーとしてオブジェクトをロックします。  
   
 ```
 class scoped_lock_read;
 ```  
   
-##  <a name="a-nametrylocka-trylock"></a><a name="try_lock"></a>try_lock 
+##  <a name="try_lock"></a>try_lock 
 
  ブロックすることがなく、ライターとしてのリーダー ライター ロックを取得しようとしています。  
 
-## <a name="a-namescopedlockreadctora-scopedlockreadscopedlockread"></a><a name="scoped_lock_read_ctor"></a>scoped_lock_read::scoped_lock_read 
+## <a name="scoped_lock_read_ctor"></a>scoped_lock_read::scoped_lock_read 
 
 構築、`scoped_lock_read`オブジェクトを取得し、`reader_writer_lock`で渡されるオブジェクト、`_Reader_writer_lock`に閲覧者としてのパラメーターです。 ライターとして別のスレッドによってロックが保持されているか、保留中のライターが、この呼び出しはブロックされます。  
   
@@ -191,7 +200,7 @@ explicit _CRTIMP scoped_lock_read(reader_writer_lock& _Reader_writer_lock);
 ~scoped_lock_read();
 ```  
   
-## <a name="a-nametrylocka-trylock"></a><a name="try_lock"></a>try_lock 
+## <a name="try_lock"></a>try_lock 
 
 ```
 bool try_lock();
@@ -200,7 +209,7 @@ bool try_lock();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`。 そうしないと、値`false`です。  
   
-##  <a name="a-nametrylockreada-trylockread"></a><a name="try_lock_read"></a>try_lock_read 
+##  <a name="try_lock_read"></a>try_lock_read 
 
  ブロックせずに閲覧者としてのリーダー ライター ロックを取得しようとします。  
   
@@ -211,7 +220,7 @@ bool try_lock_read();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`。 そうしないと、値`false`です。  
   
-##  <a name="a-nameunlocka-unlock"></a><a name="unlock"></a>ロックを解除します。 
+##  <a name="unlock"></a>ロックを解除します。 
 
  リーダーまたはライターがロックされているユーザーに基づいてのリーダー ライター ロックを解除します。  
   

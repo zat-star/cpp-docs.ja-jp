@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CRecordView
+- AFXDB/CRecordView
+- AFXDB/CRecordView::CRecordView
+- AFXDB/CRecordView::IsOnFirstRecord
+- AFXDB/CRecordView::IsOnLastRecord
+- AFXDB/CRecordView::OnGetRecordset
+- AFXDB/CRecordView::OnMove
+- AFXDB/CRecordView::OnMove
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -108,7 +115,7 @@ class AFX_NOVTABLE CRecordView : public CFormView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-##  <a name="a-namecrecordviewa--crecordviewcrecordview"></a><a name="crecordview"></a>よ  
+##  <a name="crecordview"></a>よ  
  派生した型のオブジェクトを作成する場合`CRecordView`、どちらの形式のビュー オブジェクトを初期化し、ビューの基になるダイアログ リソースの特定にコンス トラクターを呼び出します。  
   
 ```  
@@ -137,7 +144,7 @@ explicit CRecordView(UINT nIDTemplate);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDatabase&#32;](../../mfc/codesnippet/cpp/crecordview-class_1.cpp)]  
   
-##  <a name="a-nameisonfirstrecorda--crecordviewisonfirstrecord"></a><a name="isonfirstrecord"></a>CRecordView::IsOnFirstRecord  
+##  <a name="isonfirstrecord"></a>CRecordView::IsOnFirstRecord  
  このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクト内の最初のレコードであるかどうかを確認します。  
   
 ```  
@@ -152,7 +159,7 @@ BOOL IsOnFirstRecord();
   
  ユーザーは、最初のレコードに移動した場合、フレームワークには、最初のページと前のレコードに移動する必要があるすべてのユーザー インターフェイス オブジェクトが無効にします。  
   
-##  <a name="a-nameisonlastrecorda--crecordviewisonlastrecord"></a><a name="isonlastrecord"></a>CRecordView::IsOnLastRecord  
+##  <a name="isonlastrecord"></a>CRecordView::IsOnLastRecord  
  このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクトの最後のレコードであるかどうかを確認します。  
   
 ```  
@@ -168,7 +175,7 @@ BOOL IsOnLastRecord();
 > [!CAUTION]
 >  この関数の結果は信頼性がする点を除いて、貼り付け、既に移動されるまで、ビューは、レコード セットの末尾を検出できません。 レコード ビューは次または最後のレコードに移動するためのユーザー インターフェイス オブジェクトを無効にする必要があることを確認する前に最後のレコードを超えるユーザーを移動する必要があります。 最後のレコードの後ろに移動し、バックアップの最後に移動レコード (またはその前に)、レコード ビューは、レコード セット内のユーザーの位置を追跡し、ユーザー インターフェイス オブジェクトを正しく無効にできます。 `IsOnLastRecord`また信頼性の高い呼び出しの後は、関数**OnRecordLast**、処理する、`ID_RECORD_LAST`コマンド、または`CRecordset::MoveLast`です。  
   
-##  <a name="a-nameongetrecordseta--crecordviewongetrecordset"></a><a name="ongetrecordset"></a>CRecordView::OnGetRecordset  
+##  <a name="ongetrecordset"></a>CRecordView::OnGetRecordset  
  ポインターを返す、 `CRecordset`-レコード ビューに関連付けられているオブジェクトを派生します。  
   
 ```  
@@ -183,7 +190,7 @@ virtual CRecordset* OnGetRecordset() = 0;
   
  詳細と例については、記事を参照して[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。  
   
-##  <a name="a-nameonmovea--crecordviewonmove"></a><a name="onmove"></a>CRecordView::OnMove  
+##  <a name="onmove"></a>CRecordView::OnMove  
  このメンバー関数を呼び出して、レコード セット内の別のレコードに移動し、レコード ビューのコントロールにそのフィールドを表示します。  
   
 ```  

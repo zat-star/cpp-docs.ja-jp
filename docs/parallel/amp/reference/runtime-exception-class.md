@@ -9,7 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp/Concurrency::direct3d_abort
+- runtime_exception
+- AMPRT/runtime_exception
+- AMPRT/Concurrency::runtime_exception
+- AMPRT/Concurrency::runtime_exception::get_error_code
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,9 +38,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 1a2655ed4c8783dd5f7a3b8af2a7d6a9db88f43e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 399d2531c06285012df12d703b4cda6e18469c38
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="runtimeexception-class"></a>runtime_exception クラス
@@ -62,14 +65,14 @@ class runtime_exception : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[get_error_code メソッド](#runtime_exception__get_error_code)|例外が発生したエラー コードを返します。|  
+|[get_error_code](#runtime_exception__get_error_code)|例外が発生したエラー コードを返します。|  
 
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|指定された `runtime_exception` オブジェクトの内容をこのオブジェクトにコピーします。|  
+|[operator=](#operator_eq)|指定された `runtime_exception` オブジェクトの内容をこのオブジェクトにコピーします。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
@@ -81,7 +84,7 @@ class runtime_exception : public std::exception;
   
  **名前空間:** Concurrency  
 
-## <a name="a-nameruntimeexceptionctora--runtimeexception-constructor"></a><a name="runtime_exception__ctor"></a>runtime_exception コンス トラクター  
+## <a name="runtime_exception__ctor"></a>runtime_exception コンス トラクター  
 クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -111,7 +114,7 @@ runtime_exception(
 ### <a name="return-value"></a>戻り値  
  `runtime_exception` オブジェクト。  
 
-## <a name="a-namedtora--runtimeexception-destructor"></a><a name="dtor"></a>~ runtime_exception デストラクター  
+## <a name="dtor"></a>~ runtime_exception デストラクター  
 オブジェクトを破棄します。  
   
 ### <a name="syntax"></a>構文  
@@ -120,7 +123,7 @@ runtime_exception(
 virtual ~runtime_exception() throw();  
 ```  
   
-## <a name="a-nameruntimeexceptiongeterrorcodea--geterrorcode"></a><a name="runtime_exception__get_error_code"></a>get_error_code   
+## <a name="runtime_exception__get_error_code"></a>get_error_code   
 例外が発生したエラー コードを返します。  
   
 ### <a name="syntax"></a>構文  
@@ -132,7 +135,7 @@ HRESULT get_error_code() const throw();
 ### <a name="return-value"></a>戻り値  
  この例外の原因になったエラーの HRESULT。  
   
-## <a name="a-nameruntimeexceptionoperatoreqa--operator"></a><a name="runtime_exception__operator_eq"></a>  operator=   
+## <a name="runtime_exception__operator_eq"></a>  operator=   
   指定された `runtime_exception` オブジェクトの内容をこのオブジェクトにコピーします。  
   
 ### <a name="syntax"></a>構文  
@@ -151,5 +154,5 @@ runtime_exception & operator= (    const runtime_exception & _Other ) throw();
 
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
 

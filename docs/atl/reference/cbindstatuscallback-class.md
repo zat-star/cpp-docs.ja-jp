@@ -10,6 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CBindStatusCallback
+- ATLCTL/ATL::CBindStatusCallback
+- ATLCTL/ATL::CBindStatusCallback::CBindStatusCallback
+- ATLCTL/ATL::CBindStatusCallback::Download
+- ATLCTL/ATL::CBindStatusCallback::GetBindInfo
+- ATLCTL/ATL::CBindStatusCallback::GetPriority
+- ATLCTL/ATL::CBindStatusCallback::OnDataAvailable
+- ATLCTL/ATL::CBindStatusCallback::OnLowResource
+- ATLCTL/ATL::CBindStatusCallback::OnObjectAvailable
+- ATLCTL/ATL::CBindStatusCallback::OnProgress
+- ATLCTL/ATL::CBindStatusCallback::OnStartBinding
+- ATLCTL/ATL::CBindStatusCallback::OnStopBinding
+- ATLCTL/ATL::CBindStatusCallback::StartAsyncDownload
+- ATLCTL/ATL::CBindStatusCallback::m_dwAvailableToRead
+- ATLCTL/ATL::CBindStatusCallback::m_dwTotalRead
+- ATLCTL/ATL::CBindStatusCallback::m_pFunc
+- ATLCTL/ATL::CBindStatusCallback::m_pT
+- ATLCTL/ATL::CBindStatusCallback::m_spBindCtx
+- ATLCTL/ATL::CBindStatusCallback::m_spBinding
+- ATLCTL/ATL::CBindStatusCallback::m_spMoniker
+- ATLCTL/ATL::CBindStatusCallback::m_spStream
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -123,7 +143,7 @@ class ATL_NO_VTABLE CBindStatusCallback : public CComObjectRootEx
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namecbindstatuscallbacka--cbindstatuscallbackcbindstatuscallback"></a><a name="cbindstatuscallback"></a>CBindStatusCallback::CBindStatusCallback  
+##  <a name="cbindstatuscallback"></a>CBindStatusCallback::CBindStatusCallback  
  コンストラクターです。  
   
 ```
@@ -135,7 +155,7 @@ CBindStatusCallback();
   
  また、コンス トラクターを初期化[この](#m_pt)と[m_pFunc](#m_pfunc)に**NULL**します。  
   
-##  <a name="a-namedtora--cbindstatuscallbackcbindstatuscallback"></a><a name="dtor"></a>次:: ~ 次  
+##  <a name="dtor"></a>次:: ~ 次  
  デストラクターです。  
   
 ```
@@ -145,7 +165,7 @@ CBindStatusCallback();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namedownloada--cbindstatuscallbackdownload"></a><a name="download"></a>CBindStatusCallback::Download  
+##  <a name="download"></a>CBindStatusCallback::Download  
  作成、`CBindStatusCallback`オブジェクトと呼び出し`StartAsyncDownload`指定された URL からデータを非同期的にダウンロードを開始します。  
   
 ```
@@ -181,7 +201,7 @@ static HRESULT Download(
 ### <a name="remarks"></a>コメント  
  によってオブジェクトに送信されるデータがあるたびに`OnDataAvailable`します。 `OnDataAvailable`データを読み取り、指す関数を呼び出す*pFunc* (たとえば、データを保管するため、画面に出力する場合)。  
   
-##  <a name="a-namegetbindinfoa--cbindstatuscallbackgetbindinfo"></a><a name="getbindinfo"></a>CBindStatusCallback::GetBindInfo  
+##  <a name="getbindinfo"></a>CBindStatusCallback::GetBindInfo  
  モニカー バインドする方法を指示するには、呼び出されます。  
   
 ```
@@ -211,7 +231,7 @@ STDMETHOD(GetBindInfo)(
 ### <a name="remarks"></a>コメント  
  既定の実装では、非同期にして、データ プッシュ モデルを使用するバインディングを設定します。 データ プッシュ モデルでは、モニカーは、バインドの非同期操作し、新しいデータがあるたびに継続的にクライアントに通知します。  
   
-##  <a name="a-namegetprioritya--cbindstatuscallbackgetpriority"></a><a name="getpriority"></a>CBindStatusCallback::GetPriority  
+##  <a name="getpriority"></a>CBindStatusCallback::GetPriority  
  バインド操作の優先度を取得する非同期モニカーによって呼び出されます。  
   
 ```
@@ -225,7 +245,7 @@ STDMETHOD(GetPriority)(LONG* pnPriority);
 ### <a name="return-value"></a>戻り値  
  返します。 **E_NOTIMPL**します。  
   
-##  <a name="a-namemdwavailabletoreada--cbindstatuscallbackmdwavailabletoread"></a><a name="m_dwavailabletoread"></a>CBindStatusCallback::m_dwAvailableToRead  
+##  <a name="m_dwavailabletoread"></a>CBindStatusCallback::m_dwAvailableToRead  
  読み取り可能なバイト数を格納するために使用します。  
   
 ```
@@ -235,7 +255,7 @@ DWORD m_dwAvailableToRead;
 ### <a name="remarks"></a>コメント  
  0 に初期化された`StartAsyncDownload`します。  
   
-##  <a name="a-namemdwtotalreada--cbindstatuscallbackmdwtotalread"></a><a name="m_dwtotalread"></a>CBindStatusCallback::m_dwTotalRead  
+##  <a name="m_dwtotalread"></a>CBindStatusCallback::m_dwTotalRead  
  非同期データ転送で総バイト数を読み取る。  
   
 ```
@@ -245,7 +265,7 @@ DWORD m_dwTotalRead;
 ### <a name="remarks"></a>コメント  
  毎回増加`OnDataAvailable`は実際に読み取るバイト数によって呼び出されます。 0 に初期化された`StartAsyncDownload`します。  
   
-##  <a name="a-namempfunca--cbindstatuscallbackmpfunc"></a><a name="m_pfunc"></a>CBindStatusCallback::m_pFunc  
+##  <a name="m_pfunc"></a>CBindStatusCallback::m_pFunc  
  関数が指す`m_pFunc`によって呼び出される`OnDataAvailable`(たとえば、データを保管するため、画面に出力する場合など) の使用可能なデータの読み取り後です。  
   
 ```
@@ -255,17 +275,15 @@ ATL_PDATAAVAILABLE m_pFunc;
 ### <a name="remarks"></a>コメント  
  関数が指す`m_pFunc`オブジェクトのクラスのメンバーであるし、は、次の構文。  
   
- `void Function_Name(`  
+```  
+void Function_Name(  
+   CBindStatusCallback<T>* pbsc,  
+   BYTE* pBytes,  
+   DWORD dwSize  
+   );  
+```  
   
- `CBindStatusCallback<T>* pbsc,`  
-  
- `BYTE* pBytes,`  
-  
- `DWORD dwSize`  
-  
- `);`  
-  
-##  <a name="a-namempta--cbindstatuscallbackmpt"></a><a name="m_pt"></a>CBindStatusCallback::m_pT  
+##  <a name="m_pt"></a>CBindStatusCallback::m_pT  
  非同期データ転送を要求しているオブジェクトへのポインター。  
   
 ```
@@ -275,7 +293,7 @@ T* m_pT;
 ### <a name="remarks"></a>コメント  
  `CBindStatusCallback`オブジェクトがこのオブジェクトのクラスでテンプレート化されます。  
   
-##  <a name="a-namemspbindctxa--cbindstatuscallbackmspbindctx"></a><a name="m_spbindctx"></a>CBindStatusCallback::m_spBindCtx  
+##  <a name="m_spbindctx"></a>CBindStatusCallback::m_spBindCtx  
  ポインター、 [IBindCtx](http://msdn.microsoft.com/library/windows/desktop/ms693755)バインド コンテキスト (特定のモニカー バインド操作に関する情報を格納するオブジェクト) へのアクセスを提供するインターフェイスです。  
   
 ```
@@ -285,7 +303,7 @@ CComPtr<IBindCtx> m_spBindCtx;
 ### <a name="remarks"></a>コメント  
  初期化された`StartAsyncDownload`します。  
   
-##  <a name="a-namemspbindinga--cbindstatuscallbackmspbinding"></a><a name="m_spbinding"></a>CBindStatusCallback::m_spBinding  
+##  <a name="m_spbinding"></a>CBindStatusCallback::m_spBinding  
  ポインター、`IBinding`現在のバインド操作のインターフェイスです。  
   
 ```
@@ -295,7 +313,7 @@ CComPtr<IBinding> m_spBinding;
 ### <a name="remarks"></a>コメント  
  初期化された`OnStartBinding`で公開される`OnStopBinding`します。  
   
-##  <a name="a-namemspmonikera--cbindstatuscallbackmspmoniker"></a><a name="m_spmoniker"></a>CBindStatusCallback::m_spMoniker  
+##  <a name="m_spmoniker"></a>CBindStatusCallback::m_spMoniker  
  ポインター、 [IMoniker](http://msdn.microsoft.com/library/windows/desktop/ms679705)インターフェイスを使用する URL。  
   
 ```
@@ -305,7 +323,7 @@ CComPtr<IMoniker> m_spMoniker;
 ### <a name="remarks"></a>コメント  
  初期化された`StartAsyncDownload`します。  
   
-##  <a name="a-namemspstreama--cbindstatuscallbackmspstream"></a><a name="m_spstream"></a>CBindStatusCallback::m_spStream  
+##  <a name="m_spstream"></a>CBindStatusCallback::m_spStream  
  ポインター、 [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)現在のバインド操作のインターフェイスです。  
   
 ```
@@ -315,7 +333,7 @@ CComPtr<IStream> m_spStream;
 ### <a name="remarks"></a>コメント  
  初期化された`OnDataAvailable`から、 **STGMEDIUM**ときに構造体、 **BCSF**フラグは**BCSF_FIRSTDATANOTIFICATION**と解放、 **BCSF**フラグは**BCSF_LASTDATANOTIFICATION**します。  
   
-##  <a name="a-nameondataavailablea--cbindstatuscallbackondataavailable"></a><a name="ondataavailable"></a>CBindStatusCallback::OnDataAvailable  
+##  <a name="ondataavailable"></a>CBindStatusCallback::OnDataAvailable  
  システム提供の非同期モニカー呼び出し`OnDataAvailable`使用可能になったら、オブジェクトにデータを提供します。  
   
 ```
@@ -345,7 +363,7 @@ STDMETHOD(
 ### <a name="remarks"></a>コメント  
  `OnDataAvailable`データを読み取り、(たとえば、データを保管するため、画面に出力する場合)、オブジェクトのクラスのメソッドを呼び出します。 参照してください[CBindStatusCallback::StartAsyncDownload](#startasyncdownload)詳細です。  
   
-##  <a name="a-nameonlowresourcea--cbindstatuscallbackonlowresource"></a><a name="onlowresource"></a>CBindStatusCallback::OnLowResource  
+##  <a name="onlowresource"></a>CBindStatusCallback::OnLowResource  
  リソースが少ないときに呼び出されます。  
   
 ```
@@ -359,7 +377,7 @@ STDMETHOD(OnLowResource)(DWORD /* dwReserved */);
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="a-nameonobjectavailablea--cbindstatuscallbackonobjectavailable"></a><a name="onobjectavailable"></a>CBindStatusCallback::OnObjectAvailable  
+##  <a name="onobjectavailable"></a>CBindStatusCallback::OnObjectAvailable  
  オブジェクトのインターフェイス ポインターをアプリケーションに渡すための非同期モニカーによって呼び出されます。  
   
 ```
@@ -376,7 +394,7 @@ STDMETHOD(OnObjectAvailable)(REFID /* riid */, IUnknown* /* punk */);
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="a-nameonprogressa--cbindstatuscallbackonprogress"></a><a name="onprogress"></a>CBindStatusCallback::OnProgress  
+##  <a name="onprogress"></a>CBindStatusCallback::OnProgress  
  データのダウンロード処理の進行状況を示すために呼び出されます。  
   
 ```
@@ -403,7 +421,7 @@ STDMETHOD(OnProgress)(
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="a-nameonstartbindinga--cbindstatuscallbackonstartbinding"></a><a name="onstartbinding"></a>CBindStatusCallback::OnStartBinding  
+##  <a name="onstartbinding"></a>CBindStatusCallback::OnStartBinding  
  データ メンバーを設定[m_spBinding](#m_spbinding)に、`IBinding`でポインター`pBinding`します。  
   
 ```
@@ -417,7 +435,7 @@ STDMETHOD(OnStartBinding)(DWORD /* dwReserved */, IBinding* pBinding);
  `pBinding`  
  [in]現在のアドレスは、操作をバインドします。 NULL は指定できません。 クライアントは、バインド オブジェクトへの参照を保持するには、このポインターの AddRef を呼び出す必要があります。  
   
-##  <a name="a-nameonstopbindinga--cbindstatuscallbackonstopbinding"></a><a name="onstopbinding"></a>CBindStatusCallback::OnStopBinding  
+##  <a name="onstopbinding"></a>CBindStatusCallback::OnStopBinding  
  リリース、`IBinding`データ メンバー内のポインター [m_spBinding](#m_spbinding)します。  
   
 ```
@@ -434,7 +452,7 @@ STDMETHOD(OnStopBinding)(HRESULT hresult, LPCWSTR /* szError */);
 ### <a name="remarks"></a>コメント  
  システム提供の非同期モニカー バインド操作の終了を示すによって呼び出されます。  
   
-##  <a name="a-namestartasyncdownloada--cbindstatuscallbackstartasyncdownload"></a><a name="startasyncdownload"></a>CBindStatusCallback::StartAsyncDownload  
+##  <a name="startasyncdownload"></a>CBindStatusCallback::StartAsyncDownload  
  指定された URL からデータを非同期的にダウンロードを開始します。  
   
 ```

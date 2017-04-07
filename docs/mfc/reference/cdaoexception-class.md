@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDaoException
+- AFXDAO/CDaoException
+- AFXDAO/CDaoException::CDaoException
+- AFXDAO/CDaoException::GetErrorCount
+- AFXDAO/CDaoException::GetErrorInfo
+- AFXDAO/CDaoException::m_nAfxDaoError
+- AFXDAO/CDaoException::m_pErrorInfo
+- AFXDAO/CDaoException::m_scode
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +107,7 @@ class CDaoException : public CException
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
   
-##  <a name="a-namecdaoexceptiona--cdaoexceptioncdaoexception"></a><a name="cdaoexception"></a>CDaoException::CDaoException  
+##  <a name="cdaoexception"></a>CDaoException::CDaoException  
  `CDaoException` オブジェクトを構築します。  
   
 ```  
@@ -128,7 +135,7 @@ CDaoException();
   
  MFC DAO クラスでのエラー処理の詳細については、記事を参照してください。[例外: データベースの例外](../../mfc/exceptions-database-exceptions.md)します。  
   
-##  <a name="a-namegeterrorcounta--cdaoexceptiongeterrorcount"></a><a name="geterrorcount"></a>あります。  
+##  <a name="geterrorcount"></a>あります。  
  DAO データベース エンジンのエラーのコレクションのオブジェクトのエラーの数を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -144,7 +151,7 @@ short GetErrorCount();
 > [!NOTE]
 >  通常のエラー コレクションには&1; つのエラー オブジェクトが存在します。 ODBC データ ソースで作業している場合、考えられます&1; つ以上。  
   
-##  <a name="a-namegeterrorinfoa--cdaoexceptiongeterrorinfo"></a><a name="geterrorinfo"></a>CDaoException::GetErrorInfo  
+##  <a name="geterrorinfo"></a>CDaoException::GetErrorInfo  
  エラーのコレクション内には、特定のエラー オブジェクトに関するエラー情報を返します。  
   
 ```  
@@ -172,7 +179,7 @@ void GetErrorInfo(int nIndex);
   
  DAO 例外とコード例については、記事を参照してください。[例外: データベースの例外](../../mfc/exceptions-database-exceptions.md)します。  
   
-##  <a name="a-namemnafxdaoerrora--cdaoexceptionmnafxdaoerror"></a><a name="m_nafxdaoerror"></a>CDaoException::m_nAfxDaoError  
+##  <a name="m_nafxdaoerror"></a>CDaoException::m_nAfxDaoError  
  MFC 拡張エラー コードが含まれています。  
   
 ### <a name="remarks"></a>コメント  
@@ -188,7 +195,7 @@ void GetErrorInfo(int nIndex);
   
 - **AFX_DAO_ERROR_OBJECT_NOT_OPEN**クエリ定義または開いている状態ではない、テーブル定義オブジェクトに基づくレコード セットを開こうとしました。  
   
-##  <a name="a-namemperrorinfoa--cdaoexceptionmperrorinfo"></a><a name="m_perrorinfo"></a>CDaoException::m_pErrorInfo  
+##  <a name="m_perrorinfo"></a>CDaoException::m_pErrorInfo  
  ポインターを含む、`CDaoErrorInfo`前回を呼び出すことによって取得した DAO エラーのオブジェクトに関する情報を提供する構造体[GetErrorInfo](#geterrorinfo)します。  
   
 ### <a name="remarks"></a>コメント  
@@ -204,7 +211,7 @@ void GetErrorInfo(int nIndex);
   
  詳細に含まれる情報については、`CDaoErrorInfo`オブジェクトを参照してください、 [CDaoErrorInfo](../../mfc/reference/cdaoerrorinfo-structure.md)構造体。  
   
-##  <a name="a-namemscodea--cdaoexceptionmscode"></a><a name="m_scode"></a>CDaoException::m_scode  
+##  <a name="m_scode"></a>CDaoException::m_scode  
  型の値を含む`SCODE`エラーを説明します。  
   
 ### <a name="remarks"></a>コメント  

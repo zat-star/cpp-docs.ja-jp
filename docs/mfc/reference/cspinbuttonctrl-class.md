@@ -10,6 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl::CSpinButtonCtrl
+- AFXCMN/CSpinButtonCtrl::Create
+- AFXCMN/CSpinButtonCtrl::CreateEx
+- AFXCMN/CSpinButtonCtrl::GetAccel
+- AFXCMN/CSpinButtonCtrl::GetBase
+- AFXCMN/CSpinButtonCtrl::GetBuddy
+- AFXCMN/CSpinButtonCtrl::GetPos
+- AFXCMN/CSpinButtonCtrl::GetRange
+- AFXCMN/CSpinButtonCtrl::SetAccel
+- AFXCMN/CSpinButtonCtrl::SetBase
+- AFXCMN/CSpinButtonCtrl::SetBuddy
+- AFXCMN/CSpinButtonCtrl::SetPos
+- AFXCMN/CSpinButtonCtrl::SetRange
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -38,9 +52,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 486a0842ed04f0e760bbb332986a97a35ce9851f
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
+ms.openlocfilehash: 4cb2a10982ce42f94925b18f1b20ef72f3c3f83a
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="cspinbuttonctrl-class"></a>CSpinButtonCtrl クラス
@@ -64,31 +78,31 @@ class CSpinButtonCtrl : public CWnd
   
 |名前|説明|  
 |----------|-----------------|  
-|[CSpinButtonCtrl::Create](#create)|スピン ボタン コントロールを作成し、それをアタッチ、`CSpinButtonCtrl`オブジェクトです。|  
-|[CSpinButtonCtrl::CreateEx](#createex)|指定した Windows 拡張スタイルを使用してスピン ボタン コントロールを作成し、それにアタッチ、`CSpinButtonCtrl`オブジェクトです。|  
-|[CSpinButtonCtrl::GetAccel](#getaccel)|スピン ボタン コントロールのアクセラレーション情報を取得します。|  
+|[CSpinButtonCtrl::Create](#create)|スピン ボタン コントロールを作成し、それにアタッチ、`CSpinButtonCtrl`オブジェクト。|  
+|[CSpinButtonCtrl::CreateEx](#createex)|指定された Windows 拡張スタイルでスピン ボタン コントロールを作成しにアタッチ、`CSpinButtonCtrl`オブジェクト。|  
+|[CSpinButtonCtrl::GetAccel](#getaccel)|スピン ボタン コントロールのアクセラレータの情報を取得します。|  
 |[CSpinButtonCtrl::GetBase](#getbase)|スピン ボタン コントロールの現在の基数を取得します。|  
-|[CSpinButtonCtrl::GetBuddy](#getbuddy)|現在の関連ウィンドウへのポインターを取得します。|  
-|[CSpinButtonCtrl::GetPos](#getpos)|スピン ボタン コントロールの現在位置を取得します。|  
+|[CSpinButtonCtrl::GetBuddy](#getbuddy)|現在の連動ウィンドウへのポインターを取得します。|  
+|[CSpinButtonCtrl::GetPos](#getpos)|スピン ボタン コントロールの現在の位置を取得します。|  
 |[CSpinButtonCtrl::GetRange](#getrange)|スピン ボタン コントロールの上限と下限制限 (範囲) を取得します。|  
-|[CSpinButtonCtrl::SetAccel](#setaccel)|スピン ボタン コントロール用のアクセラレータを設定します。|  
+|[CSpinButtonCtrl::SetAccel](#setaccel)|スピン ボタン コントロールのアクセラレータを設定します。|  
 |[CSpinButtonCtrl::SetBase](#setbase)|スピン ボタン コントロールの基本クラスを設定します。|  
-|[CSpinButtonCtrl::SetBuddy](#setbuddy)|スピン ボタン コントロールを関連ウィンドウを設定します。|  
+|[CSpinButtonCtrl::SetBuddy](#setbuddy)|スピン ボタン コントロールの連動ウィンドウを設定します。|  
 |[CSpinButtonCtrl::SetPos](#setpos)|コントロールの現在の位置を設定します。|  
 |[上限値と下限](#setrange)|スピン ボタン コントロールの上限と下限制限 (範囲) を設定します。|  
   
 ## <a name="remarks"></a>コメント  
- 「スピン ボタン コントロール」(アップダウン コントロールとも呼ばれます) は、スクロール位置または横にあるコントロールに表示される番号などの値を増減するにはユーザーがクリックされる下矢印ボタンのペアです。 スピン ボタン コントロールに関連付けられている値には、現在の位置が呼び出されます。 スピン ボタン コントロールが「関連ウィンドウ」と呼ばれる、横にあるコントロールで使用されるほとんどの場合  
+ 「スピン ボタン コントロール」(アップダウン コントロールとも呼ばれます) は、ユーザーがスクロール位置または横にあるコントロールに表示される番号など、値を増減するクリックしてできる矢印ボタンのペアです。 スピン ボタン コントロールに関連付けられている値には、現在の位置が呼び出されます。 スピン ボタン コントロールは、「buddy ウィンドウ」と呼ばれる、横にあるコントロールでよく使用されます。  
   
- このコントロール (つまり、`CSpinButtonCtrl`クラス) は以降、Windows 95/98 および Windows NT version 3.51 で実行するプログラムにのみ使用できます。  
+ このコントロール (したがって、`CSpinButtonCtrl`クラス) は、Windows 95/98 および Windows NT 3.51 の下で実行されているプログラムにのみ使用可能な以降。  
   
- スピン ボタン コントロールとその関連ウィンドウは、ユーザーに、多くの場合、1 つのコントロールのようになります。 あるスピン ボタン コントロールを自動的に配置自体の関連ウィンドウの横にあること、および自動的に設定関連ウィンドウのキャプションを現在の位置を指定できます。 エディット コントロールにスピン ボタン コントロールを使用するには、ユーザーに数値の入力を要求します。  
+ スピン ボタン コントロールとその関連ウィンドウは、ユーザーに、多くの場合、1 つのコントロールのようになります。 スピン ボタン コントロールを自動的に配置自体の連動ウィンドウの横にあると、現在の位置を関連ウィンドウのキャプションは自動的に設定するを指定することができます。 エディット コントロールでスピン ボタン コントロールを使用すると、数値入力するプロンプトが表示されます。  
   
- に向かって、最大文字数は現在の位置を移動上矢印をクリックし、最小値には、現在の位置を移動下向きの矢印をクリックします。 既定では、最小値は 100 と最大値は 0 です。 最小値の設定は最大値 (たとえば、ときに、既定の設定が使用されます) を設定し、上向きの矢印がクリックするといつでも位置の値と下向きの矢印をクリックすると増大にします。  
+ 最大に向かって現在の位置を移動上矢印をクリックし、最小に向かって現在の位置を移動、下矢印をクリックします。 既定では、最小値は 100 と最大値は 0 です。 最小値の設定が (たとえば、ときに、既定の設定が使用されます) を設定し、上向きの矢印増減をクリックすると最大値より大きい場合は位置の値と下向きの矢印をクリックすると増大にします。  
   
- 関連ウィンドウを持たないスピン ボタン コントロールは、簡略化されたスクロール バーの一種として機能します。 たとえば、タブ コントロールには、スピン ボタン コントロールを追加のタブをスクロールして表示するユーザーを有効にすることもありますが表示されます。  
+ 関連ウィンドウなしのスピン ボタン コントロールは、簡略化されたスクロール バーの一種として機能します。 たとえば、タブ コントロールでは、スピン ボタン コントロールを追加のタブをスクロールして表示するユーザーを有効にする場合がありますが表示されます。  
   
- 使用する方法について`CSpinButtonCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CSpinButtonCtrl](../../mfc/using-cspinbuttonctrl.md)します。  
+ 使用する方法について`CSpinButtonCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CSpinButtonCtrl](../../mfc/using-cspinbuttonctrl.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -102,8 +116,8 @@ class CSpinButtonCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecreatea--cspinbuttonctrlcreate"></a><a name="create"></a>CSpinButtonCtrl::Create  
- スピン ボタン コントロールを作成し、それをアタッチ、`CSpinButtonCtrl`オブジェクト.  
+##  <a name="create"></a>CSpinButtonCtrl::Create  
+ スピン ボタン コントロールを作成し、それにアタッチ、`CSpinButtonCtrl`オブジェクト.  
   
 ```  
 virtual BOOL Create(
@@ -115,13 +129,13 @@ virtual BOOL Create(
   
 ### <a name="parameters"></a>パラメーター  
  `dwStyle`  
- スピン ボタン コントロールのスタイルを指定します。 スピン ボタン コントロールのスタイルの任意の組み合わせをコントロールに適用されます。 これらのスタイルは「[アップ ダウン コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb759885)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ スピン ボタン コントロールのスタイルを指定します。 スピン ボタン コントロールのスタイルの任意の組み合わせをコントロールに適用されます。 これらのスタイルは「[アップダウン コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb759885)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  `rect`  
  スピン ボタン コントロールのサイズと位置を指定します。 いずれかになります、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体  
   
  `pParentWnd`  
- スピン ボタン コントロールの親ウィンドウを通常へのポインター、`CDialog`です。 ことはできません**NULL です。**  
+ スピン ボタン コントロールの親ウィンドウを通常へのポインター、`CDialog`です。 なければなりません**NULL です。**  
   
  `nID`  
  スピン ボタン コントロールの ID を指定します  
@@ -130,12 +144,12 @@ virtual BOOL Create(
  初期化が成功した場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 構築する、`CSpinButtonCtrl`まずオブジェクトの&2; つの手順で、コンス トラクターを呼び出して、呼び出す**作成**、スピン ボタン コントロールを作成およびそれにアタッチする、`CSpinButtonCtrl`オブジェクトです。  
+ 構築する、`CSpinButtonCtrl`まずオブジェクトの 2 つの手順で、コンス トラクターを呼び出しておよびを呼び出す**作成**、スピン ボタン コントロールを作成しにアタッチする、`CSpinButtonCtrl`オブジェクト。  
   
- 拡張ウィンドウ スタイルを使用して、スピン ボタン コントロールを作成するには、呼び出す[CSpinButtonCtrl::CreateEx](#createex)の代わりに**作成**します。  
+ 拡張ウィンドウ スタイルを使用して、スピン ボタン コントロールを作成するには、呼び出す[CSpinButtonCtrl::CreateEx](#createex)の代わりに**作成**です。  
   
-##  <a name="a-namecreateexa--cspinbuttonctrlcreateex"></a><a name="createex"></a>CSpinButtonCtrl::CreateEx  
- コントロール (子ウィンドウ) を作成し、関連付けます、`CSpinButtonCtrl`オブジェクトです。  
+##  <a name="createex"></a>CSpinButtonCtrl::CreateEx  
+ コントロール (子ウィンドウ) を作成しに関連付けます、`CSpinButtonCtrl`オブジェクト。  
   
 ```  
 virtual BOOL CreateEx(
@@ -148,35 +162,35 @@ virtual BOOL CreateEx(
   
 ### <a name="parameters"></a>パラメーター  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  `dwStyle`  
- スピン ボタン コントロールのスタイルを指定します。 スピン ボタン コントロールのスタイルの任意の組み合わせをコントロールに適用されます。 これらのスタイルは「[アップ ダウン コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb759885)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ スピン ボタン コントロールのスタイルを指定します。 スピン ボタン コントロールのスタイルの任意の組み合わせをコントロールに適用されます。 これらのスタイルは「[アップダウン コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb759885)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体のサイズとのクライアント座標で、作成するウィンドウの位置を表す`pParentWnd`します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)のクライアント座標で、作成するウィンドウの位置とサイズを記述する構造体`pParentWnd`です。  
   
  `pParentWnd`  
- コントロールの親ウィンドウへのポインター。  
+ コントロールの親であるウィンドウへのポインター。  
   
  `nID`  
- コントロールの子ウィンドウの id。  
+ コントロールの子ウィンドウ ID  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
+ 使用して`CreateEx`の代わりに[作成](#create)Windows 拡張スタイル「はじめに」で指定された Windows の拡張スタイルを適用する**ws_ex**です。  
   
-##  <a name="a-namecspinbuttonctrla--cspinbuttonctrlcspinbuttonctrl"></a><a name="cspinbuttonctrl"></a>CSpinButtonCtrl::CSpinButtonCtrl  
+##  <a name="cspinbuttonctrl"></a>CSpinButtonCtrl::CSpinButtonCtrl  
  `CSpinButtonCtrl` オブジェクトを構築します。  
   
 ```  
 CSpinButtonCtrl();
 ```  
   
-##  <a name="a-namegetaccela--cspinbuttonctrlgetaccel"></a><a name="getaccel"></a>CSpinButtonCtrl::GetAccel  
- スピン ボタン コントロールのアクセラレーション情報を取得します。  
+##  <a name="getaccel"></a>CSpinButtonCtrl::GetAccel  
+ スピン ボタン コントロールのアクセラレータの情報を取得します。  
   
 ```  
 UINT GetAccel(
@@ -186,15 +200,15 @@ UINT GetAccel(
   
 ### <a name="parameters"></a>パラメーター  
  `nAccel`  
- 指定された配列の要素数`pAccel`します。  
+ 指定された配列の要素数`pAccel`です。  
   
  `pAccel`  
- 配列を指すポインター [UDACCEL](http://msdn.microsoft.com/library/windows/desktop/bb759897)アクセラレーション情報を受け取る構造体。  
+ 配列を指すポインター [UDACCEL](http://msdn.microsoft.com/library/windows/desktop/bb759897)アクセラレータの情報を受け取る構造体。  
   
 ### <a name="return-value"></a>戻り値  
  アクセラレータの構造体の数を取得します。  
   
-##  <a name="a-namegetbasea--cspinbuttonctrlgetbase"></a><a name="getbase"></a>CSpinButtonCtrl::GetBase  
+##  <a name="getbase"></a>CSpinButtonCtrl::GetBase  
  スピン ボタン コントロールの現在の基数を取得します。  
   
 ```  
@@ -204,155 +218,161 @@ UINT GetBase() const;
 ### <a name="return-value"></a>戻り値  
  現在の基本値。  
   
-##  <a name="a-namegetbuddya--cspinbuttonctrlgetbuddy"></a><a name="getbuddy"></a>CSpinButtonCtrl::GetBuddy  
- 現在の関連ウィンドウへのポインターを取得します。  
+##  <a name="getbuddy"></a>CSpinButtonCtrl::GetBuddy  
+ 現在の連動ウィンドウへのポインターを取得します。  
   
 ```  
 CWnd* GetBuddy() const;  
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 現在の関連ウィンドウへのポインター。  
+ 現在の連動ウィンドウへのポインター。  
   
-##  <a name="a-namegetposa--cspinbuttonctrlgetpos"></a><a name="getpos"></a>CSpinButtonCtrl::GetPos  
- スピン ボタン コントロールの現在位置を取得します。  
+##  <a name="getpos"></a>CSpinButtonCtrl::GetPos  
+ スピン ボタン コントロールの現在の位置を取得します。  
   
 ```  
-int GetPos() const;  int GetPos32(LPBOOL lpbError = NULL) const;  ```  
+int GetPos() const;  int GetPos32(LPBOOL lpbError = NULL) const;  
+```  
   
-### Parameters  
+### <a name="parameters"></a>パラメーター  
  *lpbError*  
- A pointer to a boolean value that is set to zero if the value is successfully retrieved or non-zero if an error occurs. If this parameter is set to **NULL**, errors are not reported.  
+ 値の場合は 0 に設定されているブール値へのポインターは、正常に取得されたか、0 以外のエラーが発生した場合です。 このパラメーターに設定されている場合**NULL**エラーは報告されません。  
   
-### Return Value  
- The first version returns the 16-bit current position in the low-order word. The high-order word is nonzero if an error occurred.  
+### <a name="return-value"></a>戻り値  
+ 最初のバージョンでは、下位ワードに 16 ビットの現在位置を返します。 上位ワードは、エラーが発生した場合は 0 以外です。  
   
- The second version returns the 32-bit position.  
+ 2 番目のバージョンでは、32 ビットの位置を返します。  
   
-### Remarks  
- When it processes the value returned, the control updates its current position based on the caption of the buddy window. The control returns an error if there is no buddy window or if the caption specifies an invalid or out-of-range value.  
+### <a name="remarks"></a>コメント  
+ 返される値を処理するとき、コントロールが連動ウィンドウのキャプションに基づく現在の位置を更新します。 コントロールは、関連ウィンドウがない場合、またはキャプションを無効または範囲外の値を指定する場合に、エラーを返します。  
   
-##  <a name="getrange"></a>  CSpinButtonCtrl::GetRange  
- Retrieves the upper and lower limits (range) for a spin button control.  
-  
-```  
-DWORD GetRange() const です。  
-  
-(int >/documents/report1.rdl」の下、GetRange を無効にします。  
-    int >/documents/report1.rdl」の上限) const です。  
-  
-GetRange32 を無効にする (int >/documents/report1.rdl」の下で、  
-    int >/documents/report1.rdl」の上限) const です。  
-```  
-  
-### Parameters  
- *lower*  
- Reference to an integer that receives the lower limit for the control.  
-  
- *upper*  
- Reference to an integer that receives the upper limit for the control.  
-  
-### Return Value  
- The first version returns a 32-bit value containing the upper and lower limits. The low-order word is the upper limit for the control, and the high-order word is the lower limit.  
-  
-### Remarks  
- The member function `GetRange32` retrieves the spin button control's range as a 32-bit integer.  
-  
-##  <a name="setaccel"></a>  CSpinButtonCtrl::SetAccel  
- Sets the acceleration for a spin button control.  
+##  <a name="getrange"></a>CSpinButtonCtrl::GetRange  
+ スピン ボタン コントロールの上限と下限制限 (範囲) を取得します。  
   
 ```  
-BOOL SetAccel (int nAccel、  
-    UDACCEL* pAccel) です。
+DWORD GetRange() const;  
+  
+void GetRange(
+    int& lower,  
+    int& upper) const;  
+  
+void GetRange32(
+    int& lower,  
+    int &upper) const;  
 ```  
   
-### Parameters  
+### <a name="parameters"></a>パラメーター  
+ *低い*  
+ コントロールの下限値を受け取る整数への参照。  
+  
+ *上限*  
+ コントロールの数の上限を受け取る整数への参照。  
+  
+### <a name="return-value"></a>戻り値  
+ 最初のバージョンでは、上限と下限を表す 32 ビット値を返します。 下位ワードは、コントロールの数の上限で、上位ワードは下限です。  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は`GetRange32`32 ビット整数値として、スピン ボタン コントロールの範囲を取得します。  
+  
+##  <a name="setaccel"></a>CSpinButtonCtrl::SetAccel  
+ スピン ボタン コントロールのアクセラレータを設定します。  
+  
+```  
+BOOL SetAccel(
+    int nAccel,  
+    UDACCEL* pAccel);
+```  
+  
+### <a name="parameters"></a>パラメーター  
  `nAccel`  
- Number of [UDACCEL](http://msdn.microsoft.com/library/windows/desktop/bb759897) structures specified by `pAccel`.  
+ 数[UDACCEL](http://msdn.microsoft.com/library/windows/desktop/bb759897)構造体で指定された`pAccel`です。  
   
  `pAccel`  
- Pointer to an array of `UDACCEL` structures, which contain acceleration information. Elements should be sorted in ascending order based on the **nSec** member.  
+ 配列を指すポインター`UDACCEL`構造体は、アクセラレータの情報が含まれています。 要素がに基づいて昇順で並べ替えられます、 **nSec**メンバー。  
   
-### Return Value  
- Nonzero if successful; otherwise 0.  
+### <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="setbase"></a>  CSpinButtonCtrl::SetBase  
- Sets the base for a spin button control.  
+##  <a name="setbase"></a>CSpinButtonCtrl::SetBase  
+ スピン ボタン コントロールの基本クラスを設定します。  
   
 ```  
-int SetBase (int nBase) です。
+int SetBase(int nBase);
 ```  
   
-### Parameters  
+### <a name="parameters"></a>パラメーター  
  `nBase`  
- New base value for the control. It can be 10 for decimal or 16 for hexadecimal.  
+ コントロールの新しい基本値。 10 は 10 進数または 16 の 16 進数を指定できます。  
   
-### Return Value  
- The previous base value if successful, or zero if an invalid base is given.  
+### <a name="return-value"></a>戻り値  
+ 成功した場合は、前の基本値または 0 の場合は、無効な base を指定します。  
   
-### Remarks  
- The base value determines whether the buddy window displays numbers in decimal or hexadecimal digits. Hexadecimal numbers are always unsigned; decimal numbers are signed.  
+### <a name="remarks"></a>コメント  
+ ベース値は、関連ウィンドウが 10 進数または 16 進数の桁の数値を表示するかを判断します。 16 進数は、常に符号付きです。10 進数は署名されます。  
   
-##  <a name="setbuddy"></a>  CSpinButtonCtrl::SetBuddy  
- Sets the buddy window for a spin button control.  
+##  <a name="setbuddy"></a>CSpinButtonCtrl::SetBuddy  
+ スピン ボタン コントロールの連動ウィンドウを設定します。  
   
 ```  
-CWnd* SetBuddy (CWnd* pWndBuddy) です。
+CWnd* SetBuddy(CWnd* pWndBuddy);
 ```  
   
-### Parameters  
+### <a name="parameters"></a>パラメーター  
  `pWndBuddy`  
- Pointer to the new buddy window.  
+ 新しい関連ウィンドウへのポインター。  
   
-### Return Value  
- A pointer to the previous buddy window.  
+### <a name="return-value"></a>戻り値  
+ 以前の連動ウィンドウへのポインター。  
   
-### Remarks  
- A spin control is almost always associated with another window, such as an edit control, that displays some content. This other window is called the "buddy" of the spin control.  
+### <a name="remarks"></a>コメント  
+ スピン コントロールが、編集コントロールは、一部のコンテンツを表示するなど、別のウィンドウに関連付けではほとんどの場合です。 この他のウィンドウは、スピン コントロールの「メンバー」と呼ばれます。  
   
-##  <a name="setpos"></a>  CSpinButtonCtrl::SetPos  
- Sets the current position for a spin button control.  
+##  <a name="setpos"></a>CSpinButtonCtrl::SetPos  
+ スピン ボタン コントロールの現在位置を設定します。  
   
 ```  
-int SetPos (int nPos) です。  
-int SetPos32(int nPos) です。
+int SetPos(int nPos);  
+int SetPos32(int nPos);
 ```  
   
-### Parameters  
+### <a name="parameters"></a>パラメーター  
  `nPos`  
- New position for the control. This value must be in the range specified by the upper and lower limits for the control.  
+ コントロールの新しい位置。 この値は、コントロールの上限と下限で指定された範囲である必要があります。  
   
-### Return Value  
- The previous position (16-bit precision for `SetPos`, 32-bit precision for `SetPos32`).  
+### <a name="return-value"></a>戻り値  
+ 前の位置 (16 ビット単位の精度`SetPos`、32 ビットの有効桁数`SetPos32`)。  
   
-### Remarks  
- `SetPos32` sets the 32-bit position.  
+### <a name="remarks"></a>コメント  
+ `SetPos32`32 ビットの位置を設定します。  
   
-##  <a name="setrange"></a>  CSpinButtonCtrl::SetRange  
- Sets the upper and lower limits (range) for a spin button control.  
+##  <a name="setrange"></a>上限値と下限  
+ スピン ボタン コントロールの上限と下限制限 (範囲) を設定します。  
   
 ```  
-SetRange (短い上限値を無効にします。  
-    短い下限) です。
+void SetRange(
+    short nLower,  
+    short nUpper);
 
  
-SetRange32 を無効にする (int 上限値、  
-    int 下限) です。
+void SetRange32(
+    int nLower,  
+    int nUpper);
 ```  
   
-### Parameters  
- `nLower`and `nUpper`  
- Upper and lower limits for the control. For `SetRange`, neither limit can be greater than **UD_MAXVAL** or less than **UD_MINVAL**; in addition, the difference between the two limits cannot exceed **UD_MAXVAL**. `SetRange32` places no restrictions on the limits; use any integers.  
+### <a name="parameters"></a>パラメーター  
+ `nLower`そして`nUpper`  
+ コントロールの上限と下限です。 `SetRange`、どちらの制限を上回ることが**UD_MAXVAL**またはより小さい**UD_MINVAL**以外の場合はさらに、2 つの制限の違いを超えないように**UD_MAXVAL**です。 `SetRange32`制限内での制限は配置なし任意の整数を使用します。  
   
-### Remarks  
- The member function `SetRange32` sets the 32-bit range for the spin button control.  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は`SetRange32`スピン ボタン コントロールの 32 ビット範囲を設定します。  
   
 > [!NOTE]
->  The default range for the spin button has the maximum set to zero (0) and the minimum set to 100. Because the maximum value is less than the minimum value, clicking the up arrow will decrease the position and clicking the down arrow will increase it. Use `CSpinButtonCtrl::SetRange` to adjust these values.  
+>  スピン ボタンの既定の範囲は、ゼロ (0) に設定した最大値、最小値が 100 に設定します。 最大値は最小値よりも小さいため、上向きの矢印をクリックすると低下し、は、位置、下矢印をクリックすると向上します。 使用して`CSpinButtonCtrl::SetRange`をこれらの値を調整します。  
   
-## See Also  
- [MFC Sample CMNCTRL2](../../visual-cpp-samples.md)   
- [CWnd Class](../../mfc/reference/cwnd-class.md)   
- [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
- [CSliderCtrl Class](../../mfc/reference/csliderctrl-class.md)
+## <a name="see-also"></a>関連項目  
+ [MFC サンプル CMNCTRL2](../../visual-cpp-samples.md)   
+ [CWnd クラス](../../mfc/reference/cwnd-class.md)   
+ [階層図](../../mfc/hierarchy-chart.md)   
+ [CSliderCtrl クラス](../../mfc/reference/csliderctrl-class.md)
 

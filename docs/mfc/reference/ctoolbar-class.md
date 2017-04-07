@@ -10,6 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CToolBar
+- AFXEXT/CToolBar
+- AFXEXT/CToolBar::CToolBar
+- AFXEXT/CToolBar::CommandToIndex
+- AFXEXT/CToolBar::Create
+- AFXEXT/CToolBar::CreateEx
+- AFXEXT/CToolBar::GetButtonInfo
+- AFXEXT/CToolBar::GetButtonStyle
+- AFXEXT/CToolBar::GetButtonText
+- AFXEXT/CToolBar::GetItemID
+- AFXEXT/CToolBar::GetItemRect
+- AFXEXT/CToolBar::GetToolBarCtrl
+- AFXEXT/CToolBar::LoadBitmap
+- AFXEXT/CToolBar::LoadToolBar
+- AFXEXT/CToolBar::SetBitmap
+- AFXEXT/CToolBar::SetButtonInfo
+- AFXEXT/CToolBar::SetButtons
+- AFXEXT/CToolBar::SetButtonStyle
+- AFXEXT/CToolBar::SetButtonText
+- AFXEXT/CToolBar::SetHeight
+- AFXEXT/CToolBar::SetSizes
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -149,7 +169,7 @@ class CToolBar : public CControlBar
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxext.h  
   
-##  <a name="a-namecommandtoindexa--ctoolbarcommandtoindex"></a><a name="commandtoindex"></a>CToolBar::CommandToIndex  
+##  <a name="commandtoindex"></a>CToolBar::CommandToIndex  
  このメンバー関数は、最初のツールバーのボタンの位置 0 から始まるコマンド ID と一致するインデックスを返します`nIDFind`します。  
   
 ```  
@@ -163,7 +183,7 @@ int CommandToIndex(UINT nIDFind) const;
 ### <a name="return-value"></a>戻り値  
  ボタン、またはボタンに指定されたコマンド ID があるない場合は –&1; のインデックス  
   
-##  <a name="a-namecreatea--ctoolbarcreate"></a><a name="create"></a>用意されて  
+##  <a name="create"></a>用意されて  
  このメンバー関数は、Windows ツールバー (子ウィンドウ) を作成し、関連付けます、`CToolBar`オブジェクトです。  
   
 ```  
@@ -210,7 +230,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&179;](../../mfc/codesnippet/cpp/ctoolbar-class_1.cpp)]  
   
-##  <a name="a-namecreateexa--ctoolbarcreateex"></a><a name="createex"></a>CToolBar::CreateEx  
+##  <a name="createex"></a>CToolBar::CreateEx  
  Windows のツールバー (子ウィンドウ) を作成し、それをするには、この関数を呼び出して、`CToolBar`オブジェクトです。  
   
 ```  
@@ -253,7 +273,7 @@ virtual BOOL CreateEx(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&180;](../../mfc/codesnippet/cpp/ctoolbar-class_2.cpp)]  
   
-##  <a name="a-namectoolbara--ctoolbarctoolbar"></a><a name="ctoolbar"></a>CToolBar::CToolBar  
+##  <a name="ctoolbar"></a>CToolBar::CToolBar  
  このメンバー関数を作成、`CToolBar`オブジェクトし、既定のサイズを設定します。  
   
 ```  
@@ -263,7 +283,7 @@ CToolBar();
 ### <a name="remarks"></a>コメント  
  呼び出す、[作成](#create)ツールバー ウィンドウを作成します。  
   
-##  <a name="a-namegetbuttoninfoa--ctoolbargetbuttoninfo"></a><a name="getbuttoninfo"></a>CToolBar::GetButtonInfo  
+##  <a name="getbuttoninfo"></a>CToolBar::GetButtonInfo  
  このメンバー関数は、コントロールの ID、スタイル、およびツール バー ボタンまたはで指定された場所に区切り線イメージのインデックスを取得*nIndex します。*  
   
 ```  
@@ -292,7 +312,7 @@ void GetButtonInfo(
   
  場合`nIndex`、区切り文字を指定`iImage`区切り記号の幅 (ピクセル単位) に設定されています。  
   
-##  <a name="a-namegetbuttonstylea--ctoolbargetbuttonstyle"></a><a name="getbuttonstyle"></a>CToolBar::GetButtonStyle  
+##  <a name="getbuttonstyle"></a>CToolBar::GetButtonStyle  
  このメンバー関数を呼び出してボタンまたはツールバーの区分線のスタイルを取得します。  
   
 ```  
@@ -309,7 +329,7 @@ UINT GetButtonStyle(int nIndex) const;
 ### <a name="remarks"></a>コメント  
  ボタンのスタイルは、ボタンの表示方法と、ユーザー入力に応答する方法を決定します。 参照してください[ツール](#setbuttonstyle)のボタンのスタイルの例を示します。  
   
-##  <a name="a-namegetbuttontexta--ctoolbargetbuttontext"></a><a name="getbuttontext"></a>CToolBar::GetButtonText  
+##  <a name="getbuttontext"></a>CToolBar::GetButtonText  
  このメンバー関数を呼び出して、ボタンに表示されるテキストを取得します。  
   
 ```  
@@ -333,7 +353,7 @@ void GetButtonText(
 ### <a name="remarks"></a>コメント  
  このメンバーの&2; 番目の形式の関数の塗りつぶし、`CString`文字列のテキストを持つオブジェクト。  
   
-##  <a name="a-namegetitemida--ctoolbargetitemid"></a><a name="getitemid"></a>CToolBar::GetItemID  
+##  <a name="getitemid"></a>CToolBar::GetItemID  
  このメンバー関数は、ボタンまたはで指定された区切り記号のコマンド ID を返す`nIndex`します。  
   
 ```  
@@ -350,7 +370,7 @@ UINT GetItemID(int nIndex) const;
 ### <a name="remarks"></a>コメント  
  区切り記号を返す**として**します。  
   
-##  <a name="a-namegetitemrecta--ctoolbargetitemrect"></a><a name="getitemrect"></a>CToolBar::GetItemRect  
+##  <a name="getitemrect"></a>CToolBar::GetItemRect  
  このメンバー関数によって、`RECT`構造体にあるアドレスが含まれている`lpRect`ボタンまたはで指定された区切り記号の座標を持つ`nIndex`です。  
   
 ```  
@@ -374,7 +394,7 @@ virtual void GetItemRect(
 ### <a name="example"></a>例  
   例を参照してください[CToolBar::SetSizes](#setsizes)します。  
   
-##  <a name="a-namegettoolbarctrla--ctoolbargettoolbarctrl"></a><a name="gettoolbarctrl"></a>CToolBar::GetToolBarCtrl  
+##  <a name="gettoolbarctrl"></a>CToolBar::GetToolBarCtrl  
  このメンバー関数では、基になる一般的なコントロールに直接アクセスができます。  
   
 ```  
@@ -392,7 +412,7 @@ CToolBarCtrl& GetToolBarCtrl() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocViewSDI&#15;](../../mfc/codesnippet/cpp/ctoolbar-class_3.cpp)]  
   
-##  <a name="a-nameloadbitmapa--ctoolbarloadbitmap"></a><a name="loadbitmap"></a>CToolBar::LoadBitmap  
+##  <a name="loadbitmap"></a>CToolBar::LoadBitmap  
  指定されるビットマップを読み込むには、このメンバー関数を呼び出す`lpszResourceName`または`nIDResource`です。  
   
 ```  
@@ -416,7 +436,7 @@ BOOL LoadBitmap(UINT nIDResource);
 > [!WARNING]
 > `CToolBar`最大 16 色のビットマップをサポートしています。 ツール バー エディターからイメージを読み込むときに Visual Studio は自動的に、必要に応じて、16 色のビットマップ イメージを変換し、イメージが変換された場合に警告メッセージを表示します。 (画像を編集するのには外部エディターを使用して) 以上の 16 の色の画像を使用するアプリケーションが予期しない動作があります。  
   
-##  <a name="a-nameloadtoolbara--ctoolbarloadtoolbar"></a><a name="loadtoolbar"></a>CToolBar::LoadToolBar  
+##  <a name="loadtoolbar"></a>CToolBar::LoadToolBar  
  指定されたツールバーを読み込むには、このメンバー関数を呼び出す`lpszResourceName`または`nIDResource`です。  
   
 ```  
@@ -440,7 +460,7 @@ BOOL LoadToolBar(UINT nIDResource);
 ### <a name="example"></a>例  
   例を参照してください[CToolBar::CreateEx](#createex)します。  
   
-##  <a name="a-namesetbitmapa--ctoolbarsetbitmap"></a><a name="setbitmap"></a>CToolBar::SetBitmap  
+##  <a name="setbitmap"></a>CToolBar::SetBitmap  
  ツールバーのビットマップ イメージを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -457,7 +477,7 @@ BOOL SetBitmap(HBITMAP hbmImageWell);
 ### <a name="remarks"></a>コメント  
  たとえば、呼び出す`SetBitmap`をユーザーがボタンの操作によって変更された文書でアクションを実行した後は、ビットマップ イメージを変更します。  
   
-##  <a name="a-namesetbuttoninfoa--ctoolbarsetbuttoninfo"></a><a name="setbuttoninfo"></a>CToolBar::SetButtonInfo  
+##  <a name="setbuttoninfo"></a>CToolBar::SetButtonInfo  
  ボタンのコマンド ID、スタイル、およびイメージの数を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -505,7 +525,7 @@ void SetButtonInfo(
   
  詳細については、ビットマップ イメージとボタンは、次を参照してください。、 [CToolBar](../../mfc/reference/ctoolbar-class.md)の概要と[CToolBar::LoadBitmap](#loadbitmap)します。  
   
-##  <a name="a-namesetbuttonsa--ctoolbarsetbuttons"></a><a name="setbuttons"></a>CToolBar::SetButtons  
+##  <a name="setbuttons"></a>CToolBar::SetButtons  
  このメンバー関数では、各ツール バー ボタンのコマンド ID を配列の対応する要素で指定された値に設定`lpIDArray`します。  
   
 ```  
@@ -531,7 +551,7 @@ BOOL SetButtons(
   
  場合`lpIDArray`は**NULL**、この関数は指定される項目の数の領域を割り当てて`nIDCount`します。 使用[です](#setbuttoninfo)各項目の属性を設定します。  
   
-##  <a name="a-namesetbuttonstylea--ctoolbarsetbuttonstyle"></a><a name="setbuttonstyle"></a>CToolBar::SetButtonStyle  
+##  <a name="setbuttonstyle"></a>CToolBar::SetButtonStyle  
  ボタンまたは区切り記号、またはボタンをグループ化のスタイルを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -571,7 +591,7 @@ void SetButtonStyle(
 > [!NOTE]
 >  使用してボタンの状態を設定することも、`nStyle`パラメーター。 ただし、ボタンの状態がによって制御されるため、 [ON_UPDATE_COMMAND_UI](http://msdn.microsoft.com/library/c4de3c21-2d2e-4b89-a4ce-d0c0e2d9edc4)ハンドラー、いずれかのステータスを使用して設定する`SetButtonStyle`は、次のアイドル状態の処理中に失われます。 参照してください[ユーザー インターフェイス オブジェクトの更新方法](../../mfc/how-to-update-user-interface-objects.md)と[TN031: コントロール バー](../../mfc/tn031-control-bars.md)の詳細。  
   
-##  <a name="a-namesetbuttontexta--ctoolbarsetbuttontext"></a><a name="setbuttontext"></a>CToolBar::SetButtonText  
+##  <a name="setbuttontext"></a>CToolBar::SetButtonText  
  ボタンにテキストを設定するには、この関数を呼び出します。  
   
 ```  
@@ -593,7 +613,7 @@ BOOL SetButtonText(
 ### <a name="example"></a>例  
   例を参照してください[CToolBar::GetToolBarCtrl](#gettoolbarctrl)します。  
   
-##  <a name="a-namesetheighta--ctoolbarsetheight"></a><a name="setheight"></a>CToolBar::SetHeight  
+##  <a name="setheight"></a>CToolBar::SetHeight  
  このメンバー関数、ツールバーの高さをピクセル単位で指定された値に設定する`cyHeight`です。  
   
 ```  
@@ -609,7 +629,7 @@ void SetHeight(int cyHeight);
   
  この関数が呼び出されない場合、フレームワークは、ツールバーの高さを決定する、ボタンのサイズを使用します。  
   
-##  <a name="a-namesetsizesa--ctoolbarsetsizes"></a><a name="setsizes"></a>CToolBar::SetSizes  
+##  <a name="setsizes"></a>CToolBar::SetSizes  
  ツールバーのボタンをピクセル単位で指定された単位のサイズに設定するには、このメンバー関数を呼び出す*sizeButton*します。  
   
 ```  

@@ -9,7 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::IExecutionResource
+- IExecutionResource
+- CONCRTRM/concurrency::IExecutionResource
+- CONCRTRM/concurrency::IExecutionResource::IExecutionResource::CurrentSubscriptionLevel
+- CONCRTRM/concurrency::IExecutionResource::IExecutionResource::GetExecutionResourceId
+- CONCRTRM/concurrency::IExecutionResource::IExecutionResource::GetNodeId
+- CONCRTRM/concurrency::IExecutionResource::IExecutionResource::Remove
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 530fd40409a08be6ae13ad604deb5b85989b2964
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: fa3c65780ac9e001e6f6b8a015dc7f70df47181f
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="iexecutionresource-structure"></a>IExecutionResource 構造体
@@ -54,10 +59,10 @@ struct IExecutionResource;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Iexecutionresource::currentsubscriptionlevel メソッド](#currentsubscriptionlevel)|アクティブ化された仮想プロセッサの数は、ルートし、この実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドを購読を返します。|  
-|[Iexecutionresource::getexecutionresourceid メソッド](#getexecutionresourceid)|この実行リソースを表すハードウェア スレッドの一意の識別子を返します。|  
-|[Iexecutionresource::getnodeid メソッド](#getnodeid)|この実行リソースが属するプロセッサ ノードの一意の識別子を返します。|  
-|[Iexecutionresource::remove メソッド](#remove)|この実行リソースをリソース マネージャーを返します。|  
+|[Iexecutionresource::currentsubscriptionlevel](#currentsubscriptionlevel)|アクティブ化された仮想プロセッサの数は、ルートし、この実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドを購読を返します。|  
+|[Iexecutionresource::getexecutionresourceid](#getexecutionresourceid)|この実行リソースを表すハードウェア スレッドの一意の識別子を返します。|  
+|[Iexecutionresource::getnodeid](#getnodeid)|この実行リソースが属するプロセッサ ノードの一意の識別子を返します。|  
+|[Iexecutionresource::remove](#remove)|この実行リソースをリソース マネージャーを返します。|  
   
 ## <a name="remarks"></a>コメント  
  実行リソースはスタンドアロンでまたは仮想プロセッサ ルートに関連付けられています。 アプリケーションのスレッドがスレッドのサブスクリプションを作成するときは、スタンドアロンの実行リソースが作成されます。 メソッド[ISchedulerProxy::SubscribeThread](ischedulerproxy-structure.md#subscribecurrentthread)と[ischedulerproxy::requestinitialvirtualprocessors](ischedulerproxy-structure.md#requestinitialvirtualprocessors)スレッドのサブスクリプションを作成して返す、`IExecutionResource`サブスクリプションを表すインターフェイスです。 スレッドのサブスクリプションを作成すると、特定のスレッドが作業に参加するリソース マネージャーに通知する方法は、リソース マネージャーが、スケジューラに割り当てる仮想プロセッサ ルートと、スケジューラにキューに置かれたです。 リソース マネージャーは、可能ハードウェア スレッドの規定量を超えるように情報を使用します。  
@@ -70,7 +75,7 @@ struct IExecutionResource;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namecurrentsubscriptionlevela--iexecutionresourcecurrentsubscriptionlevel-method"></a><a name="currentsubscriptionlevel"></a>Iexecutionresource::currentsubscriptionlevel メソッド  
+##  <a name="currentsubscriptionlevel"></a>Iexecutionresource::currentsubscriptionlevel メソッド  
  アクティブ化された仮想プロセッサの数は、ルートし、この実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドを購読を返します。  
   
 ```
@@ -89,7 +94,7 @@ virtual unsigned int CurrentSubscriptionLevel() const = 0;
   
  リソース マネージャーは、スケジューラ間でリソースを移動するかを判断する方法の&1; つとして、サブスクリプション レベルの情報を使用します。  
   
-##  <a name="a-namegetexecutionresourceida--iexecutionresourcegetexecutionresourceid-method"></a><a name="getexecutionresourceid"></a>Iexecutionresource::getexecutionresourceid メソッド  
+##  <a name="getexecutionresourceid"></a>Iexecutionresource::getexecutionresourceid メソッド  
  この実行リソースを表すハードウェア スレッドの一意の識別子を返します。  
   
 ```
@@ -102,7 +107,7 @@ virtual unsigned int GetExecutionResourceId() const = 0;
 ### <a name="remarks"></a>コメント  
  各ハードウェア スレッドには、同時実行ランタイムによって一意の識別子が割り当てられます。 複数の実行リソースが関連付けられているハードウェアである場合、スレッド、すべてが同じ実行リソース識別子。  
   
-##  <a name="a-namegetnodeida--iexecutionresourcegetnodeid-method"></a><a name="getnodeid"></a>Iexecutionresource::getnodeid メソッド  
+##  <a name="getnodeid"></a>Iexecutionresource::getnodeid メソッド  
  この実行リソースが属するプロセッサ ノードの一意の識別子を返します。  
   
 ```
@@ -117,7 +122,7 @@ virtual unsigned int GetNodeId() const = 0;
   
  関数からのノードの数を取得できます[GetProcessorNodeCount](concurrency-namespace-functions.md)します。  
   
-##  <a name="a-nameremovea--iexecutionresourceremove-method"></a><a name="remove"></a>Iexecutionresource::remove メソッド  
+##  <a name="remove"></a>Iexecutionresource::remove メソッド  
  この実行リソースをリソース マネージャーを返します。  
   
 ```

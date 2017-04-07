@@ -9,11 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::IQuickActivateImpl
-- ATL::IQuickActivateImpl<T>
-- ATL.IQuickActivateImpl
-- ATL.IQuickActivateImpl<T>
 - IQuickActivateImpl
+- ATLCTL/ATL::IQuickActivateImpl
+- ATLCTL/ATL::IQuickActivateImpl::GetContentExtent
+- ATLCTL/ATL::IQuickActivateImpl::QuickActivate
+- ATLCTL/ATL::IQuickActivateImpl::SetContentExtent
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +86,7 @@ class ATL_NO_VTABLE IQuickActivateImpl : public IQuickActivate
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namegetcontentextenta--iquickactivateimplgetcontentextent"></a><a name="getcontentextent"></a>IQuickActivateImpl::GetContentExtent  
+##  <a name="getcontentextent"></a>IQuickActivateImpl::GetContentExtent  
  実行中のコントロールの現在の表示サイズを取得します。  
   
 ```
@@ -98,7 +98,7 @@ STDMETHOD(GetContentExtent)(LPSIZEL pSize);
   
  参照してください[IQuickActivate::GetContentExtent](http://msdn.microsoft.com/library/windows/desktop/ms693792)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namequickactivatea--iquickactivateimplquickactivate"></a><a name="quickactivate"></a>IQuickActivateImpl::QuickActivate  
+##  <a name="quickactivate"></a>IQuickActivateImpl::QuickActivate  
  読み込む対象のコントロールの初期化を迅速に実行します。  
   
 ```
@@ -112,7 +112,7 @@ STDMETHOD(QuickActivate)(
   
  参照してください[IQuickActivate::QuickActivate](http://msdn.microsoft.com/library/windows/desktop/ms682421)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetcontentextenta--iquickactivateimplsetcontentextent"></a><a name="setcontentextent"></a>IQuickActivateImpl::SetContentExtent  
+##  <a name="setcontentextent"></a>IQuickActivateImpl::SetContentExtent  
  コンテナーが割り当てられて表示領域の量のコントロールに通知します。  
   
 ```

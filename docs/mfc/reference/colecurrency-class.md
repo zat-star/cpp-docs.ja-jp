@@ -9,8 +9,16 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- CURRENCY
 - COleCurrency
+- AFXDISP/COleCurrency
+- AFXDISP/COleCurrency::COleCurrency
+- AFXDISP/COleCurrency::Format
+- AFXDISP/COleCurrency::GetStatus
+- AFXDISP/COleCurrency::ParseCurrency
+- AFXDISP/COleCurrency::SetCurrency
+- AFXDISP/COleCurrency::SetStatus
+- AFXDISP/COleCurrency::m_cur
+- AFXDISP/COleCurrency::m_status
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -104,7 +112,7 @@ class COleCurrency
 ## <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
   
-##  <a name="a-namecolecurrencya--colecurrencycolecurrency"></a><a name="colecurrency"></a>COleCurrency::COleCurrency  
+##  <a name="colecurrency"></a>COleCurrency::COleCurrency  
  構築、 **COleCurrency**オブジェクトです。  
   
 ```  
@@ -152,7 +160,7 @@ COleCurrency(
   
  [!code-cpp[NVC_MFCOleContainer&#10;](../../mfc/codesnippet/cpp/colecurrency-class_1.cpp)]  
   
-##  <a name="a-nameformata--colecurrencyformat"></a><a name="format"></a>COleCurrency::Format  
+##  <a name="format"></a>COleCurrency::Format  
  通貨値の書式設定された表現を作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -177,7 +185,7 @@ CString Format(DWORD  dwFlags = 0, LCID  lcid = LANG_USER_DEFAULT) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#11;](../../mfc/codesnippet/cpp/colecurrency-class_2.cpp)]  
   
-##  <a name="a-namegetstatusa--colecurrencygetstatus"></a><a name="getstatus"></a>COleCurrency::GetStatus  
+##  <a name="getstatus"></a>COleCurrency::GetStatus  
  状態 (有効) を取得するには、このメンバー関数を呼び出して、指定された**COleCurrency**オブジェクトです。  
   
 ```  
@@ -190,15 +198,13 @@ CurrencyStatus GetStatus() const;
 ### <a name="remarks"></a>コメント  
  戻り値は、`CurrencyStatus`列挙内で定義されている型、 **COleCurrency**クラスです。  
   
- `enum CurrencyStatus{`  
-  
- `valid = 0,`  
-  
- `invalid = 1,`  
-  
- `null = 2,`  
-  
- `};`  
+```  
+enum CurrencyStatus {
+    valid = 0,
+    invalid = 1,
+    null = 2
+    };  
+```  
   
  これらのステータス値の簡単な説明は、次の一覧を参照してください。  
   
@@ -235,7 +241,7 @@ CurrencyStatus GetStatus() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#12;](../../mfc/codesnippet/cpp/colecurrency-class_3.cpp)]  
   
-##  <a name="a-namemcura--colecurrencymcur"></a><a name="m_cur"></a>COleCurrency::m_cur  
+##  <a name="m_cur"></a>COleCurrency::m_cur  
  基になる[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)この構造体**COleCurrency**オブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
@@ -245,7 +251,7 @@ CurrencyStatus GetStatus() const;
   
  詳細については、次を参照してください。、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namemstatusa--colecurrencymstatus"></a><a name="m_status"></a>COleCurrency::m_status  
+##  <a name="m_status"></a>COleCurrency::m_status  
  このデータ メンバーの型は、列挙型`CurrencyStatus`、内で定義されている、 **COleCurrency**クラスです。  
   
 ```  
@@ -292,7 +298,7 @@ enum CurrencyStatus{
     > [!CAUTION]
     >  このデータ メンバーは、高度なプログラミングに適しています。 インライン メンバー関数を使用する必要があります[GetStatus](#getstatus)と[SetStatus](#setstatus)します。 参照してください`SetStatus`このデータ メンバーを明示的に設定に関する注意事項についてさらには。  
   
-##  <a name="a-nameoperatoreqa--colecurrencyoperator-"></a><a name="operator_eq"></a>COleCurrency::operator =  
+##  <a name="operator_eq"></a>COleCurrency::operator =  
  これらのオーバー ロード代入演算子は、これを元の通貨値をコピー **COleCurrency**オブジェクトです。  
   
 ```  
@@ -315,7 +321,7 @@ const COleCurrency& operator=(const COleCurrency& curSrc);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#15;](../../mfc/codesnippet/cpp/colecurrency-class_4.cpp)]  
   
-##  <a name="a-nameoperatorplusminusa--colecurrencyoperator---"></a><a name="operator_plus_minus"></a>COleCurrency::operator +、-  
+##  <a name="operator_plus_minus"></a>COleCurrency::operator +、-  
  これらの演算子を使用して追加し、2 つ**COleCurrency**値やとの相互の符号を変更する、 **COleCurrency**値。  
   
 ```  
@@ -336,7 +342,7 @@ COleCurrency operator-() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#16;](../../mfc/codesnippet/cpp/colecurrency-class_5.cpp)]  
   
-##  <a name="a-nameoperatorplusminuseqa--colecurrencyoperator---"></a><a name="operator_plus_minus_eq"></a>COleCurrency::operator + =、=  
+##  <a name="operator_plus_minus_eq"></a>COleCurrency::operator + =、=  
  加算し、減算することは、 **COleCurrency**値との間この**COleCurrency**オブジェクトです。  
   
 ```  
@@ -356,7 +362,7 @@ const COleCurrency& operator-=(const COleCurrency& cur);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&17;](../../mfc/codesnippet/cpp/colecurrency-class_6.cpp)]  
   
-##  <a name="a-nameoperatorstara--colecurrencyoperator--and-"></a><a name="operator_star"></a>COleCurrency::operator *、/  
+##  <a name="operator_star"></a>COleCurrency::operator *、/  
  拡大縮小することは、 **COleCurrency**の値を整数値。  
   
 ```  
@@ -376,7 +382,7 @@ COleCurrency operator/(long nOperand) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#18;](../../mfc/codesnippet/cpp/colecurrency-class_7.cpp)]  
   
-##  <a name="a-nameoperatorstardiveqa--colecurrencyoperator--"></a><a name="operator_star_div_eq"></a>COleCurrency::operator * =、/、=  
+##  <a name="operator_star_div_eq"></a>COleCurrency::operator * =、/、=  
  スケール アップするのには、 **COleCurrency**の値を整数値。  
   
 ```  
@@ -396,7 +402,7 @@ const COleCurrency& operator/=(long nOperand);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#19;](../../mfc/codesnippet/cpp/colecurrency-class_8.cpp)]  
   
-##  <a name="a-nameoperatorstreama--colecurrencyoperator-ltlt-gtgt"></a><a name="operator_stream"></a>COleCurrency::operator &lt; &lt;、&gt;&gt;  
+##  <a name="operator_stream"></a>COleCurrency::operator &lt; &lt;、&gt;&gt;  
  診断をダンプし、アーカイブに格納することをサポートしています。  
   
 ```  
@@ -416,7 +422,7 @@ friend CArchive& operator>>(
 ### <a name="remarks"></a>コメント  
  抽出 ( ** >> **) 演算子は、アーカイブからの読み込みをサポートしています。  
   
-##  <a name="a-nameoperatorcurrencya--colecurrencyoperator-currency"></a><a name="operator_currency"></a>COleCurrency::operator 通貨  
+##  <a name="operator_currency"></a>COleCurrency::operator 通貨  
  返します。、`CURRENCY`構造体の値がこれからコピー **COleCurrency**オブジェクトです。  
   
 ```  
@@ -425,7 +431,7 @@ operator CURRENCY() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameparsecurrencya--colecurrencyparsecurrency"></a><a name="parsecurrency"></a>COleCurrency::ParseCurrency  
+##  <a name="parsecurrency"></a>COleCurrency::ParseCurrency  
  通貨値を読み取るための文字列を解析するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -467,7 +473,7 @@ throw(COleException*);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#13;](../../mfc/codesnippet/cpp/colecurrency-class_9.cpp)]  
   
-##  <a name="a-namecolecurrencyrelationaloperatorsa--colecurrency-relational-operators"></a><a name="colecurrency_relational_operators"></a>COleCurrency 関係演算子  
+##  <a name="colecurrency_relational_operators"></a>COleCurrency 関係演算子  
  2 つの通貨値を比較し、条件が true である場合は 0 以外を返しますそれ以外の場合 0 を返します。  
   
 ```  
@@ -487,7 +493,7 @@ BOOL operator>=(const COleCurrency& cur) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#20;](../../mfc/codesnippet/cpp/colecurrency-class_10.cpp)]  
   
-##  <a name="a-namesetcurrencya--colecurrencysetcurrency"></a><a name="setcurrency"></a>COleCurrency::SetCurrency  
+##  <a name="setcurrency"></a>COleCurrency::SetCurrency  
  単位とこれの小数部を設定するには、このメンバー関数を呼び出す**COleCurrency**オブジェクトです。  
   
 ```  
@@ -508,7 +514,7 @@ void SetCurrency(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#14;](../../mfc/codesnippet/cpp/colecurrency-class_11.cpp)]  
   
-##  <a name="a-namesetstatusa--colecurrencysetstatus"></a><a name="setstatus"></a>COleCurrency::SetStatus  
+##  <a name="setstatus"></a>COleCurrency::SetStatus  
  このステータス (有効) に設定するには、このメンバー関数を呼び出す**COleCurrency**オブジェクトです。  
   
 ```  
@@ -522,15 +528,13 @@ void SetStatus(CurrencyStatus  status  );
 ### <a name="remarks"></a>コメント  
  *ステータス*でパラメーターの値が定義されている、`CurrencyStatus`列挙型で、内で定義された、 **COleCurrency**クラスです。  
   
- `enum CurrencyStatus{`  
-  
- `valid = 0,`  
-  
- `invalid = 1,`  
-  
- `null = 2,`  
-  
- `};`  
+```  
+enum CurrencyStatus {
+    valid = 0,
+    invalid = 1,
+    null = 2
+    };  
+```  
   
  これらのステータス値の簡単な説明は、次の一覧を参照してください。  
   

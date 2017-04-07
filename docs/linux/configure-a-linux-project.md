@@ -27,9 +27,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: dff1e9e03911f65dfcffcd078e0739224f73f4aa
-ms.openlocfilehash: b110994cab92d2151f63912d2b08af56059b82d7
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 1683c03c522b0b332ced9e93188c65e996ac633d
+ms.openlocfilehash: ec7ec2a7f5f0393f00efb6d662494e7be2a3f696
+ms.lasthandoff: 03/22/2017
 
 ---
 
@@ -71,7 +71,7 @@ Visual Studio で Linux プロジェクトに対して、さまざまなオプ�
 ## <a name="copy-sources"></a>ソースのコピー
 ビルド時に、開発用 PC 上のソース ファイルは、Linux コンピューターにコピーされ、そこでコンパイルされます。  既定では、Visual Studio プロジェクトのすべてのソースは、上記の設定で指定された場所にコピーされます。  ただし、リストにさらにソースを追加するこもできます。あるいは、ソースのコピーを完全にオフ (メイクファイル プロジェクトではこれが既定) にすることもできます。
 
-* **[コピーするソース]** で、リモート コンピューターにコピーするソースが決定します。  既定では、**@(SourcesToCopyRemotely)** はプロジェクトのすべてのファイルに設定されます。
+* **[コピーするソース]** で、リモート コンピューターにコピーするソースが決定します。  既定では、**@(SourcesToCopyRemotely)** はプロジェクトのすべてのソース コード ファイルに設定されますが、画像などの資産ファイルまたはリソースファイルは含まれていません。
 
 * **[ソースのコピー]** をオンまたはオフにして、リモート コンピューターへのソース ファイルのコピーを有効または無効にすることができます。
 

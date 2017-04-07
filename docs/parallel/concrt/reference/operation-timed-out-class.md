@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::operation_timed_out
+- operation_timed_out
+- CONCRT/concurrency::operation_timed_out
+- CONCRT/concurrency::operation_timed_out::operation_timed_out
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 64fdbfa539218bb24211d12cefb415cfcacd8313
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: ec17c3ae4fa10fd7b24170934c672fb569112f60
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="operationtimedout-class"></a>operation_timed_out クラス
@@ -54,7 +56,7 @@ class operation_timed_out : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[operation_timed_out コンス トラクター](#ctor)|オーバーロードされます。 `operation_timed_out` オブジェクトを構築します。|  
+|[operation_timed_out](#ctor)|オーバーロードされます。 `operation_timed_out` オブジェクトを構築します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
@@ -66,7 +68,7 @@ class operation_timed_out : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-operationtimedout"></a><a name="ctor"></a>operation_timed_out 
+##  <a name="ctor"></a>operation_timed_out 
 
  `operation_timed_out` オブジェクトを構築します。  
   
@@ -81,5 +83,5 @@ operation_timed_out() throw();
  エラーの説明メッセージ。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

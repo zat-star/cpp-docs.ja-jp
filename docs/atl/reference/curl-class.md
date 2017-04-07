@@ -9,9 +9,36 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CUrl
 - CUrl
-- ATL::CUrl
+- ATLUTIL/ATL::CUrl
+- ATLUTIL/ATL::CUrl::CUrl
+- ATLUTIL/ATL::CUrl::Canonicalize
+- ATLUTIL/ATL::CUrl::Clear
+- ATLUTIL/ATL::CUrl::CrackUrl
+- ATLUTIL/ATL::CUrl::CreateUrl
+- ATLUTIL/ATL::CUrl::GetExtraInfo
+- ATLUTIL/ATL::CUrl::GetExtraInfoLength
+- ATLUTIL/ATL::CUrl::GetHostName
+- ATLUTIL/ATL::CUrl::GetHostNameLength
+- ATLUTIL/ATL::CUrl::GetPassword
+- ATLUTIL/ATL::CUrl::GetPasswordLength
+- ATLUTIL/ATL::CUrl::GetPortNumber
+- ATLUTIL/ATL::CUrl::GetScheme
+- ATLUTIL/ATL::CUrl::GetSchemeName
+- ATLUTIL/ATL::CUrl::GetSchemeNameLength
+- ATLUTIL/ATL::CUrl::GetUrlLength
+- ATLUTIL/ATL::CUrl::GetUrlPath
+- ATLUTIL/ATL::CUrl::GetUrlPathLength
+- ATLUTIL/ATL::CUrl::GetUserName
+- ATLUTIL/ATL::CUrl::GetUserNameLength
+- ATLUTIL/ATL::CUrl::SetExtraInfo
+- ATLUTIL/ATL::CUrl::SetHostName
+- ATLUTIL/ATL::CUrl::SetPassword
+- ATLUTIL/ATL::CUrl::SetPortNumber
+- ATLUTIL/ATL::CUrl::SetScheme
+- ATLUTIL/ATL::CUrl::SetSchemeName
+- ATLUTIL/ATL::CUrl::SetUrlPath
+- ATLUTIL/ATL::CUrl::SetUserName
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -130,7 +157,7 @@ class CUrl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-##  <a name="a-namecanonicalizea--curlcanonicalize"></a><a name="canonicalize"></a>CUrl::Canonicalize  
+##  <a name="canonicalize"></a>CUrl::Canonicalize  
  URL 文字列を正規の形式に変換するためには、このメソッドを呼び出します。  
   
 ```
@@ -159,14 +186,14 @@ inline BOOL Canonicalize(DWORD dwFlags = 0) throw();
 ### <a name="remarks"></a>コメント  
  正規の形式に変換するには、安全でない文字とスペースをエスケープ シーケンスを変換します。  
   
-##  <a name="a-namecleara--curlclear"></a><a name="clear"></a>CUrl::Clear  
+##  <a name="clear"></a>CUrl::Clear  
  すべての URL フィールドをクリアするには、このメソッドを呼び出します。  
   
 ```
 inline void Clear() throw();
 ```  
   
-##  <a name="a-namecrackurla--curlcrackurl"></a><a name="crackurl"></a>CUrl::CrackUrl  
+##  <a name="crackurl"></a>CUrl::CrackUrl  
  デコードし、URL を解析するには、このメソッドを呼び出します。  
   
 ```
@@ -183,7 +210,7 @@ BOOL CrackUrl(LPCTSTR lpszUrl, DWORD dwFlags = 0) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namecreateurla--curlcreateurl"></a><a name="createurl"></a>CUrl::CreateUrl  
+##  <a name="createurl"></a>CUrl::CreateUrl  
  このメソッドは、CUrl オブジェクトのコンポーネントのフィールドから文字列を URL を構築します。  
   
 ```
@@ -218,7 +245,7 @@ inline BOOL CreateUrl(
   
  [!code-cpp[NVC_ATL_Utilities #&133;](../../atl/codesnippet/cpp/curl-class_1.cpp)]  
   
-##  <a name="a-namecurla--curlcurl"></a><a name="curl"></a>CUrl::CUrl  
+##  <a name="curl"></a>CUrl::CUrl  
  コンストラクターです。  
   
 ```
@@ -230,14 +257,14 @@ CUrl(const CUrl& urlThat) throw();
  `urlThat`  
  `CUrl` URL の作成にコピーするオブジェクト。  
   
-##  <a name="a-namedtora--curlcurl"></a><a name="dtor"></a>CUrl:: ~ CUrl  
+##  <a name="dtor"></a>CUrl:: ~ CUrl  
  デストラクターです。  
   
 ```
 ~CUrl() throw();
 ```  
   
-##  <a name="a-namegetextrainfoa--curlgetextrainfo"></a><a name="getextrainfo"></a>CUrl::GetExtraInfo  
+##  <a name="getextrainfo"></a>CUrl::GetExtraInfo  
  余分な情報を取得するには、このメソッドを呼び出す (よう*テキスト*または #*テキスト*) の URL からです。  
   
 ```
@@ -247,7 +274,7 @@ inline LPCTSTR GetExtraInfo() const throw();
 ### <a name="return-value"></a>戻り値  
  追加情報を含む文字列を返します。  
   
-##  <a name="a-namegetextrainfolengtha--curlgetextrainfolength"></a><a name="getextrainfolength"></a>CUrl::GetExtraInfoLength  
+##  <a name="getextrainfolength"></a>CUrl::GetExtraInfoLength  
  追加の情報の長さを取得するには、このメソッドを呼び出す (など*テキスト*または #*テキスト*) を URL から取得します。  
   
 ```
@@ -257,7 +284,7 @@ inline DWORD GetExtraInfoLength() const throw();
 ### <a name="return-value"></a>戻り値  
  追加情報を含む文字列の長さを返します。  
   
-##  <a name="a-namegethostnamea--curlgethostname"></a><a name="gethostname"></a>CUrl::GetHostName  
+##  <a name="gethostname"></a>CUrl::GetHostName  
  URL からホスト名を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -267,7 +294,7 @@ inline LPCTSTR GetHostName() const throw();
 ### <a name="return-value"></a>戻り値  
  ホスト名を返します。  
   
-##  <a name="a-namegethostnamelengtha--curlgethostnamelength"></a><a name="gethostnamelength"></a>CUrl::GetHostNameLength  
+##  <a name="gethostnamelength"></a>CUrl::GetHostNameLength  
  ホスト名の長さを取得するのには、このメソッドを呼び出します。  
   
 ```
@@ -277,7 +304,7 @@ inline DWORD GetHostNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  ホスト名の長さを返します。  
   
-##  <a name="a-namegetpassworda--curlgetpassword"></a><a name="getpassword"></a>CUrl::GetPassword  
+##  <a name="getpassword"></a>CUrl::GetPassword  
  URL からパスワードを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -287,7 +314,7 @@ inline LPCTSTR GetPassword() const throw();
 ### <a name="return-value"></a>戻り値  
  パスワードを返します。  
   
-##  <a name="a-namegetpasswordlengtha--curlgetpasswordlength"></a><a name="getpasswordlength"></a>CUrl::GetPasswordLength  
+##  <a name="getpasswordlength"></a>CUrl::GetPasswordLength  
  パスワードの長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -297,7 +324,7 @@ inline DWORD GetPasswordLength() const throw();
 ### <a name="return-value"></a>戻り値  
  パスワードの長さを返します。  
   
-##  <a name="a-namegetportnumbera--curlgetportnumber"></a><a name="getportnumber"></a>CUrl::GetPortNumber  
+##  <a name="getportnumber"></a>CUrl::GetPortNumber  
  ポート番号を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -307,7 +334,7 @@ inline ATL_URL_PORT GetPortNumber() const throw();
 ### <a name="return-value"></a>戻り値  
  ポート番号を返します。  
   
-##  <a name="a-namegetschemea--curlgetscheme"></a><a name="getscheme"></a>CUrl::GetScheme  
+##  <a name="getscheme"></a>CUrl::GetScheme  
  URL スキームを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -317,7 +344,7 @@ inline ATL_URL_SCHEME GetScheme() const throw();
 ### <a name="return-value"></a>戻り値  
  返します。、 [ATL_URL_SCHEME](atl-url-scheme-enum.md) URL のスキームを記述する値。  
   
-##  <a name="a-namegetschemenamea--curlgetschemename"></a><a name="getschemename"></a>CUrl::GetSchemeName  
+##  <a name="getschemename"></a>CUrl::GetSchemeName  
  URL スキーム名を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -327,7 +354,7 @@ inline LPCTSTR GetSchemeName() const throw();
 ### <a name="return-value"></a>戻り値  
  URL のスキーム名 ("http"、"ftp"など) を返します。  
   
-##  <a name="a-namegetschemenamelengtha--curlgetschemenamelength"></a><a name="getschemenamelength"></a>CUrl::GetSchemeNameLength  
+##  <a name="getschemenamelength"></a>CUrl::GetSchemeNameLength  
  URL スキーム名の長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -337,7 +364,7 @@ inline DWORD GetSchemeNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL のスキーム名の長さを返します。  
   
-##  <a name="a-namegeturllengtha--curlgeturllength"></a><a name="geturllength"></a>CUrl::GetUrlLength  
+##  <a name="geturllength"></a>CUrl::GetUrlLength  
  URL の長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -347,7 +374,7 @@ inline DWORD GetUrlLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL の長さを返します。  
   
-##  <a name="a-namegeturlpatha--curlgeturlpath"></a><a name="geturlpath"></a>CUrl::GetUrlPath  
+##  <a name="geturlpath"></a>CUrl::GetUrlPath  
  URL パスを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -357,7 +384,7 @@ inline LPCTSTR GetUrlPath() const throw();
 ### <a name="return-value"></a>戻り値  
  URL パスを返します。  
   
-##  <a name="a-namegeturlpathlengtha--curlgeturlpathlength"></a><a name="geturlpathlength"></a>CUrl::GetUrlPathLength  
+##  <a name="geturlpathlength"></a>CUrl::GetUrlPathLength  
  URL パスの長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -367,7 +394,7 @@ inline DWORD GetUrlPathLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL パスの長さを返します。  
   
-##  <a name="a-namegetusernamea--curlgetusername"></a><a name="getusername"></a>CUrl::GetUserName  
+##  <a name="getusername"></a>CUrl::GetUserName  
  URL からユーザー名を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -377,7 +404,7 @@ inline LPCTSTR GetUserName() const throw();
 ### <a name="return-value"></a>戻り値  
  ユーザー名を返します。  
   
-##  <a name="a-namegetusernamelengtha--curlgetusernamelength"></a><a name="getusernamelength"></a>CUrl::GetUserNameLength  
+##  <a name="getusernamelength"></a>CUrl::GetUserNameLength  
  ユーザー名の長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -387,7 +414,7 @@ inline DWORD GetUserNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  ユーザー名の長さを返します。  
   
-##  <a name="a-nameoperatoreqa--curloperator-"></a><a name="operator_eq"></a>CUrl::operator =  
+##  <a name="operator_eq"></a>CUrl::operator =  
  指定された割り当て`CUrl`現在オブジェクト`CUrl`オブジェクトです。  
   
 ```
@@ -401,7 +428,7 @@ CUrl& operator= (const CUrl& urlThat) throw();
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照を返します。  
   
-##  <a name="a-namesetextrainfoa--curlsetextrainfo"></a><a name="setextrainfo"></a>CUrl::SetExtraInfo  
+##  <a name="setextrainfo"></a>CUrl::SetExtraInfo  
  余分な情報を設定するには、このメソッドを呼び出す (など*テキスト*または #*テキスト*) の URL。  
   
 ```
@@ -415,7 +442,7 @@ inline BOOL SetExtraInfo(LPCTSTR lpszInfo) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namesethostnamea--curlsethostname"></a><a name="sethostname"></a>CUrl::SetHostName  
+##  <a name="sethostname"></a>CUrl::SetHostName  
  ホスト名を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -429,7 +456,7 @@ inline BOOL SetHostName(LPCTSTR lpszHost) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namesetpassworda--curlsetpassword"></a><a name="setpassword"></a>CUrl::SetPassword  
+##  <a name="setpassword"></a>CUrl::SetPassword  
  パスワードを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -443,7 +470,7 @@ inline BOOL SetPassword(LPCTSTR lpszPass) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namesetportnumbera--curlsetportnumber"></a><a name="setportnumber"></a>CUrl::SetPortNumber  
+##  <a name="setportnumber"></a>CUrl::SetPortNumber  
  ポート番号を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -457,7 +484,7 @@ inline BOOL SetPortNumber(ATL_URL_PORT nPrt) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namesetschemea--curlsetscheme"></a><a name="setscheme"></a>CUrl::SetScheme  
+##  <a name="setscheme"></a>CUrl::SetScheme  
  URL スキームを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -474,7 +501,7 @@ inline BOOL SetScheme(ATL_URL_SCHEME nScheme) throw();
 ### <a name="remarks"></a>コメント  
  名前、スキームを設定することもできます (を参照してください[スキーム](#setschemename))。  
   
-##  <a name="a-namesetschemenamea--curlsetschemename"></a><a name="setschemename"></a>スキーム  
+##  <a name="setschemename"></a>スキーム  
  URL スキーム名を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -491,7 +518,7 @@ inline BOOL SetSchemeName(LPCTSTR lpszSchm) throw();
 ### <a name="remarks"></a>コメント  
  使用して、スキームを設定することも、 [ATL_URL_SCHEME](atl-url-scheme-enum.md)定数 (を参照してください[CUrl::SetScheme](#setscheme))。  
   
-##  <a name="a-nameseturlpatha--curlseturlpath"></a><a name="seturlpath"></a>CUrl::SetUrlPath  
+##  <a name="seturlpath"></a>CUrl::SetUrlPath  
  URL パスを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -505,7 +532,7 @@ inline BOOL SetUrlPath(LPCTSTR lpszPath) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますを返します。  
   
-##  <a name="a-namesetusernamea--curlsetusername"></a><a name="setusername"></a>CUrl::SetUserName  
+##  <a name="setusername"></a>CUrl::SetUserName  
  ユーザー名を設定するには、このメソッドを呼び出します。  
   
 ```

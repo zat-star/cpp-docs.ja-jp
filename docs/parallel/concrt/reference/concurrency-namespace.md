@@ -48,9 +48,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 70c0c5b5897e1cf4aabfefd66ed5f9eef85813c7
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 2e5a153359b2696b281a25794a85b5c676f179ce
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrency-namespace"></a>concurrency 名前空間
@@ -87,7 +87,7 @@ namespace concurrency;
 |[agent クラス](agent-class.md)|すべての独立エージェントの基底クラスとして使用されるクラスです。 他のエージェントに状態が表示されないようにしたり、メッセージ渡しでやり取りしたりする目的で使用されます。|  
 |[auto_partitioner クラス](auto-partitioner-class.md)|`auto_partitioner` クラスは、反復処理する範囲を分割するために、既定のメソッド `parallel_for`、`parallel_for_each`、および `parallel_transform` の使用を表します。 このパーティション分割のメソッドでは、負荷分散および反復ごとの取り消しで範囲スティーリングが使用されます。|  
 |[bad_target クラス](bad-target-class.md)|このクラスは、実行する操作の無効なターゲットへのポインターがメッセージング ブロックに渡された場合にスローされる例外を表します。|  
-|[クラスを呼び出します。](call-class.md)|`call` メッセージング ブロックは、複数のソースを持つ、順序付けられた `target_block` であり、メッセージを受け取ったときに指定された関数を呼び出します。|  
+|[call クラス](call-class.md)|`call` メッセージング ブロックは、複数のソースを持つ、順序付けられた `target_block` であり、メッセージを受け取ったときに指定された関数を呼び出します。|  
 |[cancellation_token クラス](cancellation-token-class.md)|`cancellation_token` クラスは、ある操作の取り消しが要求されたかどうかを判断する機能を表します。 特定のトークンを `task_group`、`structured_task_group`、または `task` に関連付けると、暗黙的な取り消しを指定できます。 関連付けられた `cancellation_token_source` が取り消されたときに、取り消すためにポーリングしたり、コールバックを登録したりすることもできます。|  
 |[cancellation_token_registration クラス](cancellation-token-registration-class.md)|`cancellation_token_registration` クラスは、`cancellation_token` からのコールバック通知を表します。 `register` の `cancellation_token` メソッドを使用して取り消し発生の通知を受け取るとき、`cancellation_token_registration` オブジェクトはハンドルとしてコールバックに返されます。したがって、呼び出し元は `deregister` メソッドを使用して、特定のコールバックが以降行われないように要求できます。|  
 |[cancellation_token_source クラス](cancellation-token-source-class.md)|`cancellation_token_source` クラスは、取り消し可能な操作を取り消す機能を表します。|  
@@ -100,13 +100,13 @@ namespace concurrency;
 |[concurrent_unordered_multiset クラス](concurrent-unordered-multiset-class.md)|`concurrent_unordered_multiset`クラスは K. 型の要素の可変長シーケンスを制御する同時実行セーフなコンテナー同時実行セーフであることができるように、シーケンスが表される要素アクセス、反復子アクセス、反復子走査の各操作を追加します。|  
 |[concurrent_unordered_set クラス](concurrent-unordered-set-class.md)|`concurrent_unordered_set`クラスは K. 型の要素の可変長シーケンスを制御する同時実行セーフなコンテナー同時実行セーフであることができるように、シーケンスが表される要素アクセス、反復子アクセス、反復子走査の各操作を追加します。|  
 |[concurrent_vector クラス](concurrent-vector-class.md)|`concurrent_vector` クラスは、任意の要素にランダムにアクセスできるようにするシーケンス コンテナー クラスです。 これを使用すると、同時実行セーフな追加、要素アクセス、反復子アクセス、および反復子走査の各操作を実行できます。|  
-|[コンテキスト クラス](context-class.md)|実行コンテキストの抽象化を表します。|  
+|[Context クラス](context-class.md)|実行コンテキストの抽象化を表します。|  
 |[context_self_unblock クラス](context-self-unblock-class.md)|このクラスは、同じコンテキストから `Unblock` オブジェクトの `Context` メソッドが呼び出された場合にスローされる例外を表します。 これは、特定のコンテキストがそれ自体のブロックを解除しようとしたことを示します。|  
 |[context_unblock_unbalanced クラス](context-unblock-unbalanced-class.md)|このクラスは、`Block` オブジェクトの `Unblock` メソッドと `Context` メソッドの呼び出しが正しく対になっていない場合にスローされる例外を表します。|  
 |[critical_section クラス](critical-section-class.md)|同時実行ランタイムを明示的に認識する再入不可能なミューテックスです。|  
 |[CurrentScheduler クラス](currentscheduler-class.md)|呼び出し元コンテキストに関連付けられている現在のスケジューラの抽象化を表します。|  
 |[default_scheduler_exists クラス](default-scheduler-exists-class.md)|このクラスは、既定のスケジューラが既にプロセス内に存在するときに `Scheduler::SetDefaultSchedulerPolicy` メソッドが呼び出された場合にスローされる例外を表します。|  
-|[イベント クラス](event-class.md)|同時実行ランタイムを明示的に認識する手動リセット イベントです。|  
+|[event クラス](event-class.md)|同時実行ランタイムを明示的に認識する手動リセット イベントです。|  
 |[improper_lock クラス](improper-lock-class.md)|このクラスは、ロックが正しく取得されなかった場合にスローされる例外を表します。|  
 |[improper_scheduler_attach クラス](improper-scheduler-attach-class.md)|このクラスは、現在のコンテキストに既にアタッチされている `Attach` オブジェクトで `Scheduler` メソッドが呼び出された場合にスローされる例外を表します。|  
 |[improper_scheduler_detach クラス](improper-scheduler-detach-class.md)|このクラスは、`CurrentScheduler::Detach` オブジェクトの `Attach` メソッドによってスケジューラにアタッチされていないコンテキストで `Scheduler` メソッドが呼び出された場合にスローされる例外を表します。|  
@@ -120,7 +120,7 @@ namespace concurrency;
 |[invalid_scheduler_policy_value クラス](invalid-scheduler-policy-value-class.md)|このクラスは、`SchedulerPolicy` オブジェクトのポリシー キーがそのキーの無効な値に設定された場合にスローされる例外を表します。|  
 |[ISource クラス](isource-class.md)|`ISource` クラスは、すべてのソース ブロック用のインターフェイスです。 ソース ブロックは、メッセージを `ITarget` ブロックに伝達します。|  
 |[ITarget クラス](itarget-class.md)|`ITarget` クラスは、すべてのターゲット ブロックのインターフェイスです。 ターゲット ブロックは、`ISource` ブロックから提供されたメッセージを処理します。|  
-|[クラスを結合します。](join-class.md)|`join` メッセージング ブロックは、単一のターゲットと複数のソースを持つ順序付けられた `propagator_block` であり、各ソースから、種類が `T` であるメッセージを結合します。|  
+|[join クラス](join-class.md)|`join` メッセージング ブロックは、単一のターゲットと複数のソースを持つ順序付けられた `propagator_block` であり、各ソースから、種類が `T` であるメッセージを結合します。|  
 |[location クラス](location-class.md)|ハードウェアの物理位置の抽象化です。|  
 |[message クラス](message-class.md)|メッセージング ブロック間で渡されるデータ ペイロードが格納される、基本的なメッセージ エンベロープ。|  
 |[message_not_found クラス](message-not-found-class.md)|このクラスは、要求されたメッセージがメッセージング ブロックで見つからない場合にスローされる例外を表します。|  
@@ -187,20 +187,20 @@ namespace concurrency;
   
 |名前|説明|  
 |----------|-----------------|  
-|[agent_status 列挙体](concurrency-namespace-enums.md#agent_status)|`agent` の有効な状態。|  
-|[Agents_EventType 列挙型](concurrency-namespace-enums.md#agents_eventtype)|エージェント ライブラリによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
-|[ConcRT_EventType 列挙型](concurrency-namespace-enums.md#concrt_eventtype)|同時実行ランタイムによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
-|[Concrt_TraceFlags 列挙型](concurrency-namespace-enums.md#concrt_traceflags)|イベントの種類のトレース フラグ。|  
-|[CriticalRegionType 列挙型](concurrency-namespace-enums.md#criticalregiontype)|コンテキストが存在するクリティカル領域の種類。|  
-|[DynamicProgressFeedbackType 列挙型](concurrency-namespace-enums.md#dynamicprogressfeedbacktype)|`DynamicProgressFeedback` ポリシーによって使用され、スケジューラのリソースのバランスを再調整する際の判断基準として、スケジューラから収集された統計情報に従うか、または `Activate` インターフェイスの `Deactivate` メソッドおよび `IVirtualProcessorRoot` メソッドの呼び出しによってアイドル状態との間で状態が変化する仮想プロセッサのみに基づくかを示します。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey 列挙体](concurrency-namespace-enums.md#policyelementkey)します。|  
-|[join_type 列挙体](concurrency-namespace-enums.md#join_type)|`join` メッセージング ブロックの種類。|  
-|[message_status 列挙型](concurrency-namespace-enums.md#message_status)|ブロックへの `message` オブジェクトの提供に対する有効な応答。|  
-|[PolicyElementKey 列挙型](concurrency-namespace-enums.md#policyelementkey)|ポリシー キーは、スケジューラの動作をさまざまな側面から表します。 各ポリシー要素は、キーと値の組み合わせで表現されます。 スケジューラのスケジューラ ポリシーとその影響に関する詳細については、次を参照してください。[タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)します。|  
-|[SchedulerType 列挙型](concurrency-namespace-enums.md#schedulertype)|基になる実行コンテキスト用にスケジューラが利用するスレッドの種類を示すために、`SchedulerKind` ポリシーにより使用されます。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey 列挙体](concurrency-namespace-enums.md#policyelementkey)します。|  
-|[SchedulingProtocolType 列挙型](concurrency-namespace-enums.md#schedulingprotocoltype)|スケジューラに使用されるスケジューリング アルゴリズムを記述するために、`SchedulingProtocol` ポリシーによって使用されます。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey 列挙体](concurrency-namespace-enums.md#policyelementkey)します。|  
-|[SwitchingProxyState 列挙型](concurrency-namespace-enums.md#switchingproxystate)|あるスレッド プロキシから別のスレッド プロキシへの協調的なコンテキスト切り替えを実行するときに、スレッド プロキシの状態を示すために使用します。|  
-|[task_group_status 列挙型](concurrency-namespace-enums.md#task_group_status)|`task_group` オブジェクトまたは `structured_task_group` オブジェクトの実行状態を示します。 この型の値は、タスク グループに対してスケジュールされたタスクが完了するのを待機している多数のメソッドによって返されます。|  
-|[WinRTInitializationType 列挙型](concurrency-namespace-enums.md#winrtinitializationtype)|`WinRTInitialization` ポリシーによって使用され、Windows 8 以上のオペレーティング システムで実行されるアプリケーション用のスケジューラ スレッドで、Windows ランタイムを初期化するかどうか、またどのように初期化するかを表します。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey 列挙体](concurrency-namespace-enums.md#policyelementkey)します。|  
+|[agent_status](concurrency-namespace-enums.md#agent_status)|`agent` の有効な状態。|  
+|[Agents_EventType](concurrency-namespace-enums.md#agents_eventtype)|エージェント ライブラリによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
+|[ConcRT_EventType](concurrency-namespace-enums.md#concrt_eventtype)|同時実行ランタイムによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
+|[Concrt_TraceFlags](concurrency-namespace-enums.md#concrt_traceflags)|イベントの種類のトレース フラグ。|  
+|[CriticalRegionType](concurrency-namespace-enums.md#criticalregiontype)|コンテキストが存在するクリティカル領域の種類。|  
+|[DynamicProgressFeedbackType](concurrency-namespace-enums.md#dynamicprogressfeedbacktype)|`DynamicProgressFeedback` ポリシーによって使用され、スケジューラのリソースのバランスを再調整する際の判断基準として、スケジューラから収集された統計情報に従うか、または `Activate` インターフェイスの `Deactivate` メソッドおよび `IVirtualProcessorRoot` メソッドの呼び出しによってアイドル状態との間で状態が変化する仮想プロセッサのみに基づくかを示します。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey](concurrency-namespace-enums.md#policyelementkey)します。|  
+|[join_type](concurrency-namespace-enums.md#join_type)|`join` メッセージング ブロックの種類。|  
+|[message_status](concurrency-namespace-enums.md#message_status)|ブロックへの `message` オブジェクトの提供に対する有効な応答。|  
+|[PolicyElementKey](concurrency-namespace-enums.md#policyelementkey)|ポリシー キーは、スケジューラの動作をさまざまな側面から表します。 各ポリシー要素は、キーと値の組み合わせで表現されます。 スケジューラのスケジューラ ポリシーとその影響に関する詳細については、次を参照してください。[タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)します。|  
+|[SchedulerType](concurrency-namespace-enums.md#schedulertype)|基になる実行コンテキスト用にスケジューラが利用するスレッドの種類を示すために、`SchedulerKind` ポリシーにより使用されます。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey](concurrency-namespace-enums.md#policyelementkey)します。|  
+|[SchedulingProtocolType](concurrency-namespace-enums.md#schedulingprotocoltype)|スケジューラに使用されるスケジューリング アルゴリズムを記述するために、`SchedulingProtocol` ポリシーによって使用されます。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey](concurrency-namespace-enums.md#policyelementkey)します。|  
+|[SwitchingProxyState](concurrency-namespace-enums.md#switchingproxystate)|あるスレッド プロキシから別のスレッド プロキシへの協調的なコンテキスト切り替えを実行するときに、スレッド プロキシの状態を示すために使用します。|  
+|[task_group_status](concurrency-namespace-enums.md#task_group_status)|`task_group` オブジェクトまたは `structured_task_group` オブジェクトの実行状態を示します。 この型の値は、タスク グループに対してスケジュールされたタスクが完了するのを待機している多数のメソッドによって返されます。|  
+|[WinRTInitializationType](concurrency-namespace-enums.md#winrtinitializationtype)|`WinRTInitialization` ポリシーによって使用され、Windows 8 以上のオペレーティング システムで実行されるアプリケーション用のスケジューラ スレッドで、Windows ランタイムを初期化するかどうか、またどのように初期化するかを表します。 使用可能なスケジューラ ポリシーの詳細については、次を参照してください。 [PolicyElementKey](concurrency-namespace-enums.md#policyelementkey)します。|  
   
 ### <a name="functions"></a>関数  
   
@@ -253,37 +253,37 @@ namespace concurrency;
   
 |名前|説明|  
 |----------|-----------------| 
-|[operator! = 演算子](concurrency-namespace-operators.md#operator_neq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトと等しくないかどうかを調べます。|  
-|[演算子 && 演算子](concurrency-namespace-operators.md#operator_amp_amp)|オーバーロードされます。 引数として指定された両方のタスクが正常に完了したときに正常に完了するタスクを作成します。|  
-|[operator | |演算子](concurrency-namespace-operators.md#operator_lor)|オーバーロードされます。 引数として指定されたいずれかのタスクが正常に完了したときに正常に完了するタスクを作成します。|  
-|[演算子<>](concurrency-namespace-operators.md#operator_lt)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトより小さいかどうかを調べます。|  
-|[演算子<=></=>](concurrency-namespace-operators.md#operator_lt_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の  `concurrent_vector` オブジェクト以下かどうかを調べます。|  
-|[operator = 演算子](concurrency-namespace-operators.md#operator_eq_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトと等しいかどうかを調べます。|  
-|[演算子 > 演算子](concurrency-namespace-operators.md#operator_gt)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトより大きいかどうかを調べます。|  
-|[演算子 > = 演算子](concurrency-namespace-operators.md#operator_lt_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクト以上であるかどうかを調べます。|  
+|[operator!=](concurrency-namespace-operators.md#operator_neq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトと等しくないかどうかを調べます。|  
+|[operator&&](concurrency-namespace-operators.md#operator_amp_amp)|オーバーロードされます。 引数として指定された両方のタスクが正常に完了したときに正常に完了するタスクを作成します。|  
+|[operator&#124;&#124;](concurrency-namespace-operators.md#operator_lor)|オーバーロードされます。 引数として指定されたいずれかのタスクが正常に完了したときに正常に完了するタスクを作成します。|  
+|[operator<](concurrency-namespace-operators.md#operator_lt)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトより小さいかどうかを調べます。|  
+|[operator<=](concurrency-namespace-operators.md#operator_lt_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の  `concurrent_vector` オブジェクト以下かどうかを調べます。|  
+|[operator==](concurrency-namespace-operators.md#operator_eq_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトと等しいかどうかを調べます。|  
+|[operator>](concurrency-namespace-operators.md#operator_gt)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクトより大きいかどうかを調べます。|  
+|[operator>=](concurrency-namespace-operators.md#operator_lt_eq)|演算子の左側の `concurrent_vector` オブジェクトが右側の `concurrent_vector` オブジェクト以上であるかどうかを調べます。|  
   
 ### <a name="constants"></a>定数  
   
 |名前|説明|  
 |----------|-----------------|  
-|[AgentEventGuid 定数](concurrency-namespace-constants1.md#agenteventguid)|同時実行ランタイムのエージェント ライブラリによって生成される ETW イベントを表すカテゴリの GUID ({B9B5B78C-0713-4898-A21A-C67949DCED07})。|  
-|[ChoreEventGuid 定数](concurrency-namespace-constants1.md#choreeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、作業またはタスクに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[ConcRT_ProviderGuid 定数](concurrency-namespace-constants1.md#concrt_providerguid)|同時実行ランタイムの ETW プロバイダーの GUID。|  
-|[CONCRT_RM_VERSION_1 定数](concurrency-namespace-constants1.md#concrt_rm_version_1)|Visual Studio 2010 で定義されているリソース マネージャー インターフェイスのサポートを示します。|  
-|[ConcRTEventGuid 定数](concurrency-namespace-constants1.md#concrteventguid)|同時実行ランタイムによって生成される ETW イベントのうち、別のカテゴリで具体的に説明されていない ETW イベントを表すカテゴリの GUID。|  
-|[ContextEventGuid 定数](concurrency-namespace-constants1.md#contexteventguid)|同時実行ランタイムによって生成される ETW イベントのうち、コンテキストに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[COOPERATIVE_TIMEOUT_INFINITE 定数](concurrency-namespace-constants1.md#cooperative_timeout_infinite)|待機がタイムアウトしないことを示す値。|  
-|[COOPERATIVE_WAIT_TIMEOUT 定数](concurrency-namespace-constants1.md#cooperative_wait_timeout)|待機がタイムアウトしたことを示す値。|  
-|[INHERIT_THREAD_PRIORITY 定数](concurrency-namespace-constants1.md#inherit_thread_priority)|スケジューラのすべてのコンテキストのスレッド優先順位が、スケジューラを作成したスレッドの優先順位と同じになることを示す `ContextPriority` ポリシー キーの特別な値。|  
-|[LockEventGuid 定数](concurrency-namespace-constants1.md#lockeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、ロックに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[MaxExecutionResources 定数](concurrency-namespace-constants1.md#maxexecutionresources)|`MinConcurrency` ポリシー キーおよび `MaxConcurrency` ポリシー キーの特殊な値。 他の制約が存在しない場合、既定でコンピューター上のハードウェア スレッドの数になります。|  
-|[PPLParallelForeachEventGuid 定数](concurrency-namespace-constants1.md#pplparallelforeacheventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for_each` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[PPLParallelForEventGuid 定数](concurrency-namespace-constants1.md#pplparallelforeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[PPLParallelInvokeEventGuid 定数](concurrency-namespace-constants1.md#pplparallelinvokeeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_invoke` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[ResourceManagerEventGuid 定数](concurrency-namespace-constants1.md#resourcemanagereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、リソース マネージャーに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[ScheduleGroupEventGuid 定数](concurrency-namespace-constants1.md#schedulegroupeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジュール グループに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[SchedulerEventGuid 定数](concurrency-namespace-constants1.md#schedulereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジューラ アクティビティに直接関係する ETW イベントを表すカテゴリの GUID。|  
-|[VirtualProcessorEventGuid 定数](concurrency-namespace-constants1.md#virtualprocessoreventguid)|同時実行ランタイムによって生成される ETW イベントのうち、仮想プロセッサに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[AgentEventGuid](concurrency-namespace-constants1.md#agenteventguid)|同時実行ランタイムのエージェント ライブラリによって生成される ETW イベントを表すカテゴリの GUID ({B9B5B78C-0713-4898-A21A-C67949DCED07})。|  
+|[ChoreEventGuid](concurrency-namespace-constants1.md#choreeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、作業またはタスクに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[ConcRT_ProviderGuid](concurrency-namespace-constants1.md#concrt_providerguid)|同時実行ランタイムの ETW プロバイダーの GUID。|  
+|[CONCRT_RM_VERSION_1](concurrency-namespace-constants1.md#concrt_rm_version_1)|Visual Studio 2010 で定義されているリソース マネージャー インターフェイスのサポートを示します。|  
+|[ConcRTEventGuid](concurrency-namespace-constants1.md#concrteventguid)|同時実行ランタイムによって生成される ETW イベントのうち、別のカテゴリで具体的に説明されていない ETW イベントを表すカテゴリの GUID。|  
+|[ContextEventGuid](concurrency-namespace-constants1.md#contexteventguid)|同時実行ランタイムによって生成される ETW イベントのうち、コンテキストに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[COOPERATIVE_TIMEOUT_INFINITE](concurrency-namespace-constants1.md#cooperative_timeout_infinite)|待機がタイムアウトしないことを示す値。|  
+|[COOPERATIVE_WAIT_TIMEOUT](concurrency-namespace-constants1.md#cooperative_wait_timeout)|待機がタイムアウトしたことを示す値。|  
+|[INHERIT_THREAD_PRIORITY](concurrency-namespace-constants1.md#inherit_thread_priority)|スケジューラのすべてのコンテキストのスレッド優先順位が、スケジューラを作成したスレッドの優先順位と同じになることを示す `ContextPriority` ポリシー キーの特別な値。|  
+|[LockEventGuid](concurrency-namespace-constants1.md#lockeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、ロックに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[MaxExecutionResources](concurrency-namespace-constants1.md#maxexecutionresources)|`MinConcurrency` ポリシー キーおよび `MaxConcurrency` ポリシー キーの特殊な値。 他の制約が存在しない場合、既定でコンピューター上のハードウェア スレッドの数になります。|  
+|[PPLParallelForeachEventGuid](concurrency-namespace-constants1.md#pplparallelforeacheventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for_each` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[PPLParallelForEventGuid](concurrency-namespace-constants1.md#pplparallelforeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[PPLParallelInvokeEventGuid](concurrency-namespace-constants1.md#pplparallelinvokeeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、`parallel_invoke` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[ResourceManagerEventGuid](concurrency-namespace-constants1.md#resourcemanagereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、リソース マネージャーに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[ScheduleGroupEventGuid](concurrency-namespace-constants1.md#schedulegroupeventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジュール グループに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[SchedulerEventGuid](concurrency-namespace-constants1.md#schedulereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジューラ アクティビティに直接関係する ETW イベントを表すカテゴリの GUID。|  
+|[VirtualProcessorEventGuid](concurrency-namespace-constants1.md#virtualprocessoreventguid)|同時実行ランタイムによって生成される ETW イベントのうち、仮想プロセッサに直接関係する ETW イベントを表すカテゴリの GUID。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** agents.h、concrt.h、concrtrm.h、concurrent_priority_queue.h、concurrent_queue.h、concurrent_unordered_map.h、concurrent_unordered_set.h、concurrent_vector.h、internal_concurrent_hash.h、internal_split_ordered_list.h、ppl.h、pplcancellation_token.h、pplconcrt.h、pplinterface.h、ppltasks.h  

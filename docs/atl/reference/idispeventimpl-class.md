@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IDispEventImpl
+- ATLCOM/ATL::IDispEventImpl
+- ATLCOM/ATL::IDispEventImpl::IDispEventImpl
+- ATLCOM/ATL::IDispEventImpl::GetFuncInfoFromId
+- ATLCOM/ATL::IDispEventImpl::GetIDsOfNames
+- ATLCOM/ATL::IDispEventImpl::GetTypeInfo
+- ATLCOM/ATL::IDispEventImpl::GetTypeInfoCount
+- ATLCOM/ATL::IDispEventImpl::GetUserDefinedType
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -135,7 +142,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namegetfuncinfofromida--idispeventimplgetfuncinfofromid"></a><a name="getfuncinfofromid"></a>IDispEventImpl::GetFuncInfoFromId  
+##  <a name="getfuncinfofromid"></a>IDispEventImpl::GetFuncInfoFromId  
  指定したディスパッチ識別子の関数のインデックスを検索します。  
   
 ```
@@ -162,7 +169,7 @@ HRESULT GetFuncInfoFromId(
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namegetidsofnamesa--idispeventimplgetidsofnames"></a><a name="getidsofnames"></a>IDispEventImpl::GetIDsOfNames  
+##  <a name="getidsofnames"></a>IDispEventImpl::GetIDsOfNames  
  1 つのメンバーおよびオプションの引数の名前のセットに対応する整数への後続の呼び出しで使用できる Dispid セットを対応付けます[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)します。  
   
 ```
@@ -177,7 +184,7 @@ STDMETHOD(GetIDsOfNames)(
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetIDsOfNames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegettypeinfoa--idispeventimplgettypeinfo"></a><a name="gettypeinfo"></a>IDispEventImpl::GetTypeInfo  
+##  <a name="gettypeinfo"></a>IDispEventImpl::GetTypeInfo  
  オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。  
   
 ```
@@ -189,7 +196,7 @@ STDMETHOD(GetTypeInfo)(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegettypeinfocounta--idispeventimplgettypeinfocount"></a><a name="gettypeinfocount"></a>IDispEventImpl::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>IDispEventImpl::GetTypeInfoCount  
  オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。  
   
 ```
@@ -199,7 +206,7 @@ STDMETHOD(GetTypeInfoCount)(UINT* pctinfo);
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetuserdefinedtypea--idispeventimplgetuserdefinedtype"></a><a name="getuserdefinedtype"></a>IDispEventImpl::GetUserDefinedType  
+##  <a name="getuserdefinedtype"></a>IDispEventImpl::GetUserDefinedType  
  ユーザー定義型の基本の種類を取得します。  
   
 ```
@@ -221,14 +228,14 @@ VARTYPE GetUserDefinedType(
 ### <a name="remarks"></a>コメント  
  参照してください[ITypeInfo::GetRefTypeInfo](http://msdn.microsoft.com/en-us/61d3b31d-6591-4e55-9e82-5246a168be00)します。  
   
-##  <a name="a-nameidispeventimpla--idispeventimplidispeventimpl"></a><a name="idispeventimpl"></a>IDispEventImpl::IDispEventImpl  
+##  <a name="idispeventimpl"></a>IDispEventImpl::IDispEventImpl  
  コンストラクターです。 クラス テンプレート パラメーターの値を格納`plibid`、 `pdiid`、 `wMajor`、および`wMinor`です。  
   
 ```
 IDispEventImpl();
 ```  
   
-##  <a name="a-nametihclassa--idispeventimpltihclass"></a><a name="tihclass"></a>IDispEventImpl::tihclass  
+##  <a name="tihclass"></a>IDispEventImpl::tihclass  
  この typedef クラス テンプレート パラメーターのインスタンスである`tihclass`です。  
   
 ```

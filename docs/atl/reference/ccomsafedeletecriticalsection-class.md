@@ -10,8 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComSafeDeleteCriticalSection
-- ATL::CComSafeDeleteCriticalSection
-- ATL.CComSafeDeleteCriticalSection
+- ATLCORE/ATL::CComSafeDeleteCriticalSection
+- ATLCORE/ATL::CComSafeDeleteCriticalSection::CComSafeDeleteCriticalSection
+- ATLCORE/ATL::CComSafeDeleteCriticalSection::Init
+- ATLCORE/ATL::CComSafeDeleteCriticalSection::Lock
+- ATLCORE/ATL::CComSafeDeleteCriticalSection::Term
+- ATLCORE/ATL::m_bInitialized
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -88,7 +92,7 @@ class CComSafeDeleteCriticalSection : public CComCriticalSection
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
   
-##  <a name="a-nameccomsafedeletecriticalsectiona--ccomsafedeletecriticalsectionccomsafedeletecriticalsection"></a><a name="ccomsafedeletecriticalsection"></a>CComSafeDeleteCriticalSection::CComSafeDeleteCriticalSection  
+##  <a name="ccomsafedeletecriticalsection"></a>CComSafeDeleteCriticalSection::CComSafeDeleteCriticalSection  
  コンストラクターです。  
   
 ```
@@ -98,7 +102,7 @@ CComSafeDeleteCriticalSection();
 ### <a name="remarks"></a>コメント  
  セット、 [m_bInitialized](#m_binitialized)データ メンバーを**false**します。  
   
-##  <a name="a-namedtora--ccomsafedeletecriticalsectionccomsafedeletecriticalsection"></a><a name="dtor"></a>CComSafeDeleteCriticalSection:: ~ CComSafeDeleteCriticalSection  
+##  <a name="dtor"></a>CComSafeDeleteCriticalSection:: ~ CComSafeDeleteCriticalSection  
  デストラクターです。  
   
 ```
@@ -108,7 +112,7 @@ CComSafeDeleteCriticalSection();
 ### <a name="remarks"></a>コメント  
  内部解放**CRITICAL_SECTION**メモリからオブジェクトの場合、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**します。  
   
-##  <a name="a-nameinita--ccomsafedeletecriticalsectioninit"></a><a name="init"></a>CComSafeDeleteCriticalSection::Init  
+##  <a name="init"></a>CComSafeDeleteCriticalSection::Init  
  基本クラス実装を呼び出して[Init](/visualstudio/debugger/init)設定と[m_bInitialized](#m_binitialized)に**true**正常終了した場合。  
   
 ```
@@ -118,7 +122,7 @@ HRESULT Init() throw();
 ### <a name="return-value"></a>戻り値  
  結果を返す[CComCriticalSection::Init](../../atl/reference/ccomcriticalsection-class.md#init)します。  
   
-##  <a name="a-namelocka--ccomsafedeletecriticalsectionlock"></a><a name="lock"></a>CComSafeDeleteCriticalSection::Lock  
+##  <a name="lock"></a>CComSafeDeleteCriticalSection::Lock  
 基本クラス実装を呼び出して[ロック](ccomcriticalsection-class.md#lock)します。  
 
   
@@ -134,7 +138,7 @@ HRESULT Lock();
   
  関数の動作の詳細についてを参照してください[CComCriticalSection::Lock](../../atl/reference/ccomcriticalsection-class.md#lock)します。  
   
-##  <a name="a-namembinitializeda--ccomsafedeletecriticalsectionmbinitialized"></a><a name="m_binitialized"></a>CComSafeDeleteCriticalSection::m_bInitialized  
+##  <a name="m_binitialized"></a>CComSafeDeleteCriticalSection::m_bInitialized  
  フラグかどうか、内部**CRITICAL_SECTION**オブジェクトが初期化されています。  
   
 ```
@@ -144,7 +148,7 @@ bool m_bInitialized;
 ### <a name="remarks"></a>コメント  
  **M_bInitialized**データ メンバーが、基になるの有効性を追跡するために使用される**CRITICAL_SECTION**オブジェクトに関連付けられている、 [CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md)クラスです。 基になる**CRITICAL_SECTION**オブジェクトは、このフラグに設定されていない場合、メモリから解放するのには試行されません**true**します。  
   
-##  <a name="a-nameterma--ccomsafedeletecriticalsectionterm"></a><a name="term"></a>CComSafeDeleteCriticalSection::Term  
+##  <a name="term"></a>CComSafeDeleteCriticalSection::Term  
  基本クラス実装を呼び出して[CComCriticalSection::Term](../../atl/reference/ccomcriticalsection-class.md#term)場合は、内部**CRITICAL_SECTION**オブジェクトが無効です。  
   
 ```

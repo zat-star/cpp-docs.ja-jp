@@ -100,9 +100,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 51769d252d82ff1f307517a93ce01e22b8b69fdd
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: ca5d8270f04240f99fa6735ea8235c2e077dfa01
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="norm3-class"></a>norm_3 クラス
@@ -132,55 +132,55 @@ class norm_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_3::get_x メソッド||  
-|norm_3::get_xy メソッド||  
-|norm_3::get_xyz メソッド||  
-|norm_3::get_xz メソッド||  
-|norm_3::get_xzy メソッド||  
-|norm_3::get_y メソッド||  
-|norm_3::get_yx メソッド||  
-|norm_3::get_yxz メソッド||  
-|norm_3::get_yz メソッド||  
-|norm_3::get_yzx メソッド||  
-|norm_3::get_z メソッド||  
-|norm_3::get_zx メソッド||  
-|norm_3::get_zxy メソッド||  
-|norm_3::get_zy メソッド||  
-|norm_3::get_zyx メソッド||  
-|norm_3::ref_b メソッド||  
-|norm_3::ref_g メソッド||  
-|norm_3::ref_r メソッド||  
-|norm_3::ref_x メソッド||  
-|norm_3::ref_y メソッド||  
-|norm_3::ref_z メソッド||  
-|norm_3::set_x メソッド||  
-|norm_3::set_xy メソッド||  
-|norm_3::set_xyz メソッド||  
-|norm_3::set_xz メソッド||  
-|norm_3::set_xzy メソッド||  
-|norm_3::set_y メソッド||  
-|norm_3::set_yx メソッド||  
-|norm_3::set_yxz メソッド||  
-|norm_3::set_yz メソッド||  
-|norm_3::set_yzx メソッド||  
-|norm_3::set_z メソッド||  
-|norm_3::set_zx メソッド||  
-|norm_3::set_zxy メソッド||  
-|norm_3::set_zy メソッド||  
-|norm_3::set_zyx メソッド||  
+|norm_3::get_x||  
+|norm_3::get_xy||  
+|norm_3::get_xyz||  
+|norm_3::get_xz||  
+|norm_3::get_xzy||  
+|norm_3::get_y||  
+|norm_3::get_yx||  
+|norm_3::get_yxz||  
+|norm_3::get_yz||  
+|norm_3::get_yzx||  
+|norm_3::get_z||  
+|norm_3::get_zx||  
+|norm_3::get_zxy||  
+|norm_3::get_zy||  
+|norm_3::get_zyx||  
+|norm_3::ref_b||  
+|norm_3::ref_g||  
+|norm_3::ref_r||  
+|norm_3::ref_x||  
+|norm_3::ref_y||  
+|norm_3::ref_z||  
+|norm_3::set_x||  
+|norm_3::set_xy||  
+|norm_3::set_xyz||  
+|norm_3::set_xz||  
+|norm_3::set_xzy||  
+|norm_3::set_y||  
+|norm_3::set_yx||  
+|norm_3::set_yxz||  
+|norm_3::set_yz||  
+|norm_3::set_yzx||  
+|norm_3::set_z||  
+|norm_3::set_zx||  
+|norm_3::set_zxy||  
+|norm_3::set_zy||  
+|norm_3::set_zyx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_3::operator- 演算子||  
-|norm_3::operator-- 演算子||  
-|norm_3::operator*= 演算子||  
-|norm_3::operator/= 演算子||  
-|norm_3::operator++ 演算子||  
-|norm_3::operator+= 演算子||  
-|norm_3::operator= 演算子||  
-|norm_3::operator-= 演算子||  
+|norm_3:-||  
+|norm_3:--||  
+|norm_3::operator * =||  
+|norm_3::operator/=||  
+|norm_3::operator++||  
+|norm_3::operator + = 演算子||  
+|norm_3::operator =||  
+|norm_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -192,36 +192,36 @@ class norm_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_3::b データ メンバー||  
-|norm_3::bg データ メンバー||  
-|norm_3::bgr データ メンバー||  
-|norm_3::br データ メンバー||  
-|norm_3::brg データ メンバー||  
-|norm_3::g データ メンバー||  
-|norm_3::gb データ メンバー||  
-|norm_3::gbr データ メンバー||  
-|norm_3::gr データ メンバー||  
-|norm_3::grb データ メンバー||  
-|norm_3::r データ メンバー||  
-|norm_3::rb データ メンバー||  
-|norm_3::rbg データ メンバー||  
-|norm_3::rg データ メンバー||  
-|norm_3::rgb データ メンバー||  
-|norm_3::x データ メンバー||  
-|norm_3::xy データ メンバー||  
-|norm_3::xyz データ メンバー||  
-|norm_3::xz データ メンバー||  
-|norm_3::xzy データ メンバー||  
-|norm_3::y データ メンバー||  
-|norm_3::yx データ メンバー||  
-|norm_3::yxz データ メンバー||  
-|norm_3::yz データ メンバー||  
-|norm_3::yzx データ メンバー||  
-|norm_3::z データ メンバー||  
-|norm_3::zx データ メンバー||  
-|norm_3::zxy データ メンバー||  
-|norm_3::zy データ メンバー||  
-|norm_3::zyx データ メンバー||  
+|norm_3::b||  
+|norm_3::bg||  
+|norm_3::bgr||  
+|norm_3::br||  
+|norm_3::brg||  
+|norm_3::g||  
+|norm_3::gb||  
+|norm_3::gbr||  
+|norm_3::gr||  
+|norm_3::grb||  
+|norm_3::r||  
+|norm_3::rb||  
+|norm_3::rbg||  
+|norm_3::rg||  
+|norm_3::rgb||  
+|norm_3::x||  
+|norm_3::xy||  
+|norm_3::xyz||  
+|norm_3::xz||  
+|norm_3::xzy||  
+|norm_3::y||  
+|norm_3::yx||  
+|norm_3::yxz||  
+|norm_3::yz||  
+|norm_3::yzx||  
+|norm_3::z||  
+|norm_3::zx||  
+|norm_3::zxy||  
+|norm_3::zy||  
+|norm_3::zyx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm_3`  
@@ -231,7 +231,7 @@ class norm_3;
   
  **Namespace:** concurrency::graphics  
 
-## <a name="a-namectora-norm3-constructor"></a><a name="ctor"></a>norm_3 コンス トラクター
+## <a name="ctor"></a>norm_3 コンス トラクター
 既定のコンストラクター。すべての要素を 0 で初期化します。  
   
 ## <a name="syntax"></a>構文  
@@ -303,5 +303,5 @@ static const int size = 3;
 ```   
  
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

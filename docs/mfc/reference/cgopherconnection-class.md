@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CGopherConnection
+- AFXINET/CGopherConnection
+- AFXINET/CGopherConnection::CGopherConnection
+- AFXINET/CGopherConnection::CreateLocator
+- AFXINET/CGopherConnection::GetAttribute
+- AFXINET/CGopherConnection::OpenFile
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +100,7 @@ class CGopherConnection : public CInternetConnection
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namecgopherconnectiona--cgopherconnectioncgopherconnection"></a><a name="cgopherconnection"></a>CGopherConnection::CGopherConnection  
+##  <a name="cgopherconnection"></a>CGopherConnection::CGopherConnection  
  このメンバー関数が作成すると呼ばれる、`CGopherConnection`オブジェクトです。  
   
 ```  
@@ -147,7 +152,7 @@ CGopherConnection(
 ### <a name="remarks"></a>コメント  
  作成しないで、`CGopherConnection`直接します。 代わりに、呼び出す[代わり](../../mfc/reference/cinternetsession-class.md#getgopherconnection)を作成する、`CGopherConnection`オブジェクトし、ポインターを返します。  
   
-##  <a name="a-namecreatelocatora--cgopherconnectioncreatelocator"></a><a name="createlocator"></a>CGopherConnection::CreateLocator  
+##  <a name="createlocator"></a>CGopherConnection::CreateLocator  
  検索または gopher サーバー上のファイルを識別する gopher ロケーターを作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -194,7 +199,7 @@ static CGopherLocator CreateLocator(
   
  Gopher サーバーから情報を取得するために、アプリケーションはまず gopher ロケーターを取得する必要があります。 アプリケーションはロケーターを不透明なトークンとして扱う必要がありますし、(は、アプリケーションことができます、ロケーターを使ってが直接ではなく操作または比較)。 アプリケーションは、ロケーターを使用して、呼び出しのために通常は、 [CGopherFileFind::FindFile](../../mfc/reference/cgopherfilefind-class.md#findfile)特定の情報を取得します。  
   
-##  <a name="a-namegetattributea--cgopherconnectiongetattribute"></a><a name="getattribute"></a>CGopherConnection::GetAttribute  
+##  <a name="getattribute"></a>CGopherConnection::GetAttribute  
  Gopher サーバーから、その項目に関する情報を特定の属性を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -216,7 +221,7 @@ BOOL GetAttribute(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
   
-##  <a name="a-nameopenfilea--cgopherconnectionopenfile"></a><a name="openfile"></a>CGopherConnection::OpenFile  
+##  <a name="openfile"></a>CGopherConnection::OpenFile  
  Gopher サーバー上のファイルを開くには、このメンバー関数を呼び出します。  
   
 ```  

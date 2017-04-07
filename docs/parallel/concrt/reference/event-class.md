@@ -9,7 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::event
+- event
+- CONCRT/concurrency::event
+- CONCRT/concurrency::event::reset
+- CONCRT/concurrency::event::set
+- CONCRT/concurrency::event::wait
+- CONCRT/concurrency::event::wait_for_multiple
+- CONCRT/concurrency::event::timeout_infinite
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: abda6512f391b59cb48c8e96a489714ee117ae68
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: f858bfad08ca8d62c42556c54b505908b7122569
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="event-class"></a>event クラス
@@ -60,16 +66,16 @@ class event;
   
 |名前|説明|  
 |----------|-----------------|  
-|[reset メソッド](#reset)|イベントを非シグナル状態にリセットします。|  
-|[set メソッド](#set)|イベントを通知します。|  
-|[wait メソッド](#wait)|イベントがシグナル状態になるのを待機します。|  
-|[wait_for_multiple メソッド](#wait_for_multiple)|複数のイベントがシグナル状態になるのを待機します。|  
+|[reset](#reset)|イベントを非シグナル状態にリセットします。|  
+|[set](#set)|イベントを通知します。|  
+|[待機](#wait)|イベントがシグナル状態になるのを待機します。|  
+|[wait_for_multiple](#wait_for_multiple)|複数のイベントがシグナル状態になるのを待機します。|  
   
 ### <a name="public-constants"></a>パブリック定数  
   
 |名前|説明|  
 |----------|-----------------|  
-|[timeout_infinite 定数](#timeout_infinite)|待機がタイムアウトしないことを示す値。|  
+|[timeout_infinite](#timeout_infinite)|待機がタイムアウトしないことを示す値。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[同期データ構造](../../../parallel/concrt/synchronization-data-structures.md)します。  
@@ -82,7 +88,7 @@ class event;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-event"></a><a name="ctor"></a>イベント 
+##  <a name="ctor"></a>イベント 
 
  新しいイベントを構築します。  
   
@@ -92,7 +98,7 @@ _CRTIMP event();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedtora-event"></a><a name="dtor"></a>~ イベント 
+##  <a name="dtor"></a>~ イベント 
 
  イベントを破棄します。  
   
@@ -103,7 +109,7 @@ _CRTIMP event();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるとイベントで待機するスレッドがなくなると想定されます。 まだ待機しているスレッドと共にイベントが破棄されるようにすると、未定義の動作が発生します。  
   
-##  <a name="a-namereseta-reset"></a><a name="reset"></a>リセット 
+##  <a name="reset"></a>リセット 
 
  イベントを非シグナル状態にリセットします。  
   
@@ -111,7 +117,7 @@ _CRTIMP event();
 void reset();
 ```  
   
-##  <a name="a-nameseta-set"></a><a name="set"></a>設定 
+##  <a name="set"></a>設定 
 
  イベントを通知します。  
   
@@ -122,7 +128,7 @@ void set();
 ### <a name="remarks"></a>コメント  
  イベントを通知すると、イベントを待機している任意の数のコンテキストが実行できるようになります。  
   
-##  <a name="a-nametimeoutinfinitea-timeoutinfinite"></a><a name="timeout_infinite"></a>timeout_infinite 
+##  <a name="timeout_infinite"></a>timeout_infinite 
 
  待機がタイムアウトしないことを示す値。  
   
@@ -130,7 +136,7 @@ void set();
 static const unsigned int timeout_infinite = COOPERATIVE_TIMEOUT_INFINITE;
 ```  
   
-##  <a name="a-namewaita-wait"></a><a name="wait"></a>待機 
+##  <a name="wait"></a>待機 
 
  イベントがシグナル状態になるのを待機します。  
   
@@ -148,7 +154,7 @@ size_t wait(unsigned int _Timeout = COOPERATIVE_TIMEOUT_INFINITE);
 > [!IMPORTANT]
 >  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、この呼び出しが現在のスレッドをブロックし、アプリケーションが応答しなくなる場合があるため、ASTA スレッドで `wait` を呼び出さないでください。  
   
-##  <a name="a-namewaitformultiplea-waitformultiple"></a><a name="wait_for_multiple"></a>wait_for_multiple 
+##  <a name="wait_for_multiple"></a>wait_for_multiple 
 
  複数のイベントがシグナル状態になるのを待機します。  
   
@@ -183,5 +189,5 @@ static size_t __cdecl wait_for_multiple(
 >  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、この呼び出しが現在のスレッドをブロックし、アプリケーションが応答しなくなる場合があるため、ASTA スレッドで `wait_for_multiple` を呼び出さないでください。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

@@ -10,6 +10,30 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDocument
+- AFXOLE/COleDocument
+- AFXOLE/COleDocument::COleDocument
+- AFXOLE/COleDocument::AddItem
+- AFXOLE/COleDocument::ApplyPrintDevice
+- AFXOLE/COleDocument::EnableCompoundFile
+- AFXOLE/COleDocument::GetInPlaceActiveItem
+- AFXOLE/COleDocument::GetNextClientItem
+- AFXOLE/COleDocument::GetNextItem
+- AFXOLE/COleDocument::GetNextServerItem
+- AFXOLE/COleDocument::GetPrimarySelectedItem
+- AFXOLE/COleDocument::GetStartPosition
+- AFXOLE/COleDocument::HasBlankItems
+- AFXOLE/COleDocument::OnShowViews
+- AFXOLE/COleDocument::RemoveItem
+- AFXOLE/COleDocument::UpdateModifiedFlag
+- AFXOLE/COleDocument::OnEditChangeIcon
+- AFXOLE/COleDocument::OnEditConvert
+- AFXOLE/COleDocument::OnEditLinks
+- AFXOLE/COleDocument::OnFileSendMail
+- AFXOLE/COleDocument::OnUpdateEditChangeIcon
+- AFXOLE/COleDocument::OnUpdateEditLinksMenu
+- AFXOLE/COleDocument::OnUpdateObjectVerbMenu
+- AFXOLE/COleDocument::OnUpdatePasteLinkMenu
+- AFXOLE/COleDocument::OnUpdatePasteMenu
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -116,7 +140,7 @@ class COleDocument : public CDocument
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-nameadditema--coledocumentadditem"></a><a name="additem"></a>COleDocument::AddItem  
+##  <a name="additem"></a>COleDocument::AddItem  
  この関数では、ドキュメントに項目を追加します。  
   
 ```  
@@ -130,7 +154,7 @@ virtual void AddItem(CDocItem* pItem);
 ### <a name="remarks"></a>コメント  
  呼び出された場合に、この関数を明示的に呼び出す必要はありません、`COleClientItem`または`COleServerItem`ドキュメントへのポインターを受け取るコンス トラクターです。  
   
-##  <a name="a-nameapplyprintdevicea--coledocumentapplyprintdevice"></a><a name="applyprintdevice"></a>COleDocument::ApplyPrintDevice  
+##  <a name="applyprintdevice"></a>COleDocument::ApplyPrintDevice  
  埋め込まれているすべての出力先のデバイスを変更するには、この関数を呼び出す[COleClientItem](../../mfc/reference/coleclientitem-class.md)アプリケーションのコンテナー ドキュメント内の項目。  
   
 ```  
@@ -157,14 +181,14 @@ BOOL ApplyPrintDevice(const PRINTDLG* ppd);
   
  詳細については、次を参照してください。、 [DVTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/ms686613)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecoledocumenta--coledocumentcoledocument"></a><a name="coledocument"></a>COleDocument::COleDocument  
+##  <a name="coledocument"></a>COleDocument::COleDocument  
  `COleDocument` オブジェクトを構築します。  
   
 ```  
 COleDocument();
 ```  
   
-##  <a name="a-nameenablecompoundfilea--coledocumentenablecompoundfile"></a><a name="enablecompoundfile"></a>COleDocument::EnableCompoundFile  
+##  <a name="enablecompoundfile"></a>COleDocument::EnableCompoundFile  
  複合ファイル形式を使用してドキュメントを格納する場合は、この関数を呼び出します。  
   
 ```  
@@ -182,7 +206,7 @@ void EnableCompoundFile(BOOL bEnable = TRUE);
   
  複合ファイルのサポートを有効になっているまたはドキュメントで無効にすると、ドキュメントの有効期間中に、設定を変更できません必要があります。  
   
-##  <a name="a-namegetinplaceactiveitema--coledocumentgetinplaceactiveitem"></a><a name="getinplaceactiveitem"></a>COleDocument::GetInPlaceActiveItem  
+##  <a name="getinplaceactiveitem"></a>COleDocument::GetInPlaceActiveItem  
  識別されるビューを含むフレーム ウィンドウ内の場所に項目を OLE を取得するには、この関数の呼び出しが現在アクティブ`pWnd`します。  
   
 ```  
@@ -196,7 +220,7 @@ virtual COleClientItem* GetInPlaceActiveItem(CWnd* pWnd);
 ### <a name="return-value"></a>戻り値  
  1 つ、インプレース アクティブ OLE アイテムへのポインター**NULL**かどうか項目がない OLE 現在「インプレース アクティブ」状態にします。  
   
-##  <a name="a-namegetnextclientitema--coledocumentgetnextclientitem"></a><a name="getnextclientitem"></a>COleDocument::GetNextClientItem  
+##  <a name="getnextclientitem"></a>COleDocument::GetNextClientItem  
  この関数へのアクセス、文書内のクライアント アイテムの各繰り返しを呼び出します。  
   
 ```  
@@ -216,7 +240,7 @@ COleClientItem* GetNextClientItem(POSITION& pos) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#1;](../../mfc/codesnippet/cpp/coledocument-class_1.cpp)]  
   
-##  <a name="a-namegetnextitema--coledocumentgetnextitem"></a><a name="getnextitem"></a>COleDocument::GetNextItem  
+##  <a name="getnextitem"></a>COleDocument::GetNextItem  
  この関数では、各ドキュメント内のアイテムにアクセスするには、繰り返しです。  
   
 ```  
@@ -236,7 +260,7 @@ virtual CDocItem* GetNextItem(POSITION& pos) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleContainer&#2;](../../mfc/codesnippet/cpp/coledocument-class_2.cpp)]  
   
-##  <a name="a-namegetnextserveritema--coledocumentgetnextserveritem"></a><a name="getnextserveritem"></a>COleDocument::GetNextServerItem  
+##  <a name="getnextserveritem"></a>COleDocument::GetNextServerItem  
  この関数へのアクセス サーバーのアイテム、ドキュメント内の各繰り返しを呼び出します。  
   
 ```  
@@ -256,7 +280,7 @@ COleServerItem* GetNextServerItem(POSITION& pos) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCOleServer&#2;](../../mfc/codesnippet/cpp/coledocument-class_3.cpp)]  
   
-##  <a name="a-namegetprimaryselecteditema--coledocumentgetprimaryselecteditem"></a><a name="getprimaryselecteditem"></a>COleDocument::GetPrimarySelectedItem  
+##  <a name="getprimaryselecteditem"></a>COleDocument::GetPrimarySelectedItem  
  指定したビューで現在選択されている OLE アイテムを取り出すためにフレームワークによって呼び出されます。  
   
 ```  
@@ -273,7 +297,7 @@ virtual COleClientItem* GetPrimarySelectedItem(CView* pView);
 ### <a name="remarks"></a>コメント  
  既定の実装では、保持されている OLE の一覧に&1; つ選択したアイテムのアイテムを検索し、ポインターを返します。 選択すると、項目がないかどうか、または複数の項目が選択されている、関数を返します**NULL**します。 オーバーライドする必要があります、`CView::IsSelected`この機能が動作するようにビュー クラスのメンバー関数。 OLE アイテムを格納する、独自のメソッドがある場合は、この関数をオーバーライドします。  
   
-##  <a name="a-namegetstartpositiona--coledocumentgetstartposition"></a><a name="getstartposition"></a>COleDocument::GetStartPosition  
+##  <a name="getstartposition"></a>COleDocument::GetStartPosition  
  この関数では、ドキュメント内の最初の項目の位置を取得します。  
   
 ```  
@@ -286,7 +310,7 @@ virtual POSITION GetStartPosition() const;
 ### <a name="remarks"></a>コメント  
  返された値を渡す`GetNextItem`、 `GetNextClientItem`、または`GetNextServerItem`です。  
   
-##  <a name="a-namehasblankitemsa--coledocumenthasblankitems"></a><a name="hasblankitems"></a>COleDocument::HasBlankItems  
+##  <a name="hasblankitems"></a>COleDocument::HasBlankItems  
  この関数では、ドキュメントにブランク アイテムが含まれるかどうかを判断します。  
   
 ```  
@@ -299,7 +323,7 @@ BOOL HasBlankItems() const;
 ### <a name="remarks"></a>コメント  
  空のアイテムは、1 つの四角形は空です。  
   
-##  <a name="a-nameoneditchangeicona--coledocumentoneditchangeicon"></a><a name="oneditchangeicon"></a>COleDocument::OnEditChangeIcon  
+##  <a name="oneditchangeicon"></a>COleDocument::OnEditChangeIcon  
  OLE の [アイコンの変更] ダイアログ ボックスを表示し、ダイアログ ボックスで、ユーザーが選択したアイコンに現在選択されている OLE アイテムを表すアイコンを変更します。  
   
 ```  
@@ -309,7 +333,7 @@ afx_msg void OnEditChangeIcon();
 ### <a name="remarks"></a>コメント  
  `OnEditChangeIcon`作成し、起動、`COleChangeIconDialog`アイコンの変更 ダイアログ ボックス。  
   
-##  <a name="a-nameoneditconverta--coledocumentoneditconvert"></a><a name="oneditconvert"></a>COleDocument::OnEditConvert  
+##  <a name="oneditconvert"></a>COleDocument::OnEditConvert  
  OLE の 変換 ダイアログ ボックスが表示されますに変換したりに従ってユーザーの選択 ダイアログ ボックスで現在選択されている OLE アイテムをアクティブにできます。  
   
 ```  
@@ -321,7 +345,7 @@ afx_msg void OnEditConvert();
   
  変換の例では、ワードパッドのドキュメントに、Microsoft Word 文書を変換です。  
   
-##  <a name="a-nameoneditlinksa--coledocumentoneditlinks"></a><a name="oneditlinks"></a>COleDocument::OnEditLinks  
+##  <a name="oneditlinks"></a>COleDocument::OnEditLinks  
  [リンク] ダイアログ ボックスが表示されます。  
   
 ```  
@@ -331,7 +355,7 @@ afx_msg void OnEditLinks();
 ### <a name="remarks"></a>コメント  
  `OnEditLinks`作成し、起動、`COleLinksDialog`リンク ダイアログ ボックスをユーザーがリンクされたオブジェクトを変更できるようにします。  
   
-##  <a name="a-nameonfilesendmaila--coledocumentonfilesendmail"></a><a name="onfilesendmail"></a>COleDocument::OnFileSendMail  
+##  <a name="onfilesendmail"></a>COleDocument::OnFileSendMail  
  常駐しているメール ホストを介してメッセージ (存在する場合) に送信ドキュメントの添付ファイルとしてします。  
   
 ```  
@@ -345,7 +369,7 @@ afx_msg void OnFileSendMail();
   
  詳細については、次を参照してください、 [MAPI トピック](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md)記事.。  
   
-##  <a name="a-nameonshowviewsa--coledocumentonshowviews"></a><a name="onshowviews"></a>COleDocument::OnShowViews  
+##  <a name="onshowviews"></a>COleDocument::OnShowViews  
  フレームワークは、状態の変更、ドキュメントの表示/非表示の後にこの関数を呼び出します。  
   
 ```  
@@ -359,7 +383,7 @@ virtual void OnShowViews(BOOL bVisible);
 ### <a name="remarks"></a>コメント  
  この関数の既定のバージョンでは、何も行いません。 オーバーライド場合は、アプリケーションが、ドキュメントの表示/非表示が変更されたときに、特別な処理を実行する必要があります。  
   
-##  <a name="a-nameonupdateeditchangeicona--coledocumentonupdateeditchangeicon"></a><a name="onupdateeditchangeicon"></a>COleDocument::OnUpdateEditChangeIcon  
+##  <a name="onupdateeditchangeicon"></a>COleDocument::OnUpdateEditChangeIcon  
  編集 メニュー、アイコンの変更 コマンドを更新するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -373,7 +397,7 @@ afx_msg void OnUpdateEditChangeIcon(CCmdUI* pCmdUI);
 ### <a name="remarks"></a>コメント  
  `OnUpdateEditChangeIcon`有効なアイコンが、ドキュメントに存在するかどうかによって、コマンドのユーザー インターフェイスを更新します。 動作を変更するには、この関数をオーバーライドします。  
   
-##  <a name="a-nameonupdateeditlinksmenua--coledocumentonupdateeditlinksmenu"></a><a name="onupdateeditlinksmenu"></a>COleDocument::OnUpdateEditLinksMenu  
+##  <a name="onupdateeditlinksmenu"></a>COleDocument::OnUpdateEditLinksMenu  
  [編集] メニューのリンクのコマンドを更新するため、フレームワークによって呼び出されます。  
   
 ```  
@@ -387,7 +411,7 @@ afx_msg void OnUpdateEditLinksMenu(CCmdUI* pCmdUI);
 ### <a name="remarks"></a>コメント  
  以降で、ドキュメント内の最初の OLE アイテム`OnUpdateEditLinksMenu`各項目にアクセスする、項目は、リンクし、リンクである場合、リンクのコマンドを有効にするかどうかをテストします。 動作を変更するには、この関数をオーバーライドします。  
   
-##  <a name="a-nameonupdateobjectverbmenua--coledocumentonupdateobjectverbmenu"></a><a name="onupdateobjectverbmenu"></a>COleDocument::OnUpdateObjectVerbMenu  
+##  <a name="onupdateobjectverbmenu"></a>COleDocument::OnUpdateObjectVerbMenu  
  更新するためにフレームワークによって呼び出されます、 *ObjectName*コマンドを編集 メニューからアクセスされる動詞 サブメニューで、 *ObjectName*コマンド、場所*ObjectName* OLE オブジェクトの名前は、ドキュメントに埋め込まれます。  
   
 ```  
@@ -401,7 +425,7 @@ afx_msg void OnUpdateObjectVerbMenu(CCmdUI* pCmdUI);
 ### <a name="remarks"></a>コメント  
  `OnUpdateObjectVerbMenu`更新プログラム、 *ObjectName*ドキュメントでは有効なオブジェクトが存在するかどうかによって、コマンドのユーザー インターフェイスです。 オブジェクトが存在する場合、 *ObjectName* [編集] メニューのコマンドが有効にします。 このメニュー コマンドが選択されている動詞のサブメニューが表示されます。 動詞サブメニューには、編集やプロパティなどなどのオブジェクトで使用できるすべての動詞コマンドが含まれています。 動作を変更するには、この関数をオーバーライドします。  
   
-##  <a name="a-nameonupdatepastelinkmenua--coledocumentonupdatepastelinkmenu"></a><a name="onupdatepastelinkmenu"></a>COleDocument::OnUpdatePasteLinkMenu  
+##  <a name="onupdatepastelinkmenu"></a>COleDocument::OnUpdatePasteLinkMenu  
  OLE のリンク アイテムをクリップボードから貼り付けできるかどうかを調べるためにフレームワークによって呼び出されます。  
   
 ```  
@@ -415,7 +439,7 @@ afx_msg void OnUpdatePasteLinkMenu(CCmdUI* pCmdUI);
 ### <a name="remarks"></a>コメント  
  貼り付け コマンドが有効になっているか、アイテムがドキュメントに貼り付けできるかどうかによって無効になっています。  
   
-##  <a name="a-nameonupdatepastemenua--coledocumentonupdatepastemenu"></a><a name="onupdatepastemenu"></a>COleDocument::OnUpdatePasteMenu  
+##  <a name="onupdatepastemenu"></a>COleDocument::OnUpdatePasteMenu  
  OLE 埋め込みアイテムをクリップボードから貼り付けできるかどうかを調べるためにフレームワークによって呼び出されます。  
   
 ```  
@@ -429,7 +453,7 @@ afx_msg void OnUpdatePasteMenu(CCmdUI* pCmdUI);
 ### <a name="remarks"></a>コメント  
  [貼り付け] コマンドとボタンが有効になっているまたはアイテムがドキュメントに貼り付けできるかどうかによって無効になっています。  
   
-##  <a name="a-nameremoveitema--coledocumentremoveitem"></a><a name="removeitem"></a>COleDocument::RemoveItem  
+##  <a name="removeitem"></a>COleDocument::RemoveItem  
  ドキュメントから項目を削除するには、この関数を呼び出します。  
   
 ```  
@@ -443,7 +467,7 @@ virtual void RemoveItem(CDocItem* pItem);
 ### <a name="remarks"></a>コメント  
  通常必要はありませんこの関数を明示的に呼び出すデストラクターによって呼び出される`COleClientItem`と`COleServerItem`です。  
   
-##  <a name="a-nameupdatemodifiedflaga--coledocumentupdatemodifiedflag"></a><a name="updatemodifiedflag"></a>COleDocument::UpdateModifiedFlag  
+##  <a name="updatemodifiedflag"></a>COleDocument::UpdateModifiedFlag  
  含まれている OLE アイテムのいずれかが変更された場合に変更されたドキュメントをマークするには、この関数を呼び出します。  
   
 ```  

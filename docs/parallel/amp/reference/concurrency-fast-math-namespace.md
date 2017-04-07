@@ -32,9 +32,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 293452bf0a01f7f83a8a41bcb511bc57c9d45f26
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: d8a94b0911b772f4972416722757bec24a4826ed
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrencyfastmath-namespace"></a>Concurrency::fast_math 名前空間
@@ -52,71 +52,71 @@ namespace fast_math;
   
 |名前|説明|  
 |----------|-----------------|  
-|[cos 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#cos)|引数の逆余弦を計算します。|  
-|[cosf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#cosf)|引数の逆余弦を計算します。|  
-|[asin 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#asin)|引数の逆正弦を計算します。|  
-|[asinf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#asinf)|引数の逆正弦を計算します。|  
-|[atan 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#atan)|引数の逆正接を計算します。|  
-|[atan2 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#atan2)|_Y/_X の逆正接を計算します。|  
-|[atan2f 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#atan2f)|_Y/_X の逆正接を計算します。|  
-|[atanf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#atanf)|引数の逆正接を計算します。|  
-|[ceil 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#ceil)|引数の切り上げを計算します。|  
-|[ceilf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#ceilf)|引数の切り上げを計算します。|  
-|[cos 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#cos)|引数の余弦を計算します。|  
-|[cosf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#cosf)|引数の余弦を計算します。|  
-|[cosh 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#cosh)|引数の双曲線余弦の値を計算します。|  
-|[coshf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#coshf)|引数の双曲線余弦の値を計算します。|  
-|[exp 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#exp)|e を底とする引数のべき乗を計算します。|  
-|[exp2 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#exp2)|2 を底とする引数のべき乗を計算します。|  
-|[exp2f 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#exp2f)|2 を底とする引数のべき乗を計算します。|  
-|[expf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#expf)|e を底とする引数のべき乗を計算します。|  
-|[fabs 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fabs)|引数の絶対値を返します。|  
-|[fabsf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fabsf)|引数の絶対値を返します。|  
-|[floor 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#floor)|引数の切り捨てを計算します。|  
-|[floorf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#floorf)|引数の切り捨てを計算します。|  
-|[fmax 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fmax)|引数の最大数値を判断します。|  
-|[fmaxf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fmaxf)|引数の最大数値を判断します。|  
-|[fmin 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fmin)|引数の最小数値を判断します。|  
-|[fminf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fminf)|引数の最小数値を判断します。|  
-|[fmod 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fmod)|_X/_Y の浮動小数点の剰余を計算します。|  
-|[fmodf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#fmodf)|_X/_Y の浮動小数点の剰余を計算します。|  
-|[frexp 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#frexp)|_X の仮数と指数を取得します。|  
-|[frexpf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#frexpf)|_X の仮数と指数を取得します。|  
-|[isfinite 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#isfinite)|引数に有限値が存在するかどうかを判断します。|  
-|[isinf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#isinf)|引数が無限値であるかどうかを判断します。|  
-|[isnan 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#isnan)|引数が NaN であるかどうかを判断します。|  
-|[ldexp 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#ldexp)|仮数と指数から実数を計算します。|  
-|[ldexpf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#ldexpf)|仮数と指数から実数を計算します。|  
-|[log 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#log)|e を底とする引数の対数を計算します。|  
-|[log10 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#log10)|10 を底とする引数の対数を計算します。|  
-|[log10f 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#log10f)|10 を底とする引数の対数を計算します。|  
-|[log2 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#log2)|2 を底とする引数の対数を計算します。|  
-|[log2f 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#log2f)|2 を底とする引数の対数を計算します。|  
-|[logf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#logf)|e を底とする引数の対数を計算します。|  
-|[modf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#modf)|_X を小数部と整数部に分割します。|  
-|[modff 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#modff)|_X を小数部と整数部に分割します。|  
-|[pow 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#pow)|_X の _Y 乗を計算します。|  
-|[powf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#powf)|_X の _Y 乗を計算します。|  
-|[round 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#round)|_X を最も近い整数値に丸めます。|  
-|[roundf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#roundf)|_X を最も近い整数値に丸めます。|  
-|[rsqrt 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#rsqrt)|引数の平方根の逆数を返します。|  
-|[rsqrtf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#rsqrtf)|引数の平方根の逆数を返します。|  
-|[signbit 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#signbit)|引数の正弦を返します。|  
-|[signbitf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#signbitf)|引数の正弦を返します。|  
-|[sin 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sin)|引数の正弦値を計算します。|  
-|[sincos 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sincos)|_X の正弦と余弦の値を計算します|  
-|[sincosf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sincosf)|_X の正弦と余弦の値を計算します|  
-|[sinf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sinf)|引数の正弦値を計算します。|  
-|[sinh 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sinh)|引数の双曲線正弦の値を計算します。|  
-|[sinhf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sinhf)|引数の双曲線正弦の値を計算します。|  
-|[sqrt 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sqrt)|引数の平方根を計算します。|  
-|[sqrtf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#sqrtf)|引数の平方根を計算します。|  
-|[tan 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#tan)|引数の正接値を計算します。|  
-|[tanf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#tanf)|引数の正接値を計算します。|  
-|[tanh 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#tanh)|引数の双曲線正接の値を計算します。|  
-|[tanhf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#tanhf)|引数の双曲線正接の値を計算します。|  
-|[trunc 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#trunc)|引数を整数コンポーネントに切り捨てます。|  
-|[truncf 関数 (fast_math)](concurrency-fast-math-namespace-functions.md#truncf)|引数を整数コンポーネントに切り捨てます。|  
+|[cos](concurrency-fast-math-namespace-functions.md#cos)|引数の逆余弦を計算します。|  
+|[cosf](concurrency-fast-math-namespace-functions.md#cosf)|引数の逆余弦を計算します。|  
+|[asin](concurrency-fast-math-namespace-functions.md#asin)|引数の逆正弦を計算します。|  
+|[asinf](concurrency-fast-math-namespace-functions.md#asinf)|引数の逆正弦を計算します。|  
+|[atan](concurrency-fast-math-namespace-functions.md#atan)|引数の逆正接を計算します。|  
+|[atan2](concurrency-fast-math-namespace-functions.md#atan2)|_Y/_X の逆正接を計算します。|  
+|[atan2f](concurrency-fast-math-namespace-functions.md#atan2f)|_Y/_X の逆正接を計算します。|  
+|[atanf](concurrency-fast-math-namespace-functions.md#atanf)|引数の逆正接を計算します。|  
+|[ceil](concurrency-fast-math-namespace-functions.md#ceil)|引数の切り上げを計算します。|  
+|[ceilf](concurrency-fast-math-namespace-functions.md#ceilf)|引数の切り上げを計算します。|  
+|[cos](concurrency-fast-math-namespace-functions.md#cos)|引数の余弦を計算します。|  
+|[cosf](concurrency-fast-math-namespace-functions.md#cosf)|引数の余弦を計算します。|  
+|[cosh](concurrency-fast-math-namespace-functions.md#cosh)|引数の双曲線余弦の値を計算します。|  
+|[coshf](concurrency-fast-math-namespace-functions.md#coshf)|引数の双曲線余弦の値を計算します。|  
+|[exp](concurrency-fast-math-namespace-functions.md#exp)|e を底とする引数のべき乗を計算します。|  
+|[exp2](concurrency-fast-math-namespace-functions.md#exp2)|2 を底とする引数のべき乗を計算します。|  
+|[exp2f](concurrency-fast-math-namespace-functions.md#exp2f)|2 を底とする引数のべき乗を計算します。|  
+|[expf](concurrency-fast-math-namespace-functions.md#expf)|e を底とする引数のべき乗を計算します。|  
+|[fabs](concurrency-fast-math-namespace-functions.md#fabs)|引数の絶対値を返します。|  
+|[fabsf](concurrency-fast-math-namespace-functions.md#fabsf)|引数の絶対値を返します。|  
+|[floor](concurrency-fast-math-namespace-functions.md#floor)|引数の切り捨てを計算します。|  
+|[floorf](concurrency-fast-math-namespace-functions.md#floorf)|引数の切り捨てを計算します。|  
+|[fmax](concurrency-fast-math-namespace-functions.md#fmax)|引数の最大数値を判断します。|  
+|[fmaxf](concurrency-fast-math-namespace-functions.md#fmaxf)|引数の最大数値を判断します。|  
+|[fmin](concurrency-fast-math-namespace-functions.md#fmin)|引数の最小数値を判断します。|  
+|[fminf](concurrency-fast-math-namespace-functions.md#fminf)|引数の最小数値を判断します。|  
+|[fmod](concurrency-fast-math-namespace-functions.md#fmod)|_X/_Y の浮動小数点の剰余を計算します。|  
+|[fmodf](concurrency-fast-math-namespace-functions.md#fmodf)|_X/_Y の浮動小数点の剰余を計算します。|  
+|[frexp](concurrency-fast-math-namespace-functions.md#frexp)|_X の仮数と指数を取得します。|  
+|[frexpf](concurrency-fast-math-namespace-functions.md#frexpf)|_X の仮数と指数を取得します。|  
+|[isfinite](concurrency-fast-math-namespace-functions.md#isfinite)|引数に有限値が存在するかどうかを判断します。|  
+|[isinf](concurrency-fast-math-namespace-functions.md#isinf)|引数が無限値であるかどうかを判断します。|  
+|[isnan](concurrency-fast-math-namespace-functions.md#isnan)|引数が NaN であるかどうかを判断します。|  
+|[ldexp](concurrency-fast-math-namespace-functions.md#ldexp)|仮数と指数から実数を計算します。|  
+|[ldexpf](concurrency-fast-math-namespace-functions.md#ldexpf)|仮数と指数から実数を計算します。|  
+|[log](concurrency-fast-math-namespace-functions.md#log)|e を底とする引数の対数を計算します。|  
+|[log10](concurrency-fast-math-namespace-functions.md#log10)|10 を底とする引数の対数を計算します。|  
+|[log10f](concurrency-fast-math-namespace-functions.md#log10f)|10 を底とする引数の対数を計算します。|  
+|[log2](concurrency-fast-math-namespace-functions.md#log2)|2 を底とする引数の対数を計算します。|  
+|[log2f](concurrency-fast-math-namespace-functions.md#log2f)|2 を底とする引数の対数を計算します。|  
+|[logf](concurrency-fast-math-namespace-functions.md#logf)|e を底とする引数の対数を計算します。|  
+|[modf](concurrency-fast-math-namespace-functions.md#modf)|_X を小数部と整数部に分割します。|  
+|[modff](concurrency-fast-math-namespace-functions.md#modff)|_X を小数部と整数部に分割します。|  
+|[pow](concurrency-fast-math-namespace-functions.md#pow)|_X の _Y 乗を計算します。|  
+|[powf](concurrency-fast-math-namespace-functions.md#powf)|_X の _Y 乗を計算します。|  
+|[round](concurrency-fast-math-namespace-functions.md#round)|_X を最も近い整数値に丸めます。|  
+|[roundf](concurrency-fast-math-namespace-functions.md#roundf)|_X を最も近い整数値に丸めます。|  
+|[rsqrt](concurrency-fast-math-namespace-functions.md#rsqrt)|引数の平方根の逆数を返します。|  
+|[rsqrtf](concurrency-fast-math-namespace-functions.md#rsqrtf)|引数の平方根の逆数を返します。|  
+|[signbit](concurrency-fast-math-namespace-functions.md#signbit)|引数の正弦を返します。|  
+|[signbitf](concurrency-fast-math-namespace-functions.md#signbitf)|引数の正弦を返します。|  
+|[sin](concurrency-fast-math-namespace-functions.md#sin)|引数の正弦値を計算します。|  
+|[sincos](concurrency-fast-math-namespace-functions.md#sincos)|_X の正弦と余弦の値を計算します|  
+|[sincosf](concurrency-fast-math-namespace-functions.md#sincosf)|_X の正弦と余弦の値を計算します|  
+|[sinf](concurrency-fast-math-namespace-functions.md#sinf)|引数の正弦値を計算します。|  
+|[sinh](concurrency-fast-math-namespace-functions.md#sinh)|引数の双曲線正弦の値を計算します。|  
+|[sinhf](concurrency-fast-math-namespace-functions.md#sinhf)|引数の双曲線正弦の値を計算します。|  
+|[sqrt](concurrency-fast-math-namespace-functions.md#sqrt)|引数の平方根を計算します。|  
+|[sqrtf](concurrency-fast-math-namespace-functions.md#sqrtf)|引数の平方根を計算します。|  
+|[tan](concurrency-fast-math-namespace-functions.md#tan)|引数の正接値を計算します。|  
+|[tanf](concurrency-fast-math-namespace-functions.md#tanf)|引数の正接値を計算します。|  
+|[tanh](concurrency-fast-math-namespace-functions.md#tanh)|引数の双曲線正接の値を計算します。|  
+|[tanhf](concurrency-fast-math-namespace-functions.md#tanhf)|引数の双曲線正接の値を計算します。|  
+|[trunc](concurrency-fast-math-namespace-functions.md#trunc)|引数を整数コンポーネントに切り捨てます。|  
+|[truncf](concurrency-fast-math-namespace-functions.md#truncf)|引数を整数コンポーネントに切り捨てます。|  
 
 ## <a name="requirements"></a>要件  
  **ヘッダー:** amp_math.h  
@@ -124,5 +124,5 @@ namespace fast_math;
  **Namespace:** concurrency::fast_math  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
 

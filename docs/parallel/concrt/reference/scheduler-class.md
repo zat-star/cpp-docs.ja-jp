@@ -9,7 +9,22 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::Scheduler
+- Scheduler
+- CONCRT/concurrency::Scheduler
+- CONCRT/concurrency::Scheduler::Scheduler
+- CONCRT/concurrency::Scheduler::Attach
+- CONCRT/concurrency::Scheduler::Create
+- CONCRT/concurrency::Scheduler::CreateScheduleGroup
+- CONCRT/concurrency::Scheduler::GetNumberOfVirtualProcessors
+- CONCRT/concurrency::Scheduler::GetPolicy
+- CONCRT/concurrency::Scheduler::Id
+- CONCRT/concurrency::Scheduler::IsAvailableLocation
+- CONCRT/concurrency::Scheduler::Reference
+- CONCRT/concurrency::Scheduler::RegisterShutdownEvent
+- CONCRT/concurrency::Scheduler::Release
+- CONCRT/concurrency::Scheduler::ResetDefaultSchedulerPolicy
+- CONCRT/concurrency::Scheduler::ScheduleTask
+- CONCRT/concurrency::Scheduler::SetDefaultSchedulerPolicy
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +49,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: ea4de856528305020e8b082da3a55fcd27df3a64
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: cc39a524e9a65aeab0c84fb43f5b38ddd892923e
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="scheduler-class"></a>Scheduler クラス
@@ -54,26 +69,26 @@ class Scheduler;
   
 |名前|説明|  
 |----------|-----------------|  
-|[スケジューラのコンス トラクター](#ctor)|オブジェクト、`Scheduler`クラスは、ファクトリ メソッドを使用して作成された専用ことができます。 または暗黙的にします。|  
+|[スケジューラ](#ctor)|オブジェクト、`Scheduler`クラスは、ファクトリ メソッドを使用して作成された専用ことができます。 または暗黙的にします。|  
 |[~ Scheduler デストラクター](#dtor)|オブジェクト、`Scheduler`に対するすべての外部参照が存在しないとき、クラスは暗黙的に破棄されます。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Attach メソッド](#attach)|呼び出し元のコンテキストにスケジューラをアタッチします。 このメソッドから制御が戻た後は、呼び出し元のコンテキストは、スケジューラによって管理され、スケジューラが、現在のスケジューラになります。|  
-|[Create メソッド](#create)|動作は、新しいスケジューラが作成、`_Policy`パラメーター、スケジューラの最初の参照を配置し、ポインターを返します。|  
-|[CreateScheduleGroup メソッド](#createschedulegroup)|オーバーロードされます。 スケジューラ内で新しいスケジュール グループを作成します。 パラメーターを受け取るバージョンで`_Placement`する位置をそのパラメーターで指定した実行増えますを新しく作成されたスケジュール グループ内のタスクが発生します。|  
-|[GetNumberOfVirtualProcessors メソッド](#getnumberofvirtualprocessors)|スケジューラの仮想プロセッサの現在の数を返します。|  
-|[GetPolicy メソッド](#getpolicy)|スケジューラの作成に使用されたポリシーのコピーを返します。|  
-|[Id メソッド](#id)|スケジューラの一意の識別子を返します。|  
-|[IsAvailableLocation メソッド](#isavailablelocation)|指定された場所が、スケジューラで利用できるかどうかを決定します。|  
-|[Reference メソッド](#reference)|スケジューラの参照カウントをインクリメントします。|  
-|[RegisterShutdownEvent メソッド](#registershutdownevent)|Windows イベント ハンドルが渡された原因、`_Event`シグナル状態になるスケジューラがシャット ダウンし、それ自体を破棄するときのパラメーターです。 イベントがシグナル状態に、スケジューラにスケジュールされていたすべての作業が完了しました。 このメソッドでは、複数のシャット ダウン イベントを登録できます。|  
-|[Release メソッド](#release)|スケジュールの参照カウントをデクリメントします。|  
-|[ResetDefaultSchedulerPolicy メソッド](#resetdefaultschedulerpolicy)|既定のスケジューラ ポリシーを実行時の既定値にリセットします。 既定のスケジューラが作成されると、次回実行時の既定のポリシー設定が使用されます。|  
-|[ScheduleTask メソッド](#scheduletask)|オーバーロードされます。 スケジューラ内での軽量タスクをスケジュールします。 軽量タスクは、ランタイムによって決定スケジュール グループに配置されます。 パラメーターを受け取るバージョンで`_Placement`タスクがある指定した場所に実行する増えます。|  
-|[SetDefaultSchedulerPolicy メソッド](#setdefaultschedulerpolicy)|既定のスケジューラの作成に使用するユーザー定義のポリシーを使用します。 プロセス内で既定のスケジューラが存在しない場合にのみ、このメソッドを呼び出すことができます。 既定のポリシーを設定すると、それまで保持するか、次の有効な呼び出し、`SetDefaultSchedulerPolicy`または[ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy)メソッドです。|  
+|[添付](#attach)|呼び出し元のコンテキストにスケジューラをアタッチします。 このメソッドから制御が戻た後は、呼び出し元のコンテキストは、スケジューラによって管理され、スケジューラが、現在のスケジューラになります。|  
+|[作成します。](#create)|動作は、新しいスケジューラが作成、`_Policy`パラメーター、スケジューラの最初の参照を配置し、ポインターを返します。|  
+|[CreateScheduleGroup](#createschedulegroup)|オーバーロードされます。 スケジューラ内で新しいスケジュール グループを作成します。 パラメーターを受け取るバージョンで`_Placement`する位置をそのパラメーターで指定した実行増えますを新しく作成されたスケジュール グループ内のタスクが発生します。|  
+|[GetNumberOfVirtualProcessors](#getnumberofvirtualprocessors)|スケジューラの仮想プロセッサの現在の数を返します。|  
+|[GetPolicy](#getpolicy)|スケジューラの作成に使用されたポリシーのコピーを返します。|  
+|[Id](#id)|スケジューラの一意の識別子を返します。|  
+|[IsAvailableLocation](#isavailablelocation)|指定された場所が、スケジューラで利用できるかどうかを決定します。|  
+|[参照](#reference)|スケジューラの参照カウントをインクリメントします。|  
+|[RegisterShutdownEvent](#registershutdownevent)|Windows イベント ハンドルが渡された原因、`_Event`シグナル状態になるスケジューラがシャット ダウンし、それ自体を破棄するときのパラメーターです。 イベントがシグナル状態に、スケジューラにスケジュールされていたすべての作業が完了しました。 このメソッドでは、複数のシャット ダウン イベントを登録できます。|  
+|[Release](#release)|スケジュールの参照カウントをデクリメントします。|  
+|[ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy)|既定のスケジューラ ポリシーを実行時の既定値にリセットします。 既定のスケジューラが作成されると、次回実行時の既定のポリシー設定が使用されます。|  
+|[ScheduleTask](#scheduletask)|オーバーロードされます。 スケジューラ内での軽量タスクをスケジュールします。 軽量タスクは、ランタイムによって決定スケジュール グループに配置されます。 パラメーターを受け取るバージョンで`_Placement`タスクがある指定した場所に実行する増えます。|  
+|[SetDefaultSchedulerPolicy](#setdefaultschedulerpolicy)|既定のスケジューラの作成に使用するユーザー定義のポリシーを使用します。 プロセス内で既定のスケジューラが存在しない場合にのみ、このメソッドを呼び出すことができます。 既定のポリシーを設定すると、それまで保持するか、次の有効な呼び出し、`SetDefaultSchedulerPolicy`または[ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy)メソッドです。|  
   
 ## <a name="remarks"></a>コメント  
  作業を実行キューに登録されて、アプリケーションで、同時実行ランタイム スケジューラが、スレッドなどのオペレーティング システムの実行コンテキストにマップされる実行コンテキストを使用します。 いつでもスケジューラの同時実行レベルはリソース マネージャーによって許可された仮想プロセッサの数に等しくなります。 仮想プロセッサとは、処理リソースを抽象化したものであり、基になるシステムのハードウェア スレッドに対応しています。 指定された時点に&1; つの仮想プロセッサで実行できるスケジューラ コンテキストは&1; つのみです。  
@@ -88,7 +103,7 @@ class Scheduler;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nameattacha-attach"></a><a name="attach"></a>アタッチ 
+##  <a name="attach"></a>アタッチ 
 
  呼び出し元のコンテキストにスケジューラをアタッチします。 このメソッドから制御が戻た後は、呼び出し元のコンテキストは、スケジューラによって管理され、スケジューラが、現在のスケジューラになります。  
   
@@ -103,9 +118,9 @@ virtual void Attach() = 0;
   
  このメソッドが既に別のスケジューラにアタッチされているコンテキストから呼び出される場合は、既存のスケジューラが以前のスケジューラとして記録され、新しく作成されたスケジューラが、現在のスケジューラします。 呼び出すと、`CurrentScheduler::Detach`メソッドでは後で、以前のスケジューラは、現在のスケジューラとして復元されます。  
   
- このメソッドをスロー、 [improper_scheduler_attach](improper-scheduler-attach-class.md)このスケジューラは、現在のスケジューラで呼び出し元のコンテキストの場合に例外です。  
+ このメソッドをスローする[improper_scheduler_attach](improper-scheduler-attach-class.md)このスケジューラは、現在のスケジューラで呼び出し元のコンテキストの場合に例外です。  
   
-##  <a name="a-namecreatea-create"></a><a name="create"></a>作成します。 
+##  <a name="create"></a>作成します。 
 
  動作は、新しいスケジューラが作成、`_Policy`パラメーター、スケジューラの最初の参照を配置し、ポインターを返します。  
   
@@ -127,7 +142,7 @@ static Scheduler* __cdecl Create(const SchedulerPolicy& _Policy);
   
  このメソッドを含む、例外のさまざまな[scheduler_resource_allocation_error](scheduler-resource-allocation-error-class.md)と[invalid_scheduler_policy_value](invalid-scheduler-policy-value-class.md)します。  
   
-##  <a name="a-namecreateschedulegroupa-createschedulegroup"></a><a name="createschedulegroup"></a>CreateScheduleGroup 
+##  <a name="createschedulegroup"></a>CreateScheduleGroup 
 
  スケジューラ内で新しいスケジュール グループを作成します。 パラメーターを受け取るバージョンで`_Placement`する位置をそのパラメーターで指定した実行増えますを新しく作成されたスケジュール グループ内のタスクが発生します。  
   
@@ -149,7 +164,7 @@ virtual ScheduleGroup* CreateScheduleGroup(location& _Placement) = 0;
   
  注このスケジューラを明示的に作成した場合は、スケジューラの参照を解放する前に、内のグループのスケジュールへのすべての参照を解放する必要があります。  
   
-##  <a name="a-namegetnumberofvirtualprocessorsa-getnumberofvirtualprocessors"></a><a name="getnumberofvirtualprocessors"></a>GetNumberOfVirtualProcessors 
+##  <a name="getnumberofvirtualprocessors"></a>GetNumberOfVirtualProcessors 
 
  スケジューラの仮想プロセッサの現在の数を返します。  
   
@@ -160,7 +175,7 @@ virtual unsigned int GetNumberOfVirtualProcessors() const = 0;
 ### <a name="return-value"></a>戻り値  
  現在のスケジューラの仮想プロセッサの数。  
   
-##  <a name="a-namegetpolicya-getpolicy"></a><a name="getpolicy"></a>GetPolicy 
+##  <a name="getpolicy"></a>GetPolicy 
 
  スケジューラの作成に使用されたポリシーのコピーを返します。  
   
@@ -171,7 +186,7 @@ virtual SchedulerPolicy GetPolicy() const = 0;
 ### <a name="return-value"></a>戻り値  
  スケジューラの作成に使用されたポリシーのコピー。  
   
-##  <a name="a-nameida-id"></a><a name="id"></a>Id 
+##  <a name="id"></a>Id 
 
  スケジューラの一意の識別子を返します。  
   
@@ -182,7 +197,7 @@ virtual unsigned int Id() const = 0;
 ### <a name="return-value"></a>戻り値  
  スケジューラの一意の識別子。  
   
-##  <a name="a-nameisavailablelocationa-isavailablelocation"></a><a name="isavailablelocation"></a>IsAvailableLocation 
+##  <a name="isavailablelocation"></a>IsAvailableLocation 
 
  指定された場所が、スケジューラで利用できるかどうかを決定します。  
   
@@ -200,7 +215,7 @@ virtual bool IsAvailableLocation(const location& _Placement) const = 0;
 ### <a name="remarks"></a>コメント  
  戻り値は、指定の場所が使用できるかどうかを瞬間的にサンプリングであることに注意してください。 複数のスケジューラが存在する場合は、動的なリソースの管理は、追加または任意の時点でスケジューラからリソースを取り上げる倍にできます。 この場合は、特定の場所は、可用性に変更できます。  
   
-##  <a name="a-namereferencea-reference"></a><a name="reference"></a>参照 
+##  <a name="reference"></a>参照 
 
  スケジューラの参照カウントをインクリメントします。  
   
@@ -212,11 +227,11 @@ virtual unsigned int Reference() = 0 ;
  新たにインクリメントされた参照カウントします。  
   
 ### <a name="remarks"></a>コメント  
- これは通常、スケジューラの構成の有効期間管理に使用されます。 参照数を&0; にスケジューラが、スケジューラがシャット ダウンされるとデストラクション自体は結局のところ、スケジューラで作業が完了しました。  
+ これは通常、コンポジションのスケジューラの有効期間管理に使用されます。 参照数を&0; にスケジューラが、スケジューラがシャット ダウンされるとデストラクション自体は結局のところ、スケジューラで作業が完了しました。  
   
  メソッドがスローされます、 [improper_scheduler_reference](improper-scheduler-reference-class.md)例外の場合は、参照カウントを呼び出す前に、`Reference`メソッドは&0; で、スケジューラが所有していないコンテキストから呼び出しが実行されました。  
   
-##  <a name="a-nameregistershutdowneventa-registershutdownevent"></a><a name="registershutdownevent"></a>RegisterShutdownEvent 
+##  <a name="registershutdownevent"></a>RegisterShutdownEvent 
 
  Windows イベント ハンドルが渡された原因、`_Event`シグナル状態になるスケジューラがシャット ダウンし、それ自体を破棄するときのパラメーターです。 イベントがシグナル状態に、スケジューラにスケジュールされていたすべての作業が完了しました。 このメソッドでは、複数のシャット ダウン イベントを登録できます。  
   
@@ -228,7 +243,7 @@ virtual void RegisterShutdownEvent(HANDLE _Event) = 0;
  `_Event`  
  スケジューラがシャット ダウンし、それ自体を破棄するときに、ランタイムによって通知される Windows イベント オブジェクトへのハンドル。  
   
-##  <a name="a-namereleasea-release"></a><a name="release"></a>リリース 
+##  <a name="release"></a>リリース 
 
  スケジュールの参照カウントをデクリメントします。  
   
@@ -240,9 +255,9 @@ virtual unsigned int Release() = 0;
  新たにデクリメントされた参照カウントします。  
   
 ### <a name="remarks"></a>コメント  
- これは通常、スケジューラの構成の有効期間管理に使用されます。 参照数を&0; にスケジューラが、スケジューラがシャット ダウンされるとデストラクション自体は結局のところ、スケジューラで作業が完了しました。  
+ これは通常、コンポジションのスケジューラの有効期間管理に使用されます。 参照数を&0; にスケジューラが、スケジューラがシャット ダウンされるとデストラクション自体は結局のところ、スケジューラで作業が完了しました。  
   
-##  <a name="a-nameresetdefaultschedulerpolicya-resetdefaultschedulerpolicy"></a><a name="resetdefaultschedulerpolicy"></a>ResetDefaultSchedulerPolicy 
+##  <a name="resetdefaultschedulerpolicy"></a>ResetDefaultSchedulerPolicy 
 
  既定のスケジューラ ポリシーを実行時の既定値にリセットします。 既定のスケジューラが作成されると、次回実行時の既定のポリシー設定が使用されます。  
   
@@ -253,7 +268,7 @@ static void __cdecl ResetDefaultSchedulerPolicy();
 ### <a name="remarks"></a>コメント  
  プロセス内で、既定のスケジューラが存在する間、このメソッドを呼び出すことができます。 既存の既定のスケジューラのポリシーは影響しません。 ただし、既定のスケジューラがシャット ダウンすると、新しい既定値が、後の時点で作成された、新しいスケジューラは、実行時の既定のポリシー設定を使用します。  
   
-##  <a name="a-namectora-scheduler"></a><a name="ctor"></a>スケジューラ 
+##  <a name="ctor"></a>スケジューラ 
 
  オブジェクト、`Scheduler`クラスは、ファクトリ メソッドを使用して作成された専用ことができます。 または暗黙的にします。  
   
@@ -266,7 +281,7 @@ Scheduler();
   
  いずれかで明示的にスケジューラを作成することも、`CurrentScheduler::Create`メソッドまたは`Scheduler::Create`メソッドです。  
   
-##  <a name="a-namedtora-scheduler"></a><a name="dtor"></a>~ スケジューラ 
+##  <a name="dtor"></a>~ スケジューラ 
 
  オブジェクト、`Scheduler`に対するすべての外部参照が存在しないとき、クラスは暗黙的に破棄されます。  
   
@@ -274,7 +289,7 @@ Scheduler();
 virtual ~Scheduler();
 ```  
   
-##  <a name="a-namescheduletaska-scheduletask"></a><a name="scheduletask"></a>ScheduleTask 
+##  <a name="scheduletask"></a>ScheduleTask 
 
  スケジューラ内での軽量タスクをスケジュールします。 軽量タスクは、ランタイムによって決定スケジュール グループに配置されます。 パラメーターを受け取るバージョンで`_Placement`タスクがある指定した場所に実行する増えます。  
   
@@ -299,7 +314,7 @@ virtual void ScheduleTask(
  `_Placement`  
  軽量タスクが実行に向けてバイアスする場所への参照。  
   
-##  <a name="a-namesetdefaultschedulerpolicya-setdefaultschedulerpolicy"></a><a name="setdefaultschedulerpolicy"></a>SetDefaultSchedulerPolicy 
+##  <a name="setdefaultschedulerpolicy"></a>SetDefaultSchedulerPolicy 
 
  既定のスケジューラの作成に使用するユーザー定義のポリシーを使用します。 プロセス内で既定のスケジューラが存在しない場合にのみ、このメソッドを呼び出すことができます。 既定のポリシーを設定すると、それまで保持するか、次の有効な呼び出し、`SetDefaultSchedulerPolicy`または[ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy)メソッドです。  
   
@@ -317,7 +332,7 @@ static void __cdecl SetDefaultSchedulerPolicy(const SchedulerPolicy& _Policy);
 ## <a name="see-also"></a>関連項目  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)   
- [PolicyElementKey 列挙型](concurrency-namespace-enums.md)   
+ [PolicyElementKey](concurrency-namespace-enums.md)   
  [タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)
 
 

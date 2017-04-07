@@ -9,7 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::ITopologyExecutionResource
+- ITopologyExecutionResource
+- CONCRTRM/concurrency::ITopologyExecutionResource
+- CONCRTRM/concurrency::ITopologyExecutionResource::ITopologyExecutionResource::GetId
+- CONCRTRM/concurrency::ITopologyExecutionResource::ITopologyExecutionResource::GetNext
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: cc54beb4790c9d2ea5bfcb2c8ffd4bca7dca399e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: d9671dbf84a1104bc3b6f3a6f9d383aac167759c
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="itopologyexecutionresource-structure"></a>ITopologyExecutionResource 構造体
@@ -54,8 +57,8 @@ struct ITopologyExecutionResource;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Itopologyexecutionresource::getid メソッド](#getid)|この実行リソースのリソース マネージャーの一意の識別子を返します。|  
-|[Itopologyexecutionresource::getnext メソッド](#getnext)|列挙の順番に次の実行リソースへのインターフェイスを返します。|  
+|[Itopologyexecutionresource::getid](#getid)|この実行リソースのリソース マネージャーの一意の識別子を返します。|  
+|[Itopologyexecutionresource::getnext](#getnext)|列挙の順番に次の実行リソースへのインターフェイスを返します。|  
   
 ## <a name="remarks"></a>コメント  
  このインターフェイスは、リソース マネージャーで見られるように、システムのトポロジーを順番に通常使用されます。  
@@ -68,7 +71,7 @@ struct ITopologyExecutionResource;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegetida--itopologyexecutionresourcegetid-method"></a><a name="getid"></a>Itopologyexecutionresource::getid メソッド  
+##  <a name="getid"></a>Itopologyexecutionresource::getid メソッド  
  この実行リソースのリソース マネージャーの一意の識別子を返します。  
   
 ```
@@ -78,7 +81,7 @@ virtual unsigned int GetId() const = 0;
 ### <a name="return-value"></a>戻り値  
  この実行リソースのリソース マネージャーの一意の識別子。  
   
-##  <a name="a-namegetnexta--itopologyexecutionresourcegetnext-method"></a><a name="getnext"></a>Itopologyexecutionresource::getnext メソッド  
+##  <a name="getnext"></a>Itopologyexecutionresource::getnext メソッド  
  列挙の順番に次の実行リソースへのインターフェイスを返します。  
   
 ```
@@ -89,5 +92,5 @@ virtual ITopologyExecutionResource *GetNext() const = 0;
  列挙の順番に次の実行リソースへのインターフェイス。 この実行リソースが属しているノードの列挙の順番にノードがそれ以上がある場合は、このメソッドは値を返します`NULL`します。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

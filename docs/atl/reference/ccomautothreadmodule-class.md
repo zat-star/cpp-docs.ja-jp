@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComAutoThreadModule
+- ATLBASE/ATL::CComAutoThreadModule
+- ATLBASE/ATL::CreateInstance
+- ATLBASE/ATL::GetDefaultThreads
+- ATLBASE/ATL::Init
+- ATLBASE/ATL::Lock
+- ATLBASE/ATL::Unlock
+- ATLBASE/ATL::dwThreadID
+- ATLBASE/ATL::m_Allocator
+- ATLBASE/ATL::m_nThreads
+- ATLBASE/ATL::m_pApartments
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -111,7 +121,7 @@ class CComAutoThreadModule : public CComModule
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namecreateinstancea--ccomautothreadmodulecreateinstance"></a><a name="createinstance"></a>CComAutoThreadModule::CreateInstance  
+##  <a name="createinstance"></a>CComAutoThreadModule::CreateInstance  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -137,7 +147,7 @@ HRESULT CreateInstance(
 ### <a name="remarks"></a>コメント  
  スレッドを選択し、関連付けられているアパートメントでオブジェクトを作成します。  
   
-##  <a name="a-namedwthreadida--ccomautothreadmoduledwthreadid"></a><a name="dwthreadid"></a>CComAutoThreadModule::dwThreadID  
+##  <a name="dwthreadid"></a>CComAutoThreadModule::dwThreadID  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -147,7 +157,7 @@ DWORD dwThreadID;
 ### <a name="remarks"></a>コメント  
  現在のスレッドの識別子が含まれています。  
   
-##  <a name="a-namegetdefaultthreadsa--ccomautothreadmodulegetdefaultthreads"></a><a name="getdefaultthreads"></a>CComAutoThreadModule::GetDefaultThreads  
+##  <a name="getdefaultthreads"></a>CComAutoThreadModule::GetDefaultThreads  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -160,7 +170,7 @@ static int GetDefaultThreads();
 ### <a name="remarks"></a>コメント  
  この静的関数は、プロセッサの数に基づいて、EXE モジュールのスレッドの最大数を動的に計算します。 既定では、この戻り値が渡される、 [Init](#init)スレッドを作成します。  
   
-##  <a name="a-nameinita--ccomautothreadmoduleinit"></a><a name="init"></a>CComAutoThreadModule::Init  
+##  <a name="init"></a>CComAutoThreadModule::Init  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -187,7 +197,7 @@ HRESULT Init(
 ### <a name="remarks"></a>コメント  
  データ メンバーは初期化され、数で指定されたスレッドの作成`nThreads`します。  
   
-##  <a name="a-namelocka--ccomautothreadmodulelock"></a><a name="lock"></a>CComAutoThreadModule::Lock  
+##  <a name="lock"></a>CComAutoThreadModule::Lock  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -200,7 +210,7 @@ LONG Lock();
 ### <a name="remarks"></a>コメント  
  モジュールと、現在のスレッドのロック カウントをインクリメントを実行します。 `CComAutoThreadModule`モジュールのロック カウントを使用して、クライアントがある場合は、モジュールにアクセスするかどうかを調べます。 現在のスレッドのロック カウントは、統計目的のために使用されます。  
   
-##  <a name="a-namemallocatora--ccomautothreadmodulemallocator"></a><a name="m_allocator"></a>CComAutoThreadModule::m_Allocator  
+##  <a name="m_allocator"></a>CComAutoThreadModule::m_Allocator  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -210,7 +220,7 @@ ThreadAllocator  m_Allocator;
 ### <a name="remarks"></a>コメント  
  スレッドの選択を管理するオブジェクト。 既定では、`ThreadAllocator`クラス テンプレートのパラメーターが[CComSimpleThreadAllocator](../../atl/reference/ccomsimplethreadallocator-class.md)します。  
   
-##  <a name="a-namemnthreadsa--ccomautothreadmodulemnthreads"></a><a name="m_nthreads"></a>CComAutoThreadModule::m_nThreads  
+##  <a name="m_nthreads"></a>CComAutoThreadModule::m_nThreads  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -220,7 +230,7 @@ int m_nThreads;
 ### <a name="remarks"></a>コメント  
  EXE モジュール内のスレッドの数が含まれています。 [Init](#init)が呼び出されると、`m_nThreads`に設定されている、`nThreads`パラメーターの値。 各スレッドの関連付けられているアパートメント、 [CComApartment](../../atl/reference/ccomapartment-class.md)オブジェクトです。  
   
-##  <a name="a-namempapartmentsa--ccomautothreadmodulempapartments"></a><a name="m_papartments"></a>CComAutoThreadModule::m_pApartments  
+##  <a name="m_papartments"></a>CComAutoThreadModule::m_pApartments  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```
@@ -230,7 +240,7 @@ CComApartment* m_pApartments;
 ### <a name="remarks"></a>コメント  
  配列を指す[CComApartment](../../atl/reference/ccomapartment-class.md)アパートメントにモジュールを管理するそれぞれのオブジェクト。 配列内の要素の数に基づいて、 [m_nThreads](#m_nthreads)メンバーです。  
   
-##  <a name="a-nameunlocka--ccomautothreadmoduleunlock"></a><a name="unlock"></a>CComAutoThreadModule::Unlock  
+##  <a name="unlock"></a>CComAutoThreadModule::Unlock  
  ATL 7.0 の時点で`CComAutoThreadModule`は今後使用しません。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはです。  
   
 ```

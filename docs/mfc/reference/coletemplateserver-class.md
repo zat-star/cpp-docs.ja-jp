@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleTemplateServer
+- AFXDISP/COleTemplateServer
+- AFXDISP/COleTemplateServer::COleTemplateServer
+- AFXDISP/COleTemplateServer::ConnectTemplate
+- AFXDISP/COleTemplateServer::Unregister
+- AFXDISP/COleTemplateServer::UpdateRegistry
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,7 +95,7 @@ class COleTemplateServer : public COleObjectFactory
 ## <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
   
-##  <a name="a-namecoletemplateservera--coletemplateservercoletemplateserver"></a><a name="coletemplateserver"></a>COleTemplateServer::COleTemplateServer  
+##  <a name="coletemplateserver"></a>COleTemplateServer::COleTemplateServer  
  `COleTemplateServer` オブジェクトを構築します。  
   
 ```  
@@ -100,7 +105,7 @@ COleTemplateServer();
 ### <a name="remarks"></a>コメント  
  使用した簡単な説明、`COleTemplateServer`を参照してください、[直接](../../mfc/reference/colelinkingdoc-class.md)クラスの概要です。  
   
-##  <a name="a-nameconnecttemplatea--coletemplateserverconnecttemplate"></a><a name="connecttemplate"></a>COleTemplateServer::ConnectTemplate  
+##  <a name="connecttemplate"></a>COleTemplateServer::ConnectTemplate  
  指すドキュメント テンプレートを接続する`pDocTemplate`、基になる[COleObjectFactory](../../mfc/reference/coleobjectfactory-class.md)オブジェクトです。  
   
 ```  
@@ -123,7 +128,7 @@ void ConnectTemplate(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [CLSID キー](http://msdn.microsoft.com/library/windows/desktop/ms691424)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameunregistera--coletemplateserverunregister"></a><a name="unregister"></a>COleTemplateServer::Unregister  
+##  <a name="unregister"></a>COleTemplateServer::Unregister  
  関連付けられたドキュメント テンプレートの登録を解除します。  
   
 ```  
@@ -136,7 +141,7 @@ BOOL Unregister();
 ### <a name="remarks"></a>コメント  
  EnterRemarks  
   
-##  <a name="a-nameupdateregistrya--coletemplateserverupdateregistry"></a><a name="updateregistry"></a>COleTemplateServer::UpdateRegistry  
+##  <a name="updateregistry"></a>COleTemplateServer::UpdateRegistry  
  ドキュメント テンプレート文字列からファイルの種類の情報を読み込んで OLE システム レジストリに格納します。  
   
 ```  

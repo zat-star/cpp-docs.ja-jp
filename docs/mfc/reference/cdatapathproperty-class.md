@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDataPathProperty
+- AFXCTL/CDataPathProperty
+- AFXCTL/CDataPathProperty::CDataPathProperty
+- AFXCTL/CDataPathProperty::GetControl
+- AFXCTL/CDataPathProperty::GetPath
+- AFXCTL/CDataPathProperty::Open
+- AFXCTL/CDataPathProperty::ResetData
+- AFXCTL/CDataPathProperty::SetControl
+- AFXCTL/CDataPathProperty::SetPath
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +105,7 @@ class CDataPathProperty : public CAsyncMonikerFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxctl.h  
   
-##  <a name="a-namecdatapathpropertya--cdatapathpropertycdatapathproperty"></a><a name="cdatapathproperty"></a>CDataPathProperty::CDataPathProperty  
+##  <a name="cdatapathproperty"></a>CDataPathProperty::CDataPathProperty  
  `CDataPathProperty` オブジェクトを構築します。  
   
 ```  
@@ -115,7 +123,7 @@ CDataPathProperty(LPCTSTR lpszPath, COleControl* pControl = NULL);
 ### <a name="remarks"></a>コメント  
  `COleControl`によって指されるオブジェクト`pControl`によって使用される**開く**派生クラスによって取得します。 場合`pControl`は**NULL**で使用されるコントロール**開く**で設定する必要があります`SetControl`します。 場合`lpszPath`は**NULL**を使用してパスを渡すことができます**開く**を設定または`SetPath`です。  
   
-##  <a name="a-namegetcontrola--cdatapathpropertygetcontrol"></a><a name="getcontrol"></a>CDataPathProperty::GetControl  
+##  <a name="getcontrol"></a>CDataPathProperty::GetControl  
  取得するには、このメンバー関数を呼び出す、`COleControl`オブジェクトに関連付けられている、`CDataPathProperty`オブジェクトです。  
   
 ```  
@@ -125,7 +133,7 @@ COleControl* GetControl();
 ### <a name="return-value"></a>戻り値  
  OLE コントロールへのポインターに関連付けられている返します、`CDataPathProperty`オブジェクトです。 **NULL**コントロールではなくが関連付けられている場合。  
   
-##  <a name="a-namegetpatha--cdatapathpropertygetpath"></a><a name="getpath"></a>CDataPathProperty::GetPath  
+##  <a name="getpath"></a>CDataPathProperty::GetPath  
  パスを取得する、時に設定するには、このメンバー関数を呼び出して、`CDataPathProperty`オブジェクトが構築すると、やで指定された**開く**、または以前の呼び出しで指定された、`SetPath`メンバー関数。  
   
 ```  
@@ -135,7 +143,7 @@ CString GetPath() const;
 ### <a name="return-value"></a>戻り値  
  プロパティ自体へのパス名を返します。 パスが指定されていない場合は空にすることができます。  
   
-##  <a name="a-nameopena--cdatapathpropertyopen"></a><a name="open"></a>CDataPathProperty::Open  
+##  <a name="open"></a>CDataPathProperty::Open  
  関連付けられたコントロールの非同期のプロパティの読み込みを開始するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -179,7 +187,7 @@ virtual BOOL Open(CFileException* pError = NULL);
   
  すべてのオーバー ロード[CAsyncMonikerFile::Open](../../mfc/reference/casyncmonikerfile-class.md#open)からも入手できます`CDataPathProperty`します。  
   
-##  <a name="a-nameresetdataa--cdatapathpropertyresetdata"></a><a name="resetdata"></a>CDataPathProperty::ResetData  
+##  <a name="resetdata"></a>CDataPathProperty::ResetData  
  取得するには、この関数を呼び出す`CAsyncMonikerFile::OnDataAvailable`いるコントロールのプロパティが変更され、非同期的に読み込まれるすべての情報は役に立たなくなったコンテナーに通知します。  
   
 ```  
@@ -189,7 +197,7 @@ virtual void ResetData();
 ### <a name="remarks"></a>コメント  
  開くを再起動する必要があります。 派生クラスでは、この関数はそれぞれ異なる既定値をオーバーライドできます。  
   
-##  <a name="a-namesetcontrola--cdatapathpropertysetcontrol"></a><a name="setcontrol"></a>CDataPathProperty::SetControl  
+##  <a name="setcontrol"></a>CDataPathProperty::SetControl  
  このメンバー関数を呼び出して非同期の OLE コントロールと関連付ける、`CDataPathProperty`オブジェクトです。  
   
 ```  
@@ -200,7 +208,7 @@ void SetControl(COleControl* pControl);
  `pControl`  
  プロパティに関連する非同期の OLE コントロールへのポインター。  
   
-##  <a name="a-namesetpatha--cdatapathpropertysetpath"></a><a name="setpath"></a>CDataPathProperty::SetPath  
+##  <a name="setpath"></a>CDataPathProperty::SetPath  
  プロパティのパス名を設定するには、このメンバー関数を呼び出します。  
   
 ```  

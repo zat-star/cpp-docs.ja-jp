@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDragListBox
+- AFXCMN/CDragListBox
+- AFXCMN/CDragListBox::CDragListBox
+- AFXCMN/CDragListBox::BeginDrag
+- AFXCMN/CDragListBox::CancelDrag
+- AFXCMN/CDragListBox::Dragging
+- AFXCMN/CDragListBox::DrawInsert
+- AFXCMN/CDragListBox::Dropped
+- AFXCMN/CDragListBox::ItemFromPt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +102,7 @@ class CDragListBox : public CListBox
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namebegindraga--cdraglistboxbegindrag"></a><a name="begindrag"></a>CDragListBox::BeginDrag  
+##  <a name="begindrag"></a>CDragListBox::BeginDrag  
  によって呼び出される、イベントが発生したときに、フレームワークがマウスの左ボタンを押すなどのドラッグ操作を開始できます。  
   
 ```  
@@ -111,7 +119,7 @@ virtual BOOL BeginDrag(CPoint pt);
 ### <a name="remarks"></a>コメント  
  ドラッグ操作が開始されるときの動作を制御する場合は、この関数をオーバーライドします。 既定の実装では、マウスをキャプチャし、左または右マウス ボタンをクリックするか、ドラッグ操作が取り消された時点で、esc キーを押すまでドラッグ モードのままです。  
   
-##  <a name="a-namecanceldraga--cdraglistboxcanceldrag"></a><a name="canceldrag"></a>CDragListBox::CancelDrag  
+##  <a name="canceldrag"></a>CDragListBox::CancelDrag  
  ドラッグ操作が取り消されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -125,14 +133,14 @@ virtual void CancelDrag(CPoint pt);
 ### <a name="remarks"></a>コメント  
  リスト ボックス コントロールに対して特別な処理を処理するには、この関数をオーバーライドします。  
   
-##  <a name="a-namecdraglistboxa--cdraglistboxcdraglistbox"></a><a name="cdraglistbox"></a>CDragListBox::CDragListBox  
+##  <a name="cdraglistbox"></a>CDragListBox::CDragListBox  
  `CDragListBox` オブジェクトを構築します。  
   
 ```  
 CDragListBox();
 ```  
   
-##  <a name="a-namedragginga--cdraglistboxdragging"></a><a name="dragging"></a>CDragListBox::Dragging  
+##  <a name="dragging"></a>CDragListBox::Dragging  
  内でリスト ボックスの項目がドラッグされている場合に、フレームワークによって呼び出され、`CDragListBox`オブジェクトです。  
   
 ```  
@@ -155,7 +163,7 @@ virtual UINT Dragging(CPoint pt);
 ### <a name="remarks"></a>コメント  
  既定の動作`DL_MOVECURSOR`します。 追加機能を提供する場合は、この関数をオーバーライドします。  
   
-##  <a name="a-namedrawinserta--cdraglistboxdrawinsert"></a><a name="drawinsert"></a>CDragListBox::DrawInsert  
+##  <a name="drawinsert"></a>CDragListBox::DrawInsert  
  指定したインデックス項目の前に挿入ガイドを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -169,7 +177,7 @@ virtual void DrawInsert(int nItem);
 ### <a name="remarks"></a>コメント  
  値 - 1 は、挿入ガイドをクリアします。 外観や挿入ガイドの動作を変更するには、この関数をオーバーライドします。  
   
-##  <a name="a-namedroppeda--cdraglistboxdropped"></a><a name="dropped"></a>CDragListBox::Dropped  
+##  <a name="dropped"></a>CDragListBox::Dropped  
  内の項目が削除されるときに、フレームワークによって呼び出され、`CDragListBox`オブジェクトです。  
   
 ```  
@@ -188,7 +196,7 @@ virtual void Dropped(
 ### <a name="remarks"></a>コメント  
  既定の動作は、リスト ボックスの項目とそのデータを新しい場所にコピーし、元の項目を削除します。 リスト ボックス アイテムのリスト内の他の場所にドラッグしてコピーできるようにするなど、既定の動作をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameitemfrompta--cdraglistboxitemfrompt"></a><a name="itemfrompt"></a>CDragListBox::ItemFromPt  
+##  <a name="itemfrompt"></a>CDragListBox::ItemFromPt  
  リスト ボックスの項目の&0; から始まるインデックスを取得するには、この関数がある呼び出し`pt`します。  
   
 ```  

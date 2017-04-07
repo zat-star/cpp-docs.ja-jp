@@ -9,11 +9,22 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CComObjectRootEx
-- ATL::CComObjectRootEx<ThreadModel>
 - CComObjectRootEx
-- ATL::CComObjectRootEx
-- ATL.CComObjectRootEx<ThreadModel>
+- ATLCOM/ATL::CComObjectRootEx
+- ATLCOM/ATL::CComObjectRootEx
+- ATLCOM/ATL::InternalAddRef
+- ATLCOM/ATL::InternalRelease
+- ATLCOM/ATL::Lock
+- ATLCOM/ATL::Unlock
+- ATLCOM/ATL::FinalConstruct
+- ATLCOM/ATL::FinalRelease
+- ATLCOM/ATL::OuterAddRef
+- ATLCOM/ATL::OuterQueryInterface
+- ATLCOM/ATL::OuterRelease
+- ATLCOM/ATL::InternalQueryInterface
+- ATLCOM/ATL::ObjectMain
+- ATLCOM/ATL::m_dwRef
+- ATLCOM/ATL::m_pOuterUnknown
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -112,14 +123,14 @@ class CComObjectRootEx : public CComObjectRootBase
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameccomobjectrootexa--ccomobjectrootexccomobjectrootex"></a><a name="ccomobjectrootex"></a>CComObjectRootEx::CComObjectRootEx  
+##  <a name="ccomobjectrootex"></a>CComObjectRootEx::CComObjectRootEx  
  コンス トラクターでは、参照カウントを 0 に初期化します。  
   
 ```
 CComObjectRootEx();
 ```  
   
-##  <a name="a-namefinalconstructa--ccomobjectrootexfinalconstruct"></a><a name="finalconstruct"></a>CComObjectRootEx::FinalConstruct  
+##  <a name="finalconstruct"></a>CComObjectRootEx::FinalConstruct  
  このメソッドは、作成したオブジェクトに必要な初期化を実行する派生クラスでオーバーライドできます。  
   
 ```
@@ -159,7 +170,7 @@ HRESULT FinalConstruct();
   
 -   オーバーライド`FinalRelease`を解放する、 **IUnknown**ポインター。  
   
-##  <a name="a-namefinalreleasea--ccomobjectrootexfinalrelease"></a><a name="finalrelease"></a>CComObjectRootEx::FinalRelease  
+##  <a name="finalrelease"></a>CComObjectRootEx::FinalRelease  
  このメソッドは、作成したオブジェクトに必要なクリーンアップを実行する派生クラスでオーバーライドできます。  
   
 ```
@@ -171,7 +182,7 @@ void FinalRelease();
   
  クリーンアップは実行`FinalRelease`は、オブジェクトの位置を表すポイントにも引き続き完全に構築するために、クラスのデストラクターにコードを追加することをお勧め`FinalRelease`が呼び出されます。 これにより、最派生クラスによって提供されるメソッドを安全にアクセスできます。 これは、削除する前に、集約オブジェクトを解放するために特に重要です。  
   
-##  <a name="a-nameinternaladdrefa--ccomobjectrootexinternaladdref"></a><a name="internaladdref"></a>CComObjectRootEx::InternalAddRef  
+##  <a name="internaladdref"></a>CComObjectRootEx::InternalAddRef  
  1 には、非集約オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -184,7 +195,7 @@ ULONG InternalAddRef();
 ### <a name="remarks"></a>コメント  
  スレッド モデルがマルチ スレッドの場合**InterlockedIncrement**を複数のスレッドが同時に、参照カウントを変更することを防ぐために使用します。  
   
-##  <a name="a-nameinternalqueryinterfacea--ccomobjectrootexinternalqueryinterface"></a><a name="internalqueryinterface"></a>CComObjectRootEx::InternalQueryInterface  
+##  <a name="internalqueryinterface"></a>CComObjectRootEx::InternalQueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -214,7 +225,7 @@ static HRESULT InternalQueryInterface(
 ### <a name="remarks"></a>コメント  
  `InternalQueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。 オブジェクトを集約すると場合、`InternalQueryInterface`外部への委任しません。 インターフェイスを入力するには、マクロを使用した、COM マップ テーブルに[COM_INTERFACE_ENTRY](http://msdn.microsoft.com/library/19dcb768-2e1f-4b8d-a618-453a01a4bd00)またはそのバリエーションの&1; つです。  
   
-##  <a name="a-nameinternalreleasea--ccomobjectrootexinternalrelease"></a><a name="internalrelease"></a>CComObjectRootEx::InternalRelease  
+##  <a name="internalrelease"></a>CComObjectRootEx::InternalRelease  
  1 で、非集約オブジェクトの参照カウントをデクリメントします。  
   
 ```
@@ -227,7 +238,7 @@ ULONG InternalRelease();
 ### <a name="remarks"></a>コメント  
  スレッド モデルがマルチ スレッドの場合**InterlockedDecrement**を複数のスレッドが同時に、参照カウントを変更することを防ぐために使用します。  
   
-##  <a name="a-namelocka--ccomobjectrootexlock"></a><a name="lock"></a>CComObjectRootEx::Lock  
+##  <a name="lock"></a>CComObjectRootEx::Lock  
  このメソッドは、Win32 API 関数を呼び出してスレッド モデルがマルチ スレッドの場合は、 [EnterCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682608)スレッドがクリティカル セクション オブジェクトの所有権を取得するまで待機したどのがプライベート データ メンバーを取得します。  
   
 ```
@@ -239,7 +250,7 @@ void Lock();
   
  スレッド モデルがシングル スレッドの場合、このメソッドは何も行われません。  
   
-##  <a name="a-namemdwrefa--ccomobjectrootexmdwref"></a><a name="m_dwref"></a>CComObjectRootEx::m_dwRef  
+##  <a name="m_dwref"></a>CComObjectRootEx::m_dwRef  
  4 バイトのメモリにアクセスする共用体の一部です。  
   
 ```
@@ -261,7 +272,7 @@ long m_dwRef;
   
  参照カウントを使用した場合は、オブジェクトは集計されません。`AddRef`と**リリース**は`m_dwRef`です。 外部へのポインターが格納されている場合は、オブジェクトを集約すると、[アグリゲート](#m_pouterunknown)します。  
   
-##  <a name="a-namempouterunknowna--ccomobjectrootexmpouterunknown"></a><a name="m_pouterunknown"></a>CComObjectRootEx::m_pOuterUnknown  
+##  <a name="m_pouterunknown"></a>CComObjectRootEx::m_pOuterUnknown  
  4 バイトのメモリにアクセスする共用体の一部です。  
   
 ```
@@ -284,7 +295,7 @@ IUnknown*
   
  外部へのポインターが格納されている場合は、オブジェクトを集約すると、`m_pOuterUnknown`です。 参照カウントを使用した場合は、オブジェクトは集計されません。`AddRef`と**リリース**に入っている[m_dwRef](#m_dwref)します。  
   
-##  <a name="a-nameobjectmaina--ccomobjectrootexobjectmain"></a><a name="objectmain"></a>CComObjectRootEx::ObjectMain  
+##  <a name="objectmain"></a>CComObjectRootEx::ObjectMain  
  表示される各クラスに対して、[オブジェクト マップ](http://msdn.microsoft.com/en-us/b57619cc-534f-4b8f-bfd4-0c12f937202f)モジュールが初期化された時点でこの関数が呼び出され、もう一度が終了したとき。  
   
 ```
@@ -303,7 +314,7 @@ static void WINAPI ObjectMain(bool bStarting);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#41;](../../atl/codesnippet/cpp/ccomobjectrootex-class_2.h)]  
   
-##  <a name="a-nameouteraddrefa--ccomobjectrootexouteraddref"></a><a name="outeraddref"></a>CComObjectRootEx::OuterAddRef  
+##  <a name="outeraddref"></a>CComObjectRootEx::OuterAddRef  
  集計の外側の不明な参照カウントをインクリメントします。  
   
 ```
@@ -313,7 +324,7 @@ ULONG OuterAddRef();
 ### <a name="return-value"></a>戻り値  
  診断に役立ちますしテスト可能性のある値。  
   
-##  <a name="a-nameouterqueryinterfacea--ccomobjectrootexouterqueryinterface"></a><a name="outerqueryinterface"></a>CComObjectRootEx::OuterQueryInterface  
+##  <a name="outerqueryinterface"></a>CComObjectRootEx::OuterQueryInterface  
  要求されたインターフェイスへの間接ポインターを取得します。  
   
 ```
@@ -330,7 +341,7 @@ HRESULT OuterQueryInterface(REFIID iid, void** ppvObject);
 ### <a name="return-value"></a>戻り値  
  標準の`HRESULT`値。  
   
-##  <a name="a-nameouterreleasea--ccomobjectrootexouterrelease"></a><a name="outerrelease"></a>CComObjectRootEx::OuterRelease  
+##  <a name="outerrelease"></a>CComObjectRootEx::OuterRelease  
  集計の外側の不明な参照カウントをデクリメントします。  
   
 ```
@@ -340,7 +351,7 @@ ULONG OuterRelease();
 ### <a name="return-value"></a>戻り値  
  非デバッグ ビルドでは、常に 0 を返します。 デバッグ ビルドで、診断に役に立たないかテスト可能性のある値を返します。  
   
-##  <a name="a-nameunlocka--ccomobjectrootexunlock"></a><a name="unlock"></a>CComObjectRootEx::Unlock  
+##  <a name="unlock"></a>CComObjectRootEx::Unlock  
  このメソッドは、Win32 API 関数を呼び出してスレッド モデルがマルチ スレッドの場合は、[により](http://msdn.microsoft.com/library/windows/desktop/ms684169)、クリティカル セクション オブジェクトの場合は、どのリリース所有権がプライベート データ メンバーを取得します。  
   
 ```

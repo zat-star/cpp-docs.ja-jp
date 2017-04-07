@@ -10,6 +10,41 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CImageList
+- AFXCMN/CImageList
+- AFXCMN/CImageList::CImageList
+- AFXCMN/CImageList::Add
+- AFXCMN/CImageList::Attach
+- AFXCMN/CImageList::BeginDrag
+- AFXCMN/CImageList::Copy
+- AFXCMN/CImageList::Create
+- AFXCMN/CImageList::DeleteImageList
+- AFXCMN/CImageList::DeleteTempMap
+- AFXCMN/CImageList::Detach
+- AFXCMN/CImageList::DragEnter
+- AFXCMN/CImageList::DragLeave
+- AFXCMN/CImageList::DragMove
+- AFXCMN/CImageList::DragShowNolock
+- AFXCMN/CImageList::Draw
+- AFXCMN/CImageList::DrawEx
+- AFXCMN/CImageList::DrawIndirect
+- AFXCMN/CImageList::EndDrag
+- AFXCMN/CImageList::ExtractIcon
+- AFXCMN/CImageList::FromHandle
+- AFXCMN/CImageList::FromHandlePermanent
+- AFXCMN/CImageList::GetBkColor
+- AFXCMN/CImageList::GetDragImage
+- AFXCMN/CImageList::GetImageCount
+- AFXCMN/CImageList::GetImageInfo
+- AFXCMN/CImageList::GetSafeHandle
+- AFXCMN/CImageList::Read
+- AFXCMN/CImageList::Remove
+- AFXCMN/CImageList::Replace
+- AFXCMN/CImageList::SetBkColor
+- AFXCMN/CImageList::SetDragCursorImage
+- AFXCMN/CImageList::SetImageCount
+- AFXCMN/CImageList::SetOverlayImage
+- AFXCMN/CImageList::Write
+- AFXCMN/CImageList::m_hImageList
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -122,7 +157,7 @@ class CImageList : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-nameadda--cimagelistadd"></a><a name="add"></a>CImageList::Add  
+##  <a name="add"></a>CImageList::Add  
  1 つまたは複数のイメージまたはアイコン イメージ リストを追加するには、この関数を呼び出します。  
   
 ```  
@@ -160,7 +195,7 @@ int Add(HICON hIcon);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#1;](../../mfc/reference/codesnippet/cpp/cimagelist-class_1.cpp)]  
   
-##  <a name="a-nameattacha--cimagelistattach"></a><a name="attach"></a>CImageList::Attach  
+##  <a name="attach"></a>CImageList::Attach  
  イメージ リストをアタッチするには、この関数を呼び出す、`CImageList`オブジェクトです。  
   
 ```  
@@ -177,7 +212,7 @@ BOOL Attach(HIMAGELIST hImageList);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#2;](../../mfc/reference/codesnippet/cpp/cimagelist-class_2.cpp)]  
   
-##  <a name="a-namebegindraga--cimagelistbegindrag"></a><a name="begindrag"></a>CImageList::BeginDrag  
+##  <a name="begindrag"></a>CImageList::BeginDrag  
  イメージのドラッグを開始するには、この関数を呼び出します。  
   
 ```  
@@ -202,14 +237,14 @@ BOOL BeginDrag(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#3;](../../mfc/reference/codesnippet/cpp/cimagelist-class_3.cpp)]  
   
-##  <a name="a-namecimagelista--cimagelistcimagelist"></a><a name="cimagelist"></a>CImageList::CImageList  
+##  <a name="cimagelist"></a>CImageList::CImageList  
  `CImageList` オブジェクトを構築します。  
   
 ```  
 CImageList();
 ```  
   
-##  <a name="a-namecopya--cimagelistcopy"></a><a name="copy"></a>CImageList::Copy  
+##  <a name="copy"></a>CImageList::Copy  
  このメンバー関数は、Win32 関数の動作を実装して[ImageList_Copy](http://msdn.microsoft.com/library/windows/desktop/bb761520)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -250,7 +285,7 @@ BOOL Copy(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&6;](../../mfc/reference/codesnippet/cpp/cimagelist-class_4.cpp)]  
   
-##  <a name="a-namecreatea--cimagelistcreate"></a><a name="create"></a>CImageList::Create  
+##  <a name="create"></a>CImageList::Create  
  イメージ リストを初期化し、それを[CImageList](../../mfc/reference/cimagelist-class.md)オブジェクトです。  
   
 ```  
@@ -353,7 +388,7 @@ BOOL Create(CImageList* pImageList);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#7;](../../mfc/reference/codesnippet/cpp/cimagelist-class_5.cpp)]  
   
-##  <a name="a-namedeleteimagelista--cimagelistdeleteimagelist"></a><a name="deleteimagelist"></a>CImageList::DeleteImageList  
+##  <a name="deleteimagelist"></a>CImageList::DeleteImageList  
  イメージ リストを削除するには、この関数を呼び出します。  
   
 ```  
@@ -366,7 +401,7 @@ BOOL DeleteImageList();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#8;](../../mfc/reference/codesnippet/cpp/cimagelist-class_6.cpp)]  
   
-##  <a name="a-namedeletetempmapa--cimagelistdeletetempmap"></a><a name="deletetempmap"></a>CImageList::DeleteTempMap  
+##  <a name="deletetempmap"></a>CImageList::DeleteTempMap  
  により自動的に呼び出さ、`CWinApp`アイドル ハンドラー`DeleteTempMap`一時的な削除`CImageList`によって作成されたオブジェクト[FromHandle](#fromhandle)、すべてのハンドルを破棄しません ( `hImageList`) に一時的に関連付けられている、 **ImageList**オブジェクトです。  
   
 ```  
@@ -376,7 +411,7 @@ static void PASCAL DeleteTempMap();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#9;](../../mfc/reference/codesnippet/cpp/cimagelist-class_7.cpp)]  
   
-##  <a name="a-namedetacha--cimagelistdetach"></a><a name="detach"></a>CImageList::Detach  
+##  <a name="detach"></a>CImageList::Detach  
  イメージ リスト オブジェクトをデタッチするには、この関数を呼び出して、`CImageList`オブジェクトです。  
   
 ```  
@@ -392,7 +427,7 @@ HIMAGELIST Detach();
 ### <a name="example"></a>例  
   例を参照してください[CImageList::Attach](#attach)します。  
   
-##  <a name="a-namedragentera--cimagelistdragenter"></a><a name="dragenter"></a>CImageList::DragEnter  
+##  <a name="dragenter"></a>CImageList::DragEnter  
  ドラッグ操作中にロックの更新で指定されたウィンドウを`pWndLock`で指定された位置にドラッグ イメージを表示および`point`です。  
   
 ```  
@@ -421,7 +456,7 @@ static BOOL PASCAL DragEnter(
 ### <a name="example"></a>例  
   例を参照してください[CImageList::BeginDrag](#begindrag)します。  
   
-##  <a name="a-namedragleavea--cimagelistdragleave"></a><a name="dragleave"></a>生じたとき  
+##  <a name="dragleave"></a>生じたとき  
  指定されたウィンドウのロックを解除`pWndLock`し、ドラッグ イメージを更新するウィンドウを非表示にします。  
   
 ```  
@@ -438,7 +473,7 @@ static BOOL PASCAL DragLeave(CWnd* pWndLock);
 ### <a name="example"></a>例  
   例を参照してください[CImageList::EndDrag](#enddrag)します。  
   
-##  <a name="a-namedragmovea--cimagelistdragmove"></a><a name="dragmove"></a>CImageList::DragMove  
+##  <a name="dragmove"></a>CImageList::DragMove  
  ドラッグ アンド ドロップ操作中にドラッグされているイメージを移動するには、この関数を呼び出します。  
   
 ```  
@@ -458,7 +493,7 @@ static BOOL PASCAL DragMove(CPoint pt);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&4;](../../mfc/reference/codesnippet/cpp/cimagelist-class_8.cpp)]  
   
-##  <a name="a-namedragshownolocka--cimagelistdragshownolock"></a><a name="dragshownolock"></a>CImageList::DragShowNolock  
+##  <a name="dragshownolock"></a>CImageList::DragShowNolock  
  ドラッグ操作中にウィンドウをロックすることがなくドラッグ イメージの表示と非表示を切り替えます。  
   
 ```  
@@ -475,7 +510,7 @@ static BOOL PASCAL DragShowNolock(BOOL bShow);
 ### <a name="remarks"></a>コメント  
  [CImageList::DragEnter](#dragenter)関数は、ドラッグ操作中にウィンドウに対するすべての更新をロックします。 ただし、この関数では、ウィンドウはロックされません。  
   
-##  <a name="a-namedrawa--cimagelistdraw"></a><a name="draw"></a>:Draw  
+##  <a name="draw"></a>:Draw  
  ドラッグ アンド ドロップ操作中にドラッグされているイメージを描画するには、この関数を呼び出します。  
   
 ```  
@@ -513,7 +548,7 @@ BOOL Draw(
 ### <a name="example"></a>例  
   例を参照してください[CImageList::SetOverlayImage](#setoverlayimage)します。  
   
-##  <a name="a-namedrawexa--cimagelistdrawex"></a><a name="drawex"></a>CImageList::DrawEx  
+##  <a name="drawex"></a>CImageList::DrawEx  
  指定したデバイス コンテキストでのイメージ リストのアイテムを描画します。  
   
 ```  
@@ -558,7 +593,7 @@ BOOL DrawEx(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#10;](../../mfc/reference/codesnippet/cpp/cimagelist-class_9.cpp)]  
   
-##  <a name="a-namedrawindirecta--cimagelistdrawindirect"></a><a name="drawindirect"></a>CImageList::DrawIndirect  
+##  <a name="drawindirect"></a>CImageList::DrawIndirect  
  イメージの一覧からイメージを描画するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -651,7 +686,7 @@ BOOL DrawIndirect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#11;](../../mfc/reference/codesnippet/cpp/cimagelist-class_10.cpp)]  
   
-##  <a name="a-nameenddraga--cimagelistenddrag"></a><a name="enddrag"></a>CImageList::EndDrag  
+##  <a name="enddrag"></a>CImageList::EndDrag  
  ドラッグ操作を終了するには、この関数を呼び出します。  
   
 ```  
@@ -664,7 +699,7 @@ static void PASCAL EndDrag();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#5;](../../mfc/reference/codesnippet/cpp/cimagelist-class_11.cpp)]  
   
-##  <a name="a-nameextracticona--cimagelistextracticon"></a><a name="extracticon"></a>CImageList::ExtractIcon  
+##  <a name="extracticon"></a>CImageList::ExtractIcon  
  イメージとイメージ リストに関連するマスクに基づいてアイコンを作成するには、この関数を呼び出します。  
   
 ```  
@@ -684,7 +719,7 @@ HICON ExtractIcon(int nImage);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#12;](../../mfc/reference/codesnippet/cpp/cimagelist-class_12.cpp)]  
   
-##  <a name="a-namefromhandlea--cimagelistfromhandle"></a><a name="fromhandle"></a>CImageList::FromHandle  
+##  <a name="fromhandle"></a>CImageList::FromHandle  
  ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。  
   
 ```  
@@ -704,7 +739,7 @@ static CImageList* PASCAL FromHandle(HIMAGELIST hImageList);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#13;](../../mfc/reference/codesnippet/cpp/cimagelist-class_13.cpp)]  
   
-##  <a name="a-namefromhandlepermanenta--cimagelistfromhandlepermanent"></a><a name="fromhandlepermanent"></a>CImageList::FromHandlePermanent  
+##  <a name="fromhandlepermanent"></a>CImageList::FromHandlePermanent  
  ポインターを返す、`CImageList`イメージ リストへのハンドルが指定されるとします。  
   
 ```  
@@ -724,7 +759,7 @@ static CImageList* PASCAL FromHandlePermanent(HIMAGELIST hImageList);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#14;](../../mfc/reference/codesnippet/cpp/cimagelist-class_14.cpp)]  
   
-##  <a name="a-namegetbkcolora--cimagelistgetbkcolor"></a><a name="getbkcolor"></a>CImageList::GetBkColor  
+##  <a name="getbkcolor"></a>CImageList::GetBkColor  
  イメージ リストの現在の背景色を取得するには、この関数を呼び出します。  
   
 ```  
@@ -737,7 +772,7 @@ COLORREF GetBkColor() const;
 ### <a name="example"></a>例  
   例を参照してください[CImageList::SetBkColor](#setbkcolor)します。  
   
-##  <a name="a-namegetdragimagea--cimagelistgetdragimage"></a><a name="getdragimage"></a>CImageList::GetDragImage  
+##  <a name="getdragimage"></a>CImageList::GetDragImage  
  ドラッグすることに使用される一時的なイメージ リストを取得します。  
   
 ```  
@@ -756,7 +791,7 @@ static CImageList* PASCAL GetDragImage(
 ### <a name="return-value"></a>戻り値  
  かどうかは成功すると、一時イメージへのポインターを一覧表示されるドラッグ; で使用それ以外の場合、 **NULL**します。  
   
-##  <a name="a-namegetimagecounta--cimagelistgetimagecount"></a><a name="getimagecount"></a>CImageList::GetImageCount  
+##  <a name="getimagecount"></a>CImageList::GetImageCount  
  イメージ リスト内のイメージの数を取得するには、この関数を呼び出します。  
   
 ```  
@@ -769,7 +804,7 @@ int GetImageCount() const;
 ### <a name="example"></a>例  
   例を参照してください[CImageList::ExtractIcon](#extracticon)します。  
   
-##  <a name="a-namegetimageinfoa--cimagelistgetimageinfo"></a><a name="getimageinfo"></a>CImageList::GetImageInfo  
+##  <a name="getimageinfo"></a>CImageList::GetImageInfo  
  この関数では、イメージに関する情報を取得します。  
   
 ```  
@@ -791,7 +826,7 @@ BOOL GetImageInfo(
 ### <a name="remarks"></a>コメント  
  `IMAGEINFO`構造体には、イメージ リスト内のイメージに関する情報が含まれています。  
   
-##  <a name="a-namegetsafehandlea--cimagelistgetsafehandle"></a><a name="getsafehandle"></a>CImageList::GetSafeHandle  
+##  <a name="getsafehandle"></a>CImageList::GetSafeHandle  
  取得するには、この関数を呼び出して、 **m_hImageList**データ メンバーです。  
   
 ```  
@@ -804,7 +839,7 @@ HIMAGELIST GetSafeHandle() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#15;](../../mfc/reference/codesnippet/cpp/cimagelist-class_15.cpp)]  
   
-##  <a name="a-namemhimagelista--cimagelistmhimagelist"></a><a name="m_himagelist"></a>CImageList::m_hImageList  
+##  <a name="m_himagelist"></a>CImageList::m_hImageList  
  このオブジェクトにアタッチされているイメージ リストのハンドル。  
   
  **HIMAGELIST m_hImageList です。**  
@@ -815,7 +850,7 @@ HIMAGELIST GetSafeHandle() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList 第&23;](../../mfc/reference/codesnippet/cpp/cimagelist-class_16.cpp)]  
   
-##  <a name="a-nameoperatorhimagelista--cimagelistoperator-himagelist"></a><a name="operator_himagelist"></a>CImageList::operator HIMAGELIST  
+##  <a name="operator_himagelist"></a>CImageList::operator HIMAGELIST  
  この演算子を使用して、接続されているハンドルの取得、`CImageList`オブジェクトです。  
   
 ```  
@@ -831,7 +866,7 @@ operator HIMAGELIST() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#16;](../../mfc/reference/codesnippet/cpp/cimagelist-class_17.cpp)]  
   
-##  <a name="a-namereada--cimagelistread"></a><a name="read"></a>CImageList::Read  
+##  <a name="read"></a>CImageList::Read  
  この関数では、アーカイブからのイメージ リストを読み込みます。  
   
 ```  
@@ -848,7 +883,7 @@ BOOL Read(CArchive* pArchive);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#18;](../../mfc/reference/codesnippet/cpp/cimagelist-class_18.cpp)]  
   
-##  <a name="a-nameremovea--cimagelistremove"></a><a name="remove"></a>CImageList::Remove  
+##  <a name="remove"></a>CImageList::Remove  
  イメージ リスト オブジェクトからイメージを削除するには、この関数を呼び出します。  
   
 ```  
@@ -868,7 +903,7 @@ BOOL Remove(int nImage);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#19;](../../mfc/reference/codesnippet/cpp/cimagelist-class_19.cpp)]  
   
-##  <a name="a-namereplacea--cimagelistreplace"></a><a name="replace"></a>CImageList::Replace  
+##  <a name="replace"></a>CImageList::Replace  
  この関数では、新しいイメージをイメージ リスト内のイメージを置き換えます。  
   
 ```  
@@ -907,7 +942,7 @@ int Replace(
 ### <a name="example"></a>例  
   例を参照してください[CImageList::SetImageCount](#setimagecount)します。  
   
-##  <a name="a-namesetbkcolora--cimagelistsetbkcolor"></a><a name="setbkcolor"></a>CImageList::SetBkColor  
+##  <a name="setbkcolor"></a>CImageList::SetBkColor  
  イメージ リストの背景色を設定するには、この関数を呼び出します。  
   
 ```  
@@ -924,7 +959,7 @@ COLORREF SetBkColor(COLORREF cr);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList&#20;](../../mfc/reference/codesnippet/cpp/cimagelist-class_20.cpp)]  
   
-##  <a name="a-namesetdragcursorimagea--cimagelistsetdragcursorimage"></a><a name="setdragcursorimage"></a>CImageList::SetDragCursorImage  
+##  <a name="setdragcursorimage"></a>CImageList::SetDragCursorImage  
  現在のドラッグ イメージと指定したイメージ (通常はマウス カーソル イメージ) を組み合わせることによって、新しいドラッグ イメージを作成します。  
   
 ```  
@@ -946,7 +981,7 @@ BOOL SetDragCursorImage(
 ### <a name="remarks"></a>コメント  
  ドラッグの関数は、ドラッグ操作中に、新しいイメージを使用するため、Windows を使用する必要があります[ShowCursor](http://msdn.microsoft.com/library/windows/desktop/ms648396)関数を呼び出した後、実際のマウス カーソルを非表示に`CImageList::SetDragCursorImage`します。 それ以外の場合、システムは、ドラッグ操作の実行中の&2; つのマウス カーソルがあるように見える場合があります。  
   
-##  <a name="a-namesetimagecounta--cimagelistsetimagecount"></a><a name="setimagecount"></a>CImageList::SetImageCount  
+##  <a name="setimagecount"></a>CImageList::SetImageCount  
  内のイメージの番号をリセットするには、このメンバー関数を呼び出す、`CImageList`オブジェクトです。  
   
 ```  
@@ -968,7 +1003,7 @@ BOOL SetImageCount(UINT uNewCount);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList #&21;](../../mfc/reference/codesnippet/cpp/cimagelist-class_21.cpp)]  
   
-##  <a name="a-namesetoverlayimagea--cimagelistsetoverlayimage"></a><a name="setoverlayimage"></a>CImageList::SetOverlayImage  
+##  <a name="setoverlayimage"></a>CImageList::SetOverlayImage  
  オーバーレイ マスクとして使用するイメージの一覧にイメージの&0; から始まるインデックスを追加するには、この関数を呼び出します。  
   
 ```  
@@ -995,7 +1030,7 @@ BOOL SetOverlayImage(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList #&22;](../../mfc/reference/codesnippet/cpp/cimagelist-class_22.cpp)]  
   
-##  <a name="a-namewritea--cimagelistwrite"></a><a name="write"></a>CImageList::Write  
+##  <a name="write"></a>CImageList::Write  
  イメージ リスト オブジェクトをアーカイブに書き込むには、この関数を呼び出します。  
   
 ```  

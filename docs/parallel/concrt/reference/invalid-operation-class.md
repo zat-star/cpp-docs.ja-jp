@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::invalid_operation
+- invalid_operation
+- CONCRT/concurrency::invalid_operation
+- CONCRT/concurrency::invalid_operation::invalid_operation
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 0484e149409b2515f60b2e9aa34a85d5381e05a5
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 85821bbbe62fe5da93165065cb6f17ae4e938f4e
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="invalidoperation-class"></a>invalid_operation クラス
@@ -54,7 +56,7 @@ class invalid_operation : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[invalid_operation コンス トラクター](#ctor)|オーバーロードされます。 `invalid_operation` オブジェクトを構築します。|  
+|[invalid_operation](#ctor)|オーバーロードされます。 `invalid_operation` オブジェクトを構築します。|  
   
 ## <a name="remarks"></a>コメント  
  通常、この例外がスローされる条件については、それぞれのメソッドにドキュメント化されています。  
@@ -69,7 +71,7 @@ class invalid_operation : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-invalidoperation"></a><a name="ctor"></a>invalid_operation 
+##  <a name="ctor"></a>invalid_operation 
 
  `invalid_operation` オブジェクトを構築します。  
   
@@ -84,5 +86,5 @@ invalid_operation() throw();
  エラーの説明メッセージ。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

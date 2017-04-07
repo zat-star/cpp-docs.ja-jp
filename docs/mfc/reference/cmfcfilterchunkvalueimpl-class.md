@@ -10,7 +10,27 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCFilterChunkValueImpl
-- afxwin/CMFCFilterChunkValueImpl
+- AFXWIN/CMFCFilterChunkValueImpl
+- AFXWIN/CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl
+- AFXWIN/CMFCFilterChunkValueImpl::Clear
+- AFXWIN/CMFCFilterChunkValueImpl::CopyChunk
+- AFXWIN/CMFCFilterChunkValueImpl::CopyFrom
+- AFXWIN/CMFCFilterChunkValueImpl::GetChunkGUID
+- AFXWIN/CMFCFilterChunkValueImpl::GetChunkPID
+- AFXWIN/CMFCFilterChunkValueImpl::GetChunkType
+- AFXWIN/CMFCFilterChunkValueImpl::GetString
+- AFXWIN/CMFCFilterChunkValueImpl::GetValue
+- AFXWIN/CMFCFilterChunkValueImpl::GetValueNoAlloc
+- AFXWIN/CMFCFilterChunkValueImpl::IsValid
+- AFXWIN/CMFCFilterChunkValueImpl::SetBoolValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetDwordValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetFileTimeValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetInt64Value
+- AFXWIN/CMFCFilterChunkValueImpl::SetIntValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetLongValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetSystemTimeValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetTextValue
+- AFXWIN/CMFCFilterChunkValueImpl::SetChunk
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -108,7 +128,7 @@ class CMFCFilterChunkValueImpl : public ATL::IFilterChunkValue;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecleara--cmfcfilterchunkvalueimplclear"></a><a name="clear"></a>CMFCFilterChunkValueImpl::Clear  
+##  <a name="clear"></a>CMFCFilterChunkValueImpl::Clear  
  ChunkValue をクリアします。  
   
 ```  
@@ -117,7 +137,7 @@ void Clear();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecmfcfilterchunkvalueimpla--cmfcfilterchunkvalueimplcmfcfilterchunkvalueimpl"></a><a name="cmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl  
+##  <a name="cmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl  
  オブジェクトを構築します。  
   
 ```  
@@ -126,7 +146,7 @@ CMFCFilterChunkValueImpl();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedtorcmfcfilterchunkvalueimpla--cmfcfilterchunkvalueimplcmfcfilterchunkvalueimpl"></a><a name="_dtorcmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl:: ~ CMFCFilterChunkValueImpl  
+##  <a name="_dtorcmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl:: ~ CMFCFilterChunkValueImpl  
  オブジェクトを破棄します。  
   
 ```  
@@ -135,7 +155,7 @@ virtual ~CMFCFilterChunkValueImpl();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecopychunka--cmfcfilterchunkvalueimplcopychunk"></a><a name="copychunk"></a>CMFCFilterChunkValueImpl::CopyChunk  
+##  <a name="copychunk"></a>CMFCFilterChunkValueImpl::CopyChunk  
  このチャンクをチャンクの特性を記述する構造体にコピーします。  
   
 ```  
@@ -151,7 +171,7 @@ HRESULT CopyChunk(STAT_CHUNK* pStatChunk);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namecopyfroma--cmfcfilterchunkvalueimplcopyfrom"></a><a name="copyfrom"></a>CMFCFilterChunkValueImpl::CopyFrom  
+##  <a name="copyfrom"></a>CMFCFilterChunkValueImpl::CopyFrom  
  その他の値からこのチャンク値を初期化します。  
   
 ```  
@@ -164,7 +184,7 @@ void CopyFrom (IFilterChunkValue* pValue);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetchunkguida--cmfcfilterchunkvalueimplgetchunkguid"></a><a name="getchunkguid"></a>CMFCFilterChunkValueImpl::GetChunkGUID  
+##  <a name="getchunkguid"></a>CMFCFilterChunkValueImpl::GetChunkGUID  
  GUID のチャンクを取得します。  
   
 ```  
@@ -176,7 +196,7 @@ REFGUID GetChunkGUID() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetchunkpida--cmfcfilterchunkvalueimplgetchunkpid"></a><a name="getchunkpid"></a>CMFCFilterChunkValueImpl::GetChunkPID  
+##  <a name="getchunkpid"></a>CMFCFilterChunkValueImpl::GetChunkPID  
  チャンクの PID (プロパティ ID) を取得します。  
   
 ```  
@@ -188,7 +208,7 @@ DWORD GetChunkPID() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetchunktypea--cmfcfilterchunkvalueimplgetchunktype"></a><a name="getchunktype"></a>CMFCFilterChunkValueImpl::GetChunkType  
+##  <a name="getchunktype"></a>CMFCFilterChunkValueImpl::GetChunkType  
  チャンクの種類を取得します。  
   
 ```  
@@ -200,7 +220,7 @@ CHUNKSTATE GetChunkType() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetstringa--cmfcfilterchunkvalueimplgetstring"></a><a name="getstring"></a>CMFCFilterChunkValueImpl::GetString  
+##  <a name="getstring"></a>CMFCFilterChunkValueImpl::GetString  
  文字列値を取得します。  
   
 ```  
@@ -212,7 +232,7 @@ CString &GetString();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetvaluea--cmfcfilterchunkvalueimplgetvalue"></a><a name="getvalue"></a>CMFCFilterChunkValueImpl::GetValue  
+##  <a name="getvalue"></a>CMFCFilterChunkValueImpl::GetValue  
  割り当てられた propvariant として値を取得します。  
   
 ```  
@@ -228,7 +248,7 @@ HRESULT GetValue(PROPVARIANT** ppPropVariant);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetvaluenoalloca--cmfcfilterchunkvalueimplgetvaluenoalloc"></a><a name="getvaluenoalloc"></a>CMFCFilterChunkValueImpl::GetValueNoAlloc  
+##  <a name="getvaluenoalloc"></a>CMFCFilterChunkValueImpl::GetValueNoAlloc  
  未割り当て (内部値) の値を返します。  
   
 ```  
@@ -240,7 +260,7 @@ PROPVARIANT GetValueNoAlloc ();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisvalida--cmfcfilterchunkvalueimplisvalid"></a><a name="isvalid"></a>CMFCFilterChunkValueImpl::IsValid  
+##  <a name="isvalid"></a>CMFCFilterChunkValueImpl::IsValid  
  このプロパティの値が有効であるかどうかどうかをチェックします。  
   
 ```  
@@ -252,7 +272,7 @@ BOOL IsValid() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetboolvaluea--cmfcfilterchunkvalueimplsetboolvalue"></a><a name="setboolvalue"></a>CMFCFilterChunkValueImpl::SetBoolValue  
+##  <a name="setboolvalue"></a>CMFCFilterChunkValueImpl::SetBoolValue  
  オーバーロードされます。 ブール値をキー プロパティを設定します。  
   
 ```  
@@ -303,7 +323,7 @@ HRESULT SetBoolValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetchunka--cmfcfilterchunkvalueimplsetchunk"></a><a name="setchunk"></a>CMFCFilterChunkValueImpl::SetChunk  
+##  <a name="setchunk"></a>CMFCFilterChunkValueImpl::SetChunk  
  チャンクの共通プロパティを設定するヘルパー関数。  
   
 ```  
@@ -340,7 +360,7 @@ HRESULT SetChunk(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetdwordvaluea--cmfcfilterchunkvalueimplsetdwordvalue"></a><a name="setdwordvalue"></a>CMFCFilterChunkValueImpl::SetDwordValue  
+##  <a name="setdwordvalue"></a>CMFCFilterChunkValueImpl::SetDwordValue  
  DWORD へのキーのプロパティを設定します。  
   
 ```  
@@ -381,7 +401,7 @@ HRESULT SetDwordValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetfiletimevaluea--cmfcfilterchunkvalueimplsetfiletimevalue"></a><a name="setfiletimevalue"></a>CMFCFilterChunkValueImpl::SetFileTimeValue  
+##  <a name="setfiletimevalue"></a>CMFCFilterChunkValueImpl::SetFileTimeValue  
  キー、filetime にプロパティを設定します。  
   
 ```  
@@ -422,7 +442,7 @@ HRESULT SetFileTimeValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetint64valuea--cmfcfilterchunkvalueimplsetint64value"></a><a name="setint64value"></a>CMFCFilterChunkValueImpl::SetInt64Value  
+##  <a name="setint64value"></a>CMFCFilterChunkValueImpl::SetInt64Value  
  キーは int64 にプロパティを設定します。  
   
 ```  
@@ -463,7 +483,7 @@ HRESULT SetInt64Value(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetintvaluea--cmfcfilterchunkvalueimplsetintvalue"></a><a name="setintvalue"></a>CMFCFilterChunkValueImpl::SetIntValue  
+##  <a name="setintvalue"></a>CMFCFilterChunkValueImpl::SetIntValue  
  キーに int プロパティを設定します。  
   
 ```  
@@ -504,7 +524,7 @@ HRESULT SetIntValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetlongvaluea--cmfcfilterchunkvalueimplsetlongvalue"></a><a name="setlongvalue"></a>CMFCFilterChunkValueImpl::SetLongValue  
+##  <a name="setlongvalue"></a>CMFCFilterChunkValueImpl::SetLongValue  
  キー長整数型にプロパティを設定します。  
   
 ```  
@@ -545,7 +565,7 @@ HRESULT SetLongValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetsystemtimevaluea--cmfcfilterchunkvalueimplsetsystemtimevalue"></a><a name="setsystemtimevalue"></a>CMFCFilterChunkValueImpl::SetSystemTimeValue  
+##  <a name="setsystemtimevalue"></a>CMFCFilterChunkValueImpl::SetSystemTimeValue  
  SystemTime にキー プロパティを設定します。  
   
 ```  
@@ -586,7 +606,7 @@ HRESULT SetSystemTimeValue(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesettextvaluea--cmfcfilterchunkvalueimplsettextvalue"></a><a name="settextvalue"></a>CMFCFilterChunkValueImpl::SetTextValue  
+##  <a name="settextvalue"></a>CMFCFilterChunkValueImpl::SetTextValue  
  Unicode 文字列にキー プロパティを設定します。  
   
 ```  

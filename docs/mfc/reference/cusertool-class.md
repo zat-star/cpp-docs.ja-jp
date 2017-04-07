@@ -10,6 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CUserTool
+- AFXUSERTOOL/CUserTool
+- AFXUSERTOOL/CUserTool::CopyIconToClipboard
+- AFXUSERTOOL/CUserTool::DrawToolIcon
+- AFXUSERTOOL/CUserTool::GetCommand
+- AFXUSERTOOL/CUserTool::GetCommandId
+- AFXUSERTOOL/CUserTool::Invoke
+- AFXUSERTOOL/CUserTool::Serialize
+- AFXUSERTOOL/CUserTool::SetCommand
+- AFXUSERTOOL/CUserTool::SetToolIcon
+- AFXUSERTOOL/CUserTool::LoadDefaultIcon
+- AFXUSERTOOL/CUserTool::m_strArguments
+- AFXUSERTOOL/CUserTool::m_strInitialDirectory
+- AFXUSERTOOL/CUserTool::m_strLabel
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -93,7 +106,7 @@ class CUserTool : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxusertool.h  
   
-##  <a name="a-namecopyicontoclipboarda--cusertoolcopyicontoclipboard"></a><a name="copyicontoclipboard"></a>CUserTool::CopyIconToClipboard  
+##  <a name="copyicontoclipboard"></a>CUserTool::CopyIconToClipboard  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -104,7 +117,7 @@ BOOL CopyIconToClipboard();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedrawtoolicona--cusertooldrawtoolicon"></a><a name="drawtoolicon"></a>CUserTool::DrawToolIcon  
+##  <a name="drawtoolicon"></a>CUserTool::DrawToolIcon  
  指定した四角形の中心にユーザー ツールのアイコンを描画します。  
   
 ```  
@@ -120,7 +133,7 @@ void DrawToolIcon(
  [入力] `rectImage`  
  アイコンを表示する領域の座標を指定します。  
   
-##  <a name="a-namegetcommanda--cusertoolgetcommand"></a><a name="getcommand"></a>CUserTool::GetCommand  
+##  <a name="getcommand"></a>CUserTool::GetCommand  
  ユーザー ツールに関連付けられているコマンドのテキストを含む文字列を返します。  
   
 ```  
@@ -130,7 +143,7 @@ const CString& GetCommand() const;
 ### <a name="return-value"></a>戻り値  
  参照を`CString`ユーザー ツールに関連付けられているコマンドのテキストを含むオブジェクト。  
   
-##  <a name="a-namegetcommandida--cusertoolgetcommandid"></a><a name="getcommandid"></a>CUserTool::GetCommandId  
+##  <a name="getcommandid"></a>CUserTool::GetCommandId  
  ユーザー ツールのコマンド ID を返します。  
   
 ```  
@@ -140,7 +153,7 @@ UINT GetCommandId() const;
 ### <a name="return-value"></a>戻り値  
  このユーザー ツールのコマンド ID。  
   
-##  <a name="a-nameinvokea--cusertoolinvoke"></a><a name="invoke"></a>Cusertool:  
+##  <a name="invoke"></a>Cusertool:  
  ユーザー ツールに関連付けられているコマンドを実行します。  
   
 ```  
@@ -153,7 +166,7 @@ virtual BOOL Invoke();
 ### <a name="remarks"></a>コメント  
  呼び出し[ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153)ユーザー ツールに関連付けられているコマンドを実行します。 コマンドが空の場合、または場合に、関数が失敗した[ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153)は失敗します。  
   
-##  <a name="a-nameloaddefaulticona--cusertoolloaddefaulticon"></a><a name="loaddefaulticon"></a>CUserTool::LoadDefaultIcon  
+##  <a name="loaddefaulticon"></a>CUserTool::LoadDefaultIcon  
  ユーザー ツールの既定のアイコンを読み込みます。  
   
 ```  
@@ -168,7 +181,7 @@ virtual HICON LoadDefaultIcon();
   
  独自の既定ツール アイコンを指定するには、このメソッドをオーバーライドします。  
   
-##  <a name="a-namemstrargumentsa--cusertoolmstrarguments"></a><a name="m_strarguments"></a>CUserTool::m_strArguments  
+##  <a name="m_strarguments"></a>CUserTool::m_strArguments  
  ユーザー ツールのコマンドライン引数。  
   
 ```  
@@ -178,7 +191,7 @@ CString m_strArguments;
 ### <a name="remarks"></a>コメント  
  呼び出したときに、この文字列が、ツールに渡される[cusertool:](#invoke)またはユーザーがこのツールに関連付けられているコマンドをクリックしたとき。  
   
-##  <a name="a-namemstrinitialdirectorya--cusertoolmstrinitialdirectory"></a><a name="m_strinitialdirectory"></a>CUserTool::m_strInitialDirectory  
+##  <a name="m_strinitialdirectory"></a>CUserTool::m_strInitialDirectory  
  ユーザー ツールの初期ディレクトリを指定します。  
   
 ```  
@@ -188,14 +201,14 @@ CString m_strInitialDirectory;
 ### <a name="remarks"></a>コメント  
  この変数は、このツールを呼び出すときに実行される初期ディレクトリを指定します。 [cusertool:](#invoke)またはユーザーがこのツールに関連付けられているコマンドをクリックしたとき。  
   
-##  <a name="a-namemstrlabela--cusertoolmstrlabel"></a><a name="m_strlabel"></a>CUserTool::m_strLabel  
+##  <a name="m_strlabel"></a>CUserTool::m_strLabel  
  このツールのメニュー項目に表示されるラベルです。  
   
 ```  
 CString m_strLabel;  
 ```  
   
-##  <a name="a-nameserializea--cusertoolserialize"></a><a name="serialize"></a>CUserTool::Serialize  
+##  <a name="serialize"></a>CUserTool::Serialize  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
@@ -207,7 +220,7 @@ virtual void Serialize(CArchive& ar);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetcommanda--cusertoolsetcommand"></a><a name="setcommand"></a>CUserTool::SetCommand  
+##  <a name="setcommand"></a>CUserTool::SetCommand  
  ユーザー ツールを実行するアプリケーションを設定します。  
   
 ```  
@@ -221,7 +234,7 @@ void SetCommand(LPCTSTR lpszCmd);
 ### <a name="remarks"></a>コメント  
  ユーザー ツールを実行する新しいアプリケーションに設定するには、このメソッドを呼び出します。 このメソッドは、古いアイコンを破棄し、特定のアプリケーションからは新しいアイコンを読み込みます。 呼び出してユーザー ツールの既定のアイコンを読み込む場合は、アプリケーションからそのアイコンを読み込むことができません、 [CUserTool::LoadDefaultIcon](#loaddefaulticon)します。  
   
-##  <a name="a-namesettoolicona--cusertoolsettoolicon"></a><a name="settoolicon"></a>CUserTool::SetToolIcon  
+##  <a name="settoolicon"></a>CUserTool::SetToolIcon  
  このツールを使用するアプリケーションからユーザー ツールのアイコンを読み込みます。  
   
 ```  

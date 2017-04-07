@@ -10,6 +10,85 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CTreeCtrl
+- AFXCMN/CTreeCtrl
+- AFXCMN/CTreeCtrl::CTreeCtrl
+- AFXCMN/CTreeCtrl::Create
+- AFXCMN/CTreeCtrl::CreateDragImage
+- AFXCMN/CTreeCtrl::CreateEx
+- AFXCMN/CTreeCtrl::DeleteAllItems
+- AFXCMN/CTreeCtrl::DeleteItem
+- AFXCMN/CTreeCtrl::EditLabel
+- AFXCMN/CTreeCtrl::EndEditLabelNow
+- AFXCMN/CTreeCtrl::EnsureVisible
+- AFXCMN/CTreeCtrl::Expand
+- AFXCMN/CTreeCtrl::GetBkColor
+- AFXCMN/CTreeCtrl::GetCheck
+- AFXCMN/CTreeCtrl::GetChildItem
+- AFXCMN/CTreeCtrl::GetCount
+- AFXCMN/CTreeCtrl::GetDropHilightItem
+- AFXCMN/CTreeCtrl::GetEditControl
+- AFXCMN/CTreeCtrl::GetExtendedStyle
+- AFXCMN/CTreeCtrl::GetFirstVisibleItem
+- AFXCMN/CTreeCtrl::GetImageList
+- AFXCMN/CTreeCtrl::GetIndent
+- AFXCMN/CTreeCtrl::GetInsertMarkColor
+- AFXCMN/CTreeCtrl::GetItem
+- AFXCMN/CTreeCtrl::GetItemData
+- AFXCMN/CTreeCtrl::GetItemExpandedImageIndex
+- AFXCMN/CTreeCtrl::GetItemHeight
+- AFXCMN/CTreeCtrl::GetItemImage
+- AFXCMN/CTreeCtrl::GetItemPartRect
+- AFXCMN/CTreeCtrl::GetItemRect
+- AFXCMN/CTreeCtrl::GetItemState
+- AFXCMN/CTreeCtrl::GetItemStateEx
+- AFXCMN/CTreeCtrl::GetItemText
+- AFXCMN/CTreeCtrl::GetLastVisibleItem
+- AFXCMN/CTreeCtrl::GetLineColor
+- AFXCMN/CTreeCtrl::GetNextItem
+- AFXCMN/CTreeCtrl::GetNextSiblingItem
+- AFXCMN/CTreeCtrl::GetNextVisibleItem
+- AFXCMN/CTreeCtrl::GetParentItem
+- AFXCMN/CTreeCtrl::GetPrevSiblingItem
+- AFXCMN/CTreeCtrl::GetPrevVisibleItem
+- AFXCMN/CTreeCtrl::GetRootItem
+- AFXCMN/CTreeCtrl::GetScrollTime
+- AFXCMN/CTreeCtrl::GetSelectedCount
+- AFXCMN/CTreeCtrl::GetSelectedItem
+- AFXCMN/CTreeCtrl::GetTextColor
+- AFXCMN/CTreeCtrl::GetToolTips
+- AFXCMN/CTreeCtrl::GetVisibleCount
+- AFXCMN/CTreeCtrl::HitTest
+- AFXCMN/CTreeCtrl::InsertItem
+- AFXCMN/CTreeCtrl::ItemHasChildren
+- AFXCMN/CTreeCtrl::MapAccIdToItem
+- AFXCMN/CTreeCtrl::MapItemToAccID
+- AFXCMN/CTreeCtrl::Select
+- AFXCMN/CTreeCtrl::SelectDropTarget
+- AFXCMN/CTreeCtrl::SelectItem
+- AFXCMN/CTreeCtrl::SelectSetFirstVisible
+- AFXCMN/CTreeCtrl::SetAutoscrollInfo
+- AFXCMN/CTreeCtrl::SetBkColor
+- AFXCMN/CTreeCtrl::SetCheck
+- AFXCMN/CTreeCtrl::SetExtendedStyle
+- AFXCMN/CTreeCtrl::SetImageList
+- AFXCMN/CTreeCtrl::SetIndent
+- AFXCMN/CTreeCtrl::SetInsertMark
+- AFXCMN/CTreeCtrl::SetInsertMarkColor
+- AFXCMN/CTreeCtrl::SetItem
+- AFXCMN/CTreeCtrl::SetItemData
+- AFXCMN/CTreeCtrl::SetItemExpandedImageIndex
+- AFXCMN/CTreeCtrl::SetItemHeight
+- AFXCMN/CTreeCtrl::SetItemImage
+- AFXCMN/CTreeCtrl::SetItemState
+- AFXCMN/CTreeCtrl::SetItemStateEx
+- AFXCMN/CTreeCtrl::SetItemText
+- AFXCMN/CTreeCtrl::SetLineColor
+- AFXCMN/CTreeCtrl::SetScrollTime
+- AFXCMN/CTreeCtrl::SetTextColor
+- AFXCMN/CTreeCtrl::SetToolTips
+- AFXCMN/CTreeCtrl::ShowInfoTip
+- AFXCMN/CTreeCtrl::SortChildren
+- AFXCMN/CTreeCtrl::SortChildrenCB
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -168,7 +247,7 @@ class CTreeCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecreatea--ctreectrlcreate"></a><a name="create"></a>CTreeCtrl::Create  
+##  <a name="create"></a>CTreeCtrl::Create  
  ツリー コントロールをダイアログ ボックス テンプレートで指定する場合、またはを使用している[CTreeView](../../mfc/reference/ctreeview-class.md)、ダイアログ ボックスまたはビューの作成時に、ツリー コントロールが自動的に作成します。  
   
 ```  
@@ -205,7 +284,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#1;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_1.cpp)]  
   
-##  <a name="a-namecreateexa--ctreectrlcreateex"></a><a name="createex"></a>CTreeCtrl::CreateEx  
+##  <a name="createex"></a>CTreeCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けることは、この関数を呼び出して、`CTreeCtrl`オブジェクトです。  
   
 ```  
@@ -239,7 +318,7 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namecreatedragimagea--ctreectrlcreatedragimage"></a><a name="createdragimage"></a>CTreeCtrl::CreateDragImage  
+##  <a name="createdragimage"></a>CTreeCtrl::CreateDragImage  
  ツリー ビュー コントロールで指定したアイテムのドラッグ用のビットマップを作成し、ビットマップのイメージ リストを作成し、イメージの一覧に、ビットマップを追加するには、この関数を呼び出します。  
   
 ```  
@@ -260,14 +339,14 @@ CImageList* CreateDragImage(HTREEITEM hItem);
   
  [!code-cpp[NVC_MFC_CTreeCtrl&#2;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_2.cpp)]  
   
-##  <a name="a-namectreectrla--ctreectrlctreectrl"></a><a name="ctreectrl"></a>CTreeCtrl::CTreeCtrl  
+##  <a name="ctreectrl"></a>CTreeCtrl::CTreeCtrl  
  `CTreeCtrl` オブジェクトを構築します。  
   
 ```  
 CTreeCtrl();
 ```  
   
-##  <a name="a-namedeleteallitemsa--ctreectrldeleteallitems"></a><a name="deleteallitems"></a>CTreeCtrl::DeleteAllItems  
+##  <a name="deleteallitems"></a>CTreeCtrl::DeleteAllItems  
  ツリー ビュー コントロールからすべての項目を削除するには、この関数を呼び出します。  
   
 ```  
@@ -280,7 +359,7 @@ BOOL DeleteAllItems();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#3;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_3.cpp)]  
   
-##  <a name="a-namedeleteitema--ctreectrldeleteitem"></a><a name="deleteitem"></a>CTreeCtrl::DeleteItem  
+##  <a name="deleteitem"></a>CTreeCtrl::DeleteItem  
  ツリー ビュー コントロールから項目を削除するには、この関数を呼び出します。  
   
 ```  
@@ -297,7 +376,7 @@ BOOL DeleteItem(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&4;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_4.cpp)]  
   
-##  <a name="a-nameeditlabela--ctreectrleditlabel"></a><a name="editlabel"></a>CTreeCtrl::EditLabel  
+##  <a name="editlabel"></a>CTreeCtrl::EditLabel  
  インプレースでは、指定した項目のテキストの編集を開始するには、この関数を呼び出します。  
   
 ```  
@@ -317,7 +396,7 @@ CEdit* EditLabel(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#5;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_5.cpp)]  
   
-##  <a name="a-nameendeditlabelnowa--ctreectrlendeditlabelnow"></a><a name="endeditlabelnow"></a>CTreeCtrl::EndEditLabelNow  
+##  <a name="endeditlabelnow"></a>CTreeCtrl::EndEditLabelNow  
  現在のツリー ビュー コントロール内のツリー ビュー アイテムのラベルの編集操作を終了します。  
   
 ```  
@@ -336,7 +415,7 @@ BOOL EndEditLabelNow(BOOL fCancelWithoutSave);
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [TVM_ENDEDITLABELNOW](http://msdn.microsoft.com/library/windows/desktop/bb773564)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameensurevisiblea--ctreectrlensurevisible"></a><a name="ensurevisible"></a>CTreeCtrl::EnsureVisible  
+##  <a name="ensurevisible"></a>CTreeCtrl::EnsureVisible  
  この関数では、ツリー ビューのアイテムが表示されていることを確認します。  
   
 ```  
@@ -356,7 +435,7 @@ BOOL EnsureVisible(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&6;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_6.cpp)]  
   
-##  <a name="a-nameexpanda--ctreectrlexpand"></a><a name="expand"></a>CTreeCtrl::Expand  
+##  <a name="expand"></a>CTreeCtrl::Expand  
  指定された親アイテムに関連付けられている場合は、子項目のリストを展開または折りたたむには、この関数を呼び出します。  
   
 ```  
@@ -386,7 +465,7 @@ BOOL Expand(
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::EnsureVisible](#ensurevisible)します。  
   
-##  <a name="a-namegetbkcolora--ctreectrlgetbkcolor"></a><a name="getbkcolor"></a>CTreeCtrl::GetBkColor  
+##  <a name="getbkcolor"></a>CTreeCtrl::GetBkColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_GETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773570)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -399,7 +478,7 @@ COLORREF GetBkColor() const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetTextColor](#settextcolor)します。  
   
-##  <a name="a-namegetchecka--ctreectrlgetcheck"></a><a name="getcheck"></a>CTreeCtrl::GetCheck  
+##  <a name="getcheck"></a>CTreeCtrl::GetCheck  
  アイテムのチェック状態を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -416,7 +495,7 @@ BOOL GetCheck(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetCheck](#setcheck)します。  
   
-##  <a name="a-namegetchilditema--ctreectrlgetchilditem"></a><a name="getchilditem"></a>CTreeCtrl::GetChildItem  
+##  <a name="getchilditem"></a>CTreeCtrl::GetChildItem  
  この関数はツリーを取得するアイテムの表示を呼び出しで指定した項目の子である`hItem`です。  
   
 ```  
@@ -433,7 +512,7 @@ HTREEITEM GetChildItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#7;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_7.cpp)]  
   
-##  <a name="a-namegetcounta--ctreectrlgetcount"></a><a name="getcount"></a>CTreeCtrl::GetCount  
+##  <a name="getcount"></a>CTreeCtrl::GetCount  
  この関数では、ツリー ビュー コントロール内の項目の数を取得します。  
   
 ```  
@@ -446,7 +525,7 @@ UINT GetCount() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#8;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_8.cpp)]  
   
-##  <a name="a-namegetdrophilightitema--ctreectrlgetdrophilightitem"></a><a name="getdrophilightitem"></a>CTreeCtrl::GetDropHilightItem  
+##  <a name="getdrophilightitem"></a>CTreeCtrl::GetDropHilightItem  
  ドラッグ アンド ドロップ操作の対象となっている項目を取得するには、この関数を呼び出します。  
   
 ```  
@@ -459,7 +538,7 @@ HTREEITEM GetDropHilightItem() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#9;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_9.cpp)]  
   
-##  <a name="a-namegeteditcontrola--ctreectrlgeteditcontrol"></a><a name="geteditcontrol"></a>CTreeCtrl::GetEditControl  
+##  <a name="geteditcontrol"></a>CTreeCtrl::GetEditControl  
  この関数では、ツリー ビュー アイテムのテキストを編集するために使用されるエディット コントロールのハンドルを取得します。  
   
 ```  
@@ -472,7 +551,7 @@ CEdit* GetEditControl() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#10;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_10.cpp)]  
   
-##  <a name="a-namegetextendedstylea--ctreectrlgetextendedstyle"></a><a name="getextendedstyle"></a>CTreeCtrl::GetExtendedStyle  
+##  <a name="getextendedstyle"></a>CTreeCtrl::GetExtendedStyle  
  現在のツリー ビュー コントロールを使用している拡張スタイルを取得します。  
   
 ```  
@@ -485,7 +564,7 @@ DWORD GetExtendedStyle() const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [TVM_GETEXTENDEDSTYLE](http://msdn.microsoft.com/library/windows/desktop/bb773580)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetfirstvisibleitema--ctreectrlgetfirstvisibleitem"></a><a name="getfirstvisibleitem"></a>CTreeCtrl::GetFirstVisibleItem  
+##  <a name="getfirstvisibleitem"></a>CTreeCtrl::GetFirstVisibleItem  
  この関数では、最初に表示されるツリー ビュー コントロールの項目を取得します。  
   
 ```  
@@ -498,7 +577,7 @@ HTREEITEM GetFirstVisibleItem() const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetCheck](#setcheck)します。  
   
-##  <a name="a-namegetimagelista--ctreectrlgetimagelist"></a><a name="getimagelist"></a>CTreeCtrl::GetImageList  
+##  <a name="getimagelist"></a>CTreeCtrl::GetImageList  
  法線のハンドルまたはツリー ビュー コントロールに関連付けられているイメージ リストを取得するには、この関数を呼び出します。  
   
 ```  
@@ -524,7 +603,7 @@ CImageList* GetImageList(UINT nImageList) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#11;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_11.cpp)]  
   
-##  <a name="a-namegetindenta--ctreectrlgetindent"></a><a name="getindent"></a>CTreeCtrl::GetIndent  
+##  <a name="getindent"></a>CTreeCtrl::GetIndent  
  この関数では、金額を取得する、(ピクセル単位) を子項目が親項目の基準としたインデントされます。  
   
 ```  
@@ -537,7 +616,7 @@ UINT GetIndent() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#12;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_12.cpp)]  
   
-##  <a name="a-namegetinsertmarkcolora--ctreectrlgetinsertmarkcolor"></a><a name="getinsertmarkcolor"></a>CTreeCtrl::GetInsertMarkColor  
+##  <a name="getinsertmarkcolor"></a>CTreeCtrl::GetInsertMarkColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_GETINSERTMARKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773590)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -550,7 +629,7 @@ COLORREF GetInsertMarkColor() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#13;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_13.cpp)]  
   
-##  <a name="a-namegetitema--ctreectrlgetitem"></a><a name="getitem"></a>CTreeCtrl::GetItem  
+##  <a name="getitem"></a>CTreeCtrl::GetItem  
  指定されたツリー ビューのアイテムの属性を取得するには、この関数を呼び出します。  
   
 ```  
@@ -567,7 +646,7 @@ BOOL GetItem(TVITEM* pItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::DeleteItem](#deleteitem)します。  
   
-##  <a name="a-namegetitemdataa--ctreectrlgetitemdata"></a><a name="getitemdata"></a>CTreeCtrl::GetItemData  
+##  <a name="getitemdata"></a>CTreeCtrl::GetItemData  
  指定した項目に関連付けられている 32 ビット アプリケーションに固有の値を取得するには、この関数を呼び出します。  
   
 ```  
@@ -584,7 +663,7 @@ DWORD_PTR GetItemData(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#14;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_14.cpp)]  
   
-##  <a name="a-namegetitemexpandedimageindexa--ctreectrlgetitemexpandedimageindex"></a><a name="getitemexpandedimageindex"></a>CTreeCtrl::GetItemExpandedImageIndex  
+##  <a name="getitemexpandedimageindex"></a>CTreeCtrl::GetItemExpandedImageIndex  
  現在のツリー ビュー コントロールの指定した項目が展開された状態を表示するイメージのインデックスを取得します。  
   
 ```  
@@ -603,7 +682,7 @@ int GetItemExpandedImageIndex(HTREEITEM hItem)const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [TVM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb773596)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 返します。 メッセージを、 [TVITEMEX](http://msdn.microsoft.com/library/windows/desktop/bb773459)ツリー ビュー コントロールの項目と、このメソッドを記述する構造体を取得、`iExpandedImage`構造体のメンバーです。  
   
-##  <a name="a-namegetitemheighta--ctreectrlgetitemheight"></a><a name="getitemheight"></a>CTreeCtrl::GetItemHeight  
+##  <a name="getitemheight"></a>CTreeCtrl::GetItemHeight  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_GETITEMHEIGHT](http://msdn.microsoft.com/library/windows/desktop/bb773599)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -616,7 +695,7 @@ SHORT GetItemHeight() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#15;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_15.cpp)]  
   
-##  <a name="a-namegetitemimagea--ctreectrlgetitemimage"></a><a name="getitemimage"></a>CTreeCtrl::GetItemImage  
+##  <a name="getitemimage"></a>CTreeCtrl::GetItemImage  
  ツリー ビュー コントロール内の各項目には、2 つのビットマップのイメージが関連付けられていることができます。  
   
 ```  
@@ -647,7 +726,7 @@ BOOL GetItemImage(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#16;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_16.cpp)]  
   
-##  <a name="a-namegetitempartrecta--ctreectrlgetitempartrect"></a><a name="getitempartrect"></a>CTreeCtrl::GetItemPartRect  
+##  <a name="getitempartrect"></a>CTreeCtrl::GetItemPartRect  
  現在のツリー ビュー コントロール内の指定した項目の指定した部分の外接する四角形を取得します。  
   
 ```  
@@ -683,7 +762,7 @@ BOOL GetItemPartRect(
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;5](../../mfc/reference/codesnippet/cpp/ctreectrl-class_18.cpp)]  
   
-##  <a name="a-namegetitemrecta--ctreectrlgetitemrect"></a><a name="getitemrect"></a>CTreeCtrl::GetItemRect  
+##  <a name="getitemrect"></a>CTreeCtrl::GetItemRect  
  外接する四角形を取得するには、この関数を呼び出す`hItem`とするかどうかが表示されているかを判断します。  
   
 ```  
@@ -709,7 +788,7 @@ BOOL GetItemRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&17;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_19.cpp)]  
   
-##  <a name="a-namegetitemstatea--ctreectrlgetitemstate"></a><a name="getitemstate"></a>CTreeCtrl::GetItemState  
+##  <a name="getitemstate"></a>CTreeCtrl::GetItemState  
  指定した項目の状態を返す`hItem`します。  
   
 ```  
@@ -731,7 +810,7 @@ UINT GetItemState(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#18;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_20.cpp)]  
   
-##  <a name="a-namegetitemstateexa--ctreectrlgetitemstateex"></a><a name="getitemstateex"></a>CTreeCtrl::GetItemStateEx  
+##  <a name="getitemstateex"></a>CTreeCtrl::GetItemStateEx  
  現在のツリー ビュー コントロール内の指定した項目の拡張の状態を取得します。  
   
 ```  
@@ -750,7 +829,7 @@ UINT GetItemStateEx(HTREEITEM hItem) const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [TVM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb773596)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 返します。 メッセージを、 [TVITEMEX](http://msdn.microsoft.com/library/windows/desktop/bb773459)ツリー ビュー コントロールの項目、このメソッドを記述する構造体を取得、`uStateEx`構造体のメンバーです。  
   
-##  <a name="a-namegetitemtexta--ctreectrlgetitemtext"></a><a name="getitemtext"></a>CTreeCtrl::GetItemText  
+##  <a name="getitemtext"></a>CTreeCtrl::GetItemText  
  指定した項目のテキストを返します`hItem`します。  
   
 ```  
@@ -767,7 +846,7 @@ CString GetItemText(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetNextItem](#getnextitem)します。  
   
-##  <a name="a-namegetlastvisibleitema--ctreectrlgetlastvisibleitem"></a><a name="getlastvisibleitem"></a>CTreeCtrl::GetLastVisibleItem  
+##  <a name="getlastvisibleitem"></a>CTreeCtrl::GetLastVisibleItem  
  現在のツリー ビュー コントロール内の最後のノードが展開されていない項目を取得します。  
   
 ```  
@@ -790,7 +869,7 @@ HTREEITEM GetLastVisibleItem() const;
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s1&6;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_21.cpp)]  
   
-##  <a name="a-namegetlinecolora--ctreectrlgetlinecolor"></a><a name="getlinecolor"></a>CTreeCtrl::GetLineColor  
+##  <a name="getlinecolor"></a>CTreeCtrl::GetLineColor  
  このメンバー関数は、win32 メッセージの動作を実装して[TVM_GETLINECOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773619)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -803,7 +882,7 @@ COLORREF GetLineColor() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#19;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_22.cpp)]  
   
-##  <a name="a-namegetnextitema--ctreectrlgetnextitem"></a><a name="getnextitem"></a>CTreeCtrl::GetNextItem  
+##  <a name="getnextitem"></a>CTreeCtrl::GetNextItem  
  この関数はツリーを取得するアイテムの表示の呼び出しによって示される、指定されたリレーションシップでは、`nCode`パラメーターを`hItem`します。  
   
 ```  
@@ -852,7 +931,7 @@ HTREEITEM GetNextItem(
   
  [!code-cpp[NVC_MFC_CTreeCtrl&#20;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_23.cpp)]  
   
-##  <a name="a-namegetnextsiblingitema--ctreectrlgetnextsiblingitem"></a><a name="getnextsiblingitem"></a>CTreeCtrl::GetNextSiblingItem  
+##  <a name="getnextsiblingitem"></a>CTreeCtrl::GetNextSiblingItem  
  次の兄弟を取得するには、この関数を呼び出す`hItem`します。  
   
 ```  
@@ -869,7 +948,7 @@ HTREEITEM GetNextSiblingItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&21;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_24.cpp)]  
   
-##  <a name="a-namegetnextvisibleitema--ctreectrlgetnextvisibleitem"></a><a name="getnextvisibleitem"></a>CTreeCtrl::GetNextVisibleItem  
+##  <a name="getnextvisibleitem"></a>CTreeCtrl::GetNextVisibleItem  
  次に表示される項目を取得するには、この関数を呼び出す`hItem`します。  
   
 ```  
@@ -886,7 +965,7 @@ HTREEITEM GetNextVisibleItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetCheck](#setcheck)します。  
   
-##  <a name="a-namegetparentitema--ctreectrlgetparentitem"></a><a name="getparentitem"></a>CTreeCtrl::GetParentItem  
+##  <a name="getparentitem"></a>CTreeCtrl::GetParentItem  
  親を取得するには、この関数を呼び出す`hItem`します。  
   
 ```  
@@ -906,7 +985,7 @@ HTREEITEM GetParentItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::EnsureVisible](#ensurevisible)します。  
   
-##  <a name="a-namegetprevsiblingitema--ctreectrlgetprevsiblingitem"></a><a name="getprevsiblingitem"></a>CTreeCtrl::GetPrevSiblingItem  
+##  <a name="getprevsiblingitem"></a>CTreeCtrl::GetPrevSiblingItem  
  前の兄弟を取得するには、この関数を呼び出す`hItem`します。  
   
 ```  
@@ -923,7 +1002,7 @@ HTREEITEM GetPrevSiblingItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&22;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_25.cpp)]  
   
-##  <a name="a-namegetprevvisibleitema--ctreectrlgetprevvisibleitem"></a><a name="getprevvisibleitem"></a>CTreeCtrl::GetPrevVisibleItem  
+##  <a name="getprevvisibleitem"></a>CTreeCtrl::GetPrevVisibleItem  
  前に表示される項目を取得するには、この関数を呼び出す`hItem`します。  
   
 ```  
@@ -940,7 +1019,7 @@ HTREEITEM GetPrevVisibleItem(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl 第&23;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_26.cpp)]  
   
-##  <a name="a-namegetrootitema--ctreectrlgetrootitem"></a><a name="getrootitem"></a>CTreeCtrl::GetRootItem  
+##  <a name="getrootitem"></a>CTreeCtrl::GetRootItem  
  ツリー ビュー コントロールのルート項目を取得するには、この関数を呼び出します。  
   
 ```  
@@ -953,7 +1032,7 @@ HTREEITEM GetRootItem() const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::EditLabel](#editlabel)します。  
   
-##  <a name="a-namegetscrolltimea--ctreectrlgetscrolltime"></a><a name="getscrolltime"></a>CTreeCtrl::GetScrollTime  
+##  <a name="getscrolltime"></a>CTreeCtrl::GetScrollTime  
  ツリー ビュー コントロールのスクロールの最大の時刻を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -966,7 +1045,7 @@ UINT GetScrollTime() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、win32 メッセージの動作を実装して[TVM_GETSCROLLTIME](http://msdn.microsoft.com/library/windows/desktop/bb773625)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetselectedcounta--ctreectrlgetselectedcount"></a><a name="getselectedcount"></a>CTreeCtrl::GetSelectedCount  
+##  <a name="getselectedcount"></a>CTreeCtrl::GetSelectedCount  
  現在のツリー ビュー コントロールで選択したアイテムの数を取得します。  
   
 ```  
@@ -979,7 +1058,7 @@ UINT GetSelectedCount();
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [TVM_GETSELECTEDCOUNT](http://msdn.microsoft.com/library/windows/desktop/bb773629)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetselecteditema--ctreectrlgetselecteditem"></a><a name="getselecteditem"></a>CTreeCtrl::GetSelectedItem  
+##  <a name="getselecteditem"></a>CTreeCtrl::GetSelectedItem  
  ツリー ビュー コントロールの現在選択されている項目を取得するには、この関数を呼び出します。  
   
 ```  
@@ -992,7 +1071,7 @@ HTREEITEM GetSelectedItem() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&24;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_27.cpp)]  
   
-##  <a name="a-namegettextcolora--ctreectrlgettextcolor"></a><a name="gettextcolor"></a>CTreeCtrl::GetTextColor  
+##  <a name="gettextcolor"></a>CTreeCtrl::GetTextColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_GETTEXTCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773633)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1005,7 +1084,7 @@ COLORREF GetTextColor() const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetTextColor](#settextcolor)します。  
   
-##  <a name="a-namegettooltipsa--ctreectrlgettooltips"></a><a name="gettooltips"></a>CTreeCtrl::GetToolTips  
+##  <a name="gettooltips"></a>CTreeCtrl::GetToolTips  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_GETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb773729)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1021,7 +1100,7 @@ CToolTipCtrl* GetToolTips() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#25;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_28.cpp)]  
   
-##  <a name="a-namegetvisiblecounta--ctreectrlgetvisiblecount"></a><a name="getvisiblecount"></a>CTreeCtrl::GetVisibleCount  
+##  <a name="getvisiblecount"></a>CTreeCtrl::GetVisibleCount  
  この関数では、ツリー ビュー コントロールに表示される項目の数を取得します。  
   
 ```  
@@ -1034,7 +1113,7 @@ UINT GetVisibleCount() const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetCheck](#setcheck)します。  
   
-##  <a name="a-namehittesta--ctreectrlhittest"></a><a name="hittest"></a>CTreeCtrl::HitTest  
+##  <a name="hittest"></a>CTreeCtrl::HitTest  
  この関数では、ツリー ビュー コントロールのクライアント領域を基準と、指定したポイントの場所を特定します。  
   
 ```  
@@ -1081,7 +1160,7 @@ HTREEITEM HitTest(TVHITTESTINFO* pHitTestInfo) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&26;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_29.cpp)]  
   
-##  <a name="a-nameinsertitema--ctreectrlinsertitem"></a><a name="insertitem"></a>CTreeCtrl::InsertItem  
+##  <a name="insertitem"></a>CTreeCtrl::InsertItem  
  ツリー ビュー コントロールに新しい項目を挿入するには、この関数を呼び出します。  
   
 ```  
@@ -1154,7 +1233,7 @@ HTREEITEM InsertItem(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&27;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_30.cpp)]  
   
-##  <a name="a-nameitemhaschildrena--ctreectrlitemhaschildren"></a><a name="itemhaschildren"></a>CTreeCtrl::ItemHasChildren  
+##  <a name="itemhaschildren"></a>CTreeCtrl::ItemHasChildren  
  ツリー項目がで指定されたかどうかを判断するこの関数を使用して`hItem`子項目があります。  
   
 ```  
@@ -1174,7 +1253,7 @@ BOOL ItemHasChildren(HTREEITEM hItem) const;
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetSelectedItem](#getselecteditem)します。  
   
-##  <a name="a-namemapaccidtoitema--ctreectrlmapaccidtoitem"></a><a name="mapaccidtoitem"></a>CTreeCtrl::MapAccIdToItem  
+##  <a name="mapaccidtoitem"></a>CTreeCtrl::MapAccIdToItem  
  現在のツリー ビュー コントロール内のツリー ビュー アイテムのハンドルに指定されたアクセシビリティ識別子にマップします。  
   
 ```  
@@ -1205,7 +1284,7 @@ HTREEITEM MapAccIdToItem(UINT uAccId) const;
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;5](../../mfc/reference/codesnippet/cpp/ctreectrl-class_18.cpp)]  
   
-##  <a name="a-namemapitemtoaccida--ctreectrlmapitemtoaccid"></a><a name="mapitemtoaccid"></a>CTreeCtrl::MapItemToAccID  
+##  <a name="mapitemtoaccid"></a>CTreeCtrl::MapItemToAccID  
  アクセシビリティ識別子には、現在のツリー ビュー コントロール内のツリー ビュー アイテムの指定したハンドルを割り当てます。  
   
 ```  
@@ -1236,7 +1315,7 @@ UINT MapItemToAccID(HTREEITEM hItem) const;
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/ctreectrl-class_31.cpp)]  
   
-##  <a name="a-nameselecta--ctreectrlselect"></a><a name="select"></a>CTreeCtrl::Select  
+##  <a name="select"></a>CTreeCtrl::Select  
  指定されたツリー ビューのアイテムを選択し、ビューにアイテムをスクロールするか、アイテムをドラッグ アンド ドロップ操作の対象を示すために使用するスタイルに再描画するには、この関数を呼び出します。  
   
 ```  
@@ -1267,7 +1346,7 @@ BOOL Select(
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::HitTest](#hittest)します。  
   
-##  <a name="a-nameselectdroptargeta--ctreectrlselectdroptarget"></a><a name="selectdroptarget"></a>CTreeCtrl::SelectDropTarget  
+##  <a name="selectdroptarget"></a>CTreeCtrl::SelectDropTarget  
  この関数では、アイテムをドラッグ アンド ドロップ操作の対象を示すために使用するスタイルに再描画します。  
   
 ```  
@@ -1284,7 +1363,7 @@ BOOL SelectDropTarget(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#9;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_9.cpp)]  
   
-##  <a name="a-nameselectitema--ctreectrlselectitem"></a><a name="selectitem"></a>CTreeCtrl::SelectItem  
+##  <a name="selectitem"></a>CTreeCtrl::SelectItem  
  この関数では、指定されたツリー ビューのアイテムを選択します。  
   
 ```  
@@ -1304,7 +1383,7 @@ BOOL SelectItem(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&26;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_29.cpp)]  
   
-##  <a name="a-nameselectsetfirstvisiblea--ctreectrlselectsetfirstvisible"></a><a name="selectsetfirstvisible"></a>CTreeCtrl::SelectSetFirstVisible  
+##  <a name="selectsetfirstvisible"></a>CTreeCtrl::SelectSetFirstVisible  
  この関数では、指定したアイテムが最初に表示される項目をされるように、ツリー ビューを垂直方向にスクロールします。  
   
 ```  
@@ -1324,7 +1403,7 @@ BOOL SelectSetFirstVisible(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&28;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_32.cpp)]  
   
-##  <a name="a-namesetautoscrollinfoa--ctreectrlsetautoscrollinfo"></a><a name="setautoscrollinfo"></a>CTreeCtrl::SetAutoscrollInfo  
+##  <a name="setautoscrollinfo"></a>CTreeCtrl::SetAutoscrollInfo  
  現在のツリー ビュー コントロールの自動スクロール速度を設定します。  
   
 ```  
@@ -1358,7 +1437,7 @@ BOOL SetAutoscrollInfo(
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s1&4;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_33.cpp)]  
   
-##  <a name="a-namesetbkcolora--ctreectrlsetbkcolor"></a><a name="setbkcolor"></a>CTreeCtrl::SetBkColor  
+##  <a name="setbkcolor"></a>CTreeCtrl::SetBkColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773741)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1375,7 +1454,7 @@ COLORREF SetBkColor(COLORREF clr);
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::SetTextColor](#settextcolor)します。  
   
-##  <a name="a-namesetchecka--ctreectrlsetcheck"></a><a name="setcheck"></a>CTreeCtrl::SetCheck  
+##  <a name="setcheck"></a>CTreeCtrl::SetCheck  
  ツリー コントロール項目のチェック状態を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1405,7 +1484,7 @@ BOOL SetCheck(
   
  [!code-cpp[NVC_MFC_CTreeCtrl #&30;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_35.cpp)]  
   
-##  <a name="a-namesetextendedstylea--ctreectrlsetextendedstyle"></a><a name="setextendedstyle"></a>CTreeCtrl::SetExtendedStyle  
+##  <a name="setextendedstyle"></a>CTreeCtrl::SetExtendedStyle  
  現在のツリー ビュー コントロールの拡張スタイルを設定します。  
   
 ```  
@@ -1439,7 +1518,7 @@ DWORD SetExtendedStyle(
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;3](../../mfc/reference/codesnippet/cpp/ctreectrl-class_36.cpp)]  
   
-##  <a name="a-namesetimagelista--ctreectrlsetimagelist"></a><a name="setimagelist"></a>CTreeCtrl::SetImageList  
+##  <a name="setimagelist"></a>CTreeCtrl::SetImageList  
  法線を設定するには、この関数を呼び出すか、ツリーの状態のイメージ リスト コントロールを表示し、新しいイメージを使用してコントロールを再描画します。  
   
 ```  
@@ -1465,7 +1544,7 @@ CImageList* SetImageList(
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetImageList](#getimagelist)します。  
   
-##  <a name="a-namesetindenta--ctreectrlsetindent"></a><a name="setindent"></a>CTreeCtrl::SetIndent  
+##  <a name="setindent"></a>CTreeCtrl::SetIndent  
  ツリー ビュー コントロールのインデントの幅を設定して、新しい幅をリフレクションするコントロールを再描画するには、この関数を呼び出します。  
   
 ```  
@@ -1479,7 +1558,7 @@ void SetIndent(UINT nIndent);
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetIndent](#getindent)します。  
   
-##  <a name="a-namesetinsertmarka--ctreectrlsetinsertmark"></a><a name="setinsertmark"></a>CTreeCtrl::SetInsertMark  
+##  <a name="setinsertmark"></a>CTreeCtrl::SetInsertMark  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETINSERTMARK](http://msdn.microsoft.com/library/windows/desktop/bb773753)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1501,7 +1580,7 @@ BOOL SetInsertMark(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&31;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_37.cpp)]  
   
-##  <a name="a-namesetinsertmarkcolora--ctreectrlsetinsertmarkcolor"></a><a name="setinsertmarkcolor"></a>CTreeCtrl::SetInsertMarkColor  
+##  <a name="setinsertmarkcolor"></a>CTreeCtrl::SetInsertMarkColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETINSERTMARKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773755)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1518,7 +1597,7 @@ COLORREF SetInsertMarkColor(COLORREF clrNew);
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetInsertMarkColor](#getinsertmarkcolor)します。  
   
-##  <a name="a-namesetitema--ctreectrlsetitem"></a><a name="setitem"></a>CTreeCtrl::SetItem  
+##  <a name="setitem"></a>CTreeCtrl::SetItem  
  指定されたツリー ビューのアイテムの属性を設定するには、この関数を呼び出します。  
   
 ```  
@@ -1575,7 +1654,7 @@ BOOL SetItem(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#32;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_38.cpp)]  
   
-##  <a name="a-namesetitemdataa--ctreectrlsetitemdata"></a><a name="setitemdata"></a>CTreeCtrl::SetItemData  
+##  <a name="setitemdata"></a>CTreeCtrl::SetItemData  
  指定した項目に関連付けられている 32 ビット アプリケーションに固有の値を設定するには、この関数を呼び出します。  
   
 ```  
@@ -1597,7 +1676,7 @@ BOOL SetItemData(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&33;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_39.cpp)]  
   
-##  <a name="a-namesetitemexpandedimageindexa--ctreectrlsetitemexpandedimageindex"></a><a name="setitemexpandedimageindex"></a>CTreeCtrl::SetItemExpandedImageIndex  
+##  <a name="setitemexpandedimageindex"></a>CTreeCtrl::SetItemExpandedImageIndex  
  現在のツリー ビュー コントロールの指定した項目が展開された状態を表示するイメージのインデックスを設定します。  
   
 ```  
@@ -1629,7 +1708,7 @@ BOOL SetItemExpandedImageIndex(
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;8](../../mfc/reference/codesnippet/cpp/ctreectrl-class_40.cpp)]  
   
-##  <a name="a-namesetitemheighta--ctreectrlsetitemheight"></a><a name="setitemheight"></a>CTreeCtrl::SetItemHeight  
+##  <a name="setitemheight"></a>CTreeCtrl::SetItemHeight  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETITEMHEIGHT](http://msdn.microsoft.com/library/windows/desktop/bb773761)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1646,7 +1725,7 @@ SHORT SetItemHeight(SHORT cyHeight);
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetItemHeight](#getitemheight)します。  
   
-##  <a name="a-namesetitemimagea--ctreectrlsetitemimage"></a><a name="setitemimage"></a>CTreeCtrl::SetItemImage  
+##  <a name="setitemimage"></a>CTreeCtrl::SetItemImage  
  イメージを項目に関連付けます。  
   
 ```  
@@ -1679,7 +1758,7 @@ BOOL SetItemImage(
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetItemImage](#getitemimage)します。  
   
-##  <a name="a-namesetitemstatea--ctreectrlsetitemstate"></a><a name="setitemstate"></a>CTreeCtrl::SetItemState  
+##  <a name="setitemstate"></a>CTreeCtrl::SetItemState  
  指定した項目の状態を設定`hItem`します。  
   
 ```  
@@ -1708,7 +1787,7 @@ BOOL SetItemState(
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetItemState](#getitemstate)します。  
   
-##  <a name="a-namesetitemstateexa--ctreectrlsetitemstateex"></a><a name="setitemstateex"></a>CTreeCtrl::SetItemStateEx  
+##  <a name="setitemstateex"></a>CTreeCtrl::SetItemStateEx  
  現在のツリー ビュー コントロールの指定した項目の拡張の状態を設定します。  
   
 ```  
@@ -1740,7 +1819,7 @@ BOOL SetItemStateEx(
   
  [!code-cpp[NVC_MFC_CTreeCtrl_s&#1;7](../../mfc/reference/codesnippet/cpp/ctreectrl-class_41.cpp)]  
   
-##  <a name="a-namesetitemtexta--ctreectrlsetitemtext"></a><a name="setitemtext"></a>CTreeCtrl::SetItemText  
+##  <a name="setitemtext"></a>CTreeCtrl::SetItemText  
  指定した項目のテキストを設定`hItem`します。  
   
 ```  
@@ -1762,7 +1841,7 @@ BOOL SetItemText(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&34;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_42.cpp)]  
   
-##  <a name="a-namesetlinecolora--ctreectrlsetlinecolor"></a><a name="setlinecolor"></a>CTreeCtrl::SetLineColor  
+##  <a name="setlinecolor"></a>CTreeCtrl::SetLineColor  
  ツリー ビュー コントロールの現在の線の色を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1782,7 +1861,7 @@ COLORREF SetLineColor(COLORREF clrNew = CLR_DEFAULT);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#35;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_43.cpp)]  
   
-##  <a name="a-namesetscrolltimea--ctreectrlsetscrolltime"></a><a name="setscrolltime"></a>CTreeCtrl::SetScrollTime  
+##  <a name="setscrolltime"></a>CTreeCtrl::SetScrollTime  
  ツリー ビュー コントロールのスクロールの最大時間を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1799,7 +1878,7 @@ UINT SetScrollTime(UINT uScrollTime);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、win32 メッセージの動作を実装して[TVM_SETSCROLLTIME](http://msdn.microsoft.com/library/windows/desktop/bb773767)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesettextcolora--ctreectrlsettextcolor"></a><a name="settextcolor"></a>CTreeCtrl::SetTextColor  
+##  <a name="settextcolor"></a>CTreeCtrl::SetTextColor  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETTEXTCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb773769)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1816,7 +1895,7 @@ COLORREF SetTextColor(COLORREF clr);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl&#36;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_44.cpp)]  
   
-##  <a name="a-namesettooltipsa--ctreectrlsettooltips"></a><a name="settooltips"></a>CTreeCtrl::SetToolTips  
+##  <a name="settooltips"></a>CTreeCtrl::SetToolTips  
  このメンバー関数は、Win32 メッセージの動作を実装して[TVM_SETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb773772)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -1836,7 +1915,7 @@ CToolTipCtrl* SetToolTips(CToolTipCtrl* pWndTip);
 ### <a name="example"></a>例  
   例を参照してください[CTreeCtrl::GetToolTips](#gettooltips)します。  
   
-##  <a name="a-nameshowinfotipa--ctreectrlshowinfotip"></a><a name="showinfotip"></a>CTreeCtrl::ShowInfoTip  
+##  <a name="showinfotip"></a>CTreeCtrl::ShowInfoTip  
  現在のツリー ビュー コントロール内の指定した項目のヒントを表示します。  
   
 ```  
@@ -1854,7 +1933,7 @@ void ShowInfoTip(HTREEITEM hItem);
   
  このメソッドは、送信、 [TVM_SHOWINFOTIP](http://msdn.microsoft.com/library/windows/desktop/bb773779)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesortchildrena--ctreectrlsortchildren"></a><a name="sortchildren"></a>CTreeCtrl::SortChildren  
+##  <a name="sortchildren"></a>CTreeCtrl::SortChildren  
  この関数では、ツリー ビュー コントロール内の指定した親アイテムの子アイテムをアルファベット順に並べ替えます。  
   
 ```  
@@ -1874,7 +1953,7 @@ BOOL SortChildren(HTREEITEM hItem);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTreeCtrl #&37;](../../mfc/reference/codesnippet/cpp/ctreectrl-class_45.cpp)]  
   
-##  <a name="a-namesortchildrencba--ctreectrlsortchildrencb"></a><a name="sortchildrencb"></a>CTreeCtrl::SortChildrenCB  
+##  <a name="sortchildrencb"></a>CTreeCtrl::SortChildrenCB  
  アイテムを比較するアプリケーション定義のコールバック関数を使用してツリー ビューの項目を並べ替えるには、この関数を呼び出します。  
   
 ```  

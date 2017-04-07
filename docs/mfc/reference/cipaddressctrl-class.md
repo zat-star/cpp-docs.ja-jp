@@ -10,6 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CIPAddressCtrl
+- AFXCMN/CIPAddressCtrl
+- AFXCMN/CIPAddressCtrl::CIPAddressCtrl
+- AFXCMN/CIPAddressCtrl::ClearAddress
+- AFXCMN/CIPAddressCtrl::Create
+- AFXCMN/CIPAddressCtrl::CreateEx
+- AFXCMN/CIPAddressCtrl::GetAddress
+- AFXCMN/CIPAddressCtrl::IsBlank
+- AFXCMN/CIPAddressCtrl::SetAddress
+- AFXCMN/CIPAddressCtrl::SetFieldFocus
+- AFXCMN/CIPAddressCtrl::SetFieldRange
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -93,7 +103,7 @@ class CIPAddressCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namecipaddressctrla--cipaddressctrlcipaddressctrl"></a><a name="cipaddressctrl"></a>CIPAddressCtrl::CIPAddressCtrl  
+##  <a name="cipaddressctrl"></a>CIPAddressCtrl::CIPAddressCtrl  
  
           `CIPAddressCtrl` オブジェクトを作成します。  
   
@@ -101,7 +111,7 @@ class CIPAddressCtrl : public CWnd
 CIPAddressCtrl();
 ```  
   
-##  <a name="a-nameclearaddressa--cipaddressctrlclearaddress"></a><a name="clearaddress"></a>CIPAddressCtrl::ClearAddress  
+##  <a name="clearaddress"></a>CIPAddressCtrl::ClearAddress  
  IP アドレス コントロールの内容を消去します。  
   
 ```  
@@ -111,7 +121,7 @@ void ClearAddress();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[IPM_CLEARADDRESS](http://msdn.microsoft.com/library/windows/desktop/bb761377)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecreatea--cipaddressctrlcreate"></a><a name="create"></a>CIPAddressCtrl::Create  
+##  <a name="create"></a>CIPAddressCtrl::Create  
  IP アドレス コントロールを作成し、それにアタッチ、`CIPAddressCtrl`オブジェクトです。  
   
 ```  
@@ -147,7 +157,7 @@ virtual BOOL Create(
   
  コントロールで拡張ウィンドウ スタイルを使用する場合は、呼び出す[CreateEx](#createex)の代わりに**作成**します。  
   
-##  <a name="a-namecreateexa--cipaddressctrlcreateex"></a><a name="createex"></a>CIPAddressCtrl::CreateEx  
+##  <a name="createex"></a>CIPAddressCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けることは、この関数を呼び出して、`CIPAddressCtrl`オブジェクトです。  
   
 ```  
@@ -181,7 +191,7 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namegetaddressa--cipaddressctrlgetaddress"></a><a name="getaddress"></a>CIPAddressCtrl::GetAddress  
+##  <a name="getaddress"></a>CIPAddressCtrl::GetAddress  
  IP アドレス コントロール内のすべての&4; つのフィールドのアドレス値を取得します。  
   
 ```  
@@ -223,7 +233,7 @@ int GetAddress(DWORD& dwAddress);
 |2|8 ~ 15|  
 |3|0 ~ 7|  
   
-##  <a name="a-nameisblanka--cipaddressctrlisblank"></a><a name="isblank"></a>CIPAddressCtrl::IsBlank  
+##  <a name="isblank"></a>CIPAddressCtrl::IsBlank  
  IP アドレス コントロールのすべてのフィールドを空にするかどうかを判断します。  
   
 ```  
@@ -236,7 +246,7 @@ BOOL IsBlank() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[IPM_ISBLANK](http://msdn.microsoft.com/library/windows/desktop/bb761379)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetaddressa--cipaddressctrlsetaddress"></a><a name="setaddress"></a>CIPAddressCtrl::SetAddress  
+##  <a name="setaddress"></a>CIPAddressCtrl::SetAddress  
  IP アドレス コントロールのすべての&4; つのフィールドのアドレス値を設定します。  
   
 ```  
@@ -275,7 +285,7 @@ void SetAddress(DWORD dwAddress);
 |2|8 ~ 15|  
 |3|0 ~ 7|  
   
-##  <a name="a-namesetfieldfocusa--cipaddressctrlsetfieldfocus"></a><a name="setfieldfocus"></a>CIPAddressCtrl::SetFieldFocus  
+##  <a name="setfieldfocus"></a>CIPAddressCtrl::SetFieldFocus  
  キーボード フォーカスを IP アドレス コントロールの指定したフィールドに設定します。  
   
 ```  
@@ -289,7 +299,7 @@ void SetFieldFocus(WORD nField);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、Win32 メッセージの動作を実装して[IPM_SETFOCUS](http://msdn.microsoft.com/library/windows/desktop/bb761381)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetfieldrangea--cipaddressctrlsetfieldrange"></a><a name="setfieldrange"></a>CIPAddressCtrl::SetFieldRange  
+##  <a name="setfieldrange"></a>CIPAddressCtrl::SetFieldRange  
  IP アドレス コントロールの指定したフィールドに範囲を設定します。  
   
 ```  

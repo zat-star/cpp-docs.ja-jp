@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::IUMSScheduler
+- IUMSScheduler
+- CONCRTRM/concurrency::IUMSScheduler
+- CONCRTRM/concurrency::IUMSScheduler::IUMSScheduler::SetCompletionList
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 658c0d0c9ddb9bbe51134f0a7ea0211be9c39815
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 58ca59224b5d9cdeb282562349642736a1b22c74
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="iumsscheduler-structure"></a>IUMSScheduler 構造体
@@ -54,7 +56,7 @@ struct IUMSScheduler : public IScheduler;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Iumsscheduler::setcompletionlist メソッド](#setcompletionlist)|代入、 `IUMSCompletionList` UMS スレッド スケジューラへのインターフェイスです。|  
+|[Iumsscheduler::setcompletionlist](#setcompletionlist)|代入、 `IUMSCompletionList` UMS スレッド スケジューラへのインターフェイスです。|  
   
 ## <a name="remarks"></a>コメント  
  リソース マネージャーとの通信を行うカスタム スケジューラを実装している通常の Win32 スレッドの代わりに、スケジューラに渡す UMS スレッドが必要な場合は、実装を提供する必要があります、`IUMSScheduler`インターフェイスです。 さらに、スケジューラ ポリシー キーのポリシーの値を設定する必要があります`SchedulerKind`する`UmsThreadDefault`です。 UMS スレッドが、ポリシーに指定した場合、`IScheduler`インターフェイスへのパラメーターとして渡される、 [iresourcemanager::registerscheduler](iresourcemanager-structure.md#registerscheduler)メソッドである必要があります、`IUMSScheduler`インターフェイスです。  
@@ -73,7 +75,7 @@ struct IUMSScheduler : public IScheduler;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namesetcompletionlista--iumsschedulersetcompletionlist-method"></a><a name="setcompletionlist"></a>Iumsscheduler::setcompletionlist メソッド  
+##  <a name="setcompletionlist"></a>Iumsscheduler::setcompletionlist メソッド  
  代入、 `IUMSCompletionList` UMS スレッド スケジューラへのインターフェイスです。  
   
 ```
@@ -89,7 +91,7 @@ virtual void SetCompletionList(_Inout_ IUMSCompletionList* pCompletionList) = 0;
   
 ## <a name="see-also"></a>関連項目  
  [同時実行 Namespace](concurrency-namespace.md)   
- [PolicyElementKey 列挙型](concurrency-namespace-enums.md)   
+ [PolicyElementKey](concurrency-namespace-enums.md)   
  [IScheduler 構造体](ischeduler-structure.md)   
  [IUMSCompletionList 構造体](iumscompletionlist-structure.md)   
  [IResourceManager 構造体](iresourcemanager-structure.md)

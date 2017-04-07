@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COlePropertiesDialog
+- AFXODLGS/COlePropertiesDialog
+- AFXODLGS/COlePropertiesDialog::COlePropertiesDialog
+- AFXODLGS/COlePropertiesDialog::DoModal
+- AFXODLGS/COlePropertiesDialog::OnApplyScale
+- AFXODLGS/COlePropertiesDialog::m_gp
+- AFXODLGS/COlePropertiesDialog::m_lp
+- AFXODLGS/COlePropertiesDialog::m_op
+- AFXODLGS/COlePropertiesDialog::m_psh
+- AFXODLGS/COlePropertiesDialog::m_vp
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -105,7 +114,7 @@ class COlePropertiesDialog : public COleDialog
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxodlgs.h  
   
-##  <a name="a-namecolepropertiesdialoga--colepropertiesdialogcolepropertiesdialog"></a><a name="colepropertiesdialog"></a>COlePropertiesDialog::COlePropertiesDialog  
+##  <a name="colepropertiesdialog"></a>COlePropertiesDialog::COlePropertiesDialog  
  
           `COlePropertiesDialog` オブジェクトを作成します。  
   
@@ -149,7 +158,7 @@ COlePropertiesDialog(
   
  既定で提供されていないページを追加するには、変更、 [m_psh](#m_psh)メンバー変数のコンス トラクターを終了する前に、 `COlePropertiesDialog`-クラスを派生します。 これは、高度な実装の`COlePropertiesDialog`コンス トラクターです。  
   
-##  <a name="a-namedomodala--colepropertiesdialogdomodal"></a><a name="domodal"></a>COlePropertiesDialog::DoModal  
+##  <a name="domodal"></a>COlePropertiesDialog::DoModal  
  Windows に共通の [OLE プロジェクト プロパティ] ダイアログ ボックスを表示し、ユーザーが閲覧またはドキュメント項目のさまざまなプロパティを変更できるようにするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -161,7 +170,7 @@ virtual INT_PTR DoModal();
   
  場合**IDCANCEL**返されるか、Windows を呼び出すことができます[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)エラーが発生したかどうかを判断します。  
   
-##  <a name="a-namemgpa--colepropertiesdialogmgp"></a><a name="m_gp"></a>COlePropertiesDialog::m_gp  
+##  <a name="m_gp"></a>COlePropertiesDialog::m_gp  
  型の構造体[OLEUIGNRLPROPS](http://msdn.microsoft.com/library/windows/desktop/ms687297), OLE オブジェクトのプロパティダイアログ ボックスの [全般] ページを初期化するために使用されます。  
   
 ```  
@@ -173,7 +182,7 @@ OLEUIGNRLPROPS m_gp;
   
  詳細については、 **OLEUIGNRLPROPS**構造体を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namemlpa--colepropertiesdialogmlp"></a><a name="m_lp"></a>COlePropertiesDialog::m_lp  
+##  <a name="m_lp"></a>COlePropertiesDialog::m_lp  
  型の構造体[OLEUILINKPROPS](http://msdn.microsoft.com/library/windows/desktop/ms680735), OLE オブジェクトのプロパティダイアログ ボックスの [リンク] ページを初期化するために使用されます。  
   
 ```  
@@ -185,7 +194,7 @@ OLEUILINKPROPS m_lp;
   
  詳細については、 **OLEUILINKPROPS**構造体を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namemopa--colepropertiesdialogmop"></a><a name="m_op"></a>COlePropertiesDialog::m_op  
+##  <a name="m_op"></a>COlePropertiesDialog::m_op  
  型の構造体[OLEUIOBJECTPROPS](http://msdn.microsoft.com/library/windows/desktop/ms687199)、共通の OLE オブジェクトのプロパティ ダイアログ ボックスを初期化するために使用します。  
   
 ```  
@@ -197,7 +206,7 @@ OLEUIOBJECTPROPS m_op;
   
  詳細については、次を参照してください。、 **OLEUIOBJECTPROPS**と[OLEUILINKPROPS](http://msdn.microsoft.com/library/windows/desktop/ms680735)構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namempsha--colepropertiesdialogmpsh"></a><a name="m_psh"></a>COlePropertiesDialog::m_psh  
+##  <a name="m_psh"></a>COlePropertiesDialog::m_psh  
  型の構造体[PROPSHEETHEADER](http://msdn.microsoft.com/library/windows/desktop/bb774546)、そのメンバーはダイアログ オブジェクトの特性を格納します。  
   
 ```  
@@ -211,7 +220,7 @@ PROPSHEETHEADER m_psh;
   
  詳細については、 **PROPSHEETHEADER**構造体を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namemvpa--colepropertiesdialogmvp"></a><a name="m_vp"></a>COlePropertiesDialog::m_vp  
+##  <a name="m_vp"></a>COlePropertiesDialog::m_vp  
  型の構造体[OLEUIVIEWPROPS](http://msdn.microsoft.com/library/windows/desktop/ms693751), OLE オブジェクトのプロパティダイアログ ボックスの [表示] ページを初期化するために使用されます。  
   
 ```  
@@ -223,7 +232,7 @@ OLEUIVIEWPROPS m_vp;
   
  詳細については、 **OLEUIVIEWPROPS**構造体を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameonapplyscalea--colepropertiesdialogonapplyscale"></a><a name="onapplyscale"></a>COlePropertiesDialog::OnApplyScale  
+##  <a name="onapplyscale"></a>COlePropertiesDialog::OnApplyScale  
  スケールの値が変更され、ok または 適用が選択されたときに、フレームワークによって呼び出されます。  
   
 ```  

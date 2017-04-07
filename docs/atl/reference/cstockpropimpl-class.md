@@ -10,8 +10,62 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CStockPropImpl
-- ATL::CStockPropImpl
-- ATL.CStockPropImpl
+- ATLCTL/ATL::CStockPropImpl
+- ATLCTL/ATL::get_Appearance
+- ATLCTL/ATL::get_AutoSize
+- ATLCTL/ATL::get_BackColor
+- ATLCTL/ATL::get_BackStyle
+- ATLCTL/ATL::get_BorderColor
+- ATLCTL/ATL::get_BorderStyle
+- ATLCTL/ATL::get_BorderVisible
+- ATLCTL/ATL::get_BorderWidth
+- ATLCTL/ATL::get_Caption
+- ATLCTL/ATL::get_DrawMode
+- ATLCTL/ATL::get_DrawStyle
+- ATLCTL/ATL::get_DrawWidth
+- ATLCTL/ATL::get_Enabled
+- ATLCTL/ATL::get_FillColor
+- ATLCTL/ATL::get_FillStyle
+- ATLCTL/ATL::get_Font
+- ATLCTL/ATL::get_ForeColor
+- ATLCTL/ATL::get_HWND
+- ATLCTL/ATL::get_MouseIcon
+- ATLCTL/ATL::get_MousePointer
+- ATLCTL/ATL::get_Picture
+- ATLCTL/ATL::get_ReadyState
+- ATLCTL/ATL::get_TabStop
+- ATLCTL/ATL::get_Text
+- ATLCTL/ATL::getvalid
+- ATLCTL/ATL::get_Window
+- ATLCTL/ATL::put_Appearance
+- ATLCTL/ATL::put_AutoSize
+- ATLCTL/ATL::put_BackColor
+- ATLCTL/ATL::put_BackStyle
+- ATLCTL/ATL::put_BorderColor
+- ATLCTL/ATL::put_BorderStyle
+- ATLCTL/ATL::put_BorderVisible
+- ATLCTL/ATL::put_BorderWidth
+- ATLCTL/ATL::put_Caption
+- ATLCTL/ATL::put_DrawMode
+- ATLCTL/ATL::put_DrawStyle
+- ATLCTL/ATL::put_DrawWidth
+- ATLCTL/ATL::put_Enabled
+- ATLCTL/ATL::put_FillColor
+- ATLCTL/ATL::put_FillStyle
+- ATLCTL/ATL::put_Font
+- ATLCTL/ATL::put_ForeColor
+- ATLCTL/ATL::put_HWND
+- ATLCTL/ATL::put_MouseIcon
+- ATLCTL/ATL::put_MousePointer
+- ATLCTL/ATL::put_Picture
+- ATLCTL/ATL::put_ReadyState
+- ATLCTL/ATL::put_TabStop
+- ATLCTL/ATL::put_Text
+- ATLCTL/ATL::putvalid
+- ATLCTL/ATL::put_Window
+- ATLCTL/ATL::putref_Font
+- ATLCTL/ATL::putref_MouseIcon
+- ATLCTL/ATL::putref_Picture
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -175,7 +229,7 @@ class ATL_NO_VTABLE CStockPropImpl : public IDispatchImpl<InterfaceName, piid,
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-namegetappearancea--cstockpropimplgetappearance"></a><a name="get_appearance"></a>CStockPropImpl::get_Appearance  
+##  <a name="get_appearance"></a>CStockPropImpl::get_Appearance  
  フラット、コントロールで使われるペイント スタイルまたは 3D を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -189,7 +243,7 @@ HRESULT STDMETHODCALLTYPE get_Appearance(SHORT pnAppearance);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetautosizea--cstockpropimplgetautosize"></a><a name="get_autosize"></a>CStockPropImpl::get_AutoSize  
+##  <a name="get_autosize"></a>CStockPropImpl::get_AutoSize  
  コントロールが他の任意のサイズを変更できないかどうかを示すフラグの状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -203,7 +257,7 @@ HRESULT STDMETHODCALLTYPE get_Autosize(VARIANT_BOOL* pbAutoSize);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetbackcolora--cstockpropimplgetbackcolor"></a><a name="get_backcolor"></a>CStockPropImpl::get_BackColor  
+##  <a name="get_backcolor"></a>CStockPropImpl::get_BackColor  
  コントロールの背景色を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -217,7 +271,7 @@ HRESULT STDMETHODCALLTYPE get_BackColor(OLE_COLOR* pclrBackColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetbackstylea--cstockpropimplgetbackstyle"></a><a name="get_backstyle"></a>CStockPropImpl::get_BackStyle  
+##  <a name="get_backstyle"></a>CStockPropImpl::get_BackStyle  
  透明または不透明のコントロールの背景スタイルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -231,7 +285,7 @@ HRESULT STDMETHODCALLTYPE get_BackStyle(LONG* pnBackStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetbordercolora--cstockpropimplgetbordercolor"></a><a name="get_bordercolor"></a>CStockPropImpl::get_BorderColor  
+##  <a name="get_bordercolor"></a>CStockPropImpl::get_BorderColor  
  コントロールの境界線の色を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -245,7 +299,7 @@ HRESULT STDMETHODCALLTYPE get_BorderColor(OLE_COLOR* pclrBorderColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetborderstylea--cstockpropimplgetborderstyle"></a><a name="get_borderstyle"></a>CStockPropImpl::get_BorderStyle  
+##  <a name="get_borderstyle"></a>CStockPropImpl::get_BorderStyle  
  コントロールの境界線のスタイルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -259,7 +313,7 @@ HRESULT STDMETHODCALLTYPE get_BorderStyle(LONG* pnBorderStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetbordervisiblea--cstockpropimplgetbordervisible"></a><a name="get_bordervisible"></a>CStockPropImpl::get_BorderVisible  
+##  <a name="get_bordervisible"></a>CStockPropImpl::get_BorderVisible  
  コントロールの境界線が表示されているかどうかを示すフラグの状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -273,7 +327,7 @@ HRESULT STDMETHODCALLTYPE get_BorderVisible(VARIANT_BOOL* pbBorderVisible);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetborderwidtha--cstockpropimplgetborderwidth"></a><a name="get_borderwidth"></a>CStockPropImpl::get_BorderWidth  
+##  <a name="get_borderwidth"></a>CStockPropImpl::get_BorderWidth  
  コントロールの境界線の幅を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -287,7 +341,7 @@ HRESULT STDMETHODCALLTYPE get_BorderWidth(LONG* pnBorderWidth);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetcaptiona--cstockpropimplgetcaption"></a><a name="get_caption"></a>CStockPropImpl::get_Caption  
+##  <a name="get_caption"></a>CStockPropImpl::get_Caption  
  オブジェクトのキャプションで指定したテキストを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -301,7 +355,7 @@ HRESULT STDMETHODCALLTYPE get_Caption(BSTR* pbstrCaption);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetdrawmodea--cstockpropimplgetdrawmode"></a><a name="get_drawmode"></a>CStockPropImpl::get_DrawMode  
+##  <a name="get_drawmode"></a>CStockPropImpl::get_DrawMode  
  XOR ペン、色の反転など、コントロールの描画モードを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -315,7 +369,7 @@ HRESULT STDMETHODCALLTYPE get_DrawMode(LONG* pnDrawMode);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetdrawstylea--cstockpropimplgetdrawstyle"></a><a name="get_drawstyle"></a>CStockPropImpl::get_DrawStyle  
+##  <a name="get_drawstyle"></a>CStockPropImpl::get_DrawStyle  
  実線、破線、点線などのコントロールの描画スタイルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -329,7 +383,7 @@ HRESULT STDMETHODCALLTYPE get_DrawStyle(LONG* pnDrawStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetdrawwidtha--cstockpropimplgetdrawwidth"></a><a name="get_drawwidth"></a>CStockPropImpl::get_DrawWidth  
+##  <a name="get_drawwidth"></a>CStockPropImpl::get_DrawWidth  
  コントロールの描画メソッドで使われる図面の幅をピクセル単位で取得するには、このメソッドを呼び出します。  
   
 ```
@@ -343,7 +397,7 @@ HRESULT STDMETHODCALLTYPE get_DrawWidth(LONG* pnDrawWidth);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetenableda--cstockpropimplgetenabled"></a><a name="get_enabled"></a>CStockPropImpl::get_Enabled  
+##  <a name="get_enabled"></a>CStockPropImpl::get_Enabled  
  コントロールが有効になっているかどうかを示すフラグの状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -357,7 +411,7 @@ HRESULT STDMETHODCALLTYPE get_Enabled(VARIANT_BOOL* pbEnabled);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetfillcolora--cstockpropimplgetfillcolor"></a><a name="get_fillcolor"></a>CStockPropImpl::get_FillColor  
+##  <a name="get_fillcolor"></a>CStockPropImpl::get_FillColor  
  コントロールの塗りつぶしの色を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -371,7 +425,7 @@ HRESULT STDMETHODCALLTYPE get_FillColor(OLE_COLOR* pclrFillColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetfillstylea--cstockpropimplgetfillstyle"></a><a name="get_fillstyle"></a>CStockPropImpl::get_FillStyle  
+##  <a name="get_fillstyle"></a>CStockPropImpl::get_FillStyle  
  ハッチ ソリッドなど透過的な場合は、たとえば、コントロールの塗りつぶしのスタイルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -385,7 +439,7 @@ HRESULT STDMETHODCALLTYPE get_FillStyle(LONG* pnFillStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetfonta--cstockpropimplgetfont"></a><a name="get_font"></a>CStockPropImpl::get_Font  
+##  <a name="get_font"></a>CStockPropImpl::get_Font  
  コントロールのフォント プロパティへのポインターを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -399,7 +453,7 @@ HRESULT STDMETHODCALLTYPE get_Font(IFontDisp** ppFont);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetforecolora--cstockpropimplgetforecolor"></a><a name="get_forecolor"></a>CStockPropImpl::get_ForeColor  
+##  <a name="get_forecolor"></a>CStockPropImpl::get_ForeColor  
  コントロールの前景色を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -413,7 +467,7 @@ HRESULT STDMETHODCALLTYPE get_ForeColor(OLE_COLOR* pclrForeColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegethwnda--cstockpropimplgethwnd"></a><a name="get_hwnd"></a>CStockPropImpl::get_HWND  
+##  <a name="get_hwnd"></a>CStockPropImpl::get_HWND  
  コントロールに関連付けられているウィンドウ ハンドルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -427,7 +481,7 @@ HRESULT STDMETHODCALLTYPE get_HWND(LONG_PTR* phWnd);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetmouseicona--cstockpropimplgetmouseicon"></a><a name="get_mouseicon"></a>CStockPropImpl::get_MouseIcon  
+##  <a name="get_mouseicon"></a>CStockPropImpl::get_MouseIcon  
  (アイコン、ビットマップまたはメタファイル) マウスがコントロール上にあるときに表示される画像の画像のプロパティを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -441,7 +495,7 @@ HRESULT STDMETHODCALLTYPE get_MouseIcon(IPictureDisp** ppPicture);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetmousepointera--cstockpropimplgetmousepointer"></a><a name="get_mousepointer"></a>CStockPropImpl::get_MousePointer  
+##  <a name="get_mousepointer"></a>CStockPropImpl::get_MousePointer  
  マウス ポインターが、マウスが、コントロールの上にある場合に表示される、矢印、間、または砂時計の型を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -455,7 +509,7 @@ HRESULT STDMETHODCALLTYPE get_MousePointer(LONG* pnMousePointer);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetpicturea--cstockpropimplgetpicture"></a><a name="get_picture"></a>CStockPropImpl::get_Picture  
+##  <a name="get_picture"></a>CStockPropImpl::get_Picture  
  (アイコン、ビットマップまたはメタファイル) 表示される画像の画像のプロパティへのポインターを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -469,7 +523,7 @@ HRESULT STDMETHODCALLTYPE get_Picture(IPictureDisp** ppPicture);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetreadystatea--cstockpropimplgetreadystate"></a><a name="get_readystate"></a>CStockPropImpl::get_ReadyState  
+##  <a name="get_readystate"></a>CStockPropImpl::get_ReadyState  
  ロードまたはアンロードなどのコントロールの準備完了の状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -483,7 +537,7 @@ HRESULT STDMETHODCALLTYPE get_ReadyState(LONG* pnReadyState);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegettabstopa--cstockpropimplgettabstop"></a><a name="get_tabstop"></a>CStockPropImpl::get_TabStop  
+##  <a name="get_tabstop"></a>CStockPropImpl::get_TabStop  
  コントロールがタブ ストップがかどうかかを示すフラグの状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -497,7 +551,7 @@ HRESULT STDMETHODCALLTYPE get_TabStop(VARIANT_BOOL* pbTabStop);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegettexta--cstockpropimplgettext"></a><a name="get_text"></a>CStockPropImpl::get_Text  
+##  <a name="get_text"></a>CStockPropImpl::get_Text  
  コントロールに表示されるテキストを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -511,7 +565,7 @@ HRESULT STDMETHODCALLTYPE get_Text(BSTR* pbstrText);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetvalida--cstockpropimplgetvalid"></a><a name="get_valid"></a>CStockPropImpl::getvalid  
+##  <a name="get_valid"></a>CStockPropImpl::getvalid  
  コントロールが有効かどうかどうかかを示すフラグの状態を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -525,7 +579,7 @@ HRESULT STDMETHODCALLTYPE getvalid(VARIANT_BOOL* pbValid);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-namegetwindowa--cstockpropimplgetwindow"></a><a name="get_window"></a>CStockPropImpl::get_Window  
+##  <a name="get_window"></a>CStockPropImpl::get_Window  
  コントロールに関連付けられているウィンドウ ハンドルを取得するには、このメソッドを呼び出します。 同じ[CStockPropImpl::get_HWND](#get_hwnd)します。  
   
 ```
@@ -539,7 +593,7 @@ HRESULT STDMETHODCALLTYPE get_Window(LONG_PTR* phWnd);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputappearancea--cstockpropimplputappearance"></a><a name="put_appearance"></a>CStockPropImpl::put_Appearance  
+##  <a name="put_appearance"></a>CStockPropImpl::put_Appearance  
  フラット、コントロールで使われるペイント スタイルまたは 3D を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -553,7 +607,7 @@ HRESULT STDMETHODCALLTYPE put_Appearance(SHORT nAppearance);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputautosizea--cstockpropimplputautosize"></a><a name="put_autosize"></a>CStockPropImpl::put_AutoSize  
+##  <a name="put_autosize"></a>CStockPropImpl::put_AutoSize  
  コントロールが他の任意のサイズを変更できないかどうかを示すフラグの値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -567,7 +621,7 @@ HRESULT STDMETHODCALLTYPE put_AutoSize(VARIANT_BOOL bAutoSize,);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputbackcolora--cstockpropimplputbackcolor"></a><a name="put_backcolor"></a>CStockPropImpl::put_BackColor  
+##  <a name="put_backcolor"></a>CStockPropImpl::put_BackColor  
  コントロールの背景色を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -581,7 +635,7 @@ HRESULT STDMETHODCALLTYPE put_BackColor(OLE_COLOR clrBackColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputbackstylea--cstockpropimplputbackstyle"></a><a name="put_backstyle"></a>CStockPropImpl::put_BackStyle  
+##  <a name="put_backstyle"></a>CStockPropImpl::put_BackStyle  
  コントロールの背景のスタイルを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -595,7 +649,7 @@ HRESULT STDMETHODCALLTYPE put_BackStyle(LONG nBackStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputbordercolora--cstockpropimplputbordercolor"></a><a name="put_bordercolor"></a>CStockPropImpl::put_BorderColor  
+##  <a name="put_bordercolor"></a>CStockPropImpl::put_BorderColor  
  コントロールの境界線の色を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -609,7 +663,7 @@ HRESULT STDMETHODCALLTYPE put_BorderColor(OLE_COLOR clrBorderColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputborderstylea--cstockpropimplputborderstyle"></a><a name="put_borderstyle"></a>CStockPropImpl::put_BorderStyle  
+##  <a name="put_borderstyle"></a>CStockPropImpl::put_BorderStyle  
  コントロールの境界線のスタイルを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -623,7 +677,7 @@ HRESULT STDMETHODCALLTYPE put_BorderStyle(LONG nBorderStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputbordervisiblea--cstockpropimplputbordervisible"></a><a name="put_bordervisible"></a>CStockPropImpl::put_BorderVisible  
+##  <a name="put_bordervisible"></a>CStockPropImpl::put_BorderVisible  
  コントロールの境界線が表示されているかどうかを示すフラグの値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -637,7 +691,7 @@ HRESULT STDMETHODCALLTYPE put_BorderVisible(VARIANT_BOOL bBorderVisible);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputborderwidtha--cstockpropimplputborderwidth"></a><a name="put_borderwidth"></a>CStockPropImpl::put_BorderWidth  
+##  <a name="put_borderwidth"></a>CStockPropImpl::put_BorderWidth  
  コントロールの境界線の幅を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -651,7 +705,7 @@ HRESULT STDMETHODCALLTYPE put_BorderWidth(LONG nBorderWidth);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputcaptiona--cstockpropimplputcaption"></a><a name="put_caption"></a>CStockPropImpl::put_Caption  
+##  <a name="put_caption"></a>CStockPropImpl::put_Caption  
  コントロールに表示されるテキストを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -665,7 +719,7 @@ HRESULT STDMETHODCALLTYPE put_Caption(BSTR bstrCaption);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputdrawmodea--cstockpropimplputdrawmode"></a><a name="put_drawmode"></a>CStockPropImpl::put_DrawMode  
+##  <a name="put_drawmode"></a>CStockPropImpl::put_DrawMode  
  XOR ペン、色の反転など、コントロールの描画モードを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -679,7 +733,7 @@ HRESULT STDMETHODCALLTYPE put_DrawMode(LONG nDrawMode);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputdrawstylea--cstockpropimplputdrawstyle"></a><a name="put_drawstyle"></a>CStockPropImpl::put_DrawStyle  
+##  <a name="put_drawstyle"></a>CStockPropImpl::put_DrawStyle  
  実線、破線、点線などのコントロールの描画スタイルを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -693,7 +747,7 @@ HRESULT STDMETHODCALLTYPE put_DrawStyle(LONG pnDrawStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputdrawwidtha--cstockpropimplputdrawwidth"></a><a name="put_drawwidth"></a>CStockPropImpl::put_DrawWidth  
+##  <a name="put_drawwidth"></a>CStockPropImpl::put_DrawWidth  
  コントロールの描画メソッドで使用されるピクセル単位の幅を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -707,7 +761,7 @@ HRESULT STDMETHODCALLTYPE put_DrawWidth(LONG nDrawWidth);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputenableda--cstockpropimplputenabled"></a><a name="put_enabled"></a>CStockPropImpl::put_Enabled  
+##  <a name="put_enabled"></a>CStockPropImpl::put_Enabled  
  コントロールが有効になっているかどうかを示すフラグの値を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -721,7 +775,7 @@ HRESULT STDMETHODCALLTYPE put_Enabled(VARIANT_BOOL bEnabled);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputfillcolora--cstockpropimplputfillcolor"></a><a name="put_fillcolor"></a>CStockPropImpl::put_FillColor  
+##  <a name="put_fillcolor"></a>CStockPropImpl::put_FillColor  
  コントロールの塗りつぶしの色を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -735,7 +789,7 @@ HRESULT STDMETHODCALLTYPE put_FillColor(OLE_COLOR clrFillColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputfillstylea--cstockpropimplputfillstyle"></a><a name="put_fillstyle"></a>CStockPropImpl::put_FillStyle  
+##  <a name="put_fillstyle"></a>CStockPropImpl::put_FillStyle  
  ソリッド、透過的なまたはのクロスハッチなどのコントロールの塗りつぶしのスタイルを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -749,7 +803,7 @@ HRESULT STDMETHODCALLTYPE put_FillStyle(LONG nFillStyle);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputfonta--cstockpropimplputfont"></a><a name="put_font"></a>付きます  
+##  <a name="put_font"></a>付きます  
  コントロールのフォント プロパティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -763,7 +817,7 @@ HRESULT STDMETHODCALLTYPE put_Font(IFontDisp* pFont);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputforecolora--cstockpropimplputforecolor"></a><a name="put_forecolor"></a>CStockPropImpl::put_ForeColor  
+##  <a name="put_forecolor"></a>CStockPropImpl::put_ForeColor  
  コントロールの前景の色を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -777,7 +831,7 @@ HRESULT STDMETHODCALLTYPE put_ForeColor(OLE_COLOR clrForeColor);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputhwnda--cstockpropimplputhwnd"></a><a name="put_hwnd"></a>CStockPropImpl::put_HWND  
+##  <a name="put_hwnd"></a>CStockPropImpl::put_HWND  
  このメソッドには、E_FAIL が返されます。  
   
 ```
@@ -794,7 +848,7 @@ HRESULT STDMETHODCALLTYPE put_HWND(LONG_PTR /* hWnd */);
 ### <a name="remarks"></a>コメント  
  ウィンドウ ハンドルは、読み取り専用値です。  
   
-##  <a name="a-nameputmouseicona--cstockpropimplputmouseicon"></a><a name="put_mouseicon"></a>付きます  
+##  <a name="put_mouseicon"></a>付きます  
  (アイコン、ビットマップまたはメタファイル) マウスがコントロール上にあるときに表示される画像の画像のプロパティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -808,7 +862,7 @@ HRESULT STDMETHODCALLTYPE put_MouseIcon(IPictureDisp* pPicture);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputmousepointera--cstockpropimplputmousepointer"></a><a name="put_mousepointer"></a>CStockPropImpl::put_MousePointer  
+##  <a name="put_mousepointer"></a>CStockPropImpl::put_MousePointer  
  マウス ポインターが、マウスが、コントロールの上にある場合に表示される、矢印、間、または砂時計の種類を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -822,7 +876,7 @@ HRESULT STDMETHODCALLTYPE put_MousePointer(LONG nMousePointer);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputpicturea--cstockpropimplputpicture"></a><a name="put_picture"></a>付きます  
+##  <a name="put_picture"></a>付きます  
  (アイコン、ビットマップまたはメタファイル) 表示される画像の画像のプロパティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -836,7 +890,7 @@ HRESULT STDMETHODCALLTYPE put_Picture(IPictureDisp* pPicture);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputreadystatea--cstockpropimplputreadystate"></a><a name="put_readystate"></a>CStockPropImpl::put_ReadyState  
+##  <a name="put_readystate"></a>CStockPropImpl::put_ReadyState  
  ロードまたはアンロードなどのコントロールの準備完了の状態を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -850,7 +904,7 @@ HRESULT STDMETHODCALLTYPE put_ReadyState(LONG nReadyState);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputtabstopa--cstockpropimplputtabstop"></a><a name="put_tabstop"></a>CStockPropImpl::put_TabStop  
+##  <a name="put_tabstop"></a>CStockPropImpl::put_TabStop  
  コントロールがタブ ストップかかどうかかを示すフラグを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -864,7 +918,7 @@ HRESULT STDMETHODCALLTYPE put_TabStop(VARIANT_BOOL bTabStop);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputtexta--cstockpropimplputtext"></a><a name="put_text"></a>CStockPropImpl::put_Text  
+##  <a name="put_text"></a>CStockPropImpl::put_Text  
  コントロールに表示されるテキストを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -878,7 +932,7 @@ HRESULT STDMETHODCALLTYPE put_Text(BSTR bstrText);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputvalida--cstockpropimplputvalid"></a><a name="put_valid"></a>CStockPropImpl::putvalid  
+##  <a name="put_valid"></a>CStockPropImpl::putvalid  
  コントロールが有効かどうかどうかかを示すフラグを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -892,7 +946,7 @@ HRESULT STDMETHODCALLTYPE getvalid(VARIANT_BOOL bValid);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
   
-##  <a name="a-nameputwindowa--cstockpropimplputwindow"></a><a name="put_window"></a>CStockPropImpl::put_Window  
+##  <a name="put_window"></a>CStockPropImpl::put_Window  
  このメソッドを呼び出す[CStockPropImpl::put_HWND](#put_hwnd)E_FAIL が返されます。  
   
 ```
@@ -909,7 +963,7 @@ HRESULT STDMETHODCALLTYPE put_Window(LONG_PTR hWnd);
 ### <a name="remarks"></a>コメント  
  ウィンドウ ハンドルは、読み取り専用値です。  
   
-##  <a name="a-nameputreffonta--cstockpropimplputreffont"></a><a name="putref_font"></a>CStockPropImpl::putref_Font  
+##  <a name="putref_font"></a>CStockPropImpl::putref_Font  
  参照カウント付きのコントロールのフォント プロパティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -926,7 +980,7 @@ HRESULT STDMETHODCALLTYPE putref_Font(IFontDisp* pFont);
 ### <a name="remarks"></a>コメント  
  同じ[付きます](#put_font)、ですが、参照カウントをインクリメントします。  
   
-##  <a name="a-nameputrefmouseicona--cstockpropimplputrefmouseicon"></a><a name="putref_mouseicon"></a>CStockPropImpl::putref_MouseIcon  
+##  <a name="putref_mouseicon"></a>CStockPropImpl::putref_MouseIcon  
  参照カウントを持つ (アイコン、ビットマップまたはメタファイル) マウスがコントロール上にあるときに表示される画像の画像のプロパティを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -943,7 +997,7 @@ HRESULT STDMETHODCALLTYPE putref_MouseIcon(IPictureDisp* pPicture);
 ### <a name="remarks"></a>コメント  
  同じ[付きます](#put_mouseicon)、ですが、参照カウントをインクリメントします。  
   
-##  <a name="a-nameputrefpicturea--cstockpropimplputrefpicture"></a><a name="putref_picture"></a>CStockPropImpl::putref_Picture  
+##  <a name="putref_picture"></a>CStockPropImpl::putref_Picture  
  参照カウントを持つ (アイコン、ビットマップまたはメタファイル) 表示される画像の画像のプロパティを設定するには、このメソッドを呼び出します。  
   
 ```

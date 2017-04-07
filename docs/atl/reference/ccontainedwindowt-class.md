@@ -9,9 +9,21 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- CContainedWindow
 - CContainedWindowT
-- ATL.CContainedWindowT
+- ATLWIN/ATL::CContainedWindowT
+- ATLWIN/ATL::CContainedWindowT::CContainedWindowT
+- ATLWIN/ATL::CContainedWindowT::Create
+- ATLWIN/ATL::CContainedWindowT::DefWindowProc
+- ATLWIN/ATL::CContainedWindowT::GetCurrentMessage
+- ATLWIN/ATL::CContainedWindowT::RegisterWndSuperclass
+- ATLWIN/ATL::CContainedWindowT::SubclassWindow
+- ATLWIN/ATL::CContainedWindowT::SwitchMessageMap
+- ATLWIN/ATL::CContainedWindowT::UnsubclassWindow
+- ATLWIN/ATL::CContainedWindowT::WindowProc
+- ATLWIN/ATL::CContainedWindowT::m_dwMsgMapID
+- ATLWIN/ATL::CContainedWindowT::m_lpszClassName
+- ATLWIN/ATL::CContainedWindowT::m_pfnSuperWindowProc
+- ATLWIN/ATL::CContainedWindowT::m_pObject
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -129,7 +141,7 @@ class CContainedWindowT : public TBase
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-nameccontainedwindowta--ccontainedwindowtccontainedwindowt"></a><a name="ccontainedwindowt"></a>CContainedWindowT::CContainedWindowT  
+##  <a name="ccontainedwindowt"></a>CContainedWindowT::CContainedWindowT  
  コンス トラクターは、データ メンバーを初期化します。  
   
 ```
@@ -167,7 +179,7 @@ CContainedWindowT(
   
  場合は、既存のウィンドウをサブクラスから[SubclassWindow](#subclasswindow)、`lpszClassName`値は使用されません。 したがって、渡すことができます**NULL**このパラメーターにします。  
   
-##  <a name="a-namecreatea--ccontainedwindowtcreate"></a><a name="create"></a>CContainedWindowT::Create  
+##  <a name="create"></a>CContainedWindowT::Create  
  呼び出し[RegisterWndSuperclass](#registerwndsuperclass)は既存のクラスに基づいていますが、使用されるウィンドウ クラスを登録する[この段階](#windowproc)します。  
   
 ```
@@ -247,7 +259,7 @@ HWND Create(
 > [!NOTE]
 >  値として 0 が使用する場合、`MenuOrID`パラメーター 0 u として指定する必要があります (既定値) コンパイラのエラーを回避します。  
   
-##  <a name="a-namedefwindowproca--ccontainedwindowtdefwindowproc"></a><a name="defwindowproc"></a>CContainedWindowT::DefWindowProc  
+##  <a name="defwindowproc"></a>CContainedWindowT::DefWindowProc  
  によって呼び出される[WindowProc](#windowproc)メッセージ マップで処理されないメッセージを処理します。  
   
 ```
@@ -274,7 +286,7 @@ LRESULT DefWindowProc(
 ### <a name="remarks"></a>コメント  
  既定では、`DefWindowProc`呼び出し、 [CallWindowProc](http://msdn.microsoft.com/library/windows/desktop/ms633571)で指定されたウィンドウ プロシージャにメッセージの情報を送信する Win32 関数[コンテナー内](#m_pfnsuperwindowproc)します。  
   
-##  <a name="a-namegetcurrentmessagea--ccontainedwindowtgetcurrentmessage"></a><a name="getcurrentmessage"></a>CContainedWindowT::GetCurrentMessage  
+##  <a name="getcurrentmessage"></a>CContainedWindowT::GetCurrentMessage  
  現在のメッセージを返します ( **m_pCurrentMsg**)。  
   
 ```
@@ -284,7 +296,7 @@ const _ATL_MSG* GetCurrentMessage();
 ### <a name="return-value"></a>戻り値  
  現在のメッセージ内にパッケージ化、`MSG`構造体。  
   
-##  <a name="a-namemdwmsgmapida--ccontainedwindowtmdwmsgmapid"></a><a name="m_dwmsgmapid"></a>CContainedWindowT::m_dwMsgMapID  
+##  <a name="m_dwmsgmapid"></a>CContainedWindowT::m_dwMsgMapID  
  コンテナー内のウィンドウの現在使用されているメッセージ マップの識別子を保持します。  
   
 ```
@@ -298,7 +310,7 @@ DWORD m_dwMsgMapID;
   
  `m_dwMsgMapID`コンス トラクターによって最初に初期化され、呼び出すことにより変更できます[SwitchMessageMap](#switchmessagemap)します。 例については、次を参照してください。、 [「](../../atl/reference/ccontainedwindowt-class.md)します。  
   
-##  <a name="a-namemlpszclassnamea--ccontainedwindowtmlpszclassname"></a><a name="m_lpszclassname"></a>CContainedWindowT::m_lpszClassName  
+##  <a name="m_lpszclassname"></a>CContainedWindowT::m_lpszClassName  
  既存のウィンドウ クラスの名前を指定します。  
   
 ```
@@ -310,7 +322,7 @@ LPTSTR m_lpszClassName;
   
  `m_lpszClassName`コンス トラクターで初期化されます。 例については、次を参照してください。、 [CContainedWindowT](../../atl/reference/ccontainedwindowt-class.md)の概要です。  
   
-##  <a name="a-namempfnsuperwindowproca--ccontainedwindowtmpfnsuperwindowproc"></a><a name="m_pfnsuperwindowproc"></a>CContainedWindowT::m_pfnSuperWindowProc  
+##  <a name="m_pfnsuperwindowproc"></a>CContainedWindowT::m_pfnSuperWindowProc  
  コンテナー内のウィンドウをサブクラス化すると場合、`m_pfnSuperWindowProc`ウィンドウ クラスの元のウィンドウ プロシージャをポイントします。  
   
 ```
@@ -322,7 +334,7 @@ WNDPROC m_pfnSuperWindowProc;
   
  [DefWindowProc](#defwindowproc)メソッドに保存されているウィンドウ プロシージャにメッセージの情報を送信する`m_pfnSuperWindowProc`です。  
   
-##  <a name="a-namempobjecta--ccontainedwindowtmpobject"></a><a name="m_pobject"></a>CContainedWindowT::m_pObject  
+##  <a name="m_pobject"></a>CContainedWindowT::m_pObject  
  オブジェクトを指す、`CContainedWindowT`オブジェクトです。  
   
 ```
@@ -334,7 +346,7 @@ CMessageMap* m_pObject;
   
  `m_pObject`コンス トラクターで初期化されます。 例については、次を参照してください。、 [CContainedWindowT](../../atl/reference/ccontainedwindowt-class.md)の概要です。  
   
-##  <a name="a-nameregisterwndsuperclassa--ccontainedwindowtregisterwndsuperclass"></a><a name="registerwndsuperclass"></a>CContainedWindowT::RegisterWndSuperclass  
+##  <a name="registerwndsuperclass"></a>CContainedWindowT::RegisterWndSuperclass  
  によって呼び出されます[作成](#create)コンテナー内のウィンドウのウィンドウ クラスを登録します。  
   
 ```
@@ -347,7 +359,7 @@ ATOM RegisterWndSuperClass();
 ### <a name="remarks"></a>コメント  
  このウィンドウ クラスは、既存のクラスに基づきますが、使用[この段階](#windowproc)します。 既存のウィンドウ クラスの名前とウィンドウ プロシージャ[m_lpszClassName](#m_lpszclassname)と[コンテナー内](#m_pfnsuperwindowproc)、それぞれします。  
   
-##  <a name="a-namesubclasswindowa--ccontainedwindowtsubclasswindow"></a><a name="subclasswindow"></a>CContainedWindowT::SubclassWindow  
+##  <a name="subclasswindow"></a>CContainedWindowT::SubclassWindow  
  識別される、ウィンドウのサブクラス`hWnd`に接続し、`CContainedWindowT`オブジェクトです。  
   
 ```
@@ -367,7 +379,7 @@ BOOL SubclassWindow(HWND hWnd);
 > [!NOTE]
 >  呼び出す必要はありません`SubclassWindow`既にを呼び出した場合[作成](#create)します。  
   
-##  <a name="a-nameswitchmessagemapa--ccontainedwindowtswitchmessagemap"></a><a name="switchmessagemap"></a>CContainedWindowT::SwitchMessageMap  
+##  <a name="switchmessagemap"></a>CContainedWindowT::SwitchMessageMap  
  含まれているウィンドウのメッセージの処理に使用されるどのメッセージ マップを変更します。  
   
 ```
@@ -383,7 +395,7 @@ void SwitchMessageMap(DWORD dwMsgMapID);
   
  最初に、コンス トラクターでメッセージ マップの識別子を指定します。  
   
-##  <a name="a-nameunsubclasswindowa--ccontainedwindowtunsubclasswindow"></a><a name="unsubclasswindow"></a>CContainedWindowT::UnsubclassWindow  
+##  <a name="unsubclasswindow"></a>CContainedWindowT::UnsubclassWindow  
  サブクラス化されたウィンドウのデタッチ、`CContainedWindowT`オブジェクトし、復元に保存されている元のウィンドウ プロシージャ[コンテナー内](#m_pfnsuperwindowproc)します。  
   
 ```
@@ -400,7 +412,7 @@ HWND UnsubclassWindow(BOOL bForce = FALSE);
 ### <a name="remarks"></a>コメント  
  ウィンドウが破棄される前に、元のウィンドウ プロシージャを復元する場合は、このメソッドを使用します。 それ以外の場合、 [WindowProc](#windowproc)ウィンドウが破棄されるときに、これは自動的にします。  
   
-##  <a name="a-namewindowproca--ccontainedwindowtwindowproc"></a><a name="windowproc"></a>この段階  
+##  <a name="windowproc"></a>この段階  
  この静的メソッドでは、ウィンドウ プロシージャを実装します。  
   
 ```

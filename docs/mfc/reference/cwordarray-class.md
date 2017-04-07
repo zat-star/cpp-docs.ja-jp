@@ -10,6 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CWordArray
+- AFXCOLL/CWordArray
+- AFXCOLL/CObArray::CObArray
+- AFXCOLL/CObArray::Add
+- AFXCOLL/CObArray::Append
+- AFXCOLL/CObArray::Copy
+- AFXCOLL/CObArray::ElementAt
+- AFXCOLL/CObArray::FreeExtra
+- AFXCOLL/CObArray::GetAt
+- AFXCOLL/CObArray::GetCount
+- AFXCOLL/CObArray::GetData
+- AFXCOLL/CObArray::GetSize
+- AFXCOLL/CObArray::GetUpperBound
+- AFXCOLL/CObArray::InsertAt
+- AFXCOLL/CObArray::IsEmpty
+- AFXCOLL/CObArray::RemoveAll
+- AFXCOLL/CObArray::RemoveAt
+- AFXCOLL/CObArray::SetAt
+- AFXCOLL/CObArray::SetAtGrow
+- AFXCOLL/CObArray::SetSize
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -114,7 +133,7 @@ class CWordArray : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcoll.h  
   
-##  <a name="a-nameicommandsourceinterfacea--icommandsource-interface"></a><a name="icommandsource_interface"></a>ICommandSource インターフェイス  
+##  <a name="icommandsource_interface"></a>ICommandSource インターフェイス  
  ユーザー コントロールにコマンド ソース オブジェクトから送信されたコマンドを管理します。  
   
 ```  
@@ -128,7 +147,7 @@ interface class ICommandSource
   
  Windows フォームの使用に関する詳細については、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
   
-##  <a name="a-nameaddcommandhandlera--icommandsourceaddcommandhandler"></a><a name="addcommandhandler"></a>ICommandSource::AddCommandHandler  
+##  <a name="addcommandhandler"></a>ICommandSource::AddCommandHandler  
  コマンド ソース オブジェクトには、コマンド ハンドラーを追加します。  
   
 ```  
@@ -149,7 +168,7 @@ void AddCommandHandler(
   
  参照してください[方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)を使用する方法の例については`AddCommandHandler`です。  
   
-##  <a name="a-nameaddcommandrangehandlera--icommandsourceaddcommandrangehandler"></a><a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler  
+##  <a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler  
  コマンド ソース オブジェクトに一連のコマンド ハンドラーを追加します。  
   
 ```  
@@ -172,7 +191,7 @@ void AddCommandRangeHandler(
 ### <a name="remarks"></a>コメント  
  このメソッドは、コマンド Id の連続する範囲を&1; つのメッセージ ハンドラーにマップし、コマンド ソース オブジェクトに追加します。 1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。  
   
-##  <a name="a-nameaddcommandrangeuihandlera--icommandsourceaddcommandrangeuihandler"></a><a name="addcommandrangeuihandler"></a>ICommandSource::AddCommandRangeUIHandler  
+##  <a name="addcommandrangeuihandler"></a>ICommandSource::AddCommandRangeUIHandler  
  コマンド ソース オブジェクトに一連のユーザー インターフェイス コマンド メッセージ ハンドラーを追加します。  
   
 ```  
@@ -195,7 +214,7 @@ void AddCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント  
  このメソッドは、コマンド Id の連続する範囲を&1; 人のユーザー インターフェイス コマンド メッセージのハンドラーにマップし、コマンド ソース オブジェクトに追加します。 1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。  
   
-##  <a name="a-nameaddcommanduihandlera--icommandsourceaddcommanduihandler"></a><a name="addcommanduihandler"></a>ICommandSource::AddCommandUIHandler  
+##  <a name="addcommanduihandler"></a>ICommandSource::AddCommandUIHandler  
  コマンド ソース オブジェクトには、ユーザー インターフェイス コマンド メッセージのハンドラーを追加します。  
   
 ```  
@@ -214,7 +233,7 @@ void AddCommandUIHandler(
 ### <a name="remarks"></a>コメント  
  このメソッドは、ユーザー インターフェイス コマンド メッセージ ハンドラーを追加`cmdHandler`コマンド ソース オブジェクトにし、そのハンドラーに`cmdID`します。  
   
-##  <a name="a-namepostcommanda--icommandsourcepostcommand"></a><a name="postcommand"></a>ICommandSource::PostCommand  
+##  <a name="postcommand"></a>ICommandSource::PostCommand  
  処理されるまで待つことがなく、メッセージをポストします。  
   
 ```  
@@ -228,7 +247,7 @@ void PostCommand(unsigned int command);
 ### <a name="remarks"></a>コメント  
  このメソッドで指定した ID にマップされているメッセージを非同期的にポスト`command`します。 呼び出す[CWnd::PostMessage](../../mfc/reference/cwnd-class.md#postmessage)メッセージをメッセージの処理に対応するウィンドウを待たずに、ウィンドウのメッセージ キュー ラベルと返しますに入れます。  
   
-##  <a name="a-nameremovecommandhandlera--icommandsourceremovecommandhandler"></a><a name="removecommandhandler"></a>ICommandSource::RemoveCommandHandler  
+##  <a name="removecommandhandler"></a>ICommandSource::RemoveCommandHandler  
  コマンド ソース オブジェクトから、コマンド ハンドラーを削除します。  
   
 ```  
@@ -242,7 +261,7 @@ void RemoveCommandHandler(unsigned int cmdID);
 ### <a name="remarks"></a>コメント  
  このメソッドにマップされているコマンド ハンドラーを削除する`cmdID`コマンド ソース オブジェクトからです。  
   
-##  <a name="a-nameremovecommandrangehandlera--icommandsourceremovecommandrangehandler"></a><a name="removecommandrangehandler"></a>ICommandSource::RemoveCommandRangeHandler  
+##  <a name="removecommandrangehandler"></a>ICommandSource::RemoveCommandRangeHandler  
  コマンド ソース オブジェクトから一連のコマンド ハンドラーを削除します。  
   
 ```  
@@ -261,7 +280,7 @@ void RemoveCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント  
  このメソッドによって指定されたコマンド Id にマップされているメッセージ ハンドラーのグループを削除する`cmdIDMin`と`cmdIDMax`、コマンド ソース オブジェクトからです。  
   
-##  <a name="a-nameremovecommandrangeuihandlera--icommandsourceremovecommandrangeuihandler"></a><a name="removecommandrangeuihandler"></a>ICommandSource::RemoveCommandRangeUIHandler  
+##  <a name="removecommandrangeuihandler"></a>ICommandSource::RemoveCommandRangeUIHandler  
  コマンド ソース オブジェクトからのユーザー インターフェイス コマンド メッセージ ハンドラーのグループを削除します。  
   
 ```  
@@ -280,7 +299,7 @@ void RemoveCommandRangeUIHandler(
 ### <a name="remarks"></a>コメント  
  このメソッドによって指定されたコマンド Id にマップされている、ユーザー インターフェイス コマンド メッセージ ハンドラーのグループを削除する`cmdIDMin`と`cmdIDMax`、コマンド ソース オブジェクトからです。  
   
-##  <a name="a-nameremovecommanduihandlera--icommandsourceremovecommanduihandler"></a><a name="removecommanduihandler"></a>ICommandSource::RemoveCommandUIHandler  
+##  <a name="removecommanduihandler"></a>ICommandSource::RemoveCommandUIHandler  
  コマンド ソース オブジェクトからのユーザー インターフェイス コマンド メッセージのハンドラーを削除します。  
   
 ```  
@@ -294,7 +313,7 @@ void RemoveCommandUIHandler(unsigned int cmdID);
 ### <a name="remarks"></a>コメント  
  このメソッドにマップされているユーザー インターフェイス コマンド メッセージ ハンドラーを削除する`cmdID`コマンド ソース オブジェクトからです。  
   
-##  <a name="a-namesendcommanda--icommandsourcesendcommand"></a><a name="sendcommand"></a>ICommandSource::SendCommand  
+##  <a name="sendcommand"></a>ICommandSource::SendCommand  
  メッセージを送信し、戻る前に処理されるまで待機します。  
   
 ```  
@@ -308,7 +327,7 @@ void SendCommand(unsigned int command);
 ### <a name="remarks"></a>コメント  
  このメソッドで指定した ID に割り当てられたメッセージを同期的に送信する`command`です。 呼び出す[CWnd::SendMessage](../../mfc/reference/cwnd-class.md#sendmessage)そのウィンドウ プロシージャが返す前にメッセージを処理するまで、ウィンドウのメッセージ キュー ラベルと待機ではメッセージを入れます。  
   
-##  <a name="a-nameicommandtargetinterfacea--icommandtarget-interface"></a><a name="icommandtarget_interface"></a>関数のインターフェイス  
+##  <a name="icommandtarget_interface"></a>関数のインターフェイス  
  コマンド ソース オブジェクトからコマンドを受信するインターフェイスには、ユーザー コントロールを提供します。  
   
 ```  
@@ -322,7 +341,7 @@ interface class ICommandTarget
   
  Windows フォームの使用に関する詳細については、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
   
-##  <a name="a-nameinitializea--icommandtargetinitialize"></a><a name="initialize"></a>ICommandTarget::Initialize  
+##  <a name="initialize"></a>ICommandTarget::Initialize  
  コマンド ターゲット オブジェクトを初期化します。  
   
 ```  
@@ -338,7 +357,7 @@ void Initialize(ICommandSource^ cmdSource);
   
  このメソッドは、コマンドのターゲット オブジェクトを初期化し、指定したコマンドのソース オブジェクトに関連付けます`cmdSource`します。 ユーザー コントロール クラスの実装で呼び出す必要があります。 初期化でする必要がありますコマンド ハンドラーが登録されたコマンド ソース オブジェクトを呼び出して[ICommandSource::AddCommandHandler](../../mfc/reference/icommandsource-interface.md)で、`Initialize`実装します。 参照してください[方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)を使用する方法の例については`Initialize`これを行う。  
   
-##  <a name="a-nameicommanduiinterfacea--icommandui-interface"></a><a name="icommandui_interface"></a>ICommandUI インターフェイス  
+##  <a name="icommandui_interface"></a>ICommandUI インターフェイス  
  ユーザー インターフェイスのコマンドを管理します。  
   
 ```  
@@ -356,7 +375,7 @@ interface class ICommandUI
   
  MFC でのユーザー インターフェイスのコマンドを管理する方法の詳細については、次を参照してください。 [CCmdUI クラス](../../mfc/reference/ccmdui-class.md)します。  
   
-##  <a name="a-namechecka--icommanduicheck"></a><a name="check"></a>ICommandUI::Check  
+##  <a name="check"></a>ICommandUI::Check  
  このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。  
   
 ```  
@@ -372,7 +391,7 @@ property UICheckState Check;
 |1|チェック|  
 |2|不確定な設定します。|  
   
-##  <a name="a-namecontinueroutinga--icommanduicontinuerouting"></a><a name="continuerouting"></a>ICommandUI::ContinueRouting  
+##  <a name="continuerouting"></a>ICommandUI::ContinueRouting  
  ハンドラーのチェーンに現在のメッセージを渡すようにコマンドのルーティング メカニズムに指示します。  
   
 ```  
@@ -382,7 +401,7 @@ void ContinueRouting();
 ### <a name="remarks"></a>コメント  
  これは、高度なメンバー関数と組み合わせて使用する必要がありますが、 [ON_COMMAND_EX](http://msdn.microsoft.com/library/0bb49090-aee8-4203-87c8-dd001d3dd26e)を返すハンドラー`FALSE`します。 詳細については、テクニカル ノートを参照してください。 [TN006: メッセージ マップ](../../mfc/tn006-message-maps.md)します。  
   
-##  <a name="a-nameenableda--icommanduienabled"></a><a name="enabled"></a>ICommandUI::Enabled  
+##  <a name="enabled"></a>ICommandUI::Enabled  
  有効または、このコマンドのユーザー インターフェイス項目を無効にします。  
   
 ```  
@@ -392,7 +411,7 @@ property bool Enabled;
 ### <a name="remarks"></a>コメント  
  このプロパティでは、有効または、このコマンドのユーザー インターフェイス項目を無効にします。 設定`Enabled`に`TRUE`、項目を有効にする`FALSE`を無効にします。  
   
-##  <a name="a-nameida--icommanduiid"></a><a name="id"></a>ICommandUI::ID  
+##  <a name="id"></a>ICommandUI::ID  
  によって表されるユーザー インターフェイス オブジェクトの ID を取得、`ICommandUI`オブジェクトです。  
   
 ```  
@@ -402,7 +421,7 @@ property unsigned int ID;
 ### <a name="remarks"></a>コメント  
  このプロパティのメニュー項目のツール バー ボタンの ID (ハンドル) を取得またはによって表されるその他のユーザー インターフェイス オブジェクト、`ICommandUI`オブジェクトです。  
   
-##  <a name="a-nameindexa--icommanduiindex"></a><a name="index"></a>ICommandUI::Index  
+##  <a name="index"></a>ICommandUI::Index  
  によって表されるユーザー インターフェイス オブジェクトのインデックスを取得、`ICommandUI`オブジェクトです。  
   
 ```  
@@ -412,7 +431,7 @@ property unsigned int Index;
 ### <a name="remarks"></a>コメント  
  このプロパティは、ツール バー ボタン、メニュー項目のインデックス (ハンドル) を取得またはによって表されるその他のユーザー インターフェイス オブジェクト、`ICommandUI`オブジェクトです。  
   
-##  <a name="a-nameradioa--icommanduiradio"></a><a name="radio"></a>ICommandUI::Radio  
+##  <a name="radio"></a>ICommandUI::Radio  
  このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。  
   
 ```  
@@ -422,7 +441,7 @@ property bool Radio;
 ### <a name="remarks"></a>コメント  
  このプロパティは、このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。 設定`Radio`に`TRUE`アイテムを有効にするそれ以外の場合`FALSE`します。  
   
-##  <a name="a-nametexta--icommanduitext"></a><a name="text"></a>ICommandUI::Text  
+##  <a name="text"></a>ICommandUI::Text  
  このコマンドのユーザー インターフェイスの項目のテキストを設定します。  
   
 ```  
@@ -432,7 +451,7 @@ property String^ Text;
 ### <a name="remarks"></a>コメント  
  このプロパティは、このコマンドのユーザー インターフェイスの項目のテキストを設定します。 設定`Text`をテキスト文字列のハンドル。  
   
-##  <a name="a-nameiviewinterfacea--iview-interface"></a><a name="iview_interface"></a>IView インターフェイス  
+##  <a name="iview_interface"></a>IView インターフェイス  
  さまざまなメソッド実装を[CWinFormsView](../../mfc/reference/cwinformsview-class.md)を使用してマネージ コントロールをビューの通知を送信します。  
   
 ```  
@@ -446,7 +465,7 @@ interface class IView
   
  Windows フォームの使用に関する詳細については、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
   
-##  <a name="a-nameonactivateviewa--iviewonactivateview"></a><a name="onactivateview"></a>IView::OnActivateView  
+##  <a name="onactivateview"></a>IView::OnActivateView  
  ビューがアクティブ化または非アクティブ化されたときに、MFC によって呼び出されます。  
   
 ```  
@@ -457,14 +476,14 @@ void OnActivateView(bool activate);
  `activate`  
  表示されているかどうかを示しますがアクティブまたは非アクティブ化します。  
   
-##  <a name="a-nameoninitialupdatea--iviewoninitialupdate"></a><a name="oninitialupdate"></a>IView::OnInitialUpdate  
+##  <a name="oninitialupdate"></a>IView::OnInitialUpdate  
  ドキュメントにビューを最初にアタッチ後、ビューが最初に表示される前に、フレームワークによって呼び出されます。  
   
 ```  
 void OnInitialUpdate();
 ```  
   
-##  <a name="a-nameonupdatea--iviewonupdate"></a><a name="onupdate"></a>IView::OnUpdate  
+##  <a name="onupdate"></a>IView::OnUpdate  
  ビューのドキュメントが変更された後に、MFC によって呼び出されます。  
   
 ```  

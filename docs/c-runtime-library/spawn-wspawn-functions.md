@@ -76,6 +76,7 @@ translation.priority.mt:
 translationtype: Human Translation
 ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
 ms.openlocfilehash: 1794395cd9e6684788458aad424336efbc421c0a
+ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="spawn-wspawn-functions"></a>_spawn 系関数と _wspawn 系関数
@@ -156,7 +157,7 @@ ms.openlocfilehash: 1794395cd9e6684788458aad424336efbc421c0a
   
  `_spawnl`、`_spawnle`、`_spawnlp`、`_spawnlpe` の各呼び出しは、通常、引数の個数が事前にわかっている場合に使用します。 `arg0` 引数は通常、`cmdname` へのポインターです。 引数 `arg1` ～ `argn` は、新しい引数リストを構成する文字列へのポインターです。 `argn` の後には、引数リストの末尾を示すために `NULL` ポインターが必要です。  
   
- `_spawnv`、`_spawnve`、`_spawnvp`、`_spawnvpe` の各呼び出しは、新しいプロセスの引数の数が変化する場合に便利です。 引数へのポインターは、配列 `argv`* として渡されます。* `argv`[0] 引数は、通常、リアル モードのパスまたは保護モードのプログラム名へのポインターです。 `argv`[1] 引数～ `argv`[`n`] 引数は、新しい引数リストを形成する文字列へのポインターです。 引数リストの末尾を示すために、 `argv`[`n` +1] 引数は `NULL` ポインターである必要があります。  
+ `_spawnv`、`_spawnve`、`_spawnvp`、`_spawnvpe` の各呼び出しは、新しいプロセスの引数の数が変化する場合に便利です。 引数へのポインターは、配列 `argv`*として渡されます。* `argv`[0] 引数は、通常、リアル モードのパスまたは保護モードのプログラム名へのポインターです。 `argv`[1] 引数～ `argv`[`n`] 引数は、新しい引数リストを形成する文字列へのポインターです。 引数リストの末尾を示すために、 `argv`[`n` +1] 引数は `NULL` ポインターである必要があります。  
   
 ## <a name="environment-of-the-spawned-process"></a>生成されたプロセスの環境  
  `_spawn` 呼び出しを作成するときに開いたファイルは、新しいプロセスでも開いたままです。 `_spawnl`、`_spawnlp`、`_spawnv`、`_spawnvp` の各呼び出しでは、新しいプロセスが呼び出しプロセスの環境を継承します。 `envp` 引数を使用して環境設定のリストを渡すことで、`_spawnle`、`_spawnlpe`、`_spawnve`、`_spawnvpe` の各呼び出しを使用して、新しいプロセスの環境を変更できます。 引数 `envp` は文字ポインターの配列であり、最後の要素以外の各要素は、環境変数を定義する null で終わる文字列を指します。 通常、このような文字列の形式は `NAME`=`value` であり、`NAME` は環境変数名、`value` はその変数に設定する文字列の値です。 `value` は二重引用符で囲みません。`envp` 配列の最後の要素は `NULL` にする必要があります。 `envp` 自身が `NULL` である場合、生成されたプロセスは親プロセスの環境設定を継承します。  
@@ -268,8 +269,3 @@ from SPAWN!
  [_onexit、_onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)   
  [_setmbcp](../c-runtime-library/reference/setmbcp.md)   
  [system、_wsystem](../c-runtime-library/reference/system-wsystem.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

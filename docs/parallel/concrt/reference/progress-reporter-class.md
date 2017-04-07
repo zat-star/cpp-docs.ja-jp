@@ -9,7 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ppltasks/concurrency::progress_reporter
+- progress_reporter
+- PPLTASKS/concurrency::progress_reporter
+- PPLTASKS/concurrency::progress_reporter::progress_reporter
+- PPLTASKS/concurrency::progress_reporter::report
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: c6b4dfee5b5f9df98a36fcdac116182ced4cbe30
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 98856e26c82d01433e6f8eb0d76110aff1535936
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="progressreporter-class"></a>progress_reporter クラス
@@ -59,13 +62,13 @@ class progress_reporter;
   
 |名前|説明|  
 |----------|-----------------|  
-|[progress_reporter コンス トラクター](#ctor)||  
+|[progress_reporter](#ctor)||  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[レポート メソッド](#report)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
+|[レポート](#report)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
   
 ## <a name="remarks"></a>コメント  
  このクラスは、Windows ストア アプリでのみ使用できます。  
@@ -78,13 +81,13 @@ class progress_reporter;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-progressreporter"></a><a name="ctor"></a>progress_reporter 
+##  <a name="ctor"></a>progress_reporter 
 
 ```
 progress_reporter();
 ```  
   
-##  <a name="a-namereporta-report"></a><a name="report"></a>レポート 
+##  <a name="report"></a>レポート 
 
  progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。  
   
@@ -97,5 +100,5 @@ void report(const _ProgressType& val) const;
  進行状況を示す通知によって報告されるペイロード。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

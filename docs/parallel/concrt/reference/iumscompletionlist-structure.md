@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrtrm/concurrency::IUMSCompletionList
+- IUMSCompletionList
+- CONCRTRM/concurrency::IUMSCompletionList
+- CONCRTRM/concurrency::IUMSCompletionList::IUMSCompletionList::GetUnblockNotifications
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 25023c27244669092e0f57fe59bdb190fd2f2afb
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 65655e4e03a7b187e0bbadbd576bc088bb57f7c8
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="iumscompletionlist-structure"></a>IUMSCompletionList 構造体
@@ -54,7 +56,7 @@ struct IUMSCompletionList;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Iumscompletionlist::getunblocknotifications メソッド](#getunblocknotifications)|チェーンを取得`IUMSUnblockNotification`プロキシは、このメソッドの前回に排除されてはいませんが関連付けられているスレッドが呼び出された実行コンテキストを表すインターフェイスです。|  
+|[Iumscompletionlist::getunblocknotifications](#getunblocknotifications)|チェーンを取得`IUMSUnblockNotification`プロキシは、このメソッドの前回に排除されてはいませんが関連付けられているスレッドが呼び出された実行コンテキストを表すインターフェイスです。|  
   
 ## <a name="remarks"></a>コメント  
  スケジューラは、コンプリート リストから項目をキューから削除するには、このインターフェイスを使用して後で実行される操作について十分に注意する必要があります。 項目では、実行可能なコンテキストのスケジューラの一覧に置く必要があり、できるだけ早くで一般的にアクセスできるようにします。 これでは、キューから取り出された項目のいずれかを設定した任意のロックの所有権。 スケジューラはアイテムをキューから削除する呼び出しと一般にアクセスできるからスケジューラ内でリストにこれらのアイテムの配置の間ブロックできる任意の関数呼び出しを行うことがないことができます。  
@@ -67,7 +69,7 @@ struct IUMSCompletionList;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegetunblocknotificationsa--iumscompletionlistgetunblocknotifications-method"></a><a name="getunblocknotifications"></a>Iumscompletionlist::getunblocknotifications メソッド  
+##  <a name="getunblocknotifications"></a>Iumscompletionlist::getunblocknotifications メソッド  
  チェーンを取得`IUMSUnblockNotification`プロキシは、このメソッドの前回に排除されてはいませんが関連付けられているスレッドが呼び出された実行コンテキストを表すインターフェイスです。  
   
 ```

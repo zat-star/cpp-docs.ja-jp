@@ -10,6 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CInternetFile
+- AFXINET/CInternetFile
+- AFXINET/CInternetFile::CInternetFile
+- AFXINET/CInternetFile::Abort
+- AFXINET/CInternetFile::Close
+- AFXINET/CInternetFile::Flush
+- AFXINET/CInternetFile::GetLength
+- AFXINET/CInternetFile::Read
+- AFXINET/CInternetFile::ReadString
+- AFXINET/CInternetFile::Seek
+- AFXINET/CInternetFile::SetReadBufferSize
+- AFXINET/CInternetFile::SetWriteBufferSize
+- AFXINET/CInternetFile::Write
+- AFXINET/CInternetFile::WriteString
+- AFXINET/CInternetFile::m_hFile
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -105,7 +119,7 @@ class CInternetFile : public CStdioFile
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-nameaborta--cinternetfileabort"></a><a name="abort"></a>CInternetFile::Abort  
+##  <a name="abort"></a>CInternetFile::Abort  
  このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りまたは書き込みが使用できなくなります。  
   
 ```  
@@ -117,7 +131,7 @@ virtual void Abort();
   
  例外を処理するときに**中止**とは異なります[閉じる](#close)の&2; つの重要な点です。 1 つは、**中止**エラーを無視するため、関数がエラーに例外をスローしません。 2 番目、**中止**しない**ASSERT**ファイルが開かれていない、または以前に閉じられました。  
   
-##  <a name="a-namecinternetfilea--cinternetfilecinternetfile"></a><a name="cinternetfile"></a>CInternetFile::CInternetFile  
+##  <a name="cinternetfile"></a>CInternetFile::CInternetFile  
  このメンバー関数が呼び出されます、`CInternetFile`オブジェクトを作成します。  
   
 ```  
@@ -162,7 +176,7 @@ CInternetFile(
 ### <a name="remarks"></a>コメント  
  作成しないで、`CInternetFile`オブジェクトに直接します。 代わりを呼び出してその派生クラスのいずれかのオブジェクトを作成[CGopherConnection::OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile)または[しないで](../../mfc/reference/chttpconnection-class.md#openrequest)します。 作成することも、`CInternetFile`を呼び出してオブジェクト[CFtpConnection::OpenFile](../../mfc/reference/cftpconnection-class.md#openfile)します。  
   
-##  <a name="a-nameclosea--cinternetfileclose"></a><a name="close"></a>CInternetFile::Close  
+##  <a name="close"></a>CInternetFile::Close  
  閉じる、`CInternetFile`のリソースを解放します。  
   
 ```  
@@ -172,7 +186,7 @@ virtual void Close();
 ### <a name="remarks"></a>コメント  
  書き込みのため、ファイルが開かれた場合は、暗黙の呼び出しに[フラッシュ](#flush)バッファリングされたすべてのデータを確保するためには、ホストに書き込まれます。 呼び出す必要があります**閉じる**ファイルの使用が終了したとします。  
   
-##  <a name="a-nameflusha--cinternetfileflush"></a><a name="flush"></a>CInternetFile::Flush  
+##  <a name="flush"></a>CInternetFile::Flush  
  書き込みバッファーの内容をフラッシュするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -182,28 +196,28 @@ virtual void Flush();
 ### <a name="remarks"></a>コメント  
  使用`Flush`メモリ内のすべてのデータがターゲット コンピューターに実際に書き込まれたことを保証するために、ホスト コンピューターとのトランザクションの完了を保証するためにします。 `Flush`有効になるのみ`CInternetFile`オブジェクトを開いて書き込む。  
   
-##  <a name="a-namegetlengtha--cinternetfilegetlength"></a><a name="getlength"></a>CInternetFile::GetLength  
+##  <a name="getlength"></a>CInternetFile::GetLength  
  ファイルのサイズを返します。  
   
 ```  
 virtual ULONGLONG GetLength() const;  
 ```  
   
-##  <a name="a-namemhfilea--cinternetfilemhfile"></a><a name="m_hfile"></a>CInternetFile::m_hFile  
+##  <a name="m_hfile"></a>CInternetFile::m_hFile  
  このオブジェクトに関連付けられているファイルへのハンドル。  
   
 ```  
 HINTERNET m_hFile;  
 ```  
   
-##  <a name="a-nameoperatorhinterneta--cinternetfileoperator-hinternet"></a><a name="operator_hinternet"></a>CInternetFile::operator HINTERNET  
+##  <a name="operator_hinternet"></a>CInternetFile::operator HINTERNET  
  この演算子を使用して、現在のインターネット セッションの Windows ハンドルを取得します。  
   
 ```  
 operator HINTERNET() const;  
 ```  
   
-##  <a name="a-namereada--cinternetfileread"></a><a name="read"></a>細かい  
+##  <a name="read"></a>細かい  
  このメンバー関数を呼び出して、指定されたメモリに読み込みます。`lpvBuf` を先頭として、`nCount` で指定されたバイト数を読み込みます。  
   
 ```  
@@ -227,7 +241,7 @@ virtual UINT Read(
   
  呼び出すすべてのデータが取得されるようにするには、アプリケーションを継続する必要があります、**細かい**メソッドまで、0 を返します。  
   
-##  <a name="a-namereadstringa--cinternetfilereadstring"></a><a name="readstring"></a>CInternetFile::ReadString  
+##  <a name="readstring"></a>CInternetFile::ReadString  
  改行文字が見つかるまでの文字のストリームを読み取るには、このメンバー関数を呼び出します。  
   
 ```  
@@ -259,7 +273,7 @@ virtual LPTSTR ReadString(
   
  呼び出した場合`ReadString`最初に呼び出さず[SetReadBufferSize](#setreadbuffersize)、4096 バイトのバッファーが表示されます。  
   
-##  <a name="a-nameseeka--cinternetfileseek"></a><a name="seek"></a>CInternetFile::Seek  
+##  <a name="seek"></a>CInternetFile::Seek  
  このメンバー関数を呼び出して以前に開いたファイルのポインターを移動します。  
   
 ```  
@@ -297,7 +311,7 @@ virtual ULONGLONG Seek(
 ### <a name="example"></a>例  
   基本クラスの実装の例を参照してください ( [CFile::Seek](../../mfc/reference/cfile-class.md#seek))。  
   
-##  <a name="a-namesetreadbuffersizea--cinternetfilesetreadbuffersize"></a><a name="setreadbuffersize"></a>CInternetFile::SetReadBufferSize  
+##  <a name="setreadbuffersize"></a>CInternetFile::SetReadBufferSize  
  使用される一時的な読み取りバッファーのサイズを設定するには、このメンバー関数を呼び出す、 `CInternetFile`-派生オブジェクト。  
   
 ```  
@@ -318,7 +332,7 @@ BOOL SetReadBufferSize(UINT nReadSize);
   
  いつでも、バッファー サイズを増やすことができますが、バッファーを縮小効果はありません。 呼び出した場合[ReadString](#readstring)最初に呼び出さず`SetReadBufferSize`、4096 バイトのバッファーが表示されます。  
   
-##  <a name="a-namesetwritebuffersizea--cinternetfilesetwritebuffersize"></a><a name="setwritebuffersize"></a>CInternetFile::SetWriteBufferSize  
+##  <a name="setwritebuffersize"></a>CInternetFile::SetWriteBufferSize  
  使用される一時的な書き込みバッファーのサイズを設定するには、このメンバー関数を呼び出す、 `CInternetFile`-派生オブジェクト。  
   
 ```  
@@ -337,7 +351,7 @@ BOOL SetWriteBufferSize(UINT nWriteSize);
   
  既定では、`CInternetFile`オブジェクトでは提供されません。 このメンバー関数を呼び出した場合は、書き込みアクセスのため、ファイルが開かれたことを確認する必要があります。 いつでも書き込みバッファーのサイズを変更できますが、そのようにすると、暗黙的に呼び出す[フラッシュ](#flush)します。  
   
-##  <a name="a-namewritea--cinternetfilewrite"></a><a name="write"></a>CInternetFile::Write  
+##  <a name="write"></a>CInternetFile::Write  
  このメンバー関数を呼び出して指定されたメモリへの書き込み`lpvBuf`、指定された数 (バイト単位) の`nCount`です。  
   
 ```  
@@ -356,7 +370,7 @@ virtual void Write(
 ### <a name="remarks"></a>コメント  
  データの書き込み中にエラーが発生した場合、関数、[表す](../../mfc/reference/cinternetexception-class.md)エラーを説明するオブジェクト。  
   
-##  <a name="a-namewritestringa--cinternetfilewritestring"></a><a name="writestring"></a>CInternetFile::WriteString  
+##  <a name="writestring"></a>CInternetFile::WriteString  
  この関数は、null で終わる文字列を関連付けられたファイルに書き込みます。  
   
 ```  

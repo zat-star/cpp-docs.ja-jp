@@ -10,6 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMapStringToString
+- AFXCOLL/CMapStringToString
+- AFXCOLL/CMapStringToString::CPair
+- AFXCOLL/CMapStringToOb::CMapStringToOb
+- AFXCOLL/CMapStringToOb::GetCount
+- AFXCOLL/CMapStringToOb::GetHashTableSize
+- AFXCOLL/CMapStringToOb::GetNextAssoc
+- AFXCOLL/CMapStringToOb::GetSize
+- AFXCOLL/CMapStringToOb::GetStartPosition
+- AFXCOLL/CMapStringToOb::HashKey
+- AFXCOLL/CMapStringToOb::InitHashTable
+- AFXCOLL/CMapStringToOb::IsEmpty
+- AFXCOLL/CMapStringToOb::Lookup
+- AFXCOLL/CMapStringToOb::LookupKey
+- AFXCOLL/CMapStringToString::PGetFirstAssoc
+- AFXCOLL/CMapStringToString::PGetNextAssoc
+- AFXCOLL/CMapStringToString::PLookup
+- AFXCOLL/CMapStringToOb::RemoveAll
+- AFXCOLL/CMapStringToOb::RemoveKey
+- AFXCOLL/CMapStringToOb::SetAt
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -116,7 +135,7 @@ class CMapStringToString : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcoll.h  
   
-##  <a name="a-namecpaira--cmapstringtostringcpair"></a><a name="cpair"></a>CMapStringToString::CPair  
+##  <a name="cpair"></a>CMapStringToString::CPair  
  キーの値と関連付けられている文字列オブジェクトの値が含まれています。  
   
 ### <a name="remarks"></a>コメント  
@@ -133,7 +152,7 @@ class CMapStringToString : public CObject
 ### <a name="example"></a>例  
   使用状況の例は、の使用例を参照してください。 [CMapStringToString::PLookup](#plookup)します。  
   
-##  <a name="a-namepgetfirstassoca--cmapstringtostringpgetfirstassoc"></a><a name="pgetfirstassoc"></a>CMapStringToString::PGetFirstAssoc  
+##  <a name="pgetfirstassoc"></a>CMapStringToString::PGetFirstAssoc  
  マップ オブジェクトの最初のエントリを返します。  
   
 ```  
@@ -151,7 +170,7 @@ CPair* PGetFirstAssoc();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections #&73;](../../mfc/codesnippet/cpp/cmapstringtostring-class_1.cpp)]  
   
-##  <a name="a-namepgetnextassoca--cmapstringtostringpgetnextassoc"></a><a name="pgetnextassoc"></a>CMapStringToString::PGetNextAssoc  
+##  <a name="pgetnextassoc"></a>CMapStringToString::PGetNextAssoc  
  指すに基づいてマップ要素を取得`pAssocRec`します。  
   
 ```  
@@ -173,7 +192,7 @@ CPair *PGetNextAssoc(const CPair* pAssoc);
 ### <a name="example"></a>例  
   例を参照してください[CMapStringToString::PGetFirstAssoc](#pgetfirstassoc)します。  
   
-##  <a name="a-nameplookupa--cmapstringtostringplookup"></a><a name="plookup"></a>CMapStringToString::PLookup  
+##  <a name="plookup"></a>CMapStringToString::PLookup  
  指定されたキーにマップされている値を検索します。  
   
 ```  

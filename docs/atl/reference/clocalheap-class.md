@@ -9,9 +9,12 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CLocalHeap
-- ATL::CLocalHeap
 - CLocalHeap
+- ATLMEM/ATL::CLocalHeap
+- ATLMEM/ATL::CLocalHeap::Allocate
+- ATLMEM/ATL::CLocalHeap::Free
+- ATLMEM/ATL::CLocalHeap::GetSize
+- ATLMEM/ATL::CLocalHeap::Reallocate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -81,7 +84,7 @@ class CLocalHeap : public IAtlMemMgr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlmem.h  
   
-##  <a name="a-nameallocatea--clocalheapallocate"></a><a name="allocate"></a>CLocalHeap::Allocate  
+##  <a name="allocate"></a>CLocalHeap::Allocate  
  メモリ ブロックを割り当てるには、このメソッドを呼び出します。  
   
 ```
@@ -100,7 +103,7 @@ virtual __declspec(allocator) void* Allocate(size_t nBytes) throw();
   
  使用して実装[LocalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366723)のフラグ パラメーターを持つ**LMEM_FIXED**します。  
   
-##  <a name="a-namefreea--clocalheapfree"></a><a name="free"></a>CLocalHeap::Free  
+##  <a name="free"></a>CLocalHeap::Free  
  メモリ マネージャーによって割り当てられたメモリ ブロックを解放するには、このメソッドを呼び出します。  
   
 ```
@@ -114,7 +117,7 @@ virtual void Free(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[LocalFree](http://msdn.microsoft.com/library/windows/desktop/aa366730)します。  
   
-##  <a name="a-namegetsizea--clocalheapgetsize"></a><a name="getsize"></a>CLocalHeap::GetSize  
+##  <a name="getsize"></a>CLocalHeap::GetSize  
  メモリ マネージャーによって割り当てられたメモリ ブロックの割り当てのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -131,7 +134,7 @@ virtual size_t GetSize(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[LocalSize](http://msdn.microsoft.com/library/windows/desktop/aa366745)します。  
   
-##  <a name="a-namereallocatea--clocalheapreallocate"></a><a name="reallocate"></a>CLocalHeap::Reallocate  
+##  <a name="reallocate"></a>CLocalHeap::Reallocate  
  このメソッドを呼び出し、このメモリ マネージャーによって割り当てられたメモリの再割り当てを行います。  
   
 ```

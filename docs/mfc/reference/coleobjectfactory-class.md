@@ -10,6 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleObjectFactory
+- AFXDISP/COleObjectFactory
+- AFXDISP/COleObjectFactory::COleObjectFactory
+- AFXDISP/COleObjectFactory::GetClassID
+- AFXDISP/COleObjectFactory::IsLicenseValid
+- AFXDISP/COleObjectFactory::IsRegistered
+- AFXDISP/COleObjectFactory::Register
+- AFXDISP/COleObjectFactory::RegisterAll
+- AFXDISP/COleObjectFactory::Revoke
+- AFXDISP/COleObjectFactory::RevokeAll
+- AFXDISP/COleObjectFactory::UnregisterAll
+- AFXDISP/COleObjectFactory::UpdateRegistry
+- AFXDISP/COleObjectFactory::UpdateRegistryAll
+- AFXDISP/COleObjectFactory::GetLicenseKey
+- AFXDISP/COleObjectFactory::OnCreateObject
+- AFXDISP/COleObjectFactory::VerifyLicenseKey
+- AFXDISP/COleObjectFactory::VerifyUserLicense
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -110,7 +126,7 @@ class COleObjectFactory : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
   
-##  <a name="a-namecoleobjectfactorya--coleobjectfactorycoleobjectfactory"></a><a name="coleobjectfactory"></a>COleObjectFactory::COleObjectFactory  
+##  <a name="coleobjectfactory"></a>COleObjectFactory::COleObjectFactory  
  構築、 `COleObjectFactory` 、オブジェクトとして登録されていないオブジェクト ファクトリを初期化し、ファクトリの一覧に追加します。  
   
 ```  
@@ -160,7 +176,7 @@ COleObjectFactory(
   
  詳細については、次を参照してください。 [CLSID キー](http://msdn.microsoft.com/library/windows/desktop/ms691424)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetclassida--coleobjectfactorygetclassid"></a><a name="getclassid"></a>COleObjectFactory::GetClassID  
+##  <a name="getclassid"></a>COleObjectFactory::GetClassID  
  このファクトリが表す OLE クラス ID への参照を返します。  
   
 ```  
@@ -173,7 +189,7 @@ REFCLSID GetClassID() const;
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [CLSID キー](http://msdn.microsoft.com/library/windows/desktop/ms691424)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetlicensekeya--coleobjectfactorygetlicensekey"></a><a name="getlicensekey"></a>COleObjectFactory::GetLicenseKey  
+##  <a name="getlicensekey"></a>COleObjectFactory::GetLicenseKey  
  コントロールの DLL から一意のライセンス キーを要求しに格納、`BSTR`指す`pbstrKey`します。  
   
 ```  
@@ -195,7 +211,7 @@ virtual BOOL GetLicenseKey(
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装は 0 を返しで何も格納、`BSTR`です。 MFC ActiveX ControlWizard を使用して、プロジェクトを作成する場合、ControlWizard はコントロールのライセンス キーを取得するオーバーライドを提供します。  
   
-##  <a name="a-nameislicensevalida--coleobjectfactoryislicensevalid"></a><a name="islicensevalid"></a>COleObjectFactory::IsLicenseValid  
+##  <a name="islicensevalid"></a>COleObjectFactory::IsLicenseValid  
  コントロールのライセンスが有効なかどうかを判断します。  
   
 ```  
@@ -205,7 +221,7 @@ BOOL IsLicenseValid();
 ### <a name="return-value"></a>戻り値  
  TRUE の場合正常です。それ以外の場合は false。  
   
-##  <a name="a-nameisregistereda--coleobjectfactoryisregistered"></a><a name="isregistered"></a>COleObjectFactory::IsRegistered  
+##  <a name="isregistered"></a>COleObjectFactory::IsRegistered  
  OLE システム Dll と、ファクトリが登録されている場合は、0 以外の値を返します。  
   
 ```  
@@ -215,7 +231,7 @@ virtual BOOL IsRegistered() const;
 ### <a name="return-value"></a>戻り値  
  ファクトリが登録されている場合は 0 以外それ以外の場合 0 を返します。  
   
-##  <a name="a-nameoncreateobjecta--coleobjectfactoryoncreateobject"></a><a name="oncreateobject"></a>COleObjectFactory::OnCreateObject  
+##  <a name="oncreateobject"></a>COleObjectFactory::OnCreateObject  
  新しいオブジェクトを作成するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -228,7 +244,7 @@ virtual CCmdTarget* OnCreateObject();
 ### <a name="remarks"></a>コメント  
  以外の何か、オブジェクトを作成するには、この関数をオーバーライドして、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)コンス トラクターに渡されます。  
   
-##  <a name="a-nameregistera--coleobjectfactoryregister"></a><a name="register"></a>COleObjectFactory::Register  
+##  <a name="register"></a>COleObjectFactory::Register  
  OLE システム Dll には、このオブジェクト ファクトリを登録します。  
   
 ```  
@@ -241,7 +257,7 @@ virtual BOOL Register();
 ### <a name="remarks"></a>コメント  
  この関数は通常によって呼び出されます[場合は](../../mfc/reference/cwinapp-class.md#initinstance)アプリケーションが起動した場合。  
   
-##  <a name="a-nameregisteralla--coleobjectfactoryregisterall"></a><a name="registerall"></a>COleObjectFactory::RegisterAll  
+##  <a name="registerall"></a>COleObjectFactory::RegisterAll  
  OLE システム Dll には、すべてのアプリケーションのオブジェクト ファクトリを登録します。  
   
 ```  
@@ -254,7 +270,7 @@ static BOOL PASCAL RegisterAll();
 ### <a name="remarks"></a>コメント  
  この関数は通常によって呼び出されます[場合は](../../mfc/reference/cwinapp-class.md#initinstance)アプリケーションが起動した場合。  
   
-##  <a name="a-namerevokea--coleobjectfactoryrevoke"></a><a name="revoke"></a>COleObjectFactory::Revoke  
+##  <a name="revoke"></a>COleObjectFactory::Revoke  
  OLE システム Dll でのオブジェクト ファクトリの登録を取り消します。  
   
 ```  
@@ -264,7 +280,7 @@ void Revoke();
 ### <a name="remarks"></a>コメント  
  フレームワークは、アプリケーションが終了する前に、この関数を自動的に呼び出します。 必要に応じてのオーバーライドから呼び出す[し](../../mfc/reference/cwinapp-class.md#exitinstance)します。  
   
-##  <a name="a-namerevokealla--coleobjectfactoryrevokeall"></a><a name="revokeall"></a>COleObjectFactory::RevokeAll  
+##  <a name="revokeall"></a>COleObjectFactory::RevokeAll  
  すべての OLE システム Dll を含む、アプリケーションのオブジェクト ファクトリの登録を取り消します。  
   
 ```  
@@ -274,7 +290,7 @@ static void PASCAL RevokeAll();
 ### <a name="remarks"></a>コメント  
  フレームワークは、アプリケーションが終了する前に、この関数を自動的に呼び出します。 必要に応じてのオーバーライドから呼び出す[し](../../mfc/reference/cwinapp-class.md#exitinstance)します。  
   
-##  <a name="a-nameunregisteralla--coleobjectfactoryunregisterall"></a><a name="unregisterall"></a>COleObjectFactory::UnregisterAll  
+##  <a name="unregisterall"></a>COleObjectFactory::UnregisterAll  
  すべてのアプリケーションのオブジェクト ファクトリを登録解除します。  
   
 ```  
@@ -284,7 +300,7 @@ static BOOL PASCAL UnregisterAll();
 ### <a name="return-value"></a>戻り値  
  成功した場合は TRUE、それ以外の場合は FALSE。  
   
-##  <a name="a-nameupdateregistrya--coleobjectfactoryupdateregistry"></a><a name="updateregistry"></a>COleObjectFactory::UpdateRegistry  
+##  <a name="updateregistry"></a>COleObjectFactory::UpdateRegistry  
  OLE システム レジストリには、すべてのアプリケーションのオブジェクト ファクトリを登録します。  
   
 ```  
@@ -308,7 +324,7 @@ virtual BOOL UpdateRegistry(BOOL bRegister);
   
      MFC ActiveX ControlWizard を使用して、プロジェクトを作成する場合、ControlWizard はこの純粋仮想関数のオーバーライドを提供します。  
   
-##  <a name="a-nameupdateregistryalla--coleobjectfactoryupdateregistryall"></a><a name="updateregistryall"></a>されます  
+##  <a name="updateregistryall"></a>されます  
  OLE システム レジストリには、すべてのアプリケーションのオブジェクト ファクトリを登録します。  
   
 ```  
@@ -325,7 +341,7 @@ static BOOL PASCAL UpdateRegistryAll(BOOL bRegister = TRUE);
 ### <a name="remarks"></a>コメント  
  この関数は通常によって呼び出されます[場合は](../../mfc/reference/cwinapp-class.md#initinstance)アプリケーションが起動した場合。  
   
-##  <a name="a-nameverifylicensekeya--coleobjectfactoryverifylicensekey"></a><a name="verifylicensekey"></a>COleObjectFactory::VerifyLicenseKey  
+##  <a name="verifylicensekey"></a>COleObjectFactory::VerifyLicenseKey  
  OLE コントロールを使用して、コンテナーがライセンスされていることを確認します。  
   
 ```  
@@ -346,7 +362,7 @@ virtual BOOL VerifyLicenseKey(BSTR bstrKey);
   
  関数[VerifyUserLicense](#verifyuserlicense)デザイン時ライセンスを確認します。  
   
-##  <a name="a-nameverifyuserlicensea--coleobjectfactoryverifyuserlicense"></a><a name="verifyuserlicense"></a>COleObjectFactory::VerifyUserLicense  
+##  <a name="verifyuserlicense"></a>COleObjectFactory::VerifyUserLicense  
  OLE コントロールのデザイン時ライセンスを確認します。  
   
 ```  

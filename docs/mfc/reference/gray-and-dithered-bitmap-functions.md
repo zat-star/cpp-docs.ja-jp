@@ -8,6 +8,11 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- AFXWIN/AfxDrawGrayBitmap
+- AFXWIN/AfxGetGrayBitmap
+- AFXWIN/AfxDrawDitheredBitmap
+- AFXWIN/AfxGetDitheredBitmap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -60,7 +65,7 @@ ms.lasthandoff: 02/24/2017
 |[AfxDrawDitheredBitmap](#afxdrawditheredbitmap)|背景がディザリングされたビットマップを描画します。|  
 |[AfxGetDitheredBitmap](#afxgetditheredbitmap)|背景がディザリングされたビットマップをコピーします。|  
   
-##  <a name="a-nameafxdrawgraybitmapa--afxdrawgraybitmap"></a><a name="afxdrawgraybitmap"></a>AfxDrawGrayBitmap  
+##  <a name="afxdrawgraybitmap"></a>AfxDrawGrayBitmap  
  灰色のバージョンのビットマップを描画します。  
   
 ```   
@@ -99,7 +104,7 @@ void AFXAPI AfxDrawGrayBitmap(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
 
-##  <a name="a-nameafxgetgraybitmapa--afxgetgraybitmap"></a><a name="afxgetgraybitmap"></a>AfxGetGrayBitmap  
+##  <a name="afxgetgraybitmap"></a>AfxGetGrayBitmap  
  灰色のバージョンのビットマップをコピーします。  
   
 ```   
@@ -130,7 +135,7 @@ void AFXAPI AfxGetGrayBitmap(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-nameafxdrawditheredbitmapa--afxdrawditheredbitmap"></a><a name="afxdrawditheredbitmap"></a>AfxDrawDitheredBitmap  
+##  <a name="afxdrawditheredbitmap"></a>AfxDrawDitheredBitmap  
  ディザリングされた (checker) パターンで背景を置き換えます、ビットマップを描画します。  
   
 ```   
@@ -174,7 +179,7 @@ void AFXAPI AfxDrawDitheredBitmap(
  **ヘッダー:** afxwin.h  
 
 
-##  <a name="a-nameafxgetditheredbitmapa--afxgetditheredbitmap"></a><a name="afxgetditheredbitmap"></a>AfxGetDitheredBitmap  
+##  <a name="afxgetditheredbitmap"></a>AfxGetDitheredBitmap  
  ディザリングされた (checker) パターンで背景を置き換えます、ビットマップをコピーします。  
   
 ```   

@@ -6,23 +6,28 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- amp_graphics/Concurrency::fast_math::copy_async
+- amp_graphics/Concurrency::fast_math::copy
+dev_langs:
+- C++
 ms.assetid: ace01cd5-29d3-4356-930e-c81a61c5f934
 caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 1c17becb6bc3fb9b243a65652bf019b7fad1b8cd
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: a9def518f951e6fbae788b69893cc7205053b411
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrencygraphics-namespace-functions"></a>Concurrency::graphics 名前空間の関数
 |||  
 |-|-|  
-|[copy 関数 (concurrency::graphics Namespace)](#copy)|[copy_async 関数 (concurrency::graphics Namespace)](#copy_async)|  
+|[copy](#copy)|[copy_async](#copy_async)|  
   
-##  <a name="a-namecopya--copy-function-concurrencygraphics-namespace"></a><a name="copy"></a>copy 関数 (concurrency::graphics Namespace)  
+##  <a name="copy"></a>copy 関数 (concurrency::graphics Namespace)  
  ソースのテクスチャをターゲットのバッファーにコピーするか、またはソースのバッファーをターゲットのバッファーにコピーします。 この関数の一般的な形式は `copy(src, dest)` です。  
   
 ```  
@@ -168,7 +173,7 @@ void copy (
  `last`  
  ソース コンテナーへの終了の反復子。  
   
-##  <a name="a-namecopyasynca--copyasync-function-concurrencygraphics-namespace"></a><a name="copy_async"></a>copy_async 関数 (concurrency::graphics Namespace)  
+##  <a name="copy_async"></a>copy_async 関数 (concurrency::graphics Namespace)  
  転送先のバッファーにソース テクスチャを非同期的にコピーまたはソース バッファー転送先のバッファーをコピーし、し、返す、 [completion_future](completion-future-class.md)待機できるオブジェクト。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。  
   
 ```  
@@ -309,7 +314,12 @@ concurrency::completion_future copy_async(_Src_type& _Src,
   
  `last`  
  ソース コンテナーへの終了の反復子。  
+
+## <a name="requirements"></a>要件  
+ **ヘッダー:** amp_graphics.h  
   
+ **Namespace:** concurrency::graphics 
+
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

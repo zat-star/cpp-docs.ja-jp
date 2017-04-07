@@ -9,7 +9,36 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- vc.mfc.macros
+- AFXDB/RFX_Binary
+- AFXDB/RFX_Bool
+- AFXDB/RFX_Byte
+- AFXDB/RFX_Date
+- AFXDB/RFX_Double
+- AFXDB/RFX_Int
+- AFXDB/RFX_Long
+- AFXDB/RFX_LongBinary
+- AFXDB/RFX_Single
+- AFXDB/RFX_Text
+- AFXDB/RFX_Binary_Bulk
+- AFXDB/RFX_Bool_Bulk
+- AFXDB/RFX_Byte_Bulk
+- AFXDB/RFX_Date_Bulk
+- AFXDB/RFX_Double_Bulk
+- AFXDB/RFX_Int_Bulk
+- AFXDB/RFX_Long_Bulk
+- AFXDB/RFX_Single_Bulk
+- AFXDB/RFX_Text_Bulk
+- AFXDB/DFX_Binary
+- AFXDB/DFX_Bool
+- AFXDB/DFX_Byte
+- AFXDB/DFX_Currency
+- AFXDB/DFX_DateTime
+- AFXDB/DFX_Double
+- AFXDB/DFX_Long
+- AFXDB/DFX_LongBinary
+- AFXDB/DFX_Short
+- AFXDB/DFX_Single
+- AFXDB/DFX_Text
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -112,7 +141,7 @@ ms.lasthandoff: 02/24/2017
 
  =============================================
 
-## <a name="a-namerfxbinarya--rfxbinary"></a><a name="rfx_binary"></a>RFX_Binary
+## <a name="rfx_binary"></a>RFX_Binary
 フィールド データ メンバーの間でバイトの配列を転送する、 `CRecordset` ODBC 型のデータ ソースのレコードの列とオブジェクト**SQL_BINARY**、 **SQL_VARBINARY**、または**SQL_LONGVARBINARY**します。  
   
 ### <a name="syntax"></a>構文  
@@ -147,7 +176,7 @@ void RFX_Binary(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxboola--rfxbool"></a><a name="rfx_bool"></a>RFX_Bool
+## <a name="rfx_bool"></a>RFX_Bool
 フィールド データ メンバーの間でのブール型のデータの転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_BIT**します。  
   
 ### <a name="syntax"></a>構文  
@@ -175,7 +204,7 @@ void RFX_Bool(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxbytea--rfxbyte"></a><a name="rfx_byte"></a>RFX_Byte
+## <a name="rfx_byte"></a>RFX_Byte
 1 つのフィールド データ メンバー間のバイトの転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_TINYINT**します。  
   
 ### <a name="syntax"></a>構文  
@@ -203,7 +232,7 @@ void RFX_Byte(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxdatea--rfxdate"></a><a name="rfx_date"></a>RFX_Date
+## <a name="rfx_date"></a>RFX_Date
 転送`CTime`または**TIMESTAMP_STRUCT**のフィールド データ メンバーの間でデータを`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_DATE**、 **SQL_TIME**、または**SQL_TIMESTAMP**します。  
   
 ### <a name="syntax"></a>構文  
@@ -248,7 +277,7 @@ void RFX_Date(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxdoublea--rfxdouble"></a><a name="rfx_double"></a>RFX_Double
+## <a name="rfx_double"></a>RFX_Double
 転送**倍精度浮動小数点**のフィールド データ メンバーの間でデータを`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_DOUBLE**します。  
   
 ### <a name="syntax"></a>構文  
@@ -276,7 +305,7 @@ void RFX_Double(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxinta--rfxint"></a><a name="RFX_Int"></a>RFX_Int
+## <a name="RFX_Int"></a>RFX_Int
 フィールド データ メンバーの間で整数型のデータを転送する`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_SMALLINT**します。  
   
 ### <a name="syntax"></a>構文  
@@ -304,7 +333,7 @@ void RFX_Int(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxlonga--rfxlong"></a><a name="RFX_Long"></a>RFX_Long
+## <a name="RFX_Long"></a>RFX_Long
 フィールド データ メンバーの間での長整数型データの転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_INTEGER**します。  
   
 ### <a name="syntax"></a>構文  
@@ -333,7 +362,7 @@ value );
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-## <a name="a-namerfxlongbinarya--rfxlongbinary"></a><a name="RFX_LongBinary"></a>RFX_LongBinary
+## <a name="RFX_LongBinary"></a>RFX_LongBinary
 クラスを使用してバイナリ ラージ オブジェクト (BLOB) データを転送[CLongBinary](clongbinary-class.md)のフィールド データ メンバーの間、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_LONGVARBINARY**または**SQL_LONGVARCHAR**します。  
   
 ### <a name="syntax"></a>構文  
@@ -361,7 +390,7 @@ void RFX_LongBinary(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxsinglea--rfxsingle"></a><a name="rfx_single"></a>RFX_Single
+## <a name="rfx_single"></a>RFX_Single
 フィールド データ メンバーの間で浮動小数点のデータ転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_REAL**します。  
   
 ### <a name="syntax"></a>構文  
@@ -390,7 +419,7 @@ void RFX_Single(
  **ヘッダー:** afxdb.h  
   
 
-## <a name="a-namerfxtexta--rfxtext"></a><a name="rfx_text"></a>RFX_Text
+## <a name="rfx_text"></a>RFX_Text
 転送`CString`のフィールド データ メンバーの間でデータを`CRecordset`オブジェクトと ODBC の種類のデータ ソースのレコードの列**SQL_LONGVARCHAR**、 **SQL_CHAR**、 **SQL_VARCHAR**、 **SQL_DECIMAL**、または**SQL_NUMERIC**します。  
   
 ### <a name="syntax"></a>構文  
@@ -452,7 +481,7 @@ void CCustomer::DoFieldExchange(CFieldExchange* pFX)
  **ヘッダー:** afxdb.h  
 
 
-## <a name="a-namerfxbinarybulka--rfxbinarybulk"></a><a name="rfx_binary_Bulk"></a>RFX_Binary_Bulk
+## <a name="rfx_binary_Bulk"></a>RFX_Binary_Bulk
 ODBC データ ソースの列から対応する配列にバイトのデータの複数の行を転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -498,7 +527,7 @@ void RFX_Binary_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxboolbulka--rfxboolbulk"></a><a name="rfx_bool_Bulk"></a>RFX_Bool_Bulk
+## <a name="rfx_bool_Bulk"></a>RFX_Bool_Bulk
 ODBC データ ソースの列からの対応する配列に複数行のブール型のデータを転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -540,7 +569,7 @@ void RFX_Bool_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxbytebulka--rfxbytebulk"></a><a name="rfx_byte_Bulk"></a>RFX_Byte_Bulk
+## <a name="rfx_byte_Bulk"></a>RFX_Byte_Bulk
 ODBC データ ソースの列からの対応する配列に単一バイトの複数の行を転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -582,7 +611,7 @@ void RFX_Byte_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
   
-## <a name="a-namerfxdatebulka--rfxdatebulk"></a><a name="rfx_date_Bulk"></a>RFX_Date_Bulk
+## <a name="rfx_date_Bulk"></a>RFX_Date_Bulk
 複数の行を転送**TIMESTAMP_STRUCT** ODBC データ ソースの列のデータに対応する配列に、 `CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -624,7 +653,7 @@ void RFX_Date_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxdoublebulka--rfxdoublebulk"></a><a name="rfx_double_Bulk"></a>RFX_Double_Bulk
+## <a name="rfx_double_Bulk"></a>RFX_Double_Bulk
 ODBC データ ソースの列から対応する配列に複数行の倍精度の浮動小数点のデータを転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -666,7 +695,7 @@ void RFX_Double_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxintbulka--rfxintbulk"></a><a name="RFX_Int_Bulk"></a>RFX_Int_Bulk
+## <a name="RFX_Int_Bulk"></a>RFX_Int_Bulk
 フィールド データ メンバーの間で整数型のデータを転送する`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_SMALLINT**します。  
   
 ### <a name="syntax"></a>構文  
@@ -694,7 +723,7 @@ void RFX_Int(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxlongbulka--rfxlongbulk"></a><a name="RFX_Long_Bulk"></a>RFX_Long_Bulk
+## <a name="RFX_Long_Bulk"></a>RFX_Long_Bulk
 ODBC データ ソースの列から対応する配列に複数行の長整数型のデータを転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -736,7 +765,7 @@ void RFX_Long_Bulk(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namerfxsinglebulka--rfxsinglebulk"></a><a name="rfx_single_Bulk"></a>RFX_Single_Bulk
+## <a name="rfx_single_Bulk"></a>RFX_Single_Bulk
 ODBC データ ソースの列から対応する配列に複数行の浮動小数点のデータを転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -779,7 +808,7 @@ void RFX_Single_Bulk(
  **ヘッダー:** afxdb.h  
   
 
-## <a name="a-namerfxtextbulka--rfxtextbulk"></a><a name="rfx_text_Bulk"></a>RFX_Text_Bulk
+## <a name="rfx_text_Bulk"></a>RFX_Text_Bulk
 ODBC データ ソースの列から対応する配列に複数行の文字データを転送する`CRecordset`-派生オブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -840,7 +869,7 @@ void CMultiCustomer::DoBulkFieldExchange(CFieldExchange* pFX)
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdb.h  
 
-## <a name="a-namedfxbinarya--dfxbinary"></a><a name="dfx_binary"></a>DFX_Binary
+## <a name="dfx_binary"></a>DFX_Binary
 フィールド データ メンバーの間でバイトの配列を転送する[CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -883,7 +912,7 @@ void AFXAPI DFX_Binary(
  **ヘッダー:** afxdao.h  
   
 
-## <a name="a-namedfxboola--dfxbool"></a><a name="dfx_bool"></a>DFX_Bool
+## <a name="dfx_bool"></a>DFX_Bool
 フィールド データ メンバーの間でのブール型のデータの転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -921,7 +950,7 @@ void AFXAPI DFX_Bool(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxbytea--dfxbyte"></a><a name="dfx_byte"></a>DFX_Byte
+## <a name="dfx_byte"></a>DFX_Byte
 1 つのフィールド データ メンバー間のバイトの転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -959,7 +988,7 @@ void AFXAPI DFX_Byte(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxcurrencya--dfxcurrency"></a><a name="dfx_currency"></a>DFX_Currency
+## <a name="dfx_currency"></a>DFX_Currency
 フィールド データ メンバーの間で通貨のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -997,7 +1026,7 @@ void AFXAPI DFX_Currency(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxdatetimea--dfxdatetime"></a><a name="dfx_datetime"></a>DFX_DateTime
+## <a name="dfx_datetime"></a>DFX_DateTime
 フィールド データ メンバーの間での日付と時刻のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -1038,7 +1067,7 @@ void AFXAPI DFX_DateTime(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxdoublea--dfxdouble"></a><a name="dfx_double"></a>DFX_Double
+## <a name="dfx_double"></a>DFX_Double
 転送**倍精度浮動小数点**のフィールド データ メンバーの間でデータを[CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -1076,7 +1105,7 @@ void AFXAPI DFX_Double(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxlonga--dfxlong"></a><a name="dfx_long"></a>DFX_Long
+## <a name="dfx_long"></a>DFX_Long
 フィールド データ メンバーの間での長整数型データの転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -1115,7 +1144,7 @@ void AFXAPI DFX_Long(
  **ヘッダー:** afxdao.h  
   
 
-## <a name="a-namedfxlongbinarya--dfxlongbinary"></a><a name="dfx_longbinary"></a>DFX_LongBinary
+## <a name="dfx_longbinary"></a>DFX_LongBinary
 **重要な**を使用することをお勧め[DFX_Binary](#dfx_binary)この関数の代わりにします。  
   
 ### <a name="syntax"></a>構文  
@@ -1157,7 +1186,7 @@ void AFXAPI DFX_LongBinary(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxshorta--dfxshort"></a><a name="dfx_short"></a>DFX_Short
+## <a name="dfx_short"></a>DFX_Short
 転送の短い間のフィールド データ メンバーの整数データ、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -1199,7 +1228,7 @@ void AFXAPI DFX_Short(
  **ヘッダー:** afxdao.h  
   
 
-## <a name="a-namedfxsinglea--dfxsingle"></a><a name="dfx_single"></a>DFX_Single
+## <a name="dfx_single"></a>DFX_Single
 フィールド データ メンバーの間で浮動小数点のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  
@@ -1237,7 +1266,7 @@ void AFXAPI DFX_Single(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-## <a name="a-namedfxtexta--dfxtext"></a><a name="dfx_text"></a>DFX_Text
+## <a name="dfx_text"></a>DFX_Text
 転送`CString`のフィールド データ メンバーの間でデータを[CDaoRecordset](cdaorecordset-class.md)オブジェクトとデータ ソースのレコードの列です。  
   
 ### <a name="syntax"></a>構文  

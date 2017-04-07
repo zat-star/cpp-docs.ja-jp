@@ -10,8 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMDITabInfo
-- CMDITabInfo.CMDITabInfo
-- CMDITabInfo::CMDITabInfo
+- AFXMDICLIENTAREAWND/CMDITabInfo
+- AFXMDICLIENTAREAWND/CMDITabInfo::Serialize
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bAutoColor
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bDocumentMenu
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bEnableTabSwap
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bFlatFrame
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bTabCloseButton
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bTabCustomTooltips
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_bTabIcons
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_nTabBorderSize
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_style
+- AFXMDICLIENTAREAWND/CMDITabInfo::m_tabLocation
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +105,7 @@ class CMDITabInfo
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxmdiclientareawnd.h  
   
-##  <a name="a-namembactivetabclosebuttona--cmditabinfombactivetabclosebutton"></a><a name="m_bactivetabclosebutton_"></a>CMDITabInfo::m_bActiveTabCloseButton です。  
+##  <a name="m_bactivetabclosebutton_"></a>CMDITabInfo::m_bActiveTabCloseButton です。  
  指定するかどうか、**閉じる**ボタンがアクティブなタブのラベルに表示されます。  
   
 ```  
@@ -105,7 +115,7 @@ BOOL m_bActiveTabCloseButton;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、アクティブなタブのラベルが表示されます、**閉じる** ボタンをクリックします。 **閉じる**ボタンはタブ領域の右上隅から削除されます。 それ以外の場合、アクティブなタブのラベルは表示されない、**閉じる** ボタンをクリックします。 **閉じる**タブ領域の右上隅にあるボタンが表示されます。  
   
-##  <a name="a-namembautocolora--cmditabinfombautocolor"></a><a name="m_bautocolor"></a>CMDITabInfo::m_bAutoColor  
+##  <a name="m_bautocolor"></a>CMDITabInfo::m_bAutoColor  
  MDI タブごとに、独自の色があるかどうかを指定します。  
   
 ```  
@@ -115,7 +125,7 @@ BOOL m_bAutoColor;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、各タブは、独自の色になります。 色のセットは、MFC ライブラリで管理されます。 それ以外の場合、タブは白色で表示されます。 既定値は `FALSE` です。  
   
-##  <a name="a-namembdocumentmenua--cmditabinfombdocumentmenu"></a><a name="m_bdocumentmenu"></a>CMDITabInfo::m_bDocumentMenu  
+##  <a name="m_bdocumentmenu"></a>CMDITabInfo::m_bDocumentMenu  
  各タブがタブ領域の右端に開いているドキュメントの一覧を表示するポップアップ メニューを表示するかどうかを指定します。  
   
 ```  
@@ -125,7 +135,7 @@ BOOL m_bDocumentMenu;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、各タブ ウィンドウには、タブ領域の右端に開いているドキュメントの一覧を表示するポップアップ メニューが表示されます。それ以外の場合、タブ ウィンドウは、タブ領域の右端にスクロール ボタンを表示します。 既定値は `FALSE` です。  
   
-##  <a name="a-namembenabletabswapa--cmditabinfombenabletabswap"></a><a name="m_benabletabswap"></a>CMDITabInfo::m_bEnableTabSwap  
+##  <a name="m_benabletabswap"></a>CMDITabInfo::m_bEnableTabSwap  
  ドラッグすることにより、ユーザーがタブの位置を入れ替えることができるかどうかを指定します。  
   
 ```  
@@ -135,14 +145,14 @@ BOOL m_bEnableTabSwap;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`タブをドラッグして、ユーザーがタブの位置を変更できます。 それ以外の場合、ユーザーは、タブ位置を変更することはできません。 既定値は `TRUE` です。  
   
-##  <a name="a-namembflatframea--cmditabinfombflatframe"></a><a name="m_bflatframe"></a>CMDITabInfo::m_bFlatFrame  
+##  <a name="m_bflatframe"></a>CMDITabInfo::m_bFlatFrame  
  各タブ ウィンドウにフラット フレームがあるかどうかを指定します。  
   
 ```  
 BOOL m_bFlatFrame;  
 ```  
   
-##  <a name="a-namembtabclosebuttona--cmditabinfombtabclosebutton"></a><a name="m_btabclosebutton"></a>CMDITabInfo::m_bTabCloseButton  
+##  <a name="m_btabclosebutton"></a>CMDITabInfo::m_bTabCloseButton  
  各タブ ウィンドウを表示するかどうかを指定する**閉じる** ボタンをクリックします。  
   
 ```  
@@ -152,7 +162,7 @@ BOOL m_bTabCloseButton;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、各タブ ウィンドウを表示、**閉じる** タブの右端にボタンをクリックします。 それ以外の場合、**閉じる**ボタンは表示されません。 既定値は `TRUE` です。  
   
-##  <a name="a-namembtabcustomtooltipsa--cmditabinfombtabcustomtooltips"></a><a name="m_btabcustomtooltips"></a>CMDITabInfo::m_bTabCustomTooltips  
+##  <a name="m_btabcustomtooltips"></a>CMDITabInfo::m_bTabCustomTooltips  
  タブがツールヒントを表示するかどうかを指定します。  
   
 ```  
@@ -162,7 +172,7 @@ BOOL m_bTabCustomTooltips;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、アプリケーションの送信、`AFX_WM_ON_GET_TAB_TOOLTIP`メインフレームへのメッセージ。 このメッセージを処理するを使用して、`ON_REGISTERED_MESSAGE`マクロです。  
   
-##  <a name="a-namembtabiconsa--cmditabinfombtabicons"></a><a name="m_btabicons"></a>CMDITabInfo::m_bTabIcons  
+##  <a name="m_btabicons"></a>CMDITabInfo::m_bTabIcons  
  MDI タブにアイコンを表示するかどうかを指定します。  
   
 ```  
@@ -172,7 +182,7 @@ BOOL m_bTabIcons;
 ### <a name="remarks"></a>コメント  
  場合`TRUE`、各 MDI タブのアイコンが表示されます。 それ以外の場合、アイコンは、タブには表示されません。 既定値は `FALSE` です。  
   
-##  <a name="a-namemntabbordersizea--cmditabinfomntabbordersize"></a><a name="m_ntabbordersize"></a>CMDITabInfo::m_nTabBorderSize  
+##  <a name="m_ntabbordersize"></a>CMDITabInfo::m_nTabBorderSize  
  各タブ ウィンドウのピクセル単位の境界線のサイズを指定します。  
   
 ```  
@@ -182,7 +192,7 @@ int m_nTabBorderSize;
 ### <a name="remarks"></a>コメント  
  [CMFCVisualManager::GetMDITabsBordersSize](../../mfc/reference/cmfcvisualmanager-class.md#getmditabsborderssize)既定値を返します。  
   
-##  <a name="a-namemstylea--cmditabinfomstyle"></a><a name="m_style"></a>CMDITabInfo::m_style  
+##  <a name="m_style"></a>CMDITabInfo::m_style  
  タブ ラベルのスタイルを指定します。  
   
 ```  
@@ -210,7 +220,7 @@ CMFCTabCtrl::Style m_style
  `STYLE_3D_ROUNDED_SCROLL`  
  Round タブのラベルが付いた&3;D スタイル。  
   
-##  <a name="a-namemtablocationa--cmditabinfomtablocation"></a><a name="m_tablocation"></a>CMDITabInfo::m_tabLocation  
+##  <a name="m_tablocation"></a>CMDITabInfo::m_tabLocation  
  タブのラベルが、上またはページの下部にあるかどうかを指定します。  
   
 ```  
@@ -224,7 +234,7 @@ CMFCTabCtrl::Location m_tabLocation;
   
 -   LOCATION_TOP: タブのラベルは、ページの上部には  
   
-##  <a name="a-nameserializea--cmditabinfoserialize"></a><a name="serialize"></a>CMDITabInfo::Serialize  
+##  <a name="serialize"></a>CMDITabInfo::Serialize  
  読み取りまたはアーカイブからまたはアーカイブは、このオブジェクトを書き込みます。  
   
 ```  

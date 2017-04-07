@@ -9,9 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CComCriticalSection
 - CComCriticalSection
-- ATL::CComCriticalSection
+- ATLCORE/ATL::CComCriticalSection
+- ATLCORE/ATL::CComCriticalSection::CComCriticalSection
+- ATLCORE/ATL::CComCriticalSection::Init
+- ATLCORE/ATL::CComCriticalSection::Lock
+- ATLCORE/ATL::CComCriticalSection::Term
+- ATLCORE/ATL::CComCriticalSection::Unlock
+- ATLCORE/ATL::CComCriticalSection::m_sec
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -84,7 +89,7 @@ class CComCriticalSection
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
   
-##  <a name="a-nameccomcriticalsectiona--ccomcriticalsectionccomcriticalsection"></a><a name="ccomcriticalsection"></a>CComCriticalSection::CComCriticalSection  
+##  <a name="ccomcriticalsection"></a>CComCriticalSection::CComCriticalSection  
  コンストラクターです。  
   
 ```
@@ -94,7 +99,7 @@ CComCriticalSection() throw();
 ### <a name="remarks"></a>コメント  
  セット、 [m_sec](#m_sec)データ メンバーを NULL に**します。**  
   
-##  <a name="a-nameinita--ccomcriticalsectioninit"></a><a name="init"></a>CComCriticalSection::Init  
+##  <a name="init"></a>CComCriticalSection::Init  
  Win32 関数を呼び出す[InitializeCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms683472)に格納されている、クリティカル セクション オブジェクトを初期化しますが、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
@@ -104,7 +109,7 @@ HRESULT Init() throw();
 ### <a name="return-value"></a>戻り値  
  返します。`S_OK`成功した場合、 **E_OUTOFMEMORY**または**E_FAIL**失敗します。  
   
-##  <a name="a-namelocka--ccomcriticalsectionlock"></a><a name="lock"></a>CComCriticalSection::Lock  
+##  <a name="lock"></a>CComCriticalSection::Lock  
  Win32 関数を呼び出す[EnterCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682608)、スレッドがクリティカル セクション オブジェクトに含まれているの所有権を取得するまで待機したどの、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
@@ -117,14 +122,14 @@ HRESULT Lock() throw();
 ### <a name="remarks"></a>コメント  
  呼び出して、クリティカル セクション オブジェクトを初期化まず必要があります、 [Init](#init)メソッドです。 保護されているコードの実行が完了すると、スレッドで呼び出す必要があります[Unlock](#unlock)クリティカル セクションの所有権を解放します。  
   
-##  <a name="a-namemseca--ccomcriticalsectionmsec"></a><a name="m_sec"></a>CComCriticalSection::m_sec  
+##  <a name="m_sec"></a>CComCriticalSection::m_sec  
  クリティカル セクション オブジェクトすべてで使用を含む`CComCriticalSection`メソッドです。  
   
 ```
 CRITICAL_SECTION m_sec;
 ```  
   
-##  <a name="a-nameterma--ccomcriticalsectionterm"></a><a name="term"></a>CComCriticalSection::Term  
+##  <a name="term"></a>CComCriticalSection::Term  
  Win32 関数を呼び出す[DeleteCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682552)に含まれているクリティカル セクション オブジェクトによって使用されているすべてのリソースを解放、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
@@ -137,7 +142,7 @@ HRESULT Term() throw();
 ### <a name="remarks"></a>コメント  
  1 回`Term`が呼び出された、重要なセクションは、同期には使用できなくします。  
   
-##  <a name="a-nameunlocka--ccomcriticalsectionunlock"></a><a name="unlock"></a>CComCriticalSection::Unlock  
+##  <a name="unlock"></a>CComCriticalSection::Unlock  
  Win32 関数を呼び出す[により](http://msdn.microsoft.com/library/windows/desktop/ms684169)に含まれているクリティカル セクション オブジェクトの所有権を解放する、 [m_sec](#m_sec)データ メンバーです。  
   
 ```

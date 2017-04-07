@@ -9,9 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CHeapPtrBase
-- ATL::CHeapPtrBase
 - CHeapPtrBase
+- ATLCORE/ATL::CHeapPtrBase
+- ATLCORE/ATL::CHeapPtrBase::AllocateBytes
+- ATLCORE/ATL::CHeapPtrBase::Attach
+- ATLCORE/ATL::CHeapPtrBase::Detach
+- ATLCORE/ATL::CHeapPtrBase::Free
+- ATLCORE/ATL::CHeapPtrBase::ReallocateBytes
+- ATLCORE/ATL::CHeapPtrBase::m_pData
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +105,7 @@ class CHeapPtrBase
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
   
-##  <a name="a-nameallocatebytesa--cheapptrbaseallocatebytes"></a><a name="allocatebytes"></a>CHeapPtrBase::AllocateBytes  
+##  <a name="allocatebytes"></a>CHeapPtrBase::AllocateBytes  
  メモリを割り当てるには、このメソッドを呼び出します。  
   
 ```
@@ -117,7 +122,7 @@ bool AllocateBytes(size_t nBytes) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合、 [CHeapPtrBase::m_pData](#m_pdata)メンバー変数は、現在は、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="a-nameattacha--cheapptrbaseattach"></a><a name="attach"></a>CHeapPtrBase::Attach  
+##  <a name="attach"></a>CHeapPtrBase::Attach  
  既存のポインターの所有権を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -133,7 +138,7 @@ void Attach(T* pData) throw();
   
  デバッグ ビルドで、アサーション エラーが発生場合、 [CHeapPtrBase::m_pData](#m_pdata)メンバー変数は、現在は、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="a-namedtora--cheapptrbasecheapptrbase"></a><a name="dtor"></a>CHeapPtrBase:: ~ CHeapPtrBase  
+##  <a name="dtor"></a>CHeapPtrBase:: ~ CHeapPtrBase  
  デストラクターです。  
   
 ```
@@ -143,7 +148,7 @@ void Attach(T* pData) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namedetacha--cheapptrbasedetach"></a><a name="detach"></a>CHeapPtrBase::Detach  
+##  <a name="detach"></a>CHeapPtrBase::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
   
 ```
@@ -156,7 +161,7 @@ T* Detach() throw();
 ### <a name="remarks"></a>コメント  
  ポインターの所有権を解放、 [CHeapPtrBase::m_pData](#m_pdata)メンバー変数を NULL にし、ポインターのコピーを返します。  
   
-##  <a name="a-namefreea--cheapptrbasefree"></a><a name="free"></a>CHeapPtrBase::Free  
+##  <a name="free"></a>CHeapPtrBase::Free  
  指すオブジェクトを削除するには、このメソッドを呼び出して、`CHeapPtrBase`です。  
   
 ```
@@ -166,7 +171,7 @@ void Free() throw();
 ### <a name="remarks"></a>コメント  
  によって指されるオブジェクト、`CHeapPtrBase`が解放されると、 [CHeapPtrBase::m_pData](#m_pdata)メンバー変数が NULL に設定します。  
   
-##  <a name="a-namempdataa--cheapptrbasempdata"></a><a name="m_pdata"></a>CHeapPtrBase::m_pData  
+##  <a name="m_pdata"></a>CHeapPtrBase::m_pData  
  ポインターのデータ メンバー変数です。  
   
 ```
@@ -176,7 +181,7 @@ T* m_pData;
 ### <a name="remarks"></a>コメント  
  このメンバー変数は、ポインターの情報を保持します。  
   
-##  <a name="a-nameoperatorampa--cheapptrbaseoperator-amp"></a><a name="operator_amp"></a>CHeapPtrBase::operator&amp;  
+##  <a name="operator_amp"></a>CHeapPtrBase::operator&amp;  
  &Gt;/documents/report1.rdl」の演算子です。  
   
 ```
@@ -187,7 +192,7 @@ T** operator&() throw();
  によって指されるオブジェクトのアドレスを返す、`CHeapPtrBase`オブジェクトです。  
   
 
-##  <a name="a-nameoperatorptra--cheapptrbaseoperator--gt"></a><a name="operator_ptr"></a>CHeapPtrBase::operator-&gt;  
+##  <a name="operator_ptr"></a>CHeapPtrBase::operator-&gt;  
 
  メンバーへのポインター演算子です。  
   
@@ -201,7 +206,7 @@ T* operator->() const throw();
 ### <a name="remarks"></a>コメント  
  この演算子が指すクラスのメソッドを呼び出すを使用して、`CHeapPtrBase`オブジェクトです。 デバッグ ビルドで、アサーション エラーが発生場合、`CHeapPtrBase`が NULL を指します。  
   
-##  <a name="a-nameoperatortstara--cheapptrbaseoperator-t"></a><a name="operator_t_star"></a>CHeapPtrBase::operator T *  
+##  <a name="operator_t_star"></a>CHeapPtrBase::operator T *  
  キャスト演算子です。  
   
 ```  
@@ -211,7 +216,7 @@ operator T*() const throw();
 ### <a name="remarks"></a>コメント  
  返します。 [CHeapPtrBase::m_pData](#m_pdata)します。  
   
-##  <a name="a-namereallocatebytesa--cheapptrbasereallocatebytes"></a><a name="reallocatebytes"></a>CHeapPtrBase::ReallocateBytes  
+##  <a name="reallocatebytes"></a>CHeapPtrBase::ReallocateBytes  
  メモリを再割り当てするには、このメソッドを呼び出します。  
   
 ```

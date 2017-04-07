@@ -10,6 +10,34 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFile
+- AFX/CFile
+- AFX/CFile::CFile
+- AFX/CFile::Abort
+- AFX/CFile::Close
+- AFX/CFile::Duplicate
+- AFX/CFile::Flush
+- AFX/CFile::GetFileName
+- AFX/CFile::GetFilePath
+- AFX/CFile::GetFileTitle
+- AFX/CFile::GetLength
+- AFX/CFile::GetPosition
+- AFX/CFile::GetStatus
+- AFX/CFile::LockRange
+- AFX/CFile::Open
+- AFX/CFile::Read
+- AFX/CFile::Remove
+- AFX/CFile::Rename
+- AFX/CFile::Seek
+- AFX/CFile::SeekToBegin
+- AFX/CFile::SeekToEnd
+- AFX/CFile::SetFilePath
+- AFX/CFile::SetLength
+- AFX/CFile::SetStatus
+- AFX/CFile::UnlockRange
+- AFX/CFile::Write
+- AFX/CFile::hFileNull
+- AFX/CFile::m_hFile
+- AFX/CFile::m_pTM
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -124,7 +152,7 @@ class CFile : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="a-nameaborta--cfileabort"></a><a name="abort"></a>解放  
+##  <a name="abort"></a>解放  
  このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りまたは書き込みが使用できなくなります。  
   
 ```  
@@ -141,7 +169,7 @@ virtual void Abort();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#5;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_1.cpp)]  
   
-##  <a name="a-namecfilea--cfilecfile"></a><a name="cfile"></a>ほか  
+##  <a name="cfile"></a>ほか  
  `CFile` オブジェクトを構築して初期化します。  
   
 ```  
@@ -238,7 +266,7 @@ CAtlTransactionManager* pTM);
   
  [!code-cpp[NVC_MFCFiles&4;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_2.cpp)]  
   
-##  <a name="a-nameclosea--cfileclose"></a><a name="close"></a>データ  
+##  <a name="close"></a>データ  
  このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りまたは書き込みが使用できなくなります。  
   
 ```  
@@ -253,7 +281,7 @@ virtual void Close();
 ### <a name="example"></a>例  
  例を参照してください[ほか](#cfile)します。  
   
-##  <a name="a-nameduplicatea--cfileduplicate"></a><a name="duplicate"></a>CFile::Duplicate  
+##  <a name="duplicate"></a>CFile::Duplicate  
  重複する構成体`CFile`指定されたファイルのオブジェクト。  
   
 ```  
@@ -266,7 +294,7 @@ virtual CFile* Duplicate() const;
 ### <a name="remarks"></a>コメント  
  これは、C ランタイム関数と同じ`_dup`します。  
   
-##  <a name="a-nameflusha--cfileflush"></a><a name="flush"></a>CFile::Flush  
+##  <a name="flush"></a>CFile::Flush  
  ファイルに書き込まれるファイル バッファーの残りの部分を強制します。  
   
 ```  
@@ -279,7 +307,7 @@ virtual void Flush();
 ### <a name="example"></a>例  
  例を参照してください[CFile::SetFilePath](#setfilepath)します。  
   
-##  <a name="a-namegetfilenamea--cfilegetfilename"></a><a name="getfilename"></a>CFile::GetFileName  
+##  <a name="getfilename"></a>CFile::GetFileName  
  指定したファイルの名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -299,7 +327,7 @@ virtual CString GetFileName() const;
   
  [!code-cpp[NVC_MFCFiles&6;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_3.cpp)]  
   
-##  <a name="a-namegetfilepatha--cfilegetfilepath"></a><a name="getfilepath"></a>CFile::GetFilePath  
+##  <a name="getfilepath"></a>CFile::GetFilePath  
  指定されたファイルの完全なパスを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -317,7 +345,7 @@ virtual CString GetFilePath() const;
 ### <a name="example"></a>例  
  例を参照してください[GetFileName](#getfilename)します。  
   
-##  <a name="a-namegetfiletitlea--cfilegetfiletitle"></a><a name="getfiletitle"></a>CFile::GetFileTitle  
+##  <a name="getfiletitle"></a>CFile::GetFileTitle  
  ファイルのファイルのタイトル (表示名) を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -335,7 +363,7 @@ virtual CString GetFileTitle() const;
 ### <a name="example"></a>例  
  例を参照してください[GetFileName](#getfilename)します。  
   
-##  <a name="a-namegetlengtha--cfilegetlength"></a><a name="getlength"></a>結び付けてその中  
+##  <a name="getlength"></a>結び付けてその中  
  現在の論理ファイルのバイトの長さを取得します。  
   
 ```  
@@ -348,7 +376,7 @@ virtual ULONGLONG GetLength() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#7;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_4.cpp)]  
   
-##  <a name="a-namegetpositiona--cfilegetposition"></a><a name="getposition"></a>実行  
+##  <a name="getposition"></a>実行  
  ファイル ポインターは、以降の呼び出しで使用できるは、現在の値を取得する`Seek`です。  
   
 ```  
@@ -361,7 +389,7 @@ virtual ULONGLONG GetPosition() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#8;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_5.cpp)]  
   
-##  <a name="a-namegetstatusa--cfilegetstatus"></a><a name="getstatus"></a>Cfile::getstatus  
+##  <a name="getstatus"></a>Cfile::getstatus  
  このメソッドに関連するステータス情報を取得する指定された`CFile`オブジェクト インスタンスまたは指定されたファイル パス。  
   
 ```  
@@ -424,7 +452,7 @@ static BOOL PASCAL GetStatus(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#10;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_6.cpp)]  
   
-##  <a name="a-namehfilenulla--cfilehfilenull"></a><a name="hfilenull"></a>CFile::hFileNull  
+##  <a name="hfilenull"></a>CFile::hFileNull  
  有効なファイル ハンドルの存在の決定、`CFile`オブジェクトです。  
   
 ```  
@@ -438,7 +466,7 @@ static AFX_DATA const HANDLE hFileNull;
   
  [!code-cpp[NVC_MFCFiles #&22;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_7.cpp)]  
   
-##  <a name="a-namelockrangea--cfilelockrange"></a><a name="lockrange"></a>CFile::LockRange  
+##  <a name="lockrange"></a>CFile::LockRange  
  ファイルを開き、ファイルが既にロックされている場合、例外がスローのバイト数の範囲をロックします。  
   
 ```  
@@ -465,7 +493,7 @@ virtual void LockRange(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#12;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
   
-##  <a name="a-namemhfilea--cfilemhfile"></a><a name="m_hfile"></a>CFile::m_hFile  
+##  <a name="m_hfile"></a>CFile::m_hFile  
  開いているファイルのオペレーティング システム ファイル ハンドルが含まれています。  
   
 ```  
@@ -477,7 +505,7 @@ HANDLE m_hFile;
   
  使用`m_hFile`はメンバーの意味は、派生クラスによって異なりますのでお勧めしません。 `m_hFile`クラスを使用して非ポリモーフィックなサポートするうえで利便性のパブリック メンバーになります。  
   
-##  <a name="a-namemptma--cfilemptm"></a><a name="m_ptm"></a>CFile::m_pTM  
+##  <a name="m_ptm"></a>CFile::m_pTM  
  ポインター、`CAtlTransactionManager`オブジェクトです。  
   
 ```  
@@ -486,7 +514,7 @@ CAtlTransactionManager* m_pTM;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameopena--cfileopen"></a><a name="open"></a>CFile::Open  
+##  <a name="open"></a>CFile::Open  
  オーバーロードされます。 **開いている**は、既定で使用するために設計されています`CFile`コンス トラクターです。  
   
 ```  
@@ -538,14 +566,14 @@ virtual BOOL Open(
   
  [!code-cpp[NVC_MFCFiles&#14;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_10.cpp)]  
   
-##  <a name="a-nameoperatorhandlea--cfileoperator-handle"></a><a name="operator_handle"></a>CFile::operator ハンドル  
+##  <a name="operator_handle"></a>CFile::operator ハンドル  
  この演算子を識別するハンドルを使用して、`CFile`などの関数オブジェクト[ReadFileEx](http://msdn.microsoft.com/library/windows/desktop/aa365468)と[GetFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724320)予想される、`HANDLE`です。  
   
 ```  
 operator HANDLE() const;  
 ```  
   
-##  <a name="a-namereada--cfileread"></a><a name="read"></a>:Read  
+##  <a name="read"></a>:Read  
  関連付けられているファイルからバッファーにデータを読み取り、`CFile`オブジェクトです。  
   
 ```  
@@ -569,7 +597,7 @@ virtual UINT Read(
   
  別の例を参照してください。 [CFile::Open](#open)します。  
   
-##  <a name="a-nameremovea--cfileremove"></a><a name="remove"></a>CFile::Remove  
+##  <a name="remove"></a>CFile::Remove  
  この静的関数では、パスで指定されたファイルを削除します。  
   
 ```  
@@ -593,7 +621,7 @@ static void PASCAL Remove(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&17;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_12.cpp)]  
   
-##  <a name="a-namerenamea--cfilerename"></a><a name="rename"></a>CFile::Rename  
+##  <a name="rename"></a>CFile::Rename  
  この静的関数は、指定したファイルの名前を変更します。  
   
 ```  
@@ -619,7 +647,7 @@ static void PASCAL Rename(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#18;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_13.cpp)]  
   
-##  <a name="a-nameseeka--cfileseek"></a><a name="seek"></a>CFile::Seek  
+##  <a name="seek"></a>CFile::Seek  
  開いているファイルのファイル ポインターを移動します。  
   
 ```  
@@ -656,7 +684,7 @@ UINT nFrom);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#9;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_14.cpp)]  
   
-##  <a name="a-nameseektobegina--cfileseektobegin"></a><a name="seektobegin"></a>CFile::SeekToBegin  
+##  <a name="seektobegin"></a>CFile::SeekToBegin  
  ファイルの先頭には、ファイル ポインターの値を設定します。  
   
 ```  
@@ -669,7 +697,7 @@ void SeekToBegin();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#19;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
   
-##  <a name="a-nameseektoenda--cfileseektoend"></a><a name="seektoend"></a>CFile::SeekToEnd  
+##  <a name="seektoend"></a>CFile::SeekToEnd  
  論理上、ファイルの末尾にファイル ポインターの値を設定します。  
   
 ```  
@@ -685,7 +713,7 @@ ULONGLONG SeekToEnd();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#19;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
   
-##  <a name="a-namesetfilepatha--cfilesetfilepath"></a><a name="setfilepath"></a>CFile::SetFilePath  
+##  <a name="setfilepath"></a>CFile::SetFilePath  
  ファイルのパスを指定するには、この関数を呼び出すたとえば、次の場合、ファイルのパスは使用できません、 [CFile](../../mfc/reference/cfile-class.md)を呼び出すオブジェクトを構築する必要が`SetFilePath`を提供します。  
   
 ```  
@@ -704,7 +732,7 @@ virtual void SetFilePath(LPCTSTR lpszNewName);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#20;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_16.cpp)]  
   
-##  <a name="a-namesetlengtha--cfilesetlength"></a><a name="setlength"></a>CFile::SetLength  
+##  <a name="setlength"></a>CFile::SetLength  
  ファイルの長さを変更するには、この関数を呼び出します。  
   
 ```  
@@ -723,7 +751,7 @@ virtual void SetLength(ULONGLONG dwNewLen);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#11;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_17.cpp)]  
   
-##  <a name="a-namesetstatusa--cfilesetstatus"></a><a name="setstatus"></a>CFile::SetStatus  
+##  <a name="setstatus"></a>CFile::SetStatus  
  このファイルの場所に関連付けられているファイルの状態を設定します。  
   
 ```  
@@ -751,7 +779,7 @@ static void PASCAL SetStatus(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles #&21;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_18.cpp)]  
   
-##  <a name="a-nameunlockrangea--cfileunlockrange"></a><a name="unlockrange"></a>CFile::UnlockRange  
+##  <a name="unlockrange"></a>CFile::UnlockRange  
  開いているファイルのバイト数の範囲をロック解除します。  
   
 ```  
@@ -776,7 +804,7 @@ virtual void UnlockRange(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles&#12;](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
   
-##  <a name="a-namewritea--cfilewrite"></a><a name="write"></a>CFile::Write  
+##  <a name="write"></a>CFile::Write  
  バッファーからデータに関連付けられているファイルに書き込みます、`CFile`オブジェクトです。  
   
 ```  

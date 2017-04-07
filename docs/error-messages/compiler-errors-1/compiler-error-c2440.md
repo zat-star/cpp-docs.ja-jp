@@ -1,7 +1,7 @@
 ---
 title: "コンパイラ エラー C2440 |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 03/28/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -34,18 +34,18 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 5f0472f7d318de24c38898388906a264cf56db7b
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
+ms.openlocfilehash: d2855f44e05e095f8e1e5cf992eacaafcbe8464d
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="compiler-error-c2440"></a>コンパイラ エラー C2440
 '変換' : 'type1' から 'type2' に変換できません。  
   
-キャストできませんから`type1`に`type2`します。  
+コンパイラがからキャストできません。`type1`に`type2`です。  
   
 ## <a name="example"></a>例  
-C2440 は非定数の初期化しようとする場合に発生することができます`char*`(または`wchar_t*`) C++ コード内の文字列リテラルを使用して、ときに、コンパイラ準拠オプション[/zc:strictstrings 化](../../build/reference/zc-strictstrings-disable-string-literal-type-conversion.md)設定されています。 C では、文字列リテラルの型が配列の`char`が、C++ では、配列の`const char`です。 次の例では C2440 エラーが生成されます。  
+C2440 は非 const を初期化しようとする場合に発生することができます`char*`(または`wchar_t*`) C++ コードには、リテラル文字列を使用してときにコンパイラ準拠オプション[/Zc:strictStrings](../../build/reference/zc-strictstrings-disable-string-literal-type-conversion.md)が設定されています。 C では、文字列リテラルの型が配列の`char`が、C++ では、配列の`const char`します。 次の例では C2440 エラーが生成されます。  
   
 ```cpp  
 // C2440s.cpp  
@@ -100,13 +100,13 @@ Base * func(Derived * d) {
 ```  
   
 ## <a name="example"></a>例  
- 次の例の 15 行目と 16 行目の C2440 エラーには、"`Incompatible calling conventions for UDT return value` (UDT 戻り値の呼び出し規約に互換性がありません)" というメッセージが表示されます。 A *UDT*はクラス、構造体、共用体などのユーザー定義型です。 このような種類の非互換性エラーが発生するのは、事前宣言の戻り値の型で指定された UDT の呼び出し規約が UDT の実際の呼び出し規約と競合する場合や、関数ポインターが関連する場合です。  
+ 次の例の 15 行目と 16 行目の C2440 エラーには、"`Incompatible calling conventions for UDT return value` (UDT 戻り値の呼び出し規約に互換性がありません)" というメッセージが表示されます。 A *UDT*クラス、構造体、共用体などのユーザー定義の型です。 このような種類の非互換性エラーが発生するのは、事前宣言の戻り値の型で指定された UDT の呼び出し規約が UDT の実際の呼び出し規約と競合する場合や、関数ポインターが関連する場合です。  
   
  この例では、最初に、構造体およびその構造体を返す関数の事前宣言があります。コンパイラでは、この構造体で C++ 呼び出し規約が使用されると仮定します。 次に、構造体の定義があります。既定では、この定義は C 呼び出し規約を使用します。 コンパイラでは、構造体全体の読み込みが完了するまでは、その構造体の呼び出し規約がわからないため、`get_c2` の戻り値の型での構造体の呼び出し規約も C++ であると仮定します。  
   
  構造体の後には構造体を返す別の関数宣言が続きますが、この時点では、コンパイラは構造体の呼び出し規約が C++ であることを認識しています。 同様に、構造体を返す関数ポインターは構造体定義の後に定義されているため、コンパイラはその構造体で C++ 呼び出し規約が使用されることを認識します。  
   
- 互換性のない&2; つの呼び出し規則が原因で発生する C2440 エラーを解決するには、UDT の定義の後にその UDT を返す関数を宣言します。  
+ 互換性のない 2 つの呼び出し規則が原因で発生する C2440 エラーを解決するには、UDT の定義の後にその UDT を返す関数を宣言します。  
   
 ```cpp  
 // C2440b.cpp  
@@ -149,7 +149,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- C2440 は、内部ポインターに&0; を割り当てた場合にも発生することがあります。  
+ C2440 は、内部ポインターに 0 を割り当てた場合にも発生することがあります。  
   
 ```cpp  
 // C2440c.cpp  
@@ -163,7 +163,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- C2440 は、ユーザー定義の規約の使用方法が間違っている場合にも発生することがあります。 たとえば、ときに、変換演算子として定義されている`explicit`、暗黙的な変換で、コンパイラは使用できません。 ユーザー定義の変換の詳細については、次を参照してください。[ユーザー定義の変換 (C + +/CLI)](../../dotnet/user-defined-conversions-cpp-cli.md))。 次の例では C2440 エラーが生成されます。  
+ C2440 は、ユーザー定義の規約の使用方法が間違っている場合にも発生することがあります。 たとえば、ときに、変換演算子として定義されている`explicit`コンパイラが暗黙的な変換で使用できません。 ユーザー定義の変換の詳細については、次を参照してください。[ユーザー定義の変換 (C + + CLI)](../../dotnet/user-defined-conversions-cpp-cli.md))。 次の例では C2440 エラーが生成されます。  
   
 ```cpp  
 // C2440d.cpp  
@@ -186,7 +186,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- C2440 は、 <xref:System.Array>。</xref:System.Array>である型が Visual C 配列のインスタンスを作成しようとする場合にも発生することができます。  詳細については、次を参照してください。[配列](../../windows/arrays-cpp-component-extensions.md)します。  次の例では C2440 が生成されます。  
+ C2440 は、 <xref:System.Array>。</xref:System.Array>である型が Visual C 配列のインスタンスを作成しようとする場合にも発生することができます。  詳細については、次を参照してください。[配列](../../windows/arrays-cpp-component-extensions.md)です。  次の例では C2440 が生成されます。  
   
 ```cpp  
 // C2440e.cpp  
@@ -211,9 +211,9 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- Visual C コンパイラではできなく、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときに使用するソース コード**/clr**プログラミングをコンパイルします。  
+ Visual C コンパイラは、不要になった、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときにソース コードを使用する**/clr**プログラミングをコンパイルします。  
   
- この C2440 エラーを解決するには、正しいキャスト演算子を使用します。 詳細については、次を参照してください。[キャスト演算子](../../cpp/casting-operators.md)します。  
+ この C2440 エラーを解決するには、正しいキャスト演算子を使用します。 詳細については、次を参照してください。[キャスト演算子](../../cpp/casting-operators.md)です。  
   
  次の例では C2440 エラーが生成されます。  
   
@@ -231,7 +231,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
-C2440 は Visual Studio 2015 の更新プログラム 3 で、コンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定の個別の式、同じ型に一致するテンプレートを識別するときに、`static_cast`操作します。 これで、コンパイラが型を正しく区別し、コードを依存前`static_cast`動作が壊れています。 この問題を解決するには、テンプレート引数を使用して、テンプレート パラメーターの型を検索するを変更、`reinterpret_cast`または C スタイル キャストします。
+C2440 を Visual Studio 2015 Update 3 でコンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定れる個別の式、同じ種類のテンプレートの一致を識別するときに、`static_cast`操作します。 これで、コンパイラが型を正しく区別し、コードを全面的に頼るで前の`static_cast`動作が中断します。 この問題を解決するため、テンプレート パラメーターの型を一致または使用するテンプレート引数を変更して、`reinterpret_cast`または C スタイル キャストが必要です。
   
 次の例では C2440 エラーが生成されます。  
   
@@ -256,4 +256,49 @@ int main()
 This error can appear in ATL code that uses the SINK_ENTRY_INFO macro defined in <atlcom.h>.
 
 ```
+
+## <a name="example"></a>例  
+### <a name="copy-list-initialization"></a>Copy-list-initialization
+
+2017 およびそれ以降の visual Studio が正しく初期化子リストが、Visual Studio 2015 ではキャッチされず、クラッシュする可能性がありますを使用してオブジェクトの作成に関連するコンパイラ エラーを発生させるか、実行時の動作は未定義です。 N4594 13.3.1.7p1 のとおり、copy-list-initialization で、コンパイラは、オーバーロードの解決のために明示的なコンストラクターを考慮する必要がありますが、そのオーバーロードが実際に選択された場合にエラーを発生させる必要があります。
+次の 2 つの例は、Visual Studio 2017 ではなく Visual Studio 2015 でコンパイルします。
+
+```
+struct A
+{
+    explicit A(int) {} 
+    A(double) {}
+};
+
+int main()
+{
+    A a1 = { 1 }; // error C3445: copy-list-initialization of 'A' cannot use an explicit constructor
+    const A& a2 = { 1 }; // error C2440: 'initializing': cannot convert from 'int' to 'const A &'
+
+}
+```
+
+このエラーを修正するには、直接の初期化を使用します。
+
+```
+A a1{ 1 };
+const A& a2{ 1 };
+```
+
+## <a name="example"></a>例
+### <a name="cv-qualifiers-in-class-construction"></a>クラス コンストラクションの cv 修飾子
+
+Visual Studio 2015 では、コンストラクターを呼び出してクラス オブジェクトを生成するときに、コンパイラが誤って cv 修飾子を無視することがあります。 これにより、クラッシュまたは予期しない実行時動作が発生する可能性があります。 次の例では、Visual Studio 2015 でコンパイルしますが、Visual Studio 2017 以降、コンパイラ エラーを発生させます。
+
+```
+struct S 
+{
+    S(int);
+    operator int();
+};
+
+int i = (const S)0; // error C2440
+```
+
+エラーを解決するには、operator int() を定数として宣言します。
 

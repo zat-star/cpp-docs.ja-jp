@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMultiLock
+- AFXMT/CMultiLock
+- AFXMT/CMultiLock::CMultiLock
+- AFXMT/CMultiLock::IsLocked
+- AFXMT/CMultiLock::Lock
+- AFXMT/CMultiLock::Unlock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -82,7 +87,7 @@ class CMultiLock
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxmt.h  
   
-##  <a name="a-namecmultilocka--cmultilockcmultilock"></a><a name="cmultilock"></a>CMultiLock::CMultiLock  
+##  <a name="cmultilock"></a>CMultiLock::CMultiLock  
  構築、 **CMultiLock**オブジェクトです。  
   
 ```  
@@ -105,7 +110,7 @@ CMultiLock(
 ### <a name="remarks"></a>コメント  
  この関数は待機する同期オブジェクトの配列を作成後に呼び出されます。 通常使用可能になる同期オブジェクトの&1; つを待機する必要がありますスレッド内から呼び出されます。  
   
-##  <a name="a-nameislockeda--cmultilockislocked"></a><a name="islocked"></a>CMultiLock::IsLocked  
+##  <a name="islocked"></a>CMultiLock::IsLocked  
  指定したオブジェクトが非シグナル状態かどうかを (利用不可)。  
   
 ```  
@@ -119,7 +124,7 @@ BOOL IsLocked(DWORD dwItem);
 ### <a name="return-value"></a>戻り値  
  指定したオブジェクトがロックされている場合は 0 以外それ以外の場合 0 を返します。  
   
-##  <a name="a-namelocka--cmultilocklock"></a><a name="lock"></a>CMultiLock::Lock  
+##  <a name="lock"></a>CMultiLock::Lock  
  この関数に渡された同期オブジェクトによって制御されているリソースにアクセスするために、 **CMultiLock**コンス トラクターです。  
   
 ```  
@@ -163,7 +168,7 @@ DWORD Lock(
   
  場合`Lock`で指定されたミリ秒数を超えないを待機する、すぐに返すことがない、 *dwTimeOut*パラメーターを返す前にします。 場合*dwTimeOut*は**無限**、`Lock`はオブジェクトへのアクセスが得られるか、条件で指定するまでは返されません`dwWakeMask`が満たされています。 それ以外の場合`Lock`が同期オブジェクトを取得できません、これは正常に復帰; いない場合は、エラーが返されます。  
   
-##  <a name="a-nameunlocka--cmultilockunlock"></a><a name="unlock"></a>CMultiLock::Unlock  
+##  <a name="unlock"></a>CMultiLock::Unlock  
  所有する同期オブジェクトを解放`CMultiLock`します。  
   
 ```  

@@ -9,11 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::IPersistStreamInitImpl
-- ATL::IPersistStreamInitImpl<T>
-- ATL.IPersistStreamInitImpl<T>
 - IPersistStreamInitImpl
-- ATL.IPersistStreamInitImpl
+- ATLCOM/ATL::IPersistStreamInitImpl
+- ATLCOM/ATL::IPersistStreamInitImpl::GetClassID
+- ATLCOM/ATL::IPersistStreamInitImpl::GetSizeMax
+- ATLCOM/ATL::IPersistStreamInitImpl::InitNew
+- ATLCOM/ATL::IPersistStreamInitImpl::IsDirty
+- ATLCOM/ATL::IPersistStreamInitImpl::Load
+- ATLCOM/ATL::IPersistStreamInitImpl::Save
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +92,7 @@ class ATL_NO_VTABLE IPersistStreamInitImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namegetclassida--ipersiststreaminitimplgetclassid"></a><a name="getclassid"></a>IPersistStreamInitImpl::GetClassID  
+##  <a name="getclassid"></a>IPersistStreamInitImpl::GetClassID  
  オブジェクトの CLSID を取得します。  
   
 ```
@@ -99,7 +102,7 @@ STDMETHOD(GetClassID)(CLSID* pClassID);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersist::GetClassID](http://msdn.microsoft.com/library/windows/desktop/ms688664)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetsizemaxa--ipersiststreaminitimplgetsizemax"></a><a name="getsizemax"></a>IPersistStreamInitImpl::GetSizeMax  
+##  <a name="getsizemax"></a>IPersistStreamInitImpl::GetSizeMax  
  オブジェクトのデータを保存するために必要なストリームのサイズを取得します。  
   
 ```
@@ -112,7 +115,7 @@ STDMETHOD(GetSizeMax)(ULARGE_INTEGER FAR* pcbSize);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::GetSizeMax](http://msdn.microsoft.com/library/windows/desktop/ms687287)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameinitnewa--ipersiststreaminitimplinitnew"></a><a name="initnew"></a>IPersistStreamInitImpl::InitNew  
+##  <a name="initnew"></a>IPersistStreamInitImpl::InitNew  
  新しく作成されたオブジェクトを初期化します。  
   
 ```
@@ -122,7 +125,7 @@ STDMETHOD(InitNew)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::InitNew](http://msdn.microsoft.com/library/windows/desktop/ms690234)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameisdirtya--ipersiststreaminitimplisdirty"></a><a name="isdirty"></a>IPersistStreamInitImpl::IsDirty  
+##  <a name="isdirty"></a>IPersistStreamInitImpl::IsDirty  
  最後に保存されてから、オブジェクトのデータが変更されたかどうかを確認します。  
   
 ```
@@ -132,7 +135,7 @@ STDMETHOD(IsDirty)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::IsDirty](http://msdn.microsoft.com/library/windows/desktop/ms680092)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameloada--ipersiststreaminitimplload"></a><a name="load"></a>IPersistStreamInitImpl::Load  
+##  <a name="load"></a>IPersistStreamInitImpl::Load  
  オブジェクトのプロパティを指定したストリームから読み込みます。  
   
 ```
@@ -144,7 +147,7 @@ STDMETHOD(Load)(LPSTREAM pStm);
   
  参照してください[IPersistStreamInit::Load](http://msdn.microsoft.com/library/windows/desktop/ms680730)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesavea--ipersiststreaminitimplsave"></a><a name="save"></a>IPersistStreamInitImpl::Save  
+##  <a name="save"></a>IPersistStreamInitImpl::Save  
  オブジェクトのプロパティを指定したストリームに保存します。  
   
 ```

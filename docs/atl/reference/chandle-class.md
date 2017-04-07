@@ -9,9 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CHandle
-- ATL::CHandle
 - CHandle
+- ATLBASE/ATL::CHandle
+- ATLBASE/ATL::CHandle::CHandle
+- ATLBASE/ATL::CHandle::Attach
+- ATLBASE/ATL::CHandle::Close
+- ATLBASE/ATL::CHandle::Detach
+- ATLBASE/ATL::CHandle::m_h
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -89,7 +93,7 @@ class CHandle
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameattacha--chandleattach"></a><a name="attach"></a>CHandle::Attach  
+##  <a name="attach"></a>CHandle::Attach  
  アタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトを既存のハンドル。  
   
 ```
@@ -103,7 +107,7 @@ void Attach(HANDLE h) throw();
 ### <a name="remarks"></a>コメント  
  代入、`CHandle`オブジェクトを`h`を処理します。 デバッグ ビルドは atlassert 場合`h`は NULL です。 ハンドルの妥当性に関するその他のチェックは行われません。  
   
-##  <a name="a-namechandlea--chandlechandle"></a><a name="chandle"></a>CHandle::CHandle  
+##  <a name="chandle"></a>CHandle::CHandle  
  コンストラクターです。  
   
 ```
@@ -119,7 +123,7 @@ explicit CHandle(HANDLE h) throw();
 ### <a name="remarks"></a>コメント  
  新たに作成`CHandle`オブジェクト、必要に応じて 既存のハンドルを使用して、または`CHandle`オブジェクトです。  
   
-##  <a name="a-namedtora--chandlechandle"></a><a name="dtor"></a>CHandle:: ~ CHandle  
+##  <a name="dtor"></a>CHandle:: ~ CHandle  
  デストラクターです。  
   
 ```
@@ -129,7 +133,7 @@ explicit CHandle(HANDLE h) throw();
 ### <a name="remarks"></a>コメント  
  解放、`CHandle`を呼び出してオブジェクト[CHandle::Close](#close)します。  
   
-##  <a name="a-nameclosea--chandleclose"></a><a name="close"></a>CHandle::Close  
+##  <a name="close"></a>CHandle::Close  
  終了するには、このメソッドを呼び出して、`CHandle`オブジェクトです。  
   
 ```
@@ -139,7 +143,7 @@ void Close() throw();
 ### <a name="remarks"></a>コメント  
  開いているオブジェクト ハンドルを閉じます。 ハンドルがある場合に、ケース NULL の場合**閉じる**が既に呼び出されると、ATLASSERT がデバッグ ビルドで発生します。  
   
-##  <a name="a-namedetacha--chandledetach"></a><a name="detach"></a>CHandle::Detach  
+##  <a name="detach"></a>CHandle::Detach  
  ハンドルをデタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトです。  
   
 ```
@@ -152,14 +156,14 @@ HANDLE Detach() throw();
 ### <a name="remarks"></a>コメント  
  ハンドルの所有権を解放します。  
   
-##  <a name="a-namemha--chandlemh"></a><a name="m_h"></a>CHandle::m_h  
+##  <a name="m_h"></a>CHandle::m_h  
  ハンドルを格納するメンバー変数です。  
   
 ```
 HANDLE m_h;
 ```  
   
-##  <a name="a-nameoperatoreqa--chandleoperator-"></a><a name="operator_eq"></a>CHandle::operator =  
+##  <a name="operator_eq"></a>CHandle::operator =  
  代入演算子です。  
   
 ```
@@ -176,7 +180,7 @@ CHandle& operator=(CHandle& h) throw();
 ### <a name="remarks"></a>コメント  
  場合、`CHandle`オブジェクトが現在のハンドルを含む、閉じられます。 `CHandle`オブジェクトに渡されるが、そのハンドルの参照を NULL に設定します。 これにより、2 つ`CHandle`オブジェクトは、同じアクティブなハンドルを格納できません。  
   
-##  <a name="a-nameoperatorhandlea--chandleoperator-handle"></a><a name="operator_handle"></a>CHandle::operator ハンドル  
+##  <a name="operator_handle"></a>CHandle::operator ハンドル  
  格納されたハンドルの値を返します。  
   
 ```  

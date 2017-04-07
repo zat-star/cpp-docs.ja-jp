@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CTypedPtrArray
+- AFXTEMPL/CTypedPtrArray
+- AFXTEMPL/CTypedPtrArray::Add
+- AFXTEMPL/CTypedPtrArray::Append
+- AFXTEMPL/CTypedPtrArray::Copy
+- AFXTEMPL/CTypedPtrArray::ElementAt
+- AFXTEMPL/CTypedPtrArray::GetAt
+- AFXTEMPL/CTypedPtrArray::InsertAt
+- AFXTEMPL/CTypedPtrArray::SetAt
+- AFXTEMPL/CTypedPtrArray::SetAtGrow
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +104,7 @@ class CTypedPtrArray : public BASE_CLASS
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxtempl.h  
   
-##  <a name="a-nameadda--ctypedptrarrayadd"></a><a name="add"></a>CTypedPtrArray::Add  
+##  <a name="add"></a>CTypedPtrArray::Add  
  このメンバー関数を呼び出す`BASE_CLASS` **:: 追加**します。  
   
 ```  
@@ -115,7 +124,7 @@ INT_PTR Add(TYPE newElement);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::Add](../../mfc/reference/cobarray-class.md#add)します。  
   
-##  <a name="a-nameappenda--ctypedptrarrayappend"></a><a name="append"></a>CTypedPtrArray::Append  
+##  <a name="append"></a>CTypedPtrArray::Append  
  このメンバー関数を呼び出す`BASE_CLASS` **:: 追加**します。  
   
 ```  
@@ -138,7 +147,7 @@ INT_PTR Append(const CTypedPtrArray<BASE_CLASS, TYPE>& src);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::Append](../../mfc/reference/cobarray-class.md#append)します。  
   
-##  <a name="a-namecopya--ctypedptrarraycopy"></a><a name="copy"></a>CTypedPtrArray::Copy  
+##  <a name="copy"></a>CTypedPtrArray::Copy  
  このメンバー関数を呼び出す`BASE_CLASS` **:: コピー**します。  
   
 ```  
@@ -158,7 +167,7 @@ void Copy(const CTypedPtrArray<BASE_CLASS, TYPE>& src);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::Copy](../../mfc/reference/cobarray-class.md#copy)します。  
   
-##  <a name="a-nameelementata--ctypedptrarrayelementat"></a><a name="elementat"></a>CTypedPtrArray::ElementAt  
+##  <a name="elementat"></a>CTypedPtrArray::ElementAt  
  このインライン関数が呼び出す`BASE_CLASS` **:: ElementAt**します。  
   
 ```  
@@ -178,7 +187,7 @@ TYPE& ElementAt(INT_PTR nIndex);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::ElementAt](../../mfc/reference/cobarray-class.md#elementat)します。  
   
-##  <a name="a-namegetata--ctypedptrarraygetat"></a><a name="getat"></a>CTypedPtrArray::GetAt  
+##  <a name="getat"></a>CTypedPtrArray::GetAt  
  このインライン関数が呼び出す`BASE_CLASS` **:: GetAt**します。  
   
 ```  
@@ -198,7 +207,7 @@ TYPE GetAt(INT_PTR nIndex) const;
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください[CObArray::GetAt。](../../mfc/reference/cobarray-class.md#getat)  
   
-##  <a name="a-nameinsertata--ctypedptrarrayinsertat"></a><a name="insertat"></a>CTypedPtrArray::InsertAt  
+##  <a name="insertat"></a>CTypedPtrArray::InsertAt  
  このメンバー関数を呼び出す`BASE_CLASS` **:: InsertAt**します。  
   
 ```  
@@ -238,7 +247,7 @@ void InsertAt(
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::InsertAt](../../mfc/reference/cobarray-class.md#insertat)します。  
   
-##  <a name="a-nameoperatorata--ctypedptrarrayoperator--"></a><a name="operator_at"></a>CTypedPtrArray::operator  
+##  <a name="operator_at"></a>CTypedPtrArray::operator  
  これらのインライン演算子を呼び出す`BASE_CLASS` **:: 演算子**します。  
   
 ```  
@@ -258,7 +267,7 @@ TYPE operator[ ](int_ptr nindex) const;
   
  ライブラリのデバッグ バージョンでは、添字 (またはいずれかで、左、代入ステートメントの右側にある) が範囲外かどうかをアサートします。  
   
-##  <a name="a-namesetata--ctypedptrarraysetat"></a><a name="setat"></a>CTypedPtrArray::SetAt  
+##  <a name="setat"></a>CTypedPtrArray::SetAt  
  このメンバー関数を呼び出す`BASE_CLASS` **:: SetAt**します。  
   
 ```  
@@ -280,7 +289,7 @@ void SetAt(
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::SetAt](../../mfc/reference/cobarray-class.md#setat)します。  
   
-##  <a name="a-namesetatgrowa--ctypedptrarraysetatgrow"></a><a name="setatgrow"></a>CTypedPtrArray::SetAtGrow  
+##  <a name="setatgrow"></a>CTypedPtrArray::SetAtGrow  
  このメンバー関数を呼び出す`BASE_CLASS` **:: SetAtGrow**します。  
   
 ```  

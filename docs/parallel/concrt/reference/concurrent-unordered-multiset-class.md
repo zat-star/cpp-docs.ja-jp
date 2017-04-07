@@ -9,7 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concurrent_unordered_set/concurrency::concurrent_unordered_multiset
+- concurrent_unordered_multiset
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::concurrent_unordered_multiset
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::hash_function
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::insert
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::key_eq
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::swap
+- CONCURRENT_UNORDERED_SET/concurrency::concurrent_unordered_multiset::unsafe_erase
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 19244e5527207f852256e646abd18ad298fb28cd
-ms.openlocfilehash: 7a4b5edab0fdf1fcc18e223c859ca2859173154f
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 06c098d2ad38fbf4a7664f9046ac4f1e12b1044d
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="concurrentunorderedmultiset-class"></a>concurrent_unordered_multiset クラス
@@ -98,23 +105,23 @@ template <typename K,
   
 |名前|説明|  
 |----------|-----------------|  
-|[concurrent_unordered_multiset コンス トラクター](#ctor)|オーバーロードされます。 同時実行順序なしのマルチセットを構築します。|  
+|[concurrent_unordered_multiset](#ctor)|オーバーロードされます。 同時実行順序なしのマルチセットを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[hash_function メソッド](#hash_function)|格納されているハッシュ関数オブジェクトを返します。|  
-|[insert メソッド](#insert)|オーバーロードされます。 要素を `concurrent_unordered_multiset` オブジェクトに追加します。|  
-|[key_eq メソッド](#key_eq)|格納された等価比較関数のオブジェクト。|  
-|[swap メソッド](#swap)|2 つの `concurrent_unordered_multiset` オブジェクトのコンテンツを交換します。 このメソッドは同時実行セーフではありません。|  
-|[unsafe_erase メソッド](#unsafe_erase)|オーバーロードされます。 `concurrent_unordered_multiset` から指定した位置にある要素を削除します。 このメソッドは同時実行セーフではありません。|  
+|[hash_function](#hash_function)|格納されているハッシュ関数オブジェクトを返します。|  
+|[insert](#insert)|オーバーロードされます。 要素を `concurrent_unordered_multiset` オブジェクトに追加します。|  
+|[key_eq](#key_eq)|格納された等価比較関数のオブジェクト。|  
+|[swap](#swap)|2 つの `concurrent_unordered_multiset` オブジェクトのコンテンツを交換します。 このメソッドは同時実行セーフではありません。|  
+|[unsafe_erase](#unsafe_erase)|オーバーロードされます。 `concurrent_unordered_multiset` から指定した位置にある要素を削除します。 このメソッドは同時実行セーフではありません。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|オーバーロードされます。 別の `concurrent_unordered_multiset` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。|  
+|[operator=](#operator_eq)|オーバーロードされます。 別の `concurrent_unordered_multiset` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。|  
   
 ## <a name="remarks"></a>コメント  
  詳細については、`concurrent_unordered_multiset`を参照してください[並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)します。  
@@ -131,7 +138,7 @@ template <typename K,
   
  **名前空間:** concurrency  
   
-##  <a name="a-namebegina-begin"></a><a name="begin"></a>開始 
+##  <a name="begin"></a>開始 
 
  同時実行コンテナーの最初の要素を指す反復子を返します。 このメソッドは同時実行セーフです。  
   
@@ -144,7 +151,7 @@ const_iterator begin() const;
 ### <a name="return-value"></a>戻り値  
  同時実行コンテナーの最初の要素を指す反復子。  
   
-##  <a name="a-namecbegina-cbegin"></a><a name="cbegin"></a>cbegin 
+##  <a name="cbegin"></a>cbegin 
 
  同時実行コンテナーの最初の要素を指す定数反復子を返します。 このメソッドは同時実行セーフです。  
   
@@ -155,7 +162,7 @@ const_iterator cbegin() const;
 ### <a name="return-value"></a>戻り値  
  同時実行コンテナーの最初の要素に定数反復子。  
   
-##  <a name="a-namecenda-cend"></a><a name="cend"></a>cend 
+##  <a name="cend"></a>cend 
 
  同時実行コンテナーの最後の要素の次の位置を指す定数反復子を返します。 このメソッドは同時実行セーフです。  
   
@@ -166,7 +173,7 @@ const_iterator cend() const;
 ### <a name="return-value"></a>戻り値  
  位置を同時実行コンテナーの最後の要素を指す定数反復子。  
   
-##  <a name="a-namecleara-clear"></a><a name="clear"></a>オフ 
+##  <a name="clear"></a>オフ 
 
  同時実行コンテナー内のすべての要素を消去します。 この関数は、同時実行セーフではありません。  
   
@@ -174,7 +181,7 @@ const_iterator cend() const;
 void clear();
 ```  
   
-##  <a name="a-namectora-concurrentunorderedmultiset"></a><a name="ctor"></a>concurrent_unordered_multiset 
+##  <a name="ctor"></a>concurrent_unordered_multiset 
 
  同時実行順序なしのマルチセットを構築します。  
   
@@ -241,7 +248,7 @@ concurrent_unordered_multiset(
   
  最後のコンス トラクターは、同時実行順序なしのマルチセットの移動を指定`_Uset`します。  
   
-##  <a name="a-namecounta-count"></a><a name="count"></a>カウント 
+##  <a name="count"></a>カウント 
 
  指定したキーに一致する要素の数をカウントします。 この関数は、同時実行セーフです。  
   
@@ -256,7 +263,7 @@ size_type count(const key_type& KVal) const;
 ### <a name="return-value"></a>戻り値  
  コンテナーにキーが表示される回数の合計を回数です。  
   
-##  <a name="a-nameemptya-empty"></a><a name="empty"></a>空 
+##  <a name="empty"></a>空 
 
  要素が存在しないかどうかをテストします。 このメソッドは同時実行セーフです。  
   
@@ -270,7 +277,7 @@ bool empty() const;
 ### <a name="remarks"></a>コメント  
  同時実行の挿入が存在する場合、同時実行コンテナーが空かどうかは、戻り値があっても読み取る前にこの関数の呼び出し直後に変更できます。  
   
-##  <a name="a-nameenda-end"></a><a name="end"></a>終わり 
+##  <a name="end"></a>終わり 
 
  同時実行コンテナーの最後の要素の次の位置を指す反復子を返します。 このメソッドは同時実行セーフです。  
   
@@ -283,7 +290,7 @@ const_iterator end() const;
 ### <a name="return-value"></a>戻り値  
  同時実行コンテナーの最後の要素の次の位置を指す反復子。  
   
-##  <a name="a-nameequalrangea-equalrange"></a><a name="equal_range"></a>equal_range 
+##  <a name="equal_range"></a>equal_range 
 
  指定したキーに一致する範囲を検索します。 この関数は、同時実行セーフです。  
   
@@ -307,7 +314,7 @@ std::pair<const_iterator,
 ### <a name="remarks"></a>コメント  
  同時実行の挿入開始反復子と末尾の反復子の間に挿入される追加のキーが発生することができます。  
   
-##  <a name="a-namefinda-find"></a><a name="find"></a>検索 
+##  <a name="find"></a>検索 
 
  指定したキーに一致する要素を検索します。 この関数は、同時実行セーフです。  
   
@@ -324,7 +331,7 @@ const_iterator find(const key_type& KVal) const;
 ### <a name="return-value"></a>戻り値  
  場所を指す反復子の指定したキーに一致する最初の要素または反復子`end()`このような要素が存在しない場合。  
   
-##  <a name="a-namegetallocatora-getallocator"></a><a name="get_allocator"></a>get_allocator 
+##  <a name="get_allocator"></a>get_allocator 
 
  この同時実行コンテナーの格納されたアロケーター オブジェクトを返します。 このメソッドは同時実行セーフです。  
   
@@ -335,7 +342,7 @@ allocator_type get_allocator() const;
 ### <a name="return-value"></a>戻り値  
  この同時実行コンテナーの格納されたアロケーター オブジェクト。  
   
-##  <a name="a-namehashfunctiona-hashfunction"></a><a name="hash_function"></a>hash_function 
+##  <a name="hash_function"></a>hash_function 
 
  格納されているハッシュ関数オブジェクトを返します。  
   
@@ -346,7 +353,7 @@ hasher hash_function() const;
 ### <a name="return-value"></a>戻り値  
  格納されているハッシュ関数オブジェクト。  
   
-##  <a name="a-nameinserta-insert"></a><a name="insert"></a>挿入 
+##  <a name="insert"></a>挿入 
 
  要素を `concurrent_unordered_multiset` オブジェクトに追加します。  
   
@@ -405,7 +412,7 @@ typename std::enable_if<!std::is_same<const_iterator,
   
  最後の&2; つのメンバー関数の動作は同じことを除いて、最初の&2; つに`value`を使用して、挿入する値を作成します。  
   
-##  <a name="a-namekeyeqa-keyeq"></a><a name="key_eq"></a>key_eq 
+##  <a name="key_eq"></a>key_eq 
 
  格納された等価比較関数のオブジェクト。  
   
@@ -416,7 +423,7 @@ key_equal key_eq() const;
 ### <a name="return-value"></a>戻り値  
  格納された等価比較関数のオブジェクト。  
   
-##  <a name="a-nameloadfactora-loadfactor"></a><a name="load_factor"></a>load_factor 
+##  <a name="load_factor"></a>load_factor 
 
  計算し、コンテナーの現在のテーブル占有率を返します。 テーブル占有率は、バケットの数で割った値コンテナー内の要素の数です。  
   
@@ -427,7 +434,7 @@ float load_factor() const;
 ### <a name="return-value"></a>戻り値  
  コンテナーのテーブル占有率。  
   
-##  <a name="a-namemaxloadfactora-maxloadfactor"></a><a name="max_load_factor"></a>max_load_factor 
+##  <a name="max_load_factor"></a>max_load_factor 
 
  取得またはコンテナーの最大テーブル占有率を設定します。 コンテナーの内部テーブルを拡張するまで、バケット内で最大テーブル占有率は要素の最大数です。  
   
@@ -443,7 +450,7 @@ void max_load_factor(float _Newmax);
 ### <a name="return-value"></a>戻り値  
  1 つ目のメンバー関数は、格納されている最大テーブル占有率を返します。 2 番目のメンバー関数は、値は返されませんが、スロー、 [out_of_range](../../../standard-library/out-of-range-class.md)例外の場合は、指定したテーブル占有率が正しくありません.  
   
-##  <a name="a-namemaxsizea-maxsize"></a><a name="max_size"></a>max_size 
+##  <a name="max_size"></a>max_size 
 
  アロケーターによって決定される、同時実行コンテナーの最大サイズを返します。 このメソッドは同時実行セーフです。  
   
@@ -457,7 +464,7 @@ size_type max_size() const;
 ### <a name="remarks"></a>コメント  
  この上限値実際にどのようなコンテナー実際に保持できるよりも高い場合があります。  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  別の `concurrent_unordered_multiset` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。  
   
@@ -477,7 +484,7 @@ concurrent_unordered_multiset& operator= (concurrent_unordered_multiset&& _Uset)
 ### <a name="remarks"></a>コメント  
  同時実行順序なしのマルチセットにある既存の要素を消去した後`operator=`コピーまたは移動の内容`_Uset`マルチセットの順序なしの同時にします。  
   
-##  <a name="a-namerehasha-rehash"></a><a name="rehash"></a>rehash 
+##  <a name="rehash"></a>rehash 
 
  ハッシュ テーブルをリビルドします。  
   
@@ -494,7 +501,7 @@ void rehash(size_type _Buckets);
   
  スローされた、 [out_of_range](../../../standard-library/out-of-range-class.md)例外のバケットの数が無効な場合 (0 またはバケットの最大数より大きい)。  
   
-##  <a name="a-namesizea-size"></a><a name="size"></a>サイズ 
+##  <a name="size"></a>サイズ 
 
  この同時実行コンテナーの要素の数を返します。 このメソッドは同時実行セーフです。  
   
@@ -508,7 +515,7 @@ size_type size() const;
 ### <a name="remarks"></a>コメント  
  同時実行の挿入が存在する場合は、同時実行コンテナーの要素の数は、戻り値があっても読み取る前にこの関数を呼び出した直後後変更できます。  
   
-##  <a name="a-nameswapa-swap"></a><a name="swap"></a>スワップ 
+##  <a name="swap"></a>スワップ 
 
  2 つの `concurrent_unordered_multiset` オブジェクトのコンテンツを交換します。 このメソッドは同時実行セーフではありません。  
   
@@ -520,7 +527,7 @@ void swap(concurrent_unordered_multiset& _Uset);
  `_Uset`  
  `concurrent_unordered_multiset`交換するオブジェクト。  
   
-##  <a name="a-nameunsafebegina-unsafebegin"></a><a name="unsafe_begin"></a>unsafe_begin 
+##  <a name="unsafe_begin"></a>unsafe_begin 
 
  特定のバケットのこのコンテナー内の最初の要素を反復子を返します。  
   
@@ -537,7 +544,7 @@ const_local_iterator unsafe_begin(size_type _Bucket) const;
 ### <a name="return-value"></a>戻り値  
  バケットの先頭を指す反復子。  
   
-##  <a name="a-nameunsafebucketa-unsafebucket"></a><a name="unsafe_bucket"></a>unsafe_bucket 
+##  <a name="unsafe_bucket"></a>unsafe_bucket 
 
  このコンテナー内に特定のキーがマップされるバケットのインデックスを返します。  
   
@@ -552,7 +559,7 @@ size_type unsafe_bucket(const key_type& KVal) const;
 ### <a name="return-value"></a>戻り値  
  このコンテナー内のキーのバケットのインデックス。  
   
-##  <a name="a-nameunsafebucketcounta-unsafebucketcount"></a><a name="unsafe_bucket_count"></a>unsafe_bucket_count 
+##  <a name="unsafe_bucket_count"></a>unsafe_bucket_count 
 
  このコンテナーの現在のバケット数を返します。  
   
@@ -563,7 +570,7 @@ size_type unsafe_bucket_count() const;
 ### <a name="return-value"></a>戻り値  
  現在このコンテナー内のバケットの数。  
   
-##  <a name="a-nameunsafebucketsizea-unsafebucketsize"></a><a name="unsafe_bucket_size"></a>unsafe_bucket_size 
+##  <a name="unsafe_bucket_size"></a>unsafe_bucket_size 
 
  このコンテナーの特定のバケット内の項目の数を返します。  
   
@@ -578,7 +585,7 @@ size_type unsafe_bucket_size(size_type _Bucket);
 ### <a name="return-value"></a>戻り値  
  現在このコンテナー内のバケットの数。  
   
-##  <a name="a-nameunsafecbegina-unsafecbegin"></a><a name="unsafe_cbegin"></a>unsafe_cbegin 
+##  <a name="unsafe_cbegin"></a>unsafe_cbegin 
 
  特定のバケットのこのコンテナー内の最初の要素を反復子を返します。  
   
@@ -593,7 +600,7 @@ const_local_iterator unsafe_cbegin(size_type _Bucket) const;
 ### <a name="return-value"></a>戻り値  
  バケットの先頭を指す反復子。  
   
-##  <a name="a-nameunsafecenda-unsafecend"></a><a name="unsafe_cend"></a>unsafe_cend 
+##  <a name="unsafe_cend"></a>unsafe_cend 
 
  位置を特定のバケットの最後の要素を指す反復子を返します。  
   
@@ -608,7 +615,7 @@ const_local_iterator unsafe_cend(size_type _Bucket) const;
 ### <a name="return-value"></a>戻り値  
  バケットの先頭を指す反復子。  
   
-##  <a name="a-nameunsafeenda-unsafeend"></a><a name="unsafe_end"></a>unsafe_end 
+##  <a name="unsafe_end"></a>unsafe_end 
 
  特定のバケットのこのコンテナーの最後の要素を反復子を返します。  
   
@@ -625,7 +632,7 @@ const_local_iterator unsafe_end(size_type _Bucket) const;
 ### <a name="return-value"></a>戻り値  
  バケットの末尾を指す反復子。  
   
-##  <a name="a-nameunsafeerasea-unsafeerase"></a><a name="unsafe_erase"></a>unsafe_erase 
+##  <a name="unsafe_erase"></a>unsafe_erase 
 
  `concurrent_unordered_multiset` から指定した位置にある要素を削除します。 このメソッドは同時実行セーフではありません。  
   
@@ -651,14 +658,14 @@ size_type unsafe_erase(
  消去するキー値。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのメンバー関数は、削除された要素の後に残る最初の要素を指定する反復子を返すか、[メソッドを終了](#end)() このような要素が存在しない場合。 3 つ目のメンバー関数は削除する要素の数を返します。  
+ 最初の&2; つのメンバー関数は、削除された要素の後に残る最初の要素を指定する反復子を返すか、[終了](#end)() このような要素が存在しない場合。 3 つ目のメンバー関数は削除する要素の数を返します。  
   
 ### <a name="remarks"></a>コメント  
  1 つ目のメンバー関数は、`_Where` が指す要素を削除します。 2 番目のメンバー関数は、範囲内の要素の削除 [ `_Begin`、 `_End`)。  
   
- 3 番目のメンバー関数で区切られた範囲内の要素を削除する[equal_range メソッド](#equal_range)(KVal)。  
+ 3 番目のメンバー関数で区切られた範囲内の要素を削除する[equal_range](#equal_range)(KVal)。  
   
-##  <a name="a-nameunsafemaxbucketcounta-unsafemaxbucketcount"></a><a name="unsafe_max_bucket_count"></a>unsafe_max_bucket_count 
+##  <a name="unsafe_max_bucket_count"></a>unsafe_max_bucket_count 
 
  このコンテナーのバケットの最大数を返します。  
   

@@ -10,6 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CPropExchange
+- AFXCTL/CPropExchange
+- AFXCTL/CPropExchange::ExchangeBlobProp
+- AFXCTL/CPropExchange::ExchangeFontProp
+- AFXCTL/CPropExchange::ExchangePersistentProp
+- AFXCTL/CPropExchange::ExchangeProp
+- AFXCTL/CPropExchange::ExchangeVersion
+- AFXCTL/CPropExchange::GetVersion
+- AFXCTL/CPropExchange::IsAsynchronous
+- AFXCTL/CPropExchange::IsLoading
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +95,7 @@ class AFX_NOVTABLE CPropExchange
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxctl.h  
   
-##  <a name="a-nameexchangeblobpropa--cpropexchangeexchangeblobprop"></a><a name="exchangeblobprop"></a>CPropExchange::ExchangeBlobProp  
+##  <a name="exchangeblobprop"></a>CPropExchange::ExchangeBlobProp  
  バイナリ ラージ オブジェクト (BLOB) データを格納するプロパティをシリアル化します。  
   
 ```  
@@ -114,7 +123,7 @@ virtual BOOL ExchangeBlobProp(
   
  関数は、 **CArchivePropExchange::ExchangeBlobProp**、 **CResetPropExchange::ExchangeBlobProp**、および**CPropsetPropExchange::ExchangeBlobProp**純粋仮想関数をオーバーライドします。  
   
-##  <a name="a-nameexchangefontpropa--cpropexchangeexchangefontprop"></a><a name="exchangefontprop"></a>CPropExchange::ExchangeFontProp  
+##  <a name="exchangefontprop"></a>CPropExchange::ExchangeFontProp  
  ストレージ メディアとコントロール間でのフォント プロパティを交換します。  
   
 ```  
@@ -146,7 +155,7 @@ virtual BOOL ExchangeFontProp(
   
  関数は、 **CArchivePropExchange::ExchangeFontProp**、 **CResetPropExchange::ExchangeFontProp**、および**CPropsetPropExchange::ExchangeFontProp**純粋仮想関数をオーバーライドします。  
   
-##  <a name="a-nameexchangepersistentpropa--cpropexchangeexchangepersistentprop"></a><a name="exchangepersistentprop"></a>CPropExchange::ExchangePersistentProp  
+##  <a name="exchangepersistentprop"></a>CPropExchange::ExchangePersistentProp  
  コントロールとファイルのプロパティを交換します。  
   
 ```  
@@ -178,7 +187,7 @@ virtual BOOL ExchangePersistentProp(
   
  関数は、 **CArchivePropExchange::ExchangePersistentProp**、 **CResetPropExchange::ExchangePersistentProp**、および**CPropsetPropExchange::ExchangePersistentProp**純粋仮想関数をオーバーライドします。  
   
-##  <a name="a-nameexchangepropa--cpropexchangeexchangeprop"></a><a name="exchangeprop"></a>CPropExchange::ExchangeProp  
+##  <a name="exchangeprop"></a>CPropExchange::ExchangeProp  
  ストレージ メディアとコントロール間でのプロパティを交換します。  
   
 ```  
@@ -220,7 +229,7 @@ virtual BOOL ExchangeProp(
   
  関数は、 **CArchivePropExchange::ExchangeProp**、 **CResetPropExchange::ExchangeProp**、および**CPropsetPropExchange::ExchangeProp**純粋仮想関数をオーバーライドします。  
   
-##  <a name="a-nameexchangeversiona--cpropexchangeexchangeversion"></a><a name="exchangeversion"></a>CPropExchange::ExchangeVersion  
+##  <a name="exchangeversion"></a>CPropExchange::ExchangeVersion  
  バージョン番号の永続化を処理するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -243,7 +252,7 @@ virtual BOOL ExchangeVersion(
 ### <a name="return-value"></a>戻り値  
  関数が成功した場合は 0 以外。それ以外の場合は 0 です。  
   
-##  <a name="a-namegetversiona--cpropexchangegetversion"></a><a name="getversion"></a>CPropExchange::GetVersion  
+##  <a name="getversion"></a>CPropExchange::GetVersion  
  コントロールのバージョン番号を取得するには、この関数を呼び出します。  
   
 ```  
@@ -253,7 +262,7 @@ DWORD GetVersion();
 ### <a name="return-value"></a>戻り値  
  コントロールのバージョン番号。  
   
-##  <a name="a-nameisasynchronousa--cpropexchangeisasynchronous"></a><a name="isasynchronous"></a>CPropExchange::IsAsynchronous  
+##  <a name="isasynchronous"></a>CPropExchange::IsAsynchronous  
  プロパティの交換が非同期的に実行を決定します。  
   
 ```  
@@ -263,7 +272,7 @@ BOOL IsAsynchronous();
 ### <a name="return-value"></a>戻り値  
  プロパティは TRUE を返しますがそれ以外の場合の FALSE では非同期、交換されます。  
   
-##  <a name="a-nameisloadinga--cpropexchangeisloading"></a><a name="isloading"></a>CPropExchange::IsLoading  
+##  <a name="isloading"></a>CPropExchange::IsLoading  
  プロパティがされているかどうかを判断するには、この関数を呼び出して、コントロールに読み込みまたはそこから保存します。  
   
 ```  

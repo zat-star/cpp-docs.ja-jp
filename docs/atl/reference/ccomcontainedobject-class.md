@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComContainedObject
+- ATLCOM/ATL::CComContainedObject
+- ATLCOM/ATL::CComContainedObject::CComContainedObject
+- ATLCOM/ATL::CComContainedObject::AddRef
+- ATLCOM/ATL::CComContainedObject::GetControllingUnknown
+- ATLCOM/ATL::CComContainedObject::QueryInterface
+- ATLCOM/ATL::CComContainedObject::Release
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -87,7 +93,7 @@ class CComContainedObject : public Base
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameaddrefa--ccomcontainedobjectaddref"></a><a name="addref"></a>CComContainedObject::AddRef  
+##  <a name="addref"></a>CComContainedObject::AddRef  
  所有者オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -97,7 +103,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="return-value"></a>戻り値  
  診断に役に立たないかテスト可能性のある値。  
   
-##  <a name="a-nameccomcontainedobjecta--ccomcontainedobjectccomcontainedobject"></a><a name="ccomcontainedobject"></a>CComContainedObject::CComContainedObject  
+##  <a name="ccomcontainedobject"></a>CComContainedObject::CComContainedObject  
  コンストラクターです。  
   
 ```
@@ -111,7 +117,7 @@ CComContainedObject(void* pv);
 ### <a name="remarks"></a>コメント  
  セット、`m_pOuterUnknown`メンバー ポインター (から継承された、`Base`クラス) を`pv`します。  
   
-##  <a name="a-namedtora--ccomcontainedobjectccomcontainedobject"></a><a name="dtor"></a>した:: ~ しました。  
+##  <a name="dtor"></a>した:: ~ しました。  
  デストラクターです。  
   
 ```
@@ -121,7 +127,7 @@ CComContainedObject(void* pv);
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="a-namegetcontrollingunknowna--ccomcontainedobjectgetcontrollingunknown"></a><a name="getcontrollingunknown"></a>CComContainedObject::GetControllingUnknown  
+##  <a name="getcontrollingunknown"></a>CComContainedObject::GetControllingUnknown  
  返します。、`m_pOuterUnknown`メンバー ポインター (から継承された、*ベース*クラス)、所有者オブジェクトの保持している**IUnknown**します。  
   
 ```
@@ -134,7 +140,7 @@ IUnknown* GetControllingUnknown();
 ### <a name="remarks"></a>コメント  
  このメソッドは仮想にする場合は`Base`が宣言されている、 [DECLARE_GET_CONTROLLING_UNKNOWN](http://msdn.microsoft.com/library/82b0199a-a9d5-4f95-a711-fa1ae18e1f77)マクロです。  
   
-##  <a name="a-namequeryinterfacea--ccomcontainedobjectqueryinterface"></a><a name="queryinterface"></a>CComContainedObject::QueryInterface  
+##  <a name="queryinterface"></a>CComContainedObject::QueryInterface  
  所有者オブジェクトの要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -156,7 +162,7 @@ HRESULT STDMETHODCALLTYPE QueryInterface(Q** pp);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namereleasea--ccomcontainedobjectrelease"></a><a name="release"></a>CComContainedObject::Release  
+##  <a name="release"></a>CComContainedObject::Release  
  所有者オブジェクトの参照カウントをデクリメントします。  
   
 ```

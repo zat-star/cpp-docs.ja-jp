@@ -10,6 +10,32 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CDrawingManager
+- AFXDRAWMANAGER/CDrawingManager
+- AFXDRAWMANAGER/CDrawingManager::CDrawingManager
+- AFXDRAWMANAGER/CDrawingManager::CreateBitmap_32
+- AFXDRAWMANAGER/CDrawingManager::DrawAlpha
+- AFXDRAWMANAGER/CDrawingManager::DrawRotated
+- AFXDRAWMANAGER/CDrawingManager::DrawEllipse
+- AFXDRAWMANAGER/CDrawingManager::DrawGradientRing
+- AFXDRAWMANAGER/CDrawingManager::DrawRect
+- AFXDRAWMANAGER/CDrawingManager::DrawShadow
+- AFXDRAWMANAGER/CDrawingManager::Fill4ColorsGradient
+- AFXDRAWMANAGER/CDrawingManager::FillGradient
+- AFXDRAWMANAGER/CDrawingManager::FillGradient2
+- AFXDRAWMANAGER/CDrawingManager::GrayRect
+- AFXDRAWMANAGER/CDrawingManager::HighlightRect
+- AFXDRAWMANAGER/CDrawingManager::HLStoRGB_ONE
+- AFXDRAWMANAGER/CDrawingManager::HLStoRGB_TWO
+- AFXDRAWMANAGER/CDrawingManager::HSVtoRGB
+- AFXDRAWMANAGER/CDrawingManager::HuetoRGB
+- AFXDRAWMANAGER/CDrawingManager::MirrorRect
+- AFXDRAWMANAGER/CDrawingManager::PixelAlpha
+- AFXDRAWMANAGER/CDrawingManager::PrepareShadowMask
+- AFXDRAWMANAGER/CDrawingManager::RGBtoHSL
+- AFXDRAWMANAGER/CDrawingManager::RGBtoHSV
+- AFXDRAWMANAGER/CDrawingManager::SetAlphaPixel
+- AFXDRAWMANAGER/CDrawingManager::SetPixel
+- AFXDRAWMANAGER/CDrawingManager::SmartMixColors
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +123,7 @@ class CDrawingManager : public CObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxdrawmanager.h  
   
-##  <a name="a-namecdrawingmanagera--cdrawingmanagercdrawingmanager"></a><a name="cdrawingmanager"></a>CDrawingManager::CDrawingManager  
+##  <a name="cdrawingmanager"></a>CDrawingManager::CDrawingManager  
  構築、 [CDrawingManager](../../mfc/reference/cdrawingmanager-class.md)オブジェクトです。  
   
 ```  
@@ -108,7 +134,7 @@ CDrawingManager(CDC& dc);
  [入力] `dc`  
  デバイス コンテキストへの参照。 `CDrawingManager`描画のため、このコンテキストを使用します。  
   
-##  <a name="a-namecreatebitmap32a--cdrawingmanagercreatebitmap32"></a><a name="createbitmap_32"></a>CDrawingManager::CreateBitmap_32  
+##  <a name="createbitmap_32"></a>CDrawingManager::CreateBitmap_32  
  32 ビット版のデバイスに依存しないビットマップ (DIB) に直接書き込むことができるアプリケーションを作成します。  
   
 ```  
@@ -137,7 +163,7 @@ static HBITMAP __stdcall CreateBitmap_32(
 ### <a name="remarks"></a>コメント  
  DIB ビットマップを作成する方法の詳細については、次を参照してください。 [CreateDIBSection](http://msdn.microsoft.com/library/windows/desktop/dd183491)します。  
   
-##  <a name="a-namedrawalphaa--cdrawingmanagerdrawalpha"></a><a name="drawalpha"></a>CDrawingManager::DrawAlpha  
+##  <a name="drawalpha"></a>CDrawingManager::DrawAlpha  
  透明または半透明ピクセルのビットマップを表示します。  
   
 ```  
@@ -164,7 +190,7 @@ void DrawAlpha(
 ### <a name="remarks"></a>コメント  
  このメソッドは、アルファ ブレンドを実行&2; つのビットマップ。 アルファ ブレンドの詳細については、次を参照してください。 [AlphaBlend](http://msdn.microsoft.com/library/windows/desktop/dd183351) Windows SDK に含まれています。  
   
-##  <a name="a-namedrawellipsea--cdrawingmanagerdrawellipse"></a><a name="drawellipse"></a>CDrawingManager::DrawEllipse  
+##  <a name="drawellipse"></a>CDrawingManager::DrawEllipse  
  指定された塗りつぶしと境界線の色で楕円を描画します。  
   
 ```  
@@ -187,7 +213,7 @@ void DrawEllipse(
 ### <a name="remarks"></a>コメント  
  このメソッドは、どちらかの色が-1 に設定されている場合は、楕円を描画せずに復帰します。 外接する四角形のいずれかのサイズが 0 の場合は、楕円を描画せずも返されます。  
   
-##  <a name="a-namedrawgradientringa--cdrawingmanagerdrawgradientring"></a><a name="drawgradientring"></a>CDrawingManager::DrawGradientRing  
+##  <a name="drawgradientring"></a>CDrawingManager::DrawGradientRing  
  リングを描画し、色のグラデーションで塗りつぶします。  
   
 ```  
@@ -229,7 +255,7 @@ BOOL DrawGradientRing(
 ### <a name="remarks"></a>コメント  
  によって定義された四角`rect`には、少なくとも 5 ピクセル高さ全体に適用され、5 ピクセルにする必要があります。  
   
-##  <a name="a-namedrawlinecdrawingmanagerdrawlineaa--cdrawingmanagerdrawline-cdrawingmanagerdrawlinea"></a><a name="drawline_cdrawingmanager__drawlinea"></a>CDrawingManager::DrawLine CDrawingManager::DrawLineA  
+##  <a name="drawline_cdrawingmanager__drawlinea"></a>CDrawingManager::DrawLine CDrawingManager::DrawLineA  
  直線を描画します。  
   
 ```  
@@ -262,7 +288,7 @@ void DrawLineA(
 ### <a name="remarks"></a>コメント  
  このメソッドは失敗`clrLine`-1 です。  
   
-##  <a name="a-namedrawrecta--cdrawingmanagerdrawrect"></a><a name="drawrect"></a>CDrawingManager::DrawRect  
+##  <a name="drawrect"></a>CDrawingManager::DrawRect  
  指定された塗りつぶしと境界線の色を含む四角形を描画します。  
   
 ```  
@@ -285,7 +311,7 @@ void DrawRect(
 ### <a name="remarks"></a>コメント  
  このメソッドは、どちらかの色が-1 に設定されている場合は、四角形を描画せずに復帰します。 また、四角形のいずれかのサイズは 0 を返します。  
   
-##  <a name="a-namedrawshadowa--cdrawingmanagerdrawshadow"></a><a name="drawshadow"></a>CDrawingManager::DrawShadow  
+##  <a name="drawshadow"></a>CDrawingManager::DrawShadow  
  四角形の領域に影を描画します。  
   
 ```  
@@ -340,7 +366,7 @@ BOOL DrawShadow(
   
  [!code-cpp[NVC_MFC_PropSheetDemo&#1;](../../mfc/reference/codesnippet/cpp/cdrawingmanager-class_1.cpp)]  
   
-##  <a name="a-namefill4colorsgradienta--cdrawingmanagerfill4colorsgradient"></a><a name="fill4colorsgradient"></a>CDrawingManager::Fill4ColorsGradient  
+##  <a name="fill4colorsgradient"></a>CDrawingManager::Fill4ColorsGradient  
  2 つの色のグラデーションで四角形の領域を塗りつぶします。  
   
 ```  
@@ -381,7 +407,7 @@ void Fill4ColorsGradient(
   
  場合、このメソッドは、アサーション エラーを生成`nPercentage`が 0 未満か、100 を超えています。  
   
-##  <a name="a-namefillgradienta--cdrawingmanagerfillgradient"></a><a name="fillgradient"></a>CDrawingManager::FillGradient  
+##  <a name="fillgradient"></a>CDrawingManager::FillGradient  
  四角形の領域を指定した色のグラデーションで塗りつぶします。  
   
 ```  
@@ -418,7 +444,7 @@ void FillGradient(
   
  [!code-cpp[NVC_MFC_MSOffice2007Demo&#12;](../../mfc/reference/codesnippet/cpp/cdrawingmanager-class_2.cpp)]  
   
-##  <a name="a-namefillgradient2a--cdrawingmanagerfillgradient2"></a><a name="fillgradient2"></a>CDrawingManager::FillGradient2  
+##  <a name="fillgradient2"></a>CDrawingManager::FillGradient2  
  四角形の領域を指定した色のグラデーションで塗りつぶします。  
   
 ```  
@@ -450,7 +476,7 @@ void FillGradient2 (
   
  [!code-cpp[NVC_MFC_NewControls #&37;](../../mfc/reference/codesnippet/cpp/cdrawingmanager-class_3.cpp)]  
   
-##  <a name="a-namegrayrecta--cdrawingmanagergrayrect"></a><a name="grayrect"></a>CDrawingManager::GrayRect  
+##  <a name="grayrect"></a>CDrawingManager::GrayRect  
  指定した色の灰色の四角形を格納します。  
   
 ```  
@@ -482,7 +508,7 @@ BOOL GrayRect(
   
  最大値`nPercentage`200 です。 200 を超える値は、四角形の外観を変更していません。 このメソッドを使用して、値が-1 の場合は、`clrDisabled`を四角形の彩度を制限します。  
   
-##  <a name="a-namehighlightrecta--cdrawingmanagerhighlightrect"></a><a name="highlightrect"></a>CDrawingManager::HighlightRect  
+##  <a name="highlightrect"></a>CDrawingManager::HighlightRect  
  四角形の領域を強調表示されます。  
   
 ```  
@@ -518,7 +544,7 @@ BOOL HighlightRect(
   
  メソッド パラメーターを使用して`nTolerance`を四角形の領域を強調表示するかどうかを判断します。 四角形をアプリケーションの背景色の違いを強調表示して`clrTransparent`する必要がありますより小さい`nTolerance`(赤、緑、および青) の各色成分にします。  
   
-##  <a name="a-namehlstorgbonea--cdrawingmanagerhlstorgbone"></a><a name="hlstorgb_one"></a>CDrawingManager::HLStoRGB_ONE  
+##  <a name="hlstorgb_one"></a>CDrawingManager::HLStoRGB_ONE  
  HLS 表現から色を RGB 表現に変換します。  
   
 ```  
@@ -546,7 +572,7 @@ static COLORREF __stdcall HLStoRGB_ONE(
   
  このメソッドと`CDrawingManager::HLStoRGB_TWO`メソッドは、同じ操作を実行しますに別の値が必要、`H`パラメーター。 このメソッドで`H`円に占める割合です。 `CDrawingManager::HLStoRGB_TWO`メソッド、`H`は 0 ~ 360 両方が表している赤の間の角度の値。 たとえば、 `HLStoRGB_ONE`、値は 0.25 の`H`と 90 の値と同じ`HLStoRGB_TWO`します。  
   
-##  <a name="a-namehlstorgbtwoa--cdrawingmanagerhlstorgbtwo"></a><a name="hlstorgb_two"></a>CDrawingManager::HLStoRGB_TWO  
+##  <a name="hlstorgb_two"></a>CDrawingManager::HLStoRGB_TWO  
  HLS 表現から色を RGB 表現に変換します。  
   
 ```  
@@ -574,7 +600,7 @@ static COLORREF __stdcall HLStoRGB_TWO(
   
  このメソッドと[CDrawingManager::HLStoRGB_ONE](#hlstorgb_one)メソッドは、同じ操作を実行しますに別の値が必要、`H`パラメーター。 このメソッドで`H`は 0 ~ 360 両方が表している赤の間の角度の値。 [CDrawingManager::HLStoRGB_ONE](#hlstorgb_one)メソッド、`H`円に占める割合です。 たとえば、 `HLStoRGB_ONE`、値は 0.25 の`H`と 90 の値と同じ`HLStoRGB_TWO`します。  
   
-##  <a name="a-namehsvtorgba--cdrawingmanagerhsvtorgb"></a><a name="hsvtorgb"></a>CDrawingManager::HSVtoRGB  
+##  <a name="hsvtorgb"></a>CDrawingManager::HSVtoRGB  
  HSV 表現から色を RGB 表現に変換します。  
   
 ```  
@@ -599,7 +625,7 @@ static COLORREF __stdcall HSVtoRGB(
 ### <a name="remarks"></a>コメント  
  色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ) または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)します。  
   
-##  <a name="a-namehuetorgba--cdrawingmanagerhuetorgb"></a><a name="huetorgb"></a>CDrawingManager::HuetoRGB  
+##  <a name="huetorgb"></a>CDrawingManager::HuetoRGB  
  色合いの値を赤、緑、青の各要素に変換します。  
   
 ```  
@@ -648,7 +674,7 @@ static BYTE __stdcall HueToRGB(
   
 - [CDrawingManager::HLStoRGB_TWO](#hlstorgb_two)  
   
-##  <a name="a-namemirrorrecta--cdrawingmanagermirrorrect"></a><a name="mirrorrect"></a>CDrawingManager::MirrorRect  
+##  <a name="mirrorrect"></a>CDrawingManager::MirrorRect  
  四角形の領域を反転します。  
   
 ```  
@@ -667,7 +693,7 @@ void MirrorRect(
 ### <a name="remarks"></a>コメント  
  このメソッドは、によって所有されているデバイス コンテキストの任意の領域を反転させること、`CDrawingManager`クラスです。 場合`bHorz`に設定されている`TRUE`、このメソッドは、領域を水平方向に反転します。 それ以外の場合、領域が垂直方向に反転します。  
   
-##  <a name="a-namepixelalphaa--cdrawingmanagerpixelalpha"></a><a name="pixelalpha"></a>CDrawingManager::PixelAlpha  
+##  <a name="pixelalpha"></a>CDrawingManager::PixelAlpha  
  半透明ピクセルの最終的な色を計算します。  
   
 ```  
@@ -714,7 +740,7 @@ static COLORREF __stdcall PixelAlpha(
   
  持つメソッドのバージョンを使用する場合`dstPixel`、最終的な色の組み合わせは、`dstPixel`と`srcPixel`です。 `srcPixel`色は、部分的に透明な色を基本の色の上`dstPixel`します。  
   
-##  <a name="a-nameprepareshadowmaska--cdrawingmanagerprepareshadowmask"></a><a name="prepareshadowmask"></a>CDrawingManager::PrepareShadowMask  
+##  <a name="prepareshadowmask"></a>CDrawingManager::PrepareShadowMask  
  影として使用できるビットマップを作成します。  
   
 ```  
@@ -744,7 +770,7 @@ static HBITMAP __stdcall PrepareShadowMask (
 ### <a name="remarks"></a>コメント  
  場合`nDepth`は 0、このメソッドに設定されるは終了し、返します`NULL`します。 場合`nDepth`が 3 未満の場合、幅と高さの影が 3 ピクセルに設定します。  
   
-##  <a name="a-namergbtohsla--cdrawingmanagerrgbtohsl"></a><a name="rgbtohsl"></a>CDrawingManager::RGBtoHSL  
+##  <a name="rgbtohsl"></a>CDrawingManager::RGBtoHSL  
  色を赤、緑、および青 (RGB) 形式から色合い、鮮やかさ、および明るさ (HSL) 表現を変換します。  
   
 ```  
@@ -770,7 +796,7 @@ static void __stdcall RGBtoHSL(
   
  返された値`H`は 0 ~ 0 と 1 の両方が赤を表す位置 1 の比率として表されます。 戻り値`S`と`L`0 ~ 1 の範囲の数値します。  
   
-##  <a name="a-namergbtohsva--cdrawingmanagerrgbtohsv"></a><a name="rgbtohsv"></a>CDrawingManager::RGBtoHSV  
+##  <a name="rgbtohsv"></a>CDrawingManager::RGBtoHSV  
  色を RGB 表現から HSV 表現に変換します。  
   
 ```  
@@ -799,7 +825,7 @@ static void __stdcall RGBtoHSV(
   
  返された値`H`0 ~ 360 の間の数は、0 から 360 の両方が赤を示します。 戻り値は、`S`と`V`0 ~ 1 の範囲の数値します。  
   
-##  <a name="a-namesetalphapixela--cdrawingmanagersetalphapixel"></a><a name="setalphapixel"></a>CDrawingManager::SetAlphaPixel  
+##  <a name="setalphapixel"></a>CDrawingManager::SetAlphaPixel  
  ビットマップ内の透明なピクセルを色します。  
   
 ```  
@@ -844,7 +870,7 @@ static void __stdcall SetAlphaPixel(
   
  場合`bIsRight`に設定されている`TRUE`、ピクセルの色には、測定`x`の右端からピクセル`rect`します。 ある場合`FALSE`、ピクセルの色には、測定`x`の左端からピクセル`rect`します。  
   
-##  <a name="a-namesetpixela--cdrawingmanagersetpixel"></a><a name="setpixel"></a>CDrawingManager::SetPixel  
+##  <a name="setpixel"></a>CDrawingManager::SetPixel  
  ビットマップ内の単一のピクセルを指定した色に変更します。  
   
 ```  
@@ -869,7 +895,7 @@ static void __stdcall SetPixel(
 |[入力] `y`|変更するビットマップのピクセルの y 座標。|  
 |[入力] `color`|指定された座標で識別されるピクセルの新しい色。|  
   
-##  <a name="a-namesmartmixcolorsa--cdrawingmanagersmartmixcolors"></a><a name="smartmixcolors"></a>CDrawingManager::SmartMixColors  
+##  <a name="smartmixcolors"></a>CDrawingManager::SmartMixColors  
  重み付け比率に基づいて&2; つの色を結合します。  
   
 ```  
@@ -900,7 +926,7 @@ static COLORREF __stdcall SmartMixColors(
   
  重み付けの比率は、次の式で計算します。 (color1 * k1 + color2 \* k2)/(k1 + k2) します。 重み付け比率を決定した後は、メソッドは、混在した色の明るさを計算します。 明るさを乗算し、`dblLumRatio`です。 値が 1.0 よりも大きい場合は、メソッドは新しい値に混在の色の明るさを設定します。 それ以外の場合、明るさは 1.0 に設定されます。  
   
-##  <a name="a-namedrawrotateda--cdrawingmanagerdrawrotated"></a><a name="drawrotated"></a>CDrawingManager::DrawRotated  
+##  <a name="drawrotated"></a>CDrawingManager::DrawRotated  
  指定した四角形内の DC のコンテンツのソースを 90 度回転させます。  
   
 ```  

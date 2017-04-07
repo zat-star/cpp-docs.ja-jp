@@ -10,6 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDataSource
+- AFXOLE/COleDataSource
+- AFXOLE/COleDataSource::COleDataSource
+- AFXOLE/COleDataSource::CacheData
+- AFXOLE/COleDataSource::CacheGlobalData
+- AFXOLE/COleDataSource::DelayRenderData
+- AFXOLE/COleDataSource::DelayRenderFileData
+- AFXOLE/COleDataSource::DelaySetData
+- AFXOLE/COleDataSource::DoDragDrop
+- AFXOLE/COleDataSource::Empty
+- AFXOLE/COleDataSource::FlushClipboard
+- AFXOLE/COleDataSource::GetClipboardOwner
+- AFXOLE/COleDataSource::OnRenderData
+- AFXOLE/COleDataSource::OnRenderFileData
+- AFXOLE/COleDataSource::OnRenderGlobalData
+- AFXOLE/COleDataSource::OnSetData
+- AFXOLE/COleDataSource::SetClipboard
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -102,7 +118,7 @@ class COleDataSource : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-namecachedataa--coledatasourcecachedata"></a><a name="cachedata"></a>取得  
+##  <a name="cachedata"></a>取得  
  提供されるデータのデータ転送操作の形式を指定するには、この関数を呼び出します。  
   
 ```  
@@ -135,7 +151,7 @@ void CacheData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecacheglobaldataa--coledatasourcecacheglobaldata"></a><a name="cacheglobaldata"></a>COleDataSource::CacheGlobalData  
+##  <a name="cacheglobaldata"></a>COleDataSource::CacheGlobalData  
  提供されるデータのデータ転送操作の形式を指定するには、この関数を呼び出します。  
   
 ```  
@@ -164,14 +180,14 @@ void CacheGlobalData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namecoledatasourcea--coledatasourcecoledatasource"></a><a name="coledatasource"></a>COleDataSource::COleDataSource  
+##  <a name="coledatasource"></a>COleDataSource::COleDataSource  
  `COleDataSource` オブジェクトを構築します。  
   
 ```  
 COleDataSource();
 ```  
   
-##  <a name="a-namedelayrenderdataa--coledatasourcedelayrenderdata"></a><a name="delayrenderdata"></a>COleDataSource::DelayRenderData  
+##  <a name="delayrenderdata"></a>COleDataSource::DelayRenderData  
  提供されるデータのデータ転送操作の形式を指定するには、この関数を呼び出します。  
   
 ```  
@@ -198,7 +214,7 @@ void DelayRenderData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedelayrenderfiledataa--coledatasourcedelayrenderfiledata"></a><a name="delayrenderfiledata"></a>COleDataSource::DelayRenderFileData  
+##  <a name="delayrenderfiledata"></a>COleDataSource::DelayRenderFileData  
  提供されるデータのデータ転送操作の形式を指定するには、この関数を呼び出します。  
   
 ```  
@@ -225,7 +241,7 @@ void DelayRenderFileData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedelaysetdataa--coledatasourcedelaysetdata"></a><a name="delaysetdata"></a>COleDataSource::DelaySetData  
+##  <a name="delaysetdata"></a>COleDataSource::DelaySetData  
  この関数では、データ ソースの内容の変更をサポートします。  
   
 ```  
@@ -248,7 +264,7 @@ void DelaySetData(
   
  詳細については、次を参照してください。[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namedodragdropa--coledatasourcedodragdrop"></a><a name="dodragdrop"></a>された  
+##  <a name="dodragdrop"></a>された  
  呼び出す、`DoDragDrop`で通常、このデータ ソースのドラッグ アンド ドロップ操作を実行するメンバー関数、 [CWnd::OnLButtonDown](../../mfc/reference/cwnd-class.md#onlbuttondown)ハンドラー。  
   
 ```  
@@ -294,7 +310,7 @@ DROPEFFECT DoDragDrop(
   
  詳細については、記事を参照してください。[ドラッグ アンド ドロップ: ドロップ ソースの実装](../../mfc/drag-and-drop-implementing-a-drop-source.md)します。  
   
-##  <a name="a-nameemptya--coledatasourceempty"></a><a name="empty"></a>COleDataSource::Empty  
+##  <a name="empty"></a>COleDataSource::Empty  
  空には、この関数を呼び出して、`COleDataSource`データのオブジェクト。  
   
 ```  
@@ -306,7 +322,7 @@ void Empty();
   
  詳細については、次を参照してください。 [ReleaseStgMedium](http://msdn.microsoft.com/library/windows/desktop/ms693491)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameflushclipboarda--coledatasourceflushclipboard"></a><a name="flushclipboard"></a>COleDataSource::FlushClipboard  
+##  <a name="flushclipboard"></a>COleDataSource::FlushClipboard  
  クリップボードにし、アプリケーションのシャット ダウンした後、クリップボードからデータをペーストできますし、データを表示します。  
   
 ```  
@@ -316,7 +332,7 @@ static void PASCAL FlushClipboard();
 ### <a name="remarks"></a>コメント  
  使用[SetClipboard](#setclipboard)をクリップボードにデータを格納します。  
   
-##  <a name="a-namegetclipboardownera--coledatasourcegetclipboardowner"></a><a name="getclipboardowner"></a>COleDataSource::GetClipboardOwner  
+##  <a name="getclipboardowner"></a>COleDataSource::GetClipboardOwner  
  以降、クリップボードのデータが変更されているかどうかを判断[SetClipboard](#setclipboard)と、最後に呼び出された場合は、現在の所有者を識別します。  
   
 ```  
@@ -326,7 +342,7 @@ static COleDataSource* PASCAL GetClipboardOwner();
 ### <a name="return-value"></a>戻り値  
  現在、クリップボードにデータ ソースまたは**NULL**クリップボードにコピーがない場合、またはクリップボードが呼び出し元のアプリケーションによって所有されていない場合。  
   
-##  <a name="a-nameonrenderdataa--coledatasourceonrenderdata"></a><a name="onrenderdata"></a>と  
+##  <a name="onrenderdata"></a>と  
  指定した形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -354,7 +370,7 @@ virtual BOOL OnRenderData(
   
  詳細については、次を参照してください。、 [STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812)と[FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)構造体、 [TYMED](http://msdn.microsoft.com/library/windows/desktop/ms691227)列挙型の場合と[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
   
-##  <a name="a-nameonrenderfiledataa--coledatasourceonrenderfiledata"></a><a name="onrenderfiledata"></a>と  
+##  <a name="onrenderfiledata"></a>と  
  指定されたストレージ メディアがファイルであるときに、指定した形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -380,7 +396,7 @@ virtual BOOL OnRenderFileData(
   
  詳細については、次を参照してください。、 [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)構造と[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
   
-##  <a name="a-nameonrenderglobaldataa--coledatasourceonrenderglobaldata"></a><a name="onrenderglobaldata"></a>COleDataSource::OnRenderGlobalData  
+##  <a name="onrenderglobaldata"></a>COleDataSource::OnRenderGlobalData  
  指定されたストレージ メディアがグローバル メモリのときに、指定した形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -408,7 +424,7 @@ virtual BOOL OnRenderGlobalData(
   
  詳細については、次を参照してください。、 [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)構造と[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
   
-##  <a name="a-nameonsetdataa--coledatasourceonsetdata"></a><a name="onsetdata"></a>COleDataSource::OnSetData  
+##  <a name="onsetdata"></a>COleDataSource::OnSetData  
  内のデータを設定またはフレームワークによって呼び出され、`COleDataSource`オブジェクトを指定した形式でします。  
   
 ```  
@@ -438,7 +454,7 @@ virtual BOOL OnSetData(
   
  詳細については、次を参照してください。、 [STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812)と[FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)構造体と[ReleaseStgMedium](http://msdn.microsoft.com/library/windows/desktop/ms693491)と[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431)関数、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]*します。*  
   
-##  <a name="a-namesetclipboarda--coledatasourcesetclipboard"></a><a name="setclipboard"></a>COleDataSource::SetClipboard  
+##  <a name="setclipboard"></a>COleDataSource::SetClipboard  
  含まれているデータを格納、`COleDataSource`オブジェクトを次の関数のいずれかを呼び出した後、クリップボードにコピーします。 [CacheData](#cachedata)、[使う](#cacheglobaldata)、[に](#delayrenderdata)、または[DelayRenderFileData](#delayrenderfiledata)します。  
   
 ```  

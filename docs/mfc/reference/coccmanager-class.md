@@ -10,6 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COccManager
+- AFXOCC/COccManager
+- AFXOCC/COccManager::CreateContainer
+- AFXOCC/COccManager::CreateDlgControls
+- AFXOCC/COccManager::CreateSite
+- AFXOCC/COccManager::GetDefBtnCode
+- AFXOCC/COccManager::IsDialogMessage
+- AFXOCC/COccManager::IsLabelControl
+- AFXOCC/COccManager::IsMatchingMnemonic
+- AFXOCC/COccManager::OnEvent
+- AFXOCC/COccManager::PostCreateDialog
+- AFXOCC/COccManager::PreCreateDialog
+- AFXOCC/COccManager::SetDefaultButton
+- AFXOCC/COccManager::SplitDialogTemplate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -82,7 +95,7 @@ class COccManager : public CNoTrackObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxocc.h  
   
-##  <a name="a-namecreatecontainera--coccmanagercreatecontainer"></a><a name="createcontainer"></a>COccManager::CreateContainer  
+##  <a name="createcontainer"></a>COccManager::CreateContainer  
  コントロールのコンテナーを作成するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -99,7 +112,7 @@ virtual COleControlContainer* CreateContainer(CWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  カスタムのサイトの作成の詳細については、次を参照してください。 [COleControlContainer::AttachControlSite](../../mfc/reference/colecontrolcontainer-class.md#attachcontrolsite)します。  
   
-##  <a name="a-namecreatedlgcontrolsa--coccmanagercreatedlgcontrols"></a><a name="createdlgcontrols"></a>COccManager::CreateDlgControls  
+##  <a name="createdlgcontrols"></a>COccManager::CreateDlgControls  
  指定された ActiveX コントロールを作成するには、この関数を呼び出して、`pOccDialogInfo`パラメーター。  
   
 ```  
@@ -131,7 +144,7 @@ virtual BOOL CreateDlgControls(
 ### <a name="return-value"></a>戻り値  
  コントロールが正常に作成された場合は&0; 以外それ以外の場合&0; を返します。  
   
-##  <a name="a-namecreatesitea--coccmanagercreatesite"></a><a name="createsite"></a>COccManager::CreateSite  
+##  <a name="createsite"></a>COccManager::CreateSite  
  コントロール サイトを指すコンテナーにホストを作成するためのフレームワークと呼ばれる`pCtrlCont`です。  
   
 ```  
@@ -150,7 +163,7 @@ virtual COleControlSite* CreateSite(COleControlContainer* pCtrlCont);
   
  各コントロールのコンテナーには、複数のサイトをホストできます。 複数の呼び出しで追加のサイトを作成`CreateSite`します。  
   
-##  <a name="a-namegetdefbtncodea--coccmanagergetdefbtncode"></a><a name="getdefbtncode"></a>COccManager::GetDefBtnCode  
+##  <a name="getdefbtncode"></a>COccManager::GetDefBtnCode  
  この関数では、コントロールが既定のプッシュ ボタンかどうかを決定します。  
   
 ```  
@@ -170,7 +183,7 @@ static DWORD AFX_CDECL GetDefBtnCode(CWnd* pWnd);
   
 - **0**コントロールがボタンではありません。  
   
-##  <a name="a-nameisdialogmessagea--coccmanagerisdialogmessage"></a><a name="isdialogmessage"></a>COccManager::IsDialogMessage  
+##  <a name="isdialogmessage"></a>COccManager::IsDialogMessage  
  メッセージが、指定のダイアログ ボックスにしてである場合は、メッセージを処理するかどうかを調べるためにフレームワークによって呼び出されます。  
   
 ```  
@@ -194,7 +207,7 @@ virtual BOOL IsDialogMessage(
   
  指定したダイアログ ボックスに送信されるメッセージのカスタム動作を提供するには、この関数をオーバーライドします。  
   
-##  <a name="a-nameislabelcontrola--coccmanagerislabelcontrol"></a><a name="islabelcontrol"></a>COccManager::IsLabelControl  
+##  <a name="islabelcontrol"></a>COccManager::IsLabelControl  
  この関数では、指定したコントロールがラベル コントロールかどうかを決定します。  
   
 ```  
@@ -212,7 +225,7 @@ static BOOL AFX_CDECL IsLabelControl(COleControlSiteOrWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  ラベル コントロールは、任意のコントロールは、順序の次のラベルのように機能する&1; つです。  
   
-##  <a name="a-nameismatchingmnemonica--coccmanagerismatchingmnemonic"></a><a name="ismatchingmnemonic"></a>COccManager::IsMatchingMnemonic  
+##  <a name="ismatchingmnemonic"></a>COccManager::IsMatchingMnemonic  
  現在のニーモニックがコントロールによって表されると一致するかどうかを判断するには、この関数を呼び出します。  
   
 ```  
@@ -238,7 +251,7 @@ static BOOL AFX_CDECL IsMatchingMnemonic(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameoneventa--coccmanageronevent"></a><a name="onevent"></a>COccManager::OnEvent  
+##  <a name="onevent"></a>COccManager::OnEvent  
  指定したイベントを処理するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -268,7 +281,7 @@ virtual BOOL OnEvent(
 ### <a name="remarks"></a>コメント  
  イベント処理の既定のプロセスをカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-nameprecreatedialoga--coccmanagerprecreatedialog"></a><a name="precreatedialog"></a>COccManager::PreCreateDialog  
+##  <a name="precreatedialog"></a>COccManager::PreCreateDialog  
  実際のダイアログ ボックスを作成する前に ActiveX コントロールのダイアログ テンプレートを処理するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -292,7 +305,7 @@ virtual const DLGTEMPLATE* PreCreateDialog(
   
  ActiveX コントロールのホスト ダイアログ ボックスを作成するプロセスをカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-namepostcreatedialoga--coccmanagerpostcreatedialog"></a><a name="postcreatedialog"></a>COccManager::PostCreateDialog  
+##  <a name="postcreatedialog"></a>COccManager::PostCreateDialog  
  ダイアログ テンプレートに割り当てられたメモリを解放するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -308,7 +321,7 @@ virtual void PostCreateDialog(_AFX_OCC_DIALOG_INFO* pOccDialogInfo);
   
  ダイアログ ボックスのオブジェクトで使用されたリソースのクリーンアップのプロセスをカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="a-namesetdefaultbuttona--coccmanagersetdefaultbutton"></a><a name="setdefaultbutton"></a>COccManager::SetDefaultButton  
+##  <a name="setdefaultbutton"></a>COccManager::SetDefaultButton  
  この関数では、既定のボタンとして設定します。  
   
 ```  
@@ -332,7 +345,7 @@ static void AFX_CDECL SetDefaultButton(
 > [!NOTE]
 >  コントロールが必要、 **OLEMISC_ACTSLIKEBUTTON**ステータス ビットが設定されます。 詳細については**入ります**フラグを参照してください、[入ります](http://msdn.microsoft.com/library/windows/desktop/ms678497)のトピック、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesplitdialogtemplatea--coccmanagersplitdialogtemplate"></a><a name="splitdialogtemplate"></a>COccManager::SplitDialogTemplate  
+##  <a name="splitdialogtemplate"></a>COccManager::SplitDialogTemplate  
  コモン ダイアログ コントロールから ActiveX コントロールを分割するためにフレームワークによって呼び出されます。  
   
 ```  

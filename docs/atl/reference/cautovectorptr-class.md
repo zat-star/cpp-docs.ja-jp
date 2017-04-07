@@ -9,11 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CAutoVectorPtr
-- ATL.CAutoVectorPtr
-- ATL.CAutoVectorPtr<T>
 - CAutoVectorPtr
-- ATL::CAutoVectorPtr<T>
+- ATLBASE/ATL::CAutoVectorPtr
+- ATLBASE/ATL::CAutoVectorPtr::CAutoVectorPtr
+- ATLBASE/ATL::CAutoVectorPtr::Allocate
+- ATLBASE/ATL::CAutoVectorPtr::Attach
+- ATLBASE/ATL::CAutoVectorPtr::Detach
+- ATLBASE/ATL::CAutoVectorPtr::Free
+- ATLBASE/ATL::CAutoVectorPtr::m_p
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +103,7 @@ class CAutoVectorPtr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-nameallocatea--cautovectorptrallocate"></a><a name="allocate"></a>CAutoVectorPtr::Allocate  
+##  <a name="allocate"></a>CAutoVectorPtr::Allocate  
  指すオブジェクトの配列に必要なメモリを割り当てるには、このメソッドを呼び出す`CAutoVectorPtr`します。  
   
 ```
@@ -117,7 +120,7 @@ bool Allocate(size_t nElements) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合、 [CAutoVectorPtr::m_p](#m_p)メンバー変数は、現在は、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="a-nameattacha--cautovectorptrattach"></a><a name="attach"></a>CAutoVectorPtr::Attach  
+##  <a name="attach"></a>CAutoVectorPtr::Attach  
  既存のポインターの所有権を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -133,7 +136,7 @@ void Attach(T* p) throw();
   
  デバッグ ビルドで、アサーション エラーが発生場合、 [CAutoVectorPtr::m_p](#m_p)メンバー変数は、現在は、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="a-namecautovectorptra--cautovectorptrcautovectorptr"></a><a name="cautovectorptr"></a>CAutoVectorPtr::CAutoVectorPtr  
+##  <a name="cautovectorptr"></a>CAutoVectorPtr::CAutoVectorPtr  
  コンストラクターです。  
   
 ```
@@ -149,7 +152,7 @@ CAutoVectorPtr(CAutoVectorPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  `CAutoVectorPtr`オブジェクトの作成は、既存のポインターを使用して、このような場合、ポインターの所有権を転送します。  
   
-##  <a name="a-namedtora--cautovectorptrcautovectorptr"></a><a name="dtor"></a>出たリソース:: ~ 出たリソース  
+##  <a name="dtor"></a>出たリソース:: ~ 出たリソース  
  デストラクターです。  
   
 ```
@@ -159,7 +162,7 @@ CAutoVectorPtr(CAutoVectorPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたリソースを解放します。 呼び出し[CAutoVectorPtr::Free](#free)します。  
   
-##  <a name="a-namedetacha--cautovectorptrdetach"></a><a name="detach"></a>CAutoVectorPtr::Detach  
+##  <a name="detach"></a>CAutoVectorPtr::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
   
 ```
@@ -172,7 +175,7 @@ T* Detach() throw();
 ### <a name="remarks"></a>コメント  
  ポインターの所有権を解放、 [CAutoVectorPtr::m_p](#m_p)メンバー変数を NULL にし、ポインターのコピーを返します。 呼び出した後**デタッチ**が解放はプログラマの責任割り当て済みリソースを`CAutoVectorPtr`オブジェクトがある以前責任を負っています。  
   
-##  <a name="a-namefreea--cautovectorptrfree"></a><a name="free"></a>CAutoVectorPtr::Free  
+##  <a name="free"></a>CAutoVectorPtr::Free  
  指すオブジェクトを削除するには、このメソッドを呼び出して、`CAutoVectorPtr`です。  
   
 ```
@@ -182,7 +185,7 @@ void Free() throw();
 ### <a name="remarks"></a>コメント  
  によって指されるオブジェクト、`CAutoVectorPtr`が解放されると、 [CAutoVectorPtr::m_p](#m_p)メンバー変数が NULL に設定します。  
   
-##  <a name="a-namempa--cautovectorptrmp"></a><a name="m_p"></a>CAutoVectorPtr::m_p  
+##  <a name="m_p"></a>CAutoVectorPtr::m_p  
  ポインターのデータ メンバー変数です。  
   
 ```
@@ -192,7 +195,7 @@ T* m_p;
 ### <a name="remarks"></a>コメント  
  このメンバー変数は、ポインターの情報を保持します。  
   
-##  <a name="a-nameoperatoreqa--cautovectorptroperator-"></a><a name="operator_eq"></a>CAutoVectorPtr::operator =  
+##  <a name="operator_eq"></a>CAutoVectorPtr::operator =  
  代入演算子です。  
   
 ```
@@ -209,7 +212,7 @@ CAutoVectorPtr<T>& operator= (CAutoVectorPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  代入演算子をデタッチ、`CAutoVectorPtr`オブジェクトを現在のポインターから新しいポインターのアタッチと`p`、その場所にします。  
   
-##  <a name="a-nameoperatortstara--cautovectorptroperator-t-"></a><a name="operator_t__star"></a>CAutoVectorPtr::operator T *  
+##  <a name="operator_t__star"></a>CAutoVectorPtr::operator T *  
  キャスト演算子です。  
   
 ```  

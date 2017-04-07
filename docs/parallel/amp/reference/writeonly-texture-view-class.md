@@ -9,7 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- amp_graphics/Concurrency::graphics::writeonly_texture_view
+- writeonly_texture_view
+- AMP_GRAPHICS/writeonly_texture_view
+- AMP_GRAPHICS/Concurrency::graphics::writeonly_texture_view
+- AMP_GRAPHICS/Concurrency::graphics::writeonly_texture_view::set
+- AMP_GRAPHICS/Concurrency::graphics::rank Constant
 dev_langs:
 - C++
 ms.assetid: 8d117ad3-0a1c-41ae-b29c-7c95fdd4d04d
@@ -32,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: a40aa0cb433b6daee19af7fdea7c6421b61c1b4c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 5a051b8db98e36ced89783bfa1de2ab5f514c6bc
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="writeonlytextureview-class"></a>writeonly_texture_view クラス
@@ -83,13 +87,13 @@ class writeonly_texture_view<value_type, _Rank> : public details::_Texture_base<
   
 |名前|説明|  
 |----------|-----------------|  
-|[set メソッド](#set)|指定されたインデックス位置にある要素の値を設定します。|  
+|[set](#set)|指定されたインデックス位置にある要素の値を設定します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator = 演算子](#operator_eq)|指定したコピー`writeonly_texture_view`オブジェクトをこのオブジェクトにします。|  
+|[operator=](#operator_eq)|指定したコピー`writeonly_texture_view`オブジェクトをこのオブジェクトにします。|  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -107,7 +111,7 @@ class writeonly_texture_view<value_type, _Rank> : public details::_Texture_base<
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namedtora-writeonlytextureview"></a><a name="dtor"></a>~ writeonly_texture_view 
+##  <a name="dtor"></a>~ writeonly_texture_view 
 
  `writeonly_texture_view` オブジェクトを破棄します。  
   
@@ -115,7 +119,7 @@ class writeonly_texture_view<value_type, _Rank> : public details::_Texture_base<
 ~writeonly_texture_view() restrict(amp,cpu);
 ```  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  指定したコピー`writeonly_texture_view`オブジェクトをこのオブジェクトにします。  
   
@@ -131,7 +135,7 @@ writeonly_texture_view<value_type, _Rank>& operator= (
 ### <a name="return-value"></a>戻り値  
  この `writeonly_texture_view` オブジェクトへの参照。  
   
-##  <a name="a-nameranka-rank"></a><a name="rank"></a>ランク 
+##  <a name="rank"></a>ランク 
 
  `writeonly_texture_view` オブジェクトのランクを取得します。  
   
@@ -139,7 +143,7 @@ writeonly_texture_view<value_type, _Rank>& operator= (
 static const int rank = _Rank;  
 ```  
   
-##  <a name="a-nameseta-set"></a><a name="set"></a>設定 
+##  <a name="set"></a>設定 
 
  指定されたインデックス位置にある要素の値を設定します。  
   
@@ -156,7 +160,7 @@ void set(
  `value`  
  要素の新しい値。  
   
-##  <a name="a-namectora-writeonlytextureview"></a><a name="ctor"></a>writeonly_texture_view 
+##  <a name="ctor"></a>writeonly_texture_view 
 
  `writeonly_texture_view` クラスの新しいインスタンスを初期化します。  
   
@@ -182,5 +186,5 @@ writeonly_texture_view(
  作成に使用されるテクスチャ、`writeonly_texture_view`です。  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

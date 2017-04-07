@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CFont
+- AFXWIN/CFont
+- AFXWIN/CFont::CFont
+- AFXWIN/CFont::CreateFont
+- AFXWIN/CFont::CreateFontIndirect
+- AFXWIN/CFont::CreatePointFont
+- AFXWIN/CFont::CreatePointFontIndirect
+- AFXWIN/CFont::FromHandle
+- AFXWIN/CFont::GetLogFont
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +100,7 @@ class CFont : public CGdiObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecfonta--cfontcfont"></a><a name="cfont"></a>CFont::CFont  
+##  <a name="cfont"></a>CFont::CFont  
  `CFont` オブジェクトを構築します。  
   
 ```  
@@ -105,7 +113,7 @@ CFont();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&70;](../../mfc/codesnippet/cpp/cfont-class_1.cpp)]  
   
-##  <a name="a-namecreatefonta--cfontcreatefont"></a><a name="createfont"></a>CFont::CreateFont  
+##  <a name="createfont"></a>CFont::CreateFont  
  初期化、`CFont`指定の特性を持つオブジェクト。  
   
 ```  
@@ -194,7 +202,7 @@ BOOL CreateFont(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&71;](../../mfc/codesnippet/cpp/cfont-class_2.cpp)]  
   
-##  <a name="a-namecreatefontindirecta--cfontcreatefontindirect"></a><a name="createfontindirect"></a>CFont::CreateFontIndirect  
+##  <a name="createfontindirect"></a>CFont::CreateFontIndirect  
  初期化、`CFont`オブジェクトで指定された特性を持つ、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体。  
   
 ```  
@@ -218,7 +226,7 @@ BOOL CreateFontIndirect(const LOGFONT* lpLogFont);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&72;](../../mfc/codesnippet/cpp/cfont-class_3.cpp)]  
   
-##  <a name="a-namecreatepointfonta--cfontcreatepointfont"></a><a name="createpointfont"></a>CFont::CreatePointFont  
+##  <a name="createpointfont"></a>CFont::CreatePointFont  
  この関数は、指定したフォントのフォントを作成し、ポイント サイズを簡単な方法を提供します。  
   
 ```  
@@ -249,7 +257,7 @@ BOOL CreatePointFont(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&73;](../../mfc/codesnippet/cpp/cfont-class_4.cpp)]  
   
-##  <a name="a-namecreatepointfontindirecta--cfontcreatepointfontindirect"></a><a name="createpointfontindirect"></a>CFont::CreatePointFontIndirect  
+##  <a name="createpointfontindirect"></a>CFont::CreatePointFontIndirect  
  この関数は、同じ[CreateFontIndirect](#createfontindirect)する点を除いて、**する**のメンバー、`LOGFONT`はデバイスではなくポイント単位の部分の&1;/10 に解釈されます。  
   
 ```  
@@ -276,7 +284,7 @@ BOOL CreatePointFontIndirect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&74;](../../mfc/codesnippet/cpp/cfont-class_5.cpp)]  
   
-##  <a name="a-namefromhandlea--cfontfromhandle"></a><a name="fromhandle"></a>CFont::FromHandle  
+##  <a name="fromhandle"></a>CFont::FromHandle  
  ポインターを返す、`CFont`が指定されると、 **HFONT** Windows GDI フォント オブジェクトへのハンドルします。  
   
 ```  
@@ -296,7 +304,7 @@ static CFont* PASCAL FromHandle(HFONT hFont);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&75;](../../mfc/codesnippet/cpp/cfont-class_6.cpp)]  
   
-##  <a name="a-namegetlogfonta--cfontgetlogfont"></a><a name="getlogfont"></a>CFont::GetLogFont  
+##  <a name="getlogfont"></a>CFont::GetLogFont  
  コピーを取得するには、この関数を呼び出して、`LOGFONT`の構造体`CFont`します。  
   
 ```  
@@ -313,7 +321,7 @@ int GetLogFont(LOGFONT* pLogFont);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&76;](../../mfc/codesnippet/cpp/cfont-class_7.cpp)]  
   
-##  <a name="a-nameoperatorhfonta--cfontoperator-hfont"></a><a name="operator_hfont"></a>CFont::operator HFONT  
+##  <a name="operator_hfont"></a>CFont::operator HFONT  
  接続されているフォントの Windows GDI ハンドルの取得にこの演算子を使用して、`CFont`オブジェクトです。  
   
 ```  

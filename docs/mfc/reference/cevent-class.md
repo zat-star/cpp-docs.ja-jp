@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CEvent
+- AFXMT/CEvent
+- AFXMT/CEvent::CEvent
+- AFXMT/CEvent::PulseEvent
+- AFXMT/CEvent::ResetEvent
+- AFXMT/CEvent::SetEvent
+- AFXMT/CEvent::Unlock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -99,7 +105,7 @@ class CEvent : public CSyncObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxmt.h  
   
-##  <a name="a-nameceventa--ceventcevent"></a><a name="cevent"></a>CEvent::CEvent  
+##  <a name="cevent"></a>CEvent::CEvent  
  名前付き、または名前を作成`CEvent`オブジェクトです。  
   
 ```  
@@ -131,7 +137,7 @@ CEvent(
 > [!IMPORTANT]
 >  作成した後、`CEvent`オブジェクトを使用[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)をミュー テックスがまだ存在していないことを確認します。 ミュー テックスが予期せず存在して問題のあるプロセスが発生したり、悪意を持って、ミュー テックスを使用するつもりが可能性があります。 ここでは、セキュリティ意識の推奨手順が、ハンドルを閉じるし、クリックすると、オブジェクトの作成でエラーが発生しました。  
   
-##  <a name="a-namepulseeventa--ceventpulseevent"></a><a name="pulseevent"></a>CEvent::PulseEvent  
+##  <a name="pulseevent"></a>CEvent::PulseEvent  
  (使用可能) イベントをシグナルの状態を設定の待機中のスレッドを解放し、非シグナル状態 (利用不可) に自動的にリセットします。  
   
 ```  
@@ -148,7 +154,7 @@ BOOL PulseEvent();
   
  `PulseEvent`基になる Win32 を使用して`PulseEvent`待機状態からカーネル モードの非同期プロシージャ コールによって一時的に削除できる関数です。 したがって、`PulseEvent`の信頼性が低いと、新しいアプリケーションでは使用しない必要があります。 詳細については、次を参照してください。、 [PulseEvent 関数](http://msdn.microsoft.com/library/windows/desktop/ms684914)します。  
   
-##  <a name="a-namereseteventa--ceventresetevent"></a><a name="resetevent"></a>CEvent::ResetEvent  
+##  <a name="resetevent"></a>CEvent::ResetEvent  
  設定するイベントの状態まで非シグナル状態に明示的にシグナル状態に設定、 [SetEvent](#setevent)メンバー関数。  
   
 ```  
@@ -163,7 +169,7 @@ BOOL ResetEvent();
   
  このメンバー関数は、自動イベントでは使用されません。  
   
-##  <a name="a-nameseteventa--ceventsetevent"></a><a name="setevent"></a>CEvent::SetEvent  
+##  <a name="setevent"></a>CEvent::SetEvent  
  待機中のスレッドを解放するイベントをシグナルの状態を設定します。  
   
 ```  
@@ -176,7 +182,7 @@ BOOL SetEvent();
 ### <a name="remarks"></a>コメント  
  イベントをまでシグナル状態になりますが、イベントが手動の場合は、 [ResetEvent](#resetevent)が呼び出されます。 ここでは、複数のスレッドが解放できます。 イベントが自動の場合は、1 つのスレッドが解放されるまで、イベントがシグナル状態残ります。 システムは、非シグナル状態イベントの状態が設定されます。 待機しているスレッドがない場合、状態は、1 つのスレッドが解放されるまでシグナル状態のままです。  
   
-##  <a name="a-nameunlocka--ceventunlock"></a><a name="unlock"></a>CEvent::Unlock  
+##  <a name="unlock"></a>CEvent::Unlock  
  イベント オブジェクトを解放します。  
   
 ```  

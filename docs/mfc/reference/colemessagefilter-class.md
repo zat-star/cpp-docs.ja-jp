@@ -10,6 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleMessageFilter
+- AFXOLE/COleMessageFilter
+- AFXOLE/COleMessageFilter::COleMessageFilter
+- AFXOLE/COleMessageFilter::BeginBusyState
+- AFXOLE/COleMessageFilter::EnableBusyDialog
+- AFXOLE/COleMessageFilter::EnableNotRespondingDialog
+- AFXOLE/COleMessageFilter::EndBusyState
+- AFXOLE/COleMessageFilter::OnMessagePending
+- AFXOLE/COleMessageFilter::Register
+- AFXOLE/COleMessageFilter::Revoke
+- AFXOLE/COleMessageFilter::SetBusyReply
+- AFXOLE/COleMessageFilter::SetMessagePendingDelay
+- AFXOLE/COleMessageFilter::SetRetryReply
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -98,7 +110,7 @@ class COleMessageFilter : public CCmdTarget
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxole.h  
   
-##  <a name="a-namebeginbusystatea--colemessagefilterbeginbusystate"></a><a name="beginbusystate"></a>COleMessageFilter::BeginBusyState  
+##  <a name="beginbusystate"></a>COleMessageFilter::BeginBusyState  
  この関数では、ビジー状態を開始します。  
   
 ```  
@@ -112,7 +124,7 @@ virtual void BeginBusyState();
   
  既定では、フレームワーク、状態にビジー状態で実行するアイドル状態の処理中に[CWinApp::OnIdle](../../mfc/reference/cwinapp-class.md#onidle)します。 アプリケーションの処理中に**ON_COMMANDUPDATEUI**アイドル処理が完了したら、通知、着信呼び出しが、後で処理されます。  
   
-##  <a name="a-namecolemessagefiltera--colemessagefiltercolemessagefilter"></a><a name="colemessagefilter"></a>COleMessageFilter::COleMessageFilter  
+##  <a name="colemessagefilter"></a>COleMessageFilter::COleMessageFilter  
  
           `COleMessageFilter` オブジェクトを作成します。  
   
@@ -120,7 +132,7 @@ virtual void BeginBusyState();
 COleMessageFilter();
 ```  
   
-##  <a name="a-nameenablebusydialoga--colemessagefilterenablebusydialog"></a><a name="enablebusydialog"></a>COleMessageFilter::EnableBusyDialog  
+##  <a name="enablebusydialog"></a>COleMessageFilter::EnableBusyDialog  
  有効にし、保留中のメッセージの遅延時間の有効期限が切れたときに表示されるダイアログ ボックスが無効になります (を参照してください[ビジー](#setretryreply)) OLE 呼び出し中にします。  
   
 ```  
@@ -131,7 +143,7 @@ void EnableBusyDialog(BOOL bEnableBusy = TRUE);
  *bEnableBusy*  
  「ビジー」ダイアログ ボックスが有効になっているかどうかを指定します。  
   
-##  <a name="a-nameenablenotrespondingdialoga--colemessagefilterenablenotrespondingdialog"></a><a name="enablenotrespondingdialog"></a>COleMessageFilter::EnableNotRespondingDialog  
+##  <a name="enablenotrespondingdialog"></a>COleMessageFilter::EnableNotRespondingDialog  
  有効にし、キーボードまたはマウス メッセージが保留中の場合に表示される「応答なし」のダイアログ ボックスを無効にする OLE 中の呼び出しと呼び出しがタイムアウトしました。  
   
 ```  
@@ -142,7 +154,7 @@ void EnableNotRespondingDialog(BOOL bEnableNotResponding = TRUE);
  *bEnableNotResponding*  
  「応答なし」のダイアログ ボックスが有効になっているかどうかを指定します。  
   
-##  <a name="a-nameendbusystatea--colemessagefilterendbusystate"></a><a name="endbusystate"></a>COleMessageFilter::EndBusyState  
+##  <a name="endbusystate"></a>COleMessageFilter::EndBusyState  
  この関数では、ビジー状態を終了します。  
   
 ```  
@@ -156,7 +168,7 @@ virtual void EndBusyState();
   
  既定では、フレームワーク、状態にビジー状態で実行するアイドル状態の処理中に[CWinApp::OnIdle](../../mfc/reference/cwinapp-class.md#onidle)します。 アプリケーションの処理中に`ON_UPDATE_COMMAND_UI`アイドル処理が完了したら通知を受信した呼び出しが処理されます。  
   
-##  <a name="a-nameonmessagependinga--colemessagefilteronmessagepending"></a><a name="onmessagepending"></a>COleMessageFilter::OnMessagePending  
+##  <a name="onmessagepending"></a>COleMessageFilter::OnMessagePending  
  OLE 呼び出しが進行中は、メッセージを処理するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -175,7 +187,7 @@ virtual BOOL OnMessagePending(const MSG* pMsg);
   
  呼び出してメッセージ フィルターを登録する必要があります[登録](#register)前に、アクティブになることができます。  
   
-##  <a name="a-nameregistera--colemessagefilterregister"></a><a name="register"></a>COleMessageFilter::Register  
+##  <a name="register"></a>COleMessageFilter::Register  
  OLE システム Dll とメッセージ フィルターを登録します。  
   
 ```  
@@ -190,7 +202,7 @@ BOOL Register();
   
  フレームワークの既定のメッセージ フィルターが自動的に初期化時に登録され、終了時に失効します。  
   
-##  <a name="a-namerevokea--colemessagefilterrevoke"></a><a name="revoke"></a>COleMessageFilter::Revoke  
+##  <a name="revoke"></a>COleMessageFilter::Revoke  
  呼び出しによって実行される前の登録を取り消します[登録](#register)します。  
   
 ```  
@@ -202,7 +214,7 @@ void Revoke();
   
  作成され、フレームワークによって自動的に登録されている、既定のメッセージ フィルターも自動的に失効します。  
   
-##  <a name="a-namesetbusyreplya--colemessagefiltersetbusyreply"></a><a name="setbusyreply"></a>COleMessageFilter::SetBusyReply  
+##  <a name="setbusyreply"></a>COleMessageFilter::SetBusyReply  
  この関数は、アプリケーションの"ビジー状態の応答です。"を設定します。  
   
 ```  
@@ -226,7 +238,7 @@ void SetBusyReply(SERVERCALL nBusyReply);
   
  ビジー状態の応答は、既定では、 **SERVERCALL_RETRYLATER**します。 この応答を受け取った呼び出し元のアプリケーションをできるだけ早く呼び出しを再試行します。  
   
-##  <a name="a-namesetmessagependingdelaya--colemessagefiltersetmessagependingdelay"></a><a name="setmessagependingdelay"></a>COleMessageFilter::SetMessagePendingDelay  
+##  <a name="setmessagependingdelay"></a>COleMessageFilter::SetMessagePendingDelay  
  呼び出し元のアプリケーションがこれ以上の操作を実行する前に呼び出し先のアプリケーションから応答を待つ時間を決定します。  
   
 ```  
@@ -240,7 +252,7 @@ void SetMessagePendingDelay(DWORD nTimeout = 5000);
 ### <a name="remarks"></a>コメント  
  この機能と連携して機能する[ビジー](#setretryreply)します。  
   
-##  <a name="a-namesetretryreplya--colemessagefiltersetretryreply"></a><a name="setretryreply"></a>COleMessageFilter::SetRetryReply  
+##  <a name="setretryreply"></a>COleMessageFilter::SetRetryReply  
  呼び出し先のアプリケーションからがビジー状態の応答を受け取ると、呼び出し元アプリケーションの動作を決定します。  
   
 ```  

@@ -51,8 +51,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: caab4bfb3d2228d037996ececc09faa06e90a3f2
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: 602f4460af0e08e6515fb4559bec2d49bbc56e75
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="setoutputformat"></a>_set_output_format
@@ -91,12 +92,9 @@ unsigned int _set_output_format(
   
  互換性について詳しくは、概要の「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
-  
 ## <a name="example"></a>例  
   
-```  
+```C  
 // crt_set_output_format.c  
 #include <stdio.h>  
   
@@ -146,10 +144,4 @@ int main()
   
 ## <a name="see-also"></a>関連項目  
  [printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)   
- [printf 関数の型フィールド文字](../c-runtime-library/printf-type-field-characters.md)   
  [_get_output_format](../c-runtime-library/get-output-format.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

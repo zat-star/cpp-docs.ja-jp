@@ -10,6 +10,53 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CReBarCtrl
+- AFXCMN/CReBarCtrl
+- AFXCMN/CReBarCtrl::CReBarCtrl
+- AFXCMN/CReBarCtrl::BeginDrag
+- AFXCMN/CReBarCtrl::Create
+- AFXCMN/CReBarCtrl::CreateEx
+- AFXCMN/CReBarCtrl::DeleteBand
+- AFXCMN/CReBarCtrl::DragMove
+- AFXCMN/CReBarCtrl::EndDrag
+- AFXCMN/CReBarCtrl::GetBandBorders
+- AFXCMN/CReBarCtrl::GetBandCount
+- AFXCMN/CReBarCtrl::GetBandInfo
+- AFXCMN/CReBarCtrl::GetBandMargins
+- AFXCMN/CReBarCtrl::GetBarHeight
+- AFXCMN/CReBarCtrl::GetBarInfo
+- AFXCMN/CReBarCtrl::GetBkColor
+- AFXCMN/CReBarCtrl::GetColorScheme
+- AFXCMN/CReBarCtrl::GetDropTarget
+- AFXCMN/CReBarCtrl::GetExtendedStyle
+- AFXCMN/CReBarCtrl::GetImageList
+- AFXCMN/CReBarCtrl::GetPalette
+- AFXCMN/CReBarCtrl::GetRect
+- AFXCMN/CReBarCtrl::GetRowCount
+- AFXCMN/CReBarCtrl::GetRowHeight
+- AFXCMN/CReBarCtrl::GetTextColor
+- AFXCMN/CReBarCtrl::GetToolTips
+- AFXCMN/CReBarCtrl::HitTest
+- AFXCMN/CReBarCtrl::IDToIndex
+- AFXCMN/CReBarCtrl::InsertBand
+- AFXCMN/CReBarCtrl::MaximizeBand
+- AFXCMN/CReBarCtrl::MinimizeBand
+- AFXCMN/CReBarCtrl::MoveBand
+- AFXCMN/CReBarCtrl::PushChevron
+- AFXCMN/CReBarCtrl::RestoreBand
+- AFXCMN/CReBarCtrl::SetBandInfo
+- AFXCMN/CReBarCtrl::SetBandWidth
+- AFXCMN/CReBarCtrl::SetBarInfo
+- AFXCMN/CReBarCtrl::SetBkColor
+- AFXCMN/CReBarCtrl::SetColorScheme
+- AFXCMN/CReBarCtrl::SetExtendedStyle
+- AFXCMN/CReBarCtrl::SetImageList
+- AFXCMN/CReBarCtrl::SetOwner
+- AFXCMN/CReBarCtrl::SetPalette
+- AFXCMN/CReBarCtrl::SetTextColor
+- AFXCMN/CReBarCtrl::SetToolTips
+- AFXCMN/CReBarCtrl::SetWindowTheme
+- AFXCMN/CReBarCtrl::ShowBand
+- AFXCMN/CReBarCtrl::SizeToRect
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -150,7 +197,7 @@ class CReBarCtrl : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxcmn.h  
   
-##  <a name="a-namebegindraga--crebarctrlbegindrag"></a><a name="begindrag"></a>CReBarCtrl::BeginDrag  
+##  <a name="begindrag"></a>CReBarCtrl::BeginDrag  
  Win32 メッセージの動作を実装[RB_BEGINDRAG](http://msdn.microsoft.com/library/windows/desktop/bb774429)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -166,7 +213,7 @@ void BeginDrag(
  `dwPos`  
  A`DWORD`開始マウス座標を表す値。 水平方向の座標は、LOWORD に含まれ、HIWORD に垂直方向の座標が含まれています。 渡した場合`(DWORD)-1`、rebar コントロールが最後に、コントロールのスレッドと呼ばれるマウスの位置を使用して**GetMessage**または**PeekMessage**します。  
   
-##  <a name="a-namecreatea--crebarctrlcreate"></a><a name="create"></a>CReBarCtrl::Create  
+##  <a name="create"></a>CReBarCtrl::Create  
  Rebar コントロールを作成し、それをアタッチ、`CReBarCtrl`オブジェクトです。  
   
 ```  
@@ -205,7 +252,7 @@ virtual BOOL Create(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#3;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_1.cpp)]  
   
-##  <a name="a-namecreateexa--crebarctrlcreateex"></a><a name="createex"></a>CReBarCtrl::CreateEx  
+##  <a name="createex"></a>CReBarCtrl::CreateEx  
  コントロール (子ウィンドウ) を作成し、関連付けます、`CReBarCtrl`オブジェクトです。  
   
 ```  
@@ -239,7 +286,7 @@ virtual BOOL CreateEx(
 ### <a name="remarks"></a>コメント  
  使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
   
-##  <a name="a-namecrebarctrla--crebarctrlcrebarctrl"></a><a name="crebarctrl"></a>CReBarCtrl::CReBarCtrl  
+##  <a name="crebarctrl"></a>CReBarCtrl::CReBarCtrl  
  
           `CReBarCtrl` オブジェクトを作成します。  
   
@@ -250,7 +297,7 @@ CReBarCtrl();
 ### <a name="example"></a>例  
   例を参照してください[CReBarCtrl::Create](#create)します。  
   
-##  <a name="a-namedeletebanda--crebarctrldeleteband"></a><a name="deleteband"></a>CReBarCtrl::DeleteBand  
+##  <a name="deleteband"></a>CReBarCtrl::DeleteBand  
  Win32 メッセージの動作を実装[RB_DELETEBAND](http://msdn.microsoft.com/library/windows/desktop/bb774431)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -267,7 +314,7 @@ BOOL DeleteBand(UINT uBand);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&4;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_2.cpp)]  
   
-##  <a name="a-namedragmovea--crebarctrldragmove"></a><a name="dragmove"></a>CReBarCtrl::DragMove  
+##  <a name="dragmove"></a>CReBarCtrl::DragMove  
  Win32 メッセージの動作を実装[RB_DRAGMOVE](https://msdn.microsoft.com/library/bb774433.aspx)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -278,14 +325,14 @@ void DragMove(DWORD dwPos = (DWORD)-1);
  `dwPos`  
  A`DWORD`新しいマウス座標を表す値。 水平方向の座標は、LOWORD に含まれ、HIWORD に垂直方向の座標が含まれています。 渡した場合`(DWORD)-1`、rebar コントロールが最後に、コントロールのスレッドと呼ばれるマウスの位置を使用して**GetMessage**または**PeekMessage**します。  
   
-##  <a name="a-nameenddraga--crebarctrlenddrag"></a><a name="enddrag"></a>CReBarCtrl::EndDrag  
+##  <a name="enddrag"></a>CReBarCtrl::EndDrag  
  Win32 メッセージの動作を実装[RB_ENDDRAG](http://msdn.microsoft.com/library/windows/desktop/bb774435)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
 void EndDrag();
 ```  
   
-##  <a name="a-namegetbandbordersa--crebarctrlgetbandborders"></a><a name="getbandborders"></a>CReBarCtrl::GetBandBorders  
+##  <a name="getbandborders"></a>CReBarCtrl::GetBandBorders  
  Win32 メッセージの動作を実装[RB_GETBANDBORDERS](http://msdn.microsoft.com/library/windows/desktop/bb774437)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -301,7 +348,7 @@ void GetBandBorders(
  `prc`  
  ポインター、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)バンド境界線を受け取る。 Rebar コントロールがある場合、 **RBS_BANDBORDERS**スタイルでは、この構造体の各メンバーには、境界を構成する、バンドの対応する側のピクセル数が表示されます。 Rebar コントロールがない場合、 **RBS_BANDBORDERS**スタイルをこの構造体の左のメンバーが有効な情報を受け取るだけです。 Rebar コントロールのスタイルについては、次を参照してください。 [Rebar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb774377)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetbandcounta--crebarctrlgetbandcount"></a><a name="getbandcount"></a>CReBarCtrl::GetBandCount  
+##  <a name="getbandcount"></a>CReBarCtrl::GetBandCount  
  Win32 メッセージの動作を実装[RB_GETBANDCOUNT](http://msdn.microsoft.com/library/windows/desktop/bb774439)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -311,7 +358,7 @@ UINT GetBandCount() const;
 ### <a name="return-value"></a>戻り値  
  コントロールに割り当てられているバンドの数。  
   
-##  <a name="a-namegetbandinfoa--crebarctrlgetbandinfo"></a><a name="getbandinfo"></a>CReBarCtrl::GetBandInfo  
+##  <a name="getbandinfo"></a>CReBarCtrl::GetBandInfo  
  Win32 メッセージの動作を実装[RB_GETBANDINFO](http://msdn.microsoft.com/library/windows/desktop/bb774451) 」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -330,7 +377,7 @@ BOOL GetBandInfo(
 ### <a name="return-value"></a>戻り値  
  成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
   
-##  <a name="a-namegetbandmarginsa--crebarctrlgetbandmargins"></a><a name="getbandmargins"></a>CReBarCtrl::GetBandMargins  
+##  <a name="getbandmargins"></a>CReBarCtrl::GetBandMargins  
  バンドのマージンを取得します。  
   
 ```  
@@ -344,7 +391,7 @@ void GetBandMargins(PMARGINS pMargins);
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 [RB_GETBANDMARGINS](http://msdn.microsoft.com/library/windows/desktop/bb774453) 」の説明に従って、メッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetbarheighta--crebarctrlgetbarheight"></a><a name="getbarheight"></a>CReBarCtrl::GetBarHeight  
+##  <a name="getbarheight"></a>CReBarCtrl::GetBarHeight  
  Rebar バーの高さを取得します。  
   
 ```  
@@ -354,7 +401,7 @@ UINT GetBarHeight() const;
 ### <a name="return-value"></a>戻り値  
  コントロールのピクセル単位の高さを表す値です。  
   
-##  <a name="a-namegetbarinfoa--crebarctrlgetbarinfo"></a><a name="getbarinfo"></a>CReBarCtrl::GetBarInfo  
+##  <a name="getbarinfo"></a>CReBarCtrl::GetBarInfo  
  Win32 メッセージの動作を実装[RB_GETBARINFO](http://msdn.microsoft.com/library/windows/desktop/bb774457)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -368,7 +415,7 @@ BOOL GetBarInfo(REBARINFO* prbi) const;
 ### <a name="return-value"></a>戻り値  
  成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
   
-##  <a name="a-namegetbkcolora--crebarctrlgetbkcolor"></a><a name="getbkcolor"></a>CReBarCtrl::GetBkColor  
+##  <a name="getbkcolor"></a>CReBarCtrl::GetBkColor  
  Win32 メッセージの動作を実装[RB_GETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774459)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -378,7 +425,7 @@ COLORREF GetBkColor() const;
 ### <a name="return-value"></a>戻り値  
  A **COLORREF**を現在の既定の背景色を表す値。  
   
-##  <a name="a-namegetcolorschemea--crebarctrlgetcolorscheme"></a><a name="getcolorscheme"></a>CReBarCtrl::GetColorScheme  
+##  <a name="getcolorscheme"></a>CReBarCtrl::GetColorScheme  
  取得、 [COLORSCHEME](http://msdn.microsoft.com/library/windows/desktop/bb775502) rebar コントロールの構造です。  
   
 ```  
@@ -395,7 +442,7 @@ BOOL GetColorScheme(COLORSCHEME* lpcs);
 ### <a name="remarks"></a>コメント  
  **COLORSCHEME**構造体には、ボタンの強調表示色とボタンの影の色が含まれています。  
   
-##  <a name="a-namegetdroptargeta--crebarctrlgetdroptarget"></a><a name="getdroptarget"></a>CReBarCtrl::GetDropTarget  
+##  <a name="getdroptarget"></a>CReBarCtrl::GetDropTarget  
  Win32 メッセージの動作を実装[RB_GETDROPTARGET](http://msdn.microsoft.com/library/windows/desktop/bb774463)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -405,7 +452,7 @@ IDropTarget* GetDropTarget() const;
 ### <a name="return-value"></a>戻り値  
  ポインター、 [IDropTarget](http://msdn.microsoft.com/library/windows/desktop/ms679679)インターフェイスです。  
   
-##  <a name="a-namegetextendedstylea--crebarctrlgetextendedstyle"></a><a name="getextendedstyle"></a>CReBarCtrl::GetExtendedStyle  
+##  <a name="getextendedstyle"></a>CReBarCtrl::GetExtendedStyle  
  現在の rebar コントロールの拡張スタイルを取得します。  
   
 ```  
@@ -418,7 +465,7 @@ DWORD GetExtendedStyle() const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [RB_GETEXTENDEDSTYLE](http://msdn.microsoft.com/library/windows/desktop/bb774433)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetimagelista--crebarctrlgetimagelist"></a><a name="getimagelist"></a>CReBarCtrl::GetImageList  
+##  <a name="getimagelist"></a>CReBarCtrl::GetImageList  
  取得、 `CImageList` rebar コントロールに関連付けられているオブジェクト。  
   
 ```  
@@ -431,7 +478,7 @@ CImageList* GetImageList() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数に格納されているサイズとマスクの情報を使用して、 [REBARINFO](http://msdn.microsoft.com/library/windows/desktop/bb774395)構造、」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetpalettea--crebarctrlgetpalette"></a><a name="getpalette"></a>CReBarCtrl::GetPalette  
+##  <a name="getpalette"></a>CReBarCtrl::GetPalette  
  Rebar コントロールの現在のパレットを取得します。  
   
 ```  
@@ -447,7 +494,7 @@ CPalette* GetPalette() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#5;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_3.cpp)]  
   
-##  <a name="a-namegetrecta--crebarctrlgetrect"></a><a name="getrect"></a>CReBarCtrl::GetRect  
+##  <a name="getrect"></a>CReBarCtrl::GetRect  
  Win32 メッセージの動作を実装[RB_GETRECT](http://msdn.microsoft.com/library/windows/desktop/bb774469)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -469,7 +516,7 @@ BOOL GetRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&6;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_4.cpp)]  
   
-##  <a name="a-namegetrowcounta--crebarctrlgetrowcount"></a><a name="getrowcount"></a>CReBarCtrl::GetRowCount  
+##  <a name="getrowcount"></a>CReBarCtrl::GetRowCount  
  Win32 メッセージの動作を実装[RB_GETROWCOUNT](http://msdn.microsoft.com/library/windows/desktop/bb774471)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -482,7 +529,7 @@ UINT GetRowCount() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#7;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_5.cpp)]  
   
-##  <a name="a-namegetrowheighta--crebarctrlgetrowheight"></a><a name="getrowheight"></a>CReBarCtrl::GetRowHeight  
+##  <a name="getrowheight"></a>CReBarCtrl::GetRowHeight  
  Win32 メッセージの動作を実装[RB_GETROWHEIGHT](http://msdn.microsoft.com/library/windows/desktop/bb774473)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -499,7 +546,7 @@ UINT GetRowHeight(UINT uRow) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#8;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_6.cpp)]  
   
-##  <a name="a-namegettextcolora--crebarctrlgettextcolor"></a><a name="gettextcolor"></a>CReBarCtrl::GetTextColor  
+##  <a name="gettextcolor"></a>CReBarCtrl::GetTextColor  
  Win32 メッセージの動作を実装[RB_GETTEXTCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774475)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -509,7 +556,7 @@ COLORREF GetTextColor() const;
 ### <a name="return-value"></a>戻り値  
  A **COLORREF**を現在の既定のテキスト色を表す値。  
   
-##  <a name="a-namegettooltipsa--crebarctrlgettooltips"></a><a name="gettooltips"></a>CReBarCtrl::GetToolTips  
+##  <a name="gettooltips"></a>CReBarCtrl::GetToolTips  
  Win32 メッセージの動作を実装[RB_GETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb774477)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -522,7 +569,7 @@ CToolTipCtrl* GetToolTips() const;
 ### <a name="remarks"></a>コメント  
  注意 MFC 実装の`GetToolTips`へのポインターを返す、`CToolTipCtrl`ではなく、`HWND`です。  
   
-##  <a name="a-namehittesta--crebarctrlhittest"></a><a name="hittest"></a>CReBarCtrl::HitTest  
+##  <a name="hittest"></a>CReBarCtrl::HitTest  
  Win32 メッセージの動作を実装[RB_HITTEST](http://msdn.microsoft.com/library/windows/desktop/bb774494)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -536,7 +583,7 @@ int HitTest(RBHITTESTINFO* prbht);
 ### <a name="return-value"></a>戻り値  
  指定したポイントまたは時点 rebar バンドがなかった場合は-1 にバンドの&0; から始まるインデックス。  
   
-##  <a name="a-nameidtoindexa--crebarctrlidtoindex"></a><a name="idtoindex"></a>CReBarCtrl::IDToIndex  
+##  <a name="idtoindex"></a>CReBarCtrl::IDToIndex  
  Win32 メッセージの動作を実装[RB_IDTOINDEX](http://msdn.microsoft.com/library/windows/desktop/bb774496)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -550,7 +597,7 @@ int IDToIndex(UINT uBandID) const;
 ### <a name="return-value"></a>戻り値  
  成功した場合、帯域外の&0; から始まるインデックス、または-1 のそれ以外の場合。 重複している帯域外インデックスが存在する場合は、1 つ目が返されます。  
   
-##  <a name="a-nameinsertbanda--crebarctrlinsertband"></a><a name="insertband"></a>CReBarCtrl::InsertBand  
+##  <a name="insertband"></a>CReBarCtrl::InsertBand  
  Win32 メッセージの動作を実装[RB_INSERTBAND](http://msdn.microsoft.com/library/windows/desktop/bb774498)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -572,7 +619,7 @@ BOOL InsertBand(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#9;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_7.cpp)]  
   
-##  <a name="a-namemaximizebanda--crebarctrlmaximizeband"></a><a name="maximizeband"></a>CReBarCtrl::MaximizeBand  
+##  <a name="maximizeband"></a>CReBarCtrl::MaximizeBand  
  最大サイズに rebar コントロールのバンドのサイズを変更します。  
   
 ```  
@@ -589,7 +636,7 @@ void MaximizeBand(UINT uBand);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#10;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_8.cpp)]  
   
-##  <a name="a-nameminimizebanda--crebarctrlminimizeband"></a><a name="minimizeband"></a>CReBarCtrl::MinimizeBand  
+##  <a name="minimizeband"></a>CReBarCtrl::MinimizeBand  
  最小サイズに rebar コントロールのバンドのサイズを変更します。  
   
 ```  
@@ -606,7 +653,7 @@ void MinimizeBand(UINT uBand);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#11;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_9.cpp)]  
   
-##  <a name="a-namemovebanda--crebarctrlmoveband"></a><a name="moveband"></a>CReBarCtrl::MoveBand  
+##  <a name="moveband"></a>CReBarCtrl::MoveBand  
  Win32 メッセージの動作を実装[RB_MOVEBAND](http://msdn.microsoft.com/library/windows/desktop/bb774504)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -625,7 +672,7 @@ BOOL MoveBand(
 ### <a name="return-value"></a>戻り値  
  成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
   
-##  <a name="a-namepushchevrona--crebarctrlpushchevron"></a><a name="pushchevron"></a>CReBarCtrl::PushChevron  
+##  <a name="pushchevron"></a>CReBarCtrl::PushChevron  
  Win32 メッセージの動作を実装[RB_PUSHCHEVRON](http://msdn.microsoft.com/library/windows/desktop/bb774506)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -641,7 +688,7 @@ void PushChevron(
  `lAppValue`  
  アプリケーションでは、32 ビット値を定義します。 参照してください`lAppValue`で[RB_PUSHCHEVRON](http://msdn.microsoft.com/library/windows/desktop/bb774506)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namerestorebanda--crebarctrlrestoreband"></a><a name="restoreband"></a>CReBarCtrl::RestoreBand  
+##  <a name="restoreband"></a>CReBarCtrl::RestoreBand  
  適切なサイズに rebar コントロールのバンドのサイズを変更します。  
   
 ```  
@@ -658,7 +705,7 @@ void RestoreBand(UINT uBand);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#12;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_10.cpp)]  
   
-##  <a name="a-namesetbandinfoa--crebarctrlsetbandinfo"></a><a name="setbandinfo"></a>CReBarCtrl::SetBandInfo  
+##  <a name="setbandinfo"></a>CReBarCtrl::SetBandInfo  
  Win32 メッセージの動作を実装[RB_SETBANDINFO](http://msdn.microsoft.com/library/windows/desktop/bb774508)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -680,7 +727,7 @@ BOOL SetBandInfo(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#13;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_11.cpp)]  
   
-##  <a name="a-namesetbandwidtha--crebarctrlsetbandwidth"></a><a name="setbandwidth"></a>CReBarCtrl::SetBandWidth  
+##  <a name="setbandwidth"></a>CReBarCtrl::SetBandWidth  
  現在の rebar コントロールでは、指定したドッキング バンドの幅を設定します。  
   
 ```  
@@ -712,7 +759,7 @@ BOOL SetBandWidth(
   
  [!code-cpp[NVC_MFC_CReBarCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/crebarctrl-class_13.cpp)]  
   
-##  <a name="a-namesetbarinfoa--crebarctrlsetbarinfo"></a><a name="setbarinfo"></a>CReBarCtrl::SetBarInfo  
+##  <a name="setbarinfo"></a>CReBarCtrl::SetBarInfo  
  Win32 メッセージの動作を実装[RB_SETBARINFO](http://msdn.microsoft.com/library/windows/desktop/bb774513)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -729,7 +776,7 @@ BOOL SetBarInfo(REBARINFO* prbi);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl&#14;](../../mfc/reference/codesnippet/cpp/crebarctrl-class_14.cpp)]  
   
-##  <a name="a-namesetbkcolora--crebarctrlsetbkcolor"></a><a name="setbkcolor"></a>CReBarCtrl::SetBkColor  
+##  <a name="setbkcolor"></a>CReBarCtrl::SetBkColor  
  Win32 メッセージの動作を実装[RB_SETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774515)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -746,7 +793,7 @@ COLORREF SetBkColor(COLORREF clr);
 ### <a name="remarks"></a>コメント  
  背景色を設定して、既定値を設定する方法の詳細については、このトピックを参照してください。  
   
-##  <a name="a-namesetcolorschemea--crebarctrlsetcolorscheme"></a><a name="setcolorscheme"></a>CReBarCtrl::SetColorScheme  
+##  <a name="setcolorscheme"></a>CReBarCtrl::SetColorScheme  
  Rebar コントロールのボタンの画面の配色を設定します。  
   
 ```  
@@ -760,7 +807,7 @@ void SetColorScheme(const COLORSCHEME* lpcs);
 ### <a name="remarks"></a>コメント  
  **COLORSCHEME**構造体には、ボタンの強調表示色とボタンの影の色の両方が含まれています。  
   
-##  <a name="a-namesetextendedstylea--crebarctrlsetextendedstyle"></a><a name="setextendedstyle"></a>CReBarCtrl::SetExtendedStyle  
+##  <a name="setextendedstyle"></a>CReBarCtrl::SetExtendedStyle  
  現在の rebar コントロールの拡張スタイルを設定します。  
   
 ```  
@@ -782,7 +829,7 @@ DWORD SetExtendedStyle(
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [RB_SETEXTENDEDSTYLE](http://msdn.microsoft.com/library/windows/desktop/bb774519)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetimagelista--crebarctrlsetimagelist"></a><a name="setimagelist"></a>CReBarCtrl::SetImageList  
+##  <a name="setimagelist"></a>CReBarCtrl::SetImageList  
  Rebar コントロールには、イメージ リストを割り当てます。  
   
 ```  
@@ -796,7 +843,7 @@ BOOL SetImageList(CImageList* pImageList);
 ### <a name="return-value"></a>戻り値  
  成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
   
-##  <a name="a-namesetownera--crebarctrlsetowner"></a><a name="setowner"></a>CReBarCtrl::SetOwner  
+##  <a name="setowner"></a>CReBarCtrl::SetOwner  
  Win32 メッセージの動作を実装[RB_SETPARENT](http://msdn.microsoft.com/library/windows/desktop/bb774522)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -816,7 +863,7 @@ CWnd* SetOwner(CWnd* pWnd);
 > [!NOTE]
 >  このメンバー関数には、コントロールが作成されたときに設定した実際の親は変わりません。はなく、指定したウィンドウに通知メッセージを送信します。  
   
-##  <a name="a-namesetpalettea--crebarctrlsetpalette"></a><a name="setpalette"></a>CReBarCtrl::SetPalette  
+##  <a name="setpalette"></a>CReBarCtrl::SetPalette  
  Win32 メッセージの動作を実装[RB_SETPALETTE](http://msdn.microsoft.com/library/windows/desktop/bb774520)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -833,7 +880,7 @@ CPalette* SetPalette(HPALETTE hPal);
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用している、 `CPalette` 、戻り値としてオブジェクトではなく、`HPALETTE`です。  
   
-##  <a name="a-namesettextcolora--crebarctrlsettextcolor"></a><a name="settextcolor"></a>CReBarCtrl::SetTextColor  
+##  <a name="settextcolor"></a>CReBarCtrl::SetTextColor  
  Win32 メッセージの動作を実装[RB_SETTEXTCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774524)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -850,7 +897,7 @@ COLORREF SetTextColor(COLORREF clr);
 ### <a name="remarks"></a>コメント  
  Rebar コントロールでテキストの色の柔軟性をサポートするために提供されます。  
   
-##  <a name="a-namesettooltipsa--crebarctrlsettooltips"></a><a name="settooltips"></a>CReBarCtrl::SetToolTips  
+##  <a name="settooltips"></a>CReBarCtrl::SetToolTips  
  Rebar コントロールでは、ツール ヒント コントロールを関連付けます。  
   
 ```  
@@ -864,7 +911,7 @@ void SetToolTips(CToolTipCtrl* pToolTip);
 ### <a name="remarks"></a>コメント  
  破棄する必要があります、`CToolTipCtrl`オブジェクトの操作が終了します。  
   
-##  <a name="a-namesetwindowthemea--crebarctrlsetwindowtheme"></a><a name="setwindowtheme"></a>CReBarCtrl::SetWindowTheme  
+##  <a name="setwindowtheme"></a>CReBarCtrl::SetWindowTheme  
  Rebar コントロールの表示スタイルを設定します。  
   
 ```  
@@ -881,7 +928,7 @@ HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 [RB_SETWINDOWTHEME](http://msdn.microsoft.com/library/windows/desktop/bb774530) 」の説明に従って、メッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameshowbanda--crebarctrlshowband"></a><a name="showband"></a>CReBarCtrl::ShowBand  
+##  <a name="showband"></a>CReBarCtrl::ShowBand  
  Win32 メッセージの動作を実装[RB_SHOWBAND](http://msdn.microsoft.com/library/windows/desktop/bb774532)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  
@@ -900,7 +947,7 @@ BOOL ShowBand(
 ### <a name="return-value"></a>戻り値  
  成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
   
-##  <a name="a-namesizetorecta--crebarctrlsizetorect"></a><a name="sizetorect"></a>CReBarCtrl::SizeToRect  
+##  <a name="sizetorect"></a>CReBarCtrl::SizeToRect  
  Win32 メッセージの動作を実装[RB_SIZETORECT](http://msdn.microsoft.com/library/windows/desktop/bb774534)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ```  

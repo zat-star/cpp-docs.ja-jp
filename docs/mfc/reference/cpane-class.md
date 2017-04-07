@@ -10,6 +10,71 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CPane
+- AFXPANE/CPane
+- AFXPANE/CPane::AdjustSizeImmediate
+- AFXPANE/CPane::AllocElements
+- AFXPANE/CPane::AllowShowOnPaneMenu
+- AFXPANE/CPane::CalcAvailableSize
+- AFXPANE/CPane::CalcInsideRect
+- AFXPANE/CPane::CalcRecentDockedRect
+- AFXPANE/CPane::CalcSize
+- AFXPANE/CPane::CanBeDocked
+- AFXPANE/CPane::CanBeTabbedDocument
+- AFXPANE/CPane::ConvertToTabbedDocument
+- AFXPANE/CPane::CopyState
+- AFXPANE/CPane::Create
+- AFXPANE/CPane::CreateDefaultMiniframe
+- AFXPANE/CPane::CreateEx
+- AFXPANE/CPane::DockByMouse
+- AFXPANE/CPane::DockPane
+- AFXPANE/CPane::DockPaneStandard
+- AFXPANE/CPane::DockToFrameWindow
+- AFXPANE/CPane::DoesAllowSiblingBars
+- AFXPANE/CPane::FloatPane
+- AFXPANE/CPane::GetAvailableExpandSize
+- AFXPANE/CPane::GetAvailableStretchSize
+- AFXPANE/CPane::GetBorders
+- AFXPANE/CPane::GetClientHotSpot
+- AFXPANE/CPane::GetDockSiteRow
+- AFXPANE/CPane::GetExclusiveRowMode
+- AFXPANE/CPane::GetHotSpot
+- AFXPANE/CPane::GetMinSize
+- AFXPANE/CPane::GetPaneName
+- AFXPANE/CPane::GetVirtualRect
+- AFXPANE/CPane::IsChangeState
+- AFXPANE/CPane::IsDragMode
+- AFXPANE/CPane::IsInFloatingMultiPaneFrameWnd
+- AFXPANE/CPane::IsLeftOf
+- AFXPANE/CPane::IsResizable
+- AFXPANE/CPane::IsTabbed
+- AFXPANE/CPane::LoadState
+- AFXPANE/CPane::MoveByAlignment
+- AFXPANE/CPane::MovePane
+- AFXPANE/CPane::OnAfterChangeParent
+- AFXPANE/CPane::OnBeforeChangeParent
+- AFXPANE/CPane::OnPressCloseButton
+- AFXPANE/CPane::OnShowControlBarMenu
+- AFXPANE/CPane::OnShowControlBarMenu
+- AFXPANE/CPane::RecalcLayout
+- AFXPANE/CPane::SaveState
+- AFXPANE/CPane::SetActiveInGroup
+- AFXPANE/CPane::SetBorders
+- AFXPANE/CPane::SetClientHotSpot
+- AFXPANE/CPane::SetDockState
+- AFXPANE/CPane::SetExclusiveRowMode
+- AFXPANE/CPane::SetMiniFrameRTC
+- AFXPANE/CPane::SetMinSize
+- AFXPANE/CPane::SetVirtualRect
+- AFXPANE/CPane::StretchPaneDeferWndPos
+- AFXPANE/CPane::ToggleAutoHide
+- AFXPANE/CPane::UndockPane
+- AFXPANE/CPane::UpdateVirtualRect
+- AFXPANE/CPane::OnAfterDock
+- AFXPANE/CPane::OnAfterFloat
+- AFXPANE/CPane::OnBeforeDock
+- AFXPANE/CPane::OnBeforeFloat
+- AFXPANE/CPane::m_bHandleMinSize
+- AFXPANE/CPane::m_recentDockInfo
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -159,7 +224,7 @@ class CPane : public CBasePane
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxPane.h  
   
-##  <a name="a-nameadjustsizeimmediatea--cpaneadjustsizeimmediate"></a><a name="adjustsizeimmediate"></a>CPane::AdjustSizeImmediate  
+##  <a name="adjustsizeimmediate"></a>CPane::AdjustSizeImmediate  
  すぐに、ウィンドウのレイアウトを再計算します。  
   
 ```  
@@ -173,7 +238,7 @@ virtual void AdjustSizeImmediate(BOOL bRecalcLayout = TRUE);
 ### <a name="remarks"></a>コメント  
  ウィンドウのレイアウトを動的に変更するときに、このメソッドを呼び出します。 たとえば、ツール バー ボタンを表示または非表示をするときに、このメソッドを呼び出す可能性があります。  
   
-##  <a name="a-nameallocelementsa--cpaneallocelements"></a><a name="allocelements"></a>CPane::AllocElements  
+##  <a name="allocelements"></a>CPane::AllocElements  
  内部使用のためには、ストレージを割り当てます。  
   
 ```  
@@ -192,7 +257,7 @@ BOOL AllocElements(
 ### <a name="return-value"></a>戻り値  
  `FALSE`メモリの割り当てが失敗するとします。それ以外の場合、`TRUE`です。  
   
-##  <a name="a-nameallowshowonpanemenua--cpaneallowshowonpanemenu"></a><a name="allowshowonpanemenu"></a>CPane::AllowShowOnPaneMenu  
+##  <a name="allowshowonpanemenu"></a>CPane::AllowShowOnPaneMenu  
  アプリケーションのウィンドウのランタイムによって生成される一覧で、ウィンドウが表示されているかどうかを指定します。  
   
 ```  
@@ -205,7 +270,7 @@ virtual BOOL AllowShowOnPaneMenu() const;
 ### <a name="remarks"></a>コメント  
  AppWizard で生成されたアプリケーションには、それに含まれるウィンドウを一覧表示するメニュー オプションが含まれています。 このメソッドは、一覧で、ウィンドウが表示されているかどうかを判断します。  
   
-##  <a name="a-namecalcavailablesizea--cpanecalcavailablesize"></a><a name="calcavailablesize"></a>CPane::CalcAvailableSize  
+##  <a name="calcavailablesize"></a>CPane::CalcAvailableSize  
  指定した四角形と現在のウィンドウの四角形のサイズの差を計算します。  
   
 ```  
@@ -219,7 +284,7 @@ virtual CSize CalcAvailableSize(CRect rectRequired);
 ### <a name="return-value"></a>戻り値  
  幅と高さの間の違い`rectRequired`と現在のウィンドウの四角形。  
   
-##  <a name="a-namecalcinsiderecta--cpanecalcinsiderect"></a><a name="calcinsiderect"></a>CPane::CalcInsideRect  
+##  <a name="calcinsiderect"></a>CPane::CalcInsideRect  
  内部の計算の四角形の枠線とグリッパーを含むペインです。  
   
 ```  
@@ -238,7 +303,7 @@ void CalcInsideRect(
 ### <a name="remarks"></a>コメント  
  ウィンドウのレイアウトを再計算する必要があるときに、このメソッドはフレームワークによって呼び出されます。 `rect`サイズとウィンドウのクライアント領域のオフセットでパラメーターが渡されます。 これには、境界線とグリッパーが含まれます。  
   
-##  <a name="a-namecalcrecentdockedrecta--cpanecalcrecentdockedrect"></a><a name="calcrecentdockedrect"></a>CPane::CalcRecentDockedRect  
+##  <a name="calcrecentdockedrect"></a>CPane::CalcRecentDockedRect  
  ドッキングされた最近の四角形を計算します。  
   
 ```  
@@ -248,7 +313,7 @@ void CalcRecentDockedRect();
 ### <a name="remarks"></a>コメント  
  このメソッドは、更新[CPane::m_recentDockInfo](#m_recentdockinfo)します。  
   
-##  <a name="a-namecalcsizea--cpanecalcsize"></a><a name="calcsize"></a>CPane::CalcSize  
+##  <a name="calcsize"></a>CPane::CalcSize  
  ウィンドウのサイズを計算します。  
   
 ```  
@@ -265,7 +330,7 @@ virtual CSize CalcSize(BOOL bVertDock);
 ### <a name="remarks"></a>コメント  
  派生クラスでは、このメソッドをオーバーライドする必要があります。  
   
-##  <a name="a-namecanbedockeda--cpanecanbedocked"></a><a name="canbedocked"></a>CPane::CanBeDocked  
+##  <a name="canbedocked"></a>CPane::CanBeDocked  
  指定された基本ペインで、ペインをドッキングできるかどうかを判断します。  
   
 ```  
@@ -284,7 +349,7 @@ virtual BOOL CanBeDocked(CBasePane* pDockBar) const;
   
  呼び出して、フレーム ウィンドウのさまざまな側面にドッキングを有効にした[CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking)します。  
   
-##  <a name="a-namecanbetabbeddocumenta--cpanecanbetabbeddocument"></a><a name="canbetabbeddocument"></a>CPane::CanBeTabbedDocument  
+##  <a name="canbetabbeddocument"></a>CPane::CanBeTabbedDocument  
  ペインをタブ付きドキュメントに変換できるかどうかを判断します。  
   
 ```  
@@ -297,7 +362,7 @@ virtual BOOL CanBeTabbedDocument() const;
 ### <a name="remarks"></a>コメント  
  派生クラスでは、このメソッドをオーバーライドし、返す`FALSE`ウィンドウはタブ付きドキュメントに変換されないようにする場合。 タブ付きドキュメントは、ウィンドウの位置をメニューには表示されません。  
   
-##  <a name="a-nameconverttotabbeddocumenta--cpaneconverttotabbeddocument"></a><a name="converttotabbeddocument"></a>CPane::ConvertToTabbedDocument  
+##  <a name="converttotabbeddocument"></a>CPane::ConvertToTabbedDocument  
  ドッキング可能ペインをタブ付きドキュメントに変換します。  
   
 ```  
@@ -311,7 +376,7 @@ virtual void ConvertToTabbedDocument(BOOL bActiveTabOnly = TRUE);
 ### <a name="remarks"></a>コメント  
  ドッキング可能ペインだけは、タブ付きドキュメントに変換できます。 詳細については、次を参照してください。 [CDockablePane::ConvertToTabbedDocument](../../mfc/reference/cdockablepane-class.md#converttotabbeddocument)します。  
   
-##  <a name="a-namecopystatea--cpanecopystate"></a><a name="copystate"></a>CPane::CopyState  
+##  <a name="copystate"></a>CPane::CopyState  
  ペインの状態をコピーします。  
   
 ```  
@@ -325,7 +390,7 @@ virtual void CopyState(CPane* pOrgBar);
 ### <a name="remarks"></a>コメント  
  このメソッドの状態をコピーする`pOrgBar`現在のウィンドウにします。  
   
-##  <a name="a-namecreatea--cpanecreate"></a><a name="create"></a>CPane::Create  
+##  <a name="create"></a>CPane::Create  
  コントロール バーを作成し、それをアタッチ、 [CPane](../../mfc/reference/cpane-class.md)オブジェクトです。  
   
 ```  
@@ -369,7 +434,7 @@ virtual BOOL Create(
   
  明示的に初期化されない場合[CPane::m_recentDockInfo](#m_recentdockinfo)を呼び出す前に`Create`、パラメーター`rect`浮動小数点型、または、ウィンドウをドッキングするときに四角形として使用されます。  
   
-##  <a name="a-namecreatedefaultminiframea--cpanecreatedefaultminiframe"></a><a name="createdefaultminiframe"></a>CPane::CreateDefaultMiniframe  
+##  <a name="createdefaultminiframe"></a>CPane::CreateDefaultMiniframe  
  浮動ペインのミニフレーム ウィンドウを作成します。  
   
 ```  
@@ -388,7 +453,7 @@ virtual CPaneFrameWnd* CreateDefaultMiniframe(CRect rectInitial);
   
  ミニフレーム ウィンドウのランタイム クラス情報は、`CPane::m_pMiniFrameRTC`メンバーです。 派生クラスを使用すると、カスタマイズされたミニフレーム ウィンドウを作成するのに場合は、このメンバーを設定します。  
   
-##  <a name="a-namecreateexa--cpanecreateex"></a><a name="createex"></a>CPane::CreateEx  
+##  <a name="createex"></a>CPane::CreateEx  
  コントロール バーを作成し、それをアタッチ、 [CPane](../../mfc/reference/cpane-class.md)オブジェクトです。  
   
 ```  
@@ -436,7 +501,7 @@ virtual BOOL CreateEx(
   
  明示的に初期化されない場合[CPane::m_recentDockInfo](#m_recentdockinfo)を呼び出す前に`CreateEx`、パラメーター`rect`浮動小数点型、または、ウィンドウをドッキングするときに四角形として使用されます。  
   
-##  <a name="a-namedockbymousea--cpanedockbymouse"></a><a name="dockbymouse"></a>CPane::DockByMouse  
+##  <a name="dockbymouse"></a>CPane::DockByMouse  
  マウスを使用して、ウィンドウをドッキングします。  
   
 ```  
@@ -450,7 +515,7 @@ virtual BOOL DockByMouse(CBasePane* pDockBar);
 ### <a name="return-value"></a>戻り値  
  `TRUE`ウィンドウが正常にドッキングされている場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-namedockpanea--cpanedockpane"></a><a name="dockpane"></a>CPane::DockPane  
+##  <a name="dockpane"></a>CPane::DockPane  
  基本ペインをフローティング ウィンドウをドッキングします。  
   
 ```  
@@ -485,7 +550,7 @@ virtual BOOL DockPane(
 ### <a name="remarks"></a>コメント  
  このメソッドで指定されている基本ペインにウィンドウをドッキングする、`pDockBar`パラメーター。 呼び出してドッキングを可能にする必要があります最初[CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking)します。  
   
-##  <a name="a-namedockpanestandarda--cpanedockpanestandard"></a><a name="dockpanestandard"></a>CPane::DockPaneStandard  
+##  <a name="dockpanestandard"></a>CPane::DockPaneStandard  
  アウトライン (標準) のドッキングを使用して、ウィンドウをドッキングします。  
   
 ```  
@@ -502,7 +567,7 @@ virtual CPane* DockPaneStandard(BOOL& bWasDocked);
 ### <a name="remarks"></a>コメント  
  このメソッドから派生したペインに対してのみ使用、 [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)します。 詳細については、次を参照してください。 [CDockablePane::DockPaneStandard](../../mfc/reference/cdockablepane-class.md#dockpanestandard)します。  
   
-##  <a name="a-namedocktoframewindowa--cpanedocktoframewindow"></a><a name="docktoframewindow"></a>CPane::DockToFrameWindow  
+##  <a name="docktoframewindow"></a>CPane::DockToFrameWindow  
  フレームにドッキング可能ペインをドッキングします。  
   
 ```  
@@ -539,7 +604,7 @@ virtual BOOL DockToFrameWindow(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namedoesallowsiblingbarsa--cpanedoesallowsiblingbars"></a><a name="doesallowsiblingbars"></a>CPane::DoesAllowSiblingBars  
+##  <a name="doesallowsiblingbars"></a>CPane::DoesAllowSiblingBars  
  現在のウィンドウがドッキングされている同じ行の別のペインをドッキングするかどうかを示します。  
   
 ```  
@@ -554,7 +619,7 @@ virtual BOOL DoesAllowSiblingBars() const;
   
  既定では、ツールバーが排他行モードを無効にあり、メニュー バーが排他行モードを有効にします。  
   
-##  <a name="a-namefloatpanea--cpanefloatpane"></a><a name="floatpane"></a>CPane::FloatPane  
+##  <a name="floatpane"></a>CPane::FloatPane  
  ペインをフローティング状態です。  
   
 ```  
@@ -580,7 +645,7 @@ virtual BOOL FloatPane(
 ### <a name="remarks"></a>コメント  
  指定された位置にあるペインをフローティングするには、このメソッドを呼び出して、`rectFloat`パラメーター。 このメソッドは、ウィンドウの親ミニフレーム ウィンドウを自動的に作成されます。  
   
-##  <a name="a-namegetavailableexpandsizea--cpanegetavailableexpandsize"></a><a name="getavailableexpandsize"></a>CPane::GetAvailableExpandSize  
+##  <a name="getavailableexpandsize"></a>CPane::GetAvailableExpandSize  
  (ピクセル単位) のウィンドウを拡張できる、金額を返します。  
   
 ```  
@@ -592,7 +657,7 @@ virtual int GetAvailableExpandSize() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetavailablestretchsizea--cpanegetavailablestretchsize"></a><a name="getavailablestretchsize"></a>CPane::GetAvailableStretchSize  
+##  <a name="getavailablestretchsize"></a>CPane::GetAvailableStretchSize  
  ウィンドウが縮小可能 (ピクセル単位) には、金額を返します。  
   
 ```  
@@ -605,7 +670,7 @@ virtual int GetAvailableStretchSize() const;
 ### <a name="remarks"></a>コメント  
  利用可能な拡張のサイズが最小のウィンドウのサイズを差し引いて計算されます ( [CPane::GetMinSize](#getminsize)) 現在のサイズから ( [CWnd::GetWindowRect](../../mfc/reference/cwnd-class.md#getwindowrect))。  
   
-##  <a name="a-namegetbordersa--cpanegetborders"></a><a name="getborders"></a>CPane::GetBorders  
+##  <a name="getborders"></a>CPane::GetBorders  
  ウィンドウの境界線の幅を返します。  
   
 ```  
@@ -618,7 +683,7 @@ CRect GetBorders() const;
 ### <a name="remarks"></a>コメント  
  境界線のサイズを設定するには、呼び出す[CPane::SetBorders](#setborders)します。  
   
-##  <a name="a-namegetclienthotspota--cpanegetclienthotspot"></a><a name="getclienthotspot"></a>CPane::GetClientHotSpot  
+##  <a name="getclienthotspot"></a>CPane::GetClientHotSpot  
  返します。、*ホット スポット*ペインのです。  
   
 ```  
@@ -630,7 +695,7 @@ CPoint GetClientHotSpot() const;
 ### <a name="remarks"></a>コメント  
  *ホット スポット*[ウィンドウ] を選択し、ウィンドウの移動を保持するポイントです。 ドッキング位置から、ウィンドウを移動すると、滑らかなアニメーションのホット スポットが使用します。  
   
-##  <a name="a-namegetdocksiterowa--cpanegetdocksiterow"></a><a name="getdocksiterow"></a>CPane::GetDockSiteRow  
+##  <a name="getdocksiterow"></a>CPane::GetDockSiteRow  
  ドッキング ステーションの行を返します ( [CDockingPanesRow クラス](../../mfc/reference/cdockingpanesrow-class.md)) で、ウィンドウがドッキングされています。  
   
 ```  
@@ -640,7 +705,7 @@ CDockingPanesRow* GetDockSiteRow() const;
 ### <a name="return-value"></a>戻り値  
  A `CDockingPanesRow`* のウィンドウがドッキングされているドッキング行を指すまたは`NULL`のウィンドウがドッキングされていない場合。  
   
-##  <a name="a-namegetexclusiverowmodea--cpanegetexclusiverowmode"></a><a name="getexclusiverowmode"></a>CPane::GetExclusiveRowMode  
+##  <a name="getexclusiverowmode"></a>CPane::GetExclusiveRowMode  
  かどうか、ウィンドウが排他行モードを決定します。  
   
 ```  
@@ -653,7 +718,7 @@ virtual BOOL GetExclusiveRowMode() const;
 ### <a name="remarks"></a>コメント  
  排他行モードの詳細については、次を参照してください。 [CPane::SetExclusiveRowMode](#setexclusiverowmode)します。  
   
-##  <a name="a-namegethotspota--cpanegethotspot"></a><a name="gethotspot"></a>CPane::GetHotSpot  
+##  <a name="gethotspot"></a>CPane::GetHotSpot  
  根本的に格納されているホット スポットを返す`CMFCDragFrameImpl`オブジェクトです。  
   
 ```  
@@ -665,7 +730,7 @@ CPoint GetHotSpot() const;
 ### <a name="remarks"></a>コメント  
  `CPane`クラスが含まれています、`CMFCDragFrameImpl`オブジェクト、`m_dragFrameImpl`つまり、標準ドッキング モードで、ウィンドウを動かしたときに表示される四角形の描画を担当します。 ホット スポットを使用すると、ユーザーが、ウィンドウを移動すると、現在のマウスの位置を基準とした、四角形を描画します。  
   
-##  <a name="a-namegetminsizea--cpanegetminsize"></a><a name="getminsize"></a>CPane::GetMinSize  
+##  <a name="getminsize"></a>CPane::GetMinSize  
  最小のウィンドウのサイズを取得します。  
   
 ```  
@@ -678,7 +743,7 @@ virtual void GetMinSize(CSize& size) const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetpanenamea--cpanegetpanename"></a><a name="getpanename"></a>CPane::GetPaneName  
+##  <a name="getpanename"></a>CPane::GetPaneName  
  ウィンドウのタイトルを取得します。  
   
 ```  
@@ -692,7 +757,7 @@ virtual void GetPaneName(CString& strName) const;
 ### <a name="remarks"></a>コメント  
  ウィンドウのタイトルは、ウィンドウがドッキングまたはフローティング キャプション領域に表示されます。 ウィンドウがタブ付きグループの一部である場合は、見出し領域で、タイトルが表示されます。 タイトルが表示のウィンドウが自動非表示モードの場合、`CMFCAutoHideButton`です。  
   
-##  <a name="a-namegetvirtualrecta--cpanegetvirtualrect"></a><a name="getvirtualrect"></a>CPane::GetVirtualRect  
+##  <a name="getvirtualrect"></a>CPane::GetVirtualRect  
  取得、*仮想の長方形*ウィンドウのです。  
   
 ```  
@@ -708,7 +773,7 @@ void GetVirtualRect(CRect& rectVirtual) const;
   
  プログラムを使用してウィンドウを移動する場合を除き、仮想四角形に関連するメソッドを呼び出す必要はありません。  
   
-##  <a name="a-nameischangestatea--cpaneischangestate"></a><a name="ischangestate"></a>CPane::IsChangeState  
+##  <a name="ischangestate"></a>CPane::IsChangeState  
  ウィンドウを移動、このメソッドのうち他のウィンドウ、ドッキング行およびミニフレーム ウィンドウの相対位置を分析し、適切なを返します`AFX_CS_STATUS`値。  
   
 ```  
@@ -734,7 +799,7 @@ virtual AFX_CS_STATUS IsChangeState(
 |`CS_DELAY_DOCK`|ウィンドウでは、別のドッキング ペインまたはメイン フレームの端のいずれかであるドッキング サイト上です。 移動を離したときに、フレームワークは、ウィンドウをドッキングします。|  
 |`CS_DELAY_DOCK_TO_TAB`|ウィンドウでは、タブ付きウィンドウにドッキングするウィンドウをドッキング サイト上です。 これは、ウィンドウが、別のドッキング ペインのキャプションまたはタブ付きペインのタブ領域上に発生します。 移動を離したときに、フレームワークは、ウィンドウをドッキングします。|  
   
-##  <a name="a-nameisdragmodea--cpaneisdragmode"></a><a name="isdragmode"></a>CPane::IsDragMode  
+##  <a name="isdragmode"></a>CPane::IsDragMode  
  ウィンドウが移動されているかどうかを指定します。  
   
 ```  
@@ -746,7 +811,7 @@ virtual BOOL IsDragMode() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameisinfloatingmultipaneframewnda--cpaneisinfloatingmultipaneframewnd"></a><a name="isinfloatingmultipaneframewnd"></a>CPane::IsInFloatingMultiPaneFrameWnd  
+##  <a name="isinfloatingmultipaneframewnd"></a>CPane::IsInFloatingMultiPaneFrameWnd  
  ウィンドウが複数ペインのフレーム ウィンドウかどうかを指定 ( [CMultiPaneFrameWnd クラス](../../mfc/reference/cmultipaneframewnd-class.md))。  
   
 ```  
@@ -759,7 +824,7 @@ virtual BOOL IsInFloatingMultiPaneFrameWnd() const;
 ### <a name="remarks"></a>コメント  
  複数ペインのフレーム ウィンドウのドッキング可能なウィンドウだけができます。 したがって、`CPane::IsInFloatingMultiPaneFrameWnd`は常に返します`FALSE`します。  
   
-##  <a name="a-nameisleftofa--cpaneisleftof"></a><a name="isleftof"></a>CPane::IsLeftOf  
+##  <a name="isleftof"></a>CPane::IsLeftOf  
  (または上) に、ウィンドウを残すかどうかを決定する指定された四角形。  
   
 ```  
@@ -780,7 +845,7 @@ bool IsLeftOf(
 ### <a name="remarks"></a>コメント  
  このメソッドは、ウィンドウが水平方向にドッキングされている場合の位置を残すかどうかチェック`rect`します。 それ以外の場合、このメソッドをチェックするかどうかの場所は、上記`rect`します。  
   
-##  <a name="a-nameisresizablea--cpaneisresizable"></a><a name="isresizable"></a>CPane::IsResizable  
+##  <a name="isresizable"></a>CPane::IsResizable  
  ウィンドウがサイズ変更可能かどうかを指定します。  
   
 ```  
@@ -797,7 +862,7 @@ virtual BOOL IsResizable() const;
   
  非サイズ変更可能なウィンドウはドッキング コンテナー内に配置できません。  
   
-##  <a name="a-nameistabbeda--cpaneistabbed"></a><a name="istabbed"></a>CPane::IsTabbed  
+##  <a name="istabbed"></a>CPane::IsTabbed  
  ペインをタブ付きウィンドウのタブ コントロールに挿入されているかどうかを決定します。  
   
 ```  
@@ -810,7 +875,7 @@ virtual BOOL IsTabbed() const;
 ### <a name="remarks"></a>コメント  
  タブ付きの状態は、浮動小数点から個別に扱われます、ドッキングされている、および状態を自動的に隠す。  
   
-##  <a name="a-nameloadstatea--cpaneloadstate"></a><a name="loadstate"></a>CPane::LoadState  
+##  <a name="loadstate"></a>CPane::LoadState  
  レジストリから、ウィンドウの状態を読み込みます。  
   
 ```  
@@ -838,7 +903,7 @@ virtual BOOL LoadState(
   
  このメソッドをオーバーライドする場合も、基本メソッドの呼び出しを返す`FALSE`基本メソッドを返す場合`FALSE`します。  
   
-##  <a name="a-namembhandleminsizea--cpanembhandleminsize"></a><a name="m_bhandleminsize"></a>CPane::m_bHandleMinSize  
+##  <a name="m_bhandleminsize"></a>CPane::m_bHandleMinSize  
  ウィンドウの最小サイズの一貫した処理を有効にします。  
   
 ```  
@@ -850,7 +915,7 @@ AFX_IMPORT_DATA static BOOL m_bHandleMinSize;
   
  この値設定されている場合`TRUE`、伸縮せず、すべてのペインのサイズは、その最小サイズより小さく必要があるされます。 フレームワークは、ペインのサイズのウィンドウ領域を使用するためこの値が設定されている場合、ドッキング ペイン ウィンドウ領域のサイズを変更しないで`TRUE`します。  
   
-##  <a name="a-namemrecentdockinfoa--cpanemrecentdockinfo"></a><a name="m_recentdockinfo"></a>CPane::m_recentDockInfo  
+##  <a name="m_recentdockinfo"></a>CPane::m_recentDockInfo  
  最新のドッキング情報が含まれています。  
   
 ```  
@@ -860,7 +925,7 @@ CRecentDockSiteInfo m_recentDockInfo;
 ### <a name="remarks"></a>コメント  
  フレームワークは、このメンバーのペインの最新のドッキング状態情報を格納します。  
   
-##  <a name="a-namemovebyalignmenta--cpanemovebyalignment"></a><a name="movebyalignment"></a>CPane::MoveByAlignment  
+##  <a name="movebyalignment"></a>CPane::MoveByAlignment  
  指定した量によっては、ペインと仮想の四角形を移動します。  
   
 ```  
@@ -891,7 +956,7 @@ BOOL MoveByAlignment(
   
  場合`dwAlignment`を含む、`CBRS_ALIGN_LEFT`または`CBRS_ALIGN_RIGHT`フラグ、ペイン、および仮想の四角形は移動水平方向にしない場合は場合、`dwAlignment`が含まれています、`CBRS_ALIGN_TOP`または`CBRS_ALIGN_BOTTOM`フラグ、ペイン、および仮想の四角形を垂直方向に移動します。  
   
-##  <a name="a-namemovepanea--cpanemovepane"></a><a name="movepane"></a>CPane::MovePane  
+##  <a name="movepane"></a>CPane::MovePane  
  指定された四角形のウィンドウに移動します。  
   
 ```  
@@ -917,7 +982,7 @@ virtual CSize MovePane(
 ### <a name="remarks"></a>コメント  
  このメソッドは、ドッキング可能ペインに対してのみ使用されます。  
   
-##  <a name="a-nameonafterchangeparenta--cpaneonafterchangeparent"></a><a name="onafterchangeparent"></a>CPane::OnAfterChangeParent  
+##  <a name="onafterchangeparent"></a>CPane::OnAfterChangeParent  
  ウィンドウの親が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -931,7 +996,7 @@ virtual void OnAfterChangeParent(CWnd* pWndOldParent);
 ### <a name="remarks"></a>コメント  
  このメソッドは、ドッキングまたはフローティング操作により、ウィンドウの親が変更されたときに、framework によって呼び出されます。  
   
-##  <a name="a-nameonafterdocka--cpaneonafterdock"></a><a name="onafterdock"></a>CPane::OnAfterDock  
+##  <a name="onafterdock"></a>CPane::OnAfterDock  
  ペインをドッキングするときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -951,7 +1016,7 @@ virtual void OnAfterDock(
  [入力] `dockMethod`  
  このパラメーターは使用されません。  
   
-##  <a name="a-nameonafterfloata--cpaneonafterfloat"></a><a name="onafterfloat"></a>CPane::OnAfterFloat  
+##  <a name="onafterfloat"></a>CPane::OnAfterFloat  
  ウィンドウがフローティング状態になった後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -961,7 +1026,7 @@ virtual void OnAfterFloat();
 ### <a name="remarks"></a>コメント  
  ペインがフローティング状態になった後にどのような処理を実行する場合は、派生クラスでは、このメソッドをオーバーライドすることができます。  
   
-##  <a name="a-nameonbeforechangeparenta--cpaneonbeforechangeparent"></a><a name="onbeforechangeparent"></a>CPane::OnBeforeChangeParent  
+##  <a name="onbeforechangeparent"></a>CPane::OnBeforeChangeParent  
  ウィンドウの親を変更するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -982,7 +1047,7 @@ virtual void OnBeforeChangeParent(
   
  既定では、ウィンドウが登録されていないドッキング ペインを呼び出すことによって`CDockSite::RemovePane`します。  
   
-##  <a name="a-nameonbeforedocka--cpaneonbeforedock"></a><a name="onbeforedock"></a>CPane::OnBeforeDock  
+##  <a name="onbeforedock"></a>CPane::OnBeforeDock  
  ウィンドウをドッキングするときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1008,7 +1073,7 @@ virtual BOOL OnBeforeDock(
 ### <a name="remarks"></a>コメント  
  このメソッドは、ウィンドウがドッキングされるときに、framework によって呼び出されます。 ペインが最後にドッキングする前に、どのような処理を実行する場合は、派生クラスでは、このメソッドをオーバーライドすることができます。  
   
-##  <a name="a-nameonbeforefloata--cpaneonbeforefloat"></a><a name="onbeforefloat"></a>CPane::OnBeforeFloat  
+##  <a name="onbeforefloat"></a>CPane::OnBeforeFloat  
  ペインが浮動小数点数に、フレームワークによって呼び出されます。  
   
 ```  
@@ -1030,7 +1095,7 @@ virtual BOOL OnBeforeFloat(
 ### <a name="remarks"></a>コメント  
  このメソッドはペインが浮動小数点数に、フレームワークによって呼び出されます。 ペインが最後に寄せて配置前に、どのような処理を実行する場合、派生クラスでは、このメソッドをオーバーライドすることができます。  
   
-##  <a name="a-nameonpressclosebuttona--cpaneonpressclosebutton"></a><a name="onpressclosebutton"></a>CPane::OnPressCloseButton  
+##  <a name="onpressclosebutton"></a>CPane::OnPressCloseButton  
  ユーザーがペインのキャプションの [閉じる] ボタンを押したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1040,7 +1105,7 @@ virtual void OnPressCloseButton();
 ### <a name="remarks"></a>コメント  
  押されたときに、このメソッドがフレームワークによって呼び出されます、**閉じる**ペインのキャプションのボタンをクリックします。 に関する通知を受信する、**閉じる**イベント、派生クラスでは、このメソッドをオーバーライドすることができます。  
   
-##  <a name="a-nameonshowcontrolbarmenua--cpaneonshowcontrolbarmenu"></a><a name="onshowcontrolbarmenu"></a>CPane::OnShowControlBarMenu  
+##  <a name="onshowcontrolbarmenu"></a>CPane::OnShowControlBarMenu  
  特殊ウィンドウ メニューが表示されるときにフレームワークによって呼び出されます。  
   
 ```  
@@ -1057,7 +1122,7 @@ virtual BOOL OnShowControlBarMenu(CPoint point);
 ### <a name="remarks"></a>コメント  
  メニューには、つまり、ウィンドウの動作を指定するためのいくつかの項目が含まれます:**フローティング**、**ドッキング**、**自動的に隠す**、および**を非表示に**します。 呼び出してすべてのペインのこのメニューを有効にすることができます[CDockingManager::EnableDockSiteMenu](../../mfc/reference/cdockingmanager-class.md#enabledocksitemenu)します。  
   
-##  <a name="a-namerecalclayouta--cpanerecalclayout"></a><a name="recalclayout"></a>CPane::RecalcLayout  
+##  <a name="recalclayout"></a>CPane::RecalcLayout  
  ウィンドウのレイアウト情報を再計算します。  
   
 ```  
@@ -1069,7 +1134,7 @@ virtual void RecalcLayout();
   
  ウィンドウがフローティング状態の場合、このメソッドは、ミニ フレームのサイズをウィンドウのサイズを調整する親ミニフレームを通知します。 フレームワークにより、ミニフレームが少なくともウィンドウのサイズが許容される最小 ( [CPane::GetMinSize](#getminsize))、必要に応じて、ミニフレームのサイズを変更します。  
   
-##  <a name="a-namesavestatea--cpanesavestate"></a><a name="savestate"></a>CPane::SaveState  
+##  <a name="savestate"></a>CPane::SaveState  
  ウィンドウの状態をレジストリに保存します。  
   
 ```  
@@ -1097,7 +1162,7 @@ virtual BOOL SaveState(
   
  このメソッドをオーバーライドする場合も、基本メソッドの呼び出しを返す`FALSE`基本メソッドを返す場合`FALSE`します。  
   
-##  <a name="a-namesetactiveingroupa--cpanesetactiveingroup"></a><a name="setactiveingroup"></a>CPane::SetActiveInGroup  
+##  <a name="setactiveingroup"></a>CPane::SetActiveInGroup  
  アクティブ ウィンドウのフラグを設定します。  
   
 ```  
@@ -1115,7 +1180,7 @@ virtual void SetActiveInGroup(BOOL bActive);
   
  場合`CMFCAutoHideButton::m_bOverlappingTabs`は`FALSE`、または、ウィンドウがグループにない場合は、フレームワークがおよびラベルのアイコンとして関連付けを自動的に隠す ボタンを表示します。  
   
-##  <a name="a-namesetbordersa--cpanesetborders"></a><a name="setborders"></a>CPane::SetBorders  
+##  <a name="setborders"></a>CPane::SetBorders  
  ウィンドウの境界線の値を設定します。  
   
 ```  
@@ -1147,7 +1212,7 @@ void SetBorders(LPCRECT lpRect);
 ### <a name="remarks"></a>コメント  
  ウィンドウの境界線のサイズを設定するには、この関数を呼び出します。  
   
-##  <a name="a-namesetclienthotspota--cpanesetclienthotspot"></a><a name="setclienthotspot"></a>CPane::SetClientHotSpot  
+##  <a name="setclienthotspot"></a>CPane::SetClientHotSpot  
  セット、*ホット スポット*ペインのです。  
   
 ```  
@@ -1161,7 +1226,7 @@ void SetClientHotSpot(const CPoint& ptNew);
 ### <a name="remarks"></a>コメント  
  *ホット スポット*[ウィンドウ] を選択し、ウィンドウの移動を保持するポイントです。 ウィンドウがドッキング位置からドラッグされたときにホット スポットの滑らかなアニメーションです。  
   
-##  <a name="a-namesetdockstatea--cpanesetdockstate"></a><a name="setdockstate"></a>CPane::SetDockState  
+##  <a name="setdockstate"></a>CPane::SetDockState  
  ドッキング ペインの状態情報を復元します。  
   
 ```  
@@ -1177,7 +1242,7 @@ virtual void SetDockState(CDockingManager* pDockManager);
   
  外部ソースからウィンドウの情報を読み込むときに、ドッキング状態を設定するには、このメソッドを呼び出すこともできます。  
   
-##  <a name="a-namesetexclusiverowmodea--cpanesetexclusiverowmode"></a><a name="setexclusiverowmode"></a>CPane::SetExclusiveRowMode  
+##  <a name="setexclusiverowmode"></a>CPane::SetExclusiveRowMode  
  有効または排他行モードを無効にします。  
   
 ```  
@@ -1193,7 +1258,7 @@ virtual void SetExclusiveRowMode(BOOL bExclusive = TRUE);
   
  既定では、すべてのツールバーが排他行モードを無効にあり、メニュー バーが排他行モードを有効にします。  
   
-##  <a name="a-namesetminsizea--cpanesetminsize"></a><a name="setminsize"></a>CPane::SetMinSize  
+##  <a name="setminsize"></a>CPane::SetMinSize  
  ウィンドウのサイズの下限を設定します。  
   
 ```  
@@ -1206,7 +1271,7 @@ void SetMinSize(const CSize& size);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namesetvirtualrecta--cpanesetvirtualrect"></a><a name="setvirtualrect"></a>CPane::SetVirtualRect  
+##  <a name="setvirtualrect"></a>CPane::SetVirtualRect  
  セット、*仮想の長方形*ウィンドウのです。  
   
 ```  
@@ -1227,7 +1292,7 @@ void SetVirtualRect(
   
  プログラムを使用してウィンドウを移動する場合を除き、仮想四角形に関連するメソッドを呼び出す必要はありません。  
   
-##  <a name="a-namesetminiframertca--cpanesetminiframertc"></a><a name="setminiframertc"></a>CPane::SetMiniFrameRTC  
+##  <a name="setminiframertc"></a>CPane::SetMiniFrameRTC  
  既定のミニフレーム ウィンドウのランタイム クラス情報を設定します。  
   
 ```  
@@ -1241,7 +1306,7 @@ void SetMiniFrameRTC(CRuntimeClass* pClass);
 ### <a name="remarks"></a>コメント  
  配置するウィンドウがフローティング状態になった、 [CPaneFrameWnd](../../mfc/reference/cpaneframewnd-class.md) (ミニフレーム) ウィンドウです。 カスタムを使用できる`CPaneFrameWnd`-となるクラスを派生際に使用される[CPane::CreateDefaultMiniframe](#createdefaultminiframe)が呼び出されます。  
   
-##  <a name="a-namestretchpanedeferwndposa--cpanestretchpanedeferwndpos"></a><a name="stretchpanedeferwndpos"></a>CPane::StretchPaneDeferWndPos  
+##  <a name="stretchpanedeferwndpos"></a>CPane::StretchPaneDeferWndPos  
  垂直方向または水平方向にドッキング スタイルに基づいて、ウィンドウを拡大します。  
   
 ```  
@@ -1263,7 +1328,7 @@ virtual int StretchPaneDeferWndPos(
 ### <a name="remarks"></a>コメント  
  必要に応じて、このメソッドによって変更`nStretchSize`ウィンドウがサイズの制限を超えないことを確認します。 これらの制限は呼び出すことによって取得[CPane::GetAvailableStretchSize](#getavailablestretchsize)と[CPane::GetAvailableExpandSize](#getavailableexpandsize)します。  
   
-##  <a name="a-nametoggleautohidea--cpanetoggleautohide"></a><a name="toggleautohide"></a>CPane::ToggleAutoHide  
+##  <a name="toggleautohide"></a>CPane::ToggleAutoHide  
  切り替えを自動的に隠すモードです。  
   
 ```  
@@ -1273,7 +1338,7 @@ virtual void ToggleAutoHide();
 ### <a name="remarks"></a>コメント  
  自動非表示モードを切り替えるには、このメソッドを呼び出します。 ペインは、自動非表示モードに切り替えるには、メイン フレーム ウィンドウにドッキングする必要があります。  
   
-##  <a name="a-nameundockpanea--cpaneundockpane"></a><a name="undockpane"></a>CPane::UndockPane  
+##  <a name="undockpane"></a>CPane::UndockPane  
  ドッキング サイト、既定のスライダーまたはミニフレーム ウィンドウの現在のドッキング位置から、ウィンドウを削除します。  
   
 ```  
@@ -1287,7 +1352,7 @@ virtual void UndockPane(BOOL bDelay = FALSE);
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、プログラムを使用して、ウィンドウのドッキングを解除します。  
   
-##  <a name="a-nameupdatevirtualrecta--cpaneupdatevirtualrect"></a><a name="updatevirtualrect"></a>CPane::UpdateVirtualRect  
+##  <a name="updatevirtualrect"></a>CPane::UpdateVirtualRect  
  仮想の四角形を更新します。  
   
 ```  

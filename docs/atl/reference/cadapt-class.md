@@ -9,11 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CAdapt
-- ATL.CAdapt<T>
-- ATL::CAdapt
-- ATL::CAdapt<T>
 - CAdapt
+- ATLCOMCLI/ATL::CAdapt
+- ATLCOMCLI/ATL::CAdapt::CAdapt
+- ATLCOMCLI/ATL::CAdapt::m_T
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +96,7 @@ class CAdapt
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcomcli.h  
   
-##  <a name="a-namecadapta--cadaptcadapt"></a><a name="cadapt"></a>CAdapt::CAdapt  
+##  <a name="cadapt"></a>CAdapt::CAdapt  
  コンス トラクターを使用すると、既定で構築された、適合された型のオブジェクトからコピーまたは別のアダプター オブジェクトからコピーするアダプター オブジェクト。  
   
 ```
@@ -115,7 +114,7 @@ CAdapt(CAdapt<T>&& rSrCA) noexcept; // (Visual Studio 2017)
  *rSrCA*  
  含まれているデータが含まれる必要がありますコピー (または移動される) を新しく構築されたアダプター オブジェクトにアダプター オブジェクト。  
   
-##  <a name="a-namemta--cadaptmt"></a><a name="m_t"></a>CAdapt::m_T  
+##  <a name="m_t"></a>CAdapt::m_T  
  適合しているデータを保持します。  
   
 ```
@@ -125,7 +124,7 @@ T m_T;
 ### <a name="remarks"></a>コメント  
  これは、**パブリック**データ メンバーにアクセスできる直接的または間接的に[演算子 const T >/documents/report1.rdl」の](#operator_const_t_amp)と[演算子 T >/documents/report1.rdl」の](#operator_t_amp)です。  
   
-##  <a name="a-nameoperatorconsttampa--cadaptoperator-const-tamp"></a><a name="operator_const_t_amp"></a>CAdapt::operator const T&amp;  
+##  <a name="operator_const_t_amp"></a>CAdapt::operator const T&amp;  
  返します。、 **const**への参照、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`します。  
   
 ```  
@@ -135,7 +134,7 @@ operator const T&() const;
 ### <a name="return-value"></a>戻り値  
  A **const**への参照を`m_T`します。  
   
-##  <a name="a-nameoperatortampa--cadaptoperator-tamp"></a><a name="operator_t_amp"></a>CAdapt::operator T&amp;  
+##  <a name="operator_t_amp"></a>CAdapt::operator T&amp;  
  参照を返す、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`します。  
   
 ```  
@@ -145,7 +144,7 @@ operator T&();
 ### <a name="return-value"></a>戻り値  
  参照を`m_T`します。  
   
-##  <a name="a-nameoperatorlta--cadaptoperator-lt"></a><a name="operator_lt"></a>CAdapt::operator&lt;  
+##  <a name="operator_lt"></a>CAdapt::operator&lt;  
  適合された型のオブジェクトと比較[m_T](#m_t)します。  
   
 ```
@@ -159,7 +158,7 @@ bool operator<(const T& rSrc) const;
 ### <a name="return-value"></a>戻り値  
  間の比較の結果`m_T`と`rSrc`です。  
   
-##  <a name="a-nameoperatoreqa--cadaptoperator-"></a><a name="operator_eq"></a>CAdapt::operator =  
+##  <a name="operator_eq"></a>CAdapt::operator =  
  代入演算子は、引数を割り当てます`rSrc`、データ メンバーに[m_T](#m_t)現在のアダプター オブジェクトを返します。  
   
 ```
@@ -178,7 +177,7 @@ CAdapt& operator= (CAdapt<T>&& rSrCA) noexcept; // (Visual Studio 2017)
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照。  
   
-##  <a name="a-nameoperatoreqeqa--cadaptoperator-"></a><a name="operator_eq_eq"></a>CAdapt::operator = =  
+##  <a name="operator_eq_eq"></a>CAdapt::operator = =  
  適合された型のオブジェクトと比較[m_T](#m_t)します。  
   
 ```

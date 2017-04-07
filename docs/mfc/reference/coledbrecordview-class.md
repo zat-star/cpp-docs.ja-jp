@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - COleDBRecordView
+- AFXOLEDB/COleDBRecordView
+- AFXOLEDB/COleDBRecordView::COleDBRecordView
+- AFXOLEDB/COleDBRecordView::OnGetRowset
+- AFXOLEDB/COleDBRecordView::OnMove
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,9 +39,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 89b5cb175900d11854dcad03440a1ef0bfb8cff9
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
+ms.openlocfilehash: 8269a71e9528da5c3468b5eb37f5dce3a16b14fd
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="coledbrecordview-class"></a>COleDBRecordView クラス
@@ -61,20 +65,20 @@ class COleDBRecordView : public CFormView
   
 |名前|説明|  
 |----------|-----------------|  
-|[COleDBRecordView::OnGetRowset](#ongetrowset)|標準を返す`HRESULT`値。|  
-|[COleDBRecordView::OnMove](#onmove)|データ ソースで (ダーティの場合) に現在のレコードを更新し、指定されたレコードに移動します (次、前に、最初のページまたは最後)。|  
+|[COleDBRecordView::OnGetRowset](#ongetrowset)|返します、標準的な`HRESULT`値。|  
+|[COleDBRecordView::OnMove](#onmove)|データ ソースで (ダーティの場合)、現在のレコードを更新し、指定されたレコードに移動します (次に、前の最初のページまたは最後)。|  
   
 ## <a name="remarks"></a>コメント  
- ビューがフォーム ビューに直接接続、`CRowset`オブジェクトです。 ビューのダイアログ テンプレート リソースから作成され、のフィールドを表示、`CRowset`ダイアログ テンプレートのコントロール内のオブジェクト。 `COleDBRecordView`オブジェクトは、ダイアログ データ エクス チェンジ (DDX) を使用し、ナビゲーションの機能に組み込まれて`CRowset`フォーム上のコントロールと、行セットのフィールド間のデータ移動を自動化します。 `COleDBRecordView`移動するための既定の実装を提供しても、最初次、前、または最後のレコードとビューの現在のレコードを更新するためのインターフェイスです。  
+ ビューに直接接続されているフォーム ビュー、`CRowset`オブジェクト。 ビューはダイアログ テンプレート リソースから作成およびのフィールドを表示、`CRowset`ダイアログ テンプレートのコントロール内のオブジェクト。 `COleDBRecordView`ダイアログ データ エクス チェンジ (DDX) を使用するオブジェクトとナビゲーション機能に組み込まれて`CRowset`フォーム上のコントロールと行セットのフィールド間のデータ移動を自動化します。 `COleDBRecordView`移動するための既定の実装を提供、最初に [次へ]、前、または最後のレコードと、ビューの現在のレコードを更新するためのインターフェイスです。  
   
- DDX 関数を使用する**COleDbRecordView**データベース レコード セットから直接データを取得し、ダイアログ コントロールに表示します。 使用する必要があります、 **DDX_\* **メソッド (など`DDX_Text`) ではなく、 **DDX_Field\* **関数 (よう`DDX_FieldText`) と**COleDbRecordView**します。 `DDX_FieldText`は動作しません**COleDbRecordView**ため`DDX_FieldText`型の追加の引数を取る**CRecordset\* ** (の`CRecordView`) または**CDaoRecordset\* ** (の`CDaoRecordView`)。  
+ DDX 関数を使用することができます**COleDbRecordView**データベース レコード セットから直接データを取得し、ダイアログ コントロールで表示します。 使用する必要があります、 **ddx _\***メソッド (など`DDX_Text`) ではなく、 **DDX_Field\* **関数 (など`DDX_FieldText`) と**COleDbRecordView**です。 `DDX_FieldText`は動作しません**COleDbRecordView**ため`DDX_FieldText`型の追加の引数を受け取る**CRecordset\*** (の`CRecordView`) または**CDaoRecordset\* ** (の`CDaoRecordView`)。  
   
 > [!NOTE]
->  OLE DB コンシューマー テンプレート クラスではなく、データ アクセス オブジェクト (DAO) クラスで作業している場合は、クラスを使用して[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)代わりにします。 詳細については、記事を参照してください。[の概要: データベース プログラミング](../../data/data-access-programming-mfc-atl.md)します。  
+>  OLE DB コンシューマー テンプレート クラスではなく、データ アクセス オブジェクト (DAO) クラスで作業している場合は、クラスを使用して[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)代わりにします。 詳細については、記事を参照してください。[概要: データベース プログラミング](../../data/data-access-programming-mfc-atl.md)です。  
   
- `COleDBRecordView`レコード ビューは、ユーザー インターフェイスを更新できるようにはの行セット内のユーザーの位置を追跡します。 ユーザーは、行セットの先頭または末尾に移動、レコード ビュー、ユーザー インターフェイス オブジェクトの â € を無効になる"メニュー項目またはツールバー ボタン â € など"を移動するため同じ方向にさらにします。  
+ `COleDBRecordView`追跡、行セット内のユーザーの位置、レコード ビューは、ユーザー インターフェイスを更新できるようにします。 行セットは、メニュー項目などレコード ビューを無効にユーザー インターフェイス オブジェクト \u2012 または移動するためのツール バー ボタン \u2012 の先頭または末尾に移動するユーザー、さらに、同じ方向にします。  
   
- 行セット クラスの詳細については、次を参照してください。、[を使用して OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)記事です。  
+ 行セット クラスの詳細については、次を参照してください。、[を使用して OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)資料です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -94,7 +98,7 @@ class COleDBRecordView : public CFormView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxoledb.h  
   
-##  <a name="a-namecoledbrecordviewa--coledbrecordviewcoledbrecordview"></a><a name="coledbrecordview"></a>COleDBRecordView::COleDBRecordView  
+##  <a name="coledbrecordview"></a>COleDBRecordView::COleDBRecordView  
  `COleDBRecordView` オブジェクトを構築します。  
   
 ```  
@@ -104,22 +108,22 @@ COleDBRecordView(UINT nIDTemplate);
   
 ### <a name="parameters"></a>パラメーター  
  `lpszTemplateName`  
- ダイアログ テンプレート リソースの名前を表す null で終わる文字列が含まれています。  
+ ダイアログ テンプレート リソースの名前を指定する null で終わる文字列が含まれています。  
   
  `nIDTemplate`  
  ダイアログ テンプレート リソースの ID 番号が含まれています。  
   
 ### <a name="remarks"></a>コメント  
- 派生した型のオブジェクトを作成する場合`COleDBRecordView`、ビュー オブジェクトを作成し、ビューの基になるダイアログ リソースを識別するコンス トラクターの&1; つを呼び出します。 (コンス トラクターの引数として文字列を渡す) の名前または ID (パスの引数として符号なし整数) では、リソースを識別できます。  
+ 派生した型のオブジェクトを作成するときに`COleDBRecordView`、ビュー オブジェクトを作成し、ビューの基になるダイアログ リソースを識別するコンス トラクターの 1 つを呼び出します。 名前 (コンス トラクターの引数として文字列を渡す) で、または ID (パスを符号なし整数の引数として) では、リソースを識別できます。  
   
 > [!NOTE]
->  派生クラス*必要があります*独自のコンス トラクターを指定します。 コンス トラクターで、コンス トラクターを呼び出す`COleDBRecordView::COleDBRecordView`リソースの名前または ID を引数として使用します。  
+>  派生クラス*必要があります*独自のコンス トラクターを指定します。 コンス トラクターを呼び出す、コンス トラクターで`COleDBRecordView::COleDBRecordView`リソース名または ID を引数として使用します。  
   
-##  <a name="a-nameongetrowseta--coledbrecordviewongetrowset"></a><a name="ongetrowset"></a>COleDBRecordView::OnGetRowset  
- ハンドルを返します、 **CRowset<> </> ** 、レコード ビューに関連付けられているオブジェクト。  
+##  <a name="ongetrowset"></a>COleDBRecordView::OnGetRowset  
+ ハンドルを返します、 **CRowset<> </>**レコード ビューに関連付けられているオブジェクト。  
   
 ```  
-virtual CRowset<>* OnGetRowset(Â) = 0;  
+virtual CRowset<>* OnGetRowset() = 0;  
  
 ```  
   
@@ -127,18 +131,18 @@ virtual CRowset<>* OnGetRowset(Â) = 0;
  標準の `HRESULT` 値。  
   
 ### <a name="remarks"></a>コメント  
- 作成または行セット オブジェクトを取得してにハンドルを返すには、この関数をオーバーライドする必要があります。 ClassWizard 使用して、レコード ビュー クラスを宣言する場合の既定のオーバーライドが書き込まれます。 ClassWizard の既定の実装では、1 つが存在する場合は、レコード ビューに格納されている行セット ハンドルを返します。 ClassWizard でユーザーが指定されている場合は、型の行セット オブジェクトを構築、その**開く**メンバーは、テーブルを開くか、クエリを実行する関数し、オブジェクトにハンドルが返されます。  
+ 作成または行セット オブジェクトを取得してハンドルを返すには、このメンバー関数をオーバーライドする必要があります。 ClassWizard で、レコード ビュー クラスを宣言する場合の既定のオーバーライドが書き込まれます。 ClassWizard の既定の実装では、1 つが存在する場合は、レコード ビューに格納されている行セット ハンドルを返します。 ClassWizard でユーザーが指定した型の行セット オブジェクトを構築されていない場合、**開く**メンバー関数のテーブルを開くか、クエリを実行して、オブジェクトへのハンドルを返します。  
   
 > [!NOTE]
->  MFC 7.0 以前`OnGetRowset`へのポインターを返す`CRowset`します。 呼び出すコードを使用していれば`OnGetRowset`、化されたクラスに戻り値の型を変更する必要がある**CRowset<>**します。  
+>  MFC 7.0 より前`OnGetRowset`へのポインターが返されます`CRowset`です。 呼び出すコードを使用していれば`OnGetRowset`、テンプレート化されたクラスを戻り値の型を変更する必要があります**CRowset<>**です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase #&38;](../../mfc/codesnippet/cpp/coledbrecordview-class_1.cpp)]  
+ [!code-cpp[NVC_MFCDatabase #38](../../mfc/codesnippet/cpp/coledbrecordview-class_1.cpp)]  
   
- 詳細と例については、記事を参照して[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。  
+ 詳細と例については、記事を参照してください。[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)です。  
   
-##  <a name="a-nameonmovea--coledbrecordviewonmove"></a><a name="onmove"></a>COleDBRecordView::OnMove  
- 行セットと表示内のレコードに移動、レコードのコントロールでは、そのフィールドを表示します。  
+##  <a name="onmove"></a>COleDBRecordView::OnMove  
+ 行セットと表示内のレコードに移動、レコードのコントロールは、そのフィールドを表示します。  
   
 ```  
 virtual BOOL OnMove(UINT nIDMoveCommand);
@@ -146,15 +150,15 @@ virtual BOOL OnMove(UINT nIDMoveCommand);
   
 ### <a name="parameters"></a>パラメーター  
  `nIDMoveCommand`  
- 次の標準コマンド ID 値のいずれかです。  
+ 標準コマンド ID 値は次のいずれかです。  
   
-- `ID_RECORD_FIRST`--を移動、レコード セット内の最初のレコードに本です。  
+- `ID_RECORD_FIRST`\u2012 は、レコード セットの最初のレコードに移動します。  
   
-- `ID_RECORD_LAST`Â Â 本は、レコード セットのレコードで移動最後にします。  
+- `ID_RECORD_LAST`\u2012 レコードに移動最後のレコード セットにします。  
   
-- `ID_RECORD_NEXT`--を移動、レコード セットの次のレコードに本です。  
+- `ID_RECORD_NEXT`\u2012 は、レコード セットの次のレコードに移動します。  
   
-- `ID_RECORD_PREV`---、前のレコードに移動、レコード セット内です。  
+- `ID_RECORD_PREV`\u2012 は、レコード セットの前のレコードに移動します。  
   
 ### <a name="return-value"></a>戻り値  
  移動が成功した場合は 0 以外。移動要求が拒否された場合は、それ以外の場合 0 を返します。  
@@ -162,11 +166,11 @@ virtual BOOL OnMove(UINT nIDMoveCommand);
 ### <a name="remarks"></a>コメント  
  既定の実装を呼び出す、適切な**移動**のメンバー関数、`CRowset`レコード ビューに関連付けられているオブジェクト。  
   
- 既定では、`OnMove`ユーザーを使用すると、レコード ビューに変更された場合は、データ ソースの現在のレコードを更新します。  
+ 既定では、`OnMove`ユーザーを使用すると、レコード ビューに変更された場合に、データ ソースの現在のレコードを更新します。  
   
- アプリケーション ウィザードでは、最初のレコード、最後のレコード、次のレコード、および前のレコードのメニュー項目を含むメニュー リソースを作成します。 ドッキング可能ツールバー オプションを選択した場合、アプリケーション ウィザードもこれらのコマンドに対応するボタンをツールバーを作成します。  
+ アプリケーションのウィザードでは、最初のレコード、最後のレコード、次のレコードと前のレコードのメニュー項目をメニュー リソースを作成します。 ドッキング可能ツールバー オプションを選択すると、これらのコマンドに対応するボタンとツールバーは、アプリケーション ウィザードで、によってもを作成します。  
   
- 過去のレコード セットの最後のレコードを移動する場合、レコード ビューは最後のレコードが表示されます。 最初のレコードを超えて後方移動した場合、レコード ビューは最初のレコードが表示されます。  
+ 過去のレコード セットの最後のレコードを移動する場合、レコード ビューを最後のレコードが表示されます。 を越えて移動した最初のレコード場合、レコード ビューは最初のレコードが表示されます。  
   
 ## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)

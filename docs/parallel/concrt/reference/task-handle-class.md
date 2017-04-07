@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ppl/concurrency::task_handle
+- task_handle
+- PPL/concurrency::task_handle
+- PPL/concurrency::task_handle::task_handle
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: b113cf519f4326650dc1ed4d20dd2ed00921eda9
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 0fef1ef7b1c02287a0113eb80be413e4a17dc1a4
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="taskhandle-class"></a>task_handle クラス
@@ -61,14 +63,14 @@ class task_handle : public ::Concurrency::details::_UnrealizedChore;
   
 |名前|説明|  
 |----------|-----------------|  
-|[task_handle コンス トラクター](#ctor)|新しい `task_handle` オブジェクトを構築します。 タスクの作業は、コンス トラクターのパラメーターとして指定された関数を呼び出すことによって行われます。|  
+|[task_handle](#ctor)|新しい `task_handle` オブジェクトを構築します。 タスクの作業は、コンス トラクターのパラメーターとして指定された関数を呼び出すことによって行われます。|  
 |[~ task_handle デストラクター](#dtor)|`task_handle` オブジェクトを破棄します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator() 演算子](#task_handle__operator_call)|タスク ハンドルの作業を実行するランタイムによって呼び出される関数呼び出し演算子。|  
+|[operator()](#task_handle__operator_call)|タスク ハンドルの作業を実行するランタイムによって呼び出される関数呼び出し演算子。|  
   
 ## <a name="remarks"></a>コメント  
  `task_handle`オブジェクトを組み合わせて使用することができます、`structured_task_group`またはより一般的な`task_group`処理並列タスクを分解するオブジェクト。 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
@@ -87,7 +89,7 @@ class task_handle : public ::Concurrency::details::_UnrealizedChore;
   
  **名前空間:** concurrency  
   
-##  <a name="a-nametaskhandleoperatorcalla-operator"></a><a name="task_handle__operator_call"></a>operator() 
+##  <a name="task_handle__operator_call"></a>operator() 
 
  タスク ハンドルの作業を実行するランタイムによって呼び出される関数呼び出し演算子。  
   
@@ -97,7 +99,7 @@ void operator()() const;
  
 ```  
   
-##  <a name="a-nametaskhandlectora-taskhandle"></a><a name="task_handle__ctor"></a>task_handle 
+##  <a name="task_handle__ctor"></a>task_handle 
 
  新しい `task_handle` オブジェクトを構築します。 タスクの作業は、コンス トラクターのパラメーターとして指定された関数を呼び出すことによって行われます。  
   
@@ -112,7 +114,7 @@ task_handle(const _Function& _Func);
 ### <a name="remarks"></a>コメント  
  ランタイムでは、コンス トラクターに渡す処理関数のコピーを作成します。 したがって、関数で発生した状態の変更はオブジェクトを渡すこと、`task_handle`オブジェクトは、その関数のオブジェクトのコピーには表示されません。  
   
-##  <a name="a-namedtora-taskhandle"></a><a name="dtor"></a>~ task_handle 
+##  <a name="dtor"></a>~ task_handle 
 
  `task_handle` オブジェクトを破棄します。  
   

@@ -10,6 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMFCHeaderCtrl
+- AFXHEADERCTRL/CMFCHeaderCtrl
+- AFXHEADERCTRL/CMFCHeaderCtrl::CMFCHeaderCtrl
+- AFXHEADERCTRL/CMFCHeaderCtrl::EnableMultipleSort
+- AFXHEADERCTRL/CMFCHeaderCtrl::GetColumnState
+- AFXHEADERCTRL/CMFCHeaderCtrl::GetSortColumn
+- AFXHEADERCTRL/CMFCHeaderCtrl::IsAscending
+- AFXHEADERCTRL/CMFCHeaderCtrl::IsDialogControl
+- AFXHEADERCTRL/CMFCHeaderCtrl::IsMultipleSort
+- AFXHEADERCTRL/CMFCHeaderCtrl::RemoveSortColumn
+- AFXHEADERCTRL/CMFCHeaderCtrl::SetSortColumn
+- AFXHEADERCTRL/CMFCHeaderCtrl::OnDrawItem
+- AFXHEADERCTRL/CMFCHeaderCtrl::OnDrawSortArrow
+- AFXHEADERCTRL/CMFCHeaderCtrl::OnFillBackground
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -101,7 +114,7 @@ class CMFCHeaderCtrl : public CHeaderCtrl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxheaderctrl.h  
   
-##  <a name="a-namecmfcheaderctrla--cmfcheaderctrlcmfcheaderctrl"></a><a name="cmfcheaderctrl"></a>CMFCHeaderCtrl::CMFCHeaderCtrl  
+##  <a name="cmfcheaderctrl"></a>CMFCHeaderCtrl::CMFCHeaderCtrl  
  `CMFCHeaderCtrl` オブジェクトを構築します。  
   
 ```  
@@ -121,7 +134,7 @@ CMFCHeaderCtrl::CMFCHeaderCtrl()
 |`m_bIsDlgControl`|`FALSE`|  
 |`m_hFont`|`NULL`|  
   
-##  <a name="a-nameenablemultiplesorta--cmfcheaderctrlenablemultiplesort"></a><a name="enablemultiplesort"></a>CMFCHeaderCtrl::EnableMultipleSort  
+##  <a name="enablemultiplesort"></a>CMFCHeaderCtrl::EnableMultipleSort  
  有効または無効に*複数列の並べ替え*の現在のヘッダー コントロールのモードです。  
   
 ```  
@@ -135,7 +148,7 @@ void EnableMultipleSort(BOOL bEnable=TRUE);
 ### <a name="remarks"></a>コメント  
  有効にするか、複数の列の並べ替えモードを無効にするには、このメソッドを使用します。 ヘッダー コントロールが複数の列の並べ替えモードの場合、2 つ以上の列は、並べ替えに参加できます。  
   
-##  <a name="a-namegetcolumnstatea--cmfcheaderctrlgetcolumnstate"></a><a name="getcolumnstate"></a>CMFCHeaderCtrl::GetColumnState  
+##  <a name="getcolumnstate"></a>CMFCHeaderCtrl::GetColumnState  
  列が並べ替えではありませんかを昇順または降順で並べ替えるかどうかを示します。  
   
 ```  
@@ -157,7 +170,7 @@ int GetColumnState(int iColumn) const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetsortcolumna--cmfcheaderctrlgetsortcolumn"></a><a name="getsortcolumn"></a>CMFCHeaderCtrl::GetSortColumn  
+##  <a name="getsortcolumn"></a>CMFCHeaderCtrl::GetSortColumn  
  ヘッダー コントロールの最初の並べ替えられた列の&0; から始まるインデックスを取得します。  
   
 ```  
@@ -170,7 +183,7 @@ int GetSortColumn() const;
 ### <a name="remarks"></a>コメント  
  ヘッダー コントロールが場合*複数列の並べ替え*モードと、このメソッドは、アサートしを使用するように勧めるデバッグ モードでアプリケーションをコンパイル、 [CMFCHeaderCtrl::GetColumnState](#getcolumnstate)メソッド代わりにします。 ヘッダー コントロールが複数の列の並べ替えモードになって、リテール モードでアプリケーションをコンパイルした場合は、このメソッドは-1 を返します。  
   
-##  <a name="a-nameisascendinga--cmfcheaderctrlisascending"></a><a name="isascending"></a>CMFCHeaderCtrl::IsAscending  
+##  <a name="isascending"></a>CMFCHeaderCtrl::IsAscending  
  ヘッダー コントロールの任意の列を昇順で並べ替えるかどうかを示します。  
   
 ```  
@@ -183,7 +196,7 @@ BOOL IsAscending() const;
 ### <a name="remarks"></a>コメント  
  このメソッドから返される値は、ヘッダー コントロールの項目に適切な並べ替えの矢印を表示するために使用します。 使用して、 [CMFCHeaderCtrl::SetSortColumn](#setsortcolumn)並べ替え順序を設定します。  
   
-##  <a name="a-nameisdialogcontrola--cmfcheaderctrlisdialogcontrol"></a><a name="isdialogcontrol"></a>CMFCHeaderCtrl::IsDialogControl  
+##  <a name="isdialogcontrol"></a>CMFCHeaderCtrl::IsDialogControl  
  現在のヘッダー コントロールの親ウィンドウがダイアログ ボックスであるかどうかを示します。  
   
 ```  
@@ -193,7 +206,7 @@ BOOL IsDialogControl() const;
 ### <a name="return-value"></a>戻り値  
  `TRUE`現在のヘッダー コントロールの親ウィンドウが、ダイアログ ボックスである場合それ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameismultiplesorta--cmfcheaderctrlismultiplesort"></a><a name="ismultiplesort"></a>CMFCHeaderCtrl::IsMultipleSort  
+##  <a name="ismultiplesort"></a>CMFCHeaderCtrl::IsMultipleSort  
  現在のヘッダー コントロールがあるかどうかを示す*複数列の並べ替え*モードです。  
   
 ```  
@@ -206,7 +219,7 @@ BOOL IsMultipleSort() const;
 ### <a name="remarks"></a>コメント  
  使用して、 [CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort)メソッドを有効または複数の列の並べ替えモードを無効にします。 ヘッダー コントロールが複数の列の並べ替えモードの場合、2 つ以上の列は、並べ替えに参加できます。  
   
-##  <a name="a-nameondrawitema--cmfcheaderctrlondrawitem"></a><a name="ondrawitem"></a>CMFCHeaderCtrl::OnDrawItem  
+##  <a name="ondrawitem"></a>CMFCHeaderCtrl::OnDrawItem  
  ヘッダー コントロールの列を描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -234,7 +247,7 @@ virtual void OnDrawItem(
  [入力] `bIsHighlighted`  
  `TRUE`強調表示された状態で、項目を描画するにはそれ以外の場合、`FALSE`です。  
   
-##  <a name="a-nameondrawsortarrowa--cmfcheaderctrlondrawsortarrow"></a><a name="ondrawsortarrow"></a>CMFCHeaderCtrl::OnDrawSortArrow  
+##  <a name="ondrawsortarrow"></a>CMFCHeaderCtrl::OnDrawSortArrow  
  並べ替えの矢印を描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -250,7 +263,7 @@ virtual void OnDrawSortArrow(
  [入力] `rectArrow`  
  並べ替え矢印の外接する四角形。  
   
-##  <a name="a-nameonfillbackgrounda--cmfcheaderctrlonfillbackground"></a><a name="onfillbackground"></a>CMFCHeaderCtrl::OnFillBackground  
+##  <a name="onfillbackground"></a>CMFCHeaderCtrl::OnFillBackground  
  ヘッダー コントロールの列の背景を塗りつぶすために、フレームワークによって呼び出されます。  
   
 ```  
@@ -263,7 +276,7 @@ virtual void OnFillBackground(CDC* pDC);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-nameremovesortcolumna--cmfcheaderctrlremovesortcolumn"></a><a name="removesortcolumn"></a>CMFCHeaderCtrl::RemoveSortColumn  
+##  <a name="removesortcolumn"></a>CMFCHeaderCtrl::RemoveSortColumn  
  並べ替え列のリストから指定された列を削除します。  
   
 ```  
@@ -274,7 +287,7 @@ void RemoveSortColumn(int iColumn);
  [入力] `iColumn`  
  削除する列の&0; から始まるインデックス。  
   
-##  <a name="a-namesetsortcolumna--cmfcheaderctrlsetsortcolumn"></a><a name="setsortcolumn"></a>CMFCHeaderCtrl::SetSortColumn  
+##  <a name="setsortcolumn"></a>CMFCHeaderCtrl::SetSortColumn  
  ヘッダー コントロールの指定された列の並べ替え順序を設定します。  
   
 ```  

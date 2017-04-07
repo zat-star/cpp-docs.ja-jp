@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - ICommandUI
+- AFXWINFORMS/ICommandUI
+- AFXWINFORMS/icommandui__Check
+- AFXWINFORMS/ICommandUI::ContinueRouting
+- AFXWINFORMS/ICommandUI::Enabled
+- AFXWINFORMS/ICommandUI::ID
+- AFXWINFORMS/ICommandUI::Index
+- AFXWINFORMS/ICommandUI::Radio
+- AFXWINFORMS/ICommandUI::Text
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -73,7 +81,7 @@ interface class ICommandUI
   
  MFC でのユーザー インターフェイスのコマンドを管理する方法の詳細については、次を参照してください。 [CCmdUI クラス](../../mfc/reference/ccmdui-class.md)します。  
   
-## <a name="a-namechecka-icommanduicheck"></a><a name="check"></a>ICommandUI::Check  
+## <a name="check"></a>ICommandUI::Check  
 このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。
 ```
 property UICheckState Check;
@@ -84,7 +92,7 @@ property UICheckState Check;
 - 1 のチェック  
 - 不確定な設定&2;  
 
-## <a name="a-namecontinueroutinga-icommanduicontinuerouting"></a><a name="continuerouting"></a>ICommandUI::ContinueRouting   
+## <a name="continuerouting"></a>ICommandUI::ContinueRouting   
 ハンドラーのチェーンに現在のメッセージを渡すようにコマンドのルーティング メカニズムに指示します。
 ```
 void ContinueRouting();
@@ -92,7 +100,7 @@ void ContinueRouting();
 ## <a name="remarks"></a>コメント
 これは、FALSE を返す ON_COMMAND_EX ハンドラーと組み合わせて使用する高度なメンバー関数です。 詳細については、テクニカル ノート TN006 を参照してください: メッセージ マップです。
 
-## <a name="a-nameenableda-icommanduienabled"></a><a name="enabled"></a>ICommandUI::Enabled 
+## <a name="enabled"></a>ICommandUI::Enabled 
 有効または、このコマンドのユーザー インターフェイス項目を無効にします。
 ```
 property bool Enabled;
@@ -100,7 +108,7 @@ property bool Enabled;
 ## <a name="remarks"></a>コメント
 このプロパティでは、有効または、このコマンドのユーザー インターフェイス項目を無効にします。 有効にする項目を無効にする場合は FALSE の場合は true を Enabled を設定します。
 
-## <a name="a-nameida-icommanduiid"></a><a name="id"></a>ICommandUI::ID  
+## <a name="id"></a>ICommandUI::ID  
 ICommandUI オブジェクトによって表されるユーザー インターフェイス オブジェクトの ID を取得します。
 ```
 property unsigned int ID;
@@ -108,7 +116,7 @@ property unsigned int ID;
 ## <a name="remarks"></a>コメント
 このプロパティは、メニュー項目、ツール バー ボタンまたは ICommandUI オブジェクトによって表されるその他のユーザー インターフェイス オブジェクトの ID (ハンドル) を取得します。
 
-## <a name="a-nameindexa-icommanduiindex"></a><a name="index"></a>ICommandUI::Index   
+## <a name="index"></a>ICommandUI::Index   
 ICommandUI オブジェクトによって表されるユーザー インターフェイス オブジェクトのインデックスを取得します。
 ```
 property unsigned int Index;
@@ -116,7 +124,7 @@ property unsigned int Index;
 ## <a name="remarks"></a>コメント
 このプロパティは、メニュー項目、ツール バー ボタンまたは ICommandUI オブジェクトによって表されるその他のユーザー インターフェイス オブジェクトのインデックス (ハンドル) を取得します。
 
-## <a name="a-nameradioa-icommanduiradio"></a><a name="radio"></a>ICommandUI::Radio 
+## <a name="radio"></a>ICommandUI::Radio 
 このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。
 ```
 property bool Radio;
@@ -124,7 +132,7 @@ property bool Radio;
 ## <a name="remarks"></a>コメント
 このプロパティは、このコマンドのユーザー インターフェイス項目を適切なチェックの状態に設定します。 無線を有効にする項目で true に設定します。それ以外の場合は FALSE。
 
-## <a name="a-nametexta-icommanduitext"></a><a name="text"></a>ICommandUI::Text 
+## <a name="text"></a>ICommandUI::Text 
 このコマンドのユーザー インターフェイスの項目のテキストを設定します。
 ```
 property String^ Text;

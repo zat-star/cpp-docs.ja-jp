@@ -9,8 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CReversalTransition
 - CReversalTransition
+- AFXANIMATIONCONTROLLER/CReversalTransition
+- AFXANIMATIONCONTROLLER/CReversalTransition::CReversalTransition
+- AFXANIMATIONCONTROLLER/CReversalTransition::Create
+- AFXANIMATIONCONTROLLER/CReversalTransition::m_duration
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -82,7 +85,7 @@ class CReversalTransition : public CBaseTransition;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-namecreatea--creversaltransitioncreate"></a><a name="create"></a>CReversalTransition::Create  
+##  <a name="create"></a>CReversalTransition::Create  
  カプセル化された移行 COM オブジェクトを作成する遷移ライブラリを呼び出します。  
   
 ```  
@@ -98,7 +101,7 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  移行が正常に作成された場合は TRUE。それ以外の場合は FALSE。  
   
-##  <a name="a-namecreversaltransitiona--creversaltransitioncreversaltransition"></a><a name="creversaltransition"></a>CReversalTransition::CReversalTransition  
+##  <a name="creversaltransition"></a>CReversalTransition::CReversalTransition  
  逆遷移オブジェクトを構築し、その継続時間を初期化します。  
   
 ```  
@@ -109,7 +112,7 @@ CReversalTransition(UI_ANIMATION_SECONDS duration);
  `duration`  
  遷移の期間です。  
   
-##  <a name="a-namemdurationa--creversaltransitionmduration"></a><a name="m_duration"></a>CReversalTransition::m_duration  
+##  <a name="m_duration"></a>CReversalTransition::m_duration  
  遷移の期間です。  
   
 ```  

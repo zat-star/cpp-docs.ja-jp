@@ -10,6 +10,30 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CView
+- AFXWIN/CView
+- AFXWIN/CView::CView
+- AFXWIN/CView::DoPreparePrinting
+- AFXWIN/CView::GetDocument
+- AFXWIN/CView::IsSelected
+- AFXWIN/CView::OnDragEnter
+- AFXWIN/CView::OnDragLeave
+- AFXWIN/CView::OnDragOver
+- AFXWIN/CView::OnDragScroll
+- AFXWIN/CView::OnDrop
+- AFXWIN/CView::OnDropEx
+- AFXWIN/CView::OnInitialUpdate
+- AFXWIN/CView::OnPrepareDC
+- AFXWIN/CView::OnScroll
+- AFXWIN/CView::OnScrollBy
+- AFXWIN/CView::OnActivateFrame
+- AFXWIN/CView::OnActivateView
+- AFXWIN/CView::OnBeginPrinting
+- AFXWIN/CView::OnDraw
+- AFXWIN/CView::OnEndPrinting
+- AFXWIN/CView::OnEndPrintPreview
+- AFXWIN/CView::OnPreparePrinting
+- AFXWIN/CView::OnPrint
+- AFXWIN/CView::OnUpdate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -149,7 +173,7 @@ class AFX_NOVTABLE CView : public CWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecviewa--cviewcview"></a><a name="cview"></a>CView::CView  
+##  <a name="cview"></a>CView::CView  
  `CView` オブジェクトを構築します。  
   
 ```  
@@ -159,7 +183,7 @@ CView();
 ### <a name="remarks"></a>コメント  
  フレームワークは、新しいフレーム ウィンドウが作成されるか、ウィンドウを分割時に、コンス トラクターを呼び出します。 オーバーライド、 [OnInitialUpdate](#oninitialupdate)ドキュメントをアタッチした後に、ビューを初期化するためにメンバー関数。  
   
-##  <a name="a-namedoprepareprintinga--cviewdoprepareprinting"></a><a name="doprepareprinting"></a>しません  
+##  <a name="doprepareprinting"></a>しません  
  この関数のオーバーライドから呼び出す[OnPreparePrinting](#onprepareprinting)を印刷 ダイアログ ボックスを起動し、プリンター デバイス コンテキストを作成します。  
   
 ```  
@@ -178,7 +202,7 @@ BOOL DoPreparePrinting(CPrintInfo* pInfo);
   
  この関数は、現在のプリンターの設定を使用してプリンター デバイス コンテキストを作成、ファイルがプレビューされている場合このデバイス コンテキストは、プレビュー期間中にプリンターをシミュレートするために使用されます。  
   
-##  <a name="a-namegetdocumenta--cviewgetdocument"></a><a name="getdocument"></a>CView::GetDocument  
+##  <a name="getdocument"></a>CView::GetDocument  
  ビューのドキュメントへのポインターを取得するには、この関数を呼び出します。  
   
 ```  
@@ -191,7 +215,7 @@ CDocument* GetDocument() const;
 ### <a name="remarks"></a>コメント  
  これにより、ドキュメントのメンバー関数を呼び出すことができます。  
   
-##  <a name="a-nameisselecteda--cviewisselected"></a><a name="isselected"></a>CView::IsSelected  
+##  <a name="isselected"></a>CView::IsSelected  
  指定したドキュメントの項目が選択されているかどうか確認するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -208,7 +232,7 @@ virtual BOOL IsSelected(const CObject* pDocItem) const;
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装**FALSE**します。 選択範囲を使用して実装している場合は、この関数をオーバーライド[CDocItem](../../mfc/reference/cdocitem-class.md)のオブジェクト。 ビューには、OLE アイテムが含まれている場合は、この関数をオーバーライドする必要があります。  
   
-##  <a name="a-nameonactivateframea--cviewonactivateframe"></a><a name="onactivateframe"></a>CView::OnActivateFrame  
+##  <a name="onactivateframe"></a>CView::OnActivateFrame  
  ビューを含むフレーム ウィンドウがアクティブまたは非アクティブ化されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -233,7 +257,7 @@ virtual void OnActivateFrame(
 ### <a name="remarks"></a>コメント  
  ビューに関連付けられているフレーム ウィンドウがアクティブまたは非アクティブになる場合は、特別な処理を実行する場合は、このメンバー関数をオーバーライドします。 たとえば、 [CFormView](../../mfc/reference/cformview-class.md)の保存およびフォーカスのあるコントロールを復元すると、この上書きを実行します。  
   
-##  <a name="a-nameonactivateviewa--cviewonactivateview"></a><a name="onactivateview"></a>CView::OnActivateView  
+##  <a name="onactivateview"></a>CView::OnActivateView  
  ビューがアクティブ化または非アクティブ化されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -260,7 +284,7 @@ virtual void OnActivateView(
   
  これらのパラメーターが異なるとき[CFrameWnd::SetActiveView](../../mfc/reference/cframewnd-class.md#setactiveview)はどのような異なるビューを使用して呼び出された[CFrameWnd::GetActiveView](../../mfc/reference/cframewnd-class.md#getactiveview)を返します。 これは、分割ウィンドウでよく発生します。  
   
-##  <a name="a-nameonbeginprintinga--cviewonbeginprinting"></a><a name="onbeginprinting"></a>値  
+##  <a name="onbeginprinting"></a>値  
  `OnPreparePrinting` が呼び出された後で、印刷または印刷プレビュー ジョブの開始時にフレームワークによって呼び出されます。  
   
 ```  
@@ -281,7 +305,7 @@ virtual void OnBeginPrinting(
   
  さらに、この関数を使用して、プリンター デバイス コンテキストのプロパティに依存する初期化を実行することもできます。 たとえば、ドキュメントを印刷するために必要なページ数は、印刷ダイアログ ボックスでユーザーが指定した設定 (たとえば、ページの長さ) によって異なる可能性があります。 このような場合で文書全体の長さを指定することはできません、 [OnPreparePrinting](#onprepareprinting)メンバー関数の場合、これを通常行うよう; プリンター デバイス コンテキストがダイアログ ボックスの設定に基づいて作成されるまでに待機する必要があります。 [OnBeginPrinting](#onbeginprinting)することができる&1; つ目のオーバーライド可能な関数がアクセス、 [CDC](../../mfc/reference/cdc-class.md)のため、文書全体の長さを設定するにはこの関数から、プリンター デバイス コンテキストを表すオブジェクト。 この時点でドキュメントの長さを指定しない場合、印刷プレビュー時にスクロール バーは表示されません。  
   
-##  <a name="a-nameondragentera--cviewondragenter"></a><a name="ondragenter"></a>CView::OnDragEnter  
+##  <a name="ondragenter"></a>CView::OnDragEnter  
  マウスがドロップ ターゲット ウィンドウの非スクロール領域を最初に入るときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -319,7 +343,7 @@ virtual DROPEFFECT OnDragEnter(
   
  以降の呼び出しを準備するには、この関数をオーバーライド、 [OnDragOver](#ondragover)メンバー関数。 この時点で後で使用できるデータ オブジェクトから必要なすべてのデータを取得する必要が、`OnDragOver`メンバー関数。 ビューは、ユーザーの視覚的フィードバックを送るには、この時点でも更新する必要があります。 詳細については、記事を参照してください。[ドラッグ アンド ドロップ: ドロップ ターゲットの実装](../../mfc/drag-and-drop-implementing-a-drop-target.md)します。  
   
-##  <a name="a-nameondragleavea--cviewondragleave"></a><a name="ondragleave"></a>CView::OnDragLeave  
+##  <a name="ondragleave"></a>CView::OnDragLeave  
  そのウィンドウの有効なドロップ エリアの外側、マウスを移動すると、ドラッグ操作中に、フレームワークが呼び出します。  
   
 ```  
@@ -329,7 +353,7 @@ virtual void OnDragLeave();
 ### <a name="remarks"></a>コメント  
  現在のビューは、中に行った操作をクリーンアップする必要がある場合は、この関数をオーバーライド[OnDragEnter](#ondragenter)または[OnDragOver](#ondragover)オブジェクトがドラッグ アンド ドロップ中にユーザーを視覚的フィードバックを削除するなどの呼び出しです。  
   
-##  <a name="a-nameondragovera--cviewondragover"></a><a name="ondragover"></a>直前  
+##  <a name="ondragover"></a>直前  
  マウスをドロップ ターゲットのウィンドウに移動するドラッグ操作中に、フレームワークが呼び出します。  
   
 ```  
@@ -367,7 +391,7 @@ virtual DROPEFFECT OnDragOver(
   
  ドラッグ操作中にユーザーに視覚的フィードバックを提供するには、この関数をオーバーライドします。 この関数は継続的に呼び出されると、のでそれに含まれるすべてのコードを可能な限り最適化してください。 詳細については、記事を参照してください。[ドラッグ アンド ドロップ: ドロップ ターゲットの実装](../../mfc/drag-and-drop-implementing-a-drop-target.md)します。  
   
-##  <a name="a-nameondragscrolla--cviewondragscroll"></a><a name="ondragscroll"></a>CView::OnDragScroll  
+##  <a name="ondragscroll"></a>CView::OnDragScroll  
  呼び出しの前に、フレームワークによって呼び出さ[OnDragEnter](#ondragenter)または[OnDragOver](#ondragover)ポイントがスクロール可能な領域があるかどうかを決定します。  
   
 ```  
@@ -401,7 +425,7 @@ virtual DROPEFFECT OnDragScroll(
 ### <a name="remarks"></a>コメント  
  このイベントの特別な動作を提供する場合に、この関数をオーバーライドします。 既定の実装では、カーソルが各ウィンドウの枠線内の既定のスクロール領域にドラッグされると、windows が自動的にスクロールします。詳細については、記事を参照してください。[ドラッグ アンド ドロップ: ドロップ ターゲットの実装](../../mfc/drag-and-drop-implementing-a-drop-target.md)します。  
   
-##  <a name="a-nameondrawa--cviewondraw"></a><a name="ondraw"></a>詳細  
+##  <a name="ondraw"></a>詳細  
  ドキュメントのイメージをレンダリングするためにフレームワークによって呼び出されます。  
   
 ```  
@@ -419,7 +443,7 @@ virtual void OnDraw(CDC* pDC) = 0;
   
  描画を最適化するために呼び出す、[ため](../../mfc/reference/cdc-class.md#rectvisible)指定した四角形を描画するかどうかを確認するデバイス コンテキストのメンバー関数。 通常の画面表示と印刷を区別する必要がある場合は、呼び出し、 [IsPrinting](../../mfc/reference/cdc-class.md#isprinting)デバイス コンテキストのメンバー関数。  
   
-##  <a name="a-nameondropa--cviewondrop"></a><a name="ondrop"></a>この関数  
+##  <a name="ondrop"></a>この関数  
  有効なドロップ ターゲット上でデータ オブジェクトを離したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -456,7 +480,7 @@ virtual BOOL OnDrop(
 > [!NOTE]
 >  に対するオーバーライドがある場合、フレームワークはこの関数を呼び出しません[OnDropEx](#ondropex)このビュー クラスにします。  
   
-##  <a name="a-nameondropexa--cviewondropex"></a><a name="ondropex"></a>CView::OnDropEx  
+##  <a name="ondropex"></a>CView::OnDropEx  
  有効なドロップ ターゲット上でデータ オブジェクトを離したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -516,7 +540,7 @@ virtual DROPEFFECT OnDropEx(
   
  既定のメニュー コマンドの設定の詳細については、次を参照してください。 [SetMenuDefaultItem](http://msdn.microsoft.com/library/windows/desktop/ms647996)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]と[CMenu::GetSafeHmenu](../../mfc/reference/cmenu-class.md#getsafehmenu)このボリュームのです。  
   
-##  <a name="a-nameonendprintinga--cviewonendprinting"></a><a name="onendprinting"></a>CView::OnEndPrinting  
+##  <a name="onendprinting"></a>CView::OnEndPrinting  
  ドキュメントの印刷またはプレビューした後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -535,7 +559,7 @@ virtual void OnEndPrinting(
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装は、何も行いません。 割り当てられているすべての GDI リソースを解放するには、この関数をオーバーライドして、 [OnBeginPrinting](#onbeginprinting)メンバー関数。  
   
-##  <a name="a-nameonendprintpreviewa--cviewonendprintpreview"></a><a name="onendprintpreview"></a>CView::OnEndPrintPreview  
+##  <a name="onendprintpreview"></a>CView::OnEndPrintPreview  
  印刷プレビュー モードを終了するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -564,7 +588,7 @@ virtual void OnEndPrintPreview(
   
  常に、基本クラスのバージョンを呼び出す`OnEndPrintPreview`関数の末尾には通常、オーバーライドします。  
   
-##  <a name="a-nameoninitialupdatea--cviewoninitialupdate"></a><a name="oninitialupdate"></a>:Oninitialupdate  
+##  <a name="oninitialupdate"></a>:Oninitialupdate  
  ドキュメントにビューを最初にアタッチ後、ビューが最初に表示される前に、フレームワークによって呼び出されます。  
   
 ```  
@@ -574,7 +598,7 @@ virtual void OnInitialUpdate();
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装、 [OnUpdate](#onupdate)ヒント情報のないメンバー関数 (つまり、0 に設定する既定値を使用して、`lHint`パラメーターと**NULL**の`pHint`パラメーター)。 ドキュメントに関する情報を必要とする&1; 回限りの初期化を実行するには、この関数をオーバーライドします。 たとえば、アプリケーションに固定サイズのドキュメントがある場合は、ドキュメントのサイズに基づくビューのスクロールの上限を初期化するためにこの関数を使用できます。 アプリケーションでは、可変サイズのドキュメントをサポートする場合に使用して[OnUpdate](#onupdate)スクロールを更新するたびに、ドキュメントにより変更制限します。  
   
-##  <a name="a-nameonpreparedca--cviewonpreparedc"></a><a name="onpreparedc"></a>付け  
+##  <a name="onpreparedc"></a>付け  
  前に、フレームワークによって呼び出さ、 [OnDraw](#ondraw)画面表示とする前に、メンバー関数が呼び出される、 [OnPrint](#onprint)印刷または印刷プレビュー期間中の各ページのメンバー関数が呼び出されます。  
   
 ```  
@@ -608,7 +632,7 @@ virtual void OnPrepareDC(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView #&183;](../../mfc/codesnippet/cpp/cview-class_1.cpp)]  
   
-##  <a name="a-nameonprepareprintinga--cviewonprepareprinting"></a><a name="onprepareprinting"></a>関数  
+##  <a name="onprepareprinting"></a>関数  
  ドキュメントを印刷または印刷プレビューする前に、フレームワークによって呼び出されます。  
   
 ```  
@@ -642,7 +666,7 @@ virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
   
  [!code-cpp[NVC_MFCDocView #&185;](../../mfc/codesnippet/cpp/cview-class_3.cpp)]  
   
-##  <a name="a-nameonprinta--cviewonprint"></a><a name="onprint"></a>のみ  
+##  <a name="onprint"></a>のみ  
  印刷またはドキュメントのページをプレビューするためにフレームワークによって呼び出されます。  
   
 ```  
@@ -682,7 +706,7 @@ virtual void OnPrint(
   
  別の例では、次を参照してください。 [CRichEditView::PrintInsideRect](../../mfc/reference/cricheditview-class.md#printinsiderect)します。  
   
-##  <a name="a-nameonscrolla--cviewonscroll"></a><a name="onscroll"></a>CView::OnScroll  
+##  <a name="onscroll"></a>CView::OnScroll  
  スクロールするかどうかを調べるためにフレームワークによって呼び出されることができます。  
   
 ```  
@@ -722,7 +746,7 @@ virtual BOOL OnScroll(
 ### <a name="remarks"></a>コメント  
  1 つのケースで、この関数がフレームワークによって呼び出されます`bDoScroll`設定**TRUE**ビューがスクロール バーのメッセージを受信するとします。 この場合、ビューを実際にスクロールする必要があります。 その他の場合は、この関数が呼び出されます`bDoScroll`設定**FALSE** OLE アイテムが最初にドロップときのドロップ ターゲットの自動スクロール領域にスクロール実際に行われる前にします。 この場合、する必要があります実際にはスクロールされませんビュー。  
   
-##  <a name="a-nameonscrollbya--cviewonscrollby"></a><a name="onscrollby"></a>CView::OnScrollBy  
+##  <a name="onscrollby"></a>CView::OnScrollBy  
  ビューの現在の境界に対して OLE アイテムをドラッグして、または垂直または水平スクロール バーを操作することによって、ドキュメントの存在のビューを超える領域を表示するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -748,7 +772,7 @@ virtual BOOL OnScrollBy(
   
  ドキュメントの幅または高さがピクセルを超えると、過去の 32767 スクロールために失敗します`OnScrollBy`に、無効なという`sizeScroll`引数。  
   
-##  <a name="a-nameonupdatea--cviewonupdate"></a><a name="onupdate"></a>CView::OnUpdate  
+##  <a name="onupdate"></a>CView::OnUpdate  
  ビューのドキュメントが変更された後に、フレームワークによって呼び出されますこの関数は[CDocument::UpdateAllViews](../../mfc/reference/cdocument-class.md#updateallviews)と、それらの変更を反映するように表示を更新します。  
   
 ```  

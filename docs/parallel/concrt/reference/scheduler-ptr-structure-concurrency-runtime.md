@@ -9,7 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- pplinterface/concurrency::scheduler_ptr
+- scheduler_ptr
+- PPLINTERFACE/concurrency::scheduler_ptr
+- PPLINTERFACE/concurrency::scheduler_ptr::scheduler_ptr::scheduler_ptr
+- PPLINTERFACE/concurrency::scheduler_ptr::scheduler_ptr::get
+- PPLINTERFACE/concurrency::scheduler_ptr::scheduler_ptr::operator bool
 dev_langs:
 - C++
 ms.assetid: e88c84af-c306-476d-aef1-f42a0fa0a80f
@@ -32,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 022b5fafc437a8103fe17967a9a5ea54d5b82a39
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 4bef1995724d078c9702669806ff61d5563ac465
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="schedulerptr-structure"></a>scheduler_ptr 構造体
@@ -52,20 +56,20 @@ struct scheduler_ptr;
   
 |名前|説明|  
 |----------|-----------------|  
-|[scheduler_ptr::scheduler_ptr コンス トラクター](#ctor)|オーバーロードされます。 shared_ptr からスケジューラを指すスケジューラ ポインターを作成します。|  
+|[scheduler_ptr::scheduler_ptr](#ctor)|オーバーロードされます。 shared_ptr からスケジューラを指すスケジューラ ポインターを作成します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[scheduler_ptr::get メソッド](#get)|スケジューラへの生のポインターを返します。|  
+|[scheduler_ptr::get](#get)|スケジューラへの生のポインターを返します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[scheduler_ptr::operator bool 演算子](#operator_bool)|スケジューラ ポインターが null 以外であるかどうかをテストします。|  
-|[scheduler_ptr::operator-&gt;演算子](#operator_ptr)|ポインターのように動作します。|  
+|[scheduler_ptr::operator bool](#operator_bool)|スケジューラ ポインターが null 以外であるかどうかをテストします。|  
+|[scheduler_ptr::operator-&gt;](#operator_ptr)|ポインターのように動作します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `scheduler_ptr`  
@@ -75,7 +79,7 @@ struct scheduler_ptr;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namegeta--schedulerptrget-method"></a><a name="get"></a>scheduler_ptr::get メソッド  
+##  <a name="get"></a>scheduler_ptr::get メソッド  
  スケジューラへの生のポインターを返します。  
   
 ```
@@ -84,7 +88,7 @@ scheduler_interface* get() const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="a-nameoperatorboola--schedulerptroperator-bool"></a><a name="operator_bool"></a>scheduler_ptr::operator bool   
+##  <a name="operator_bool"></a>scheduler_ptr::operator bool   
  スケジューラ ポインターが null 以外であるかどうかをテストします。  
   
 '' 演算子 bool() const です。

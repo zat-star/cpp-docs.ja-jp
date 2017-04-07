@@ -10,10 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IPersistPropertyBagImpl
-- ATL.IPersistPropertyBagImpl<T>
-- ATL::IPersistPropertyBagImpl
-- ATL::IPersistPropertyBagImpl<T>
-- ATL.IPersistPropertyBagImpl
+- ATLCOM/ATL::IPersistPropertyBagImpl
+- ATLCOM/ATL::IPersistPropertyBagImpl::GetClassID
+- ATLCOM/ATL::IPersistPropertyBagImpl::InitNew
+- ATLCOM/ATL::IPersistPropertyBagImpl::Load
+- ATLCOM/ATL::IPersistPropertyBagImpl::Save
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +87,7 @@ class ATL_NO_VTABLE IPersistPropertyBagImpl : public IPersistPropertyBag
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namegetclassida--ipersistpropertybagimplgetclassid"></a><a name="getclassid"></a>IPersistPropertyBagImpl::GetClassID  
+##  <a name="getclassid"></a>IPersistPropertyBagImpl::GetClassID  
  オブジェクトの CLSID を取得します。  
   
 ```
@@ -96,7 +97,7 @@ STDMETHOD(GetClassID)(CLSID* pClassID);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersist::GetClassID](http://msdn.microsoft.com/library/windows/desktop/ms688664)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameinitnewa--ipersistpropertybagimplinitnew"></a><a name="initnew"></a>IPersistPropertyBagImpl::InitNew  
+##  <a name="initnew"></a>IPersistPropertyBagImpl::InitNew  
  新しく作成されたオブジェクトを初期化します。  
   
 ```
@@ -109,7 +110,7 @@ STDMETHOD(InitNew)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistPropertyBag::InitNew](https://msdn.microsoft.com/library/aa768204.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameloada--ipersistpropertybagimplload"></a><a name="load"></a>IPersistPropertyBagImpl::Load  
+##  <a name="load"></a>IPersistPropertyBagImpl::Load  
  クライアントが提供するプロパティ バッグからのオブジェクトのプロパティを読み込みます。  
   
 ```
@@ -121,7 +122,7 @@ STDMETHOD(Load)(LPPROPERTYBAG pPropBag, LPERRORLOG pErrorLog);
   
  参照してください[IPersistPropertyBag::Load](https://msdn.microsoft.com/library/aa768206.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesavea--ipersistpropertybagimplsave"></a><a name="save"></a>IPersistPropertyBagImpl::Save  
+##  <a name="save"></a>IPersistPropertyBagImpl::Save  
  オブジェクトのプロパティをクライアントが指定したプロパティ バッグに保存します。  
   
 ```

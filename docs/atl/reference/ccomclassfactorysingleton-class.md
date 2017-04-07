@@ -9,11 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL.CComClassFactorySingleton
-- ATL.CComClassFactorySingleton<T>
-- ATL::CComClassFactorySingleton
-- ATL::CComClassFactorySingleton<T>
 - CComClassFactorySingleton
+- ATLCOM/ATL::CComClassFactorySingleton
+- ATLCOM/ATL::CComClassFactorySingleton::CreateInstance
+- ATLCOM/ATL::CComClassFactorySingleton::m_spObj
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -95,7 +94,7 @@ class CComClassFactorySingleton : public CComClassFactory
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-namecreateinstancea--ccomclassfactorysingletoncreateinstance"></a><a name="createinstance"></a>CComClassFactorySingleton::CreateInstance  
+##  <a name="createinstance"></a>CComClassFactorySingleton::CreateInstance  
  呼び出し`QueryInterface`を通じて[m_spObj](#m_spobj)インターフェイス ポインターを取得します。  
   
 ```
@@ -115,7 +114,7 @@ STDMETHOD(CreateInstance)(LPUNKNOWN pUnkOuter, REFIID riid, void** ppvObj);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="a-namemspobja--ccomclassfactorysingletonmspobj"></a><a name="m_spobj"></a>CComClassFactorySingleton::m_spObj  
+##  <a name="m_spobj"></a>CComClassFactorySingleton::m_spObj  
  [CComObjectGlobal](../../atl/reference/ccomobjectglobal-class.md)によって構築されたオブジェクト`CComClassFactorySingleton`します。  
   
 ```

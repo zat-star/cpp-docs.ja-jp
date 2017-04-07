@@ -10,8 +10,8 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - Win32ThreadTraits
-- ATL::Win32ThreadTraits
-- ATL.Win32ThreadTraits
+- ATLBASE/ATL::Win32ThreadTraits
+- ATLBASE/ATL::Win32ThreadTraits::CreateThread
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -77,7 +77,7 @@ class Win32ThreadTraits
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="a-namecreatethreada--win32threadtraitscreatethread"></a><a name="createthread"></a>Win32ThreadTraits::CreateThread  
+##  <a name="createthread"></a>Win32ThreadTraits::CreateThread  
  CRT 関数を使用しないでくださいスレッドを作成するには、この関数を呼び出します。  
   
 ```

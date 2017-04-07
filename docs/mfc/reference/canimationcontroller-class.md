@@ -10,7 +10,56 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAnimationController
-- afxanimationcontroller/CAnimationController
+- AFXANIMATIONCONTROLLER/CAnimationController
+- AFXANIMATIONCONTROLLER/CAnimationController::CAnimationController
+- AFXANIMATIONCONTROLLER/CAnimationController::AddAnimationObject
+- AFXANIMATIONCONTROLLER/CAnimationController::AddKeyframeToGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::AnimateGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::CleanUpGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::CreateKeyframe
+- AFXANIMATIONCONTROLLER/CAnimationController::EnableAnimationManagerEvent
+- AFXANIMATIONCONTROLLER/CAnimationController::EnableAnimationTimerEventHandler
+- AFXANIMATIONCONTROLLER/CAnimationController::EnablePriorityComparisonHandler
+- AFXANIMATIONCONTROLLER/CAnimationController::EnableStoryboardEventHandler
+- AFXANIMATIONCONTROLLER/CAnimationController::FindAnimationGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::FindAnimationObject
+- AFXANIMATIONCONTROLLER/CAnimationController::GetKeyframeStoryboardStart
+- AFXANIMATIONCONTROLLER/CAnimationController::GetUIAnimationManager
+- AFXANIMATIONCONTROLLER/CAnimationController::GetUIAnimationTimer
+- AFXANIMATIONCONTROLLER/CAnimationController::GetUITransitionFactory
+- AFXANIMATIONCONTROLLER/CAnimationController::GetUITransitionLibrary
+- AFXANIMATIONCONTROLLER/CAnimationController::IsAnimationInProgress
+- AFXANIMATIONCONTROLLER/CAnimationController::IsValid
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationIntegerValueChanged
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationManagerStatusChanged
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationTimerPostUpdate
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationTimerPreUpdate
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationTimerRenderingTooSlow
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAnimationValueChanged
+- AFXANIMATIONCONTROLLER/CAnimationController::OnBeforeAnimationStart
+- AFXANIMATIONCONTROLLER/CAnimationController::OnHasPriorityCancel
+- AFXANIMATIONCONTROLLER/CAnimationController::OnHasPriorityCompress
+- AFXANIMATIONCONTROLLER/CAnimationController::OnHasPriorityConclude
+- AFXANIMATIONCONTROLLER/CAnimationController::OnHasPriorityTrim
+- AFXANIMATIONCONTROLLER/CAnimationController::OnStoryboardStatusChanged
+- AFXANIMATIONCONTROLLER/CAnimationController::OnStoryboardUpdated
+- AFXANIMATIONCONTROLLER/CAnimationController::RemoveAllAnimationGroups
+- AFXANIMATIONCONTROLLER/CAnimationController::RemoveAnimationGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::RemoveAnimationObject
+- AFXANIMATIONCONTROLLER/CAnimationController::RemoveTransitions
+- AFXANIMATIONCONTROLLER/CAnimationController::ScheduleGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::SetRelatedWnd
+- AFXANIMATIONCONTROLLER/CAnimationController::UpdateAnimationManager
+- AFXANIMATIONCONTROLLER/CAnimationController::CleanUpGroup
+- AFXANIMATIONCONTROLLER/CAnimationController::OnAfterSchedule
+- AFXANIMATIONCONTROLLER/CAnimationController::gkeyframeStoryboardStart
+- AFXANIMATIONCONTROLLER/CAnimationController::m_bIsValid
+- AFXANIMATIONCONTROLLER/CAnimationController::m_lstAnimationGroups
+- AFXANIMATIONCONTROLLER/CAnimationController::m_pAnimationManager
+- AFXANIMATIONCONTROLLER/CAnimationController::m_pAnimationTimer
+- AFXANIMATIONCONTROLLER/CAnimationController::m_pRelatedWnd
+- AFXANIMATIONCONTROLLER/CAnimationController::m_pTransitionFactory
+- AFXANIMATIONCONTROLLER/CAnimationController::m_pTransitionLibrary
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -132,14 +181,14 @@ class CAnimationController : public CObject;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-namedtorcanimationcontrollera--canimationcontrollercanimationcontroller"></a><a name="_dtorcanimationcontroller"></a>CAnimationController:: ~ CAnimationController  
+##  <a name="_dtorcanimationcontroller"></a>CAnimationController:: ~ CAnimationController  
  デストラクターです。 アニメーション コント ローラーのオブジェクトが破棄されるときに呼び出されます。  
   
 ```  
 virtual ~CAnimationController(void);
 ```   
   
-##  <a name="a-nameaddanimationobjecta--canimationcontrolleraddanimationobject"></a><a name="addanimationobject"></a>CAnimationController::AddAnimationObject  
+##  <a name="addanimationobject"></a>CAnimationController::AddAnimationObject  
  アニメーション オブジェクトをアニメーション コント ローラーが属しているグループに追加します。  
   
 ```  
@@ -156,7 +205,7 @@ CAnimationGroup* AddAnimationObject(CAnimationBaseObject* pObject);
 ### <a name="remarks"></a>コメント  
  アニメーション オブジェクトをアニメーション コント ローラーに追加するには、このメソッドを呼び出します。 オブジェクトをオブジェクトの GroupID に従って、グループに追加されます (CAnimationBaseObject::SetID を参照してください)。 指定したグループ id が追加されている最初のオブジェクトである場合、アニメーション コント ローラーは、新しいグループを作成します。 アニメーション オブジェクトは、1 つのアニメーション コント ローラーのみに追加できます。 オブジェクトを別のコント ローラーに追加する必要がある場合は、まず RemoveAnimationObject を呼び出します。 オブジェクトが、古いグループの削除し、指定された ID を持つ別のグループに追加されたグループに既に追加されているオブジェクトの新しい GroupID と SetID を呼び出した場合  
   
-##  <a name="a-nameaddkeyframetogroupa--canimationcontrolleraddkeyframetogroup"></a><a name="addkeyframetogroup"></a>CAnimationController::AddKeyframeToGroup  
+##  <a name="addkeyframetogroup"></a>CAnimationController::AddKeyframeToGroup  
  キーフレームをグループに追加されます。  
   
 ```  
@@ -178,7 +227,7 @@ BOOL AddKeyframeToGroup(
 ### <a name="remarks"></a>コメント  
  通常を作成およびグループに自動的に作成したキーフレームを追加する、このメソッドを呼び出して、CAnimationController::CreateKeyframe を代わりに、使用する必要ありません。  
   
-##  <a name="a-nameanimategroupa--canimationcontrolleranimategroup"></a><a name="animategroup"></a>CAnimationController::AnimateGroup  
+##  <a name="animategroup"></a>CAnimationController::AnimateGroup  
  アニメーションを実行するグループを準備し、必要に応じてスケジュールを設定します。  
   
 ```  
@@ -200,14 +249,14 @@ BOOL AnimateGroup(
 ### <a name="remarks"></a>コメント  
  このメソッドでは、実際の作業をストーリー ボードを作成し、アニメーション変数を追加および遷移を適用するキーフレームを設定します。 遅延 bScheduleNow を FALSE に設定した場合のスケジュール設定を行うことができます。 この場合、指定されたグループは、アニメーションに設定されているストーリー ボードを保持します。 この時点で、ストーリー ボードとアニメーション変数のイベントをセットアップできます。 ときに実際には、アニメーション呼び出し CAnimationController::ScheduleGroup を実行する必要があります。  
   
-##  <a name="a-namecanimationcontrollera--canimationcontrollercanimationcontroller"></a><a name="canimationcontroller"></a>CAnimationController::CAnimationController  
+##  <a name="canimationcontroller"></a>CAnimationController::CAnimationController  
  アニメーション コント ローラーを構築します。  
   
 ```  
 CAnimationController(void);
 ```   
   
-##  <a name="a-namecleanupgroupa--canimationcontrollercleanupgroup"></a><a name="cleanupgroup"></a>CAnimationController::CleanUpGroup  
+##  <a name="cleanupgroup"></a>CAnimationController::CleanUpGroup  
  アニメーションがスケジュールされているときに、グループをクリーンアップするためにフレームワークによって呼び出されます。  
   
 ```  
@@ -225,7 +274,7 @@ void CleanUpGroup(CAnimationGroup* pGroup);
 ### <a name="remarks"></a>コメント  
  このメソッドを削除すべての遷移とキーフレーム、指定されたグループからアニメーションがスケジュールされている後関係はないためです。  
   
-##  <a name="a-namecreatekeyframea--canimationcontrollercreatekeyframe"></a><a name="createkeyframe"></a>CAnimationController::CreateKeyframe  
+##  <a name="createkeyframe"></a>CAnimationController::CreateKeyframe  
  遷移に依存するキーフレームを作成し、指定したグループに追加します。  
   
 ```  
@@ -259,7 +308,7 @@ CKeyFrame* CreateKeyframe(
 ### <a name="remarks"></a>コメント  
  返されたポインターを格納して、新しく作成されたキーフレームを他のキーフレームの基準にすることができます (2 番目のオーバーロードを参照)。 キーフレームで遷移を開始することもできます。CBaseTransition::SetKeyframes をご覧ください。 このようにして作成したキーフレームを削除する必要はありません。アニメーション グループによって自動的に削除されます。 キーフレームを他のキーフレームや遷移に基づいて作成する場合は注意し、循環参照が発生しないようにしてください。  
   
-##  <a name="a-nameenableanimationmanagereventa--canimationcontrollerenableanimationmanagerevent"></a><a name="enableanimationmanagerevent"></a>CAnimationController::EnableAnimationManagerEvent  
+##  <a name="enableanimationmanagerevent"></a>CAnimationController::EnableAnimationManagerEvent  
  アニメーション マネージャーの状態が変化するときに呼び出されるハンドラーの解放または設定します。  
   
 ```  
@@ -276,7 +325,7 @@ virtual BOOL EnableAnimationManagerEvent(BOOL bEnable = TRUE);
 ### <a name="remarks"></a>コメント  
  ハンドラーが (有効) を設定すると、Windows アニメーションは、アニメーション マネージャーのステータスが変わった OnAnimationManagerStatusChanged を呼び出します。  
   
-##  <a name="a-nameenableanimationtimereventhandlera--canimationcontrollerenableanimationtimereventhandler"></a><a name="enableanimationtimereventhandler"></a>CAnimationController::EnableAnimationTimerEventHandler  
+##  <a name="enableanimationtimereventhandler"></a>CAnimationController::EnableAnimationTimerEventHandler  
  タイミング イベントのハンドラーと更新のタイミングのハンドラーを解放または設定します。  
   
 ```  
@@ -298,7 +347,7 @@ virtual BOOL EnableAnimationTimerEventHandler(
 ### <a name="remarks"></a>コメント  
  ときに、ハンドラーでは、(有効) の Windows Animation API 呼び出し OnAnimationTimerPreUpdate、OnAnimationTimerPostUpdate OnRenderingTooSlow メソッドを設定します。 Windows アニメーション API の更新のストーリー ボードを可能にするアニメーション タイマーを有効にする必要があります。 それ以外の場合をアニメーションに指示するためにすべてのアニメーション変数の値を更新するマネージャー CAnimationController::UpdateAnimationManager を呼び出す必要があります。  
   
-##  <a name="a-nameenableprioritycomparisonhandlera--canimationcontrollerenableprioritycomparisonhandler"></a><a name="enableprioritycomparisonhandler"></a>CAnimationController::EnablePriorityComparisonHandler  
+##  <a name="enableprioritycomparisonhandler"></a>CAnimationController::EnablePriorityComparisonHandler  
  解放するかどうかスケジュールされたストーリー ボードがキャンセル、という結論に達しました、トリミングしたり圧縮を調べます優先度比較ハンドラーまたは設定します。  
   
 ```  
@@ -315,7 +364,7 @@ virtual BOOL EnablePriorityComparisonHandler(DWORD dwHandlerType);
 ### <a name="remarks"></a>コメント  
  Windows Animation dwHandlerType に応じて次の仮想メソッドを呼び出して、ハンドラーを (有効) に設定されている場合: OnHasPriorityCancel、OnHasPriorityConclude、OnHasPriorityTrim、OnHasPriorityCompress です。 dwHandler には、次のフラグの組み合わせが可能: UI_ANIMATION_PHT_NONE - リリース UI_ANIMATION_PHT_CANCEL - すべてのハンドラーは、[キャンセル] を設定比較ハンドラー UI_ANIMATION_PHT_CONCLUDE - 設定 - [キャンセル] 比較ハンドラー UI_ANIMATION_PHT_CONCLUDE_REMOVE 比較ハンドラー UI_ANIMATION_PHT_TRIM セット トリム比較ハンドラー UI_ANIMATION_PHT_CANCEL_REMOVE - 削除圧縮を設定し-UI_ANIMATION_PHT_COMPRESS_REMOVE Conclude 比較ハンドラーの削除 - UI_ANIMATION_PHT_COMPRESS 削除 Conclude 比較ハンドラー Compress 比較ハンドラー UI_ANIMATION_PHT_TRIM_REMOVE -トリム比較ハンドラーを削除します。  
   
-##  <a name="a-nameenablestoryboardeventhandlera--canimationcontrollerenablestoryboardeventhandler"></a><a name="enablestoryboardeventhandler"></a>CAnimationController::EnableStoryboardEventHandler  
+##  <a name="enablestoryboardeventhandler"></a>CAnimationController::EnableStoryboardEventHandler  
  設定またはストーリー ボードの状態と更新プログラムのイベントのハンドラーを解放します。  
   
 ```  
@@ -337,7 +386,7 @@ virtual BOOL EnableStoryboardEventHandler(
 ### <a name="remarks"></a>コメント  
  ハンドラーが設定されている場合 (有効) の Windows Animation API は OnStoryboardStatusChanges と OnStoryboardUpdated 仮想メソッドを呼び出します。 ハンドラー設定する必要がある CAnimationController::Animate を呼び出した後に、指定したアニメーション グループ IUIAnimationStoryboard のカプセル化されたオブジェクトを作成するためです。  
   
-##  <a name="a-namefindanimationgroupa--canimationcontrollerfindanimationgroup"></a><a name="findanimationgroup"></a>CAnimationController::FindAnimationGroup  
+##  <a name="findanimationgroup"></a>CAnimationController::FindAnimationGroup  
  によって、グループの ID、アニメーションのグループを検索します。  
   
 ```  
@@ -358,7 +407,7 @@ CAnimationGroup* FindAnimationGroup(IUIAnimationStoryboard* pStoryboard);
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、実行時に、アニメーションのグループを検索します。 グループが作成され、アニメーション コント ローラーを特定のグループ id の最初のアニメーション オブジェクトを追加するときにアニメーションのグループの内部リストに追加します。  
   
-##  <a name="a-namefindanimationobjecta--canimationcontrollerfindanimationobject"></a><a name="findanimationobject"></a>CAnimationController::FindAnimationObject  
+##  <a name="findanimationobject"></a>CAnimationController::FindAnimationObject  
  指定したアニメーション変数を含むアニメーション オブジェクトを検索します。  
   
 ```  
@@ -384,14 +433,14 @@ BOOL FindAnimationObject(
 ### <a name="remarks"></a>コメント  
  着信のアニメーション変数からアニメーション オブジェクトを検索することが必要なときに、イベント ハンドラーから呼び出されます。  
   
-##  <a name="a-namegkeyframestoryboardstarta--canimationcontrollergkeyframestoryboardstart"></a><a name="g_keyframestoryboardstart"></a>CAnimationController::gkeyframeStoryboardStart  
+##  <a name="g_keyframestoryboardstart"></a>CAnimationController::gkeyframeStoryboardStart  
  ストーリー ボードの開始を表すキーフレームです。  
   
 ```  
 static CBaseKeyFrame gkeyframeStoryboardStart;  
 ```  
   
-##  <a name="a-namegetkeyframestoryboardstarta--canimationcontrollergetkeyframestoryboardstart"></a><a name="getkeyframestoryboardstart"></a>CAnimationController::GetKeyframeStoryboardStart  
+##  <a name="getkeyframestoryboardstart"></a>CAnimationController::GetKeyframeStoryboardStart  
  ストーリー ボードの開始を識別するキーフレームを返します。  
   
 ```  
@@ -404,7 +453,7 @@ static CBaseKeyFrame* GetKeyframeStoryboardStart();
 ### <a name="remarks"></a>コメント  
  このキーフレームを基に、他のキーフレームまたは遷移のストーリー ボードがいつ開始される時点を取得します。  
   
-##  <a name="a-namegetuianimationmanagera--canimationcontrollergetuianimationmanager"></a><a name="getuianimationmanager"></a>CAnimationController::GetUIAnimationManager  
+##  <a name="getuianimationmanager"></a>CAnimationController::GetUIAnimationManager  
  カプセル化された IUIAnimationManager オブジェクトへのアクセスを提供します。  
   
 ```  
@@ -417,7 +466,7 @@ IUIAnimationManager* GetUIAnimationManager();
 ### <a name="remarks"></a>コメント  
  現在の OS が Windows Animation API をサポートしていない場合は、このメソッド NULL が返され、その後、CAnimationController::IsValid 上のすべての後続の呼び出しでは FALSE を返します。 します。 アニメーション コント ローラーでラップされない、そのインターフェイス メソッドを呼び出すために IUIAnimationManager にアクセスする必要があります。  
   
-##  <a name="a-namegetuianimationtimera--canimationcontrollergetuianimationtimer"></a><a name="getuianimationtimer"></a>CAnimationController::GetUIAnimationTimer  
+##  <a name="getuianimationtimer"></a>CAnimationController::GetUIAnimationTimer  
  カプセル化された IUIAnimationTimer オブジェクトへのアクセスを提供します。  
   
 ```  
@@ -430,7 +479,7 @@ IUIAnimationTimer* GetUIAnimationTimer();
 ### <a name="remarks"></a>コメント  
  現在の OS が Windows Animation API をサポートしていない場合は、このメソッド NULL が返され、その後、CAnimationController::IsValid 上のすべての後続の呼び出しでは FALSE を返します。 します。  
   
-##  <a name="a-namegetuitransitionfactorya--canimationcontrollergetuitransitionfactory"></a><a name="getuitransitionfactory"></a>CAnimationController::GetUITransitionFactory  
+##  <a name="getuitransitionfactory"></a>CAnimationController::GetUITransitionFactory  
  IUIAnimationTransitionFactory インターフェイスまたは遷移ライブラリの作成に失敗する場合は NULL へのポインター。  
   
 ```  
@@ -443,7 +492,7 @@ IUIAnimationTransitionFactory* GetUITransitionFactory();
 ### <a name="remarks"></a>コメント  
  現在の OS が Windows Animation API をサポートしていない場合は、このメソッド NULL が返され、その後、CAnimationController::IsValid 上のすべての後続の呼び出しでは FALSE を返します。 します。  
   
-##  <a name="a-namegetuitransitionlibrarya--canimationcontrollergetuitransitionlibrary"></a><a name="getuitransitionlibrary"></a>CAnimationController::GetUITransitionLibrary  
+##  <a name="getuitransitionlibrary"></a>CAnimationController::GetUITransitionLibrary  
  カプセル化された IUIAnimationTransitionLibrary オブジェクトへのアクセスを提供します。  
   
 ```  
@@ -456,7 +505,7 @@ IUIAnimationTransitionLibrary* GetUITransitionLibrary();
 ### <a name="remarks"></a>コメント  
  現在の OS が Windows Animation API をサポートしていない場合は、このメソッド NULL が返され、その後、CAnimationController::IsValid 上のすべての後続の呼び出しでは FALSE を返します。 します。  
   
-##  <a name="a-nameisanimationinprogressa--canimationcontrollerisanimationinprogress"></a><a name="isanimationinprogress"></a>CAnimationController::IsAnimationInProgress  
+##  <a name="isanimationinprogress"></a>CAnimationController::IsAnimationInProgress  
  少なくとも&1; つのグループがアニメーションを再生しているかどうかを指示します。  
   
 ```  
@@ -469,7 +518,7 @@ virtual BOOL IsAnimationInProgress();
 ### <a name="remarks"></a>コメント  
  アニメーション マネージャーのステータスを確認し、状態が UI_ANIMATION_MANAGER_BUSY 場合に TRUE を返します。  
   
-##  <a name="a-nameisvalida--canimationcontrollerisvalid"></a><a name="isvalid"></a>CAnimationController::IsValid  
+##  <a name="isvalid"></a>CAnimationController::IsValid  
  アニメーション コント ローラーが有効かどうかを指示します。  
   
 ```  
@@ -482,56 +531,56 @@ BOOL IsValid() const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、Windows Animation API は現在の OS とアニメーション マネージャーの作成はサポートされていない場合にのみ FALSE を返します。 は、登録されていないために失敗しました。 このフラグの設定が発生する COM ライブラリの初期化後に&1; 回以上 GetUIAnimationManager を呼び出す必要があります。  
   
-##  <a name="a-namembisvalida--canimationcontrollermbisvalid"></a><a name="m_bisvalid"></a>CAnimationController::m_bIsValid  
+##  <a name="m_bisvalid"></a>CAnimationController::m_bIsValid  
  アニメーション コント ローラーが有効であるかどうかどうかを指定します。 現在の OS が Windows Animation API をサポートしていない場合、このメンバーは FALSE に設定します。  
   
 ```  
 BOOL m_bIsValid;  
 ```  
   
-##  <a name="a-namemlstanimationgroupsa--canimationcontrollermlstanimationgroups"></a><a name="m_lstanimationgroups"></a>CAnimationController::m_lstAnimationGroups  
+##  <a name="m_lstanimationgroups"></a>CAnimationController::m_lstAnimationGroups  
  このアニメーション コント ローラーに属しているアニメーション グループの一覧です。  
   
 ```  
 CList<CAnimationGroup*, CAnimationGroup*> m_lstAnimationGroups;  
 ```  
   
-##  <a name="a-namempanimationmanagera--canimationcontrollermpanimationmanager"></a><a name="m_panimationmanager"></a>CAnimationController::m_pAnimationManager  
+##  <a name="m_panimationmanager"></a>CAnimationController::m_pAnimationManager  
  アニメーション マネージャーの COM オブジェクトへのポインターを格納します。  
   
 ```  
 ATL::CComPtr<IUIAnimationManager> m_pAnimationManager;  
 ```  
   
-##  <a name="a-namempanimationtimera--canimationcontrollermpanimationtimer"></a><a name="m_panimationtimer"></a>CAnimationController::m_pAnimationTimer  
+##  <a name="m_panimationtimer"></a>CAnimationController::m_pAnimationTimer  
  アニメーション タイマーの COM オブジェクトへのポインターを格納します。  
   
 ```  
 ATL::CComPtr<IUIAnimationTimer> m_pAnimationTimer;  
 ```  
   
-##  <a name="a-namemprelatedwnda--canimationcontrollermprelatedwnd"></a><a name="m_prelatedwnd"></a>CAnimationController::m_pRelatedWnd  
+##  <a name="m_prelatedwnd"></a>CAnimationController::m_pRelatedWnd  
  アニメーション マネージャーの状態が変更されたか、後の更新イベントが発生したときに自動的に描画できる関連の CWnd オブジェクトへのポインター。 NULL を指定できます。  
   
 ```  
 CWnd* m_pRelatedWnd;  
 ```  
   
-##  <a name="a-namemptransitionfactorya--canimationcontrollermptransitionfactory"></a><a name="m_ptransitionfactory"></a>CAnimationController::m_pTransitionFactory  
+##  <a name="m_ptransitionfactory"></a>CAnimationController::m_pTransitionFactory  
  遷移の工場出荷時の COM オブジェクトへのポインターを格納します。  
   
 ```  
 ATL::CComPtr<IUIAnimationTransitionFactory> m_pTransitionFactory;  
 ```  
   
-##  <a name="a-namemptransitionlibrarya--canimationcontrollermptransitionlibrary"></a><a name="m_ptransitionlibrary"></a>CAnimationController::m_pTransitionLibrary  
+##  <a name="m_ptransitionlibrary"></a>CAnimationController::m_pTransitionLibrary  
  遷移ライブラリ COM オブジェクトへのポインターを格納します。  
   
 ```  
 ATL::CComPtr<IUIAnimationTransitionLibrary> m_pTransitionLibrary;  
 ```  
   
-##  <a name="a-nameonafterschedulea--canimationcontrolleronafterschedule"></a><a name="onafterschedule"></a>CAnimationController::OnAfterSchedule  
+##  <a name="onafterschedule"></a>CAnimationController::OnAfterSchedule  
  指定したグループのアニメーションがスケジュールされているだけのときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -545,7 +594,7 @@ virtual void OnAfterSchedule(CAnimationGroup* pGroup);
 ### <a name="remarks"></a>コメント  
  既定の実装では、キーフレームを指定されたグループから削除し、指定したグループに属しているアニメーション変数から移行します。 アニメーションのスケジュール時にその他のアクションを実行する派生クラスでオーバーライドできます。  
   
-##  <a name="a-nameonanimationintegervaluechangeda--canimationcontrolleronanimationintegervaluechanged"></a><a name="onanimationintegervaluechanged"></a>CAnimationController::OnAnimationIntegerValueChanged  
+##  <a name="onanimationintegervaluechanged"></a>CAnimationController::OnAnimationIntegerValueChanged  
  アニメーション変数の整数値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -576,7 +625,7 @@ virtual void OnAnimationIntegerValueChanged(
 ### <a name="remarks"></a>コメント  
  EnableIntegerValueChangedEvent 固有のアニメーション変数またはアニメーション オブジェクトに対して呼び出すことでアニメーション変数のイベントを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameonanimationmanagerstatuschangeda--canimationcontrolleronanimationmanagerstatuschanged"></a><a name="onanimationmanagerstatuschanged"></a>CAnimationController::OnAnimationManagerStatusChanged  
+##  <a name="onanimationmanagerstatuschanged"></a>CAnimationController::OnAnimationManagerStatusChanged  
  アニメーション マネージャーからメイル イベントに応答フレームワークによって呼び出されます。  
   
 ```  
@@ -595,7 +644,7 @@ virtual void OnAnimationManagerStatusChanged(
 ### <a name="remarks"></a>コメント  
  EnableAnimationManagerEvent でアニメーション マネージャーのイベントを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 既定の実装が SetRelatedWnd で設定された場合に、関連するウィンドウを更新します。  
   
-##  <a name="a-nameonanimationtimerpostupdatea--canimationcontrolleronanimationtimerpostupdate"></a><a name="onanimationtimerpostupdate"></a>CAnimationController::OnAnimationTimerPostUpdate  
+##  <a name="onanimationtimerpostupdate"></a>CAnimationController::OnAnimationTimerPostUpdate  
  アニメーション更新が完了した後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -605,7 +654,7 @@ virtual void OnAnimationTimerPostUpdate();
 ### <a name="remarks"></a>コメント  
  EnableAnimationTimerEventHandler を使用して、タイマー イベント ハンドラーを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameonanimationtimerpreupdatea--canimationcontrolleronanimationtimerpreupdate"></a><a name="onanimationtimerpreupdate"></a>CAnimationController::OnAnimationTimerPreUpdate  
+##  <a name="onanimationtimerpreupdate"></a>CAnimationController::OnAnimationTimerPreUpdate  
  アニメーションの更新が始まる前に、フレームワークによって呼び出されます。  
   
 ```  
@@ -615,7 +664,7 @@ virtual void OnAnimationTimerPreUpdate();
 ### <a name="remarks"></a>コメント  
  EnableAnimationTimerEventHandler を使用して、タイマー イベント ハンドラーを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameonanimationtimerrenderingtooslowa--canimationcontrolleronanimationtimerrenderingtooslow"></a><a name="onanimationtimerrenderingtooslow"></a>CAnimationController::OnAnimationTimerRenderingTooSlow  
+##  <a name="onanimationtimerrenderingtooslow"></a>CAnimationController::OnAnimationTimerRenderingTooSlow  
  アニメーションのレンダリングのフレーム レートが最小の望ましいフレーム レートを下回った場合に、フレームワークによって呼び出されます。  
   
 ```  
@@ -629,7 +678,7 @@ virtual void OnAnimationTimerRenderingTooSlow(UINT32 fps);
 ### <a name="remarks"></a>コメント  
  EnableAnimationTimerEventHandler を使用して、タイマー イベント ハンドラーを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 最小の望ましいフレーム レートは、IUIAnimationTimer::SetFrameRateThreshold を呼び出すことによって指定されます。  
   
-##  <a name="a-nameonanimationvaluechangeda--canimationcontrolleronanimationvaluechanged"></a><a name="onanimationvaluechanged"></a>CAnimationController::OnAnimationValueChanged  
+##  <a name="onanimationvaluechanged"></a>CAnimationController::OnAnimationValueChanged  
  アニメーション変数の値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -660,7 +709,7 @@ virtual void OnAnimationValueChanged(
 ### <a name="remarks"></a>コメント  
  EnableValueChangedEvent 固有のアニメーション変数またはアニメーション オブジェクトに対して呼び出すことでアニメーション変数のイベントを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameonbeforeanimationstarta--canimationcontrolleronbeforeanimationstart"></a><a name="onbeforeanimationstart"></a>CAnimationController::OnBeforeAnimationStart  
+##  <a name="onbeforeanimationstart"></a>CAnimationController::OnBeforeAnimationStart  
  呼び出されたときにフレームワークによって右アニメーションがスケジュールされています。  
   
 ```  
@@ -674,7 +723,7 @@ virtual void OnBeforeAnimationStart(CAnimationGroup* pGroup);
 ### <a name="remarks"></a>コメント  
  この呼び出しを使用して、関連する CWnd にルーティングされ、指定したグループのアニメーションの開始前に付加的な処理を実行する派生クラスでオーバーライドされることができます。  
   
-##  <a name="a-nameonhasprioritycancela--canimationcontrolleronhasprioritycancel"></a><a name="onhasprioritycancel"></a>CAnimationController::OnHasPriorityCancel  
+##  <a name="onhasprioritycancel"></a>CAnimationController::OnHasPriorityCancel  
  スケジュールの競合を解決するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -700,7 +749,7 @@ virtual BOOL OnHasPriorityCancel(
 ### <a name="remarks"></a>コメント  
  このメソッドは、CAnimationController::EnablePriorityComparisonHandler を使用して優先度比較イベントを有効にし、UI_ANIMATION_PHT_CANCEL を指定した場合に呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 競合の管理の詳細については、Windows Animation API のドキュメント (http://msdn.microsoft.com/library/dd371759(VS.85).aspx) を参照してください。  
   
-##  <a name="a-nameonhasprioritycompressa--canimationcontrolleronhasprioritycompress"></a><a name="onhasprioritycompress"></a>CAnimationController::OnHasPriorityCompress  
+##  <a name="onhasprioritycompress"></a>CAnimationController::OnHasPriorityCompress  
  スケジュールの競合を解決するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -726,7 +775,7 @@ virtual BOOL OnHasPriorityCompress(
 ### <a name="remarks"></a>コメント  
  このメソッドは、CAnimationController::EnablePriorityComparisonHandler を使用して優先度比較イベントを有効にし、UI_ANIMATION_PHT_COMPRESS を指定した場合に呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 競合の管理の詳細については、Windows Animation API のドキュメント (http://msdn.microsoft.com/library/dd371759(VS.85).aspx) を参照してください。  
   
-##  <a name="a-nameonhaspriorityconcludea--canimationcontrolleronhaspriorityconclude"></a><a name="onhaspriorityconclude"></a>CAnimationController::OnHasPriorityConclude  
+##  <a name="onhaspriorityconclude"></a>CAnimationController::OnHasPriorityConclude  
  スケジュールの競合を解決するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -752,7 +801,7 @@ virtual BOOL OnHasPriorityConclude(
 ### <a name="remarks"></a>コメント  
  このメソッドは、CAnimationController::EnablePriorityComparisonHandler を使用して優先度比較イベントを有効にし、UI_ANIMATION_PHT_CONCLUDE を指定した場合に呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 競合の管理の詳細については、Windows Animation API のドキュメント (http://msdn.microsoft.com/library/dd371759(VS.85).aspx) を参照してください。  
   
-##  <a name="a-nameonhasprioritytrima--canimationcontrolleronhasprioritytrim"></a><a name="onhasprioritytrim"></a>CAnimationController::OnHasPriorityTrim  
+##  <a name="onhasprioritytrim"></a>CAnimationController::OnHasPriorityTrim  
  スケジュールの競合を解決するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -778,7 +827,7 @@ virtual BOOL OnHasPriorityTrim(
 ### <a name="remarks"></a>コメント  
  このメソッドは、CAnimationController::EnablePriorityComparisonHandler を使用して優先度比較イベントを有効にし、UI_ANIMATION_PHT_TRIM を指定した場合に呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。 競合の管理の詳細については、Windows Animation API のドキュメント (http://msdn.microsoft.com/library/dd371759(VS.85).aspx) を参照してください。  
   
-##  <a name="a-nameonstoryboardstatuschangeda--canimationcontrolleronstoryboardstatuschanged"></a><a name="onstoryboardstatuschanged"></a>CAnimationController::OnStoryboardStatusChanged  
+##  <a name="onstoryboardstatuschanged"></a>CAnimationController::OnStoryboardStatusChanged  
  ストーリー ボードのステータスが変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -801,7 +850,7 @@ virtual void OnStoryboardStatusChanged(
 ### <a name="remarks"></a>コメント  
  CAnimationController::EnableStoryboardEventHandler を使用してストーリー ボードのイベントを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameonstoryboardupdateda--canimationcontrolleronstoryboardupdated"></a><a name="onstoryboardupdated"></a>CAnimationController::OnStoryboardUpdated  
+##  <a name="onstoryboardupdated"></a>CAnimationController::OnStoryboardUpdated  
  ストーリー ボードが更新されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -815,7 +864,7 @@ virtual void OnStoryboardUpdated(CAnimationGroup* pGroup);
 ### <a name="remarks"></a>コメント  
  CAnimationController::EnableStoryboardEventHandler を使用してストーリー ボードのイベントを有効にした場合は、このメソッドが呼び出されます。 派生クラスでオーバーライドして、アプリケーション固有のアクションを実行できます。  
   
-##  <a name="a-nameremoveallanimationgroupsa--canimationcontrollerremoveallanimationgroups"></a><a name="removeallanimationgroups"></a>CAnimationController::RemoveAllAnimationGroups  
+##  <a name="removeallanimationgroups"></a>CAnimationController::RemoveAllAnimationGroups  
  アニメーション コント ローラーからアニメーションのすべてのグループを削除します。  
   
 ```  
@@ -825,7 +874,7 @@ void RemoveAllAnimationGroups();
 ### <a name="remarks"></a>コメント  
  すべてのグループがある削除すると、そのポインター アプリケーション レベルで格納されている必要がありますが無効になります。 削除するグループの CAnimationGroup::m_bAutodestroyAnimationObjects が TRUE の場合は、そのグループに属しているすべてのアニメーション オブジェクトが削除されます。それ以外の場合親アニメーション コント ローラーへの参照は NULL に設定して、それらを別のコント ローラーに追加することができます。  
   
-##  <a name="a-nameremoveanimationgroupa--canimationcontrollerremoveanimationgroup"></a><a name="removeanimationgroup"></a>CAnimationController::RemoveAnimationGroup  
+##  <a name="removeanimationgroup"></a>CAnimationController::RemoveAnimationGroup  
  アニメーション コント ローラーから、指定した ID を持つ、アニメーションのグループを削除します。  
   
 ```  
@@ -839,7 +888,7 @@ void RemoveAnimationGroup(UINT32 nGroupID);
 ### <a name="remarks"></a>コメント  
  このメソッドは、グループの内部の一覧から、アニメーションのグループを削除し、削除、そのため、そのアニメーション グループへのポインターを格納してその必要がありますが無効になります。 CAnimationGroup::m_bAutodestroyAnimationObjects が TRUE の場合は、そのグループに属しているすべてのアニメーション オブジェクトが削除されます。それ以外の場合親アニメーション コント ローラーへの参照は NULL に設定して、それらを別のコント ローラーに追加することができます。  
   
-##  <a name="a-nameremoveanimationobjecta--canimationcontrollerremoveanimationobject"></a><a name="removeanimationobject"></a>CAnimationController::RemoveAnimationObject  
+##  <a name="removeanimationobject"></a>CAnimationController::RemoveAnimationObject  
  アニメーション コント ローラーからアニメーション オブジェクトを削除します。  
   
 ```  
@@ -858,7 +907,7 @@ void RemoveAnimationObject(
 ### <a name="remarks"></a>コメント  
  アニメーション オブジェクトをアニメーション コント ローラーとアニメーションのグループから削除します。 特定のオブジェクトが、アニメーション化する必要がありますされない場合、またはオブジェクトを別のアニメーション コント ローラーに移動する必要がある場合は、この関数を呼び出します。 最後のケース bNoDelete TRUE 必要があります。  
   
-##  <a name="a-nameremovetransitionsa--canimationcontrollerremovetransitions"></a><a name="removetransitions"></a>CAnimationController::RemoveTransitions  
+##  <a name="removetransitions"></a>CAnimationController::RemoveTransitions  
  指定したグループに属しているアニメーション オブジェクトからの遷移を削除します。  
   
 ```  
@@ -872,7 +921,7 @@ void RemoveTransitions(UINT32 nGroupID);
 ### <a name="remarks"></a>コメント  
  グループは、そのアニメーション オブジェクトをループ処理し、アニメーション オブジェクトごとに ClearTransitions(FALSE) を呼び出します。 このメソッドは、アニメーションがスケジュールされた後、framework によって呼び出されます。  
   
-##  <a name="a-nameschedulegroupa--canimationcontrollerschedulegroup"></a><a name="schedulegroup"></a>CAnimationController::ScheduleGroup  
+##  <a name="schedulegroup"></a>CAnimationController::ScheduleGroup  
  アニメーションをスケジュールします。  
   
 ```  
@@ -894,7 +943,7 @@ BOOL ScheduleGroup(
 ### <a name="remarks"></a>コメント  
  AnimateGroup 以前 ScheduleGroup を FALSE に設定するパラメーター bScheduleNow を呼び出す必要があります。 IUIAnimationTimer::GetTime から取得した目的のアニメーション時間を指定することができます。 時間のパラメーターが 0.0 の場合は、アニメーションは現在の時刻にスケジュールされます。  
   
-##  <a name="a-namesetrelatedwnda--canimationcontrollersetrelatedwnd"></a><a name="setrelatedwnd"></a>CAnimationController::SetRelatedWnd  
+##  <a name="setrelatedwnd"></a>CAnimationController::SetRelatedWnd  
  アニメーション コント ローラーとウィンドウ間の関係を確立します。  
   
 ```  
@@ -908,7 +957,7 @@ void SetRelatedWnd(CWnd* pWnd);
 ### <a name="remarks"></a>コメント  
  関連 CWnd オブジェクトを設定すると、アニメーション コント ローラー自動的に更新できますが (WM_PAINT メッセージを送信する) とアニメーション マネージャーの状態が変更されたか、タイマー後の更新イベントが発生しました。  
   
-##  <a name="a-nameupdateanimationmanagera--canimationcontrollerupdateanimationmanager"></a><a name="updateanimationmanager"></a>CAnimationController::UpdateAnimationManager  
+##  <a name="updateanimationmanager"></a>CAnimationController::UpdateAnimationManager  
  すべてのアニメーション変数の値を更新する、アニメーション マネージャーに指示します。  
   
 ```  

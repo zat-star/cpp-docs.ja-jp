@@ -100,9 +100,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 41cef906c326e7b113faa70fadfe347a11b58f87
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 4ead4c4bd9aac91c4a0db7e2dfbc4976664120bd
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="double3-class"></a>double_3 クラス
@@ -132,55 +132,55 @@ class double_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|double_3::get_x メソッド||  
-|double_3::get_xy メソッド||  
-|double_3::get_xyz メソッド||  
-|double_3::get_xz メソッド||  
-|double_3::get_xzy メソッド||  
-|double_3::get_y メソッド||  
-|double_3::get_yx メソッド||  
-|double_3::get_yxz メソッド||  
-|double_3::get_yz メソッド||  
-|double_3::get_yzx メソッド||  
-|double_3::get_z メソッド||  
-|double_3::get_zx メソッド||  
-|double_3::get_zxy メソッド||  
-|double_3::get_zy メソッド||  
-|double_3::get_zyx メソッド||  
-|double_3::ref_b メソッド||  
-|double_3::ref_g メソッド||  
-|double_3::ref_r メソッド||  
-|double_3::ref_x メソッド||  
-|double_3::ref_y メソッド||  
-|double_3::ref_z メソッド||  
-|double_3::set_x メソッド||  
-|double_3::set_xy メソッド||  
-|double_3::set_xyz メソッド||  
-|double_3::set_xz メソッド||  
-|double_3::set_xzy メソッド||  
-|double_3::set_y メソッド||  
-|double_3::set_yx メソッド||  
-|double_3::set_yxz メソッド||  
-|double_3::set_yz メソッド||  
-|double_3::set_yzx メソッド||  
-|double_3::set_z メソッド||  
-|double_3::set_zx メソッド||  
-|double_3::set_zxy メソッド||  
-|double_3::set_zy メソッド||  
-|double_3::set_zyx メソッド||  
+|double_3::get_x||  
+|double_3::get_xy||  
+|double_3::get_xyz||  
+|double_3::get_xz||  
+|double_3::get_xzy||  
+|double_3::get_y||  
+|double_3::get_yx||  
+|double_3::get_yxz||  
+|double_3::get_yz||  
+|double_3::get_yzx||  
+|double_3::get_z||  
+|double_3::get_zx||  
+|double_3::get_zxy||  
+|double_3::get_zy||  
+|double_3::get_zyx||  
+|double_3::ref_b||  
+|double_3::ref_g||  
+|double_3::ref_r||  
+|double_3::ref_x||  
+|double_3::ref_y||  
+|double_3::ref_z||  
+|double_3::set_x||  
+|double_3::set_xy||  
+|double_3::set_xyz||  
+|double_3::set_xz||  
+|double_3::set_xzy||  
+|double_3::set_y||  
+|double_3::set_yx||  
+|double_3::set_yxz||  
+|double_3::set_yz||  
+|double_3::set_yzx||  
+|double_3::set_z||  
+|double_3::set_zx||  
+|double_3::set_zxy||  
+|double_3::set_zy||  
+|double_3::set_zyx||  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|double_3::operator- 演算子||  
-|double_3::operator-- 演算子||  
-|double_3::operator*= 演算子||  
-|double_3::operator/= 演算子||  
-|double_3::operator++ 演算子||  
-|double_3::operator+= 演算子||  
-|double_3::operator= 演算子||  
-|double_3::operator-= 演算子||  
+|double_3:-||  
+|double_3:--||  
+|double_3::operator * =||  
+|double_3::operator/=||  
+|double_3::operator++||  
+|double_3::operator + = 演算子||  
+|double_3::operator =||  
+|double_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
@@ -192,36 +192,36 @@ class double_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|double_3::b データ メンバー||  
-|double_3::bg データ メンバー||  
-|double_3::bgr データ メンバー||  
-|double_3::br データ メンバー||  
-|double_3::brg データ メンバー||  
-|double_3::g データ メンバー||  
-|double_3::gb データ メンバー||  
-|double_3::gbr データ メンバー||  
-|double_3::gr データ メンバー||  
-|double_3::grb データ メンバー||  
-|double_3::r データ メンバー||  
-|double_3::rb データ メンバー||  
-|double_3::rbg データ メンバー||  
-|double_3::rg データ メンバー||  
-|double_3::rgb データ メンバー||  
-|double_3::x データ メンバー||  
-|double_3::xy データ メンバー||  
-|double_3::xyz データ メンバー||  
-|double_3::xz データ メンバー||  
-|double_3::xzy データ メンバー||  
-|double_3::y データ メンバー||  
-|double_3::yx データ メンバー||  
-|double_3::yxz データ メンバー||  
-|double_3::yz データ メンバー||  
-|double_3::yzx データ メンバー||  
-|double_3::z データ メンバー||  
-|double_3::zx データ メンバー||  
-|double_3::zxy データ メンバー||  
-|double_3::zy データ メンバー||  
-|double_3::zyx データ メンバー||  
+|double_3::b||  
+|double_3::bg||  
+|double_3::bgr||  
+|double_3::br||  
+|double_3::brg||  
+|double_3::g||  
+|double_3::gb||  
+|double_3::gbr||  
+|double_3::gr||  
+|double_3::grb||  
+|double_3::r||  
+|double_3::rb||  
+|double_3::rbg||  
+|double_3::rg||  
+|double_3::rgb||  
+|double_3::x||  
+|double_3::xy||  
+|double_3::xyz||  
+|double_3::xz||  
+|double_3::xzy||  
+|double_3::y||  
+|double_3::yx||  
+|double_3::yxz||  
+|double_3::yz||  
+|double_3::yzx||  
+|double_3::z||  
+|double_3::zx||  
+|double_3::zxy||  
+|double_3::zy||  
+|double_3::zyx||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `double_3`  
@@ -231,7 +231,7 @@ class double_3;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namectora-double3"></a><a name="ctor"></a>double_3 
+##  <a name="ctor"></a>double_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -298,12 +298,12 @@ explicit inline double_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="a-namedouble3sizea-size"></a><a name="double_3__size"></a>サイズ 
+##  <a name="double_3__size"></a>サイズ 
 
 ```  
 static const int size = 3;  
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

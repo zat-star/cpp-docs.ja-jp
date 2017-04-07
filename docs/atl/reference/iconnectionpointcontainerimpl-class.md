@@ -9,11 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::IConnectionPointContainerImpl
-- ATL.IConnectionPointContainerImpl
-- ATL.IConnectionPointContainerImpl<T>
 - IConnectionPointContainerImpl
-- ATL::IConnectionPointContainerImpl<T>
+- ATLCOM/ATL::IConnectionPointContainerImpl
+- ATLCOM/ATL::IConnectionPointContainerImpl::EnumConnectionPoints
+- ATLCOM/ATL::IConnectionPointContainerImpl::FindConnectionPoint
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +85,7 @@ class ATL_NO_VTABLE IConnectionPointContainerImpl
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="a-nameenumconnectionpointsa--iconnectionpointcontainerimplenumconnectionpoints"></a><a name="enumconnectionpoints"></a>IConnectionPointContainerImpl::EnumConnectionPoints  
+##  <a name="enumconnectionpoints"></a>IConnectionPointContainerImpl::EnumConnectionPoints  
  接続可能オブジェクトでサポートされている接続ポイントを反復処理する列挙子を作成します。  
   
 ```
@@ -96,7 +95,7 @@ STDMETHOD(EnumConnectionPoints)(IEnumConnectionPoints** ppEnum);
 ### <a name="remarks"></a>コメント  
  参照してください[IConnectionPointContainer::EnumConnectionPoints](http://msdn.microsoft.com/library/windows/desktop/ms682460)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namefindconnectionpointa--iconnectionpointcontainerimplfindconnectionpoint"></a><a name="findconnectionpoint"></a>IConnectionPointContainerImpl::FindConnectionPoint  
+##  <a name="findconnectionpoint"></a>IConnectionPointContainerImpl::FindConnectionPoint  
  指定の IID をサポートする接続ポイントへのインターフェイス ポインターを取得します。  
   
 ```

@@ -10,6 +10,101 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CHtmlView
+- AFXHTML/CHtmlView
+- AFXHTML/CHtmlView::Create
+- AFXHTML/CHtmlView::CreateControlSite
+- AFXHTML/CHtmlView::ExecFormsCommand
+- AFXHTML/CHtmlView::ExecWB
+- AFXHTML/CHtmlView::GetAddressBar
+- AFXHTML/CHtmlView::GetApplication
+- AFXHTML/CHtmlView::GetBusy
+- AFXHTML/CHtmlView::GetContainer
+- AFXHTML/CHtmlView::GetFullName
+- AFXHTML/CHtmlView::GetFullScreen
+- AFXHTML/CHtmlView::GetHeight
+- AFXHTML/CHtmlView::GetHtmlDocument
+- AFXHTML/CHtmlView::GetLeft
+- AFXHTML/CHtmlView::GetLocationName
+- AFXHTML/CHtmlView::GetLocationURL
+- AFXHTML/CHtmlView::GetMenuBar
+- AFXHTML/CHtmlView::GetOffline
+- AFXHTML/CHtmlView::GetParentBrowser
+- AFXHTML/CHtmlView::GetProperty
+- AFXHTML/CHtmlView::GetReadyState
+- AFXHTML/CHtmlView::GetRegisterAsBrowser
+- AFXHTML/CHtmlView::GetRegisterAsDropTarget
+- AFXHTML/CHtmlView::GetSilent
+- AFXHTML/CHtmlView::GetSource
+- AFXHTML/CHtmlView::GetStatusBar
+- AFXHTML/CHtmlView::GetTheaterMode
+- AFXHTML/CHtmlView::GetToolBar
+- AFXHTML/CHtmlView::GetTop
+- AFXHTML/CHtmlView::GetTopLevelContainer
+- AFXHTML/CHtmlView::GetType
+- AFXHTML/CHtmlView::GetVisible
+- AFXHTML/CHtmlView::GetWidth
+- AFXHTML/CHtmlView::GoBack
+- AFXHTML/CHtmlView::GoForward
+- AFXHTML/CHtmlView::GoHome
+- AFXHTML/CHtmlView::GoSearch
+- AFXHTML/CHtmlView::LoadFromResource
+- AFXHTML/CHtmlView::Navigate
+- AFXHTML/CHtmlView::Navigate2
+- AFXHTML/CHtmlView::OnBeforeNavigate2
+- AFXHTML/CHtmlView::OnCommandStateChange
+- AFXHTML/CHtmlView::OnDocumentComplete
+- AFXHTML/CHtmlView::OnDocWindowActivate
+- AFXHTML/CHtmlView::OnDownloadBegin
+- AFXHTML/CHtmlView::OnDownloadComplete
+- AFXHTML/CHtmlView::OnEnableModeless
+- AFXHTML/CHtmlView::OnFilterDataObject
+- AFXHTML/CHtmlView::OnFrameWindowActivate
+- AFXHTML/CHtmlView::OnFullScreen
+- AFXHTML/CHtmlView::OnGetDropTarget
+- AFXHTML/CHtmlView::OnGetExternal
+- AFXHTML/CHtmlView::OnGetHostInfo
+- AFXHTML/CHtmlView::OnGetOptionKeyPath
+- AFXHTML/CHtmlView::OnHideUI
+- AFXHTML/CHtmlView::OnMenuBar
+- AFXHTML/CHtmlView::OnNavigateComplete2
+- AFXHTML/CHtmlView::OnNavigateError
+- AFXHTML/CHtmlView::OnNewWindow2
+- AFXHTML/CHtmlView::OnProgressChange
+- AFXHTML/CHtmlView::OnPropertyChange
+- AFXHTML/CHtmlView::OnQuit
+- AFXHTML/CHtmlView::OnResizeBorder
+- AFXHTML/CHtmlView::OnShowContextMenu
+- AFXHTML/CHtmlView::OnShowUI
+- AFXHTML/CHtmlView::OnStatusBar
+- AFXHTML/CHtmlView::OnStatusTextChange
+- AFXHTML/CHtmlView::OnTheaterMode
+- AFXHTML/CHtmlView::OnTitleChange
+- AFXHTML/CHtmlView::OnToolBar
+- AFXHTML/CHtmlView::OnTranslateAccelerator
+- AFXHTML/CHtmlView::OnTranslateUrl
+- AFXHTML/CHtmlView::OnUpdateUI
+- AFXHTML/CHtmlView::OnVisible
+- AFXHTML/CHtmlView::PutProperty
+- AFXHTML/CHtmlView::QueryFormsCommand
+- AFXHTML/CHtmlView::QueryStatusWB
+- AFXHTML/CHtmlView::Refresh
+- AFXHTML/CHtmlView::Refresh2
+- AFXHTML/CHtmlView::SetAddressBar
+- AFXHTML/CHtmlView::SetFullScreen
+- AFXHTML/CHtmlView::SetHeight
+- AFXHTML/CHtmlView::SetLeft
+- AFXHTML/CHtmlView::SetMenuBar
+- AFXHTML/CHtmlView::SetOffline
+- AFXHTML/CHtmlView::SetRegisterAsBrowser
+- AFXHTML/CHtmlView::SetRegisterAsDropTarget
+- AFXHTML/CHtmlView::SetSilent
+- AFXHTML/CHtmlView::SetStatusBar
+- AFXHTML/CHtmlView::SetTheaterMode
+- AFXHTML/CHtmlView::SetToolBar
+- AFXHTML/CHtmlView::SetTop
+- AFXHTML/CHtmlView::SetVisible
+- AFXHTML/CHtmlView::SetWidth
+- AFXHTML/CHtmlView::Stop
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -199,7 +294,7 @@ class CHtmlView : public CFormView
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxhtml.h  
   
-##  <a name="a-namecreatea--chtmlviewcreate"></a><a name="create"></a>CHtmlView::Create  
+##  <a name="create"></a>CHtmlView::Create  
  このメンバー関数を作成する WebBrowser コントロールまたはコンテナー、Internet Explorer の実行可能ファイルを呼び出します。  
   
 ```  
@@ -235,7 +330,7 @@ virtual BOOL Create(
  `pContext`  
  ポインター、 [CCreateContext](../../mfc/reference/ccreatecontext-structure.md)します。 **NULL**既定です。  
   
-##  <a name="a-namecreatecontrolsitea--chtmlviewcreatecontrolsite"></a><a name="createcontrolsite"></a>CHtmlView::CreateControlSite  
+##  <a name="createcontrolsite"></a>CHtmlView::CreateControlSite  
  フォーム上のコントロールをホストするコントロール サイトのインスタンスを作成するために使用する、オーバーライド可能なメソッド。  
   
 ```  
@@ -265,7 +360,7 @@ virtual BOOL CreateControlSite(
 ### <a name="remarks"></a>コメント  
  コントロール サイト クラスのインスタンスを返すには、このメンバー関数をオーバーライドすることができます。  
   
-##  <a name="a-nameexecformscommanda--chtmlviewexecformscommand"></a><a name="execformscommand"></a>CHtmlView::ExecFormsCommand  
+##  <a name="execformscommand"></a>CHtmlView::ExecFormsCommand  
  指定されたコマンドを `IOleCommandTarget::Exec` メソッドを使用して実行します。  
   
 ```  
@@ -291,7 +386,7 @@ HRESULT ExecFormsCommand(
 ### <a name="remarks"></a>コメント  
  **ExecFormsCommand**の動作を実装、 [iolecommandtarget::exec](http://msdn.microsoft.com/library/windows/desktop/ms690300)メソッドです。  
   
-##  <a name="a-nameexecwba--chtmlviewexecwb"></a><a name="execwb"></a>CHtmlView::ExecWB  
+##  <a name="execwb"></a>CHtmlView::ExecWB  
  WebBrowser または Internet Explorer でコマンドを実行するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -318,7 +413,7 @@ void ExecWB(
 ### <a name="remarks"></a>コメント  
  参照してください[IWebBrowser2::ExecWB](https://msdn.microsoft.com/library/aa752117.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namegetaddressbara--chtmlviewgetaddressbar"></a><a name="getaddressbar"></a>CHtmlView::GetAddressBar  
+##  <a name="getaddressbar"></a>CHtmlView::GetAddressBar  
  Internet Explorer のアドレス バーを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -331,7 +426,7 @@ BOOL GetAddressBar() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namegetapplicationa--chtmlviewgetapplication"></a><a name="getapplication"></a>CHtmlView::GetApplication  
+##  <a name="getapplication"></a>CHtmlView::GetApplication  
  WebBrowser コントロールを含むアプリケーションでサポートされるオートメーション オブジェクトを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -344,7 +439,7 @@ LPDISPATCH GetApplication() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetbusya--chtmlviewgetbusy"></a><a name="getbusy"></a>CHtmlView::GetBusy  
+##  <a name="getbusy"></a>CHtmlView::GetBusy  
  WebBrowser コントロールは、ナビゲーション プロパティまたはダウンロード操作に関与しているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -357,7 +452,7 @@ BOOL GetBusy() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetcontainera--chtmlviewgetcontainer"></a><a name="getcontainer"></a>CHtmlView::GetContainer  
+##  <a name="getcontainer"></a>CHtmlView::GetContainer  
  Web ブラウザーのコンテナーに評価されるオブジェクトを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -370,7 +465,7 @@ LPDISPATCH GetContainer() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetfullnamea--chtmlviewgetfullname"></a><a name="getfullname"></a>CHtmlView::GetFullName  
+##  <a name="getfullname"></a>CHtmlView::GetFullName  
  Internet Explorer が現在表示されているファイルの完全パスを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -383,7 +478,7 @@ CString GetFullName() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namegetfullscreena--chtmlviewgetfullscreen"></a><a name="getfullscreen"></a>CHtmlView::GetFullScreen  
+##  <a name="getfullscreen"></a>CHtmlView::GetFullScreen  
  WebBrowser コントロールを全画面表示モードまたは標準ウィンドウ モードで動作するかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -398,7 +493,7 @@ BOOL GetFullScreen() const;
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetheighta--chtmlviewgetheight"></a><a name="getheight"></a>CHtmlView::GetHeight  
+##  <a name="getheight"></a>CHtmlView::GetHeight  
  WebBrowser コントロールのフレーム ウィンドウのピクセル単位の高さを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -408,7 +503,7 @@ long GetHeight() const;
 ### <a name="return-value"></a>戻り値  
  コントロールのフレーム ウィンドウ高さ (ピクセル単位)。  
   
-##  <a name="a-namegethtmldocumenta--chtmlviewgethtmldocument"></a><a name="gethtmldocument"></a>CHtmlView::GetHtmlDocument  
+##  <a name="gethtmldocument"></a>CHtmlView::GetHtmlDocument  
  アクティブなドキュメントの HTML ドキュメントを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -421,7 +516,7 @@ LPDISPATCH GetHtmlDocument() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetlefta--chtmlviewgetleft"></a><a name="getleft"></a>CHtmlView::GetLeft  
+##  <a name="getleft"></a>CHtmlView::GetLeft  
  WebBrowser コントロールの内側の左端とコンテナーの左端の間の距離を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -434,7 +529,7 @@ long GetLeft() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetlocationnamea--chtmlviewgetlocationname"></a><a name="getlocationname"></a>CHtmlView::GetLocationName  
+##  <a name="getlocationname"></a>CHtmlView::GetLocationName  
  このメンバー関数を呼び出して、web ブラウザーに表示されているリソースの名前を取得します。  
   
 ```  
@@ -449,7 +544,7 @@ CString GetLocationName() const;
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetlocationurla--chtmlviewgetlocationurl"></a><a name="getlocationurl"></a>CHtmlView::GetLocationURL  
+##  <a name="getlocationurl"></a>CHtmlView::GetLocationURL  
  WebBrowser コントロールが現在表示されているリソースの URL を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -464,7 +559,7 @@ CString GetLocationURL() const;
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetmenubara--chtmlviewgetmenubar"></a><a name="getmenubar"></a>CHtmlView::GetMenuBar  
+##  <a name="getmenubar"></a>CHtmlView::GetMenuBar  
  メニュー バーが表示されているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -477,7 +572,7 @@ BOOL GetMenuBar() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetofflinea--chtmlviewgetoffline"></a><a name="getoffline"></a>CHtmlView::GetOffline  
+##  <a name="getoffline"></a>CHtmlView::GetOffline  
  Web ブラウザーがオフラインで動作するかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -490,7 +585,7 @@ BOOL GetOffline() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetparentbrowsera--chtmlviewgetparentbrowser"></a><a name="getparentbrowser"></a>CHtmlView::GetParentBrowser  
+##  <a name="getparentbrowser"></a>CHtmlView::GetParentBrowser  
  WebBrowser コントロールの親オブジェクトへのポインターを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -503,7 +598,7 @@ LPDISPATCH GetParentBrowser() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetpropertya--chtmlviewgetproperty"></a><a name="getproperty"></a>CHtmlView::GetProperty  
+##  <a name="getproperty"></a>CHtmlView::GetProperty  
  このメンバー関数を呼び出して、コントロールに関連付けられているプロパティの値を取得します。  
   
 ```  
@@ -527,7 +622,7 @@ COleVariant GetProperty(LPCTSTR lpszProperty);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetreadystatea--chtmlviewgetreadystate"></a><a name="getreadystate"></a>CHtmlView::GetReadyState  
+##  <a name="getreadystate"></a>CHtmlView::GetReadyState  
  WebBrowser オブジェクトの準備完了状態を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -540,7 +635,7 @@ READYSTATE GetReadyState() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetregisterasbrowsera--chtmlviewgetregisterasbrowser"></a><a name="getregisterasbrowser"></a>CHtmlView::GetRegisterAsBrowser  
+##  <a name="getregisterasbrowser"></a>CHtmlView::GetRegisterAsBrowser  
  WebBrowser オブジェクトがターゲットの名前解決のための最上位レベルのブラウザーとして登録されているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -553,7 +648,7 @@ BOOL GetRegisterAsBrowser() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetregisterasdroptargeta--chtmlviewgetregisterasdroptarget"></a><a name="getregisterasdroptarget"></a>CHtmlView::GetRegisterAsDropTarget  
+##  <a name="getregisterasdroptarget"></a>CHtmlView::GetRegisterAsDropTarget  
  WebBrowser コントロールがナビゲーションのドロップ先として登録されているかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -566,7 +661,7 @@ BOOL GetRegisterAsDropTarget() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetsilenta--chtmlviewgetsilent"></a><a name="getsilent"></a>CHtmlView::GetSilent  
+##  <a name="getsilent"></a>CHtmlView::GetSilent  
  WebBrowser コントロールのすべてのダイアログ ボックスを表示できるかどうかを判断するのには、このメンバー関数を呼び出します。  
   
 ```  
@@ -579,7 +674,7 @@ BOOL GetSilent() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetsourcea--chtmlviewgetsource"></a><a name="getsource"></a>CHtmlView::GetSource  
+##  <a name="getsource"></a>CHtmlView::GetSource  
  Web ページの HTML ソース コードを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -596,7 +691,7 @@ BOOL GetSource(CString& strRef);
 ### <a name="remarks"></a>コメント  
  この関数は、ソース コードが返されますが、Internet Explorer で、ソースの表示 コマンドに対応する`CString`です。  
   
-##  <a name="a-namegetstatusbara--chtmlviewgetstatusbar"></a><a name="getstatusbar"></a>CHtmlView::GetStatusBar  
+##  <a name="getstatusbar"></a>CHtmlView::GetStatusBar  
  WebBrowser コントロールがステータス バーを表示するかどうかを指定するのには、このメンバー関数を呼び出します。  
   
 ```  
@@ -609,7 +704,7 @@ BOOL GetStatusBar() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namegettheatermodea--chtmlviewgettheatermode"></a><a name="gettheatermode"></a>CHtmlView::GetTheaterMode  
+##  <a name="gettheatermode"></a>CHtmlView::GetTheaterMode  
  Web ブラウザーがシアター モードかどうかを確認するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -624,7 +719,7 @@ BOOL GetTheaterMode() const;
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegettoolbara--chtmlviewgettoolbar"></a><a name="gettoolbar"></a>CHtmlView::GetToolBar  
+##  <a name="gettoolbar"></a>CHtmlView::GetToolBar  
  ツールバーを表示するかどうかを判断するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -634,7 +729,7 @@ int GetToolBar() const;
 ### <a name="return-value"></a>戻り値  
  ツールバーを表示するかどうかを示す値。 ツールバーを表示する場合は&0; 以外。それ以外の場合&0; を返します。  
   
-##  <a name="a-namegettopa--chtmlviewgettop"></a><a name="gettop"></a>CHtmlView::GetTop  
+##  <a name="gettop"></a>CHtmlView::GetTop  
  WebBrowser コントロールのメイン ウィンドウの上端の画面座標を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -647,7 +742,7 @@ long GetTop() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegettoplevelcontainera--chtmlviewgettoplevelcontainer"></a><a name="gettoplevelcontainer"></a>CHtmlView::GetTopLevelContainer  
+##  <a name="gettoplevelcontainer"></a>CHtmlView::GetTopLevelContainer  
  Internet Explorer が WebBrowser コントロールの最上位のコンテナーであるかどうかを確認するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -660,7 +755,7 @@ BOOL GetTopLevelContainer() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegettypea--chtmlviewgettype"></a><a name="gettype"></a>CHtmlView::GetType  
+##  <a name="gettype"></a>CHtmlView::GetType  
  含まれているアクティブなドキュメントの型名を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -673,7 +768,7 @@ CString GetType() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetvisiblea--chtmlviewgetvisible"></a><a name="getvisible"></a>CHtmlView::GetVisible  
+##  <a name="getvisible"></a>CHtmlView::GetVisible  
  格納されているオブジェクトが表示されているかどうかの決定には、このメンバー関数を呼び出します。  
   
 ```  
@@ -686,7 +781,7 @@ BOOL GetVisible() const;
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegetwidtha--chtmlviewgetwidth"></a><a name="getwidth"></a>CHtmlView::GetWidth  
+##  <a name="getwidth"></a>CHtmlView::GetWidth  
  Internet Explorer のメイン ウィンドウの幅を取得します。  
   
 ```  
@@ -696,7 +791,7 @@ long GetWidth() const;
 ### <a name="return-value"></a>戻り値  
  ピクセル単位で、ウィンドウの現在の幅。  
   
-##  <a name="a-namegobacka--chtmlviewgoback"></a><a name="goback"></a>CHtmlView::GoBack  
+##  <a name="goback"></a>CHtmlView::GoBack  
  旧バージョンとの&1; つの履歴リスト アイテムを移動します。  
   
 ```  
@@ -706,14 +801,14 @@ void GoBack();
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegoforwarda--chtmlviewgoforward"></a><a name="goforward"></a>CHtmlView::GoForward  
+##  <a name="goforward"></a>CHtmlView::GoForward  
  履歴一覧の次のアイテムを移動します。  
   
 ```  
 void GoForward();
 ```  
   
-##  <a name="a-namegohomea--chtmlviewgohome"></a><a name="gohome"></a>CHtmlView::GoHome  
+##  <a name="gohome"></a>CHtmlView::GoHome  
  Internet Explorer の [インターネット オプション] ダイアログ ボックス、またはコントロール パネルからアクセスする [インターネットのプロパティ] ダイアログ ボックスで指定した、現在のホーム ページまたはスタート ページに移動します。  
   
 ```  
@@ -723,7 +818,7 @@ void GoHome();
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namegosearcha--chtmlviewgosearch"></a><a name="gosearch"></a>CHtmlView::GoSearch  
+##  <a name="gosearch"></a>CHtmlView::GoSearch  
  現在の検索ページを Internet Explorer のインターネット オプション ダイアログ ボックスまたはインターネットのプロパティ ダイアログ ボックスで指定されたコントロール パネルからアクセスに移動します。  
   
 ```  
@@ -733,7 +828,7 @@ void GoSearch();
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-nameloadfromresourcea--chtmlviewloadfromresource"></a><a name="loadfromresource"></a>CHtmlView::LoadFromResource  
+##  <a name="loadfromresource"></a>CHtmlView::LoadFromResource  
  WebBrowser コントロールに指定したリソースを読み込むには、このメンバー関数を呼び出します。  
   
 ```  
@@ -754,7 +849,7 @@ BOOL LoadFromResource(UINT nRes);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namenavigatea--chtmlviewnavigate"></a><a name="navigate"></a>CHtmlView::Navigate  
+##  <a name="navigate"></a>CHtmlView::Navigate  
  このメンバー関数を呼び出して、URL によって識別されるリソースに移動します。  
   
 ```  
@@ -789,7 +884,7 @@ void Navigate(
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namenavigate2a--chtmlviewnavigate2"></a><a name="navigate2"></a>CHtmlView::Navigate2  
+##  <a name="navigate2"></a>CHtmlView::Navigate2  
  このメンバー関数を呼び出して、完全なパスで指定されたファイルまたは URL によって識別されるリソースに移動します。  
   
 ```  
@@ -849,7 +944,7 @@ void Navigate2(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCHtmlHttp&#7;](../../mfc/reference/codesnippet/cpp/chtmlview-class_1.cpp)]  
   
-##  <a name="a-nameonbeforenavigate2a--chtmlviewonbeforenavigate2"></a><a name="onbeforenavigate2"></a>CHtmlView::OnBeforeNavigate2  
+##  <a name="onbeforenavigate2"></a>CHtmlView::OnBeforeNavigate2  
  このメンバー関数は、ナビゲーションが web ブラウザーで発生する前に、イベントが発生するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -881,7 +976,7 @@ virtual void OnBeforeNavigate2(
  `pbCancel`  
  キャンセル フラグへのポインター。 アプリケーションでは、ナビゲーション操作を取り消すか続行を許可するようにゼロに&0; 以外に、このパラメーターを設定できます。  
   
-##  <a name="a-nameoncommandstatechangea--chtmlviewoncommandstatechange"></a><a name="oncommandstatechange"></a>CHtmlView::OnCommandStateChange  
+##  <a name="oncommandstatechange"></a>CHtmlView::OnCommandStateChange  
  このメンバー関数は、web ブラウザーのコマンドの有効状態が変更されたことをアプリケーションに通知するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -897,7 +992,7 @@ virtual void OnCommandStateChange(
  `bEnable`  
  有効な状態です。 コマンドが有効になっては無効になっている場合は&0; である場合は、このパラメーターは&0; 以外です。  
   
-##  <a name="a-nameondocumentcompletea--chtmlviewondocumentcomplete"></a><a name="ondocumentcomplete"></a>CHtmlView::OnDocumentComplete  
+##  <a name="ondocumentcomplete"></a>CHtmlView::OnDocumentComplete  
  到達したドキュメントをアプリケーションに通知するためにフレームワークによって呼び出されます、`READYSTATE_COMPLETE`状態です。  
   
 ```  
@@ -913,7 +1008,7 @@ virtual void OnDocumentComplete(LPCTSTR lpszURL);
   
  示された URL`lpszURL`ブラウザーは、この URL は、正規化された、修飾 URL であるために移動が指示された URL から異なる可能性があります。 たとえば、アプリケーションへの呼び出しで"www.microsoft.com"の URL で指定する[Navigate](#navigate)または[Navigate2](#navigate2)、渡された URL `OnNavigateComplete2` "http://www.microsoft.com/"になります。 また、サーバーが別の URL にブラウザーをリダイレクトする場合、ここで、リダイレクトされた URL が反映されます。  
   
-##  <a name="a-nameondocwindowactivatea--chtmlviewondocwindowactivate"></a><a name="ondocwindowactivate"></a>CHtmlView::OnDocWindowActivate  
+##  <a name="ondocwindowactivate"></a>CHtmlView::OnDocWindowActivate  
  コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブ化されたときにアクティブなインプレース オブジェクトに通知する、 **IOleInPlaceActiveObject::OnDocWindowActivate**の Internet Explorer または MSHTML の実装から呼び出されます。  
   
 ```  
@@ -930,7 +1025,7 @@ virtual HRESULT OnDocWindowActivate(BOOL fActivate);
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnDocWindowActivate`に対応するため、 `OnDocWindowActivate` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::OnDocWindowActivate](https://msdn.microsoft.com/library/aa753261.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameondownloadbegina--chtmlviewondownloadbegin"></a><a name="ondownloadbegin"></a>CHtmlView::OnDownloadBegin  
+##  <a name="ondownloadbegin"></a>CHtmlView::OnDownloadBegin  
  このメンバー関数は、ドキュメントのダウンロードを開始するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -940,14 +1035,14 @@ virtual void OnDownloadBegin();
 ### <a name="remarks"></a>コメント  
  このイベントは発生直後に、 [OnBeforeNavigate2](#onbeforenavigate2)イベント、ナビゲーションが取り消された場合を除き、します。 このイベントには、アニメーションまたはコンテナーが表示する必要がある「ビジー」を示す値を接続する必要があります。  
   
-##  <a name="a-nameondownloadcompletea--chtmlviewondownloadcomplete"></a><a name="ondownloadcomplete"></a>CHtmlView::OnDownloadComplete  
+##  <a name="ondownloadcomplete"></a>CHtmlView::OnDownloadComplete  
  このメンバー関数が終了したら、ナビゲーション操作が停止されると、か、失敗したことを示すために、フレームワークによって呼び出されます。  
   
 ```  
 virtual void OnDownloadComplete();
 ```  
   
-##  <a name="a-nameonenablemodelessa--chtmlviewonenablemodeless"></a><a name="onenablemodeless"></a>CHtmlView::OnEnableModeless  
+##  <a name="onenablemodeless"></a>CHtmlView::OnEnableModeless  
  Internet Explorer または MSHTML にモーダル UI が表示されるときに呼び出されます。  
   
 ```  
@@ -964,7 +1059,7 @@ virtual HRESULT OnEnableModeless(BOOL fEnable);
 ### <a name="remarks"></a>コメント  
  有効またはコンテナーを作成するか、モーダル ダイアログ ボックスを破棄するときは、モードレス ダイアログ ボックスを無効にします。 オーバーライド`OnEnableModeless`に対応するため、 `EnableModeless` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::EnableModeless](https://msdn.microsoft.com/library/aa753253.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonfilterdataobjecta--chtmlviewonfilterdataobject"></a><a name="onfilterdataobject"></a>CHtmlView::OnFilterDataObject  
+##  <a name="onfilterdataobject"></a>CHtmlView::OnFilterDataObject  
  ホストが Internet Explorer または MSHTML のデータ オブジェクトを置き換えできるように Internet Explorer または MSHTML によってホスト上で呼び出されます。  
   
 ```  
@@ -986,7 +1081,7 @@ virtual HRESULT OnFilterDataObject(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnFilterDataObject`に対応するため、 `FilterDataObject` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::FilterDataObject](https://msdn.microsoft.com/library/aa753254.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonframewindowactivatea--chtmlviewonframewindowactivate"></a><a name="onframewindowactivate"></a>CHtmlView::OnFrameWindowActivate  
+##  <a name="onframewindowactivate"></a>CHtmlView::OnFrameWindowActivate  
  呼び出される[IOleInPlaceActiveObject::OnFrameWindowActivate](http://msdn.microsoft.com/library/windows/desktop/ms683969)フレーム ウィンドウがアクティブまたは非アクティブ化にコンテナーの最上位レベル オブジェクトを通知します。  
   
 ```  
@@ -1003,7 +1098,7 @@ virtual HRESULT OnFrameWindowActivate(BOOL fActivate);
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnFrameWindowActivate`に対応するため、 `OnFrameWindowActivate` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::OnFrameWindowActivate](https://msdn.microsoft.com/library/aa753262.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonfullscreena--chtmlviewonfullscreen"></a><a name="onfullscreen"></a>CHtmlView::OnFullScreen  
+##  <a name="onfullscreen"></a>CHtmlView::OnFullScreen  
  フレームワークによって呼び出されますときに、[全画面表示](https://msdn.microsoft.com/library/aa752119.aspx)プロパティが変更されました。  
   
 ```  
@@ -1014,7 +1109,7 @@ virtual void OnFullScreen(BOOL bFullScreen);
  *bFullScreen*  
  Internet Explorer が全画面表示モードである場合は&0; 以外それ以外の場合はゼロ。  
   
-##  <a name="a-nameongetdroptargeta--chtmlviewongetdroptarget"></a><a name="ongetdroptarget"></a>CHtmlView::OnGetDropTarget  
+##  <a name="ongetdroptarget"></a>CHtmlView::OnGetDropTarget  
  別の方法を提供するホストを許可するようにドロップ先として使用している場合は、Internet Explorer または MSHTML により呼び出される`IDropTarget`です。  
   
 ```  
@@ -1036,7 +1131,7 @@ virtual HRESULT OnGetDropTarget(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnGetDropTarget`に対応するため、 `GetDropTarget` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::GetDropTarget](https://msdn.microsoft.com/library/aa753255.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameongetexternala--chtmlviewongetexternal"></a><a name="ongetexternal"></a>CHtmlView::OnGetExternal  
+##  <a name="ongetexternal"></a>CHtmlView::OnGetExternal  
  ホストの `IDispatch` インターフェイスを取得するために Internet Explorer または MSHTML によって呼び出されます。  
   
 ```  
@@ -1053,7 +1148,7 @@ virtual HRESULT OnGetExternal(LPDISPATCH* lppDispatch);
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnGetExternal`に対応するため、 `GetExternal` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::GetExternal](https://msdn.microsoft.com/library/aa753256.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameongethostinfoa--chtmlviewongethostinfo"></a><a name="ongethostinfo"></a>CHtmlView::OnGetHostInfo  
+##  <a name="ongethostinfo"></a>CHtmlView::OnGetHostInfo  
  Internet Explorer または MSHTML ホストの UI 機能を取得します。  
   
 ```  
@@ -1070,7 +1165,7 @@ virtual HRESULT OnGetHostInfo(DOCHOSTUIINFO* pInfo);
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnGetHostInfo`に対応するため、 `GetHostInfo` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::GetHostInfo](https://msdn.microsoft.com/library/aa753257.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameongetoptionkeypatha--chtmlviewongetoptionkeypath"></a><a name="ongetoptionkeypath"></a>CHtmlView::OnGetOptionKeyPath  
+##  <a name="ongetoptionkeypath"></a>CHtmlView::OnGetOptionKeyPath  
  このメンバー関数を呼び出して Internet Explorer または MSHTML ユーザー設定を格納するレジストリ キーを取得します。  
   
 ```  
@@ -1092,7 +1187,7 @@ virtual HRESULT OnGetOptionKeyPath(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnGetOptionKeyPath`に対応するため、 `GetOptionKeyPath` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::GetOptionKeyPath](https://msdn.microsoft.com/library/aa753258.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonhideuia--chtmlviewonhideui"></a><a name="onhideui"></a>CHtmlView::OnHideUI  
+##  <a name="onhideui"></a>CHtmlView::OnHideUI  
  メニューおよびツールバーを Internet Explorer または MSHTML が削除すると、このメンバー関数がフレームワークによって呼び出されます。  
   
 ```  
@@ -1105,7 +1200,7 @@ virtual HRESULT OnHideUI();
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnHideUI`に対応するため、 `HideUI` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::HideUI](https://msdn.microsoft.com/library/aa753259.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonmenubara--chtmlviewonmenubar"></a><a name="onmenubar"></a>CHtmlView::OnMenuBar  
+##  <a name="onmenubar"></a>CHtmlView::OnMenuBar  
  フレームワークによって呼び出されますときに、 [MenuBar](https://msdn.microsoft.com/library/aa752131.aspx)プロパティが変更されました。  
   
 ```  
@@ -1116,7 +1211,7 @@ virtual void OnMenuBar(BOOL bMenuBar);
  *bMenuBar*  
  Internet Explorer のメニュー バーを表示する場合は&0; 以外。それ以外の場合はゼロ。  
   
-##  <a name="a-nameonnavigatecomplete2a--chtmlviewonnavigatecomplete2"></a><a name="onnavigatecomplete2"></a>CHtmlView::OnNavigateComplete2  
+##  <a name="onnavigatecomplete2"></a>CHtmlView::OnNavigateComplete2  
  ハイパーリンクへの移動は、(上のウィンドウまたはフレーム セットの要素) が完了した後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -1132,7 +1227,7 @@ virtual void OnNavigateComplete2(LPCTSTR strURL);
   
  含まれている URL を*strURL*ブラウザーは、この URL は、正規化された、修飾 URL であるために移動が指示された URL から異なる可能性があります。 たとえば、アプリケーションへの呼び出しで"www.microsoft.com"の URL で指定する[Navigate](#navigate)または[Navigate2](#navigate2)、渡された URL `OnNavigateComplete2` "http://www.microsoft.com/"になります。 また、サーバーが別の URL にブラウザーをリダイレクトする場合、ここで、リダイレクトされた URL が反映されます。  
   
-##  <a name="a-nameonnavigateerrora--chtmlviewonnavigateerror"></a><a name="onnavigateerror"></a>CHtmlView::OnNavigateError  
+##  <a name="onnavigateerror"></a>CHtmlView::OnNavigateError  
  ハイパーリンクへの移動が失敗したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1161,7 +1256,7 @@ virtual void OnNavigateError(
   
  詳細については、次を参照してください[DWebBrowserEvents2::NavigateError。](https://msdn.microsoft.com/library/aa768286.aspx)  
   
-##  <a name="a-nameonnewwindow2a--chtmlviewonnewwindow2"></a><a name="onnewwindow2"></a>CHtmlView::OnNewWindow2  
+##  <a name="onnewwindow2"></a>CHtmlView::OnNewWindow2  
  新しいウィンドウがリソースを表示するために作成されるときに、このメンバー関数がフレームワークによって呼び出されます。  
   
 ```  
@@ -1180,7 +1275,7 @@ virtual void OnNewWindow2(
 ### <a name="remarks"></a>コメント  
  このイベントの前に、web ブラウザー内から新しいウィンドウを作成します。  
   
-##  <a name="a-nameonprogresschangea--chtmlviewonprogresschange"></a><a name="onprogresschange"></a>CHtmlView::OnProgressChange  
+##  <a name="onprogresschange"></a>CHtmlView::OnProgressChange  
  このメンバー関数は、ダウンロード操作の進行状況が更新されたことをアプリケーションに通知するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -1199,7 +1294,7 @@ virtual void OnProgressChange(
 ### <a name="remarks"></a>コメント  
  コンテナーは、これまでにダウンロードされるバイト数を表示したり、プログレス インジケーターを更新する、このイベントによって提供される情報を使用できます。  
   
-##  <a name="a-nameonpropertychangea--chtmlviewonpropertychange"></a><a name="onpropertychange"></a>CHtmlView::OnPropertyChange  
+##  <a name="onpropertychange"></a>CHtmlView::OnPropertyChange  
  アプリケーションに通知するために、フレームワークによって呼び出されますが[PutProperty](#putproperty)がプロパティの値を変更します。  
   
 ```  
@@ -1210,14 +1305,14 @@ virtual void OnPropertyChange(LPCTSTR lpszProperty);
  `lpszProperty`  
  プロパティの名前を含む文字列へのポインター。  
   
-##  <a name="a-nameonquita--chtmlviewonquit"></a><a name="onquit"></a>CHtmlView::OnQuit  
+##  <a name="onquit"></a>CHtmlView::OnQuit  
  このメンバー関数は、Internet Explorer のアプリケーションが終了する準備が整っているアプリケーションに通知するためにフレームワークによって呼び出されます。  
   
 ```  
 virtual void OnQuit();
 ```  
   
-##  <a name="a-nameonresizebordera--chtmlviewonresizeborder"></a><a name="onresizeborder"></a>CHtmlView::OnResizeBorder  
+##  <a name="onresizeborder"></a>CHtmlView::OnResizeBorder  
  Internet Explorer または MSHTML 実装から呼び出される[IOleInPlaceActiveObject::ResizeBorder](http://msdn.microsoft.com/library/windows/desktop/ms680053)、境界領域のサイズを変更する必要のあるオブジェクトを警告します。  
   
 ```  
@@ -1243,7 +1338,7 @@ virtual HRESULT OnResizeBorder(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnResizeBorder`に対応するため、 `ResizeBorder` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::ResizeBorder](https://msdn.microsoft.com/library/aa753263.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonshowcontextmenua--chtmlviewonshowcontextmenu"></a><a name="onshowcontextmenu"></a>CHtmlView::OnShowContextMenu  
+##  <a name="onshowcontextmenu"></a>CHtmlView::OnShowContextMenu  
  コンテキスト メニューを表示しようとしているときに、Internet Explorer または MSHTML から呼び出されます。  
   
 ```  
@@ -1273,7 +1368,7 @@ virtual HRESULT OnShowContextMenu(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnShowContextMenu`に対応するため、 `ShowContextMenu` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::ShowContextMenu](https://msdn.microsoft.com/library/aa753264.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonshowuia--chtmlviewonshowui"></a><a name="onshowui"></a>CHtmlView::OnShowUI  
+##  <a name="onshowui"></a>CHtmlView::OnShowUI  
  Internet Explorer または MSHTML がメニューやツール バーを表示する前に呼び出されます。  
   
 ```  
@@ -1307,7 +1402,7 @@ virtual HRESULT OnShowUI(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnShowUI`に対応するため、 `ShowUI` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::ShowUI](https://msdn.microsoft.com/library/aa753265.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonstatusbara--chtmlviewonstatusbar"></a><a name="onstatusbar"></a>CHtmlView::OnStatusBar  
+##  <a name="onstatusbar"></a>CHtmlView::OnStatusBar  
  フレームワークによって呼び出されますときに、 [StatusBar](https://msdn.microsoft.com/library/aa768270.aspx)プロパティが変更されました。  
   
 ```  
@@ -1318,7 +1413,7 @@ virtual void OnStatusBar(BOOL bStatusBar);
  *bStatusBar*  
  Internet Explorer のステータス バーが表示される場合は&0; 以外か、それ以外の場合は&0; です。  
   
-##  <a name="a-nameonstatustextchangea--chtmlviewonstatustextchange"></a><a name="onstatustextchange"></a>CHtmlView::OnStatusTextChange  
+##  <a name="onstatustextchange"></a>CHtmlView::OnStatusTextChange  
  このメンバー関数は、WebBrowser コントロールに関連付けられたステータス バーのテキストが変更されたことをアプリケーションに通知するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1329,7 +1424,7 @@ virtual void OnStatusTextChange(LPCTSTR lpszText);
  `lpszText`  
  新しいステータス バーのテキストを含む文字列です。  
   
-##  <a name="a-nameontheatermodea--chtmlviewontheatermode"></a><a name="ontheatermode"></a>CHtmlView::OnTheaterMode  
+##  <a name="ontheatermode"></a>CHtmlView::OnTheaterMode  
  このメンバー関数がフレームワークによって呼び出されるときに、 [TheaterMode](https://msdn.microsoft.com/library/aa768273.aspx)プロパティが変更されました。  
   
 ```  
@@ -1340,7 +1435,7 @@ virtual void OnTheaterMode(BOOL bTheaterMode);
  *bTheaterMode*  
  Internet Explorer がシアター モードである場合は&0; 以外それ以外の場合はゼロ。  
   
-##  <a name="a-nameontitlechangea--chtmlviewontitlechange"></a><a name="ontitlechange"></a>CHtmlView::OnTitleChange  
+##  <a name="ontitlechange"></a>CHtmlView::OnTitleChange  
  このメンバー関数は、WebBrowser コントロール内のドキュメントのタイトルは、アプリケーションに通知するためにフレームワークまたは変更によって呼び出されます。  
   
 ```  
@@ -1354,7 +1449,7 @@ virtual void OnTitleChange(LPCTSTR lpszText);
 ### <a name="remarks"></a>コメント  
  HTML のタイトルを変更する可能性があります。HTML がダウンロードも中にドキュメントの URL は、タイトルとして設定されます。 実際のタイトル (存在する場合) は、HTML から解析された、実際のタイトルを反映するように、タイトルが変更されます。  
   
-##  <a name="a-nameontoolbara--chtmlviewontoolbar"></a><a name="ontoolbar"></a>CHtmlView::OnToolBar  
+##  <a name="ontoolbar"></a>CHtmlView::OnToolBar  
  このメンバー関数がフレームワークによって呼び出されますときに、[ツールバー](https://msdn.microsoft.com/library/aa768274.aspx)プロパティが変更されました。  
   
 ```  
@@ -1365,7 +1460,7 @@ virtual void OnToolBar(BOOL bToolBar);
  *bToolBar*  
  Internet Explorer のツールバーが表示されている場合は&0; 以外。 それ以外の場合は&0; またはです。  
   
-##  <a name="a-nameontranslateacceleratora--chtmlviewontranslateaccelerator"></a><a name="ontranslateaccelerator"></a>CHtmlView::OnTranslateAccelerator  
+##  <a name="ontranslateaccelerator"></a>CHtmlView::OnTranslateAccelerator  
  Internet Explorer または MSHTML により呼び出されるときに[IOleInPlaceActiveObject::TranslateAccelerator](http://msdn.microsoft.com/library/windows/desktop/ms693360)または[IOleControlSite::TranslateAccelerator](http://msdn.microsoft.com/library/windows/desktop/ms693756)コンテナーのメッセージ キューからのメニューのアクセラレータ キー メッセージを処理します。  
   
 ```  
@@ -1391,7 +1486,7 @@ virtual HRESULT OnTranslateAccelerator(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnTranslateAccelerator`に対応するため、 `TranslateAccelerator` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::TranslateAccelerator](https://msdn.microsoft.com/library/aa753266.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameontranslateurla--chtmlviewontranslateurl"></a><a name="ontranslateurl"></a>CHtmlView::OnTranslateUrl  
+##  <a name="ontranslateurl"></a>CHtmlView::OnTranslateUrl  
  読み込む URL をホストが変更できるようにするため、Internet Explorer または MSHTML によって呼び出されます。  
   
 ```  
@@ -1417,7 +1512,7 @@ virtual HRESULT OnTranslateUrl(
 ### <a name="remarks"></a>コメント  
  オーバーライド`OnTranslateUrl`に対応するため、 `TranslateUrl` Microsoft の Web ブラウザー コントロールから通知されます。 参照してください[IDocHostUIHandler::TranslateUrl](https://msdn.microsoft.com/library/aa753267.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
   
-##  <a name="a-nameonupdateuia--chtmlviewonupdateui"></a><a name="onupdateui"></a>CHtmlView::OnUpdateUI  
+##  <a name="onupdateui"></a>CHtmlView::OnUpdateUI  
  コマンドの状態が変化したことをホストに通知します。  
   
 ```  
@@ -1430,7 +1525,7 @@ virtual HRESULT OnUpdateUI();
 ### <a name="remarks"></a>コメント  
  ホストは、ツール バー ボタンの状態を更新する必要があります。 このメソッドはからの戻り値に関係なく`ShowUI`です。 オーバーライド`OnUpdateUI`に対応するため、 `UpdateUI` Microsoft の Web ブラウザー コントロールから通知されます。  
   
-##  <a name="a-nameonvisiblea--chtmlviewonvisible"></a><a name="onvisible"></a>CHtmlView::OnVisible  
+##  <a name="onvisible"></a>CHtmlView::OnVisible  
  このメンバー関数が呼び出されますフレームワークによって、web ブラウザーのウィンドウを表示または非表示する必要があります。  
   
 ```  
@@ -1444,7 +1539,7 @@ virtual void OnVisible(BOOL bVisible);
 ### <a name="remarks"></a>コメント  
  これにより、Internet Explorer ウィンドウの動作は同じように動作するオブジェクトのコントロール ホスト ウィンドウです。  
   
-##  <a name="a-nameputpropertya--chtmlviewputproperty"></a><a name="putproperty"></a>CHtmlView::PutProperty  
+##  <a name="putproperty"></a>CHtmlView::PutProperty  
  指定したオブジェクトに関連付けられているプロパティを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1498,7 +1593,7 @@ void PutProperty(
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namequeryformscommanda--chtmlviewqueryformscommand"></a><a name="queryformscommand"></a>CHtmlView::QueryFormsCommand  
+##  <a name="queryformscommand"></a>CHtmlView::QueryFormsCommand  
  ユーザー インターフェイスのイベントによって生成された&1; つ以上のコマンドの状態を調べるためにクエリを実行します。  
   
 ```  
@@ -1528,7 +1623,7 @@ HRESULT QueryFormsCommand(
 ### <a name="remarks"></a>コメント  
  `QueryFormsCommand`動作を実装、 [IOleCommandTarget::QueryStatus](http://msdn.microsoft.com/library/windows/desktop/ms688491)メソッドです。  
   
-##  <a name="a-namequerystatuswba--chtmlviewquerystatuswb"></a><a name="querystatuswb"></a>CHtmlView::QueryStatusWB  
+##  <a name="querystatuswb"></a>CHtmlView::QueryStatusWB  
  コマンド ステータスを照会するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1547,7 +1642,7 @@ OLECMDF QueryStatusWB(OLECMDID cmdID) const;
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namerefresha--chtmlviewrefresh"></a><a name="refresh"></a>CHtmlView::Refresh  
+##  <a name="refresh"></a>CHtmlView::Refresh  
  URL または web ブラウザーが現在表示されているファイルを再読み込みします。  
   
 ```  
@@ -1559,7 +1654,7 @@ void Refresh();
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namerefresh2a--chtmlviewrefresh2"></a><a name="refresh2"></a>CHtmlView::Refresh2  
+##  <a name="refresh2"></a>CHtmlView::Refresh2  
  Internet Explorer が現在表示されているファイルを再読み込みします。  
   
 ```  
@@ -1575,7 +1670,7 @@ void Refresh2(int nLevel);
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetaddressbara--chtmlviewsetaddressbar"></a><a name="setaddressbar"></a>CHtmlView::SetAddressBar  
+##  <a name="setaddressbar"></a>CHtmlView::SetAddressBar  
  Internet Explorer オブジェクトのアドレス バーを非表示には、このメンバー関数を呼び出します。  
   
 ```  
@@ -1589,7 +1684,7 @@ void SetAddressBar(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namesetfullscreena--chtmlviewsetfullscreen"></a><a name="setfullscreen"></a>CHtmlView::SetFullScreen  
+##  <a name="setfullscreen"></a>CHtmlView::SetFullScreen  
  Internet Explorer を全画面表示か、通常のウィンドウのいずれかのモードに設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1605,7 +1700,7 @@ void SetFullScreen(BOOL bNewValue);
   
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namesetheighta--chtmlviewsetheight"></a><a name="setheight"></a>CHtmlView::SetHeight  
+##  <a name="setheight"></a>CHtmlView::SetHeight  
  Internet Explorer のメイン ウィンドウの高さを設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1619,7 +1714,7 @@ void SetHeight(long nNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetlefta--chtmlviewsetleft"></a><a name="setleft"></a>CHtmlView::SetLeft  
+##  <a name="setleft"></a>CHtmlView::SetLeft  
  Internet Explorer のメイン ウィンドウの水平方向の位置を設定します。  
   
 ```  
@@ -1630,7 +1725,7 @@ void SetLeft(long nNewValue);
  `nNewValue`  
  メイン ウィンドウの左端の画面座標。  
   
-##  <a name="a-namesetmenubara--chtmlviewsetmenubar"></a><a name="setmenubar"></a>CHtmlView::SetMenuBar  
+##  <a name="setmenubar"></a>CHtmlView::SetMenuBar  
  Internet Explorer のメニュー バーを非表示には、このメンバー関数を呼び出します。  
   
 ```  
@@ -1644,7 +1739,7 @@ void SetMenuBar(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namesetofflinea--chtmlviewsetoffline"></a><a name="setoffline"></a>CHtmlView::SetOffline  
+##  <a name="setoffline"></a>CHtmlView::SetOffline  
  WebBrowser コントロールが現在オフライン モードで動作しているかどうかを示す値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1660,7 +1755,7 @@ void SetOffline(BOOL bNewValue);
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetregisterasbrowsera--chtmlviewsetregisterasbrowser"></a><a name="setregisterasbrowser"></a>CHtmlView::SetRegisterAsBrowser  
+##  <a name="setregisterasbrowser"></a>CHtmlView::SetRegisterAsBrowser  
  ターゲットの名前解決のための最上位レベルのブラウザーとして WebBrowser コントロールを登録するかどうかを示す値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1676,7 +1771,7 @@ void SetRegisterAsBrowser(BOOL bNewValue);
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetregisterasdroptargeta--chtmlviewsetregisterasdroptarget"></a><a name="setregisterasdroptarget"></a>CHtmlView::SetRegisterAsDropTarget  
+##  <a name="setregisterasdroptarget"></a>CHtmlView::SetRegisterAsDropTarget  
  ナビゲーションのドロップ先として、WebBrowser コントロールを登録するかどうかを示す値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1690,7 +1785,7 @@ void SetRegisterAsDropTarget(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetsilenta--chtmlviewsetsilent"></a><a name="setsilent"></a>CHtmlView::SetSilent  
+##  <a name="setsilent"></a>CHtmlView::SetSilent  
  すべてのダイアログ ボックスが表示されるかどうかを示す値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1704,7 +1799,7 @@ void SetSilent(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetstatusbara--chtmlviewsetstatusbar"></a><a name="setstatusbar"></a>CHtmlView::SetStatusBar  
+##  <a name="setstatusbar"></a>CHtmlView::SetStatusBar  
  ステータス バーを表示するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1718,7 +1813,7 @@ void SetStatusBar(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namesettheatermodea--chtmlviewsettheatermode"></a><a name="settheatermode"></a>CHtmlView::SetTheaterMode  
+##  <a name="settheatermode"></a>CHtmlView::SetTheaterMode  
  WebBrowser コントロールがシアター モードかどうかを示す値を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1734,7 +1829,7 @@ void SetTheaterMode(BOOL bNewValue);
   
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesettoolbara--chtmlviewsettoolbar"></a><a name="settoolbar"></a>CHtmlView::SetToolBar  
+##  <a name="settoolbar"></a>CHtmlView::SetToolBar  
  Internet Explorer のツールバーを非表示には、このメンバー関数を呼び出します。  
   
 ```  
@@ -1748,7 +1843,7 @@ void SetToolBar(int nNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer に適用されます。 WebBrowser コントロールでこの呼び出しを使用する場合に返されません、エラーが、この呼び出しは無視されます。  
   
-##  <a name="a-namesettopa--chtmlviewsettop"></a><a name="settop"></a>CHtmlView::SetTop  
+##  <a name="settop"></a>CHtmlView::SetTop  
  WebBrowser コントロールの内側の上端とコンテナーの上端の間の距離を設定するには、このメンバー関数を呼び出す  
   
 ```  
@@ -1762,7 +1857,7 @@ void SetTop(long nNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetvisiblea--chtmlviewsetvisible"></a><a name="setvisible"></a>CHtmlView::SetVisible  
+##  <a name="setvisible"></a>CHtmlView::SetVisible  
  WebBrowser コントロールの可視性の状態を設定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1776,7 +1871,7 @@ void SetVisible(BOOL bNewValue);
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-##  <a name="a-namesetwidtha--chtmlviewsetwidth"></a><a name="setwidth"></a>CHtmlView::SetWidth  
+##  <a name="setwidth"></a>CHtmlView::SetWidth  
  Internet Explorer のメイン ウィンドウの幅を設定します。  
   
 ```  
@@ -1787,7 +1882,7 @@ void SetWidth(long nNewValue);
  `nNewValue`  
  Internet Explorer のメイン ウィンドウのピクセル単位の幅。  
   
-##  <a name="a-namestopa--chtmlviewstop"></a><a name="stop"></a>CHtmlView::Stop  
+##  <a name="stop"></a>CHtmlView::Stop  
  保留中のナビゲーションをキャンセルまたは操作をダウンロードし、バック グラウンド サウンドやアニメーションなど、動的なページ要素をすべてを停止するには、このメンバー関数を呼び出します。  
   
 ```  

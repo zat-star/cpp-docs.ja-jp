@@ -8,6 +8,18 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- texture_view
+- AMP_GRAPHICS/texture_view
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::texture_view
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::gather_alpha
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::gather_blue
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::gather_green
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::gather_red
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::get
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::sample
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::set
+- AMP_GRAPHICS/Concurrency::graphics::texture_view::value_type
 dev_langs:
 - C++
 ms.assetid: 6ec2e289-1626-4727-9592-07981cf1d27d
@@ -30,9 +42,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 7d3206aea6a6f1e3033e157b3b99a6b3486cb2ac
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: 4896b3ee55a5955c33e1c2652eb73851e4ec5a64
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="textureview-class"></a>texture_view クラス
@@ -41,23 +53,16 @@ ms.lasthandoff: 02/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-template <
-    typename value_type,  
-    int _Rank  
->  
+template<typename value_type,int _Rank>  
 class texture_view;  
  
-template <
-    typename value_type,  
-    int _Rank  
->  
-class texture_view : public details::_Texture_base<value_type, _Rank>;  
+template<typename value_type, int _Rank>  
+class texture_view 
+   : public details::_Texture_base<value_type, _Rank>;  
  
-template <
-    typename value_type,  
-    int _Rank  
->  
-class texture_view<const value_type, _Rank> : public details::_Texture_base<value_type, _Rank>;  
+template<typename value_type, int _Rank>  
+class texture_view<const value_type, _Rank> 
+   : public details::_Texture_base<value_type, _Rank>;  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -81,34 +86,34 @@ class texture_view<const value_type, _Rank> : public details::_Texture_base<valu
   
 |名前|説明|  
 |----------|-----------------|  
-|[texture_view のコンス トラクター](#ctor)|オーバーロードされます。 `texture_view` インスタンスを構築します。|  
+|[texture_view コンス トラクター](#ctor)|オーバーロードされます。 `texture_view` インスタンスを構築します。|  
 |[~ texture_view デストラクター](#ctor)|`texture_view` インスタンスを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[gather_alpha メソッド](#gather_alpha)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルのアルファ (w) 要素を返します。|  
-|[gather_blue メソッド](#gather_blue)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの青 (z) 要素を返します。|  
-|[gather_green メソッド](#gather_green)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの緑 (y) 要素を返します。|  
-|[gather_red メソッド](#gather_red)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの赤 (x) 要素を返します。|  
-|[get メソッド](#get)|オーバーロードされます。 インデックスで要素の値を取得します。|  
-|[サンプル メソッド](#sample)|オーバーロードされます。 指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。|  
-|[set メソッド](#set)|インデックスで要素の値を設定します。|  
+|[gather_alpha](#gather_alpha)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルのアルファ (w) 要素を返します。|  
+|[gather_blue](#gather_blue)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの青 (z) 要素を返します。|  
+|[gather_green](#gather_green)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの緑 (y) 要素を返します。|  
+|[gather_red](#gather_red)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの赤 (x) 要素を返します。|  
+|[get](#get)|オーバーロードされます。 インデックスで要素の値を取得します。|  
+|[サンプル](#sample)|オーバーロードされます。 指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。|  
+|[set](#set)|インデックスで要素の値を設定します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator() 演算子](#operator__)|オーバーロードされます。 インデックスで要素の値を取得します。|  
-|[operator[] 演算子](#operator_at)|オーバーロードされます。 インデックスで要素の値を取得します。|  
-|[operator = 演算子](#operator_eq)|オーバーロードされます。 代入演算子。|  
+|[operator()](#operator_call)|オーバーロードされます。 インデックスで要素の値を取得します。|  
+|[演算子](#operator_at)|オーバーロードされます。 インデックスで要素の値を取得します。|  
+|[operator=](#operator_eq)|オーバーロードされます。 代入演算子。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[value_type データ メンバー](#value_type)|`texture_view` の要素の値型です。|  
+|[value_type](#value_type)|`texture_view` の要素の値型です。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `_Texture_base`  
@@ -120,7 +125,7 @@ class texture_view<const value_type, _Rank> : public details::_Texture_base<valu
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="a-namedtora-textureview"></a><a name="dtor"></a>~ texture_view 
+##  <a name="dtor"></a>~ texture_view 
 
  `texture_view` インスタンスを破棄します。  
   
@@ -128,7 +133,7 @@ class texture_view<const value_type, _Rank> : public details::_Texture_base<valu
 ~texture_view() restrict(amp, cpu);
 ```  
   
-##  <a name="a-namectora-textureview"></a><a name="ctor"></a>texture_view 
+##  <a name="ctor"></a>texture_view 
 
  `texture_view` インスタンスを構築します。  
   
@@ -190,7 +195,7 @@ texture_view(// [7] copy constructor
  `_Mip_levels`  
  `texture_view` を使用してアクセスできる MIPMAP レベルの数。  
   
-##  <a name="a-namegatherreda-gatherred"></a><a name="gather_red"></a>gather_red 
+##  <a name="gather_red"></a>gather_red 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの赤 (x) 要素を返します。  
   
@@ -220,7 +225,7 @@ const gather_return_type gather_red(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の赤 (x) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="a-namegathergreena-gathergreen"></a><a name="gather_green"></a>gather_green 
+##  <a name="gather_green"></a>gather_green 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの緑 (y) 要素を返します。  
   
@@ -250,7 +255,7 @@ const gather_return_type gather_green(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の緑 (y) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="a-namegatherbluea-gatherblue"></a><a name="gather_blue"></a>gather_blue 
+##  <a name="gather_blue"></a>gather_blue 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの青 (z) 要素を返します。  
   
@@ -280,7 +285,7 @@ const gather_return_type gather_blue(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の赤 (x) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="a-namegatheralphaa-gatheralpha"></a><a name="gather_alpha"></a>gather_alpha 
+##  <a name="gather_alpha"></a>gather_alpha 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルのアルファ (w) 要素を返します。  
   
@@ -310,7 +315,7 @@ const gather_return_type gather_alpha(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値のアルファ (w) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="a-namegeta-get"></a><a name="get"></a>取得 
+##  <a name="get"></a>取得 
 
  指定したインデックス位置にある要素の値を取得します。  
   
@@ -334,7 +339,7 @@ value_type get(
 ### <a name="return-value"></a>戻り値  
  要素の値。  
   
-##  <a name="a-nameoperatoreqa-operator"></a><a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a>演算子 = 
 
  指定された `texture_view` と同じテクスチャのビューをこの `texture_view` インスタンスに割り当てます。  
   
@@ -362,7 +367,7 @@ texture_view<const value_type, _Rank>& operator= (// [3] copy constructor
 ### <a name="return-value"></a>戻り値  
  この `texture_view` インスタンスへの参照。  
   
-##  <a name="a-nameoperatorata-operator"></a><a name="operator_at"></a>演算子 
+##  <a name="operator_at"></a>演算子 
 
  インデックスごとの要素の値を返します。  
   
@@ -389,7 +394,7 @@ value_type operator[] (int _I0) const restrict(amp);
 ### <a name="return-value"></a>戻り値  
  `_Index` でインデックス付けされている要素の値。  
   
-##  <a name="a-nameoperatora-operator"></a><a name="operator__"></a>operator() 
+##  <a name="operator_call"></a>operator() 
 
  インデックスごとの要素の値を返します。  
   
@@ -447,7 +452,7 @@ value_type operator() (
 ### <a name="return-value"></a>戻り値  
  `_Index` でインデックス付けされている要素の値。  
   
-##  <a name="a-namesamplea-sample"></a><a name="sample"></a>サンプル 
+##  <a name="sample"></a>サンプル 
 
  指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。  
   
@@ -486,7 +491,7 @@ value_type sample(
 ### <a name="return-value"></a>戻り値  
  補間されたサンプル値。  
   
-##  <a name="a-nameseta-set"></a><a name="set"></a>設定 
+##  <a name="set"></a>設定 
 
  指定したインデックス位置にある要素の値を指定した値に設定します。  
   
@@ -503,7 +508,7 @@ void set(
  `value`  
  要素を設定する値。  
   
-##  <a name="a-namevaluetypea-valuetype"></a><a name="value_type"></a>value_type 
+##  <a name="value_type"></a>value_type 
 
  texture_view の要素の値型です。  
   
@@ -512,5 +517,5 @@ typedef typename const value_type value_type;
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
 

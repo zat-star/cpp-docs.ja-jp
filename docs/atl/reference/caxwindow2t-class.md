@@ -9,12 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CAxWindow2T<TBase>
-- ATL::CAxWindow2T
 - CAxWindow2T
-- ATL.CAxWindow2T<TBase>
-- ATL.CAxWindow2T
-- CAxWindow2
+- ATLWIN/ATL::CAxWindow2T
+- ATLWIN/ATL::CAxWindow2T::CAxWindow2T
+- ATLWIN/ATL::CAxWindow2T::Create
+- ATLWIN/ATL::CAxWindow2T::CreateControlLic
+- ATLWIN/ATL::CAxWindow2T::CreateControlLicEx
+- ATLWIN/ATL::CAxWindow2T::GetWndClassName
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -107,7 +108,7 @@ template <class TBase = CWindow>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-namecaxwindow2ta--caxwindow2tcaxwindow2t"></a><a name="caxwindow2t"></a>CAxWindow2T::CAxWindow2T  
+##  <a name="caxwindow2t"></a>CAxWindow2T::CAxWindow2T  
  `CAxWindow2T` オブジェクトを構築します。  
   
 ```
@@ -118,7 +119,7 @@ CAxWindow2T(HWND  hWnd = NULL) : CAxWindowT<TBase>(hWnd)
  `hWnd`  
  既存のウィンドウのハンドル。  
   
-##  <a name="a-namecreatea--caxwindow2tcreate"></a><a name="create"></a>CAxWindow2T::Create  
+##  <a name="create"></a>CAxWindow2T::Create  
  ホスト ウィンドウを作成します。  
   
 ```
@@ -142,7 +143,7 @@ HWND Create(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CAxWindow2T::Create`です。  
   
-##  <a name="a-namecreatecontrollica--caxwindow2tcreatecontrollic"></a><a name="createcontrollic"></a>CAxWindow2T::CreateControlLic  
+##  <a name="createcontrollic"></a>CAxWindow2T::CreateControlLic  
  ライセンスされた ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 ```
@@ -169,7 +170,7 @@ HRESULT CreateControlLic(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CAxWindow2T::CreateControlLic`です。  
   
-##  <a name="a-namecreatecontrollicexa--caxwindow2tcreatecontrollicex"></a><a name="createcontrollicex"></a>CAxWindow2T::CreateControlLicEx  
+##  <a name="createcontrollicex"></a>CAxWindow2T::CreateControlLicEx  
  ライセンスされた ActiveX コントロールを作成、初期化し、指定されたウィンドウでホストおよびコントロールからインターフェイス ポインター (またはポインター) を取得します。  
   
 ```
@@ -202,7 +203,7 @@ HRESULT CreateControlLicEx(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CAxWindow2T::CreateControlLicEx`です。  
   
-##  <a name="a-namegetwndclassnamea--caxwindow2tgetwndclassname"></a><a name="getwndclassname"></a>CAxWindow2T::GetWndClassName  
+##  <a name="getwndclassname"></a>CAxWindow2T::GetWndClassName  
  ウィンドウ クラスの名前を取得します。  
   
 ```
@@ -212,7 +213,7 @@ static LPCTSTR GetWndClassName();
 ### <a name="return-value"></a>戻り値  
  ウィンドウ クラスの名前を含む文字列へのポインター ( **AtlAxWinLic80**) ライセンスおよびライセンスの付いていない ActiveX コントロールをホストすることができます。  
   
-##  <a name="a-nameoperatoreqa--caxwindow2toperator-"></a><a name="operator_eq"></a>CAxWindow2T::operator =  
+##  <a name="operator_eq"></a>CAxWindow2T::operator =  
  代入、`HWND`既存`CAxWindow2T`オブジェクトです。  
   
 ```

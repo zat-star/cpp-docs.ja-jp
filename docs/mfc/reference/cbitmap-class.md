@@ -10,6 +10,21 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CBitmap
+- AFXWIN/CBitmap
+- AFXWIN/CBitmap::CBitmap
+- AFXWIN/CBitmap::CreateBitmap
+- AFXWIN/CBitmap::CreateBitmapIndirect
+- AFXWIN/CBitmap::CreateCompatibleBitmap
+- AFXWIN/CBitmap::CreateDiscardableBitmap
+- AFXWIN/CBitmap::FromHandle
+- AFXWIN/CBitmap::GetBitmap
+- AFXWIN/CBitmap::GetBitmapBits
+- AFXWIN/CBitmap::GetBitmapDimension
+- AFXWIN/CBitmap::LoadBitmap
+- AFXWIN/CBitmap::LoadMappedBitmap
+- AFXWIN/CBitmap::LoadOEMBitmap
+- AFXWIN/CBitmap::SetBitmapBits
+- AFXWIN/CBitmap::SetBitmapDimension
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,7 +112,7 @@ class CBitmap : public CGdiObject
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecbitmapa--cbitmapcbitmap"></a><a name="cbitmap"></a>CBitmap::CBitmap  
+##  <a name="cbitmap"></a>CBitmap::CBitmap  
  `CBitmap` オブジェクトを構築します。  
   
 ```  
@@ -107,7 +122,7 @@ CBitmap();
 ### <a name="remarks"></a>コメント  
  結果のオブジェクトは、メンバー関数の初期化のいずれかで初期化する必要があります。  
   
-##  <a name="a-namecreatebitmapa--cbitmapcreatebitmap"></a><a name="createbitmap"></a>CBitmap::CreateBitmap  
+##  <a name="createbitmap"></a>CBitmap::CreateBitmap  
  指定した幅、高さ、ビット パターンに設定されている、デバイス依存のメモリ ビットマップを初期化します。  
   
 ```  
@@ -147,7 +162,7 @@ BOOL CreateBitmap(
   
  詳しくは、 **BITMAP** 構造体の **bmBits** フィールドに関する記述をご覧ください。 [ビットマップ](../../mfc/reference/bitmap-structure.md)構造体は」の説明、 [CBitmap::CreateBitmapIndirect](#createbitmapindirect)メンバー関数。  
   
-##  <a name="a-namecreatebitmapindirecta--cbitmapcreatebitmapindirect"></a><a name="createbitmapindirect"></a>CBitmap::CreateBitmapIndirect  
+##  <a name="createbitmapindirect"></a>CBitmap::CreateBitmapIndirect  
  ビットマップの幅、高さ、およびが指す構造体で指定されたビット パターン (指定されている) 場合のある初期化`lpBitmap`します。  
   
 ```  
@@ -168,7 +183,7 @@ BOOL CreateBitmapIndirect(LPBITMAP lpBitmap);
   
  終了するときに、`CBitmap`オブジェクトを作成した`CreateBitmapIndirect`関数で最初に、デバイス コンテキストからビットマップを選択し、削除、`CBitmap`オブジェクトです。  
   
-##  <a name="a-namecreatecompatiblebitmapa--cbitmapcreatecompatiblebitmap"></a><a name="createcompatiblebitmap"></a>CBitmap::CreateCompatibleBitmap  
+##  <a name="createcompatiblebitmap"></a>CBitmap::CreateCompatibleBitmap  
  指定されたデバイスと互換性があるビットマップ初期化`pDC`します。  
   
 ```  
@@ -202,7 +217,7 @@ BOOL CreateCompatibleBitmap(
   
  終了するときに、`CBitmap`オブジェクトを作成した、`CreateCompatibleBitmap`関数で最初に、デバイス コンテキストからビットマップを選択し、削除、`CBitmap`オブジェクトです。  
   
-##  <a name="a-namecreatediscardablebitmapa--cbitmapcreatediscardablebitmap"></a><a name="creatediscardablebitmap"></a>CBitmap::CreateDiscardableBitmap  
+##  <a name="creatediscardablebitmap"></a>CBitmap::CreateDiscardableBitmap  
  破棄できるビットマップで識別されるデバイス コンテキストと互換性がある初期化`pDC`します。  
   
 ```  
@@ -232,7 +247,7 @@ BOOL CreateDiscardableBitmap(
   
  終了するときに、`CBitmap`オブジェクトを作成した、`CreateDiscardableBitmap`関数で最初に、デバイス コンテキストからビットマップを選択し、削除、`CBitmap`オブジェクトです。  
   
-##  <a name="a-namefromhandlea--cbitmapfromhandle"></a><a name="fromhandle"></a>CBitmap::FromHandle  
+##  <a name="fromhandle"></a>CBitmap::FromHandle  
  ポインターを返す、 `CBitmap` Windows GDI ビットマップを識別するハンドルが指定されるとします。  
   
 ```  
@@ -249,7 +264,7 @@ static CBitmap* PASCAL FromHandle(HBITMAP hBitmap);
 ### <a name="remarks"></a>コメント  
  場合、`CBitmap`オブジェクトはハンドルが一時的にまだアタッチされていない`CBitmap`オブジェクトが作成され、接続されています。 この一時`CBitmap`だけですべて一時的なグラフィックを時間があるオブジェクトは削除されるまで、次回、アプリケーションのアイドル時間のイベント ループで、オブジェクトが有効です。 言い換えると、別の方法は、1 つのウィンドウ メッセージを処理中に一時オブジェクトが有効でのみことです。  
   
-##  <a name="a-namegetbitmapa--cbitmapgetbitmap"></a><a name="getbitmap"></a>CBitmap::GetBitmap  
+##  <a name="getbitmap"></a>CBitmap::GetBitmap  
  割り当てられているビットマップのイメージのプロパティを取得します。  
   
 ```  
@@ -265,7 +280,7 @@ int GetBitmap(BITMAP* pBitMap);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namegetbitmapbitsa--cbitmapgetbitmapbits"></a><a name="getbitmapbits"></a>列  
+##  <a name="getbitmapbits"></a>列  
  指定されたバッファーに割り当てられているビットマップのビット パターンをコピーします。  
   
 ```  
@@ -287,7 +302,7 @@ DWORD GetBitmapBits(
 ### <a name="remarks"></a>コメント  
  使用[CBitmap::GetBitmap](#getbitmap)必要なバッファー サイズを決定します。  
   
-##  <a name="a-namegetbitmapdimensiona--cbitmapgetbitmapdimension"></a><a name="getbitmapdimension"></a>CBitmap::GetBitmapDimension  
+##  <a name="getbitmapdimension"></a>CBitmap::GetBitmapDimension  
  ビットマップの高さと幅を返します。  
   
 ```  
@@ -300,7 +315,7 @@ CSize GetBitmapDimension() const;
 ### <a name="remarks"></a>コメント  
  高さと幅を使用して、以前に設定されていると見なされます、[呼び出す](#setbitmapdimension)メンバー関数。  
   
-##  <a name="a-nameloadbitmapa--cbitmaploadbitmap"></a><a name="loadbitmap"></a>CBitmap::LoadBitmap  
+##  <a name="loadbitmap"></a>CBitmap::LoadBitmap  
  によって指定されたビットマップ リソースを読み込みます`lpszResourceName`の ID 番号によって識別される`nIDResource`アプリケーションの実行可能ファイルからです。  
   
 ```  
@@ -334,7 +349,7 @@ BOOL LoadBitmap(UINT nIDResource);
   
  これらのビットマップは 3.0 と以前のバージョンの Windows 用のデバイス ドライバーに存在しません。 ビットマップと表示形式の完全な一覧については、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameloadmappedbitmapa--cbitmaploadmappedbitmap"></a><a name="loadmappedbitmap"></a>CBitmap::LoadMappedBitmap  
+##  <a name="loadmappedbitmap"></a>CBitmap::LoadMappedBitmap  
  このメンバー関数を呼び出して、ビットマップを読み込んで、現在のシステムの色に色をマップします。  
   
 ```  
@@ -366,7 +381,7 @@ BOOL LoadMappedBitmap(
   
  マップされたビットマップを作成する方法の詳細については、Windows の関数を参照してください。 [CreateMappedBitmap](http://go.microsoft.com/fwlink/linkid=230562)と[カラーマップ](http://msdn.microsoft.com/library/windows/desktop/bb760448)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-nameloadoembitmapa--cbitmaploadoembitmap"></a><a name="loadoembitmap"></a>CBitmap::LoadOEMBitmap  
+##  <a name="loadoembitmap"></a>CBitmap::LoadOEMBitmap  
  Windows で使用される定義済みのビットマップを読み込みます。  
   
 ```  
@@ -405,7 +420,7 @@ BOOL LoadOEMBitmap(UINT nIDBitmap);
   
  なお定数**OEMRESOURCE** WINDOWS をインクルードする前に定義する必要があります。H のいずれかを使用するために、 **OBM_**定数です。  
   
-##  <a name="a-nameoperatorhbitmapa--cbitmapoperator-hbitmap"></a><a name="operator_hbitmap"></a>CBitmap::operator HBITMAP  
+##  <a name="operator_hbitmap"></a>CBitmap::operator HBITMAP  
  この演算子の接続されている Windows GDI ハンドルの取得を使用して、`CBitmap`オブジェクトです。  
   
 ```  
@@ -420,7 +435,7 @@ operator HBITMAP() const;
   
  グラフィック オブジェクトの使い方の詳細については、次を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
-##  <a name="a-namesetbitmapbitsa--cbitmapsetbitmapbits"></a><a name="setbitmapbits"></a>CBitmap::SetBitmapBits  
+##  <a name="setbitmapbits"></a>CBitmap::SetBitmapBits  
  ビットマップのビットによって指定されたビットの値を設定`lpBits`します。  
   
 ```  
@@ -439,7 +454,7 @@ DWORD SetBitmapBits(
 ### <a name="return-value"></a>戻り値  
  ビットマップのビットを設定で使用されるバイト数関数が失敗した場合は 0。  
   
-##  <a name="a-namesetbitmapdimensiona--cbitmapsetbitmapdimension"></a><a name="setbitmapdimension"></a>CBitmap::SetBitmapDimension  
+##  <a name="setbitmapdimension"></a>CBitmap::SetBitmapDimension  
  0.1 ミリメートル単位でのビットマップの幅と高さを割り当てます。  
   
 ```  

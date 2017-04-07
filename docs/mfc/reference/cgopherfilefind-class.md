@@ -10,6 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CGopherFileFind
+- AFXINET/CGopherFileFind
+- AFXINET/CGopherFileFind::CGopherFileFind
+- AFXINET/CGopherFileFind::FindFile
+- AFXINET/CGopherFileFind::FindNextFile
+- AFXINET/CGopherFileFind::GetCreationTime
+- AFXINET/CGopherFileFind::GetLastAccessTime
+- AFXINET/CGopherFileFind::GetLastWriteTime
+- AFXINET/CGopherFileFind::GetLength
+- AFXINET/CGopherFileFind::GetLocator
+- AFXINET/CGopherFileFind::GetScreenName
+- AFXINET/CGopherFileFind::IsDots
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -106,7 +117,7 @@ class CGopherFileFind : public CFileFind
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="a-namecgopherfilefinda--cgopherfilefindcgopherfilefind"></a><a name="cgopherfilefind"></a>CGopherFileFind::CGopherFileFind  
+##  <a name="cgopherfilefind"></a>CGopherFileFind::CGopherFileFind  
  このメンバー関数が作成すると呼ばれる、`CGopherFileFind`オブジェクトです。  
   
 ```  
@@ -125,7 +136,7 @@ explicit CGopherFileFind(
 ### <a name="remarks"></a>コメント  
  既定値`dwContext`MFC から送信される、`CGopherFileFind`オブジェクトから、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトの作成、`CGopherFileFind`オブジェクトです。 構築する場合、`CGopherFileFind`オブジェクトのコンテキスト識別子を独自の値に設定する既定値をオーバーライドすることができます。 コンテキスト識別子が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用するオブジェクトの状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-##  <a name="a-namefindfilea--cgopherfilefindfindfile"></a><a name="findfile"></a>CGopherFileFind::FindFile  
+##  <a name="findfile"></a>CGopherFileFind::FindFile  
  Gopher ファイルを検索するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -164,7 +175,7 @@ virtual BOOL FindFile(
 ### <a name="remarks"></a>コメント  
  呼び出した後**FindFile** gopher の最初のオブジェクトを取得するを呼び出すことができます[FindNextFile](#findnextfile)後続 gopher ファイルを取得します。  
   
-##  <a name="a-namefindnextfilea--cgopherfilefindfindnextfile"></a><a name="findnextfile"></a>CGopherFileFind::FindNextFile  
+##  <a name="findnextfile"></a>CGopherFileFind::FindNextFile  
  呼び出しで開始されたファイルの検索を続行するには、このメンバー関数を呼び出す[CGopherFileFind::FindFile](#findfile)します。  
   
 ```  
@@ -174,7 +185,7 @@ virtual BOOL FindNextFile();
 ### <a name="return-value"></a>戻り値  
  多くのファイルがある場合は&0; 以外。見つかったファイルがディレクトリに最後の&1; つである場合、またはエラーが発生した場合は&0; します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。 見つかったファイルがディレクトリに最後のファイルまたは一致するファイルが見つからないことができます、 `GetLastError` ERROR_NO_MORE_FILES を返します。  
   
-##  <a name="a-namegetcreationtimea--cgopherfilefindgetcreationtime"></a><a name="getcreationtime"></a>CGopherFileFind::GetCreationTime  
+##  <a name="getcreationtime"></a>CGopherFileFind::GetCreationTime  
  現在のファイルの作成時間を取得します。  
   
 ```  
@@ -198,7 +209,7 @@ virtual BOOL GetCreationTime(CTime& refTime) const;
 > [!NOTE]
 >  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
   
-##  <a name="a-namegetlastaccesstimea--cgopherfilefindgetlastaccesstime"></a><a name="getlastaccesstime"></a>CGopherFileFind::GetLastAccessTime  
+##  <a name="getlastaccesstime"></a>CGopherFileFind::GetLastAccessTime  
  指定したファイルの最終アクセス時刻を取得します。  
   
 ```  
@@ -222,7 +233,7 @@ virtual BOOL GetLastAccessTime(FILETIME* pTimeStamp) const;
 > [!NOTE]
 >  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
   
-##  <a name="a-namegetlastwritetimea--cgopherfilefindgetlastwritetime"></a><a name="getlastwritetime"></a>CGopherFileFind::GetLastWriteTime  
+##  <a name="getlastwritetime"></a>CGopherFileFind::GetLastWriteTime  
  ファイルが変更された最終時刻を取得します。  
   
 ```  
@@ -246,7 +257,7 @@ virtual BOOL GetLastWriteTime(CTime& refTime) const;
 > [!NOTE]
 >  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
   
-##  <a name="a-namegetlengtha--cgopherfilefindgetlength"></a><a name="getlength"></a>CGopherFileFind::GetLength  
+##  <a name="getlength"></a>CGopherFileFind::GetLength  
  検索したファイルのバイト単位の長さを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -265,7 +276,7 @@ virtual ULONGLONG GetLength() const;
 ### <a name="example"></a>例  
   例を参照してください[結び付けてその中](../../mfc/reference/cfile-class.md#getlength)(基本クラスの実装)。  
   
-##  <a name="a-namegetlocatora--cgopherfilefindgetlocator"></a><a name="getlocator"></a>なった  
+##  <a name="getlocator"></a>なった  
  取得するには、このメンバー関数を呼び出す、[関数](../../mfc/reference/cgopherlocator-class.md)オブジェクトを[FindFile](#findfile)を使用して、gopher ファイルを検索します。  
   
 ```  
@@ -275,7 +286,7 @@ CGopherLocator GetLocator() const;
 ### <a name="return-value"></a>戻り値  
  `CGopherLocator` オブジェクト。  
   
-##  <a name="a-namegetscreennamea--cgopherfilefindgetscreenname"></a><a name="getscreenname"></a>CGopherFileFind::GetScreenName  
+##  <a name="getscreenname"></a>CGopherFileFind::GetScreenName  
  Gopher 画面の名前を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -285,7 +296,7 @@ CString GetScreenName() const;
 ### <a name="return-value"></a>戻り値  
  Gopher 画面の名前。  
   
-##  <a name="a-nameisdotsa--cgopherfilefindisdots"></a><a name="isdots"></a>CGopherFileFind::IsDots  
+##  <a name="isdots"></a>CGopherFileFind::IsDots  
  ファイル反復処理中に現在のディレクトリとその親ディレクトリ マーカーをテストします。  
   
 ```  

@@ -10,6 +10,8 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IPropertyPage2Impl
+- ATLCTL/ATL::IPropertyPage2Impl
+- ATLCTL/ATL::IPropertyPage2Impl::EditProperty
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -85,7 +87,7 @@ class IPropertyPage2Impl : public IPropertyPageImpl<T>
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="a-nameeditpropertya--ipropertypage2impleditproperty"></a><a name="editproperty"></a>IPropertyPage2Impl::EditProperty  
+##  <a name="editproperty"></a>IPropertyPage2Impl::EditProperty  
  プロパティ ページがアクティブになったときにどのプロパティ コントロールがフォーカスを受け取るを指定します。  
   
 ```

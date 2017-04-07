@@ -9,7 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- concrt/concurrency::context_self_unblock
+- context_self_unblock
+- CONCRT/concurrency::context_self_unblock
+- CONCRT/concurrency::context_self_unblock::context_self_unblock
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -34,9 +36,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 4976bcf083d94da672ceacb1b9232252728ed5ec
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
+ms.openlocfilehash: a5fa917c2873cf23bdb3b527f1d3e86055b6f8eb
+ms.lasthandoff: 03/17/2017
 
 ---
 # <a name="contextselfunblock-class"></a>context_self_unblock クラス
@@ -54,7 +56,7 @@ class context_self_unblock : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[context_self_unblock コンス トラクター](#ctor)|オーバーロードされます。 `context_self_unblock` オブジェクトを構築します。|  
+|[context_self_unblock](#ctor)|オーバーロードされます。 `context_self_unblock` オブジェクトを構築します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
@@ -66,7 +68,7 @@ class context_self_unblock : public std::exception;
   
  **名前空間:** concurrency  
   
-##  <a name="a-namectora-contextselfunblock"></a><a name="ctor"></a>context_self_unblock 
+##  <a name="ctor"></a>context_self_unblock 
 
  `context_self_unblock` オブジェクトを構築します。  
   
@@ -82,5 +84,5 @@ context_self_unblock() throw();
  エラーの説明メッセージ。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace](concurrency-namespace.md)
+ [concurrency 名前空間](concurrency-namespace.md)
 

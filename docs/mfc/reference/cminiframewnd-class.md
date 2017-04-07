@@ -10,6 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CMiniFrameWnd
+- AFXWIN/CMiniFrameWnd
+- AFXWIN/CMiniFrameWnd::CMiniFrameWnd
+- AFXWIN/CMiniFrameWnd::Create
+- AFXWIN/CMiniFrameWnd::CreateEx
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +90,7 @@ class CMiniFrameWnd : public CFrameWnd
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="a-namecminiframewnda--cminiframewndcminiframewnd"></a><a name="cminiframewnd"></a>CMiniFrameWnd::CMiniFrameWnd  
+##  <a name="cminiframewnd"></a>CMiniFrameWnd::CMiniFrameWnd  
  構築、`CMiniFrameWnd`オブジェクトは、ウィンドウを作成しません。  
   
 ```  
@@ -96,7 +100,7 @@ CMiniFrameWnd();
 ### <a name="remarks"></a>コメント  
  ウィンドウを作成するには[には](#create)です。  
   
-##  <a name="a-namecreatea--cminiframewndcreate"></a><a name="create"></a>には  
+##  <a name="create"></a>には  
  Windows ミニフレーム ウィンドウを作成し、それをアタッチ、`CMiniFrameWnd`オブジェクトです。  
   
 ```  
@@ -158,7 +162,7 @@ virtual BOOL Create(
 ### <a name="remarks"></a>コメント  
  **作成**ウィンドウのクラス名やウィンドウ名を初期化し、スタイルと親の既定値を登録します。  
   
-##  <a name="a-namecreateexa--cminiframewndcreateex"></a><a name="createex"></a>CMiniFrameWnd::CreateEx  
+##  <a name="createex"></a>CMiniFrameWnd::CreateEx  
  
           `CMiniFrameWnd` オブジェクトを作成します。  
   

@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CAutoPtr
+- ATLBASE/ATL::CAutoPtr
+- ATLBASE/ATL::CAutoPtr::CAutoPtr
+- ATLBASE/ATL::CAutoPtr::Attach
+- ATLBASE/ATL::CAutoPtr::Detach
+- ATLBASE/ATL::CAutoPtr::Free
+- ATLBASE/ATL::CAutoPtr::m_p
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -104,7 +110,7 @@ class CAutoPtr
 ## <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities #&74;](../../atl/codesnippet/cpp/cautoptr-class_1.cpp)]  
   
-##  <a name="a-nameattacha--cautoptrattach"></a><a name="attach"></a>CAutoPtr::Attach  
+##  <a name="attach"></a>CAutoPtr::Attach  
  既存のポインターの所有権を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -123,7 +129,7 @@ void Attach(T* p) throw();
 ### <a name="example"></a>例  
  例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
   
-##  <a name="a-namecautoptra--cautoptrcautoptr"></a><a name="cautoptr"></a>CAutoPtr::CAutoPtr  
+##  <a name="cautoptr"></a>CAutoPtr::CAutoPtr  
  コンストラクターです。  
   
 ```
@@ -150,7 +156,7 @@ CAutoPtr(CAutoPtr<T>& p) throw();
 ### <a name="example"></a>例  
  例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
   
-##  <a name="a-namedtora--cautoptrcautoptr"></a><a name="dtor"></a>CAutoPtr:: ~ CAutoPtr  
+##  <a name="dtor"></a>CAutoPtr:: ~ CAutoPtr  
  デストラクターです。  
   
 ```
@@ -160,7 +166,7 @@ CAutoPtr(CAutoPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたリソースを解放します。 呼び出し[CAutoPtr::Free](#free)します。  
   
-##  <a name="a-namedetacha--cautoptrdetach"></a><a name="detach"></a>CAutoPtr::Detach  
+##  <a name="detach"></a>CAutoPtr::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
   
 ```
@@ -176,7 +182,7 @@ T* Detach() throw();
 ### <a name="example"></a>例  
  例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
   
-##  <a name="a-namefreea--cautoptrfree"></a><a name="free"></a>CAutoPtr::Free  
+##  <a name="free"></a>CAutoPtr::Free  
  指すオブジェクトを削除するには、このメソッドを呼び出して、`CAutoPtr`です。  
   
 ```
@@ -186,7 +192,7 @@ void Free() throw();
 ### <a name="remarks"></a>コメント  
  によって指されるオブジェクト、`CAutoPtr`が解放されると、 [CAutoPtr::m_p](#m_p)データ メンバー変数が NULL に設定します。  
   
-##  <a name="a-namempa--cautoptrmp"></a><a name="m_p"></a>CAutoPtr::m_p  
+##  <a name="m_p"></a>CAutoPtr::m_p  
  ポインターのデータ メンバー変数です。  
   
 ```
@@ -196,7 +202,7 @@ T* m_p;
 ### <a name="remarks"></a>コメント  
  このメンバー変数は、ポインターの情報を保持します。  
   
-##  <a name="a-nameoperatoreqa--cautoptroperator-"></a><a name="operator_eq"></a>CAutoPtr::operator =  
+##  <a name="operator_eq"></a>CAutoPtr::operator =  
  代入演算子です。  
   
 ```
@@ -223,7 +229,7 @@ CAutoPtr<T>& operator= (CAutoPtr<TSrc>& p);
 ### <a name="example"></a>例  
  例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
   
-##  <a name="a-nameoperatorptra--cautoptroperator--gt"></a><a name="operator_ptr"></a>CAutoPtr::operator-&gt;  
+##  <a name="operator_ptr"></a>CAutoPtr::operator-&gt;  
  メンバーへのポインター演算子です。  
   
 ```
@@ -239,7 +245,7 @@ T* operator->() const throw();
 ### <a name="example"></a>例  
  例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
   
-##  <a name="a-nameoperatortstara--cautoptroperator-t"></a><a name="operator_t_star"></a>CAutoPtr::operator T *  
+##  <a name="operator_t_star"></a>CAutoPtr::operator T *  
  キャスト演算子です。  
   
 ```  

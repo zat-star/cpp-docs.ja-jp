@@ -9,8 +9,23 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- afxanimationcontroller/CCustomInterpolator
 - CCustomInterpolator
+- AFXANIMATIONCONTROLLER/CCustomInterpolator
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::CCustomInterpolator
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::GetDependencies
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::GetDuration
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::GetFinalValue
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::Init
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::InterpolateValue
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::InterpolateVelocity
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::SetDuration
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::SetInitialValueAndVelocity
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_currentValue
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_currentVelocity
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_duration
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_finalValue
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_initialValue
+- AFXANIMATIONCONTROLLER/CCustomInterpolator::m_initialVelocity
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -90,7 +105,7 @@ class CCustomInterpolator;
 ## <a name="requirements"></a>要件  
  **ヘッダー:** afxanimationcontroller.h  
   
-##  <a name="a-nameccustominterpolatora--ccustominterpolatorccustominterpolator"></a><a name="ccustominterpolator"></a>CCustomInterpolator::CCustomInterpolator  
+##  <a name="ccustominterpolator"></a>CCustomInterpolator::CCustomInterpolator  
  カスタム インターポレーター オブジェクトを構築し、0 を既定値にすべての値を設定します。  
   
 ```  
@@ -111,7 +126,7 @@ CCustomInterpolator(
 ### <a name="remarks"></a>コメント  
  CCustomInterpolator::Init を使用して、期間と、コードの後で最終的な値を初期化します。  
   
-##  <a name="a-namegetdependenciesa--ccustominterpolatorgetdependencies"></a><a name="getdependencies"></a>CCustomInterpolator::GetDependencies  
+##  <a name="getdependencies"></a>CCustomInterpolator::GetDependencies  
  補間の依存関係を取得します。  
   
 ```  
@@ -134,7 +149,7 @@ virtual BOOL GetDependencies(
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-namegetdurationa--ccustominterpolatorgetduration"></a><a name="getduration"></a>CCustomInterpolator::GetDuration  
+##  <a name="getduration"></a>CCustomInterpolator::GetDuration  
  補間の期間を取得します。  
   
 ```  
@@ -148,7 +163,7 @@ virtual BOOL GetDuration(UI_ANIMATION_SECONDS* duration);
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-namegetfinalvaluea--ccustominterpolatorgetfinalvalue"></a><a name="getfinalvalue"></a>CCustomInterpolator::GetFinalValue  
+##  <a name="getfinalvalue"></a>CCustomInterpolator::GetFinalValue  
  インターポレーターが潜在顧客の最終的な値を取得します。  
   
 ```  
@@ -162,7 +177,7 @@ virtual BOOL GetFinalValue(DOUBLE* value);
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-nameinita--ccustominterpolatorinit"></a><a name="init"></a>CCustomInterpolator::Init  
+##  <a name="init"></a>CCustomInterpolator::Init  
  期間と最終的な値を初期化します。  
   
 ```  
@@ -178,7 +193,7 @@ void Init(
  `finalValue`  
  移行の最後に変数の最終的な値。  
   
-##  <a name="a-nameinterpolatevaluea--ccustominterpolatorinterpolatevalue"></a><a name="interpolatevalue"></a>CCustomInterpolator::InterpolateValue  
+##  <a name="interpolatevalue"></a>CCustomInterpolator::InterpolateValue  
  指定されたオフセット位置にある値を補間します。  
   
 ```  
@@ -194,7 +209,7 @@ virtual BOOL InterpolateValue(
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-nameinterpolatevelocitya--ccustominterpolatorinterpolatevelocity"></a><a name="interpolatevelocity"></a>CCustomInterpolator::InterpolateVelocity  
+##  <a name="interpolatevelocity"></a>CCustomInterpolator::InterpolateVelocity  
  指定したオフセットで velocity を補間します。  
   
 ```  
@@ -210,49 +225,49 @@ virtual BOOL InterpolateVelocity(
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-namemcurrentvaluea--ccustominterpolatormcurrentvalue"></a><a name="m_currentvalue"></a>CCustomInterpolator::m_currentValue  
+##  <a name="m_currentvalue"></a>CCustomInterpolator::m_currentValue  
  補間値です。  
   
 ```  
 DOUBLE m_currentValue;  
 ```  
   
-##  <a name="a-namemcurrentvelocitya--ccustominterpolatormcurrentvelocity"></a><a name="m_currentvelocity"></a>CCustomInterpolator::m_currentVelocity  
+##  <a name="m_currentvelocity"></a>CCustomInterpolator::m_currentVelocity  
  補間速度。  
   
 ```  
 DOUBLE m_currentVelocity;  
 ```  
   
-##  <a name="a-namemdurationa--ccustominterpolatormduration"></a><a name="m_duration"></a>CCustomInterpolator::m_duration  
+##  <a name="m_duration"></a>CCustomInterpolator::m_duration  
  遷移の期間です。  
   
 ```  
 UI_ANIMATION_SECONDS m_duration;  
 ```  
   
-##  <a name="a-namemfinalvaluea--ccustominterpolatormfinalvalue"></a><a name="m_finalvalue"></a>CCustomInterpolator::m_finalValue  
+##  <a name="m_finalvalue"></a>CCustomInterpolator::m_finalValue  
  移行の最後に変数の最終的な値。  
   
 ```  
 DOUBLE m_finalValue;  
 ```  
   
-##  <a name="a-nameminitialvaluea--ccustominterpolatorminitialvalue"></a><a name="m_initialvalue"></a>CCustomInterpolator::m_initialValue  
+##  <a name="m_initialvalue"></a>CCustomInterpolator::m_initialValue  
  移行の開始時に変数の値。  
   
 ```  
 DOUBLE m_initialValue;  
 ```  
   
-##  <a name="a-nameminitialvelocitya--ccustominterpolatorminitialvelocity"></a><a name="m_initialvelocity"></a>CCustomInterpolator::m_initialVelocity  
+##  <a name="m_initialvelocity"></a>CCustomInterpolator::m_initialVelocity  
  移行の開始時に変数の速度。  
   
 ```  
 DOUBLE m_initialVelocity;  
 ```  
   
-##  <a name="a-namesetdurationa--ccustominterpolatorsetduration"></a><a name="setduration"></a>CCustomInterpolator::SetDuration  
+##  <a name="setduration"></a>CCustomInterpolator::SetDuration  
  補間の期間を設定します。  
   
 ```  
@@ -266,7 +281,7 @@ virtual BOOL SetDuration(UI_ANIMATION_SECONDS duration);
 ### <a name="return-value"></a>戻り値  
  基本的な実装は常に TRUE を返します。 FALSE を返すオーバーライドして実装したイベントが失敗する場合。  
   
-##  <a name="a-namesetinitialvalueandvelocitya--ccustominterpolatorsetinitialvalueandvelocity"></a><a name="setinitialvalueandvelocity"></a>CCustomInterpolator::SetInitialValueAndVelocity  
+##  <a name="setinitialvalueandvelocity"></a>CCustomInterpolator::SetInitialValueAndVelocity  
  補間の初期値と速度を設定します。  
   
 ```  

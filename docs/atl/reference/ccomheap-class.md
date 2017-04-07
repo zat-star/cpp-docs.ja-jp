@@ -10,8 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - CComHeap
-- ATL.CComHeap
-- ATL::CComHeap
+- ATLCOMMEM/ATL::CComHeap
+- ATLCOMMEM/ATL::CComHeap::Allocate
+- ATLCOMMEM/ATL::CComHeap::Free
+- ATLCOMMEM/ATL::CComHeap::GetSize
+- ATLCOMMEM/ATL::CComHeap::Reallocate
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -78,7 +81,7 @@ class CComHeap : public IAtlMemMgr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** ATLComMem.h  
   
-##  <a name="a-nameallocatea--ccomheapallocate"></a><a name="allocate"></a>CComHeap::Allocate  
+##  <a name="allocate"></a>CComHeap::Allocate  
  メモリ ブロックを割り当てるには、このメソッドを呼び出します。  
   
 ```
@@ -97,7 +100,7 @@ virtual __declspec(allocator) void* Allocate(size_t nBytes) throw();
   
  使用して実装[CoTaskMemAlloc](http://msdn.microsoft.com/library/windows/desktop/ms692727)します。  
   
-##  <a name="a-namefreea--ccomheapfree"></a><a name="free"></a>CComHeap::Free  
+##  <a name="free"></a>CComHeap::Free  
  メモリ マネージャーによって割り当てられたメモリ ブロックを解放するには、このメソッドを呼び出します。  
   
 ```
@@ -111,7 +114,7 @@ virtual void Free(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[CoTaskMemFree](http://msdn.microsoft.com/library/windows/desktop/ms680722)します。  
   
-##  <a name="a-namegetsizea--ccomheapgetsize"></a><a name="getsize"></a>CComHeap::GetSize  
+##  <a name="getsize"></a>CComHeap::GetSize  
  メモリ マネージャーによって割り当てられたメモリ ブロックの割り当てのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -128,7 +131,7 @@ virtual size_t GetSize(void* p) throw();
 ### <a name="remarks"></a>コメント  
  使用して実装[IMalloc::GetSize](http://msdn.microsoft.com/library/windows/desktop/ms691226)します。  
   
-##  <a name="a-namereallocatea--ccomheapreallocate"></a><a name="reallocate"></a>CComHeap::Reallocate  
+##  <a name="reallocate"></a>CComHeap::Reallocate  
  このメソッドを呼び出し、このメモリ マネージャーによって割り当てられたメモリの再割り当てを行います。  
   
 ```

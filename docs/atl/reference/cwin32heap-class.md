@@ -9,9 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
-- ATL::CWin32Heap
-- ATL.CWin32Heap
 - CWin32Heap
+- ATLMEM/ATL::CWin32Heap
+- ATLMEM/ATL::CWin32Heap::CWin32Heap
+- ATLMEM/ATL::CWin32Heap::Allocate
+- ATLMEM/ATL::CWin32Heap::Attach
+- ATLMEM/ATL::CWin32Heap::Detach
+- ATLMEM/ATL::CWin32Heap::Free
+- ATLMEM/ATL::CWin32Heap::GetSize
+- ATLMEM/ATL::CWin32Heap::Reallocate
+- ATLMEM/ATL::CWin32Heap::m_bOwnHeap
+- ATLMEM/ATL::CWin32Heap::m_hHeap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -94,7 +102,7 @@ class CWin32Heap : public IAtlMemMgr
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlmem.h  
   
-##  <a name="a-nameallocatea--cwin32heapallocate"></a><a name="allocate"></a>CWin32Heap::Allocate  
+##  <a name="allocate"></a>CWin32Heap::Allocate  
  ヒープ オブジェクトからメモリ ブロックを割り当てます。  
   
 ```
@@ -113,7 +121,7 @@ virtual __declspec(allocator) void* Allocate(size_t nBytes) throw();
   
  使用して実装[選択肢](http://msdn.microsoft.com/library/windows/desktop/aa366597)します。  
   
-##  <a name="a-nameattacha--cwin32heapattach"></a><a name="attach"></a>Cwin32heap::attach  
+##  <a name="attach"></a>Cwin32heap::attach  
  既存のヒープには、ヒープのオブジェクトをアタッチします。  
   
 ```
@@ -130,7 +138,7 @@ void Attach(HANDLE hHeap, bool bTakeOwnership) throw();
 ### <a name="remarks"></a>コメント  
  場合`bTakeOwnership`true で、`CWin32Heap`オブジェクトはヒープのハンドルの削除を担当します。  
   
-##  <a name="a-namecwin32heapa--cwin32heapcwin32heap"></a><a name="cwin32heap"></a>CWin32Heap::CWin32Heap  
+##  <a name="cwin32heap"></a>CWin32Heap::CWin32Heap  
  コンストラクターです。  
   
 ```
@@ -172,7 +180,7 @@ CWin32Heap(
   
  第 3 のパラメーターの既定値は 0 であり、この場合には必要に応じてヒープを拡大できます。 参照してください[HeapCreate](http://msdn.microsoft.com/library/windows/desktop/aa366599\(v=vs.85\).aspx)メモリ サイズおよびフラグの詳細についてです。  
   
-##  <a name="a-namedtora--cwin32heapcwin32heap"></a><a name="dtor"></a>CWin32Heap:: ~ CWin32Heap  
+##  <a name="dtor"></a>CWin32Heap:: ~ CWin32Heap  
  デストラクターです。  
   
 ```
@@ -182,7 +190,7 @@ CWin32Heap(
 ### <a name="remarks"></a>コメント  
  場合に、ヒープのハンドルを破棄、`CWin32Heap`オブジェクトがヒープの所有権を持っています。  
   
-##  <a name="a-namedetacha--cwin32heapdetach"></a><a name="detach"></a>CWin32Heap::Detach  
+##  <a name="detach"></a>CWin32Heap::Detach  
  既存のヒープからヒープ オブジェクトをデタッチします。  
   
 ```
@@ -192,7 +200,7 @@ HANDLE Detach() throw();
 ### <a name="return-value"></a>戻り値  
  オブジェクトをアタッチすると以前のヒープのハンドルを返します。  
   
-##  <a name="a-namefreea--cwin32heapfree"></a><a name="free"></a>CWin32Heap::Free  
+##  <a name="free"></a>CWin32Heap::Free  
  以前、ヒープから割り当てられたメモリを解放[CWin32Heap::Allocate](#allocate)または[CWin32Heap::Reallocate](#reallocate)します。  
   
 ```
@@ -203,7 +211,7 @@ virtual void Free(void* p) throw();
  `p`  
  解放するメモリ ブロックへのポインター。 NULL は有効な値であり、何も行われません。  
   
-##  <a name="a-namegetsizea--cwin32heapgetsize"></a><a name="getsize"></a>CWin32Heap::GetSize  
+##  <a name="getsize"></a>CWin32Heap::GetSize  
  ヒープ オブジェクトから割り当てられたメモリ ブロックのサイズを返します。  
   
 ```
@@ -217,14 +225,14 @@ virtual size_t GetSize(void* p) throw();
 ### <a name="return-value"></a>戻り値  
  割り当てられたメモリ ブロックのバイト単位のサイズを返します。  
   
-##  <a name="a-namembownheapa--cwin32heapmbownheap"></a><a name="m_bownheap"></a>CWin32Heap::m_bOwnHeap  
+##  <a name="m_bownheap"></a>CWin32Heap::m_bOwnHeap  
  格納されているヒープ ハンドルの現在の所有権を決定するために使用するフラグ[m_hHeap](#m_hheap)します。  
   
 ```
 bool m_bOwnHeap;
 ```  
   
-##  <a name="a-namemhheapa--cwin32heapmhheap"></a><a name="m_hheap"></a>CWin32Heap::m_hHeap  
+##  <a name="m_hheap"></a>CWin32Heap::m_hHeap  
  ヒープのオブジェクトへのハンドルします。  
   
 ```
@@ -234,7 +242,7 @@ HANDLE m_hHeap;
 ### <a name="remarks"></a>コメント  
  ヒープのオブジェクトへのハンドルを格納する変数。  
   
-##  <a name="a-namereallocatea--cwin32heapreallocate"></a><a name="reallocate"></a>CWin32Heap::Reallocate  
+##  <a name="reallocate"></a>CWin32Heap::Reallocate  
  ヒープ オブジェクトからメモリ ブロックを再割り当てします。  
   
 ```
