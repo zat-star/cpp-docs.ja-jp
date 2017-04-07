@@ -21,7 +21,7 @@
 ##### [文字型](character-types.md)
 ##### [実行文字セット](execution-character-set.md)
 ##### [エスケープ シーケンス](escape-sequences.md)
-##### [8 進数と&16; 進数の文字の仕様](octal-and-hexadecimal-character-specifications.md)
+##### [8 進数と 16 進数の文字の仕様](octal-and-hexadecimal-character-specifications.md)
 ### [C 文字列リテラル](c-string-literals.md)
 #### [文字列リテラルの型](type-for-string-literals.md)
 #### [文字列リテラルの格納](storage-of-string-literals.md)
@@ -215,7 +215,7 @@
 #### [ASCII 文字セット](ascii-character-set.md)
 #### [マルチバイト文字](multibyte-characters.md)
 #### [文字あたりのビット数](bits-per-character.md)
-#### [文字セット&1;](character-sets1.md)
+#### [文字セット 1](character-sets1.md)
 #### [表現されない文字定数](unrepresented-character-constants.md)
 #### [ワイド文字](wide-characters.md)
 #### [マルチバイト文字の変換](converting-multibyte-characters.md)
@@ -282,8 +282,3 @@
 #### [strerror 関数](strerror-function.md)
 #### [タイム ゾーン](time-zone.md)
 #### [clock 関数 (C)](clock-function-c.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-
