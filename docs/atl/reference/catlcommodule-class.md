@@ -40,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 6b933b5388fccc2dc0e31d035aa7eb56de3b1866
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 02381d00226f40c5c84b2d957dfee6881742febb
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="catlcommodule-class"></a>CAtlComModule クラス
@@ -73,9 +73,9 @@ class CAtlComModule : public _ATL_COM_MODULE
 |[CAtlComModule::UnRegisterTypeLib](#unregistertypelib)|タイプ ライブラリの登録を解除するには、このメソッドを呼び出します。|  
   
 ## <a name="remarks"></a>コメント  
- `CAtlComModule`モジュールのコンポーネントにアクセスするクライアントは COM サーバー モジュールを実装します。  
+ `CAtlComModule`クライアントが、モジュールのコンポーネントにアクセスできるよう、COM サーバー モジュールを実装します。  
   
- このクラスは廃止された置換[CComModule](../../atl/reference/ccommodule-class.md) ATL の以前のバージョンで使用されるクラス 参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細です。  
+ このクラスは廃止された置換[CComModule](../../atl/reference/ccommodule-class.md) ATL の以前のバージョンで使用されるクラス 参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはします。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)  
@@ -114,16 +114,16 @@ HRESULT RegisterServer(BOOL bRegTypeLib = FALSE, const CLSID* pCLSID = NULL);
   
 ### <a name="parameters"></a>パラメーター  
  `bRegTypeLib`  
- タイプ ライブラリを登録する場合は TRUE です。 既定値は FALSE です。  
+ タイプ ライブラリは、登録する場合は TRUE。 既定値は FALSE です。  
   
  `pCLSID`  
- 登録されるオブジェクトの CLSID を指します。 NULL (既定値) の場合は、オブジェクト マップ内のすべてのオブジェクトを登録するかどうか。  
+ 登録するオブジェクトの CLSID を指します。 NULL (既定値) の場合は、オブジェクト マップ内のすべてのオブジェクトを登録するかどうか。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- グローバル関数を呼び出す[AtlComModuleRegisterServer](http://msdn.microsoft.com/library/d11a0c91-0c56-4b1b-a5f5-1287970f798b)します。  
+ グローバル関数を呼び出す[AtlComModuleRegisterServer](server-registration-global-functions.md#atlcommoduleregisterserver)です。  
   
 ##  <a name="registertypelib"></a>CAtlComModule::RegisterTypeLib  
  タイプ ライブラリを登録するには、このメソッドを呼び出します。  
@@ -135,13 +135,13 @@ HRESULT RegisterTypeLib();
   
 ### <a name="parameters"></a>パラメーター  
  `lpszIndex`  
- 形式の文字列"\\\N"で、N はタイプ ライブラリのリソースの整数のインデックス。  
+ 形式で文字列"\\\N"、N はタイプ ライブラリのリソースの整数のインデックス。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- タイプ ライブラリについての情報をシステム レジストリに追加します。 モジュールのインスタンスに複数のタイプ ライブラリが含まれている場合は、このメソッドの最初のバージョンを使用して、どのタイプ ライブラリを使用するかを指定します。  
+ タイプ ライブラリに関する情報をシステム レジストリに追加します。 モジュールのインスタンスに複数のタイプ ライブラリが含まれている場合は、このメソッドの最初のバージョンを使用して、どのタイプ ライブラリを使用する必要がありますを指定します。  
   
 ##  <a name="unregisterserver"></a>CAtlComModule::UnregisterServer  
  オブジェクト マップ内の各オブジェクトの登録を解除するには、このメソッドを呼び出します。  
@@ -154,16 +154,16 @@ HRESULT UnregisterServer(
   
 ### <a name="parameters"></a>パラメーター  
  `bRegTypeLib`  
- タイプ ライブラリの登録解除する場合は TRUE です。 既定値は FALSE です。  
+ タイプ ライブラリの登録解除する場合は TRUE。 既定値は FALSE です。  
   
  `pCLSID`  
- 登録解除するオブジェクトの CLSID を指します。 NULL (既定値) の場合は、オブジェクト マップ内のすべてのオブジェクトは、登録されているとなります。  
+ 登録解除するオブジェクトの CLSID を指します。 場合は NULL (既定値) の場合は、オブジェクト マップ内のすべてのオブジェクトの登録が解除されます。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- グローバル関数を呼び出す[AtlComModuleUnregisterServer](http://msdn.microsoft.com/library/c4ef3da4-def7-4aaf-b005-573a02e389d5)します。  
+ グローバル関数を呼び出す[AtlComModuleUnregisterServer](server-registration-global-functions.md#atlcommoduleunregisterserver)です。  
   
 ##  <a name="unregistertypelib"></a>CAtlComModule::UnRegisterTypeLib  
  タイプ ライブラリの登録を解除するには、このメソッドを呼び出します。  
@@ -175,13 +175,13 @@ HRESULT UnRegisterTypeLib();
   
 ### <a name="parameters"></a>パラメーター  
  `lpszIndex`  
- 形式の文字列"\\\N"で、N はタイプ ライブラリのリソースの整数のインデックス。  
+ 形式で文字列"\\\N"、N はタイプ ライブラリのリソースの整数のインデックス。  
   
 ### <a name="remarks"></a>コメント  
- システム レジストリからタイプ ライブラリに関する情報を削除します。 モジュールのインスタンスに複数のタイプ ライブラリが含まれている場合は、このメソッドの最初のバージョンを使用して、どのタイプ ライブラリを使用するかを指定します。  
+ システム レジストリからタイプ ライブラリに関する情報を削除します。 モジュールのインスタンスに複数のタイプ ライブラリが含まれている場合は、このメソッドの最初のバージョンを使用して、どのタイプ ライブラリを使用する必要がありますを指定します。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ## <a name="see-also"></a>関連項目  
  [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)   

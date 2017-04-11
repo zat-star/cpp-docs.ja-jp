@@ -1,5 +1,5 @@
 ---
-title: "セキュリティに関するグローバル関数 |Microsoft ドキュメント"
+title: "セキュリティのグローバル関数 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,16 +34,16 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 368da76305910a0948eb386990a4bcdb84e61396
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: ff5afaaf2746d9e07eb9e06a079d34adb2f67109
+ms.lasthandoff: 04/04/2017
 
 ---
-# <a name="security-global-functions"></a>セキュリティに関するグローバル関数
-これらの関数は、SID および ACL オブジェクトを変更するためのサポートを提供します。  
+# <a name="security-global-functions"></a>セキュリティのグローバル関数
+これらの関数は、オブジェクトの SID と ACL オブジェクトを変更するためのサポートを提供します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでは、次の表に示されている関数を使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  実行するアプリケーションでは、次の表に示す関数を使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
   
 |||  
 |-|-|  
@@ -60,7 +60,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlgetdacla--atlgetdacl"></a><a name="atlgetdacl"></a>AtlGetDacl  
+##  <a name="atlgetdacl"></a>AtlGetDacl  
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
@@ -75,10 +75,10 @@ inline bool AtlGetDacl(
   
 ### <a name="parameters"></a>パラメーター  
  `hObject`  
- セキュリティ情報を取得する対象となるオブジェクトへのハンドルします。  
+ セキュリティ情報を取得する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `pDacl`  
  取得したセキュリティ情報を含む DACL オブジェクトへのポインター。  
@@ -87,11 +87,9 @@ inline bool AtlGetDacl(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- いずれかデバッグ ビルドで、アサーション エラーが発生`hObject`または`pDacl`が正しくない*します。*  
-
-v
-
-##  <a name="a-nameatlsetdacla--atlsetdacl"></a><a name="atlsetdacl"></a>AtlSetDacl  
+ デバッグ ビルドで、アサーション エラーが発生する場合`hObject`または`pDacl`が無効です。  
+  
+##  <a name="atlsetdacl"></a>AtlSetDacl  
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
@@ -107,26 +105,26 @@ inline bool AtlSetDacl(
   
 ### <a name="parameters"></a>パラメーター  
  `hObject`  
- セキュリティ情報を設定する対象となるオブジェクトへのハンドルします。  
+ セキュリティ情報を設定する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `rDacl`  
  新しいセキュリティ情報を含む DACL です。  
   
  `dwInheritanceFlowControl`  
- 継承のフロー制御します。 この値は、0 (既定)、PROTECTED_DACL_SECURITY_INFORMATION または UNPROTECTED_DACL_SECURITY_INFORMATION を指定できます。  
+ 継承のフロー制御します。 この値は、0 (既定)、PROTECTED_DACL_SECURITY_INFORMATION または UNPROTECTED_DACL_SECURITY_INFORMATION にすることができます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`許可されている&3; つの値のいずれかではありません。  
+ 場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`3 つの許容値のいずれかではありません。  
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlgetgroupsida--atlgetgroupsid"></a><a name="atlgetgroupsid"></a>AtlGetGroupSid  
+##  <a name="atlgetgroupsid"></a>AtlGetGroupSid  
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
@@ -144,10 +142,10 @@ inline bool AtlGetGroupSid(
  セキュリティ情報を取得する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `pSid`  
- ポインター、`CSid`オブジェクトは、新しいセキュリティ情報が含まれます。  
+ ポインター、`CSid`新しいセキュリティ情報を格納するオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
@@ -155,7 +153,7 @@ inline bool AtlGetGroupSid(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlsetgroupsida--atlsetgroupsid"></a><a name="atlsetgroupsid"></a>AtlSetGroupSid  
+##  <a name="atlsetgroupsid"></a>AtlSetGroupSid  
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
@@ -170,10 +168,10 @@ inline bool AtlSetGroupSid(
   
 ### <a name="parameters"></a>パラメーター  
  `hObject`  
- セキュリティ情報を設定する対象となるオブジェクトへのハンドルします。  
+ セキュリティ情報を設定する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `rSid`  
  `CSid`新しいセキュリティ情報を含むオブジェクト。  
@@ -184,7 +182,7 @@ inline bool AtlSetGroupSid(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlgetownersida--atlgetownersid"></a><a name="atlgetownersid"></a>AtlGetOwnerSid  
+##  <a name="atlgetownersid"></a>AtlGetOwnerSid  
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
@@ -202,10 +200,10 @@ inline bool AtlGetOwnerSid(
  セキュリティ情報を取得する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `pSid`  
- ポインター、`CSid`オブジェクトは、新しいセキュリティ情報が含まれます。  
+ ポインター、`CSid`新しいセキュリティ情報を格納するオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
@@ -213,7 +211,7 @@ inline bool AtlGetOwnerSid(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlsetownersida--atlsetownersid"></a><a name="atlsetownersid"></a>AtlSetOwnerSid  
+##  <a name="atlsetownersid"></a>AtlSetOwnerSid  
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
@@ -228,10 +226,10 @@ inline bool AtlSetOwnerSid(
   
 ### <a name="parameters"></a>パラメーター  
  `hObject`  
- セキュリティ情報を設定する対象となるオブジェクトへのハンドルします。  
+ セキュリティ情報を設定する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `rSid`  
  `CSid`新しいセキュリティ情報を含むオブジェクト。  
@@ -242,7 +240,7 @@ inline bool AtlSetOwnerSid(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlgetsacla--atlgetsacl"></a><a name="atlgetsacl"></a>AtlGetSacl  
+##  <a name="atlgetsacl"></a>AtlGetSacl  
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
@@ -261,24 +259,24 @@ inline bool AtlGetSacl(
  セキュリティ情報を取得する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  `pSacl`  
  取得したセキュリティ情報を含む SACL オブジェクトへのポインター。  
   
  `bRequestNeededPrivileges`  
- True の場合は、関数を SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
+ True の場合、関数は SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 場合`AtlGetSacl`が何度もを多数の異なるオブジェクトで呼び出されると、関数を呼び出す前に&1; 回 SE_SECURITY_NAME 特権を有効にする方が効率的になります`bRequestNeededPrivileges`を false に設定します。  
+ 場合`AtlGetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlsetsacla--atlsetsacl"></a><a name="atlsetsacl"></a>AtlSetSacl  
+##  <a name="atlsetsacl"></a>AtlSetSacl  
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
@@ -295,10 +293,10 @@ inline bool AtlSetSacl(
   
 ### <a name="parameters"></a>パラメーター  
  `hObject`  
- セキュリティ情報を設定する対象となるオブジェクトへのハンドルします。  
+ セキュリティ情報を設定する対象のオブジェクトへのハンドルします。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、`hObject`パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、`hObject`パラメーター。  
   
  *rSacl*  
  新しいセキュリティ情報を含む SACL です。  
@@ -307,20 +305,20 @@ inline bool AtlSetSacl(
  継承のフロー制御します。 この値は、0 (既定)、PROTECTED_SACL_SECURITY_INFORMATION または UNPROTECTED_SACL_SECURITY_INFORMATION を指定できます。  
   
  `bRequestNeededPrivileges`  
- True の場合は、関数を SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
+ True の場合、関数は SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`許可されている&3; つの値のいずれかではありません。  
+ 場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`3 つの許容値のいずれかではありません。  
   
- 場合`AtlSetSacl`が何度もを多数の異なるオブジェクトで呼び出されると、関数を呼び出す前に&1; 回 SE_SECURITY_NAME 特権を有効にする方が効率的になります`bRequestNeededPrivileges`を false に設定します。  
+ 場合`AtlSetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="a-nameatlgetsecuritydescriptora--atlgetsecuritydescriptor"></a><a name="atlgetsecuritydescriptor"></a>AtlGetSecurityDescriptor  
+##  <a name="atlgetsecuritydescriptor"></a>AtlGetSecurityDescriptor  
  指定されたオブジェクトのセキュリティ記述子を取得します。  
   
 > [!IMPORTANT]
@@ -342,22 +340,22 @@ inline bool AtlGetSecurityDescriptor(
  セキュリティ情報を取得する対象のオブジェクトの名前を指定する null で終わる文字列へのポインター。  
   
  `ObjectType`  
- 値を示す、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)をで識別されるオブジェクトの種類を示す列挙体、 *pszObjectName*パラメーター。  
+ 値を指定して、 [SE_OBJECT_TYPE](http://msdn.microsoft.com/library/windows/desktop/aa379593)列挙体によって識別されるオブジェクトの種類を示す、 *pszObjectName*パラメーター。  
   
  *pSecurityDescriptor*  
- 要求されたセキュリティ記述子を受け取るオブジェクトです。  
+ 要求されたセキュリティ記述子を受信するオブジェクト。  
   
  *requestedInfo*  
  一連の[SECURITY_INFORMATION](http://msdn.microsoft.com/library/windows/desktop/aa379573)ビットを取得するセキュリティ情報の種類を示すフラグ。 このパラメーターは、次の値の組み合わせを指定できます。  
   
  `bRequestNeededPrivileges`  
- True の場合は、関数を SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
+ True の場合、関数は SE_SECURITY_NAME 特権を有効にして、完了時に復元を試みます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 場合`AtlGetSecurityDescriptor`が何度もを多数の異なるオブジェクトで呼び出されると、関数を呼び出す前に&1; 回 SE_SECURITY_NAME 特権を有効にする方が効率的になります`bRequestNeededPrivileges`を false に設定します。  
+ 場合`AtlGetSecurityDescriptor`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 

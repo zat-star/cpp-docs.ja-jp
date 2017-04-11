@@ -34,23 +34,23 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f5deca868c1233f6d652035403e933a4c9877724
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: aa2c22d7fbe8b017617fcad41327feef7f8fd19a
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="compiler-error-c2662"></a>コンパイラ エラー C2662
 'function': 'type1' から 'type2' へのポインターは 'this' に変換できません  
   
- コンパイラは変換できませんでした、`this`からポインター`type1`に`type2`します。  
+ コンパイラは変換できませんでした、`this`からポインター`type1`に`type2`です。  
   
- このエラーは、呼び出す以外によって発生することができます`const`メンバー関数を`const`オブジェクトです。  考えられる解決方法:  
+ このエラーは、以外を呼び出すことによって発生することができます`const`メンバー関数を`const`オブジェクト。  考えられる解決策:  
   
 -   削除、`const`オブジェクトの宣言からです。  
   
--   追加`const`メンバー関数。  
+-   追加`const`メンバー関数をします。  
   
- 次の例では、c2662 エラーが生成されます。  
+ 次の例では、C2662 が生成されます。  
   
 ```  
 // C2662.cpp  
@@ -66,7 +66,7 @@ int main() {
 }  
 ```  
   
- コンパイルすると**/clr**で関数を呼び出すことができない、`const`または`volatile`マネージ型を修飾します。 Const マネージ オブジェクトでメソッドを呼び出すことができないために、マネージ クラスの const メンバー関数を宣言できません。  
+ コンパイルするときに**/clr**で関数を呼び出すことはできません、`const`または`volatile`マネージ型を修飾します。 Const マネージ オブジェクトでメソッドを呼び出すことはできませんのでマネージ クラスの const メンバー関数を宣言することはできません。  
   
 ```  
 // C2662_b.cpp  
@@ -92,7 +92,7 @@ ref struct N {
 };  
 ```  
   
- 次の例では、c2662 エラーが生成されます。  
+ 次の例では、C2662 が生成されます。  
   
 ```  
 // C2662_c.cpp  

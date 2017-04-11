@@ -1,5 +1,5 @@
 ---
-title: "CStatusBar クラス |Microsoft ドキュメント"
+title: "CStatusBar クラス |Microsoft Docs"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -54,9 +54,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
-ms.openlocfilehash: a2358d31bd87b2cc540dd9a5ce182b9340764522
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 7f394d6519bcf86a4de3966bb958923aab8dd0c6
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cstatusbar-class"></a>CStatusBar クラス
@@ -100,7 +100,7 @@ class CStatusBar : public CControlBar
   
  [CStatusBar::GetStatusBarCtrl](#getstatusbarctrl)、メンバー関数は、新しい MFC 4.0 を取得できるようにのステータス バーのカスタマイズと追加の機能の Windows コモン コントロールのサポートを利用します。 `CStatusBar`メンバー関数は、Windows のコモン コントロール以外の機能のほとんどを与えるただし、呼び出す`GetStatusBarCtrl`、Windows 95/98 ステータス バーの特性の詳細も、ステータス バーを与えることができます。 呼び出すと`GetStatusBarCtrl`への参照が返されます、`CStatusBarCtrl`オブジェクト。 参照してください[CStatusBarCtrl](../../mfc/reference/cstatusbarctrl-class.md)詳細については、Windows のコモン コントロールを使用してツールバーを設計します。 コモン コントロールの概要については、次を参照してください。[コモン コントロール](http://msdn.microsoft.com/library/windows/desktop/bb775493)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
- フレームワークは、0 の位置の左端のインジケーターの配列でインジケーターの情報を格納します。 ステータス バーを作成する場合は、フレームワークが、対応するインジケーターを関連付け Id の文字列の配列を使用します。 インジケーターにアクセスするのに、文字列 ID またはインデックスのいずれかを使用できます。  
+ フレームワークは、0 の位置の左端のインジケーターの配列で、インジケーターの情報を格納します。 ステータス バーを作成する場合は、フレームワークが、対応するインジケーターを関連付け Id の文字列の配列を使用します。 インジケーターにアクセスするのに、文字列 ID またはインデックスのいずれかを使用できます。  
   
  既定では、最初のインジケーターは"elastic": 実行されると、その他のウィンドウは、右側に配置されるため、他のインジケーター ペインで使用されていないステータス バーの長さをします。  
   
@@ -147,10 +147,10 @@ int CommandToIndex(UINT nIDFind) const;
   
 ### <a name="parameters"></a>パラメーター  
  `nIDFind`  
- 文字列がインデックスを取得するのには、インジケーターの ID です。  
+ 文字列を取得するインデックスを持つは、インジケーターの ID です。  
   
 ### <a name="return-value"></a>戻り値  
- 正常終了した場合は、インジケーターのインデックス成功しなかった場合は – 1。  
+ 正常終了した場合は、インジケーターのインデックス成功しなかった場合は-1。  
   
 ### <a name="remarks"></a>コメント  
  最初のインジケーターのインデックスは 0 です。  
@@ -172,9 +172,9 @@ virtual BOOL Create(
  `dwStyle`  
  ステータス バーのスタイルです。 標準の Windows だけでなく[スタイル](../../mfc/reference/window-styles.md)、これらのスタイルがサポートされています。  
   
-- `CBRS_TOP`コントロール バーは、フレーム ウィンドウの上部にあるです。  
+- `CBRS_TOP`フレーム ウィンドウの上部には、コントロール バーです。  
   
-- `CBRS_BOTTOM`コントロール バーは、フレーム ウィンドウの下部にです。  
+- `CBRS_BOTTOM`フレーム ウィンドウの下部には、コントロール バーです。  
   
 - `CBRS_NOALIGN`親のサイズが変更されるときにコントロール バーの位置を変更できません。  
   
@@ -185,7 +185,7 @@ virtual BOOL Create(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 初期のフォントに設定し、ステータス バーの高さを既定値です。  
+ 初期のフォントを設定し、ステータス バーの高さを既定値です。  
   
 ##  <a name="createex"></a>CStatusBar::CreateEx  
  この関数を作成し、ステータス バーの (子ウィンドウ) で、`CStatusBar`オブジェクト。  
@@ -244,7 +244,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
  ポインター、 [DRAWITEMSTRUCT](http://msdn.microsoft.com/library/windows/desktop/bb775802)のために必要な図面の種類に関する情報を格納する構造体。  
   
 ### <a name="remarks"></a>コメント  
- **ItemAction**のメンバー、`DRAWITEMSTRUCT`構造体を実行するのには、描画の動作を定義します。 オーナー描画の描画を実装するには、このメンバー関数をオーバーライド`CStatusBar`オブジェクト。 アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する`lpDrawItemStruct`このメンバー関数の終了前にします。  
+ **ItemAction**のメンバー、`DRAWITEMSTRUCT`構造体を実行するのには、描画の動作を定義します。 オーナー描画の描画を実装するには、このメンバー関数をオーバーライド`CStatusBar`オブジェクト。 アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する必要があります`lpDrawItemStruct`このメンバー関数の終了前にします。  
   
 ##  <a name="getitemid"></a>CStatusBar::GetItemID  
  指定したインジケーターの ID を返します`nIndex`です。  
@@ -343,7 +343,7 @@ CString GetPaneText(int nIndex) const;  void GetPaneText(int nIndex, CString& rS
  このメンバーの 2 番目の形式の関数がいっぱいになった、`CString`文字列のテキストを持つオブジェクト。  
   
 ##  <a name="getstatusbarctrl"></a>CStatusBar::GetStatusBarCtrl  
- このメンバー関数では、基になる一般的なコントロールに直接アクセスを許可します。  
+ このメンバー関数は、基になる一般的なコントロールに直接アクセスを許可します。  
   
 ```  
 CStatusBarCtrl& GetStatusBarCtrl() const;  

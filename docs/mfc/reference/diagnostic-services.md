@@ -49,9 +49,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: e86ca806e5e6f19fa36b3ab33ba7a518da80e86b
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
+ms.openlocfilehash: 0e83114e2e6f062b9cb2164cf71bb25792304de0
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="diagnostic-services"></a>診断サービス
@@ -71,7 +71,7 @@ Microsoft Foundation Class Library は、プログラムのデバッグをより
   
  実装ファイルにすべての呼び出しに**新しい**メモリの割り当てが行われたファイル名と行の数を格納します。 関数は、 [cmemorystate::dumpallobjectssince](cmemorystate-structure.md#dumpallobjectssince)メモリ リークを識別することができます、この余分な情報が表示されます。 クラスにも参照してください。 [CDumpContext](../../mfc/reference/cdumpcontext-class.md)診断出力の詳細についてはします。  
   
- さらに、C ランタイム ライブラリは、アプリケーションのデバッグに使用できる診断関数のセットもサポートしています。 詳細については、次を参照してください。[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)ランタイム ライブラリ リファレンスです。  
+ さらに、C ランタイム ライブラリは、アプリケーションのデバッグに使用できる診断関数のセットもサポートしています。 詳細については、次を参照してください。[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)、ランタイム ライブラリ リファレンスです。  
   
 ### <a name="mfc-general-diagnostic-macros"></a>MFC 汎用診断マクロ  
   
@@ -79,10 +79,12 @@ Microsoft Foundation Class Library は、プログラムのデバッグをより
 |-|-|  
 |[アサート](#assert)|メッセージを表示しに、指定された式が評価された場合、プログラムを中止し、 **FALSE**ライブラリのデバッグ バージョンです。|  
 |[ASSERT_KINDOF](#assert_kindof)|オブジェクトが、指定されたクラスのオブジェクト、または指定されたクラスから派生したクラスのオブジェクトであることをテストします。|  
-|[ASSERT_VALID](#assert_valid)|呼び出して、オブジェクトの内部の有効性をテスト、`AssertValid`メンバー関数は; 通常オーバーライドされてから`CObject`です。|  
+|[ASSERT_VALID](#assert_valid)|呼び出して、オブジェクトの内部の有効性をテスト、`AssertValid`メンバー関数は; 通常オーバーライドされてから`CObject`です。|
 |[DEBUG_NEW](#debug_new)|デバッグ モードのすべてのオブジェクト割り当てにファイル名と行番号を指定します。これは、メモリー リークを見つけるのに役立ちます。|  
 |[DEBUG_ONLY](#debug_only)|ような**ASSERT** ; 式の値をテストしませんが、デバッグ モードでのみ実行されるコードでに役立ちます。|  
-|[TRACE](#trace)|提供`printf`-などのライブラリのデバッグ バージョンで機能します。|  
+|[確認し、ENSURE_VALID](#ensure)|データの正確性の検証に使用します。|
+|[THIS_FILE](#this_file)|コンパイルされるファイルの名前に展開されます。|
+|[TRACE](#trace)|提供`printf`に類似したライブラリのデバッグ バージョンで機能します。|  
 |[確認してください。](#verify)|ような**ASSERT**が、ライブラリとデバッグ バージョンのリリース バージョンで式が評価されます。|  
   
 ### <a name="mfc-general-diagnostic-variables-and-functions"></a>MFC 汎用診断関数と変数  
@@ -91,9 +93,11 @@ Microsoft Foundation Class Library は、プログラムのデバッグをより
 |-|-|  
 |[afxDump](#afxdump)|送信するグローバル変数[CDumpContext](../../mfc/reference/cdumpcontext-class.md)情報デバッガー出力ウィンドウまたはデバッグ端末にします。|  
 |[afxMemDF](#afxmemdf)|デバッグ メモリ アロケーターの動作を制御するグローバル変数。|  
-|[AfxCheckError](#afxcheckerror)|渡されたをテストするためのグローバル変数**SCODE**にかどうかはエラーされ、スロー、該当するエラーの場合を参照してください。|  
+|[AfxCheckError](#afxcheckerror)|渡されたをテストするためのグローバル変数**SCODE**するかどうかはエラーされ、スロー、該当するエラーの場合を参照してください。|  
 |[AfxCheckMemory](#afxcheckmemory)|現在割り当てられているすべてのメモリの整合性を確認します。|  
-|[AfxDump](#cdumpcontext_in_mfc_)|デバッガーにある間に呼び出さると、デバッグ中にオブジェクトの状態をダンプします。|  
+|[AfxDebugBreak](#afxdebugbreak)|実行で区切りが発生します。|
+|[AfxDump](#cdumpcontext_in_mfc)|デバッガーにある間に呼び出さると、デバッグ中にオブジェクトの状態をダンプします。|  
+|[AfxDump](#afxdump)|デバッグ中に、オブジェクトの状態をダンプする内部関数です。|
 |[AfxDumpStack](#afxdumpstack)|現在のスタックのイメージを生成します。 この関数は、常に、静的にリンクされます。|  
 |[AfxEnableMemoryLeakDump](#afxenablememoryleakdump)|メモリ リーク ダンプを有効にします。|  
 |[AfxEnableMemoryTracking](#afxenablememorytracking)|メモリのトラッキングをオンまたはオフにします。|  
@@ -108,7 +112,49 @@ Microsoft Foundation Class Library は、プログラムのデバッグをより
 |-|-|  
 |[AfxDoForAllClasses](#afxdoforallclasses)|すべてで指定された関数を実行`CObject`-実行時型チェックをサポートするクラスを派生します。|  
 |[AfxDoForAllObjects](#afxdoforallobjects)|すべてで指定された関数を実行`CObject`-派生したオブジェクトに割り当てられた**新しい**です。|  
+
+### <a name="mfc-compilation-macros"></a>MFC コンパイル マクロ
+|||
+|-|-|
+|[無効](#afx_secure_no_warnings)|使用されなくなった MFC 関数を使用するためのコンパイラの警告を抑制します。|  
+
+
+## <a name="afx_secure_no_warnings"></a>無効
+使用されなくなった MFC 関数を使用するためのコンパイラの警告を抑制します。  
+   
+### <a name="syntax"></a>構文   
+```  
+_AFX_SECURE_NO_WARNINGS  
+```     
+### <a name="example"></a>例  
+ このコード サンプルと無効が定義されていない場合、コンパイラの警告が発生します。  
   
+ ```cpp
+// define this before including any afx files in stdafx.h
+#define _AFX_SECURE_NO_WARNINGS
+```
+```cpp
+CRichEditCtrl* pRichEdit = new CRichEditCtrl;
+pRichEdit->Create(WS_CHILD|WS_VISIBLE|WS_BORDER|ES_MULTILINE,
+   CRect(10,10,100,200), pParentWnd, 1);
+char sz[256];
+pRichEdit->GetSelText(sz);
+```
+
+## <a name="afxdebugbreak"></a>AfxDebugBreak
+中断が発生するには、この関数を呼び出します (への呼び出しの位置に`AfxDebugBreak`)、MFC アプリケーションのデバッグ バージョンの実行にします。  
+
+### <a name="syntax"></a>構文    
+```
+void AfxDebugBreak( );    
+```  
+   
+### <a name="remarks"></a>コメント  
+ `AfxDebugBreak`リリース バージョンの MFC アプリケーションに影響を与えませんし、削除する必要があります。 この関数は、MFC アプリケーションでのみ使用する必要があります。 Win32 API のバージョンを使用して**DebugBreak**、非 MFC アプリケーションで中断が発生します。  
+   
+### <a name="requirements"></a>要件  
+ **ヘッダー:** afxver_.h   
+
 ##  <a name="assert"></a>アサート
  その引数を評価します。  
   
@@ -129,7 +175,7 @@ ASSERT(booleanExpression)
   
  場所*名*ソース ファイルの名前を指定および*num*ソース ファイル内に失敗したアサーションの行番号です。  
   
- MFC では、リリース バージョンで**ASSERT**式を評価しませんし、そのため、プログラムは中断しません。 環境に関係なく、式を評価する必要がある場合を使用して、**を確認してください**の代わりにマクロ**ASSERT**です。  
+ MFC では、リリース バージョンで**ASSERT**式を評価しませんされ、そのため、プログラムは中断しません。 環境に関係なく、式を評価する必要がある場合を使用して、**を確認してください**の代わりにマクロ**ASSERT**です。  
   
 > [!NOTE]
 >  この関数は MFC のデバッグ バージョンでのみ使用できます。  
@@ -155,7 +201,7 @@ ASSERT_KINDOF(classname, pobject)
  クラスのオブジェクトへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- *Pobject*パラメーター オブジェクトへのポインターにする必要がありますでき、 **const**です。 指されるオブジェクトとクラスをサポートする必要があります`CObject`ランタイム クラス情報。 例として、ことを確認する`pDocument`のオブジェクトへのポインター、`CMyDoc`クラス、またはその派生クラスのいずれかをコーディングできます。  
+ *Pobject*パラメーター オブジェクトへのポインターにする必要がありますでき、 **const**です。 指されるオブジェクトとクラスをサポートする必要があります`CObject`ランタイム クラス情報。 たとえば、ことを確認する`pDocument`のオブジェクトへのポインター、`CMyDoc`クラス、またはその派生クラスのいずれかをコーディングできます。  
   
  [!code-cpp[NVC_MFCDocView # 194](../../mfc/codesnippet/cpp/diagnostic-services_3.cpp)]  
   
@@ -208,7 +254,7 @@ ASSERT_VALID(pObject)
 ### <a name="remarks"></a>コメント  
  使用することができます`DEBUG_NEW`通常使用すると、プログラム内にあるすべての**新しい**ヒープ領域を割り当てる演算子。  
   
- デバッグ モードで (ときに、 **_DEBUG**シンボルが定義されている)、`DEBUG_NEW`のメモリを割り当てた各オブジェクトのファイル名と行番号を追跡します。 次に、使用、 [cmemorystate::dumpallobjectssince](cmemorystate-structure.md#dumpallobjectssince)メンバー関数で割り当てられた各オブジェクト`DEBUG_NEW`が割り当てられているファイル名と行の数で表示します。  
+ デバッグ モードで (ときに、 **_DEBUG**シンボルが定義されている)、`DEBUG_NEW`のメモリを割り当てた各オブジェクトのファイル名と行番号を追跡します。 次に、使用、 [cmemorystate::dumpallobjectssince](cmemorystate-structure.md#dumpallobjectssince)メンバー関数で割り当てられた各オブジェクト`DEBUG_NEW`割り当てられた場所、ファイル名と行番号を表示します。  
   
  使用する`DEBUG_NEW`、ソース ファイルに次のディレクティブを挿入します。  
   
@@ -240,6 +286,67 @@ DEBUG_ONLY(expression)
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afx.h
 
+ ### <a name="ensure"></a>確認し、ENSURE_VALID
+データの正確性の検証に使用します。  
+   
+### <a name="syntax"></a>構文    
+```
+ENSURE(  booleanExpression )  
+ENSURE_VALID( booleanExpression  )  
+```
+### <a name="parameters"></a>パラメーター  
+ `booleanExpression`  
+ テストするブール式を指定します。  
+   
+### <a name="remarks"></a>コメント  
+ これらのマクロの目的は、パラメーターの検証を向上させるためにです。 マクロにより、コード内の正しくないパラメーターの処理を続行します。 異なり、 **ASSERT** 、マクロ、**ことを確認して**マクロにアサーションを生成するだけでなく例外をスローします。  
+  
+ マクロは、プロジェクトの構成に従って、2 つの方法で動作します。 マクロ呼び出し**ASSERT**アサーションが失敗した場合、例外をスローします。 したがって、次のデバッグ構成のようになります。 (つまり、 **_DEBUG**が定義されている)、マクロ、アサーションとリリース構成の中に例外を生成、マクロは、例外は、例外を生成 (**ASSERT**リリース構成で式を評価しません)。  
+  
+ マクロ**ENSURE_ARG**のように動作、**を確認してください**マクロです。  
+  
+ **ENSURE_VALID**呼び出し、`ASSERT_VALID`マクロ (をデバッグ ビルドでのみ、特殊効果を持つ)。 さらに、 **ENSURE_VALID**ポインターが NULL の場合は、例外をスローします。 NULL のテストは、デバッグとリリースの両方の構成で実行されます。  
+  
+ これらのテストが失敗した場合と同じ方法で警告メッセージが表示されます。 **ASSERT**です。 マクロは、必要な場合は、無効な引数の例外をスローします。  
+### <a name="requirements"></a>要件  
+ **ヘッダー:** afx.h  
+   
+### <a name="see-also"></a>関連項目  
+ [マクロとグローバル](mfc-macros-and-globals.md)   
+ [確認してください。](#verify)   
+ [ATLENSURE](#altensure)
+
+## <a name="this_file"></a>THIS_FILE
+コンパイルされるファイルの名前に展開されます。  
+   
+### <a name="syntax"></a>構文    
+```
+THIS_FILE    
+```  
+   
+### <a name="remarks"></a>コメント  
+ 情報を使って、 **ASSERT**と**を確認してください**マクロです。 アプリケーション ウィザードとコードのウィザードでは、作成したソース コード ファイルにマクロを配置します。  
+   
+### <a name="example"></a>例  
+```cpp
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+// __FILE__ is one of the six predefined ANSI C macros that the 
+// compiler recognizes. 
+```
+   
+### <a name="requirements"></a>要件  
+ **ヘッダー:** afx.h  
+   
+### <a name="see-also"></a>関連項目  
+ [マクロとグローバル](mfc-macros-and-globals.md)   
+ [アサート](#assert)   
+ [確認してください。](#verify)
+
+
 ##  <a name="trace"></a>トレース  
  指定した文字列を現在のアプリケーションのデバッガーに送信します。  
   
@@ -270,7 +377,7 @@ VERIFY(booleanExpression)
  (ポインター値を含む) または 0 以外に評価される式を指定します。  
   
 ### <a name="remarks"></a>コメント  
- 結果が 0 の場合、マクロは診断メッセージを表示し、プログラムを停止します。 条件が 0 以外の場合は、何も行われません。  
+ 結果が 0 の場合、マクロは診断メッセージが出力され、プログラムを停止します。 条件が 0 以外の場合は、何も行われません。  
   
  診断メッセージにフォームがあります  
   
@@ -286,7 +393,7 @@ VERIFY(booleanExpression)
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afx.h
 
-##  <a name="cdumpcontext_in_mfc_"></a>afxDump (MFC の CDumpContext)  
+##  <a name="cdumpcontext_in_mfc"></a>afxDump (MFC の CDumpContext)  
  アプリケーションで、オブジェクト ダンプの基本的な機能を提供します。  
   
 ```   
@@ -305,6 +412,31 @@ CDumpContext  afxDump;
 
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afx.h
+
+
+## <a name="afxdump"></a>AfxDump (内部)
+MFC を使用してデバッグ中に、オブジェクトの状態をダンプする内部関数です。  
+
+### <a name="syntax"></a>構文    
+```
+void AfxDump(const CObject* pOb);   
+```
+### <a name="parameters"></a>パラメーター  
+ `pOb`  
+ 派生したクラスのオブジェクトへのポインター`CObject`です。  
+   
+### <a name="remarks"></a>コメント  
+ **AfxDump**オブジェクトの呼び出し`Dump`メンバー関数を指定した場所に情報を送信、`afxDump`変数。 **AfxDump** MFC のデバッグ バージョンでのみ使用できます。  
+  
+ プログラミング コードで呼び出さないでください。 **AfxDump**、代わりに呼び出す必要がありますが、`Dump`適切なオブジェクトのメンバー関数。  
+   
+### <a name="requirements"></a>要件  
+ **ヘッダー:** afx.h  
+   
+### <a name="see-also"></a>関連項目  
+ [CObject::Dump](cobject-class.md#dump)   
+
+
 
 ##  <a name="afxmemdf"></a>afxMemDF  
  この変数は、デバッガーや、プログラムからアクセスできる診断の割り当てを調整することができます。  
@@ -362,15 +494,15 @@ BOOL  AfxCheckMemory();
  メモリ エラーがない場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 関数にメモリの破損が検出されない場合は、何も出力します。  
+ 関数にメモリの破損検出されない場合は、何も出力します。  
   
- によって割り当てられたものを含め、ヒープに現在割り当てられているすべてのメモリ ブロックがチェックされます**新しい**など、基になるメモリ アロケーターへの直接呼び出しによって割り当てられたものではありませんが、`malloc`関数または**GlobalAlloc** Windows の機能です。 任意のブロックが壊れている可能性がある場合、メッセージは、デバッガーの出力に出力されます。  
+ によって割り当てられたものを含め、ヒープに現在割り当てられているすべてのメモリ ブロックがチェックされます**新しい**など、基になるメモリ アロケーターを直接呼び出すことによって割り当てられたものではありませんが、`malloc`関数または**GlobalAlloc** Windows の機能です。 任意のブロックが壊れている可能性がある場合、メッセージは、デバッガーの出力に出力されます。  
   
  行を追加する場合  
   
  [!code-cpp[NVC_MFCCObjectSample #14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
   
- モジュールでは、プログラム、その後に続く呼び出し`AfxCheckMemory`メモリが割り当てられたファイル名と行番号が表示されます。  
+ モジュールでは、プログラム、し、後続の呼び出し`AfxCheckMemory`メモリが割り当てられたファイル名と行番号が表示されます。  
   
 > [!NOTE]
 >  モジュールには、シリアル化可能なクラスの 1 つまたは複数の実装が含まれるかどうかは、配置する必要があります、`#define`後、最後の行`IMPLEMENT_SERIAL`マクロの呼び出しです。  
@@ -383,7 +515,7 @@ BOOL  AfxCheckMemory();
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
  
-##  <a name="mfc_"></a>AfxDump (MFC)  
+##  <a name="afxdump"></a>AfxDump (MFC)  
  デバッグ中に、オブジェクトの状態をダンプするデバッガーでこの関数を呼び出します。  
   
 ```   
@@ -398,6 +530,14 @@ void AfxDump(const CObject* pOb);
  **AfxDump**オブジェクトの呼び出し`Dump`メンバー関数を指定した場所に情報を送信、`afxDump`変数。 **AfxDump** MFC のデバッグ バージョンでのみ使用できます。  
   
  プログラミング コードで呼び出さないでください。 **AfxDump**、代わりに呼び出す必要がありますが、`Dump`適切なオブジェクトのメンバー関数。  
+
+### <a name="requirements"></a>要件  
+ **ヘッダー:** afx.h  
+
+### <a name="see-also"></a>関連項目  
+ [CObject::Dump](cobject-class.md#dump)   
+
+
   
 ##  <a name="afxdumpstack"></a>AfxDumpStack  
  現在のスタックのイメージを生成する、このグローバル関数を使用できます。  
@@ -480,9 +620,9 @@ void AFXAPI AfxDumpStack(DWORD dwTarget = AFX_STACK_DUMP_TARGET_DEFAULT);
   
  `AfxDumpStack`MFC ライブラリのデバッグおよび非デバッグ バージョンで使用できます。ただし、実行可能ファイルの共有 DLL で MFC を使用している場合でもは、関数は静的にリンクされることは常にされます。 共有ライブラリの実装では、関数は mfcs42 します。LIB ライブラリ (とそのバリエーション)。  
   
- この関数を正常に使用するには。  
+ 正常にこの関数を使用します。  
   
--   IMAGEHLP ファイル。DLL は、ご使用のパスでなければなりません。 この DLL がない、関数により、エラー メッセージが表示されます。 参照してください[イメージ ヘルプ ライブラリ](http://msdn.microsoft.com/library/windows/desktop/ms680321)IMAGEHLP によって提供される関数のセットについてはします。  
+-   IMAGEHLP ファイル。DLL がパスにする必要があります。 この DLL がない、関数により、エラー メッセージが表示されます。 参照してください[イメージ ヘルプ ライブラリ](http://msdn.microsoft.com/library/windows/desktop/ms680321)IMAGEHLP によって提供される関数のセットについてはします。  
   
 -   スタックにフレームを持つモジュールは、デバッグ情報を含める必要があります。 デバッグ情報を含んでいない、関数、スタック トレースによって生成されますが、トレースに含まれる小さい情報します。  
 ### <a name="requirements"></a>要件  

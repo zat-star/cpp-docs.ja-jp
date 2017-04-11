@@ -41,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: bb418919c26e3c0054a151b859cdf3f31c5d73a8
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 18da3b079cba8bbccba1a5d9655107620fc41eb8
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="cdacl-class"></a>CDacl クラス
@@ -71,11 +71,11 @@ class CDacl : public CAcl
   
 |名前|説明|  
 |----------|-----------------|  
-|[CDacl::AddAllowedAce](#addallowedace)|許可されているように ACE を (アクセス制御エントリ) を追加、`CDacl`オブジェクトです。|  
-|[CDacl::AddDeniedAce](#adddeniedace)|拒否 ACE を追加、`CDacl`オブジェクトです。|  
-|[CDacl::GetAceCount](#getacecount)|Ace (アクセス制御エントリ) の数を返す、`CDacl`オブジェクトです。|  
-|[CDacl::RemoveAce](#removeace)|特定の ACE (アクセス制御エントリ) の削除、`CDacl`オブジェクトです。|  
-|[CDacl::RemoveAllAces](#removeallaces)|すべてに含まれている Ace の削除、`CDacl`オブジェクトです。|  
+|[CDacl::AddAllowedAce](#addallowedace)|許可される ACE (アクセス制御エントリ) を追加、`CDacl`オブジェクト。|  
+|[CDacl::AddDeniedAce](#adddeniedace)|拒否されたエースからの追加、`CDacl`オブジェクト。|  
+|[CDacl::GetAceCount](#getacecount)|Ace (アクセス制御エントリ) の数を返します、`CDacl`オブジェクト。|  
+|[CDacl::RemoveAce](#removeace)|特定の ACE (アクセス制御エントリ) を削除、`CDacl`オブジェクト。|  
+|[CDacl::RemoveAllAces](#removeallaces)|含まれている Ace のすべてを削除、`CDacl`オブジェクト。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -84,13 +84,13 @@ class CDacl : public CAcl
 |[CDacl::operator =](#operator_eq)|代入演算子。|  
   
 ## <a name="remarks"></a>コメント  
- オブジェクトのセキュリティ記述子には、DACL を含めることができます。 DACL には、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する&0; 個以上の Ace (アクセス制御エントリ) が含まれています。 DACL が空の場合 (つまり、それに含まれる Ace が&0; 個)、アクセスが明示的に許可しないアクセスが暗黙的に拒否されるためです。 ただし、オブジェクトのセキュリティ記述子が DACL を持たない場合は、オブジェクトが保護されていない、完全なアクセス権を持つすべてのユーザー。  
+ オブジェクトのセキュリティ記述子には、DACL を含めることができます。 DACL には、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する 0 個以上の Ace (アクセス制御エントリ) が含まれています。 DACL が空の場合 (つまり、ある Ace が 0 個)、アクセスが明示的に付与されません、アクセスが暗黙的に拒否されるようにします。 ただし、オブジェクトのセキュリティ記述子は、DACL を持たない場合は、オブジェクトが保護されていないと、完全なアクセス権を持つすべてのユーザー。  
   
  オブジェクトの DACL を取得するには、は、オブジェクトの所有者であるか、READ_CONTROL オブジェクトへのアクセスがある必要があります。 オブジェクトの DACL を変更するには、WRITE_DAC オブジェクトへのアクセスが必要です。  
   
- 作成、追加、削除、およびから Ace を削除するクラスのメソッドを使用して、`CDacl`オブジェクトです。 関連項目[AtlGetDacl](http://msdn.microsoft.com/library/a0973648-0d46-4c1a-914f-bda861fe5d19)と[AtlSetDacl](http://msdn.microsoft.com/library/eb88ccb6-1f1b-444d-b0c9-8d5cd0dd6c0b)します。  
+ 作成、追加、削除、およびから Ace を削除する指定されたクラスのメソッドを使用して、`CDacl`オブジェクト。 関連項目[AtlGetDacl](security-global-functions.md#atlgetdacl)と[AtlSetDacl](security-global-functions.md#atlsetdacl)です。  
   
- Windows のアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CAcl](../../atl/reference/cacl-class.md)  
@@ -101,7 +101,7 @@ class CDacl : public CAcl
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="addallowedace"></a>CDacl::AddAllowedAce  
- 許可されているように ACE を (アクセス制御エントリ) を追加、`CDacl`オブジェクトです。  
+ 許可される ACE (アクセス制御エントリ) を追加、`CDacl`オブジェクト。  
   
 ```
 bool AddAllowedAce(  
@@ -119,10 +119,10 @@ bool AddAllowedAce(
   
 ### <a name="parameters"></a>パラメーター  
  `rSid`  
- A [CSid](../../atl/reference/csid-class.md)オブジェクトです。  
+ A [CSid](../../atl/reference/csid-class.md)オブジェクト。  
   
  `AccessMask`  
- 許可されるアクセス権のマスクを指定指定した`CSid`オブジェクトです。  
+ 許可されるにはアクセス権のマスクを指定します、指定された`CSid`オブジェクト。  
   
  `AceFlags`  
  ACE の継承を制御するビット フラグのセット。  
@@ -134,18 +134,18 @@ bool AddAllowedAce(
  継承されたオブジェクトの型。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**に ACE を追加する場合、`CDacl`オブジェクト、 **false**失敗します。  
+ 返します**true**に ACE が追加された場合、`CDacl`オブジェクト、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する&0; 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを許可する ACE の追加、`CDacl`オブジェクトです。  
+ A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する 0 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを許可する ACE を追加、`CDacl`オブジェクト。  
   
 > [!NOTE]
->  2 番目の形式の`AddAllowedAce`のみ利用可能で、Windows 2000 でそれ以降。  
+>  2 番目の形式の`AddAllowedAce`は Windows 2000 で利用可能な以降のみです。  
   
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
 ##  <a name="adddeniedace"></a>CDacl::AddDeniedAce  
- 拒否 ACE (アクセス制御エントリ) に追加、`CDacl`オブジェクトです。  
+ 拒否された ACE (アクセス制御エントリ) に追加、`CDacl`オブジェクト。  
   
 ```
 bool AddDeniedAce(  
@@ -166,10 +166,10 @@ bool AddDeniedAce(
  `CSid` オブジェクト。  
   
  `AccessMask`  
- 拒否するアクセス権のマスクを指定指定した`CSid`オブジェクトです。  
+ 拒否するアクセス権のマスクを指定します、指定された`CSid`オブジェクト。  
   
  `AceFlags`  
- ACE の継承を制御するビット フラグのセット。 既定値は、メソッドの最初の形式では 0 です。  
+ ACE の継承を制御するビット フラグのセット。 既定値は、メソッドの最初のフォームでは 0 です。  
   
  `pObjectType`  
  オブジェクトの型。  
@@ -178,13 +178,13 @@ bool AddDeniedAce(
  継承されたオブジェクトの型。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**に ACE を追加する場合、`CDacl`オブジェクト、 **false**失敗します。  
+ 返します**true**に ACE が追加された場合、`CDacl`オブジェクト、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する&0; 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを拒否する ACE を追加、`CDacl`オブジェクトです。  
+ A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する 0 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを拒否する ACE を追加、`CDacl`オブジェクト。  
   
 > [!NOTE]
->  2 番目の形式の`AddDeniedAce`のみ利用可能で、Windows 2000 でそれ以降。  
+>  2 番目の形式の`AddDeniedAce`は Windows 2000 で利用可能な以降のみです。  
   
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
@@ -198,10 +198,10 @@ CDacl () throw();
   
 ### <a name="parameters"></a>パラメーター  
  `rhs`  
- 既存の**ACL** (アクセス制御リスト) の構造体。  
+ 既存の**ACL** (アクセス制御リスト) 構造体。  
   
 ### <a name="remarks"></a>コメント  
- `CDacl`オブジェクトを既存を使用して必要に応じて作成できる**ACL**構造体。 DACL (随意アクセス制御リスト) のみを確認することが重要と SACL ではありません (システム アクセス制御リスト) は、このパラメーターとして渡す必要があります。 デバッグ ビルドで、SACL を渡すことにより、アサートされます。 リリース ビルドでは、SACL を渡すことが発生 (アクセス制御エントリ) の Ace は無視され、ACL でしエラーは発生しません。  
+ `CDacl`オブジェクトを必要に応じて作成する、既存を使用して**ACL**構造体。 だけを DACL (随意アクセス制御リスト) を確認することが重要と SACL ではありません (システム アクセス制御リスト) は、このパラメーターとして渡す必要があります。 デバッグ ビルドでは、SACL を渡すことにより、アサートされます。 リリース ビルドでは、SACL を渡すことにより (アクセス制御エントリ) の Ace は無視され、ACL でとエラーは発生しません。  
   
 ##  <a name="dtor"></a>CDacl:: ~ CDacl  
  デストラクターです。  
@@ -211,17 +211,17 @@ CDacl () throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- デストラクターを使用してすべての Ace (アクセス制御エントリ) を含む、オブジェクトが取得したリソースを解放[CDacl::RemoveAllAces](#removeallaces)します。  
+ デストラクターを使用して、オブジェクトのすべての Ace (アクセス制御エントリ) などで取得したリソースを解放[CDacl::RemoveAllAces](#removeallaces)です。  
   
 ##  <a name="getacecount"></a>CDacl::GetAceCount  
- Ace (アクセス制御エントリ) の数を返す、`CDacl`オブジェクトです。  
+ Ace (アクセス制御エントリ) の数を返します、`CDacl`オブジェクト。  
   
 ```
 UINT GetAceCount() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 含まれている Ace の数を返す、`CDacl`オブジェクトです。  
+ 含まれている Ace の数を返します、`CDacl`オブジェクト。  
   
 ##  <a name="operator_eq"></a>CDacl::operator =  
  代入演算子。  
@@ -232,16 +232,16 @@ CDacl& operator= (const ACL& rhs) throw(...);
   
 ### <a name="parameters"></a>パラメーター  
  `rhs`  
- 既存のオブジェクトに割り当てられる ACL (アクセス制御リスト)。  
+ 既存のオブジェクトに割り当てる ACL (アクセス制御リスト)。  
   
 ### <a name="return-value"></a>戻り値  
- 更新されたへの参照を返します`CDacl`オブジェクトです。  
+ 更新されたへの参照を返します`CDacl`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- この関数には、DACL (随意アクセス制御リスト) を渡すだけことを確認してください。 SACL (システム アクセス制御リスト) を渡すことをこの関数によってアサート デバッグ ビルドでがエラーが発生しないリリース ビルドでします。  
+ この関数には、DACL (随意アクセス制御リスト) を渡すだけことを確認する必要があります。 SACL (システム アクセス制御リスト) を渡すこの関数によってアサート デバッグ ビルドでがエラーが発生なしリリース ビルドでします。  
   
 ##  <a name="removeace"></a>CDacl::RemoveAce  
- 特定の ACE (アクセス制御エントリ) の削除、`CDacl`オブジェクトです。  
+ 特定の ACE (アクセス制御エントリ) を削除、`CDacl`オブジェクト。  
   
 ```
 void RemoveAce(UINT nIndex) throw();
@@ -252,17 +252,17 @@ void RemoveAce(UINT nIndex) throw();
  削除する ACE エントリのインデックスです。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドから派生した[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)します。  
+ このメソッドはから派生[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)です。  
   
 ##  <a name="removeallaces"></a>CDacl::RemoveAllAces  
- すべてに含まれている Ace (アクセス制御エントリ) の削除、`CDacl`オブジェクトです。  
+ 含まれている Ace (アクセス制御エントリ) のすべてを削除、`CDacl`オブジェクト。  
   
 ```
 void RemoveAllAces() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 削除ごと**ACE** (アクセス制御エントリ) 構造体 (存在する場合) で、`CDacl`オブジェクトです。  
+ 削除ごと**ACE** (アクセス制御エントリ) の構造 (存在する場合) で、`CDacl`オブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   

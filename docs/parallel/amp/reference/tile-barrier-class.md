@@ -40,9 +40,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 247828a6de3a5820d75623ee438810b563f04519
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4bacc84c4e267ffca14290186750ae1d3bdf899f
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="tilebarrier-class"></a>tile_barrier クラス
@@ -80,7 +80,7 @@ class tile_barrier;
  **名前空間:** Concurrency  
 
 ## <a name="tile_barrier__ctor"></a>tile_barrier コンス トラクター  
- コピーすることによって既存のクラスの新しいインスタンスを初期化します。  
+ 既存のものをコピーして、クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文 
   
@@ -122,7 +122,7 @@ void wait_with_global_memory_fence() const  restrict(amp);
 ```
 
 ## <a name="wait_with_tile_static_memory_fence"></a>wait_with_tile_static_memory_fence   
-タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。 これによって、`tile_static` メモリ アクセスがスレッド タイルの他のスレッドから参照でき、プログラムの順序で実行されます。  
+タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。 これにより、`tile_static`メモリ アクセスがスレッド タイルの他のスレッドから参照でき、プログラムの順序で実行されます。  
   
 ### <a name="syntax"></a>構文 
   

@@ -225,6 +225,7 @@
 ## [集計とクラス ファクトリに関するマクロ](aggregation-and-class-factory-macros.md)
 ## [カテゴリに関するマクロ](category-macros.md)
 ## [COM マップに関するマクロ](com-map-macros.md)
+## [COM インターフェイス エントリ マクロ](com-interface-entry-macros.md)
 ## [コンパイラ オプションに関するマクロ](compiler-options-macros.md)
 ## [複合コントロールに関するマクロ](composite-control-macros.md)
 ## [接続ポイントに関するマクロ](connection-point-macros.md)

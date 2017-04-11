@@ -41,13 +41,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: cff5995555cd069855f9d7becb9eb8367e80c920
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: cdcc008797e94988fb42fd6239603fa300a84233
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="iobjectsafetyimpl-class"></a>IObjectSafetyImpl クラス
-このクラスの既定の実装を提供する、`IObjectSafety`インターフェイスを取得し、オブジェクトの安全性レベルを設定するクライアントを許可するようにします。  
+このクラスの既定の実装を提供する、`IObjectSafety`インターフェイスを取得し、オブジェクトの安全性レベルを設定するクライアントを許可します。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
@@ -61,14 +61,14 @@ class IObjectSafetyImpl
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- 派生したクラスに、`IObjectSafetyImpl`です。  
+ 派生したクラス、`IObjectSafetyImpl`です。  
   
  *dwSupportedSafety*  
  コントロールのサポートされている安全性のオプションを指定します。 次のいずれかの値になります。  
   
-- **INTERFACESAFE_FOR_UNTRUSTED_CALLER**で識別されるインターフェイス、 [SetInterfaceSafetyOptions](#setinterfacesafetyoptions)パラメーター`riid`スクリプトを実行して安全にする必要があります。  
+- **INTERFACESAFE_FOR_UNTRUSTED_CALLER**で識別されるインターフェイス、 [SetInterfaceSafetyOptions](#setinterfacesafetyoptions)パラメーター`riid`加える必要のあるスクリプトを実行します。  
   
-- **INTERFACESAFE_FOR_UNTRUSTED_DATA**で識別されるインターフェイス、`SetInterfaceSafetyOptions`パラメーター`riid`加える必要のある信頼されていないデータの安全性の初期化中にします。  
+- **INTERFACESAFE_FOR_UNTRUSTED_DATA**で識別されるインターフェイス、`SetInterfaceSafetyOptions`パラメーター`riid`加える必要のある信頼されていないデータの安全な初期化中にします。  
   
 ## <a name="members"></a>メンバー  
   
@@ -76,7 +76,7 @@ class IObjectSafetyImpl
   
 |名前|説明|  
 |----------|-----------------|  
-|[IObjectSafetyImpl::GetInterfaceSafetyOptions](#getinterfacesafetyoptions)|現在設定されて、オブジェクトの安全性のオプションと同様に、オブジェクトでサポートされている安全性のオプションを取得します。|  
+|[IObjectSafetyImpl::GetInterfaceSafetyOptions](#getinterfacesafetyoptions)|オブジェクトに現在設定安全性のオプションと同様に、オブジェクトでサポートされている安全性のオプションを取得します。|  
 |[IObjectSafetyImpl::SetInterfaceSafetyOptions](#setinterfacesafetyoptions)|オブジェクトを初期化またはスクリプトに対して安全になります。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
@@ -86,9 +86,9 @@ class IObjectSafetyImpl
 |[IObjectSafetyImpl::m_dwCurrentSafety](#m_dwcurrentsafety)|オブジェクトの現在の安全性レベルを格納します。|  
   
 ## <a name="remarks"></a>コメント  
- クラス`IObjectSafetyImpl`の既定の実装を提供`IObjectSafety`します。 `IObjectSafety`インターフェイスにより、クライアントを取得して、オブジェクトの安全性レベルを設定します。 たとえば、web ブラウザーを呼び出すことができます**IObjectSafety::SetInterfaceSafetyOptions**初期化またはスクリプトを実行して安全なコントロールを作成します。  
+ クラス`IObjectSafetyImpl`の既定の実装を提供`IObjectSafety`です。 `IObjectSafety`インターフェイスにより、クライアントが取得され、オブジェクトの安全性レベルを設定します。 たとえば、web ブラウザーを呼び出すことができます**IObjectSafety::SetInterfaceSafetyOptions**初期化に対して安全またはスクリプトを実行して安全なコントロールを作成します。  
   
- 使用して、 [IMPLEMENTED_CATEGORY](http://msdn.microsoft.com/library/d898ef34-5684-4709-beb9-7114ddd96674)マクロを**CATID_SafeForScripting**と**CATID_SafeForInitializing**コンポーネントのカテゴリが別のコンポーネントを安全に指定する方法を提供します。  
+ 使用して、 [IMPLEMENTED_CATEGORY](category-macros.md#implemented_category)マクロを**CATID_SafeForScripting**と**CATID_SafeForInitializing**コンポーネントのカテゴリは、コンポーネントが安全でないことを指定する代替方法を提供します。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -101,7 +101,7 @@ class IObjectSafetyImpl
  **ヘッダー:** atlctl.h  
   
 ##  <a name="getinterfacesafetyoptions"></a>IObjectSafetyImpl::GetInterfaceSafetyOptions  
- 現在設定されて、オブジェクトの安全性のオプションと同様に、オブジェクトでサポートされている安全性のオプションを取得します。  
+ オブジェクトに現在設定安全性のオプションと同様に、オブジェクトでサポートされている安全性のオプションを取得します。  
   
 ```
 HRESULT GetInterfaceSafetyOptions(  
@@ -111,10 +111,10 @@ HRESULT GetInterfaceSafetyOptions(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 実装のオブジェクトの実装によってサポートされるインターフェイスの適切な値が返されます**:queryinterface**します。  
+ 実装のオブジェクトの実装でサポートされている任意のインターフェイスの適切な値を返します**iunknown::queryinterface**です。  
   
 > [!IMPORTANT]
->  サポートする任意のオブジェクト`IObjectSafety`独自のセキュリティとの任意のオブジェクトを代行させるを担当します。 プログラマ必要がありますから、ユーザーのコンテキストでコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングおよび適切な領域のチェックを実行します。  
+>  サポートする任意のオブジェクト`IObjectSafety`に独自のセキュリティと任意のオブジェクトを代行させるを担当します。 プログラマ必要があります、ユーザーのコンテキストでのコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングと適切なゾーン チェックを実行します。  
   
  参照してください[IObjectSafety::GetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768223.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
@@ -136,10 +136,10 @@ HRESULT SetInterfaceSafetyOptions(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 実装は、 **E_NOINTERFACE**のオブジェクトの実装でサポートされていないすべてのインターフェイス**:queryinterface**します。  
+ 実装を返します**E_NOINTERFACE**のオブジェクトの実装でサポートされていない任意のインターフェイスの**iunknown::queryinterface**です。  
   
 > [!IMPORTANT]
->  サポートする任意のオブジェクト`IObjectSafety`独自のセキュリティとの任意のオブジェクトを代行させるを担当します。 プログラマ必要がありますから、ユーザーのコンテキストでコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングおよび適切な領域のチェックを実行します。  
+>  サポートする任意のオブジェクト`IObjectSafety`に独自のセキュリティと任意のオブジェクトを代行させるを担当します。 プログラマ必要があります、ユーザーのコンテキストでのコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングと適切なゾーン チェックを実行します。  
   
  参照してください[IObjectSafety::SetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768225.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   

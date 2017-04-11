@@ -110,9 +110,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
-ms.openlocfilehash: 9e79a6728471acd08052d87b97645407d1f7cc47
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 262b2b8548f203a210b1aabbe149fe25cf6ad655
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cricheditctrl-class"></a>CRichEditCtrl クラス
@@ -514,7 +514,7 @@ long FindText(
  ポインター、[指定](http://msdn.microsoft.com/library/windows/desktop/bb787909)検索のパラメーターを提供し、一致が見つかった範囲を返すことを構造体します。  
   
 ### <a name="return-value"></a>戻り値  
- 次の一致項目の 0 から始まる文字の位置– 1 は一致するものがある場合。  
+ 次の一致項目の 0 から始まる文字の位置-一致するものがある場合は 1 です。  
   
 ### <a name="remarks"></a>コメント  
  検索できますいずれかの上または下適切な範囲のパラメーターを設定して、[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)内で構造体、**指定**構造体。  
@@ -839,7 +839,7 @@ UNDONAMEID GetRedoName() const;
  成功した場合、`GetRedoName`を返します、[ある場合](http://msdn.microsoft.com/library/windows/desktop/bb774365)コントロールの再実行キューの次のアクションの種類を示す列挙型。 キューに再実行操作が 不明な型の場合、再実行キューが空の場合、または`GetRedoName`0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取りと貼り付けの操作です。 この情報は、アンドゥ操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
+ 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、アンドゥ操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
   
 ##  <a name="getsel"></a>CRichEditCtrl::GetSel  
  この現在の選択範囲の境界を取得`CRichEditCtrl`オブジェクト。  
@@ -869,7 +869,7 @@ void GetSel(
   
 - **GetSel (** `nStartChar` **、** `nEndChar` **)**このフォームは、パラメーターで境界を返します`nStartChar`と`nEndChar`です。  
   
- 選択すべてを含む場合、先頭 ( **cpMin**または`nStartChar`) は、0 と終了 ( **cpMax**または`nEndChar`) は – 1。  
+ 選択範囲を含むすべての場合、先頭 ( **cpMin**または`nStartChar`) 0 と終了は、( **cpMax**または`nEndChar`) が - 1。  
   
  詳細については、次を参照してください。 [EM_EXGETSEL](http://msdn.microsoft.com/library/windows/desktop/bb788001)メッセージと[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
@@ -1039,7 +1039,7 @@ UNDONAMEID GetUndoName() const;
  元に戻す操作がコントロールの元に戻すキューの場合`GetUndoName`を返します、[ある場合](http://msdn.microsoft.com/library/windows/desktop/bb774365)キューの次のアクションの種類を示す列挙型。 キューに元に戻す操作が 不明な型の場合、元に戻すキューが空の場合、または`GetUndoName`0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取りと貼り付けの操作です。 この情報は、元に戻すことができる操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
+ 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、元に戻すことができる操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
   
 ##  <a name="getwordwrapmode"></a>CRichEditCtrl::GetWordWrapMode  
  リッチ エディット コントロールの word 互換性に影響するオプションの現在のワード ラップを取得します。  
@@ -1109,13 +1109,13 @@ long LineFromChar(long nIndex) const;
   
 ### <a name="parameters"></a>パラメーター  
  `nIndex`  
- エディット コントロールのテキストに必要な文字の 0 から始まるインデックス値が含まれるか、– 1 を含んでいます。 場合`nIndex`-1 で、現在の行では、カーソルがある行を指定します。  
+ エディット コントロールのテキストに必要な文字の 0 から始まるインデックス値が含まれるか、-1 を含んでいます。 場合`nIndex`-1 で、現在の行では、カーソルがある行を指定します。  
   
 ### <a name="return-value"></a>戻り値  
  指定された文字のインデックスを含む行の 0 から始まる行番号`nIndex`です。 場合`nIndex`-1 で、選択範囲の最初の文字を含む行の数が返されます。 選択されていない場合は、現在の行番号が返されます。  
   
 ### <a name="remarks"></a>コメント  
- 文字インデックスは、リッチ エディット コントロールの先頭から文字の数です。 文字をカウントする OLE 項目が 1 つの文字としてカウントされます。  
+ 文字のインデックスは、リッチ エディット コントロールの先頭から文字の数です。 文字をカウントする OLE 項目が 1 つの文字としてカウントされます。  
   
  詳細については、次を参照してください。 [EM_EXLINEFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb788005)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
@@ -1131,10 +1131,10 @@ int LineIndex(int nLine = -1) const;
   
 ### <a name="parameters"></a>パラメーター  
  `nLine`  
- エディット コントロールのテキストで目的の行のインデックス値が含まれていますか、– 1 を含んでいます。 場合`nLine`-1 で、現在の行では、カーソルがある行を指定します。  
+ エディット コントロールのテキストで目的の行のインデックス値が含まれていますか、-1 を含んでいます。 場合`nLine`-1 で、現在の行では、カーソルがある行を指定します。  
   
 ### <a name="return-value"></a>戻り値  
- 指定した行の文字インデックス`nLine`または指定した行番号が大きい場合は – 1、エディット コントロールで行の数。  
+ 指定した行の文字インデックス`nLine`または指定した行番号が大きい場合は-1、エディット コントロールで行の数。  
   
 ### <a name="remarks"></a>コメント  
  文字インデックスは、リッチ エディット コントロールの先頭から指定した行までの文字の数です。  
@@ -1284,7 +1284,7 @@ void ReplaceSel(
 ### <a name="remarks"></a>コメント  
  これですべてのテキストを置換する`CRichEditCtrl`オブジェクトを使用して[とき](../../mfc/reference/cwnd-class.md#setwindowtext)です。  
   
- 現在選択されていない、置換テキストは、カーソルは、現在のキャレット位置に挿入されます。  
+ 現在選択されていない、置換テキストは、カーソルは、現在のカレット位置に挿入されます。  
   
  この関数を既存の書式設定文字挿入されたテキストの書式設定されます。 テキストの範囲全体を置換する (呼び出すことによって`SetSel`(0,-1) 呼び出しの前に`ReplaceSel`)、段落の文字の前の段落の書式を保持では新しく挿入したテキストで継承する end があります。  
   

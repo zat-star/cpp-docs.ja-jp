@@ -37,13 +37,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: a85b67a58553dada36f4472ea0683e18bc775493
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 5dca6b31cdd99582e727b634093c3548eef2ecc1
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="cw2cwex-class"></a>CW2CWEX クラス
-このクラスは、文字列変換マクロによって使用`CW2CTEX`と`CT2CWEX`、および typedef`CW2W`します。  
+このクラスは、文字列変換マクロによって使用`CW2CTEX`と`CT2CWEX`、および typedef`CW2W`です。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -57,7 +57,7 @@ class CW2CWEX
   
 #### <a name="parameters"></a>パラメーター  
  `t_nBufferLength`  
- 変換プロセスで使用されるバッファーのサイズ。 既定の長さは、128 バイトです。  
+ 変換プロセスで使用するバッファーのサイズ。 既定の長さは 128 バイトです。  
   
 ## <a name="members"></a>メンバー  
   
@@ -72,18 +72,18 @@ class CW2CWEX
   
 |名前|説明|  
 |----------|-----------------|  
-|[CW2CWEX::operator LPCWSTR](#operator_lpcwstr)|変換演算子。|  
+|[CW2CWEX::operator LPCWSTR](#operator_lpcwstr)|変換演算子です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CW2CWEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバー。|  
+|[CW2CWEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバーです。|  
   
 ## <a name="remarks"></a>コメント  
  追加の機能が必要な場合を除き、使用`CW2CTEX`、 `CT2CWEX`、または`CW2W`コードにします。  
   
- このクラスは安全にループで使用され、スタック オーバーフローが発生しません。 既定では、ATL 変換クラスとマクロは、変換のため現在のスレッドの ANSI コード ページを使用します。  
+ このクラスは、安全にループで使用し、スタック オーバーフローが発生しません。 既定では、ATL 変換クラスとマクロは、変換の現在のスレッドの ANSI コード ページを使用します。  
   
  次のマクロは、このクラスに基づいています。  
   
@@ -95,10 +95,10 @@ class CW2CWEX
   
 - `CW2W`  
   
- これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)します。  
+ これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL および MFC 文字列変換マクロ](string-conversion-macros.md)です。  
   
 ## <a name="example"></a>例  
- 参照してください[ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)のこれらの文字列変換マクロを使用する例です。  
+ 参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
@@ -119,7 +119,7 @@ CW2CWEX(LPCWSTR psz) throw(...);
  コード ページです。 このクラスでは使用されません。  
   
 ### <a name="remarks"></a>コメント  
- 変換処理で使用するバッファーを割り当てます。  
+ 変換プロセスで使用するバッファーを割り当てます。  
   
 ##  <a name="dtor"></a>CW2CWEX:: ~ CW2CWEX  
  デストラクターです。  
@@ -132,21 +132,21 @@ CW2CWEX(LPCWSTR psz) throw(...);
  割り当てられたバッファーを解放します。  
   
 ##  <a name="m_psz"></a>CW2CWEX::m_psz  
- ソース文字列を格納するデータ メンバー。  
+ ソース文字列を格納するデータ メンバーです。  
   
 ```
 LPCWSTR m_psz;
 ```  
   
 ##  <a name="operator_lpcwstr"></a>CW2CWEX::operator LPCWSTR  
- 変換演算子。  
+ 変換演算子です。  
   
 ```  
 operator LPCWSTR() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 文字列を型として返します**LPCWSTR します。**  
+ 種類としてテキスト文字列を返す**LPCWSTR です。**  
   
 ## <a name="see-also"></a>関連項目  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   

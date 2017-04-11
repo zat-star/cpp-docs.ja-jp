@@ -37,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 30c9235f16581c86ab5612522909dc366b1ce17e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 471ba42f25a4e237db03f2516288a7b33a0efd63
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="catlexception-class"></a>CAtlException クラス
@@ -63,7 +63,7 @@ class CAtlException
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAtlException::operator HRESULT](#operator_hresult)|HRESULT 値を現在のオブジェクトにキャストします。|  
+|[CAtlException::operator HRESULT](#operator_hresult)|HRESULT 値を現在のオブジェクトをキャストします。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
@@ -72,9 +72,9 @@ class CAtlException
 |[CAtlException::m_hr](#m_hr)|型の変数 HRESULT は、オブジェクトによって作成され、エラー状態を格納するために使用します。|  
   
 ## <a name="remarks"></a>コメント  
- A`CAtlException`オブジェクト ATL 操作に関する例外条件を表します。 `CAtlException`クラスには、例外と HRESULT の場合と同様に、例外を処理できるようにするキャスト演算子の理由を示すステータス コードを格納するパブリック データ メンバーが含まれています。  
+ A`CAtlException`オブジェクト ATL 操作に関する例外条件を表します。 `CAtlException`クラスには、例外と HRESULT の場合と同様に、例外を処理できるようにするキャスト演算子の原因を示すステータス コードを格納するパブリック データ メンバーが含まれています。  
   
- 一般を呼び出す`AtlThrow`を作成するのではなく、`CAtlException`オブジェクトに直接します。  
+ 一般が呼び出す`AtlThrow`を作成するのではなく、`CAtlException`オブジェクトに直接です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlexcept.h  
@@ -92,7 +92,7 @@ CAtlException() throw();
  `HRESULT`エラー コード。  
   
 ##  <a name="operator_hresult"></a>CAtlException::operator HRESULT 
- HRESULT 値を現在のオブジェクトにキャストします。  
+ HRESULT 値を現在のオブジェクトをキャストします。  
   
 ```  
 operator HRESULT() const throw ();
@@ -106,9 +106,9 @@ HRESULT m_hr;
 ```  
   
 ### <a name="remarks"></a>コメント  
- エラー状態を格納するデータ メンバー。 HRESULT 値は、コンス トラクターによって設定[CAtlException::CAtlException](#catlexception)します。  
+ エラー状態を格納するデータ メンバーです。 HRESULT 値は、コンス トラクターによって設定[CAtlException::CAtlException](#catlexception)です。  
   
 ## <a name="see-also"></a>関連項目  
- [ため](http://msdn.microsoft.com/library/2bd111da-8170-488d-914a-c9bf6b6765f7)   
+ [AtlThrow](debugging-and-error-reporting-global-functions.md#atlthrow)   
  [クラスの概要](../../atl/atl-class-overview.md)
 

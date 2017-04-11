@@ -41,9 +41,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 235955f8573ae7e430be3de2a96efdd7496d15de
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 07aa3e37dfb1a986f083d3efb007ea8f7c0c9243
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="idispeventimpl-class"></a>IDispEventImpl クラス
@@ -66,16 +66,16 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
   
 #### <a name="parameters"></a>パラメーター  
  `nID`  
- ソース オブジェクトの一意の識別子。 `IDispEventImpl`基本クラスは、複合コントロールの場合は、このパラメーターの目的のコンテナー内のコントロールのリソース ID を使用します。 それ以外の場合では、任意の正の整数を使用します。  
+ ソース オブジェクトの一意の識別子。 ときに`IDispEventImpl`基底クラスは、複合コントロールの場合は、このパラメーターに、目的のコンテナー内のコントロールのリソース ID を使用します。 それ以外の場合では、任意の正の整数を使用します。  
   
  `T`  
- ユーザーのクラスから派生した`IDispEventImpl`します。  
+ 派生したユーザーのクラスは、`IDispEventImpl`です。  
   
  `pdiid`  
- このクラスで実装するイベントのディスパッチ インターフェイスの IID へのポインター。 表されるタイプ ライブラリのこのインターフェイスを定義する必要が`plibid`、 `wMajor`、および`wMinor`です。  
+ このクラスで実装するイベントのディスパッチ インターフェイスの IID へのポインター。 示されるタイプ ライブラリのこのインターフェイスを定義する必要があります`plibid`、 `wMajor`、および`wMinor`です。  
   
  `plibid`  
- ディスパッチ インターフェイスを定義するタイプ ライブラリへのポインターが指す`pdiid`します。 場合**>/documents/report1.rdl」の GUID_**イベントのソース オブジェクトからタイプ ライブラリが読み込まれます。  
+ ディスパッチ インターフェイスを定義するタイプ ライブラリへのポインターが指す`pdiid`です。 場合**>/documents/report1.rdl」の GUID_**イベントのソース オブジェクトから、タイプ ライブラリが読み込まれます。  
   
  `wMajor`  
  タイプ ライブラリのメジャー バージョン。 既定値は 0 です。  
@@ -84,7 +84,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
  タイプ ライブラリのマイナー バージョン。 既定値は 0 です。  
   
  `tihclass`  
- 型情報の管理に使用されるクラス`T`します。 既定値は型のクラス`CComTypeInfoHolder`。 ただし、このテンプレート パラメーター以外の型のクラスを提供することによりオーバーライドできます`CComTypeInfoHolder`します。  
+ 型情報の管理に使用するクラス`T`です。 既定値は型のクラス`CComTypeInfoHolder`。 ただし、このテンプレート パラメーターを上書きするには、以外の値の型のクラスを提供して`CComTypeInfoHolder`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -92,7 +92,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
   
 |名前|説明|  
 |----------|-----------------|  
-|[IDispEventImpl::_tihclass](../../atl/reference/idispeventimpl-class.md)|型情報を管理するために使用するクラスです。 既定では、`CComTypeInfoHolder`です。|  
+|[IDispEventImpl::_tihclass](../../atl/reference/idispeventimpl-class.md)|型情報の管理に使用するクラス。 既定では、`CComTypeInfoHolder`です。|  
   
 ### <a name="public-constructors"></a>パブリック コンストラクター  
   
@@ -104,31 +104,31 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
   
 |名前|説明|  
 |----------|-----------------|  
-|[IDispEventImpl::GetFuncInfoFromId](#getfuncinfofromid)|指定したディスパッチ識別子の関数のインデックスを検索します。|  
-|[IDispEventImpl::GetIDsOfNames](#getidsofnames)|対応する整数 Dispid 群に&1; つのメンバーおよびオプションの引数の名前のセットをマップします。|  
+|[IDispEventImpl::GetFuncInfoFromId](#getfuncinfofromid)|指定したディスパッチ識別子に関数のインデックスを検索します。|  
+|[IDispEventImpl::GetIDsOfNames](#getidsofnames)|対応する一連の整数 Dispid を 1 つのメンバーとオプションの引数名のセットをマップします。|  
 |[IDispEventImpl::GetTypeInfo](#gettypeinfo)|オブジェクトの型情報を取得します。|  
 |[IDispEventImpl::GetTypeInfoCount](#gettypeinfocount)|型情報インターフェイスの数を取得します。|  
 |[IDispEventImpl::GetUserDefinedType](#getuserdefinedtype)|ユーザー定義型の基本の種類を取得します。|  
   
 ## <a name="remarks"></a>コメント  
- `IDispEventImpl`そのインターフェイスのメソッドとイベントは、すべての実装コードを提供するには、しなくても、イベントのディスパッチ インターフェイスを実装する方法を提供します。 `IDispEventImpl`実装を提供、`IDispatch`メソッドです。 処理にしているイベントの実装を指定する必要があるだけです。  
+ `IDispEventImpl`そのインターフェイスのメソッドとイベントは、すべての実装コードを指定しなくても、イベントのディスパッチ インターフェイスを実装する方法を提供します。 `IDispEventImpl`実装を提供、`IDispatch`メソッドです。 ある処理の対象イベントの実装を指定する必要があるだけです。  
   
- `IDispEventImpl`組み合わせて動作、[イベント シンク マップ](http://msdn.microsoft.com/library/32542b3d-ac43-4139-8ac4-41c48481744f)で、クラスで、適切なハンドラー関数にイベントをルーティングします。 このクラスを使用します。  
+ `IDispEventImpl`適切なハンドラー関数にイベントをルーティングするクラスでイベント シンク マップと連携して動作します。 このクラスを使用します。  
   
 
- 追加、 [SINK_ENTRY](http://msdn.microsoft.com/library/33a5fff6-5248-47c0-8cf4-8bdf760e86e5)または[SINK_ENTRY_EX](http://msdn.microsoft.com/library/e1d14342-838f-4791-ac2f-5dae2801c1ac)マクロを処理する各オブジェクト上の各イベントのイベント シンク マップします。 使用する場合`IDispEventImpl`複合コントロールの基本クラスを呼び出すこともできます[AtlAdviseSinkMap](http://msdn.microsoft.com/library/0757a6af-3de3-4179-8b4f-ccd137d919b4)を設定し、イベント シンク マップのすべてのエントリのイベント ソースとの接続を解除します。 それ以外の場合で、またはより細かく制御できる呼び出して[DispEventAdvise](idispeventsimpleimpl-class.md#dispeventadvise)基本クラスとソース オブジェクトの間の接続を確立するためにします。 呼び出す[DispEventUnadvise](idispeventsimpleimpl-class.md#dispeventunadvise)結合を解除します。  
+ 追加、 [SINK_ENTRY](composite-control-macros.md#sink_entry)または[SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex)マクロを処理する各オブジェクト上の各イベントのイベント シンク マップします。 使用する場合`IDispEventImpl`複合コントロールの基底クラスとして呼び出すことができます[AtlAdviseSinkMap](connection-point-global-functions.md#atladvisesinkmap)を確立して、イベント シンク マップのすべてのエントリのイベント ソースとの接続を解除します。 その他の場合、またはより細かく制御には、呼び出す[DispEventAdvise](idispeventsimpleimpl-class.md#dispeventadvise)基本クラスとソース オブジェクトの間の接続を確立するためにします。 呼び出す[DispEventUnadvise](idispeventsimpleimpl-class.md#dispeventunadvise)への接続を切断します。  
 
   
- 派生する必要があります`IDispEventImpl`(に一意の値を使用して`nID`) の各オブジェクトのイベントを処理する必要があります。 別のソース オブジェクトに対してことを通知し、1 つのソース オブジェクトに対してアドバイズによって、基本クラスを再利用できますが、一度に&1; つのオブジェクトで処理できるソース オブジェクトの最大数が数によって制限される`IDispEventImpl`基本クラスです。  
+ 派生する必要があります`IDispEventImpl`(に一意の値を使用して`nID`) の各オブジェクトのイベントを処理する必要があります。 によって、別のソース オブジェクトに対して通知し、1 つのソース オブジェクトに対してアドバイズ基底クラスを再利用できますが、一度に 1 つのオブジェクトを処理するソース オブジェクトの最大数が数によって制限される`IDispEventImpl`基本クラスです。  
   
- `IDispEventImpl`同じ機能を提供[されます](../../atl/reference/idispeventsimpleimpl-class.md)へのポインターとして指定して発生するのではなく、タイプ ライブラリからインターフェイスに関する型情報を取得してを除き、 [_ATL_FUNC_INFO](../../atl/reference/atl-func-info-structure.md)構造体。 使用`IDispEventSimpleImpl`ときに、イベント インターフェイスを記述するタイプ ライブラリがあるまたはしないタイプ ライブラリの使用に関連するオーバーヘッドを回避します。  
+ `IDispEventImpl`同じ機能を提供します[されます](../../atl/reference/idispeventsimpleimpl-class.md)インターフェイスに関する型情報へのポインターとして指定されたことをことのではなく、タイプ ライブラリから取得を除き、 [_ATL_FUNC_INFO](../../atl/reference/atl-func-info-structure.md)構造体。 使用して`IDispEventSimpleImpl`ときに、イベント インターフェイスを記述するタイプ ライブラリがあるまたはしないタイプ ライブラリの使用に関連するオーバーヘッドを回避します。  
   
 > [!NOTE]
-> `IDispEventImpl``IDispEventSimpleImpl`の独自の実装を提供**:queryinterface**それぞれを有効にする`IDispEventImpl`と`IDispEventSimpleImpl`基本クラスが、メインの COM オブジェクトにクラス メンバーへの直接のアクセスを許可する時に別の COM id として機能します。  
+> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`と`IDispEventSimpleImpl`基底クラスのメンバーに直接アクセスする主な COM オブジェクトの状態のまま別の COM id として機能するクラス。  
   
- ActiveX イベント シンクのみサポートの戻り値の HRESULT の種類や、イベント ハンドラー メソッドは void の CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
+ ActiveX イベント シンクのみサポートしている戻り値の型 HRESULT または void、イベント ハンドラー メソッドからの CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
   
- 詳細については、次を参照してください。[をサポートする IDispEventImpl](../../atl/supporting-idispeventimpl.md)します。  
+ 詳細については、次を参照してください。[サポート IDispEventImpl](../../atl/supporting-idispeventimpl.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `_IDispEvent`  
@@ -143,7 +143,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
  **ヘッダー:** atlcom.h  
   
 ##  <a name="getfuncinfofromid"></a>IDispEventImpl::GetFuncInfoFromId  
- 指定したディスパッチ識別子の関数のインデックスを検索します。  
+ 指定したディスパッチ識別子に関数のインデックスを検索します。  
   
 ```
 HRESULT GetFuncInfoFromId(
@@ -158,19 +158,19 @@ HRESULT GetFuncInfoFromId(
  [in]関数の ID への参照。  
   
  *dispidMember*  
- [in]関数のディスパッチの ID。  
+ [in]関数のディスパッチ ID。  
   
  `lcid`  
  [in]関数の ID のロケール コンテキスト  
   
  `info`  
- [in]関数の呼び出し方法を示す構造体。  
+ [in]関数を呼び出す方法を示す構造体。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
 ##  <a name="getidsofnames"></a>IDispEventImpl::GetIDsOfNames  
- 1 つのメンバーおよびオプションの引数の名前のセットに対応する整数への後続の呼び出しで使用できる Dispid セットを対応付けます[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)します。  
+ 対応する一連の整数 Dispid を後続の呼び出しで使用されることができますに 1 つのメンバーとオプションの引数名のセットをマップ[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)です。  
   
 ```
 STDMETHOD(GetIDsOfNames)(
@@ -182,7 +182,7 @@ STDMETHOD(GetIDsOfNames)(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IDispatch::GetIDsOfNames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ##  <a name="gettypeinfo"></a>IDispEventImpl::GetTypeInfo  
  オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。  
@@ -226,7 +226,7 @@ VARTYPE GetUserDefinedType(
  バリアント型の型。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[ITypeInfo::GetRefTypeInfo](http://msdn.microsoft.com/en-us/61d3b31d-6591-4e55-9e82-5246a168be00)します。  
+ 参照してください[ITypeInfo::GetRefTypeInfo](http://msdn.microsoft.com/en-us/61d3b31d-6591-4e55-9e82-5246a168be00)です。  
   
 ##  <a name="idispeventimpl"></a>IDispEventImpl::IDispEventImpl  
  コンストラクターです。 クラス テンプレート パラメーターの値を格納`plibid`、 `pdiid`、 `wMajor`、および`wMinor`です。  
@@ -236,7 +236,7 @@ IDispEventImpl();
 ```  
   
 ##  <a name="tihclass"></a>IDispEventImpl::tihclass  
- この typedef クラス テンプレート パラメーターのインスタンスである`tihclass`です。  
+ この typedef は、クラス テンプレート パラメーターのインスタンスを`tihclass`です。  
   
 ```
 typedef tihclass _tihclass;
@@ -249,7 +249,7 @@ typedef tihclass _tihclass;
  [_ATL_FUNC_INFO 構造体](../../atl/reference/atl-func-info-structure.md)   
  [IDispatchImpl クラス](../../atl/reference/idispatchimpl-class.md)   
  [されますクラス](../../atl/reference/idispeventsimpleimpl-class.md)   
- [SINK_ENTRY](http://msdn.microsoft.com/library/33a5fff6-5248-47c0-8cf4-8bdf760e86e5)   
- [SINK_ENTRY_EX](http://msdn.microsoft.com/library/e1d14342-838f-4791-ac2f-5dae2801c1ac)   
- [SINK_ENTRY_INFO](http://msdn.microsoft.com/library/1a0ae260-2c82-4926-a537-db01e5f206a7)   
+ [SINK_ENTRY](composite-control-macros.md#sink_entry)   
+ [SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex)   
+ [SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)   
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -1,47 +1,63 @@
 ---
-title: "IAtlAutoThreadModule クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "IAtlAutoThreadModule"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IAtlAutoThreadModule クラス"
+title: "IAtlAutoThreadModule クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IAtlAutoThreadModule
+- atlbase/ATL::IAtlAutoThreadModule
+dev_langs:
+- C++
+helpviewer_keywords:
+- IAtlAutoThreadModule class
 ms.assetid: fcb58cf9-a427-4be9-89eb-04e1ab5cc3a1
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# IAtlAutoThreadModule クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 8232df949d3bdcbaab16af1802d7275a9a8642f3
+ms.openlocfilehash: 172607cfd6fd0998ede5411fe5aef1f9208b000e
+ms.lasthandoff: 03/30/2017
 
-このクラスは、`CreateInstance` メソッドへのインターフェイスを表します。  
+---
+# <a name="iatlautothreadmodule-class"></a>IAtlAutoThreadModule クラス
+このクラスへのインターフェイスを表す、`CreateInstance`メソッドです。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは [!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行されるアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+__interface IAtlAutoThreadModule
 ```  
   
-__interface IAtlAutoThreadModule  
+## <a name="remarks"></a>コメント  
+ クラス[CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md)から派生した`IAtlAutoThreadModule`、およびインターフェイス ポインターを取得するオブジェクトを作成するためのコードを指定することを使用します。  
   
-```  
-  
-## 解説  
- クラス [CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md) は、を使用して `IAtlAutoThreadModule`から、オブジェクトを作成し、インターフェイス ポインターを取得するコードを提供するために取得します。  
-  
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+

@@ -1,40 +1,56 @@
 ---
-title: "コマンド ラインの警告 D9027 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "D9027"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "D9027"
+title: "コマンドラインの警告 D9027 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- D9027
+dev_langs:
+- C++
+helpviewer_keywords:
+- D9027
 ms.assetid: 2a29edc5-5649-48f2-9058-2057c747284c
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コマンド ラインの警告 D9027
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 7d569243a6d0d1669a8964ab9c419cb0e7428ba9
+ms.lasthandoff: 04/04/2017
 
-無視 '\<されるソース ファイル名\>'  
+---
+# <a name="command-line-warning-d9027"></a>コマンド ラインの警告 D9027
+ソース ファイル '\<filename >' は無視されます  
   
- 入力ソース ファイルが無視されました。  
+ CL.exe には、入力ソース ファイルが無視されます。  
   
- この警告は、\/c オプションを指定したコマンド ラインで、\/Fo オプションと出力ファイル名との間に空白があることが原因で発生する場合があります。  たとえば、次のようになります。  
+ この警告は、/Fo オプションと/c オプションを使用して、コマンド ラインで出力ファイル名の間をスペースで可能性があります。 例:  
   
 ```  
 cl /c /Fo output.obj input.c   
 ```  
   
- \/Fo オプションと `output.obj` との間にスペースがあるため、`output.obj` は入力ファイルの名前と解釈されます。  この問題を解決するには、次のようにスペースを削除します。  
+ /Fo 間にスペースがあるため、 `output.obj`、CL.exe は`output.obj`入力ファイルの名前として。 問題を解決するには、スペースを削除します。  
   
 ```  
 cl /c /Fooutput.obj input.c   

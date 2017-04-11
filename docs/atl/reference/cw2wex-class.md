@@ -38,13 +38,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 9382f8404c1469b3f847500f35ab26499b6579bc
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: 16b9cb286f71fa01da4b763188ff120f31ad9de7
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="cw2wex-class"></a>CW2WEX クラス
-このクラスは、文字列変換マクロによって使用`CW2TEX`と`CT2WEX`、および typedef`CW2W`します。  
+このクラスは、文字列変換マクロによって使用`CW2TEX`と`CT2WEX`、および typedef`CW2W`です。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -58,7 +58,7 @@ class CW2WEX
   
 #### <a name="parameters"></a>パラメーター  
  `t_nBufferLength`  
- 変換プロセスで使用されるバッファーのサイズ。 既定の長さは、128 バイトです。  
+ 変換プロセスで使用するバッファーのサイズ。 既定の長さは 128 バイトです。  
   
 ## <a name="members"></a>メンバー  
   
@@ -73,23 +73,23 @@ class CW2WEX
   
 |名前|説明|  
 |----------|-----------------|  
-|[CW2WEX::operator LPWSTR](#operator_lpwstr)|変換演算子。|  
+|[CW2WEX::operator LPWSTR](#operator_lpwstr)|変換演算子です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CW2WEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバー。|  
+|[CW2WEX::m_psz](#m_psz)|ソース文字列を格納するデータ メンバーです。|  
 |[CW2WEX::m_szBuffer](#m_szbuffer)|静的バッファー、変換後の文字列を格納するために使用します。|  
   
 ## <a name="remarks"></a>コメント  
  追加の機能が必要な場合を除き、使用`CW2TEX`、 `CT2WEX`、または`CW2W`コードにします。  
   
- このクラスには、変換の結果を格納するために使用される固定サイズの静的バッファーが含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループ内で使用して、スタックがオーバーフローすることはありませんの以前のバージョンで使用できる変換マクロ。  
+ このクラスには、固定サイズの静的バッファー変換の結果を格納するために使用が含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループで使用して、スタックがオーバーフローするされませんの以前のバージョンで使用できる変換マクロです。  
   
- クラスは、失敗、ヒープにメモリを割り当てるしようとすると、それが呼び出す`AtlThrow`の引数を持つ**E_OUTOFMEMORY**します。  
+ クラスは、失敗をヒープにメモリを割り当てるしようとするが呼び出されます`AtlThrow`の引数を持つ**E_OUTOFMEMORY**です。  
   
- 既定では、ATL 変換クラスとマクロは、変換のため現在のスレッドの ANSI コード ページを使用します。  
+ 既定では、ATL 変換クラスとマクロは、変換の現在のスレッドの ANSI コード ページを使用します。  
   
  次のマクロは、このクラスに基づいています。  
   
@@ -101,10 +101,10 @@ class CW2WEX
   
 - `CW2W`  
   
- これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)します。  
+ これらのテキスト変換マクロの詳細については、次を参照してください。 [ATL および MFC 文字列変換マクロ](string-conversion-macros.md)です。  
   
 ## <a name="example"></a>例  
- 参照してください[ATL と MFC 文字列変換マクロ](http://msdn.microsoft.com/library/8f53659e-0464-4424-97db-6b8453c49863)のこれらの文字列変換マクロを使用する例です。  
+ 参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
@@ -138,7 +138,7 @@ CW2WEX( LPCWSTR  psz) throw(...);
  割り当てられたバッファーを解放します。  
   
 ##  <a name="m_psz"></a>CW2WEX::m_psz  
- ソース文字列を格納するデータ メンバー。  
+ ソース文字列を格納するデータ メンバーです。  
   
 ```
 LPWSTR m_psz;
@@ -159,7 +159,7 @@ operator LPWSTR() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 文字列を型として返します`LPWSTR`します。  
+ 種類としてテキスト文字列を返す`LPWSTR`です。  
   
 ## <a name="see-also"></a>関連項目  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   

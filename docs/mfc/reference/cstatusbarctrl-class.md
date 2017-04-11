@@ -56,9 +56,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 619fb88b96f60ab2dc0911cb8ea0b66574ea4287
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: d9fc341963572e343123994577a1bec735775386
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cstatusbarctrl-class"></a>CStatusBarCtrl クラス
@@ -82,31 +82,31 @@ class CStatusBarCtrl : public CWnd
   
 |名前|説明|  
 |----------|-----------------|  
-|[CStatusBarCtrl::Create](#create)|ステータス バー コントロールを作成し、それをアタッチ、`CStatusBarCtrl`オブジェクトです。|  
-|[CStatusBarCtrl::CreateEx](#createex)|指定した Windows 拡張スタイルを使用してステータス バー コントロールを作成し、それにアタッチ、`CStatusBarCtrl`オブジェクトです。|  
-|[CStatusBarCtrl::DrawItem](#drawitem)|オーナー描画ステータス バー コントロールの変更のビジュアルな部分と呼び出されます。|  
-|[CStatusBarCtrl::GetBorders](#getborders)|現在のステータス バー コントロールの水平および垂直方向の境界線の幅を取得します。|  
-|[CStatusBarCtrl::GetIcon](#geticon)|現在のステータス バー コントロールのパーツ (ウィンドウとも呼ばれます) のアイコンを取得します。|  
-|[CStatusBarCtrl::GetParts](#getparts)|ステータス バー コントロールのパーツの数を取得します。|  
+|[CStatusBarCtrl::Create](#create)|ステータス バー コントロールを作成し、それにアタッチ、`CStatusBarCtrl`オブジェクト。|  
+|[CStatusBarCtrl::CreateEx](#createex)|指定された Windows 拡張スタイルでステータス バー コントロールを作成しにアタッチ、`CStatusBarCtrl`オブジェクト。|  
+|[CStatusBarCtrl::DrawItem](#drawitem)|オーナー描画ステータス バー コントロールの変更のビジュアルな部分ときに呼び出されます。|  
+|[CStatusBarCtrl::GetBorders](#getborders)|現在のステータス バー コントロールの水平方向および垂直の罫線の幅を取得します。|  
+|[CStatusBarCtrl::GetIcon](#geticon)|現在のステータス バー コントロールの一部 (ウィンドウとも呼ばれます) のアイコンを取得します。|  
+|[CStatusBarCtrl::GetParts](#getparts)|ステータス バー コントロールの部分の数を取得します。|  
 |[CStatusBarCtrl::GetRect](#getrect)|ステータス バー コントロール内のパーツの外接する四角形を取得します。|  
-|[CStatusBarCtrl::GetText](#gettext)|ステータス バー コントロールの特定の部分からテキストを取得します。|  
-|[CStatusBarCtrl::GetTextLength](#gettextlength)|ステータス バー コントロールの特定の部分のテキストの文字の長さを取得します。|  
+|[Cstatusbarctrl::gettext](#gettext)|ステータス バー コントロールの特定の部分からテキストを取得します。|  
+|[Cstatusbarctrl::gettextlength](#gettextlength)|ステータス バー コントロールの特定の部分からのテキストの文字の長さを取得します。|  
 |[CStatusBarCtrl::GetTipText](#gettiptext)|ステータス バー内のウィンドウのツールヒントのテキストを取得します。|  
-|[CStatusBarCtrl::IsSimple](#issimple)|簡易モードではステータス ウィンドウのコントロールを確認します。|  
+|[CStatusBarCtrl::IsSimple](#issimple)|簡易モードでは、ステータス ウィンドウ コントロールを確認します。|  
 |[CStatusBarCtrl::SetBkColor](#setbkcolor)|ステータス バーの背景色を設定します。|  
-|[CStatusBarCtrl::SetIcon](#seticon)|ステータス バー ペインのアイコンを設定します。|  
-|[CStatusBarCtrl::SetMinHeight](#setminheight)|バー コントロールの描画領域には、状態の最小の高さを設定します。|  
+|[CStatusBarCtrl::SetIcon](#seticon)|ステータス バーで、ウィンドウのアイコンを設定します。|  
+|[CStatusBarCtrl::SetMinHeight](#setminheight)|バーのコントロールの描画領域、ステータスの最小の高さを設定します。|  
 |[CStatusBarCtrl::SetParts](#setparts)|ステータス バー コントロールと各部分の右端の座標の部分の数を設定します。|  
-|[CStatusBarCtrl::SetSimple](#setsimple)|ステータス バー コントロールが単純なテキストが表示されますか、設定を以前の呼び出しによってすべてのコントロール パーツが表示されるかどうかを指定`SetParts`します。|  
+|[CStatusBarCtrl::SetSimple](#setsimple)|ステータス バー コントロールが単純なテキストを表示または設定を以前の呼び出しによってすべてのコントロール パーツが表示されますかを指定`SetParts`です。|  
 |[CStatusBarCtrl::SetText](#settext)|ステータス バー コントロールの特定の部分にテキストを設定します。|  
-|[CStatusBarCtrl::SetTipText](#settiptext)|ステータス バー ペインのツールヒント テキストを設定します。|  
+|[CStatusBarCtrl::SetTipText](#settiptext)|ステータス バーで、ウィンドウのツールヒント テキストを設定します。|  
   
 ## <a name="remarks"></a>コメント  
- 「ステータス バー コントロール」ウィンドウは、水平方向、通常、アプリケーションがさまざまな種類のステータス情報を表示できる、親ウィンドウの下部に表示されます。 ステータス バー コントロールは、情報の&1; つ以上の型を表示する部分に分けることができます。  
+ 「ステータス バー コントロール」は、水平方向のウィンドウで、通常、アプリケーションがさまざまな種類のステータス情報を表示できます、親ウィンドウの下部に表示されます。 ステータス バー コントロールは、情報の 2 つ以上の種類を表示する部分に分けることができます。  
   
- このコントロール (つまり、`CStatusBarCtrl`クラス) は以降、Windows 95/98 および Windows NT version 3.51 で実行するプログラムにのみ使用できます。  
+ このコントロール (したがって、`CStatusBarCtrl`クラス) は、Windows 95/98 および Windows NT 3.51 の下で実行されているプログラムにのみ使用可能な以降。  
   
- 使用する方法について`CStatusBarCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CStatusBarCtrl](../../mfc/using-cstatusbarctrl.md)します。  
+ 使用する方法についての`CStatusBarCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CStatusBarCtrl](../../mfc/using-cstatusbarctrl.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -121,7 +121,7 @@ class CStatusBarCtrl : public CWnd
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="create"></a>CStatusBarCtrl::Create  
- ステータス バー コントロールを作成し、それをアタッチ、`CStatusBarCtrl`オブジェクトです。  
+ ステータス バー コントロールを作成し、それにアタッチ、`CStatusBarCtrl`オブジェクト。  
   
 ```  
 virtual BOOL Create(
@@ -133,32 +133,32 @@ virtual BOOL Create(
   
 ### <a name="parameters"></a>パラメーター  
  `dwStyle`  
- ステータス バー コントロールのスタイルを指定します。 ステータス バーに示されているコントロールのスタイルの任意の組み合わせを適用[コモン コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このパラメーターを含める必要があります、 **WS_CHILD**スタイル。 必要があります、 **WS_VISIBLE**スタイル。  
+ ステータス バー コントロールのスタイルを指定します。 ステータス バーに表示されているコントロールのスタイルの任意の組み合わせを適用[コモン コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このパラメーターを含める必要があります、 **WS_CHILD**スタイル。 必要があります、 **WS_VISIBLE**スタイル。  
   
  `rect`  
  ステータス バー コントロールのサイズと位置を指定します。 いずれかになります、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体。  
   
  `pParentWnd`  
- ステータス バー コントロールの親ウィンドウを通常指定する`CDialog`です。 ことはできません**NULL です。**  
+ ステータス バー コントロールの親ウィンドウを通常を指定します、`CDialog`です。 なければなりません**NULL です。**  
   
  `nID`  
  ステータス バー コントロールの ID を指定します  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 構築する、`CStatusBarCtrl`で&2; つの手順を実行します。 最初に、コンス トラクターを呼び出すし、し、呼び出す**作成**、ステータス バー コントロールを作成およびそれにアタッチする、`CStatusBarCtrl`オブジェクトです。  
+ 構築する、 `CStatusBarCtrl` 2 つの手順でします。 最初に、コンス トラクターを呼び出すし、し、呼び出す**作成**、ステータス バー コントロールを作成しにアタッチする、`CStatusBarCtrl`オブジェクト。  
   
- ステータス ウィンドウの既定の位置は、親ウィンドウの下部にあるが、指定することができます、`CCS_TOP`スタイルを親ウィンドウのクライアント領域の上部に表示することができます。 指定できます、 **SBARS_SIZEGRIP**対象の状態ウィンドウの右端にあるサイズ変更グリップのスタイル。 結合、`CCS_TOP`と**SBARS_SIZEGRIP**スタイルは使用しないで、システムがステータス ウィンドウに描画場合でも、結果のサイズ変更グリップが機能していないためです。  
+ ステータス ウィンドウの既定の位置が、親ウィンドウの下部では、指定することが、`CCS_TOP`スタイルを親ウィンドウのクライアント領域の上部に表示します。 指定することができます、 **SBARS_SIZEGRIP**スタイルに、ステータス ウィンドウの右端にあるサイズ変更グリップを含めます。 結合、`CCS_TOP`と**SBARS_SIZEGRIP**スタイルは使用しないで、システムは、ステータス ウィンドウに描画場合でも、結果のサイズ変更グリップが機能していないためです。  
   
- 拡張ウィンドウ スタイルを使用して、ステータス バーを作成するには、呼び出す[CStatusBarCtrl::CreateEx](#createex)の代わりに**作成**します。  
+ 拡張ウィンドウ スタイルを使用して、ステータス バーを作成するには、呼び出す[CStatusBarCtrl::CreateEx](#createex)の代わりに**作成**です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#1;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #1](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_1.cpp)]  
   
 ##  <a name="createex"></a>CStatusBarCtrl::CreateEx  
- コントロール (子ウィンドウ) を作成し、関連付けます、`CStatusBarCtrl`オブジェクトです。  
+ コントロール (子ウィンドウ) を作成しに関連付けます、`CStatusBarCtrl`オブジェクト。  
   
 ```  
 virtual BOOL CreateEx(
@@ -171,25 +171,25 @@ virtual BOOL CreateEx(
   
 ### <a name="parameters"></a>パラメーター  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
  `dwStyle`  
- ステータス バー コントロールのスタイルを指定します。 ステータス バーに示されているコントロールのスタイルの任意の組み合わせを適用[コモン コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このパラメーターを含める必要があります、 **WS_CHILD**スタイル。 必要があります、 **WS_VISIBLE**スタイル。  
+ ステータス バー コントロールのスタイルを指定します。 ステータス バーに表示されているコントロールのスタイルの任意の組み合わせを適用[コモン コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このパラメーターを含める必要があります、 **WS_CHILD**スタイル。 必要があります、 **WS_VISIBLE**スタイル。  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体のサイズとのクライアント座標で、作成するウィンドウの位置を表す`pParentWnd`します。  
+ 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)のクライアント座標で、作成するウィンドウの位置とサイズを記述する構造体`pParentWnd`です。  
   
  `pParentWnd`  
- コントロールの親ウィンドウへのポインター。  
+ コントロールの親であるウィンドウへのポインター。  
   
  `nID`  
- コントロールの子ウィンドウの id。  
+ コントロールの子ウィンドウ ID  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 使用`CreateEx`の代わりに[作成](#create)、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
+ 使用して`CreateEx`の代わりに[作成](#create)Windows 拡張スタイル「はじめに」で指定された Windows の拡張スタイルを適用する**ws_ex**です。  
   
 ##  <a name="cstatusbarctrl"></a>CStatusBarCtrl::CStatusBarCtrl  
  `CStatusBarCtrl` オブジェクトを構築します。  
@@ -212,12 +212,12 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 ### <a name="remarks"></a>コメント  
  **ItemAction**のメンバー、`DRAWITEMSTRUCT`構造体を実行するのには、描画の動作を定義します。  
   
- 既定では、このメンバー関数は何もしません。 オーナー描画の描画を実装するには、この関数をオーバーライド`CStatusBarCtrl`オブジェクトです。  
+ 既定では、このメンバー関数では何も行いません。 オーナー描画の描画を実装するには、このメンバー関数をオーバーライド`CStatusBarCtrl`オブジェクト。  
   
  アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する必要があります`lpDrawItemStruct`関数はこのメンバーの前に終了します。  
   
 ##  <a name="getborders"></a>CStatusBarCtrl::GetBorders  
- 水平および垂直方向の境界線のおよび四角形の領域のステータス バー コントロールの現在の幅を取得します。  
+ 水平および垂直の罫線および四角形の間の空白のステータス バー コントロールの現在の幅を取得します。  
   
 ```  
 BOOL GetBorders(int* pBorders) const;  
@@ -230,7 +230,7 @@ BOOL GetBorders(
   
 ### <a name="parameters"></a>パラメーター  
  *pBorders*  
- 3 つの要素を持つ整数配列のアドレスです。 最初の要素は、水平方向の境界線の幅を受け取る、2 つ目が垂直方向の境界線の幅を受け取るおよび四角形の間の境界線の幅を受け取ります。  
+ 3 つの要素を持つ整数配列のアドレスです。 最初の要素が水平方向の境界線の幅を受け取る、2 番目が垂直方向の境界線の幅を受け取るおよび四角形の間の境界線の幅を受け取ります。  
   
  *nHorz*  
  水平方向の境界線の幅を受け取る整数への参照。  
@@ -242,16 +242,16 @@ BOOL GetBorders(
  四角形の間の境界線の幅を受け取る整数への参照。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
  これらの罫線は、コントロールの端やテキストを含むコントロール内で四角形の間隔を決定します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#2;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #2](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_2.cpp)]  
   
 ##  <a name="geticon"></a>CStatusBarCtrl::GetIcon  
- 現在のステータス バー コントロールのパーツ (ウィンドウとも呼ばれます) のアイコンを取得します。  
+ 現在のステータス バー コントロールの一部 (ウィンドウとも呼ばれます) のアイコンを取得します。  
   
 ```  
 HICON GetIcon(int iPart) const;  
@@ -261,28 +261,28 @@ HICON GetIcon(int iPart) const;
   
 |パラメーター|説明|  
 |---------------|-----------------|  
-|[入力] `iPart`|取得するアイコンを含む部分の&0; から始まるインデックス。 このパラメーターが-1 の場合は、ステータス バーは簡易モードのステータス バーと見なされます。|  
+|[入力] `iPart`|取得するアイコンを含む部分の 0 から始まるインデックス。 このパラメーターが-1 の場合、ステータス バーは簡易モードのステータス バーと見なされます。|  
   
 ### <a name="return-value"></a>戻り値  
  アイコンへのハンドル場合、メソッドが成功しました。それ以外の場合、`NULL`です。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [SB_GETICON](http://msdn.microsoft.com/library/windows/desktop/bb760744)で説明されているメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメソッドは、送信、 [SB_GETICON](http://msdn.microsoft.com/library/windows/desktop/bb760744)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
- ステータス バー コントロールは、パーツとも呼ばれますのテキストの出力ペインの行で構成されます。 ステータス バーの詳細については、次を参照してください。 [MFC でのステータス バーの実装](../../mfc/status-bar-implementation-in-mfc.md)と[CStatusBarCtrl オブジェクトのモードの設定](../../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md)します。  
+ ステータス バー コントロールは、パーツとも呼ばれますテキスト出力ペインの行で構成されます。 ステータス バーの詳細については、次を参照してください。 [MFC でのステータス バーの実装](../../mfc/status-bar-implementation-in-mfc.md)と[CStatusBarCtrl オブジェクトのモードの設定](../../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md)です。  
   
 ### <a name="example"></a>例  
- 次のコード例の変数を定義`m_statusBar`つまり、現在のステータス バー コントロールのアクセスに使用します。 この変数は次の例で使用されています。  
+ 次のコード例の変数を定義`m_statusBar`、つまり現在のステータス バー コントロールにアクセスするために使用します。 この変数は次の例で使用されています。  
   
  [!code-cpp[NVC_MFC_CStatusBarCtrl_s&#1;1](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_3.h)]  
   
 ### <a name="example"></a>例  
- 次のコード例では、現在のステータス バー コントロールの&2; つのペインにアイコンをコピーします。 前のセクションのコード例は、3 つのペインで、ステータス バー コントロールを作成し、最初のウィンドウにアイコンを追加します。 この例では、最初のペインからアイコンを取得し、2 番目と&3; 番目のペインに追加されます。  
+ 次のコード例では、現在のステータス バー コントロールの 2 つのペインにアイコンをコピーします。 前のセクションのコード例は、3 つのペインで、ステータス バー コントロールを作成し、最初のウィンドウにアイコンを追加します。 この例では、最初のウィンドウからアイコンを取得し、2 番目と 3 番目のウィンドウに追加されます。  
   
  [!code-cpp[NVC_MFC_CStatusBarCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_4.cpp)]  
   
 ##  <a name="getparts"></a>CStatusBarCtrl::GetParts  
- ステータス バー コントロールのパーツの数を取得します。  
+ ステータス バー コントロールの部分の数を取得します。  
   
 ```  
 int GetParts(
@@ -292,19 +292,19 @@ int GetParts(
   
 ### <a name="parameters"></a>パラメーター  
  `nParts`  
- 座標を取得する対象の部分の数。 このパラメーターがコントロールの部分の数よりも大きい場合は、メッセージは、既存の部品のみ座標を取得します。  
+ 座標を取得する対象の部分の数。 このパラメーターがコントロール内の部分の数よりも大きい場合は、メッセージは、既存のパーツのみの座標を取得します。  
   
  *pParts*  
- 指定された部分の数と同じ数の要素を持つ整数配列のアドレス`nParts`です。 配列内の各要素は、対応する一部の右エッジからクライアント座標を受け取ります。 – に要素が設定されている場合は、1、その部分の右端の位置までのステータス バーの右端からです。  
+ 指定された部分の数と同じ数の要素を持つ整数配列のアドレス`nParts`です。 配列内の各要素は、対応する部分の右端からのクライアント座標を受け取ります。 要素に設定されている場合、1 の部分の右端の位置までのステータス バーの右端です。  
   
 ### <a name="return-value"></a>戻り値  
  成功した場合、コントロール内の部分の数。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数では、部分の指定した数値の右端の座標も取得します。  
+ このメンバー関数は、また部分の指定した数値の右端の座標を取得します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#3;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_5.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #3](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_5.cpp)]  
   
 ##  <a name="getrect"></a>CStatusBarCtrl::GetRect  
  ステータス バー コントロール内のパーツの外接する四角形を取得します。  
@@ -317,18 +317,18 @@ BOOL GetRect(
   
 ### <a name="parameters"></a>パラメーター  
  `nPane`  
- 外接する四角形を取得する部分の&0; から始まるインデックス。  
+ 外接する四角形を取得する部分の 0 から始まるインデックス。  
   
  `lpRect`  
  アドレス、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)外接する四角形を受け取る。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&4;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_6.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl 4](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_6.cpp)]  
   
-##  <a name="gettext"></a>CStatusBarCtrl::GetText  
+##  <a name="gettext"></a>Cstatusbarctrl::gettext  
  ステータス バー コントロールの特定の部分からテキストを取得します。  
   
 ```  
@@ -347,27 +347,27 @@ int GetText(
  テキストを受け取るバッファーのアドレス。 このパラメーターは、null で終わる文字列です。  
   
  `nPane`  
- テキストを取得する対象の部分の&0; から始まるインデックス。  
+ テキストを取得する対象の部分の 0 から始まるインデックス。  
   
  `pType`  
- 型情報を受け取る整数へのポインター。 種類は、これらの値のいずれかになります。  
+ 型情報を受け取る整数へのポインター。 型には、これらの値のいずれかを指定できます。  
   
 - **0**ステータス バーの平面より下位に表示する罫線とテキストを描画します。  
   
-- `SBT_NOBORDERS`国境なきテキストを描画します。  
+- `SBT_NOBORDERS`境界のないテキストが描画されます。  
   
 - `SBT_POPOUT`ステータス バーの平面より上に表示する罫線とテキストを描画します。  
   
-- `SBT_OWNERDRAW`テキストがある場合、`SBT_OWNERDRAW`図面の種類、`pType`このメッセージを受信し、長さと操作の型ではなくテキストに関連付けられている 32 ビット値を返します。  
+- `SBT_OWNERDRAW`テキストがある場合、`SBT_OWNERDRAW`図面の種類、`pType`はこのメッセージを受信し、長さと操作の型ではなくテキストに関連付けられている 32 ビット値を返します。  
   
 ### <a name="return-value"></a>戻り値  
  テキストの文字の長さまたは[CString](../../atl-mfc-shared/reference/cstringt-class.md)現在のテキストを格納します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#5;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_7.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #5](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_7.cpp)]  
   
-##  <a name="gettextlength"></a>CStatusBarCtrl::GetTextLength  
- ステータス バー コントロールの特定の部分のテキストの文字の長さを取得します。  
+##  <a name="gettextlength"></a>Cstatusbarctrl::gettextlength  
+ ステータス バー コントロールの特定の部分からのテキストの文字の長さを取得します。  
   
 ```  
 int GetTextLength(
@@ -377,24 +377,24 @@ int GetTextLength(
   
 ### <a name="parameters"></a>パラメーター  
  `nPane`  
- テキストを取得する対象の部分の&0; から始まるインデックス。  
+ テキストを取得する対象の部分の 0 から始まるインデックス。  
   
  `pType`  
- 型情報を受け取る整数へのポインター。 種類は、これらの値のいずれかになります。  
+ 型情報を受け取る整数へのポインター。 型には、これらの値のいずれかを指定できます。  
   
 - **0**ステータス バーの平面より下位に表示する罫線とテキストを描画します。  
   
-- `SBT_NOBORDERS`国境なきテキストを描画します。  
+- `SBT_NOBORDERS`境界のないテキストが描画されます。  
   
-- `SBT_OWNERDRAW`親ウィンドウで、テキストを描画します。  
+- `SBT_OWNERDRAW`親ウィンドウによってテキストを描画します。  
   
 - `SBT_POPOUT`ステータス バーの平面より上に表示する罫線とテキストを描画します。  
   
 ### <a name="return-value"></a>戻り値  
- テキストの文字数。  
+ テキストの文字の長さ。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&6;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_8.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #6](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_8.cpp)]  
   
 ##  <a name="gettiptext"></a>CStatusBarCtrl::GetTipText  
  ステータス バー内のウィンドウのツールヒントのテキストを取得します。  
@@ -405,29 +405,29 @@ CString GetTipText(int nPane) const;
   
 ### <a name="parameters"></a>パラメーター  
  `nPane`  
- ツールヒントのテキストが表示されるステータス バー ペインの&0; から始まるインデックス。  
+ ツールヒントのテキストが表示されるステータス バー ペインの 0 から始まるインデックス。  
   
 ### <a name="return-value"></a>戻り値  
  A [CString](../../atl-mfc-shared/reference/cstringt-class.md)ツールヒントで使用するテキストを含むオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[SB_GETTIPTEXT](http://msdn.microsoft.com/library/windows/desktop/bb760751)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 メッセージの動作を実装して[SB_GETTIPTEXT](http://msdn.microsoft.com/library/windows/desktop/bb760751)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#7;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_9.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #7](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_9.cpp)]  
   
 ##  <a name="issimple"></a>CStatusBarCtrl::IsSimple  
- 簡易モードではステータス ウィンドウのコントロールを確認します。  
+ 簡易モードでは、ステータス ウィンドウ コントロールを確認します。  
   
 ```  
 BOOL IsSimple() const;  
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ステータス ウィンドウ コントロールが単純なモードである場合は&0; 以外それ以外の場合&0; を返します。  
+ ステータス ウィンドウのコントロールが単純なモードである場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[SB_ISSIMPLE](http://msdn.microsoft.com/library/windows/desktop/bb760753)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 メッセージの動作を実装して[SB_ISSIMPLE](http://msdn.microsoft.com/library/windows/desktop/bb760753)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ##  <a name="setbkcolor"></a>CStatusBarCtrl::SetBkColor  
  ステータス バーの背景色を設定します。  
@@ -438,19 +438,19 @@ COLORREF SetBkColor(COLORREF cr);
   
 ### <a name="parameters"></a>パラメーター  
  `cr`  
- **COLORREF**新しい背景色を指定する値。 指定の`CLR_DEFAULT`がステータス バーの既定の背景色を使用する値。  
+ **COLORREF**新しい背景色を指定する値。 指定して、`CLR_DEFAULT`により、ステータス バーの既定の背景色を使用する値。  
   
 ### <a name="return-value"></a>戻り値  
- A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)を前の既定の背景色を表す値。  
+ A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)前の既定の背景色を表す値です。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[SB_SETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760754)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 メッセージの動作を実装して[SB_SETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760754)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#8;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_10.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #8](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_10.cpp)]  
   
 ##  <a name="seticon"></a>CStatusBarCtrl::SetIcon  
- ステータス バー ペインのアイコンを設定します。  
+ ステータス バーで、ウィンドウのアイコンを設定します。  
   
 ```  
 BOOL SetIcon(
@@ -460,22 +460,22 @@ BOOL SetIcon(
   
 ### <a name="parameters"></a>パラメーター  
  `nPane`  
- アイコンにお届けする、ウィンドウの&0; から始まるインデックス。 このパラメーターが-1 の場合は、ステータス バーは簡易ステータス バーと見なされます。  
+ アイコンを受信するペインの 0 から始まるインデックス。 このパラメーターが-1 の場合、ステータス バーは簡易ステータス バーと見なされます。  
   
  `hIcon`  
- 設定するアイコンへのハンドルします。 この値は場合**NULL**、部分から除去されます。  
+ 設定するアイコンのハンドルです。 この値が場合**NULL**アイコンは、部分から削除します。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[SB_SETICON](http://msdn.microsoft.com/library/windows/desktop/bb760755)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 メッセージの動作を実装[SB_SETICON](http://msdn.microsoft.com/library/windows/desktop/bb760755)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ### <a name="example"></a>例  
-  例を参照してください[CStatusBarCtrl::SetBkColor](#setbkcolor)します。  
+  例を参照して[CStatusBarCtrl::SetBkColor](#setbkcolor)です。  
   
 ##  <a name="setminheight"></a>CStatusBarCtrl::SetMinHeight  
- バー コントロールの描画領域には、状態の最小の高さを設定します。  
+ バーのコントロールの描画領域、ステータスの最小の高さを設定します。  
   
 ```  
 void SetMinHeight(int nMin);
@@ -483,13 +483,13 @@ void SetMinHeight(int nMin);
   
 ### <a name="parameters"></a>パラメーター  
  `nMin`  
- 最小の高さ (ピクセル単位) のコントロールです。  
+ 最小の高さ (ピクセル単位) コントロールです。  
   
 ### <a name="remarks"></a>コメント  
- 最小の高さの合計は、`nMin`とステータス バー コントロールの垂直方向の境界線の幅&2; 回クリックします。  
+ 高さの最小値の合計は、`nMin`と (ピクセル単位)、ステータス バー コントロールの垂直方向の境界線の幅 2 回クリックします。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#9;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_11.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #9](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_11.cpp)]  
   
 ##  <a name="setparts"></a>CStatusBarCtrl::SetParts  
  ステータス バー コントロールと各部分の右端の座標の部分の数を設定します。  
@@ -505,16 +505,16 @@ BOOL SetParts(
  設定する部分の数。 部分の数は 255 より大きい値にすることはできません。  
   
  *pWidths*  
- 指定された部分と同じ数の要素を持つ整数配列のアドレス`nParts`です。 配列内の各要素は、対応する一部の右端の位置をクライアント座標を指定します。 要素が 1 の場合、その部分の右端の位置は、コントロールの右端に拡張されます。  
+ 指定された部分と同じ数の要素を持つ整数配列のアドレス`nParts`です。 配列内の各要素は、対応する部分の右端の位置をクライアント座標を指定します。 要素には、1、その部分の右端の位置は、コントロールの右端に拡張します。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#10;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_12.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #10](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_12.cpp)]  
   
 ##  <a name="setsimple"></a>CStatusBarCtrl::SetSimple  
- ステータス バー コントロールが単純なテキストが表示されますか、設定を以前の呼び出しによってすべてのコントロール パーツが表示されるかどうかを指定[呼び出した](#setparts)します。  
+ ステータス バー コントロールが単純なテキストを表示するか、設定を以前の呼び出しによってすべてのコントロール パーツが表示されるかどうかを指定[呼び出した](#setparts)です。  
   
 ```  
 BOOL SetSimple(BOOL bSimple = TRUE);
@@ -522,13 +522,13 @@ BOOL SetSimple(BOOL bSimple = TRUE);
   
 ### <a name="parameters"></a>パラメーター  
  [入力] `bSimple`  
- 表示タイプのフラグです。 このパラメーターは場合`TRUE`、コントロールがの場合、単純なテキストを表示`FALSE`、複数の部分が表示されます。  
+ 表示型のフラグ。 このパラメーターが場合`TRUE`、コントロールがの場合、単純なテキストを表示`FALSE`、複数の部分が表示されます。  
   
 ### <a name="return-value"></a>戻り値  
  常に 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- アプリケーションが変更された場合、ステータス バー コントロールから単純ではない単純なまたはその逆システムで、コントロールがすぐに再描画します。  
+ アプリケーションが変更された場合、ステータス バー コントロールから非単純単純なまたはその逆システムにはすぐに、コントロールが再描画します。  
   
 ##  <a name="settext"></a>CStatusBarCtrl::SetText  
  ステータス バー コントロールの特定の部分にテキストを設定します。  
@@ -545,22 +545,22 @@ BOOL SetText(
  設定されるテキストを指定する null で終わる文字列のアドレス。 `nType` が `SBT_OWNERDRAW` の場合、`lpszText` は 32 ビットのデータを表します。  
   
  `nPane`  
- 設定される部分の&0; から始まるインデックス。 この値が 255 の場合、ステータス バー コントロールは 1 つの部分のみで構成される単純なコントロールと見なされます。  
+ 設定される部分の 0 から始まるインデックス。 この値が 255 の場合、ステータス バー コントロールは 1 つの部分のみで構成される単純なコントロールと見なされます。  
   
  `nType`  
- 描画操作の種類。 参照してください[SB_SETTEXT メッセージ](http://msdn.microsoft.com/library/bb760758\(vs.85\).aspx)使用可能な値の一覧にします。  
+ 描画操作の種類。 参照してください[SB_SETTEXT メッセージ](http://msdn.microsoft.com/library/bb760758\(vs.85\).aspx)使用可能な値の一覧についてはします。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+ 成功した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
  メッセージによって、変更されたコントロールの部分が無効になり、コントロールが次に `WM_PAINT` のメッセージを受信したときに新しいテキストが表示されます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#11;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_13.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #11](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_13.cpp)]  
   
 ##  <a name="settiptext"></a>CStatusBarCtrl::SetTipText  
- ステータス バー ペインのツールヒント テキストを設定します。  
+ ステータス バーで、ウィンドウのツールヒント テキストを設定します。  
   
 ```  
 void SetTipText(
@@ -570,16 +570,16 @@ void SetTipText(
   
 ### <a name="parameters"></a>パラメーター  
  `nPane`  
- ツールヒントのテキストが表示されるステータス バー ペインの&0; から始まるインデックス。  
+ ツールヒントのテキストが表示されるステータス バー ペインの 0 から始まるインデックス。  
   
  *pszTipText*  
  ツールヒント テキストを含む文字列へのポインター。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[SB_SETTIPTEXT](http://msdn.microsoft.com/library/windows/desktop/bb760759)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ このメンバー関数は、Win32 メッセージの動作を実装[SB_SETTIPTEXT](http://msdn.microsoft.com/library/windows/desktop/bb760759)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatusBarCtrl&#12;](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_14.cpp)]  
+ [!code-cpp[NVC_MFC_CStatusBarCtrl #12](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_14.cpp)]  
   
 ## <a name="see-also"></a>関連項目  
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   

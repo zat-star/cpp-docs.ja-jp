@@ -48,9 +48,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 632514d03e7037ef42a1566462db5dec6f5cc1e5
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
+ms.openlocfilehash: b3c944958ba73240131fba33db95dbc20ec9bec8
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="cthreadpool-class"></a>CThreadPool クラス
@@ -64,8 +64,8 @@ class CThreadPool : public IThreadPoolConfig
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- *作業者*  
- 準拠するクラス、[ワーカー アーキタイプ](../../atl/reference/worker-archetype.md)項目は、スレッド プールのキューに置かれた作業の処理に使用するコードを提供します。  
+ *ワーカー*  
+ 準拠するクラス、[ワーカー原型](../../atl/reference/worker-archetype.md)項目は、スレッド プールのキューに置かれた作業の処理に使用するコードを提供します。  
   
  `ThreadTraits`  
  プール内のスレッドを作成するための関数を提供するクラス。  
@@ -83,29 +83,29 @@ class CThreadPool : public IThreadPoolConfig
   
 |名前|説明|  
 |----------|-----------------|  
-|[CThreadPool::AddRef](#addref)|実装`IUnknown::AddRef`します。|  
-|[CThreadPool::GetNumThreads](#getnumthreads)|プールのスレッドの数を取得するには、このメソッドを呼び出します。|  
-|[CThreadPool::GetQueueHandle](#getqueuehandle)|作業項目をキューに使用する IO 完了ポートのハンドルを取得するには、このメソッドを呼び出します。|  
-|[CThreadPool::GetSize](#getsize)|プールのスレッドの数を取得するには、このメソッドを呼び出します。|  
-|[CThreadPool::GetTimeout](#gettimeout)|シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で最大の時刻を取得するには、このメソッドを呼び出します。|  
-|[CThreadPool::Initialize](#initialize)|このメソッドでは、スレッド プールを初期化します。|  
-|[CThreadPool::QueryInterface](#queryinterface)|実装**:queryinterface**します。|  
-|[CThreadPool::QueueRequest](#queuerequest)|プール内のスレッドで処理する作業アイテムをキューには、このメソッドを呼び出します。|  
-|[CThreadPool::Release](#release)|実装`IUnknown::Release`します。|  
+|[CThreadPool::AddRef](#addref)|実装`IUnknown::AddRef`です。|  
+|[CThreadPool::GetNumThreads](#getnumthreads)|このメソッドを呼び出して、プール内のスレッドの数を取得します。|  
+|[CThreadPool::GetQueueHandle](#getqueuehandle)|キューの作業項目に使用する IO 完了ポートのハンドルを取得するには、このメソッドを呼び出します。|  
+|[CThreadPool::GetSize](#getsize)|このメソッドを呼び出して、プール内のスレッドの数を取得します。|  
+|[CThreadPool::GetTimeout](#gettimeout)|このメソッドを呼び出して、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を取得します。|  
+|[CThreadPool::Initialize](#initialize)|このメソッドを呼び出してスレッド プールを初期化します。|  
+|[CThreadPool::QueryInterface](#queryinterface)|実装**iunknown::queryinterface**です。|  
+|[CThreadPool::QueueRequest](#queuerequest)|プール内のスレッドで処理する作業アイテムをキューにこのメソッドを呼び出します。|  
+|[CThreadPool::Release](#release)|実装`IUnknown::Release`です。|  
 |[CThreadPool::SetSize](#setsize)|プールのスレッドの数を設定するには、このメソッドを呼び出します。|  
-|[CThreadPool::SetTimeout](#settimeout)|シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で時間の最大値を設定するには、このメソッドを呼び出します。|  
+|[CThreadPool::SetTimeout](#settimeout)|スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を設定するには、このメソッドを呼び出します。|  
 |[CThreadPool::Shutdown](#shutdown)|スレッド プールをシャット ダウンするには、このメソッドを呼び出します。|  
   
 ## <a name="remarks"></a>コメント  
- プール内のスレッドが作成され、プールが初期化されて、サイズ変更、またはシャット ダウン時に破棄されます。 クラスのインスタンス*ワーカー*プール内の各ワーカー スレッドのスタック上に作成されます。 各インスタンスがスレッドの有効期間にわたって有効です。  
+ プール内のスレッドが作成され、プールが初期化されて、サイズ変更、またはシャット ダウン時に破棄されます。 クラスのインスタンス*ワーカー*プール内の各ワーカー スレッドのスタック上に作成されます。 各インスタンスが、スレッドの有効期間にわたって有効です。  
   
- スレッドの作成後すぐに*ワーカー*::`Initialize`がそのスレッドに関連付けられているオブジェクトに対して呼び出されます。 スレッドの破棄する直前に*ワーカー*::`Terminate`が呼び出されます。 どちらのメソッドに渡す必要があります、 **void\* **引数。 この引数の値が使用中のスレッド プールに渡される、`pvWorkerParam`のパラメーター [CThreadPool::Initialize](#initialize)します。  
+ スレッドの作成後すぐに*ワーカー*::`Initialize`はそのスレッドに関連付けられているオブジェクトで呼び出されます。 スレッドの破棄する直前に*ワーカー*::`Terminate`が呼び出されます。 どちらの方法を受け入れる必要があります、 **void\***引数。 この引数の値が使用中のスレッド プールに渡される、`pvWorkerParam`のパラメーター [CThreadPool::Initialize](#initialize)です。  
   
- ワーカー スレッドはキューの呼び出しからの項目をプルがある場合に作業項目のキューとワーカー スレッドの作業に使用できる、 **Execute**のメソッド、*ワーカー*そのスレッドのオブジェクト。 3 つの項目は、メソッドに渡されます。 同じキューからアイテム`pvWorkerParam`に渡される*ワーカー*::`Initialize`と*ワーカー*:: `Terminate`、とへのポインター、 [OVERLAPPED](http://msdn.microsoft.com/library/windows/desktop/ms684342) IO 完了ポートのキューに使用される構造です。  
+ ワーカー スレッドで呼び出し、キューから項目をプルする作業項目がキューおよびワーカー スレッドの作業に使用できる、ときに、 **Execute**のメソッド、*ワーカー*そのスレッドのオブジェクト。 3 つの項目は、メソッドに渡されます: 同じキューからアイテム`pvWorkerParam`に渡される*ワーカー*::`Initialize`と*ワーカー*::`Terminate`へのポインター、 [OVERLAPPED](http://msdn.microsoft.com/library/windows/desktop/ms684342) IO 完了ポートのキューに使用される構造です。  
   
- *ワーカー*クラスは、typedef、提供することにより、スレッド プールのキューに配置される項目の型を宣言して*ワーカー*::`RequestType`です。 この型との間にキャストできる必要があります、 **ULONG_PTR**します。  
+ *ワーカー*クラスは、typedef を提供することにより、スレッド プールのキューの項目の型を宣言して*ワーカー*::`RequestType`です。 この型との間にキャストできる必要があります、 **ULONG_PTR**です。  
   
- 例、*ワーカー*クラスは[CNonStatelessWorker クラス](../../atl/reference/cnonstatelessworker-class.md)します。  
+ 例、*ワーカー*クラスは[CNonStatelessWorker クラス](../../atl/reference/cnonstatelessworker-class.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `IUnknown`  
@@ -118,7 +118,7 @@ class CThreadPool : public IThreadPoolConfig
  **ヘッダー:** atlutil.h  
   
 ##  <a name="addref"></a>CThreadPool::AddRef  
- 実装`IUnknown::AddRef`します。  
+ 実装`IUnknown::AddRef`です。  
   
 ```
 ULONG STDMETHODCALLTYPE AddRef() throw();
@@ -128,7 +128,7 @@ ULONG STDMETHODCALLTYPE AddRef() throw();
  常に 1 を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスは、参照カウントを使用した有効期間の制御を実装していません。  
+ このクラスは、参照カウントを使用して有効期間の制御を実装しません。  
   
 ##  <a name="cthreadpool"></a>CThreadPool::CThreadPool  
  スレッド プールのコンス トラクターです。  
@@ -138,7 +138,7 @@ CThreadPool() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- タイムアウトの値を初期化します[ATLS_DEFAULT_THREADPOOLSHUTDOWNTIMEOUT](http://msdn.microsoft.com/library/c1e660a7-d490-42af-bbe1-ded76e80cc10)します。  
+ タイムアウトの値を初期化します`ATLS_DEFAULT_THREADPOOLSHUTDOWNTIMEOUT`です。 既定の時間は、36 秒です。 Atlutil.h する前に、必要に応じて、このシンボルには、独自の正の整数値を定義できます。  
   
 ##  <a name="dtor"></a>CThreadPool:: ~ CThreadPool  
  スレッド プールのデストラクターです。  
@@ -148,10 +148,10 @@ CThreadPool() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 呼び出し[CThreadPool::Shutdown](#shutdown)します。  
+ 呼び出し[CThreadPool::Shutdown](#shutdown)です。  
   
 ##  <a name="getnumthreads"></a>CThreadPool::GetNumThreads  
- プールのスレッドの数を取得するには、このメソッドを呼び出します。  
+ このメソッドを呼び出して、プール内のスレッドの数を取得します。  
   
 ```
 int GetNumThreads() throw();
@@ -161,7 +161,7 @@ int GetNumThreads() throw();
  プールのスレッドの数を返します。  
   
 ##  <a name="getqueuehandle"></a>CThreadPool::GetQueueHandle  
- 作業項目をキューに使用する IO 完了ポートのハンドルを取得するには、このメソッドを呼び出します。  
+ キューの作業項目に使用する IO 完了ポートのハンドルを取得するには、このメソッドを呼び出します。  
   
 ```
 HANDLE GetQueueHandle() throw();
@@ -171,7 +171,7 @@ HANDLE GetQueueHandle() throw();
  スレッド プールが初期化されていない場合は、キュー ハンドルまたは NULL を返します。  
   
 ##  <a name="getsize"></a>CThreadPool::GetSize  
- プールのスレッドの数を取得するには、このメソッドを呼び出します。  
+ このメソッドを呼び出して、プール内のスレッドの数を取得します。  
   
 ```
 HRESULT STDMETHODCALLTYPE GetSize(int* pnNumThreads) throw();
@@ -179,13 +179,13 @@ HRESULT STDMETHODCALLTYPE GetSize(int* pnNumThreads) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `pnNumThreads`  
- [out]成功した場合に、プールのスレッドの数を受け取る変数のアドレスです。  
+ [out]成功した場合、プール内のスレッドの数を受け取る変数のアドレスです。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ##  <a name="gettimeout"></a>CThreadPool::GetTimeout  
- シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で最大の時刻を取得するには、このメソッドを呼び出します。  
+ このメソッドを呼び出して、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を取得します。  
   
 ```
 HRESULT STDMETHODCALLTYPE GetTimeout(DWORD* pdwMaxWait) throw();
@@ -193,16 +193,16 @@ HRESULT STDMETHODCALLTYPE GetTimeout(DWORD* pdwMaxWait) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `pdwMaxWait`  
- [out]成功した場合に、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を受け取る変数のアドレスです。  
+ [out]成功した場合、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を受け取る変数のアドレスです。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- このタイムアウト値を使って[CThreadPool::Shutdown](#shutdown)メソッドに他の値を指定しない場合。  
+ このタイムアウト値を使って[CThreadPool::Shutdown](#shutdown)そのメソッドにその他の値が指定されていない場合。  
   
 ##  <a name="initialize"></a>CThreadPool::Initialize  
- このメソッドでは、スレッド プールを初期化します。  
+ このメソッドを呼び出してスレッド プールを初期化します。  
   
 ```
 HRESULT Initialize(
@@ -217,11 +217,11 @@ HRESULT Initialize(
  ワーカー スレッドのオブジェクトに渡されるワーカー パラメーター `Initialize`、 **Execute**、および`Terminate`メソッドです。  
   
  `nNumThreads`  
- 要求された、プール内のスレッド数。  
+ プール内のスレッドの要求数。  
   
- 場合`nNumThreads`は負の場合、その絶対値を掛けたスレッドの合計数を取得するマシンのプロセッサ数です。  
+ 場合`nNumThreads`は負の場合、その絶対値を掛けたスレッドの合計数を取得するマシンでプロセッサの数。  
   
- 場合`nNumThreads`0 の場合は、 [ATLS_DEFAULT_THREADSPERPROC](http://msdn.microsoft.com/library/e0dcf107-72a9-4122-abb4-83c63aa7d571)スレッドの合計数を取得するマシンのプロセッサ数で乗算されます。  
+ 場合`nNumThreads`ゼロ、`ATLS_DEFAULT_THREADSPERPROC`スレッドの合計数を取得するマシンのプロセッサ数で乗算されます。  既定では、プロセッサごとの 2 つのスレッドです。 Atlutil.h する前に、必要に応じて、このシンボルには、独自の正の整数値を定義できます。
   
  `dwStackSize`  
  プール内の各スレッドのスタック サイズ。  
@@ -230,20 +230,20 @@ HRESULT Initialize(
  完了ポートに関連付けるオブジェクトのハンドル。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ##  <a name="queryinterface"></a>CThreadPool::QueryInterface  
- 実装**:queryinterface**します。  
+ 実装**iunknown::queryinterface**です。  
   
 ```
 HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** ppv) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このクラスのオブジェクトを正常な照会できる、 **IUnknown**と[IThreadPoolConfig](../../atl/reference/ithreadpoolconfig-interface.md)インターフェイスです。  
+ 正常にこのクラスのオブジェクトを照会することができます、 **IUnknown**と[IThreadPoolConfig](../../atl/reference/ithreadpoolconfig-interface.md)インターフェイスです。  
   
 ##  <a name="queuerequest"></a>CThreadPool::QueueRequest  
- プール内のスレッドで処理する作業アイテムをキューには、このメソッドを呼び出します。  
+ プール内のスレッドで処理する作業アイテムをキューにこのメソッドを呼び出します。  
   
 ```
 BOOL QueueRequest(Worker::RequestType request) throw();
@@ -251,16 +251,16 @@ BOOL QueueRequest(Worker::RequestType request) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `request`  
- キューに置かれた要求です。  
+ キューに置かれた要求。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、TRUE を返しますを返します。  
+ 成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、作業項目をキューに追加します。 プール内のスレッドは、受信した順序でキューから項目を選択します。  
+ このメソッドは、作業項目をキューに追加します。 プール内のスレッドは、受信した順序でキューからアイテムを選択します。  
   
 ##  <a name="release"></a>CThreadPool::Release  
- 実装`IUnknown::Release`します。  
+ 実装`IUnknown::Release`です。  
   
 ```
 ULONG STDMETHODCALLTYPE Release() throw();
@@ -270,7 +270,7 @@ ULONG STDMETHODCALLTYPE Release() throw();
  常に 1 を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスは、参照カウントを使用した有効期間の制御を実装していません。  
+ このクラスは、参照カウントを使用して有効期間の制御を実装しません。  
   
 ##  <a name="setsize"></a>CThreadPool::SetSize  
  プールのスレッドの数を設定するには、このメソッドを呼び出します。  
@@ -281,20 +281,20 @@ HRESULT STDMETHODCALLTYPE SetSizeint nNumThreads) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `nNumThreads`  
- 要求された、プール内のスレッド数。  
+ プール内のスレッドの要求数。  
   
- 場合`nNumThreads`は負の場合、その絶対値を掛けたスレッドの合計数を取得するマシンのプロセッサ数です。  
+ 場合`nNumThreads`は負の場合、その絶対値を掛けたスレッドの合計数を取得するマシンでプロセッサの数。  
   
- 場合`nNumThreads`0 の場合は、 [ATLS_DEFAULT_THREADSPERPROC](http://msdn.microsoft.com/library/e0dcf107-72a9-4122-abb4-83c63aa7d571)スレッドの合計数を取得するマシンのプロセッサ数で乗算されます。  
+ 場合`nNumThreads`ゼロ、`ATLS_DEFAULT_THREADSPERPROC`スレッドの合計数を取得するマシンのプロセッサ数で乗算されます。 既定では、プロセッサごとの 2 つのスレッドです。 Atlutil.h する前に、必要に応じて、このシンボルには、独自の正の整数値を定義できます。
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- 指定されたスレッドの数が、プール内の現在のスレッドの数よりも小さい場合は、オブジェクトは、待機中のスレッドで取り上げられることにキューにシャット ダウン メッセージを格納します。 待機中のスレッドがキューからメッセージを取得、スレッド プールに通知して、スレッドのプロシージャを終了します。 プール内のスレッドの数が、指定した数に到達するまで、またはで指定された期間内のスレッドが終了していない、このプロセスが繰り返されます[GetTimeout](#gettimeout)/ [SetTimeout](#settimeout)します。 このような場合、メソッドに対応する HRESULT **WAIT_TIMEOUT**保留中のシャット ダウン メッセージが取り消されるとします。  
+ 指定されたスレッドの数がプール内の現在のスレッドの数より小さい場合は、オブジェクトは、待機中のスレッドによって取得されるをキューにシャット ダウン メッセージを格納します。 待機中のスレッドがキューからメッセージを取得、スレッド プールに通知して、スレッド処理を終了します。 によって指定された期間内のスレッドが終了していないか、プール内のスレッドの数が、指定した数に達するとするまでこのプロセスが繰り返される[GetTimeout](#gettimeout)/ [SetTimeout](#settimeout)です。 このような状況で、メソッドは返しますに対応する HRESULT**正常に終了した**保留中のシャット ダウン メッセージが取り消されるとします。  
   
 ##  <a name="settimeout"></a>CThreadPool::SetTimeout  
- シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で時間の最大値を設定するには、このメソッドを呼び出します。  
+ スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を設定するには、このメソッドを呼び出します。  
   
 ```
 HRESULT STDMETHODCALLTYPE SetTimeout(DWORD dwMaxWait) throw();
@@ -302,15 +302,15 @@ HRESULT STDMETHODCALLTYPE SetTimeout(DWORD dwMaxWait) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `dwMaxWait`  
- シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で要求の最大時間。  
+ スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で要求の最大時間。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、S_OK または失敗に関するエラーの hresult 値を返します。  
+ 成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- タイムアウトに初期化[ATLS_DEFAULT_THREADPOOLSHUTDOWNTIMEOUT](http://msdn.microsoft.com/library/c1e660a7-d490-42af-bbe1-ded76e80cc10)コンス トラクターでします。  
+ タイムアウトに初期化`ATLS_DEFAULT_THREADPOOLSHUTDOWNTIMEOUT`です。 既定の時間は、36 秒です。 Atlutil.h する前に、必要に応じて、このシンボルには、独自の正の整数値を定義できます。 
   
- 注意`dwMaxWait`をシャット ダウンする単一のスレッドのプールが待機する時間です。 複数のスレッド プールから削除するを実行するまでの最大時間よりもやや少ない`dwMaxWait`スレッドの数を掛けた値します。  
+ なお`dwMaxWait`プールがシャット ダウンする 1 つのスレッドの待機時間です。 複数のスレッド プールから削除されるまでの最大時間よりもやや少ない`dwMaxWait`スレッドの数を掛けた値します。  
   
 ##  <a name="shutdown"></a>CThreadPool::Shutdown  
  スレッド プールをシャット ダウンするには、このメソッドを呼び出します。  
@@ -321,10 +321,10 @@ void Shutdown(DWORD dwMaxWait = 0) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `dwMaxWait`  
- シャット ダウンするスレッドのスレッド プールが待機するミリ秒単位で要求の最大時間。 このメソッドが設定されたタイムアウトを使用して 0 または値を指定する場合[CThreadPool::SetTimeout](#settimeout)します。  
+ スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で要求の最大時間。 このメソッドが設定されているタイムアウトを使用して 0 または値はありませんは、指定した場合、 [CThreadPool::SetTimeout](#settimeout)です。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、プール内のすべてのスレッドをシャット ダウン要求を送信します。 このメソッドの呼び出しがタイムアウトになると、 [TerminateThread](http://msdn.microsoft.com/library/windows/desktop/ms686717)終了しなかったすべてのスレッドでします。 このメソッドは、クラスのデストラクターから自動的に呼び出されます。  
+ このメソッドは、プール内のすべてのスレッドをシャット ダウン要求を送信します。 このメソッドの呼び出しは、タイムアウトが経過すると、 [TerminateThread](http://msdn.microsoft.com/library/windows/desktop/ms686717)任意のスレッドを終了しませんでした。 このメソッドは、クラスのデストラクターから自動的に呼び出されます。  
   
 ## <a name="see-also"></a>関連項目  
  [IThreadPoolConfig インターフェイス](../../atl/reference/ithreadpoolconfig-interface.md)   
