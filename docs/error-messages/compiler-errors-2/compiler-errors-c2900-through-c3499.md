@@ -30,9 +30,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: be14b38a2d4220436c4dd2fc62355a438a0c7b6e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: a5521f4d0bc1c4bb4458ed532af067132b3f6047
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-errors-c2900-through-c3499"></a>コンパイラ エラー C2900 C3499 から
@@ -182,7 +182,7 @@ ms.lasthandoff: 02/24/2017
   
  [コンパイラ エラー C3277](../../error-messages/compiler-errors-2/compiler-error-c3277.md)  
   
- [コンパイラ エラー c3278 エラー](../../error-messages/compiler-errors-2/compiler-error-c3278.md)  
+ [コンパイラ エラー C3278](../../error-messages/compiler-errors-2/compiler-error-c3278.md)  
   
  [コンパイラ エラー C3282](../../error-messages/compiler-errors-2/compiler-error-c3282.md)  
   
@@ -218,6 +218,8 @@ ms.lasthandoff: 02/24/2017
   
  [コンパイラ エラー C3417](../../error-messages/compiler-errors-2/compiler-error-c3417.md)  
   
+ [コンパイラ エラー C3445](../../error-messages/compiler-errors-2/compiler-error-c3445.md)  
+  
  [コンパイラ エラー C3450](../../error-messages/compiler-errors-2/compiler-error-c3450.md)  
   
  [コンパイラ エラー C3451](../../error-messages/compiler-errors-2/compiler-error-c3451.md)  
@@ -226,6 +228,6 @@ ms.lasthandoff: 02/24/2017
   
  [コンパイラ エラー C3466](../../error-messages/compiler-errors-2/compiler-error-c3466.md)  
   
- [コンパイラ エラー C3487](../../error-messages/compiler-errors-2/compiler-error-c3487.md)  
+ [コンパイル エラー C3487](../../error-messages/compiler-errors-2/compiler-error-c3487.md)  
   
  [コンパイラ エラー C3498](../../error-messages/compiler-errors-2/compiler-error-c3498.md)

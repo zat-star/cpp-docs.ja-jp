@@ -1,31 +1,48 @@
 ---
-title: "致命的なエラー C1091 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "C1091"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1091"
+title: "致命的なエラー C1091 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- C1091
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1091
 ms.assetid: 812d4201-9154-48b0-b9af-5959c082ca33
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 致命的なエラー C1091
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: f014e2b9d34cdac17adefe88c4947ee5fb66cfcc
+ms.lasthandoff: 04/12/2017
 
+---
+# <a name="fatal-error-c1091"></a>致命的なエラー C1091
 コンパイラの制限: 文字列が長さ 'length' バイトを超えています  
   
  文字列定数が文字列の長さに対する現在の制限を超えました。  
   
- 静的な文字列を 2 つ \(以上\) の変数に分割し、[strcpy\_s](../../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md) を使用して実行時または宣言の一部としてその分割したものを結合することをお勧めします。
+ 2 つ (以上) の変数に静的な文字列を分割し、使用する可能性があります[strcpy_s](../../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)または実行時に、宣言の一部として結果を結合します。

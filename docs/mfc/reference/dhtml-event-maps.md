@@ -38,16 +38,16 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: 59d41497bafd9782c0849a03e0354e338b7f8467
-ms.lasthandoff: 04/04/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: 6d58bdd55887962bac4644df0ab93f8f5dfe9835
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="dhtml-event-maps"></a>DHTML イベント マップ
 DHTML イベントの処理には、次のマクロを使用できます。  
   
 ## <a name="dhtml-event-map-macros"></a>DHTML イベント マップ マクロ  
- DHTML イベントを処理する次のマクロを使用できます[CDHtmlDialog](../../mfc/reference/cdhtmldialog-class.md)-クラスを派生します。  
+ DHTML イベントでの処理に使用できるマクロを次[CDHtmlDialog](../../mfc/reference/cdhtmldialog-class.md)-クラスを派生します。  
   
 |||  
 |-|-|  
@@ -69,7 +69,7 @@ DHTML イベントの処理には、次のマクロを使用できます。
 |[DHTML_EVENT_ONDBLCLICK](#dhtml_event_ondblclick)|処理に使用する、 **ondblclick** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONDRAGSTART](#dhtml_event_ondragstart)|処理に使用する、 **ondragstart** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONERRORUPDATE](#dhtml_event_onerrorupdate)|処理に使用する、**詳細について**HTML 要素からのイベントです。|  
-|[DHTML_EVENT_ONFILTERCHANGE](#dhtml_event_onfilterchange)|処理に使用する、**詳細**HTML 要素からのイベントです。|  
+|[DHTML_EVENT_ONFILTERCHANGE](#dhtml_event_onfilterchange)|処理するために使用、**詳細**HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONFOCUS](#dhtml_event_onfocus)|処理に使用する、 **onfocus** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONHELP](#dhtml_event_onhelp)|処理に使用する、 `onhelp` HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONKEYDOWN](#dhtml_event_onkeydown)|処理に使用する、 **onkeydown** HTML 要素からのイベントです。|  
@@ -82,7 +82,7 @@ DHTML イベントの処理には、次のマクロを使用できます。
 |[DHTML_EVENT_ONMOUSEUP](#dhtml_event_onmouseup)|処理に使用する、 **onmouseup** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONRESIZE](#dhtml_event_onresize)|処理に使用する、 **onresize** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONROWENTER](#dhtml_event_onrowenter)|処理に使用する、**詳細**HTML 要素からのイベントです。|  
-|[DHTML_EVENT_ONROWEXIT](#dhtml_event_onrowexit)|処理に使用する、**詳細**HTML 要素からのイベントです。|  
+|[DHTML_EVENT_ONROWEXIT](#dhtml_event_onrowexit)|処理するために使用、**詳細**HTML 要素からのイベントです。|  
 |[DHTML_EVENT_ONSELECTSTART](#dhtml_event_onselectstart)|処理に使用する、 **onselectstart** HTML 要素からのイベントです。|  
 |[DHTML_EVENT_TAG](#dhtml_event_tag)|特定の HTML タグを持つすべての要素のドキュメント レベルのイベントを処理するために使用します。|  
 |[END_DHTML_EVENT_MAP](#end_dhtml_event_map)|DHTML イベント マップの最後をマークします。|  
@@ -96,9 +96,9 @@ DHTML イベントの処理には、次のマクロを使用できます。
 |[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)|マルチページ DHTML と URL のイベント マップの開始をマークします。|  
 |[BEGIN_EMBED_DHTML_EVENT_MAP](#begin_embed_dhtml_event_map)|埋め込み DHTML イベント マップの開始をマークします。|  
 |[BEGIN_URL_ENTRIES](#begin_url_entries)|URL イベント エントリ マップの開始をマークします。|  
-|[DECLARE_DHTML_URL_EVENT_MAP](#declare_dhtml_url_event_map)|マルチページの DHTML と URL のイベント マップを宣言します。|  
+|[DECLARE_DHTML_URL_EVENT_MAP](#declare_dhtml_url_event_map)|マルチページ DHTML と URL イベントのマップを宣言します。|  
 |[END_DHTML_URL_EVENT_MAP](#end_dhtml_url_event_map)|マルチページ DHTML と URL イベント マップの最後をマークします。|  
-|[END_EMBED_DHTML_EVENT_MAP](#end_embed_dhtml_event_map)|埋め込みの DHTML イベント マップの最後をマークします。|  
+|[END_EMBED_DHTML_EVENT_MAP](#end_embed_dhtml_event_map)|埋め込み DHTML イベント マップの最後をマークします。|  
 |[END_URL_ENTRIES](#end_url_entries)|URL イベント エントリ マップの最後をマークします。|  
 |[URL_EVENT_ENTRY](#url_event_entry)|マルチページ ダイアログは、内のページには、URL または HTML リソースをマップします。|  
   
@@ -140,7 +140,7 @@ BEGIN_DHTML_EVENT_MAP_INLINE(className)
 ### <a name="remarks"></a>コメント  
  DHTML イベント マップ クラスに追加情報を提供する**CDHtmlDialog** HTML 要素や、クラスのハンドラー関数に web ページでの ActiveX コントロールによって発生したイベントをルーティングに使用できます。  
   
- 場所、`BEGIN_DHTML_EVENT_MAP`クラスの定義 (.h) ファイル内のマクロが続く`DHTML_EVENT`を処理するクラスは、イベントのマクロ (たとえば、 `DHTML_EVENT_ONMOUSEOVER` mouseover イベントの)。 使用して、 [END_DHTML_EVENT_MAP_INLINE](http://msdn.microsoft.com/library/0cfec092-20ee-49f3-bc38-56d6a5572db2)マクロ イベント マップの終わりをマークします。 これらのマクロは、次の関数を実装します。  
+ 場所、`BEGIN_DHTML_EVENT_MAP`クラスの定義 (.h) ファイル内のマクロが続く`DHTML_EVENT`を処理するクラスは、イベントのマクロ (たとえば、 `DHTML_EVENT_ONMOUSEOVER` mouseover イベントの)。 使用して、 [END_DHTML_EVENT_MAP_INLINE](#end_dhtml_event_map_inline)マクロ イベント マップの終わりをマークします。 これらのマクロは、次の関数を実装します。  
   
  `virtual const DHtmlEventMapEntry* GetDHtmlEventMap();`  
   
@@ -158,7 +158,7 @@ DECLARE_DHTML_EVENT_MAP()
 ### <a name="remarks"></a>コメント  
  このマクロの定義で使用するのには、 [CDHtmlDialog](../../mfc/reference/cdhtmldialog-class.md)-クラスを派生します。  
   
- 使用して[BEGIN_DHTML_EVENT_MAP](#begin_dhtml_event_map)または[BEGIN_DHTML_EVENT_MAP_INLINE](#begin_dhtml_event_map_inline)マップを実装します。  
+ 使用する[BEGIN_DHTML_EVENT_MAP](#begin_dhtml_event_map)または[BEGIN_DHTML_EVENT_MAP_INLINE](#begin_dhtml_event_map_inline)マップを実装します。  
   
  [DECLARE_DHTML_EVENT_MAP](#declare_dhtml_event_map)次の関数を宣言します。  
   
@@ -179,7 +179,7 @@ DHTML_EVENT(dispid, elemName,  memberFxn)
  イベントを処理するための DISPID です。  
   
  `elemName`  
- `LPCWSTR` 、イベントをソースとしての HTML 要素の ID を保持または**NULL**ドキュメント イベントを処理します。  
+ `LPCWSTR`イベントをソースとしての HTML 要素の ID を保持または**NULL**ドキュメント イベントを処理します。  
   
  `memberFxn`  
  イベントのハンドラー関数。  
@@ -881,7 +881,7 @@ BEGIN_EMBED_DHTML_EVENT_MAP(className, mapName)
  イベント マップを含むクラスの名前。 このクラスから直接または間接的を派生する必要があります[関数](../../mfc/reference/cmultipagedhtmldialog-class.md)です。 埋め込みの DHTML イベント マップは、内部になければなりません、 [DHTML と URL のイベント マップ](#begin_dhtml_url_event_map))。  
   
  *mapName*  
- イベント マップを持つページを指定します。 これに対応*mapName*で、 [URL_EVENT_ENTRY](#url_event_entry)マクロが実際には、URL または HTML リソースを定義します。  
+ イベント マップを持つページを指定します。 これと一致*mapName*で、 [URL_EVENT_ENTRY](#url_event_entry)マクロが実際には URL または html 形式のリソースを定義します。  
   
 ### <a name="remarks"></a>コメント  
  DHTML イベントを発生させることができますは、複数の HTML ページを DHTML マルチページ ダイアログは、構成するため、マップの埋め込みイベントがイベントをページ単位のハンドラーにマップに使用されます。  
@@ -943,7 +943,7 @@ END_DHTML_URL_EVENT_MAP(className)
   
 ### <a name="parameters"></a>パラメーター  
  `className`  
- イベント マップを含むクラスの名前。 このクラスから直接または間接的を派生する必要があります[関数](../../mfc/reference/cmultipagedhtmldialog-class.md)です。 これと一致する必要があります`className`、対応する[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)マクロです。  
+ イベント マップを含むクラスの名前。 このクラスから直接または間接的を派生する必要があります[関数](../../mfc/reference/cmultipagedhtmldialog-class.md)です。 これと一致する必要があります`className`で、対応する[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)マクロです。  
   
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
@@ -952,7 +952,7 @@ END_DHTML_URL_EVENT_MAP(className)
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="end_embed_dhtml_event_map"></a>END_EMBED_DHTML_EVENT_MAP  
- 埋め込みの DHTML イベント マップの最後をマークします。  
+ 埋め込み DHTML イベント マップの最後をマークします。  
   
 ```  
 END_EMBED_DHTML_EVENT_MAP()  
@@ -994,12 +994,12 @@ URL_EVENT_ENTRY(className, url,  mapName)
  ページの URL または HTML リソースです。  
   
  *mapName*  
- ページの URL が指定*url*です。 これに対応*mapName*で、 [BEGIN_EMBED_DHTML_EVENT_MAP](#begin_embed_dhtml_event_map)マクロをこのページからのイベントをマップします。  
+ URL がページを指定*url*です。 これに対応*mapName*で、 [BEGIN_EMBED_DHTML_EVENT_MAP](#begin_embed_dhtml_event_map)このページからのイベントをマップするマクロです。  
   
 ### <a name="remarks"></a>コメント  
  ページが、HTML リソースの場合*url*リソースの ID 番号 (つまり、「123」、いない 123 または ID_HTMLRES1) の文字列形式にする必要があります。  
   
- ページ識別子*mapName*は、任意のシンボルを使用してリンクに埋め込まれた URL イベント エントリのマップを DHTML イベント マップします。 DHTML と URL イベント マップへのスコープで制限されることはできます。  
+ ページ識別子*mapName*が埋め込まれた URL イベント エントリのマップを DHTML イベント マップの任意のシンボルにリンクするために使用します。 DHTML と URL イベント マップへのスコープで制限されることはできます。  
   
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  

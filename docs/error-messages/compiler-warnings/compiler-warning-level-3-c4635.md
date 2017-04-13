@@ -1,29 +1,46 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4635 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "C4635"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4635"
+title: "コンパイラの警告 (レベル 3) C4635 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- C4635
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4635
 ms.assetid: b2ba90de-c093-4a76-8076-b65878467574
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラの警告 (レベル 3) C4635
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: d4c85ca32903e20ea18a731872c25ee999b67f89
+ms.lasthandoff: 04/12/2017
 
+---
+# <a name="compiler-warning-level-3-c4635"></a>コンパイラの警告 (レベル 3) C4635
 XML ドキュメント コメント対象: XML の形式が正しくありません: 理由  
   
  コンパイラは XML タグに何らかの問題を検出しました。  問題を修正して再コンパイルします  
@@ -31,9 +48,17 @@ XML ドキュメント コメント対象: XML の形式が正しくありませ
  次の例では C4635 が生成されます。  
   
 ```  
-// C4635.cpp // compile with: /doc /clr /W3 /c /// <summary> /// The contents of the folder have changed. /// <summary/>   // C4635 // try the following line instead // /// </summary> public ref class Test {};  
+// C4635.cpp  
+// compile with: /doc /clr /W3 /c  
+/// <summary>     
+/// The contents of the folder have changed.  
+/// <summary/>   // C4635  
+  
+// try the following line instead  
+// /// </summary>  
+public ref class Test {};  
 ```  
   
  このサンプルの次の出力に注意してください: **'member' の終了タグが開始タグ 'summary' と一致しません。**  
   
- このサンプルの問題は、\<summary\> の終了タグが不完全で、コンパイラが \<summary\> 終了タグとして認識しないことです。  \<member\> タグは、\/doc のコンパイルごとに、コンパイラによって .xdc ファイルに埋め込まれます。  そのため、ここでの問題は、終了タグ \<\/member\> が、コンパイラが \<summary\> を処理する前の開始タグと一致しないことです。
+ このサンプルでの問題は、終了タグの\<概要 > が不完全で、コンパイラが認識しないこととして、\<概要 > 終了タグ。  \<メンバー > タグは、/doc のコンパイルごとに、コンパイラによって .xdc ファイルに埋め込まれています。  そのため、ここでの問題は、終了タグ\</member >、コンパイラが処理される前の開始タグと一致しません (\<概要 > です。

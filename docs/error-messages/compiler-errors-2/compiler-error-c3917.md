@@ -34,21 +34,21 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: d7ce6fbec9278893fd4f3f6b75c74ef91718646b
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: 5f6719ade94bdbca9659405995fe09bfade57230
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-error-c3917"></a>コンパイラ エラー C3917
-'property': コンス トラクターの宣言のスタイルの廃止  
+'*プロパティ*': コンス トラクターの宣言スタイルの廃止  
   
-プロパティまたはイベントの定義は、以前のバージョンの構文を使用します。  
+プロパティまたはイベント定義では、Visual Studio 2005 より前に、のバージョンの構文を使用します。  
   
-詳細については、次を参照してください。[プロパティ](../../windows/property-cpp-component-extensions.md)します。  
+詳細については、次を参照してください。[プロパティ](../../windows/property-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
   
-```  
+```cpp  
 // C3917.cpp  
 // compile with: /clr /c  
 public ref class  C {  
