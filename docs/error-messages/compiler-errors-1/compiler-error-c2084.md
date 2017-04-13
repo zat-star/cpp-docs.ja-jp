@@ -34,32 +34,33 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 0ecd2db7dc5ac207d8257b725be83cdce983d5c8
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: 653dc7a4a5d330efc89942fbe4ddd07bff81f770
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-error-c2084"></a>コンパイラ エラー C2084
-関数 'function' は既に本体  
+関数 '*関数*'、本文には既に  
   
  関数は既に定義されています。  
   
- Visual C の以前のバージョン  
+ バージョンの Visual Studio の 2002 年前に Visual C  
   
--   コンパイラは、追加の定義を使用することは決して同じ実際の型に解決される複数のテンプレートの特殊化を受け入れるとします。 コンパイラがこれらの複数の定義を検出するようになりました  
+-   コンパイラは、追加の定義を使用することは決して同じの実際の型に解決される複数のテンプレートの特殊化を受け入れるは。 コンパイラは、今すぐこれら複数の定義を検出します。  
   
--   _ _int32 と int は、別個の型として扱われました。 コンパイラはこれで扱います\__int32 は int のシノニムとして つまり、関数が両方のオーバー ロードされた場合に、コンパイラで複数の定義が検出する\__int32 と int とエラーを指定します。  
+-   `__int32`および`int`別個の型として扱われました。 コンパイラはこれで扱います`__int32`のシノニムとして`int`です。 これは、コンパイラでは、両方の関数がオーバー ロードする場合、複数の定義がによって検出されたことを意味`__int32`と`int`エラーとなります。  
   
- 次の例では、c2084 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2084 が生成されます。  
   
-```  
+```cpp  
 // C2084.cpp  
 void Func(int);  
 void Func(int) {}   // define function  
 void Func(int) {}   // C2084 second definition  
 ```  
   
- 考えられる解決策:  
+このエラーを解決するには、重複する定義を削除します。  
   
 ```  
 // C2084b.cpp  
