@@ -9,9 +9,9 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.oststream
-- oststream
-- std::oststream
+- std.ostrstream
+- ostrstream
+- std::ostrstream
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -76,7 +76,7 @@ class ostrstream : public ostream
   
  **名前空間:** std  
   
-##  <a name="a-nameostrstreamfreezea--ostrstreamfreeze"></a><a name="ostrstream__freeze"></a>  ostrstream::freeze  
+##  <a name="ostrstream__freeze"></a>  ostrstream::freeze  
  ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。  
   
 ```
@@ -93,7 +93,7 @@ void freeze(bool _Freezeit = true);
 ### <a name="example"></a>例  
   **freeze**の使用例は、[strstream::freeze](../standard-library/strstreambuf-class.md#strstreambuf__freeze) をご覧ください。  
   
-##  <a name="a-nameostrstreamostrstreama--ostrstreamostrstream"></a><a name="ostrstream__ostrstream"></a>  ostrstream::ostrstream  
+##  <a name="ostrstream__ostrstream"></a>  ostrstream::ostrstream  
  `ostrstream` 型のオブジェクトを構築します。  
   
 ```
@@ -121,7 +121,7 @@ ostrstream(char* ptr,
   
 -   それ以外の場合、`ptr` は count 要素の配列の最初の要素を指定する必要があります。この count 要素は C 文字列を含み、最初の要素が `ptr` によって指定されるものです。そしてコンストラクターは `strstreambuf`(`ptr`, `count`, `ptr` + `strlen`(`ptr`)) を呼び出します。  
   
-##  <a name="a-nameostrstreampcounta--ostrstreampcount"></a><a name="ostrstream__pcount"></a>  ostrstream::pcount  
+##  <a name="ostrstream__pcount"></a>  ostrstream::pcount  
  被制御シーケンスに書き込まれる要素の数を返します。  
   
 ```
@@ -137,7 +137,7 @@ streamsize pcount() const;
 ### <a name="example"></a>例  
   `pcount` の使用例は、[strstream::pcount](../standard-library/strstreambuf-class.md#strstreambuf__pcount) をご覧ください。  
   
-##  <a name="a-nameostrstreamrdbufa--ostrstreamrdbuf"></a><a name="ostrstream__rdbuf"></a>  ostrstream::rdbuf  
+##  <a name="ostrstream__rdbuf"></a>  ostrstream::rdbuf  
  ストリームの関連付けられた strstreambuf オブジェクトへのポインターを返します。  
   
 ```
@@ -153,7 +153,7 @@ strstreambuf *rdbuf() const
 ### <a name="example"></a>例  
   `rdbuf` の使用例は、[strstreambuf::pcount](../standard-library/strstreambuf-class.md#strstreambuf__pcount) をご覧ください。  
   
-##  <a name="a-nameostrstreamstra--ostrstreamstr"></a><a name="ostrstream__str"></a>  ostrstream::str  
+##  <a name="ostrstream__str"></a>  ostrstream::str  
  [freeze](../standard-library/strstreambuf-class.md#strstreambuf__freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。  
   
 ```
