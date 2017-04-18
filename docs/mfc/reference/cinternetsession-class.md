@@ -49,9 +49,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 0d9ff419c0275d9ab426b4e60102918794aa5221
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: 1bc8f21cd68741a4b0560ea3e1cb678be50dcf89
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="cinternetsession-class"></a>CInternetSession クラス
@@ -83,7 +83,7 @@ class CInternetSession : public CObject
 |[CInternetSession::GetFtpConnection](#getftpconnection)|サーバーと FTP セッションを開きます。 ユーザーをログオンします。|  
 |[代わり](#getgopherconnection)|Gopher サーバーは接続を開こうとしているアプリケーションを開きます。|  
 |[代わりに](#gethttpconnection)|HTTP サーバーは接続を開こうとしているアプリケーションを開きます。|  
-|[:Onstatuscallback](#onstatuscallback)|ステータス コールバックが有効にすると、操作のステータスを更新します。|  
+|[:Onstatuscallback](#onstatuscallback)|ステータス コールバックが有効な場合は、操作のステータスを更新します。|  
 |[できます](#openurl)|解析し、URL が表示されます。|  
 |[CInternetSession::SetCookie](#setcookie)|指定された URL の cookie を設定します。|  
 |[CInternetSession::SetOption](#setoption)|インターネット セッションのオプションを設定します。|  
@@ -97,11 +97,11 @@ class CInternetSession : public CObject
 ## <a name="remarks"></a>コメント  
  アプリケーションの実行中には、インターネット接続を保持する必要が場合、は、作成、`CInternetSession`クラスのメンバー [CWinApp](../../mfc/reference/cwinapp-class.md)です。  
   
- インターネット セッションを確立すると呼び出す[OpenURL](#openurl)です。 `CInternetSession`グローバル関数を呼び出すことによって、URL を解析[AfxParseURL](internet-url-parsing-globals.md#afxparseurl)です。 そのプロトコルの種類に関係なく`CInternetSession`URL を解釈しを管理します。 URL リソース file:// で識別されるローカル ファイルへの要求を処理できます。 `OpenURL`ポインターを返す、 [CStdioFile](../../mfc/reference/cstdiofile-class.md)オブジェクト名を渡す場合に、ローカル ファイルです。  
+ インターネット セッションを確立すると呼び出す[OpenURL](#openurl)です。 `CInternetSession`インデクサーは、URL をグローバル関数を呼び出すことによって[AfxParseURL](internet-url-parsing-globals.md#afxparseurl)です。 そのプロトコルの種類に関係なく`CInternetSession`URL を解釈しを管理します。 URL リソース file:// で識別されるローカル ファイルへの要求を処理できます。 `OpenURL`ポインターを返す、 [CStdioFile](../../mfc/reference/cstdiofile-class.md)オブジェクト名を渡す場合に、ローカル ファイルです。  
   
  使用してインターネット サーバーの URL を開くかどうか`OpenURL`、サイトから情報を読み取ることができます。 に対して、サーバー上にあるファイル (例、HTTP、FTP、または gopher) 用サービスに固有のアクションを実行する場合は、そのサーバーに適切な接続を確立する必要があります。 特定の種類の特定のサービスに直接接続を開くには、次のメンバー関数のいずれかの手順に従います。  
   
-- [GetGopherConnection](#getgopherconnection)を gopher サービスへの接続を開きます。  
+- [GetGopherConnection](#getgopherconnection) gopher サービスへの接続を開きます。  
   
 - [GetHttpConnection](#gethttpconnection)を HTTP サービスへの接続を開きます。  
   
@@ -109,9 +109,9 @@ class CInternetSession : public CObject
   
  [SetOption](#setoption)タイムアウト値、再試行の回数など、セッションのクエリ オプションを設定したりすることができます。  
   
- `CInternetSession`メンバー関数[SetCookie](#setcookie)、 [GetCookie](#getcookie)、および[GetCookieLength](#getcookielength)使用するサーバーとスクリプトの状態に関する情報を保持、クライアント ワークステーション Win32 cookie データベースを管理する手段を提供します。  
+ `CInternetSession`メンバー関数[SetCookie](#setcookie)を[GetCookie](#getcookie)と[GetCookieLength](#getcookielength)使用するサーバーとスクリプトの状態に関する情報を保持クライアント ワークステーション Win32 cookie データベースを管理する手段を提供します。  
   
- インターネットの基本的なプログラミング タスクの詳細については、記事を参照してください。[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)です。 MFC WinInet クラスの使用に関する一般的な情報の記事を参照してください。 [wininet の基礎を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)です。  
+ インターネットの基本的なプログラミング タスクの詳細については、記事を参照してください。[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)です。 MFC WinInet クラスの使用に関する全般情報の記事を参照してください。 [wininet の基礎を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)です。  
   
 > [!NOTE]
 > `CInternetSession`スローされます、 [AfxThrowNotSupportedException](exception-processing.md#afxthrownotsupportedexception)サポートされていないサービスの種類。 次のサービス型のみが現在サポートされて: FTP、HTTP、gopher、およびファイルです。  
@@ -145,9 +145,9 @@ CInternetSession(
  操作のコンテキストの識別子。 `dwContext`によって返される操作のステータス情報を識別する[:onstatuscallback](#onstatuscallback)です。 既定値を 1 に設定します。ただし、操作の特定のコンテキスト ID を明示的に割り当てることができます。 オブジェクトとその動作はしたコンテキスト ID と関連付けられます  
   
  `dwAccessType`  
- 必要なアクセスの種類。 これを 1 つを指定することがあります、有効な値を次に示します。  
+ 必要なアクセスの種類。 うち 1 つだけを指定することがあります、有効な値を次に示します。  
   
-- **INTERNET_OPEN_TYPE_PRECONFIG**レジストリに事前に構成された設定を使用して接続します。 このアクセスの種類は、既定値として設定されます。 TIS プロキシを介して接続するには、設定`dwAccessType`です。 この値にする、レジストリを適切に設定します。  
+- **INTERNET_OPEN_TYPE_PRECONFIG**レジストリに事前に構成された設定を使用して接続します。 このアクセスの種類は、既定値として設定されます。 TIS プロキシを介して接続するには、設定`dwAccessType`です。 この値にするし、レジストリを適切に設定します。  
   
 - `INTERNET_OPEN_TYPE_DIRECT`インターネットに直接接続します。  
   
@@ -169,9 +169,9 @@ CInternetSession(
 - `INTERNET_FLAG_OFFLINE`ダウンロード操作がなければ、永続的なキャッシュのみを使用します。 項目がキャッシュに存在しない場合は、該当するエラー コードが返されます。 このフラグは、ビットごとと組み合わせること`OR`( **|**) 演算子。  
   
 ### <a name="remarks"></a>コメント  
- **CInternetSession**は、最初のインターネット関数は、アプリケーションによって呼び出されます。 内部データ構造体を初期化し、アプリケーションからの以降の呼び出しを準備します。  
+ **CInternetSession**は、アプリケーションによって呼び出される最初のインターネット関数。 内部データ構造体を初期化し、アプリケーションからの以降の呼び出しを準備します。  
   
- インターネット接続を開くことができる場合`CInternetSession`スロー、 [AfxThrowInternetException](http://msdn.microsoft.com/library/c9645b10-9541-48b2-8b0c-94ca33fed3cb)です。  
+ インターネット接続を開くことができる場合`CInternetSession`スロー、 [AfxThrowInternetException](internet-url-parsing-globals.md#afxthrowinternetexception)です。  
   
 ### <a name="example"></a>例  
   例を参照して[CFtpFileFind](../../mfc/reference/cftpfilefind-class.md)です。  
@@ -203,7 +203,7 @@ BOOL EnableStatusCallback(BOOL bEnable = TRUE);
 ### <a name="remarks"></a>コメント  
  ステータス コールバックを処理する場合は、アプリケーションのステータス バーに (名前の解決、サーバーに接続する) などの操作の進行状況に関するステータスを提供できます。 操作のステータスの表示は、長期的な操作中に特にです。  
   
- コールバックは、要求の処理中に発生する、アプリケーションは、ネットワークにデータ スループットの低下を防ぐために、コールバックでできるだけ時間を節約する必要があります。 たとえば、コールバックでは、ダイアログ ボックスを配置するには、時間のかかる操作、サーバーは要求を終了する可能性があります。  
+ コールバックは、要求の処理中に発生する、ためアプリケーションはネットワークにデータ スループットの低下を回避するためのコールバックで可能な時間を節約する必要があります。 たとえば、コールバックでは、ダイアログ ボックスを配置するには、時間のかかる操作サーバーは要求を終了する可能性があります。  
   
  ステータス コールバックは、いずれかのコールバックが保留になっている限り削除できません。  
   
@@ -220,7 +220,7 @@ DWORD_PTR GetContext() const;
  アプリケーションで定義されたコンテキスト識別子。  
   
 ### <a name="remarks"></a>コメント  
- [OnStatusCallback](#onstatuscallback)によって返されるコンテキスト ID を使用して**GetContext**特定のアプリケーションの状態を報告します。 たとえば、ステータス情報を返すを含むインターネット要求をアクティブにしても、ときにステータス コールバックはその特定の要求の状態をレポートのコンテキスト ID を使用します。 2 つの異なるをアクティブ化した場合は、インターネットの両方が含まれる状態情報を返すことが要求`OnStatusCallback`コンテキスト識別子を使用して、対応する要求の状態を返します。 そのため、コンテキスト識別子は、状態のすべてのコールバック操作の使用され、セッションが終了するまで、セッションに関連付けられています。  
+ [OnStatusCallback](#onstatuscallback)によって返されるコンテキスト ID を使用して**GetContext**特定のアプリケーションの状態を報告します。 たとえば、ステータス情報を返すを含むインターネット要求をアクティブにしても、ときにステータス コールバックは、その要求にステータスをレポートするコンテキスト ID を使用しています。 2 つの個別のアクティブ化した場合は、インターネットの両方が含まれる状態情報を返すことが要求`OnStatusCallback`コンテキスト識別子を使用して、対応する要求のステータスを返します。 その結果、すべてのステータス コールバック操作のコンテキスト id を使用し、セッションが終了するまで、セッションに関連付けられています。  
   
  非同期操作の詳細については、記事を参照してください。[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)です。  
   
@@ -252,7 +252,7 @@ static BOOL GetCookie(
  最初のオーバー ロードで、cookie のデータを受け取るバッファーのアドレスを表す文字列へのポインター。 この値は、 **NULL**です。 2 番目のオーバー ロードへの参照では、 [CString](../../atl-mfc-shared/reference/cstringt-class.md) cookie のデータを受信するオブジェクト。  
   
  `dwBufLen`  
- サイズを指定する、変数、`pstrCookieData`バッファー。 バッファーにコピーするデータの量を受け取る関数が成功した場合、`pstrCookieData`バッファー。 場合`pstrCookieData`は**NULL**、このパラメーターは、すべての cookie のデータをコピーするために必要なバッファーのサイズを指定する値を受け取ります。  
+ サイズを指定する、変数、`pstrCookieData`バッファー。 バッファーにコピーするデータの量に格納、関数が成功した場合、`pstrCookieData`バッファー。 場合`pstrCookieData`は**NULL**、このパラメーターは、すべての cookie のデータをコピーするために必要なバッファーのサイズを指定する値を受け取ります。  
   
 ### <a name="return-value"></a>戻り値  
  返します**TRUE**成功した場合、または**FALSE**それ以外の場合。 呼び出しに失敗した場合は、Win32 関数を呼び出す[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定します。 次のエラー値が適用されます。  
@@ -306,7 +306,7 @@ CFtpConnection* GetFtpConnection(
  ログインするユーザーの名前を指定する null で終わる文字列へのポインター。 場合**NULL**、既定値は匿名です。  
   
  `pstrPassword`  
- ログインに使用するパスワードを指定する null で終わる文字列へのポインター。 両方`pstrPassword`と`pstrUserName`は**NULL**既定の匿名パスワードはユーザーの電子メール名。 場合`pstrPassword`は**NULL** (または空の文字列) が、`pstrUserName`は**NULL**、空白のパスワードを使用します。 次の表の 4 種類の設定の動作は、`pstrUserName`と`pstrPassword`:  
+ ログインに使用するパスワードを指定する null で終わる文字列へのポインター。 両方`pstrPassword`と`pstrUserName`は**NULL**既定の匿名パスワードはユーザーの電子メール名。 場合`pstrPassword`は**NULL** (または空の文字列) が、`pstrUserName`は**NULL**を空白のパスワードを使用します。 次の表の 4 種類の設定の動作は、`pstrUserName`と`pstrPassword`:  
   
 |`pstrUserName`|`pstrPassword`|FTP サーバーに送信されるユーザー名|FTP サーバーに送信されたパスワード|  
 |--------------------|--------------------|---------------------------------|---------------------------------|  
@@ -331,7 +331,7 @@ CFtpConnection* GetFtpConnection(
   例を参照して[CFtpFileFind](../../mfc/reference/cftpfilefind-class.md)です。  
   
 ##  <a name="getgopherconnection"></a>代わり  
- Gopher の新しい接続を確立しへのポインターを取得するには、このメンバー関数を呼び出す、`CGopherConnection`オブジェクト。  
+ 新しい gopher 接続を確立しへのポインターを取得するには、このメンバー関数を呼び出す、`CGopherConnection`オブジェクト。  
   
 ```  
 CGopherConnection* GetGopherConnection(
@@ -358,7 +358,7 @@ CGopherConnection* GetGopherConnection(
  ポインター、[関数](../../mfc/reference/cgopherconnection-class.md)オブジェクト。 呼び出しに失敗した場合は、スローされたエラーの原因を判断[CInternetException](../../mfc/reference/cinternetexception-class.md)オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- `GetGopherConnection`gopher サーバーに接続しを作成してへのポインターを返します、`CGopherConnection`オブジェクト。 サーバー上の特定の操作は行われません。 データを読み取ったり書き込んだりする場合は、たとえば、別の手順としてこれらの操作を実行する必要があります。 クラスを参照してください[関数](../../mfc/reference/cgopherconnection-class.md)、 [CGopherFile](../../mfc/reference/cgopherfile-class.md)、および[CGopherFileFind](../../mfc/reference/cgopherfilefind-class.md)ファイルの検索方法については、のファイルを開くの読み取りや書き込みをファイルにします。 FTP サイトを参照する方法については、このメンバー関数を参照してください。 [OpenURL](#openurl)です。 記事を参照して[wininet の基礎を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)gopher 接続の一般的なタスクを実行する手順についてです。  
+ `GetGopherConnection`gopher サーバーに接続しを作成してへのポインターを返します、`CGopherConnection`オブジェクト。 サーバー上の特定の操作は行われません。 データを読み取ったり書き込んだりする場合は、たとえば、別の手順としてこれらの操作を実行する必要があります。 クラスを参照してください[関数](../../mfc/reference/cgopherconnection-class.md)を[CGopherFile](../../mfc/reference/cgopherfile-class.md)と[CGopherFileFind](../../mfc/reference/cgopherfilefind-class.md)ファイルの検索方法については、のファイルを開くの読み取りや書き込みをファイルにします。 FTP サイトを参照する方法については、このメンバー関数を参照してください。 [OpenURL](#openurl)です。 記事を参照して[wininet の基礎を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)gopher 接続の一般的なタスクを実行する手順についてです。  
   
 ##  <a name="gethttpconnection"></a>代わりに  
  HTTP 接続を確立しへのポインターを取得するには、このメンバー関数を呼び出す、`CHttpConnection`オブジェクト。  
@@ -442,7 +442,7 @@ virtual void OnStatusCallback(
 |`INTERNET_STATUS_RESPONSE_RECEIVED`|サーバーからの応答を受信しました。 `lpvStatusInformation`パラメーターは**NULL**です。|  
 |`INTERNET_STATUS_CLOSING_CONNECTION`|サーバーへの接続を終了しています。 `lpvStatusInformation`パラメーターは**NULL**です。|  
 |`INTERNET_STATUS_CONNECTION_CLOSED`|サーバーへの接続が正常に終了しました。 `lpvStatusInformation`パラメーターは**NULL**です。|  
-|`INTERNET_STATUS_HANDLE_CREATED`|Win32 API 関数で使用される[InternetConnect](http://msdn.microsoft.com/library/windows/desktop/aa384363)を新しいハンドルが作成されたことを示します。 これにより、アプリケーションの呼び出し、Win32 関数[InternetCloseHandle](http://msdn.microsoft.com/library/windows/desktop/aa384350)から別のスレッドの接続の時間がかかりすぎる場合です。 参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、これらの関数。|  
+|`INTERNET_STATUS_HANDLE_CREATED`|Win32 API 関数で使用される[InternetConnect](http://msdn.microsoft.com/library/windows/desktop/aa384363)新しいハンドルが作成されたことを示すためにします。 これにより、アプリケーションの呼び出し、Win32 関数[InternetCloseHandle](http://msdn.microsoft.com/library/windows/desktop/aa384350)から別のスレッドの接続の時間がかかりすぎる場合です。 参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、これらの関数。|  
 |`INTERNET_STATUS_HANDLE_CLOSING`|このハンドルの値が正常に終了します。|  
   
  ステータス コールバック ルーチンが実行される前に、何らかのアクションを要求するには、このメンバー関数をオーバーライドします。  
@@ -480,7 +480,7 @@ CStdioFile* OpenURL(
   
 - **INTERNET_FLAG_TRANSFER_BINARY**バイナリ ファイルとしてファイルを転送します。  
   
-- `INTERNET_FLAG_RELOAD`ローカルにキャッシュされている場合でも、通信回線からデータを取得します。  
+- `INTERNET_FLAG_RELOAD`ローカルにキャッシュされている場合でも、ネットワークからデータを取得します。  
   
 - `INTERNET_FLAG_DONT_CACHE`ローカルまたはすべてのゲートウェイに、データをキャッシュしません。  
   
@@ -511,9 +511,9 @@ CStdioFile* OpenURL(
 ### <a name="remarks"></a>コメント  
  パラメーター`dwFlags`いずれかを含める必要があります**INTERNET_FLAG_TRANSFER_ASCII**または**INTERNET_FLAG_TRANSFER_BINARY**、両方は使用しません。 その他のフラグは、演算と組み合わせることができます`OR`演算子 ( **|**)。  
   
- `OpenURL`、Win32 関数をラップする**アクセス**、のみをダウンロード、取得、およびインターネット サーバーからのデータの読み取りを許可します。 `OpenURL`により、なし、リモートの場所にファイルの操作に必要のないように[関数](../../mfc/reference/cinternetconnection-class.md)オブジェクト。  
+ `OpenURL`、Win32 関数をラップする**アクセス**、により、のみをダウンロード、取得、およびインターネット サーバーからデータを読み取るします。 `OpenURL`により、なし、リモートの場所にファイルの操作に必要のないように[関数](../../mfc/reference/cinternetconnection-class.md)オブジェクト。  
   
- 特定の接続を使用する (つまり、プロトコル固有) 関数、ファイルへの書き込みなどする必要がありますセッションを開き、特定の種類の接続を開くし、その接続を使用して、目的のモードでファイルを開きます。 参照してください`CInternetConnection`接続に固有の機能についての詳細。  
+ 特定の接続を使用する (つまり、プロトコル固有) 関数などのファイルに書き込み、する必要がありますセッションを開く特定の種類の接続を開くし、その接続を使用して、目的のモードでファイルを開きます。 参照してください`CInternetConnection`接続に固有の機能についての詳細。  
   
 ##  <a name="operator_hinternet"></a>CInternetSession::operator HINTERNET  
  この演算子を使用して、現在のインターネット セッションの Windows ハンドルを取得します。  
@@ -586,7 +586,7 @@ BOOL SetOption(
 - `INTERNET_FLAG_OFFLINE`ダウンロード操作がなければ、永続的なキャッシュのみを使用します。 項目がキャッシュに存在しない場合は、該当するエラー コードが返されます。 このフラグは、ビットごとと組み合わせること`OR`( **|**) 演算子。  
   
 ### <a name="return-value"></a>戻り値  
- 操作が成功した場合、値は**TRUE**が返されます。 エラーが発生しました、値の場合**FALSE**が返されます。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのに呼び出せる可能性があります。  
+ 操作が成功した場合の値**TRUE**が返されます。 エラーが発生しました、値の場合**FALSE**が返されます。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのに呼び出せる可能性があります。  
   
 ## <a name="see-also"></a>関連項目  
  [CObject クラス](../../mfc/reference/cobject-class.md)   

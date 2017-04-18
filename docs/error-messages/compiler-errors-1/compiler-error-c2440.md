@@ -34,9 +34,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
-ms.openlocfilehash: d2855f44e05e095f8e1e5cf992eacaafcbe8464d
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: 0789875fee672856dbc0eff429d2363a43963940
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-error-c2440"></a>コンパイラ エラー C2440
@@ -211,7 +211,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- Visual C コンパイラは、不要になった、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときにソース コードを使用する**/clr**プログラミングをコンパイルします。  
+ Visual C コンパイラは、不要になった、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときにソース コードを使用する**/clr**プログラミングがコンパイルされました。  
   
  この C2440 エラーを解決するには、正しいキャスト演算子を使用します。 詳細については、次を参照してください。[キャスト演算子](../../cpp/casting-operators.md)です。  
   
@@ -231,7 +231,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
-C2440 を Visual Studio 2015 Update 3 でコンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定れる個別の式、同じ種類のテンプレートの一致を識別するときに、`static_cast`操作します。 これで、コンパイラが型を正しく区別し、コードを全面的に頼るで前の`static_cast`動作が中断します。 この問題を解決するため、テンプレート パラメーターの型を一致または使用するテンプレート引数を変更して、`reinterpret_cast`または C スタイル キャストが必要です。
+C2440 を Visual Studio 2015 Update 3 でコンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定れる個別の式、同じ種類のテンプレートの一致を識別するときに、`static_cast`操作します。 これで、コンパイラは型を正しく区別し、コードを全面的に頼るで前の`static_cast`動作が中断します。 この問題を解決するため、テンプレート パラメーターの型を一致または使用するテンプレート引数を変更して、`reinterpret_cast`または C スタイル キャストが必要です。
   
 次の例では C2440 エラーが生成されます。  
   
@@ -260,10 +260,12 @@ This error can appear in ATL code that uses the SINK_ENTRY_INFO macro defined in
 ## <a name="example"></a>例  
 ### <a name="copy-list-initialization"></a>Copy-list-initialization
 
-2017 およびそれ以降の visual Studio が正しく初期化子リストが、Visual Studio 2015 ではキャッチされず、クラッシュする可能性がありますを使用してオブジェクトの作成に関連するコンパイラ エラーを発生させるか、実行時の動作は未定義です。 N4594 13.3.1.7p1 のとおり、copy-list-initialization で、コンパイラは、オーバーロードの解決のために明示的なコンストラクターを考慮する必要がありますが、そのオーバーロードが実際に選択された場合にエラーを発生させる必要があります。
-次の 2 つの例は、Visual Studio 2017 ではなく Visual Studio 2015 でコンパイルします。
+2017 およびそれ以降の visual Studio が正しく初期化子リストが Visual Studio 2015 でキャッチされていないと、クラッシュする可能性がありますを使用してオブジェクトの作成に関連するコンパイラ エラーを発生させるか、実行時の動作は未定義です。 C++ 17 のコピーでリストの初期化、コンパイラはオーバー ロードの解決、明示的なコンス トラクターを考慮する必要しますが、そのオーバー ロードが実際選択される場合、エラーが発生する必要があります。
 
-```
+次の例では、Visual Studio 2015 ではなく Visual Studio 2017 をコンパイルします。
+
+```cpp  
+// C2440j.cpp  
 struct A
 {
     explicit A(int) {} 
@@ -272,25 +274,33 @@ struct A
 
 int main()
 {
-    A a1 = { 1 }; // error C3445: copy-list-initialization of 'A' cannot use an explicit constructor
-    const A& a2 = { 1 }; // error C2440: 'initializing': cannot convert from 'int' to 'const A &'
-
+    const A& a2 = { 1 }; // error C2440: 'initializing': cannot 
+                         // convert from 'int' to 'const A &'
 }
-```
+```  
+  
+このエラーを修正するには、直接の初期化を使用します。  
+  
+```cpp  
+// C2440k.cpp  
+struct A
+{
+    explicit A(int) {} 
+    A(double) {}
+};
 
-このエラーを修正するには、直接の初期化を使用します。
-
-```
-A a1{ 1 };
-const A& a2{ 1 };
-```
+int main()
+{
+    const A& a2{ 1 };
+}  
+```  
 
 ## <a name="example"></a>例
 ### <a name="cv-qualifiers-in-class-construction"></a>クラス コンストラクションの cv 修飾子
 
 Visual Studio 2015 では、コンストラクターを呼び出してクラス オブジェクトを生成するときに、コンパイラが誤って cv 修飾子を無視することがあります。 これにより、クラッシュまたは予期しない実行時動作が発生する可能性があります。 次の例では、Visual Studio 2015 でコンパイルしますが、Visual Studio 2017 以降、コンパイラ エラーを発生させます。
 
-```
+```cpp
 struct S 
 {
     S(int);

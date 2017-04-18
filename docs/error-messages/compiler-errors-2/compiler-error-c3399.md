@@ -1,38 +1,62 @@
 ---
-title: "コンパイラ エラー C3399 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "C3399"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3399"
+title: "コンパイラ エラー C3399 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- C3399
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3399
 ms.assetid: 306ad199-d150-4f6c-bcf1-24a7948b93be
 caps.latest.revision: 3
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 3
----
-# コンパイラ エラー C3399
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: 1ef4492e3984ae66c4dc6bd41b0dc7c40c734c8a
+ms.lasthandoff: 04/12/2017
 
+---
+# <a name="compiler-error-c3399"></a>コンパイラ エラー C3399
 'type' : ジェネリック パラメーターのインスタンスを作成するときに、引数を指定することはできません  
   
  `gcnew()` 制約を指定する場合は、制約型にパラメーターなしのコンストラクターがあることを指定します。 したがって、この型のインスタンスを作成してパラメーターを渡そうとすると、エラーになります。  
   
- 詳細については、「[Constraints on Generic Type Parameters \(C\+\+\/CLI\)](../Topic/Constraints%20on%20Generic%20Type%20Parameters%20\(C++-CLI\).md)」を参照してください。  
+ 参照してください[ジェネリック型パラメーターの制約 (C + + CLI)](../../windows/constraints-on-generic-type-parameters-cpp-cli.md)詳細についてはします。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C3399 が生成されます。  
   
 ```  
-// C3399.cpp // compile with: /clr /c generic <class T> where T : gcnew() void f() { T t = gcnew T(1);   // C3399 T t2 = gcnew T();   // OK }  
+// C3399.cpp  
+// compile with: /clr /c  
+generic <class T>   
+where T : gcnew()  
+void f() {  
+   T t = gcnew T(1);   // C3399  
+   T t2 = gcnew T();   // OK  
+}  
 ```

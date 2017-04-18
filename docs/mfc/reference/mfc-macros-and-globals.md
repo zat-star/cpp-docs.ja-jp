@@ -1,5 +1,5 @@
 ---
-title: "MFC マクロとグローバル |Microsoft Docs"
+title: "MFC マクロとグローバル |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -41,15 +41,15 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: 7dc1f904d1c3f76635a49db1747578e2ce0b0b3b
-ms.lasthandoff: 04/04/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: 4de4d9a0764bb2f25eaf63c302fa03ebc12e3cee
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="mfc-macros-and-globals"></a>MFC マクロとグローバル
 MFC (Microsoft Foundation Class) ライブラリは、(1) MFC クラス、(2) マクロおよびグローバル関数とグローバル変数の 2 つの主要な分野で構成されます。 クラスのメンバーではない関数や変数は、グローバル関数またはグローバル変数です。  
   
- MFC ライブラリと ATL (Active Template Library) は文字列変換マクロを共有します。 詳細については、次を参照してください。[文字列変換マクロ](../../atl/reference/string-conversion-macros.md)、ATL マニュアルを参照します。  
+ MFC ライブラリと ATL (Active Template Library) は文字列変換マクロを共有します。 詳細については、次を参照してください。[文字列変換マクロ](../../atl/reference/string-conversion-macros.md)ATL ドキュメント。  
   
  MFC のマクロ、グローバル関数、およびグローバル変数には、次の機能が用意されています。  
   
@@ -124,7 +124,7 @@ MFC (Microsoft Foundation Class) ライブラリは、(1) MFC クラス、(2) �
   
 -   [ディスパッチ マップ](dispatch-maps.md)  
   
- さらに、呼び出される関数は、MFC [AfxEnableControlContainer](http://msdn.microsoft.com/library/7aa0b9d2-5329-4bc3-9d41-856e30fe2c2b)埋め込み OLE コントロールを任意の OLE コンテナーを完全にサポートする MFC 4.0 で開発できるようにします。  
+ さらに、MFC には、呼び出される関数[AfxEnableControlContainer](ole-initialization.md#afxenablecontrolcontainer) OLE コントロールが完全にサポートする MFC 4.0 で開発したすべての OLE コンテナーを有効に埋め込まれていること。  
   
 ## <a name="ole-controls"></a>OLE コントロール  
   

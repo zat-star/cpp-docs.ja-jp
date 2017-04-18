@@ -34,22 +34,22 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 86437fca7bfeef662bef9fe8311fb746a661264d
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: a052194893db90177b88eea8f80435777ae37773
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-warning-c4867"></a>コンパイラの警告 C4867
 'function': 関数呼び出しの引数リストがありません。'call' を使用して、メンバーへのポインターを作成するには  
   
- メンバー関数へのポインターが正しく初期化されませんでした。  
+ メンバー関数へのポインターが正しく初期化されていません。  
   
- この警告は、Visual C 2005 で行ったコンパイラへの準拠作業の結果として生成することができます: メンバーへのポインターに対する準拠が強化されました。  Visual C 2005 より前にコンパイルされたコードは、C4867 を今すぐ生成されます。  
+ この警告は、Visual C 2005 で行ったコンパイラ準拠作業の結果として生成できます。 準拠が強化されたメンバーへのポインター。  Visual C 2005 より前にコンパイルされたコードには、今すぐ C4867 が生成されます。  
   
- この警告は、常にエラーとして表示されます。 使用して、[警告](../../preprocessor/warning.md)プラグマをこの警告を無効にします。 C4867 および MFC/ATL の詳細については、次を参照してください。 [_ATL_ENABLE_PTM_WARNING](http://msdn.microsoft.com/Library/00b9ff5c-9834-4c40-911e-ee88d512c4af)します。  
+ この警告は、常にエラーとして表示されます。 使用して、[警告](../../preprocessor/warning.md)プラグマをこの警告を無効にします。 C4867 および MFC と ATL の詳細については、次を参照してください。 [_ATL_ENABLE_PTM_WARNING](../../atl/reference/compiler-options-macros.md#_atl_enable_ptm_warning)です。  
   
 ## <a name="example"></a>例  
- 次の例では、C4867 が生成されます。  
+ 次の例では、C4867 を生成します。  
   
 ```  
 // C4867.cpp  

@@ -35,9 +35,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: b790beb88de009e1c7161f3c9af6b3e21c22fd8e
-ms.openlocfilehash: aa9586bd0abed0b1fa1d24c777eea8c82c5cedc0
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: 4a82bbdd3b28ae0150ab8366d3ecbe849e7ac8a1
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="compiler-warning-level-3-c4996"></a>コンパイラの警告 (レベル 3) C4996
@@ -57,7 +57,7 @@ ms.lasthandoff: 03/29/2017
   
  一部の CRT および C++ 標準ライブラリ関数およびグローバル変数は新しいより安全な関数を優先するため推奨されません。 コンパイラは、これらの関数は使用されなくなったとの警告を発し、優先関数を提案します。 CRT のこれらの関数が使用されなくなったとの警告をオフにするには、 **_CRT_SECURE_NO_WARNINGS**を定義します。 使用されていないグローバル変数に関する警告をオフにするには、 **_CRT_SECURE_NO_WARNINGS_GLOBALS**を定義します。 これらの非推奨の関数とグローバル変数の詳細については、次を参照してください。 [CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)と[安全なライブラリ: C++ 標準ライブラリ](../../standard-library/safe-libraries-cpp-standard-library.md)です。  
   
- **安全でない可能性がありますパラメーターを持つ関数呼び出し、この呼び出しは、渡された値が正しいことを確認する呼び出し元に依存します。この警告を無効にするには、-D_SCL_SECURE_NO_WARNINGS を使用します。Visual C '反復子のチェック' を使用する方法のドキュメントを参照してください。**  
+ **安全でない可能性がありますパラメーターを持つ関数呼び出しこの呼び出しは、渡された値が正しいことを確認する呼び出し元に依存します。この警告を無効にするには、-D_SCL_SECURE_NO_WARNINGS を使用します。Visual C '反復子のチェック' を使用する方法のドキュメントを参照してください。**  
   
  C++ 標準ライブラリの一部のテンプレート関数は、パラメーターが正しいかどうかをチェックしません。 そのような関数が使用されていることをこの警告で識別できます。 これらの関数の警告をオフにするには、 **_SCL_SECURE_NO_WARNINGS**を定義します。 詳細については、「[チェックを行う反復子](../../standard-library/checked-iterators.md)」を参照してください。  
   
@@ -67,7 +67,7 @@ ms.lasthandoff: 03/29/2017
   
  **MFC または ATL コードでさまざまなメッセージ**  
   
- `C4996` は、セキュリティ上の理由から使用されなくなった MFC 関数または ATL 関数を使用している場合にも発生することがあります。 これらの警告を抑制するのを参照してください。[無効](http://msdn.microsoft.com/Library/97dcfd41-1e56-41d5-bf7e-d240b950134b)と[無効](http://msdn.microsoft.com/Library/587d29d8-a75a-44a3-bec8-f724087e5e73)です。  
+ `C4996` は、セキュリティ上の理由から使用されなくなった MFC 関数または ATL 関数を使用している場合にも発生することがあります。 これらの警告を抑制するのを参照してください。[無効](../../mfc/reference/diagnostic-services.md#afx_secure_no_warnings)と[無効](http://msdn.microsoft.com/Library/587d29d8-a75a-44a3-bec8-f724087e5e73)です。  
   
  **CLR コードのマーシャ リング エラー**  
   
@@ -228,3 +228,4 @@ int main() {
    return 0;  
 }  
 ```
+

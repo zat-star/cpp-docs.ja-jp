@@ -11,9 +11,9 @@ caps.latest.revision: 4
 author: mikeblome
 ms.author: mblome
 translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 0f55ad2529ac32647d72336b426e0790f5617561
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: 3d32c24173e803e95fb57938f4a3ab62d43b65e0
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="atl-http-utility-functions"></a>ATL HTTP ユーティリティ関数
@@ -58,7 +58,7 @@ inline BOOL AtlCanonicalizeUrl(
  `dwFlags`  
  この関数の動作を制御する ATL_URL フラグ。 
 
-- `ATL_URL_BROWSER_MODE`「#」の後に文字をデコードまたはエンコードしませんまたは"?"、し、後の末尾の空白文字は削除されません"?"。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。
+- `ATL_URL_BROWSER_MODE`「#」の後に文字をデコードまたはエンコードしませんまたは"?"をし、後の末尾の空白文字は削除されません"?"。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。
 - `ATL_URL_DECODE`文字、URL が解析される前にエスケープ シーケンスを含むすべての %XX シーケンスに変換します。
 - `ATL_URL_ENCODE_PERCENT`見つかったパーセント記号を任意にエンコードします。 既定では、パーセント記号はエンコードされていません。
 - `ATL_URL_ENCODE_SPACES_ONLY`空白文字のみをエンコードします。
@@ -101,7 +101,7 @@ inline BOOL AtlCombineUrl(
  文字の長さを格納する変数へのポインター`szBuffer`です。 関数が成功した場合、変数は、終端の null 文字を含まないバッファーに書き込まれた文字数を受け取ります。 関数が失敗した場合、変数は、終端の null 文字用の領域を含むバッファーのバイトで、必要な長さを受け取ります。  
   
  `dwFlags`  
- この関数の動作を制御するフラグ。 参照してください[ATL_URL フラグ](http://msdn.microsoft.com/library/76e8cc5c-4e17-4eb1-ac29-a94d5256c4a7)です。  
+ この関数の動作を制御するフラグ。 参照してください[どうか](#atlcanonicalizeurl)です。  
   
 ### <a name="return-value"></a>戻り値  
  返します**TRUE**成功した場合、 **FALSE**エラー発生時にします。  
@@ -136,7 +136,7 @@ inline BOOL AtlEscapeUrl(
  変換された URL の書き込み先となる、呼び出し元が割り当てたバッファー。  
   
  `pdwStrLen`  
- DWORD 変数へのポインター。 関数が成功すると、`pdwStrLen`終端の null 文字を含まない、バッファーに書き込まれた文字数を受信します。 関数が失敗した場合、変数は、終端の null 文字用の領域を含むバッファーのバイトで、必要な長さを受け取ります。 このメソッドのワイド文字バージョンを使用して`pdwStrLen`受信、必要な文字数、バイト数ではありません。  
+ DWORD 変数へのポインター。 関数が成功すると、`pdwStrLen`終端の null 文字を含まない、バッファーに書き込まれた文字数を受信します。 関数が失敗した場合、変数は、終端の null 文字用の領域を含むバッファーのバイトで、必要な長さを受け取ります。 このメソッドのワイド文字バージョンを使用して`pdwStrLen`番号は、文字、必要なバイト数ではありません。  
   
  `dwMaxLength`  
  バッファーのサイズ`lpszStringOut`です。  
@@ -238,7 +238,7 @@ bool inline RGBToHtml(
  返します**TRUE**成功した場合、 **FALSE**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- HTML 色の値は、各色の赤、緑、および青のコンポーネントの 2 桁の数字を使用して、6 桁の 16 進値の前にシャープ記号 (例: #FFFFFF の色は白)。  
+ HTML 色の値は、各色の赤、緑、および青のコンポーネントの 2 桁の数字を使用して 6 桁の 16 進値の前にシャープ記号 (たとえば、#FFFFFF の色は白)。  
   
 ## <a name="systemtimetohttpdate"></a>SystemTimeToHttpDate
 システム時刻を HTTP ヘッダーで使用できる形式の文字列に変換します。  

@@ -30,19 +30,15 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 634e33f4989046767f17fce15377fe6f4959bd8d
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
+ms.openlocfilehash: e322c3af297c288ec6c9ccdb1c04e58d0a5759ff
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="string-conversion-macros"></a>文字列変換マクロ
 これらのマクロは、文字列の変換機能を提供します。  
   
-|||  
-|-|-|  
-|[ATL と MFC 文字列変換マクロ](string-conversion-macros.md)|文字列型の間で変換マクロのセット。|  
-|[DEVMODE と受け取る文字列変換マクロ](http://msdn.microsoft.com/library/85cebec0-2a18-48e5-9c1c-99d5b7f15425)|セット内で文字列変換マクロの`DEVMODE`と`TEXTMETRIC`構造体。|  
-  
+ 
 ##  <a name="atl_and_mfc_string_conversion_macros"></a>ATL と MFC 文字列変換マクロ  
  ここで説明する文字列変換マクロは、ATL と MFC の両方に対して有効です。 MFC 文字列変換の詳細については、次を参照してください。 [TN059: を使用して MFC の Mbcs/unicode 変換マクロ](../../mfc/tn059-using-mfc-mbcs-unicode-conversion-macros.md)と[MFC マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)です。  
   
@@ -62,9 +58,9 @@ MACRONAME( address_of_structure )
   
  [!code-cpp[NVC_ATL_Utilities # 129](../../atl/codesnippet/cpp/string-conversion-macros_2.cpp)]  
   
- マクロ名、文字列型、ソース構造では左側の (たとえば、 **A**) し、右側の送信先構造での文字列型は、(たとえば、 **W**)。 **A** stands for **LPSTR**, **OLE** stands for `LPOLESTR`, **T** stands for `LPTSTR`, and **W** stands for `LPWSTR`.  
+ マクロ名、ソース構造に文字列型は左側の (たとえば、 **A**) し、右側の送信先構造での文字列型は、(たとえば、 **W**)。 **A** stands for **LPSTR**, **OLE** stands for `LPOLESTR`, **T** stands for `LPTSTR`, and **W** stands for `LPWSTR`.  
   
- したがって、`DEVMODEA2W`コピー、`DEVMODE`構造体**LPSTR**に文字列を`DEVMODE`構造体`LPWSTR`文字列、`TEXTMETRICOLE2T`コピー、`TEXTMETRIC`構造体`LPOLESTR`に文字列を`TEXTMETRIC`構造体`LPTSTR`文字列、およびなどです。  
+ したがって、`DEVMODEA2W`のコピー、`DEVMODE`構造体**LPSTR**に文字列を`DEVMODE`構造体`LPWSTR`文字列、`TEXTMETRICOLE2T`のコピー、`TEXTMETRIC`構造体`LPOLESTR`に文字列を`TEXTMETRIC`構造体`LPTSTR`文字列、およびなどです。  
   
  2 つの文字列に変換された、`DEVMODE`構造体は、デバイス名 ( **dmDeviceName**) と形式名 ( **dmFormName**)。 `DEVMODE`文字列変換マクロも構造体のサイズを更新 ( **dmSize**)。  
   
@@ -80,8 +76,6 @@ MACRONAME( address_of_structure )
 |**_UNICODE**と**は、OLE2ANSI**|**W**|**A**|  
   
  次の表、`DEVMODE`と`TEXTMETRIC`文字列変換マクロです。  
-  
-### <a name="devmode-and-textmetric-string-conversion-macros"></a>DEVMODE と受け取る文字列変換マクロ  
   
 |||  
 |-|-|  

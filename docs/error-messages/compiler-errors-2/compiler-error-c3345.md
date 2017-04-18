@@ -1,45 +1,83 @@
 ---
-title: "コンパイラ エラー C3345 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "C3345"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3345"
+title: "コンパイラ エラー C3345 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- C3345
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3345
 ms.assetid: 1dda4c79-73bb-441b-b939-746154c3afba
 caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
----
-# コンパイラ エラー C3345
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
+ms.openlocfilehash: 462e11e6959e7edb2bdda6081f4cabea17996e91
+ms.lasthandoff: 04/12/2017
 
+---
+# <a name="compiler-error-c3345"></a>コンパイラ エラー C3345
 'identifier': モジュール名に対する無効な識別子です  
   
- モジュールの*識別子*に 1 つまたは複数の無効な文字が含まれています。 識別子は、最初の文字がアルファベット、アンダースコア、または高位 ANSI \(0x80\-FF\) 文字で、それ以降の任意の文字が英数字、アンダースコア、または高位 ANSI 文字である場合に有効です。  
+ モジュールの *識別子* に 1 つまたは複数の無効な文字が含まれています。 識別子は、最初の文字がアルファベット、アンダースコア、または高位 ANSI (0x80-FF) 文字で、それ以降の任意の文字が英数字、アンダースコア、または高位 ANSI 文字である場合に有効です。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  *識別子*に空白またはその他の無効な文字が含まれていないことを確認します。  
+1.  *識別子* に空白またはその他の無効な文字が含まれていないことを確認します。  
   
-## 使用例  
- 次のコード例では、`module` 属性の `name` パラメーターに空白が含まれているので、エラー メッセージ C3345 が発生します。  
+## <a name="example"></a>例  
+ 次のコード例では、 `name` 属性の `module` パラメーターに空白が含まれているので、エラー メッセージ C3345 が発生します。  
   
 ```  
-// cpp_attr_name_module.cpp // compile with: /LD /link /OPT:NOREF #include <atlbase.h> #include <atlcom.h> #include <atlwin.h> #include <atltypes.h> #include <atlctl.h> #include <atlhost.h> #include <atlplus.h> // C3345 expected [module(dll, name="My Library", version="1.2", helpfile="MyHelpFile")] // Try the following line instead //[module(dll, name="MyLibrary", version="1.2", helpfile="MyHelpFile")] // Module attribute now applies to this class class CMyClass { public: BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) { // add your own code here return __super::DllMain(dwReason, lpReserved); } };  
+// cpp_attr_name_module.cpp  
+// compile with: /LD /link /OPT:NOREF  
+#include <atlbase.h>  
+#include <atlcom.h>  
+#include <atlwin.h>  
+#include <atltypes.h>  
+#include <atlctl.h>  
+#include <atlhost.h>  
+#include <atlplus.h>  
+  
+// C3345 expected  
+[module(dll, name="My Library", version="1.2", helpfile="MyHelpFile")]   
+// Try the following line instead  
+//[module(dll, name="MyLibrary", version="1.2", helpfile="MyHelpFile")]   
+// Module attribute now applies to this class  
+class CMyClass {  
+public:  
+BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) {  
+   // add your own code here  
+   return __super::DllMain(dwReason, lpReserved);  
+   }  
+};  
 ```  
   
-## 参照  
- [\_\_iscsym](../../c-runtime-library/reference/iscsym-functions.md)   
+## <a name="see-also"></a>関連項目  
+ [_ _iscsym](../../c-runtime-library/reference/iscsym-functions.md)   
  [文字分類](../../c-runtime-library/character-classification.md)   
  [モジュール](../../windows/module-cpp.md)
