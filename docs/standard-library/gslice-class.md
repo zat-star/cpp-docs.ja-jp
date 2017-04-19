@@ -9,10 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::gslice
-- std.gslice
 - gslice
 - valarray/std::gslice
+- valarray/std::gslice::size
+- valarray/std::gslice::start
+- valarray/std::gslice::stride
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -79,7 +80,7 @@ valarray の多次元のサブセットを定義するのに使用する、値�
   
  **名前空間:** std  
   
-##  <a name="a-namegslicegslicea--gslicegslice"></a><a name="gslice__gslice"></a>  gslice::gslice  
+##  <a name="gslice__gslice"></a>  gslice::gslice  
  valarray の多次元スライスを定義するのに使用する valarray のユーティリティ クラス。  
   
 ```  
@@ -154,7 +155,7 @@ The valarray for vaGSlice is vaResult:
 va[vaGSlice] = ( 0 4 8 12 7 11 15 19)  
 ```  
   
-##  <a name="a-namegslicesizea--gslicesize"></a><a name="gslice__size"></a>  gslice::size  
+##  <a name="gslice__size"></a>  gslice::size  
  valarray の一般的なスライスの要素数を指定する配列の値を検索します。  
   
 ```  
@@ -229,7 +230,7 @@ The size of vaResult is:
  vaGSlice.size ( ) = ( 4 4 ).  
 ```  
   
-##  <a name="a-namegslicestarta--gslicestart"></a><a name="gslice__start"></a>  gslice::start  
+##  <a name="gslice__start"></a>  gslice::start  
  valarray の一般的なスライスの開始インデックスを検索します。  
   
 ```  
@@ -290,7 +291,7 @@ The valarray for vaGSlice is vaResult:
 The index of the first element of vaResult is: 0.  
 ```  
   
-##  <a name="a-namegslicestridea--gslicestride"></a><a name="gslice__stride"></a>  gslice::stride  
+##  <a name="gslice__stride"></a>  gslice::stride  
  valarray の一般的なスライスの要素間の距離を検索します。  
   
 ```  

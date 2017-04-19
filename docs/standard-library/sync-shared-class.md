@@ -11,8 +11,10 @@ ms.topic: article
 f1_keywords:
 - sync_shared
 - allocators/stdext::sync_shared
-- stdext.sync_shared
 - stdext::sync_shared
+- allocators/stdext::sync_shared::allocate
+- allocators/stdext::sync_shared::deallocate
+- allocators/stdext::sync_shared::equals
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -71,7 +73,7 @@ class sync_shared
   
  **名前空間:** stdext  
   
-##  <a name="a-namesyncsharedallocatea--syncsharedallocate"></a><a name="sync_shared__allocate"></a>  sync_shared::allocate  
+##  <a name="sync_shared__allocate"></a>  sync_shared::allocate  
  メモリのブロックを割り当てます。  
   
 ```
@@ -90,7 +92,7 @@ void *allocate(std::size_t count);
 ### <a name="remarks"></a>コメント  
  メンバー関数はミューテックスをロックし、`cache.allocate(count)` を呼び出し、ミューテックスをロック解除し、以前の `cache.allocate(count)` の呼び出しの結果を返します。 `cache` はキャッシュ オブジェクトを表します。  
   
-##  <a name="a-namesyncshareddeallocatea--syncshareddeallocate"></a><a name="sync_shared__deallocate"></a>  sync_shared::deallocate  
+##  <a name="sync_shared__deallocate"></a>  sync_shared::deallocate  
  指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
   
 ```
@@ -107,7 +109,7 @@ void deallocate(void* ptr, std::size_t count);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、ミューテックスをロックし、`cache.deallocate(ptr, count)` (`cache` はキャッシュ オブジェクトを表す) を呼び出し、その後ミューテックスをロック解除します。  
   
-##  <a name="a-namesyncsharedequalsa--syncsharedequals"></a><a name="sync_shared__equals"></a>  sync_shared::equals  
+##  <a name="sync_shared__equals"></a>  sync_shared::equals  
  2 つのキャッシュが等しいかどうかを比較します。  
   
 ```

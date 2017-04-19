@@ -6,6 +6,13 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- ios/std::ios
+- ios/std::streamoff
+- ios/std::streampos
+- ios/std::streamsize
+- ios/std::wios
+- ios/std::wstreampos
 ms.assetid: 0b962632-3439-44de-bf26-20c67a7f0ff3
 caps.latest.revision: 13
 manager: ghogen
@@ -21,7 +28,7 @@ ms.lasthandoff: 02/24/2017
 |[ios](#ios)|[streamoff](#streamoff)|[streampos](#streampos)|  
 |[streamsize](#streamsize)|[wios](#wios)|[wstreampos](#wstreampos)|  
   
-##  <a name="a-nameiosa--ios"></a><a name="ios"></a>  ios  
+##  <a name="ios"></a>  ios  
  従来の iostream ライブラリの ios クラスをサポートします。  
   
 ```  
@@ -31,7 +38,7 @@ typedef basic_ios<char, char_traits<char>> ios;
 ### <a name="remarks"></a>コメント  
  型はテンプレート クラス [basic_ios](../standard-library/basic-ios-class.md) の同意語で、既定の文字の特性を持つ型 `char` の要素に対して特殊化されています。  
   
-##  <a name="a-namestreamoffa--streamoff"></a><a name="streamoff"></a>  streamoff  
+##  <a name="streamoff"></a>  streamoff  
  内部操作をサポートします。  
   
 ```  
@@ -45,7 +52,7 @@ typedef basic_ios<char, char_traits<char>> ios;
 ### <a name="remarks"></a>コメント  
  型は、さまざまなストリーム位置決め操作に関連するオフセット バイト数を格納できるオブジェクトを記述する、符号付き整数です。 この表現は、少なくとも 32 ビットあります。 これは、ストリーム内の任意のバイト位置を表すのに必ずしも十分なサイズとは限りません。 **streamoff(-1)** の値は、通常誤ったオフセットを示します。  
   
-##  <a name="a-namestreamposa--streampos"></a><a name="streampos"></a>  streampos  
+##  <a name="streampos"></a>  streampos  
  バッファー ポインターまたはファイル ポインターの現在の位置を保持します。  
   
 ```  
@@ -78,7 +85,7 @@ int main( )
 7  
 ```  
   
-##  <a name="a-namestreamsizea--streamsize"></a><a name="streamsize"></a>  streamsize  
+##  <a name="streamsize"></a>  streamsize  
  ストリームのサイズを表します。  
   
 ```  
@@ -111,7 +118,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namewiosa--wios"></a><a name="wios"></a>  wios  
+##  <a name="wios"></a>  wios  
  従来の iostream ライブラリの wios クラスをサポートします。  
   
 ```  
@@ -121,7 +128,7 @@ typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;
 ### <a name="remarks"></a>コメント  
  型はテンプレート クラス [basic_ios](../standard-library/basic-ios-class.md) の同意語で、既定の文字の特性を持つ型 `wchar_t` の要素に対して特殊化されています。  
   
-##  <a name="a-namewstreamposa--wstreampos"></a><a name="wstreampos"></a>  wstreampos  
+##  <a name="wstreampos"></a>  wstreampos  
  バッファー ポインターまたはファイル ポインターの現在の位置を保持します。  
   
 ```  

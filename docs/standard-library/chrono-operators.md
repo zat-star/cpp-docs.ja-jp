@@ -6,6 +6,8 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- chrono/std::operator modulo
 ms.assetid: c5a19267-4684-40c1-b7a9-cc1012b058f3
 caps.latest.revision: 8
 manager: ghogen
@@ -23,7 +25,7 @@ ms.lasthandoff: 02/24/2017
 |[operator*](#operator_star)|[operator+](#operator_add)|[operator-](#operator-)|  
 |[operator/](#operator_)|[operator==](#operator_eq_eq)|  
   
-##  <a name="a-nameoperator-a--operator-"></a><a name="operator-"></a>  operator-  
+##  <a name="operator-"></a>  operator-  
  [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトの減算または否定の演算子。  
   
 ```  
@@ -67,7 +69,7 @@ constexpr typename common_type<Duration1, Duration2>::type
   
  3 番目の関数は、`duration` と `Left` 間の時間間隔を表す `Right` オブジェクトを返します。  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+##  <a name="operator_neq"></a>  operator!=  
  [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの非等値演算子。  
   
 ```  
@@ -93,7 +95,7 @@ constexpr bool operator!=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Left == Right)` です。  
   
-##  <a name="a-nameoperatorstara--operator"></a><a name="operator_star"></a>  operator*  
+##  <a name="operator_star"></a>  operator*  
  [duration](../standard-library/chrono-operators.md#operator_star) オブジェクトの乗算演算子。  
   
 ```  
@@ -126,7 +128,7 @@ constexpr duration<typename common_type<Rep1, Rep2>::type, Period2>
   
  `is_convertible<Rep1, common_type<Rep1, Rep2>>` が *true* にならない限り、2 番目の関数はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
   
-##  <a name="a-nameoperatora--operator"></a><a name="operator_"></a>  operator/  
+##  <a name="operator_"></a>  operator/  
  [duration](../standard-library/chrono-operators.md#operator_star) オブジェクトの除算演算子。  
   
 ```  
@@ -164,7 +166,7 @@ constexpr typename common_type<Rep1, Rep2>::type
   
  `is_convertible<Rep2, common_type<Rep1, Rep2>>` が *true を保持*せず、かつ `Rep2` が `duration` のインスタンス化ではない限り、最初の演算子はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
   
-##  <a name="a-nameoperatoradda--operator"></a><a name="operator_add"></a>  operator+  
+##  <a name="operator_add"></a>  operator+  
  [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトを追加します。  
   
 ```  
@@ -207,7 +209,7 @@ time_point<Clock, constexpr typename common_type<duration<Rep1, Period1>, Durati
   
  2 番目と&3; 番目の関数は、`time_point`時点からの間隔 `Dur` によって、転置される時点を表す `Time` オブジェクトを返します。  
   
-##  <a name="a-nameoperatorlta--operatorlt"></a><a name="operator_lt_"></a>  operator&lt;  
+##  <a name="operator_lt_"></a>  operator&lt;  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトが、もう一方の `duration` または `time_point` オブジェクト未満かどうかを判断します。  
   
 ```  
@@ -235,7 +237,7 @@ constexpr bool operator<(
   
  `true` が `Left` に先行する場合、2 番目の関数は `Right` を返します。 それ以外の場合、関数は `false` を返します。  
   
-##  <a name="a-nameoperatorlteqa--operatorlt"></a><a name="operator_lt__eq"></a>  operator&lt;=  
+##  <a name="operator_lt__eq"></a>  operator&lt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値未満かどうかを判断します。  
   
 ```  
@@ -260,7 +262,7 @@ constexpr bool operator<=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Right < Left)` です。  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+##  <a name="operator_eq_eq"></a>  operator==  
  2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または&2; つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。  
   
 ```  
@@ -287,7 +289,7 @@ constexpr bool operator==(
   
  2 番目の関数は、`true` と `Left` が同じ時点を表す場合に `Right` を返します。 それ以外の場合、関数は `false` を返します。  
   
-##  <a name="a-nameoperatorgta--operatorgt"></a><a name="operator_gt_"></a>  operator&gt;  
+##  <a name="operator_gt_"></a>  operator&gt;  
  1 つの [duration](../standard-library/duration-class.md) オブジェクトまたは [time_point](../standard-library/time-point-class.md) オブジェクトが、別の `duration` オブジェクトまたは `time_point` オブジェクトより大きいかどうかを判断します。  
   
 ```  
@@ -312,7 +314,7 @@ constexpr bool operator>(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `Right < Left` です。  
   
-##  <a name="a-nameoperatorgteqa--operatorgt"></a><a name="operator_gt__eq"></a>  operator&gt;=  
+##  <a name="operator_gt__eq"></a>  operator&gt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値以上かどうかを判断します。  
   
 ```  
@@ -337,7 +339,7 @@ constexpr bool operator>=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Left < Right)` です。  
   
-##  <a name="a-nameoperatormoduloa--operator-modulo"></a><a name="operator_modulo"></a>  modulo 演算子  
+##  <a name="operator_modulo"></a>  modulo 演算子  
  [duration](../standard-library/duration-class.md) オブジェクトに対する剰余演算の演算子。  
   
 ```  

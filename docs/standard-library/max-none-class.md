@@ -11,8 +11,12 @@ ms.topic: article
 f1_keywords:
 - max_none
 - stdext::max_none
-- stdext.max_none
 - allocators/stdext::max_none
+- allocators/stdext::max_none::allocated
+- allocators/stdext::max_none::deallocated
+- allocators/stdext::max_none::full
+- allocators/stdext::max_none::released
+- allocators/stdext::max_none::saved
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -73,7 +77,7 @@ class max_none
   
  **名前空間:** stdext  
   
-##  <a name="a-namemaxnoneallocateda--maxnoneallocated"></a><a name="max_none__allocated"></a>  max_none::allocated  
+##  <a name="max_none__allocated"></a>  max_none::allocated  
  割り当てられたメモリ ブロックの数を増やします。  
   
 ```
@@ -89,7 +93,7 @@ void allocated(std::size_t _Nx = 1);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は何も処理を行いません。 `cache_freelist::allocate` による演算子 `new` への呼び出しが成功するたび、その後に呼び出されます。 引数 `_Nx` は、演算子 `new` によって割り当てられたチャンク内のメモリ ブロックの数です。  
   
-##  <a name="a-namemaxnonedeallocateda--maxnonedeallocated"></a><a name="max_none__deallocated"></a>  max_none::deallocated  
+##  <a name="max_none__deallocated"></a>  max_none::deallocated  
  割り当てられたメモリ ブロックの数を減らします。  
   
 ```
@@ -105,7 +109,7 @@ void deallocated(std::size_t _Nx = 1);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は何も処理を行いません。 このメンバー関数は、`cache_freelist::deallocate` による演算子 `delete` への呼び出しがあるたび、その後に呼び出されます。 引数 `_Nx` は、演算子 `delete` によって割り当て解除されたチャンク内のメモリ ブロックの数です。  
   
-##  <a name="a-namemaxnonefulla--maxnonefull"></a><a name="max_none__full"></a>  max_none::full  
+##  <a name="max_none__full"></a>  max_none::full  
  フリー リストにメモリ ブロックを追加する必要があるかどうかを示す値を返します。  
   
 ```
@@ -118,7 +122,7 @@ bool full();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は `cache_freelist::deallocate` によって呼び出されます。 呼び出しが `true` を返すと、`deallocate` はメモリ ブロックをフリー リストに置きます。false を返す場合は、`deallocate` は演算子 `delete` を呼び出してブロックの割り当てを解除します。  
   
-##  <a name="a-namemaxnonereleaseda--maxnonereleased"></a><a name="max_none__released"></a>  max_none::released  
+##  <a name="max_none__released"></a>  max_none::released  
  フリー リスト上のメモリ ブロックの数を減らします。  
   
 ```
@@ -128,7 +132,7 @@ void released();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は何も処理を行いません。 現在の最大クラスの `released` メンバー関数は、`cache_freelist::allocate` によって、フリー リストからメモリ ブロックが削除されるたびに、呼び出されます。  
   
-##  <a name="a-namemaxnonesaveda--maxnonesaved"></a><a name="max_none__saved"></a>  max_none::saved  
+##  <a name="max_none__saved"></a>  max_none::saved  
  フリー リスト上のメモリ ブロックの数を減らします。  
   
 ```

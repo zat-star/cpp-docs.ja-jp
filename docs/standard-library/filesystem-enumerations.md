@@ -11,32 +11,26 @@ ms.topic: article
 f1_keywords:
 - copy_options
 - filesystem::copy_options
-- std::filesystem::copy_options
 - filesystem/std::filesystem::copy_options
 - experimental::filesystem::copy_options
-- std::experimental::filesystem::copy_options
 - filesystem/std::experimental::filesystem::copy_options
 - directory_options
 - filesystem::directory_options
-- std::filesystem::directory_options
 - filesystem/std::filesystem::directory_options
 - experimental::filesystem::directory_options
-- std::experimental::filesystem::directory_options
 - filesystem/std::experimental::filesystem::directory_options
 - file_type
 - filesystem::file_type
-- std::filesystem::file_type
 - filesystem/std::filesystem::file_type
 - experimental::filesystem::file_type
-- std::experimental::filesystem::file_type
 - filesystem/std::experimental::filesystem::file_type
 - perms
 - filesystem::perms
-- std::filesystem::perms
 - filesystem/std::filesystem::perms
 - experimental::filesystem::perms
-- std::experimental::filesystem::perms
 - filesystem/std::experimental::filesystem::perms
+dev_langs:
+- C++
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
 caps.latest.revision: 3
 author: corob-msft
@@ -56,7 +50,7 @@ ms.lasthandoff: 02/24/2017
   
  **名前空間:** std::experimental::filesystem  
 
-##  <a name="a-namefilesystemcopyoptionsa--copyoptions"></a><a name="filesystem__copy_options"></a>  copy_options
+##  <a name="filesystem__copy_options"></a>  copy_options
 動作を指定するために [copy](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) および [copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) 関数で使用されるビットマスク値の列挙体。  
   
 ### <a name="syntax"></a>構文  
@@ -91,7 +85,7 @@ enum class copy_options {
 |`create_hard_links`|ファイルをコピーするのではなく、ハード リンクを作成します。|  
   
 
-##  <a name="a-namefilesystemdirectoryoptionsa-directoryoptions"></a><a name="filesystem__directory_options"></a> directory_options
+##  <a name="filesystem__directory_options"></a> directory_options
 ディレクトリへのシンボリック リンクに従うか、無視するかを指定します。  
   
 ### <a name="syntax"></a>構文  
@@ -109,7 +103,7 @@ enum class directory_options {
 |`none`|既定の動作: ディレクトリへのシンボリック リンクを無視します。 アクセス許可の拒否はエラーです。|  
 |`follow_directory_symlink`|ディレクトリへのシンボリック リンクを実際のディレクトリとして処理します。|  
   
-##  <a name="a-namefilesystemfiletypea--filetype"></a><a name="filesystem__file_type"></a>  file_type
+##  <a name="filesystem__file_type"></a>  file_type
 ファイルの種類の列挙型。 サポートされる値は、regular、directory、not_found、および unknown です。  
   
 ### <a name="syntax"></a>構文  
@@ -143,7 +137,7 @@ enum class file_type {
 |`socket`|7|UNIX ベースのシステム上のソケットを表します  (サポートされていません)。|  
 |`unknown`|8|状態が確認できないファイルを表します。|  
   
-##  <a name="a-namefilesystempermsa--perms"></a><a name="filesystem__perms"></a>  perms
+##  <a name="filesystem__perms"></a>  perms
 ファイルのアクセス許可のフラグを設定します。 サポートされる値は、基本的に "readonly" と all です。 readonly ファイルの場合、*_write ビットは設定されません。 それ以外の場合、 `all` ビット (0x0777) が設定されます。  
   
 ### <a name="syntax"></a>構文  

@@ -11,8 +11,9 @@ ms.topic: article
 f1_keywords:
 - stdext::freelist
 - freelist
-- stdext.freelist
 - allocators/stdext::freelist
+- allocators/stdext::freelist::pop
+- allocators/stdext::freelist::push
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -81,7 +82,7 @@ class freelist
   
  **名前空間:** stdext  
   
-##  <a name="a-namefreelistfreelista--freelistfreelist"></a><a name="freelist__freelist"></a>  freelist::freelist  
+##  <a name="freelist__freelist"></a>  freelist::freelist  
  `freelist` 型のオブジェクトを構築します。  
   
 ```
@@ -90,7 +91,7 @@ freelist();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namefreelistpopa--freelistpop"></a><a name="freelist__pop"></a>  freelist::pop  
+##  <a name="freelist__pop"></a>  freelist::pop  
  フリー リストから最初のメモリ ブロックを削除します。  
   
 ```
@@ -103,7 +104,7 @@ void *pop();
 ### <a name="remarks"></a>コメント  
  一覧が空の場合、メンバー関数は `NULL` を返します。 それ以外の場合は、空き一覧から最初のメモリ ブロックを削除します。  
   
-##  <a name="a-namefreelistpusha--freelistpush"></a><a name="freelist__push"></a>  freelist::push  
+##  <a name="freelist__push"></a>  freelist::push  
  メモリ ブロックをリストに追加します。  
   
 ```

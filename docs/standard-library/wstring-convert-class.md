@@ -9,12 +9,18 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- cvt.wstring_convert
 - wstring_convert
 - stdext::cvt::wstring_convert
 - cvt::wstring_convert
 - wstring/stdext::cvt::wstring_convert
-- stdext.cvt.wstring_convert
+- locale/std::wstring_convert::byte_string
+- locale/std::wstring_convert::wide_string
+- locale/std::wstring_convert::state_type
+- locale/std::wstring_convert::int_type
+- locale/std::wstring_convert::from_bytes
+- locale/std::wstring_convert::to_bytes
+- locale/std::wstring_convert::converted
+- locale/std::wstring_convert::state
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -105,7 +111,7 @@ class wstring_convert
   
  **名前空間:** std  
   
-##  <a name="a-namewstringconvertbytestringa--wstringconvertbytestring"></a><a name="wstring_convert__byte_string"></a>  wstring_convert::byte_string  
+##  <a name="wstring_convert__byte_string"></a>  wstring_convert::byte_string  
  バイト文字列を表す型。  
   
 ```
@@ -115,7 +121,7 @@ typedef std::basic_string<char> byte_string;
 ### <a name="remarks"></a>コメント  
  この型は `std::basic_string<char>` の同意語です。  
   
-##  <a name="a-namewstringconvertconverteda--wstringconvertconverted"></a><a name="wstring_convert__converted"></a>  wstring_convert::converted  
+##  <a name="wstring_convert__converted"></a>  wstring_convert::converted  
  成功した変換の数を返します。  
   
 ```
@@ -128,7 +134,7 @@ size_t converted() const;
 ### <a name="remarks"></a>コメント  
  成功した変換の数は、変換数オブジェクトに格納されます。  
   
-##  <a name="a-namewstringconvertfrombytesa--wstringconvertfrombytes"></a><a name="wstring_convert__from_bytes"></a>  wstring_convert::from_bytes  
+##  <a name="wstring_convert__from_bytes"></a>  wstring_convert::from_bytes  
  バイト文字列をワイド文字列に変換します。  
   
 ```
@@ -156,7 +162,7 @@ wide_string from_bytes(const char* first, const char* last);
   
  正常に変換された入力要素の数が変換数オブジェクトに格納されます。 変換エラーが発生しなかった場合、メンバー関数は、変換されたワイド文字列を返します。 エラーが発生した場合、ワイド文字列エラー メッセージの初期化子を使用してオブジェクトが構築されていれば、メンバー関数は、ワイド文字列エラー メッセージ オブジェクトを返します。 それ以外の場合、メンバー関数は、クラス [range_error](../standard-library/range-error-class.md) のオブジェクトをスローします。  
   
-##  <a name="a-namewstringconvertinttypea--wstringconvertinttype"></a><a name="wstring_convert__int_type"></a>  wstring_convert::int_type  
+##  <a name="wstring_convert__int_type"></a>  wstring_convert::int_type  
  整数を表す型。  
   
 ```
@@ -166,7 +172,7 @@ typedef typename wide_string::traits_type::int_type int_type;
 ### <a name="remarks"></a>コメント  
  この型は `wide_string::traits_type::int_type` の同意語です。  
   
-##  <a name="a-namewstringconvertstatea--wstringconvertstate"></a><a name="wstring_convert__state"></a>  wstring_convert::state  
+##  <a name="wstring_convert__state"></a>  wstring_convert::state  
  変換の状態を表すオブジェクトを返します。  
   
 ```
@@ -178,7 +184,7 @@ state_type state() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namewstringconvertstatetypea--wstringconvertstatetype"></a><a name="wstring_convert__state_type"></a>  wstring_convert::state_type  
+##  <a name="wstring_convert__state_type"></a>  wstring_convert::state_type  
  変換状態を表す型。  
   
 ```
@@ -188,7 +194,7 @@ typedef typename Codecvt::state_type state_type;
 ### <a name="remarks"></a>コメント  
  この型は、変換状態を表すことができるオブジェクトを表します。 この型は `Codecvt::state_type` の同意語です。  
   
-##  <a name="a-namewstringconverttobytesa--wstringconverttobytes"></a><a name="wstring_convert__to_bytes"></a>  wstring_convert::to_bytes  
+##  <a name="wstring_convert__to_bytes"></a>  wstring_convert::to_bytes  
  ワイド文字列をバイト文字列に変換します。  
   
 ```
@@ -213,7 +219,7 @@ byte_string to_bytes(const Elem* first, const Elem* last);
   
  正常に変換された入力要素の数が変換数オブジェクトに格納されます。 変換エラーが発生しなかった場合、メンバー関数は、変換されたバイト文字列を返します。 エラーが発生した場合、バイト文字列エラー メッセージの初期化子を使用してオブジェクトが構築されていれば、メンバー関数は、バイト文字列エラー メッセージ オブジェクトを返します。 それ以外の場合、メンバー関数は、クラス [range_error](../standard-library/range-error-class.md) のオブジェクトをスローします。  
   
-##  <a name="a-namewstringconvertwidestringa--wstringconvertwidestring"></a><a name="wstring_convert__wide_string"></a>  wstring_convert::wide_string  
+##  <a name="wstring_convert__wide_string"></a>  wstring_convert::wide_string  
  ワイド文字列を表す型。  
   
 ```
@@ -223,7 +229,7 @@ typedef std::basic_string<Elem> wide_string;
 ### <a name="remarks"></a>コメント  
  この型は `std::basic_string<Elem>` の同意語です。  
   
-##  <a name="a-namewstringconvertwstringconverta--wstringconvertwstringconvert"></a><a name="wstring_convert__wstring_convert"></a>  wstring_convert::wstring_convert  
+##  <a name="wstring_convert__wstring_convert"></a>  wstring_convert::wstring_convert  
  `wstring_convert` 型のオブジェクトを構築します。  
   
 ```

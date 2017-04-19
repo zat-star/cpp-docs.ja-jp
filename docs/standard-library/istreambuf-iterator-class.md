@@ -10,9 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - istreambuf_iterator
-- std.istreambuf_iterator
-- std::istreambuf_iterator
 - streambuf/std::istreambuf_iterator
+- iterator/std::istreambuf_iterator::char_type
+- iterator/std::istreambuf_iterator::int_type
+- iterator/std::istreambuf_iterator::istream_type
+- iterator/std::istreambuf_iterator::streambuf_type
+- iterator/std::istreambuf_iterator::traits_type
+- iterator/std::istreambuf_iterator::equal
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -100,7 +104,7 @@ class istreambuf_iterator
   
  **名前空間:** std  
   
-##  <a name="a-nameistreambufiteratorchartypea--istreambufiteratorchartype"></a><a name="istreambuf_iterator__char_type"></a>  istreambuf_iterator::char_type  
+##  <a name="istreambuf_iterator__char_type"></a>  istreambuf_iterator::char_type  
  `ostreambuf_iterator` の文字型を提供する型。  
   
 ```
@@ -143,7 +147,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameistreambufiteratorequala--istreambufiteratorequal"></a><a name="istreambuf_iterator__equal"></a>  istreambuf_iterator::equal  
+##  <a name="istreambuf_iterator__equal"></a>  istreambuf_iterator::equal  
  2 つの入力ストリーム バッファー反復子の等価性をテストします。  
   
 ```
@@ -188,7 +192,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameistreambufiteratorinttypea--istreambufiteratorinttype"></a><a name="istreambuf_iterator__int_type"></a>  istreambuf_iterator::int_type  
+##  <a name="istreambuf_iterator__int_type"></a>  istreambuf_iterator::int_type  
  `istreambuf_iterator` の整数型を提供する型。  
   
 ```
@@ -217,7 +221,7 @@ The inttype1 = 100.
 *\  
 ```  
   
-##  <a name="a-nameistreambufiteratoristreamtypea--istreambufiteratoristreamtype"></a><a name="istreambuf_iterator__istream_type"></a>  istreambuf_iterator::istream_type  
+##  <a name="istreambuf_iterator__istream_type"></a>  istreambuf_iterator::istream_type  
  `istreambuf_iterator` のストリーム型を提供する型。  
   
 ```
@@ -230,7 +234,7 @@ typedef basic_istream<CharType, Traits> istream_type;
 ### <a name="example"></a>例  
   `istream_type` を宣言して使用する方法の例については、[istreambuf_iterator](#istreambuf_iterator__istreambuf_iterator) に関するセクションをご覧ください。  
   
-##  <a name="a-nameistreambufiteratoristreambufiteratora--istreambufiteratoristreambufiterator"></a><a name="istreambuf_iterator__istreambuf_iterator"></a>  istreambuf_iterator::istreambuf_iterator  
+##  <a name="istreambuf_iterator__istreambuf_iterator"></a>  istreambuf_iterator::istreambuf_iterator  
  入力ストリームから文字を読み取るために初期化される istreambuf_iterator を構築します。  
   
 ```
@@ -280,7 +284,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameistreambufiteratoroperatorstara--istreambufiteratoroperator"></a><a name="istreambuf_iterator__operator_star"></a>  istreambuf_iterator::operator*  
+##  <a name="istreambuf_iterator__operator_star"></a>  istreambuf_iterator::operator*  
  逆参照演算子は、ストリーム内の次の文字を返します。  
   
 ```
@@ -318,7 +322,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameistreambufiteratoroperatoraddadda--istreambufiteratoroperator"></a><a name="istreambuf_iterator__operator_add_add"></a>  istreambuf_iterator::operator++  
+##  <a name="istreambuf_iterator__operator_add_add"></a>  istreambuf_iterator::operator++  
  入力ストリームから次の文字を返すか、オブジェクトをインクリメントする前にオブジェクトをコピーして、そのコピーを返します。  
   
 ```
@@ -360,7 +364,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameistreambufiteratoroperator-gta--istreambufiteratoroperator-gt"></a><a name="istreambuf_iterator__operator-_gt_"></a>  istreambuf_iterator::operator-&gt;  
+##  <a name="istreambuf_iterator__operator-_gt_"></a>  istreambuf_iterator::operator-&gt;  
  メンバーの値 (存在する場合) を返します。  
   
 ```
@@ -370,7 +374,7 @@ const Elem* operator->() const;
 ### <a name="return-value"></a>戻り値  
  この演算子は、**&\*\*this** を返します。  
   
-##  <a name="a-nameistreambufiteratorstreambuftypea--istreambufiteratorstreambuftype"></a><a name="istreambuf_iterator__streambuf_type"></a>  istreambuf_iterator::streambuf_type  
+##  <a name="istreambuf_iterator__streambuf_type"></a>  istreambuf_iterator::streambuf_type  
  istreambuf_iterator のストリーム型を提供する型。  
   
 ```
@@ -383,7 +387,7 @@ typedef basic_streambuf<CharType, Traits> streambuf_type;
 ### <a name="example"></a>例  
   **istreambuf_type** を宣言して使用する方法の例については、[istreambuf_iterator](#istreambuf_iterator__istreambuf_iterator) に関するセクションをご覧ください。  
   
-##  <a name="a-nameistreambufiteratortraitstypea--istreambufiteratortraitstype"></a><a name="istreambuf_iterator__traits_type"></a>  istreambuf_iterator::traits_type  
+##  <a name="istreambuf_iterator__traits_type"></a>  istreambuf_iterator::traits_type  
  `istream_iterator` の文字特性型を提供する型。  
   
 ```

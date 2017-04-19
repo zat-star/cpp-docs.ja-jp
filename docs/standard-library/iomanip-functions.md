@@ -6,6 +6,18 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- iomanip/std::get_money
+- iomanip/std::get_time
+- iomanip/std::put_money
+- iomanip/std::put_time
+- iomanip/std::quoted
+- iomanip/std::resetiosflags
+- iomanip/std::setbase
+- iomanip/std::setfill
+- iomanip/std::setiosflags
+- iomanip/std::setprecision
+- iomanip/std::setw
 ms.assetid: 3ddde610-70cc-4cfa-8a89-3e83d1d356a8
 caps.latest.revision: 10
 manager: ghogen
@@ -23,7 +35,7 @@ ms.lasthandoff: 02/24/2017
 |[setbase](#setbase)|[setfill](#setfill)|[setiosflags](#setiosflags)|  
 |[setprecision](#setprecision)|[setw](#setw)|  
   
-##  <a name="a-nameiomanipgetmoneya--getmoney"></a><a name="iomanip_get_money"></a>  get_money  
+##  <a name="iomanip_get_money"></a>  get_money  
  目的の形式を使用して、ストリームから通貨値を抽出し、パラメーターの値を返します。  
   
 ```  
@@ -43,7 +55,7 @@ T7 get_money(Money& _Amount, bool _Intl);
   
  `Money` は `long double` 型であるか、`str` と同じ要素および特徴パラメーターを持つ `basic_string` のインスタンス化である必要があります。  
   
-##  <a name="a-nameiomanipgettimea--gettime"></a><a name="iomanip_get_time"></a>  get_time  
+##  <a name="iomanip_get_time"></a>  get_time  
  目的の形式を使用して、ストリームから時刻値を抽出します。 時間構造体として、パラメーターの値を返します。  
   
 ```  
@@ -61,7 +73,7 @@ T10 put_time(struct tm *_Tptr, const Elem *_Fmt);
 ### <a name="remarks"></a>コメント  
  マニピュレーターは、ストリーム `str` から抽出されたときに、時間構造体を示す `tptr` および null で終わる書式文字列の先頭を示す `fmt` を使用して、`str` に関連付けられているロケール ファセット `time_get` のメンバー関数 `get` を呼び出す `formatted input function` として動作するオブジェクトを返します。 成功した場合、この呼び出しによって、抽出された時刻フィールドに関連付けられている値が時間構造体に格納されます。 その後、マニピュレーターが `str` を返します。  
   
-##  <a name="a-nameiomanipputmoneya--putmoney"></a><a name="iomanip_put_money"></a>  put_money  
+##  <a name="iomanip_put_money"></a>  put_money  
  目的の形式を使用してストリームに金額を挿入します。  
   
 ```  
@@ -84,7 +96,7 @@ T8 put_money(const Money& _Amount, bool _Intl);
   
  `Money` は `long double` 型であるか、`str` と同じ要素および特徴パラメーターを持つ `basic_string` のインスタンス化である必要があります。  
   
-##  <a name="a-nameiomanipputtimea--puttime"></a><a name="iomanip_put_time"></a>  put_time  
+##  <a name="iomanip_put_time"></a>  put_time  
  指定された形式を使用して、時間構造体内の時刻値をストリームに書き込みます。  
   
 ```  
@@ -102,7 +114,7 @@ T10 put_time(struct tm* _Tptr, const Elem* _Fmt);
 ### <a name="remarks"></a>コメント  
  マニピュレーターは、ストリーム `str` に挿入されるときに、`formatted output function` として動作するオブジェクトを返します。 出力関数は、`str` に関連付けられているロケール ファセット `time_put` のメンバー関数 `put` を呼び出します。 出力関数は、`_Tptr` を使用して時間構造体を示し、`_Fmt` を使用して NUL で終わる書式文字列の先頭を示します。 成功した場合、この呼び出しは、書式文字列からのリテラル テキストと時間構造体からの変換された値を挿入します。 その後、マニピュレーターが `str` を返します。  
   
-##  <a name="a-namequoteda--quoted"></a><a name="quoted"></a>  quoted  
+##  <a name="quoted"></a>  quoted  
  **(C++14 の新機能)** >> 演算子と << 演算子を使用したストリームとの文字列のラウンド トリップを有効にする、便利な iostream マニピュレーター。  
   
 ```  
@@ -265,7 +277,7 @@ Press Enter to exit
   
 ```  
   
-##  <a name="a-nameresetiosflagsa--resetiosflags"></a><a name="resetiosflags"></a>  resetiosflags  
+##  <a name="resetiosflags"></a>  resetiosflags  
  指定したフラグをクリアします。  
   
 ```  
@@ -282,7 +294,7 @@ T1 resetiosflags(ios_base::fmtflags Mask);
 ### <a name="example"></a>例  
   `resetiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
   
-##  <a name="a-namesetbasea--setbase"></a><a name="setbase"></a>  setbase  
+##  <a name="setbase"></a>  setbase  
  整数の基数を設定します。  
   
 ```  
@@ -307,7 +319,7 @@ T3 setbase(int _Base);
 ### <a name="example"></a>例  
   `setbase` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
   
-##  <a name="a-namesetfilla--setfill"></a><a name="setfill"></a>  setfill  
+##  <a name="setfill"></a>  setfill  
  右揃えの表示でスペースを埋めるために使用する文字を設定します。  
   
 ```  
@@ -325,7 +337,7 @@ T4 setfill(Elem Ch);
 ### <a name="example"></a>例  
   `setfill` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
   
-##  <a name="a-namesetiosflagsa--setiosflags"></a><a name="setiosflags"></a>  setiosflags  
+##  <a name="setiosflags"></a>  setiosflags  
  指定したフラグを設定します。  
   
 ```  
@@ -342,7 +354,7 @@ T2 setiosflags(ios_base::fmtflags Mask);
 ### <a name="example"></a>例  
   `setiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
   
-##  <a name="a-namesetprecisiona--setprecision"></a><a name="setprecision"></a>  setprecision  
+##  <a name="setprecision"></a>  setprecision  
  浮動小数点値の有効桁数を設定します。  
   
 ```  
@@ -359,7 +371,7 @@ T5 setprecision(streamsize Prec);
 ### <a name="example"></a>例  
   `setprecision` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
   
-##  <a name="a-namesetwa--setw"></a><a name="setw"></a>  setw  
+##  <a name="setw"></a>  setw  
  ストリーム内の次の要素に対して表示フィールドの幅を指定します。  
   
 ```  
