@@ -30,15 +30,18 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: da3c2e6ce7247d3e8c9a401bc0a133cb8d46a970
-ms.openlocfilehash: a13be4d4d32ab0f0bc3cc7b5972e90c4493d06ff
-ms.lasthandoff: 03/15/2017
+ms.sourcegitcommit: 705a5fd040b3cba1d3e8be1ac9e2a22ef1f98eb9
+ms.openlocfilehash: 8e21a77e42a90571c73ff0f207f5d799ff722bd3
+ms.lasthandoff: 04/05/2017
 
 ---
 # <a name="visual-c-language-conformance"></a>Visual C++ 言語への準拠 
 このトピックでは、Visual Studio 2017 およびそれ以前のバージョンにおいて、Visual C++ 向けのコンパイラ機能と標準ライブラリ (STL) 機能が ISO C++03、C++11、C++14 とドラフト C++17 の言語標準にどの程度準拠しているかをまとめています。 コンパイラと STL の各機能の名前には、機能を説明する ISO C++ 標準提案書のリンクが埋め込まれています (ただし、発行時点で提案書が利用できるものに限ります)。 "サポート状況" 列には、機能のサポートが初めて搭載された Visual Studio のバージョンが記載されています。  
   
 Visual Studio 2017 で加えられた準拠の強化とその他の変更点の詳細については、「[Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md)」と「[Visual Studio 2017 の Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)」をご覧ください。 以前のバージョンにおける準拠の変更点については、[Visual C++ の変更履歴](porting/visual-cpp-change-history-2003-2015.md)に関するページと「[Visual C++ 2003 ～ 2015 の新機能](porting/visual-cpp-what-s-new-2003-through-2015.md)」をご覧ください。 C++ チームからの最新情報は、[Visual C++ チーム ブログ](http://blogs.msdn.microsoft.com/vcblog/)でご覧いただけます。  
+
+ > [!NOTE]
+ > Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
   
 ## <a name="compiler-features"></a>コンパイラ機能  
   
@@ -46,7 +49,7 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |----|---|  
 |__C++03/11 コア言語機能__|__サポート状況__|
 |&nbsp;&nbsp;その他すべて|VS 2015 <sup>[1](#note_1)</sup>|
-|&nbsp;&nbsp;名前の&2; 段階参照|いいえ|
+|&nbsp;&nbsp;名前の 2 段階参照|いいえ|
 |&nbsp;&nbsp;[N2634 式 SFINAE](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2634.html)|一部 <sup>[2](#note_2)</sup>|
 |&nbsp;&nbsp;[N1653 C99 プリプロセッサ](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1653.htm)|一部 <sup>[3](#note_3)</sup>|
 |&nbsp;&nbsp;[N1988 長整数型](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n1988.pdf)|該当なし <sup>[4](#note_4)</sup>|
@@ -228,7 +231,7 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |&nbsp;&nbsp;[N3656 make_unique()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3656.htm)|VS 2013|
 |&nbsp;&nbsp;[N3924 rand() を推奨しない](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3924.pdf)|N/A|  
   
-複数の提案書がまとめて記載されている箇所は、ある機能が報告されて標準になり、その後、その機能を強化または拡張するための提案書が&1; つ以上報告されたことを示しています。 これらの機能はまとめて実装されます。  
+複数の提案書がまとめて記載されている箇所は、ある機能が報告されて標準になり、その後、その機能を強化または拡張するための提案書が 1 つ以上報告されたことを示しています。 これらの機能はまとめて実装されます。  
   
 ### <a name="supported-values"></a>サポート状況の値  
 __いいえ__は、未実装という意味です。  
