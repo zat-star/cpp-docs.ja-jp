@@ -37,13 +37,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c4c0e4de99d0d700f04f235a4bd5f7afd83937fb
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 904069e809876beefbc05c7dc0ddb83bee8e5c94
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="c-floating-point-constants"></a>C 浮動小数点定数
-"浮動小数点定数" は符号付き実数を表す&10; 進数です。 符号付き実数の表現には、整数部分、小数部分、および指数が含まれます。 変更できない浮動小数点値を表すには、浮動小数点定数を使用します。  
+"浮動小数点定数" は符号付き実数を表す 10 進数です。 符号付き実数の表現には、整数部分、小数部分、および指数が含まれます。 変更できない浮動小数点値を表すには、浮動小数点定数を使用します。  
   
 ## <a name="syntax"></a>構文  
  *floating-point-constant*:  
@@ -59,7 +59,7 @@ ms.lasthandoff: 02/24/2017
  &nbsp;&nbsp; **E**  *sign*<sub>opt</sub> *digit-sequence*  
   
  *sign* : 次のいずれか  
- &nbsp;&nbsp; **+ –**  
+ &nbsp;&nbsp; **+ -**  
   
  *digit-sequence*:  
  &nbsp;&nbsp; *digit*  
@@ -80,7 +80,7 @@ ms.lasthandoff: 02/24/2017
 25E-4     /* =  0.0025 */  
 ```  
   
- 浮動小数点定数は、負符号 (**–**) が前にない限り、正の値です。 この場合、負符号は単項算術否定演算子として扱われます。 浮動小数点定数には、`float`、`double`、または `long double` 型があります。  
+ 浮動小数点定数は、負符号 (**-**) が前にない限り、正の値です。 この場合、負符号は単項算術否定演算子として扱われます。 浮動小数点定数には、`float`、`double`、または `long double` 型があります。  
   
  **f**、**F**、**l**、または **L** のサフィックスのない浮動小数点定数は、`double` 型を持ちます。 文字 **f** または **F** がサフィックスの場合、定数の型は `float` になります。 末尾に文字 **l** また **L** が付いている場合、`long double` 型になります。 例:  
   

@@ -1,104 +1,120 @@
 ---
 title: "文字列を数値に変換する関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apilocation: 
-  - "msvcr80.dll"
-  - "msvcr110.dll"
-  - "msvcr120.dll"
-  - "msvcr100.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr90.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_tcstoui64"
-  - "_tcstoi64"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "解析, 数値文字列"
-  - "文字列変換, 数値への"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apilocation:
+- msvcr80.dll
+- msvcr110.dll
+- msvcr120.dll
+- msvcr100.dll
+- msvcr110_clr0400.dll
+- msvcr90.dll
+apitype: DLLExport
+f1_keywords:
+- _tcstoui64
+- _tcstoi64
+dev_langs:
+- C++
+helpviewer_keywords:
+- parsing, numeric strings
+- string conversion, to numeric values
 ms.assetid: 11cbd9ce-033b-4914-bf66-029070e7e385
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 文字列を数値に変換する関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f3e38062baccecbe3b3cf5bbc9e059c1f1acae56
+ms.lasthandoff: 04/01/2017
 
--   [strtod、\_strtod\_l、wcstod、\_wcstod\_l](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md)  
+---
+# <a name="string-to-numeric-value-functions"></a>文字列を数値に変換する関数
+-   [strtod、_strtod_l、wcstod、_wcstod_l](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md)  
   
--   [strtol、wcstol、\_strtol\_l、\_wcstol\_l](../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md)  
+-   [strtol、wcstol、_strtol_l、_wcstol_l](../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md)  
   
--   [strtoul、\_strtoul\_l、wcstoul、\_wcstoul\_l](../c-runtime-library/reference/strtoul-strtoul-l-wcstoul-wcstoul-l.md)  
+-   [strtoul、_strtoul_l、wcstoul、_wcstoul_l](../c-runtime-library/reference/strtoul-strtoul-l-wcstoul-wcstoul-l.md)  
   
--   [\_strtoi64、\_wcstoi64、\_strtoi64\_l、\_wcstoi64\_l](../c-runtime-library/reference/strtoi64-wcstoi64-strtoi64-l-wcstoi64-l.md)  
+-   [_strtoi64、_wcstoi64、_strtoi64_l、_wcstoi64_l](../c-runtime-library/reference/strtoi64-wcstoi64-strtoi64-l-wcstoi64-l.md)  
   
--   [\_strtoui64、\_wcstoui64、\_strtoui64\_l、\_wcstoui64\_l](../c-runtime-library/reference/strtoui64-wcstoui64-strtoui64-l-wcstoui64-l.md)  
+-   [_strtoui64、_wcstoui64、_strtoui64_l、_wcstoui64_l](../c-runtime-library/reference/strtoui64-wcstoui64-strtoui64-l-wcstoui64-l.md)  
   
-## 解説  
- **strtod** ファミリの各関数は、null で終わる文字列を数値に変換します。  使用できる機能を次の表に示します。  
+## <a name="remarks"></a>コメント  
+ **strtod** ファミリの各関数は、NULL 終了文字列を数値に変換します。 利用できる関数を次の表に示します。  
   
 |関数|説明|  
-|--------|--------|  
-|`strtod`|倍精度浮動小数点値に変換する文字列|  
-|`strtol`|長整数に変換する文字列|  
-|`strtoul`|unsigned long 型の整数に変換する文字列|  
-|`_strtoi64`|`__int64` の 64 ビット整数に変換する文字列|  
-|`_strtoui64`|`__int64` の符号なしな 64 ビット整数に変換する文字列|  
+|--------------|-----------------|  
+|`strtod`|文字列を倍精度浮動小数点値に変換する|  
+|`strtol`|文字列を長整数型に変換する|  
+|`strtoul`|文字列を符号なし長整数型に変換する|  
+|`_strtoi64`|文字列を 64 ビット `__int64` 整数に変換する|  
+|`_strtoui64`|文字列を符号なし 64 ビット `__int64` 整数に変換する|  
   
- `wcstod`、`wcstol`、`wcstoul`と `_wcstoi64` は `strtod`、`strtol`、`strtoul`と `_strtoi64`のワイド文字バージョンであり、それぞれです。  これらのワイド文字単位の各関数の文字列引数はワイド文字列で、; 各関数は single\-byte–character の対応とは別の方法で同様に動作します。  
+ `wcstod`、`wcstol`、`wcstoul`、`_wcstoi64` は、それぞれ、`strtod`、`strtol`、`strtoul`、`_strtoi64` のワイド文字バージョンです。 これらのワイド文字関数の文字列引数はワイド文字です。各関数は、それが 1 バイト文字列の場合と同様に動作します。  
   
- `strtod` 関数は 2 個の引数を受け取ります。: 1 番目の変換プロセスの最後の文字を入力文字列と 2 番目のポインターです。  `strtol`、`strtoul`、**\_strtoi64** と **\_strtoui64** は基数として変換プロセスで使用する 3 番目の引数を受け取ります。  
+ `strtod` 関数は 2 つの引数を取ります。1 つは入力文字列です。もう 1 つは文字のポインターであり、変換プロセスを終わらせます。 `strtol`、`strtoul`、**_strtoi64**、**_strtoui64** は変換プロセスで利用する基数として 3 つ目の引数を取ります。  
   
- 入力文字列は、指定された型の数値として解釈できる文字シーケンスです。  各関数は、数値の一部として認識できない最初の文字から文字列を読み取ることを停止します。  数値として認識できない最初の文字が、終端の NULL 文字の場合もあります。  `strtol`、`strtoul`、`_strtoi64`と `_strtoui64`の場合、この終端文字は、大きい最初の数字ユーザー指定の基数に以上であるでもかまいません。  
+ 入力文字列は、指定された型の数値として解釈できる文字シーケンスです。 各関数は、数値の一部として認識できない文字を最初に見つけた時点で、文字列の読み取りを終了します。 数値として認識できない最初の文字が、終端の NULL 文字の場合もあります。 `strtol`、`strtoul`、`_strtoi64`、`_strtoui64` の場合、この終端文字は、ユーザーが指定した基数と等しいか、それより大きい最初の数字になることもあります。  
   
- 変換終了文字へのユーザー指定のポインターがコール タイムの **NULL** に設定し、スキャンを停止した文字へのポインターは、代わりに格納されます。  変換 \(有効な数字が見つからなかった場合、または無効なベースが指定されました\) 実行できない場合は、文字列ポインターの値は、そのアドレスに格納されます。  
+ 変換終了文字へのユーザー指定ポインターが呼び出し時に **NULL** に設定されない場合、スキャンを停止した文字のポインターがそこに代わりに保存されます。 変換できなかった場合 (有効な数字が見つからなかったか、無効な基数を指定した場合) は、文字列ポインターの値がそのアドレスに保存されます。  
   
- `strtod` のフォームは、次の文字列を想定する:  
+ `strtod` は、次の形式の文字列を要求します。  
   
- *null*\[\] \[\]*\)* `digits`\[\] \[\] \#\#\#.`digits`\[{**d** &#124; **D** &#124; **e** &#124; **E**} \[\]*\)* `digits`\]  
+ [*whitespace*] [*sign*] [`digits`] [**.**`digits`] [ {**d** &#124; **D** &#124; **e** &#124; **E**}[*sign*]`digits`]  
   
- *空白には*、空白またはタブで無視される構成される可能性がある; *符号は* \(**\+**\) または描画できます**–** \(\) ; `digits` とは、一つ以上の 10 進数です。  小数点文字の前に数字がない場合は、少なくとも 1 つの数字が小数点文字の後に必要です。  10 進数の後には指数部の開始文字 \(**d**、**D**、**e**、または **E**\) と符号付き整数からオプションで構成される指数を配置できます。  指数部と小数点文字のいずれも指定されない場合は、文字列の最後の数字の後に小数点文字が続くと想定されます。  この形式に一致しない文字を見つけるとスキャンを停止します。  
+ *空白文字*はスペースやタブで構成され、無視されます。*符号*はプラス (**+**) またはマイナス (**-**) のいずれかで、`digits` は 1 つまたは複数の 10 進数字です。 小数点文字の前に数字がない場合は、少なくとも 1 つの数字が小数点文字の後に必要です。 10 進数の後には指数部を指定できます。指数部は、指数部の開始文字 (**d**、**D**、**e**、**E**) および必要に応じて符号付き整数で構成されます。 指数部と小数点文字のいずれも指定されない場合は、文字列の最後の数字の後に小数点文字が続くと想定されます。 この形式に一致しない文字を見つけるとスキャンを停止します。  
   
- `strtol`、`strtoul`、`_strtoi64`と `_strtoui64` 関数は次のフォームの文字列を想定する:  
+ `strtol`、`strtoul`、`_strtoi64`、`_strtoui64` 関数は、次の形式の文字列を要求します。  
   
- *null*\[\] \[{**\+** &#124; **–**} \[\]**0** \[{ **x** &#124; **X** } \[\]\]`digits`\]  
+ [*whitespace*] [{**+** &#124; **-**}] [**0** [{ **x** &#124; **X** }]] [`digits`]  
   
- 基本引数を 2 に、36 より大きい場合、数値のベースとして使用されます。  0 の場合ベースを決定するために、変換終了ポインターによって参照される最初の文字が使用されます。  最初の文字が 0、2 文字目が X または x でない場合は文字列の長さが 8;整数として解釈されます。それ以外の場合は 10 進数として解釈されます。  最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。  最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。  「z」の文字「a」 \(または「Z "、「A」\) 値 10 から 35;が割り当てられます。代入された値である *ベース* 未満文字だけです。  `strtoul` と `_strtoui64` \(**–**の\) をプレフィックスと**\+** \(\) または描画 a を使用して; 先頭の記号は、戻り値が拒否されることを示します。  
+ 基数引数が 2 から 36 の間の場合、数値の基数として使用されます。 0 の場合、変換終了ポインターが参照する最初の文字で基数を決定します。 最初の文字が 0 で、2 番目の文字が 'x' または 'X' 以外の場合、文字列は 8 進数と解釈されます。それ以外の場合、10 進数と解釈されます。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。 最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。 'a' ～ 'z' (または 'A' ～ 'Z') の文字には、10 ～ 35 の値が割り当てられています。*基数*よりも小さい値が割り当てられている文字のみ許可されます。 `strtoul` と `_strtoui64` では正符号 (**+**) または負符号 (**-**) のプレフィックスを使用できます。先頭の負符号は戻り値の符号が反転されることを表します。  
   
- 出力値は、ロケールの `LC_NUMERIC` カテゴリの設定で決まります。詳細については、「[setlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。  **\_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**\_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
+ 出力値は、ロケールの `LC_NUMERIC` カテゴリの設定に影響されます。詳細については、「[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
   
- これらの関数によって返される値がオーバーフローまたはアンダーフローが発生するか、変換が有効な場合、特殊な値は次のように戻ります:  
+ これらの関数により返される値がオーバーフローやアンダーフローを引き起こすようなとき、あるいは変換できないとき、次のように特殊ケースの値が返されます。  
   
-|関数|状態|返される値|  
-|--------|--------|-----------|  
-|`strtod`|オーバーフロー|\+\/\- `HUGE_VAL`|  
-|`strtod`|アンダーフローまたは変換できません。|0|  
-|`strtol`|\+ オーバーフロー|**LONG\_MAX**|  
-|`strtol`|\-オーバーフロー|**LONG\_MIN**|  
-|`strtol`|アンダーフローまたは変換できません。|0|  
-|`_strtoi64`|\+ オーバーフロー|**\_I64\_MAX**|  
-|`_strtoi64`|\-オーバーフロー|**\_I64\_MIN**|  
-|`_strtoi64`|変換できません。|0|  
-|`_strtoui64`|オーバーフロー|**\_UI64\_MAX**|  
-|`_strtoui64`|変換できません。|0|  
+|関数|条件|返される値|  
+|--------------|---------------|--------------------|  
+|`strtod`|オーバーフロー|+/- `HUGE_VAL`|  
+|`strtod`|アンダーフローまたは変換なし|0|  
+|`strtol`|+ オーバーフロー|**LONG_MAX**|  
+|`strtol`|- オーバーフロー|**LONG_MIN**|  
+|`strtol`|アンダーフローまたは変換なし|0|  
+|`_strtoi64`|+ オーバーフロー|**_I64_MAX**|  
+|`_strtoi64`|- オーバーフロー|**_I64_MIN**|  
+|`_strtoi64`|変換なし|0|  
+|`_strtoui64`|オーバーフロー|**_UI64_MAX**|  
+|`_strtoui64`|変換なし|0|  
   
- **\_I64\_MAX**、\_**I64\_MIN**、 **\_UI64\_MAX** は LIMITS.H.で定義されます。  
+ **_I64_MAX**、_**I64_MIN**、**_UI64_MAX** は LIMITS.H で定義されます。  
   
- `wcstod`、`wcstol`、`wcstoul`、`_wcstoi64`と `_wcstoui64` は `strtod`、`strtol`、`strtoul`、`_strtoi64`と `_strtoui64`のワイド文字バージョンであり、それぞれ;です これらのワイド文字単位の各関数への変換終了引数へのポインターはワイド文字列です。  それ以外の場合は、次のワイド文字単位の各関数は single\-byte–character の対応と同様に動作します。  
+ `wcstod`、`wcstol`、`wcstoul`、`_wcstoi64`、`_wcstoui64` はそれぞれ、`strtod`、`strtol`、`strtoul`、`_strtoi64`、`_strtoui64` のワイド文字バージョンです。これらのワイド文字関数の変換終了引数へのポインターはワイド文字です。 ワイド文字関数は、それが 1 バイト文字の場合と同様に動作します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../c-runtime-library/data-conversion.md)   
  [ロケール](../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [浮動小数点サポート](../c-runtime-library/floating-point-support.md)   
- [atof、\_atof\_l、\_wtof、\_wtof\_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)
+ [atof、_atof_l、_wtof、_wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)

@@ -30,9 +30,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: be2c2f555ab004cbb48310d5ad4a6897bd15d408
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 0892c38d6448ed28a309c8c9864d78dc9aeb4a28
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="reading-ranges"></a>範囲の読み取り
@@ -44,7 +44,7 @@ ms.lasthandoff: 02/24/2017
 fscanf( fileptr, "%[A-Z]", strptr);  
 ```  
   
- `strptr` が指す文字列に A ～ Z の範囲の任意の文字数を読み取ります。  
+ `strptr` が指す文字列に A から Z の範囲の任意の文字数を読み取ります。  
   
 ## <a name="see-also"></a>関連項目  
  [ライブラリ関数](../c-language/library-functions.md)

@@ -1,40 +1,57 @@
 ---
 title: "テキスト モードとバイナリ モードの Unicode ストリーム入出力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.io"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "I/O [CRT], Unicode ストリーム"
-  - "ストリーム入出力ルーチン"
-  - "Unicode ストリーム入出力"
-  - "Unicode, ストリーム入出力ルーチン"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.io
+dev_langs:
+- C++
+helpviewer_keywords:
+- stream I/O routines
+- I/O [CRT], unicode stream
+- Unicode, stream I/O routines
+- Unicode stream I/O
 ms.assetid: 68be0c3e-a9e6-4fd5-b34a-1b5207f0e7d6
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# テキスト モードとバイナリ モードの Unicode ストリーム入出力
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6a4658396f5045df17fbf75daac5bbf8263ed60c
+ms.lasthandoff: 04/01/2017
 
-Unicode のストリーム I\/O ルーチン \(`fwprintf`、`fwscanf`、`fgetwc`、`fputwc`、`fgetws`、または `fputws`など\) テキスト モード \(既定\) で開いているファイルを操作すると、2 種類の文字変換:が行われます。  
+---
+# <a name="unicode-stream-io-in-text-and-binary-modes"></a>テキスト モードとバイナリ モードの Unicode ストリーム入出力
+Unicode ストリームの入出力ルーチン (`fwprintf`、`fwscanf`、`fgetwc`、`fputwc`、`fgetws`、または `fputws` など) がテキスト モード (既定) で開かれたファイルを操作すると、次の 2 種類の文字変換が行われます。  
   
--   UNICODE に MBCS または MBCS に UNICODE の変換。  Unicode ストリーム I\/O 関数がテキスト モードで実行するときは、ソースまたはターゲットのストリームはマルチバイト文字のシーケンスと見なされます。  このため、Unicode ストリーム入力関数はマルチバイト文字をワイド文字に変換し、`mbtowc` 関数を呼び出した場合と同様の効果を得ます。  同様の理由で、Unicode ストリーム出力関数は、`wctomb` 関数が呼び出されたかのように、ワイド文字をマルチバイト文字に変換します。  
+-   Unicode からマルチバイト文字セット (MBCS: Multibyte Character Set) への変換、または MBCS から Unicode への変換。 Unicode ストリーム入出力関数をテキスト モードで実行すると、入力ストリームまたは出力ストリームはマルチバイト文字のシーケンスであると想定されます。 このため、Unicode ストリーム入力関数はマルチバイト文字をワイド文字に変換し、`mbtowc` 関数を呼び出した場合と同様の効果を得ます。 同様の理由で、Unicode ストリーム出力関数は、 `wctomb` 関数が呼び出されたかのように、ワイド文字をマルチバイト文字に変換します。  
   
--   –復帰とライン フィード \(CR\-LF\) に変換します。  この変換は MBCS – Unicode 変換の前に \(Unicode ストリームの入力関数の場合\) – Unicode と MBCS の変換後に発生します \(Unicode ストリームの出力関数の場合\)。  入力中、各–復帰とライン フィードのペアは、単一のライン フィードの文字に変換されます。  出力中、各ライン フィードの文字は–復帰とライン フィードの組み合わせに変換されます。  
+-   キャリッジ リターンとラインフィード (CR-LF: Carriage return - linefeed) の変換。 CR-LF 変換は、MBCS から Unicode への変換の前 (Unicode ストリーム入力関数の場合) と Unicode から MBCS への変換の後 (Unicode ストリーム出力関数の場合) に行われます。 入力時には、それぞれの CR-LF シーケンスが 1 つのラインフィード文字に変換されます。 出力時には、それぞれのラインフィード文字が CR-LF シーケンスに変換されます。  
   
- ただし、Unicode ストリーム I\/O 関数がバイナリ モードで実行すると、ファイルは Unicode であると見なされ、CR\-LF の変換または文字変換は入力または出力中に発生しません。  \_setmode \(\_fileno \(stdin\)、\_O\_BINARY\) ;を使用します。手順正しく UNICODE のテキスト ファイルの wcin を使用します。  
+ ただし、Unicode ストリーム入出力関数をバイナリ モードで実行すると、ファイルが Unicode であると想定されるため、入出力時に CR-LF 変換も文字変換も行われません。 Unicode テキスト ファイルで wcin オブジェクトを正しく使用するための命令 _setmode( _fileno( stdin ), _O_BINARY ) を使用してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)   
- [入出力](../Topic/Input%20and%20Output.md)
+ [入出力](../c-runtime-library/input-and-output.md)

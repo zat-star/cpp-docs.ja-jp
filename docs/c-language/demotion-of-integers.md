@@ -1,27 +1,43 @@
 ---
-title: "整数の下位変換 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "整数の降格"
+title: "Demotion of Integers (整数の下位変換) | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- demoting integers
 ms.assetid: 51fb3654-60b0-4de7-80eb-bd910086c18a
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 整数の下位変換
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 468b88ccb64c06e64e9b234188295b3fcc148b1f
+ms.lasthandoff: 04/01/2017
 
+---
+# <a name="demotion-of-integers"></a>Demotion of Integers (整数の下位変換)
 **ANSI 3.2.1.2** 値を表すことができない場合に、整数を短い符号付き整数に変換したか、符号なし整数を同じ長さの符号付き整数に変換したときの結果  
   
  **long** 整数が **short** にキャストされるか、**short** が `char` にキャストされるときには、下位バイトが保持されます。  
@@ -40,7 +56,7 @@ char y = (char)0x1234;
   
  では、値 0x34 が `y` に代入されます。  
   
- 符号付き変数が符号なしに変換されるときと、その逆で、ビット パターンは変わりません。  たとえば、–2 \(0xFE\) を符号なしの値にキャストすると、254 \(これも 0xFE\) になります。  
+ 符号付き変数が符号なしに変換されるときと、その逆で、ビット パターンは変わりません。 たとえば、-2 (0xFE) を符号なしの値にキャストすると、254 (これも 0xFE) になります。  
   
-## 参照  
- [整数](../Topic/Integers.md)
+## <a name="see-also"></a>関連項目  
+ [整数](../c-language/integers.md)

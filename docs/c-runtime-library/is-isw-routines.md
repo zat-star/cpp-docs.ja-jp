@@ -1,78 +1,94 @@
 ---
 title: "is、isw 系ルーチン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apilocation: 
-  - "msvcr110_clr0400.dll"
-  - "msvcr90.dll"
-  - "msvcr80.dll"
-  - "msvcr100.dll"
-  - "msvcr110.dll"
-  - "msvcr120.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "isw"
-  - "is"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "is ルーチン"
-  - "isw ルーチン"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apilocation:
+- msvcr110_clr0400.dll
+- msvcr90.dll
+- msvcr80.dll
+- msvcr100.dll
+- msvcr110.dll
+- msvcr120.dll
+apitype: DLLExport
+f1_keywords:
+- isw
+- is
+dev_langs:
+- C++
+helpviewer_keywords:
+- is routines
+- isw routines
 ms.assetid: 1e171a57-2cde-41f6-a75f-a080fa3c12e5
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# is、isw 系ルーチン
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: d4f4902c29b64be4c2e032571face5f583c62734
+ms.lasthandoff: 04/01/2017
 
+---
+# <a name="is-isw-routines"></a>is、isw 系ルーチン
 |||  
 |-|-|  
-|[isalnum、iswalnum、\_isalnum\_l、\_iswalnum\_l](../Topic/isalnum,%20iswalnum,%20_isalnum_l,%20_iswalnum_l.md)|[isgraph、iswgraph、\_isgraph\_l、\_iswgraph\_l](../Topic/isgraph,%20iswgraph,%20_isgraph_l,%20_iswgraph_l.md)|  
-|[isalpha、iswalpha、\_isalpha\_l、\_iswalpha\_l](../Topic/isalpha,%20iswalpha,%20_isalpha_l,%20_iswalpha_l.md)|[isleadbyte、\_isleadbyte\_l](../c-runtime-library/reference/isleadbyte-isleadbyte-l.md)|  
-|[isascii、\_ \_isascii、iswascii](../c-runtime-library/reference/isascii-isascii-iswascii.md)|[islower、iswlower、\_islower\_l、\_iswlower\_l](../Topic/islower,%20iswlower,%20_islower_l,%20_iswlower_l.md)|  
-|[isblank、iswblank、\_isblank\_l、\_iswblank\_l](../c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l.md)|[isprint、iswprint、\_isprint\_l、\_iswprint\_l](../c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l.md)|  
-|[iscntrl、iswcntrl、\_iscntrl\_l、\_iswcntrl\_l](../c-runtime-library/reference/iscntrl-iswcntrl-iscntrl-l-iswcntrl-l.md)|[ispunct、iswpunct、\_ispunct\_l、\_iswpunct\_l](../c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l.md)|  
-|[iscsym、iscsymf、\_ \_iscsym、\_ \_iswcsym、\_ \_iscsymf、\_ \_iswcsymf、\_iscsym\_l、\_iswcsym\_l、\_iscsymf\_l、\_iswcsymf\_l](../c-runtime-library/reference/iscsym-functions.md)|[isspace、iswspace、\_isspace\_l、\_iswspace\_l](../c-runtime-library/reference/isspace-iswspace-isspace-l-iswspace-l.md)|  
-|[\_isctype、iswctype、\_isctype\_l、\_iswctype\_l](../Topic/_isctype,%20iswctype,%20_isctype_l,%20_iswctype_l.md)|[isupper、\_isupper\_l、iswupper、\_iswupper\_l](../Topic/isupper,%20_isupper_l,%20iswupper,%20_iswupper_l.md)|  
-|[isdigit、iswdigit、\_isdigit\_l、\_iswdigit\_l](../c-runtime-library/reference/isdigit-iswdigit-isdigit-l-iswdigit-l.md)|[isxdigit、iswxdigit、\_isxdigit\_l、\_iswxdigit\_l](../c-runtime-library/reference/isxdigit-iswxdigit-isxdigit-l-iswxdigit-l.md)|  
+|[isalnum、iswalnum、_isalnum_l、_iswalnum_l](../c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l.md)|[isgraph、iswgraph、_isgraph_l、_iswgraph_l](../c-runtime-library/reference/isgraph-iswgraph-isgraph-l-iswgraph-l.md)|  
+|[isalpha、iswalpha、_isalpha_l、_iswalpha_l](../c-runtime-library/reference/isalpha-iswalpha-isalpha-l-iswalpha-l.md)|[isleadbyte、_isleadbyte_l](../c-runtime-library/reference/isleadbyte-isleadbyte-l.md)|  
+|[isascii、__isascii、iswascii](../c-runtime-library/reference/isascii-isascii-iswascii.md)|[islower、iswlower、_islower_l、_iswlower_l](../c-runtime-library/reference/islower-iswlower-islower-l-iswlower-l.md)|  
+|[isblank、iswblank、_isblank_l、_iswblank_l](../c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l.md)|[isprint、iswprint、_isprint_l、_iswprint_l](../c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l.md)|  
+|[iscntrl、iswcntrl、_iscntrl_l、_iswcntrl_l](../c-runtime-library/reference/iscntrl-iswcntrl-iscntrl-l-iswcntrl-l.md)|[ispunct、iswpunct、_ispunct_l、_iswpunct_l](../c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l.md)|  
+|[iscsym、iscsymf、__iscsym、\__iswcsym、\__iscsymf、\__iswcsymf、_iscsym_l、_iswcsym_l、_iscsymf_l、_iswcsymf_l](../c-runtime-library/reference/iscsym-functions.md)|[isspace、iswspace、_isspace_l、_iswspace_l](../c-runtime-library/reference/isspace-iswspace-isspace-l-iswspace-l.md)|  
+|[_isctype、iswctype、_isctype_l、_iswctype_l](../c-runtime-library/reference/isctype-iswctype-isctype-l-iswctype-l.md)|[isupper、_isupper_l、iswupper、_iswupper_l](../c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l.md)|  
+|[isdigit、iswdigit、_isdigit_l、_iswdigit_l](../c-runtime-library/reference/isdigit-iswdigit-isdigit-l-iswdigit-l.md)|[isxdigit、iswxdigit、_isxdigit_l、_iswxdigit_l](../c-runtime-library/reference/isxdigit-iswxdigit-isxdigit-l-iswxdigit-l.md)|  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  これらのルーチンは、文字が指定条件を満たしているかどうかをテストします。  
   
- **is** ルーチンは、–1 \(`EOF`\) から **UCHAR\_MAX** \(0xFF\) までの任意の整数の引数に対して意味のある結果を生成します。  `int` 型の引数が必要です。  
+ **is`EOF` ルーチンは、-1 (**) から **UCHAR_MAX** (0xFF) までの任意の整数の引数に対して意味のある結果を生成します。 `int` 型の引数が必要です。  
   
 > [!CAUTION]
->  **is** ルーチンで `char` 型の引数を渡すと、予測できない結果が発生する可能性があります。  0x7F よりも大きい値を持つ `char` 型の SBCS または MBCS の 1 バイト文字は負になります。  `char` が渡されると、コンパイラはその値を符号付き `int` または符号付き **long** に変換することがあります。  この値は、コンパイラによって符号拡張されることがあり、予想外の結果になることがあります。  
+>  **is** ルーチンで `char` 型の引数を渡すと、予測できない結果が発生する可能性があります。 0x7F よりも大きい値を持つ `char` 型の SBCS または MBCS の 1 バイト文字は負になります。 `char` が渡されると、コンパイラはその値を符号付き `int` または符号付き **long** に変換することがあります。 この値は、コンパイラによって符号拡張されることがあり、予想外の結果になることがあります。  
   
- **isw** ルーチンは、\-1 \(**WEOF**\) から 0xFFFF までの任意の整数値に対して意味のある結果を生成します。  **wint\_t** データ型は、WCHAR.H で **unsigned short** として定義されており、任意のワイド文字またはワイド文字のファイル終端 \(**WEOF**\) 値を保持できます。  
+ **isw** ルーチンは、-1 (**WEOF**) から 0xFFFF までの任意の整数値に対して意味のある結果を生成します。 **wint_t** データ型は、WCHAR.H で **unsigned short** として定義されており、任意のワイド文字またはワイド文字のファイル終端 (**WEOF**) 値を保持できます。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。  **\_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**\_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
   
  "C" ロケールでは、**is** ルーチンのテスト条件は次のようになります。  
   
  `isalnum`  
- 英数字 \(A ～ Z、a ～ z、または 0 ～ 9\)。  
+ 英数字 (A - Z、a - z、または 0 - 9)。  
   
  `isalpha`  
- 英字 \(A ～ Z または a ～ z\)。  
+ 英字 (A - Z または a - z)。  
   
  `__isascii`  
- ASCII 文字 \(0x00 ～ 0x7F\)。  
+ ASCII 文字 (0x00 - 0x7F)。  
   
  `isblank`  
- 水平タブまたは空白文字 \(0x09 または 0x20\)。  
+ 水平タブまたは空白文字 (0x09 または 0x20)。  
   
  `iscntrl`  
- 制御文字 \(0x00 ～ 0x1F または 0x7F\)。  
+ 制御文字 (0x00 - 0x1F または 0x7F)。  
   
  `__iscsym`  
  文字、アンダースコア、または数字。  
@@ -81,99 +97,99 @@ caps.handback.revision: 13
  文字またはアンダースコア。  
   
  **isdigit**  
- 10 進数 \(0 ～ 9\)。  
+ 10 進数 (0 - 9)。  
   
  `isgraph`  
- 空白 \( \) を除く印刷できる文字。  
+ 空白 ( ) を除く印刷できる文字。  
   
  `islower`  
- 小文字 \(a ～ z\)。  
+ 小文字 (a - z)。  
   
  `isprint`  
- 空白を含む印刷できる文字 \(0x20 ～ 0x7E\)。  
+ 空白を含む印刷できる文字 (0x20 - 0x7E)。  
   
  `ispunct`  
  区切り記号。  
   
  `isspace`  
- 空白文字 \(0x09 ～ 0x0D または 0x20\)。  
+ 空白文字 (0x09 - 0x0D または 0x20)。  
   
  `isupper`  
- 大文字 \(A ～ Z\)。  
+ 大文字 (A - Z)。  
   
  `isxdigit`  
- 16 進数字 \(A ～ F、a ～ f、または 0 ～ 9\)。  
+ 16 進数字 (A - F、a - f、または 0 - 9)。  
   
- **isw** ルーチンでは、指定条件に基づくテストの結果は、ロケールに依存しません。  **isw** 関数のテスト条件は次のとおりです。  
+ **isw** ルーチンでは、指定条件に基づくテストの結果は、ロケールに依存しません。 **isw** 関数のテスト条件は次のとおりです。  
   
  `iswalnum`  
  `iswalpha` または `iswdigit`。  
   
  `iswalpha`  
- `iswcntrl`、`iswdigit`、`iswpunct`、または `iswspace` がいずれも 0 になる実装定義セットに含まれる任意のワイド文字。  `iswalpha` は、`iswupper` または `iswlower` が 0 以外の値になるワイド文字に対してのみ、0 以外の値を返します。  
+ `iswcntrl`、`iswdigit`、`iswpunct`、または `iswspace` がいずれも 0 になる実装定義セットに含まれる任意のワイド文字。 `iswalpha` は、`iswupper` または `iswlower` が 0 以外の値になるワイド文字に対してのみ、0 以外の値を返します。  
   
  `iswascii`  
- ASCII 文字のワイド文字表現 \(0x0000 ～ 0x007F\)。  
+ ASCII 文字のワイド文字表現 (0x0000 - 0x007F)。  
   
  `iswblank`  
- 標準の空白文字に対応するワイド文字、または `iswalnum` が false になるワイド文字の実装定義セットに含まれるワイド文字。  標準の空白文字は空白 \(L' '\) と水平タブ \(L'\\t'\) です。  
+ 標準の空白文字に対応するワイド文字、または `iswalnum` が false になるワイド文字の実装定義セットに含まれるワイド文字。 標準の空白文字は空白 (L' ') と水平タブ (L'\t') です。  
   
  `iswcntrl`  
  制御ワイド文字。  
   
- **\_\_iswcsym**  
- **isalnum** が true になる任意のワイド文字または '\_' 文字。  
+ **__iswcsym**  
+ **isalnum**が true になる任意のワイド文字または '_' 文字。  
   
- **\_\_iswcsymf**  
- `iswalpha` が true である任意のワイド文字または '\_' 文字。  
+ **__iswcsymf**  
+ `iswalpha` が true である任意のワイド文字または '_' 文字。  
   
  `iswctype`  
- 文字には、`desc` 引数で指定されたプロパティがあります。  `iswctype` の `desc` 引数の有効な値には、次の表に示すようにそれぞれ同等のワイド文字分類ルーチンがあります。  
+ 文字には、`desc` 引数で指定されたプロパティがあります。 `desc` の `iswctype` 引数の有効な値には、次の表に示すようにそれぞれ同等のワイド文字分類ルーチンがあります。  
   
- **iswctype\(**   
- ***c, desc* \) と同等のその他の isw テスト ルーチン**  
+ **iswctype(**   
+ ***c, desc* ) と同等のその他の isw テスト ルーチン**  
   
-|*desc* 引数の値|iswctype\( *c, desc* \) と同等のルーチン|  
-|-----------------|--------------------------------------|  
-|**\_ALPHA**|**iswalpha\(** `c` **\)**|  
-|**\_ALPHA** &#124; **\_DIGIT**|**iswalnum\(** `c` **\)**|  
-|**\_BLANK**|**iswblank\(** `c` **\)**|  
-|**\_CONTROL**|**iswcntrl\(** `c` **\)**|  
-|**\_DIGIT**|**iswdigit\(** `c` **\)**|  
-|**\_ALPHA** &#124; **\_DIGIT** &#124; **\_PUNCT**|**iswgraph\(** `c` **\)**|  
-|**\_LOWER**|**iswlower\(** `c` **\)**|  
-|**\_ALPHA** &#124; **\_BLANK** &#124; **\_DIGIT** &#124; **\_PUNCT**|**iswprint\(** `c` **\)**|  
-|**\_PUNCT**|**iswpunct\(** `c` **\)**|  
-|**\_BLANK**|**iswblank\(** `c` **\)**|  
-|**\_SPACE**|**iswspace\(** `c` **\)**|  
-|**\_UPPER**|**iswupper\(** `c` **\)**|  
-|**\_HEX**|**iswxdigit\(** `c` **\)**|  
+|*desc* 引数の値|iswctype( *c, desc* ) と同等|  
+|------------------------------|----------------------------------------|  
+|**_ALPHA**|**iswalpha(** `c` **)**|  
+|**_ALPHA** &#124; **_DIGIT**|**iswalnum(** `c` **)**|  
+|**_BLANK**|**iswblank(** `c` **)**|  
+|**_CONTROL**|**iswcntrl(** `c` **)**|  
+|**_DIGIT**|**iswdigit(** `c` **)**|  
+|**_ALPHA** &#124; **_DIGIT** &#124; **_PUNCT**|**iswgraph(** `c` **)**|  
+|**_LOWER**|**iswlower(** `c` **)**|  
+|**_ALPHA** &#124; **_BLANK** &#124; **_DIGIT** &#124; **_PUNCT**|**iswprint(** `c` **)**|  
+|**_PUNCT**|**iswpunct(** `c` **)**|  
+|**_BLANK**|**iswblank(** `c` **)**|  
+|**_SPACE**|**iswspace(** `c` **)**|  
+|**_UPPER**|**iswupper(** `c` **)**|  
+|**_HEX**|**iswxdigit(** `c` **)**|  
   
  `iswdigit`  
  10 進数字に対応するワイド文字。  
   
  `iswgraph`  
- 空白ワイド文字 \(L' '\) を除く印刷できるワイド文字。  
+ 空白ワイド文字 (L' ') を除く印刷できるワイド文字。  
   
  `iswlower`  
- 小文字、または `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` がいずれも 0 になるワイド文字の実装定義セットに含まれる文字。  `iswlower` は、小文字に対応するワイド文字に対してのみ、0 以外の値を返します。  
+ 小文字、または `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` がいずれも 0 になるワイド文字の実装定義セットに含まれる文字。 `iswlower` は、小文字に対応するワイド文字に対してのみ、0 以外の値を返します。  
   
  `iswprint`  
- 空白ワイド文字 \(L' '\) を含む印刷できるワイド文字。  
+ 空白ワイド文字 (L' ') を含む印刷できるワイド文字。  
   
  `iswpunct`  
- 空白ワイド文字 \(L' '\) および `iswalnum` が 0 以外になるワイド文字を除く、印刷できるワイド文字。  
+ 空白ワイド文字 (L' ') および `iswalnum` が 0 以外になるワイド文字を除く、印刷できるワイド文字。  
   
  `iswspace`  
- 標準の空白文字に対応するワイド文字、または `iswalnum` が false になるワイド文字の実装定義セットに含まれるワイド文字。  標準の空白文字は、空白 \(L' '\)、フォーム フィード \(L'\\f'\)、改行 \(L'\\n'\)、復帰 \(L'\\r'\)、水平タブ \(L'\\t'\)、および垂直タブ \(L'\\v'\) です。  
+ 標準の空白文字に対応するワイド文字、または `iswalnum` が false になるワイド文字の実装定義セットに含まれるワイド文字。 標準の空白文字は、空白 (L' ')、フォーム フィード (L'\f')、改行 (L'\n')、復帰 (L'\r')、水平タブ (L'\t')、および垂直タブ (L'\v') です。  
   
  `iswupper`  
- 大文字のワイド文字、または `iswcntrl`、`iswdigit`、`iswpunct`、または `iswspace` がいずれも 0 になるワイド文字の実装定義セットに含まれるワイド文字。  `iswupper` は、大文字に対応するワイド文字に対してのみ、0 以外の値を返します。  
+ 大文字のワイド文字、または `iswcntrl`、`iswdigit`、`iswpunct`、または `iswspace` がいずれも 0 になるワイド文字の実装定義セットに含まれるワイド文字。 `iswupper` は、大文字に対応するワイド文字に対してのみ、0 以外の値を返します。  
   
  `iswxdigit`  
  16 進数字に対応するワイド文字。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_isfam.c  
@@ -211,7 +227,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 00            AS  C                              .  
@@ -344,9 +360,9 @@ int main( void )
 7f            AS  C                              .  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [文字分類](../c-runtime-library/character-classification.md)   
  [ロケール](../c-runtime-library/locale.md)   
- [setlocale、\_wsetlocale](../Topic/setlocale,%20_wsetlocale.md)   
+ [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [マルチバイト文字のシーケンスの解釈](../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [to 系関数](../c-runtime-library/to-functions.md)

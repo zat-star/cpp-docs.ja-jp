@@ -62,12 +62,13 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0bece17df9233570753cd318d28a88254eaaf74f
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 3411f2f902a3a7d4dc47a0d9fb00b5e970a1a876
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="outp-outpw-outpd"></a>_outp、_outpw、_outpd
-1 バイト (`_outp`)、1 ワード (`_outpw`)、または&1; ダブルワード (`_outpd`) のいずれかをポートに出力します。  
+1 バイト (`_outp`)、1 ワード (`_outpw`)、または 1 ダブルワード (`_outpd`) のいずれかをポートに出力します。  
   
 > [!IMPORTANT]
 >  これらは古い関数です。 Visual Studio 2015 以降では、CRT で使用できません。  
@@ -104,7 +105,7 @@ unsigned long dataword
  関数は、出力データを返します。 エラーの戻り値はありません。  
   
 ## <a name="remarks"></a>コメント  
- `_outp`、 `_outpw`、 `_outpd` の各関数は、指定された出力ポートへそれぞれバイト、ワード、ダブルワードを&1; つ書き込みます。 *port* 引数は、0 – 65,535 の任意の符号なし整数です。 *databyte* は、0 – 255 の任意の整数です。 *dataword* は、整数、符号なし短整数、および符号なし長整数の範囲の任意の値です。  
+ `_outp`、 `_outpw`、 `_outpd` の各関数は、指定された出力ポートへそれぞれバイト、ワード、ダブルワードを 1 つ書き込みます。 *port* 引数は、0 - 65,535 の任意の符号なし整数です。 *databyte* は、0 - 255 の任意の整数です。*dataword* は、整数、符号なし短整数、および符号なし長整数の範囲の任意の値です。  
   
  これらの関数は I/O ポートへ直接書き出すため、Windows NT、Windows 2000、Windows XP、および Windows Server 2003 のユーザー コードでは使用できません。 これらのオペレーティング システムでの I/O ポートの使用方法については、MSDN で「Serial Communications in Win32 (Win32 のシリアル通信)」を検索してください。  
   
@@ -124,8 +125,3 @@ unsigned long dataword
 ## <a name="see-also"></a>関連項目  
  [コンソール入出力とポート入出力](../c-runtime-library/console-and-port-i-o.md)   
  [_inp、_inpw、_inpd](../c-runtime-library/inp-inpw-inpd.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

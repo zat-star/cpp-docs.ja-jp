@@ -1,77 +1,93 @@
 ---
 title: "scanf 関数の文字幅指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apilocation: 
-  - "msvcr100.dll"
-  - "msvcr120.dll"
-  - "msvcr80.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr90.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "scanf"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "scanf 関数, 幅指定"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apilocation:
+- msvcr100.dll
+- msvcr120.dll
+- msvcr80.dll
+- msvcr110_clr0400.dll
+- msvcr110.dll
+- msvcr90.dll
+apitype: DLLExport
+f1_keywords:
+- scanf
+dev_langs:
+- C++
+helpviewer_keywords:
+- scanf function, width specification
 ms.assetid: 94b4e8fe-c4a2-4799-8b6c-a2cf28ffb09c
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# scanf 関数の文字幅指定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 922405b111404e5a11052fd1aba8d2729e254714
+ms.lasthandoff: 04/01/2017
 
-この情報は、`scanf_s` など、安全なバージョンを含む `scanf` 関数ファミリの書式指定文字列の解釈に適用されます。  これらの関数は通常、入力ストリームが一連のトークンに分割されていることを前提とします。  トークンは空白 \(スペース、タブ、または改行文字\) で区切られるか、数値型の場合は数値テキストに変換できない最初の文字による、数値データ型の自然な終了で区切られます。  ただし、幅指定を使用すると、トークンの自然な終了の前に入力の解析が停止することがあります。  
+---
+# <a name="scanf-width-specification"></a>scanf 関数の文字幅指定
+この情報は、`scanf_s` など、安全なバージョンを含む `scanf` 関数ファミリの書式指定文字列の解釈に適用されます。 これらの関数は通常、入力ストリームが一連のトークンに分割されていることを前提とします。 トークンは空白 (スペース、タブ、または改行文字) で区切られるか、数値型の場合は数値テキストに変換できない最初の文字による、数値データ型の自然な終了で区切られます。 ただし、幅指定を使用すると、トークンの自然な終了の前に入力の解析が停止することがあります。  
   
- *width* 指定は、`%` と 型フィールド指定子 \(*width* フィールドと呼ばれる正の整数を含む\) との間の文字、およびフィールドのサイズを示す 1 つ以上の文字で構成されます。後者は、整数型が **short** または **long** のどちらであるかを示すなどの、フィールドの型の修飾子ともみなされます。  このような文字はサイズのプレフィックスと呼ばれます。  
+ *width* 指定は、`%` と型フィールド指定子 (*width* フィールドと呼ばれる正の整数を含む) との間の文字、およびフィールドのサイズを示す 1 つ以上の文字で構成されます。後者は、整数型が **short** または **long** のどちらであるかを示すなどの、フィールドの型の修飾子ともみなされます。 このような文字はサイズのプレフィックスと呼ばれます。  
   
-## 幅フィールド  
- *幅*フィールドは、そのフィールドで読み取られる最大文字数を制御する正の 10 進整数です。  *width* 文字を超える文字は変換されず、対応する `argument` にも格納されません。  空白文字 \(スペース、タブ、改行\) または指定の書式に応じて変換できない文字がある場合、*width* に達するまでは、*width* より少ない文字が読み取られます。  
+## <a name="the-width-field"></a>幅フィールド  
+ *幅*フィールドは、そのフィールドで読み取られる最大文字数を制御する正の 10 進整数です。 *width* 文字を超える文字は変換されず、対応する `argument` にも格納されません。 空白文字 (スペース、タブ、改行) または指定の書式に応じて変換できない文字がある場合、*width* に達するまでは、*width* より少ない文字が読み取られます。  
   
- 幅の指定は、これらの関数 \(`scanf_s`、`wscanf_s` など\) の安全なバージョンに必要なバッファー サイズ引数とは別に区別されています。  次の例では、幅指定は 20 であり、入力ストリームから 20 文字までが読み取られることを示してます。  バッファー長は 21 であり、入力可能な 20 文字の空きと、null 終端文字が含まれています。  
+ 幅の指定は、これらの関数 (`scanf_s`、`wscanf_s` など) の安全なバージョンに必要なバッファー サイズ引数とは別に区別されています。 次の例では、幅指定は 20 であり、入力ストリームから 20 文字までが読み取られることを示してます。 バッファー長は 21 であり、入力可能な 20 文字の空きと、null 終端文字が含まれています。  
   
 ```  
 char str[21];  
 scanf_s("%20s", str, 21);  
 ```  
   
- *width* フィールドが使用されていない場合、`scanf_s` はトークン全体をこの文字列に読み取ろうとします。  指定されたサイズがトークン全体に十分でない大きさの場合、コピー先文字列には何も書き込まれません。  *width* フィールドが指定されている場合、トークン内の最初の *width* 文字が null の終端文字と共にコピー先の文字列に書き込まれます。  
+ *width* フィールドが使用されていない場合、`scanf_s` はトークン全体をこの文字列に読み取ろうとします。 指定されたサイズがトークン全体に十分でない大きさの場合、コピー先文字列には何も書き込まれません。 *width* フィールドが指定されている場合、トークン内の最初の *width* 文字が null の終端文字と共にコピー先の文字列に書き込まれます。  
   
-## サイズ プレフィックス  
- 省略可能なプレフィックス **h**、**l**、**ll**、**I64**、**L** は `argument` \(変更した型文字に応じて、long または short、1 バイト文字またはワイド文字\) のサイズを示しています。  これらの書式指定文字列は、`scanf` または `wscanf` 関数で使用され、次の表に示す引数の解釈を指定します。  型プレフィックス **I64** は Microsoft 拡張機能であり、ANSI とは互換性がありません。  型文字とその意味は、[scanf 関数の型フィールド文字](../c-runtime-library/scanf-type-field-characters.md)の「scanf 関数の型フィールド文字」の表で説明しています。  
+## <a name="the-size-prefix"></a>サイズ プレフィックス  
+ 省略可能なプレフィックス **h**、**l**、**ll**、**I64**、**L** は `argument` (変更した型文字に応じて、long または short、1 バイト文字またはワイド文字) のサイズを示しています。 これらの書式指定文字列は、`scanf` または `wscanf` 関数で使用され、次の表に示す引数の解釈を指定します。 型プレフィックス **I64** は Microsoft 拡張機能であり、ANSI とは互換性がありません。 型文字とその意味は、[scanf 関数の型フィールド文字](../c-runtime-library/scanf-type-field-characters.md)の「scanf 関数の型フィールド文字」の表で説明しています。  
   
 > [!NOTE]
 >  **h**、**l**、および **L** プレフィックスは、`char` データ型で使用する場合は Microsoft の拡張機能です。  
   
-### scanf および wscanf 書式型指定子のサイズ プレフィックス  
+### <a name="size-prefixes-for-scanf-and-wscanf-format-type-specifiers"></a>scanf および wscanf 書式型指定子のサイズ プレフィックス  
   
 |指定する型|プリフィックス|型指定子|  
-|-----------|-------------|----------|  
+|----------------|----------------|-------------------------|  
 |**double**|**l**|**e**、**E**、**f**、**g**、または **G**|  
-|**long double** \(double と同じ\)|**L**|**e**、**E**、**f**、**g**、または **G**|  
+|**long double** (double と同じ)|**L**|**e**、**E**、**f**、**g**、または **G**|  
 |**long int**|**l**|**d**、**i**、**o**、**x**、または **X**|  
 |**long unsigned int**|**l**|**u**|  
 |**long long**|**ll**|**d**、**i**、**o**、**x**、または **X**|  
-|`short int`|**時**|**d**、**i**、**o**、**x**、または **X**|  
-|**short unsigned int**|**時**|**u**|  
-|\_\_**int64**|**I64**|**d**、**i**、**o**、**u**、**x**、または **X**|  
-|1 バイト文字と `scanf`|**時**|**c** または **C**|  
-|1 バイト文字と `wscanf`|**時**|**c** または **C**|  
+|`short int`|**h**|**d**、**i**、**o**、**x**、または **X**|  
+|**short unsigned int**|**h**|**u**|  
+|__**int64**|**I64**|**d**、**i**、**o**、**u**、**x**、または **X**|  
+|1 バイト文字と `scanf`|**h**|**c** または **C**|  
+|1 バイト文字と `wscanf`|**h**|**c** または **C**|  
 |ワイド文字と `scanf`|**l**|**c** または **C**|  
 |ワイド文字と `wscanf`|**l**|**c** または **C**|  
-|1 バイト文字と `scanf`|**時**|**s** または **S**|  
-|1 バイト文字と `wscanf`|**時**|**s** または **S**|  
+|1 バイト文字と `scanf`|**h**|**s** または **S**|  
+|1 バイト文字と `wscanf`|**h**|**s** または **S**|  
 |ワイド文字列と `scanf`|**l**|**s** または **S**|  
 |ワイド文字列と `wscanf`|**l**|**s** または **S**|  
   
@@ -84,16 +100,16 @@ wscanf_s(L"%hC", &x, 2);    // Read a single-byte character
   
  `scanf` ファミリの安全でない関数を使用する場合は、前の引数のバッファー長を示すサイズ パラメーターを省略します。  
   
-## 区切られていない文字列の読取り  
- 空白で区切られていない文字列を読み取るには、角かっこ内の文字セット \(**\[ \]**\) を **s** \(文字列\) 型の文字に代用できます。  角かっこ内の文字のセットは、制御文字列と呼ばれます。  対応する入力フィールドは、制御文字に表示されない最初の文字まで読み取られます。  セット内の最初の文字がカレット \(**^**\) の場合、効果は逆になり、入力フィールドは文字セットの残りの部分に表示される最初の文字までが読み取られます。  
+## <a name="reading-undelimited-strings"></a>区切られていない文字列の読取り  
+ 空白で区切られていない文字列を読み取るには、角かっこ内の文字セット (**[ ]**) を **s** (文字列) 型の文字に代用できます。 角かっこ内の文字のセットは、制御文字列と呼ばれます。 対応する入力フィールドは、制御文字に表示されない最初の文字まで読み取られます。 セット内の最初の文字がカレット (**^**) の場合、効果は逆になり、入力フィールドは文字セットの残りの部分に表示される最初の文字までが読み取られます。  
   
- **%\[a\-z\]** と **%\[z\-a\]** は **%\[abcde...z\]** と同等のものと解釈されます。  これは一般的に使われる `scanf` 関数の拡張機能ですが、ANSI 標準では必要とされません。  
+ **%[a-z]** と **%[z-a]** は **%[abcde...z]** と同等のものと解釈されます。 これは一般的に使われる `scanf` 関数の拡張機能ですが、ANSI 標準では必要とされません。  
   
-## 未終了の文字列の読み取り  
- 終端の null 文字 \('\\0'\) を保存せずに文字列を保存するには、`%`*n***c** を指定します。ここでは *n* は 10 進整数です。  この場合、**c** の型文字は引数が文字配列へのポインターであることを示します。  次の *n* 文字が入力ストリームから指定した場所に読み取られ、null 文字 \('\\0'\) は追加されません。  *n* が指定されていない場合、この既定値は 1 です。  
+## <a name="reading-unterminated-strings"></a>未終了の文字列の読み取り  
+ 終端の null 文字 ('\0') を保存せずに文字列を保存するには、`%`*n***c** を指定します。ここでは *n* は 10 進整数です。 この場合、**c** の型文字は引数が文字配列へのポインターであることを示します。 次の *n* 文字が入力ストリームから指定した場所に読み取られ、null 文字 ('\0') は追加されません。 *n* が指定されていない場合、この既定値は 1 です。  
   
-## scanf がフィールドの読み取りを停止するタイミング  
- `scanf`関数は文字単位で入力フィールドをスキャンします。  さまざまな理由から、空白文字に達する前に特定のフィールドで読み取りが停止することがあります。  
+## <a name="when-scanf-stops-reading-a-field"></a>scanf がフィールドの読み取りを停止するタイミング  
+ `scanf`関数は文字単位で入力フィールドをスキャンします。 さまざまな理由から、空白文字に達する前に特定のフィールドで読み取りが停止することがあります。  
   
 -   指定した幅に到達しました。  
   
@@ -103,10 +119,10 @@ wscanf_s(L"%hC", &x, 2);    // Read a single-byte character
   
 -   次の文字が特定の文字セットに表示されません。  
   
- 理由に関係なく、`scanf` 関数が入力フィールドの読み取りを停止すると、次の入力フィールドは、最初の未読文字から始まるとみなされます。  競合する文字がある場合は、それは未読とみなされ、次の入力フィールドの最初の文字、または入力ストリームのそのあとの読み取り操作の最初の文字になります。  
+ 理由に関係なく、`scanf` 関数が入力フィールドの読み取りを停止すると、次の入力フィールドは、最初の未読文字から始まるとみなされます。 競合する文字がある場合は、それは未読とみなされ、次の入力フィールドの最初の文字、または入力ストリームのそのあとの読み取り操作の最初の文字になります。  
   
-## 参照  
- [scanf、\_scanf\_l、wscanf、\_wscanf\_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [scanf\_s、\_scanf\_s\_l、wscanf\_s、\_wscanf\_s\_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)   
- [scanf 関数と wscanf 関数の書式指定フィールド](../Topic/Format%20Specification%20Fields:%20scanf%20and%20wscanf%20Functions.md)   
+## <a name="see-also"></a>関連項目  
+ [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
+ [scanf_s、_scanf_s_l、wscanf_s、_wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)   
+ [書式指定フィールド: scanf 関数と wscanf 関数](../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md)   
  [scanf 関数の型フィールド文字](../c-runtime-library/scanf-type-field-characters.md)
