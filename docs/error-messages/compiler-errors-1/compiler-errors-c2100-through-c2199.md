@@ -1,121 +1,171 @@
 ---
-title: "コンパイラ エラーs C2100 through C2199 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C2100 through C2199 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2119
+- C2123
+- C2125
+- C2126
+- C2127
+- C2131
+- C2136
+- C2176
+- C2178
+- C2187
+- C2189
+helpviewer_keywords:
+- C2119
+- C2123
+- C2125
+- C2126
+- C2127
+- C2131
+- C2136
+- C2176
+- C2178
+- C2187
+- C2189
+dev_langs:
+- C++
 ms.assetid: 1ccab076-0954-4386-b959-d3112a6793ae
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラーs C2100 through C2199
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 3716dbf66c2cf1c35c26df6dfd95fb1c0946e68d
+ms.lasthandoff: 04/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。  ここから情報にアクセスできます。または、Visual Studio の**出力**ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c2100-through-c2199"></a>コンパイラ エラーs C2100 through C2199
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
- [コンパイラ エラー C2100](../Topic/Compiler%20Error%20C2100.md)  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
   
- [コンパイラ エラー C2104](../../error-messages/compiler-errors-1/compiler-error-c2104.md)  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
- [コンパイラ エラー C2105](../../error-messages/compiler-errors-1/compiler-error-c2105.md)  
-  
- [コンパイラ エラー C2106](../../error-messages/compiler-errors-1/compiler-error-c2106.md)  
-  
- [コンパイラ エラー C2107](../Topic/Compiler%20Error%20C2107.md)  
-  
- [コンパイラ エラー C2108](../Topic/Compiler%20Error%20C2108.md)  
-  
- [コンパイラ エラー C2109](../../error-messages/compiler-errors-1/compiler-error-c2109.md)  
-  
- [コンパイラ エラー C2112](../../error-messages/compiler-errors-1/compiler-error-c2112.md)  
-  
- [コンパイラ エラー C2117](../../error-messages/compiler-errors-1/compiler-error-c2117.md)  
-  
- [コンパイラ エラー C2118](../../error-messages/compiler-errors-1/compiler-error-c2118.md)  
-  
- [コンパイラ エラー C2120](../Topic/Compiler%20Error%20C2120.md)  
-  
- [コンパイラ エラー C2121](../../error-messages/compiler-errors-1/compiler-error-c2121.md)  
-  
- [コンパイラ エラー C2122](../Topic/Compiler%20Error%20C2122.md)  
-  
- [コンパイラ エラー C2128](../../error-messages/compiler-errors-1/compiler-error-c2128.md)  
-  
- [コンパイラ エラー C2129](../../error-messages/compiler-errors-1/compiler-error-c2129.md)  
-  
- [コンパイラ エラー C2133](../../error-messages/compiler-errors-1/compiler-error-c2133.md)  
-  
- [コンパイラ エラー C2138](../../error-messages/compiler-errors-1/compiler-error-c2138.md)  
-  
- [コンパイラ エラー C2139](../../error-messages/compiler-errors-1/compiler-error-c2139.md)  
-  
- [コンパイラ エラー C2140](../Topic/Compiler%20Error%20C2140.md)  
-  
- [コンパイラ エラー C2141](../../error-messages/compiler-errors-1/compiler-error-c2141.md)  
-  
- [コンパイラ エラー C2142](../../error-messages/compiler-errors-1/compiler-error-c2142.md)  
-  
- [コンパイラ エラー C2143](../../error-messages/compiler-errors-1/compiler-error-c2143.md)  
-  
- [コンパイラ エラー C2144](../../error-messages/compiler-errors-1/compiler-error-c2144.md)  
-  
- [コンパイラ エラー C2146](../../error-messages/compiler-errors-1/compiler-error-c2146.md)  
-  
- [コンパイラ エラー C2147](../../error-messages/compiler-errors-1/compiler-error-c2147.md)  
-  
- [コンパイラ エラー C2148](../../error-messages/compiler-errors-1/compiler-error-c2148.md)  
-  
- [コンパイラ エラー C2151](../../error-messages/compiler-errors-1/compiler-error-c2151.md)  
-  
- [コンパイラ エラー C2152](../Topic/Compiler%20Error%20C2152.md)  
-  
- [コンパイラ エラー C2153](../../error-messages/compiler-errors-1/compiler-error-c2153.md)  
-  
- [コンパイラ エラー C2154](../Topic/Compiler%20Error%20C2154.md)  
-  
- [コンパイラ エラー C2155](../../error-messages/compiler-errors-1/compiler-error-c2155.md)  
-  
- [コンパイラ エラー C2162](../Topic/Compiler%20Error%20C2162.md)  
-  
- [コンパイラ エラー C2163](../../error-messages/compiler-errors-1/compiler-error-c2163.md)  
-  
- [コンパイラ エラー C2164](../../error-messages/compiler-errors-1/compiler-error-c2164.md)  
-  
- [コンパイラ エラー C2169](../Topic/Compiler%20Error%20C2169.md)  
-  
- [コンパイラ エラー C2170](../Topic/Compiler%20Error%20C2170.md)  
-  
- [コンパイラ エラー C2174](../../error-messages/compiler-errors-1/compiler-error-c2174.md)  
-  
- [コンパイラ エラー C2175](../Topic/Compiler%20Error%20C2175.md)  
-  
- [コンパイラ エラー C2179](../../error-messages/compiler-errors-1/compiler-error-c2179.md)  
-  
- [コンパイラ エラー C2180](../../error-messages/compiler-errors-1/compiler-error-c2180.md)  
-  
- [コンパイラ エラー C2183](../../error-messages/compiler-errors-1/compiler-error-c2183.md)  
-  
- [コンパイラ エラー C2185](../../error-messages/compiler-errors-1/compiler-error-c2185.md)  
-  
- [コンパイラ エラー C2190](../Topic/Compiler%20Error%20C2190.md)  
-  
- [コンパイラ エラー C2191](../../error-messages/compiler-errors-1/compiler-error-c2191.md)  
-  
- [コンパイラ エラー C2192](../Topic/Compiler%20Error%20C2192.md)  
-  
- [コンパイラ エラー C2193](../../error-messages/compiler-errors-1/compiler-error-c2193.md)  
-  
- [コンパイラ エラー C2194](../../error-messages/compiler-errors-1/compiler-error-c2194.md)  
-  
- [コンパイラ エラー C2195](../../error-messages/compiler-errors-1/compiler-error-c2195.md)  
-  
- [コンパイラ エラー C2199](../../error-messages/compiler-errors-1/compiler-error-c2199.md)
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C2100](compiler-error-c2100.md)|間接指定演算子 (*) の使い方が正しくありません。|  
+|[コンパイラ エラー C2101](compiler-error-c2101.md)|'&' に、オペランドとしての左辺値がありません|  
+|[コンパイラ エラー C2102](compiler-error-c2102.md)|'&' に左辺値がありません。|  
+|[コンパイラ エラー C2103](compiler-error-c2103.md)|'&' レジスタ変数のアドレスを得ようとしました|  
+|[コンパイラ エラー C2104](compiler-error-c2104.md)|' &' ビット フィールドは無視されます|  
+|[コンパイラ エラー C2105](compiler-error-c2105.md)|'*演算子*' l 値が必要です|  
+|[コンパイラ エラー C2106](compiler-error-c2106.md)|'*演算子*': 左のオペランドが左辺値にする必要があります|  
+|[コンパイラ エラー C2107](compiler-error-c2107.md)|無効なインデックスです、間接参照は許可されていません|  
+|[コンパイラ エラー C2108](compiler-error-c2108.md)|添字に整数でない型が使われました。|  
+|[コンパイラ エラー C2109](compiler-error-c2109.md)|配列または、ポインターでない変数に添字が使われました。|  
+|[コンパイラ エラー C2110](compiler-error-c2110.md)|'+': 2 つのポインターを追加することはできません|  
+|[コンパイラ エラー C2111](compiler-error-c2111.md)|'+': ポインターの加算には、整数オペランドが必要です。|  
+|[コンパイラ エラー C2112](compiler-error-c2112.md)|'-': ポインターの減算には、整数型またはポインターのオペランドが必要です。|  
+|[コンパイラ エラー C2113](compiler-error-c2113.md)|'-': ポインターを別のポインターから減算することはできません|  
+|[コンパイラ エラー C2114](compiler-error-c2114.md)|'*演算子*': 左上にポインター以外の整数値を右でなければなりません|  
+|[コンパイラ エラー C2115](compiler-error-c2115.md)|'*演算子*': 互換性のない型|  
+|[コンパイラ エラー C2116](compiler-error-c2116.md)|関数のパラメーター リストと一致しません。|  
+|[コンパイラ エラー C2117](compiler-error-c2117.md)|'*識別子*': 配列の境界オーバーフロー|  
+|[コンパイラ エラー C2118](compiler-error-c2118.md)|添字が負の数です。|  
+|コンパイラ エラー C2119|'*識別子*': 型'*型*' 空の初期化子から推測できません|  
+|[コンパイラ エラー C2120](compiler-error-c2120.md)|void 型が他の型と同時に使われました。|  
+|[コンパイラ エラー C2121](compiler-error-c2121.md)|#': 無効な文字です: マクロ展開が解決できません。|  
+|[コンパイラ エラー C2122](compiler-error-c2122.md)|'*識別子*': プロトタイプのパラメーター名 ボックスの一覧が不正です。|  
+|コンパイラ エラー C2123|'*識別子*': エイリアス テンプレート明示的または部分的に特殊化できません|  
+|[コンパイラ エラー C2124](compiler-error-c2124.md)|除算、剰余演算が 0 で行われています。|  
+|コンパイラ エラー C2125|'constexpr' は互換性がありません '*トークン*'|  
+|コンパイラ エラー C2126|'*識別子*' 'constexpr' 指定子で宣言することはできません|  
+|コンパイラ エラー C2127|'*識別子*': 'constexpr' エンティティは非定数式での初期化が正しくありません|  
+|[コンパイラ エラー C2128](compiler-error-c2128.md)|'*関数*': alloc_text/same_seg C リンケージを持つ関数にのみ適用|  
+|[コンパイラ エラー C2129](compiler-error-c2129.md)|静的関数 '*識別子*' 宣言しますが、定義されていません|  
+|[コンパイラ エラー C2130](compiler-error-c2130.md)|#行が検出された、ファイル名を含む文字列を想定 '*トークン*'|  
+|コンパイラ エラー C2131|式は定数に評価されませんでした|  
+|[コンパイラ エラー C2132](compiler-error-c2132.md)|構文エラー: 予期しない識別子です。|  
+|[コンパイラ エラー C2133](compiler-error-c2133.md)|'*識別子*': 不明なサイズ|  
+|[コンパイラ エラー C2134](compiler-error-c2134.md)|'*関数*': 定数式での呼び出しは行われません|  
+|[コンパイラ エラー C2135](compiler-error-c2135.md)|'*演算子*': 無効なビット フィールドの操作|  
+|コンパイラ エラー C2136|API コントラクトの作成は許可されていません|  
+|[コンパイラ エラー C2137](compiler-error-c2137.md)|空の文字定数|  
+|[コンパイラ エラー C2138](compiler-error-c2138.md)|空の列挙定数が定義されました。|  
+|[コンパイラ エラー C2139](compiler-error-c2139.md)|'*クラス*': 未定義のクラスがコンパイラの組み込み型の特徴を引数として許可されていません'*特徴*'|  
+|[コンパイラ エラー C2140](compiler-error-c2140.md)|'*型*': ジェネリック型パラメーターに依存する型がコンパイラの組み込み型の特徴を引数として許可されていません'*特徴*'|  
+|[コンパイラ エラー C2141](compiler-error-c2141.md)|配列サイズのオーバーフローです|  
+|[コンパイラ エラー C2142](compiler-error-c2142.md)|関数の宣言に可変個引数リストが含まれているものといないものが存在します。|  
+|[コンパイラ エラー C2143](compiler-error-c2143.md)|構文エラー: 見つかりません '*token1*'before'*token2*'|  
+|[コンパイラ エラー C2144](compiler-error-c2144.md)|構文エラー: '*型*'によって先行されなければなりません'*token2*'|  
+|[コンパイラ エラー C2145](compiler-error-c2145.md)|構文エラー: 見つかりません '*トークン*' 識別子の前に|  
+|[コンパイラ エラー C2146](compiler-error-c2146.md)|構文エラー: 見つかりません '*トークン*'identifier' の前に*識別子*'|  
+|[コンパイラ エラー C2147](compiler-error-c2147.md)|構文エラー: '*トークン*' は、new キーワード|  
+|[コンパイラ エラー C2148](compiler-error-c2148.md)|配列の合計サイズは 0 x を超える必要がありますいない*値*バイト|  
+|[コンパイラ エラー C2149](compiler-error-c2149.md)|'*識別子*': 名前付きビット フィールドは、ゼロ幅を持つことはできません|  
+|[コンパイラ エラー C2150](compiler-error-c2150.md)|'*識別子*': ビット フィールドは、型 'int'、'signed int' または 'unsigned int' を持つ必要があります|  
+|[コンパイラ エラー C2151](compiler-error-c2151.md)|複数の言語属性が存在します。|  
+|[コンパイラ エラー C2152](compiler-error-c2152.md)|'*識別子*': 異なる属性を持つ関数へのポインター|  
+|[コンパイラ エラー C2153](compiler-error-c2153.md)|整数リテラルには 1 つ以上の数字が必要です。|  
+|[コンパイラ エラー C2154](compiler-error-c2154.md)|'*型*': 列挙型のみがコンパイラの組み込み型の特徴を引数として許可されている'*特徴*'|  
+|[コンパイラ エラー C2155](compiler-error-c2155.md)|'?': 左のオペランドが無効です。数値またはポインター型でなければなりません。|  
+|[コンパイラ エラー C2156](compiler-error-c2156.md)|プラグマは、関数の外に指定されなければなりません。|  
+|[コンパイラ エラー C2157](compiler-error-c2157.md)|'*識別子*': プラグマ リスト内で使用する前に宣言する必要があります|  
+|[コンパイラ エラー C2158](compiler-error-c2158.md)|'*型*': #pragma make_public ディレクティブは、現在のネイティブの非テンプレート型にのみ|  
+|[コンパイラ エラー C2159](compiler-error-c2159.md)|2 つ以上のストレージ クラスが指定されています。|  
+|[コンパイラ エラー C2160](compiler-error-c2160.md)|マクロ定義がトークン連結演算子 (##) で始まっています。|  
+|[コンパイラ エラー C2161](compiler-error-c2161.md)|マクロ定義がトークン連結演算子 (##) で終わっています。|  
+|[コンパイラ エラー C2162](compiler-error-c2162.md)|文字列化演算子 (#) の後のトークンは、仮引数名でなければいけません。|  
+|[コンパイラ エラー C2163](compiler-error-c2163.md)|'*関数*': 組み込み関数として使用できません。|  
+|[コンパイラ エラー C2164](compiler-error-c2164.md)|'*関数*': 組み込み関数が宣言されていません|  
+|[コンパイラ エラー C2165](compiler-error-c2165.md)|'*修飾子*': データへのポインターを変更することはできません|  
+|[コンパイラ エラー C2166](compiler-error-c2166.md)|左辺値は const オブジェクトに指定されています。|  
+|[コンパイラ エラー C2167](compiler-error-c2167.md)|'*関数*': 組み込み関数の実際のパラメーターが多すぎます|  
+|[コンパイラ エラー C2168](compiler-error-c2168.md)|'*関数*': 組み込み関数の実際のパラメーターが少なすぎます|  
+|[コンパイラ エラー C2169](compiler-error-c2169.md)|'*関数*': 組み込み関数を定義することはできません|  
+|[コンパイラ エラー C2170](compiler-error-c2170.md)|'*識別子*': 組み込み関数として宣言されていないはできません|  
+|[コンパイラ エラー C2171](compiler-error-c2171.md)|'*演算子*': 型のオペランドが無効です'*型*'|  
+|[コンパイラ エラー C2172](compiler-error-c2172.md)|'*関数*': 実パラメーターがポインターではありません: パラメーター*数*|  
+|[コンパイラ エラー C2173](compiler-error-c2173.md)|'*関数*': 実パラメーターがポインターではありません: パラメーター*数*、パラメーター リスト*数*|  
+|[コンパイラ エラー C2174](compiler-error-c2174.md)|'*関数*' 実際のパラメーターが型 'void': パラメーター*数*、パラメーター リスト*数。*|  
+|[コンパイラ エラー C2175](compiler-error-c2175.md)|'*ロケール*': 無効なロケール|  
+|コンパイラ エラー C2176|return ステートメントは、コンストラクターに関連付けられた関数 try ブロックのハンドラーに使用できません|  
+|[コンパイラ エラー C2177](compiler-error-c2177.md)|定数が大きすぎます。|  
+|コンパイラ エラー C2178|'*識別子*'で宣言することはできません'*指定子*' 指定子|  
+|[コンパイラ エラー C2179](compiler-error-c2179.md)|'*型*': 属性引数は、型パラメーターを使用できません|  
+|[コンパイラ エラー C2180](compiler-error-c2180.md)|型を持つ制御式 '*型*'|  
+|[コンパイラ エラー C2181](compiler-error-c2181.md)|else 文が if と一致しません。|  
+|[コンパイラ エラー C2182](compiler-error-c2182.md)|'*識別子*': 'void' 型の不正な使用|  
+|[コンパイラ エラー C2183](compiler-error-c2183.md)|構文エラー: 翻訳単位が空です。|  
+|[コンパイラ エラー C2184](compiler-error-c2184.md)|'*型*': _ _except 式に対する無効な型|  
+|[コンパイラ エラー C2185](compiler-error-c2185.md)|'*識別子*': 無効です based の割り当て。|  
+|[コンパイラ エラー C2186](compiler-error-c2186.md)|'*演算子*': 'void' 型のオペランドは正しくありません|  
+|コンパイラ エラー C2187|構文エラー: '*トークン*' が予期しないここ|  
+|[コンパイラ エラー C2188](compiler-error-c2188.md)|'*数*': ワイド文字として大きすぎます|  
+|コンパイラ エラー C2189|ビット フィールド、関数パラメーター、例外宣言に 'alignas' 属性は適用できませんまたは変数宣言で 'register' ストレージ クラス|  
+|[コンパイラ エラー C2190](compiler-error-c2190.md)|関数の 2 回目の宣言で引数の数が減少しています。|  
+|[コンパイラ エラー C2191](compiler-error-c2191.md)|関数の 2 回目の宣言で引数の数が増加しています。|  
+|[コンパイラ エラー C2192](compiler-error-c2192.md)|パラメーター '*数*' 別の宣言|  
+|[コンパイラ エラー C2193](compiler-error-c2193.md)|'*識別子*': セグメント内の既存の|  
+|[コンパイラ エラー C2194](compiler-error-c2194.md)|'*識別子*': テキスト セグメント|  
+|[コンパイラ エラー C2195](compiler-error-c2195.md)|'*識別子*': データ セグメントは、|  
+|[コンパイラ エラー C2196](compiler-error-c2196.md)|場合値 '*値*' 既に使用されています|  
+|[コンパイラ エラー C2197](compiler-error-c2197.md)|'*関数*': 呼び出しに対する引数が多すぎます|  
+|[コンパイラ エラー C2198](compiler-error-c2198.md)|'*関数*': 呼び出しに対する引数が少なすぎます|  
+|[コンパイラ エラー C2199](compiler-error-c2199.md)|構文エラー: 検出された '*識別子*(' グローバル スコープで (意図して宣言でしたか?)|  

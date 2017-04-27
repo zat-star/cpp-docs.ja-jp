@@ -1,5 +1,5 @@
 ---
-title: "コンパイラ エラー C2900 C3499 から |Microsoft ドキュメント"
+title: "コンパイラ エラー C2900 C2999 から |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -8,6 +8,76 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: error-reference
+f1_keywords:
+- C2900
+- C2901
+- C2905
+- C2907
+- C2915
+- C2916
+- C2922
+- C2924
+- C2925
+- C2926
+- C2938
+- C2949
+- C2950
+- C2954
+- C2956
+- C2960
+- C2961
+- C2963
+- C2964
+- C2965
+- C2966
+- C2967
+- C2968
+- C2972
+- C2980
+- C2981
+- C2982
+- C2983
+- C2984
+- C2985
+- C2986
+- C2987
+- C2997
+- C2999
+helpviewer_keywords:
+- C2900
+- C2901
+- C2905
+- C2907
+- C2915
+- C2916
+- C2922
+- C2924
+- C2925
+- C2926
+- C2938
+- C2949
+- C2950
+- C2954
+- C2956
+- C2960
+- C2961
+- C2963
+- C2964
+- C2965
+- C2966
+- C2967
+- C2968
+- C2972
+- C2980
+- C2981
+- C2982
+- C2983
+- C2984
+- C2985
+- C2986
+- C2987
+- C2997
+- C2999
 dev_langs:
 - C++
 ms.assetid: e3440738-e11b-4878-9ae3-6bc6c53ba461
@@ -30,204 +100,119 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: a5521f4d0bc1c4bb4458ed532af067132b3f6047
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 6ef55aa655692e6ecbd1550bb1ace2eca01bdbad
+ms.lasthandoff: 04/24/2017
 
 ---
-# <a name="compiler-errors-c2900-through-c3499"></a>コンパイラ エラー C2900 C3499 から
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
-  
- [コンパイラ エラー C2906](../../error-messages/compiler-errors-2/compiler-error-c2906.md)  
-  
- [コンパイラ エラー C2908](../../error-messages/compiler-errors-2/compiler-error-c2908.md)  
-  
- [コンパイラ エラー C2910](../../error-messages/compiler-errors-2/compiler-error-c2910.md)  
-  
- [コンパイラ エラー C2912](../../error-messages/compiler-errors-2/compiler-error-c2912.md)  
-  
- [コンパイラ エラー C2913](../../error-messages/compiler-errors-2/compiler-error-c2913.md)  
-  
- [コンパイラ エラー C2914](../../error-messages/compiler-errors-2/compiler-error-c2914.md)  
-  
- [コンパイラ エラー C2918](../../error-messages/compiler-errors-2/compiler-error-c2918.md)  
-  
- [コンパイラ エラー C2919](../../error-messages/compiler-errors-2/compiler-error-c2919.md)  
-  
- [コンパイラ エラー C2920](../../error-messages/compiler-errors-2/compiler-error-c2920.md)  
-  
- [コンパイラ エラー C2921](../../error-messages/compiler-errors-2/compiler-error-c2921.md)  
-  
- [コンパイラ エラー C2947](../../error-messages/compiler-errors-2/compiler-error-c2947.md)  
-  
- [コンパイラ エラー C2948](../../error-messages/compiler-errors-2/compiler-error-c2948.md)  
-  
- [コンパイラ エラー C2951](../../error-messages/compiler-errors-2/compiler-error-c2951.md)  
-  
- [コンパイラ エラー C2955](../../error-messages/compiler-errors-2/compiler-error-c2955.md)  
-  
- [コンパイラ エラー C2958](../../error-messages/compiler-errors-2/compiler-error-c2958.md)  
-  
- [コンパイラ エラー C2959](../../error-messages/compiler-errors-2/compiler-error-c2959.md)  
-  
- [コンパイラ エラー C2962](../../error-messages/compiler-errors-2/compiler-error-c2962.md)  
-  
- [コンパイラ エラー C2970](../../error-messages/compiler-errors-2/compiler-error-c2970.md)  
-  
- [コンパイラ エラー C2971](../../error-messages/compiler-errors-2/compiler-error-c2971.md)  
-  
- [コンパイラ エラー C2974](../../error-messages/compiler-errors-2/compiler-error-c2974.md)  
-  
- [コンパイラ エラー C2975](../../error-messages/compiler-errors-2/compiler-error-c2975.md)  
-  
- [コンパイラ エラー C2976](../../error-messages/compiler-errors-2/compiler-error-c2976.md)  
-  
- [コンパイラ エラー C2988](../../error-messages/compiler-errors-2/compiler-error-c2988.md)  
-  
- [コンパイラ エラー C2989](../../error-messages/compiler-errors-2/compiler-error-c2989.md)  
-  
- [コンパイラ エラー C2990](../../error-messages/compiler-errors-2/compiler-error-c2990.md)  
-  
- [コンパイラ エラー C2993](../../error-messages/compiler-errors-2/compiler-error-c2993.md)  
-  
- [コンパイラ エラー C3019](../../error-messages/compiler-errors-2/compiler-error-c3019.md)  
-  
- [コンパイラ エラー C3020](../../error-messages/compiler-errors-2/compiler-error-c3020.md)  
-  
- [コンパイラ エラー C3062](../../error-messages/compiler-errors-2/compiler-error-c3062.md)  
-  
- [コンパイラ エラー C3063](../../error-messages/compiler-errors-2/compiler-error-c3063.md)  
-  
- [コンパイラ エラー C3066](../../error-messages/compiler-errors-2/compiler-error-c3066.md)  
-  
- [コンパイラ エラー C3068](../../error-messages/compiler-errors-2/compiler-error-c3068.md)  
-  
- [コンパイラ エラー C3071](../../error-messages/compiler-errors-2/compiler-error-c3071.md)  
-  
- [コンパイラ エラー C3072](../../error-messages/compiler-errors-2/compiler-error-c3072.md)  
-  
- [コンパイラ エラー C3073](../../error-messages/compiler-errors-2/compiler-error-c3073.md)  
-  
- [コンパイラ エラー C3076](../../error-messages/compiler-errors-2/compiler-error-c3076.md)  
-  
- [コンパイラ エラー C3083](../../error-messages/compiler-errors-2/compiler-error-c3083.md)  
-  
- [コンパイラ エラー C3099](../../error-messages/compiler-errors-2/compiler-error-c3099.md)  
-  
- [コンパイラ エラー C3101](../../error-messages/compiler-errors-2/compiler-error-c3101.md)  
-  
- [コンパイラ エラー C3104](../../error-messages/compiler-errors-2/compiler-error-c3104.md)  
-  
- [コンパイラ エラー C3115](../../error-messages/compiler-errors-2/compiler-error-c3115.md)  
-  
- [コンパイラ エラー C3116](../../error-messages/compiler-errors-2/compiler-error-c3116.md)  
-  
- [コンパイラ エラー C3121](../../error-messages/compiler-errors-2/compiler-error-c3121.md)  
-  
- [コンパイラ エラー C3141](../../error-messages/compiler-errors-2/compiler-error-c3141.md)  
-  
- [コンパイラ エラー C3145](../../error-messages/compiler-errors-2/compiler-error-c3145.md)  
-  
- [コンパイラ エラー C3149](../../error-messages/compiler-errors-2/compiler-error-c3149.md)  
-  
- [コンパイラ エラー C3153](../../error-messages/compiler-errors-2/compiler-error-c3153.md)  
-  
- [コンパイラ エラー C3160](../../error-messages/compiler-errors-2/compiler-error-c3160.md)  
-  
- [コンパイラ エラー C3162](../../error-messages/compiler-errors-2/compiler-error-c3162.md)  
-  
- [コンパイラ エラー C3163](../../error-messages/compiler-errors-2/compiler-error-c3163.md)  
-  
- [コンパイラ エラー C3174](../../error-messages/compiler-errors-2/compiler-error-c3174.md)  
-  
- [コンパイラ エラー C3187](../../error-messages/compiler-errors-2/compiler-error-c3187.md)  
-  
- [コンパイラ エラー C3200](../../error-messages/compiler-errors-2/compiler-error-c3200.md)  
-  
- [コンパイラ エラー C3201](../../error-messages/compiler-errors-2/compiler-error-c3201.md)  
-  
- [コンパイラ エラー C3203](../../error-messages/compiler-errors-2/compiler-error-c3203.md)  
-  
- [コンパイラ エラー C3209](../../error-messages/compiler-errors-2/compiler-error-c3209.md)  
-  
- [コンパイラ エラー C3210](../../error-messages/compiler-errors-2/compiler-error-c3210.md)  
-  
- [コンパイラ エラー C3218](../../error-messages/compiler-errors-2/compiler-error-c3218.md)  
-  
- [コンパイラ エラー C3222](../../error-messages/compiler-errors-2/compiler-error-c3222.md)  
-  
- [コンパイラ エラー C3225](../../error-messages/compiler-errors-2/compiler-error-c3225.md)  
-  
- [コンパイラ エラー C3227](../../error-messages/compiler-errors-2/compiler-error-c3227.md)  
-  
- [コンパイラ エラー C3231](../../error-messages/compiler-errors-2/compiler-error-c3231.md)  
-  
- [コンパイラ エラー C3240](../../error-messages/compiler-errors-2/compiler-error-c3240.md)  
-  
- [コンパイラ エラー C3241](../../error-messages/compiler-errors-2/compiler-error-c3241.md)  
-  
- [コンパイラ エラー C3252](../../error-messages/compiler-errors-2/compiler-error-c3252.md)  
-  
- [コンパイラ エラー C3253](../../error-messages/compiler-errors-2/compiler-error-c3253.md)  
-  
- [コンパイラ エラー C3254](../../error-messages/compiler-errors-2/compiler-error-c3254.md)  
-  
- [コンパイラ エラー C3255](../../error-messages/compiler-errors-2/compiler-error-c3255.md)  
-  
- [コンパイラ エラー C3265](../../error-messages/compiler-errors-2/compiler-error-c3265.md)  
-  
- [コンパイラ エラー C3269](../../error-messages/compiler-errors-2/compiler-error-c3269.md)  
-  
- [コンパイラ エラー C3276](../../error-messages/compiler-errors-2/compiler-error-c3276.md)  
-  
- [コンパイラ エラー C3277](../../error-messages/compiler-errors-2/compiler-error-c3277.md)  
-  
- [コンパイラ エラー C3278](../../error-messages/compiler-errors-2/compiler-error-c3278.md)  
-  
- [コンパイラ エラー C3282](../../error-messages/compiler-errors-2/compiler-error-c3282.md)  
-  
- [コンパイラ エラー C3288](../../error-messages/compiler-errors-2/compiler-error-c3288.md)  
-  
- [コンパイラ エラー C3352](../../error-messages/compiler-errors-2/compiler-error-c3352.md)  
-  
- [コンパイラ エラー C3353](../../error-messages/compiler-errors-2/compiler-error-c3353.md)  
-  
- [コンパイラ エラー C3364](../../error-messages/compiler-errors-2/compiler-error-c3364.md)  
-  
- [コンパイラ エラー C3366](../../error-messages/compiler-errors-2/compiler-error-c3366.md)  
-  
- [コンパイラ エラー C3374](../../error-messages/compiler-errors-2/compiler-error-c3374.md)  
-  
- [コンパイラ エラー C3379](../../error-messages/compiler-errors-2/compiler-error-c3379.md)  
-  
- [コンパイラ エラー C3381](../../error-messages/compiler-errors-2/compiler-error-c3381.md)  
-  
- [コンパイラ エラー C3386](../../error-messages/compiler-errors-2/compiler-error-c3386.md)  
-  
- [コンパイラ エラー C3387](../../error-messages/compiler-errors-2/compiler-error-c3387.md)  
-  
- [コンパイラ エラー C3389](../../error-messages/compiler-errors-2/compiler-error-c3389.md)  
-  
- [コンパイラ エラー C3395](../../error-messages/compiler-errors-2/compiler-error-c3395.md)  
-  
- [コンパイラ エラー C3409](../../error-messages/compiler-errors-2/compiler-error-c3409.md)  
-  
- [コンパイラ エラー C3412](../../error-messages/compiler-errors-2/compiler-error-c3412.md)  
-  
- [コンパイラ エラー C3414](../../error-messages/compiler-errors-2/compiler-error-c3414.md)  
-  
- [コンパイラ エラー C3417](../../error-messages/compiler-errors-2/compiler-error-c3417.md)  
-  
- [コンパイラ エラー C3445](../../error-messages/compiler-errors-2/compiler-error-c3445.md)  
-  
- [コンパイラ エラー C3450](../../error-messages/compiler-errors-2/compiler-error-c3450.md)  
-  
- [コンパイラ エラー C3451](../../error-messages/compiler-errors-2/compiler-error-c3451.md)  
-  
- [コンパイラ エラー C3456](../../error-messages/compiler-errors-2/compiler-error-c3456.md)  
-  
- [コンパイラ エラー C3466](../../error-messages/compiler-errors-2/compiler-error-c3466.md)  
-  
- [コンパイル エラー C3487](../../error-messages/compiler-errors-2/compiler-error-c3487.md)  
-  
- [コンパイラ エラー C3498](../../error-messages/compiler-errors-2/compiler-error-c3498.md)
+# <a name="compiler-errors-c2900-through-c2999"></a>コンパイラ エラー C2900 C2999 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+|エラー|メッセージ|  
+|-----------|-------------|  
+|コンパイラ エラー C2900|'*宣言子*': WinRT クラスのメンバー関数テンプレートは 'private'、'internal' または 'protected private' する必要があります|  
+|コンパイラ エラー C2901|'*識別子*': ジェネリック インターフェイスまたはデリゲートをパブリックにすることはできません|  
+|[コンパイラ エラー C2902](compiler-error-c2902.md)|'*トークン*': 予期しないトークン次' テンプレートまたはジェネリック '、識別子が必要|  
+|[コンパイラ エラー C2903](compiler-error-c2903.md)|'*識別子*': シンボルはクラス テンプレートまたはジェネリックでも関数テンプレートやジェネリック|  
+|[コンパイラ エラー C2904](compiler-error-c2904.md)|'*識別子*': 名前、現在のスコープ内のテンプレートを使用されています|  
+|コンパイラ エラー C2905|互換性のために残されています。|  
+|[コンパイラ エラー C2906](compiler-error-c2906.md)|'*テンプレート*': 明示的な特殊化 'テンプレート <>' が必要です|  
+|コンパイラ エラー C2907|レジスタ引数 '*数*' は有効なレジスタ番号が指定されていません|  
+|[コンパイラ エラー C2908](compiler-error-c2908.md)|明示的な特殊化です。'*テンプレート*' は既にインスタンス化されました|  
+|[コンパイラ エラー C2909](compiler-error-c2909.md)|'*識別子*': 関数テンプレートの明示的なインスタンス化には、戻り値の型が必要です。|  
+|[コンパイラ エラー C2910](compiler-error-c2910.md)|'*関数*': 明示的特殊化できません|  
+|[コンパイラ エラー C2911](compiler-error-c2911.md)|'*メンバー*': 宣言されているか、現在のスコープで定義されていることはできません|  
+|[コンパイラ エラー C2912](compiler-error-c2912.md)|明示的な特殊化 '*宣言*' は関数テンプレートの特殊化ではありません|  
+|[コンパイラ エラー C2913](compiler-error-c2913.md)|明示的な特殊化です。'*宣言*' はクラス テンプレートの特殊化ではありません|  
+|[コンパイラ エラー C2914](compiler-error-c2914.md)|'*識別子*': 関数の引数があいまいなために、テンプレートまたはジェネリック引数を推測できません|  
+|コンパイラ エラー C2915|'*識別子*':'*型*' WinRT 型の発行サーフェスで直接使用することはできません。 使用して ' platform::object ^' 代わりにこの型を渡す|  
+|コンパイラ エラー C2916|'*識別子*': が 'unsigned int' 型の基になると、[FlagsAttribute] パブリック列挙型での指定しなければなりません (のみ)|  
+|[コンパイラ エラー C2917](compiler-error-c2917.md)|'*識別子*': 無効なテンプレート パラメーター|  
+|[コンパイラ エラー C2918](compiler-error-c2918.md)|'*識別子*': WinRT 型の発行サーフェスでインデックス付きプロパティを使用することはできません|  
+|[コンパイラ エラー C2919](compiler-error-c2919.md)|'*型*': WinRT 型の発行サーフェスで演算子を使用することはできません|  
+|[コンパイラ エラー C2920](compiler-error-c2920.md)|再定義されています: '*型*': クラス テンプレートまたはジェネリックは既に宣言されて'*宣言*'|  
+|[コンパイラ エラー C2921](compiler-error-c2921.md)|再定義されています: '*型*': クラス テンプレートまたはジェネリックは再宣言されています'*宣言*'|  
+|コンパイラ エラー C2922|'*インターフェイス*': WinRT インターフェイスは、静的メンバーを含めることはできません|  
+|[コンパイラ エラー C2923](compiler-error-c2923.md)|'*型*':'*識別子*'はパラメーターに有効なテンプレートやジェネリック型引数ではない'*パラメーター*'|  
+|コンパイラ エラー C2924|__declspec(interrupt) ルーチン引数が R2 にありません|  
+|コンパイラ エラー C2925|__declspec(interrupt) は浮動小数点を使用できません|  
+|コンパイラ エラー C2926|'*識別子*': 共用体内の匿名 struct のメンバーの既定のメンバー初期化子は許可されていません|  
+|[コンパイラ エラー C2927](compiler-error-c2927.md)|'*識別子*': 関数テンプレートは、少なくとも 1 つの引数で呼び出す必要があります|  
+|[コンパイラ エラー C2928](compiler-error-c2928.md)|明示的なインスタンス生成。'*識別子*'は関数またはテンプレート クラスの静的データ メンバーではない'*クラス*'|  
+|[コンパイラ エラー C2929](compiler-error-c2929.md)|'*宣言子*': 明示的なインスタンス生成明示的に強制的に抑制したりできません。 テンプレート クラス メンバーのインスタンス化。|  
+|[コンパイラ エラー C2930](compiler-error-c2930.md)|'*クラス*': 列挙子のとして再定義テンプレート id/汎用 id' enum*識別子*'|  
+|[コンパイラ エラー C2931](compiler-error-c2931.md)|'*class1*': メンバー関数として再定義テンプレート id/汎用 id'*class2*'|  
+|[コンパイラ エラー C2932](compiler-error-c2932.md)|'*型*': テンプレート id/汎用 id は、のデータ メンバーとして再定義されています'*識別子*'|  
+|[コンパイラ エラー C2933](compiler-error-c2933.md)|'*型*': テンプレート id/汎用 id が、typedef メンバーとして再定義'*識別子*'|  
+|[コンパイラ エラー C2934](compiler-error-c2934.md)|'*型*': テンプレート id/汎用 id が、入れ子になったとして再定義'*項目*'の'*識別子*'|  
+|[コンパイラ エラー C2935](compiler-error-c2935.md)|'*型*': グローバル関数として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2936](compiler-error-c2936.md)|'*型*': グローバル データ変数として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2937](compiler-error-c2937.md)|'*型*': グローバル typedef として再定義テンプレート id/汎用 id|  
+|コンパイラ エラー C2938|'*識別子*': エイリアス テンプレートの特化に失敗しました|  
+|[コンパイラ エラー C2939](compiler-error-c2939.md)|'*型*': ローカル データ変数として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2940](compiler-error-c2940.md)|'*型*': テンプレート id/汎用 id がローカル typedef として再定義|  
+|[コンパイラ エラー C2941](compiler-error-c2941.md)|'*型*': ローカルとして再定義テンプレート id/汎用 id'*項目*'|  
+|[コンパイラ エラー C2942](compiler-error-c2942.md)|'*型*': 関数の仮引数として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2943](compiler-error-c2943.md)|'*型*': テンプレートの引数の型として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2944](compiler-error-c2944.md)|'*型*': テンプレートの値引数として再定義テンプレート id/汎用 id|  
+|[コンパイラ エラー C2945](compiler-error-c2945.md)|明示的なインスタンス生成でテンプレート クラスの特殊化を参照していません。|  
+|[コンパイラ エラー C2946](compiler-error-c2946.md)|明示的なインスタンス生成。'*型*' はテンプレート クラスの特殊化ではありません|  
+|[コンパイラ エラー C2947](compiler-error-c2947.md)|指定してください '>' のテンプレート引数を終了するには、見つかった'*トークン*'|  
+|[コンパイラ エラー C2948](compiler-error-c2948.md)|明示的なインスタンス生成。ストレージ クラス指定子 '*指定子*' 特殊化では使用できません|  
+|コンパイラ エラー C2949|thread_local は /kernel でサポートされていません|  
+|コンパイラ エラー C2950|互換性のために残されています。|  
+|[コンパイラ エラー C2951](compiler-error-c2951.md)|テンプレートまたはジェネリック宣言は、グローバル名前空間でのみ許可されますまたはクラス スコープ|  
+|[コンパイラ エラー C2952](compiler-error-c2952.md)|'*宣言*': テンプレートやジェネリック宣言テンプレートやジェネリック パラメーターの一覧がありません。|  
+|[コンパイラ エラー C2953](compiler-error-c2953.md)|'*型*': クラス テンプレートは既に定義されています|  
+|コンパイラ エラー C2954|命令語の引数が範囲を超えています。|  
+|[コンパイラ エラー C2955](compiler-error-c2955.md)|'*型*': クラス テンプレートまたはジェネリックの使用には、テンプレートまたは汎用引数リストが必要です|  
+|コンパイラ エラー C2956|サイズが設定された解放関数 'operator delete (void *, size_t)' が仮解放関数として選択されます。|  
+|[コンパイラ エラー C2957](compiler-error-c2957.md)|'*トークン*': 左側の区切り文字が無効です想定' <'。|  
+|[コンパイラ エラー C2958](compiler-error-c2958.md)|左側の*区切り記号*で見つかった '*ファイル*(*line_number*)' 正しく一致しませんでした|  
+|[コンパイラ エラー C2959](compiler-error-c2959.md)|ジェネリック クラスまたは関数は、テンプレートのメンバーになることはできません|  
+|コンパイラ エラー C2960|互換性のために残されています。|  
+|コンパイラ エラー C2961|'*関数*': 矛盾する明示的なインスタンス化、以前の明示的なインスタンス化が指定されていません'*引数*'|  
+|[コンパイラ エラー C2962](compiler-error-c2962.md)|構文エラー: '*トークン*': テンプレート クラス メンバー関数の定義を終了'}'|  
+|コンパイラ エラー C2963|互換性のために残されています。|  
+|コンパイラ エラー C2964|互換性のために残されています。|  
+|コンパイラ エラー C2965|_ _declspec (*指定子*) は/kernel でサポートされていません|  
+|コンパイラ エラー C2966|'*identifier1*': 基底クラスとして同じ __declspec(code_seg(...) 必要があります*identifier2*'|  
+|コンパイラ エラー C2967|'*識別子*': オーバーライドする仮想関数がオーバーライドされた仮想関数と同じ __declspec(code_seg(...) をいる必要があります|  
+|コンパイラ エラー C2968|'*識別子*': 再帰的なエイリアスの宣言|  
+|[コンパイラ エラー C2969](compiler-error-c2969.md)|構文エラー: '*トークン*': メンバー関数の定義を終了'}'|  
+|[コンパイラ エラー C2970](compiler-error-c2970.md)|'*型*': テンプレート パラメーター'*パラメーター*': '*引数*': 非型引数として内部リンケージを持つオブジェクトを含む式を使用することはできません|  
+|[コンパイラ エラー C2971](compiler-error-c2971.md)|'*型*': テンプレート パラメーター'*パラメーター*': '*引数*': 非型引数として非静的ストレージ存続期間を持つ変数を使用することはできません|  
+|コンパイラ エラー C2972|'*型*': テンプレート パラメーター'*パラメーター*': 非型引数の型が正しくありません|  
+|[コンパイラ エラー C2973](compiler-error-c2973.md)|'*テンプレート*': 無効なテンプレート引数'*数*'|  
+|[コンパイラ エラー C2974](compiler-error-c2974.md)|'*型*': 無効なテンプレートやジェネリック引数を'*パラメーター*'、予期される型|  
+|[コンパイラ エラー C2975](compiler-error-c2975.md)|'*型*': 無効なテンプレート引数を'*パラメーター*'、コンパイル時定数式が必要です|  
+|[コンパイラ エラー C2976](compiler-error-c2976.md)|'*型*': テンプレートやジェネリック引数が少なすぎます|  
+|[コンパイラ エラー C2977](compiler-error-c2977.md)|'*型*': テンプレートやジェネリック引数が多すぎます|  
+|[コンパイラ エラー C2978](compiler-error-c2978.md)|構文エラー: 予想 '*keyword1*'または'*keyword2*'が必要です型'*型*' 以外の場合は非型パラメーターはジェネリックではサポートされていません。|  
+|[コンパイラ エラー C2979](compiler-error-c2979.md)|明示的な特殊化はジェネリックではサポートされていません|  
+|コンパイラ エラー C2980|C++ 例外処理は /kernel でサポートされていません|  
+|コンパイラ エラー C2981|動的形式 '*キーワード*' は/kernel でサポートされていません|  
+|コンパイラ エラー C2982|'*宣言*': 異なる __declspec(code_seg(...) の使用: が'*identifier1*'今すぐ'*identifier2*'|  
+|コンパイラ エラー C2983|'*宣言*': すべての宣言する必要がありますで同じ __declspec(code_seg(...)|  
+|コンパイラ エラー C2984|互換性のために残されています。|  
+|コンパイラ エラー C2985|'*引数*': __declspec(code_seg(...) への引数はテキスト セクションである必要があります|  
+|コンパイラ エラー C2986|'*識別子*': __declspec(code_seg(...) はクラスまたは関数にのみ適用できます|  
+|コンパイラ エラー C2987|宣言されていない両方 _ _declspec (code_seg ('*識別子*')) と _ _declspec (code_seg ('*値*'))|  
+|[コンパイラ エラー C2988](compiler-error-c2988.md)|認識できないテンプレートの宣言または定義です。|  
+|[コンパイラ エラー C2989](compiler-error-c2989.md)|'*クラス*': クラス テンプレートまたはジェネリックは既に非クラス テンプレートまたはジェネリックとして宣言されて|  
+|[コンパイラ エラー C2990](compiler-error-c2990.md)|'*クラス*': 非クラス テンプレートまたはジェネリックはクラス テンプレートまたはジェネリックとして既に宣言されています。|  
+|[コンパイラ エラー C2991](compiler-error-c2991.md)|テンプレートまたはジェネリック パラメーターの再定義は '*パラメーター*'|  
+|[コンパイラ エラー C2992](compiler-error-c2992.md)|'*クラス*': 無効なまたは不足しているテンプレートまたはジェネリック パラメーター リスト|  
+|[コンパイラ エラー C2993](compiler-error-c2993.md)|'*型*': 無効な型の非型テンプレート パラメーター'*識別子*'|  
+|[コンパイラ エラー C2994](compiler-error-c2994.md)|テンプレートのパラメーター リストに名前のないクラスがあります。|  
+|[コンパイラ エラー C2995](compiler-error-c2995.md)|'*宣言*': 関数テンプレートは既に定義されています|  
+|[コンパイラ エラー C2996](compiler-error-c2996.md)|'*関数*': 再帰的な関数テンプレートの定義|  
+|コンパイラ エラー C2997|'*関数*': 配列のバインドは、既定のメンバー初期化子から推測できません|  
+|[コンパイラ エラー C2998](compiler-error-c2998.md)|'*宣言子*': テンプレート定義することはできません|  
+|コンパイラ エラー C2999|不明なエラーまたは参照してください、Visual C ヘルプ メニューのサポート情報コマンドを選択して詳細については、テクニカル サポート ヘルプ ファイル|  
+

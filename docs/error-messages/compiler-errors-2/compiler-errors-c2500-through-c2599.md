@@ -8,6 +8,56 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: error-reference
+f1_keywords:
+- C2501
+- C2508
+- C2515
+- C2519
+- C2520
+- C2522
+- C2525
+- C2527
+- C2536
+- C2538
+- C2539
+- C2546
+- C2547
+- C2559
+- C2560
+- C2564
+- C2565
+- C2576
+- C2578
+- C2580
+- C2590
+- C2591
+- C2595
+- C2596
+helpviewer_keywords:
+- C2501
+- C2508
+- C2515
+- C2519
+- C2520
+- C2522
+- C2525
+- C2527
+- C2536
+- C2538
+- C2539
+- C2546
+- C2547
+- C2559
+- C2560
+- C2564
+- C2565
+- C2576
+- C2578
+- C2580
+- C2590
+- C2591
+- C2595
+- C2596
 dev_langs:
 - C++
 ms.assetid: a869aaed-e9f6-49e3-b273-00ea7f45bed7
@@ -30,152 +80,117 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: bdce46b08d44226c3dedef076528d7e46d39365c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: a41480c57b281c7a4fbb1e7697d11b5057b5da48
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="compiler-errors-c2500-through-c2599"></a>コンパイラ エラー C2500 C2599 から
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
-  
- [コンパイラ エラー C2500](../../error-messages/compiler-errors-2/compiler-error-c2500.md)  
-  
- [コンパイラ エラー C2502](../../error-messages/compiler-errors-2/compiler-error-c2502.md)  
-  
- [コンパイラ エラー C2503](../../error-messages/compiler-errors-2/compiler-error-c2503.md)  
-  
- [コンパイラ エラー C2504](../../error-messages/compiler-errors-2/compiler-error-c2504.md)  
-  
- [コンパイラ エラー C2505](../../error-messages/compiler-errors-2/compiler-error-c2505.md)  
-  
- [コンパイラ エラー C2506](../../error-messages/compiler-errors-2/compiler-error-c2506.md)  
-  
- [コンパイラ エラー C2507](../../error-messages/compiler-errors-2/compiler-error-c2507.md)  
-  
- [コンパイラ エラー C2509](../../error-messages/compiler-errors-2/compiler-error-c2509.md)  
-  
- [コンパイラ エラー C2511](../../error-messages/compiler-errors-2/compiler-error-c2511.md)  
-  
- [コンパイラ エラー C2512](../../error-messages/compiler-errors-2/compiler-error-c2512.md)  
-  
- [コンパイラ エラー C2513](../../error-messages/compiler-errors-2/compiler-error-c2513.md)  
-  
- [コンパイラ エラー C2514](../../error-messages/compiler-errors-2/compiler-error-c2514.md)  
-  
- [コンパイラ エラー C2516](../../error-messages/compiler-errors-2/compiler-error-c2516.md)  
-  
- [コンパイラ エラー C2517](../../error-messages/compiler-errors-2/compiler-error-c2517.md)  
-  
- [コンパイラ エラー C2518](../../error-messages/compiler-errors-2/compiler-error-c2518.md)  
-  
- [コンパイラ エラー C2521](../../error-messages/compiler-errors-2/compiler-error-c2521.md)  
-  
- [コンパイラ エラー C2523](../../error-messages/compiler-errors-2/compiler-error-c2523.md)  
-  
- [コンパイラ エラー C2524](../../error-messages/compiler-errors-2/compiler-error-c2524.md)  
-  
- [コンパイラ エラー C2526](../../error-messages/compiler-errors-2/compiler-error-c2526.md)  
-  
- [コンパイラ エラー C2528](../../error-messages/compiler-errors-2/compiler-error-c2528.md)  
-  
- [コンパイラ エラー C2529](../../error-messages/compiler-errors-2/compiler-error-c2529.md)  
-  
- [コンパイラ エラー C2530](../../error-messages/compiler-errors-2/compiler-error-c2530.md)  
-  
- [コンパイラ エラー C2531](../../error-messages/compiler-errors-2/compiler-error-c2531.md)  
-  
- [コンパイラ エラー C2532](../../error-messages/compiler-errors-2/compiler-error-c2532.md)  
-  
- [コンパイラ エラー C2533](../../error-messages/compiler-errors-2/compiler-error-c2533.md)  
-  
- [コンパイラ エラー C2534](../../error-messages/compiler-errors-2/compiler-error-c2534.md)  
-  
- [コンパイラ エラー C2535](../../error-messages/compiler-errors-2/compiler-error-c2535.md)  
-  
- [コンパイラ エラー C2537](../../error-messages/compiler-errors-2/compiler-error-c2537.md)  
-  
- [コンパイラ エラー C2540](../../error-messages/compiler-errors-2/compiler-error-c2540.md)  
-  
- [コンパイラ エラー C2541](../../error-messages/compiler-errors-2/compiler-error-c2541.md)  
-  
- [コンパイラ エラー C2542](../../error-messages/compiler-errors-2/compiler-error-c2542.md)  
-  
- [コンパイラ エラー C2543](../../error-messages/compiler-errors-2/compiler-error-c2543.md)  
-  
- [コンパイラ エラー C2544](../../error-messages/compiler-errors-2/compiler-error-c2544.md)  
-  
- [コンパイラ エラー C2545](../../error-messages/compiler-errors-2/compiler-error-c2545.md)  
-  
- [コンパイラ エラー C2548](../../error-messages/compiler-errors-2/compiler-error-c2548.md)  
-  
- [コンパイラ エラー C2549](../../error-messages/compiler-errors-2/compiler-error-c2549.md)  
-  
- [コンパイラ エラー C2550](../../error-messages/compiler-errors-2/compiler-error-c2550.md)  
-  
- [コンパイラ エラー C2552](../../error-messages/compiler-errors-2/compiler-error-c2552.md)  
-  
- [コンパイラ エラー C2553](../../error-messages/compiler-errors-2/compiler-error-c2553.md)  
-  
- [コンパイラ エラー C2555](../../error-messages/compiler-errors-2/compiler-error-c2555.md)  
-  
- [コンパイラ エラー C2556](../../error-messages/compiler-errors-2/compiler-error-c2556.md)  
-  
- [コンパイラ エラー C2558](../../error-messages/compiler-errors-2/compiler-error-c2558.md)  
-  
- [コンパイラ エラー C2561](../../error-messages/compiler-errors-2/compiler-error-c2561.md)  
-  
- [コンパイラ エラー C2562](../../error-messages/compiler-errors-2/compiler-error-c2562.md)  
-  
- [コンパイラ エラー C2563](../../error-messages/compiler-errors-2/compiler-error-c2563.md)  
-  
- [コンパイラ エラー C2566](../../error-messages/compiler-errors-2/compiler-error-c2566.md)  
-  
- [コンパイラ エラー C2567](../../error-messages/compiler-errors-2/compiler-error-c2567.md)  
-  
- [コンパイラ エラー C2568](../../error-messages/compiler-errors-2/compiler-error-c2568.md)  
-  
- [コンパイラ エラー C2569](../../error-messages/compiler-errors-2/compiler-error-c2569.md)  
-  
- [コンパイラ エラー C2570](../../error-messages/compiler-errors-2/compiler-error-c2570.md)  
-  
- [コンパイラ エラー C2571](../../error-messages/compiler-errors-2/compiler-error-c2571.md)  
-  
- [コンパイラ エラー C2572](../../error-messages/compiler-errors-2/compiler-error-c2572.md)  
-  
- [コンパイラ エラー C2574](../../error-messages/compiler-errors-2/compiler-error-c2574.md)  
-  
- [コンパイラ エラー C2575](../../error-messages/compiler-errors-2/compiler-error-c2575.md)  
-  
- [コンパイラ エラー C2577](../../error-messages/compiler-errors-2/compiler-error-c2577.md)  
-  
- [コンパイラ エラー C2579](../../error-messages/compiler-errors-2/compiler-error-c2579.md)  
-  
- [コンパイラ エラー C2581](../../error-messages/compiler-errors-2/compiler-error-c2581.md)  
-  
- [コンパイラ エラー C2582](../../error-messages/compiler-errors-2/compiler-error-c2582.md)  
-  
- [コンパイラ エラー C2583](../../error-messages/compiler-errors-2/compiler-error-c2583.md)  
-  
- [コンパイラ エラー C2584](../../error-messages/compiler-errors-2/compiler-error-c2584.md)  
-  
- [コンパイラ エラー C2585](../../error-messages/compiler-errors-2/compiler-error-c2585.md)  
-  
- [コンパイラ エラー C2586](../../error-messages/compiler-errors-2/compiler-error-c2586.md)  
-  
- [コンパイラ エラー C2587](../../error-messages/compiler-errors-2/compiler-error-c2587.md)  
-  
- [コンパイラ エラー C2588](../../error-messages/compiler-errors-2/compiler-error-c2588.md)  
-  
- [コンパイラ エラー C2589](../../error-messages/compiler-errors-2/compiler-error-c2589.md)  
-  
- [コンパイラ エラー C2592](../../error-messages/compiler-errors-2/compiler-error-c2592.md)  
-  
- [コンパイラ エラー C2593](../../error-messages/compiler-errors-2/compiler-error-c2593.md)  
-  
- [コンパイラ エラー C2594](../../error-messages/compiler-errors-2/compiler-error-c2594.md)  
-  
- [コンパイラ エラー C2597](../../error-messages/compiler-errors-2/compiler-error-c2597.md)  
-  
- [コンパイラ エラー C2598](../../error-messages/compiler-errors-2/compiler-error-c2598.md)  
-  
- [コンパイラ エラー C2599](../../error-messages/compiler-errors-2/compiler-error-c2599.md)
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C2500](compiler-error-C2500.md)|'*identifier1*':'*identifier2*' は既に直接基底クラス|  
+|コンパイラ エラー C2501|'*識別子*':' _ _declspec (*指定子*)' 構造体、共用体、クラス、または符号なしビット フィールド メンバーにのみ適用できます|  
+|[コンパイラ エラー C2502](compiler-error-C2502.md)|'*識別子*': 基底クラスに多すぎる、アクセス修飾子|  
+|[コンパイラ エラー C2503](compiler-error-C2503.md)|'*クラス*': 基底クラスは、サイズが 0 の配列を含めることはできません|  
+|[コンパイラ エラー C2504](compiler-error-C2504.md)|'*クラス*': 基底クラスが定義されていません|  
+|[コンパイラ エラー C2505](compiler-error-C2505.md)|'*シンボル*':' _ _declspec (*指定子*)' 宣言またはグローバル オブジェクトまたは静的データ メンバーの定義にのみ適用できます|  
+|[コンパイラ エラー C2506](compiler-error-C2506.md)|'*メンバー*':' _ _declspec (*指定子*)' このシンボルに適用することはできません|  
+|[コンパイラ エラー C2507](compiler-error-C2507.md)|'*識別子*': 基底クラスで virtual 修飾子が多すぎます|  
+|コンパイラ エラー C2508|'*識別子*':'\_\_declspec (*specifier1*)' と組み合わせて使用できない '\_\_declspec (*specifier2*)'|  
+|[コンパイラ エラー C2509](compiler-error-C2509.md)|'*識別子*': メンバー関数で宣言されていない'*クラス*'|  
+|[コンパイラ エラー C2510](compiler-error-C2510.md)|'*識別子*': 左の '::' クラス/構造体/共用体にする必要があります|  
+|[コンパイラ エラー C2511](compiler-error-C2511.md)|'*識別子*': オーバー ロード メンバー関数に見つかりませんでした'*クラス*'|  
+|[コンパイラ エラー C2512](compiler-error-C2512.md)|'*識別子*': 適切な既定コンス トラクターがない使用可能な|  
+|[コンパイラ エラー C2513](compiler-error-C2513.md)|' * 型 ': '=' の前に変数が宣言されていません。|  
+|[コンパイラ エラー C2514](compiler-error-C2514.md)|'*クラス*': クラスにコンス トラクターがありません|  
+|コンパイラ エラー C2515|'*識別子*': 'vtguard' は、クラス宣言または定義にのみ適用できます|  
+|[コンパイラ エラー C2516](compiler-error-C2516.md)|'*クラス*': は正しい基底クラスではありません|  
+|[コンパイラ エラー C2517](compiler-error-C2517.md)|'*識別子*': 右の '::' が定義されていません|  
+|[コンパイラ エラー C2518](compiler-error-C2518.md)|キーワード '*キーワード*' 基底クラス リストが無効です。 無視されます。|  
+|コンパイラ エラー C2519|'*識別子*': WinRT 属性はパブリック フィールドのみを含めることがあります|  
+|コンパイラ エラー C2520|'*クラス*': 非明示的コンス トラクターは暗黙的な変換の使用可能なありません|  
+|[コンパイラ エラー C2521](compiler-error-C2521.md)|デコンス トラクター/ファイナライザーが引数を受け取りません|  
+|コンパイラ エラー C2522|'*識別子*': オーバー ロード識別子では使用できません'*identifier1*'が既に指定された' as*identifier2*'|  
+|[コンパイラ エラー C2523](compiler-error-C2523.md)|'*クラス*:: ~*識別子*': デストラクターまたはファイナライザーのタグが一致しません|  
+|[コンパイラ エラー C2524](compiler-error-C2524.md)|'*識別子*': デストラクターまたはファイナライザーには、'void' パラメーター リストが必要です。|  
+|コンパイラ エラー C2525|'*識別子*': パラメーター'*identifier1*'という名前が'*identifier2*' ベースの機能、発行済みの実装と一致する必要があります|  
+|[コンパイラ エラー C2526](compiler-error-C2526.md)|'*identifier1*': C リンケージ関数は C++ のクラスを返すことができません*identifier2*'|  
+|コンパイラ エラー C2527|'*識別子*': 両方に DefaultOverload を指定することはできません'*function1*'および'*function2*' です。 1 つの仕様を削除するか、実装中に、関数の名前を変更|  
+|[コンパイラ エラー C2528](compiler-error-C2528.md)|'*識別子*': 参照へのポインターは無効です|  
+|[コンパイラ エラー C2529](compiler-error-C2529.md)|'*識別子*': 参照への参照は無効です|  
+|[コンパイラ エラー C2530](compiler-error-C2530.md)|'*識別子*': 参照を初期化する必要があります|  
+|[コンパイラ エラー C2531](compiler-error-C2531.md)|'*識別子*': ビット フィールドが正しくありませんへの参照。|  
+|[コンパイラ エラー C2532](compiler-error-C2532.md)|'*識別子*': 参照の修飾子が正しくありません|  
+|[コンパイラ エラー C2533](compiler-error-C2533.md)|'*識別子*': コンス トラクターの戻り値の型が許可されていません|  
+|[コンパイラ エラー C2534](compiler-error-C2534.md)|'*識別子*': コンス トラクターは値を返すことはできません|  
+|[コンパイラ エラー C2535](compiler-error-C2535.md)|'*識別子*': メンバー関数は既に定義または宣言|  
+|コンパイラ エラー C2536|互換性のために残されています。|  
+|[コンパイラ エラー C2537](compiler-error-C2537.md)|'*指定子*': リンケージ仕様|  
+|コンパイラ エラー C2538|互換性のために残されています。|  
+|コンパイラ エラー C2539|互換性のために残されています。|
+|[コンパイラ エラー C2540](compiler-error-C2540.md)|配列のバウンドが定数式ではありません。|  
+|[コンパイラ エラー C2541](compiler-error-C2541.md)|'*識別子*': ポインターではないオブジェクトは削除できません|  
+|[コンパイラ エラー C2542](compiler-error-C2542.md)|'*識別子*': クラスのオブジェクトが初期化にコンス トラクターを持たない|  
+|[コンパイラ エラー C2543](compiler-error-C2543.md)|予想 ']' 演算子 ' '|  
+|[コンパイラ エラー C2544](compiler-error-C2544.md)|関数呼出し演算子の右かっこ ')' がありません。|  
+|[コンパイラ エラー C2545](compiler-error-C2545.md)|'*演算子*': 演算子できません。|  
+|コンパイラ エラー C2546|'*識別子*': PIA と NO-PIA PIA を最初に参照する必要がありますの両方で、型が定義されている場合|  
+|コンパイラ エラー C2547|'*識別子*': 公開されたメソッドのすべてのパラメーターを宣言で明示的に指定する必要があります|  
+|[コンパイラ エラー C2548](compiler-error-C2548.md)|'*関数*': パラメーターの既定のパラメーターがありません*パラメーター*|  
+|[コンパイラ エラー C2549](compiler-error-C2549.md)|ユーザー定義の変換では、戻り値の型を指定できません。|  
+|[コンパイラ エラー C2550](compiler-error-C2550.md)|'*識別子*': コンス トラクター初期化子リストはコンス トラクターの定義だけに許されます。|  
+|[コンパイラ エラー C2551](compiler-error-C2551.md)|'void *' 型には明示的なキャストが必要です|  
+|[コンパイラ エラー C2552](compiler-error-C2552.md)|'*識別子*': 初期化子リストで非集計は初期化できません|  
+|[コンパイラ エラー C2553](compiler-error-C2553.md)|'*型* *derived_class*::*関数*': オーバーライドする仮想関数の戻り値の型が異なる'*型* *base_class*::*関数*'|  
+|[コンパイラ エラー C2555](compiler-error-C2555.md)|'*derived_class*::*関数*': 仮想関数をオーバーライドする型の戻り値と異なるから covariant ではありません'*base_class*::*関数*'|  
+|[コンパイラ エラー C2556](compiler-error-C2556.md)|'*type1* *クラス*::*関数*': オーバー ロードされた関数唯一の相違点からの戻り値の型'*type2* *クラス*::*関数*'|  
+|[コンパイラ エラー C2557](compiler-error-C2557.md)|'*識別子*': コンス トラクターのないプライベートおよびプロテクト メンバーを初期化することはできません|  
+|[コンパイラ エラー C2558](compiler-error-C2558.md)|クラスの*クラス*': 使用可能なコピー コンス トラクターまたはコピー コンス トラクターが宣言されていない 'explicit'|  
+|コンパイラ エラー C2559|'*識別子*': ref 修飾子を持つメンバー関数を持つ ref 修飾子を持たないメンバー関数をオーバー ロードすることはできません|  
+|コンパイラ エラー C2560|'*識別子*': ref 修飾子なしのメンバー関数を使って ref 修飾子を持つメンバー関数をオーバー ロードすることはできません|  
+|[コンパイラ エラー C2561](compiler-error-C2561.md)|'*関数*': 関数が値を返す必要があります|  
+|[コンパイラ エラー C2562](compiler-error-C2562.md)|'*関数*': 'void' 関数の値を返す|  
+|[コンパイラ エラー C2563](compiler-error-C2563.md)|仮パラメーター リストまたは関数へのポインターが、適合していません。|  
+|{1&gt;コンパイラ エラー C2564&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C2565|'*識別子*': ref 修飾子はコンス トラクター/デストラクターには|  
+|[コンパイラ エラー C2566](compiler-error-C2566.md)|条件式中のオーバーロード関数を評価することができません。|  
+|[コンパイラ エラー C2567](compiler-error-C2567.md)|内のメタデータを開けません '*filename*'、 *possible_reason。*|  
+|[コンパイラ エラー C2568](compiler-error-C2568.md)|'*識別子*': 関数のオーバー ロードを解決するのにはできません。|  
+|[コンパイラ エラー C2569](compiler-error-C2569.md)|'*識別子*': 列挙および共用体は基底クラスとして使用できません|  
+|[コンパイラ エラー C2570](compiler-error-C2570.md)|'*識別子*': 共用体は基底クラスを持つことはできません|  
+|[コンパイラ エラー C2571](compiler-error-C2571.md)|'*識別子*': 仮想関数は、共用体にすることはできません'*共用体*'|  
+|[コンパイラ エラー C2572](compiler-error-C2572.md)|'*関数*': 既定の引数の再定義: パラメーター*数*|  
+|[コンパイラ エラー C2573](compiler-error-C2573.md)|'*クラス*': この型のオブジェクトへのポインターを削除できませんクラスに 'operator delete' の非置換オーバー ロードがありません。 使用する:: 削除、または 'operator delete(void*)' をクラスに追加します。|  
+|[コンパイラ エラー C2574](compiler-error-C2574.md)|'*デストラクター*': static として宣言することはできません|  
+|[コンパイラ エラー C2575](compiler-error-C2575.md)|'*識別子*': メンバー関数とベース仮想られるのみ|  
+|コンパイラ エラー C2576|'*識別子*': 'public' として新しい仮想メソッドを導入することはできません。 非仮想メソッドをことを検討またはアクセシビリティを 'internal' または 'protected private' を変更します。|  
+|[コンパイラ エラー C2577](compiler-error-C2577.md)|'*識別子*': デストラクターまたはファイナライザーは、戻り値の型を持つことはできません|  
+|コンパイラ エラー C2578|'*クラス*': 型を持つことはできません、'protected' または 'protected public' コンス トラクター|  
+|[コンパイラ エラー C2579](compiler-error-C2579.md)|型を解決するのにはできません。*型*(*オフセット*)。 推測*ファイル名*|  
+|コンパイラ エラー C2580|'*識別子*': 複数のバージョンの既定値にされた特殊なメンバー関数は許可されていません|  
+|[コンパイラ エラー C2581](compiler-error-C2581.md)|'*型*': 静的' 演算子 = =' 関数は無効です|  
+|[コンパイラ エラー C2582](compiler-error-C2582.md)|' operator*演算子*'関数では使用できません'*型*'|  
+|[コンパイラ エラー C2583](compiler-error-C2583.md)|'*識別子*':' const または volatile' 'this' ポインターがコンス トラクター/デストラクターの宣言|  
+|[コンパイラ エラー C2584](compiler-error-C2584.md)|'*クラス*': 直接クラス'*base_class2*'アクセスできません派生'*base_class1*'。|  
+|[コンパイラ エラー C2585](compiler-error-C2585.md)|明示的な変換を '*型*' があいまいです|  
+|[コンパイラ エラー C2586](compiler-error-C2586.md)|変換演算子を間接的に使うことはできません。|  
+|[コンパイラ エラー C2587](compiler-error-C2587.md)|'*識別子*': 既定のパラメーターとしてのローカル変数の無効な使用|  
+|[コンパイラ エラー C2588](compiler-error-C2588.md)|':: ~*識別子*': 無効なグローバル デストラクターとファイナライザー|  
+|[コンパイラ エラー C2589](compiler-error-C2589.md)|'*識別子*': の右側に無効なトークン ':: '|  
+|コンパイラ エラー C2590|'*識別子*': コンス トラクターは、ベース/メンバー初期化子リストを持つことができますのみ|  
+|コンパイラ エラー C2591|Exclusiveto では使用できません '*型*' の引数として。 のみ、'ref class' は有効な引数|  
+|[コンパイラ エラー C2592](compiler-error-C2592.md)|'*クラス*':'*base_class2*'から継承された'*base_class1*' 再指定することはできません|  
+|[コンパイラ エラー C2593](compiler-error-C2593.md)|'operator*識別子*' があいまいです|  
+|[コンパイラ エラー C2594](compiler-error-C2594.md)|'*演算子*': あいまいな変換から'*type1*'to'*type2*'|  
+|コンパイラ エラー C2595|'*識別子*' WinRT 型の属性をシールする必要があります|  
+|コンパイラ エラー C2596|'*識別子*' WinRT 属性フィールドには、'public enum class'、'int'、'unsigned int'、'bool'、'platform::type'、'platform::string' または ' Windows:: Foundation:: HResult' だけを指定できます|  
+|[コンパイラ エラー C2597](compiler-error-C2597.md)|非静的メンバーへの参照を無効な '*識別子*'|  
+|[コンパイラ エラー C2598](compiler-error-C2598.md)|リンケージ指定子がグローバル スコープで宣言されていません。|  
+|[コンパイラ エラー C2599](compiler-error-C2599.md)|'*識別子*': マネージまたは WinRT 列挙型の事前宣言が許可されていません|  

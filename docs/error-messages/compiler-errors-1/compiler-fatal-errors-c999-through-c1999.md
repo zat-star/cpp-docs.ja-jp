@@ -88,6 +88,86 @@ f1_keywords:
 - C1901
 - C1903
 - C1904
+helpviewer_keywords:
+- C1012
+- C1013
+- C1014
+- C1016
+- C1018
+- C1019
+- C1020
+- C1021
+- C1022
+- C1023
+- C1034
+- C1035
+- C1036
+- C1037
+- C1038
+- C1041
+- C1045
+- C1047
+- C1048
+- C1049
+- C1053
+- C1063
+- C1068
+- C1069
+- C1070
+- C1074
+- C1077
+- C1082
+- C1086
+- C1087
+- C1088
+- C1089
+- C1090
+- C1091
+- C1098
+- C1099
+- C1100
+- C1101
+- C1102
+- C1103
+- C1104
+- C1105
+- C1108
+- C1109
+- C1110
+- C1111
+- C1112
+- C1114
+- C1190
+- C1193
+- C1195
+- C1196
+- C1201
+- C1202
+- C1205
+- C1206
+- C1207
+- C1208
+- C1209
+- C1210
+- C1211
+- C1300
+- C1301
+- C1302
+- C1306
+- C1310
+- C1312
+- C1352
+- C1353
+- C1383
+- C1384
+- C1451
+- C1505
+- C1508
+- C1510
+- C1852
+- C1901
+- C1903
+- C1904
 dev_langs:
 - C++
 ms.assetid: 6c8df109-7594-48ed-987a-97d9fe2b04af
@@ -111,13 +191,18 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: e8d1696e325ac6a005636aa1d874d30b9c296e91
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 7cd9b98172f30248c40d2b0b8410b19f4a0cafec
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="compiler-fatal-errors-c999-through-c1999"></a>コンパイラ エラー (致命的なエラー) C999 から C1999
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
 |エラー|メッセージ|  
 |-----------|-------------|  
@@ -130,7 +215,7 @@ ms.lasthandoff: 04/12/2017
 |[致命的なエラー C1007](../../error-messages/compiler-errors-1/fatal-error-c1007.md)|フラグを認識できません '*文字列*'in'*オプション*'|  
 |[致命的なエラー C1008](../../error-messages/compiler-errors-1/fatal-error-c1008.md)|入力ファイルが指定されていません。|  
 |[致命的なエラー C1009](../../error-messages/compiler-errors-1/fatal-error-c1009.md)|コンパイラの制限: マクロの入れ子のレベルが深すぎます。|  
-|[致命的なエラー C1010](../../error-messages/compiler-errors-1/fatal-error-c1010.md)|プリコンパイル ヘッダーを検索中に不明な EOF が見つかりました。 追加忘れました ' #include*ファイル*>' をソースですか?|  
+|[致命的なエラー C1010](../../error-messages/compiler-errors-1/fatal-error-c1010.md)|プリコンパイル ヘッダーを検索中に不明な EOF が見つかりました。 追加忘れました ' #include <*ファイル*>' をソースですか?|  
 |致命的なエラー C1012|一致しないかっこ: 見つからない '*文字*"|  
 |致命的なエラー C1013|コンパイラの制限: 始めかっこが多すぎます。|  
 |致命的なエラー C1014|インクルード ファイルが多すぎます: 深さ =*数*|  
@@ -176,7 +261,7 @@ ms.lasthandoff: 04/12/2017
 |[致命的なエラー C1076](../../error-messages/compiler-errors-1/fatal-error-c1076.md)|コンパイラの制限: 内部ヒープの上限に達しました。上限を変更するには /Zm オプションを使用してください。|  
 |致命的なエラー C1077|コンパイラの制限: ことはできません以上*数*コマンド ライン オプション|  
 |[致命的なエラー C1079](../../error-messages/compiler-errors-1/fatal-error-c1079.md)|コンパイラの制限: PCH ファイル サイズの制限を超えています。|  
-|[致命的なエラー C1080](../../error-messages/compiler-errors-1/fatal-error-c1080.md)|コンパイラの制限: コマンド ライン オプションを超えましたが制限の*数*の文字|  
+|[致命的なエラー C1080](../../error-messages/compiler-errors-1/fatal-error-c1080.md)|コンパイラの制限: コマンド ライン オプションを超えましたが制限の*数*文字|  
 |[致命的なエラー C1081](../../error-messages/compiler-errors-1/fatal-error-c1081.md)|'*ファイル*': ファイル名が長すぎます|  
 |致命的なエラー C1082|閉じることができません*型*ファイル: '*ファイル*':*メッセージ*|  
 |[致命的なエラー C1083](../../error-messages/compiler-errors-1/fatal-error-c1083.md)|開くことができません*型*ファイル: '*ファイル*':*メッセージ*|  

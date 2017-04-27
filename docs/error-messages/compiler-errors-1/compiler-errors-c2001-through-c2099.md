@@ -1,147 +1,182 @@
 ---
-title: "コンパイラ エラーs C2001 through C2099 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C2000 C2099 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2000
+- C2016
+- C2023
+- C2024
+- C2025
+- C2029
+- C2031
+- C2035
+- C2037
+- C2038
+- C2049
+- C2068
+- C2076
+- C2080
+- C2096
+- C2098
+helpviewer_keywords:
+- C2000
+- C2016
+- C2023
+- C2024
+- C2025
+- C2029
+- C2031
+- C2035
+- C2037
+- C2038
+- C2049
+- C2068
+- C2076
+- C2080
+- C2096
+- C2098
+dev_langs:
+- C++
 ms.assetid: d99a19eb-eeeb-4181-9b33-9cbe4459767b
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラーs C2001 through C2099
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: d25a4e14c4961ec79bbfb9a330e6111d733d5fcb
+ms.lasthandoff: 04/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。  ここから情報にアクセスできます。または、Visual Studio の**出力**ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c2000-through-c2099"></a>コンパイラ エラー C2000 C2099 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
- [コンパイラ エラー C2001](../../error-messages/compiler-errors-1/compiler-error-c2001.md)  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
   
- [コンパイラ エラー C2002](../../error-messages/compiler-errors-1/compiler-error-c2002.md)  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
- [コンパイラ エラー C2003](../../error-messages/compiler-errors-1/compiler-error-c2003.md)  
-  
- [コンパイラ エラー C2005](../../error-messages/compiler-errors-1/compiler-error-c2005.md)  
-  
- [コンパイラ エラー C2006](../../error-messages/compiler-errors-1/compiler-error-c2006.md)  
-  
- [コンパイラ エラー C2007](../Topic/Compiler%20Error%20C2007.md)  
-  
- [コンパイラ エラー C2008](../Topic/Compiler%20Error%20C2008.md)  
-  
- [コンパイラ エラー C2009](../../error-messages/compiler-errors-1/compiler-error-c2009.md)  
-  
- [コンパイラ エラー C2010](../Topic/Compiler%20Error%20C2010.md)  
-  
- [コンパイラ エラー C2011](../Topic/Compiler%20Error%20C2011.md)  
-  
- [コンパイラ エラー C2014](../../error-messages/compiler-errors-1/compiler-error-c2014.md)  
-  
- [コンパイラ エラー C2015](../../error-messages/compiler-errors-1/compiler-error-c2015.md)  
-  
- [コンパイラ エラー C2017](../../error-messages/compiler-errors-1/compiler-error-c2017.md)  
-  
- [コンパイラ エラー C2018](../Topic/Compiler%20Error%20C2018.md)  
-  
- [コンパイラ エラー C2019](../../error-messages/compiler-errors-1/compiler-error-c2019.md)  
-  
- [コンパイラ エラー C2020](../../error-messages/compiler-errors-1/compiler-error-c2020.md)  
-  
- [コンパイラ エラー C2021](../../error-messages/compiler-errors-1/compiler-error-c2021.md)  
-  
- [コンパイラ エラー C2022](../../error-messages/compiler-errors-1/compiler-error-c2022.md)  
-  
- [コンパイラ エラー C2026](../../error-messages/compiler-errors-1/compiler-error-c2026.md)  
-  
- [コンパイラ エラー C2027](../../error-messages/compiler-errors-1/compiler-error-c2027.md)  
-  
- [コンパイラ エラー C2030](../../error-messages/compiler-errors-1/compiler-error-c2030.md)  
-  
- [コンパイラ エラー C2032](../Topic/Compiler%20Error%20C2032.md)  
-  
- [コンパイラ エラー C2034](../Topic/Compiler%20Error%20C2034.md)  
-  
- [コンパイラ エラー C2036](../../error-messages/compiler-errors-1/compiler-error-c2036.md)  
-  
- [コンパイラ エラー C2039](../../error-messages/compiler-errors-1/compiler-error-c2039.md)  
-  
- [コンパイラ エラー C2040](../../error-messages/compiler-errors-1/compiler-error-c2040.md)  
-  
- [コンパイラ エラー C2041](../../error-messages/compiler-errors-1/compiler-error-c2041.md)  
-  
- [コンパイラ エラー C2050](../../error-messages/compiler-errors-1/compiler-error-c2050.md)  
-  
- [コンパイラ エラー C2051](../../error-messages/compiler-errors-1/compiler-error-c2051.md)  
-  
- [コンパイラ エラー C2052](../../error-messages/compiler-errors-1/compiler-error-c2052.md)  
-  
- [コンパイラ エラー C2053](../../error-messages/compiler-errors-1/compiler-error-c2053.md)  
-  
- [コンパイラ エラー C2054](../../error-messages/compiler-errors-1/compiler-error-c2054.md)  
-  
- [コンパイラ エラー C2055](../../error-messages/compiler-errors-1/compiler-error-c2055.md)  
-  
- [コンパイラ エラー C2056](../../error-messages/compiler-errors-1/compiler-error-c2056.md)  
-  
- [コンパイラ エラー C2057](../Topic/Compiler%20Error%20C2057.md)  
-  
- [コンパイラ エラー C2059](../Topic/Compiler%20Error%20C2059.md)  
-  
- [コンパイラ エラー C2060](../../error-messages/compiler-errors-1/compiler-error-c2060.md)  
-  
- [コンパイラ エラー C2061](../../error-messages/compiler-errors-1/compiler-error-c2061.md)  
-  
- [コンパイラ エラー C2062](../../error-messages/compiler-errors-1/compiler-error-c2062.md)  
-  
- [コンパイラ エラー C2064](../../error-messages/compiler-errors-1/compiler-error-c2064.md)  
-  
- [コンパイラ エラー C2065](../../error-messages/compiler-errors-1/compiler-error-c2065.md)  
-  
- [コンパイラ エラー C2066](../../error-messages/compiler-errors-1/compiler-error-c2066.md)  
-  
- [コンパイラ エラー C2070](../../error-messages/compiler-errors-1/compiler-error-c2070.md)  
-  
- [コンパイラ エラー C2071](../../error-messages/compiler-errors-1/compiler-error-c2071.md)  
-  
- [コンパイラ エラー C2072](../../error-messages/compiler-errors-1/compiler-error-c2072.md)  
-  
- [コンパイラ エラー C2073](../../error-messages/compiler-errors-1/compiler-error-c2073.md)  
-  
- [コンパイラ エラー C2077](../Topic/Compiler%20Error%20C2077.md)  
-  
- [コンパイラ エラー C2078](../../error-messages/compiler-errors-1/compiler-error-c2078.md)  
-  
- [コンパイラ エラー C2079](../../error-messages/compiler-errors-1/compiler-error-c2079.md)  
-  
- [コンパイラ エラー C2081](../Topic/Compiler%20Error%20C2081.md)  
-  
- [コンパイラ エラー C2084](../Topic/Compiler%20Error%20C2084.md)  
-  
- [コンパイラ エラー C2085](../../error-messages/compiler-errors-1/compiler-error-c2085.md)  
-  
- [コンパイラ エラー C2086](../../error-messages/compiler-errors-1/compiler-error-c2086.md)  
-  
- [コンパイラ エラー C2087](../../error-messages/compiler-errors-1/compiler-error-c2087.md)  
-  
- [コンパイラ エラー C2088](../../error-messages/compiler-errors-1/compiler-error-c2088.md)  
-  
- [コンパイラ エラー C2089](../Topic/Compiler%20Error%20C2089.md)  
-  
- [コンパイラ エラー C2090](../../error-messages/compiler-errors-1/compiler-error-c2090.md)  
-  
- [コンパイラ エラー C2091](../../error-messages/compiler-errors-1/compiler-error-c2091.md)  
-  
- [コンパイラ エラー C2092](../../error-messages/compiler-errors-1/compiler-error-c2092.md)  
-  
- [コンパイラ エラー C2093](../Topic/Compiler%20Error%20C2093.md)  
-  
- [コンパイラ エラー C2095](../../error-messages/compiler-errors-1/compiler-error-c2095.md)  
-  
- [コンパイラ エラー C2097](../../error-messages/compiler-errors-1/compiler-error-c2097.md)
+|エラー|メッセージ|  
+|-----------|-------------|  
+|コンパイラ エラー C2000|不明なエラーまたは参照してください、Visual C ヘルプ メニューのサポート情報コマンドを選択して詳細については、テクニカル サポート ヘルプ ファイル|  
+|[コンパイラ エラー C2001](compiler-error-c2001.md)|定数が 2 行目に続いています。|  
+|[コンパイラ エラー C2002](compiler-error-c2002.md)|ワイド文字定数の使用方法が正しくありません。|  
+|[コンパイラ エラー C2003](compiler-error-c2003.md)|'defined id' が必要です。|  
+|[コンパイラ エラー C2004](compiler-error-c2004.md)|'defined (id)' の形式にしてください。|  
+|[コンパイラ エラー C2005](compiler-error-c2005.md)|#行指定されている行番号、'*トークン*'|  
+|[コンパイラ エラー C2006](compiler-error-c2006.md)|'*ディレクティブ*': 検出された、ファイル名を想定'*トークン*'|  
+|[コンパイラ エラー C2007](compiler-error-c2007.md)|#構文を定義します。|  
+|[コンパイラ エラー C2008](compiler-error-c2008.md)|'*文字*': マクロ定義内で予期しません。|  
+|[コンパイラ エラー C2009](compiler-error-c2009.md)|マクロの仮引数の再利用 '*識別子*'|  
+|[コンパイラ エラー C2010](compiler-error-c2010.md)|'*文字*': マクロの仮パラメーター リストに予期しません。|  
+|[コンパイラ エラー C2011](compiler-error-c2011.md)|'*識別子*':'*型*' 型の再定義されています|  
+|[コンパイラ エラー C2012](compiler-error-c2012.md)|'<' の後にファイル名がありません。|  
+|[コンパイラ エラー C2013](compiler-error-c2013.md)|'>' がありません。|  
+|[コンパイラ エラー C2014](compiler-error-c2014.md)|プリプロセッサ ディレクティブのシャープ記号 (#) の前に、空白文字以外の文字があります。|  
+|[コンパイラ エラー C2015](compiler-error-c2015.md)|定数の文字数が多すぎます。|  
+|コンパイラ エラー C2016|C では、構造体または共用体に少なくとも 1 つのメンバーが必要です。|  
+|[コンパイラ エラー C2017](compiler-error-c2017.md)|エスケープシーケンスの使い方が正しくありません。|  
+|[コンパイラ エラー C2018](compiler-error-c2018.md)|不明な文字 ' 0 x*値*'|  
+|[コンパイラ エラー C2019](compiler-error-c2019.md)|プリプロセッサ ディレクティブが必要な '*文字*'|  
+|[コンパイラ エラー C2020](compiler-error-c2020.md)|'*メンバー*':'*クラス*' メンバーの再定義|  
+|[コンパイラ エラー C2021](compiler-error-c2021.md)|指数の値を想定できません '*文字*'|  
+|[コンパイラ エラー C2022](compiler-error-c2022.md)|'*数*': 文字として大きすぎます|  
+|コンパイラ エラー C2023|'*識別子*': アライメント (*number1*) 前の宣言と異なる (*number2*)|  
+|コンパイラ エラー C2024|'alignas' 属性は、変数、データ メンバーおよびタグの種類のみに適用されます。|  
+|コンパイラ エラー C2025|無効なまたは破損しているバイナリ モジュール インターフェイス ファイル: '*filename*'|  
+|[コンパイラ エラー C2026](compiler-error-c2026.md)|文字列が大きすぎます。後ろの文字が切り捨てられました。|  
+|[コンパイラ エラー C2027](compiler-error-c2027.md)|認識できない型 '*型*'|  
+|[コンパイラ エラー C2028](compiler-error-c2028.md)|構造体や共用体のメンバーは、構造体か共用体の中になければなりません。|  
+|コンパイラ エラー C2029|左 '*トークン*'指定未定義クラス/構造体、インターフェイス'*識別子*'|  
+|[コンパイラ エラー C2030](compiler-error-c2030.md)|アクセシビリティが 'protected private' であるデストラクターは、'sealed' として宣言されたクラスのメンバーになることはできません|  
+|コンパイラ エラー C2031|仮想デストラクター '*アクセシビリティ*' この型のアクセシビリティは許可されていません|  
+|[コンパイラ エラー C2032](compiler-error-c2032.md)|'*識別子*': 関数は、構造体/共用体のメンバーをすることはできません'*型*'|  
+|[コンパイラ エラー C2033](compiler-error-c2033.md)|'*識別子*': ビット フィールドは間接参照を持つことはできません|  
+|[コンパイラ エラー C2034](compiler-error-c2034.md)|'*識別子*': 型のビット フィールドがビット数には小さすぎます|  
+|コンパイラ エラー C2035|非仮想デストラクター '*アクセシビリティ*' この型のアクセシビリティは許可されていません|  
+|[コンパイラ エラー C2036](compiler-error-c2036.md)|'*識別子*': 不明なサイズ|  
+|コンパイラ エラー C2037|左 '*識別子*'未定義の構造体/共用体を指定する'*型*'|  
+|コンパイラ エラー C2038|std 名前空間をインラインにすることはできません。|  
+|[コンパイラ エラー C2039](compiler-error-c2039.md)|'*identifier1*': のメンバーではない'*identifier2*'|  
+|[コンパイラ エラー C2040](compiler-error-c2040.md)|'*演算子*':'*identifier1*'からの間接参照のレベルと'*identifier2*'|  
+|[コンパイラ エラー C2041](compiler-error-c2041.md)|指定された文字 '*文字*'base' の*数*'|  
+|[コンパイラ エラー C2042](compiler-error-c2042.md)|'signed' と 'unsigned' が 1 つの宣言内で同時に使われています。|  
+|[コンパイラ エラー C2043](compiler-error-c2043.md)|'break' が正しくありません。|  
+|[コンパイラ エラー C2044](compiler-error-c2044.md)|'continue' が正しくありません。|  
+|[コンパイラ エラー C2045](compiler-error-c2045.md)|'*識別子*': 再定義されたラベル|  
+|[コンパイラ エラー C2046](compiler-error-c2046.md)|'case' が正しくありません。|  
+|[コンパイラ エラー C2047](compiler-error-c2047.md)|'default' が正しくありません。|  
+|[コンパイラ エラー C2048](compiler-error-c2048.md)|switch 文の中に 2 つ以上の 'default' があります。|  
+|コンパイラ エラー C2049|'*識別子*': 非インライン名前空間をインラインとして再度開くことはできません|  
+|[コンパイラ エラー C2050](compiler-error-c2050.md)|switch 式の結果は、整数値になりませんでした。|  
+|[コンパイラ エラー C2051](compiler-error-c2051.md)|case 式は、整数型定数でなければなりません。|  
+|[コンパイラ エラー C2052](compiler-error-c2052.md)|'*型*': case 式に対する無効な型|  
+|[コンパイラ エラー C2053](compiler-error-c2053.md)|'*識別子*': ワイド文字列が一致しません|  
+|[コンパイラ エラー C2054](compiler-error-c2054.md)|予想 '(' に'*識別子*'|  
+|[コンパイラ エラー C2055](compiler-error-c2055.md)|型リストではなく、仮パラメーター リストが必要です。|  
+|[コンパイラ エラー C2056](compiler-error-c2056.md)|誤った式になっています。|  
+|[コンパイラ エラー C2057](compiler-error-c2057.md)|定数式が必要です。|  
+|[コンパイラ エラー C2058](compiler-error-c2058.md)|定数式が整数ではありません。|  
+|[コンパイラ エラー C2059](compiler-error-c2059.md)|構文エラー: '*トークン*'|  
+|[コンパイラ エラー C2060](compiler-error-c2060.md)|構文エラー: EOF が見つかりました。|  
+|[コンパイラ エラー C2061](compiler-error-c2061.md)|構文エラー: 識別子 '*識別子*'|  
+|[コンパイラ エラー C2062](compiler-error-c2062.md)|型 '*型*' 予期しません。|  
+|[コンパイラ エラー C2063](compiler-error-c2063.md)|'*識別子*': 関数ではありません|  
+|[コンパイラ エラー C2064](compiler-error-c2064.md)|関数の作成には評価されません*数*引数。|  
+|[コンパイラ エラー C2065](compiler-error-c2065.md)|'*識別子*': 宣言されていない識別子|  
+|[コンパイラ エラー C2066](compiler-error-c2066.md)|関数型へのキャストが正しくありません。|  
+|[コンパイラ エラー C2067](compiler-error-c2067.md)|配列型へのキャストが正しくありません。|  
+|コンパイラ エラー C2068|オーバー ロードされた関数の不適切に使用します。 引数リストのないですか。|  
+|[コンパイラ エラー C2069](compiler-error-c2069.md)|void 型は別の型へキャストできません。|  
+|[コンパイラ エラー C2070](compiler-error-c2070.md)|'*型*': 無効な sizeof オペランド|  
+|[コンパイラ エラー C2071](compiler-error-c2071.md)|'*識別子*': 無効なストレージ クラス|  
+|[コンパイラ エラー C2072](compiler-error-c2072.md)|'*識別子*': 関数の初期化|  
+|[コンパイラ エラー C2073](compiler-error-c2073.md)|'*識別子*': 部分的に初期化された配列の要素は、既定のコンス トラクターを持つ必要があります|  
+|[コンパイラ エラー C2074](compiler-error-c2074.md)|'*識別子*':'*型*' の初期化には、中かっこで囲まれた初期化子リストが必要です|  
+|[コンパイラ エラー C2075](compiler-error-c2075.md)|'*識別子*': 配列の初期化には、中かっこで囲まれた初期化子リストが必要です|  
+|コンパイラ エラー C2076|中かっこで囲まれた初期化子リストは、新しい式を含む型では使用できません '*型*'|  
+|[コンパイラ エラー C2077](compiler-error-c2077.md)|非スカラー フィールド初期化子 '*識別子*'|  
+|[コンパイラ エラー C2078](compiler-error-c2078.md)|初期化子の数が多すぎます。|  
+|[コンパイラ エラー C2079](compiler-error-c2079.md)|'*識別子*'未定義構造体/共用体を使用して'*型*'|  
+|コンパイラ エラー C2080|'*識別子*': 型'*型*' 単一の初期化子式からのみ推測できます|  
+|[コンパイラ エラー C2081](compiler-error-c2081.md)|'*識別子*': 仮パラメーター リストが不正です名前。|  
+|[コンパイラ エラー C2082](compiler-error-c2082.md)|仮引数 '*識別子*'|  
+|[コンパイラ エラー C2083](compiler-error-c2083.md)|構造体/共用体を比較できません|  
+|[コンパイラ エラー C2084](compiler-error-c2084.md)|関数 '*識別子*'、本文には既に|  
+|[コンパイラ エラー C2085](compiler-error-c2085.md)|'*識別子*': 仮パラメーター リストではなく|  
+|[コンパイラ エラー C2086](compiler-error-c2086.md)|'*識別子*': 再定義されています|  
+|[コンパイラ エラー C2087](compiler-error-c2087.md)|'*識別子*': 添字がありません|  
+|[コンパイラ エラー C2088](compiler-error-c2088.md)|'*演算子*': 構造体/共用体の不正な|  
+|[コンパイラ エラー C2089](compiler-error-c2089.md)|'*識別子*':'*型*' が大きすぎます|  
+|[コンパイラ エラー C2090](compiler-error-c2090.md)|関数は配列を返せません。|  
+|[コンパイラ エラー C2091](compiler-error-c2091.md)|関数は関数を返せません。|  
+|[コンパイラ エラー C2092](compiler-error-c2092.md)|'*識別子*' 配列要素の型が関数にすることはできません|  
+|[コンパイラ エラー C2093](compiler-error-c2093.md)|'*identifier1*': 自動変数のアドレスを使用して初期化することはできません'*identifier2*'|  
+|[コンパイラ エラー C2094](compiler-error-c2094.md)|ラベル '*識別子*' が定義されていません|  
+|[コンパイラ エラー C2095](compiler-error-c2095.md)|'*関数*' 実際のパラメーターが型 'void': パラメーター*数。*|  
+|コンパイラ エラー C2096|'*識別子*': データ メンバーは、かっこで囲まれた初期化子で初期化することはできません|  
+|[コンパイラ エラー C2097](compiler-error-c2097.md)|初期化が正しく行われていません。|  
+|コンパイラ エラー C2098|データ メンバーの後に予期しないトークン '*識別子*'|  
+|[コンパイラ エラー C2099](compiler-error-c2099.md)|初期化子が定数ではありません。|  
+

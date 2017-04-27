@@ -8,6 +8,32 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: error-reference
+f1_keywords:
+- C2416
+- C2429
+- C2442
+- C2453
+- C2454
+- C2455
+- C2456
+- C2468
+- C2475
+- C2478
+- C2481
+- C2497
+helpviewer_keywords:
+- C2416
+- C2429
+- C2442
+- C2453
+- C2454
+- C2455
+- C2456
+- C2468
+- C2475
+- C2478
+- C2481
+- C2497
 dev_langs:
 - C++
 ms.assetid: f1f05572-af0b-497b-bde4-4c81ec01af3b
@@ -30,142 +56,114 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: eb0c1bf407d1478451c246cf615d031ef6c45bf9
-ms.openlocfilehash: dafd64aff08c48b4a0c3d56bced4bfa7f7bc923c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: bd3572d2941f911f10c067a24dd4e7323c3c3f8c
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="compiler-errors-c2400-through-c2499"></a>コンパイラ エラー C2400 C2499 から
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
-  
- [コンパイラ エラー C2400](../../error-messages/compiler-errors-1/compiler-error-c2400.md)  
-  
- [コンパイラ エラー C2405](../../error-messages/compiler-errors-1/compiler-error-c2405.md)  
-  
- [コンパイラ エラー C2410](../../error-messages/compiler-errors-1/compiler-error-c2410.md)  
-  
- [コンパイラ エラー C2411](../../error-messages/compiler-errors-1/compiler-error-c2411.md)  
-  
- [コンパイラ エラー C2412](../../error-messages/compiler-errors-1/compiler-error-c2412.md)  
-  
- [コンパイラ エラー C2413](../../error-messages/compiler-errors-1/compiler-error-c2413.md)  
-  
- [コンパイラ エラー C2414](../../error-messages/compiler-errors-1/compiler-error-c2414.md)  
-  
- [コンパイラ エラー C2415](../../error-messages/compiler-errors-1/compiler-error-c2415.md)  
-  
- [コンパイラ エラー C2418](../../error-messages/compiler-errors-1/compiler-error-c2418.md)  
-  
- [コンパイラ エラー C2421](../../error-messages/compiler-errors-1/compiler-error-c2421.md)  
-  
- [コンパイラ エラー C2422](../../error-messages/compiler-errors-1/compiler-error-c2422.md)  
-  
- [コンパイラ エラー C2423](../../error-messages/compiler-errors-1/compiler-error-c2423.md)  
-  
- [コンパイラ エラー C2425](../../error-messages/compiler-errors-1/compiler-error-c2425.md)  
-  
- [コンパイラ エラー C2426](../../error-messages/compiler-errors-1/compiler-error-c2426.md)  
-  
- [コンパイラ エラー C2427](../../error-messages/compiler-errors-1/compiler-error-c2427.md)  
-  
- [コンパイラ エラー C2428](../../error-messages/compiler-errors-1/compiler-error-c2428.md)  
-  
- [コンパイラ エラー C2429](../../error-messages/compiler-errors-1/compiler-error-c2429.md)  
-  
- [コンパイラ エラー C2430](../../error-messages/compiler-errors-1/compiler-error-c2430.md)  
-  
- [コンパイラ エラー C2431](../../error-messages/compiler-errors-1/compiler-error-c2431.md)  
-  
- [コンパイラ エラー C2432](../../error-messages/compiler-errors-1/compiler-error-c2432.md)  
-  
- [コンパイラ エラー C2433](../../error-messages/compiler-errors-1/compiler-error-c2433.md)  
-  
- [コンパイラ エラー C2434](../../error-messages/compiler-errors-1/compiler-error-c2434.md)  
-  
- [コンパイラ エラー C2435](../../error-messages/compiler-errors-1/compiler-error-c2435.md)  
-  
- [コンパイラ エラー C2436](../../error-messages/compiler-errors-1/compiler-error-c2436.md)  
-  
- [コンパイラ エラー C2437](../../error-messages/compiler-errors-1/compiler-error-c2437.md)  
-  
- [コンパイラ エラー C2438](../../error-messages/compiler-errors-1/compiler-error-c2438.md)  
-  
- [コンパイラ エラー C2439](../../error-messages/compiler-errors-1/compiler-error-c2439.md)  
-  
- [コンパイラ エラー c2440 エラー](../../error-messages/compiler-errors-1/compiler-error-c2440.md)  
-  
- [コンパイラ エラー C2441](../../error-messages/compiler-errors-1/compiler-error-c2441.md)  
-  
- [コンパイラ エラー C2443](../../error-messages/compiler-errors-1/compiler-error-c2443.md)  
-  
- [コンパイラ エラー C2446](../../error-messages/compiler-errors-1/compiler-error-c2446.md)  
-  
- [コンパイラ エラー C2447](../../error-messages/compiler-errors-1/compiler-error-c2447.md)  
-  
- [コンパイラ エラー C2448](../../error-messages/compiler-errors-1/compiler-error-c2448.md)  
-  
- [コンパイラ エラー C2449](../../error-messages/compiler-errors-1/compiler-error-c2449.md)  
-  
- [コンパイラ エラー C2450](../../error-messages/compiler-errors-1/compiler-error-c2450.md)  
-  
- [コンパイラ エラー C2451](../../error-messages/compiler-errors-1/compiler-error-c2451.md)  
-  
- [コンパイラ エラー C2452](../../error-messages/compiler-errors-1/compiler-error-c2452.md)  
-  
- [コンパイラ エラー C2457](../../error-messages/compiler-errors-1/compiler-error-c2457.md)  
-  
- [コンパイラ エラー C2458](../../error-messages/compiler-errors-1/compiler-error-c2458.md)  
-  
- [コンパイラ エラー C2459](../../error-messages/compiler-errors-1/compiler-error-c2459.md)  
-  
- [コンパイラ エラー C2460](../../error-messages/compiler-errors-1/compiler-error-c2460.md)  
-  
- [コンパイラ エラー C2461](../../error-messages/compiler-errors-1/compiler-error-c2461.md)  
-  
- [コンパイラ エラー C2462](../../error-messages/compiler-errors-1/compiler-error-c2462.md)  
-  
- [コンパイラ エラー C2464](../../error-messages/compiler-errors-1/compiler-error-c2464.md)  
-  
- [コンパイラ エラー C2466](../../error-messages/compiler-errors-1/compiler-error-c2466.md)  
-  
- [コンパイラ エラー C2467](../../error-messages/compiler-errors-1/compiler-error-c2467.md)  
-  
- [コンパイラ エラー C2470](../../error-messages/compiler-errors-1/compiler-error-c2470.md)  
-  
- [コンパイラ エラー C2471](../../error-messages/compiler-errors-1/compiler-error-c2471.md)  
-  
- [コンパイラ エラー C2477](../../error-messages/compiler-errors-1/compiler-error-c2477.md)  
-  
- [コンパイラ エラー C2479](../../error-messages/compiler-errors-1/compiler-error-c2479.md)  
-  
- [コンパイラ エラー C2480](../../error-messages/compiler-errors-1/compiler-error-c2480.md)  
-  
- [コンパイラ エラー C2482](../../error-messages/compiler-errors-1/compiler-error-c2482.md)  
-  
- [コンパイラ エラー C2483](../../error-messages/compiler-errors-1/compiler-error-c2483.md)  
-  
- [コンパイラ エラー C2486](../../error-messages/compiler-errors-1/compiler-error-c2486.md)  
-  
- [コンパイラ エラー C2487](../../error-messages/compiler-errors-1/compiler-error-c2487.md)  
-  
- [コンパイラ エラー C2488](../../error-messages/compiler-errors-1/compiler-error-c2488.md)  
-  
- [コンパイラ エラー C2489](../../error-messages/compiler-errors-1/compiler-error-c2489.md)  
-  
- [コンパイラ エラー C2490](../../error-messages/compiler-errors-1/compiler-error-c2490.md)  
-  
- [コンパイラ エラー C2491](../../error-messages/compiler-errors-1/compiler-error-c2491.md)  
-  
- [コンパイラ エラー C2492](../../error-messages/compiler-errors-1/compiler-error-c2492.md)  
-  
- [コンパイラ エラー C2493](../../error-messages/compiler-errors-1/compiler-error-c2493.md)  
-  
- [コンパイラ エラー C2494](../../error-messages/compiler-errors-1/compiler-error-c2494.md)  
-  
- [コンパイラ エラー C2495](../../error-messages/compiler-errors-1/compiler-error-c2495.md)  
-  
- [コンパイラ エラー C2496](../../error-messages/compiler-errors-1/compiler-error-c2496.md)  
-  
- [コンパイラ エラー C2498](../../error-messages/compiler-errors-1/compiler-error-c2498.md)  
-  
- [コンパイラ エラー C2499](../../error-messages/compiler-errors-1/compiler-error-c2499.md)
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C2400](compiler-error-c2400.md)|インライン アセンブラーの構文エラーの '*コンテキスト*'が必要です'*トークン*'。|  
+|[コンパイラ エラー C2401](compiler-error-c2401.md)|'*識別子*': レジスタは内でなければなりません'*コンテキスト*'。|  
+|[コンパイラ エラー C2402](compiler-error-c2402.md)|'*識別子*': レジスタのインデックスでなければなりません'*コンテキスト*'。|  
+|[コンパイラ エラー C2403](compiler-error-c2403.md)|'*識別子*': レジスタはベースまたはインデックス内でなければなりません'*コンテキスト*'。|  
+|[コンパイラ エラー C2404](compiler-error-c2404.md)|'*識別子*': で使用できないレジスタ'*コンテキスト*'|  
+|[コンパイラ エラー C2405](compiler-error-c2405.md)|short 型の前方参照は、ラベルだけを参照するものでなければなりません。|  
+|[コンパイラ エラー C2406](compiler-error-c2406.md)|'*識別子*': 定義されていません'*コンテキスト*'|  
+|[コンパイラ エラー C2407](compiler-error-c2407.md)|無効な 'float' が登録 '*コンテキスト*'|  
+|[コンパイラ エラー C2408](compiler-error-c2408.md)|PTR 演算子の引数の型 '*コンテキスト*'|  
+|[コンパイラ エラー C2409](compiler-error-c2409.md)|無効な型で演算子として使用される '*コンテキスト*'|  
+|[コンパイラ エラー C2410](compiler-error-c2410.md)|'*識別子*': あいまいなメンバーの名前'*コンテキスト*'|  
+|[コンパイラ エラー C2411](compiler-error-c2411.md)|'*識別子*': 無効な構造体/共用体メンバー'*コンテキスト*'|  
+|[コンパイラ エラー C2412](compiler-error-c2412.md)|'*ラベル*': ラベルが再定義されています|  
+|[コンパイラ エラー C2413](compiler-error-c2413.md)|'*識別子*': 境界整列のサイズ|  
+|[コンパイラ エラー C2414](compiler-error-c2414.md)|オペランドの数が正しくありません。|  
+|[コンパイラ エラー C2415](compiler-error-c2415.md)|オペランドの型が無効です。|  
+|コンパイラ エラー C2416|属性 '*属性*' このコンテキストでは適用できません|  
+|[コンパイラ エラー C2417](compiler-error-c2417.md)|0 による除算 '*コンテキスト*'|  
+|[コンパイラ エラー C2418](compiler-error-c2418.md)|ブラウザー ファイルを削除できません:*ファイル名*|  
+|[コンパイラ エラー C2419](compiler-error-c2419.md)|0 による mod '*コンテキスト*'|  
+|[コンパイラ エラー C2420](compiler-error-c2420.md)|'*識別子*': に無効なシンボル*コンテキスト*|  
+|[コンパイラ エラー C2421](compiler-error-c2421.md)|PTR 演算子のレジスタ オペランドと一緒に使用 '*コンテキスト*'|  
+|[コンパイラ エラー C2422](compiler-error-c2422.md)|誤ったセグメント オーバーライド '*コンテキスト*'|  
+|[コンパイラ エラー C2423](compiler-error-c2423.md)|'*数*': 無効な小数点以下桁数|  
+|[コンパイラ エラー C2424](compiler-error-c2424.md)|'*トークン*': 不適切な式に'*コンテキスト*'|  
+|[コンパイラ エラー C2425](compiler-error-c2425.md)|'*トークン*': 非定数式で'*コンテキスト*'|  
+|[コンパイラ エラー C2426](compiler-error-c2426.md)|'*トークン*': 無効な演算子で'*コンテキスト*'|  
+|[コンパイラ エラー C2427](compiler-error-c2427.md)|'*クラス*': このスコープでクラスを定義することはできません|  
+|[コンパイラ エラー C2428](compiler-error-c2428.md)|'*操作*': 型 'bool' のオペランドでは使用できません|  
+|コンパイラ エラー C2429|*コンテキスト*'*コンテキスト*'コンパイラ フラグが必要'*オプション*'|  
+|[コンパイラ エラー C2430](compiler-error-c2430.md)|1 つ以上のインデックス レジスタで '*コンテキスト*'|  
+|[コンパイラ エラー C2431](compiler-error-c2431.md)|無効なインデックス レジスタで '*コンテキスト*'|  
+|[コンパイラ エラー C2432](compiler-error-c2432.md)|16 ビットのデータに無効な参照 '*コンテキスト*'|  
+|[コンパイラ エラー C2433](compiler-error-c2433.md)|'*識別子*':'*修飾子*' データの宣言では使用できません|  
+|[コンパイラ エラー C2434](compiler-error-c2434.md)|'*シンボル*': __declspec(process) と共に宣言されたシンボルは/clr で動的に初期化できません: 純粋モード|  
+|[コンパイラ エラー C2435](compiler-error-c2435.md)|'var': 動的な初期化、マネージ CRT が必要ですが、/clr:safe と共にコンパイルできません|  
+|[コンパイラ エラー C2436](compiler-error-c2436.md)|'*識別子*': メンバー関数またはコンス トラクター初期化子リストで入れ子になったクラス|  
+|[コンパイラ エラー C2437](compiler-error-c2437.md)|'*識別子*': 既に初期化されました|  
+|[コンパイラ エラー C2438](compiler-error-c2438.md)|'*識別子*': コンス トラクターを使用して静的クラスのデータを初期化できません|  
+|[コンパイラ エラー C2439](compiler-error-c2439.md)|'*識別子*': メンバーを初期化できませんでした|  
+|[コンパイラ エラー C2440](compiler-error-c2440.md)|'*変換*': から変換できません'*type_1*'to'*type_2*'。|  
+|[コンパイラ エラー C2441](compiler-error-c2441.md)|'*変数*': __declspec(process) と共に宣言されたシンボルで const を指定する必要があります: 純粋モード|  
+|コンパイラ エラー C2442|'*識別子*': 入れ子になった名前空間定義がインラインでまたは属性を持つことはできません|  
+|[コンパイラ エラー C2443](compiler-error-c2443.md)|この命令には同じサイズのオペランドが必要です。|  
+|[コンパイラ エラー C2444](compiler-error-c2444.md)|'*識別子*': ANSI プロトタイプで見つかった ''、予期される型' {' または ';'|  
+|[コンパイラ エラー C2446](compiler-error-c2446.md)|'*演算子*': から変換なし'*type_1*'to'*type_2*'|  
+|[コンパイラ エラー C2447](compiler-error-c2447.md)|' {': 関数ヘッダーがありません (旧形式の仮引数リスト?)|  
+|[コンパイラ エラー C2448](compiler-error-c2448.md)|'*識別子*': 関数スタイルの初期化子は、関数の定義が表示されます|  
+|[コンパイラ エラー C2449](compiler-error-c2449.md)|'{' を見つけました (関数のヘッダーがないかもしれません)。|  
+|[コンパイラ エラー C2450](compiler-error-c2450.md)|型の式を切り替える '*型*' は無効です|  
+|[コンパイラ エラー C2451](compiler-error-c2451.md)|条件式の型 '*型*' は無効です|  
+|[コンパイラ エラー C2452](compiler-error-c2452.md)|'*型*': safe_cast に対する無効なソースの種類|  
+|コンパイラ エラー C2453|'*型*': safe_cast に対する無効なターゲット型です。|  
+|コンパイラ エラー C2454|'*識別子*': 名前空間エイリアス名は修飾名を使用して宣言できません。|  
+|コンパイラ エラー C2455|'*クラス*' インポートされた基底クラスから派生した WinRT ref クラスを抽象にすることはできません。|  
+|コンパイラ エラー C2456|'*クラス*' unsealed の ref クラスは、表示のパブリック コンス トラクターを持つことはできません。 クラスをシールするか、コンス トラクターに 'internal'、'protected private' または 'private' を代わりに指定します。|  
+|[コンパイラ エラー C2457](compiler-error-c2457.md)|'*識別子*': 定義済みマクロは関数本体の外部で表示できません。|  
+|[コンパイラ エラー C2458](compiler-error-c2458.md)|'*識別子*': 定義内で再定義されています。|  
+|[コンパイラ エラー C2459](compiler-error-c2459.md)|'*識別子*': 定義されている以外の場合は、匿名のメンバーとして追加できません。|  
+|[コンパイラ エラー C2460](compiler-error-c2460.md)|'*identifier_1*': は*identifier_2*'、これを定義します。|  
+|[コンパイラ エラー C2461](compiler-error-c2461.md)|'*クラス*': コンス トラクター構文の正式なパラメーターがありません|  
+|[コンパイラ エラー C2462](compiler-error-c2462.md)|'*識別子*':' new' 演算子で型を定義することはできません|  
+|[コンパイラ エラー C2464](compiler-error-c2464.md)|'*型*': 参照の割り当てに 'new' を使用することはできません|  
+|[コンパイラ エラー C2465](compiler-error-c2465.md)|名前のない構造体、共用体、または、列挙型がかっこの式内で定義されました。|  
+|[コンパイラ エラー C2466](compiler-error-c2466.md)|サイズが 0 の配列を割り当てまたは宣言しようとしました。|  
+|[コンパイラ エラー C2467](compiler-error-c2467.md)|匿名の無効な宣言 '*user_defined_type*'|  
+|コンパイラ エラー C2468|コンス トラクターがクラスまたは仮想基底クラスと構造体には、' constexpr' にすることはできません。|  
+|[コンパイラ エラー C2469](compiler-error-c2469.md)|'new': 'void' 型のオブジェクトを割り当てることができません。|  
+|[コンパイラ エラー C2470](compiler-error-c2470.md)|'*関数*': 関数の定義のようになりますが、パラメーターはありません ボックスの一覧です外見上の本体をスキップしています。|  
+|[コンパイラ エラー C2471](compiler-error-c2471.md)|プログラム データベースを更新できません '*filename*'|  
+|[コンパイラ エラー C2472](compiler-error-c2472.md)|'*関数*' マネージ コードで生成することはできません: '*メッセージ*' です混合イメージを生成する/clr と共にコンパイル。|  
+|[コンパイラ エラー C2473](compiler-error-c2473.md)|'*識別子*': 関数の定義のようになりますが、パラメーター リストがありません。|  
+|[コンパイラ エラー C2474](compiler-error-c2474.md)|'*識別子*': キーワードまたは識別子のどちらかにする、隣接するセミコロンがありませんでした。|  
+|コンパイラ エラー C2475|'*識別子*': 再定義されています。'constexpr' 指定子が一致しません|  
+|[コンパイラ エラー C2477](compiler-error-c2477.md)|'*メンバー*': 静的データ メンバーは派生クラスを使用して初期化することはできません|  
+|コンパイラ エラー C2478|宣言と互換性がありません '*インスタンス*'|  
+|[コンパイラ エラー C2479](compiler-error-c2479.md)|'*識別子*': 'allocate ()' のみが有効では静的なデータ アイテムの|  
+|[コンパイラ エラー C2480](compiler-error-c2480.md)|'*識別子*': 'thread' は静的なデータ項目の有効なのみ|  
+|コンパイラ エラー C2481|'*識別子*': thread_local は静的メンバーおよび名前空間またはブロック スコープで変数の有効なのみ|  
+|[コンパイラ エラー C2482](compiler-error-c2482.md)|'*識別子*': マネージまたは WINRT コードでは許可されませんスレッド ローカル データの動的な初期化|  
+|[コンパイラ エラー C2483](compiler-error-c2483.md)|'*識別子*': デストラクターまたは非集計型を使ったオブジェクトをマネージまたは WINRT コードでスレッド ストレージ存続期間で宣言することはできません|  
+|[コンパイラ エラー C2485](compiler-error-c2485.md)|'*識別子*': 認識されない拡張属性|  
+|[コンパイラ エラー C2486](compiler-error-c2486.md)|'__LOCAL_SIZE' の指定は 'naked' 属性の関数の中でのみ許されています。|  
+|[コンパイラ エラー C2487](compiler-error-c2487.md)|'*識別子*': dll インターフェイス クラスのメンバーを dll インターフェイスと共に宣言することはできません|  
+|[コンパイラ エラー C2488](compiler-error-c2488.md)|'*識別子*': 'naked' のみに適用できます非メンバー関数の定義|  
+|[コンパイラ エラー C2489](compiler-error-c2489.md)|'*識別子*': 'naked' 関数では関数スコープで許可されません auto またはレジスタ変数の初期化|  
+|[コンパイラ エラー C2490](compiler-error-c2490.md)|'*キーワード*' 'naked' 属性を持つ関数では使用できません|  
+|[コンパイラ エラー C2491](compiler-error-c2491.md)|'*識別子*': dllimport の定義*関数*許可されていません|  
+|[コンパイラ エラー C2492](compiler-error-c2492.md)|'*変数*': スレッド ストレージ存続期間を使用してデータには、dll インターフェイスはありません。|  
+|[コンパイラ エラー C2493](compiler-error-c2493.md)|__based の形式が無効です。|  
+|[コンパイラ エラー C2494](compiler-error-c2494.md)|'*キーワード*' フィルター式内から呼び出すことはできませんまたは\_ \_finally/finally ブロック|  
+|[コンパイラ エラー C2495](compiler-error-c2495.md)|'*識別子*': '__declspec(noexcept)' は関数宣言または定義にのみ適用できます|  
+|[コンパイラ エラー C2496](compiler-error-c2496.md)|'*識別子*': 'selectany' は外部リンケージを持つデータ項目にのみ適用できます|  
+|コンパイラ エラー C2497|'*識別子*': 'implementation_key' は関数宣言にのみ適用できます|  
+|[コンパイラ エラー C2498](compiler-error-c2498.md)|'*関数*': 'novtable' は、クラス宣言または定義にのみ適用できます|  
+|[コンパイラ エラー C2499](compiler-error-c2499.md)|'*クラス*': クラスは基底クラスをすることはできません|  

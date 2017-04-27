@@ -1,121 +1,200 @@
 ---
-title: "コンパイラ エラーs C2200 through C2299 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラ エラー C2200 C2299 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2202
+- C2209
+- C2210
+- C2211
+- C2214
+- C2215
+- C2221
+- C2225
+- C2230
+- C2235
+- C2237
+- C2239
+- C2240
+- C2257
+- C2260
+- C2263
+- C2265
+- C2269
+- C2278
+- C2280
+- C2281
+- C2282
+- C2288
+- C2291
+- C2294
+helpviewer_keywords:
+- C2202
+- C2209
+- C2210
+- C2211
+- C2214
+- C2215
+- C2221
+- C2225
+- C2230
+- C2235
+- C2237
+- C2239
+- C2240
+- C2257
+- C2260
+- C2263
+- C2265
+- C2269
+- C2278
+- C2280
+- C2281
+- C2282
+- C2288
+- C2291
+- C2294
+dev_langs:
+- C++
 ms.assetid: 9b36d11b-9510-4390-96f1-0c9235124d14
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# コンパイラ エラーs C2200 through C2299
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 8e3f009def24f09cbc8b373a81ea63ed6bd922ed
+ms.lasthandoff: 04/24/2017
 
-ドキュメントのこの部分の記事には、Visual C\+\+ コンパイラ エラーのサブセクションに関する情報が記載されています。  ここから情報にアクセスできます。または、Visual Studio の**出力**ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+---
+# <a name="compiler-errors-c2200-through-c2299"></a>コンパイラ エラー C2200 C2299 から
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
- [コンパイラ エラー C2201](../../error-messages/compiler-errors-1/compiler-error-c2201.md)  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
   
- [コンパイラ エラー C2203](../../error-messages/compiler-errors-1/compiler-error-c2203.md)  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
- [コンパイラ エラー C2205](../../error-messages/compiler-errors-1/compiler-error-c2205.md)  
-  
- [コンパイラ エラー C2207](../../error-messages/compiler-errors-1/compiler-error-c2207.md)  
-  
- [コンパイラ エラー C2208](../../error-messages/compiler-errors-1/compiler-error-c2208.md)  
-  
- [コンパイラ エラー C2212](../Topic/Compiler%20Error%20C2212.md)  
-  
- [コンパイラ エラー C2213](../../error-messages/compiler-errors-1/compiler-error-c2213.md)  
-  
- [コンパイラ エラー C2217](../../error-messages/compiler-errors-1/compiler-error-c2217.md)  
-  
- [コンパイラ エラー C2218](../Topic/Compiler%20Error%20C2218.md)  
-  
- [コンパイラ エラー C2219](../../error-messages/compiler-errors-1/compiler-error-c2219.md)  
-  
- [コンパイラ エラー C2220](../../error-messages/compiler-errors-1/compiler-error-c2220.md)  
-  
- [Compiler Error C2222](../../error-messages/compiler-errors-1/compiler-error-c2222.md)  
-  
- [コンパイラ エラー C2223](../../error-messages/compiler-errors-1/compiler-error-c2223.md)  
-  
- [コンパイラ エラー C2224](../../error-messages/compiler-errors-1/compiler-error-c2224.md)  
-  
- [コンパイラ エラー C2229](../../error-messages/compiler-errors-1/compiler-error-c2229.md)  
-  
- [コンパイラ エラー C2233](../Topic/Compiler%20Error%20C2233.md)  
-  
- [コンパイラ エラー C2234](../../error-messages/compiler-errors-1/compiler-error-c2234.md)  
-  
- [コンパイラ エラー C2236](../Topic/Compiler%20Error%20C2236.md)  
-  
- [コンパイラ エラー C2243](../../error-messages/compiler-errors-1/compiler-error-c2243.md)  
-  
- [コンパイラ エラー C2244](../../error-messages/compiler-errors-1/compiler-error-c2244.md)  
-  
- [コンパイラ エラー C2247](../../error-messages/compiler-errors-1/compiler-error-c2247.md)  
-  
- [コンパイラ エラー C2248](../../error-messages/compiler-errors-1/compiler-error-c2248.md)  
-  
- [コンパイラ エラー C2249](../Topic/Compiler%20Error%20C2249.md)  
-  
- [コンパイラ エラー C2250](../../error-messages/compiler-errors-1/compiler-error-c2250.md)  
-  
- [コンパイラ エラー C2252](../../error-messages/compiler-errors-1/compiler-error-c2252.md)  
-  
- [コンパイラ エラー C2253](../../error-messages/compiler-errors-1/compiler-error-c2253.md)  
-  
- [コンパイラ エラー C2254](../../error-messages/compiler-errors-1/compiler-error-c2254.md)  
-  
- [コンパイラ エラー C2256](../../error-messages/compiler-errors-1/compiler-error-c2256.md)  
-  
- [コンパイラ エラー C2259](../../error-messages/compiler-errors-1/compiler-error-c2259.md)  
-  
- [コンパイラ エラー C2261](../../error-messages/compiler-errors-1/compiler-error-c2261.md)  
-  
- [コンパイラ エラー C2264](../../error-messages/compiler-errors-1/compiler-error-c2264.md)  
-  
- [コンパイラ エラー C2267](../../error-messages/compiler-errors-1/compiler-error-c2267.md)  
-  
- [コンパイラ エラー C2270](../../error-messages/compiler-errors-1/compiler-error-c2270.md)  
-  
- [コンパイラ エラー C2271](../../error-messages/compiler-errors-1/compiler-error-c2271.md)  
-  
- [コンパイラ エラー C2272](../../error-messages/compiler-errors-1/compiler-error-c2272.md)  
-  
- [コンパイラ エラー C2273](../../error-messages/compiler-errors-1/compiler-error-c2273.md)  
-  
- [コンパイラ エラー C2274](../../error-messages/compiler-errors-1/compiler-error-c2274.md)  
-  
- [コンパイラ エラー C2275](../../error-messages/compiler-errors-1/compiler-error-c2275.md)  
-  
- [コンパイラ エラー C2276](../Topic/Compiler%20Error%20C2276.md)  
-  
- [コンパイラ エラー C2277](../../error-messages/compiler-errors-1/compiler-error-c2277.md)  
-  
- [コンパイラ エラー C2279](../../error-messages/compiler-errors-1/compiler-error-c2279.md)  
-  
- [コンパイラ エラー C2285](../Topic/Compiler%20Error%20C2285.md)  
-  
- [コンパイラ エラー C2286](../../error-messages/compiler-errors-1/compiler-error-c2286.md)  
-  
- [コンパイラ エラー C2287](../Topic/Compiler%20Error%20C2287.md)  
-  
- [コンパイラ エラー C2292](../Topic/Compiler%20Error%20C2292.md)  
-  
- [コンパイラ エラー C2296](../../error-messages/compiler-errors-1/compiler-error-c2296.md)  
-  
- [コンパイラ エラー C2297](../../error-messages/compiler-errors-1/compiler-error-c2297.md)  
-  
- [コンパイラ エラー C2298](../../error-messages/compiler-errors-1/compiler-error-c2298.md)  
-  
- [コンパイラ エラー C2299](../../error-messages/compiler-errors-1/compiler-error-c2299.md)
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C2200](compiler-error-c2200.md)|'*関数*': 関数は既に定義されています|  
+|[コンパイラ エラー C2201](compiler-error-c2201.md)|'*識別子*': エクスポート/インポートするために外部リンケージを持つ必要があります|  
+|コンパイラ エラー C2202|'*関数*': 値を返さないコントロール パスのすべて|  
+|[コンパイラ エラー C2203](compiler-error-c2203.md)|delete 演算子では配列の一部や特定のメンバーを削除することはできません。|  
+|[コンパイラ エラー C2204](compiler-error-c2204.md)|'*型*': 型定義のかっこ内が見つかりません|  
+|[コンパイラ エラー C2205](compiler-error-c2205.md)|'*識別子*': ブロック スコープを持つ外部変数を初期化することはできません|  
+|[コンパイラ エラー C2206](compiler-error-c2206.md)|'*関数*': typedef は関数定義に使用されることはできません|  
+|[コンパイラ エラー C2207](compiler-error-c2207.md)|'*メンバー*': クラス テンプレートのメンバーは、関数型を取得できません|  
+|[コンパイラ エラー C2208](compiler-error-c2208.md)|'*型*': この型を使用して定義されているメンバーはありません|  
+|コンパイラ エラー C2209|'*識別子*': コンス トラクターの宣言でエイリアスは使用できません|  
+|コンパイラ エラー C2210|'*識別子*': パック展開はエイリアス テンプレート内のパックされていないパラメーターに引数として使用することはできません|  
+|コンパイラ エラー C2211|パブリック デストラクターを持つ ref クラスから派生した ref クラスで非仮想デストラクターがパブリックでもする必要があります。|  
+|[コンパイラ エラー C2212](compiler-error-c2212.md)|'*識別子*': _ _based 指定は関数へのポインターの使用|  
+|[コンパイラ エラー C2213](compiler-error-c2213.md)|'*識別子*': _ _based の引数が無効です|  
+|コンパイラ エラー C2214|void に基づくポインターには ':>' を使用することが必要です。|  
+|コンパイラ エラー C2215|'*キーワード*' では使用できません '//ARCH:SSE '|  
+|[コンパイラ エラー C2216](compiler-error-c2216.md)|'*keyword1*'で使用することはできません'*keyword2*'|  
+|[コンパイラ エラー C2217](compiler-error-c2217.md)|'*attribute1*'が必要です'*attribute2*'|  
+|[コンパイラ エラー C2218](compiler-error-c2218.md)|'*calltype*' では使用できません '/arch: IA32'|  
+|[コンパイラ エラー C2219](compiler-error-c2219.md)|構文エラー: 型修飾子は '*' の後にのみ指定できます。|  
+|[コンパイラ エラー C2220](compiler-error-c2220.md)|いいえ警告をエラーとして扱いました '*filetype*' に生成されたファイル|  
+|コンパイラ エラー C2221|互換性のために残されています。|  
+|[コンパイラ エラー C2222](compiler-error-c2222.md)|予期しない型 '*型*': 基底クラスまたはメンバーが必要です|  
+|[コンパイラ エラー C2223](compiler-error-c2223.md)|左 '->*識別子*' 構造体/共用体をポイントする必要があります|  
+|[コンパイラ エラー C2224](compiler-error-c2224.md)|左 ' です。*識別子*' 構造体/共用体型があります。|  
+|コンパイラ エラー C2225|互換性のために残されています。|  
+|[コンパイラ エラー C2226](compiler-error-c2226.md)|構文エラー: 予期しない型 '*型*'|  
+|[コンパイラ エラー C2227](compiler-error-c2227.md)|左 '->*識別子*' クラス/構造体/共用体、ジェネリック型を指す必要があります|  
+|[コンパイラ エラー C2228](compiler-error-c2228.md)|左 ' です。*識別子*' クラス/構造体/共用体があります。|  
+|[コンパイラ エラー C2229](compiler-error-c2229.md)|クラス/構造体/共用体 '*型*' が無効なサイズ 0 の配列|  
+|コンパイラ エラー C2230|モジュールが見つかりませんでした '*名前*'。|  
+|[コンパイラ エラー C2231](compiler-error-c2231.md)|'.*識別子*': 左側のオペランドのポイントに 'クラス/構造体/共用体' を使用します '->'|  
+|[コンパイラ エラー C2232](compiler-error-c2232.md)|'->*識別子*': 左のオペランドが' クラス/構造体/共用体 ' 型を使用してです '。|  
+|[コンパイラ エラー C2233](compiler-error-c2233.md)|'*識別子*': サイズが 0 の配列を含むオブジェクトの配列は有効ではありません|  
+|[コンパイラ エラー C2234](compiler-error-c2234.md)|*識別子*': 参照の配列は有効ではありません|  
+|コンパイラ エラー C2235|互換性のために残されています。|  
+|[コンパイラ エラー C2236](compiler-error-c2236.md)|予期しないトークン '*トークン*' です。 ';' が入力されていることを確認してください。|  
+|コンパイラ エラー C2237|複数のモジュールの宣言|  
+|[コンパイラ エラー C2238](compiler-error-c2238.md)|上記の予期しないトークン '*トークン*'|  
+|コンパイラ エラー C2239|'*関数*': 関数の関数を削除しようとしています。|  
+|コンパイラ エラー C2240|互換性のために残されています。|  
+|[コンパイラ エラー C2241](compiler-error-c2241.md)|'*識別子*': メンバーへのアクセスが制限されます。|  
+|[コンパイラ エラー C2242](compiler-error-c2242.md)|列挙型、構造体、共用体の後に typedef 名を書くことはできません。|  
+|[コンパイラ エラー C2243](compiler-error-c2243.md)|'*conversion_type*': から変換'*type1*'to'*type2*' 存在しますにアクセスできません|  
+|[コンパイラ エラー C2244](compiler-error-c2244.md)|'*識別子*': 関数の定義を既存の宣言と一致しません|  
+|[コンパイラ エラー C2245](compiler-error-c2245.md)|存在しないメンバー関数 '*関数*' friend と指定された (メンバー関数のシグネチャと一致しません、オーバー ロード)|  
+|[コンパイラ エラー C2246](compiler-error-c2246.md)|'*識別子*': ローカルに定義されたクラスに無効な静的データ メンバー|  
+|[コンパイラ エラー C2247](compiler-error-c2247.md)|'*識別子*' アクセスできないため '*class1*'を使用して'*指定子*' を継承'*class2*'|  
+|[コンパイラ エラー C2248](compiler-error-c2248.md)|'*識別子*': アクセスできない*アクセシビリティ**メンバー*クラスで宣言されている*クラス*'|  
+|[コンパイラ エラー C2249](compiler-error-c2249.md)|'*識別子*': アクセス経路を持たない*アクセシビリティ**メンバー*仮想ベースで宣言された'*クラス*'|  
+|[コンパイラ エラー C2250](compiler-error-c2250.md)|'*識別子*': あいまいな継承の*クラス*::*メンバー*'|  
+|[コンパイラ エラー C2251](compiler-error-c2251.md)|名前空間 '*名前空間*'メンバーを持たない'*識別子*'-もしかすると次の間 '*メンバー*' しますか?|  
+|[コンパイラ エラー C2252](compiler-error-c2252.md)|テンプレートの明示的なインスタンス化は名前空間スコープでのみ発生します|  
+|[コンパイラ エラー C2253](compiler-error-c2253.md)|'*関数*': 純粋関数または抽象オーバーライド指定子の仮想関数でのみ許可されます|  
+|[コンパイラ エラー C2254](compiler-error-c2254.md)|'*関数*': 純粋関数または抽象オーバーライド指定子のフレンド関数では使用できません|  
+|[コンパイラ エラー C2255](compiler-error-c2255.md)|'*要素*': クラス定義外で許可されていません|  
+|[コンパイラ エラー C2256](compiler-error-c2256.md)|friend 指定が正しく使用 '*関数*'|  
+|コンパイラ エラー C2257|'*指定子*': 後続の戻り値の型では許可されません指定子|  
+|[コンパイラ エラー C2258](compiler-error-c2258.md)|純粋仮想関数の宣言に構文上の誤りがあります、'= 0' でなければなりません。|  
+|[コンパイラ エラー C2259](compiler-error-c2259.md)|'*クラス*': 抽象クラスをインスタンス化できません。|  
+|コンパイラ エラー C2260|'*指定子*': 無効な InternalsVisibleToAttribute のフレンド アセンブリ指定子|  
+|[コンパイラ エラー C2261](compiler-error-c2261.md)|'*文字列*': アセンブリ参照が有効ではありません、解決できません。|  
+|[コンパイラ エラー C2262](compiler-error-c2262.md)|'*指定子*': InternalsVisibleTo 宣言に指定されたバージョン、カルチャ、またはプロセッサ アーキテクチャを持つことはできません|  
+|コンパイラ エラー C2263|互換性のために残されています。|  
+|[コンパイラ エラー C2264](compiler-error-c2264.md)|'*関数*': 関数宣言か定義のエラー関数が呼び出されません。|  
+|コンパイラ エラー C2265|互換性のために残されています。|  
+|[コンパイラ エラー C2266](compiler-error-c2266.md)|'*識別子*': 非定数の境界のある配列への参照は無効です|  
+|[コンパイラ エラー C2267](compiler-error-c2267.md)|'*関数*': ブロック スコープを持つ静的関数は無効|  
+|[コンパイラ エラー C2268](compiler-error-c2268.md)|'*関数*' は、コンパイラで定義済みのライブラリ ヘルパーです。 ライブラリ ヘルパーは/GL; でサポートされていませんオブジェクト ファイルをコンパイル '*filename*'/gl|  
+|コンパイラ エラー C2269|ポインターまたは (メンバーへのポインターが必要) 修飾された関数型への参照を作成できません。|  
+|[コンパイラ エラー C2270](compiler-error-c2270.md)|'*関数*': 修飾子の非メンバー関数では使用できません|  
+|[コンパイラ エラー C2271](compiler-error-c2271.md)|'*関数*': 新規/削除の仮引数リストの修飾子を設定することはできません|  
+|[コンパイラ エラー C2272](compiler-error-c2272.md)|'*関数*': 修飾子の静的メンバー関数では使用できません|  
+|[コンパイラ エラー C2273](compiler-error-c2273.md)|'*型*':'->' 演算子の右側で使用できません|  
+|[コンパイラ エラー C2274](compiler-error-c2274.md)|'*型*': の右側にあるとして無効な'.' 演算子|  
+|[コンパイラ エラー C2275](compiler-error-c2275.md)|'*型*': この型の式として不適切に使用|  
+|[コンパイラ エラー C2276](compiler-error-c2276.md)|'*演算子*': メンバーにバインドされた関数の式に無効な操作|  
+|[コンパイラ エラー C2277](compiler-error-c2277.md)|'*関数*': このメンバー関数のアドレスは取得できません|  
+|コンパイラ エラー C2278|互換性のために残されています。|  
+|[コンパイラ エラー C2279](compiler-error-c2279.md)|例外の指定を typedef 宣言に表示することはできません。|  
+|コンパイラ エラー c2280 を発行|'*クラス*::*関数*': 削除された関数を参照しようとしています。|  
+|コンパイラ エラー C2281|'*クラス*::*関数*': 関数は、最初の宣言でのみ削除できます|  
+|コンパイラ エラー C2282|'*function1*'をオーバーライドできません'*function2*'|  
+|[コンパイラ エラー C2283](compiler-error-c2283.md)|'*識別子*': 純粋関数または抽象オーバーライド指定子の名前のないクラス/構造体では使用できません|  
+|コンパイラ エラー C2284|'*関数*': 組み込み関数の引数が無効ですパラメーター*数*|  
+|[コンパイラ エラー C2285](compiler-error-c2285.md)|メンバーへのポインターは既に確定しています。プラグマを無視します。|  
+|[コンパイラ エラー C2286](compiler-error-c2286.md)|メンバーへのポインター '*識別子*' 表現が既にに設定されている*継承*の宣言は無視されます|  
+|[コンパイラ エラー C2287](compiler-error-c2287.md)|'*識別子*': 継承の処理形式:'*inheritiance*'は、必要なより汎用性の低い'*継承*'|  
+|コンパイラ エラー C2288|互換性のために残されています。|  
+|[コンパイラ エラー C2289](compiler-error-c2289.md)|同じ型の修飾子が 2 度以上使われています。|  
+|[コンパイラ エラー C2290](compiler-error-c2290.md)|C++ 'asm' の構文は無視されます。 __asm を使用してください。|  
+|コンパイラ エラー C2291|匿名の名前空間をエクスポートすることはできません。|  
+|[コンパイラ エラー C2292](compiler-error-c2292.md)|'*識別子*': 最適な継承の処理形式: *inheritance1*' 宣言が、'*inheritance2*' 必須|  
+|[コンパイラ エラー C2293](compiler-error-c2293.md)|'*識別子*': _ _based の指定子としてメンバー変数にできません|  
+|コンパイラ エラー C2294|シンボルをエクスポートできません '*識別子*' 内部リンケージがあるため|  
+|[コンパイラ エラー C2295](compiler-error-c2295.md)|エスケープ '*文字*': マクロ定義では正しくありません|  
+|[コンパイラ エラー C2296](compiler-error-c2296.md)|'*演算子*': 無効な左オペランドには型'*型*'|  
+|[コンパイラ エラー C2297](compiler-error-c2297.md)|'*演算子*': 無効な右オペランドには型'*型*'|  
+|[コンパイラ エラー C2298](compiler-error-c2298.md)|ポインターをメンバー関数へバインドするための呼び出しがありません|  
+|[コンパイラ エラー C2299](compiler-error-c2299.md)|'*関数*': 動作変更: 明示的な特殊化は、コピー コンス トラクターまたはコピー代入演算子をすることはできません|  
+
