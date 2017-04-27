@@ -6,6 +6,17 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- exception/std::current_exception
+- exception/std::get_terminate
+- exception/std::get_unexpected
+- exception/std::make_exception_ptr
+- exception/std::rethrow_exception
+- exception/std::set_terminate
+- exception/std::set_unexpected
+- exception/std::terminate
+- exception/std::uncaught_exception
+- exception/std::unexpected
 ms.assetid: c09ac569-5e35-4fe8-872d-ca5810274dd7
 caps.latest.revision: 12
 manager: ghogen
@@ -23,7 +34,7 @@ ms.lasthandoff: 02/24/2017
 |[set_unexpected](#set_unexpected)|[terminate](#terminate)|[uncaught_exception](#uncaught_exception)|  
 |[unexpected](#unexpected)|  
   
-##  <a name="a-namecurrentexceptiona--currentexception"></a><a name="current_exception"></a>  current_exception  
+##  <a name="current_exception"></a>  current_exception  
  現在の例外へのスマート ポインターを取得します。  
   
 ```cpp  
@@ -42,7 +53,7 @@ exception_ptr current_exception();
   
  `current_exception` 関数を連続して呼び出すと、現在の例外のさまざまなコピーを参照する `exception_ptr` オブジェクトが返されます。 その結果、オブジェクトは、異なるコピーを参照しているため、コピーが同じバイナリ値を持っている場合でも、比較においては等しくないと評価されます。  
   
-##  <a name="a-namemakeexceptionptra--makeexceptionptr"></a><a name="make_exception_ptr"></a>  make_exception_ptr  
+##  <a name="make_exception_ptr"></a>  make_exception_ptr  
  例外のコピーを保持する [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) オブジェクトを作成します。  
   
 ```cpp  
@@ -62,7 +73,7 @@ exception_ptr make_exception_ptr(E Except);
   
  通常、アプリケーションは `make_exception_ptr` 関数を必要とせず、使用は推奨されていません。  
   
-##  <a name="a-namerethrowexceptiona--rethrowexception"></a><a name="rethrow_exception"></a>  rethrow_exception  
+##  <a name="rethrow_exception"></a>  rethrow_exception  
  パラメーターとして渡された例外をスローします。  
   
 ```cpp  
@@ -76,14 +87,14 @@ void rethrow_exception(exception_ptr P);
 ### <a name="remarks"></a>コメント  
  キャッチした例外を `exception_ptr` オブジェクトに保存すると、プライマリ スレッドはオブジェクトを処理できます。 プライマリ スレッドで、引数として `rethrow_exception` オブジェクトを指定して `exception_ptr` 関数を呼び出します。 `rethrow_exception` 関数は `exception_ptr` オブジェクトから例外を抽出し、プライマリ スレッドのコンテキストで例外をスローします。  
   
-##  <a name="a-namegetterminatea--getterminate"></a><a name="get_terminate"></a>  get_terminate  
+##  <a name="get_terminate"></a>  get_terminate  
  現在の `terminate_handler` 関数を取得します。  
   
 ```cpp  
 terminate_handler get_terminate();
 ```  
   
-##  <a name="a-namesetterminatea--setterminate"></a><a name="set_terminate"></a>  set_terminate  
+##  <a name="set_terminate"></a>  set_terminate  
  プログラムの終了時に呼び出される新しい `terminate_handler` を設定します。  
   
 ```  
@@ -129,14 +140,14 @@ int main()
   
 ```  
   
-##  <a name="a-namegetunexpecteda--getunexpected"></a><a name="get_unexpected"></a>  get_unexpected  
+##  <a name="get_unexpected"></a>  get_unexpected  
  現在の `unexpected_handler` 関数を取得します。  
   
 ```cpp  
 unexpected_handler get_unexpected();
 ```  
   
-##  <a name="a-namesetunexpecteda--setunexpected"></a><a name="set_unexpected"></a>  set_unexpected  
+##  <a name="set_unexpected"></a>  set_unexpected  
  予期しない例外が発生したときに新しい `unexpected_handler` が存在するように設定します。  
   
 ```  
@@ -181,7 +192,7 @@ int main()
   
 ```  
   
-##  <a name="a-nameterminatea--terminate"></a><a name="terminate"></a>  terminate  
+##  <a name="terminate"></a>  terminate  
  終了ハンドラーを呼び出します。  
   
 ```  
@@ -196,7 +207,7 @@ void terminate();
 ### <a name="example"></a>例  
   **terminate** の使用例については、「[set_unexpected](../standard-library/exception-functions.md#set_unexpected)」を参照してください。  
   
-##  <a name="a-nameuncaughtexceptiona--uncaughtexception"></a><a name="uncaught_exception"></a>  uncaught_exception  
+##  <a name="uncaught_exception"></a>  uncaught_exception  
  スローされた例外が現在処理されている場合にのみ `true` を返します。  
   
 ```  
@@ -259,7 +270,7 @@ In Test::~Test("outside try block")
         std::uncaught_exception( ) = 0  
 ```  
   
-##  <a name="a-nameunexpecteda--unexpected"></a><a name="unexpected"></a>  unexpected  
+##  <a name="unexpected"></a>  unexpected  
  予期しないハンドラーを呼び出します。  
   
 ```  

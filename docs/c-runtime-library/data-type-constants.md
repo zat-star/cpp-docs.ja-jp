@@ -114,9 +114,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e98ce72da64b1236bea65207d8333f9ceaf37917
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: a33c5071549695c11ba4820679d5d7059b7f5a5c
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="data-type-constants"></a>データ型定数
@@ -128,20 +128,20 @@ ms.lasthandoff: 02/24/2017
 |定数|値|説明|  
 |--------------|-----------|-------------|  
 |**SCHAR_MAX**|127|最大符号付き `char` 値|  
-|**SCHAR_MIN**|–128|最小符号付き `char` 値|  
+|**SCHAR_MIN**|-128|最小符号付き `char` 値|  
 |**UCHAR_MAX**|255 (0xff)|最大 `unsigned char` 値|  
 |**CHAR_BIT**|8|`char` のビット数|  
 |**USHRT_MAX**|65535 (0xffff)|最大**符号なしの short** 値|  
 |**SHRT_MAX**|32767|最大 (符号付き) **short**値|  
-|**SHRT_MIN**|–32768|最小 (符号付き) **short**値|  
+|**SHRT_MIN**|-32768|最小 (符号付き) **short**値|  
 |**UINT_MAX**|4294967295 (0xffffffff)|最大 `unsigned int` 値|  
 |**ULONG_MAX**|4294967295 (0xffffffff)|最大 `unsigned long` 値|  
 |**INT_MAX**|2147483647|最大 (符号付き) `int` 値|  
-|**INT_MIN**|–2147483647–1|最小 (符号付き) `int` 値|  
+|**INT_MIN**|-2147483647-1|最小 (符号付き) `int` 値|  
 |**LONG_MAX**|2147483647|最大 (符号付き) **long** 値|  
-|**LONG_MIN**|–2147483647–1|最小 (符号付き) **long** 値|  
-|**CHAR_MAX**|127 (/J オプションが使用される場合は&255;)|最大 `char` 値|  
-|**CHAR_MIN**|-128 (/J オプションが使用される場合は&0;)|最小 `char` 値|  
+|**LONG_MIN**|-2147483647-1|最小 (符号付き) **long** 値|  
+|**CHAR_MAX**|127 (/J オプションが使用される場合は 255)|最大 `char` 値|  
+|**CHAR_MIN**|-128 (/J オプションが使用される場合は 0)|最小 `char` 値|  
 |**MB_LEN_MAX**|2|マルチバイト `char` の最大バイト数|  
 |**_I64_MAX**|9223372036854775807|最大 (符号付き) __**int64** 値|  
 |**_I64_MIN**|-9223372036854775807-1|最小 (符号付き) __**int64** 値|  
@@ -155,22 +155,22 @@ ms.lasthandoff: 02/24/2017
 |**DBL_EPSILON**|2.2204460492503131e-016|1.0+**DBL_EPSILON** !=1.0 のように最小|  
 |**DBL_MANT_DIG**|53|# 仮数部のビット数|  
 |**DBL_MAX**|1.7976931348623158e+308|最大値|  
-|**DBL_MAX_10_EXP**|308|最大&10; 進指数|  
-|**DBL_MAX_EXP**|1024|最大&2; 進指数|  
+|**DBL_MAX_10_EXP**|308|最大 10 進指数|  
+|**DBL_MAX_EXP**|1024|最大 2 進指数|  
 |**DBL_MIN**|2.2250738585072014e-308|正の最小数|  
-|**DBL_MIN_10_EXP**|(-307)|最小&10; 進指数|  
-|**DBL_MIN_EXP**|(–1021)|最小&2; 進指数|  
+|**DBL_MIN_10_EXP**|(-307)|最小 10 進指数|  
+|**DBL_MIN_EXP**|(-1021)|最小 2 進指数|  
 |**_DBL_RADIX**|2|指数の基数|  
 |**_DBL_ROUNDS**|1|加算の丸め: 近接|  
 |**FLT_DIG**|6|有効桁数|  
 |**FLT_EPSILON**|1.192092896e-07F|1.0+**FLT_EPSILON** !=1.0 のように最小|  
 |**FLT_MANT_DIG**|24|仮数部のビット数|  
 |**FLT_MAX**|3.402823466e+38F|最大値|  
-|**FLT_MAX_10_EXP**|38|最大&10; 進指数|  
-|**FLT_MAX_EXP**|128|最大&2; 進指数|  
+|**FLT_MAX_10_EXP**|38|最大 10 進指数|  
+|**FLT_MAX_EXP**|128|最大 2 進指数|  
 |**FLT_MIN**|1.175494351e-38F|正の最小数|  
-|**FLT_MIN_10_EXP**|(–37)|最小&10; 進指数|  
-|**FLT_MIN_EXP**|(–125)|最小&2; 進指数|  
+|**FLT_MIN_10_EXP**|(-37)|最小 10 進指数|  
+|**FLT_MIN_EXP**|(-125)|最小 2 進指数|  
 |**FLT_RADIX**|2|指数の基数|  
 |**FLT_ROUNDS**|1|加算の丸め: 近接|  
   

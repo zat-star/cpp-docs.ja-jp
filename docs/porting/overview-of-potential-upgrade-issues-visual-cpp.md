@@ -12,14 +12,15 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 translationtype: Human Translation
-ms.sourcegitcommit: fb1f9f25be6d32f15324c8d3a7bd5069ca869a35
-ms.openlocfilehash: 6951129578e28251cef8eb54abb4ef790eb7f944
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 24ae58e6d8948572248a1595c59714bdf2c6f3f5
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="overview-of-potential-upgrade-issues-visual-c"></a>アップグレード時の潜在的な問題の概要 (Visual C++)
 長年にわたり、Visual C++ コンパイラでは、C++ 言語自体、C++ 標準ライブラリ、C ランタイム (CRT)、およびその他のライブラリ (MFC や ATL など) における変更と併せて、多くの変更が行われてきました。 その結果、Visual C++ の以前のバージョンからアプリケーションをアップグレードした場合、以前は正常にコンパイルされていたコードにおいてコンパイラおよびリンカーに関するエラーや警告が発生する場合があります。 元のコード ベースが古いほど、このようなエラーが発生する可能性は高くなります。 この記事では、発生する可能性が高い問題を最も一般的な方法で分類して概説するとともに、詳細情報へのリンクも示します。  
   
- 注: 以前は、アップグレードが Visual Studio の複数のバージョンにまたがる場合には、1 度に&1; つずつ段階的にバージョンをアップグレードすることをお勧めしていました。 しかし、現在、この方法はお勧めしていません。 コード ベースの古さの程度に関係なく、ほとんどの場合は Visual Studio の最新バージョンへアップグレードする方がより簡単であることが判明しました。  
+ 注: 以前は、アップグレードが Visual Studio の複数のバージョンにまたがる場合には、1 度に 1 つずつ段階的にバージョンをアップグレードすることをお勧めしていました。 しかし、現在、この方法はお勧めしていません。 コード ベースの古さの程度に関係なく、ほとんどの場合は Visual Studio の最新バージョンへアップグレードする方がより簡単であることが判明しました。  
   
  アップグレード プロセスに関する質問またはコメントについては、Microsoft の vcupgrade にお送りください。  
   
@@ -47,7 +48,7 @@ ms.openlocfilehash: 6951129578e28251cef8eb54abb4ef790eb7f944
   
 2.  スタティック ライブラリをリビルドできない場合 (またはリビルドしたくない場合)、legacy_stdio_definitions.lib とのリンクを試みることができます。 それがスタティック ライブラリのリンク時の依存関係を満たしている場合は、スタティック ライブラリをバイナリ内で使用しながら十分にテストすることにより、スタティック ライブラリが [Universal CRT に加えられた動作関係の変更](visual-cpp-change-history-2003-2015.md#BK_CRT)のいずれからも悪影響を受けていないことを確認します。  
   
-3.  legacy_stdio_definitions.lib がスタティック ライブラリの依存関係を満たしていない場合、または前途した動作関係の変更によりスタティック ライブラリが Universal CRT で動作しない場合は、Microsoft C ランタイムの正しいバージョンとリンクする DLL にスタティック ライブラリをカプセル化することをお勧めします。 たとえば、Visual C++ 2013 を使用してスタティック ライブラリがビルドされているならば、Visual C++ 2013 および Visual C++ 2013 ライブラリを使用してこの DLL もビルドします。 DLL を生成してライブラリに取り込むことにより、特定のバージョンの Microsoft C ランタイムに対する依存関係を示す実装の詳細をカプセル化します  (DLL インターフェイスで、それがどの C ランタイムを使用しているかという詳細が "リーク" されないように注意する必要があります。たとえば、DLL 境界を越えて FILE* を返したり、malloc で割り当てられたポインターを返して呼び出し元にそれを解放するよう求めたりすることにより、発生します)。  
+3.  legacy_stdio_definitions.lib がスタティック ライブラリの依存関係を満たしていない場合、または前途した動作関係の変更によりスタティック ライブラリが Universal CRT で動作しない場合は、Microsoft C ランタイムの正しいバージョンとリンクする DLL にスタティック ライブラリをカプセル化することをお勧めします。 たとえば、Visual C++ 2013 を使用してスタティック ライブラリがビルドされているならば、Visual C++ 2013 および Visual C++ 2013 ライブラリを使用してこの DLL もビルドします。 DLL を生成してライブラリに取り込むことにより、特定のバージョンの Microsoft C ランタイムに対する依存関係を示す実装の詳細をカプセル化します  (DLL インターフェイスで、それがどの C ランタイムを使用しているかという詳細が漏れないように注意する必要があります。たとえば、DLL 境界を越えて FILE* を返したり、malloc で割り当てられたポインターを返して呼び出し元にそれを解放するよう求めたりすることにより、発生します。)  
   
  単一のプロセスで複数の CRT を使用することは、それ自体問題ではありません (実際に、ほとんどのプロセスでは最終的に複数の CRT DLL を読み込みます。たとえば、Windows オペレーティング システムのコンポーネントは msvcrt.dll に依存し、CLR は独自のプライベート CRT に依存します)。 さまざまな CRT からの状態を混ぜると、問題が発生します。 たとえば、msvcr110.dll!malloc でメモリを割り当ててから、msvcr120.dll!free でそのメモリの割り当て解除を試みたり、msvcr110!fopen で FILE を開いてから、msvcr120!fread でその FILE からの読み取りを試みたりしないでください。 さまざまな CRT からの状態を混ぜ合わせない限り、1 つのプロセスで複数の CRT を安全に読み込むことができます。  
   
@@ -66,13 +67,13 @@ ms.openlocfilehash: 6951129578e28251cef8eb54abb4ef790eb7f944
 ### <a name="lnk2019-unresolved-external"></a>LNK2019: 未解決の外部シンボル  
  未解決のシンボルの場合、プロジェクト設定の修正が必要なことがあります。  
   
--   •   ソース ファイルが既定以外の場所にある場合に、プロジェクトの include ディレクトリへのパスを追加しましたか?  
+-   ソース ファイルが既定以外の場所にある場合に、プロジェクトの include ディレクトリへのパスを追加しましたか?  
   
--   •   .lib ファイル内に外部シンボルが定義されている場合、プロジェクト プロパティ内に lib パスを指定していますか? また、そこには .lib ファイルの適切なバージョンが実際に置かれていますか?  
+-   .lib ファイル内に外部シンボルが定義されている場合、プロジェクト プロパティ内に lib パスを指定していますか? また、そこには .lib ファイルの適切なバージョンが実際に置かれていますか?  
   
--   •   異なるバージョンの Visual Studio でコンパイルされた .lib ファイルへのリンクを試みていますか? 試みている場合は、ライブラリとツールセットの依存関係に関する前のセクションを参照してください。  
+-   異なるバージョンの Visual Studio でコンパイルされた .lib ファイルへのリンクを試みていますか? 試みている場合は、ライブラリとツールセットの依存関係に関する前のセクションを参照してください。  
   
--   •   呼び出しサイトにおける引数の型は、関数の既存のオーバー ロードと実際に一致していますか? 関数のシグネチャ内で、および関数を呼び出すコード内で typedef の基になる型が、予期していたものと一致しているかどうかを確認します。  
+-   呼び出しサイトにおける引数の型は、関数の既存のオーバー ロードと実際に一致していますか? 関数のシグネチャ内で、および関数を呼び出すコード内で typedef の基になる型が、予期していたものと一致しているかどうかを確認します。  
   
  未解決シンボル エラーのトラブルシューティングを実行するには、dumpbin.exe を使用して、バイナリで定義されているシンボルを調べることができます。 次のコマンド ラインを試行して、ライブラリで定義されているシンボルを表示してください。  
   
@@ -107,16 +108,16 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
   
  アップグレード時によく発生するコンパイラ エラーの例として、非 const 引数が const パラメーターに渡された場合に発生するエラーが挙げられます。 Visual C++ の以前のバージョンでは、これに対して常にエラー フラグが付けられるわけではありませんでした。 詳細については、「[コンパイラのより厳密な変換](porting-guide-spy-increment.md#stricter_conversions)」を参照してください。  
   
- 特定の適合性強化の詳細については、[Visual C++ change history 2003 – 2015](visual-cpp-change-history-2003-2015.md) (Visual C++ 2003 ～ 2015 での互換性に影響する変更点) および「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
+ 特定の適合性強化の詳細については、[Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md) (Visual C++ 2003 ～ 2015 での互換性に影響する変更点) および「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
   
 ## <a name="errors-involving-stdinth-integral-types"></a>\<stdint.h> 整数型に関連するエラー  
  \<stdint.h> ヘッダーでは、組み込みの整数型とは異なり、すべてのプラットフォームで指定の長さを保持することが保証される typedef および macro を定義します。 例として、uint32_t や int64_t が挙げられます。 Visual Studio 2010 で、Visual C++ には \<stdint.h> が追加されました。 2010 より前に記述されたコードは、型に関するプライベート定義を備えている場合がありますが、それらの定義は \<stdint.h> 定義と常に整合するとは限りません。  
   
  エラー C2371 が発生し、stdint 型が関係している場合、その多くは、コード内またはサードパーティ製の lib ファイル内のヘッダー内でその型が定義されていることを意味します。  アップグレード時には、\<stdint.h> のカスタム定義を削除する必要がありますが、最初に、カスタム定義を現在の標準的な定義と比較して、新たな問題を招かないことを確認してください。  
   
- F12 キー ("定義へ移動") を押すと、問題の型が定義されている場所を確認できます。  
+ F12 キー (**定義へ移動**) を押すと、問題の型が定義されている場所を確認できます。  
   
- ここでは、[/showIncludes](../build/reference/showincludes-list-include-files.md) コンパイラ オプションが役に立ちます。 プロジェクトの [プロパティ ページ] ダイアログ ボックスで、[**C/C++**]、[**詳細設定**] ページの順に開き、[**インクルード ファイルの表示**] を [はい] に設定します。 次にプロジェクトをリビルドし、出力ウィンドウで #includes の一覧を確認します。  各ヘッダーは、それぞれが含まれているヘッダーの下にインデントされます。  
+ ここでは、[/showIncludes](../build/reference/showincludes-list-include-files.md) コンパイラ オプションが役に立ちます。 プロジェクトの [プロパティ ページ] ダイアログ ボックスで、**[C/C++]**、**[詳細設定]** ページの順に開き、**[インクルード ファイルの表示]** を **[はい]** に設定します。 次にプロジェクトをリビルドし、出力ウィンドウで #includes の一覧を確認します。  各ヘッダーは、それぞれが含まれているヘッダーの下にインデントされます。  
   
 ## <a name="errors-involving-crt-functions"></a>CRT の関数に関係するエラー  
  C ランタイムには、長年にわたり、多くの変更が加えられてきました。 セキュリティで保護された関数のバージョンが多数追加された一方で、削除された関数もありました。 また、この記事で前述したように、Microsoft のRT 実装は、Visual Studio 2015 で新しいバイナリと関連する .lib ファイルにリファクタリングされました。  
@@ -149,7 +150,7 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
  詳細については、「[ターゲットの Windows バージョンを更新する](porting-guide-spy-increment.md#updating_winver)」および「[その他の期限切れのヘッダー ファイル](porting-guide-spy-increment.md#outdated_header_files)」を参照してください。  
   
 ## <a name="atl--mfc"></a>ATL/MFC  
- ATL および MFC は比較的安定した API ですが、変更が行われる場合があります。 詳細については、「[Visual C++ change history 2003 – 2015](visual-cpp-change-history-2003-2015.md)」 (Visual C++ 2003 ～ 2015 での互換性に影響する変更点)、「[What's New for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」 (Visual Studio 2017 での Visual C++ の新機能)、「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
+ ATL および MFC は比較的安定した API ですが、変更が行われる場合があります。 詳細については、「[Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md)」 (Visual C++ 2003 ～ 2015 での互換性に影響する変更点)、「[What's New for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」 (Visual Studio 2017 での Visual C++ の新機能)、「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
   
 ### <a name="lnk-2005-dllmain12-already-defined-in-msvcrtdlib"></a>MSVCRTD.lib で定義済みの LNK 2005 _DllMain@12  
  このエラーは MFC アプリケーションで発生することがあります。 CRT ライブラリと MFC ライブラリの間での順序付けの問題を示します。 最初に MFC をリンクして、new および delete 演算子が提供されるようにする必要があります。 エラーを修復するには、/NODEFAULTLIB スイッチを使用して、既定のライブラリ MSVCRTD.lib と mfcs140d.lib を無視します。 次に、これらの lib を追加の依存関係として追加します。  
@@ -167,9 +168,4 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
 ## <a name="see-also"></a>関連項目  
  [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)
  [Visual Studio 2017 での C++ 適合性強化](../cpp-conformance-improvements-2017.md)
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

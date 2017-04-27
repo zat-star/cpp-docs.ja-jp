@@ -37,9 +37,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 2663e4f10a27ca37e4d77ad5e1200cd1e0b861b2
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 92d89d08fdcd786e665b3ad40e3317f3e24d7a75
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限
@@ -52,15 +52,15 @@ ms.lasthandoff: 02/24/2017
 |定数|説明|値|  
 |--------------|-------------|-----------|  
 |**FLT_DIG**<br />**DBL_DIG**<br />**LDBL_DIG**|*q* 桁の浮動小数点数を、有効桁数を失わずに丸めて浮動小数点表現にしたり、戻したりできる桁数 *q*。|6<br />15<br />15|  
-|**FLT_EPSILON**<br />**DBL_EPSILON**<br />**LDBL_EPSILON**|*x* + 1.0 が 1.0 に等しくならないような最小の正数 *x*|1.192092896e–07F<br />2.2204460492503131e–016<br />2.2204460492503131e–016|  
+|**FLT_EPSILON**<br />**DBL_EPSILON**<br />**LDBL_EPSILON**|*x* + 1.0 が 1.0 に等しくならないような最小の正数 *x*|1.192092896e-07F<br />2.2204460492503131e-016<br />2.2204460492503131e-016|  
 |**FLT_GUARD**||0|  
 |**FLT_MANT_DIG**<br />**DBL_MANT_DIG**<br />**LDBL_MANT_DIG**|浮動小数点の有効桁で **FLT_RADIX** により指定された基数の桁数。 基数は 2 です。したがって、これらの値はビットを指定します。|24<br />53<br />53|  
 |**FLT_MAX**<br />**DBL_MAX**<br />**LDBL_MAX**|表現可能な最大浮動小数点数。|3.402823466e+38F<br />1.7976931348623158e+308<br />1.7976931348623158e+308|  
 |**FLT_MAX_10_EXP**<br />**DBL_MAX_10_EXP**<br />**LDBL_MAX_10_EXP**|10 をその数値分累乗した結果が表現可能な浮動小数点数となる最大の整数。|38<br />308<br />308|  
 |**FLT_MAX_EXP**<br />**DBL_MAX_EXP**<br />**LDBL_MAX_EXP**|**FLT_RADIX** をその数値分累乗した結果が表現可能な浮動小数点数となる最大の整数。|128<br />1024<br />1024|  
-|**FLT_MIN**<br />**DBL_MIN**<br />**LDBL_MIN**|正の最小数。|1.175494351e–38F<br />2.2250738585072014e–308<br />2.2250738585072014e–308|  
-|**FLT_MIN_10_EXP**<br />**DBL_MIN_10_EXP**<br />**LDBL_MIN_10_EXP**|10 をその数値分累乗した結果が表現可能な浮動小数点数となる最小の負の整数。|–37<br />–307<br />–307|  
-|**FLT_MIN_EXP**<br />**DBL_MIN_EXP**<br />**LDBL_MIN_EXP**|**FLT_RADIX** をその数値分累乗した結果が表現可能な浮動小数点数となる最小の負の整数。|–125<br />–1021<br />–1021|  
+|**FLT_MIN**<br />**DBL_MIN**<br />**LDBL_MIN**|正の最小数。|1.175494351e-38F<br />2.2250738585072014e-308<br />2.2250738585072014e-308|  
+|**FLT_MIN_10_EXP**<br />**DBL_MIN_10_EXP**<br />**LDBL_MIN_10_EXP**|10 をその数値分累乗した結果が表現可能な浮動小数点数となる最小の負の整数。|-37<br />-307<br />-307|  
+|**FLT_MIN_EXP**<br />**DBL_MIN_EXP**<br />**LDBL_MIN_EXP**|**FLT_RADIX** をその数値分累乗した結果が表現可能な浮動小数点数となる最小の負の整数。|-125<br />-1021<br />-1021|  
 |**FLT_NORMALIZE**||0|  
 |**FLT_RADIX**<br />**_DBL_RADIX**<br />**_LDBL_RADIX**|指数表記の基数。|2<br />2<br />2|  
 |**FLT_ROUNDS**<br />**_DBL_ROUNDS**<br />**_LDBL_ROUNDS**|浮動小数点加算の丸めモード。|1 (近接)<br />1 (近接)<br />1 (近接)|  

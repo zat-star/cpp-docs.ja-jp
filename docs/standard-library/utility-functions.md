@@ -6,6 +6,12 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- utility/std::exchange
+- utility/std::forward
+- utility/std::make_pair
+- utility/std::move
+- utility/std::swap
 ms.assetid: b1df38cd-3a59-4098-9c81-83342eb719a4
 caps.latest.revision: 7
 manager: ghogen
@@ -21,7 +27,7 @@ ms.lasthandoff: 02/24/2017
 |[exchange](#exchange)|[forward](#forward)|[get 関数 &lt;utility&gt;](#get)|  
 |[make_pair](#make_pair)|[move](#move)|[swap](#swap)|  
   
-##  <a name="a-nameexchangea--exchange"></a><a name="exchange"></a>  exchange  
+##  <a name="exchange"></a>  exchange  
  **(C++14)** オブジェクトに新しい値を代入し、古い値を返します。  
   
 ```cpp  
@@ -70,7 +76,7 @@ The new value of c1 after exchange is: 2
 */  
 ```  
   
-##  <a name="a-nameforwarda--forward"></a><a name="forward"></a>  forward  
+##  <a name="forward"></a>  forward  
  引数が右辺値または右辺値参照である場合に、条件付きで引数を右辺値参照にキャストします。 これによって、完全転送をサポートする転送関数に対する引数の右辺値性が復元されます。  
   
 ```
@@ -98,7 +104,7 @@ constexpr Type&& forward(typename remove_reference<Type>::type&& Arg) noexcept
   
  オーバーロードの解決を実行するために引数の元の値の右辺値性を復元することは、*完全転送*と呼ばれます。 完全転送によって、テンプレート関数はいずれかの参照型の引数を受け取り、正しいオーバーロードの解決に必要な場合に引数の右辺値性を復元できます。 完全転送を使用することによって、右辺値の移動セマンティクスを保持することができ、引数の参照型のみが異なる関数にオーバーロードを用意する必要がなくなります。  
   
-##  <a name="a-namegeta--get"></a><a name="get"></a>  get  
+##  <a name="get"></a>  get  
  `pair` オブジェクトから、インデックスの位置または型を使用して要素を取得します。  
   
 ```
@@ -193,7 +199,7 @@ int main()
 }
 ```  
   
-##  <a name="a-namemakepaira--makepair"></a><a name="make_pair"></a>  make_pair  
+##  <a name="make_pair"></a>  make_pair  
  `pair` 型のオブジェクトを作成するために使用できるテンプレート関数。コンポーネントの型は、パラメーターとして渡されるデータ型に基づいて自動的に選択されます。  
   
 ```
@@ -238,7 +244,7 @@ pair<T, U> make_pair(T&& Val1, U&& Val2);
 ### <a name="example"></a>例  
   `make_pair` ヘルパー関数を使用してペアを宣言して初期化する方法の例については、「[pair 構造体](../standard-library/pair-structure.md)」を参照してください。  
   
-##  <a name="a-namemovea--move"></a><a name="move"></a>  move  
+##  <a name="move"></a>  move  
  無条件に引数を右辺値参照にキャストし、型の移動が有効である場合に型が移動できることを通知します。  
   
 ```
@@ -263,7 +269,7 @@ constexpr typename remove_reference<Type>::type&& move(Type&& Arg) noexcept;
   
  `Arg` で渡された値が左辺値である場合、つまり、名前を持つ場合や、そのアドレスを取得できる場合、移動が発生したときに無効になります。 移動した後、名前またはアドレスによって、`Arg` に渡された値を参照しないでください。  
   
-##  <a name="a-nameswapa--swap"></a><a name="swap"></a>  swap  
+##  <a name="swap"></a>  swap  
  2 つの [pair 構造体](../standard-library/pair-structure.md)オブジェクトの要素を交換します。  
   
 ```

@@ -46,9 +46,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: fc4d8a98d8ab3c482b19af683c2f1428f5164290
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 2ac04f1efef14b0a86a24eed2ebef8b92bffaf01
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ismbb-routines"></a>_ismbb 系ルーチン
@@ -77,13 +77,13 @@ ms.lasthandoff: 03/29/2017
 |[_ismbbblank](../c-runtime-library/reference/ismbbblank-ismbbblank-l.md)|`isblank`|  
 |[_ismbbgraph](../c-runtime-library/reference/ismbbgraph-ismbbgraph-l.md)|`_ismbbprint`は、 `_ismbbgraph` と同じですが、空白文字 (0x20) は含みません。|  
 |[_ismbbkalnum](../c-runtime-library/reference/ismbbkalnum-ismbbkalnum-l.md)|区切り記号以外の非 ASCII テキストの記号。 たとえば、コード ページ 932 でのみ `_ismbbkalnum` は、カタカナ英数字をテストします。|  
-|[_ismbbkana](../c-runtime-library/reference/ismbbkana-ismbbkana-l.md)|カタカナ (0xA1 – 0xDF)。 コード ページ 932 固有。|  
-|[_ismbbkprint](../c-runtime-library/reference/ismbbkprint-ismbbkprint-l.md)|非 ASCII テキストまたは ASCII 以外の区切り記号。 たとえば、コード ページ 932 でのみ、`_ismbbkprint` はカタカナの英数字、またはカタカナの句読点 (範囲: 0xA1 ～ 0xDF) をテストします。|  
+|[_ismbbkana](../c-runtime-library/reference/ismbbkana-ismbbkana-l.md)|カタカナ (0xA1 - 0xDF)。 コード ページ 932 固有。|  
+|[_ismbbkprint](../c-runtime-library/reference/ismbbkprint-ismbbkprint-l.md)|非 ASCII テキストまたは ASCII 以外の区切り記号。 たとえば、コード ページ 932 でのみ、`_ismbbkprint` はカタカナの英数字、またはカタカナの句読点 (範囲: 0xA1 - 0xDF) をテストします。|  
 |[_ismbbkpunct](../c-runtime-library/reference/ismbbkpunct-ismbbkpunct-l.md)|ASCII 以外の区切り記号。 たとえば、コード ページ 932 でのみ `_ismbbkpunct` は、カタカナ区切り文字をテストします。|  
-|[_ismbblead](../c-runtime-library/reference/ismbblead-ismbblead-l.md)|マルチバイト文字の最初のバイト。 たとえば、コード ページ 932 でのみ、有効な範囲は 0x81 – 0x9F、0xE0 – 0xFC です。|  
+|[_ismbblead](../c-runtime-library/reference/ismbblead-ismbblead-l.md)|マルチバイト文字の最初のバイト。 たとえば、コード ページ 932 でのみ、有効な範囲は 0x81 - 0x9F、0xE0 - 0xFC です。|  
 |[_ismbbprint](../c-runtime-library/reference/ismbbprint-ismbbprint-l.md)|`isprint` &#124;&#124; `_ismbbkprint`. **ismbbprint** には、空白文字 (0x20) が含まれます。|  
 |[_ismbbpunct](../c-runtime-library/reference/ismbbpunct-ismbbpunct-l.md)|`ispunct` &#124;&#124; `_ismbbkpunct`.|  
-|[_ismbbtrail](../c-runtime-library/reference/ismbbtrail-ismbbtrail-l.md)|マルチバイト文字の 2 番目のバイト。 たとえば、コード ページ 932 でのみ、有効な範囲は 0x40 – 0x7E、0x80 – 0xEC です。|  
+|[_ismbbtrail](../c-runtime-library/reference/ismbbtrail-ismbbtrail-l.md)|マルチバイト文字の 2 番目のバイト。 たとえば、コード ページ 932 でのみ、有効な範囲は 0x40 - 0x7E、0x80 - 0xEC です。|  
   
  次の表は、これらのルーチンのテスト条件を構成する値の論理和を示します。 マニフェスト定数 `_BLANK`、 `_DIGIT`、 `_LOWER`、 `_PUNCT`、および `_UPPER` は Ctype.h で定義されます。  
   

@@ -9,10 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::insert_iterator
 - iterator/std::insert_iterator
-- std.insert_iterator
 - insert_iterator
+- iterator/std::insert_iterator::container_type
+- iterator/std::insert_iterator::reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,7 +86,7 @@ class insert_iterator;
   
  **名前空間:** std  
   
-##  <a name="a-nameinsertiteratorcontainertypea--insertiteratorcontainertype"></a><a name="insert_iterator__container_type"></a>  insert_iterator::container_type  
+##  <a name="insert_iterator__container_type"></a>  insert_iterator::container_type  
  一般的な挿入の対象となるコンテナーを表す型。  
   
 ```
@@ -126,7 +126,7 @@ The list L2 is: ( 40 20 10 ).
 *\  
 ```  
   
-##  <a name="a-nameinsertiteratorinsertiteratora--insertiteratorinsertiterator"></a><a name="insert_iterator__insert_iterator"></a>  insert_iterator::insert_iterator  
+##  <a name="insert_iterator__insert_iterator"></a>  insert_iterator::insert_iterator  
  コンテナーの指定された位置に要素を挿入する `insert_iterator` を構築します。  
   
 ```
@@ -189,7 +189,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="a-nameinsertiteratoroperatorstara--insertiteratoroperator"></a><a name="insert_iterator__operator_star"></a>  insert_iterator::operator*  
+##  <a name="insert_iterator__operator_star"></a>  insert_iterator::operator*  
  アドレス指定された要素を返す挿入反復子を逆参照します。  
   
 ```
@@ -246,7 +246,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="a-nameinsertiteratoroperatoraddadda--insertiteratoroperator"></a><a name="insert_iterator__operator_add_add"></a>  insert_iterator::operator++  
+##  <a name="insert_iterator__operator_add_add"></a>  insert_iterator::operator++  
  値を格納できる次の位置に **insert_iterator** をインクリメントします。  
   
 ```
@@ -307,7 +307,7 @@ After the insertions, the vector vec becomes:
 *\  
 ```  
   
-##  <a name="a-nameinsertiteratoroperatoreqa--insertiteratoroperator"></a><a name="insert_iterator__operator_eq"></a>  insert_iterator::operator=  
+##  <a name="insert_iterator__operator_eq"></a>  insert_iterator::operator=  
  コンテナーに値を挿入し、新しい要素を指すように更新された反復子を返します。  
   
 ```
@@ -386,7 +386,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="a-nameinsertiteratorreferencea--insertiteratorreference"></a><a name="insert_iterator__reference"></a>  insert_iterator::reference  
+##  <a name="insert_iterator__reference"></a>  insert_iterator::reference  
  関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。  
   
 ```

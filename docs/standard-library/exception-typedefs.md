@@ -6,6 +6,10 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- exception/std::exception_ptr
+- exception/std::terminate_handler
+- exception/std::unexpected_handler
 ms.assetid: 2a338480-35e2-46f7-b223-52d4e84a5768
 caps.latest.revision: 7
 manager: ghogen
@@ -20,7 +24,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|-|  
 |[exception_ptr](#exception_ptr)|[terminate_handler](#terminate_handler)|[unexpected_handler](#unexpected_handler)|  
   
-##  <a name="a-nameexceptionptra--exceptionptr"></a><a name="exception_ptr"></a>  exception_ptr  
+##  <a name="exception_ptr"></a>  exception_ptr  
  例外へのポインターを表す型。  
   
 ```cpp  
@@ -42,7 +46,7 @@ typedef unspecified exception_ptr;
   
  等値演算子 (`==`) と不等値演算子 (`!=`) を使用して、2 種類の `exception_ptr` オブジェクトを比較できます。 演算子は、例外を表す `EXCEPTION_RECORD` 構造体のバイナリ値 (ビット パターン) は比較しません。 代わりに、演算子は `exception_ptr` オブジェクトの例外参照フィールドのアドレスを比較します。 その結果、null `exception_ptr` と NULL 値を比較すると、等しいと評価されます。  
   
-##  <a name="a-nameterminatehandlera--terminatehandler"></a><a name="terminate_handler"></a>  terminate_handler  
+##  <a name="terminate_handler"></a>  terminate_handler  
  この型は、`terminate_handler` として使用するのに適した関数へのポインターを表します。  
   
 ```
@@ -55,7 +59,7 @@ typedef void (*terminate_handler)();
 ### <a name="example"></a>例  
   `terminate_handler` の使用例については、「[set_terminate](../standard-library/exception-functions.md#set_terminate)」を参照してください。  
   
-##  <a name="a-nameunexpectedhandlera--unexpectedhandler"></a><a name="unexpected_handler"></a>  unexpected_handler  
+##  <a name="unexpected_handler"></a>  unexpected_handler  
  この型は、`unexpected_handler` として使用するのに適した関数へのポインターを表します。  
   
 ```

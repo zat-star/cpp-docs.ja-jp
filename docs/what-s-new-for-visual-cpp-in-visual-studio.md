@@ -27,9 +27,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: d3ac5f5e54334e42ad48304d26a4f32b1b598459
-ms.openlocfilehash: dbed9eaf443d7392373d1eeba81bc0095c5bd1b4
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 71ae904790532cde7ffe559648ccd13a59b88051
+ms.lasthandoff: 04/01/2017
 
 ---
 
@@ -113,9 +113,9 @@ C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、�
 * C++ ネイティブ プロジェクトの構成変更が簡単になりました。C++/CLI プロジェクトの場合、さらに簡単です。 ソリューション構成を初めて有効にするとき、そのプロセスが以前より速やかに進行し、そのソリューション構成の後続のアクティベーションがすべて即座に完了します。
 
 ### <a name="intellisense"></a>Intellisense  
-* SQLite ベースの新しいデータベース エンジンが、既定で使用されるようになりました。 これにより、[定義に移動] や [すべての参照を検索] などのデータベース操作が高速化され、ソリューションの初期解析時間も大幅に短縮されます。 設定は、[ツール] > [オプション] > [テキスト エディター] > [\C/C++\] > [詳細設定] に移動しました (以前は、... [\C/C++\] > [\試験的\] の下)。
+* SQLite ベースの新しいデータベース エンジンが、既定で使用されるようになりました。 これにより、[定義に移動] や [すべての参照を検索] などのデータベース操作が高速化され、ソリューションの初期解析時間も大幅に短縮されます。 設定は、[ツール] > [オプション] > [テキスト エディター] > [C/C++] > [詳細設定] に移動しました (以前は、... [C/C++] > [試験的] の下)。
 
-* プリコンパイル済みヘッダーを使用していないプロジェクトおよびファイルでの IntelliSense のパフォーマンスが向上しました。現在のファイルのヘッダーに対して自動プリコンパイル済みヘッダーが作成されます。
+* プリコンパイル済みヘッダーを使用していないプロジェクトやファイルでの IntelliSense のパフォーマンスが向上しました。現在のファイルのヘッダーに対して自動プリコンパイル済みヘッダーが作成されます。
 
 * エラー一覧の IntelliSense エラーに対するフィルター処理とヘルプが追加されました。 エラー列をクリックするとフィルター処理を実行できます。 また、特定のエラーをクリックするか F1 キーを押すと、エラー メッセージのオンライン検索が開始します。
 
@@ -127,7 +127,7 @@ C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、�
 
   ![メンバー リストのフィルター処理](media/mlfiltering.png "Member List Filtering")
 
-* メンバー リストの表示項目のコンテキストに応じたフィルター処理を提供する新しい実験的な予測 IntelliSense 機能が追加されました。 「[C++ IntelliSense Improvements – Predictive IntelliSense & Filtering](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/c-intellisense-improvements-predictive-intellisense-filtering/)」(C++ IntelliSense の機能強化 – 予測 IntelliSense とフィルター処理) をご覧ください。
+* メンバー リストの表示項目のコンテキストに応じたフィルター処理を提供する新しい実験的な予測 IntelliSense 機能が追加されました。 「[C++ IntelliSense Improvements - Predictive IntelliSense & Filtering](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/c-intellisense-improvements-predictive-intellisense-filtering/)」 (C++ IntelliSense の機能改善 - 予測 IntelliSense とフィルター処理) を参照してください。
 
 * [すべての参照の検索]\(Shift + F12) を使って、複雑なコードベースでも簡単に参照できるようになりました。 高度なグループ化、フィルター処理、並べ替え、結果内の検索と色づけ (一部の言語) が提供され、参照を明確に理解できます。 C++ では、新しい UI に、変数から読み取っているのか、または変数に書き込んでいるのかに関する情報が含まれます。
 
@@ -148,7 +148,7 @@ Visual Studio 2017 で導入された [フォルダーを開く] 機能を使う
   -    Launch.json: デバッグ エクスペリエンスをカスタマイズします。
 
 ### <a name="cmake-support-via-open-folder"></a>[フォルダーを開く] での CMake のサポート
-Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) を変換しなくても、CMake プロジェクトを使用できるようになりました。 詳細については、「[CMake support in Visual Studio (Visual Studio での CMake のサポート)](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/cmake-support-in-visual-studio/)」と「[CMake support in Visual Studio 2017 – what’s new in the RC.2 update (Visual Studio 2017 での CMake のサポート – RC.2 更新の新機能)](https://blogs.msdn.microsoft.com/vcblog/2016/12/20/cmake-support-in-visual-studio-2017-whats-new-in-the-rc-update/)」をご覧ください。 [フォルダーを開く] で CMake プロジェクトを開くと、C++ の編集、ビルド、およびデバッグ用の環境が自動的に構成されます。
+Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) を変換しなくても、CMake プロジェクトを使用できるようになりました。 詳細については、「[CMake support in Visual Studio](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/cmake-support-in-visual-studio/)」 (Visual Studio での CMake のサポート) と「[CMake support in Visual Studio 2017 - what’s new in the RC.2 update](https://blogs.msdn.microsoft.com/vcblog/2016/12/20/cmake-support-in-visual-studio-2017-whats-new-in-the-rc-update/)」 (Visual Studio 2017 での CMake のサポート - RC.2 更新の新機能) をご覧ください。 [フォルダーを開く] で CMake プロジェクトを開くと、C++ の編集、ビルド、およびデバッグ用の環境が自動的に構成されます。
 
 * C++ の IntelliSense は、ルート フォルダーに CppProperties.json ファイルを作成しなくても動作します。 これに加えて、CMake に用意された構成と CppProperties.json ファイルをユーザーが簡単に切り替えることができるように新しいドロップダウンが追加されました。
 

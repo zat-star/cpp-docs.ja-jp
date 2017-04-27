@@ -6,6 +6,9 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- new/std::nothrow
+- new/std::set_new_handler
 ms.assetid: e250f06a-b025-4509-ae7a-5356d56aad7d
 caps.latest.revision: 10
 manager: ghogen
@@ -20,7 +23,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[nothrow](#nothrow)|[set_new_handler](#set_new_handler)|  
   
-##  <a name="a-namenothrowa--nothrow"></a><a name="nothrow"></a>  nothrow  
+##  <a name="nothrow"></a>  nothrow  
  引数として使用するオブジェクトを `nothrow` バージョンの **new** および **delete** に提供します。  
   
 ```  
@@ -33,7 +36,7 @@ extern const std::nothrow_t nothrow;
 ### <a name="example"></a>例  
   `std::nothrow_t` を関数パラメーターとして使用する方法の例については、「[operator new](../standard-library/new-operators.md#operator_new)」および「[operator new&#91;&#93;](../standard-library/new-operators.md#operator_new_arr)」を参照してください。  
   
-##  <a name="a-namesetnewhandlera--setnewhandler"></a><a name="set_new_handler"></a>  set_new_handler  
+##  <a name="set_new_handler"></a>  set_new_handler  
  `operator new` がメモリ割り当ての試行に失敗した場合に呼び出されるユーザー関数をインストールします。  
   
 ```  

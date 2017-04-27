@@ -6,6 +6,7 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: b55d67cb-3c69-46bf-ad40-e845fb096c4e
 caps.latest.revision: 11
 manager: ghogen
@@ -20,7 +21,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[operator!=](#operator_neq)|[operator==](#operator_eq_eq)|  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+##  <a name="operator_neq"></a>  operator!=  
  指定したクラスのアロケーター オブジェクト間の非等値をテストします。  
   
 ```
@@ -43,7 +44,7 @@ bool operator!=(
 ### <a name="remarks"></a>コメント  
  テンプレート演算子は `!(left == right)` を返します。  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+##  <a name="operator_eq_eq"></a>  operator==  
  指定したクラスのアロケーター オブジェクト間の等値をテストします。  
   
 ```

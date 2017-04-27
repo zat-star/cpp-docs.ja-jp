@@ -1,55 +1,72 @@
 ---
-title: "for ステートメント (C) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "for キーワード [C]"
+title: "for ステートメント (C) | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- for keyword [C]
 ms.assetid: 560a8de4-19db-4868-9f18-dbe51b17900d
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# for ステートメント (C)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 20afe269d057d8ce856be1e1cccb32e6ca451c0f
+ms.lasthandoff: 04/04/2017
 
-`for` ステートメントを使用すると、指定したステートメントまたは複合ステートメントを、指定した回数だけ繰り返すことができます。  `for` ステートメントの本体は、省略可能な条件が false になるまで、ゼロ回以上実行されます。  `for` ステートメント内で省略可能な式を使用して、値を初期化し、`for` ステートメントの実行中に値を変更することができます。  
+---
+# <a name="for-statement-c"></a>for ステートメント (C)
+**for** ステートメントを使用すると、指定したステートメントまたは複合ステートメントを、指定した回数だけ繰り返すことができます。 **for** ステートメントの本体は、省略可能な条件が false になるまで、ゼロ回以上実行されます。 **for** ステートメント内で省略可能な式を使用して、値を初期化し、**for** ステートメントの実行中に値を変更することができます。  
   
-## 構文  
- *iteration\-statement*:  
- `for` \( `init-expression` opt ; `cond-expression`opt ; `loop-expression` opt \)`statement`  
+## <a name="syntax"></a>構文  
+ *iteration-statement*:  
+ &nbsp;&nbsp;**for** **(** *init-expression*<sub>opt</sub> **;** *cond-expression*<sub>opt</sub> **;** *loop-expression*<sub>opt</sub> **)** *statement*  
   
- `for` ステートメントの実行は、次のように進行します。  
+ **for** ステートメントの実行は、次のように進行します。  
   
-1.  `init-expression` が指定されている場合は、それが評価されます。  この式は、ループの初期化を指定します。  `init-expression` の型に制限はありません。  
+1.  *init-expression* がある場合、それが評価されます。 この式は、ループの初期化を指定します。 *init-expression* の型に制限はありません。  
   
-2.  `cond-expression` が指定されている場合は、それが評価されます。  この式は、演算型またはポインター型である必要があります。  この式は、各イテレーションの前に評価されます。  次の 3 つの結果が発生する可能性があります。  
+2.  *cond-expression* がある場合、それが評価されます。 この式は、演算型またはポインター型である必要があります。 この式は、各イテレーションの前に評価されます。 次の 3 つの結果が発生する可能性があります。  
   
-    -   `cond-expression` が true \(0 以外\) の場合、`statement` が実行されます。その後、`loop-expression` が指定されていれば、それが評価されます。  各イテレーションの完了後に、`loop-expression` が評価されます。  この式の型に制限はありません。  副作用が順に実行されます。  その後、`cond-expression` の評価から再び処理が開始されます。  
+    -   *cond-expression* が **true** (0 以外) の場合、*statement* が実行されます。その後、*loop-expression* があれば、それが評価されます。 *loop-expression* は、各イテレーションの後に評価されます。 この式の型に制限はありません。 副作用が順に実行されます。 その後、*cond-expression* の評価から再び処理が開始されます。  
   
-    -   `cond-expression` を省略すると、`cond-expression` を true と見なして前述の説明どおりに処理が進行します。  `cond-expression` 引数のない `for` ステートメントが終了するのは、ステートメント本体内の `break` ステートメントまたは `return` ステートメントが実行されたときか、\(`for` ステートメント本体外にあるラベル付きステートメントへの\) `goto` が実行された場合だけです。  
+    -   *cond-expression* を省略すると、*cond-expression* を true と見なして前述の説明どおりに処理が進行します。 *cond-expression* 引数のない **for** ステートメントが終了するのは、ステートメント本体内の **break** ステートメントまたは **return** ステートメントが実行されたときか、(**for** ステートメント本体外にあるラベル付きステートメントへの) **goto** が実行された場合だけです。  
   
-    -   `cond-expression` が `false` \(0\) の場合、`for` ステートメントの実行が終了し、プログラムの次のステートメントに制御が渡されます。  
+    -   *cond-expression* が **false** (0) の場合、**for** ステートメントが終了し、制御はプログラムの次のステートメントに渡されます。  
   
- また、ステートメント本体内で `break`、`goto`、または `return` ステートメントが実行された場合も、`for` ステートメントは終了します。  `for` ループ内で `continue` ステートメントが実行されると、`loop-expression` が評価されます。  `for` ループ内で `break` ステートメントが実行されると、`loop-expression` は評価されず、実行もされません。  次のステートメント、  
+ **for** ステートメントは、そのステートメント本体内の **break**、**goto**、または **return** ステートメントが実行されたときにも終了します。 **for** ループの **continue** ステートメントにより *loop-expression* が評価されます。 **for** ループ内で **break** ステートメントが実行されると、*loop-expression* は評価されず、実行もされません。 次のステートメント、  
   
 ```  
 for( ;; )  
 ```  
   
- は、`break`、`goto`、または `return` のいずれかのステートメントによってしか終了できない無限ループを発生させる、よく使用される方法です。  
+ は、**break**、**goto**、**return** のいずれかのステートメントによってしか終了できない無限ループを発生させる、よく使用される方法です。  
   
-## コード  
- `for` ステートメントの例を次に示します。  
+## <a name="code"></a>コード  
+ **for** ステートメントの例を次に示します。  
   
 ```  
 // c_for.c  
@@ -78,12 +95,12 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Number of spaces: 4  
 Number of tabs: 2  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ステートメント](../c-language/statements-c.md)

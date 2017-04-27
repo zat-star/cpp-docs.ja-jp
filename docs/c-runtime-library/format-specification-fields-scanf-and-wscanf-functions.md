@@ -50,8 +50,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7bfdce500ad9a268947a90f34ce7c48dca23faea
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 77ef83eccc158cb9fff1a9161b5694a4caf62777
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="format-specification-fields-scanf-and-wscanf-functions"></a>scanf 関数と wscanf 関数の書式指定フィールド
@@ -61,7 +62,7 @@ ms.openlocfilehash: 7bfdce500ad9a268947a90f34ce7c48dca23faea
   
  `%`[`*`] [[幅](../c-runtime-library/scanf-width-specification.md)] [{[h &#124; l &#124; ll &#124; I64 &#124; L](../c-runtime-library/scanf-width-specification.md)}][型](../c-runtime-library/scanf-type-field-characters.md)  
   
- `format` 引数では入力の解釈方法を指定します。次の文字を&1; つ以上指定できます。  
+ `format` 引数では入力の解釈方法を指定します。次の文字を 1 つ以上指定できます。  
   
 -   空白文字: 空白 (' ')、タブ ('\t')、または改行 ('\n')。 空白文字が現れると、`scanf` は、次の非空白文字が現れるまで、入力データ内の連続するすべての空白文字を読み取ります。ただし、読み取るだけで格納しません。 書式に指定された 1 つの空白文字は、入力データ内の任意の個数 (0 を含む) の空白文字および任意の組み合わせの空白文字と一致します。  
   
@@ -75,7 +76,7 @@ ms.openlocfilehash: 7bfdce500ad9a268947a90f34ce7c48dca23faea
   
  入力フィールドは、最初の空白文字 (空白、タブ、または改行) までのすべての文字、書式指定に従って変換できない最初の文字までのすべての文字、またはフィールド幅 (指定されている場合) に到達するまでのすべての文字として定義されます。 書式指定に対して引数が多すぎる場合、余分な引数は評価されるだけで無視されます。 書式指定に必要な引数が足りない場合、結果は予測できません。  
   
- 各書式指定フィールドには、特定の書式を表す&1; つの文字または数字を指定します。 `type` 文字は省略可能な最後の書式フィールドの次に指定し、入力フィールドを文字、文字列、または数値のうちいずれとして解釈するかを決定します。  
+ 各書式指定フィールドには、特定の書式を表す 1 つの文字または数字を指定します。 `type` 文字は省略可能な最後の書式フィールドの次に指定し、入力フィールドを文字、文字列、または数値のうちいずれとして解釈するかを決定します。  
   
  最も簡単な書式指定は、パーセント記号と `type` 文字だけ (`%s` など) で行います。 パーセント記号 (`%`) の後に書式指定文字として意味がない文字が続くと、その文字と以降の文字は、次のパーセント記号が現れるまで、普通の文字列、つまり入力に一致しなければならない一連の文字列として処理されます。 パーセント記号を入力文字として処理するには、`%%` と指定します。  
   
@@ -88,8 +89,3 @@ ms.openlocfilehash: 7bfdce500ad9a268947a90f34ce7c48dca23faea
  [scanf 関数の型フィールド文字](../c-runtime-library/scanf-type-field-characters.md)   
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
  [scanf_s、_scanf_s_l、wscanf_s、_wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

@@ -6,6 +6,7 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: cd3a81c5-a19e-448f-952a-c34c717f21a9
 caps.latest.revision: 11
 manager: ghogen
@@ -17,7 +18,7 @@ ms.lasthandoff: 02/24/2017
 ---
 # <a name="ltatomicgt-enums"></a>&lt;atomic&gt; 列挙型
   
-##  <a name="a-namememoryorderenuma--memoryorder-enum"></a><a name="memory_order_enum"></a>  memory_order 列挙型  
+##  <a name="memory_order_enum"></a>  memory_order 列挙型  
  メモリ位置に対する同期操作のシンボル名を提供します。 これらの操作は、1 つのスレッドの割り当てが別のスレッドにおいて表示される方法に影響します。  
   
 ```

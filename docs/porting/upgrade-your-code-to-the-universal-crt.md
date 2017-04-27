@@ -12,9 +12,9 @@ author: corob-msft
 ms.author: corob
 manager: ghogen
 translationtype: Human Translation
-ms.sourcegitcommit: 258c7a941239d686ed0fddf18b8139996327f262
-ms.openlocfilehash: ede29a7fb28ef9ecb9bfecafed21ff3bbc87736e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 65776206add29c817f78573379bed959a008f6e6
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="upgrade-your-code-to-the-universal-crt"></a>Universal CRT へのコードのアップグレード
@@ -42,7 +42,7 @@ UCRT は現在、Microsoft Windows オペレーティング システムのコ�
   
 UCRT は、Visual Studio 2015 または Visual Studio 2017 でサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist パッケージを使用して再配布することができます。 vcredist パッケージは、UCRT コンポーネントを含み、既定で、それらのコンポーネントがインストールされていない Windows オペレーティング システムにそれらを自動的にインストールします。 詳細については、「[Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
   
-UCRT のアプリのローカルの展開がサポートされていますが、パフォーマンスとセキュリティの両方の理由から推奨されません。 アプリのローカル展開用の DLL は、Windows SDK の一部として "redist" サブディレクトリに置かれています。 必要な DLL には、ucrtbase.dll および api-ms-win-_subset_.dll という名前の “APISet forwarder” DLL のセットなどがあります。 必要な DLL のセットはオペレーティング システムごとに異なるので、アプリのローカルの展開を使用するときにはすべての DLL を含めることをお勧めします。 アプリのローカルの展開に関するその他の詳細および注意事項については、「[Deployment in Visual C++](../ide/deployment-in-visual-cpp.md)」 (Visual c での展開) を参照してください。  
+UCRT のアプリのローカルの展開がサポートされていますが、パフォーマンスとセキュリティの両方の理由から推奨されません。 アプリのローカル展開用の DLL は、Windows SDK の一部として **redist** サブディレクトリに置かれています。 必要な DLL には、ucrtbase.dll および api-ms-win-_subset_.dll という名前の **APISet forwarder** DLL のセットなどがあります。 必要な DLL のセットはオペレーティング システムごとに異なるので、アプリのローカルの展開を使用するときにはすべての DLL を含めることをお勧めします。 アプリのローカルの展開に関するその他の詳細および注意事項については、「[Deployment in Visual C++](../ide/deployment-in-visual-cpp.md)」 (Visual c での展開) を参照してください。  
   
 ## <a name="changes-to-the-universal-crt-functions-and-macros"></a>ユニバーサル CRT 関数およびマクロの変更  
 UCRT では、ISO C99 への準拠を改善し、コードの品質およびセキュリティの問題を解決するために、多くの関数が追加または更新されました。 このために、ライブラリの大幅な変更が必要な場合もありました。 古いバージョンの CRT を使用したときにコードが正常にコンパイルされても、UCRT を使用すると壊れる場合は、これらの更新や機能を活用するために、コードを変更する必要があります。 ユニバーサル CRT での CRT の重大な変更と更新の詳細については、Visual C++ の変更履歴の「[C Runtime Library (CRT)](visual-cpp-change-history-2003-2015.md#BK_CRT)」 (C ランタイム ライブラリ (CRT)) セクションを参照してください。 コードに必要な変更を識別するために使用できる影響を受けるヘッダーと関数の一覧が含まれています。  

@@ -6,6 +6,9 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- streambuf/std::streambuf
+- streambuf/std::wstreambuf
 ms.assetid: 2678e18f-f0f0-4995-bc53-f1bc7dfc4ec6
 caps.latest.revision: 11
 manager: ghogen
@@ -20,7 +23,7 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[streambuf](#streambuf)|[wstreambuf](#wstreambuf)|  
   
-##  <a name="a-namestreambufa--streambuf"></a><a name="streambuf"></a>  streambuf  
+##  <a name="streambuf"></a>  streambuf  
  `char` を使用する `basic_streambuf` をテンプレート パラメーターとして特化したクラス。  
   
 ```
@@ -30,7 +33,7 @@ typedef basic_streambuf<char, char_traits<char>> streambuf;
 ### <a name="remarks"></a>コメント  
  この型はテンプレート クラス [basic_streambuf](../standard-library/basic-streambuf-class.md) の同意語で、既定の文字の特性を持つ型 `char` の要素に対して特殊化されています。  
   
-##  <a name="a-namewstreambufa--wstreambuf"></a><a name="wstreambuf"></a>  wstreambuf  
+##  <a name="wstreambuf"></a>  wstreambuf  
  `wchar_t` を使用する `basic_streambuf` をテンプレート パラメーターとして特化したクラス。  
   
 ```

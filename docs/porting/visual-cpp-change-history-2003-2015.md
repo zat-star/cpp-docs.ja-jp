@@ -33,12 +33,18 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
-ms.openlocfilehash: 7ff37399842c7c8d41f8b7d15660c73b8a11f19f
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 705a5fd040b3cba1d3e8be1ac9e2a22ef1f98eb9
+ms.openlocfilehash: 4e419ebbdd1a5fcc178436f2ec6151a3d02c1a21
+ms.lasthandoff: 04/05/2017
 
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
+この記事では、Visual Studio 2003 から Visual Studio 2015 の互換性に影響する変更についてすべて説明します。この記事の「新しい動作」や「現在」という語は、Visual Studio 2015 以降を指します。 「従来の動作」や「以前」という語は、Visual Studio 2013 以前のリリースを指します。 
+ 
+ Visual Studio 2017 の詳細については、「[What's new for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」(Visual Studio 2017 の Visual C++ の新機能)、「[Conformance Improvements in Visual C++ in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」(Visual Studio 2017 の C++ 準拠の強化) を参照してください。 
+ > [!NOTE]
+ > Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
+
 Visual C++ コンパイラの新しいバージョンにアップグレードすると、以前にコンパイルと動作が正常に行えたコードでコンパイルやランタイム エラーが発生する場合があります。 新しいバージョンでこのような問題を引き起こす変更は *互換性に影響する変更*と呼ばれ、通常は C++ 言語の基準、関数シグネチャ、またはメモリ オブジェクトのレイアウトの変更によって必要となります。  
   
  検出や診断が難しいランタイム エラーを回避するには、異なるバージョンのコンパイラを使用してコンパイルされたバイナリには静的にリンクしないことをお勧めします。 また、EXE または DLL プロジェクトをアップグレードする場合、リンクするライブラリもアップグレードします。 CRT (C Runtime) または C++ 標準ライブラリ (C++ Standard Library) 型を使用している場合は、異なるバージョンのコンパイラを使用してコンパイルされたバイナリ間 (DLL を含む) で渡さないでください。 詳細については、「[DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー](../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md)」を参照してください。  
@@ -47,9 +53,6 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
  また、コンパイラの準拠に関する継続的な強化によって、コンパイラが既存のソース コードを認識する方法が変わる可能性があります。 このような場合、以前にビルドして問題なく実行できていたコードでも、ビルド時に新しいエラーや異なるエラーが発生したり、動作が変わったりする可能性があります。 このドキュメントで説明しているような互換性に影響する変更ではありませんが、問題を解決するためにソース コードの変更が必要な場合があります。  
   
- この記事では、Visual Studio 2003 から Visual Studio 2015 の互換性に影響する変更についてすべて説明します。この記事の「新しい動作」や「現在」という語は、Visual Studio 2015 以降を指します。 「従来の動作」や「以前」という語は、Visual Studio 2013 以前のリリースを指します。 
- 
- Visual Studio 2017 の詳細については、「[What's new for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」(Visual Studio 2017 の Visual C++ の新機能)、「[Conformance Improvements in Visual C++ in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」(Visual Studio 2017 の C++ 準拠の強化) を参照してください。
   
 1.  [C ランタイム (CRT) ライブラリの互換性に影響する変更点](#BK_CRT)  
   
@@ -949,7 +952,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
      また、コンパイラは特定の診断を行いませんが、インラインの operator new の形式は不適切であると見なされます。  
   
--   **非クラス型で 'operator*type*()' (ユーザー定義の変換) を呼び出す  
+-   **非クラス型で 'operator *type*()' (ユーザー定義の変換) を呼び出す**  
   
      以前のバージョンのコンパイラでは 'operator *type*()' を非クラス型で呼び出すことが許可されていましたが、それは何の警告もなく無視されていました。 この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2228 を発行します。  
   
@@ -1369,7 +1372,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
      以前のバージョンのコンパイラでは、#pragma 警告状態の変化の追跡が不十分なため、すべての意図された警告を発行できませんでした。 この動作により、プログラマの意図したものとは異なる状況で、事実上、特定の警告が抑制される危険性がありました。 コンパイラは #pragma 警告状態をより確実に追跡するようになりました (特にテンプレート内部での #pragma 警告状態の変化に関連するもの)。また `#pragma warning(push)` と `#pragma warning(pop)`の意図しない使用をプログラマが見つける手助けとして、新しい警告 C5031 と C5032 を必要に応じて発行するようになりました。  
   
-     #pragma 警告状態の変更の追跡が強化された結果、以前は誤って抑制されていた警告、または以前は誤って診断されていた問題に関連する警告が発行されるようになる場合があります。  
+     \#pragma 警告状態の変更の追跡が強化された結果、以前は誤って抑制されていた警告、または以前は誤って診断されていた問題に関連する警告が発行されるようになる場合があります。  
   
 -   **制御が渡らないコードの識別の強化**  
   

@@ -10,8 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - vector<bool>
-- std.vector<bool>
-- std::vector<bool>
+- vector/std::vector::const_pointer
+- vector/std::vector::const_reference
+- vector/std::vector::pointer
+- vector/std::vector::flip
+- vector/std::vector::swap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -86,14 +89,14 @@ class vector<bool, Allocator>
   
  **名前空間:** std  
   
-##  <a name="a-namevectorltboolgtconstpointera--vectorboolconstpointer"></a><a name="vector_lt_bool_gt___const_pointer"></a>  vector\<bool>::const_pointer  
+##  <a name="vector_lt_bool_gt___const_pointer"></a>  vector\<bool>::const_pointer  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素への定数ポインターとして使用できるオブジェクトを表す型。  
   
 ```  
 typedef const_iterator const_pointer;  
 ```  
   
-##  <a name="a-namevectorltboolgtconstreferencea--vectorboolconstreference"></a><a name="vector_lt_bool_gt___const_reference"></a>  vector\<bool>::const_reference  
+##  <a name="vector_lt_bool_gt___const_reference"></a>  vector\<bool>::const_reference  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素への定数参照として使用できるオブジェクトを表す型。  
   
 ```  
@@ -103,7 +106,7 @@ typedef bool const_reference;
 ### <a name="remarks"></a>コメント  
  詳細とコード例については、「[vector&lt;bool&gt;::reference::operator=](#vector_lt_bool_gt___reference_operator_eq)」を参照してください。  
   
-##  <a name="a-namevectorltboolgtflipa--vectorboolflip"></a><a name="vector_lt_bool_gt___flip"></a>  vector\<bool>::flip  
+##  <a name="vector_lt_bool_gt___flip"></a>  vector\<bool>::flip  
  `vector<bool>` 内のすべてのビットを反転させます。  
   
 ```  
@@ -141,7 +144,7 @@ int main()
   
 ```  
   
-##  <a name="a-namevectorltboolgtoperatorata--vectorbooloperator"></a><a name="vector_lt_bool_gt___operator_at"></a>  vector\<bool>::operator[]  
+##  <a name="vector_lt_bool_gt___operator_at"></a>  vector\<bool>::operator[]  
  指定した位置における `vector<bool>` 要素へのシミュレートされた参照を返します。  
   
 ```  
@@ -195,14 +198,14 @@ int main()
 }  
 ```  
   
-##  <a name="a-namevectorltboolgtpointera--vectorboolpointer"></a><a name="vector_lt_bool_gt___pointer"></a>  vector\<bool>::pointer  
+##  <a name="vector_lt_bool_gt___pointer"></a>  vector\<bool>::pointer  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素へのポインターとして使用できるオブジェクトを表す型。  
   
 ```  
 typedef iterator pointer;  
 ```  
   
-##  <a name="a-namevectorltboolgtreferenceclassa--vectorboolreference-class"></a><a name="vector_lt_bool_gt___reference_class"></a>  vector\<bool>::reference クラス  
+##  <a name="vector_lt_bool_gt___reference_class"></a>  vector\<bool>::reference クラス  
  `vector<bool>::reference` クラスは `bool&` をシミュレートするために [vector\<bool> クラス](../standard-library/vector-bool-class.md)によって提供されるプロキシ クラスです。  
   
 ### <a name="remarks"></a>コメント  
@@ -215,7 +218,7 @@ bool* pb = &vb[1]; // conversion error - do not use
 bool& refb = vb[1];   // conversion error - do not use  
 ```  
   
-###  <a name="a-namevectorltboolgtreferenceflipa--vectorboolreferenceflip"></a><a name="vector_lt_bool_gt___reference_flip"></a>  vector\<bool>::reference::flip  
+###  <a name="vector_lt_bool_gt___reference_flip"></a>  vector\<bool>::reference::flip  
  参照先の [vector\<bool>](../standard-library/vector-bool-class.md) 要素のブール値を反転します。  
   
 ```  
@@ -261,7 +264,7 @@ The vector with first element flipped is:
     false false false true true  
 ```  
   
-###  <a name="a-namevectorltboolgtreferenceoperatorboola--vectorboolreferenceoperator-bool"></a><a name="vector_lt_bool_gt___reference_operator_bool"></a>  vector\<bool>::reference::operator bool  
+###  <a name="vector_lt_bool_gt___reference_operator_bool"></a>  vector\<bool>::reference::operator bool  
  `vector<bool>::reference` から `bool` への暗黙の変換を提供します。  
   
 ```  
@@ -274,7 +277,7 @@ operator bool() const;
 #### <a name="remarks"></a>コメント  
  `vector<bool>` オブジェクトはこの演算子では変更できません。  
   
-###  <a name="a-namevectorltboolgtreferenceoperatoreqa--vectorboolreferenceoperator"></a><a name="vector_lt_bool_gt___reference_operator_eq"></a>  vector\<bool>::reference::operator=  
+###  <a name="vector_lt_bool_gt___reference_operator_eq"></a>  vector\<bool>::reference::operator=  
  ブール値をビットに割り当てます。または参照先の要素が保持している値をビットに割り当てます。  
   
 ```  
@@ -360,7 +363,7 @@ The original value of the 2nd element still stored in a bool: false
 The original value of the 3rd element still stored in a bool: false  
 ```  
   
-##  <a name="a-namevectorltboolgtswapa--vectorboolswap"></a><a name="vector_lt_bool_gt___swap"></a>  vector\<bool>::swap  
+##  <a name="vector_lt_bool_gt___swap"></a>  vector\<bool>::swap  
  プロキシ クラス [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) を使用してブール ベクター (`vector<bool>`) の&2; つの要素を交換する静的メンバー関数。  
   
 ```  

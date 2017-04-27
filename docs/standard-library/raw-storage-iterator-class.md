@@ -9,10 +9,10 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::raw_storage_iterator
 - raw_storage_iterator
-- std.raw_storage_iterator
 - memory/std::raw_storage_iterator
+- memory/std::raw_storage_iterator::element_type
+- memory/std::raw_storage_iterator::iter_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -92,7 +92,7 @@ class raw_storage_iterator
   
  **名前空間:** std  
   
-##  <a name="a-namerawstorageiteratorelementtypea--rawstorageiteratorelementtype"></a><a name="raw_storage_iterator__element_type"></a>  raw_storage_iterator::element_type  
+##  <a name="raw_storage_iterator__element_type"></a>  raw_storage_iterator::element_type  
  生のストレージ反復子によって格納される要素を記述する型を提供します。  
   
 ```
@@ -102,7 +102,7 @@ typedef Type element_type;
 ### <a name="remarks"></a>コメント  
  この型は raw_storage_iterator クラス テンプレート パラメーター **Type** のシノニムです。  
   
-##  <a name="a-namerawstorageiteratoritertypea--rawstorageiteratoritertype"></a><a name="raw_storage_iterator__iter_type"></a>  raw_storage_iterator::iter_type  
+##  <a name="raw_storage_iterator__iter_type"></a>  raw_storage_iterator::iter_type  
  生のストレージ反復子の基になる反復子を記述する型を提供します。  
   
 ```
@@ -112,7 +112,7 @@ typedef ForwardIterator iter_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **ForwardIterator** のシノニムです。  
   
-##  <a name="a-namerawstorageiteratoroperatorstara--rawstorageiteratoroperator"></a><a name="raw_storage_iterator__operator_star"></a>  raw_storage_iterator::operator*  
+##  <a name="raw_storage_iterator__operator_star"></a>  raw_storage_iterator::operator*  
  生のストレージ反復子式 \* *ii* = *x* を実装するために使用される逆参照演算子。  
   
 ```
@@ -176,7 +176,7 @@ Constructing 5
 *\  
 ```  
   
-##  <a name="a-namerawstorageiteratoroperatoreqa--rawstorageiteratoroperator"></a><a name="raw_storage_iterator__operator_eq"></a>  raw_storage_iterator::operator=  
+##  <a name="raw_storage_iterator__operator_eq"></a>  raw_storage_iterator::operator=  
  生のストレージ反復子式 \* *i* = *x* をメモリへの格納用に実装するために使用される代入演算子。  
   
 ```
@@ -245,7 +245,7 @@ Constructing 5
 *\  
 ```  
   
-##  <a name="a-namerawstorageiteratoroperatoraddadda--rawstorageiteratoroperator"></a><a name="raw_storage_iterator__operator_add_add"></a>  raw_storage_iterator::operator++  
+##  <a name="raw_storage_iterator__operator_add_add"></a>  raw_storage_iterator::operator++  
  生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。  
   
 ```
@@ -298,7 +298,7 @@ array 4 = 8
 *\  
 ```  
   
-##  <a name="a-namerawstorageiteratorrawstorageiteratora--rawstorageiteratorrawstorageiterator"></a><a name="raw_storage_iterator__raw_storage_iterator"></a>  raw_storage_iterator::raw_storage_iterator  
+##  <a name="raw_storage_iterator__raw_storage_iterator"></a>  raw_storage_iterator::raw_storage_iterator  
  指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。  
   
 ```
