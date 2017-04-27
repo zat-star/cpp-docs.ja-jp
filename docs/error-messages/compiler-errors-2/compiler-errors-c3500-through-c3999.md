@@ -8,6 +8,251 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: error-reference
+f1_keywords:
+- C3502
+- C3503
+- C3504
+- C3511
+- C3512
+- C3513
+- C3514
+- C3515
+- C3516
+- C3517
+- C3518
+- C3520
+- C3521
+- C3522
+- C3523
+- C3524
+- C3525
+- C3526
+- C3527
+- C3528
+- C3529
+- C3534
+- C3542
+- C3543
+- C3544
+- C3545
+- C3546
+- C3547
+- C3548
+- C3549
+- C3557
+- C3558
+- C3559
+- C3560
+- C3561
+- C3562
+- C3563
+- C3564
+- C3565
+- C3566
+- C3567
+- C3568
+- C3569
+- C3570
+- C3571
+- C3572
+- C3573
+- C3574
+- C3575
+- C3576
+- C3577
+- C3578
+- C3579
+- C3580
+- C3581
+- C3582
+- C3583
+- C3584
+- C3585
+- C3586
+- C3587
+- C3588
+- C3589
+- C3590
+- C3591
+- C3592
+- C3593
+- C3594
+- C3595
+- C3596
+- C3597
+- C3598
+- C3599
+- C3600
+- C3601
+- C3602
+- C3604
+- C3605
+- C3613
+- C3614
+- C3615
+- C3616
+- C3620
+- C3621
+- C3635
+- C3636
+- C3649
+- C3658
+- C3659
+- C3660
+- C3663
+- C3664
+- C3667
+- C3674
+- C3676
+- C3677
+- C3678
+- C3679
+- C3680
+- C3681
+- C3682
+- C3683
+- C3684
+- C3685
+- C3686
+- C3687
+- C3688
+- C3689
+- C3690
+- C3691
+- C3696
+- C3716
+- C3720
+- C3725
+- C3726
+- C3729
+- C3730
+- C3735
+- C3742
+- C3746
+- C3750
+- C3751
+- C3756
+- C3757
+- C3758
+- C3759
+- C3760
+- C3770
+- C3773
+- C3774
+- C3775
+- C3776
+- C3777
+- C3778
+- C3779
+- C3780
+- C3781
+- C3782
+- C3783
+- C3784
+- C3785
+- C3786
+- C3787
+- C3801
+- C3802
+- C3806
+- C3811
+- C3814
+- C3819
+- C3822
+- C3823
+- C3826
+- C3827
+- C3829
+- C3837
+- C3840
+- C3841
+- C3843
+- C3844
+- C3845
+- C3863
+- C3870
+- C3871
+- C3875
+- C3879
+- C3881
+- C3882
+- C3884
+- C3885
+- C3897
+- C3905
+- C3906
+- C3916
+- C3921
+- C3924
+- C3925
+- C3926
+- C3927
+- C3928
+- C3930
+- C3931
+- C3932
+- C3933
+- C3934
+- C3935
+- C3936
+- C3937
+- C3938
+- C3939
+- C3940
+- C3941
+- C3945
+- C3946
+- C3947
+- C3948
+- C3949
+- C3950
+- C3951
+- C3952
+- C3953
+- C3954
+- C3955
+- C3956
+- C3957
+- C3958
+- C3959
+- C3960
+- C3961
+- C3962
+- C3963
+- C3964
+- C3965
+- C3966
+- C3967
+- C3968
+- C3969
+- C3970
+- C3971
+- C3972
+- C3975
+- C3976
+- C3977
+- C3978
+- C3979
+- C3980
+- C3981
+- C3982
+- C3983
+- C3984
+- C3985
+- C3986
+- C3987
+- C3988
+- C3989
+- C3990
+- C3991
+- C3992
+- C3993
+- C3994
+- C3995
+- C3996
+- C3997
+- C3998
+- C3999
 dev_langs:
 - C++
 ms.assetid: bd6f23ad-b300-4e07-8e35-9661cab1585f
@@ -31,427 +276,518 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: ec3dba4995e0df05a1871c73abfbbee5c24b5266
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 1c6e5e54541d5cdcb7e2cde7c12117266d45b514
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="compiler-errors-c3500-through-c3999"></a>コンパイラ エラー C3500 C3999 から
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
-  
- [コンパイラ エラー C3500](../../error-messages/compiler-errors-2/compiler-error-c3500.md)  
-  
- [コンパイラ エラー C3501](../../error-messages/compiler-errors-2/compiler-error-c3501.md)  
-  
- [コンパイラ エラー C3505](../../error-messages/compiler-errors-2/compiler-error-c3505.md)  
-  
- [コンパイラ エラー C3506](../../error-messages/compiler-errors-2/compiler-error-c3506.md)  
-  
- [コンパイラ エラー C3507](../../error-messages/compiler-errors-2/compiler-error-c3507.md)  
-  
- [コンパイラ エラー C3508](../../error-messages/compiler-errors-2/compiler-error-c3508.md)  
-  
- [コンパイラ エラー C3509](../../error-messages/compiler-errors-2/compiler-error-c3509.md)  
-  
- [コンパイラ エラー C3510](../../error-messages/compiler-errors-2/compiler-error-c3510.md)  
-  
- [コンパイラ エラー C3519](../../error-messages/compiler-errors-2/compiler-error-c3519.md)  
-  
- [コンパイラ エラー C3530](../../error-messages/compiler-errors-2/compiler-error-c3530.md)  
-  
- [コンパイラ エラー C3531](../../error-messages/compiler-errors-2/compiler-error-c3531.md)  
-  
- [コンパイラ エラー C3532](../../error-messages/compiler-errors-2/compiler-error-c3532.md)  
-  
- [コンパイラ エラー C3533](../../error-messages/compiler-errors-2/compiler-error-c3533.md)  
-  
- [コンパイラ エラー C3535](../../error-messages/compiler-errors-2/compiler-error-c3535.md)  
-  
- [コンパイラ エラー C3536](../../error-messages/compiler-errors-2/compiler-error-c3536.md)  
-  
- [コンパイラ エラー C3537](../../error-messages/compiler-errors-2/compiler-error-c3537.md)  
-  
- [コンパイラ エラー C3538](../../error-messages/compiler-errors-2/compiler-error-c3538.md)  
-  
- [コンパイラ エラー C3539](../../error-messages/compiler-errors-2/compiler-error-c3539.md)  
-  
- [コンパイラ エラー C3540](../../error-messages/compiler-errors-2/compiler-error-c3540.md)  
-  
- [コンパイラ エラー C3541](../../error-messages/compiler-errors-2/compiler-error-c3541.md)  
-  
- [コンパイラ エラー C3550](../../error-messages/compiler-errors-2/compiler-error-c3550.md)  
-  
- [コンパイラ エラー C3603](../../error-messages/compiler-errors-2/compiler-error-c3603.md)  
-  
- [コンパイラ エラー C3609](../../error-messages/compiler-errors-2/compiler-error-c3609.md)  
-  
- [コンパイラ エラー C3610](../../error-messages/compiler-errors-2/compiler-error-c3610.md)  
-  
- [コンパイラ エラー C3611](../../error-messages/compiler-errors-2/compiler-error-c3611.md)  
-  
- [コンパイラ エラー C3612](../../error-messages/compiler-errors-2/compiler-error-c3612.md)  
-  
- [コンパイラ エラー C3618](../../error-messages/compiler-errors-2/compiler-error-c3618.md)  
-  
- [コンパイラ エラー C3619](../../error-messages/compiler-errors-2/compiler-error-c3619.md)  
-  
- [コンパイラ エラー C3622](../../error-messages/compiler-errors-2/compiler-error-c3622.md)  
-  
- [コンパイラ エラー C3623](../../error-messages/compiler-errors-2/compiler-error-c3623.md)  
-  
- [コンパイラ エラー C3624](../../error-messages/compiler-errors-2/compiler-error-c3624.md)  
-  
- [コンパイラ エラー C3625](../../error-messages/compiler-errors-2/compiler-error-c3625.md)  
-  
- [コンパイラ エラー C3626](../../error-messages/compiler-errors-2/compiler-error-c3626.md)  
-  
- [コンパイラ エラー C3627](../../error-messages/compiler-errors-2/compiler-error-c3627.md)  
-  
- [コンパイラ エラー C3628](../../error-messages/compiler-errors-2/compiler-error-c3628.md)  
-  
- [コンパイラ エラー C3630](../../error-messages/compiler-errors-2/compiler-error-c3630.md)  
-  
- [コンパイラ エラー C3631](../../error-messages/compiler-errors-2/compiler-error-c3631.md)  
-  
- [コンパイラ エラー C3632](../../error-messages/compiler-errors-2/compiler-error-c3632.md)  
-  
- [コンパイラ エラー C3633](../../error-messages/compiler-errors-2/compiler-error-c3633.md)  
-  
- [コンパイラ エラー C3634](../../error-messages/compiler-errors-2/compiler-error-c3634.md)  
-  
- [コンパイラ エラー C3637](../../error-messages/compiler-errors-2/compiler-error-c3637.md)  
-  
- [コンパイラ エラー C3638](../../error-messages/compiler-errors-2/compiler-error-c3638.md)  
-  
- [コンパイラ エラー C3640](../../error-messages/compiler-errors-2/compiler-error-c3640.md)  
-  
- [コンパイラ エラー C3641](../../error-messages/compiler-errors-2/compiler-error-c3641.md)  
-  
- [コンパイラ エラー C3642](../../error-messages/compiler-errors-2/compiler-error-c3642.md)  
-  
- [コンパイラ エラー C3644](../../error-messages/compiler-errors-2/compiler-error-c3644.md)  
-  
- [コンパイラ エラー C3645](../../error-messages/compiler-errors-2/compiler-error-c3645.md)  
-  
- [コンパイラ エラー C3646](../../error-messages/compiler-errors-2/compiler-error-c3646.md)  
-  
- [コンパイラ エラー C3648](../../error-messages/compiler-errors-2/compiler-error-c3648.md)  
-  
- [コンパイラ エラー C3650](../../error-messages/compiler-errors-2/compiler-error-c3650.md)  
-  
- [コンパイラ エラー C3651](../../error-messages/compiler-errors-2/compiler-error-c3651.md)  
-  
- [コンパイラ エラー C3652](../../error-messages/compiler-errors-2/compiler-error-c3652.md)  
-  
- [コンパイラ エラー C3653](../../error-messages/compiler-errors-2/compiler-error-c3653.md)  
-  
- [コンパイラ エラー C3654](../../error-messages/compiler-errors-2/compiler-error-c3654.md)  
-  
- [コンパイラ エラー C3655](../../error-messages/compiler-errors-2/compiler-error-c3655.md)  
-  
- [コンパイラ エラー C3656](../../error-messages/compiler-errors-2/compiler-error-c3656.md)  
-  
- [コンパイラ エラー C3657](../../error-messages/compiler-errors-2/compiler-error-c3657.md)  
-  
- [コンパイラ エラー C3661](../../error-messages/compiler-errors-2/compiler-error-c3661.md)  
-  
- [コンパイラ エラー C3662](../../error-messages/compiler-errors-2/compiler-error-c3662.md)  
-  
- [コンパイラ エラー C3665](../../error-messages/compiler-errors-2/compiler-error-c3665.md)  
-  
- [コンパイラ エラー C3666](../../error-messages/compiler-errors-2/compiler-error-c3666.md)  
-  
- [コンパイラ エラー C3668](../../error-messages/compiler-errors-2/compiler-error-c3668.md)  
-  
- [コンパイラ エラー C3669](../../error-messages/compiler-errors-2/compiler-error-c3669.md)  
-  
- [コンパイラ エラー C3670](../../error-messages/compiler-errors-2/compiler-error-c3670.md)  
-  
- [コンパイラ エラー C3671](../../error-messages/compiler-errors-2/compiler-error-c3671.md)  
-  
- [コンパイラ エラー C3672](../../error-messages/compiler-errors-2/compiler-error-c3672.md)  
-  
- [コンパイラ エラー C3673](../../error-messages/compiler-errors-2/compiler-error-c3673.md)  
-  
- [コンパイラ エラー C3675](../../error-messages/compiler-errors-2/compiler-error-c3675.md)  
-  
- [コンパイラ エラー C3697](../../error-messages/compiler-errors-2/compiler-error-c3697.md)  
-  
- [コンパイラ エラー C3698](../../error-messages/compiler-errors-2/compiler-error-c3698.md)  
-  
- [コンパイラ エラー C3699](../../error-messages/compiler-errors-2/compiler-error-c3699.md)  
-  
- [コンパイラ エラー C3701](../../error-messages/compiler-errors-2/compiler-error-c3701.md)  
-  
- [コンパイラ エラー C3702](../../error-messages/compiler-errors-2/compiler-error-c3702.md)  
-  
- [コンパイラ エラー C3703](../../error-messages/compiler-errors-2/compiler-error-c3703.md)  
-  
- [コンパイラ エラー C3704](../../error-messages/compiler-errors-2/compiler-error-c3704.md)  
-  
- [コンパイラ エラー C3705](../../error-messages/compiler-errors-2/compiler-error-c3705.md)  
-  
- [コンパイラ エラー C3706](../../error-messages/compiler-errors-2/compiler-error-c3706.md)  
-  
- [コンパイラ エラー C3707](../../error-messages/compiler-errors-2/compiler-error-c3707.md)  
-  
- [コンパイラ エラー C3708](../../error-messages/compiler-errors-2/compiler-error-c3708.md)  
-  
- [コンパイラ エラー C3709](../../error-messages/compiler-errors-2/compiler-error-c3709.md)  
-  
- [コンパイラ エラー C3710](../../error-messages/compiler-errors-2/compiler-error-c3710.md)  
-  
- [コンパイラ エラー C3711](../../error-messages/compiler-errors-2/compiler-error-c3711.md)  
-  
- [コンパイラ エラー C3712](../../error-messages/compiler-errors-2/compiler-error-c3712.md)  
-  
- [コンパイラ エラー C3713](../../error-messages/compiler-errors-2/compiler-error-c3713.md)  
-  
- [コンパイラ エラー C3714](../../error-messages/compiler-errors-2/compiler-error-c3714.md)  
-  
- [コンパイラ エラー C3715](../../error-messages/compiler-errors-2/compiler-error-c3715.md)  
-  
- [コンパイラ エラー C3717](../../error-messages/compiler-errors-2/compiler-error-c3717.md)  
-  
- [コンパイラ エラー C3718](../../error-messages/compiler-errors-2/compiler-error-c3718.md)  
-  
- [コンパイラ エラー C3719](../../error-messages/compiler-errors-2/compiler-error-c3719.md)  
-  
- [コンパイラ エラー C3721](../../error-messages/compiler-errors-2/compiler-error-c3721.md)  
-  
- [コンパイラ エラー C3722](../../error-messages/compiler-errors-2/compiler-error-c3722.md)  
-  
- [コンパイラ エラー C3723](../../error-messages/compiler-errors-2/compiler-error-c3723.md)  
-  
- [コンパイラ エラー C3724](../../error-messages/compiler-errors-2/compiler-error-c3724.md)  
-  
- [コンパイラ エラー C3727](../../error-messages/compiler-errors-2/compiler-error-c3727.md)  
-  
- [コンパイラ エラー C3728](../../error-messages/compiler-errors-2/compiler-error-c3728.md)  
-  
- [コンパイラ エラー C3731](../../error-messages/compiler-errors-2/compiler-error-c3731.md)  
-  
- [コンパイラ エラー C3732](../../error-messages/compiler-errors-2/compiler-error-c3732.md)  
-  
- [コンパイラ エラー C3733](../../error-messages/compiler-errors-2/compiler-error-c3733.md)  
-  
- [コンパイラ エラー C3734](../../error-messages/compiler-errors-2/compiler-error-c3734.md)  
-  
- [コンパイラ エラー C3736](../../error-messages/compiler-errors-2/compiler-error-c3736.md)  
-  
- [コンパイラ エラー C3737](../../error-messages/compiler-errors-2/compiler-error-c3737.md)  
-  
- [コンパイラ エラー C3738](../../error-messages/compiler-errors-2/compiler-error-c3738.md)  
-  
- [コンパイラ エラー C3739](../../error-messages/compiler-errors-2/compiler-error-c3739.md)  
-  
- [コンパイラ エラー C3740](../../error-messages/compiler-errors-2/compiler-error-c3740.md)  
-  
- [コンパイラ エラー C3741](../../error-messages/compiler-errors-2/compiler-error-c3741.md)  
-  
- [コンパイラ エラー C3743](../../error-messages/compiler-errors-2/compiler-error-c3743.md)  
-  
- [コンパイラ エラー C3744](../../error-messages/compiler-errors-2/compiler-error-c3744.md)  
-  
- [コンパイラ エラー C3745](../../error-messages/compiler-errors-2/compiler-error-c3745.md)  
-  
- [コンパイラ エラー C3747](../../error-messages/compiler-errors-2/compiler-error-c3747.md)  
-  
- [コンパイラ エラー C3748](../../error-messages/compiler-errors-2/compiler-error-c3748.md)  
-  
- [コンパイラ エラー C3749](../../error-messages/compiler-errors-2/compiler-error-c3749.md)  
-  
- [コンパイラ エラー C3752](../../error-messages/compiler-errors-2/compiler-error-c3752.md)  
-  
- [コンパイラ エラー C3753](../../error-messages/compiler-errors-2/compiler-error-c3753.md)  
-  
- [コンパイラ エラー C3754](../../error-messages/compiler-errors-2/compiler-error-c3754.md)  
-  
- [コンパイラ エラー C3755](../../error-messages/compiler-errors-2/compiler-error-c3755.md)  
-  
- [コンパイラ エラー C3761](../../error-messages/compiler-errors-2/compiler-error-c3761.md)  
-  
- [コンパイラ エラー C3762](../../error-messages/compiler-errors-2/compiler-error-c3762.md)  
-  
- [コンパイラ エラー C3763](../../error-messages/compiler-errors-2/compiler-error-c3763.md)  
-  
- [コンパイラ エラー C3764](../../error-messages/compiler-errors-2/compiler-error-c3764.md)  
-  
- [コンパイラ エラー C3765](../../error-messages/compiler-errors-2/compiler-error-c3765.md)  
-  
- [コンパイラ エラー C3766](../../error-messages/compiler-errors-2/compiler-error-c3766.md)  
-  
- [コンパイラ エラー C3767](../../error-messages/compiler-errors-2/compiler-error-c3767.md)  
-  
- [コンパイラ エラー C3768](../../error-messages/compiler-errors-2/compiler-error-c3768.md)  
-  
- [コンパイラ エラー C3769](../../error-messages/compiler-errors-2/compiler-error-c3769.md)  
-  
- [コンパイラ エラー C3797](../../error-messages/compiler-errors-2/compiler-error-c3797.md)  
-  
- [コンパイラ エラー C3798](../../error-messages/compiler-errors-2/compiler-error-c3798.md)  
-  
- [コンパイラ エラー C3799](../../error-messages/compiler-errors-2/compiler-error-c3799.md)  
-  
- [コンパイラ エラー C3800](../../error-messages/compiler-errors-2/compiler-error-c3800.md)  
-  
- [コンパイラ エラー C3803](../../error-messages/compiler-errors-2/compiler-error-c3803.md)  
-  
- [コンパイラ エラー C3804](../../error-messages/compiler-errors-2/compiler-error-c3804.md)  
-  
- [コンパイラ エラー C3805](../../error-messages/compiler-errors-2/compiler-error-c3805.md)  
-  
- [コンパイラ エラー C3807](../../error-messages/compiler-errors-2/compiler-error-c3807.md)  
-  
- [コンパイラ エラー C3808](../../error-messages/compiler-errors-2/compiler-error-c3808.md)  
-  
- [コンパイラ エラー C3809](../../error-messages/compiler-errors-2/compiler-error-c3809.md)  
-  
- [コンパイラ エラー C3812](../../error-messages/compiler-errors-2/compiler-error-c3812.md)  
-  
- [コンパイラ エラー C3813](../../error-messages/compiler-errors-2/compiler-error-c3813.md)  
-  
- [コンパイラ エラー C3815](../../error-messages/compiler-errors-2/compiler-error-c3815.md)  
-  
- [コンパイラ エラー C3816](../../error-messages/compiler-errors-2/compiler-error-c3816.md)  
-  
- [コンパイラ エラー C3817](../../error-messages/compiler-errors-2/compiler-error-c3817.md)  
-  
- [コンパイラ エラー C3818](../../error-messages/compiler-errors-2/compiler-error-c3818.md)  
-  
- [コンパイラ エラー C3821](../../error-messages/compiler-errors-2/compiler-error-c3821.md)  
-  
- [コンパイラ エラー C3824](../../error-messages/compiler-errors-2/compiler-error-c3824.md)  
-  
- [コンパイラ エラー C3825](../../error-messages/compiler-errors-2/compiler-error-c3825.md)  
-  
- [コンパイラ エラー C3828](../../error-messages/compiler-errors-2/compiler-error-c3828.md)  
-  
- [コンパイラ エラー C3830](../../error-messages/compiler-errors-2/compiler-error-c3830.md)  
-  
- [コンパイラ エラー C3831](../../error-messages/compiler-errors-2/compiler-error-c3831.md)  
-  
- [コンパイラ エラー C3832](../../error-messages/compiler-errors-2/compiler-error-c3832.md)  
-  
- [コンパイラ エラー C3833](../../error-messages/compiler-errors-2/compiler-error-c3833.md)  
-  
- [コンパイラ エラー C3834](../../error-messages/compiler-errors-2/compiler-error-c3834.md)  
-  
- [コンパイラ エラー C3836](../../error-messages/compiler-errors-2/compiler-error-c3836.md)  
-  
- [コンパイラ エラー C3838](../../error-messages/compiler-errors-2/compiler-error-c3838.md)  
-  
- [コンパイラ エラー C3839](../../error-messages/compiler-errors-2/compiler-error-c3839.md)  
-  
- [コンパイラ エラー C3842](../../error-messages/compiler-errors-2/compiler-error-c3842.md)  
-  
- [コンパイラ エラー C3846](../../error-messages/compiler-errors-2/compiler-error-c3846.md)  
-  
- [コンパイラ エラー C3848](../../error-messages/compiler-errors-2/compiler-error-c3848.md)  
-  
- [コンパイラ エラー C3849](../../error-messages/compiler-errors-2/compiler-error-c3849.md)  
-  
- [コンパイラ エラー C3850](../../error-messages/compiler-errors-2/compiler-error-c3850.md)  
-  
- [コンパイラ エラー C3851](../../error-messages/compiler-errors-2/compiler-error-c3851.md)  
-  
- [コンパイラ エラー C3852](../../error-messages/compiler-errors-2/compiler-error-c3852.md)  
-  
- [コンパイラ エラー C3853](../../error-messages/compiler-errors-2/compiler-error-c3853.md)  
-  
- [コンパイラ エラー C3854](../../error-messages/compiler-errors-2/compiler-error-c3854.md)  
-  
- [コンパイラ エラー C3855](../../error-messages/compiler-errors-2/compiler-error-c3855.md)  
-  
- [コンパイラ エラー C3856](../../error-messages/compiler-errors-2/compiler-error-c3856.md)  
-  
- [コンパイラ エラー C3857](../../error-messages/compiler-errors-2/compiler-error-c3857.md)  
-  
- [コンパイラ エラー C3858](../../error-messages/compiler-errors-2/compiler-error-c3858.md)  
-  
- [コンパイラ エラー C3859](../../error-messages/compiler-errors-2/compiler-error-c3859.md)  
-  
- [コンパイラ エラー C3860](../../error-messages/compiler-errors-2/compiler-error-c3860.md)  
-  
- [コンパイラ エラー C3861](../../error-messages/compiler-errors-2/compiler-error-c3861.md)  
-  
- [コンパイラ エラー C3862](../../error-messages/compiler-errors-2/compiler-error-c3862.md)  
-  
- [コンパイラ エラー C3865](../../error-messages/compiler-errors-2/compiler-error-c3865.md)  
-  
- [コンパイラ エラー C3866](../../error-messages/compiler-errors-2/compiler-error-c3866.md)  
-  
- [コンパイラ エラー C3867](../../error-messages/compiler-errors-2/compiler-error-c3867.md)  
-  
- [コンパイラ エラー C3868](../../error-messages/compiler-errors-2/compiler-error-c3868.md)  
-  
- [コンパイラ エラー C3869](../../error-messages/compiler-errors-2/compiler-error-c3869.md)  
-  
- [コンパイラ エラー C3872](../../error-messages/compiler-errors-2/compiler-error-c3872.md)  
-  
- [コンパイラ エラー C3873](../../error-messages/compiler-errors-2/compiler-error-c3873.md)  
-  
- [コンパイラ エラー C3874](../../error-messages/compiler-errors-2/compiler-error-c3874.md)  
-  
- [コンパイラ エラー C3880](../../error-messages/compiler-errors-2/compiler-error-c3880.md)  
-  
- [コンパイラ エラー C3883](../../error-messages/compiler-errors-2/compiler-error-c3883.md)  
-  
- [コンパイラ エラー C3886](../../error-messages/compiler-errors-2/compiler-error-c3886.md)  
-  
- [コンパイラ エラー C3887](../../error-messages/compiler-errors-2/compiler-error-c3887.md)  
-  
- [コンパイラ エラー C3890](../../error-messages/compiler-errors-2/compiler-error-c3890.md)  
-  
- [コンパイラ エラー C3891](../../error-messages/compiler-errors-2/compiler-error-c3891.md)  
-  
- [コンパイラ エラー C3892](../../error-messages/compiler-errors-2/compiler-error-c3892.md)  
-  
- [コンパイラ エラー C3893](../../error-messages/compiler-errors-2/compiler-error-c3893.md)  
-  
- [コンパイラ エラー C3894](../../error-messages/compiler-errors-2/compiler-error-c3894.md)  
-  
- [コンパイラ エラー C3895](../../error-messages/compiler-errors-2/compiler-error-c3895.md)  
-  
- [コンパイラ エラー C3896](../../error-messages/compiler-errors-2/compiler-error-c3896.md)  
-  
- [コンパイラ エラー C3898](../../error-messages/compiler-errors-2/compiler-error-c3898.md)  
-  
- [コンパイラ エラー C3899](../../error-messages/compiler-errors-2/compiler-error-c3899.md)  
-  
- [コンパイラ エラー C3900](../../error-messages/compiler-errors-2/compiler-error-c3900.md)  
-  
- [コンパイラ エラー C3901](../../error-messages/compiler-errors-2/compiler-error-c3901.md)  
-  
- [コンパイラ エラー C3902](../../error-messages/compiler-errors-2/compiler-error-c3902.md)  
-  
- [コンパイラ エラー C3903](../../error-messages/compiler-errors-2/compiler-error-c3903.md)  
-  
- [コンパイラ エラー C3904](../../error-messages/compiler-errors-2/compiler-error-c3904.md)  
-  
- [コンパイラ エラー C3908](../../error-messages/compiler-errors-2/compiler-error-c3908.md)  
-  
- [コンパイラ エラー C3909](../../error-messages/compiler-errors-2/compiler-error-c3909.md)  
-  
- [コンパイラ エラー C3910](../../error-messages/compiler-errors-2/compiler-error-c3910.md)  
-  
- [コンパイラ エラー C3911](../../error-messages/compiler-errors-2/compiler-error-c3911.md)  
-  
- [コンパイラ エラー C3912](../../error-messages/compiler-errors-2/compiler-error-c3912.md)  
-  
- [コンパイラ エラー C3913](../../error-messages/compiler-errors-2/compiler-error-c3913.md)  
-  
- [コンパイラ エラー C3914](../../error-messages/compiler-errors-2/compiler-error-c3914.md)  
-  
- [コンパイラ エラー C3915](../../error-messages/compiler-errors-2/compiler-error-c3915.md)  
-  
- [コンパイラ エラー C3917](../../error-messages/compiler-errors-2/compiler-error-c3917.md)  
-  
- [コンパイラ エラー C3918](../../error-messages/compiler-errors-2/compiler-error-c3918.md)  
-  
- [コンパイラ エラー C3919](../../error-messages/compiler-errors-2/compiler-error-c3919.md)  
-  
- [コンパイラ エラー C3920](../../error-messages/compiler-errors-2/compiler-error-c3920.md)  
-  
- [コンパイラ エラー C3923](../../error-messages/compiler-errors-2/compiler-error-c3923.md)  
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C3500](compiler-error-c3500.md)|無効な ProgID '*progid*'|  
+|[コンパイラ エラー C3501](compiler-error-c3501.md)|ProgID の登録された typelib はありません '*progid*'。|  
+|コンパイラ エラー C3502|ProgID に対して LIBID を取得することはできません '*progid*'|  
+|コンパイラ エラー C3503|文字 '0 x*値*' では許可されません未加工文字列リテラル|  
+|コンパイラ エラー C3504|文字列から GUID を作成することはできません '*文字列*'|  
+|[コンパイラ エラー C3505](compiler-error-c3505.md)|タイプ ライブラリを読み込むことができません '*ライブラリ*'|  
+|[コンパイラ エラー C3506](compiler-error-c3506.md)|LIBID の登録された typelib はありません '*ライブラリ*'。|  
+|[コンパイラ エラー C3507](compiler-error-c3507.md)|ProgID は 39 以下の文字を持つことができます*progid*'; を除いて、区切り記号も '.'; 数字で起動|  
+|[コンパイラ エラー C3508](compiler-error-c3508.md)|'*型*': 有効な Automation 型ではありません|  
+|[コンパイラ エラー C3509](compiler-error-c3509.md)|'*型*': Automation 戻り型以外の場合は、パラメーターには、'retval' がマークされるとは、戻り値の型が 'void'、'HRESULT' または 'SCODE' する必要がありますが無効です|  
+|[コンパイラ エラー C3510](compiler-error-c3510.md)|依存タイプ ライブラリを見つけることができません*ライブラリ*|  
+|コンパイラ エラー C3511|'*識別子*': デリゲート コンス トラクターへの呼び出しはのみメンバー初期化子である必要があります|  
+|コンパイラ エラー C3512|未加工のリテラル文字列における区切り文字のシーケンスに含めることができる文字数は、16 文字までです。|  
+|コンパイラ エラー C3513|'*文字列*': サポートされていない未加工の文字列リテラルの区切り文字|  
+|コンパイラ エラー C3514|'*文字*' (*値*): サポートされていない未加工の文字列リテラルの区切り文字|  
+|コンパイラ エラー C3515|クラス テンプレートの部分的特殊化の引数がパック展開である場合、その引数は最後の引数である必要があります|  
+|コンパイラ エラー C3516|予期しない終了ファイルの未加工のリテラルです。 文字列の処理中に見つかりました区切り文字のシーケンス '*文字列*' が一致していません|  
+|コンパイラ エラー c3517 エラー|'*識別子*' エイリアス宣言は 'auto' を含む型を持つことはできません|  
+|コンパイラ エラー C3518|'*識別子*': 直接の初期化リスト コンテキスト型での'*型*' 単一の初期化子式からのみ推測できます|  
+|[コンパイラ エラー C3519](compiler-error-c3519.md)|'*パラメーター*': embedded_idl 属性に対して無効なパラメーター|  
+|コンパイラ エラー C3520|'*識別子*': パラメーター パックは、このコンテキストで展開する必要があります|  
+|コンパイラ エラー C3521|'*識別子*' はパラメーター パックではありません|  
+|コンパイラ エラー C3522|'*型*': パラメーター パックは、このコンテキストで展開することはできません|  
+|コンパイラ エラー C3523|' sizeof' その引数として展開されていないパラメーター パックが必要です。|  
+|コンパイラ エラー C3524|'*識別子*': 'sizeof' はパラメーター パックには適用できません。 'Sizeof' を使用するか?|  
+|コンパイラ エラー C3525|'*パラメーター*': クラス テンプレートがテンプレート パラメーター パックが、テンプレート パラメーター リストの末尾にある必要があります|  
+|コンパイラ エラー C3526|'...' 'this' には適用できません。|  
+|コンパイラ エラー C3527|'*識別子*' は 'sizeof...' の有効なオペランドではありません。 'Sizeof' を使用するか?|  
+|コンパイラ エラー C3528|'*identifier1*': このパック展開内の要素の数が内の要素の数と一致しません'*identifier2*'|  
+|コンパイラ エラー C3529|'*パラメーター*': テンプレート パラメーター パックは、既定の引数を持つことはできません|  
+|[コンパイラ エラー C3530](compiler-error-c3530.md)|'*型*' その他の型指定子と組み合わせることはできません|  
+|[コンパイラ エラー C3531](compiler-error-c3531.md)|'*識別子*': 含む型のシンボル'*型*' initializer を持つ必要があります|  
+|[コンパイラ エラー C3532](compiler-error-c3532.md)|配列の要素の型を含む型をすることはできません '*型*'|  
+|[コンパイラ エラー C3533](compiler-error-c3533.md)|パラメーターを含む型を持つことはできません '*型*'|  
+|{1&gt;コンパイラ エラー C3534&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3535](compiler-error-c3535.md)|型を推測できません '*type1*'from'*type2*'|  
+|[コンパイラ エラー C3536](compiler-error-c3536.md)|'*識別子*': 初期化される前に使用することはできません|  
+|[コンパイラ エラー C3537](compiler-error-c3537.md)|含む型にキャストすることはできません '*型*'|  
+|[コンパイラ エラー C3538](compiler-error-c3538.md)|宣言子リストで '*型*' が同じ型に常に推測する必要があります|  
+|[コンパイラ エラー C3539](compiler-error-c3539.md)|テンプレート引数を含む型をすることはできません '*型*'|  
+|[コンパイラ エラー C3540](compiler-error-c3540.md)|含む型に sizeof は適用できません '*型*'|  
+|[コンパイラ エラー C3541](compiler-error-c3541.md)|含む型に typeid は適用できません '*型*'|  
+|コンパイラ エラー C3542|'*識別子*': 仮想メンバー関数の戻り値の型を含むいけない'*型*'|  
+|コンパイラ エラー C3543|'*型*': パラメーター パックが含まれていません。|  
+|コンパイラ エラー C3544|'*パラメーター*': パラメーター パックは、型テンプレート引数が必要です|  
+|コンパイラ エラー C3545|'*パラメーター*': パラメーター パックは、非型テンプレート引数が必要です|  
+|コンパイラ エラー C3546|'...': 展開できるパラメーター パックがありません|  
+|コンパイラ エラー C3547|テンプレート パラメーター '*パラメーター*'は使用できませんが、テンプレート パラメーター パックに依存しており、関数のパラメーターから推測できない'*関数*'|  
+|コンパイラ エラー C3548|'*識別子*': パラメーター パックは、このコンテキストで使用することはできません|  
+|コンパイラ エラー C3549|'*値*': 関数パラメーター パックは、既定の引数を持つことはできません|  
+|[コンパイラ エラー C3550](compiler-error-c3550.md)|このコンテキストでは単純な 'decltype(auto)' のみが許可されます|  
+|[コンパイラ エラー C3551](compiler-error-c3551.md)|後続の戻り値の型が使用されるかどうかは、先頭の戻り値の型は、1 つの型指定子 'auto' である必要があります (いません '*型*')|  
+|[コンパイラ エラー C3552](compiler-error-c3552.md)|'decltype(auto)' が必要です|  
+|[コンパイラ エラー C3553](compiler-error-c3553.md)|decltype には型ではなく式を指定してください|  
+|[コンパイラ エラー C3554](compiler-error-c3554.md)|'*型*' その他の型指定子と組み合わせることはできません|  
+|[コンパイラ エラー C3555](compiler-error-c3555.md)|'decltype' の引数が正しくありません|  
+|[コンパイラ エラー C3556](compiler-error-c3556.md)|'*式*': 'decltype' の引数が正しくありません|  
+|コンパイラ エラー C3557|互換性のために残されています。|  
+|コンパイラ エラー C3558|互換性のために残されています。|  
+|コンパイラ エラー C3559|に対する再帰呼び出し '*関数*': で concurrency::parallel_for_each の呼び出し先をコンパイルするときに再帰が検出されました:'*関数*'|  
+|コンパイラ エラー C3560|'*関数*': IL に concurrency::parallel_for_each の呼び出し先をコンパイルするときに使用できません:'*関数*'|  
+|コンパイラ エラー C3561|タイル バリア操作で concurrency::parallel_for_each の呼び出し先をコンパイルするときに、タイルが均一ではない制御フロー内で見つかりました: '*関数*'|  
+|コンパイラ エラー C3562|組み込み関数 '*関数*' されていないに制限は、複数の*数*パラメーター|  
+|コンパイラ エラー C3563|無限ループがで concurrency::parallel_for_each の呼び出し先をコンパイルするときに検出されました: '*関数*'|  
+|コンパイラ エラー C3564|concurrency::parallel_for_each の呼び出し先をコンパイルするときに初期化されていない値の読み取り: '*関数*'|  
+|コンパイラ エラー C3565|Tile_static メモリの総量 (*数*バイト) の制限を超える*数*concurrency::parallel_for_each の呼び出し先をコンパイルするときに、バイト数|  
+|コンパイラ エラー C3566|副作用のあるブロックの入れ子で concurrency::parallel_for_each の graph 呼び出しをコンパイルするときのレベルが深すぎます: '*関数*'|  
+|コンパイラ エラー C3567|除算または剰余演算で concurrency::parallel_for_each の呼び出し先をコンパイルするときに検出された 0 による: '*関数*'|  
+|コンパイラ エラー C3568|レジスタの合計の上限を超えています*数*concurrency::parallel_for_each の呼び出し先をコンパイルするときにします。 プログラムを簡素化してください。|  
+|コンパイラ エラー C3569|競合状態にある concurrency::parallel_for_each の呼び出し先をコンパイルするときに検出されました: '*関数*'|  
+|コンパイラ エラー C3570|/clr でコンパイルするときに無効な amp 制限スコープが検出されました|  
+|コンパイラ エラー C3571|'*型*': 無効な計算ドメイン引数以外のクラス型ではありません|  
+|コンパイラ エラー C3572|'*型*': 無効な計算ドメイン引数以外のパブリック メンバーがありません: 'static const int rank' 順位値は正数でないか|  
+|コンパイラ エラー C3573|Concurrency::parallel_for_each に渡される concurrency::graphics::sampler のインスタンスの数を超えないように*数*|  
+|コンパイラ エラー C3574|'*型*': 無効なタイル エクステント: 正の数値で (1) Z にする必要があります < =*数*です。(2) Z*Y*X <= *number*|  
+|コンパイラ エラー C3575|'*型*': 無効な計算ドメイン引数以外のパブリック メンバーがありません:' concurrency::index <*数*> _map_index (const concurrency::index <*数*> &) restrict (amp) '|  
+|コンパイラ エラー C3576|'*型*': _parallel_for_each の引数 #*数*型はサポートされていません。|  
+|コンパイラ エラー C3577|concurrency::parallel_for_each のカーネル引数が無効: メンバーへの呼び出しを解決できない ' void operator() (*型*) restrict (amp) '|  
+|コンパイラ エラー C3578|Concurrency::parallel_for_each に渡された関数オブジェクトのサイズを超えることはできません*数*バイト|  
+|コンパイラ エラー C3579|Concurrency::array と concurrency::parallel_for_each に渡される:texture の読み取り専用のインスタンスの数を超えないように*数*|  
+|コンパイラ エラー C3580|Concurrency::array と concurrency::parallel_for_each に渡される:texture の書き込み可能インスタンスの数を超えることはできません*数*|  
+|コンパイラ エラー C3581|'*型*': amp でサポートされていない型には、コードが制限されています|  
+|コンパイラ エラー C3582|互換性のために残されています。|  
+|コンパイラ エラー C3583|'*識別子*': 変数のサイズ (*数*バイト) が最大サイズより大きい (*数*バイト) amp 制限コードでサポートされています。|  
+|コンパイラ エラー C3584|tile_static の使用方法をサポートされていません '*識別子*'|  
+|コンパイラ エラー C3585|'*識別子*' コードが制限されて amp でサポートされていないストレージ クラス|  
+|コンパイラ エラー C3586|'*識別子*': amp 制限コードでサポートされていないグローバルまたは静的変数の使用|  
+|コンパイラ エラー C3587|dynamic_cast は amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3588|キャスト '*type1*'to'*type2*' amp 制限コードでサポートされていません。|  
+|コンパイラ エラー C3589|'*文字列*': amp の文字列リテラルのサポートされていない使用法が制限されたコード|  
+|コンパイラ エラー C3590|'*トークン*': 参照キャプチャまたは 'this' キャプチャはサポートされていません、ラムダに amp 制限されている場合|  
+|コンパイラ エラー C3591|typeid 演算子は amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3592|インラインのネイティブ アセンブリ ('__asm') は amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3593|'goto' は amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3594|例外処理 (try、catch、throw など) は amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3595|定数値が amp 制限コードのサポート範囲外です|  
+|コンパイラ エラー C3596|'*パラメーター*' ('*型*'): ラムダによってキャプチャされた変数が amp 制限コードで型がサポートされていません。|  
+|コンパイラ エラー C3597|'*パラメーター*':'*識別子*' ラムダに amp 制限されている場合、値によってキャプチャされることはできません|  
+|コンパイラ エラー C3598|ラベル ステートメントは amp 制限コードでサポートされていません|  
+|コンパイラ エラー C3599|'*演算子*': amp 制限コードではブールへのポインターでポインター演算を実行することはできません|  
+|コンパイラ エラー C3600|'*関数*': タイルの使用\_非タイル concurrency::parallel の呼び出し先をコンパイルするときに検出された静的メモリ\_で for_each:'*関数*'|  
+|コンパイラ エラー C3601|'*型*': amp 診断関数の無効な引数の型は、'*関数*'|  
+|コンパイラ エラー C3602|制御フローで concurrency::parallel_for_each の呼び出し先をコンパイルするときに、検出がサポートされていません: '*関数*'|  
+|[コンパイラ エラー C3603](compiler-error-c3603.md)|'*シンボル*': 型'*型*' はサポートされていません|  
+|コンパイラ エラー C3604|'*識別子*': マネージ オブジェクトを gc ヒープにのみ作成できます|  
+|コンパイラ エラー C3605|サンプラーの合計数 (*数*キャプチャおよび*数*定義済み) を超える*数*で concurrency::parallel_for_each の呼び出し先をコンパイルするときに: '*関数*'|  
+|コンパイラ エラー C3606|互換性のために残されています。|  
+|コンパイラ エラー C3607|互換性のために残されています。|  
+|コンパイラ エラー C3608|互換性のために残されています。|  
+|[コンパイラ エラー C3609](compiler-error-c3609.md)|'*識別子*':' はシール/final ' 関数は仮想である必要があります|  
+|[コンパイラ エラー C3610](compiler-error-c3610.md)|'*識別子*': メソッドの前に値の型を 'boxed' する必要があります'*メソッド*' 呼び出すことができます|  
+|[コンパイラ エラー C3611](compiler-error-c3611.md)|'*識別子*': シール関数は純粋指定子を持つことはできません|  
+|[コンパイラ エラー C3612](compiler-error-c3612.md)|'*識別子*': シールされたクラスは純粋仮想メソッドを持つことはできません|  
+|コンパイラ エラー C3613|'->' の後に戻り型が指定されていません ('int' と見なされます)|  
+|コンパイラ エラー C3614|同じクラス内のパック サイズの異なる値以前は '*値*'、新しい値が'*値*'|  
+|コンパイラ エラー C3615|constexpr 関数 '*関数*' 定数式で発生することはできません|  
+|{1&gt;コンパイラ エラー C3616&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C3617|互換性のために残されています。|  
+|[コンパイラ エラー C3618](compiler-error-c3618.md)|'*宣言*': DllImport マークされたメソッドを定義することはできません|  
+|[コンパイラ エラー C3619](compiler-error-c3619.md)|マネージまたは WinRT 型の中でテンプレートを宣言することはできません。|  
+|コンパイラ エラー C3620|'*型*': WinRT 型ではアラインメントの設定は許可されていません|  
+|コンパイラ エラー C3621|'*型*': のみ、既定のパッキング値 (*数*) は WinRT 型の許可|  
+|[コンパイラ エラー C3622](コンパイラ エラー-c3622.md*型*': として宣言されたクラス '*キーワード*' はインスタンス化できません|  
+|[コンパイラ エラー C3623](compiler-error-c3623.md)|'*識別子*': マネージまたは WinRT 型では、ビット フィールドはサポートされていません|  
+|[コンパイラ エラー C3624](compiler-error-c3624.md)|'*型*': この型の使用には、アセンブリまたはモジュールに参照が必要です'*識別子*'。|  
+|[コンパイラ エラー C3625](compiler-error-c3625.md)|'*クラス*': ネイティブ型はマネージまたは WinRT 型から派生できません'*型*'|  
+|[コンパイラ エラー C3626](compiler-error-c3626.md)|'*識別子*':'*キーワード*' キーワードは、COM インターフェイス、メンバー関数およびデリゲートへのポインターであるデータ メンバーでのみ使用できます|  
+|[コンパイラ エラー C3627](compiler-error-c3627.md)|値の型以外をボックス化することはできません。|  
+|[コンパイラ エラー C3628](compiler-error-c3628.md)|'*クラス*': マネージまたは WinRT クラスはパブリック継承のみをサポート|  
+|コンパイラ エラー C3629|'*トークン*': キャプチャ既定値は、ラムダ キャプチャ リストの先頭にのみ使用できます|  
+|[コンパイラ エラー C3630](compiler-error-c3630.md)|トークンを処理するときにエラー '*トークン*'|  
+|[コンパイラ エラー C3631](compiler-error-c3631.md)|'*イベント*': マネージまたは WinRT イベントをオーバー ロードすることはできません|  
+|[コンパイラ エラー C3632](compiler-error-c3632.md)|'*イベント*': 無効なスタイルのイベントの*構築*|  
+|[コンパイラ エラー C3633](compiler-error-c3633.md)|定義することはできません '*識別子*'のメンバーが管理対象' として*クラス*'|  
+|[コンパイラ エラー C3634](compiler-error-c3634.md)|'*メンバー*': マネージまたは WinRT クラスの抽象メソッドを定義することはできません|  
+|コンパイラ エラー C3635|'*識別子*': マネージまたは WinRT クラスには適用できません (を使用して'*識別子*' 代わりに)|  
+|コンパイラ エラー コードでは C3636|'*識別子*': この型に適用することはできません|  
+|[コンパイラ エラー C3637](compiler-error-c3637.md)|'*関数*': friend 関数の定義は、ジェネリック関数テンプレートの特殊化することはできません|  
+|[コンパイラ エラー C3638](compiler-error-c3638.md)|'*演算子*': 標準ボックス化とボックス化解除変換演算子を再定義することはできません|  
+|コンパイラ エラー C3639|互換性のために残されています。|  
+|[コンパイラ エラー C3640](compiler-error-c3640.md)|'*メンバー*': ローカル クラスの参照されたまたは仮想メンバー関数を定義する必要があります|  
+|[コンパイラ エラー C3641](compiler-error-c3641.md)|'*関数*': 無効な呼び出し規約'*規則*'/clr でコンパイルされた関数:/clr:pure または/clr:safe|  
+|[コンパイラ エラー C3642](compiler-error-c3642.md)|'*関数*': _ _clrcall 呼び出し規約をネイティブ コードからの関数を呼び出すことはできません|  
+|コンパイラ エラー C3643|互換性のために残されています。|  
+|[コンパイラ エラー C3644](compiler-error-c3644.md)|'*関数*': マネージ コードを生成する関数をコンパイルできません。|  
+|[コンパイラ エラー C3645](compiler-error-c3645.md)|'*関数*': _ _clrcall は、ネイティブ コードにコンパイルされた関数では使用できません|  
+|[コンパイラ エラー C3646](compiler-error-c3646.md)|'*識別子*': 不明なオーバーライド指定子|  
+|コンパイラ エラー C3647|互換性のために残されています。|  
+|[コンパイラ エラー C3648](compiler-error-c3648.md)|この明示的なオーバーライド構文はマネージ型ではサポートされていません|  
+|コンパイラ エラー C3649|この明示的なオーバーライド構文は /ZW と一緒に使用できません|  
+|[コンパイラ エラー C3650](compiler-error-c3650.md)|'*メンバー*': 明示的なオーバーライドとして使用することはできません、基底クラスの仮想メンバー関数でなければなりません|  
+|[コンパイラ エラー C3651](compiler-error-c3651.md)|'*メンバー*': 明示的なオーバーライドとして使用することはできません、基底クラスのメンバーである必要があります|  
+|[コンパイラ エラー C3652](compiler-error-c3652.md)|'*メンバー*': 明示的にオーバーライドする関数は仮想である必要があります|  
+|[コンパイラ エラー C3653](compiler-error-c3653.md)|'*識別子*': 名前付きオーバーライドとして使用することはできません: 関数が見つかりませんオーバーライドされないことをお勧め関数の名前、明示的に a: を使用して: 演算子しますか?。|  
+|[コンパイラ エラー C3654](compiler-error-c3654.md)|'*トークン*': 明示的なオーバーライドで構文エラー|  
+|[コンパイラ エラー C3655](compiler-error-c3655.md)|'*メンバー*': 関数は明示的にオーバーライドされて既に|  
+|[コンパイラ エラー C3656](compiler-error-c3656.md)|'*キーワード*': オーバーライド指定子を繰り返すことはできません|  
+|[コンパイラ エラー C3657](compiler-error-c3657.md)|デコンス トラクター/ファイナライザーが明示的にオーバーライドできませんまたは明示的にオーバーライドできます。|  
+|{1&gt;コンパイラ エラー C3658&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C3659|'*メンバー*': オーバーライド指定子'*キーワード*' はサポートされていません|  
+|コンパイラ エラー C3660|'*member1*': 継承されたメンバー'*member2*'|  
+|[コンパイラ エラー C3661](compiler-error-c3661.md)|明示的なオーバーライド リストには、オーバーライドするメソッドが見つかりませんでした|  
+|[コンパイラ エラー C3662](compiler-error-c3662.md)|'*メンバー*': オーバーライド指定子'*キーワード*' マネージまたは WinRT クラスのメンバー関数でのみ使用できます|  
+|コンパイラ エラー C3663|互換性のために残されています。|  
+|コンパイラ エラー C3664|'*メンバー*': 明示的なオーバーライドとして使用することはできません、'public' または 'protected' アクセシビリティを持つ必要があります|  
+|[コンパイラ エラー C3665](compiler-error-c3665.md)|'*メンバー*': オーバーライド指定子'*キーワード*' デコンス トラクター/ファイナライザーでは使用できません|  
+|[コンパイラ エラー C3666](compiler-error-c3666.md)|'*コンス トラクター*': オーバーライド指定子'*キーワード*' コンス トラクターでは使用できません|  
+|コンパイラ エラー C3667|'*属性*': 属性がパック展開をサポートしていません|  
+|[コンパイラ エラー C3668](compiler-error-c3668.md)|'*メンバー*': オーバーライド指定子 'override' を持つメソッドは、基底クラス メソッドをオーバーライドしませんでした|  
+|[コンパイラ エラー C3669](compiler-error-c3669.md)|'*メンバー*': オーバーライド指定子 'override' の静的メンバー関数またはコンス トラクターでは許可されていません|  
+|[コンパイラ エラー C3670](compiler-error-c3670.md)|'*メンバー*': アクセスできない基底クラス メソッドをオーバーライドできません'*メンバー*'|  
+|[コンパイラ エラー C3671](compiler-error-c3671.md)|'*メンバー*': 関数をオーバーライドしません'*メンバー*'|  
+|[コンパイラ エラー C3672](compiler-error-c3672.md)|擬似デストラクター式は、関数呼び出しの一部としてのみ使用することができます|  
+|[コンパイラ エラー C3673](compiler-error-c3673.md)|'*クラス*': クラスには、コピー コンス トラクターがありません。|  
+|コンパイラ エラー C3674|標準ライブラリ モジュールが見つかりませんでした '*モジュール*'。|  
+|[コンパイラ エラー C3675](compiler-error-c3675.md)|'*関数*': ために予約されています'*プロパティ*' が定義されています。|  
+|コンパイラ エラー C3676|'*クラス*': ref クラスと基底クラスは、互換性のない属性を持つ' [*属性*]'|  
+|コンパイラ エラー C3677|'operator' の後の文字列リテラルにエンコード プレフィックスを付けることはできません|  
+|コンパイラ エラー C3678|'operator' は空の文字列である必要があります後の文字列リテラル '"""'|  
+|コンパイラ エラー C3679|後にリテラル サフィックス識別子が必要です ' operator"""'|  
+|コンパイラ エラー C3680|ユーザー定義文字列リテラルを、一致しないリテラル サフィックス識別子と連結することはできません|  
+|コンパイラ エラー C3681|'fallthrough が': 属性は、外側の switch ステートメントでのみ使用できます|  
+|コンパイラ エラー C3682|'演算子*識別子*': リテラル演算子またはリテラル演算子テンプレートは、' C linkage' に宣言できません。|  
+|コンパイラ エラー C3683|未加工のリテラル演算子とリテラル演算子テンプレートの両方を同じリテラル サフィックス識別子で定義することはできません|  
+|コンパイラ エラー C3684|' operator*識別子*': リテラル演算子の宣言が無効なパラメーター リスト|  
+|コンパイラ エラー C3685|' operator*識別子*': リテラル演算子テンプレートは、関数のパラメーターを持つことはできません|  
+|コンパイラ エラー C3686|' operator*識別子*': リテラル演算子テンプレート パラメーター パックは、1 つのテンプレート パラメーターを持つ必要があります|  
+|コンパイラ エラー C3687|' 演算子*識別子*': リテラル演算子テンプレートは 'char' 型の非型テンプレート パラメーターを持つ必要があります|  
+|コンパイラ エラー C3688|無効なリテラル サフィックス '*サフィックス*' 以外のリテラル演算子またはリテラル演算子テンプレート '演算子*識別子*' が見つかりません。|  
+|コンパイラ エラー C3689|' operator*識別子*': リテラル演算子またはリテラル演算子テンプレートは、グローバルまたは名前空間スコープである必要があります|  
+|コンパイラ エラー C3690|文字列リテラルが予期されるところで、代わりにユーザー定義の文字列リテラルが検出されました|  
+|コンパイラ エラー C3691|無効なリテラル プレフィックス '*プレフィックス*'|  
+|コンパイラ エラー C3692|互換性のために残されています。|  
+|コンパイラ エラー C3693|互換性のために残されています。|  
+|コンパイラ エラー C3694|互換性のために残されています。|  
+|コンパイラ エラー C3695|互換性のために残されています。|  
+|コンパイラ エラー C3696|'*キーワード*': '%' でこの修飾子は使用できません|  
+|[コンパイラ エラー C3697](compiler-error-c3697.md)|'*キーワード*': この修飾子では使用できません' ^'|  
+|[コンパイラ エラー C3698](compiler-error-c3698.md)|'*型*': この型の引数として使用することはできません'*演算子*'|  
+|[コンパイラ エラー C3699](compiler-error-c3699.md)|'*演算子*': 型にこの間接指定を使用することはできません'*型*'|  
+|コンパイラ エラー C3700|互換性のために残されています。|  
+|[コンパイラ エラー C3701](compiler-error-c3701.md)|'*関数*': イベント ソースにイベントがありません|  
+|[コンパイラ エラー C3702](compiler-error-c3702.md)|COM イベントには ATL が必要です。|  
+|[コンパイラ エラー C3703](compiler-error-c3703.md)|'*event_handler*': イベント ハンドラー メソッドでは、ソースと同じストレージ クラスがあります'*イベント*'|  
+|[コンパイラ エラー C3704](compiler-error-c3704.md)|'*メンバー*': vararg メソッドは、イベントを発生させることはできません|  
+|[コンパイラ エラー C3705](compiler-error-c3705.md)|'*関数*': イベントのインターフェイスを見つけることができません|  
+|[コンパイラ エラー C3706](compiler-error-c3706.md)|'*関数*': COM イベントを起動する COM インターフェイスでなければなりません|  
+|[コンパイラ エラー C3707](compiler-error-c3707.md)|'*メンバー*': dispinterface メソッドは dispid を持つ必要があります|  
+|[コンパイラ エラー C3708](compiler-error-c3708.md)|'*関数*': の不適切な使用'*キーワード*'; 互換性のあるイベント ソースのメンバーである必要があります|  
+|[コンパイラ エラー C3709](compiler-error-c3709.md)|'*関数*': _ _hook/_ _unhook のイベントを指定するための構文が正しくありません|  
+|[コンパイラ エラー C3710](compiler-error-c3710.md)|'*関数*': _ _hook/_ _unhook のイベント ハンドラーを指定するための構文が正しくありません|  
+|[コンパイラ エラー C3711](compiler-error-c3711.md)|'*イベント*': マネージでないイベント ソース メソッドは、void または整数型を返す必要があります|  
+|[コンパイラ エラー C3712](compiler-error-c3712.md)|'*event_handler*': イベント ハンドラー メソッドは、ソースと同じ型を返す必要があります'*イベント*'|  
+|[コンパイラ エラー C3713](compiler-error-c3713.md)|'*event_handler*': イベント ハンドラー メソッドでは、ソースと同じ関数のパラメーターが必要'*イベント*'|  
+|[コンパイラ エラー C3714](compiler-error-c3714.md)|'*event_handler*': イベント ハンドラー メソッドでは、ソースとして同じ呼び出し規約があります'*イベント*'|  
+|[コンパイラ エラー C3715](compiler-error-c3715.md)|'*ポインター*': ポインターである必要があります'*型*'|  
+|コンパイラ エラー C3716|互換性のために残されています。|  
+|[コンパイラ エラー C3717](compiler-error-c3717.md)|'*メンバー*': イベントを発生させるメソッドを定義することはできません|  
+|[コンパイラ エラー C3718](compiler-error-c3718.md)|呼び出しだけことができます '_ _*キーワード*' 受け取るクラスのメンバー関数のコンテキストで|  
+|[コンパイラ エラー C3719](compiler-error-c3719.md)|'*メンバー*': インターフェイス ベースのイベント ソースは、COM イベントにのみ使用できます|  
+|コンパイラ エラー C3720|'*型*': IDispatch をデュアルまたはディスパッチ インターフェイスでのみ実装できます|  
+|[コンパイラ エラー C3721](compiler-error-c3721.md)|'*署名*': イベントの署名は互換性がありません|  
+|[コンパイラ エラー C3722](compiler-error-c3722.md)|ジェネリック イベントは使用できません|  
+|[コンパイラ エラー C3723](compiler-error-c3723.md)|'*関数*': イベントを解決できませんでした|  
+|[コンパイラ エラー C3724](compiler-error-c3724.md)|イベントとのマルチ スレッドを使用するには、#include <windows.h> が必要です。|  
+|コンパイラ エラー C3725|互換性のために残されています。|  
+|コンパイラ エラー C3726|互換性のために残されています。|  
+|[コンパイラ エラー C3727](compiler-error-c3727.md)|'*イベント*': マネージ イベントは、メンバー関数またはデータ メンバーは、デリゲートへのポインターにする必要があります|  
+|[コンパイラ エラー C3728](compiler-error-c3728.md)|'*イベント*': イベントに raise メソッドがありません|  
+|コンパイラ エラー C3729|互換性のために残されています。|  
+|{1&gt;コンパイラ エラー C3730&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3731](compiler-error-c3731.md)|互換性のないイベント '*イベント*'とハンドラー'*event_handler*' ですイベント ソースとイベント ハンドラーが同じイベントの型でなければなりません。|  
+|[コンパイラ エラー C3732](compiler-error-c3732.md)|'*インターフェイス*': COM イベントを実行するカスタム インターフェースは IDispatch から継承できません|  
+|[コンパイラ エラー C3733](compiler-error-c3733.md)|'*イベント*': COM イベントを指定するための不適切な構文を忘れましたか '_ _interface' しますか?|  
+|[コンパイラ エラー C3734](compiler-error-c3734.md)|'*クラス*': マネージまたは WinRT クラスは、コクラスにすることはできません|  
+|コンパイラ エラー C3735|互換性のために残されています。|  
+|[コンパイラ エラー C3736](compiler-error-c3736.md)|'*メンバー*': メソッドにする必要がありますか、またマネージ イベントの場合、データ メンバー|  
+|[コンパイラ エラー C3737](compiler-error-c3737.md)|'*識別子*': デリゲートには、明示的な呼び出し規約はありません。|  
+|[コンパイラ エラー C3738](compiler-error-c3738.md)|'*規約*': 明示的なインスタンス化の呼び出し規約には、インスタンス化されているテンプレートの一致する必要があります|  
+|[コンパイラ エラー C3739](compiler-error-c3739.md)|'*クラス*': 構文は、のみサポートされているときに、' レイアウト\_依存' event_receiver のパラメーターが true|  
+|[コンパイラ エラー C3740](compiler-error-c3740.md)|'*テンプレート*': テンプレートのソースまたはイベントを受け取ることはできません|  
+|[コンパイラ エラー C3741](compiler-error-c3741.md)|'*クラス*': コクラスに指定する必要があるときに、' レイアウト\_依存' event_receiver のパラメーターが true|  
+|コンパイラ エラー C3742|'*token1*': 属性引数のトークン シーケンスが不均衡'*属性*'、必要な'*token2*'|  
+|[コンパイラ エラー C3743](compiler-error-c3743.md)|event_receiver の 'layout_dependent' パラメーターが True の場合にのみ、すべてのインターフェイスをフック/アンフックできます。|  
+|[コンパイラ エラー C3744](compiler-error-c3744.md)|__unhook は最低 3 つのマネージ イベント引数を必要とします。|  
+|[コンパイラ エラー C3745](compiler-error-c3745.md)|'*関数*': イベントだけが生成されることが' '|  
+|コンパイラ エラー C3746|標準属性 '*識別子*' 属性リストに最大でも 1 回表示される可能性があります|  
+|[コンパイラ エラー C3747](compiler-error-c3747.md)|既定のテンプレートやジェネリック パラメーターがありません: パラメーター*数*|  
+|[コンパイラ エラー C3748](compiler-error-c3748.md)|'*インターフェイス*': アンマネージ インターフェイスはイベントを発生させる可能性がありますいません。|  
+|[コンパイラ エラー C3749](compiler-error-c3749.md)|'*属性*': 関数内のカスタム属性で使用できません可能性があります|  
+|コンパイラ エラー C3750|'*トークン*': 属性リストに予期しないトークン|  
+|コンパイラ エラー C3751|'*識別子*': 属性リストに予期しない識別子|  
+|[コンパイラ エラー C3752](compiler-error-c3752.md)|'*属性*': 属性を分類することはできません'*キーワード*' はこのコンテキストでは使用できません|  
+|[コンパイラ エラー C3753](compiler-error-c3753.md)|ジェネリック プロパティは使用できません|  
+|[コンパイラ エラー C3754](compiler-error-c3754.md)|delegate コンス トラクター: メンバー関数は、'*メンバー*'型のインスタンスで呼び出すことはできません'*型*'|  
+|[コンパイラ エラー C3755](compiler-error-c3755.md)|'*識別子*': デリゲートを定義することがない可能性があります|  
+|コンパイラ エラー C3756|互換性のために残されています。|  
+|コンパイラ エラー C3757|'*型*': 型 'constexpr' 関数は使用できません|  
+|コンパイラ エラー C3758|'*メンバー*': 仮想関数は 'constexpr' として宣言することはできません|  
+|コンパイラ エラー C3759|'*メンバー*': 'constexpr' リテラルでない型のメンバー関数を宣言することはできません|  
+|コンパイラ エラー C3760|マネージまたは WinRT のプロパティを宣言に _ _property キーワードを使用してください '*クラス*'|  
+|[コンパイラ エラー C3761](compiler-error-c3761.md)|'*関数*': 'retval' は関数の最後の引数でのみ使用できます|  
+|[コンパイラ エラー C3762](compiler-error-c3762.md)|属性を処理できません '*属性*'。|  
+|[コンパイラ エラー C3763](compiler-error-c3763.md)|'*型*': 'retval' および 'out' はデータ ポインター型でのみ使用できます|  
+|[コンパイラ エラー C3764](compiler-error-c3764.md)|'*メンバー*': 基底クラスのメソッドをオーバーライドできません'*メンバー*'|  
+|[コンパイラ エラー C3765](compiler-error-c3765.md)|'*イベント*': クラス/構造体にイベントを定義することはできません'*型*' event_receiver とマーク|  
+|[コンパイラ エラー C3766](compiler-error-c3766.md)|'*型*'インターフェイス メソッドの実装を提供する必要があります'*関数*'|  
+|[コンパイラ エラー C3767](compiler-error-c3767.md)|'*関数*': 候補の関数はアクセスできません。|  
+|[コンパイラ エラー C3768](compiler-error-c3768.md)|仮想 vararg 関数のアドレスを純粋マネージ コードで指定できません|  
+|[コンパイラ エラー C3769](compiler-error-c3769.md)|'*識別子*': 入れ子になったクラスは、すぐ外側のクラスと同じ名前を持つことはできません|  
+|コンパイラ エラー C3770|'*型*': 有効な基本クラスではありません|  
+|[コンパイラ エラー C3771](compiler-error-c3771.md)|'*識別子*': フレンド宣言が一番近い名前空間スコープに見つかりません|  
+|[コンパイラ エラー C3772](compiler-error-c3772.md)|'*識別子*': 無効なフレンド テンプレートの宣言|  
+|コンパイラ エラー C3773|使用してください。/await、コルーチンを有効にするコンパイラ スイッチ|  
+|コンパイラ エラー C3774|見つかりません '*スコープ*::*識別子*': を含めてください*ヘッダー*ヘッダー|  
+|コンパイラ エラー C3775|型を返す '*関数*'することはできません'*型*'|  
+|コンパイラ エラー C3776|非 void の最終的な戻り値の型を持つコルーチンでは、void 型の式を返すことはできません。|  
+|コンパイラ エラー C3777|'*関数*': コルーチンは可変個引数リストを取得できません|  
+|コンパイラ エラー C3778|alloca: コルーチンでは使用できません|  
+|コンパイラ エラー C3779|'*関数*': を返す関数'*型*' は定義する前に使用できません|  
+|コンパイラ エラー C3780|'*関数*': 変換関数を返しますの*型*' は定義する前に使用できません|  
+|コンパイラ エラー C3781|'*キーワード*': 型のコルーチンでは、使用することはできません'*型*' です。 いずれか*キーワード*または*キーワード*関連する promise_type に存在する必要があります|  
+|コンパイラ エラー C3782|*型*: コルーチンの promise は、両方を含めることはできません*キーワード*と*キーワード*|  
+|コンパイラ エラー C3783|'*識別子*': コルーチンにできません|  
+|コンパイラ エラー C3784|*キーワード*式は、このコンテキストで表示されることはできません|  
+|コンパイラ エラー C3785|'std::integer_sequence' への最初のテンプレート引数は整数型である必要があります。|  
+|コンパイラ エラー C3786|'std::make_integer_sequence' への 2 つ目のテンプレート引数は整数の定数 0 以上である必要があります。|  
+|コンパイラ エラー C3787|このコルーチンの戻り値の型を推測できません。|  
+|コンパイラ エラー C3788|互換性のために残されています。|  
+|コンパイラ エラー C3789|互換性のために残されています。|  
+|コンパイラ エラー C3790|互換性のために残されています。|  
+|コンパイラ エラー C3791|互換性のために残されています。|  
+|コンパイラ エラー C3792|互換性のために残されています。|  
+|コンパイラ エラー C3793|互換性のために残されています。|  
+|コンパイラ エラー C3794|互換性のために残されています。|  
+|コンパイラ エラー C3795|互換性のために残されています。|  
+|コンパイラ エラー C3796|互換性のために残されています。|  
+|[コンパイラ エラー C3797](compiler-error-c3797.md)|'*キーワード*': イベントの宣言は、配置しなければなりませんイベントを追加/削除/raise の各メソッドの代わりに) オーバーライド指定子を持つことはできません|  
+|[コンパイラ エラー C3798](compiler-error-c3798.md)|'*キーワード*': プロパティの宣言 (プロパティ get または set メソッドに配置する必要があります) のオーバーライド指定子を持つことはできません|  
+|[コンパイラ エラー C3799](compiler-error-c3799.md)|インデックス付きプロパティは空のパラメーター リストを含むことはできません|  
+|[コンパイラ エラー C3800](compiler-error-c3800.md)|'*宣言*': プロパティとイベントを混在させることはできません|  
+|コンパイラ エラー C3801|'*属性*': 属性では引数句がない可能性があります|  
+|{1&gt;コンパイラ エラー C3802&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3803](compiler-error-c3803.md)|'*プロパティ*': プロパティは、そのアクセサーのいずれかの互換性がない型*アクセサー*'|  
+|[コンパイラ エラー C3804](compiler-error-c3804.md)|'*メンバー*': アクセサー メソッド、プロパティには、いずれかが必要がありますに配置するすべての静的またはすべてスタティックでないです。|  
+|[コンパイラ エラー C3805](compiler-error-c3805.md)|*トークン*': 予期しないトークン '} 'か','|  
+|コンパイラ エラー C3806|'*トークン*': 予期しないトークンが必要です、' {' またはメンバー初期化子|  
+|[コンパイラ エラー C3807](compiler-error-c3807.md)|'*型*': ComImport 属性を持つクラスがから派生できません'*型*'、インターフェイスの実装のみが許可されている。|  
+|[コンパイラ エラー C3808](compiler-error-c3808.md)|'*型*': ComImport 属性を持つクラス メンバーを定義できません'*メンバー*' のみを抽象化、または dllimport 関数が許可されています。|  
+|[コンパイラ エラー C3809](compiler-error-c3809.md)|'*型*': マネージまたは WinRT 型は、フレンド関数/クラス/インターフェイスを持つことはできません|  
+|コンパイラ エラー C3810|互換性のために残されています。|  
+|{1&gt;コンパイラ エラー C3811&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3812](compiler-error-c3812.md)|プロパティ宣言で '__property' を最初のトークンに指定しなければなりません。|  
+|[コンパイラ エラー C3813](compiler-error-c3813.md)|プロパティ宣言はマネージまたは WinRT 型の定義内でのみ使用できます。|  
+|{1&gt;コンパイラ エラー C3814&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3815](compiler-error-c3815.md)|メソッドの型を返す '*メンバー*' setter の最後のパラメーターの型に一致する必要があります|  
+|[コンパイラ エラー C3816](compiler-error-c3816.md)|'クラス/構造体*メンバー*' が、以前宣言されたまたは異なるマネージまたは WinRT 修飾子を伴って定義|  
+|[コンパイラ エラー C3817](compiler-error-c3817.md)|'*宣言*': プロパティは、関数にのみ適用できます|  
+|[コンパイラ エラー C3818](compiler-error-c3818.md)|配列プロパティ宣言 '*プロパティ*'はオーバー ロードしないインデックス プロパティ'*プロパティ*'|  
+|{1&gt;コンパイラ エラー C3819&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3820](compiler-error-c3820.md)|'*識別子*': 初期化子を管理する必要があります|  
+|[コンパイラ エラー C3821](compiler-error-c3821.md)|'*関数*': マネージ型または関数をアンマネージ関数で使用することはできません|  
+|{1&gt;コンパイラ エラー C3822&lt;1}|互換性のために残されています。|  
+|{1&gt;コンパイラ エラー C3823&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C3824](compiler-error-c3824.md)|'*型*': 関数パラメーター、戻り値の型 (静的メンバー) は、このコンテキストでこの型は指定できません|  
+|[コンパイラ エラー C3825](compiler-error-c3825.md)|'*型*': マネージまたは WinRT クラスはマネージまたは WinRT イベントのみをサポート|  
+|{1&gt;コンパイラ エラー C3826&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C3827|標準属性 'deprecated' 引数なしまたはリテラルの理由を説明する 1 つの文字列のいずれかが適用される場合があります。|  
+|[コンパイラ エラー C3828](compiler-error-c3828.md)|仮引数を指定することはできません、'*キーワード*'型の式'*型*'|  
+|コンパイラ エラー C3829|標準属性 'noreturn' は関数にのみ適用可能性があります。|  
+|[コンパイラ エラー C3830](compiler-error-c3830.md)|'*type1*': から継承できません'*type2*'、値の型はインターフェイス クラスからのみ継承できます。|  
+|[コンパイラ エラー C3831](compiler-error-c3831.md)|'*識別子*':'*型*' ピン留めしたデータ メンバー、またはピン ポインターを返すメンバー関数に持つことはできません|  
+|[コンパイラ エラー C3832](compiler-error-c3832.md)|'*typelib*': タイプ ライブラリが 32 ビット ポインター用にビルドされた場合のように変更してください可能性があります' 修飾子|  
+|[コンパイラ エラー C3833](compiler-error-c3833.md)|'*型*': 無効なターゲット型の*識別子*|  
+|[コンパイラ エラー C3834](compiler-error-c3834.md)|ピンされたポインターへの明示的なキャストは無効です。ピンされたローカル変数を使用してください。|  
+|コンパイラ エラー C3835|互換性のために残されています。|  
+|[コンパイラ エラー C3836](compiler-error-c3836.md)|スタティック コンストラクターに、メンバー初期化子一覧を含めることはできません。|  
+|コンパイラ エラー C3837|属性は、このコンテキストでは使用できません。|  
+|[コンパイラ エラー C3838](compiler-error-c3838.md)|継承できません '*型*'。|  
+|[コンパイラ エラー C3839](compiler-error-c3839.md)|マネージまたは WinRT 型でアラインメントを変更することはできません。|  
+|{1&gt;コンパイラ エラー C3840&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C3841|互換性のために残されています。|  
+|[コンパイラ エラー C3842](compiler-error-c3842.md)|'*識別子*': マネージまたは WinRT 型のメンバー関数で 'const' および 'volatile' 修飾子はサポートされていません|  
+|コンパイラ エラー C3843|'*識別子*': マネージまたは WinRT 型のメンバー関数に対する ref 修飾子はサポートされていません|  
+|コンパイラ エラー c3844 エラー|'*識別子*': シンボルをからインポートできません'*ソース*': '*識別子*'、現在のスコープに既に存在|  
+|コンパイラ エラー C3845|互換性のために残されています。|  
+|[コンパイラ エラー C3846](compiler-error-c3846.md)|'*識別子*': シンボルをからインポートできません'*ソース*': '*識別子*'は既にインポートされて別のアセンブリから'*アセンブリ*'|  
+|コンパイラ エラー C3847|互換性のために残されています。|  
+|[コンパイラ エラー C3848](compiler-error-c3848.md)|式の型を持つ '*型*'を呼び出すにはいくつかの const volatile 修飾子を失います'*識別子*'|  
+|[コンパイラ エラー C3849](compiler-error-c3849.md)|型の式における関数スタイルの呼び出し '*型*' const または volatile 修飾子をすべて失います*数*使用可能な演算子のオーバー ロード|  
+|[コンパイラ エラー C3850](compiler-error-c3850.md)|'*トークン*': ユニバーサル文字名に無効な文字を指定します|  
+|[コンパイラ エラー C3851](compiler-error-c3851.md)|'*トークン*': ユニバーサル文字名は基本文字セットの文字を指定することはできません|  
+|[コンパイラ エラー C3852](compiler-error-c3852.md)|'*メンバー*'を含む'*型*': 集約の初期化では、このメンバーは初期化できませんでした。|  
+|[コンパイラ エラー C3853](compiler-error-c3853.md)|'=': 参照から関数による参照または代入式の再初期化をすることはできません。|  
+|[コンパイラ エラー C3854](compiler-error-c3854.md)|'=' の左辺の式は、関数に評価されます。 (関数は左辺値ではありません) 関数に割り当てることはできません。|  
+|[コンパイラ エラー C3855](compiler-error-c3855.md)|'*関数*': テンプレートやジェネリック パラメーター'*識別子*' 宣言と互換性がありません|  
+|[コンパイラ エラー C3856](compiler-error-c3856.md)|'*クラス*': クラスはクラス テンプレートまたはジェネリックではありません|  
+|[コンパイラ エラー C3857](compiler-error-c3857.md)|'*テンプレート*': 複数のテンプレートやジェネリック パラメーター リストは使用できません|  
+|[コンパイラ エラー C3858](compiler-error-c3858.md)|'*識別子*': 現在のスコープでは再宣言することはできません|  
+|[コンパイラ エラー C3859](compiler-error-c3859.md)|越えました。 PCH の仮想メモリの範囲コマンド ライン オプションで再コンパイルしてください '-Zm*数*' またはそれ以上。|  
+|[コンパイラ エラー C3860](compiler-error-c3860.md)|テンプレートまたは汎用引数リストの次のクラス テンプレートまたはジェネリック名は、テンプレート、ジェネリック パラメーター リストで使用されている順序でパラメーターを一覧表示する必要があります。|  
+|[コンパイラ エラー C3861](compiler-error-c3861.md)|'*識別子*': 識別子が見つかりません|  
+|[コンパイラ エラー C3862](compiler-error-c3862.md)|'*関数*':/clr でアンマネージ関数をコンパイルできません:/clr:pure または/clr:safe|  
+|コンパイラ エラー C3863|配列型 '*型*' 割り当てることはできません|  
+|コンパイラ エラー C3864|互換性のために残されています。|  
+|[コンパイラ エラー C3865](compiler-error-c3865.md)|'*キーワード*': ネイティブ メンバー関数でのみ使用できます|  
+|[コンパイラ エラー C3866](compiler-error-c3866.md)|デストラクターまたはファイナライザーの呼び出しに引数リストがありません。|  
+|[コンパイラ エラー C3867](compiler-error-c3867.md)|'*関数*': 非標準の構文; 使用して '&' は、メンバーへのポインターを作成するには|  
+|[コンパイラ エラー C3868](compiler-error-c3868.md)|'*型*': ジェネリック パラメーターに対する制約'*パラメーター*' 宣言で異なる|  
+|[コンパイラ エラー C3869](compiler-error-c3869.md)|gcnew 制約には空のパラメーター リスト '()' がありません|  
+|コンパイラ エラー C3870|'*パラメーター*':' _ _declspec (*指定子*)' の整数型のパラメーターにのみ適用できます|  
+|コンパイラ エラー C3871|'*パラメーター*': '__declspec(guard(overflow))' は関数の最初の 64 個のパラメーターでのみサポート|  
+|[コンパイラ エラー C3872](compiler-error-c3872.md)|' 0 x*値*': この文字が識別子で許可されていません|  
+|[コンパイラ エラー C3873](compiler-error-c3873.md)|' 0 x*値*': この文字が識別子の最初の文字として許可されていません|  
+|[コンパイラ エラー C3874](compiler-error-c3874.md)|型を返す '*識別子*'なければなりません'*type1*'の代わりに'*type2*'。|  
+|コンパイラ エラー C3875|引数リストがない、静的でないメンバー関数の呼び出し|  
+|コンパイラ エラー C3876|互換性のために残されています。|  
+|コンパイラ エラー C3877|互換性のために残されています。|  
+|コンパイラ エラー C3878|互換性のために残されています。|  
+|コンパイラ エラー C3879|'*メンバー*': initonly データ メンバーにすることはできません|  
+|[コンパイラ エラー C3880](compiler-error-c3880.md)|'*メンバー*': リテラル データ メンバーにすることはできません|  
+|コンパイラ エラー C3881|コンストラクターは直接の基底からのみ継承できます|  
+|コンパイラ エラー C3882|'*クラス*': コンス トラクターは既にから継承された'*クラス*'|  
+|{1&gt;コンパイラ エラー C3883&lt;1}|'*メンバー*': initonly スタティック データ メンバーを初期化する必要があります|  
+|コンパイラ エラー C3884|'*型*': 不明なサイズの配列が値で初期化することはできません|  
+|コンパイラ エラー C3885|'*型*': 不明なサイズの配列は空の初期化子リストで初期化できません|  
+|[コンパイラ エラー C3886](compiler-error-c3886.md)|'*メンバー*': リテラル データ メンバーを初期化する必要があります|  
+|[コンパイラ エラー C3887](compiler-error-c3887.md)|'*メンバー*': リテラル データ メンバーの初期化子が定数式にする必要があります|  
+|[コンパイラ エラー C3888](compiler-error-c3888.md)|'*メンバー*': このリテラル データ メンバーに関連付けられた const 式は C + + CLI|  
+|コンパイラ エラー C3889|互換性のために残されています。|  
+|[コンパイラ エラー C3890](compiler-error-c3890.md)|'*メンバー*': リテラル データ メンバーのアドレスを取得することはできません|  
+|[コンパイラ エラー C3891](compiler-error-c3891.md)|'*メンバー*': リテラル データ メンバーは、左辺値として使用できません|  
+|[コンパイラ エラー C3892](compiler-error-c3892.md)|'*変数*': const である変数に割り当てることはできません|  
+|[コンパイラ エラー C3893](compiler-error-c3893.md)|'*メンバー*': initonly データ メンバーの左辺値の使用はクラスのインスタンス コンス トラクターでのみ許可*クラス*'|  
+|[コンパイラ エラー C3894](compiler-error-c3894.md)|'*メンバー*': initonly スタティック データ メンバーの左辺値の使用はクラスのクラス コンス トラクターでのみ許可*クラス*'|  
+|[コンパイラ エラー C3895](compiler-error-c3895.md)|'*メンバー*':*型*データ メンバーを 'volatile' にすることはできません|  
+|[コンパイラ エラー C3896](compiler-error-c3896.md)|'*メンバー*': 正しくない初期化子: このリテラル データ メンバーは 'nullptr' と共にのみ初期化できます|  
+|コンパイラ エラー C3897|互換性のために残されています。|  
+|[コンパイラ エラー C3898](compiler-error-c3898.md)|'*メンバー*':*型*データ メンバーはマネージ型のメンバーにのみできます|  
+|[コンパイラ エラー C3899](compiler-error-c3899.md)|'*メンバー*': クラスの並行領域内で直接 initonly データ メンバーの左辺値の使用が許可されていません*クラス*'|  
+|[コンパイラ エラー C3900](compiler-error-c3900.md)|'*メンバー*': 現在のスコープで許可されていません|  
+|[コンパイラ エラー C3901](compiler-error-c3901.md)|'*関数*': 戻り値の型である必要があります'*型*'|  
+|[コンパイラ エラー C3902](compiler-error-c3902.md)|'*関数*': 最後のパラメーターの型である必要があります'*型*'|  
+|[コンパイラ エラー C3903](compiler-error-c3903.md)|'*プロパティ*': は設定または get メソッドがありません|  
+|[コンパイラ エラー C3904](compiler-error-c3904.md)|'*プロパティ*': 指定する必要があります*数*パラメーター|  
+|コンパイラ エラー C3905|組み込み型にアラインされていないアクセスはサポートされていません '*型*'|  
+|コンパイラ エラー C3906|組み込み型 '*型*' vararg またはプロトタイプ宣言されていない機能のサポートされているの戻り値または引数の型ではありません|  
+|コンパイラ エラー C3907|互換性のために残されています。|  
+|[コンパイラ エラー C3908](compiler-error-c3908.md)|アクセス レベルよりもより制限の少ない '*識別子*'|  
+|[コンパイラ エラー C3909](compiler-error-c3909.md)|マネージまたは WinRT イベントの宣言はマネージまたは WinRT 型で行う必要があります。|  
+|[コンパイラ エラー C3910](compiler-error-c3910.md)|'*イベント*': メンバーを定義する必要があります'*メンバー*'|  
+|[コンパイラ エラー C3911](compiler-error-c3911.md)|'*メンバー*': 関数型である必要があります'*型*'|  
+|[コンパイラ エラー C3912](compiler-error-c3912.md)|'*イベント*': イベントの種類はデリゲート型である必要があります|  
+|[コンパイラ エラー C3913](compiler-error-c3913.md)|既定プロパティはインデックス付きでなければなりません|  
+|[コンパイラ エラー C3914](compiler-error-c3914.md)|既定プロパティはスタティックであることはできません|  
+|[コンパイラ エラー C3915](compiler-error-c3915.md)|'*識別子*' が既定のインデックス付きありませんプロパティ (クラス インデクサー)|  
+|コンパイラ エラー C3916|互換性のために残されています。|  
+|[コンパイラ エラー C3917](compiler-error-c3917.md)|'*トークン*': 古い*構築*の宣言スタイル (を使用するつもりでした' [' ']' 代わりにしますか?)|  
+|[コンパイラ エラー C3918](compiler-error-c3918.md)|使用するには '*識別子*' データ メンバーにする|  
+|[コンパイラ エラー C3919](compiler-error-c3919.md)|'*関数*': 関数型である必要があります'*return_type* (*型*)'|  
+|[コンパイラ エラー C3920](compiler-error-c3920.md)|'*演算子*': 後置インクリメント/デクリメント後置形式の CLR または WinRT 演算子を定義できません CLR または WinRT 演算子には、対応するプレフィックス CLR または WinRT を呼び出す後置形式のセマンティクスを持つ演算子 (op_Increment/op_Decrement) が。|  
+|{1&gt;コンパイラ エラー C3921&lt;1}|互換性のために残されています。|  
+|コンパイラ エラー C3922|互換性のために残されています。|  
+|[コンパイラ エラー C3923](compiler-error-c3923.md)|'*メンバー*': ローカル クラス、構造体または共用体の定義は、マネージまたは WinRT クラスのメンバー関数では許可されません|  
+|コンパイラ エラー C3924|引数にエラーが #*数*delegate コンス トラクター呼び出し '*コンス トラクター*'。|  
+|コンパイラ エラー C3925|ループが必要です (、または、操作を行います) 次 '*ディレクティブ*' ディレクティブ|  
+|コンパイラ エラー C3926|'parallel' ディレクティブに無効な定数が含まれています|  
+|コンパイラ エラー C3927|'->': 後続の戻り値の型は、関数以外の宣言の後に許可されていません|  
+|コンパイラ エラー C3928|'->': 後続の戻り値の型は、かっこに囲まれた宣言の後に許可されていません|  
+|コンパイラ エラー C3929|互換性のために残されています。|  
+|コンパイラ エラー C3930|'*関数*': オーバー ロードされた関数にアンビエント コンテキストと互換性がある制限指定子がない'*コンテキスト*'|  
+|コンパイラ エラー C3931|'*型*': アンビエント コンテキストと互換性がない制限指定子を持つ関数を呼び出すことはできません|  
+|コンパイラ エラー C3932|互換性のために残されています。|  
+|コンパイラ エラー C3933|'*クラス*': デストラクターの制限指定子は、すべてのコンス トラクターの制限の和集合をカバーする必要があります|  
+|コンパイラ エラー C3934|'main' 形式の関数は、restrict(cpu) 以外の制限指定子を持つことはできません|  
+|コンパイラ エラー C3935|'*識別子*': 再定義; 制限指定子の重複|  
+|コンパイラ エラー C3936|'*識別子*': 認識できない制限指定子|  
+|コンパイラ エラー C3937|空の制限指定子は使用できません|  
+|コンパイラ エラー C3938|'*識別子*': 複数の制限指定子は extern \042C\042 関数でサポートされていません|  
+|コンパイラ エラー C3939|'*識別子*': メンバー関数、関数ポインターへのポインター 'amp' 制限指定子を持つ関数への参照は使用できません|  
+|コンパイラ エラー C3940|'*識別子*': 識別子が見つかりません。 コンパイラとライブラリのバージョンが一致します。 Vccorlib.h/.lib、vccorlib120.dll、および c1xx.dll の一致を確認してください。|  
+|コンパイラ エラー C3941|'*条件*': 必要があります '/clr' コマンド ライン オプション|  
+|コンパイラ エラー C3942|互換性のために残されています。|  
+|コンパイラ エラー C3943|互換性のために残されています。|  
+|コンパイラ エラー C3944|互換性のために残されています。|  
+|コンパイラ エラー C3945|'*型*': スローまたは platform::exception から派生していない winrt オブジェクトをキャッチできません。|  
+|コンパイラ エラー C3946|'*型*': typeid はこの型に適用することはできません|  
+|コンパイラ エラー C3947|'*typeid*': typeid はパック展開に適用できません|  
+|コンパイラ エラー C3948|'*キーワード*': パック展開は、このコンテキストで表示されることはできません|  
+|コンパイラ エラー C3949|パック展開 '...' は、かっこで囲まれた抽象宣言子には指定できません|  
+|コンパイラ エラー C3950|互換性のために残されています。|  
+|コンパイラ エラー C3951|射影された WinRT 型のメンバーへのポインターを使用することはできません '*型*' です。 デリゲートを使用してください。|  
+|コンパイラ エラー C3952|'*型*': WinRT は 'in/out' 配列をサポートしていません。 使用して 'const Array<T>^' 'in' および' WriteOnlyArray<T>'または' 配列<T>^ *' のパブリック api には、'out'|  
+|コンパイラ エラー C3953|管理対象のクラスを使用できない*型*' を WinRT モジュールでします。|  
+|コンパイラ エラー C3954|'*型*': WinRT 型で公開されたメソッドから返される配列は、フォームを使用する必要があります' 配列<T>^'|  
+|コンパイラ エラー C3955|'*型*': パブリック コンス トラクターは 'out' パラメーターを含めることはできませんまたは' WriteOnlyArray<T>'|  
+|コンパイラ エラー C3956|'*型*': 型は Exclusive To としてマークされて'*型*'とのベースとして使用することはできません'*derived_type*'|  
+|コンパイラ エラー C3957|'*型*': は使用できません 'new' を WinRT に入力以外の場合は代わりに 'ref new' を使用|  
+|コンパイラ エラー C3958|'*型*': を WinRT に 'gcnew' を使用することはできません型は、'ref new' を使用してください|  
+|コンパイラ エラー C3959|'ref new' は WinRT 型のオブジェクトの生成にのみ使用できます|  
+|コンパイラ エラー C3960|互換性のために残されています。|  
+|コンパイラ エラー C3961|静的コンストラクターはサポートされていません|  
+|コンパイラ エラー C3962|ジェネリック クラスはサポートされていません|  
+|コンパイラ エラー C3963|多次元配列はサポートされていません|  
+|コンパイラ エラー C3964|ジャグ配列はサポートされていません|  
+|コンパイラ エラー C3965|パラメーター配列はサポートされていません|  
+|コンパイラ エラー C3966|'*関数*': ジェネリック関数はサポートされていません|  
+|コンパイラ エラー C3967|インポート中のエラー '*識別子*'module' から*モジュール*'|  
+|コンパイラ エラー C3968|トークン '*トークン*' が無効ですモジュール名の区切り文字として期間を使用する ('。 ') 代わりに。|  
+|コンパイラ エラー C3969|一貫性のないモジュール名: '*module1*'および'*module1*'|  
+|コンパイラ エラー C3970|'*識別子*':'*キーワード*' に 'ref class' または 'ref struct' グローバル スコープまたは名前空間スコープにのみ適用できます|  
+|コンパイラ エラー C3971|'*型*': 完全定義の後の部分定義は使用できません|  
+|コンパイラ エラー C3972|'*型*': 'partial' のみに適用できますクラス宣言または定義|  
+|コンパイラ エラー C3973|互換性のために残されています。|  
+|コンパイラ エラー C3974|互換性のために残されています。|  
+|コンパイラ エラー C3975|'クラス/構造体*識別子*' が、以前宣言されたまたは異なる修飾子を伴って定義|  
+|コンパイラ エラー C3976|'*identifier1*'宣言されなければなりませんを使用するのには 'public' として'*identifier2*'|  
+|コンパイラ エラー C3977|使用法を定義するアセンブリに参照が必要 '*識別子*'|  
+|コンパイラ エラー C3978|'*識別子*': 静的プロパティは WinRT インターフェイスまたは値型のメンバーとして許可されていません|  
+|コンパイラ エラー C3979|'*型*': 属性を使用して'*属性*'の代わりに'*値*'|  
+|コンパイラ エラー C3980|'*型*' メタデータに出力することはできません|  
+|コンパイラ エラー C3981|'*型*': 値型は、静的データ メンバーを持つことはできません*識別子*'|  
+|コンパイラ エラー C3982|'*型*': 値の型が非パブリック データ メンバーを持つことはできません*識別子*'|  
+|コンパイラ エラー C3983|'*型*': 値型のパブリック以外のデータ メンバーを持つことはできません*識別子*'|  
+|コンパイラ エラー C3984|'*型*': 非値型はパブリック データ メンバーを持つことはできません*識別子*'|  
+|コンパイラ エラー C3985|'*識別子*': パブリック メンバーのシグネチャには、プライベート型が含まれています'*メンバー*'。|  
+|コンパイラ エラー C3986|'*識別子*': パブリック メンバーのシグネチャには、ネイティブ型が含まれています'*メンバー*'。|  
+|コンパイラ エラー C3987|'*識別子*': パブリック メンバーのシグネチャには、ネイティブ型が含まれています'*型*'。|  
+|コンパイラ エラー C3988|'*型*': ネイティブ型をパブリックにすることはできません|  
+|コンパイラ エラー C3989|'*型*': 入れ子にされた型をパブリックにすることはできません|  
+|コンパイラ エラー C3990|'*型*': 属性'*属性*' プライベートまたは入れ子にすることはできません|  
+|コンパイラ エラー C3991|'*型*': 非パブリックまたは入れ子になったインターフェイスを実装できません'*インターフェイス*'|  
+|コンパイラ エラー C3992|'*識別子*': パブリック メンバーのシグネチャには、無効な型が含まれています'*型*'。|  
+|コンパイラ エラー C3993|'*型*': 値型は、少なくとも 1 つのパブリック フィールドを含める必要があります|  
+|コンパイラ エラー C3994|'*型*': 値型がインターフェイスを実装することはできませんまたは仮想関数があります|  
+|コンパイラ エラー C3995|'*型*': 値型のイベント メンバーを持つことはできません*識別子*'|  
+|コンパイラ エラー C3996|互換性のために残されています。|  
+|コンパイラ エラー C3998|'c++*バージョン*': サポートされていない C++ のバージョンです既定の' c++*バージョン*'。|  
+|コンパイラ エラー C3999|不明なエラーまたは参照してください、Visual C ヘルプ メニューのサポート情報コマンドを選択して詳細については、テクニカル サポート ヘルプ ファイル|  
 

@@ -1,284 +1,239 @@
 ---
-title: "コンパイラの警告 C4600 C4799 から | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4602"
-  - "C4603"
-  - "C4609"
-  - "C4612"
-  - "C4613"
-  - "C4620"
-  - "C4622"
-  - "C4629"
-  - "C4631"
-  - "C4634"
-  - "C4635"
-  - "C4636"
-  - "C4637"
-  - "C4638"
-  - "C4645"
-  - "C4646"
-  - "C4655"
-  - "C4657"
-  - "C4658"
-  - "C4662"
-  - "C4670"
-  - "C4671"
-  - "C4672"
-  - "C4674"
-  - "C4676"
-  - "C4678"
-  - "C4681"
-  - "C4682"
-  - "C4685"
-  - "C4688"
-  - "C4689"
-  - "C4690"
-  - "C4693"
-  - "C4694"
-  - "C4695"
-  - "C4696"
-  - "C4718"
-  - "C4719"
-  - "C4720"
-  - "C4721"
-  - "C4722"
-  - "C4724"
-  - "C4725"
-  - "C4728"
-  - "C4729"
-  - "C4732"
-  - "C4739"
-  - "C4750"
-  - "C4751"
-  - "C4752"
-  - "C4754"
-  - "C4755"
-  - "C4757"
-  - "C4764"
-  - "C4767"
-  - "C4770"
-  - "C4792"
-  - "C4794"
-dev_langs: 
-  - "C++"
+title: "コンパイラの警告 C4600 C4799 から |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4602
+- C4603
+- C4609
+- C4612
+- C4613
+- C4620
+- C4622
+- C4629
+- C4631
+- C4634
+- C4635
+- C4636
+- C4637
+- C4638
+- C4645
+- C4646
+- C4655
+- C4657
+- C4658
+- C4662
+- C4670
+- C4671
+- C4672
+- C4674
+- C4676
+- C4678
+- C4681
+- C4682
+- C4685
+- C4688
+- C4689
+- C4690
+- C4693
+- C4694
+- C4695
+- C4696
+- C4718
+- C4719
+- C4720
+- C4721
+- C4722
+- C4724
+- C4725
+- C4728
+- C4729
+- C4732
+- C4739
+- C4750
+- C4751
+- C4752
+- C4754
+- C4755
+- C4757
+- C4764
+- C4767
+- C4770
+- C4792
+- C4794
+dev_langs:
+- C++
 ms.assetid: 22bd4392-f3be-445c-9f23-6126aebac901
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# コンパイラの警告s C4600 Through C4999
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 93c5e1f5d6e4615ca9cb022bf301bd73613ca31c
+ms.lasthandoff: 04/24/2017
 
-ここでは、ビルド ツールによって生成されるエラーについて説明します。  特定のエラー メッセージに関するヘルプを表示するには、\[出力\] ウィンドウでエラー番号をクリックして F1 キーを押すか、または \[キーワード\] の **\[検索する文字列\]** ボックスにエラー番号を入力するか、次のリンクをクリックします。  
-  
- [コンパイラの警告 \(レベル 1\) C4600](../../error-messages/compiler-warnings/compiler-warning-level-1-c4600.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4606](../../error-messages/compiler-warnings/compiler-warning-level-1-c4606.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4608](../../error-messages/compiler-warnings/compiler-warning-level-3-c4608.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4610](../../error-messages/compiler-warnings/compiler-warning-level-4-c4610.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4611](../../error-messages/compiler-warnings/compiler-warning-level-4-c4611.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4615](../Topic/Compiler%20Warning%20\(level%201\)%20C4615.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4616](../Topic/Compiler%20Warning%20\(level%201\)%20C4616.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4618](../../error-messages/compiler-warnings/compiler-warning-level-1-c4618.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4619](../../error-messages/compiler-warnings/compiler-warning-level-3-c4619.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4621](../../error-messages/compiler-warnings/compiler-warning-level-1-c4621.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4623](../../error-messages/compiler-warnings/compiler-warning-level-4-c4623.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4624](../../error-messages/compiler-warnings/compiler-warning-level-1-c4624.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4625](../../error-messages/compiler-warnings/compiler-warning-level-4-c4625.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4626](../../error-messages/compiler-warnings/compiler-warning-level-4-c4626.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4628](../../error-messages/compiler-warnings/compiler-warning-level-1-c4628.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4630](../Topic/Compiler%20Warning%20\(level%201\)%20C4630.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4632](../Topic/Compiler%20Warning%20\(level%201\)%20C4632.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4633](../../error-messages/compiler-warnings/compiler-warning-level-3-c4633.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4639](../../error-messages/compiler-warnings/compiler-warning-level-4-c4639.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4640](../../error-messages/compiler-warnings/compiler-warning-level-3-c4640.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4641](../../error-messages/compiler-warnings/compiler-warning-level-3-c4641.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4650](../Topic/Compiler%20Warning%20\(level%201\)%20C4650.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4651](../../error-messages/compiler-warnings/compiler-warning-level-1-c4651.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4652](../../error-messages/compiler-warnings/compiler-warning-level-1-c4652.md)  
-  
- [コンパイラの警告 \(レベル 2\) C4653](../../error-messages/compiler-warnings/compiler-warning-level-2-c4653.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4656](../../error-messages/compiler-warnings/compiler-warning-level-1-c4656.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4659](../../error-messages/compiler-warnings/compiler-warning-level-1-c4659.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4661](../../error-messages/compiler-warnings/compiler-warning-level-1-c4661.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4667](../../error-messages/compiler-warnings/compiler-warning-level-1-c4667.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4668](../../error-messages/compiler-warnings/compiler-warning-level-4-c4668.md)  
-  
- [Compiler Warning \(level 1\) C4669](../../error-messages/compiler-warnings/compiler-warning-level-1-c4669.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4673](../../error-messages/compiler-warnings/compiler-warning-level-4-c4673.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4677](../Topic/Compiler%20Warning%20\(level%201\)%20C4677.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4679](../../error-messages/compiler-warnings/compiler-warning-level-1-c4679.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4680](../../error-messages/compiler-warnings/compiler-warning-level-4-c4680.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4683](../../error-messages/compiler-warnings/compiler-warning-level-1-c4683.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4684](../../error-messages/compiler-warnings/compiler-warning-level-1-c4684.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4686](../../error-messages/compiler-warnings/compiler-warning-level-3-c4686.md)  
-  
- [コンパイラの警告 C4687](../Topic/Compiler%20Warning%20C4687.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4691](../../error-messages/compiler-warnings/compiler-warning-level-1-c4691.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4692](../../error-messages/compiler-warnings/compiler-warning-level-1-c4692.md)  
-  
- [コンパイラの警告 \(レベル 1 およびレベル 4\) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4701](../../error-messages/compiler-warnings/compiler-warning-level-4-c4701.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4702](../../error-messages/compiler-warnings/compiler-warning-level-4-c4702.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4703](../../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4706](../Topic/Compiler%20Warning%20\(level%204\)%20C4706.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4709](../../error-messages/compiler-warnings/compiler-warning-level-4-c4709.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4710](../../error-messages/compiler-warnings/compiler-warning-level-4-c4710.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4711](../../error-messages/compiler-warnings/compiler-warning-level-1-c4711.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4714](../../error-messages/compiler-warnings/compiler-warning-level-4-c4714.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4715](../../error-messages/compiler-warnings/compiler-warning-level-1-c4715.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4716](../../error-messages/compiler-warnings/compiler-warning-level-1-c4716.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4717](../../error-messages/compiler-warnings/compiler-warning-level-1-c4717.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4723](../../error-messages/compiler-warnings/compiler-warning-level-3-c4723.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4727](../Topic/Compiler%20Warning%20\(level%201\)%20C4727.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4730](../../error-messages/compiler-warnings/compiler-warning-level-1-c4730.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4731](../../error-messages/compiler-warnings/compiler-warning-level-1-c4731.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4733](../../error-messages/compiler-warnings/compiler-warning-level-1-c4733.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4738](../Topic/Compiler%20Warning%20\(Level%203\)%20C4738.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4740](../../error-messages/compiler-warnings/compiler-warning-level-4-c4740.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4742](../../error-messages/compiler-warnings/compiler-warning-level-1-c4742.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4743](../../error-messages/compiler-warnings/compiler-warning-level-1-c4743.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4744](../../error-messages/compiler-warnings/compiler-warning-level-1-c4744.md)  
-  
- [コンパイラの警告 C4746](../../error-messages/compiler-warnings/compiler-warning-c4746.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4747](../Topic/Compiler%20Warning%20\(level%201\)%20C4747.md)  
-  
- [コンパイラの警告 \(レベル 2\) C4756](../Topic/Compiler%20Warning%20\(level%202\)%20C4756.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4772](../../error-messages/compiler-warnings/compiler-warning-level-1-c4772.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4788](../../error-messages/compiler-warnings/compiler-warning-level-1-c4788.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4789](../../error-messages/compiler-warnings/compiler-warning-level-1-c4789.md)  
-  
- [コンパイラの警告 \(レベル 1 および 3\) C4793](../../error-messages/compiler-warnings/compiler-warning-level-1-and-3-c4793.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4799](../Topic/Compiler%20Warning%20\(level%201\)%20C4799.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4800](../../error-messages/compiler-warnings/compiler-warning-level-3-c4800.md)  
-  
- [コンパイラの警告 C4801](../../error-messages/compiler-warnings/compiler-warning-c4801.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4803](../../error-messages/compiler-warnings/compiler-warning-level-1-c4803.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4804](../../error-messages/compiler-warnings/compiler-warning-level-1-c4804.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4815](../../error-messages/compiler-warnings/compiler-warning-level-4-c4815.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4819](../../error-messages/compiler-warnings/compiler-warning-level-1-c4819.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4820](../Topic/Compiler%20Warning%20\(level%204\)%20C4820.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4821](../Topic/Compiler%20Warning%20\(level%201\)%20C4821.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4823](../Topic/Compiler%20Warning%20\(level%203\)%20C4823.md)  
-  
- [コンパイラの警告 \(レベル 2\) C4826](../../error-messages/compiler-warnings/compiler-warning-level-2-c4826.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4829](../../error-messages/compiler-warnings/compiler-warning-level-1-c4829.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4835](../Topic/Compiler%20Warning%20\(level%201\)%20C4835.md)  
-  
- [コンパイラの警告 C4867](../../error-messages/compiler-warnings/compiler-warning-c4867.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4905](../../error-messages/compiler-warnings/compiler-warning-level-1-c4905.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4906](../../error-messages/compiler-warnings/compiler-warning-level-1-c4906.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4917](../../error-messages/compiler-warnings/compiler-warning-level-1-c4917.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4927](../../error-messages/compiler-warnings/compiler-warning-level-1-c4927.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4928](../Topic/Compiler%20Warning%20\(level%201\)%20C4928.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4929](../../error-messages/compiler-warnings/compiler-warning-level-1-c4929.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4930](../../error-messages/compiler-warnings/compiler-warning-level-1-c4930.md)  
-  
- [コンパイラの警告 \(レベル 4\) C4931](../../error-messages/compiler-warnings/compiler-warning-level-4-c4931.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4945](../Topic/Compiler%20Warning%20\(level%201\)%20C4945.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4946](../../error-messages/compiler-warnings/compiler-warning-level-1-c4946.md)  
-  
- [コンパイラの警告 \(レベル 2\) C4948](../../error-messages/compiler-warnings/compiler-warning-level-2-c4948.md)  
-  
- [コンパイラの警告 \(レベル 1 およびレベル 4\) C4949](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4949.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4964](../../error-messages/compiler-warnings/compiler-warning-level-1-c4964.md)  
-  
- [コンパイラの警告 \(レベル 1\) C4965](../Topic/Compiler%20Warning%20\(level%201\)%20C4965.md)  
-  
- [コンパイラの警告 C4986](../../error-messages/compiler-warnings/compiler-warning-c4986.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4995](../../error-messages/compiler-warnings/compiler-warning-level-3-c4995.md)  
-  
- [コンパイラの警告 \(レベル 3\) C4996](../../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)
+---
+# <a name="compiler-warnings-c4600-through-c4799"></a>コンパイラの警告 C4600 C4799 から
+ドキュメントのこの部分の記事には、Visual C コンパイラの警告のサブセットについてを説明します。 ここでの情報にアクセスするまたは、Visual Studio の [出力] ウィンドウで、エラー番号を選択し、F1 キーを押します。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]エラーまたは警告は、MSDN に記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+## <a name="in-this-section"></a>このセクションの内容  
+  
+|警告|メッセージ|  
+|-------------|-------------|  
+|[コンパイラの警告 (レベル 1) C4600](../../error-messages/compiler-warnings/compiler-warning-level-1-c4600.md)|#プラグマ 'macro name': 有効な空でない文字列が必要です|  
+|コンパイラの警告 (レベル 1) C4602|#プラグマ pop_macro: 'macro name' この識別子の前の #pragma push_macro がありません|  
+|コンパイラの警告 (レベル 1) C4603|'\<識別子 >': マクロが定義されていないか、プリコンパイル済みヘッダーを使用している定義とは異なります|  
+|[コンパイラの警告 (レベル 1) C4606](../../error-messages/compiler-warnings/compiler-warning-level-1-c4606.md)|#pragma 警告: '警告番号' が無視されます。コード分析の警告が警告レベルと関連付けられていません。|  
+|[コンパイラの警告 (レベル 3) C4608](../../error-messages/compiler-warnings/compiler-warning-level-3-c4608.md)|'union_member' は既に初期化子リスト 'union_member' 内の他の共用体メンバーにより初期化されています。|  
+|コンパイラの警告 (レベル 3) C4609|'%$S' は、既定のインターフェイス型 '%$S' の ' %$S' から派生します。 '%$S' に異なる既定インターフェイスを使用または基本/派生リレーションシップを中断します。|  
+|[コンパイラの警告 (レベル 4) C4610](../../error-messages/compiler-warnings/compiler-warning-level-4-c4610.md)|'class' のオブジェクトを初期化できません。 - ユーザーに必要なコンス トラクターが定義されています。|  
+|[コンパイラの警告 (レベル 4) C4611](../../error-messages/compiler-warnings/compiler-warning-level-4-c4611.md)|'function' と C++ オブジェクト デストラクション間の対話は互換性がありません。|  
+|コンパイラの警告 (レベル 1) C4612|インクルード ファイル名にエラーがあります|  
+|コンパイラの警告 (レベル 1) C4613|'%$S': セグメントのクラスは変更できません。|  
+|[コンパイラの警告 (レベル 1) C4615](../../error-messages/compiler-warnings/compiler-warning-level-1-c4615.md)|#pragma 警告: 不明な警告型|  
+|[コンパイラの警告 (レベル 1) C4616](../../error-messages/compiler-warnings/compiler-warning-level-1-c4616.md)|#pragma 警告: 警告番号 'number' 有効なコンパイラ警告ではありません|  
+|[コンパイラの警告 (レベル 1) C4618](../../error-messages/compiler-warnings/compiler-warning-level-1-c4618.md)|プラグマのパラメーターに空の文字列があります。プラグマは無視されます。|  
+|[コンパイラの警告 (レベル 3) C4619](../../error-messages/compiler-warnings/compiler-warning-level-3-c4619.md)|#pragma 警告: 警告番号 'number' がありません|  
+|コンパイラの警告 (レベル 1) C4620|型 'type' に対して後置形式の 'operator ++' は見つかりません。前置形式を使用します|  
+|[コンパイラの警告 (レベル 1) C4621](../../error-messages/compiler-warnings/compiler-warning-level-1-c4621.md)|'operator--' を型 'type'、前置形式を使用して見つかったありません後置形式|  
+|コンパイラの警告 (レベル 3) C4622|オブジェクト ファイルでプリコンパイル済みヘッダーの作成中にデバッグ情報を上書きされました: 'file'|  
+|[コンパイラの警告 (レベル 4) C4623](../../error-messages/compiler-warnings/compiler-warning-level-4-c4623.md)|'derived class': 基底クラスの既定のコンス トラクターがアクセスできないか削除されたために、削除、既定のコンス トラクターは暗黙的に定義|  
+|[コンパイラの警告 (レベル 1) C4624](../../error-messages/compiler-warnings/compiler-warning-level-1-c4624.md)|'derived class': 基底クラスのデストラクターがアクセスできないか削除されたために、削除、デストラクターは暗黙的に定義|  
+|[コンパイラの警告 (レベル 4) C4625](../../error-messages/compiler-warnings/compiler-warning-level-4-c4625.md)|'derived class': 基底クラスのコピー コンス トラクターがアクセスできないか削除されたために、削除、コピー コンス トラクターは暗黙的に定義|  
+|[コンパイラの警告 (レベル 4) C4626](../../error-messages/compiler-warnings/compiler-warning-level-4-c4626.md)|'derived class': 基底クラスの代入演算子がアクセスできないか削除されたために、削除、代入演算子が暗黙的に定義|  
+|[コンパイラの警告 (レベル 1) C4627](../../error-messages/compiler-warnings/compiler-warning-level-1-c4627.md)|'\<識別子 >': プリコンパイル済みヘッダーの使用を探しているときにスキップ|  
+|[コンパイラの警告 (レベル 1) C4628](../../error-messages/compiler-warnings/compiler-warning-level-1-c4628.md)|digraphs は -Ze でサポートされていません。 文字のシーケンス 'digraph' は '%s' の代替トークンとして解釈されません。|  
+|コンパイラの警告 (レベル 4) C4629|digraph が使用されました。文字のシーケンス 'digraph' はトークン 'char' として解釈されます。(これが意図でない場合は、2 文字の間にスペースを挿入してください)|  
+|[コンパイラの警告 (レベル 1) C4630](../../error-messages/compiler-warnings/compiler-warning-level-1-c4630.md)|'symbol': 'extern' ストレージ クラス指定子のメンバーの定義が無効です|  
+|コンパイラの警告 (レベル 2) C4631|MSXML または XPath は使用できません。XML ドキュメント コメントは処理されません。 理由|  
+|[コンパイラの警告 (レベル 1) C4632](../../error-messages/compiler-warnings/compiler-warning-level-1-c4632.md)|XML ドキュメント コメント: ファイルのアクセスが拒否されました: 理由|  
+|[コンパイラの警告 (レベル 3) C4633](../../error-messages/compiler-warnings/compiler-warning-level-3-c4633.md)|XML ドキュメント コメント ターゲット: エラー: 理由|  
+|コンパイラの警告 (レベル 4) C4634|XML ドキュメント コメント ターゲット: 適用できません: 理由|  
+|コンパイラの警告 (レベル 3) C4635|XML ドキュメント コメント対象: XML の形式が正しくありません: 理由|  
+|コンパイラの警告 (レベル 3) C4636|構築するために適用された XML ドキュメント コメント: タグには、空でない 'attribute' 属性が必要です。|  
+|コンパイラの警告 (レベル 3 および 4) C4637|XML ドキュメント コメント ターゲット:\<含める > タグは破棄されます。 理由|  
+|コンパイラの警告 (レベル 3) C4638|XML ドキュメント コメント ターゲット: 不明なシンボル 'symbol' への参照。|  
+|[コンパイラの警告 (レベル 4) C4639](../../error-messages/compiler-warnings/compiler-warning-level-4-c4639.md)|MSXML エラーの場合は、XML ドキュメント コメントは処理されません。 理由|  
+|[コンパイラの警告 (レベル 3) C4640](../../error-messages/compiler-warnings/compiler-warning-level-3-c4640.md)|'instance': ローカル スタティック オブジェクトの構築がスレッド セーフではありません。|  
+|[コンパイラの警告 (レベル 3) C4641](../../error-messages/compiler-warnings/compiler-warning-level-3-c4641.md)|XML ドキュメント コメントはあいまいな相互参照を含んでいます:|  
+|コンパイラの警告 (レベル 3) C4645|__declspec(noreturn) で宣言された関数に return ステートメントがあります。|  
+|コンパイラの警告 (レベル 3) C4646|__declspec(noreturn) で宣言された関数に、non-void 戻り値の型があります。|  
+|[コンパイラの警告 (レベル 1) C4650](../../error-messages/compiler-warnings/compiler-warning-level-1-c4650.md)|デバッグ情報がプリコンパイル済ヘッダーにありません。ヘッダーからのグローバル シンボルのみ利用できます。|  
+|[コンパイラの警告 (レベル 1) C4651](../../error-messages/compiler-warnings/compiler-warning-level-1-c4651.md)|'定義' プリコンパイル済みヘッダーに定義されていますが、現在のコンパイルではありません。|  
+|[コンパイラの警告 (レベル 1) C4652](../../error-messages/compiler-warnings/compiler-warning-level-1-c4652.md)|コンパイラ オプション 'option' はプリコンパイル済みヘッダーです。現在のコマンド ライン オプションは、プリコンパイル済みヘッダーで定義されているをよりも優先されます。|  
+|[コンパイラの警告 (レベル 2) C4653](../../error-messages/compiler-warnings/compiler-warning-level-2-c4653.md)|コンパイラ オプション 'option' はプリコンパイル済みヘッダーです。現在のコマンド ライン オプションが無視されます。|  
+|コンパイラの警告 (レベル 1) C4655|'symbol': 変数の型が最新のビルドから新規または個所で異なる定義|  
+|[コンパイラの警告 (レベル 1) C4656](../../error-messages/compiler-warnings/compiler-warning-level-1-c4656.md)|'symbol': データ型の新しいは、最新のビルド以降に変更された、または個所で異なる定義|  
+|コンパイラの警告 (レベル 1) C4657|前回のビルド以降新規に追加されたデータ型が数式に含まれています|  
+|コンパイラの警告 (レベル 1) C4658|'function': 関数プロトタイプが最新のビルドから新規または別の場所が異なる宣言されています。|  
+|[コンパイラの警告 (レベル 1) C4659](../../error-messages/compiler-warnings/compiler-warning-level-1-c4659.md)|#プラグマ ': 予約されたセグメント 'segment' の使用には、動作が定義されていませんが、#pragma comment (linker,...) を使用します。|  
+|[コンパイラの警告 (レベル 1) C4661](../../error-messages/compiler-warnings/compiler-warning-level-1-c4661.md)|'identifier': 明示的なテンプレート インスタンス化要求に適切な定義がありません。|  
+|コンパイラの警告 (レベル 1) C4662|明示的なインスタンス化。テンプレート クラス 'identifier1' に 'identifier2' を特定する定義がありません|  
+|[コンパイラの警告 (レベル 1) C4667](../../error-messages/compiler-warnings/compiler-warning-level-1-c4667.md)|'function': 強制インスタンス化に一致するように定義された関数テンプレートはありません|  
+|[コンパイラの警告 (レベル 4) C4668](../../error-messages/compiler-warnings/compiler-warning-level-4-c4668.md)|'symbol' が '0' を 'directive' に置換するプリプロセッサ マクロとして定義されていません|  
+|[コンパイラの警告 (レベル 1) C4669](../../error-messages/compiler-warnings/compiler-warning-level-1-c4669.md)|'cast': 安全でない変換: 'class' はマネージ型のオブジェクト|  
+|コンパイラの警告 (レベル 4) C4670|'identifier': この基本クラスはアクセスできません|  
+|コンパイラの警告 (レベル 4) C4671|'identifier': コピー コンス トラクターがアクセス可能ではありません|  
+|コンパイラの警告 (レベル 4) C4672|'identifier1': あいまいです。 1 つ目を 'identifier2' とします。|  
+|[コンパイラの警告 (レベル 4) C4673](../../error-messages/compiler-warnings/compiler-warning-level-4-c4673.md)|次の種類 'identifier' がスローされることは考慮されません catch サイト|  
+|コンパイラの警告 (レベル 1) C4674|'method' は宣言された 'static' であり、パラメーターを 1 つだけ持たなければなりません。|  
+|コンパイラの警告 (レベル 4) C4676|'%s': デストラクターにアクセスできません。|  
+|[コンパイラの警告 (レベル 1) C4677](../../error-messages/compiler-warnings/compiler-warning-level-1-c4677.md)|'function': 公開されたメンバーのシグネチャには、アセンブリ プライベート型 'private_type' が含まれています。|  
+|コンパイラの警告 (レベル 1) C4678|基底クラス 'base_type' のアクセス可能性が 'derived_type' よりも小さい|  
+|[コンパイラの警告 (レベル 1) C4679](../../error-messages/compiler-warnings/compiler-warning-level-1-c4679.md)|'member': メンバーをインポートできませんでした|  
+|[コンパイラの警告 (レベル 4) C4680](../../error-messages/compiler-warnings/compiler-warning-level-4-c4680.md)|'class': コクラスは既定のインターフェイスを指定していません|  
+|コンパイラの警告 (レベル 4) C4681|'class': コクラスはイベント ソースである既定のインターフェイスを指定していません|  
+|コンパイラの警告 (レベル 4) C4682|'parameter': 方向性のあるパラメーター属性がいません指定すると、[入力]|  
+|[コンパイラの警告 (レベル 1) C4683](../../error-messages/compiler-warnings/compiler-warning-level-1-c4683.md)|'function': イベント ソースが 'out' のパラメーターです。複数のイベント ハンドラーをフックするときに注意します。|  
+|[コンパイラの警告 (レベル 1) C4684](../../error-messages/compiler-warnings/compiler-warning-level-1-c4684.md)|'attribute': 警告!! 属性が原因で、無効なコードの生成: 慎重に使用して|  
+|コンパイラの警告 (レベル 1) C4685|テンプレート パラメーターの解析中に '> >' が必要ですが、'>>' が見つかりました。|  
+|[コンパイラの警告 (レベル 3) C4686](../../error-messages/compiler-warnings/compiler-warning-level-3-c4686.md)|'user-defined type': 動作と UDT の戻り値の呼び出し規則に変更がある可能性があります。|  
+|[コンパイラの警告 C4687](../../error-messages/compiler-warnings/compiler-warning-c4687.md)|'class': シールされた抽象クラスはインターフェイス 'interface' を実装できません|  
+|コンパイラの警告 (レベル 1) C4688|'constraint': 制約リストはアセンブリ プライベート型 'type' を含んでいます|  
+|コンパイラの警告 (レベル 1) C4689|'%c': #pragma detect_mismatch にサポートされていない文字が含まれています。#pragma は無視されました|  
+|コンパイラの警告 (レベル 4) C4690|[emitidl (pop)]: ポップがプッシュ|  
+|[コンパイラの警告 (レベル 1) C4691](../../error-messages/compiler-warnings/compiler-warning-level-1-c4691.md)|'type': 参照されていないアセンブリ 'file'、代わりに使用される現在の翻訳単位で定義された型で参照される型が必要|  
+|[コンパイラの警告 (レベル 1) C4692](../../error-messages/compiler-warnings/compiler-warning-level-1-c4692.md)|'関数': 公開されたメンバーのシグネチャはアセンブリ プライベート ネイティブ型 'native_type' を含んでいます|  
+|コンパイラの警告 (レベル 1) C4693|'class': シールされた抽象クラスは任意のインスタンス メンバー 'インスタンス メンバー' できません|  
+|コンパイラの警告 (レベル 1) C4694|'class': シールされた抽象クラスは基底クラス 'base_class' を持つことはできません|  
+|コンパイラの警告 (レベル 1) C4695|#プラグマ execution_character_set: '文字セット' はサポートされている引数ではありません現在は 'utf-8' がサポートされています。。|  
+|コンパイラの警告 (レベル 1) C4696|/ZBvalue1 オプションは範囲です。'value2' と仮定した場合|  
+|[コンパイラの警告 (レベル 1 およびレベル 4) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md)|初期化されていないローカル変数 'name' の使用|  
+|[コンパイラの警告 (レベル 4) C4701](../../error-messages/compiler-warnings/compiler-warning-level-4-c4701.md)|初期化されていない可能性があるローカル変数 'name' の使用|  
+|[コンパイラの警告 (レベル 4) C4702](../../error-messages/compiler-warnings/compiler-warning-level-4-c4702.md)|制御が渡らないコードです。|  
+|[コンパイラの警告 (レベル 4) C4703](../../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md)|初期化されていない可能性のあるローカル ポインター変数 '%s' が使用されています|  
+|[コンパイラの警告 (レベル 4) C4706](../../error-messages/compiler-warnings/compiler-warning-level-4-c4706.md)|条件式の比較値は、代入の結果になっています。|  
+|[コンパイラの警告 (レベル 4) C4709](../../error-messages/compiler-warnings/compiler-warning-level-4-c4709.md)|コンマ演算子で分割された表現式が、配列のインデックスとして使われています。|  
+|[コンパイラの警告 (レベル 4) C4710](../../error-messages/compiler-warnings/compiler-warning-level-4-c4710.md)|'function': インライン関数ではありません。|  
+|[コンパイラの警告 (レベル 1) C4711](../../error-messages/compiler-warnings/compiler-warning-level-1-c4711.md)|関数 'function' が自動インライン展開を選択しました|  
+|[コンパイラの警告 (レベル 4) C4714](../../error-messages/compiler-warnings/compiler-warning-level-4-c4714.md)|関数 'function' がマークされています _ _forceinline としてインライン関数|  
+|[コンパイラの警告 (レベル 1) C4715](../../error-messages/compiler-warnings/compiler-warning-level-1-c4715.md)|'function': 値を返さないコントロール パスのすべて|  
+|[コンパイラの警告 (レベル 1) C4716](../../error-messages/compiler-warnings/compiler-warning-level-1-c4716.md)|'function': 値を返す必要があります|  
+|[コンパイラの警告 (レベル 1) C4717](../../error-messages/compiler-warnings/compiler-warning-level-1-c4717.md)|'function': すべてのコントロール パスに再帰的で、関数には、ランタイム スタック オーバーフローが発生します|  
+|コンパイラの警告 (レベル 4) C4718|'function call': 再帰呼び出しには、削除すると、副作用がありません|  
+|コンパイラの警告 (レベル 1) C4719|Qfast が指定されたときに、二重の定数が見つかりました。単一の精度を示すサフィックスとして、'f' を使用してください。|  
+|コンパイラの警告 (レベル 2) C4720|インライン アセンブラー レポート: 'message'|  
+|コンパイラの警告 (レベル 1) C4721|'function': 組み込み関数として使用できません。|  
+|コンパイラの警告 (レベル 1) C4722|'function': デストラクターに値がメモリ リークの可能性|  
+|[コンパイラの警告 (レベル 3) C4723](../../error-messages/compiler-warnings/compiler-warning-level-3-c4723.md)|除算の 2 番目のオペランドは、コンパイル時に 0 と評価され、不定の結果を返します。|  
+|コンパイラの警告 (レベル 3) C4724|剰余の 2 番目のオペランドは、コンパイル時に 0 と評価され、不定の結果を返します。|  
+|コンパイラの警告 (レベル 3) C4725|Pentium のモデルによっては、命令が不正確になります。|  
+|[コンパイラの警告 (レベル 1) C4727](../../error-messages/compiler-warnings/compiler-warning-level-1-c4727.md)|PCH obj_file_1 および obj_file_2 で検出された同じタイムスタンプを持つ pch_file をという名前です。  最初の PCH を使用します。|  
+|コンパイラの警告 (レベル 1) C4728|PCH 参照が必要なため、/Yl- オプションは無視されます|  
+|コンパイラの警告 (レベル 4) C4729|フロー グラフ ベースの警告の関数が大きすぎます。|  
+|[コンパイラの警告 (レベル 1) C4730](../../error-messages/compiler-warnings/compiler-warning-level-1-c4730.md)コンパイラの警告 (レベル 1) C4730|'main': _m64 と浮動小数点式が不適切なコードで発生する可能性があります|  
+|[コンパイラの警告 (レベル 1) C4731](../../error-messages/compiler-warnings/compiler-warning-level-1-c4731.md)|'pointer': フレーム ポインター レジスタ 'register' インライン アセンブラー コードによって変更されました。|  
+|コンパイラの警告 (レベル 1) C4732|このアーキテクチャでは暗黙的な '%s' はサポートされていません。|  
+|[コンパイラの警告 (レベル 1) C4733](../../error-messages/compiler-warnings/compiler-warning-level-1-c4733.md)|インライン asm は 'FS:0' に割り当てています: ハンドラーは安全なハンドラーとして登録されていません。|  
+|[コンパイラの警告 (レベル 3) C4738](../../error-messages/compiler-warnings/compiler-warning-level-3-c4738.md)|メモリに 32 ビットの浮動結果を格納します。パフォーマンスが低下する可能性があります|  
+|コンパイラの警告 (レベル 1) C4739|変数 'var' への参照はそのストレージ領域を超えています|  
+|[コンパイラの警告 (レベル 4) C4740](../../error-messages/compiler-warnings/compiler-warning-level-4-c4740.md)|インライン asm コードの内部または外部のフローは、グローバルな最適化を抑制します|  
+|[コンパイラの警告 (レベル 1) C4742](../../error-messages/compiler-warnings/compiler-warning-level-1-c4742.md)|'var' が 'file1' および 'file2' 内で異なるアラインメント: 番号と番号|  
+|[コンパイラの警告 (レベル 1) C4743](../../error-messages/compiler-warnings/compiler-warning-level-1-c4743.md)|'type' が 'file1' および 'file2' で別のサイズ: 数とバイト数です。|  
+|[コンパイラの警告 (レベル 1) C4744](../../error-messages/compiler-warnings/compiler-warning-level-1-c4744.md)|'var' が 'file1' および 'file2' で別の種類: 'type1' および 'type2'|  
+|[コンパイラの警告 C4746](../../error-messages/compiler-warnings/compiler-warning-c4746.md)|'%s' の揮発性アクセスは/volatile:\<iso (& a) #124; ms > 設定; _iso_volatile_load/store 組み込み関数の使用を検討してください|  
+|[コンパイラの警告 (レベル 1) C4747](../../error-messages/compiler-warnings/compiler-warning-level-1-c4747.md)|呼び出すマネージ 'entrypoint': マネージ コード DLL エントリ ポイントおよび DLL エントリ ポイントから到達した呼び出しを含むローダー ロック下で実行できません|  
+|コンパイラの警告 (レベル 1) C4750|'identifier': ループにインライン展開されている _alloca() を含む関数です|  
+|コンパイラの警告 (レベル 4) C4751|/arch:AVX はインライン ASM 内の Intel(R) ストリーミング SMID 拡張命令に対応していません|  
+|コンパイラの警告 (レベル 4) C4752|Intel(R) AVX 命令が見つかりました。/arch:AVX を使用することを検討してください|  
+|コンパイラの警告 (レベル 4) C4754|比較時 %s (%d) での算術演算の変換規則では、その 1 つの分岐が実行できないを意味します。 '%S' を '%s' (または %d バイトの類似する型) にキャストします。|  
+|コンパイラの警告 C4755|%S (%d) の比較での算術演算の変換規則では、インライン関数では、その 1 つの分岐を実行できませんを意味します。 '%S' を '%s' (または %d バイトの類似する型) にキャストします。|  
+|[コンパイラの警告 (レベル 2) C4756](../../error-messages/compiler-warnings/compiler-warning-level-2-c4756.md)|定数演算でオーバーフローを起こしました。|  
+|コンパイラの警告 (レベル 4) C4757|添字 が大きな unsigned の値です。負の定数を意図しましたか?|  
+|コンパイラの警告 (レベル 4) C4764|16 バイトを超えてキャッチ オブジェクトを割り当てることはできません|  
+|コンパイラの警告 (レベル 4) C4767|セクション名 '%s' が 8 文字を超えているため、リンカーによって切り詰められます|  
+|コンパイラの警告 C4770|部分的に検証された列挙型 '%s' がインデックスとして使用されています|  
+|[コンパイラの警告 (レベル 1) C4772](../../error-messages/compiler-warnings/compiler-warning-level-1-c4772.md)|#インポートが不足しているタイプ ライブラリ以外から型を参照' missing_type' プレース ホルダーとして使用します。|  
+|[コンパイラの警告 (レベル 1) C4788](../../error-messages/compiler-warnings/compiler-warning-level-1-c4788.md)|'identifier': 識別子は 'number' 文字に切り詰められました|  
+|[コンパイラの警告 (レベル 1) C4789](../../error-messages/compiler-warnings/compiler-warning-level-1-c4789.md)|バッファー 'identifier' (サイズが N バイト) でオーバーランが発生します。M バイトがオフセット L から書き込まれます|  
+|コンパイラの警告 (レベル 2) C4792|sysimport を使用して関数 '%s' が宣言され、ネイティブ コードから参照されました。インポート ライブラリはリンクする必要があります。|  
+|[コンパイラの警告 (レベル 1 および 3) C4793](../../error-messages/compiler-warnings/compiler-warning-level-1-and-3-c4793.md)|'function': ネイティブ: \n\t'reason としてコンパイル関数 '|  
+|コンパイラの警告 (レベル 1) C4794|スレッドのローカル ストレージ 変数 '%s' のセグメントが '%s' から '%s' に変更されました。|  
+|[コンパイラの警告 (レベル 1) C4799](../../error-messages/compiler-warnings/compiler-warning-level-1-c4799.md)|関数 'function' に EMMS 命令がありません。|

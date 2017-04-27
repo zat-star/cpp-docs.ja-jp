@@ -1,172 +1,195 @@
 ---
-title: "リンカー ツール エラーと警告 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エラー [C++]"
-  - "エラー [C++], リンカー"
-  - "リンカー [C++], エラーと警告"
+title: "リンカ ツール エラーと警告 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- errors [C++]
+- linker [C++], errors and warnings
+- errors [C++], linker
 ms.assetid: d4b12c0f-4dae-48b2-9b9e-fedf94c94cb0
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# リンカー ツール エラーと警告
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 55a178e48f6189a0159943c36a26c5179456343f
+ms.lasthandoff: 04/24/2017
 
-リンカー ツールのエラーと警告は、LINK、LIB、DUMPBIN、および EDITBIN が生成します。  特定のエラー メッセージに関するヘルプを表示するには、\[出力\] ウィンドウでエラー番号をクリックして F1 キーを押すか、または \[キーワード\] の **\[検索する文字列\]** ボックスにエラー番号を入力するか、次のリンクをクリックします。  
+---
+# <a name="linker-tools-errors-and-warnings"></a>リンカー ツール エラーと警告
+リンク、LIB、DUMPBIN、および EDITBIN は、これらのエラーと警告を生成します。 エラー番号は、出力ウィンドウの上にマウス ポインターをクリックするか特定のエラー メッセージに関するヘルプを表示し、内のエラー番号を入力、F1 キーを押して、**探します**ボックスに、インデックス、または次のリンクをクリックします。  
   
- [リンカ ツール エラー LNK1000](../../error-messages/tool-errors/linker-tools-error-lnk1000.md)  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]エラーまたは警告は、MSDN に記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
   
- [リンカ ツール エラー LNK1103](../../error-messages/tool-errors/linker-tools-error-lnk1103.md)  
+MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
- [リンカ ツール エラー LNK1104](../../error-messages/tool-errors/linker-tools-error-lnk1104.md)  
+## <a name="in-this-section"></a>このセクションの内容
   
- [リンカ ツール エラー LNK1106](../../error-messages/tool-errors/linker-tools-error-lnk1106.md)  
+ [リンカー ツール エラー LNK1000](../../error-messages/tool-errors/linker-tools-error-lnk1000.md)  
   
- [リンカ ツール エラー LNK1107](../../error-messages/tool-errors/linker-tools-error-lnk1107.md)  
+ [リンカー ツール エラー LNK1103](../../error-messages/tool-errors/linker-tools-error-lnk1103.md)  
   
- [リンカ ツール エラー LNK1112](../Topic/Linker%20Tools%20Error%20LNK1112.md)  
+ [リンカー ツール エラー LNK1104](../../error-messages/tool-errors/linker-tools-error-lnk1104.md)  
   
- [リンカ ツール エラー LNK1113](../../error-messages/tool-errors/linker-tools-error-lnk1113.md)  
+ [リンカー ツール エラー LNK1106](../../error-messages/tool-errors/linker-tools-error-lnk1106.md)  
   
- [リンカ ツール エラー LNK1120](../../error-messages/tool-errors/linker-tools-error-lnk1120.md)  
+ [リンカー ツール エラー LNK1107](../../error-messages/tool-errors/linker-tools-error-lnk1107.md)  
   
- [リンカ ツール エラー LNK1123](../../error-messages/tool-errors/linker-tools-error-lnk1123.md)  
+ [リンカー ツール エラー LNK1112](../../error-messages/tool-errors/linker-tools-error-lnk1112.md)  
   
- [リンカ ツール エラー LNK1127](../../error-messages/tool-errors/linker-tools-error-lnk1127.md)  
+ [リンカー ツール エラー LNK1113](../../error-messages/tool-errors/linker-tools-error-lnk1113.md)  
   
- [リンカ ツール エラー LNK1136](../../error-messages/tool-errors/linker-tools-error-lnk1136.md)  
+ [リンカー ツール エラー LNK1120](../../error-messages/tool-errors/linker-tools-error-lnk1120.md)  
   
- [リンカ ツール エラー LNK1140](../../error-messages/tool-errors/linker-tools-error-lnk1140.md)  
+ [リンカー ツール エラー LNK1123](../../error-messages/tool-errors/linker-tools-error-lnk1123.md)  
   
- [リンカ ツール エラー LNK1141](../../error-messages/tool-errors/linker-tools-error-lnk1141.md)  
+ [リンカー ツール エラー LNK1127](../../error-messages/tool-errors/linker-tools-error-lnk1127.md)  
   
- [リンカ ツール エラー LNK1143](../Topic/Linker%20Tools%20Error%20LNK1143.md)  
+ [リンカー ツール エラー LNK1136](../../error-messages/tool-errors/linker-tools-error-lnk1136.md)  
   
- [リンカ ツール エラー LNK1152](../../error-messages/tool-errors/linker-tools-error-lnk1152.md)  
+ [リンカー ツール エラー LNK1140](../../error-messages/tool-errors/linker-tools-error-lnk1140.md)  
   
- [リンカ ツール エラー LNK1158](../Topic/Linker%20Tools%20Error%20LNK1158.md)  
+ [リンカー ツール エラー LNK1141](../../error-messages/tool-errors/linker-tools-error-lnk1141.md)  
   
- [リンカ ツール エラー LNK1164](../Topic/Linker%20Tools%20Error%20LNK1164.md)  
+ [リンカー ツール エラー LNK1143](../../error-messages/tool-errors/linker-tools-error-lnk1143.md)  
   
- [リンカ ツール エラー LNK1166](../../error-messages/tool-errors/linker-tools-error-lnk1166.md)  
+ [リンカー ツール エラー LNK1152](../../error-messages/tool-errors/linker-tools-error-lnk1152.md)  
   
- [リンカ ツール エラー LNK1168](../../error-messages/tool-errors/linker-tools-error-lnk1168.md)  
+ [リンカー ツール エラー LNK1158](../../error-messages/tool-errors/linker-tools-error-lnk1158.md)  
   
- [リンカ ツール エラー LNK1169](../Topic/Linker%20Tools%20Error%20LNK1169.md)  
+ [リンカー ツール エラー LNK1164](../../error-messages/tool-errors/linker-tools-error-lnk1164.md)  
   
- [リンカ ツール エラー LNK1179](../../error-messages/tool-errors/linker-tools-error-lnk1179.md)  
+ [リンカー ツール エラー LNK1166](../../error-messages/tool-errors/linker-tools-error-lnk1166.md)  
   
- [リンカ ツール エラー LNK1181](../../error-messages/tool-errors/linker-tools-error-lnk1181.md)  
+ [リンカー ツール エラー LNK1168](../../error-messages/tool-errors/linker-tools-error-lnk1168.md)  
   
- [リンカ ツール エラー LNK1188](../../error-messages/tool-errors/linker-tools-error-lnk1188.md)  
+ [リンカー ツール エラー LNK1169](../../error-messages/tool-errors/linker-tools-error-lnk1169.md)  
   
- [リンカ ツール エラー LNK1189](../../error-messages/tool-errors/linker-tools-error-lnk1189.md)  
+ [リンカー ツール エラー LNK1179](../../error-messages/tool-errors/linker-tools-error-lnk1179.md)  
   
- [リンカ ツール エラー LNK1196](../../error-messages/tool-errors/linker-tools-error-lnk1196.md)  
+ [リンカー ツール エラー LNK1181](../../error-messages/tool-errors/linker-tools-error-lnk1181.md)  
   
- [リンカ ツール エラー LNK1200](../../error-messages/tool-errors/linker-tools-error-lnk1200.md)  
+ [リンカー ツール エラー LNK1188](../../error-messages/tool-errors/linker-tools-error-lnk1188.md)  
   
- [リンカ ツール エラー LNK1201](../../error-messages/tool-errors/linker-tools-error-lnk1201.md)  
+ [リンカー ツール エラー LNK1189](../../error-messages/tool-errors/linker-tools-error-lnk1189.md)  
   
- [リンカ ツール エラー LNK1211](../../error-messages/tool-errors/linker-tools-error-lnk1211.md)  
+ [リンカー ツール エラー LNK1196](../../error-messages/tool-errors/linker-tools-error-lnk1196.md)  
   
- [リンカ ツール エラー LNK1215](../../error-messages/tool-errors/linker-tools-error-lnk1215.md)  
+ [リンカー ツール エラー LNK1200](../../error-messages/tool-errors/linker-tools-error-lnk1200.md)  
   
- [リンカ ツール エラー LNK1218](../../error-messages/tool-errors/linker-tools-error-lnk1218.md)  
+ [リンカー ツール エラー LNK1201](../../error-messages/tool-errors/linker-tools-error-lnk1201.md)  
   
- [リンカ ツール エラー LNK1221](../../error-messages/tool-errors/linker-tools-error-lnk1221.md)  
+ [リンカー ツール エラー LNK1211](../../error-messages/tool-errors/linker-tools-error-lnk1211.md)  
   
- [リンカ ツール エラー LNK1223](../../error-messages/tool-errors/linker-tools-error-lnk1223.md)  
+ [リンカー ツール エラー LNK1215](../../error-messages/tool-errors/linker-tools-error-lnk1215.md)  
   
- [リンカ ツール エラー LNK1224](../../error-messages/tool-errors/linker-tools-error-lnk1224.md)  
+ [リンカー ツール エラー LNK1218](../../error-messages/tool-errors/linker-tools-error-lnk1218.md)  
   
- [リンカ ツール エラー LNK1237](../../error-messages/tool-errors/linker-tools-error-lnk1237.md)  
+ [リンカー ツール エラー LNK1221](../../error-messages/tool-errors/linker-tools-error-lnk1221.md)  
   
- [リンカ ツール エラー LNK1240](../../error-messages/tool-errors/linker-tools-error-lnk1240.md)  
+ [リンカー ツール エラー LNK1223](../../error-messages/tool-errors/linker-tools-error-lnk1223.md)  
   
- [リンカ ツール エラー LNK1241](../../error-messages/tool-errors/linker-tools-error-lnk1241.md)  
+ [リンカー ツール エラー LNK1224](../../error-messages/tool-errors/linker-tools-error-lnk1224.md)  
   
- [リンカ ツール エラー LNK1245](../Topic/Linker%20Tools%20Error%20LNK1245.md)  
+ [リンカー ツール エラー LNK1237](../../error-messages/tool-errors/linker-tools-error-lnk1237.md)  
   
- [リンカ ツール エラー LNK1248](../../error-messages/tool-errors/linker-tools-error-lnk1248.md)  
+ [リンカー ツール エラー LNK1240](../../error-messages/tool-errors/linker-tools-error-lnk1240.md)  
   
- [リンカ ツール エラー LNK1256](../Topic/Linker%20Tools%20Error%20LNK1256.md)  
+ [リンカー ツール エラー LNK1241](../../error-messages/tool-errors/linker-tools-error-lnk1241.md)  
   
- [リンカ ツール エラー LNK1264](../Topic/Linker%20Tools%20Error%20LNK1264.md)  
+ [リンカー ツール エラー LNK1245](../../error-messages/tool-errors/linker-tools-error-lnk1245.md)  
   
- [リンカ ツール エラー LNK1277](../../error-messages/tool-errors/linker-tools-error-lnk1277.md)  
+ [リンカー ツール エラー LNK1248](../../error-messages/tool-errors/linker-tools-error-lnk1248.md)  
   
- [リンカ ツール エラー LNK1282](../../error-messages/tool-errors/linker-tools-error-lnk1282.md)  
+ [リンカー ツール エラー LNK1256](../../error-messages/tool-errors/linker-tools-error-lnk1256.md)  
   
- [リンカ ツール エラー LNK1287](../Topic/Linker%20Tools%20Error%20LNK1287.md)  
+ [リンカー ツール エラー LNK1264](../../error-messages/tool-errors/linker-tools-error-lnk1264.md)  
   
- [リンカ ツール エラー LNK1296](../../error-messages/tool-errors/linker-tools-error-lnk1296.md)  
+ [リンカー ツール エラー LNK1277](../../error-messages/tool-errors/linker-tools-error-lnk1277.md)  
   
- [リンカ ツール エラー LNK1301](../Topic/Linker%20Tools%20Error%20LNK1301.md)  
+ [リンカー ツール エラー LNK1282](../../error-messages/tool-errors/linker-tools-error-lnk1282.md)  
   
- [リンカ ツール エラー LNK1302](../../error-messages/tool-errors/linker-tools-error-lnk1302.md)  
+ [リンカー ツール エラー LNK1287](../../error-messages/tool-errors/linker-tools-error-lnk1287.md)  
   
- [リンカ ツール エラー LNK1306](../../error-messages/tool-errors/linker-tools-error-lnk1306.md)  
+ [リンカー ツール エラー LNK1296](../../error-messages/tool-errors/linker-tools-error-lnk1296.md)  
   
- [リンカ ツール エラー LNK1309](../../error-messages/tool-errors/linker-tools-error-lnk1309.md)  
+ [リンカー ツール エラー LNK1301](../../error-messages/tool-errors/linker-tools-error-lnk1301.md)  
   
- [リンカ ツール エラー LNK1312](../../error-messages/tool-errors/linker-tools-error-lnk1312.md)  
+ [リンカー ツール エラー LNK1302](../../error-messages/tool-errors/linker-tools-error-lnk1302.md)  
   
- [リンカ ツール エラー LNK1313](../../error-messages/tool-errors/linker-tools-error-lnk1313.md)  
+ [リンカー ツール エラー LNK1306](../../error-messages/tool-errors/linker-tools-error-lnk1306.md)  
   
- [リンカ ツール エラー LNK1314](../../error-messages/tool-errors/linker-tools-error-lnk1314.md)  
+ [リンカー ツール エラー LNK1309](../../error-messages/tool-errors/linker-tools-error-lnk1309.md)  
   
- [リンカ ツール エラー LNK1332](../../error-messages/tool-errors/linker-tools-error-lnk1332.md)  
+ [リンカー ツール エラー LNK1312](../../error-messages/tool-errors/linker-tools-error-lnk1312.md)  
   
- [リンカ ツール エラー LNK1561](../../error-messages/tool-errors/linker-tools-error-lnk1561.md)  
+ [リンカー ツール エラー LNK1313](../../error-messages/tool-errors/linker-tools-error-lnk1313.md)  
   
- [リンカ ツール エラー LNK2001](../Topic/Linker%20Tools%20Error%20LNK2001.md)  
+ [リンカー ツール エラー LNK1314](../../error-messages/tool-errors/linker-tools-error-lnk1314.md)  
   
- [リンカ ツール エラー LNK2004](../Topic/Linker%20Tools%20Error%20LNK2004.md)  
+ [リンカー ツール エラー LNK1332](../../error-messages/tool-errors/linker-tools-error-lnk1332.md)  
   
- [リンカ ツール エラー LNK2005](../../error-messages/tool-errors/linker-tools-error-lnk2005.md)  
+ [リンカー ツール エラー LNK1561](../../error-messages/tool-errors/linker-tools-error-lnk1561.md)  
   
- [リンカ ツール エラー LNK2008](../../error-messages/tool-errors/linker-tools-error-lnk2008.md)  
+ [リンカー ツール エラー LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md)  
   
- [リンカ ツール エラー LNK2011](../../error-messages/tool-errors/linker-tools-error-lnk2011.md)  
+ [リンカー ツール エラー LNK2004](../../error-messages/tool-errors/linker-tools-error-lnk2004.md)  
   
- [リンカ ツール エラー LNK2013](../../error-messages/tool-errors/linker-tools-error-lnk2013.md)  
+ [リンカー ツール エラー LNK2005](../../error-messages/tool-errors/linker-tools-error-lnk2005.md)  
   
- [リンカ ツール エラー LNK2017](../Topic/Linker%20Tools%20Error%20LNK2017.md)  
+ [リンカー ツール エラー LNK2008](../../error-messages/tool-errors/linker-tools-error-lnk2008.md)  
   
- [リンカ ツール エラー LNK2019](../Topic/Linker%20Tools%20Error%20LNK2019.md)  
+ [リンカー ツール エラー LNK2011](../../error-messages/tool-errors/linker-tools-error-lnk2011.md)  
   
- [リンカ ツール エラー LNK2020](../../error-messages/tool-errors/linker-tools-error-lnk2020.md)  
+ [リンカー ツール エラー LNK2013](../../error-messages/tool-errors/linker-tools-error-lnk2013.md)  
   
- [リンカ ツール エラー LNK2022](../../error-messages/tool-errors/linker-tools-error-lnk2022.md)  
+ [リンカー ツール エラー LNK2017](../../error-messages/tool-errors/linker-tools-error-lnk2017.md)  
   
- [リンカ ツール エラー LNK2023](../../error-messages/tool-errors/linker-tools-error-lnk2023.md)  
+ [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)  
   
- [リンカ ツール エラー LNK2026](../../error-messages/tool-errors/linker-tools-error-lnk2026.md)  
+ [リンカー ツール エラー LNK2020](../../error-messages/tool-errors/linker-tools-error-lnk2020.md)  
   
- [リンカ ツール エラー LNK2027](../../error-messages/tool-errors/linker-tools-error-lnk2027.md)  
+ [リンカー ツール エラー LNK2022](../../error-messages/tool-errors/linker-tools-error-lnk2022.md)  
   
- [リンカ ツール エラー LNK2028](../../error-messages/tool-errors/linker-tools-error-lnk2028.md)  
+ [リンカー ツール エラー LNK2023](../../error-messages/tool-errors/linker-tools-error-lnk2023.md)  
   
- [リンカ ツール エラー LNK2031](../../error-messages/tool-errors/linker-tools-error-lnk2031.md)  
+ [リンカー ツール エラー LNK2026](../../error-messages/tool-errors/linker-tools-error-lnk2026.md)  
   
- [リンカ ツール エラー LNK2033](../../error-messages/tool-errors/linker-tools-error-lnk2033.md)  
+ [リンカー ツール エラー LNK2027](../../error-messages/tool-errors/linker-tools-error-lnk2027.md)  
   
- [リンカ ツール エラー LNK2039](../../error-messages/tool-errors/linker-tools-error-lnk2039.md)  
+ [リンカー ツール エラー LNK2028](../../error-messages/tool-errors/linker-tools-error-lnk2028.md)  
   
- [リンカー ツールの警告 LNK4001](../Topic/Linker%20Tools%20Warning%20LNK4001.md)  
+ [リンカー ツール エラー LNK2031](../../error-messages/tool-errors/linker-tools-error-lnk2031.md)  
+  
+ [リンカー ツール エラー LNK2033](../../error-messages/tool-errors/linker-tools-error-lnk2033.md)  
+  
+ [リンカー ツール エラー LNK2039](../../error-messages/tool-errors/linker-tools-error-lnk2039.md)  
+  
+ [リンカー ツールの警告 LNK4001](../../error-messages/tool-errors/linker-tools-warning-lnk4001.md)  
   
  [リンカー ツールの警告 LNK4002](../../error-messages/tool-errors/linker-tools-warning-lnk4002.md)  
   
@@ -190,57 +213,57 @@ caps.handback.revision: 15
   
  [リンカー ツールの警告 LNK4071](../../error-messages/tool-errors/linker-tools-warning-lnk4071.md)  
   
- [リンカー ツールの警告 LNK4073](../Topic/Linker%20Tools%20Warning%20LNK4073.md)  
+ [リンカー ツールの警告 LNK4073](../../error-messages/tool-errors/linker-tools-warning-lnk4073.md)  
   
  [リンカー ツールの警告 LNK4075](../../error-messages/tool-errors/linker-tools-warning-lnk4075.md)  
   
  [リンカー ツールの警告 LNK4076](../../error-messages/tool-errors/linker-tools-warning-lnk4076.md)  
   
- [リンカー ツールの警告 LNK4078](../Topic/Linker%20Tools%20Warning%20LNK4078.md)  
+ [リンカー ツールの警告 LNK4078](../../error-messages/tool-errors/linker-tools-warning-lnk4078.md)  
   
  [リンカー ツールの警告 LNK4086](../../error-messages/tool-errors/linker-tools-warning-lnk4086.md)  
   
- [リンカー ツールの警告 LNK4092](../Topic/Linker%20Tools%20Warning%20LNK4092.md)  
+ [リンカー ツールの警告 LNK4092](../../error-messages/tool-errors/linker-tools-warning-lnk4092.md)  
   
  [リンカー ツールの警告 LNK4096](../../error-messages/tool-errors/linker-tools-warning-lnk4096.md)  
   
  [リンカー ツールの警告 LNK4098](../../error-messages/tool-errors/linker-tools-warning-lnk4098.md)  
   
- [リンカー ツールの警告 LNK4099](../Topic/Linker%20Tools%20Warning%20LNK4099.md)  
+ [リンカー ツールの警告 LNK4099](../../error-messages/tool-errors/linker-tools-warning-lnk4099.md)  
   
  [リンカー ツールの警告 LNK4102](../../error-messages/tool-errors/linker-tools-warning-lnk4102.md)  
   
  [リンカー ツールの警告 LNK4104](../../error-messages/tool-errors/linker-tools-warning-lnk4104.md)  
   
- [リンカー ツールの警告 LNK4105](../Topic/Linker%20Tools%20Warning%20LNK4105.md)  
+ [リンカー ツールの警告 LNK4105](../../error-messages/tool-errors/linker-tools-warning-lnk4105.md)  
   
  [リンカー ツールの警告 LNK4194](../../error-messages/tool-errors/linker-tools-warning-lnk4194.md)  
   
- [リンカー ツールの警告 LNK4197](../Topic/Linker%20Tools%20Warning%20LNK4197.md)  
+ [リンカー ツールの警告 LNK4197](../../error-messages/tool-errors/linker-tools-warning-lnk4197.md)  
   
  [リンカー ツールの警告 LNK4199](../../error-messages/tool-errors/linker-tools-warning-lnk4199.md)  
   
- [リンカー ツールの警告 LNK4200](../Topic/Linker%20Tools%20Warning%20LNK4200.md)  
+ [リンカー ツールの警告 LNK4200](../../error-messages/tool-errors/linker-tools-warning-lnk4200.md)  
   
  [リンカー ツールの警告 LNK4204](../../error-messages/tool-errors/linker-tools-warning-lnk4204.md)  
   
- [リンカー ツールの警告 LNK4205](../Topic/Linker%20Tools%20Warning%20LNK4205.md)  
+ [リンカー ツールの警告 LNK4205](../../error-messages/tool-errors/linker-tools-warning-lnk4205.md)  
   
  [リンカー ツールの警告 LNK4206](../../error-messages/tool-errors/linker-tools-warning-lnk4206.md)  
   
- [リンカー ツールの警告 LNK4210](../Topic/Linker%20Tools%20Warning%20LNK4210.md)  
+ [リンカー ツールの警告 LNK4210](../../error-messages/tool-errors/linker-tools-warning-lnk4210.md)  
   
  [リンカー ツールの警告 LNK4216](../../error-messages/tool-errors/linker-tools-warning-lnk4216.md)  
   
  [リンカー ツールの警告 LNK4217](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md)  
   
- [リンカー ツールの警告 LNK4219](../Topic/Linker%20Tools%20Warning%20LNK4219.md)  
+ [リンカー ツールの警告 LNK4219](../../error-messages/tool-errors/linker-tools-warning-lnk4219.md)  
   
- [リンカー ツールの警告 LNK4220](../Topic/Linker%20Tools%20Warning%20LNK4220.md)  
+ [リンカー ツールの警告 LNK4220](../../error-messages/tool-errors/linker-tools-warning-lnk4220.md)  
   
  [リンカー ツールの警告 LNK4221](../../error-messages/tool-errors/linker-tools-warning-lnk4221.md)  
   
- [リンカー ツールの警告 LNK4222](../Topic/Linker%20Tools%20Warning%20LNK4222.md)  
+ [リンカー ツールの警告 LNK4222](../../error-messages/tool-errors/linker-tools-warning-lnk4222.md)  
   
  [リンカー ツールの警告 LNK4224](../../error-messages/tool-errors/linker-tools-warning-lnk4224.md)  
   

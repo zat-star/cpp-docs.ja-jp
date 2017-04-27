@@ -8,6 +8,44 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: error-reference
+f1_keywords:
+- C2716
+- C2717
+- C2727
+- C2729
+- C2737
+- C2740
+- C2741
+- C2742
+- C2744
+- C2746
+- C2747
+- C2759
+- C2763
+- C2769
+- C2772
+- C2789
+- C2796
+- C2799
+helpviewer_keywords:
+- C2716
+- C2717
+- C2727
+- C2729
+- C2737
+- C2740
+- C2741
+- C2742
+- C2744
+- C2746
+- C2747
+- C2759
+- C2763
+- C2769
+- C2772
+- C2789
+- C2796
+- C2799
 dev_langs:
 - C++
 ms.assetid: 6ee257bb-94bc-42b9-af2c-3c73926afba4
@@ -30,164 +68,119 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: fd86815cb1f3ef215805bdb96449cb8b7a9b322a
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 02bfc54853aea219b4ff0a08231e73fb53550a37
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="compiler-errors-c2700-through-c2799"></a>コンパイラ エラー C2700 C2799 から
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **[出力]** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
-  
- [コンパイラ エラー C2701](../../error-messages/compiler-errors-2/compiler-error-c2701.md)  
-  
- [コンパイラ エラー C2702](../../error-messages/compiler-errors-2/compiler-error-c2702.md)  
-  
- [コンパイラ エラー C2703](../../error-messages/compiler-errors-2/compiler-error-c2703.md)  
-  
- [コンパイラ エラー C2705](../../error-messages/compiler-errors-2/compiler-error-c2705.md)  
-  
- [コンパイラ エラー C2706](../../error-messages/compiler-errors-2/compiler-error-c2706.md)  
-  
- [コンパイラ エラー C2707](../../error-messages/compiler-errors-2/compiler-error-c2707.md)  
-  
- [コンパイラ エラー C2708](../../error-messages/compiler-errors-2/compiler-error-c2708.md)  
-  
- [コンパイラ エラー C2710](../../error-messages/compiler-errors-2/compiler-error-c2710.md)  
-  
- [コンパイラ エラー C2711](../../error-messages/compiler-errors-2/compiler-error-c2711.md)  
-  
- [コンパイラ エラー C2712](../../error-messages/compiler-errors-2/compiler-error-c2712.md)  
-  
- [コンパイラ エラー C2713](../../error-messages/compiler-errors-2/compiler-error-c2713.md)  
-  
- [コンパイラ エラー C2714](../../error-messages/compiler-errors-2/compiler-error-c2714.md)  
-  
- [コンパイラ エラー C2715](../../error-messages/compiler-errors-2/compiler-error-c2715.md)  
-  
- [コンパイラ エラー C2718](../../error-messages/compiler-errors-2/compiler-error-c2718.md)  
-  
- [コンパイラ エラー C2719](../../error-messages/compiler-errors-2/compiler-error-c2719.md)  
-  
- [コンパイラ エラー C2720](../../error-messages/compiler-errors-2/compiler-error-c2720.md)  
-  
- [コンパイラ エラー C2721](../../error-messages/compiler-errors-2/compiler-error-c2721.md)  
-  
- [コンパイラ エラー C2722](../../error-messages/compiler-errors-2/compiler-error-c2722.md)  
-  
- [コンパイラ エラー C2723](../../error-messages/compiler-errors-2/compiler-error-c2723.md)  
-  
- [コンパイラ エラー C2724](../../error-messages/compiler-errors-2/compiler-error-c2724.md)  
-  
- [コンパイラ エラー C2725](../../error-messages/compiler-errors-2/compiler-error-c2725.md)  
-  
- [コンパイラ エラー C2726](../../error-messages/compiler-errors-2/compiler-error-c2726.md)  
-  
- [コンパイラ エラー C2728](../../error-messages/compiler-errors-2/compiler-error-c2728.md)  
-  
- [コンパイラ エラー C2731](../../error-messages/compiler-errors-2/compiler-error-c2731.md)  
-  
- [コンパイラ エラー C2732](../../error-messages/compiler-errors-2/compiler-error-c2732.md)  
-  
- [コンパイラ エラー C2733](../../error-messages/compiler-errors-2/compiler-error-c2733.md)  
-  
- [コンパイラ エラー C2734](../../error-messages/compiler-errors-2/compiler-error-c2734.md)  
-  
- [コンパイラ エラー C2735](../../error-messages/compiler-errors-2/compiler-error-c2735.md)  
-  
- [コンパイラ エラー C2736](../../error-messages/compiler-errors-2/compiler-error-c2736.md)  
-  
- [コンパイラ エラー C2738](../../error-messages/compiler-errors-2/compiler-error-c2738.md)  
-  
- [コンパイラ エラー C2739](../../error-messages/compiler-errors-2/compiler-error-c2739.md)  
-  
- [コンパイラ エラー C2743](../../error-messages/compiler-errors-2/compiler-error-c2743.md)  
-  
- [コンパイラ エラー C2745](../../error-messages/compiler-errors-2/compiler-error-c2745.md)  
-  
- [コンパイラ エラー C2748](../../error-messages/compiler-errors-2/compiler-error-c2748.md)  
-  
- [コンパイラ エラー C2749](../../error-messages/compiler-errors-2/compiler-error-c2749.md)  
-  
- [コンパイラ エラー C2750](../../error-messages/compiler-errors-2/compiler-error-c2750.md)  
-  
- [コンパイラ エラー C2751](../../error-messages/compiler-errors-2/compiler-error-c2751.md)  
-  
- [コンパイラ エラー C2752](../../error-messages/compiler-errors-2/compiler-error-c2752.md)  
-  
- [コンパイラ エラー C2753](../../error-messages/compiler-errors-2/compiler-error-c2753.md)  
-  
- [コンパイラ エラー C2754](../../error-messages/compiler-errors-2/compiler-error-c2754.md)  
-  
- [コンパイラ エラー C2755](../../error-messages/compiler-errors-2/compiler-error-c2755.md)  
-  
- [コンパイラ エラー C2756](../../error-messages/compiler-errors-2/compiler-error-c2756.md)  
-  
- [コンパイラ エラー C2757](../../error-messages/compiler-errors-2/compiler-error-c2757.md)  
-  
- [コンパイラ エラー C2758](../../error-messages/compiler-errors-2/compiler-error-c2758.md)  
-  
- [コンパイラ エラー C2760](../../error-messages/compiler-errors-2/compiler-error-c2760.md)  
-  
- [コンパイラ エラー C2761](../../error-messages/compiler-errors-2/compiler-error-c2761.md)  
-  
- [コンパイラ エラー C2762](../../error-messages/compiler-errors-2/compiler-error-c2762.md)  
-  
- [コンパイラ エラー C2764](../../error-messages/compiler-errors-2/compiler-error-c2764.md)  
-  
- [コンパイラ エラー C2765](../../error-messages/compiler-errors-2/compiler-error-c2765.md)  
-  
- [コンパイラ エラー C2766](../../error-messages/compiler-errors-2/compiler-error-c2766.md)  
-  
- [コンパイラ エラー C2767](../../error-messages/compiler-errors-2/compiler-error-c2767.md)  
-  
- [コンパイラ エラー C2768](../../error-messages/compiler-errors-2/compiler-error-c2768.md)  
-  
- [コンパイラ エラー C2770](../../error-messages/compiler-errors-2/compiler-error-c2770.md)  
-  
- [コンパイラ エラー C2773](../../error-messages/compiler-errors-2/compiler-error-c2773.md)  
-  
- [コンパイラ エラー C2774](../../error-messages/compiler-errors-2/compiler-error-c2774.md)  
-  
- [コンパイラ エラー C2775](../../error-messages/compiler-errors-2/compiler-error-c2775.md)  
-  
- [コンパイラ エラー C2776](../../error-messages/compiler-errors-2/compiler-error-c2776.md)  
-  
- [コンパイラ エラー C2777](../../error-messages/compiler-errors-2/compiler-error-c2777.md)  
-  
- [コンパイラ エラー C2778](../../error-messages/compiler-errors-2/compiler-error-c2778.md)  
-  
- [コンパイラ エラー C2779](../../error-messages/compiler-errors-2/compiler-error-c2779.md)  
-  
- [コンパイラ エラー C2780](../../error-messages/compiler-errors-2/compiler-error-c2780.md)  
-  
- [コンパイラ エラー C2781](../../error-messages/compiler-errors-2/compiler-error-c2781.md)  
-  
- [コンパイラ エラー C2782](../../error-messages/compiler-errors-2/compiler-error-c2782.md)  
-  
- [コンパイラ エラー C2783](../../error-messages/compiler-errors-2/compiler-error-c2783.md)  
-  
- [コンパイラ エラー C2784](../../error-messages/compiler-errors-2/compiler-error-c2784.md)  
-  
- [コンパイラ エラー C2785](../../error-messages/compiler-errors-2/compiler-error-c2785.md)  
-  
- [コンパイラ エラー C2786](../../error-messages/compiler-errors-2/compiler-error-c2786.md)  
-  
- [コンパイラ エラー C2787](../../error-messages/compiler-errors-2/compiler-error-c2787.md)  
-  
- [コンパイラ エラー C2788](../../error-messages/compiler-errors-2/compiler-error-c2788.md)  
-  
- [コンパイラ エラー C2790](../../error-messages/compiler-errors-2/compiler-error-c2790.md)  
-  
- [コンパイラ エラー C2791](../../error-messages/compiler-errors-2/compiler-error-c2791.md)  
-  
- [コンパイラ エラー C2792](../../error-messages/compiler-errors-2/compiler-error-c2792.md)  
-  
- [コンパイラ エラー C2793](../../error-messages/compiler-errors-2/compiler-error-c2793.md)  
-  
- [コンパイラ エラー C2794](../../error-messages/compiler-errors-2/compiler-error-c2794.md)  
-  
- [コンパイラ エラー C2795](../../error-messages/compiler-errors-2/compiler-error-c2795.md)  
-  
- [コンパイラ エラー C2797](../../error-messages/compiler-errors-2/compiler-error-c2797.md)  
-  
- [コンパイラ エラー C2798](../../error-messages/compiler-errors-2/compiler-error-c2798.md)
+ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
+  
+> [!NOTE]
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+  
+ MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
+  
+|エラー|メッセージ|  
+|-----------|-------------|  
+|[コンパイラ エラー C2700](compiler-error-c2700.md)|'*型*': (詳細については使用/W4) がスローされることはできません|  
+|[コンパイラ エラー C2701](compiler-error-c2701.md)|'*関数*': 関数テンプレートまたはジェネリックはローカル クラスのフレンドをすることはできません|  
+|[コンパイラ エラー C2702](compiler-error-c2702.md)| __except が最終ブロックにあってはなりません。|  
+|[コンパイラ エラー C2703](compiler-error-c2703.md)|__leave ステートメントが異常です。|  
+|[コンパイラ エラー C2704](compiler-error-c2704.md)|'*関数*': 中 _ _va_start intrinsic varargs でのみ使用できます|  
+|[コンパイラ エラー C2705](compiler-error-c2705.md)|'*ラベル*': への不正なジャンプ'*exception_block*' スコープ|  
+|[コンパイラ エラー C2706](compiler-error-c2706.md)|__try に一致しておらず、__except が正しくありません。(__try ブロックに '}' があることを確認してください。)|  
+|[コンパイラ エラー C2707](compiler-error-c2707.md)|'*識別子*': 組み込み関数のコンテキストが正しくありません|  
+|[コンパイラ エラー C2708](compiler-error-c2708.md)|'*識別子*': 実引数の長さ (バイト単位) は、前の呼び出しまたは参照によって異なります。|  
+|[コンパイラ エラー C2709](compiler-error-c2709.md)|'*識別子*': 仮パラメーターの長さ (バイト単位) は、前の宣言によって異なります。|  
+|[コンパイラ エラー C2710](compiler-error-c2710.md)|'*識別子*':' _ _declspec (*修飾子*)' ポインターを返す関数にのみ適用できます|  
+|[コンパイラ エラー C2711](compiler-error-c2711.md)|'*関数*': この関数にすることはできませんマネージとしてコンパイルする場合は、#pragma unmanaged を使用する検討してください|  
+|[コンパイラ エラー C2712](compiler-error-c2712.md)|オブジェクト アンワインディングが必要な関数内で __try を使用できません。|  
+|[コンパイラ エラー C2713](compiler-error-c2713.md)|関数ごとに許されている例外ハンドルのフォームは 1 つです。|  
+|[コンパイラ エラー C2714](compiler-error-c2714.md)|alignof(void) は使用できません|  
+|[コンパイラ エラー C2715](compiler-error-c2715.md)|'*型*': スローまたはこの型をキャッチできません|  
+|コンパイラ エラー C2716|互換性のために残されています。|  
+|コンパイラ エラー C2717|互換性のために残されています。|  
+|[コンパイラ エラー C2718](compiler-error-c2718.md)|'*型*': 要求された配列の実際のパラメーター*数*は配置されません|  
+|[コンパイラ エラー C2719](compiler-error-c2719.md)|'*パラメーター*': 要求された配列の仮パラメーター*数*は配置されません|  
+|[コンパイラ エラー C2720](compiler-error-c2720.md)|'*識別子*':'*指定子*' ストレージ クラス指定子のメンバーが無効です|  
+|[コンパイラ エラー C2721](compiler-error-c2721.md)|'*指定子*': 演算子のキーワードと型の間に無効なストレージ クラス指定子|  
+|[コンパイラ エラー C2722](compiler-error-c2722.md)|'::*演算子*': 無効な次の演算子コマンド; 使用して ' operator*演算子*'|  
+|[コンパイラ エラー C2723](compiler-error-c2723.md)|'*関数*':'*指定子*' 関数の定義で無効な指定子|  
+|[コンパイラ エラー C2724](compiler-error-c2724.md)|'*関数*': 'static' 使用しないでファイル スコープで定義されたメンバー関数|  
+|[コンパイラ エラー C2725](compiler-error-c2725.md)|'*型*': スローまたは値または参照によってマネージまたは WinRT オブジェクトをキャッチできません。|  
+|[コンパイラ エラー C2726](compiler-error-c2726.md)|'gcnew' は、マネージまたは WinRT 型のオブジェクトの作成にのみ使用できます。|  
+|コンパイラ エラー C2727|互換性のために残されています。|  
+|[コンパイラ エラー C2728](compiler-error-c2728.md)|'*型*': ネイティブ配列は、この型を含めることはできません|  
+|コンパイラ エラー C2729|互換性のために残されています。|  
+|[コンパイラ エラー C2730](compiler-error-c2730.md)|'*クラス*': 自体の基底クラスにすることはできません|  
+|[コンパイラ エラー C2731](compiler-error-c2731.md)|'*関数*': 関数はオーバー ロードできません|  
+|[コンパイラ エラー C2732](compiler-error-c2732.md)|リンケージ指定は、別の '*関数*'|  
+|[コンパイラ エラー C2733](compiler-error-c2733.md)|'*関数*': 2 番目のオーバー ロードされた関数を使用できませんの C リンケージ|  
+|[コンパイラ エラー C2734](compiler-error-c2734.md)|'*識別子*': 'extern' ではない場合、'const' オブジェクトを初期化する必要があります|  
+|[コンパイラ エラー C2735](compiler-error-c2735.md)|'*キーワード*' キーワードは仮パラメーターの型指定子では使用できません。|  
+|[コンパイラ エラー C2736](compiler-error-c2736.md)|'*キーワード*' キーワードはキャストでは使用できません。|  
+|コンパイラ エラー C2737|'*識別子*': 'constexpr' オブジェクトを初期化する必要があります|  
+|[コンパイラ エラー C2738](compiler-error-c2738.md)|'operator*型*': あいまいなまたはのメンバーではない'*クラス*'|  
+|[コンパイラ エラー C2739](compiler-error-c2739.md)|'*数*': 明示的なマネージまたは WinRT 配列の次元は 1 ~ 32 でなければなりません|  
+|コンパイラ エラー C2740|オペランドの値 '*数*'が範囲外'*lower_bound* - *upper_bound*'|  
+|コンパイラ エラー C2741|フレーム サイズが大きすぎます|  
+|コンパイラ エラー C2742|互換性のために残されています。|  
+|[コンパイラ エラー C2743](compiler-error-c2743.md)|'*型*': _ _clrcall デストラクターまたはコピー コンス トラクターを持つネイティブ型をキャッチできません|  
+|コンパイラ エラー C2744|'*演算子*' は有効な CLR または WinRT 演算子ではありません|  
+|[コンパイラ エラー C2745](compiler-error-c2745.md)|'*トークン*': このトークンは、識別子に変換することはできません|  
+|コンパイラ エラー C2746|互換性のために残されています。|  
+|コンパイラ エラー C2747|互換性のために残されています。|  
+|[コンパイラ エラー C2748](compiler-error-c2748.md)|マネージまたは WinRT 配列の作成は、配列のサイズまたは配列初期化子をいる必要があります。|  
+|[コンパイラ エラー C2749](compiler-error-c2749.md)|'*型*': のみスローまたは/clr:safe を伴うマネージ クラスへのハンドルをキャッチできます|  
+|[コンパイラ エラー C2750](compiler-error-c2750.md)|'*型*': は使用できません、参照に' new' を入力以外の場合は 'gcnew' を代わりに使用します。|  
+|[コンパイラ エラー C2751](compiler-error-c2751.md)|'*パラメーター*': 関数パラメーターの名前を修飾することはできません|  
+|[コンパイラ エラー C2752](compiler-error-c2752.md)|'*テンプレート*': 2 つ以上の部分的特殊化がテンプレート引数リストと一致します。|  
+|[コンパイラ エラー C2753](compiler-error-c2753.md)|'*テンプレート*': 部分的特殊化はプライマリ テンプレートの引数リストと一致ことはできません|  
+|[コンパイラ エラー C2754](compiler-error-c2754.md)|'*テンプレート*': 部分的特殊化は、依存非型テンプレート パラメーターを持つことはできません|  
+|[コンパイラ エラー C2755](compiler-error-c2755.md)|'*パラメーター*': 部分的特殊化の非型テンプレート パラメーターは単純な識別子である必要があります|  
+|[コンパイラ エラー C2756](compiler-error-c2756.md)|'*テンプレート*': 既定のテンプレート引数の部分的特殊化では使用できません|  
+|[コンパイラ エラー C2757](compiler-error-c2757.md)|'*識別子*': この名前のシンボルが既に存在し、そのため、この名前は名前空間の名前として使用できません|  
+|[コンパイラ エラー C2758](compiler-error-c2758.md)|'*メンバー*': 参照型のメンバーを初期化する必要があります|  
+|コンパイラ エラー C2759|インライン アセンブラー レポート: *error_message*|  
+|[コンパイラ エラー C2760](compiler-error-c2760.md)|構文エラー: 予想 '*token1*'not'*token2*'|  
+|[コンパイラ エラー C2761](compiler-error-c2761.md)|'*関数*': メンバー関数の再宣言できません|  
+|[コンパイラ エラー C2762](compiler-error-c2762.md)|'*テンプレート*': 無効な式のテンプレート引数として'*パラメーター*'|  
+|コンパイラ エラー C2763|'*テンプレート*': 無効なテンプレート引数としてリテラル文字列の使用'*パラメーター*'|  
+|[コンパイラ エラー C2764](compiler-error-c2764.md)|'*パラメーター*': テンプレート パラメーターは使用されている、または部分的特殊化で推論できません'*特殊化*'。|  
+|[コンパイラ エラー C2765](compiler-error-c2765.md)|'*関数*': 関数テンプレートの明示的な特殊化は、既定引数を持つことはできません|  
+|[コンパイラ エラー C2766](compiler-error-c2766.md)|明示的な特殊化です。'*特殊化*' は既に定義されています。|  
+|[コンパイラ エラー C2767](compiler-error-c2767.md)|マネージまたは WinRT 配列の次元の不一致: 予想*数*引数 -*数*提供|  
+|[コンパイラ エラー C2768](compiler-error-c2768.md)|'*関数*': 明示的なテンプレート引数の不正な使用|  
+|コンパイラ エラー C2769|中かっこは、ベース/メンバー初期化子リストで、マネージまたは WinRT 配列を初期化できません|  
+|[コンパイラ エラー C2770](compiler-error-c2770.md)|無効な明示的なテンプレートやジェネリック引数を '*テンプレート*'|  
+|[コンパイラ エラー C2771](compiler-error-c2771.md)|#インポートがグローバルでのみ許可または名前空間スコープ|  
+|コンパイラ エラー C2772|互換性のために残されています。|  
+|[コンパイラ エラー C2773](compiler-error-c2773.md)|#インポートおよび #using C コンパイラでのみ使用できます|  
+|[コンパイラ エラー C2774](compiler-error-c2774.md)|'*識別子*': このプロパティに関連付けられた 'put' メソッドはありません|  
+|[コンパイラ エラー C2775](compiler-error-c2775.md)|'*識別子*': このプロパティに関連付けられた 'get' メソッドはありません|  
+|[コンパイラ エラー C2776](compiler-error-c2776.md)|プロパティごとに設定可能な 'get' メソッドは 1 つだけです。|  
+|[コンパイラ エラー C2777](compiler-error-c2777.md)|プロパティごとに設定可能な 'put' メソッドは 1 つだけです。|  
+|[コンパイラ エラー C2778](compiler-error-c2778.md)|__declspec(uuid()) 内の不適切な形式の GUID です。|  
+|[コンパイラ エラー C2779](compiler-error-c2779.md)|'*宣言*': プロパティ メソッドは非静的データ メンバーに関連付けだけことができます。|  
+|[コンパイラ エラー C2780](compiler-error-c2780.md)|'*宣言*': が必要ですが*数*引数 -*数*提供|  
+|[コンパイラ エラー C2781](compiler-error-c2781.md)|'*宣言*': には少なくとも*数*引数 -*数*提供|  
+|[コンパイラ エラー C2782](compiler-error-c2782.md)|'*宣言*': テンプレートやジェネリック パラメーター'*パラメーター*' があいまいです|  
+|[コンパイラ エラー C2783](compiler-error-c2783.md)|'*宣言*': テンプレートやジェネリック引数を推測できませんでした'*識別子*'|  
+|[コンパイラ エラー C2784](compiler-error-c2784.md)|'*宣言*': テンプレートやジェネリック引数を推測できませんでした'*type1*'from'*type2*'|  
+|[コンパイラ エラー C2785](compiler-error-c2785.md)|'*declaration1*'および'*declaration2*' 異なる戻り値の型を持つ|  
+|[コンパイラ エラー C2786](compiler-error-c2786.md)|'*型*': _ _uuidof のオペランドが無効です|  
+|[コンパイラ エラー C2787](compiler-error-c2787.md)|'*識別子*': このオブジェクトに関連付けられた GUID はありません。|  
+|[コンパイラ エラー C2788](compiler-error-c2788.md)|'*識別子*': このオブジェクトに関連付けられている 1 つ以上の GUID|  
+|コンパイラ エラー C2789|'*識別子*': const で修飾された型のオブジェクトを初期化する必要があります|  
+|[コンパイラ エラー C2790](compiler-error-c2790.md)|'super': このキーワードはクラス メンバー関数の本体内でのみ使用できます。|  
+|[コンパイラ エラー C2791](compiler-error-c2791.md)|'super' の不正な使用: '*クラス*' が、基本クラス|  
+|[コンパイラ エラー C2792](compiler-error-c2792.md)|'__super': このキーワードの後ろには '::' が必要です。|  
+|[コンパイラ エラー C2793](compiler-error-c2793.md)|'*トークン*': 予期しないトークン次 ':: '、識別子またはキーワード 'operator' が必要です|  
+|[コンパイラ エラー C2794](compiler-error-c2794.md)|'*識別子*': の直接または間接基底クラスのメンバーではない'*クラス*'|  
+|[コンパイラ エラー C2795](compiler-error-c2795.md)|'super::*識別子*' メンバー関数ではありません|  
+|コンパイラ エラー C2796|'ref new' は WinRT 型のインスタンスの生成にのみ使用できます|  
+|[コンパイラ エラー C2797](compiler-error-c2797.md)|(廃止)'*識別子*': メンバー初期化子リストまたは非静的データ メンバー初期化子の内部リストの初期化は実装されていません|  
+|[コンパイラ エラー C2798](compiler-error-c2798.md)|'super::*識別子*' があいまいです|  
+|コンパイラ エラー C2799|'*識別子*': ユーザー指定の既定のコンス トラクターのない const で修飾されたクラス型のオブジェクトを初期化する必要があります|  
+

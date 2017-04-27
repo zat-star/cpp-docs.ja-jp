@@ -1,32 +1,48 @@
 ---
-title: "コンパイラ エラー C2797 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2797"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2797"
+title: "コンパイラ エラー C2797 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2797
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2797
 ms.assetid: 9fb26d35-eb5c-46fc-9ff5-756fba5bdaff
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C2797
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 5eea0aae37627015f8723835e4e3e1cb0c6d2e94
+ms.lasthandoff: 04/24/2017
 
-メンバー初期化子リストおよび非静的データ メンバーの初期化子の内部に、リスト初期化が実装されていません。  
+---
+# <a name="compiler-error-c2797"></a>コンパイラ エラー C2797
+(廃止)メンバー初期化子リストまたは非静的データ メンバー初期化子の内部リストの初期化は実装されていません。  
   
- Visual Studio の C\+\+ コンパイラでは、メンバー初期化子リスト、または、非静的データ メンバーの初期化子のいずれの内部にも、リスト初期化を実装していません。  Visual Studio 2013 Update 3 より前は、これはサイレントに関数呼び出しに変換され、これにより、不適切なコードが生成される可能性がありました。  Visual Studio 2013 Update 3 ではこのことがエラーとして報告されます。  
+ この警告は、Visual Studio 2015 で廃止されています。 Visual Studio 2013 以前のバージョンでは、Visual C コンパイラは、メンバー初期化子リストまたは非静的データ メンバー初期化子のいずれかの内部リスト初期化機能を実装していません。 Visual Studio 2013 Update 3 より前は、これはサイレントに関数呼び出しに変換され、これにより、不適切なコードが生成される可能性がありました。 Visual Studio 2013 Update 3 ではこのことがエラーとして報告されます。  
   
  この例では、C2797 が生成されます。  
   
@@ -56,7 +72,7 @@ struct S2 {
   
 ```  
   
- この問題を解決するには、内部リストの明示的な構築を使用できます。  次に例を示します。  
+ この問題を解決するには、内部リストの明示的な構築を使用できます。 次に例を示します。  
   
 ```  
 #include <vector>  
@@ -82,4 +98,4 @@ struct S {
   
 ```  
   
- \(Visual Studio 2013 Update 3 より前は、Visual Studio 2013 の コンパイラによって暗黙的にこのことが行われました。\)
+ (Visual Studio 2013 Update 3 より前は、Visual Studio 2013 の コンパイラによって暗黙的にこのことが行われました。)
