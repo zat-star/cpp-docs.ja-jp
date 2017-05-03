@@ -34,7 +34,7 @@ Windows::Foundation::Collections::IKeyValuePair<K, V>^>^ First();
  マップ内の最初の要素を指定する反復子。  
   
 ## 解説  
- First\(\) によって返される反復子を保持する便利な方法は、[auto](../Topic/auto%20\(C++\).md) 型推論キーワードで宣言された変数に戻り値を代入することです。 たとえば、`auto x = myMap->First();` のようにします。  
+ First\(\) によって返される反復子を保持する便利な方法は、[auto](~/cpp/auto-cpp.md) 型推論キーワードで宣言された変数に戻り値を代入することです。 たとえば、`auto x = myMap->First();` のようにします。  
   
 ## 必要条件  
  **ヘッダー:** collection.h  

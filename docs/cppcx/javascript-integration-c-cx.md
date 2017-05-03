@@ -16,7 +16,7 @@ manager: "ghogen"
 caps.handback.revision: 7
 ---
 # JavaScript 統合 (C++/CX)
-「[Windows ランタイム コンポーネントの作成](../Topic/Creating%20Windows%20Runtime%20Components.md)」を参照してください。  
+「[Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/9a6b8f0a-7d5e-40a0-a9c5-a59b4908e133)」を参照してください。  
   
 ## 参照  
  [その他の言語との相互運用](../cppcx/interoperating-with-other-languages-c-cx.md)

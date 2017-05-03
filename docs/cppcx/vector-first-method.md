@@ -34,7 +34,7 @@ virtual Windows::Foundation::Collections::IIterator <T>^
  Vector 内の最初の要素を指す反復子。  
   
 ## 解説  
- First\(\) によって返される反復子を保持する便利な方法は、[auto](../Topic/auto%20\(C++\).md) 型推論キーワードで宣言された変数に戻り値を代入することです。 たとえば、`auto x = myVector->First();` のようにします。 この反復子は、コレクションの長さを認識しています。  
+ First\(\) によって返される反復子を保持する便利な方法は、[auto](~/cpp/auto-cpp.md) 型推論キーワードで宣言された変数に戻り値を代入することです。 たとえば、`auto x = myVector->First();` のようにします。 この反復子は、コレクションの長さを認識しています。  
   
  STL 関数に渡す 1 組の反復子が必要な場合は、free 関数 [Windows::Foundation::Collections::begin](../cppcx/begin-function.md) および [Windows::Foundation::Collections::end](../cppcx/end-function.md) を使用します。  
   

@@ -19,9 +19,9 @@ caps.handback.revision: 14
 [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] は、標準 C\+\+ `public enum class` に似ている `scoped  enum` キーワードをサポートしています。`public enum class` キーワードを使用して宣言された列挙子を使用する場合、列挙体識別子を使用して各列挙子値の範囲を指定する必要があります。  
   
 ## コメント  
- `public enum class` など、アクセス指定子を持たない `public` は、標準 C\+\+ の[スコープ列挙体](../Topic/Enumerations%20\(C++\).md)として扱われます。  
+ `public enum class` など、アクセス指定子を持たない `public` は、標準 C\+\+ の[スコープ列挙体](~/cpp/enumerations-cpp.md)として扱われます。  
   
- `public enum class` または `public enum struct` 宣言の型は、任意の整数型の基となる型 \([!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 自体が int32 型を要求している場合でも\)、またはフラグ列挙用の uint32 にすることができます。 次の構文は、`public enum class` または `public enum struct` の各部分を説明します。 詳細については、「[列挙型クラス](../Topic/enum%20class%20%20\(C++%20Component%20Extensions\).md)」を参照してください。  
+ `public enum class` または `public enum struct` 宣言の型は、任意の整数型の基となる型 \([!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 自体が int32 型を要求している場合でも\)、またはフラグ列挙用の uint32 にすることができます。 次の構文は、`public enum class` または `public enum struct` の各部分を説明します。 詳細については、「[列挙型クラス](~/windows/enum-class-cpp-component-extensions.md)」を参照してください。  
   
  この例は、パブリック列挙型クラスを定義する方法を示しています。  
   

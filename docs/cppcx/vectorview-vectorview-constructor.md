@@ -93,7 +93,7 @@ VectorView(
  現在の VectorView の各要素を初期化するために使用される値。  
   
  `v`  
- 現在の VectorView を初期化するために使用される [::std::vector](../Topic/vector%20Class%201.md) への [左辺値と右辺値](../Topic/Lvalues%20and%20Rvalues%20\(Visual%20C++\).md)。  
+ 現在の VectorView を初期化するために使用される [::std::vector](../Topic/vector%20Class%201.md) への [左辺値と右辺値](http://msdn.microsoft.com/library/a8843344-cccc-40be-b701-b71f7b5cdcaf)。  
   
  `ptr`  
  現在の VectorView を初期化するために使用される `std::vector` へのポインター。  
@@ -105,10 +105,10 @@ VectorView(
  現在の VectorView を初期化するために使用される [std::array](../Topic/vector%20Class%201.md) オブジェクト。  
   
  `first`  
- 現在の VectorView を初期化するために使用されるオブジェクトのシーケンスの最初の要素。`first` の型は*完全転送*によって渡されます。 詳細については、「[右辺値参照宣言子: &&](../Topic/Rvalue%20Reference%20Declarator:%20&&.md)」を参照してください。  
+ 現在の VectorView を初期化するために使用されるオブジェクトのシーケンスの最初の要素。`first` の型は*完全転送*によって渡されます。 詳細については、「[右辺値参照宣言子: &&](~/cpp/rvalue-reference-declarator-amp-amp.md)」を参照してください。  
   
  `last`  
- 現在の VectorView を初期化するために使用されるオブジェクトのシーケンスの最後の要素。`last` の型は*完全転送*によって渡されます。 詳細については、「[右辺値参照宣言子: &&](../Topic/Rvalue%20Reference%20Declarator:%20&&.md)」を参照してください。  
+ 現在の VectorView を初期化するために使用されるオブジェクトのシーケンスの最後の要素。`last` の型は*完全転送*によって渡されます。 詳細については、「[右辺値参照宣言子: &&](~/cpp/rvalue-reference-declarator-amp-amp.md)」を参照してください。  
   
 ## 必要条件  
  **ヘッダー:** collection.h  

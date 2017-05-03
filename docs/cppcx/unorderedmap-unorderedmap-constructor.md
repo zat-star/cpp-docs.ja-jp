@@ -106,7 +106,7 @@ UnorderedMap();
  キーのハッシュ値を生成する関数オブジェクト。 このパラメーターの既定値は、そのクラスがサポートするキーの型の [hash クラス](../Topic/hash%20Class%201.md) です。  
   
  `m`  
- 現在の UnorderedMap を初期化するために使用される [std::unordered\_map](../standard-library/unordered-map-class.md) への参照または [左辺値と右辺値](../Topic/Lvalues%20and%20Rvalues%20\(Visual%20C++\).md)。  
+ 現在の UnorderedMap を初期化するために使用される [std::unordered\_map](../standard-library/unordered-map-class.md) への参照または [左辺値と右辺値](http://msdn.microsoft.com/library/a8843344-cccc-40be-b701-b71f7b5cdcaf)。  
   
  il  
  マップを初期化するために使用される [std::pair](../standard-library/initializer-list-class.md) オブジェクトの [std::initializer\_list](../standard-library/pair-structure.md)。  

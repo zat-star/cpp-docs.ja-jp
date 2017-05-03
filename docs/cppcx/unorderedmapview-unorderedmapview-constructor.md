@@ -100,7 +100,7 @@ UnorderedMapView(
  2 つのキーを比較して等価性を確認できる関数オブジェクトを提供する型。 既定値は [std::equal\_to\<K\>](../standard-library/equal-to-struct.md) です。  
   
  `m`  
- UnorderedMapView を初期化するために使用される [std::unordered\_map](../standard-library/unordered-map-class.md) への参照または [左辺値と右辺値](../Topic/Lvalues%20and%20Rvalues%20\(Visual%20C++\).md)。  
+ UnorderedMapView を初期化するために使用される [std::unordered\_map](../standard-library/unordered-map-class.md) への参照または [左辺値と右辺値](http://msdn.microsoft.com/library/a8843344-cccc-40be-b701-b71f7b5cdcaf)。  
   
  `first`  
  UnorderedMapView を初期化するために使用される要素の範囲内の最初の要素の入力反復子。  

@@ -16,13 +16,13 @@ manager: "ghogen"
 caps.handback.revision: 27
 ---
 # Visual C++ の言語リファレンス (C++-CX)
-[!INCLUDE[cppwrt](../cppcx/includes/cppwrt-md.md)] \([!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)]\) は、最新 C\+\+ にできるだけ近い表現での Windows アプリと [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントの作成を可能にする、C\+\+ 言語への一連の拡張です。[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] を使用すると、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] をサポートする Visual C\#、Visual Basic、JavaScript などの言語と簡単にやり取りできる Windows アプリやコンポーネントをネイティブ コードで記述できます。 生の COM インターフェイスへの直接アクセスを必要とするようなまれなケースや、例外的ではないコードでは、[Windows ランタイム C\+\+ テンプレート ライブラリ \(WRL\)](../Topic/Windows%20Runtime%20C++%20Template%20Library%20\(WRL\).md) を使用できます。  
+[!INCLUDE[cppwrt](../cppcx/includes/cppwrt-md.md)] \([!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)]\) は、最新 C\+\+ にできるだけ近い表現での Windows アプリと [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントの作成を可能にする、C\+\+ 言語への一連の拡張です。[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] を使用すると、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] をサポートする Visual C\#、Visual Basic、JavaScript などの言語と簡単にやり取りできる Windows アプリやコンポーネントをネイティブ コードで記述できます。 生の COM インターフェイスへの直接アクセスを必要とするようなまれなケースや、例外的ではないコードでは、[Windows ランタイム C\+\+ テンプレート ライブラリ \(WRL\)](http://msdn.microsoft.com/library/b915afce-553b-44a7-b8dc-0ab601758eb0) を使用できます。  
   
  新しいモデルは、Windows での次世代のネイティブ C\+\+ プログラミングを表します。 これを使用すると、次のものを作成できます。  
   
 -   XAML を使用してユーザー インターフェイスを定義し、ネイティブ スタックを使用する C\+\+ Windows アプリケーション。 詳細については、「[C\+\+ を使った "hello world" アプリの作成 \(Windows 10\)](http://msdn.microsoft.com/library/windows/apps/dn996906.aspx)」をご参照ください。  
   
--   JavaScript ベースの Windows アプリで利用できる C\+\+ [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント。 詳細については、「[C\+\+ での Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/hh441569.aspx)[C\+\+ で Windows ランタイム コンポーネントを作成する](../Topic/Creating%20Windows%20Runtime%20Components%20in%20C++.md)」をご参照ください。  
+-   JavaScript ベースの Windows アプリで利用できる C\+\+ [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント。 詳細については、「[C\+\+ での Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/hh441569.aspx)[C\+\+ で Windows ランタイム コンポーネントを作成する](http://msdn.microsoft.com/library/5b7251e6-4271-4f13-af80-c1cf5b1489bf)」をご参照ください。  
   
 -   Windows DirectX ゲームやグラフィックス処理の多いアプリ。 詳細については、「[DirectX を使った単純なユニバーサル Windows プラットフォーム \(UWP\) ゲームの作成](http://msdn.microsoft.com/library/windows/apps/xaml/mt210793.aspx)」をご参照ください。  
   

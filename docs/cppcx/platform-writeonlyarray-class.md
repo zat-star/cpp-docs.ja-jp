@@ -58,4 +58,4 @@ private ref class WriteOnlyArray<T, 1>
   
 ## 参照  
  [\(NOTINBUILD\) Platform 名前空間](http://msdn.microsoft.com/ja-jp/f3ce3eab-028c-4204-ba9f-9ab8af17c8c4)   
- [C\+\+ で Windows ランタイム コンポーネントを作成する](../Topic/Creating%20Windows%20Runtime%20Components%20in%20C++.md)
+ [C\+\+ で Windows ランタイム コンポーネントを作成する](http://msdn.microsoft.com/library/5b7251e6-4271-4f13-af80-c1cf5b1489bf)

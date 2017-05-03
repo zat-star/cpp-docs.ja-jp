@@ -21,7 +21,7 @@ Visual Studio を使用して、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] ア
 ## [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント DLL  
  ほとんどの場合、[!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリで使用する DLL を作成するときは、その名前を持つプロジェクト テンプレートを使用して [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントとして作成してください。[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] の public または private 型を持つ DLL のために、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント プロジェクトを作成できます。[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントは、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 互換の言語で記述されたアプリからアクセスできます。 既定では、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント プロジェクトのコンパイラ設定では、**\/ZW** スイッチを使用します。 .winmd ファイルには、ルート名前空間と同じ名前が必要です。 たとえば、A.B.C.MyClass という名前のクラスは、A.winmd または A.B.winmd または A.B.C.winmd という名前のメタデータ ファイルで定義されている場合のみインスタンス化できます。 DLL の名前が .winmd ファイル名と一致する必要はありません。  
   
- 詳細については、「[C\+\+ で Windows ランタイム コンポーネントを作成する](../Topic/Creating%20Windows%20Runtime%20Components%20in%20C++.md)」を参照してください。  
+ 詳細については、「[C\+\+ で Windows ランタイム コンポーネントを作成する](http://msdn.microsoft.com/library/5b7251e6-4271-4f13-af80-c1cf5b1489bf)」を参照してください。  
   
 #### プロジェクトでサードパーティの [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネント バイナリを参照するには  
   

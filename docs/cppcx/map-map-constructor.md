@@ -52,7 +52,7 @@ Map(
  並べ替えキーとして 2 つの要素値を比較してマップ内の相対順序を決定できる関数オブジェクトを提供する型。  
   
  `m`  
- 現在のマップを初期化するために使用される [左辺値と右辺値](../Topic/Lvalues%20and%20Rvalues%20\(Visual%20C++\).md) への参照、または [map クラス](../standard-library/map-class.md)。  
+ 現在のマップを初期化するために使用される [左辺値と右辺値](http://msdn.microsoft.com/library/a8843344-cccc-40be-b701-b71f7b5cdcaf) への参照、または [map クラス](../standard-library/map-class.md)。  
   
  `first`  
  現在のマップを初期化するために使用される要素の範囲内の最初の要素の入力反復子。  

@@ -22,7 +22,7 @@ manager: "ghogen"
 caps.handback.revision: 7
 ---
 # Platform::Type クラス
-型に関するランタイム情報 \(文字列名と型コード\) を含みます。 任意のオブジェクトで [Object::GetType メソッド](../cppcx/object-gettype-method.md)を呼び出すか、クラスまたは構造体名で [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) 演算子を使用して取得されます。  
+型に関するランタイム情報 \(文字列名と型コード\) を含みます。 任意のオブジェクトで [Object::GetType メソッド](../cppcx/object-gettype-method.md)を呼び出すか、クラスまたは構造体名で [typeid](http://msdn.microsoft.com/library/e9706cae-e7c4-4d6d-b474-646d73df3e70) 演算子を使用して取得されます。  
   
 ## 構文  
   

@@ -19,7 +19,7 @@ caps.handback.revision: 9
 [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] \([!INCLUDE[cppwrl](../cppcx/includes/cppwrl-md.md)]\) コードを [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] コードに自由に混在させることができます。 同じ翻訳単位では、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] のオブジェクトへのハンドル \(`^`\) 表記と [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] のスマート ポインター \(`ComPtr<T>`\) 表記で宣言されたオブジェクトを使用できます。 ただし、戻り値、[!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] HRESULT エラー コード、および [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] 例外は、手動で処理する必要があります。  
   
 ## [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] 開発  
- [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] コンポーネントの作成と利用の詳細については、「[Windows ランタイム C\+\+ テンプレート ライブラリ \(WRL\)](../Topic/Windows%20Runtime%20C++%20Template%20Library%20\(WRL\).md)」を参照してください。  
+ [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] コンポーネントの作成と利用の詳細については、「[Windows ランタイム C\+\+ テンプレート ライブラリ \(WRL\)](http://msdn.microsoft.com/library/b915afce-553b-44a7-b8dc-0ab601758eb0)」を参照してください。  
   
 ## 例  
  次のコード スニペットは、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] と [!INCLUDE[cppwrl_short](../cppcx/includes/cppwrl-short-md.md)] を使用して [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] クラスを利用し、メタデータ ファイルを調べます。  

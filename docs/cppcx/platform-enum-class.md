@@ -34,7 +34,7 @@ public class Enum
  Enum クラスは、[Platform::Object クラス](../cppcx/platform-object-class.md) の Equals\(\)、GetHashCode\(\)、および ToString\(\) の各メソッドを継承します。  
   
 ## 解説  
- 列挙型を作成するには、[パブリック列挙型クラス](../Topic/enum%20class%20%20\(C++%20Component%20Extensions\).md) キーワードを使用します。 Platform::Enum 型は明示的に使用しないでください。 詳細については、「[列挙型](../cppcx/enums-c-cx.md)」を参照してください。  
+ 列挙型を作成するには、[パブリック列挙型クラス](~/windows/enum-class-cpp-component-extensions.md) キーワードを使用します。 Platform::Enum 型は明示的に使用しないでください。 詳細については、「[列挙型](../cppcx/enums-c-cx.md)」を参照してください。  
   
 ## 必要条件  
  **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  

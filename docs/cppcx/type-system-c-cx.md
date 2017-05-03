@@ -136,7 +136,7 @@ caps.handback.revision: 28
  詳細については、「[デリゲート](../cppcx/delegates-c-cx.md)」を参照してください。  
   
 ### 例外  
- C\+\+\/CX では、カスタムの例外の種類、[std::exception](../Topic/exception%20Class1.md) 型、および [Platform::Exception](../cppcx/platform-exception-class.md) 型をキャッチできます。  
+ C\+\+\/CX では、カスタムの例外の種類、[std::exception](~/standard-library/exception-class.md) 型、および [Platform::Exception](../cppcx/platform-exception-class.md) 型をキャッチできます。  
   
  詳細については、「[例外](../cppcx/exceptions-c-cx.md)」を参照してください。  
   
@@ -146,7 +146,7 @@ caps.handback.revision: 28
  詳細については、「[イベント](../cppcx/events-c-cx.md)」を参照してください。  
   
 ### キャスト  
- C\+\+\/CX は、標準 C\+\+ のキャスト演算子 [static\_cast](../cpp/static-cast-operator.md)、[dynamic\_cast](../cpp/dynamic-cast-operator.md)、および [reinterpret\_cast](../cpp/reinterpret-cast-operator.md) をサポートし、C\+\+\/CX に固有の [safe\_cast](../Topic/safe_cast%20\(C++%20Component%20Extensions\).md) 演算子もサポートします。  
+ C\+\+\/CX は、標準 C\+\+ のキャスト演算子 [static\_cast](../cpp/static-cast-operator.md)、[dynamic\_cast](../cpp/dynamic-cast-operator.md)、および [reinterpret\_cast](../cpp/reinterpret-cast-operator.md) をサポートし、C\+\+\/CX に固有の [safe\_cast](~/windows/safe-cast-cpp-component-extensions.md) 演算子もサポートします。  
   
  詳細については、「[キャスト](../cppcx/casting-c-cx.md)」を参照してください。  
   

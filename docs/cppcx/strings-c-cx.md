@@ -16,7 +16,7 @@ manager: "ghogen"
 caps.handback.revision: 22
 ---
 # 文字列 (C++/CX)
-[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 内のテキストは、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] によって [Platform::String クラス](../cppcx/platform-string-class.md) で表されます。`Platform::String Class` クラスのメソッド間で文字列を渡すときや、アプリケーション バイナリ インターフェイス \(ABI\) の境界を越えて他の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントとやり取りするときは、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] を使用します。`Platform::String Class` は、いくつかの一般的な文字列操作のメソッドを提供しますが、すべての機能を備えた文字列クラスとしては設計されていません。 C\+\+ モジュールでは、重要なテキスト処理のために [wstring](../Topic/wstring.md) などの標準 C\+\+ 文字列型を使用し、パブリック インターフェイスとの間でやり取りする前に、最終結果を [Platform::String^](../cppcx/platform-string-class.md) に変換します。`wstring` または `wchar_t*` と `Platform::String` の間で変換することは簡単かつ効率的です。  
+[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 内のテキストは、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] によって [Platform::String クラス](../cppcx/platform-string-class.md) で表されます。`Platform::String Class` クラスのメソッド間で文字列を渡すときや、アプリケーション バイナリ インターフェイス \(ABI\) の境界を越えて他の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントとやり取りするときは、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] を使用します。`Platform::String Class` は、いくつかの一般的な文字列操作のメソッドを提供しますが、すべての機能を備えた文字列クラスとしては設計されていません。 C\+\+ モジュールでは、重要なテキスト処理のために [wstring](http://msdn.microsoft.com/library/77953dd7-ee2f-4f6c-90e7-27da549ca631) などの標準 C\+\+ 文字列型を使用し、パブリック インターフェイスとの間でやり取りする前に、最終結果を [Platform::String^](../cppcx/platform-string-class.md) に変換します。`wstring` または `wchar_t*` と `Platform::String` の間で変換することは簡単かつ効率的です。  
   
  **高速渡し**  
   
@@ -39,9 +39,9 @@ caps.handback.revision: 22
  [!code-cpp[cx_strings#03](../snippets/cpp/VS_Snippets_Misc/cx_strings/cpp/class1.cpp#03)]  
   
 ## 文字列変換  
- `Platform::String` には、`char16` 文字または `NULL` 文字だけを含めることができます。 アプリケーションが 8 ビット文字を使用する必要がある場合は、[String::Data メソッド](../cppcx/string-data-method.md) を使用して、`const wchar_t*` としてテキストを抽出します。 そして、適切な Windows 関数または標準ライブラリ関数を使用してデータを操作し、データを `wchar_t*` または [wstring](../Topic/wstring.md) に戻します。これらを使用して、新しい `Platform::String` を構築できます。  
+ `Platform::String` には、`char16` 文字または `NULL` 文字だけを含めることができます。 アプリケーションが 8 ビット文字を使用する必要がある場合は、[String::Data メソッド](../cppcx/string-data-method.md) を使用して、`const wchar_t*` としてテキストを抽出します。 そして、適切な Windows 関数または標準ライブラリ関数を使用してデータを操作し、データを `wchar_t*` または [wstring](http://msdn.microsoft.com/library/77953dd7-ee2f-4f6c-90e7-27da549ca631) に戻します。これらを使用して、新しい `Platform::String` を構築できます。  
   
- 次のコードに、`String^` 変数と `wstring` 変数の間で変換する方法を示します。 この例で使用される文字列操作の詳細については、「[basic\_string::replace](../Topic/basic_string::replace.md)」を参照してください。  
+ 次のコードに、`String^` 変数と `wstring` 変数の間で変換する方法を示します。 この例で使用される文字列操作の詳細については、「[basic\_string::replace](http://msdn.microsoft.com/library/16d81b9d-9724-458a-9179-556748034507)」を参照してください。  
   
  [!code-cpp[cx_strings#04](../snippets/cpp/VS_Snippets_Misc/cx_strings/cpp/class1.cpp#04)]  
   

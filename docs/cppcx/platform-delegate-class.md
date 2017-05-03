@@ -34,7 +34,7 @@ public delegate void delegate_name();
  Delegate クラスには、[Platform::Object クラス](../cppcx/platform-object-class.md) から派生した Equals\(\)、GetHashCode\(\)、ToString\(\) メソッドがあります。  
   
 ## 解説  
- デリゲートを作成するには [delegate](../Topic/delegate%20%20\(C++%20Component%20Extensions\).md) キーワードを使用します。Platform::Delegate を明示的に使用しないでください。 詳細については、「[デリゲート](../cppcx/delegates-c-cx.md)」を参照してください。 デリゲートを作成および使用する方法の例については、[C\+\+ で Windows ランタイム コンポーネントを作成する](../Topic/Creating%20Windows%20Runtime%20Components%20in%20C++.md) を参照してください。  
+ デリゲートを作成するには [delegate](~/windows/delegate-cpp-component-extensions.md) キーワードを使用します。Platform::Delegate を明示的に使用しないでください。 詳細については、「[デリゲート](../cppcx/delegates-c-cx.md)」を参照してください。 デリゲートを作成および使用する方法の例については、[C\+\+ で Windows ランタイム コンポーネントを作成する](http://msdn.microsoft.com/library/5b7251e6-4271-4f13-af80-c1cf5b1489bf) を参照してください。  
   
 ## 必要条件  
  **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  
