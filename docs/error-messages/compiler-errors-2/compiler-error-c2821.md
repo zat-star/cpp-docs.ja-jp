@@ -34,18 +34,18 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 5a8000d7867ec7a18730a5d95538f21ffb3a0b2e
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 774c191bb3da3c5382c4aff7d48c8d6ae5ca7e68
+ms.lasthandoff: 04/29/2017
 
 ---
-# <a name="compiler-error-c2821"></a>コンパイラ エラー C2821
-'operator new' の最初の仮パラメーターは '符号なし int' である必要があります。  
+# <a name="compiler-error-c2821"></a>{1&gt;コンパイラ エラー C2821&lt;1}
+'operator new' への最初の仮パラメーターは 'unsigned int' である必要があります。  
   
-最初の仮パラメーター、 [new 演算子](../../standard-library/new-operators.md#operator_new)unsigned にする必要があります`int`します。  
+最初の正式なパラメーター、 [new 演算子](../../standard-library/new-operators.md#op_new)unsigned にする必要があります`int`です。  
   
 ## <a name="example"></a>例  
- 次の例では、c2821 エラーが生成されます。  
+ 次の例では、C2821 が生成されます。  
   
 ```cpp  
 // C2821.cpp  

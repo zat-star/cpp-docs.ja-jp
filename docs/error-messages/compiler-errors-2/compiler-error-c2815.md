@@ -34,17 +34,17 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 129ad6a0359fbee402b39c5e7ff498602e97479d
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 7cd85d29ee14376b46d05ac5cfa95496fffdc9e5
+ms.lasthandoff: 04/29/2017
 
 ---
-# <a name="compiler-error-c2815"></a>コンパイラ エラー C2815
-'operator delete': 最初の仮パラメーターがある必要があります ' void *'、'param' が使用されましたが、  
+# <a name="compiler-error-c2815"></a>{1&gt;コンパイラ エラー C2815&lt;1}
+'operator delete': 仮引数の最初のパラメーターである必要があります ' void *'、'param' が使用されましたが、  
   
- ユーザー定義[delete 演算子](../../standard-library/new-operators.md#operator_delete)関数は、型の最初の正式なパラメーターを受け取る必要があります`void *`します。  
+ ユーザー定義[演算子 delete](../../standard-library/new-operators.md#op_delete)関数は、型の最初の仮パラメーターを受け取る必要があります`void *`です。  
   
- 次の例では、c2815 エラーが生成されます。  
+ 次の例では、C2815 が生成されます。  
   
 ```  
 // C2815.cpp  

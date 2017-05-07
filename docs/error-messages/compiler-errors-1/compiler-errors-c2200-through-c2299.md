@@ -28,7 +28,6 @@ f1_keywords:
 - C2265
 - C2269
 - C2278
-- C2280
 - C2281
 - C2282
 - C2288
@@ -54,7 +53,6 @@ helpviewer_keywords:
 - C2265
 - C2269
 - C2278
-- C2280
 - C2281
 - C2282
 - C2288
@@ -82,9 +80,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 8e3f009def24f09cbc8b373a81ea63ed6bd922ed
-ms.lasthandoff: 04/24/2017
+ms.sourcegitcommit: d7d097b399d3681ef523d8787ecc38af472840f6
+ms.openlocfilehash: f47a6fe23a8a0bf18f9c5c4399162d836667cab6
+ms.lasthandoff: 04/28/2017
 
 ---
 # <a name="compiler-errors-c2200-through-c2299"></a>コンパイラ エラー C2200 C2299 から
@@ -177,7 +175,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2277](compiler-error-c2277.md)|'*関数*': このメンバー関数のアドレスは取得できません|  
 |コンパイラ エラー C2278|互換性のために残されています。|  
 |[コンパイラ エラー C2279](compiler-error-c2279.md)|例外の指定を typedef 宣言に表示することはできません。|  
-|コンパイラ エラー c2280 を発行|'*クラス*::*関数*': 削除された関数を参照しようとしています。|  
+|[コンパイラ エラー c2280 を発行](compiler-error-c2280.md)|'*クラス*::*関数*': 削除された関数を参照しようとしています。|  
 |コンパイラ エラー C2281|'*クラス*::*関数*': 関数は、最初の宣言でのみ削除できます|  
 |コンパイラ エラー C2282|'*function1*'をオーバーライドできません'*function2*'|  
 |[コンパイラ エラー C2283](compiler-error-c2283.md)|'*識別子*': 純粋関数または抽象オーバーライド指定子の名前のないクラス/構造体では使用できません|  
