@@ -10,9 +10,7 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - const_mem_fun_t
-- std.const_mem_fun_t
 - xfunctional/std::const_mem_fun_t
-- std::const_mem_fun_t
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: d965e3b4072feb654a9920b9da9044f21d93f58b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: b68670f5c297bd4ec031985d5c16bb8f6da1cc14
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="constmemfunt-class"></a>const_mem_fun_t クラス
@@ -70,7 +69,7 @@ class const_mem_fun_t : public unary_function <Type *, Result>
  このテンプレート クラスは `Pm` のコピーをプライベート メンバー オブジェクトに格納します。これは、**Type** クラスのメンバー関数へのポインターである必要があります。 そのメンバー関数 `operator()` は、(`Pleft`->\* `Pm`)() **const** を返すように定義されています。  
   
 ## <a name="example"></a>例  
- `const_mem_fun_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun](../standard-library/functional-functions.md#mem_fun_function)」を参照してください。  
+ `const_mem_fun_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun](../standard-library/functional-functions.md#mem_fun)」を参照してください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<functional>  

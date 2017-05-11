@@ -57,10 +57,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 267963b8f9344cef67788726bd2c6f082c7953ac
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: cad572e3b312ad29878486c9f40dafc2e96917f9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="cgetss-cgetwss"></a>_cgets_s、_cgetws_s
@@ -105,7 +106,7 @@ errno_t _cgetws_s(
  実際に読み取った文字数。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合の戻り値は&0; です。それ以外の場合 (エラー発生時) は、エラー コードです。  
+ 成功した場合の戻り値は 0 です。それ以外の場合 (エラー発生時) は、エラー コードです。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -116,7 +117,7 @@ errno_t _cgetws_s(
 |`NULL` 以外|任意|`NULL`|`EINVAL`|長さゼロの文字列|  
   
 ## <a name="remarks"></a>コメント  
- `_cgets_s` および `_cgetws_s` は、コンソールから文字列を読み取り、その文字列 (null で終了する) を `buffer` にコピーします。 `_cgetws_s` はこの関数のワイド文字バージョンで、文字のサイズを除いて、これら&2; つの関数の動作は同じです。 読み取る文字列の最大サイズは、`numberOfElements` パラメーターに入れて渡します。 このサイズには、終端の null に対応する追加の文字を含める必要があります。 実際に読み取られた文字数は、`pSizeRead` に置かれます。  
+ `_cgets_s` および `_cgetws_s` は、コンソールから文字列を読み取り、その文字列 (null で終了する) を `buffer` にコピーします。 `_cgetws_s` はこの関数のワイド文字バージョンで、文字のサイズを除いて、これら 2 つの関数の動作は同じです。 読み取る文字列の最大サイズは、`numberOfElements` パラメーターに入れて渡します。 このサイズには、終端の null に対応する追加の文字を含める必要があります。 実際に読み取られた文字数は、`pSizeRead` に置かれます。  
   
  操作中に、またはパラメーターを検証する際にエラーが発生した場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」の説明にあるとおり無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、`EINVAL` が返されます。  
   
@@ -136,9 +137,6 @@ errno_t _cgetws_s(
 |`_cgetws_s`|\<conio.h> または \<wchar.h>|  
   
  互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   

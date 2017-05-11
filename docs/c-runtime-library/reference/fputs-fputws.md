@@ -55,10 +55,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ccc09738673ee66a12584f68386a58feef8d8522
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 0a90ce974533ee40eba83f75f400c9ee472cdd4b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="fputs-fputws"></a>fputs、fputws
@@ -85,7 +86,7 @@ int fputws(
  `FILE` 構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- これらの関数は、正常に終了した場合に&0; 以上の値を返します。 エラーが発生した場合は、`fputs` と `fputws` は `EOF` を返します。 `str` または `stream` が null ポインターの場合、これらの関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定します。`fputs` は `EOF` を返し、`fputws` は `WEOF` を返します。  
+ これらの関数は、正常に終了した場合に 0 以上の値を返します。 エラーが発生した場合は、`fputs` と `fputws` は `EOF` を返します。 `str` または `stream` が null ポインターの場合、これらの関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定します。`fputs` は `EOF` を返し、`fputws` は `WEOF` を返します。  
   
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
@@ -127,9 +128,6 @@ int main( void )
 ```Output  
 Hello world from fputs.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::StreamWriter::Write](https://msdn.microsoft.com/en-us/library/system.io.streamwriter.write.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

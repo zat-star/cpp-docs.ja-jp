@@ -45,10 +45,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 748dd47c43ae2f07a7a6b0d828775c4122062b6c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 53b54c3034a7d619480b1ede0e0adb4ec8f4bf4c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbbblank-ismbbblankl"></a>_ismbbblank、_ismbbblank_l
@@ -87,9 +88,6 @@ int _ismbbblank_l(
 |`_ismbbblank_l`|\<mbctype.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)   

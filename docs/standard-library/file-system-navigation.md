@@ -30,14 +30,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: c7f3b346bc8abeab0c6bd913fc0b554bef4ed208
-ms.openlocfilehash: f376ad55945cf9f23579406ae73866f93c17008b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 1a3e7e0cc81bae89b0560c1aebb989e4d140e059
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="file-system-navigation"></a>ファイル システムのナビゲーション
-\<filesystem> ヘッダーは、File System Technical Specification ISO/IEC TS 18822:2015 (最終ドラフト: [ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf)) を実装し、型および関数により、ファイル システムを移動するためのプラットフォームに依存しないコードを記述できます。 それはクロス プラットフォームなので、Windows システムに関連しない API が含まれます。 たとえば、Windows では `is_fifo(const path&)` は常に `false` を返します。 ヘッダーは、Visual Studio 2015 RTM の段階で C++17 標準には認められていないドラフトの技術仕様に基づいています。 そのメンバーは、`std::experimental::filesystem` 名前空間にあります。`std::experimental::filesystem::v1` からインライン処理されます。  
+\<filesystem> ヘッダーは、File System Technical Specification ISO/IEC TS 18822:2015 (最終ドラフト: [ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf)) を実装し、型および関数により、ファイル システムを移動するためのプラットフォームに依存しないコードを記述できます。 それはクロス プラットフォームなので、Windows システムに関連しない API が含まれます。 たとえば、Windows では `is_fifo(const path&)` は常に `false` を返します。   
   
 ## <a name="overview"></a>概要  
 \<filesystem> API を次のタスクに使用します。  
@@ -175,7 +176,7 @@ C:\Documents\2014\ < D:\Documents\2013\Reports\: true
 このコードを実行するには、上記の完全なサンプル コードに貼り付けて、`main` でこれを呼び出す行をコメント解除します。  
   
 ### <a name="converting-between-path-and-string-types"></a>パスと文字列型の間の変換  
-`path` オブジェクトは `std::wstring` または `std::string`に暗黙的に変換できます。 つまり、次の例に示すように、[wofstream::open](../standard-library/basic-ofstream-class.md#basic_ofstream__open) などの関数にパスを渡すことができます。  
+`path` オブジェクトは `std::wstring` または `std::string`に暗黙的に変換できます。 つまり、次の例に示すように、[wofstream::open](../standard-library/basic-ofstream-class.md#open) などの関数にパスを渡すことができます。  
   
 ```cpp  
 // filesystem_path_conversion.cpp  

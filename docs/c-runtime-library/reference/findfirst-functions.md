@@ -118,10 +118,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f7d0417e6533124cc49e909687d7bc232523c302
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: baf853db4fe1a23ee726423a052604a0db8764c9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="findfirst-findfirst32-findfirst32i64-findfirst64-findfirst64i32-findfirsti64-wfindfirst-wfindfirst32-wfindfirst32i64-wfindfirst64-wfindfirst64i32-wfindfirsti64"></a>_findfirst、_findfirst32、_findfirst32i64、_findfirst64、_findfirst64i32、_findfirsti64、_wfindfirst、_wfindfirst32、_wfindfirst32i64、_wfindfirst64、_wfindfirst64i32、_wfindfirsti64
@@ -188,7 +189,7 @@ intptr_t _wfindfirst64i32(
  ファイル情報バッファー。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合、`_findfirst` は、`filespec` の指定に一致するファイルまたはファイルのグループを識別する一意の検索ハンドルを返します。このハンドルは、[_findnext](../../c-runtime-library/reference/findnext-functions.md) または `_findclose` の以降の呼び出しに使用できます。 それ以外の場合、`_findfirst` は -1 を返し、`errno` を次の値のいずれかに設定します。  
+ 成功した場合、`_findfirst` は、`filespec` の指定に一致するファイルまたはファイルのグループを識別する一意の検索ハンドルを返します。このハンドルは、[_findnext](../../c-runtime-library/reference/findnext-functions.md) または `_findclose` の以降の呼び出しに使用できます。 それ以外の場合、 `_findfirst` -1 を返し`errno`値は次のいずれかにします。  
   
  `EINVAL`  
  無効なパラメーター: `filespec` または `fileinfo` は `NULL` でした。 または、オペレーティング システムが予期しないエラーを返しました。  
@@ -209,7 +210,7 @@ intptr_t _wfindfirst64i32(
 ## <a name="remarks"></a>コメント  
  `_findfirst` または `_findnext` 関数 (または任意のバリアント) を完了した後は、[_findclose](../../c-runtime-library/reference/findclose.md) を呼び出す必要があります。 呼び出すと、アプリケーション内でこれらの関数が使用しているリソースが解放されます。  
   
- `w` プレフィックスがあるこれらの関数のバリエーションは、ワイド文字バージョンです。それ以外の場合、対応する&1; バイト関数と同じです。  
+ `w` プレフィックスがあるこれらの関数のバリエーションは、ワイド文字バージョンです。それ以外の場合、対応する 1 バイト関数と同じです。  
   
  これらの関数のバリエーションは、32 ビットや 64 ビットの時刻型と、32 ビットや 64 ビットのファイル サイズをサポートします。 最初の数字のサフィックス (`32` または `64`) は、時刻型のサイズを示します。2 番目のサフィックスは `i32` または `i64`で、ファイル サイズが 32 ビットの整数として表されるか、それとも 64 ビットの整数として表されるかを示します。 32 ビットと 64 ビットの時刻型とファイル サイズをサポートするバージョンについては、次の表を参照してください。 時間型のサイズと同じ場合、`i32` または `i64` サフィックスは省略されるので、`_findfirst64` は 64 ビットのファイル長もサポートし、`_findfirst32` は 32 ビットのファイル長のみをサポートします。  
   
@@ -260,10 +261,7 @@ intptr_t _wfindfirst64i32(
 |`_wfindfirst32i64`|\<io.h> または \<wchar.h>|  
 |`_wfindfirst64i32`|\<io.h> または \<wchar.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::DirectoryInfo::GetFiles](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.getfiles.aspx)  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [システム コール](../../c-runtime-library/system-calls.md)   

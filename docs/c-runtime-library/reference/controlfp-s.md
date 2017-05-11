@@ -53,10 +53,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 022dd9188a043ccb5a17a3e9040e0c8969acf7ba
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 4345539f7ecd836280bed94c4bb2b125dfa08107
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="controlfps"></a>_controlfp_s
@@ -83,7 +84,7 @@ errno_t _controlfp_s(
  新しく設定する制御ワード ビットのマスク。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返し、失敗した場合は `errno` 値のエラー コードを返します。  
+ 正常終了した場合は 0 を返し、失敗した場合は `errno` 値のエラー コードを返します。  
   
 ## <a name="remarks"></a>コメント  
  `_controlfp_s` 関数は、`_control87` 関数のセキュリティが強化された、プラットフォームに依存しないバージョンであり、浮動小数点制御ワードを取得して `currentControl` に格納されたアドレスに格納し、`newControl` を使用して浮動小数点制御ワードを設定します。 この値のビットは、浮動小数点のコントロールの状態を示します。 浮動小数点のコントロールの状態を使用すると、プログラムで使用する浮動小数点演算パッケージの精度、丸め、および無限大の各モードをプラットフォームに応じて変更できます。 `_controlfp_s` を使用して、浮動小数点例外のマスクの設定および解除を行うこともできます。  
@@ -99,7 +100,7 @@ errno_t _controlfp_s(
   
  `_control87` と `_controlfp_s` との違いは、`DENORMAL` 値の処理方法にあります。 Intel (x86)、[!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)]、および ARM の各プラットフォームでは、`_control87` を使用して DENORMAL OPERAND 例外マスクを設定および解除できます。 `_controlfp_s` は DENORMAL OPERAND 例外マスクを変更しません。 次の例に、この違いを示します。  
   
-```  
+```C  
 _control87( _EM_INVALID, _MCW_EM );   
 // DENORMAL is unmasked by this call.  
 unsigned int current_word = 0;  
@@ -111,7 +112,7 @@ _controlfp_s( &current_word, _EM_INVALID, _MCW_EM );
   
  Intel (x86) から派生したプラットフォームでは、DENORMAL 入出力値がハードウェアでサポートされています。 x86 では DENORMAL 値を保持するように動作します。 SSE2 をサポートしている ARM プラットフォームと [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] プラットフォームでは、DENORMAL オペランドと結果をフラッシュするか、強制的にゼロにすることができます。 `_controlfp_s` 関数、`_controlfp` 関数、および `_control87` 関数は、この動作を変更するマスクを使用します。 このマスクの使用例を次に示します。  
   
-```  
+```C  
 unsigned int current_word = 0;  
 _controlfp_s(&current_word, _DN_SAVE, _MCW_DN);     
 // Denormal values preserved on ARM platforms and on x64 processors with  
@@ -127,9 +128,9 @@ _controlfp_s(&current_word, _DN_FLUSH, _MCW_DN);
   
  マスクが正しく設定されていないと、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーターの例外を生成します。 実行の継続が許可された場合、この関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
   
- 使用する場合、この関数は無視されます[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)を共通言語ランタイム (CLR) では、浮動小数点の既定の精度のみがサポートされるためにコンパイルします。  
+ 使用する場合、この関数は無視されます[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイム (CLR) では、既定の浮動小数点精度のみがサポートするため、コンパイルします。  
   
- **16 進数の値**  
+### <a name="mask-constants-and-values"></a>マスク定数と値  
   
  `_MCW_EM` マスクに関しては、マスクを解除すると例外が設定されてハードウェア例外が許可されます。マスクを設定すると例外は無効になります。 `_EM_UNDERFLOW` または `_EM_OVERFLOW` が発生した場合は、次回の浮動小数点命令が実行されるまで、ハードウェア例外はスローされません。 `_EM_UNDERFLOW` または `_EM_OVERFLOW` の発生後すぐにハードウェア例外を生成するには、FWAIT MASM 命令を呼び出します。  
   
@@ -151,14 +152,12 @@ _controlfp_s(&current_word, _DN_FLUSH, _MCW_DN);
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_contrlfp_s.c  
+```C  
+// crt_contrlfp_s.c  
 // processor: x86  
 // This program uses _controlfp_s to output the FP control   
 // word, set the precision to 24 bits, and reset the status to   
 // the default.  
-//  
   
 #include <stdio.h>  
 #include <float.h>  
@@ -193,9 +192,7 @@ int main( void )
 }  
 ```  
   
-## <a name="output"></a>出力  
-  
-```  
+```Output  
 Original: 0x9001f  
 0.1 * 0.1 = 1.000000000000000e-002  
 24-bit:   0xa001f  
@@ -203,9 +200,6 @@ Original: 0x9001f
 Default:  0x9001f  
 0.1 * 0.1 = 1.000000000000000e-002  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

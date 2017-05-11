@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 4101348ee1344accb0a0117c997dceb1c79d0b40
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 7c597501d90e4816ffda3b0300109d3b51afc51c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="lfind"></a>_lfind
@@ -95,7 +96,7 @@ void *_lfind(
  キーが見つかった場合、`_lfind` は `key` と一致する `base` の配列要素のポインターを返します。 キーが見つからない場合、`_lfind` は `NULL` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_lfind` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch` とは異なり、`_lfind` では配列を並べ替える必要がありません。 `base` 引数は、検索する配列のベースへのポインターです。 `compare` 引数は、2 つの配列要素を比較して、それらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `_lfind` は検索中に `compare` ルーチンを&1; 回以上呼び出し、各呼び出しにおいて&2; つの配列要素へのポインターを渡します。 `compare` ルーチンは要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
+ `_lfind` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch` とは異なり、`_lfind` では配列を並べ替える必要がありません。 `base` 引数は、検索する配列のベースへのポインターです。 `compare` 引数は、2 つの配列要素を比較して、それらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `_lfind` は検索中に `compare` ルーチンを 1 回以上呼び出し、各呼び出しにおいて 2 つの配列要素へのポインターを渡します。 `compare` ルーチンは要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
   
  この関数は、パラメーターを検証します。 `compare`、`key` または `num` が `NULL` である場合、`base` が NULL で *`num` がゼロ以外の場合、または `width` がゼロより小さい場合は、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。  
   
@@ -143,9 +144,6 @@ int main( )
 ```Output  
 Hello found  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Collections::ArrayList::Contains](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   

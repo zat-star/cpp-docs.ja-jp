@@ -37,10 +37,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2cff811e456e3cb47929080bef8203a8b89d02f9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 0e08b6f737616cf764f797681c5492840a9b044a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="freelist-class"></a>freelist クラス
@@ -68,21 +69,21 @@ class freelist
   
 |||  
 |-|-|  
-|[freelist](#freelist__freelist)|`freelist` 型のオブジェクトを構築します。|  
+|[freelist](#freelist)|`freelist` 型のオブジェクトを構築します。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[pop](#freelist__pop)|フリー リストから最初のメモリ ブロックを削除します。|  
-|[push](#freelist__push)|メモリ ブロックをリストに追加します。|  
+|[pop](#pop)|フリー リストから最初のメモリ ブロックを削除します。|  
+|[push](#push)|メモリ ブロックをリストに追加します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
   
-##  <a name="freelist__freelist"></a>  freelist::freelist  
+##  <a name="freelist"></a>  freelist::freelist  
  `freelist` 型のオブジェクトを構築します。  
   
 ```
@@ -91,7 +92,7 @@ freelist();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="freelist__pop"></a>  freelist::pop  
+##  <a name="pop"></a>  freelist::pop  
  フリー リストから最初のメモリ ブロックを削除します。  
   
 ```
@@ -104,7 +105,7 @@ void *pop();
 ### <a name="remarks"></a>コメント  
  一覧が空の場合、メンバー関数は `NULL` を返します。 それ以外の場合は、空き一覧から最初のメモリ ブロックを削除します。  
   
-##  <a name="freelist__push"></a>  freelist::push  
+##  <a name="push"></a>  freelist::push  
  メモリ ブロックをリストに追加します。  
   
 ```

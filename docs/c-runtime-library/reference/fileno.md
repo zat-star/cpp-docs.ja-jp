@@ -52,10 +52,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9de730aa3e9fe367a729b2f0d95283a6aae33b31
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: e5a2f9c68eef3698886afd2ed48690d8b4fffd53
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="fileno"></a>_fileno
@@ -74,7 +75,7 @@ int _fileno(
  `FILE` 構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- `_fileno` はファイル記述子を返します。 エラーの戻り値はありません。 `stream` が開いているファイルを指定しない場合、結果は未定義です。 ストリームが `NULL` の場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、_`fileno` から無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` を `EINVAL` に設定します。  
+ `_fileno` はファイル記述子を返します。 エラーの戻り値はありません。 `stream` が開いているファイルを指定しない場合、結果は未定義です。 ストリームが `NULL` の場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`_fileno` から無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` を `EINVAL` に設定します。  
   
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
@@ -115,9 +116,6 @@ The file descriptor for stdin is 0
 The file descriptor for stdout is 1  
 The file descriptor for stderr is 2  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::FileStream::Handle](https://msdn.microsoft.com/en-us/library/system.io.filestream.handle.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

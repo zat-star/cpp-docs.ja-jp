@@ -120,10 +120,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e1a79f5859d35b324b4469918bf1107da32f651c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 58132a9c16f23d7885432b05a459cc348c0bf915
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="findnext-findnext32-findnext32i64-findnext64-findnext64i32-findnexti64-wfindnext-wfindnext32-wfindnext32i64-wfindnext64-wfindnext64i32-wfindnexti64"></a>_findnext、_findnext32、_findnext32i64、_findnext64、_findnext64i32、_findnexti64、_wfindnext、_wfindnext32、_wfindnext32i64、_wfindnext64、_wfindnext64i32、_wfindnexti64
@@ -190,7 +191,7 @@ int _wfindnext64i32(
  ファイル情報バッファー。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、0 を返します。 それ以外の場合は -1 を返し、エラーの性質を示す値に `errno` を設定します。 次の表に、発生する可能性のあるエラー コードを示します。  
+ 正常に終了した場合は、0 を返します。 それ以外の場合、-1 を返し、設定`errno`エラーの性質を示す値にします。 次の表に、発生する可能性のあるエラー コードを示します。  
   
  `EINVAL`  
  無効なパラメーター: `fileinfo` は `NULL` でした。 または、オペレーティング システムが予期しないエラーを返しました。  
@@ -206,7 +207,7 @@ int _wfindnext64i32(
 ## <a name="remarks"></a>コメント  
  `_findfirst` または `_findnext` 関数 (または任意のバリアント) を完了した後は、[_findclose](../../c-runtime-library/reference/findclose.md) を呼び出す必要があります。 呼び出すと、アプリケーション内でこれらの関数が使用しているリソースが解放されます。  
   
- `w` プレフィックスがあるこれらの関数のバリエーションは、ワイド文字バージョンです。それ以外の場合、対応する&1; バイト関数と同じです。  
+ `w` プレフィックスがあるこれらの関数のバリエーションは、ワイド文字バージョンです。それ以外の場合、対応する 1 バイト関数と同じです。  
   
  これらの関数のバリエーションは、32 ビットや 64 ビットの時刻型と、32 ビットや 64 ビットのファイル サイズをサポートします。 最初の数字のサフィックス (`32` または `64`) は、使用される時刻型のサイズを示します。2 番目のサフィックスは `i32` または `i64`で、ファイル サイズが 32 ビットの整数として表されるか、それとも 64 ビットの整数として表されるかを示します。 32 ビットと 64 ビットの時刻型とファイル サイズをサポートするバージョンについては、次の表を参照してください。 64 ビットの時刻型を使用するバリエーションでは、3000 年 12 月 31 日 23:59:59 (UTC) までのファイルの作成日を表現できます。32 ビットの時刻型を使用するバリエーションでは、2038 年 1 月 18 日 23:59:59 (UTC) までの日付のみを表現できます。 これらの関数の日付範囲の下限は、いずれも 1970 年 1 月 1 日の午前 0 時です。  
   
@@ -257,9 +258,6 @@ int _wfindnext64i32(
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [システム コール](../../c-runtime-library/system-calls.md)   

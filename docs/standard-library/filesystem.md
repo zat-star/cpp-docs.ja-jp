@@ -36,10 +36,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: 25cfc0cc7c9f22a495b409e6e08d133b0f29ff8e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 4cb454ca6ea92ede5c4cf83c1072e22e60577811
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltfilesystemgt"></a>&lt;filesystem&gt;
@@ -56,7 +57,7 @@ using namespace std::experimental::filesystem::v1;
 > [!IMPORTANT]
 >  Visual Studio 2017 のリリース時点で、\<experimental/filesystem> ヘッダーはまだ C++ 標準ではありませんでした。 Visual C++ 2017 は、[ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf) の標準の最終ドラフトを実装しています。  
   
- このヘッダーは、ホスト オペレーティング システム (Microsoft Windows と Posix) の&2; つの広範なクラスのいずれかに対してファイル システムをサポートします。  
+ このヘッダーは、ホスト オペレーティング システム (Microsoft Windows と Posix) の 2 つの広範なクラスのいずれかに対してファイル システムをサポートします。  
   
  ほとんどの機能が両方のオペレーティング システムに共通していますが、このドキュメントではそれらの相違点について説明します。 例:  
   
@@ -64,11 +65,11 @@ using namespace std::experimental::filesystem::v1;
   
 -   Posix は、ルート名のない単一のツリー、単一のルート ディレクトリ /、および単一の現在のディレクトリをサポートします。  
   
- もう&1; つの大きな違いは、パス名のネイティブな表現です。  
+ もう 1 つの大きな違いは、パス名のネイティブな表現です。  
   
--   Windows では、UTF-16 (文字ごとに&1; つまたは&2; つの要素) としてエンコードされた wchar_t の null 終端シーケンスが使用されます。  
+-   Windows では、UTF-16 (文字ごとに 1 つまたは 2 つの要素) としてエンコードされた wchar_t の null 終端シーケンスが使用されます。  
   
--   Posix では、UTF-8 (文字ごとに&1; つ以上の要素) としてエンコードされた char の null 終端シーケンスが使用されます。  
+-   Posix では、UTF-8 (文字ごとに 1 つ以上の要素) としてエンコードされた char の null 終端シーケンスが使用されます。  
   
 -   クラス パスのオブジェクトは、パス名をネイティブ形式で格納しますが、この格納形式といくつかの外部形式の間の簡単な変換をサポートします。  
   
@@ -84,7 +85,7 @@ using namespace std::experimental::filesystem::v1;
   
  必要に応じて、1 つまたは複数の `codecvt` ファセットを使用することによって、これらの表現の相互変換が実施されます。 特定のロケール オブジェクトが指定されなかった場合は、これらのファセットがグローバル ロケールから取得されます。  
   
- もう&1; つの相違点は、オペレーティング システムで指定可能なファイルまたはディレクトリのアクセス許可の詳細です。  
+ もう 1 つの相違点は、オペレーティング システムで指定可能なファイルまたはディレクトリのアクセス許可の詳細です。  
   
 1.  Windows は、ファイルが読み取り専用なのか書き込み可能なのかという、ディレクトリには意味のない属性を記録します。  
   
@@ -141,10 +142,10 @@ using namespace std::experimental::filesystem::v1;
   
 |名前|説明|  
 |----------|-----------------|  
-|[copy_options 列挙体](../standard-library/filesystem-enumerations.md#filesystem__copy_options)|[copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) と共に使用され、コピー先ファイルが既に存在する場合の動作を決定する列挙体です。|  
-|[directory_options 列挙体](../standard-library/filesystem-enumerations.md#filesystem__directory_options)|ディレクトリ反復子のオプションを指定する列挙体。|  
-|[file_type 列挙体](../standard-library/filesystem-enumerations.md#filesystem__file_type)|ファイルの種類の列挙型。|  
-|[perms 列挙体](../standard-library/filesystem-enumerations.md#filesystem__perms)|アクセス許可とアクセス許可に対するオプションを伝達するために使用されるビットマスク型|  
+|[copy_options](../standard-library/filesystem-enumerations.md#copy_options)|[copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) と共に使用され、コピー先ファイルが既に存在する場合の動作を決定する列挙体です。|  
+|[directory_options](../standard-library/filesystem-enumerations.md#directory_options)|ディレクトリ反復子のオプションを指定する列挙体。|  
+|[file_type](../standard-library/filesystem-enumerations.md#file_type)|ファイルの種類の列挙型。|  
+|[perms](../standard-library/filesystem-enumerations.md#perms)|アクセス許可とアクセス許可に対するオプションを伝達するために使用されるビットマスク型|  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)

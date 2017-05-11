@@ -31,10 +31,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 79a5556d0d0806462893bb4165f7d6fc2d3a986f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 87ae0515eba774f73ee0d4283a020ce27c3fbe6f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="filesystemerror-class"></a>filesystem_error クラス
@@ -47,7 +48,7 @@ class filesystem_error    : public system_error;
 ```  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、\<filesystem> 関数のエラーを報告するためにスローされる例外すべてに対する基底クラスとして機能します。 このクラスは、文字列型のオブジェクトを格納します。ここでは説明をわかりやすくするために、このオブジェクトを mymesg と呼ぶことにします。 さらに、このクラスは path 型のオブジェクトを&2; つ格納します。ここでは、これらのオブジェクトを mypval1 および mypval2 と呼ぶことにします。  
+ このクラスは、\<filesystem> 関数のエラーを報告するためにスローされる例外すべてに対する基底クラスとして機能します。 このクラスは、文字列型のオブジェクトを格納します。ここでは説明をわかりやすくするために、このオブジェクトを mymesg と呼ぶことにします。 さらに、このクラスは path 型のオブジェクトを 2 つ格納します。ここでは、これらのオブジェクトを mypval1 および mypval2 と呼ぶことにします。  
   
 ## <a name="filesystemerrorfilesystemerror"></a>filesystem_error::filesystem_error  
   
@@ -92,7 +93,7 @@ const char *what() const noexcept;
  このメンバー関数は、NTBS へのポインターを返します。この NTBS は、可能であればruntime_error::what()、system_error::what()、mymesg、mypval1.native_string()、および mypval2.native_string() から構成されます。  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** filesystem  
+ **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::experimental::filesystem  
   

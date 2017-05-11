@@ -1,84 +1,101 @@
 ---
 title: "_itoa_s、_i64toa_s、_ui64toa_s、_itow_s、_i64tow_s、_ui64tow_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_ui64tow_s"
-  - "_itoa_s"
-  - "_itow_s"
-  - "_ui64toa_s"
-  - "_i64tow_s"
-  - "_i64toa_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "i64tot_s"
-  - "itow_s"
-  - "_ui64tow_s"
-  - "_itow_s"
-  - "ui64tot_s"
-  - "_ui64toa_s"
-  - "itoa_s"
-  - "_i64tow_s"
-  - "_i64tot_s"
-  - "_itot_s"
-  - "_i64toa_s"
-  - "_itoa_s"
-  - "ui64toa_s"
-  - "i64toa_s"
-  - "_ui64tot_s"
-  - "i64tow_s"
-  - "itot_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_i64toa_s 関数"
-  - "_i64tot_s 関数"
-  - "_i64tow_s 関数"
-  - "_itoa_s 関数"
-  - "_itot_s 関数"
-  - "_itow_s 関数"
-  - "_ui64toa_s 関数"
-  - "_ui64tot_s 関数"
-  - "_ui64tow_s 関数"
-  - "変換 (整数を)"
-  - "変換 (数値の), 文字列への"
-  - "i64toa_s 関数"
-  - "i64tow_s 関数"
-  - "整数, 変換"
-  - "itoa_s 関数"
-  - "itow_s 関数"
-  - "ui64toa_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _ui64tow_s
+- _itoa_s
+- _itow_s
+- _ui64toa_s
+- _i64tow_s
+- _i64toa_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- i64tot_s
+- itow_s
+- _ui64tow_s
+- _itow_s
+- ui64tot_s
+- _ui64toa_s
+- itoa_s
+- _i64tow_s
+- _i64tot_s
+- _itot_s
+- _i64toa_s
+- _itoa_s
+- ui64toa_s
+- i64toa_s
+- _ui64tot_s
+- i64tow_s
+- itot_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- _ui64toa_s function
+- _itow_s function
+- _i64tow_s function
+- _itot_s function
+- converting integers
+- itow_s function
+- i64toa_s function
+- _ui64tow_s function
+- integers, converting
+- _i64tot_s function
+- itoa_s function
+- _itoa_s function
+- ui64toa_s function
+- i64tow_s function
+- converting numbers, to strings
+- _ui64tot_s function
+- _i64toa_s function
 ms.assetid: eb746581-bff3-48b5-a973-bfc0a4478ecf
 caps.latest.revision: 28
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 28
----
-# _itoa_s、_i64toa_s、_ui64toa_s、_itow_s、_i64tow_s、_ui64tow_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 7e163c78f3a6b011c8670ad71277fb6770935066
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-整数を文字列に変換します。  これらの関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[\_itoa、\_i64toa、\_ui64toa、\_itow、\_i64tow、\_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="itoas-i64toas-ui64toas-itows-i64tows-ui64tows"></a>_itoa_s、_i64toa_s、_ui64toa_s、_itow_s、_i64tow_s、_ui64tow_s
+整数を文字列に変換します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _itoa_s(  
@@ -131,64 +148,64 @@ errno_t _itow_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[入力\] `value`  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `value`  
  変換される数値。  
   
- \[出力\] `buffer`  
+ [出力] `buffer`  
  変換の結果が格納されます。  
   
- \[入力\] `sizeInCharacters`  
- バイト文字またはワイド文字の buffer のサイズ。  
+ [入力] `sizeInCharacters`  
+ 1 バイト文字またはワイド文字のバッファーのサイズ。  
   
- \[入力\] `radix`  
- `value` の基数。2 ～ 36 の範囲で指定する必要があります。  
+ [入力] `radix`  
+ ベース`value`; 2 ~ 36 の範囲にする必要があります。  
   
-## 戻り値  
- 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  次の条件のいずれかに該当する場合、関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。 次のいずれかの条件が適用される場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、関数によって無効なパラメーター ハンドラーが呼び出されます。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|値|バッファー|sizeInCharacters|基数|戻り値|  
-|-------|-----------|----------------------|--------|---------|  
+|value|buffer|sizeInCharacters|radix|Return|  
+|-----------|------------|----------------------|-----------|------------|  
 |任意|`NULL`|任意|任意|`EINVAL`|  
-|任意|任意|\<\=0|任意|`EINVAL`|  
-|任意|任意|\<\= 必要な結果の文字列の長さ|任意|`EINVAL`|  
-|任意|任意|任意|`radix` \< 2 または 36 `radix` \>|`EINVAL`|  
+|任意|任意|<=0|任意|`EINVAL`|  
+|任意|任意|<= 結果の文字列の長さが必要|任意|`EINVAL`|  
+|任意|任意|任意|`radix` < 2 または `radix` > 36|`EINVAL`|  
   
- **セキュリティの問題**  
+ **セキュリティ上の問題**  
   
- これらの関数は `buffer` が有効なメモリを指さない可能性、`NULL`である、またはバッファーの長さが十分長く、結果の文字列を格納することであるアクセス違反が発生します。  
+ `buffer` が有効なメモリを指しておらず、`NULL` でない場合、またはバッファーの長さが結果の文字列を保持するのに十分でない場合は、これらの関数によってアクセス違反が発生する可能性があります。  
   
-## 解説  
- パラメーターと戻り値を除き、`_itoa_s` 関数に対応とそれほど安全なバージョンの動作は同じです。  
+## <a name="remarks"></a>コメント  
+ パラメーターと戻り値を除く `_itoa_s` 関数には、セキュリティ強化されていない対応バージョンと同じ動作があります。  
   
- C\+\+ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要がなくなる\) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。  この動作を無効にするには、[\_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
+ これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_itot_s`|`_itoa_s`|`_itoa_s`|`_itow_s`|  
 |`_i64tot_s`|`_i64toa_s`|`_i64toa_s`|`_i64tow_s`|  
 |`_ui64tot_s`|`_ui64toa_s`|`_ui64toa_s`|`_ui64tow_s`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_itoa_s`|\<stdlib.h\>|  
-|`_i64toa_s`|\<stdlib.h\>|  
-|`_ui64toa_s`|\<stdlib.h\>|  
-|`_itow_s`|\<stdlib.h\> または \<wchar.h\>|  
-|`_i64tow_s`|\<stdlib.h\> または \<wchar.h\>|  
-|`_ui64tow_s`|\<stdlib.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`_itoa_s`|\<stdlib.h>|  
+|`_i64toa_s`|\<stdlib.h>|  
+|`_ui64toa_s`|\<stdlib.h>|  
+|`_itow_s`|\<stdlib.h> または \<wchar.h>|  
+|`_i64tow_s`|\<stdlib.h> または \<wchar.h>|  
+|`_ui64tow_s`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_itoa_s.c  
@@ -219,7 +236,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 base 10: -1 (2 chars)  
@@ -253,10 +270,7 @@ base 3: 11112220022122120101211020120210210211220 (41 chars)
 base 2: 1111111111111111111111111111111111111111111111111111111111111111 (64 chars)  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
- [\_ltoa、\_ltow](../Topic/_ltoa,%20_ltow.md)   
- [\_ultoa、\_ultow](../../c-runtime-library/reference/ultoa-ultow.md)
+ [_ltoa、_ltow](../../c-runtime-library/reference/ltoa-ltow.md)   
+ [_ultoa、_ultow](../../c-runtime-library/reference/ultoa-ultow.md)

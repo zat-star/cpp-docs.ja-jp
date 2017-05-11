@@ -72,10 +72,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d761621d23ab97d951199e7790e71f224394f92c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: c96743fc777a53f2fe849d5f88f3fd7299054d02
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="cprintf-cprintfl-cwprintf-cwprintfl"></a>_cprintf、_cprintf_l、_cwprintf、_cwprintf_l
@@ -88,22 +89,18 @@ ms.lasthandoff: 02/24/2017
   
 ```  
 int _cprintf(   
-   const char * format [,   
-   argument] ...   
+   const char * format [, argument_list]  
 );  
-int _cprintf_l(   
+int _cprintf_l(  
    const char * format,  
-   locale_t locale [,  
-   argument] …   
+   locale_t locale [, argument_list]  
 );  
 int _cwprintf(  
-   const wchar * format [,   
-   argument] …  
+   const wchar * format [, argument_list]  
 );  
 int _cwprintf_l(  
    const wchar * format,  
-   locale_t locale [,   
-   argument] …  
+   locale_t locale [, argument_list]  
 );  
 ```  
   
@@ -111,8 +108,8 @@ int _cwprintf_l(
  `format`  
  書式指定文字列。  
   
- `argument`  
- 省略可能なパラメーター。  
+ `argument_list`  
+ 書式指定文字列の省略可能なパラメーターです。  
   
  `locale`  
  使用するロケール。  
@@ -121,9 +118,9 @@ int _cwprintf_l(
  出力された文字数。  
   
 ## <a name="remarks"></a>コメント  
- これらの関数は、文字を出力する `_putch` 関数 (`_cwprintf` の場合は `_putwch`) を使用して、一連の文字や値を書式化して直接コンソールに出力します。 各 `argument` (指定されている場合) は、 `format`中の対応する書式指定に応じて変換され、格納されます。 書式は、[printf](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md) 関数の `format` パラメーターと同じ形式および機能を保持します。 `fprintf`、`printf`、`sprintf` の各関数とは異なり、`_cprintf` も `_cwprintf` も、出力時にライン フィード文字をキャリッジ リターンとライン フィード (CR-LF: carriage return–line feed) の組み合わせに変換しません。  
+ これらの関数は、文字を出力する `_putch` 関数 (`_putwch` の場合は `_cwprintf`) を使用し、一連の文字や値を書式化して直接コンソールに出力します。 各引数は`argument_list`(存在する場合) は変換され、対応する書式指定に従って`format`です。 `format`引数は、 [printf 関数と wprintf 関数の指定の構文を書式設定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。 異なり、 `fprintf`、 `printf`、および`sprintf`関数も`_cprintf`また`_cwprintf`ライン フィード文字をキャリッジ リターンとライン フィード (CR-LF) の組み合わせに変換出力時にします。  
   
- `_cwprintf` を Windows NT で使用すると、Unicode 文字が表示される点に注意してください。 `_cprintf` と異なり、`_cwprintf` はコンソールの現在のロケール設定を使用します。  
+ 重要な相違点は`_cwprintf`Windows で使用すると、Unicode 文字が表示されます。 `_cprintf` と異なり、`_cwprintf` はコンソールの現在のロケール設定を使用します。  
   
  `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -175,9 +172,6 @@ int main( void )
 ```Output  
 -16  001d  62511  A Test  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   

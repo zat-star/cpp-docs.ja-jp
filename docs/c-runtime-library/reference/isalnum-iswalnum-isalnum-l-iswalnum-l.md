@@ -63,10 +63,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 065af7d72f7a2bfdecc945002d8eb869b47765a6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 14e5ecd35a6f844dd7d304f10167e690f7df970e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="isalnum-iswalnum-isalnuml-iswalnuml"></a>isalnum、iswalnum、_isalnum_l、_iswalnum_l
@@ -99,7 +100,7 @@ int _iswalnum_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` が特定の英数字を表している場合は&0; 以外の値を返します。 `isalnum` または `isalpha` が `isdigit` に対して 0 以外の値の場合、つまり、`c` が A ～ Z、a ～ z、または 0 ～ 9 の範囲内にある場合、`c` は 0 以外の値を返します。 `iswalnum` または `iswalpha` が `iswdigit` に対して&0; 以外の値の場合、`c` は&0; 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` が特定の英数字を表している場合は 0 以外の値を返します。 `isalnum`場合に 0 以外の値を返します`isalpha`または`isdigit`は 0 です`c`,、つまり場合`c`が範囲内で、A ~ Z、a ~ z、または 0 - 9 です。 `iswalnum` または `iswalpha` が `iswdigit` に対して 0 以外の値の場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -122,9 +123,6 @@ int _iswalnum_l(
 |`_iswalnum_l`|\<ctype.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Char::IsLetterOrDigit](https://msdn.microsoft.com/en-us/library/system.char.isletterordigit.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

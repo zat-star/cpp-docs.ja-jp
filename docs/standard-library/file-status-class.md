@@ -35,14 +35,15 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: c7f3b346bc8abeab0c6bd913fc0b554bef4ed208
-ms.openlocfilehash: 954da8df11c2382887717baa61070acc0b6070b4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 1095fbeeceb33fd9dedf0ad1217eab1a052f5ba1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="filestatus-class"></a>file_status クラス
-[file_type](../standard-library/filesystem-enumerations.md#filesystem__file_type) とファイルの [perms](../standard-library/filesystem-enumerations.md#filesystem__perms) をラップします。  
+[file_type](../standard-library/filesystem-enumerations.md#file_type) とファイルの [perms](../standard-library/filesystem-enumerations.md#perms) をラップします。  
   
 ## <a name="syntax"></a>構文  
   
@@ -82,25 +83,25 @@ void type(file_type ftype) noexcept
   
  file_type を取得または設定します。  
   
-## <a name="permissions"></a>permissions  
+## <a name="permissions"></a>アクセス許可  
   
-``cpp  
+```cpp  
 perms permissions() const noexcept  
 void permissions(perms mask) noexcept   
 ```  
   
- Gets or sets the file permissions.  
+ ファイルのアクセス許可を取得または設定します。  
   
- Use the setter to make a file readonly or remove the readonly attribute.  
+ セッターを使用して、ファイルを読み取り専用にしたり、読み取り専用属性を削除したりできます。  
   
-## Requirements  
- **Header:** \<filesystem>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<filesystem >  
   
- **Namespace:** std::experimental::filesystem, std::experimental::filesystem::v1  
+ **Namespace:** std::experimental::filesystem、std::experimental::filesystem::v1  
   
-## See Also  
- [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
- [path Class](../standard-library/path-class.md)   
+## <a name="see-also"></a>関連項目  
+ [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+ [path クラス](../standard-library/path-class.md)   
  [\<filesystem>](../standard-library/filesystem.md)
 
 

@@ -1,50 +1,67 @@
 ---
-title: "fread | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "fread"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "fread"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [C++], 読み取り (入力ストリームから)"
-  - "fread 関数"
-  - "読み取り (データを) [C++], 入力ストリームから"
-  - "ストリーム [C++], 読み取り (データを)"
+title: "fread | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- fread
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- fread
+dev_langs:
+- C++
+helpviewer_keywords:
+- reading data [C++], from input streams
+- fread function
+- data [C++], reading from input stream
+- streams [C++], reading data from
 ms.assetid: 9a3c1538-93dd-455e-ae48-77c1e23c53f0
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# fread
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 1075fc8aad54dfdcada7fe2f4dd8e99706de7d99
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
+---
+# <a name="fread"></a>fread
 ストリームからデータを読み取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_t fread(   
@@ -55,12 +72,12 @@ size_t fread(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buffer`  
  データの格納場所。  
   
  `size`  
- 項目のバイト単位のサイズ。  
+ 項目サイズ (バイト単位)。  
   
  `count`  
  読み取る項目の最大数。  
@@ -68,25 +85,25 @@ size_t fread(
  `stream`  
  `FILE` 構造体へのポインター。  
   
-## 戻り値  
- `fread` で エラーが発生したり、ファイルの末尾に到達する `count`の前に発生した実際に読み込まれる `count` 未満である、完全な項目数を返します*。*EOF が見つかりました。読み取りエラー状態とを区別するために `feof` または `ferror` 関数を使用します。  `size` または `count` が 0 の場合、`fread` は 0 を返し、バッファーの内容は変更されません。  `stream` または `buffer` が null ポインターの場合、`fread` は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
+## <a name="return-value"></a>戻り値  
+ `fread`返します。 実際に読み取られた完全な項目の数、可能性のあるより小さい`count`エラーが発生した場合、またはファイルの末尾が到達する前に発生した場合`count`です。 `feof` 関数または `ferror` 関数を使用すれば、読み取りエラーとファイルの終端に達した状態とを区別できます。 `size`または `count` が 0 である場合、`fread` は 0 を返し、バッファーの内容は変更されません。 `stream` または `buffer` が null ポインターの場合、`fread` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `fread` 関数は入力 `stream` から `size` バイトの `count` 項目まで読み取り、`buffer`に保存します*。*`stream` に関連付けられたファイル ポインターは実際に読み込まれるバイト数 \(1\) は大きくなります。  特定のストリームがテキスト モードで開いて、キャリッジ return–linefeed ペアは単一のライン フィードの文字に置き換えられます。  置換は、ファイル ポインターまたは戻り値には影響しません。  ファイル ポインターの位置でエラーが発生した場合は不確定です。  部分的に入力項目の値を決定する必要があります。  
+## <a name="remarks"></a>コメント  
+ `fread` 関数は、入力 `stream` から、`size` バイトの `count` 項目まで読み取り、`buffer` に格納します。 `stream` に関連付けられたファイル ポインター (存在する場合) は、実際に読み取られたバイト数でインクリメントされます。 指定したストリームがテキスト モードで開かれている場合は、キャリッジ リターンとライン フィードのペアが 1 つの改行文字に置き換えられます。 この置き換えは、ファイル ポインターまたは戻り値には影響しません。 エラーが発生した場合、ファイル ポインターの位置は不確定になります。 部分的に読み取られた項目の値を特定できません。  
   
- この機能により、別のスレッドがロックされます。  ロックされていないバージョンが必要な場合は、`_fread_nolock`を使用します。  
+ この関数は他のスレッドをロックします。 ロックしないバージョンが必要な場合は、`_fread_nolock` を使用してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`fread`|\<stdio.h\>|  
+|--------------|---------------------|  
+|`fread`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_fread.c  
@@ -130,13 +147,13 @@ int main( void )
 }  
 ```  
   
-  **25 項目の作成**  
-**25 \= 読み込んだ項目数**  
-**バッファーの内容 zyxwvutsrqponmlkjihgfedcb \=**   
-## 同等の .NET Framework 関数  
- [System::IO::FileStream::Read](https://msdn.microsoft.com/en-us/library/system.io.filestream.read.aspx)  
+```Output  
+Wrote 25 items  
+Number of items read = 25  
+Contents of buffer = zyxwvutsrqponmlkjihgfedcb  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fwrite](../Topic/fwrite.md)   
- [\_read](../Topic/_read.md)
+ [fwrite](../../c-runtime-library/reference/fwrite.md)   
+ [_read](../../c-runtime-library/reference/read.md)

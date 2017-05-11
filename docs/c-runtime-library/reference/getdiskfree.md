@@ -53,10 +53,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 5d4d3fea944955b75002e88e3692d42954612a3a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 725a45288dc39ac36966d877017ad65334800c11
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="getdiskfree"></a>_getdiskfree
@@ -82,7 +83,7 @@ unsigned _getdiskfree(
  ドライブに関する情報が読み込まれる `_diskfree_t` 構造体。  
   
 ## <a name="return-value"></a>戻り値  
- 関数が成功した場合の戻り値は&0; です。 関数が失敗した場合の戻り値はエラー コードです。 オペレーティング システムによって返されるエラーの場合、値 `errno` が設定されます。 `errno` が示しているエラー状態の詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」をご覧ください。  
+ 関数が成功した場合の戻り値は 0 です。 関数が失敗した場合の戻り値はエラー コードです。 オペレーティング システムによって返されるエラーの場合、値 `errno` が設定されます。 `errno` が示しているエラー状態の詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `_diskfree_t` 構造体は Direct.h で定義されています。  
@@ -120,9 +121,8 @@ struct _diskfree_t {
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_getdiskfree.c  
+```C  
+// crt_getdiskfree.c  
 // compile with: /c  
 #include <windows.h>  
 #include <direct.h>  
@@ -220,9 +220,6 @@ void utoiRightJustified(TCHAR* szLeft, TCHAR* szRight, unsigned uVal) {
 |  E: | The device is not ready.    |                 |              |  
 ======================================================================  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)

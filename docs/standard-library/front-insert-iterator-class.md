@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 6468f372324cb6f62b5b09524cfbf5386b1502c6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: b9ea6370bb55c57fb3713c41acb9281e928496c2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="frontinsertiterator-class"></a>front_insert_iterator クラス
@@ -63,29 +64,29 @@ class front_insert_iterator;
   
 |||  
 |-|-|  
-|[front_insert_iterator](#front_insert_iterator__front_insert_iterator)|指定されたコンテナー オブジェクトの前に要素を挿入できる反復子を作成します。|  
+|[front_insert_iterator](#front_insert_iterator)|指定されたコンテナー オブジェクトの前に要素を挿入できる反復子を作成します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#front_insert_iterator__container_type)|前方挿入の対象となるコンテナーを表す型。|  
-|[reference](#front_insert_iterator__reference)|関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。|  
+|[container_type](#container_type)|前方挿入の対象となるコンテナーを表す型。|  
+|[reference](#reference)|関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator*](#front_insert_iterator__operator_star)|前方挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
-|[operator++](#front_insert_iterator__operator_add_add)|値を格納できる次の位置に `front_insert_iterator` をインクリメントします。|  
-|[operator=](#front_insert_iterator__operator_eq)|前方挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
+|[operator*](#op_star)|前方挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
+|[operator++](#op_add_add)|値を格納できる次の位置に `front_insert_iterator` をインクリメントします。|  
+|[operator=](#op_eq)|前方挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー**: \<iterator>  
   
  **名前空間:** std  
   
-##  <a name="front_insert_iterator__container_type"></a>  front_insert_iterator::container_type  
+##  <a name="container_type"></a>  front_insert_iterator::container_type  
  前方挿入の対象となるコンテナーを表す型。  
   
 ```  
@@ -125,7 +126,7 @@ The list L2 is: ( 40 10 20 ).
 *\  
 ```  
   
-##  <a name="front_insert_iterator__front_insert_iterator"></a>  front_insert_iterator::front_insert_iterator  
+##  <a name="front_insert_iterator"></a>  front_insert_iterator::front_insert_iterator  
  指定されたコンテナー オブジェクトの前に要素を挿入できる反復子を作成します。  
   
 ```  
@@ -185,7 +186,7 @@ After the front insertions, the list L is:
 *\  
 ```  
   
-##  <a name="front_insert_iterator__operator_star"></a>  front_insert_iterator::operator*  
+##  <a name="op_star"></a>  front_insert_iterator::operator*  
  アドレス指定された要素を返す挿入反復子を逆参照します。  
   
 ```  
@@ -243,7 +244,7 @@ After the front insertions, the list L is:
 *\  
 ```  
   
-##  <a name="front_insert_iterator__operator_add_add"></a>  front_insert_iterator::operator++  
+##  <a name="op_add_add"></a>  front_insert_iterator::operator++  
  値を格納できる次の位置に `back_insert_iterator` をインクリメントします。  
   
 ```  
@@ -291,7 +292,7 @@ The list L1 is: ( 30 20 10 ).
 *\  
 ```  
   
-##  <a name="front_insert_iterator__operator_eq"></a>  front_insert_iterator::operator=  
+##  <a name="op_eq"></a>  front_insert_iterator::operator=  
  コンテナーの前に値を追加 (プッシュ) します。  
   
 ```  
@@ -349,7 +350,7 @@ The list L1 is: ( 30 20 10 ).
 *\  
 ```  
   
-##  <a name="front_insert_iterator__reference"></a>  front_insert_iterator::reference  
+##  <a name="reference"></a>  front_insert_iterator::reference  
  関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。  
   
 ```  

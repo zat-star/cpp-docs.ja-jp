@@ -1,61 +1,79 @@
 ---
-title: "fprintf、_fprintf_l、fwprintf、_fwprintf_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "fwprintf"
-  - "fprintf"
-  - "_fprintf_l"
-  - "_fwprintf_l"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "fprintf"
-  - "fwprintf"
-  - "_ftprintf"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_fwprintf_l 関数"
-  - "fprintf 関数"
-  - "fprintf_l 関数"
-  - "_fprintf_l 関数"
-  - "_ftprintf 関数"
-  - "fwprintf 関数"
-  - "ftprintf_l 関数"
-  - "ftprintf 関数"
-  - "_ftprintf_l 関数"
-  - "出力 (ストリームに書式付きデータを)"
-  - "fwprintf_l 関数"
+title: "fprintf、_fprintf_l、fwprintf、_fwprintf_l | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- fwprintf
+- fprintf
+- _fprintf_l
+- _fwprintf_l
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- fprintf
+- fwprintf
+- _ftprintf
+dev_langs:
+- C++
+helpviewer_keywords:
+- _fwprintf_l function
+- fprintf function
+- fprintf_l function
+- _fprintf_l function
+- _ftprintf function
+- fwprintf function
+- ftprintf_l function
+- ftprintf function
+- _ftprintf_l function
+- print formatted data to streams
+- fwprintf_l function
 ms.assetid: 34a87e1c-6e4d-4d48-a611-58314dd4dc4b
 caps.latest.revision: 24
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# fprintf、_fprintf_l、fwprintf、_fwprintf_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: d0f921aa46915220bb92f8ed1834f4c0e28ed57d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-ストリームに出力書式付きデータ。  これらの関数のセキュリティを強化したバージョンについては、「[fprintf\_s、\_fprintf\_s\_l、fwprintf\_s、\_fwprintf\_s\_l](../../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)」を参照してください。  
+---
+# <a name="fprintf-fprintfl-fwprintf-fwprintfl"></a>fprintf、_fprintf_l、fwprintf、_fwprintf_l
+書式付きデータをストリームに出力します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[fprintf_s、_fprintf_s_l、fwprintf_s、_fwprintf_s_l](../../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int fprintf(   
@@ -82,7 +100,7 @@ int _fwprintf_l(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  `FILE` 構造体へのポインター。  
   
@@ -95,40 +113,40 @@ int _fwprintf_l(
  `locale`  
  使用するロケール。  
   
-## 戻り値  
- `fprintf` を書き込むバイト数を返します。  `fwprintf` を書き込むワイド文字数を返します。  これらの関数は、出力エラーが発生した場合は負の値を返します。  `stream` または `format` が `NULL`の場合、これらの関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、関数は \-1 を返し、`errno` を `EINVAL` に設定します。  書式指定文字列が有効な書式指定文字があるかどうか `fprintf_s` または `fwprintf_s`を使用する場合のときはチェックされません。  
+## <a name="return-value"></a>戻り値  
+ `fprintf` は、書き込まれたバイト数を返します。 `fwprintf` は、書き込まれたワイド文字数を返します。 これらの関数は、出力エラーが発生した場合、負の値を返します。 `stream` または `format` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、関数は -1 を返し、`errno` を `EINVAL` に設定します。 書式文字列の書式指定文字か有効かどうかは、`fprintf_s` または `fwprintf_s` を使用した場合とは違い、確認されません。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `fprintf` は 出力 `stream`、一連の文字と値の書式を指定して、出力します*。*各関数 `argument` は `format`の対応する書式指定に従って \(存在する場合\) に変換され、出力`fprintf`では、`format` 引数に `printf`と同じ構文を使用できます。  
+## <a name="remarks"></a>コメント  
+ `fprintf` は、一連の文字および値を書式設定し、出力 `stream` に出力します。 各関数の `argument` (指定されている場合) は、`format` 中の対応する書式指定に応じて変換され、格納されます。 `fprintf` の引数 `format` は、`printf` の場合と同じ構文および用法となります。  
   
- `fwprintf` は `fprintf`のワイド文字バージョンであり、; `fwprintf`で、`format` はワイド文字列です。  ストリームが ANSI モードで開かれている場合、これらの関数の動作は同じになります。  `fprintf` では、UNICODE ストリームへの出力はサポートされていません。  
+ `fwprintf` は `fprintf` のワイド文字バージョンで、`fwprintf` 内の `format` はワイド文字列です。 ストリームが ANSI モードで開かれている場合、これらの関数の動作は同じになります。 `fprintf` では、UNICODE ストリームへの出力はサポートされていません。  
   
- `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
 > [!IMPORTANT]
 >  `format` にユーザー定義の文字列を指定しないでください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ftprintf`|`fprintf`|`fprintf`|`fwprintf`|  
 |`_ftprintf_l`|`_fprintf_l`|`_fprintf_l`|`_fwprintf_l`|  
   
- 詳細については、「[scanf 関数と wscanf 関数の書式指定フィールド](../Topic/Format%20Specification%20Syntax:%20printf%20and%20wprintf%20Functions.md)」を参照してください。  
+ 詳細については、[書式指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関するページを参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`fprintf`, `_fprintf_l`|\<stdio.h\>|  
-|`fwprintf`, `_fwprintf_l`|\<stdio.h\> または \<wchar.h\>|  
+|--------------|---------------------|  
+|`fprintf`, `_fprintf_l`|\<stdio.h>|  
+|`fwprintf`, `_fwprintf_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_fprintf.c  
@@ -159,15 +177,15 @@ int main( void )
 }  
 ```  
   
-  **これは文字列です。**  
-**10**  
-**1.500000**   
-## 同等の .NET Framework 関数  
- [System::IO::StreamWriter::Write](https://msdn.microsoft.com/en-us/library/system.io.streamwriter.write.aspx)  
+```Output  
+this is a string  
+10  
+1.500000  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [\_cprintf、\_cprintf\_l、\_cwprintf、\_cwprintf\_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
- [fscanf、\_fscanf\_l、fwscanf、\_fwscanf\_l](../../c-runtime-library/reference/fscanf-fscanf-l-fwscanf-fwscanf-l.md)   
- [sprintf、\_sprintf\_l、swprintf、\_swprintf\_l、\_\_swprintf\_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
- [書式指定構文: printf 関数と wprintf 関数](../Topic/Format%20Specification%20Syntax:%20printf%20and%20wprintf%20Functions.md)
+ [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
+ [fscanf、_fscanf_l、fwscanf、_fwscanf_l](../../c-runtime-library/reference/fscanf-fscanf-l-fwscanf-fwscanf-l.md)   
+ [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
+ [書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)

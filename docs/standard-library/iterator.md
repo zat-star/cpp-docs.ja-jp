@@ -36,14 +36,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: e7f431f18a1ddd6097fc5a4790a1a3688d3bda92
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 67ba9e9a670ac187d15fe53729d8cdac475472ce
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltiteratorgt"></a>&lt;iterator&gt;
-反復子のプリミティブ、定義済みの反復子とストリーム反復子、およびサポート テンプレートをいくつか定義します。 定義済み反復子には、挿入アダプターとリバース アダプターが含まれます。 挿入反復子アダプターのクラスには、フロント、バック、汎用の&3; つがあります。 これには、コンテナーのメンバー関数の反復子が提供する上書きセマンティクスではなく、挿入セマンティクスが用意されています。  
+反復子のプリミティブ、定義済みの反復子とストリーム反復子、およびサポート テンプレートをいくつか定義します。 定義済み反復子には、挿入アダプターとリバース アダプターが含まれます。 挿入反復子アダプターのクラスには、フロント、バック、汎用の 3 つがあります。 これには、コンテナーのメンバー関数の反復子が提供する上書きセマンティクスではなく、挿入セマンティクスが用意されています。  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 02/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- 反復子はポインターを一般化したもので、C++ プログラムが一貫した方法でさまざまなデータ構造を操作できるように要件が抽象化されています。 反復子は、コンテナーとジェネリックなアルゴリズムの仲介として機能します。 特定のデータ型を操作するのではなく、反復子の型で指定されている範囲を操作するようにアルゴリズムが定義されます。 そして、反復子の要件を満たすすべてのデータ構造をアルゴリズムで操作できます。 反復子には&5; つの種類またはカテゴリがあり、それぞれが独自の一連の要件と、結果として生じる機能を持ちます。  
+ 反復子はポインターを一般化したもので、C++ プログラムが一貫した方法でさまざまなデータ構造を操作できるように要件が抽象化されています。 反復子は、コンテナーとジェネリックなアルゴリズムの仲介として機能します。 特定のデータ型を操作するのではなく、反復子の型で指定されている範囲を操作するようにアルゴリズムが定義されます。 そして、反復子の要件を満たすすべてのデータ構造をアルゴリズムで操作できます。 反復子には 5 つの種類またはカテゴリがあり、それぞれが独自の一連の要件と、結果として生じる機能を持ちます。  
   
 -   出力: 前方移動。値を格納できますが、取得できません。ostream および inserter によって指定されます。  
   
@@ -92,13 +93,13 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/iterator-operators.md#operator_neq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しくないかどうかを調べます。|  
-|[operator==](../standard-library/iterator-operators.md#operator_eq_eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しいかどうかを調べます。|  
-|[operator<](../standard-library/iterator-operators.md#operator_lt_)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより小さいかどうかを調べます。|  
-|[operator\<=](../standard-library/iterator-operators.md#operator_lt__eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以下かどうかを調べます。|  
-|[operator>](../standard-library/iterator-operators.md#operator_gt_)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより大きいかどうかを調べます。|  
-|[operator>=](../standard-library/iterator-operators.md#operator_gt__eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以上かどうかを調べます。|  
-|[operator+](../standard-library/iterator-operators.md#operator_add)|反復子にオフセットを追加し、新しいオフセット位置に挿入された要素をアドレス指定する新しい `reverse_iterator` アドレスを返します。|  
+|[operator!=](../standard-library/iterator-operators.md#op_neq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しくないかどうかを調べます。|  
+|[operator==](../standard-library/iterator-operators.md#op_eq_eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しいかどうかを調べます。|  
+|[operator<](../standard-library/iterator-operators.md#op_lt)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより小さいかどうかを調べます。|  
+|[operator\<=](../standard-library/iterator-operators.md#op_gt_eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以下かどうかを調べます。|  
+|[operator>](../standard-library/iterator-operators.md#op_gt)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより大きいかどうかを調べます。|  
+|[operator>=](../standard-library/iterator-operators.md#op_gt_eq)|演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以上かどうかを調べます。|  
+|[operator+](../standard-library/iterator-operators.md#op_add)|反復子にオフセットを追加し、新しいオフセット位置に挿入された要素をアドレス指定する新しい `reverse_iterator` アドレスを返します。|  
 |[operator-](../standard-library/iterator-operators.md#operator-)|ある反復子を別の反復子から減算し、その差異を返します。|  
   
 ### <a name="classes"></a>クラス  

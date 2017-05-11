@@ -36,10 +36,11 @@ caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: d9f3bbe8cddea347e1663d8963c4496bcf8d7319
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 23d69fc4ac64b4364c736ee6bb596d8dcfcce54a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt; 列挙体
@@ -50,7 +51,7 @@ ms.lasthandoff: 02/24/2017
   
  **名前空間:** std::experimental::filesystem  
 
-##  <a name="filesystem__copy_options"></a>  copy_options
+##  <a name="copy_options"></a>  copy_options
 動作を指定するために [copy](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) および [copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) 関数で使用されるビットマスク値の列挙体。  
   
 ### <a name="syntax"></a>構文  
@@ -85,7 +86,7 @@ enum class copy_options {
 |`create_hard_links`|ファイルをコピーするのではなく、ハード リンクを作成します。|  
   
 
-##  <a name="filesystem__directory_options"></a> directory_options
+##  <a name="directory_options"></a> directory_options
 ディレクトリへのシンボリック リンクに従うか、無視するかを指定します。  
   
 ### <a name="syntax"></a>構文  
@@ -103,7 +104,7 @@ enum class directory_options {
 |`none`|既定の動作: ディレクトリへのシンボリック リンクを無視します。 アクセス許可の拒否はエラーです。|  
 |`follow_directory_symlink`|ディレクトリへのシンボリック リンクを実際のディレクトリとして処理します。|  
   
-##  <a name="filesystem__file_type"></a>  file_type
+##  <a name="file_type"></a>  file_type
 ファイルの種類の列挙型。 サポートされる値は、regular、directory、not_found、および unknown です。  
   
 ### <a name="syntax"></a>構文  
@@ -137,7 +138,7 @@ enum class file_type {
 |`socket`|7|UNIX ベースのシステム上のソケットを表します  (サポートされていません)。|  
 |`unknown`|8|状態が確認できないファイルを表します。|  
   
-##  <a name="filesystem__perms"></a>  perms
+##  <a name="perms"></a>  perms
 ファイルのアクセス許可のフラグを設定します。 サポートされる値は、基本的に "readonly" と all です。 readonly ファイルの場合、*_write ビットは設定されません。 それ以外の場合、 `all` ビット (0x0777) が設定されます。  
   
 ### <a name="syntax"></a>構文  

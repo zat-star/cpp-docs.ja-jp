@@ -50,10 +50,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 75a2b674f392b19bb37f26c977e8b79de7e715bb
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: fcd76f8daec9c90374989a82f4b4b2f85b4cb5c7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="findclose"></a>_findclose
@@ -72,7 +73,7 @@ int _findclose(
  以前の `_findfirst` の呼び出しで返された検索ハンドル。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`_findclose` は 0 を返します。 それ以外の場合は -1 を返し、`errno` を `ENOENT` に設定し、これ以上一致するファイルが見つからないことを示します。  
+ 正常に終了した場合、`_findclose` は 0 を返します。 -1 を返しますそれ以外の場合、設定と`errno`に`ENOENT`、以上に一致するファイルのことを示すが見つかりませんでした。  
   
 ## <a name="requirements"></a>要件  
   
@@ -80,10 +81,7 @@ int _findclose(
 |--------------|---------------------|  
 |`_findclose`|\<io.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [システム コール](../../c-runtime-library/system-calls.md)   

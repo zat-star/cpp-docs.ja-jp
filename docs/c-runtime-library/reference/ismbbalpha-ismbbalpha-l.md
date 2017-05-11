@@ -55,10 +55,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bbfbad7106e7e5b6fb7a311a8ca1ac4b44c7a1fc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5795c71864a9670334c03cb6722b932a66747047
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbbalpha-ismbbalphal"></a>_ismbbalpha、_ismbbalpha_l
@@ -83,13 +84,13 @@ int _ismbbalpha_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbalpha` は、式が以下の場合に&0; 以外の値を返します。  
+ `_ismbbalpha` は、式が以下の場合に 0 以外の値を返します。  
   
 ```  
 isalpha || _ismbbkalnum  
 ```  
   
- `c` の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbalpha` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbalpha_l` は、代わりに渡されるロケールを使用することを除いて同じです。  
+ `c`の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbalpha` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbalpha_l` は、代わりに渡されるロケールを使用することを除いて同じです。  
   
 ## <a name="requirements"></a>要件  
   
@@ -102,9 +103,6 @@ isalpha || _ismbbkalnum
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)   

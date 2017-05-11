@@ -68,10 +68,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: b7553152e92a2db61330dfa5267ade05a42a807d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 9bdf8a39791fc03505d79446bbe0d46436006deb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="islower-iswlower-islowerl-iswlowerl"></a>islower、iswlower、_islower_l、_iswlower_l
@@ -104,7 +105,7 @@ int _iswlower_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` 小文字の特殊表現の場合は&0; 以外の値を返します。 `islower` は `c` が、小文字 (a – z) の場合、0 以外の値を返します。 `iswlower` は、`c` が小文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの&1; 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが&0; である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらのルーチンでは、`c` 小文字の特殊表現の場合は 0 以外の値を返します。 `islower`場合は 0 以外の値を返します`c`小文字 (a ~ z)。 `iswlower` は、`c` が小文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの 1 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -127,9 +128,6 @@ int _iswlower_l(
 |`_swlower_l`|\<ctype.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Char::IsLower](https://msdn.microsoft.com/en-us/library/system.char.islower.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   
