@@ -6,13 +6,29 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- iterator/std::advance
+- iterator/std::back_inserter
+- iterator/std::begin
+- iterator/std::cbegin
+- iterator/std::cend
+- iterator/std::distance
+- iterator/std::end
+- iterator/std::front_inserter
+- iterator/std::inserter
+- iterator/std::make_checked_array_iterator
+- iterator/std::make_move_iterator
+- iterator/std::make_unchecked_array_iterator
+- iterator/std::next
+- iterator/std::prev
 ms.assetid: 4a57c9a3-7e36-411f-8655-e0be2eec88e7
 caps.latest.revision: 16
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1fb4f0f27496db45c7bbb7b609e0f945eb007154
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 171fd87608b0afed1ebb0c2ae82d6118adff727f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltiteratorgt-functions"></a>&lt;iterator&gt; 関数
@@ -24,7 +40,7 @@ ms.lasthandoff: 02/24/2017
 |[make_checked_array_iterator](#make_checked_array_iterator)|[make_move_iterator](#make_move_iterator)|[make_unchecked_array_iterator](#make_unchecked_array_iterator)|  
 |[next](#next)|[prev](#prev)|  
   
-##  <a name="a-nameadvancea--advance"></a><a name="advance"></a>  詳細  
+##  <a name="advance"></a>  詳細  
  指定された位置の番号によって反復子をインクリメントします。  
   
 ```  
@@ -95,7 +111,7 @@ LPOS is advanced 4 steps forward to point to the fifth element: 5.
 LPOS is moved 3 steps back to point to the 2nd element: 2.  
 ```  
   
-##  <a name="a-namebackinsertera--backinserter"></a><a name="back_inserter"></a>  back_inserter  
+##  <a name="back_inserter"></a>  back_inserter  
  指定されたコンテナーの後ろに要素を挿入できる反復子を作成します。  
   
 ```  
@@ -111,7 +127,7 @@ back_insert_iterator<Container> back_inserter(Container& _Cont);
  コンテナー オブジェクト `_Cont` に関連付けられる `back_insert_iterator`。  
   
 ### <a name="remarks"></a>コメント  
- C++ 標準ライブラリでは、引数は、メンバー関数 `push_back` が含まれる [deque クラス](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、[vector クラス](../standard-library/vector-class.md)の&3; つのシーケンス コンテナーのいずれかを参照する必要があります。  
+ C++ 標準ライブラリでは、引数は、メンバー関数 `push_back` が含まれる [deque クラス](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、[vector クラス](../standard-library/vector-class.md)の 3 つのシーケンス コンテナーのいずれかを参照する必要があります。  
   
 ### <a name="example"></a>例  
   
@@ -162,7 +178,7 @@ The initial vector vec is: ( 0 1 2 ).
 After the insertions, the vector vec is: ( 0 1 2 30 40 500 600 ).  
 ```  
   
-##  <a name="a-namebegina--begin"></a><a name="begin"></a>  begin  
+##  <a name="begin"></a>  begin  
  指定されたコンテナーの最初の要素への反復子を取得します。  
   
 ```  
@@ -186,7 +202,7 @@ Ty *begin(Ty (& array)[Size]);
  `Ty` 型のオブジェクトの配列。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのテンプレート関数は、`cont.begin()` を返します。 最初の関数は定数ではなく、2 番目の関数は定数です。  
+ 最初の 2 つのテンプレート関数は、`cont.begin()` を返します。 最初の関数は定数ではなく、2 番目の関数は定数です。  
   
  3 番目のテンプレート関数は `array` を返します。  
   
@@ -262,7 +278,7 @@ void reverse_sort(C& c) {
 error C2228: left of '.begin' must have class/struct/union  
 ```  
   
-##  <a name="a-namecbegina--cbegin"></a><a name="cbegin"></a>  cbegin  
+##  <a name="cbegin"></a>  cbegin  
  指定されたコンテナーの最初の要素への const 反復子を取得します。  
   
 ```  
@@ -291,7 +307,7 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator  
 ```  
   
-##  <a name="a-namecenda--cend"></a><a name="cend"></a>  cend  
+##  <a name="cend"></a>  cend  
  指定されたコンテナーの最後の要素の後ろにある要素への定数反復子を取得します。  
   
 ```  
@@ -320,7 +336,7 @@ auto i2 = Container.cend();
 // i2 is Container<T>::const_iterator  
 ```  
   
-##  <a name="a-namedistancea--distance"></a><a name="distance"></a>  distance  
+##  <a name="distance"></a>  distance  
  2 つの反復子によってアドレス指定された位置の間のインクリメント数を決定します。  
   
 ```  
@@ -329,14 +345,14 @@ typename iterator_traits<InputIterator>::difference_type distance(InputIterator 
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
- 2 番目の反復子からの距離を特定する&1; 番目の反復子。  
+ `first`  
+ 2 番目の反復子からの距離を特定する 1 番目の反復子。  
   
- ` last`  
- 1 番目の反復子からの距離を特定する&2; 番目の反復子。  
+ `last`  
+ 1 番目の反復子からの距離を特定する 2 番目の反復子。  
   
 ### <a name="return-value"></a>戻り値  
- ` first` を ` last` に等しくなるまで行う必要のあるインクリメントの回数。  
+ `first` を `last` に等しくなるまで行う必要のあるインクリメントの回数。  
   
 ### <a name="remarks"></a>コメント  
  **InputIterator** がランダム アクセス反復子の要件を満たす場合、distance 関数の複雑さは一定です。それ以外の場合、複雑さは線形的になり、潜在的にコストが高くなります。  
@@ -389,7 +405,7 @@ LPOS is advanced 7 steps forward to point  to the eighth element: 12.
 The distance from L.begin( ) to LPOS is: 7.  
 ```  
   
-##  <a name="a-nameenda--end"></a><a name="end"></a>  end  
+##  <a name="end"></a>  end  
  指定されたコンテナーの最後の要素の後ろにある要素への反復子を取得します。  
   
 ```  
@@ -413,14 +429,14 @@ Ty *end(Ty (& array)[Size]);
  `Ty` 型のオブジェクトの配列。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのテンプレート関数は `cont.end()` を返します (最初は非定数で、2 番目は定数です)。  
+ 最初の 2 つのテンプレート関数は `cont.end()` を返します (最初は非定数で、2 番目は定数です)。  
   
  3 番目のテンプレート関数は `array + Size` を返します。  
   
 ### <a name="remarks"></a>コメント  
  コード例については、[begin](../standard-library/iterator-functions.md#begin) を参照してください。  
   
-##  <a name="a-namefrontinsertera--frontinserter"></a><a name="front_inserter"></a>  front_inserter  
+##  <a name="front_inserter"></a>  front_inserter  
  指定されたコンテナーの前に要素を挿入できる反復子を作成します。  
   
 ```  
@@ -436,9 +452,9 @@ front_insert_iterator<Container> front_inserter(Container& _Cont);
  コンテナー オブジェクト `_Cont` に関連付けられる `front_insert_iterator`。  
   
 ### <a name="remarks"></a>コメント  
- front_insert_iterator クラスのメンバー関数 [front_insert_iterator](../standard-library/front-insert-iterator-class.md#front_insert_iterator__front_insert_iterator) も使用できます。  
+ front_insert_iterator クラスのメンバー関数 [front_insert_iterator](../standard-library/front-insert-iterator-class.md#front_insert_iterator) も使用できます。  
   
- C++ 標準ライブラリでは、引数は、メンバー関数 `push_back` が含まれる [deque クラス](../standard-library/deque-class.md)または "list クラス" の&2; つのシーケンス コンテナーのいずれかを参照する必要があります。  
+ C++ 標準ライブラリでは、引数は、メンバー関数 `push_back` が含まれる [deque クラス](../standard-library/deque-class.md)または "list クラス" の 2 つのシーケンス コンテナーのいずれかを参照する必要があります。  
   
 ### <a name="example"></a>例  
   
@@ -487,8 +503,8 @@ After the front insertions, the list L is:
  ( 200 100 -1 0 1 2 3 4 5 6 7 8 ).  
 ```  
   
-##  <a name="a-nameinsertera--inserter"></a><a name="inserter"></a>  inserter  
- `insert_iterator<Container>(``_Cont`, `_Where``)` の代わりに `inserter(``_Cont``,``_Where``)` を使用できるようにするヘルパー テンプレート 関数です。  
+##  <a name="inserter"></a>  inserter  
+ 使用できるようにするヘルパー テンプレート関数`inserter(_Cont, _Where)`なく`insert_iterator<Container>(_Cont, _Where)`です。  
   
 ```  
 template <class Container>  
@@ -506,7 +522,7 @@ inserter(
  挿入位置を指定する反復子。  
   
 ### <a name="remarks"></a>コメント  
- このテンプレート関数は [insert_iterator](../standard-library/insert-iterator-class.md#insert_iterator__insert_iterator)`<Container>(``_Cont``,``_Where``)` を返します。  
+ テンプレート関数を返します[insert_iterator](../standard-library/insert-iterator-class.md#insert_iterator)`<Container>(_Cont, _Where)`です。  
   
 ### <a name="example"></a>例  
   
@@ -555,7 +571,7 @@ After the insertions, the list L is:
  ( 1 20 30 40 500 ).  
 ```  
   
-##  <a name="a-namemakecheckedarrayiteratora--makecheckedarrayiterator"></a><a name="make_checked_array_iterator"></a>  make_checked_array_iterator  
+##  <a name="make_checked_array_iterator"></a>  make_checked_array_iterator  
  他のアルゴリズムで使用できる [checked_array_iterator](../standard-library/checked-array-iterator-class.md) を作成します。  
   
 > [!NOTE]
@@ -645,7 +661,7 @@ int main()
   
 ```  
   
-##  <a name="a-namemakemoveiteratora--makemoveiterator"></a><a name="make_move_iterator"></a>  make_move_iterator  
+##  <a name="make_move_iterator"></a>  make_move_iterator  
  指定した反復子を `stored` 反復子として含む `move iterator` を作成します。  
   
 ```  
@@ -661,7 +677,7 @@ make_move_iterator(const Iterator& _It);
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は `move_iterator``<Iterator>(``_It``)` を返します。  
   
-##  <a name="a-namemakeuncheckedarrayiteratora--makeuncheckedarrayiterator"></a><a name="make_unchecked_array_iterator"></a>  make_unchecked_array_iterator  
+##  <a name="make_unchecked_array_iterator"></a>  make_unchecked_array_iterator  
  他のアルゴリズムで使用できる [unchecked_array_iterator](../standard-library/unchecked-array-iterator-class.md) を作成します。  
   
 > [!NOTE]
@@ -736,7 +752,7 @@ int main()
   
 ```  
   
-##  <a name="a-namenexta--next"></a><a name="next"></a>  next  
+##  <a name="next"></a>  next  
  指定された回数を繰り返し、新しい反復子の位置を返します。  
   
 ```  
@@ -747,7 +763,7 @@ InputIterator next(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  現在位置を返します。  
   
  `_Off`  
@@ -759,7 +775,7 @@ InputIterator next(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は、`_Off` 回インクリメントされた `next` を返します。  
   
-##  <a name="a-namepreva--prev"></a><a name="prev"></a>  prev  
+##  <a name="prev"></a>  prev  
  指定された回数を逆方向に繰り返し、新しい反復子の位置を返します。  
   
 ```  
@@ -770,7 +786,7 @@ BidirectionalIterator prev(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  現在位置を返します。  
   
  `_Off`  

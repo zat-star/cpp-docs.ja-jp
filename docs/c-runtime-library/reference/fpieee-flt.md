@@ -53,10 +53,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 54718c64d7a6720ac0601792bfec5ffb196a9716
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: c2e9f909f3e7e778845d8fefebe5d8b1604af489
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="fpieeeflt"></a>_fpieee_flt
@@ -95,7 +96,7 @@ int _fpieee_flt(
 |`unsigned int RoundingMode`, `unsigned int Precision`|これらのフィールドには、例外発生時の浮動小数点環境に関する情報が含まれています。|  
 |`unsigned int Operation`|トラップを発生させた操作の種類を示します。 種類が比較 (`_FpCodeCompare`) の場合は、`_FPIEEE_COMPARE_RESULT` フィールドに特別な `Result.Value` 値 (Fpieee.h 内で定義) のいずれかを指定できます。 変換の種類 (`_FpCodeConvert`) は、浮動小数点変換の操作中にトラップが発生したことを示します。 `Operand1` と `Result` の種類を確認して、試行する変換の種類を決めることができます。|  
 |`_FPIEEE_VALUE Operand1`、`_FPIEEE_VALUE Operand2`、`_FPIEEE_VALUE Result`|これらの構造体は、提案された結果とオペランドの型と値を示しています。<br /><br /> `OperandValid` 応答の値が有効であるかどうかを示すフラグ。<br /><br /> `Format` 対応する値のデータ型。 対応する値が有効でなくても、形式の種類が返されることがあります。<br /><br /> `Value` 結果またはオペランドのデータ値。|  
-|`_FPIEEE_EXCEPTION_FLAGS Cause`、`_FPIEEE_EXCEPTION_FLAGS Enable`、`_FPIEEE_EXCEPTION_FLAGS Status`|_FPIEEE_EXCEPTION_FLAGS には、浮動小数点例外の種類ごとに&1; つのビット フィールドが含まれています。<br /><br /> これらのフィールドと、[_controlfp](../../c-runtime-library/reference/control87-controlfp-control87-2.md) に指定される例外をマスクするために使用される引数との間には対応関係があります。<br /><br /> 各ビットの正確な意味はコンテキストに依存します。<br /><br /> `Cause` 設定されている各ビットは、発生した特定の例外を示します。<br /><br /> `Enable` 設定されている各ビットは、特定の例外が現在はマスクされていないことを示します。<br /><br /> `Status` 設定されている各ビットは、特定の例外が現在は保留中であることを示します。 これには発生しなかった例外が含まれます。それらが `_controlfp` によってマスクされるためです。|  
+|`_FPIEEE_EXCEPTION_FLAGS Cause`、`_FPIEEE_EXCEPTION_FLAGS Enable`、`_FPIEEE_EXCEPTION_FLAGS Status`|_FPIEEE_EXCEPTION_FLAGS には、浮動小数点例外の種類ごとに 1 つのビット フィールドが含まれています。<br /><br /> これらのフィールドと、[_controlfp](../../c-runtime-library/reference/control87-controlfp-control87-2.md) に指定される例外をマスクするために使用される引数との間には対応関係があります。<br /><br /> 各ビットの正確な意味はコンテキストに依存します。<br /><br /> `Cause` 設定されている各ビットは、発生した特定の例外を示します。<br /><br /> `Enable` 設定されている各ビットは、特定の例外が現在はマスクされていないことを示します。<br /><br /> `Status` 設定されている各ビットは、特定の例外が現在は保留中であることを示します。 これには発生しなかった例外が含まれます。それらが `_controlfp` によってマスクされるためです。|  
   
  無効になっている保留中の例外は、有効にされたときに発生します。 このため、`_fpieee_flt` を例外フィルターとして使用した場合に、未定義の動作が生じることがあります。 浮動小数点例外を有効にする前に、必ず [_clearfp](../../c-runtime-library/reference/clear87-clearfp.md) を呼び出してください。  
   
@@ -173,9 +174,6 @@ int main( void )
    // ...  
 }  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

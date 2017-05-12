@@ -65,10 +65,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 2f60a63af85bed19a1393798cb03f03004ae5828
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6e8a0fce6ad16a34a8c6e51d1810fd7116a79e17
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="isalpha-iswalpha-isalphal-iswalphal"></a>isalpha、iswalpha、_isalpha_l、_iswalpha_l
@@ -101,7 +102,7 @@ int _iswalpha_l(
  現在のロケールの代わりに使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` が特定の英字を表している場合は&0; 以外の値を返します。 `isalpha` は `c` が A – Z または a – z の範囲内である場合、0 以外の値を返します。 `iswalpha` は、`iswupper`、または `iswlower` が&0; 以外の値であるワイド文字の場合にのみ、0 以外の値を返します。つまり、実装定義セットの&1; つのワイド文字であり、その文字に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが&0; である場合です。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` が特定の英字を表している場合は 0 以外の値を返します。 `isalpha`場合は 0 以外の値を返します`c`A - Z または a - z の範囲内がします。 `iswalpha` は、`iswupper`、または `iswlower` が 0 以外の値であるワイド文字の場合にのみ、0 以外の値を返します。つまり、実装定義セットの 1 つのワイド文字であり、その文字に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合です。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -124,9 +125,6 @@ int _iswalpha_l(
 |`_iswalpha_l`|\<ctype.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Char::IsLetter](https://msdn.microsoft.com/en-us/library/system.char.isletter.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

@@ -1,46 +1,64 @@
 ---
-title: "fread_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "fread_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "fread_s"
-  - "stdio/fread_s"
-dev_langs: 
-  - "C++"
+title: "fread_s | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- fread_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- fread_s
+- stdio/fread_s
+dev_langs:
+- C++
 ms.assetid: ce735de0-f005-435d-a8f2-6f4b80ac775e
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# fread_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6fa9d496bdb5f5d7b4dd4a772778a0f62a484fd8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-ストリームからデータを読み取ります。  [fread](../../c-runtime-library/reference/fread.md) のこのバージョンに [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)"に説明されているように、セキュリティが強化されたバージョンがあります。  
+---
+# <a name="freads"></a>fread_s
+ストリームからデータを読み取ります。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [fread](../../c-runtime-library/reference/fread.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_t fread_s(   
@@ -52,15 +70,15 @@ size_t fread_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buffer`  
  データの格納場所。  
   
  `bufferSize`  
- バイトのコピー先のバッファーのサイズ。  
+ ターゲット バッファーのサイズ (バイト単位)。  
   
  `elementSize`  
- バイトを読み取るとき項目のサイズ。  
+ 読み取る項目のサイズ (バイト単位)。  
   
  `count`  
  読み取る項目の最大数。  
@@ -68,28 +86,27 @@ size_t fread_s(
  `stream`  
  `FILE` 構造体へのポインター。  
   
-## 戻り値  
- `fread_s` \(`count` に達する前に、ファイルの読み取りエラーまたは終了が発生した場合 `count` 未満である可能性がある、バッファーに読込まれた全体\) 項目数を返します。  ファイルの終端に達した場合はエラー状態とを区別するために `feof` または `ferror` 関数を使用します。  `size` または `count` が 0 の場合、`fread_s` は 0 を返し、バッファーの内容は変更されません。  `stream` または `buffer` が null ポインターの場合、`fread_s` は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
+## <a name="return-value"></a>戻り値  
+ `fread_s` はバッファに読み込まれた (完全な) 項目の数を返します。ただし、読み取りエラーが発生したり、`count` に到達する前にファイルの末尾が検出されたりした場合、値は `count` より小さくなることがあります。 `feof` 関数または `ferror` 関数を使用すれば、エラーとファイルの終端に達した状態とを区別できます。 `size` または `count` が 0 である場合、`fread_s` は 0 を返し、バッファーの内容は変更されません。 `stream` または `buffer` が null ポインターの場合、`fread_s` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
- エラー コードの詳細については、「[" \_doserrno、errno、\_sys\_errlist、および\_sys\_nerr "](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `fread_s` 関数は入力 `stream` から `elementSize` バイトの `count` 項目まで読み取り、`buffer`に保存します。1 `stream` \(ある場合\) に関連付けられたファイル ポインターは実際に読み込まれるバイト数が大きくなります。  特定のストリームがテキスト モードで開いて、キャリッジ return–linefeed ペアは単一のライン フィードの文字に置き換えられます。  置換は、ファイル ポインターまたは戻り値には影響しません。  ファイル ポインターの位置でエラーが発生した場合は不確定です。  部分的に入力項目の値を決定する必要があります。  
+## <a name="remarks"></a>コメント  
+ `fread_s` 関数は、入力 `stream` から、`elementSize` バイトの `count` 項目まで読み取り、`buffer` に格納します。  `stream` に関連付けられたファイル ポインター (存在する場合) は、実際に読み取られたバイト数でインクリメントされます。 指定したストリームがテキスト モードで開かれている場合は、キャリッジ リターンとライン フィードのペアが 1 つの改行文字に置き換えられます。 この置き換えは、ファイル ポインターまたは戻り値には影響しません。 エラーが発生した場合、ファイル ポインターの位置は不確定になります。 部分的に読み取られた項目の値を特定できません。  
   
- この機能により、別のスレッドがロックされます。  ロックされていないバージョンが必要な場合は、`_fread_nolock`を使用します。  
+ この関数は他のスレッドをロックします。 ロックしないバージョンが必要な場合は、`_fread_nolock` を使用してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`fread_s`|\<stdio.h\>|  
+|--------------|---------------------|  
+|`fread_s`|\<stdio.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```cpp  
-  
 // crt_fread_s.c  
 // Command line: cl /EHsc /nologo /W4 crt_fread_s.c  
 //  
@@ -142,13 +159,19 @@ int main( void )
 }  
 ```  
   
-  **バッファーの内容は前の読み取り\/書き込み:**  
- **zyxwvutsrqponmlkjihgfe**  
- **22 項目の作成**   
- **読み取り \= 11 バイトの要素数 2**   
- **バッファーの内容はの後の読み取り\/書き込み:**   
- **zyxwvutsrqponmlkjihgfe**    
-## 参照  
+```Output  
+Contents of buffer before write/read:   
+        zyxwvutsrqponmlkjihgfe  
+  
+Wrote 22 items  
+  
+Number of 11-byte elements read = 2  
+  
+Contents of buffer after write/read:   
+        zyxwvutsrqponmlkjihgfe  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fwrite](../Topic/fwrite.md)   
- [\_read](../Topic/_read.md)
+ [fwrite](../../c-runtime-library/reference/fwrite.md)   
+ [_read](../../c-runtime-library/reference/read.md)

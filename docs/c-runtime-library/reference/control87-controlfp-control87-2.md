@@ -65,10 +65,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: a6a25c035a55ca247f0d81f5c206207463672881
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 25dfd357f0b3385f1e9bdcc4249ad3cf4399e0b6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="control87-controlfp-control872"></a>_control87、_controlfp、__control87_2
@@ -141,14 +142,14 @@ _controlfp(_DN_FLUSH, _MCW_DN);
 // and x64 processors with SSE2 support. Ignored on other x86 platforms.  
 ```  
   
- ARM プラットフォームでは、`_control87` 関数と `_controlfp` 関数は FPSCR レジスタに適用されます。 [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] アーキテクチャでは、MXCSR レジスタに格納されている SSE2 制御ワードだけに影響します。 Intel (x86) プラットフォームでは、`_control87` と `_controlfp` は、存在する場合は x87 と SSE2 両方の制御ワードに影響します。 `__control87_2` 関数では、x87 と SSE2 の両方の浮動小数点ユニットを一緒に制御することも、個別に制御することもできます。 両方のユニットに影響を与える場合は、`x86_cw` と `sse2_cw` に対して&2; つの整数アドレスを渡します。 1 つのユニットにのみ影響を与えるには、影響を与えるパラメーターにはアドレスを渡し、他方には 0 (NULL) を渡します。 いずれかのパラメーターに対して 0 が渡されると、関数はその浮動小数点ユニットには影響しません。 この機能は、コードの一部では x87 浮動小数点ユニットを使用し、別の部分では SSE2 浮動小数点ユニットを使用する場合に役立ちます。 `__control87_2` 関数をプログラムの一部で使用し、さまざまな値を浮動小数点制御ワードに設定した後、さらに制御ワードを操作するために `_control87` 関数または `_controlfp` 関数を使用すると、`_control87` と `_controlfp` は両方の浮動小数点ユニットの状態を表す単一の制御ワードを返すことができない場合があります。 このような場合、これらの関数は `EM_AMBIGUOUS` フラグを整数の戻り値に設定し、2 つの制御ワードの間に矛盾があることを示します。 これは、返された制御ワードが両方の浮動小数点制御ワードの状態を正確に表していない可能性があるという警告です。  
+ ARM プラットフォームでは、`_control87` 関数と `_controlfp` 関数は FPSCR レジスタに適用されます。 [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] アーキテクチャでは、MXCSR レジスタに格納されている SSE2 制御ワードだけに影響します。 Intel (x86) プラットフォームでは、`_control87` と `_controlfp` は、存在する場合は x87 と SSE2 両方の制御ワードに影響します。 `__control87_2` 関数では、x87 と SSE2 の両方の浮動小数点ユニットを一緒に制御することも、個別に制御することもできます。 両方のユニットに影響を与える場合は、`x86_cw` と `sse2_cw` に対して 2 つの整数アドレスを渡します。 1 つのユニットにのみ影響を与えるには、影響を与えるパラメーターにはアドレスを渡し、他方には 0 (NULL) を渡します。 いずれかのパラメーターに対して 0 が渡されると、関数はその浮動小数点ユニットには影響しません。 この機能は、コードの一部では x87 浮動小数点ユニットを使用し、別の部分では SSE2 浮動小数点ユニットを使用する場合に役立ちます。 `__control87_2` 関数をプログラムの一部で使用し、さまざまな値を浮動小数点制御ワードに設定した後、さらに制御ワードを操作するために `_control87` 関数または `_controlfp` 関数を使用すると、`_control87` と `_controlfp` は両方の浮動小数点ユニットの状態を表す単一の制御ワードを返すことができない場合があります。 このような場合、これらの関数は `EM_AMBIGUOUS` フラグを整数の戻り値に設定し、2 つの制御ワードの間に矛盾があることを示します。 これは、返された制御ワードが両方の浮動小数点制御ワードの状態を正確に表していない可能性があるという警告です。  
   
  ARM アーキテクチャと [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] アーキテクチャでは、無限大モードまたは浮動小数点の精度の変更はサポートされていません。 [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] プラットフォームで精度の制御マスクが使用されている場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、アサーションと無効なパラメーター ハンドラーが呼び出されます。  
   
 > [!NOTE]
 >  `__control87_2` は、ARM アーキテクチャまたは [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] アーキテクチャではサポートされていません。 `__control87_2` を使用して、ARM アーキテクチャまたは [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] アーキテクチャのプログラムをコンパイルした場合、コンパイラでエラーが生成されます。  
   
- 使用する場合、これらの関数は無視されます[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)を共通言語ランタイム (CLR) では、浮動小数点の既定の精度のみがサポートされるためにコンパイルします。  
+ 使用すると、これらの関数は無視されます[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイム (CLR) では、既定の浮動小数点精度のみがサポートするため、コンパイルします。  
   
  **16 進数の値**  
   
@@ -172,14 +173,12 @@ _controlfp(_DN_FLUSH, _MCW_DN);
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_cntrl87.c  
+```C  
+// crt_cntrl87.c  
 // processor: x86  
 // This program uses __control87_2 to output the x87 control   
 // word, set the precision to 24 bits, and reset the status to   
 // the default.  
-//  
   
 #include <stdio.h>  
 #include <float.h>  
@@ -210,9 +209,7 @@ int main( void )
 }  
 ```  
   
-## <a name="output"></a>出力  
-  
-```  
+```Output  
 Original: 0x0001  
 0.1 * 0.1 = 1.000000000000000e-002  
 24-bit:   0x0001  
@@ -220,9 +217,6 @@ Original: 0x0001
 Default:  0x0001  
 0.1 * 0.1 = 1.000000000000000e-002  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

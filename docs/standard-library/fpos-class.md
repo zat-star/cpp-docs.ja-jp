@@ -9,10 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.fpos
-- std::fpos
 - iosfwd/std::fpos
 - fpos
+- ios/std::fpos::seekpos
+- ios/std::fpos::state
+- ios/std::fpos::operator streamoff
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -37,14 +38,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: acc0ecd4edaf1e58977dcbdeb483d497a72bc4c8
-ms.openlocfilehash: 35d52be41d8d8ac113d15e78196b30a02aacb415
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: dfa9ee908b89c94b2eea95c450f67ca71031cf45
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="fpos-class"></a>fpos クラス
-このテンプレート クラスは、システム内の任意のファイル位置インジケーターを復元するために必要なすべての情報を格納できるオブジェクトを表します。 fpos\<**St**> クラスのオブジェクトには、実質的に&2; 個以上のメンバー オブジェクトが格納されます。  
+このテンプレート クラスは、システム内の任意のファイル位置インジケーターを復元するために必要なすべての情報を格納できるオブジェクトを表します。 fpos\<**St**> クラスのオブジェクトには、実質的に 2 個以上のメンバー オブジェクトが格納されます。  
   
 -   [streamoff](../standard-library/ios-typedefs.md#streamoff) 型のバイト オフセット。  
   
@@ -67,33 +69,33 @@ class fpos
   
 |||  
 |-|-|  
-|[fpos](#fpos__fpos)|ストリーム内の位置 (オフセット) に関する情報を格納するオブジェクトを作成します。|  
+|[fpos](#fpos)|ストリーム内の位置 (オフセット) に関する情報を格納するオブジェクトを作成します。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[seekpos](#fpos__seekpos)|C++ 標準ライブラリのみによって内部的に使用されます。 このメソッドをコードから呼び出さないでください。|  
-|[state](#fpos__state)|変換状態を設定または返します。|  
+|[seekpos](#seekpos)|C++ 標準ライブラリのみによって内部的に使用されます。 このメソッドをコードから呼び出さないでください。|  
+|[state](#state)|変換状態を設定または返します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator!=](#fpos__operator_neq)|ファイル位置インジケーターが等しくないかどうかをテストします。|  
-|[operator+](#fpos__operator_add)|ファイル位置インジケーターをインクリメントします。|  
-|[operator+=](#fpos__operator_add_eq)|ファイル位置インジケーターをインクリメントします。|  
-|[operator-](#fpos__operator-)|ファイル位置インジケーターをデクリメントします。|  
-|[operator-=](#fpos__operator-_eq)|ファイル位置インジケーターをデクリメントします。|  
-|[operator==](#fpos__operator_eq_eq)|ファイル位置インジケーターが等しいかどうかをテストします。|  
-|[operator streamoff](#fpos__operator_streamoff)|`fpos` 型のオブジェクトを `streamoff` 型のオブジェクトにキャストします。|  
+|[operator!=](#op_neq)|ファイル位置インジケーターが等しくないかどうかをテストします。|  
+|[operator+](#op_add)|ファイル位置インジケーターをインクリメントします。|  
+|[operator+=](#op_add_eq)|ファイル位置インジケーターをインクリメントします。|  
+|[operator-](#operator-)|ファイル位置インジケーターをデクリメントします。|  
+|[operator-=](#operator-_eq)|ファイル位置インジケーターをデクリメントします。|  
+|[operator==](#op_eq_eq)|ファイル位置インジケーターが等しいかどうかをテストします。|  
+|[operator streamoff](#op_streamoff)|`fpos` 型のオブジェクトを `streamoff` 型のオブジェクトにキャストします。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<ios>  
   
  **名前空間:** std  
   
-##  <a name="a-namefposfposa--fposfpos"></a><a name="fpos__fpos"></a>  fpos::fpos  
+##  <a name="fpos"></a>  fpos::fpos  
  ストリーム内の位置 (オフセット) に関する情報を格納するオブジェクトを作成します。  
   
 ```  
@@ -117,7 +119,7 @@ fpos(Statetype _State, fpos_t _Filepos);
   
  2 番目のコンストラクターは、ゼロ オフセットとオブジェクト `_State` を格納します。  
   
-##  <a name="a-namefposoperatorneqa--fposoperator"></a><a name="fpos__operator_neq"></a>  fpos::operator!=  
+##  <a name="op_neq"></a>  fpos::operator!=  
  ファイル位置インジケーターが等しくないかどうかをテストします。  
   
 ```  
@@ -125,14 +127,14 @@ bool operator!=(const fpos<Statetype>& right) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  比較するファイル位置インジケーター。  
   
 ### <a name="return-value"></a>戻り値  
  ファイル位置インジケーターが等しくない場合は **true**。それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、**!**( **\*this ==** ` right`) を返します。  
+ このメンバー関数は、`!(*this == right)` を返します。  
   
 ### <a name="example"></a>例  
   
@@ -186,7 +188,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namefposoperatoradda--fposoperator"></a><a name="fpos__operator_add"></a>  fpos::operator+  
+##  <a name="op_add"></a>  fpos::operator+  
  ファイル位置インジケーターをインクリメントします。  
   
 ```  
@@ -204,9 +206,9 @@ fpos<Statetype> operator+(streamoff _Off) const;
  このメンバー関数は、**fpos(\*this) +=** `_Off` を返します。  
   
 ### <a name="example"></a>例  
-  `operator+` の使用例については、[operator!=](#fpos__operator_neq) を参照してください。  
+  `operator+` の使用例については、[operator!=](#op_neq) を参照してください。  
   
-##  <a name="a-namefposoperatoraddeqa--fposoperator"></a><a name="fpos__operator_add_eq"></a>  fpos::operator+=  
+##  <a name="op_add_eq"></a>  fpos::operator+=  
  ファイル位置インジケーターをインクリメントします。  
   
 ```  
@@ -224,9 +226,9 @@ fpos<Statetype>& operator+=(streamoff _Off);
  メンバー関数は、格納されたオフセット メンバー オブジェクトに `_Off` を追加し、**\*this** を返します。 ファイル内の位置を特定する場合、結果は一般に状態依存エンコーディングを持たないバイナリ ストリームについてのみ有効です。  
   
 ### <a name="example"></a>例  
-  `operator+=` の使用例については、[operator!=](#fpos__operator_neq) を参照してください。  
+  `operator+=` の使用例については、[operator!=](#op_neq) を参照してください。  
   
-##  <a name="a-namefposoperator-a--fposoperator-"></a><a name="fpos__operator-"></a>  fpos::operator-  
+##  <a name="fpos__operator-"></a>  fpos::operator-  
  ファイル位置インジケーターをデクリメントします。  
   
 ```  
@@ -236,19 +238,19 @@ fpos<Statetype> operator-(streamoff _Off) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  ファイルの位置。  
   
  `_Off`  
  ストリームのオフセット。  
   
 ### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、**(streamoff)\*this - (streamoff)**` right` を返します。 2 番目のメンバー関数は、**fpos(\*this) -=** `_Off` を返します。  
+ 最初のメンバー関数は `(streamoff)*this - (streamoff) right` を返します。 2 番目のメンバー関数は `fpos(*this) -= _Off` を返します。  
   
 ### <a name="example"></a>例  
-  `operator-` の使用例については、[operator!=](#fpos__operator_neq) を参照してください。  
+  `operator-` の使用例については、[operator!=](#op_neq) を参照してください。  
   
-##  <a name="a-namefposoperator-eqa--fposoperator-"></a><a name="fpos__operator-_eq"></a>  fpos::operator-=  
+##  <a name="fpos__operator-_eq"></a>  fpos::operator-=  
  ファイル位置インジケーターをデクリメントします。  
   
 ```  
@@ -260,15 +262,15 @@ fpos<Statetype>& operator-=(streamoff _Off);
  ストリームのオフセット。  
   
 ### <a name="return-value"></a>戻り値  
- このメンバー関数は、**fpos(\*this) -=** `_Off` を返します。  
+ このメンバー関数は、`fpos(*this) -= _Off` を返します。  
   
 ### <a name="remarks"></a>コメント  
  ファイル内の位置を特定する場合、結果は一般に状態依存エンコーディングを持たないバイナリ ストリームについてのみ有効です。  
   
 ### <a name="example"></a>例  
-  `operator-=` の使用例については、[operator!=](#fpos__operator_neq) を参照してください。  
+  `operator-=` の使用例については、[operator!=](#op_neq) を参照してください。  
   
-##  <a name="a-namefposoperatoreqeqa--fposoperator"></a><a name="fpos__operator_eq_eq"></a>  fpos::operator==  
+##  <a name="op_eq_eq"></a>  fpos::operator==  
  ファイル位置インジケーターが等しいかどうかをテストします。  
   
 ```  
@@ -276,19 +278,19 @@ bool operator==(const fpos<Statetype>& right) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  比較するファイル位置インジケーター。  
   
 ### <a name="return-value"></a>戻り値  
  ファイル位置インジケーターが等しい場合は **true**。それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、**(streamoff)\*this == (streamoff)**` right` を返します。  
+ このメンバー関数は、`(streamoff)*this == (streamoff)right` を返します。  
   
 ### <a name="example"></a>例  
-  `operator+=` の使用例については、[operator!=](#fpos__operator_neq) を参照してください。  
+  `operator+=` の使用例については、[operator!=](#op_neq) を参照してください。  
   
-##  <a name="a-namefposoperatorstreamoffa--fposoperator-streamoff"></a><a name="fpos__operator_streamoff"></a>  fpos::operator streamoff  
+##  <a name="op_streamoff"></a>  fpos::operator streamoff  
  `fpos` 型のオブジェクトを `streamoff` 型のオブジェクトにキャストします。  
   
 ```  
@@ -325,14 +327,14 @@ int main( )
 0  
 ```  
   
-##  <a name="a-namefposseekposa--fposseekpos"></a><a name="fpos__seekpos"></a>  fpos::seekpos  
+##  <a name="seekpos"></a>  fpos::seekpos  
  このメソッドは、C++ 標準ライブラリのみによって内部的に使用されます。 このメソッドをコードから呼び出さないでください。  
   
 ```  
 fpos_t seekpos() const;
 ```  
   
-##  <a name="a-namefposstatea--fposstate"></a><a name="fpos__state"></a>  fpos::state  
+##  <a name="state"></a>  fpos::state  
  変換状態を設定または返します。  
   
 ```  
@@ -349,7 +351,7 @@ void state(Statetype _State);
  変換状態。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、**St** メンバー オブジェクトに格納されている値を返します。 2 番目のメンバー関数は、`_State`St** メンバー オブジェクトに ** を格納します。  
+ 最初のメンバー関数は、**St** メンバー オブジェクトに格納されている値を返します。 2 番目のメンバー関数は、`_State`St **メンバー オブジェクトに**  を格納します。  
   
 ### <a name="example"></a>例  
   

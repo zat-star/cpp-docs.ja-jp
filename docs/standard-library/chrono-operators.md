@@ -11,19 +11,20 @@ f1_keywords:
 ms.assetid: c5a19267-4684-40c1-b7a9-cc1012b058f3
 caps.latest.revision: 8
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c2ea4241ef1db4989caf8cdc6a16044d9c9381f6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: a58daf9d43392ffa89872ab0a76e680b63dbb977
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltchronogt-operators"></a>&lt;chrono&gt; 演算子
 ||||  
 |-|-|-|  
-|[modulo 演算子](#operator_modulo)|[operator!=](#operator_neq)|[operator&gt;](#operator_gt_)|  
-|[operator&gt;=](#operator_gt__eq)|[operator&lt;](#operator_lt_)|[operator&lt;=](#operator_lt__eq)|  
-|[operator*](#operator_star)|[operator+](#operator_add)|[operator-](#operator-)|  
-|[operator/](#operator_)|[operator==](#operator_eq_eq)|  
+|[modulo 演算子](#op_modulo)|[operator!=](#op_neq)|[operator&gt;](#op_gt)|  
+|[operator&gt;=](#op_gt_eq)|[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|  
+|[operator*](#op_star)|[operator+](#op_add)|[operator-](#operator-)|  
+|[operator/](#op_div)|[operator==](#op_eq_eq)|  
   
 ##  <a name="operator-"></a>  operator-  
  [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトの減算または否定の演算子。  
@@ -63,13 +64,13 @@ constexpr typename common_type<Duration1, Duration2>::type
  `duration` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の関数は、間隔の長さが&2; つの引数の期間の違いである `duration` オブジェクトを返します。  
+ 最初の関数は、間隔の長さが 2 つの引数の期間の違いである `duration` オブジェクトを返します。  
   
  2 番目の関数は、`time_point` で指定された時点から `Dur` によって表される期間の拒否によって転置される時点を表す `Time` オブジェクトを返します。  
   
  3 番目の関数は、`duration` と `Left` 間の時間間隔を表す `Right` オブジェクトを返します。  
   
-##  <a name="operator_neq"></a>  operator!=  
+##  <a name="op_neq"></a>  operator!=  
  [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの非等値演算子。  
   
 ```  
@@ -95,8 +96,8 @@ constexpr bool operator!=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Left == Right)` です。  
   
-##  <a name="operator_star"></a>  operator*  
- [duration](../standard-library/chrono-operators.md#operator_star) オブジェクトの乗算演算子。  
+##  <a name="op_star"></a>  operator*  
+ [duration](../standard-library/chrono-operators.md#op_star) オブジェクトの乗算演算子。  
   
 ```  
 template <class Rep1, class Period1, class Rep2>  
@@ -128,8 +129,8 @@ constexpr duration<typename common_type<Rep1, Rep2>::type, Period2>
   
  `is_convertible<Rep1, common_type<Rep1, Rep2>>` が *true* にならない限り、2 番目の関数はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
   
-##  <a name="operator_"></a>  operator/  
- [duration](../standard-library/chrono-operators.md#operator_star) オブジェクトの除算演算子。  
+##  <a name="op_div"></a>  operator/  
+ [duration](../standard-library/chrono-operators.md#op_star) オブジェクトの除算演算子。  
   
 ```  
 template <class Rep1, class Period1, class Rep2>  
@@ -166,7 +167,7 @@ constexpr typename common_type<Rep1, Rep2>::type
   
  `is_convertible<Rep2, common_type<Rep1, Rep2>>` が *true を保持*せず、かつ `Rep2` が `duration` のインスタンス化ではない限り、最初の演算子はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
   
-##  <a name="operator_add"></a>  operator+  
+##  <a name="op_add"></a>  operator+  
  [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトを追加します。  
   
 ```  
@@ -207,9 +208,9 @@ time_point<Clock, constexpr typename common_type<duration<Rep1, Period1>, Durati
 ### <a name="return-value"></a>戻り値  
  最初の関数は `duration` と `Left` の間隔の合計と同じ時間間隔がある `Right` オブジェクトを返します。  
   
- 2 番目と&3; 番目の関数は、`time_point`時点からの間隔 `Dur` によって、転置される時点を表す `Time` オブジェクトを返します。  
+ 2 番目と 3 番目の関数は、`time_point`時点からの間隔 `Dur` によって、転置される時点を表す `Time` オブジェクトを返します。  
   
-##  <a name="operator_lt_"></a>  operator&lt;  
+##  <a name="op_lt"></a>  operator&lt;  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトが、もう一方の `duration` または `time_point` オブジェクト未満かどうかを判断します。  
   
 ```  
@@ -237,7 +238,7 @@ constexpr bool operator<(
   
  `true` が `Left` に先行する場合、2 番目の関数は `Right` を返します。 それ以外の場合、関数は `false` を返します。  
   
-##  <a name="operator_lt__eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  operator&lt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値未満かどうかを判断します。  
   
 ```  
@@ -262,8 +263,8 @@ constexpr bool operator<=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Right < Left)` です。  
   
-##  <a name="operator_eq_eq"></a>  operator==  
- 2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または&2; つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。  
+##  <a name="op_eq_eq"></a>  operator==  
+ 2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または 2 つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -289,7 +290,7 @@ constexpr bool operator==(
   
  2 番目の関数は、`true` と `Left` が同じ時点を表す場合に `Right` を返します。 それ以外の場合、関数は `false` を返します。  
   
-##  <a name="operator_gt_"></a>  operator&gt;  
+##  <a name="op_gt"></a>  operator&gt;  
  1 つの [duration](../standard-library/duration-class.md) オブジェクトまたは [time_point](../standard-library/time-point-class.md) オブジェクトが、別の `duration` オブジェクトまたは `time_point` オブジェクトより大きいかどうかを判断します。  
   
 ```  
@@ -314,7 +315,7 @@ constexpr bool operator>(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `Right < Left` です。  
   
-##  <a name="operator_gt__eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  operator&gt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値以上かどうかを判断します。  
   
 ```  
@@ -339,7 +340,7 @@ constexpr bool operator>=(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `!(Left < Right)` です。  
   
-##  <a name="operator_modulo"></a>  modulo 演算子  
+##  <a name="op_modulo"></a>  modulo 演算子  
  [duration](../standard-library/duration-class.md) オブジェクトに対する剰余演算の演算子。  
   
 ```  

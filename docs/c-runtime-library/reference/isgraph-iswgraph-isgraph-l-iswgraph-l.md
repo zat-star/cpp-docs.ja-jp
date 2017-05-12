@@ -64,10 +64,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a583f0b870f4395c80a384914d6fdd8b39e85a4c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 90f55b90498908ce0c806ae1d253e07d8672df17
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="isgraph-iswgraph-isgraphl-iswgraphl"></a>isgraph、iswgraph、_isgraph_l、_iswgraph_l
@@ -97,7 +98,7 @@ int _iswgraph_l(
  テストする整数。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` がスペース以外の印刷可能な文字の特殊表現の場合は&0; 以外の値を返します。 `isgraph` がスペース以外の印刷可能な文字である場合、`c` は&0; 以外の値を返します。 `iswgraph` がワイド文字のスペース以外の印刷可能なワイド文字である場合、`c` は&0; 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` がスペース以外の印刷可能な文字の特殊表現の場合は 0 以外の値を返します。 `isgraph` がスペース以外の印刷可能な文字である場合、`c` は 0 以外の値を返します。 `iswgraph` がワイド文字のスペース以外の印刷可能なワイド文字である場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -120,9 +121,6 @@ int _iswgraph_l(
 |`_iswgraph_l`|\<ctype.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

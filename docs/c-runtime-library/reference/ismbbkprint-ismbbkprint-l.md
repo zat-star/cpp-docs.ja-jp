@@ -55,10 +55,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 407711898b7c08dcf9b65ae81bc8f556969034bf
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 17b20969e6164dd4457343f3bd9b17598fc7d705
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ismbbkprint-ismbbkprintl"></a>_ismbbkprint、_ismbbkprint_l
@@ -84,7 +85,7 @@ int _ismbbkprint_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbkprint` は、整数 `c` が非 ASCII テキストまたは非 ASCII 区切り記号の場合は 0 以外の値を返し、それ以外の場合は 0 を返します。 たとえば、コード ページ 932 でのみ、`_ismbbkprint` はカタカナの英数字、またはカタカナの句読点 (範囲: 0xA1 ～ 0xDF) をテストします。 `_ismbbkprint` は、ロケールに依存する文字設定に現在のロケールを使用します。 `_ismbbkprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbkprint` は、整数 `c` が非 ASCII テキストまたは非 ASCII 区切り記号の場合は 0 以外の値を返し、それ以外の場合は 0 を返します。 たとえば、コード ページ 932 でのみ、`_ismbbkprint` はカタカナの英数字、またはカタカナの句読点 (範囲: 0xA1 - 0xDF) をテストします。 `_ismbbkprint` は、ロケールに依存する文字設定に現在のロケールを使用します。 `_ismbbkprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   
@@ -94,9 +95,6 @@ int _ismbbkprint_l(
 |`_ismbbkprint_l`|\<mbctype.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)   

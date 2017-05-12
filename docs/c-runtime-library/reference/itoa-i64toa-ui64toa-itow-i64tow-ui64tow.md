@@ -1,80 +1,97 @@
 ---
 title: "_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_itow"
-  - "_i64tow"
-  - "_itoa"
-  - "_i64toa"
-  - "_ui64toa"
-  - "_ui64tow"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_i64tow"
-  - "ui64toa"
-  - "ui64tow"
-  - "itot"
-  - "_itot"
-  - "_i64toa"
-  - "_itoa"
-  - "_itow"
-  - "_ui64tow"
-  - "i64toa"
-  - "i64tow"
-  - "itow"
-  - "_ui64toa"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_i64toa 関数"
-  - "_i64tow 関数"
-  - "_itoa 関数"
-  - "_itot 関数"
-  - "_itow 関数"
-  - "_ui64toa 関数"
-  - "_ui64tow 関数"
-  - "変換 (整数を)"
-  - "変換 (数値の), 文字列への"
-  - "i64toa 関数"
-  - "i64tow 関数"
-  - "整数, 変換"
-  - "itoa 関数"
-  - "itot 関数"
-  - "itow 関数"
-  - "ui64toa 関数"
-  - "ui64tow 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _itow
+- _i64tow
+- _itoa
+- _i64toa
+- _ui64toa
+- _ui64tow
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _i64tow
+- ui64toa
+- ui64tow
+- itot
+- _itot
+- _i64toa
+- _itoa
+- _itow
+- _ui64tow
+- i64toa
+- i64tow
+- itow
+- _ui64toa
+dev_langs:
+- C++
+helpviewer_keywords:
+- _itot function
+- ui64toa function
+- _ui64toa function
+- converting integers
+- itot function
+- _i64tow function
+- _i64toa function
+- _itow function
+- ui64tow function
+- integers, converting
+- itoa function
+- _ui64tow function
+- i64tow function
+- itow function
+- i64toa function
+- converting numbers, to strings
+- _itoa function
 ms.assetid: 46592a00-77bb-4e73-98c0-bf629d96cea6
 caps.latest.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# _itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 22226de878058c7c35307e47b76973eaaebcd552
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-整数を文字列に変換します。  これらの関数のセキュリティを強化したバージョンについては、「[\_itoa\_s、\_i64toa\_s、\_ui64toa\_s、\_itow\_s、\_i64tow\_s、\_ui64tow\_s](../../c-runtime-library/reference/itoa-s-i64toa-s-ui64toa-s-itow-s-i64tow-s-ui64tow-s.md)」を参照してください。  
+---
+# <a name="itoa-i64toa-ui64toa-itow-i64tow-ui64tow"></a>_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow
+整数を文字列に変換します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_itoa_s、_i64toa_s、_ui64toa_s、_itow_s、_i64tow_s、_ui64tow_s](../../c-runtime-library/reference/itoa-s-i64toa-s-ui64toa-s-itow-s-i64tow-s-ui64tow-s.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 char *_itoa(  
@@ -145,7 +162,7 @@ wchar_t * _ui64tow(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `value`  
  変換される数値。  
   
@@ -153,41 +170,41 @@ wchar_t * _ui64tow(
  結果の文字列。  
   
  `radix`  
- `value` の基数。2 ～ 36 の範囲で指定する必要があります。  
+ ベース`value`; 2 ~ 36 の範囲にする必要があります。  
   
-## 戻り値  
- これらの各関数は、`str` へのポインターを返します。  エラーの戻り値はありません。  
+## <a name="return-value"></a>戻り値  
+ これらの各関数は、`str` へのポインターを返します。 エラーの戻り値はありません。  
   
-## 解説  
- `_itoa`、`_i64toa`、および `_ui64toa` の各関数は、指定された `value` 引数の数字を null で終了する文字列に変換し、その結果 \(`_itoa` の場合最大 33 文字、`_i64toa` および `_ui64toa` の場合最大 65 文字\) を `str` に保存します。  `radix` が 10 で、`value` が負の場合は、保存される文字列の最初の文字は負符号 \( `–`\) になります。  `_itow`、`_i64tow`、および `_ui64tow` は、それぞれ `_itoa`、`_i64toa`、および `_ui64toa` のワイド文字バージョンです。  
+## <a name="remarks"></a>コメント  
+ `_itoa`、`_i64toa`、および `_ui64toa` の各関数は、指定された `value` 引数の数字を null で終了する文字列に変換し、その結果 (`_itoa` の場合最大 33 文字、`_i64toa` および `_ui64toa` の場合最大 65 文字) を `str` に保存します。 `radix` が 10 で、`value` が負の場合は、保存される文字列の最初の文字は負符号 (`-`) になります。 `_itow`、`_i64tow`、および `_ui64tow` は、それぞれ `_itoa`、`_i64toa`、および `_ui64toa` のワイド文字バージョンです。  
   
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字、末尾の null 文字、および符号文字を保持できるよう十分に大きくします。  
   
- C\+\+ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_itot`|`_itoa`|`_itoa`|`_itow`|  
 |`_i64tot`|`_i64toa`|`_i64toa`|`_i64tow`|  
 |`_ui64tot`|`_ui64toa`|`_ui64toa`|`_ui64tow`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_itoa`|\<stdlib.h\>|  
-|`_i64toa`|\<stdlib.h\>|  
-|`_ui64toa`|\<stdlib.h\>|  
-|`_itow`|\<stdlib.h\>|  
-|`_i64tow`|\<stdlib.h\>|  
-|`_ui64tow`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`_itoa`|\<stdlib.h>|  
+|`_i64toa`|\<stdlib.h>|  
+|`_ui64toa`|\<stdlib.h>|  
+|`_itow`|\<stdlib.h>|  
+|`_i64tow`|\<stdlib.h>|  
+|`_ui64tow`|\<stdlib.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_itoa.c  
@@ -225,39 +242,41 @@ int main( void )
 }  
 ```  
   
-  **base 10: \-1 \(2 chars\)**  
-**base 9: 12068657453 \(11 chars\)**  
-**base 8: 37777777777 \(11 chars\)**  
-**base 7: 211301422353 \(12 chars\)**  
-**base 6: 1550104015503 \(13 chars\)**  
-**base 5: 32244002423140 \(14 chars\)**  
-**base 4: 3333333333333333 \(16 chars\)**  
-**base 3: 102002022201221111210 \(21 chars\)**  
-**base 2: 11111111111111111111111111111111 \(32 chars\)**  
-**base 10: \-1 \(2 chars\)**  
-**base 9: 145808576354216723756 \(21 chars\)**  
-**base 8: 1777777777777777777777 \(22 chars\)**  
-**base 7: 45012021522523134134601 \(23 chars\)**  
-**base 6: 3520522010102100444244423 \(25 chars\)**  
-**base 5: 2214220303114400424121122430 \(28 chars\)**  
-**base 4: 33333333333333333333333333333333 \(32 chars\)**  
-**base 3: 11112220022122120101211020120210210211220 \(41 chars\)**  
-**base 2: 1111111111111111111111111111111111111111111111111111111111111111 \(64 chars\)**  
-**base 10: 18446744073709551615 \(20 chars\)**  
-**base 9: 145808576354216723756 \(21 chars\)**  
-**base 8: 1777777777777777777777 \(22 chars\)**  
-**base 7: 45012021522523134134601 \(23 chars\)**  
-**base 6: 3520522010102100444244423 \(25 chars\)**  
-**base 5: 2214220303114400424121122430 \(28 chars\)**  
-**base 4: 33333333333333333333333333333333 \(32 chars\)**  
-**base 3: 11112220022122120101211020120210210211220 \(41 chars\)**  
-**base 2: 1111111111111111111111111111111111111111111111111111111111111111 \(64 chars\)**   
-## 同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
+```Output  
+base 10: -1 (2 chars)  
+base 9: 12068657453 (11 chars)  
+base 8: 37777777777 (11 chars)  
+base 7: 211301422353 (12 chars)  
+base 6: 1550104015503 (13 chars)  
+base 5: 32244002423140 (14 chars)  
+base 4: 3333333333333333 (16 chars)  
+base 3: 102002022201221111210 (21 chars)  
+base 2: 11111111111111111111111111111111 (32 chars)  
   
-## 参照  
+base 10: -1 (2 chars)  
+base 9: 145808576354216723756 (21 chars)  
+base 8: 1777777777777777777777 (22 chars)  
+base 7: 45012021522523134134601 (23 chars)  
+base 6: 3520522010102100444244423 (25 chars)  
+base 5: 2214220303114400424121122430 (28 chars)  
+base 4: 33333333333333333333333333333333 (32 chars)  
+base 3: 11112220022122120101211020120210210211220 (41 chars)  
+base 2: 1111111111111111111111111111111111111111111111111111111111111111 (64 chars)  
+  
+base 10: 18446744073709551615 (20 chars)  
+base 9: 145808576354216723756 (21 chars)  
+base 8: 1777777777777777777777 (22 chars)  
+base 7: 45012021522523134134601 (23 chars)  
+base 6: 3520522010102100444244423 (25 chars)  
+base 5: 2214220303114400424121122430 (28 chars)  
+base 4: 33333333333333333333333333333333 (32 chars)  
+base 3: 11112220022122120101211020120210210211220 (41 chars)  
+base 2: 1111111111111111111111111111111111111111111111111111111111111111 (64 chars)  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
- [\_ltoa、\_ltow](../Topic/_ltoa,%20_ltow.md)   
- [\_ltoa\_s、\_ltow\_s](../../c-runtime-library/reference/ltoa-s-ltow-s.md)   
- [\_ultoa、\_ultow](../../c-runtime-library/reference/ultoa-ultow.md)   
- [\_ultoa\_s、\_ultow\_s](../Topic/_ultoa_s,%20_ultow_s.md)
+ [_ltoa、_ltow](../../c-runtime-library/reference/ltoa-ltow.md)   
+ [_ltoa_s、_ltow_s](../../c-runtime-library/reference/ltoa-s-ltow-s.md)   
+ [_ultoa、_ultow](../../c-runtime-library/reference/ultoa-ultow.md)   
+ [_ultoa_s、_ultow_s](../../c-runtime-library/reference/ultoa-s-ultow-s.md)

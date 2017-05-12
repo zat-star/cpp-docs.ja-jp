@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9413ddad5bfaa9fe3c58938e25fb45d5b14ddd4c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: c50893f1dc73db9f928eaea346a381d1bd991d2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="lfinds"></a>_lfind_s
@@ -110,7 +111,7 @@ void *_lfind_s(
 |任意|任意|`NULL`|1 つ|任意|`EINVAL`|  
   
 ## <a name="remarks"></a>コメント  
- `_lfind_s` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch_s` とは異なり、`_lfind_s` では配列を並べ替える必要がありません。 `base` 引数は、検索する配列のベースへのポインターです。 `compare` 引数は、2 つの配列要素を比較して、それらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `_lfind_s` は検索中に `compare` ルーチンを&1; 回以上呼び出し、各呼び出しにおいて `context` ポインターと&2; つの配列要素へのポインターを渡します。 `compare` ルーチンは要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
+ `_lfind_s` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch_s` とは異なり、`_lfind_s` では配列を並べ替える必要がありません。 `base` 引数は、検索する配列のベースへのポインターです。 `compare` 引数は、2 つの配列要素を比較して、それらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `_lfind_s` は検索中に `compare` ルーチンを 1 回以上呼び出し、各呼び出しにおいて `context` ポインターと 2 つの配列要素へのポインターを渡します。 `compare` ルーチンは要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
   
  `_lfind_s` は `_lfind` と似ていますが、比較関数の引数と関数のパラメーター リストへ `context` ポインターが追加されている点が異なります。 `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、`compare` 関数でオブジェクトのメンバーにアクセスする必要がある場合に役立ちます。 `compare` 関数は void ポインターを該当するオブジェクト型にキャストして、そのオブジェクトのメンバーにアクセスできます。 `context` パラメーターを追加すると、`compare` 関数でデータを使用可能にする静的変数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、`_lfind_s` がより安全になります。  
   
@@ -201,9 +202,6 @@ int main( )
 ```Output  
 weit found  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- <xref:System.Collections.ArrayList.Contains%2A>  
   
 ## <a name="see-also"></a>関連項目  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   

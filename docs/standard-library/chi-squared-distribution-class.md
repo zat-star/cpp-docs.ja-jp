@@ -10,28 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - chi_squared_distribution
-- std::chi_squared_distribution
 - random/std::chi_squared_distribution
-- std::chi_squared_distribution::reset
 - random/std::chi_squared_distribution::reset
-- std::chi_squared_distribution::n
 - random/std::chi_squared_distribution::n
-- std::chi_squared_distribution::param
 - random/std::chi_squared_distribution::param
-- std::chi_squared_distribution::min
 - random/std::chi_squared_distribution::min
-- std::chi_squared_distribution::max
 - random/std::chi_squared_distribution::max
-- std::chi_squared_distribution::operator()
 - random/std::chi_squared_distribution::operator()
-- std::chi_squared_distribution::param_type
 - random/std::chi_squared_distribution::param_type
-- std::chi_squared_distribution::param_type::n
 - random/std::chi_squared_distribution::param_type::n
-- std::chi_squared_distribution::param_type::operator==
 - random/std::chi_squared_distribution::param_type::operator==
-- std::chi_squared_distribution::param_type::operator!=
 - random/std::chi_squared_distribution::param_type::operator!=
+- random/std::chi_squared_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -55,14 +45,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: c7f3b346bc8abeab0c6bd913fc0b554bef4ed208
-ms.openlocfilehash: 5e60b73c22a7704f63f70ae2e6498fc6e47dde1e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: e02680da3c44f31d9a81e1dc83b18822b9583e1b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="chisquareddistribution-class"></a>chi_squared_distribution クラス
-カイ&2; 乗分布を生成します。  
+カイ 2 乗分布を生成します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -100,12 +91,12 @@ public:
 *URNG* Uniform Random Number Generator エンジン。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
-このテンプレート クラスは、カイ&2; 乗分布に従って分布した、ユーザー指定の浮動小数点型の値または型 `double` の値 (指定がない場合) を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+このテンプレート クラスは、カイ 2 乗分布に従って分布した、ユーザー指定の浮動小数点型の値または型 `double` の値 (指定がない場合) を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
   
 ||||  
 |-|-|-|  
-|[chi_squared_distribution::chi_squared_distribution](../standard-library/chi-squared-distribution-class.md)|`chi_squared_distribution::n`|`chi_squared_distribution::param`|  
-|`chi_squared_distribution::operator()`||[chi_squared_distribution::param_type](#chi_squared_distribution__param_type)|  
+|[chi_squared_distribution](../standard-library/chi-squared-distribution-class.md)|`chi_squared_distribution::n`|`chi_squared_distribution::param`|  
+|`chi_squared_distribution::operator()`||[param_type](#param_type)|  
   
 プロパティ関数 `n()` は、格納されている分布パラメーター `n` の値を返します。  
   
@@ -119,7 +110,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
   
-カイ&2; 乗分布の詳細については、Wolfram MathWorld の記事「[Chi-Squared Distribution (カイ&2; 乗分布)](http://go.microsoft.com/fwlink/LinkId=400528)」を参照してください。  
+カイ 2 乗分布の詳細については、Wolfram MathWorld の記事「[Chi-Squared Distribution (カイ 2 乗分布)](http://go.microsoft.com/fwlink/LinkId=400528)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -249,7 +240,7 @@ Distribution for 10 samples:
   
 **名前空間:** std  
   
-##  <a name="a-namechisquareddistributionchisquareddistributiona--chisquareddistributionchisquareddistribution"></a><a name="chi_squared_distribution__chi_squared_distribution"></a>  chi_squared_distribution::chi_squared_distribution  
+##  <a name="chi_squared_distribution"></a>  chi_squared_distribution::chi_squared_distribution  
 分布を作成します。  
   
 ```  
@@ -271,7 +262,7 @@ explicit chi_squared_distribution(const param_type& parm);
   
 2 番目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
   
-##  <a name="a-namechisquareddistributionparamtypea--chisquareddistributionparamtype"></a><a name="chi_squared_distribution__param_type"></a>  chi_squared_distribution::param_type  
+##  <a name="param_type"></a>  chi_squared_distribution::param_type  
 分布のパラメーターを格納します。  
   
 ```cpp    

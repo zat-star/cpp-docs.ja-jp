@@ -34,13 +34,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: e4c9409ef12c72b5e763a1cd6c563ed25d34b327
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 2e0d9af0a16a009041c88e4ec0da0b92ef8eeb3d
+ms.lasthandoff: 04/29/2017
 
 ---
-# <a name="compiler-error-c2817"></a>コンパイラ エラー C2817
+# <a name="compiler-error-c2817"></a>{1&gt;コンパイラ エラー C2817&lt;1}
 'operator delete' の戻り値の型は 'void' 型でなければなりません。  
   
-オーバー ロードされた[delete 演算子](../../standard-library/new-operators.md#operator_delete)関数が値を返すことはできません。
+オーバー ロードされた[演算子 delete](../../standard-library/new-operators.md#op_delete)関数が値を返すことはできません。
 

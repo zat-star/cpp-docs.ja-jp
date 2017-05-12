@@ -34,13 +34,13 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: c7547d0df457e9f96676b99fdf4f7808945e206c
-ms.lasthandoff: 02/24/2017
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 1cbaa14c04aac55a09f646bfbe669a475e527add
+ms.lasthandoff: 04/29/2017
 
 ---
-# <a name="compiler-error-c2830"></a>コンパイラ エラー C2830
+# <a name="compiler-error-c2830"></a>{1&gt;コンパイラ エラー C2830&lt;1}
 'operator new' の標準の仮引数には既定の値を与えることはできません。  
   
-標準の仮パラメーター [new 演算子](../../standard-library/new-operators.md#operator_new)既定値を持つことはできません。 ユーザー定義の仮パラメーターだけでは、既定値を指定できます。
+標準の仮パラメーター [new 演算子](../../standard-library/new-operators.md#op_new)既定値を持つことはできません。 ユーザー定義の仮パラメーターだけでは、既定値を指定できます。
 

@@ -59,10 +59,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 75896dcec6e73b153473dd52c17b4dc95e425535
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 14d6eb678a20d3f3fb0a6250e13005d904aed4b1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="chdir-wchdir"></a>_chdir、_wchdir
@@ -84,7 +85,7 @@ int _wchdir(
  新しい作業ディレクトリのパス。  
   
 ## <a name="return-value"></a>戻り値  
- これらの関数は、成功した場合、値 0 を返します。 戻り値 –1 は失敗を示します。 指定したパスが見つからない場合、 `errno` は `ENOENT`に設定されます。 `dirname` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から -1 が返されます。  
+ これらの関数は、成功した場合、値 0 を返します。 戻り値-1 はエラーを示します。 指定したパスが見つからない場合、 `errno` は `ENOENT`に設定されます。 `dirname` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から -1 が返されます。  
   
 ## <a name="remarks"></a>コメント  
  `_chdir` 関数は、現在の作業ディレクトリを `dirname`で指定されたディレクトリに変更します。 `dirname` パラメーターは、既存のディレクトリを示す必要があります。 この関数は、任意のドライブの現在の作業ディレクトリを変更できます。 新しいドライブ文字が `dirname`で指定されている場合、既定のドライブ文字も同様に変更されます。 たとえば、A が既定のドライブ文字で、\BIN が現在の作業ディレクトリの場合、次の呼び出しにより、ドライブ C の現在の作業ディレクトリが変更され、C が新しい既定のドライブとして設定されます。  
@@ -93,9 +94,9 @@ int _wchdir(
 _chdir("c:\\temp");  
 ```  
   
- パスに省略可能な円記号 (`\`) を使用すると、C の文字列リテラルでは&1; つの円記号 (`\\`) を表すのに&2; つの円記号 (`\`) を使用する必要があります。  
+ パスに省略可能な円記号 (`\`) を使用すると、C の文字列リテラルでは 1 つの円記号 (`\\`) を表すのに 2 つの円記号 (`\`) を使用する必要があります。  
   
- `_wchdir` 関数は、`_chdir` 関数のワイド文字バージョンです。`_wchdir` 関数の `dirname` 引数は、ワイド文字列 `. _wchdir` で、それ以外は `_chdir` の動作は同じです。  
+ `_wchdir` 関数は、 `_chdir`関数のワイド文字バージョンです。 `dirname` 関数の `_wchdir` 引数は、ワイド文字列`. _wchdir` で、それ以外は `_chdir` の動作は同じです。  
   
 ### <a name="generic-text-routine-mapping"></a>汎用テキスト ルーチンのマップ  
   
@@ -170,9 +171,6 @@ Volume in drive C has no label.
               13 File(s)      2,249,184 bytes  
                0 Dir(s)  67,326,029,824 bytes free  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Environment::CurrentDirectory](https://msdn.microsoft.com/en-us/library/system.environment.currentdirectory.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   

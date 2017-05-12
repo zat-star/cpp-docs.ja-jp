@@ -6,21 +6,25 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- limits/std::float_denorm_style
+- limits/std::float_round_style
 ms.assetid: c86680a2-ba97-4ed9-8c20-a448857d7dc5
 caps.latest.revision: 11
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: e0f4b6ca5d11207787f9ff4f27b21dbbc78080c0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 519cc2c696b5dcb67fed79fd04c3e7d66e7d0ad9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltlimitsgt-enums"></a>&lt;limits&gt; 列挙型
 |||  
 |-|-|  
-|[float_denorm_style 列挙型](#float_denorm_style_enumeration)|[float_round_style 列挙型](#float_round_style_enumeration)|  
+|[float_denorm_style](#float_denorm_style)|[float_round_style](#float_round_style)|  
   
-##  <a name="a-namefloatdenormstyleenumerationa--floatdenormstyle-enumeration"></a><a name="float_denorm_style_enumeration"></a>  float_denorm_style 列挙型  
+##  <a name="float_denorm_style"></a>  float_denorm_style 列挙型  
  この列挙体では、小さすぎて、正規化された値としては表現できない非正規化された浮動小数点値を表現するために、実装で選択できるさまざまなメソッドを記述します。  
   
 ```
@@ -40,9 +44,9 @@ enum float_denorm_style {
 - **denorm_absent**: 非正規化形式が存在する場合。  
   
 ### <a name="example"></a>例  
-  この列挙型の値にアクセスする例については、「[numeric_limits::has_denorm](../standard-library/numeric-limits-class.md#numeric_limits__has_denorm)」を参照してください。  
+  この列挙型の値にアクセスする例については、「[numeric_limits::has_denorm](../standard-library/numeric-limits-class.md#has_denorm)」を参照してください。  
   
-##  <a name="a-namefloatroundstyleenumerationa--floatroundstyle-enumeration"></a><a name="float_round_style_enumeration"></a>  float_round_style 列挙型  
+##  <a name="float_round_style"></a>  float_round_style 列挙型  
  この列挙体では、浮動小数点値を整数値に丸めるために、実装で選択できるさまざまなメソッドを記述します。  
   
 ```
@@ -68,7 +72,7 @@ enum float_round_style {
 - **round_toward_neg_infinity**: より負の方向の整数に丸める場合。  
   
 ### <a name="example"></a>例  
-  この列挙型の値にアクセスする例については、「[numeric_limits::round_style](../standard-library/numeric-limits-class.md#numeric_limits__round_style)」を参照してください。  
+  この列挙型の値にアクセスする例については、「[numeric_limits::round_style](../standard-library/numeric-limits-class.md#round_style)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [\<limits>](../standard-library/limits.md)

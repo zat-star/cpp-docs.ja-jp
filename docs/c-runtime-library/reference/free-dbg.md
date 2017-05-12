@@ -52,10 +52,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7ab13da1c51d75979656c4b70c4874566296e845
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: da04eb912452b14250704bb2aba2af35fd30d409
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="freedbg"></a>_free_dbg
@@ -78,7 +79,7 @@ void _free_dbg(
  解放される、割り当てられていたメモリ ブロックの型。`_CLIENT_BLOCK`、`_NORMAL_BLOCK`、または `_IGNORE_BLOCK`。  
   
 ## <a name="remarks"></a>コメント  
- `_free_dbg` 関数は、[free](../../c-runtime-library/reference/free.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_free_dbg` への各呼び出しは `free` への呼び出しになります。 `free` と `_free_dbg` は、どちらもベース ヒープのメモリ ブロックを解放しますが、`_free_dbg` は&2; つのデバッグ機能を提供します。解放されたブロックをヒープのリンク リストに保持してメモリ不足の状況をシミュレートする機能と、特定の種類の割り当てを解放するためのブロック型パラメーターです。  
+ `_free_dbg` 関数は、[free](../../c-runtime-library/reference/free.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_free_dbg` への各呼び出しは `free` への呼び出しになります。 `free` と `_free_dbg` は、どちらもベース ヒープのメモリ ブロックを解放しますが、`_free_dbg` は 2 つのデバッグ機能を提供します。解放されたブロックをヒープのリンク リストに保持してメモリ不足の状況をシミュレートする機能と、特定の種類の割り当てを解放するためのブロック型パラメーターです。  
   
  `_free_dbg` は、解放操作を実行する前に、指定されたすべてのファイルおよびブロックの位置の有効性チェックを実行します。 アプリケーションは、この情報を提供する必要はありません。 メモリ ブロックが解放されると、デバッグ ヒープ マネージャーはユーザー部分の前後のバッファーの整合性を自動的にチェックし、それらのバッファーが上書きされていた場合はエラー レポートを発行します。 [_crtDbgFlag](../../c-runtime-library/crtdbgflag.md) フラグの `_CRTDBG_DELAY_FREE_MEM_DF` ビット フィールドが設定されている場合、解放されたブロックは値 0xDD 値を設定され、`_FREE_BLOCK` ブロック型を割り当てられ、ヒープのメモリ ブロックのリンク リストに保持されます。  
   
@@ -96,9 +97,6 @@ void _free_dbg(
   
 ## <a name="example"></a>例  
  `_free_dbg` の使用例については、「[crt_dbg2](http://msdn.microsoft.com/en-us/21e1346a-6a17-4f57-b275-c76813089167)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
