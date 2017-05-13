@@ -49,10 +49,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d035a6b0941e7fa916e9306e5ef4f420d4e066d5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 9e6e654e043a71cbb6eb75c53077b14400b82d72
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="write"></a>_write
@@ -79,11 +80,11 @@ int _write(
  バイト数。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合、`_write` は実際に書き込まれたバイト数を返します。 ディスク上に残っている実際の領域が、この関数がディスクに書き込もうとしているバッファーのサイズよりも小さい場合、`_write` は失敗し、バッファーの内容はディスクにフラッシュされません。 戻り値 -1 はエラーを示します。 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は -1 を返し、`errno` は次の&3; つの値のいずれかに設定されます。`EBADF` は、ファイル記述子が無効であるか、ファイルが書き込み用に開かれていないことを意味します。`ENOSPC` は、操作対象のデバイス上に十分な領域が残っていないことを意味します。`EINVAL` は、`buffer` が null ポインターであったか、Unicode モードで奇数の `count` のバイトがファイルに書き込むために渡されたことを意味します。  
+ 成功した場合、`_write` は実際に書き込まれたバイト数を返します。 ディスク上に残っている実際の領域が、この関数がディスクに書き込もうとしているバッファーのサイズよりも小さい場合、`_write` は失敗し、バッファーの内容はディスクにフラッシュされません。 戻り値-1 はエラーを示します。 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は -1 を返し、`errno` は次の 3 つの値のいずれかに設定されます。`EBADF` は、ファイル記述子が無効であるか、ファイルが書き込み用に開かれていないことを意味します。`ENOSPC` は、操作対象のデバイス上に十分な領域が残っていないことを意味します。`EINVAL` は、`buffer` が null ポインターであったか、Unicode モードで奇数の `count` のバイトがファイルに書き込むために渡されたことを意味します。  
   
- これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- ファイルがテキスト モードで開かれた場合、各ライン フィード文字は出力ではキャリッジ リターンとライン フィードのペアで置き換えられます。 この置き換えは、戻り値には影響しません。  
+ ファイルがテキスト モードで開かれている場合、各ライン フィード文字は、キャリッジ リターンの出力に改行をペアに置き換えられます。 この置き換えは、戻り値には影響しません。  
   
  ファイルが Unicode 変換モードで開かれた場合 (たとえば、`_open` または `_sopen` と、`_O_WTEXT`、`_O_U16TEXT`、または `_O_U8TEXT` を含むモード パラメーターを使用することで `fd` が開かれた場合や、`fopen` と `ccs=UNICODE`、`ccs=UTF-16LE`、または `ccs=UTF-8` を含むモード パラメーターを使用して開かれた場合や、`_setmode` を使用してモードが Unicode 変換モードに変更された場合など)、`buffer` は **UTF-16** データを含む `wchar_t` の配列へのポインターとして解釈されます。 このモードで奇数バイトの書き込みを試みると、パラメーター検証エラーが発生します。  
   

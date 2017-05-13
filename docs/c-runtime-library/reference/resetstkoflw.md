@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 23b9a848acb3e1dcd5003fb9369de2c1daf55ce9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 16d166f205f026977673e39bd539b377496bdc0c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="resetstkoflw"></a>_resetstkoflw
@@ -72,14 +73,14 @@ int _resetstkoflw ( void );
 ```  
   
 ## <a name="return-value"></a>戻り値  
- 関数が成功した場合は&0; 以外、失敗した場合は&0;。  
+ 関数が成功した場合は 0 以外、失敗した場合は 0。  
   
 ## <a name="remarks"></a>コメント  
  `_resetstkoflw` 関数は、スタック オーバーフローが発生した状態からプログラムを回復させ、実行中の操作を致命的な例外エラーが発生したとして失敗させるのではなく、続行できるようにします。 `_resetstkoflw` 関数を呼び出さなければ、前回の例外の後にガード ページは作成されません。 次にスタック オーバーフローが発生したときに例外は発生しないので、プロセスは警告なしで終了します。  
   
  アプリケーションのスレッドにより **EXCEPTION_STACK_OVERFLOW** の例外が発生した場合、そのスレッドによってスタックは破損したままの状態になります。 これは、スタックが破損しない **EXCEPTION_ACCESS_VIOLATION** や **EXCEPTION_INT_DIVIDE_BY_ZERO** などの他の例外とは対照的です。 プログラムが最初に読み込まれたときには、スタックには小さい値が設定されます。 その後、スタックはスレッドのニーズに対応して必要に応じて大きくなります。 これは、現在のスタックの末尾に PAGE_GUARD のアクセス権を使用してページを設定することによって実装されます。 詳細については、「[Creating Guard Pages](http://msdn.microsoft.com/library/windows/desktop/aa366549)」 (ガード ページの作成) をご覧ください。  
   
- コードによってスタック ポインターがこのページのアドレスをポイントすると、例外が発生し、システムは次の&3; つのことを実行します。  
+ コードによってスタック ポインターがこのページのアドレスをポイントすると、例外が発生し、システムは次の 3 つのことを実行します。  
   
 -   ガード ページの PAGE_GUARD の保護を削除して、スレッドがメモリにデータを読み書きできるようにします。  
   
@@ -89,7 +90,7 @@ int _resetstkoflw ( void );
   
  この方法では、システムがスレッドに対するスタック サイズを自動的にインクリメントできます。 プロセスの各スレッドには最大スタック サイズがあります。 スタック サイズはコンパイル時に [/STACK (Stack Allocations)](../../build/reference/stack-stack-allocations.md)、またはプロジェクトの .def ファイルの [STACKSIZE](../../build/reference/stacksize.md) ステートメントによって設定されます。  
   
- この最大スタック サイズを超えると、システムは次の&3; つのことを実行します。  
+ この最大スタック サイズを超えると、システムは次の 3 つのことを実行します。  
   
 -   前述のようにガード ページの PAGE_GUARD の保護を削除します。  
   
@@ -119,7 +120,7 @@ int _resetstkoflw ( void );
   
  **_resetstkoflw** が **__except** ブロック内などの適切な位置で使用されていても、エラーになる場合があります。 スタックのアンワインドを実行した後でも、スタックの最後のページに書き込みをしないで **_resetstkoflw** を実行するためのスタック領域が十分にない場合は、**_resetstkoflw** はスタックの最後のページをガード ページとしてリセットすることに失敗し、エラーを表す 0 を返します。 したがってこの関数を安全に使用するには、スタックを使用しても安全であると想定するのではなく、戻り値をチェックする必要があります。  
   
- 構造化例外処理はキャッチしません、`STATUS_STACK_OVERFLOW`で、アプリケーションがコンパイルされたときに、例外`/clr`(を参照してください[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md))。  
+ 構造化例外処理は検出されません、`STATUS_STACK_OVERFLOW`アプリケーションをコンパイルしたときに例外`/clr`(を参照してください[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md))。  
   
 ## <a name="requirements"></a>要件  
   
@@ -327,9 +328,6 @@ int main ( )
 Stack overflow!  
 Recovered from stack overflow and allocated 100,000 bytes using _alloca.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [_alloca](../../c-runtime-library/reference/alloca.md)

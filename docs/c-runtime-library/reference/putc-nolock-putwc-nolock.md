@@ -1,60 +1,78 @@
 ---
 title: "_putc_nolock、_putwc_nolock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_putc_nolock"
-  - "_putwc_nolock"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_puttc_nolock"
-  - "puttc_nolock"
-  - "putwc_nolock"
-  - "_putwc_nolock"
-  - "_putc_nolock"
-  - "putc_nolock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_putc_nolock 関数"
-  - "_puttc_nolock 関数"
-  - "_putwc_nolock 関数"
-  - "文字, 書き込み"
-  - "putc_nolock 関数"
-  - "puttc_nolock 関数"
-  - "putwc_nolock 関数"
-  - "ストリーム, 書き込み (文字の)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _putc_nolock
+- _putwc_nolock
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _puttc_nolock
+- puttc_nolock
+- putwc_nolock
+- _putwc_nolock
+- _putc_nolock
+- putc_nolock
+dev_langs:
+- C++
+helpviewer_keywords:
+- puttc_nolock function
+- putc_nolock function
+- _putc_nolock function
+- streams, writing characters to
+- characters, writing
+- putwc_nolock function
+- _puttc_nolock function
+- _putwc_nolock function
 ms.assetid: 3cfc7f21-c9e8-4b7f-b0fb-af0d4d85e7e1
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# _putc_nolock、_putwc_nolock
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: a92fc2fe740d52c2040c8dc479e2ffaa8607989a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
+---
+# <a name="putcnolock-putwcnolock"></a>_putc_nolock、_putwc_nolock
 スレッドをロックせずにストリームに文字を書き込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -68,40 +86,40 @@ wint_t _putwc_nolock(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `c`  
  書き込む文字。  
   
  `stream`  
  **FILE** 構造体へのポインター。  
   
-## 戻り値  
- 「**putc、putwc**」を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 「**putc、putwc**」をご覧ください。  
   
-## 解説  
- `_putc_nolock` と `_putwc_nolock` は **\_nolock** サフィックスが付いていないバージョンと同じものですが、他のスレッドによる干渉から保護されません。  他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。  これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
+## <a name="remarks"></a>コメント  
+ `_putc_nolock` と `_putwc_nolock` は、他のスレッドによる干渉から保護されていないことを除けば **_nolock** サフィックスが付いていないバージョンと同じです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
   
- `_putwc_nolock` は `_putc_nolock` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。  `_putc_nolock` では、UNICODE ストリームへの出力はサポートされていません。  
+ `_putwc_nolock` は `_putc_nolock` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。 `_putc_nolock` では、UNICODE ストリームへの出力はサポートされていません。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
-|`_puttc_nolock`|`_putc_nolock`|`_putc_nolock`|**\_putwc\_nolock**|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
+|`_puttc_nolock`|`_putc_nolock`|`_putc_nolock`|**_putwc_nolock**|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_putc_nolock`|\<stdio.h\>|  
-|`_putwc_nolock`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`_putc_nolock`|\<stdio.h>|  
+|`_putwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。  コンソール \(`stdin`、`stdout`、および `stderr`\) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_putc_nolock.c  
@@ -126,19 +144,13 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 This is the line of output  
 ```  
   
-## 同等の .NET Framework 関数  
-  
--   [System::IO::StreamWriter::Write](https://msdn.microsoft.com/en-us/library/system.io.streamwriter.write.aspx)  
-  
--   [System::Console::Write](https://msdn.microsoft.com/en-us/library/system.console.write.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fputc、fputwc](../../c-runtime-library/reference/fputc-fputwc.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)

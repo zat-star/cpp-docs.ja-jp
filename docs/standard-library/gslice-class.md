@@ -37,17 +37,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 102682f0a48da8f0d9493bbacb3f690ea8dc8c2c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: fa02312073af18591d25e31d465b268153b56784
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="gslice-class"></a>gslice クラス
 valarray の多次元のサブセットを定義するのに使用する、値を配列するための utility クラス。 valarray が配列内のすべての要素を持つ多次元行列と見なされる場合、スライスにより多次元配列からベクターが抽出されます。  
   
 ## <a name="remarks"></a>コメント  
- このクラスには、[gslice_array](../standard-library/gslice-array-class.md) 型のオブジェクトの特性を示すパラメーターが格納されます。 クラス gslice のオブジェクトがクラス [valarray](../standard-library/valarray-class.md#valarray__operator_at)**\<Type>** のオブジェクトの引数として現れる場合、valarray のサブセットは間接的に構築されます。 親の valarray から選択したサブセットを指定する格納値には、以下が含まれています。  
+ このクラスには、[gslice_array](../standard-library/gslice-array-class.md) 型のオブジェクトの特性を示すパラメーターが格納されます。 クラス gslice のオブジェクトがクラス [valarray](../standard-library/valarray-class.md#op_at)**\<Type>** のオブジェクトの引数として現れる場合、valarray のサブセットは間接的に構築されます。 親の valarray から選択したサブセットを指定する格納値には、以下が含まれています。  
   
 -   開始インデックス。  
   
@@ -55,7 +56,7 @@ valarray の多次元のサブセットを定義するのに使用する、値�
   
 -   クラス **valarray<size_t>** のストライド ベクター。  
   
- これら&2; つのベクターは同じ長さにする必要があります。  
+ これら 2 つのベクターは同じ長さにする必要があります。  
   
  gslice によって定義されたセットが定数の valarray のサブセットの場合、gslice は新しい valarray です。 gslice によって定義されたセットが非定数の valarray のサブセットの場合、gslice には元の valarray に対する参照セマンティクスが含まれます。 非定数 valarray の評価メカニズムを使用すると、時間とメモリを節約できます。  
   
@@ -65,22 +66,22 @@ valarray の多次元のサブセットを定義するのに使用する、値�
   
 |||  
 |-|-|  
-|[gslice](#gslice__gslice)|すべて指定された要素で始まる、`valarray` の複数のスライスからなる `valarray` のサブセットを定義します。|  
+|[gslice](#gslice)|すべて指定された要素で始まる、`valarray` の複数のスライスからなる `valarray` のサブセットを定義します。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[size](#gslice__size)|`valarray` の一般的なスライスの要素数を指定する配列の値を検索します。|  
-|[start](#gslice__start)|`valarray` の一般的なスライスの開始インデックスを検索します。|  
-|[stride](#gslice__stride)|`valarray` の一般的なスライスの要素間の距離を検索します。|  
+|[size](#size)|`valarray` の一般的なスライスの要素数を指定する配列の値を検索します。|  
+|[start](#start)|`valarray` の一般的なスライスの開始インデックスを検索します。|  
+|[stride](#stride)|`valarray` の一般的なスライスの要素間の距離を検索します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
   
-##  <a name="gslice__gslice"></a>  gslice::gslice  
+##  <a name="gslice"></a>  gslice::gslice  
  valarray の多次元スライスを定義するのに使用する valarray のユーティリティ クラス。  
   
 ```  
@@ -106,7 +107,7 @@ gslice(
  既定のコンストラクターは、開始インデックスに対してゼロを格納し、長さおよびストライド ベクターに対して長さゼロのベクターを格納します。 2 番目のコンストラクターは、開始インデックスに対して `_StartIndex`、長さの配列に対して `_LenArray`、ストライド配列に対して `_IncArray` を格納します。  
   
 ### <a name="remarks"></a>コメント  
- **gslice** は、すべて指定された要素で始まる valarray の複数のスライスで構成される valarray のサブセットを定義します。 `gslice` と [slice::slice](../standard-library/slice-class.md#slice__slice) の唯一の違いは、複数のスライスを定義する配列を使用する機能です。 最初のスライスには、`_StartIndex` のインデックスを含む最初の要素、`_LenArray` の最初の要素で指定された複数の要素、および `_IncArray` の最初の要素で指定されたストライドが含まれます。 次の一連の直交スライスのセットには、最初のスライスで指定された最初の要素が含まれます。 `_LenArray` の&2; 番目の要素は、要素の数を指定します。 ストライドは、`_IncArray` の&2; 番目の要素によって指定されます。 スライスの&3; 番目のディメンションは開始要素として、2 次元配列の要素を取得し、同様に続行します。  
+ **gslice** は、すべて指定された要素で始まる valarray の複数のスライスで構成される valarray のサブセットを定義します。 `gslice` と [slice::slice](../standard-library/slice-class.md#slice) の唯一の違いは、複数のスライスを定義する配列を使用する機能です。 最初のスライスには、`_StartIndex` のインデックスを含む最初の要素、`_LenArray` の最初の要素で指定された複数の要素、および `_IncArray` の最初の要素で指定されたストライドが含まれます。 次の一連の直交スライスのセットには、最初のスライスで指定された最初の要素が含まれます。 `_LenArray` の 2 番目の要素は、要素の数を指定します。 ストライドは、`_IncArray` の 2 番目の要素によって指定されます。 スライスの 3 番目のディメンションは開始要素として、2 次元配列の要素を取得し、同様に続行します。  
   
 ### <a name="example"></a>例  
   
@@ -155,7 +156,7 @@ The valarray for vaGSlice is vaResult:
 va[vaGSlice] = ( 0 4 8 12 7 11 15 19)  
 ```  
   
-##  <a name="gslice__size"></a>  gslice::size  
+##  <a name="size"></a>  gslice::size  
  valarray の一般的なスライスの要素数を指定する配列の値を検索します。  
   
 ```  
@@ -230,7 +231,7 @@ The size of vaResult is:
  vaGSlice.size ( ) = ( 4 4 ).  
 ```  
   
-##  <a name="gslice__start"></a>  gslice::start  
+##  <a name="start"></a>  gslice::start  
  valarray の一般的なスライスの開始インデックスを検索します。  
   
 ```  
@@ -291,7 +292,7 @@ The valarray for vaGSlice is vaResult:
 The index of the first element of vaResult is: 0.  
 ```  
   
-##  <a name="gslice__stride"></a>  gslice::stride  
+##  <a name="stride"></a>  gslice::stride  
  valarray の一般的なスライスの要素間の距離を検索します。  
   
 ```  

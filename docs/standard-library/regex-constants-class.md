@@ -100,10 +100,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 248e9ba676b906af62f6804f4939e04158a8e2ef
-ms.openlocfilehash: 9330a5c4e1b487880f405478dd7e8838af739c44
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 83cf6d3c8b6c571898bf6d1f2aeeefbc930dd573
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="regexconstants-class"></a>regex_constants クラス
@@ -127,7 +128,7 @@ namespace regex_constants {
   
  **名前空間:** std  
   
-##  <a name="regex_constants__error_type"></a>  regex_constants::error_type  
+##  <a name="error_type"></a>  regex_constants::error_type  
  正規表現の構文エラーを報告するためのフラグです。  
   
 ```  
@@ -186,7 +187,7 @@ enum error_type
   
  `error_backref` -- 式に正しくない前方参照が存在する  
   
-##  <a name="regex_constants__match_flag_type"></a>  regex_constants::match_flag_type  
+##  <a name="match_flag_type"></a>  regex_constants::match_flag_type  
  正規表現照合オプションのフラグ。  
   
 ```  
@@ -242,7 +243,7 @@ enum match_flag_type
   
  `format_first_only` -- 最初の一致の後は一致を検索しません  
   
-##  <a name="regex_constants__syntax_option_type"></a>  regex_constants::syntax_option_type  
+##  <a name="syntax_option_type"></a>  regex_constants::syntax_option_type  
  構文オプションを選択するためのフラグ。  
   
 ```  
@@ -264,7 +265,7 @@ enum syntax_option_type
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、正規表現をコンパイルするときに使用される言語指定子と構文修飾子を表すビットマスク型です。 オプションは `|`を使用して連結できます。 一度に使用できる言語指定子は&1; つだけです。  
+ この型は、正規表現をコンパイルするときに使用される言語指定子と構文修飾子を表すビットマスク型です。 オプションは `|`を使用して連結できます。 一度に使用できる言語指定子は 1 つだけです。  
   
  言語指定子は次のとおりです。  
   

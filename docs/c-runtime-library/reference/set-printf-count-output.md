@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: dfb86b7d6e52168fda5ec28bd66edc29b24432e4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: 11f0dbe2a4bb67992dd307aea62f79ca8f6b5f73
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="setprintfcountoutput"></a>_set_printf_count_output
@@ -76,7 +77,7 @@ int _set_printf_count_output(
  この関数を呼び出す前の `%n` サポートの状態は次のとおりです: `%n` サポートが有効だった場合にはゼロ以外。無効だった場合にはゼロ。  
   
 ## <a name="remarks"></a>コメント  
- セキュリティ上の理由で、`%n` 形式指定子のサポートは、`printf` とそのすべてのバリアントにおいて既定で無効になっています。 `printf` 形式指定に `%n` がある場合には、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、既定の動作として無効なパラメーター ハンドラーが呼び出されます。 ゼロ以外の引数で `_set_printf_count_output` を呼び出すと、`printf` ファミリの関数は、「[printf 関数の型フィールド文字](../../c-runtime-library/printf-type-field-characters.md)」で説明されているとおりに `%n` を解釈します。  
+ セキュリティ上の理由で、`%n` 形式指定子のサポートは、`printf` とそのすべてのバリアントにおいて既定で無効になっています。 `printf` 形式指定に `%n` がある場合には、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、既定の動作として無効なパラメーター ハンドラーが呼び出されます。 呼び出す`_set_printf_count_output`0 以外の引数を持つにより`printf`-ファミリの関数を解釈する`%n`」の説明に従って[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。  
   
 ## <a name="requirements"></a>要件  
   
@@ -88,7 +89,7 @@ int _set_printf_count_output(
   
 ## <a name="example"></a>例  
   
-```  
+```C  
 // crt_set_printf_count_output.c  
 #include <stdio.h>  
   
@@ -106,17 +107,12 @@ int main()
 }  
 ```  
   
-## <a name="output"></a>出力  
-  
-```  
+```Output  
 %n support was disabled.  
 %n support is now enabled.  
 123456789  
 i = 5  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [_get_printf_count_output](../../c-runtime-library/reference/get-printf-count-output.md)

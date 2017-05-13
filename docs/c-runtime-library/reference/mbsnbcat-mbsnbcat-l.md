@@ -59,10 +59,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 412e739b9a336cf98dcf08cba9a477625613cbfc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: ad5d71827a69eaf46f5aef05e2c880e4e4eef71f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="mbsnbcat-mbsnbcatl"></a>_mbsnbcat、_mbsnbcat_l
@@ -117,7 +118,7 @@ unsigned char *_mbsnbcat_l(
  `_mbsnbcat` はコピー先文字列へのポインターを返します。 エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
- `_mbsnbcat` 関数は、`count`に、`src` の先頭の最大 `dest` バイトを追加します。 `dest` の null 文字の前のバイトが先行バイトの場合、`src` の最初のバイトはこの先行バイトをオーバーライドします。 そうでなければ、`src` の先頭のバイトは、`dest` の終端の null 文字を上書きします。 `src` バイトが追加される前に `count` に null バイトがあった場合は、_`mbsnbcat` は null 文字までの `src` 内のすべてのバイトを追加します。 `count` が `src` の長さを超えている場合は、`src` の長さが `count` の代わりに使用されます。 結果の文字列は null 文字で終了します。 重なり合う文字列間でコピーした場合の動作は未定義です。  
+ `_mbsnbcat` 関数は、`count`に、`src` の先頭の最大 `dest` バイトを追加します。 `dest` の null 文字の前のバイトが先行バイトの場合、`src` の最初のバイトはこの先行バイトをオーバーライドします。 そうでなければ、`src` の先頭のバイトは、`dest` の終端の null 文字を上書きします。 `count` バイトを追加する前に `src` に null バイトが現れた場合、`_mbsnbcat` は null 文字までの `src` 内のすべてのバイトを追加します。 `count` が `src` の長さを超えている場合は、`src` の長さが `count` の代わりに使用されます。 結果の文字列は null 文字で終了します。 重なり合う文字列間でコピーした場合の動作は未定義です。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 関数のうちの `_mbsnbcat` バージョンは、このロケールに依存する動作に現在のロケールを使用します。`_mbsnbcat_l` バージョンは、現在のロケールの代わりにロケール パラメーターを使用することを除いて、同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -142,9 +143,6 @@ unsigned char *_mbsnbcat_l(
 |`_mbsnbcat_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

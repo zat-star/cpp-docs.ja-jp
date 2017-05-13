@@ -51,10 +51,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 38381578b8a8bd66c857d26d12a775f2af702611
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 44d9ecb713c0fa85f11c3d01b5a15707b0bfaf57
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="memcpys-wmemcpys"></a>memcpy_s、wmemcpy_s
@@ -91,7 +92,7 @@ errno_t wmemcpy_s(
  コピーする文字数。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -99,13 +100,13 @@ errno_t wmemcpy_s(
 |------------|----------------|-----------|---|------------------|------------------------|  
 |任意|任意|任意|0|0|変更されません|  
 |`NULL`|任意|任意|0 以外|`EINVAL`|変更されません|  
-|任意|任意|`NULL`|0 以外|`EINVAL`|`dest` は&0; に設定されます|  
-|任意|< `count`|任意|0 以外|`ERANGE`|`dest` は&0; に設定されます|  
+|任意|任意|`NULL`|0 以外|`EINVAL`|`dest` は 0 に設定されます|  
+|任意|< `count`|任意|0 以外|`ERANGE`|`dest` は 0 に設定されます|  
   
 ## <a name="remarks"></a>コメント  
  `memcpy_s` は、`count` から `src` に `dest` バイトをコピーし、`wmemcpy_s` は `count` 個のワイド文字 (2 バイト) をコピーします。 コピー元とコピー先が重なり合う場合の `memcpy_s` の動作は未定義です。 重なり合う領域を処理するには、`memmove_s` を使用します。  
   
- これらの関数では、パラメーターの検証が行われます。 `count` が&0; 以外であるか、`dest` または `src` が Null ポインターであるか、`destSize` が `count` 未満である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `EINVAL` または `ERANGE` を返し、`errno` を戻り値に設定します。  
+ これらの関数では、パラメーターの検証が行われます。 `count` が 0 以外であるか、`dest` または `src` が Null ポインターであるか、`destSize` が `count` 未満である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `EINVAL` または `ERANGE` を返し、`errno` を戻り値に設定します。  
   
 ## <a name="requirements"></a>要件  
   
@@ -155,9 +156,6 @@ int main()
 ```Output  
 0 1 4 9 16 25 36 49 64 81   
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   

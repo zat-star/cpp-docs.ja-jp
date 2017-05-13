@@ -8,31 +8,32 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - regex_match
-- std::regex_match
 - regex/std::regex_match
 - regex_replace
-- std::regex_replace
 - regex/std::regex_replace
 - regex_search
-- std::regex_search
 - regex/std::regex_search
 - regex/std::swap
+- regex/std::swap
+dev_langs:
+- C++
 ms.assetid: 91a8314b-6f7c-4e33-b7d6-d8583dd75585
 caps.latest.revision: 12
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 28fdbf1c00c44711538b7c163053eeca5a0c47e9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 0b803ecc31331cdfed9b178ca2e919606482aa33
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltregexgt-functions"></a>&lt;regex&gt; 関数
 ||||  
 |-|-|-|  
-|[regex_match 関数](#regex_match_function)|[regex_replace 関数](#regex_replace_function)|[regex_search 関数](#regex_search_function)|  
-|[swap 関数](#swap_function)|  
+|[regex_match](#regex_match)|[regex_replace](#regex_replace)|[regex_search](#regex_search)|  
+|[swap](#swap)|  
   
-##  <a name="a-nameregexmatchfunctiona--regexmatch-function"></a><a name="regex_match_function"></a>  regex_match 関数  
+##  <a name="regex_match"></a>regex_match
  正規表現がターゲット文字列全体と一致するかどうかをテストします。  
   
 ```  
@@ -121,7 +122,7 @@ bool regex_match(
  一致させるシーケンスの末尾。  
   
  `match`  
- 一致結果。 Elem 型に対応します。string には [smatch](../standard-library/regex-typedefs.md#smatch_typedef)、wstring には [wsmatch](../standard-library/regex-typedefs.md#wsmatch_typedef)、char* には [cmatch](../standard-library/regex-typedefs.md#cmatch_typedef)、wchar_t には [wcmatch](../standard-library/regex-typedefs.md#wcmatch_typedef) が対応します\*。  
+ 一致結果。 Elem 型に対応します。string には [smatch](../standard-library/regex-typedefs.md#smatch)、wstring には [wsmatch](../standard-library/regex-typedefs.md#wsmatch)、char* には [cmatch](../standard-library/regex-typedefs.md#cmatch)、wchar_t には [wcmatch](../standard-library/regex-typedefs.md#wcmatch) が対応します\*。  
   
  `ptr`  
  一致させるシーケンスの先頭を指すポインター。 ptr が char* の場合は、cmatch と regex を使用します。 ptr が wchar_t\* の場合は、wcmatch と wregex を使用します。  
@@ -133,7 +134,7 @@ bool regex_match(
  一致させる文字列。 Elem の型に対応します。  
   
 ### <a name="remarks"></a>コメント  
- 各テンプレート関数は、オペランド シーケンス `str` 全体が正規表現の引数 `re` に完全に一致している場合にのみ true を返します。 [regex_search](../standard-library/regex-functions.md#regex_search_function) を使用して、ターゲット シーケンス内の部分文字列と一致させ、regex_iterator を使用して複数の一致を検出します。 `match_results` オブジェクトを受け取る関数は、一致が成功したかどうかを反映し、さらに成功した場合は正規表現内のさまざまなキャプチャ グループがキャプチャした内容を反映するようにそのメンバーを設定します。  
+ 各テンプレート関数は、オペランド シーケンス `str` 全体が正規表現の引数 `re` に完全に一致している場合にのみ true を返します。 [regex_search](../standard-library/regex-functions.md#regex_search) を使用して、ターゲット シーケンス内の部分文字列と一致させ、regex_iterator を使用して複数の一致を検出します。 `match_results` オブジェクトを受け取る関数は、一致が成功したかどうかを反映し、さらに成功した場合は正規表現内のさまざまなキャプチャ グループがキャプチャした内容を反映するようにそのメンバーを設定します。  
   
  `match_results` オブジェクトを受け取る関数は、一致が成功したかどうかを反映し、さらに成功した場合は正規表現内のさまざまなキャプチャ グループがキャプチャした内容を反映するようにそのメンバーを設定します。  
   
@@ -192,7 +193,7 @@ int _tmain(int argc, _TCHAR* argv[])
   
 ```  
   
-##  <a name="a-nameregexreplacefunctiona--regexreplace-function"></a><a name="regex_replace_function"></a>  regex_replace 関数  
+##  <a name="regex_replace"></a>regex_replace
  一致した正規表現を置換します。  
   
 ```  
@@ -298,7 +299,7 @@ replacement == AdAeAf
 replacement == Adaeaf  
 ```  
   
-##  <a name="a-nameregexsearchfunctiona--regexsearch-function"></a><a name="regex_search_function"></a>  regex_search 関数  
+##  <a name="regex_search"></a>regex_search
  正規表現との一致を検索します。  
   
 ```  
@@ -447,8 +448,8 @@ search(string, "abc") == true
   matched: "abc"  
 ```  
   
-##  <a name="a-nameswapfunctiona--swap-function"></a><a name="swap_function"></a>  swap 関数  
- basic_regex または match_results の&2; つのオブジェクトを交換します。  
+##  <a name="swap"></a>  swap
+ basic_regex または match_results の 2 つのオブジェクトを交換します。  
   
 ```  
 template <class Elem, class RXtraits>  

@@ -34,10 +34,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
-ms.openlocfilehash: 14e87ce57d9637e7e0bce5e4a6c8ec6cbffa524a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 25f0926af84b1f9075489d48fda3fc52a5998c6a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="matchresults-class"></a>match_results クラス
@@ -96,7 +97,7 @@ class match_results {
   
  **名前空間:** std  
   
-##  <a name="match_results__allocator_type"></a>  match_results::allocator_type  
+##  <a name="allocator_type"></a>  match_results::allocator_type  
  ストレージを管理するためのアロケーターの型です。  
   
 ```  
@@ -215,7 +216,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__begin"></a>  match_results::begin  
+##  <a name="begin"></a>  match_results::begin  
  サブマッチのシーケンスの最初を指定します。  
   
 ```  
@@ -334,7 +335,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__char_type"></a>  match_results::char_type  
+##  <a name="char_type"></a>  match_results::char_type  
  要素の型。  
   
 ```  
@@ -453,7 +454,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__const_iterator"></a>  match_results::const_iterator  
+##  <a name="const_iterator"></a>  match_results::const_iterator  
  サブマッチ用の const 反復子の型。  
   
 ```  
@@ -572,7 +573,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__const_reference"></a>  match_results::const_reference  
+##  <a name="const_reference"></a>  match_results::const_reference  
  要素の定数参照の型。  
   
 ```  
@@ -691,7 +692,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__difference_type"></a>  match_results::difference_type  
+##  <a name="difference_type"></a>  match_results::difference_type  
  反復子の差の型です。  
   
 ```  
@@ -699,7 +700,7 @@ typedef typename iterator_traits<BidIt>::difference_type difference_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- typedef は `iterator_traits<BidIt>::difference_type`型の同意語です。被制御シーケンスの要素を指す任意の&2; つの反復子の差を表現することが可能なオブジェクトを表します。  
+ typedef は `iterator_traits<BidIt>::difference_type`型の同意語です。被制御シーケンスの要素を指す任意の 2 つの反復子の差を表現することが可能なオブジェクトを表します。  
   
 ### <a name="example"></a>例  
   
@@ -810,7 +811,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__empty"></a>  match_results::empty  
+##  <a name="empty"></a>  match_results::empty  
  サブマッチが存在しないかどうかをテストします。  
   
 ```  
@@ -929,7 +930,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__end"></a>  match_results::end  
+##  <a name="end"></a>  match_results::end  
  サブマッチのシーケンスの最後を指定します。  
   
 ```  
@@ -1048,7 +1049,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__format"></a>  match_results::format  
+##  <a name="format"></a>  match_results::format  
  サブマッチの形式を設定します。  
   
 ```  
@@ -1187,7 +1188,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__get_allocator"></a>  match_results::get_allocator  
+##  <a name="get_allocator"></a>  match_results::get_allocator  
  格納されているアロケーターを返します。  
   
 ```  
@@ -1306,7 +1307,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__iterator"></a>  match_results::iterator  
+##  <a name="iterator"></a>  match_results::iterator  
  サブマッチ用の反復子の型。  
   
 ```  
@@ -1425,7 +1426,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__length"></a>  match_results::length  
+##  <a name="length"></a>  match_results::length  
  サブマッチの長さを返します。  
   
 ```  
@@ -1548,7 +1549,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__match_results"></a>  match_results::match_results  
+##  <a name="match_results"></a>  match_results::match_results  
  オブジェクトを構築します。  
   
 ```  
@@ -1676,7 +1677,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__max_size"></a>  match_results::max_size  
+##  <a name="max_size"></a>  match_results::max_size  
  サブマッチの最大数を取得します。  
   
 ```  
@@ -1795,7 +1796,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__operator_eq"></a>  match_results::operator=  
+##  <a name="op_eq"></a>  match_results::operator=  
  match_results オブジェクトをコピーします。  
   
 ```  
@@ -1918,7 +1919,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__operator_at"></a>  match_results::operator[]  
+##  <a name="op_at"></a>  match_results::operator[]  
  サブオブジェクトにアクセスします。  
   
 ```  
@@ -2041,7 +2042,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__position"></a>  match_results::position  
+##  <a name="position"></a>  match_results::position  
  サブグループの開始オフセットを取得します。  
   
 ```  
@@ -2164,7 +2165,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__prefix"></a>  match_results::prefix  
+##  <a name="prefix"></a>  match_results::prefix  
  最初のサブマッチの前のシーケンスを取得します。  
   
 ```  
@@ -2283,7 +2284,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__reference"></a>  match_results::reference  
+##  <a name="reference"></a>  match_results::reference  
  要素の参照の型。  
   
 ```  
@@ -2402,7 +2403,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__size"></a>  match_results::size  
+##  <a name="size"></a>  match_results::size  
  サブマッチの数をカウントします。  
   
 ```  
@@ -2410,7 +2411,7 @@ size_type size() const;
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、検索に使用された正規表現内のキャプチャ グループの数 +&1; を返します。検索が実行されなかった場合は&0; を返します。  
+ このメンバー関数は、検索に使用された正規表現内のキャプチャ グループの数 + 1 を返します。検索が実行されなかった場合は 0 を返します。  
   
 ### <a name="example"></a>例  
   
@@ -2521,7 +2522,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__size_type"></a>  match_results::size_type  
+##  <a name="size_type"></a>  match_results::size_type  
  サブマッチ数の型。  
   
 ```  
@@ -2640,7 +2641,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__str"></a>  match_results::str  
+##  <a name="str"></a>  match_results::str  
  サブマッチが返されます。  
   
 ```  
@@ -2763,7 +2764,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__string_type"></a>  match_results::string_type  
+##  <a name="string_type"></a>  match_results::string_type  
  文字列の型。  
   
 ```  
@@ -2882,7 +2883,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__suffix"></a>  match_results::suffix  
+##  <a name="suffix"></a>  match_results::suffix  
  最後のサブマッチ後に、シーケンスを取得します。  
   
 ```  
@@ -3001,7 +3002,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__swap"></a>  match_results::swap  
+##  <a name="swap"></a>  match_results::swap  
  2 つの match_results オブジェクトを交換します。  
   
 ```  
@@ -3124,7 +3125,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-##  <a name="match_results__value_type"></a>  match_results::value_type  
+##  <a name="value_type"></a>  match_results::value_type  
  サブマッチの型。  
   
 ```  

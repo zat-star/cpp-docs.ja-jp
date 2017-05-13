@@ -56,10 +56,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 41775d158213a79debbdb4245fc468694df8646e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: c407068c475f866062f8973fbacf70fcf6e6cae9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="wcstombss-wcstombssl"></a>wcstombs_s、_wcstombs_s_l
@@ -120,7 +121,7 @@ errno_t _wcstombs_s_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
 |エラー条件|戻り値および `errno`|  
 |---------------------|------------------------------|  
@@ -207,9 +208,6 @@ Convert wide-character string:
    Characters converted: 14  
     Multibyte character: Hello, world.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

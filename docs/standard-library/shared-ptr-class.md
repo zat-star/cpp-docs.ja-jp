@@ -10,30 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - shared_ptr
-- std::shared_ptr
 - memory/std::shared_ptr
-- std::shared_ptr::element_type
 - memory/std::shared_ptr::element_type
-- std::shared_ptr::get
 - memory/std::shared_ptr::get
-- std::shared_ptr::owner_before
 - memory/std::shared_ptr::owner_before
-- std::shared_ptr::reset
 - memory/std::shared_ptr::reset
-- std::shared_ptr::swap
 - memory/std::shared_ptr::swap
-- std::shared_ptr::unique
 - memory/std::shared_ptr::unique
-- std::shared_ptr::use_count
 - memory/std::shared_ptr::use_count
-- std::shared_ptr::operator boolean-type
 - memory/std::shared_ptr::operator boolean-type
-- std::shared_ptr::operator*
 - memory/std::shared_ptr::operator*
-- std::shared_ptr::operator=
 - memory/std::shared_ptr::operator=
-- std::shared_ptr::operator->
 - memory/std::shared_ptr::operator->
+- memory/std::shared_ptr::element_type
+- memory/std::shared_ptr::get
+- memory/std::shared_ptr::owner_before
+- memory/std::shared_ptr::reset
+- memory/std::shared_ptr::swap
+- memory/std::shared_ptr::unique
+- memory/std::shared_ptr::use_count
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -57,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: d3638923d92759e5bbc379b8f1da633931fd7254
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: ead4dff36cf75d7a1519cee10aed39a30b6e88b8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="sharedptr-class"></a>shared_ptr クラス
@@ -73,7 +69,7 @@ class shared_ptr;
 ```  
   
 ## <a name="remarks"></a>コメント  
- shared_ptr クラスは、参照カウントを使ってリソースを管理するオブジェクトを表します。 `shared_ptr` オブジェクトは、所有しているリソースへのポインターまたは null ポインターを効率的に保持します。 複数の `shared_ptr` オブジェクトが&1; つのリソースを所有することもできます。その場合、特定のリソースを所有する最後の `shared_ptr` オブジェクトが破棄された時点で、リソースが解放されます。  
+ shared_ptr クラスは、参照カウントを使ってリソースを管理するオブジェクトを表します。 `shared_ptr` オブジェクトは、所有しているリソースへのポインターまたは null ポインターを効率的に保持します。 複数の `shared_ptr` オブジェクトが 1 つのリソースを所有することもできます。その場合、特定のリソースを所有する最後の `shared_ptr` オブジェクトが破棄された時点で、リソースが解放されます。  
   
  `shared_ptr` は、再割り当てまたはリセットされるとリソースの所有を停止します。  
   
@@ -105,7 +101,7 @@ shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared
   
 -   そのリソースを指し示す [weak_ptr クラス](../standard-library/weak-ptr-class.md) オブジェクトから構築されている。  
   
--   そのリソースの所有権が、[shared_ptr::operator=](#shared_ptr__operator_eq) またはメンバー関数 [shared_ptr::reset](#shared_ptr__reset) の呼び出しのいずれかによって割り当てられている。  
+-   そのリソースの所有権が、[shared_ptr::operator=](#op_eq) またはメンバー関数 [shared_ptr::reset](#reset) の呼び出しのいずれかによって割り当てられている。  
   
  リソースを所有する `shared_ptr` オブジェクトは、コントロール ブロックを共有します。 コントロール ブロックは以下の情報を保持します。  
   
@@ -123,7 +119,7 @@ shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared
   
  空の `shared_ptr` オブジェクトは、リソースを一切所有せず、コントロール ブロックも持ちません。  
   
- 削除子は、メンバー関数 `operator()` を持つ関数オブジェクトです。 この型はコピーによって構築可能であること、また、コピー コンストラクターおよびデストラクターによって例外がスローされないことが必要です。 削除子は、削除するオブジェクトを指定する&1; つのパラメーターを受け入れます。  
+ 削除子は、メンバー関数 `operator()` を持つ関数オブジェクトです。 この型はコピーによって構築可能であること、また、コピー コンストラクターおよびデストラクターによって例外がスローされないことが必要です。 削除子は、削除するオブジェクトを指定する 1 つのパラメーターを受け入れます。  
   
  一部の関数では、結果として生成される `shared_ptr<T>` または `weak_ptr<T>` オブジェクトのプロパティを定義する引数リストが使用されます。 その場合、引数リストは次のような方法で指定できます。  
   
@@ -152,36 +148,36 @@ shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared
   
 |||  
 |-|-|  
-|[shared_ptr::shared_ptr](#shared_ptr__shared_ptr)|`shared_ptr` を構築します。|  
-|[shared_ptr::~shared_ptr](#shared_ptr___dtorshared_ptr)|`shared_ptr` を破棄します。|  
+|[shared_ptr](#shared_ptr)|`shared_ptr` を構築します。|  
+|[shared_ptr::~shared_ptr](#dtorshared_ptr)|`shared_ptr` を破棄します。|  
   
 ### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[shared_ptr::element_type](#shared_ptr__element_type)|要素の型。|  
-|[shared_ptr::get](#shared_ptr__get)|所有されているリソースのアドレスを取得します。|  
-|[shared_ptr::owner_before](#shared_ptr__owner_before)|この `shared_ptr` が、指定されたポインターの前に順序付けされている (またはそれよりも少ない) 場合は true を返します。|  
-|[shared_ptr::reset](#shared_ptr__reset)|所有されたリソースを置き換えます。|  
-|[shared_ptr::swap](#shared_ptr__swap)|2 つの `shared_ptr` オブジェクトを交換します。|  
-|[shared_ptr::unique](#shared_ptr__unique)|所有されたリソースが一意であるかどうかをテストします。|  
-|[shared_ptr::use_count](#shared_ptr__use_count)|リソース所有者の数をカウントします。|  
+|[element_type](#element_type)|要素の型。|  
+|[get](#get)|所有されているリソースのアドレスを取得します。|  
+|[owner_before](#owner_before)|この `shared_ptr` が、指定されたポインターの前に順序付けされている (またはそれよりも少ない) 場合は true を返します。|  
+|[reset](#reset)|所有されたリソースを置き換えます。|  
+|[swap](#swap)|2 つの `shared_ptr` オブジェクトを交換します。|  
+|[unique](#unique)|所有されたリソースが一意であるかどうかをテストします。|  
+|[use_count](#use_count)|リソース所有者の数をカウントします。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[shared_ptr::operator boolean-type](#shared_ptr__operator_boolean-type)|所有されたリソースが存在するかどうかをテストします。|  
-|[shared_ptr::operator*](#shared_ptr__operator_star)|指定された値を取得します。|  
-|[shared_ptr::operator=](#shared_ptr__operator_eq)|所有されたリソースを置き換えます。|  
-|[shared_ptr::operator-&gt;](#shared_ptr__operator-_gt_)|指定された値へのポインターを取得します。|  
+|[shared_ptr::operator boolean-type](#op_boolean-type)|所有されたリソースが存在するかどうかをテストします。|  
+|[shared_ptr::operator*](#op_star)|指定された値を取得します。|  
+|[shared_ptr::operator=](#op_eq)|所有されたリソースを置き換えます。|  
+|[shared_ptr::operator-&gt;](#operator-_gt)|指定された値へのポインターを取得します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
   
-##  <a name="a-namesharedptrelementtypea--sharedptrelementtype"></a><a name="shared_ptr__element_type"></a>  shared_ptr::element_type  
+##  <a name="element_type"></a>  shared_ptr::element_type  
  要素の型。  
   
 ```  
@@ -215,7 +211,7 @@ int main()
 *sp0 == 5  
 ```  
   
-##  <a name="a-namesharedptrgeta--sharedptrget"></a><a name="shared_ptr__get"></a>  shared_ptr::get  
+##  <a name="get"></a>  shared_ptr::get  
  所有されているリソースのアドレスを取得します。  
   
 ```  
@@ -252,7 +248,7 @@ sp0.get() == 0 == true
 *sp1.get() == 5  
 ```  
   
-##  <a name="a-namesharedptroperatorboolean-typea--sharedptroperator-boolean-type"></a><a name="shared_ptr__operator_boolean-type"></a>  shared_ptr::operator boolean-type  
+##  <a name="shared_ptr__operator_boolean-type"></a>  shared_ptr::operator boolean-type  
  所有されたリソースが存在するかどうかをテストします。  
   
 ```  
@@ -290,7 +286,7 @@ int main()
 (bool)sp1 == true  
 ```  
   
-##  <a name="a-namesharedptroperatorstara--sharedptroperator"></a><a name="shared_ptr__operator_star"></a>  shared_ptr::operator*  
+##  <a name="op_star"></a>  shared_ptr::operator*  
  指定された値を取得します。  
   
 ```  
@@ -323,7 +319,7 @@ int main()
 *sp0 == 5  
 ```  
   
-##  <a name="a-namesharedptroperatoreqa--sharedptroperator"></a><a name="shared_ptr__operator_eq"></a>  shared_ptr::operator=  
+##  <a name="op_eq"></a>  shared_ptr::operator=  
  所有されたリソースを置き換えます。  
   
 ```  
@@ -385,7 +381,7 @@ int main()
 *sp0 == 10  
 ```  
   
-##  <a name="a-namesharedptroperator-gta--sharedptroperator-gt"></a><a name="shared_ptr__operator-_gt_"></a>  shared_ptr::operator-&gt;  
+##  <a name="shared_ptr__operator-_gt"></a>  shared_ptr::operator-&gt;  
  指定された値へのポインターを取得します。  
   
 ```  
@@ -421,7 +417,7 @@ sp0->first == 1
 sp0->second == 2  
 ```  
   
-##  <a name="a-namesharedptrownerbeforea--sharedptrownerbefore"></a><a name="shared_ptr__owner_before"></a>  shared_ptr::owner_before  
+##  <a name="owner_before"></a>  shared_ptr::owner_before  
  この `shared_ptr` が、指定されたポインターの前に順序付けされている (またはそれよりも少ない) 場合は true を返します。  
   
 ```  
@@ -439,7 +435,7 @@ bool owner_before(const weak_ptr<Other>& ptr);
 ### <a name="remarks"></a>コメント  
  `*this` が `ordered before``ptr` の場合にのみ、テンプレート メンバー関数は true を返します。  
   
-##  <a name="a-namesharedptrreseta--sharedptrreset"></a><a name="shared_ptr__reset"></a>  shared_ptr::reset  
+##  <a name="reset"></a>  shared_ptr::reset  
  所有されたリソースを置き換えます。  
   
 ```  
@@ -524,7 +520,7 @@ int main()
 *sp == 15  
 ```  
   
-##  <a name="a-namesharedptrsharedptra--sharedptrsharedptr"></a><a name="shared_ptr__shared_ptr"></a>  shared_ptr::shared_ptr  
+##  <a name="shared_ptr"></a>  shared_ptr::shared_ptr  
  `shared_ptr` を構築します。  
   
 ```  
@@ -657,7 +653,7 @@ int main()
 *sp5 == 15  
 ```  
   
-##  <a name="a-namesharedptrdtorsharedptra--sharedptrsharedptr"></a><a name="shared_ptr___dtorshared_ptr"></a>  shared_ptr::~shared_ptr  
+##  <a name="dtorshared_ptr"></a>  shared_ptr::~shared_ptr  
  `shared_ptr` を破棄します。  
   
 ```  
@@ -711,7 +707,7 @@ use count == 2
 use count == 1  
 ```  
   
-##  <a name="a-namesharedptrswapa--sharedptrswap"></a><a name="shared_ptr__swap"></a>  shared_ptr::swap  
+##  <a name="swap"></a>  shared_ptr::swap  
  2 つの `shared_ptr` オブジェクトを交換します。  
   
 ```  
@@ -723,7 +719,7 @@ void swap(shared_ptr& sp);
  交換先の共有ポインター。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は、最初に `*this` が所有してその後 `sp` が所有するリソースと、最初に `sp` が所有してその後 `*this` が所有するリソースを残します。 この関数は&2; つのリソースの参照数を変更せず、例外をスローしません。  
+ メンバー関数は、最初に `*this` が所有してその後 `sp` が所有するリソースと、最初に `sp` が所有してその後 `*this` が所有するリソースを残します。 この関数は 2 つのリソースの参照数を変更せず、例外をスローしません。  
   
 ### <a name="example"></a>例  
   
@@ -779,7 +775,7 @@ int main()
 *wp1 == 5  
 ```  
   
-##  <a name="a-namesharedptruniquea--sharedptrunique"></a><a name="shared_ptr__unique"></a>  shared_ptr::unique  
+##  <a name="unique"></a>  shared_ptr::unique  
  所有されたリソースが一意であるかどうかをテストします。  
   
 ```  
@@ -825,7 +821,7 @@ sp1.unique() == true
 sp1.unique() == false  
 ```  
   
-##  <a name="a-namesharedptrusecounta--sharedptrusecount"></a><a name="shared_ptr__use_count"></a>  shared_ptr::use_count  
+##  <a name="use_count"></a>  shared_ptr::use_count  
  リソース所有者の数をカウントします。  
   
 ```  

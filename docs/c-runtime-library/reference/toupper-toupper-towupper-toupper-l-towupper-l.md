@@ -68,10 +68,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 13fd6d727d93aad16e2798758c51e68f69b1524f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: e782f6168d48ecc1d24b90f2030909de32c9ee26
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="toupper-toupper-towupper-toupperl-towupperl"></a>toupper、_toupper、towupper、_toupper_l、_towupper_l
@@ -109,16 +110,16 @@ int _towupper_l(
 ## <a name="return-value"></a>戻り値  
  これらの各ルーチンは、可能な場合は `c` のコピーを変換し、結果を返します。  
   
- `c` が、`iswlower` が&0; 以外のワイド文字であり、`iswupper` が&0; 以外の対応するワイド文字がある場合、`towupper` は対応するワイド文字を返します。そうでない場合は、`towupper` は変更されないままの `c` を返します。  
+ `c` が、`iswlower` が 0 以外のワイド文字であり、`iswupper` が 0 以外の対応するワイド文字がある場合、`towupper` は対応するワイド文字を返します。そうでない場合は、`towupper` は変更されないままの `c` を返します。  
   
  エラーを示す戻り値は予約されていません。  
   
- `toupper` が予想どおりの結果を返すためには、[__isascii](../../c-runtime-library/reference/isascii-isascii-iswascii.md) と [islower](../../c-runtime-library/reference/islower-iswlower-islower-l-iswlower-l.md) がどちらも&0; 以外を返す必要があります。  
+ `toupper` が予想どおりの結果を返すためには、[__isascii](../../c-runtime-library/reference/isascii-isascii-iswascii.md) と [islower](../../c-runtime-library/reference/islower-iswlower-islower-l-iswlower-l.md) がどちらも 0 以外を返す必要があります。  
   
 ## <a name="remarks"></a>コメント  
  これらの各ルーチンは、変換が可能で適切な場合に、指定した小文字を適宜大文字に変換します。 `towupper` の大文字/小文字の変換は、ロケール固有です。 現在のロケールに関連する文字の大文字/小文字のみが変換されます。 `_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、パラメーターとして渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
- `toupper` が予想どおりの結果を返すためには、[__isascii](../../c-runtime-library/reference/isascii-isascii-iswascii.md) と [isupper](../../c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l.md) がどちらも&0; 以外を返す必要があります。  
+ `toupper` が予想どおりの結果を返すためには、[__isascii](../../c-runtime-library/reference/isascii-isascii-iswascii.md) と [isupper](../../c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l.md) がどちらも 0 以外を返す必要があります。  
   
  [データ変換ルーチン](../../c-runtime-library/data-conversion.md)  
   
@@ -144,9 +145,6 @@ int _towupper_l(
   
 ## <a name="example"></a>例  
  「[to 系関数](../../c-runtime-library/to-functions.md)」の例をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Char::ToUpper](https://msdn.microsoft.com/en-us/library/system.char.toupper.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

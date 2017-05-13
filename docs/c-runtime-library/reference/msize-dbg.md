@@ -51,10 +51,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 07f6fe031d7b0b3065cfe50d1ed0307c20a55509
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 6e26ab437a5fceb148e0c49308b244ae0a39504e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="msizedbg"></a>_msize_dbg
@@ -81,7 +82,7 @@ ms.lasthandoff: 02/24/2017
  正常に終了した場合、`_msize_dbg` は指定されたメモリ ブロックのサイズ (バイト単位) を返します。それ以外の場合は NULL を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_msize_dbg` は、_[msize](../../c-runtime-library/reference/msize.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_msize_dbg` への各呼び出しは `_msize` への呼び出しになります。 `_msize` と `_msize_dbg` は、どちらもベース ヒープ内のメモリ ブロックのサイズを計算しますが、`_msize_dbg` は&2; つのデバッグ機能を追加します。返されるサイズにメモリ ブロックのユーザー部分の両側のバッファーを含める機能と、特定のブロック型のサイズ計算ができるようにする機能です。  
+ `_msize_dbg` は、_[msize](../../c-runtime-library/reference/msize.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_msize_dbg` への各呼び出しは `_msize` への呼び出しになります。 `_msize` と `_msize_dbg` は、どちらもベース ヒープ内のメモリ ブロックのサイズを計算しますが、`_msize_dbg` は 2 つのデバッグ機能を追加します。返されるサイズにメモリ ブロックのユーザー部分の両側のバッファーを含める機能と、特定のブロック型のサイズ計算ができるようにする機能です。  
   
  デバッグ バージョンのベース ヒープに対するメモリ ブロックの割り当て、初期化、管理方法については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 割り当てブロック型と、それらがどのように使用されるかについては、「[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 標準で呼び出すヒープ関数と、アプリケーションのデバッグ ビルドで呼び出すデバッグ バージョンのヒープ関数との違いの詳細については、「[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)」をご覧ください。  
   
@@ -156,9 +157,6 @@ int main( void )
 Size of block after _malloc_dbg of 40 longs: 160  
 Size of block after _realloc_dbg of 40 more longs: 320  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   

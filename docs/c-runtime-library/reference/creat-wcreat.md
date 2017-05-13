@@ -1,58 +1,76 @@
 ---
 title: "_creat、_wcreat | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_creat"
-  - "_wcreat"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "wcreat"
-  - "_wcreat"
-  - "_creat"
-  - "tcreat"
-  - "_tcreat"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "wcreat 関数"
-  - "_wcreat 関数"
-  - "ファイル [C++]、作成"
-  - "_creat 関数"
-  - "tcreat 関数"
-  - "creat 関数"
-  - "_tcreat 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _creat
+- _wcreat
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- wcreat
+- _wcreat
+- _creat
+- tcreat
+- _tcreat
+dev_langs:
+- C++
+helpviewer_keywords:
+- wcreat function
+- _wcreat function
+- files [C++], creating
+- _creat function
+- tcreat function
+- creat function
+- _tcreat function
 ms.assetid: 3b3b795d-1620-40ec-bd2b-a4bbb0d20fe5
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# _creat、_wcreat
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f034e2b80cc1bd3e7b5fc4578a6f5e77a060593c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-新しいファイルを作成します。  `_creat` と `_wcreat` は推奨されて; [\_sopen\_s、\_wsopen\_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md) を代わりに使用します。  
+---
+# <a name="creat-wcreat"></a>_creat、_wcreat
+新しいファイルを作成します。 `_creat` と `_wcreat` は推奨されていません。代わりに [_sopen_s、_wsopen_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md) をご利用ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int _creat(   
@@ -65,57 +83,57 @@ int _wcreat(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `filename`  
  新しいファイルの名前。  
   
  `pmode`  
  アクセス許可の設定。  
   
-## 戻り値  
- これらの関数は、作成されるファイルは、成功すると、ファイル記述子を返します。  そうしないと、関数は次の表に示すように–1 と設定 `errno` を返します。  
+## <a name="return-value"></a>戻り値  
+ これらの関数は正常に実行された場合、作成されたファイルにファイル記述子を返します。 関数が-1 を返しますそれ以外の場合、設定と`errno`次の表に示すようにします。  
   
 |`errno` の設定|説明|  
-|-----------------|--------|  
-|`EACCES`|`filename` は 既存の読み取り専用ファイルを指定するか、ファイルの代わりに指定します。|  
-|`EMFILE`|これ以上のファイル記述子は使用できません。|  
-|`ENOENT`|指定されたファイルが見つかりません。|  
+|---------------------|-----------------|  
+|`EACCES`|`filename` は、既存の読み取り専用ファイルを指定するか、ファイルの代わりにディレクトリを指定します。|  
+|`EMFILE`|ファイル記述子をこれ以上使用できません。|  
+|`ENOENT`|指定されたファイルが見つかりませんでした。|  
   
- `filename` が null の場合、これらの関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、\-1 を返します。  
+ `filename` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
- リターン コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `_creat` 関数では新しいファイルを作成するか、または既存の 1 を開き、切り捨てられます。  `_wcreat` 関数は、`_creat` 関数のワイド文字バージョンです。`_wcreat` 関数の引数 `filename` は、ワイド文字列です。  それ以外では、`_wcreat` と `_creat` の動作は同じです。  
+## <a name="remarks"></a>コメント  
+ `_creat` 関数は新しいファイルを作成するか、既存のファイルを開いて切り詰めます。 `_wcreat` 関数は、`_creat` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wcreat` は、ワイド文字列です。 それ以外では、`_wcreat` と `_creat` の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcreat`|`_creat`|`_creat`|`_wcreat`|  
   
- `filename` で指定されたファイルが見つからない場合、新しいファイルが特定のアクセス許可の設定で作成され、書き込み用に開きます。  ファイルが既にと書き込みアクセス許可の設定を使用する場合 `_creat` は長さ 0 にファイルを開き、前の内容を切り捨てておよび書き込み用の破棄します。  アクセス許可の設定、`pmode`、新しく作成されたファイルだけに適用されます。  新しいファイルを最初に終了した後に指定されたアクセス許可設定を受け取ります。  整数式 `pmode` は SYS\\Stat.h でマニフェスト定数 `_S_IWRITE` と `_S_IREAD`1 のいずれかまたは両方を定義しています。  定数は、両方とも提供されると、`OR` のビットごとのな演算子と結合されます。  **&#124;**\).  `pmode` パラメーターには、次の値の 1 に設定されます。  
+ `filename` により指定されたファイルが存在しない場合、所与のアクセス許可設定で新しいファイルが作成され、開くのでそれに書き込むことができます。 ファイルが既に存在し、そのアクセス許可設定で書き込みが許可される場合、`_creat` はファイルを長さ 0 に切り詰め、以前のコンテンツを破棄して開きます。ファイルに書き込むことができます。 アクセス許可設定 `pmode` は、新しく作成されたファイルにのみ適用されます。 新しいファイルは、最初に閉じた後に、指定されたアクセス許可設定を受け取ります。 整数式 `pmode` には、 に定義されている、マニフェスト定数 `_S_IWRITE` と `_S_IREAD` に一方または両方が含まれます。 両方の定数が指定されると、これらはビットごとの `OR` 演算子を使用して組み合わされます ( **&#124;** )。 `pmode` パラメーターには次のいずれかの値を設定されます。  
   
 |値|定義|  
-|-------|--------|  
-|`_S_IWRITE`|許可される書き込み。|  
-|`_S_IREAD`|許可される読み取り。|  
-|`_S_IREAD &#124; _S_IWRITE`|許可されるの読み取りと書き込み。|  
+|-----------|----------------|  
+|`_S_IWRITE`|書き込みが許可されます。|  
+|`_S_IREAD`|読み取りが許可されます。|  
+|`_S_IREAD &#124; _S_IWRITE`|読み取りと書き込みが許可されます。|  
   
- 記述するアクセス許可、ファイルが読み取り専用されません。  すべてのファイルを読み取り、常に;です 書き込み専用アクセス許可を与えることは不可能です。  `_S_IWRITE` モードと `_S_IREAD``| _S_IWRITE` は、等価です。  `_creat` で開くファイルは `_SH_DENYNO`の互換モード \([\_sopen](../../c-runtime-library/reference/sopen-wsopen.md)を参照してください\) 常に表示されます。  
+ 書き込みアクセス許可が与えられない場合、ファイルは読み取り専用になります。 ファイルはすべて常に読み取り可能です。書き込みのみのアクセス許可を与えることはできません。 `_S_IWRITE` モードと `_S_IREAD | _S_IWRITE` モードは同じになります。 `_creat` を利用して開くファイルは、`_SH_DENYNO` により常に互換性モード ([_sopen](../../c-runtime-library/reference/sopen-wsopen.md) 参照) で開きます。  
   
- `_creat` は `pmode` にアクセス許可を設定する前に、ファイルのアクセス許可マスクを適用します \([\_umask](../../c-runtime-library/reference/umask.md)を参照してください。  `_creat` は 前のライブラリとの互換性が主に与えられます。  `_O_CREAT` の `_open` と `oflag` パラメーターの `_O_TRUNC` の呼び出しは `_creat` に相当し、新しいコードの使用をお勧めします。  
+ `_creat` では、アクセス許可を設定する前に、現在のファイル アクセス許可マスクが `pmode` に適用されます ([_umask](../../c-runtime-library/reference/umask.md) 参照)。 `_creat` は主に以前のライブラリとの互換性のための関数です。 `oflag` パラメーターに `_O_CREAT` と `_O_TRUNC` を指定して `_open` を呼び出すことは `_creat` と同じであり、新しいコードの場合に推奨されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_creat`|\<io.h\>|\<sys\/types.h、sys\> \<\/stat.h、errno.h\> \<\>|  
-|`_wcreat`|\<io.h または\> wchar.h \<\>|\<sys\/types.h、sys\> \<\/stat.h、errno.h\> \<\>|  
+|-------------|---------------------|---------------------|  
+|`_creat`|\<io.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
+|`_wcreat`|\<io.h> または \<wchar.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_creat.c  
@@ -146,13 +164,16 @@ int main( void )
 }  
 ```  
   
-  **作成されたデータ ファイル。**   
-## 参照  
+```Output  
+Created data file.  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [\_chmod、\_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
- [\_chsize](../../c-runtime-library/reference/chsize.md)   
- [\_close](../Topic/_close.md)   
- [\_dup、\_dup2](../../c-runtime-library/reference/dup-dup2.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [\_sopen、\_wsopen](../../c-runtime-library/reference/sopen-wsopen.md)   
- [\_umask](../../c-runtime-library/reference/umask.md)
+ [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
+ [_chsize](../../c-runtime-library/reference/chsize.md)   
+ [_close](../../c-runtime-library/reference/close.md)   
+ [dup、dup2](../../c-runtime-library/reference/dup-dup2.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
+ [_sopen、_wsopen](../../c-runtime-library/reference/sopen-wsopen.md)   
+ [_umask](../../c-runtime-library/reference/umask.md)

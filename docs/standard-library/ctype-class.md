@@ -10,10 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - ctype
-- std::ctype
-- std.ctype
-- CType
 - xlocale/std::ctype
+- locale/std::ctype::char_type
+- locale/std::ctype::do_is
+- locale/std::ctype::do_narrow
+- locale/std::ctype::do_scan_is
+- locale/std::ctype::do_scan_not
+- locale/std::ctype::do_tolower
+- locale/std::ctype::do_toupper
+- locale/std::ctype::do_widen
+- locale/std::ctype::is
+- locale/std::ctype::narrow
+- locale/std::ctype::scan_is
+- locale/std::ctype::scan_not
+- locale/std::ctype::tolower
+- locale/std::ctype::toupper
+- locale/std::ctype::widen
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -37,10 +49,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 08c792c0ab211a5ea8e83d026790322242decb81
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 2e99ceb296bd3f620ce1bd58e8b0de6b6132299b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ctype-class"></a>ctype クラス
@@ -58,9 +71,9 @@ class ctype : public ctype_base;
  文字をエンコードするためにプログラム内で使用される型。  
   
 ## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は&0; です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。 分類の条件は、基底クラス ctype_base の入れ子になったビットマスク型で提供されます。  
+ すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。 分類の条件は、基底クラス ctype_base の入れ子になったビットマスク型で提供されます。  
   
- C++ 標準ライブラリは、このテンプレート クラスの&2; つの明示的な特殊化を定義します。  
+ C++ 標準ライブラリは、このテンプレート クラスの 2 つの明示的な特殊化を定義します。  
   
 - [ctype](../standard-library/ctype-char-class.md)< `char`>。違いが別個に記述される明示的な特殊化です。  
   
@@ -78,39 +91,39 @@ class ctype : public ctype_base;
   
 |||  
 |-|-|  
-|[ctype](#ctype__ctype)|文字のロケール ファセットとして機能する `ctype` クラスのオブジェクトのコンストラクター。|  
+|[ctype](#ctype)|文字のロケール ファセットとして機能する `ctype` クラスのオブジェクトのコンストラクター。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#ctype__char_type)|ロケールによって使用される文字を表す型。|  
+|[char_type](#char_type)|ロケールによって使用される文字を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[do_is](#ctype__do_is)|1 つの文字が特定の属性を持つかどうかをテストしたり、範囲内の各文字の属性を分類して配列に格納したりするために呼び出される仮想関数。|  
-|[do_narrow](#ctype__do_narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの `char` 型の対応する文字に変換するために呼び出される仮想関数。|  
-|[do_scan_is](#ctype__do_scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索するために呼び出される仮想関数。|  
-|[do_scan_not](#ctype__do_scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索するために呼び出される仮想関数。|  
-|[do_tolower](#ctype__do_tolower)|文字または文字の範囲を小文字に変換するために呼び出される仮想関数。|  
-|[do_toupper](#ctype__do_toupper)|文字または文字の範囲を大文字に変換するために呼び出される仮想関数。|  
-|[do_widen](#ctype__do_widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換するために呼び出される仮想関数。|  
-|[is](#ctype__is)|1 つの文字が特定の属性を持つかどうかをテストするか、範囲内の各文字の属性を分類して配列に格納します。|  
-|[narrow](#ctype__narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの char 型の対応する文字に変換します。|  
-|[scan_is](#ctype__scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索します。|  
-|[scan_not](#ctype__scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索します。|  
-|[tolower](#ctype__tolower)|文字または文字の範囲を小文字に変換します。|  
-|[toupper](#ctype__toupper)|文字または文字の範囲を大文字に変換します。|  
-|[widen](#ctype__widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。|  
+|[do_is](#do_is)|1 つの文字が特定の属性を持つかどうかをテストしたり、範囲内の各文字の属性を分類して配列に格納したりするために呼び出される仮想関数。|  
+|[do_narrow](#do_narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの `char` 型の対応する文字に変換するために呼び出される仮想関数。|  
+|[do_scan_is](#do_scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索するために呼び出される仮想関数。|  
+|[do_scan_not](#do_scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索するために呼び出される仮想関数。|  
+|[do_tolower](#do_tolower)|文字または文字の範囲を小文字に変換するために呼び出される仮想関数。|  
+|[do_toupper](#do_toupper)|文字または文字の範囲を大文字に変換するために呼び出される仮想関数。|  
+|[do_widen](#do_widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換するために呼び出される仮想関数。|  
+|[is](#is)|1 つの文字が特定の属性を持つかどうかをテストするか、範囲内の各文字の属性を分類して配列に格納します。|  
+|[narrow](#narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの char 型の対応する文字に変換します。|  
+|[scan_is](#scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索します。|  
+|[scan_not](#scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索します。|  
+|[tolower](#tolower)|文字または文字の範囲を小文字に変換します。|  
+|[toupper](#toupper)|文字または文字の範囲を大文字に変換します。|  
+|[widen](#widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-##  <a name="a-namectypechartypea--ctypechartype"></a><a name="ctype__char_type"></a>  ctype::char_type  
+##  <a name="char_type"></a>  ctype::char_type  
  ロケールによって使用される文字を表す型。  
   
 ```  
@@ -121,9 +134,9 @@ typedef CharType char_type;
  この型は、テンプレート パラメーター **CharType** のシノニムです。  
   
 ### <a name="example"></a>例  
-  戻り値として `char_type` を使用する例については、メンバー関数 [widen](#ctype__widen) をご覧ください。  
+  戻り値として `char_type` を使用する例については、メンバー関数 [widen](#widen) をご覧ください。  
   
-##  <a name="a-namectypectypea--ctypectype"></a><a name="ctype__ctype"></a>  ctype::ctype  
+##  <a name="ctype"></a>  ctype::ctype  
  文字のロケール ファセットとして機能する ctype クラスのオブジェクトのコンストラクター。  
   
 ```  
@@ -141,13 +154,13 @@ explicit ctype(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \> 0: これらの値は定義されていません。  
+-   \>1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
  コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`) を使用して、その `locale::facet` 基本オブジェクトを初期化します。  
   
-##  <a name="a-namectypedoisa--ctypedois"></a><a name="ctype__do_is"></a>  ctype::do_is  
+##  <a name="do_is"></a>  ctype::do_is  
  1 つの文字が特定の属性を持つかどうかをテストしたり、範囲内の各文字の属性を分類して配列に格納したりするために呼び出される仮想関数。  
   
 ```  
@@ -187,9 +200,9 @@ virtual const CharType *do_is(
  文字の属性を分類するマスク値は、ctype の派生元である、クラス [ctype_base](../standard-library/ctype-base-class.md) により提供されます。 最初のメンバー関数は、ビットマスクと呼ばれ、ビット単位の論理演算子 (&#124;、&、^、~) によりマスク値の組み合わせから形成されるその最初のパラメーターの式を受け取ります。  
   
 ### <a name="example"></a>例  
-  [is](#ctype__is) の例 (`do_is` を呼び出す) を参照してください。  
+  [is](#is) の例 (`do_is` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedonarrowa--ctypedonarrow"></a><a name="ctype__do_narrow"></a>  ctype::do_narrow  
+##  <a name="do_narrow"></a>  ctype::do_narrow  
  ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの `char` 型の対応する文字に変換するために呼び出される仮想関数。  
   
 ```  
@@ -224,15 +237,15 @@ virtual const CharType* do_narrow(
 ### <a name="return-value"></a>戻り値  
  保護されている最初のメンバー関数は、対になる片方が定義されていない場合、型 `CharType` または `default` のパラメーター文字に対応する型 char のネイティブ文字を返します。  
   
- 保護されている&2; 番目のメンバー関数は、型 `CharType` の文字から変換されたネイティブ文字の宛先範囲を示すポインターを返します。  
+ 保護されている 2 番目のメンバー関数は、型 `CharType` の文字から変換されたネイティブ文字の宛先範囲を示すポインターを返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されている&2; 番目のメンバー テンプレート関数は、値 `do_narrow`( `first` [ `I`], `default`) を `dest`[ `I`] に格納します。`I` の間隔は [0, `last` – `first`) です。  
+ メンバー テンプレート関数のストアが 2 番目に保護されている`dest`[ `I`] 値`do_narrow`( `first` [ `I`]、 `default`)、用`I`間隔 [0、 `last`  -  `first`)。  
   
 ### <a name="example"></a>例  
-  [narrow](#ctype__narrow) の例 (`do_narrow` を呼び出す) を参照してください。  
+  [narrow](#narrow) の例 (`do_narrow` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedoscanisa--ctypedoscanis"></a><a name="ctype__do_scan_is"></a>  ctype::do_scan_is  
+##  <a name="do_scan_is"></a>  ctype::do_scan_is  
  指定されたマスクに一致する範囲内の最初の文字を検索するために呼び出される仮想関数。  
   
 ```  
@@ -256,12 +269,12 @@ virtual const CharType *do_scan_is(
  指定されたマスクに一致する範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last.` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されているメンバー関数は、[do_is](#ctype__do_is)( `maskVal`, * `ptr`) が true となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
+ 保護されているメンバー関数は、[do_is](#do_is)( `maskVal`, * `ptr`) が true となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
   
 ### <a name="example"></a>例  
-  [scan_is](#ctype__scan_is) の例 (`do_scan_is` を呼び出す) を参照してください。  
+  [scan_is](#scan_is) の例 (`do_scan_is` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedoscannota--ctypedoscannot"></a><a name="ctype__do_scan_not"></a>  ctype::do_scan_not  
+##  <a name="do_scan_not"></a>  ctype::do_scan_not  
  指定されたマスクに一致しない範囲内の最初の文字を検索するために呼び出される仮想関数。  
   
 ```  
@@ -285,12 +298,12 @@ virtual const CharType *do_scan_not(
  指定されたマスクに一致しない範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されているメンバー関数は、[do_is](#ctype__do_is)( `maskVal`, * `ptr`) が false となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
+ 保護されているメンバー関数は、[do_is](#do_is)( `maskVal`, * `ptr`) が false となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
   
 ### <a name="example"></a>例  
-  [scan_not](#ctype__scan_not) の例 (`do_scan_not` を呼び出す) を参照してください。  
+  [scan_not](#scan_not) の例 (`do_scan_not` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedotolowera--ctypedotolower"></a><a name="ctype__do_tolower"></a>  ctype::do_tolower  
+##  <a name="do_tolower"></a>  ctype::do_tolower  
  文字または文字の範囲を小文字に変換するために呼び出される仮想関数。  
   
 ```  
@@ -313,15 +326,15 @@ virtual const CharType *do_tolower(
  大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、パラメーター `ch` を小文字で返します。 小文字の形態が存在しない場合、`ch` を返します。 保護されている&2; 番目のメンバー関数は `last` を返します。  
+ 保護されている最初のメンバー関数は、パラメーター `ch` を小文字で返します。 小文字の形態が存在しない場合、`ch` を返します。 保護されている 2 番目のメンバー関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されている&2; 番目のメンバー テンプレート関数は、各要素 `first` [ `I`] を `do_tolower`( `first` [ `I`]) で置換します。`I` の間隔は [0, `last` – `first`) です。  
+ 2 番目のプロテクト メンバー テンプレート関数は、各要素を置き換えます`first`[ `I`] の`I`の間隔 [0、 `last`  -  `first`) と`do_tolower`( `first` [ `I`])。  
   
 ### <a name="example"></a>例  
-  [tolower](#ctype__tolower) の例 (`do_tolower` を呼び出す) を参照してください。  
+  [tolower](#tolower) の例 (`do_tolower` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedotouppera--ctypedotoupper"></a><a name="ctype__do_toupper"></a>  ctype::do_toupper  
+##  <a name="do_toupper"></a>  ctype::do_toupper  
  文字または文字の範囲を大文字に変換するために呼び出される仮想関数。  
   
 ```  
@@ -344,15 +357,15 @@ virtual const CharType *do_toupper(
  大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、パラメーター `ch` を大文字で返します。 大文字の形態が存在しない場合、`ch` を返します。 保護されている&2; 番目のメンバー関数は `last` を返します。  
+ 保護されている最初のメンバー関数は、パラメーター `ch` を大文字で返します。 大文字の形態が存在しない場合、`ch` を返します。 保護されている 2 番目のメンバー関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されている&2; 番目のメンバー テンプレート関数は、各要素 `first` [ `I`] を `do_toupper`( `first` [ `I`]) で置換します。`I` の間隔は [0, `last` – `first`) です。  
+ 2 番目のプロテクト メンバー テンプレート関数は、各要素を置き換えます`first`[ `I`] の`I`の間隔 [0、 `last`  -  `first`) と`do_toupper`( `first` [ `I`])。  
   
 ### <a name="example"></a>例  
-  [toupper](#ctype__toupper) の例 (`do_toupper` を呼び出す) を参照してください。  
+  [toupper](#toupper) の例 (`do_toupper` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypedowidena--ctypedowiden"></a><a name="ctype__do_widen"></a>  ctype::do_widen  
+##  <a name="do_widen"></a>  ctype::do_widen  
  ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換するために呼び出される仮想関数。  
   
 ```  
@@ -381,15 +394,15 @@ virtual const char *do_widen(
 ### <a name="return-value"></a>戻り値  
  保護されている最初のメンバー関数は、ネイティブ型 `char` のパラメーター文字に対応する型 `CharType` の文字を返します。  
   
- 保護されている&2; 番目のメンバー関数は、型 `char` のネイティブ文字から変換されたロケールで使用される型 `CharType` の文字の宛先範囲を示すポインターを返します。  
+ 保護されている 2 番目のメンバー関数は、型 `char` のネイティブ文字から変換されたロケールで使用される型 `CharType` の文字の宛先範囲を示すポインターを返します。  
   
 ### <a name="remarks"></a>コメント  
- 保護されている&2; 番目のメンバー テンプレート関数は、値 `do_widen`( `first`[ `I`]) を `dest`[ `I`] に格納します。`I` の間隔は [0, `last` - `first`) です。  
+ 保護されている 2 番目のメンバー テンプレート関数は、値 `do_widen`( `first`[ `I`]) を `dest`[ `I`] に格納します。`I` の間隔は [0, `last` - `first`) です。  
   
 ### <a name="example"></a>例  
-  [widen](#ctype__widen) の例 (`do_widen` を呼び出す) を参照してください。  
+  [widen](#widen) の例 (`do_widen` を呼び出す) を参照してください。  
   
-##  <a name="a-namectypeisa--ctypeis"></a><a name="ctype__is"></a>  ctype::is  
+##  <a name="is"></a>  ctype::is  
  1 つの文字が特定の属性を持つかどうかをテストするか、範囲内の各文字の属性を分類して配列に格納します。  
   
 ```  
@@ -465,7 +478,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namectypenarrowa--ctypenarrow"></a><a name="ctype__narrow"></a>  ctype::narrow  
+##  <a name="narrow"></a>  ctype::narrow  
  ロケールにより使用される型 `CharType` の文字を、ネイティブ文字セットの型 `char` の該当文字に変換します。  
   
 ```  
@@ -501,7 +514,7 @@ const CharType* narrow(
  2 番目のメンバー関数は、型 `CharType` の文字から変換されたネイティブ文字の宛先範囲を示すポインターを返します。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_narrow](#ctype__do_narrow)( `ch`, `default`) を返します。 2 番目のメンバー関数は、[do_narrow](#ctype__do_narrow) ( `first`, `last`, `default`, `dest`) を返します。 基本ソース文字にのみ、`narrow` の下で一意の逆像 `CharType` が与えられることが約束されます。 これの基本ソース文字については、`narrow` ( [widen](#ctype__widen) ( **c** ), 0 ) == **c** という不変式が適用されます。  
+ 最初のメンバー関数は、[do_narrow](#do_narrow)( `ch`, `default`) を返します。 2 番目のメンバー関数は、[do_narrow](#do_narrow) ( `first`, `last`, `default`, `dest`) を返します。 基本ソース文字にのみ、`narrow` の下で一意の逆像 `CharType` が与えられることが約束されます。 これの基本ソース文字については、`narrow` ( [widen](#widen) ( **c** ), 0 ) == **c** という不変式が適用されます。  
   
 ### <a name="example"></a>例  
   
@@ -529,7 +542,7 @@ int main( )
 Xhello everyone  
 ```  
   
-##  <a name="a-namectypescanisa--ctypescanis"></a><a name="ctype__scan_is"></a>  ctype::scan_is  
+##  <a name="scan_is"></a>  ctype::scan_is  
  指定されたマスクに一致する範囲内の最初の文字を検索します。  
   
 ```  
@@ -553,7 +566,7 @@ const CharType *scan_is(
  指定されたマスクに一致する範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last.` を返します。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は、[do_scan_is](#ctype__do_scan_is)( `maskVal`, `first`, `last`) を返します。  
+ メンバー関数は、[do_scan_is](#do_scan_is)( `maskVal`, `first`, `last`) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -581,7 +594,7 @@ int main( )
 The first punctuation is "," at position: 5  
 ```  
   
-##  <a name="a-namectypescannota--ctypescannot"></a><a name="ctype__scan_not"></a>  ctype::scan_not  
+##  <a name="scan_not"></a>  ctype::scan_not  
  指定されたマスクに一致しない範囲内の最初の文字を検索します。  
   
 ```  
@@ -605,7 +618,7 @@ const CharType *scan_not(
  指定されたマスクに一致しない範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は、[do_scan_not](#ctype__do_scan_not)( `maskVal`, `first`, `last`) を返します。  
+ メンバー関数は、[do_scan_not](#do_scan_not)( `maskVal`, `first`, `last`) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -633,7 +646,7 @@ int main( )
 First nonalpha character is "," at position: 5  
 ```  
   
-##  <a name="a-namectypetolowera--ctypetolower"></a><a name="ctype__tolower"></a>  ctype::tolower  
+##  <a name="tolower"></a>  ctype::tolower  
  文字または文字の範囲を小文字に変換します。  
   
 ```  
@@ -659,7 +672,7 @@ const CharType *tolower(CharType* first, const CharType* last) const;
  2 番目のメンバー関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_tolower](#ctype__do_tolower)( `ch`) を返します。 2 番目のメンバー関数は、[do_tolower](#ctype__do_tolower)( `first`, `last`) を返します。  
+ 最初のメンバー関数は、[do_tolower](#do_tolower)( `ch`) を返します。 2 番目のメンバー関数は、[do_tolower](#do_tolower)( `first`, `last`) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -686,7 +699,7 @@ int main( )
 The lowercase string is: hello, my name is john  
 ```  
   
-##  <a name="a-namectypetouppera--ctypetoupper"></a><a name="ctype__toupper"></a>  ctype::toupper  
+##  <a name="toupper"></a>  ctype::toupper  
  文字または文字の範囲を大文字に変換します。  
   
 ```  
@@ -710,7 +723,7 @@ const CharType *toupper(CharType* first, const CharType* last) const;
  2 番目のメンバー関数は `last` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_toupper](#ctype__do_toupper)( `ch`) を返します。 2 番目のメンバー関数は、[do_toupper](#ctype__do_toupper)( `first`, `last`) を返します。  
+ 最初のメンバー関数は、[do_toupper](#do_toupper)( `ch`) を返します。 2 番目のメンバー関数は、[do_toupper](#do_toupper)( `first`, `last`) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -737,7 +750,7 @@ int main( )
 The uppercase string is: HELLO, MY NAME IS JOHN  
 ```  
   
-##  <a name="a-namectypewidena--ctypewiden"></a><a name="ctype__widen"></a>  ctype::widen  
+##  <a name="widen"></a>  ctype::widen  
  ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。  
   
 ```  
@@ -764,7 +777,7 @@ const char *widen(const char* first, const char* last, CharType* dest) const;
  2 番目のメンバー関数は、型 `char` のネイティブ文字から変換されたロケールで使用される型 `CharType` の文字の宛先範囲を示すポインターを返します。  
   
 ### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_widen](#ctype__do_widen)( `byte`) を返します。 2 番目のメンバー関数は、[do_widen](#ctype__do_widen)( `first`, `last`, `dest`) を返します。  
+ 最初のメンバー関数は、[do_widen](#do_widen)( `byte`) を返します。 2 番目のメンバー関数は、[do_widen](#do_widen)( `first`, `last`, `dest`) を返します。  
   
 ### <a name="example"></a>例  
   

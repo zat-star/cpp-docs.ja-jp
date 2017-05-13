@@ -50,10 +50,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: dfd6e5fb1b8f8daa7e7693d3811c756c5509deb1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: b7e3cb7562fb63467ef0e0ee28861936fb820fa3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="crtsetreportmode"></a>_CrtSetReportMode
@@ -108,7 +109,7 @@ int _CrtSetReportMode(
 |`_CRTDBG_MODE_WNDW`|`Abort`、`Retry`、および `Ignore` ボタンと共にメッセージを表示するメッセージ ボックスを作成します。|  
 |`_CRTDBG_REPORT_MODE`|指定した `reportMode` の `reportType` を返します。<br /><br /> 1   `_CRTDBG_MODE_FILE`<br /><br /> 2   `_CRTDBG_MODE_DEBUG`<br /><br /> 4   `_CRTDBG_MODE_WNDW`|  
   
- 各レポートの種類は、1 つ、2 つ、または&3; つのモードか、モードなしを使用して報告できます。 したがって、1 つのレポートの種類に対して複数の書き込み先を定義することができます。 たとえば、次のコード片は、デバッグ メッセージ ウィンドウと `stderr` の両方に送られるアサーション エラーを発生させます。  
+ 各レポートの種類は、1 つ、2 つ、または 3 つのモードか、モードなしを使用して報告できます。 したがって、1 つのレポートの種類に対して複数の書き込み先を定義することができます。 たとえば、次のコード片は、デバッグ メッセージ ウィンドウと `stderr` の両方に送られるアサーション エラーを発生させます。  
   
 ```  
 _CrtSetReportMode( _CRT_ASSERT, _CRTDBG_MODE_FILE | _CRTDBG_MODE_WNDW );  
@@ -126,9 +127,6 @@ _CrtSetReportFile( _CRT_ASSERT, _CRTDBG_FILE_STDERR );
  互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
  **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

@@ -6,22 +6,29 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- thread/std::get_id
+- thread/std::sleep_for
+- thread/std::sleep_until
+- thread/std::swap
+- thread/std::yield
 ms.assetid: bb1aa1ef-fe3f-4e2c-8b6e-e22dbf2f5a19
 caps.latest.revision: 12
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: de302b9a2d971b2a39d4ce775799f27dd7244a5c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 3c603ac75955c057cfba009494a9a430fd987a69
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltthreadgt-functions"></a>&lt;thread&gt; 関数
 ||||  
 |-|-|-|  
-|[get_id](#get_id_function)|[sleep_for](#sleep_for_function)|[sleep_until](#sleep_until_function)|  
-|[swap](#swap_function)|[yield](#yield_function)|  
+|[get_id](#get_id)|[sleep_for](#sleep_for)|[sleep_until](#sleep_until)|  
+|[swap](#swap)|[yield](#yield)|  
   
-##  <a name="a-namegetidfunctiona--getid"></a><a name="get_id_function"></a>  get_id  
+##  <a name="get_id"></a>  get_id  
  現在の実行スレッドを一意に識別します。  
   
 ```  
@@ -31,7 +38,7 @@ thread::id this_thread::get_id() noexcept;
 ### <a name="return-value"></a>戻り値  
  現在の実行のスレッドを一意に識別する [thread::id](../standard-library/thread-class.md) 型のオブジェクト。  
   
-##  <a name="a-namesleepforfunctiona--sleepfor"></a><a name="sleep_for_function"></a>  sleep_for  
+##  <a name="sleep_for"></a>  sleep_for  
  呼び出し元のスレッドをブロックします。  
   
 ```  
@@ -47,7 +54,7 @@ inline void sleep_for(const chrono::duration<Rep, Period>& Rel_time);
 ### <a name="remarks"></a>コメント  
  関数は、少なくとも、`Rel_time` で指定された時間、呼び出し元のスレッドをブロックします。 この関数では、例外がスローされません。  
   
-##  <a name="a-namesleepuntilfunctiona--sleepuntil"></a><a name="sleep_until_function"></a>  sleep_until  
+##  <a name="sleep_until"></a>  sleep_until  
  少なくとも指定された時間まで、呼び出し元スレッドをブロックします。  
   
 ```  
@@ -64,7 +71,7 @@ void sleep_until(const xtime *Abs_time);
 ### <a name="remarks"></a>コメント  
  この関数では、例外がスローされません。  
   
-##  <a name="a-nameswapfunctiona--swap"></a><a name="swap_function"></a>  swap  
+##  <a name="swap"></a>  swap  
  2 つの `thread` オブジェクトの状態を交換します。  
   
 ```  
@@ -81,7 +88,7 @@ void swap(thread& Left, thread& Right) noexcept;
 ### <a name="remarks"></a>コメント  
  関数は `Left.swap(Right)` を呼び出します。  
   
-##  <a name="a-nameyieldfunctiona--yield"></a><a name="yield_function"></a>  yield  
+##  <a name="yield"></a>  yield  
  現在のスレッドが通常引き続き実行される場合であっても、他のスレッドを実行するようオペレーティング システムに通知します。  
   
 ```  

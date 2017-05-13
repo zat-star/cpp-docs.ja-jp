@@ -66,10 +66,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a79d387f9d312ee090808c39059166550805768a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 4bd820865bec6de284e725f433c84e4c20aa8910
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="strcmp-wcscmp-mbscmp"></a>strcmp、wcscmp、_mbscmp
@@ -126,7 +127,7 @@ int _mbscmp(
   
  文字セットと辞書式文字順序が異なるロケールでは、文字列の辞書式比較をするために `strcoll` の代わりに `strcmp` を使用できます。 あるいは、元の文字列に対して `strxfrm` を使用して、結果の文字列に対して `strcmp` を使用できます。  
   
- `strcmp` 関数では、大文字と小文字が区別されます。 `_stricmp`、`_wcsicmp`、および `_mbsicmp` は、文字列を最初に小文字の形式に変換してから比較します。 ASCII の表の 'Z' と 'a' の間にある文字 ('['、'`\`'、']'、'`^`'、'`_`'、および '```') を含む&2; つの文字列は、大文字と小文字によって異なる方法で比較されます。 たとえば、`"ABCDE"` と `"ABCD^"` の&2; つの文字列を比較する場合、小文字で比較する場合 (`"abcde"` > `"abcd^"`) と、大文字で比較する場合 (`"ABCDE"` < `"ABCD^"`) で方法が異なります。  
+ `strcmp` 関数では、大文字と小文字が区別されます。 `_stricmp`、`_wcsicmp`、および `_mbsicmp` は、文字列を最初に小文字の形式に変換してから比較します。 ASCII の表の 'Z' と 'a' の間にある文字 ('['、'`\`'、']'、'`^`'、'`_`'、および '```') を含む 2 つの文字列は、大文字と小文字によって異なる方法で比較されます。 たとえば、`"ABCDE"` と `"ABCD^"` の 2 つの文字列を比較する場合、小文字で比較する場合 (`"abcde"` > `"abcd^"`) と、大文字で比較する場合 (`"ABCDE"` < `"ABCD^"`) で方法が異なります。  
   
 ## <a name="requirements"></a>要件  
   
@@ -189,9 +190,6 @@ Compare strings:
    strcmp:   String 1 is greater than string 2  
    _stricmp:  String 1 is equal to string 2  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::CompareOrdinal](https://msdn.microsoft.com/en-us/library/system.string.compareordinal.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

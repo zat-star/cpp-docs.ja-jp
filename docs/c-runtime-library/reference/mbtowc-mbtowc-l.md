@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 40fe628e045d8aa8930560ba8ab88a9e203022e3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 78ec6b782a5dd0c78e3e2724fd06258d17fdbe67
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="mbtowc-mbtowcl"></a>mbtowc、_mbtowc_l
@@ -91,7 +92,7 @@ int _mbtowc_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- **mbchar** が **NULL** 以外で、`mbchar` が指すオブジェクトが有効なマルチバイト文字の場合には、`mbtowc` はそのマルチバイト文字の長さをバイト数で返します。 `mbchar` が **NULL** の場合、またはこれが指すオブジェクトがワイド文字の null 文字 (L'\0') である場合には、0 を返します。 `mbchar` が指すアドレスの先頭から *count* で指定した値までが有効なマルチバイト文字でない場合は、-1 を返します。  
+ **mbchar** が **NULL** 以外で、`mbchar` が指すオブジェクトが有効なマルチバイト文字の場合には、`mbtowc` はそのマルチバイト文字の長さをバイト数で返します。 `mbchar` が **NULL** の場合、またはこれが指すオブジェクトがワイド文字の null 文字 (L'\0') である場合には、0 を返します。 場合、オブジェクトを`mbchar`へのポインターは、最初に有効なマルチバイト文字を形成しません*カウント*文字、-1 を返します。  
   
 ## <a name="remarks"></a>コメント  
  `mbtowc` 関数は、`mbchar` が **NULL** でない場合、`mbchar` が指す *count* で指定した値以下のバイトを対応するワイド文字に変換します。 `mbtowc` は、*wchar* が **NULL** でない場合は、結果のワイド文字を *wchar* に格納します。 `mbtowc` は、`MB_CUR_MAX` を超えるバイトはチェックしません。 `mbtowc` は、ロケールに依存する動作に現在のロケールを使用します。`_mbtowc_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
@@ -166,9 +167,6 @@ Attempt to convert when target is NULL
 Attempt to convert a NULL pointer to a wide character:  
   Bytes converted: 0  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

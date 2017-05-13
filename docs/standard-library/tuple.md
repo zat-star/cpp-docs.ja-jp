@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 7771de57070961751e16294bc966e08843baef4c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 212b2b5af678bd39b4ecc7d6622c71db20db5a26
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="lttuplegt"></a>&lt;tuple&gt;
@@ -60,20 +61,20 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator==](../standard-library/tuple-operators.md#operator_eq_eq)|`tuple` オブジェクトどうしが等しいかどうかの比較|  
-|[operator!=](../standard-library/tuple-operators.md#operator_neq)|`tuple` オブジェクトどうしが等しくないかどうかの比較|  
-|[operator<](../standard-library/tuple-operators.md#operator_lt_)|`tuple` オブジェクトどうしの大小関係の比較 (未満)|  
-|[operator<=](../standard-library/tuple-operators.md#operator_lt__eq)|`tuple` オブジェクトどうしの大小関係の比較 (以下)|  
-|[operator>](../standard-library/tuple-operators.md#operator_gt_)|`tuple` オブジェクトどうしの大小関係の比較 (より大きい)|  
-|[operator>=](../standard-library/tuple-operators.md#operator_gt__eq)|`tuple` オブジェクトどうしの大小関係の比較 (以上)|  
+|[operator==](../standard-library/tuple-operators.md#op_eq_eq)|`tuple` オブジェクトどうしが等しいかどうかの比較|  
+|[operator!=](../standard-library/tuple-operators.md#op_neq)|`tuple` オブジェクトどうしが等しくないかどうかの比較|  
+|[operator<](../standard-library/tuple-operators.md#op_lt)|`tuple` オブジェクトどうしの大小関係の比較 (未満)|  
+|[operator<=](../standard-library/tuple-operators.md#op_lt_eq)|`tuple` オブジェクトどうしの大小関係の比較 (以下)|  
+|[operator>](../standard-library/tuple-operators.md#op_gt)|`tuple` オブジェクトどうしの大小関係の比較 (より大きい)|  
+|[operator>=](../standard-library/tuple-operators.md#op_gt_eq)|`tuple` オブジェクトどうしの大小関係の比較 (以上)|  
   
 ### <a name="functions"></a>関数  
   
 |||  
 |-|-|  
-|[get](../standard-library/tuple-functions.md#get_function)|`tuple` オブジェクトから要素を取得します。|  
-|[make_tuple](../standard-library/tuple-functions.md#make_tuple_function)|要素値から `tuple` を作成します。|  
-|[tie](../standard-library/tuple-functions.md#tie_function)|要素参照から `tuple` を作成します。|  
+|[get](../standard-library/tuple-functions.md#get)|`tuple` オブジェクトから要素を取得します。|  
+|[make_tuple](../standard-library/tuple-functions.md#make_tuple)|要素値から `tuple` を作成します。|  
+|[tie](../standard-library/tuple-functions.md#tie)|要素参照から `tuple` を作成します。|  
   
 ## <a name="see-also"></a>関連項目  
  [\<array>](../standard-library/array.md)

@@ -59,10 +59,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7d421a3b0fb69b98b4b3664b52cea216d6ea6bc5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: a8bace6262d978242e2383a78a23fe71bd1e1cf7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="mbsnbsets-mbsnbsetsl"></a>_mbsnbset_s、_mbsnbset_s_l
@@ -119,14 +120,14 @@ errno_t _mbsnbset_s_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合は&0; を返し、それ以外の場合はエラー コードを返します。  
+ 正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。  
   
 ## <a name="remarks"></a>コメント  
  `_mbsnbset_s` 関数および `_mbsnbset_s_l` 関数は、最長で `count` の最初の `str` バイトを `c` に設定します。 `count` が `str` の長さを超えると、その `str` の長さが `count` の代わりに使用されます。 `c` がマルチバイト文字で、`count` で指定された最後のバイトまでに全体を設定できない場合は、最後のバイトは空白文字で埋められます。 `_mbsnbset_s` と `_mbsnbset_s_l` は、`str` の最後に終端の null を置きません。  
   
  `_mbsnbset_s` と `_mbsnbset_s_l` は `_mbsnset` と似ていますが `c` の `count` 文字ではなく `count` バイトを設定する点が異なります。  
   
- `str` が `NULL` の場合、または `count` が&0; の場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター例外を生成します。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 また `c` が有効なマルチバイト文字でない場合、`errno` は `EINVAL` に設定され、代わりに空白が使用されます。  
+ `str` が `NULL` の場合、または `count` が 0 の場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター例外を生成します。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 また `c` が有効なマルチバイト文字でない場合、`errno` は `EINVAL` に設定され、代わりに空白が使用されます。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 この関数の `_mbsnbset_s` バージョンは、ロケールに依存するこの動作について現在のロケールを使用します。`_mbsnbset_s_l` バージョンは、渡されるロケール パラメーターを代わりに使用することを除いて、同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -173,9 +174,6 @@ int main( void )
 Before: This is a test  
 After:  **** is a test  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

@@ -49,10 +49,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bd2ab4ac1c6772a06a2da6ac15f7f4b29f83c120
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 20ed6b9111e7dc3a25462ea9d8b79b8e9e842ed0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="matherr"></a>_matherr
@@ -72,7 +73,7 @@ ms.lasthandoff: 02/24/2017
  エラー情報を保持する構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- _**matherr** は、エラーを示す 0 を返すか、成功を示す 0 以外の値を返します。 \_**matherr** が 0 を返す場合は、エラー メッセージを表示することができ、`errno` が該当するエラー値に設定されます。 \_**matherr** が&0; 以外の値を返す場合は、エラー メッセージは表示されず、`errno` は変更されません。  
+ _**matherr** は、エラーを示す 0 を返すか、成功を示す 0 以外の値を返します。 \_**matherr** が 0 を返す場合は、エラー メッセージを表示することができ、`errno` が該当するエラー値に設定されます。 \_**matherr** が 0 以外の値を返す場合は、エラー メッセージは表示されず、`errno` は変更されません。  
   
  リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
@@ -90,7 +91,7 @@ ms.lasthandoff: 02/24/2017
  エラーが発生した関数の名前。  
   
  **double arg1**、**arg2**  
- 関数への最初の引数と&2; 番目の引数 (存在する場合)。  
+ 関数への最初の引数と 2 番目の引数 (存在する場合)。  
   
  **double retval**  
  関数によって返される値。  
@@ -115,7 +116,7 @@ ms.lasthandoff: 02/24/2017
  `_UNDERFLOW`  
  結果が小さすぎて表現できない。 (この条件は現在サポートされていません。)  
   
- 構造体のメンバー **name** は、エラーの原因となった関数の名前を含む null で終わる文字列へのポインターです。 構造体のメンバー **arg1** と **arg2** は、エラーの原因となった値を指定します。 (指定されている引数が&1; つのみの場合は、**arg1** に格納されます。)  
+ 構造体のメンバー **name** は、エラーの原因となった関数の名前を含む null で終わる文字列へのポインターです。 構造体のメンバー **arg1** と **arg2** は、エラーの原因となった値を指定します。 (指定されている引数が 1 つのみの場合は、**arg1** に格納されます。)  
   
  発生したエラーの既定の戻り値は **retval** です。 戻り値を変更する場合、戻り値はエラーが実際に発生したかどうかを指定する必要があります。  
   
@@ -193,9 +194,6 @@ Special: using absolute value: log10: _DOMAIN error
 log10( -5.0 ) = 6.989700e-001  
 Normal: log( 0.0 ) = -1.#INF00e+000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

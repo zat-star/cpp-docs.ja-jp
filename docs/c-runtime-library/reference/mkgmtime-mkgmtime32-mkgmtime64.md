@@ -1,107 +1,120 @@
 ---
 title: "_mkgmtime、_mkgmtime32、_mkgmtime64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_mkgmtime32"
-  - "_mkgmtime64"
-  - "_mkgmtime"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_mkgmtime64"
-  - "mkgmtime32"
-  - "_mkgmtime32"
-  - "mkgmtime"
-  - "mkgmtime64"
-  - "_mkgmtime"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "mkgmtime32 関数"
-  - "時間関数"
-  - "mkgmtime 関数"
-  - "_mkgmtime 関数"
-  - "変換 (時間を)"
-  - "mkgmtime64 関数"
-  - "_mkgmtime64 関数"
-  - "_mkgmtime32 関数"
-  - "時間、変換"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _mkgmtime32
+- _mkgmtime64
+- _mkgmtime
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _mkgmtime64
+- mkgmtime32
+- _mkgmtime32
+- mkgmtime
+- mkgmtime64
+- _mkgmtime
+dev_langs:
+- C++
+helpviewer_keywords:
+- mkgmtime32 function
+- time functions
+- mkgmtime function
+- _mkgmtime function
+- converting times
+- mkgmtime64 function
+- _mkgmtime64 function
+- _mkgmtime32 function
+- time, converting
 ms.assetid: b4ca2b67-e198-4f43-b3e2-e8ad6bd01867
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# _mkgmtime、_mkgmtime32、_mkgmtime64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 7f73bffc2971b535f393cef7e0e2f957b01eee42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-によって表される UTC 時刻に変換、 `tm``struct` を UTC 時刻で表される、 `time_t` 型です。  
+---
+# <a name="mkgmtime-mkgmtime32-mkgmtime64"></a>_mkgmtime、_mkgmtime32、_mkgmtime64
+`tm``struct` によって表される UTC 時刻を、`time_t` 型で表される UTC 時刻に変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-time_t _mkgmtime(  
-   struct tm*   
-timeptr  
+      time_t _mkgmtime(  
+   struct tm* timeptr  
 );  
 __time32_t _mkgmtime32(  
-   struct tm*   
-timeptr  
+   struct tm* timeptr  
 );  
 __time64_t _mkgmtime64(  
-   struct tm*   
-timeptr  
+   struct tm* timeptr  
 );  
-  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `timeptr`  
- UTC 時刻としてへのポインター、 `struct``tm` に変換します。  
+ 変換する `struct``tm` としての UTC 時刻へのポインター。  
   
-## 戻り値  
- 型の数量 `__time32_t` または `__time64_t` 世界協定時刻 \(UTC\) で 1970 年 1 月 1 日午前 0 時から経過した秒数を表します。 日付が範囲外にある場合 \(「解説」セクションを参照してください\) または入力は、有効な時刻として解釈できない場合、戻り値は\-1。  
+## <a name="return-value"></a>戻り値  
+ 協定世界時 (UTC) で 1970 年 1 月 1 日午前 0 時以降の経過秒数を表す、`__time32_t` 型または `__time64_t` 型の数。 日付が範囲外の場合 (「解説」セクションを参照してください) または入力、有効な時刻として解釈できない場合、戻り値は-1。  
   
-## 解説  
- `_mkgmtime32` と `_mkgmtime64` の関数には、UTC 時刻の変換、 `__time32_t` または `__time64_t` UTC 時刻を表す型。 ローカル時刻を UTC 時刻に変換するには使用 `mktime`, 、`_mktime32`, 、および `_mktime64` 代わりにします。  
+## <a name="remarks"></a>コメント  
+ `_mkgmtime32` と `_mkgmtime64` 関数は UTC 時刻を変換して、`__time32_t` 型または `__time64_t` 型によってその時刻を UTC で表します。 現地時刻を UTC 時刻に変換するには、代わりに `mktime`、`_mktime32`、`_mktime64` を使用します。  
   
- `_mkgmtime` 評価されるインライン関数は、 `_mkgmtime64`, 、および `time_t` は `__time64_t`です。 強制的にコンパイラを解釈する必要がある場合 `time_t`従来の 32 ビットとして `time_t`, 、定義する `_USE_32BIT_TIME_T`です。 これは、は 2038 年 1 月 18 日後、アプリケーションが失敗するため、推奨されませんが \(32 ビットの最大範囲 `time_t`\)、64 ビット プラットフォーム上で許可されていないとします。  
+ `_mkgmtime` は `_mkgmtime64` と評価されるインライン関数であり、`time_t` は `__time64_t` と等価です。 コンパイラが `time_t` を古い 32 ビットの `time_t`として解釈するよう強制する必要がある場合には、 `_USE_32BIT_TIME_T`を定義します。 この方法はお勧めしません。2038 年 1 月 18 日 (32 ビット `time_t` の最大範囲) より後にアプリケーションがエラーになる可能性があり、また、どの 64 ビット プラットフォームでも使用できないためです。  
   
- 構造体が渡された時間は変更次のように同じ方法で、変更されると、 `_mktime` 関数: `tm_wday` と `tm_yday` フィールドの値に基づいて新しい値に設定されます `tm_mday` と `tm_year`です。`tm` 構造体時間を指定するときは、`tm_isdst` フィールドを次のように設定します。  
+ 渡される時間の構造体は、`_mktime` 関数の場合と同様に次のように変更されます。`tm_wday` フィールドと `tm_yday` フィールドは `tm_mday` と `tm_year` の値に基づいて新しい値に設定されます。 `tm` 構造体時間を指定するときは、`tm_isdst` フィールドを次のように設定します。  
   
--   標準時間が有効であることを示す場合はゼロ \(0\)。  
+-   標準時間が有効であることを示す場合はゼロ (0)。  
   
 -   夏時間が有効であることを示す場合は 0 より大きい値。  
   
 -   標準時間と夏時間のどちらが有効であるかを C ランタイム ライブラリ コードで計算する場合は 0 より小さい値。  
   
- C ランタイム ライブラリでは、TZ 環境変数を使用して、正しい夏時間を調べます。 TZ が設定されていない場合、オペレーティング システムが正しい夏時間時の動作を取得する照会されます。`tm_isdst` は必須フィールドです。 かどうかは設定されていない、その値は未定義とからの戻り値 `mktime` は予測できません。  
+ C ランタイム ライブラリは、TZ 環境変数を使用して、正しい夏時間を特定します。 TZ が設定されていない場合は、オペレーティング システムに照会して、正しい地域の夏時間の動作を取得します。 `tm_isdst` は必須フィールドです。 設定しないと、その値は未定義になり、`mktime` からの戻り値は予測できません。  
   
- 範囲、 `_mkgmtime32` 関数は 1970 年 1 月 1 日午前 0 時から 2038 年 1 月 18 日 23時 59分: 59 まで \(utc\)。 範囲 `_mkgmtime64` が 1970 年 1 月 1 日午前 0 時 \(utc\) から 3000 年 12 月 31 日 23時 59分: 59 秒 \(utc\)。 範囲外の日付は、戻り値 – 1 になります。 範囲 `_mkgmtime` かどうかによって異なります `_USE_32BIT_TIME_T` が定義されています。 \(既定値\) が定義されていない場合、範囲は `_mkgmtime64`、それ以外の範囲の 32 ビットの範囲に制限されて `_mkgmtime32`します。  
+ `_mkgmtime32` 関数の範囲は、UTC の 1970 年 1 月 1 日午前 0 時から UTC の 2038 年 1 月 18 日 23 時 59 分 59 秒までです。 `_mkgmtime64` の範囲は、UTC の 1970 年 1 月 1 日午前 0 時から UTC の 3000 年 12 月 31 日 23 時 59 分 59 秒までです。 範囲外の日付は、戻り値-1 になります。 `_mkgmtime` の範囲は、`_USE_32BIT_TIME_T` が定義されているかどうかによって変わります。 定義されていない場合 (既定)、範囲は `_mkgmtime64` の範囲と同じです。定義されている場合は、32 ビットの `_mkgmtime32` の範囲に限定されます。  
   
- `gmtime` と `localtime` 変換に 1 つの静的に割り当てられたバッファーを使用します。 このバッファーを指定する場合は、 `mkgmtime`, 、以前の内容は破棄されます。  
+ `gmtime` と `localtime` は、静的に割り当てられた単一のバッファーを使用して変換を行うことにご注意ください。 `mkgmtime` にこのバッファーを指定すると、以前の内容は破棄されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_mkgmtime.c  
@@ -138,7 +151,7 @@ int main()
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Seconds since midnight, January 1, 1970  
@@ -150,7 +163,7 @@ Local Time: Thu Feb 15 17:14:52 2007
 Greenwich Mean Time: Fri Feb 16 01:14:52 2007  
 ```  
   
- 次の例では、不完全な構造体型は、曜日、年の日の計算値で埋め方法を示します。  
+ 未完成の構造体に曜日と年通算日の計算値を入力する例を次に示します。  
   
 ```  
 // crt_mkgmtime2.c  
@@ -187,7 +200,7 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Before calling _mkgmtime, t1 = Sun Feb 12 00:00:00 2003  
@@ -196,12 +209,12 @@ After calling _mkgmtime, t1 = Wed Feb 12 00:00:00 2003
  t.tm_yday = 42  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   
- [asctime、\_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
- [asctime\_s、\_wasctime\_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
- [gmtime、\_gmtime32、\_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
- [gmtime\_s、\_gmtime32\_s、\_gmtime64\_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
- [localtime\_s、\_localtime32\_s、\_localtime64\_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md)   
- [mktime、\_mktime32、\_mktime64](../Topic/mktime,%20_mktime32,%20_mktime64.md)   
- [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)
+ [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
+ [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
+ [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
+ [gmtime_s、_gmtime32_s、_gmtime64_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
+ [localtime_s、_localtime32_s、_localtime64_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md)   
+ [mktime、_mktime32、_mktime64](../../c-runtime-library/reference/mktime-mktime32-mktime64.md)   
+ [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)

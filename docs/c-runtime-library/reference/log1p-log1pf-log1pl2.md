@@ -56,10 +56,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: e928ac048b65fde5422a8a937779029f94a9e9a1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 99525c8b711d0774fa2b3132505a2cdbb21d5569
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="log1p-log1pf-log1pl"></a>log1p、log1pf、log1pl
@@ -110,7 +111,7 @@ long double log1pl(
 |±SNaN|入力と同じ値。|INVALID||  
 |±QNaN、不定値|入力と同じ値。|||  
   
- `x` = -1 の場合、`errno` 値は ERANGE に設定されます。 `x` < −1 の場合、`errno` 値は EDOM に設定されます。  
+ `x` = -1 の場合、`errno` 値は ERANGE に設定されます。 `errno`値に設定されて EDOM `x` <-1 です。  
   
 ## <a name="remarks"></a>コメント  
  x が 0 に近い場合は、log(`x`+1) を使用するよりも `log1p` 関数の方が正確です。  

@@ -58,10 +58,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 2218210801bff38094d06d96736a7f05f7be29cf
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 9814916e32878a1e1a11f534fce64aeaf2f6a57e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="getcwddbg-wgetcwddbg"></a>_getcwd_dbg、_wgetcwd_dbg
@@ -108,7 +109,7 @@ wchar_t *_wgetcwd_dbg(
  詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
- `_getcwd_dbg` および `_wgetcwd_dbg` 関数は `_getcwd` および `_wgetcwd` と同じものですが、_`DEBUG` が定義されている場合に、最初のパラメーターとして `malloc` が渡されると、これらの関数はメモリを割り当てるために `_malloc_dbg` および `NULL` のデバッグ バージョンを使用する点が異なります。 詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
+ `_getcwd_dbg`と`_wgetcwd_dbg`関数と同じ`_getcwd`と`_wgetcwd`する点を除いてときに、`_DEBUG`が定義されている場合、これらの関数を使用してデバッグ バージョンの`malloc`と`_malloc_dbg`メモリを割り当てる場合`NULL`は最初のパラメーターとして渡されます。 詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
   
  多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、`_CRTDBG_MAP_ALLOC` フラグを定義できます。 `_CRTDBG_MAP_ALLOC` が定義されている場合、`_getcwd` および `_wgetcwd` の呼び出しはそれぞれ `_getcwd_dbg` および `_wgetcwd_dbg` にマップし直され、`blockType` が `_NORMAL_BLOCK` に設定されます。 そのため、ヒープ ブロックを `_CLIENT_BLOCK` としてマークする場合以外は、これらの関数を明示的に呼び出す必要はありません。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。  
   
@@ -125,10 +126,7 @@ wchar_t *_wgetcwd_dbg(
 |`_getcwd_dbg`|\<crtdbg.h>|  
 |`_wgetcwd_dbg`|\<crtdbg.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- <xref:System.Environment.CurrentDirectory%2A>  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [_getcwd、_wgetcwd](../../c-runtime-library/reference/getcwd-wgetcwd.md)   

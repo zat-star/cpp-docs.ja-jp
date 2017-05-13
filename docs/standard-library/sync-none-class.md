@@ -1,58 +1,134 @@
 ---
 title: "sync_none クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "stdext.sync_none"
-  - "sync_none"
-  - "allocators/stdext::sync_none"
-  - "stdext::sync_none"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "sync_none クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- sync_none
+- allocators/stdext::sync_none
+- stdext::sync_none
+- allocators/stdext::sync_none::allocate
+- allocators/stdext::sync_none::deallocate
+- allocators/stdext::sync_none::equals
+dev_langs:
+- C++
+helpviewer_keywords:
+- sync_none class
 ms.assetid: f7473cee-14f3-4fe1-88bc-68cd085e59e1
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# sync_none クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: f56f09f3c3591d0c969ea3b3e242cf39812356fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-[同期フィルター](../standard-library/allocators-header.md) を説明します。同期を提供しません。  
+---
+# <a name="syncnone-class"></a>sync_none クラス
+同期を提供しない[同期フィルター](../standard-library/allocators-header.md)を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class Cache>  
+class sync_none
 ```  
-template <class Cache> class sync_none  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
-|------------|--------|  
-|`Cache`|同期フィルターに関連付けられた Cache の種類。  これは、[cache\_chunklist](../standard-library/cache-chunklist-class.md)[cache\_freelist](../standard-library/cache-freelist-class.md)、または [cache\_suballoc](../standard-library/cache-suballoc-class.md)のいずれでもかまいません。|  
+|---------------|-----------------|  
+|`Cache`|同期フィルターに関連付けられているキャッシュの型。 これは、[cache_chunklist](../standard-library/cache-chunklist-class.md)、[cache_freelist](../standard-library/cache-freelist-class.md)、[cache_suballoc](../standard-library/cache-suballoc-class.md) のいずれかです。|  
   
-### メンバー関数  
+### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[割り当てます。](../Topic/sync_none::allocate.md)|メモリ ブロックを割り当てます。|  
-|[解放してください。](../Topic/sync_none::deallocate.md)|指定した位置にストレージの先頭から指定した数のオブジェクトを解放します。|  
-|[equals](../Topic/sync_none::equals.md)|同等の 2 種類のキャッシュを比較します。|  
+|[allocate](#allocate)|メモリのブロックを割り当てます。|  
+|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
+|[equals](#equals)|2 つのキャッシュが等しいかどうかを比較します。|  
   
-## 必要条件  
- **ヘッダー:** の \<アロケーター\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
   
-## 参照  
- [\<allocators\>](../standard-library/allocators-header.md)
+##  <a name="allocate"></a>  sync_none::allocate  
+ メモリのブロックを割り当てます。  
+  
+```
+void *allocate(std::size_t count);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`count`|割り当てられる配列内の要素の数。|  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は `cache.allocate(count)` を返します。ここで、`cache` はキャッシュ オブジェクトです。  
+  
+##  <a name="deallocate"></a>  sync_none::deallocate  
+ 指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
+  
+```
+void deallocate(void* ptr, std::size_t count);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`ptr`|記憶域から割り当てを解除される最初のオブジェクトへのポインター。|  
+|`count`|記憶域から割り当てを解除されるオブジェクトの数。|  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は `cache.deallocate(ptr, count)` を呼び出します。ここで、`cache` はキャッシュ オブジェクトを表します。  
+  
+##  <a name="equals"></a>  sync_none::equals  
+ 2 つのキャッシュが等しいかどうかを比較します。  
+  
+```
+bool equals(const sync<Cache>& Other) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`Cache`|同期フィルターのキャッシュ オブジェクト。|  
+|`Other`|等しいかどうかを比較するキャッシュ オブジェクト。|  
+  
+### <a name="return-value"></a>戻り値  
+ このメンバー関数は常に `true` を返します。  
+  
+### <a name="remarks"></a>コメント  
+  
+## <a name="see-also"></a>関連項目  
+ [\<allocators>](../standard-library/allocators-header.md)
+
+
+
+

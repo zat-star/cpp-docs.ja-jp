@@ -1,55 +1,72 @@
 ---
 title: "_lseek、_lseeki64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_lseeki64"
-  - "_lseek"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_lseeki64"
-  - "_lseek"
-  - "lseeki64"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_lseek 関数"
-  - "_lseeki64 関数"
-  - "ファイル ポインター [C++], 移動"
-  - "lseek 関数"
-  - "lseeki64 関数"
-  - "シーク ファイル ポインター"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _lseeki64
+- _lseek
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _lseeki64
+- _lseek
+- lseeki64
+dev_langs:
+- C++
+helpviewer_keywords:
+- lseek function
+- _lseek function
+- _lseeki64 function
+- lseeki64 function
+- file pointers [C++], moving
+- seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# _lseek、_lseeki64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: e8e40f4995f17314d70990a84c23c676d31a45d5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
+---
+# <a name="lseek-lseeki64"></a>_lseek、_lseeki64
 指定した場所にファイル ポインターを移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -65,23 +82,23 @@ __int64 _lseeki64(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `fd`  
  開いているファイルを参照するファイル記述子。  
   
  *オフセット*  
- *原点*からのバイト数。  
+ *配信元*からのバイト数。  
   
- *基点*  
- 初期位置。  
+ *配信元*  
+ 最初の位置。  
   
-## 戻り値  
- `_lseek` は ファイルの先頭からのオフセットを、新しい位置のバイト数\) を返します。  `_lseeki64` は 64 ビットの整数オフセットを返します。  エラーを示す関数の戻り値–1L。  渡られたら無効なパラメーター、不正なファイル記述子など、または *元* の値が無効な場合や *オフセット* で指定した位置に [パラメーターの検証](../../c-runtime-library/parameter-validation.md)で説明したように、ファイルの先頭の前に、無効なパラメーター ハンドラーが呼び出されます。です。  実行の継続 `EBADF` と戻り \-1L に関数によって設定された `errno`。  検索ではないデバイス \(ターミナルとプリンターなど\)、戻り値は未定義です。  
+## <a name="return-value"></a>戻り値  
+ `_lseek` は、ファイルの先頭からの新しい位置のオフセットを、バイト単位で返します。 `_lseeki64` は、64 ビット整数のオフセットを返します。 この関数は、エラーを示す-1 L を返します。 不適切なファイル記述子、*origin* の値が無効、*オフセット*によって指定された位置がファイルの開始より前であるなど、無効なパラメーターが渡された場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」の説明にあるとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EBADF` に設定し、-1L を返します。 (ターミナルやポインターなどの) シーク非対応のデバイスでは、戻り値は未定義です。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `_lseek` 関数は *原点*からの *オフセット* である新しい場所に `fd` に関連付けられたファイル ポインターを移動します。  ファイル内の次のアクションが新しい場所に発生します。  *元の* 引数は Stdio.h で定義されている次の定数の 1 種類があります。  
+## <a name="remarks"></a>コメント  
+ `_lseek` 関数は、`fd` に関連付けられたファイル ポインターを *origin* から*オフセット* バイトの新しい場所に移動します。 ファイルの次の操作は、新しい場所で行われます。 *origin* 引数は、Stdio.h で定義されている、次の定数のいずれかである必要があります。  
   
  `SEEK_SET`  
  ファイルの先頭。  
@@ -92,21 +109,21 @@ __int64 _lseeki64(
  `SEEK_END`  
  ファイルの終わり。  
   
- ファイルまたはファイルの末尾を超えてポインターの任意の場所に移動するには `_lseek` を使用できます。  
+ `_lseek` を使用して、ポインターをファイルの任意の場所またはファイルの最後の後に移動することができます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_lseek`|\<io.h\>|  
-|`_lseeki64`|\<io.h\>|  
+|-------------|---------------------|  
+|`_lseek`|\<io.h>|  
+|`_lseeki64`|\<io.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_lseek.c  
@@ -158,7 +175,7 @@ int main( void )
 }  
 ```  
   
-## 入力: crt\_lseek.c\_input  
+## <a name="input-crtlseekcinput"></a>入力: crt_lseek.c_input  
   
 ```  
 Line one.  
@@ -168,7 +185,7 @@ Line four.
 Line five.  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Position for beginning of file seek = 0  
@@ -176,7 +193,7 @@ Position for current position seek = 10
 Position for end of file seek = 57  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [fseek、\_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
- [\_tell、\_telli64](../../c-runtime-library/reference/tell-telli64.md)
+ [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
+ [_tell、_telli64](../../c-runtime-library/reference/tell-telli64.md)

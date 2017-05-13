@@ -65,10 +65,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 60a870b9c0beff704511ab788d621b0f9697ed5d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 514e00148ec34a14a7b229d5b7e226d8be66636d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="mbcjistojms-mbcjistojmsl-mbcjmstojis-mbcjmstojisl"></a>_mbcjistojms、_mbcjistojms_l、_mbcjmstojis、_mbcjmstojis_l
@@ -107,15 +108,15 @@ unsigned int _mbcjmstojis_l(
  日本語のロケールで、これらの関数は変換された文字を返すか、または変換可能でない場合は 0 を返します。 日本語以外のロケールで、これらの関数は、渡された文字を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_mbcjistojms` 関数は、日本工業標準 (JIS) の文字を Microsoft の漢字 (Shift JIS) 文字に変換します。 先行バイトと後続バイトが範囲 0x21 – 0x7E にある場合にのみ、文字が変換されます。 先行バイトまたは後続バイトがこの範囲外にある場合は、`errno` は `EILSEQ` に設定されます。 このエラー コードと他のエラーコードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ `_mbcjistojms` 関数は、日本工業標準 (JIS) の文字を Microsoft の漢字 (Shift JIS) 文字に変換します。 潜在顧客と後続バイトが範囲 0x21 - 0x7E 内にある場合にのみ、文字が変換されます。 先行バイトまたは後続バイトがこの範囲外にある場合は、`errno` は `EILSEQ` に設定されます。 このエラー コードと他のエラーコードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- `_mbcjmstojis` 関数は Shift JIS の文字を JIS の文字に変換します。 先行バイトが 0x81 – 0x9F または 0xE0 – 0xFC の範囲にあり、後続バイトが 0x40 – 0x7E または 0x80 – 0xFC の範囲にある場合にのみ、文字が変換されます。 その範囲の一部のコード ポイントには割り当てられた文字がないため、変換できないことに注意してください。  
+ `_mbcjmstojis`関数 Shift JIS の文字を JIS 文字に変換します。 範囲 0x81 から 0x9F または 0xE0 - - 0 xfc が先行バイトと後続バイトが範囲内に、0x40 ~ 0x7E または 0x80 ~ 0 xfc 場合にのみ、文字が変換されます。 その範囲の一部のコード ポイントには割り当てられた文字がないため、変換できないことに注意してください。  
   
  値 `c` は上位 8 のビットが変換される文字の先行バイトを表し、下位の 8 ビットが後続バイトを表す、16 ビットの値です。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- 以前のバージョンでは、`_mbcjistojms` と `_mbcjmstojis` はそれぞれ `jistojms` と `jmstojis` と呼ばれていました。 代わりに `_mbcjistojms`、`_mbcjistojms_l`、`_mbcjmstojis`、`_mbcjmstojis_l` を使用する必要があります。  
+ 以前のバージョンで`_mbcjistojms`と`_mbcjmstojis`呼び出された`jistojms`と`jmstojis`、それぞれします。 `_mbcjistojms`、 `_mbcjistojms_l`、`_mbcjmstojis`と`_mbcjmstojis_l`代わりに使用する必要があります。  
   
 ## <a name="requirements"></a>要件  
   
@@ -127,9 +128,6 @@ unsigned int _mbcjmstojis_l(
 |`_mbcjmstojis_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

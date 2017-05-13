@@ -55,10 +55,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3d95aae18858582f732459e136c998c15d70189e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 3d199cba90dd2440a7a467c95d32e2a5a75f8cbf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="wctomb-wctombl"></a>wctomb、_wctomb_l
@@ -86,7 +87,7 @@ int _wctomb_l(
  ワイド文字。  
   
 ## <a name="return-value"></a>戻り値  
- `wctomb` がワイド文字をマルチバイト文字に変換する場合、ワイド文字のバイト数 (常に `MB_CUR_MAX` 以内) を返します。 `wchar` がワイド文字の null 文字 (L'\0') の場合、`wctomb` 1 を返します。 ターゲット ポインター `mbchar` が NULL の場合、`wctomb` は 0 を返します。 現在のロケールで変換が不可能な場合、`wctomb` は -1 を返して `errno` は `EILSEQ` に設定されます。  
+ `wctomb` がワイド文字をマルチバイト文字に変換する場合、ワイド文字のバイト数 (常に `MB_CUR_MAX` 以内) を返します。 `wchar` がワイド文字の null 文字 (L'\0') の場合、`wctomb` 1 を返します。 ターゲット ポインター `mbchar` が NULL の場合、`wctomb` は 0 を返します。 現在のロケールで変換が不可能な場合`wctomb`-1 を返しますと`errno`に設定されている`EILSEQ`です。  
   
 ## <a name="remarks"></a>コメント  
  `wctomb` 関数はその `wchar` 引数を対応するマルチバイト文字に変換し、結果を `mbchar` に格納します。 任意のプログラムの任意のポイントからこの関数を呼び出すことができます。 `wctomb` は、ロケールに依存するあらゆる動作に現在のロケールを使用します。`_wctomb_l` は、渡されたロケールを代わりに使用することを除いて `wctomb` と同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
@@ -129,9 +130,6 @@ Convert a wide character:
    Characters converted: 1  
    Multibyte character: a  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

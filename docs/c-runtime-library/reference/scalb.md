@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ade761d8fa3e37d4e190a05db5b93cd9e5f63cca
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 8a8f70dd525a798bd2492270ef95e5e75c5aa36b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="scalb"></a>_scalb
@@ -77,7 +78,7 @@ double _scalb(
  長整数型の指数。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は指数値が返されます。 オーバーフローが発生すると、`_scalb` は (`x` の符号に応じて) +/- `HUGE_VAL` を返します。`errno` 変数は `ERANGE` に設定されます。  
+ 正常終了した場合は指数値が返されます。 オーバーフローが発生 (の符号に応じて`x`)、 `_scalb` +/-返します`HUGE_VAL`;`errno`変数を設定する`ERANGE`です。  
   
  このリターン コードとその他のリターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
@@ -90,10 +91,7 @@ double _scalb(
 |-------------|---------------------|  
 |`_scalb`|\<float.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

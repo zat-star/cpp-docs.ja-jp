@@ -12,10 +12,11 @@ f1_keywords:
 ms.assetid: e250f06a-b025-4509-ae7a-5356d56aad7d
 caps.latest.revision: 10
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: e32c8f5892764d2efc955bbf2d7930e0c8d3f3f0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 53a31f533ee777dbbcc486283034094481ab0c31
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltnewgt-functions"></a>&lt;new&gt; 関数
@@ -34,7 +35,7 @@ extern const std::nothrow_t nothrow;
  オブジェクトは、パラメーターの型 [std::nothrow_t](../standard-library/nothrow-t-structure.md) に一致する関数の引数として使用されます。  
   
 ### <a name="example"></a>例  
-  `std::nothrow_t` を関数パラメーターとして使用する方法の例については、「[operator new](../standard-library/new-operators.md#operator_new)」および「[operator new&#91;&#93;](../standard-library/new-operators.md#operator_new_arr)」を参照してください。  
+  `std::nothrow_t` を関数パラメーターとして使用する方法の例については、「[operator new](../standard-library/new-operators.md#op_new)」および「[operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)」を参照してください。  
   
 ##  <a name="set_new_handler"></a>  set_new_handler  
  `operator new` がメモリ割り当ての試行に失敗した場合に呼び出されるユーザー関数をインストールします。  
@@ -48,10 +49,10 @@ new_handler set_new_handler(new_handler Pnew) throw();
  インストールする new_handler。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の呼び出しの場合は&0;、それ以降の呼び出しの場合は以前の `new_handler`。  
+ 最初の呼び出しの場合は 0、それ以降の呼び出しの場合は以前の `new_handler`。  
   
 ### <a name="remarks"></a>コメント  
- この関数は、関数が保持する静的な [new handler](../standard-library/new-typedefs.md#new_handler) ポインターに `Pnew` を格納し、ポインターに以前に格納された値を返します。 新しいハンドラーは [operator new](../standard-library/new-operators.md#operator_new)( **size_t**) によって使用されます。  
+ この関数は、関数が保持する静的な [new handler](../standard-library/new-typedefs.md#new_handler) ポインターに `Pnew` を格納し、ポインターに以前に格納された値を返します。 新しいハンドラーは [operator new](../standard-library/new-operators.md#op_new)( **size_t**) によって使用されます。  
   
 ### <a name="example"></a>例  
   

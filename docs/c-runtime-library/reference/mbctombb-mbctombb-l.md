@@ -55,14 +55,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d1831c28a8aab99478fb362d46db352674a360df
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: c659b24b2d8364af4303c0667841224560914cd6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="mbctombb-mbctombbl"></a>_mbctombb、_mbctombb_l
-2 バイト マルチバイト文字を、対応する&1; バイト マルチバイト文字に変換します。  
+2 バイト マルチバイト文字を、対応する 1 バイト マルチバイト文字に変換します。  
   
 > [!IMPORTANT]
 >  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
@@ -87,14 +88,14 @@ unsigned int _mbctombb_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_mbctombb` および `_mbctombb_l` は、正常に終了した場合 `c` に対応する&1; バイト文字を返します。それ以外の場合は `c` を返します。  
+ 成功した場合、`_mbctombb`と`_mbctombb_l`に対応する 1 バイト文字を返します`c`; 返します`c`です。  
   
 ## <a name="remarks"></a>コメント  
- `_mbctombb` 関数および `_mbctombb_l` 関数は、指定したマルチバイト文字を対応する&1; バイト マルチバイト文字に変換します。 文字は、変換対象の範囲 0x20 – 0x7E または 0xA1 – 0xDF 内の 1 バイト文字に対応する必要があります。  
+ `_mbctombb`と`_mbctombb_l`関数では、特定のマルチバイト文字を対応する 1 バイト マルチバイト文字に変換します。 文字は、変換する 0 xdf 範囲 0x20-0x7E または 0xA1 - 1 バイト文字に対応する必要があります。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
- 以前のバージョンでは、`_mbctombb` は `zentohan` と呼ばれていました。 代わりに、_`mbctombb` を使用してください。  
+ 以前のバージョンでは、`_mbctombb` は `zentohan` と呼ばれていました。 代わりに、 `_mbctombb` を使用してください。  
   
 ## <a name="requirements"></a>要件  
   
@@ -104,9 +105,6 @@ unsigned int _mbctombb_l(
 |`_mbctombb_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

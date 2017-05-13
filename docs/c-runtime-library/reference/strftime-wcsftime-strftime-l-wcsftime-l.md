@@ -1,58 +1,76 @@
 ---
 title: "strftime、wcsftime、_strftime_l、_wcsftime_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "strftime"
-  - "_wcsftime_l"
-  - "_strftime_l"
-  - "wcsftime"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_tcsftime"
-  - "strftime"
-  - "wcsftime"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_strftime_l 関数"
-  - "strftime 関数"
-  - "tcsftime 関数"
-  - "_wcsftime_l 関数"
-  - "wcsftime 関数"
-  - "_tcsftime 関数"
-  - "時間の文字列"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- strftime
+- _wcsftime_l
+- _strftime_l
+- wcsftime
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _tcsftime
+- strftime
+- wcsftime
+dev_langs:
+- C++
+helpviewer_keywords:
+- _strftime_l function
+- strftime function
+- tcsftime function
+- _wcsftime_l function
+- wcsftime function
+- _tcsftime function
+- time strings
 ms.assetid: 6330ff20-4729-4c4a-82af-932915d893ea
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# strftime、wcsftime、_strftime_l、_wcsftime_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 1a5331b77e218c5fe5796b2df6d0f61578657758
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-時刻文字列を書式化します。  
+---
+# <a name="strftime-wcsftime-strftimel-wcsftimel"></a>strftime、wcsftime、_strftime_l、_wcsftime_l
+時刻の文字列の書式を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_t strftime(  
@@ -83,153 +101,141 @@ size_t _wcsftime_l(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `strDest`  
  出力する文字列。  
   
  `maxsize`  
- 文字が使用されます `strDest` バッファーのサイズ \(`char` または `wchart_t`\)。  
+ `strDest` バッファーのサイズ。文字数 (`char` や `wchart_t`) で測定されます。  
   
  `format`  
  書式指定文字列。  
   
  `timeptr`  
- `tm` の データ構造。  
+ `tm` データ構造。  
   
  `locale`  
  使用するロケール。  
   
-## 戻り値  
- `strftime` は `strDest` に配置された文字数を返します `wcsftime` はワイド文字の対応する番号を返します。  
+## <a name="return-value"></a>戻り値  
+ `strftime` は `strDest` 内の文字数を返し、`wcsftime` は対応するワイド文字数を返します。  
   
- 文字数が、終端の null を含む\) の数より多い場合は、`maxsize``strftime` と `wcsftime` 0 の両方を返し、`strDest` の内容は不確定です。  
+ 終端の NULL を含む文字数の合計が `maxsize` を超える場合、`strftime` と `wcsftime` の両方が 0 を返し、`strDest` の内容は不確定です。  
   
- `strDest` の文字数が書式指定コードによって `format` に追加できる `format` リテラル文字、文字の数と同じになります。  文字列の終端の null は戻り値としてカウントされます。  
+ `strDest` 内の文字数は、`format` 内のリテラル文字数と、書式コードを使用して `format` に追加される可能性がある文字数に等しくなります。 文字列の終端の NULL は戻り値にはカウントされません。  
   
-## 解説  
- `strftime` と `wcsftime` 関数は `format` の指定された引数に従って `timeptr` の `tm` の時刻の値の書式を指定して、buffer `strDest`に結果を保存します*。*最大でも `maxsize` の文字が文字列内に挿入されます。  `timeptr` 構造体のフィールドの詳細については、「[asctime](../../c-runtime-library/reference/asctime-wasctime.md)」を参照してください。  `wcsftime` は `strftime`のワイド文字単位の等価です; ワイド文字列へのアクセス文字列ポインター引数のポイント。  それ以外では、これらの関数の動作は同じです。  
+## <a name="remarks"></a>コメント  
+ `strftime`と`wcsftime`関数形式、`tm`時刻の値`timeptr`に従って、指定された`format`引数と、バッファー内の結果ストア`strDest`です。 文字列には最大 `maxsize` 文字を含めることができます。 `timeptr` 構造のフィールドについては、「[asctime](../../c-runtime-library/reference/asctime-wasctime.md)」をご覧ください。 `wcsftime` は `strftime` のワイド文字版です。その文字列ポインター引数はワイド文字の文字列を指します。 それ以外では、これらの関数の動作は同じです。  
   
 > [!NOTE]
->  Visual C\+\+ 2005 以前のバージョンでは、ドキュメントが記述されていますが `const wchar_t *`データ型を持つとして `wcsftime` の `format` パラメーターを、`format` のデータ型の実際の実装は `const char *`でした。  `format`のデータ型の実装は前と現在のドキュメント、つまり `const wchar_t *`を反映するように更新されました。  
+>  Visual C++ 2005 より前のバージョンでは、`wcsftime` の `format` パラメーターがデータ型 `const wchar_t *` としてドキュメントに説明されていましたが、実際に実装された `format` データ型は `const char *` でした。 実装、`format`データ型が、現在と以前のドキュメント「、を反映するように更新された`const wchar_t *`です。  
   
- この関数は、パラメーターを検証します。  `strDest`、`format`、または`timeptr` が null ポインターの場合、または `timeptr` して対処する `tm` のデータ構造が無効 \(たとえば、時間または日付の範囲内の値を含む場合、\) である場合は `format` の文字列に無効な書式指定コードが含まれる場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EINVAL` に設定します。  
+ この関数は、パラメーターを検証します。 場合`strDest`、 `format`、または`timeptr`null ポインターでは、または、`tm`によってアドレス指定されるデータ構造体`timeptr`が正しくありません (たとえば、日付や時刻の値が範囲外にある場合)、または、`format`文字列に無効な書式設定コードが含まれている場合、無効なパラメーター ハンドラーが呼び出されます」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EINVAL` に設定します。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcsftime`|`strftime`|`strftime`|`wcsftime`|  
   
- `format` の引数は一つ以上のコードで構成されます。; `printf`と同様に、書式指定コードがパーセント記号 \(`%`\) が付きます。  `%` という文字が `strDest`にコピーされます*。*現在のロケールの `LC_TIME` のカテゴリは `strftime`の出力書式に影響します。\(`LC_TIME`の詳細については、「[setlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。`_l` サフィックスのない関数は、現在設定されているロケールを使用します。  `_l` のサフィックスが付いているこれらの関数の各バージョンは同じですが、ロケールをパラメーターとして受け取り、現在設定されているロケールの代わりに使用します。  詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `format` 引数は 1 つ以上のコードで構成されます。`printf` と同じように、書式コードの前にはパーセント記号 (`%`) を指定します。 文字で始まらないが`%`をそのままコピーされる`strDest`です。 現在のロケールの `LC_TIME` カテゴリは、`strftime` の出力の書式に影響します。 (`LC_TIME` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。)`_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、ロケールをパラメーターとして使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
- `strftime` の書式指定コードを次に示します。:  
+ `strftime` の書式コードを以下に示します。  
   
  `%a`  
- 曜日の名前  
+ 曜日の略称  
   
  `%A`  
- 曜日の正式名  
+ 曜日の正式な名前  
   
  `%b`  
- 省略された月名  
+ 月の略称  
   
  `%B`  
- 完全な月名  
+ 月の正式な名前  
   
  `%c`  
- ロケールの適切な日付と時刻の表現  
+ ロケールに合った日付と時刻の表記  
   
  `%d`  
- 10 進数 \(01 – 31\) として月の日  
+ 10 進数 (01 ~ 31) で月の日  
   
  `%H`  
- 24 時間制 \(00 – 23 時間\)  
+ 24 時間形式で表される時間 (00 ~ 23)  
   
  `%I`  
- 12 時間制 \(01 – 12 時間\)  
+ 12 時間形式 (01 ~ 12)  
   
  `%j`  
- 10 進数 \(001\) として– 366 年の日  
+ 10 進数 (001 ~ 366) の年の日付  
   
  `%m`  
- 10 進数 \(01 – 12\) として月  
+ 10 進数 (01 ~ 12)  
   
  `%M`  
- 10 進数 \(00\) として– 59 分  
+ 10 進数による分 (00 ~ 59)  
   
  `%p`  
- 12 時間制の現在のロケールの午前\/アフリカーンス語.のインジケーター  
+ 現在のロケールのです。 12 時間制のインジケーター  
   
  `%S`  
- second として 10 進数 \(00 – 59\)  
+ 10 進数による秒 (00 ~ 59)  
   
  `%U`  
- 最初に曜日 \(00 – 53\) の日付として Sunday の 10 進数として年の週、  
+ 日曜日を週の最初の日として、10 進数、年間の週 (00 ~ 53)  
   
  `%w`  
- 10 進数 \(0 – 6 として Weekday; 日曜日は 0\)  
+ 10 進数による曜日 (0 ~ 6 です。日曜日は 0)  
   
  `%W`  
- 最初に曜日 \(00 – 53\) の日付として Monday の 10 進数として年の週、  
+ 月曜が週の最初の日の 10 進数で、年の週 (00 ~ 53)  
   
  `%x`  
- 現在のロケールの日付の表現  
+ 現在のロケールの日付表記  
   
  `%X`  
- 現在のロケールの時刻の表現  
+ 現在のロケールの時刻表記  
   
  `%y`  
- 10 進数 \(00 – 99\) として世紀のではなく、  
+ 10 進数として、2 桁の年年 (00 ~ 99)  
   
  `%Y`  
- 10 進数として世紀の年、  
+ 世紀を付けた 10 進数の年  
   
  `%z, %Z`  
- レジストリの設定によって、タイム ゾーンの名前またはタイム ゾーンの省略形、; タイム ゾーンが不明な場合は文字なし  
+ レジストリ設定に応じて、タイム ゾーンの名前またはタイム ゾーンの略称のいずれか。タイム ゾーンが不明の場合は文字なし  
   
  `%%`  
  パーセント記号  
   
- `printf` 関数と同様に、`#` フラグは書式指定コードを付け加える場合があります。  この場合、書式指定コードの意味は、次のように変更されます。  
+ `printf` 関数と同じように、書式コードのプレフィックスとして `#` フラグを付けることができます。 その場合、書式コードの説明は次のように変更します。  
   
-|\[書式コード\]|説明|  
-|---------------|--------|  
+|[書式コード]|説明|  
+|-----------------|-------------|  
 |`%#a, %#A, %#b, %#B, %#p, %#X, %#z, %#Z, %#%`|`#` フラグは無視されます。|  
-|`%#c`|長い日付と時刻の表現は現在のロケールでは、割り当てます。  例: 「Tuesday November 1995 \(3 年 12 月 14 日 12:41: 29 "です。|  
-|`%#x`|長い日付形式は現在のロケールに、割り当てます。  例: 「Tuesday November 1995 \(3 年 12 月 14 日」。|  
-|`%#d, %#H, %#I, %#j, %#m, %#M, %#S, %#U, %#w, %#W, %#y, %#Y`|先行するゼロを削除します \(存在する場合\)。|  
+|`%#c`|現在のロケールに合った、長い日付と時刻の表記。 たとえば、"Tuesday, March 14, 1995, 12:41:29" です。|  
+|`%#x`|現在のロケールに合った、長い日付の表記。 たとえば、"Tuesday, March 14, 1995" です。|  
+|`%#d, %#H, %#I, %#j, %#m, %#M, %#S, %#U, %#w, %#W, %#y, %#Y`|先頭にゼロがある場合は削除します。|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`strftime`|\<time.h\>|  
-|`wcsftime`|\<time.h または\> wchar.h \<\>|  
-|`_strftime_l`|\<time.h\>|  
-|`_wcsftime_l`|\<time.h または\> wchar.h \<\>|  
+|-------------|---------------------|  
+|`strftime`|\<time.h>|  
+|`wcsftime`|\<time.h> または \<wchar.h>|  
+|`_strftime_l`|\<time.h>|  
+|`_wcsftime_l`|\<time.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- 「[time](../Topic/time,%20_time32,%20_time64.md)」の例を参照してください。  
+## <a name="example"></a>例  
+ [time](../../c-runtime-library/reference/time-time32-time64.md) の例を参照してください。  
   
-## 同等の .NET Framework 関数  
-  
--   [System::DateTime::ToLongDateString](https://msdn.microsoft.com/en-us/library/system.datetime.tolongdatestring.aspx)  
-  
--   [System::DateTime::ToLongTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.tolongtimestring.aspx)  
-  
--   [System::DateTime::ToShortDateString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring.aspx)  
-  
--   [System::DateTime::ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshorttimestring.aspx)  
-  
--   [System::DateTime::ToString](https://msdn.microsoft.com/en-us/library/system.datetime.tostring.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ロケール](../../c-runtime-library/locale.md)   
  [時間管理](../../c-runtime-library/time-management.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
- [setlocale、\_wsetlocale](../Topic/setlocale,%20_wsetlocale.md)   
+ [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
- [strxfrm、wcsxfrm、\_strxfrm\_l、\_wcsxfrm\_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)
+ [strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)

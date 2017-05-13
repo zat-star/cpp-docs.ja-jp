@@ -37,10 +37,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 9ff1d22bafa778db24fb489d33e83b1a553711e5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 79e0603aeafe714b891e5564d68cbed6ede89768
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="insertiterator-class"></a>insert_iterator クラス
@@ -64,29 +65,29 @@ class insert_iterator;
   
 |||  
 |-|-|  
-|[insert_iterator](#insert_iterator__insert_iterator)|コンテナーの指定された位置に要素を挿入する `insert_iterator` を構築します。|  
+|[insert_iterator](#insert_iterator)|コンテナーの指定された位置に要素を挿入する `insert_iterator` を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#insert_iterator__container_type)|一般的な挿入の対象となるコンテナーを表す型。|  
-|[reference](#insert_iterator__reference)|関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。|  
+|[container_type](#container_type)|一般的な挿入の対象となるコンテナーを表す型。|  
+|[reference](#reference)|関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator*](#insert_iterator__operator_star)|一般的な挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
-|[operator++](#insert_iterator__operator_add_add)|値を格納できる次の位置に `insert_iterator` をインクリメントします。|  
-|[operator=](#insert_iterator__operator_eq)|一般的な挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
+|[operator*](#op_star)|一般的な挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
+|[operator++](#op_add_add)|値を格納できる次の位置に `insert_iterator` をインクリメントします。|  
+|[operator=](#op_eq)|一般的な挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー**: \<iterator>  
   
  **名前空間:** std  
   
-##  <a name="insert_iterator__container_type"></a>  insert_iterator::container_type  
+##  <a name="container_type"></a>  insert_iterator::container_type  
  一般的な挿入の対象となるコンテナーを表す型。  
   
 ```
@@ -126,7 +127,7 @@ The list L2 is: ( 40 20 10 ).
 *\  
 ```  
   
-##  <a name="insert_iterator__insert_iterator"></a>  insert_iterator::insert_iterator  
+##  <a name="insert_iterator"></a>  insert_iterator::insert_iterator  
  コンテナーの指定された位置に要素を挿入する `insert_iterator` を構築します。  
   
 ```
@@ -189,7 +190,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="insert_iterator__operator_star"></a>  insert_iterator::operator*  
+##  <a name="op_star"></a>  insert_iterator::operator*  
  アドレス指定された要素を返す挿入反復子を逆参照します。  
   
 ```
@@ -246,7 +247,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="insert_iterator__operator_add_add"></a>  insert_iterator::operator++  
+##  <a name="op_add_add"></a>  insert_iterator::operator++  
  値を格納できる次の位置に **insert_iterator** をインクリメントします。  
   
 ```
@@ -307,7 +308,7 @@ After the insertions, the vector vec becomes:
 *\  
 ```  
   
-##  <a name="insert_iterator__operator_eq"></a>  insert_iterator::operator=  
+##  <a name="op_eq"></a>  insert_iterator::operator=  
  コンテナーに値を挿入し、新しい要素を指すように更新された反復子を返します。  
   
 ```
@@ -386,7 +387,7 @@ After the insertions, the list L is:
 *\  
 ```  
   
-##  <a name="insert_iterator__reference"></a>  insert_iterator::reference  
+##  <a name="reference"></a>  insert_iterator::reference  
  関連するコンテナーによって制御されるシーケンスの要素への参照を提供する型。  
   
 ```

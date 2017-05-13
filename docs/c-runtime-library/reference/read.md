@@ -53,10 +53,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0945829735b9996bca32780bb34385d3e19ffa57
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6387edb05977f90fe9fb2419a1eccb47ac0b7b43
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="read"></a>_read
@@ -84,9 +85,9 @@ ms.lasthandoff: 02/24/2017
  最大バイト数。  
   
 ## <a name="return-value"></a>戻り値  
- _**read** は読み込んだバイト数を返します。ファイル内の残りのバイト数が *count* 未満であるかファイルがテキスト モードで開かれている場合、*count* より小さい場合があります。その場合、復帰と改行 (CR-LF) のペアは、各々&1; つの改行文字に置き換えられます。 戻り値ではその単一の改行文字だけがカウントされます。 この置き換えは、ファイル ポインターには影響しません。  
+ _**読み取り**小さい場合があります、読み取られたバイト数を返しますより*カウント*よりも少ない場合*カウント*ファイル内の残りのバイト数または各キャリッジ リターンとラインが (CR-LF) のペアをフィードする場合は、1 つの改行文字に置き換えられます、ファイルがテキスト モードで開かれた場合。 戻り値ではその単一の改行文字だけがカウントされます。 この置き換えは、ファイル ポインターには影響しません。  
   
- この関数はファイルの終わりで読み取りをすると、0 を返します。 `fd` が無効であるか、ファイルが読み取り用に開かれていないか、ファイルがロックされているかの場合、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラ―が呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` を `EBADF` に設定します。  
+ この関数はファイルの終わりで読み取りをすると、0 を返します。 `fd` が無効であるか、ファイルが読み取り用に開かれていないか、ファイルがロックされているかの場合、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラ―が呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EBADF`に設定します。  
   
  *バッファー*が **NULL** の場合は、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` は `EINVAL` に設定されます。  
   

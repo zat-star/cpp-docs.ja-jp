@@ -55,14 +55,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: aea0adf064d61e0104bc15f9cc3825dd9f7e186f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 4cf69d6876ffb96bfd7939eebb4c564f66e98037
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="mbbtombc-mbbtombcl"></a>_mbbtombc、_mbbtombc_l
-1 バイトのマルチバイト文字を、対応する&2; バイトのマルチバイト文字に変換します。  
+1 バイトのマルチバイト文字を、対応する 2 バイトのマルチバイト文字に変換します。  
   
 > [!IMPORTANT]
 >  この API は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
@@ -81,7 +82,7 @@ unsigned int _mbbtombc_l(
   
 #### <a name="parameters"></a>パラメーター  
  `c`  
- 変換する&1; バイト文字。  
+ 変換する 1 バイト文字。  
   
  `locale`  
  使用するロケール。  
@@ -90,7 +91,7 @@ unsigned int _mbbtombc_l(
  `_mbbtombc` は、`c` を正常に変換できた場合は、マルチバイト文字を返します。それ以外の場合は、`c` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_mbbtombc` 関数は、与えられた&1; バイトのマルチバイト文字を、対応する&2; バイトのマルチバイト文字に変換します。 変換する文字は、0x20 ～ 0x7E または 0xA1 ～ 0xDF の範囲である必要があります。  
+ `_mbbtombc` 関数は、与えられた 1 バイトのマルチバイト文字を、対応する 2 バイトのマルチバイト文字に変換します。 文字は変換する 0 xdf 0x20-0x7E または 0xA1 - 範囲内でなければなりません。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 この関数の各バージョンは、ロケールに依存するこの動作について、`_mbbtombc` は現在のロケールを使用し、`_mbbtombc_l` は渡されるロケール パラメーターを代わりに使用する点を除いて、同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -104,9 +105,6 @@ unsigned int _mbbtombc_l(
 |`_mbbtombc_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

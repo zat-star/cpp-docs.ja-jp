@@ -46,10 +46,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 55da414f0a743fab278cb47441efe04e82ac3279
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 38a34e2957b3fb4cf2713d61ac3633691b04b03c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="regextokeniterator-class"></a>regex_token_iterator クラス
@@ -114,7 +115,7 @@ private:
   
  **名前空間:** std  
   
-##  <a name="regex_token_iterator__difference_type"></a>  regex_token_iterator::difference_type  
+##  <a name="difference_type"></a>  regex_token_iterator::difference_type  
  反復子の差の型です。  
   
 ```  
@@ -220,7 +221,7 @@ match == aa
 match == z  
 ```  
   
-##  <a name="regex_token_iterator__iterator_category"></a>  regex_token_iterator::iterator_category  
+##  <a name="iterator_category"></a>  regex_token_iterator::iterator_category  
  反復子カテゴリの型。  
   
 ```  
@@ -330,7 +331,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__operator_neq"></a>  regex_token_iterator::operator!=  
+##  <a name="op_neq"></a>  regex_token_iterator::operator!=  
  反復子の非等値を比較します。  
   
 ```  
@@ -444,7 +445,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__operator_star"></a>  regex_token_iterator::operator*  
+##  <a name="op_star"></a>  regex_token_iterator::operator*  
  指定されたサブマッチにアクセスします。  
   
 ```  
@@ -554,7 +555,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__operator_add_add"></a>  regex_token_iterator::operator++  
+##  <a name="op_add_add"></a>  regex_token_iterator::operator++  
  反復子をインクリメントします。  
   
 ```  
@@ -668,7 +669,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__operator_eq_eq"></a>  regex_token_iterator::operator==  
+##  <a name="op_eq_eq"></a>  regex_token_iterator::operator==  
  反復子が等しいかどうかを比較します。  
   
 ```  
@@ -782,7 +783,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__operator-_gt_"></a>  regex_token_iterator::operator-&gt;  
+##  <a name="regex_token_iterator__operator-_gt"></a>  regex_token_iterator::operator-&gt;  
  指定されたサブマッチにアクセスします。  
   
 ```  
@@ -892,7 +893,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__pointer"></a>  regex_token_iterator::pointer  
+##  <a name="pointer"></a>  regex_token_iterator::pointer  
  一致へのポインターの型です。  
   
 ```  
@@ -1002,7 +1003,7 @@ match == z
 ### <a name="remarks"></a>コメント  
  この型は `sub_match<BidIt>*`のシノニムです。ここで `BidIt` はテンプレート パラメーターです。  
   
-##  <a name="regex_token_iterator__reference"></a>  regex_token_iterator::reference  
+##  <a name="reference"></a>  regex_token_iterator::reference  
  サブマッチへの参照の型です。  
   
 ```  
@@ -1112,7 +1113,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__regex_token_iterator"></a>  regex_token_iterator::regex_token_iterator  
+##  <a name="regex_token_iterator"></a>  regex_token_iterator::regex_token_iterator  
  反復子を構築します。  
   
 ```  
@@ -1148,11 +1149,11 @@ regex_token_iterator(BidIt first, BidIt last,
 ### <a name="remarks"></a>コメント  
  1 つ目のコンストラクターは、シーケンス末尾の反復子を構築します。  
   
- 2 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` が値 `submatch`を含む正確に&1; つの整数を保持し、格納されている値 `pos` が&0; のオブジェクトを構築します。 メモ: 生成されたオブジェクトは、正規表現が一致するたびに、インデックス値 `submatch` によって識別されるサブマッチを抽出します。  
+ 2 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` が値 `submatch`を含む正確に 1 つの整数を保持し、格納されている値 `pos` が 0 のオブジェクトを構築します。 メモ: 生成されたオブジェクトは、正規表現が一致するたびに、インデックス値 `submatch` によって識別されるサブマッチを抽出します。  
   
- 3 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` がコンストラクター引数 `submatches`のコピーを保持し、格納されている値 `pos` が&0; のオブジェクトを構築します。  
+ 3 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` がコンストラクター引数 `submatches`のコピーを保持し、格納されている値 `pos` が 0 のオブジェクトを構築します。  
   
- 4 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` がコンストラクター引数 `N` によって示される `submatches`の値を保持し、格納されている値 `pos` が&0; のオブジェクトを構築します。  
+ 4 つ目のコンストラクターは、格納されている反復子 `it` が `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`に初期化され、格納されているベクター `subs` がコンストラクター引数 `N` によって示される `submatches`の値を保持し、格納されている値 `pos` が 0 のオブジェクトを構築します。  
   
 ### <a name="example"></a>例  
   
@@ -1254,7 +1255,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__regex_type"></a>  regex_token_iterator::regex_type  
+##  <a name="regex_type"></a>  regex_token_iterator::regex_type  
  一致させる正規表現の型。  
   
 ```  
@@ -1364,7 +1365,7 @@ match == z
   
 ```  
   
-##  <a name="regex_token_iterator__value_type"></a>  regex_token_iterator::value_type  
+##  <a name="value_type"></a>  regex_token_iterator::value_type  
  サブマッチの型。  
   
 ```  

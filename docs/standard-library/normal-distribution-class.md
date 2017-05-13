@@ -10,32 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - normal_distribution
-- std::normal_distribution
 - random/std::normal_distribution
-- std::normal_distribution::reset
 - random/std::normal_distribution::reset
-- std::normal_distribution::mean
 - random/std::normal_distribution::mean
-- std::normal_distribution::stddev
 - random/std::normal_distribution::stddev
-- std::normal_distribution::param
 - random/std::normal_distribution::param
-- std::normal_distribution::min
 - random/std::normal_distribution::min
-- std::normal_distribution::max
 - random/std::normal_distribution::max
-- std::normal_distribution::operator()
 - random/std::normal_distribution::operator()
-- std::normal_distribution::param_type
 - random/std::normal_distribution::param_type
-- std::normal_distribution::param_type::mean
 - random/std::normal_distribution::param_type::mean
-- std::normal_distribution::param_type::stddev
 - random/std::normal_distribution::param_type::stddev
-- std::normal_distribution::param_type::operator==
 - random/std::normal_distribution::param_type::operator==
-- std::normal_distribution::param_type::operator!=
 - random/std::normal_distribution::param_type::operator!=
+- random/std::normal_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -59,10 +47,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
-ms.openlocfilehash: d587cc1def88f67ccc521d9353318acca363ad57
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 16b8c59395ae727e47be88e32aeb87c32b2e403d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="normaldistribution-class"></a>normal_distribution クラス
@@ -108,8 +97,8 @@ public:
   
 ||||  
 |-|-|-|  
-|[normal_distribution::normal_distribution](#normal_distribution__normal_distribution)|`normal_distribution::mean`|`normal_distribution::param`|  
-|`normal_distribution::operator()`|`normal_distribution::stddev`|[normal_distribution::param_type](#normal_distribution__param_type)|  
+|[normal_distribution](#normal_distribution)|`normal_distribution::mean`|`normal_distribution::param`|  
+|`normal_distribution::operator()`|`normal_distribution::stddev`|[param_type](#param_type)|  
   
 プロパティ関数 `mean()` および `stddev()` は、格納されている分布パラメーター `mean` および `stddev` に対してそれぞれの値を返します。  
   
@@ -215,7 +204,7 @@ Distribution for 10 samples:
   
 **名前空間:** std  
   
-##  <a name="a-namenormaldistributionnormaldistributiona--normaldistributionnormaldistribution"></a><a name="normal_distribution__normal_distribution"></a>  normal_distribution::normal_distribution  
+##  <a name="normal_distribution"></a>  normal_distribution::normal_distribution  
 分布を作成します。  
   
 ```  
@@ -240,7 +229,7 @@ explicit normal_distribution(const param_type& parm);
   
 2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
   
-##  <a name="a-namenormaldistributionparamtypea--normaldistributionparamtype"></a><a name="normal_distribution__param_type"></a>  normal_distribution::param_type  
+##  <a name="param_type"></a>  normal_distribution::param_type  
 分布のパラメーターを格納します。  
   
 ```cpp  

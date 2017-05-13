@@ -63,10 +63,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c70908d3c884eed962560e0a5284c66c3c234a7e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 3b7b1d4165edb3a7e34cda665de195759784eedc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="searchenvs-wsearchenvs"></a>_searchenv_s、_wsearchenv_s
@@ -115,10 +116,10 @@ errno_t _wsearchenv_s(
  完全パスを格納するバッファー。  
   
  [入力] `numberOfElements`  
- `pathname` バッファーのサイズ。  
+ サイズ、`pathname`バッファー。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
  `filename` に空の文字列が指定された場合は、返値は `ENOENT` になります。  
   
@@ -133,7 +134,7 @@ errno_t _wsearchenv_s(
  上記のいずれかのエラー条件が発生すると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように無効なパラメーター ハンドラ―が呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_searchenv_s` ルーチンは、指定したドメインでターゲット ファイルを検索します。 `varname` 変数は、`PATH`、`LIB`、および `INCLUDE` などのディレクトリ パスのリストを指定する環境変数またはユーザー定義変数です。 `_searchenv_s` では大文字と小文字が区別されるため、`varname` は環境変数と大文字小文字が一致する必要があります。 `varname` がプロセスの環境で定義されている環境変数の名前と一致しない場合、関数は&0; を返し、`pathname` 変数は変更されません。  
+ `_searchenv_s` ルーチンは、指定したドメインでターゲット ファイルを検索します。 `varname` 変数は、`PATH`、`LIB`、および `INCLUDE` などのディレクトリ パスのリストを指定する環境変数またはユーザー定義変数です。 `_searchenv_s` では大文字と小文字が区別されるため、`varname` は環境変数と大文字小文字が一致する必要があります。 `varname` がプロセスの環境で定義されている環境変数の名前と一致しない場合、関数は 0 を返し、`pathname` 変数は変更されません。  
   
  このルーチンは最初に現在の作業ディレクトリでファイルを検索します。 ファイルが見つからなかった場合、環境変数で指定されている次のディレクトリを検索します。 ターゲット ファイルがこれらのディレクトリのいずれかで見つかった場合は、新しく作成されたパスを `pathname` にコピーします。 `filename` ファイルが見つからない場合、`pathname` には null で終わる空の文字列が挿入されます。  
   
@@ -193,9 +194,6 @@ int main( void )
 Path for CL.EXE:  
 C:\Program Files\Microsoft Visual Studio 2010\VC\BIN\CL.EXE  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   

@@ -9,10 +9,48 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::multiset
 - set/std::multiset
-- std.multiset
 - multiset
+- set/std::multiset::allocator_type
+- set/std::multiset::const_iterator
+- set/std::multiset::const_pointer
+- set/std::multiset::const_reference
+- set/std::multiset::const_reverse_iterator
+- set/std::multiset::difference_type
+- set/std::multiset::iterator
+- set/std::multiset::key_compare
+- set/std::multiset::key_type
+- set/std::multiset::pointer
+- set/std::multiset::reference
+- set/std::multiset::reverse_iterator
+- set/std::multiset::size_type
+- set/std::multiset::value_compare
+- set/std::multiset::value_type
+- set/std::multiset::begin
+- set/std::multiset::cbegin
+- set/std::multiset::cend
+- set/std::multiset::clear
+- set/std::multiset::count
+- set/std::multiset::crbegin
+- set/std::multiset::crend
+- set/std::multiset::emplace
+- set/std::multiset::emplace_hint
+- set/std::multiset::empty
+- set/std::multiset::end
+- set/std::multiset::equal_range
+- set/std::multiset::erase
+- set/std::multiset::find
+- set/std::multiset::get_allocator
+- set/std::multiset::insert
+- set/std::multiset::key_comp
+- set/std::multiset::lower_bound
+- set/std::multiset::max_size
+- set/std::multiset::rbegin
+- set/std::multiset::rend
+- set/std::multiset::size
+- set/std::multiset::swap
+- set/std::multiset::upper_bound
+- set/std::multiset::value_comp
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,14 +74,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f1b633b3793e99c24d0ae386a73e38e08cca088f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: ff713a2813798c82b42ecc814d433e64ba2a51a6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="multiset-class"></a>multiset クラス
-C++ 標準ライブラリの multiset クラスは、コレクションのデータを格納および取得するために使用されます。コレクションに含まれる要素の値は一意である必要はなく、データが自動的に順序付けられるのに従ってキー値として使用されます。 multiset 内の要素のキー値は直接変更できません。 代わりに、以前の値を削除し、新しい値の要素を挿入する必要があります。  
+C++ 標準ライブラリの multiset クラスは、コレクションのデータを格納および取得するために使用されます。コレクションに含まれる要素の値は一意である必要はなく、データを自動的に順序付けるキー値として使用されます。 multiset 内の要素のキー値は直接変更できません。 代わりに、以前の値を削除し、新しい値の要素を挿入する必要があります。  
   
 ## <a name="syntax"></a>構文  
   
@@ -59,7 +98,7 @@ class multiset
  *Compare*  
  2 つの要素の値を並べ替えキーとして比較して、multiset 内の要素の相対順序を決定できる関数オブジェクトを提供する型。 二項述語 **less**\<Key> が既定値です。  
   
- C++&14; では、型パラメーターを使用せずに `std::less<>` 述語または `std::greater<>` 述語を指定することで、異種ルックアップを有効にすることができます。 詳細については、「[連想コンテナーの異種ルックアップ](../standard-library/stl-containers.md#sequence_containers)」をご覧ください。  
+ C++ 14 では、型パラメーターを使用せずに `std::less<>` 述語または `std::greater<>` 述語を指定することで、異種ルックアップを有効にすることができます。 詳細については、「[連想コンテナーの異種ルックアップ](../standard-library/stl-containers.md#sequence_containers)」をご覧ください。  
   
  `Allocator`  
  メモリの multiset の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 既定値は、**allocator***\<Key> です。*  
@@ -73,90 +112,90 @@ class multiset
   
 -   並べ替えが実行されます。これは、指定した比較関数に従ってコンテナー内のキー値によって要素に順序が設定されるためです。  
   
--   複数対応です。要素は一意のキーを持つ必要がないので、関連する多くの要素値を&1; つのキー値が持つことができるためです。  
+-   複数対応です。要素は一意のキーを持つ必要がないので、関連する多くの要素値を 1 つのキー値が持つことができるためです。  
   
 -   単純な連想コンテナーです。これは、要素値がキー値であるためです。  
   
 -   テンプレート クラスとして機能します。これは、このクラスに用意されている機能が汎用的な機能であり、要素として保持されているデータの特定の型に依存しないためです。 使用されているデータ型は、クラス テンプレートで比較関数やアロケーターと共にパラメーターとして指定されます。  
   
- multiset クラスに用意されている反復子は双方向反復子ですが、クラス メンバー関数 [insert](#multiset__insert) と [multiset](#multiset__multiset) には、弱い入力反復子をテンプレート パラメーターとして取得するバージョンがあります。この反復子の機能に関する要件は、双方向反復子のクラスで保証されている要件よりも低くなっています。 これらの反復子の機能に差異があるのは、反復子の概念が異なっているためです。 反復子の各概念には、反復子独自の一連の要件が含まれています。また、それらの要件を使用するアルゴリズムでは、反復子の種類ごとに指定されている要件に対して、前提を絞り込む必要があります。 たとえば、一部のオブジェクトを参照するために入力反復子が逆参照される可能性があることを前提とする場合があります。さらに、シーケンス内にある次の反復子に対して逆参照が増加する可能性があることを前提とする場合もあります。 これは最小限の機能ですが、クラスのメンバー関数という文脈で反復子の範囲 [ `First`, `Last`) について意味を成していれば十分です。  
+ multiset クラスに用意されている反復子は双方向反復子ですが、クラス メンバー関数 [insert](#insert) と [multiset](#multiset) には、弱い入力反復子をテンプレート パラメーターとしてとるバージョンがあります。この反復子の機能要件は、双方向反復子のクラスで保証されている要件よりも低くなっています。 これらの反復子の機能に差異があるのは、反復子の概念が異なっているためです。 反復子の各概念には、反復子独自の一連の要件が含まれています。また、それらの要件を使用するアルゴリズムでは、反復子の種類ごとに指定されている要件に対して、前提を絞り込む必要があります。 たとえば、一部のオブジェクトを参照するために入力反復子が逆参照される可能性があることを前提とする場合があります。さらに、シーケンス内にある次の反復子に対して逆参照が増加する可能性があることを前提とする場合もあります。 これは最小限の機能ですが、クラスのメンバー関数という文脈で反復子の範囲 [ `First`, `Last`) について意味を成していれば十分です。  
   
  一般的に、コンテナー型の選択は、アプリケーションにおいて必要な検索および挿入の種類に基づいている必要があります。 連想コンテナーは、検索、挿入、削除の各操作用に最適化されています。 これらの操作を明示的にサポートするメンバー関数は効率的であり、処理時間は平均的にコンテナー内にある要素の数の対数に比例します。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を具体的に指す反復子だけが無効化されます。  
   
  値とキーを関連付ける条件をアプリケーションが満たしている場合、multiset は最適な連想コンテナーとなっている必要があります。 multiset の要素は複数の場合があり、それ自体の並べ替えキーとして機能する場合があるため、キーは一意ではありません。 この種類の構造体のモデルは、単語が複数回出現する可能性がある単語の順序付きのリストです。 単語が複数回出現することが許可されてない場合は、set が適切なコンテナー構造体となります。 一意の定義が値として一意のキーワードのリストにアタッチされている場合は、map がこのデータを格納するのに適切な構造体です。 定義が一意でない場合は、multimap が最適なコンテナーです。  
   
- multiset では、`Compare` 型の格納されている関数オブジェクトを呼び出すことによって、制御するシーケンスを並べ替えます。 この格納されているオブジェクトは比較関数であり、メンバー関数 [key_comp](#multiset__key_comp) を呼び出すことによってアクセスできます。 通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。 二項述語 *f*( *x*, *y*) は、2 つの引数オブジェクト *x* および *y* と戻り値 (**true** または **false**) を持つ関数オブジェクトです。 set に適用される順序付けは、二項述語が非再帰、反対称、推移的であり、等価性が推移的である (2 つのオブジェクト x と y が、*f*( *x,y*) と *f*( *y,x*) の両方が false の場合に等価になるように定義されている) 場合、厳密弱順序になります。 2 つのキーの等値に関する条件が等価性の条件よりも厳しく、優先される場合、順序付けは完全な順序付け (すべての要素が相互の値に基づいて並べ替えられる) となり、一致するそれぞれのキーを識別するのが難しくなります。  
+ multiset では、`Compare` 型の格納されている関数オブジェクトを呼び出すことによって、制御するシーケンスを並べ替えます。 この格納されているオブジェクトは比較関数であり、メンバー関数 [key_comp](#key_comp) を呼び出すことによってアクセスできます。 通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。 二項述語 *f*( *x*, *y*) は、2 つの引数オブジェクト *x* および *y* と戻り値 (**true** または **false**) を持つ関数オブジェクトです。 set に適用される順序付けは、二項述語が非再帰、反対称、推移的であり、等価性が推移的である (2 つのオブジェクト x と y が、*f*( *x,y*) と *f*( *y,x*) の両方が false の場合に等価になるように定義されている) 場合、厳密弱順序になります。 2 つのキーの等値に関する条件が等価性の条件よりも厳しく、優先される場合、順序付けは完全な順序付け (すべての要素が相互の値に基づいて並べ替えられる) となり、一致するそれぞれのキーを識別するのが難しくなります。  
   
- C++&14; では、型パラメーターを使用せずに `std::less<>` 述語または `std::greater<>` 述語を指定することで、異種ルックアップを有効にすることができます。 詳細については、「[連想コンテナーの異種ルックアップ](../standard-library/stl-containers.md#sequence_containers)」をご覧ください。  
+ C++ 14 では、型パラメーターを使用せずに `std::less<>` 述語または `std::greater<>` 述語を指定することで、異種ルックアップを有効にすることができます。 詳細については、「[連想コンテナーの異種ルックアップ](../standard-library/stl-containers.md#sequence_containers)」をご覧ください。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[multiset](#multiset__multiset)|空であるか、指定された `multiset` の全体または一部のコピーである `multiset` を構築します。|  
+|[multiset](#multiset)|空であるか、指定された `multiset` の全体または一部のコピーである `multiset` を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[allocator_type](#multiset__allocator_type)|`allocator` オブジェクトの `multiset` クラスの typedef。|  
-|[const_iterator](#multiset__const_iterator)|`const` 内の `multiset` 要素を読み取ることができる双方向反復子の typedef。|  
-|[const_pointer](#multiset__const_pointer)|`const` 内の `multiset` 要素へのポインターの typedef。|  
-|[const_reference](#multiset__const_reference)|`const` に格納された `multiset` 要素への参照の typedef (読み取りと `const` 操作を実行するため)。|  
-|[const_reverse_iterator](#multiset__const_reverse_iterator)|`const` 内の `multiset` 要素を読み取ることができる双方向反復子の typedef。|  
-|[difference_type](#multiset__difference_type)|反復子が指す要素の範囲内にある `multiset` の要素の数に対する符号付き整数の typedef。|  
-|[iterator](#multiset__iterator)|`multiset` 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
-|[key_compare](#multiset__key_compare)|2 つのキーを比較して、`multiset` 内の&2; つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
-|[key_type](#multiset__key_type)|2 つの並べ替えキーを比較して、`multiset` 内の&2; つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
-|[pointer](#multiset__pointer)|`multiset` 内の要素へのポインターの typedef。|  
-|[reference](#multiset__reference)|`multiset` に格納されている要素への参照の typedef。|  
-|[reverse_iterator](#multiset__reverse_iterator)|反転された `multiset` 内の&1; つの要素の読み取りまたは変更ができる双方向反復子の typedef。|  
-|[size_type](#multiset__size_type)|`multiset` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_compare](#multiset__value_compare)|2 つ要素を並べ替えキーとして比較して、`multiset` 内の相対順序を決定できる関数オブジェクトの typedef。|  
-|[value_type](#multiset__value_type)|要素としての値として、容量が `multiset` として格納されるオブジェクトを表す typedef。|  
+|[allocator_type](#allocator_type)|`allocator` オブジェクトの `multiset` クラスの typedef。|  
+|[const_iterator](#const_iterator)|`const` 内の `multiset` 要素を読み取ることができる双方向反復子の typedef。|  
+|[const_pointer](#const_pointer)|`const` 内の `multiset` 要素へのポインターの typedef。|  
+|[const_reference](#const_reference)|`const` に格納された `multiset` 要素への参照の typedef (読み取りと `const` 操作を実行するため)。|  
+|[const_reverse_iterator](#const_reverse_iterator)|`const` 内の `multiset` 要素を読み取ることができる双方向反復子の typedef。|  
+|[difference_type](#difference_type)|反復子が指す要素の範囲内にある `multiset` の要素の数に対する符号付き整数の typedef。|  
+|[iterator](#iterator)|`multiset` 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
+|[key_compare](#key_compare)|2 つのキーを比較して、`multiset` 内の 2 つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
+|[key_type](#key_type)|2 つの並べ替えキーを比較して、`multiset` 内の 2 つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
+|[pointer](#pointer)|`multiset` 内の要素へのポインターの typedef。|  
+|[reference](#reference)|`multiset` に格納されている要素への参照の typedef。|  
+|[reverse_iterator](#reverse_iterator)|反転された `multiset` 内の 1 つの要素の読み取りまたは変更ができる双方向反復子の typedef。|  
+|[size_type](#size_type)|`multiset` 内の要素の数を表すことができる符号なし整数型。|  
+|[value_compare](#value_compare)|2 つ要素を並べ替えキーとして比較して、`multiset` 内の相対順序を決定できる関数オブジェクトの typedef。|  
+|[value_type](#value_type)|要素としての値として、容量が `multiset` として格納されるオブジェクトを表す typedef。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[begin](#multiset__begin)|`multiset` 内の最初の要素を指す反復子を返します。|  
-|[cbegin](#multiset__cbegin)|`multiset` 内の最初の要素を指す定数反復子を返します。|  
-|[cend](#multiset__cend)|`multiset` 内の最後の要素の次の位置を指す定数反復子を返します。|  
-|[clear](#multiset__clear)|`multiset` のすべての要素を消去します。|  
-|[count](#multiset__count)|パラメーターに指定したキーに一致するキーを持つ、`multiset` 内の要素の数を返します。|  
-|[crbegin](#multiset__crbegin)|反転された set 内の最初の要素を指す定数反復子を返します。|  
-|[crend](#multiset__crend)|反転された set 内の最後の要素の次の位置を指す定数反復子を返します。|  
-|[emplace](#multiset__emplace)|インプレースで構築された要素を `multiset` に挿入します。|  
-|[emplace_hint](#multiset__emplace_hint)|インプレースで構築された要素を、配置ヒントと共に `multiset` に挿入します。|  
-|[empty](#multiset__empty)|`multiset` が空かどうかをテストします。|  
-|[end](#multiset__end)|`multiset` 内の最後の要素の次の位置を指す反復子を返します。|  
-|[equal_range](#multiset__equal_range)|反復子のペアを返します。 ペアに含まれる最初の反復子は、指定したキーよりも大きいキーを持つ、`multiset` 内の最初の要素を指します。 ペアに含まれる&2; 番目の反復子は、指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指します。|  
-|[erase](#multiset__erase)|`multiset` 内の要素または要素の範囲を指定した位置から削除するか、または指定したキーと一致する要素を削除します。|  
-|[find](#multiset__find)|指定したキーと同じキーを持つ、`multiset` 内の要素の位置を指す反復子を返します。|  
-|[get_allocator](#multiset__get_allocator)|`allocator` の構築に使用される `multiset` オブジェクトのコピーを返します。|  
-|[insert](#multiset__insert)|`multiset` に要素または要素範囲を挿入します。|  
-|[key_comp](#multiset__key_comp)|2 つの並べ替えキーを比較して、`multiset` 内の&2; つの要素の相対順序を決定できる関数オブジェクトを提供します。|  
-|[lower_bound](#multiset__lower_bound)|指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指す反復子を返します。|  
-|[max_size](#multiset__max_size)|`multiset` の最大長を返します。|  
-|[rbegin](#multiset__rbegin)|反転された `multiset` 内の最初の要素を指す反復子を返します。|  
-|[rend](#multiset__rend)|反転された `multiset` 内の最後の要素の次の位置を指す反復子を返します。|  
-|[size](#multiset__size)|`multiset` 内の要素数を返します。|  
-|[swap](#multiset__swap)|2 つの `multiset` の要素を交換します。|  
-|[upper_bound](#multiset__upper_bound)|指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指す反復子を返します。|  
-|[value_comp](#multiset__value_comp)|`multiset` 内の要素の値を並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
+|[begin](#begin)|`multiset` 内の最初の要素を指す反復子を返します。|  
+|[cbegin](#cbegin)|`multiset` 内の最初の要素を指す定数反復子を返します。|  
+|[cend](#cend)|`multiset` 内の最後の要素の次の位置を指す定数反復子を返します。|  
+|[clear](#clear)|`multiset` のすべての要素を消去します。|  
+|[count](#count)|パラメーターに指定したキーに一致するキーを持つ、`multiset` 内の要素の数を返します。|  
+|[crbegin](#crbegin)|反転された set 内の最初の要素を指す定数反復子を返します。|  
+|[crend](#crend)|反転された set 内の最後の要素の次の位置を指す定数反復子を返します。|  
+|[emplace](#emplace)|インプレースで構築された要素を `multiset` に挿入します。|  
+|[emplace_hint](#emplace_hint)|インプレースで構築された要素を、配置ヒントと共に `multiset` に挿入します。|  
+|[empty](#empty)|`multiset` が空かどうかをテストします。|  
+|[end](#end)|`multiset` 内の最後の要素の次の位置を指す反復子を返します。|  
+|[equal_range](#equal_range)|反復子のペアを返します。 ペアに含まれる最初の反復子は、指定したキーよりも大きいキーを持つ、`multiset` 内の最初の要素を指します。 ペアに含まれる 2 番目の反復子は、指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指します。|  
+|[erase](#erase)|`multiset` 内の要素または要素の範囲を指定した位置から削除するか、または指定したキーと一致する要素を削除します。|  
+|[find](#find)|指定したキーと同じキーを持つ、`multiset` 内の要素の位置を指す反復子を返します。|  
+|[get_allocator](#get_allocator)|`allocator` の構築に使用される `multiset` オブジェクトのコピーを返します。|  
+|[insert](#insert)|`multiset` に要素または要素範囲を挿入します。|  
+|[key_comp](#key_comp)|2 つの並べ替えキーを比較して、`multiset` 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供します。|  
+|[lower_bound](#lower_bound)|指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指す反復子を返します。|  
+|[max_size](#max_size)|`multiset` の最大長を返します。|  
+|[rbegin](#rbegin)|反転された `multiset` 内の最初の要素を指す反復子を返します。|  
+|[rend](#rend)|反転された `multiset` 内の最後の要素の次の位置を指す反復子を返します。|  
+|[size](#size)|`multiset` 内の要素数を返します。|  
+|[swap](#swap)|2 つの `multiset` の要素を交換します。|  
+|[upper_bound](#upper_bound)|指定したキー以上のキーを持つ、`multiset` 内の最初の要素を指す反復子を返します。|  
+|[value_comp](#value_comp)|`multiset` 内の要素の値を並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator=](#multiset__operator_eq)|別の `multiset` のコピーで `multiset` の要素を置き換えます。|  
+|[operator=](#op_eq)|別の `multiset` のコピーで `multiset` の要素を置き換えます。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<set>  
   
  **名前空間:** std  
   
-##  <a name="a-namemultisetallocatortypea--multisetallocatortype"></a><a name="multiset__allocator_type"></a>  multiset::allocator_type  
+##  <a name="allocator_type"></a>  multiset::allocator_type  
  multiset オブジェクトのアロケーター クラスを表す型。  
   
 ```  
@@ -169,10 +208,10 @@ typedef Allocator allocator_type;
  `Allocator` の詳細については、[multiset クラス](../standard-library/multiset-class.md)のトピックのコメントのセクションをご覧ください。  
   
 ### <a name="example"></a>例  
-  `allocator_type` の使用例については、[get_allocator](#multiset__get_allocator) の例をご覧ください。  
+  `allocator_type` の使用例については、[get_allocator](#get_allocator) の例をご覧ください。  
   
-##  <a name="a-namemultisetbegina--multisetbegin"></a><a name="multiset__begin"></a>  multiset::begin  
- multiset の&1; つ目の要素を指す反復子を返します。  
+##  <a name="begin"></a>  multiset::begin  
+ multiset の 1 つ目の要素を指す反復子を返します。  
   
 ```  
 const_iterator begin() const;
@@ -222,7 +261,7 @@ The first element of ms1 is 1
 The first element of ms1 is now 2  
 ```  
   
-##  <a name="a-namemultisetcbegina--multisetcbegin"></a><a name="multiset__cbegin"></a>  multiset::cbegin  
+##  <a name="cbegin"></a>  multiset::cbegin  
  範囲内の最初の要素を示す `const` 反復子を返します。  
   
 ```  
@@ -245,7 +284,7 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator  
 ```  
   
-##  <a name="a-namemultisetcenda--multisetcend"></a><a name="multiset__cend"></a>  multiset::cend  
+##  <a name="cend"></a>  multiset::cend  
  範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
   
 ```  
@@ -270,7 +309,7 @@ auto i2 = Container.cend();
   
  `cend` によって返された値は逆参照しないでください。  
   
-##  <a name="a-namemultisetcleara--multisetclear"></a><a name="multiset__clear"></a>  multiset::clear  
+##  <a name="clear"></a>  multiset::clear  
  multiset のすべての要素を消去します。  
   
 ```  
@@ -307,7 +346,7 @@ The size of the multiset is initially 2.
 The size of the multiset after clearing is 0.  
 ```  
   
-##  <a name="a-namemultisetconstiteratora--multisetconstiterator"></a><a name="multiset__const_iterator"></a>  multiset::const_iterator  
+##  <a name="const_iterator"></a>  multiset::const_iterator  
  multiset 内の **const** 要素を読み取ることができる双方向反復子を提供する型。  
   
 ```  
@@ -318,9 +357,9 @@ typedef implementation-defined const_iterator;
  `const_iterator` 型で要素の値を変更することはできません。  
   
 ### <a name="example"></a>例  
-  `const_iterator` の使用例については、[begin](#multiset__begin) の例をご覧ください。  
+  `const_iterator` の使用例については、[begin](#begin) の例をご覧ください。  
   
-##  <a name="a-namemultisetconstpointera--multisetconstpointer"></a><a name="multiset__const_pointer"></a>  multiset::const_pointer  
+##  <a name="const_pointer"></a>  multiset::const_pointer  
  multiset 内の **const** 要素へのポインターを提供する型。  
   
 ```  
@@ -330,10 +369,10 @@ typedef typename allocator_type::const_pointer const_pointer;
 ### <a name="remarks"></a>コメント  
  `const_pointer` 型で要素の値を変更することはできません。  
   
- ほとんどの場合、multiset オブジェクト内の要素にアクセスするには[反復子](#multiset__iterator)を使用する必要があります。  
+ ほとんどの場合、multiset オブジェクト内の要素にアクセスするには[反復子](#iterator)を使用する必要があります。  
   
-##  <a name="a-namemultisetconstreferencea--multisetconstreference"></a><a name="multiset__const_reference"></a>  multiset::const_reference  
- **const** 操作の読み取りと実行のために、multiset に格納された **const** 要素への参照を提供する型。  
+##  <a name="const_reference"></a>  multiset::const_reference  
+ 読み取りと **const** 操作の実行のために、multiset に格納された **const** 要素への参照を提供する型。  
   
 ```  
 typedef typename allocator_type::const_reference const_reference;  
@@ -372,7 +411,7 @@ int main( )
 The first element in the multiset is 10.  
 ```  
   
-##  <a name="a-namemultisetconstreverseiteratora--multisetconstreverseiterator"></a><a name="multiset__const_reverse_iterator"></a>  multiset::const_reverse_iterator  
+##  <a name="const_reverse_iterator"></a>  multiset::const_reverse_iterator  
  multiset 内の任意の **const** 要素を読み取ることができる双方向反復子を提供する型。  
   
 ```  
@@ -383,9 +422,9 @@ typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
  `const_reverse_iterator` 型は要素の値を変更できず、逆の順序で multiset を反復処理するために使用します。  
   
 ### <a name="example"></a>例  
-  `const_reverse_iterator` の宣言方法や使用方法の例については、[rend](#multiset__rend) の例をご覧ください。  
+  `const_reverse_iterator` の宣言方法や使用方法の例については、[rend](#rend) の例をご覧ください。  
   
-##  <a name="a-namemultisetcounta--multisetcount"></a><a name="multiset__count"></a>  multiset::count  
+##  <a name="count"></a>  multiset::count  
  パラメーター指定したキーと一致するキーを持つ、multiset 内の要素の数を返します。  
   
 ```  
@@ -393,7 +432,7 @@ size_type count(const Key& key) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  照合される multiset の要素のキー。  
   
 ### <a name="return-value"></a>戻り値  
@@ -445,7 +484,7 @@ The number of elements in ms1 with a sort key of 2 is: 1.
 The number of elements in ms1 with a sort key of 3 is: 0.  
 ```  
   
-##  <a name="a-namemultisetcrbegina--multisetcrbegin"></a><a name="multiset__crbegin"></a>  multiset::crbegin  
+##  <a name="crbegin"></a>  multiset::crbegin  
  反転された multiset 内の最初の要素を示す定数反復子を返します。  
   
 ```  
@@ -458,7 +497,7 @@ const_reverse_iterator crbegin() const;
 ### <a name="remarks"></a>コメント  
  `crbegin` は、begin が multiset で使用されるのと同様に、反転された multiset で使用されます。  
   
- 戻り値が `crbegin`の場合、multiset オブジェクトは変更できません。  
+ `crbegin` の戻り値で multiset オブジェクトを変更することはできません。  
   
  `crbegin` を使用して、multiset 内を後方に向かって反復処理できます。  
   
@@ -490,7 +529,7 @@ int main( )
 The first element in the reversed multiset is 30.  
 ```  
   
-##  <a name="a-namemultisetcrenda--multisetcrend"></a><a name="multiset__crend"></a>  multiset::crend  
+##  <a name="crend"></a>  multiset::crend  
  反転された multiset 内の最後の要素の次の位置を指す定数反復子を返します。  
   
 ```  
@@ -501,9 +540,9 @@ const_reverse_iterator crend() const;
  反転された multiset 内の最後の要素の次の場所 (反転されていない multiset 内の最初の要素の前の場所) を指す定数逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `crend` は、[end](#multiset__end) が multiset で使用されるのと同様に、反転された multiset で使用されます。  
+ `crend` は、[end](#end) が multiset で使用されるのと同様に、反転された multiset で使用されます。  
   
- 戻り値が `crend` の場合、multiset オブジェクトは変更できません。  
+ `crend` の戻り値で multiset オブジェクトを変更することはできません。  
   
  `crend` を使用して、逆順反復子が multiset の末尾に達したかどうかをテストできます。  
   
@@ -533,7 +572,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namemultisetdifferencetypea--multisetdifferencetype"></a><a name="multiset__difference_type"></a>  multiset::difference_type  
+##  <a name="difference_type"></a>  multiset::difference_type  
  反復子が指す要素の範囲内にある multiset の要素の数を表すのに使用できる符号付き整数型。  
   
 ```  
@@ -541,7 +580,7 @@ typedef typename allocator_type::difference_type difference_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `difference_type` は、コンテナーの反復子を減算またはインクリメントするときに返される型です。 通常、`difference_type` は、[ ` first`, ` last`) の範囲内で、反復子 ` first` と ` last` の間にある要素の数を表すために使用され、` first` が指す要素と、` last` が指す要素の&1; つ前までの範囲の要素を含みます。  
+ `difference_type` は、コンテナーの反復子を減算またはインクリメントするときに返される型です。 通常、`difference_type` は、[ `first`, `last`) の範囲内で、反復子 `first` と `last` の間にある要素の数を表すために使用され、`first` が指す要素と、`last` が指す要素の 1 つ前までの範囲の要素を含みます。  
   
  `difference_type` は、入力反復子の要件を満たすすべての反復子 (set などの反転可能なコンテナーによってサポートされる双方向反復子のクラスを含む) に対して使用できますが、反復子間の減算は、vector などのランダム アクセス コンテナーによって提供される、ランダム アクセス反復子によってのみサポートされます。  
   
@@ -603,7 +642,7 @@ The number '20' occurs 2 times in multiset ms1.
 The number of elements in the multiset ms1 is: 3.  
 ```  
   
-##  <a name="a-namemultisetemplacea--multisetemplace"></a><a name="multiset__emplace"></a>  multiset::emplace  
+##  <a name="emplace"></a>  multiset::emplace  
  インプレースで構築された (コピーまたは移動操作が実行されない) 要素を、配置ヒントと一緒に挿入します。  
   
 ```  
@@ -668,7 +707,7 @@ int main()
   
 ```  
   
-##  <a name="a-namemultisetemplacehinta--multisetemplacehint"></a><a name="multiset__emplace_hint"></a>  multiset::emplace_hint  
+##  <a name="emplace_hint"></a>  multiset::emplace_hint  
  インプレースで構築された (コピーまたは移動操作が実行されない) 要素を、配置ヒントと一緒に挿入します。  
   
 ```  
@@ -694,9 +733,9 @@ iterator emplace_hint(
   
  配置の実行中、例外がスローされるとコンテナーの状態は変更されません。  
   
- コード例については、「[set::emplace_hint](../standard-library/set-class.md#set__emplace_hint)」をご覧ください。  
+ コード例については、「[set::emplace_hint](../standard-library/set-class.md#emplace_hint)」をご覧ください。  
   
-##  <a name="a-namemultisetemptya--multisetempty"></a><a name="multiset__empty"></a>  multiset::empty  
+##  <a name="empty"></a>  multiset::empty  
  multiset が空かどうかをテストします。  
   
 ```  
@@ -737,7 +776,7 @@ The multiset ms1 is not empty.
 The multiset ms2 is empty.  
 ```  
   
-##  <a name="a-namemultisetenda--multisetend"></a><a name="multiset__end"></a>  multiset::end  
+##  <a name="end"></a>  multiset::end  
  末尾超え反復子を返します。  
   
 ```  
@@ -756,9 +795,9 @@ iterator end();
   
  **end** によって返された値は逆参照しないでください。  
   
- コード例については、「[multiset::find](#multiset__find)」をご覧ください。  
+ コード例については、「[multiset::find](#find)」をご覧ください。  
   
-##  <a name="a-namemultisetequalrangea--multisetequalrange"></a><a name="multiset__equal_range"></a>  multiset::equal_range  
+##  <a name="equal_range"></a>  multiset::equal_range  
  指定したキーよりも大きいキーを持つ multiset 内の最初の要素を指す反復子と、そのキー以上のキーを持つ multiset 内の最初の要素を指す反復子、のペアを返します。  
   
 ```  
@@ -768,13 +807,13 @@ pair <iterator, iterator> equal_range (const Key& key);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の multiset 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
- 1 番目がそのキーの [lower_bound](#multiset__lower_bound)、2 番目がそのキーの [upper_bound](#multiset__upper_bound) である、反復子のペア。  
+ 1 番目がそのキーの [lower_bound](#lower_bound)、2 番目がそのキーの [upper_bound](#upper_bound) である、反復子のペア。  
   
- ペアの最初の反復子にアクセスする`pr`使用してメンバー関数によって返される`pr`です。 **最初**、下限の境界の反復子を逆参照するには使用と\*(`pr`します。 **まず**)。 ペアの&2; つ目の反復子にアクセスする`pr`使用してメンバー関数によって返される`pr`です。 **2 番目**、上限の反復子を逆参照するには使用と\*(`pr`します。 **次に**)。  
+ ペアの最初の反復子にアクセスする`pr`使用して、メンバー関数によって返される、`pr`です。 **最初**、下限反復子を逆参照を使用して\*(`pr`です。 **まず**)。 ペアの 2 つ目の反復子にアクセスする`pr`使用して、メンバー関数によって返される、`pr`です。 **2 番目**、上限の反復子を逆参照を使用して\*(`pr`です。 **2 つ目**)。  
   
 ### <a name="example"></a>例  
   
@@ -834,7 +873,7 @@ matching the 2nd element of the pair returned by equal_range( 20 ).
 The multiset ms1 doesn't have an element with a key less than 40.  
 ```  
   
-##  <a name="a-namemultiseterasea--multiseterase"></a><a name="multiset__erase"></a>  multiset::erase  
+##  <a name="erase"></a>  multiset::erase  
  multiset 内の要素または要素範囲を指定した位置から削除するか、指定したキーと一致する要素を削除します。  
   
 ```  
@@ -863,14 +902,14 @@ size_type erase(
  削除される要素のキー値。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのメンバー関数では、削除された要素の後にある最初の残存要素を指定する双方向反復子、またはこのような要素が存在しない場合は multiset の最後の要素を指定する双方向反復子が返されます。  
+ 最初の 2 つのメンバー関数では、削除された要素の後にある最初の残存要素を指定する双方向反復子、またはこのような要素が存在しない場合は multiset の最後の要素を指定する双方向反復子が返されます。  
   
  3 番目のメンバー関数では、multiset から削除された要素の数が返されます。  
   
 ### <a name="remarks"></a>コメント  
- コード例については、「[set::erase](../standard-library/set-class.md#set__erase)」をご覧ください。  
+ コード例については、「[set::erase](../standard-library/set-class.md#erase)」をご覧ください。  
   
-##  <a name="a-namemultisetfinda--multisetfind"></a><a name="multiset__find"></a>  multiset::find  
+##  <a name="find"></a>  multiset::find  
  指定したキーと等価のキーを持つ、multiset 内の要素の位置を参照する反復子を返します。  
   
 ```  
@@ -953,7 +992,7 @@ int main()
 }  
 ```  
   
-##  <a name="a-namemultisetgetallocatora--multisetgetallocator"></a><a name="multiset__get_allocator"></a>  multiset::get_allocator  
+##  <a name="get_allocator"></a>  multiset::get_allocator  
  multiset の構築に使用されるアロケーター オブジェクトのコピーを返します。  
   
 ```  
@@ -964,7 +1003,7 @@ allocator_type get_allocator() const;
  multiset で使用されるアロケーター。  
   
 ### <a name="remarks"></a>コメント  
- multiset クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 C++ 標準ライブラリ コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の&1; つです。  
+ multiset クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 C++ 標準ライブラリ コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の 1 つです。  
   
 ### <a name="example"></a>例  
   
@@ -1018,7 +1057,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namemultisetinserta--multisetinsert"></a><a name="multiset__insert"></a>  multiset::insert  
+##  <a name="insert"></a>  multiset::insert  
  multiset に要素や要素範囲を挿入します。  
   
 ```  
@@ -1067,10 +1106,10 @@ IList);
 |パラメーター|説明|  
 |`Val`|multiset に挿入する要素の値。|  
 |`Where`|正しい挿入ポイントの検索を開始する場所  (その位置が `Where` の直前にある場合、挿入処理は対数時間ではなく償却定数時間で実行できます)。|  
-|`ValTy`|multiset が [value_type](../standard-library/map-class.md#map__value_type) の要素を構築するために使用できる引数の型を指定し、`Val` を引数として完全転送するテンプレート パラメーター。|  
+|`ValTy`|multiset が [value_type](../standard-library/map-class.md#value_type) の要素を構築するために使用できる引数の型を指定し、`Val` を引数として完全転送するテンプレート パラメーター。|  
 |`First`|コピーされる最初の要素の位置。|  
 |`Last`|コピーされる最後の要素の次の位置。|  
-|`InputIterator`|[入力反復子](../standard-library/input-iterator-tag-struct.md)の要件を満たすテンプレート関数の引数。この反復子は、[value_type](../standard-library/map-class.md#map__value_type) オブジェクトの構築に使用できる型の要素を指し示します。|  
+|`InputIterator`|[入力反復子](../standard-library/input-iterator-tag-struct.md)の要件を満たすテンプレート関数の引数。この反復子は、[value_type](../standard-library/map-class.md#value_type) オブジェクトの構築に使用できる型の要素を指し示します。|  
 |`IList`|要素のコピー元の [initializer_list](../standard-library/initializer-list.md)。|  
   
 ### <a name="return-value"></a>戻り値  
@@ -1081,15 +1120,15 @@ IList);
 ### <a name="remarks"></a>コメント  
  この関数では、ポインターや参照は無効になりません。ただし、コンテナーを指すすべての反復子が無効になる場合があります。  
   
- 要素を&1; つだけ挿入するとき、例外がスローされるとコンテナーの状態は変更されません。 複数の要素を挿入するときに例外がスローされた場合、コンテナーの状態は未指定ですが、有効な状態になっています。  
+ 要素を 1 つだけ挿入するとき、例外がスローされるとコンテナーの状態は変更されません。 複数の要素を挿入するときに例外がスローされた場合、コンテナーの状態は未指定ですが、有効な状態になっています。  
   
- コンテナーの [value_type](../standard-library/map-class.md#map__value_type) はそのコンテナーに属する typedef であり、set の場合、`multiset<V>::value_type` は `const V` 型です。  
+ コンテナーの [value_type](../standard-library/map-class.md#value_type) はそのコンテナーに属する typedef であり、set の場合、`multiset<V>::value_type` は `const V` 型です。  
   
  範囲のメンバー関数 (5) は、multiset に要素値のシーケンスを挿入します。このシーケンスは、範囲 `[First, Last)` の反復子によってアドレス指定された各要素に対応します。したがって、`Last` は挿入されません。 コンテナーのメンバー関数 `end()` は、コンテナー内にある最後の要素の直後の位置を参照します。たとえば、ステートメント `s.insert(v.begin(), v.end());` は、`v` のすべての要素を `s` に挿入します。  
   
  初期化子リストのメンバー関数 (6) は、[initializer_list](../standard-library/initializer-list.md) を使用して multiset に要素をコピーします。  
   
- インプレースで構築された (つまり、コピーまたは移動操作が実行されない) 要素の挿入については、「[multiset::emplace](#multiset__emplace)」および「[multiset::emplace_hint](#multiset__emplace_hint)」をご覧ください。  
+ インプレースで構築された (つまり、コピーまたは移動操作が実行されない) 要素の挿入については、「[multiset::emplace](#emplace)」および「[multiset::emplace_hint](#emplace_hint)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1182,7 +1221,7 @@ int main()
   
 ```  
   
-##  <a name="a-namemultisetiteratora--multisetiterator"></a><a name="multiset__iterator"></a>  multiset::iterator  
+##  <a name="iterator"></a>  multiset::iterator  
  multiset 内の任意の要素を読み取ることができる、定数の[双方向反復子](../standard-library/bidirectional-iterator-tag-struct.md)を提供する型。  
   
 ```  
@@ -1190,9 +1229,9 @@ typedef implementation-defined iterator;
 ```  
   
 ### <a name="example"></a>例  
-  **反復子**の宣言方法や使用方法の例については、[begin](#multiset__begin) の例をご覧ください。  
+  **反復子**の宣言方法や使用方法の例については、[begin](#begin) の例をご覧ください。  
   
-##  <a name="a-namemultisetkeycompa--multisetkeycomp"></a><a name="multiset__key_comp"></a>  multiset::key_comp  
+##  <a name="key_comp"></a>  multiset::key_comp  
  multiset 内のキーの並べ替えに使用する比較オブジェクトのコピーを取得します。  
   
 ```  
@@ -1209,9 +1248,9 @@ key_compare key_comp() const;
   
  **bool operator**( **const Key&** *x*, **const Key&** *y*);  
   
- これは、並べ替え順で *x* が絶対的に *y* に先行する場合に true を返します。  
+ これは、並べ替え順で *x* が厳密に *y* に先行する場合に true を返します。  
   
- [key_compare](#multiset__key_compare) および [value_compare](#multiset__value_compare) は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス セットおよび multiset で使用でき、そこでは同一ですが、クラス マップおよび multimap では異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス set および multiset で使用でき、そこでは同一ですが、クラス map および multimap では異なるものなので互換性を保つようになっています。  
   
 ### <a name="example"></a>例  
   
@@ -1264,8 +1303,8 @@ kc1( 2,3 ) returns value of true, where kc1 is the function object of s1.
 kc2( 2,3 ) returns value of false, where kc2 is the function object of ms2.  
 ```  
   
-##  <a name="a-namemultisetkeycomparea--multisetkeycompare"></a><a name="multiset__key_compare"></a>  multiset::key_compare  
- 2 つの並べ替えキーを比較して、multiset 内の&2; つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
+##  <a name="key_compare"></a>  multiset::key_compare  
+ 2 つの並べ替えキーを比較して、multiset 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
   
 ```  
 typedef Compare key_compare;  
@@ -1277,10 +1316,10 @@ typedef Compare key_compare;
  `Compare` の詳細については、[multiset クラス](../standard-library/multiset-class.md)のトピックのコメントのセクションをご覧ください。  
   
 ### <a name="example"></a>例  
-  `key_compare` の宣言方法や使用方法の例については、[key_comp](#multiset__key_comp) の例をご覧ください。  
+  `key_compare` の宣言方法や使用方法の例については、[key_comp](#key_comp) の例をご覧ください。  
   
-##  <a name="a-namemultisetkeytypea--multisetkeytype"></a><a name="multiset__key_type"></a>  multiset::key_type  
- 並べ替えキーを比較して、multiset 内の&2; つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
+##  <a name="key_type"></a>  multiset::key_type  
+ 並べ替えキーを比較して、multiset 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
   
 ```  
 typedef Key key_type;  
@@ -1292,9 +1331,9 @@ typedef Key key_type;
  `Key` の詳細については、[multiset クラス](../standard-library/multiset-class.md)のトピックのコメントのセクションをご覧ください。  
   
 ### <a name="example"></a>例  
-  `key_type` の宣言方法や使用方法の例については、[value_type](#multiset__value_type) の例をご覧ください。  
+  `key_type` の宣言方法や使用方法の例については、[value_type](#value_type) の例をご覧ください。  
   
-##  <a name="a-namemultisetlowerbounda--multisetlowerbound"></a><a name="multiset__lower_bound"></a>  multiset::lower_bound  
+##  <a name="lower_bound"></a>  multiset::lower_bound  
  指定したキー以上のキーを持つ、multiset 内の最初の要素を指す反復子を返します。  
   
 ```  
@@ -1304,7 +1343,7 @@ iterator lower_bound(const Key& key);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の multiset 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1359,7 +1398,7 @@ The multiset ms1 doesn't have an element with a key of 40.
 The element of ms1 with a key matching that of the last element is: 30.  
 ```  
   
-##  <a name="a-namemultisetmaxsizea--multisetmaxsize"></a><a name="multiset__max_size"></a>  multiset::max_size  
+##  <a name="max_size"></a>  multiset::max_size  
  multiset の最大長を返します。  
   
 ```  
@@ -1389,7 +1428,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namemultisetmultiseta--multisetmultiset"></a><a name="multiset__multiset"></a>  multiset::multiset  
+##  <a name="multiset"></a>  multiset::multiset  
  空の multiset を構築するか、他の multiset の全体または一部のコピーである multiset を構築します。  
   
 ```  
@@ -1453,21 +1492,21 @@ multiset (
 |`IList`|要素のコピー元の initializer_list。|  
   
 ### <a name="remarks"></a>コメント  
- すべてのコンストラクターは、アロケーター オブジェクトの型を格納します。このオブジェクトは multiset のメモリ ストレージを管理し、後で [get_allocator](#multiset__get_allocator) を呼び出して取得することができます。 代替アロケーターの代わりに使用されるクラス宣言やプリプロセス マクロでは、アロケーターのパラメーターが省略される場合があります。  
+ すべてのコンストラクターは、アロケーター オブジェクトの型を格納します。このオブジェクトは multiset のメモリ ストレージを管理し、後で [get_allocator](#get_allocator) を呼び出して取得することができます。 代替アロケーターの代わりに使用されるクラス宣言やプリプロセス マクロでは、アロケーターのパラメーターが省略される場合があります。  
   
  すべてのコンストラクターは、それぞれの multiset を初期化します。  
   
- すべてのコンストラクターは、Compare 型の関数オブジェクトを格納します。このオブジェクトは multiset のキーの順序を確立するために使用され、後で [key_comp](#multiset__key_comp) を呼び出して取得することができます。  
+ すべてのコンストラクターは、Compare 型の関数オブジェクトを格納します。このオブジェクトは multiset のキーの順序を確立するために使用され、後で [key_comp](#key_comp) を呼び出して取得することができます。  
   
- 最初の&3; つのコンストラクターは、空の初期 multiset を指定します。2 番目のコンストラクターは要素の順序を確立するために使用する比較関数の型 (`Comp`) を指定し、3 番目のコンストラクターは使用するアロケーターの型 (`Al`) を明示的に指定します。 キーワード `explicit` は、特定の種類の自動型変換が実行されないようにします。  
+ 最初の 3 つのコンストラクターは、空の初期 multiset を指定します。2 番目のコンストラクターは要素の順序を確立するために使用する比較関数の型 (`Comp`) を指定し、3 番目のコンストラクターは使用するアロケーターの型 (`Al`) を明示的に指定します。 キーワード `explicit` は、特定の種類の自動型変換が実行されないようにします。  
   
  4 番目のコンストラクターは、multiset `Right` のコピーを指定します。  
   
  5 つ目のコンストラクターは、`Right` を移動することによる multiset のコピーを指定します。  
   
- 6 番目、7 番目、および&8; 番目のコンストラクターは、要素のコピー元の initializer_list を指定します。  
+ 6 番目、7 番目、および 8 番目のコンストラクターは、要素のコピー元の initializer_list を指定します。  
   
- 次の&3; つのコンストラクターは、multiset の範囲 `[First, Last)` をコピーします。下のコンストラクターになるほど、より明確に比較関数とアロケーターの型を指定します。  
+ 次の 3 つのコンストラクターは、multiset の範囲 `[First, Last)` をコピーします。下のコンストラクターになるほど、より明確に比較関数とアロケーターの型を指定します。  
   
 ### <a name="example"></a>例  
   
@@ -1570,7 +1609,7 @@ int main()
 }  
 ```  
   
-##  <a name="a-namemultisetoperatoreqa--multisetoperator"></a><a name="multiset__operator_eq"></a>  multiset::operator=  
+##  <a name="op_eq"></a>  multiset::operator=  
  この `multiset` の要素を、別の `multiset` の要素を使って置き換えます。  
   
 ```  
@@ -1584,10 +1623,10 @@ multiset& operator=(multiset&& right);
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` right`|要素のコピー元または移動元である `multiset`。|  
+|`right`|要素のコピー元または移動元である `multiset`。|  
   
 ### <a name="remarks"></a>コメント  
- `operator=` は、使用される参照型 (lvalue または rvalue) に基づいて ` right` 内の要素をこの `multiset` にコピーまたは移動します。 `operator=` が実行される前にこの `multiset` に存在する要素は、破棄されます。  
+ `operator=` は、使用される参照型 (lvalue または rvalue) に基づいて `right` 内の要素をこの `multiset` にコピーまたは移動します。 `operator=` が実行される前にこの `multiset` に存在する要素は、破棄されます。  
   
 ### <a name="example"></a>例  
   
@@ -1626,7 +1665,7 @@ int main( )
    }  
 ```  
   
-##  <a name="a-namemultisetpointera--multisetpointer"></a><a name="multiset__pointer"></a>  multiset::pointer  
+##  <a name="pointer"></a>  multiset::pointer  
  multiset 内の要素へのポインターを提供する型。  
   
 ```  
@@ -1636,9 +1675,9 @@ typedef typename allocator_type::pointer pointer;
 ### <a name="remarks"></a>コメント  
  **pointer** 型を使って要素の値を変更することができます。  
   
- ほとんどの場合、multiset オブジェクト内の要素にアクセスするには[反復子](#multiset__iterator)を使用する必要があります。  
+ ほとんどの場合、multiset オブジェクト内の要素にアクセスするには[反復子](#iterator)を使用する必要があります。  
   
-##  <a name="a-namemultisetrbegina--multisetrbegin"></a><a name="multiset__rbegin"></a>  multiset::rbegin  
+##  <a name="rbegin"></a>  multiset::rbegin  
  反転された multiset 内の最初の要素を示す反復子を返します。  
   
 ```  
@@ -1712,7 +1751,7 @@ The reversed multiset is: 30 20 10
 After the erasure, the first element in the reversed multiset is 20.  
 ```  
   
-##  <a name="a-namemultisetreferencea--multisetreference"></a><a name="multiset__reference"></a>  multiset::reference  
+##  <a name="reference"></a>  multiset::reference  
  multiset に格納されている要素への参照を提供する型。  
   
 ```  
@@ -1747,7 +1786,7 @@ int main( )
 The first element in the multiset is 10.  
 ```  
   
-##  <a name="a-namemultisetrenda--multisetrend"></a><a name="multiset__rend"></a>  multiset::rend  
+##  <a name="rend"></a>  multiset::rend  
  反転された multiset 内の最後の要素の次の位置を指す反復子を返します。  
   
 ```  
@@ -1760,7 +1799,7 @@ reverse_iterator rend();
  反転された multiset 内の最後の要素の次の場所 (反転されていない multiset 内の最初の要素の前の場所) を指す逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `rend` は、[end](#multiset__end) が multiset で使用されるのと同様に、反転された multiset で使用されます。  
+ `rend` は、[end](#end) が multiset で使用されるのと同様に、反転された multiset で使用されます。  
   
  `rend` の戻り値が `const_reverse_iterator` に割り当てられる場合は、multiset オブジェクトは変更できません。 `rend` の戻り値が `reverse_iterator` に割り当てられている場合は、multiset オブジェクトを変更できます。  
   
@@ -1817,8 +1856,8 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namemultisetreverseiteratora--multisetreverseiterator"></a><a name="multiset__reverse_iterator"></a>  multiset::reverse_iterator  
- 反転された multiset 内の&1; つの要素の読み取りまたは変更ができる双方向反復子を提供する型。  
+##  <a name="reverse_iterator"></a>  multiset::reverse_iterator  
+ 反転された multiset 内の 1 つの要素の読み取りまたは変更ができる双方向反復子を提供する型。  
   
 ```  
 typedef std::reverse_iterator<iterator> reverse_iterator;  
@@ -1828,9 +1867,9 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
  `reverse_iterator` 型は、逆の順序で multiset を反復処理するために使用します。  
   
 ### <a name="example"></a>例  
-  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#multiset__rbegin) の例をご覧ください。  
+  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例をご覧ください。  
   
-##  <a name="a-namemultisetsizea--multisetsize"></a><a name="multiset__size"></a>  multiset::size  
+##  <a name="size"></a>  multiset::size  
  multiset 内の要素の数を返します。  
   
 ```  
@@ -1869,7 +1908,7 @@ The multiset length is 1.
 The multiset length is now 2.  
 ```  
   
-##  <a name="a-namemultisetsizetypea--multisetsizetype"></a><a name="multiset__size_type"></a>  multiset::size_type  
+##  <a name="size_type"></a>  multiset::size_type  
  multiset 内の要素の数を表すことができる符号なし整数型。  
   
 ```  
@@ -1877,9 +1916,9 @@ typedef typename allocator_type::size_type size_type;
 ```  
   
 ### <a name="example"></a>例  
-  `size_type` の宣言方法や使用方法の例については、[size](#multiset__size) の例をご覧ください。  
+  `size_type` の宣言方法や使用方法の例については、[size](#size) の例をご覧ください。  
   
-##  <a name="a-namemultisetswapa--multisetswap"></a><a name="multiset__swap"></a>  multiset::swap  
+##  <a name="swap"></a>  multiset::swap  
  2 つの multiset の要素を交換します。  
   
 ```  
@@ -1888,11 +1927,11 @@ void swap(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  ターゲットの multiset と交換する要素を提供する引数の multiset。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は、要素を交換する&2; つの multiset において要素を指定している参照、ポインター、反復子を無効化することはありません。  
+ メンバー関数は、要素を交換する 2 つの multiset において要素を指定している参照、ポインター、反復子を無効化することはありません。  
   
 ### <a name="example"></a>例  
   
@@ -1944,7 +1983,7 @@ After swapping with ms2, list ms1 is: 100 200.
 After swapping with ms3, list ms1 is: 300.  
 ```  
   
-##  <a name="a-namemultisetupperbounda--multisetupperbound"></a><a name="multiset__upper_bound"></a>  multiset::upper_bound  
+##  <a name="upper_bound"></a>  multiset::upper_bound  
  指定したキーよりも大きいキーを持つ、multiset 内の最初の要素を指す反復子を返します。  
   
 ```  
@@ -1954,7 +1993,7 @@ iterator upper_bound(const Key& key);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の multiset 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
@@ -2009,7 +2048,7 @@ The first element of ms1 with a key greater than
 that of the initial element of ms1 is: 20.  
 ```  
   
-##  <a name="a-namemultisetvaluecompa--multisetvaluecomp"></a><a name="multiset__value_comp"></a>  multiset::value_comp  
+##  <a name="value_comp"></a>  multiset::value_comp  
  multiset 内の要素の値の並べ替えに使用する比較オブジェクトのコピーを取得します。  
   
 ```  
@@ -2028,7 +2067,7 @@ value_compare value_comp() const;
   
  これは、並べ替え順で `_xVal` が `_yVal` に先行しかつ等しくない場合に true を返します。  
   
- [key_compare](#multiset__key_compare) および [value_compare](#multiset__value_compare) は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス セットおよび multiset で使用でき、そこでは同一ですが、クラス マップおよび multimap では異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス set および multiset で使用でき、そこでは同一ですが、クラス map および multimap では異なるものなので互換性を保つようになっています。  
   
 ### <a name="example"></a>例  
   
@@ -2081,7 +2120,7 @@ vc1( 2,3 ) returns value of true, where vc1 is the function object of ms1.
 vc2( 2,3 ) returns value of false, where vc2 is the function object of ms2.  
 ```  
   
-##  <a name="a-namemultisetvaluecomparea--multisetvaluecompare"></a><a name="multiset__value_compare"></a>  multiset::value_compare  
+##  <a name="value_compare"></a>  multiset::value_compare  
  2 つの並べ替えキーを比較して multiset 内での相対順序を決定できる関数オブジェクトを提供する型。  
   
 ```  
@@ -2091,14 +2130,14 @@ typedef key_compare value_compare;
 ### <a name="remarks"></a>コメント  
  `value_compare` は、テンプレート パラメーター `Compare` のシノニムです。  
   
- [key_compare](#multiset__key_compare) および **value_compare** は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス セットおよび multiset で使用でき、そこでは同一ですが、クラス マップおよび multimap では異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および **value_compare** は両方ともテンプレート パラメーター `Compare` のシノニムです。 どちらもクラス set および multiset で使用でき、そこでは同一ですが、クラス map および multimap では異なるものなので互換性を保つようになっています。  
   
  `Compare` の詳細については、[multiset クラス](../standard-library/multiset-class.md)のトピックのコメントのセクションをご覧ください。  
   
 ### <a name="example"></a>例  
-  `value_compare` の宣言方法や使用方法の例については、[value_comp](#multiset__value_comp) の例をご覧ください。  
+  `value_compare` の宣言方法や使用方法の例については、[value_comp](#value_comp) の例をご覧ください。  
   
-##  <a name="a-namemultisetvaluetypea--multisetvaluetype"></a><a name="multiset__value_type"></a>  multiset::value_type  
+##  <a name="value_type"></a>  multiset::value_type  
  要素としての値として、容量が multiset として格納されるオブジェクトを表す型。  
   
 ```  
@@ -2108,7 +2147,7 @@ typedef Key value_type;
 ### <a name="remarks"></a>コメント  
  `value_type` は、テンプレート パラメーター `Key` のシノニムです。  
   
- [key_type](#multiset__key_type) および `value_type` は両方ともテンプレート パラメーター **Key** のシノニムです。 どちらもクラス セットおよび multiset で使用でき、そこでは同一ですが、クラス マップおよび multimap では異なるものなので互換性を保つようになっています。  
+ [key_type](#key_type) および `value_type` は両方ともテンプレート パラメーター **Key** のシノニムです。 どちらもクラス set および multiset で使用でき、そこでは同一ですが、クラス map および multimap では異なるものなので互換性を保つようになっています。  
   
  `Key` の詳細については、このトピックのコメントのセクションをご覧ください。  
   

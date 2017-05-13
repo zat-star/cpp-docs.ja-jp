@@ -1,64 +1,72 @@
 ---
 title: "type_index クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "typeindex/std::type_index"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "type_index クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- typeindex/std::type_index
+dev_langs:
+- C++
+helpviewer_keywords:
+- type_index class
 ms.assetid: db366119-74cb-43e8-aacf-9679e561fa2f
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# type_index クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: ca921a28653cf83cd76f4d8e826af277f1f574e1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
-`type_index` クラスは [type\_info Class](../cpp/type-info-class.md) にこのようなオブジェクトによってインデックスに役立つようにポインターをラップします。  
+---
+# <a name="typeindex-class"></a>type_index クラス
+`type_index` クラスは、[type_info クラス](../cpp/type-info-class.md)へのポインターをラップして、このクラスのオブジェクトでインデックスを作成しやすくします。  
   
-```  
-class type_index {  
-public:  
-    type_index(const type_info& tinfo);  
-    const char *name() const;  
-    size_t hash_code() const;  
-    bool operator==(const type_info& right) const;  
-    bool operator!=(const type_info& right) const;  
-    bool operator<(const type_info& right) const;  
-    bool operator<=(const type_info& right) const;  
-    bool operator>(const type_info& right) const;  
-    bool operator>=(const type_info& right) const;  
-};  
-```  
+class type_index { public: type_index(const type_info& tinfo); const char *name() const; size_t hash_code() const; bool operator==(const type_info& right) const; bool operator!=(const type_info& right) const; bool operator<(const type_info& right) const; bool operator\<=(const type_info& right) const; bool operator>(const type_info& right) const; bool operator>=(const type_info& right) const; };  
   
- コンストラクターは `&tinfo`に `ptr` を初期化します。  
+ このコンストラクターは、`ptr` を `&tinfo`に初期化します。  
   
- `name` が `ptr->name()` を返します。  
+ `name` は、`ptr->name()` を返します。  
   
- `hash_code` は `ptr->hash_code().` を返します。  
+ `hash_code` の場合、`ptr->hash_code().` が返されます。  
   
- `operator==` が `*ptr == right.ptr` を返します。  
+ `operator==` は、`*ptr == right.ptr` を返します。  
   
- `operator!=` が `!(*this == right)` を返します。  
+ `operator!=` は、`!(*this == right)` を返します。  
   
- `operator<` が `*ptr->before(*right.ptr)` を返します。  
+ `operator<` は、`*ptr->before(*right.ptr)` を返します。  
   
- `operator<=` は `!(right < *this).` を返します。  
+ `operator<=` の場合、`!(right < *this).` が返されます。  
   
- `operator>` の戻り `right < *this`。  
+ `operator>` は、`right < *this` を返します。  
   
- `operator>=` が `!(*this < right)` を返します。  
+ `operator>=` は、`!(*this < right)` を返します。  
   
-## 参照  
- [ランタイム型情報](../Topic/Run-Time%20Type%20Information.md)   
- [\<typeindex\>](../standard-library/typeindex.md)
+## <a name="see-also"></a>関連項目  
+ [ランタイム型情報](../cpp/run-time-type-information.md)   
+ [\<typeindex>](../standard-library/typeindex.md)
+
+
+
+

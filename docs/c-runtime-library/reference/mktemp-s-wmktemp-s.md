@@ -58,10 +58,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0497919857206342c75e998c7ee714f89bc066e5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 6231031dd0bbc5b455e3555731f711ee7de971e7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="mktemps-wmktemps"></a>_mktemp_s、_wmktemp_s
@@ -93,10 +94,10 @@ errno_t _wmktemp_s(
  ファイル名のパターン。  
   
  `sizeInChars`  
- `_wmktemp_s` の場合は&1; バイト文字単位、`_mktemp_s` の場合はワイド文字単位のバッファー サイズ。null 終端文字を含みます。  
+ `_wmktemp_s` の場合は 1 バイト文字単位、`_mktemp_s` の場合はワイド文字単位のバッファー サイズ。null 終端文字を含みます。  
   
 ## <a name="return-value"></a>戻り値  
- これらの関数のどちらも、成功した場合は&0; を返し、エラーの場合はエラー コードを返します。  
+ これらの関数のどちらも、成功した場合は 0 を返し、エラーの場合はエラー コードを返します。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -117,9 +118,9 @@ errno_t _wmktemp_s(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tmktemp_s`|`_mktemp_s`|`_mktemp_s`|`_wmktemp_s`|  
   
- `template` 引数の形式は `baseXXXXXX` です。ここで `base` は新しいファイル名の一部として指定される内容であり、各 X は `_mktemp_s` によって指定される文字のプレースホルダーです。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp_s` では、`base` を保持し、最初の後続の X を英字&1; 文字で置換します。 `_mktemp_s` は、これに続く残りの X を&5; 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
+ `template` 引数の形式は `baseXXXXXX` です。ここで `base` は新しいファイル名の一部として指定される内容であり、各 X は `_mktemp_s` によって指定される文字のプレースホルダーです。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp_s` では、`base` を保持し、最初の後続の X を英字 1 文字で置換します。 `_mktemp_s` は、これに続く残りの X を 5 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
   
- 呼び出しが成功した `_mktemp_s` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp_s` では、以前の呼び出しで `_mktemp_s` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp_s` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp_s` は、以前返した名前で使用していた英字&1; 文字を、次の使用可能な小文字&1; 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
+ 呼び出しが成功した `_mktemp_s` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp_s` では、以前の呼び出しで `_mktemp_s` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp_s` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp_s` は、以前返した名前で使用していた英字 1 文字を、次の使用可能な小文字 1 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
   
 ```  
 fn  
@@ -209,9 +210,6 @@ Unique filename is fnc03188
 Unique filename is fnd03188  
 Unique filename is fne03188  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

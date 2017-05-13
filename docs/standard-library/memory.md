@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: ca10c4b759f9dafbfe4ffd3d6ac4a4b8c0d5b1dc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 4704adafeefcb9acff9bdb41428075f34439cc39
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltmemorygt"></a>&lt;memory&gt;
@@ -66,13 +67,13 @@ ms.lasthandoff: 02/24/2017
 |[declare_reachable](../standard-library/memory-functions.md#declare_reachable)|指定されたアドレスが、割り当てられたストレージのアドレスであり、そのストレージに到達可能であることをガベージ コレクションに通知します。|  
 |[default_delete](../standard-library/memory-functions.md#default_delete)|`operator new` を使用して割り当てられたオブジェクトを削除します。 `unique_ptr` での使用に適しています。|  
 |[dynamic_pointer_cast](../standard-library/memory-functions.md#dynamic_pointer_cast)|`shared_ptr` への動的キャストを行います。|  
-|[get_deleter](../standard-library/memory-functions.md#get_deleter_function)|`shared_ptr` から削除子を取得します。|  
+|[get_deleter](../standard-library/memory-functions.md#get_deleter)|`shared_ptr` から削除子を取得します。|  
 |[get_pointer_safety](../standard-library/memory-functions.md#get_pointer_safety)|ガベージ コレクターが想定するポインターの安全性の種類を返します。|  
 |[get_temporary_buffer](../standard-library/memory-functions.md#get_temporary_buffer)|指定した要素数を上限とする要素シーケンスに対し、一時的なストレージを割り当てます。|  
 |[make_shared](../standard-library/memory-functions.md#make_shared)|既定のアロケーターを使用してゼロ以上の引数から構築された割り当て済みオブジェクトを指し示す `shared_ptr` を作成し、返します。|  
 |[make_unique](../standard-library/memory-functions.md#make_unique)|0 以上の引数から構築された割り当て済みオブジェクトを指し示す [unique_ptr](../standard-library/unique-ptr-class.md) を作成し、返します。|  
 |[owner_less](../standard-library/memory-functions.md#owner_less)|共有ポインターとウィーク ポインターの所有権ベースの混合型比較を実行します。|  
-|[pointer_safety](../standard-library/memory-enums.md#pointer_safety_enumeration)|`get_pointer_safety` のすべての可能な戻り値の列挙体です。|  
+|[pointer_safety](../standard-library/memory-enums.md#pointer_safety)|`get_pointer_safety` のすべての可能な戻り値の列挙体です。|  
 |[return_temporary_buffer](../standard-library/memory-functions.md#return_temporary_buffer)|`get_temporary_buffer` テンプレート関数を使用して割り当てられた一時メモリを解放します。|  
 |[static_pointer_cast](../standard-library/memory-functions.md#static_pointer_cast)|`shared_ptr` への静的キャストを行います。|  
 |[swap](../standard-library/memory-functions.md#swap)|2 つの `shared_ptr` または `weak_ptr` オブジェクトを交換します。|  
@@ -87,13 +88,13 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/memory-operators.md#operator_neq)|指定したクラスのアロケーター オブジェクト間の非等値をテストします。|  
-|[operator==](../standard-library/memory-operators.md#operator_eq_eq)|指定したクラスのアロケーター オブジェクト間の等値をテストします。|  
-|[operator>=](../standard-library/memory-operators.md#operator_gt__eq)|指定したクラスの&1; つ目のアロケーター オブジェクトが&2; つ目のアロケーター オブジェクト以上であるかどうかをテストします。|  
-|[operator<](../standard-library/memory-operators.md#operator_lt_)|指定したクラスの&1; つ目のオブジェクトが&2; つ目のオブジェクト未満であるかどうかをテストします。|  
-|[operator\<=](../standard-library/memory-operators.md#operator_lt__eq)|指定したクラスの&1; つ目のオブジェクトが&2; つ目のオブジェクト以下であるかどうかをテストします。|  
-|[operator>](../standard-library/memory-operators.md#operator_gt_)|指定したクラスの&1; つ目のオブジェクトが&2; つ目のオブジェクトを超えるかどうかをテストします。|  
-|[operator<<](../standard-library/memory-operators.md#operator_lt__lt_)|`shared_ptr` の挿入演算子です。|  
+|[operator!=](../standard-library/memory-operators.md#op_neq)|指定したクラスのアロケーター オブジェクト間の非等値をテストします。|  
+|[operator==](../standard-library/memory-operators.md#op_eq_eq)|指定したクラスのアロケーター オブジェクト間の等値をテストします。|  
+|[operator>=](../standard-library/memory-operators.md#op_gt_eq)|指定したクラスの 1 つ目のアロケーター オブジェクトが 2 つ目のアロケーター オブジェクト以上であるかどうかをテストします。|  
+|[operator<](../standard-library/memory-operators.md#op_lt)|指定したクラスの 1 つ目のオブジェクトが 2 つ目のオブジェクト未満であるかどうかをテストします。|  
+|[operator\<=](../standard-library/memory-operators.md#op_gt_eq)|指定したクラスの 1 つ目のオブジェクトが 2 つ目のオブジェクト以下であるかどうかをテストします。|  
+|[operator>](../standard-library/memory-operators.md#op_gt)|指定したクラスの 1 つ目のオブジェクトが 2 つ目のオブジェクトを超えるかどうかをテストします。|  
+|[operator<<](../standard-library/memory-operators.md#op_lt_lt)|`shared_ptr` の挿入演算子です。|  
   
 ### <a name="classes"></a>クラス  
   

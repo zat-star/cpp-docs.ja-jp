@@ -58,10 +58,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ebce560074526dad2181363b4998a3ad3455736f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: b773a7b9ae2ad6a7af7aa178fa277be2362c2c11
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="cputs-cputws"></a>_cputs、_cputws
@@ -73,12 +74,11 @@ ms.lasthandoff: 02/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-      int _cputs(   
-const char *str   
+int _cputs(   
+   const char *str   
 );  
 int _cputws(  
-const wchar_t *str   
+   const wchar_t *str   
 );  
 ```  
   
@@ -87,7 +87,7 @@ const wchar_t *str
  出力する文字列。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`_cputs` は 0 を返します。 関数が失敗した場合は&0; 以外の値を返します。  
+ 正常に終了した場合、`_cputs` は 0 を返します。 関数が失敗した場合は 0 以外の値を返します。  
   
 ## <a name="remarks"></a>コメント  
  `_cputs` 関数は、`str` によって指される null で終わる文字列をコンソールに直接書き込みます。 "復帰 - 改行" (CR-LF) の組み合わせは文字列に自動的に追加されません。  
@@ -114,9 +114,8 @@ const wchar_t *str
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_cputs.c  
+```C  
+// crt_cputs.c  
 // compile with: /c  
 // This program first displays a string to the console.  
   
@@ -165,9 +164,7 @@ int main()
 }  
 ```  
   
-## <a name="output"></a>出力  
-  
-```  
+```Output  
 Hello world (courtesy of _cputs)!  
 Hello world (courtesy of _cputws)!  
 ```  

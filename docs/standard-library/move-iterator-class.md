@@ -9,10 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.move_iterator
 - move_iterator
 - iterator/std::move_iterator
-- std::move_iterator
+- iterator/std::move_iterator::iterator_type
+- iterator/std::move_iterator::iterator_category
+- iterator/std::move_iterator::value_type
+- iterator/std::move_iterator::difference_type
+- iterator/std::move_iterator::pointer
+- iterator/std::move_iterator::reference
+- iterator/std::move_iterator::base
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: b689b6363fbe7eff8d34d709f451e46bf9a92537
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 2b2093aa111267850ee368fd2c0c8610b6e213db
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="moveiterator-class"></a>move_iterator クラス
@@ -58,45 +64,45 @@ class move_iterator;
   
 |||  
 |-|-|  
-|[move_iterator](#move_iterator__move_iterator)|`move_iterator` 型のオブジェクトのコンストラクター。|  
+|[move_iterator](#move_iterator)|`move_iterator` 型のオブジェクトのコンストラクター。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[move_iterator::iterator_type](#move_iterator__iterator_type)|テンプレート パラメーター `RandomIterator` のシノニム。|  
-|[move_iterator::iterator_category](#move_iterator__iterator_category)|同じ名前の長い `typename` 式のシノニム、`iterator_category` は反復子の汎用機能を識別します。|  
-|[move_iterator::value_type](#move_iterator__value_type)|同じ名前の長い `typename` 式のシノニム、`value_type` は反復子要素の型を表します。|  
-|[move_iterator::difference_type](#move_iterator__difference_type)|同じ名前の長い `typename` 式のシノニム、`difference_type` は要素の差分値を表すために必要な整数型を表します。|  
-|[move_iterator::pointer](#move_iterator__pointer)|テンプレート パラメーター `RandomIterator` のシノニム。|  
-|[move_iterator::reference](#move_iterator__reference)|`rvalue` 参照 `value_type&&` のシノニム。|  
+|[iterator_type](#iterator_type)|テンプレート パラメーター `RandomIterator` のシノニム。|  
+|[iterator_category](#iterator_category)|同じ名前の長い `typename` 式のシノニム、`iterator_category` は反復子の汎用機能を識別します。|  
+|[value_type](#value_type)|同じ名前の長い `typename` 式のシノニム、`value_type` は反復子要素の型を表します。|  
+|[difference_type](#difference_type)|同じ名前の長い `typename` 式のシノニム、`difference_type` は要素の差分値を表すために必要な整数型を表します。|  
+|[pointer](#pointer)|テンプレート パラメーター `RandomIterator` のシノニム。|  
+|[reference](#reference)|`rvalue` 参照 `value_type&&` のシノニム。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[move_iterator::base](#move_iterator__base)|このメンバー関数は、この `move_iterator` によってラップされた、格納されている反復子を返します。|  
+|[base](#base)|このメンバー関数は、この `move_iterator` によってラップされた、格納されている反復子を返します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[move_iterator::operator*](#move_iterator__operator_star)|`(reference)*``base``().` を返します。|  
-|[move_iterator::operator++](#move_iterator__operator_add_add)|格納されている反復子をインクリメントします。 実際の動作は、前置インクリメント操作であるか、後置インクリメント操作であるかによって異なります。|  
-|[move_iterator::operator--](#move_iterator__operator--)|格納されている反復子をデクリメントします。 実際の動作は、前置インクリメント操作であるか、後置インクリメント操作であるかによって異なります。|  
-|[move_iterator::operator-&gt;](#move_iterator__operator-_gt_)|`&**this` を返します。|  
-|[move_iterator::operator-](#move_iterator__operator-)|最初に現在位置から右側の値を減算することによって `move_iterator(*this) -=` を返します。|  
-|[move_iterator::operator[]](#move_iterator__operator_at)|`(reference)*(*this + off)` を返します。 現在のベースからのオフセットを指定し、その位置の値を取得できます。|  
-|[move_iterator::operator+](#move_iterator__operator_add)|`move_iterator(*this) +=` に値を返します。 ベースにオフセットを加算し、その位置の値を取得できます。|  
-|[move_iterator::operator+=](#move_iterator__operator_add_eq)|右辺値を格納されている反復子に加算し、`*this` を返します。|  
-|[move_iterator::operator-=](#move_iterator__operator-_eq)|右辺値を格納されている反復子から減算し、`*this` を返します。|  
+|[move_iterator::operator*](#op_star)|`(reference)*``base``().` を返します。|  
+|[move_iterator::operator++](#op_add_add)|格納されている反復子をインクリメントします。 実際の動作は、前置インクリメント操作であるか、後置インクリメント操作であるかによって異なります。|  
+|[move_iterator::operator--](#operator--)|格納されている反復子をデクリメントします。 実際の動作は、前置インクリメント操作であるか、後置インクリメント操作であるかによって異なります。|  
+|[move_iterator::operator-&gt;](#operator-_gt)|`&**this` を返します。|  
+|[move_iterator::operator-](#operator-)|最初に現在位置から右側の値を減算することによって `move_iterator(*this) -=` を返します。|  
+|[move_iterator::operator[]](#op_at)|`(reference)*(*this + off)` を返します。 現在のベースからのオフセットを指定し、その位置の値を取得できます。|  
+|[move_iterator::operator+](#op_add)|`move_iterator(*this) +=` に値を返します。 ベースにオフセットを加算し、その位置の値を取得できます。|  
+|[move_iterator::operator+=](#op_add_eq)|右辺値を格納されている反復子に加算し、`*this` を返します。|  
+|[move_iterator::operator-=](#operator-_eq)|右辺値を格納されている反復子から減算し、`*this` を返します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
   
-##  <a name="a-namemoveiteratorbasea--moveiteratorbase"></a><a name="move_iterator__base"></a>  move_iterator::base  
+##  <a name="base"></a>  move_iterator::base  
  この `move_iterator` の格納されている反復子を返します。  
   
 ```
@@ -106,7 +112,7 @@ RandomIterator base() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、格納されている反復子を返します。  
   
-##  <a name="a-namemoveiteratordifferencetypea--moveiteratordifferencetype"></a><a name="move_iterator__difference_type"></a>  move_iterator::difference_type  
+##  <a name="difference_type"></a>  move_iterator::difference_type  
  型 `difference_type` は、反復子特性 `difference_type` に基づく `move_iterator``typedef` で、同意語として使用できます。  
   
 ```
@@ -116,7 +122,7 @@ typedef typename iterator_traits<RandomIterator>::difference_type difference_typ
 ### <a name="remarks"></a>コメント  
  この型は、反復子特性 `typename iterator_traits<RandomIterator>::pointer` の同意語です。  
   
-##  <a name="a-namemoveiteratoriteratorcategorya--moveiteratoriteratorcategory"></a><a name="move_iterator__iterator_category"></a>  move_iterator::iterator_category  
+##  <a name="iterator_category"></a>  move_iterator::iterator_category  
  型 `iterator_category` は、反復子特性 `iterator_category` に基づく `move_iterator``typedef` で、同意語として使用できます。  
   
 ```
@@ -126,7 +132,7 @@ typedef typename iterator_traits<RandomIterator>::iterator_category  iterator_ca
 ### <a name="remarks"></a>コメント  
  この型は、反復子特性 `typename iterator_traits<RandomIterator>::iterator_category` の同意語です。  
   
-##  <a name="a-namemoveiteratoriteratortypea--moveiteratoriteratortype"></a><a name="move_iterator__iterator_type"></a>  move_iterator::iterator_type  
+##  <a name="iterator_type"></a>  move_iterator::iterator_type  
  型 `iterator_type` は、クラス テンプレートの `move_iterator` のテンプレート パラメーター `RandomIterator` に基づいていて、代わりに互いに入れ替えて使用できます。  
   
 ```
@@ -136,7 +142,7 @@ typedef RandomIterator iterator_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター `RandomIterator` のシノニムです。  
   
-##  <a name="a-namemoveiteratormoveiteratora--moveiteratormoveiterator"></a><a name="move_iterator__move_iterator"></a>  move_iterator::move_iterator  
+##  <a name="move_iterator"></a>  move_iterator::move_iterator  
  移動反復子を構築します。 格納されている反復子としてパラメーターを使用します。  
   
 ```
@@ -153,7 +159,7 @@ move_iterator(const move_iterator<Type>& right);
 ### <a name="remarks"></a>コメント  
  最初のコンストラクターは、格納されている反復子を既定のコンストラクターによって初期化します。 残りのコンストラクターは、格納されている反復子を `base.base()` によって初期化します。  
   
-##  <a name="a-namemoveiteratoroperatoraddeqa--moveiteratoroperator"></a><a name="move_iterator__operator_add_eq"></a>  move_iterator::operator+=  
+##  <a name="op_add_eq"></a>  move_iterator::operator+=  
  格納された反復子にオフセットを追加し、その格納された反復子が新しい現在位置にある要素を指すようにします。 その後、演算子は新しい現在の要素を移動します。  
   
 ```
@@ -170,7 +176,7 @@ move_iterator& operator+=(difference_type _Off);
 ### <a name="remarks"></a>コメント  
  演算子は、格納されている反復子に `_Off` を追加します。 その後、`*this` を返します。  
   
-##  <a name="a-namemoveiteratoroperator-eqa--moveiteratoroperator-"></a><a name="move_iterator__operator-_eq"></a>  move_iterator::operator-=  
+##  <a name="move_iterator__operator-_eq"></a>  move_iterator::operator-=  
  指定された数の前の要素の間で移動します。 この演算子は、格納された反復子からオフセットを減算します。  
   
 ```
@@ -182,7 +188,7 @@ move_iterator& operator-=(difference_type _Off);
 ### <a name="remarks"></a>コメント  
  演算子は `*this += -_Off` を評価します。 その後、`*this` を返します。  
   
-##  <a name="a-namemoveiteratoroperatoraddadda--moveiteratoroperator"></a><a name="move_iterator__operator_add_add"></a>  move_iterator::operator++  
+##  <a name="op_add_add"></a>  move_iterator::operator++  
  `move_iterator.` に属する格納されている反復子をインクリメントします。現在の要素は後置インクリメント演算子によってアクセスされます。 次の要素は前置インクリメント演算子によってアクセスされます。  
   
 ```
@@ -197,7 +203,7 @@ move_iterator operator++(int);
   
  2 番目の (後置インクリメント) 演算子は `*this` のコピーを作成し、`++*this` を評価します。 その後、コピーを返します。  
   
-##  <a name="a-namemoveiteratoroperatoradda--moveiteratoroperator"></a><a name="move_iterator__operator_add"></a>  move_iterator::operator+  
+##  <a name="op_add"></a>  move_iterator::operator+  
  任意の要素の数だけ前方へ進んだ反復子の位置を返します。  
   
 ```
@@ -209,7 +215,7 @@ move_iterator operator+(difference_type _Off) const;
 ### <a name="remarks"></a>コメント  
  この演算子は、`move_iterator(*this) +=` `_Off` を返します。  
   
-##  <a name="a-namemoveiteratoroperatorata--moveiteratoroperator"></a><a name="move_iterator__operator_at"></a>  move_iterator::operator[]  
+##  <a name="op_at"></a>  move_iterator::operator[]  
  `move iterator` の範囲の要素への配列インデックスのアクセスを許可します。  
   
 ```
@@ -221,7 +227,7 @@ reference operator[](difference_type _Off) const;
 ### <a name="remarks"></a>コメント  
  この演算子は `(reference)*(*this + _Off)` を返します。  
   
-##  <a name="a-namemoveiteratoroperator--a--moveiteratoroperator--"></a><a name="move_iterator__operator--"></a>  move_iterator::operator--  
+##  <a name="move_iterator__operator--"></a>  move_iterator::operator--  
  Predecrement と postdecrement メンバー演算子は、格納されている反復子でデクリメントを実行します。  
   
 ```
@@ -236,7 +242,7 @@ move_iterator operator--();
   
  2 番目の (postdecrement) 演算子は、`*this` のコピーを作成し、`--*this` を評価します。 その後、コピーを返します。  
   
-##  <a name="a-namemoveiteratoroperator-a--moveiteratoroperator-"></a><a name="move_iterator__operator-"></a>  move_iterator::operator-  
+##  <a name="move_iterator__operator-"></a>  move_iterator::operator-  
  格納されている反復子をデクリメントして、指定された値を返します。  
   
 ```
@@ -248,7 +254,7 @@ move_iterator operator-(difference_type _Off) const;
 ### <a name="remarks"></a>コメント  
  この演算子は `move_iterator(*this) -= _Off` を返します。  
   
-##  <a name="a-namemoveiteratoroperatorstara--moveiteratoroperator"></a><a name="move_iterator__operator_star"></a>  move_iterator::operator*  
+##  <a name="op_star"></a>  move_iterator::operator*  
  格納されている反復子を逆参照して値を返します。 これは、`rvalue reference` と同じように動作し、移動代入を実行します。 この演算子は、基本反復子から現在の要素を転送します。 後続の要素は、新しい現在の要素になります。  
   
 ```
@@ -258,7 +264,7 @@ reference operator*() const;
 ### <a name="remarks"></a>コメント  
  この演算子は `(reference)*``base``()` を返します。  
   
-##  <a name="a-namemoveiteratoroperator-gta--moveiteratoroperator-gt"></a><a name="move_iterator__operator-_gt_"></a>  move_iterator::operator-&gt;  
+##  <a name="move_iterator__operator-_gt"></a>  move_iterator::operator-&gt;  
  通常の`RandomIterator``operator->` のように、現在の要素に属するフィールドへのアクセスを提供します。  
   
 ```
@@ -268,7 +274,7 @@ pointer operator->() const;
 ### <a name="remarks"></a>コメント  
  この演算子は `&**this` を返します。  
   
-##  <a name="a-namemoveiteratorpointera--moveiteratorpointer"></a><a name="move_iterator__pointer"></a>  move_iterator::pointer  
+##  <a name="pointer"></a>  move_iterator::pointer  
  型 `pointer` は、`move_iterator` のランダム反復子 `RandomIterator` に基づく `typedef` で、同意語として使用できます。  
   
 ```
@@ -278,7 +284,7 @@ typedef RandomIterator  pointer;
 ### <a name="remarks"></a>コメント  
  この型は `RandomIterator` の同意語です。  
   
-##  <a name="a-namemoveiteratorreferencea--moveiteratorreference"></a><a name="move_iterator__reference"></a>  move_iterator::reference  
+##  <a name="reference"></a>  move_iterator::reference  
  型 `reference` は、`move_iterator` の `value_type&&` に基づく `typedef` で、`value_type&&` の同義語として使用できます。  
   
 ```
@@ -288,7 +294,7 @@ typedef value_type&& reference;
 ### <a name="remarks"></a>コメント  
  この型は、右辺値参照である `value_type&&` のシノニムです。  
   
-##  <a name="a-namemoveiteratorvaluetypea--moveiteratorvaluetype"></a><a name="move_iterator__value_type"></a>  move_iterator::value_type  
+##  <a name="value_type"></a>  move_iterator::value_type  
  型 `value_type` は、反復子特性 `value_type` に基づく `move_iterator``typedef` で、同意語として使用できます。  
   
 ```
