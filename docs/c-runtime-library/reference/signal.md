@@ -48,10 +48,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1f05c16dff5bd490866a58fcd36ae28cba862fdd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: b124479c62a62ef7795498b6c4a96191e2ecb6e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="signal"></a>signal
@@ -82,7 +83,7 @@ void (__cdecl *signal(
  リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
- `signal` 関数を使用すると、プロセスで、オペレーティング システムからの割り込みシグナルを処理する複数の方法から&1; つの方法を選択できます。 `sig` 引数は、`signal` が応答する割り込みです。SIGNAL.H で定義されている次のマニフェスト定数のいずれかを指定する必要があります。  
+ `signal` 関数を使用すると、プロセスで、オペレーティング システムからの割り込みシグナルを処理する複数の方法から 1 つの方法を選択できます。 `sig` 引数は、`signal` が応答する割り込みです。SIGNAL.H で定義されている次のマニフェスト定数のいずれかを指定する必要があります。  
   
 |`sig` の値|説明|  
 |-----------------|-----------------|  
@@ -100,9 +101,9 @@ void (__cdecl *signal(
 > [!NOTE]
 >  `SIGINT` はすべての Win32 アプリケーションでサポートされていません。 Ctrl + C 割り込みが発生すると、Win32 オペレーティング システムは、その割り込みを処理する専用の新しいスレッドを生成します。 これにより、UNIX のアプリケーションなどのシングル スレッド アプリケーションがマルチスレッドになり、予期しない動作が発生する可能性があります。  
   
- `func` 引数は、記述したシグナル ハンドラーのアドレス、または、SIGNAL.H に定義されている定義済み定数 `SIG_DFL` または `SIG_IGN` のどちらかのアドレスです。 `func` が関数の場合、指定のシグナルのシグナル ハンドラーとしてインストールされます。 シグナル ハンドラーのプロトタイプには、`sig` 型の&1; つの仮引数 `int` が必要です。 オペレーティング システムは、割り込みが発生したときに `sig` を使用して実引数を渡します。引数は、割り込みを生成したシグナルです。 したがって、シグナル ハンドラーで (前の表の)&6; つのマニフェスト定数を使用して、発生した割り込みを特定し、適切なアクションを実行できます。 たとえば、`signal` を&2; 回呼び出して同じハンドラーを&2; つの異なるシグナルに割り当てた後で、そのハンドラーの `sig` 引数をテストすることで、受け取ったシグナルに基づいて異なるアクションを実行できます。  
+ `func` 引数は、記述したシグナル ハンドラーのアドレス、または、SIGNAL.H に定義されている定義済み定数 `SIG_DFL` または `SIG_IGN` のどちらかのアドレスです。 `func` が関数の場合、指定のシグナルのシグナル ハンドラーとしてインストールされます。 シグナル ハンドラーのプロトタイプには、`sig` 型の 1 つの仮引数 `int` が必要です。 オペレーティング システムは、割り込みが発生したときに `sig` を使用して実引数を渡します。引数は、割り込みを生成したシグナルです。 したがって、シグナル ハンドラーで (前の表の) 6 つのマニフェスト定数を使用して、発生した割り込みを特定し、適切なアクションを実行できます。 たとえば、`signal` を 2 回呼び出して同じハンドラーを 2 つの異なるシグナルに割り当てた後で、そのハンドラーの `sig` 引数をテストすることで、受け取ったシグナルに基づいて異なるアクションを実行できます。  
   
- 浮動小数点例外 (`SIGFPE`) をテストする場合、`func` は省略可能な&2; 番目の引数を受け取る関数を指します。この引数は、FLOAT.H で定義されている `FPE_xxx` 形式の複数のマニフェスト定数の&1; つです。 `SIGFPE` シグナルが発生したときに、2 番目の引数の値をテストして、浮動小数点例外の種類を特定し、適切なアクションを実行できます。 この引数とその有効な値は Microsoft 拡張機能です。  
+ 浮動小数点例外 (`SIGFPE`) をテストする場合、`func` は省略可能な 2 番目の引数を受け取る関数を指します。この引数は、FLOAT.H で定義されている `FPE_xxx` 形式の複数のマニフェスト定数の 1 つです。 `SIGFPE` シグナルが発生したときに、2 番目の引数の値をテストして、浮動小数点例外の種類を特定し、適切なアクションを実行できます。 この引数とその有効な値は Microsoft 拡張機能です。  
   
  浮動小数点例外の場合、シグナルを受け取ったときに `func` の値はリセットされません。 浮動小数点例外から回復するには、try/except 句で浮動小数点演算を囲みます。 [setjmp](../../c-runtime-library/reference/setjmp.md) と [longjmp](../../c-runtime-library/reference/longjmp.md) を使用して回復することもできます。 いずれの場合も、呼び出し元プロセスは実行を再開し、プロセスの浮動小数点状態を未定義のままにします。  
   
@@ -173,9 +174,6 @@ int main()
 This application has requested the Runtime to terminate it in an unusual way.  
 Please contact the application's support team for more information.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

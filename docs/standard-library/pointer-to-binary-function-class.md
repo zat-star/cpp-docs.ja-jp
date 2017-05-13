@@ -9,10 +9,8 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::pointer_to_binary_function
-- xfunctional/std::pointer_to_binary_function
-- pointer_to_binary_function
-- std.pointer_to_binary_function
+- xfunctional/std::pointer_to_binary
+- pointer_to_binary
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -37,10 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 9a806934810286e22fdea70c2af982de10f48ee5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: a510056f33bce7720896e56c7ea7798729dd831a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="pointertobinaryfunction-class"></a>pointer_to_binary_function クラス
@@ -77,7 +76,7 @@ public:
  二項関数ポインターは関数オブジェクトであり、パラメーターとして二項関数を想定する C++ 標準ライブラリの任意のアルゴリズムに渡される場合がありますが、適応性はありません。 二項関数ポインターをアダプターと共に使用する (値をバインドしたり否定子と共に使用するなど) には、このような適応を可能にする、入れ子にされた型 (**first_argument_type**、**second_argument_type**、および **result_type**) と共に指定する必要があります。 `pointer_to_binary_function` による変換によって、関数アダプターを二項関数ポインターと共に使用できるようになります。  
   
 ## <a name="example"></a>例  
- `pointer_to_binary_function` のコンストラクターが直接使用されることはほとんどありません。 `pointer_to_binary_function` アダプターの述語を宣言および使用する方法の例については、ヘルパー関数 [ptr_fun](../standard-library/functional-functions.md#ptr_fun_function) をご覧ください。  
+ `pointer_to_binary_function` のコンストラクターが直接使用されることはほとんどありません。 `pointer_to_binary_function` アダプターの述語を宣言および使用する方法の例については、ヘルパー関数 [ptr_fun](../standard-library/functional-functions.md#ptr_fun) をご覧ください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<functional>  

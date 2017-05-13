@@ -1,97 +1,114 @@
 ---
 title: "slice_array クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "slice_array"
-  - "valarray/std::slice_array"
-  - "std.slice_array"
-  - "std::slice_array"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "slice_array クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- slice_array
+- valarray/std::slice_array
+dev_langs:
+- C++
+helpviewer_keywords:
+- slice_array class
 ms.assetid: a182d5f7-f35c-4e76-86f2-b5ac64ddc846
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# slice_array クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 97770a32fe661daf972753384d69b47badbcb7aa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-一部の配列間の操作によって、スライス オブジェクトをサポートする内部、補助テンプレート クラスは valarray のスライスで定義されています。  
+---
+# <a name="slicearray-class"></a>slice_array クラス
+valarray のスライスで定義されるサブセット配列間の演算を提供することによりスライス オブジェクトをサポートする、内部の補助テンプレート クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Type>  
-   class slice_array : public slice {  
+template <class Type>  
+class slice_array : public slice {  
 public:  
-   typedef Type value_type;  
-   void operator=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator=(  
-      const Type& x  
-   ) const;  
-   void operator*=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator/=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator%=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator+=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator-=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator^=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator&=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator|=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator<<=(  
-      const valarray<Type>& x  
-   ) const;  
-   void operator>>=(  
-      const valarray<Type>& x  
-   ) const;  
+    typedef Type value_type;  
+    void operator=(const valarray<Type>& x) const;
+
+ 
+    void operator=(const Type& x) const;
+
+ 
+    void operator*=(const valarray<Type>& x) const;
+
+ 
+    void operator/=(const valarray<Type>& x) const;
+
+ 
+    void operator%=(const valarray<Type>& x) const;
+
+ 
+    void operator+=(const valarray<Type>& x) const;
+
+ 
+    void operator-=(const valarray<Type>& x) const;
+
+ 
+    void operator^=(const valarray<Type>& x) const;
+
+ 
+    void operator&=(const valarray<Type>& x) const;
+
+ 
+    void operator|=(const valarray<Type>& x) const;
+
+ 
+    void operator<<=(const valarray<Type>& x) const;
+
+ 
+    void operator>>=(const valarray<Type>& x) const;
+
+ 
 // The rest is private or implementation defined  
 }  
 ```  
   
-## 解説  
- クラスは **valarray\<Type\>** オブジェクトから選択して要素のシーケンスを表すクラス [スライス](../Topic/slice%20Class.md)オブジェクトとともにオブジェクトを格納しているクラス [valarray](../standard-library/valarray-class.md)**\<種類\>**オブジェクトへの参照を記述します。  
+## <a name="remarks"></a>コメント  
+ このクラスは、**valarray\<Type>** オブジェクトから選択する要素のシーケンスを説明するクラス [slice](../standard-library/slice-class.md) のオブジェクトとともに、クラス [valarray](../standard-library/valarray-class.md)**\<Type>** のオブジェクトへの参照を格納するオブジェクトを表します。  
   
- このテンプレート クラスは、特定の valarray 操作を通じて間接的に作成され、プログラム内で直接使用することはできません。  スライス添字演算子によって使用される内部、補助テンプレート クラス:  
+ テンプレート クラスは、特定の valarray 操作によって間接的に作成されており、プログラムで直接使用することはできません。 スライスの添字演算子によって使用される、内部の補助テンプレート クラス。  
   
- `slice_array`\<**\[種類\]**\>`valarray`\<**\[種類\]** の::`operator[]` \(`slice`\)。  
+ `slice_array`\< **Type**> `valarray`< **Type**:: `operator[]` ( `slice`)  
   
- valarray **va**のスライス **sl** にフォーム [sl VA &#91;&#93;](../Topic/valarray::operator.md)の式を作成することによってのみ **slice\_array\<Type\>** オブジェクトを構築します。  slice\_array **valarray\<Type\>**に定義されているクラスのメンバー関数では、対応する関数のシグネチャのように動作しますが、選択したシーケンスの要素だけが影響を受けます。  slice\_array によって制御スライスの最初の要素のスライス コンストラクター、インデックス、要素数、および要素の間の 3 番目のパラメーターによって定義されます。  **va**で宣言された valarray **va** から slice\_array 切り取り\[`slice` \(2、5、3\) は **va**からのインデックス 2、5、8、11、および 14 を持つ要素を選択します。  インデックスが有効であると手順に有効である必要があります。  
+ **slice_array\<Type>** オブジェクトの構築は、valarray **va** のスライス **sl** に対して [va&#91;ba&#93;](../standard-library/valarray-class.md#op_at) という形式の式を記述するだけです。 クラス slice_array のメンバー関数は **valarray\<Type>** に対して定義された対応する関数のシグネチャのように動作しますが、選択された要素のシーケンスだけが影響を受けるという点が異なります。 slice_array によって制御されるシーケンスは、スライスのコンストラクターの 3 つのパラメーター (スライス内の最初の要素のインデックス、要素の数、要素間の距離) によって定義されます。 **va**[ `slice`(2, 5, 3)] によって宣言された valarray **va** から切り取られた slice_array は、インデックス 2、5、8、11、および 14 を含む要素を **va** から選択します。 これらのインデックスは、有効にする手順に対して有効である必要があります。  
   
-## 使用例  
- slice\_array 宣言および使用する方法の例に [slice::slice](../Topic/slice::slice.md) "の例を参照してください。  
+## <a name="example"></a>例  
+ slice_array の宣言方法や使用方法の例については、[slice::slice](../standard-library/slice-class.md#slice) の例を参照してください。  
   
-## 必要条件  
- **ヘッダー:** \<valarray\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+

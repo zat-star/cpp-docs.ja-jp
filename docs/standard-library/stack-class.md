@@ -42,10 +42,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 81467a48b08fab628da94b217c2925010f3118fe
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 57f6d4a94348e8565a8c8e21b248335d9d9c651d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="stack-class"></a>stack クラス
@@ -66,7 +67,7 @@ class stack
  スタックを実装するために使用する基になるコンテナーの型。 既定値は、クラス `deque`*\<Type>* です。  
   
 ## <a name="remarks"></a>コメント  
- stack オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#stack__value_type) と同義で、2 番目のテンプレート パラメーターで指定する基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
+ stack オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#value_type) と同義で、2 番目のテンプレート パラメーターで指定する基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
   
  スタックに適した基になるコンテナー クラスには、[deque](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、および [vector クラス](../standard-library/vector-class.md)、または **back**、`push_back`、および `pop_back` の各操作をサポートするその他すべてのシーケンス コンテナーがあります。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
   
@@ -82,32 +83,32 @@ class stack
   
 |||  
 |-|-|  
-|[stack](#stack__stack)|空であるか、基本のコンテナー オブジェクトのコピーである `stack` を構築します。|  
+|[stack](#stack)|空であるか、基本のコンテナー オブジェクトのコピーである `stack` を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#stack__container_type)|`stack` によって適合されるように、基本のコンテナーを提供する型。|  
-|[size_type](#stack__size_type)|`stack` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_type](#stack__value_type)|`stack` 内に要素として格納されるオブジェクトの種類を表す型。|  
+|[container_type](#container_type)|`stack` によって適合されるように、基本のコンテナーを提供する型。|  
+|[size_type](#size_type)|`stack` 内の要素の数を表すことができる符号なし整数型。|  
+|[value_type](#value_type)|`stack` 内に要素として格納されるオブジェクトの種類を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[empty](#stack__empty)|`stack` が空かどうかをテストします。|  
-|[pop](#stack__pop)|`stack` の先頭から要素を削除します。|  
-|[push](#stack__push)|`stack` の先頭に要素を追加します。|  
-|[size](#stack__size)|`stack` 内の要素数を返します。|  
-|[top](#stack__top)|`stack` の先頭にある要素への参照を返します。|  
+|[empty](#empty)|`stack` が空かどうかをテストします。|  
+|[pop](#pop)|`stack` の先頭から要素を削除します。|  
+|[push](#push)|`stack` の先頭に要素を追加します。|  
+|[size](#size)|`stack` 内の要素数を返します。|  
+|[top](#top)|`stack` の先頭にある要素への参照を返します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<stack>  
   
  **名前空間:** std  
   
-##  <a name="stack__container_type"></a>  stack::container_type  
+##  <a name="container_type"></a>  stack::container_type  
  適合されるように、基本のコンテナーを提供する型。  
   
 ```  
@@ -120,9 +121,9 @@ typedef Container container_type;
  `Container`の詳細については、[stack クラス](../standard-library/stack-class.md)のトピックのコメントに関するセクションを参照してください。  
   
 ### <a name="example"></a>例  
-  `container_type` の宣言方法や使用方法の例については、[stack::stack](#stack__stack) の例を参照してください。  
+  `container_type` の宣言方法や使用方法の例については、[stack::stack](#stack) の例を参照してください。  
   
-##  <a name="stack__empty"></a>  stack::empty  
+##  <a name="empty"></a>  stack::empty  
  stack が空かどうかをテストします。  
   
 ```  
@@ -165,7 +166,7 @@ The stack s1 is not empty.
 The stack s2 is empty.  
 ```  
   
-##  <a name="stack__pop"></a>  stack::pop  
+##  <a name="pop"></a>  stack::pop  
  stack の先頭から要素を削除します。  
   
 ```  
@@ -219,7 +220,7 @@ After a pop, the stack length is 2.
 After a pop, the element at the top of the stack is 20.  
 ```  
   
-##  <a name="stack__push"></a>  stack::push  
+##  <a name="push"></a>  stack::push  
  stack の先頭に要素を追加します。  
   
 ```  
@@ -265,7 +266,7 @@ The stack length is 3.
 The element at the top of the stack is 30.  
 ```  
   
-##  <a name="stack__size"></a>  stack::size  
+##  <a name="size"></a>  stack::size  
  stack 内の要素数を返します。  
   
 ```  
@@ -304,7 +305,7 @@ The stack length is 1.
 The stack length is now 2.  
 ```  
   
-##  <a name="stack__size_type"></a>  stack::size_type  
+##  <a name="size_type"></a>  stack::size_type  
  stack 内の要素の数を表すことができる符号なし整数型。  
   
 ```  
@@ -315,9 +316,9 @@ typedef typename Container::size_type size_type;
  この型は、stack によって採用された基本コンテナーの `size_type` のシノニムです。  
   
 ### <a name="example"></a>例  
-  `size_type` の宣言方法や使用方法の例については、[size](#stack__size) の例を参照してください。  
+  `size_type` の宣言方法や使用方法の例については、[size](#size) の例を参照してください。  
   
-##  <a name="stack__stack"></a>  stack::stack  
+##  <a name="stack"></a>  stack::stack  
  空であるか、基本のコンテナー クラスのコピーである stack を構築します。  
   
 ```  
@@ -369,7 +370,7 @@ int main( )
 The element at the top of stack vsi2 is 1.  
 ```  
   
-##  <a name="stack__top"></a>  stack::top  
+##  <a name="top"></a>  stack::top  
  stack の先頭にある要素への参照を返します。  
   
 ```  
@@ -417,7 +418,7 @@ The top integer of the stack s1 is 2.
 The next integer down is 1.  
 ```  
   
-##  <a name="stack__value_type"></a>  stack::value_type  
+##  <a name="value_type"></a>  stack::value_type  
  stack 内に要素として格納されるオブジェクトの種類を表す型。  
   
 ```  

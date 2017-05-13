@@ -19,6 +19,7 @@ f1_keywords:
 - xmemory0/std::pointer_traits
 - xmemory0/std::pointer_traits::difference_type
 - xmemory0/std::pointer_traits::rebind
+- memory/std::pointer_traits::pointer_to
 dev_langs:
 - C++
 ms.assetid: 545aecf1-3561-4859-8b34-603c079fe1b3
@@ -40,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3a5633fa4c9f45629d655edf922d40b02b68aaca
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: dbb9a0a8ecd59b76a84ce05b3c239de42be647cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="pointertraits-struct"></a>pointer_traits 構造体
@@ -88,14 +90,14 @@ struct Ptr
   
 |名前|説明|  
 |----------|-----------------|  
-|[pointer_to](#pointer_traits__pointer_to_method)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|  
+|[pointer_to](#pointer_to)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
   
-##  <a name="a-namepointertraitspointertomethoda--pointerto"></a><a name="pointer_traits__pointer_to_method"></a>  pointer_to  
+##  <a name="pointer_to"></a>  pointer_to  
  その関数が存在する場合に `Ptr::pointer_to(obj)` を返す静的メソッド。 それ以外の場合は、任意の参照をクラス `Ptr` のオブジェクトに変換できません。 `Ptr` が生のポインターの場合、このメソッドは `addressof(obj)` を返します。  
   
 ```cpp  

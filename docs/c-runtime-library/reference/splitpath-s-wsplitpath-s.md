@@ -57,10 +57,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3b4b1a35e2abcbeb128a36443eb4c5e5aa2a15e9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: c4c6803731deba188a4f4dba118b04f626f58564
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="splitpaths-wsplitpaths"></a>_splitpath_s、_wsplitpath_s
@@ -138,7 +139,7 @@ errno_t _wsplitpath_s(
  1 バイト文字またはワイド文字単位の `ext` バッファーのサイズ。 `ext` が `NULL` である場合、この値は 0 でなければなりません。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -159,7 +160,7 @@ errno_t _wsplitpath_s(
  バッファーのいずれかが、結果を保持するには短すぎる場合、これらの関数はすべてのバッファーを空の文字列にクリアし、`errno` を `ERANGE` に設定して、`ERANGE` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_splitpath_s` 関数は、パスを&4; つのコンポーネントに分割します。 `_splitpath_s` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_``wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
+ `_splitpath_s` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath_s` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_``wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -195,9 +196,6 @@ errno_t _wsplitpath_s(
   
 ## <a name="example"></a>例  
  「[_makepath_s、_wmakepath_s](../../c-runtime-library/reference/makepath-s-wmakepath-s.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

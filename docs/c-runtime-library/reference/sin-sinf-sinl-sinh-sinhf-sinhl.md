@@ -1,68 +1,85 @@
 ---
 title: "sin、sinf、sinl、sinh、sinhf、sinhl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "sinl"
-  - "sinf"
-  - "sinhf"
-  - "sinh"
-  - "sin"
-  - "sinhl"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_sinl"
-  - "sinf"
-  - "sinhl"
-  - "sinl"
-  - "sin"
-  - "sinhf"
-  - "_sinhl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_sinhl 関数"
-  - "_sinl 関数"
-  - "計算 (サインの)"
-  - "ハイパーボリック関数"
-  - "sin 関数"
-  - "sinf 関数"
-  - "sinh 関数"
-  - "sinhf 関数"
-  - "sinhl 関数"
-  - "sinl 関数"
-  - "三角関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- sinl
+- sinf
+- sinhf
+- sinh
+- sin
+- sinhl
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _sinl
+- sinf
+- sinhl
+- sinl
+- sin
+- sinhf
+- _sinhl
+dev_langs:
+- C++
+helpviewer_keywords:
+- sinh function
+- _sinl function
+- _sinhl function
+- sinhf function
+- sinl function
+- calculating sines
+- sin function
+- trigonometric functions
+- sinf function
+- sinhl function
+- hyperbolic functions
 ms.assetid: 737de73e-3590-45f9-8257-dc1c0c489dfc
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# sin、sinf、sinl、sinh、sinhf、sinhl
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 8f33398820df9df9de21e7d24cc35f76f131bd43
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
+---
+# <a name="sin-sinf-sinl-sinh-sinhf-sinhl"></a>sin、sinf、sinl、sinh、sinhf、sinhl
 サインとハイパーボリック サインを計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double sin(  
@@ -77,8 +94,7 @@ long double sin(
 float sinf(  
    float x   
 );  
-long double sinl(  
-   long double x  
+long double sinl(   long double x  
 );  
 double sinh(  
    double x   
@@ -97,35 +113,35 @@ long double sinhl(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `x`  
- 角度 \(ラジアン\)。  
+ 角度 (ラジアン)。  
   
-## 戻り値  
- `sin` 関数は、`x` のサイン値を返します。  `x` が 263 以上、または –263 以下の場合、結果から有意性が失われます。  
+## <a name="return-value"></a>戻り値  
+ `sin` 関数は、`x` のサイン値を返します。 場合`x`が 263 以上で、または小さいが同じかそれ以下-263、結果から有意性低下します。  
   
- `sinh` 関数は、`x` のハイパーボリック サイン値を返します。  既定では、結果が大きすぎる場合、`sinh` は `errno` を `ERANGE` に設定し、±`HUGE_VAL` を返します。  
+ `sinh` 関数は、`x` のハイパーボリック サイン値を返します。 既定では、結果が大きすぎる場合、`sinh` は `errno` を `ERANGE` に設定し、±`HUGE_VAL` を返します。  
   
 |入力|SEH 例外|Matherr 例外|  
-|--------|------------|----------------|  
-|± QNAN、IND|なし。|\_DOMAIN|  
-|± ∞ \(sin、sinf、sinl\)|INVALID|\_DOMAIN|  
-|&#124;x&#124; ≥ 7.104760e\+002 \(sinh、sinhf、sinhl\)|OVERFLOW\+INEXACT|OVERFLOW|  
+|-----------|-------------------|-----------------------|  
+|± QNAN、IND|なし|_DOMAIN|  
+|± ∞ (sin、sinf、sinl)|INVALID|_DOMAIN|  
+|&#124;x&#124; ≥ 7.104760e+002 (sinh、sinhf、sinhl)|OVERFLOW+INEXACT|OVERFLOW|  
   
- リターン コードの詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-## 解説  
- C\+\+ ではオーバーロードが可能であるため、`float` または `long double` の値を受け取って返す `sin` および `sinh` のオーバーロードを呼び出すことができます。  C プログラムでは、`sin` および `sinh` は常に `double` を受け取って返します。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、`sin` または `sinh` の値を受け取って返す `float` および `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`sin` および `sinh` は常に `double` を受け取って返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`sin`, `sinf`, `sinl`, `sinh`, `sinhf`, `sinhl`|\<math.h\>|  
+|-------------|---------------------|  
+|`sin`, `sinf`, `sinl`, `sinh`, `sinhf`, `sinhl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_sincos.c  
@@ -153,21 +169,18 @@ int main( void )
 }  
 ```  
   
-  **sin\( 1.570796 \) \= 1.000000**  
-**sinh\( 1.570796 \) \= 2.301299**  
-**cos\( 1.570796 \) \= 0.000000**  
-**cosh\( 1.570796 \) \= 2.509178**   
-## 同等の .NET Framework 関数  
+```Output  
+sin( 1.570796 ) = 1.000000  
+sinh( 1.570796 ) = 2.301299  
+cos( 1.570796 ) = 0.000000  
+cosh( 1.570796 ) = 2.509178  
+```  
   
--   [System::Math::Sin](https://msdn.microsoft.com/en-us/library/system.math.sin.aspx)  
-  
--   [System::Math::Sinh](https://msdn.microsoft.com/en-us/library/system.math.sinh.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [acos、acosf、acosl](../../c-runtime-library/reference/acos-acosf-acosl.md)   
  [asin、asinf、asinl](../../c-runtime-library/reference/asin-asinf-asinl.md)   
  [atan、atanf、atanl、atan2、atan2f、atan2l](../../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)   
  [cos、cosf、cosl、cosh、coshf、coshl](../../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)   
  [tan、tanf、tanl、tanh、tanhf、tanhl](../../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)   
- [\_CIsin](../../c-runtime-library/cisin.md)
+ [_CIsin](../../c-runtime-library/cisin.md)

@@ -59,10 +59,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c8b8418394c4ebcc5ff13d97e2b7b28929982c79
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: aac10cebd0f967944403837283e9008b0b1047fc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="sopen-wsopen"></a>_sopen、_wsopen
@@ -130,7 +131,7 @@ int _wsopen(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tsopen`|`_sopen`|`_sopen`|`_wsopen`|  
   
- 整数式 `oflag` は、\<fcntl.h> で定義されている次のマニフェスト定数の&1; つまたは複数を組み合わせることによって構成されます。 引数 `oflag` が複数の定数で構成される場合、これらはビットごとの OR 演算子を使用して組み合わされます ( `|` )。  
+ 整数式 `oflag` は、\<fcntl.h> で定義されている次のマニフェスト定数の 1 つまたは複数を組み合わせることによって構成されます。 引数 `oflag` が複数の定数で構成される場合、これらはビットごとの OR 演算子を使用して組み合わされます ( `|` )。  
   
  `_O_APPEND`  
  書き込み操作の前に、毎回、ファイル ポインターをファイルの末尾に位置変更します。  
@@ -241,10 +242,7 @@ int _wsopen(
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 「[_locking](../../c-runtime-library/reference/locking.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 「[_locking](../../c-runtime-library/reference/locking.md)」の例をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   

@@ -58,10 +58,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9a70fac9b948663985d71a16ec44e7bbae19f89d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 9831f7056ef91f64bba54740fbf7a372beb8f335
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="spawnlpe-wspawnlpe"></a>_spawnlpe、_wspawnlpe
@@ -107,7 +108,7 @@ intptr_t _wspawnlpe(
  環境設定へのポインターの配列。  
   
 ## <a name="return-value"></a>戻り値  
- 同期 `_spawnlpe` または `_wspawnlpe` (`_P_WAIT` 向けに指定された `mode`) からの戻り値が新しいプロセスの終了ステータスです。 非同期 `_spawnlpe` または `_wspawnlpe` (`_P_NOWAIT` 向けに指定された `_P_NOWAITO` または `mode`) からの戻り値がプロセス ハンドルです。 プロセスが正常に終了した場合、終了ステータスは 0 です。 生成されたプロセスで明示的に&0; 以外の引数を使用して `exit` ルーチンを呼び出した場合は、終了ステータスを&0; 以外の値に設定できます。 新しいプロセスが明示的に終了ステータスを正の値に設定しなかった場合、正の値の終了ステータスは中止または割り込みによる異常終了を示します。 戻り値 –1 はエラーを示します (新しいプロセスは開始されません)。 この場合、 `errno` は次のいずれかの値に設定されます。  
+ 同期 `_spawnlpe` または `_wspawnlpe` (`_P_WAIT` 向けに指定された `mode`) からの戻り値が新しいプロセスの終了ステータスです。 非同期 `_spawnlpe` または `_wspawnlpe` (`_P_NOWAIT` 向けに指定された `_P_NOWAITO` または `mode`) からの戻り値がプロセス ハンドルです。 プロセスが正常に終了した場合、終了ステータスは 0 です。 生成されたプロセスで明示的に 0 以外の引数を使用して `exit` ルーチンを呼び出した場合は、終了ステータスを 0 以外の値に設定できます。 新しいプロセスが明示的に終了ステータスを正の値に設定しなかった場合、正の値の終了ステータスは中止または割り込みによる異常終了を示します。 戻り値-1 は、(新しいプロセスは開始されません) エラーを示します。 この場合、 `errno` は次のいずれかの値に設定されます。  
   
  `E2BIG`  
  引数リストが 1024 バイトを超えています。  
@@ -141,13 +142,7 @@ intptr_t _wspawnlpe(
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
- 「[_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)」の使用例をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Diagnostics::Process クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.process.aspx)  
-  
--   [System::Diagnostics::ProcessStartInfo クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.aspx)  
+ 「 [_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)」の使用例を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

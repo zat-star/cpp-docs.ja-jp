@@ -31,10 +31,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 77314d99a34f109e556b8583b06ce51acce288bc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: e8573fab6f0d1a1ad43a9be2e3be1ddd8f556748
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="spaceinfo-structure"></a>space_info 構造体
@@ -61,14 +62,14 @@ struct space_info    {
 |`unsigned long long free`|ボリューム上のデータを表すために使用されないバイト数を表します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** filesystem  
+ **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::experimental::filesystem  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<filesystem>](../standard-library/filesystem.md)   
- [space 関数](http://msdn.microsoft.com/en-us/7fce0b0e-523b-4598-b218-47245d0204ca)   
+ [領域](http://msdn.microsoft.com/en-us/7fce0b0e-523b-4598-b218-47245d0204ca)   
  [ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)
 
 
