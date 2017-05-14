@@ -71,10 +71,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 2a1c5b467ba9f96af0bc8e402715a0a427c73eeb
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: cd787e4c18cf947760a31b5ee61f5ce7b83a7a2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strnextc-wcsnextc-mbsnextc-mbsnextcl"></a>_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l
@@ -110,7 +111,7 @@ unsigned int _mbsnextc_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの関数は `str`* *の次の文字の整数値を返します。  
+ これらの各関数の整数値を返しますの次の文字の`str`します。  
   
 ## <a name="remarks"></a>コメント  
  `_mbsnextc` 関数は、文字列のポインターを進めずに `str` の次のマルチバイト文字の整数値を返します。 `_mbsnextc` 関数は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に基づいて、マルチバイト文字列を認識します。  
@@ -125,7 +126,7 @@ unsigned int _mbsnextc_l(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsnextc`|`_strnextc`|`_mbsnextc`|`_wcsnextc`|  
   
- `_strnextc` と `_wcsnextc` はそれぞれ、`_mbsnextc` の&1; バイト文字列バージョンとワイド文字列バージョンです。 `_wcsnextc` は `string` の次のワイド文字単位の整数値を返します。`_strnextc` は `string` の次の&1; バイト文字の整数値を返します。 `_strnextc` と `_wcsnextc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
+ `_strnextc`および`_wcsnextc`は 1 バイト文字の文字列とワイド文字列バージョンの`_mbsnextc`します。 `_wcsnextc` は `string` の次のワイド文字単位の整数値を返します。`_strnextc` は `string` の次の 1 バイト文字の整数値を返します。 `_strnextc` と `_wcsnextc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
  `_mbsnextc_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -138,10 +139,7 @@ unsigned int _mbsnextc_l(
 |`_strnextc`|\<tchar.h>|  
 |`_wcsnextc`|\<tchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 200e62472c8c6002cdc45181ad019a1d78ca7977
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: c46338445598ef77e6b8a4c1c261962fe9e7ff0f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="valuecompare-class-ltmapgt"></a>value_compare クラス (&lt;map&gt;)
@@ -61,10 +62,10 @@ protected:
 ## <a name="remarks"></a>コメント  
  マップに含まれる要素全体の **value_type** 間で `value_compare` によって提供される比較の基準は、補助型クラスの構築によって各要素のキーの間で比較を行うことから導き出されます。 メンバー関数の演算子は、`value_compare` によって提供される関数オブジェクトに格納されている型 `key_compare` のオブジェクト **comp** を使って、2 つの要素の並べ替えキー構成要素を比較します。  
   
- セットとマルチセット (キーの値が要素の値と同一である単純なコンテナー) の場合、`value_compare` は `key_compare` と等価です。マップとマルチマップの場合、型 `pair` の要素の値が要素のキーの値と同一ではないため、その&2; つは等価ではありません。  
+ セットとマルチセット (キーの値が要素の値と同一である単純なコンテナー) の場合、`value_compare` は `key_compare` と等価です。マップとマルチマップの場合、型 `pair` の要素の値が要素のキーの値と同一ではないため、その 2 つは等価ではありません。  
   
 ## <a name="example"></a>例  
-  `value_compare` の宣言方法や使用方法の例については、[value_comp](../standard-library/map-class.md#map__value_comp)の例を参照してください。  
+  `value_compare` の宣言方法や使用方法の例については、[value_comp](../standard-library/map-class.md#value_comp)の例を参照してください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<map>  

@@ -73,10 +73,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 864c1bab23bdedf856f850411b1ba24813757833
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 6e54d8005929d967ff7e35950f2aa9d7c3b01d8e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strrev-wcsrev-mbsrev-mbsrevl"></a>_strrev、_wcsrev、_mbsrev、_mbsrev_l
@@ -118,7 +119,7 @@ unsigned char *_mbsrev_l(
   
  `_mbsrev` はそのパラメーターを検証します。 `string1` または `string2` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`_mbsrev` は `NULL` を返し、`errno` を `EINVAL` に設定します。 `_strrev` および `_wcsrev` は、パラメーターを検証しません。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないバージョンが現在のロケールを使用し、`_l` サフィックスが付いているバージョンが渡されたロケール パラメーターを代わりに使用する点を除いて、これらの関数のバージョンは同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないバージョンが現在のロケールを使用し、`_l` サフィックスが付いているバージョンが渡されたロケール パラメーターを代わりに使用する点を除いて、これらの関数のバージョンは同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
 > [!IMPORTANT]
 >  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
@@ -169,9 +170,6 @@ int main( void )
 ```Output  
 The string "Able was I ere I saw Elba" is a palindrome  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

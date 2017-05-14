@@ -69,10 +69,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0943a0b30643a6dff3d47508f9a514e3e0d441ff
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: f7bf32d7fa725e1f012b2a793a8091674e1c2e9f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strspnp-wcsspnp-mbsspnp-mbsspnpl"></a>_strspnp、_wcsspnp、_mbsspnp、_mbsspnp_l
@@ -115,7 +116,7 @@ unsigned char *_mbsspnp_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_strspnp`、`_wcsspnp`、および `_mbsspnp` は、`str` の文字セットに含まれない `charset` の最初の文字へのポインターを返します*。* `str` が `charset` に含まれる文字のみで構成されている場合、各関数は `NULL` を返します*。* これらのルーチンでは、エラーを示す戻り値は予約されていません。  
+ `_strspnp`、 `_wcsspnp`、および`_mbsspnp`最初の文字にポインターを返す`str`内の文字のセットに含まれない`charset`です。 これらの関数を返します`NULL`場合`str`から文字のみで成り立って`charset`です。 これらのルーチンでは、エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
  `_mbsspnp` 関数は、`str` の文字セットに属さない文字が `charset` で最初に出現する位置へのマルチバイト文字のポインターを返します。 `_mbsspnp` 関数は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に基づいて、マルチバイト文字列を認識します。 検索には、終端の NULL 文字は含まれません。  
@@ -128,7 +129,7 @@ unsigned char *_mbsspnp_l(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsspnp`|`_strspnp`|`_mbsspnp`|`_wcsspnp`|  
   
- `_strspnp` と `_wcsspnp` はそれぞれ、`_mbsspnp` の&1; バイト文字バージョンとワイド文字バージョンです。 それ以外の点では、`_strspnp` および `_wcsspnp` の動作は `_mbsspnp` と同じです。これらはこの割り当てにのみ使用し、その他の場合には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
+ `_strspnp` と `_wcsspnp` はそれぞれ、`_mbsspnp` の 1 バイト文字バージョンとワイド文字バージョンです。 それ以外の点では、`_strspnp` および `_wcsspnp` の動作は `_mbsspnp` と同じです。これらはこの割り当てにのみ使用し、その他の場合には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
  `_mbsspnp_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -163,9 +164,6 @@ int main( void ) {
 ```  
 abbage  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

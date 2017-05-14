@@ -6,22 +6,24 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: a6617109-2cec-4a69-948f-6c87116eda5f
 caps.latest.revision: 13
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ff42eebac50a016990a26dc358684dd70a33af84
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 46b2da82830b734ffd44eba5f72e8c5e912c3915
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltutilitygt-operators"></a>&lt;utility&gt; 演算子
 ||||  
 |-|-|-|  
-|[operator!=](#operator_neq)|[operator&gt;](#operator_gt_)|[operator&gt;=](#operator_gt__eq)|  
-|[operator&lt;](#operator_lt_)|[operator&lt;=](#operator_lt__eq)|[operator==](#operator_eq_eq)|  
+|[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|  
+|[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|[operator==](#op_eq_eq)|  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+##  <a name="op_neq"></a>  operator!=  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクトと等しくないかどうかを調べます。  
   
 ```  
@@ -33,17 +35,17 @@ constexpr bool operator!=(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  **pair.** 型のオブジェクト。  
   
- ` right`  
+ `right`  
  `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  ペアが等しくない場合には **true**。等しい場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- ペアのそれぞれの要素が等しい場合に、ペアが等しくなります。 片方のペアの最初または&2; 番目の要素のいずれかがもう一方のペアの対応する要素と等しくない場合には、2 つのペアは等しくありません。  
+ ペアのそれぞれの要素が等しい場合に、ペアが等しくなります。 片方のペアの最初または 2 番目の要素のいずれかがもう一方のペアの対応する要素と等しくない場合には、2 つのペアは等しくありません。  
   
 ### <a name="example"></a>例  
   
@@ -92,7 +94,7 @@ The pairs p1 and p2 are not equal.
 The pairs p1 and p3 are equal.  
 ```  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+##  <a name="op_eq_eq"></a>  operator==  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクトと等しいかどうかを調べます。  
   
 ```  
@@ -101,17 +103,17 @@ constexpr bool operator==(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  **pair.** 型のオブジェクト。  
   
- ` right`  
+ `right`  
  `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  ペアが等しい場合には **true**。`pair` が等しくないときには **false**。  
   
 ### <a name="remarks"></a>コメント  
- ペアのそれぞれの要素が等しい場合に、ペアが等しくなります。 ` left` が返されます。 **first** == ` right`。 **first** && ` left`。 **second** == ` right`。 **second**。 片方のペアの最初または&2; 番目の要素のいずれかがもう一方のペアの対応する要素と等しくない場合には、2 つのペアは等しくありません。  
+ ペアのそれぞれの要素が等しい場合に、ペアが等しくなります。 `left` が返されます。 **first** == `right`。 **first** && `left`。 **second** == `right`。 **second**。 片方のペアの最初または 2 番目の要素のいずれかがもう一方のペアの対応する要素と等しくない場合には、2 つのペアは等しくありません。  
   
 ### <a name="example"></a>例  
   
@@ -151,7 +153,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameoperatorlta--operatorlt"></a><a name="operator_lt_"></a>  operator&lt;  
+##  <a name="op_lt"></a>  operator&lt;  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクトより小さいかどうかを調べます。  
   
 ```  
@@ -160,17 +162,17 @@ constexpr bool operator<(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  演算子の左辺にある `pair` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  演算子の右辺にある `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  演算子の左辺の `pair` が演算子の右辺の `pair` より厳密に小さい場合は **true**、それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- ` left` が ` right.` より小さく、等しくない場合は、` left``pair` オブジェクトは ` right``pair` オブジェクトより厳密に小さいといいます。  
+ `left` `pair`オブジェクトの厳密にすると表現はより小さい`right``pair`オブジェクトの場合`left`が等しくないと、それよりも小さい`right`です。  
   
  ペアを比較する場合、2 つのペアの最初の要素の値が、最も優先度が高くなります。 最初の要素の値が異なる場合、その比較の結果がペアの比較の結果として扱われます。 最初の要素の値が同じである場合、2 番目の要素の値が比較され、その比較の結果がペアの比較の結果として扱われます。  
   
@@ -221,7 +223,7 @@ The pair p1 is less than the pair p2.
 The pair p1 is not less than the pair p3.  
 ```  
   
-##  <a name="a-nameoperatorlteqa--operatorlt"></a><a name="operator_lt__eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  operator&lt;=  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクト以下かどうかを調べます。  
   
 ```  
@@ -233,10 +235,10 @@ constexpr bool operator<=(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  演算子の左辺にある `pair` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  演算子の右辺にある `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -302,7 +304,7 @@ The pair p1 is greater than the pair p3.
 The pair p1 is less than or equal to the pair p4.  
 ```  
   
-##  <a name="a-nameoperatorgta--operatorgt"></a><a name="operator_gt_"></a>  operator&gt;  
+##  <a name="op_gt"></a>  operator&gt;  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクトより大きいかどうかを調べます。  
   
 ```  
@@ -314,17 +316,17 @@ constexpr bool operator>(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  演算子の左辺にある `pair` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  演算子の右辺にある `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  演算子の左辺にある `pair` が演算子の右辺の `pair` より厳密に大きい場合は **true**、それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- ` left` が ` right.` より大きくかつ等しくない場合、` left``pair` オブジェクトが ` right``pair` オブジェクトより厳密に大きいといいます。  
+ `left` `pair`オブジェクトと呼ばれますより厳密に大きく、 `right` `pair`オブジェクトの場合`left`はより大きいと等しくない`right`です。  
   
  ペアを比較する場合、2 つのペアの最初の要素の値が、最も優先度が高くなります。 最初の要素の値が異なる場合、その比較の結果がペアの比較の結果として扱われます。 最初の要素の値が同じである場合、2 番目の要素の値が比較され、その比較の結果がペアの比較の結果として扱われます。  
   
@@ -385,7 +387,7 @@ The pair p1 is greater than the pair p3.
 The pair p1 is not greater than the pair p4.  
 ```  
   
-##  <a name="a-nameoperatorgteqa--operatorgt"></a><a name="operator_gt__eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  operator&gt;=  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクト以上かどうかを調べます。  
   
 ```  
@@ -397,10 +399,10 @@ constexpr bool operator>=(const pair<T, U>& left, const pair<T, U>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  演算子の左辺にある `pair` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  演算子の右辺にある `pair` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  

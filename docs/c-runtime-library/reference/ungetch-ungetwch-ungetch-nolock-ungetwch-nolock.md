@@ -1,73 +1,90 @@
 ---
 title: "_ungetch、_ungetwch、_ungetch_nolock、_ungetwch_nolock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_ungetch_nolock"
-  - "_ungetwch_nolock"
-  - "_ungetwch"
-  - "_ungetch"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-conio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_ungetch_nolock"
-  - "ungetwch"
-  - "ungetch_nolock"
-  - "_ungetwch"
-  - "ungetch"
-  - "ungetwch_nolock"
-  - "_ungetch"
-  - "_ungettch_nolock"
-  - "_ungettch"
-  - "_ungetwch_nolock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ungetch 関数"
-  - "_ungetch_nolock 関数"
-  - "_ungettch 関数"
-  - "_ungettch_nolock 関数"
-  - "_ungetwch 関数"
-  - "_ungetwch_nolock 関数"
-  - "文字, 戻す (コンソールに)"
-  - "ungetch_nolock 関数"
-  - "ungettch 関数"
-  - "ungettch_nolock 関数"
-  - "ungetwch 関数"
-  - "ungetwch_nolock 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _ungetch_nolock
+- _ungetwch_nolock
+- _ungetwch
+- _ungetch
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-conio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _ungetch_nolock
+- ungetwch
+- ungetch_nolock
+- _ungetwch
+- ungetch
+- ungetwch_nolock
+- _ungetch
+- _ungettch_nolock
+- _ungettch
+- _ungetwch_nolock
+dev_langs:
+- C++
+helpviewer_keywords:
+- _ungetch function
+- ungetwch function
+- characters, pushing back to console
+- _ungettch_nolock function
+- ungettch function
+- _ungettch function
+- ungetch_nolock function
+- ungettch_nolock function
+- _ungetwch_nolock function
+- _ungetch_nolock function
+- ungetwch_nolock function
+- _ungetwch function
 ms.assetid: 70ae71c6-228c-4883-a57d-de6d5f873825
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# _ungetch、_ungetwch、_ungetch_nolock、_ungetwch_nolock
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4c36da30cfc69140a47e779025acb579bb687df2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
+---
+# <a name="ungetch-ungetwch-ungetchnolock-ungetwchnolock"></a>_ungetch、_ungetwch、_ungetch_nolock、_ungetwch_nolock
 コンソールから読み取った最後の文字をプッシュします。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。  詳細については、「[\/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int _ungetch(  
@@ -84,35 +101,35 @@ wint_t _ungetwch_nolock(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `c`  
  プッシュする文字。  
   
-## 戻り値  
- 成功した場合は、どちらの関数も文字 `c` を返します。  エラーが発生した場合は、`_ungetch` は `EOF` と `_ungetwch`の戻り`WEOF`の値を返します。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合は、どちらの関数も文字 `c` を返します。 エラーがある場合`_ungetch`に値を返します`EOF`と`_ungetwch`返します`WEOF`です。  
   
-## 解説  
- これらの関数は `_getch` で次に読み取られた文字または `_getche` 押します \(または`_getwch` または`_getwche`\) 実行するに `c` が発生すると、コンソールに文字を `c`。  次が読み取られる前に複数回呼び出されると、`_ungetch` および `_ungetwch` は失敗します。  `c` 引数は `EOF` \(または `WEOF`\) にはならない場合があります。  
+## <a name="remarks"></a>コメント  
+ これらの関数は、文字をプッシュ`c`、コンソールに戻って原因`c`によって読み取られた次の文字である`_getch`または`_getche`(または`_getwch`または`_getwche`)。 次が読み取られる前に複数回呼び出されると、`_ungetch` および `_ungetwch` は失敗します。 `c` 引数は `EOF` (または `WEOF`) にはならない場合があります。  
   
- `_nolock` サフィックス付きのバージョンは同じものですが、他のスレッドによる干渉から保護されない点が異なります。  他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。  これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
+ `_nolock` サフィックス付きのバージョンは同じものですが、他のスレッドによる干渉から保護されない点が異なります。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ungettch`|`_ungetch`|`_ungetch`|`_ungetwch`|  
 |`_ungettch_nolock`|`_ungetch_nolock`|`_ungetch_nolock`|`_ungetwch_nolock`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_ungetch`, `_ungetch_nolock`|\<conio.h\>|  
-|`_ungetwch`, `_ungetwch_nolock`|\<conio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`_ungetch`, `_ungetch_nolock`|\<conio.h>|  
+|`_ungetwch`, `_ungetwch_nolock`|\<conio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_ungetch.c  
@@ -149,8 +166,12 @@ int main( void )
 }  
 ```  
   
-  **`空白`トークン \= 空白**   
-## 参照  
+```Output  
+  
+Whitetoken = White  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
- [\_cscanf、\_cscanf\_l、\_cwscanf、\_cwscanf\_l](../../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)   
- [\_getch、\_getwch](../Topic/_getch,%20_getwch.md)
+ [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](../../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)   
+ [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)

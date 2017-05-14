@@ -59,10 +59,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9a16b7d6152ce3070eb8e4ea7552ab83200c0910
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 835450387dea050b45dac2e44a12c7df5d5d7023
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="ungetcnolock-ungetwcnolock"></a>_ungetc_nolock、_ungetwc_nolock
@@ -89,7 +90,7 @@ wint_t _ungetwc_nolock(
  `FILE` 構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、これらの各関数は文字引数 `c` を返します*。* 
+ 成功すると、これらの各関数は引数を返します文字`c`です。 
           `c` がプッシュ バックできない場合、または文字が読まれなかった場合は、入力ストリームは変更されず、`_ungetc_nolock` は `EOF` を返します。`_ungetwc_nolock` は、`WEOF` を返します。 `stream` が `NULL` である場合、`EOF` または `WEOF` が返され、`errno` が `EINVAL`に設定されます。  
   
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
@@ -110,10 +111,7 @@ wint_t _ungetwc_nolock(
 |`_ungetc_nolock`|\<stdio.h>|  
 |`_ungetwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

@@ -38,14 +38,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 088bf359fefd09bf4ea71ffceacd9139fbdbfba2
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 535ce75fb600b919b5e255bc580a93e448e81d59
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="vectorltboolgt-class"></a>vector&lt;bool&gt; クラス
-`vector<bool>` クラスは、`bool` 型の要素の [vector](../standard-library/vector-class.md) の部分的特殊化です。 このクラスには、特殊化によって使用される基になる型のアロケーターがあり、ビットごとに&1; つの `bool` 値を格納することによって領域を最適化します。  
+`vector<bool>` クラスは、`bool` 型の要素の [vector](../standard-library/vector-class.md) の部分的特殊化です。 このクラスには、特殊化によって使用される基になる型のアロケーターがあり、ビットごとに 1 つの `bool` 値を格納することによって領域を最適化します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -63,40 +64,40 @@ class vector<bool, Allocator>
   
 |||  
 |-|-|  
-|[const_pointer](#vector_lt_bool_gt___const_pointer)|`const_iterator` のブール型要素への定数ポインターとして使用できる `vector<bool>` への typedef。|  
-|[const_reference](#vector_lt_bool_gt___const_reference)|`bool` の typedef。 初期化後に、元の値への更新を確認しません。|  
-|[pointer](#vector_lt_bool_gt___pointer)|`iterator` のブール型要素へのポインターとして使用できる `vector<bool>` への typedef。|  
+|[const_pointer](#const_pointer)|`const_iterator` のブール型要素への定数ポインターとして使用できる `vector<bool>` への typedef。|  
+|[const_reference](#const_reference)|`bool` の typedef。 初期化後に、元の値への更新を確認しません。|  
+|[pointer](#pointer)|`iterator` のブール型要素へのポインターとして使用できる `vector<bool>` への typedef。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[flip](#vector_lt_bool_gt___flip)|`vector<bool>` 内のすべてのビットを反転させます。|  
-|[swap](#vector_lt_bool_gt___swap)|2 つの `vector<bool>` の要素を交換します。|  
-|[operator&#91;&#93;](#vector_lt_bool_gt___operator_at)|指定した位置における `vector<bool>` 要素へのシミュレートされた参照を返します。|  
-|`at`|[vector](../standard-library/vector-class.md)::at 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) を使用します。 「[operator&#91;&#93;](#vector_lt_bool_gt___operator_at)」も参照してください。|  
-|`front`|[vector](../standard-library/vector-class.md)::front 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) を使用します。 「[operator&#91;&#93;](#vector_lt_bool_gt___operator_at)」も参照してください。|  
-|`back`|[vector](../standard-library/vector-class.md)::back 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) を使用します。 「[operator&#91;&#93;](#vector_lt_bool_gt___operator_at)」も参照してください。|  
+|[flip](#flip)|`vector<bool>` 内のすべてのビットを反転させます。|  
+|[swap](#swap)|2 つの `vector<bool>` の要素を交換します。|  
+|[operator&#91;&#93;](#op_at)|指定した位置における `vector<bool>` 要素へのシミュレートされた参照を返します。|  
+|`at`|[vector](../standard-library/vector-class.md)::at 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#reference_class) を使用します。 「[operator&#91;&#93;](#op_at)」も参照してください。|  
+|`front`|[vector](../standard-library/vector-class.md)::front 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#reference_class) を使用します。 「[operator&#91;&#93;](#op_at)」も参照してください。|  
+|`back`|[vector](../standard-library/vector-class.md)::back 関数と同様に機能します。ただし、プロキシ クラス [vector\<bool>::reference](#reference_class) を使用します。 「[operator&#91;&#93;](#op_at)」も参照してください。|  
   
 ### <a name="proxy-class"></a>プロキシ クラス  
   
 |||  
 |-|-|  
-|[vector\<bool> reference クラス](#vector_lt_bool_gt___reference_class)|`bool&` の動作をシミュレートするためのプロキシとして機能するクラスで、そのオブジェクトは `vector<bool>` オブジェクト内の要素 (単一ビット) への参照を提供できます。|  
+|[vector\<bool> reference クラス](#reference_class)|`bool&` の動作をシミュレートするためのプロキシとして機能するクラスで、そのオブジェクトは `vector<bool>` オブジェクト内の要素 (単一ビット) への参照を提供できます。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー**: \<vector>  
   
  **名前空間:** std  
   
-##  <a name="vector_lt_bool_gt___const_pointer"></a>  vector\<bool>::const_pointer  
+##  <a name="const_pointer"></a>  vector\<bool>::const_pointer  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素への定数ポインターとして使用できるオブジェクトを表す型。  
   
 ```  
 typedef const_iterator const_pointer;  
 ```  
   
-##  <a name="vector_lt_bool_gt___const_reference"></a>  vector\<bool>::const_reference  
+##  <a name="const_reference"></a>  vector\<bool>::const_reference  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素への定数参照として使用できるオブジェクトを表す型。  
   
 ```  
@@ -104,9 +105,9 @@ typedef bool const_reference;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 詳細とコード例については、「[vector&lt;bool&gt;::reference::operator=](#vector_lt_bool_gt___reference_operator_eq)」を参照してください。  
+ 詳細とコード例については、「[vector&lt;bool&gt;::reference::operator=](#reference_operator_eq)」を参照してください。  
   
-##  <a name="vector_lt_bool_gt___flip"></a>  vector\<bool>::flip  
+##  <a name="flip"></a>  vector\<bool>::flip  
  `vector<bool>` 内のすべてのビットを反転させます。  
   
 ```  
@@ -144,7 +145,7 @@ int main()
   
 ```  
   
-##  <a name="vector_lt_bool_gt___operator_at"></a>  vector\<bool>::operator[]  
+##  <a name="op_at"></a>  vector\<bool>::operator[]  
  指定した位置における `vector<bool>` 要素へのシミュレートされた参照を返します。  
   
 ```  
@@ -161,7 +162,7 @@ vector&<bool&>::const_reference operator[](size_type Pos) const;
 |`Pos`|`vector<bool>` 要素の位置。|  
   
 ### <a name="return-value"></a>戻り値  
- インデックス付けされた要素の値を格納する [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) または [vector\<bool>::const_reference](#vector_lt_bool_gt___const_reference) オブジェクト。  
+ インデックス付けされた要素の値を格納する [vector\<bool>::reference](#reference_class) または [vector\<bool>::const_reference](#const_reference) オブジェクト。  
   
  指定された位置がコンテナーのサイズ以上の場合、結果は未定義になります。  
   
@@ -169,7 +170,7 @@ vector&<bool&>::const_reference operator[](size_type Pos) const;
  `_ITERATOR_DEBUG_LEVEL` を設定してコンパイルした場合、ベクターの境界の外にある要素にアクセスしようとすると、実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
   
 ### <a name="example"></a>例  
-  このコード例は、`vector<bool>::operator[]` の正しい使用方法と、コメント アウトされた&2; つの一般的なコーディングの誤りを示しています。 `vector<bool>::reference` が返す `vector<bool>::operator[]` オブジェクトのアドレスを取得できないため、これらの誤りによってエラーが発生します。  
+  このコード例は、`vector<bool>::operator[]` の正しい使用方法と、コメント アウトされた 2 つの一般的なコーディングの誤りを示しています。 `vector<bool>::reference` が返す `vector<bool>::operator[]` オブジェクトのアドレスを取得できないため、これらの誤りによってエラーが発生します。  
   
 ```cpp  
 // cl.exe /EHsc /nologo /W4 /MTd   
@@ -198,18 +199,18 @@ int main()
 }  
 ```  
   
-##  <a name="vector_lt_bool_gt___pointer"></a>  vector\<bool>::pointer  
+##  <a name="pointer"></a>  vector\<bool>::pointer  
  `vector<bool>` オブジェクトに格納されるシーケンスのブール要素へのポインターとして使用できるオブジェクトを表す型。  
   
 ```  
 typedef iterator pointer;  
 ```  
   
-##  <a name="vector_lt_bool_gt___reference_class"></a>  vector\<bool>::reference クラス  
+##  <a name="reference_class"></a>  vector\<bool>::reference クラス  
  `vector<bool>::reference` クラスは `bool&` をシミュレートするために [vector\<bool> クラス](../standard-library/vector-bool-class.md)によって提供されるプロキシ クラスです。  
   
 ### <a name="remarks"></a>コメント  
- C++ では、ネイティブにビットを直接参照しないため、シミュレートされた参照が必要です。 `vector<bool>` は、要素ごとに&1; ビットだけ使用します。このビットは、このプロキシ クラスを使用して参照できます。 ただし、参照のシミュレーションは、特定の代入が有効でないため、完全ではありません。 たとえば、`vector<bool>::reference` オブジェクトのアドレスを受け取ることができないため、[vector\<bool>::operator&#91;&#93;](#vector_lt_bool_gt___operator_at) を使用する次のコードは正しくありません。  
+ C++ では、ネイティブにビットを直接参照しないため、シミュレートされた参照が必要です。 `vector<bool>` は、要素ごとに 1 ビットだけ使用します。このビットは、このプロキシ クラスを使用して参照できます。 ただし、参照のシミュレーションは、特定の代入が有効でないため、完全ではありません。 たとえば、`vector<bool>::reference` オブジェクトのアドレスを受け取ることができないため、[vector\<bool>::operator&#91;&#93;](#op_at) を使用する次のコードは正しくありません。  
   
 ```cpp  
 vector<bool> vb;  
@@ -218,7 +219,7 @@ bool* pb = &vb[1]; // conversion error - do not use
 bool& refb = vb[1];   // conversion error - do not use  
 ```  
   
-###  <a name="vector_lt_bool_gt___reference_flip"></a>  vector\<bool>::reference::flip  
+###  <a name="reference_flip"></a>  vector\<bool>::reference::flip  
  参照先の [vector\<bool>](../standard-library/vector-bool-class.md) 要素のブール値を反転します。  
   
 ```  
@@ -264,7 +265,7 @@ The vector with first element flipped is:
     false false false true true  
 ```  
   
-###  <a name="vector_lt_bool_gt___reference_operator_bool"></a>  vector\<bool>::reference::operator bool  
+###  <a name="reference_operator_bool"></a>  vector\<bool>::reference::operator bool  
  `vector<bool>::reference` から `bool` への暗黙の変換を提供します。  
   
 ```  
@@ -277,7 +278,7 @@ operator bool() const;
 #### <a name="remarks"></a>コメント  
  `vector<bool>` オブジェクトはこの演算子では変更できません。  
   
-###  <a name="vector_lt_bool_gt___reference_operator_eq"></a>  vector\<bool>::reference::operator=  
+###  <a name="reference_operator_eq"></a>  vector\<bool>::reference::operator=  
  ブール値をビットに割り当てます。または参照先の要素が保持している値をビットに割り当てます。  
   
 ```  
@@ -363,8 +364,8 @@ The original value of the 2nd element still stored in a bool: false
 The original value of the 3rd element still stored in a bool: false  
 ```  
   
-##  <a name="vector_lt_bool_gt___swap"></a>  vector\<bool>::swap  
- プロキシ クラス [vector\<bool>::reference](#vector_lt_bool_gt___reference_class) を使用してブール ベクター (`vector<bool>`) の&2; つの要素を交換する静的メンバー関数。  
+##  <a name="swap"></a>  vector\<bool>::swap  
+ プロキシ クラス [vector\<bool>::reference](#reference_class) を使用してブール ベクター (`vector<bool>`) の 2 つの要素を交換する静的メンバー関数。  
   
 ```  
 static void swap(
