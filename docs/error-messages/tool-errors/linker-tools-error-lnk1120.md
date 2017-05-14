@@ -1,31 +1,50 @@
 ---
-title: "リンカ ツール エラー LNK1120 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK1120"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK1120"
+title: "リンカ ツール エラー LNK1120 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK1120
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK1120
 ms.assetid: 56aa7d36-921f-4daf-b44d-cca0d4fb1b51
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# リンカ ツール エラー LNK1120
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: 1809ed4e5950165d6a187fd3c62871c25124663f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
-外部参照 number が未解決です。  
+---
+# <a name="linker-tools-error-lnk1120"></a>リンカ ツール エラー LNK1120
+*数*未解決の外部項目  
   
- エラー LNK1120 は、リンクで未解決の外部参照の個数 \(`number`\) を示します。  未解決の外部参照を発生させた原因は、未解決の各外部参照ごとにこのエラー メッセージの前に出力されるエラー [LNK2001](../Topic/Linker%20Tools%20Error%20LNK2001.md) で示します。  
+数を報告するエラー LNK1120 (*数*) このリンク操作の未解決の外部シンボル エラーのです。 ほとんどの未解決の外部シンボル エラーが個別にによって[リンカ ツール エラー LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md)と[リンカ ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)、する前にこのエラー メッセージの 1 回ごとに未解決の外部シンボルというエラーです。  
   
- 詳細については、参照します [http:\/\/support.microsoft.com\/default.aspx?scid\=kb;en\-us;815650](http://support.microsoft.com/default.aspx?scid=kb;en-us;815650)。
+このエラーを解決するには、すべての他の未解決の外部エラーまたはビルド出力に先行するその他のリンカー エラーを修正します。 未解決の外部エラーが残っていない場合、このエラーは報告されません。  
+

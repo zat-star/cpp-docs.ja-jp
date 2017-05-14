@@ -39,7 +39,6 @@ f1_keywords:
 - C4457
 - C4458
 - C4459
-- C4463
 - C4464
 - C4472
 - C4480
@@ -101,7 +100,6 @@ helpviewer_keywords:
 - C4457
 - C4458
 - C4459
-- C4463
 - C4464
 - C4472
 - C4480
@@ -144,10 +142,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: d7d097b399d3681ef523d8787ecc38af472840f6
-ms.openlocfilehash: 123fea75676708aa557a4b4bb5aced1712ca86e4
-ms.lasthandoff: 04/28/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: ed1f641e226f85aefcebf5ecf127c1345dc0b1b2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="compiler-warnings-c4400-through-c4599"></a>コンパイラの警告 C4400 C4599 経由
@@ -162,7 +161,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
   
 |警告|メッセージ|  
 |-------------|-------------|  
-|[コンパイラの警告 (レベル 1) C4600](../../error-messages/compiler-warnings/compiler-warning-level-1-c4600.md)|#プラグマ '*マクロ名*': 有効な空でない文字列が必要です|  
+|[コンパイラの警告 (レベル 1) C4600](../../error-messages/compiler-warnings/compiler-warning-level-1-c4600.md)|#pragma '*マクロ名*': 有効な空でない文字列が必要です|  
 |[コンパイラの警告 (レベル 4) C4400](../../error-messages/compiler-warnings/compiler-warning-level-4-c4400.md)|'*型*': この型での const/volatile 修飾子はサポートされていません|  
 |[コンパイラの警告 (レベル 1) C4401](../../error-messages/compiler-warnings/compiler-warning-level-1-c4401.md)|'*ビット フィールド*': メンバーがビット フィールドです|  
 |[コンパイラの警告 (レベル 1) C4402](../../error-messages/compiler-warnings/compiler-warning-level-1-c4402.md)|PTR 演算子を使わなければなりません。|  
@@ -198,7 +197,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |[コンパイラの警告 (レベル 1) C4436](../../error-messages/compiler-warnings/compiler-warning-level-1-c4436.md)|動的\_仮想ベースからキャスト '*base_class*'to'*derived_class*' コンス トラクターまたはデストラクターで部分的に構築されるオブジェクトを使用することができません|  
 |[コンパイラの警告 (レベル 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)|動的\_仮想ベースからキャスト '*base_class*'to'*derived_class*' 一部のコンテキストで失敗する可能性があります|  
 |コンパイラの警告 C4438|'*関数*':/await で安全に呼び出すことはできません:/await:clrcompat モード。 場合 '*関数*' CLR への呼び出しを CLR ヘッドが破損する可能性があります|  
-|[コンパイラの警告 C4439](../../error-messages/compiler-warnings/compiler-warning-c4439.md)|'*関数*': シグネチャのマネージ型を伴う関数定義は _ _clrcall 呼び出し規約を持つ必要があります|  
+|[コンパイラの警告 C4439](../../error-messages/compiler-warnings/compiler-warning-c4439.md)|'*関数*': マネージ シグネチャで型を伴う関数定義は _ _clrcall 呼び出し規約をいる必要があります|  
 |[コンパイラの警告 (レベル 1) C4440](../../error-messages/compiler-warnings/compiler-warning-level-1-c4440.md)|呼び出し規約の再から '*calling_convention1*'to'*calling_convenction2*' は無視されます|  
 |[コンパイラの警告 (レベル 1) C4441](../../error-messages/compiler-warnings/compiler-warning-level-1-c4441.md)|呼び出し規約 '*calling_convention1*' 無視されます。'*calling_convention2*' 代わりに使用|  
 |コンパイラの警告 (レベル 1) C4442|_ _annotation 引数に null 終端文字を埋め込みます。  値が切り捨てられます。|  
@@ -215,14 +214,14 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |コンパイラの警告 (レベル 1) C4453|'*型*': '[WebHostHidden]' の型ではないパブリック型の発行サーフェスでは使用できません '[WebHostHidden]'|  
 |コンパイラの警告 (レベル 1) C4454|'*関数*' は、[defaultoverload] を指定せず複数の入力パラメーターの数でオーバー ロードします。 ピッキング '*宣言*' 既定のオーバー ロードとして|  
 |コンパイラの警告 (レベル 1) C4455|' operator*演算子*': アンダー スコアで始まらないリテラル サフィックス識別子は予約されています|  
-|コンパイラの警告 (レベル 3) C4456|宣言 '*識別子*' 上のローカル宣言を非表示になります|  
-|コンパイラの警告 (レベル 3) C4457|宣言 '*識別子*' 関数のパラメーターを非表示にします|  
-|コンパイラの警告 (レベル 3) C4458|宣言 '*識別子*'、クラス メンバーが非表示にします|  
-|コンパイラの警告 (レベル 3) C4459|宣言 '*識別子*' グローバル宣言を非表示になります|  
-|[コンパイラの警告 (レベル 4) C4460](../../error-messages/compiler-warnings/compiler-warning-level-4-c4460.md)|'WinRT &#124; 管理されている' 演算子 '*演算子*' が、参照によって渡されるパラメーター。 'WinRT &#124; 管理' 演算子 '*演算子*'は C++ 演算子セマンティクスとは異なる'*cpp_operator*'、値渡しするつもりでしたか?|  
+|[コンパイラの警告 (レベル 4) C4456](compiler-warning-level-4-c4456.md)|宣言 '*識別子*' 上のローカル宣言を非表示になります|  
+|[コンパイラの警告 (レベル 4) C4457](compiler-warning-level-4-c4457.md)|宣言 '*識別子*' 関数のパラメーターを非表示にします|  
+|[コンパイラの警告 (レベル 4) C4458](compiler-warning-level-4-c4458.md)|宣言 '*識別子*'、クラス メンバーが非表示にします|  
+|[コンパイラの警告 (レベル 4) C4459](compiler-warning-level-4-c4459.md)|宣言 '*識別子*' グローバル宣言を非表示になります|  
+|[コンパイラの警告 (レベル 4) C4460](../../error-messages/compiler-warnings/compiler-warning-level-4-c4460.md)|'WinRT &#124; 管理されている' 演算子 '*演算子*' が、参照によって渡されるパラメーター。 'WinRT &#124; 管理されている' 演算子 '*演算子*'は C++ 演算子セマンティクスとは異なる'*cpp_operator*'、値渡しするつもりでしたか?|  
 |[コンパイラの警告 (レベル 1) C4461](../../error-messages/compiler-warnings/compiler-warning-level-1-c4461.md)|'*classname*': このクラスはファイナライザー '!*ファイナライザー*'が、デストラクター' ~*dtor*'|  
 |[コンパイラの警告 (レベル 1) C4462](../../error-messages/compiler-warnings/compiler-warning-level-1-c4462.md)|'*型*': 型の GUID を決定することはできません。 プログラムは、実行時に失敗する可能性があります。|  
-|コンパイラの警告 C4463|オーバーフローです。割り当てる '*値*'にビット フィールドの値を保持できるだけ'*min_value*'to'*max_value*'|  
+|[コンパイラの警告 (レベル 4) C4463](compiler-warning-level-4-c4463.md)|オーバーフローです。割り当てる '*値*'にビット フィールドの値を保持できるだけ'*min_value*'to'*max_value*'|  
 |コンパイラの警告 C4464|相対インクルード パスを含む '.. '|  
 |[コンパイラの警告 (レベル 1) C4470](../../error-messages/compiler-warnings/compiler-warning-level-1-c4470.md)|浮動小数点の制御 pragmas は /clr で無視されました|  
 |[コンパイラの警告 (レベル 4) C4471](compiler-warning-level-4-c4471.md)|'*列挙*': 対象範囲外の列挙の事前宣言が基になる型 (int が想定されます) を持つ必要があります|  
@@ -261,7 +260,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |[コンパイラの警告 (レベル 3) C4521](../../error-messages/compiler-warnings/compiler-warning-level-3-c4521.md)|'*クラス*': 指定された複数のコピー コンス トラクター|  
 |[コンパイラの警告 (レベル 3) C4522](../../error-messages/compiler-warnings/compiler-warning-level-3-c4522.md)|'*クラス*': 指定された複数の代入演算子|  
 |[コンパイラの警告 (レベル 3) C4523](../../error-messages/compiler-warnings/compiler-warning-level-3-c4523.md)|'*クラス*': 指定された複数のデストラクター|  
-|[コンパイラの警告 (レベル 1) C4526](../../error-messages/compiler-warnings/compiler-warning-level-1-c4526.md)|'*関数*': 静的メンバー関数は仮想関数をオーバーライドできません'*仮想関数*' オーバーライドが無視されます、仮想関数を非表示には|  
+|[コンパイラの警告 (レベル 1) C4526](../../error-messages/compiler-warnings/compiler-warning-level-1-c4526.md)|'*関数*': 静的メンバー関数は仮想関数をオーバーライドできません'*仮想関数*' オーバーライドを無視すると、仮想関数を非表示には|  
 |[コンパイラの警告 (レベル 1) C4530](../../error-messages/compiler-warnings/compiler-warning-level-1-c4530.md)|C++ 例外処理を使っていますが、アンワインド セマンティクスが有効になっていません。 /EHsc を指定してください。|  
 |コンパイラの警告 (レベル 1) C4531|C++ 例外処理は Windows CE では使用できません。 構造化例外処理を使用します。|  
 |[コンパイラの警告 (レベル 1) C4532](../../error-messages/compiler-warnings/compiler-warning-level-1-c4532.md)|'continue': '_ _finally/finally に' ブロックからのジャンプが動作を終了処理時に定義されていません|  
@@ -273,7 +272,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |[コンパイラの警告 (レベル 3) C4538](../../error-messages/compiler-warnings/compiler-warning-level-3-c4538.md)|'*型*': この型での const/volatile 修飾子はサポートされていません|  
 |[コンパイラの警告 (レベル 1) C4540](../../error-messages/compiler-warnings/compiler-warning-level-1-c4540.md)|dynamic_cast がアクセスできないか、あいまいなベース; に変換するために使用実行時のテストは失敗します ('*type1*'to'*type2*')|  
 |[コンパイラの警告 (レベル 1) C4541](../../error-messages/compiler-warnings/compiler-warning-level-1-c4541.md)|'*識別子*'ポリモーフィックな型で使用される'*型*'/GR-; で予期しない動作があります|  
-|コンパイラの警告 (レベル 1) C4542|書き込むことはできませんのマージされた挿入されたテキスト ファイルの生成を省略*filetype*ファイル: '*問題*':*メッセージ*|  
+|コンパイラの警告 (レベル 1) C4542|書き込むことはできません、マージされた挿入されたテキスト ファイルの生成を省略*filetype*ファイル: '*問題*':*メッセージ*|  
 |[コンパイラの警告 (レベル 3) C4543](../../error-messages/compiler-warnings/compiler-warning-level-3-c4543.md)|属性によって非表示テキストを挿入された ' ありません\_injected_text'|  
 |[コンパイラの警告 (レベル 1) C4544](../../error-messages/compiler-warnings/compiler-warning-level-1-c4544.md)|'*宣言*': 既定のテンプレート引数がこのテンプレート宣言で無視されます|  
 |[コンパイラの警告 (レベル 1) C4545](../../error-messages/compiler-warnings/compiler-warning-level-1-c4545.md)|コンマ前の式は、引数リストのない関数として評価します。|  
@@ -285,7 +284,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |[コンパイラの警告 (レベル 1) C4551](../../error-messages/compiler-warnings/compiler-warning-level-1-c4551.md)|関数呼び出しに引数リストがありません。|  
 |[コンパイラの警告 (レベル 1) C4552](../../error-messages/compiler-warnings/compiler-warning-level-1-c4552.md)|'*演算子*': 演算子も何も起こりません予期される演算子の副作用。|  
 |[コンパイラの警告 (レベル 1) C4553](../../error-messages/compiler-warnings/compiler-warning-level-1-c4553.md)|'*演算子*': 演算子も何も起こりませんするつもりでした' 演算子ですか?。|  
-|[コンパイラの警告 (レベル 3) C4554](../../error-messages/compiler-warnings/compiler-warning-level-3-c4554.md) C4554|'*演算子*': 考えられるエラーの演算子の優先順位ですかっこを使用して、優先順位を明確に。|  
+|[コンパイラの警告 (レベル 3) C4554](../../error-messages/compiler-warnings/compiler-warning-level-3-c4554.md) C4554|'*演算子*': 可能性のあるエラーの演算子の優先順位ですかっこを使用する優先順位を明確にする。|  
 |[コンパイラの警告 (レベル 1) C4555](../../error-messages/compiler-warnings/compiler-warning-level-1-c4555.md)|式の影響はありません; 式の副作用が必要です。|  
 |[コンパイラの警告 (レベル 1) C4556](../../error-messages/compiler-warnings/compiler-warning-level-1-c4556.md)|組み込みイミディ エイト引数の値 '*値*'が範囲外'*lower_bound* - *upper_bound*'|  
 |[コンパイラの警告 (レベル 3) C4557](../../error-messages/compiler-warnings/compiler-warning-level-3-c4557.md)|'_ _assume' には、影響が含んでいます '*効果*'。|  
@@ -300,7 +299,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |コンパイラの警告 (レベル 3) C4569|'*関数*': 明示的なオーバーライドの署名に一致するメンバーがありません|  
 |[コンパイラの警告 (レベル 3) C4570](../../error-messages/compiler-warnings/compiler-warning-level-3-c4570.md)|'*型*': 抽象ですが、抽象関数として明示的に宣言されていません|  
 |[コンパイラの警告 (レベル 4) C4571](../../error-messages/compiler-warnings/compiler-warning-level-4-c4571.md)|情報: catch(...) の意味が Visual C++ 7.1 から変更されています。構造化例外 (SEH) はキャッチされません。|  
-|[コンパイラの警告 (レベル 1) C4572](../../error-messages/compiler-warnings/compiler-warning-level-1-c4572.md)|[ParamArray] 属性は/clr を使用して '…' その代わりに|  
+|[コンパイラの警告 (レベル 1) C4572](../../error-messages/compiler-warnings/compiler-warning-level-1-c4572.md)|[ParamArray] 属性は/clr を使用して '…' 廃止されました その代わりに|  
 |コンパイラの警告 (レベル 1) C4573|使用法 '*ラムダ関数*' が 'this' をキャプチャするコンパイラを必要と現在の既定のキャプチャ モードが許可されていません。|  
 |コンパイラの警告 (レベル 4) C4574|'*識別子*'として定義されている' 0': '#if identifier' を使用するつもりでしたか?|  
 |コンパイラの警告 (レベル 1) C4575|'\_\_vectorcall' と互換性のない、'/clr' オプション: への変換'\__stdcall'|  
@@ -309,7 +308,7 @@ MSDN のパブリック フォーラムに関するエラーと警告の追加�
 |コンパイラの警告 (レベル 4) C4582|'*型*': コンス トラクターは暗黙的に呼び出されません|  
 |コンパイラの警告 (レベル 4) C4583|'*型*': デストラクターは暗黙的に呼び出されません|  
 |[コンパイラの警告 (レベル 1) C4584](../../error-messages/compiler-warnings/compiler-warning-level-1-c4584.md)|'*class1*': 基底クラス'*class2*'は、基本クラスでは既に'*class3*'|  
-|コンパイラの警告 (レベル 1) C4585|'*クラス*': WinRT 'public ref class' sealed にする必要がありますか、または、既存の派生には、クラスが封印されていません。|  
+|コンパイラの警告 (レベル 1) C4585|'*クラス*': WinRT 'public ref class' はシールする必要がありますかまたは派生して、既存の unsealed クラス|  
 |コンパイラの警告 (レベル 1) C4586|'*型*': パブリック型は 'Windows' というトップレベルの名前空間で宣言することはできません|  
 |コンパイラの警告 (レベル 1) C4587|'*anonymous_structure*': 動作変更: コンス トラクターが不要になった暗黙的に呼び出されます|  
 |コンパイラの警告 (レベル 1) C4588|'*anonymous_structure*': 動作変更: デストラクターは呼び出されなく|  
