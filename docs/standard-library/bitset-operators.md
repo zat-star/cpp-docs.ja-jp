@@ -6,24 +6,26 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: 84fe6a13-6f6e-4cdc-bf8f-6f65ab1134d4
 caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2a1f1c21cdcd42e7e8d33eb6405297fc88635d87
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 99e42dab27a7ee03c42e9b1b5a35e94cc7ed050b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltbitsetgt-operators"></a>&lt;bitset&gt; 演算子
 ||||  
 |-|-|-|  
-|[operator&amp;](#operator_amp_)|[operator&gt;&gt;](#operator_gt__gt_)|[operator&lt;&lt;](#operator_lt__lt_)|  
-|[operator_xor](#operator_xor)|[operator_or](#operator_or)|  
+|[operator&amp;](#op_amp)|[operator&gt;&gt;](#op_gt_gt)|[operator&lt;&lt;](#op_lt_lt)|  
+|[operator^](#op_xor)|[operator|](#op_or)|  
   
-##  <a name="a-nameoperatorampa--operatoramp"></a><a name="operator_amp_"></a>  operator&amp;  
+##  <a name="op_amp"></a>  operator&amp;  
  2 つのビットセット間でビットごとの `AND` を実行します。  
   
 ```  
@@ -35,14 +37,14 @@ operator&(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- それぞれの要素が `AND` でビットごとに結合される&2; つのビットセットのうちの最初。  
+ `left`  
+ それぞれの要素が `AND` でビットごとに結合される 2 つのビットセットのうちの最初。  
   
- ` right`  
- それぞれの要素が `AND` でビットごとに結合される&2; つの valarray のうちの&2; つ目。  
+ `right`  
+ それぞれの要素が `AND` でビットごとに結合される 2 つの valarray のうちの 2 つ目。  
   
 ### <a name="return-value"></a>戻り値  
- 要素が ` left` と ` right` の該当要素で `AND` 演算を実行した結果であるビットセット。  
+ 要素が `left` と `right` の該当要素で `AND` 演算を実行した結果であるビットセット。  
   
 ### <a name="example"></a>例  
   
@@ -72,7 +74,7 @@ bitset 2: 0011
 bitset 3: 0001  
 ```  
   
-##  <a name="a-nameoperatorltlta--operatorltlt"></a><a name="operator_lt__lt_"></a>  演算子&lt;&lt;  
+##  <a name="op_lt_lt"></a>  演算子&lt;&lt;  
  ビット シーケンスのテキスト表現を出力ストリームに挿入します。  
   
 ```  
@@ -80,12 +82,11 @@ bitset 3: 0001
 template <class CharType, class Traits, size_t N>  
 basic_ostream<CharType, Traits>& operator<<(
     basic_ostream<CharType, Traits>& ostr,  
-    const bitset<N>& 
-    right);
+    const bitset<N>& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  文字列として出力ストリームに挿入する型 **bitset\<N>** のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -127,7 +128,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameoperatorgtgta--operatorgtgt"></a><a name="operator_gt__gt_"></a>  演算子&gt;&gt;  
+##  <a name="op_gt_gt"></a>  演算子&gt;&gt;  
  ビット文字の文字列をビットセットに読み込みます。  
   
 ```  
@@ -144,7 +145,7 @@ _Istr,
  `_Istr`  
  ビットセットに挿入する入力ストリームに入力される文字列。  
   
- ` right`  
+ `right`  
  入力ストリームからビットを受け取るビットセット。  
   
 ### <a name="return-value"></a>戻り値  
@@ -210,7 +211,7 @@ int main()
 }  
 ```  
   
-##  <a name="a-nameoperatorxora--operatorxor"></a><a name="operator_xor"></a>  operator_xor  
+##  <a name="op_xor"></a>  operator^  
  2 つのビットセット間でビットごとの `EXCLUSIVE-OR` を実行します。  
   
 ```  
@@ -222,14 +223,14 @@ operator^(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- それぞれの要素が `EXCLUSIVE-OR` でビットごとに結合される&2; つのビットセットのうちの最初。  
+ `left`  
+ それぞれの要素が `EXCLUSIVE-OR` でビットごとに結合される 2 つのビットセットのうちの最初。  
   
- ` right`  
- それぞれの要素が `EXCLUSIVE-OR` でビットごとに結合される&2; つの valarray のうちの&2; つ目。  
+ `right`  
+ それぞれの要素が `EXCLUSIVE-OR` でビットごとに結合される 2 つの valarray のうちの 2 つ目。  
   
 ### <a name="return-value"></a>戻り値  
- 要素が ` left` と ` right` の該当要素で `EXCLUSIVE-OR` 演算を実行した結果であるビットセット。  
+ 要素が `left` と `right` の該当要素で `EXCLUSIVE-OR` 演算を実行した結果であるビットセット。  
   
 ### <a name="example"></a>例  
   
@@ -259,7 +260,7 @@ bitset 2: 0011
 bitset 3: 0110  
 ```  
   
-##  <a name="a-nameoperatorora--operatoror"></a><a name="operator_or"></a>  operator_or  
+##  <a name="op_or"></a>operator |  
  2 つのビットセット間でビットごとの `OR` を実行します。  
   
 ```  
@@ -271,14 +272,14 @@ operator|(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- それぞれの要素が `OR` でビットごとに結合される&2; つのビットセットのうちの最初。  
+ `left`  
+ それぞれの要素が `OR` でビットごとに結合される 2 つのビットセットのうちの最初。  
   
- ` right`  
- それぞれの要素が `OR` でビットごとに結合される&2; つの valarray のうちの&2; つ目。  
+ `right`  
+ それぞれの要素が `OR` でビットごとに結合される 2 つの valarray のうちの 2 つ目。  
   
 ### <a name="return-value"></a>戻り値  
- 要素が ` left` と ` right` の該当要素で `OR` 演算を実行した結果であるビットセット。  
+ 要素が `left` と `right` の該当要素で `OR` 演算を実行した結果であるビットセット。  
   
 ### <a name="example"></a>例  
   

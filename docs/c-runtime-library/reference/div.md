@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9e1389e2d8623e7e96ef3ad6af8772ee7026ec76
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: e1e92656713a31d3057dfe180bd1cb4e819ceb5b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="div"></a>div
@@ -89,9 +90,9 @@ lldiv_t div(
  `div` 型の引数を使用して呼び出された `int` は、商と剰余で構成される `div_t` 型の構造を返します。 `long` 型の引数を持つオーバーロードの戻り値は `ldiv_t` です。 `div_t` および `ldiv_t` はともに STDLIB.H で定義されます。  
   
 ## <a name="remarks"></a>コメント  
- `div` 関数は `numer` を `denom` で割り、商と剰余を計算します。 [div_t](../../c-runtime-library/standard-types.md) 構造体には、商 `int``quot`、および剰余 `int``rem` が含まれます。 商の符号は、数学的な商の符号と同じです。 この絶対値が最も大きい整数であり、商の絶対値よりも小さくなります。 分母が 0 の場合、プログラムはエラー メッセージにより終了します。  
+ `div` 関数は `numer` を `denom` で割り、商と剰余を計算します。 [div_t](../../c-runtime-library/standard-types.md) 構造体には、商 `int quot`、および剰余 `int rem` が含まれます。 商の符号は、数学的な商の符号と同じです。 この絶対値が最も大きい整数であり、商の絶対値よりも小さくなります。 分母が 0 の場合、プログラムはエラー メッセージにより終了します。  
   
- `long` 型または `long long` 型の引数を使用するオーバーロードは、C++ コードにのみ使用できます。 戻り値の型 [ldiv_t](../../c-runtime-library/standard-types.md) には、メンバー `long``quot` と `long``rem` が含まれ、戻り値の型 [lldiv_t](../../c-runtime-library/standard-types.md) には `div_t` のメンバーと同じ意味を持つメンバー `long long quot` と `long long rem` が含まれます。  
+ `long` 型または `long long` 型の引数を使用するオーバーロードは、C++ コードにのみ使用できます。 戻り値の型 [ldiv_t](../../c-runtime-library/standard-types.md) には、メンバー `long quot` と `long rem` が含まれ、戻り値の型 [lldiv_t](../../c-runtime-library/standard-types.md) には `div_t` のメンバーと同じ意味を持つメンバー `long long quot` と `long long rem` が含まれます。  
   
 ## <a name="requirements"></a>要件  
   
@@ -138,9 +139,6 @@ int main( int argc, char *argv[] )
 x is 876, y is 13  
 The quotient is 67, and the remainder is 5  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

@@ -56,10 +56,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 7c7659bb52594678538ea2701174c070ace41d70
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 4d7a7b05896bac9e1b3f4ac29ee24a6ad7d61a82
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="clear87-clearfp"></a>_clear87、_clearfp
@@ -80,7 +81,7 @@ unsigned int _clearfp( void );
   
  `_clearfp` は、`_clear87` ルーチンの移植性の高いバージョンで、プラットフォームに依存しません。 これは Intel (x86) プラットフォームの `_clear87` と同じで、x64 および ARM の各プラットフォームでもサポートされます。 浮動小数点コードを x64 および ARM に対して確実に移植可能にするには、`_clearfp` を使用します。 x86 プラットフォームのみを対象とする場合は、`_clear87` または `_clearfp` を使用します。  
   
- コンパイルすると、これらの関数は使用されなくなりました。 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md) 、共通言語ランタイムでは、浮動小数点の既定の精度のみがサポートされるためです。  
+ コンパイルすると、これらの関数は非推奨[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイムには、既定の浮動小数点精度のみがサポートされるためです。  
   
 ## <a name="requirements"></a>要件  
   
@@ -129,9 +130,6 @@ Status: 0000 - clear
 Status: 0003 - inexact, underflow  
 Status: 80000 - denormal  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

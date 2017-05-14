@@ -55,10 +55,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 649c3d34e1ebcfc7af2fa3ef0b500dc1f630a967
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 930ef18229737fee03d03308c45f5ffb3615cdcd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="cabs"></a>_cabs
@@ -80,7 +81,7 @@ double _cabs(
  正常に終了した場合、`_cabs` は引数の絶対値を返します。 オーバーフローした場合、 `_cabs` は `HUGE_VAL` を返し、`errno` を `ERANGE` に設定します。 エラー処理は [_matherr](../../c-runtime-library/reference/matherr.md) で変更できます。  
   
 ## <a name="remarks"></a>コメント  
- `_cabs` 関数は複素数の絶対値を計算します。複素数は [_complex](../../c-runtime-library/standard-types.md) 型の構造である必要があります。 構造体 `z` は実数コンポーネント `x` と虚数コンポーネント `y` で構成されます。 `_cabs` の呼び出しによって、式 `sqrt`( `z.x``*``z.x``+``z.y`*`z.y` ) と同等の値が生成されます。  
+ `_cabs` 関数は複素数の絶対値を計算します。複素数は [_complex](../../c-runtime-library/standard-types.md) 型の構造である必要があります。 構造体 `z` は実数コンポーネント `x` と虚数コンポーネント `y` で構成されます。 呼び出し`_cabs`と等価の式の値を生成する`sqrt( z.x * z.x + z.y * z.y )`です。  
   
 ## <a name="requirements"></a>要件  
   
@@ -114,9 +115,6 @@ int main( void )
 ```Output  
 The absolute value of 3.000000 + 4.000000i is 5.000000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

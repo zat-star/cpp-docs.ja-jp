@@ -33,10 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: d888b6d16e0a71168e0615d89bbd1d03c51afad8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: e834b5be6b7d31d1f1516799462d57330bf4ceb2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="effects-of-buffering"></a>バッファリングの効果
@@ -65,7 +66,7 @@ int main( )
 cout <<"Please wait..." <<flush;  
 ```  
   
- この手順ではバッファーがフラッシュされるため、必ず待機の前にメッセージが出力されます。 バッファーをフラッシュして復帰と改行を出力する `endl` マニピュレーターを使用することも、 `cin` オブジェクトを使用することもできます。 通常、このオブジェクト (および `cerr` または `clog` オブジェクト) は `cout` オブジェクトに関連付けられています。 そのため、 `cin` (あるいは `cerr` または `clog` オブジェクト) を使用すると、 `cout` オブジェクトがフラッシュされます。  
+ この手順ではバッファーがフラッシュされるため、必ず待機の前にメッセージが出力されます。 使用することも、`endl`マニピュレーター、バッファーをフラッシュし、改行を出力するか、使用することができます、`cin`オブジェクト。 通常、このオブジェクト (および `cerr` または `clog` オブジェクト) は `cout` オブジェクトに関連付けられています。 そのため、 `cin` (あるいは `cerr` または `clog` オブジェクト) を使用すると、 `cout` オブジェクトがフラッシュされます。  
   
 ## <a name="see-also"></a>関連項目  
  [出力ストリーム](../standard-library/output-streams.md)

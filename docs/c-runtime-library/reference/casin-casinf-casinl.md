@@ -1,57 +1,74 @@
 ---
 title: "casin、casinf、casinl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "casin"
-  - "casinf"
-  - "casinl"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "casin"
-  - "casinf"
-  - "casinl"
-  - "complex/casin"
-  - "complex/casinf"
-  - "complex/casinl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "casin 関数"
-  - "casinf 関数"
-  - "casinl 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- casin
+- casinf
+- casinl
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- casin
+- casinf
+- casinl
+- complex/casin
+- complex/casinf
+- complex/casinl
+dev_langs:
+- C++
+helpviewer_keywords:
+- casin function
+- casinf function
+- casinl function
 ms.assetid: b75d1455-7b1e-43b0-bd46-c530be190be9
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# casin、casinf、casinl
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: dd48583e157389f23f9912d08f00abd80daca745
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-実際の軸に沿った間隔 \[− 1、\+1\] 以外の分岐カットと複素数の逆正弦を取得します。  
+---
+# <a name="casin-casinf-casinl"></a>casin、casinf、casinl
+ブランチ カット実際の軸に沿った間隔 [-1, +1] 以外に、複雑な数値のアークサインを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 _Dcomplex casin(   
@@ -71,32 +88,32 @@ _Lcomplex casinl(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `z`  
- ラジアン単位の角度を表す複素数。  
+ 角度をラジアンで表す複素数。  
   
-## 戻り値  
- アークサイン `z`, 、ラジアンにします。 架空の軸に沿ったと実際の軸に沿った間隔 \[−π\/2 \+ π\/2\] に制限されます。  
+## <a name="return-value"></a>戻り値  
+ ラジアンで表した、`z` のアークサイン。 結果は虚数部の軸に沿ったおよび間隔で範囲指定された [-π/2 + π/2] 実際の軸に沿ったです。  
   
-## 解説  
- C\+\+ ではオーバーロードが可能であるため、`casin` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは `casin` は、 `_Dcomplex` 値。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、`casin` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `casin` は常に `_Dcomplex` 値を受け取って返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチン|C ヘッダー|C\+\+ ヘッダー|  
-|----------|------------|----------------|  
-|`casin`、`casinf`、`casinl`|\<complex.h\>|\< ccomplex \>|  
+|ルーチン|C ヘッダー|C++ ヘッダー|  
+|-------------|--------------|------------------|  
+|`casin`、               `casinf`、`casinl`|\<complex.h>|\<ccomplex>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 参照  
- [関数リファレンス \(アルファベット順\)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
+## <a name="see-also"></a>関連項目  
+ [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [catanh、catanhf、catanhl](../../c-runtime-library/reference/catanh-catanhf-catanhl.md)   
  [ctanh、ctanhf、ctanhl](../../c-runtime-library/reference/ctanh-ctanhf-ctanhl.md)   
  [catan、catanf、catanl](../../c-runtime-library/reference/catan-catanf-catanl.md)   
- [csinh、csinhf、csinhl](../Topic/csinh,%20csinhf,%20csinhl.md)   
- [casinh、casinhf、casinhl](../Topic/casinh,%20casinhf,%20casinhl.md)   
- [ccosh、ccoshf、ccoshl](../Topic/ccosh,%20ccoshf,%20ccoshl.md)   
+ [csinh、csinhf、csinhl](../../c-runtime-library/reference/csinh-csinhf-csinhl.md)   
+ [casinh、casinhf、casinhl](../../c-runtime-library/reference/casinh-casinhf-casinhl.md)   
+ [ccosh、ccoshf、ccoshl](../../c-runtime-library/reference/ccosh-ccoshf-ccoshl.md)   
  [cacosh、cacoshf、cacoshl](../../c-runtime-library/reference/cacosh-cacoshf-cacoshl.md)   
  [cacos、cacosf、cacosl](../../c-runtime-library/reference/cacos-cacosf-cacosl.md)   
  [ctan、ctanf、ctanl](../../c-runtime-library/reference/ctan-ctanf-ctanl.md)   

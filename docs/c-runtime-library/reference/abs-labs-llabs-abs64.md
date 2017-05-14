@@ -1,62 +1,79 @@
 ---
 title: "abs、labs、llabs、_abs64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "abs"
-  - "_abs64"
-  - "labs"
-  - "llabs"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "stdlib/_abs64"
-  - "math/abs"
-  - "_abs64"
-  - "abs"
-  - "labs"
-  - "math/labs"
-  - "llabs"
-  - "math/llabs"
-  - "cmath/abs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "絶対値"
-  - "abs 関数"
-  - "abs64 関数"
-  - "_abs64 関数"
-  - "計算 (絶対値を)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- abs
+- _abs64
+- labs
+- llabs
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- stdlib/_abs64
+- math/abs
+- _abs64
+- abs
+- labs
+- math/labs
+- llabs
+- math/llabs
+- cmath/abs
+dev_langs:
+- C++
+helpviewer_keywords:
+- absolute values
+- abs function
+- abs64 function
+- _abs64 function
+- calculating absolute values
 ms.assetid: 60f789d1-4a1e-49f5-9e4e-0bdb277ea26a
 caps.latest.revision: 29
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 29
----
-# abs、labs、llabs、_abs64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 804ed3ac260097c4eb088058580bf801b3bee9f1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
+---
+# <a name="abs-labs-llabs-abs64"></a>abs、labs、llabs、_abs64
 引数の絶対値を計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int abs(   
@@ -88,35 +105,35 @@ __int64 _abs64(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `n`  
- 数値を指定します。  
+ 数値。  
   
-## 戻り値  
- `abs`, 、`labs`, 、`llabs` と `_abs64` 関数がパラメーターの絶対値を返す `n`します。 エラーの戻り値はありません。  
+## <a name="return-value"></a>戻り値  
+ `abs`、`labs`、`llabs`、`_abs64` の各関数は、パラメーター `n` の引数の絶対値を返します。 エラーの戻り値はありません。  
   
-## 解説  
- C\+\+ ではオーバーロードが可能であるため、`abs`, `long`、`long long`、`float`、および `double` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 これらのオーバー ロードは、\< cmath \> ヘッダーで定義されます。 C プログラムでは、`abs` は常に整数を受け取り、整数を返します。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、`abs`, `long`、`long long`、`float`、および `double` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 これらのオーバーロードは \<cmath> ヘッダーで定義されています。 C プログラムでは、`abs` は常に整数を受け取り、整数を返します。  
   
  **Microsoft 固有の仕様**  
   
- 任意の整数型を使用して表すことができる負の整数の範囲は、正の整数のタイプを使用して表すことができる範囲よりも大きいために、これらの関数を変換できない引数を指定することです。 引数の絶対値を戻り値の型で表すことができない場合、`abs` 関数は引数の値を変更せずに返します。 具体的には、`abs(INT_MIN)` は `INT_MIN` を返し、`labs(LONG_MIN)` は `LONG_MIN` を返します。また `llabs(LLONG_MIN)` は `LLONG_MIN` を返し、`_abs64(_I64_MIN)` は `_I64_MIN` を返します。 このため、`abs` 関数を使用して正の値を保証することはできません。  
+ 整数型を使用して表すことができる負の整数の範囲は、正の整数が表すことができる範囲より大きいため、変換できないこれらの関数に引数を指定できます。 引数の絶対値を戻り値の型で表すことができない場合、`abs` 関数は引数の値を変更せずに返します。 具体的には、`abs(INT_MIN)` は `INT_MIN` を返し、`labs(LONG_MIN)` は `LONG_MIN` を返します。また `llabs(LLONG_MIN)` は `LLONG_MIN` を返し、`_abs64(_I64_MIN)` は `_I64_MIN` を返します。 このため、`abs` 関数を使用して正の値を保証することはできません。  
   
  **END Microsoft 固有の仕様**  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチン|必須の C ヘッダー|必要な C\+\+ ヘッダー|  
-|----------|----------------|--------------------|  
-|`abs`、`labs`、`llabs`|\< math.h \> または \< stdlib.h \>|\< cmath \>、\< cstdlib \> \< stdlib.h \> または \< math.h \>|  
-|`_abs64`|\<stdlib.h\>|\< cstdlib \> または \< stdlib.h \>|  
+|ルーチン|必須の C ヘッダー|必須の C++ ヘッダー|  
+|-------------|-----------------------|---------------------------|  
+|`abs`、`labs`、`llabs`|\<math.h> または \<stdlib.h>|\<cmath>、\<cstdlib>、\<stdlib.h>、または \<math.h>|  
+|`_abs64`|\<stdlib.h>|\<cstdlib> または \<stdlib.h>|  
   
- オーバー ロードされたバージョンを使用して `abs` C\+\+ では、\< cmath \> ヘッダーを含める必要があります。  
+ C++ で `abs` のオーバーロードされたバージョンを使用するには、\<cmath> ヘッダーを含める必要があります。  
   
-## 使用例  
+## <a name="example"></a>例  
  次のプログラムでは、複数の数値の絶対値を計算して表示します。  
   
-```c  
+```C  
 // crt_abs.c  
 // Build: cl /W3 /TC crt_abs.c  
 // This program demonstrates the use of the abs function  
@@ -158,16 +175,21 @@ int main( void )
 ```  
   
 ```Output  
--4 の絶対値は 4-41567 の絶対値は 41567-9876543210 の絶対値は 9876543210 0 xffffffffffffffff の絶対値は 0x0000000000000001 Microsoft の実装に固有の結果: abs (int_min) を返します-2147483648 labs (long_min)-2147483648 を返します。 llabs (llong_min)-9223372036854775808 を返します。 _abs64 (_i64_min) を返します。 は 0x8000000000000000。  
+The absolute value of -4 is 4  
+The absolute value of -41567 is 41567  
+The absolute value of -9876543210 is 9876543210  
+The absolute value of 0xffffffffffffffff is 0x0000000000000001  
+Microsoft implementation-specific results:  
+ abs(INT_MIN) returns -2147483648  
+ labs(LONG_MIN) returns -2147483648  
+ llabs(LLONG_MIN) returns -9223372036854775808  
+ _abs64(_I64_MIN) returns 0x8000000000000000  
   
 ```  
   
-## 同等の .NET Framework 関数  
- [System::Math::Abs](https://msdn.microsoft.com/en-us/library/system.math.abs.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [\_cabs](../Topic/_cabs.md)   
+ [_cabs](../../c-runtime-library/reference/cabs.md)   
  [fabs、fabsf、fabsl](../../c-runtime-library/reference/fabs-fabsf-fabsl.md)   
- [imaxabs](../Topic/imaxabs.md)
+ [imaxabs](../../c-runtime-library/reference/imaxabs.md)

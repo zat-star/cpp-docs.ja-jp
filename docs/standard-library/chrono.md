@@ -37,16 +37,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: c4f886df3ac9af6745f5379741c3d8c82933abe1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: c91a494644e2d8d12259c3ee6cd23333eb9bae9e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltchronogt"></a>&lt;chrono&gt;
 期間と時点を表し、操作するクラスと関数を定義するために、標準ヘッダー \<chrono> を含めます。  
   
- **(Visual Studio 2015:)**`steady_clock` の実装が変更され、安定性と単調性のための C++ 標準の要件を満たすようになりました。 現在、`steady_clock` は QueryPerformanceCounter() に基づき、`high_resolution_clock` は `steady_clock` の typedef です。 結果として、Visual C++ では現在、`steady_clock::time_point` は `chrono::time_point<steady_clock>` の typedef です。ただし、他の実装では異なる場合があります。  
+ 以降、Visual Studio 2015 の実装で`steady_clock`安定性と単調性の C++ 標準の要件を満たすに変更されました。 現在、`steady_clock` は QueryPerformanceCounter() に基づき、`high_resolution_clock` は `steady_clock` の typedef です。 結果として、Visual C++ では現在、`steady_clock::time_point` は `chrono::time_point<steady_clock>` の typedef です。ただし、他の実装では異なる場合があります。  
   
 ## <a name="syntax"></a>構文  
   
@@ -75,36 +76,36 @@ ms.lasthandoff: 02/24/2017
   
 |名前|説明|  
 |----------|-----------------|  
-|[duration_cast 関数](../standard-library/chrono-functions.md#duration_cast_function)|`duration` オブジェクトを指定した型にキャストします。|  
-|[time_point_cast 関数](../standard-library/chrono-functions.md#time_point_cast_function)|`time_point` オブジェクトを指定した型にキャストします。|  
+|[duration_cast](../standard-library/chrono-functions.md#duration_cast)|`duration` オブジェクトを指定した型にキャストします。|  
+|[time_point_cast](../standard-library/chrono-functions.md#time_point_cast)|`time_point` オブジェクトを指定した型にキャストします。|  
   
 ### <a name="operators"></a>演算子  
   
 |名前|説明|  
 |----------|-----------------|  
 |[operator-](../standard-library/chrono-operators.md#operator-)|`duration` オブジェクトおよび `time_point` オブジェクトの減算または否定の演算子。|  
-|[operator!=](../standard-library/chrono-operators.md#operator_neq)|`duration` オブジェクトおよび `time_point` オブジェクトで使用される非等値演算子。|  
-|[modulo 演算子](../standard-library/chrono-operators.md#operator_modulo)|`duration` オブジェクトに対するモジュロ演算の演算子。|  
-|[operator*](../standard-library/chrono-operators.md#operator_star)|`duration` オブジェクトの乗算演算子。|  
-|[operator/](../standard-library/chrono-operators.md#operator_)|`duration` オブジェクトの除算演算子。|  
-|[operator+](../standard-library/chrono-operators.md#operator_add)|`duration` オブジェクトおよび `time_point` オブジェクトを追加します。|  
-|[operator&lt;](../standard-library/chrono-operators.md#operator_lt_)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値未満かどうかを判断します。|  
-|[operator&lt;=](../standard-library/chrono-operators.md#operator_lt__eq)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値以下かどうかを判断します。|  
-|[operator==](../standard-library/chrono-operators.md#operator_eq_eq)|2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または&2; つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。|  
-|[operator&gt;](../standard-library/chrono-operators.md#operator_gt_)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値より大きいかどうかを判断します。|  
-|[operator&gt;=](../standard-library/chrono-operators.md#operator_gt__eq)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値以上かどうかを判断します。|  
+|[operator!=](../standard-library/chrono-operators.md#op_neq)|`duration` オブジェクトおよび `time_point` オブジェクトで使用される非等値演算子。|  
+|[modulo 演算子](../standard-library/chrono-operators.md#op_modulo)|`duration` オブジェクトに対するモジュロ演算の演算子。|  
+|[operator*](../standard-library/chrono-operators.md#op_star)|`duration` オブジェクトの乗算演算子。|  
+|[operator/](../standard-library/chrono-operators.md#op_div)|`duration` オブジェクトの除算演算子。|  
+|[operator+](../standard-library/chrono-operators.md#op_add)|`duration` オブジェクトおよび `time_point` オブジェクトを追加します。|  
+|[operator&lt;](../standard-library/chrono-operators.md#op_lt)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値未満かどうかを判断します。|  
+|[operator&lt;=](../standard-library/chrono-operators.md#op_lt_eq)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値以下かどうかを判断します。|  
+|[operator==](../standard-library/chrono-operators.md#op_eq_eq)|2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または 2 つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。|  
+|[operator&gt;](../standard-library/chrono-operators.md#op_gt)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値より大きいかどうかを判断します。|  
+|[operator&gt;=](../standard-library/chrono-operators.md#op_gt_eq)|一方の `duration` オブジェクトまたは `time_point` オブジェクトの値が、もう一方の `duration` オブジェクトまたは `time_point` オブジェクトの値以上かどうかを判断します。|  
   
 ### <a name="predefined-duration-types"></a>定義済みの期間の種類  
  次の typedef で使用される比率の種類の詳細については、「[\<<ratio>](../standard-library/ratio.md)」を参照してください。  
   
 |Typedef|説明|  
 |-------------|-----------------|  
-|`typedef duration<long long, nano> nanoseconds;`|ティック間隔が&1; ナノ秒の `duration` 型のシノニムです。|  
-|`typedef duration<long long, micro> microseconds;`|ティック間隔が&1; マイクロ秒の `duration` 型のシノニムです。|  
-|`typedef duration<long long, milli> milliseconds;`|ティック間隔が&1; ミリ秒の `duration` 型のシノニムです。|  
-|`typedef duration<long long> seconds;`|ティック間隔が&1; 秒の `duration` 型のシノニムです。|  
-|`typedef duration<int, ratio<60> > minutes;`|ティック間隔が&1; 分の `duration` 型のシノニムです。|  
-|`typedef duration<int, ratio<3600> > hours;`|ティック間隔が&1; 時間の `duration` 型のシノニムです。|  
+|`typedef duration<long long, nano> nanoseconds;`|ティック間隔が 1 ナノ秒の `duration` 型のシノニムです。|  
+|`typedef duration<long long, micro> microseconds;`|ティック間隔が 1 マイクロ秒の `duration` 型のシノニムです。|  
+|`typedef duration<long long, milli> milliseconds;`|ティック間隔が 1 ミリ秒の `duration` 型のシノニムです。|  
+|`typedef duration<long long> seconds;`|ティック間隔が 1 秒の `duration` 型のシノニムです。|  
+|`typedef duration<int, ratio<60> > minutes;`|ティック間隔が 1 分の `duration` 型のシノニムです。|  
+|`typedef duration<int, ratio<3600> > hours;`|ティック間隔が 1 時間の `duration` 型のシノニムです。|  
   
 ### <a name="literals"></a>リテラル  
  **(C++11)** \<chrono> ヘッダーでは、次の[ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)を定義します。これを使用することで、コードの利便性、タイプ セーフ、保守性が向上します。 これらのリテラルは `literals::chrono_literals` インライン名前空間で定義されており、std::chrono がスコープに含まれている場合にスコープに含まれます。  
@@ -112,9 +113,9 @@ ms.lasthandoff: 02/24/2017
 |Literal|説明|  
 |-------------|-----------------|  
 |chrono::hours operator "" h(unsigned long long Val)|時間を整数値として指定します。|  
-|chrono::duration<double, ratio\<3600> > operator "" h(long double Val)|時間を浮動小数点値として指定します。|  
+|:duration\<double 比\<3600 >> operator""h (long double Val)|時間を浮動小数点値として指定します。|  
 |chrono::minutes (operator "" min)(unsigned long long Val)|分を整数値として指定します。|  
-|chrono::duration<double, ratio\<60> > (operator "" min)( long double Val)|分を浮動小数点値として指定します。|  
+|:duration\<double 比\<60 >> (operator""min) (long double 型 Val)|分を浮動小数点値として指定します。|  
 |chrono::seconds operator "" s(unsigned long long Val)|分を整数値として指定します。|  
 |chrono::duration\<double> operator "" s(long double Val)|秒を浮動小数点値として指定します。|  
 |chrono::milliseconds operator "" ms(unsigned long long Val)|ミリ秒を整数値として指定します。|  

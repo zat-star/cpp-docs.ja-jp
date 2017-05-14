@@ -58,10 +58,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 07710f9741066a1e7741bc6046e9d5108e74cdbd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f4239a5d0834938d80ae2054396e485eef127e4b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="carg-cargf-cargl"></a>carg、cargf、cargl
@@ -92,7 +93,7 @@ long double cargl(
  複素数。  
   
 ## <a name="return-value"></a>戻り値  
- `z` の引数 (フェーズとも呼ばれます)。 結果は [−π, +π] の区間内になります。  
+ `z` の引数 (フェーズとも呼ばれます)。 結果は、間隔には [-π、+ π] です。  
   
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`_Fcomplex` または `_Lcomplex` の値を受け取って `float` または `long double` の値を返す `carg` のオーバーロードを呼び出すことができます。 C プログラムでは、`carg` は常に `_Dcomplex` 値を受け取って `double` 値を返します。  

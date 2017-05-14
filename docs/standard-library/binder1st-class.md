@@ -10,9 +10,7 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - xfunctional/std::binder1st
-- std::binder1st
 - binder1st
-- std.binder1st
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,14 +34,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: 71d06115b1f6cc0df5a3dee9ce60482e641407ef
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 4f9198d5b3f29799d38036ce4fd0dd0a67b66137
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="binder1st-class"></a>binder1st クラス
-指定した値に二項関数の&1; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
+指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
   
 ## <a name="syntax"></a>構文  
   
@@ -77,7 +76,7 @@ protected:
  二項関数オブジェクトの最初の引数がバインドされている値。  
   
  `right`  
- 調整後の二項オブジェクトが&2; つ目の引数の固定値と比較する引数の値。  
+ 調整後の二項オブジェクトが 2 つ目の引数の固定値と比較する引数の値。  
   
 ## <a name="return-value"></a>戻り値  
  二項関数オブジェクトの最初の引数を値 `left.` にバインドした結果として生成される単項関数オブジェクト。  
@@ -85,7 +84,7 @@ protected:
 ## <a name="remarks"></a>コメント  
  テンプレート クラスは、二項関数オブジェクト `Func` のコピーを **op** に、`left` のコピーを **value** に格納します。 そのメンバー関数 `operator()` は **op**( **value**, `right`) を返すように定義されています。  
   
- `Func` が型 **Operation** のオブジェクトで、`c` が定数の場合、[bind1st](../standard-library/functional-functions.md#bind1st_function) ( `Func`, `c` ) は `binder1st` class constructor `binder1st`\< **Operation**> ( `Func`, `c` ) と等しくなり、より便利です。  
+ `Func` が型 **Operation** のオブジェクトで、`c` が定数の場合、[bind1st](../standard-library/functional-functions.md#bind1st) ( `Func`, `c` ) は `binder1st` class constructor `binder1st`\< **Operation**> ( `Func`, `c` ) と等しくなり、より便利です。  
   
 ## <a name="example"></a>例  
   

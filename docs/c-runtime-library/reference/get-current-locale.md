@@ -53,10 +53,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9c03528f5c85e7ac0ce70202486c8ee92ffadad0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: e2f14ad541750967d63a50c13ec82a9ed57fce05
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="getcurrentlocale"></a>_get_current_locale
@@ -72,9 +73,9 @@ _locale_t _get_current_locale(void);
  現在のロケールを表すロケール オブジェクト。  
   
 ## <a name="remarks"></a>コメント  
- `_get_current_locale` 関数は、スレッドに対して現在設定されているロケールを取得し、そのロケールを表すロケール オブジェクトを返します。  
+ `_get_current_locale`関数は、取得、現在設定されているスレッドのロケールし、そのロケールを表すロケール オブジェクトを返します。  
   
- この関数の以前の名前である `__get_current_locale` (先頭に&2; 個のアンダースコア) は、使用されなくなりました。  
+ この関数の以前の名前 `__get_current_locale` (先頭に 2 個のアンダースコア) は、使用されなくなりました。  
   
 ## <a name="requirements"></a>要件  
   
@@ -82,10 +83,7 @@ _locale_t _get_current_locale(void);
 |-------------|---------------------|  
 |`_get_current_locale`|\<locale.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 同等の関数はありません。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   

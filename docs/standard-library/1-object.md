@@ -35,10 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
-ms.openlocfilehash: e90ee470e3cf990240f3c586c23fe8fd3d487f3d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: ce86a87e5f22b27c5b1d7eeeeb4edcbcac8e15c7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="1-object"></a>_1 オブジェクト
@@ -54,7 +55,7 @@ namespace placeholders {
 ```  
   
 ## <a name="remarks"></a>コメント  
- `_1, _2, ... _M` の各オブジェクトは、[bind 関数](../standard-library/functional-functions.md#bind_function)によって返されたオブジェクトに対する関数呼び出しにおいて、それぞれ&1; 番目から M 番目の引数を指定するプレースホルダーです。 bind 式が評価されるときに N 番目の引数が挿入される場所を指定するには、`_N` を使用します。  
+ オブジェクト`_1, _2, ... _M`プレース ホルダーは、最初に、2 番目、…、によって返されるオブジェクトへの関数呼び出しでそれぞれの m 番目の引数を指定する[バインド](../standard-library/functional-functions.md#bind)です。 bind 式が評価されるときに N 番目の引数が挿入される場所を指定するには、`_N` を使用します。  
   
  この実装では、`M` の値は 20 です。  
   
@@ -116,6 +117,6 @@ int main()
  **名前空間:** std  
   
 ## <a name="see-also"></a>関連項目  
- [bind 関数](../standard-library/functional-functions.md#bind_function)   
+ [バインド](../standard-library/functional-functions.md#bind)   
  [is_placeholder クラス](../standard-library/is-placeholder-class.md)
 

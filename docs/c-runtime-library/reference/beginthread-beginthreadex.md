@@ -56,10 +56,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0a19bb0f4a0ac2052795309122557931c295b9ab
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 3c556e6460f1a39bab23f2612cbf820e284d7605
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="beginthread-beginthreadex"></a>_beginthread、_beginthreadex
@@ -129,32 +130,32 @@ uintptr_t _beginthreadex( // MANAGED CODE
   
  `_beginthreadex` は、`_beginthread` よりも Win32[ CreateThread ](http://msdn.microsoft.com/library/windows/desktop/ms682453.aspx) API に似ています。 `_beginthreadex` は、次の点で `_beginthread` と異なります。  
   
--   `_beginthreadex` には、`initflag`、`security`、および `threadaddr` の&3; つの追加パラメーターがあります。 セキュリティを指定し、一時停止状態で新しいスレッドを作成できます。新しいスレッドには、スレッド識別子 `thrdaddr` を使用してアクセスできます。  
+-   `_beginthreadex` には、 `initflag`、 `security`、および `threadaddr`の 3 つの追加パラメーターがあります。 セキュリティを指定し、一時停止状態で新しいスレッドを作成できます。新しいスレッドには、スレッド識別子 `thrdaddr`を使用してアクセスできます。  
   
--   `start_address` に渡される `_beginthreadex` のルーチンは、`__stdcall` (ネイティブ コードの場合) または `__clrcall` (マネージ コードの場合) の呼び出し規約を使用する必要があり、スレッドの終了コードを返す必要があります。  
+-   `start_address` に渡される `_beginthreadex` のルーチンは、 `__stdcall` (ネイティブ コードの場合) または `__clrcall` (マネージ コードの場合) の呼び出し規約を使用する必要があり、スレッドの終了コードを返す必要があります。  
   
 -   `_beginthreadex` は、エラーの発生時に -1L ではなく 0 を返します。  
   
--   `_beginthreadex` を使用して作成したスレッドは、[_endthreadex](../../c-runtime-library/reference/endthread-endthreadex.md) の呼び出しで終了します。  
+-   `_beginthreadex` を使用して作成したスレッドは、 [_endthreadex](../../c-runtime-library/reference/endthread-endthreadex.md)の呼び出しで終了します。  
   
  `_beginthreadex` 関数は、スレッドの作成において `_beginthread` 関数よりも制御を詳細に行うことができます。 また、 `_endthreadex` 関数も、より柔軟性があります。 たとえば、 `_beginthreadex`では、セキュリティ情報の使用、スレッドの初期状態 (実行中または一時停止中) の設定、新しく作成されたスレッドのスレッド識別子の取得を行うことができます。 また、 `_beginthreadex` が返すスレッド ハンドルを同期 API と共に使用することもできます。 `_beginthread`では使用できません。  
   
  `_beginthreadex` よりも `_beginthread`を使用した方が安全です。 `_beginthread` によって生成されたスレッドの終了が早すぎると、 `_beginthread` の呼び出し元に返されるハンドルが無効になる可能性や、別のスレッドを指す可能性があります。 しかし、 `_beginthreadex` から返されるハンドルは `_beginthreadex`の呼び出し元で閉じられる必要があるため、 `_beginthreadex` がエラーを返さなかった場合には確実にハンドルが有効です。  
   
- [_endthread](../../c-runtime-library/reference/endthread-endthreadex.md) または `_endthreadex` を明示的に呼び出してスレッドを終了できます。ただし、`_endthread` または `_endthreadex` は、パラメーターとして渡されたルーチンからスレッドが戻ると自動的に呼び出されます。 `_endthread` または `_endthreadex` を呼び出してスレッドを終了すると、スレッドに割り当てられていたリソースを確実に解放できます。  
+ [_endthread](../../c-runtime-library/reference/endthread-endthreadex.md) または `_endthreadex` を明示的に呼び出してスレッドを終了できます。ただし、 `_endthread` または `_endthreadex` は、パラメーターとして渡されたルーチンからスレッドが戻ると自動的に呼び出されます。 `_endthread` または `_endthreadex` を呼び出してスレッドを終了すると、スレッドに割り当てられていたリソースを確実に解放できます。  
   
- `_endthread` は、スレッド ハンドルを自動的に終了しますが、`_endthreadex` は自動的に終了しません。 このため、 `_beginthread` および `_endthread`を使用するときには、Win32 [CloseHandle](http://msdn.microsoft.com/library/windows/desktop/ms724211.aspx) API を呼び出してスレッド ハンドルを明示的に終了しないでください。 この動作は、Win32 [ExitThread](http://msdn.microsoft.com/library/windows/desktop/ms682659.aspx) API とは異なります。  
+ `_endthread` は、スレッド ハンドルを自動的に終了しますが、 `_endthreadex` は自動的に終了しません。 このため、 `_beginthread` および `_endthread`を使用するときには、Win32 [CloseHandle](http://msdn.microsoft.com/library/windows/desktop/ms724211.aspx) API を呼び出してスレッド ハンドルを明示的に終了しないでください。 この動作は、Win32 [ExitThread](http://msdn.microsoft.com/library/windows/desktop/ms682659.aspx) API とは異なります。  
   
 > [!NOTE]
->  Libcmt.lib にリンクされている実行可能ファイルでは、Win32 の `ExitThread` API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、`ExitThread` を呼び出します。  
+>  Libcmt.lib にリンクされている実行可能ファイルでは、Win32 の `ExitThread` API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、 `ExitThread`を呼び出します。  
   
  `_beginthread` または `_beginthreadex` が呼び出されると、オペレーティング システムがスタックの割り当てを処理します。したがって、スレッド スタックのアドレスをこれらの関数に渡す必要はありません。 また、引数 `stack_size` に 0 を指定すると、オペレーティング システムはメイン スレッドに対して指定したスタックと同じ値を使用します。  
   
- `arglist` は新しく作成したスレッドに渡すパラメーターです。 通常、文字列などのデータ項目のアドレスを指定します。 `arglist` には、不要な場合は NULL を設定できますが、`_beginthread` と `_beginthreadex` には、新しいスレッドに渡す何らかの値を設定する必要があります。 いずれかのスレッドが `abort`、`exit`、`_exit`、または `ExitProcess` を呼び出すと、すべてのスレッドが終了します。  
+ `arglist` は新しく作成したスレッドに渡すパラメーターです。 通常、文字列などのデータ項目のアドレスを指定します。 `arglist` には、不要な場合は NULL を設定できますが、 `_beginthread` と `_beginthreadex` には、新しいスレッドに渡す何らかの値を設定する必要があります。 いずれかのスレッドが `abort`、 `exit`、 `_exit`、または `ExitProcess`を呼び出すと、すべてのスレッドが終了します。  
   
- 新しいスレッドのロケールは親スレッドから継承されます。 [_configthreadlocale](../../c-runtime-library/reference/configthreadlocale.md) の呼び出しにより、スレッドごとのロケールが (グローバルまたは新しいスレッドのみに対して) 有効になっている場合は、スレッドで `setlocale` または `_wsetlocale` を呼び出すことで、そのスレッドのロケールを親とは関係なく変更できます。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 新しいスレッドのロケールは親スレッドから継承されます。 [_configthreadlocale](../../c-runtime-library/reference/configthreadlocale.md) の呼び出しにより、スレッドごとのロケールが (グローバルまたは新しいスレッドのみに対して) 有効になっている場合は、スレッドで `setlocale` または `_wsetlocale`を呼び出すことで、そのスレッドのロケールを親とは関係なく変更できます。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- 混合コードと純粋なコードでは、 `_beginthread` と `_beginthreadex` にはそれぞれ&2; つのオーバーロードがあります。1 つはネイティブの呼び出し規約関数ポインターを受け取り、もう&1; つは `__clrcall` 関数ポインターを受け取ります。 最初のオーバーロードは、アプリケーション ドメインセーフではなく、以降もそうなることはありません。 混合コードまたは純粋なコードを記述する場合、新しいスレッドがマネージ リソースにアクセスする前に確実に正しいアプリケーション ドメインに入るようにする必要があります。 そのためには、[call_in_appdomain 関数](../../dotnet/call-in-appdomain-function.md)などを使用します。 2 番目のオーバーロードはアプリケーション ドメイン セーフであり、新しく作成されたスレッドは、必ず `_beginthread` または `_beginthreadex`の呼び出し元のアプリケーション ドメインで終了します。  
+ 混合コードと純粋なコードでは、 `_beginthread` と `_beginthreadex` にはそれぞれ 2 つのオーバーロードがあります。1 つはネイティブの呼び出し規約関数ポインターを受け取り、もう 1 つは `__clrcall` 関数ポインターを受け取ります。 最初のオーバーロードは、アプリケーション ドメインセーフではなく、以降もそうなることはありません。 混合コードまたは純粋なコードを記述する場合、新しいスレッドがマネージ リソースにアクセスする前に確実に正しいアプリケーション ドメインに入るようにする必要があります。 そのためには、[call_in_appdomain 関数](../../dotnet/call-in-appdomain-function.md)などを使用します。 2 番目のオーバーロードはアプリケーション ドメイン セーフであり、新しく作成されたスレッドは、必ず `_beginthread` または `_beginthreadex`の呼び出し元のアプリケーション ドメインで終了します。  
   
 ## <a name="requirements"></a>要件  
   
@@ -337,9 +338,6 @@ Creating second thread...
 In second thread...  
 Counter should be 1000000; it is-> 1000000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Threading::Thread::Start](https://msdn.microsoft.com/en-us/library/system.threading.thread.start.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

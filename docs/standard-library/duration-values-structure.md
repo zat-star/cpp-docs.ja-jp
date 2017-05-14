@@ -10,6 +10,9 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - chrono/std::chrono::duration_values
+- chrono/std::chrono::duration_values::max
+- chrono/std::chrono::duration_values::min
+- chrono/std::chrono::duration_values::zero
 dev_langs:
 - C++
 ms.assetid: 7f66d2e3-1faf-47c3-b47e-08f2a87f20e8
@@ -31,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8b0c02d4edc3a460f166cb65b312ef78337d403f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: b170debfdb4759b41963bc0faca13b3db11ad39a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="durationvalues-structure"></a>duration_values 構造体
@@ -53,16 +57,16 @@ struct duration_values;
   
 |名前|説明|  
 |----------|-----------------|  
-|[duration_values::max](#duration_values__max_method)|静的。 `Rep` 型の値の上限を指定します。|  
-|[duration_values::min](#duration_values__min_method)|静的。 `Rep` 型の値の下限を指定します。|  
-|[duration_values::zero](#duration_values__zero_method)|静的。 `Rep(0)` を返します。|  
+|[max](#max)|静的。 `Rep` 型の値の上限を指定します。|  
+|[min](#min)|静的。 `Rep` 型の値の下限を指定します。|  
+|[0](#zero)|静的。 `Rep(0)` を返します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** chrono  
+ **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
   
-##  <a name="a-namedurationvaluesmaxmethoda--durationvaluesmax"></a><a name="duration_values__max_method"></a>  duration_values::max  
+##  <a name="max"></a>  duration_values::max  
  `Ref` 型の値の上限の境界を返す静的メソッドです。  
   
 ```  
@@ -73,9 +77,9 @@ static constexpr Rep max();
  実際には、`numeric_limits<Rep>::max()` を返します。  
   
 ### <a name="remarks"></a>コメント  
- `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#duration_values__zero_method) より大きい必要があります。  
+ `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#zero) より大きい必要があります。  
   
-##  <a name="a-namedurationvaluesminmethoda--durationvaluesmin"></a><a name="duration_values__min_method"></a>  duration_values::min  
+##  <a name="min"></a>  duration_values::min  
  `Ref` 型の値の下限の境界を返す静的メソッドです。  
   
 ```  
@@ -86,9 +90,9 @@ static constexpr Rep min();
  実際には、`numeric_limits<Rep>::lowest()` を返します。  
   
 ### <a name="remarks"></a>コメント  
- `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#duration_values__zero_method) 以下である必要があります。  
+ `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#zero) 以下である必要があります。  
   
-##  <a name="a-namedurationvalueszeromethoda--durationvalueszero"></a><a name="duration_values__zero_method"></a>  duration_values::zero  
+##  <a name="zero"></a>  duration_values::zero  
  `Rep(0)` を返します。  
   
 ```  

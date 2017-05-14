@@ -76,10 +76,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: b84c039c715c8c7a45a84a37c1a1fd34db988403
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 4bf1e3ad35fb03891f9c861255919752d0403d70
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32"></a>_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32
@@ -122,7 +123,7 @@ int _fstat64i32(
  結果を格納する構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- ファイルのステータス情報が取得されると、0 を返します。 戻り値 -1 はエラーを示します。 ファイル記述子が無効な場合または `buffer` が `NULL` である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、無効なファイル記述子の場合は `errno` が `EBADF` に設定され、`buffer` が `NULL` である場合は、`EINVAL` に設定されます。  
+ ファイルのステータス情報が取得されると、0 を返します。 戻り値-1 はエラーを示します。 ファイル記述子が無効な場合または `buffer` が `NULL` である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、無効なファイル記述子の場合は `errno` が `EBADF` に設定され、`buffer` が `NULL` である場合は、`EINVAL` に設定されます。  
   
 ## <a name="remarks"></a>コメント  
  `_fstat` 関数は、 `fd` に関連付けられている開いているファイルに関する情報を取得し、`buffer` によって示される構造体にそれを格納します。 `_stat` 構造体 (SYS\Stat.h で定義される) には、次のフィールドが含まれています。  
@@ -159,7 +160,7 @@ int _fstat64i32(
   
  これらの関数のバリエーションは、32 ビットや 64 ビットの時刻型と、32 ビットや 64 ビットのファイル長をサポートします。 最初の数字のサフィックス (`32` または `64`) は、使用される時刻型のサイズを示します。2 番目のサフィックスは `i32` または `i64`で、ファイル サイズが 32 ビットの整数として表されるか、それとも 64 ビットの整数として表されるかを示します。  
   
- `_fstat` は `_fstat64i32` と同等で、`struct``_stat` には 64 ビットの時刻が含まれます。 これは、 `_USE_32BIT_TIME_T` が定義されていない場合に当てはまります。定義されている場合には、古い動作が有効になります。 `_fstat` は 32 ビットの時刻を使用します。 `struct``_stat` には 32 ビットの時刻が含まれます。 同じことが `_fstati64`にも当てはまります。  
+ `_fstat` は `_fstat64i32` と同等で、`struct _stat` には 64 ビットの時刻が含まれます。 これは、 `_USE_32BIT_TIME_T` が定義されていない場合に当てはまります。定義されている場合には、古い動作が有効になります。 `_fstat` は 32 ビットの時刻を使用します。 `struct _stat` には 32 ビットの時刻が含まれます。 同じことが `_fstati64`にも当てはまります。  
   
 ### <a name="time-type-and-file-length-type-variations-of-stat"></a>_stat の時刻型とファイル長型のバリエーション  
   
@@ -251,9 +252,6 @@ int main( void )
 File size     : 16  
 Time modified : Wed May 07 15:25:11 2003  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

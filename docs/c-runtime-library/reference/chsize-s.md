@@ -1,50 +1,67 @@
 ---
-title: "_chsize_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_chsize_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "chsize_s"
-  - "_chsize_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_chsize_s 関数"
-  - "chsize_s 関数"
-  - "ファイル [C++], 変更 (サイズを)"
+title: _chsize_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _chsize_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- chsize_s
+- _chsize_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- files [C++], changing size
+- chsize_s function
+- _chsize_s function
 ms.assetid: d88d2e94-6e3b-42a5-8631-16ac4d82fa38
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# _chsize_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: eb8292d70a77a5901c710349d6912e46cfda8f63
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-ファイルのサイズを変更します。  これは [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)"に説明されているように、セキュリティが強化された [\_chsize](../../c-runtime-library/reference/chsize.md) のバージョンです。  
+---
+# <a name="chsizes"></a>_chsize_s
+ファイル サイズを変更します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_chsize](../../c-runtime-library/reference/chsize.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _chsize_s(   
@@ -53,42 +70,36 @@ errno_t _chsize_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `fd`  
  開いているファイルを参照するファイル記述子。  
   
  `size`  
- バイトのファイルの新しい長さ。  
+ バイト単位のファイルの新しい長さ。  
   
-## 戻り値  
- `_chsize_s`はファイル サイズが正常に変更された場合は値 0 を返します。  0 以外のな戻り値はエラーを示します: 戻り値は、サイズが小さい場合領域がデバイスに残っている場合、または `EINVAL`に指定されたファイルが読み取り専用であるか、記述子が無効な場合、指定したファイルがアクセスに対してロックされて `EACCES`、`EBADF`、`ENOSPC`。  `errno`は同じ値に設定されます。  
+## <a name="return-value"></a>戻り値  
+ ファイル サイズが正常に変更された場合は、`_chsize_s` は値 0 を返します。 0 以外の戻り値はエラーを示します: 指定したファイルがアクセスに対してロックされている場合、戻り値は `EACCES` になり、指定したファイルが読み取り専用かまたは記述子が無効な場合は `EBADF`、デバイスで空いている領域が残っていない場合は `ENOSPC`、サイズが 0 未満の場合は `EINVAL` になります。 `errno` は同じ値に設定されます。  
   
- リターン コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `_chsize_s`関数は `size`で指定された長さに `fd` に関連付けられたファイルを拡張するか、切り捨てられます。  ファイルはモードで開く必要ための書き込み。  ファイルがまで null 文字 \(「\\0」\) が付けられます。  ファイルが切り詰められている場合、簡略化されたファイルの末尾からファイルの元の長さへのすべてのデータは失われます。  
+## <a name="remarks"></a>コメント  
+ `_chsize_s` 関数は、`fd` に関連付けられているファイルを `size` に指定された長さに拡張するか切り捨てます。 ファイルは、書き込みを許可するモードで開かれている必要があります。 ファイルが拡張される場合は、null 文字 ('\0') が追加されます。 ファイルが切り捨てられる場合、短くなったファイルの末尾からファイルの元の長さまでのすべてのデータは失われます。  
   
- したがって`_chsize_s`はファイル サイズとして 64 ビットの整数を受け取り、ファイル サイズを超える 4 GB を処理できます。  `_chsize`は 32 ビット ファイル サイズに制限されます。  
+ `_chsize_s` は、ファイル サイズとして 64 ビットの整数を取るので、4 GB より大きいファイル サイズを処理できます。 `_chsize` は、32 ビットのファイル サイズに制限されます。  
   
- この関数は、パラメーターを検証します。  `fd` に有効なファイル記述子がない場合、またはサイズが小さい場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  
+ この関数は、パラメーターを検証します。 `fd` が有効なファイル記述子ではないか、サイズが 0 未満である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_chsize_s`|\<io.h\>|\<errno.h\>|  
+|-------------|---------------------|---------------------|  
+|`_chsize_s`|\<io.h>|\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 同等の .NET Framework 関数  
-  
--   [System::IO::Stream::SetLength](https://msdn.microsoft.com/en-us/library/system.io.stream.setlength.aspx)  
-  
--   [System::IO::FileStream::SetLength](https://msdn.microsoft.com/en-us/library/system.io.filestream.setlength.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
- [\_chsize](../../c-runtime-library/reference/chsize.md)   
- [\_close](../Topic/_close.md)   
- [\_creat、\_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)
+ [_chsize](../../c-runtime-library/reference/chsize.md)   
+ [_close](../../c-runtime-library/reference/close.md)   
+ [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)

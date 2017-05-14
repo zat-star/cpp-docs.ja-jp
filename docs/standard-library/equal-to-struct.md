@@ -1,78 +1,89 @@
 ---
-title: "equal_to 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::equal_to"
-  - "equal_to"
-  - "xfunctional/std::equal_to"
-  - "std.equal_to"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "equal_to 関数"
-  - "equal_to 構造体"
+title: "equal_to Struct | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- equal_to
+- xfunctional/std::equal_to
+dev_langs:
+- C++
+helpviewer_keywords:
+- equal_to function
+- equal_to struct
 ms.assetid: 8e4f2b50-b2db-48e3-b4cc-6cc03362c2a6
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# equal_to 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: bac0d0114b10fc4ac7a83a60f21db5218cb3f1c8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
-引数に対して等値演算 \(`operator==`\) を実行する二項述語。  
+---
+# <a name="equalto-struct"></a>equal_to 構造体
+引数に対して等値演算 (`operator==`) を実行する 2 項述語。  
   
-## 構文  
-  
-```  
-template<class Type = void>  
-   struct equal_to : public binary_function<Type, Type, bool>   
-   {  
-      bool operator()(  
-         const Type& Left,   
-         const Type& Right  
-      ) const;  
-   };  
-  
-// specialized transparent functor for operator==  
-template<>  
-   struct equal_to<void>  
-   {  
-      template<class Type1, class Type2>  
-      auto operator()(Type1&& Left, Type2&& Right) const  
-         -> decltype(std::forward<Type1>(Left)  
-            == std::forward<Type2>(Right));  
-   };  
+## <a name="syntax"></a>構文  
   
 ```  
+template <class Type = void>  
+struct equal_to : public binary_function<Type, Type, bool>   
+ {  
+    bool operator()(const Type& Left, const Type& Right) const; 
+ };  
+ 
+// specialized transparent functor for operator== 
+template <>  
+struct equal_to<void>  
+ {  
+    template <class T, class U>  
+    auto operator()(T&& Left, U&& Right) const 
+      ->  decltype(std::forward<T>(Left) == std::forward<U>(Right));
+ };  
+```  
   
-#### パラメーター  
- `Type`, `Type1`, `Type2`  
+#### <a name="parameters"></a>パラメーター  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator==` をサポートする任意の型。  
   
  `Left`  
- 等値演算の左オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type1` の左辺値および右辺値参照引数の完全転送を行います。  
+ 等値演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- 等値演算の右オペランド。  特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。  特殊化されたテンプレートは、推論された型 `Type2` の左辺値および右辺値参照引数の完全転送を行います。  
+ 等値演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
-## 戻り値  
- `Left` `==` `Right` の結果。  特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator==` によって返された型が含まれます。  
+## <a name="return-value"></a>戻り値  
+ `Left``==``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator==` によって返された型が含まれます。  
   
-## 解説  
- `Type` 型のオブジェクトは、等値比較できる型であることが必要です。  オブジェクトのセットに対して定義されている `operator==` が、等価関係の数学的性質を満たしている必要があります。  組み込みの数値型とポインター型はすべて、この要件を満たします。  
+## <a name="remarks"></a>コメント  
+ `Type` 型のオブジェクトは、等値比較できる型であることが必要です。 オブジェクトのセットに対して定義されている `operator==` が、等価関係の数学的性質を満たしている必要があります。 組み込みの数値型とポインター型はすべて、この要件を満たします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // functional_equal_to.cpp  
 // compile with: /EHsc  
 #include <vector>  
@@ -123,7 +134,11 @@ int main( )
 }  
 ```  
   
-  **The vector v1 \= \( 0 1 4 5 8 9 \)**  
-**The vector v2 \= \( \-0 1 \-4 5 \-8 9 \)**  
-**The result of the element\-wise equal\_to comparison**  
-**between v1 & v2 is: \( 1 1 0 1 0 1 \)**
+```Output  
+The vector v1 = ( 0 1 4 5 8 9 )  
+The vector v2 = ( -0 1 -4 5 -8 9 )  
+The result of the element-wise equal_to comparison  
+between v1 & v2 is: ( 1 1 0 1 0 1 )  
+```
+
+

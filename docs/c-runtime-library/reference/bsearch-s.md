@@ -1,48 +1,66 @@
 ---
-title: "bsearch_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "bsearch_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "bsearch_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [CRT]、バイナリ検索"
-  - "bsearch_s 関数"
+title: bsearch_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- bsearch_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- bsearch_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- arrays [CRT], binary search
+- bsearch_s function
 ms.assetid: d5690d5e-6be3-4f1d-aa0b-5ca6dbded276
 caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# bsearch_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 67caa4f6f6f9ba43c5d4b8a23af8be9bebcc717b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-並べ替えられた配列のバイナリ検索を実行します。 これは「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[bsearch](../../c-runtime-library/reference/bsearch.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="bsearchs"></a>bsearch_s
+並べ替えられた配列のバイナリ検索を実行します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [bsearch](../../c-runtime-library/reference/bsearch.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void *bsearch_s(   
@@ -55,7 +73,7 @@ void *bsearch_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `key`  
  検索するオブジェクト。  
   
@@ -69,47 +87,47 @@ void *bsearch_s(
  要素の幅。  
   
  `compare`  
- 2 つの要素を比較するコールバック関数。 最初の引数は、`context` ポインターです。 2 番目の引数は、検索用の `key` へのポインターです。 3 番目の引数は、`key` と比較する配列要素へのポインターです。  
+ 2 つの要素を比較するコールバック関数。 最初の引数は、 `context` ポインターです。 2 番目の引数は、検索用の `key` へのポインターです。 3 番目の引数は、 `key`と比較する配列要素へのポインターです。  
   
  `context`  
  比較関数内でアクセスできるオブジェクトへのポインター。  
   
-## 戻り値  
- `bsearch_s` は、`base` が指し示す配列内の `key` の発生個所へのポインターを返します。`key` がない場合、関数は `NULL` を返します。 配列が昇順でないか、同一キーで重複するレコードがある場合、結果は予測不可能になります。  
+## <a name="return-value"></a>戻り値  
+ `bsearch_s` は、`base` が指し示す配列内の `key` が出現した箇所にポインターを返します。 `key` がない場合、関数は `NULL`を返します。 配列が昇順でないか、同一キーで重複するレコードがある場合、結果は予測不可能になります。  
   
- この関数に無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数が `NULL` を返します。 詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ この関数に無効なパラメーターが渡されると、「 [Parameter Validation](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
 |||||||  
 |-|-|-|-|-|-|  
 |`key`|`base`|`compare`|`num`|`width`|`errno`|  
 |`NULL`|任意|任意|任意|任意|`EINVAL`|  
-|任意|`NULL`|任意|\!\= 0|任意|`EINVAL`|  
-|任意|任意|任意|任意|\= 0|`EINVAL`|  
+|任意|`NULL`|任意|!= 0|任意|`EINVAL`|  
+|任意|任意|任意|任意|= 0|`EINVAL`|  
 |任意|任意|`NULL`|1 つ|任意|`EINVAL`|  
   
-## 解説  
- `bsearch_s` 関数は `num` 要素の並べ替えられた配列のバイナリ検索を、`width` バイト数の単位で実行します。`base` 値は、検索対象の配列のベースへのポインターであり、`key` は検索されている値です。`compare` パラメーターはユーザーが指定したルーチンへのポインターであり、要求されたキーを配列要素と比較し、その関係を示す次のいずれかの値を返します。  
+## <a name="remarks"></a>コメント  
+ `bsearch_s` 関数は `num` 要素の並べ替えられた配列のバイナリ検索を、 `width` バイト数の単位で実行します。 `base` 値は、検索対象の配列のベースへのポインターであり、 `key` は検索されている値です。 `compare` パラメーターはユーザーが指定したルーチンへのポインターであり、要求されたキーを配列要素と比較し、その関係を示す次のいずれかの値を返します。  
   
 |`compare` ルーチンによって返される値|説明|  
-|-----------------------------|--------|  
+|-----------------------------------------|-----------------|  
 |\< 0|キーは配列要素より小さい。|  
 |0|キーは配列要素と等しい。|  
-|\> 0|キーは配列要素より大きい。|  
+|> 0|キーは配列要素より大きい。|  
   
- `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、関数をオブジェクトのアクセス メンバーと比較する場合に役立ちます。`compare` 関数は void ポインターを該当するオブジェクト型とそのオブジェクトのアクセス メンバーにキャストします。`context` パラメーターを追加すると、`compare` 関数でデータを使用可能にする静的関数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、`bsearch_s` がより安全になります。  
+ `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、関数をオブジェクトのアクセス メンバーと比較する場合に役立ちます。 `compare` 関数は void ポインターを該当するオブジェクト型とそのオブジェクトのアクセス メンバーにキャストします。 `context` パラメーターを追加すると、 `bsearch_s` 関数でデータを使用可能にする静的関数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、 `compare` がより安全になります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`bsearch_s`|\<stdlib.h\> および \<search.h\>|  
+|-------------|---------------------|  
+|`bsearch_s`|\<stdlib.h > と \<search.h >|  
   
- 互換性の詳細については、ランタイム ライブラリ リファレンスの「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- このプログラムでは、[qsort\_s](../../c-runtime-library/reference/qsort-s.md) で文字列の配列を並べ替え、bsearch\_s を使用して "cat" という単語を検索します。  
+## <a name="example"></a>例  
+ このプログラムでは、 [qsort_s](../../c-runtime-library/reference/qsort-s.md)で文字列の配列を並べ替え、bsearch_s を使用して "cat" という単語を検索します。  
   
 ```  
 // crt_bsearch_s.cpp  
@@ -189,14 +207,12 @@ int main( void )
 ```  
   
 ```Output  
-cat cow dog goat horse human pig rat cat が 002F0F04 で検出されます  
+cat cow dog goat horse human pig rat  
+cat found at 002F0F04  
 ```  
   
-## 同等の .NET Framework 関数  
- <xref:System.Collections.ArrayList.BinarySearch%2A>  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
- [\_lfind](../../c-runtime-library/reference/lfind.md)   
- [\_lsearch](../../c-runtime-library/reference/lsearch.md)   
+ [_lfind](../../c-runtime-library/reference/lfind.md)   
+ [_lsearch](../../c-runtime-library/reference/lsearch.md)   
  [qsort](../../c-runtime-library/reference/qsort.md)

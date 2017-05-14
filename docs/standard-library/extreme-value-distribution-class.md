@@ -10,32 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - extreme_value_distribution
-- std::extreme_value_distribution
 - random/std::extreme_value_distribution
-- std::extreme_value_distribution::reset
 - random/std::extreme_value_distribution::reset
-- std::extreme_value_distribution::a
 - random/std::extreme_value_distribution::a
-- std::extreme_value_distribution::b
 - random/std::extreme_value_distribution::b
-- std::extreme_value_distribution::param
 - random/std::extreme_value_distribution::param
-- std::extreme_value_distribution::min
 - random/std::extreme_value_distribution::min
-- std::extreme_value_distribution::max
 - random/std::extreme_value_distribution::max
-- std::extreme_value_distribution::operator()
 - random/std::extreme_value_distribution::operator()
-- std::extreme_value_distribution::param_type
 - random/std::extreme_value_distribution::param_type
-- std::extreme_value_distribution::param_type::a
 - random/std::extreme_value_distribution::param_type::a
-- std::extreme_value_distribution::param_type::b
 - random/std::extreme_value_distribution::param_type::b
-- std::extreme_value_distribution::param_type::operator==
 - random/std::extreme_value_distribution::param_type::operator==
-- std::extreme_value_distribution::param_type::operator!=
 - random/std::extreme_value_distribution::param_type::operator!=
+- random/std::extreme_value_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -59,10 +47,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: c7f3b346bc8abeab0c6bd913fc0b554bef4ed208
-ms.openlocfilehash: 8d7cab089d2fbffa447e1060188b605b6ebfdb65
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 146a9b5efeda58af066af1c9c5ce6f652b07bacc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="extremevaluedistribution-class"></a>extreme_value_distribution クラス
@@ -109,8 +98,8 @@ public:
   
 ||||  
 |-|-|-|  
-|[extreme_value_distribution::extreme_value_distribution](#extreme_value_distribution__extreme_value_distribution)|`extreme_value_distribution::a`|`extreme_value_distribution::param`|  
-|`extreme_value_distribution::operator()`|`extreme_value_distribution::b`|[extreme_value_distribution::param_type](#extreme_value_distribution__param_type)|  
+|[extreme_value_distribution](#extreme_value_distribution)|`extreme_value_distribution::a`|`extreme_value_distribution::param`|  
+|`extreme_value_distribution::operator()`|`extreme_value_distribution::b`|[param_type](#param_type)|  
   
  プロパティ関数 `a()` と `b()` はそれぞれ、格納されている分布パラメーター `a` と `b` の値を返します。  
   
@@ -206,7 +195,7 @@ Distribution for 10 samples:
   
  **名前空間:** std  
   
-##  <a name="a-nameextremevaluedistributionextremevaluedistributiona--extremevaluedistributionextremevaluedistribution"></a><a name="extreme_value_distribution__extreme_value_distribution"></a>  extreme_value_distribution::extreme_value_distribution  
+##  <a name="extreme_value_distribution"></a>  extreme_value_distribution::extreme_value_distribution  
  分布を作成します。  
   
 ```  
@@ -231,7 +220,7 @@ explicit extreme_value_distribution(const param_type& parm);
   
  2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
   
-##  <a name="a-nameextremevaluedistributionparamtypea--extremevaluedistributionparamtype"></a><a name="extreme_value_distribution__param_type"></a>  extreme_value_distribution::param_type  
+##  <a name="param_type"></a>  extreme_value_distribution::param_type  
 分布のパラメーターを格納します。  
   
 ```cpp  

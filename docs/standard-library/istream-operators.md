@@ -6,20 +6,22 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: 7174da41-f301-4a34-b631-0ab918b188d2
 caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 4c2a2f8c2c2b55e3c14db9e44a4b05041c0ecfc9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: f73a5e24fd3864a46ac0c50bbdb18a1089a4a05e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltistreamgt-operators"></a>&lt;istream&gt; 演算子
  
-##  <a name="a-nameoperatorgtgta--operatorgtgt"></a><a name="operator_gt__gt_"></a>  operator&gt;&gt;  
+##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
  ストリームから文字と文字列を抽出します。  
   
 ```  
@@ -66,17 +68,17 @@ basic_istream<Elem, Tr>& operator>>(
  `Istr`  
  ストリーム。  
   
- ` str`  
+ `str`  
  文字列。  
   
- ` val`  
+ `val`  
  型。  
   
 ### <a name="return-value"></a>戻り値  
  ストリーム  
   
 ### <a name="remarks"></a>コメント  
- `basic_istream` クラスもいくつかの抽出演算子を定義します。 詳細については、「[basic_istream::operator >>](../standard-library/basic-istream-class.md#basic_istream__operator_gt__gt_)」を参照してください。  
+ `basic_istream` クラスもいくつかの抽出演算子を定義します。 詳細については、「[basic_istream::operator >>](../standard-library/basic-istream-class.md#op_gt_gt)」を参照してください。  
   
  下記のテンプレート関数は  
   
@@ -86,9 +88,9 @@ basic_istream<Elem, Tr>& operator>>(
     basic_istream<Elem, Tr>& Istr, Elem* str);
 ```  
   
- 最大で *N* - 1 の要素を抽出し、_ *Str* から始まる配列にこれらを格納します。 `Istr`. [width](../standard-library/ios-base-class.md#ios_base__width) が&0; より大きい場合、*N* は `Istr`. **width** です。そうでない場合は、宣言できる **Elem** の最大の配列のサイズになります。 この関数は常に、格納する抽出された要素の後に値 **Elem()** を格納します。 抽出は、ファイルの最後の早い段階で、値 **Elem**(0) (これは抽出されません) を持つ文字、または [ws](../standard-library/istream-functions.md#ws) によって破棄される任意の要素 (これは抽出されません) で停止します。 関数が要素を抽出しなかった場合、`Istr`. [setstate](../standard-library/basic-ios-class.md#basic_ios__setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr`. **width**(0) が呼び出され、`Istr` が返されます。  
+ 最大で *N* - 1 の要素を抽出し、_ *Str* から始まる配列にこれらを格納します。 `Istr`. [width](../standard-library/ios-base-class.md#width) が 0 より大きい場合、*N* は `Istr`. **width** です。そうでない場合は、宣言できる **Elem** の最大の配列のサイズになります。 この関数は常に、格納する抽出された要素の後に値 **Elem()** を格納します。 抽出は、ファイルの最後の早い段階で、値 **Elem**(0) (これは抽出されません) を持つ文字、または [ws](../standard-library/istream-functions.md#ws) によって破棄される任意の要素 (これは抽出されません) で停止します。 関数が要素を抽出しなかった場合、`Istr`. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr`. **width**(0) が呼び出され、`Istr` が返されます。  
   
- **セキュリティに関するメモ** 入力ストリームから抽出された、null で終わる文字列が、コピー先バッファー ` str` のサイズを超えないようにする必要があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
+ **セキュリティに関するメモ** 入力ストリームから抽出された、null で終わる文字列が、コピー先バッファー `str` のサイズを超えないようにする必要があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
  下記のテンプレート関数は  
   
@@ -98,7 +100,7 @@ basic_istream<Elem, Tr>& operator>>(
     basic_istream<Elem, Tr>& Istr, Elem& Ch);
 ```  
   
- 可能な場合は要素を抽出し、この要素を `Ch` に格納します。 そうでない場合は、**is**. [setstate](../standard-library/basic-ios-class.md#basic_ios__setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr` を返します。  
+ 可能な場合は要素を抽出し、この要素を `Ch` に格納します。 そうでない場合は、**is**. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr` を返します。  
   
  下記のテンプレート関数は  
   
@@ -108,7 +110,7 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, signed char* str);
 ```  
   
- `Istr` >> ( `char`**\***) ` str` を返します。  
+ `Istr` >> ( `char`**\***) `str` を返します。  
   
  下記のテンプレート関数は  
   
@@ -128,7 +130,7 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, unsigned char* str);
 ```  
   
- `Istr` >> ( **char \***) ` str` を返します。  
+ `Istr` >> ( **char \***) `str` を返します。  
   
  下記のテンプレート関数は  
   
@@ -149,7 +151,7 @@ basic_istream<Elem, Tr>& operator>>(
     Type& val);
 ```  
   
- `Istr` `>>` ` val` を返します (さらに、その過程で `Istr` に対する `rvalue reference` を `lvalue` に変換します)。  
+ `Istr` `>>` `val` を返します (さらに、その過程で `Istr` に対する `rvalue reference` を `lvalue` に変換します)。  
   
 ### <a name="example"></a>例  
   

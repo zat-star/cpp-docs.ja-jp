@@ -1,51 +1,68 @@
 ---
-title: "_fcvt_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_fcvt_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "fcvt_s"
-  - "_fcvt_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_fcvt_s 関数"
-  - "変換 (浮動小数点型を), 文字列への"
-  - "fcvt_s 関数"
-  - "浮動小数点関数, 変換 (数値を文字列に)"
+title: "_fcvt_s | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _fcvt_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- fcvt_s
+- _fcvt_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- fcvt_s function
+- converting floating point, to strings
+- floating-point functions, converting number to string
+- _fcvt_s function
 ms.assetid: 48671197-1d29-4c2b-a5d8-d2368f5f68a1
 caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# _fcvt_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 9c282757ae79367cdc2ee72b3f3ce8d0e50983fa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-文字列に浮動小数点数に変換します。  この関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[\_fcvt](../Topic/_fcvt.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="fcvts"></a>_fcvt_s
+浮動小数点数を文字列に変換します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_fcvt](../../c-runtime-library/reference/fcvt.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _fcvt_s(   
@@ -66,67 +83,67 @@ errno_t _fcvt_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[出力\] `buffer`  
- 変換の結果を格納する指定されたバッファー。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `buffer`  
+ 変換の結果を保持する指定されたバッファー。  
   
- \[入力\] `sizeInBytes`  
- バッファーのサイズ \(バイト数\)  
+ [入力] `sizeInBytes`  
+ バッファーのサイズ (バイト単位)。  
   
- \[入力\] `value`  
+ [入力] `value`  
  変換される数値。  
   
- \[入力\] `count`  
- 小数点以下の桁数を指定します。  
+ [入力] `count`  
+ 小数点以下の桁数。  
   
- \[出力\] `dec`  
- 保存された小数点位置へのポインター。  
+ [出力] `dec`  
+ 格納された小数点位置を指すポインター。  
   
- \[出力\] `sign`  
- 保存された署名のインジケーターへのポインター。  
+ [出力] `sign`  
+ 格納された符号インジケーターを指すポインター。  
   
-## 戻り値  
- 正常に終了した場合は 0 を返します。  エラーが発生した場合の戻り値はエラー コードです。  エラー コードは、Errno.h で定義されます。  これらのエラーのリスティングの場合、[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 これらのエラーの一覧については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- 無効なパラメーターの場合は、次の表に示すように、この関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+ パラメーターが次の表の無効な値の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`sizeInBytes`|値|count|12 年|sign|戻り値|`buffer` の値|  
-|--------------|-------------------|-------|-----------|----------|----------|---------|-----------------|  
-|`NULL`|任意|任意|任意|任意|任意|`EINVAL`|変更されない。|  
-|`NULL` 以外 \(有効なメモリを指し示している\)|\<\=0|任意|任意|任意|任意|`EINVAL`|変更されない。|  
-|任意|任意|任意|任意|`NULL`|任意|`EINVAL`|変更されない。|  
-|任意|任意|任意|任意|任意|`NULL`|`EINVAL`|変更されない。|  
+|`buffer`|`sizeInBytes`|値|count|dec|sign|Return|`buffer` の値|  
+|--------------|-------------------|-----------|-----------|---------|----------|------------|-----------------------|  
+|`NULL`|任意|任意|任意|任意|任意|`EINVAL`|変更されません。|  
+|`NULL` ではありません (有効なメモリを指します)|<=0|任意|任意|任意|任意|`EINVAL`|変更されません。|  
+|任意|任意|任意|任意|`NULL`|任意|`EINVAL`|変更されません。|  
+|任意|任意|任意|任意|任意|`NULL`|`EINVAL`|変更されません。|  
   
- **セキュリティの問題**  
+ **セキュリティ上の問題**  
   
- `_fcvt_s` は `buffer` が有効なメモリを指さないし、`NULL`であるアクセス違反が発生することがあります。  
+ `buffer` が有効なメモリを指しておらず、`NULL` ではない場合、`_fcvt_s` はアクセス違反を生成する可能性があります。  
   
-## 解説  
- `_fcvt_s` 関数は null で終わるな文字列に浮動小数点数に変換します。  `value` パラメーターは、変換する浮動小数点数です。  `_fcvt_s` は 文字列として `value` の数値を格納し、null 文字 \(「\\0」\) を付けます。  `count` パラメーターは 10 進数の後に格納される桁数を指定します。  余分な数字が `count` の場所に丸められます。  精度の `count` の数値より少なくがある場合は、文字列をゼロで埋められます。  
+## <a name="remarks"></a>コメント  
+ `_fcvt_s` 関数は、浮動小数点数の値を null で終わる文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 `_fcvt_s` は、`value` の桁数を文字列として格納し、null 文字 ("\0") を追加します。 `count` パラメーターは、小数点より後の格納する桁数を指定します。 余分な桁は、`count` 桁まで丸められます。 この桁数が `count` の有効桁数より少ない場合は、文字列に 0 が埋め込まれます。  
   
- 数値を文字列に保存されます。  小数点の位置と `value` の符号は呼び出しの後に `dec` と `sign` から取得できます。  整数値への `dec` パラメーター point; この整数値は文字列の先頭に関して小数点の位置を示します。  ゼロまたは負の整数値は整数部の桁目の左側にあることを示します。  パラメーター `sign` は `value`の符号を表す整数を指定します。  整数を 0 に `value` が負の場合 `value` が正の値である設定され、0 以外のな数値に設定されます。  
+ 文字列には数字だけが格納されます。 `value` の小数点位置と符号は、呼び出しの後で `dec` と `sign` から取得できます。 `dec` パラメーターは、整数値を指します。この整数値は、小数点が文字列の先頭から何文字目にあるのかを示します。 0 または負の整数値は、小数点が文字列の先頭より左にあることを示します。 `sign` パラメーターは、`value` の符号を示す整数を指します。 `value` が正の場合、整数は 0 に設定され、`value` が負の場合は負の値に設定されます。  
   
- `_CVTBUFSIZE` 長さのバッファーは、浮動小数点値で十分です。  
+ 長さ `_CVTBUFSIZE` のバッファーは、浮動小数点値には十分です。  
   
- `_ecvt_s` と `_fcvt_s` の違いは `count` パラメーターの解釈にあります。  `_ecvt_s` は 出力文字列の桁数として `count` を解釈し、`_fcvt_s` は小数点以下の桁数として`ount` c を復号化します。  
+ `_ecvt_s` と `_fcvt_s` の違いは、`count` パラメーターの解釈にあります。 `_ecvt_s`解釈`count`として出力文字列に数字の合計数と`_fcvt_s`解釈`count`桁数、小数点後として。  
   
- この関数を使用して、C\+\+ では、テンプレートのオーバーロードによって簡素化されます。; オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- この関数は、1 番目のデバッグ バージョンは 0xFD をバッファーにコピーします。  この動作を無効にするには、[\_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
+ この関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md).を使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
-|--------|------------|----------------|  
-|`_fcvt_s`|\<stdlib.h\>|\<errno.h\>|  
+|--------------|---------------------|---------------------|  
+|`_fcvt_s`|\<stdlib.h>|\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
- **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md) のすべてのバージョン。  
+ **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のすべてのバージョンです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // fcvt_s.c  
@@ -155,14 +172,14 @@ int main()
 }  
 ```  
   
-  **変換された値: 120000**   
-## 同等の .NET Framework 関数  
- <xref:System.Convert.ToString%2A>  
+```Output  
+Converted value: 120000  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [atof、\_atof\_l、\_wtof、\_wtof\_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)   
- [\_ecvt\_s](../Topic/_ecvt_s.md)   
- [\_gcvt\_s](../../c-runtime-library/reference/gcvt-s.md)   
- [\_fcvt](../Topic/_fcvt.md)
+ [atof、_atof_l、_wtof、_wtof_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)   
+ [_ecvt_s](../../c-runtime-library/reference/ecvt-s.md)   
+ [_gcvt_s](../../c-runtime-library/reference/gcvt-s.md)   
+ [_fcvt](../../c-runtime-library/reference/fcvt.md)

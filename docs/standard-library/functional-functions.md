@@ -9,41 +9,41 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::bind
 - functional/std::bind
-- std::bind1st
 - functional/std::bind1st
-- std::bind2nd
 - functional/std::bind2nd
-- std::bit_and
 - functional/std::bit_and
-- std::bit_not
 - functional/std::bit_not
-- std::bit_or
 - functional/std::bit_or
-- std::bit_xor
 - functional/std::bit_xor
-- std::cref
 - functional/std::cref
 - type_traits/std::cref
-- std::mem_fn
 - functional/std::mem_fn
-- std::mem_fun
 - functional/std::mem_fun
-- std::mem_fun_ref
 - functional/std::mem_fun_ref
-- std::not1
 - functional/std::not1
-- std::not2
 - functional/std::not2
-- std::ptr_fun
 - functional/std::ptr_fun
-- std::ref
 - functional/std::ref
 - type_traits/std::ref
-- std::swap
 - functional/std::swap
 - type_traits/std::swap
+- functional/std::bind
+- functional/std::bind1st
+- functional/std::bind2nd
+- functional/std::bit_and
+- functional/std::bit_not
+- functional/std::bit_or
+- functional/std::bit_xor
+- functional/std::cref
+- functional/std::mem_fn
+- functional/std::mem_fun
+- functional/std::mem_fun_ref
+- functional/std::not1
+- functional/std::not2
+- functional/std::ptr_fun
+- functional/std::ref
+- functional/std::swap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -53,23 +53,24 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 9437109e3e03f2b8bfb39bf2b4ca75e520b59c80
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 16d93ad5a46dccbc53fa67a08e2f8432b18f14b5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltfunctionalgt-functions"></a>&lt;functional&gt; 関数
 ||||  
 |-|-|-|  
-|[bind](#bind_function)|[bind1st](#bind1st_function)|[bind2nd](#bind2nd_function)|  
-|[bit_and](#bit_and_function)|[bit_not](#bit_not_function)|[bit_or](#bit_or_function)|  
-|[bit_xor](#bit_xor_function)|[cref](#cref_function)|[mem_fn](#mem_fn_function)|  
-|[mem_fun](#mem_fun_function)|[mem_fun_ref](#mem_fun_ref_function)|[not1](#not1_function)|  
-|[not2](#not2_function)|[ptr_fun](#ptr_fun_function)|[ref](#ref_function)|  
-|[swap](#swap_function)|  
+|[bind](#bind)|[bind1st](#bind1st)|[bind2nd](#bind2nd)|  
+|[bit_and](#bit_and)|[bit_not](#bit_not)|[bit_or](#bit_or)|  
+|[bit_xor](#bit_xor)|[cref](#cref)|[mem_fn](#mem_fn)|  
+|[mem_fun](#mem_fun)|[mem_fun_ref](#mem_fun_ref)|[not1](#not1)|  
+|[not2](#not2)|[ptr_fun](#ptr_fun)|[ref](#ref)|  
+|[swap](#swap)|  
   
-##  <a name="a-namebindfunctiona--bind"></a><a name="bind_function"></a>  bind  
+##  <a name="bind"></a>  bind  
  呼び出し可能オブジェクトに引数をバインドします。  
   
 ```  
@@ -96,7 +97,7 @@ unspecified bind(Fty fn, T1 t1, T2 t2, ..., TN tN);
 ### <a name="remarks"></a>コメント  
  種類 `Fty, T1, T2, ..., TN` はコピーで構築可能である必要があり、`INVOKE(fn, t1, ..., tN)` はいくつかの値の有効な式にする必要があります。`w1, w2, ..., wN`  
   
- 1 つ目のテンプレート関数は、転送呼び出しラッパー `g` と弱い結果型を返します。 `g(u1, u2, ..., uM)` の効果は `INVOKE(f, v1, v2, ..., vN,` [result_of](../standard-library/result-of-class.md) `<Fty` `cv` `(V1, V2, ..., VN)>::type)` です。ここで、`cv` は `g` の cv 修飾子であり、バインドされる引数 `v1, v2, ..., vN` の値と型は以下のように決定されます。 引数を呼び出し可能なオブジェクトにバインドしてカスタマイズされた引数リストを使用する呼び出し可能なオブジェクトを作成するためにそれを使用します。  
+ 1 つ目のテンプレート関数は、転送呼び出しラッパー `g` と弱い結果型を返します。 効果`g(u1, u2, ..., uM)`は`INVOKE(f, v1, v2, ..., vN, ` [result_of](../standard-library/result-of-class.md)`<Fty cv (V1, V2, ..., VN)>::type)`ここで、`cv`の cv 修飾子は、`g`がバインドされている引数の型と値`v1, v2, ..., vN`は次のように決定します。 引数を呼び出し可能なオブジェクトにバインドしてカスタマイズされた引数リストを使用する呼び出し可能なオブジェクトを作成するためにそれを使用します。  
   
  2 つ目のテンプレート関数は、転送呼び出しラッパー `g` と入れ子になった型 `result_type` を返します。これは `Ret` のシノニムです。 `g(u1, u2, ..., uM)` の効果は `INVOKE(f, v1, v2, ..., vN, Ret)` です。`cv` は、`g` の cv 修飾子であり、バインドされる引数 `v1, v2, ..., vN` の値と型は以下のように決定されます。 引数を呼び出し可能なオブジェクトにバインドしてカスタマイズされた引数リストと指定された戻り値の型を使用する呼び出し可能なオブジェクトを作成しするためにそれを使用します。  
   
@@ -106,7 +107,7 @@ unspecified bind(Fty fn, T1 t1, T2 t2, ..., TN tN);
   
  `std::is_bind_expression<Ti>::value` の値が `true` である場合、引数 `vi` は `ti(u1, u2, ..., uM)` であり、型 `Vi` は `result_of<Ti` `cv` `(U1&, U2&, ..., UN&>::type` です。  
   
- `std::is_placeholder<Ti>::value` の値 `j` が&0; である場合、引数 `vi` は `uj` であり、型 `Vi` は `Uj&` です。  
+ `std::is_placeholder<Ti>::value` の値 `j` が 0 である場合、引数 `vi` は `uj` であり、型 `Vi` は `Uj&` です。  
   
  それ以外の場合、引数 `vi` は `ti` であり、型 `Vi` は `Ti` `cv` `&` です。  
   
@@ -168,8 +169,8 @@ int main()
 3^2 == 9  
 ```  
   
-##  <a name="a-namebind1stfunctiona--bind1st"></a><a name="bind1st_function"></a>  bind1st  
- 指定した値に二項関数の&1; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。  
+##  <a name="bind1st"></a>  bind1st  
+ 指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。  
   
 ```  
 template <class Operation, class Type>  
@@ -180,11 +181,11 @@ binder1st <Operation> bind1st (const Operation& func, const Type& left);
  `func`  
  単項関数オブジェクトに変換する二項関数オブジェクト。  
   
- ` left`  
+ `left`  
  二項関数オブジェクトの最初の引数がバインドされている値。  
   
 ### <a name="return-value"></a>戻り値  
- 二項関数オブジェクトの最初の引数を値 ` left.` にバインドした結果として生成される単項関数オブジェクト。  
+ 単項関数オブジェクト、値に二項関数オブジェクトの最初の引数をバインドして得た結果`left`です。  
   
 ### <a name="remarks"></a>コメント  
  関数バインダーには関数アダプターの一種であり、関数オブジェクトを返すので特定の種類の関数合成で使用して、より複雑で強力な式を作成することができます。  
@@ -258,8 +259,8 @@ The number of elements in v1 greater than 5 is: 4.
 The number of elements in v1 less than 10 is: 2.  
 ```  
   
-##  <a name="a-namebind2ndfunctiona--bind2nd"></a><a name="bind2nd_function"></a>  bind2nd  
- 指定した値に二項関数の&2; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。  
+##  <a name="bind2nd"></a>  bind2nd  
+ 指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。  
   
 ```  
 template <class Operation, class Type>  
@@ -270,11 +271,11 @@ binder2nd <Operation> bind2nd(const Operation& func, const Type& right);
  `func`  
  単項関数オブジェクトに変換する二項関数オブジェクト。  
   
- ` right`  
- 二項関数オブジェクトの&2; つ目の引数がバインドされている値。  
+ `right`  
+ 二項関数オブジェクトの 2 つ目の引数がバインドされている値。  
   
 ### <a name="return-value"></a>戻り値  
- 二項関数オブジェクトの&2; つ目の引数を値 ` right.` にバインドした結果として生成される単項関数オブジェクト。  
+ 単項関数オブジェクト、値に二項関数オブジェクトの 2 番目の引数をバインドして得た結果`right`です。  
   
 ### <a name="remarks"></a>コメント  
  関数バインダーには関数アダプターの一種であり、関数オブジェクトを返すので特定の種類の関数合成で使用して、より複雑で強力な式を作成することができます。  
@@ -348,7 +349,7 @@ The number of elements in v1 greater than 15 is: 2.
 The number of elements in v1 less than 10 is: 2.  
 ```  
   
-##  <a name="a-namebitandfunctiona--bitand"></a><a name="bit_and_function"></a>  bit_and  
+##  <a name="bit_and"></a>  bit_and  
  引数に対してビットごとの AND 演算 (二項 `operator&`) を実行する定義済みの関数オブジェクト。  
   
 ```  
@@ -370,14 +371,14 @@ struct bit_and<void>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- `Type`、` T`、` U`  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator&` をサポートする任意の型。  
   
  `Left`  
- ビットごとの AND 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` T` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの AND 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- ビットごとの AND 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` U` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの AND 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
 ### <a name="return-value"></a>戻り値  
  `Left``&``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator&` によって返された型が含まれます。  
@@ -385,7 +386,7 @@ struct bit_and<void>
 ### <a name="remarks"></a>コメント  
  `bit_and` ファンクターは、基本データ型の整数型、または二項 `operator&` を実装しているユーザー定義型に制限されます。  
   
-##  <a name="a-namebitnotfunctiona--bitnot"></a><a name="bit_not_function"></a>  bit_not  
+##  <a name="bit_not"></a>  bit_not  
  引数に対してビットごとの補数 (NOT) 演算 (単項 `operator~`) を実行する定義済みの関数オブジェクト。  
   
 ```  
@@ -417,7 +418,7 @@ struct bit_not<void>
 ### <a name="remarks"></a>コメント  
  `bit_not` ファンクターは、基本データ型の整数型、または二項 `operator~` を実装しているユーザー定義型に制限されます。  
   
-##  <a name="a-namebitorfunctiona--bitor"></a><a name="bit_or_function"></a>  bit_or  
+##  <a name="bit_or"></a>  bit_or  
  引数に対してビットごとの OR 演算 (`operator|`) を実行する定義済みの関数オブジェクト。  
   
 ```  
@@ -439,14 +440,14 @@ struct bit_or<void>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- `Type`、` T`、` U`  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator|` をサポートする任意の型。  
   
  `Left`  
- ビットごとの OR 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` T` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの OR 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- ビットごとの OR 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` U` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの OR 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
 ### <a name="return-value"></a>戻り値  
  `Left``|``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator|` によって返された型が含まれます。  
@@ -454,7 +455,7 @@ struct bit_or<void>
 ### <a name="remarks"></a>コメント  
  `bit_or` ファンクターは、基本データ型の整数型、または `operator|` を実装しているユーザー定義型に制限されます。  
   
-##  <a name="a-namebitxorfunctiona--bitxor"></a><a name="bit_xor_function"></a>  bit_xor  
+##  <a name="bit_xor"></a>  bit_xor  
  引数に対してビットごとの XOR 演算 (二項 `operator^`) を実行する定義済みの関数オブジェクト。  
   
 ```  
@@ -476,14 +477,14 @@ struct bit_xor<void>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- `Type`、` T`、` U`  
+ `Type`、`T`、`U`  
  指定または推論された型のオペランドを受け取る `operator^` をサポートする任意の型。  
   
  `Left`  
- ビットごとの XOR 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` T` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの XOR 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
   
  `Right`  
- ビットごとの XOR 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 ` U` の左辺値および右辺値参照引数の完全転送を行います。  
+ ビットごとの XOR 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
 ### <a name="return-value"></a>戻り値  
  `Left``^``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator^` によって返された型が含まれます。  
@@ -491,7 +492,7 @@ struct bit_xor<void>
 ### <a name="remarks"></a>コメント  
  `bit_xor` ファンクターは、基本データ型の整数型、または二項 `operator^` を実装しているユーザー定義型に制限されます。  
   
-##  <a name="a-namecreffunctiona--cref"></a><a name="cref_function"></a>  cref  
+##  <a name="cref"></a>  cref  
  引数から const の `reference_wrapper` を構築します。  
   
 ```  
@@ -545,7 +546,7 @@ cref(i) = 1
 cref(neg)(i) = -1  
 ```  
   
-##  <a name="a-namememfnfunctiona--memfn"></a><a name="mem_fn_function"></a>  mem_fn  
+##  <a name="mem_fn"></a>  mem_fn  
  単純な呼び出しラッパーを生成します。  
   
 ```  
@@ -565,7 +566,7 @@ unspecified mem_fn(Ret Ty::*pm);
   
  返された呼び出しラッパーは、型 `Ty` が引数を取らない cv 修飾子 `cv` を使用するメンバー関数へのポインターである場合のみ `std::unary_function<cv Ty*, Ret>` から派生します (そのため入れ子になった型 `result_type` を `Ret` のシノニムとして定義し、入れ子になった型 `argument_type` を `cv Ty*` のシノニムとして定義します)。  
   
- 返された呼び出しラッパーは、型 `Ty` が&1; つの引数を取る型 `T2` の cv 修飾子 `cv` を使用するメンバー関数へのポインターである場合のみ `std::binary_function<cv Ty*, T2, Ret>` から派生します (そのため入れ子になった型 `result_type` を `Ret` のシノニムとして定義し、入れ子になった型 `first argument_type` を `cv Ty*` のシノニムとして定義し、入れ子になった型 `second argument_type` を `T2` のシノニムとして定義します)。  
+ 返された呼び出しラッパーは、型 `Ty` が 1 つの引数を取る型 `T2` の cv 修飾子 `cv` を使用するメンバー関数へのポインターである場合のみ `std::binary_function<cv Ty*, T2, Ret>` から派生します (そのため入れ子になった型 `result_type` を `Ret` のシノニムとして定義し、入れ子になった型 `first argument_type` を `cv Ty*` のシノニムとして定義し、入れ子になった型 `second argument_type` を `T2` のシノニムとして定義します)。  
   
 ### <a name="example"></a>例  
   
@@ -606,7 +607,7 @@ int main()
 3*2 == 6  
 ```  
   
-##  <a name="a-namememfunfunctiona--memfun"></a><a name="mem_fun_function"></a>  mem_fun  
+##  <a name="mem_fun"></a>  mem_fun  
  ポインター引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。  
   
 ```  
@@ -690,7 +691,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namememfunreffunctiona--memfunref"></a><a name="mem_fun_ref_function"></a>  mem_fun_ref  
+##  <a name="mem_fun_ref"></a>  mem_fun_ref  
  参照引数を使用して初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。  
   
 ```  
@@ -792,7 +793,7 @@ The original values stored in v2 are: 1 2 3 4 5 6 7 8 9 10 11 12 13
 With the even numbers removed, the remaining values are: 1 3 5 7 9 11 13   
 ```  
   
-##  <a name="a-namenot1functiona--not1"></a><a name="not1_function"></a>  not1  
+##  <a name="not1"></a>  not1  
  単項述語の補数を返します。  
   
 ```  
@@ -801,7 +802,7 @@ unary_negate<UnaryPredicate> not1(const UnaryPredicate& pred);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` pred`  
+ `pred`  
  符号が反転される単項述語。  
   
 ### <a name="return-value"></a>戻り値  
@@ -860,7 +861,7 @@ The number of elements in v1 greater than 10 is: 5.
 The number of elements in v1 not greater than 10 is: 3.  
 ```  
   
-##  <a name="a-namenot2functiona--not2"></a><a name="not2_function"></a>  not2  
+##  <a name="not2"></a>  not2  
  二項述語の補数を返します。  
   
 ```  
@@ -932,7 +933,7 @@ Sorted vector v1 = ( 41 6262 6262 6334 18467 19169 26500 )
 Resorted vector v1 = ( 26500 19169 18467 6334 6262 6262 41 )  
 ```  
   
-##  <a name="a-nameptrfunfunctiona--ptrfun"></a><a name="ptr_fun_function"></a>  ptr_fun  
+##  <a name="ptr_fun"></a>  ptr_fun  
  単項関数ポインターと二項関数ポインターをそれぞれ適応性のある単項関数および二項関数に変換するために使用されるヘルパー テンプレート関数。  
   
 ```  
@@ -958,7 +959,7 @@ pointer_to_binary_function<Arg1, Arg2, Result, Result (*)(Arg1, Arg2)> ptr_fun(R
 ### <a name="example"></a>例  
  [!code-cpp[functional_ptr_fun#1](../standard-library/codesnippet/CPP/functional-functions_1.cpp)]  
   
-##  <a name="a-namereffunctiona--ref"></a><a name="ref_function"></a>  ref  
+##  <a name="ref"></a>  ref  
  引数から `reference_wrapper` を構築します。  
   
 ```  
@@ -973,7 +974,7 @@ reference_wrapper<Ty> ref(reference_wrapper<Ty>& arg);
  `arg`への参照。具体的には、 `reference_wrapper<Ty>(arg)`。  
   
 ### <a name="example"></a>例  
-  次の例では、2 つの関数を定義します。1 つは文字列変数にバインドされます。もう&1; つは、 `ref`の呼び出しによって計算された文字列変数の参照にバインドされます。 変数の値が変わると、1 つ目の関数では元の値が使用され続けますが、2 つ目の関数では新しい値が使用されます。  
+  次の例では、2 つの関数を定義します。1 つは文字列変数にバインドされます。もう 1 つは、 `ref`の呼び出しによって計算された文字列変数の参照にバインドされます。 変数の値が変わると、1 つ目の関数では元の値が使用され続けますが、2 つ目の関数では新しい値が使用されます。  
   
 ```cpp  
 #include <algorithm>  
@@ -1047,7 +1048,7 @@ tiger lion cougar
 tiger cougar  
 ```  
   
-##  <a name="a-nameswapfunctiona--swap"></a><a name="swap_function"></a>  swap  
+##  <a name="swap"></a>  swap  
  2 つの `function` オブジェクトを交換します。  
   
 ```  

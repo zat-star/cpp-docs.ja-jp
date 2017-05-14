@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3836d13d9f050ebdd7ed7502e11bbde2da76992a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 50f17486f72a272d45c45fc3f0c6b25a7b4b6c56
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="isprint-iswprint-isprintl-iswprintl"></a>isprint、iswprint、_isprint_l、_iswprint_l
@@ -96,7 +97,7 @@ int _iswprint_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` が印刷可能な文字の特殊表現の場合は&0; 以外の値を返します。 `isprint` は、`c` が印刷可能な文字 (空白文字 (0x20 – 0x7E) を含む) である場合、0 以外の値を返します。 `iswprint` は、`c` が印刷可能なワイド文字 (空白ワイド文字を含む) である場合、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらのルーチンでは、`c` が印刷可能な文字の特殊表現の場合は 0 以外の値を返します。 `isprint`場合は 0 以外の値を返します`c`印刷可能な文字は、-、空白文字が含まれます (0x20 - 0x7E)。 `iswprint` は、`c` が印刷可能なワイド文字 (空白ワイド文字を含む) である場合、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のテスト条件結果は、ロケールの `LC_CTYPE` カテゴリの設定に依存します。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -118,9 +119,6 @@ int _iswprint_l(
 |`_iswprint_l`|\<ctype.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

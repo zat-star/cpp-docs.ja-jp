@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9f45a13d9911e82b2b624689fa6b9e5eb4b20d97
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: 2645201f1c5dfd7c8f23e86b43ef360ef5cb6e91
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="getprintfcountoutput"></a>_get_printf_count_output
@@ -70,7 +71,7 @@ int _get_printf_count_output();
  `%n` がサポートされている場合は 0 以外の値、`%n` がサポートされていない場合は 0。  
   
 ## <a name="remarks"></a>コメント  
- `%n` がサポートされていない場合 (既定)、いずれかの `printf` 関数の書式文字列に `%n` が含まれていると、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーが呼び出されます。 `%n` のサポートが有効化されている場合 (「[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)」を参照)、`%n` の動作は「[printf Type Field Characters](../../c-runtime-library/printf-type-field-characters.md)」(printf 関数の型フィールド文字) で説明されているものになります。  
+ `%n` がサポートされていない場合 (既定)、いずれかの `printf` 関数の書式文字列に `%n` が含まれていると、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーが呼び出されます。 場合`%n`サポートが有効になっている (を参照してください[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)) し、 `%n` 」の説明に従って動作[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。  
   
 ## <a name="requirements"></a>要件  
   
@@ -83,5 +84,6 @@ int _get_printf_count_output();
 ## <a name="example"></a>例  
  例については「[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)」をご覧ください。  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。
+## <a name="see-also"></a>関連項目  
+[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)  
+

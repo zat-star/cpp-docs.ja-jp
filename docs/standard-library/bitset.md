@@ -1,35 +1,52 @@
 ---
-title: "&lt;bitset&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::<bitset>"
-  - "std.<bitset>"
-  - "<bitset>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<bitset> ヘッダー"
-  - "bitset ヘッダー"
+title: '&lt;bitset&gt; | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- std::<bitset>
+- std.<bitset>
+- <bitset>
+dev_langs:
+- C++
+helpviewer_keywords:
+- <bitset> header
+- bitset header
 ms.assetid: af30a9b9-489e-46e3-9d29-5f3ea07ae6dc
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# &lt;bitset&gt;
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: d0b9f494cec6212616813f9d622b97ff9d54bd3e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
+---
+# <a name="ltbitsetgt"></a>&lt;bitset&gt;
 ビットの固定サイズ シーケンスを表して処理するための、テンプレート クラス ビットセットと 2 つのサポート テンプレート関数を定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,22 +54,26 @@ caps.handback.revision: 19
   
 ```  
   
-### 演算子  
+### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[演算子 &](../Topic/operator&%20\(%3Cbitset%3E\).md)|次の 2 つのビットセット間でビットごとの AND を実行します。|  
-|[演算子 \<\<](../Topic/operator%3C%3C%20\(%3Cbitset%3E\).md)|ビット シーケンスのテキスト表現を標準出力ストリームに挿入します。|  
-|[演算子 \>\>](../Topic/operator%3E%3E%20\(%3Cbitset%3E\).md)|ビット シーケンスのテキスト表現を標準入力ストリームに挿入します。|  
-|[operator^](../Topic/operator%5E%20\(%3Cbitset%3E\).md)|次の 2 つのビットセット間でビットごとの EXCLUSIVE\-OR を実行します。|  
-|[演算子 &#124;](../Topic/operator%7C%20\(%3Cbitset%3E\).md)|次の 2 つのビットセット間でビットごとの OR を実行します。|  
+|[operator&](../standard-library/bitset-operators.md#op_amp)|次の 2 つのビットセット間でビットごとの AND を実行します。|  
+|[operator<\<](../standard-library/bitset-operators.md#op_lt_lt)|ビット シーケンスのテキスト表現を標準出力ストリームに挿入します。|  
+|[operator>>](../standard-library/bitset-operators.md#op_gt_gt)|ビット シーケンスのテキスト表現を標準入力ストリームに挿入します。|  
+|[operator^](../standard-library/bitset-operators.md#op_xor)|次の 2 つのビットセット間でビットごとの EXCLUSIVE-OR を実行します。|  
+|[operator&#124;](../standard-library/bitset-operators.md#op_or)|次の 2 つのビットセット間でビットごとの OR を実行します。|  
   
-### クラス  
+### <a name="classes"></a>クラス  
   
 |||  
 |-|-|  
-|[bitset クラス](../Topic/bitset%20Class.md)|このテンプレート クラスは、固定数のビットで構成されるシーケンスを格納するオブジェクト型を記述します。これらのビットによって、一連の項目または条件のフラグを保持するためのコンパクトな方法が提供されます。|  
+|[bitset クラス](../standard-library/bitset-class.md)|このテンプレート クラスは、固定数のビットで構成されるシーケンスを格納するオブジェクト型を記述します。これらのビットによって、一連の項目または条件のフラグを保持するためのコンパクトな方法が提供されます。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

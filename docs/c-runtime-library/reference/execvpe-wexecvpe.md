@@ -55,10 +55,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f81b616b0bb81501a6cd1273f47293853336caeb
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: fc5a0df49b31f77874e6a75ff39ed9650386c58f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="execvpe-wexecvpe"></a>_execvpe、_wexecvpe
@@ -93,7 +94,7 @@ intptr_t _wexecvpe(
  環境設定へのポインターの配列。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値 –1 はエラーを示し、この場合は `errno` グローバル変数が設定されます。  
+ 成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値-1 がいる場合、エラーを示す、`errno`グローバル変数を設定します。  
   
 |`errno` の値|説明|  
 |-------------------|-----------------|  
@@ -122,12 +123,6 @@ intptr_t _wexecvpe(
   
 ## <a name="example"></a>例  
  「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Diagnostics::Process クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.process.aspx)  
-  
--   [System::Diagnostics::ProcessStartInfo クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

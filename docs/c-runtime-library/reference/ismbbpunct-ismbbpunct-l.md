@@ -55,10 +55,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0cbcd2138d73a437afeafd61b13316a4739e0921
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 91887834f7bfc9dc078cd3af4248f84ce0bf7753
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbbpunct-ismbbpunctl"></a>_ismbbpunct、_ismbbpunct_l
@@ -84,7 +85,7 @@ int _ismbbpunct_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbpunct` は、整数 `c` が非 ASCII 区切り記号の場合は&0; 以外の値を返します。 `_ismbbpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbpunct` は、整数 `c` が非 ASCII 区切り記号の場合は 0 以外の値を返します。 `_ismbbpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   
@@ -94,9 +95,6 @@ int _ismbbpunct_l(
 |`_ismbbpunct_l`|\<mbctype.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)   

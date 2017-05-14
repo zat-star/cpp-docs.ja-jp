@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: dcac506c06aac3c29ba2251af4281a713eec7491
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: e4c3cbb6d11758ff15909c6062b7430f6679f6de
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltfunctionalgt"></a>&lt;functional&gt;
@@ -52,7 +53,7 @@ ms.lasthandoff: 02/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- アルゴリズムでは、単項および二項という&2; 種類の関数オブジェクトが使用されます。 単項関数オブジェクトは&1; つの引数を必要とし、二項関数オブジェクトは&2; つの引数を必要とします。 関数オブジェクトと関数ポインターは述語としてアルゴリズムに渡すことができますが、関数オブジェクトは適応性があり、C++ 標準ライブラリのスコープ、柔軟性、効率が向上します。 たとえば、値をアルゴリズムに渡す前に、その値を関数にバインドする必要がある場合は、関数ポインターを使用できないことがあります。 関数アダプターを利用すると、関数ポインターが、値にバインドできる適応性のある関数オブジェクトに変換されます。 ヘッダー \<functional> には、メンバー関数を適応性のある関数オブジェクトとして呼び出すことができるメンバー関数アダプターも含まれます。 関数が引数と戻り値の型を指定する入れ子になった型宣言を持っている場合、それらの関数は適応性があります。 C++ 標準では、すべての標準オブジェクト クラスで、unary_function 基底クラスや binary_function 基底クラスから継承することによって、この適応性を実装する必要があります。 関数オブジェクトとそのアダプターを使用すると、C++ 標準ライブラリで既存のアプリケーションをアップグレードでき、ライブラリと C++ プログラミング環境との統合に役立てることができます。  
+ アルゴリズムでは、単項および二項という 2 種類の関数オブジェクトが使用されます。 単項関数オブジェクトは 1 つの引数を必要とし、二項関数オブジェクトは 2 つの引数を必要とします。 関数オブジェクトと関数ポインターは述語としてアルゴリズムに渡すことができますが、関数オブジェクトは適応性があり、C++ 標準ライブラリのスコープ、柔軟性、効率が向上します。 たとえば、値をアルゴリズムに渡す前に、その値を関数にバインドする必要がある場合は、関数ポインターを使用できないことがあります。 関数アダプターを利用すると、関数ポインターが、値にバインドできる適応性のある関数オブジェクトに変換されます。 ヘッダー \<functional> には、メンバー関数を適応性のある関数オブジェクトとして呼び出すことができるメンバー関数アダプターも含まれます。 関数が引数と戻り値の型を指定する入れ子になった型宣言を持っている場合、それらの関数は適応性があります。 C++ 標準では、すべての標準オブジェクト クラスで、unary_function 基底クラスや binary_function 基底クラスから継承することによって、この適応性を実装する必要があります。 関数オブジェクトとそのアダプターを使用すると、C++ 標準ライブラリで既存のアプリケーションをアップグレードでき、ライブラリと C++ プログラミング環境との統合に役立てることができます。  
   
  \<functional> 内の関数オブジェクトの [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] 実装には、*透過的な演算子のファンクター*が含まれます。このファンクターは、標準関数オブジェクトの特殊化であり、テンプレート パラメーターを使用しません。また、関数の引数の完全転送と結果の完全取得を実行します。 この機能は、C++14 ドラフト標準の仕様の一部です。 これらのテンプレートの特殊化では、算術演算子のファンクター、比較演算子のファンクター、論理演算子のファンクター、ビットごとの演算子のファンクターを呼び出すときに、引数の型を指定する必要はありません。 ユーザー独自の型または異なる種類の型の組み合わせに対して算術演算子、比較演算子、論理演算子、ビットごとの演算子をオーバーロードしてから、透過的な演算子のファンクターを関数の引数として使用できます。 たとえば、ユーザー独自の型 *MyType* が `operator<` を実装する場合、型 `sort(my_collection.begin(), my_collection.end(), less<MyType>())` を明示的に指定する代わりに、`sort(my_collection.begin(), my_collection.end(), less<>())` を呼び出すことができます。  
   
@@ -103,8 +104,8 @@ ms.lasthandoff: 02/24/2017
 |-|-|  
 |[bad_function_call](../standard-library/bad-function-call-class.md)|[function](../standard-library/function-class.md) オブジェクトが空であるために、そのオブジェクトでの `operator()` の呼び出しが失敗したことを示す場合にスローされる例外を記述するクラス。|  
 |[binary_negate](../standard-library/binary-negate-class.md)|指定した二項関数の戻り値を否定するメンバー関数を提供するテンプレート クラス。|  
-|[binder1st](../standard-library/binder1st-class.md)|指定した値に二項関数の&1; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
-|[binder2nd](../standard-library/binder2nd-class.md)|指定した値に二項関数の&2; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
+|[binder1st](../standard-library/binder1st-class.md)|指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
+|[binder2nd](../standard-library/binder2nd-class.md)|指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
 |[const_mem_fun_ref_t](../standard-library/const-mem-fun-ref-t-class.md)|参照引数による初期化を行うときに、引数を使用しない const メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
 |[const_mem_fun_t](../standard-library/const-mem-fun-t-class.md)|ポインター引数による初期化を行うときに、引数を使用しない const メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
 |[const_mem_fun1_ref_t](../standard-library/const-mem-fun1-ref-t-class.md)|参照引数による初期化を行うときに、1 つの引数を使用する const メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
@@ -126,22 +127,22 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[bind](../standard-library/functional-functions.md#bind_function)|呼び出し可能オブジェクトに引数をバインドします。|  
-|[bind1st](../standard-library/functional-functions.md#bind1st_function)|指定した値に二項関数の&1; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
-|[bind2nd](../standard-library/functional-functions.md#bind2nd_function)|指定した値に二項関数の&2; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
-|[bit_and](../standard-library/functional-functions.md#bit_and_function)|2 つのパラメーターのビットごとの論理 AND (二項演算子 &) を返します。|  
-|[bit_not](../standard-library/functional-functions.md#bit_not_function)|パラメーターのビットごとの論理補数 (演算子 ~) を返します。|  
-|[bit_or](../standard-library/functional-functions.md#bit_or_function)|2 つのパラメーターのビットごとの論理 OR (演算子&#124;) を返します。|  
-|[bit_xor](../standard-library/functional-functions.md#bit_xor_function)|2 つのパラメーターのビットごとの論理 XOR (演算子 ^) を返します。|  
-|[cref](../standard-library/functional-functions.md#cref_function)|引数から const の `reference_wrapper` を構築します。|  
-|[mem_fn](../standard-library/functional-functions.md#mem_fn_function)|単純な呼び出しラッパーを生成します。|  
-|[mem_fun](../standard-library/functional-functions.md#mem_fun_function)|ポインター引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
-|[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref_function)|参照引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
-|[not1](../standard-library/functional-functions.md#not1_function)|単項述語の補数を返します。|  
-|[not2](../standard-library/functional-functions.md#not2_function)|二項述語の補数を返します。|  
-|[ptr_fun](../standard-library/functional-functions.md#ptr_fun_function)|単項関数ポインターと二項関数ポインターをそれぞれ適応性のある単項関数および二項関数に変換するために使用されるヘルパー テンプレート関数。|  
-|[ref](../standard-library/functional-functions.md#ref_function)|引数から `reference_wrapper` を構築します。|  
-|[swap](../standard-library/functional-functions.md#swap_function)|2 つの `function` オブジェクトを交換します。|  
+|[bind](../standard-library/functional-functions.md#bind)|呼び出し可能オブジェクトに引数をバインドします。|  
+|[bind1st](../standard-library/functional-functions.md#bind1st)|指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
+|[bind2nd](../standard-library/functional-functions.md#bind2nd)|指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
+|[bit_and](../standard-library/functional-functions.md#bit_and)|2 つのパラメーターのビットごとの論理 AND (二項演算子 &) を返します。|  
+|[bit_not](../standard-library/functional-functions.md#bit_not)|パラメーターのビットごとの論理補数 (演算子 ~) を返します。|  
+|[bit_or](../standard-library/functional-functions.md#bit_or)|2 つのパラメーターのビットごとの論理 OR (演算子&#124;) を返します。|  
+|[bit_xor](../standard-library/functional-functions.md#bit_xor)|2 つのパラメーターのビットごとの論理 XOR (演算子 ^) を返します。|  
+|[cref](../standard-library/functional-functions.md#cref)|引数から const の `reference_wrapper` を構築します。|  
+|[mem_fn](../standard-library/functional-functions.md#mem_fn)|単純な呼び出しラッパーを生成します。|  
+|[mem_fun](../standard-library/functional-functions.md#mem_fun)|ポインター引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
+|[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)|参照引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
+|[not1](../standard-library/functional-functions.md#not1)|単項述語の補数を返します。|  
+|[not2](../standard-library/functional-functions.md#not2)|二項述語の補数を返します。|  
+|[ptr_fun](../standard-library/functional-functions.md#ptr_fun)|単項関数ポインターと二項関数ポインターをそれぞれ適応性のある単項関数および二項関数に変換するために使用されるヘルパー テンプレート関数。|  
+|[ref](../standard-library/functional-functions.md#ref)|引数から `reference_wrapper` を構築します。|  
+|[swap](../standard-library/functional-functions.md#swap)|2 つの `function` オブジェクトを交換します。|  
   
 ### <a name="structs"></a>構造体  
   
@@ -175,8 +176,8 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator==](../standard-library/functional-operators.md#operator_eq_eq)|呼び出し可能オブジェクトの等価比較を否定します。|  
-|[operator!=](../standard-library/functional-operators.md#operator_neq)|呼び出し可能オブジェクトの非等価比較を否定します。|  
+|[operator==](../standard-library/functional-operators.md#op_eq_eq)|呼び出し可能オブジェクトの等価比較を否定します。|  
+|[operator!=](../standard-library/functional-operators.md#op_neq)|呼び出し可能オブジェクトの非等価比較を否定します。|  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   

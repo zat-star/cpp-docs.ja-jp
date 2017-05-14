@@ -6,13 +6,33 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- complex/std::abs
+- complex/std::arg
+- complex/std::conj
+- complex/std::cos
+- complex/std::cosh
+- complex/std::exp
+- complex/std::imag
+- complex/std::log
+- complex/std::log10
+- complex/std::norm
+- complex/std::polar
+- complex/std::pow
+- complex/std::real
+- complex/std::sin
+- complex/std::sinh
+- complex/std::sqrt
+- complex/std::tan
+- complex/std::tanh
 ms.assetid: 58b14e94-0e0c-493e-8237-8b4d685904a2
 caps.latest.revision: 14
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 9f14b30f38f01570db9a285a94871fc8b1a3aa39
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 928ed213f4605ea1b39d2d5cf92673bc055aaf4a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltcomplexgt-functions"></a>&lt;complex&gt; 関数
@@ -25,7 +45,7 @@ ms.lasthandoff: 02/24/2017
 |[real](#real)|[sin](#sin)|[sinh](#sinh)|
 |[sqrt](#sqrt)|[tan](#tan)|[tanh](#tanh)|  
   
-##  <a name="a-nameabsa--abs"></a><a name="abs"></a>  abs  
+##  <a name="abs"></a>  abs  
  複素数の係数を計算します。  
   
 ```  
@@ -34,7 +54,7 @@ Type abs(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  係数を特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -108,7 +128,7 @@ Argument of c2 is recovered from c2 using:
 The complex numbers c2 & c3 have the same principal arguments.  
 ```  
   
-##  <a name="a-namearga--arg"></a><a name="arg"></a>  arg  
+##  <a name="arg"></a>  arg  
  複素数から偏角を抽出します。  
   
 ```  
@@ -117,14 +137,14 @@ Type arg(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  偏角を特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
  複素数の偏角。  
   
 ### <a name="remarks"></a>コメント  
- 偏角は、複素平面における正の実軸と複素ベクトルのなす角度です。 複素数 *a + bi* の場合、偏角は arctan( *b/a*) * と等しくなります。* 角度は、正の実軸から反時計方向に測定した場合は正方向、時計方向に測定した場合は負方向になります。 主値は –pi より大きく、+pi 以下となります。  
+ *引数*複雑なベクターが複素平面に正の値の実際の軸となる角度がします。 複素数の*a + bi*、引数が行って、アーク タンジェントと等しい (*b/、*)。 角度は、正の実軸から反時計方向に測定した場合は正方向、時計方向に測定した場合は負方向になります。 プリンシパルの値がおよび、- π より小さい大きいよりまたは等しい + π。  
   
 ### <a name="example"></a>例  
   
@@ -191,7 +211,7 @@ Argument of c2 is recovered from c2 using:
 The complex numbers c2 & c3 have the same principal arguments.  
 ```  
   
-##  <a name="a-nameconja--conj"></a><a name="conj"></a>  conj  
+##  <a name="conj"></a>  conj  
  複素数の複素共役を返します。  
   
 ```  
@@ -200,14 +220,14 @@ complex<Type> conj(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  複素共役が返される複素数。  
   
 ### <a name="return-value"></a>戻り値  
  入力された複素数の複素共役。  
   
 ### <a name="remarks"></a>コメント  
- 複素数 *a + bi* の複素共役は *a – bi* です。 複素数とその共役の積は、数値 *a*2 + *b*2 のノルムです。  
+ 複素数の複素共役*a + bi*は*-bi*です。 複素数とその共役の積は、数値 *a*2 + *b*2 のノルムです。  
   
 ### <a name="example"></a>例  
   
@@ -262,7 +282,7 @@ The imaginary part of c2 is imag ( c2 ) = -3.
 The norm of (c1 * conj (c1) ) is c1 * c2 = 25  
 ```  
   
-##  <a name="a-namecosa--cos"></a><a name="cos"></a>  cos  
+##  <a name="cos"></a>  cos  
  複素数のコサインを返します。  
   
 ```  
@@ -271,7 +291,7 @@ complex<Type> cos(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  コサインを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -349,7 +369,7 @@ The complex components cos (vci), where abs (vci) = 1
 (0.540302,-1.74036e-013)  
 ```  
   
-##  <a name="a-namecosha--cosh"></a><a name="cosh"></a>  cosh  
+##  <a name="cosh"></a>  cosh  
  複素数のハイパーボリック コサインを返します。  
   
 ```  
@@ -358,7 +378,7 @@ complex<Type> cosh(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  ハイパーボリック コサインを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -436,7 +456,7 @@ The complex components cosh (vci), where abs (vci) = 1
 (1.54308,2.43059e-013)  
 ```  
   
-##  <a name="a-nameexpa--exp"></a><a name="exp"></a>  exp  
+##  <a name="exp"></a>  exp  
  複素数の指数関数を返します。  
   
 ```  
@@ -445,7 +465,7 @@ complex<Type> exp(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  指数を特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -504,7 +524,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-nameimaga--imag"></a><a name="imag"></a>  imag  
+##  <a name="imag"></a>  imag  
  複素数の虚数部を抽出します。  
   
 ```  
@@ -513,7 +533,7 @@ Type imag(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  実数部が抽出される複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -552,7 +572,7 @@ The real part of c1 is real ( c1 ) = 4.
 The imaginary part of c1 is imag ( c1 ) = 3.  
 ```  
   
-##  <a name="a-nameloga--log"></a><a name="log"></a>  log  
+##  <a name="log"></a>  log  
  複素数の自然対数を返します。  
   
 ```  
@@ -561,7 +581,7 @@ complex<Type> log(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  自然対数を特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -618,7 +638,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namelog10a--log10"></a><a name="log10"></a>  log10  
+##  <a name="log10"></a>  log10  
  複素数の底 10 の対数を返します。  
   
 ```  
@@ -627,7 +647,7 @@ complex<Type> log10(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  底 10 の対数を特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -684,7 +704,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namenorma--norm"></a><a name="norm"></a>  norm  
+##  <a name="norm"></a>  norm  
  複素数のノルムを抽出します。  
   
 ```  
@@ -693,7 +713,7 @@ Type norm(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  ノルムを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -763,7 +783,7 @@ The norm of c2 given by: norm ( c2 ) = 25
 The modulus of c2 is the square root of the norm: sqrt ( normc2 ) = 5.  
 ```  
   
-##  <a name="a-namepolara--polar"></a><a name="polar"></a>  polar  
+##  <a name="polar"></a>  polar  
  デカルト形式で、指定した係数と偏角に対応する複素数を返します。  
   
 ```  
@@ -782,7 +802,7 @@ complex<Type> polar(const Type& _Modulus, const Type& _Argument = 0);
  極形式で指定されたデカルト形式の複素数。  
   
 ### <a name="remarks"></a>コメント  
- 極形式の複素数では、係数 *r* と偏角が使用されます。これらのパラメーターは、*a* = r \* cos (  ) および b = *r* \* sin () *という方程式で算出される実数と虚数のデカルト成分 *a* および *b* に関連します。*  
+ 複素数の極形式、剰余を提供する*r*と引数*p*これらのパラメーターが実数部と虚数部のデカルト コンポーネントに関連する場所、 *、*と*b*式によって*、* r = \* cos *p*と*b* = *r* \* sin *p*です。  
   
 ### <a name="example"></a>例  
   
@@ -836,7 +856,7 @@ Argument of c2 is recovered from c2 using:
  arg ( c2 ) = 0.523599 radians, which is 30 degrees.  
 ```  
   
-##  <a name="a-namepowa--pow"></a><a name="pow"></a>  pow  
+##  <a name="pow"></a>  pow  
  複素数の底を、別の複素数で累乗することによって得られる複素数を評価します。  
   
 ```  
@@ -977,7 +997,7 @@ The modulus of ce4 is: 9.8696
 The argument of ce4 is: -1.14473 radians, which is -65.5882 degrees.  
 ```  
   
-##  <a name="a-namereala--real"></a><a name="real"></a>  real  
+##  <a name="real"></a>  real  
  複素数の実数部を抽出します。  
   
 ```  
@@ -986,7 +1006,7 @@ Type real(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  実数部が抽出される複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1025,7 +1045,7 @@ The real part of c1 is real ( c1 ) = 4.
 The imaginary part of c1 is imag ( c1 ) = 3.  
 ```  
   
-##  <a name="a-namesina--sin"></a><a name="sin"></a>  sin  
+##  <a name="sin"></a>  sin  
  複素数のサインを返します。  
   
 ```  
@@ -1034,7 +1054,7 @@ complex<Type> sin(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  サインを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1043,7 +1063,7 @@ complex<Type> sin(const complex<Type>& complexNum);
 ### <a name="remarks"></a>コメント  
  複素数のサインを定義する単位元は次のようになります。  
   
- sin ( *z*) = (1/2 *i*)\*( exp ( *iz*) – exp (- *iz*) )  
+ sin ( *z*) = (1/2 *i*)\*( exp ( *iz*) - exp (- *iz*) )  
   
  sin ( *z*) = sin ( *a + bi*) = sin ( *a*) cosh ( *b*) + icos ( *a*) sinh ( *b*)  
   
@@ -1112,7 +1132,7 @@ The complex components sin (vci), where abs (vci) = 1
 (-0.841471,-1.11747e-013)  
 ```  
   
-##  <a name="a-namesinha--sinh"></a><a name="sinh"></a>  sinh  
+##  <a name="sinh"></a>  sinh  
  複素数のハイパーボリック サインを返します。  
   
 ```  
@@ -1121,7 +1141,7 @@ complex<Type> sinh(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  ハイパーボリック サインを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1130,7 +1150,7 @@ complex<Type> sinh(const complex<Type>& complexNum);
 ### <a name="remarks"></a>コメント  
  複素数のハイパーボリック サインを定義する単位元は次のようになります。  
   
- sinh ( *z*) = (1/2)\*( exp ( *z*) – exp (- *z*) )  
+ sinh ( *z*) = (1/2)\*( exp ( *z*) - exp (- *z*) )  
   
  sinh ( *z*) = sinh ( *a + bi*) = sinh ( *a*) cos ( *b*) + *i*cosh ( *a*) sin ( *b*)  
   
@@ -1199,7 +1219,7 @@ The complex components sinh (vci), where abs (vci) = 1
 (-1.1752,-3.19145e-013)  
 ```  
   
-##  <a name="a-namesqrta--sqrt"></a><a name="sqrt"></a>  sqrt  
+##  <a name="sqrt"></a>  sqrt  
  複素数の平方根を計算します。  
   
 ```  
@@ -1208,7 +1228,7 @@ complex<Type> sqrt(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  平方根を求める対象の複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1272,7 +1292,7 @@ The argument of c2 = ( 1 / 2 ) * arg ( c1 ) =0.785398 radians,
  which is 45 degrees.  
 ```  
   
-##  <a name="a-nametana-tan"></a><a name="tan"></a> tan  
+##  <a name="tan"></a> tan  
  複素数のタンジェントを返します。  
   
 ```  
@@ -1281,7 +1301,7 @@ complex<Type> tan(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  タンジェントを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1290,7 +1310,7 @@ complex<Type> tan(const complex<Type>& complexNum);
 ### <a name="remarks"></a>コメント  
  複素数のコタンジェントを定義する単位元は次のようになります。  
   
- tan ( *z*) = sin ( *z*) / cos ( *z*) = ( exp ( *iz*) – exp (- *iz*) ) / *i*( exp ( *iz*) + exp (- *iz*) )  
+ tan ( *z*) = sin ( *z*) / cos ( *z*) = ( exp ( *iz*) - exp (- *iz*) ) / *i*( exp ( *iz*) + exp (- *iz*) )  
   
 ### <a name="example"></a>例  
   
@@ -1357,7 +1377,7 @@ The complex components tan (vci), where abs (vci) = 1
 (-1.55741,-7.08476e-013)  
 ```  
   
-##  <a name="a-nametanha--tanh"></a><a name="tanh"></a>  tanh  
+##  <a name="tanh"></a>  tanh  
  複素数のハイパーボリック タンジェントを返します。  
   
 ```  
@@ -1366,7 +1386,7 @@ complex<Type> tanh(const complex<Type>& complexNum);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` complexNum`  
+ `complexNum`  
  ハイパーボリック タンジェントを特定する複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1375,7 +1395,7 @@ complex<Type> tanh(const complex<Type>& complexNum);
 ### <a name="remarks"></a>コメント  
  複素数のハイパーボリック コタンジェントを定義する単位元は次のようになります。  
   
- tanh ( *z*) = sinh ( *z*) / cosh ( *z*) = ( exp ( *z*) – exp (- *z*) ) / ( exp ( *z*) + exp (- *z*) )  
+ tanh ( *z*) = sinh ( *z*) / cosh ( *z*) = ( exp ( *z*) - exp (- *z*) ) / ( exp ( *z*) + exp (- *z*) )  
   
 ### <a name="example"></a>例  
   

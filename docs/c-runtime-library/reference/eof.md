@@ -53,10 +53,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 454e4870f63d5a66c67f493e065c328bdb72837e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 79e55c9b1496ef7a6050e5f0ed5a5c05b1616b73
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="eof"></a>_eof
@@ -75,7 +76,7 @@ int _eof(
  開いているファイルを参照するファイル記述子。  
   
 ## <a name="return-value"></a>戻り値  
- `_eof` は、現在の位置がファイルの終わりである場合は 1 を、ファイルの終わりでない場合は 0 を返します。 戻り値&1; はエラーを示します。この場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が、無効なファイル記述子を示す `EBADF` に設定されます。  
+ `_eof` は、現在の位置がファイルの終わりである場合は 1 を、ファイルの終わりでない場合は 0 を返します。 戻り値-1 はエラーです。 を示しますこの例では、無効なパラメーター ハンドラーが呼び出される、」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、`errno` が、無効なファイル記述子を示す `EBADF` に設定されます。  
   
 ## <a name="remarks"></a>コメント  
  `_eof` 関数は、`fd` に関連付けられたファイルの終わりに達したかどうかを判定します。  
@@ -139,9 +140,6 @@ This file contains some text.
 ```  
 Number of bytes read = 29  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   

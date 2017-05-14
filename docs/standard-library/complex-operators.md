@@ -6,23 +6,25 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: aa282604-dcb9-46a2-bf1d-34c50aa6c4ba
 caps.latest.revision: 11
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b0852cc3fd3531e05791cfce952853265b4458b4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: ef11e8bca4971b4fb07669907b2234c90a040ef8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltcomplexgt-operators"></a>&lt;complex&gt; 演算子
 ||||  
 |-|-|-|  
-|[operator!=](#operator_neq)|[operator&gt;&gt;](#operator_gt__gt_)|[operator&lt;&lt;](#operator_lt__lt_)|  
-|[operator*](#operator_star)|[operator+](#operator_add)|[operator-](#operator-)|  
-|[operator/](#operator_)|[operator==](#operator_eq_eq)|  
+|[operator!=](#op_neq)|[operator&gt;&gt;](#op_gt_gt)|[operator&lt;&lt;](#op_lt_lt)|  
+|[operator*](#op_star)|[operator+](#op_add)|[operator-](#operator-)|  
+|[operator/](#op_div)|[operator==](#op_eq_eq)|  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+##  <a name="op_neq"></a>  operator!=  
  2 つの複素数の間の非同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```  
@@ -44,10 +46,10 @@ bool operator!=(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
   
- ` right`  
+ `right`  
  非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -158,7 +160,7 @@ The 2nd right-side complex number is cr3b = (5,0)
 The complex numbers cl3b & cr3b are equal.  
 ```  
   
-##  <a name="a-nameoperatorstara--operator"></a><a name="operator_star"></a>  operator*  
+##  <a name="op_star"></a>  operator*  
  2 つの複素数を乗算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```  
@@ -180,14 +182,14 @@ complex<Type> operator*(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- 2 つの複素数の&1; 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
+ `left`  
+ 2 つの複素数の 1 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
   
- ` right`  
- 2 つの複素数の&2; 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
+ `right`  
+ 2 つの複素数の 2 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
   
 ### <a name="return-value"></a>戻り値  
- 値と型がパラメーター入力で指定された&2; つの数値を乗算した結果の複素数。  
+ 値と型がパラメーター入力で指定された 2 つの数値を乗算した結果の複素数。  
   
 ### <a name="remarks"></a>コメント  
  データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。  
@@ -252,7 +254,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameoperatoradda--operator"></a><a name="operator_add"></a>  operator+  
+##  <a name="op_add"></a>  operator+  
  2 つの複素数を加算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```  
@@ -277,17 +279,17 @@ complex<Type> operator+(const complex<Type>& left);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- 2 つの複素数の&1; 番目、または + 演算で加算される複素数のパラメーター型の数値。  
+ `left`  
+ 2 つの複素数の 1 番目、または + 演算で加算される複素数のパラメーター型の数値。  
   
- ` right`  
- 2 つの複素数の&2; 番目、または + 演算で加算される複素数のパラメーター型の数値。  
+ `right`  
+ 2 つの複素数の 2 番目、または + 演算で加算される複素数のパラメーター型の数値。  
   
 ### <a name="return-value"></a>戻り値  
- 値と型がパラメーター入力で指定された&2; つの数値を加算した結果の複素数。  
+ 値と型がパラメーター入力で指定された 2 つの数値を加算した結果の複素数。  
   
 ### <a name="remarks"></a>コメント  
- データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。 単項演算子は ` left.` を返します。  
+ データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。 単項演算子を返します`left`です。  
   
 ### <a name="example"></a>例  
   
@@ -389,7 +391,7 @@ The modulus of cs4 is: 5
 The argument of cs4 is: 0.927295 radians, which is 53.1301 degrees.  
 ```  
   
-##  <a name="a-nameoperator-a--operator-"></a><a name="operator-"></a>  operator-  
+##  <a name="operator-"></a>  operator-  
  2 つの複素数を減算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```   
@@ -413,14 +415,14 @@ complex<Type> operator-(const complex<Type>& left);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
- 2 つの複素数の&1; 番目、または - 演算で減算される複素数のパラメーター型の数値。  
+ `left`  
+ 2 つの複素数の 1 番目、または - 演算で減算される複素数のパラメーター型の数値。  
   
- ` right`  
- 2 つの複素数の&2; 番目、または - 演算で減算される複素数のパラメーター型の数値。  
+ `right`  
+ 2 つの複素数の 2 番目、または - 演算で減算される複素数のパラメーター型の数値。  
   
 ### <a name="return-value"></a>戻り値  
- 値がパラメーター入力で指定された&2; つの数値の ` left` から ` right` を減算した結果の複素数。  
+ 値がパラメーター入力で指定された 2 つの数値の `left` から `right` を減算した結果の複素数。  
   
 ### <a name="remarks"></a>コメント  
  データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。  
@@ -527,7 +529,7 @@ The modulus of cs4 is: 5
 The argument of cs4 is: -2.2143 radians, which is -126.87 degrees.  
 ```  
   
-##  <a name="a-nameoperatora--operator"></a><a name="operator_"></a>  operator/  
+##  <a name="op_div"></a>  operator/  
  2 つの複素数を除算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```   
@@ -548,10 +550,10 @@ complex<Type> operator*(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  複素数、または / 演算における分母で除算される分子である複素数のパラメーター型の数値。  
   
- ` right`  
+ `right`  
  複素数、または / 演算における分子を除算する場合に使用される分母である複素数のパラメーター型の数値。  
   
 ### <a name="return-value"></a>戻り値  
@@ -643,7 +645,7 @@ The modulus of cs3 is: 1.66667
 The argument of cs3 is: -0.523599 radians, which is -30 degrees.  
 ```  
   
-##  <a name="a-nameoperatorltlta--operatorltlt"></a><a name="operator_lt__lt_"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
  出力ストリームに指定された複素数を挿入します。  
   
 ```   
@@ -657,7 +659,7 @@ basic_ostream<Elem, Traits>& operator<<(
  `Ostr`  
  複素数が入力される出力ストリーム。  
   
- ` right`  
+ `right`  
  出力ストリームに入力される複素数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -701,7 +703,7 @@ The modulus of c2 is: 2
 The argument of c2 is: 0.523599 radians, which is 30 degrees.  
 ```  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+##  <a name="op_eq_eq"></a>  operator==  
  2 つの複素数の間の同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
   
 ```  
@@ -723,10 +725,10 @@ bool operator==(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
   
- ` right`  
+ `right`  
  非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -837,7 +839,7 @@ The 2nd right-side complex number is cr3b = (5,0)
 The complex numbers cl3b & cr3b are equal.  
 ```  
   
-##  <a name="a-nameoperatorgtgta--operatorgtgt"></a><a name="operator_gt__gt_"></a>  operator&gt;&gt;  
+##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
  入力ストリームから複素数の値を抽出します。  
   
 ```  
@@ -852,11 +854,11 @@ basic_istream<Elem, Traits>& operator>>(
  `Istr`  
  複素数が抽出される入力ストリーム。  
   
- ` right`  
+ `right`  
  入力ストリームから抽出される複素数。  
   
 ### <a name="return-value"></a>戻り値  
- `Istr` から指定された複素数の値を読み取り、それを ` right.` に返します。  
+ 指定した複素数の値を読み取ります`Istr`にそれを返しますと`right`です。  
   
 ### <a name="remarks"></a>コメント  
  有効な入力形式は次のとおりです。  

@@ -50,10 +50,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 40c56f3ebd01ac809b48c48dcda85ef8a3217be4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 210a0a2b353d691916c8f091205518bb67e375df
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="feholdexcept"></a>feholdexcept
@@ -65,7 +66,6 @@ ms.lasthandoff: 02/24/2017
 int feholdexcept(  
    fenv_t *penv  
 );  
-  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -73,10 +73,10 @@ int feholdexcept(
  浮動小数点環境のコピーを含む `fenv_t` オブジェクトへのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- 関数が無停止の浮動小数点例外処理を正常に有効にすることができる場合にのみ、0 を返します。  
+ 関数が正常に停止以外の浮動小数点例外処理を有効にできない場合にのみ 0 を返します。  
   
 ## <a name="remarks"></a>コメント  
- `feholdexcept` 関数は、`penv` が示す `fenv_t` オブジェクトの現在の浮動小数点環境の状態を格納し、浮動小数点例外に対する実行を中断しないように環境を設定するために使用されます。 これは無停止モードと呼ばれます。  このモードは、[fesetenv](http://msdn.microsoft.com/Library/a34b2705-0bd4-452e-a30f-eea3898d8183) または [feupdateenv](../../c-runtime-library/reference/feupdateenv.md) を使用して環境が復元されるまで継続します。  
+ `feholdexcept` 関数は、`penv` が示す `fenv_t` オブジェクトの現在の浮動小数点環境の状態を格納し、浮動小数点例外に対する実行を中断しないように環境を設定するために使用されます。 これは無停止モードと呼ばれます。  このモードは、[fesetenv](fesetenv1.md) または [feupdateenv](../../c-runtime-library/reference/feupdateenv.md) を使用して環境が復元されるまで継続します。  
   
  この関数は、1 つまたは複数の浮動小数点例外を呼び出し元から隠す必要があるサブルーチンの開始時に使用できます。 例外をレポートするには、[feclearexcept](../../c-runtime-library/reference/feclearexcept1.md) を使用して不要な例外をクリアし、`feupdateenv` を呼び出して無停止モードを終了します。  
   
@@ -93,5 +93,5 @@ int feholdexcept(
 ## <a name="see-also"></a>関連項目  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [feclearexcept](../../c-runtime-library/reference/feclearexcept1.md)   
- [fesetenv](http://msdn.microsoft.com/Library/a34b2705-0bd4-452e-a30f-eea3898d8183)   
+ [fesetenv](fesetenv1.md)   
  [feupdateenv](../../c-runtime-library/reference/feupdateenv.md)

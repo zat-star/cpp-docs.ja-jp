@@ -1,58 +1,75 @@
 ---
 title: "getc、getwc | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "getwc"
-  - "getc"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_gettc"
-  - "getwc"
-  - "_gettchar"
-  - "getc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_gettc 関数"
-  - "文字, 読み取り"
-  - "getc 関数"
-  - "gettc 関数"
-  - "getwc 関数"
-  - "getwchar 関数"
-  - "読み取り (ストリームから文字を)"
-  - "ストリーム, 読み取り (文字を)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- getwc
+- getc
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _gettc
+- getwc
+- _gettchar
+- getc
+dev_langs:
+- C++
+helpviewer_keywords:
+- characters, reading
+- _gettc function
+- getwchar function
+- streams, reading characters from
+- reading characters from streams
+- getc function
+- getwc function
+- gettc function
 ms.assetid: 354ef514-d0c7-404b-92f5-995f6a834bb3
 caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# getc、getwc
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 9c49c803ade49a5434599690902856fd1f76d742
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-ストリームから文字を読み取ります。  
+---
+# <a name="getc-getwc"></a>getc、getwc
+ストリームから単一の文字を読み取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int getc(   
@@ -63,43 +80,43 @@ wint_t getwc(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  入力ストリーム。  
   
-## 戻り値  
- 読み取られた文字を返します。  読み取りエラーまたはファイルの終端に達した場合は、状態 `getc` の戻り `EOF`、`getwc` の戻り `WEOF`表示します。  `getc` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。  `stream` が `NULL`の場合、`getc` と `getwc` は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、これらの関数は `EOF` の \(または`getwc`の`WEOF`\) と `EINVAL`に設定 `errno`。  
+## <a name="return-value"></a>戻り値  
+ 読み取られた文字を返します。 読み取りエラーまたはファイルの終端状態を示すために、`getc` は `EOF` を返し、`getwc` は `WEOF` を返します。 `getc` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`getc` と `getwc` によって無効なパラメーター ハンドラーが呼び出されます。 これらの関数を返すかどうかは、引き続き実行が許可された、 `EOF` (または`WEOF`用`getwc`) 設定と`errno`に`EINVAL`です。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-## 解説  
- 各ルーチンは、現在位置からファイルから一つの文字を読み取り、次の文字を指すように関連ファイル ポインター \(を定義する場合は、インクリメントします。  ファイルは `stream`に関連付けられます。  
+## <a name="remarks"></a>コメント  
+ 各ルーチンはファイルの現在の位置から 1 文字読み取り、関連付けられたファイル ポインター (定義されている場合) をインクリメントして次の文字を指します。 ファイルは `stream` に関連付けられています。  
   
- これらの関数は呼び出し元スレッドをロックするため、スレッド セーフです。  ロックしないバージョンについては、「[\_getc\_nolock、\_getwc\_nolock](../../c-runtime-library/reference/getc-nolock-getwc-nolock.md)」を参照してください。  
+ これらの関数は呼び出し元スレッドをロックするため、スレッド セーフです。 ロックしないバージョンについては、「[_getc_nolock、_getwc_nolock](../../c-runtime-library/reference/getc-nolock-getwc-nolock.md)」をご覧ください。  
   
  ルーチン固有の解説は、次のとおりです。  
   
-|ルーチン|解説|  
-|----------|--------|  
-|`getc`|`fgetc`と同様ですが、関数とマクロとして実装されています。|  
-|`getwc`|`getc` のワイド文字バージョン。  `stream` がテキスト モードまたはバイナリ モードで開くかによってマルチバイト文字またはワイド文字を読み取ります。|  
+|ルーチン|コメント|  
+|-------------|-------------|  
+|`getc`|`fgetc` と同じですが、関数およびマクロとして実装されます。|  
+|`getwc`|`getc` のワイド文字バージョン。 `stream` がテキスト モードまたはバイナリ モードで開かれるかどうかに従って、マルチバイト文字またはワイド文字を読み取ります。|  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_gettc`|`getc`|`getc`|`getwc`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`getc`|\<stdio.h\>|  
-|`getwc`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`getc`|\<stdio.h>|  
+|`getwc`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_getc.c  
@@ -136,28 +153,22 @@ int main()
 }  
 ```  
   
-## 入力: crt\_getc.txt  
+## <a name="input-crtgetctxt"></a>入力: crt_getc.txt  
   
 ```  
 Line one.  
 Line two.  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 Input was: Line one.  
 ```  
   
-## 同等の .NET Framework 関数  
-  
--   [System::IO::StreamReader::Read](https://msdn.microsoft.com/en-us/library/system.io.streamreader.read.aspx)  
-  
--   [System::Console::Read](https://msdn.microsoft.com/en-us/library/system.console.read.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fgetc、fgetwc](../Topic/fgetc,%20fgetwc.md)   
- [\_getch、\_getwch](../Topic/_getch,%20_getwch.md)   
+ [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
+ [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)   
  [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)   
  [ungetc、ungetwc](../../c-runtime-library/reference/ungetc-ungetwc.md)

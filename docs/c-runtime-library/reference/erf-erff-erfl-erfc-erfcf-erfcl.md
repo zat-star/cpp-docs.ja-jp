@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 78c12c22f85eb9ba50b1ea5a92f6f3bb171e01a0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 48718acb6ad8773f876251962fd4b643993c27e8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="erf-erff-erfl-erfc-erfcf-erfcl"></a>erf、erff、erfl、erfc、erfcf、erfcl
@@ -110,7 +111,7 @@ long double erfcl(
   
  ![x の誤差関数](../../c-runtime-library/reference/media/crt_erf_formula.PNG "CRT_erf_formula")  
   
- ガウスの相補誤差関数は、1 – erf(x) と定義されています。 `erf` 関数は、-1.0 ～ 1.0 の範囲の値を返します。 エラーの戻り値はありません。 `erfc` 関数は、0 ～ 2 の範囲の値を返します。 `x` が `erfc` に対して大きすぎる場合、`errno` 変数は `ERANGE` に設定されます。  
+ ガウスの相補誤差関数が 1 - として定義されている erf (x)。 `erf` 関数は、-1.0 ～ 1.0 の範囲の値を返します。 エラーの戻り値はありません。 `erfc` 関数は、0 ～ 2 の範囲の値を返します。 `x` が `erfc` に対して大きすぎる場合、`errno` 変数は `ERANGE` に設定されます。  
   
  C++ ではオーバーロードが可能であるため、`erf` 型と `erfc` 型を受け取って返す `float` と `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`erf` および `erfc` は常に `double` を受け取って返します。  
   
@@ -120,10 +121,7 @@ long double erfcl(
 |--------------|---------------------|  
 |`erf`, `erff`, `erfl`, `erfc`, `erfcf`, `erfcl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)

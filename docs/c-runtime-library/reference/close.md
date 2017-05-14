@@ -50,10 +50,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ddcd28eb65b174ba2e4bd901cf2556b99ac4de2c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 9dab323afc6c70e81592119e0cec2775c239d87f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="close"></a>_close
@@ -72,7 +73,7 @@ int _close(
  開いているファイルを参照するファイル記述子。  
   
 ## <a name="return-value"></a>戻り値  
- ファイルが正常に閉じられた場合、`_close` は 0 を返します。 戻り値 -1 はエラーを示します。  
+ ファイルが正常に閉じられた場合、`_close` は 0 を返します。 戻り値-1 はエラーを示します。  
   
 ## <a name="remarks"></a>コメント  
  `_close` 関数は、`fd` に関連付けられているファイルを閉じます。  

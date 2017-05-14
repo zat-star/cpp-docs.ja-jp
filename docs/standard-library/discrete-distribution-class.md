@@ -10,28 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - discrete_distribution
-- std::discrete_distribution
 - random/std::discrete_distribution
-- std::discrete_distribution::reset
 - random/std::discrete_distribution::reset
-- std::discrete_distribution::probabilities
 - random/std::discrete_distribution::probabilities
-- std::discrete_distribution::param
 - random/std::discrete_distribution::param
-- std::discrete_distribution::min
 - random/std::discrete_distribution::min
-- std::discrete_distribution::max
 - random/std::discrete_distribution::max
-- std::discrete_distribution::operator()
 - random/std::discrete_distribution::operator()
-- std::discrete_distribution::param_type
 - random/std::discrete_distribution::param_type
-- std::discrete_distribution::param_type::probabilities
 - random/std::discrete_distribution::param_type::probabilities
-- std::discrete_distribution::param_type::operator==
 - random/std::discrete_distribution::param_type::operator==
-- std::discrete_distribution::param_type::operator!=
 - random/std::discrete_distribution::param_type::operator!=
+- random/std::discrete_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -55,10 +45,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: c7f3b346bc8abeab0c6bd913fc0b554bef4ed208
-ms.openlocfilehash: f29f4e98cf23f30383327713973f861b56ae0ce0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 270dd20a29333c64526c103c3eabe847c1c6e3c9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="discretedistribution-class"></a>discrete_distribution クラス
@@ -110,8 +101,8 @@ public:
   
 |||  
 |-|-|  
-|[discrete_distribution::discrete_distribution](#discrete_distribution__discrete_distribution)|`discrete_distribution::param`|  
-|`discrete_distribution::operator()`|[discrete_distribution::param_type](#discrete_distribution__param_type)|  
+|[discrete_distribution](#discrete_distribution)|`discrete_distribution::param`|  
+|`discrete_distribution::operator()`|[param_type](#param_type)|  
   
  プロパティ関数 `vector<double> probabilities()` は、生成される整数ごとに個別の確率を返します。  
   
@@ -201,7 +192,7 @@ Distribution for 100 samples:
   
  **名前空間:** std  
   
-##  <a name="a-namediscretedistributiondiscretedistributiona--discretedistributiondiscretedistribution"></a><a name="discrete_distribution__discrete_distribution"></a>  discrete_distribution::discrete_distribution  
+##  <a name="discrete_distribution"></a>  discrete_distribution::discrete_distribution  
  分布を作成します。  
   
 ```  
@@ -234,7 +225,7 @@ explicit discrete_distribution(const param_type& parm);
  分布の作成元となる [initializer_list](../cpp/initializers.md)。  
   
 *count*  
- 分布範囲内にある要素の数。 `count==0` の場合は、既定のコンストラクターと同じです (常に&0; を生成します)。  
+ 分布範囲内にある要素の数。 `count==0` の場合は、既定のコンストラクターと同じです (常に 0 を生成します)。  
   
 *low*  
  分布範囲内の最小値。  
@@ -249,7 +240,7 @@ explicit discrete_distribution(const param_type& parm);
  分布の作成に使用される `param_type` の構造体。  
   
 ### <a name="remarks"></a>コメント  
-既定のコンストラクターは、格納された確率値が値 1 である 1 つの要素を持つオブジェクトを構築します。 この結果、常に&0; を生成する分布になります。  
+既定のコンストラクターは、格納された確率値が値 1 である 1 つの要素を持つオブジェクトを構築します。 この結果、常に 0 を生成する分布になります。  
   
 パラメーター *firstW* と *lastW* のある反復子範囲コンストラクターは、区間シーケンス [*firstW*, *lastW*) 全体にわたる反復子から取得された重み値を使って分布オブジェクトを作成します。  
   
@@ -257,11 +248,11 @@ explicit discrete_distribution(const param_type& parm);
   
 *count*、*low*、*high*、*weightfunc* パラメーターを持つコンストラクターは、以下のルールに基づいて初期化された分布オブジェクトを作成します。  
 -  *count* < 1 の場合、**n** = 1 で、このような場合は既定のコンストラクターと同じで、常に 0 を生成します。  
--  *count* > 0 の場合、**n** = *count* です。 **d** = (*high* - *low*) / **n** が 0 より大きい場合、**d** 個の均等のサブ範囲を使って、各重みが `weight[k] = weightfunc(x)` のように割り当てられます。ここで、**x** = *low* + **k** * **d** + **d** / 2 です (**k** = 0, ..., **n** - 1 の場合)。  
+-  *count* > 0 の場合、**n** = *count* です。 Provided **d** = (*high* - *low*) / **n** is greater than zero, using **d** uniform subranges, each weight is assigned as follows: `weight[k] = weightfunc(x)`, where **x** = *low* + **k** * **d** + **d** / 2, for **k** = 0, ..., **n** - 1.  
   
 `param_type` パラメーター *parm* を持つコンストラクターは、格納されたパラメーター構造体として *parm* を使う分布オブジェクトを作成します。  
   
-##  <a name="a-namediscretedistributionparamtypea--discretedistributionparamtype"></a><a name="discrete_distribution__param_type"></a>  discrete_distribution::param_type  
+##  <a name="param_type"></a>  discrete_distribution::param_type  
  分布のすべてのパラメーターを格納します。  
   
 ```  

@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 336f03207c1ead18dd7e47f44fd8c1055da4bc0e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 51facd97e9e1b7478893c23693d67cd022b5bed7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="getdstbias"></a>_get_dstbias
@@ -77,7 +78,7 @@ ms.lasthandoff: 02/24/2017
  夏時間のオフセット (秒単位)。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0;、エラーが発生した場合は `errno` 値。  
+ 正常終了した場合は 0、エラーが発生した場合は `errno` 値。  
   
 ## <a name="remarks"></a>コメント  
  `_get_dstbias` 関数は、夏時間の秒数を整数として取得します。 夏時間が適用されている場合、既定のオフセットは 3,600 秒であり、これは 1 時間の秒数です (ただし、一部の地域は 2 時間のオフセットを実施しています)。  
@@ -85,9 +86,6 @@ ms.lasthandoff: 02/24/2017
  `seconds` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
  マクロ `_dstbias` または非推奨の関数 `__dstbias` の代わりに、この関数を使用することをお勧めします。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   

@@ -54,14 +54,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 0fbce9639718ca7316494b1f573a817d8ab0e6f1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 0ebd79ed048bad988ca8a31f0f2f8d5427b84675
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="expm1-expm1f-expm1l"></a>expm1、expm1f、expm1l
-e を底とする値のべき乗から&1; を引く計算を行います。  
+e を底とする値のべき乗から 1 を引く計算を行います。  
   
 ## <a name="syntax"></a>構文  
   
@@ -88,7 +89,7 @@ long double expm1l(
  浮動小数点の指数値。  
   
 ## <a name="return-value"></a>戻り値  
- `expm1` 関数は、正常に終了した場合、<sup>x</sup> – 1 を表す浮動小数点値を返します。 オーバーフローが発生すると、`expm1` は `HUGE_VAL` を返し、`expm1f` は `HUGE_VALF` を返し、`expm1l` は `HUGE_VALL` を返します。`errno` は `ERANGE` に設定されます。 リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ `expm1` E を表す浮動小数点値を返します<sup>x</sup> - 1、成功した場合。 オーバーフローが発生すると、`expm1` は `HUGE_VAL` を返し、`expm1f` は `HUGE_VALF` を返し、`expm1l` は `HUGE_VALL` を返します。`errno` は `ERANGE` に設定されます。 リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`expm1` および `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`expm1` は常に `double` を受け取って返します。  
@@ -99,10 +100,7 @@ long double expm1l(
 |-------------|---------------------|  
 |`expm1`、`expm1f`、`expm1l`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

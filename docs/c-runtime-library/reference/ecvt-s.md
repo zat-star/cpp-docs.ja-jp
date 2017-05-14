@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ea9db0450c24619fbbd2b7d88b32e93a39f11390
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 81bcb9fe1306f5affa49672269890d6f5888a3ac
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ecvts"></a>_ecvt_s
@@ -102,7 +103,7 @@ errno_t _ecvt_s(
  変換後の数値の符号。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ 正常終了した場合は 0 を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
  パラメーターが次の表の無効な値の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
@@ -120,7 +121,7 @@ errno_t _ecvt_s(
  `buffer` が有効なメモリを指しておらず、`NULL` ではない場合、`_ecvt_s` はアクセス違反を生成する可能性があります。  
   
 ## <a name="remarks"></a>コメント  
- `_ecvt_s` 関数は、浮動小数点数の値を文字列に変換します。 `_Value` パラメーターは変換する浮動小数点数です。 この関数は、`_Value` の最大 `count` 桁を文字列として格納し、null 文字 ("\0") を追加します。 `_Value` の桁数が `_Count` を超える場合、下位の桁は丸められます。 `count` 桁より少ない場合は、文字列が&0; で埋められます。  
+ `_ecvt_s` 関数は、浮動小数点数の値を文字列に変換します。 `_Value` パラメーターは変換する浮動小数点数です。 この関数は、`_Value` の最大 `count` 桁を文字列として格納し、null 文字 ("\0") を追加します。 `_Value` の桁数が `_Count` を超える場合、下位の桁は丸められます。 `count` 桁より少ない場合は、文字列が 0 で埋められます。  
   
  文字列には数字だけが格納されます。 `_Value` の小数点位置と符号は、呼び出しの後で `_Dec` と `_Sign` から取得できます。 `_Dec` パラメーターは、文字列の先頭に対する小数点位置を示す整数値をポイントします。 0 または負の整数値は、最初の桁の左側に小数点があることを示します。 `_Sign` パラメーターは、変換後の数値の符号を示す整数をポイントします。 整数値が 0 の場合、数値は正の値です。 それ以外の場合、数値は負の値です。  
   
@@ -172,9 +173,6 @@ int main( )
 ```Output  
 Converted value: 12000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- <xref:System.Convert.ToString%2A>  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

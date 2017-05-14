@@ -35,54 +35,56 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: c1753b0f4f017c6d02fc41c427285e6adae6521b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 02d651b3e3ca4dc643b01463a85762a6427b8e83
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltcomplexgt"></a>&lt;complex&gt;
-コンテナーのテンプレート クラス complex とそのサポート用テンプレートを定義します。  
+コンテナー テンプレート クラスを定義**複雑な**とそのサポート用テンプレート。  
   
 ## <a name="syntax"></a>構文  
   
 ```  
 #include <complex>  
-  
 ```  
   
 ## <a name="remarks"></a>コメント  
- 複素数は、順序付けされた実数のペアです。 純粋に幾何学的な見地からすれば、複素平面は実数からなる&2; 次元平面です。 複素平面には代数構造が加えられているため、実数平面とは異なる特殊な性質を持ちます。 この代数構造には次の&2; つの基本的な演算が含まれます。  
+ 複素数は、順序付けされた実数のペアです。 純粋に幾何学的な見地からすれば、複素平面は実数からなる 2 次元平面です。 複素平面には代数構造が加えられているため、実数平面とは異なる特殊な性質を持ちます。 この代数構造には次の 2 つの基本的な演算が含まれます。  
   
--   (*a, b*) + (*c, d*) = (*a + c, b + d)* の形で定義される加算  
+-   Addition defined as (*a*, *b*) + (*c*, *d*) = (*a* + *c*, *b* + *d*)  
   
--   (*a, b*) \* (*c, d*) = (*ac - bd, ad + bc*) の形で定義される乗算  
+-   Multiplication defined as (*a*, *b*) \* (*c*, *d*) = (*ac* - *bd*, *ad* + *bc*)  
   
  複素数の加算や乗算を伴う複素数の集合は、標準の代数学的な意味での体 (field) です。  
   
 -   実数の体 (field) における実数の加算や乗算と全く同様、加算や乗算の演算には交換法則や結合法則が成り立ち、加法に対する乗法の分配法則も成り立ちます。  
   
--   複素数 (*0, 0*) が加法の単位元であり、(*1, 0*) が乗法の単位元です。  
+-   複素数 (0, 0) が加法と (1, 0) が乗法です。  
   
--   複素数 (*a, b*) の加法逆元は (*- a, b*) で、(*0, 0*) 以外のすべての複素数の乗法逆元は次のとおりに定義されます。  
+-   複素数の加法に関する逆元 (*、*、 *b*) は (-*、*、-*b*)、およびすべてのような複雑な数値を除く逆数 (0, 0) が  
   
-     (*a*/(*a*<sup>2</sup> + *b*<sup>2</sup>), -*b*/(*a*<sup>2</sup> + *b*<sup>2</sup>)  
+     (*a*/(*a*<sup>2</sup> + *b*<sup>2</sup>), -*b*/(*a*<sup>2</sup> + *b*<sup>2</sup>))  
   
- 複素数 *z = (a, b)* を *z = a + bi* 形式 (*i*<sup>2</sup> *=*-1) で表す場合、実数集合の代数演算規則が複素数集合とその要素にも当てはまります。 例:  
+ 複素数を表す*z* = (*、*、 *b*) 形式で*z* = *、* + *bi*ここで、*すれば*<sup>2</sup> =-1 で、規則複素数のセットとそのコンポーネントは、実数の集合の代数を適用することができます。 例:  
   
- (1 + 2*i*) \* (2 + 3*i*)    = 1\*(2 + 3*i*) + 2*i*\*(2 + 3*i*) = (2 + 3*i*) + (4*i* + 6*i*<sup>2</sup>)  
+  (1 + 2*i*) \* (2 + 3*i*)  
+  = 1 \* (2 + 3*i*) + 2*i* \* (2 + 3*i*)  
+  = (2 + 3*i*) + (4*i* + 6*i*<sup>2</sup>)  
+  = (2 - 6) + (3 + 4)*i*  
+  = -4 + 7*i*  
   
- = (2 –6) + (3 + 4)*i* = -4 + 7*i*  
+ 複素数系は体 (field) ですが、順序体 (ordered field) ではありません。 あるため、実数とそのサブセットのフィールドのような不等式には実数複素数には適用できませんの複素数の順序がありません。  
   
- 複素数系は体 (field) ですが、順序体 (ordered field) ではありません。 複素数には、実数とその部分集合の場合に存在するような順序がありません。このため、順序体である実数の場合のような不等式は成り立ちません。  
+ 複素数 *z* を表す形式としては、次の 3 つが一般的です。  
   
- 複素数 *z* を表す形式としては、次の&3; つが一般的です。  
+-   Cartesian: *z* = *a* + *bi*  
   
--   デカルト形式: *z = a + bi*  
+-   Polar: *z* = *r* (cos *p* + *i* sin *p*)  
   
--   極形式: *z = r* (cos *+ i*sin)  
-  
--   指数関数型: *z = r \** exp()  
+-   Exponential: *z* = *r* \* *e*<sup>*ip*</sup>  
   
  これらの標準的な複素数の表現で使用される用語は、次のように呼ばれます。  
   
@@ -90,11 +92,11 @@ ms.lasthandoff: 02/24/2017
   
 -   デカルト形式の虚数要素、または虚数部 *b*。  
   
--   複素数の係数、もしくは絶対値 P。  
+-   係数、もしくは複素数の絶対値*r*です。  
   
--   偏角または位相角。  
+-   偏角または位相角*p* (ラジアン単位)。  
   
- 特に指定しない場合、複数の値を返すことができる関数は、–π より大きく +π 以下であるような引数の主値を返し、一価にしておく必要があります。 角度はすべてラジアンで指定する必要があります。1 周は 2 π ラジアン (360°) です。  
+ 複数の値を返すことができる関数は - π より大きく、その引数としての主値を返すときに必要でない限りよりまたは等しい + π 一価にしています。 すべての角度をラジアン単位で表す必要がありますが、円で囲んだ 2 π ラジアン (360 °) がある場合。  
   
 ### <a name="functions"></a>関数  
   
@@ -123,30 +125,30 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/complex-operators.md#operator_neq)|2 つの複素数の間の非同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator*](../standard-library/complex-operators.md#operator_star)|2 つの複素数を乗算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator+](../standard-library/complex-operators.md#operator_add)|2 つの複素数を加算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
+|[operator!=](../standard-library/complex-operators.md#op_neq)|2 つの複素数の間の非同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
+|[operator*](../standard-library/complex-operators.md#op_star)|2 つの複素数を乗算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
+|[operator+](../standard-library/complex-operators.md#op_add)|2 つの複素数を加算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
 |[operator-](../standard-library/complex-operators.md#operator-)|2 つの複素数を減算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator/](../standard-library/complex-operators.md#operator_)|2 つの複素数を除算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator<\<](../standard-library/complex-operators.md#operator_lt__lt_)|出力ストリームに複素数を挿入するテンプレート関数。|  
-|[operator==](../standard-library/complex-operators.md#operator_eq_eq)|2 つの複素数の間の同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator>>](../standard-library/complex-operators.md#operator_gt__gt_)|入力ストリームから複素数を抽出するテンプレート関数。|  
+|[operator/](../standard-library/complex-operators.md#op_div)|2 つの複素数を除算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
+|[operator<\<](../standard-library/complex-operators.md#op_lt_lt)|出力ストリームに複素数を挿入するテンプレート関数。|  
+|[operator==](../standard-library/complex-operators.md#op_eq_eq)|2 つの複素数の間の同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
+|[operator>>](../standard-library/complex-operators.md#op_gt_gt)|入力ストリームから複素数を抽出するテンプレート関数。|  
   
 ### <a name="classes"></a>クラス  
   
 |||  
 |-|-|  
-|[complex\<double>](../standard-library/complex-double.md)|明示的に特殊化されたこのテンプレート クラスは、順序付けされたオブジェクトのペア (いずれも **double**** 型) を格納するオブジェクトを記述します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。|  
-|[complex\<float>](../standard-library/complex-float.md)|明示的に特殊化されたこのテンプレート クラスは、順序付けされたオブジェクトのペア (いずれも **float**** 型) を格納するオブジェクトを記述します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。|  
-|[complex\<long double>](../standard-library/complex-long-double.md)|明示的に特殊化されたこのテンプレート クラスは、順序付けされたオブジェクトのペア (いずれも `long double`** 型) を格納するオブジェクトを記述します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。|  
+|[complex\<double>](../standard-library/complex-double.md)|明示的に特化したテンプレート クラスは両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**二重**複素数の実数部を表し、次の虚数部を表します。|  
+|[complex\<float>](../standard-library/complex-float.md)|明示的に特化したテンプレート クラスは、両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**float**複素数の実数部を表し、次の虚数部を表します。|  
+|[complex\<long double>](../standard-library/complex-long-double.md)|明示的に特化したテンプレート クラスは両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**long double**複素数の実数部を表し、次の虚数部を表します。|  
 |[complex](../standard-library/complex-class.md)|このテンプレート クラスは、複素数の算術演算に使用する複素数系を表すオブジェクトを記述します。|  
   
 ### <a name="literals"></a>リテラル  
- \<complex> ヘッダーでは次の[ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)が定義されており、実数部が&0; および虚数部が入力パラメーターの値である複素数を作成します。  
+ \<complex> ヘッダーでは次の[ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)が定義されており、実数部が 0 および虚数部が入力パラメーターの値である複素数を作成します。  
   
 |||  
 |-|-|  
-|`constexpr complex<long double> operator""il(long double d)il(long double d)`<br /><br /> `constexpr complex<long double> operator""il(unsigned long long d)`|`complex<long double>{0.0L, static_cast<long double>(d)}` を返します。|  
+|`constexpr complex<long double> operator""il(long double d)`<br /><br /> `constexpr complex<long double> operator""il(unsigned long long d)`|返します。`complex<long double>{0.0L, static_cast<long double>(d)}`|  
 |`constexpr complex<double> operator""i(long double d)`<br /><br /> `constexpr complex<double> operator""i(unsigned long long d)`|`complex<double>{0.0, static_cast<double>(d)}` を返します。|  
 |`constexpr complex<float> operator""if(long double d)`<br /><br /> `constexpr complex<float> operator""if(unsigned long long d)`|`complex<float>{0.0f, static_cast<float>(d)}` を返します。|  
   

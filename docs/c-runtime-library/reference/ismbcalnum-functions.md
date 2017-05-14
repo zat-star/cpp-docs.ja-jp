@@ -73,10 +73,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7168310388689cc8b76ec38a5ab9c4be5f2fa33e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: b8e39939471e6f1761b6936a215bb8a1e4e13d8c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbcalnum-ismbcalnuml-ismbcalpha-ismbcalphal-ismbcdigit-ismbcdigitl"></a>_ismbcalnum、_ismbcalnum_l、_ismbcalpha、_ismbcalpha_l、_ismbcdigit、_ismbcdigit_l
@@ -134,7 +135,7 @@ int _ismbcdigit_l
   
 |ルーチン|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
-|`_ismbcalnum,_ismbcalnum_l`|英数字|`c` が ASCII の英字の&1; バイト表現である場合に限り、0 以外の値を返します。`_ismbcdigit` と `_ismbcalpha` の例を参照してください。|  
+|`_ismbcalnum,_ismbcalnum_l`|英数字|`c` が ASCII の英字の 1 バイト表現である場合に限り、0 以外の値を返します。`_ismbcdigit` と `_ismbcalpha` の例を参照してください。|  
 |`_ismbcalpha,_ismbcalpha_l`|alphabetic|`c` が ASCII の英字 (0x41<=`c`<=0x5A または 0x61<=`c`<=0x7A) またはカタカナ (0xA6<=`c`<=0xDF) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcdigit,_ismbcdigit`|数字|`c` が ASCII 数字 (0x30<=`c`<=0x39) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
   
@@ -147,14 +148,6 @@ int _ismbcdigit_l
 |`_ismbcdigit,_ismbcdigit_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Char::IsLetter](https://msdn.microsoft.com/en-us/library/system.char.isletter.aspx)  
-  
--   [System::Char::IsDigit](https://msdn.microsoft.com/en-us/library/system.char.isdigit.aspx)  
-  
--   `_ismbcalnum` の場合: 該当するものはありません。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

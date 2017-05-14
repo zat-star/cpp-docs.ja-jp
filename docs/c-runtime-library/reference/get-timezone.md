@@ -52,10 +52,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1810a9c79d21b6a0b19f5f4e4f2d4c59d286e5b7
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 7ddada62e9bb209d8b5ffad6af3728edce36e443
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="gettimezone"></a>_get_timezone
@@ -75,7 +76,7 @@ ms.lasthandoff: 02/24/2017
  UTC と現地時刻の秒単位の差。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0;、エラーが発生した場合は `errno` 値。  
+ 正常終了した場合は 0、エラーが発生した場合は `errno` 値。  
   
 ## <a name="remarks"></a>コメント  
  `_get_timezone` 関数は、UTC と現地時刻の秒単位の差を表す整数を取得します。 既定値は、太平洋標準時 (UTC から 8 時間遅れ) を表す 28,800 秒です。  
@@ -89,9 +90,6 @@ ms.lasthandoff: 02/24/2017
 |`_get_timezone`|\<time.h>|  
   
  詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   

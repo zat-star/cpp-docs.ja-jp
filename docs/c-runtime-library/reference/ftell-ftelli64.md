@@ -1,53 +1,70 @@
 ---
 title: "ftell、_ftelli64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_ftelli64"
-  - "ftell"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_ftelli64"
-  - "ftell"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ftelli64 関数"
-  - "ファイル ポインター [C++]"
-  - "ファイル ポインター [C++], 取得 (現在の位置を)"
-  - "ftell 関数"
-  - "ftelli64 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _ftelli64
+- ftell
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _ftelli64
+- ftell
+dev_langs:
+- C++
+helpviewer_keywords:
+- ftell function
+- ftelli64 function
+- _ftelli64 function
+- file pointers [C++], getting current position
+- file pointers [C++]
 ms.assetid: 40149cd8-65f2-42ff-b70c-68e3e918cdd7
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# ftell、_ftelli64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 220b34e5bba7a4a6716d6ef18d6621b58d36ecc3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
+---
+# <a name="ftell-ftelli64"></a>ftell、_ftelli64
 ファイル ポインターの現在の位置を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 long ftell(   
@@ -58,34 +75,34 @@ __int64 _ftelli64(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  ターゲット `FILE` 構造体。  
   
-## 戻り値  
- `ftell` と `_ftelli64` はファイルの現在の位置を返します。  `ftell` と `_ftelli64` によって返される値は、テキスト モードでキャリッジ return–linefeed 変換が発生するため、テキスト モードで開かれたストリームの物理的なバイト オフセットを表していないことがあります。  ファイルの場所に適切に戻るために `fseek`の`ftell` または`_fseeki64` の`_ftelli64`を使用します。  エラーの場合、`ftell`と`_ftelli64` は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、これらの関数は–1L と 2 桁の定数の 1 つがに設定 `errno`、ERRNO.H.で定義されています。  `EBADF` の定数は `stream` の引数に有効なファイル ポインター値ではなく、開いているファイルを参照しないことを意味します。  `EINVAL` は `stream` の無効な引数が関数に渡されたことを意味します。  到達できないのデバイスで `stream` が開いているファイルがない場合 \(ターミナルとプリンターなど\)、または、戻り値は未定義です。  
+## <a name="return-value"></a>戻り値  
+ `ftell` および `_ftelli64` は、ファイルの現在の位置を返します。 によって返される値`ftell`と`_ftelli64`キャリッジ リターンとライン フィードの変換のため、テキスト モードで開いたストリームの物理バイト オフセットを表さない場合があります。 使用して`ftell`で`fseek`または`_ftelli64`で`_fseeki64`正しくファイルの場所に戻ります。 エラーが発生した`ftell`と`_ftelli64`」の説明に従って、無効なパラメーター ハンドラーを呼び出す[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の続行には、これらの関数の戻り値-1 L セットが許可された場合`errno`ERRNO で定義されている 2 つの定数のいずれかにします。H. `EBADF` 定数は、`stream` 引数が有効なファイル ポインター値ではないかまたは開くファイルを参照していないことを意味します。 `EINVAL` は、無効な `stream` 引数が関数に渡されたことを意味します。 (ターミナルやポインターなどの) シーク非対応のデバイスの場合、または `stream` が開くファイルを参照していない場合、戻り値は未定義です。  
   
- リターン コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- `ftell` と `_ftelli64`関数は `stream`に関連付けられたファイル ポインターの現在の位置 \(ある場合\) を取得します*。*位置は、ストリームの先頭を基準としたオフセットとして表現されます。  
+## <a name="remarks"></a>コメント  
+ `ftell`と`_ftelli64`関数に関連付けられたファイル ポインター (存在する場合) の現在の位置を取得する`stream`です。 位置は、ストリームの先頭を基準としたオフセットとして表されます。  
   
- 次の発生した場所によって作成またはファイルのデータを付けるために開いたときは、ファイルの現在の位置は最後の I\/O 操作によって決定されることで、注意してください。  たとえば、ファイルを追加するためにその直前の操作を読み取り、ファイル位置は、次の場所に書き込み、次の読み取り操作を開始するポイントであり、開始します。ファイルを追加するために開く場合、ファイル位置は、書き込み操作の前に、ファイルの終端に移動されます\)。I\/O 操作を付けるように開かれたファイルに行われていないファイル位置はファイルの先頭です。  
+ データを追加するためにファイルを開く場合、現在のファイルの位置は、次の書き込みが発生する場所ではなく最後の I/O 操作によって決まります。 たとえば、追加のためにファイルが開かれ、最後の操作が読み取りだった場合、ファイルの位置は、次の書き込みが開始される位置ではなく、次の読み取り操作が開始される位置になります  (追加のためにファイルが開かれるときには、ファイルの位置は書き込み操作が開始される前にファイルの末尾に移動されます)。追加のために開かれたファイルで I/O 操作がまだ発生していない場合、ファイルの位置はファイルの先頭です。  
   
- テキスト モードでは、Ctrl \+ Z は入力のファイルの終端の文字として解釈されます。  ファイルの末尾に\/書き込み用に読み取ること、Ctrl \+ Z の `fopen` および関連するすべてのチェックは、開くファイルでは、可能な場合は削除します。  これは `ftell` の組み合わせと `fseek` または `_ftelli64``_fseeki64`と使用すると、CTRL\+Z で終わるファイル内で移動するには、`ftell` または `_ftelli64` がファイル末尾付近で正しく動作してしまうためです。  
+ テキスト モードでは、Ctrl + Z は入力時に EOF (end-of-file) 文字として解釈されます。 読み取りおよび書き込みの両方のために開かれたファイルでは、`fopen` および関連するすべてのルーチンが、ファイル末尾に Ctrl + Z があるかどうかを確認し、削除できる場合は削除します。 この処理が行われる理由は、`ftell` と `fseek` または `_ftelli64` と `_fseeki64` の組み合わせを使用して、CTRL+Z で終わるファイルの中身を移動するとき、ファイル末尾付近で `ftell` または `_ftelli64` が正しく動作しないことがあるためです。  
   
- この関数は、実行時に呼び出し元のスレッドをロックし、スレッド セーフです。  ロックしないバージョンについては、「`_ftell_nolock`」を参照してください。  
+ この関数は実行中に呼び出し元スレッドをロックするため、スレッド セーフです。 ロックしないバージョンについては、「`_ftell_nolock`」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|省略可能なヘッダー|  
-|--------|------------|---------------|  
-|`ftell`|\<stdio.h\>|\<errno.h\>|  
-|`_ftelli64`|\<stdio.h\>|\<errno.h\>|  
+|--------------|---------------------|----------------------|  
+|`ftell`|\<stdio.h>|\<errno.h>|  
+|`_ftelli64`|\<stdio.h>|\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_ftell.c  
@@ -115,13 +132,13 @@ int main( void )
 }  
 ```  
   
-  **100 バイトを読み取ろうとした後の位置: 100**   
-## 同等の .NET Framework 関数  
- [System::IO::FileStream::Position](https://msdn.microsoft.com/en-us/library/system.io.filestream.position.aspx)  
+```Output  
+Position after trying to read 100 bytes: 100  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
+ [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [fgetpos](../../c-runtime-library/reference/fgetpos.md)   
- [fseek、\_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
- [\_lseek、\_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)
+ [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
+ [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)

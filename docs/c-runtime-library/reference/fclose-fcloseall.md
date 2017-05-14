@@ -1,51 +1,69 @@
 ---
-title: "fclose、_fcloseall | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "fclose"
-  - "_fcloseall"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "fclose"
-  - "_fcloseall"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "fclose 関数"
-  - "ストリーム、閉じる"
-  - "_fcloseall 関数"
+title: "fclose、_fcloseall | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- fclose
+- _fcloseall
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- fclose
+- _fcloseall
+dev_langs:
+- C++
+helpviewer_keywords:
+- fclose function
+- streams, closing
+- _fcloseall function
 ms.assetid: c3c6ea72-92c6-450a-a33e-3e568d2784a4
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# fclose、_fcloseall
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 46b9086e4c75a699acec47e3b6b68ba7bcc231cf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-ストリーム \(`fclose`\) を閉じ、またはすべての開いているストリーム \(`_fcloseall`\) を閉じます。  
+---
+# <a name="fclose-fcloseall"></a>fclose、_fcloseall
+ストリームを閉じるか (`fclose`)、またはすべての開いているストリームを閉じます (`_fcloseall`)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int fclose(   
@@ -54,60 +72,40 @@ int fclose(
 int _fcloseall( void );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `stream`  
  `FILE` 構造体へのポインター。  
   
-## 戻り値  
- `fclose`、ストリームが正常に閉じた 0 を返します。  `_fcloseall` を 決めるストリームの総数を返します。  エラーを示すどちらの関数を返します。`EOF`。  
+## <a name="return-value"></a>戻り値  
+ ストリームが正常に閉じられた場合、`fclose` は 0 を返します。 `_fcloseall` は、閉じられたストリームの総数を返します。 どちらの関数もエラーを示す `EOF` を返します。  
   
-## 解説  
- `fclose` 関数は `stream`を閉じます。  `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続 `fclose` は `EINVAL` に `errno` を設定し、`EOF`を返します。  `stream` のポインターがこの関数を呼び出す前に、常にチェックすることをお勧めします。  
+## <a name="remarks"></a>コメント  
+ `fclose` 関数は、`stream` を閉じます。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`fclose` は `errno` を `EINVAL` に設定し、`EOF` を返します。 この関数を呼び出す前に必ず、`stream` ポインターをチェックすることをお勧めします。  
   
- エラー コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- `_fcloseall` 関数は `stdin`、`stdout`の `stderr` 閉じられます \(および、MS\-DOS、`_stdaux` と `_stdprn`を除くすべてのオープン ストリームを\)。  また、`tmpfile`で作成した一時ファイルを閉じ、削除します。  どちらの関数では、すべてが閉じる前にストリームに関連付けられたをフラッシュされますバッファリングされます。  システムが割り当てたバッファーは、ストリームを閉じるときに解放されます。  `setbuf` と `setvbuf` のユーザーが割り当てたバッファーは自動的に解放されません。  
+ `_fcloseall` 関数は、`stdin`、`stdout`、および `stderr` (MS-DOS では、`_stdaux` と`_stdprn` も) を除くすべての開いているストリームを閉じます。 また、`tmpfile` によって作成された一時ファイルも閉じて削除します。 両方の関数では、終了する前に、ストリームに関連付けられているすべてのバッファーがフラッシュされます。 システムによって割り当てられたバッファーについては、ストリームを閉じる際に解放します。 `setbuf` と `setvbuf` を使用してユーザーが割り当てたバッファーは、自動的に解放されません。  
   
- ストリームを閉じるには、これらの関数を使用する場合**注意 :** 基になるファイル記述子とオペレーティング システムのファイル ハンドル \(またはソケット\) 終了、ストリームです。  したがって、ファイルが最初に、ファイル ハンドルやファイル記述子開き、`fclose`と閉じる、またはファイル記述子を閉じるに `_close` を呼び出さないでください; ファイル ハンドルを終了する Win32 関数 `CloseHandle` を呼び出さないでください。  
+ **注:** これらの関数を使用してストリームを閉じる場合は、ストリームだけでなく基になるファイル記述子と OS ファイル ハンドル (またはソケット) も閉じられます。 したがって、ファイル ハンドルまたはファイル記述子として元々開いていたファイルが `fclose` によって閉じられる場合は、ファイル記述子を閉じるための `_close` の呼び出し、ファイル ハンドルを閉じるための Win32 関数 `CloseHandle` の呼び出しを行わないでください。  
   
- `fclose` と `_fcloseall` は他のスレッドで干渉から保護するためのコードが含まれています。  `fclose`をロックしないバージョンについては、`_fclose_nolock`を参照してください。  
+ `fclose` と `_fcloseall` には、他のスレッドからの干渉に対処するコードが含まれています。 `_fclose_nolock` のロックしないバージョンについては、「`fclose`」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |関数|必須ヘッダー|  
-|--------|------------|  
-|`fclose`|\<stdio.h\>|  
-|`_fcloseall`|\<stdio.h\>|  
+|--------------|---------------------|  
+|`fclose`|\<stdio.h>|  
+|`_fcloseall`|\<stdio.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- [fopen](../../c-runtime-library/reference/fopen-wfopen.md)"の例を参照してください。  
+## <a name="example"></a>例  
+ 「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」の例を参照してください。  
   
-## 同等の .NET Framework 関数  
-  
--   [System::IO::BinaryReader::Close](https://msdn.microsoft.com/en-us/library/system.io.binaryreader.close.aspx)  
-  
--   [System::IO::BinaryWriter::Close](https://msdn.microsoft.com/en-us/library/system.io.binarywriter.close.aspx)  
-  
--   [System::IO::StringReader::Close](https://msdn.microsoft.com/en-us/library/system.io.stringreader.close.aspx)  
-  
--   [System::IO::StringWriter::Close](https://msdn.microsoft.com/en-us/library/system.io.stringwriter.close.aspx)  
-  
--   [System::IO::Stream::Close](https://msdn.microsoft.com/en-us/library/system.io.stream.close.aspx)  
-  
--   [System::IO::StreamReader::Close](https://msdn.microsoft.com/en-us/library/system.io.streamreader.close.aspx)  
-  
--   [System::IO::StreamWriter::Close](https://msdn.microsoft.com/en-us/library/system.io.streamwriter.close.aspx)  
-  
--   [System::IO::TextReader::Close](https://msdn.microsoft.com/en-us/library/system.io.textreader.close.aspx)  
-  
--   [System::IO::TextWriter::Close](https://msdn.microsoft.com/en-us/library/system.io.textwriter.close.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [\_close](../Topic/_close.md)   
- [\_fdopen、\_wfdopen](../Topic/_fdopen,%20_wfdopen.md)   
- [fflush](../Topic/fflush.md)   
- [fopen、\_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [freopen、\_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md)
+ [_close](../../c-runtime-library/reference/close.md)   
+ [_fdopen、_wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   
+ [fflush](../../c-runtime-library/reference/fflush.md)   
+ [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
+ [freopen、_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md)

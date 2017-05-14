@@ -75,10 +75,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 8346982360dbc6ecfaae296e48da9464b91190b4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: 0727a9bab67872237ffe6f747bd0be3f538eb01d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ltatomicgt"></a>&lt;atomic&gt;
@@ -95,9 +96,9 @@ ms.lasthandoff: 02/24/2017
 > [!NOTE]
 >  使用してコンパイルされたコードで**/clr**、このヘッダーはブロックされます。  
   
- アトミック操作には、ミューテックス ロックを使用せずに、複数のスレッドを使用してオブジェクトを正しく操作することに役立つ&2; つの主要なプロパティがあります。  
+ アトミック操作には、ミューテックス ロックを使用せずに、複数のスレッドを使用してオブジェクトを正しく操作することに役立つ 2 つの主要なプロパティがあります。  
   
--   アトミック操作は分割不可能なため、別のスレッドからの同じオブジェクトでの&2; つ目のアトミック操作では、最初のアトミック操作の前後にのみ、オブジェクトの状態を取得できます。  
+-   アトミック操作は分割不可能なため、別のスレッドからの同じオブジェクトでの 2 つ目のアトミック操作では、最初のアトミック操作の前後にのみ、オブジェクトの状態を取得できます。  
   
 -   アトミック操作はその [memory_order](../standard-library/atomic-enums.md#memory_order_enum) 引数に基づいて、同一スレッド内の他のアトミック操作の効果の可視性に対して順序要件を確立します。 そのため、順序要件に違反するコンパイラの最適化を抑制します。  
   
@@ -117,7 +118,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="integral-specializations"></a>整数の特殊化  
  `atomic<integral>` の特殊化は、すべての整数型に適用されます。 これらは、プライマリ テンプレートを通じて提供されていないその他の操作を提供します。  
   
- 各 `atomic<integral>` 型には、`if directive` でコンパイル時にその型に対する操作がロック制御不要かどうかを判断するために使用できる対応するマクロがあります。 マクロの値が&0; の場合、その型での操作はロック制御不要ではありません。 値が 1 の場合は、操作がロック制御不要の可能性があり、ランタイム チェックが必要です。 値が 2 の場合は、操作はロック制御不要です。 関数 `atomic_is_lock_free` を使用して、実行時にその型での操作がロック制御不要かどうかを判断することができます。  
+ 各 `atomic<integral>` 型には、`if directive` でコンパイル時にその型に対する操作がロック制御不要かどうかを判断するために使用できる対応するマクロがあります。 マクロの値が 0 の場合、その型での操作はロック制御不要ではありません。 値が 1 の場合は、操作がロック制御不要の可能性があり、ランタイム チェックが必要です。 値が 2 の場合は、操作はロック制御不要です。 関数 `atomic_is_lock_free` を使用して、実行時にその型での操作がロック制御不要かどうかを判断することができます。  
   
  各整数型には、その整数型のオブジェクトを管理する対応する名前付きのアトミック型があります。 各 `atomic_integral` 型には、`atomic<T>` の対応するインスタンス化と同じメンバー関数のセットがあり、任意の非メンバーのアトミック関数に渡すことができます。  
   
@@ -191,35 +192,35 @@ ms.lasthandoff: 02/24/2017
   
 |名前|説明|  
 |----------|-----------------|  
-|[atomic_compare_exchange_strong 関数](../standard-library/atomic-functions.md#atomic_compare_exchange_strong_function)|*アトミックの比較および交換*の操作を実行します。|  
-|[atomic_compare_exchange_strong_explicit 関数](../standard-library/atomic-functions.md#atomic_compare_exchange_strong_explicit_function)|*アトミックの比較および交換*の操作を実行します。|  
-|[atomic_compare_exchange_weak 関数](../standard-library/atomic-functions.md#atomic_compare_exchange_weak_function)|*弱いアトミックの比較および交換*の操作を実行します。|  
-|[atomic_compare_exchange_weak_explicit 関数](../standard-library/atomic-functions.md#atomic_compare_exchange_weak_explicit_function)|*弱いアトミックの比較および交換*の操作を実行します。|  
-|[atomic_exchange 関数](../standard-library/atomic-functions.md#atomic_exchange_function)|格納されている値を置き換えます。|  
-|[atomic_exchange_explicit 関数](../standard-library/atomic-functions.md#atomic_exchange_explicit_function)|格納されている値を置き換えます。|  
-|[atomic_fetch_add 関数](../standard-library/atomic-functions.md#atomic_fetch_add_function)|指定した値を格納されている既存の値に加算します。|  
-|[atomic_fetch_add_explicit 関数](../standard-library/atomic-functions.md#atomic_fetch_add_explicit_function)|指定した値を格納されている既存の値に加算します。|  
-|[atomic_fetch_and 関数](../standard-library/atomic-functions.md#atomic_fetch_and_function)|指定されている値と格納されている既存の値でビットごとの `and` を実行します。|  
-|[atomic_fetch_and_explicit 関数](../standard-library/atomic-functions.md#atomic_fetch_and_explicit_function)|指定されている値と格納されている既存の値でビットごとの `and` を実行します。|  
-|[atomic_fetch_or 関数](../standard-library/atomic-functions.md#atomic_fetch_or_function)|指定されている値と格納されている既存の値でビットごとの `or` を実行します。|  
-|[atomic_fetch_or_explicit 関数](../standard-library/atomic-functions.md#atomic_fetch_or_explicit_function)|指定されている値と格納されている既存の値でビットごとの `or` を実行します。|  
-|[atomic_fetch_sub 関数](../standard-library/atomic-functions.md#atomic_fetch_sub_function)|指定した値を格納されている既存の値から減算します。|  
-|[atomic_fetch_sub_explicit 関数](../standard-library/atomic-functions.md#atomic_fetch_sub_explicit_function)|指定した値を格納されている既存の値から減算します。|  
-|[atomic_fetch_xor 関数](../standard-library/atomic-functions.md#atomic_fetch_xor_function)|指定されている値と格納されている既存の値でビットごとの `exclusive or` を実行します。|  
-|[atomic_fetch_xor_explicit 関数](../standard-library/atomic-functions.md#atomic_fetch_xor_explicit_function)|指定されている値と格納されている既存の値でビットごとの `exclusive or` を実行します。|  
-|[atomic_flag_clear 関数](../standard-library/atomic-functions.md#atomic_flag_clear_function)|`atomic_flag` オブジェクト内のフラグを `false` に設定します。|  
-|[atomic_flag_clear_explicit 関数](../standard-library/atomic-functions.md#atomic_flag_clear_explicit_function)|`atomic_flag` オブジェクト内のフラグを `false` に設定します。|  
-|[atomic_flag_test_and_set 関数](../standard-library/atomic-functions.md#atomic_flag_test_and_set_function)|`atomic_flag` オブジェクト内のフラグを `true` に設定します。|  
-|[atomic_flag_test_and_set_explicit 関数](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit_function)|`atomic_flag` オブジェクト内のフラグを `true` に設定します。|  
-|[atomic_init 関数](../standard-library/atomic-functions.md#atomic_init_function)|`atomic` オブジェクトに格納されている値を設定します。|  
-|[atomic_is_lock_free 関数](../standard-library/atomic-functions.md#atomic_is_lock_free_function)|指定されたオブジェクトに対するアトミック操作がロック制御不要かどうかを指定します。|  
-|[atomic_load 関数](../standard-library/atomic-functions.md#atomic_load_function)|アトミックに値を取得します。|  
-|[atomic_load_explicit 関数](../standard-library/atomic-functions.md#atomic_load_explicit_function)|アトミックに値を取得します。|  
-|[atomic_signal_fence 関数](../standard-library/atomic-functions.md#atomic_signal_fence_function)|同じスレッドで実行される通知ハンドラーを持つスレッドの呼び出しで、フェンス間のメモリ オーダリング要件を確立する*フェンス*として機能します。|  
-|[atomic_store 関数](../standard-library/atomic-functions.md#atomic_store_function)|アトミックに値を格納します。|  
-|[atomic_store_explicit 関数](../standard-library/atomic-functions.md#atomic_store_explicit_function)|アトミックに値を格納します。|  
-|[atomic_thread_fence 関数](../standard-library/atomic-functions.md#atomic_thread_fence_function)|他のフェンスに関するメモリ オーダリングの要件を確立する*フェンス*として機能します。|  
-|[kill_dependency 関数](../standard-library/atomic-functions.md#kill_dependency_function)|可能な依存関係チェーンを切断します。|  
+|[atomic_compare_exchange_strong](../standard-library/atomic-functions.md#atomic_compare_exchange_strong)|*アトミックの比較および交換*の操作を実行します。|  
+|[atomic_compare_exchange_strong_explicit](../standard-library/atomic-functions.md#atomic_compare_exchange_strong_explicit)|*アトミックの比較および交換*の操作を実行します。|  
+|[atomic_compare_exchange_weak](../standard-library/atomic-functions.md#atomic_compare_exchange_weak)|*弱いアトミックの比較および交換*の操作を実行します。|  
+|[atomic_compare_exchange_weak_explicit](../standard-library/atomic-functions.md#atomic_compare_exchange_weak_explicit)|*弱いアトミックの比較および交換*の操作を実行します。|  
+|[atomic_exchange](../standard-library/atomic-functions.md#atomic_exchange)|格納されている値を置き換えます。|  
+|[atomic_exchange_explicit](../standard-library/atomic-functions.md#atomic_exchange_explicit)|格納されている値を置き換えます。|  
+|[atomic_fetch_add](../standard-library/atomic-functions.md#atomic_fetch_add)|指定した値を格納されている既存の値に加算します。|  
+|[atomic_fetch_add_explicit](../standard-library/atomic-functions.md#atomic_fetch_add_explicit)|指定した値を格納されている既存の値に加算します。|  
+|[atomic_fetch_and](../standard-library/atomic-functions.md#atomic_fetch_and)|指定されている値と格納されている既存の値でビットごとの `and` を実行します。|  
+|[atomic_fetch_and_explicit](../standard-library/atomic-functions.md#atomic_fetch_and_explicit)|指定されている値と格納されている既存の値でビットごとの `and` を実行します。|  
+|[atomic_fetch_or](../standard-library/atomic-functions.md#atomic_fetch_or)|指定されている値と格納されている既存の値でビットごとの `or` を実行します。|  
+|[atomic_fetch_or_explicit](../standard-library/atomic-functions.md#atomic_fetch_or_explicit)|指定されている値と格納されている既存の値でビットごとの `or` を実行します。|  
+|[atomic_fetch_sub](../standard-library/atomic-functions.md#atomic_fetch_sub)|指定した値を格納されている既存の値から減算します。|  
+|[atomic_fetch_sub_explicit](../standard-library/atomic-functions.md#atomic_fetch_sub_explicit)|指定した値を格納されている既存の値から減算します。|  
+|[atomic_fetch_xor](../standard-library/atomic-functions.md#atomic_fetch_xor)|指定されている値と格納されている既存の値でビットごとの `exclusive or` を実行します。|  
+|[atomic_fetch_xor_explicit](../standard-library/atomic-functions.md#atomic_fetch_xor_explicit)|指定されている値と格納されている既存の値でビットごとの `exclusive or` を実行します。|  
+|[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear)|`atomic_flag` オブジェクト内のフラグを `false` に設定します。|  
+|[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit)|`atomic_flag` オブジェクト内のフラグを `false` に設定します。|  
+|[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set)|`atomic_flag` オブジェクト内のフラグを `true` に設定します。|  
+|[atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit)|`atomic_flag` オブジェクト内のフラグを `true` に設定します。|  
+|[atomic_init](../standard-library/atomic-functions.md#atomic_init)|`atomic` オブジェクトに格納されている値を設定します。|  
+|[atomic_is_lock_free](../standard-library/atomic-functions.md#atomic_is_lock_free)|指定されたオブジェクトに対するアトミック操作がロック制御不要かどうかを指定します。|  
+|[atomic_load](../standard-library/atomic-functions.md#atomic_load)|アトミックに値を取得します。|  
+|[atomic_load_explicit](../standard-library/atomic-functions.md#atomic_load_explicit)|アトミックに値を取得します。|  
+|[atomic_signal_fence](../standard-library/atomic-functions.md#atomic_signal_fence)|同じスレッドで実行される通知ハンドラーを持つスレッドの呼び出しで、フェンス間のメモリ オーダリング要件を確立する*フェンス*として機能します。|  
+|[atomic_store](../standard-library/atomic-functions.md#atomic_store)|アトミックに値を格納します。|  
+|[atomic_store_explicit](../standard-library/atomic-functions.md#atomic_store_explicit)|アトミックに値を格納します。|  
+|[atomic_thread_fence](../standard-library/atomic-functions.md#atomic_thread_fence)|他のフェンスに関するメモリ オーダリングの要件を確立する*フェンス*として機能します。|  
+|[kill_dependency](../standard-library/atomic-functions.md#kill_dependency)|可能な依存関係チェーンを切断します。|  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   

@@ -57,14 +57,15 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e1e2211a34a7cc146d1ce3b791927ffc206edaef
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: e329acaad53c8990f335394bbcb8f0401d71c463
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="endthread-endthreadex"></a>_endthread、_endthreadex
-スレッドを終了します。 `_endthread` は、 `_beginthread` によって作成されたスレッドを終了し、  `_endthreadex` は、`_beginthreadex`によって作成されたスレッドを終了します。  
+スレッドを終了します。 `_endthread` は、 `_beginthread` によって作成されたスレッドを終了し、  `_endthreadex` は、 `_beginthreadex`によって作成されたスレッドを終了します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -83,11 +84,11 @@ void _endthreadex(
  `_endthread` または `_endthreadex` を明示的に呼び出してスレッドを終了できます。ただし、 `_endthread` または `_endthreadex` は、 `_beginthread` または `_beginthreadex`にパラメーターとして渡されたルーチンからスレッドが戻ると自動的に呼び出されます。 `endthread` または `_endthreadex` を呼び出してスレッドを終了すると、スレッドに割り当てられていたリソースを確実に解放できます。  
   
 > [!NOTE]
->  Libcmt.lib にリンクする実行可能ファイルでは、Win32 の [ExitThread](http://msdn.microsoft.com/library/windows/desktop/ms682659.aspx) API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、`ExitThread` を呼び出します。  
+>  Libcmt.lib にリンクする実行可能ファイルでは、Win32 の [ExitThread](http://msdn.microsoft.com/library/windows/desktop/ms682659.aspx) API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、 `ExitThread`を呼び出します。  
   
  `_endthread` は、スレッド ハンドルを自動的に終了します (この動作は、Win32 `ExitThread` API とは異なります)。このため、`_beginthread` および `_endthread` を使用する場合は、Win32 [CloseHandle API](http://msdn.microsoft.com/library/windows/desktop/ms724211.aspx) を呼び出してスレッド ハンドルを明示的に終了しないでください。  
   
- Win32 `ExitThread` API と同様、 `_endthreadex` はスレッド ハンドルを終了しません。 このため、`_beginthreadex` および `_endthreadex` を使用するときには、Win32 `CloseHandle` API を呼び出してスレッド ハンドルを終了する必要があります。  
+ Win32 `ExitThread` API と同様、 `_endthreadex` はスレッド ハンドルを終了しません。 このため、 `_beginthreadex` および `_endthreadex`を使用するときには、Win32 `CloseHandle` API を呼び出してスレッド ハンドルを終了する必要があります。  
   
 > [!NOTE]
 >  `_endthread` と `_endthreadex` により、スレッドで待機中の C++ デストラクターは呼び出されなくなります。  
@@ -105,10 +106,7 @@ void _endthreadex(
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md) のマルチスレッド バージョンのみ。  
   
 ## <a name="example"></a>例  
- [_beginthread](../../c-runtime-library/reference/beginthread-beginthreadex.md) の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ [_beginthread](../../c-runtime-library/reference/beginthread-beginthreadex.md)の例を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

@@ -35,10 +35,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
-ms.openlocfilehash: 7f32ee8a40da16ac919f0c3d8be05573f7b78c3a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: bfe398bf4829d6ef86543890bea28a351bcb4a3d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="enablesharedfromthis-class"></a>enable_shared_from_this クラス
@@ -67,14 +68,14 @@ protected:
   
  コンストラクター、デストラクター、および代入演算子は、偶発的な誤用を防ぐために保護されています。 テンプレート引数型 `Ty` は、派生クラスの型である必要があります。  
   
- 使用方法の例については、「[enable_shared_from_this::shared_from_this](#enable_shared_from_this__shared_from_this)」をご覧ください。  
+ 使用方法の例については、「[enable_shared_from_this::shared_from_this](#shared_from_this)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
   
-##  <a name="enable_shared_from_this__shared_from_this"></a>  enable_shared_from_this::shared_from_this  
+##  <a name="shared_from_this"></a>  enable_shared_from_this::shared_from_this  
  インスタンスの所有権を既存の `shared_ptr` 所有者と共有する `shared_ptr` を生成します。  
   
 ```  
@@ -120,5 +121,5 @@ sp2->val == 3
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [enable_shared_from_this::shared_from_this](#enable_shared_from_this__shared_from_this)   
+ [enable_shared_from_this::shared_from_this](#shared_from_this)   
  [shared_ptr クラス](../standard-library/shared-ptr-class.md)

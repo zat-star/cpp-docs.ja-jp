@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: db53c0ace3c509d37ddc75c03561d84ba86b4ed5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 670d4ddaa4209830f842c68eb84d1840e1592790
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="execl-wexecl"></a>_execl、_wexecl
@@ -87,11 +88,11 @@ intptr_t _wexecl(
  `cmdname`  
  実行されるファイルのパス。  
   
- `arg0`, `...``argn`  
+ `arg0, ... argn`  
  パラメーターへのポインターのリスト。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値 –1 はエラーを示し、この場合は `errno` グローバル変数が設定されます。  
+ 成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値-1 がいる場合、エラーを示す、`errno`グローバル変数を設定します。  
   
 |errno の値|説明|  
 |-----------------|-----------------|  
@@ -104,7 +105,7 @@ intptr_t _wexecl(
 |`ENOMEM`|新しいプロセスを実行するのに十分なメモリがないか、使用できるメモリが破損しているか、または無効なブロックが存在します (呼び出しプロセスが正しく割り当てられていないことを示します)。|  
   
 ## <a name="remarks"></a>コメント  
- これらの各関数は新しいプロセスを読み込んで実行し、各コマンド ライン引数を個別のパラメーターとして渡します。 1 番目の引数はコマンドまたは実行可能ファイルの名前で、2 番目の引数は、1 番目と同じにする必要があります。 これは、実行されるプロセスの `argv[0]` になります。 3 番目の引数は、実行されるプロセスの&1; 番目の引数 `argv[1]` です。  
+ これらの各関数は新しいプロセスを読み込んで実行し、各コマンド ライン引数を個別のパラメーターとして渡します。 1 番目の引数はコマンドまたは実行可能ファイルの名前で、2 番目の引数は、1 番目と同じにする必要があります。 これは、実行されるプロセスの `argv[0]` になります。 3 番目の引数は、実行されるプロセスの 1 番目の引数 `argv[1]` です。  
   
  `_execl` 関数は、パラメーターを検証します。 `cmdname` または `arg0` のいずれかが null ポインターまたは空の文字列である場合、これらの関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように無効なパラメーター ハンドラーを呼び出します。実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。 新しいプロセスは実行されません。  
   
@@ -119,12 +120,6 @@ intptr_t _wexecl(
   
 ## <a name="example"></a>例  
  「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Diagnostics::Process クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.process.aspx)  
-  
--   [System::Diagnostics::ProcessStartInfo クラス](https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

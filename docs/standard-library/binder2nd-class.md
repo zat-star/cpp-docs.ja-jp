@@ -9,10 +9,8 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.binder2nd
 - binder2nd
 - xfunctional/std::binder2nd
-- std::binder2nd
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,14 +34,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: f19b476ae903c915d4231621c39a88bf70b08685
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 9a2f3f31798d1cdadf00e95b9f393e93a20d29ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="binder2nd-class"></a>binder2nd クラス
-指定した値に二項関数の&2; 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
+指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。  
   
 ## <a name="syntax"></a>構文  
   
@@ -74,18 +73,18 @@ protected:
  単項関数オブジェクトに変換する二項関数オブジェクト。  
   
  `right`  
- 二項関数オブジェクトの&2; つ目の引数がバインドされている値。  
+ 二項関数オブジェクトの 2 つ目の引数がバインドされている値。  
   
  `left`  
- 調整後の二項オブジェクトが&2; つ目の引数の固定値と比較する引数の値。  
+ 調整後の二項オブジェクトが 2 つ目の引数の固定値と比較する引数の値。  
   
 ## <a name="return-value"></a>戻り値  
- 二項関数オブジェクトの&2; つ目の引数を値 `right.` にバインドした結果として生成される単項関数オブジェクト。  
+ 二項関数オブジェクトの 2 つ目の引数を値 `right.` にバインドした結果として生成される単項関数オブジェクト。  
   
 ## <a name="remarks"></a>コメント  
  テンプレート クラスは、二項関数オブジェクト _ *Func* のコピーを **op** に、`right` のコピーを **value** に格納します。 そのメンバー関数 `operator()` は **op**( `left`, **value**) を返すように定義されています。  
   
- `Func` が型 **Operation** のオブジェクトで、c が定数の場合、[bind2nd](../standard-library/functional-functions.md#bind2nd_function) ( `Func`, `c` ) は `binder2nd` class constructor `binder2nd`\< **Operation**> ( `Func`, `c` ) と等しくなり、より便利です。  
+ `Func` が型 **Operation** のオブジェクトで、c が定数の場合、[bind2nd](../standard-library/functional-functions.md#bind2nd) ( `Func`, `c` ) は `binder2nd` class constructor `binder2nd`\< **Operation**> ( `Func`, `c` ) と等しくなり、より便利です。  
   
 ## <a name="example"></a>例  
   
