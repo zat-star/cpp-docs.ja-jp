@@ -82,10 +82,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 236fc62186319c3c9e707456d298edd7016496e8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4955b5741413458b4a24a1b359343174ad484f2a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strlwr-wcslwr-mbslwr-strlwrl-wcslwrl-mbslwrl"></a>_strlwr、_wcslwr、_mbslwr、_strlwr_l、_wcslwr_l、_mbslwr_l
@@ -158,7 +159,7 @@ unsigned char *_mbslwr_l(
  これらの各関数は、変換された文字列へのポインターを返します。 同じ位置で変更が実行されるため、返されるポインターは入力引数として渡されるポインターと同じです。 エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
- `_strlwr` 関数は、`str` 内の大文字をロケールの `LC_CTYPE` カテゴリの設定によって決定される小文字に変換します。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、それらのロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケールを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_strlwr` 関数は、`str` 内の大文字をロケールの `LC_CTYPE` カテゴリの設定によって決定される小文字に変換します。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 この関数のバージョン、`_l`サフィックスを使用して、ロケールに依存する動作に現在のロケール以外のバージョンで、`_l`代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `_wcslwr` 関数と `_mbslwr` 関数は、`_strlwr` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcslwr` 関数の引数と戻り値はワイド文字列で、`_mbslwr` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
   
@@ -218,9 +219,6 @@ Mixed: The String to End All Strings!
 Lower: the string to end all strings!  
 Upper: THE STRING TO END ALL STRINGS!  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::ToLower](https://msdn.microsoft.com/en-us/library/system.string.tolower.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: fa76512c47fd7412227a26de3de05190c687c4b3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 536e39fdb795580a770c6bee474d3bc03614879c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltallocatorsgt"></a>&lt;allocators&gt;
@@ -52,7 +53,7 @@ ms.lasthandoff: 02/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- \<allocators> ヘッダーは、ノード ベースのコンテナーのメモリ管理方法を選択するために使用できる&6; つのアロケーター テンプレートを提供します。 これらのテンプレートで使用するため、さまざまなマルチスレッド スキーム (なしを含む) に合わせてメモリ管理方法を調整するためのさまざまな同期フィルターも用意されています。 メモリ管理方法を、既知のメモリ使用パターン、および特定のアプリケーションの同期の要件に合わせることで、多くの場合、アプリケーション全体の速度の向上やメモリ要件を軽減できます。  
+ \<allocators> ヘッダーは、ノード ベースのコンテナーのメモリ管理方法を選択するために使用できる 6 つのアロケーター テンプレートを提供します。 これらのテンプレートで使用するため、さまざまなマルチスレッド スキーム (なしを含む) に合わせてメモリ管理方法を調整するためのさまざまな同期フィルターも用意されています。 メモリ管理方法を、既知のメモリ使用パターン、および特定のアプリケーションの同期の要件に合わせることで、多くの場合、アプリケーション全体の速度の向上やメモリ要件を軽減できます。  
   
  アロケーター テンプレートを、カスタマイズまたは交換可能な再利用可能なコンポーネントと共に実装することで、追加のメモリ管理方法が提供されます。  
   
@@ -82,7 +83,7 @@ ms.lasthandoff: 02/24/2017
   
 - [allocator_chunklist](../standard-library/allocator-chunklist-class.md)  
   
- 次のコード例のようなコンテナーを作成する際に、アロケーターの適切なインスタンス化を&2; 番目の型引数として使用します。  
+ 次のコード例のようなコンテナーを作成する際に、アロケーターの適切なインスタンス化を 2 番目の型引数として使用します。  
   
  `#include <list>`  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 02/24/2017
   
  _Lst1 は、`allocator_chunklist` と [sync_per_thread](../standard-library/sync-per-thread-class.md) 同期フィルターを使用してノードを割り当てます。  
   
- ブロック アロケーターは、キャッシュまたはフィルターです。 キャッシュは、std::size_t 型の引数を&1; つ取るテンプレート クラスです。 1 つのサイズのメモリ ブロックを割り当ておよび割り当て解除するブロック アロケーターを定義します。 演算子 `new` を使用してメモリを取得する必要がありますが、ブロックごとに演算子 `new` を呼び出す必要はありません。 たとえば、より大規模なブロックからサブ割り当てしたり、割り当て解除したブロックを後続の再割り当てのためにキャッシュしたりすることができます。  
+ ブロック アロケーターは、キャッシュまたはフィルターです。 キャッシュは、std::size_t 型の引数を 1 つ取るテンプレート クラスです。 1 つのサイズのメモリ ブロックを割り当ておよび割り当て解除するブロック アロケーターを定義します。 演算子 `new` を使用してメモリを取得する必要がありますが、ブロックごとに演算子 `new` を呼び出す必要はありません。 たとえば、より大規模なブロックからサブ割り当てしたり、割り当て解除したブロックを後続の再割り当てのためにキャッシュしたりすることができます。  
   
  再バインドをコンパイルできないコンパイラでは、テンプレートがインスタンス化されたときに使用した std::size_t 引数の値は、必ずしもキャッシュのメンバー関数 allocate と deallocate に渡された引数 _Sz の値ではありません。  
   
@@ -158,8 +159,8 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!= (\<allocators>)](../standard-library/allocators-operators.md#operator_neq)|指定したクラスのアロケーター オブジェクト間の非等値をテストします。|  
-|[operator== (\<allocators>)](../standard-library/allocators-operators.md#operator_eq_eq)|指定したクラスのアロケーター オブジェクト間の等値をテストします。|  
+|[operator!= (\<allocators>)](../standard-library/allocators-operators.md#op_neq)|指定したクラスのアロケーター オブジェクト間の非等値をテストします。|  
+|[operator== (\<allocators>)](../standard-library/allocators-operators.md#op_eq_eq)|指定したクラスのアロケーター オブジェクト間の等値をテストします。|  
   
 ### <a name="classes"></a>クラス  
   

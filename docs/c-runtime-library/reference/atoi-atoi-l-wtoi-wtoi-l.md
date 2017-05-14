@@ -1,66 +1,84 @@
 ---
-title: "atoi、_atoi_l、_wtoi、_wtoi_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wtoi"
-  - "_wtoi_l"
-  - "atoi"
-  - "_atoi_l"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-convert-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_tstoi"
-  - "_wtoi"
-  - "_ttoi"
-  - "atoi"
-  - "_atoi_l"
-  - "_wtoi_l"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_atoi_l 関数"
-  - "ttoi 関数"
-  - "atoi_l 関数"
-  - "文字列変換、整数への"
-  - "_wtoi 関数"
-  - "wtoi_l 関数"
-  - "tstoi 関数"
-  - "_ttoi 関数"
-  - "_tstoi 関数"
-  - "_wtoi_l 関数"
-  - "atoi 関数"
-  - "wtoi 関数"
+title: "atoi、_atoi_l、_wtoi、_wtoi_l |Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wtoi
+- _wtoi_l
+- atoi
+- _atoi_l
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-convert-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _tstoi
+- _wtoi
+- _ttoi
+- atoi
+- _atoi_l
+- _wtoi_l
+dev_langs:
+- C++
+helpviewer_keywords:
+- _atoi_l function
+- ttoi function
+- atoi_l function
+- string conversion, to integers
+- _wtoi function
+- wtoi_l function
+- tstoi function
+- _ttoi function
+- _tstoi function
+- _wtoi_l function
+- atoi function
+- wtoi function
 ms.assetid: ad7fda30-28ab-421f-aaad-ef0b8868663a
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# atoi、_atoi_l、_wtoi、_wtoi_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 5ed38a5d4c5a9ff6d976302cc52cc14672a4d60b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-整数に変換します。  
+---
+# <a name="atoi-atoil-wtoi-wtoil"></a>atoi、_atoi_l、_wtoi、_wtoi_l
+文字列を整数に変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int atoi(  
@@ -79,45 +97,45 @@ int _wtoi_l(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `str`  
  変換対象の文字列。  
   
  `locale`  
  使用するロケール。  
   
-## 戻り値  
- 各 `int` 値は数字として入力文字の解釈によって生成された関数の戻り値。  戻り値の型が、その型の値に変換できない場合、`atoi`と `_wtoi`の 0 です。  
+## <a name="return-value"></a>戻り値  
+ 各関数は、入力文字を数字として解釈して生成される `int` 値を返します。 入力をその型の値に変換できない場合、`atoi` と `_wtoi` の戻り値は 0 になります。  
   
- 大規模負のな整数値でオーバーフローの場合、`LONG_MIN` が返されます。  `atoi` と `_wtoi` はこれらの条件の `INT_MAX` と `INT_MIN` を返します。  範囲外のすべての場合、`errno` は `ERANGE` に設定されます。  渡されるパラメーターが `NULL`の場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、0 を返します。  
+ 大きい負の整数値によるオーバーフローの場合、`LONG_MIN` が返されます。 `atoi` と `_wtoi` は、これらの条件で `INT_MAX` と `INT_MIN` を返します。 範囲外のすべての場合、`errno` は `ERANGE` に設定されます。 渡されたパラメーターが `NULL` である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
-## 解説  
- これらの関数は、整数値に変換します。`atoi` と `_wtoi`\)。  入力文字列は、指定された型の数値として解釈できる文字シーケンスです。  関数は、数値の一部として認識できない文字に最初に遭遇した時点で入力文字列の読み取りを停止します。  この文字を文字列の末尾を表す null 文字 \(「\\0」または」L」\\0\) である場合もあります。  
+## <a name="remarks"></a>コメント  
+ これらの関数は、文字列を整数値に変換します (`atoi` と `_wtoi`)。 入力文字列は、指定された型の数値として解釈できる文字シーケンスです。 関数は、数値の一部として認識できない文字に最初に遭遇した時点で入力文字列の読み取りを停止します。 この文字は、文字列を終了する null 文字 ('\0' または L'\0') である場合があります。  
   
- `atoi` と `_wtoi` への `str` 引数に次のフォームがあります:  
+ `atoi` および `_wtoi` の `str` 引数には、次の形式があります。  
   
- \[`whitespace`\] \[`sign`\] \[`digits`\]\]  
+ [`whitespace`] [`sign`] [`digits`]]  
   
- `whitespace` はスペースまたはタブで構成され、無視されます。`sign` はプラス \(\+\) またはマイナス \(–\) のいずれかで、`digits` は 1 つ以上の数字です。  
+ A`whitespace`は無視されますスペースまたはタブ文字で構成されています。`sign`はプラス (+) またはマイナス記号 (-) です。 と`digits`は 1 つ以上の数字です。  
   
- `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tstoi`|`atoi`|`atoi`|`_wtoi`|  
 |`_ttoi`|`atoi`|`atoi`|`_wtoi`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`atoi`|\<stdlib.h\>|  
-|`_atoi_l`, `_wtoi`, `_wtoi_l`|\<stdlib.h\> または \<wchar.h\>|  
+|--------------|---------------------|  
+|`atoi`|\<stdlib.h>|  
+|`_atoi_l`、`_wtoi`、`_wtoi_l`|\<stdlib.h> または \<wchar.h>|  
   
-## 使用例  
- このプログラムは、文字列として格納される数が `atoi` 関数を使用して数値に変換する方法について説明します。  
+## <a name="example"></a>例  
+ このプログラムは、`atoi` 関数を使用して、文字列として格納されている数字を数値に変換する方法を示します。  
   
 ```  
 // crt_atoi.c  
@@ -156,22 +174,19 @@ int main( void )
 }  
 ```  
   
-  **関数: atoi \(「\-2309」\) \= \-2309**  
-**関数: atoi \(「31412764 "\) \= 31412764**  
-**関数: atoi \(「3336402735171707160320 "\) \= 2147483647**  
-**オーバーフローが発生しました。**   
-## 同等の .NET Framework 関数  
+```Output  
+Function: atoi( "  -2309 " ) = -2309  
+Function: atoi( "31412764" ) = 31412764  
+Function: atoi( "3336402735171707160320" ) = 2147483647  
+Overflow condition occurred.  
+```  
   
--   [System::Convert::ToInt32](https://msdn.microsoft.com/en-us/library/system.convert.toint32.aspx)  
-  
--   [System::Convert::ToUInt32](https://msdn.microsoft.com/en-us/library/system.convert.touint32.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ロケール](../../c-runtime-library/locale.md)   
- [\_ecvt](../../c-runtime-library/reference/ecvt.md)   
- [\_fcvt](../Topic/_fcvt.md)   
- [\_gcvt](../../c-runtime-library/reference/gcvt.md)   
- [setlocale、\_wsetlocale](../Topic/setlocale,%20_wsetlocale.md)   
- [\_atodbl、\_atodbl\_l、\_atoldbl、\_atoldbl\_l、\_atoflt、\_atoflt\_l](../../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)
+ [_ecvt](../../c-runtime-library/reference/ecvt.md)   
+ [_fcvt](../../c-runtime-library/reference/fcvt.md)   
+ [_gcvt](../../c-runtime-library/reference/gcvt.md)   
+ [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
+ [_atodbl、_atodbl_l、_atoldbl、_atoldbl_l、_atoflt、_atoflt_l](../../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)

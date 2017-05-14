@@ -64,10 +64,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 5caea89460070402fc8dc5b38912e290d4c5798d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 1b8ddbc48b00a037ae20632f4cd396e8e0ff2722
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="vaarg-vacopy-vaend-vastart"></a>va_arg、va_copy、va_end、va_start
@@ -116,7 +117,7 @@ void va_start(
  `va_arg` は現在の引数を返します。 `va_copy`、`va_start`、および `va_end` は値を返しません。  
   
 ## <a name="remarks"></a>コメント  
- 関数が可変個の引数を受け取る場合、`va_arg`、`va_copy`、`va_end`、および `va_start` の各マクロを使用することで、関数は移植性の高い方法で引数にアクセスできます。 このマクロには&2; 種類のバージョンがあります。STDARG.H で定義されているマクロは、ISO C99 標準に準拠します。VARARGS.H で定義されているマクロは使用されなくなりましたが、ANSI C89 標準以前に作成されたコードの下位互換性のために残されています。  
+ 関数が可変個の引数を受け取る場合、`va_arg`、`va_copy`、`va_end`、および `va_start` の各マクロを使用することで、関数は移植性の高い方法で引数にアクセスできます。 このマクロには 2 種類のバージョンがあります。STDARG.H で定義されているマクロは、ISO C99 標準に準拠します。VARARGS.H で定義されているマクロは使用されなくなりましたが、ANSI C89 標準以前に作成されたコードの下位互換性のために残されています。  
   
  これらのマクロは、関数が固定の個数の必須の引数の後に、省略可能な引数を可変個数受け取るものと想定します。 必須の引数は、関数の通常のパラメーターのように宣言され、パラメーター名でアクセスできます。 省略可能な引数は、STDARG.H (または、ANSI C89 標準以前に書かれたコードの場合は VARARGS.H) のマクロを使用してアクセスします。これらのマクロは、ポインターを引数リストの最初の省略可能な引数へセットし、リストから引数を取得し引数の処理が終了するとポインターをリセットします。  
   
@@ -165,7 +166,7 @@ int main()
 }  
 ```  
   
- `testit` では&2; 番目のパラメーターが `int` または `char*` である必要があることに注意してください。 渡される引数は 0xffffffff (`unsigned int` であり、`int` ではない) と `NULL` (実際には `int` であり、`char*` ではない) です。 ネイティブ コードの場合にプログラムをコンパイルすると、次の出力が生成されます。  
+ `testit` では 2 番目のパラメーターが `int` または `char*` である必要があることに注意してください。 渡される引数は 0xffffffff (`unsigned int` であり、`int` ではない) と `NULL` (実際には `int` であり、`char*` ではない) です。 ネイティブ コードの場合にプログラムをコンパイルすると、次の出力が生成されます。  
   
 ```Output  
 -1  
@@ -250,9 +251,6 @@ Deviation is: 2.236068
 Deviation is: 0.000000  
   
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::ParamArrayAttribute Class](https://msdn.microsoft.com/en-us/library/system.paramarrayattribute.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [引数へのアクセス](../../c-runtime-library/argument-access.md)   

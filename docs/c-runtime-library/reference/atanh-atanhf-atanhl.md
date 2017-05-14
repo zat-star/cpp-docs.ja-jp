@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 8cda9bb597a24cc3e7988ba8ef4c4f8103861ea3
-ms.openlocfilehash: 3b559db7a8d8f8fbc0672d8d8a644579fd9e1ca8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 4648fb28d20951b045abde39d0238de81a133f0c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="atanh-atanhf-atanhl"></a>atanh、atanhf、atanhl
@@ -88,7 +89,7 @@ long double atanhl(
  浮動小数点値。  
   
 ## <a name="return-value"></a>戻り値  
- `atanh` 関数は `x` の逆ハイパーボリック タンジェント (アーク ハイパーボリック タンジェント) を返します。 `x` が 1 より大きいか -1 未満の場合、`errno` が `EDOM` に設定され、結果は簡易な NaN です。 `x` が 1 または -1 の場合は、それぞれ正の無限大または負の無限大が返され、`errno` が `ERANGE` に設定されます。  
+ `atanh` 関数は `x` の逆ハイパーボリック タンジェント (アーク ハイパーボリック タンジェント) を返します。 場合`x`が 1、または-1 より小さい値を超える`errno`に設定されている`EDOM`され、結果は簡易な NaN です。 `x` が 1 または -1 の場合は、それぞれ正の無限大または負の無限大が返され、`errno` が `ERANGE` に設定されます。  
   
 |入力|SEH 例外|`Matherr` 例外|  
 |-----------|-------------------|-------------------------|  
@@ -133,9 +134,6 @@ int main( void )
 tanh( 0.785398 ) = 0.655794  
 atanh( 0.655794 ) = 0.785398  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

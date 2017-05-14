@@ -10,6 +10,8 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - atomic/std::atomic_flag
+- atomic/std::atomic_flag::clear
+- atomic/std::atomic_flag::test_and_set
 dev_langs:
 - C++
 ms.assetid: 17f0c2f5-fd39-4a44-873a-b569720a670e
@@ -31,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: d51596a70b0b79d39fee3095fc2b28fdd7c697f3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 9fe3617331c7019956af5d64789624e299c17242
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="atomicflag-structure"></a>atomic_flag 構造体
@@ -52,18 +55,18 @@ struct atomic_flag;
   
 |名前|説明|  
 |----------|-----------------|  
-|[atomic_flag::clear メソッド](#atomic_flag__clear_method)|格納されたフラグを `false` に設定します。|  
-|[atomic_flag::test_and_set メソッド](#atomic_flag__test_and_set_method)|格納されたフラグを `true` に設定し、フラグの初期値を返します。|  
+|[clear](#clear)|格納されたフラグを `false` に設定します。|  
+|[test_and_set](#test_and_set)|格納されたフラグを `true` に設定し、フラグの初期値を返します。|  
   
 ## <a name="remarks"></a>コメント  
- `atomic_flag` オブジェクトは、[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear_function)、[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit_function)、[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set_function)、および [atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit_function) の非メンバー関数に渡すことができます。 これらは、`ATOMIC_FLAG_INIT` の値を使用して初期化できます。  
+ `atomic_flag` オブジェクトは、[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear)、[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit)、[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set)、および [atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit) の非メンバー関数に渡すことができます。 これらは、`ATOMIC_FLAG_INIT` の値を使用して初期化できます。  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** atomic  
+ **ヘッダー:** \<アトミック >  
   
  **名前空間:** std  
   
-##  <a name="a-nameatomicflagclearmethoda--atomicflagclear-method"></a><a name="atomic_flag__clear_method"></a>  atomic_flag::clear メソッド  
+##  <a name="clear"></a>atomic_flag::clear
  指定された [memory_order](../standard-library/atomic-enums.md#memory_order_enum) の制約内で、`*this` に格納されている `bool` フラグを `false` に設定します。  
   
 ```
@@ -75,7 +78,7 @@ void atomic_flag::clear(memory_order Order = memory_order_seq_cst) noexcept;
  `Order`  
  [memory_order](../standard-library/atomic-enums.md#memory_order_enum)。  
   
-##  <a name="a-nameatomicflagtestandsetmethoda--atomicflagtestandset-method"></a><a name="atomic_flag__test_and_set_method"></a>  atomic_flag::test_and_set メソッド  
+##  <a name="test_and_set"></a>atomic_flag::test_and_set
  指定された [memory_order](../standard-library/atomic-enums.md#memory_order_enum) の制約内で、`*this` に格納されている `bool` フラグを `true` に設定します。  
   
 ```

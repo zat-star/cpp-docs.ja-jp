@@ -77,10 +77,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: de740ec295489829d236e2249f92ef98de655ad0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: f947080d27efa7794d08db06adef307072739984
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="strncnt-wcsncnt-mbsnbcnt-mbsnbcntl-mbsnccnt-mbsnccntl"></a>_strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l
@@ -137,9 +138,9 @@ size_t _mbsnccnt_l(
  `_strncnt` は、1 バイト文字列 `count` の最初の `str` バイトにある文字数を返します。 `_wcsncnt` は、ワイド文字列 `count` の最初の `str` ワイド文字にある文字数を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_mbsnbcnt` と `_mbsnbcnt_l` は、`count` の最初の `str` マルチバイト文字で見つかったバイト数をカウントします。 `_mbsnbcnt` と `_mbsnbcnt_l` は `mtob` の代わりとなる関数です。この&2; つの関数は `mtob` の代わりに使用する必要があります。  
+ `_mbsnbcnt` と `_mbsnbcnt_l` は、`count` の最初の `str` マルチバイト文字で見つかったバイト数をカウントします。 `_mbsnbcnt` と `_mbsnbcnt_l` は `mtob` の代わりとなる関数です。この 2 つの関数は `mtob` の代わりに使用する必要があります。  
   
- `_mbsnccnt` と `_mbsnccnt_l` は、`count` の最初の `str` バイトで見つかった文字数をカウントします。 `_mbsnccnt` と `_mbsnccnt_l` が&2; バイト文字の&2; 番目のバイトで NULL を検出すると、最初のバイトも NULL と見なされ、戻されるカウント値に含まれません。 `_mbsnccnt` と `_mbsnccnt_l` は `btom` の代わりとなる関数です。この&2; つの関数は `btom` の代わりに使用する必要があります。  
+ `_mbsnccnt` と `_mbsnccnt_l` は、`count` の最初の `str` バイトで見つかった文字数をカウントします。 `_mbsnccnt` と `_mbsnccnt_l` が 2 バイト文字の 2 番目のバイトで NULL を検出すると、最初のバイトも NULL と見なされ、戻されるカウント値に含まれません。 `_mbsnccnt` と `_mbsnccnt_l` は `btom` の代わりとなる関数です。この 2 つの関数は `btom` の代わりに使用する必要があります。  
   
  `str` が null ポインターであるか `count` が 0 の場合、これらの関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。また、`errno` を `EINVAL` に設定し、0 を返します。  
   
@@ -194,9 +195,6 @@ int main( void )
 ```  
 The first 10 characters are single-byte.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

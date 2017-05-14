@@ -1,89 +1,106 @@
 ---
 title: "_strlwr_s、_strlwr_s_l、_mbslwr_s、_mbslwr_s_l、_wcslwr_s、_wcslwr_s_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_strlwr_s_l"
-  - "_mbslwr_s_l"
-  - "_mbslwr_s"
-  - "_wcslwr_s"
-  - "_strlwr_s"
-  - "_wcslwr_s_l"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-multibyte-l1-1-0.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_strlwr_s_l"
-  - "_strlwr_s"
-  - "mbslwr_s_l"
-  - "strlwr_s_l"
-  - "_wcslwr_s"
-  - "strlwr_s"
-  - "mbslwr_s"
-  - "_wcslwr_s_l"
-  - "wcslwr_s_l"
-  - "_tcslwr_s"
-  - "_tcslwr_s_l"
-  - "_mbslwr_s_l"
-  - "wcslwr_s"
-  - "_mbslwr_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_mbslwr_s 関数"
-  - "_mbslwr_s_l 関数"
-  - "_strlwr_s 関数"
-  - "_strlwr_s_l 関数"
-  - "_tcslwr_s 関数"
-  - "_tcslwr_s_l 関数"
-  - "_wcslwr_s 関数"
-  - "_wcslwr_s_l 関数"
-  - "case, 変換"
-  - "変換 (大文字小文字を), CRT 関数"
-  - "mbslwr_s 関数"
-  - "mbslwr_s_l 関数"
-  - "文字列変換 [C++], case"
-  - "文字列 [C++], case"
-  - "文字列 [C++], 変換 (大文字小文字を)"
-  - "strlwr_s 関数"
-  - "strlwr_s_l 関数"
-  - "tcslwr_s 関数"
-  - "tcslwr_s_l 関数"
-  - "wcslwr_s 関数"
-  - "wcslwr_s_l 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _strlwr_s_l
+- _mbslwr_s_l
+- _mbslwr_s
+- _wcslwr_s
+- _strlwr_s
+- _wcslwr_s_l
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _strlwr_s_l
+- _strlwr_s
+- mbslwr_s_l
+- strlwr_s_l
+- _wcslwr_s
+- strlwr_s
+- mbslwr_s
+- _wcslwr_s_l
+- wcslwr_s_l
+- _tcslwr_s
+- _tcslwr_s_l
+- _mbslwr_s_l
+- wcslwr_s
+- _mbslwr_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- _tcslwr_s function
+- wcslwr_s function
+- _mbslwr_s function
+- _wcslwr_s function
+- strlwr_s_l function
+- mbslwr_s_l function
+- _strlwr_s function
+- string conversion [C++], case
+- strlwr_s function
+- wcslwr_s_l function
+- _tcslwr_s_l function
+- mbslwr_s function
+- strings [C++], case
+- _wcslwr_s_l function
+- converting case, CRT functions
+- _strlwr_s_l function
+- _mbslwr_s_l function
+- case, converting
+- tcslwr_s function
+- tcslwr_s_l function
+- strings [C++], converting case
 ms.assetid: 4883d31b-bdac-4049-83a1-91dfdeceee79
 caps.latest.revision: 42
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 42
----
-# _strlwr_s、_strlwr_s_l、_mbslwr_s、_mbslwr_s_l、_wcslwr_s、_wcslwr_s_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 33fa0536f811bf0fd8ac91d4cd227b6836ac79c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-現在のロケールまたは渡されたロケール オブジェクトを使用して、文字列を小文字に変換します。  [\_strlwr、\_wcslwr、\_mbslwr、\_strlwr\_l、\_wcslwr\_l、\_mbslwr\_l](../Topic/_strlwr,%20_wcslwr,%20_mbslwr,%20_strlwr_l,%20_wcslwr_l,%20_mbslwr_l.md) のこれらのバージョンは、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、セキュリティが強化されています。  
+---
+# <a name="strlwrs-strlwrsl-mbslwrs-mbslwrsl-wcslwrs-wcslwrsl"></a>_strlwr_s、_strlwr_s_l、_mbslwr_s、_mbslwr_s_l、_wcslwr_s、_wcslwr_s_l
+現在のロケールまたは渡されたロケール オブジェクトを使用して、文字列を小文字に変換します。 これらのバージョンの [_strlwr、_wcslwr、_mbslwr、_strlwr_l、_wcslwr_l、_mbslwr_l](../../c-runtime-library/reference/strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
   
 > [!IMPORTANT]
->  `_mbslwr_s` および `_mbslwr_s_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。  詳細については、「[\/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  `_mbslwr_s` および `_mbslwr_s_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _strlwr_s(  
@@ -142,7 +159,7 @@ errno_t _wcslwr_s_l(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `str`  
  小文字に変換する、NULL で終わる文字列。  
   
@@ -152,38 +169,38 @@ errno_t _wcslwr_s_l(
  `locale`  
  使用するロケール。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  正常終了した場合は 0 を返します。失敗した場合は 0 以外のエラー コードを返します。  
   
- これらの関数では、パラメーターの検証が行われます。  `str` が null で終わる有効な文字列でない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  `numberOfElements` が文字列の長さ未満の場合も、関数は `EINVAL` 返し、`errno` を `EINVAL` に設定します。  
+ これらの関数では、パラメーターの検証が行われます。 `str` が null で終わる有効な文字列でない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。 `numberOfElements` が文字列の長さ未満の場合も、関数は `EINVAL` 返し、`errno` を `EINVAL` に設定します。  
   
-## 解説  
- `_strlwr_s` 関数は、`str` 内の大文字を同じ位置で小文字に変換します。  `_mbslwr_s` 関数は、`_strlwr_s` 関数のマルチバイト文字バージョンで、`_strlwr_s` は `_wcslwr_s` のワイド文字バージョンです。  
+## <a name="remarks"></a>コメント  
+ `_strlwr_s` 関数は、`str` 内の大文字を同じ位置で小文字に変換します。 `_mbslwr_s` は、`_strlwr_s` のマルチバイト文字バージョンです。`_wcslwr_s` この関数は、`_strlwr_s` 関数のワイド文字バージョンです。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../Topic/setlocale,%20_wsetlocale.md)」を参照してください。  `_l` サフィックスが付いていないこの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
- C\+\+ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要がなくなる\) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。  この動作を無効にするには、[\_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
+ これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcslwr_s`|`_strlwr_s`|`_mbslwr_s`|`_wcslwr_s`|  
 |`_tcslwr_s_l`|`_strlwr_s_l`|`_mbslwr_s_l`|`_wcslwr_s_l`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_strlwr_s`, `_strlwr_s_l`|\<string.h\>|  
-|`_mbslwr_s`, `_mbslwr_s_l`|\<mbstring.h\>|  
-|`_wcslwr_s`, `_wcslwr_s_l`|\<string.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`_strlwr_s`, `_strlwr_s_l`|\<string.h>|  
+|`_mbslwr_s`, `_mbslwr_s_l`|\<mbstring.h>|  
+|`_wcslwr_s`, `_wcslwr_s_l`|\<string.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_strlwr_s.cpp  
@@ -215,14 +232,14 @@ int main()
 }  
 ```  
   
-  **混在: The String to End All Strings\!**  
-**小文字: the string to end all strings\!**  
-**大文字: THE STRING TO END ALL STRINGS\!**   
-## 同等の .NET Framework 関数  
- [System::String::ToLower](https://msdn.microsoft.com/en-us/library/system.string.tolower.aspx)  
+```Output  
+Mixed: The String to End All Strings!  
+Lower: the string to end all strings!  
+Upper: THE STRING TO END ALL STRINGS!  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [\_strupr\_s、\_strupr\_s\_l、\_mbsupr\_s、\_mbsupr\_s\_l、\_wcsupr\_s、\_wcsupr\_s\_l](../../c-runtime-library/reference/strupr-s-strupr-s-l-mbsupr-s-mbsupr-s-l-wcsupr-s-wcsupr-s-l.md)
+ [_strupr_s、_strupr_s_l、_mbsupr_s、_mbsupr_s_l、_wcsupr_s、_wcsupr_s_l](../../c-runtime-library/reference/strupr-s-strupr-s-l-mbsupr-s-mbsupr-s-l-wcsupr-s-wcsupr-s-l.md)

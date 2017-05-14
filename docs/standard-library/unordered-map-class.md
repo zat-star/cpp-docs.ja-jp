@@ -10,96 +10,94 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - unordered_map
-- std::unordered_map
 - unordered_map/std::unordered_map
-- std::unordered_map::allocator_type
 - unordered_map/std::unordered_map::allocator_type
-- std::unordered_map::const_iterator
 - unordered_map/std::unordered_map::const_iterator
-- std::unordered_map::const_local_iterator
 - unordered_map/std::unordered_map::const_local_iterator
-- std::unordered_map::const_pointer
 - unordered_map/std::unordered_map::const_pointer
-- std::unordered_map::const_reference
 - unordered_map/std::unordered_map::const_reference
-- std::unordered_map::difference_type
 - unordered_map/std::unordered_map::difference_type
-- std::unordered_map::hasher
 - unordered_map/std::unordered_map::hasher
-- std::unordered_map::iterator
 - unordered_map/std::unordered_map::iterator
-- std::unordered_map::key_equal
 - unordered_map/std::unordered_map::key_equal
-- std::unordered_map::key_type
 - unordered_map/std::unordered_map::key_type
-- std::unordered_map::local_iterator
 - unordered_map/std::unordered_map::local_iterator
-- std::unordered_map::mapped_type
 - unordered_map/std::unordered_map::mapped_type
-- std::unordered_map::pointer
 - unordered_map/std::unordered_map::pointer
-- std::unordered_map::reference
 - unordered_map/std::unordered_map::reference
-- std::unordered_map::size_type
 - unordered_map/std::unordered_map::size_type
-- std::unordered_map::value_type
 - unordered_map/std::unordered_map::value_type
-- std::unordered_map::at
 - unordered_map/std::unordered_map::at
-- std::unordered_map::begin
 - unordered_map/std::unordered_map::begin
-- std::unordered_map::bucket
 - unordered_map/std::unordered_map::bucket
-- std::unordered_map::bucket_count
 - unordered_map/std::unordered_map::bucket_count
-- std::unordered_map::bucket_size
 - unordered_map/std::unordered_map::bucket_size
-- std::unordered_map::cbegin
 - unordered_map/std::unordered_map::cbegin
-- std::unordered_map::cend
 - unordered_map/std::unordered_map::cend
-- std::unordered_map::clear
 - unordered_map/std::unordered_map::clear
-- std::unordered_map::count
 - unordered_map/std::unordered_map::count
-- std::unordered_map::emplace
 - unordered_map/std::unordered_map::emplace
-- std::unordered_map::emplace_hint
 - unordered_map/std::unordered_map::emplace_hint
-- std::unordered_map::empty
 - unordered_map/std::unordered_map::empty
-- std::unordered_map::end
 - unordered_map/std::unordered_map::end
-- std::unordered_map::equal_range
 - unordered_map/std::unordered_map::equal_range
-- std::unordered_map::erase
 - unordered_map/std::unordered_map::erase
-- std::unordered_map::find
 - unordered_map/std::unordered_map::find
-- std::unordered_map::get_allocator
 - unordered_map/std::unordered_map::get_allocator
-- std::unordered_map::hash_function
-- unordered_map/std::unordered_map::hash_function
-- std::unordered_map::insert
+- unordered_map/std::unordered_map::hash
 - unordered_map/std::unordered_map::insert
-- std::unordered_map::key_eq
 - unordered_map/std::unordered_map::key_eq
-- std::unordered_map::load_factor
 - unordered_map/std::unordered_map::load_factor
-- std::unordered_map::max_bucket_count
 - unordered_map/std::unordered_map::max_bucket_count
-- std::unordered_map::max_load_factor
 - unordered_map/std::unordered_map::max_load_factor
-- std::unordered_map::max_size
 - unordered_map/std::unordered_map::max_size
-- std::unordered_map::rehash
 - unordered_map/std::unordered_map::rehash
-- std::unordered_map::size
 - unordered_map/std::unordered_map::size
-- std::unordered_map::swap
 - unordered_map/std::unordered_map::swap
-- std::unordered_map::unordered_map
 - unordered_map/std::unordered_map::unordered_map
+- unordered_map/std::unordered_map::allocator_type
+- unordered_map/std::unordered_map::const_iterator
+- unordered_map/std::unordered_map::const_local_iterator
+- unordered_map/std::unordered_map::const_pointer
+- unordered_map/std::unordered_map::const_reference
+- unordered_map/std::unordered_map::difference_type
+- unordered_map/std::unordered_map::hasher
+- unordered_map/std::unordered_map::iterator
+- unordered_map/std::unordered_map::key_equal
+- unordered_map/std::unordered_map::key_type
+- unordered_map/std::unordered_map::local_iterator
+- unordered_map/std::unordered_map::mapped_type
+- unordered_map/std::unordered_map::pointer
+- unordered_map/std::unordered_map::reference
+- unordered_map/std::unordered_map::size_type
+- unordered_map/std::unordered_map::value_type
+- unordered_map/std::unordered_map::at
+- unordered_map/std::unordered_map::begin
+- unordered_map/std::unordered_map::bucket
+- unordered_map/std::unordered_map::bucket_count
+- unordered_map/std::unordered_map::bucket_size
+- unordered_map/std::unordered_map::cbegin
+- unordered_map/std::unordered_map::cend
+- unordered_map/std::unordered_map::clear
+- unordered_map/std::unordered_map::count
+- unordered_map/std::unordered_map::emplace
+- unordered_map/std::unordered_map::emplace_hint
+- unordered_map/std::unordered_map::empty
+- unordered_map/std::unordered_map::end
+- unordered_map/std::unordered_map::equal_range
+- unordered_map/std::unordered_map::erase
+- unordered_map/std::unordered_map::find
+- unordered_map/std::unordered_map::get_allocator
+- unordered_map/std::unordered_map::hash_function
+- unordered_map/std::unordered_map::insert
+- unordered_map/std::unordered_map::key_eq
+- unordered_map/std::unordered_map::load_factor
+- unordered_map/std::unordered_map::max_bucket_count
+- unordered_map/std::unordered_map::max_load_factor
+- unordered_map/std::unordered_map::max_size
+- unordered_map/std::unordered_map::rehash
+- unordered_map/std::unordered_map::size
+- unordered_map/std::unordered_map::swap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -123,14 +121,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 82ef90b457ea875cc9237ad4aae73202c13ad4ea
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 8e32440470dd576757e631ec7c74971dc5338a6c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="unorderedmap-class"></a>unordered_map クラス
-このテンプレート クラスは、`std::pair<const Key, Ty>` 型要素の可変長シーケンスを制御するオブジェクトを表します。 このシーケンスは、ハッシュ関数によって、"バケット" と呼ばれる一列に並んだサブシーケンスに分割され、弱い順序付けがなされます。 各バケット内では、比較関数によって要素間の大小関係が決定されます。 各要素は、並べ替えキーと値という、2 つのオブジェクトを持ちます。 このシーケンスは、すべてのバケットの長さがおおよそ等しければ、シーケンス内の要素数にかかわらず一定の演算回数 (定数時間) で、任意の要素を検索、挿入、削除できるような方法で表現されます。 最悪のケースは、すべての要素が&1; つのバケットに集められたときです。演算の回数は、シーケンス内の要素数に比例して増えることになります (線形時間)。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
+このテンプレート クラスは、`std::pair<const Key, Ty>` 型要素の可変長シーケンスを制御するオブジェクトを表します。 このシーケンスは、ハッシュ関数によって、"バケット" と呼ばれる一列に並んだサブシーケンスに分割され、弱い順序付けがなされます。 各バケット内では、比較関数によって要素間の大小関係が決定されます。 各要素は、並べ替えキーと値という、2 つのオブジェクトを持ちます。 このシーケンスは、すべてのバケットの長さがおおよそ等しければ、シーケンス内の要素数にかかわらず一定の演算回数 (定数時間) で、任意の要素を検索、挿入、削除できるような方法で表現されます。 最悪のケースは、すべての要素が 1 つのバケットに集められたときです。演算の回数は、シーケンス内の要素数に比例して増えることになります (線形時間)。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -159,76 +158,76 @@ class unordered_map;
 |||  
 |-|-|  
 |型定義|説明|  
-|[unordered_map::allocator_type](#unordered_map__allocator_type)|ストレージを管理するためのアロケーターの型です。|  
-|[unordered_map::const_iterator](#unordered_map__const_iterator)|被制御シーケンスの定数反復子の型です。|  
-|[unordered_map::const_local_iterator](#unordered_map__const_local_iterator)|被制御シーケンスの定数バケット反復子の型です。|  
-|[unordered_map::const_pointer](#unordered_map__const_pointer)|要素への定数ポインターの型です。|  
-|[unordered_map::const_reference](#unordered_map__const_reference)|要素への定数参照の型です。|  
-|[unordered_map::difference_type](#unordered_map__difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[unordered_map::hasher](#unordered_map__hasher)|ハッシュ関数の型です。|  
-|[unordered_map::iterator](#unordered_map__iterator)|被制御シーケンスの反復子の型です。|  
-|[unordered_map::key_equal](#unordered_map__key_equal)|比較関数の型です。|  
-|[unordered_map::key_type](#unordered_map__key_type)|順序付けキーの型です。|  
-|[unordered_map::local_iterator](#unordered_map__local_iterator)|被制御シーケンスのバケット反復子の型です。|  
-|[unordered_map::mapped_type](#unordered_map__mapped_type)|各キーに関連付けられた、マップされた値の型です。|  
-|[unordered_map::pointer](#unordered_map__pointer)|要素へのポインターの型です。|  
-|[unordered_map::reference](#unordered_map__reference)|要素への参照の型です。|  
-|[unordered_map::size_type](#unordered_map__size_type)|2 つの要素間の距離を表す、符号なしの型です。|  
-|[unordered_map::value_type](#unordered_map__value_type)|要素の型。|  
+|[allocator_type](#allocator_type)|ストレージを管理するためのアロケーターの型です。|  
+|[const_iterator](#const_iterator)|被制御シーケンスの定数反復子の型です。|  
+|[const_local_iterator](#const_local_iterator)|被制御シーケンスの定数バケット反復子の型です。|  
+|[const_pointer](#const_pointer)|要素への定数ポインターの型です。|  
+|[const_reference](#const_reference)|要素への定数参照の型です。|  
+|[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[hasher](#hasher)|ハッシュ関数の型です。|  
+|[iterator](#iterator)|被制御シーケンスの反復子の型です。|  
+|[並べ替えます](#key_equal)|比較関数の型です。|  
+|[key_type](#key_type)|順序付けキーの型です。|  
+|[local_iterator](#local_iterator)|被制御シーケンスのバケット反復子の型です。|  
+|[mapped_type](#mapped_type)|各キーに関連付けられた、マップされた値の型です。|  
+|[pointer](#pointer)|要素へのポインターの型です。|  
+|[reference](#reference)|要素への参照の型です。|  
+|[size_type](#size_type)|2 つの要素間の距離を表す、符号なしの型です。|  
+|[value_type](#value_type)|要素の型。|  
   
 |||  
 |-|-|  
 |メンバー関数|説明|  
-|[unordered_map::at](#unordered_map__at)|指定したキーを持つ要素を検索します。|  
-|[unordered_map::begin](#unordered_map__begin)|被制御シーケンスの先頭を指定します。|  
-|[unordered_map::bucket](#unordered_map__bucket)|キー値のバケット番号を取得します。|  
-|[unordered_map::bucket_count](#unordered_map__bucket_count)|バケット数を取得します。|  
-|[unordered_map::bucket_size](#unordered_map__bucket_size)|バケットのサイズを取得します。|  
-|[unordered_map::cbegin](#unordered_map__cbegin)|被制御シーケンスの先頭を指定します。|  
-|[unordered_map::cend](#unordered_map__cend)|被制御シーケンスの末尾を指定します。|  
-|[unordered_map::clear](#unordered_map__clear)|すべての要素を削除します。|  
-|[unordered_map::count](#unordered_map__count)|指定したキーに一致する要素の数を検索します。|  
-|[unordered_map::emplace](#unordered_map__emplace)|構築された要素を適切な場所に追加します。|  
-|[unordered_map::emplace_hint](#unordered_map__emplace_hint)|構築された要素を適切な場所にヒントと一緒に追加します。|  
-|[unordered_map::empty](#unordered_map__empty)|要素が存在しないかどうかをテストします。|  
-|[unordered_map::end](#unordered_map__end)|被制御シーケンスの末尾を指定します。|  
-|[unordered_map::equal_range](#unordered_map__equal_range)|指定したキーに一致する範囲を検索します。|  
-|[unordered_map::erase](#unordered_map__erase)|指定した位置にある要素を削除します。|  
-|[unordered_map::find](#unordered_map__find)|指定したキーに一致する要素を検索します。|  
-|[unordered_map::get_allocator](#unordered_map__get_allocator)|格納されているアロケーター オブジェクトを取得します。|  
-|[unordered_map::hash_function](#unordered_map__hash_function)|格納されているハッシュ関数オブジェクトを取得します。|  
-|[unordered_map::insert](#unordered_map__insert)|要素を追加します。|  
-|[unordered_map::key_eq](#unordered_map__key_eq)|格納されている比較関数オブジェクトを取得します。|  
-|[unordered_map::load_factor](#unordered_map__load_factor)|バケットごとの平均要素数をカウントします。|  
-|[unordered_map::max_bucket_count](#unordered_map__max_bucket_count)|最大バケット数を取得します。|  
-|[unordered_map::max_load_factor](#unordered_map__max_load_factor)|バケットあたりの最大要素数を取得または設定します。|  
-|[unordered_map::max_size](#unordered_map__max_size)|被制御シーケンスの最大サイズを取得します。|  
-|[unordered_map::rehash](#unordered_map__rehash)|ハッシュ テーブルをリビルドします。|  
-|[unordered_map::size](#unordered_map__size)|要素の数をカウントします。|  
-|[unordered_map::swap](#unordered_map__swap)|2 つのコンテナーのコンテンツを交換します。|  
-|[unordered_map::unordered_map](#unordered_map__unordered_map)|コンテナー オブジェクトを構築します。|  
+|[at](#at)|指定したキーを持つ要素を検索します。|  
+|[begin](#begin)|被制御シーケンスの先頭を指定します。|  
+|[バケット](#bucket)|キー値のバケット番号を取得します。|  
+|[bucket_count](#bucket_count)|バケット数を取得します。|  
+|[bucket_size](#bucket_size)|バケットのサイズを取得します。|  
+|[cbegin](#cbegin)|被制御シーケンスの先頭を指定します。|  
+|[cend](#cend)|被制御シーケンスの末尾を指定します。|  
+|[clear](#clear)|すべての要素を削除します。|  
+|[count](#count)|指定したキーに一致する要素の数を検索します。|  
+|[emplace](#emplace)|構築された要素を適切な場所に追加します。|  
+|[emplace_hint](#emplace_hint)|構築された要素を適切な場所にヒントと一緒に追加します。|  
+|[empty](#empty)|要素が存在しないかどうかをテストします。|  
+|[end](#end)|被制御シーケンスの末尾を指定します。|  
+|[equal_range](#equal_range)|指定したキーに一致する範囲を検索します。|  
+|[erase](#erase)|指定した位置にある要素を削除します。|  
+|[find](#find)|指定したキーに一致する要素を検索します。|  
+|[get_allocator](#get_allocator)|格納されているアロケーター オブジェクトを取得します。|  
+|[hash_function](#hash)|格納されているハッシュ関数オブジェクトを取得します。|  
+|[insert](#insert)|要素を追加します。|  
+|[key_eq](#key_eq)|格納されている比較関数オブジェクトを取得します。|  
+|[load_factor](#load_factor)|バケットごとの平均要素数をカウントします。|  
+|[max_bucket_count](#max_bucket_count)|最大バケット数を取得します。|  
+|[max_load_factor](#max_load_factor)|バケットあたりの最大要素数を取得または設定します。|  
+|[max_size](#max_size)|被制御シーケンスの最大サイズを取得します。|  
+|[rehash](#rehash)|ハッシュ テーブルをリビルドします。|  
+|[size](#size)|要素の数をカウントします。|  
+|[swap](#swap)|2 つのコンテナーのコンテンツを交換します。|  
+|[unordered_map](#unordered_map)|コンテナー オブジェクトを構築します。|  
   
 |||  
 |-|-|  
 |演算子|説明|  
-|[unordered_map::operator[]](#unordered_map__operator_at)|指定したキーを持つ要素を検索または挿入します。|  
-|[unordered_map::operator=](#unordered_map__operator_eq)|ハッシュ テーブルをコピーします。|  
+|[unordered_map::operator[]](#op_at)|指定したキーを持つ要素を検索または挿入します。|  
+|[unordered_map::operator=](#op_eq)|ハッシュ テーブルをコピーします。|  
   
 ## <a name="remarks"></a>コメント  
- このオブジェクトは、このオブジェクトが制御するシーケンスを、格納されている&2; つのオブジェクト ([unordered_map::key_equal](#unordered_map__key_equal) 型の比較関数オブジェクトと、[unordered_map::hasher](#unordered_map__hasher) 型のハッシュ関数オブジェクト) を呼び出すことによって並べ替えます。 格納されている&1; つ目のオブジェクトには、メンバー関数 [unordered_map::key_eq](#unordered_map__key_eq)`()` を呼び出すことによってアクセスします。格納されている&2; つ目のオブジェクトには、メンバー関数 [unordered_map::hash_function](#unordered_map__hash_function)`()` を呼び出すことによってアクセスします。 具体的には、`X` 型のすべての値 `Y` と `Key` について、`key_eq()(X, Y)` が呼び出され、2 つの引数値の大小関係が等しい場合は true が返されます。`hash_function()(keyval)` の呼び出しからは、`size_t` 型の値の分布が生成されます。 [unordered_multimap クラス](../standard-library/unordered-multimap-class.md)のテンプレート クラスとは異なり、`unordered_map` テンプレート クラスのオブジェクトでは、被制御シーケンスの任意の&2; つの要素間で `key_eq()(X, Y)` が常に false になることが保証されます。 キーの重複は許されません。  
+ このオブジェクトは、このオブジェクトが制御するシーケンスを、格納されている 2 つのオブジェクト ([unordered_map::key_equal](#key_equal) 型の比較関数オブジェクトと、[unordered_map::hasher](#hasher) 型のハッシュ関数オブジェクト) を呼び出すことによって並べ替えます。 格納されている 1 つ目のオブジェクトには、メンバー関数 [unordered_map::key_eq](#key_eq)`()` を呼び出すことによってアクセスします。格納されている 2 つ目のオブジェクトには、メンバー関数 [unordered_map::hash_function](#hash)`()` を呼び出すことによってアクセスします。 具体的には、`X` 型のすべての値 `Y` と `Key` について、`key_eq()(X, Y)` が呼び出され、2 つの引数値の大小関係が等しい場合は true が返されます。`hash_function()(keyval)` の呼び出しからは、`size_t` 型の値の分布が生成されます。 [unordered_multimap クラス](../standard-library/unordered-multimap-class.md)のテンプレート クラスとは異なり、`unordered_map` テンプレート クラスのオブジェクトでは、被制御シーケンスの任意の 2 つの要素間で `key_eq()(X, Y)` が常に false になることが保証されます。 キーの重複は許されません。  
   
- このオブジェクトには、さらに、適切とされるバケットあたりの最大平均要素数を指定する最大テーブル占有率が格納されます。 要素を挿入することによって [unordered_map::load_factor](#unordered_map__load_factor)`()` が最大テーブル占有率を超えるような場合、コンテナーは、バケット数を増やし、必要に応じて、ハッシュ テーブルをリビルドします。  
+ このオブジェクトには、さらに、適切とされるバケットあたりの最大平均要素数を指定する最大テーブル占有率が格納されます。 要素を挿入することによって [unordered_map::load_factor](#load_factor)`()` が最大テーブル占有率を超えるような場合、コンテナーは、バケット数を増やし、必要に応じて、ハッシュ テーブルをリビルドします。  
   
  被制御シーケンスにおける要素の実際の順序は、ハッシュ関数、比較関数、挿入の順序、最大テーブル占有率、現在のバケット数などによって異なります。 通常、被制御シーケンス内の要素の順序を予測することはできません。 ただし、被制御シーケンス内で同じ大小関係を持った一連の要素は必ず隣接して存在します。  
   
- 被制御シーケンスに対するストレージの割り当ておよび解放は、格納されている [unordered_map::allocator_type](#unordered_map__allocator_type) 型のアロケーター オブジェクトを介して行われます。 このアロケーター オブジェクトは、`allocator` テンプレート クラスのオブジェクトと同じ外部インターフェイスを持っている必要があります。 コンテナー オブジェクトを代入しても、格納されているアロケーター オブジェクトはコピーされない点に注意してください。  
+ 被制御シーケンスに対するストレージの割り当ておよび解放は、格納されている [unordered_map::allocator_type](#allocator_type) 型のアロケーター オブジェクトを介して行われます。 このアロケーター オブジェクトは、`allocator` テンプレート クラスのオブジェクトと同じ外部インターフェイスを持っている必要があります。 コンテナー オブジェクトを代入しても、格納されているアロケーター オブジェクトはコピーされない点に注意してください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<unordered_map>  
   
  **名前空間:** std  
   
-##  <a name="a-nameunorderedmapallocatortypea--unorderedmapallocatortype"></a><a name="unordered_map__allocator_type"></a>  unordered_map::allocator_type  
+##  <a name="allocator_type"></a>  unordered_map::allocator_type  
  ストレージを管理するためのアロケーターの型です。  
   
 ```  
@@ -265,7 +264,7 @@ int main()
 al == std::allocator() is true  
 ```  
   
-##  <a name="a-nameunorderedmapata--unorderedmapat"></a><a name="unordered_map__at"></a>  unordered_map::at  
+##  <a name="at"></a>  unordered_map::at  
  指定したキー値を持つ、unordered_map 内の要素を検索します。  
   
 ```  
@@ -278,7 +277,7 @@ const Ty& at(const Key& key) const;
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` key`|検索するキー値。|  
+|`key`|検索するキー値。|  
   
 ### <a name="return-value"></a>戻り値  
  見つかった要素のデータ値への参照。  
@@ -313,7 +312,7 @@ int main()
 }  
 ```  
   
-##  <a name="a-nameunorderedmapbegina--unorderedmapbegin"></a><a name="unordered_map__begin"></a>  unordered_map::begin  
+##  <a name="begin"></a>  unordered_map::begin  
  被制御シーケンスまたはバケットの先頭を指定します。  
   
 ```  
@@ -331,7 +330,7 @@ const_local_iterator begin(size_type nbucket) const;
 |`nbucket`|バケット番号。|  
   
 ### <a name="remarks"></a>コメント  
- 最初の&2; つのメンバー関数は、シーケンスの最初の要素 (または空のシーケンスの末尾の次の位置) を示す前方反復子を返します。 最後の&2; つのメンバー関数は、バケット `nbucket` の最初の要素 (または空のバケットの末尾の次の位置) を示す前方反復子を返します。  
+ 最初の 2 つのメンバー関数は、シーケンスの最初の要素 (または空のシーケンスの末尾の次の位置) を示す前方反復子を返します。 最後の 2 つのメンバー関数は、バケット `nbucket` の最初の要素 (または空のバケットの末尾の次の位置) を示す前方反復子を返します。  
   
 ### <a name="example"></a>例  
   
@@ -377,7 +376,7 @@ int main()
 [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapbucketa--unorderedmapbucket"></a><a name="unordered_map__bucket"></a>  unordered_map::bucket  
+##  <a name="bucket"></a>  unordered_map::bucket  
  キー値のバケット番号を取得します。  
   
 ```  
@@ -430,7 +429,7 @@ bucket('a') == 7
 bucket_size(7) == 1  
 ```  
   
-##  <a name="a-nameunorderedmapbucketcounta--unorderedmapbucketcount"></a><a name="unordered_map__bucket_count"></a>  unordered_map::bucket_count  
+##  <a name="bucket_count"></a>  unordered_map::bucket_count  
  バケット数を取得します。  
   
 ```  
@@ -516,7 +515,7 @@ max_load_factor() == 0.1
 
 ```  
   
-##  <a name="a-nameunorderedmapbucketsizea--unorderedmapbucketsize"></a><a name="unordered_map__bucket_size"></a>  unordered_map::bucket_size  
+##  <a name="bucket_size"></a>  unordered_map::bucket_size  
  バケットのサイズを取得します。  
   
 ```  
@@ -569,7 +568,7 @@ bucket('a') == 7
 bucket_size(7) == 1  
 ```  
   
-##  <a name="a-nameunorderedmapcbegina--unorderedmapcbegin"></a><a name="unordered_map__cbegin"></a>  unordered_map::cbegin  
+##  <a name="cbegin"></a>  unordered_map::cbegin  
  範囲内の最初の要素を示す `const` 反復子を返します。  
   
 ```  
@@ -592,7 +591,7 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator  
 ```  
   
-##  <a name="a-nameunorderedmapcenda--unorderedmapcend"></a><a name="unordered_map__cend"></a>  unordered_map::cend  
+##  <a name="cend"></a>  unordered_map::cend  
  範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
   
 ```  
@@ -616,7 +615,7 @@ auto i2 = Container.cend();
   
  `cend` によって返された値は逆参照しないでください。  
   
-##  <a name="a-nameunorderedmapcleara--unorderedmapclear"></a><a name="unordered_map__clear"></a>  unordered_map::clear  
+##  <a name="clear"></a>  unordered_map::clear  
  すべての要素を削除します。  
   
 ```  
@@ -624,7 +623,7 @@ void clear();
 ```  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数の呼び出し[unordered_map::erase](#unordered_map__erase) `(` [unordered_map::begin](#unordered_map__begin) `(),` [unordered_map::end](#unordered_map__end)`())`します。  
+ メンバー関数の呼び出し[unordered_map::erase](#erase) `(` [unordered_map::begin](#begin) `(),` [unordered_map::end](#end)`())`します。  
   
 ### <a name="example"></a>例  
   
@@ -682,7 +681,7 @@ size == 2
 empty() == false  
 ```  
   
-##  <a name="a-nameunorderedmapconstiteratora--unorderedmapconstiterator"></a><a name="unordered_map__const_iterator"></a>  unordered_map::const_iterator  
+##  <a name="const_iterator"></a>  unordered_map::const_iterator  
  被制御シーケンスの定数反復子の型です。  
   
 ```  
@@ -724,7 +723,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapconstlocaliteratora--unorderedmapconstlocaliterator"></a><a name="unordered_map__const_local_iterator"></a>  unordered_map::const_local_iterator  
+##  <a name="const_local_iterator"></a>  unordered_map::const_local_iterator  
  被制御シーケンスの定数バケット反復子の型です。  
   
 ```  
@@ -771,7 +770,7 @@ int main()
 [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapconstpointera--unorderedmapconstpointer"></a><a name="unordered_map__const_pointer"></a>  unordered_map::const_pointer  
+##  <a name="const_pointer"></a>  unordered_map::const_pointer  
  要素への定数ポインターの型です。  
   
 ```  
@@ -816,7 +815,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapconstreferencea--unorderedmapconstreference"></a><a name="unordered_map__const_reference"></a>  unordered_map::const_reference  
+##  <a name="const_reference"></a>  unordered_map::const_reference  
  要素への定数参照の型です。  
   
 ```  
@@ -861,7 +860,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapcounta--unorderedmapcount"></a><a name="unordered_map__count"></a>  unordered_map::count  
+##  <a name="count"></a>  unordered_map::count  
  指定したキーに一致する要素の数を検索します。  
   
 ```  
@@ -873,7 +872,7 @@ size_type count(const Key& keyval) const;
  検索対象のキー値。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[unordered_map::equal_range](#unordered_map__equal_range)`(keyval)` で区切られた範囲内の要素数を返します。  
+ このメンバー関数は、[unordered_map::equal_range](#equal_range)`(keyval)` で区切られた範囲内の要素数を返します。  
   
 ### <a name="example"></a>例  
   
@@ -914,7 +913,7 @@ count('b') == 1
 count('C') == 0  
 ```  
   
-##  <a name="a-nameunorderedmapdifferencetypea--unorderedmapdifferencetype"></a><a name="unordered_map__difference_type"></a>  unordered_map::difference_type  
+##  <a name="difference_type"></a>  unordered_map::difference_type  
  2 つの要素間の距離を表す、符号付きの型です。  
   
 ```  
@@ -922,7 +921,7 @@ typedef T3 difference_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 符号付き整数型は、被制御シーケンス内にある&2; つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。 ここでは、実装定義型 `T3`のシノニムとして記述されています。  
+ 符号付き整数型は、被制御シーケンス内にある 2 つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。 ここでは、実装定義型 `T3`のシノニムとして記述されています。  
   
 ### <a name="example"></a>例  
   
@@ -971,7 +970,7 @@ end()-begin() == 3
 begin()-end() == -3  
 ```  
   
-##  <a name="a-nameunorderedmapemplacea--unorderedmapemplace"></a><a name="unordered_map__emplace"></a>  unordered_map::emplace  
+##  <a name="emplace"></a>  unordered_map::emplace  
  インプレースで構築された (コピーまたは移動操作が実行されない) 要素を unordered_map に挿入します。  
   
 ```  
@@ -996,9 +995,9 @@ pair<iterator, bool>  emplace( Args&&... args);
   
  挿入時、例外がスローされたが、コンテナーのハッシュ関数ではエラーが発生しなかった場合、コンテナーは変更されません。 ハッシュ関数で例外がスローされた場合、結果は未定義になります。  
   
- コード例については、「[map::emplace](../standard-library/map-class.md#map__emplace)」を参照してください。  
+ コード例については、「[map::emplace](../standard-library/map-class.md#emplace)」を参照してください。  
   
-##  <a name="a-nameunorderedmapemplacehinta--unorderedmapemplacehint"></a><a name="unordered_map__emplace_hint"></a>  unordered_map::emplace_hint  
+##  <a name="emplace_hint"></a>  unordered_map::emplace_hint  
  インプレースで構築された (コピーまたは移動操作が実行されない) 要素を、配置ヒントと一緒に挿入します。  
   
 ```  
@@ -1024,11 +1023,11 @@ iterator emplace_hint(const_iterator where, Args&&... args);
   
  挿入時、例外がスローされたが、コンテナーのハッシュ関数ではエラーが発生しなかった場合、コンテナーは変更されません。 ハッシュ関数で例外がスローされた場合、結果は未定義になります。  
   
- 要素の [value_type](../standard-library/map-class.md#map__value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ 要素の [value_type](../standard-library/map-class.md#value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
   
- コード例については、「[map::emplace_hint](../standard-library/map-class.md#map__emplace_hint)」を参照してください。  
+ コード例については、「[map::emplace_hint](../standard-library/map-class.md#emplace_hint)」を参照してください。  
   
-##  <a name="a-nameunorderedmapemptya--unorderedmapempty"></a><a name="unordered_map__empty"></a>  unordered_map::empty  
+##  <a name="empty"></a>  unordered_map::empty  
  要素が存在しないかどうかをテストします。  
   
 ```  
@@ -1093,7 +1092,7 @@ size == 2
 empty() == false  
 ```  
   
-##  <a name="a-nameunorderedmapenda--unorderedmapend"></a><a name="unordered_map__end"></a>  unordered_map::end  
+##  <a name="end"></a>  unordered_map::end  
  被制御シーケンスの末尾を指定します。  
   
 ```  
@@ -1111,9 +1110,9 @@ const_local_iterator end(size_type nbucket) const;
 |`nbucket`|バケット番号。|  
   
 ### <a name="remarks"></a>コメント  
- 最初の&2; つのメンバー関数は、シーケンスの末尾の次を示す前方反復子を返します。 最後の&2; つのメンバー関数は、バケット `nbucket`の末尾の次を示す前方反復子を返します。  
+ 最初の 2 つのメンバー関数は、シーケンスの末尾の次を示す前方反復子を返します。 最後の 2 つのメンバー関数は、バケット `nbucket`の末尾の次を示す前方反復子を返します。  
   
-##  <a name="a-nameunorderedmapequalrangea--unorderedmapequalrange"></a><a name="unordered_map__equal_range"></a>  unordered_map::equal_range  
+##  <a name="equal_range"></a>  unordered_map::equal_range  
  指定したキーに一致する範囲を検索します。  
   
 ```  
@@ -1179,7 +1178,7 @@ equal_range('x'):
 equal_range('b'): [b, 2]  
 ```  
   
-##  <a name="a-nameunorderedmaperasea--unorderedmaperase"></a><a name="unordered_map__erase"></a>  unordered_map::erase  
+##  <a name="erase"></a>  unordered_map::erase  
  指定した位置から unordered_map 内の要素または要素範囲を削除するか、指定したキーと一致する要素を削除します。  
   
 ```  
@@ -1202,14 +1201,14 @@ size_type erase(const key_type& Key);
  削除される要素のキー値。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのメンバー関数の場合は、削除された要素の後の最初の残存要素、またはマップの最後の要素 (このような要素が存在しない場合) を指定する双方向反復子。  
+ 最初の 2 つのメンバー関数の場合は、削除された要素の後の最初の残存要素、またはマップの最後の要素 (このような要素が存在しない場合) を指定する双方向反復子。  
   
  3 番目のメンバー関数では、unordered_map から削除された要素の数が返されます。  
   
 ### <a name="remarks"></a>コメント  
- コード例については、「[map::erase](../standard-library/map-class.md#map__erase)」を参照してください。  
+ コード例については、「[map::erase](../standard-library/map-class.md#erase)」を参照してください。  
   
-##  <a name="a-nameunorderedmapfinda--unorderedmapfind"></a><a name="unordered_map__find"></a>  unordered_map::find  
+##  <a name="find"></a>  unordered_map::find  
  指定したキーに一致する要素を検索します。  
   
 ```  
@@ -1221,7 +1220,7 @@ const_iterator find(const Key& keyval) const;
  検索対象のキー値。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[unordered_map::equal_range](#unordered_map__equal_range)`(keyval).first` を返します。  
+ このメンバー関数は、[unordered_map::equal_range](#equal_range)`(keyval).first` を返します。  
   
 ### <a name="example"></a>例  
   
@@ -1267,7 +1266,7 @@ find('A') == false
 find('b') == true: [b, 2]  
 ```  
   
-##  <a name="a-nameunorderedmapgetallocatora--unorderedmapgetallocator"></a><a name="unordered_map__get_allocator"></a>  unordered_map::get_allocator  
+##  <a name="get_allocator"></a>  unordered_map::get_allocator  
  格納されているアロケーター オブジェクトを取得します。  
   
 ```  
@@ -1304,7 +1303,7 @@ int main()
 al == std::allocator() is true  
 ```  
   
-##  <a name="a-nameunorderedmaphashfunctiona--unorderedmaphashfunction"></a><a name="unordered_map__hash_function"></a>  unordered_map::hash_function  
+##  <a name="hash"></a>  unordered_map::hash_function  
  格納されているハッシュ関数オブジェクトを取得します。  
   
 ```  
@@ -1341,7 +1340,7 @@ hfn('a') == 1630279
 hfn('b') == 1647086  
 ```  
   
-##  <a name="a-nameunorderedmaphashera--unorderedmaphasher"></a><a name="unordered_map__hasher"></a>  unordered_map::hasher  
+##  <a name="hasher"></a>  unordered_map::hasher  
  ハッシュ関数の型です。  
   
 ```  
@@ -1378,7 +1377,7 @@ hfn('a') == 1630279
 hfn('b') == 1647086  
 ```  
   
-##  <a name="a-nameunorderedmapinserta--unorderedmapinsert"></a><a name="unordered_map__insert"></a>  unordered_map::insert  
+##  <a name="insert"></a>  unordered_map::insert  
  unordered_map に要素または要素範囲を挿入します。  
   
 ```  
@@ -1421,10 +1420,10 @@ IList);
 |パラメーター|説明|  
 |`Val`|キーが同じ順序付けになる要素が unordered_map にまだ含まれていない場合に、unordered_map に挿入される要素の値。|  
 |`Where`|正しい挿入ポイントの検索を開始する場所 |  
-|`ValTy`|unordered_map が [value_type](../standard-library/map-class.md#map__value_type) の要素を構築するために使用できる引数の型を指定し、`Val` を引数として完全転送するテンプレート パラメーター。|  
+|`ValTy`|unordered_map が [value_type](../standard-library/map-class.md#value_type) の要素を構築するために使用できる引数の型を指定し、`Val` を引数として完全転送するテンプレート パラメーター。|  
 |`First`|コピーされる最初の要素の位置。|  
 |`Last`|コピーされる最後の要素の次の位置。|  
-|`InputIterator`|[入力反復子](../standard-library/input-iterator-tag-struct.md)の要件を満たすテンプレート関数の引数。この反復子は、[value_type](../standard-library/map-class.md#map__value_type) オブジェクトの構築に使用できる型の要素を指し示します。|  
+|`InputIterator`|[入力反復子](../standard-library/input-iterator-tag-struct.md)の要件を満たすテンプレート関数の引数。この反復子は、[value_type](../standard-library/map-class.md#value_type) オブジェクトの構築に使用できる型の要素を指し示します。|  
 |`IList`|要素のコピー元の [initializer_list](../standard-library/initializer-list.md)。|  
   
 ### <a name="return-value"></a>戻り値  
@@ -1435,21 +1434,21 @@ IList);
 ### <a name="remarks"></a>コメント  
  この関数では、反復子、ポインター、参照は無効になりません。  
   
- 要素を&1; つだけ挿入するとき、例外がスローされたが、コンテナーのハッシュ関数ではエラーが発生しなかった場合、コンテナーの状態は変更されません。 ハッシュ関数で例外がスローされた場合、結果は未定義になります。 複数の要素を挿入するときに例外がスローされた場合、コンテナーの状態は未指定ですが、有効な状態になっています。  
+ 要素を 1 つだけ挿入するとき、例外がスローされたが、コンテナーのハッシュ関数ではエラーが発生しなかった場合、コンテナーの状態は変更されません。 ハッシュ関数で例外がスローされた場合、結果は未定義になります。 複数の要素を挿入するときに例外がスローされた場合、コンテナーの状態は未指定ですが、有効な状態になっています。  
   
  単一要素のメンバー関数によって返される `pair``pr` の反復子コンポーネントにアクセスするには `pr.first` を使用し、返されるペアに含まれる反復子を逆参照するには、`*pr.first` を使用すると要素が与えられます。 `bool` コンポーネントにアクセスするには、`pr.second` を使用します。 例については、この記事で後ほど説明するサンプル コードを参照してください。  
   
- コンテナーの [value_type](../standard-library/map-class.md#map__value_type) はそのコンテナーに属する typedef であり、map の場合、`map<K, V>::value_type` は `pair<const K, V>` になります。 要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ コンテナーの [value_type](../standard-library/map-class.md#value_type) はそのコンテナーに属する typedef であり、map の場合、`map<K, V>::value_type` は `pair<const K, V>` になります。 要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
   
  範囲のメンバー関数 (5) は、unordered_map に要素値のシーケンスを挿入します。このシーケンスは、範囲 `[First, Last)` の反復子によってアドレス指定された各要素に対応します。したがって、`Last` は挿入されません。 コンテナーのメンバー関数 `end()` は、コンテナー内にある最後の要素の直後の位置を参照します。たとえば、ステートメント `m.insert(v.begin(), v.end());` は、`v` のすべての要素を `m` に挿入しようとします。 範囲内で一意の値を持つ要素だけが挿入されますが、値が重複する要素は無視されます。 拒否される要素を確認するには、1 つの要素が指定された `insert` を使用します。  
   
  初期化子リストのメンバー関数 (6) は、[initializer_list](../standard-library/initializer-list.md) を使用して unordered_map に要素をコピーします。  
   
- インプレースで構築された (つまり、コピーまたは移動操作が実行されない) 要素の挿入については、「[unordered_map::emplace](#unordered_map__emplace)」および「[unordered_map::emplace_hint](#unordered_map__emplace_hint)」を参照してください。  
+ インプレースで構築された (つまり、コピーまたは移動操作が実行されない) 要素の挿入については、「[unordered_map::emplace](#emplace)」および「[unordered_map::emplace_hint](#emplace_hint)」を参照してください。  
   
- コード例については、「[map::insert](../standard-library/map-class.md#map__insert)」 を参照してください。  
+ コード例については、「[map::insert](../standard-library/map-class.md#insert)」 を参照してください。  
   
-##  <a name="a-nameunorderedmapiteratora--unorderedmapiterator"></a><a name="unordered_map__iterator"></a>  unordered_map::iterator  
+##  <a name="iterator"></a>  unordered_map::iterator  
  被制御シーケンスの反復子の型です。  
   
 ```  
@@ -1491,7 +1490,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapkeyeqa--unorderedmapkeyeq"></a><a name="unordered_map__key_eq"></a>  unordered_map::key_eq  
+##  <a name="key_eq"></a>  unordered_map::key_eq  
  格納されている比較関数オブジェクトを取得します。  
   
 ```  
@@ -1530,7 +1529,7 @@ cmpfn('a', 'a') == true
 cmpfn('a', 'b') == false  
 ```  
   
-##  <a name="a-nameunorderedmapkeyequala--unorderedmapkeyequal"></a><a name="unordered_map__key_equal"></a>  unordered_map::key_equal  
+##  <a name="key_equal"></a>  unordered_map::key_equal  
  比較関数の型です。  
   
 ```  
@@ -1569,7 +1568,7 @@ cmpfn('a', 'a') == true
 cmpfn('a', 'b') == false  
 ```  
   
-##  <a name="a-nameunorderedmapkeytypea--unorderedmapkeytype"></a><a name="unordered_map__key_type"></a>  unordered_map::key_type  
+##  <a name="key_type"></a>  unordered_map::key_type  
  順序付けキーの型です。  
   
 ```  
@@ -1623,7 +1622,7 @@ int main()
 [d, 4] [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmaploadfactora--unorderedmaploadfactor"></a><a name="unordered_map__load_factor"></a>  unordered_map::load_factor  
+##  <a name="load_factor"></a>  unordered_map::load_factor  
  バケットごとの平均要素数をカウントします。  
   
 ```  
@@ -1631,7 +1630,7 @@ float load_factor() const;
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、バケットごとの平均要素数 `(float)` [unordered_map::size](#unordered_map__size)`() / (float)`[unordered_map::bucket_count](#unordered_map__bucket_count)`()` を返します。  
+ このメンバー関数は、バケットごとの平均要素数 `(float)` [unordered_map::size](#size)`() / (float)`[unordered_map::bucket_count](#bucket_count)`()` を返します。  
   
 ### <a name="example"></a>例  
   
@@ -1709,7 +1708,7 @@ max_load_factor() == 0.1
   
 ```  
   
-##  <a name="a-nameunorderedmaplocaliteratora--unorderedmaplocaliterator"></a><a name="unordered_map__local_iterator"></a>  unordered_map::local_iterator  
+##  <a name="local_iterator"></a>  unordered_map::local_iterator  
  バケット反復子の型。  
   
 ```  
@@ -1756,7 +1755,7 @@ int main()
 [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapmappedtypea--unorderedmapmappedtype"></a><a name="unordered_map__mapped_type"></a>  unordered_map::mapped_type  
+##  <a name="mapped_type"></a>  unordered_map::mapped_type  
  各キーに関連付けられた、マップされた値の型です。  
   
 ```  
@@ -1810,7 +1809,7 @@ int main()
 [d, 4] [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapmaxbucketcounta--unorderedmapmaxbucketcount"></a><a name="unordered_map__max_bucket_count"></a>  unordered_map::max_bucket_count  
+##  <a name="max_bucket_count"></a>  unordered_map::max_bucket_count  
  最大バケット数を取得します。  
   
 ```  
@@ -1896,7 +1895,7 @@ max_load_factor() == 0.1
   
 ```  
   
-##  <a name="a-nameunorderedmapmaxloadfactora--unorderedmapmaxloadfactor"></a><a name="unordered_map__max_load_factor"></a>  unordered_map::max_load_factor  
+##  <a name="max_load_factor"></a>  unordered_map::max_load_factor  
  バケットあたりの最大要素数を取得または設定します。  
   
 ```  
@@ -1989,7 +1988,7 @@ max_load_factor() == 0.1
   
 ```  
   
-##  <a name="a-nameunorderedmapmaxsizea--unorderedmapmaxsize"></a><a name="unordered_map__max_size"></a>  unordered_map::max_size  
+##  <a name="max_size"></a>  unordered_map::max_size  
  被制御シーケンスの最大サイズを取得します。  
   
 ```  
@@ -2023,7 +2022,7 @@ int main()
 max_size() == 536870911  
 ```  
   
-##  <a name="a-nameunorderedmapoperatorata--unorderedmapoperator"></a><a name="unordered_map__operator_at"></a>  unordered_map::operator[]  
+##  <a name="op_at"></a>  unordered_map::operator[]  
  指定したキーを持つ要素を検索または挿入します。  
   
 ```  
@@ -2047,7 +2046,7 @@ Ty& operator[](Key&& keyval);
   
  `operator[]` は、*m*[_*Key*] = `DataValue` を使用してマップ *m* に要素を挿入するために使用できます。`DataValue` は、キー値が\_ *Key* である要素の `mapped_type` 値です。  
   
- `operator[]` を使用して要素を挿入した場合、返される参照では、挿入によって既存の要素が変更される、または新しい要素が作成されるかどうかは指示されません。 メンバー関数 [find](../standard-library/map-class.md#map__find) および [insert](../standard-library/map-class.md#map__insert) を使用して、挿入前に指定のキーを持つ要素が既に存在するかどうかを確認できます。  
+ `operator[]` を使用して要素を挿入した場合、返される参照では、挿入によって既存の要素が変更される、または新しい要素が作成されるかどうかは指示されません。 メンバー関数 [find](../standard-library/map-class.md#find) および [insert](../standard-library/map-class.md#insert) を使用して、挿入前に指定のキーを持つ要素が既に存在するかどうかを確認できます。  
   
 ### <a name="example"></a>例  
   
@@ -2106,9 +2105,9 @@ c2["abc"] == 1
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[unordered_map::insert](#unordered_map__insert)`(` [unordered_map::value_type](#unordered_map__value_type)`(keyval, Ty())` の戻り値として反復子 `where` を特定します。 そのような要素が存在しない場合は、指定されたキーを持つ要素を挿入します。その後、`(*where).second` への参照を返します。  
+ このメンバー関数は、[unordered_map::insert](#insert)`(` [unordered_map::value_type](#value_type)`(keyval, Ty())` の戻り値として反復子 `where` を特定します。 そのような要素が存在しない場合は、指定されたキーを持つ要素を挿入します。その後、`(*where).second` への参照を返します。  
   
-##  <a name="a-nameunorderedmapoperatoreqa--unorderedmapoperator"></a><a name="unordered_map__operator_eq"></a>  unordered_map::operator=  
+##  <a name="op_eq"></a>  unordered_map::operator=  
  別の unordered_map の要素を使用してこの unordered_map の要素を置き換えます。  
   
 ```  
@@ -2122,12 +2121,12 @@ unordered_map& operator=(unordered_map&& right);
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` right`|演算子関数がそこからコンテンツを割り当てる unordered_map。|  
+|`right`|演算子関数がそこからコンテンツを割り当てる unordered_map。|  
   
 ### <a name="remarks"></a>コメント  
- 最初のバージョンは、` right` からすべての要素をこの unordered_map にコピーします。  
+ 最初のバージョンは、`right` からすべての要素をこの unordered_map にコピーします。  
   
- 2 番目のバージョンは、` right` からすべての要素をこの unordered_map に移動します。  
+ 2 番目のバージョンは、`right` からすべての要素をこの unordered_map に移動します。  
   
  `operator`= を実行する前に、この unordered_map 内にある要素がすべて破棄されます。  
   
@@ -2168,7 +2167,7 @@ int main( )
    }  
 ```  
   
-##  <a name="a-nameunorderedmappointera--unorderedmappointer"></a><a name="unordered_map__pointer"></a>  unordered_map::pointer  
+##  <a name="pointer"></a>  unordered_map::pointer  
  要素へのポインターの型です。  
   
 ```  
@@ -2213,7 +2212,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapreferencea--unorderedmapreference"></a><a name="unordered_map__reference"></a>  unordered_map::reference  
+##  <a name="reference"></a>  unordered_map::reference  
  要素への参照の型です。  
   
 ```  
@@ -2258,7 +2257,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmaprehasha--unorderedmaprehash"></a><a name="unordered_map__rehash"></a>  unordered_map::rehash  
+##  <a name="rehash"></a>  unordered_map::rehash  
  ハッシュ テーブルをリビルドします。  
   
 ```  
@@ -2334,7 +2333,7 @@ load_factor() == 0.0234375
 max_load_factor() == 0.1  
 ```  
   
-##  <a name="a-nameunorderedmapsizea--unorderedmapsize"></a><a name="unordered_map__size"></a>  unordered_map::size  
+##  <a name="size"></a>  unordered_map::size  
  要素の数をカウントします。  
   
 ```  
@@ -2400,7 +2399,7 @@ size == 2
 empty() == false  
 ```  
   
-##  <a name="a-nameunorderedmapsizetypea--unorderedmapsizetype"></a><a name="unordered_map__size_type"></a>  unordered_map::size_type  
+##  <a name="size_type"></a>  unordered_map::size_type  
  2 つの要素間の距離を表す、符号なしの型です。  
   
 ```  
@@ -2435,7 +2434,7 @@ int main()
 size == 0  
 ```  
   
-##  <a name="a-nameunorderedmapswapa--unorderedmapswap"></a><a name="unordered_map__swap"></a>  unordered_map::swap  
+##  <a name="swap"></a>  unordered_map::swap  
  2 つのコンテナーのコンテンツを交換します。  
   
 ```  
@@ -2447,7 +2446,7 @@ void swap(unordered_map& right);
  交換先のコンテナー。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 [unordered_map::get_allocator](#unordered_map__get_allocator)`() == right.get_allocator()` の場合は、この処理が一定の時間内に実行されます。例外がスローされるのは、格納されている `Tr` 型の traits オブジェクトをコピーした場合のみで、2 つの被制御シーケンス内の要素を指定する反復子、参照、ポインターは一切無効化されません。 それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
+ このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 [unordered_map::get_allocator](#get_allocator)`() == right.get_allocator()` の場合は、この処理が一定の時間内に実行されます。例外がスローされるのは、格納されている `Tr` 型の traits オブジェクトをコピーした場合のみで、2 つの被制御シーケンス内の要素を指定する反復子、参照、ポインターは一切無効化されません。 それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
   
 ### <a name="example"></a>例  
   
@@ -2505,7 +2504,7 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-##  <a name="a-nameunorderedmapunorderedmapa--unorderedmapunorderedmap"></a><a name="unordered_map__unordered_map"></a>  unordered_map::unordered_map  
+##  <a name="unordered_map"></a>  unordered_map::unordered_map  
  コンテナー オブジェクトを構築します。  
   
 ```  
@@ -2710,7 +2709,7 @@ int main()
  [a, 1] [b, 2] [c, 3]
  ```  
   
-##  <a name="a-nameunorderedmapvaluetypea--unorderedmapvaluetype"></a><a name="unordered_map__value_type"></a>  unordered_map::value_type  
+##  <a name="value_type"></a>  unordered_map::value_type  
  要素の型。  
   
 ```  
