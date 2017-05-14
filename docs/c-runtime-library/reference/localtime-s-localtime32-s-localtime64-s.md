@@ -59,10 +59,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bde781215787a1d39a58c69b344eb8d41f7b3c52
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: e068c6711630976a2d8b3baea01010bc5e34ed6e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="localtimes-localtime32s-localtime64s"></a>localtime_s、_localtime32_s、_localtime64_s
@@ -93,7 +94,7 @@ errno_t _localtime64_s(
  格納されている時刻へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 これらのエラー一覧については、「[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ 正常終了した場合は 0 を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは、Errno.h で定義されています。 これらのエラー一覧については、「[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -103,12 +104,12 @@ errno_t _localtime64_s(
 |`NULL` ではない (有効なメモリを指す)|`NULL`|`EINVAL`|すべてのフィールドが -1 に設定される|はい|  
 |`NULL` ではない (有効なメモリを指す)|0 より小さいか、または `_MAX__TIME64_T` を超えている|`EINVAL`|すべてのフィールドが -1 に設定される|いいえ|  
   
- 最初の&2; つのエラーの場合は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」 (パラメーターの検証) に説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+ 最初の 2 つのエラーの場合は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」 (パラメーターの検証) に説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
 ## <a name="remarks"></a>コメント  
  `_localtime32_s` 関数は [time_t](../../c-runtime-library/standard-types.md) 値として格納されている時間を変換して、その結果を `tm` 型として格納します。 `long` 型の値 `timer` は、UTC の 1970 年 1 月 1 日午前 0 時 (00:00:00) からの経過秒数を表します。 通常、この値は `time` 関数で取得されます。  
   
- `_localtime32_s` は、ユーザーが最初にグローバル環境変数 `TZ` を設定している場合、ローカル タイム ゾーンに合わせて修正します。 `TZ` を設定すると、他の&3; つの環境変数 (`_timezone`、`_daylight`、`_tzname`) も自動的に設定されます。 `TZ` 変数が設定されていない場合、`localtime32_s` は [コントロール パネル] の [日付/時刻] アプリケーションでで指定されているタイム ゾーンの情報を使用しようとします。 この情報を取得できない場合、既定では、太平洋タイム ゾーンを表す PST8PDT が使用されます。 これらの変数の説明については、[_tzset](../../c-runtime-library/reference/tzset.md) を参照してください。 `TZ` は、Microsoft 拡張機能であり、`localtime` の ANSI 標準定義の一部ではありません。  
+ `_localtime32_s` は、ユーザーが最初にグローバル環境変数 `TZ` を設定している場合、ローカル タイム ゾーンに合わせて修正します。 `TZ` を設定すると、他の 3 つの環境変数 (`_timezone`、`_daylight`、`_tzname`) も自動的に設定されます。 `TZ` 変数が設定されていない場合、`localtime32_s` は [コントロール パネル] の [日付/時刻] アプリケーションでで指定されているタイム ゾーンの情報を使用しようとします。 この情報を取得できない場合、既定では、太平洋タイム ゾーンを表す PST8PDT が使用されます。 これらの変数の説明については、[_tzset](../../c-runtime-library/reference/tzset.md) を参照してください。 `TZ` は、Microsoft 拡張機能であり、`localtime` の ANSI 標準定義の一部ではありません。  
   
 > [!NOTE]
 >  対象の環境によって、夏時間が有効かどうか判断されます。  
@@ -120,28 +121,28 @@ errno_t _localtime64_s(
  構造体の型 [tm](../../c-runtime-library/standard-types.md) のフィールドは次の値を格納します。値はそれぞれ `int` です。  
   
  `tm_sec`  
- 秒 (0 ～ 59)。  
+ 秒 (0 ~ 59)。  
   
  `tm_min`  
- 分 (0 ～ 59)。  
+ 分 (0 ~ 59)。  
   
  `tm_hour`  
- 時 (0 から 23)。  
+ 午前 0 時以降後の時間 (0 ~ 23)。  
   
  `tm_mday`  
- 日 (1 ～ 31)。  
+ (1 ~ 31) の月の日です。  
   
  `tm_mon`  
- 月 (0 ～ 11、1 月 = 0)。  
+ 月 (0 ~ 11 です。年 1 月 = 0) です。  
   
  `tm_year`  
  年 (実際の西暦から 1900 を引いた数)  
   
  `tm_wday`  
- 曜日 (0 ～ 6、日曜日 = 0)。  
+ 曜日 (0 ~ 6 です。日曜日 = 0) です。  
   
  `tm_yday`  
- 年内の通算日 (0 ～ 365、1 月 1 日 = 0)。  
+ 年の日付 (0 ~ 365 です。1 月 1 日 = 0) です。  
   
  `tm_isdst`  
  夏時間が有効な場合は正の値、夏時間が無効な場合は 0、夏時間かどうか状態が不明な場合は負の値。 `TZ` 環境変数が設定されている場合、C ランタイム ライブラリでは、米国に適合した規則を前提に夏時間 (DST) を計算します。  
@@ -211,9 +212,6 @@ int main( void )
 ```  
 Fri Apr 25 01:19:27 PM  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::DateTime::ToLocalTime](https://msdn.microsoft.com/en-us/library/system.datetime.tolocaltime.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   

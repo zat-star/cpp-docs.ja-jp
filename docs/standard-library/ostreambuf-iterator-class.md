@@ -9,10 +9,13 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.ostreambuf_iterator
 - streambuf/std::ostreambuf_iterator
 - ostreambuf_iterator
-- std::ostreambuf_iterator
+- iterator/std::ostreambuf_iterator::char_type
+- iterator/std::ostreambuf_iterator::ostream_type
+- iterator/std::ostreambuf_iterator::streambuf_type
+- iterator/std::ostreambuf_iterator::traits_type
+- iterator/std::ostreambuf_iterator::failed
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +39,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 30e8f1c86ebff67c520f4ff303ade831306cede6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 2f58e86e76e63d51739558b796e47dc3f5165d3f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ostreambufiterator-class"></a>ostreambuf_iterator Class
@@ -53,7 +57,7 @@ template <class CharType = char class Traits = char_traits <CharType>>
   
 #### <a name="parameters"></a>パラメーター  
  `CharType`  
- ostreambuf_iterator の文字型を表す型。 この引数は省略可能であり、既定値は `char`*.* です。  
+ ostreambuf_iterator の文字型を表す型。 この引数は省略可能であり、既定値は `char` です。  
   
  `Traits`  
  ostreambuf_iterator の文字型を表す型。 この引数は省略可能であり、既定値は `char_traits`\< *CharType>* です。  
@@ -71,31 +75,31 @@ template <class CharType = char class Traits = char_traits <CharType>>
   
 |||  
 |-|-|  
-|[char_type](#ostreambuf_iterator__char_type)|`ostreambuf_iterator` の文字型を提供する型。|  
+|[char_type](#char_type)|`ostreambuf_iterator` の文字型を提供する型。|  
 |[ostream_type](#ostreambuf_iterator_ostream_type)|`ostream_iterator` のストリーム型を提供する型。|  
-|[streambuf_type](#ostreambuf_iterator__streambuf_type)|`ostreambuf_iterator` のストリーム型を提供する型。|  
-|[traits_type](#ostreambuf_iterator__traits_type)|`ostream_iterator` の文字特性型を提供する型。|  
+|[streambuf_type](#streambuf_type)|`ostreambuf_iterator` のストリーム型を提供する型。|  
+|[traits_type](#traits_type)|`ostream_iterator` の文字特性型を提供する型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[failed](#ostreambuf_iterator__failed)|出力ストリーム バッファーへの挿入の失敗をテストします。|  
+|[failed](#failed)|出力ストリーム バッファーへの挿入の失敗をテストします。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator*](#ostreambuf_iterator__operator_star)|出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
-|[operator++](#ostreambuf_iterator__operator_add_add)|操作が呼び出される前に示したものと同じオブジェクトに `ostreambuf_iterator` を返す、実質的な機能を持たないインクリメント演算子。|  
-|[operator=](#ostreambuf_iterator__operator_eq)|この演算子は、関連付けられているストリーム バッファーに文字を挿入します。|  
+|[operator*](#op_star)|出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
+|[operator++](#op_add_add)|操作が呼び出される前に示したものと同じオブジェクトに `ostreambuf_iterator` を返す、実質的な機能を持たないインクリメント演算子。|  
+|[operator=](#op_eq)|この演算子は、関連付けられているストリーム バッファーに文字を挿入します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
   
-##  <a name="a-nameostreambufiteratorchartypea--ostreambufiteratorchartype"></a><a name="ostreambuf_iterator__char_type"></a>  ostreambuf_iterator::char_type  
+##  <a name="char_type"></a>  ostreambuf_iterator::char_type  
  `ostreambuf_iterator` の文字型を提供する型。  
   
 ```
@@ -143,7 +147,7 @@ The characters written to the output stream
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratorfaileda--ostreambufiteratorfailed"></a><a name="ostreambuf_iterator__failed"></a>  ostreambuf_iterator::failed  
+##  <a name="failed"></a>  ostreambuf_iterator::failed  
  出力ストリーム バッファーへの挿入の失敗をテストします。  
   
 ```
@@ -191,7 +195,7 @@ No insertions failed.
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratoroperatorstara--ostreambufiteratoroperator"></a><a name="ostreambuf_iterator__operator_star"></a>  ostreambuf_iterator::operator*  
+##  <a name="op_star"></a>  ostreambuf_iterator::operator*  
  出力反復子式 \* *i* = *x* を実装するために使用される逆参照演算子。  
   
 ```
@@ -235,7 +239,7 @@ OUT
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratoroperatoraddadda--ostreambufiteratoroperator"></a><a name="ostreambuf_iterator__operator_add_add"></a>  ostreambuf_iterator::operator++  
+##  <a name="op_add_add"></a>  ostreambuf_iterator::operator++  
  操作が呼び出される前に示したものと同じ文字に ostream 反復子を返す、実質的な機能を持たないインクリメント演算子。  
   
 ```
@@ -280,7 +284,7 @@ OUT
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratoroperatoreqa--ostreambufiteratoroperator"></a><a name="ostreambuf_iterator__operator_eq"></a>  ostreambuf_iterator::operator=  
+##  <a name="op_eq"></a>  ostreambuf_iterator::operator=  
  この演算子は、関連付けられているストリーム バッファーに文字を挿入します。  
   
 ```
@@ -328,7 +332,7 @@ OUT
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratorostreambufiteratora--ostreambufiteratorostreambufiterator"></a><a name="ostreambuf_iterator_ostreambuf_iterator"></a>  ostreambuf_iterator::ostreambuf_iterator  
+##  <a name="ostreambuf_iterator_ostreambuf_iterator"></a>  ostreambuf_iterator::ostreambuf_iterator  
  出力ストリームに文字を書き込むために初期化された `ostreambuf_iterator` を構築します。  
   
 ```
@@ -381,7 +385,7 @@ These characters are being written to the output stream.
 *\  
 ```  
   
-##  <a name="a-nameostreambufiteratorostreamtypea--ostreambufiteratorostreamtype"></a><a name="ostreambuf_iterator_ostream_type"></a>  ostreambuf_iterator::ostream_type  
+##  <a name="ostreambuf_iterator_ostream_type"></a>  ostreambuf_iterator::ostream_type  
  `ostream_iterator` のストリーム型を提供する型。  
   
 ```
@@ -394,7 +398,7 @@ typedef basicOstream<CharType, Traits> ostream_type;
 ### <a name="example"></a>例  
   `ostream_type` を宣言して使用する方法の例については、[ostreambuf_iterator](#ostreambuf_iterator_ostreambuf_iterator) に関するセクションをご覧ください。  
   
-##  <a name="a-nameostreambufiteratorstreambuftypea--ostreambufiteratorstreambuftype"></a><a name="ostreambuf_iterator__streambuf_type"></a>  ostreambuf_iterator::streambuf_type  
+##  <a name="streambuf_type"></a>  ostreambuf_iterator::streambuf_type  
  `ostreambuf_iterator` のストリーム型を提供する型。  
   
 ```
@@ -407,7 +411,7 @@ typedef basic_streambuf<CharType, Traits> streambuf_type;
 ### <a name="example"></a>例  
   `streambuf_type` を宣言して使用する方法の例については、[ostreambuf_iterator](#ostreambuf_iterator_ostreambuf_iterator) に関するセクションをご覧ください。  
   
-##  <a name="a-nameostreambufiteratortraitstypea--ostreambufiteratortraitstype"></a><a name="ostreambuf_iterator__traits_type"></a>  ostreambuf_iterator::traits_type  
+##  <a name="traits_type"></a>  ostreambuf_iterator::traits_type  
  `ostream_iterator` の文字特性型を提供する型。  
   
 ```
