@@ -41,30 +41,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 160eac8642d463b367ae218cecb9b1ad5984f4a3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 3267090567017a0aba7100d464a628bd0a0bcbea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="operatorlt-ltsample-containergt"></a>operator&lt;= (&lt;sample container&gt;)
 > [!NOTE]
 >  このトピックは、C++ 標準ライブラリで使用されるコンテナーの例 (実際には機能しない) として、Visual C++ ドキュメントに含まれています。 詳細については、「[C++ Standard Library Containers (C++ 標準ライブラリ コンテナ―)](../standard-library/stl-containers.md)」をご覧ください。  
   
- **operator<=** をオーバーロードしてテンプレート クラス [Container](../standard-library/sample-container-class.md) の&2; つのオブジェクトを比較します。  
+ **operator<=** をオーバーロードしてテンプレート クラス [Container](../standard-library/sample-container-class.md) の 2 つのオブジェクトを比較します。  
   
 ## <a name="syntax"></a>構文  
   
 ```  
- 
-    template <class Ty>  
+template <class Ty>  
 bool operator<=(
     const Container <Ty>& left,  
     const Container <Ty>& right);
 ```  
   
 ## <a name="return-value"></a>戻り値  
- **!**(_*Right* < \_*Left*) を返します。  
+ `!(right < left)` を返します。  
   
 ## <a name="see-also"></a>関連項目  
  [\<sample container>](../standard-library/sample-container.md)

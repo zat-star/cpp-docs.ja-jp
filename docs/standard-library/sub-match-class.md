@@ -10,21 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - sub_match
-- std::sub_match
 - regex/std::sub_match
-- std::sub_match::matched
 - regex/std::sub_match::matched
-- std::sub_match::compare
 - regex/std::sub_match::compare
-- std::sub_match::length
 - regex/std::sub_match::length
-- std::sub_match::str
 - regex/std::sub_match::str
-- std::sub_match::difference_type
 - regex/std::sub_match::difference_type
-- std::sub_match::iterator
 - regex/std::sub_match::iterator
-- std::sub_match::value_type
 - regex/std::sub_match::value_type
 dev_langs:
 - C++
@@ -49,10 +41,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: acc0ecd4edaf1e58977dcbdeb483d497a72bc4c8
-ms.openlocfilehash: 1a2b0c43fd5942e6f4b9ddd54c50db8bc8e8218f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 12d12497fa96d7cf4185ad3664908a56be1078c9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="submatch-class"></a>sub_match クラス
@@ -85,11 +78,11 @@ public:
  サブマッチ用の反復子の型。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスは、[regex_match Function](../standard-library/regex-functions.md#regex_match_function) または [regex_search Function](../standard-library/regex-functions.md#regex_search_function) に対する呼び出しでキャプチャ グループと一致した文字のシーケンスを指定するオブジェクトを表します。 [match_results Class](../standard-library/match-results-class.md) 型のオブジェクトは、検索に使用された正規表現内のキャプチャ グループごとに&1; つずつ、これらのオブジェクトの配列を保持します。  
+ このテンプレート クラスへの呼び出しで、キャプチャ グループに一致する文字のシーケンスを指定するオブジェクトを記述する[regex_match](../standard-library/regex-functions.md#regex_match)または[regex_search](../standard-library/regex-functions.md#regex_search)です。 [match_results Class](../standard-library/match-results-class.md) 型のオブジェクトは、検索に使用された正規表現内のキャプチャ グループごとに 1 つずつ、これらのオブジェクトの配列を保持します。  
   
- キャプチャ グループがオブジェクトのデータ メンバーと一致しなかった場合は、 `matched` が false を保持し、2 つの反復子の `first` と `second` (ベース `std::pair`から継承) が等しくなります。 キャプチャ グループが一致した場合は、 `matched` が true を保持し、反復子 `first` がキャプチャ グループと一致したターゲット シーケンスの最初の文字を指し、反復子 `second` がキャプチャ グループと一致したターゲット シーケンスの最後の文字の&1; つ先の位置を指します。 長さ&0; の一致の場合は、メンバー `matched` が true を保持し、2 つの反復子が等しくなり、両方が一致した位置を指します。  
+ キャプチャ グループがオブジェクトのデータ メンバーと一致しなかった場合は、 `matched` が false を保持し、2 つの反復子の `first` と `second` (ベース `std::pair`から継承) が等しくなります。 キャプチャ グループが一致した場合は、 `matched` が true を保持し、反復子 `first` がキャプチャ グループと一致したターゲット シーケンスの最初の文字を指し、反復子 `second` がキャプチャ グループと一致したターゲット シーケンスの最後の文字の 1 つ先の位置を指します。 長さ 0 の一致の場合は、メンバー `matched` が true を保持し、2 つの反復子が等しくなり、両方が一致した位置を指します。  
   
- 長さ&0; の一致は、キャプチャ グループが&1; つのアサーションのみまたは&0; 回の繰り返しが許可される&1; つの繰り返しのみで構成されている場合に発生します。 例:  
+ 長さ 0 の一致は、キャプチャ グループが 1 つのアサーションのみまたは 0 回の繰り返しが許可される 1 つの繰り返しのみで構成されている場合に発生します。 例:  
   
  "^" は、ターゲット シーケンス "a" と一致します。キャプチャ グループ 0 に対応する `sub_match` オブジェクトは、両方がシーケンスの最初の文字を指す反復子を保持します。  
   
@@ -100,7 +93,7 @@ public:
   
  **名前空間:** std  
   
-##  <a name="a-namesubmatchcomparea--submatchcompare"></a><a name="sub_match__compare"></a>  sub_match::compare  
+##  <a name="compare"></a>  sub_match::compare  
  サブマッチをシーケンスと比較します。  
   
 ```  
@@ -183,7 +176,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchdifferencetypea--submatchdifferencetype"></a><a name="sub_match__difference_type"></a>  sub_match::difference_type  
+##  <a name="difference_type"></a>  sub_match::difference_type  
  反復子の差の型です。  
   
 ```  
@@ -246,7 +239,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchiteratora--submatchiterator"></a><a name="sub_match__iterator"></a>  sub_match::iterator  
+##  <a name="iterator"></a>  sub_match::iterator  
  反復子の型。  
   
 ```  
@@ -309,7 +302,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchlengtha--submatchlength"></a><a name="sub_match__length"></a>  sub_match::length  
+##  <a name="length"></a>  sub_match::length  
  サブマッチの長さを返します。  
   
 ```  
@@ -372,7 +365,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchmatcheda--submatchmatched"></a><a name="sub_match__matched"></a>  sub_match::matched  
+##  <a name="matched"></a>  sub_match::matched  
  一致が成功したかどうかを示します。  
   
 ```  
@@ -435,7 +428,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchoperatorbasicstringltvaluetypegta--submatchoperator-basicstringltvaluetypegt"></a><a name="sub_match__operator_basic_string_lt_value_type_gt_"></a>  sub_match::operator basic_string&lt;value_type&gt;  
+##  <a name="op_basic_string_lt_value_type_gt"></a>  sub_match::operator basic_string&lt;value_type&gt;  
  サブマッチを文字列にキャストします。  
   
 ```  
@@ -498,7 +491,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchstra--submatchstr"></a><a name="sub_match__str"></a>  sub_match::str  
+##  <a name="str"></a>  sub_match::str  
  サブマッチを文字列に変換します。  
   
 ```  
@@ -561,7 +554,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-##  <a name="a-namesubmatchvaluetypea--submatchvaluetype"></a><a name="sub_match__value_type"></a>  sub_match::value_type  
+##  <a name="value_type"></a>  sub_match::value_type  
  要素の型。  
   
 ```  

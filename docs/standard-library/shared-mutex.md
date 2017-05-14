@@ -72,14 +72,15 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 17978f1c6f934783236df5a36464ab44f8254903
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: e864aca13c5ae83b3806a95026a05f8f408e9071
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ltsharedmutexgt"></a>&lt;shared_mutex&gt;
-<shared_mutex> ヘッダーが、複数のスレッドがアクセスできる共有のデータの保護のための同期プリミティブを提供します。 ミューテックス クラスで提供される排他アクセス制御だけでなく、共有ミューテックス クラスによって非排他的なアクセス用の複数のスレッドによる共有所有権も可能になります。 共有ミューテックスを使用して、競合状態を発生させず複数のスレッドで読み取ることができるリソースを制御できますが、共有ミューテックスは&1; つのスレッドによって排他的に書き込まれる必要があります。  
+<shared_mutex> ヘッダーが、複数のスレッドがアクセスできる共有のデータの保護のための同期プリミティブを提供します。 ミューテックス クラスで提供される排他アクセス制御だけでなく、共有ミューテックス クラスによって非排他的なアクセス用の複数のスレッドによる共有所有権も可能になります。 共有ミューテックスを使用して、競合状態を発生させず複数のスレッドで読み取ることができるリソースを制御できますが、共有ミューテックスは 1 つのスレッドによって排他的に書き込まれる必要があります。  
   
  ヘッダー <shared_mutex> は、共有ミューテックスのサポートのためにクラス `shared_mutex` と `shared_timed_mutex`、テンプレート クラス `shared_lock`、およびテンプレート関数 `swap` を定義します。  
   
@@ -91,7 +92,7 @@ ms.lasthandoff: 02/24/2017
   
 |関数|説明|  
 |---------------|-----------------|  
-|[swap 関数](../standard-library/shared-mutex.md#function_swap)|関数のパラメーターによって参照される共有ミューテックス オブジェクトの内容を交換します。|  
+|[swap](../standard-library/shared-mutex.md#function_swap)|関数のパラメーターによって参照される共有ミューテックス オブジェクトの内容を交換します。|  
   
 ## <a name="syntax"></a>構文  
   
@@ -128,11 +129,11 @@ void swap(shared_lock<Mutex>& x, shared_lock<Mutex>& y) noexcept;
  `shared_lock` テンプレート クラスは時間指定のロックのサポートおよび共有ミューテックスへの所有権の転送のサポートを拡張します。 ミューテックスの所有権は構築時または構築後に取得でき、別の `shared_lock` オブジェクトに転送できます。 `shared_lock` 型のオブジェクトは移動できますが、コピーできません。  
   
 > [!WARNING]
->  Visual Studio 2015 の C++ 標準ライブラリ同期型は、Windows 同期プリミティブに基づいており、ターゲット プラットフォームが Windows XP の場合を除き、ConcRT を使用しなくなりました。 <shared_mutex> で定義されている型は、ConcRT 型または関数には使用しないでください。  
+>  Visual Studio 2015 以降では、C++ 標準ライブラリの同期型は Windows 同期プリミティブに基づいており、不要になった (ターゲット プラットフォームが Windows XP の場合) を除く ConcRT を使用します。 <shared_mutex> で定義されている型は、ConcRT 型または関数には使用しないでください。  
   
 ## <a name="classes"></a>クラス  
   
-###  <a name="a-nameclasssharedmutexa-sharedmutex-class"></a><a name="class_shared_mutex"></a> shared_mutex クラス  
+###  <a name="class_shared_mutex"></a> shared_mutex クラス  
  クラス `shared_mutex` は、共有所有権セマンティクスで非再帰的なミューテックスを実装します。  
   
 ```cpp  
@@ -158,7 +159,7 @@ class shared_mutex {
    };  
 ```
 
-###  <a name="a-nameclasssharedtimedmutexa-sharedtimedmutex-class"></a><a name="class_shared_timed_mutex"></a> shared_timed_mutex クラス  
+###  <a name="class_shared_timed_mutex"></a> shared_timed_mutex クラス  
  クラス `shared_timed_mutex` は、timed mutex 型の要件を満たしている共有所有権セマンティクスで非再帰的なミューテックスを実装します。  
   
 ```cpp  
@@ -189,7 +190,7 @@ class shared_timed_mutex {
    };  
 ```
 
-###  <a name="a-nameclasssharedlocka-sharedlock-class"></a><a name="class_shared_lock"></a> shared_lock クラス  
+###  <a name="class_shared_lock"></a> shared_lock クラス  
  テンプレート クラス `shared_lock` は、スコープ内の共有ミューテックス オブジェクトの共有所有権を制御します。 テンプレート パラメーターは、共有 mutex 型である必要があります。  
 
 ```cpp  
@@ -236,7 +237,7 @@ class shared_lock {
 
 ## <a name="functions"></a>関数  
   
-###  <a name="a-namefunctionswapa-swap-function"></a><a name="function_swap"></a> swap 関数  
+###  <a name="function_swap"></a>スワップ
  `shared_lock` オブジェクトを交換します。  
   
 ```cpp  

@@ -50,10 +50,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: b41e9b019477fe86645a212ee9f345e0fe8685f7
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: b7a7b0cfe5614cb87d82634e6d17643f5509ae13
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="regextraits-class"></a>regex_traits クラス
@@ -102,7 +103,7 @@ public:
   
  **名前空間:** std  
   
-##  <a name="regex_traits__char_class_type"></a>  regex_traits::char_class_type  
+##  <a name="char_class_type"></a>  regex_traits::char_class_type  
  文字クラス指定子の型。  
   
 ```  
@@ -183,7 +184,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__char_type"></a>  regex_traits::char_type  
+##  <a name="char_type"></a>  regex_traits::char_type  
  要素の型。  
   
 ```  
@@ -264,7 +265,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__getloc"></a>  regex_traits::getloc  
+##  <a name="getloc"></a>  regex_traits::getloc  
  格納されているロケール オブジェクトを返します。  
   
 ```  
@@ -345,7 +346,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__imbue"></a>  regex_traits::imbue  
+##  <a name="imbue"></a>  regex_traits::imbue  
  格納されているロケール オブジェクトを変更します。  
   
 ```  
@@ -430,7 +431,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__isctype"></a>  regex_traits::isctype  
+##  <a name="isctype"></a>  regex_traits::isctype  
  クラスのメンバーシップをテストします。  
   
 ```  
@@ -518,7 +519,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__length"></a>  regex_traits::length  
+##  <a name="length"></a>  regex_traits::length  
  nul で終わるシーケンスの長さを返します。  
   
 ```  
@@ -603,7 +604,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__locale_type"></a>  regex_traits::locale_type  
+##  <a name="locale_type"></a>  regex_traits::locale_type  
  格納されているロケール オブジェクトの型。  
   
 ```  
@@ -684,7 +685,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__lookup_classname"></a>  regex_traits::lookup_classname  
+##  <a name="lookup_classname"></a>  regex_traits::lookup_classname  
  シーケンスを文字クラスにマップします。  
   
 ```  
@@ -777,7 +778,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__lookup_collatename"></a>  regex_traits::lookup_collatename  
+##  <a name="lookup_collatename"></a>  regex_traits::lookup_collatename  
  シーケンスを照合要素にマップします。  
   
 ```  
@@ -866,7 +867,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__regex_traits"></a>  regex_traits::regex_traits  
+##  <a name="regex_traits"></a>  regex_traits::regex_traits  
  オブジェクトを構築します。  
   
 ```  
@@ -947,7 +948,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__size_type"></a>  regex_traits::size_type  
+##  <a name="size_type"></a>  regex_traits::size_type  
  シーケンスの長さの型。  
   
 ```  
@@ -1030,7 +1031,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__string_type"></a>  regex_traits::string_type  
+##  <a name="string_type"></a>  regex_traits::string_type  
  要素の文字列の型。  
   
 ```  
@@ -1111,7 +1112,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__transform"></a>  regex_traits::transform  
+##  <a name="transform"></a>  regex_traits::transform  
  同等の順序付けられたシーケンスに変換します。  
   
 ```  
@@ -1127,7 +1128,7 @@ string_type transform(FwdIt first, FwdIt last) const;
  変換するシーケンスの最後。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、格納されている `locale` オブジェクトによって異なる変換規則を使用して生成された文字列を返します。 反復子の範囲の `[first1, last1)` と `[first2, last2)`で指定された&2; つの文字シーケンスでは、反復子の範囲 `transform(first1, last1) < transform(first2, last2)` で指定された文字シーケンスが、反復子の範囲 `[first1, last1)` で指定された文字シーケンスより前に来る場合は、 `[first2, last2)`です。  
+ このメンバー関数は、格納されている `locale` オブジェクトによって異なる変換規則を使用して生成された文字列を返します。 反復子の範囲の `[first1, last1)` と `[first2, last2)`で指定された 2 つの文字シーケンスでは、反復子の範囲 `transform(first1, last1) < transform(first2, last2)` で指定された文字シーケンスが、反復子の範囲 `[first1, last1)` で指定された文字シーケンスより前に来る場合は、 `[first2, last2)`です。  
   
 ### <a name="example"></a>例  
   
@@ -1200,7 +1201,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__transform_primary"></a>  regex_traits::transform_primary  
+##  <a name="transform_primary"></a>  regex_traits::transform_primary  
  同等のケースレス順序付きシーケンスに変換します。  
   
 ```  
@@ -1216,7 +1217,7 @@ string_type transform_primary(FwdIt first, FwdIt last) const;
  変換するシーケンスの最後。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、格納されている `locale` オブジェクトによって異なる変換規則を使用して生成された文字列を返します。 反復子の範囲の `[first1, last1)` と `[first2, last2)`で指定された&2; つの文字シーケンスでは、反復子の範囲 `transform_primary(first1, last1) < transform_primary(first2, last2)` で指定された文字シーケンスが、ケースやアクセントに関係なく、反復子の範囲 `[first1, last1)` で指定された文字シーケンスより前に来る場合は、 `[first2, last2)` です。  
+ このメンバー関数は、格納されている `locale` オブジェクトによって異なる変換規則を使用して生成された文字列を返します。 反復子の範囲の `[first1, last1)` と `[first2, last2)`で指定された 2 つの文字シーケンスでは、反復子の範囲 `transform_primary(first1, last1) < transform_primary(first2, last2)` で指定された文字シーケンスが、ケースやアクセントに関係なく、反復子の範囲 `[first1, last1)` で指定された文字シーケンスより前に来る場合は、 `[first2, last2)` です。  
   
 ### <a name="example"></a>例  
   
@@ -1289,7 +1290,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__translate"></a>  regex_traits::translate  
+##  <a name="translate"></a>  regex_traits::translate  
  一致する同等の要素に変換します。  
   
 ```  
@@ -1374,7 +1375,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__translate_nocase"></a>  regex_traits::translate_nocase  
+##  <a name="translate_nocase"></a>  regex_traits::translate_nocase  
  一致する同等のケースレス要素に変換します。  
   
 ```  
@@ -1459,7 +1460,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-##  <a name="regex_traits__value"></a>  regex_traits::value  
+##  <a name="value"></a>  regex_traits::value  
  要素を数値に変換します。  
   
 ```  

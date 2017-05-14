@@ -1,84 +1,112 @@
 ---
 title: "ctype_base クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "locale/std::ctype_base"
-  - "std.ctype_base"
-  - "ctype_base"
-  - "std::ctype_base"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ctype_base クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- locale/std::ctype_base
+- ctype_base
+dev_langs:
+- C++
+helpviewer_keywords:
+- ctype_base class
 ms.assetid: ccffe891-d7ab-4d22-baf8-8eb6d438a96d
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# ctype_base クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 74c13251b63018e00490487cb9a45c4bb6d52a21
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
-クラスは、テンプレート クラス [ctype](../standard-library/ctype-class.md)のファセットの基本クラスとして機能します。  各またはすべての範囲内にある文字列を設定するか、またはテストするために使用される列挙型を定義するために使用する ctype クラスの基本クラスです。  
+---
+# <a name="ctypebase-class"></a>ctype_base クラス
+このクラスは、テンプレート クラス [ctype](../standard-library/ctype-class.md) のファセットの基底クラスとして機能します。 個々の文字または範囲全体の文字を分類またはテストするための列挙型を定義するために使用される ctype クラスの基底クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+struct ctype_base : public locale::facet
+{
+    enum
+ {
+    alnum,
+ alpha,
+    cntrl,
+ digit,
+    graph,
+ lower,
+    print,
+ punct,
+    space,
+ upper,
+    xdigit
+ };
+    typedef short mask;
+    ctype_base(
+ size_t _Refs = 0);
+
+ ~ctype_base();
+
+};
 ```  
-struct ctype_base : public locale::facet  
-{  
-    enum  
-    {  
-        alnum, alpha, cntrl, digit, graph,  
-        lower, print, punct, space, upper,  
-        xdigit  
-    };  
-    typedef short mask;  
-    ctype_base(  
-        size_t _Refs = 0  
-    );  
-    ~ctype_base();  
-};  
-```  
   
-## 解説  
- これは列挙体マスクを定義します。  各列挙体の定数は、ヘッダー \<ctype.h で宣言する同様の名前の関数で定義されている文字、分類するさまざまな方法の特徴を付けます。\>  定数は、次の操作:  
+## <a name="remarks"></a>コメント  
+ 列挙マスクを定義します。 ヘッダー \<ctype.h> に宣言されている同様の関数で定義されているように、列挙定数はそれぞれ、文字を分類する別の方法の特徴となっています。 定数は次のとおりです。  
   
--   **Space** \(関数 [isspace](../Topic/isspace.md)\)  
+- **space** (関数 [isspace](../standard-library/locale-functions.md#isspace))  
   
--   **印刷** \(関数 [isprint](../Topic/isprint.md)\)  
+- **print** (関数 [isprint](../standard-library/locale-functions.md#isprint))  
   
--   **cntrl** \(関数 [iscntrl](../Topic/iscntrl.md)\)  
+- **cntrl** (関数 [iscntrl](../standard-library/locale-functions.md#iscntrl))  
   
--   **上部** \(関数 [isupper](../Topic/isupper.md)\)  
+- **upper** (関数 [isupper](../standard-library/locale-functions.md#isupper))  
   
--   **下段** \(関数 [islower](../Topic/islower.md)\)  
+- **lower** (関数 [islower](../standard-library/locale-functions.md#islower))  
   
--   **数字** \(関数 [isdigit](../Topic/isdigit.md)\)  
+- **digit** (関数 [isdigit](../standard-library/locale-functions.md#isdigit))  
   
--   **punct** \(関数 [ispunct](../Topic/ispunct.md)\)  
+- **punct** (関数 [ispunct](../standard-library/locale-functions.md#ispunct))  
   
--   **xdigit** \(関数 [isxdigit](../Topic/isxdigit.md)\)  
+- **xdigit** (関数 [isxdigit](../standard-library/locale-functions.md#isxdigit))  
   
--   **アルファ** \(関数 [isalpha](../Topic/isalpha.md)\)  
+- **alpha** (関数 [isalpha](../standard-library/locale-functions.md#isalpha))  
   
--   **alnum** \(関数 [isalnum](../Topic/isalnum.md)\)  
+- **alnum** (関数 [isalnum](../standard-library/locale-functions.md#isalnum))  
   
--   **グラフ** \(関数 [isgraph](../Topic/isgraph.md)\)  
+- **graph** (関数 [isgraph](../standard-library/locale-functions.md#isgraph))  
   
- O リングによってこれらの定数分類の組み合わせの特徴を付けることができます。  特に、true と **alnum** \=\= \(**アルファ**常になります。  ``&#124; **数字**\) と **グラフ** \=\= \(**alnum**``&#124; **punct**\)。  
+ これらの定数を OR 演算することで、分類の組み合わせを特徴付けることができます。 特に、**alnum** == ( **alpha**``&#124; **digit**\) and **graph** \=\= \( **alnum**``&#124; **punct**) は常に true になります。  
   
-## 必要条件  
- **ヘッダー:** の \<ロケール\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

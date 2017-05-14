@@ -1,83 +1,100 @@
 ---
 title: "getchar、getwchar | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "getchar"
-  - "getwchar"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "getwchar"
-  - "GetChar"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_gettchar 関数"
-  - "文字, 読み取り"
-  - "gettchar 関数"
-  - "getwchar 関数"
-  - "標準入力, 読み取り"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- getchar
+- getwchar
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- getwchar
+- GetChar
+dev_langs:
+- C++
+helpviewer_keywords:
+- gettchar function
+- characters, reading
+- getwchar function
+- _gettchar function
+- standard input, reading from
 ms.assetid: 19fda588-3e33-415c-bb60-dd73c028086a
 caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# getchar、getwchar
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: d35a089e4b18475b556479ccadd68813440f51a3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
+---
+# <a name="getchar-getwchar"></a>getchar、getwchar
 標準入力から文字を読み取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int getchar();  
 wint_t getwchar();  
 ```  
   
-## 戻り値  
- 読み取られた文字を返します。  読み取りエラーまたはファイルの終端に達した場合は、状態 `getchar``returns EOF`、`getwchar` の戻り `WEOF`表示します。  `getchar` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。  
+## <a name="return-value"></a>戻り値  
+ 読み取られた文字を返します。 読み取りエラーまたはファイルの終端状態を示すために、`getchar` は `EOF` を返し、`getwchar` は `WEOF` を返します。 `getchar` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。  
   
-## 解説  
- 各ルーチンは `stdin` から 1 つの文字を読み取り、関連付けられたファイル ポインターが次の文字を指すようにそのポインターをインクリメントします。  `getchar` は [\_fgetchar](../Topic/fgetc,%20fgetwc.md) と同じですが、関数およびマクロとして実装されます。  
+## <a name="remarks"></a>コメント  
+ 各ルーチンは `stdin` から 1 つの文字を読み取り、関連付けられたファイル ポインターが次の文字を指すようにそのポインターをインクリメントします。 `getchar` は [_fgetchar](../../c-runtime-library/reference/fgetc-fgetwc.md) と同じですが、関数およびマクロとして実装します。  
   
- これらの関数は呼び出し元スレッドをロックするため、スレッド セーフです。  ロックしないバージョンについては、「[\_getchar\_nolock、\_getwchar\_nolock](../Topic/_getchar_nolock,%20_getwchar_nolock.md)」を参照してください。  
+ これらの関数は呼び出し元スレッドをロックするため、スレッド セーフです。 ロックしないバージョンについては、「[_getchar_nolock、_getwchar_nolock](../../c-runtime-library/reference/getchar-nolock-getwchar-nolock.md)」をご覧ください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_gettchar`|`getchar`|`getchar`|`getwchar`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`getchar`|\<stdio.h\>|  
-|`getwchar`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`getchar`|\<stdio.h>|  
+|`getwchar`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。  コンソール \(`stdin`、`stdout`、および `stderr`\) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_getchar.c  
@@ -102,17 +119,15 @@ int main()
 }  
 ```  
   
-  **`This text`入力: This text**   
-## 同等の .NET Framework 関数  
+```Output  
   
--   [System::IO::StreamReader::Read](https://msdn.microsoft.com/en-us/library/system.io.streamreader.read.aspx)  
+This textInput was: This text  
+```  
   
--   [System::Console::Read](https://msdn.microsoft.com/en-us/library/system.console.read.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)   
- [fgetc、fgetwc](../Topic/fgetc,%20fgetwc.md)   
- [\_getch、\_getwch](../Topic/_getch,%20_getwch.md)   
+ [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
+ [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)   
  [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)   
  [ungetc、ungetwc](../../c-runtime-library/reference/ungetc-ungetwc.md)

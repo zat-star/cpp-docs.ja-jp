@@ -67,14 +67,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c372d65ca9d3c49aee32cb51fea67859dc11a7fb
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 08ab806a3f2852109dda05d40e7264dbd8571298
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strdec-wcsdec-mbsdec-mbsdecl"></a>_strdec、_wcsdec、_mbsdec、_mbsdec_l
-文字列ポインターを&1; 文字前へ移動します。  
+文字列ポインターを 1 文字前へ移動します。  
   
 > [!IMPORTANT]
 >  `mbsdec` と `mbsdec_l` は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)] で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
@@ -103,16 +104,16 @@ unsigned char *_mbsdec_l(
   
 #### <a name="parameters"></a>パラメーター  
  `start`  
- 元の文字列内の文字 (または `_mbsdec` および _`mbsdec_l` の場合は、マルチバイト文字の最初のバイト) へのポインター。`start` は元の文字列の `current` に先行する必要があります。  
+ 任意の文字へのポインター (または`_mbsdec`と`_mbsdec_l`、任意のマルチバイト文字の最初のバイト) 元の文字列です。`start`前に指定する必要があります`current`元の文字列。  
   
  `current`  
- 元の文字列内の文字 (または `_mbsdec` および _`mbsdec_l` の場合は、マルチバイト文字の最初のバイト) へのポインター。`current` は元の文字列の `start` の後に続く必要があります。  
+ 任意の文字へのポインター (または`_mbsdec`と`_mbsdec_l`、任意のマルチバイト文字の最初のバイト) 元の文字列です。`current`従う必要があります`start`元の文字列。  
   
  `locale`  
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_mbsdec`、_`mbsdec_l`、`_strdec`、および `_wcsdec` は、それぞれ、`current` のすぐ前にある各文字へのポインターを返します。`_mbsdec` は、`NULL` の値が `start` の値以上の場合に `current` を返します。 `_tcsdec` は、これらの関数の&1; つに割り当てられます。戻り値は割り当てによって異なります。  
+ `_mbsdec`、 `_mbsdec_l`、 `_strdec`、および`_wcsdec`直前にある文字へのポインターを返す各`current`です。`_mbsdec`返します`NULL`場合の値`start`以上のものには、`current`です。 `_tcsdec` は、これらの関数の 1 つに割り当てられます。戻り値は割り当てによって異なります。  
   
 ## <a name="remarks"></a>コメント  
  `_mbsdec` 関数と `_mbsdec_l` 関数は、`current` を含む文字列の `start` に先行するマルチバイト文字の最初のバイトへのポインターを返します。  
@@ -130,7 +131,7 @@ unsigned char *_mbsdec_l(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsdec`|`_strdec`|`_mbsdec`|`_wcsdec`|  
   
- `_strdec` と `_wcsdec` はそれぞれ、`_mbsdec` と `_mbsdec_l` の&1; バイト文字バージョンとワイド文字バージョンです。 `_strdec` と `_wcsdec` はこの割り当てにのみ使用し、それ以外には使用しないでください。  
+ `_strdec` と `_wcsdec` はそれぞれ、`_mbsdec` と `_mbsdec_l` の 1 バイト文字バージョンとワイド文字バージョンです。 `_strdec` と `_wcsdec` はこの割り当てにのみ使用し、それ以外には使用しないでください。  
   
  詳細については、「[汎用テキスト マップの使用](../../c-runtime-library/using-generic-text-mappings.md)」および「[汎用テキスト マップ](../../c-runtime-library/generic-text-mappings.md)」を参照してください。  
   
@@ -197,9 +198,6 @@ int main()
 }  
   
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

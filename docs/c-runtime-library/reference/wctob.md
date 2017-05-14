@@ -50,10 +50,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 6c72cc32c5bd48bc6b7fc9c9187797f056ec7712
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 8eee02245359e71f32944f1a1f5c7180223553e3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="wctob"></a>wctob
@@ -72,10 +73,10 @@ int wctob(
  変換される値。  
   
 ## <a name="return-value"></a>戻り値  
- `wctob` はワイド文字を正常に変換すると、そのマルチバイト文字が&1; バイト長である場合にのみ、マルチバイト文字の表現を返します。 `wctob` は、マルチバイト文字に変換できないワイド文字を検出した場合やマルチバイト文字が&1; バイト長ではない場合、-1 を返します。  
+ `wctob` はワイド文字を正常に変換すると、そのマルチバイト文字が 1 バイト長である場合にのみ、マルチバイト文字の表現を返します。 場合`wctob`検出すると、ワイド文字をマルチバイト文字またはマルチバイト文字に変換できないは 1 バイトの長さで、これは、-1 を返します。  
   
 ## <a name="remarks"></a>コメント  
- `wctob` 関数は、マルチバイト文字が&1; バイト長である場合、`wchar` に含まれているワイド文字を、戻り値 `int` によって渡された対応するマルチバイト文字に変換します。  
+ `wctob` 関数は、マルチバイト文字が 1 バイト長である場合、`wchar` に含まれているワイド文字を、戻り値 `int` によって渡された対応するマルチバイト文字に変換します。  
   
  `wctob` が正常に実行されず、対応するマルチバイト文字が検出されなかった場合、この関数は、`errno` を `EILSEQ` に設定し、-1 を返します。  
   
@@ -120,9 +121,6 @@ int main( void )
 ```Output  
 Determined the corresponding multibyte character to be "A".  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

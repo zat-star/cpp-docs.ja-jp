@@ -1,50 +1,67 @@
 ---
-title: "qsort_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "qsort_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "qsort_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], 並べ替え"
-  - "qsort_s 関数"
-  - "クイックソート アルゴリズム"
-  - "配列の並べ替え"
+title: qsort_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- qsort_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- qsort_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- arrays [C++], sorting
+- quick-sort algorithm
+- qsort_s function
+- sorting arrays
 ms.assetid: 6ee817b0-4408-4355-a5d4-6605e419ab91
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# qsort_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: e4ba4fcb5acc8c914cf240e5b858a945bd55cc86
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-簡単な並べ替えを実行します。  この関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[qsort](../../c-runtime-library/reference/qsort.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="qsorts"></a>qsort_s
+クイック ソートを実行します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [qsort](../../c-runtime-library/reference/qsort.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void qsort_s(  
@@ -56,64 +73,64 @@ void qsort_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `base`  
- ターゲット配列の開始。  
+ 対象となる配列の先頭。  
   
  `num`  
- 要素の配列のサイズ。  
+ 配列サイズ (要素数)。  
   
  `width`  
- バイトの要素のサイズ。  
+ 要素のサイズ (バイト単位)。  
   
  `compare`  
- 比較関数。  最初の引数は `context` ポインターです。  2 番目の引数は、検索用の `key` へのポインターです。  3 番目の引数は、`key` と比較される配列要素へのポインターです。  
+ 比較関数。 最初の引数は、 `context` ポインターです。 2 番目の引数は、検索用の `key` へのポインターです。 3 番目の引数は、 `key`と比較する配列要素へのポインターです。  
   
  `context`  
- `compare` アクセスするルーチンに必要なオブジェクトであるコンテキストへのポインター。  
+ コンテキストへのポインター。コンテキストは、`compare` ルーチンがアクセスする必要があるどのオブジェクトでもかまいません。  
   
-## 解説  
- `qsort_s` 関数は `num` 要素の配列を、`width` の各バイト並べ替えるになく並べ替えアルゴリズムを実装します。  引数 `base` は並べ替えられるよう配列のベースへのポインターです。  `qsort_s` は 並べ替えられた要素でこの配列を上書きします。  引数 `compare` は 2 個の配列要素を比較し、指定されている値を返す関係ユーザーが指定したルーチンへのポインターです。  `qsort_s` は 一つ以上の時間各呼び出しの 2 種類の配列要素へのポインターを渡す並べ替え中に `compare` ルーチンを呼び出して:  
+## <a name="remarks"></a>コメント  
+ `qsort_s` 関数は、それぞれが `width` バイトの `num` 要素から成る配列を並べ替えるためのクイック ソート アルゴリズムを実装します。 引数 `base` は、並べ替える配列のベースへのポインターです。 `qsort_s` は、並べ替えた要素で、この配列を上書きします。 引数 `compare` は、2 つの配列要素を比較して両者の関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `qsort_s` は並べ替え中に `compare` ルーチンを 1 回以上呼び出し、各呼び出しにおいて 2 つの配列要素へのポインターを渡します。  
   
 ```  
 compare( context, (void *) & elem1, (void *) & elem2 );  
 ```  
   
- ルーチンは、要素を比較し、次の値のいずれか 1 つがを返す必要があります:  
+ ルーチンは、要素を比較し、次の値のいずれかを返す必要があります。  
   
 |戻り値|説明|  
-|---------|--------|  
-|\< 0|`elem1` が `elem2` より小さい|  
-|0|`elem2`への`elem1` の等価|  
-|\> 0|`elem1` が `elem2` より大きい|  
+|------------------|-----------------|  
+|< 0|`elem1` が `elem2` より小さい|  
+|0|`elem1` が `elem2` と等しい|  
+|> 0|`elem1` が `elem2` より大きい|  
   
- 配列は、比較関数によって定義されている、昇順に並べ替えられます。  かからない順序で配列を並べ替えるには、「より大きい」と比較関数の「以下の感覚をより」に戻します。  
+ 配列は、比較関数による定義に従って、昇順で並べ替えられます。 配列を降順で並べ替えるには、比較関数の "より大きい" と "より小さい" の意味を入れ替えます。  
   
- この関数に無効なパラメーターが渡されると、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続 `EINVAL`への関数の戻り値と `errno` が設定されます。  詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ この関数に無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可されると、この関数は戻って、`errno` を `EINVAL` に設定します。 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|key|base|compare|num|width|errno|  
+|key|base|compare|num|幅|errno|  
 |---------|----------|-------------|---------|-----------|-----------|  
 |`NULL`|任意|任意|任意|任意|`EINVAL`|  
-|任意|`NULL`|任意|\!\= 0|任意|`EINVAL`|  
-|任意|任意|任意|任意|\<\= 0|`EINVAL`|  
+|任意|`NULL`|任意|!= 0|任意|`EINVAL`|  
+|任意|任意|任意|任意|<= 0|`EINVAL`|  
 |任意|任意|`NULL`|任意|任意|`EINVAL`|  
   
- `qsort_s`に`qsort` と同じ動作が含まれる場合、`context` パラメーターを持ち、さらに `errno`を設定します。  `context` パラメーターを渡すと、比較関数は要素のポインターを通じてアクセスできないオブジェクトの機能やそのほかの情報にアクセスするには、オブジェクトのポインターを使用できます。  `context` パラメーターの追加は静的変数の使用によってもたらされる再入のバグを避けるため、共有情報を `compare` 関数にするために `context` を使用できるため `qsort_s`をより安全になります。  
+ `qsort_s` の動作は、`context` パラメーターを持ち `errno` を設定すること以外は `qsort` と同じです。 `context` パラメーターを渡すと、比較関数はオブジェクト ポインターを使用して、オブジェクト機能や、要素ポインターではアクセスできない他の情報にアクセスできます。 追加、`context`パラメーターにより、`qsort_s`ためにのより安全な`context`共有情報を使用できるようにする静的変数を使用して導入された再入バグを避けるために使用できる、`compare`関数。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`qsort_s`|\<stdlib.h と\> search.h \<\>|  
+|-------------|---------------------|  
+|`qsort_s`|\<stdlib.h > と \<search.h >|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
- **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md) のすべてのバージョン。  
+ **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
- 次の例に `qsort_s`関数で `context` パラメーターを使用する方法を示します。  `context` パラメーターはスレッド セーフな並べ替えを容易にします。  スレッド セーフを確保するために同期が必要な静的変数を使用する代わりに、各並べ替えの `context` 別のパラメーターを渡します。  この例では、locale オブジェクトは `context` パラメーターとして使用されます。  
+## <a name="example"></a>例  
+ 次の例で使用する方法、`context`内のパラメーター、`qsort_s`関数。 `context` パラメーターにより、スレッドセーフの並べ替えをより簡単に実行できるようになります。 スレッド セーフを確保するには同期を取らなければならない静的変数を使用するのではなく、並べ替えごとに異なる `context` パラメーターを渡します。 この例では、`context` パラメーターとしてロケール オブジェクトが使用されています。  
   
 ```  
 // crt_qsort_s.cpp  
@@ -254,7 +271,7 @@ int main( )
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Unsorted input:  
@@ -267,11 +284,8 @@ España Español espantado
 table tablet tableux  
 ```  
   
-## 同等の .NET Framework 関数  
- <xref:System.Collections.ArrayList.Sort%2A>  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
- [bsearch\_s](../../c-runtime-library/reference/bsearch-s.md)   
- [\_lsearch\_s](../../c-runtime-library/reference/lsearch-s.md)   
+ [bsearch_s](../../c-runtime-library/reference/bsearch-s.md)   
+ [_lsearch_s](../../c-runtime-library/reference/lsearch-s.md)   
  [qsort](../../c-runtime-library/reference/qsort.md)

@@ -6,30 +6,37 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- mutex/std::adopt_lock
+- mutex/std::call_once
+- mutex/std::defer_lock
+- mutex/std::lock
+- mutex/std::try_to_lock
 ms.assetid: 78ab3c8b-c7db-4226-ac93-e2e78ff8b964
 caps.latest.revision: 11
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a3bb29348b6bf7da235e608a915bcd10391dcac6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: dd24fb7f1b65f92c57915afa5f9b0412e019059d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltmutexgt-functions-and-variables"></a>&lt;mutex&gt; 関数および変数
 ||||  
 |-|-|-|  
-|[adopt_lock 変数](#adopt_lock_variable)|[call_once 関数](#call_once_function)|[defer_lock 変数](#defer_lock_variable)|  
-|[lock 関数](#lock_function)|[try_to_lock 変数](#try_to_lock_variable)|  
+|[adopt_lock](#adopt_lock)|[call_once](#call_once)|[defer_lock](#defer_lock)|  
+|[lock](#lock)|[try_to_lock](#try_to_lock)|  
   
-##  <a name="a-nameadoptlockvariablea--adoptlock-variable"></a><a name="adopt_lock_variable"></a>  adopt_lock 関数  
+##  <a name="adopt_lock"></a>  adopt_lock 関数  
  [lock_guard](../standard-library/lock-guard-class.md) と [unique_lock](../standard-library/unique-lock-class.md) のコンストラクターに渡されるオブジェクトを表し、同じコンストラクターに渡されるミューテックス オブジェクトがロックされていることを示します。  
   
 ```cpp  
 const adopt_lock_t adopt_lock;
 ```  
   
-##  <a name="a-namecalloncefunctiona--callonce"></a><a name="call_once_function"></a>  call_once  
- 指定された呼び出し可能オブジェクトが、実行中に&1; 回だけ呼び出されるメカニズムを提供します。  
+##  <a name="call_once"></a>  call_once  
+ 指定された呼び出し可能オブジェクトが、実行中に 1 回だけ呼び出されるメカニズムを提供します。  
   
 ```
 template <class Callable, class... Args>
@@ -39,7 +46,7 @@ void call_once(once_flag& Flag,
   
 ### <a name="parameters"></a>パラメーター  
  `Flag`  
- 呼び出し可能オブジェクトが&1; 回だけ呼び出されるようにする [once_flag](../standard-library/once-flag-structure.md) オブジェクト。  
+ 呼び出し可能オブジェクトが 1 回だけ呼び出されるようにする [once_flag](../standard-library/once-flag-structure.md) オブジェクト。  
   
  `F`  
  呼び出し可能オブジェクト。  
@@ -48,16 +55,16 @@ void call_once(once_flag& Flag,
  引数リスト。  
   
 ### <a name="remarks"></a>コメント  
- `Flag` が有効でない場合、関数はエラー コードが `invalid_argument` である [system_error](../standard-library/system-error-class.md) をスローします。 それ以外の場合、テンプレート関数は `Flag` 引数を使用して、テンプレート関数が呼び出される回数に関係なく `F(A...)` が&1; 回だけ呼び出されるようにします。 `F(A...)` が例外をスローして終了した場合、呼び出しは失敗です。  
+ `Flag` が有効でない場合、関数はエラー コードが `invalid_argument` である [system_error](../standard-library/system-error-class.md) をスローします。 それ以外の場合、テンプレート関数は `Flag` 引数を使用して、テンプレート関数が呼び出される回数に関係なく `F(A...)` が 1 回だけ呼び出されるようにします。 `F(A...)` が例外をスローして終了した場合、呼び出しは失敗です。  
   
-##  <a name="a-namedeferlockvariablea--deferlock-variable"></a><a name="defer_lock_variable"></a>  defer_lock 変数  
+##  <a name="defer_lock"></a>  defer_lock 変数  
  [unique_lock](../standard-library/unique-lock-class.md) のコンストラクターに渡すことができるオブジェクトを表します。 これは、コンストラクターに渡される mitex オブジェクトをコンストラクターがロックしてはならないことを示します。  
   
 ```cpp  
 const defer_lock_t defer_lock;
 ```  
   
-##  <a name="a-namelockfunctiona--lock"></a><a name="lock_function"></a>  lock  
+##  <a name="lock"></a>  lock  
  デッドロックなしですべての引数をロックしようとします。  
   
 ```cpp  
@@ -70,7 +77,7 @@ void lock(L1&, L2&, L3&...);
   
  この関数は、`lock`、`try_lock`、および `unlock` への呼び出しによるデッドロックなしで、すべての引数をロックします。 `lock` または `try_lock` の呼び出しで例外がスローされると、この関数は再び例外をスローする前に正常にロックされた mutex オブジェクトのいずれかに `unlock` を呼び出します。  
   
-##  <a name="a-nametrytolockvariablea--trytolock-variable"></a><a name="try_to_lock_variable"></a>  try_to_lock 変数  
+##  <a name="try_to_lock"></a>  try_to_lock 変数  
  [unique_lock](../standard-library/unique-lock-class.md) のコンストラクターに渡すことのできるオブジェクトを表し、ブロックされずに渡される `mutex` をコンストラクターがロック解除しようとしたほうがよいことを示します。  
   
 ```cpp  

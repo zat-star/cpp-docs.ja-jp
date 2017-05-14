@@ -12,19 +12,20 @@ f1_keywords:
 ms.assetid: d1af4b56-9a95-4c65-ab01-bf43e982c7bd
 caps.latest.revision: 8
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: c74b76d842878bb2811a5ff9714cb6d2cfa436b3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 52633103180338b6db7b96f2d76391f58e1f4c35
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltnewgt-operators"></a>&lt;new&gt; 演算子
 ||||  
 |-|-|-|  
-|[operator delete](#operator_delete)|[operator delete[]](#operator_delete_arr)|[operator new](#operator_new)|  
-|[operator new[]](#operator_new_arr)|  
+|[operator delete](#op_delete)|[operator delete[]](#op_delete_arr)|[operator new](#op_new)|  
+|[operator new[]](#op_new_arr)|  
   
-##  <a name="operator_delete"></a>  operator delete  
+##  <a name="op_delete"></a>  operator delete  
  個々のオブジェクトに対するストレージの割り当てを解除する削除式によって呼び出される関数。  
   
 ```
@@ -42,7 +43,7 @@ void operator delete(void* ptr,
  削除によって値が無効になるポインター。  
   
 ### <a name="remarks"></a>コメント  
- 1 番目の関数は、`ptr` の値を無効にするために delete 式によって呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の [operator new](../standard-library/new-operators.md#operator_new)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。  
+ 1 番目の関数は、`ptr` の値を無効にするために delete 式によって呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の [operator new](../standard-library/new-operators.md#op_new)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。  
   
  null 値の `ptr` に対する既定の動作では、何も実行されません。 その他の `ptr` の値は、前述のとおり、呼び出しによって以前に返された値である必要があります。 このような null 以外の値の `ptr` に対する既定の動作では、以前の呼び出しによって割り当てられたストレージが再利用されます。 このような再利用されるストレージの一部またはすべてが、どのような条件で後続の `operator new`( **size_t**)、または `calloc`( **size_t**)、`malloc`( **size_t**)、`realloc`( **void\***, **size_t**) のいずれかの呼び出しによって割り当てられるかは不定です。  
   
@@ -51,9 +52,9 @@ void operator delete(void* ptr,
  3 番目の関数は、**new**( **std::size_t**, **conststd::nothrow_t&**) の形式の new 式に対応する配置 delete 式で呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の `operator new`( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 既定の動作では、**delete**( `ptr`) が評価されます。  
   
 ### <a name="example"></a>例  
-  `operator delete` の使用例については、「[operator new](../standard-library/new-operators.md#operator_new)」を参照してください。  
+  `operator delete` の使用例については、「[operator new](../standard-library/new-operators.md#op_new)」を参照してください。  
   
-##  <a name="operator_delete_arr"></a>  operator delete[]  
+##  <a name="op_delete_arr"></a>  operator delete[]  
  オブジェクトの配列に対するストレージの割り当てを解除する削除式によって呼び出される関数。  
   
 ```
@@ -71,16 +72,16 @@ void operator delete[](void* ptr,
  削除によって値が無効になるポインター。  
   
 ### <a name="remarks"></a>コメント  
- 1 番目の関数は、`ptr` の値を無効にするために `delete[]` 式によって呼び出されます。 関数は置き換え可能です。プログラムでこの関数のシグネチャを持つ関数を定義でき、これが C++ 標準ライブラリで定義された既定のバージョンに置き換わるためです。 必要な動作は、null であるかまたは以前の [operator new&#91;&#93;](../standard-library/new-operators.md#operator_new_arr)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 null 値の `ptr` に対する既定の動作では、何も実行されません。 その他の `ptr` の値は、前述のとおり、呼び出しによって以前に返された値である必要があります。 このような null 以外の値の `ptr` に対する既定の動作では、以前の呼び出しによって割り当てられたストレージが再利用されます。 このような再利用されるストレージの一部またはすべてが、どのような条件で後続の [operator new](../standard-library/new-operators.md#operator_new)( **size_t**)、または `calloc`( **size_t**)、`malloc`( **size_t**)、`realloc`( **void\***, **size_t**) のいずれかの呼び出しによって割り当てられるかは不定です。  
+ 1 番目の関数は、`ptr` の値を無効にするために `delete[]` 式によって呼び出されます。 関数は置き換え可能です。プログラムでこの関数のシグネチャを持つ関数を定義でき、これが C++ 標準ライブラリで定義された既定のバージョンに置き換わるためです。 必要な動作は、null であるかまたは以前の [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 null 値の `ptr` に対する既定の動作では、何も実行されません。 その他の `ptr` の値は、前述のとおり、呼び出しによって以前に返された値である必要があります。 このような null 以外の値の `ptr` に対する既定の動作では、以前の呼び出しによって割り当てられたストレージが再利用されます。 このような再利用されるストレージの一部またはすべてが、どのような条件で後続の [operator new](../standard-library/new-operators.md#op_new)( **size_t**)、または `calloc`( **size_t**)、`malloc`( **size_t**)、`realloc`( **void\***, **size_t**) のいずれかの呼び出しによって割り当てられるかは不定です。  
   
  2 番目の関数は、`new[]`( **std::size_t**) の形式の `new[]` 式に対応する配置 `delete[]` 式で呼び出されます。 何も実行されません。  
   
  3 番目の関数は、`new[]`( **std::size_t**, **const std::nothrow_t&**) の形式の `new[]` 式に対応する配置 delete 式で呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の operator `new[]`( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 既定の動作では、`delete[]`( `ptr`) が評価されます。  
   
 ### <a name="example"></a>例  
-  `operator delete[]` の使用例については、「[operator new&#91;&#93;](../standard-library/new-operators.md#operator_new_arr)」を参照してください。  
+  `operator delete[]` の使用例については、「[operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)」を参照してください。  
   
-##  <a name="operator_new"></a>  operator new  
+##  <a name="op_new"></a>  operator new  
  new 式によって個々のオブジェクトにストレージを割り当てるために呼び出される関数。  
   
 ```
@@ -126,9 +127,9 @@ void* operator new(std::size_t count,
   
  既定の動作では、その関数が成功した場合に `operator new`( `count`) が返されます。 それ以外の場合は、Null ポインターが返されます。  
   
- 3 番目の関数は、**new**( *args*) T の形式の配置 **new** 式によって呼び出されます。ここで、*args* は&1; つのオブジェクトのポインターで構成されます。 これは、既知のアドレスにあるオブジェクトの構築に役立ちます。 *ptr* が返されます。  
+ 3 番目の関数は、**new**( *args*) T の形式の配置 **new** 式によって呼び出されます。ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 これは、既知のアドレスにあるオブジェクトの構築に役立ちます。 *ptr* が返されます。  
   
- `operator new` によって割り当てられたストレージを解放するには、[operator delete](../standard-library/new-operators.md#operator_delete) を呼び出します。  
+ `operator new` によって割り当てられたストレージを解放するには、[operator delete](../standard-library/new-operators.md#op_delete) を呼び出します。  
   
  スローする場合またはスローしない場合の動作については、「[new および delete 演算子](../cpp/new-and-delete-operators.md)」を参照してください。  
   
@@ -175,7 +176,7 @@ int main( )
 }  
 ```  
   
-##  <a name="operator_new_arr"></a>  operator new[]  
+##  <a name="op_new_arr"></a>  operator new[]  
  new 式によってオブジェクトの配列にストレージを割り当てるために呼び出される割り当て関数。  
   
 ```
@@ -199,13 +200,13 @@ void* operator new[](std::size_t count,
  新たに割り当てられるストレージの最下位バイト アドレスへのポインター。 または `ptr.`  
   
 ### <a name="remarks"></a>コメント  
- 1 番目の関数は `new[]` 式によって呼び出され、そのサイズ以下の配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、[operator new](../standard-library/new-operators.md#operator_new)( **size_t**) の場合と同じです。 既定の動作では、`operator new`( `count`) が返されます。  
+ 1 番目の関数は `new[]` 式によって呼び出され、そのサイズ以下の配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、[operator new](../standard-library/new-operators.md#op_new)( **size_t**) の場合と同じです。 既定の動作では、`operator new`( `count`) が返されます。  
   
  2 番目の関数は配置 `new[]` 式によって呼び出され、そのサイズの配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 既定の動作では、その関数が成功した場合に **operatornew**( `count`) が返されます。 それ以外の場合は、Null ポインターが返されます。  
   
- 3 番目の関数は、**new** ( *args*) **T**[ **N**] の形式の配置 `new[]` 式によって呼び出されます。 ここで、*args* は&1; つのオブジェクトのポインターで構成されます。 `ptr` が返されます。  
+ 3 番目の関数は、**new** ( *args*) **T**[ **N**] の形式の配置 `new[]` 式によって呼び出されます。 ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 `ptr` が返されます。  
   
- `operator new[]` によって割り当てられたストレージを解放するには、[operator delete&#91;&#93;](../standard-library/new-operators.md#operator_delete_arr) を呼び出します。  
+ `operator new[]` によって割り当てられたストレージを解放するには、[operator delete&#91;&#93;](../standard-library/new-operators.md#op_delete_arr) を呼び出します。  
   
  スローする場合またはスローしない場合の動作については、「[new および delete 演算子](../cpp/new-and-delete-operators.md)」を参照してください。  
   

@@ -1,60 +1,77 @@
 ---
 title: "rename、_wrename | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "rename"
-  - "_wrename"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-filesystem-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_wrename"
-  - "_trename"
-  - "Rename"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_trename 関数"
-  - "_wrename 関数"
-  - "ディレクトリ [C++], 名前を変更"
-  - "ファイル [C++], 名前を変更"
-  - "名前 [C++], 変更 (ディレクトリを)"
-  - "名前 [C++], 変更 (ファイルを)"
-  - "rename 関数"
-  - "名前を変更 (ディレクトリの)"
-  - "名前を変更 (ファイルの)"
-  - "trename 関数"
-  - "wrename 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- rename
+- _wrename
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _wrename
+- _trename
+- Rename
+dev_langs:
+- C++
+helpviewer_keywords:
+- trename function
+- directories [C++], renaming
+- renaming directories
+- names [C++], changing file
+- _trename function
+- rename function
+- wrename function
+- files [C++], renaming
+- _wrename function
+- names [C++], changing directory
+- renaming files
 ms.assetid: 9f0a6103-26a2-4dda-b14b-79a48946266a
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# rename、_wrename
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5aeb9d9ceac7eabac061f211f48835d07f2ec38e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
+---
+# <a name="rename-wrename"></a>rename、_wrename
 ファイルまたはディレクトリの名前を変更します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -68,51 +85,51 @@ int _wrename(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *oldname*  
  古い名前へのポインター。  
   
  *newname*  
  新しい名前へのポインター。  
   
-## 戻り値  
- これらの関数は、正常終了した場合は 0 を返します。  エラー、関数の戻り値 0 以外の値と次の値のいずれか 1 つがに設定 `errno` :  
+## <a name="return-value"></a>戻り値  
+ 名前が正常に変更された場合、これらの関数はそれぞれ 0 を返します。 エラーが発生した場合は 0 以外の値を返し、`errno` を次のいずれかの値に設定します。  
   
  `EACCES`  
- *newname* で指定されたファイルまたはディレクトリが存在するか、作成できません \(無効なパス\) ; または *oldname は* ディレクトリで、*newname は* 別のパスを指定します。  
+ *newname* によって指定されたファイルまたはディレクトリが既に存在するか、(無効なパスのため) 作成できない、または *oldname* がディレクトリであり、*newname* によって異なるパスが指定されています。  
   
  `ENOENT`  
- が *oldname* でファイルまたは指定したパス。  
+ *oldname* によって指定されたファイルまたはパスが見つかりません。  
   
  `EINVAL`  
  名前に無効な文字が含まれています。  
   
- そのほかの有効な戻り値については、[\_doserrno、\_errno、syserrlist および\_sys\_nerr "](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)を参照してください。  
+ その他の返される可能性のある戻り値については、「[_doserrno、_errno、syserrlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- **名前の変更** 関数は *newname*で指定された名前に *oldname* で指定されたファイルまたはディレクトリの名前を変更します。  古い名前は既存のファイルまたはディレクトリのパスを指定する必要があります。  新しい名前が既存のファイルまたはディレクトリの名前である必要があります。  1 個のディレクトリからファイルを別の場所に *newname* 引数の別のパスを指定してデバイスを移動するには、**名前の変更** を使用できます。  ただし、ディレクトリを移動するには、**名前の変更** を使用できません。  ディレクトリの名前を変更したり、コントロールを移動することはできません。  
+## <a name="remarks"></a>コメント  
+ **rename** 関数は、*oldname* によって指定されたファイルまたはディレクトリの名前を *newname* によって指定された名前に変更します。 古い名前は、既存のファイルまたはディレクトリのパスである必要があります。 新しい名前を既存のファイルまたはディレクトリのパスにすることはできません。 **rename** を使用して、*newname* 引数で別のパスを指定することにより、1 つのディレクトリまたはデバイスから別のディレクトリまたはデバイスにファイルを移動することができます。 ただし、**rename** を使用してディレクトリを移動することはできません。 ディレクトリの名前を変更することはできますが、移動はできません。  
   
- `_wrename` は **\_rename**のワイド文字バージョンであり、; `_wrename` への引数はワイド文字列です。  `_wrename` と **\_rename** は別の方法で同様に動作します。  
+ `_wrename` は **_rename** のワイド文字バージョンであり、`_wrename` の引数はワイド文字列です。 それ以外では、`_wrename` と **_rename** の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
-|`_trename`|**名前の変更**|**名前の変更**|`_wrename`|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
+|`_trename`|**rename**|**rename**|`_wrename`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|**名前の変更**|\<io.h または\> stdio.h \<\>|  
-|`_wrename`|\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|**rename**|\<io.h> または \<stdio.h>|  
+|`_wrename`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_renamer.c  
@@ -138,14 +155,11 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 File 'CRT_RENAMER.OBJ' renamed to 'CRT_RENAMER.JBO'  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::IO::File::Move](https://msdn.microsoft.com/en-us/library/system.io.file.move.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)

@@ -40,30 +40,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: e76968b910684d7f8bcb4dd85ae583b81dde5bd3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: da93ea05069cece10b7190368997c4471aaf13bd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="operator-ltsample-containergt"></a>operator== (&lt;sample container&gt;)
 > [!NOTE]
 >  このトピックは、C++ 標準ライブラリで使用されるコンテナーの例 (実際には機能しない) として、Visual C++ ドキュメントに含まれています。 詳細については、「[C++ Standard Library Containers (C++ 標準ライブラリ コンテナ―)](../standard-library/stl-containers.md)」をご覧ください。  
   
- `operator==` をオーバーロードしてテンプレート クラス [Container](../standard-library/sample-container-class.md) の&2; つのオブジェクトを比較します。  
+ `operator==` をオーバーロードしてテンプレート クラス [Container](../standard-library/sample-container-class.md) の 2 つのオブジェクトを比較します。  
   
 ## <a name="syntax"></a>構文  
   
 ```  
- 
-    template <class Ty>  
+template <class Ty>  
 bool operator==(
     const Container <Ty>& left,  
     const Container <Ty>& right);
 ```  
   
 ## <a name="return-value"></a>戻り値  
- ` left`**.**[size](../standard-library/container-class-size.md) **==** ` right`**.size && equal**(_*Left***.**[begin](../standard-library/container-class-begin.md), ` left`. [end](../standard-library/container-class-end.md)*,  right***.begin**) を返します。  
+ Returns `left.`[size](../standard-library/container-class-size.md) ` == right.size && equal(left.`[begin](../standard-library/container-class-begin.md)`, left.`[end](../standard-library/container-class-end.md)`, right.begin)`.  
   
 ## <a name="see-also"></a>関連項目  
  [\<sample container>](../standard-library/sample-container.md)

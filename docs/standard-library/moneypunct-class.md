@@ -10,9 +10,27 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - moneypunct
-- std.moneypunct
 - xlocmon/std::moneypunct
-- std::moneypunct
+- locale/std::moneypunct::char_type
+- locale/std::moneypunct::string_type
+- locale/std::moneypunct::curr_symbol
+- locale/std::moneypunct::decimal_point
+- locale/std::moneypunct::do_curr_symbol
+- locale/std::moneypunct::do_decimal_point
+- locale/std::moneypunct::do_frac_digits
+- locale/std::moneypunct::do_grouping
+- locale/std::moneypunct::do_neg_format
+- locale/std::moneypunct::do_negative_sign
+- locale/std::moneypunct::do_pos_format
+- locale/std::moneypunct::do_positive_sign
+- locale/std::moneypunct::do_thousands_sep
+- locale/std::moneypunct::frac_digits
+- locale/std::moneypunct::grouping
+- locale/std::moneypunct::neg_format
+- locale/std::moneypunct::negative_sign
+- locale/std::moneypunct::pos_format
+- locale/std::moneypunct::positive_sign
+- locale/std::moneypunct::thousands_sep
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 5bf4f8f69073e6c445f416a24b00e19b4a20adc4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 9567db1b823f373a5ea26e6d113cc9176901453d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="moneypunct-class"></a>moneypunct クラス
@@ -60,7 +79,7 @@ class moneypunct;
  国際的な規則を確認するかどうかを指定するフラグ。  
   
 ## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は&0; です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
+ すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
   
  const 静的オブジェクト intl は、テンプレート パラメーター **Intl** の値を格納します。  
   
@@ -68,44 +87,44 @@ class moneypunct;
   
 |||  
 |-|-|  
-|[moneypunct](#moneypunct__moneypunct)|`moneypunct` 型のオブジェクトのコンストラクター。|  
+|[moneypunct](#moneypunct)|`moneypunct` 型のオブジェクトのコンストラクター。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#moneypunct__char_type)|ロケールによって使用される文字を表すために使用される型。|  
-|[string_type](#moneypunct__string_type)|`CharType` 型の文字を格納する文字列を表す型。|  
+|[char_type](#char_type)|ロケールによって使用される文字を表すために使用される型。|  
+|[string_type](#string_type)|`CharType` 型の文字を格納する文字列を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[curr_symbol](#moneypunct__curr_symbol)|通貨記号として使用する要素のロケール固有のシーケンスを返します。|  
-|[decimal_point](#moneypunct__decimal_point)|小数点記号として使用する要素のロケール固有のシーケンスを返します。|  
-|[do_curr_symbol](#moneypunct__do_curr_symbol)|通貨記号として使用する要素のロケール固有のシーケンスを返すプロテクト仮想メンバー関数。|  
-|[do_decimal_point](#moneypunct__do_decimal_point)|小数点記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_frac_digits](#moneypunct__do_frac_digits)|このプロテクト仮想メンバー関数は、小数点の右側に表示する桁数のロケール固有の数を返します。|  
-|[do_grouping](#moneypunct__do_grouping)|このプロテクト仮想メンバー関数は、小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返します。|  
-|[do_neg_format](#moneypunct__do_neg_format)|負の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_negative_sign](#moneypunct__do_negative_sign)|負の記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_pos_format](#moneypunct__do_pos_format)|正の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_positive_sign](#moneypunct__do_positive_sign)|正の記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_thousands_sep](#moneypunct__do_thousands_sep)|桁区切り記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[frac_digits](#moneypunct__frac_digits)|小数点の右側に表示する桁数のロケール固有の数を返します。|  
-|[grouping](#moneypunct__grouping)|小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返します。|  
-|[neg_format](#moneypunct__neg_format)|負の値の出力を書式設定するためのロケール固有の規則を返します。|  
-|[negative_sign](#moneypunct__negative_sign)|負の記号として使用する要素のロケール固有のシーケンスを返します。|  
-|[pos_format](#moneypunct__pos_format)|正の値の出力を書式設定するためのロケール固有の規則を返します。|  
-|[positive_sign](#moneypunct__positive_sign)|正の記号として使用する要素のロケール固有のシーケンスを返します。|  
-|[thousands_sep](#moneypunct__thousands_sep)|桁区切り記号として使用する要素のロケール固有のシーケンスを返します。|  
+|[curr_symbol](#curr_symbol)|通貨記号として使用する要素のロケール固有のシーケンスを返します。|  
+|[decimal_point](#decimal_point)|小数点記号として使用する要素のロケール固有のシーケンスを返します。|  
+|[do_curr_symbol](#do_curr_symbol)|通貨記号として使用する要素のロケール固有のシーケンスを返すプロテクト仮想メンバー関数。|  
+|[do_decimal_point](#do_decimal_point)|小数点記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[do_frac_digits](#do_frac_digits)|このプロテクト仮想メンバー関数は、小数点の右側に表示する桁数のロケール固有の数を返します。|  
+|[do_grouping](#do_grouping)|このプロテクト仮想メンバー関数は、小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返します。|  
+|[do_neg_format](#do_neg_format)|負の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[do_negative_sign](#do_negative_sign)|負の記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[do_pos_format](#do_pos_format)|正の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[do_positive_sign](#do_positive_sign)|正の記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[do_thousands_sep](#do_thousands_sep)|桁区切り記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。|  
+|[frac_digits](#frac_digits)|小数点の右側に表示する桁数のロケール固有の数を返します。|  
+|[grouping](#grouping)|小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返します。|  
+|[neg_format](#neg_format)|負の値の出力を書式設定するためのロケール固有の規則を返します。|  
+|[negative_sign](#negative_sign)|負の記号として使用する要素のロケール固有のシーケンスを返します。|  
+|[pos_format](#pos_format)|正の値の出力を書式設定するためのロケール固有の規則を返します。|  
+|[positive_sign](#positive_sign)|正の記号として使用する要素のロケール固有のシーケンスを返します。|  
+|[thousands_sep](#thousands_sep)|桁区切り記号として使用する要素のロケール固有のシーケンスを返します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-##  <a name="a-namemoneypunctchartypea--moneypunctchartype"></a><a name="moneypunct__char_type"></a>  moneypunct::char_type  
+##  <a name="char_type"></a>  moneypunct::char_type  
  ロケールによって使用される文字を表すために使用される型。  
   
 ```  
@@ -115,7 +134,7 @@ typedef CharType char_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **CharType** のシノニムです。  
   
-##  <a name="a-namemoneypunctcurrsymbola--moneypunctcurrsymbol"></a><a name="moneypunct__curr_symbol"></a>  moneypunct::curr_symbol  
+##  <a name="curr_symbol"></a>  moneypunct::curr_symbol  
  通貨記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ```  
@@ -126,7 +145,7 @@ string_type curr_symbol() const;
  通貨記号を含む文字列。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_curr_symbol](#moneypunct__do_curr_symbol) を返します。  
+ このメンバー関数は、[do_curr_symbol](#do_curr_symbol) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -149,7 +168,7 @@ int main( )
 };  
 ```  
   
-##  <a name="a-namemoneypunctdecimalpointa--moneypunctdecimalpoint"></a><a name="moneypunct__decimal_point"></a>  moneypunct::decimal_point  
+##  <a name="decimal_point"></a>  moneypunct::decimal_point  
  小数点記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ```  
@@ -160,7 +179,7 @@ CharType decimal_point() const;
  小数点記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_decimal_point](#moneypunct__do_decimal_point) を返します。  
+ このメンバー関数は、[do_decimal_point](#do_decimal_point) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -192,7 +211,7 @@ German_Germany.1252 international decimal point ,
 German_Germany.1252 domestic decimal point ,  
 ```  
   
-##  <a name="a-namemoneypunctdocurrsymbola--moneypunctdocurrsymbol"></a><a name="moneypunct__do_curr_symbol"></a>  moneypunct::do_curr_symbol  
+##  <a name="do_curr_symbol"></a>  moneypunct::do_curr_symbol  
  通貨記号として使用する要素のロケール固有のシーケンスを返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -203,9 +222,9 @@ virtual string_type do_curr_symbol() const;
  小数点記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="example"></a>例  
-  [curr_symbol](#moneypunct__curr_symbol) の例 (仮想メンバー関数が `curr_symbol` で呼び出される) を参照してください。  
+  [curr_symbol](#curr_symbol) の例 (仮想メンバー関数が `curr_symbol` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdodecimalpointa--moneypunctdodecimalpoint"></a><a name="moneypunct__do_decimal_point"></a>  moneypunct::do_decimal_point  
+##  <a name="do_decimal_point"></a>  moneypunct::do_decimal_point  
  小数点記号として使用する要素のロケール固有のシーケンスを返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -216,9 +235,9 @@ virtual CharType do_decimal_point() const;
  小数点記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="example"></a>例  
-  [decimal_point](#moneypunct__decimal_point) の例 (仮想メンバー関数が `decimal_point` で呼び出される) を参照してください。  
+  [decimal_point](#decimal_point) の例 (仮想メンバー関数が `decimal_point` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdofracdigitsa--moneypunctdofracdigits"></a><a name="moneypunct__do_frac_digits"></a>  moneypunct::do_frac_digits  
+##  <a name="do_frac_digits"></a>  moneypunct::do_frac_digits  
  小数点の右側に表示する桁数のロケール固有の数を返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -229,9 +248,9 @@ virtual int do_frac_digits() const;
  小数点の右側に表示する桁数のロケール固有の数。  
   
 ### <a name="example"></a>例  
-  [frac_digits](#moneypunct__frac_digits) の例 (仮想メンバー関数が `frac_digits` で呼び出される) を参照してください。  
+  [frac_digits](#frac_digits) の例 (仮想メンバー関数が `frac_digits` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdogroupinga--moneypunctdogrouping"></a><a name="moneypunct__do_grouping"></a>  moneypunct::do_grouping  
+##  <a name="do_grouping"></a>  moneypunct::do_grouping  
  小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -242,9 +261,9 @@ virtual string do_grouping() const;
  小数点の左側の数字をグループ化する方法を決定するロケール固有の規則。  
   
 ### <a name="example"></a>例  
-  [grouping](#moneypunct__grouping) の例 (仮想メンバー関数が **grouping** で呼び出される) を参照してください。  
+  [grouping](#grouping) の例 (仮想メンバー関数が **grouping** で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdonegformata--moneypunctdonegformat"></a><a name="moneypunct__do_neg_format"></a>  moneypunct::do_neg_format  
+##  <a name="do_neg_format"></a>  moneypunct::do_neg_format  
  負の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。  
   
 ```  
@@ -252,26 +271,26 @@ virtual pattern do_neg_format() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- このプロテクト仮想メンバー関数は、負の値の通貨出力フィールドを生成する方法を決定する、ロケール固有の規則を返します。 **pattern::field** の&4; つの要素のそれぞれに値を設定できます。  
+ このプロテクト仮想メンバー関数は、負の値の通貨出力フィールドを生成する方法を決定する、ロケール固有の規則を返します。 **pattern::field** の 4 つの要素のそれぞれに値を設定できます。  
   
-- **none**:&0; 個以上の空白に一致するか、何も生成しません。  
+- **none**: 0 個以上の空白に一致するか、何も生成しません。  
   
 - **sign**: 正の記号または負の記号に一致するか、正の記号または負の記号を生成します。  
   
-- **space**:&0; 個以上の空白に一致するか、1 個の空白を生成します。  
+- **space**: 0 個以上の空白に一致するか、1 個の空白を生成します。  
   
 - **symbol**: 通貨記号に一致するか、通貨記号を生成します。  
   
 - **value**: 通貨の値に一致するか、通貨の値を生成します。  
   
- 通貨出力フィールドのコンポーネントが生成され、通貨入力フィールドのコンポーネントが、これらの要素が **pattern::field** に出現する順序で一致します。 値 **sign**、**symbol**、**value**、および **none** か **space** のいずれかが、それぞれ&1; 回のみ出現している必要があります。 値 **none** を最初に出現させることはできません。 値 space を最初または最後に出現させることは**できません**。 **Intl** が true の場合、順序は **symbol**、**sign**、**none**、**value** です。  
+ 通貨出力フィールドのコンポーネントが生成され、通貨入力フィールドのコンポーネントが、これらの要素が **pattern::field** に出現する順序で一致します。 値 **sign**、**symbol**、**value**、および **none** か **space** のいずれかが、それぞれ 1 回のみ出現している必要があります。 値 **none** を最初に出現させることはできません。 値 space を最初または最後に出現させることは**できません**。 **Intl** が true の場合、順序は **symbol**、**sign**、**none**、**value** です。  
   
  `moneypunct` のテンプレート バージョン \< **CharType**, **Intl**> は、`{`**money_base::symbol**、**money_base::sign**、**money_base::value**、**money_base::none**`}` を返します。  
   
 ### <a name="example"></a>例  
-  [neg_format](#moneypunct__neg_format) の例 (仮想メンバー関数が `neg_format` で呼び出される) を参照してください。  
+  [neg_format](#neg_format) の例 (仮想メンバー関数が `neg_format` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdonegativesigna--moneypunctdonegativesign"></a><a name="moneypunct__do_negative_sign"></a>  moneypunct::do_negative_sign  
+##  <a name="do_negative_sign"></a>  moneypunct::do_negative_sign  
  負の記号として使用する要素のロケール固有のシーケンスを返すために呼び出されるプロテクト仮想メンバー関数。  
   
 ```  
@@ -282,9 +301,9 @@ virtual string_type do_negative_sign() const;
  負の記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="example"></a>例  
-  [negative_sign](#moneypunct__negative_sign) の例 (仮想メンバー関数が `negative_sign` で呼び出される) を参照してください。  
+  [negative_sign](#negative_sign) の例 (仮想メンバー関数が `negative_sign` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdoposformata--moneypunctdoposformat"></a><a name="moneypunct__do_pos_format"></a>  moneypunct::do_pos_format  
+##  <a name="do_pos_format"></a>  moneypunct::do_pos_format  
  正の値の出力を書式設定するためのロケール固有の規則を返すために呼び出されるプロテクト仮想メンバー関数。  
   
 ```  
@@ -292,14 +311,14 @@ virtual pattern do_pos_format() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- このプロテクト仮想メンバー関数は、正の値の通貨出力フィールドを生成する方法を決定する、ロケール固有の規則を返します。 (通貨入力フィールドのコンポーネントに一致する方法も決定します。)エンコーディングは [do_neg_format](#moneypunct__do_neg_format) の場合と同じです。  
+ このプロテクト仮想メンバー関数は、正の値の通貨出力フィールドを生成する方法を決定する、ロケール固有の規則を返します。 (通貨入力フィールドのコンポーネントに一致する方法も決定します。)エンコーディングは [do_neg_format](#do_neg_format) の場合と同じです。  
   
  moneypunct のテンプレート バージョン \< **CharType**, **Inputlterator**> は、`{`**money_base::symbol**, **money_base::sign**, **money_base::value**, **money_base::none**`}` を返します。  
   
 ### <a name="example"></a>例  
-  [pos_format](#moneypunct__pos_format) の例 (仮想メンバー関数が `pos_format` で呼び出される) を参照してください。  
+  [pos_format](#pos_format) の例 (仮想メンバー関数が `pos_format` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdopositivesigna--moneypunctdopositivesign"></a><a name="moneypunct__do_positive_sign"></a>  moneypunct::do_positive_sign  
+##  <a name="do_positive_sign"></a>  moneypunct::do_positive_sign  
  正の記号として使用する要素のロケール固有のシーケンスを返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -310,9 +329,9 @@ virtual string_type do_positive_sign() const;
  正の記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="example"></a>例  
-  [positive_sign](#moneypunct__positive_sign) の例 (仮想メンバー関数が `positive_sign` で呼び出される) を参照してください。  
+  [positive_sign](#positive_sign) の例 (仮想メンバー関数が `positive_sign` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctdothousandssepa--moneypunctdothousandssep"></a><a name="moneypunct__do_thousands_sep"></a>  moneypunct::do_thousands_sep  
+##  <a name="do_thousands_sep"></a>  moneypunct::do_thousands_sep  
  小数点の左側の桁区切り記号として使用するロケール固有の要素を返すプロテクト仮想メンバー関数。  
   
 ```  
@@ -323,9 +342,9 @@ virtual CharType do_thousands_sep() const;
  小数点の左側の桁区切り記号として使用するロケール固有の要素。  
   
 ### <a name="example"></a>例  
-  [thousands_sep](#moneypunct__thousands_sep) の例 (仮想メンバー関数が `thousands_sep` で呼び出される) を参照してください。  
+  [thousands_sep](#thousands_sep) の例 (仮想メンバー関数が `thousands_sep` で呼び出される) を参照してください。  
   
-##  <a name="a-namemoneypunctfracdigitsa--moneypunctfracdigits"></a><a name="moneypunct__frac_digits"></a>  moneypunct::frac_digits  
+##  <a name="frac_digits"></a>  moneypunct::frac_digits  
  小数点の右側に表示する桁数のロケール固有の数を返します。  
   
 ```  
@@ -336,7 +355,7 @@ int frac_digits() const;
  小数点の右側に表示する桁数のロケール固有の数。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_frac_digits](#moneypunct__do_frac_digits) を返します。  
+ このメンバー関数は、[do_frac_digits](#do_frac_digits) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -391,7 +410,7 @@ German_Germany.1252 domestic frac_digits
  to the right of the radix character: 2  
 ```  
   
-##  <a name="a-namemoneypunctgroupinga--moneypunctgrouping"></a><a name="moneypunct__grouping"></a>  moneypunct::grouping  
+##  <a name="grouping"></a>  moneypunct::grouping  
  小数点の左側の数字をグループ化する方法を決定するロケール固有の規則を返します。  
   
 ```  
@@ -402,7 +421,7 @@ string grouping() const;
  小数点の左側の数字をグループ化する方法を決定するロケール固有の規則。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_grouping](#moneypunct__do_grouping) を返します。  
+ このメンバー関数は、[do_grouping](#do_grouping) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -457,7 +476,7 @@ German_Germany.1252 domestic frac_digits
  to the right of the radix character: 2  
 ```  
   
-##  <a name="a-namemoneypunctmoneypuncta--moneypunctmoneypunct"></a><a name="moneypunct__moneypunct"></a>  moneypunct::moneypunct  
+##  <a name="moneypunct"></a>  moneypunct::moneypunct  
  `moneypunct` 型のオブジェクトのコンストラクター。  
   
 ```  
@@ -475,13 +494,13 @@ explicit moneypunct(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \> 0: これらの値は定義されていません。  
+-   \>1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
  コンストラクターは、[locale::facet](../standard-library/locale-class.md#facet_class)(_ *Refs*) を使用して、その基本オブジェクトを初期化します。  
   
-##  <a name="a-namemoneypunctnegformata--moneypunctnegformat"></a><a name="moneypunct__neg_format"></a>  moneypunct::neg_format  
+##  <a name="neg_format"></a>  moneypunct::neg_format  
  負の値の出力を書式設定するためのロケール固有の規則を返します。  
   
 ```  
@@ -492,7 +511,7 @@ pattern neg_format() const;
  負の値の出力を書式設定するためのロケール固有の規則。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_neg_format](#moneypunct__do_neg_format) を返します。  
+ このメンバー関数は、[do_neg_format](#do_neg_format) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -526,7 +545,7 @@ int main( ) {
 }  
 ```  
   
-##  <a name="a-namemoneypunctnegativesigna--moneypunctnegativesign"></a><a name="moneypunct__negative_sign"></a>  moneypunct::negative_sign  
+##  <a name="negative_sign"></a>  moneypunct::negative_sign  
  負の記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ```  
@@ -537,7 +556,7 @@ string_type negative_sign() const;
  負の記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_negative_sign](#moneypunct__do_negative_sign) を返します。  
+ このメンバー関数は、[do_negative_sign](#do_negative_sign) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -585,7 +604,7 @@ French_France.1252 international negative sign: -
 French_France.1252 domestic negative sign: -  
 ```  
   
-##  <a name="a-namemoneypunctposformata--moneypunctposformat"></a><a name="moneypunct__pos_format"></a>  moneypunct::pos_format  
+##  <a name="pos_format"></a>  moneypunct::pos_format  
  正の値の出力を書式設定するためのロケール固有の規則を返します。  
   
 ```  
@@ -596,7 +615,7 @@ pattern pos_format() const;
  正の値の出力を書式設定するためのロケール固有の規則。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_pos_format](#moneypunct__do_pos_format) を返します。  
+ このメンバー関数は、[do_pos_format](#do_pos_format) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -630,7 +649,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namemoneypunctpositivesigna--moneypunctpositivesign"></a><a name="moneypunct__positive_sign"></a>  moneypunct::positive_sign  
+##  <a name="positive_sign"></a>  moneypunct::positive_sign  
  正の記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ```  
@@ -641,7 +660,7 @@ string_type positive_sign() const;
  正の記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_positive_sign](#moneypunct__do_positive_sign) を返します。  
+ このメンバー関数は、[do_positive_sign](#do_positive_sign) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -689,7 +708,7 @@ French_France.1252 international positive sign:
 French_France.1252 domestic positive sign:  
 ```  
   
-##  <a name="a-namemoneypunctstringtypea--moneypunctstringtype"></a><a name="moneypunct__string_type"></a>  moneypunct::string_type  
+##  <a name="string_type"></a>  moneypunct::string_type  
  **CharType** 型の文字を格納する文字列を表す型。  
   
 ```  
@@ -699,7 +718,7 @@ typedef basic_string<CharType, Traits, Allocator> string_type;
 ### <a name="remarks"></a>コメント  
  この型は、オブジェクトに区切り記号シーケンスのコピーを格納できるテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を表します。  
   
-##  <a name="a-namemoneypunctthousandssepa--moneypunctthousandssep"></a><a name="moneypunct__thousands_sep"></a>  moneypunct::thousands_sep  
+##  <a name="thousands_sep"></a>  moneypunct::thousands_sep  
  桁区切り記号として使用する要素のロケール固有のシーケンスを返します。  
   
 ```  
@@ -710,7 +729,7 @@ CharType thousands_sep() const;
  桁区切り記号として使用する要素のロケール固有のシーケンス。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_thousands_sep](#moneypunct__do_thousands_sep) を返します。  
+ このメンバー関数は、[do_thousands_sep](#do_thousands_sep) を返します。  
   
 ### <a name="example"></a>例  
   

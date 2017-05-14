@@ -56,10 +56,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 2a1a82cb2a5453b9c0d7d1dd9e22050a6dfb868f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 1d1cf554b7d359c3bd761656df60881c4be514b8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="putchar-putwchar"></a>putchar、putwchar
@@ -87,7 +88,7 @@ wint_t putwchar(
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
- `putc` ルーチンは、出力 `c` の現在位置に&1; つの文字 `stream` を書き込みます。 任意の整数を `putc` に渡すことができますが、下位 8 ビットのみが書き込まれます。 `putchar` ルーチンは **putc(** `c`**, stdout )** と同じです。 各ルーチンでは、読み取りエラーが発生すると、ストリームのエラー インジケーターが設定されます。 `putc` と `putchar` はそれぞれ、`fputc` と `_fputchar` に似ていますが、関数およびマクロとして実装されます (「[関数とマクロの使い分け](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)」を参照)。 `putwc`、および `putwchar` は、それぞれ、`putc`、および `putchar` のワイド文字バージョンです。  
+ `putc` ルーチンは、出力 `c` の現在位置に 1 つの文字 `stream` を書き込みます。 任意の整数を `putc` に渡すことができますが、下位 8 ビットのみが書き込まれます。 `putchar` ルーチンは **putc(** `c`**, stdout )** と同じです。 各ルーチンでは、読み取りエラーが発生すると、ストリームのエラー インジケーターが設定されます。 `putc` と `putchar` はそれぞれ、`fputc` と `_fputchar` に似ていますが、関数およびマクロとして実装されます (「[関数とマクロの使い分け](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)」を参照)。 `putwc`、および `putwchar` は、それぞれ、`putc`、および `putchar` のワイド文字バージョンです。  
   
  **_nolock** サフィックスが付いているバージョンは同じものですが、他のスレッドによる干渉から保護されない点が異なります。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
   
@@ -138,12 +139,6 @@ int main( void )
 ```  
 This is the line of output  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::IO::StreamWriter::Write](https://msdn.microsoft.com/en-us/library/system.io.streamwriter.write.aspx)  
-  
--   [System::Console::Write](https://msdn.microsoft.com/en-us/library/system.console.write.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

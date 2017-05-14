@@ -1,51 +1,68 @@
 ---
-title: "__min | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "__min"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "__min"
-  - "min"
-  - "_min"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__min マクロ"
-  - "__min マクロ"
-  - "min マクロ"
-  - "最小値マクロ"
+title: __min | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- __min
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- __min
+- min
+- _min
+dev_langs:
+- C++
+helpviewer_keywords:
+- __min macro
+- min macro
+- minimum macro
+- _min macro
 ms.assetid: 2037f26c-b48a-4a69-8870-22519f052a3c
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# __min
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 171ca8b2136e2311a814328989b4dd121416918a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-値 2 の小さいサイズを返します。  
+---
+# <a name="min"></a>__min
+2 つの値のうち小さい方の値を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 type __min(  
@@ -54,26 +71,26 @@ type __min(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `type`  
- 数値データ型。  
+ 任意の数値のデータ型。  
   
  `a, b`  
- 比較される数値型の値。  
+ 比較する数値型の値。  
   
-## 戻り値  
- 2 個の引数の小さなの。  
+## <a name="return-value"></a>戻り値  
+ 2 つの引数のうちの小さい方。  
   
-## 解説  
- `__min` マクロは 2 個の値を比較する、小さいものという値を返します。  引数は、数値データ型または署名されて符号なしです。  引数と戻り値は、同じデータ型である必要があります。  
+## <a name="remarks"></a>コメント  
+ `__min` マクロでは、2 つの値を比較して小さい方の値を返します。 引数には、符号付きまたは符号なしのすべての数値データ型を指定できます。 引数と戻り値はともに同じデータ型である必要があります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`__min`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`__min`|\<stdlib.h>|  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_minmax.c  
@@ -91,11 +108,11 @@ int main( void )
 }  
 ```  
   
-  **10 と 21 の拡大の 21 です。**  
-**10 と 21 の小さいサイズの 10 です。**   
-## 同等の .NET Framework 関数  
- [System::Math::Min](https://msdn.microsoft.com/en-us/library/system.math.min.aspx)  
+```Output  
+The larger of 10 and 21 is 21  
+The smaller of 10 and 21 is 10  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [\_\_max](../../c-runtime-library/reference/max.md)
+ [__max](../../c-runtime-library/reference/max.md)

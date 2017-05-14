@@ -114,10 +114,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d8611402652268e0a85170a36355619e5c7335ac
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: ca0ae546af28c342db2e452bec432ced0437738a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="rpt-rptf-rptw-rptfw-macros"></a>_RPT、_RPTF、_RPTW、_RPTFW のマクロ
@@ -162,7 +163,7 @@ _RPTFWn(
  `format` で使用される代替引数。  
   
 ## <a name="remarks"></a>コメント  
- これらのマクロはどれも、`reportType` パラメーターと `format` パラメーターを受け取ります。 また、マクロ名に追加された数字で示される最大&4; つの追加引数を受け取る場合もあります。 たとえば、`_RPT0` と `_RPTF0` は追加引数を受け取らず、`_RPT1` と `_RPTF1` は `arg1` を、`_RPT2` と `_RPTF2` は `arg1` と `arg2` を受け取るなどです。  
+ すべてのマクロ、`reportType`と`format`パラメーター。 また、マクロ名に追加された数字で示される最大 4 つの追加引数を受け取る場合もあります。 たとえば、`_RPT0` と `_RPTF0` は追加引数を受け取らず、`_RPT1` と `_RPTF1` は `arg1` を、`_RPT2` と `_RPTF2` は `arg1` と `arg2` を受け取るなどです。  
   
  `_RPT` マクロと `_RPTF` マクロは、デバッグ プロセス中のアプリケーションの進行状況を追跡するために使用できるため、[printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) 関数に似ています。 ただし、アプリケーションの製品版ビルドで呼び出されないようにするために `#ifdef` ステートメントで囲む必要がないため、これらのマクロには `printf` よりも高い柔軟性があります。 この柔軟性は、[_DEBUG](../../c-runtime-library/debug.md) マクロを使用することで実現できます。`_RPT` マクロと `_RPTF` マクロを使用できるのは、`_DEBUG` フラグが定義されている場合のみです。 `_DEBUG` が定義されていない場合、これらのマクロの呼び出しは前処理で削除されます。  
   
@@ -182,7 +183,7 @@ _RPTFWn(
   
  宛先がデバッグ メッセージ ウィンドウであるときにユーザーが **[再試行]** ボタンを選択すると、`_CrtDbgReport` または `_CrtDbgReportW` は 1 を返します。これにより、これらのマクロはデバッガーを開始します (Just-In-Time (JIT) デバッグが有効な場合)。 これらのマクロをデバッグ エラーの処理機構として使用する方法の詳細については、[確認とレポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)に関するページを参照してください。  
   
- デバッグ レポートを生成するマクロが他にも&2; つ存在します。 [_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) マクロは、その式の引数が FALSE に評価される場合にのみ、レポートを生成します。 [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) は `_ASSERT` とまったく同じですが、生成されるレポートに失敗した式が含まれます。  
+ デバッグ レポートを生成するマクロが他にも 2 つ存在します。 [_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) マクロは、その式の引数が FALSE に評価される場合にのみ、レポートを生成します。 [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) は `_ASSERT` とまったく同じですが、生成されるレポートに失敗した式が含まれます。  
   
 ## <a name="requirements"></a>要件  
   
@@ -202,9 +203,6 @@ _RPTFWn(
   
 ## <a name="example"></a>例  
  「[_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)」のトピックの例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

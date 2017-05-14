@@ -10,8 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - unary_negate
-- std::unary_negate
-- std.unary_negate
 - xfunctional/std::unary_negate
 dev_langs:
 - C++
@@ -36,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: 078ee71844b0ac5cd02b182287a7a6db6caa04db
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 314d93badc71760c3b71492991dbe16f11df7686
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="unarynegate-class"></a>unary_negate クラス
@@ -69,9 +68,9 @@ public:
  単項関数の否定。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスは、単項関数オブジェクト _ *Func* のコピーを格納します。 そのメンバー関数 `operator()` は **!**\_ *Func(left) します。*  
+ このテンプレート クラスは、単項関数オブジェクト _ *Func* のコピーを格納します。 そのメンバー関数 `operator()` は **!**\_ *Func(left) です。*  
   
- `unary_negate` のコンストラクターが直接使用されることはほとんどありません。 **unary_negator** アダプター述語を宣言して使用する場合、ヘルパー関数 [not1](../standard-library/functional-functions.md#not1_function) を利用した方が簡単です。  
+ `unary_negate` のコンストラクターが直接使用されることはほとんどありません。 **unary_negator** アダプター述語を宣言して使用する場合、ヘルパー関数 [not1](../standard-library/functional-functions.md#not1) を利用した方が簡単です。  
   
 ## <a name="example"></a>例  
   

@@ -10,21 +10,27 @@ f1_keywords:
 - tuple/std::get
 - tuple/std::make_tuple
 - tuple/std::tie
+- tuple/std::get
+- tuple/std::make_tuple
+- tuple/std::tie
+dev_langs:
+- C++
 ms.assetid: bc6be38f-5258-4c14-b81b-63caa335fd44
 caps.latest.revision: 13
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 4726f9457aa20889362f1058abedd0ac521c775c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: acf980e3bcd491eb08dee0c87ee1762dc25b417b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="lttuplegt-functions"></a>&lt;tuple&gt; 関数
 ||||  
 |-|-|-|  
-|[get 関数](#get_function)|[make_tuple 関数](#make_tuple_function)|[tie 関数](#tie_function)|  
+|[get](#get)|[make_tuple](#make_tuple)|[tie](#tie)|  
   
-##  <a name="a-namegetfunctiona--get-function"></a><a name="get_function"></a>  get 関数  
+##  <a name="get"></a>  get
  `tuple` オブジェクトから、インデックスまたは (C++14 の場合は) 型別に要素を取得します。  
   
 ```  
@@ -71,7 +77,7 @@ template <class T, class... Types>
 ### <a name="remarks"></a>コメント  
  テンプレート関数は、 `Index`オブジェクトのインデックス `T` 、または型 `tuple` の値への参照を返します。  
   
- タプルに含まれる型 T の要素の数が&1; より大きいか小さい場合、 `get<T>(Tuple)` を呼び出すと、コンパイラ エラーが生成されます。  
+ タプルに含まれる型 T の要素の数が 1 より大きいか小さい場合、 `get<T>(Tuple)` を呼び出すと、コンパイラ エラーが生成されます。  
   
 ### <a name="example"></a>例  
   
@@ -102,7 +108,7 @@ int main() {
 0 1.42 Call me Tuple  
 ```  
   
-##  <a name="a-namemaketuplefunctiona--maketuple-function"></a><a name="make_tuple_function"></a>  make_tuple 関数  
+##  <a name="make_tuple"></a>make_tuple
  要素値から `tuple` を作成します。  
   
 ```  
@@ -120,7 +126,7 @@ template <class T1, class T2, ..., class TN>
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は `tuple<V1, V2, ..., VN>(t1, t2, ..., tN)` を返します。ここで、各 `Vi` 型は、対応する `Ti` 型が `cv` `reference_wrapper<X>` である場合は `X&`、それ以外の場合は `Ti` になります。  
   
- `make_tuple` の利点の&1; つは、格納されるオブジェクトの型がコンパイラによって自動的に決定され、明示的に指定する必要がないことです。 `make_tuple<int, int>(1, 2)` を使用する場合は、`make_tuple` などの明示的なテンプレート引数を使用しないでください。これは、不必要に詳細になり、複雑な右辺値参照の問題が追加され、コンパイル エラーの原因となる可能性があるためです。  
+ `make_tuple` の利点の 1 つは、格納されるオブジェクトの型がコンパイラによって自動的に決定され、明示的に指定する必要がないことです。 `make_tuple<int, int>(1, 2)` を使用する場合は、`make_tuple` などの明示的なテンプレート引数を使用しないでください。これは、不必要に詳細になり、複雑な右辺値参照の問題が追加され、コンパイル エラーの原因となる可能性があるためです。  
   
 ### <a name="example"></a>例  
   
@@ -159,7 +165,7 @@ int main() {
  4 5 6 7  
 ```  
   
-##  <a name="a-nametiefunctiona--tie-function"></a><a name="tie_function"></a>  tie 関数  
+##  <a name="tie"></a>同順位
  要素参照から `tuple` を作成します。  
   
 ```  

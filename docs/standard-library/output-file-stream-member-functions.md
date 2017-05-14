@@ -12,6 +12,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - output streams, member functions
+f1_keywords: []
 ms.assetid: 38aaf710-8035-4a34-a0c4-123a5327f28a
 caps.latest.revision: 8
 author: corob-msft
@@ -31,19 +32,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 62d10faef9b1958f0ad5cee7b8ff2b4e491c617a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: baa226c95d396232ea8ac545c839352c5df4c22f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="output-file-stream-member-functions"></a>出力ファイル ストリームのメンバー関数
-出力ストリームのメンバー関数は、マニピュレーターと同等のタイプ、書式設定されていない書き込み操作を実行するタイプ、それ以外はストリーム状態を変更し、同等のマニピュレーターまたは挿入演算子を持たないタイプの&3; つがあります。 書式設定された順次出力の場合、挿入演算子とマニピュレーターのみを使用することがあります。 ランダム アクセス バイナリ ディスク出力の場合、挿入演算子の有無を問わず、他のメンバー関数を使用します。  
+出力ストリームのメンバー関数は、マニピュレーターと同等のタイプ、書式設定されていない書き込み操作を実行するタイプ、それ以外はストリーム状態を変更し、同等のマニピュレーターまたは挿入演算子を持たないタイプの 3 つがあります。 書式設定された順次出力の場合、挿入演算子とマニピュレーターのみを使用することがあります。 ランダム アクセス バイナリ ディスク出力の場合、挿入演算子の有無を問わず、他のメンバー関数を使用します。  
   
 ## <a name="the-open-function-for-output-streams"></a>出力ストリームの open 関数  
  出力ファイル ストリーム ([ofstream](../standard-library/basic-ofstream-class.md)) を使用するには、コンストラクターまたは **open** 関数で、そのストリームを特定のディスク ファイルに関連付ける必要があります。 **open** 関数を使用する場合、一連のファイルで同じストリーム オブジェクトを再利用することができます。 いずれの場合も、ファイルを記述する引数は同じです。  
   
- 出力ストリームに関連付けられているファイルを開く場合、通常は **open_mode** フラグを指定します。 `ios` クラスで列挙子として定義されているこれらのフラグを、ビットごとの OR ( &#124; ) 演算子と組み合わせることができます。 列挙子のリストについては、「[ios_base::openmode](../standard-library/ios-base-class.md#ios_base__openmode)」を参照してください。  
+ 出力ストリームに関連付けられているファイルを開く場合、通常は **open_mode** フラグを指定します。 `ios` クラスで列挙子として定義されているこれらのフラグを、ビットごとの OR ( &#124; ) 演算子と組み合わせることができます。 列挙子のリストについては、「[ios_base::openmode](../standard-library/ios-base-class.md#openmode)」を参照してください。  
   
  3 つの一般的な出力ストリームの状況では、モード オプションが関連します。  
   
@@ -63,7 +65,7 @@ ms.lasthandoff: 02/24/2017
     ofstream ofile("FILENAME", ios::app);
 ```  
   
--   同じストリームで一度に&1; つずつ、2 のファイルを開きます。  
+-   同じストリームで一度に 1 つずつ、2 のファイルを開きます。  
   
  ```  
     ofstream ofile();
@@ -81,8 +83,8 @@ ofile.open("FILE1",
 // FILE2 closed  // When ofile goes out of scope it is destroyed.  
 ```  
   
-## <a name="the-put-function"></a>put 関数  
- **put** 関数は、1 つの文字を出力ストリームに書き込みます。 次の&2; つのステートメントは既定では同じですが、2 番目は、ストリームの format 引数の影響を受けます。  
+## <a name="the-put"></a>Put
+ **put** 関数は、1 つの文字を出力ストリームに書き込みます。 次の 2 つのステートメントは既定では同じですが、2 番目は、ストリームの format 引数の影響を受けます。  
   
 ```  
 cout.put('A');
@@ -91,7 +93,7 @@ cout.put('A');
 cout <<'A'; // Format arguments 'width' and 'fill' apply   
 ```  
   
-## <a name="the-write-function"></a>write 関数  
+## <a name="the-write"></a>書き込み
  **write** 関数は、出力ファイル ストリームにメモリ ブロックを書き込みます。 length 引数は、書き込まれるバイト数を指定します。 この例は、出力ファイル ストリームを作成し、`Date` 構造体のバイナリ値をそれに書き込みます。  
   
 ```  
@@ -113,7 +115,7 @@ int main( )
 }  
 ```  
   
- **write** 関数は null 文字に達しても停止しないため、完全なクラス構造が記述されます。 関数は、`char` ポインターと、書き込む文字のカウントという&2; つの引数を取ります。 構造体オブジェクトのアドレスの前にある **char\*** への必須のキャストに注意してください。  
+ **write** 関数は null 文字に達しても停止しないため、完全なクラス構造が記述されます。 関数は、`char` ポインターと、書き込む文字のカウントという 2 つの引数を取ります。 構造体オブジェクトのアドレスの前にある **char\*** への必須のキャストに注意してください。  
   
 ## <a name="the-seekp-and-tellp-functions"></a>seekp 関数と tellp 関数  
  出力ファイル ストリームは、データを次に書き込む位置を指す内部ポインターを保持します。 `seekp` メンバー関数は、このポインターを設定し、それによりランダム アクセス ディスク ファイル出力を提供します。 `tellp` メンバー関数は、ファイル位置を返します。 `seekp` と `tellp` に同等の入力ストリーム関数を使用する例については、「[seekg 関数と tellg 関数](../standard-library/input-stream-member-functions.md)」を参照してください。  
@@ -123,7 +125,7 @@ int main( )
   
  出力ストリーム デストラクターが自動的にストリームのファイルを閉じるのは、コンストラクターまたは **open** メンバー関数がファイルを開いた場合のみです。 コンストラクターを既に開いているファイルのファイル記述子に渡すか、**attach** メンバー関数を使用する場合は、ファイルを明示的に閉じる必要があります。  
   
-##  <a name="a-namevclrferrorprocessingfunctionsanchor10a-error-processing-functions"></a><a name="vclrferrorprocessingfunctionsanchor10"></a> エラー処理関数  
+##  <a name="vclrferrorprocessingfunctionsanchor10"></a> エラー処理関数  
  ストリームへの書き込み中にエラーがないかテストするには、これらのメンバー関数を使用します。  
   
 |関数|戻り値|  
@@ -135,7 +137,7 @@ int main( )
 |[clear](http://msdn.microsoft.com/Library/dc172694-1267-45f8-8f5c-e822e16fc271)|内部エラー状態を設定します。 既定の引数を指定して呼び出すと、すべてのエラー ビットがクリアされます。|  
 |[rdstate](http://msdn.microsoft.com/Library/e235e4e2-7e95-4777-a160-3938d263dd9c)|現在のエラー状態を返します。|  
   
- The **!** 同じ機能を実行する演算子をオーバー ロード、**失敗**関数です。 したがって次のような式があるとします。  
+ The **!** 同じ機能を実行する演算子をオーバー ロード、**失敗**関数。 したがって次のような式があるとします。  
   
 ```  
 if(!cout)...  
@@ -147,7 +149,7 @@ if(!cout)...
 if(cout.fail())...  
 ```  
   
- **Void\*()**の反対をする演算子をオーバー ロード、 **!** 演算子。したがって次のような式があるとします。  
+ **Void\*()**と逆の働きをする演算子をオーバー ロード、 **!** 演算子です。したがって次のような式があるとします。  
   
 ```  
 if(cout)...  

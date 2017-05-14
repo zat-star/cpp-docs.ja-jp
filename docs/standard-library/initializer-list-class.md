@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 2ac3e7fa456e5d3ff04bc5d974c87a9cbb055fea
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 542a13de6e8b97f736ea2cfcdf8956c2f261c1e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="initializerlist-class"></a>initializer_list クラス
@@ -70,7 +71,7 @@ initializer_list<int> i1{ 1, 2, 3, 4 };
   
 |||  
 |-|-|  
-|[initializer_list](../standard-library/forward-list-class.md#forward_list__forward_list)|`initializer_list` 型のオブジェクトを構築します。|  
+|[initializer_list](../standard-library/forward-list-class.md#forward_list)|`initializer_list` 型のオブジェクトを構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
@@ -87,16 +88,16 @@ initializer_list<int> i1{ 1, 2, 3, 4 };
   
 |||  
 |-|-|  
-|[begin](#initializer_list__begin)|`initializer_list` 内の最初の要素へのポインターを返します。|  
-|[end](#initializer_list__end)|`initializer_list` 内の最後の要素の&1; つ後ろへのポインターを返します。|  
-|[size](#initializer_list__size)|`initializer_list` 内の要素数を返します。|  
+|[begin](#begin)|`initializer_list` 内の最初の要素へのポインターを返します。|  
+|[end](#end)|`initializer_list` 内の最後の要素の 1 つ後ろへのポインターを返します。|  
+|[size](#size)|`initializer_list` 内の要素数を返します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<initializer_list>  
   
  **名前空間:** std  
   
-##  <a name="initializer_list__begin"></a>  initializer_list::begin  
+##  <a name="begin"></a>  initializer_list::begin  
  `initializer_list` 内の最初の要素へのポインターを返します。  
   
 ```  
@@ -108,17 +109,17 @@ constexpr const InputIterator* begin() const noexcept;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="initializer_list__end"></a>  initializer_list::end  
- `initializer list` 内の最後の要素の&1; つ後ろへのポインターを返します。  
+##  <a name="end"></a>  initializer_list::end  
+ `initializer list` 内の最後の要素の 1 つ後ろへのポインターを返します。  
   
 ```  
 constexpr const InputIterator* end() const noexcept;  
 ```  
   
 ### <a name="return-value"></a>戻り値  
- リスト内の最後の要素の&1; つ後ろを指すポインター。 リストが空の場合、これはリストの最初の要素へのポインターと同じです。  
+ リスト内の最後の要素の 1 つ後ろを指すポインター。 リストが空の場合、これはリストの最初の要素へのポインターと同じです。  
   
-##  <a name="initializer_list__initializer_list"></a>  initializer_list::initializer_list  
+##  <a name="initializer_list"></a>  initializer_list::initializer_list  
  `initializer_list` 型のオブジェクトを構築します。  
   
 ```  
@@ -134,7 +135,7 @@ initializer_list(const InputIterator First, const InputIterator Last);
 |`Last`|コピーする要素範囲を超える最初の要素の位置。|  
   
 ### <a name="remarks"></a>コメント  
- `initializer_list` は、指定された型のオブジェクトの配列に基づいています。 `initializer_list` をコピーすると、同じオブジェクトを指すリストの&2; 番目のインスタンスが作成されますが、基になるオブジェクトはコピーされません。  
+ `initializer_list` は、指定された型のオブジェクトの配列に基づいています。 `initializer_list` をコピーすると、同じオブジェクトを指すリストの 2 番目のインスタンスが作成されますが、基になるオブジェクトはコピーされません。  
   
 ### <a name="example"></a>例  
   
@@ -199,7 +200,7 @@ int main()
 c1 = 3c2 = 5 4 3 2 1c3 = 5 4 3 2 1c4 = 5 4c5 = 5 4  
 ```  
   
-##  <a name="initializer_list__size"></a>  initializer_list::size  
+##  <a name="size"></a>  initializer_list::size  
  リストの要素数を返します。  
   
 ```  

@@ -58,10 +58,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 93065406bd41889338f79ee4df5e8b57ef479c25
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f35701cf1ef644b140cae01ef2d8707cfb387a68
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ultoas-ultows"></a>_ultoa_s、_ultow_s
@@ -113,7 +114,7 @@ errno_t _ultow_s(
  関数が成功した場合はゼロ、そうでない場合はエラーコード。  
   
 ## <a name="remarks"></a>コメント  
- `_ultoa_s` 関数は、`value` の数字を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 `radix` 引数は `value` のベースを指定します。2 ～ 36の範囲内である必要があります。 `_ultow_s` は、`_ultoa_s` のワイド文字バージョンであり、`_ultow_s` の&2; 番目の引数はワイド文字列です。  
+ `_ultoa_s` 関数は、`value` の数字を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 `radix`の基本型の引数を指定`value`2 ~ 36 の範囲にする必要があります。 `_ultow_s` は、`_ultoa_s` のワイド文字バージョンであり、`_ultow_s` の 2 番目の引数はワイド文字列です。  
   
  `str` が `NULL` ポインターである場合、または `sizeOfstr` がゼロ以下の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返して `errno` を `EINVAL` に設定し、`value` または `str` が長整数の範囲外である場合は、これらの関数は -1 を返して `errno` を `ERANGE` に設定します。  
   
@@ -132,10 +133,7 @@ errno_t _ultow_s(
 |`_ultoa_s`|\<stdlib.h>|  
 |`_ultow_s`|\<stdlib.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

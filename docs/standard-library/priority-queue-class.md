@@ -9,9 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.priority_queue
 - priority_queue
-- std::priority_queue
+- queue/std::priority_queue::container_type
+- queue/std::priority_queue::size_type
+- queue/std::priority_queue::value_type
+- queue/std::priority_queue::empty
+- queue/std::priority_queue::pop
+- queue/std::priority_queue::push
+- queue/std::priority_queue::size
+- queue/std::priority_queue::top
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 493cc5b28bb4cfa682b06ed904c3b0c0aa46220c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 31191f5109242dc239ac0237a2eab6ff459fe41b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="priorityqueue-class"></a>priority_queue クラス
@@ -62,7 +69,7 @@ class priority_queue
  2 つの要素の値を並べ替えキーとして比較して、priority_queue 内の要素の相対順序を決定できる関数オブジェクトを提供する型。 この引数は省略可能であり、既定値は二項述語 **less***\<***typename** *Container***::value_type***>* です。  
   
 ## <a name="remarks"></a>コメント  
- queue オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#priority_queue__value_type) と同義で、2 番目のテンプレート パラメーターで指定する、基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
+ queue オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#value_type) と同義で、2 番目のテンプレート パラメーターで指定する、基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
   
  priority_queue では、クラス **Traits** の格納されている関数オブジェクトを呼び出すことによって、priority_queue が制御するシーケンスを並べ替えます。 通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。  
   
@@ -70,7 +77,7 @@ class priority_queue
   
  `priority_queue` での要素の追加および要素の削除の両方に、対数の複雑さがあります。 `priority_queue` 内の要素へのアクセスには、定数の複雑さがあります。  
   
- C++ 標準ライブラリで定義されたコンテナー アダプターには、stack、queue、および priority_queue の&3; つの種類があります。 それぞれが、基になるコンテナー クラスの機能を制限して、標準的なデータ構造に正確に制御されたインターフェイスを提供します。  
+ C++ 標準ライブラリで定義されたコンテナー アダプターには、stack、queue、および priority_queue の 3 つの種類があります。 それぞれが、基になるコンテナー クラスの機能を制限して、標準的なデータ構造に正確に制御されたインターフェイスを提供します。  
   
 -   [stack クラス](../standard-library/stack-class.md)は、後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
   
@@ -82,32 +89,32 @@ class priority_queue
   
 |||  
 |-|-|  
-|[priority_queue](#priority_queue__priority_queue)|空であるか、基本のコンテナー オブジェクトまたはその他の `priority_queue` の範囲のコピーである `priority_queue` を構築します。|  
+|[priority_queue](#priority_queue)|空であるか、基本のコンテナー オブジェクトまたはその他の `priority_queue` の範囲のコピーである `priority_queue` を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#priority_queue__container_type)|`priority_queue` によって適合されるように、基本のコンテナーを提供する型。|  
-|[size_type](#priority_queue__size_type)|`priority_queue` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_type](#priority_queue__value_type)|`priority_queue` 内に要素として格納されるオブジェクトの種類を表す型。|  
+|[container_type](#container_type)|`priority_queue` によって適合されるように、基本のコンテナーを提供する型。|  
+|[size_type](#size_type)|`priority_queue` 内の要素の数を表すことができる符号なし整数型。|  
+|[value_type](#value_type)|`priority_queue` 内に要素として格納されるオブジェクトの種類を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[empty](#priority_queue__empty)|`priority_queue` が空かどうかをテストします。|  
-|[pop](#priority_queue__pop)|最上位から `priority_queue` の最大の要素を削除します。|  
-|[push](#priority_queue__push)|operator< からの要素の優先順位に基づいて、優先順位キューに要素を追加します。|  
-|[size](#priority_queue__size)|`priority_queue` 内の要素数を返します。|  
-|[top](#priority_queue__top)|`priority_queue` の最上位にある最大要素への const 参照を返します。|  
+|[empty](#empty)|`priority_queue` が空かどうかをテストします。|  
+|[pop](#pop)|最上位から `priority_queue` の最大の要素を削除します。|  
+|[push](#push)|operator< からの要素の優先順位に基づいて、優先順位キューに要素を追加します。|  
+|[size](#size)|`priority_queue` 内の要素数を返します。|  
+|[top](#top)|`priority_queue` の最上位にある最大要素への const 参照を返します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<queue>  
   
  **名前空間:** std  
   
-##  <a name="a-namepriorityqueuecontainertypea--priorityqueuecontainertype"></a><a name="priority_queue__container_type"></a>  priority_queue::container_type  
+##  <a name="container_type"></a>  priority_queue::container_type  
  適合されるように、基本のコンテナーを提供する型。  
   
 ```  
@@ -120,9 +127,9 @@ typedef Container container_type;
  `Container` の詳細については、「[priority_queue クラス](../standard-library/priority-queue-class.md)」トピックの「コメント」セクションを参照してください。  
   
 ### <a name="example"></a>例  
-  `container_type` の宣言方法や使用例については、[priority_queue](#priority_queue__priority_queue) の例を参照してください。  
+  `container_type` の宣言方法や使用例については、[priority_queue](#priority_queue) の例を参照してください。  
   
-##  <a name="a-namepriorityqueueemptya--priorityqueueempty"></a><a name="priority_queue__empty"></a>  priority_queue::empty  
+##  <a name="empty"></a>  priority_queue::empty  
  priority_queue が空かどうかをテストします。  
   
 ```  
@@ -166,7 +173,7 @@ The priority_queue q1 is not empty.
 The priority_queue s2 is empty.  
 ```  
   
-##  <a name="a-namepriorityqueuepopa--priorityqueuepop"></a><a name="priority_queue__pop"></a>  priority_queue::pop  
+##  <a name="pop"></a>  priority_queue::pop  
  最上位から priority_queue の最大の要素を削除します。  
   
 ```  
@@ -220,7 +227,7 @@ After a pop, the priority_queue length is 2.
 After a pop, the element at the top of the priority_queue is 20.  
 ```  
   
-##  <a name="a-namepriorityqueuepriorityqueuea--priorityqueuepriorityqueue"></a><a name="priority_queue__priority_queue"></a>  priority_queue::priority_queue  
+##  <a name="priority_queue"></a>  priority_queue::priority_queue  
  空であるか、基本のコンテナー オブジェクトまたは別の priority_queue の範囲のコピーである priority_queue を構築します。  
   
 ```  
@@ -249,21 +256,21 @@ priority_queue(InputIterator first, InputIterator last, const Traits&_comp, cons
  `_Cont`  
  構築された priority_queue がコピーになる元の基本コンテナー。  
   
- ` right`  
+ `right`  
  構築される set のコピー元となる priority_queue。  
   
- ` first`  
+ `first`  
  コピーする要素範囲内の最初の要素の位置。  
   
- ` last`  
+ `last`  
  コピーする要素範囲を超える最初の要素の位置。  
   
 ### <a name="remarks"></a>コメント  
- 最初の&3; つの各コンストラクターは、空の初期 priority_queue を指定します。2 番目のコンストラクターも要素の順序を確立するために使用する比較関数の型 (` comp`) を指定し、3 番目のコンストラクターは使用する `container_type` (`_Cont`) を明示的に指定します。 キーワード **explicit** は、特定の種類の自動型変換が実行されないようにします。  
+ 最初の 3 つの各コンストラクターは、空の初期 priority_queue を指定します。2 番目のコンストラクターも要素の順序を確立するために使用する比較関数の型 (`comp`) を指定し、3 番目のコンストラクターは使用する `container_type` (`_Cont`) を明示的に指定します。 キーワード **explicit** は、特定の種類の自動型変換が実行されないようにします。  
   
- 4 番目のコンストラクターは、priority_queue ` right` のコピーを指定します。  
+ 4 番目のコンストラクターは、priority_queue `right` のコピーを指定します。  
   
- 最後の&3; つのコンストラクターは、一部のコンテナーの範囲 [ * first,  last*) をコピーし、値を使用して、より明確に **Traits** クラスの比較関数の型と `container_type` が指定されるように priority_queue を初期化します。  
+ 最後の 3 つのコンス トラクターは、範囲をコピー [* 最初に、最終 *) のいくつかのコンテナー クラスの比較関数の種類を指定するときになるほど、priority_queue を初期化するために値を使用して**特徴 (traits)**と`container_type`です。  
   
 ### <a name="example"></a>例  
   
@@ -376,7 +383,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namepriorityqueuepusha--priorityqueuepush"></a><a name="priority_queue__push"></a>  priority_queue::push  
+##  <a name="push"></a>  priority_queue::push  
  operator< からの要素の優先順位に基づいて、優先順位キューに要素を追加します。  
   
 ```  
@@ -384,7 +391,7 @@ void push(const Type& val);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` val`  
+ `val`  
  priority_queue の最上位に追加された要素。  
   
 ### <a name="remarks"></a>コメント  
@@ -422,7 +429,7 @@ The priority_queue length is 3.
 The element at the top of the priority_queue is 30.  
 ```  
   
-##  <a name="a-namepriorityqueuesizea--priorityqueuesize"></a><a name="priority_queue__size"></a>  priority_queue::size  
+##  <a name="size"></a>  priority_queue::size  
  priority_queue 内の要素の数を返します。  
   
 ```  
@@ -461,7 +468,7 @@ The priority_queue length is 1.
 The priority_queue length is now 2.  
 ```  
   
-##  <a name="a-namepriorityqueuesizetypea--priorityqueuesizetype"></a><a name="priority_queue__size_type"></a>  priority_queue::size_type  
+##  <a name="size_type"></a>  priority_queue::size_type  
  priority_queue 内の要素の数を表すことができる符号なし整数型。  
   
 ```  
@@ -472,9 +479,9 @@ typedef typename Container::size_type size_type;
  この型は、priority_queue によって採用された基本コンテナーの `size_type` のシノニムです。  
   
 ### <a name="example"></a>例  
-  `size_type` の宣言方法や使用例については、[size](#priority_queue__size) の例を参照してください。  
+  `size_type` の宣言方法や使用例については、[size](#size) の例を参照してください。  
   
-##  <a name="a-namepriorityqueuetopa--priorityqueuetop"></a><a name="priority_queue__top"></a>  priority_queue::top  
+##  <a name="top"></a>  priority_queue::top  
  priority_queue の最上位にある最大要素への const 参照を返します。  
   
 ```  
@@ -519,7 +526,7 @@ The priority_queue length is 3.
 The element at the top of the priority_queue is 30.  
 ```  
   
-##  <a name="a-namepriorityqueuevaluetypea--priorityqueuevaluetype"></a><a name="priority_queue__value_type"></a>  priority_queue::value_type  
+##  <a name="value_type"></a>  priority_queue::value_type  
  priority_queue 内に要素として格納されるオブジェクトの種類を表す型。  
   
 ```  

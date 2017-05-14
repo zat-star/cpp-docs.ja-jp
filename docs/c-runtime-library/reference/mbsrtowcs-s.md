@@ -48,10 +48,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 440cf44dda47253141247fe9a82925e13c84b48f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 920af1d0e06c7af71c3a98bf07f451f4d50f2659
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="mbsrtowcss"></a>mbsrtowcs_s
@@ -98,7 +99,7 @@ errno_t mbsrtowcs_s(
  `mbstate_t` 変換状態オブジェクトへのポインター。 この値が null ポインターの場合、静的な内部変換状態オブジェクトが使用されます。 内部 `mbstate_t` オブジェクトはスレッド セーフではないため、常に独自の `mbstate` パラメーターを渡すことをお勧めします。  
   
 ## <a name="return-value"></a>戻り値  
- 変換が正常に終了した場合は&0; を返し、失敗した場合はエラー コードを返します。  
+ 変換が正常に終了した場合は 0 を返し、失敗した場合はエラー コードを返します。  
   
 |エラー条件|戻り値および `errno`|  
 |---------------------|------------------------------|  
@@ -142,9 +143,6 @@ errno_t mbsrtowcs_s(
   
 ## <a name="exceptions"></a>例外  
  `mbsrtowcs_s` 関数は、この関数の実行中ずっと現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` 引数が null ポインターでない限り、マルチスレッド セーフです。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   

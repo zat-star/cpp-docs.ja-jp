@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: b6b5f2f059084e1f5dd66d75b5f5af5f2ade2473
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 1e56ba6f238c62a220966701e7b1ced1dd2ec4ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="mktemp-wmktemp"></a>_mktemp、_wmktemp
@@ -104,9 +105,9 @@ wchar_t *_wmktemp(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tmktemp`|`_mktemp`|`_mktemp`|`_wmktemp`|  
   
- `template` 引数は `base`XXXXXX という形式をしています。ここで `base` は、新しいファイル名の一部として指定される内容で、各 X は `_mktemp` によって指定される文字のプレースホルダーです。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp` では、`base` を保持し、最初の後続の X を英字&1; 文字で置換します。 `_mktemp` は、これに続く残りの X を&5; 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
+ `template`引数が、フォーム`base` *XXXXXX*ここで、`base`が提供する、新しいファイル名の一部で各 X がで指定された文字のプレース ホルダー`_mktemp`です。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp` では、`base` を保持し、最初の後続の X を英字 1 文字で置換します。 `_mktemp` は、これに続く残りの X を 5 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
   
- 呼び出しが成功した `_mktemp` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp` では、以前の呼び出しで `_mktemp` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp` は、以前返した名前で使用していた英字&1; 文字を、次の使用可能な小文字&1; 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
+ 呼び出しが成功した `_mktemp` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp` では、以前の呼び出しで `_mktemp` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp` は、以前返した名前で使用していた英字 1 文字を、次の使用可能な小文字 1 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
   
 ```  
 fn  
@@ -230,9 +231,6 @@ Unique filename is fnz03912
 Problem creating the template.  
 Out of unique filenames.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

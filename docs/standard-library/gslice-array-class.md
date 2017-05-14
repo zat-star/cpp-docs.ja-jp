@@ -1,123 +1,141 @@
 ---
 title: "gslice_array クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::gslice_array"
-  - "gslice_array"
-  - "valarray/std::gslice_array"
-  - "std.gslice_array"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "gslice_array クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- gslice_array
+- valarray/std::gslice_array
+dev_langs:
+- C++
+helpviewer_keywords:
+- gslice_array class
 ms.assetid: ad1b4514-b14a-4baf-a293-d5a8e8674c75
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# gslice_array クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: bebbeb68503c4a3838aeab48d530d899fef2b699
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-汎用スライスをサポートする内部、補助テンプレート クラスは valarray の汎用スライスで定義されたサブセットの配列間の操作を提供することによって変更します。  
+---
+# <a name="gslicearray-class"></a>gslice_array クラス
+valarray の一般的なスライスで定義されるサブセット配列間の演算を実行して一般的なスライス オブジェクトをサポートする、内部の補助テンプレート クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<class Type>  
-   class gslice_array : public gsplice {  
+template <class Type>  
+class gslice_array : public gsplice {  
 public:  
-   typedef Type value_type;  
-   void operator=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator=(  
-      const Type& x  
-   ) const;  
-  
-   void operator*=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator/=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator%=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator+=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator-=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator^=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator&=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator|=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator<<=(  
-      const valarray<Type>& x  
-   ) const;  
-  
-   void operator>>=(  
-      const valarray<Type>& x  
-   ) const;  
-  
+    typedef Type value_type;  
+    void operator=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator=(const Type& x) const;
+
+ 
+ 
+    void operator*=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator/=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator%=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator+=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator-=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator^=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator&=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator|=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator<<=(const valarray<Type>& x) const;
+
+ 
+ 
+    void operator>>=(const valarray<Type>& x) const;
+
+ 
+ 
 // The rest is private or implementation defined  
 }  
 ```  
   
-## 解説  
- クラスは [gslice](../Topic/gslice%20Class.md) オブジェクト **valarray\<Type\>** オブジェクトから選択して要素のシーケンスを記述できます **gs** とともにオブジェクトを格納しているクラス [valarray](../standard-library/valarray-class.md)**\<種類\>**オブジェクトへの参照 **va** 記述します。  
+## <a name="remarks"></a>コメント  
+ このクラスは、クラス [gslice](../standard-library/gslice-class.md) のオブジェクト **gs** と共に、クラス [valarray](../standard-library/valarray-class.md)**\<Type>** のオブジェクト **va** への参照を格納するオブジェクトを表します。これらは **valarray\<Type>** オブジェクトから選択する要素のシーケンスを説明します。  
   
- フォーム [gs VA &#91;&#93;](../Topic/valarray::operator.md)の式を作成することによってのみ **gslice\_array\<Type\>** オブジェクトを構築します。  gslice\_array **valarray\<Type\>**に定義されているクラスのメンバー関数では、対応する関数のシグネチャのように動作しますが、選択したシーケンスの要素だけが影響を受けます。  
+ **gslice_array\<Type>** オブジェクトの構築は、[va&#91;gs&#93;](../standard-library/valarray-class.md#op_at) という形式の式を記述するだけです。 クラス gslice_array のメンバー関数は **valarray\<Type>** に対して定義された対応する関数のシグネチャのように動作しますが、選択された要素のシーケンスだけが影響を受けるという点が異なります。  
   
- このテンプレート クラスは、特定の valarray 操作を通じて間接的に作成され、プログラム内で直接使用することはできません。  内部補助テンプレート クラスはスライス添字演算子によって使用されています:  
+ テンプレート クラスは、特定の valarray 操作によって間接的に作成され、プログラムで直接使用することはできません。 代わりに、スライスの添字演算子によって、内部の補助テンプレート クラスが使用されます。  
   
- `gslice_array`\<**\[種類\]**\>`valarray`\<**\[種類\]** の\>::`operator[]` \(**const gslice&**\)。  
+ `gslice_array`\< **Type**> `valarray`\< **Type**>:: `operator[]` ( **constgslice&**)  
   
- valarray **va**のスライス **gsl** にフォーム **va\[gsl\]**の式を作成することによってのみ **gslice\_array\<Type\>** オブジェクトを構築します。  gslice\_array **valarray\<Type\>**に定義されているクラスのメンバー関数では、対応する関数のシグネチャのように動作しますが、選択したシーケンスの要素だけが影響を受けます。  gslice\_array によって制御される最初のスライスの最初の要素のスライス コンストラクター、インデックス、各スライスの要素数、および各スライス要素の間の 3 番目のパラメーターによって定義されます。  
+ **gslice_array\<Type>** オブジェクトの構築は、valarray **va** のスライス **gsl** に対して **va[gsl]** という形式の式を記述するだけです。 クラス gslice_array のメンバー関数は **valarray\<Type>** に対して定義された対応する関数のシグネチャのように動作しますが、選択された要素のシーケンスだけが影響を受けるという点が異なります。 gslice_array によって制御されるシーケンスは、スライスのコンストラクターの 3 つのパラメーター (最初のスライス内の最初の要素のインデックス、各スライス内の要素の数、各スライス内の要素間の距離) によって定義されます。  
   
  次に例を示します。  
   
 ```  
 const size_t lv[] = {2, 3};  
 const size_t dv[] = {7, 2};  
-const valarray<size_t> len(lv, 2), str(dv, 2);  
+const valarray<size_t> len(lv, 2), str(dv, 2);
+
 // va[gslice(3, len, str)] selects elements with  
 //   indices 3, 5, 7, 10, 12, 14  
 ```  
   
- インデックスが有効であると手順に有効である必要があります。  
+ プロシージャが有効であるためには、これらのインデックスが有効である必要があります。  
   
-## 使用例  
- slice\_array 宣言および使用する方法の例に [gslice::gslice](../Topic/gslice::gslice.md) "の例を参照してください。  
+## <a name="example"></a>例  
+ slice_array の宣言方法や使用例については、[gslice::gslice](../standard-library/gslice-class.md#gslice) の例を参照してください。  
   
-## 必要条件  
- **ヘッダー:** \<valarray\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+

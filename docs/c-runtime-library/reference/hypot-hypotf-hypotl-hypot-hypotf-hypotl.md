@@ -64,10 +64,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c372095f4ae5903f27e5f6add9a79de728a5e202
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: fc27615a5d515c3c743297bbd26179814561a139
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="hypot-hypotf-hypotl-hypot-hypotf-hypotl"></a>hypot、hypotf、hypotl、_hypot、_hypotf、_hypotl
@@ -112,7 +113,7 @@ long double _hypotl(
  リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
- `hypot` 関数は、`x` と `y` の&2; 辺の長さが指定された直角三角形の斜辺の長さを計算します (つまり、`x`<sup>2</sup> + `y`<sup>2</sup> の平方根)。  
+ `hypot` 関数は、`x` と `y` の 2 辺の長さが指定された直角三角形の斜辺の長さを計算します (つまり、`x`<sup>2</sup> + `y`<sup>2</sup> の平方根)。  
   
  以前の標準との互換性のために、先頭にアンダースコアがある関数のバージョンが用意されています。 これらの動作は、先頭にアンダースコアがないバージョンと同じです。 新しいコードには、先頭にアンダースコアがないバージョンを使用することをお勧めします。  
   
@@ -145,9 +146,6 @@ int main( void )
 ```Output  
 If a right triangle has sides 3.0 and 4.0, its hypotenuse is 5.0  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

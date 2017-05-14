@@ -35,10 +35,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 1427efddf9271d273e94c4f62d6d104e7f1c2b48
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: c490b3d744aa691331500f491444435dfe583d13
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="afxglobaldata-structure"></a>AFX_GLOBAL_DATA 構造体
@@ -135,7 +136,7 @@ struct AFX_GLOBAL_DATA
 
 
 ## <a name="bisosalphablendingsupport"></a>AFX_GLOBAL_DATA::bIsOSAlphaBlendingSupport
-オペレーティング システムがアルファ ブレンドをサポートするかどうかを示します。  
+オペレーティング システムがアルファ ブレンドをサポートしているかどうかを示します。  
   
   
 ```  
@@ -278,13 +279,13 @@ void EnableAccessibilitySupport(BOOL bEnable=TRUE);
  `TRUE`ユーザー補助のサポートを有効にするには`FALSE` accessibility のサポートを無効にします。 既定値は `TRUE` です。  
   
 ### <a name="remarks"></a>コメント  
- Active Accessibility は、により、プログラムと Windows オペレーティング システムが支援技術製品と共に使用を改善する COM ベース テクノロジです。 これは、ユーザー インターフェイス要素に関する情報を公開するための信頼性の高いメソッドを提供します。 ただし、Microsoft UI オートメーションと呼ばれる新しいユーザー補助モデルでは、使用できるようになりました。 2 つのテクノロジの比較を参照してください。 [UI オートメーションと Microsoft Active Accessibility](http://msdn.microsoft.com/library/87bee662-0a3e-4232-a421-20e7a5968321)です。  
+ Active Accessibility は、により、プログラムと Windows オペレーティング システムが支援技術製品と共に使用を改善する COM ベース テクノロジです。 これは、ユーザー インターフェイス要素に関する情報を公開するための信頼性の高いメソッドを提供します。 ただし、Microsoft UI オートメーションと呼ばれる新しいユーザー補助モデルでは、使用できるようになりました。 2 つのテクノロジの比較を参照してください。 [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)です。  
   
  使用して、 [AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport) Microsoft Active Accessibility のサポートが有効になっているかどうかを調べます。  
   
  
 ### <a name="see-also"></a>関連項目  
- [UI オートメーションと Microsoft Active Accessibility](http://msdn.microsoft.com/library/87bee662-0a3e-4232-a421-20e7a5968321)   
+ [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)   
  [AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport)
 
 ## <a name="excludetag"></a>AFX_GLOBAL_DATA::ExcludeTag
@@ -310,15 +311,15 @@ BOOL ExcludeTag(
  このメソッドが戻るとき、`strTag`パラメーターには間にある開始タグと終了 XML タグによってというテキストが含まれています、`lpszTag`パラメーター。 先頭または末尾の空白は結果から除去します。  
   
  [入力] `bIsCharsList`  
- `TRUE`記号のエスケープ文字を変換する、`strTag`パラメーターに実際のエスケープ文字です。`FALSE`変換を実行します。既定値は`FALSE`します。 詳細については、「解説」を参照してください。  
+ `TRUE`記号のエスケープ文字を変換する、`strTag`パラメーターに実際のエスケープ文字です。`FALSE`変換を実行しないことです。既定値は`FALSE`します。 詳細については、「解説」を参照してください。  
   
 ### <a name="return-value"></a>戻り値  
  `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
   
 ### <a name="remarks"></a>コメント  
- XML タグ ペアから成るタグと終了を開始および指定したバッファー内のテキストの実行の終了を示すタグをという名前です。 `strBuffer`パラメーターは、バッファーを指定し、`lpszTag`パラメーターが XML タグの名前を指定します。  
+ XML タグ ペアから成るタグと終了を開始と指定したバッファー内のテキストの実行の終了を示すタグをという名前です。 `strBuffer`パラメーターは、バッファーを指定し、`lpszTag`パラメーターが XML タグの名前を指定します。  
   
- 次の表に、記号を使用して、指定したバッファー内のエスケープ文字のセットをエンコードします。 指定`TRUE`の`bIsCharsList`内のシンボルを変換するパラメーター、`strTag`実際のエスケープ文字のパラメーターです。 次の表には、 [_T()](../../c-runtime-library/data-type-mappings.md)記号を指定し、文字の文字列をエスケープするマクロです。  
+ 次の表に、記号を使用して、指定したバッファー内のエスケープ文字のセットをエンコードします。 指定`TRUE`の`bIsCharsList`内のシンボルを変換するパラメーター、`strTag`実際のエスケープ文字のパラメーターです。 次の表には、 [_T()](../../c-runtime-library/data-type-mappings.md)シンボルを指定して、文字の文字列をエスケープするマクロです。  
   
 |シンボル|エスケープ文字|  
 |------------|----------------------|  
@@ -346,7 +347,7 @@ COLORREF GetColor(int nColor);
  指定されたユーザー インターフェイス要素の RGB 色の値。 詳細については、「解説」を参照してください。  
   
 ### <a name="remarks"></a>コメント  
- 場合、`nColor`パラメーターが範囲外には、戻り値は 0 です。 0 も有効な RGB 値であるために、システム カラーが現在のオペレーティング システムでサポートされているかどうかを決定するのにこのメソッドを使用することはできません。 代わりに、使用、 [GetSysColorBrush](http://msdn.microsoft.com/library/windows/desktop/dd144927)を返すメソッド`NULL`色がサポートされていない場合。  
+ 場合、`nColor`パラメーターが範囲外には、戻り値は 0 です。 0 も有効な RGB 値であるために、システム カラーが現在のオペレーティング システムでサポートされているかどうかを決定するのにこのメソッドを使用することはできません。 代わりに、使用、 [GetSysColorBrush](http://msdn.microsoft.com/library/windows/desktop/dd144927)返すメソッドを`NULL`色がサポートされていない場合。  
   
 ### <a name="see-also"></a>関連項目  
 
@@ -386,7 +387,7 @@ BOOL GetNonClientMetrics(NONCLIENTMETRICS& info);
   
 ### <a name="parameters"></a>パラメーター   
  [入力、出力] `info`  
- A [NONCLIENTMETRICS](http://msdn.microsoft.com/library/windows/desktop/ff729175)を最小化されていないウィンドウの非クライアント領域に関連付けられている拡張可能なメトリックを含む構造体。  
+ A [NONCLIENTMETRICS](http://msdn.microsoft.com/library/windows/desktop/ff729175)構造を最小化されていないウィンドウの非クライアント領域に関連付けられている拡張可能なメトリックが含まれます。  
   
 ### <a name="return-value"></a>戻り値  
  `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
@@ -405,7 +406,7 @@ int GetTextHeight(BOOL bHorz = TRUE);
   
 ### <a name="parameters"></a>パラメーター   
  [入力] `bHorz`  
- `TRUE`テキストを水平方向に実行すると、文字の高さを取得するには`FALSE`テキストを垂直方向に実行すると、文字の高さを取得します。 既定値は `TRUE` です。  
+ `TRUE`テキストを水平方向に実行すると、文字の高さを取得するには`FALSE`にテキストを垂直方向に実行すると、文字の高さを取得します。 既定値は `TRUE` です。  
   
 ### <a name="return-value"></a>戻り値  
  そのベースラインから測定は、現在のフォントの高さ。  
@@ -486,7 +487,7 @@ BOOL IsAccessibilitySupport() const;
   
 
 ### <a name="see-also"></a>関連項目  
- [UI オートメーションと Microsoft Active Accessibility](http://msdn.microsoft.com/library/87bee662-0a3e-4232-a421-20e7a5968321)
+ [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)
 
 ## <a name="isd2dinitialized"></a>AFX_GLOBAL_DATA::IsD2DInitialized
  D2D が初期化されたかどうかを決定します。  
@@ -564,7 +565,7 @@ BOOL m_bUseSystemFont;
 ### <a name="remarks"></a>コメント  
  `TRUE`システム フォント; を使用することを指定します。それ以外の場合、`FALSE`です。 `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターにこのメンバーは初期化`FALSE`です。  
   
- このメンバーのテストは、使用するフォントを特定するために、フレームワークの唯一の方法ではありません。 `AFX_GLOBAL_DATA::UpdateFonts`メソッドは、メニューのツールバー、およびリボンに適用できるどの visual スタイルを決定するのには、既定と代替手段のフォントもテストします。  
+ このメンバーのテストは、使用するフォントを特定するために、フレームワークの唯一の方法ではありません。 `AFX_GLOBAL_DATA::UpdateFonts`メソッドは、メニューのツールバー、およびリボンに適用される使用できるどの visual スタイルを決定するのには、既定と代替手段のフォントもテストします。  
   
 ## <a name="m_hcurhand"></a>AFX_GLOBAL_DATA::m_hcurHand
 手の形のカーソルのハンドルを格納します。  
@@ -851,7 +852,7 @@ HRESULT ShellCreateItemFromParsingName(
  インターフェイス ID への参照  
   
  `ppv`  
- [out]この関数から制御が戻るときに要求されたインターフェイス ポインターを含む`riid`です。 これは一般に`IShellItem`または`IShellItem2`です。  
+ [out]この関数から制御が戻るときに要求されたインターフェイス ポインターが含まれています。`riid`です。 これは一般に`IShellItem`または`IShellItem2`です。  
   
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は S_OK を返します。それ以外の場合エラー値。  

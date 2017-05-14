@@ -1,56 +1,73 @@
 ---
-title: "_ltoa_s、_ltow_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_ltoa_s"
-  - "_ltow_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_ltow_s"
-  - "_ltoa_s"
-  - "ltoa_s"
-  - "ltow_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ltoa_s 関数"
-  - "_ltow_s 関数"
-  - "変換 (整数を)"
-  - "変換 (数値の), 文字列への"
-  - "長整数型の変換 (文字列に)"
-  - "ltoa_s 関数"
-  - "ltow_s 関数"
+title: "_ltoa_、_ltow_s | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _ltoa_s
+- _ltow_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- _ltow_s
+- _ltoa_s
+- ltoa_s
+- ltow_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- converting integers
+- _ltoa_s function
+- ltow_s function
+- long integer conversion to string
+- converting numbers, to strings
+- ltoa_s function
+- _ltow_s function
 ms.assetid: d7dc61ea-1ccd-412d-b262-555a58647386
 caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# _ltoa_s、_ltow_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 098bb1dcf673931ab4c0d3682fafcc442835d76f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-文字列に長整数を変換します。  これらの関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[\_ltoa、\_ltow](../Topic/_ltoa,%20_ltow.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="ltoas-ltows"></a>_ltoa_s、_ltow_s
+長整数を文字列に変換します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_ltoa、_ltow](../../c-runtime-library/reference/ltoa-ltow.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _ltoa_s(  
@@ -79,49 +96,46 @@ errno_t _ltow_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `value`  
  変換される数値。  
   
  `str`  
- 結果文字列のバッファー。  
+ 結果の文字列のバッファー。  
   
  `sizeOfstr`  
- `_ltoa_s` のバイトまたは `_ltow_s`の単語の `str` のサイズ。  
+ `_ltoa_s` のバイトまたは `_ltow_s` のワードでの `str` のサイズ。  
   
  `radix`  
- `value` の基数。  
+ `value` のベース。  
   
-## 戻り値  
- この関数が正常終了した場合は 0、失敗した場合はエラー コードを返します。  
+## <a name="return-value"></a>戻り値  
+ 関数が成功した場合はゼロ、そうでない場合はエラーコード。  
   
-## 解説  
- `_ltoa_s` 関数は、`value` の数字を null で終わる文字列に変換し、その結果 \(最大 33 バイト\) を `str` に格納します。  `radix` 引数は、`value` の基数を 2 ～ 36 の範囲で指定します。  `radix` を 10 に設定し、`value` が負の場合、格納される文字列の最初の文字はプラス記号 \(–\) です。  `_ltow_s` は `_ltoa_s`のワイド文字バージョンであり、; `_ltow_s` の 2 番目の引数はワイド文字列です。  
+## <a name="remarks"></a>コメント  
+ `_ltoa_s` 関数は、`value` の数字を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 `radix`指定のベース`value`2 ~ 36 の範囲内でする必要があります。 場合`radix`10 に等しいと`value`は負の場合、格納されている文字列の最初の文字はマイナス記号 (-)。 `_ltow_s` は、`_ltoa_s` のワイド文字バージョンであり、`_ltow_s` の 2 番目の引数はワイド文字列です。  
   
- `str` が `NULL` ポインターである場合、または `sizeOfstr` がゼロ以下の場合、これらの関数は [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、これらの関数は長整数の範囲の `value` または `str` が、これらの関数はを返し、`ERANGE`に `errno` を設定した場合は \-1 を返し、`EINVAL`に `errno` を設定します。  
+ `str` が `NULL` ポインターの場合、または `sizeOfstr` がゼロ以下の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は-1 を返して `errno` を `EINVAL` に設定し、`value` または `str` が長整数の範囲外である場合は、これらの関数は -1 を返して `errno` を `ERANGE` に設定します。  
   
- C\+\+ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要がなくなる\) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_ltot_s`|`_ltoa_s`|`_ltoa_s`|`_ltow_s`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_ltoa_s`|\<stdlib.h\>|  
-|`_ltow_s`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`_ltoa_s`|\<stdlib.h>|  
+|`_ltow_s`|\<stdlib.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
- [\_itoa、\_i64toa、\_ui64toa、\_itow、\_i64tow、\_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md)   
- [\_ultoa、\_ultow](../../c-runtime-library/reference/ultoa-ultow.md)   
- [\_ultoa\_s、\_ultow\_s](../Topic/_ultoa_s,%20_ultow_s.md)
+ [_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md)   
+ [_ultoa、_ultow](../../c-runtime-library/reference/ultoa-ultow.md)   
+ [_ultoa_s、_ultow_s](../../c-runtime-library/reference/ultoa-s-ultow-s.md)

@@ -57,10 +57,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 326580ea97aa42612ebf39b1e6c22dea6d56c1ea
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5a83ef5640a72dcd2ff8f7f35c587789dff35d61
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="setlocale-wsetlocale"></a>setlocale、_wsetlocale
@@ -138,7 +139,7 @@ wchar_t *_wsetlocale(
   
  `setlocale( LC_ALL, "C" );`  
   
- `locale` 引数には、ロケール名、言語識別文字列、言語識別文字列と国/地域コード、コード ページ、または言語識別文字列、国/地域コード、コード ページを指定できます。 使用できるロケール名、言語、国/地域コード、およびコード ページのセットには、1 文字に&2; バイトを超えるデータを必要とする (UTF-7、UTF-8 など) コード ページを除き、Windows の NLS API でサポートされるすべてが含まれています。 UTF-7 または UTF-8 のコード ページ値を指定すると、`setlocale` は失敗し、NULL を返します。 `setlocale` でサポートされているロケール名のセットについては、「[ロケール名、言語、および国/地域識別文字列](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)」に記載されています。 `setlocale` でサポートされる言語識別文字列と国/地域識別文字列は、「[言語識別文字列](../../c-runtime-library/language-strings.md)」および「[国/地域識別文字列](../../c-runtime-library/country-region-strings.md)」に記載されています。 パフォーマンス上の理由と、コードに埋め込まれた、またはストレージに対してシリアル化されたロケール文字列の保守容易性の理由により、ロケール名形式を使用することをお勧めします。 オペレーティング システムの更新によってロケール名の文字列が変更される可能性は、言語および国/地域名の形式よりも低くなっています。  
+ `locale` 引数には、ロケール名、言語識別文字列、言語識別文字列と国/地域コード、コード ページ、または言語識別文字列、国/地域コード、コード ページを指定できます。 使用できるロケール名、言語、国/地域コード、およびコード ページのセットには、1 文字に 2 バイトを超えるデータを必要とする (UTF-7、UTF-8 など) コード ページを除き、Windows の NLS API でサポートされるすべてが含まれています。 UTF-7 または UTF-8 のコード ページ値を指定すると、`setlocale` は失敗し、NULL を返します。 `setlocale` でサポートされているロケール名のセットについては、「[ロケール名、言語、および国/地域識別文字列](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)」に記載されています。 `setlocale` でサポートされる言語識別文字列と国/地域識別文字列は、「[言語識別文字列](../../c-runtime-library/language-strings.md)」および「[国/地域識別文字列](../../c-runtime-library/country-region-strings.md)」に記載されています。 パフォーマンス上の理由と、コードに埋め込まれた、またはストレージに対してシリアル化されたロケール文字列の保守容易性の理由により、ロケール名形式を使用することをお勧めします。 オペレーティング システムの更新によってロケール名の文字列が変更される可能性は、言語および国/地域名の形式よりも低くなっています。  
   
  `locale` 引数として null ポインターを渡すことは、`setlocale` が国際的な環境を設定するのではなく、照会することを意味します。 `locale` 引数が null ポインターの場合、プログラムの現在のロケール設定は変更されません。 代わりに、`setlocale` は、スレッドの現在のロケールの `category` に対応する文字列へのポインターを返します。 `category` 引数が `LC_ALL` の場合、関数は各カテゴリの現在の設定を表すセミコロンで区切られた文字列を返します。 たとえば、呼び出しのシーケンス   
   
@@ -202,7 +203,7 @@ wchar_t *_wsetlocale(
  `setlocale( LC_ALL, ".<code_page>" );`  
  コード ページに、*<code_page>* で表される値、および指定したコード ページの既定の国/地域と言語 (ホスト オペレーティング システムによって定義) を設定します。  
   
- カテゴリは、コード ページの変更に影響する `LC_ALL` または `LC_CTYPE` である必要があります。 たとえば、ホスト オペレーティング システムの既定の国/地域と言語が "United States" と "English" の場合、次の `setlocale` の&2; 種類の呼び出しは機能的に同じです。  
+ カテゴリは、コード ページの変更に影響する `LC_ALL` または `LC_CTYPE` である必要があります。 たとえば、ホスト オペレーティング システムの既定の国/地域と言語が "United States" と "English" の場合、次の `setlocale` の 2 種類の呼び出しは機能的に同じです。  
   
  `setlocale( LC_ALL, ".1252" );`  
   
@@ -324,9 +325,6 @@ The time in en-US locale is: 'Wednesday, May 12, 2004'
 The thread locale is now set to de-DE.  
 The time in de-DE locale is: 'Mittwoch, 12. Mai 2004'  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Globalization::CultureInfo クラス](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ロケール名、言語、および国/地域識別文字列](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
