@@ -62,10 +62,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e04e0d21d88abf57f2e258b74a28f5a3612539a3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: fbee47ad9c90b23e90810ae973224b8c1c5ee5a7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="vfprintf-vfprintfl-vfwprintf-vfwprintfl"></a>vfprintf、_vfprintf_l、vfwprintf、_vfwprintf_l
@@ -121,7 +122,7 @@ int _vfwprintf_l(
 ## <a name="remarks"></a>コメント  
  これらの関数は、引数リストへのポインターを使用して、指定されたデータを書式化して `stream` に書き込みます。  
   
- `vfwprintf` は `vfprintf` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この&2; つの関数の動作は同じです。 `vfprintf` では、UNICODE ストリームへの出力はサポートされていません。  
+ `vfwprintf` は `vfprintf` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。 `vfprintf` では、UNICODE ストリームへの出力はサポートされていません。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -139,15 +140,12 @@ int _vfwprintf_l(
   
 |ルーチン|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
-|`vfprintf`, _`vfprintf_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
-|`vfwprintf`, _`vfwprintf_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
+|`vfprintf`, `_vfprintf_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
+|`vfwprintf`, `_vfwprintf_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
   
  \* UNIX V との互換性用。  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

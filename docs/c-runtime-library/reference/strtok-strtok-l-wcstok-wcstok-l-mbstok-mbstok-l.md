@@ -72,10 +72,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d203033a5cb07ca4e6888cca7cbf4bba1b1da9da
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 07948b7fc08bbc41e2e899e190842be98746aeab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strtok-strtokl-wcstok-wcstokl-mbstok-mbstokl"></a>strtok、_strtok_l、wcstok、_wcstok_l、_mbstok、_mbstok_l
@@ -125,12 +126,12 @@ unsigned char *_mbstok(
 > [!IMPORTANT]
 >  これらの関数は、バッファー オーバーランが原因で発生する可能性のある問題の影響を受けます。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
- `strtok` への最初の呼び出しで、関数は先行する区切り記号をスキップし、`strToken` の最初のトークンへのポインターを返して null 文字を含むトークンを終了します。 `strToken` への一連の呼び出しにより、より多くのトークンを `strtok` の残りから作成できます。 `strtok` への各呼び出しは、その呼び出しによって返される `token` の後に null 文字を挿入することで `strToken` を変更します。 `strToken` から次のトークンを読み込むには、`strtok` を `NULL` 引数に `strToken` 値を使用して呼び出します。 `NULL` `strToken` 引数により、`strtok` は変更された `strToken` で次のトークンを検索します。 `strDelimit` 引数は、ある呼び出しから次の呼び出しへ任意の値を取ることができるため、区切り記号のセットが異なる場合があります。  
+ `strtok` への最初の呼び出しで、関数は先行する区切り記号をスキップし、`strToken` の最初のトークンへのポインターを返して null 文字を含むトークンを終了します。 `strToken` への一連の呼び出しにより、より多くのトークンを `strtok` の残りから作成できます。 各呼び出し`strtok`変更`strToken`後に null 文字を挿入することで、`token`その呼び出しによって返されます。 `strToken` から次のトークンを読み込むには、`strtok` を `NULL` 引数に `strToken` 値を使用して呼び出します。 `NULL` `strToken` 引数により、`strtok` は変更された `strToken` で次のトークンを検索します。 `strDelimit` 引数は、ある呼び出しから次の呼び出しへ任意の値を取ることができるため、区切り記号のセットが異なる場合があります。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
 > [!NOTE]
->  各関数は、文字列をトークンに解析する際にスレッド ローカルの静的変数を使用します。 したがって、複数のスレッドが望ましくない影響を受けずに同時にこれらの関数を呼び出すことができます。 ただし、1 つのスレッド内でこれらの関数のいずれかの呼び出しをインターリーブすると、データの破損や正確でない結果が生成される可能性が非常に高くなります。 さまざまな文字列を解析する際、1 つの文字列の解析を完了してから、次の解析を開始します。 また、別の関数が呼び出されているループから、これらの関数の&1; つを呼び出す場合の危険性にも注意してください。 他の関数が最終的にこれらの関数の&1; つを使用した場合、インターリーブされた呼び出しのシーケンスにより、データの破損を招くことがあります。  
+>  各関数は、文字列をトークンに解析する際にスレッド ローカルの静的変数を使用します。 したがって、複数のスレッドが望ましくない影響を受けずに同時にこれらの関数を呼び出すことができます。 ただし、1 つのスレッド内でこれらの関数のいずれかの呼び出しをインターリーブすると、データの破損や正確でない結果が生成される可能性が非常に高くなります。 さまざまな文字列を解析する際、1 つの文字列の解析を完了してから、次の解析を開始します。 また、別の関数が呼び出されているループから、これらの関数の 1 つを呼び出す場合の危険性にも注意してください。 他の関数が最終的にこれらの関数の 1 つを使用した場合、インターリーブされた呼び出しのシーケンスにより、データの破損を招くことがあります。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -194,9 +195,6 @@ Tokens:
  more  
  tokens  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
