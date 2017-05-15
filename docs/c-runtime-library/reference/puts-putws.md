@@ -58,10 +58,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f24e6fd1d8739bbcf55d32bd863ce56d8ef50085
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 458fab534fa8bf6c92771d8f4fb42377ece4300e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="puts-putws"></a>puts、_putws
@@ -91,7 +92,7 @@ int _putws(
 ## <a name="remarks"></a>コメント  
  `puts` 関数は、`str` を標準出力ストリーム **stdout** に書き込みます。出力ストリームで文字列の終端の null 文字 ('\0') は改行文字 ('\n') に置き換えられます。  
   
- `_putws` は `puts` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この&2; つの関数の動作は同じです。 `puts` では、UNICODE ストリームへの出力はサポートされていません。  
+ `_putws` は `puts` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。 `puts` では、UNICODE ストリームへの出力はサポートされていません。  
   
  Windows 2000 以降では、**_putwch** は現在の CONSOLE LOCALE 設定を使用して Unicode 文字を書き出します。  
   
@@ -133,9 +134,6 @@ int main( void )
 ```  
 Hello world from puts!  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Console::Write](https://msdn.microsoft.com/en-us/library/system.console.write.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

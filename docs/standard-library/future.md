@@ -32,10 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 4c83adc4b7365518275d5d54ac927012abc29657
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: e2ebbb8eb6e6f250376b0ef2b43dae261a642d69
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ltfuturegt"></a>&lt;future&gt;
@@ -54,7 +55,7 @@ ms.lasthandoff: 02/24/2017
 > [!NOTE]
 >  使用してコンパイルされたコードで**/clr**、このヘッダーはブロックされます。  
   
- *非同期プロバイダー*は、関数呼び出しの結果を格納します。 関数呼び出しの結果を取得するには、*非同期のリターン オブジェクト*を使用します。 *関連付けられた非同期状態*によって、非同期プロバイダーと&1; つ以上の非同期のリターン オブジェクトの間で通信を実行できます。  
+ *非同期プロバイダー*は、関数呼び出しの結果を格納します。 関数呼び出しの結果を取得するには、*非同期のリターン オブジェクト*を使用します。 *関連付けられた非同期状態*によって、非同期プロバイダーと 1 つ以上の非同期のリターン オブジェクトの間で通信を実行できます。  
   
  プログラムでは、関連付けられた非同期状態のオブジェクトは直接作成されません。 プログラムでは、必要に応じて非同期プロバイダーが作成され、その非同期プロバイダーに基づいて非同期のリターン オブジェクトが作成されます。このリターン オブジェクトでは、その関連付けられた非同期状態がプロバイダーと共有されます。 非同期プロバイダーと非同期のリターン オブジェクトによって、共有済みの関連付けられた非同期状態を保持するオブジェクトが管理されます。 関連付けられた非同期状態を参照する最後のオブジェクトが、その参照を解放すると、関連付けられた非同期状態を保持するオブジェクトが破棄されます。  
   
@@ -66,7 +67,7 @@ ms.lasthandoff: 02/24/2017
   
  各テンプレート クラス (`promise`、`future`、`shared_future`) は、`void` 型に特殊化されています。また、参照渡しによる値の格納と取得用に部分的に特殊化されています。 これらの特殊化がプライマリ テンプレートと異なる点は、戻り値を格納および取得する関数のシグネチャとセマンティクスだけです。  
   
- テンプレート クラス `future` と `shared_future` では、それらのデストラクターでブロックは実行されません。ただし、下位互換性のために次のような例外が&1; つだけあります。`future` で開始されたタスクにアタッチされている `shared_future` (または最後の `std::async`) では、他のすべての future とは異なり、タスクが完了していない場合にデストラクターでブロックが実行されます。つまり、デストラクターがブロックするのは、スレッドがまだ `.get()` や `.wait()` を呼び出しておらず、タスクが実行中の場合です。 標準の草案では、`std::async` の説明に使用上の注意事項が追加されています。その注意事項とは、「メモ: std::async から取得された future をローカル スコープ外に移動する場合、future を使用する他のコードでは、future のデストラクターは共有状態が準備完了になるのをブロックする可能性があることを考慮する必要があります。」といったものです。ただし、それ以外の場合は、`future` と `shared_future` のデストラクターでは、ブロックが確実に実行されないようにする必要があります。  
+ テンプレート クラス `future` と `shared_future` では、それらのデストラクターでブロックは実行されません。ただし、下位互換性のために次のような例外が 1 つだけあります。`future` で開始されたタスクにアタッチされている `shared_future` (または最後の `std::async`) では、他のすべての future とは異なり、タスクが完了していない場合にデストラクターでブロックが実行されます。つまり、デストラクターがブロックするのは、スレッドがまだ `.get()` や `.wait()` を呼び出しておらず、タスクが実行中の場合です。 標準の草案では、`std::async` の説明に使用上の注意事項が追加されています。その注意事項とは、「メモ: std::async から取得された future をローカル スコープ外に移動する場合、future を使用する他のコードでは、future のデストラクターは共有状態が準備完了になるのをブロックする可能性があることを考慮する必要があります。」といったものです。ただし、それ以外の場合は、`future` と `shared_future` のデストラクターでは、ブロックが確実に実行されないようにする必要があります。  
   
 ## <a name="members"></a>メンバー  
   
@@ -91,19 +92,19 @@ ms.lasthandoff: 02/24/2017
   
 |名前|説明|  
 |----------|-----------------|  
-|[async 関数](../standard-library/future-functions.md#async_function)|非同期プロバイダーを表します。|  
-|[future_category 関数](../standard-library/future-functions.md#future_category_function)|`error_category` オブジェクトに関連するエラーの特性を設定する `future` オブジェクトへの参照を返します。|  
-|[make_error_code 関数](../standard-library/future-functions.md#make_error_code_function)|`error_code` エラーの特性を設定する `error_category` オブジェクトを保持する `future` を作成します。|  
-|[make_error_condition 関数](../standard-library/future-functions.md#make_error_condition_function)|`error_condition` エラーの特性を設定する `error_category` オブジェクトを保持する `future` を作成します。|  
-|[swap 関数](../standard-library/future-functions.md#swap_function)|関連付けられた非同期状態を、`promise` オブジェクト間で交換します。|  
+|[async](../standard-library/future-functions.md#async)|非同期プロバイダーを表します。|  
+|[future_category](../standard-library/future-functions.md#future_category)|`error_category` オブジェクトに関連するエラーの特性を設定する `future` オブジェクトへの参照を返します。|  
+|[make_error_code](../standard-library/future-functions.md#make_error_code)|`error_code` エラーの特性を設定する `error_category` オブジェクトを保持する `future` を作成します。|  
+|[make_error_condition](../standard-library/future-functions.md#make_error_condition)|`error_condition` エラーの特性を設定する `error_category` オブジェクトを保持する `future` を作成します。|  
+|[swap](../standard-library/future-functions.md#swap)|関連付けられた非同期状態を、`promise` オブジェクト間で交換します。|  
   
 ### <a name="enumerations"></a>列挙  
   
 |名前|説明|  
 |----------|-----------------|  
-|[future_errc 列挙型](../standard-library/future-enums.md#future_errc_enumeration)|`future_error` クラスによって報告されるエラーのシンボル名を提供します。|  
-|[future_status 列挙型](../standard-library/future-enums.md#future_status_enumeration)|期限が設定された wait 関数から返される理由のシンボル名を提供します。|  
-|[launch 列挙型](../standard-library/future-enums.md#launch_enumeration)|テンプレート関数 `async` で使用できるモードを示すビットマスク型を表します。|  
+|[future_errc](../standard-library/future-enums.md#future_errc)|`future_error` クラスによって報告されるエラーのシンボル名を提供します。|  
+|[future_status](../standard-library/future-enums.md#future_status)|期限が設定された wait 関数から返される理由のシンボル名を提供します。|  
+|[起動します。](../standard-library/future-enums.md#launch)|テンプレート関数 `async` で使用できるモードを示すビットマスク型を表します。|  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)

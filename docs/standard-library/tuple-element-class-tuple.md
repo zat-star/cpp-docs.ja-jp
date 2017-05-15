@@ -35,10 +35,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 54bfdd8a1f095478282af39354a6e9a91ba32891
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
+ms.openlocfilehash: b5568eb951738b1c0c53321d7430c84db6bac9ec
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="tupleelement-class"></a>tuple_element クラス
@@ -94,10 +95,10 @@ template <class T1, class T2>
 *Size*  
 配列のサイズ。  
 
-*T1* ペアの&1; 番目の要素の型。
+*T1* ペアの 1 番目の要素の型。
   
 *T2*  
-ペアの&2; 番目の要素の型。
+ペアの 2 番目の要素の型。
 
 ## <a name="remarks"></a>コメント  
 このテンプレート クラス `tuple_element` では、タプル型 `Tuple` のインデックス `Index` にある型のシノニムである typedef `type` が入れ子になっています。  
@@ -106,9 +107,9 @@ Typedef `tuple_element_t` は `tuple_element<Index, Tuple>::type` の便利な�
   
 配列のテンプレート クラスの特殊化では、同じ型の `Size` 要素のタプルとして `array` にインターフェイスを提供します。 それぞれの特殊化は入れ子の typedef `type` を持ち、これは `Index` の `array`要素の型のシノニムであり、const-volatile 制限が保持されます。  
   
-`pair` の型のテンプレートの特殊化では、それぞれ&1; つのメンバーの typedef である `type` を提供します。これはペアの指定された位置にある要素の型のシノニムであり、const または volatile の制限が保持されます。 Typedef `tuple_element_t` は `tuple_element<N, pair<T1, T2>>::type` の便利なエイリアスです。  
+`pair` の型のテンプレートの特殊化では、それぞれ 1 つのメンバーの typedef である `type` を提供します。これはペアの指定された位置にある要素の型のシノニムであり、const または volatile の制限が保持されます。 Typedef `tuple_element_t` は `tuple_element<N, pair<T1, T2>>::type` の便利なエイリアスです。  
   
-[get 関数 &lt;utility&gt;](../standard-library/utility-functions.md#get) を使用して、指定した位置または (C++14 / Visual Studio 2015 内の) 指定した型の要素を返します。 
+使用して、 [get 関数&lt;ユーティリティ&gt;](../standard-library/utility-functions.md#get)または指定した種類の指定位置にある要素を返します。 
   
 ## <a name="example"></a>例  
   

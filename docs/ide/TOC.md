@@ -21,6 +21,8 @@
 ### [ヘルプ ファイル (HTML ヘルプ)](help-files-html-help.md)
 ### [ヘルプ ファイル (WinHelp)](help-files-winhelp.md)
 ### [ヒント ファイル](hint-files.md)
+### [プロパティ ページの XML ファイル](property-page-xml-files.md)
+### [.vcxproj と .props のファイル構造](vcxproj-file-structure.md)
 ## [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](creating-desktop-projects-by-using-application-wizards.md)
 ### [ウィザードでサポートされるその他の言語](wizard-support-for-other-languages.md)
 ### [カスタム ウィザードの作成](creating-a-custom-wizard.md)

@@ -1,66 +1,83 @@
 ---
 title: "sprintf_s、_sprintf_s_l、swprintf_s、_swprintf_s_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_swprintf_s_l"
-  - "_sprintf_s_l"
-  - "swprintf_s"
-  - "sprintf_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "swprintf_s"
-  - "sprintf_s"
-  - "stdio/sprintf_s"
-  - "stdio/swprintf_s"
-  - "stdio/_sprintf_s_l"
-  - "stdio/_swprintf_s_l"
-  - "_sprintf_s_l"
-  - "_swprintf_s_l"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "stprintf_s 関数"
-  - "stprintf_s_l 関数"
-  - "swprintf_s_l 関数"
-  - "sprintf_s 関数"
-  - "swprintf_s 関数"
-  - "_swprintf_s_l 関数"
-  - "sprintf_s_l 関数"
-  - "_stprintf_s_l 関数"
-  - "_stprintf_s 関数"
-  - "_sprintf_s_l 関数"
-  - "書式設定テキスト [C++]"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _swprintf_s_l
+- _sprintf_s_l
+- swprintf_s
+- sprintf_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- swprintf_s
+- sprintf_s
+- stdio/sprintf_s
+- stdio/swprintf_s
+- stdio/_sprintf_s_l
+- stdio/_swprintf_s_l
+- _sprintf_s_l
+- _swprintf_s_l
+dev_langs:
+- C++
+helpviewer_keywords:
+- stprintf_s function
+- stprintf_s_l function
+- swprintf_s_l function
+- sprintf_s function
+- swprintf_s function
+- _swprintf_s_l function
+- sprintf_s_l function
+- _stprintf_s_l function
+- _stprintf_s function
+- _sprintf_s_l function
+- formatted text [C++]
 ms.assetid: 424f0a29-22ef-40e8-b565-969f5f57782f
 caps.latest.revision: 26
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 26
----
-# sprintf_s、_sprintf_s_l、swprintf_s、_swprintf_s_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 06afe4f945413ae1f45ff9249dcec0cb87cab987
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-文字列に書式付きデータを書き込みます。 これらは、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[sprintf、\_sprintf\_l、swprintf、\_swprintf\_l、\_\_swprintf\_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="sprintfs-sprintfsl-swprintfs-swprintfsl"></a>sprintf_s、_sprintf_s_l、swprintf_s、_swprintf_s_l
+文字列に書式付きデータを書き込みます。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int sprintf_s(  
@@ -103,7 +120,7 @@ int swprintf_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buffer`  
  出力の格納場所。  
   
@@ -119,43 +136,43 @@ int swprintf_s(
  `locale`  
  使用するロケール。  
   
- 詳細については、「[printf 関数と wprintf 関数の書式指定フィールド](../Topic/Format%20Specification%20Syntax:%20printf%20and%20wprintf%20Functions.md)」を参照してください。  
+ 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
   
-## 戻り値  
- 書き込まれた文字数を返します。エラーが発生した場合は \-1 を返します。`buffer` または `format` が null ポインターである場合、`sprintf_s` および `swprintf_s` は \-1 を返し、`errno` を `EINVAL` に設定します。  
+## <a name="return-value"></a>戻り値  
+ 書き込まれた文字数またはエラーが発生した場合は-1。 `buffer` または `format` が null ポインターである場合、 `sprintf_s` および `swprintf_s` は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
- `sprintf_s` 関数は、`buffer` に格納されているバイト数を返します。終端の null 文字は含まれません。`swprintf_s` は、`buffer` に格納されているワイド文字数を返します。終端の null ワイド文字は含まれません。  
+ `sprintf_s` 関数は、 `buffer`に格納されているバイト数を返します。終端の null 文字は含まれません。 `swprintf_s` は、`buffer` に格納されているワイド文字数を返します。終端の null ワイド文字は含まれません。  
   
-## 解説  
- `sprintf_s` 関数は、一連の文字と値の書式を指定して、`buffer` に格納します。 各 `argument` \(指定されている場合\) は、`format` 中の対応する書式指定に応じて変換され、格納されます。 format は通常の文字で構成し、その形式と機能は [printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) 関数の `format` と同じです。 最後に書き込まれる文字の後に NULL 文字が追加されます。 重なり合う文字列間でコピーした場合の動作は未定義です。  
+## <a name="remarks"></a>コメント  
+ `sprintf_s` 関数は、一連の文字と値の書式を指定して、 `buffer`に格納します。 各 `argument` (指定されている場合) は、 `format`中の対応する書式指定に応じて変換され、格納されます。 format は通常の文字で構成し、その形式と機能は `format` printf [関数の](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)と同じです。 最後に書き込まれる文字の後に NULL 文字が追加されます。 重なり合う文字列間でコピーした場合の動作は未定義です。  
   
- `sprintf_s` と `sprintf` 間の主な違いとしては、`sprintf_s` は書式指定文字列の有効な書式指定文字をチェックしますが、`sprintf` は書式指定文字列またはバッファーが `NULL` ポインターかどうかのみをチェックします。 いずれかのチェックが失敗した場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は \-1 を返し、`errno` を `EINVAL` に設定します。  
+ `sprintf_s` と `sprintf` 間の主な違いとしては、 `sprintf_s` は書式指定文字列の有効な書式指定文字をチェックしますが、 `sprintf` は書式指定文字列またはバッファーが `NULL` ポインターかどうかのみをチェックします。 いずれかのチェックが失敗した場合、「 [Parameter Validation](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
- `sprintf_s` と `sprintf` 間のもう 1 つの違いとして、`sprintf_s` は、出力バッファーのサイズを文字数で指定する長さパラメーターを受け取ります。 バッファーが、終端の null を含めた書式付きテキストに対して小さすぎる場合は、バッファーは `buffer``[0]` で null 文字を配置することで空の文字列に設定され、無効なパラメーター ハンドラーが呼び出されます。`_snprintf` とは異なり、`sprintf_s` では、バッファー サイズがゼロでない限り、必ずバッファーは null で終わります。  
+ `sprintf_s` と `sprintf` 間のもう 1 つの違いとして、 `sprintf_s` は、出力バッファーのサイズを文字数で指定する長さパラメーターを受け取ります。 バッファーが、終端の null を含めた書式付きテキストに対して小さすぎる場合は、バッファーは `buffer``[0]`で null 文字を配置することで空の文字列に設定され、無効なパラメーター ハンドラーが呼び出されます。 `_snprintf`とは異なり、 `sprintf_s` では、バッファー サイズがゼロでない限り、必ずバッファーは null で終わります。  
   
- `swprintf_s` は `sprintf_s` のワイド文字バージョンであり、`swprintf_s` のポインター引数はワイド文字列です。`swprintf_s` と `sprintf_s` では、エンコーディング エラーの検出動作が異なる場合があります。 これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
+ `swprintf_s` は `sprintf_s`のワイド文字バージョンであり、 `swprintf_s` のポインター引数はワイド文字列です。 `swprintf_s` と `sprintf_s`では、エンコーディング エラーの検出動作が異なる場合があります。 これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
- C\+\+ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要がなくなる\) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- `sprintf_s` には、バッファーが小さすぎる場合に発生する状況を制御できるバージョンもあります。 詳細については、「[\_snprintf\_s、\_snprintf\_s\_l、\_snwprintf\_s、\_snwprintf\_s\_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」を参照してください。  
+ `sprintf_s` には、バッファーが小さすぎる場合に発生する状況を制御できるバージョンもあります。 詳細については、「 [_snprintf_s, _snprintf_s_l, _snwprintf_s, _snwprintf_s_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_stprintf_s`|`sprintf_s`|`sprintf_s`|`swprintf_s`|  
 |`_stprintf_s_l`|`_sprintf_s_l`|`_sprintf_s_l`|`_swprintf_s_l`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`sprintf_s`、 `_sprintf_s_l`|C: \<stdio.h\><br /><br /> C\+\+: \<cstdio\> または \<stdio.h\>|  
-|`swprintf_s`、 `_swprintf_s_l`|C: \<stdio.h\> または \<wchar.h\><br /><br /> C\+\+: \<cstdio\>、\<cwchar\>、\<stdio.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`sprintf_s`, `_sprintf_s_l`|C: \<stdio.h><br /><br /> C++: \<cstdio> または \<stdio.h>|  
+|`swprintf_s`, `_swprintf_s_l`|C: \<stdio.h> または \<wchar.h><br /><br /> C++: \<cstdio>、\<cwchar>、\<stdio.h> または \<wchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_sprintf_s.c  
@@ -182,10 +199,16 @@ int main( void )
 ```  
   
 ```Output  
-Output: String:    computer Character: l Integer:   35 Real:      1.732053 character count = 79  
+Output:  
+   String:    computer  
+   Character: l  
+   Integer:   35  
+   Real:      1.732053  
+  
+character count = 79  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_swprintf_s.c  
@@ -205,16 +228,14 @@ int main( void )
 ```  
   
 ```Output  
-wrote 11 characters wrote -1 characters  
+wrote 11 characters  
+wrote -1 characters  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::String::Format](https://msdn.microsoft.com/en-us/library/system.string.format.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fprintf、\_fprintf\_l、fwprintf、\_fwprintf\_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [printf、\_printf\_l、wprintf、\_wprintf\_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [scanf、\_scanf\_l、wscanf、\_wscanf\_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [sscanf、\_sscanf\_l、swscanf、\_swscanf\_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
+ [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
+ [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
+ [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
+ [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)

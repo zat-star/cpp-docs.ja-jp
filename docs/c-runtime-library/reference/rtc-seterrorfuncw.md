@@ -52,10 +52,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d71962eca033e5d3994c82e666102f44c62e82be
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 9c340310feb94ac181049c01d3ab1efaee2002c3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="rtcseterrorfuncw"></a>_RTC_SetErrorFuncW
@@ -84,9 +85,9 @@ ms.lasthandoff: 02/24/2017
   
  `_RTC_SetErrorFuncW` に渡すアドレスが有効なエラー処理関数のアドレスであることを確認してください。  
   
- [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md) を使用して種類を -1 に指定したエラーについては、エラー処理関数は呼び出されません。  
+ かどうか、エラーが割り当てられて-1 の型を使用して[_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md)、エラー処理関数は呼び出されません。  
   
- この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の&1; つを呼び出す必要があります。 詳細については、「[C ランタイム ライブラリなしのランタイム チェックの使用方法](/visualstudio/debugger/using-run-time-checks-without-the-c-run-time-library)」をご覧ください。  
+ この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の 1 つを呼び出す必要があります。 詳細については、「 [Using Run-Time Checks Without the C Run-Time Library](/visualstudio/debugger/using-run-time-checks-without-the-c-run-time-library)」を参照してください。  
   
  **_RTC_error_fnW** は次のように定義されています。  
   
@@ -95,13 +96,13 @@ ms.lasthandoff: 02/24/2017
  ここで、  
   
  `errorType`  
- [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md) で指定したエラーの種類。  
+ [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md)で指定したエラーの種類。  
   
- *filename*  
+ *ファイル名*  
  障害が発生したソース ファイル。または、使用できるデバッグ情報がない場合は null。  
   
- *linenumber*  
- 障害が発生した *filename* 内の行番号。または、使用できるデバッグ情報がない場合は 0。  
+ *行番号*  
+ 障害が発生した *ファイル名* 内の行番号。または、使用できるデバッグ情報がない場合は 0。  
   
  `moduleName`  
  この障害が発生した DLL 名または実行可能ファイル名。  
@@ -121,9 +122,6 @@ ms.lasthandoff: 02/24/2017
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   

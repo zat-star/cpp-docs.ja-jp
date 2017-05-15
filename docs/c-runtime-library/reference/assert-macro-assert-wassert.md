@@ -55,10 +55,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ad3410852975757c34220e2de19f696ba3b7c718
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 97bdb002953c07aba3bf7951a6f94a058c977f9d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="assert-macro-assert-wassert"></a>assert マクロ、_assert、_wassert
@@ -104,9 +105,9 @@ void _wassert(
   
  ルーチンを呼び出したアプリケーションの種類に基づいて診断メッセージの出力先が決まります。 コンソール アプリケーションは、常に `stderr`を使用してメッセージを受け取ります。 Windows ベースのアプリケーションで、 `assert` は、Windows [MessageBox](http://msdn.microsoft.com/library/windows/desktop/ms645505) 関数を呼び出し、メッセージ ボックスを作成して、メッセージと **[OK]** ボタンを表示します。 ユーザーが **[OK]**をクリックすると、プログラムはすぐに中止されます。  
   
- アプリケーションがランタイム ライブラリのデバッグ バージョンとリンクされている場合、 `assert` は、 **[中止]**、 **[再試行]**と **[無視]**の&3; 個のボタンのあるメッセージ ボックスを作成します。 ユーザーが **[中止]**をクリックすると、プログラムはすぐに中止されます。 ユーザーが **[再試行]**をクリックすると、Just-In-Time (JIT) デバッグが有効になっている場合、デバッガーが呼び出され、ユーザーはプログラムをデバッグできます。 ユーザーが **[無視]**をクリックすると、 `assert` は、通常の実行である、 **[OK]** のボタンのあるメッセージ ボックスの作成を続けます。 なお、エラー状況が存在するときに **[無視]** をクリックすると、"未定義の動作" という結果になることがあります。  
+ アプリケーションがランタイム ライブラリのデバッグ バージョンとリンクされている場合、 `assert` は、 **[中止]**、 **[再試行]**と **[無視]**の 3 個のボタンのあるメッセージ ボックスを作成します。 ユーザーが **[中止]**をクリックすると、プログラムはすぐに中止されます。 ユーザーが **[再試行]**をクリックすると、Just-In-Time (JIT) デバッグが有効になっている場合、デバッガーが呼び出され、ユーザーはプログラムをデバッグできます。 ユーザーが **[無視]**をクリックすると、 `assert` は、通常の実行である、 **[OK]** のボタンのあるメッセージ ボックスの作成を続けます。 なお、エラー状況が存在するときに **[無視]** をクリックすると、"未定義の動作" という結果になることがあります。  
   
- CRT デバッグの詳細については、「[CRT のデバッグ技術](/visualstudio/debugger/crt-debugging-techniques)」を参照してください。  
+ CRT デバッグの詳細については、「 [CRT のデバッグ技術](/visualstudio/debugger/crt-debugging-techniques)」を参照してください。  
   
  `_assert` 関数と `_wassert` 関数は、内部 CRT 関数です。 これらは、アサーションをサポートするためのオブジェクト ファイルに必要なコードを最小限に抑えるうえで役立ちます。 これらの関数を直接呼び出すことはお勧めしません。  
   
@@ -169,9 +170,6 @@ A problem caused the program to stop working correctly. Windows will close the p
 ```  
   
  デバッガーがインストールされている場合は **[デバッグ]** ボタンを選択してデバッガーを開始するか、 **[プログラムの終了]** をクリックして終了します。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Diagnostics::Debug::Assert](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.assert.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   

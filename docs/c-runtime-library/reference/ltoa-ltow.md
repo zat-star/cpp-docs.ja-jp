@@ -57,10 +57,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ac9a6808371183a234f5cd61312f641e6ea9e49f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 5e67ca683ac8946f88389e9ca2323f1255da6695
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ltoa-ltow"></a>_ltoa、_ltow
@@ -107,7 +108,7 @@ wchar_t *_ltow(
  これらの各関数は、`str` へのポインターを返します。 エラーの戻り値はありません。  
   
 ## <a name="remarks"></a>コメント  
- `_ltoa` 関数は、`value` の数字を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 `radix` 引数は `value` の基数を指定します。2 から 36 の範囲内である必要があります。 `radix` が 10 で、`value` が負の場合は、保存される文字列の最初の文字は負符号 (–) になります。 `_ltow` は `_ltoa` のワイド文字バージョンです。`_ltow` の場合、2 番目の引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 これらの各関数は、Microsoft 固有です。  
+ `_ltoa` 関数は、`value` の数字を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 `radix`の基本型の引数を指定`value`2 ~ 36 の範囲にする必要があります。 場合`radix`10 に等しいと`value`は負の場合、格納されている文字列の最初の文字はマイナス記号 (-)。 `_ltow` は `_ltoa` のワイド文字バージョンです。`_ltow` の場合、2 番目の引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 これらの各関数は、Microsoft 固有です。  
   
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字、末尾の null 文字、および符号文字を保持できるよう十分に大きくします。  
@@ -131,9 +132,6 @@ wchar_t *_ltow(
   
 ## <a name="example"></a>例  
  [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

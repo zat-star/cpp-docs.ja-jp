@@ -63,10 +63,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c0a3a001234439314f682984b01496aff960b366
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f8e2a1bf9282298d3d41183c0d335e49e89f1b42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="mbclen-mblen-mblenl"></a>_mbclen、mblen、_mblen_l
@@ -106,7 +107,7 @@ int _mblen_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_mbclen` はマルチバイト文字 `c` の長さが 1 バイトまたは 2 バイトであるかによって、1 または 2 を返します。 `_mbclen` には、エラーの戻り値はありません。 `mbstr` が `NULL` でない場合、`mblen` は、マルチバイト文字の長さをバイト単位で返します。 `mbstr` が `NULL` であるか、またはワイド文字の null 文字を指し示す場合には、`mblen` は 0 を返します。 `mbstr` が指し示すオブジェクトが、最初の `count` の文字内で有効なマルチバイト文字を構成していない場合には、`mblen` は –1 を返します。  
+ `_mbclen` はマルチバイト文字 `c` の長さが 1 バイトまたは 2 バイトであるかによって、1 または 2 を返します。 `_mbclen` には、エラーの戻り値はありません。 `mbstr` が `NULL` でない場合、`mblen` は、マルチバイト文字の長さをバイト単位で返します。 `mbstr` が `NULL` であるか、またはワイド文字の null 文字を指し示す場合には、`mblen` は 0 を返します。 場合、オブジェクトを`mbstr`へのポインターは、最初に有効なマルチバイト文字を形成しません`count`文字、 `mblen` -1 を返します。  
   
 ## <a name="remarks"></a>コメント  
  `_mbclen` 関数は、マルチバイト文字 `c` の長さをバイト単位で返します。 `c` への暗黙の呼び出しによって、`_ismbblead` がマルチバイト文字の先行バイトを指していないと判断された場合、`_mbclen` の結果は予測できません。  
@@ -171,9 +172,6 @@ Convert wide character to multibyte character:
 Length in bytes of multibyte character 61: 1  
 Length in bytes of NULL multibyte character 0: 0  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

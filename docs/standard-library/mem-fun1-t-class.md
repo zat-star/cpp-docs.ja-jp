@@ -10,8 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - mem_fun1_t
-- std.mem_fun1_t
-- std::mem_fun1_t
 - xfunctional/std::mem_fun1_t
 dev_langs:
 - C++
@@ -36,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 434e4032216922071d60d7a7ad6a36b7f6135f7e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 6f9335afb06b8d07f96dc3d0fc320016a0aad7ab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="memfun1t-class"></a>mem_fun1_t クラス
@@ -77,7 +76,7 @@ class mem_fun1_t : public binary_function<Type *, Arg, Result> {
  このテンプレート クラスは `_Pm` のコピーをプライベート メンバー オブジェクトに格納します。これは、クラス **Type** のメンバー関数へのポインターである必要があります。 そのメンバー関数 `operator()` は ( **_Pleft**->\* `_Pm`)( **right**) を返すように定義されています。  
   
 ## <a name="example"></a>例  
-  `mem_fun1_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun](../standard-library/functional-functions.md#mem_fun_function)」を参照してください。  
+  `mem_fun1_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun](../standard-library/functional-functions.md#mem_fun)」を参照してください。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<functional>  

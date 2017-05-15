@@ -1,52 +1,69 @@
 ---
-title: "_umask | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_umask"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-filesystem-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_umask"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_umask 関数"
-  - "ファイルのアクセス許可 [C++]"
-  - "ファイル [C++], アクセス許可の設定"
-  - "マスク"
-  - "マスク, ファイルのアクセス許可の設定"
-  - "umask 関数"
+title: _umask | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _umask
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _umask
+dev_langs:
+- C++
+helpviewer_keywords:
+- masks, file-permission-setting
+- _umask function
+- masks
+- umask function
+- file permissions [C++]
+- files [C++], permission settings for
 ms.assetid: 5e9a13ba-5321-4536-8721-6afb6f4c8483
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# _umask
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: f2ad9c75caa5f3816ab4791dc4e67cb7937bfad4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-既定のファイルのアクセス許可マスクを設定します。  この関数のセキュリティが強化されたバージョンについては、「[\_umask\_s](../Topic/_umask_s.md)」を参照してください。  
+---
+# <a name="umask"></a>_umask
+既定のファイル アクセス許可マスクを設定します。 この関数のセキュリティが強化されたバージョンについては、「[_umask_s](../../c-runtime-library/reference/umask-s.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int _umask(  
@@ -54,43 +71,43 @@ int _umask(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pmode`  
  既定のアクセス許可の設定。  
   
-## 戻り値  
- `_umask` は `pmode`の以前の値を返します。  エラーの戻り値はありません。  
+## <a name="return-value"></a>戻り値  
+ `_umask` は `pmode` の以前の値を返します。 エラーの戻り値はありません。  
   
-## 解説  
- モードへの現在のプロセスのファイル アクセス許可が `pmode`マスクで指定した `_umask` 関数のセット*。*ファイルのアクセス許可マスクは `_creat`、`_open`、または `_sopen`によって作成された新しいファイルのアクセス許可設定を変更します。  マスクに 1 は 0 に、ファイルが要求するアクセス許可値の対応するビットが設定されています \(拒否\) です。  マスクには、対応する 0 ビット、不変少なくなります。  新しいファイルのアクセス許可は、ファイルが初めて閉じるまで設定されません。  
+## <a name="remarks"></a>コメント  
+ `_umask`関数では、現在のプロセスのファイルのアクセス許可マスクを設定で指定されたモードに`pmode`です。 ファイルのアクセス許可マスクは、`_creat`、`_open`、または `_sopen` によって新しく作成されたファイルのアクセス許可の設定を変更します。 マスクのビットが 1 の場合は、ファイルの要求されたアクセス許可値に対応するビットは 0 (許可しない) に設定されます。 マスクのビットが 0 の場合は、対応するビットは変更されません。 新しいファイルのアクセス許可の設定は、そのファイルが最初に閉じられるまで、設定されません。  
   
- 整数式 `pmode` は SYS\\STAT.H で次の記号定数 1 のいずれかまたは両方を定義して含まれています:  
+ `pmode` は、SYS\STAT.H で定義されている下記のマニフェスト定数のいずれか、または両方が含まれた整数式です。  
   
  `_S_IWRITE`  
- 許可される書き込み。  
+ 書き込みが許可されます。  
   
  `_S_IREAD`  
- 許可される読み取り。  
+ 読み取りが許可されます。  
   
  `_S_IREAD | _S_IWRITE`  
- 許可されるの読み取りと書き込み。  
+ 読み取りと書き込みが許可されます。  
   
- 定数は、両方とも提供されると、ビットごとの OR 演算子で結合されます。          `|`  \).  `pmode` の引数が `_S_IREAD`は、読み取ることはできません \(ファイルは書き込み専用です\)。  `pmode` の引数が `_S_IWRITE`の場合、書き込むことはできません \(ファイルは読み取り専用です。  たとえば、書き込みビットがマスクに設定されている場合、新しいファイルが読み取り専用です。  MS\-DOS および Windows オペレーティング システムと、すべてのファイルを読み取ることができることに注意してください; 書き込み専用アクセス許可を与えることはできません。  したがって、`_umask` の読み取り専用ビットを設定すると、ファイルのモードには影響しません。  
+ 両方の定数が指定されると、これらはビットごとの OR 演算子 (`|`) を使用して組み合わされます。 `pmode` 引数が `_S_IREAD` である場合、読み取りが許可されていません (ファイルは書き込み専用)。 `pmode` 引数が `_S_IWRITE` である場合、書き込みが許可されていません (ファイルは読み取り専用)。 たとえば、マスクに書き込みビットが設定されている場合、新しいファイルはいずれも読み取り専用となります。 MS-DOS および Windows オペレーティング システムでは、すべてのファイルは読み取り可能です。書き込み専用のアクセス許可を与えることはできません。 したがって、`_umask` で読み取りビットを設定しても、ファイルのモードに影響はありません。  
   
- `pmode` がマニフェスト定数の 1 種類の組み合わせで、別の一連の定数を組み込む、それらは無視されます。  
+ `pmode` がマニフェスト定数のいずれかの組み合わせではない、または、別の定数セットを組み込んでいる場合、この関数は単にそれらを無視します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_umask`|\<io.h、sys\> \<\/stat.h、sys\/\>types.h \<\>|  
+|-------------|---------------------|  
+|`_umask`|\<io.h>、\<sys/stat.h>、\<sys/types.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_umask.c  
@@ -115,14 +132,14 @@ int main( void )
 }  
 ```  
   
-  **Oldmask \= 0x0000**   
-## 同等の .NET Framework 関数  
- [System::IO::File::SetAttributes](https://msdn.microsoft.com/en-us/library/system.io.file.setattributes.aspx)  
+```Output  
+Oldmask = 0x0000  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [\_chmod、\_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
- [\_creat、\_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [\_mkdir、\_wmkdir](../Topic/_mkdir,%20_wmkdir.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)
+ [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
+ [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
+ [_mkdir、_wmkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)

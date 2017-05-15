@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - basic_regex
-- std::basic_regex
 - regex/std::basic_regex
 dev_langs:
 - C++
@@ -35,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
-ms.openlocfilehash: 7b3665d0193f1d1fd658942d6e45b7a6229c9b32
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: f7b9afbe09fe010596a40f37eba9b0679a38268c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="basicregex-class"></a>basic_regex クラス
@@ -107,7 +107,7 @@ class basic_regex {
  要素の特徴 (traits) クラス。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスは、正規表現を保持するオブジェクトを表します。 このテンプレート クラスのオブジェクトは、適切な文字列引数と共に [regex_match 関数](../standard-library/regex-functions.md#regex_match_function)、[regex_search 関数](../standard-library/regex-functions.md#regex_search_function)、[regex_replace 関数](../standard-library/regex-functions.md#regex_replace_function)の各テンプレート関数に渡すことによって、正規表現と一致するテキストを検索できます。 このテンプレート クラスには特定の型定義に対する&2; つの特殊化があります。`char` 型の要素に特殊化した [regex](../standard-library/regex-typedefs.md#regex_typedef) と、`wchar_t` 型の要素に特殊化した [wregex](../standard-library/regex-typedefs.md#wregex_typedef) です。  
+ このテンプレート クラスは、正規表現を保持するオブジェクトを表します。 このテンプレート クラスのオブジェクトは、テンプレート関数に渡すことができます[regex_match](../standard-library/regex-functions.md#regex_match)、 [regex_search](../standard-library/regex-functions.md#regex_search)、および[regex_replace](../standard-library/regex-functions.md#regex_replace)、適切な文字列引数と共にの正規表現に一致するテキストを検索します。 このテンプレート クラスには特定の型定義に対する 2 つの特殊化があります。`char` 型の要素に特殊化した [regex](../standard-library/regex-typedefs.md#regex) と、`wchar_t` 型の要素に特殊化した [wregex](../standard-library/regex-typedefs.md#wregex) です。  
   
  テンプレートの引数 `RXtraits` は、このテンプレート クラスでサポートされている正規表現の構文に関連した各種の重要なプロパティを表します。 こうした正規表現の特性を指定するクラスは、テンプレート クラス [regex_traits クラス](../standard-library/regex-traits-class.md)のオブジェクトと同じ外部インターフェイスを持っている必要があります。  
   
@@ -119,7 +119,7 @@ class basic_regex {
   
  `str` : `basic_string` オブジェクト `str` によって指定されたシーケンスとして。  
   
- `first`、`last` : `first` と `last` の&2; つの反復子で区切られた範囲 `[first, last)` 内の要素のシーケンスとして。  
+ `first`、`last` : `first` と `last` の 2 つの反復子で区切られた範囲 `[first, last)` 内の要素のシーケンスとして。  
   
  `right` : `basic_regex` オブジェクト `right` として。  
   
@@ -130,7 +130,7 @@ class basic_regex {
   
  **名前空間:** std  
   
-##  <a name="a-namebasicregexassigna--basicregexassign"></a><a name="basic_regex__assign"></a>  basic_regex::assign  
+##  <a name="assign"></a>  basic_regex::assign  
  値を正規表現オブジェクトに代入します。  
   
 ```  
@@ -280,7 +280,7 @@ int main()
 match("abc", "") == falsematch("abc", "abcd") == falsematch("abc", "abc") == truematch("abc", "abc") == truematch(string("abcd"), "abc") == falsematch(string("abc"), "abc") == true"abc" mark_count == 0"(abc)" mark_count == 1getloc == imbued == truematch("abc") == true  
 ```  
   
-##  <a name="a-namebasicregexbasicregexa--basicregexbasicregex"></a><a name="basic_regex__basic_regex"></a>  basic_regex::basic_regex  
+##  <a name="basic_regex"></a>  basic_regex::basic_regex  
  正規表現オブジェクトを構築します。  
   
 ```  
@@ -353,7 +353,7 @@ explicit basic_regex(
   
  1 つ目のコンストラクターは、空の `basic_regex` オブジェクトを構築します。 それ以外のコンストラクターは、オペランド シーケンスで記述された正規表現を保持する `basic_regex` オブジェクトを構築します。  
   
- 空の `basic_regex` オブジェクトは、[regex_match 関数](../standard-library/regex-functions.md#regex_match_function)、[regex_search 関数](../standard-library/regex-functions.md#regex_search_function)、または [regex_replace 関数](../standard-library/regex-functions.md#regex_replace_function)に渡されると、どの文字シーケンスとも一致しません。  
+ 空`basic_regex`オブジェクトに渡した場合にどの文字シーケンスと一致しない[regex_match](../standard-library/regex-functions.md#regex_match)、 [regex_search](../standard-library/regex-functions.md#regex_search)、または[regex_replace](../standard-library/regex-functions.md#regex_replace)です。  
   
 ### <a name="example"></a>例  
   
@@ -437,7 +437,7 @@ int main()
 match("abc", "") == falsematch("abc", "abcd") == falsematch("abc", "abc") == truematch("abc", "abc") == truematch(string("abcd"), "abc") == falsematch(string("abc"), "abc") == true"abc" mark_count == 0"(abc)" mark_count == 1getloc == imbued == truematch("abc", "abc") == true  
 ```  
   
-##  <a name="a-namebasicregexflagtypea--basicregexflagtype"></a><a name="basic_regex__flag_type"></a>  basic_regex::flag_type  
+##  <a name="flag_type"></a>  basic_regex::flag_type  
  構文オプション フラグの型です。  
   
 ```  
@@ -445,7 +445,7 @@ typedef regex_constants::syntax_option_type flag_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は [regex_constants::syntax_option_type](../standard-library/regex-constants-class.md#regex_constants__syntax_option_type) のシノニムです。  
+ この型は [regex_constants::syntax_option_type](../standard-library/regex-constants-class.md#syntax_option_type) のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -532,7 +532,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexflagsa--basicregexflags"></a><a name="basic_regex__flags"></a>  basic_regex::flags  
+##  <a name="flags"></a>  basic_regex::flags  
  構文のオプション フラグを返します。  
   
 ```  
@@ -540,7 +540,7 @@ flag_type flags() const;
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、[basic_regex::assign](#basic_regex__assign) メンバー関数のうち直前に呼び出された関数に渡された `flag_type` 引数の値を返します。これに当たる呼び出しが行われていなかった場合は、コンストラクターに渡した値が返されます。  
+ このメンバー関数は、[basic_regex::assign](#assign) メンバー関数のうち直前に呼び出された関数に渡された `flag_type` 引数の値を返します。これに当たる呼び出しが行われていなかった場合は、コンストラクターに渡した値が返されます。  
   
 ### <a name="example"></a>例  
   
@@ -627,7 +627,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexgetloca--basicregexgetloc"></a><a name="basic_regex__getloc"></a>  basic_regex::getloc  
+##  <a name="getloc"></a>  basic_regex::getloc  
  格納されているロケール オブジェクトを返します。  
   
 ```  
@@ -635,7 +635,7 @@ locale_type getloc() const;
 ```  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は `traits.`[regex_traits::getloc](../standard-library/regex-traits-class.md#regex_traits__getloc)`()` を返します。  
+ メンバー関数は `traits.`[regex_traits::getloc](../standard-library/regex-traits-class.md#getloc)`()` を返します。  
   
 ### <a name="example"></a>例  
   
@@ -722,7 +722,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregeximbuea--basicregeximbue"></a><a name="basic_regex__imbue"></a>  basic_regex::imbue  
+##  <a name="imbue"></a>  basic_regex::imbue  
  格納されているロケール オブジェクトを変更します。  
   
 ```  
@@ -734,7 +734,7 @@ locale_type imbue(locale_type loc);
  格納するロケール オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は `*this` を空にして、`traits.`[regex_traits::imbue](../standard-library/regex-traits-class.md#regex_traits__imbue)`(loc)` を返します。  
+ メンバー関数は `*this` を空にして、`traits.`[regex_traits::imbue](../standard-library/regex-traits-class.md#imbue)`(loc)` を返します。  
   
 ### <a name="example"></a>例  
   
@@ -821,7 +821,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexlocaletypea--basicregexlocaletype"></a><a name="basic_regex__locale_type"></a>  basic_regex::locale_type  
+##  <a name="locale_type"></a>  basic_regex::locale_type  
  格納されているロケール オブジェクトの型。  
   
 ```  
@@ -829,7 +829,7 @@ typedef typename RXtraits::locale_type locale_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は [regex_traits::locale_type](../standard-library/regex-traits-class.md#regex_traits__locale_type) のシノニムです。  
+ この型は [regex_traits::locale_type](../standard-library/regex-traits-class.md#locale_type) のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -916,7 +916,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexmarkcounta--basicregexmarkcount"></a><a name="basic_regex__mark_count"></a>  basic_regex::mark_count  
+##  <a name="mark_count"></a>  basic_regex::mark_count  
  一致した部分式の数を返します。  
   
 ```  
@@ -1011,7 +1011,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexoperatoreqa--basicregexoperator"></a><a name="basic_regex__operator_eq"></a>  basic_regex::operator=  
+##  <a name="op_eq"></a>  basic_regex::operator=  
  値を正規表現オブジェクトに代入します。  
   
 ```  
@@ -1124,7 +1124,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexswapa--basicregexswap"></a><a name="basic_regex__swap"></a>  basic_regex::swap  
+##  <a name="swap"></a>  basic_regex::swap  
  2 つの正規表現オブジェクトを交換します。  
   
 ```  
@@ -1223,7 +1223,7 @@ match(string("abc"), "abc") == true
 getloc == imbued == true  
 ```  
   
-##  <a name="a-namebasicregexvaluetypea--basicregexvaluetype"></a><a name="basic_regex__value_type"></a>  basic_regex::value_type  
+##  <a name="value_type"></a>  basic_regex::value_type  
  要素型。  
   
 ```  
@@ -1320,11 +1320,11 @@ getloc == imbued == true
   
 ## <a name="see-also"></a>関連項目  
  [\<regex>](../standard-library/regex.md)   
- [regex_match 関数](../standard-library/regex-functions.md#regex_match_function)   
- [regex_search 関数](../standard-library/regex-functions.md#regex_search_function)   
- [regex_replace 関数](../standard-library/regex-functions.md#regex_replace_function)   
- [regex](../standard-library/regex-typedefs.md#regex_typedef)   
- [wregex](../standard-library/regex-typedefs.md#wregex_typedef)   
+ [regex_match](../standard-library/regex-functions.md#regex_match)   
+ [regex_search](../standard-library/regex-functions.md#regex_search)   
+ [regex_replace](../standard-library/regex-functions.md#regex_replace)   
+ [regex](../standard-library/regex-typedefs.md#regex)   
+ [wregex](../standard-library/regex-typedefs.md#wregex)   
  [regex_traits クラス](../standard-library/regex-traits-class.md)
 
 

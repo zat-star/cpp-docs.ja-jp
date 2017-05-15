@@ -1,58 +1,75 @@
 ---
 title: "difftime、_difftime32、_difftime64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_difftime32"
-  - "difftime"
-  - "_difftime64"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_difftime64"
-  - "difftime"
-  - "difftime64"
-  - "_difftime32"
-  - "difftime32"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_difftime32 関数"
-  - "difftime 関数"
-  - "時間、差異の検出"
-  - "difftime64 関数"
-  - "_difftime64 関数"
-  - "difftime32 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _difftime32
+- difftime
+- _difftime64
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _difftime64
+- difftime
+- difftime64
+- _difftime32
+- difftime32
+dev_langs:
+- C++
+helpviewer_keywords:
+- _difftime32 function
+- difftime function
+- time, finding the difference
+- difftime64 function
+- _difftime64 function
+- difftime32 function
 ms.assetid: 4cc0ac2b-fc7b-42c0-8283-8c9d10c566d0
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# difftime、_difftime32、_difftime64
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: f6ab058a86a5635aa341c964644a291f61ba170b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-2 つの時刻の差を検索します。  
+---
+# <a name="difftime-difftime32-difftime64"></a>difftime、_difftime32、_difftime64
+2 つの時刻の差を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double difftime(   
@@ -69,36 +86,36 @@ double _difftime64(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `timer1`  
  終了時刻。  
   
  `timer0`  
  開始時刻。  
   
-## 戻り値  
- `difftime` 経過時間を秒単位でから返します `timer0` に `timer1`します。 返される値は、倍精度浮動小数点数です。 戻り値には、エラーを示す 0 を指定できます。  
+## <a name="return-value"></a>戻り値  
+ `difftime` は、`timer0` から `timer1` までの経過時間を秒単位で返します。 返される値は、倍精度浮動小数点数です。 戻り値が 0 の場合は、エラーを示します。  
   
-## 解説  
- `difftime` 関数は、2 つの指定された時間値の差を計算 `timer0` と `timer1`です。  
+## <a name="remarks"></a>コメント  
+ `difftime` 関数は、指定した 2 つの時刻値 `timer0` と `timer1` の差を計算します。  
   
- 指定した時刻の値が範囲に収まる必要があります `time_t`します。`time_t` 64 ビット値です。 このため、範囲の末尾 23時 59分: 59 から 2038 年 1 月 18 日 \(utc\) に拡張 3000 年 12 月 31 日 23時 59分: 59 秒です。 範囲の `time_t` が 1970 年 1 月 1 日午前 0 時です。  
+ 指定する時刻値は、`time_t` の範囲内に収まる必要があります。 `time_t` は 64 ビット値です。 したがって、範囲の終わりは、2038 年 1 月 18 日 23 時 59 分 59 秒 (UTC) から、3000 年 12 月 31 日 23 時 59 分 59 秒に拡張されました。 `time_t` の範囲の始まりは、1970 年 1 月 1 日午前 0 時で変わりません。  
   
- `difftime` いずれかに評価されるインライン関数は、 `_difftime32` または `_difftime64` かどうかによって `_USE_32BIT_TIME_T` が定義されています。 \_difftime32、\_difftime64 時の型の特定のサイズの使用を強制するには、直接使用できます。  
+ `difftime` はインライン関数であり、`_USE_32BIT_TIME_T` が定義されているかどうかに応じて `_difftime32` または `_difftime64` に評価されます。 _difftime32 と _difftime64 を直接使って、特定のサイズの時刻型の使用を強制できます。  
   
- これらの関数では、パラメーターの検証が行われます。 場合のパラメーターが 0 または負の場合、無効なパラメーター ハンドラーが呼び出される」の説明に従って [パラメーターの検証](../../c-runtime-library/parameter-validation.md)します。 実行の継続が許可された場合、これらの関数は 0 を返します設定と `errno` に `EINVAL`します。  
+ これらの関数では、パラメーターの検証が行われます。 どちらかのパラメーターが 0 または負の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効パラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は 0 を返し、`errno` を `EINVAL` に設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`difftime`|\<time.h\>|  
-|`_difftime32`|\<time.h\>|  
-|`_difftime64`|\<time.h\>|  
+|-------------|---------------------|  
+|`difftime`|\<time.h>|  
+|`_difftime32`|\<time.h>|  
+|`_difftime64`|\<time.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```cpp  
 // crt_difftime.c  
@@ -150,13 +167,12 @@ int main( void )
 ```  
   
 ```Output  
-1.04749e + 038 2.01482e + 038 1.72737e + 038Multiplying 番号をランダムな浮動小数点を使用して 2 つの浮動小数点数値 100 100万回.プログラムでは、3 秒を取得します。浮動小数点乗算の 2 では、500 100万回の数値をポイントしています.プログラムでは、5 秒を取得します。  
+Using random floating point numbers 1.04749e+038 2.01482e+038 1.72737e+038Multiplying 2 floating point numbers 100 million times...Program takes      3 seconds.Multiplying 2 floating point numbers 500 million times...  
+  
+Program takes      5 seconds.  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::DateTime::Subtract](https://msdn.microsoft.com/en-us/library/system.datetime.subtract.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [時間管理](../../c-runtime-library/time-management.md)   
- [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)
+ [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)

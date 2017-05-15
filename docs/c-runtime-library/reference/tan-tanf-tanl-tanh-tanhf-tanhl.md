@@ -72,10 +72,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 94ad2866dc8b2284d674ccfa284646aac9a68efa
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f52084801f695fe6c435e9c46520a6b2b3c9e754
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="tan-tanf-tanl-tanh-tanhf-tanhl"></a>tan、tanf、tanl、tanh、tanhf、tanhl
@@ -121,7 +122,7 @@ long double tanhl(
  角度 (ラジアン)。  
   
 ## <a name="return-value"></a>戻り値  
- `tan` 関数は、`x` のタンジェントを返します。 `x` が 263 以上、または –263 以下の場合、結果から有意性が失われます。  
+ `tan` 関数は、`x` のタンジェントを返します。 場合`x`が 263 以上で、または小さいが同じかそれ以下-263、結果から有意性低下します。  
   
  `tanh` 関数は、`x` のハイパーボリック タンジェント値を返します。 エラーの戻り値はありません。  
   
@@ -168,12 +169,6 @@ int main( void )
 tan( 0.785398 ) = 1.000000  
 tanh( 1.000000 ) = 0.761594  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Math::Tan](https://msdn.microsoft.com/en-us/library/system.math.tan.aspx)  
-  
--   [System::Math::Tanh](https://msdn.microsoft.com/en-us/library/system.math.tanh.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

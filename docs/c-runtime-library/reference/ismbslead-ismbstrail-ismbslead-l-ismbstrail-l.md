@@ -67,10 +67,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e0f3aa666b38966699cbf8a98032318f9eb938e5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 5c74c39a90896f9c04bfc945b420238795b11b74
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ismbslead-ismbstrail-ismbsleadl-ismbstraill"></a>_ismbslead、_ismbstrail、_ismbslead_l、_ismbstrail_l
@@ -113,7 +114,7 @@ int _ismbstrail_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbslead` は、文字が先頭バイトの場合に -1 を返します。`_ismbstrail` は、文字が末尾バイトの場合に -1 を返します。 入力文字列が有効であるものの、その文字が先頭バイトでも末尾バイトでもない場合、これらの関数は&0; を返します。 どちらかの引数が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
+ `_ismbslead`文字が先頭バイトである場合は-1 を返しますと`_ismbstrail`文字が後続バイトである場合は-1 を返します。 入力文字列が有効であるものの、その文字が先頭バイトでも末尾バイトでもない場合、これらの関数は 0 を返します。 どちらかの引数が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
   
 ## <a name="remarks"></a>コメント  
  `_ismbslead` と `_ismbstrail` は、文字列のコンテキストを考慮に入れるため、`_ismbblead` と `_ismbbtrail` のバージョンより低速です。  
@@ -131,10 +132,7 @@ int _ismbstrail_l(
   
  \* テスト条件のマニフェスト定数の場合。  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

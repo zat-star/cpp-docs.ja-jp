@@ -10,70 +10,67 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - array
-- std::array
 - array/std::array
-- std::array::const_iterator
 - array/std::array::const_iterator
-- std::array::const_pointer
 - array/std::array::const_pointer
-- std::array::const_reference
 - array/std::array::const_reference
-- std::array::const_reverse_iterator
 - array/std::array::const_reverse_iterator
-- std::array::difference_type
 - array/std::array::difference_type
-- std::array::iterator
 - array/std::array::iterator
-- std::array::pointer
 - array/std::array::pointer
-- std::array::reference
 - array/std::array::reference
-- std::array::reverse_iterator
 - array/std::array::reverse_iterator
-- std::array::size_type
 - array/std::array::size_type
-- std::array::value_type
 - array/std::array::value_type
-- std::array::assign
 - array/std::array::assign
-- std::array::at
 - array/std::array::at
-- std::array::back
 - array/std::array::back
-- std::array::begin
 - array/std::array::begin
-- std::array::cbegin
 - array/std::array::cbegin
-- std::array::cend
 - array/std::array::cend
-- std::array::crbegin
 - array/std::array::crbegin
-- std::array::crend
 - array/std::array::crend
-- std::array::data
 - array/std::array::data
-- std::array::empty
 - array/std::array::empty
-- std::array::end
 - array/std::array::end
-- std::array::fill
 - array/std::array::fill
-- std::array::front
 - array/std::array::front
-- std::array::max_size
 - array/std::array::max_size
-- std::array::rbegin
 - array/std::array::rbegin
-- std::array::rend
 - array/std::array::rend
-- std::array::size
 - array/std::array::size
-- std::array::swap
 - array/std::array::swap
-- std::array::operator=
 - array/std::array::operator=
-- std::array::operator[]
 - array/std::array::operator[]
+- array/std::array::const_iterator
+- array/std::array::const_pointer
+- array/std::array::const_reference
+- array/std::array::const_reverse_iterator
+- array/std::array::difference_type
+- array/std::array::iterator
+- array/std::array::pointer
+- array/std::array::reference
+- array/std::array::reverse_iterator
+- array/std::array::size_type
+- array/std::array::value_type
+- array/std::array::assign
+- array/std::array::at
+- array/std::array::back
+- array/std::array::begin
+- array/std::array::cbegin
+- array/std::array::cend
+- array/std::array::crbegin
+- array/std::array::crend
+- array/std::array::data
+- array/std::array::empty
+- array/std::array::end
+- array/std::array::fill
+- array/std::array::front
+- array/std::array::max_size
+- array/std::array::rbegin
+- array/std::array::rend
+- array/std::array::size
+- array/std::array::swap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -97,10 +94,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0e5e79e423d268da61ac9062edd099330f742b59
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 9ac4c0becd32ca50e4f56fb38218b4c69cc4d0bd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="array-class-c-standard-library"></a>array クラス (C++ 標準ライブラリ)
@@ -126,46 +124,46 @@ class array;
 |||  
 |-|-|  
 |型定義|説明|  
-|[array::const_iterator](#array__const_iterator)|被制御シーケンスの定数反復子の型です。|  
-|[array::const_pointer](#array__const_pointer)|要素への定数ポインターの型です。|  
-|[array::const_reference](#array__const_reference)|要素への定数参照の型です。|  
-|[array::const_reverse_iterator](#array__const_reverse_iterator)|被制御シーケンスの定数反転反復子の型です。|  
-|[array::difference_type](#array__difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[array::iterator](#array__iterator)|被制御シーケンスの反復子の型です。|  
-|[array::pointer](#array__pointer)|要素へのポインターの型です。|  
-|[array::reference](#array__reference)|要素への参照の型です。|  
-|[array::reverse_iterator](#array__reverse_iterator)|被制御シーケンスの反転反復子の型です。|  
-|[array::size_type](#array__size_type)|2 つの要素間の距離を表す、符号なしの型です。|  
-|[array::value_type](#array__value_type)|要素の型。|  
+|[const_iterator](#const_iterator)|被制御シーケンスの定数反復子の型です。|  
+|[const_pointer](#const_pointer)|要素への定数ポインターの型です。|  
+|[const_reference](#const_reference)|要素への定数参照の型です。|  
+|[const_reverse_iterator](#const_reverse_iterator)|被制御シーケンスの定数反転反復子の型です。|  
+|[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[iterator](#iterator)|被制御シーケンスの反復子の型です。|  
+|[pointer](#pointer)|要素へのポインターの型です。|  
+|[reference](#reference)|要素への参照の型です。|  
+|[reverse_iterator](#reverse_iterator)|被制御シーケンスの反転反復子の型です。|  
+|[size_type](#size_type)|2 つの要素間の距離を表す、符号なしの型です。|  
+|[value_type](#value_type)|要素の型。|  
   
 |||  
 |-|-|  
 |メンバー関数|説明|  
-|[array::array](#array__array)|配列オブジェクトを構築します。|  
-|[array::assign](#array__assign)|すべての要素を置換します。|  
-|[array::at](#array__at)|指定した位置にある要素にアクセスします。|  
-|[array::back](#array__back)|最後の要素にアクセスします。|  
-|[array::begin](#array__begin)|被制御シーケンスの先頭を指定します。|  
-|[array::cbegin](#array__cbegin)|配列内の最初の要素を示すランダム アクセスの定数反復子を返します。|  
-|[array::cend](#array__cend)|配列の末尾の次の位置を指し示すランダム アクセス定数反復子を返します。|  
-|[array::crbegin](#array__crbegin)|反転された配列内の最初の要素への定数反復子を返します。|  
-|[array::crend](#array__crend)|反転された配列内の末尾の要素への定数反復子を返します。|  
-|[array::data](#array__data)|最初の要素のアドレスを取得します。|  
-|[array::empty](#array__empty)|要素が存在するかどうかをテストします。|  
-|[array::end](#array__end)|被制御シーケンスの末尾を指定します。|  
-|[array::fill](#array__fill)|すべての要素を、指定された値に置き換えます。|  
-|[array::front](#array__front)|最初の要素にアクセスします。|  
-|[array::max_size](#array__max_size)|要素の数をカウントします。|  
-|[array::rbegin](#array__rbegin)|反転被制御シーケンスの先頭を指定します。|  
-|[array::rend](#array__rend)|反転被制御シーケンスの末尾を指定します。|  
-|[array::size](#array__size)|要素の数をカウントします。|  
-|[array::swap](#array__swap)|2 つのコンテナーのコンテンツを交換します。|  
+|[array](#array)|配列オブジェクトを構築します。|  
+|[assign](#assign)|すべての要素を置換します。|  
+|[at](#at)|指定した位置にある要素にアクセスします。|  
+|[back](#back)|最後の要素にアクセスします。|  
+|[begin](#begin)|被制御シーケンスの先頭を指定します。|  
+|[cbegin](#cbegin)|配列内の最初の要素を示すランダム アクセスの定数反復子を返します。|  
+|[cend](#cend)|配列の末尾の次の位置を指し示すランダム アクセス定数反復子を返します。|  
+|[crbegin](#crbegin)|反転された配列内の最初の要素への定数反復子を返します。|  
+|[crend](#crend)|反転された配列内の末尾の要素への定数反復子を返します。|  
+|[data](#data)|最初の要素のアドレスを取得します。|  
+|[empty](#empty)|要素が存在するかどうかをテストします。|  
+|[end](#end)|被制御シーケンスの末尾を指定します。|  
+|[fill](#fill)|すべての要素を、指定された値に置き換えます。|  
+|[front](#front)|最初の要素にアクセスします。|  
+|[max_size](#max_size)|要素の数をカウントします。|  
+|[rbegin](#rbegin)|反転被制御シーケンスの先頭を指定します。|  
+|[rend](#rend)|反転被制御シーケンスの末尾を指定します。|  
+|[size](#size)|要素の数をカウントします。|  
+|[swap](#swap)|2 つのコンテナーのコンテンツを交換します。|  
   
 |||  
 |-|-|  
 |演算子|説明|  
-|[array::operator=](#array__operator_eq)|被制御シーケンスを置き換えます。|  
-|[array::operator[]](#array__operator_at)|指定した位置にある要素にアクセスします。|  
+|[array::operator=](#op_eq)|被制御シーケンスを置き換えます。|  
+|[array::operator[]](#op_at)|指定した位置にある要素にアクセスします。|  
   
 ## <a name="remarks"></a>コメント  
  この型は、既定のコンストラクター `array()` と既定代入演算子 `operator=` を持ち、`aggregate` の要件を満たします。 そのため、`array<Ty, N>` 型のオブジェクトは、集計初期化子を使用して初期化できます。 次に例を示します。  
@@ -181,7 +179,7 @@ array<int, 4> ai = { 1, 2, 3 };
   
  **名前空間:** std  
   
-##  <a name="array__array"></a>  array::array  
+##  <a name="array"></a>  array::array  
  配列オブジェクトを構築します。  
   
 ```  
@@ -236,8 +234,8 @@ int main()
 0 1 2 3  
 ```  
   
-##  <a name="array__assign"></a>  array::assign  
-C++&11; では廃止され、[fill](#array__fill) に置き換えられています。 すべての要素を置換します。  
+##  <a name="assign"></a>  array::assign  
+C++ 11 では廃止され、[fill](#fill) に置き換えられています。 すべての要素を置換します。  
   
 ```  
 void assign(const Ty& val);
@@ -288,7 +286,7 @@ int main()
 4 4 4 4  
 ```  
   
-##  <a name="array__at"></a>  array::at  
+##  <a name="at"></a>  array::at  
  指定した位置にある要素にアクセスします。  
   
 ```  
@@ -333,7 +331,7 @@ int main()
   
 ```  
   
-##  <a name="array__back"></a>  array::back  
+##  <a name="back"></a>  array::back  
  最後の要素にアクセスします。  
   
 ```  
@@ -378,7 +376,7 @@ int main()
 3  
 ```  
   
-##  <a name="array__begin"></a>  array::begin  
+##  <a name="begin"></a>  array::begin  
  被制御シーケンスの先頭を指定します。  
   
 ```  
@@ -423,7 +421,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__cbegin"></a>  array::cbegin  
+##  <a name="cbegin"></a>  array::cbegin  
  範囲内の最初の要素を示す `const` 反復子を返します。  
   
 ```  
@@ -446,7 +444,7 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator  
 ```  
   
-##  <a name="array__cend"></a>  array::cend  
+##  <a name="cend"></a>  array::cend  
  範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
   
 ```  
@@ -471,7 +469,7 @@ auto i2 = Container.cend();
   
  `cend` によって返された値は逆参照しないでください。  
   
-##  <a name="array__const_iterator"></a>  array::const_iterator  
+##  <a name="const_iterator"></a>  array::const_iterator  
  被制御シーケンスの定数反復子の型です。  
   
 ```  
@@ -522,7 +520,7 @@ it2: 0
   
 ```  
   
-##  <a name="array__const_pointer"></a>  array::const_pointer  
+##  <a name="const_pointer"></a>  array::const_pointer  
  要素への定数ポインターの型です。  
   
 ```  
@@ -566,7 +564,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__const_reference"></a>  array::const_reference  
+##  <a name="const_reference"></a>  array::const_reference  
  要素への定数参照の型です。  
   
 ```  
@@ -610,7 +608,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__const_reverse_iterator"></a>  array::const_reverse_iterator  
+##  <a name="const_reverse_iterator"></a>  array::const_reverse_iterator  
  被制御シーケンスの定数反転反復子の型です。  
   
 ```  
@@ -654,7 +652,7 @@ int main()
 3  
 ```  
   
-##  <a name="array__crbegin"></a>  array::crbegin  
+##  <a name="crbegin"></a>  array::crbegin  
  反転された配列内の最初の要素への定数反復子を返します。  
   
 ```  
@@ -697,7 +695,7 @@ The first element of array is 1.
 The first element of the reversed array is 2.  
 ```  
   
-##  <a name="array__crend"></a>  array::crend  
+##  <a name="crend"></a>  array::crend  
  逆順の配列内の最後の要素の次の位置を指す定数反復子を返します。  
   
 ```  
@@ -708,7 +706,7 @@ const_reverse_iterator crend() const noexcept;
  逆順の配列内の最後の要素の次の位置 (通常の順序の配列内の最初の要素の前の位置) を指す定数逆順ランダム アクセス反復子。  
   
 ### <a name="remarks"></a>コメント  
- `crend` は、[array::cend](#array__cend) が配列で使用されるときと同様の方法により、逆順の配列で使用されます。  
+ `crend` は、[array::cend](#cend) が配列で使用されるときと同様の方法により、逆順の配列で使用されます。  
   
  戻り値が (適切にデクリメントされた) `crend` の場合、配列オブジェクトは変更できません。  
   
@@ -740,7 +738,7 @@ int main( )
 1  
 ```  
   
-##  <a name="array__data"></a>  array::data  
+##  <a name="data"></a>  array::data  
  最初の要素のアドレスを取得します。  
   
 ```  
@@ -786,7 +784,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__difference_type"></a>  array::difference_type  
+##  <a name="difference_type"></a>  array::difference_type  
  2 つの要素間の距離を表す、符号付きの型です。  
   
 ```  
@@ -794,7 +792,7 @@ typedef std::ptrdiff_t difference_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 符号付き整数型は、被制御シーケンス内にある&2; つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。 これは `std::ptrdiff_t` 型のシノニムです。  
+ 符号付き整数型は、被制御シーケンス内にある 2 つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。 これは `std::ptrdiff_t` 型のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -830,7 +828,7 @@ int main()
 -4  
 ```  
   
-##  <a name="array__empty"></a>  array::empty  
+##  <a name="empty"></a>  array::empty  
  要素が存在しないかどうかをテストします。  
   
 ```  
@@ -880,7 +878,7 @@ false
 true  
 ```  
   
-##  <a name="array__end"></a>  array::end  
+##  <a name="end"></a>  array::end  
  被制御シーケンスの末尾を指定します。  
   
 ```  
@@ -926,7 +924,7 @@ int main()
 3  
 ```  
   
-##  <a name="array__fill"></a>  array::fill  
+##  <a name="fill"></a>  array::fill  
  配列を消去し、空の配列に指定された要素をコピーします。  
   
 ```  
@@ -970,7 +968,7 @@ int main( )
 }  
 ```  
   
-##  <a name="array__front"></a>  array::front  
+##  <a name="front"></a>  array::front  
  最初の要素にアクセスします。  
   
 ```  
@@ -1015,7 +1013,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__iterator"></a>  array::iterator  
+##  <a name="iterator"></a>  array::iterator  
  被制御シーケンスの反復子の型です。  
   
 ```  
@@ -1066,7 +1064,7 @@ it2: 0
   
 ```  
   
-##  <a name="array__max_size"></a>  array::max_size  
+##  <a name="max_size"></a>  array::max_size  
  要素の数をカウントします。  
   
 ```  
@@ -1109,7 +1107,7 @@ int main()
 4  
 ```  
   
-##  <a name="array__operator_at"></a>  array::operator[]  
+##  <a name="op_at"></a>  array::operator[]  
  指定した位置にある要素にアクセスします。  
   
 ```  
@@ -1125,7 +1123,7 @@ constexpr const_reference operator[](size_type off) const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、`off` 位置にある被制御シーケンスの要素への参照を返します。 その位置が無効な場合、動作は定義されません。  
   
-`array` の要素への参照を取得するのに使用できる非メンバー [get](array-functions.md#get_function) 関数もあります。  
+`array` の要素への参照を取得するのに使用できる非メンバー [get](array-functions.md#get) 関数もあります。  
   
 ### <a name="example"></a>例  
   
@@ -1161,7 +1159,7 @@ int main()
 1 3  
 ```  
   
-##  <a name="array__operator_eq"></a>  array::operator=  
+##  <a name="op_eq"></a>  array::operator=  
  被制御シーケンスを置き換えます。  
   
 ```  
@@ -1213,7 +1211,7 @@ int main()
 0 1 2 3  
 ```  
   
-##  <a name="array__pointer"></a>  array::pointer  
+##  <a name="pointer"></a>  array::pointer  
  要素へのポインターの型です。  
   
 ```  
@@ -1257,7 +1255,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__rbegin"></a>  array::rbegin  
+##  <a name="rbegin"></a>  array::rbegin  
  反転被制御シーケンスの先頭を指定します。  
   
 ```  
@@ -1302,7 +1300,7 @@ int main()
 3  
 ```  
   
-##  <a name="array__reference"></a>  array::reference  
+##  <a name="reference"></a>  array::reference  
  要素への参照の型です。  
   
 ```  
@@ -1346,7 +1344,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__rend"></a>  array::rend  
+##  <a name="rend"></a>  array::rend  
  反転被制御シーケンスの末尾を指定します。  
   
 ```  
@@ -1391,7 +1389,7 @@ int main()
 0  
 ```  
   
-##  <a name="array__reverse_iterator"></a>  array::reverse_iterator  
+##  <a name="reverse_iterator"></a>  array::reverse_iterator  
  被制御シーケンスの反転反復子の型です。  
   
 ```  
@@ -1435,7 +1433,7 @@ int main()
 3  
 ```  
   
-##  <a name="array__size"></a>  array::size  
+##  <a name="size"></a>  array::size  
  要素の数をカウントします。  
   
 ```  
@@ -1478,7 +1476,7 @@ int main()
 4  
 ```  
   
-##  <a name="array__size_type"></a>  array::size_type  
+##  <a name="size_type"></a>  array::size_type  
  2 つの要素間の距離を表す、符号なしの型です。  
   
 ```  
@@ -1522,7 +1520,7 @@ int main()
 4  
 ```  
   
-##  <a name="array__swap"></a>  array::swap  
+##  <a name="swap"></a>  array::swap  
 この配列の内容を別の配列と交換します。  
   
 ```  
@@ -1536,7 +1534,7 @@ void swap(array& right);
 ### <a name="remarks"></a>コメント  
 このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 さまざまな要素の割り当てを実行し、`N` に比例してコンストラクターを呼び出します。  
 
-2 つの `array` インスタンスを交換するのに使用できる非メンバー [swap](array-functions.md#swap_function) 関数もあります。  
+2 つの `array` インスタンスを交換するのに使用できる非メンバー [swap](array-functions.md#swap) 関数もあります。  
   
 ### <a name="example"></a>例  
   
@@ -1585,7 +1583,7 @@ int main()
 0 1 2 3  
 ```  
   
-##  <a name="array__value_type"></a>  array::value_type  
+##  <a name="value_type"></a>  array::value_type  
  要素の型。  
   
 ```  

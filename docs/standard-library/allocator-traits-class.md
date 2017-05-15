@@ -21,6 +21,12 @@ f1_keywords:
 - memory/std::allocator_traits::size_type
 - memory/std::allocator_traits::const_void_pointer
 - memory/std::allocator_traits::void_pointer
+- memory/std::allocator_traits::allocate
+- memory/std::allocator_traits::construct
+- memory/std::allocator_traits::deallocate
+- memory/std::allocator_traits::destroy
+- memory/std::allocator_traits::max_size
+- memory/std::allocator_traits::select_on_container_copy_construction
 dev_langs:
 - C++
 ms.assetid: 612974b8-b5d4-4668-82fb-824bff6821d6
@@ -42,10 +48,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 19927f6846b7feaa3fca37d08b70de6dee79c5e3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: d4fdcb8af6fa8b33ee6153563770b9bf00f02942
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="allocatortraits-class"></a>allocator_traits クラス
@@ -79,19 +86,19 @@ class allocator_traits;
   
 |名前|説明|  
 |----------|-----------------|  
-|[allocator_traits::allocate メソッド](#allocator_traits__allocate_method)|特定のアロケーター パラメーターを使用してメモリを割り当てる静的メソッド。|  
-|[allocator_traits::construct メソッド](#allocator_traits__construct_method)|オブジェクトの構築に指定されたアロケーターを使用する静的メソッド。|  
-|[allocator_traits::deallocate メソッド](#allocator_traits__deallocate_method)|指定したアロケーターを使用して、指定数のオブジェクトの割り当てを解除する静的メソッド。|  
-|[allocator_traits::destroy メソッド](#allocator_traits__destroy_method)|指定したアロケーターを使用して、メモリの割り当てを解除せず、オブジェクトでデストラクターを呼び出す静的メソッド。|  
-|[allocator_traits::max_size メソッド](#allocator_traits__max_size_method)|指定したアロケーターを使用して割り当てることができるオブジェクトの最大数を決定する静的メソッド。|  
-|[allocator_traits::select_on_container_copy_construction メソッド](#allocator_traits__select_on_container_copy_construction_method)|指定したアロケーターで `select_on_container_copy_construction` を呼び出す静的メソッド。|  
+|[allocate](#allocate)|特定のアロケーター パラメーターを使用してメモリを割り当てる静的メソッド。|  
+|[construct](#construct)|オブジェクトの構築に指定されたアロケーターを使用する静的メソッド。|  
+|[deallocate](#deallocate)|指定したアロケーターを使用して、指定数のオブジェクトの割り当てを解除する静的メソッド。|  
+|[destroy](#destroy)|指定したアロケーターを使用して、メモリの割り当てを解除せず、オブジェクトでデストラクターを呼び出す静的メソッド。|  
+|[max_size](#max_size)|指定したアロケーターを使用して割り当てることができるオブジェクトの最大数を決定する静的メソッド。|  
+|[select_on_container_copy_construction](#select_on_container_copy_construction)|指定したアロケーターで `select_on_container_copy_construction` を呼び出す静的メソッド。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
   
-##  <a name="a-nameallocatortraitsallocatemethoda--allocatortraitsallocate-method"></a><a name="allocator_traits__allocate_method"></a>  allocator_traits::allocate メソッド  
+##  <a name="allocate"></a>allocator_traits::allocate
  特定のアロケーター パラメーターを使用してメモリを割り当てる静的メソッド。  
   
 ```cpp  
@@ -118,7 +125,7 @@ static pointer allocate(Alloc& al, size_type count,
   
  2 番目のメソッドは、その式が整形式の場合は `al.allocate(count, hint)` を返し、それ以外の場合は `al.allocate(count)` を返します。  
   
-##  <a name="a-nameallocatortraitsconstructmethoda--allocatortraitsconstruct-method"></a><a name="allocator_traits__construct_method"></a>  allocator_traits::construct メソッド  
+##  <a name="construct"></a>allocator_traits::construct
  オブジェクトの構築に指定されたアロケーターを使用する静的メソッド。  
   
 ```cpp  
@@ -139,7 +146,7 @@ static void construct(Alloc& al, Uty* ptr, Types&&... args);
 ### <a name="remarks"></a>コメント  
  静的メンバー関数は、その式が整形式の場合は `al.construct(ptr, args...)` を呼び出し、それ以外の場合は `::new (static_cast<void *>(ptr)) Uty(std::forward<Types>(args)...)` を評価します。  
   
-##  <a name="a-nameallocatortraitsdeallocatemethoda--allocatortraitsdeallocate-method"></a><a name="allocator_traits__deallocate_method"></a>  allocator_traits::deallocate メソッド  
+##  <a name="deallocate"></a>allocator_traits::deallocate
  指定したアロケーターを使用して、指定数のオブジェクトの割り当てを解除する静的メソッド。  
   
 ```cpp  
@@ -163,7 +170,7 @@ static void deallocate(Alloc al,
   
  このメソッドは何もスローしません。  
   
-##  <a name="a-nameallocatortraitsdestroymethoda--allocatortraitsdestroy-method"></a><a name="allocator_traits__destroy_method"></a>  allocator_traits::destroy メソッド  
+##  <a name="destroy"></a>allocator_traits::destroy
  指定したアロケーターを使用して、メモリの割り当てを解除せず、オブジェクトでデストラクターを呼び出す静的メソッド。  
   
 ```cpp  
@@ -181,7 +188,7 @@ static void destroy(Alloc& al, Uty* ptr);
 ### <a name="remarks"></a>コメント  
  このメソッドは、その式が整形式の場合は `al.destroy(ptr)` を呼び出し、それ以外の場合は `ptr->~Uty()` を評価します。  
   
-##  <a name="a-nameallocatortraitsmaxsizemethoda--allocatortraitsmaxsize-method"></a><a name="allocator_traits__max_size_method"></a>  allocator_traits::max_size メソッド  
+##  <a name="max_size"></a>allocator_traits::max_size
  指定したアロケーターを使用して割り当てることができるオブジェクトの最大数を決定する静的メソッド。  
   
 ```cpp  
@@ -195,7 +202,7 @@ static size_type max_size(const Alloc& al);
 ### <a name="remarks"></a>コメント  
  このメソッドは、その式が整形式の場合は `al.max_size()` を返し、それ以外の場合は `numeric_limits<size_type>::max()` を返します。  
   
-##  <a name="a-nameallocatortraitsselectoncontainercopyconstructionmethoda--allocatortraitsselectoncontainercopyconstruction-method"></a><a name="allocator_traits__select_on_container_copy_construction_method"></a>  allocator_traits::select_on_container_copy_construction メソッド  
+##  <a name="select_on_container_copy_construction"></a>allocator_traits::select_on_container_copy_construction
  指定したアロケーターで `select_on_container_copy_construction` を呼び出す静的メソッド。  
   
 ```cpp  

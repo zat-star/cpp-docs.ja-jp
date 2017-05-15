@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 896845aa89f2d14683e21978ad2bca73dbbcf1f1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 7789a1634f5ee87d54d6b9f2aadbc720819f31ef
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="locking"></a>_locking
@@ -83,7 +84,7 @@ ms.lasthandoff: 02/24/2017
  ロックするバイト数。  
   
 ## <a name="return-value"></a>戻り値  
- 処理が正常に終了した場合、`_locking` は 0 を返します。 戻り値 -1 はエラーを示します。その場合、[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) は次の値のいずれかに設定されます。  
+ 処理が正常に終了した場合、`_locking` は 0 を返します。 戻り値-1 が後者障害を示す[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)は、次の値のいずれかに設定します。  
   
  `EACCES`  
  ロック違反 (ファイルはすでにロックされている場合もロック解除されている場合もある)。  
@@ -196,9 +197,6 @@ No one can change these bytes while I'm reading them
 30 bytes read: The first thirty bytes of this  
 Now I'm done. Do what you will with them  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::FileStream::Lock](https://msdn.microsoft.com/en-us/library/system.io.filestream.lock.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

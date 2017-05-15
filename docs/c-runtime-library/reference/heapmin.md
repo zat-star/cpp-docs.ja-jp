@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c839e372e2385928346693b0a74be0af2781882a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 4f980d2b8df9f8eb2f2337e4dd0888e63c2451ed
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="heapmin"></a>_heapmin
@@ -75,7 +76,7 @@ int _heapmin( void );
  このリターン コードとその他のリターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
- `_heapmin` 関数は、使用されていないヒープをオペレーティング システムに対して開放することでヒープを最小化します。 オペレーティング システムで `_heapmin` がサポートされていない場合 (Windows 98 など)、この関数は -1 を返し、`errno` を `ENOSYS` に設定します。  
+ `_heapmin` 関数は、使用されていないヒープをオペレーティング システムに対して開放することでヒープを最小化します。 オペレーティング システムがサポートしていない場合`_heapmin`(たとえば、Windows 98) は、関数は-1 を返します。 設定および`errno`に`ENOSYS`です。  
   
 ## <a name="requirements"></a>要件  
   
@@ -83,10 +84,7 @@ int _heapmin( void );
 |-------------|---------------------|---------------------|  
 |`_heapmin`|\<malloc.h>|\<errno.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   

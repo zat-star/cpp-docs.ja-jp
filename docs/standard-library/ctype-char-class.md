@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 0acae30ecbe670c87179f4cc2f5a2b8066ef3a4c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 28fc5cf88c6a50b5fcd9950b68d7c6ef3529ccee
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ctypeltchargt-class"></a>ctype&lt;char&gt; クラス
@@ -156,9 +157,9 @@ protected:
   
 -   保護されている静的メンバー関数 **classic_table**( は、"C" ロケールに適切な ctype マスク テーブルを返します。  
   
--   保護されている仮想メンバー関数 [do_is](../standard-library/ctype-class.md#ctype__do_is)、[do_scan_is](../standard-library/ctype-class.md#ctype__do_scan_is)、[do_scan_not](../standard-library/ctype-class.md#ctype__do_scan_not) はありません。 それに対応するパブリック メンバー関数が同等の操作を実行します。  
+-   保護されている仮想メンバー関数 [do_is](../standard-library/ctype-class.md#do_is)、[do_scan_is](../standard-library/ctype-class.md#do_scan_is)、[do_scan_not](../standard-library/ctype-class.md#do_scan_not) はありません。 それに対応するパブリック メンバー関数が同等の操作を実行します。  
   
- メンバー関数の [do_narrow](../standard-library/ctype-class.md#ctype__do_narrow) と [do_widen](../standard-library/ctype-class.md#ctype__do_widen) は、要素を変更せずにコピーします。  
+ メンバー関数の [do_narrow](../standard-library/ctype-class.md#do_narrow) と [do_widen](../standard-library/ctype-class.md#do_widen) は、要素を変更せずにコピーします。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  

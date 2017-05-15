@@ -62,10 +62,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d6ff95a0d31d14de0941e5f8c3a3535fe0e5ee9c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 20611bb1f40ae900ad2653395da6a0d8279252db
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="ftimes-ftime32s-ftime64s"></a>_ftime_s、_ftime32_s、_ftime64_s
@@ -87,16 +88,16 @@ errno_t _ftime64_s(
   
 #### <a name="parameters"></a>パラメーター  
  `timeptr`  
- `_timeb,``__timeb32` または `__timeb64` 構造体へのポインター。  
+ ポインター、 `_timeb`、 `__timeb32`、または`__timeb64`構造体。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。 `timeptr` が `NULL` の場合、戻り値は `EINVAL` です。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。 `timeptr` が `NULL` の場合、戻り値は `EINVAL` です。  
   
 ## <a name="remarks"></a>コメント  
- `_ftime_s` 関数は、現在のローカル時刻を取得し、`timeptr`* によって指定されている構造体にそれを格納します。* `_timeb,``__timeb32` および `__timeb64` の構造体は、SYS\Timeb.h で定義されます。 これらは、次の表に示す&4; つのフィールドを含んでいます。  
+ `_ftime_s`関数は、現在の現地時刻を取得しが指す構造体に格納`timeptr`です。 `_timeb`、 `__timeb32`、および`__timeb64`SYS\Timeb.h で定義されます。 これらは、次の表に示す 4 つのフィールドを含んでいます。  
   
  `dstflag`  
- ローカルのタイム ゾーンで夏時間が現在有効になっている場合は&0; 以外の値です  (夏時間を判断する方法の詳細については、[_tzset](../../c-runtime-library/reference/tzset.md) を参照してください)。  
+ ローカルのタイム ゾーンで夏時間が現在有効になっている場合は 0 以外の値です  (夏時間を判断する方法の詳細については、[_tzset](../../c-runtime-library/reference/tzset.md) を参照してください)。  
   
  `millitm`  
  ミリ秒単位での秒の小数部。  
@@ -109,7 +110,7 @@ errno_t _ftime64_s(
   
  `__timeb64` 構造体を使用する `_ftime64_s` は、UTC の 3000 年 12 月 31 日の 23 時 59 分 59 秒までのファイル作成日付を表すことができます。それに対して、`_ftime32_s` は、UTC の 2038 年 1 月 18 日の 23 時 59 分 59 秒までしか表すことができません。 これらの関数の日付範囲の下限は、いずれも 1970 年 1 月 1 日の午前 0 時です。  
   
- `_ftime_s` は `_ftime64_s` と同等で、`_timeb` には 64 ビットの時刻が含まれます。 これは、_`USE_32BIT_TIME_T` が定義されていない場合に当てはまります。定義されている場合には、古い動作が有効になります。\_`ftime_s` は 32 ビットの時刻を使用します。`_timeb` には 32 ビットの時刻が含まれます。  
+ `_ftime_s` は `_ftime64_s` と同等で、`_timeb` には 64 ビットの時刻が含まれます。 これは、`_USE_32BIT_TIME_T` が定義されていない場合に当てはまります。定義されている場合には、古い動作が有効になります。`_ftime_s` は 32 ビットの時刻を使用します。`_timeb` には 32 ビットの時刻が含まれます。  
   
  `_ftime_s` はそのパラメーターを検証します。 `timeptr` として null ポインターが渡された場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、関数は `errno` を `EINVAL` に設定します。  
   
@@ -178,9 +179,6 @@ Minutes between UTC and local time: 480
 Daylight savings time flag (1 means Daylight time is in effect): 1  
 The time is Mon Apr 28 11:08:54.230 2003  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::DateTime::Now](https://msdn.microsoft.com/en-us/library/system.datetime.now.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   

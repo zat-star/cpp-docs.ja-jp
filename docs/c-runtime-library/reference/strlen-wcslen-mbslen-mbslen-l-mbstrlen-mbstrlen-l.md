@@ -75,10 +75,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 680f6a47ec1a0260421a4f6e3543095759844c30
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: b5ed3069aa637faea1a09fdfd12a98abc773f7dc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="strlen-wcslen-mbslen-mbslenl-mbstrlen-mbstrlenl"></a>strlen、wcslen、_mbslen、_mbslen_l、_mbstrlen、_mbstrlen_l
@@ -123,7 +124,7 @@ size_t _mbstrlen_l(
  これらの関数は、`str` の文字数を返します。終端の `NULL` は含まれません。 文字列に無効なマルチバイト文字が含まれる場合に `_mbstrlen` を返す `_mbstrlen_l` と `((size_t)(-1))` を除いて、エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
- `strlen` は文字列を&1; バイト文字列として扱うため、マルチバイト文字が含まれている場合でも、戻り値は常にバイト数と同じです。 `wcslen` は `strlen` のワイド文字バージョンです。`wcslen` の引数はワイド文字列で、文字数はワイド (2 バイト) 文字の単位です。 それ以外では、`wcslen` と `strlen` の動作は同じです。  
+ `strlen` は文字列を 1 バイト文字列として扱うため、マルチバイト文字が含まれている場合でも、戻り値は常にバイト数と同じです。 `wcslen` は `strlen` のワイド文字バージョンです。`wcslen` の引数はワイド文字列で、文字数はワイド (2 バイト) 文字の単位です。 それ以外では、`wcslen` と `strlen` の動作は同じです。  
   
  **セキュリティに関するメモ** これらの関数は、バッファー オーバーランが原因で発生する潜在的な脅威の影響を受けます。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
@@ -212,9 +213,6 @@ Length of 'ABCァD' : 5
 Length of 'ABCァD' : 5  
 Bytes in 'ABCァD' : 6  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::Length](https://msdn.microsoft.com/en-us/library/system.string.length.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

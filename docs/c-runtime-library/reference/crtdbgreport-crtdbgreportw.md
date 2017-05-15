@@ -56,10 +56,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 6bfbae9b083563f0f9a6b0c30e02fb79f413d52d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: f197e4f6341508f05e566f45566f26a18be43bed
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="crtdbgreport-crtdbgreportw"></a>_CrtDbgReport、_CrtDbgReportW
@@ -106,14 +107,14 @@ int _CrtDbgReportW(
  `format` で使用される省略可能な代用引数。  
   
 ## <a name="return-value"></a>戻り値  
- レポートのすべての宛先について、`_CrtDbgReport` および `_CrtDbgReportW` は、エラーが発生した場合は –1、エラーが発生しなかった場合は 0 を返します。 ただし、レポートの宛先がデバッグ メッセージ ウィンドウで、ユーザーが **[再試行]** をクリックすると、これらの関数は 1 を返します。 ユーザーがデバッグ メッセージ ウィンドウの **[中止]** をクリックすると、関数はすぐに中止され、値は返されません。  
+ すべてのレポート送信先`_CrtDbgReport`と`_CrtDbgReportW`エラーが発生しなかった場合、エラーが発生した場合は-1、0 を返します。 ただし、レポートの宛先がデバッグ メッセージ ウィンドウで、ユーザーが **[再試行]** をクリックすると、これらの関数は 1 を返します。 ユーザーがデバッグ メッセージ ウィンドウの **[中止]** をクリックすると、関数はすぐに中止され、値は返されません。  
   
- [_RPT、_RPTF](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md) デバッグ マクロは `_CrtDbgReport` を呼び出して、デバッグ レポートを生成します。 これらのマクロのワイド文字バージョンは、[_ASSERT&#91;E&#93;](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、`_RPTW``n`、および `_RPTFW``n` と共に、`_CrtDbgReportW` を使用してデバッグ レポートを生成します。 `_CrtDbgReport` または `_CrtDbgReportW` が 1 を返す場合は、Just-In-Time (JIT) デバッグが有効であれば、これらのマクロ デバッガーが開始しています。  
+ [_RPT、_RPTF](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md) デバッグ マクロは `_CrtDbgReport` を呼び出して、デバッグ レポートを生成します。 これらのマクロのワイド文字バージョンは、[_ASSERT&#91;E&#93;](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、`_RPTW n`、および `_RPTFW n` と共に、`_CrtDbgReportW` を使用してデバッグ レポートを生成します。 `_CrtDbgReport` または `_CrtDbgReportW` が 1 を返す場合は、Just-In-Time (JIT) デバッグが有効であれば、これらのマクロ デバッガーが開始しています。  
   
 ## <a name="remarks"></a>コメント  
  `_CrtDbgReport` および `_CrtDbgReportW` は、3 種類の宛先へデバッグ レポートを送信できます。デバッグ レポート ファイル、デバッグ モニター ([!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)] デバッガー)、またはデバッグ メッセージ ウィンドウです。 2 つの構成関数 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) および [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) は、各レポートの種類の出力先を指定するために使用されます。 これらの関数では、各レポートの種類に対するレポートの宛先を個別に管理できます。 たとえば、`reportType` の `_CRT_WARN` をデバッグ モニターのみに送信したり、`reportType` の `_CRT_ASSERT` をデバッグ メッセージ ウィンドウとユーザー定義のレポート ファイルに送信するよう指定できます。  
   
- `_CrtDbgReportW` 関数は、`_CrtDbgReport` 関数のワイド文字バージョンです。 すべての出力および文字列のパラメーターは、ワイド文字列内にあり、それ以外の場合は&1; バイト文字バージョンと同じです。  
+ `_CrtDbgReportW` 関数は、`_CrtDbgReport` 関数のワイド文字バージョンです。 すべての出力および文字列のパラメーターは、ワイド文字列内にあり、それ以外の場合は 1 バイト文字バージョンと同じです。  
   
  `_CrtDbgReport` および `_CrtDbgReportW` は、`argument` または `n` 関数により定義されている同じ規則を使用して、`format`[`printf`] 引数を `wprintf` 文字列に置き換えることでデバッグ レポートのユーザー メッセージを作成します。 次にこれらの関数は、`reportType` に定義されている現在のレポート モードおよびファイルに基づいて、デバッグ レポートを生成し、宛先を決定します。 レポートがデバッグ メッセージ ウィンドウに送信される場合、ウィンドウに表示される情報には `filename`、`lineNumber`、および `moduleName` が含まれます。  
   
@@ -128,7 +129,7 @@ int _CrtDbgReportW(
 |`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDOUT`|
           `stdout` にメッセージを書き込みます。|  
   
- レポートは&1; つ、2 つ、または&3; つの宛先に送信できます。またどの宛先にも送信しないこともできます。 レポート モードおよびレポート ファイルを指定する方法の詳細については、「[_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)」および「[_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)」関数を参照してください。 デバッグ マクロおよびレポート関数の使用方法の詳細については、「[レポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
+ レポートは 1 つ、2 つ、または 3 つの宛先に送信できます。またどの宛先にも送信しないこともできます。 レポート モードおよびレポート ファイルを指定する方法の詳細については、「[_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)」および「[_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)」関数を参照してください。 デバッグ マクロおよびレポート関数の使用方法の詳細については、「[レポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
   
  アプリケーションで `_CrtDbgReport` および `_CrtDbgReportW` で提供されるよりさらに柔軟性が必要な場合は、独自のレポート関数を書き込み、[_CrtSetReportHook](../../c-runtime-library/reference/crtsetreporthook.md) 関数を使用してそれを C ランタイム ライブラリのレポート機構にフックすることができます。  
   
@@ -158,16 +159,6 @@ int main(int argc, char *argv[]) {
 ```  
   
  レポート関数を変更する方法の例については、「[crt_dbg2](http://msdn.microsoft.com/en-us/21e1346a-6a17-4f57-b275-c76813089167)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Diagnostics::Debug::Write](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.write.aspx)  
-  
--   [System::Diagnostics::Debug::Writeline](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writeline.aspx)  
-  
--   [System::Diagnostics::Debug::WriteIf](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writeif.aspx)  
-  
--   [System::Diagnostics::Debug::WriteLineIf](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.writelineif.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   

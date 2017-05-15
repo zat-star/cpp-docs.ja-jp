@@ -1,51 +1,68 @@
 ---
 title: "memset、wmemset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "wmemset"
-  - "memset"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ntdll.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "memset"
-  - "wmemset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "memset 関数"
-  - "wmemset 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- wmemset
+- memset
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ntdll.dll
+- ucrtbase.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- memset
+- wmemset
+dev_langs:
+- C++
+helpviewer_keywords:
+- wmemset function
+- memset function
 ms.assetid: e7ceb01b-df69-49c2-b294-a39358ad4699
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# memset、wmemset
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: a305da5b415b6db38f3d5b4e155b31133e1ac980
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-指定された文字にバッファーを設定します。  
+---
+# <a name="memset-wmemset"></a>memset、wmemset
+指定した文字にバッファーを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -61,7 +78,7 @@ wchar_t *wmemset(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *dest*  
  ターゲットへのポインター。  
   
@@ -71,27 +88,27 @@ wchar_t *wmemset(
  *count*  
  文字数。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  `dest` の値。  
   
-## 解説  
- 文字 `c`に `dest` の `count` の最初の文字を設定します。  
+## <a name="remarks"></a>コメント  
+ `dest` の最初の `count` 文字を文字 `c` に設定します。  
   
- **セキュリティ メモ** は変換先バッファーが少なくとも `count` の文字に対して十分な領域があることを確認します。  詳細については、「[Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795)」を参照してください。  
+ **セキュリティに関するメモ** 設定するバッファーに `count` 文字以上の空きがあることを確認してください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`memset`|\<memory.h\> または \<string.h\>|  
-|`wmemset`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`memset`|\<memory.h> または \<string.h>|  
+|`wmemset`|\<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_memset.c  
@@ -112,14 +129,14 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Before: This is a test of the memset function  
 After:  **** is a test of the memset function  
 ```  
   
- wmemset の使用例を次に示します。:  
+ wmemset の使用例を次に示します。  
   
 ```  
 // crt_wmemset.c  
@@ -140,20 +157,17 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Before: This is a test of the wmemset function  
 After:  **** is a test of the wmemset function  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::Buffer::SetByte](https://msdn.microsoft.com/en-us/library/system.buffer.setbyte.aspx)  
-  
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)   
- [\_memccpy](../../c-runtime-library/reference/memccpy.md)   
- [memchr、wmemchr](../Topic/memchr,%20wmemchr.md)   
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
+ [_memccpy](../../c-runtime-library/reference/memccpy.md)   
+ [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   
  [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   
- [\_strnset、\_strnset\_l、\_wcsnset、\_wcsnset\_l、\_mbsnset、\_mbsnset\_l](../../c-runtime-library/reference/strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)
+ [_strnset、_strnset_l、_wcsnset、_wcsnset_l、_mbsnset、_mbsnset_l](../../c-runtime-library/reference/strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)

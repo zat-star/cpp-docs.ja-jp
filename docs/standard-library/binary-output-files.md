@@ -33,14 +33,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 85c900f2263ae1c1089478badc85388e3b5e8548
-ms.openlocfilehash: f566da8ea00f0a52db3539c81bb3d19d6fc9da99
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 8968a47f9d957aa0873b5db78909a6b4ad66ea75
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="binary-output-files"></a>バイナリ出力ファイル
-ストリームは本来、テキスト向けとして設計されており、既定の出力モードはテキストです。 テキスト モードでは、改行文字 (16 進数 10) が拡大し、復帰改行 (16 ビットのみ) になります。 この拡大は次のような問題を起こす可能性があります。  
+ストリームは本来、テキスト向けとして設計されており、既定の出力モードはテキストです。 テキスト モードでは、改行文字 (16 進数の 10) は、改行 (16 ビットのみ) に展開されます。 この拡大は次のような問題を起こす可能性があります。  
   
 ```  
 // binary_output_files.cpp  
@@ -55,7 +56,7 @@ int main( )
 }  
 ```  
   
- このプログラムでは、{ 99, 0, 10, 0 } というバイト シーケンスの出力を想定していたところ、{ 99, 0, 13, 10, 0 } が出力されます。バイナリ入力を要求するプログラムで問題が起こります。 文字が変換なしで書き込まれる、本来のバイナリ出力が必要であれば、[ofstream](../standard-library/basic-ofstream-class.md#basic_ofstream__basic_ofstream) コンストラクター オープンモード引数を利用し、バイナリ出力を指定できます。  
+ このプログラムでは、{ 99, 0, 10, 0 } というバイト シーケンスの出力を想定していたところ、{ 99, 0, 13, 10, 0 } が出力されます。バイナリ入力を要求するプログラムで問題が起こります。 文字が変換なしで書き込まれる、本来のバイナリ出力が必要であれば、[ofstream](../standard-library/basic-ofstream-class.md#basic_ofstream) コンストラクター オープンモード引数を利用し、バイナリ出力を指定できます。  
   
 ```  
 // binary_output_files2.cpp  

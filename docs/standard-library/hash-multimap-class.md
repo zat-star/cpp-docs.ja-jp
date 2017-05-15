@@ -10,11 +10,48 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - stdext::hash_multimap
-- stdext.hash_multimap
 - hash_map/stdext::hash_multimap
 - hash_multimap
-- std::hash_multimap
-- std.hash_multimap
+- hash_map/stdext::hash_multimap::allocator_type
+- hash_map/stdext::hash_multimap::const_iterator
+- hash_map/stdext::hash_multimap::const_pointer
+- hash_map/stdext::hash_multimap::const_reference
+- hash_map/stdext::hash_multimap::const_reverse_iterator
+- hash_map/stdext::hash_multimap::difference_type
+- hash_map/stdext::hash_multimap::iterator
+- hash_map/stdext::hash_multimap::key_compare
+- hash_map/stdext::hash_multimap::key_type
+- hash_map/stdext::hash_multimap::mapped_type
+- hash_map/stdext::hash_multimap::pointer
+- hash_map/stdext::hash_multimap::reference
+- hash_map/stdext::hash_multimap::reverse_iterator
+- hash_map/stdext::hash_multimap::size_type
+- hash_map/stdext::hash_multimap::value_type
+- hash_map/stdext::hash_multimap::begin
+- hash_map/stdext::hash_multimap::cbegin
+- hash_map/stdext::hash_multimap::cend
+- hash_map/stdext::hash_multimap::clear
+- hash_map/stdext::hash_multimap::count
+- hash_map/stdext::hash_multimap::crbegin
+- hash_map/stdext::hash_multimap::crend
+- hash_map/stdext::hash_multimap::emplace
+- hash_map/stdext::hash_multimap::emplace_hint
+- hash_map/stdext::hash_multimap::empty
+- hash_map/stdext::hash_multimap::end
+- hash_map/stdext::hash_multimap::equal_range
+- hash_map/stdext::hash_multimap::erase
+- hash_map/stdext::hash_multimap::find
+- hash_map/stdext::hash_multimap::get_allocator
+- hash_map/stdext::hash_multimap::insert
+- hash_map/stdext::hash_multimap::key_comp
+- hash_map/stdext::hash_multimap::lower_bound
+- hash_map/stdext::hash_multimap::max_size
+- hash_map/stdext::hash_multimap::rbegin
+- hash_map/stdext::hash_multimap::rend
+- hash_map/stdext::hash_multimap::size
+- hash_map/stdext::hash_multimap::swap
+- hash_map/stdext::hash_multimap::upper_bound
+- hash_map/stdext::hash_multimap::value_comp
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -38,10 +75,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 4798371a8b27107de850d2b5de3cacc2713cae8e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 50239067b11ef3fc8ac5c7d3c4d155dab0dc3822
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="hashmultimap-class"></a>hash_multimap クラス
@@ -82,7 +120,7 @@ class hash_multimap
   
 -   ハッシュされます。これは、要素のキー値に適用されたハッシュ関数の値に基づいて、要素がバケットにグループ化されるためです。  
   
--   複数対応です。要素は一意のキーを持つ必要がないので、関連する多くの要素データ値を&1; つのキー値が持つことができるためです。  
+-   複数対応です。要素は一意のキーを持つ必要がないので、関連する多くの要素データ値を 1 つのキー値が持つことができるためです。  
   
 -   ペアを保持する連想コンテナーです。これは、要素値とキー値が分かれているためです。  
   
@@ -94,84 +132,84 @@ class hash_multimap
   
  hash_multimap は、値とキーを関連付ける条件をアプリケーションが満たしている場合、最適な連想コンテナーです。 この種類の構造体のモデルとなるのは、キー ワードとそれに関連する文字列値 (たとえば定義) の順序付きリストです。キー ワードは常に一意に定義されるわけではありません。 そうでなくて、キー ワードが一意に定義され、キーが一意になる場合は、hash_map が最適なコンテナーです。 また、キーワードのリストだけが格納される場合は、hash_set が適切なコンテナーとなります。 キーワードを複数設定できる場合は、hash_multiset が適切なコンテナー構造体となります。  
   
- hash_multimap は、格納されているハッシュ `Traits` オブジェクト ([value_compare](../standard-library/value-compare-class.md) 型) を呼び出すことによって、制御するシーケンスを並べ替えます。 格納されているこのオブジェクトには、メンバー関数 [key_comp](../standard-library/hash-map-class.md#hash_map__key_comp) を呼び出すことによってアクセスできます。 このような関数オブジェクトは、[hash_compare](../standard-library/hash-compare-class.md)`<Key,  less<Key> >` クラスのオブジェクトと同様に動作する必要があります。 具体的には、`Key` 型のすべての `Key` の値に対して、`Traits (Key)` を呼び出すことにより、`size_t` 型の値を配布します。  
+ hash_multimap は、格納されているハッシュ `Traits` オブジェクト ([value_compare](../standard-library/value-compare-class.md) 型) を呼び出すことによって、制御するシーケンスを並べ替えます。 格納されているこのオブジェクトには、メンバー関数 [key_comp](../standard-library/hash-map-class.md#key_comp) を呼び出すことによってアクセスできます。 このような関数オブジェクトは、[hash_compare](../standard-library/hash-compare-class.md)`<Key,  less<Key> >` クラスのオブジェクトと同様に動作する必要があります。 具体的には、`Key` 型のすべての `Key` の値に対して、`Traits (Key)` を呼び出すことにより、`size_t` 型の値を配布します。  
   
  通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。 二項述語 f(x, y) は、2 つの引数オブジェクト (`x` および `y`) と戻り値 (`true` または `false`) を持つ関数オブジェクトです。 hash_multimap に適用される順序付けは、二項述語が非再帰、反対称、推移的であり、等価性が推移的である (2 つのオブジェクト `x` と `y` が、f(x, y) と f(y, x) の両方が `false` の場合に等価になるように定義されている) 場合、厳密弱順序になります。 2 つのキーの等値に関する条件が等価性の条件よりも厳しく、優先される場合、順序付けは完全な順序付け (すべての要素が相互の値に基づいて並べ替えられる) となり、一致するそれぞれのキーを識別するのが難しくなります。  
   
  被制御シーケンスにおける要素の実際の順序は、ハッシュ関数、順序関数、コンテナー オブジェクトに格納されるハッシュ テーブルの現在のサイズによって異なります。 ハッシュ テーブルの現在のサイズは特定できないため、通常は、被制御シーケンス内の要素の順序を予測することはできません。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を具体的に指す反復子だけが無効化されます。  
   
- hash_multimap クラスに用意されている反復子は双方向反復子ですが、クラス メンバー関数 [insert](#hash_multimap__insert) と [hash_multimap](#hash_multimap__hash_multimap) には、弱い入力反復子をテンプレート パラメーターとして取得するバージョンがあります。この反復子の機能に関する要件は、双方向反復子のクラスで保証されている要件よりも低くなっています。 これらの反復子の機能に差異があるのは、反復子の概念が異なっているためです。 反復子の各概念には、反復子独自の要件の hash_multimap が含まれています。また、それらの要件を使用するアルゴリズムでは、反復子の種類ごとに指定されている要件で前提を絞り込む必要があります。 たとえば、一部のオブジェクトを参照するために入力反復子が逆参照される可能性があることを前提とする場合があります。さらに、シーケンス内にある次の反復子に対して逆参照が増加する可能性があることを前提とする場合もあります。 このことは、機能の最小限の hash_multimap ですが、メンバー関数のコンテキストに含まれる反復子の範囲 `[First, Last)` について明確にするには十分です。  
+ hash_multimap クラスに用意されている反復子は双方向反復子ですが、クラス メンバー関数 [insert](#insert) と [hash_multimap](#hash_multimap) には、弱い入力反復子をテンプレート パラメーターとして取得するバージョンがあります。この反復子の機能に関する要件は、双方向反復子のクラスで保証されている要件よりも低くなっています。 これらの反復子の機能に差異があるのは、反復子の概念が異なっているためです。 反復子の各概念には、反復子独自の要件の hash_multimap が含まれています。また、それらの要件を使用するアルゴリズムでは、反復子の種類ごとに指定されている要件で前提を絞り込む必要があります。 たとえば、一部のオブジェクトを参照するために入力反復子が逆参照される可能性があることを前提とする場合があります。さらに、シーケンス内にある次の反復子に対して逆参照が増加する可能性があることを前提とする場合もあります。 このことは、機能の最小限の hash_multimap ですが、メンバー関数のコンテキストに含まれる反復子の範囲 `[First, Last)` について明確にするには十分です。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[hash_multimap](#hash_multimap__hash_multimap)|特定のサイズのリスト、特定の値の要素を持つリスト、または特定の `allocator` を持つリストを構築します。あるいは他の `hash_multimap` のコピーとして構築します。|  
+|[hash_multimap](#hash_multimap)|特定のサイズのリスト、特定の値の要素を持つリスト、または特定の `allocator` を持つリストを構築します。あるいは他の `hash_multimap` のコピーとして構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[allocator_type](#hash_multimap__allocator_type)|`allocator` オブジェクトの `hash_multimap` クラスを表す型。|  
-|[const_iterator](#hash_multimap__const_iterator)|`const` 内の&1; つの `hash_multimap` 要素を読み取ることができる双方向反復子を提供する型。|  
-|[const_pointer](#hash_multimap__const_pointer)|`const` 内の `hash_multimap` 要素へのポインターを提供する型。|  
-|[const_reference](#hash_multimap__const_reference)|読み取りと `const` 操作を実行するために、`hash_multimap` に格納された `const` 要素への参照を提供する型。|  
-|[const_reverse_iterator](#hash_multimap__const_reverse_iterator)|`const` 内の任意の `hash_multimap` 要素を読み取ることができる双方向反復子を提供する型。|  
-|[difference_type](#hash_multimap__difference_type)|`hash_multimap` の要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
-|[Iterator](#hash_multimap__iterator)|`hash_multimap` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
-|[key_compare](#hash_multimap__key_compare)|2 つの並べ替えキーを比較して、`hash_multimap` 内の&2; つの要素の相対順序を決定できる関数オブジェクトを提供する型。|  
-|[key_type](#hash_multimap__key_type)|`hash_multimap` の各要素の一部である並べ替えキー オブジェクトを表す型。|  
-|[mapped_type](#hash_multimap__mapped_type)|`hash_multimap` に格納されているデータ型を表す型。|  
-|[pointer](#hash_multimap__pointer)|`hash_multimap` 内の要素へのポインターを提供する型。|  
-|[reference](#hash_multimap__reference)|`hash_multimap` に格納されている要素への参照を提供する型。|  
-|[reverse_iterator](#hash_multimap__reverse_iterator)|反転された `hash_multimap` 内の&1; つの要素を読み取り、または変更できる双方向反復子を提供する型。|  
-|[size_type](#hash_multimap__size_type)|`hash_multimap` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_type](#hash_multimap__value_type)|2 つの要素を並べ替えキーとして比較して、`hash_multimap` 内の要素の相対順序を決定できる関数オブジェクトを提供する型。|  
+|[allocator_type](#allocator_type)|`allocator` オブジェクトの `hash_multimap` クラスを表す型。|  
+|[const_iterator](#const_iterator)|`const` 内の 1 つの `hash_multimap` 要素を読み取ることができる双方向反復子を提供する型。|  
+|[const_pointer](#const_pointer)|`const` 内の `hash_multimap` 要素へのポインターを提供する型。|  
+|[const_reference](#const_reference)|読み取りと `const` 操作を実行するために、`hash_multimap` に格納された `const` 要素への参照を提供する型。|  
+|[const_reverse_iterator](#const_reverse_iterator)|`const` 内の任意の `hash_multimap` 要素を読み取ることができる双方向反復子を提供する型。|  
+|[difference_type](#difference_type)|`hash_multimap` の要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
+|[Iterator](#iterator)|`hash_multimap` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
+|[key_compare](#key_compare)|2 つの並べ替えキーを比較して、`hash_multimap` 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。|  
+|[key_type](#key_type)|`hash_multimap` の各要素の一部である並べ替えキー オブジェクトを表す型。|  
+|[mapped_type](#mapped_type)|`hash_multimap` に格納されているデータ型を表す型。|  
+|[pointer](#pointer)|`hash_multimap` 内の要素へのポインターを提供する型。|  
+|[reference](#reference)|`hash_multimap` に格納されている要素への参照を提供する型。|  
+|[reverse_iterator](#reverse_iterator)|反転された `hash_multimap` 内の 1 つの要素を読み取り、または変更できる双方向反復子を提供する型。|  
+|[size_type](#size_type)|`hash_multimap` 内の要素の数を表すことができる符号なし整数型。|  
+|[value_type](#value_type)|2 つの要素を並べ替えキーとして比較して、`hash_multimap` 内の要素の相対順序を決定できる関数オブジェクトを提供する型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[begin](#hash_multimap__begin)|`hash_multimap` 内の最初の要素を指す反復子を返します。|  
-|[hash_multimap::cbegin](#hash_multimap__cbegin)|`hash_multimap` 内の最初の要素を指す定数反復子を返します。|  
-|[hash_multimap::cend](#hash_multimap__cend)|`hash_multimap` 内の最後の要素の次の位置を指す定数反復子を返します。|  
-|[clear](#hash_multimap__clear)|`hash_multimap` のすべての要素を消去します。|  
-|[count](#hash_multimap__count)|パラメーター指定したキーに一致するキーを持つ、`hash_multimap` 内の要素の数を返します。|  
-|[hash_multimap::crbegin](#hash_multimap__crbegin)|反転された `hash_multimap` 内の最初の要素を指す定数反復子を返します。|  
-|[hash_multimap::crend](#hash_multimap__crend)|反転された `hash_multimap` 内の最後の要素の次の位置を指す定数反復子を返します。|  
-|[hash_multimap::emplace](#hash_multimap__emplace)|インプレースで構築された要素を `hash_multimap` に挿入します。|  
-|[hash_multimap::emplace_hint](#hash_multimap__emplace_hint)|インプレースで構築された要素を、配置ヒントと共に `hash_multimap` に挿入します。|  
-|[empty](#hash_multimap__empty)|`hash_multimap` が空かどうかをテストします。|  
-|[end](#hash_multimap__end)|`hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
-|[equal_range](#hash_multimap__equal_range)|`hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
-|[erase](#hash_multimap__erase)|指定した位置から `hash_multimap` 内の要素または要素範囲を削除します。|  
-|[find](#hash_multimap__find)|指定したキーと同じキーを持つ、`hash_multimap` 内の要素の位置を指す反復子を返します。|  
-|[get_allocator](#hash_multimap__get_allocator)|`allocator` の構築に使用される `hash_multimap` オブジェクトのコピーを返します。|  
-|[insert](#hash_multimap__insert)|指定した位置において、`hash_multimap` に単一の要素または要素の範囲を挿入します。|  
-|[key_comp](#hash_multimap__key_comp)|`hash_multimap` 内のキーを並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
-|[lower_bound](#hash_multimap__lower_bound)|指定したキー以上のキー値を持つ、`hash_multimap` 内の最初の要素を指す反復子を返します。|  
-|[max_size](#hash_multimap__max_size)|`hash_multimap` の最大長を返します。|  
-|[rbegin](#hash_multimap__rbegin)|反転された `hash_multimap` 内の最初の要素を指す反復子を返します。|  
-|[rend](#hash_multimap__rend)|反転された `hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
-|[size](#hash_multimap__size)|`hash_multimap` の新しいサイズを指定します。|  
-|[swap](#hash_multimap__swap)|2 つの `hash_multimap` の要素を交換します。|  
-|[upper_bound](#hash_multimap__upper_bound)|指定したキーよりも大きいキー値を持つ、`hash_multimap` 内の最初の要素を指す反復子を返します。|  
-|[value_comp](#hash_multimap__value_comp)|`hash_multimap` 内の要素の値を並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
+|[begin](#begin)|`hash_multimap` 内の最初の要素を指す反復子を返します。|  
+|[cbegin](#cbegin)|`hash_multimap` 内の最初の要素を指す定数反復子を返します。|  
+|[cend](#cend)|`hash_multimap` 内の最後の要素の次の位置を指す定数反復子を返します。|  
+|[clear](#clear)|`hash_multimap` のすべての要素を消去します。|  
+|[count](#count)|パラメーター指定したキーに一致するキーを持つ、`hash_multimap` 内の要素の数を返します。|  
+|[crbegin](#crbegin)|反転された `hash_multimap` 内の最初の要素を指す定数反復子を返します。|  
+|[crend](#crend)|反転された `hash_multimap` 内の最後の要素の次の位置を指す定数反復子を返します。|  
+|[emplace](#emplace)|インプレースで構築された要素を `hash_multimap` に挿入します。|  
+|[emplace_hint](#emplace_hint)|インプレースで構築された要素を、配置ヒントと共に `hash_multimap` に挿入します。|  
+|[empty](#empty)|`hash_multimap` が空かどうかをテストします。|  
+|[end](#end)|`hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
+|[equal_range](#equal_range)|`hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
+|[erase](#erase)|指定した位置から `hash_multimap` 内の要素または要素範囲を削除します。|  
+|[find](#find)|指定したキーと同じキーを持つ、`hash_multimap` 内の要素の位置を指す反復子を返します。|  
+|[get_allocator](#get_allocator)|`allocator` の構築に使用される `hash_multimap` オブジェクトのコピーを返します。|  
+|[insert](#insert)|指定した位置において、`hash_multimap` に単一の要素または要素の範囲を挿入します。|  
+|[key_comp](#key_comp)|`hash_multimap` 内のキーを並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
+|[lower_bound](#lower_bound)|指定したキー以上のキー値を持つ、`hash_multimap` 内の最初の要素を指す反復子を返します。|  
+|[max_size](#max_size)|`hash_multimap` の最大長を返します。|  
+|[rbegin](#rbegin)|反転された `hash_multimap` 内の最初の要素を指す反復子を返します。|  
+|[rend](#rend)|反転された `hash_multimap` 内の最後の要素の次の位置を指す反復子を返します。|  
+|[size](#size)|`hash_multimap` の新しいサイズを指定します。|  
+|[swap](#swap)|2 つの `hash_multimap` の要素を交換します。|  
+|[upper_bound](#upper_bound)|指定したキーよりも大きいキー値を持つ、`hash_multimap` 内の最初の要素を指す反復子を返します。|  
+|[value_comp](#value_comp)|`hash_multimap` 内の要素の値を並べ替えるために使用される比較オブジェクトのコピーを取得します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[hash_multimap::operator=](#hash_multimap__operator_eq)|別の `hash_multimap` のコピーで `hash_multimap` の要素を置き換えます。|  
+|[hash_multimap::operator=](#op_eq)|別の `hash_multimap` のコピーで `hash_multimap` の要素を置き換えます。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<hash_map>  
   
  **名前空間:** stdext  
   
-##  <a name="a-namehashmultimapallocatortypea--hashmultimapallocatortype"></a><a name="hash_multimap__allocator_type"></a>  hash_multimap::allocator_type  
+##  <a name="allocator_type"></a>  hash_multimap::allocator_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -187,17 +225,17 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::allo
   
  `Allocator` の詳細については、[hash_multimap クラス](../standard-library/hash-multimap-class.md)のトピックのコメントに関するセクションをご覧ください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `allocator_type` の使用例については、[get_allocator](#hash_multimap__get_allocator) の例をご覧ください。  
+  `allocator_type` の使用例については、[get_allocator](#get_allocator) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapbegina--hashmultimapbegin"></a><a name="hash_multimap__begin"></a>hash_multimap::begin  
+##  <a name="begin"></a>hash_multimap::begin  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
   
- hash_multimap の&1; つ目の要素を示す反復子を返します。  
+ hash_multimap の 1 つ目の要素を示す反復子を返します。  
   
 ```  
 const_iterator begin() const;
@@ -211,7 +249,7 @@ iterator begin();
 ### <a name="remarks"></a>コメント  
  **begin** の戻り値が `const_iterator` に割り当てられている場合、hash_multimap オブジェクト内の要素は変更できません。 **begin** の戻り値が **iterator** に割り当てられている場合、hash_multimap オブジェクト内の要素は変更できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -257,12 +295,12 @@ The first element of hm1 is 0.
 The first element of hm1 is now 1.  
 ```  
   
-##  <a name="a-namehashmultimapcbegina--hashmultimapcbegin"></a><a name="hash_multimap__cbegin"></a>  hash_multimap::cbegin  
+##  <a name="cbegin"></a>  hash_multimap::cbegin  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
   
- hash_multimap の&1; つ目の要素を示す定数反復子を返します。  
+ hash_multimap の 1 つ目の要素を示す定数反復子を返します。  
   
 ```  
 const_iterator cbegin() const;
@@ -300,7 +338,7 @@ int main( )
 The first element of hm1 is 2.  
 ```  
   
-##  <a name="a-namehashmultimapcenda--hashmultimapcend"></a><a name="hash_multimap__cend"></a>  hash_multimap::cend  
+##  <a name="cend"></a>  hash_multimap::cend  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -319,7 +357,7 @@ const_iterator cend() const;
   
  `cend` によって返された値は逆参照しないでください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -351,7 +389,7 @@ int main( )
 The value of last element of hm1 is 30.  
 ```  
   
-##  <a name="a-namehashmultimapcleara--hashmultimapclear"></a><a name="hash_multimap__clear"></a>  hash_multimap::clear  
+##  <a name="clear"></a>  hash_multimap::clear  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -363,7 +401,7 @@ void clear();
 ```  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   hash_multimap::clear メンバー関数の使用例を次に示します。  
@@ -401,12 +439,12 @@ The size of the hash_multimap is initially 2.
 The size of the hash_multimap after clearing is 0.  
 ```  
   
-##  <a name="a-namehashmultimapconstiteratora--hashmultimapconstiterator"></a><a name="hash_multimap__const_iterator"></a>  hash_multimap::const_iterator  
+##  <a name="const_iterator"></a>  hash_multimap::const_iterator  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
   
- hash_multimap の&1; つの **const** 要素を読み取ることができる双方向反復子を提供する型。  
+ hash_multimap の 1 つの **const** 要素を読み取ることができる双方向反復子を提供する型。  
   
 ```  
 typedef list<typename Traits::value_type, typename Traits::allocator_type>::const_iterator const_iterator;  
@@ -415,18 +453,18 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::cons
 ### <a name="remarks"></a>コメント  
  `const_iterator` 型で要素の値を変更することはできません。  
   
- hash_multimap によって定義される `const_iterator` は、[value_type](#hash_multimap__value_type) のオブジェクトを指します。これは `pair`*\<***const Key, Type***>* 型です。 キーの値はペアの&1; 番目のメンバー、マップされた要素の値はペアの&2; 番目のメンバーを介して取得できます。  
+ hash_multimap によって定義される `const_iterator` は、[value_type](#value_type) のオブジェクトを指します。これは `pair`*\<***const Key, Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  hash_multimap 内の要素を指す `const_iterator``cIter` を逆参照するには、**->** 演算子を使用します。  
   
- 要素のキーの値にアクセスする`cIter`  -> **最初**は、(\* `cIter`)。 **最初**します。 要素のマップされたデータの値にアクセスする`cIter`  ->  **2 番目**は、(\* `cIter`)。 **最初**します。  
+ 要素のキーの値にアクセスする`cIter`  -> **最初**、これと同じ (\* `cIter`)。 **最初**です。 要素のマップされた datum の値にアクセスする`cIter`  ->  **2 番目**、これと同じ (\* `cIter`)。 **最初**です。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `const_iterator` の使用例については、[begin](#hash_multimap__begin) の例をご覧ください。  
+  `const_iterator` の使用例については、[begin](#begin) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapconstpointera--hashmultimapconstpointer"></a><a name="hash_multimap__const_pointer"></a>  hash_multimap::const_pointer  
+##  <a name="const_pointer"></a>  hash_multimap::const_pointer  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -440,11 +478,11 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::co
 ### <a name="remarks"></a>コメント  
  `const_pointer` 型で要素の値を変更することはできません。  
   
- ほとんどの場合、hash_multimap オブジェクト内の要素にアクセスするには、[反復子](#hash_multimap__iterator)を使用する必要があります。  
+ ほとんどの場合、hash_multimap オブジェクト内の要素にアクセスするには、[反復子](#iterator)を使用する必要があります。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
-##  <a name="a-namehashmultimapconstreferencea--hashmultimapconstreference"></a><a name="hash_multimap__const_reference"></a>  hash_multimap::const_reference  
+##  <a name="const_reference"></a>  hash_multimap::const_reference  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -456,7 +494,7 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::co
 ```  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -501,7 +539,7 @@ The key of first element in the hash_multimap is 1.
 The data value of 1st element in the hash_multimap is 10.  
 ```  
   
-##  <a name="a-namehashmultimapconstreverseiteratora--hashmultimapconstreverseiterator"></a><a name="hash_multimap__const_reverse_iterator"></a>  hash_multimap::const_reverse_iterator  
+##  <a name="const_reverse_iterator"></a>  hash_multimap::const_reverse_iterator  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -515,18 +553,18 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::cons
 ### <a name="remarks"></a>コメント  
  `const_reverse_iterator` 型は要素の値を変更できず、逆の順序で hash_multimap を反復処理するために使用します。  
   
- hash_multimap によって定義される `const_reverse_iterator` は、[value_type](#hash_multimap__value_type) のオブジェクトを指します。これは `pair`*\<***const Key, Type>** 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するデータにマップされています。  
+ hash_multimap によって定義される `const_reverse_iterator` は、[value_type](#value_type) のオブジェクトを指します。これは `pair`*\<***const Key, Type>** 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するデータにマップされています。  
   
  hash_multimap 内の要素を指す `const_reverse_iterator``crIter` を逆参照するには、**->** 演算子を使用します。  
   
- 要素のキーの値にアクセスする`crIter`  -> **最初**は、(\* `crIter`)。 **最初**します。 要素のマップされたデータの値にアクセスする`crIter`  ->  **2 番目**は、(\* `crIter`)。 **最初**します。  
+ 要素のキーの値にアクセスする`crIter`  -> **最初**、これと同じ (\* `crIter`)。 **最初**です。 要素のマップされた datum の値にアクセスする`crIter`  ->  **2 番目**、これと同じ (\* `crIter`)。 **最初**です。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `const_reverse_iterator` の宣言方法や使用方法の例については、[rend](#hash_multimap__rend) の例をご覧ください。  
+  `const_reverse_iterator` の宣言方法や使用方法の例については、[rend](#rend) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapcounta--hashmultimapcount"></a><a name="hash_multimap__count"></a>  hash_multimap::count  
+##  <a name="count"></a>  hash_multimap::count  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -538,7 +576,7 @@ size_type count(const Key& key) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  照合される hash_multimap の要素のキー。  
   
 ### <a name="return-value"></a>戻り値  
@@ -547,11 +585,11 @@ size_type count(const Key& key) const;
 ### <a name="remarks"></a>コメント  
  メンバー関数は、  
   
- **[lower_bound (** ` key` **), upper_bound (** ` key` **) )**  
+ **[lower_bound (** `key` **), upper_bound (** `key` **) )**  
   
- の範囲の、キー値 ` key` を持つ要素の数を返します。  
+ の範囲の、キー値 `key` を持つ要素の数を返します。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   hash_multimap::count メンバー関数の使用例を次に示します。  
@@ -597,7 +635,7 @@ The number of elements in hm1 with a sort key of 2 is: 2.
 The number of elements in hm1 with a sort key of 3 is: 0.  
 ```  
   
-##  <a name="a-namehashmultimapcrbegina--hashmultimapcrbegin"></a><a name="hash_multimap__crbegin"></a>  hash_multimap::crbegin  
+##  <a name="crbegin"></a>  hash_multimap::crbegin  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -612,13 +650,13 @@ const_reverse_iterator crbegin() const;
  反転された [hash_multimap](../standard-library/hash-multimap-class.md) 内の最初の要素を示す、または反転されていない `hash_multimap` 内の最後の要素だったものを示す定数逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `crbegin` は、[hash_multimap::begin](#hash_multimap__begin) が `hash_multimap` で使用されるように、逆順の hash_multimap で使用されます。  
+ `crbegin` は、[hash_multimap::begin](#begin) が `hash_multimap` で使用されるように、逆順の hash_multimap で使用されます。  
   
  戻り値が `crbegin` の場合、`hash_multimap` オブジェクトは変更できません。  
   
  `crbegin` を使用して、`hash_multimap` 内を後方に向かって反復処理できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -649,7 +687,7 @@ int main( )
 The first element of the reversed hash_multimap hm1 is 3.  
 ```  
   
-##  <a name="a-namehashmultimapcrenda--hashmultimapcrend"></a><a name="hash_multimap__crend"></a>  hash_multimap::crend  
+##  <a name="crend"></a>  hash_multimap::crend  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -664,7 +702,7 @@ const_reverse_iterator crend() const;
  逆順の [hash_multimap](../standard-library/hash-multimap-class.md) 内の最後の要素の次の場所 (通常の順序の `hash_multimap` 内の最初の要素の前の場所) を指す定数逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `crend` は、[hash_multimap::end](#hash_multimap__end) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
+ `crend` は、[hash_multimap::end](#end) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
   
  戻り値が `crend` の場合、`hash_multimap` オブジェクトは変更できません。  
   
@@ -672,7 +710,7 @@ const_reverse_iterator crend() const;
   
  `crend` によって返された値は逆参照しないでください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -704,7 +742,7 @@ int main( )
 The last element of the reversed hash_multimap hm1 is 3.  
 ```  
   
-##  <a name="a-namehashmultimapdifferencetypea--hashmultimapdifferencetype"></a><a name="hash_multimap__difference_type"></a>  hash_multimap::difference_type  
+##  <a name="difference_type"></a>  hash_multimap::difference_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -716,11 +754,11 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::di
 ```  
   
 ### <a name="remarks"></a>コメント  
- `difference_type` は、コンテナーの反復子を減算またはインクリメントするときに返される型です。 通常、`difference_type` は、*[ first,  last) * の範囲内で、反復子 ` first` と ` last` の間にある要素の数を表すために使用され、` first` が指す要素と、` last` が指す要素の&1; つ前までの範囲の要素を含みます。  
+ `difference_type` は、コンテナーの反復子を減算またはインクリメントするときに返される型です。 通常、`difference_type` は、*[ first,  last)*  の範囲内で、反復子 `first` と `last` の間にある要素の数を表すために使用され、`first` が指す要素と、`last` が指す要素の 1 つ前までの範囲の要素を含みます。  
   
  `difference_type` は、入力反復子の要件を満たすすべての反復子 (set などの反転可能なコンテナーによってサポートされる双方向反復子のクラスを含む) に対して使用できますが、反復子間の減算は、vector などのランダム アクセス コンテナーによって提供される、ランダム アクセス反復子によってのみサポートされます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -782,7 +820,7 @@ The keys of the mapped elements are: 1 2 2 3.
 The values of the mapped elements are: 10 20 30 20.  
 ```  
   
-##  <a name="a-namehashmultimapemplacea--hashmultimapemplace"></a><a name="hash_multimap__emplace"></a>  hash_multimap::emplace  
+##  <a name="emplace"></a>  hash_multimap::emplace  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -799,15 +837,15 @@ iterator emplace(ValTy&& val);
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` val`|[hash_multimap](../standard-library/hash-multimap-class.md) に挿入される要素の移動コンストラクトに使用する値。|  
+|`val`|[hash_multimap](../standard-library/hash-multimap-class.md) に挿入される要素の移動コンストラクトに使用する値。|  
   
 ### <a name="return-value"></a>戻り値  
  `emplace` メンバー関数は、新しい要素が挿入された位置を指す反復子を返します。  
   
 ### <a name="remarks"></a>コメント  
- 要素の [hash_multimap::value_type](#hash_multimap__value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ 要素の [hash_multimap::value_type](#value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 から、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -838,7 +876,7 @@ After the emplace insertion, hm1 contains:
  1 => a  
 ```  
   
-##  <a name="a-namehashmultimapemplacehinta--hashmultimapemplacehint"></a><a name="hash_multimap__emplace_hint"></a>  hash_multimap::emplace_hint  
+##  <a name="emplace_hint"></a>  hash_multimap::emplace_hint  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -857,18 +895,18 @@ iterator emplace_hint(
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` val`|挿入される要素 (一般的には、キーが同じ順序付けになる要素) が `hash_multimap` にまだ含まれていない場合に、[hash_multimap](../standard-library/hash-multimap-class.md) に挿入される要素の移動コンストラクトに使用する値。|  
+|`val`|挿入される要素 (一般的には、キーが同じ順序付けになる要素) が `hash_multimap` にまだ含まれていない場合に、[hash_multimap](../standard-library/hash-multimap-class.md) に挿入される要素の移動コンストラクトに使用する値。|  
 |`_Where`|正しい挿入ポイントの検索を開始する場所に関するヒント。|  
   
 ### <a name="return-value"></a>戻り値  
- [hash_multimap::emplace](#hash_multimap__emplace) メンバー関数は、`hash_multimap` に新しい要素が挿入された位置を指す反復子を返します。  
+ [hash_multimap::emplace](#emplace) メンバー関数は、`hash_multimap` に新しい要素が挿入された位置を指す反復子を返します。  
   
 ### <a name="remarks"></a>コメント  
- 要素の [hash_multimap::value_type](#hash_multimap__value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ 要素の [hash_multimap::value_type](#value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
   
  挿入ポイントが `_Where` の直後にある場合、挿入処理は対数時間ではなく償却定数時間で実行できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 から、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -899,7 +937,7 @@ After the emplace insertion, hm1 contains:
  1 => a  
 ```  
   
-##  <a name="a-namehashmultimapemptya--hashmultimapempty"></a><a name="hash_multimap__empty"></a>  hash_multimap::empty  
+##  <a name="empty"></a>  hash_multimap::empty  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -914,7 +952,7 @@ bool empty() const;
  hash_multimap が空の場合は **true**。hash_multimap が空ではない場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -950,7 +988,7 @@ The hash_multimap hm1 is not empty.
 The hash_multimap hm2 is empty.  
 ```  
   
-##  <a name="a-namehashmultimapenda--hashmultimapend"></a><a name="hash_multimap__end"></a>  hash_multimap::end  
+##  <a name="end"></a>  hash_multimap::end  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -971,7 +1009,7 @@ iterator end();
   
  **end** によって返された値は逆参照しないでください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1021,7 +1059,7 @@ The value of last element of hm1 is 30.
 The value of last element of hm1 is now 20.  
 ```  
   
-##  <a name="a-namehashmultimapequalrangea--hashmultimapequalrange"></a><a name="hash_multimap__equal_range"></a>  hash_multimap::equal_range  
+##  <a name="equal_range"></a>  hash_multimap::equal_range  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1035,16 +1073,16 @@ pair <iterator, iterator> equal_range (const Key& key);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の hash_multimap 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
- 1 番目がそのキーの [lower_bound](#hash_multimap__lower_bound)、2 番目がそのキーの [upper_bound](#hash_multimap__upper_bound) である、反復子のペア。  
+ 1 番目がそのキーの [lower_bound](#lower_bound)、2 番目がそのキーの [upper_bound](#upper_bound) である、反復子のペア。  
   
- ペアの最初の反復子にアクセスする`pr`使用してメンバー関数によって返される`pr`です。 **最初**下限の境界の反復子を逆参照するには使用と\*(`pr`します。 **まず**)。 ペアの&2; つ目の反復子にアクセスする`pr`使用してメンバー関数によって返される`pr`です。 **2 番目**上限反復子を逆参照するには使用と\*(`pr`します。 **次に**)。  
+ ペアの最初の反復子にアクセスする`pr`使用して、メンバー関数によって返される、`pr`です。 **最初**下限反復子を逆参照を使用して\*(`pr`です。 **まず**)。 ペアの 2 つ目の反復子にアクセスする`pr`使用して、メンバー関数によって返される、`pr`です。 **2 番目**と使用する上限の反復子を逆参照、 \*(`pr`です。 **2 つ目**)。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1109,7 +1147,7 @@ A direct call of upper_bound( 2 ) gives 30,
 The hash_multimap hm1 doesn't have an element with a key less than 4.  
 ```  
   
-##  <a name="a-namehashmultimaperasea--hashmultimaperase"></a><a name="hash_multimap__erase"></a>  hash_multimap::erase  
+##  <a name="erase"></a>  hash_multimap::erase  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1128,24 +1166,24 @@ size_type erase(const key_type& key);
  `_Where`  
  hash_multimap から削除する要素の位置。  
   
- ` first`  
+ `first`  
  hash_multimap から削除する最初の要素の位置。  
   
- ` last`  
+ `last`  
  hash_multimap から削除する最後の要素の次の位置。  
   
- ` key`  
+ `key`  
  hash_multimap から削除する要素のキー。  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つのメンバー関数の場合は、削除された要素の後に残った最初の要素、またはそのような要素が存在しない場合は hash_multimap の末尾へのポインターを指定する、双方向反復子。  
+ 最初の 2 つのメンバー関数の場合は、削除された要素の後に残った最初の要素、またはそのような要素が存在しない場合は hash_multimap の末尾へのポインターを指定する、双方向反復子。  
   
  3 番目のメンバー関数の場合は、hash_multimap から削除された要素の数を返します。  
   
 ### <a name="remarks"></a>コメント  
  メンバー関数が例外をスローすることはありません。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   hash_multimap::erase メンバー関数の使用例を次に示します。  
@@ -1233,7 +1271,7 @@ After another element with a key equal to that of the
  2nd element is deleted, the hash_multimap hm3 is: 0 3.  
 ```  
   
-##  <a name="a-namehashmultimapfinda--hashmultimapfind"></a><a name="hash_multimap__find"></a>  hash_multimap::find  
+##  <a name="find"></a>  hash_multimap::find  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1247,7 +1285,7 @@ const_iterator find(const Key& key) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の hash_multimap 内の要素の並べ替えキーによって照合されるキー。  
   
 ### <a name="return-value"></a>戻り値  
@@ -1258,7 +1296,7 @@ const_iterator find(const Key& key) const;
   
  **find** の戻り値が `const_iterator` に割り当てられている場合、hash_multimap オブジェクトは変更できません。 **find** の戻り値が **iterator** に割り当てられている場合、hash_multimap オブジェクトを変更できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1328,7 +1366,7 @@ that of the last element is: 20.
 This is not the last element of hash_multimap hm1.  
 ```  
   
-##  <a name="a-namehashmultimapgetallocatora--hashmultimapgetallocator"></a><a name="hash_multimap__get_allocator"></a>  hash_multimap::get_allocator  
+##  <a name="get_allocator"></a>  hash_multimap::get_allocator  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1343,9 +1381,9 @@ Allocator get_allocator() const;
  hash_multimap で使用されるアロケーター。  
   
 ### <a name="remarks"></a>コメント  
- hash_multimap クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 C++ 標準ライブラリ コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の&1; つです。  
+ hash_multimap クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 C++ 標準ライブラリ コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の 1 つです。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1404,7 +1442,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namehashmultimaphashmultimapa--hashmultimaphashmultimap"></a><a name="hash_multimap__hash_multimap"></a>  hash_multimap::hash_multimap  
+##  <a name="hash_multimap"></a>  hash_multimap::hash_multimap  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1472,23 +1510,23 @@ hash_multimap(
 |`IList`|コピー元の initializer_list。|  
   
 ### <a name="remarks"></a>コメント  
- すべてのコンストラクターは、アロケーター オブジェクトの型を格納します。このオブジェクトは hash_multimap のメモリ ストレージを管理し、後で [get_allocator](#hash_multimap__get_allocator) を呼び出して取得することができます。 代替アロケーターの代わりに使用されるクラス宣言やプリプロセス マクロでは、アロケーターのパラメーターが省略される場合があります。  
+ すべてのコンストラクターは、アロケーター オブジェクトの型を格納します。このオブジェクトは hash_multimap のメモリ ストレージを管理し、後で [get_allocator](#get_allocator) を呼び出して取得することができます。 代替アロケーターの代わりに使用されるクラス宣言やプリプロセス マクロでは、アロケーターのパラメーターが省略される場合があります。  
   
  すべてのコンストラクターは、それぞれの hash_multimap を初期化します。  
   
- すべてのコンストラクターは、`Traits` 型の関数オブジェクトを格納します。このオブジェクトは hash_multimap のキーの順序を確立するために使用され、後で [key_comp](#hash_multimap__key_comp) を呼び出して取得することができます。  
+ すべてのコンストラクターは、`Traits` 型の関数オブジェクトを格納します。このオブジェクトは hash_multimap のキーの順序を確立するために使用され、後で [key_comp](#key_comp) を呼び出して取得することができます。  
   
- 最初の&3; つのコンストラクターは、空の初期 hash_multimap を指定します。2 番目のコンストラクターは要素の順序を確立するために使用する比較関数の型 (`Comp`) を指定し、3 番目のコンストラクターは使用するアロケーターの型 (`_Al`) を明示的に指定します。 キーワード `explicit` は、特定の種類の自動型変換が実行されないようにします。  
+ 最初の 3 つのコンストラクターは、空の初期 hash_multimap を指定します。2 番目のコンストラクターは要素の順序を確立するために使用する比較関数の型 (`Comp`) を指定し、3 番目のコンストラクターは使用するアロケーターの型 (`_Al`) を明示的に指定します。 キーワード `explicit` は、特定の種類の自動型変換が実行されないようにします。  
   
  4 番目のコンストラクターは、hash_multimap `Right` のコピーを指定します。  
   
- 次の&3; つのコンストラクターは、map の範囲 `First, Last)` をコピーします。下のコンストラクターになるほど、より明確に **Traits** クラスの比較関数と Allocator の型が指定されています。  
+ 次の 3 つのコンストラクターは、map の範囲 `First, Last)` をコピーします。下のコンストラクターになるほど、より明確に **Traits** クラスの比較関数と Allocator の型が指定されています。  
   
  8 番目のコンストラクターは、hash_multimap `Right` を移動します。  
   
- 最後の&3; つのコンストラクターは、initializer_list を使用します。  
+ 最後の 3 つのコンストラクターは、initializer_list を使用します。  
   
-##  <a name="a-namehashmultimapinserta--hashmultimapinsert"></a><a name="hash_multimap__insert"></a>  hash_multimap::insert  
+##  <a name="insert"></a>  hash_multimap::insert  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1530,20 +1568,20 @@ iterator insert(
 |`Last`|マップからコピーされる最後の要素の次の位置。|  
   
 ### <a name="return-value"></a>戻り値  
- 最初の&2; つの `insert` メンバー関数は、新しい要素が挿入された位置を指す反復子を返します。  
+ 最初の 2 つの `insert` メンバー関数は、新しい要素が挿入された位置を指す反復子を返します。  
   
  3 番目のメンバー関数は、挿入する要素の initializer_list を使用します。  
   
  4 番目のメンバー関数は、指定されたセットの範囲 `[First, Last)` 内の反復子によってアドレス指定されている各要素に対応するマップに、要素値のシーケンスを挿入します。  
   
- 最後の&2; つの `insert` メンバー関数は、先頭の&2; つのメンバー関数と同じように動作しますが、挿入値を移動構築する点が異なります。  
+ 最後の 2 つの `insert` メンバー関数は、先頭の 2 つのメンバー関数と同じように動作しますが、挿入値を移動構築する点が異なります。  
   
 ### <a name="remarks"></a>コメント  
- 要素の [value_type](#hash_multimap__value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ 要素の [value_type](#value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
   
  挿入ポイントが `insert`の直後にある場合、挿入処理は対数時間ではなく `Where`のヒント バージョンでは、償却定数時間で実行できます。  
   
-##  <a name="a-namehashmultimapiteratora--hashmultimapiterator"></a><a name="hash_multimap__iterator"></a>  hash_multimap::iterator  
+##  <a name="iterator"></a>  hash_multimap::iterator  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1555,20 +1593,20 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::iter
 ```  
   
 ### <a name="remarks"></a>コメント  
- hash_multimap によって定義される**反復子**は、[value_type](#hash_multimap__value_type) のオブジェクトを指します。これは `pair`\< **const Key, Type**> 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するデータにマップされています。  
+ hash_multimap によって定義される**反復子**は、[value_type](#value_type) のオブジェクトを指します。これは `pair`\< **const Key, Type**> 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するデータにマップされています。  
   
  hash_multimap 内の要素を指す **反復子**`Iter` を逆参照するには、**->** 演算子を使用します。  
   
- 要素のキーの値にアクセスする`Iter`  -> **最初**は、(\* `Iter`)。 **最初**します。 要素のマップされたデータの値にアクセスする`Iter`  ->  **2 番目**は、(\* `Iter`)。 **最初**します。  
+ 要素のキーの値にアクセスする`Iter`  -> **最初**、これと同じ (\* `Iter`)。 **最初**です。 要素のマップされた datum の値にアクセスする`Iter`  ->  **2 番目**、これと同じ (\* `Iter`)。 **最初**です。  
   
  **iterator** 型を使って要素の値を変更できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  **iterator** の宣言方法や使用方法の例については、[begin](#hash_multimap__begin) の例をご覧ください。  
+  **iterator** の宣言方法や使用方法の例については、[begin](#begin) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapkeycompa--hashmultimapkeycomp"></a><a name="hash_multimap__key_comp"></a>  hash_multimap::key_comp  
+##  <a name="key_comp"></a>  hash_multimap::key_comp  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1585,11 +1623,11 @@ key_compare key_comp() const;
 ### <a name="remarks"></a>コメント  
  格納されているオブジェクトは以下のメンバー関数を定義します。  
   
- **bool operator(const Key&** ` left` **, const Key&** ` right` **);**  
+ **bool operator(const Key&** `left` **, const Key&** `right` **);**  
   
- これは、並べ替え順で ` left` が ` right` に先行しかつ等しくない場合に **true** を返します。  
+ これは、並べ替え順で `left` が `right` に先行しかつ等しくない場合に **true** を返します。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1640,12 +1678,12 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namehashmultimapkeycomparea--hashmultimapkeycompare"></a><a name="hash_multimap__key_compare"></a>  hash_multimap::key_compare  
+##  <a name="key_compare"></a>  hash_multimap::key_compare  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
   
- 2 つの並べ替えキーを比較して、hash_multimap 内の&2; つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
+ 2 つの並べ替えキーを比較して、hash_multimap 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。  
   
 ```  
 typedef Traits key_compare;  
@@ -1656,12 +1694,12 @@ typedef Traits key_compare;
   
  `Traits` の詳細については、[hash_multimap クラス](../standard-library/hash-multimap-class.md)のトピックをご覧ください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `key_compare` の宣言方法や使用方法の例については、[key_comp](#hash_multimap__key_comp) の例をご覧ください。  
+  `key_compare` の宣言方法や使用方法の例については、[key_comp](#key_comp) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapkeytypea--hashmultimapkeytype"></a><a name="hash_multimap__key_type"></a>  hash_multimap::key_type  
+##  <a name="key_type"></a>  hash_multimap::key_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1677,12 +1715,12 @@ typedef Key key_type;
   
  `Key` の詳細については、[hash_multimap クラス](../standard-library/hash-multimap-class.md)のトピックのコメントに関するセクションをご覧ください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `key_compare` の宣言方法や使用方法の例については、[value_type](#hash_multimap__value_type) の例をご覧ください。  
+  `key_compare` の宣言方法や使用方法の例については、[value_type](#value_type) の例をご覧ください。  
   
-##  <a name="a-namehashmultimaplowerbounda--hashmultimaplowerbound"></a><a name="hash_multimap__lower_bound"></a>  hash_multimap::lower_bound  
+##  <a name="lower_bound"></a>  hash_multimap::lower_bound  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1696,16 +1734,16 @@ const_iterator lower_bound(const Key& key) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の hash_multimap 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
- 引数キー以上のキーを持つ hash_multimap 内の要素の位置を指す、または、キーの一致が検出されない場合は hash_multimap 内の最後の要素の次の位置を指す、[反復子](#hash_multimap__iterator)または [const_iterator](#hash_multimap__const_iterator)。  
+ 引数キー以上のキーを持つ hash_multimap 内の要素の位置を指す、または、キーの一致が検出されない場合は hash_multimap 内の最後の要素の次の位置を指す、[反復子](#iterator)または [const_iterator](#const_iterator)。  
   
  `lower_bound` の戻り値が `const_iterator` に割り当てられている場合、hash_multimap オブジェクトは変更できません。 `lower_bound` の戻り値が **iterator** に割り当てられている場合、hash_multimap オブジェクトを変更できます。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1776,7 +1814,7 @@ The first element of hm1 with a key matching
 This is not the last element of hash_multimap hm1.  
 ```  
   
-##  <a name="a-namehashmultimapmappedtypea--hashmultimapmappedtype"></a><a name="hash_multimap__mapped_type"></a>  hash_multimap::mapped_type  
+##  <a name="mapped_type"></a>  hash_multimap::mapped_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1792,12 +1830,12 @@ typedef Type mapped_type;
   
  `Type` の詳細については、[hash_multimap クラス](../standard-library/hash-multimap-class.md)のトピックをご覧ください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `key_type` の宣言方法や使用方法の例については、[value_type](#hash_multimap__value_type) の例をご覧ください。  
+  `key_type` の宣言方法や使用方法の例については、[value_type](#value_type) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapmaxsizea--hashmultimapmaxsize"></a><a name="hash_multimap__max_size"></a>  hash_multimap::max_size  
+##  <a name="max_size"></a>  hash_multimap::max_size  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1812,7 +1850,7 @@ size_type max_size() const;
  hash_multimap の可能な最大長。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1835,7 +1873,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namehashmultimapoperatoreqa--hashmultimapoperator"></a><a name="hash_multimap__operator_eq"></a>  hash_multimap::operator=  
+##  <a name="op_eq"></a>  hash_multimap::operator=  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1853,10 +1891,10 @@ hash_multimap& operator=(hash_multimap&& right);
 |||  
 |-|-|  
 |パラメーター|説明|  
-|` right`|`hash_multimap` にコピーする [hash_multimap](../standard-library/hash-multimap-class.md)。|  
+|`right`|`hash_multimap` にコピーする [hash_multimap](../standard-library/hash-multimap-class.md)。|  
   
 ### <a name="remarks"></a>コメント  
- `hash_multimap` では、`operator=` 内の既存の要素を消去した後、` right` の内容を `hash_multimap` 内にコピーまたは移動します。  
+ `hash_multimap` では、`operator=` 内の既存の要素を消去した後、`right` の内容を `hash_multimap` 内にコピーまたは移動します。  
   
 ### <a name="example"></a>例  
   
@@ -1896,7 +1934,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namehashmultimappointera--hashmultimappointer"></a><a name="hash_multimap__pointer"></a>  hash_multimap::pointer  
+##  <a name="pointer"></a>  hash_multimap::pointer  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1910,11 +1948,11 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::po
 ### <a name="remarks"></a>コメント  
  **pointer** 型を使って要素の値を変更できます。  
   
- ほとんどの場合、hash_multimap オブジェクト内の要素にアクセスするには、[反復子](#hash_multimap__iterator)を使用する必要があります。  
+ ほとんどの場合、hash_multimap オブジェクト内の要素にアクセスするには、[反復子](#iterator)を使用する必要があります。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
-##  <a name="a-namehashmultimaprbegina--hashmultimaprbegin"></a><a name="hash_multimap__rbegin"></a>  hash_multimap::rbegin  
+##  <a name="rbegin"></a>  hash_multimap::rbegin  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -1931,13 +1969,13 @@ reverse_iterator rbegin();
  反転された hash_multimap 内の最初の要素を示す、または反転されていない hash_multimap 内の最後の要素だったものを示す逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `rbegin` は、[begin](#hash_multimap__begin) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
+ `rbegin` は、[begin](#begin) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
   
  `rbegin` の戻り値が `const_reverse_iterator` に割り当てられている場合、hash_multimap オブジェクトは変更できません。 `rbegin` の戻り値が `reverse_iterator` に割り当てられている場合、hash_multimap オブジェクトは変更できます。  
   
  `rbegin` を使用して、hash_multimap 内を後方に向かって反復処理できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1999,7 +2037,7 @@ After the erasure, the first element
  in the reversed hash_multimap is 2.  
 ```  
   
-##  <a name="a-namehashmultimapreferencea--hashmultimapreference"></a><a name="hash_multimap__reference"></a>  hash_multimap::reference  
+##  <a name="reference"></a>  hash_multimap::reference  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2011,7 +2049,7 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::re
 ```  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -2063,7 +2101,7 @@ The data value of first element in the hash_multimap is 10.
 The modified data value of first element is 15.  
 ```  
   
-##  <a name="a-namehashmultimaprenda--hashmultimaprend"></a><a name="hash_multimap__rend"></a>  hash_multimap::rend  
+##  <a name="rend"></a>  hash_multimap::rend  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2080,15 +2118,15 @@ reverse_iterator rend();
  逆順の hash_multimap 内の最後の要素の次の場所 (通常の順序の hash_multimap 内の最初の要素の前の場所) を指す逆順双方向反復子。  
   
 ### <a name="remarks"></a>コメント  
- `rend` は、[end](#hash_multimap__end) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
+ `rend` は、[end](#end) が hash_multimap で使用されるように、逆順の hash_multimap で使用されます。  
   
- `rend` の戻り値が [const_reverse_iterator](#hash_multimap__const_reverse_iterator) に割り当てられている場合、hash_multimap オブジェクトは変更できません。 `rend` の戻り値が [reverse_iterator](#hash_multimap__reverse_iterator) に割り当てられている場合、hash_multimap オブジェクトは変更できます。  
+ `rend` の戻り値が [const_reverse_iterator](#const_reverse_iterator) に割り当てられている場合、hash_multimap オブジェクトは変更できません。 `rend` の戻り値が [reverse_iterator](#reverse_iterator) に割り当てられている場合、hash_multimap オブジェクトは変更できます。  
   
  `rend` を使用して、逆順反復子が hash_multimap の末尾に達したかどうかをテストできます。  
   
  `rend` によって返された値は逆参照しないでください。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -2151,12 +2189,12 @@ The reversed hash_multimap is: 3 2 1 .
 After the erasure, the last element in the reversed hash_multimap is 2.  
 ```  
   
-##  <a name="a-namehashmultimapreverseiteratora--hashmultimapreverseiterator"></a><a name="hash_multimap__reverse_iterator"></a>  hash_multimap::reverse_iterator  
+##  <a name="reverse_iterator"></a>  hash_multimap::reverse_iterator  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
   
- 反転された hash_multimap 内の&1; つの要素の読み取りまたは変更ができる双方向反復子を提供する型。  
+ 反転された hash_multimap 内の 1 つの要素の読み取りまたは変更ができる双方向反復子を提供する型。  
   
 ```  
 typedef list<typename Traits::value_type, typename Traits::allocator_type>::reverse_iterator reverse_iterator;  
@@ -2165,14 +2203,14 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::reve
 ### <a name="remarks"></a>コメント  
  型 `reverse_iterator` は、逆の順序で hash_multimap を反復処理するために使用します。  
   
- hash_multimap によって定義される `reverse_iterator` は、[value_type](#hash_multimap__value_type) のオブジェクトを指します。これは `pair`\< **const Key, Type**> 型です。 キーの値はペアの&1; 番目のメンバー、マップされた要素の値はペアの&2; 番目のメンバーを介して取得できます。  
+ hash_multimap によって定義される `reverse_iterator` は、[value_type](#value_type) のオブジェクトを指します。これは `pair`\< **const Key, Type**> 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#hash_multimap__rbegin) の例をご覧ください。  
+  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapsizea--hashmultimapsize"></a><a name="hash_multimap__size"></a>  hash_multimap::size  
+##  <a name="size"></a>  hash_multimap::size  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2187,7 +2225,7 @@ size_type size() const;
  hash_multimap の現在の長さ。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   hash_multimap::size メンバー関数の使用例を次に示します。  
@@ -2221,7 +2259,7 @@ The hash_multimap length is 1.
 The hash_multimap length is now 2.  
 ```  
   
-##  <a name="a-namehashmultimapsizetypea--hashmultimapsizetype"></a><a name="hash_multimap__size_type"></a>  hash_multimap::size_type  
+##  <a name="size_type"></a>  hash_multimap::size_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2233,12 +2271,12 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::si
 ```  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
-  `size_type` の宣言方法や使用方法の例については、[size](#hash_multimap__size) の例をご覧ください。  
+  `size_type` の宣言方法や使用方法の例については、[size](#size) の例をご覧ください。  
   
-##  <a name="a-namehashmultimapswapa--hashmultimapswap"></a><a name="hash_multimap__swap"></a>  hash_multimap::swap  
+##  <a name="swap"></a>  hash_multimap::swap  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2250,13 +2288,13 @@ void swap(hash_multimap& right);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` right`  
+ `right`  
  交換する要素を提供する hash_multimap (hash_multimap の要素と要素を交換する hash_multimap)。  
   
 ### <a name="remarks"></a>コメント  
- メンバー関数は、要素を交換する&2; つの hash_multimap において要素を指定している参照、ポインター、反復子を無効にすることはありません。  
+ メンバー関数は、要素を交換する 2 つの hash_multimap において要素を指定している参照、ポインター、反復子を無効にすることはありません。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -2310,7 +2348,7 @@ After swapping with hm2, hash_multimap hm1 is: 100 200.
 After swapping with hm3, hash_multimap hm1 is: 300.  
 ```  
   
-##  <a name="a-namehashmultimapupperbounda--hashmultimapupperbound"></a><a name="hash_multimap__upper_bound"></a>  hash_multimap::upper_bound  
+##  <a name="upper_bound"></a>  hash_multimap::upper_bound  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2324,16 +2362,16 @@ const_iterator upper_bound(const Key& key) const;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` key`  
+ `key`  
  検索対象の hash_multimap 内の要素の並べ替えキーと比較される引数キー。  
   
 ### <a name="return-value"></a>戻り値  
- 引数キーより大きいキーを持つ hash_multimap 内の要素の位置を指す、または、キーの一致が検出されない場合は hash_multimap 内の最後の要素の次の位置を指す、[反復子](#hash_multimap__iterator)または [const_iterator](#hash_multimap__const_iterator)。  
+ 引数キーより大きいキーを持つ hash_multimap 内の要素の位置を指す、または、キーの一致が検出されない場合は hash_multimap 内の最後の要素の次の位置を指す、[反復子](#iterator)または [const_iterator](#const_iterator)。  
   
  `upper_bound` の戻り値が `const_iterator` に割り当てられている場合、hash_multimap オブジェクトは変更できません。 `upper_bound` の戻り値が **iterator** に割り当てられている場合、hash_multimap オブジェクトを変更できます。  
   
 ### <a name="remarks"></a>コメント  
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -2395,7 +2433,7 @@ The first element of hm1 with a key greater than
  that of the initial element of hm1 is: 20.  
 ```  
   
-##  <a name="a-namehashmultimapvaluecompa--hashmultimapvaluecomp"></a><a name="hash_multimap__value_comp"></a>  hash_multimap::value_comp  
+##  <a name="value_comp"></a>  hash_multimap::value_comp  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2410,13 +2448,13 @@ value_compare value_comp() const;
  hash_multimap が要素の並べ替えに使用する比較関数オブジェクトを返します。  
   
 ### <a name="remarks"></a>コメント  
- hash_multimap *m* について、2 つの要素 *e*1( *k*1 *, d*1) および *e*2( *k*2 *, d*2) が [value_type](#hash_multimap__value_type) 型のオブジェクトである場合 (ここで *k*1 および *k*2 は [key_type](#hash_multimap__key_type) 型のキーであり、`d`1 および `d`2 は [mapped_type](#hash_multimap__mapped_type) 型のデータである)、*m.*`value_comp`( )( *e*1 *, e*2) は *m.*`key_comp`( ) ( *k*1 *, k*2) と同等です。 格納されているオブジェクトは以下のメンバー関数を定義します。  
+ hash_multimap *m* について、2 つの要素 *e*1( *k*1 *, d*1) および *e*2( *k*2 *, d*2) が [value_type](#value_type) 型のオブジェクトである場合 (ここで *k*1 および *k*2 は [key_type](#key_type) 型のキーであり、`d`1 および `d`2 は [mapped_type](#mapped_type) 型のデータである)、*m.*`value_comp`( )( *e*1 *, e*2) は *m.*`key_comp`( ) ( *k*1 *, k*2) と同等です。 格納されているオブジェクトは以下のメンバー関数を定義します。  
   
- **bool operator**( **value_type&**` left`, **value_type&** ` right`);  
+ **bool operator**( **value_type&**`left`, **value_type&** `right`);  
   
- これは、並べ替え順で ` left` のキー値が ` right` のキー値に先行しかつ等しくない場合に、**true** を返します。  
+ これは、並べ替え順で `left` のキー値が `right` のキー値に先行しかつ等しくない場合に、**true** を返します。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -2465,7 +2503,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-namehashmultimapvaluetypea--hashmultimapvaluetype"></a><a name="hash_multimap__value_type"></a>  hash_multimap::value_type  
+##  <a name="value_type"></a>  hash_multimap::value_type  
   
 > [!NOTE]
 >  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
@@ -2477,9 +2515,9 @@ typedef pair<const Key, Type> value_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `value_type` は、`pair` *<*`key_type`*,* `mapped_type`*>* ではなく `pair` *\<***const**[key_type](#hash_multimap__key_type), [mapped_type](#hash_multimap__mapped_type)> として宣言されます。非定数の反復子または参照を使うと、連想コンテナーのキーが変更されない可能性があるためです。  
+ `value_type`ペアとして宣言された\<const [key_type](#key_type)、 [mapped_type](#mapped_type)> ペアリングと\<key_type、mapped_type > 連想コンテナーのキーは変更できません非定数反復子または参照を使用しているためです。  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[The stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   

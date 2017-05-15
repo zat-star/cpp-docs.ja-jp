@@ -69,10 +69,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 561e0e677200e075b94fce0e354691bcdbce1505
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 8a7075b9a86aceda75b4934a74b405fc9e27a908
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="ismbclegal-ismbclegall-ismbcsymbol-ismbcsymboll"></a>_ismbclegal、_ismbclegal_l、_ismbcsymbol、_ismbcsymbol_l
@@ -117,7 +118,7 @@ int _ismbcsymbol_l(
   
 |ルーチン|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
-|`_ismbclegal`|有効なマルチバイト|`c` の最初のバイトが 0x81 ～ 0x9F または 0xE0 ～ 0xFC の範囲内にあり、2 番目のバイトが 0x40 ～ 0x7E または 0x80 ～ FC の範囲内にある場合にのみ、0 以外の値を返します。|  
+|`_ismbclegal`|有効なマルチバイト|`c` の最初のバイトが 0x81 - 0x9F または 0xE0 - 0xFC の範囲内にあり、2 番目のバイトが 0x40 - 0x7E または 0x80 - FC の範囲内にある場合にのみ、0 以外の値を返します。|  
 |`_ismbcsymbol`|マルチバイトの記号|0x8141<=`c`<=0x81AC の場合にのみ、0 以外の値を返します。|  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
@@ -135,9 +136,6 @@ int _ismbcsymbol_l(
 |`_ismbcsymbol,_ismbcsymbol_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

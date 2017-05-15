@@ -61,10 +61,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9fc67bbf6c900a79825fe62b6882c4459c348d61
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: d91f7b780c8f17fbe1e12a195b6a7cf2eaad3d2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="putenv-wputenv"></a>_putenv、_wputenv
@@ -89,7 +90,7 @@ int _wputenv(
  環境文字列定義。  
   
 ## <a name="return-value"></a>戻り値  
- 成功の場合は 0 を返し、エラーの場合は –1 を返します。  
+ 成功した場合は 0 またはエラーの場合は-1 を返します。  
   
 ## <a name="remarks"></a>コメント  
  `_putenv` の関数は、新しい環境変数を追加したり、既存の環境変数の値を変更したりします。 環境変数は、プロセス (たとえば、プログラムにリンクされるライブラリの既定の検索パス) が実行される環境を定義します。 `_wputenv` 関数は、`_putenv` 関数のワイド文字バージョンです。`envstring` 関数の引数 `_wputenv` は、ワイド文字列です。  
@@ -106,7 +107,7 @@ int _wputenv(
   
  環境のエントリを直接変更しないでください。代わりに、`_putenv`、または `_wputenv` を使用して変更します。 特に、`_environ[]` グローバル配列の要素を直接の解放すると、無効なメモリ アドレスを生成する可能性があります。  
   
- `getenv` と `_putenv` はグローバル変数 `_environ` を使用して環境のテーブルにアクセスします。`_wgetenv` と `_wputenv` は `_wenviron` を使用します。 `_putenv` と `_wputenv` は `_environ` と `_wenviron` の値を変更することがあります。したがって、`_envp` の `main` 引数と `wenvp` の `wmain` 引数を無効にします。 つまり、環境情報へのアクセスに `_environ` または `_wenviron` を使用しても安全です。 `_putenv` および `_wputenv` とグローバル変数との関係の詳細については、「[_environ、_wenviron](../../c-runtime-library/environ-wenviron.md)」をご覧ください。  
+ `getenv` と `_putenv` はグローバル変数 `_environ` を使用して環境のテーブルにアクセスします。`_wgetenv` と `_wputenv` は `_wenviron` を使用します。 `_putenv``_wputenv`値を変更する可能性があります`_environ`と`_wenviron`、したがって無効化、`_envp`に渡す引数`main`と`_wenvp`に渡す引数`wmain`です。 つまり、環境情報へのアクセスに `_environ` または `_wenviron` を使用しても安全です。 `_putenv` および `_wputenv` とグローバル変数との関係の詳細については、「[_environ、_wenviron](../../c-runtime-library/environ-wenviron.md)」をご覧ください。  
   
 > [!NOTE]
 >  `_putenv` 系関数と `_getenv` 系関数はスレッド セーフではありません。 `_getenv` が文字列を変更している間に `_putenv` が文字列ポインターを返すことがあり、これはランダム エラーの原因になります。 これらの関数の呼び出しが同期されていることを確認する必要があります。  
@@ -122,9 +123,6 @@ int _wputenv(
   
 ## <a name="example"></a>例  
  `_putenv` の使用例については、「[getenv、_wgetenv](../../c-runtime-library/reference/getenv-wgetenv.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

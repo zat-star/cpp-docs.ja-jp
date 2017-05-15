@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7dd0f651bde3b990b45a96ce3256de2e04af4ebf
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: ded3f62cc54e769e9b7ba17bd106a64daf14e63f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="isupper-isupperl-iswupper-iswupperl"></a>isupper、_isupper_l、iswupper、_iswupper_l
@@ -96,7 +97,7 @@ int _iwsupper_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` が大文字の特殊表現の場合は&0; 以外の値を返します。 `isupper` は `c` が、大文字 (A – Z) の場合、0 以外の値を返します。 `iswupper` は、`c` が大文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの&1; 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが&0; である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらのルーチンでは、`c` が大文字の特殊表現の場合は 0 以外の値を返します。 `isupper`場合は 0 以外の値を返します`c`は、大文字 (A ~ Z)。 `iswupper` は、`c` が大文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの 1 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -118,10 +119,7 @@ int _iwsupper_l(
 |`iswupper`|\<ctype.h> または \<wchar.h>|  
 |`_iswupper_l`|\<ctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Char::IsUpper](https://msdn.microsoft.com/en-us/library/system.char.isupper.aspx)  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

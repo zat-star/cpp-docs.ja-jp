@@ -2,9 +2,10 @@
 layout: HubPage
 title: "Visual C++ のドキュメント | Microsoft Docs"
 description: "C++ を使って、プラットフォームやデバイス用のアプリケーション、サービス、ツールを開発する方法について説明します。"
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fa2cdbf2d54994784bfc8a0bd0e542b3f5de309b
 ms.openlocfilehash: a4623b2ccb2ea1f10b8060afa691c20d22a9c181
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---

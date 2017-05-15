@@ -1,53 +1,74 @@
 ---
-title: "exp、expf | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "expf"
-  - "exp"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_expl"
-  - "expf"
-  - "exp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "指数演算"
-  - "expf 関数"
-  - "計算 (指数を)"
-  - "exp 関数"
+title: "exp、expf、策の説明 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- expf
+- expl
+- exp
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _expl
+- expf
+- expl
+- exp
+dev_langs:
+- C++
+helpviewer_keywords:
+- exponential calculations
+- expf function
+- expl function
+- calculating exponentials
+- exp function
 ms.assetid: 7070016d-1143-407e-9e9a-6b059bb88867
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# exp、expf
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: bce9249134b9d0e3716d8b79a0bc0642c64fc5e6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-指数部を計算します。  
+---
+# <a name="exp-expf-expl"></a>exp、expf、策の説明
+指数を計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double exp(   
@@ -62,36 +83,39 @@ long double exp(
 float expf(   
    float x  
 );  
+long double expl(  
+   long double x  
+);  
 ```  
   
-#### パラメーター  
+### <a name="parameters"></a>パラメーター  
  `x`  
- 浮動小数点値。  
+ 浮動小数点値を exponentiate 自然対数の底*e*でします。  
   
-## 戻り値  
- 正常終了した場合 `exp` 関数の戻り値は浮動小数点パラメーター、`x`指数の値。  つまり、結果、e を自然対数の底 `x`へ e の累乗です。  のオーバーフロー、関数の戻り値 \(INF 無限\) と、`exp` アンダーフローの場合は 0 を返します。  
+## <a name="return-value"></a>戻り値  
+ `exp`関数は、浮動小数点パラメーターの指数値を返す*x*正常終了した場合、します。 その結果は*e*<sup>*x*</sup>ここで、 *e*自然対数の底です。 INF (無限) 関数の戻り値のオーバーフローおよびアンダー フロー、 `exp` 0 を返します。  
   
 |入力|SEH 例外|Matherr 例外|  
-|--------|------------|----------------|  
-|± QNAN、IND|なし。|\_DOMAIN|  
-|± ∞|INVALID|\_DOMAIN|  
-|X ≥ 7.097827e\+002|INEXACT\+OVERFLOW|OVERFLOW|  
-|X ≤ \-7.083964e\+002|INEXACT\+UNDERFLOW|アンダーフロー|  
+|-----------|-------------------|-----------------------|  
+|± 簡易な NaN、不定|なし|_DOMAIN|  
+|± 無限大|INVALID|_DOMAIN|  
+|x ≥ 7.097827e+002|INEXACT+OVERFLOW|OVERFLOW|  
+|X ≤ -7.083964e+002|INEXACT+UNDERFLOW|UNDERFLOW|  
   
- `exp` に ストリーミング SIMD 拡張機能 2 \(SSE2\) を使用して実装できます。  SSE2 実装を情報と使用条件の [\_set\_SSE2\_enable](../Topic/_set_SSE2_enable.md) を参照してください。  
+ `exp`関数には、ストリーミング SIMD 拡張命令 2 (SSE2) を使用する実装。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](../../c-runtime-library/reference/set-sse2-enable.md)」をご覧ください。  
   
-## 解説  
- C\+\+ ではオーバーロードが可能であるため、`exp` のオーバーロードを呼び出すことができます。  C プログラムでは、`exp` は常に double を受け取って返します。  
+## <a name="remarks"></a>コメント  
+ C++ では、オーバー ロードのオーバー ロードを呼び出すことができますので`exp`を受け取る、 **float**または**long double**引数。 C プログラムでは、`exp`常に受け取りを返す、**二重**です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|関数|必須ヘッダー|  
-|--------|------------|  
-|`exp`, `expf`|\<math.h\>|  
+|関数|必須の C ヘッダー|必須の C++ ヘッダー|  
+|--------------|---------------------|---|  
+|`exp`, `expf`|\<math.h>|\<cmath> または \<math.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_exp.c  
@@ -108,11 +132,11 @@ int main( void )
 }  
 ```  
   
-  **exp. \(2.302585\) \= 10.000000**   
-## 同等の .NET Framework 関数  
- [System::Math::Exp](https://msdn.microsoft.com/en-us/library/system.math.exp.aspx)  
+```Output  
+exp( 2.302585 ) = 10.000000  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [log、logf、log10、log10f](../Topic/log,%20logf,%20log10,%20log10f.md)   
- [\_CIexp](../Topic/_CIexp.md)
+ [log、logf、log10、log10f](../../c-runtime-library/reference/log-logf-log10-log10f.md)   
+ [_CIexp](../../c-runtime-library/ciexp.md)

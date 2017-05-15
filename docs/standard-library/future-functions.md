@@ -6,22 +6,29 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- future/std::async
+- future/std::future_category
+- future/std::make_error_code
+- future/std::make_error_condition
+- future/std::swap
 ms.assetid: 1e3acc1e-736a-42dc-ade2-b2fe69aa96bc
 caps.latest.revision: 11
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 57a9e0ba45c363d126ef44dc80eeb13d72b3733d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: c542e696e0e5ddef350d40b45fe16f4c3a77882d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltfuturegt-functions"></a>&lt;future&gt; 関数
 ||||  
 |-|-|-|  
-|[async](#async_function)|[future_category](#future_category_function)|[make_error_code](#make_error_code_function)|  
-|[make_error_condition](#make_error_condition_function)|[swap](#swap_function)|  
+|[async](#async)|[future_category](#future_category)|[make_error_code](#make_error_code)|  
+|[make_error_condition](#make_error_condition)|[swap](#swap)|  
   
-##  <a name="a-nameasyncfunctiona--async"></a><a name="async_function"></a>  async  
+##  <a name="async"></a>  async  
  *非同期プロバイダー*を表します。  
   
 ```
@@ -36,7 +43,7 @@ future<typename result_of<Fn(ArgTypes...)>::type>
   
 ### <a name="parameters"></a>パラメーター  
  `policy`  
- [launch](../standard-library/future-enums.md#launch_enumeration) の値。  
+ [launch](../standard-library/future-enums.md#launch) の値。  
   
 ### <a name="remarks"></a>コメント  
  省略形の定義:  
@@ -44,10 +51,10 @@ future<typename result_of<Fn(ArgTypes...)>::type>
 |||  
 |-|-|  
 |*dfn*|`decay_copy(forward<Fn>(fn))` の呼び出しの結果。|  
-|*dargs*|`decay_copy(forward<ArgsTypes>(args…))` の呼び出しの結果。|  
-|*Ty*|型 `result_of<Fn(ArgTypes…)>::type`。|  
+|*dargs*|`decay_copy(forward<ArgsTypes>(args...))` の呼び出しの結果。|  
+|*Ty*|型 `result_of<Fn(ArgTypes...)>::type`。|  
   
- 1 番目のテンプレート関数は、`async(launch::any, fn, args…)` を返します。  
+ 1 番目のテンプレート関数は、`async(launch::any, fn, args...)` を返します。  
   
  2 番目の関数は `future<Ty>` オブジェクトを返し、その*関連付けられた非同期状態*は、結果、*dfn* および *dargs* の値、実行の個別のスレッドを管理するためのスレッド オブジェクトを保持します。  
   
@@ -59,21 +66,21 @@ future<typename result_of<Fn(ArgTypes...)>::type>
   
  `policy` が `launch::deferred` である場合、関数は関連付けられた非同期状態を*遅延関数*の保持中としてマークして戻ります。 関連付けられた非同期状態が実際に準備完了になるまで待機する、時間指定のない関数への初めての呼び出しでは、`INVOKE(dfn, dargs..., Ty)` を評価することによって遅延関数が呼び出されます。  
   
- いずれの場合も、`future` オブジェクトの関連付けられた非同期状態は、`INVOKE(dfn, dargs…, Ty)` の評価が完了するまでは、例外がスローされても正常に制御が戻っても、*ready* には設定されません。 関連付けられた非同期状態の結果は、例外がスローされた場合の例外か、評価から返された値です。  
+ いずれの場合も、`future` オブジェクトの関連付けられた非同期状態は、`INVOKE(dfn, dargs..., Ty)` の評価が完了するまでは、例外がスローされても正常に制御が戻っても、*ready* には設定されません。 関連付けられた非同期状態の結果は、例外がスローされた場合の例外か、評価から返された値です。  
   
 > [!NOTE]
 >  `std::async` で開始されたタスクにアタッチされた `future` (または最後の [shared_future](../standard-library/shared-future-class.md)) の場合、タスクが完了していないと、デストラクターがブロックします。つまり、スレッドがまだ `.get()` または `.wait()` を呼び出しておらず、タスクがまだ実行中の場合、デストラクターによってブロックされます。 `future` から取得された `std::async` がローカル スコープ外に移動される場合、それを使う他のコードでは、共有状態が準備完了になることをデストラクターがブロックする場合があることに注意する必要があります。  
   
  擬似関数 `INVOKE` は [\<functional>](../standard-library/functional.md) で定義されています。  
   
-##  <a name="a-namefuturecategoryfunctiona--futurecategory"></a><a name="future_category_function"></a>  future_category  
+##  <a name="future_category"></a>  future_category  
  `future` オブジェクトに関連するエラーの特性を設定する [error_category](../standard-library/error-category-class.md) オブジェクトへの参照を返します。  
   
 ```
 const error_category& future_category() noexcept;
 ```  
   
-##  <a name="a-namemakeerrorcodefunctiona--makeerrorcode"></a><a name="make_error_code_function"></a>  make_error_code  
+##  <a name="make_error_code"></a>  make_error_code  
  [future](../standard-library/future-class.md) エラーを特徴付ける [error_category](../standard-library/error-category-class.md) オブジェクトと共に、[error_code](../standard-library/error-code-class.md) を作成します。  
   
 ```
@@ -82,12 +89,12 @@ inline error_code make_error_code(future_errc Errno) noexcept;
   
 ### <a name="parameters"></a>パラメーター  
  `Errno`  
- 報告されたエラーを識別する [future_errc](../standard-library/future-enums.md#future_errc_enumeration) の値。  
+ 報告されたエラーを識別する [future_errc](../standard-library/future-enums.md#future_errc) の値。  
   
 ### <a name="return-value"></a>戻り値  
  `error_code(static_cast<int>(Errno), future_category());`  
   
-##  <a name="a-namemakeerrorconditionfunctiona--makeerrorcondition"></a><a name="make_error_condition_function"></a>  make_error_condition  
+##  <a name="make_error_condition"></a>  make_error_condition  
  [future](../standard-library/future-class.md) エラーを特徴付ける [error_category](../standard-library/error-category-class.md) オブジェクトと共に、[error_condition](../standard-library/error-condition-class.md) を作成します。  
   
 ```
@@ -96,12 +103,12 @@ inline error_condition make_error_condition(future_errc Errno) noexcept;
   
 ### <a name="parameters"></a>パラメーター  
  `Errno`  
- 報告されたエラーを識別する [future_errc](../standard-library/future-enums.md#future_errc_enumeration) の値。  
+ 報告されたエラーを識別する [future_errc](../standard-library/future-enums.md#future_errc) の値。  
   
 ### <a name="return-value"></a>戻り値  
  `error_condition(static_cast<int>(Errno), future_category());`  
   
-##  <a name="a-nameswapfunctiona--swap"></a><a name="swap_function"></a>  swap  
+##  <a name="swap"></a>  swap  
  *関連付けられた非同期状態*を、`promise` オブジェクト間で交換します。  
   
 ```

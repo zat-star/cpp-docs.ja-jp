@@ -10,6 +10,11 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - chrono/std::chrono::duration
+- chrono/std::chrono::duration::duration
+- chrono/std::chrono::duration::count
+- chrono/std::chrono::duration::max
+- chrono/std::chrono::duration::min
+- chrono/std::chrono::duration::zero
 dev_langs:
 - C++
 ms.assetid: 06b863b3-65be-4ded-a72e-6e1eb1531077
@@ -31,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 843e4954b3a5b20d504dd5c8bf582dc56d4cbcbd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: f3376d8c03608fde5a2a614bf0a3058fd8692800
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="duration-class"></a>duration クラス
@@ -67,37 +73,37 @@ class duration <duration<Rep, Period1>, Period2>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[duration::duration コンストラクター](#duration__duration_constructor)|`duration` オブジェクトを構築します。|  
+|[期間](#duration)|`duration` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[duration::count](#duration__count_method)|時間間隔内でのクロック ティック数を返します。|  
-|[duration::max](#duration__max_method)|静的。 テンプレート パラメーター `Ref` の最大許容値を返します。|  
-|[duration::min](#duration__min_method)|静的。 テンプレート パラメーター `Ref` の最小許容値を返します。|  
-|[duration::zero](#duration__zero_method)|静的。 実際には、`Rep`(0) を返します。|  
+|[count](#count)|時間間隔内でのクロック ティック数を返します。|  
+|[max](#max)|静的。 テンプレート パラメーター `Ref` の最大許容値を返します。|  
+|[min](#min)|静的。 テンプレート パラメーター `Ref` の最小許容値を返します。|  
+|[0](#zero)|静的。 実際には、`Rep`(0) を返します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[duration::operator-](#duration__operator-)|無効にされたティック カウントと共に、`duration` オブジェクトのコピーを返します。|  
-|[duration::operator--](#duration__operator--)|格納されたティック カウントをデクリメントします。|  
-|[duration::operator=](#duration__operator_eq)|格納されたティック カウントを指定された値だけ少なくします。|  
-|[duration::operator*=](#duration__operator_star_eq)|格納されたティック カウントを指定した値で乗算します。|  
-|[duration::operator/=](#duration__operator__eq)|格納されたティック カウントを、指定した `duration` オブジェクトのティック カウントで除算します。|  
-|[duration::operator+](#duration__operator_add)|`*this` を返します。|  
-|[duration::operator++](#duration__operator_add_add)|格納されたティック カウントをインクリメントします。|  
-|[duration::operator+=](#duration__operator_add_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントに加算します。|  
-|[duration::operator-=](#duration__operator-_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントから減算します。|  
+|[duration::operator-](#operator-)|無効にされたティック カウントと共に、`duration` オブジェクトのコピーを返します。|  
+|[duration::operator--](#operator--)|格納されたティック カウントをデクリメントします。|  
+|[duration::operator=](#op_eq)|格納されたティック カウントを指定された値だけ少なくします。|  
+|[duration::operator*=](#op_star_eq)|格納されたティック カウントを指定した値で乗算します。|  
+|[duration::operator/=](#op_div_eq)|格納されたティック カウントを、指定した `duration` オブジェクトのティック カウントで除算します。|  
+|[duration::operator+](#op_add)|`*this` を返します。|  
+|[duration::operator++](#op_add_add)|格納されたティック カウントをインクリメントします。|  
+|[duration::operator+=](#op_add_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントに加算します。|  
+|[duration::operator-=](#operator-_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントから減算します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** chrono  
+ **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
   
-##  <a name="a-namedurationcountmethoda--durationcount"></a><a name="duration__count_method"></a>  duration::count  
+##  <a name="count"></a>  duration::count  
  時間間隔内でのクロック ティック数を取得します。  
   
 ```  
@@ -107,7 +113,7 @@ constexpr Rep count() const;
 ### <a name="return-value"></a>戻り値  
  時間間隔内でのクロック ティック数。  
   
-##  <a name="a-namedurationdurationconstructora--durationduration-constructor"></a><a name="duration__duration_constructor"></a>  duration::duration コンストラクター  
+##  <a name="duration"></a>  duration::duration コンストラクター  
  `duration` オブジェクトを構築します。  
   
 ```  
@@ -137,9 +143,9 @@ constexpr duration(const duration<Rep2, Period2>& Dur);
 ### <a name="remarks"></a>コメント  
  既定のコンストラクターは、初期化されていないオブジェクトを作成します。 空のかっこを使う値の初期化は、ゼロ クロック ティックの時間間隔を表すオブジェクトを初期化します。  
   
- 2 番目のテンプレート引数&1; つのコンストラクターは、`std::ratio<1>` の既定の期間を使って `R` クロック ティックの時間間隔を表すオブジェクトを作成します。 ティック カウントが丸められないようにするため、`Rep2` を浮動小数点型として処理できないときに、浮動小数点型として処理できる `duration::rep` 表現型か duration オブジェクトを構築するとエラーになります。  
+ 2 番目のテンプレート引数 1 つのコンストラクターは、`std::ratio<1>` の既定の期間を使って `R` クロック ティックの時間間隔を表すオブジェクトを作成します。 ティック カウントが丸められないようにするため、`Rep2` を浮動小数点型として処理できないときに、浮動小数点型として処理できる `duration::rep` 表現型か duration オブジェクトを構築するとエラーになります。  
   
- 3 番目の&2; つのテンプレート引数コンストラクターは、長さが `Dur` によって指定された時間間隔である時間間隔を表すオブジェクトを作成します。 ティック カウントが切り捨てられないようにするため、対象の型と*通約可能*な型を持つ duration オブジェクトから duration オブジェクトを作成するとエラーになります。  
+ 3 番目の 2 つのテンプレート引数コンストラクターは、長さが `Dur` によって指定された時間間隔である時間間隔を表すオブジェクトを作成します。 ティック カウントが切り捨てられないようにするため、対象の型と*通約可能*な型を持つ duration オブジェクトから duration オブジェクトを作成するとエラーになります。  
   
  `D2` を浮動小数点型として処理できず、[ratio_divide\<D1::period, D2::period>::type::den](../standard-library/ratio.md) が 1 ではない場合、duration 型の `D1` は、別の duration 型の `D2` と*通約可能*になります。  
   
@@ -147,7 +153,7 @@ constexpr duration(const duration<Rep2, Period2>& Dur);
   
  変換でオーバーフローが発生して `treat_as_floating_point<rep>` が *true を保持*していない場合、または両方の `ratio_divide<Period2, period>::den` が 1 ではなく `treat_as_floating_point<Rep2>` が *false を保持*していない場合、3 番目のコンストラクターはオーバーロードの解決に関与しません。 詳しくは、「[<type_traits>](../standard-library/type-traits.md)」をご覧ください。  
   
-##  <a name="a-namedurationmaxmethoda--durationmax"></a><a name="duration__max_method"></a>  duration::max  
+##  <a name="max"></a>  duration::max  
  `Ref` テンプレート パラメーター型の値の上限の境界を返す静的メソッドです。  
   
 ```  
@@ -157,7 +163,7 @@ static constexpr duration max();
 ### <a name="return-value"></a>戻り値  
  実際には、`duration(duration_values<rep>::max())` を返します。  
   
-##  <a name="a-namedurationminmethoda--durationmin"></a><a name="duration__min_method"></a>  duration::min  
+##  <a name="min"></a>  duration::min  
  `Ref` テンプレート パラメーター型の値の下限の境界を返す静的メソッドです。  
   
 ```  
@@ -167,14 +173,14 @@ static constexpr duration min();
 ### <a name="return-value"></a>戻り値  
  実際には、`duration(duration_values<rep>::min())` を返します。  
   
-##  <a name="a-namedurationoperator-a--durationoperator-"></a><a name="duration__operator-"></a>  duration::operator-  
+##  <a name="duration__operator-"></a>  duration::operator-  
  無効にされたティック カウントと共に、`duration` オブジェクトのコピーを返します。  
   
 ```  
 constexpr duration operator-() const;
 ```  
   
-##  <a name="a-namedurationoperator--a--durationoperator--"></a><a name="duration__operator--"></a>  duration::operator--  
+##  <a name="duration__operator--"></a>  duration::operator--  
  格納されたティック カウントをデクリメントします。  
   
 ```  
@@ -188,7 +194,7 @@ duration operator--(int);
   
  2 番目のメソッドは、デクリメントの前に作成される `*this` のコピーを返します。  
   
-##  <a name="a-namedurationoperatoreqa--durationoperator"></a><a name="duration__operator_eq"></a>  duration::operator=  
+##  <a name="op_eq"></a>  duration::operator=  
  格納されたティック カウントを指定された値だけ少なくします。  
   
 ```  
@@ -204,7 +210,7 @@ duration& operator%=(const duration& Div);
 ### <a name="return-value"></a>戻り値  
  モジュロ演算が実行された後の `duration` オブジェクト。  
   
-##  <a name="a-namedurationoperatorstareqa--durationoperator"></a><a name="duration__operator_star_eq"></a>  duration::operator*=  
+##  <a name="op_star_eq"></a>  duration::operator*=  
  格納されたティック カウントを指定した値で乗算します。  
   
 ```  
@@ -218,7 +224,7 @@ duration& operator*=(const rep& Mult);
 ### <a name="return-value"></a>戻り値  
  乗算が実行された後の `duration` オブジェクト。  
   
-##  <a name="a-namedurationoperatoreqa--durationoperator"></a><a name="duration__operator__eq"></a>  duration::operator/=  
+##  <a name="op_div_eq"></a>  duration::operator/=  
  指定された値で格納されているティック数を分割します。  
   
 ```  
@@ -232,14 +238,14 @@ duration& operator/=(const rep& Div);
 ### <a name="return-value"></a>戻り値  
  分割後の `duration` オブジェクト。  
   
-##  <a name="a-namedurationoperatoradda--durationoperator"></a><a name="duration__operator_add"></a>  duration::operator+  
+##  <a name="op_add"></a>  duration::operator+  
  `*this` を返します。  
   
 ```  
 constexpr duration operator+() const;
 ```  
   
-##  <a name="a-namedurationoperatoraddadda--durationoperator"></a><a name="duration__operator_add_add"></a>  duration::operator++  
+##  <a name="op_add_add"></a>  duration::operator++  
  格納されたティック カウントをインクリメントします。  
   
 ```  
@@ -253,7 +259,7 @@ duration operator++(int);
   
  2 番目のメソッドは、インクリメントの前に作成される `*this` のコピーを返します。  
   
-##  <a name="a-namedurationoperatoraddeqa--durationoperator"></a><a name="duration__operator_add_eq"></a>  duration::operator+=  
+##  <a name="op_add_eq"></a>  duration::operator+=  
  指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントに加算します。  
   
 ```  
@@ -267,7 +273,7 @@ duration& operator+=(const duration& Dur);
 ### <a name="return-value"></a>戻り値  
  加算が実行された後の `duration` オブジェクト。  
   
-##  <a name="a-namedurationoperator-eqa--durationoperator-"></a><a name="duration__operator-_eq"></a>  duration::operator-=  
+##  <a name="duration__operator-_eq"></a>  duration::operator-=  
  指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントから減算します。  
   
 ```  
@@ -281,14 +287,14 @@ duration& operator-=(const duration& Dur);
 ### <a name="return-value"></a>戻り値  
  減算が実行された後の `duration` オブジェクト。  
   
-##  <a name="a-namedurationzeromethoda--durationzero"></a><a name="duration__zero_method"></a>  duration::zero  
+##  <a name="zero"></a>  duration::zero  
  `duration(duration_values<rep>::zero())` を返します。  
   
 ```  
 static constexpr duration zero();
 ```  
   
-##  <a name="a-namedurationoperatormodeqa--durationoperator-mod"></a><a name="duration__operator_mod_eq"></a>  duration::operator mod=  
+##  <a name="op_mod_eq"></a>  duration::operator mod=  
  格納されたティック カウント剰余の Div または Div.count() を減算します。  
   
 ```  

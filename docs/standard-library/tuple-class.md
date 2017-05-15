@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - tuple
-- std::tuple
 - tuple/std::tuple
 - tuple/std::tuple::operator=
 dev_langs:
@@ -36,10 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 5a06cb149bd08f733f2b43692747d33d81ab7a7b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 29ff622d6411885682aa727a8040a3542f013d47
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="tuple-class"></a>タプル クラス
@@ -145,7 +145,7 @@ The tuples in the vector are
   
  **名前空間:** std  
   
-##  <a name="a-nametupleoperatoreqa--tupleoperator"></a><a name="tuple__operator_eq"></a>  tuple::operator=  
+##  <a name="op_eq"></a>  tuple::operator=  
  `tuple` オブジェクトを割り当てます。  
   
 ```  
@@ -171,7 +171,7 @@ template <class U1, class U2>
  コピー元のタプル。  
   
 ### <a name="remarks"></a>コメント  
- 最初の&2; つのメンバー演算子は、`right` の要素を `*this` の対応する要素に割り当てます。 3 番目のメンバー演算子は、`*this` のインデックス 0 位置の要素に `right.first` を割り当て、インデックス 1 の要素に `right.second` を割り当てます。 これらの&3; つすべてのメンバー演算子は、`*this` を返します。  
+ 最初の 2 つのメンバー演算子は、`right` の要素を `*this` の対応する要素に割り当てます。 3 番目のメンバー演算子は、`*this` のインデックス 0 位置の要素に `right.first` を割り当て、インデックス 1 の要素に `right.second` を割り当てます。 これらの 3 つすべてのメンバー演算子は、`*this` を返します。  
   
  残りのメンバー演算子はそれ以前のコンストラクターと似ていますが、[Rvalue 参照宣言子: &&](../cpp/rvalue-reference-declarator-amp-amp.md) を使用します。  
   
@@ -225,7 +225,7 @@ int main()
 x 4  
 ```  
   
-##  <a name="a-nametupleswapa--tupleswap"></a><a name="tuple_swap"></a>  tuple:swap  
+##  <a name="tuple_swap"></a>  tuple:swap  
  2 つのタプルの要素を交換します。  
   
 ```  
@@ -243,7 +243,7 @@ template <class... Types>
 ### <a name="remarks"></a>コメント  
  この関数は、`left.swap(right)` を実行します。  
   
-##  <a name="a-nametupletuplea--tupletuple"></a><a name="tuple__tuple"></a>  tuple::tuple  
+##  <a name="tuple"></a>  tuple::tuple  
  `tuple` オブジェクトを構築します。  
   
 ```  
@@ -279,7 +279,7 @@ template <class U1, class U2>
   
  2 番目のコンス トラクターは、引数 `P1`、`P2`...`PN` に基づいて構築されるコピーを要素とするオブジェクトを構築します。これらの `Pi` は、インデックス `i - 1` で要素を初期化します。  
   
- 3 番目と&4; 番目のコンストラクターは、`right` の対応する要素から構築されたコピーを要素として含むオブジェクトを構築します。  
+ 3 番目と 4 番目のコンストラクターは、`right` の対応する要素から構築されたコピーを要素として含むオブジェクトを構築します。  
   
  5 番目のコンストラクターは、インデックス 0 の要素が `right.first` から構築されたコピーで、インデックス 1 の要素が `right.second` から構築されたコピーであるオブジェクトを構築します。  
   
@@ -356,6 +356,6 @@ int main()
   
 ## <a name="see-also"></a>関連項目  
  [\<tuple>](../standard-library/tuple.md)   
- [make_tuple 関数](../standard-library/tuple-functions.md#make_tuple_function)
+ [make_tuple](../standard-library/tuple-functions.md#make_tuple)
 
 

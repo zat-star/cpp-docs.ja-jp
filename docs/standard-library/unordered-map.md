@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 491992306060125ab91d64560113f7f8a3b740b1
-ms.openlocfilehash: 4a90e1c2db038980309e98aed5fb0802dcb5a594
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 662bbde9b4fc43321bd1435d17d6b7110e7ac31c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltunorderedmapgt"></a>&lt;unordered_map&gt;
@@ -59,12 +60,12 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/unordered-map-operators.md#operator_neq)|演算子の左側の unordered_map オブジェクトが右側の unordered_map オブジェクトと等しくないかどうかをテストします。|  
-|[operator==](../standard-library/unordered-map-operators.md#operator_eq_eq)|演算子の左側の unordered_map オブジェクトが右側の unordered_map オブジェクトと等しいかどうかをテストします。|  
-|[swap 関数 (unordered_map)](../standard-library/unordered-map-functions.md#swap_function)|2 つのマップを入れ替えます。|  
-|[operator!=](../standard-library/unordered-map-operators.md#operator_neq)|演算子の左側の unordered_multimap オブジェクトが右側の unordered_multimap オブジェクトと等しくないかどうかをテストします。|  
-|[operator==](../standard-library/unordered-map-operators.md#operator_eq_eq)|演算子の左側の unordered_multimap オブジェクトが右側の unordered_multimap オブジェクトと等しいかどうかをテストします。|  
-|[swap 関数 (unordered_map)](../standard-library/unordered-map-functions.md#swap_function)|2 つの multimap を入れ替えます。|  
+|[operator!=](../standard-library/unordered-map-operators.md#op_neq)|演算子の左側の unordered_map オブジェクトが右側の unordered_map オブジェクトと等しくないかどうかをテストします。|  
+|[operator==](../standard-library/unordered-map-operators.md#op_eq_eq)|演算子の左側の unordered_map オブジェクトが右側の unordered_map オブジェクトと等しいかどうかをテストします。|  
+|[swap 関数 (unordered_map)](../standard-library/unordered-map-functions.md#swap)|2 つのマップを入れ替えます。|  
+|[operator!=](../standard-library/unordered-map-operators.md#op_neq)|演算子の左側の unordered_multimap オブジェクトが右側の unordered_multimap オブジェクトと等しくないかどうかをテストします。|  
+|[operator==](../standard-library/unordered-map-operators.md#op_eq_eq)|演算子の左側の unordered_multimap オブジェクトが右側の unordered_multimap オブジェクトと等しいかどうかをテストします。|  
+|[swap 関数 (unordered_map)](../standard-library/unordered-map-functions.md#swap)|2 つの multimap を入れ替えます。|  
   
 ## <a name="see-also"></a>関連項目  
  [unordered_multiset クラス](../standard-library/unordered-multiset-class.md)   

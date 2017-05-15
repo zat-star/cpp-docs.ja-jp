@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: b8052d82a223402849b6ba48ce5f6621a7d27ed9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
+ms.openlocfilehash: 314c8633ce43a154533873efadc7f3a0006a1aff
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/28/2017
 
 ---
 # <a name="getdrives"></a>_getdrives
@@ -82,9 +83,8 @@ unsigned long _getdrives( void );
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_getdrives.c  
+```C  
+// crt_getdrives.c  
 // This program retrives and lists out  
 // all the logical drives that are   
 // currently mounted on the machine.  
@@ -126,9 +126,6 @@ C:
 D:  
 E:  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)

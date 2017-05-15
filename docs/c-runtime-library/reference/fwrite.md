@@ -49,10 +49,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d7c61e8d7b201b2ff5cc0c23378e545e41642445
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 5f99375d93ab5ae54a34d72f23cd86672a79c318
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="fwrite"></a>fwrite
@@ -86,7 +87,7 @@ size_t fwrite(
  `fwrite` は、実際に書き込まれる全項目の数を返します。エラーが発生した場合は、`count` 未満になる場合があります。 また、エラーが発生した場合は、ファイル位置インジケーターを決定できません。 `stream` または `buffer` が null ポインターの場合、または奇数バイトの書き込みが Unicode モードで指定された場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
 ## <a name="remarks"></a>コメント  
- `fwrite` 関数は、それぞれが `count` の長さの、最大で `size` 個の項目を、`buffer` から出力 `stream` に書き込みます。 `stream` に関連付けられるファイル ポインター (存在する場合) は、実際に書き込まれたバイト数でインクリメントされます。 `stream` がテキスト モードで開かれた場合、各ライン フィードはキャリッジ リターンとライン フィードのペアで置き換えられます。 この置き換えは、戻り値には影響しません。  
+ `fwrite` 関数は、それぞれが `count` の長さの、最大で `size` 個の項目を、`buffer` から出力 `stream` に書き込みます。 `stream` に関連付けられるファイル ポインター (存在する場合) は、実際に書き込まれたバイト数でインクリメントされます。 場合`stream`が開かれているテキスト モードでは、各ライン フィードはキャリッジ リターン、ライン フィードのペアに置き換えられます。 この置き換えは、戻り値には影響しません。  
   
  `stream` が Unicode 変換モードで開かれた場合 (たとえば、`stream` を呼び出して `fopen`、`ccs=UNICODE`、または `ccs=UTF-16LE` を含むモード パラメーターを使用することで `ccs=UTF-8` が開かれた場合や、`_setmode` と `_O_WTEXT`、`_O_U16TEXT`、または `_O_U8TEXT` を含むモード パラメーターを使用してモードが Unicode 変換モードに変更された場合など)、`buffer` は UTF-16 データを含む `wchar_t` の配列へのポインターとして解釈されます。 このモードで奇数バイトの書き込みを試みると、パラメーター検証エラーが発生します。  
   
@@ -102,9 +103,6 @@ size_t fwrite(
   
 ## <a name="example"></a>例  
  「[fread](../../c-runtime-library/reference/fread.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::FileStream::Write](https://msdn.microsoft.com/en-us/library/system.io.filestream.write.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

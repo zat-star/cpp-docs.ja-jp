@@ -17,7 +17,6 @@ f1_keywords:
 - C2131
 - C2136
 - C2176
-- C2178
 - C2187
 - C2189
 helpviewer_keywords:
@@ -29,7 +28,6 @@ helpviewer_keywords:
 - C2131
 - C2136
 - C2176
-- C2178
 - C2187
 - C2189
 dev_langs:
@@ -53,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 3716dbf66c2cf1c35c26df6dfd95fb1c0946e68d
-ms.lasthandoff: 04/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: c724fd7907f7ec3f0ce8f096faf88d4ec66ae970
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="compiler-errors-c2100-through-c2199"></a>コンパイラ エラーs C2100 through C2199
@@ -99,7 +98,7 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C2127|'*識別子*': 'constexpr' エンティティは非定数式での初期化が正しくありません|  
 |[コンパイラ エラー C2128](compiler-error-c2128.md)|'*関数*': alloc_text/same_seg C リンケージを持つ関数にのみ適用|  
 |[コンパイラ エラー C2129](compiler-error-c2129.md)|静的関数 '*識別子*' 宣言しますが、定義されていません|  
-|[コンパイラ エラー C2130](compiler-error-c2130.md)|#行が検出された、ファイル名を含む文字列を想定 '*トークン*'|  
+|[コンパイラ エラー C2130](compiler-error-c2130.md)|#line が検出された、ファイル名を含む文字列を想定 '*トークン*'|  
 |コンパイラ エラー C2131|式は定数に評価されませんでした|  
 |[コンパイラ エラー C2132](compiler-error-c2132.md)|構文エラー: 予期しない識別子です。|  
 |[コンパイラ エラー C2133](compiler-error-c2133.md)|'*識別子*': 不明なサイズ|  
@@ -117,9 +116,9 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2145](compiler-error-c2145.md)|構文エラー: 見つかりません '*トークン*' 識別子の前に|  
 |[コンパイラ エラー C2146](compiler-error-c2146.md)|構文エラー: 見つかりません '*トークン*'identifier' の前に*識別子*'|  
 |[コンパイラ エラー C2147](compiler-error-c2147.md)|構文エラー: '*トークン*' は、new キーワード|  
-|[コンパイラ エラー C2148](compiler-error-c2148.md)|配列の合計サイズは 0 x を超える必要がありますいない*値*バイト|  
+|[コンパイラ エラー C2148](compiler-error-c2148.md)|配列の合計サイズは 0 x を超えない*値*バイト|  
 |[コンパイラ エラー C2149](compiler-error-c2149.md)|'*識別子*': 名前付きビット フィールドは、ゼロ幅を持つことはできません|  
-|[コンパイラ エラー C2150](compiler-error-c2150.md)|'*識別子*': ビット フィールドは、型 'int'、'signed int' または 'unsigned int' を持つ必要があります|  
+|[コンパイラ エラー C2150](compiler-error-c2150.md)|'*識別子*': ビット フィールドは型 'int'、'signed int' または 'unsigned int' が必要|  
 |[コンパイラ エラー C2151](compiler-error-c2151.md)|複数の言語属性が存在します。|  
 |[コンパイラ エラー C2152](compiler-error-c2152.md)|'*識別子*': 異なる属性を持つ関数へのポインター|  
 |[コンパイラ エラー C2153](compiler-error-c2153.md)|整数リテラルには 1 つ以上の数字が必要です。|  
@@ -147,7 +146,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2175](compiler-error-c2175.md)|'*ロケール*': 無効なロケール|  
 |コンパイラ エラー C2176|return ステートメントは、コンストラクターに関連付けられた関数 try ブロックのハンドラーに使用できません|  
 |[コンパイラ エラー C2177](compiler-error-c2177.md)|定数が大きすぎます。|  
-|コンパイラ エラー C2178|'*識別子*'で宣言することはできません'*指定子*' 指定子|  
+|[コンパイラ エラー C2178](compiler-error-c2178.md)|'*識別子*'で宣言することはできません'*指定子*' 指定子|  
 |[コンパイラ エラー C2179](compiler-error-c2179.md)|'*型*': 属性引数は、型パラメーターを使用できません|  
 |[コンパイラ エラー C2180](compiler-error-c2180.md)|型を持つ制御式 '*型*'|  
 |[コンパイラ エラー C2181](compiler-error-c2181.md)|else 文が if と一致しません。|  
@@ -168,4 +167,4 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2196](compiler-error-c2196.md)|場合値 '*値*' 既に使用されています|  
 |[コンパイラ エラー C2197](compiler-error-c2197.md)|'*関数*': 呼び出しに対する引数が多すぎます|  
 |[コンパイラ エラー C2198](compiler-error-c2198.md)|'*関数*': 呼び出しに対する引数が少なすぎます|  
-|[コンパイラ エラー C2199](compiler-error-c2199.md)|構文エラー: 検出された '*識別子*(' グローバル スコープで (意図して宣言でしたか?)|  
+|[コンパイラ エラー C2199](compiler-error-c2199.md)|構文エラー: 検出された '*識別子*(' グローバル スコープで (意図して宣言をでしたか?)|  

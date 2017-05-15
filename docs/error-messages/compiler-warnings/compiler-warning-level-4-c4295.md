@@ -33,21 +33,24 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8afa9526c2a16c6a4062fd17480bd1d04bf51911
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: b831b8e7b838ef25679d49a132c66d4b378fdcd7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="compiler-warning-level-4-c4295"></a>コンパイラの警告 (レベル 4) C4295
-**'**   
- ***配列*': 終端の null 文字を含めるには、配列が小さすぎます。**  
   
- 配列が初期化されましたが、配列内の最後の文字が null ではありません。配列にアクセスすると、予期しない結果が生じる場合があります。  
+> '*配列*': 配列が小さすぎるため、終端の null 文字を含める  
   
- 次の例では、c4295 警告が生成されます。  
+ 配列の初期化が、配列の最後の文字は、null ではありません。配列にアクセスすると、予期しない結果が生じる場合があります。  
   
-```  
+## <a name="example"></a>例  
+  
+ 次の例では、C4295 が生成されます。 この問題を解決する可能性がありますを宣言する配列のサイズ終端を保持するために、大規模な初期化子から null です。  
+  
+```C  
 // C4295.c  
 // compile with: /W4  
   

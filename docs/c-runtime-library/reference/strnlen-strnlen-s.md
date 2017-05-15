@@ -84,10 +84,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f7cba068af7ec6f14970d174d2b3e9b4121d7c40
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 9a0a0e0f9b020b635b6de27a1ae111378152291b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strnlen-strnlens-wcsnlen-wcsnlens-mbsnlen-mbsnlenl-mbstrnlen-mbstrnlenl"></a>strnlen、strnlen_s、wcsnlen、wcsnlen_s、_mbsnlen、_mbsnlen_l、_mbstrnlen、_mbstrnlen_l
@@ -155,9 +156,9 @@ size_t _mbstrnlen_l(
 > [!NOTE]
 >  `strnlen` は `strlen` に代わるものではありません。`strnlen` は、既知のサイズのバッファー (ネットワーク パケットなど) 内の受信した信頼できないデータのサイズを計算するためにのみ使用することを目的としています。 `strnlen` は長さを計算しますが、文字列に終端文字がない場合にバッファーの末尾を超えません。 その他の状況では、`strlen` を使用します。 (同じことが `wcsnlen`、`_mbsnlen`、および `_mbstrnlen` に適用されます)。  
   
- これらの各関数は、`str` 内の文字数を返します (終端の null 文字は含まれません)。 ただし、`strnlen` および `strnlen_s` は文字列を&1; バイト文字列として扱うため、マルチバイト文字が含まれている場合でも、戻り値は常にバイト数と同じです。 `wcsnlen` および `wcsnlen_s` は、それぞれ `strnlen` および `strnlen_s` のワイド文字バージョンです。`wcsnlen` および `wcsnlen_s` の引数はワイド文字列で、文字数はワイド文字単位です。 それ以外では、`wcsnlen` と `strnlen` の動作は同じです。`strnlen_s` と `wcsnlen_s` の場合も同様です。  
+ これらの各関数は、`str` 内の文字数を返します (終端の null 文字は含まれません)。 ただし、`strnlen` および `strnlen_s` は文字列を 1 バイト文字列として扱うため、マルチバイト文字が含まれている場合でも、戻り値は常にバイト数と同じです。 `wcsnlen` および `wcsnlen_s` は、それぞれ `strnlen` および `strnlen_s` のワイド文字バージョンです。`wcsnlen` および `wcsnlen_s` の引数はワイド文字列で、文字数はワイド文字単位です。 それ以外では、`wcsnlen` と `strnlen` の動作は同じです。`strnlen_s` と `wcsnlen_s` の場合も同様です。  
   
- `strnlen`、`wcsnlen,`、および `_mbsnlen` は、パラメーターを検証しません。 `str` が `NULL` の場合、アクセス違反が発生します。  
+ `strnlen`、 `wcsnlen`、および`_mbsnlen`はそのパラメーターを検証しません。 `str` が `NULL` の場合、アクセス違反が発生します。  
   
  `strnlen_s` および `wcsnlen_s` は、パラメーターを検証します。 `str` が `NULL` の場合、関数は 0 を返します。  
   
@@ -188,9 +189,8 @@ size_t _mbstrnlen_l(
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_strnlen.c  
+```C  
+// crt_strnlen.c  
   
 #include <string.h>  
   
@@ -224,9 +224,6 @@ than the maximum size specified, the maximum size is
 returned rather than the actual size of the string.  
  Length: 100   
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::Length](https://msdn.microsoft.com/en-us/library/system.string.length.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

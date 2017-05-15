@@ -50,14 +50,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c7bf8e09b7af4153bae3bfa0f80c002149ff3ee9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5875a26dc5758674665fba2fde5b51c2ff53420e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="alloca"></a>_alloca
-スタックにメモリを割り当てます。 安全なバージョンがあるために、この関数が廃止されました。参照してください[_malloca](../../c-runtime-library/reference/malloca.md)します。  
+スタックにメモリを割り当てます。 安全なバージョンがあるために、この関数は推奨されていません参照してください[_malloca](../../c-runtime-library/reference/malloca.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -77,7 +78,7 @@ void *_alloca(
  領域の割り当てができない場合、スタック オーバーフロー例外が生成されます。 スタック オーバーフロー例外は C++ 例外ではなく、構造化例外です。 C++ 例外処理を使用する代わりに、[構造化例外処理](../../cpp/structured-exception-handling-c-cpp.md) (SEH) を使用する必要があります。  
   
 ## <a name="remarks"></a>コメント  
- `_alloca`割り当てる`size`プログラム スタックからのバイト。 割り当てられた領域はときではなく、割り当てがスコープ外に渡すだけ)、呼び出し元の関数が終了したときに自動的に解放されます。 そのため、処理されないによって返されるポインター値`_alloca`への引数として[無料](../../c-runtime-library/reference/free.md)します。  
+ `_alloca`割り当てる`size`はプログラム スタックからのバイト数。 割り当てられた領域はときではなく、割り当てがスコープ外に渡すだけ)、呼び出し元の関数が終了したときに自動的に解放されます。 そのため、によって返されるポインター値を渡していない`_alloca`への引数として[空き](../../c-runtime-library/reference/free.md)です。  
   
  例外ハンドラー (EH) で `_alloca` を明示的に呼び出す場合は制限があります。 x86 クラスのプロセッサで動作する EH ルーチンは、自身のメモリ フレーム内で処理されるため、外側の関数のスタック ポインターが示す現在位置を基にしたメモリ領域ではタスクを実行しません。 最も一般的な実装には、Windows NT 構造化例外処理 (SEH) や C++ catch 句の式などがあります。 このため、次のようなシナリオで `_alloca` を明示的に呼び出すと、呼び出した EH ルーチンへ戻る時点でプログラム エラーとなります。  
   
@@ -92,7 +93,7 @@ void *_alloca(
 > [!IMPORTANT]
 >  Windows XP では、try/catch ブロック内で `_alloca` を呼び出した場合、その catch ブロック内で [_resetstkoflw](../../c-runtime-library/reference/resetstkoflw.md) を呼び出す必要があります。  
   
- 上記の制約を使用する場合だけでなく、[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプション、`_alloca`では使用できません`__except`ブロックします。 詳細については、「[/clr の制約](../../build/reference/clr-restrictions.md)」を参照してください。  
+ 使用する場合、上記の制限だけでなく、[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプション、`_alloca`では使用できません`__except`ブロックします。 詳細については、「 [/clr Restrictions](../../build/reference/clr-restrictions.md)」を参照してください。  
   
 ## <a name="requirements"></a>要件  
   
@@ -157,9 +158,6 @@ int main()
 ```Output  
 Allocated 1000 bytes of stack at 0x0012FB50  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   

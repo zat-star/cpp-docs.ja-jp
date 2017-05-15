@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 9f191d64115bca85502d8fd3fbe0525c0e2be65c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 0e2bad41f044046fd0f75a30989c1f39adb69560
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="fcvt"></a>_fcvt
@@ -89,7 +90,7 @@ char *_fcvt(
  `_fcvt` は、数字の文字列エラーを指すポインターを返します。エラーの場合は NULL を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_fcvt` 関数は、浮動小数点数の値を null で終わる文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 `_fcvt` は、`value` の桁数を文字列として格納し、null 文字 ("\0") を追加します。 `count` パラメーターは、小数点より後の格納する桁数を指定します。 余分な桁は、`count` 桁まで丸められます。 この桁数が `count` の有効桁数より少ない場合は、文字列に&0; が埋め込まれます。  
+ `_fcvt` 関数は、浮動小数点数の値を null で終わる文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 `_fcvt` は、`value` の桁数を文字列として格納し、null 文字 ("\0") を追加します。 `count` パラメーターは、小数点より後の格納する桁数を指定します。 余分な桁は、`count` 桁まで丸められます。 この桁数が `count` の有効桁数より少ない場合は、文字列に 0 が埋め込まれます。  
   
  `_fcvt` によって返される桁の総数は、`_CVTBUFSIZE` 以下である必要があります。  
   
@@ -137,9 +138,6 @@ int main( void )
 ```Output  
 source: 3.1415926535   buffer: '31415927'   decimal: 1   sign: 0  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

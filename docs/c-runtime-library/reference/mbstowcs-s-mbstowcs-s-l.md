@@ -53,10 +53,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3a5c84be1336d762289705102c1f2213f04642ea
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 8858827e65ad342f2c48dba26b3be7f7f9dd2ca3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="mbstowcss-mbstowcssl"></a>mbstowcs_s、_mbstowcs_s_l
@@ -117,7 +118,7 @@ errno_t _mbstowcs_s_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0; を返します。失敗した場合はエラー コードを返します。  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
 |エラー条件|戻り値および `errno`|  
 |---------------------|------------------------------|  
@@ -139,7 +140,7 @@ errno_t _mbstowcs_s_l(
   
  変換後の文字列は、常に null で終わります (エラーの場合も同様)。  
   
- `count` が特殊値 [_TRUNCATE](../../c-runtime-library/truncate.md) の場合、`mbstowcs_s` は null 終端文字&1; つ分を残して、変換先バッファーに収まる限りの文字列を変換します。  
+ `count` が特殊値 [_TRUNCATE](../../c-runtime-library/truncate.md) の場合、`mbstowcs_s` は null 終端文字 1 つ分を残して、変換先バッファーに収まる限りの文字列を変換します。  
   
  `mbstowcs_s` は、元の文字列を正常に変換すると、変換後の文字列のワイド文字と null 終端文字のサイズを `*``pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`wcstr` 引数が `NULL`である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `wcstr` が `NULL` の場合は、`count` は無視され、`sizeInWords` は 0 でなければいけないことに注意してください。  
   
@@ -161,10 +162,7 @@ errno_t _mbstowcs_s_l(
 |`mbstowcs_s`|\<stdlib.h>|  
 |`_mbstowcs_s_l`|\<stdlib.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

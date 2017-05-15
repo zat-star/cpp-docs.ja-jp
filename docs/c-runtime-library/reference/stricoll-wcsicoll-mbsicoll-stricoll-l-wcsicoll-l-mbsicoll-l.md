@@ -78,10 +78,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d74ed4f6d99f8c3ef6be8cb1d85d7da52aba9d71
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4291a8027dd01c705642af0d3651cc2fbf1277cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="stricoll-wcsicoll-mbsicoll-stricolll-wcsicolll-mbsicolll"></a>_stricoll、_wcsicoll、_mbsicoll、_stricoll_l、_wcsicoll_l、_mbsicoll_l
@@ -130,7 +131,7 @@ int _mbsicoll_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各関数は、以下のように、`string1` と `string2` の関係を示す値を返します。**  
+ これらの関数との関係を示す値を返します`string1`に`string2`、次のようにします。  
   
 |戻り値|string1 と string2 との関係|  
 |------------------|----------------------------------------|  
@@ -162,10 +163,7 @@ int _mbsicoll_l(
 |`_wcsicoll`, `_wcsicoll_l`|\<wchar.h>, \<string.h>|  
 |`_mbsicoll`, `_mbsicoll_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::Compare](https://msdn.microsoft.com/en-us/library/system.string.compare.aspx)  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [ロケール](../../c-runtime-library/locale.md)   

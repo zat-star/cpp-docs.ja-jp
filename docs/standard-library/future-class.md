@@ -10,6 +10,13 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - future/std::future
+- future/std::future::future
+- future/std::future::get
+- future/std::future::share
+- future/std::future::valid
+- future/std::future::wait
+- future/std::future::wait_for
+- future/std::future::wait_until
 dev_langs:
 - C++
 ms.assetid: 495e82c3-5341-4e37-87dd-b40107fbdfb6
@@ -32,10 +39,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 6de4fecd3f5f65ac48cbb49f2ed4f874f4283487
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 2a062caf9b28a48f2195f96b3a22f95a15c7149e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="future-class"></a>future クラス
@@ -57,31 +65,31 @@ class future;
   
 |名前|説明|  
 |----------|-----------------|  
-|[future::future コンストラクター](#future__future_constructor)|`future` オブジェクトを構築します。|  
+|[future](#future)|`future` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[future::get](#future__get_method)|関連付けられた非同期状態に格納されている結果を取得します。|  
-|[future::share](#future__share_method)|オブジェクトを `shared_future` に変換します。|  
-|[future::valid](#future__valid_method)|オブジェクトが空でないかどうかを指定します。|  
-|[future::wait](#future__wait_method)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
-|[future::wait_for](#future__wait_for_method)|関連付けられた非同期状態が準備できるまで、または指定した時間が経過するまでブロックします。|  
-|[future::wait_until](#future__wait_until_method)|関連付けられた非同期状態が準備できるまで、または指定した時点までブロックします。|  
+|[get](#get)|関連付けられた非同期状態に格納されている結果を取得します。|  
+|[共有](#share)|オブジェクトを `shared_future` に変換します。|  
+|[有効です](#valid)|オブジェクトが空でないかどうかを指定します。|  
+|[待機](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
+|[wait_for](#wait_for)|関連付けられた非同期状態が準備できるまで、または指定した時間が経過するまでブロックします。|  
+|[wait_until](#wait_until)|関連付けられた非同期状態が準備できるまで、または指定した時点までブロックします。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[future::operator=](#future__operator_eq)|指定したオブジェクトから関連付けられた非同期状態を転送します。|  
+|[future::operator=](#op_eq)|指定したオブジェクトから関連付けられた非同期状態を転送します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** future  
+ **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
   
-##  <a name="a-namefuturefutureconstructora--futurefuture-constructor"></a><a name="future__future_constructor"></a>  future::future コンストラクター  
+##  <a name="future"></a>  future::future コンストラクター  
  `future` オブジェクトを構築します。  
   
 ```
@@ -98,7 +106,7 @@ future(future&& Other) noexcept;
   
  2 つ目のコンストラクターは、`future` オブジェクトを構築し、`Other` から関連付けられた非同期状態を転送します。 `Other` に関連付けられた非同期状態は既にありません。  
   
-##  <a name="a-namefuturegetmethoda--futureget"></a><a name="future__get_method"></a>  future::get  
+##  <a name="get"></a>  future::get  
  関連付けられた非同期状態に格納されている結果を取得します。  
   
 ```
@@ -115,9 +123,9 @@ Ty get();
   
  特殊化 `future<void>` には格納されている値がないため、このメソッドは `void` を返します。  
   
- その他の特殊化では、メソッドは、格納されている値からその戻り値を移動します。 そのため、このメソッドを&1; 回だけ呼び出します。  
+ その他の特殊化では、メソッドは、格納されている値からその戻り値を移動します。 そのため、このメソッドを 1 回だけ呼び出します。  
   
-##  <a name="a-namefutureoperatoreqa--futureoperator"></a><a name="future__operator_eq"></a>  future::operator=  
+##  <a name="op_eq"></a>  future::operator=  
  関連付けられた非同期状態から、指定したオブジェクトを転送します。  
   
 ```
@@ -134,7 +142,7 @@ future& operator=(future&& Right) noexcept;
 ### <a name="remarks"></a>コメント  
  転送の後、`Right` に関連付けられた非同期状態は既にありません。  
   
-##  <a name="a-namefuturesharemethoda--futureshare"></a><a name="future__share_method"></a>  future::share  
+##  <a name="share"></a>  future::share  
  オブジェクトを [shared_future](../standard-library/shared-future-class.md) オブジェクトに変換します。  
   
 ```
@@ -144,7 +152,7 @@ shared_future<Ty> share();
 ### <a name="return-value"></a>戻り値  
  `shared_future(move(*this))`  
   
-##  <a name="a-namefuturevalidmethoda--futurevalid"></a><a name="future__valid_method"></a>  future::valid  
+##  <a name="valid"></a>  future::valid  
  オブジェクトが関連付けられた非同期状態であるかどうかを指定します。  
   
 ```
@@ -154,7 +162,7 @@ bool valid() noexcept;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが関連付けられた非同期状態である場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="a-namefuturewaitmethoda--futurewait"></a><a name="future__wait_method"></a>  future::wait  
+##  <a name="wait"></a>  future::wait  
  関連付けられた非同期状態が *ready* になるまで、現在のスレッドをブロックします。  
   
 ```cpp  
@@ -164,7 +172,7 @@ void wait() const;
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ *ready* になります。  
   
-##  <a name="a-namefuturewaitformethoda--futurewaitfor"></a><a name="future__wait_for_method"></a>  future::wait_for  
+##  <a name="wait_for"></a>  future::wait_for  
  関連付けられた非同期状態が *ready* になるまで、または指定した時間が経過するまでブロックします。  
   
 ```
@@ -177,12 +185,12 @@ future_status wait_for(const chrono::duration<Rep, Period>& Rel_time) const;
  スレッドがブロックする最大の時間間隔を指定する [chrono::duration](../standard-library/duration-class.md) オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status_enumeration)。  
+ 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status)。  
   
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ準備完了になります。  
   
-##  <a name="a-namefuturewaituntilmethoda--futurewaituntil"></a><a name="future__wait_until_method"></a>  future::wait_until  
+##  <a name="wait_until"></a>  future::wait_until  
  関連付けられた非同期状態が *ready* になるまで、または指定した時点後まで現在のスレッドをブロックします。  
   
 ```cpp  
@@ -195,7 +203,7 @@ future_status wait_until(const chrono::time_point<Clock, Duration>& Abs_time) co
  スレッドがブロックを解除できる時間を指定する [chrono::time_point](../standard-library/time-point-class.md) オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status_enumeration)。  
+ 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status)。  
   
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ *ready* になります。  

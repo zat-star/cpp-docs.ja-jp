@@ -66,10 +66,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 77f03f71842dda7f56ff81b8cd3e369b21d110e9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: f54fd258fac9ecf82c80943dc4f531ffe950f80c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="vsnprintfs-vsnprintfs-vsnprintfsl-vsnwprintfs-vsnwprintfsl"></a>vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l
@@ -157,7 +158,7 @@ int _vsnwprintf_s(
   
  データと終端の null の格納に必要なストレージが `sizeOfBuffer` を超える場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。ただし、`count` が [_TRUNCATE](../../c-runtime-library/truncate.md) の場合は、`buffer` に収まる限りの文字列が書き込まれ、-1 が返されます。 無効なパラメーター ハンドラーの後に実行が継続されると、これらの関数は `buffer` を空の文字列に、`errno` を `ERANGE` に設定し、-1 を返します。  
   
- `buffer` または `format` が `NULL` ポインターの場合、または `count` が&0; 以下の場合は、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
+ `buffer` または `format` が `NULL` ポインターの場合、または `count` が 0 以下の場合は、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -189,9 +190,6 @@ int _vsnwprintf_s(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_vsntprintf_s`|`_vsnprintf_s`|`_vsnprintf_s`|`_vsnwprintf_s`|  
 |`_vsntprintf_s_l`|`_vsnprintf_s_l`|`_vsnprintf_s_l`|`_vsnwprintf_s_l`|  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   

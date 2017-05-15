@@ -56,10 +56,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: dead533ee11db7c40faa7d3611b30c6a6159ee50
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 200337a53155b27b76a944d025c8fb013c29c4e6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="wcstombs-wcstombsl"></a>wcstombs、_wcstombs_l
@@ -108,16 +109,16 @@ size_t _wcstombs_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `wcstombs` によってマルチバイト文字列が正常に変換された場合は、マルチバイト出力文字列に書き込まれたバイト数を返します (終端の `NULL` がある場合でもバイト数に含まれません)。 `mbstr` 引数が `NULL` の場合、`wcstombs` は必要な対象文字列のサイズ (バイト数) を返します。 マルチバイト文字に変換できないワイド文字を検出した場合、`wcstombs` は `size_t` 型にキャストされた -1 を返し、`errno` を `EILSEQ` に設定します。  
+ `wcstombs` によってマルチバイト文字列が正常に変換された場合は、マルチバイト出力文字列に書き込まれたバイト数を返します (終端の `NULL` がある場合でもバイト数に含まれません)。 `mbstr` 引数が `NULL` の場合、`wcstombs` は必要な対象文字列のサイズ (バイト数) を返します。 場合`wcstombs`、マルチバイト文字に変換できないワイド文字を検出した型にキャストする-1 を返します`size_t`設定と`errno`に`EILSEQ`です。  
   
 ## <a name="remarks"></a>コメント  
- `wcstombs` 関数は、`wcstr` が指すワイド文字列を対応するマルチバイト文字に変換し、`mbstr` 配列に結果を格納します。 `count` パラメーターはマルチバイト出力文字列に格納できる最大バイト数 (つまり、`mbstr` のサイズ) を示します。 通常、ワイド文字列を変換するときに必要になるバイト数は不明です。 出力文字列の&1; バイトだけを必要とするワイド文字もあれば、2 バイトを必要とする文字もあります。 入力文字列内のワイド文字 (ワイド文字の `NULL` を含む)&1; 文字につき&2; バイトを持つマルチバイト出力文字列があれば、必ず収まります。  
+ `wcstombs` 関数は、`wcstr` が指すワイド文字列を対応するマルチバイト文字に変換し、`mbstr` 配列に結果を格納します。 `count` パラメーターはマルチバイト出力文字列に格納できる最大バイト数 (つまり、`mbstr` のサイズ) を示します。 通常、ワイド文字列を変換するときに必要になるバイト数は不明です。 出力文字列の 1 バイトだけを必要とするワイド文字もあれば、2 バイトを必要とする文字もあります。 入力文字列内のワイド文字 (ワイド文字の `NULL` を含む) 1 文字につき 2 バイトを持つマルチバイト出力文字列があれば、必ず収まります。  
   
  `wcstombs` は、`count` の発生前または発生時にワイド文字の null 文字 (L'\0') を検出すると、それを 8 ビットの 0 に変換して停止します。 このため、`mbstr` のマルチバイト文字の文字列が null 終了になるのは、`wcstombs` が変換中にワイド文字の null 文字を検出した場合だけです。 `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、`wcstombs` の動作は未定義です。  
   
  `mbstr` 引数が `NULL` の場合、`wcstombs` は必要な対象文字列のサイズ (バイト数) を返します。  
   
- `wcstombs` はそのパラメーターを検証します。 `wcstr` が `NULL` か、`count` が `INT_MAX` よりも大きい場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
+ `wcstombs` はそのパラメーターを検証します。 場合`wcstr`は`NULL`、または`count`がより大きい`INT_MAX`、」の説明に従って、この関数は、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
  `wcstombs` は、ロケールに依存するあらゆる動作に現在のロケールを使用します。`_wcstombs_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
@@ -172,9 +173,6 @@ Convert wide-character string:
    Characters converted: 13  
     Multibyte character: Hello, world.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

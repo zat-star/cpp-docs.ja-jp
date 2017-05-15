@@ -48,14 +48,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 84964b0a49b236bae056125de8155b18880eb378
-ms.openlocfilehash: 1d86597d8ff759a1a388fea785ff864d47c823ae
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: f2d79bcdb10d150b236290d3d5439331516a923f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="imaxdiv"></a>imaxdiv
-任意のサイズの&2; つの整数値の商および剰余を単一の操作として計算します。  
+任意のサイズの 2 つの整数値の商および剰余を単一の操作として計算します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -121,9 +122,6 @@ int main(int argc, char *argv[])
 The call to imaxdiv(9460730470000000, 8766)  
 results in a quotient of 1079252848505, and a remainder of 5170  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

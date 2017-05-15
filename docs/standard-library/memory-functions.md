@@ -7,61 +7,63 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::addressof
 - memory/std::addressof
-- std::align
 - memory/std::align
-- std::allocate_shared
 - memory/std::allocate_shared
-- std::const_pointer_cast
 - memory/std::const_pointer_cast
-- std::declare_no_pointers
 - memory/std::declare_no_pointers
-- std::declare_reachable
 - memory/std::declare_reachable
-- std::default_delete
 - memory/std::default_delete
-- std::dynamic_pointer_cast
 - memory/std::dynamic_pointer_cast
-- std::get_deleter_function
-- memory/std::get_deleter_function
-- std::get_pointer_safety
+- memory/std::get_deleter
 - memory/std::get_pointer_safety
-- std::get_temporary_buffer
 - memory/std::get_temporary_buffer
-- std::make_shared
 - memory/std::make_shared
-- std::make_unique
 - memory/std::make_unique
-- std::owner_less
 - memory/std::owner_less
-- std::return_temporary_buffer
 - memory/std::return_temporary_buffer
-- std::static_pointer_cast
 - memory/std::static_pointer_cast
-- std::swap
 - memory/std::swap
-- std::undeclare_no_pointers
 - memory/std::undeclare_no_pointers
-- std::undeclare_reachable
 - memory/std::undeclare_reachable
-- std::uninitialized_copy
 - memory/std::uninitialized_copy
-- std::uninitialized_copy_n
 - memory/std::uninitialized_copy_n
-- std::uninitialized_fill
 - memory/std::uninitialized_fill
-- std::uninitialized_fill_n
 - memory/std::uninitialized_fill_n
+- memory/std::addressof
+- memory/std::align
+- memory/std::allocate_shared
+- memory/std::const_pointer_cast
+- memory/std::declare_no_pointers
+- memory/std::declare_reachable
+- memory/std::default_delete
+- memory/std::dynamic_pointer_cast
+- memory/std::get_deleter
+- memory/std::get_pointer_safety
+- memory/std::get_temporary_buffer
+- memory/std::make_shared
+- memory/std::make_unique
+- memory/std::owner_less
+- memory/std::return_temporary_buffer
+- memory/std::static_pointer_cast
+- memory/std::undeclare_no_pointers
+- memory/std::undeclare_reachable
+- memory/std::uninitialized_copy
+- memory/std::uninitialized_copy_n
+- memory/std::uninitialized_fill
+- memory/std::uninitialized_fill_n
+dev_langs:
+- C++
 ms.assetid: 3e1898c2-44b7-4626-87ce-84962e4c6f1a
 caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bab363d16555ca66ce0b57aad4ac8f3d9aaad21b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 4d6d010f7f910a89565ef8cd7c07ddbb2f054759
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltmemorygt-functions"></a>&lt;memory&gt; 関数
@@ -69,14 +71,14 @@ ms.lasthandoff: 02/24/2017
 |-|-|-|  
 |[addressof](#addressof)|[align](#align)|[allocate_shared](#allocate_shared)|  
 |[const_pointer_cast](#const_pointer_cast)|[declare_no_pointers](#declare_no_pointers)|[declare_reachable](#declare_reachable)|  
-|[default_delete](#default_delete)|[dynamic_pointer_cast](#dynamic_pointer_cast)|[get_deleter 関数](#get_deleter_function)|  
+|[default_delete](#default_delete)|[dynamic_pointer_cast](#dynamic_pointer_cast)|[get_deleter](#get_deleter)|  
 |[get_pointer_safety](#get_pointer_safety)|[get_temporary_buffer](#get_temporary_buffer)|[make_shared](#make_shared)|  
 |[make_unique](#make_unique)|[owner_less](#owner_less)|[return_temporary_buffer](#return_temporary_buffer)|  
 |[static_pointer_cast](#static_pointer_cast)|[swap (C++ 標準ライブラリ)](#swap)|[undeclare_no_pointers](#undeclare_no_pointers)|  
 |[undeclare_reachable](#undeclare_reachable)|[uninitialized_copy](#uninitialized_copy)|[uninitialized_copy_n](#uninitialized_copy_n)|  
 |[uninitialized_fill](#uninitialized_fill)|[uninitialized_fill_n](#uninitialized_fill_n)|  
   
-##  <a name="a-nameaddressofa--addressof"></a><a name="addressof"></a>  addressof  
+##  <a name="addressof"></a>  addressof  
  オブジェクトの実際のアドレスを取得します。  
   
 ```  
@@ -93,7 +95,7 @@ T* addressof(T& Val);
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namealigna--align"></a><a name="align"></a>  align  
+##  <a name="align"></a>  align  
  特定のサイズの記憶域 (特定のアラインメント指定でアラインされた) を、特定の記憶域の最初に使用可能なアドレスに合わせてアラインします。  
   
 ```  
@@ -125,7 +127,7 @@ void* align(
  要求されたアライン バッファーが利用可能な領域に収まらない場合は null ポインター。それ以外の場合は `Ptr` の新しい値。  
   
 ### <a name="remarks"></a>コメント  
- 変更された `Ptr` および `Space` パラメーターによって、`align()` と `Alignment` に異なる値を指定して、同じバッファーについて繰り返し `Size` を呼び出すことができます。 `align()` の使用方法の&1; つを次のコード スニペットに示します。  
+ 変更された `Ptr` および `Space` パラメーターによって、`align()` と `Alignment` に異なる値を指定して、同じバッファーについて繰り返し `Size` を呼び出すことができます。 `align()` の使用方法の 1 つを次のコード スニペットに示します。  
   
 ```cpp  
 #include <type_traits> // std::alignment_of()  
@@ -150,7 +152,7 @@ while (alignment, sizeof(MyObj), ptr, space)) {
 // possible to allow more aligned storage in this buffer.   
 ```  
   
-##  <a name="a-nameallocateshareda--allocateshared"></a><a name="allocate_shared"></a>  allocate_shared  
+##  <a name="allocate_shared"></a>  allocate_shared  
  指定されたアロケーターを使用することによって、特定の型に割り当てられ構築されたオブジェクトに対して `shared_ptr` を作成します。 `shared_ptr` を返します。  
   
 ```  
@@ -169,7 +171,7 @@ allocate_shared(Allocator Alloc, Types&&... Args);
 ### <a name="remarks"></a>コメント  
  関数は、`Alloc` によって割り当てられて構築されているように、`shared_ptr``<Type>` オブジェクト、`Type(``Args``...)` へのポインターを作成します。  
   
-##  <a name="a-nameconstpointercasta--constpointercast"></a><a name="const_pointer_cast"></a>  const_pointer_cast  
+##  <a name="const_pointer_cast"></a>  const_pointer_cast  
  shared_ptr への const キャスト。  
   
 ```  
@@ -217,7 +219,7 @@ int main()
 sp1 == 3  
 ```  
   
-##  <a name="a-namedeclarenopointersa--declarenopointers"></a><a name="declare_no_pointers"></a>  declare_no_pointers  
+##  <a name="declare_no_pointers"></a>  declare_no_pointers  
  ベース アドレス ポインターとブロック サイズで定義されたメモリ ブロック内の文字に追跡可能なポインターが含まれていないことを、ガベージ コレクターに通知します。  
   
 ```  
@@ -230,13 +232,13 @@ void declare_no_pointers(
   
 |パラメーター|説明|  
 |---------------|-----------------|  
-|` ptr`|追跡可能なポインターがもう含まれない最初の文字のアドレス。|  
-|`_Size`|追跡可能なポインターが含まれていない ` ptr` で開始されるブロックのサイズ。|  
+|`ptr`|追跡可能なポインターがもう含まれない最初の文字のアドレス。|  
+|`_Size`|追跡可能なポインターが含まれていない `ptr` で開始されるブロックのサイズ。|  
   
 ### <a name="remarks"></a>コメント  
- この関数は、追跡可能なポインターがもう含まれないアドレスの範囲 `[`` ptr``,` ` ptr` `+` `_Size``)` を `garbage collector` に通知します。 (割り当てられたストレージへのポインターは、`reachable` でない限り逆参照しないでください。)  
+ 関数では、いずれかが通知されます`garbage collector`するアドレスの範囲`[ ptr, ptr + _Size)`追跡可能なポインターを含まない。 (割り当てられたストレージへのポインターは、`reachable` でない限り逆参照しないでください。)  
   
-##  <a name="a-namedeclarereachablea--declarereachable"></a><a name="declare_reachable"></a>  declare_reachable  
+##  <a name="declare_reachable"></a>  declare_reachable  
  指定されたアドレスが、割り当てられたストレージのアドレスであり、そのストレージに到達可能であることをガベージ コレクションに通知します。  
   
 ```  
@@ -244,13 +246,13 @@ void declare_reachable(void* ptr);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` ptr`  
+ `ptr`  
  到達可能な割り当て済みの有効なストレージ領域へのポインター。  
   
 ### <a name="remarks"></a>コメント  
- ` ptr` が null ではない場合、この関数は、` ptr` がこれ以降到達可能であること (有効な割り当て済みストレージを指すこと) をガベージ コレクターに通知します。  
+ `ptr` が null ではない場合、この関数は、`ptr` がこれ以降到達可能であること (有効な割り当て済みストレージを指すこと) をガベージ コレクターに通知します。  
   
-##  <a name="a-namedefaultdeletea--defaultdelete"></a><a name="default_delete"></a>  default_delete  
+##  <a name="default_delete"></a>  default_delete  
  `operator new` を使用して割り当てられたオブジェクトを削除します。 `unique_ptr` での使用に適しています。  
 ```  
 struct default_delete {
@@ -269,7 +271,7 @@ struct default_delete {
 ### <a name="remarks"></a>コメント  
  このテンプレート クラスは、テンプレート クラス `unique_ptr` での使用に適した、`operator new` で割り当てられたスカラー オブジェクトを削除する `deleter` を示します。 明示的な特殊化 `default_delete<Type[]>` もあります。  
   
-##  <a name="a-namedynamicpointercasta--dynamicpointercast"></a><a name="dynamic_pointer_cast"></a>  dynamic_pointer_cast  
+##  <a name="dynamic_pointer_cast"></a>  dynamic_pointer_cast  
  shared_ptr への動的なキャストを実行します。  
   
 ```  
@@ -331,7 +333,7 @@ int main()
 sp1->val == 3  
 ```  
   
-##  <a name="a-namegetdeleterfunctiona--getdeleter-function"></a><a name="get_deleter_function"></a>  get_deleter 関数  
+##  <a name="get_deleter"></a>get_deleter
  shared_ptr から削除子を取得します。  
   
 ```  
@@ -397,7 +399,7 @@ get_deleter(sp0) != 0 == false
 get_deleter(sp1) != 0 == true  
 ```  
   
-##  <a name="a-namegetpointersafetya--getpointersafety"></a><a name="get_pointer_safety"></a>  get_pointer_safety  
+##  <a name="get_pointer_safety"></a>  get_pointer_safety  
  ガベージ コレクターが想定するポインターの安全性の種類を返します。  
   
 ```  
@@ -407,7 +409,7 @@ pointer_safety get_pointer_safety();
 ### <a name="remarks"></a>コメント  
  この関数は、自動 `garbage collector` が想定するポインターの安全性の種類を返します。  
   
-##  <a name="a-namegettemporarybuffera--gettemporarybuffer"></a><a name="get_temporary_buffer"></a>  get_temporary_buffer  
+##  <a name="get_temporary_buffer"></a>  get_temporary_buffer  
  指定した要素数を上限とする要素シーケンスに対し、一時的なストレージを割り当てます。  
   
 ```  
@@ -416,14 +418,14 @@ pair<Type *, ptrdiff_t> get_temporary_buffer(ptrdiff_t count);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` count`  
+ `count`  
  メモリの割り当て対象となる、必要な要素の最大数。  
   
 ### <a name="return-value"></a>戻り値  
  最初のコンポーネントが割り当て済みのメモリへのポインターで、2 番目のコンポーネントがバッファーのサイズ指定である `pair`。これで、格納可能な要素の最大数が示されます。  
   
 ### <a name="remarks"></a>コメント  
- この関数はメモリを要求しますが、成功しない場合もあります。 バッファーが割り当てられなかった場合、関数は、2 番目のコンポーネントが&0; で、最初のコンポーネントが Null ポインターである pair を返します。  
+ この関数はメモリを要求しますが、成功しない場合もあります。 バッファーが割り当てられなかった場合、関数は、2 番目のコンポーネントが 0 で、最初のコンポーネントが Null ポインターである pair を返します。  
   
  この関数は、一時的なメモリにのみ使用する必要があります。  
   
@@ -460,7 +462,7 @@ The number of elements that the allocated memory
 could store is given by: resultPair.second = 9.  
 ```  
   
-##  <a name="a-namemakeshareda--makeshared"></a><a name="make_shared"></a>  make_shared  
+##  <a name="make_shared"></a>  make_shared  
  既定のアロケーターを使用してゼロ以上の引数から構築された割り当て済みオブジェクトを指し示す `shared_ptr` を作成し、返します。 指定された型のオブジェクトおよび `shared_ptr` の両方を割り当て構築することでオブジェクトの共有所有権を管理し、`shared_ptr` を返します。.  
   
 ```  
@@ -477,14 +479,14 @@ make_shared(
 |`_Args`|0 個以上のコンス トラクター引数。 関数は、提供された引数に基づいてどのコンストラクターのオーバーロードを呼び出すかを推測します。|  
   
 ### <a name="remarks"></a>コメント  
- オブジェクトを作成するための簡単で効率的な方法として `make_shared` を使用し、同時にオブジェクトへの共有アクセスを管理するために `shared_ptr` を使用します。 意味的には、これら&2; つのステートメントは同等です。  
+ オブジェクトを作成するための簡単で効率的な方法として `make_shared` を使用し、同時にオブジェクトへの共有アクセスを管理するために `shared_ptr` を使用します。 意味的には、これら 2 つのステートメントは同等です。  
   
 ```cpp  
 auto sp = std::shared_ptr<Example>(new Example(argument));
 auto msp = std::make_shared<Example>(argument);
 ```  
   
- しかし、最初のステートメントで&2; つの割り当てが実行され、`shared_ptr` オブジェクトが正常に完了した後、`Example` の割り当てが失敗すると、名前のない `Example` オブジェクトがリークされます。 `make_shared` を使用するステートメントの方が、関数呼び出しが&1; つしか関係しないので簡単です。 ライブラリがオブジェクトとスマート ポインターの両方に対して単一の割り当てを行うことができるため効率的です。 こちらの方が高速でメモリの断片化が少なくなります、1 つは割り当てられてもう&1; つは割り当てられないという例外が発生する可能性はありません。 スマート ポインターでオブジェクトを参照したり参照カウントを更新したりするコードでは、局所性の改善によってパフォーマンスが向上します。  
+ しかし、最初のステートメントで 2 つの割り当てが実行され、`shared_ptr` オブジェクトが正常に完了した後、`Example` の割り当てが失敗すると、名前のない `Example` オブジェクトがリークされます。 `make_shared` を使用するステートメントの方が、関数呼び出しが 1 つしか関係しないので簡単です。 ライブラリがオブジェクトとスマート ポインターの両方に対して単一の割り当てを行うことができるため効率的です。 こちらの方が高速でメモリの断片化が少なくなります、1 つは割り当てられてもう 1 つは割り当てられないという例外が発生する可能性はありません。 スマート ポインターでオブジェクトを参照したり参照カウントを更新したりするコードでは、局所性の改善によってパフォーマンスが向上します。  
   
  オブジェクトへの共有アクセスを必要としない場合、[make_unique](../standard-library/memory-functions.md#make_unique) の使用を検討してください。 オブジェクトのカスタム アロケーターを指定する必要がある場合、[allocate_shared](../standard-library/memory-functions.md#allocate_shared) を使用します。 オブジェクトでデリーターを引数として渡す方法がないため、カスタム デリーターが必要な場合に `make_shared` を使用することはできません。  
   
@@ -554,7 +556,7 @@ Playing Yesterday by The Beatles, use count: 3
 Playing Blackbird by The Beatles, use count: 3  
 ```  
   
-##  <a name="a-namemakeuniquea--makeunique"></a><a name="make_unique"></a>  make_unique  
+##  <a name="make_unique"></a>  make_unique  
  指定した引数を使用して構築された、指定された型のオブジェクトへの [unique_ptr](../standard-library/unique-ptr-class.md) を作成して返します。  
   
 ```scr  
@@ -608,7 +610,7 @@ typename enable_if<extent<T>::value != 0,
   
   `unique_ptr` に関連してエラー C2280 が発生した場合、削除された関数であるコピー コンストラクターを呼び出そうとしたことが原因となっている可能性が高いです。  
   
-##  <a name="a-nameownerlessa--ownerless"></a><a name="owner_less"></a>  owner_less  
+##  <a name="owner_less"></a>  owner_less  
  共有ポインターとウィーク ポインターの所有権ベースの混合型比較を実行します。 メンバー関数 `owner_before` によって left パラメーターが right パラメーターの前に順序付けされている場合は、`true` を返します。  
   
 ```  
@@ -652,13 +654,13 @@ struct owner_less<weak_ptr<Type>>
  `_left`  
  共有またはウィーク ポインター。  
   
- ` right`  
+ `right`  
  共有またはウィーク ポインター。  
   
 ### <a name="remarks"></a>コメント  
- このテンプレート クラスは、すべてのメンバー演算子が ` left``.owner_before(`` right``)` を返すように定義します。  
+ このテンプレート クラスは、すべてのメンバー演算子が `left``.owner_before(``right``)` を返すように定義します。  
   
-##  <a name="a-namereturntemporarybuffera--returntemporarybuffer"></a><a name="return_temporary_buffer"></a>  return_temporary_buffer  
+##  <a name="return_temporary_buffer"></a>  return_temporary_buffer  
  `get_temporary_buffer` テンプレート関数を使用して割り当てられた一時メモリを解放します。  
   
 ```  
@@ -711,7 +713,7 @@ The number of elements that the allocated memory
  could store is given by: resultPair.second = 7.  
 ```  
   
-##  <a name="a-namestaticpointercasta--staticpointercast"></a><a name="static_pointer_cast"></a>  static_pointer_cast  
+##  <a name="static_pointer_cast"></a>  static_pointer_cast  
  shared_ptr への静的なキャスト。  
   
 ```  
@@ -769,7 +771,7 @@ int main()
 sp1->val == 3  
 ```  
   
-##  <a name="a-nameswapa--swap-c-standard-library"></a><a name="swap"></a>  swap (C++ 標準ライブラリ)  
+##  <a name="swap"></a>  swap (C++ 標準ライブラリ)  
  2 つの shared_ptr オブジェクトまたは weak_ptr オブジェクトをスワップします。  
   
 ```  
@@ -850,7 +852,7 @@ int main()
 *wp1 == 5  
 ```  
   
-##  <a name="a-nameundeclarenopointersa--undeclarenopointers"></a><a name="undeclare_no_pointers"></a>  undeclare_no_pointers  
+##  <a name="undeclare_no_pointers"></a>  undeclare_no_pointers  
  ベース アドレス ポインターとブロック サイズで定義されたメモリ ブロック内の文字が、追跡可能なポインターを含む可能性があることをガベージ コレクターに通知します。  
   
 ```  
@@ -860,9 +862,9 @@ void undeclare_no_pointers(
 ```  
   
 ### <a name="remarks"></a>コメント  
- この関数は、アドレスの範囲 `[`` ptr``,` ` ptr` `+` `_Size``)` が `traceable pointers` を含む可能性があることを `garbage collector` に通知します。  
+ 関数では、いずれかが通知されます`garbage collector`するアドレスの範囲`[ptr, ptr + _Size)`可能性がありますが含まれています`traceable pointers`です。  
   
-##  <a name="a-nameundeclarereachablea--undeclarereachable"></a><a name="undeclare_reachable"></a>  undeclare_reachable  
+##  <a name="undeclare_reachable"></a>  undeclare_reachable  
  指定されたメモリ位置に到達できないことを `garbage_collector` に通知します。  
   
 ```  
@@ -874,12 +876,12 @@ Type *undeclare_reachable(Type* ptr);
   
 |パラメーター|説明|  
 |---------------|-----------------|  
-|` ptr`|到達不可と宣言されるメモリ アドレスへのポインター。|  
+|`ptr`|到達不可と宣言されるメモリ アドレスへのポインター。|  
   
 ### <a name="remarks"></a>コメント  
- ` ptr` が `null` でない場合、この関数は ` ptr` がこれ以降 `reachable` ではないことを `garbage collector` に通知します。 ` ptr` と等価の `safely derived` ポインターを返します。  
+ `ptr` が `null` でない場合、この関数は `ptr` がこれ以降 `reachable` ではないことを `garbage collector` に通知します。 `ptr` と等価の `safely derived` ポインターを返します。  
   
-##  <a name="a-nameuninitializedcopya--uninitializedcopy"></a><a name="uninitialized_copy"></a>  uninitialized_copy  
+##  <a name="uninitialized_copy"></a>  uninitialized_copy  
  指定されたソース範囲にあるオブジェクトを、初期化されていないターゲット範囲にコピーします。  
   
 ```  
@@ -888,17 +890,17 @@ ForwardIterator uninitialized_copy(InputIterator first, InputIterator last, Forw
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  ソース範囲内の先頭の要素を示す入力反復子。  
   
- ` last`  
+ `last`  
  ソース範囲内の最後の要素を示す入力反復子。  
   
- ` dest`  
+ `dest`  
  ターゲット範囲内の先頭の要素を示す前方反復子。  
   
 ### <a name="return-value"></a>戻り値  
- ソース範囲が空ではなく、反復子が *first* を示していない場合、ターゲット範囲を超えた最初の位置を示す前方反復子。  
+ ソース範囲が空ではない限りに、ターゲット範囲を超える最初の位置を示す前方反復子と反復子アドレス * first.*  
   
 ### <a name="remarks"></a>コメント  
  このアルゴリズムによって、オブジェクトの構築からメモリの割り当てを分離できます。  
@@ -980,7 +982,7 @@ int main()
 }
 ```  
   
-##  <a name="a-nameuninitializedcopyna--uninitializedcopyn"></a><a name="uninitialized_copy_n"></a>  uninitialized_copy_n  
+##  <a name="uninitialized_copy_n"></a>  uninitialized_copy_n  
  入力反復子から、指定した数の要素のコピーを作成します。 コピーは前方反復子に格納されます。  
   
 ```  
@@ -992,32 +994,30 @@ ForwardIterator uninitialized_copy_n(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  コピーするオブジェクトを参照する入力反復子。  
   
- ` count`  
+ `count`  
  オブジェクトをコピーする回数を指定する符号付きまたは符号なし整数型。  
   
- ` dest`  
+ `dest`  
  新しいコピー先を参照する前方反復子。  
   
 ### <a name="return-value"></a>戻り値  
- ターゲットを超えた最初の位置を示す前方反復子。 ソース範囲が空であった場合、反復子は ` first` を指します*。*  
+ ターゲットを超えた最初の位置を示す前方反復子。 反復子アドレスをソース範囲が空だった場合`first`です。  
   
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は、実質的に次の内容を実行します。  
   
- `for (; 0 < count; -- count)`  
-  
- `new ((void *)&*` ` dest` `++)`  
-  
- `iterator_traits<InputIterator>::value_type(*` ` first` `++);`  
-  
- `return dest;`  
+```cpp  
+    for (; 0 < count; --count)  
+        new ((void *)&* dest++) iterator_traits<InputIterator>::value_type(*first++);  
+    return dest;  
+```  
   
  ただし、このコードが例外をスローする場合を除きます。 この場合は、構築されたオブジェクトはすべて破棄され、再度例外がスローされます。  
   
-##  <a name="a-nameuninitializedfilla--uninitializedfill"></a><a name="uninitialized_fill"></a>  uninitialized_fill  
+##  <a name="uninitialized_fill"></a>  uninitialized_fill  
  指定された値のオブジェクトを、初期化されていないコピー先の範囲にコピーします。  
   
 ```  
@@ -1026,13 +1026,13 @@ void uninitialized_fill(ForwardIterator first, ForwardIterator last, const Type&
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  初期化されるターゲット範囲内の先頭の要素を示す前方反復子。  
   
- ` last`  
+ `last`  
  初期化されるターゲット範囲内の末尾の要素を示す前方反復子。  
   
- ` val`  
+ `val`  
  ターゲット範囲を初期化するために使用される値。  
   
 ### <a name="remarks"></a>コメント  
@@ -1086,7 +1086,7 @@ int main( )
 The initialized Array contains: 25 25 25 25 25 25 25 25 25 25   
 ```  
   
-##  <a name="a-nameuninitializedfillna--uninitializedfilln"></a><a name="uninitialized_fill_n"></a>  uninitialized_fill_n  
+##  <a name="uninitialized_fill_n"></a>  uninitialized_fill_n  
  指定された値のオブジェクトを、初期化されていないターゲット範囲にある指定された数の要素にコピーします。  
   
 ```  
@@ -1095,13 +1095,13 @@ void uninitialized_fill_n(ForwardIterator first, Size count, const Type& val);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  初期化されるターゲット範囲内の先頭の要素を示す前方反復子。  
   
- ` count`  
+ `count`  
  初期化される要素の数。  
   
- ` val`  
+ `val`  
  ターゲット範囲を初期化するために使用される値。  
   
 ### <a name="remarks"></a>コメント  

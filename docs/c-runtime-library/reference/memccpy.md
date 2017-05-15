@@ -1,48 +1,65 @@
 ---
-title: "_memccpy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_memccpy"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_memccpy"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_memccpy 関数"
-  - "memccpy 関数"
+title: _memccpy | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _memccpy
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _memccpy
+dev_langs:
+- C++
+helpviewer_keywords:
+- _memccpy function
+- memccpy function
 ms.assetid: 9a2337df-6e85-4eba-b247-dd0532f45ddb
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# _memccpy
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 289043b95095fbff3e25deaf464e9eca23c23457
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-バッファーから文字列をコピーします。  
+---
+# <a name="memccpy"></a>_memccpy
+バッファーから文字をコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -54,7 +71,7 @@ caps.handback.revision: 12
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *dest*  
  ターゲットへのポインター。  
   
@@ -62,31 +79,31 @@ caps.handback.revision: 12
  ソースへのポインター。  
   
  `c`  
- コピー元の最後の文字。  
+ コピーする最後の文字。  
   
  *count*  
  文字数。  
   
-## 戻り値  
- 文字 `c` をコピーする場合、`_memccpy` は、文字に続く *dest* の文字へのポインターを返します。  `c` がコピーする、**NULL**を返します。  
+## <a name="return-value"></a>戻り値  
+ 文字 `c` がコピーされた場合、`_memccpy` は *dest* 内のその文字の直後にある char へのポインターを返します。 `c` がコピーされなかった場合は、**NULL** を返します。  
   
-## 解説  
- `_memccpy` 関数が停止する *dest*への *ソース* の 0 のコピー、または最初にあるスレッドがいずれか、文字 `c` がコピーまたは *数の* 文字をコピーした場合は、次の文字を。  
+## <a name="remarks"></a>コメント  
+ `_memccpy` 関数は、*src* の 0 個以上の文字を *dest* にコピーし、文字 `c` がコピーされたとき、または *count* 個の文字がコピーされたときのいずれか早い方のタイミングで停止します。  
   
- **セキュリティに関するメモ** コピー先のバッファーのサイズがコピー元のバッファーのサイズ以上であることを確認してください。  詳細については、「[Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795)」を参照してください。  
+ **セキュリティに関するメモ** コピー先のバッファーのサイズがソース バッファー以上であることをご確認ください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_memccpy`|\<memory.h\> または \<string.h\>|  
+|-------------|---------------------|  
+|`_memccpy`|\<memory.h> または \<string.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## ライブラリ  
+## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_memccpy.c  
@@ -111,7 +128,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Function: _memccpy 60 characters or to character 's'  
@@ -120,15 +137,9 @@ Result: The quick brown dog jumps
 Length: 25 characters  
 ```  
   
-## 同等の .NET Framework 関数  
-  
--   [System::Buffer::BlockCopy](https://msdn.microsoft.com/en-us/library/system.buffer.blockcopy.aspx)  
-  
--   [System::String::Copy](https://msdn.microsoft.com/en-us/library/system.string.copy.aspx)  
-  
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)   
- [memchr、wmemchr](../Topic/memchr,%20wmemchr.md)   
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
+ [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   
  [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   
  [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)

@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 484ecd12490eab00c02fb4184edcaa55f346c3a8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 436e581907e3b651716e819a9c82a24eed2e4b8e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="mbstowcs-mbstowcsl"></a>mbstowcs、_mbstowcs_l
@@ -103,15 +104,15 @@ size_t _mbstowcs_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- ソース文字列を正常に変換した場合、`mbstowcs` は変換されたマルチバイト文字数を返します。 `wcstr` 引数が `NULL` の場合、この関数は対象文字列の必要なサイズを (ワイド文字数で) 返します。 無効なマルチバイト文字を検出した場合、`mbstowcs` は -1 を返します。 戻り値が `count` の場合、ワイド文字列の終端には null 文字が追加されません。  
+ ソース文字列を正常に変換した場合、`mbstowcs` は変換されたマルチバイト文字数を返します。 `wcstr` 引数が `NULL` の場合、この関数は対象文字列の必要なサイズを (ワイド文字数で) 返します。 場合`mbstowcs`に無効なマルチバイト文字を検出した-1 を返します。 戻り値が `count` の場合、ワイド文字列の終端には null 文字が追加されません。  
   
 > [!IMPORTANT]
 >  `wcstr` と `mbstr` が重なり合わず、変換するマルチバイト文字の数が `count` に適切に反映されていることを確認します。  
   
 ## <a name="remarks"></a>コメント  
- `mbstowcs` 関数は、`mbstr` が指す `count` 数までのマルチバイト文字を、現在のロケールに基づいて対応するワイド文字の文字列に変換します。 結果のワイド文字列は、`wcstr`* の示すアドレスに格納されます。* 結果は、`mbtowc` を複数回呼び出した場合と類似しています。 `count` の前かその中に&1; バイトの null 文字 ('\0') が検出されると、`mbstowcs` は null 文字をワイド文字の null 文字 (L'\0') に変換して停止します。 このため、`wcstr` のワイド文字の文字列が null 終了になるのは、変換中にマルチバイト null 文字が検出された場合だけです。 `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、動作は未定義です。  
+ `mbstowcs` 関数は、`mbstr` が指す `count` 数までのマルチバイト文字を、現在のロケールに基づいて対応するワイド文字の文字列に変換します。 によって表されるアドレスで作成されたワイド文字列を格納`wcstr`です。 結果は、`mbtowc` を複数回呼び出した場合と類似しています。 `count` の前かその中に 1 バイトの null 文字 ('\0') が検出されると、`mbstowcs` は null 文字をワイド文字の null 文字 (L'\0') に変換して停止します。 このため、`wcstr` のワイド文字の文字列が null 終了になるのは、変換中にマルチバイト null 文字が検出された場合だけです。 `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、動作は未定義です。  
   
- `wcstr` 引数が `NULL` の場合、`mbstowcs` は変換によって得られるワイド文字数を返します。終端の null は含まれません。 正しい値を返すには、ソース文字列が null で終わっている必要があります。 結果のワイド文字列を null で終了する必要がある場合は、戻り値に&1; を追加します。  
+ `wcstr` 引数が `NULL` の場合、`mbstowcs` は変換によって得られるワイド文字数を返します。終端の null は含まれません。 正しい値を返すには、ソース文字列が null で終わっている必要があります。 結果のワイド文字列を null で終了する必要がある場合は、戻り値に 1 を追加します。  
   
  `mbstr` 引数が `NULL` の場合、または `count` が `INT_MAX` を超える場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、errno が `EINVAL` に設定され、関数から -1 が返されます。  
   
@@ -222,9 +223,6 @@ Convert back to wide-character string:
   Characters converted: 2  
   Hex value of first 2 wide characters: 0x3042 0x3043  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

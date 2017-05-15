@@ -50,10 +50,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: d8d43b39c9f71807d68f20cb4873abf96d3f91e8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: df4705972f45fd129462f5a3f131c72135254620
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="setsetranslator"></a>_set_se_translator
@@ -79,11 +80,11 @@ _se_translator_function _set_se_translator(
   
  `_set_se_translator` を使用するときには、[/EHa](../../build/reference/eh-exception-handling-model.md) を使用する必要があります。  
   
- カスタム変換関数を指定する場合は、変換関数の名前を引数として指定して `_set_se_translator` を呼び出します。 作成した変換関数は、`try` ブロックを持つスタックの関数呼び出しごとに&1; 回呼び出されます。 既定の変換関数はありません。  
+ カスタム変換関数を指定する場合は、変換関数の名前を引数として指定して `_set_se_translator` を呼び出します。 作成した変換関数は、`try` ブロックを持つスタックの関数呼び出しごとに 1 回呼び出されます。 既定の変換関数はありません。  
   
  変換関数は、C++ 型の例外をスローする以外のことは何もすべきではありません。 スローに加えて何かを行う場合 (たとえば、ログ ファイルへの書き込みなど)、プログラムが期待どおりに動作しない可能性があります。それは、変換関数が呼び出される回数がプラットフォームに依存するためです。  
   
- マルチスレッド環境では、変換関数は各スレッドとは別に管理されます。 新しい各スレッドは、それぞれの変換関数をインストールする必要があります。 したがって、各スレッドが、それぞれの変換処理を担当します。 `_set_se_translator` は&1; つのスレッドに対して固有であり、他の DLL は別の変換関数をインストールできます。  
+ マルチスレッド環境では、変換関数は各スレッドとは別に管理されます。 新しい各スレッドは、それぞれの変換関数をインストールする必要があります。 したがって、各スレッドが、それぞれの変換処理を担当します。 `_set_se_translator` は 1 つのスレッドに対して固有であり、他の DLL は別の変換関数をインストールできます。  
   
  ユーザーが作成する `seTransFunction` 関数は、ネイティブにコンパイルされた関数である (/clr を使ってコンパイルしない) 必要があります。 それは引数として、符号なし整数と、Win32 `_EXCEPTION_POINTERS` 構造体へのポインターを取る必要があります。 引数はそれぞれ、Win32 API の `GetExceptionCode` 関数と `GetExceptionInformation` 関数の呼び出しの戻り値です。  
   
@@ -101,7 +102,7 @@ typedef void (*_se_translator_function)(unsigned int, struct _EXCEPTION_POINTERS
 |-------------|---------------------|  
 |`_set_se_translator`|\<eh.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
   
@@ -218,9 +219,6 @@ int main(int argc, char** argv) {
 Translating the structured exception to a C++ exception.  
 Caught CMyException.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   

@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: 565c3deaa98b4a01d02e5e63767de2beecd5a1bf
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 3458390f8e6dcaee229346c66d569a5486ae74c4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltarraygt"></a>&lt;array&gt;
@@ -60,19 +61,19 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator==](../standard-library/array-operators.md#operator_eq_eq)|配列の比較 (等しい)|  
-|[operator!=](../standard-library/array-operators.md#operator_neq)|配列の比較 (等しくない)|  
-|[operator\<](../standard-library/array-operators.md#operator_lt_)|配列の比較 (より小さい)|  
-|[operator>=](../standard-library/array-operators.md#operator_gt__eq)|配列の比較 (以上)|  
-|[operator>](../standard-library/array-operators.md#operator_gt_)|配列の比較 (より大きい)|  
-|[operator<=](../standard-library/array-operators.md#operator_lt__eq)|配列の比較 (以下)|  
+|[operator==](../standard-library/array-operators.md#op_eq_eq)|配列の比較 (等しい)|  
+|[operator!=](../standard-library/array-operators.md#op_neq)|配列の比較 (等しくない)|  
+|[operator\<](../standard-library/array-operators.md#op_lt)|配列の比較 (より小さい)|  
+|[operator>=](../standard-library/array-operators.md#op_gt_eq)|配列の比較 (以上)|  
+|[operator>](../standard-library/array-operators.md#op_gt)|配列の比較 (より大きい)|  
+|[operator<=](../standard-library/array-operators.md#op_lt_eq)|配列の比較 (以下)|  
   
 ### <a name="functions"></a>関数  
   
 |||  
 |-|-|  
-|[get](../standard-library/array-functions.md#get_function)|指定した配列要素を取得します。|  
-|[swap](../standard-library/array-functions.md#swap_function)|1 つの配列の内容を別の配列の内容と交換します。|  
+|[get](../standard-library/array-functions.md#get)|指定した配列要素を取得します。|  
+|[swap](../standard-library/array-functions.md#swap)|1 つの配列の内容を別の配列の内容と交換します。|  
   
 ## <a name="see-also"></a>関連項目  
  [\<tuple>](../standard-library/tuple.md)   

@@ -10,8 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - function
-- std::function
 - functional/std::function
+- functional/std::function::result_type
+- functional/std::function::assign
+- functional/std::function::swap
+- functional/std::function::target
+- functional/std::function::target_type
+- functional/std::function::operator unspecified
+- functional/std::function::operator()
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: acc0ecd4edaf1e58977dcbdeb483d497a72bc4c8
-ms.openlocfilehash: adc625fe0acd085f2433d5436c535c9ae9fd2455
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 0c79b2b4d1ac2e9df7f38708ff232d70392cce15
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="function-class"></a>function クラス
@@ -120,37 +127,37 @@ public:
   
 |||  
 |-|-|  
-|[function::function](#function__function)|空のラッパーまたは固定のシグネチャを持つ任意の型の呼び出し可能オブジェクトを格納するラッパーを作成します。|  
+|[function](#function)|空のラッパーまたは固定のシグネチャを持つ任意の型の呼び出し可能オブジェクトを格納するラッパーを作成します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[function::result_type](#function__result_type)|格納された呼び出し可能オブジェクトの戻り値の型。|  
+|[result_type](#result_type)|格納された呼び出し可能オブジェクトの戻り値の型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[function::assign](#function__assign)|呼び出し可能オブジェクトをこの関数オブジェクトに割り当てます。|  
-|[function::swap](#function__swap)|2 つの呼び出し可能オブジェクトを入れ替えます。|  
-|[function::target](#function__target)|格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。|  
-|[function::target_type](#function__target_type)|呼び出し可能オブジェクトの型情報を取得します。|  
+|[assign](#assign)|呼び出し可能オブジェクトをこの関数オブジェクトに割り当てます。|  
+|[swap](#swap)|2 つの呼び出し可能オブジェクトを入れ替えます。|  
+|[ターゲット](#target)|格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。|  
+|[target_type](#target_type)|呼び出し可能オブジェクトの型情報を取得します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[function::operator unspecified](#function__operator_unspecified)|格納されている呼び出し可能オブジェクトが存在するかどうかをテストします。|  
-|[function::operator()](#function__operator__)|呼び出し可能オブジェクトを呼び出します。|  
-|[function::operator=](#function__operator_eq)|格納されている呼び出し可能オブジェクトを置き換えます。|  
+|[function::operator unspecified](#op_unspecified)|格納されている呼び出し可能オブジェクトが存在するかどうかをテストします。|  
+|[function::operator()](#op_call)|呼び出し可能オブジェクトを呼び出します。|  
+|[function::operator=](#op_eq)|格納されている呼び出し可能オブジェクトを置き換えます。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-##  <a name="function__assign"></a>  function::assign  
+##  <a name="assign"></a>  function::assign  
  呼び出し可能オブジェクトをこの関数オブジェクトに割り当てます。  
   
 ```  
@@ -178,7 +185,7 @@ template <class Fx, class Alloc>
 ### <a name="remarks"></a>コメント  
  各メンバー関数は、`*this` によって保持されている `callable object` を `operand` として渡される呼び出し可能オブジェクトに置き換えます。 ストレージとアロケーターオブジェクト `Ax` の両方を割り当てます。  
   
-##  <a name="function__function"></a>  function::function  
+##  <a name="function"></a>  function::function  
  空のラッパーまたは固定のシグネチャを持つ任意の型の呼び出し可能オブジェクトを格納するラッパーを作成します。  
   
 ```  
@@ -220,7 +227,7 @@ template <class Fx, class Alloc>
  ラップする呼び出し可能オブジェクトの参照。  
   
 ### <a name="remarks"></a>コメント  
- 最初の&2; つのコンストラクターは、空の `function` オブジェクトを構築します。 次の&3; つのコンストラクターは、オペランドとして渡される呼び出し可能オブジェクトを保持する `function` オブジェクトを構築します。 最後の&2; つのコンス トラクターは、アロケーター オブジェクト Ax を使用してストレージを割り当てます。  
+ 最初の 2 つのコンストラクターは、空の `function` オブジェクトを構築します。 次の 3 つのコンストラクターは、オペランドとして渡される呼び出し可能オブジェクトを保持する `function` オブジェクトを構築します。 最後の 2 つのコンス トラクターは、アロケーター オブジェクト Ax を使用してストレージを割り当てます。  
   
 ### <a name="example"></a>例  
   
@@ -292,7 +299,7 @@ f is non-empty (correct).
 g is empty (correct).  
 ```  
   
-##  <a name="function__operator_unspecified"></a>  function::operator unspecified  
+##  <a name="op_unspecified"></a>  function::operator unspecified  
  格納されている呼び出し可能オブジェクトが存在するかどうかをテストします。  
   
 ```  
@@ -332,7 +339,7 @@ not empty == false
 not empty == true  
 ```  
   
-##  <a name="function__operator__"></a>  function::operator()  
+##  <a name="op_call"></a>  function::operator()  
  呼び出し可能オブジェクトを呼び出します。  
   
 ```  
@@ -380,7 +387,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="function__operator_eq"></a>  function::operator=  
+##  <a name="op_eq"></a>  function::operator=  
  格納されている呼び出し可能オブジェクトを置き換えます。  
   
 ```  
@@ -459,7 +466,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="function__result_type"></a>  function::result_type  
+##  <a name="result_type"></a>  function::result_type  
  格納された呼び出し可能オブジェクトの戻り値の型。  
   
 ```  
@@ -499,7 +506,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="function__swap"></a>  function::swap  
+##  <a name="swap"></a>  function::swap  
  2 つの呼び出し可能オブジェクトを入れ替えます。  
   
 ```  
@@ -555,7 +562,7 @@ empty == false
 val == -3  
 ```  
   
-##  <a name="function__target"></a>  function::target  
+##  <a name="target"></a>  function::target  
  格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。  
   
 ```  
@@ -614,7 +621,7 @@ empty == true
 no target == true  
 ```  
   
-##  <a name="function__target_type"></a>  function::target_type  
+##  <a name="target_type"></a>  function::target_type  
  呼び出し可能オブジェクトの型情報を取得します。  
   
 ```  
@@ -659,6 +666,6 @@ type == void
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [mem_fn 関数](../standard-library/functional-functions.md#mem_fn_function)   
+ [mem_fn](../standard-library/functional-functions.md#mem_fn)   
  [reference_wrapper クラス](../standard-library/reference-wrapper-class.md)
 

@@ -21,10 +21,11 @@ f1_keywords:
 ms.assetid: 3ddde610-70cc-4cfa-8a89-3e83d1d356a8
 caps.latest.revision: 10
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d54e1d5071414f1e8f6ae96391aa1659397bbcb3
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: cc990171c1196a35f0fe90d99ee1cbdbca337c9a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt; 関数
@@ -289,7 +290,7 @@ T1 resetiosflags(ios_base::fmtflags Mask);
  オフにするフラグ。  
   
 ### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを取得するから抽出され、ストリームに挿入**str**、呼び出し**str**します。 [setf](../standard-library/ios-base-class.md#ios_base__setf)( `ios_base::`[fmtflags](../standard-library/ios-base-class.md#ios_base__fmtflags), _ *Mask*), and then returns **str**.  
+ マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [setf](../standard-library/ios-base-class.md#setf)( `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags), _ *Mask*), and then returns **str**.  
   
 ### <a name="example"></a>例  
   `resetiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
@@ -306,7 +307,7 @@ T3 setbase(int _Base);
  基数。  
   
 ### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを取得するから抽出され、ストリームに挿入**str**、呼び出し**str**します。 `setf`(**マスク**、 [ios_base::basefield](../standard-library/ios-base-class.md#ios_base__fmtflags))、戻ります**str**します。 ここで、**mask** は、次のように判断されます。  
+ マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 `setf`(**マスク**、 [ios_base::basefield](../standard-library/ios-base-class.md#fmtflags))、しを返します**str**です。 ここで、**mask** は、次のように判断されます。  
   
 -   _ *Base* が 8 の場合、**mask** は `ios_base::`[oct](../standard-library/ios-functions.md#oct) になります。  
   
@@ -314,7 +315,7 @@ T3 setbase(int _Base);
   
 -   _ *Base* が 16 の場合、**mask** は `ios_base::`[hex](../standard-library/ios-functions.md#hex) になります。  
   
--   _ *Base* がその他の値の場合、mask は `ios_base::`[fmtflags](../standard-library/ios-base-class.md#ios_base__fmtflags)(0) になります。  
+-   _ *Base* がその他の値の場合、mask は `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags)(0) になります。  
   
 ### <a name="example"></a>例  
   `setbase` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
@@ -332,7 +333,7 @@ T4 setfill(Elem Ch);
  右揃えの表示でスペースを埋めるために使用する文字。  
   
 ### <a name="return-value"></a>戻り値  
- テンプレートのマニピュレーター返しますオブジェクトから抽出されたか、ストリームに挿入**str**、呼び出し**str**します。 [塗りつぶし](../standard-library/basic-ios-class.md#basic_ios__fill)( `Ch`)、戻ります**str**します。 **Elem** 型は、ストリーム **str** の要素型と同じである必要があります。  
+ テンプレート マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [塗りつぶし](../standard-library/basic-ios-class.md#fill)( `Ch`)、しを返します**str**です。 **Elem** 型は、ストリーム **str** の要素型と同じである必要があります。  
   
 ### <a name="example"></a>例  
   `setfill` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
@@ -349,7 +350,7 @@ T2 setiosflags(ios_base::fmtflags Mask);
  設定するフラグ。  
   
 ### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを取得するから抽出され、ストリームに挿入**str**、呼び出し**str**します。 [setf](../standard-library/ios-base-class.md#ios_base__setf)(_*マスク*)、戻ります**str**します。  
+ マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [setf](../standard-library/ios-base-class.md#setf)(_*マスク*)、しを返します**str**です。  
   
 ### <a name="example"></a>例  
   `setiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
@@ -366,7 +367,7 @@ T5 setprecision(streamsize Prec);
  浮動小数点値の有効桁数。  
   
 ### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを取得するから抽出され、ストリームに挿入**str**、呼び出し**str**します。 [有効桁数](../standard-library/ios-base-class.md#ios_base__precision)( `Prec`)、戻ります**str**します。  
+ マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [有効桁数](../standard-library/ios-base-class.md#precision)( `Prec`)、しを返します**str**です。  
   
 ### <a name="example"></a>例  
   `setprecision` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
@@ -383,7 +384,7 @@ T6 setw(streamsize Wide);
  表示フィールドの幅です。  
   
 ### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを取得するから抽出され、ストリームに挿入**str**、呼び出し**str**します。 [幅](../standard-library/ios-base-class.md#ios_base__width)(_*ワイド*)、戻ります**str**します。  
+ マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [幅](../standard-library/ios-base-class.md#width)(_*ワイド*)、しを返します**str**です。  
   
 ### <a name="remarks"></a>コメント  
  setw は、ストリーム内の次の要素についてのみ幅を設定します。幅を指定する各要素の前に setw を挿入する必要があります。  

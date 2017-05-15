@@ -190,10 +190,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 7cd9b98172f30248c40d2b0b8410b19f4a0cafec
-ms.lasthandoff: 04/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: 42bd88a29dbefe48c59742ab8fc982355262f66e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="compiler-fatal-errors-c999-through-c1999"></a>コンパイラ エラー (致命的なエラー) C999 から C1999
@@ -219,7 +220,7 @@ ms.lasthandoff: 04/24/2017
 |致命的なエラー C1012|一致しないかっこ: 見つからない '*文字*"|  
 |致命的なエラー C1013|コンパイラの制限: 始めかっこが多すぎます。|  
 |致命的なエラー C1014|インクルード ファイルが多すぎます: 深さ =*数*|  
-|致命的なエラー C1016|#ifdef/#ifndef 識別子|  
+|致命的なエラー C1016|#ifdef/#ifndef には識別子が必要です。|  
 |[致命的なエラー C1017](../../error-messages/compiler-errors-1/fatal-error-c1017.md)|整数定数式が無効です。|  
 |致命的なエラー C1018|予期しない #elif です。|  
 |致命的なエラー C1019|予期しない #else です。|  
@@ -241,6 +242,7 @@ ms.lasthandoff: 04/24/2017
 |致命的なエラー C1048|不明なオプション '*文字列*'in'*オプション*'|  
 |致命的なエラー C1049|無効な数値の引数 '*値*'|  
 |[致命的なエラー C1051](../../error-messages/compiler-errors-1/fatal-error-c1051.md)|プログラム データベース ファイルでは、'*ファイル*'、旧形式、それを削除し、再コンパイル|  
+|[致命的なエラー c1052 など](fatal-error-c1052.md)|プログラム データベース ファイルでは、'*filename*'、;/DEBUG:fastlink のリンカーによって生成されたコンパイラできませんこのような PDB ファイルを更新; してください削除するかまたは/Fd を使用して、別の PDB ファイル名を指定。|  
 |致命的なエラー C1053|'*関数*': 関数が大きすぎます|  
 |[致命的なエラー C1054](../../error-messages/compiler-errors-1/fatal-error-c1054.md)|コンパイラの制限: 初期化子の入れ子のレベルが深すぎます。|  
 |[致命的なエラー C1055](../../error-messages/compiler-errors-1/fatal-error-c1055.md)|コンパイラの制限: キーが足りません。|  
@@ -290,16 +292,16 @@ ms.lasthandoff: 04/24/2017
 |致命的なエラー C1110|入れ子のテンプレート定義やジェネリック定義が多すぎます。|  
 |致命的なエラー C1111|テンプレート パラメーターやジェネリック パラメーターが多すぎます。|  
 |致命的なエラー C1112|コンパイラの制限: `'number`' 引数が多すぎますマクロ、のみ*数*許可|  
-|[致命的なエラー C1113](../../error-messages/compiler-errors-1/fatal-error-c1113.md)|#失敗しました '*ファイル*'。|  
+|[致命的なエラー C1113](../../error-messages/compiler-errors-1/fatal-error-c1113.md)|# で失敗しました using '*ファイル*'|  
 |致命的なエラー C1114|'*ファイル*': WinRT はサポートしていません # マネージ アセンブリの using|  
 |[致命的なエラー C1120](../../error-messages/compiler-errors-1/fatal-error-c1120.md)|失敗の GetProcAddress の呼び出しに '*関数*'|  
 |[致命的なエラー C1121](../../error-messages/compiler-errors-1/fatal-error-c1121.md)|CryptoAPI への呼び出しに失敗しました|  
 |[致命的なエラー C1126](../../error-messages/compiler-errors-1/fatal-error-c1126.md)|自動メモリ割り当てを超える*サイズ*|  
 |[致命的なエラー C1128](../../error-messages/compiler-errors-1/fatal-error-c1128.md)|セクションの数がオブジェクト ファイル形式の制限を超えています: /bigobj と共にコンパイルしてください|  
-|[致命的なエラー C1189](../../error-messages/compiler-errors-1/fatal-error-c1189.md)|#エラー:*メッセージ*|  
+|[致命的なエラー C1189](../../error-messages/compiler-errors-1/fatal-error-c1189.md)|#error:*メッセージ*|  
 |致命的なエラー C1190|マネージ ターゲット コードには '/clr' が必要です。|  
 |[致命的なエラー C1191](../../error-messages/compiler-errors-1/fatal-error-c1191.md)|'*ファイル*' グローバル スコープでのみインポートできます|  
-|[致命的なエラー C1192](../../error-messages/compiler-errors-1/fatal-error-c1192.md)|#失敗しました '*ファイル*'。|  
+|[致命的なエラー C1192](../../error-messages/compiler-errors-1/fatal-error-c1192.md)|# で失敗しました using '*ファイル*'|  
 |致命的なエラー C1193|予期されたエラー*ファイル*(*行*) に到達していません。|  
 |致命的なエラー C1195|/Yu と /Yc を同じコマンド ラインで使用することは /clr オプションとの互換性がありません。|  
 |致命的なエラー C1196|'*識別子*': タイプ ライブラリで見つかった識別子'*typelib*' は有効な C++ 識別子ではありません|  
@@ -317,7 +319,7 @@ ms.lasthandoff: 04/24/2017
 |致命的なエラー C1301|プログラム データベースへのアクセス エラー*ファイル*、無効な書式設定を削除してください、再構築|  
 |致命的なエラー C1302|モジュールのプロファイル データがありません '*モジュール*'にプロファイル データベース'*ファイル*'|  
 |[致命的なエラー C1305](../../error-messages/compiler-errors-1/fatal-error-c1305.md)|プロファイル データベース '*ファイル*' は異なるアーキテクチャ用です|  
-|致命的なエラー C1306|最後の変更の基本プロファイル データを '*ファイル*'; 最適化分析で決定された最適化は古くなる可能性があります|  
+|致命的なエラー C1306|最後に変更のプロファイル データの基本 '*ファイル*'; 最適化分析で決定された最適化は古くなる可能性があります|  
 |[致命的なエラー C1307](../../error-messages/compiler-errors-1/fatal-error-c1307.md)|プロファイル データが集められてからプログラムが編集されました。|  
 |[致命的なエラー C1308](../../error-messages/compiler-errors-1/fatal-error-c1308.md)|*ファイル*: リンク アセンブリはサポートされていません|  
 |[致命的なエラー C1309](../../error-messages/compiler-errors-1/fatal-error-c1309.md)|C2 のバージョンが一致しません。DLL および pgodb*ver*です。DLL|  

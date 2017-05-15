@@ -67,10 +67,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e4f0eff8758694e97bfb310f9cfa650cb28cefa4
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 0600d44b2b87ed3bb56e7d1c64fffd762e77aff2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="tempnam-wtempnam-tmpnam-wtmpnam"></a>_tempnam、_wtempnam、tmpnam、_wtmpnam
@@ -106,7 +107,7 @@ wchar_t *_wtmpnam(
  生成された名前を保持し、関数によって返される名前と同じになるポインター。 これは、生成された名前を保存する便利な方法です。  
   
 ## <a name="return-value"></a>戻り値  
- 各関数は、生成された名前へのポインター、または失敗した場合は `NULL` を返します。 `tmpnam` で `TMP_MAX` (STDIO.H を参照) よりも多くの呼び出しを試行した場合、または `_tempnam` を使用していて TMP 環境変数および `dir` パラメーターに無効なディレクトリ名が指定されている場合は、失敗する可能性があります。  
+ 各関数は、生成された名前へのポインター、または失敗した場合は `NULL` を返します。 しようとすると、エラーが発生する可能性が複数の`TMP_MAX`(STDIO を参照してください。H) を使用した呼び出し`tmpnam`を使用する場合または`_tempnam`TMP 環境変数で指定された無効なディレクトリ名があると、`dir`パラメーター。  
   
 > [!NOTE]
 >  `tmpnam` と `_wtmpnam` によって返されるポインターは、内部の静的バッファーを指します。 これらのポインターの割り当てを解除するために [free](../../c-runtime-library/reference/free.md) を呼び出さないでください。 `_tempnam` および `_wtempnam` によって割り当てられたポインターに対して、`free` を呼び出す必要があります。  
@@ -192,9 +193,6 @@ int main( void )
 \s1gk. is safe to use as a temporary file.  
 C:\DOCUME~1\user\LOCALS~1\Temp\2\stq2 is safe to use as a temporary file.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

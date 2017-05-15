@@ -10,9 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - valarray/std::slice
-- std.slice
 - slice
-- std::slice
+- valarray/std::slice::size
+- valarray/std::slice::start
+- valarray/std::slice::stride
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,17 +37,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 1a52938edc6e4fb315ea3f2eec558ddc36d4d60f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 1732814d42a3c20e9c0248d61bd93f830c073bd9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="slice-class"></a>slice クラス
-親 valarray の&1; 次元サブセットを定義するために使用する valarray のユーティリティ クラス。 valarray が配列内のすべての要素を持つ&2; 次元行列と見なされる場合、スライスにより&2; 次元配列のうち&1; 次元のベクターが抽出されます。  
+親 valarray の 1 次元サブセットを定義するために使用する valarray のユーティリティ クラス。 valarray が配列内のすべての要素を持つ 2 次元行列と見なされる場合、スライスにより 2 次元配列のうち 1 次元のベクターが抽出されます。  
   
 ## <a name="remarks"></a>コメント  
- クラスは、[slice_array](../standard-library/slice-array-class.md) 型のオブジェクトを特徴とするパラメーターを格納します。クラスのスライスのオブジェクトが [valarray](../standard-library/valarray-class.md#valarray__operator_at)**\<Type>** クラスのオブジェクトの引数として現れる場合、valarray のサブセットは間接的に構築されます。 親の valarray から選択したサブセットを指定する格納値には、以下が含まれています。  
+ クラスは、[slice_array](../standard-library/slice-array-class.md) 型のオブジェクトを特徴とするパラメーターを格納します。クラスのスライスのオブジェクトが [valarray](../standard-library/valarray-class.md#op_at)**\<Type>** クラスのオブジェクトの引数として現れる場合、valarray のサブセットは間接的に構築されます。 親の valarray から選択したサブセットを指定する格納値には、以下が含まれています。  
   
 -   valarray の開始インデックス。  
   
@@ -62,22 +64,22 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[slice](#slice__slice)|等間隔で離れ、指定した要素で開始する多数の要素で構成する `valarray` のサブセットを定義します。|  
+|[slice](#slice)|等間隔で離れ、指定した要素で開始する多数の要素で構成する `valarray` のサブセットを定義します。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[size](#slice__size)|`valarray` のスライスにある要素の数を調べます。|  
-|[start](#slice__start)|`valarray` のスライスの開始インデックスを検索します。|  
-|[stride](#slice__stride)|`valarray` のスライスにある要素間の距離を検索します。|  
+|[size](#size)|`valarray` のスライスにある要素の数を調べます。|  
+|[start](#start)|`valarray` のスライスの開始インデックスを検索します。|  
+|[stride](#stride)|`valarray` のスライスにある要素間の距離を検索します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
   
-##  <a name="a-nameslicesizea--slicesize"></a><a name="slice__size"></a>  slice::size  
+##  <a name="size"></a>  slice::size  
  valarray のスライスにある要素の数を調べます。  
   
 ```  
@@ -139,7 +141,7 @@ The slice of valarray va is vaResult = va[slice( 3, 6, 3)] =
 The size of slice vaSlice is: 6.  
 ```  
   
-##  <a name="a-namesliceslicea--sliceslice"></a><a name="slice__slice"></a>  slice::slice  
+##  <a name="slice"></a>  slice::slice  
  等間隔で離れ、指定した要素で開始する多数の要素で構成する valarray のサブセットを定義します。  
   
 ```  
@@ -158,11 +160,11 @@ slice(
  `_Len`  
  サブセット内の要素数。  
   
- ` stride`  
+ `stride`  
  サブセット内の要素間の距離。  
   
 ### <a name="return-value"></a>戻り値  
- 既定のコンストラクターは、開始インデックス、長さの合計、およびストライドに対して&0; を格納します。 2 番目のコンストラクターは、開始インデックスには `_StartIndex`、長さの合計には `_Len`、ストライドには ` stride` を格納します。  
+ 既定のコンストラクターは、開始インデックス、長さの合計、およびストライドに対して 0 を格納します。 2 番目のコンストラクターは、開始インデックスには `_StartIndex`、長さの合計には `_Len`、ストライドには `stride` を格納します。  
   
 ### <a name="remarks"></a>コメント  
  ストライドは負となる場合があります。  
@@ -208,7 +210,7 @@ The slice of valarray va is vaResult:
 va[slice( 1, 7, 3)] = ( 4 10 16 22 28 34 40 ).  
 ```  
   
-##  <a name="a-nameslicestarta--slicestart"></a><a name="slice__start"></a>  slice::start  
+##  <a name="start"></a>  slice::start  
  valarray のスライスの開始インデックスを検索します。  
   
 ```  
@@ -264,7 +266,7 @@ The slice of valarray va is vaResult = va[slice( 3, 6, 3)] =
 The start index of slice vaSlice is: 3.  
 ```  
   
-##  <a name="a-nameslicestridea--slicestride"></a><a name="slice__stride"></a>  slice::stride  
+##  <a name="stride"></a>  slice::stride  
  valarray のスライスにある要素間の距離を検索します。  
   
 ```  

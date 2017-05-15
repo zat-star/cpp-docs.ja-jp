@@ -11,8 +11,11 @@ ms.topic: article
 f1_keywords:
 - xlocmon/std::money_get
 - money_get
-- std.money_get
-- std::money_get
+- locale/std::money_get::char_type
+- locale/std::money_get::iter_type
+- locale/std::money_get::string_type
+- locale/std::money_get::do_get
+- locale/std::money_get::get
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +39,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f9e122dbeb68fb4ed33d9e652af21c1b9474e3a5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 824f12ed51bfd5f29e759a50fb3ead0a669da0ab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="moneyget-class"></a>money_get クラス
@@ -60,35 +64,35 @@ class money_get : public locale::facet;
  get 関数が入力を読み取る反復子の型。  
   
 ## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は&0; です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
+ すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[money_get](#money_get__money_get)|通貨値を表すシーケンスから数値を抽出するために使用される `money_get` 型のオブジェクトのコンストラクター。|  
+|[money_get](#money_get)|通貨値を表すシーケンスから数値を抽出するために使用される `money_get` 型のオブジェクトのコンストラクター。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#money_get__char_type)|ロケールによって使用される文字を表すために使用される型。|  
-|[iter_type](#money_get__iter_type)|入力反復子を表す型。|  
-|[string_type](#money_get__string_type)|`CharType` 型の文字を格納する文字列を表す型。|  
+|[char_type](#char_type)|ロケールによって使用される文字を表すために使用される型。|  
+|[iter_type](#iter_type)|入力反復子を表す型。|  
+|[string_type](#string_type)|`CharType` 型の文字を格納する文字列を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[do_get](#money_get__do_get)|通貨値を表す文字シーケンスから数値を抽出するために呼び出される仮想関数。|  
-|[get](#money_get__get)|通貨値を表す文字シーケンスから数値を抽出します。|  
+|[do_get](#do_get)|通貨値を表す文字シーケンスから数値を抽出するために呼び出される仮想関数。|  
+|[get](#get)|通貨値を表す文字シーケンスから数値を抽出します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-##  <a name="a-namemoneygetchartypea--moneygetchartype"></a><a name="money_get__char_type"></a>  money_get::char_type  
+##  <a name="char_type"></a>  money_get::char_type  
  ロケールによって使用される文字を表すために使用される型。  
   
 ```
@@ -98,7 +102,7 @@ typedef CharType char_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **CharType** のシノニムです。  
   
-##  <a name="a-namemoneygetdogeta--moneygetdoget"></a><a name="money_get__do_get"></a>  money_get::do_get  
+##  <a name="do_get"></a>  money_get::do_get  
  通貨値を表す文字シーケンスから数値を抽出するために呼び出される仮想関数。  
   
 ```
@@ -138,42 +142,42 @@ virtual iter_type do_get(iter_type first,
  通貨入力フィールドを超える先頭の要素を示す入力反復子。  
   
 ### <a name="remarks"></a>コメント  
- 1 番目のプロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の先頭から始め、空でない完全な通貨入力フィールドを認識するまで、連続した要素との一致を試みます。 成功した場合、このフィールドを&1; 桁以上の&10; 進数字のシーケンス (必要に応じて頭にマイナス記号 ( `–`) が付く) に変換して値を表し、その結果を [string_type](#money_get__string_type) オブジェクト `val` に格納します。 そして、通貨入力フィールドを超える先頭の要素を指す反復子を返します。 それ以外の場合、この関数は `val` に空のシーケンスを格納し、`State` に `ios_base::failbit` を設定します。 そして、有効な通貨入力フィールドのプレフィックスを超える先頭の要素を指す反復子を返します。 いずれの場合も、戻り値が `last` と等しい場合、関数は `State` に `ios_base::eofbit` を設定します。  
+ 1 番目のプロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の先頭から始め、空でない完全な通貨入力フィールドを認識するまで、連続した要素との一致を試みます。 成功した場合、このフィールドを 1 桁以上の 10 進数字のシーケンス (必要に応じて頭にマイナス記号 ( `-`) が付く) に変換して値を表し、その結果を [string_type](#string_type) オブジェクト `val` に格納します。 そして、通貨入力フィールドを超える先頭の要素を指す反復子を返します。 それ以外の場合、この関数は `val` に空のシーケンスを格納し、`State` に `ios_base::failbit` を設定します。 そして、有効な通貨入力フィールドのプレフィックスを超える先頭の要素を指す反復子を返します。 いずれの場合も、戻り値が `last` と等しい場合、関数は `State` に `ios_base::eofbit` を設定します。  
   
- 2 番目のプロテクト仮想メンバー関数は&1; 番目と同様に動作します。ただし、成功した場合は、必要に応じて符号を付けた数字シーケンスを `long double` 型の値に変換し、その値を `val` に格納します。  
+ 2 番目のプロテクト仮想メンバー関数は 1 番目と同様に動作します。ただし、成功した場合は、必要に応じて符号を付けた数字シーケンスを `long double` 型の値に変換し、その値を `val` に格納します。  
   
- 通貨入力フィールドの形式はによって決まります、[ロケールのファセット](../standard-library/locale-class.md#facet_class)**要素**効果的な呼び出しで返される[use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md) \< **CharType**、 **intl**>> ( **iosbase**します。 [getloc](../standard-library/ios-base-class.md#ios_base__getloc))。  
+ 通貨入力フィールドの形式はによって決定されます、[ロケールのファセット](../standard-library/locale-class.md#facet_class)**要素**効果的な呼び出しによって返された[use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md) \< **CharType**、 **intl**>> ( **iosbase**です。 [getloc](../standard-library/ios-base-class.md#getloc))。  
   
  具体的には、次のように使用します。  
   
-- **fac**. [neg_format](../standard-library/moneypunct-class.md#moneypunct__neg_format)フィールドのコンポーネントが出現する順序を決定します。  
+- **fac**. [neg_format](../standard-library/moneypunct-class.md#neg_format)フィールドのコンポーネントが出現する順序を決定します。  
   
-- **fac**. [curr_symbol](../standard-library/moneypunct-class.md#moneypunct__curr_symbol)通貨記号を構成する要素のシーケンスを決定します。  
+- **fac**. [curr_symbol](../standard-library/moneypunct-class.md#curr_symbol)通貨記号を構成する要素の順序を決定します。  
   
-- **fac**. [positive_sign](../standard-library/moneypunct-class.md#moneypunct__positive_sign)正の符号を構成する要素のシーケンスを決定します。  
+- **fac**. [positive_sign](../standard-library/moneypunct-class.md#positive_sign)正の符号を構成する要素の順序を決定します。  
   
-- **fac**. [negative_sign](../standard-library/moneypunct-class.md#moneypunct__negative_sign)負の符号を構成する要素のシーケンスを決定します。  
+- **fac**. [negative_sign](../standard-library/moneypunct-class.md#negative_sign)に負の符号を構成する要素の順序を決定します。  
   
-- **fac**. [グループ化](../standard-library/moneypunct-class.md#moneypunct__grouping)数字が小数点の左側にグループ化方法を決定します。  
+- **fac**. [グループ化](../standard-library/moneypunct-class.md#grouping)桁の数字が小数点の左側にグループ化する方法を決定します。  
   
-- **fac**. [thousands_sep](../standard-library/moneypunct-class.md#moneypunct__thousands_sep)小数点の左側にある数字のグループを区切る要素を調べます。  
+- **fac**. [thousands_sep](../standard-library/moneypunct-class.md#thousands_sep)小数点の左側にある数字のグループを区切る要素を決定します。  
   
-- **fac**. [decimal_point](../standard-library/moneypunct-class.md#moneypunct__decimal_point)を小数点以下桁数の整数部の桁数を区切る要素を調べます。  
+- **fac**. [decimal_point](../standard-library/moneypunct-class.md#decimal_point)要素を区切る整数部の桁数、小数点以下桁数を決定します。  
   
-- **fac**. [frac_digits](../standard-library/moneypunct-class.md#moneypunct__frac_digits)小数点の右側にある重要な部分数字の数を決定します。 `frac_digits` によって要求される小数桁数を上回る桁数の値を解析する場合、`do_get` は最大で `frac_digits` 文字を処理した後、解析を停止します。  
+- **fac**. [frac_digits](../standard-library/moneypunct-class.md#frac_digits)小数点の右側に大幅な小数点以下桁数の数を決定します。 `frac_digits` によって要求される小数桁数を上回る桁数の値を解析する場合、`do_get` は最大で `frac_digits` 文字を処理した後、解析を停止します。  
   
- 場合、記号の文字列 (**要素**します。 `negative_sign`or **fac**. `positive_sign`) が&1; つ以上の要素である最初の要素のみが一致すると、要素と等しい**money_base::sign**フォーマット パターンが表示されます (**要素**します。 `neg_format`) 残りの要素は、通貨入力フィールドの末尾で一致します。 いずれの文字列も通貨入力フィールド内の先頭の要素が次の要素と一致していない場合、符号文字列は空と見なされ、符号は正になります。  
+ 場合、記号の文字列 (**要素**です。 `negative_sign`or **fac**. `positive_sign`) に複数の要素、最初の要素のみがある場所の照合要素と等しい**money_base::sign**形式パターンに表示されます (**要素**です。 `neg_format`) 残りの要素は、通貨入力フィールドの末尾で一致します。 いずれの文字列も通貨入力フィールド内の先頭の要素が次の要素と一致していない場合、符号文字列は空と見なされ、符号は正になります。  
   
- 場合**iosbase**します。 [フラグ](../standard-library/ios-base-class.md#ios_base__flags) & [showbase](../standard-library/ios-functions.md#showbase)&0; 以外の場合、文字列**要素**します。 `curr_symbol`場所に一致する必要があります、要素と等しい**money_base::symbol**フォーマット パターンが表示されます。 このようにしないと、書式パターンの末尾に **money_base::symbol** が出現する場合、および一致せずに残っている符号文字列の要素がない場合に、通貨記号は一致しません。 それ以外の場合は、必要に応じて通貨記号が一致します。  
+ 場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、文字列**要素**です。 `curr_symbol`where が一致する必要があります、要素と等しい**money_base::symbol**形式パターンに表示されます。 このようにしないと、書式パターンの末尾に **money_base::symbol** が出現する場合、および一致せずに残っている符号文字列の要素がない場合に、通貨記号は一致しません。 それ以外の場合は、必要に応じて通貨記号が一致します。  
   
- インスタンスがない場合**要素**します。 `thousands_sep`通貨入力フィールドの値の部分で発生する (場所と等しい要素**money_base::value**フォーマット パターンが表示されます)、グループ化の制約は適用されません。 によって、グループ化の制約が課されるそれ以外の場合、**要素**します。 **グループ化**が適用されます。 結果の数字のシーケンスを表します整数の下位**要素**します。 `frac_digits`小数点以下桁数、小数点の右側と見なされます。  
+ インスタンスがない場合**要素**です。 `thousands_sep`通貨入力フィールドの値の部分で発生する (ここで、要素と等しい**money_base::value**形式パターンに表示されます)、グループ化の制約が課せられなかった。 によって、グループ化の制約が課されるそれ以外の場合、**要素**です。 **グループ化**が適用されます。 結果の数字のシーケンスを表す整数が下位注**要素**です。 `frac_digits`小数点以下桁数、小数点の右側と見なされます。  
   
- 任意の余白は、書式パターンの末尾以外に出現する場合、**money_base::space** と等しい要素が書式パターンに出現しているときに一致します。 それ以外の場合、内部の余白は一致しません。 要素*ch*場合に、空白文字と見なされますが[use_facet](../standard-library/locale-functions.md#use_facet) < [ctype](../standard-library/ctype-class.md) \< **CharType**> > ( **iosbase**します。 [getloc](../standard-library/ios-base-class.md#ios_base__getloc))。 [is](../standard-library/ctype-class.md#ctype__is)( **ctype_base::space**, *ch*) is **true**.  
+ 任意の余白は、書式パターンの末尾以外に出現する場合、**money_base::space** と等しい要素が書式パターンに出現しているときに一致します。 それ以外の場合、内部の余白は一致しません。 要素*ch*と見なされます空白[use_facet](../standard-library/locale-functions.md#use_facet) < [ctype](../standard-library/ctype-class.md) \< **CharType**>> ( **iosbase**です。 [getloc](../standard-library/ios-base-class.md#getloc))。 [is](../standard-library/ctype-class.md#is)( **ctype_base::space**, *ch*) is **true**.  
   
 ### <a name="example"></a>例  
-  [get](#money_get__get) の例 (`do_get` を呼び出す) を参照してください。  
+  [get](#get) の例 (`do_get` を呼び出す) を参照してください。  
   
-##  <a name="a-namemoneygetgeta--moneygetget"></a><a name="money_get__get"></a>  money_get::get  
+##  <a name="get"></a>  money_get::get  
  通貨値を表す文字シーケンスから数値を抽出します。  
   
 ```
@@ -215,7 +219,7 @@ iter_type get(iter_type first,
  通貨入力フィールドを超える先頭の要素を示す入力反復子。  
   
 ### <a name="remarks"></a>コメント  
- どちらのメンバー関数も [do_get](#money_get__do_get)( `first``,` `last``,` `Intl`, `Iosbase`, `State`, `val`) を返します。  
+ どちらのメンバー関数も [do_get](#do_get)( `first``,` `last``,` `Intl`, `Iosbase`, `State`, `val`) を返します。  
   
 ### <a name="example"></a>例  
   
@@ -266,7 +270,7 @@ int main( )
 };  
 ```  
   
-##  <a name="a-namemoneygetitertypea--moneygetitertype"></a><a name="money_get__iter_type"></a>  money_get::iter_type  
+##  <a name="iter_type"></a>  money_get::iter_type  
  入力反復子を表す型。  
   
 ```
@@ -276,7 +280,7 @@ typedef InputIterator iter_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **InputIterator** のシノニムです。  
   
-##  <a name="a-namemoneygetmoneygeta--moneygetmoneyget"></a><a name="money_get__money_get"></a>  money_get::money_get  
+##  <a name="money_get"></a>  money_get::money_get  
  通貨値を表すシーケンスから数値を抽出するために使用される `money_get` 型のオブジェクトのコンストラクター。  
   
 ```
@@ -294,13 +298,13 @@ explicit money_get(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \> 0: これらの値は定義されていません。  
+-   \>1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
  コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( **_***Refs*) を使用して、その基本オブジェクトを初期化します。  
   
-##  <a name="a-namemoneygetstringtypea--moneygetstringtype"></a><a name="money_get__string_type"></a>  money_get::string_type  
+##  <a name="string_type"></a>  money_get::string_type  
  **CharType** 型の文字を格納する文字列を表す型。  
   
 ```

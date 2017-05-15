@@ -1,69 +1,88 @@
 ---
 title: "time_put_byname クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "time_put_byname"
-  - "xloctime/std::time_put_byname"
-  - "std.time_put_byname"
-  - "std::time_put_byname"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "time_put_byname クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- time_put_byname
+- xloctime/std::time_put_byname
+dev_langs:
+- C++
+helpviewer_keywords:
+- time_put_byname class
 ms.assetid: e08c2348-64d2-4ace-98b1-1496e14c7b1a
 caps.latest.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# time_put_byname クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.mt:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: a21c91fba99623ae7c97ef1455278617746fc310
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-派生テンプレート クラス型のロケール ファセットとして使用できるオブジェクトを表します `time_put`\< CharType、OutputIterator \> です。  
+---
+# <a name="timeputbyname-class"></a>time_put_byname クラス
+この派生テンプレート クラスは、型 `time_put`\< CharType, OutputIterator > のロケール ファセットとして使用できるオブジェクトを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class CharType, class OutIt = ostreambuf_iterator<CharType, char_traits<CharType>>>
+class time_put_byname : public time_put<CharType, OutputIterator>
+{
+public:
+    explicit time_put_byname(
+    const char* _Locname,
+    size_t _Refs = 0);
+
+    explicit time_put_byname(
+    const string& _Locname,
+    size_t _Refs = 0);
+
+protected:
+    virtual ~time_put_byname();
+
+};
 ```  
-template<class CharType,  
- class OutIt = ostreambuf_iterator<CharType, char_traits<CharType> > >  
- class time_put_byname : public time_put<CharType, OutputIterator>  
-{  
-public:  
-    explicit time_put_byname(  
-        const char *_Locname,  
-        size_t _Refs = 0  
-    );  
-    explicit time_put_byname(  
-        const string& _Locname,  
-        size_t _Refs = 0  
-    );  
-protected:  
-    virtual ~time_put_byname();  
-};  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_Locname`  
  ロケール名。  
   
  `_Refs`  
- 最初の参照の数。  
+ 最初の参照数。  
   
-## 解説  
- 動作が決まります、 [という](../Topic/locale::name.md) ロケール `_Locname`します。 各コンス トラクターは、その基本オブジェクトを初期化 [time\_put](../Topic/time_put::time_put.md)\< CharType、OutputIterator \> \(`_Refs`\)。  
+## <a name="remarks"></a>コメント  
+ その動作は [名前付きの](../standard-library/locale-class.md#name)ロケール `_Locname` で決まります。 各コンストラクターは、[time_put](../standard-library/time-put-class.md#time_put)\<CharType, OutputIterator>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
   
-## 必要条件  
- **ヘッダー:** \<locale\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

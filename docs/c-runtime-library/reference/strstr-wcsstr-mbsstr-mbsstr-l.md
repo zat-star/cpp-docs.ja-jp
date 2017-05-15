@@ -70,10 +70,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0402f647be21541222fe215760715eea1dee39d9
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: dee742e53a8ac9243503011b827a008879af6428
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="strstr-wcsstr-mbsstr-mbsstrl"></a>strstr、wcsstr、_mbsstr、_mbsstr_l
@@ -149,7 +150,7 @@ const unsigned char *_mbsstr_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `strSearch` で最初に見つかった `str` へのポインター、または `NULL` が `strSearch` に見つからなかった場合は `str` を返します。 `strSearch` が長さ&0; の文字列を参照している場合、`str` を返します。  
+ `strSearch` で最初に見つかった `str` へのポインター、または `NULL` が `strSearch` に見つからなかった場合は `str` を返します。 `strSearch` が長さ 0 の文字列を参照している場合、`str` を返します。  
   
 ## <a name="remarks"></a>コメント  
  `strstr` 関数は、`strSearch` で最初に見つかった `str` へのポインターを返します。 検索には、終端の NULL 文字は含まれません。 `wcsstr` は `strstr` のワイド文字バージョンであり、`_mbsstr` はマルチバイト文字バージョンです。 `wcsstr` 関数の引数と戻り値はワイド文字列で、`_mbsstr` 関数の引数と戻り値はマルチバイト文字列です。 `_mbsstr` はそのパラメーターを検証します。 `str` または `strSearch` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`_mbsstr` は `errno` を `EINVAL` に設定し、0 を返します。 `strstr` および `wcsstr` は、パラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。  
@@ -180,9 +181,8 @@ const unsigned char *_mbsstr_l(
   
 ## <a name="example"></a>例  
   
-```  
-  
-      // crt_strstr.c  
+```C  
+// crt_strstr.c  
   
 #include <string.h>  
 #include <stdio.h>  
@@ -216,9 +216,6 @@ String to be searched:
 lazy found at position 36  
 ```  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::IndexOf](https://msdn.microsoft.com/en-us/library/system.string.indexof.aspx)  
-  
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
@@ -228,4 +225,5 @@ lazy found at position 36
  [strpbrk、wcspbrk、_mbspbrk、_mbspbrk_l](../../c-runtime-library/reference/strpbrk-wcspbrk-mbspbrk-mbspbrk-l.md)   
  [strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](../../c-runtime-library/reference/strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)   
  [strspn、wcsspn、_mbsspn、_mbsspn_l](../../c-runtime-library/reference/strspn-wcsspn-mbsspn-mbsspn-l.md)   
- [basic_string::find](http://msdn.microsoft.com/Library/e8254589-ae65-4414-b28f-54ba8f544656)
+ [basic_string::find](../../standard-library/basic-string-class.md#find)  
+

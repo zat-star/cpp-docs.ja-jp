@@ -7,27 +7,31 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::array::get
 - array/std::array::get
+- array/std::get
+- array/std::swap
+dev_langs:
+- C++
 ms.assetid: e0700a33-a833-4655-8735-16e71175efc8
 caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
-ms.openlocfilehash: 38c1f1a593c43ff0fb8434bfcade4dab9740945d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 326e4fddbf29e706faa4e726ece331a0fe64471b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt; 関数
-\<array> ヘッダーには、`array` オブジェクトで動作する `get` と`swap` の&2; つの非メンバー関数が含まれています。  
+\<array> ヘッダーには、`array` オブジェクトで動作する `get` と`swap` の 2 つの非メンバー関数が含まれています。  
   
 |||  
 |-|-|  
-|[get](#get_function)|[swap](#swap_function)|  
+|[get](#get)|[swap](#swap)|  
   
-##  <a name="a-namegetfunctiona--get"></a><a name="get_function"></a>  get  
+##  <a name="get"></a>  get  
 配列の指定した要素への参照を返します。  
   
 ```  
@@ -86,7 +90,7 @@ int main()
 1 3  
 ```  
   
-##  <a name="a-nameswapfunctiona--swap"></a><a name="swap_function"></a>  swap  
+##  <a name="swap"></a>  swap  
 2 つの `array` オブジェクトを交換する `std::swap` の非メンバー テンプレートの特殊化。  
   
 ```  
@@ -105,7 +109,7 @@ void swap(array<Ty, N>& left, array<Ty, N>& right);
  交換する最初の配列。  
   
  `right`  
- 交換する&2; 番目の配列。  
+ 交換する 2 番目の配列。  
   
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は、`left.swap(right)` を実行します。  

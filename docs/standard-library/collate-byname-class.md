@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a67e7f6ff915b53ba91c11c0c39d9bec6e4a380a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 0552fd2b76859166ea84ec17433ee5d04b5dcb19
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="collatebyname-class"></a>collate_byname クラス
@@ -71,7 +72,7 @@ protected:
  最初の参照数。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスは、[collate](../standard-library/collate-class.md#collate__collate)\<CharType> 型の[ロケール ファセット](../standard-library/locale-class.md#facet_class)として使用できるオブジェクトを表します。 その動作は[名前付き](../standard-library/locale-class.md#locale__name)のロケール `_Locname` で決まります。 各コンストラクターは、[collate](../standard-library/collate-class.md#collate__collate)\<CharType>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
+ このテンプレート クラスは、[collate](../standard-library/collate-class.md#collate)\<CharType> 型の[ロケール ファセット](../standard-library/locale-class.md#facet_class)として使用できるオブジェクトを表します。 その動作は[名前付き](../standard-library/locale-class.md#name)のロケール `_Locname` で決まります。 各コンストラクターは、[collate](../standard-library/collate-class.md#collate)\<CharType>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  

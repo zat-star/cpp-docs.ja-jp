@@ -60,10 +60,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 377ebdd79e201a2b7a017eb3ce34c6ced0062702
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: bb000bddd8f376587aa7614d135f39e09771ccb7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="time-time32-time64"></a>time、_time32、_time64
@@ -91,9 +92,9 @@ __time64_t _time64(
  1970 年 1 月 1 日午前 0 時以降の経過時間を秒単位で返します。エラーの場合には、-1 を返します。  
   
 ## <a name="remarks"></a>コメント  
- `time` 関数は、協定世界時刻 (UTC) の 1970 年 1 月 1 日午前 0 時 (00:00:00) 以降の経過時間をシステム クロックに従って返します。 戻り値は、`timer` で指定される場所に格納されます。 戻り値を格納しない場合には、このパラメーターを `NULL` にできます。  
+ `time` 関数は、協定世界時刻 (UTC) の 1970 年 1 月 1 日午前 0 時 (00:00:00) 以降の経過時間をシステム クロックに従って返します。 戻り値は、 `timer`で指定される場所に格納されます。 戻り値を格納しない場合には、このパラメーターを `NULL`にできます。  
   
- `time` は `_time64` 用のラッパーで、既定では `time_t` は `__time64_t` と同じです。 コンパイラが `time_t` を古い 32 ビットの `time_t` として解釈するよう強制する必要がある場合には、`_USE_32BIT_TIME_T` を定義します。 ただし、これは勧められていません。2038 年 1 月 18 日以降、64 ビット プラットフォームでは、このマクロをアプリケーションで使用することはできなくなり、エラーの原因となるためです。  
+ `time` は `_time64` 用のラッパーで、既定では `time_t` は `__time64_t`と同じです。 コンパイラが `time_t` を古い 32 ビットの `time_t`として解釈するよう強制する必要がある場合には、 `_USE_32BIT_TIME_T`を定義します。 ただし、これは勧められていません。2038 年 1 月 18 日以降、64 ビット プラットフォームでは、このマクロをアプリケーションで使用することはできなくなり、エラーの原因となるためです。  
   
 ## <a name="requirements"></a>要件  
   
@@ -254,9 +255,6 @@ Christmas            Sat Dec 25 12:00:00 1993
   
 Today is Friday, day 25 of April in the year 2003.  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   

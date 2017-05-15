@@ -85,10 +85,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7d8823bfe5650634d3fb079d2910e98409622ec6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 80836179c63da2f62384abd07fe2a4970d9bce55
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="utime-utime32-utime64-wutime-wutime32-wutime64"></a>_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
@@ -131,7 +132,7 @@ int _wutime64(
  格納されている時刻値へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各関数は、ファイルの変更時刻が変更されると、0 を返します。 戻り値 -1 はエラーを示します。 無効なパラメーターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を次のいずれかの値に設定します。  
+ これらの各関数は、ファイルの変更時刻が変更されると、0 を返します。 戻り値-1 はエラーを示します。 無効なパラメーターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を次のいずれかの値に設定します。  
   
  `EACCES`  
  パスにディレクトリまたは読み取り専用ファイルが指定されている  
@@ -150,7 +151,7 @@ int _wutime64(
  変更日が 1970 年 1 月 1 日午前 0 時以降で、使用する関数の終了日より前の場合、ファイルの日付を変更できます。 `_utime` と `_wutime` は 64 ビットの時刻値を使用するため、終了日は UTC の 3000 年 12 月 31 日 23 時 59 分 59 秒になります。 以前の動作を強制するよう `_USE_32BIT_TIME_T` が定義されている場合、終了日は UTC の 2038 年 1 月 18 日 23 時 59 分 59 秒になります。 `_utime32` または `_wutime32` は、`_USE_32BIT_TIME_T` の定義内容に関係なく 32 ビットの時刻型を使用し、常に早いほうの終了日を使用します。 `_utime64` または `_wutime64` は常に 64 ビットの時刻型を使用するため、これらの関数では遅いほうの終了日がサポートされます。  
   
 ## <a name="remarks"></a>コメント  
- `_utime` 関数は、`filename`* によって指定されたファイルの変更時刻を設定します。* プロセスは、時刻を変更するために、ファイルに対して書き込みアクセス権が必要です。 Windows オペレーティング システムでは、`_utimbuf` 構造体でアクセス時刻および変更時刻を変更できます。 `times` が `NULL` ポインターである場合、変更時刻は現在の現地時刻に設定されます。 それ以外の場合、`times` は、SYS\UTIME.H で定義されている型 `_utimbuf` の構造体を指す必要があります。  
+ `_utime` 関数は、`filename` *によって指定されたファイルの変更時刻を設定します。* プロセスは、時刻を変更するために、ファイルに対して書き込みアクセス権が必要です。 Windows オペレーティング システムでは、`_utimbuf` 構造体でアクセス時刻および変更時刻を変更できます。 `times` が `NULL` ポインターである場合、変更時刻は現在の現地時刻に設定されます。 それ以外の場合、`times` は、SYS\UTIME.H で定義されている型 `_utimbuf` の構造体を指す必要があります。  
   
  `_utimbuf` 構造体は、`_utime` でファイル変更日を変更するために使用する、ファイルへのアクセス時刻および変更時刻を格納します。 構造体には、いずれも型 `time_t` である次のフィールドがあります。  
   
@@ -253,9 +254,6 @@ File time modified
                1 File(s)            935 bytes  
                0 Dir(s)  20,742,955,008 bytes free  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   

@@ -12,18 +12,19 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 72389624e776a2e8334490c37a5ca628e033ffaa
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 097b3ec2a7b097eb2137e1fd5fe59eabc0da537f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltostreamgt-operators"></a>&lt;ostream&gt; 演算子
 ||  
 |-|  
-|[operator&lt;&lt;](#operator_lt__lt_)|  
+|[operator&lt;&lt;](#op_lt_lt)|  
   
-##  <a name="operator_lt__lt_"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
  さまざまな型をストリームに書き込みます。  
   
 ```
@@ -106,7 +107,7 @@ basic_ostream <_Elem, _Tr>& operator<<(
  ストリーム。  
   
 ### <a name="remarks"></a>コメント  
- `basic_ostream`クラスもいくつかの挿入演算子を定義します。 詳細については、[basic_ostream::operator&lt;&lt;](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt_)をご覧ください。  
+ `basic_ostream`クラスもいくつかの挿入演算子を定義します。 詳細については、[basic_ostream::operator&lt;&lt;](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt)をご覧ください。  
   
  下記のテンプレート関数は  
   
@@ -117,7 +118,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- 長さ N = `str` で始まるシーケンスの `traits_type::`[length](../standard-library/char-traits-struct.md#char_traits__length)(`str`) とし、シーケンスを挿入しています。 N < `_Ostr.`[width](../standard-library/ios-base-class.md#ios_base__width) の場合は、関数はまた `_Ostr.``width` - N 充填文字の繰り返しを挿入します。 繰り返し場合は、シーケンスの前に (`_Ostr`します。 [flags](../standard-library/ios-base-class.md#ios_base__flags) & `adjustfield` != [left](../standard-library/ios-functions.md#left). それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` が返されます。  
+ 長さ N = `str` で始まるシーケンスの `traits_type::`[length](../standard-library/char-traits-struct.md#length)(`str`) とし、シーケンスを挿入しています。 N < `_Ostr.`[width](../standard-library/ios-base-class.md#width) の場合は、関数はまた `_Ostr.``width` - N 充填文字の繰り返しを挿入します。 繰り返し場合、シーケンスの前に (`_Ostr`です。 [flags](../standard-library/ios-base-class.md#flags) & `adjustfield` != [left](../standard-library/ios-functions.md#left). それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` が返されます。  
   
  下記のテンプレート関数は  
   
@@ -148,14 +149,18 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- 異なる点は、`str` で始まるシーケンスの各要素 `_Ch` が、`_Ostr.`[put](../standard-library/basic-ostream-class.md#basic_ostream__put)(`_Ostr.`[widen](../standard-library/basic-ios-class.md#basic_ios__widen)(`_Ch`)) を呼び出すことにより、`Elem` 型のオブジェクトに変換されることです。  
+ 異なる点は、`str` で始まるシーケンスの各要素 `_Ch` が、`_Ostr.`[put](../standard-library/basic-ostream-class.md#put)(`_Ostr.`[widen](../standard-library/basic-ios-class.md#widen)(`_Ch`)) を呼び出すことにより、`Elem` 型のオブジェクトに変換されることです。  
   
  下記のテンプレート関数は  
   
-``cpp template <class _Elem, class _Tr> basic_ostream<Elem, _Tr>& operator<<( basic_ostream<Elem, _Tr>& _Ostr, char _Ch);
+```cpp
+template <class _Elem, class _Tr>
+basic_ostream<Elem, _Tr>& operator<<(
+    basic_ostream<Elem, _Tr>& _Ostr,
+    char _Ch);
 ```  
   
- behaves the same as  
+ 次の関数と同様に動作します。  
   
 ```cpp  
 template <class _Elem, class _Tr>

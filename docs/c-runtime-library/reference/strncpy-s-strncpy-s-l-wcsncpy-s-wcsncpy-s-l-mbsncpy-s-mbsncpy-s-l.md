@@ -72,10 +72,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d508cdb00e26d2d3c0bab74b096cb371885bb106
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 3d0d2f76b88f1518b24860b3e8efb7c2214c2845
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strncpys-strncpysl-wcsncpys-wcsncpysl-mbsncpys-mbsncpysl"></a>strncpy_s、_strncpy_s_l、wcsncpy_s、_wcsncpy_s_l、_mbsncpy_s、_mbsncpy_s_l
@@ -206,9 +207,9 @@ errno_t _mbsncpy_s_l(
   
  `strncpy_s(dst, 5, "a long string", 5);`  
   
- これは、5 バイト長のバッファーに&5; つの文字をコピーするよう、`strncpy_s` に命令しています。しかし、この場合、null 終端文字を格納する余裕がないため、`strncpy_s` は、文字列をゼロで埋め、無効なパラメーター ハンドラーを呼び出します。  
+ これは、5 バイト長のバッファーに 5 つの文字をコピーするよう、`strncpy_s` に命令しています。しかし、この場合、null 終端文字を格納する余裕がないため、`strncpy_s` は、文字列をゼロで埋め、無効なパラメーター ハンドラーを呼び出します。  
   
- 切り捨て動作が必要な場合は、次のように、`_TRUNCATE` を使用するか、`size` を 1 減算します。  
+ 切り捨て動作が必要に応じて、使用`_TRUNCATE`または (`size` - 1)。  
   
  `strncpy_s(dst, 5, "a long string", _TRUNCATE);`  
   
@@ -220,7 +221,7 @@ errno_t _mbsncpy_s_l(
   
  `strDest` または `strSource` が `NULL` である場合、または `numberOfElements` が 0 の場合、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
   
- `wcsncpy_s` 関数と `_mbsncpy_s` 関数は、`strncpy_s` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `wcsncpy_s` 関数と `mbsncpy_s` 関数は、これに応じて引数と戻り値が異なります。 それ以外では、これらの関数の動作は同じです。  
+ `wcsncpy_s` 関数と `_mbsncpy_s` 関数は、`strncpy_s` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 引数と戻り値の`wcsncpy_s`と`mbsncpy_s`それに応じて異なります。 それ以外では、これらの関数の動作は同じです。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -418,9 +419,6 @@ After strncpy into middle of string:
 After strncpy_s (with null-termination):  
    'mice'  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::String::Copy](https://msdn.microsoft.com/en-us/library/system.string.copy.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

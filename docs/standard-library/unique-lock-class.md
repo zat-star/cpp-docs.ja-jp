@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 27145bb5aab7087ddf9dd7d56d51f242062268ff
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: aceca2d408b1c28f1fb9f9f1f1f9f0a1720f7849
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="uniquelock-class"></a>unique_lock クラス
@@ -64,39 +65,39 @@ class unique_lock;
   
 |名前|説明|  
 |----------|-----------------|  
-|[unique_lock コンストラクター](#unique_lock__unique_lock_constructor)|`unique_lock` オブジェクトを構築します。|  
-|[~unique_lock デストラクター](#unique_lock___dtorunique_lock_destructor)|`unique_lock` オブジェクトに関連付けられたすべてのリソースを解放します。|  
+|[unique_lock](#unique_lock)|`unique_lock` オブジェクトを構築します。|  
+|[~unique_lock デストラクター](#dtorunique_lock_destructor)|`unique_lock` オブジェクトに関連付けられたすべてのリソースを解放します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[lock](#unique_lock__lock_method)|呼び出しスレッドが、関連付けられた `mutex` の所有権を取得するまで、そのスレッドをブロックします。|  
-|[mutex](#unique_lock__mutex_method)|格納されている、関連付けられた `mutex` へのポインターを取得します。|  
-|[owns_lock](#unique_lock__owns_lock_method)|呼び出し元のスレッドが、関連付けられた `mutex` を所有しているかどうかを指定します。|  
-|[release](#unique_lock__release_method)|`mutex` から `unique_lock` オブジェクトの関連付けを解除します。|  
-|[swap](#unique_lock__swap_method)|関連付けられた `mutex` と所有状態を、指定されたオブジェクトのものと入れ替えます。|  
-|[try_lock](#unique_lock__try_lock_method)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
-|[try_lock_for](#unique_lock__try_lock_for_method)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
-|[try_lock_until](#unique_lock__try_lock_until_method)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
-|[unlock](#unique_lock__unlock_method)|関連付けられた `mutex` の所有権を解放します。|  
+|[lock](#lock)|呼び出しスレッドが、関連付けられた `mutex` の所有権を取得するまで、そのスレッドをブロックします。|  
+|[mutex](#mutex)|格納されている、関連付けられた `mutex` へのポインターを取得します。|  
+|[owns_lock](#owns_lock)|呼び出し元のスレッドが、関連付けられた `mutex` を所有しているかどうかを指定します。|  
+|[release](#release)|`mutex` から `unique_lock` オブジェクトの関連付けを解除します。|  
+|[swap](#swap)|関連付けられた `mutex` と所有状態を、指定されたオブジェクトのものと入れ替えます。|  
+|[try_lock](#try_lock)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
+|[try_lock_for](#try_lock_for)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
+|[try_lock_until](#try_lock_until)|ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。|  
+|[unlock](#unlock)|関連付けられた `mutex` の所有権を解放します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[operator bool](#unique_lock__operator_bool)|呼び出し元のスレッドに、関連付けられた `mutex` の所有権があるかどうかを指定します。|  
-|[operator=](#unique_lock__operator_eq)|格納された `mutex` ポインターと所有状態を、指定されたオブジェクトからコピーします。|  
+|[operator bool](#op_bool)|呼び出し元のスレッドに、関連付けられた `mutex` の所有権があるかどうかを指定します。|  
+|[operator=](#op_eq)|格納された `mutex` ポインターと所有状態を、指定されたオブジェクトからコピーします。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unique_lock`  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** mutex  
+ **ヘッダー:** \<ミュー テックス >  
   
  **名前空間:** std  
   
-##  <a name="a-nameuniquelocklockmethoda--lock"></a><a name="unique_lock__lock_method"></a>  lock  
+##  <a name="lock"></a>  lock  
  呼び出しスレッドが、関連付けられた `mutex` の所有権を取得するまで、そのスレッドをブロックします。  
   
 ```cpp  
@@ -110,14 +111,14 @@ void lock();
   
  それ以外の場合、このメソッドは関連付けられた `mutex` に対して `lock` を呼び出し、内部スレッド所有権フラグを `true` に設定します。  
   
-##  <a name="a-nameuniquelockmutexmethoda--mutex"></a><a name="unique_lock__mutex_method"></a>  mutex  
+##  <a name="mutex"></a>  mutex  
  格納されている、関連付けられた `mutex` へのポインターを取得します。  
   
 ```cpp  
 mutex_type *mutex() const noexcept;
 ```  
   
-##  <a name="a-nameuniquelockoperatorboola--operator-bool"></a><a name="unique_lock__operator_bool"></a>  operator bool  
+##  <a name="op_bool"></a>  operator bool  
  呼び出し元のスレッドに、関連付けられたミューテックスの所有権があるかどうかを指定します。  
   
 ```cpp  
@@ -127,7 +128,7 @@ explicit operator bool() noexcept
 ### <a name="return-value"></a>戻り値  
  スレッドがミューテックスを所有している場合は `true`、それ以外は `false`。  
   
-##  <a name="a-nameuniquelockoperatoreqa--operator"></a><a name="unique_lock__operator_eq"></a>  operator=  
+##  <a name="op_eq"></a>  operator=  
  格納された `mutex` ポインターと所有状態を、指定されたオブジェクトからコピーします。  
   
 ```cpp  
@@ -146,7 +147,7 @@ unique_lock& operator=(unique_lock&& Other) noexcept;
   
  コピーの後、このメソッドは、既定で構築される状態に `Other` を設定します。  
   
-##  <a name="a-nameuniquelockownslockmethoda--ownslock"></a><a name="unique_lock__owns_lock_method"></a>  owns_lock  
+##  <a name="owns_lock"></a>  owns_lock  
  呼び出し元のスレッドが、関連付けられた `mutex` を所有しているかどうかを指定します。  
   
 ```cpp  
@@ -156,7 +157,7 @@ bool owns_lock() const noexcept;
 ### <a name="return-value"></a>戻り値  
  スレッドが `mutex` を所有している場合は `true`、それ以外は `false`。  
   
-##  <a name="a-nameuniquelockreleasemethoda--release"></a><a name="unique_lock__release_method"></a>  release  
+##  <a name="release"></a>  release  
  `mutex` から `unique_lock` オブジェクトの関連付けを解除します。  
   
 ```cpp  
@@ -169,7 +170,7 @@ mutex_type *release() noexcept;
 ### <a name="remarks"></a>コメント  
  このメソッドでは、格納された `mutex` ポインターの値を 0 と設定し、内部の `mutex` 所有権フラグを `false` に設定します。  
   
-##  <a name="a-nameuniquelockswapmethoda--swap"></a><a name="unique_lock__swap_method"></a>  swap  
+##  <a name="swap"></a>  swap  
  関連付けられた `mutex` と所有状態を、指定されたオブジェクトのものと入れ替えます。  
   
 ```
@@ -180,7 +181,7 @@ void swap(unique_lock& Other) noexcept;
  `Other`  
  `unique_lock` オブジェクト。  
   
-##  <a name="a-nameuniquelocktrylockmethoda--trylock"></a><a name="unique_lock__try_lock_method"></a>  try_lock  
+##  <a name="try_lock"></a>  try_lock  
  ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -195,7 +196,7 @@ bool try_lock() noexcept;
   
  呼び出し元のスレッドが既に `mutex` を所有している場合、このメソッドはエラー コード `resource_deadlock_would_occur` で `system_error` をスローします。  
   
-##  <a name="a-nameuniquelocktrylockformethoda--trylockfor"></a><a name="unique_lock__try_lock_for_method"></a>  try_lock_for  
+##  <a name="try_lock_for"></a>  try_lock_for  
  ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。  
   
 ```
@@ -216,7 +217,7 @@ bool try_lock_for(
   
  呼び出し元のスレッドが既に `mutex` を所有している場合、このメソッドはエラー コード `resource_deadlock_would_occur` で `system_error` をスローします。  
   
-##  <a name="a-nameuniquelocktrylockuntilmethoda--trylockuntil"></a><a name="unique_lock__try_lock_until_method"></a>  try_lock_until  
+##  <a name="try_lock_until"></a>  try_lock_until  
  ブロックせずに関連付けられた `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -238,7 +239,7 @@ bool try_lock_until(const xtime* Abs_time);
   
  呼び出し元のスレッドが既に `mutex` を所有している場合、このメソッドはエラー コード `resource_deadlock_would_occur` で `system_error` をスローします。  
   
-##  <a name="a-nameuniquelockuniquelockconstructora--uniquelock-constructor"></a><a name="unique_lock__unique_lock_constructor"></a>  unique_lock コンストラクター  
+##  <a name="unique_lock"></a>  unique_lock コンストラクター  
  `unique_lock` オブジェクトを構築します。  
   
 ```cpp  
@@ -294,7 +295,7 @@ unique_lock(mutex_type& Mtx,
 |`Rel_time`|所有権は、`try_lock_for(Rel_time)` を呼び出すことによって決定されます。|  
 |`Abs_time`|所有権は、`try_lock_until(Abs_time)` を呼び出すことによって決定されます。|  
   
-##  <a name="a-nameuniquelockdtoruniquelockdestructora--uniquelock-destructor"></a><a name="unique_lock___dtorunique_lock_destructor"></a>  ~unique_lock デストラクター  
+##  <a name="dtorunique_lock_destructor"></a>  ~unique_lock デストラクター  
  `unique_lock` オブジェクトに関連付けられたすべてのリソースを解放します。  
   
 ```cpp  
@@ -304,7 +305,7 @@ unique_lock(mutex_type& Mtx,
 ### <a name="remarks"></a>コメント  
  呼び出し元のスレッドが、関連付けられた `mutex` を所有している場合、デストラクターでは、`mutex` オブジェクトに対するロック解除を呼び出すことによって所有権を解放します。  
   
-##  <a name="a-nameuniquelockunlockmethoda--unlock"></a><a name="unique_lock__unlock_method"></a>  unlock  
+##  <a name="unlock"></a>  unlock  
  関連付けられた `mutex` の所有権を解放します。  
   
 ```cpp  

@@ -58,14 +58,15 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 89d0d8b05ee9b785701ae3990c70f51a893b0dc5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 1620eb200723fe4b2cd6553e7ba50405b026d53c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="casinh-casinhf-casinhl"></a>casinh、casinhf、casinhl
-虚軸に沿って区間 [−i, +i] の外側で分岐線法を使用して、複素数の逆双曲線サインを取得します。  
+ブランチ カット範囲の外で、複雑な数値の逆ハイパーボリック サインを取得 [-i + i] 虚数部の軸に沿ったです。  
   
 ## <a name="syntax"></a>構文  
   
@@ -92,7 +93,7 @@ _Lcomplex casinhl(
  角度をラジアンで表す複素数。  
   
 ## <a name="return-value"></a>戻り値  
- `z` の逆双曲線サインをラジアンで返します。 結果は、実軸方向には無制限で、虚軸方向には [−iπ/2, +iπ/2] の区間内になります。  
+ `z` の逆双曲線サインをラジアンで返します。 結果は実数の軸に沿ってと期間内にバインドされていない [-iπ/2 + iπ/2] 虚数部の軸に沿ったです。  
   
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`casinh` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `casinh` は常に `_Dcomplex` 値を受け取って返します。  

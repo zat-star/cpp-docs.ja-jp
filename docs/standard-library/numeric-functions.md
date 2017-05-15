@@ -6,13 +6,20 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords:
+- numeric/std::accumulate
+- numeric/std::adjacent_difference
+- numeric/std::inner_product
+- numeric/std::iota
+- numeric/std::partial_sum
 ms.assetid: a4b0449a-c80c-4a1d-8d9f-d7fcd0058f8b
 caps.latest.revision: 13
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 88c311b28caa80d4c4292888be501feae797ce27
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: d194bebeb13d9a5e4648a7c74192047fe093576d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="ltnumericgt-functions"></a>&lt;numeric&gt; 関数
@@ -21,7 +28,7 @@ ms.lasthandoff: 02/24/2017
 |[accumulate](#accumulate)|[adjacent_difference](#adjacent_difference)|[inner_product](#inner_product)|  
 |[iota](#iota)|[partial_sum](#partial_sum)|  
   
-##  <a name="a-nameaccumulatea--accumulate"></a><a name="accumulate"></a>  accumulate  
+##  <a name="accumulate"></a>  accumulate  
  連続する部分和を計算することで、いくつかの初期値を含め、指定された範囲のすべての要素の合計を計算します。または、指定された二項演算を使用して取得した、合計以外の連続する部分的な結果を計算します。  
   
 ```  
@@ -37,23 +44,23 @@ Type accumulate(
 ```  
   
 ### <a name="parameters"></a>パラメーター   
- ` first`  
+ `first`  
  指定された二項演算に従って、合計または結合される範囲内の先頭の要素を示す入力反復子。  
   
- ` last`  
- 指定された二項演算に従って、合計または結合される範囲内の最後の要素、つまり反復処理され累積に実際に含まれる最後の要素の&1; つ次の位置を示す入力反復子。  
+ `last`  
+ 指定された二項演算に従って、合計または結合される範囲内の最後の要素、つまり反復処理され累積に実際に含まれる最後の要素の 1 つ次の位置を示す入力反復子。  
   
- ` val`  
+ `val`  
  指定された二項演算に従って、各要素がさらに追加または結合される初期値。  
   
  `binary_op`  
  指定された範囲と、以前の適用の結果の各要素に適用される二項演算。  
   
 ### <a name="return-value"></a>戻り値  
- 1 番目のテンプレート関数については、` val` と指定された範囲内のすべての要素の合計、または、2 番目のテンプレート関数の場合は、合計演算ではなく指定された二項演算を ( *PartialResult, \*Iter*) に適用した結果 (この場合、*PartialResult* は演算の前の適用の結果、`Iter` は範囲内の要素を指す反復子)。  
+ 1 番目のテンプレート関数については、`val` と指定された範囲内のすべての要素の合計、または、2 番目のテンプレート関数の場合は、合計演算ではなく指定された二項演算を ( *PartialResult, \*Iter*) に適用した結果 (この場合、*PartialResult* は演算の前の適用の結果、`Iter` は範囲内の要素を指す反復子)。  
   
 ### <a name="remarks"></a>コメント  
- 初期値は、範囲が空の場合に適切に定義された結果が存在すること、その場合に ` val` が返されることを保証します。 二項演算は結合的または可換的である必要はありません。 結果は初期値 ` val` に初期化され、次に、*result* = `binary_op` ( *result*, **\***`Iter`) が範囲全体で反復的に計算されます (この場合、`Iter` は、範囲内の連続した要素を指す反復子)。 範囲が有効であることが必要で、複雑さは範囲のサイズに応じて線形的です。 2 項演算子の戻り値の型は、反復中のクロージャを確実にするために、**Type** に変換可能である必要があります。  
+ 初期値は、範囲が空の場合に適切に定義された結果が存在すること、その場合に `val` が返されることを保証します。 二項演算は結合的または可換的である必要はありません。 結果は初期値 `val` に初期化され、次に、*result* = `binary_op` ( *result*, **\***`Iter`) が範囲全体で反復的に計算されます (この場合、`Iter` は、範囲内の連続した要素を指す反復子)。 範囲が有効であることが必要で、複雑さは範囲のサイズに応じて線形的です。 2 項演算子の戻り値の型は、反復中のクロージャを確実にするために、**Type** に変換可能である必要があります。  
   
 ### <a name="example"></a>例  
   
@@ -154,7 +161,7 @@ The vector of partial products is:
  ( 1 2 6 24 120 720 5040 40320 362880 3628800 ).  
 ```  
   
-##  <a name="a-nameadjacentdifferencea--adjacentdifference"></a><a name="adjacent_difference"></a>  adjacent_difference  
+##  <a name="adjacent_difference"></a>  adjacent_difference  
  入力範囲内の各要素とその先行要素との連続する差分を計算し、結果をターゲット範囲に出力するか、または差分演算が指定された別の二項演算に置き換えられた汎用化されたプロシージャの結果を計算します。  
   
 ```  
@@ -173,10 +180,10 @@ OutputIterator adjacent_difference(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  含まれる要素がそれぞれの先行要素と差分処理されるか、または値のペアが別の指定された二項演算で処理される入力範囲の先頭の要素を示す入力反復子。  
   
- ` last`  
+ `last`  
  含まれる要素がそれぞれの先行要素と差分処理されるか、または値のペアが別の指定された二項演算で処理される入力範囲の最後の要素を示す入力反復子。  
   
  `result`  
@@ -186,12 +193,12 @@ OutputIterator adjacent_difference(
  差分プロシージャの減算演算を置き換える一般的な演算で適用される二項演算。  
   
 ### <a name="return-value"></a>戻り値  
- ターゲット範囲の終了位置を示す出力反復子: `result` + ( ` last` - ` first`)。  
+ ターゲット範囲の終了位置を示す出力反復子: `result` + ( `last` - `first`)。  
   
 ### <a name="remarks"></a>コメント  
- `adjacent_difference` が計算されるように、出力反復子 _*result* は入力反復子 *first* と同じ反復子にすることができます。  
+ 出力反復子 _*結果*を許容する入力反復子と同じ反復子 * 最初に、* ように`adjacent_difference`インプレース s を計算することがあります。  
   
- 入力範囲に *a*1、*a*2、*a*3 の値のシーケンスがある場合、最初のテンプレート関数は連続する **partial_difference** *a*1、*a*2 - *a*1、a3 - *a*2 をターゲット範囲に格納します。  
+ 値のシーケンスの*、*1、 *、*2、 *、*3、1 つ目のテンプレート関数、入力範囲内に連続する格納**partial_difference**s *、*1、 *、*2 - *、*1、a3 - *、*ターゲット範囲内の 2 です。  
   
  入力範囲に *a*1、*a*2、*a*3 の値のシーケンスがある場合、2 番目のテンプレート関数は連続する **partial_difference** *a*1、*a*2 `binary_op` *a*1、*a*3 `binary_op` *a*2 をターゲット範囲に格納します。  
   
@@ -258,7 +265,7 @@ int main( )
 }  
 ```  
   
-##  <a name="a-nameinnerproducta--innerproduct"></a><a name="inner_product"></a>  inner_product  
+##  <a name="inner_product"></a>  inner_product  
  2 つの範囲の要素ごとの積の合計を計算し、それを指定された初期値に加算するか、または和や積の二項演算が指定された別の二項演算に置き換えられた汎用化されたプロシージャの結果を計算します。  
   
 ```  
@@ -280,16 +287,16 @@ Type inner_product(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first1`  
+ `first1`  
  2 番目の範囲との内積または一般化された内積を計算する必要がある、1 番目の範囲内の先頭の要素を示す入力反復子。  
   
- ` last1`  
+ `last1`  
  2 番目の範囲との内積または一般化された内積を計算する必要がある、1 番目の範囲内の最後の要素を示す入力反復子。  
   
- ` first2`  
+ `first2`  
  1 番目の範囲との内積または一般化された内積を計算する必要がある、2 番目の範囲内の先頭の要素を示す入力反復子。  
   
- ` val`  
+ `val`  
  範囲間の内積または一般化された内積を追加する必要がある初期値。  
   
  *binary_op1*  
@@ -301,18 +308,18 @@ Type inner_product(
 ### <a name="return-value"></a>戻り値  
  1 番目のメンバー関数は、要素ごとの積の合計を返し、それを指定された初期値に追加します。 したがって、*a*i と *b*i の値の範囲の場合、次を返します。  
   
- ` val` + ( *a*1 \* *b*1 ) + ( *a*2 \* *b*2 ) +  
+ `val`+ ( *a*1 \* *b*1 ) + ( *a*2 \* *b*2 ) + ... + ( *a*n \* *b*n ) 
   
- 反復的に ` val` を ` val` + (\* *a*i \* \* *b*i ) に置き換えます。  
+ 繰り返しに置き換えることで`val`で`val`+ ( *、*すれば\* *b*しました)。  
   
  2 番目のメンバー関数は次を返します。  
   
- ` val` _ *Binary_op1* ( *a*1 \_ *Binary_op2* *b*1 ) \_ *Binary_op1* ( *a*2 \_ *Binary_op2* *b*2 ) \_ *Binary_op1*  
+ `val`*binary_op1* ( *a*1 *binary_op2* *b*1 ) *binary_op1* ( *a*2 *binary_op2* *b*2 ) *binary_op1* ...*binary_op1* ( *a*n *binary_op2* *b*n )  
   
- 反復的に ` val` を ` val` _ *Binary_op1* (\* *a*i \_ *Binary_op2* \* *b*i ) に置き換えます。  
+ 繰り返しに置き換えることで`val`で`val` *binary_op1* ( *、*すれば*binary_op2* *b*しました)。  
   
 ### <a name="remarks"></a>コメント  
- 初期値は、範囲が空の場合に適切に定義された結果が存在すること、その場合に ` val` が返されることを保証します。 二項演算は結合的または可換的である必要はありません。 範囲が有効であることが必要で、複雑さは範囲のサイズに応じて線形的です。 2 項演算子の戻り値の型は、反復中のクロージャを確実にするために、**Type** に変換可能である必要があります。  
+ 初期値は、範囲が空の場合に適切に定義された結果が存在すること、その場合に `val` が返されることを保証します。 二項演算は結合的または可換的である必要はありません。 範囲が有効であることが必要で、複雑さは範囲のサイズに応じて線形的です。 2 項演算子の戻り値の型は、反復中のクロージャを確実にするために、**Type** に変換可能である必要があります。  
   
 ### <a name="example"></a>例  
   
@@ -404,7 +411,7 @@ int main()
 }  
 ```  
   
-##  <a name="a-nameiotaa--iota"></a><a name="iota"></a>  iota  
+##  <a name="iota"></a>  iota  
  開始値を格納し、先頭の要素から始めて、一連の値のインクリメント (` value++`) を `[ first,  last)` の間隔内の各要素に入力します。  
   
 ```  
@@ -413,13 +420,13 @@ void iota(ForwardIterator first, ForwardIterator last, Type value);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  入力する必要がある、範囲内の先頭の要素を示す入力反復子。  
   
- ` last`  
+ `last`  
  入力する必要がある、範囲内の最後の要素を示す入力反復子。  
   
- ` value`  
+ `value`  
  先頭の要素に格納し、以降の要素に関して連続してインクリメントするための開始値。  
   
 ### <a name="remarks"></a>コメント  
@@ -465,7 +472,7 @@ int main(void)
 }  
 ```  
   
-##  <a name="a-namepartialsuma--partialsum"></a><a name="partial_sum"></a>  partial_sum  
+##  <a name="partial_sum"></a>  partial_sum  
  入力範囲の先頭の要素から *i* 番目の要素までの一連の合計を計算し、各合計の結果をターゲット範囲の *i* 番目の要素に格納するか、または合計演算が指定された別の二項演算に置き換えられた汎用化されたプロシージャの結果を計算します。  
   
 ```  
@@ -484,11 +491,11 @@ OutputIterator partial_sum(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` first`  
+ `first`  
  指定された二項演算に従って、部分的に合計または結合される範囲内の先頭の要素を示す入力反復子。  
   
- ` last`  
- 指定された二項演算に従って、部分的に合計または結合される範囲内の最後の要素、つまり反復処理され累積に実際に含まれる最後の要素の&1; つ次の位置を示す入力反復子。  
+ `last`  
+ 指定された二項演算に従って、部分的に合計または結合される範囲内の最後の要素、つまり反復処理され累積に実際に含まれる最後の要素の 1 つ次の位置を示す入力反復子。  
   
  `result`  
  一連の部分和または指定された演算の結果が格納されるターゲット範囲の先頭の要素を示す出力反復子。  
@@ -497,14 +504,14 @@ OutputIterator partial_sum(
  部分和プロシージャの合計演算を置き換える一般的な演算で適用される二項演算。    
   
 ### <a name="return-value"></a>戻り値  
- ターゲット範囲の最後を示す出力反復子: `result` + ( ` last` - ` first`)。  
+ ターゲット範囲の最後を示す出力反復子: `result` + ( `last` - `first`)。  
   
 ### <a name="remarks"></a>コメント  
- 部分和が計算されるように、出力反復子 `result` は入力反復子 ` first` と同じ反復子にすることができます。  
+ 部分和が計算されるように、出力反復子 `result` は入力反復子 `first` と同じ反復子にすることができます。  
   
  入力範囲に *a*1、*a*2、*a*3 の値のシーケンスがある場合、最初のテンプレート関数は連続する部分和をターゲット範囲に格納します。ここで、*i* 番目の要素は (  ( ( *a*1 + *a*2) + *a*3) *a*i) によって得られます。  
   
- 入力範囲に *a*1、*a*2、*a*3 の値のシーケンスがある場合、2 番目のテンプレート関数は連続する部分和をターゲット範囲に格納します。ここで、i 番目の要素は (  ( ( *a*1`binary_op` *a*2 ) `binary_op` *a*3 ) *a*i) によって得られます。  
+ 値のシーケンスの*、*1、 *、*2、 *、*第 3、入力の範囲内で 2 つ目のテンプレート関数を格納で i 番目の要素を指定した、ターゲット範囲内の連続する部分的な合計 ((( *、*1 `binary_op` *、*2) `binary_op` *、*3) *、*しました)。  
   
  適用される演算の順序は完全に指定されるため、二項演算 `binary_op` は結合的または可換的である必要はありません。  
   

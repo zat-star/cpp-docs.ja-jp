@@ -67,10 +67,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c57baa62265ec889cf447c0fdaaa62bc166ad552
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 59693a41b76eb7d6d7bae4c50fa320d8f48c78d1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="sscanfs-sscanfsl-swscanfs-swscanfsl"></a>sscanf_s、_sscanf_s_l、swscanf_s、_swscanf_s_l
@@ -132,13 +133,13 @@ int _swscanf_s_l(
   
  バッファー サイズには、終端 null も含まれます。 読み取られたトークンがバッファーに確実に収まるように、幅指定フィールドが使用される場合もあります。 幅指定フィールドが使用されない場合で、読み取られたトークンがバッファーに収まらない場合、そのバッファーには何も書き込まれません。  
   
- 文字の場合、次のように&1; 文字読み込む場合もあります。  
+ 文字の場合、次のように 1 文字読み込む場合もあります。  
   
  `wchar_t wc;`  
   
  `swscanf_s(in_str, L"%c", &wc, 1);`  
   
- 次に、この例では、入力文字列とデータ ストアから&1; つの文字をワイド文字バッファーに読み込みます。 null で終わらない文字列に対して複数の文字列を読み込む場合、幅指定とバッファー サイズとして符号なし整数が使用されます。  
+ 次に、この例では、入力文字列とデータ ストアから 1 つの文字をワイド文字バッファーに読み込みます。 null で終わらない文字列に対して複数の文字列を読み込む場合、幅指定とバッファー サイズとして符号なし整数が使用されます。  
   
  `char c[4];`  
   
@@ -151,7 +152,7 @@ int _swscanf_s_l(
   
  引数 `format` は、入力フィールドの解釈を制御し、`format` 関数の引数 `scanf_s` と同じ形式と機能を持ちます。 重なり合う文字列間でコピーした場合の動作は未定義です。  
   
- `swscanf_s` は `sscanf_s;` のワイド文字バージョンであり、`swscanf_s` の引数はワイド文字列です。 `sscanf_s` は、マルチバイトの&16; 進文字を処理しません。 `swscanf_s` は、Unicode の全角&16; 進文字や "互換区域" の文字は処理しません。 それ以外では、`swscanf_s` と `sscanf_s` の動作は同じです。  
+ `swscanf_s` は `sscanf_s;` のワイド文字バージョンであり、`swscanf_s` の引数はワイド文字列です。 `sscanf_s` は、マルチバイトの 16 進文字を処理しません。 `swscanf_s` は、Unicode の全角 16 進文字や "互換区域" の文字は処理しません。 それ以外では、`swscanf_s` と `sscanf_s` の動作は同じです。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -210,9 +211,6 @@ Character = 1
 Integer:  = 15  
 Real:     = 15.000000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Double::Parse](https://msdn.microsoft.com/en-us/library/system.double.parse.aspx) などの `Parse` メソッドをご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

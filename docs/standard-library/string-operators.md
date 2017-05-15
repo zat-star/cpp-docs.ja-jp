@@ -6,23 +6,25 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
+f1_keywords: []
 ms.assetid: 33ce8f05-06c7-45d3-a0cb-bcd27cf93910
 caps.latest.revision: 11
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 31a7a65ed759ec552e11f2eccc5d425c2b2b765d
-ms.openlocfilehash: 3772b1a90b699d2deb6a573c54b802122109fbf1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 7ed2e8ebcfec6c7d592969208c155daa0e27724e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltstringgt-operators"></a>&lt;string&gt; 演算子
 ||||  
 |-|-|-|  
-|[operator!=](#operator_neq)|[operator&gt;](#operator_gt_)|[operator&gt;&gt;](#operator_gt__gt_)|  
-|[operator&gt;=](#operator_gt__eq)|[operator&lt;](#operator_lt_)|[operator&lt;&lt;](#operator_lt__lt_)|  
-|[operator&lt;=](#operator_lt__eq)|[operator+](#operator_add)|[operator==](#operator_eq_eq)|  
+|[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;&gt;](#op_gt_gt)|  
+|[operator&gt;=](#op_gt_eq)|[operator&lt;](#op_lt)|[operator&lt;&lt;](#op_lt_lt)|  
+|[operator&lt;=](#op_lt_eq)|[operator+](#op_add)|[operator==](#op_eq_eq)|  
   
-##  <a name="a-nameoperatoradda--operator"></a><a name="operator_add"></a>  operator+  
+##  <a name="op_add"></a>  operator+  
  2 つの文字列オブジェクトを連結します。  
   
 ```  
@@ -88,17 +90,17 @@ basic_string<CharType, Traits, Allocator>&& operator+(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  連結する C スタイルの文字列または型 `basic_string` のオブジェクト。  
   
- ` right`  
+ `right`  
  連結する C スタイルの文字列または型 `basic_string` のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
  入力文字列を連結した文字列。  
   
 ### <a name="remarks"></a>コメント  
- 関数はそれぞれ `operator+` をオーバーロードして、テンプレート クラス [basic_string クラス](../standard-library/basic-string-class.md)の&2; つのオブジェクトを連結します。 実質的にすべて戻り`basic_string` \< **CharType**、**特徴 (traits)**、**アロケーター**> (_*左*)。 [append](../standard-library/basic-string-class.md#basic_string__append)(\_ *Right*).  
+ 関数はそれぞれ `operator+` をオーバーロードして、テンプレート クラス [basic_string クラス](../standard-library/basic-string-class.md)の 2 つのオブジェクトを連結します。 すべては実質的に戻り値`basic_string` \< **CharType**、 **Traits**、**アロケーター**> (_*左*)。 [append](../standard-library/basic-string-class.md#append)(\_ *Right*).  
   
 ### <a name="example"></a>例  
   
@@ -152,7 +154,7 @@ The string concatenating s1 & s3 is: antiheroine
 The string concatenating s1 & s3 is: antiheroine!  
 ```  
   
-##  <a name="a-nameoperatorneqa--operator"></a><a name="operator_neq"></a>  operator!=  
+##  <a name="op_neq"></a>  operator!=  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しくないかどうかを調べます。  
   
 ```  
@@ -173,10 +175,10 @@ bool operator!=(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -239,7 +241,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.  
 ```  
   
-##  <a name="a-nameoperatoreqeqa--operator"></a><a name="operator_eq_eq"></a>  operator==  
+##  <a name="op_eq_eq"></a>  operator==  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しいかどうかを調べます。  
   
 ```  
@@ -260,10 +262,10 @@ bool operator==(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -326,7 +328,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.  
 ```  
   
-##  <a name="a-nameoperatorlta--operatorlt"></a><a name="operator_lt_"></a>  operator&lt;  
+##  <a name="op_lt"></a>  operator&lt;  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより小さいかどうかを調べます。  
   
 ```  
@@ -347,10 +349,10 @@ bool operator<(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -418,7 +420,7 @@ The string s1 is not less than the string s3.
 The string s3 is less than the string s2.  
 ```  
   
-##  <a name="a-nameoperatorlteqa--operatorlt"></a><a name="operator_lt__eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  operator&lt;=  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以下かどうかを調べます。  
   
 ```  
@@ -439,10 +441,10 @@ bool operator<=(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -517,7 +519,7 @@ The string s1 is less than or equal to the string s3.
 The string s2 is greater than the string s3.  
 ```  
   
-##  <a name="a-nameoperatorltlta--operatorltlt"></a><a name="operator_lt__lt_"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
  出力ストリームに文字列を書き込むテンプレート関数。  
   
 ```  
@@ -531,16 +533,16 @@ basic_ostream<CharType, Traits>& operator<<(
  _Ostr  
  書き込み先の出力ストリーム。  
   
- ` str`  
+ `str`  
  出力ストリームに入力される文字列。  
   
 ### <a name="return-value"></a>戻り値  
  指定された文字列の値を出力ストリーム `_Ostr` に書き込みます。  
   
 ### <a name="remarks"></a>コメント  
- テンプレート関数は **operator<<** をオーバーロードして、テンプレート クラス [basic_string](../standard-library/basic-string-class.md) のオブジェクト _ *Str* ストリーム \_ *Ostr* に挿入します。 関数を効果的に返します\_ *Ostr*します。 **write**( \_ *Str*. [c_str](../standard-library/basic-string-class.md#basic_string__c_str), \_ *Str*. [size](../standard-library/basic-string-class.md#basic_string__size)).  
+ テンプレート関数は **operator<<** をオーバーロードして、テンプレート クラス [basic_string](../standard-library/basic-string-class.md) のオブジェクト _ *Str* ストリーム \_ *Ostr* に挿入します。 関数を効果的に返します\_ *Ostr*です。 **write**( \_ *Str*. [c_str](../standard-library/basic-string-class.md#c_str), \_ *Str*. [size](../standard-library/basic-string-class.md#size)).  
   
-##  <a name="a-nameoperatorgta--operatorgt"></a><a name="operator_gt_"></a>  operator&gt;  
+##  <a name="op_gt"></a>  operator&gt;  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより大きいかどうかを調べます。  
   
 ```  
@@ -561,10 +563,10 @@ bool operator>(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -639,7 +641,7 @@ The string s3 is greater than the string s1.
 The string s2 is greater than the string s3.  
 ```  
   
-##  <a name="a-nameoperatorgteqa--operatorgt"></a><a name="operator_gt__eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  operator&gt;=  
  演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以上かどうかを調べます。  
   
 ```  
@@ -660,10 +662,10 @@ bool operator>=(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- ` left`  
+ `left`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
- ` right`  
+ `right`  
  比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -738,7 +740,7 @@ The string s3 is greater than or equal to the string s1.
 The string s2 is greater than or equal to the string s3.  
 ```  
   
-##  <a name="a-nameoperatorgtgta--operatorgtgt"></a><a name="operator_gt__gt_"></a>  operator&gt;&gt;  
+##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
  入力ストリームから文字列を読み取るテンプレート関数。  
   
 ```  
@@ -752,26 +754,26 @@ basic_istream<CharType, Traits>& operator>>(
  `_Istr`  
  シーケンスを抽出するために使用する入力ストリーム  
   
- ` right`  
+ `right`  
  入力ストリームから抽出される文字列。  
   
 ### <a name="return-value"></a>戻り値  
- `_Istr` から指定された文字列の値を読み取り、それを ` right.` に返します。  
+ 指定した文字列の値を読み取ります`_Istr`にそれを返しますと`right`です。  
   
 ### <a name="remarks"></a>コメント  
  `skipws` フラグが設定されていない場合、演算子は先頭の余白をスキップします。 次の文字が余白か、ファイルの終わりに到達するまでは、次のすべての文字を読み取ります。  
   
- テンプレート関数は **operator>>** をオーバーロードして、` right` で制御されるシーケンスをストリーム `_Istr` から抽出された要素のシーケンスで置き換えます。 抽出は、次で停止します。  
+ テンプレート関数は **operator>>** をオーバーロードして、`right` で制御されるシーケンスをストリーム `_Istr` から抽出された要素のシーケンスで置き換えます。 抽出は、次で停止します。  
   
 -   ファイルの終わり。  
   
--   関数が `_Istr` を抽出した後。 **width** 要素 (その値が&0; 以外の場合)。  
+-   関数が `_Istr` を抽出した後。 **width** 要素 (その値が 0 以外の場合)。  
   
- 関数が `_Istr` を抽出した後。 [max_size](../standard-library/basic-string-class.md#basic_string__max_size) 要素。  
+ 関数が `_Istr` を抽出した後。 [max_size](../standard-library/basic-string-class.md#max_size) 要素。  
   
--   関数が [use_facet](../standard-library/basic-filebuf-class.md#basic_filebuf__open)< **ctype**\< **CharType**> >( `getloc`) の要素 *ch* を抽出した後。 **is**( **ctype**\< **CharType**>:: **space**, *ch*) が true の場合、文字が戻されます。  
+-   関数が [use_facet](../standard-library/basic-filebuf-class.md#open)< **ctype**\< **CharType**> >( `getloc`) の要素 *ch* を抽出した後。 **is**( **ctype**\< **CharType**>:: **space**, *ch*) が true の場合、文字が戻されます。  
   
- 関数が要素を抽出しなかった場合、[setstate](../standard-library/basic-ios-class.md#basic_ios__setstate)( `ios_base::failbit`) を呼び出します。 いずれの場合を呼び出す**istr**します。 **幅**(0) を返します\***この**します。  
+ 関数が要素を抽出しなかった場合、[setstate](../standard-library/basic-ios-class.md#setstate)( `ios_base::failbit`) を呼び出します。 いずれの場合を呼び出す**istr**です。 **幅**(0) を返しますと\***この**です。  
   
 ### <a name="example"></a>例  
   

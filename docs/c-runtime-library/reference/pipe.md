@@ -53,10 +53,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0e45008d3f55c11cfa7da2aa4db9ca1277a6f77f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 23bcf7a96dfbfa7719b20f2a035ddcbc93c835ee
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="pipe"></a>_pipe
@@ -68,11 +69,10 @@ ms.lasthandoff: 02/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-      int _pipe(  
-int *pfds,  
-unsigned int psize,  
-int textmode   
+int _pipe(  
+   int *pfds,  
+   unsigned int psize,  
+   int textmode   
 );  
 ```  
   
@@ -87,7 +87,7 @@ int textmode
  ファイル モード。  
   
 ## <a name="return-value"></a>戻り値  
- 処理が正常に終了した場合は 0 を返します。 エラーを示す –1 を返します。 エラーの場合、`errno` は、これらの値のいずれかに設定されます。  
+ 処理が正常に終了した場合は 0 を返します。 エラーを示す、-1 を返します。 エラーの場合、`errno` は、これらの値のいずれかに設定されます。  
   
 -   `EMFILE`、これ以上のファイル記述子が使用できないことを示します。  
   
@@ -100,17 +100,17 @@ int textmode
 ## <a name="remarks"></a>コメント  
  `_pipe` 関数は、プログラムの他のプログラムに情報を渡すために使用する人為的な I/O チャネルである*パイプ*を作成します。 パイプは、ファイル ポインター、ファイル記述子、またはその両方を持つファイルに似ており、標準ライブラリの入出力関数を使用して読み取りや書き込みを行うことができます。 ただし、パイプは、特定のファイルまたはデバイスを表しません。 代わりに、プログラム自体のメモリに関係なく、オペレーティング システムによって完全に制御されるメモリの一時的なストレージを表します。  
   
- `_pipe` は `_open` に似ていますが、読み取りおよび書き込み用のパイプを開き、ファイル記述子を&1; つではなく&2; つ返します。 プログラムはパイプの両側を使用するか、または必要としない一方の側のパイプを閉じることができます。 たとえば、Windows のコマンド プロセッサは `PROGRAM1 | PROGRAM2` などのコマンドを実行するときにパイプを作成します。  
+ `_pipe` は `_open` に似ていますが、読み取りおよび書き込み用のパイプを開き、ファイル記述子を 1 つではなく 2 つ返します。 プログラムはパイプの両側を使用するか、または必要としない一方の側のパイプを閉じることができます。 たとえば、Windows のコマンド プロセッサは `PROGRAM1 | PROGRAM2` などのコマンドを実行するときにパイプを作成します。  
   
  `PROGRAM1` の標準出力記述子は、パイプの書き込み記述子に添付されます。 `PROGRAM2` の標準入力記述子は、パイプの読み取り記述子に添付されます。 これにより、他のプログラムに情報を渡すための一時ファイルを作成する必要がなくなります。  
   
- `_pipe` 関数は `pfds` 引数でパイプに&2; つのファイル記述子を返します。 要素 `pfds`[0] には、読み取り記述子が含まれ、要素 `pfds`[1] には書き込み記述子が含まれます。 パイプのファイル記述子は、他のファイル記述子と同様に使用されます。 (低水準入出力関数 `_read` と `_write` はパイプからの読み取りやパイプへの書き込みができます)。パイプの末尾の状態を検出するには、`_read` 要求が、読み取ったバイト数として 0 を返すかどうかをチェックします。  
+ `_pipe` 関数は `pfds` 引数でパイプに 2 つのファイル記述子を返します。 要素 `pfds`[0] には、読み取り記述子が含まれ、要素 `pfds`[1] には書き込み記述子が含まれます。 パイプのファイル記述子は、他のファイル記述子と同様に使用されます。 (低水準入出力関数 `_read` と `_write` はパイプからの読み取りやパイプへの書き込みができます)。パイプの末尾の状態を検出するには、`_read` 要求が、読み取ったバイト数として 0 を返すかどうかをチェックします。  
   
  `psize` 引数は、パイプに予約するメモリの量をバイト数で指定します。 `textmode` 引数は、パイプの変換モードを指定します。 マニフェスト定数 `_O_TEXT` は、テキスト変換を指定し、定数 `_O_BINARY` はバイナリ変換を指定します (テキスト モードとバイナリ モードの詳細については、「[fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください。)`textmode` 引数が 0 の場合、`_pipe` は既定のモード変数 [_fmode](../../c-runtime-library/fmode.md) により指定されている既定の変換モードを使用します。  
   
  マルチスレッド プログラムでは、ロックは実行されません。 返されたファイル記述子が新しく開き、`_pipe` 呼び出しが完了するまでスレッドでは参照できません。  
   
- `_pipe` の関数を使用して親プロセスと子プロセスの間で通信するには、各プロセスがパイプで開いている記述子を&1; つだけ持つことが必要です。 記述子は正反対である必要があります。親が開いている読み取り記述子を持つ場合、子は開いている書き込み記述子を持つ必要があります。 これを実行するには、`textmode` を使用して `_O_NOINHERIT` フラグを `OR` (`|`) するのが最も簡単な方法です。 次に、`_dup` または `_dup2` を使用して、子に渡すパイプ記述子の継承可能なコピーを作成します。 元の記述子を終了し、子プロセスを生成します。 生成の呼び出しから制御が戻ったら、親プロセスの重複記述子を閉じます。 詳細については、この記事で後述する例 2 を参照してください。  
+ `_pipe` の関数を使用して親プロセスと子プロセスの間で通信するには、各プロセスがパイプで開いている記述子を 1 つだけ持つことが必要です。 記述子は正反対である必要があります。親が開いている読み取り記述子を持つ場合、子は開いている書き込み記述子を持つ必要があります。 これを実行するには、`textmode` を使用して `_O_NOINHERIT` フラグを `OR` (`|`) するのが最も簡単な方法です。 次に、`_dup` または `_dup2` を使用して、子に渡すパイプ記述子の継承可能なコピーを作成します。 元の記述子を終了し、子プロセスを生成します。 生成の呼び出しから制御が戻ったら、親プロセスの重複記述子を閉じます。 詳細については、この記事で後述する例 2 を参照してください。  
   
  Windows オペレーティング システムでは、すべての記述子が閉じたときパイプは破棄されます。 (パイプですべての読み取り記述子が閉じられた場合、パイプへの書き込みによりエラーが発生します)。パイプでのすべての読み取り操作と書き込み操作は、I/O 要求を完了するために十分なデータまたは十分なバッファー領域が確保されるまで、待機状態になります。  
   
@@ -131,9 +131,8 @@ int textmode
   
 ## <a name="example-1"></a>例 1  
   
-```  
-  
-      // crt_pipe.c  
+```C  
+// crt_pipe.c  
 /* This program uses the _pipe function to pass streams of  
  * text to spawned processes.  
  */  
@@ -216,9 +215,7 @@ int main( int argc, char *argv[] )
 }  
 ```  
   
-## <a name="sample-output"></a>出力例  
-  
-```  
+```Output  
 Son, what is the square root of 1000?  
 Son, what is the square root of 2000?  
 Son, what iDad, the square root of 1000 is 31.62.  
@@ -240,7 +237,7 @@ Dad, the square root of 8000 is 89.44.
 ## <a name="example-2"></a>例 2  
  これは基本的なフィルター アプリケーションです。 これは、生成されたアプリケーションの標準出力をフィルターに指定するパイプを作成した後、アプリケーションの crt_pipe_beeper を生成します。 フィルターは ASCII 7 (ビープ音) 文字を削除します。  
   
-```  
+```C  
 // crt_pipe_beeper.c  
   
 #include <stdio.h>  
@@ -259,7 +256,7 @@ int main()
   
  実際のフィルター アプリケーション:  
   
-```  
+```C  
 // crt_pipe_BeepFilter.C  
 // arguments: crt_pipe_beeper.exe  
   
@@ -352,9 +349,7 @@ int main(int argc, char** argv)
 }  
 ```  
   
-## <a name="output"></a>出力  
-  
-```  
+```Output  
 This is speaker beep number 1...  
 This is speaker beep number 2...  
 This is speaker beep number 3...  
@@ -366,9 +361,6 @@ This is speaker beep number 8...
 This is speaker beep number 9...  
 This is speaker beep number 10...  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   

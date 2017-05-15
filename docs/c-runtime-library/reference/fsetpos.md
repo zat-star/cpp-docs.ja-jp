@@ -49,10 +49,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 8ae2c34fb0eb62ec895b8b8e28bc6dd14f03b1fa
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 1facc7aec41e7ab1c8b420f6792d76cce0d2b029
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="fsetpos"></a>fsetpos
@@ -75,12 +76,12 @@ int fsetpos(
  位置インジケーターのストレージ。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`fsetpos` は 0 を返します。 失敗した場合、関数は&0; 以外の値を返し、`errno` を以下のいずれかのマニフェスト定数 (ERRNO で定義されます) に設定します。`EBADF` の場合、ファイルがアクセスできないか、`stream` がポイントするオブジェクトが有効なファイル構造ではありません。または、`EINVAL` の場合、`stream` または `pos` の無効の値が渡されたことを意味します。 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。  
+ 正常に終了した場合、`fsetpos` は 0 を返します。 失敗した場合、関数は 0 以外の値を返し、`errno` を以下のいずれかのマニフェスト定数 (ERRNO で定義されます) に設定します。`EBADF` の場合、ファイルがアクセスできないか、`stream` がポイントするオブジェクトが有効なファイル構造ではありません。または、`EINVAL` の場合、`stream` または `pos` の無効の値が渡されたことを意味します。 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。  
   
  リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
- `fsetpos` 関数は、`stream`のファイル位置インジケーターを `pos` *、* の値に設定します。これは、`stream`* に対する `fgetpos` への前の呼び出しで取得されます。* 関数は、ファイルの終端のインジケーターをクリアし、`stream`* 上の [ungetc](../../c-runtime-library/reference/ungetc-ungetwc.md) のすべての効果を元に戻しますにします。* `fsetpos` を呼び出した後で、`stream` 上の次の操作は、入力または出力になります。  
+ `fsetpos`関数設定のファイル位置インジケーター`stream`を値の`pos`を呼び出す前に取得される`fgetpos`に対して`stream`です。 関数は、ファイルの終端のインジケーターをクリアし、任意の効果を元に戻します[ungetc](../../c-runtime-library/reference/ungetc-ungetwc.md)で`stream`です。 `fsetpos` を呼び出した後で、`stream` 上の次の操作は、入力または出力になります。  
   
 ## <a name="requirements"></a>要件  
   
@@ -92,9 +93,6 @@ int fsetpos(
   
 ## <a name="example"></a>例  
  「[fgetpos](../../c-runtime-library/reference/fgetpos.md)」の例を参照してください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::FileStream::Position](https://msdn.microsoft.com/en-us/library/system.io.filestream.position.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

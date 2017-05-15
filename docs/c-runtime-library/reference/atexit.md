@@ -1,47 +1,64 @@
 ---
-title: "atexit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "atexit"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "atexit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "atexit 関数"
-  - "処理, 終了時"
+title: atexit | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- atexit
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- atexit
+dev_langs:
+- C++
+helpviewer_keywords:
+- processing, at exit
+- atexit function
 ms.assetid: 92c156d2-8052-4e58-96dc-00128baac6f9
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# atexit
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 6d0d85ffc7f3ed71a26a947dd66c710e76388e96
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
+---
+# <a name="atexit"></a>atexit
 終了時に指定された関数を処理します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int atexit(  
@@ -49,28 +66,28 @@ int atexit(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `func`  
  呼び出される関数。  
   
-## 戻り値  
- `atexit` でエラーが発生した場合、または 0 以外の値正常終了した場合は 0 を返します。  
+## <a name="return-value"></a>戻り値  
+ `atexit` は正常終了した場合は 0、エラーが発生した場合は 0 以外の値を返します。  
   
-## 解説  
- `atexit` 関数は、プログラムが正常に終了した場合に呼び出す関数 \(`func`\) のアドレスに渡されます。  `atexit` に継続的に呼び出し、最後に実行される関数のレジスタ、\(LIFO\) 最初のシーケンスを作成します。  `atexit` に渡された関数はパラメーターを使用できません。  `atexit` と `_onexit` は関数のレジスタを、ヒープを使用します。  したがって、登録できる関数の数はヒープ メモリでのみ使用できます。  
+## <a name="remarks"></a>コメント  
+ `atexit` 関数には、プログラムが正常に終了したときに呼び出される関数 (`func`) のアドレスが渡されます。 `atexit` を連続して呼び出すと、後入れ先出し法 (LIFO) 順で実行される関数のレジスタが作成されます。 `atexit` に渡される関数は、パラメーターを受け取ることはできません。 `atexit` と `_onexit` は、ヒープを使用して関数のレジスタを保持します。 したがって、登録可能な関数の数は、ヒープ メモリの量によってのみ制限されます。  
   
- `atexit` 関数のコードは `atexit` 関数が呼び出されるときに既にアンロードされた可能性のある DLL 依存関係を含めることはできません。  
+ `atexit` 関数のコードには、`atexit` 関数が呼び出されたときに既にアンロードされている可能性がある DLL への依存関係を含めることはできません。  
   
- \(`_onexit` の同様の関数\) ではなく ANSI 準拠アプリケーションを生成するには、`atexit` の ANSI 標準関数を使用します。  
+ ANSI 準拠のアプリケーションを生成するには、ANSI 規格の `atexit` 関数を使用します (同様の `_onexit` 関数ではない)。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`atexit`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`atexit`|\<stdlib.h>|  
   
-## 使用例  
- このプログラムは `atexit` が呼び出されたときに実行する関数のスタックに 4 個の関数を押します。  プログラムの終了が最後に、これらのプログラムを実行すると、最初に基本。  
+## <a name="example"></a>例  
+ このプログラムは、`atexit` が呼び出された時に実行される関数のスタック上に 4 つの関数をプッシュします。 プログラムの終了時に、後入れ先出し法でこれらのプログラムが実行されます。  
   
 ```  
 // crt_atexit.c  
@@ -109,13 +126,13 @@ void fn4()
 }  
 ```  
   
-  **これが最初に実行されます。**  
-**これにより、次に実行されます。**   
-## 同等の .NET Framework 関数  
- [System::Diagnostics::Process::Exited](https://msdn.microsoft.com/en-us/library/system.diagnostics.process.exited.aspx)  
+```Output  
+This is executed first.  
+This is executed next.  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
- [終了、\_Exit、\_exit](../../c-runtime-library/reference/exit-exit-exit.md)   
- [\_onexit、\_onexit\_m](../../c-runtime-library/reference/onexit-onexit-m.md)
+ [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   
+ [_onexit、_onexit_m](../../c-runtime-library/reference/onexit-onexit-m.md)

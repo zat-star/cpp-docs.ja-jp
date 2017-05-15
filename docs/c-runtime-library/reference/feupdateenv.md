@@ -49,10 +49,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 170e385a5741ced5612c060a7a537a05b4668432
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 0bc689cdf4a76412afd44c88357321cdc0778b40
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="feupdateenv"></a>feupdateenv
@@ -66,12 +67,12 @@ int feupdateenv(
 );  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
  `penv`  
- [fegetenv](http://msdn.microsoft.com/Library/61df848d-6ba8-4c6e-be35-216436fe7736) または [feholdexcept](http://msdn.microsoft.com/Library/c286ace3-ec39-482a-be8b-f998d31003d9) を呼び出して設定される浮動小数点環境を含む `fenv_t` オブジェクトへのポインター。 また、FE_DFL_ENV マクロを使用して、既定のスタートアップ浮動小数点環境を指定することもできます。  
+ [fegetenv](fegetenv1.md) または [feholdexcept](feholdexcept2.md) を呼び出して設定される浮動小数点環境を含む `fenv_t` オブジェクトへのポインター。 また、FE_DFL_ENV マクロを使用して、既定のスタートアップ浮動小数点環境を指定することもできます。  
   
 ## <a name="return-value"></a>戻り値  
- すべてのアクションが正常に完了した場合は、0 を返します。        それ以外の場合は、0 以外の値を返します。  
+ すべてのアクションが正常に完了した場合は、0 を返します。 それ以外の場合は、0 以外の値を返します。  
   
 ## <a name="remarks"></a>コメント  
  `feupdateenv` 関数は複数のアクションを実行します。 まず、現在発生している浮動小数点例外状態フラグを自動ストレージに格納します。 次に、`penv` が示す `fenv_t` オブジェクトに格納されている値から現在の浮動小数点環境を設定します。 `penv` が FE_DFL_ENV ではない場合、または有効な `fenv_t` オブジェクトを示していない場合、その後の動作は未定義になります。 最後に、`feupdateenv` は、ローカルに格納されている浮動小数点例外を発生させます。  

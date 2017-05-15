@@ -1,56 +1,73 @@
 ---
 title: "asctime_s、_wasctime_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wasctime_s"
-  - "asctime_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-time-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "asctime_s"
-  - "_wasctime_s"
-  - "_tasctime_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_tasctime_s 関数"
-  - "_wasctime_s 関数"
-  - "asctime_s 関数"
-  - "tasctime_s 関数"
-  - "時間構造体の変換"
-  - "時間, 変換"
-  - "wasctime_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wasctime_s
+- asctime_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-time-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- asctime_s
+- _wasctime_s
+- _tasctime_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- tasctime_s function
+- _tasctime_s function
+- time structure conversion
+- wasctime_s function
+- time, converting
+- _wasctime_s function
+- asctime_s function
 ms.assetid: 17ad9b2b-a459-465d-976a-42822897688a
 caps.latest.revision: 29
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 29
----
-# asctime_s、_wasctime_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4d4b2bf3c4fb4180b6da1d39ca26bfe819971f31
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-文字列に `tm` の時刻構造体を変換します。  これらの関数は [CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)"に説明されているように、セキュリティが強化された [asctime、\_wasctime](../../c-runtime-library/reference/asctime-wasctime.md) のバージョンです。  
+---
+# <a name="asctimes-wasctimes"></a>asctime_s、_wasctime_s
+`tm` 時間構造体を文字列に変換します。 これらの関数は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、[asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md) のセキュリティが強化されたバージョンです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t asctime_s(   
@@ -75,75 +92,75 @@ errno_t _wasctime_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buffer`  
- \[\]結果の文字列を格納するバッファーへのポインター。  この関数は `numberOfElements`で指定されたサイズの有効なメモリ位置へのポインターを前提としています。  
+ [out] 文字列結果を格納するバッファーへのポインター。 この関数は、`numberOfElements` で指定されたサイズの有効なメモリ位置へのポインターを前提としています。  
   
  `numberOfElements`  
- \[\]結果を格納するために使用されるバッファーのサイズ。  
+ [in] 結果を格納するために使用するバッファーのサイズ。  
   
  `_tm`  
- \[\]日付\/時刻構造体。  この関数は `struct` 有効な `tm` オブジェクトへのポインターを前提としています。  
+ [in] 時刻/日付の構造体。 この関数は、有効な `struct tm` オブジェクトへのポインターを前提としています。  
   
-## 戻り値  
- 正常に終了した場合は 0 を返します。  失敗した場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の戻り値はエラー コードです。  エラー コードは ERRNO.H.で定義されます。  詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」を参照してください。  各エラー条件に対して返される実際のエラー コードを次の表に示します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0。 障害が発生した場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、戻り値はエラー コードになります。 エラー コードは、ERRNO.H で定義されています。 詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」を参照してください。 各エラー条件に対して返される実際のエラー コードを、次の表に示します。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`numberOfElements`|`tm`|戻り値|`buffer` の値|  
-|--------------|------------------------|----------|---------|-----------------|  
+|`buffer`|`numberOfElements`|`tm`|リターン|`buffer` の値|  
+|--------------|------------------------|----------|------------|-----------------------|  
 |`NULL`|どれでも可|どれでも可|`EINVAL`|変更されない|  
-|存在しない`NULL` \(有効なメモリへのポインター\)|0|どれでも可|`EINVAL`|変更されない|  
-|`NULL` 以外|サイズ \< 0\< 26|どれでも可|`EINVAL`|空の文字列|  
-|`NULL` 以外|\>\= 26|`NULL`|`EINVAL`|空の文字列|  
-|`NULL` 以外|\>\= 26|時間のコンポーネントの範囲の値から無効な時刻構造体または|`EINVAL`|空の文字列|  
+|`NULL` ではない (有効なメモリを指す)|0|どれでも可|`EINVAL`|変更されない|  
+|`NULL` ではない|0< size < 26|どれでも可|`EINVAL`|空の文字列|  
+|`NULL` ではない|>= 26|`NULL`|`EINVAL`|空の文字列|  
+|`NULL` ではない|>= 26|無効な時間構造体または時間のコンポーネントの値が範囲外|`EINVAL`|空の文字列|  
   
 > [!NOTE]
->  `wasctime_s` のエラー条件は `asctime_s` に似ています。ただし、してサイズ制限は、単語単位です。  
+>  `wasctime_s` のエラー条件は、単語単位でサイズの上限を測定する例外がある `asctime_s` と同じです。  
   
-## 解説  
- `asctime` 関数は文字列を構造体として格納されている時刻を変換します。  `_tm` 値は通常、呼び出しから `gmtime` または `localtime`に取得されます。  関数が両方とも TIME.H.で定義されている `tm` の構造、入力するために使用できます。  
+## <a name="remarks"></a>コメント  
+ `asctime` 関数は、構造体として格納されている時間を文字列に変換します。 `_tm` 値は、通常は `gmtime` または `localtime` の呼び出しにより取得されます。 TIME.H で定義されているように、どちらの関数も `tm` 構造体に入力するために使用できます。  
   
-|timeptr のメンバー|値|  
-|-------------------|-------|  
-|`tm_hour`|深夜 0–23\) からの経過時間|  
-|`tm_isdst`|夏時間が有効な場合は正; 夏時間が有効な場合は 0; 夏時間が不明な場合は負。  C のランタイム ライブラリには、夏時間 \(DST\) の計算を実装するための米国の規則が使用されます。|  
-|`tm_mday`|月 \(1–31\) の日|  
-|`tm_min`|時間 \(分後の 0–59\)|  
-|`tm_mon`|月 \(0–11; 1 年 \= 0\)|  
-|`tm_sec`|分 \(0–59 後の秒\)|  
-|`tm_wday`|曜日 \(0–6 の日; 日曜日 \= 0\)|  
-|`tm_yday`|年 \(0–365 の日; 1 年 1 月 1 日 \= 0\)|  
-|`tm_year`|年 \(実際の西暦から 1900 を引いた数\)|  
+|timeptr メンバー|値|  
+|--------------------|-----------|  
+|`tm_hour`|午前 0 時 (0 ~ 23) 以降の時間|  
+|`tm_isdst`|夏時間が有効な場合は正、夏時間が無効な場合は 0、夏時間かどうかが不明な場合は負。 C ランタイム ライブラリでは、アメリカ合衆国の規則を前提に夏時間 (DST) を計算します。|  
+|`tm_mday`|(1 ~ 31) の月の日|  
+|`tm_min`|分 (0 ~ 59)|  
+|`tm_mon`|月 (0 ~ 11 です。年 1 月 = 0)|  
+|`tm_sec`|秒 (0 ~ 59)|  
+|`tm_wday`|曜日 (0 ~ 6 です。日曜日 = 0)|  
+|`tm_yday`|年 (0 ~ 365; の日付1 月 1 日 = 0)|  
+|`tm_year`|年 (実際の西暦から 1900 を引いた数)|  
   
- 変換された文字列は、現地のタイム ゾーンの設定に合わせて調整されます。  タイム ゾーンの環境変数とグローバル変数の定義については、"現地時間と [\_tzset](../Topic/_tzset.md) 関数の設定の詳細については、" [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)、[\_ftime、\_ftime32、\_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)と [localtime\_s、\_localtime32\_s、\_localtime64\_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md) 関数を参照してください。  
+ 変換された文字列も、ローカル タイム ゾーンの設定に従って調整されます。 ローカル タイムの設定の詳細については、[time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)、[_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)、および [localtime_s、_localtime32_s、_localtime64_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md) の関数を参照してください。また、タイム ゾーン環境とグローバル変数の定義の詳細については、[_tzset](../../c-runtime-library/reference/tzset.md) 関数を参照してください。  
   
- `asctime_s` で生成される結果の文字列は、26 文字からなる、フォーム `Wed Jan 02 02:03:55 1980\n\0`があります。  時刻は 24 時間制です。  すべてのフィールドは固定幅です。  改行文字と空白文字は、文字列の最後の 2 個の位置に配置されます。  2 番目のパラメーターとして渡された値これ以上である必要があります。  これはより小さい場合は、エラー コードを返します `EINVAL`は、返されます。  
+ `asctime_s` によって生成される文字列には、26 文字が含まれ、`Wed Jan 02 02:03:55 1980\n\0` の形式となります。 24 時間制が使用されます。 すべてのフィールドには一定の幅があります。 文字列の最後の 2 つの位置には、改行文字と null 文字が入ります。 2 番目のパラメーターとして渡される値は、この大きさ以上にする必要があります。 これより小さいと、エラー コード `EINVAL` が返されます。  
   
- `_wasctime_s` 関数は、`asctime_s` 関数のワイド文字バージョンです。  それ以外では、`_wasctime_s` と `asctime_s` の動作は同じです。  
+ `_wasctime_s` 関数は、`asctime_s` 関数のワイド文字バージョンです。 それ以外では、`_wasctime_s` と `asctime_s` の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mapping"></a>汎用テキスト ルーチンのマップ  
   
-|TCHAR.H のルーチン|\_UNICODE & \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|--------------------------------|-----------------------|--------------------------|  
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tasctime_s`|`asctime_s`|`asctime_s`|`_wasctime_s`|  
   
- C\+\+ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`asctime_s`|\<time.h\>|  
-|`_wasctime_s`|\<time.h または\> wchar.h \<\>|  
+|-------------|---------------------|  
+|`asctime_s`|\<time.h>|  
+|`_wasctime_s`|\<time.h> または \<wchar.h>|  
   
-## Security  
- バッファーが `NULL` ポインターではなく、ポインターが有効なバッファーを指す、関数は、内容が、場所を上書きできます。  これは、アクセス違反が発生することがあります。  
+## <a name="security"></a>セキュリティ  
+ バッファー ポインターが `NULL` ではなく、ポインターが有効なバッファーを指していない場合、この関数はその場所にあるものが何であれ上書きします。 これによりアクセス違反が発生することもあります。  
   
- [バッファー オーバーラン](http://msdn.microsoft.com/library/windows/desktop/ms717795) が自動サイズ引数がバッファーの実際のサイズよりも大きい場合に発生します。  
+ 渡されるサイズ引数がバッファーの実際のサイズより大きい場合、[バッファー オーバーラン](http://msdn.microsoft.com/library/windows/desktop/ms717795)が発生する場合があります。  
   
-## 使用例  
- このプログラムは長整数 `aclock`にシステム時刻を置き、構造 `newtime` に変換し、出力の文字列形式に `asctime_s` 関数を使用して、変換します。  
+## <a name="example"></a>例  
+ このプログラムはシステム時刻を長整数 `aclock` で配置し、それを構造体 `newtime` に変換してから、`asctime_s` 関数を使用して出力用の文字列形式に変換します。  
   
 ```  
 // crt_asctime_s.c  
@@ -173,24 +190,15 @@ int main( void )
 }  
 ```  
   
-  **現在の日付と時間: 水曜日 5 年 1 月 14 日 15:30: 17 2003 年**   
-## 同等の .NET Framework 関数  
+```Output  
+Current date and time: Wed May 14 15:30:17 2003  
+```  
   
--   <xref:System.DateTime.ToLongDateString%2A?displayProperty=fullName>  
-  
--   <xref:System.DateTime.ToLongTimeString%2A?displayProperty=fullName>  
-  
--   <xref:System.DateTime.ToShortDateString%2A?displayProperty=fullName>  
-  
--   <xref:System.DateTime.ToShortTimeString%2A?displayProperty=fullName>  
-  
--   <xref:System.DateTime.ToString%2A?displayProperty=fullName>  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [時間管理](../../c-runtime-library/time-management.md)   
- [ctime\_s、\_ctime32\_s、\_ctime64\_s、\_wctime\_s、\_wctime32\_s、\_wctime64\_s](../../c-runtime-library/reference/ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)   
- [\_ftime、\_ftime32、\_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
- [gmtime\_s、\_gmtime32\_s、\_gmtime64\_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
- [localtime\_s、\_localtime32\_s、\_localtime64\_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md)   
- [time、\_time32、\_time64](../Topic/time,%20_time32,%20_time64.md)   
- [\_tzset](../Topic/_tzset.md)
+ [ctime_s、_ctime32_s、_ctime64_s、_wctime_s、_wctime32_s、_wctime64_s](../../c-runtime-library/reference/ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)   
+ [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
+ [gmtime_s、_gmtime32_s、_gmtime64_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
+ [localtime_s、_localtime32_s、_localtime64_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md)   
+ [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)   
+ [_tzset](../../c-runtime-library/reference/tzset.md)

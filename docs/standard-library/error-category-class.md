@@ -39,10 +39,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 7700ffce8b04f9caad33c08f03f0585c29a43efd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 8a2a37464e5edb5a5fde1def70d2f0728524fad2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="errorcategory-class"></a>error_category クラス
@@ -55,37 +56,37 @@ class error_category;
 ```  
   
 ## <a name="remarks"></a>コメント  
- 定義済みの&2; つのオブジェクト [generic_category](../standard-library/system-error-functions.md#generic_category) および [system_category](../standard-library/system-error-functions.md#system_category) によって `error_category` が実装されます。  
+ 定義済みの 2 つのオブジェクト [generic_category](../standard-library/system-error-functions.md#generic_category) および [system_category](../standard-library/system-error-functions.md#system_category) によって `error_category` が実装されます。  
   
 ### <a name="typedefs"></a>Typedef  
   
 |||  
 |-|-|  
-|[value_type](#error_category__value_type)|格納されたエラー コード値を表す型。|  
+|[value_type](#value_type)|格納されたエラー コード値を表す型。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[default_error_condition](#error_category__default_error_condition)|エラー条件オブジェクトのエラー コード値を格納します。|  
-|[equivalent](#error_category__equivalent)|エラー オブジェクトが同等であるかどうかを示す値を返します。|  
-|[message](#error_category__message)|指定したエラー コードの名前を返します。|  
-|[name](#error_category__name)|カテゴリの名前を返します。|  
+|[default_error_condition](#default_error_condition)|エラー条件オブジェクトのエラー コード値を格納します。|  
+|[equivalent](#equivalent)|エラー オブジェクトが同等であるかどうかを示す値を返します。|  
+|[message](#message)|指定したエラー コードの名前を返します。|  
+|[name](#name)|カテゴリの名前を返します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator==](#error_category__operator_eq_eq)|`error_category` オブジェクト間の同等性をテストします。|  
-|[operator!=](#error_category__operator_neq)|`error_category` オブジェクト間の不等性をテストします。|  
-|[operator<](#error_category__operator_lt_)|[error_category](../standard-library/error-category-class.md) オブジェクトが比較のために渡される `error_category` オブジェクトより小さいかどうかをテストします。|  
+|[operator==](#op_eq_eq)|`error_category` オブジェクト間の同等性をテストします。|  
+|[operator!=](#op_neq)|`error_category` オブジェクト間の不等性をテストします。|  
+|[operator<](#op_lt)|[error_category](../standard-library/error-category-class.md) オブジェクトが比較のために渡される `error_category` オブジェクトより小さいかどうかをテストします。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<system_error>  
   
  **名前空間:** std  
   
-##  <a name="error_category__default_error_condition"></a>  error_category::default_error_condition  
+##  <a name="default_error_condition"></a>  error_category::default_error_condition  
  エラー条件オブジェクトのエラー コード値を格納します。  
   
 ```
@@ -103,7 +104,7 @@ virtual error_condition default_error_condition(int _Errval) const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="error_category__equivalent"></a>  error_category::equivalent  
+##  <a name="equivalent"></a>  error_category::equivalent  
  エラー オブジェクトが同等であるかどうかを示す値を返します。  
   
 ```
@@ -130,7 +131,7 @@ virtual bool equivalent(const error_code& _Code,
   
  2 番目のメンバー関数は `*this == _Code.category() && _Code.value() == _Errval` を返します。  
   
-##  <a name="error_category__message"></a>  error_category::message  
+##  <a name="message"></a>  error_category::message  
  指定したエラー コードの名前を返します。  
   
 ```
@@ -148,7 +149,7 @@ virtual string message(error_code::value_type val) const = 0;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="error_category__name"></a>  error_category::name  
+##  <a name="name"></a>  error_category::name  
  カテゴリの名前を返します。  
   
 ```
@@ -160,7 +161,7 @@ virtual const char *name() const = 0;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="error_category__operator_eq_eq"></a>  error_category::operator==  
+##  <a name="op_eq_eq"></a>  error_category::operator==  
  `error_category` オブジェクト間の同等性をテストします。  
   
 ```
@@ -179,7 +180,7 @@ bool operator==(const error_category& right) const;
 ### <a name="remarks"></a>コメント  
  このメンバー演算子は、`this == &right` を返します。  
   
-##  <a name="error_category__operator_neq"></a>  error_category::operator!=  
+##  <a name="op_neq"></a>  error_category::operator!=  
  `error_category` オブジェクト間の不等性をテストします。  
   
 ```
@@ -198,7 +199,7 @@ bool operator!=(const error_category& right) const;
 ### <a name="remarks"></a>コメント  
  このメンバー演算子は、`(!*this == right)` を返します。  
   
-##  <a name="error_category__operator_lt_"></a>  error_category::operator&lt;  
+##  <a name="op_lt"></a>  error_category::operator&lt;  
  [error_category](../standard-library/error-category-class.md) オブジェクトが比較のために渡される `error_category` オブジェクトより小さいかどうかをテストします。  
   
 ```
@@ -217,7 +218,7 @@ bool operator<(const error_category& right) const;
 ### <a name="remarks"></a>コメント  
  このメンバー演算子は、`this < &right` を返します。  
   
-##  <a name="error_category__value_type"></a>  error_category::value_type  
+##  <a name="value_type"></a>  error_category::value_type  
  格納されたエラー コード値を表す型。  
   
 ```

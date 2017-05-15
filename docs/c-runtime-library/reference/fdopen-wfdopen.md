@@ -58,10 +58,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 7c55b4d9f7de124e7bbcc89e4c649e09e35efc42
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 3efc15f9d9fa6544ad7af2c3809ee6562b7f36e0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="fdopen-wfdopen"></a>_fdopen、_wfdopen
@@ -106,7 +107,7 @@ FILE *_wfdopen(
  文字列 `mode` は、次の表に示すように、ファイルに要求するアクセスの種類を指定します。  
   
  `"r"`  
- 読み取り用に開きます。 ファイルが存在しない場合や見つからない場合、`fopen` 呼び出しは失敗します。  
+ 読み取り用に開きます。 ファイルが存在しない場合や見つからない場合、 `fopen` 呼び出しは失敗します。  
   
  `"w"`  
  書き込み用に空のファイルを開きます。 指定したファイルが既に存在すると、そのファイルの内容は破棄されます。  
@@ -128,7 +129,7 @@ FILE *_wfdopen(
  上記の値に加え、`mode` に次の文字を追加して、改行文字の変換モードを指定することもできます。  
   
  `t`  
- ファイルをテキスト (変換) モードで開きます。 このモードでは、復帰と改行 (CR-LF) の組み合わせは入力時に&1; つの改行 (LF) 文字に変換され、LF 文字は出力時に CR-LF の組み合わせに変換されます。 また、Ctrl + Z は入力時に EOF (end-of-file) 文字として解釈されます。 読み取りおよび書き込みの両方のモードで開かれたファイルでは、`fopen` がファイル末尾に Ctrl + Z があるかどうかを確認し、削除できる場合は削除します。 この処理が行われる理由は、Ctrl + Z で終わるファイルの中身を `fseek` 関数および `ftell` 関数を使用して移動するとき、ファイル末尾付近で `fseek` が正しく動作しないことがあるためです。  
+ ファイルをテキスト (変換) モードで開きます。 このモードでは、復帰と改行 (CR-LF) の組み合わせは入力時に 1 つの改行 (LF) 文字に変換され、LF 文字は出力時に CR-LF の組み合わせに変換されます。 また、Ctrl + Z は入力時に EOF (end-of-file) 文字として解釈されます。 読み取りおよび書き込みの両方のモードで開かれたファイルでは、`fopen` がファイル末尾に Ctrl + Z があるかどうかを確認し、削除できる場合は削除します。 この処理が行われる理由は、Ctrl + Z で終わるファイルの中身を `fseek` 関数および `ftell` 関数を使用して移動するとき、ファイル末尾付近で `fseek` が正しく動作しないことがあるためです。  
   
  `b`  
  バイナリ (無変換) モードで開きます。 `t` モードからの変換は何も行われません。  
@@ -216,9 +217,6 @@ Line two
 ```  
 Lines in file: 2  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- <xref:System.IO.FileStream.%23ctor%2A>  
   
 ## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   

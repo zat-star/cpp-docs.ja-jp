@@ -67,14 +67,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1043550a54c54c1e487cd470e80979b971ba03fd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 3eca42c7ad0563ce573dbaa2a75dd85739c342f5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="strinc-wcsinc-mbsinc-mbsincl"></a>_strinc、_wcsinc、_mbsinc、_mbsinc_l
-文字列ポインターを&1; 文字進めます。  
+文字列ポインターを 1 文字進めます。  
   
 > [!IMPORTANT]
 >  `_mbsinc` と `_mbsinc_l` は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)] で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
@@ -113,7 +114,7 @@ unsigned char *_mbsinc_l(
 ## <a name="remarks"></a>コメント  
  `_mbsinc` 関数は、`current` の直後に続くマルチバイト文字の最初のバイトへのポインターを返します。 `_mbsinc` は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に従ってマルチバイト文字シーケンスを認識します。`_mbsinc_l` は、渡されたロケール パラメーターを代わりに使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
- Tchar.h に定義されている汎用テキスト関数 `_tcsinc` は、`_mbsinc` にマップされるか (`_MBCS` が定義されている場合)、または `_wcsinc` にマップされます (`_UNICODE` が定義されている場合)。 それ以外の場合、`_tcsinc` は `_strinc` に割り当てられます。 `_strinc` と `_wcsinc` はそれぞれ、`_mbsinc` の&1; バイト文字バージョンとワイド文字バージョンです。 `_strinc` と `_wcsinc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
+ Tchar.h に定義されている汎用テキスト関数 `_tcsinc` は、`_mbsinc` にマップされるか (`_MBCS` が定義されている場合)、または `_wcsinc` にマップされます (`_UNICODE` が定義されている場合)。 それ以外の場合、`_tcsinc` は `_strinc` に割り当てられます。 `_strinc` と `_wcsinc` はそれぞれ、`_mbsinc` の 1 バイト文字バージョンとワイド文字バージョンです。 `_strinc` と `_wcsinc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
  `current` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
   
@@ -129,10 +130,7 @@ unsigned char *_mbsinc_l(
 |`_strinc`|\<tchar.h>|  
 |`_wcsinc`|\<tchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

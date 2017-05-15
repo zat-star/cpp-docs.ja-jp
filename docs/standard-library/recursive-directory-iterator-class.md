@@ -31,10 +31,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 99e43055e5cb3e391aa3f3a71ea62532d971d139
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
+ms.openlocfilehash: 0d4325fbe8d4f336f4ca1ac6afe4ba5a96a7172d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="recursivedirectoryiterator-class"></a>recursive_directory_iterator クラス
@@ -66,7 +67,7 @@ for (recursive_directory_iterator next(path("abc")), end; next != end; ++next)
     visit(next->path());
 ```  
   
- 引数 `path("abc/def/ghi") and path("abc/jkl").`を使用して visit を呼び出します。次の&2; つの方法でディレクトリ サブツリーの走査の条件を指定できます。  
+ 引数 `path("abc/def/ghi") and path("abc/jkl").`を使用して visit を呼び出します。次の 2 つの方法でディレクトリ サブツリーの走査の条件を指定できます。  
   
 1.  値が directory_options::follow_directory_symlink の directory_options 引数を使って recursive_directory_iterator を構築した場合にのみ、ディレクトリ symlink がスキャンされます。  
   
@@ -181,9 +182,9 @@ recursive_directory_iterator(const recursive_directory_iterator&) = default;
 recursive_directory_iterator(recursive_directory_iterator&&) noexcept = default;  
 ```  
   
- 1 つ目のコンストラクターは、end-of-sequence 反復子を生成します。 2 つ目と&3; つ目のコンストラクターは、no_push に false を、myoptions に directory_options::none を格納してから、pval をディレクトリとして開いて読み取ろうとします。 成功した場合は、ネストされたシーケンスに含まれる、ディレクトリでない&1; つ目のファイル名を指すように mystack と myentry を初期化します。成功しなかった場合は、end-of-sequence 反復子を生成します。  
+ 1 つ目のコンストラクターは、end-of-sequence 反復子を生成します。 2 つ目と 3 つ目のコンストラクターは、no_push に false を、myoptions に directory_options::none を格納してから、pval をディレクトリとして開いて読み取ろうとします。 成功した場合は、ネストされたシーケンスに含まれる、ディレクトリでない 1 つ目のファイル名を指すように mystack と myentry を初期化します。成功しなかった場合は、end-of-sequence 反復子を生成します。  
   
- 4 つ目と&5; つ目のコンストラクターは、最初に myoptions に opts を格納することを除いて、2 つ目と&3; つ目のコンストラクターと同じ動作をします。 既定のコンストラクターは想定どおりの動作をします。  
+ 4 つ目と 5 つ目のコンストラクターは、最初に myoptions に opts を格納することを除いて、2 つ目と 3 つ目のコンストラクターと同じ動作をします。 既定のコンストラクターは想定どおりの動作をします。  
   
 ## <a name="recursivedirectoryiteratorincrement"></a>recursive_directory_iterator::increment  
   
@@ -194,7 +195,7 @@ recursive_directory_iterator& increment(error_code& ec) noexcept;
  この関数は、ネストされたシーケンス内の次のファイル名に進もうとします。 成功した場合は、myentry にそのファイル名を格納します。成功しなかった場合は、end-of-sequence 反復子を生成します。  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** filesystem  
+ **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::tr2::sys  
   

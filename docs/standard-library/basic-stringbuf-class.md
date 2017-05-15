@@ -11,8 +11,18 @@ ms.topic: article
 f1_keywords:
 - basic_stringbuf
 - sstream/std::basic_stringbuf
-- std.basic_stringbuf
-- std::basic_stringbuf
+- sstream/std::basic_stringbuf::allocator_type
+- sstream/std::basic_stringbuf::char_type
+- sstream/std::basic_stringbuf::int_type
+- sstream/std::basic_stringbuf::off_type
+- sstream/std::basic_stringbuf::pos_type
+- sstream/std::basic_stringbuf::traits_type
+- sstream/std::basic_stringbuf::overflow
+- sstream/std::basic_stringbuf::pbackfail
+- sstream/std::basic_stringbuf::seekoff
+- sstream/std::basic_stringbuf::seekpos
+- sstream/std::basic_stringbuf::str
+- sstream/std::basic_stringbuf::underflow
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,10 +46,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: acc0ecd4edaf1e58977dcbdeb483d497a72bc4c8
-ms.openlocfilehash: 2f98c8da5a6fdc9aafb0d813a76d87a81f8de7e6
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: b8d19f4cd76690c52dd6a69df04240944c151f67
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="basicstringbuf-class"></a>basic_stringbuf クラス
@@ -66,54 +77,54 @@ class basic_stringbuf : public basic_streambuf<Elem, Tr>
 ## <a name="remarks"></a>コメント  
  シーケンスでの変更に応じて、オブジェクトの割り当て、拡張、解放が行われます。  
   
- クラス basic_stringbuf<`Elem`, `Tr`, `Alloc`> のオブジェクトは、コンストラクターの引数 `ios_base::`[openmode](../standard-library/ios-base-class.md#ios_base__openmode) のコピーをその `stringbuf` モード **mode** として格納します。  
+ クラス basic_stringbuf<`Elem`, `Tr`, `Alloc`> のオブジェクトは、コンストラクターの引数 `ios_base::`[openmode](../standard-library/ios-base-class.md#openmode) のコピーをその `stringbuf` モード **mode** として格納します。  
   
--   `mode & ios_base::in` が&0; でない場合は、入力バッファーにアクセスできます。 詳細については、「[basic_streambuf クラス](../standard-library/basic-streambuf-class.md)」を参照してください。  
+-   `mode & ios_base::in` が 0 でない場合は、入力バッファーにアクセスできます。 詳細については、「[basic_streambuf クラス](../standard-library/basic-streambuf-class.md)」を参照してください。  
   
--   `mode & ios_base::out` が&0; でない場合は、出力バッファーにアクセスできます。  
+-   `mode & ios_base::out` が 0 でない場合は、出力バッファーにアクセスできます。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[basic_stringbuf](#basic_stringbuf__basic_stringbuf)|`basic_stringbuf` 型のオブジェクトを構築します。|  
+|[basic_stringbuf](#basic_stringbuf)|`basic_stringbuf` 型のオブジェクトを構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[allocator_type](#basic_stringbuf__allocator_type)|この型は、テンプレート パラメーター `Alloc`のシノニムです。|  
-|[char_type](#basic_stringbuf__char_type)|型名を `Elem` テンプレート パラメーターに関連付けます。|  
-|[int_type](#basic_stringbuf__int_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
-|[off_type](#basic_stringbuf__off_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
-|[pos_type](#basic_stringbuf__pos_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
-|[traits_type](#basic_stringbuf__traits_type)|型名を `Tr` テンプレート パラメーターに関連付けます。|  
+|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc`のシノニムです。|  
+|[char_type](#char_type)|型名を `Elem` テンプレート パラメーターに関連付けます。|  
+|[int_type](#int_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
+|[off_type](#off_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
+|[pos_type](#pos_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
+|[traits_type](#traits_type)|型名を `Tr` テンプレート パラメーターに関連付けます。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
 |||  
 |-|-|  
-|[overflow](#basic_stringbuf__overflow)|いっぱいのバッファーに新しい文字が挿入されたときに呼び出すことができる、プロテクト仮想関数。|  
-|[pbackfail](#basic_stringbuf__pbackfail)|プロテクト仮想メンバー関数が要素を入力バッファーに戻そうと試み、その要素を現在の要素に (次のポインターによって指されるように) します。|  
-|[seekoff](#basic_stringbuf__seekoff)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
-|[seekpos](#basic_stringbuf__seekpos)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
-|[str](#basic_stringbuf__str)|文字列バッファー内のテキストを設定または取得します。書き込み位置は変更しません。|  
+|[overflow](#overflow)|いっぱいのバッファーに新しい文字が挿入されたときに呼び出すことができる、プロテクト仮想関数。|  
+|[pbackfail](#pbackfail)|プロテクト仮想メンバー関数が要素を入力バッファーに戻そうと試み、その要素を現在の要素に (次のポインターによって指されるように) します。|  
+|[seekoff](#seekoff)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
+|[seekpos](#seekpos)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
+|[str](#str)|文字列バッファー内のテキストを設定または取得します。書き込み位置は変更しません。|  
 |swap||  
-|[underflow](#basic_stringbuf__underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想メンバー関数。|  
+|[underflow](#underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想メンバー関数。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<sstream>  
   
  **名前空間:** std  
   
-##  <a name="a-namebasicstringbufallocatortypea--basicstringbufallocatortype"></a><a name="basic_stringbuf__allocator_type"></a>  basic_stringbuf::allocator_type  
+##  <a name="allocator_type"></a>  basic_stringbuf::allocator_type  
  この型は、テンプレート パラメーター `Alloc`のシノニムです。  
   
 ```  
 typedef Alloc allocator_type;  
 ```  
   
-##  <a name="a-namebasicstringbufbasicstringbufa--basicstringbufbasicstringbuf"></a><a name="basic_stringbuf__basic_stringbuf"></a>  basic_stringbuf::basic_stringbuf  
+##  <a name="basic_stringbuf"></a>  basic_stringbuf::basic_stringbuf  
  `basic_stringbuf` 型のオブジェクトを構築します。  
   
 ```  
@@ -127,38 +138,38 @@ basic_stringbuf(
   
 ### <a name="parameters"></a>パラメーター  
  `_Mode`  
- [ios_base::openmode](../standard-library/ios-base-class.md#ios_base__openmode) の列挙値のうちの&1; つ。  
+ [ios_base::openmode](../standard-library/ios-base-class.md#openmode) の列挙値のうちの 1 つ。  
   
- ` str`  
+ `str`  
  [basic_string](../standard-library/basic-string-class.md) 型のオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
  最初のコンストラクターは、入力バッファーと出力バッファーを制御するすべてのポインターに Null ポインターを格納します。 詳細については、[basic_streambuf クラス](../standard-library/basic-streambuf-class.md)の「コメント」セクションを参照してください。 `_Mode` も stringbuf モードとして格納します。 詳細については、[basic_stringbuf クラス](../standard-library/basic-stringbuf-class.md)の「コメント」セクションを参照してください。  
   
- 2 番目のコンストラクターは、文字列オブジェクト ` str` によって制御されるシーケンスのコピーを割り当てます。 `_Mode & ios_base::in` が&0; 以外の場合、シーケンスの先頭から読み取りを開始するように入力バッファーを設定します。 `_Mode & ios_base::out` が&0; 以外の場合、シーケンスの先頭から書き込みを開始するように出力バッファーを設定します。 `_Mode` も stringbuf モードとして格納します。 詳細については、[basic_stringbuf クラス](../standard-library/basic-stringbuf-class.md)の「コメント」セクションを参照してください。  
+ 2 番目のコンストラクターは、文字列オブジェクト `str` によって制御されるシーケンスのコピーを割り当てます。 `_Mode & ios_base::in` が 0 以外の場合、シーケンスの先頭から読み取りを開始するように入力バッファーを設定します。 `_Mode & ios_base::out` が 0 以外の場合、シーケンスの先頭から書き込みを開始するように出力バッファーを設定します。 `_Mode` も stringbuf モードとして格納します。 詳細については、[basic_stringbuf クラス](../standard-library/basic-stringbuf-class.md)の「コメント」セクションを参照してください。  
   
-##  <a name="a-namebasicstringbufchartypea--basicstringbufchartype"></a><a name="basic_stringbuf__char_type"></a>  basic_stringbuf::char_type  
+##  <a name="char_type"></a>  basic_stringbuf::char_type  
  型名を **Elem** テンプレート パラメーターに関連付けます。  
   
 ```  
 typedef Elem char_type;  
 ```  
   
-##  <a name="a-namebasicstringbufinttypea--basicstringbufinttype"></a><a name="basic_stringbuf__int_type"></a>  basic_stringbuf::int_type  
+##  <a name="int_type"></a>  basic_stringbuf::int_type  
  **Tr** スコープ内のこの型を、basic_filebuf スコープ内の同じ名前の型と同等にします。  
   
 ```  
 typedef typename traits_type::int_type int_type;  
 ```  
   
-##  <a name="a-namebasicstringbufofftypea--basicstringbufofftype"></a><a name="basic_stringbuf__off_type"></a>  basic_stringbuf::off_type  
+##  <a name="off_type"></a>  basic_stringbuf::off_type  
  **Tr** スコープ内のこの型を、basic_filebuf スコープ内の同じ名前の型と同等にします。  
   
 ```  
 typedef typename traits_type::off_type off_type;  
 ```  
   
-##  <a name="a-namebasicstringbufoverflowa--basicstringbufoverflow"></a><a name="basic_stringbuf__overflow"></a>  basic_stringbuf::overflow  
+##  <a name="overflow"></a>  basic_stringbuf::overflow  
  いっぱいのバッファーに新しい文字が挿入されたときに呼び出すことができる、プロテクト仮想関数。  
   
 ```  
@@ -170,16 +181,16 @@ virtual int_type overflow(int_type _Meta = traits_type::eof());
  バッファーまたは **traits_type::eof** に挿入する文字。  
   
 ### <a name="return-value"></a>戻り値  
- 関数が失敗すると、**traits_type::eof** が返されます。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#char_traits__not_eof)(_ *Meta*) を返します。  
+ 関数が失敗すると、**traits_type::eof** が返されます。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#not_eof)(_ *Meta*) を返します。  
   
 ### <a name="remarks"></a>コメント  
- _ *Meta* が**traits_type::**[eof](../standard-library/char-traits-struct.md#char_traits__eof) と等しくない場合、プロテクト仮想メンバー関数は、要素 **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#char_traits__to_char_type)(\_ *Meta*) を出力バッファーに挿入しようとします。 これはさまざまな方法で行うことができます。  
+ _ *Meta* が**traits_type::**[eof](../standard-library/char-traits-struct.md#eof) と等しくない場合、プロテクト仮想メンバー関数は、要素 **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*) を出力バッファーに挿入しようとします。 これはさまざまな方法で行うことができます。  
   
 -   書き込み位置が使用可能な場合は、書き込み位置に要素を格納し、出力バッファーのネクスト ポインターをインクリメントできます。  
   
 -   新しい記憶域または追加の記憶域を出力バッファーに割り当てることで、書き込み位置を使用可能にすることができます。 このように出力バッファーを拡張すると、関連付けられているすべての入力バッファーも拡張されます。  
   
-##  <a name="a-namebasicstringbufpbackfaila--basicstringbufpbackfail"></a><a name="basic_stringbuf__pbackfail"></a>  basic_stringbuf::pbackfail  
+##  <a name="pbackfail"></a>  basic_stringbuf::pbackfail  
  プロテクト仮想メンバー関数が要素を入力バッファーに戻そうと試み、その要素を現在の要素に (次のポインターによって指されるように) します。  
   
 ```  
@@ -191,23 +202,23 @@ virtual int_type pbackfail(int_type _Meta = traits_type::eof());
  バッファーまたは **traits_type::eof** に挿入する文字。  
   
 ### <a name="return-value"></a>戻り値  
- 関数が失敗すると、**traits_type::eof** が返されます。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#char_traits__not_eof)(_ *Meta*) を返します。  
+ 関数が失敗すると、**traits_type::eof** が返されます。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#not_eof)(_ *Meta*) を返します。  
   
 ### <a name="remarks"></a>コメント  
- `_Meta` が **traits_type::**[eof](../standard-library/char-traits-struct.md#char_traits__eof) と等しい場合、プッシュ バックする要素は、実質的に、現在の要素の前に既にストリームにある要素になります。 それ以外の場合、その要素が **byte** = **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#char_traits__to_char_type)(_ *Meta*) で置き換えられます。 この関数は、さまざまな方法で要素を戻すことができます。  
+ `_Meta` が **traits_type::**[eof](../standard-library/char-traits-struct.md#eof) と等しい場合、プッシュ バックする要素は、実質的に、現在の要素の前に既にストリームにある要素になります。 それ以外の場合、その要素が **byte** = **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(_ *Meta*) で置き換えられます。 この関数は、さまざまな方法で要素を戻すことができます。  
   
 -   戻り位置が使用可能であり、格納されている要素が byte に等しい場合、入力バッファーのネクスト ポインターをデクリメントできます。  
   
--   戻り位置が使用可能で、stringbuf モードでシーケンスの変更が許可されている (**mode & ios_base::out** が&0; 以外) 場合は、この関数は byte を戻り位置に格納し、入力バッファーのネクスト ポインターをデクリメントできます。  
+-   戻り位置が使用可能で、stringbuf モードでシーケンスの変更が許可されている (**mode & ios_base::out** が 0 以外) 場合は、この関数は byte を戻り位置に格納し、入力バッファーのネクスト ポインターをデクリメントできます。  
   
-##  <a name="a-namebasicstringbufpostypea--basicstringbufpostype"></a><a name="basic_stringbuf__pos_type"></a>  basic_stringbuf::pos_type  
+##  <a name="pos_type"></a>  basic_stringbuf::pos_type  
  **Tr** スコープ内のこの型を、basic_filebuf スコープ内の同じ名前の型と同等にします。  
   
 ```  
 typedef typename traits_type::pos_type pos_type;  
 ```  
   
-##  <a name="a-namebasicstringbufseekoffa--basicstringbufseekoff"></a><a name="basic_stringbuf__seekoff"></a>  basic_stringbuf::seekoff  
+##  <a name="seekoff"></a>  basic_stringbuf::seekoff  
  プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。  
   
 ```  
@@ -219,13 +230,13 @@ virtual pos_type seekoff(
   
 ### <a name="parameters"></a>パラメーター  
  `_Off`  
- シークする `_Way` の相対位置。 詳細については、「[basic_stringbuf::off_type](#basic_stringbuf__off_type)」を参照してください。  
+ シークする `_Way` の相対位置。 詳細については、「[basic_stringbuf::off_type](#off_type)」を参照してください。  
   
  `_Way`  
- オフセット演算の開始位置。 有効値については、「[ios_base::seekdir](../standard-library/ios-base-class.md#ios_base__seekdir)」を参照してください。  
+ オフセット演算の開始位置。 有効値については、「[ios_base::seekdir](../standard-library/ios-base-class.md#seekdir)」を参照してください。  
   
  `_Mode`  
- ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。 詳細については、「[ios_base::openmode](../standard-library/ios-base-class.md#ios_base__openmode)」を参照してください。  
+ ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。 詳細については、「[ios_base::openmode](../standard-library/ios-base-class.md#openmode)」を参照してください。  
   
 ### <a name="return-value"></a>戻り値  
  新しい位置または無効なストリーム位置を返します。  
@@ -241,11 +252,11 @@ virtual pos_type seekoff(
   
 -   `_Way` == `ios_base::end` の場合、新しい位置はストリームの最後と `_Off` です。  
   
- `_Mode & ios_base::in` が&0; 以外の場合、関数は入力バッファー内の次に読み取る位置を変更します。 `_Mode & ios_base::out` が&0; 以外の場合、関数は出力バッファー内の次に書き込む位置を変更します。 影響を受けるストリームの場合、そのバッファーが存在する必要があります。 配置操作を正常に完了するためには、結果のストリームの位置が被制御シーケンス内になければなりません。 関数が両方のストリームの位置に影響する場合、`_Way` は必ず `ios_base::beg` または `ios_base::end` になり、両方のストリームは同じ要素に配置されます。 それ以外の場合 (またはどちらも位置も影響を受けない場合)、配置操作は失敗します。  
+ `_Mode & ios_base::in` が 0 以外の場合、関数は入力バッファー内の次に読み取る位置を変更します。 `_Mode & ios_base::out` が 0 以外の場合、関数は出力バッファー内の次に書き込む位置を変更します。 影響を受けるストリームの場合、そのバッファーが存在する必要があります。 配置操作を正常に完了するためには、結果のストリームの位置が被制御シーケンス内になければなりません。 関数が両方のストリームの位置に影響する場合、`_Way` は必ず `ios_base::beg` または `ios_base::end` になり、両方のストリームは同じ要素に配置されます。 それ以外の場合 (またはどちらも位置も影響を受けない場合)、配置操作は失敗します。  
   
  関数がいずれかまたは両方のストリームの位置の変更に成功すると、結果のストリームの位置が返されます。 それ以外の場合は、失敗し、無効なストリームの位置が返されます。  
   
-##  <a name="a-namebasicstringbufseekposa--basicstringbufseekpos"></a><a name="basic_stringbuf__seekpos"></a>  basic_stringbuf::seekpos  
+##  <a name="seekpos"></a>  basic_stringbuf::seekpos  
  プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。  
   
 ```  
@@ -265,9 +276,9 @@ virtual pos_type seekpos(pos_type _Sp, ios_base::openmode _Mode = ios_base::in |
 ### <a name="remarks"></a>コメント  
  クラス basic_stringbuf< **Elem**, **Tr**, `Alloc`> のオブジェクトの場合、ストリームの位置はストリーム オフセットのみで構成されます。 オフセット ゼロは、被制御シーケンスの最初の要素を指定します。 新しい位置は、_ *Sp* によって判断されます。  
   
- **mode & ios_base::in** が&0; 以外の場合、関数は入力バッファー内の次に読み取る位置を変更します。 **mode & ios_base::out** が&0; 以外の場合、関数は出力バッファー内の次に書き込む位置を変更します。 影響を受けるストリームの場合、そのバッファーが存在する必要があります。 配置操作を正常に完了するためには、結果のストリームの位置が被制御シーケンス内になければなりません。 それ以外の場合 (またはどちらも位置も影響を受けない場合)、配置操作は失敗します。  
+ **mode & ios_base::in** が 0 以外の場合、関数は入力バッファー内の次に読み取る位置を変更します。 **mode & ios_base::out** が 0 以外の場合、関数は出力バッファー内の次に書き込む位置を変更します。 影響を受けるストリームの場合、そのバッファーが存在する必要があります。 配置操作を正常に完了するためには、結果のストリームの位置が被制御シーケンス内になければなりません。 それ以外の場合 (またはどちらも位置も影響を受けない場合)、配置操作は失敗します。  
   
-##  <a name="a-namebasicstringbufstra--basicstringbufstr"></a><a name="basic_stringbuf__str"></a>  basic_stringbuf::str  
+##  <a name="str"></a>  basic_stringbuf::str  
  文字列バッファー内のテキストを設定または取得します。書き込み位置は変更しません。  
   
 ```  
@@ -286,13 +297,13 @@ void str(
 ### <a name="remarks"></a>コメント  
  最初のメンバー関数は、制御されたシーケンスが **\*this** によって制御されるシーケンスのコピーである、クラス basic_string< **Elem**, **Tr**, `Alloc`> のオブジェクトを返します。 コピーされるシーケンスは、stored stringbuf モードによって異なります。  
   
--   **mode & ios_base::out** が&0; 以外で、出力バッファーが存在する場合、シーケンスは全体の出力バッファー (`pbase` で始まる [epptr](../standard-library/basic-streambuf-class.md#basic_streambuf__epptr) - [pbase](../standard-library/basic-streambuf-class.md#basic_streambuf__pbase) 要素) になります。  
+-   **mode & ios_base::out** が 0 以外で、出力バッファーが存在する場合、シーケンスは全体の出力バッファー (`pbase` で始まる [epptr](../standard-library/basic-streambuf-class.md#epptr) - [pbase](../standard-library/basic-streambuf-class.md#pbase) 要素) になります。  
   
--   **mode & ios_base::in** が&0; 以外で、入力バッファーが存在する場合、シーケンスは全体の入力バッファー (`eback` で始まる [egptr](../standard-library/basic-streambuf-class.md#basic_streambuf__egptr) - [eback](../standard-library/basic-streambuf-class.md#basic_streambuf__eback) 要素) になります。  
+-   **mode & ios_base::in** が 0 以外で、入力バッファーが存在する場合、シーケンスは全体の入力バッファー (`eback` で始まる [egptr](../standard-library/basic-streambuf-class.md#egptr) - [eback](../standard-library/basic-streambuf-class.md#eback) 要素) になります。  
   
 -   それ以外の場合、コピーされたシーケンスは空になります。  
   
- 2 番目のメンバー関数は、**\*this** によって現在制御されている任意のシーケンスの割り当てを解除します。 その後、`_Newstr` によって制御されるシーケンスのコピーを割り当てます。 **mode & ios_base::in** が&0; 以外の場合、シーケンスの先頭から読み取りを開始するように入力バッファーを設定します。 **mode & ios_base::out** が&0; 以外の場合、シーケンスの先頭から書き込みを開始するように出力バッファーを設定します。  
+ 2 番目のメンバー関数は、**\*this** によって現在制御されている任意のシーケンスの割り当てを解除します。 その後、`_Newstr` によって制御されるシーケンスのコピーを割り当てます。 **mode & ios_base::in** が 0 以外の場合、シーケンスの先頭から読み取りを開始するように入力バッファーを設定します。 **mode & ios_base::out** が 0 以外の場合、シーケンスの先頭から書き込みを開始するように出力バッファーを設定します。  
   
 ### <a name="example"></a>例  
   
@@ -326,7 +337,7 @@ zest
 be  
 ```  
   
-##  <a name="a-namebasicstringbuftraitstypea--basicstringbuftraitstype"></a><a name="basic_stringbuf__traits_type"></a>  basic_stringbuf::traits_type  
+##  <a name="traits_type"></a>  basic_stringbuf::traits_type  
  型名を **Tr** テンプレート パラメーターに関連付けます。  
   
 ```  
@@ -336,7 +347,7 @@ typedef Tr traits_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **Tr** のシノニムです。  
   
-##  <a name="a-namebasicstringbufunderflowa--basicstringbufunderflow"></a><a name="basic_stringbuf__underflow"></a>  basic_stringbuf::underflow  
+##  <a name="underflow"></a>  basic_stringbuf::underflow  
  入力ストリームから現在の要素を抽出するプロテクト仮想関数。  
   
 ```  
@@ -344,12 +355,12 @@ virtual int_type underflow();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 関数が失敗すると、**traits_type::**[eof](../standard-library/char-traits-struct.md#char_traits__eof) が返されます。 それ以外の場合、変換された入力ストリームの現在の要素が返されます。  
+ 関数が失敗すると、**traits_type::**[eof](../standard-library/char-traits-struct.md#eof) が返されます。 それ以外の場合、変換された入力ストリームの現在の要素が返されます。  
   
 ### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、現在の要素 **byte** を入力バッファーから抽出しようとし、現在のストリームの位置を進め、**traits_type::**[to_int_type](../standard-library/char-traits-struct.md#char_traits__to_int_type)( **byte**) として要素を返します。 これは&1; つの方法で実行可能です。読み取り位置が使用可能な場合は、読み取り位置に格納されている要素として **byte** を使用し、入力バッファーの次のポインターを進めます。  
+ プロテクト仮想メンバー関数は、現在の要素 **byte** を入力バッファーから抽出しようとし、現在のストリームの位置を進め、**traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **byte**) として要素を返します。 これは 1 つの方法で実行可能です。読み取り位置が使用可能な場合は、読み取り位置に格納されている要素として **byte** を使用し、入力バッファーの次のポインターを進めます。  
   
-##  <a name="a-namebasicstreambufswapa--basicstreambufswap"></a><a name="basic_streambuf__swap"></a>  basic_streambuf::swap  
+##  <a name="swap"></a>  basic_streambuf::swap  
  この文字列バッファーと別の文字列バッファーの内容を交換します。  
   
 ```  
@@ -362,7 +373,7 @@ void basic_stringbuf<T>::swap(basic_stringbuf& other)
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="a-namebasicstringbufoperatoreqa--basicstringbufoperator"></a><a name="basic_stringbuf__operator_eq"></a>  basic_stringbuf::operator=  
+##  <a name="op_eq"></a>  basic_stringbuf::operator=  
  演算子の右側にある basic_stringbuf の内容を、左側の basic_stringbuf に割り当てます。  
   
 ```  

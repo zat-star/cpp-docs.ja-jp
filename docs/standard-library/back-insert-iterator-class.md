@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: b50819686ca10a5676c75fb47375572d39974a1f
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 3ef742cc4715c419b113e9235bbcc257ba8f1944
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="backinsertiterator-class"></a>back_insert_iterator クラス
@@ -57,35 +58,35 @@ class back_insert_iterator;
  要素が `back_insert_iterator` によって後方に挿入されるコンテナーの型。  
   
 ## <a name="remarks"></a>コメント  
- コンテナーは償却定数時間でシーケンスの末尾に要素を挿入できる、有効な後方挿入シーケンスの要件を満たしている必要があります。 [deque クラス](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、[vector クラス](../standard-library/vector-class.md)によって定義された、C++ 標準ライブラリ シーケンス コンテナーは、`push_back` メンバー関数を提供し、次の要件を満たします。 この&3; 種類のコンテナー、および文字列はそれぞれ `back_insert_iterator` で使用するために改変される可能性があります。 `back_insert_iterator` は、常に、コンテナーで初期化されている必要があります。  
+ コンテナーは償却定数時間でシーケンスの末尾に要素を挿入できる、有効な後方挿入シーケンスの要件を満たしている必要があります。 [deque クラス](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、[vector クラス](../standard-library/vector-class.md)によって定義された、C++ 標準ライブラリ シーケンス コンテナーは、`push_back` メンバー関数を提供し、次の要件を満たします。 この 3 種類のコンテナー、および文字列はそれぞれ `back_insert_iterator` で使用するために改変される可能性があります。 `back_insert_iterator` は、常に、コンテナーで初期化されている必要があります。  
   
 ### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[back_insert_iterator](#back_insert_iterator__back_insert_iterator)|コンテナー内の最後の要素の後に要素を挿入する `back_insert_iterator` を構築します。|  
+|[back_insert_iterator](#back_insert_iterator)|コンテナー内の最後の要素の後に要素を挿入する `back_insert_iterator` を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#back_insert_iterator__container_type)|`back_insert_iterator` にコンテナーを提供する型。|  
-|[reference](#back_insert_iterator__reference)|`back_insert_iterator` に参照を提供する型。|  
+|[container_type](#container_type)|`back_insert_iterator` にコンテナーを提供する型。|  
+|[reference](#reference)|`back_insert_iterator` に参照を提供する型。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator*](#back_insert_iterator__operator_star)|後方挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
-|[operator++](#back_insert_iterator__operator_add_add)|値を格納できる次の位置に `back_insert_iterator` をインクリメントします。|  
-|[operator=](#back_insert_iterator__operator_eq)|後方挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
+|[operator*](#op_star)|後方挿入のための出力反復子式 * `i` = `x` を実装するために使用される逆参照演算子。|  
+|[operator++](#op_add_add)|値を格納できる次の位置に `back_insert_iterator` をインクリメントします。|  
+|[operator=](#op_eq)|後方挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー**: \<iterator>  
   
  **名前空間:** std  
   
-##  <a name="back_insert_iterator__back_insert_iterator"></a>  back_insert_iterator::back_insert_iterator  
+##  <a name="back_insert_iterator"></a>  back_insert_iterator::back_insert_iterator  
  コンテナー内の最後の要素の後に要素を挿入する `back_insert_iterator` を構築します。  
   
 ```   
@@ -147,7 +148,7 @@ The initial vector vec is: ( 1 2 3 ).
 After the insertions, the vector vec is: ( 1 2 3 40 50 600 700 ).  
 ```  
   
-##  <a name="back_insert_iterator__container_type"></a>  back_insert_iterator::container_type  
+##  <a name="container_type"></a>  back_insert_iterator::container_type  
  `back_insert_iterator` にコンテナーを提供する型。  
   
 ```   
@@ -199,7 +200,7 @@ The original vector vec is: ( 1 2 3 ).
 After the insertion, the vector is: ( 1 2 3 40 ).  
 ```  
   
-##  <a name="back_insert_iterator__operator_star"></a>  back_insert_iterator::operator*  
+##  <a name="op_star"></a>  back_insert_iterator::operator*  
  出力反復子式 \* *i* = *x* を実装するために使用される逆参照演算子。  
   
 ```  
@@ -256,7 +257,7 @@ The vector vec is: ( 1 2 3 ).
 After the insertions, the vector vec becomes: ( 1 2 3 10 20 ).  
 ```  
   
-##  <a name="back_insert_iterator__operator_add_add"></a>  back_insert_iterator::operator++  
+##  <a name="op_add_add"></a>  back_insert_iterator::operator++  
  値を格納できる次の位置に `back_insert_iterator` をインクリメントします。  
   
 ```  
@@ -314,7 +315,7 @@ The vector vec is: ( 10 20 ).
 After the insertions, the vector vec becomes: ( 10 20 30 40 ).  
 ```  
   
-##  <a name="back_insert_iterator__operator_eq"></a>  back_insert_iterator::operator=  
+##  <a name="op_eq"></a>  back_insert_iterator::operator=  
  値をコンテナーのバック エンドに追加またはプッシュします。  
   
 ```  
@@ -377,7 +378,7 @@ int main( )
 }  
 ```  
   
-##  <a name="back_insert_iterator__reference"></a>  back_insert_iterator::reference  
+##  <a name="reference"></a>  back_insert_iterator::reference  
  `back_insert_iterator` に参照を提供する型。  
   
 ```  

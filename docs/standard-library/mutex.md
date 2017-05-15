@@ -31,17 +31,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 7e6aaf9ae1817da4a532b00fe0bf54afc5e9cd17
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: 241d1ad9b3313337b874d5e9a6d39f86f2c71838
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ltmutexgt"></a>&lt;mutex&gt;
 標準ヘッダー \<mutex> をインクルードすることにより、クラス `mutex`、`recursive_mutex`、`timed_mutex`、`recursive_timed_mutex`、テンプレート `lock_guard` および `unique_lock`、相互排他コード領域を定義するためサポートしている型と関数を定義します。  
   
 > [!WARNING]
->  Visual Studio 2015 の C++ 標準ライブラリ同期型は、Windows 同期プリミティブに基づいており、ターゲット プラットフォームが Windows XP の場合を除き、ConcRT を使用しなくなりました。 \<mutex> で定義されている型は、ConcRT 型または関数には使用しないでください。  
+>  Visual Studio 2015 以降では、C++ 標準ライブラリの同期型は Windows 同期プリミティブに基づいており、不要になった (ターゲット プラットフォームが Windows XP の場合) を除く ConcRT を使用します。 \<mutex> で定義されている型は、ConcRT 型または関数には使用しないでください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -64,9 +65,9 @@ ms.lasthandoff: 02/24/2017
   
  型の引数として mutex 型を使用すると、テンプレート `lock_guard` と `unique_lock` をインスタンス化できます。 これらの型のオブジェクトを `Lock` 引数として使用すると、テンプレート [condition_variable_any](../standard-library/condition-variable-any-class.md) でメンバー関数を待機できます。  
   
- *timed mutex type* は mutex 型の要件を満たします。 また、呼び出しには&1; つの引数を使用し、`bool` に変換可能な型を返す `try_lock_for` メソッドと `try_lock_until` メソッドがあります。 timed mutex 型では、追加の引数を使用してこれらの関数を定義できます (追加の引数すべてに既定値があることが条件)。  
+ *timed mutex type* は mutex 型の要件を満たします。 また、呼び出しには 1 つの引数を使用し、`bool` に変換可能な型を返す `try_lock_for` メソッドと `try_lock_until` メソッドがあります。 timed mutex 型では、追加の引数を使用してこれらの関数を定義できます (追加の引数すべてに既定値があることが条件)。  
   
--   `try_lock_for` メソッドは、型が [chrono::duration](../standard-library/duration-class.md) でインスタンス化されている&1; つの引数 `Rel_time` を使用して呼び出し可能である必要があります。 メソッドはミューテックスの所有権を取得しようとしますが、取得できたかどうかに関係なく、`Rel_time` で指定された時間内に値が返されます。 メソッドが所有権を取得した場合は戻り値が `true` に変換されますが、取得していない場合は `false` に変換されます。  
+-   `try_lock_for` メソッドは、型が [chrono::duration](../standard-library/duration-class.md) でインスタンス化されている 1 つの引数 `Rel_time` を使用して呼び出し可能である必要があります。 メソッドはミューテックスの所有権を取得しようとしますが、取得できたかどうかに関係なく、`Rel_time` で指定された時間内に値が返されます。 メソッドが所有権を取得した場合は戻り値が `true` に変換されますが、取得していない場合は `false` に変換されます。  
   
 -   `try_lock_until` メソッドは、型が [chrono::time_point](../standard-library/time-point-class.md) でインスタンス化されている引数 `Abs_time` を使用して呼び出し可能である必要があります。 メソッドはミューテックスの所有権を取得しようとしますが、取得できたかどうかに関係なく、`Abs_time` で指定された時間内に値が返されます。 メソッドが所有権を取得した場合は戻り値が `true` に変換されますが、取得していない場合は `false` に変換されます。  
   
@@ -87,25 +88,25 @@ ms.lasthandoff: 02/24/2017
   
 |名前|説明|  
 |----------|-----------------|  
-|[call_once 関数](../standard-library/mutex-functions.md#call_once_function)|指定された呼び出し可能オブジェクトが、実行中に&1; 回だけ呼び出されるメカニズムを提供します。|  
-|[lock 関数](../standard-library/mutex-functions.md#lock_function)|デッドロックなしですべての引数をロックしようとします。|  
+|[call_once](../standard-library/mutex-functions.md#call_once)|指定された呼び出し可能オブジェクトが、実行中に 1 回だけ呼び出されるメカニズムを提供します。|  
+|[lock](../standard-library/mutex-functions.md#lock)|デッドロックなしですべての引数をロックしようとします。|  
   
 ### <a name="structs"></a>構造体  
   
 |名前|説明|  
 |----------|-----------------|  
 |[adopt_lock_t 構造体](../standard-library/adopt-lock-t-structure.md)|`adopt_lock` の定義に使用する型を表します。|  
-|[defer_lock_t 構造体](../standard-library/defer-lock-t-structure.md)|`unique_lock` のオーバーロード コンストラクターの&1; つを選択するために使用される、`defer_lock` オブジェクトを定義する型を表します。|  
-|[once_flag 構造体](../standard-library/once-flag-structure.md)|テンプレート関数 `call_once` で使用する `struct` を表し、実行する複数スレッドがある場合でも、初期化コードが&1; 回だけ呼び出されるようにします。|  
-|[try_to_lock_t 構造体](../standard-library/try-to-lock-t-structure.md)|`unique_lock` のオーバーロード コンストラクターの&1; つを選択するために使用される、`try_to_lock` オブジェクトを定義する `struct` を表し ます。|  
+|[defer_lock_t 構造体](../standard-library/defer-lock-t-structure.md)|`unique_lock` のオーバーロード コンストラクターの 1 つを選択するために使用される、`defer_lock` オブジェクトを定義する型を表します。|  
+|[once_flag 構造体](../standard-library/once-flag-structure.md)|テンプレート関数 `call_once` で使用する `struct` を表し、実行する複数スレッドがある場合でも、初期化コードが 1 回だけ呼び出されるようにします。|  
+|[try_to_lock_t 構造体](../standard-library/try-to-lock-t-structure.md)|`unique_lock` のオーバーロード コンストラクターの 1 つを選択するために使用される、`try_to_lock` オブジェクトを定義する `struct` を表し ます。|  
   
 ### <a name="variables"></a>変数  
   
 |名前|説明|  
 |----------|-----------------|  
-|[adopt_lock 変数](../standard-library/mutex-functions.md#adopt_lock_variable)|`lock_guard` と `unique_lock` のコンストラクターに渡されるオブジェクを表し、同じコンストラクターに渡されるミューテックス オブジェクトがロックされていることを示します。|  
-|[defer_lock 変数](../standard-library/mutex-functions.md#defer_lock_variable)|`unique_lock` のコンストラクターに渡すことのできるオブジェクトを表し、コンストラクターがそれに渡されるミューテックス オブジェクトをロックしないことを示しています。|  
-|[try_to_lock 変数](../standard-library/mutex-functions.md#try_to_lock_variable)|`unique_lock` のコンストラクターに渡すことのできるオブジェクトを表し、ブロックされずに渡される `mutex` をコンストラクターがロック解除しようとすることを示します。|  
+|[adopt_lock](../standard-library/mutex-functions.md#adopt_lock)|`lock_guard` と `unique_lock` のコンストラクターに渡されるオブジェクを表し、同じコンストラクターに渡されるミューテックス オブジェクトがロックされていることを示します。|  
+|[defer_lock](../standard-library/mutex-functions.md#defer_lock)|`unique_lock` のコンストラクターに渡すことのできるオブジェクトを表し、コンストラクターがそれに渡されるミューテックス オブジェクトをロックしないことを示しています。|  
+|[try_to_lock](../standard-library/mutex-functions.md#try_to_lock)|`unique_lock` のコンストラクターに渡すことのできるオブジェクトを表し、ブロックされずに渡される `mutex` をコンストラクターがロック解除しようとすることを示します。|  
   
 ## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)

@@ -52,10 +52,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 86fa28d188aa5d1009d7a97591c95bad0e479564
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 6d200480df1ff06afbb2b167ca62515fbf406435
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="crtsetdebugfillthreshold"></a>_CrtSetDebugFillThreshold
@@ -77,7 +78,7 @@ size_t _CrtSetDebugFillThreshold(
  前のしきい値。  
   
 ## <a name="remarks"></a>コメント  
- セキュリティが強化された CRT 関数のデバッグ バージョンは、それに渡されたバッファーに特殊文字 (0xFD) を入力します。 関数に不適切なサイズが渡された場合、それを見つけることができます。 残念ながら、パフォーマンスを低下させます。 パフォーマンスを改善するには、`_CrtSetDebugFillThreshold` を利用し、しきい値より大きいバッファーの格納を無効にします。 しきい値が 0 の場合、すべてのバッファーで無効になります。  
+ 一部のセキュリティが強化された CRT 関数のデバッグ バージョンは、特殊文字に渡されたバッファーを埋めます (0 xfe)。 関数に不適切なサイズが渡された場合、それを見つけることができます。 残念ながら、パフォーマンスを低下させます。 パフォーマンスを改善するには、`_CrtSetDebugFillThreshold` を利用し、しきい値より大きいバッファーの格納を無効にします。 しきい値が 0 の場合、すべてのバッファーで無効になります。  
   
  既定のしきい値は `SIZE_T_MAX` です。  
   
@@ -132,9 +133,9 @@ size_t _CrtSetDebugFillThreshold(
   
 ## <a name="example"></a>例  
   
-```  
-// crt_crtsetdebugfillthreshold.cpp  
-// compile with: /MTd  
+```C  
+// crt_crtsetdebugfillthreshold.c  
+// compile with: cl /MTd crt_crtsetdebugfillthreshold.c  
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <string.h>  
@@ -169,7 +170,7 @@ int main( void )
 }  
 ```  
   
-```  
+```Output  
 With buffer-filling on:  
 68  h  
 6f  o  
@@ -177,10 +178,10 @@ With buffer-filling on:
 64  d  
 79  y  
 00  
-fd  ²  
-fd  ²  
-fd  ²  
-fd  ²  
+fe  ■  
+fe  ■  
+fe  ■  
+fe  ■  
 With buffer-filling off:  
 68  h  
 6f  o  
@@ -193,9 +194,6 @@ With buffer-filling off:
 00  
 00  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

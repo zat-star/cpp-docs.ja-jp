@@ -62,10 +62,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0efd243b9c3bc420a060b1af5269ca69dcee5103
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 22c41d6b2712954f05249192c3a5e386b8102554
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="log-logf-log10-log10f"></a>log、logf、log10、log10f
@@ -106,7 +107,7 @@ float log10f (
  対数を検索する対象の値。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、**LOG** 関数は *x* の自然対数 (底 e) を返します。 LOG10 関数は&10; を底とする対数を返します。 *x* が負の場合、これらの関数は既定では不定値を返します。 *x* が 0 の場合、これらの関数は INF (無限) を返します。  
+ 正常に終了した場合、**LOG** 関数は *x* の自然対数 (底 e) を返します。 LOG10 関数は 10 を底とする対数を返します。 *x* が負の場合、これらの関数は既定では不定値を返します。 *x* が 0 の場合、これらの関数は INF (無限) を返します。  
   
 |入力|SEH 例外|Matherr 例外|  
 |-----------|-------------------|-----------------------|  
@@ -189,15 +190,9 @@ int main()
 Log base 2 of 65536.000000 is 16.000000  
 ```  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Math::Log](https://msdn.microsoft.com/en-us/library/system.math.log.aspx)  
-  
--   [System::Math::Log10](https://msdn.microsoft.com/en-us/library/system.math.log10.aspx)  
-  
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [exp、expf](../../c-runtime-library/reference/exp-expf.md)   
+ [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
  [_matherr](../../c-runtime-library/reference/matherr.md)   
  [pow、powf、powl](../../c-runtime-library/reference/pow-powf-powl.md)   
  [_CIlog](../../c-runtime-library/cilog.md)   

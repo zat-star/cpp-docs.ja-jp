@@ -35,10 +35,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 9bdc40f476e3e4e5b284eaf77fa1310d686c5197
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: bdc17f9cd2964cc18895b7fe4063aabd054268a1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="maskarray-class"></a>mask_array クラス
@@ -51,9 +52,9 @@ ms.lasthandoff: 02/24/2017
 ## <a name="remarks"></a>コメント  
  このクラスは、クラス [valarray](../standard-library/valarray-class.md)**\<Type>** のオブジェクト **va** と共に、クラス [valarray\<bool>](../standard-library/valarray-bool-class.md) のオブジェクト **ba** への参照を格納するオブジェクトを表します。これらは **valarray\<Type>** オブジェクトから選択する要素のシーケンスを説明します。  
   
- **mask_array\<Type>** オブジェクトの構築は、[va&#91;ba&#93;](../standard-library/valarray-class.md#valarray__operator_at) という形式の式を記述するだけです。 クラス mask_array のメンバー関数は **valarray\<Type>** に対して定義された対応する関数のシグネチャのように動作しますが、選択された要素のシーケンスだけが影響を受けるという点が異なります。  
+ **mask_array\<Type>** オブジェクトの構築は、[va&#91;ba&#93;](../standard-library/valarray-class.md#op_at) という形式の式を記述するだけです。 クラス mask_array のメンバー関数は **valarray\<Type>** に対して定義された対応する関数のシグネチャのように動作しますが、選択された要素のシーケンスだけが影響を受けるという点が異なります。  
   
- シーケンスは最大で **ba.size** 個の要素で構成されます。 要素 *J* は **ba**[ *J*] が true である場合にのみ含まれます。 このため、 **ba**内の true の要素の数だけシーケンス内に要素があります。 `I` が **ba**内の最下位の true 要素である場合、 **va**[ `I`] は選択されているシーケンス内で要素&0; です。  
+ シーケンスは最大で **ba.size** 個の要素で構成されます。 要素 *J* は **ba**[ *J*] が true である場合にのみ含まれます。 このため、 **ba**内の true の要素の数だけシーケンス内に要素があります。 `I` が **ba**内の最下位の true 要素である場合、 **va**[ `I`] は選択されているシーケンス内で要素 0 です。  
   
 ## <a name="example"></a>例:  
   

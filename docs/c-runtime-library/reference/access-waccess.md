@@ -1,57 +1,74 @@
 ---
 title: "_access、_waccess | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_access"
-  - "_waccess"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-filesystem-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_waccess"
-  - "_access"
-  - "taccess"
-  - "waccess"
-  - "_taccess"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_access 関数"
-  - "_taccess 関数"
-  - "_waccess 関数"
-  - "access 関数"
-  - "taccess 関数"
-  - "waccess 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _access
+- _waccess
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _waccess
+- _access
+- taccess
+- waccess
+- _taccess
+dev_langs:
+- C++
+helpviewer_keywords:
+- access function
+- _taccess function
+- waccess function
+- _access function
+- _waccess function
+- taccess function
 ms.assetid: ba34f745-85c3-49e5-a7d4-3590bd249dd3
 caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
----
-# _access、_waccess
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: d0968ec14a43cfbbf1169f34ac929435787bc349
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
-ファイルが読み取り専用かがないかどうかを判定します。  セキュリティが強化されたバージョンを使用できるようになりました。「[\_access\_s、\_waccess\_s](../../c-runtime-library/reference/access-s-waccess-s.md)」を参照してください。  
+---
+# <a name="access-waccess"></a>_access、_waccess
+ファイルが読み取り専用かどうかを判断します。 セキュリティを強化したバージョンを使用できます。「[_access_s、_waccess_s](../../c-runtime-library/reference/access-s-waccess-s.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int _access(   
@@ -64,18 +81,18 @@ int _waccess(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `path`  
  ファイルまたはディレクトリ パス。  
   
  `mode`  
- 読み取り\/書き込み属性。  
+ 読み取り/書き込み属性。  
   
-## 戻り値  
- ファイルに特定のモードに応じて、各関数は 0。  名前付きなファイルが存在せず、特定のモードがある関数の戻り値–1; この場合、`errno` を次の表に示すように設定されます。  
+## <a name="return-value"></a>戻り値  
+ ファイルに特定のモードが設定されている場合、各関数は 0 を返します。 名前付きのファイルが存在しないか、指定されたモードを持たない場合、関数は-1 を返しますこの場合、`errno`次の表に示すように設定します。  
   
  `EACCES`  
- 拒否されたアクセス: ファイルのアクセス許可は指定されたアクセスができません。  
+ アクセス拒否: ファイルのアクセス許可の設定では、指定したアクセスは許可されません。  
   
  `ENOENT`  
  ファイル名またはパスが見つかりません。  
@@ -83,39 +100,39 @@ int _waccess(
  `EINVAL`  
  無効なパラメーター。  
   
- リターン コードの詳細については、「[\_doserrno、errno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
-## 解説  
- ファイルを使用すると、`_access` 関数は指定されたファイルまたはディレクトリが存在し、`mode`の値で指定された属性がかどうかです。  ディレクトリを使用すると、`_access` は、指定したディレクトリが存在するかどうかだけを; [!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] 以降のオペレーティング システムでは、すべてのディレクトリが読み取りおよび書き込みアクセス。  
+## <a name="remarks"></a>コメント  
+ ファイルを使用すると、`_access` 関数は、指定したファイルまたはディレクトリが存在し、`mode` 値で指定されている属性があるかどうかを判断します。 ディレクトリを使用すると、`_access` は指定されたディレクトリが存在するかどうかだけを判断します。[!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] 以降のオペレーティング システムでは、すべてのディレクトリに読み取りおよび書き込みアクセスできます。  
   
-|`mode` の値|チェックはのファイル。|  
-|---------------|-----------------|  
-|00|プロシージャだけ|  
+|`mode` の値|ファイル チェックの目的|  
+|------------------|---------------------|  
+|00|存在のみ|  
 |02|書き込み専用|  
 |04|読み取り専用|  
-|06|読み取りと書き込みを行います。|  
+|06|読み取りおよび書き込み|  
   
- この関数は、ファイルとディレクトリが読み取り専用かどうかはチェックされません。ファイル システム セキュリティ設定を確認します。  それぞれのアクセス トークンが必要です。  ファイルシステムのセキュリティの詳細については、「[トークンにアクセスします。](http://msdn.microsoft.com/library/windows/desktop/aa374909)」を参照してください。  ATL クラスはこの機能を提供するために存在; [CAccessToken クラス](../Topic/CAccessToken%20Class.md)を参照してください。  
+ この関数は、ファイルとディレクトリが読み取り専用かどうかだけを確認し、ファイルシステムのセキュリティ設定は確認しません。 そのためには、アクセス トークンが必要です。 ファイルシステムのセキュリティの詳細については、「[アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)」を参照してください。 ATL クラスはこの機能を提供するために存在します。「[CAccessToken クラス](../../atl/reference/caccesstoken-class.md)」を参照してください。  
   
- `_waccess` 関数は、`_access` 関数のワイド文字バージョンです。`_waccess` 関数の引数 `path` は、ワイド文字列です。  それ以外では、`_waccess` と `_access` の動作は同じです。  
+ `_waccess` 関数は、`_access` 関数のワイド文字バージョンです。`path` 関数の引数 `_waccess` は、ワイド文字列です。 それ以外では、`_waccess` と `_access` の動作は同じです。  
   
- この関数は、パラメーターを検証します。  `path` が `NULL` である場合は `mode` が有効なモードを指定しない場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続 `EINVAL` と戻りに関数を設定 `errno` \-1。  
+ この関数は、パラメーターを検証します。 `path` が `NULL` または `mode` が有効なモードを指定しない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_taccess`|`_access`|`_access`|`_waccess`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|省略可能なヘッダー|  
-|----------|------------|---------------|  
-|`_access`|\<io.h\>|\<errno.h\>|  
-|`_waccess`|\<wchar.h または\> io.h \<\>|\<errno.h\>|  
+|-------------|---------------------|----------------------|  
+|`_access`|\<io.h>|\<errno.h>|  
+|`_waccess`|\<wchar.h> または \<io.h>|\<errno.h>|  
   
-## 使用例  
- 次の例では、かどうか、および書き込みが許可されているかどうか crt\_ACCESS.C という名前のファイルをチェック アウトするために `_access` を使用します。  
+## <a name="example"></a>例  
+ 次の例では、`_access` を使用して、crt_ACCESS.C という名前のファイルが存在し、書き込みが許可されているかどうかを確認します。  
   
 ```  
 // crt_access.c  
@@ -142,14 +159,14 @@ int main( void )
 }  
 ```  
   
-  **ファイル crt\_ACCESS.C です。**  
-**ファイル crt\_ACCESS.C はアクセス許可を記述することはありません。**   
-## 同等の .NET Framework 関数  
- <xref:System.IO.FileAccess?displayProperty=fullName>  
+```Output  
+File crt_ACCESS.C exists.  
+File crt_ACCESS.C does not have write permission.  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
- [\_chmod、\_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
- [\_fstat、\_fstat32、\_fstat64、\_fstati64、\_fstat32i64、\_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [\_stat、\_wstat 関数](../../c-runtime-library/reference/stat-functions.md)
+ [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
+ [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
+ [_stat、_wstat 関数](../../c-runtime-library/reference/stat-functions.md)

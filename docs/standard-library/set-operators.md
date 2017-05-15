@@ -10,21 +10,22 @@ f1_keywords: []
 ms.assetid: b4256ebc-c449-4688-95db-fced42d20d4d
 caps.latest.revision: 8
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8a527297ac01359a19f4d5951bb25fcff2dceb5d
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 3ce8af6d17082b8838b01a9121e91d3ee23f90d4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltsetgt-operators"></a>&lt;set&gt; operators
 ||||  
 |-|-|-|  
-|[operator!= (set)](#operator_neq)|[operator&gt; (set)](#operator_gt_)|[operator&gt;= (set)](#operator_gt__eq)|  
-|[operator&lt; (set)](#operator_lt_)|[operator&lt;= (set)](#operator_lt__eq)|[operator== (set)](#operator_eq_eq)|  
-|[operator!= (multiset)](#operator_neq_multiset)|[operator&gt; (multiset)](#operator_gt_multiset)|[operator&gt;= (multiset)](#operator_gt__eq_multiset)|  
-|[operator&lt; (multiset)](#operator_lt_multiset)|[operator&lt;= (multiset)](#operator_lt__eq_multiset)|[operator== (multiset)](#operator_eq_eq_multiset)|  
+|[operator!= (set)](#op_neq)|[operator&gt; (set)](#op_gt)|[operator&gt;= (set)](#eq)|  
+|[operator&lt; (set)](#op_lt)|[operator&lt;= (set)](#eq)|[operator== (set)](#op_eq_eq)|  
+|[operator!= (multiset)](#op_neq_multiset)|[operator&gt; (multiset)](#op_gt_multiset)|[operator&gt;= (multiset)](#op_gt_eq_multiset)|  
+|[operator&lt; (multiset)](#op_lt_multiset)|[operator&lt;= (multiset)](#op_lt_eq_multiset)|[operator== (multiset)](#op_eq_eq_multiset)|  
   
-##  <a name="operator_neq"></a>  operator!= (set)  
+##  <a name="op_neq"></a>  operator!= (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクトと等しくないかどうかを調べます。  
   
 ```
@@ -81,7 +82,7 @@ The sets s1 and s3 are equal.
 *\  
 ```  
   
-##  <a name="operator_lt_"></a>  operator&lt; (set)  
+##  <a name="op_lt"></a>  operator&lt; (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクトより小さいかどうかを調べます。  
   
 ```
@@ -138,7 +139,7 @@ The set s1 is not less than the set s3.
 *\  
 ```  
   
-##  <a name="operator_lt__eq"></a>  operator&lt;= (set)  
+##  <a name="op_lt_eq"></a>  operator&lt;= (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクト以下かどうかを調べます。  
   
 ```
@@ -153,7 +154,7 @@ bool operator!<=(const set <Key, Traits, Allocator>& left, const set <Key, Trait
  **set** 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 演算子の左辺の set が演算子の右辺の set 以下である場合は **true**、それ以外の場合は** false**。  
+ 演算子の左辺の set が演算子の右辺の set 以下である場合は **true**、それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
  set オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つのオブジェクト間の "以下" 関係は、最初の等しくない要素のペアの比較に基づいています。  
@@ -202,7 +203,7 @@ Set s1 is less than or equal to the set s4.
 *\  
 ```  
   
-##  <a name="operator_eq_eq"></a>  operator== (set)  
+##  <a name="op_eq_eq"></a>  operator== (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクトと等しいかどうかを調べます。  
   
 ```
@@ -217,7 +218,7 @@ bool operator!==(const set <Key, Traits, Allocator>& left, const set <Key, Trait
  **set** 型のオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 演算子の左辺の set が演算子の右辺の set と等しい場合は **true**、それ以外の場合は** false**。  
+ 演算子の左辺の set が演算子の右辺の set と等しい場合は **true**、それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
  set オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの set は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
@@ -259,7 +260,7 @@ The sets s1 and s3 are equal.
 *\  
 ```  
   
-##  <a name="operator_gt_"></a>  operator&gt; (set)  
+##  <a name="op_gt"></a>  operator&gt; (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクトより大きいかどうかを調べます。  
   
 ```
@@ -316,7 +317,7 @@ The set s1 is greater than the set s3.
 *\  
 ```  
   
-##  <a name="operator_gt__eq"></a>  operator&gt;= (set)  
+##  <a name="op_gt_eq"></a>  operator&gt;= (set)  
  演算子の左辺の set オブジェクトが右辺の set オブジェクト以上かどうかを調べます。  
   
 ```
@@ -380,7 +381,7 @@ Set s1 is greater than or equal to set s4.
 *\  
 ```  
   
-##  <a name="operator_neq_multiset"></a>  operator!= (multiset)  
+##  <a name="op_neq_multiset"></a>  operator!= (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクトと等しくないかどうかをテストします。  
   
 ```
@@ -437,7 +438,7 @@ The multisets s1 and s3 are equal.
 *\  
 ```  
   
-##  <a name="operator_lt_multiset"></a>  operator&lt; (multiset)  
+##  <a name="op_lt_multiset"></a>  operator&lt; (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクト以下かどうかをテストします。  
   
 ```
@@ -498,7 +499,7 @@ The multiset s1 is not less than the multiset s3.
 *\  
 ```  
   
-##  <a name="operator_lt__eq_multiset"></a>  operator&lt;= (multiset)  
+##  <a name="op_lt_eq_multiset"></a>  operator&lt;= (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクト以下かどうかをテストします。  
   
 ```
@@ -568,7 +569,7 @@ The multiset s1 is less than or equal to the multiset s4.
 *\  
 ```  
   
-##  <a name="operator_eq_eq_multiset"></a>  operator== (multiset)  
+##  <a name="op_eq_eq_multiset"></a>  operator== (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクトと等しいかどうかをテストします。  
   
 ```
@@ -625,7 +626,7 @@ The multisets s1 and s3 are equal.
 *\  
 ```  
   
-##  <a name="operator_gt_multiset"></a>  operator&gt; (multiset)  
+##  <a name="op_gt_multiset"></a>  operator&gt; (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクトより大きいかどうかをテストします。  
   
 ```
@@ -686,7 +687,7 @@ The multiset s1 is greater than the multiset s3.
 *\  
 ```  
   
-##  <a name="operator_gt__eq_multiset"></a>  operator&gt;= (multiset)  
+##  <a name="op_gt_eq_multiset"></a>  operator&gt;= (multiset)  
  演算子の左側の multiset のオブジェクトが、右側の multiset のオブジェクトより大きいかどうかをテストします。  
   
 ```

@@ -1,55 +1,72 @@
 ---
 title: "_chmod、_wchmod | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_chmod"
-  - "_wchmod"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-filesystem-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_chmod"
-  - "_wchmod"
-  - "wchmod"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_chmod 関数"
-  - "_wchmod 関数"
-  - "chmod 関数"
-  - "ファイルのアクセス許可 [C++]"
-  - "ファイル [C++], 変更 (アクセス許可を)"
-  - "wchmod 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _chmod
+- _wchmod
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _chmod
+- _wchmod
+- wchmod
+dev_langs:
+- C++
+helpviewer_keywords:
+- _chmod function
+- wchmod function
+- file permissions [C++]
+- chmod function
+- files [C++], changing permissions
+- _wchmod function
 ms.assetid: 92f7cb86-b3b0-4232-a599-b8c04a2f2c19
 caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# _chmod、_wchmod
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: c0db1569ea6a90892b7eb3d0d8f08f3c9fcf7115
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
+---
+# <a name="chmod-wchmod"></a>_chmod、_wchmod
 ファイルのアクセス許可の設定を変更します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -63,50 +80,50 @@ int _wchmod(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `filename`  
  既存のファイルの名前。  
   
  `pmode`  
  ファイルのアクセス許可の設定。  
   
-## 戻り値  
- これらの関数は、アクセス許可の設定が正常に変更された場合は 0 を返します。  戻り値 –1 は失敗を示します。  指定したファイルが存在する場合は、`errno` は `ENOENT`;に設定されます。パラメーターが無効な場合、`errno` は `EINVAL`に設定されます。  
+## <a name="return-value"></a>戻り値  
+ これらの関数は、アクセス許可の設定が正常に変更された場合に 0 を返します。 戻り値-1 はエラーを示します。 指定したファイルが見つからない場合、`errno` は `ENOENT` に設定され、パラメーターが無効な場合、`errno` は `EINVAL` に設定されます。  
   
-## 解説  
- ファイルのアクセス許可の設定が `filename`で指定した `_chmod` の関数の変更*。*アクセス許可は、ファイルに対する読み取りと書き込みアクセスを制御します。  整数式 `pmode` は SYS\\Stat.h で次の記号定数 1 のいずれかまたは両方を定義しています。  
+## <a name="remarks"></a>コメント  
+ `_chmod`関数によって指定されたファイルのアクセス許可の設定を変更する`filename`です。 アクセス許可の設定は、ファイルに対する読み取りと書き込みのアクセスを制御します。 `pmode` は、SYS\Stat.h で定義されている下記のマニフェスト定数のいずれか、または両方が含まれた整数式です。  
   
  `_S_IWRITE`  
- 許可される書き込み。  
+ 書き込みが許可されます。  
   
  `_S_IREAD`  
- 許可される読み取り。  
+ 読み取りが許可されます。  
   
  `_S_IREAD | _S_IWRITE`  
- 許可されるの読み取りと書き込み。  
+ 読み取りと書き込みが許可されます。  
   
- 定数は、両方とも提供されると、`OR` のビットごとのな演算子と結合されます。         `|` \).  記述するアクセス許可、ファイルが読み取り専用されません。  すべてのファイルを読み取り、常にです。; 書き込み専用アクセス許可を与えることはできません。  したがって、`_S_IWRITE` モードと `_S_IREAD | _S_IWRITE` は等価です。  
+ 両方の定数が指定されると、これらはビットごとの `OR` 演算子を使用して組み合わされます (`|`)。 書き込みアクセス許可が与えられない場合、ファイルは読み取り専用になります。 ファイルはすべて常に読み取り可能です。書き込みのみのアクセス許可を与えることはできません。 したがって、`_S_IWRITE` モードと `_S_IREAD | _S_IWRITE` モードは等価です。  
   
- `_wchmod` 関数は、`_chmod` 関数のワイド文字バージョンです。`_wchmod` 関数の引数 `filename` は、ワイド文字列です。  それ以外では、`_wchmod` と `_chmod` の動作は同じです。  
+ `_wchmod` 関数は、`_chmod` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wchmod` は、ワイド文字列です。 それ以外では、`_wchmod` と `_chmod` の動作は同じです。  
   
- この関数は、パラメーターを検証します。  `pmode` がマニフェスト定数の 1 種類の組み合わせで、別の一連の定数を組み込む、それらは無視されます。  `filename` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続 `errno` は `EINVAL` および関数の戻り値が \-1 に設定されます。  
+ この関数は、パラメーターを検証します。 `pmode` がマニフェスト定数のいずれかの組み合わせではない、または、別の定数セットを組み込んでいる場合、この関数は単にそれらを無視します。 `filename` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から -1 が返されます。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tchmod`|`_chmod`|`_chmod`|`_wchmod`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_chmod`|\<io.h\>|\<sys\/types.h、sys\> \<\/stat.h、errno.h\> \<\>|  
-|`_wchmod`|\<io.h または\> wchar.h \<\>|\<sys\/types.h、sys\> \<\/stat.h、errno.h\> \<\>|  
+|-------------|---------------------|---------------------|  
+|`_chmod`|\<io.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
+|`_wchmod`|\<io.h> または \<wchar.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_chmod.c  
@@ -170,19 +187,23 @@ int main( void )
 }   
 ```  
   
-  **`テキスト行。` `テキスト行。`読み取り専用に設定されるモード**  
-**アクセスが拒否されました。**  
-**読み取り\/書き込みに設定されるモード**   
-## 同等の .NET Framework 関数  
+```Output  
   
--   [System::IO::File::SetAttributes](https://msdn.microsoft.com/en-us/library/system.io.file.setattributes.aspx)  
+A line of text.  
   
--   [System::Security::Permissions::FileIOPermission](https://msdn.microsoft.com/en-us/library/system.security.permissions.fileiopermission.aspx)  
+```  
   
-## 参照  
+```Output  
+  
+      A line of text.Mode set to read-only  
+Access is denied.  
+Mode set to read/write  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
- [\_access、\_waccess](../../c-runtime-library/reference/access-waccess.md)   
- [\_creat、\_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [\_fstat、\_fstat32、\_fstat64、\_fstati64、\_fstat32i64、\_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
- [\_open、\_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [\_stat、\_wstat 関数](../../c-runtime-library/reference/stat-functions.md)
+ [_access、_waccess](../../c-runtime-library/reference/access-waccess.md)   
+ [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
+ [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
+ [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
+ [_stat、_wstat 関数](../../c-runtime-library/reference/stat-functions.md)

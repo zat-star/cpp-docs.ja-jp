@@ -1,50 +1,67 @@
 ---
 title: "memmove、wmemmove | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "memmove"
-  - "wmemmove"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ntdll.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "memmove"
-  - "wmemmove"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "memmove 関数"
-  - "wmemmove 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- memmove
+- wmemmove
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ntdll.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- memmove
+- wmemmove
+dev_langs:
+- C++
+helpviewer_keywords:
+- wmemmove function
+- memmove function
 ms.assetid: 3a906114-9cf3-40d7-bd99-ee452004f218
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# memmove、wmemmove
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 2f8c6199d65c5865110774dcd0d2e5623d515467
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-バッファーの内容をほかのバッファーに移動します。  これらの関数のセキュリティを強化したバージョンについては、「[memmove\_s、wmemmove\_s](../../c-runtime-library/reference/memmove-s-wmemmove-s.md)」を参照してください。  
+---
+# <a name="memmove-wmemmove"></a>memmove、wmemmove
+バッファーを別のバッファーに移動します。 これらの関数にはセキュリティを強化したバージョンがあります。「[memmove_s、wmemmove_s](../../c-runtime-library/reference/memmove-s-wmemmove-s.md)」を参照してください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void *memmove(  
@@ -59,7 +76,7 @@ wchar_t *wmemmove(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `dest`  
  コピー先のオブジェクト。  
   
@@ -67,17 +84,17 @@ wchar_t *wmemmove(
  コピー元のオブジェクト。  
   
  `count`  
- コピーするバイト数 \(`memmove`\) または文字数 \(`wmemmove`\)。  
+ コピーするバイト数 (`memmove`) または文字数 (`wmemmove`)。  
   
-## 戻り値  
- `dest`の値*。*  
+## <a name="return-value"></a>戻り値  
+ `dest` の値。  
   
-## 解説  
- コピーの `count` バイト \(`memmove`\) または `src` から `dest`への文字 \(`wmemmove`\) *。*ソースとターゲット領域の一部が重複する場合、関数はどちらもいる領域のコピー元のバイトが上書きされる前にコピーされることを確認します。  
+## <a name="remarks"></a>コメント  
+ コピー`count`バイト (`memmove`) または文字 (`wmemmove`) から`src`に`dest`です。 コピー元とコピー先の領域の一部が重なり合っている場合、どちらの関数も、重なり合っている領域のコピー元のバイトをコピーした後で上書きします。  
   
- **セキュリティに関するメモ** コピー先のバッファーのサイズがコピー元のバッファーのサイズ以上であることを確認してください。  詳細については、「[Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795)」を参照してください。  
+ **セキュリティに関するメモ** コピー先のバッファーのサイズがソース バッファー以上であることをご確認ください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
- 次の例のように、`memmove` 関数および `wmemmove` 関数が使用されなくなるように定数 `_CRT_SECURE_DEPRECATE_MEMORY` をインクルード ステートメントの前で定義すると、これらの関数だけが使用されなくなります。  
+ `memmove` 関数と `wmemmove` 関数が非推奨になるのは、以下の例に示すとおり、インクルード ステートメントの前で `_CRT_SECURE_DEPRECATE_MEMORY` を定義して、これらの関数を非推奨にした場合に限られます。  
   
 ```  
 #define _CRT_SECURE_DEPRECATE_MEMORY  
@@ -87,16 +104,16 @@ or
 #include <wchar.h>  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`memmove`|\<string.h\>|  
-|`wmemmove`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`memmove`|\<string.h>|  
+|`wmemmove`|\<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_memcpy.c  
@@ -125,16 +142,16 @@ int main( void )
 }  
 ```  
   
-  **文字列: aabbcc**  
-**新しい文字列: aaaabb**  
-**文字列: aabbcc**  
-**新しい文字列: aaaabb**   
-## 同等の .NET Framework 関数  
- [System::Buffer::BlockCopy](https://msdn.microsoft.com/en-us/library/system.buffer.blockcopy.aspx)  
+```Output  
+The string: aabbcc  
+New string: aaaabb  
+The string: aabbcc  
+New string: aaaabb  
+```  
   
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)   
- [\_memccpy](../../c-runtime-library/reference/memccpy.md)   
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
+ [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   
- [strcpy、wcscpy、\_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
- [strncpy、\_strncpy\_l、wcsncpy、\_wcsncpy\_l、\_mbsncpy、\_mbsncpy\_l](../../c-runtime-library/reference/strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md)
+ [strcpy、wcscpy、_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
+ [strncpy、_strncpy_l、wcsncpy、_wcsncpy_l、_mbsncpy、_mbsncpy_l](../../c-runtime-library/reference/strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md)

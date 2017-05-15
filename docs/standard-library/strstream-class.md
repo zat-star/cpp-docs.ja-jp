@@ -1,69 +1,183 @@
 ---
 title: "strstream クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "std::strstream"
-  - "strstream"
-  - "std.strstream"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "strstream クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- strstream
+- strstream/std::strstream::freeze
+- strstream/std::strstream::pcount
+- strstream/std::strstream::rdbuf
+- strstream/std::strstream::str
+dev_langs:
+- C++
+helpviewer_keywords:
+- strstream class
 ms.assetid: 63f3be31-9e36-42b1-9715-a474a5997e2a
 caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# strstream クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: a1d7d7799e1338c72404f5bcdb9d06e9bac763e5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
+---
+# <a name="strstream-class"></a>strstream クラス
 クラス [strstreambuf](../standard-library/strstreambuf-class.md) のストリーム バッファーを使用して、要素とエンコードされたオブジェクトの挿入と抽出を制御するオブジェクトを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class strstream : public iostream
 ```  
   
-class strstream : public iostream  
-  
-```  
-  
-## 解説  
+## <a name="remarks"></a>コメント  
  このオブジェクトは、クラス `strstreambuf` のオブジェクトを格納します。  
   
 > [!NOTE]
->  このクラスは使用されていません。  代わりに、[stringstream](../Topic/stringstream.md) または [wstringstream](../Topic/wstringstream.md) を使用することを検討してください。  
+>  このクラスは使用されていません。 代わりに、[stringstream](../standard-library/sstream-typedefs.md#stringstream) または [wstringstream](../standard-library/sstream-typedefs.md#wstringstream) を使用することを検討してください。  
   
-### コンストラクター  
-  
-|||  
-|-|-|  
-|[strstream](../Topic/strstream::strstream.md)|`strstream` 型のオブジェクトを構築します。|  
-  
-### メンバー関数  
+### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[freeze](../Topic/strstream::freeze.md)|ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。|  
-|[pcount](../Topic/strstream::pcount.md)|被制御シーケンスに書き込まれる要素の数を返します。|  
-|[rdbuf](../Topic/strstream::rdbuf.md)|ストリームの関連付けられた `strstreambuf` オブジェクトへのポインターを返します。|  
-|[str](../Topic/strstream::str.md)|[freeze](../Topic/strstreambuf::freeze.md) を呼び出し、被制御シーケンスの先頭へのポインターを返します。|  
+|[strstream](#strstream)|`strstream` 型のオブジェクトを構築します。|  
   
-## 必要条件  
- **ヘッダー:** \<strstream\>  
+### <a name="member-functions"></a>メンバー関数  
+  
+|||  
+|-|-|  
+|[freeze](#freeze)|ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。|  
+|[pcount](#pcount)|被制御シーケンスに書き込まれる要素の数を返します。|  
+|[rdbuf](#rdbuf)|ストリームの関連付けられた `strstreambuf` オブジェクトへのポインターを返します。|  
+|[str](#str)|[freeze](../standard-library/strstreambuf-class.md#freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<strstream>  
   
  **名前空間:** std  
   
-## 参照  
- [iostream](../Topic/iostream.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [iostream プログラミング](../Topic/iostream%20Programming.md)   
+##  <a name="freeze"></a>  strstream::freeze  
+ ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。  
+  
+```
+void freeze(bool _Freezeit = true);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `_Freezeit`  
+ ストリームを停止させるかどうか示す `bool`。  
+  
+### <a name="remarks"></a>コメント  
+ メンバー関数は [rdbuf](#rdbuf) -> [freeze](../standard-library/strstreambuf-class.md#freeze)(_ *Freezeit*) を呼び出します。  
+  
+### <a name="example"></a>例  
+  **freeze** の使用例は、[strstreambuf::freeze](../standard-library/strstreambuf-class.md#freeze) をご覧ください。  
+  
+##  <a name="pcount"></a>  strstream::pcount  
+ 被制御シーケンスに書き込まれる要素の数を返します。  
+  
+```
+streamsize pcount() const;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 被制御シーケンスに書き込まれる要素の数。  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、[rdbuf](#rdbuf) -> [pcount](../standard-library/strstreambuf-class.md#pcount) を返します。  
+  
+### <a name="example"></a>例  
+  pcount の使用例は、[strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount) をご覧ください。  
+  
+##  <a name="rdbuf"></a>  strstream::rdbuf  
+ ストリームの関連付けられた strstreambuf オブジェクトへのポインターを返します。  
+  
+```
+strstreambuf *rdbuf() const
+```  
+  
+### <a name="return-value"></a>戻り値  
+ ストリームの関連付けられた strstreambuf オブジェクトへのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は **pointer** 型の格納されたストリーム バッファーのアドレスを [strstreambuf](../standard-library/strstreambuf-class.md) に返します。  
+  
+### <a name="example"></a>例  
+  `rdbuf` の使用例は、[strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount) をご覧ください。  
+  
+##  <a name="str"></a>  strstream::str  
+ [freeze](../standard-library/strstreambuf-class.md#freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。  
+  
+```
+char *str();
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 被制御シーケンスの先頭へのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ このメンバー関数は、[rdbuf](#rdbuf) -> [str](../standard-library/strstreambuf-class.md#str) を返します。  
+  
+### <a name="example"></a>例  
+  **str** の使用例は、[strstreambuf::str](../standard-library/strstreambuf-class.md#str) をご覧ください。  
+  
+##  <a name="strstream"></a>  strstream::strstream  
+ `strstream` 型のオブジェクトを構築します。  
+  
+```
+strstream();
+
+strstream(char* ptr,
+    streamsize count,
+    ios_base::openmode _Mode = ios_base::in | ios_base::out);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `count`  
+ バッファーのサイズ。  
+  
+ `_Mode`  
+ バッファーの入出力モード。 詳細については、[ios_base::openmode](../standard-library/ios-base-class.md#openmode) をご覧ください。  
+  
+ `ptr`  
+ バッファー。  
+  
+### <a name="remarks"></a>コメント  
+ 両方のコンストラクターは、[streambuf](../standard-library/streambuf-typedefs.md#streambuf)( **sb**) を呼び出すことにより基本クラスを初期化します。ここで、**sb** は [strstreambuf](../standard-library/strstreambuf-class.md) 型の格納されているオブジェクトです。 最初のコンストラクターはまた、[strstreambuf](../standard-library/strstreambuf-class.md#strstreambuf) を呼び出して **sb** を初期化します。 2 番目のコンストラクターは、次のどちらかの方法で基本クラスを初期化します。  
+  
+-   `_Mode` & **ios_base::app**== 0 の場合、`ptr` は `count` 要素の配列の最初の要素を指定する必要があり、コンストラクターは `strstreambuf`(`ptr`, `count`, `ptr`) を呼び出します。  
+  
+-   それ以外の場合、`ptr` は count 要素の配列の最初の要素を指定する必要があります。この count 要素は C 文字列を含み、最初の要素が `ptr` によって指定されるものです。そしてコンストラクターは `strstreambuf`(`ptr`, `count`, `ptr` + `strlen`(`ptr`)) を呼び出します。  
+  
+## <a name="see-also"></a>関連項目  
+ [iostream](../standard-library/istream-typedefs.md#iostream)   
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)
+
+
+
+

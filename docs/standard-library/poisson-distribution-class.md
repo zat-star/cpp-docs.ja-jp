@@ -10,28 +10,18 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - poisson_distribution
-- std::poisson_distribution
 - random/std::poisson_distribution
-- std::poisson_distribution::reset
 - random/std::poisson_distribution::reset
-- std::poisson_distribution::mean
 - random/std::poisson_distribution::mean
-- std::poisson_distribution::param
 - random/std::poisson_distribution::param
-- std::poisson_distribution::min
 - random/std::poisson_distribution::min
-- std::poisson_distribution::max
 - random/std::poisson_distribution::max
-- std::poisson_distribution::operator()
 - random/std::poisson_distribution::operator()
-- std::poisson_distribution::param_type
 - random/std::poisson_distribution::param_type
-- std::poisson_distribution::param_type::mean
 - random/std::poisson_distribution::param_type::mean
-- std::poisson_distribution::param_type::operator==
 - random/std::poisson_distribution::param_type::operator==
-- std::poisson_distribution::param_type::operator!=
 - random/std::poisson_distribution::param_type::operator!=
+- random/std::poisson_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -55,10 +45,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
-ms.openlocfilehash: 021eaec1ec55add912234f78bac0b9762b4a3444
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: a8a87f4101cca4a709d594ac2ad19726eb505c00
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="poissondistribution-class"></a>poisson_distribution クラス
@@ -104,8 +95,8 @@ public:
   
 ||||  
 |-|-|-|  
-|[poisson_distribution::poisson_distribution](#poisson_distribution__poisson_distribution)|`poisson_distribution::mean`|`poisson_distribution::param`|  
-|`poisson_distribution::operator()`||[poisson_distribution::param_type](#poisson_distribution__param_type)|  
+|[poisson_distribution](#poisson_distribution)|`poisson_distribution::mean`|`poisson_distribution::param`|  
+|`poisson_distribution::operator()`||[param_type](#param_type)|  
   
 プロパティ関数 `mean()` は、格納されている分布パラメーター *mean* の値を返します。  
   
@@ -224,7 +215,7 @@ Distribution for 100 samples:
   
  **名前空間:** std  
   
-##  <a name="a-namepoissondistributionpoissondistributiona--poissondistributionpoissondistribution"></a><a name="poisson_distribution__poisson_distribution"></a>  poisson_distribution::poisson_distribution  
+##  <a name="poisson_distribution"></a>  poisson_distribution::poisson_distribution  
 分布を作成します。  
   
 ```  
@@ -246,7 +237,7 @@ explicit binomial_distribution(const param_type& parm);
   
 2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
   
-##  <a name="a-namepoissondistributionparamtypea--poissondistributionparamtype"></a><a name="poisson_distribution__param_type"></a>  poisson_distribution::param_type  
+##  <a name="param_type"></a>  poisson_distribution::param_type  
 分布のパラメーターを格納します。  
   
 ```    
@@ -261,7 +252,7 @@ struct param_type {
 ```  
   
 ### <a name="parameters"></a>パラメーター  
-[poisson_distribution](#poisson_distribution__poisson_distribution) のコンストラクター パラメーターをご覧ください。  
+[poisson_distribution](#poisson_distribution) のコンストラクター パラメーターをご覧ください。  
   
 ### <a name="remarks"></a>コメント  
  **前提条件:** `0.0 < mean`  

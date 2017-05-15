@@ -74,10 +74,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bd731aed33b3c05a55b9a6dc2a365f68a5d343dc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 4313f785ba5197c3659e74384b7d6ecda8e8c7be
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="strtoks-strtoksl-wcstoks-wcstoksl-mbstoks-mbstoksl"></a>strtok_s、_strtok_s_l、wcstok_s、_wcstok_s_l、_mbstok_s、_mbstok_s_l
@@ -165,7 +166,7 @@ _locale_tlocale
   
  `strtok_s` への最初の呼び出しで、関数は先行する区切り記号をスキップし、`strToken` の最初のトークンへのポインターを返して null 文字を含むトークンを終了します。 `strToken` への一連の呼び出しにより、より多くのトークンを `strtok_s` の残りから作成できます。 `strtok_s` への各呼び出しは、その呼び出しによって返されるトークンの後に null 文字を挿入することで `strToken` を変更します。 `context` ポインターは、読み込まれる文字列、および次のトークンが読み込まれる文字列内の位置を追跡し続けます。 `strToken` から次のトークンを読み込むには、`strtok_s` を `NULL` 引数に `strToken` 値を使用して呼び出し、同じ `context` パラメーターを渡します。 `NULL` `strToken` 引数により、`strtok_s` は変更された `strToken` で次のトークンを検索します。 `strDelimit` 引数は、ある呼び出しから次の呼び出しへ任意の値を取ることができるため、区切り記号のセットが異なる場合があります。  
   
- `context` パラメーターは `strtok` と `_strtok_l` で使用される静的バッファーよりも優先されるため、同じスレッドで&2; つの文字列を同時に分析できます。  
+ `context` パラメーターは `strtok` と `_strtok_l` で使用される静的バッファーよりも優先されるため、同じスレッドで 2 つの文字列を同時に分析できます。  
   
  出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
   
@@ -175,8 +176,8 @@ _locale_tlocale
 |-------------|---------------------|  
 |`strtok_s`|\<string.h>|  
 |`_strtok_s_l`|\<string.h>|  
-|`wcstok_s,`<br /><br /> `_wcstok_s_l`|\<string.h> または \<wchar.h>|  
-|`_mbstok_s,`<br /><br /> `_mbstok_s_l`|\<mbstring.h>|  
+|`wcstok_s`、<br /><br /> `_wcstok_s_l`|\<string.h> または \<wchar.h>|  
+|`_mbstok_s`、<br /><br /> `_mbstok_s_l`|\<mbstring.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
@@ -246,9 +247,6 @@ Tokens:
         time.  
  tokens  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   

@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: af46452d23eb6194a0562dc37bbe082a56762a2b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: bbd6a163df9daf8e699f3ecf52325786fe89d8ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="splitpath-wsplitpath"></a>_splitpath、_wsplitpath
@@ -105,7 +106,7 @@ void _wsplitpath(
  先頭のピリオド (`.`) を含む、ファイル名の拡張子。 ファイル名の拡張子が不要な場合は、このパラメーターに `NULL` を渡します。  
   
 ## <a name="remarks"></a>コメント  
- `_splitpath` 関数は、パスを&4; つのコンポーネントに分割します。 `_splitpath` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath` は `_splitpath` のワイド文字バージョンであり、`_wsplitpath` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
+ `_splitpath` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath` は `_splitpath` のワイド文字バージョンであり、`_wsplitpath` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
   
  **セキュリティに関するメモ**これらの関数は、バッファー オーバーランの問題によって潜在的な脅威を引き起こすことがあります。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。 これらの関数のセキュリティを強化したバージョンについては、「[_splitpath_s、_wsplitpath_s](../../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)」をご覧ください。  
   
@@ -145,9 +146,6 @@ void _wsplitpath(
   
 ## <a name="example"></a>例  
  「[_makepath](../../c-runtime-library/reference/makepath-wmakepath.md)」の例をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

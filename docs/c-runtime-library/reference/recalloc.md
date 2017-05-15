@@ -51,10 +51,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 89626019b42a478b2dfe3800e2f732ba6b90d106
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: ae78e17f66448de46e36ea7d6dc6e3121b306c68
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="recalloc"></a>_recalloc
@@ -90,13 +91,13 @@ void *_recalloc(
  戻り値は、どの型のオブジェクトを格納する場合でも適切なアラインメントが保証されるストレージ領域を指します。 `void` 以外の型へのポインターを取得するには、戻り値の型キャストを使用します。  
   
 ## <a name="remarks"></a>コメント  
- _`recalloc` 関数は、割り当てられたメモリ ブロックのサイズを変更します。 `memblock` 引数はメモリ ブロックの先頭をポイントします。 `memblock` が `NULL` の場合、\_`recalloc` は [calloc](../../c-runtime-library/reference/calloc.md) と同様に動作し、`num` * `size` バイトの新しいブロックを割り当てます。 各要素は 0 に初期化されます。 `memblock` が `NULL` でない場合は、`calloc`、[malloc](../../c-runtime-library/reference/malloc.md)、または [realloc](../../c-runtime-library/reference/realloc.md) の前回の呼び出しによって返されたポインターである必要があります。  
+ `_recalloc` 関数は、割り当てられたメモリ ブロックのサイズを変更します。 `memblock` 引数はメモリ ブロックの先頭をポイントします。 場合`memblock`は`NULL`、`_recalloc`と同様に動作[calloc](../../c-runtime-library/reference/calloc.md)し、新しいブロックを割り当てます`num`  *  `size`バイトです。 各要素は 0 に初期化されます。 `memblock` が `NULL` でない場合は、`calloc`、[malloc](../../c-runtime-library/reference/malloc.md)、または [realloc](../../c-runtime-library/reference/realloc.md) の前回の呼び出しによって返されたポインターである必要があります。  
   
- 新しいブロックは新しいメモリ位置に配置される可能性があるため、_`recalloc` によって返されるポインターは、`memblock` 引数を通じて渡されたポインターと一致しないことがあります。  
+ 新しいブロックは新しいメモリ位置に配置される可能性があるため、`_recalloc` によって返されるポインターは、`memblock` 引数を通じて渡されたポインターと一致しないことがあります。  
   
  メモリの割り当てに失敗した場合、または要求されたメモリ量が `_HEAP_MAXREQ` を超える場合、`_recalloc` は `errno` を `ENOMEM` に設定します。 その他のエラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
- `recalloc` は、C++ の [_set_new_mode](../../c-runtime-library/reference/set-new-mode.md) 関数を使用して新しいハンドラー モードを設定するために `realloc` を呼び出します。 新しいハンドラー モードは、エラーが発生したときに、`realloc` が [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) によって設定された新しいハンドラー ルーチンを呼び出すかどうかを指定します。 既定では、`realloc` は、メモリの割り当てエラーの際に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすると、_`recalloc` がメモリの割り当てに失敗したときに、`new` 演算子が同じ理由で失敗したときと同じ方法で、`realloc` によって新しいハンドラー ルーチンを呼び出すことができます。 既定の動作をオーバーライドするには、次の関数を呼び出します。  
+ `recalloc` は、C++ の [_set_new_mode](../../c-runtime-library/reference/set-new-mode.md) 関数を使用して新しいハンドラー モードを設定するために `realloc` を呼び出します。 新しいハンドラー モードは、エラーが発生したときに、`realloc` が [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) によって設定された新しいハンドラー ルーチンを呼び出すかどうかを指定します。 既定では、`realloc` は、メモリの割り当てエラーの際に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすると、`_recalloc` がメモリの割り当てに失敗したときに、`realloc` 演算子が同じ理由で失敗したときと同じ方法で、`new` によって新しいハンドラー ルーチンを呼び出すことができます。 既定の動作をオーバーライドするには、次の関数を呼び出します。  
   
 ```  
 _set_new_mode(1)  
@@ -104,7 +105,7 @@ _set_new_mode(1)
   
  この呼び出しはプログラムの最初の方で指定するか、NEWMODE.OBJ にリンクします。  
   
- アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、_`recalloc` は [_recalloc_dbg](../../c-runtime-library/reference/recalloc-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
+ C ランタイム ライブラリのデバッグ バージョンとリンクするアプリケーション`_recalloc`に解決される[_recalloc_dbg](../../c-runtime-library/reference/recalloc-dbg.md)です。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
   
  `_recalloc` は `__declspec(noalias)` と `__declspec(restrict)` でマークされています。これは、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
   
@@ -114,10 +115,7 @@ _set_new_mode(1)
 |-------------|---------------------|  
 |`_recalloc`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   

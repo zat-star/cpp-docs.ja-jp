@@ -1,68 +1,134 @@
 ---
 title: "cache_chunklist クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "allocators/stdext::cache_chunklist"
-  - "stdext.cache_chunklist"
-  - "stdext::cache_chunklist"
-  - "cache_chunklist"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cache_chunklist クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- allocators/stdext::cache_chunklist
+- stdext::cache_chunklist
+- cache_chunklist
+- allocators/stdext::cache_chunklist::allocate
+- allocators/stdext::cache_chunklist::deallocate
+dev_langs:
+- C++
+helpviewer_keywords:
+- cache_chunklist class
 ms.assetid: af19eccc-4ae7-4a34-bbb2-81e397424cb9
 caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# cache_chunklist クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 283186349d84225fdf9d1d52ec04817a12f3d27f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-[ブロックのアロケーター](../standard-library/allocators-header.md) を定義する単一のサイズのメモリ ブロックの割り当てと解放する。  
+---
+# <a name="cachechunklist-class"></a>cache_chunklist クラス
+1 つのサイズのメモリ ブロックを割り当ておよび割り当て解除する[ブロック アロケーター](../standard-library/allocators-header.md)を定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <std::size_t Sz, std::size_t Nelts = 20>  
+class cache_chunklist
 ```  
-template <std::size_t Sz, std::size_t Nelts = 20> class cache_chunklist  
-```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
-|------------|--------|  
-|`Sz`|割り当てる配列の要素数。|  
+|---------------|-----------------|  
+|`Sz`|割り当てられる配列内の要素の数。|  
   
-## 解説  
- このテンプレート クラスは、必要に応じてメモリ ブロックのストレージを割り当てるためにメモリ ブロックを suballocating 未加工のチャンクを割り当てるに `operator new` ;を このクラスは、各チャンクの別の空きリストでメモリ ブロックはいずれも、使用していないときは、解放されたメモリ ブロックを格納し、チャンクを解放するために `operator delete` を使用します。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスは `operator new` を使用して生メモリ チャンクを割り当て、必要なときにブロックをサブ割り当てしてメモリ ブロック用の記憶域を割り当てます。また、割り当てが解除されたメモリ ブロックをチャンクごとの独立したフリー リストに格納し、どのメモリ ブロックも使用中でないときは `operator delete` を使用してチャンクの割り当てを解除します。  
   
- 各メモリ ブロックは、チャンクに使用可能なメモリのバイト `Sz`、ポインターを保持します。  各チャンクは `operator new` と `operator delete` に必要な `Nelts` のメモリ ブロック、スリーポイントの三つのポインター、int とデータを保持します。  
+ 各メモリ ブロックは、`Sz` バイトの使用可能なメモリと、そのブロックが属しているチャンクへのポインターを保持します。 各チャンクには `Nelts` メモリ ブロック、3 つのポインター、int、`operator new` と `operator delete` に必要なデータが保持されます。  
   
-### コンストラクター  
-  
-|||  
-|-|-|  
-|[cache\_chunklist](../Topic/cache_chunklist::cache_chunklist.md)|`cache_chunklist` 型のオブジェクトを構築します。|  
-  
-### メンバー関数  
+### <a name="constructors"></a>コンストラクター  
   
 |||  
 |-|-|  
-|[割り当てます。](../Topic/cache_chunklist::allocate.md)|メモリ ブロックを割り当てます。|  
-|[解放してください。](../Topic/cache_chunklist::deallocate.md)|指定した位置にストレージの先頭から指定した数のオブジェクトを解放します。|  
+|[cache_chunklist](#cache_chunklist)|`cache_chunklist` 型のオブジェクトを構築します。|  
   
-## 必要条件  
- **ヘッダー:** の \<アロケーター\>  
+### <a name="member-functions"></a>メンバー関数  
+  
+|||  
+|-|-|  
+|[allocate](#allocate)|メモリのブロックを割り当てます。|  
+|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
   
-## 参照  
- [\<allocators\>](../standard-library/allocators-header.md)
+##  <a name="allocate"></a>  cache_chunklist::allocate  
+ メモリのブロックを割り当てます。  
+  
+```
+void *allocate(std::size_t count);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`count`|割り当てられる配列内の要素の数。|  
+  
+### <a name="return-value"></a>戻り値  
+ 割り当てられたオブジェクトへのポインター。  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="cache_chunklist"></a>  cache_chunklist::cache_chunklist  
+ `cache_chunklist` 型のオブジェクトを構築します。  
+  
+```
+cache_chunklist();
+```  
+  
+### <a name="remarks"></a>コメント  
+  
+##  <a name="deallocate"></a>  cache_chunklist::deallocate  
+ 指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
+  
+```
+void deallocate(void* ptr, std::size_t count);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`ptr`|記憶域から割り当てを解除される最初のオブジェクトへのポインター。|  
+|`count`|記憶域から割り当てを解除されるオブジェクトの数。|  
+  
+### <a name="remarks"></a>コメント  
+  
+## <a name="see-also"></a>関連項目  
+ [\<allocators>](../standard-library/allocators-header.md)
+
+
+
+

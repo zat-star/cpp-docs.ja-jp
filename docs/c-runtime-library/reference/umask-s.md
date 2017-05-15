@@ -54,10 +54,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 5e0653dd1321481edcae475bbaf3a6fe29fc4815
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 5c8efcdf5d3f44a6cd3bbcc39f2a98e3659c95ab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
 ---
 # <a name="umasks"></a>_umask_s
@@ -92,7 +93,7 @@ errno_t _umask_s(
  上記のいずれかの条件が発生すると、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラ―が呼び出されます。 実行の継続が許可された場合、`_umask_s` は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
   
 ## <a name="remarks"></a>コメント  
- `_umask_s` 関数は、現在のプロセスのファイルのアクセス許可マスクを、`mode`* で指定されたモードに設定します。* ファイルのアクセス許可マスクは、`_creat`、`_open`、または `_sopen` によって新しく作成されたファイルのアクセス許可の設定を変更します。 マスクのビットが 1 の場合は、ファイルの要求されたアクセス許可値に対応するビットは 0 (許可しない) に設定されます。 マスクのビットが 0 の場合は、対応するビットは変更されません。 新しいファイルのアクセス許可の設定は、そのファイルが最初に閉じられるまで、設定されません。  
+ `_umask_s`関数では、現在のプロセスのファイルのアクセス許可マスクを設定で指定されたモードに`mode`です。 ファイルのアクセス許可マスクは、`_creat`、`_open`、または `_sopen` によって新しく作成されたファイルのアクセス許可の設定を変更します。 マスクのビットが 1 の場合は、ファイルの要求されたアクセス許可値に対応するビットは 0 (許可しない) に設定されます。 マスクのビットが 0 の場合は、対応するビットは変更されません。 新しいファイルのアクセス許可の設定は、そのファイルが最初に閉じられるまで、設定されません。  
   
  `pmode` は、SYS\STAT.H で定義されている下記のマニフェスト定数のいずれか、または両方が含まれた整数式です。  
   
@@ -150,9 +151,6 @@ int main( void )
 ```Output  
 Oldmask = 0x0000  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::File::SetAttributes](https://msdn.microsoft.com/en-us/library/system.io.file.setattributes.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

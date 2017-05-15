@@ -53,10 +53,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 99698cf158118a876a3bb78edaaa52f2b9177d0a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: a0d8c456f20fc048bab91ec5bc9e1639b93adb6d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="assert-asserte-assertexpr-macros"></a>_ASSERT、_ASSERTE、_ASSERT_EXPR マクロ
@@ -86,11 +87,11 @@ _ASSERTE(
  レポートの一部として表示するワイド文字列。  
   
 ## <a name="remarks"></a>コメント  
- `_ASSERT_EXPR`マクロ、 `_ASSERT` マクロ、 `_ASSERTE` マクロは、デバッグ プロセス中に前提を検査するためのクリーンでシンプルなメカニズムを持つアプリケーションを提供します。 アプリケーションの製品版ビルドで呼び出されないようにするために `#ifdef` ステートメントで囲む必要がないため、これらのマクロには高い柔軟性があります。 この柔軟性は、[_DEBUG](../../c-runtime-library/debug.md) マクロを使用することで実現されます。 `_ASSERT_EXPR`、`_ASSERT`、`_ASSERTE` は、`_DEBUG` がコンパイル時に定義される場合にのみ使用できます。 `_DEBUG` が定義されていない場合、これらのマクロの呼び出しは前処理で削除されます。  
+ `_ASSERT_EXPR`マクロ、 `_ASSERT` マクロ、 `_ASSERTE` マクロは、デバッグ プロセス中に前提を検査するためのクリーンでシンプルなメカニズムを持つアプリケーションを提供します。 アプリケーションの製品版ビルドで呼び出されないようにするために `#ifdef` ステートメントで囲む必要がないため、これらのマクロには高い柔軟性があります。 この柔軟性は、 [_DEBUG](../../c-runtime-library/debug.md) マクロを使用することで実現されます。 `_ASSERT_EXPR`、 `_ASSERT` 、 `_ASSERTE` は、 `_DEBUG` がコンパイル時に定義される場合にのみ使用できます。 `_DEBUG` が定義されていない場合、これらのマクロの呼び出しは前処理で削除されます。  
   
- `_ASSERT_EXPR`、`_ASSERT`、`_ASSERTE` はその `booleanExpression` 引数を評価し、結果が `false` (0) の際に、診断メッセージを出力し、[_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) を呼び出してデバッグ レポートを生成します。 `_ASSERT` マクロは、単純な診断メッセージを出力します。  `_ASSERTE` には、メッセージ内の失敗した式の文字列表現が含まれます。 `_ASSERT_EXPR` には、診断メッセージの `message` 文字列が含まれます。 `booleanExpression` が&0; 以外に評価されると、これらのマクロは何も行いません。  
+ `_ASSERT_EXPR`、 `_ASSERT` 、 `_ASSERTE` はその `booleanExpression` 引数を評価し、結果が `false` (0) の際に、診断メッセージを出力し、 [_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) を呼び出してデバッグ レポートを生成します。 `_ASSERT` マクロは、単純な診断メッセージを出力します。  `_ASSERTE` には、メッセージ内の失敗した式の文字列表現が含まれます。 `_ASSERT_EXPR` には、診断メッセージの `message` 文字列が含まれます。 `booleanExpression` が 0 以外に評価されると、これらのマクロは何も行いません。  
   
- `_ASSERT_EXPR`、`_ASSERT`、`_ASSERTE` は `_CrtDbgReportW` を呼び出します。これにより、すべての出力がワイド文字になります。 `_ASSERTE` プロパティは `booleanExpression` で Unicode 文字を正しく出力し、`_ASSERT_EXPR` は `message` で Unicode 文字を出力します。  
+ `_ASSERT_EXPR`、 `_ASSERT` 、 `_ASSERTE` は `_CrtDbgReportW`を呼び出します。これにより、すべての出力がワイド文字になります。 `_ASSERTE` プロパティは `booleanExpression` で Unicode 文字を正しく出力し、 `_ASSERT_EXPR` は `message`で Unicode 文字を出力します。  
   
  `_ASSERTE` マクロは失敗した式を指定し、 `_ASSERT_EXPR` は生成されたレポートにメッセージを指定できるようにするため、ユーザーはアプリケーションのソース コードを参照せずに問題を特定することができます。 ただし、欠点もあります。 `message` によって出力されるすべての `_ASSERT_EXPR` と、 `_ASSERTE` によって評価されるすべての式は文字列定数としてアプリケーションの出力 (デバッグ バージョン) ファイルに組み込まれます。 そのため、 `_ASSERT_EXPR` または `_ASSERTE`に対して多数の呼び出しが行われると、これらの式により、出力ファイルのサイズが大幅に増えます。  
   
@@ -98,11 +99,11 @@ _ASSERTE(
   
 `_CrtSetReportMode(CRT_ASSERT, _CRTDBG_MODE_WNDW);`  
   
- `_CrtDbgReportW` は、現在のレポート モード (複数可) と、`_CRT_ASSERT` レポートの種類に定義されているファイルに基づいて、デバッグ レポートを生成し、その宛先 (複数可) を決定します。 既定では、アサーション エラーとエラーは、デバッグ メッセージ ウィンドウに送られます。 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) 関数と [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) 関数は、各レポートの種類の宛先を定義するために使用されます。  
+ `_CrtDbgReportW` は、現在のレポート モード (複数可) と、 `_CRT_ASSERT` レポートの種類に定義されているファイルに基づいて、デバッグ レポートを生成し、その宛先 (複数可) を決定します。 既定では、アサーション エラーとエラーは、デバッグ メッセージ ウィンドウに送られます。 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) 関数と [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) 関数は、各レポートの種類の宛先を定義するために使用されます。  
   
  宛先がデバッグ メッセージ ウィンドウであるときにユーザーが **[再試行]** ボタンをクリックすると、 `_CrtDbgReportW` は 1 を返します。これにより、 `_ASSERT_EXPR`マクロ、 `_ASSERT` マクロ、 `_ASSERTE` マクロはデバッガーを開始します (Just-In-Time (JIT) デバッグが有効な場合)。  
   
- レポート処理の詳細については、 [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) 関数を参照してください。 アサーション失敗を解決し、これらのマクロをデバッグ エラーの処理機構として使用する方法の詳細については、「[確認とレポートのためのマクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
+ レポート処理の詳細については、 [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) 関数を参照してください。 アサーション失敗を解決し、これらのマクロをデバッグ エラーの処理機構として使用する方法の詳細については、「 [確認とレポートのためのマクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
   
  `_ASSERT` マクロの他に、プログラム ロジックの検証に [assert](../../c-runtime-library/reference/assert-macro-assert-wassert.md) マクロを使用できます。 このマクロは、ライブラリのデバッグ バージョンとリリース バージョンの両方で使用できます。 [_RPT、_RPTF](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md) デバッグ マクロをデバッグ レポート生成のために使用することもできますが、式の評価は行いません。 `_RPT` マクロは単純なレポートを生成します。 `_RPTF` マクロは、ソース ファイルと、レポート マクロが呼び出された行番号を、生成されるレポートに組み込みます。 これらのマクロのワイド文字バージョンを使用できます (`_RPTWn`、 `_RPTFWn`)。 ワイド文字バージョンは、ワイド文字列がすべての文字列パラメーターと出力で使用できるという点を除き、ナロー文字バージョンと同一です。  
   
@@ -188,9 +189,6 @@ crt_ASSERT_macro.c(58) :
 crt_ASSERT_macro.c(59) : Assertion failed: p1 == p2  
 'I am p1' != 'I am p2'  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Diagnostics::Debug::Assert](https://msdn.microsoft.com/en-us/library/system.diagnostics.debug.assert.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   

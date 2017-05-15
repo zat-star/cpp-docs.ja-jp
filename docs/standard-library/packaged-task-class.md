@@ -10,6 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - future/std::packaged_task
+- future/std::packaged_task::packaged_task
+- future/std::packaged_task::get_future
+- future/std::packaged_task::make_ready_at_thread_exit
+- future/std::packaged_task::reset
+- future/std::packaged_task::swap
+- future/std::packaged_task::valid
+- future/std::packaged_task::operator()
+- future/std::packaged_task::operator bool
 dev_langs:
 - C++
 ms.assetid: 0a72cbe3-f22a-4bfe-8e50-dcb268c98780
@@ -31,10 +39,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: acc0ecd4edaf1e58977dcbdeb483d497a72bc4c8
-ms.openlocfilehash: a54b1c9788ef60f63aafafc9125b09c449fde1b0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 3ca8c4c008daa02af2bba0df8468bea3c063c28a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="packagedtask-class"></a>packaged_task クラス
@@ -53,33 +62,33 @@ class packaged_task;
   
 |名前|説明|  
 |----------|-----------------|  
-|[packaged_task::packaged_task コンストラクター](#packaged_task__packaged_task_constructor)|`packaged_task` オブジェクトを構築します。|  
-|[packaged_task::~packaged_task デストラクター](#packaged_task___dtorpackaged_task_destructor)|`packaged_task` オブジェクトを破棄します。|  
+|[packaged_task](#packaged_task)|`packaged_task` オブジェクトを構築します。|  
+|[packaged_task::~packaged_task デストラクター](#dtorpackaged_task_destructor)|`packaged_task` オブジェクトを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[packaged_task::get_future](#packaged_task__get_future_method)|同じ関連付けられた非同期状態の [future](../standard-library/future-class.md) オブジェクトを返します。|  
-|[packaged_task::make_ready_at_thread_exit](#packaged_task__make_ready_at_thread_exit_method)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納します。|  
-|[packaged_task::reset](#packaged_task__reset_method)|関連付けられた非同期状態を置き換えます。|  
-|[packaged_task::swap](#packaged_task__swap_method)|関連付けられた非同期状態を、指定したオブジェクトのものと交換します。|  
-|[packaged_task::valid](#packaged_task__valid_method)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
+|[get_future](#get_future)|同じ関連付けられた非同期状態の [future](../standard-library/future-class.md) オブジェクトを返します。|  
+|[make_ready_at_thread_exit](#make_ready_at_thread_exit)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納します。|  
+|[reset](#reset)|関連付けられた非同期状態を置き換えます。|  
+|[swap](#swap)|関連付けられた非同期状態を、指定したオブジェクトのものと交換します。|  
+|[有効です](#valid)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[packaged_task::operator=](#packaged_task__operator_eq)|関連付けられた非同期状態を、指定されたオブジェクトから転送します。|  
-|[packaged_task::operator()](#packaged_task__operator__)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納し、状態を *ready* に設定します。|  
-|[packaged_task::operator bool](#packaged_task__operator_bool)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
+|[packaged_task::operator=](#op_eq)|関連付けられた非同期状態を、指定されたオブジェクトから転送します。|  
+|[packaged_task::operator()](#op_call)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納し、状態を *ready* に設定します。|  
+|[packaged_task::operator bool](#op_bool)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** future  
+ **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
   
-##  <a name="a-namepackagedtaskgetfuturemethoda--packagedtaskgetfuture"></a><a name="packaged_task__get_future_method"></a>  packaged_task::get_future  
+##  <a name="get_future"></a>  packaged_task::get_future  
  同じ*関連付けられた非同期状態*の `future<Ty>` 型のオブジェクトを返します。  
   
 ```
@@ -91,7 +100,7 @@ future<Ty> get_future();
   
  このメソッドが同じ関連付けられた非同期状態の `packaged_task` オブジェクトに対して既に呼び出されている場合、このメソッドはエラー コード `future_already_retrieved` で `future_error` をスローします。  
   
-##  <a name="a-namepackagedtaskmakereadyatthreadexitmethoda--packagedtaskmakereadyatthreadexit"></a><a name="packaged_task__make_ready_at_thread_exit_method"></a>  packaged_task::make_ready_at_thread_exit  
+##  <a name="make_ready_at_thread_exit"></a>  packaged_task::make_ready_at_thread_exit  
  *関連付けられた非同期状態*に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納します。  
   
 ```
@@ -101,13 +110,13 @@ void make_ready_at_thread_exit(ArgTypes... args);
 ### <a name="remarks"></a>コメント  
  `packaged_task` オブジェクトが関連付けられた非同期状態ではない場合、このメソッドはエラー コード `no_state` で [future_error](../standard-library/future-error-class.md) をスローします。  
   
- このメソッドまたは [make_ready_at_thread_exit](#packaged_task__make_ready_at_thread_exit_method) が同じ関連付けられた非同期状態の `packaged_task` オブジェクトに対して既に呼び出されている場合、このメソッドはエラー コード `promise_already_satisfied` で `future_error` をスローします。  
+ このメソッドまたは [make_ready_at_thread_exit](#make_ready_at_thread_exit) が同じ関連付けられた非同期状態の `packaged_task` オブジェクトに対して既に呼び出されている場合、このメソッドはエラー コード `promise_already_satisfied` で `future_error` をスローします。  
   
  それ以外の場合、この演算子は `INVOKE(fn, args..., Ty)` を呼び出します。ここで、*fn* は関連付けられた非同期状態に格納された呼び出し可能オブジェクトです。 すべての戻り値は、関連付けられた非同期状態の返された結果としてアトミックに格納されます。  
   
- [packaged_task::operator()](#packaged_task__operator__) とは対照的に、呼び出し元のスレッドのスレッド ローカルのオブジェクトがすべて破棄されるまでは、関連付けられた非同期状態は `ready` に設定されません。 通常、関連付けられた非同期状態でブロックされたスレッドは、呼び出し元のスレッドが終了するまでブロック解除されません。  
+ [packaged_task::operator()](#op_call) とは対照的に、呼び出し元のスレッドのスレッド ローカルのオブジェクトがすべて破棄されるまでは、関連付けられた非同期状態は `ready` に設定されません。 通常、関連付けられた非同期状態でブロックされたスレッドは、呼び出し元のスレッドが終了するまでブロック解除されません。  
   
-##  <a name="a-namepackagedtaskoperatoreqa--packagedtaskoperator"></a><a name="packaged_task__operator_eq"></a>  packaged_task::operator=  
+##  <a name="op_eq"></a>  packaged_task::operator=  
  *関連付けられた非同期状態*を、指定されたオブジェクトから転送します。  
   
 ```
@@ -124,7 +133,7 @@ packaged_task& operator=(packaged_task&& Right);
 ### <a name="remarks"></a>コメント  
  操作の後、`Right` に関連付けられた非同期状態は既にありません。  
   
-##  <a name="a-namepackagedtaskoperatora--packagedtaskoperator"></a><a name="packaged_task__operator__"></a>  packaged_task::operator()  
+##  <a name="op_call"></a>  packaged_task::operator()  
  *関連付けられた非同期状態*に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納し、状態を *ready* に設定します。  
   
 ```
@@ -134,11 +143,11 @@ void operator()(ArgTypes... args);
 ### <a name="remarks"></a>コメント  
  `packaged_task` オブジェクトが関連付けられた非同期状態ではない場合、このメソッドはエラー コード `no_state` で [future_error](../standard-library/future-error-class.md) をスローします。  
   
- このメソッドまたは [make_ready_at_thread_exit](#packaged_task__make_ready_at_thread_exit_method) が同じ関連付けられた非同期状態の `packaged_task` オブジェクトに対して既に呼び出されている場合、このメソッドはエラー コード `promise_already_satisfied` で `future_error` をスローします。  
+ このメソッドまたは [make_ready_at_thread_exit](#make_ready_at_thread_exit) が同じ関連付けられた非同期状態の `packaged_task` オブジェクトに対して既に呼び出されている場合、このメソッドはエラー コード `promise_already_satisfied` で `future_error` をスローします。  
   
  それ以外の場合、この演算子は `INVOKE(fn, args..., Ty)` を呼び出します。ここで、*fn* は関連付けられた非同期状態に格納された呼び出し可能オブジェクトです。 すべての戻り値は、関連付けられた非同期状態の返された結果としてアトミックに格納され、状態が ready に設定されます。 その結果、関連付けられた非同期状態でブロックされているすべてのスレッドがブロック解除されます。  
   
-##  <a name="a-namepackagedtaskoperatorboola--packagedtaskoperator-bool"></a><a name="packaged_task__operator_bool"></a>  packaged_task::operator bool  
+##  <a name="op_bool"></a>  packaged_task::operator bool  
  オブジェクトが `associated asynchronous state` であるかどうかを指定します。  
   
 ```
@@ -148,7 +157,7 @@ operator bool() const noexcept;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが関連付けられた非同期状態である場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="a-namepackagedtaskpackagedtaskconstructora--packagedtaskpackagedtask-constructor"></a><a name="packaged_task__packaged_task_constructor"></a>  packaged_task::packaged_task コンストラクター  
+##  <a name="packaged_task"></a>  packaged_task::packaged_task コンストラクター  
  `packaged_task` オブジェクトを構築します。  
   
 ```
@@ -181,7 +190,7 @@ template <class Fn, class Alloc>
   
  4 つ目のコンストラクターは、関連付けられた非同期状態に格納された `packaged_task` のコピーを持つ `fn` オブジェクトを構築し、メモリ割り当てのために `alloc` を使用します。  
   
-##  <a name="a-namepackagedtaskdtorpackagedtaskdestructora--packagedtaskpackagedtask-destructor"></a><a name="packaged_task___dtorpackaged_task_destructor"></a>  packaged_task::~packaged_task デストラクター  
+##  <a name="dtorpackaged_task_destructor"></a>  packaged_task::~packaged_task デストラクター  
  `packaged_task` オブジェクトを破棄します。  
   
 ```
@@ -191,7 +200,7 @@ template <class Fn, class Alloc>
 ### <a name="remarks"></a>コメント  
  *関連付けられた非同期状態*が*準備完了*ではない場合、デストラクターは、関連付けられた非同期状態の結果としてエラー コード `broken_promise` で [future_error](../standard-library/future-error-class.md) 例外を格納し、関連付けられた非同期状態でブロックされているすべてのスレッドがブロック解除されます。  
   
-##  <a name="a-namepackagedtaskresetmethoda--packagedtaskreset"></a><a name="packaged_task__reset_method"></a>  packaged_task::reset  
+##  <a name="reset"></a>  packaged_task::reset  
  新しい*関連付けられた非同期状態*を使用して、既存の関連付けられた非同期状態を置き換えます。  
   
 ```
@@ -199,9 +208,9 @@ void reset();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 実際には、このメソッドは `*this = packaged_task(move(fn))` を実行します。ここで、*fn* は、このオブジェクトの関連付けられた非同期状態に格納された関数オブジェクトです。 そのため、オブジェクトの状態が削除され、[get_future](#packaged_task__get_future_method)、[operator()](#packaged_task__operator__)、および [make_ready_at_thread_exit](#packaged_task__make_ready_at_thread_exit_method) を新しく構築されたオブジェクトでのように呼び出すことができます。  
+ 実際には、このメソッドは `*this = packaged_task(move(fn))` を実行します。ここで、*fn* は、このオブジェクトの関連付けられた非同期状態に格納された関数オブジェクトです。 そのため、オブジェクトの状態が削除され、[get_future](#get_future)、[operator()](#op_call)、および [make_ready_at_thread_exit](#make_ready_at_thread_exit) を新しく構築されたオブジェクトでのように呼び出すことができます。  
   
-##  <a name="a-namepackagedtaskswapmethoda--packagedtaskswap"></a><a name="packaged_task__swap_method"></a>  packaged_task::swap  
+##  <a name="swap"></a>  packaged_task::swap  
  関連付けられた非同期状態を、指定したオブジェクトのものと交換します。  
   
 ```
@@ -212,7 +221,7 @@ void swap(packaged_task& Right) noexcept;
  `Right`  
  `packaged_task` オブジェクト。  
   
-##  <a name="a-namepackagedtaskvalidmethoda--packagedtaskvalid"></a><a name="packaged_task__valid_method"></a>  packaged_task::valid  
+##  <a name="valid"></a>  packaged_task::valid  
  オブジェクトが `associated asynchronous state` であるかどうかを指定します。  
   
 ```

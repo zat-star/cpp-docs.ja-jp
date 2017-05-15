@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a0da341d7dd704c9c1b455c5b3e2e060ba6a3e07
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: c3992066b5b305a7b9de6ef47c6ba42e15da2518
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ecvt"></a>_ecvt
@@ -88,7 +89,7 @@ char *_ecvt(
  `_ecvt` は数字の文字列へのポインターを返します。エラーが発生した場合は NULL です。  
   
 ## <a name="remarks"></a>コメント  
- `_ecvt` 関数は、浮動小数点数の値を文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 この関数は、`value` の最大 `count` 桁を文字列として格納し、null 文字 ("\0") を追加します。 `value` の桁数が `count` を超える場合、下位の桁は丸められます。 `count` 桁より少ない場合は、文字列が&0; で埋められます。  
+ `_ecvt` 関数は、浮動小数点数の値を文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 この関数は、`value` の最大 `count` 桁を文字列として格納し、null 文字 ("\0") を追加します。 `value` の桁数が `count` を超える場合、下位の桁は丸められます。 `count` 桁より少ない場合は、文字列が 0 で埋められます。  
   
  `_ecvt` によって返される桁の総数は、`_CVTBUFSIZE` 以下である必要があります。  
   
@@ -136,9 +137,6 @@ int main( void )
 ```Output  
 source: 3.1415926535   buffer: '3141592654'  decimal: 1  sign: 0  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Convert::ToString](https://msdn.microsoft.com/en-us/library/system.convert.tostring.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   

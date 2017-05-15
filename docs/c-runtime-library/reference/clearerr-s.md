@@ -50,10 +50,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a8904000ae9175f0f6d43b70bc8c6af5e5b572dc
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5bdd1bacddfa22bb9a7fe7b3d6e11b06c5a969b6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="clearerrs"></a>clearerr_s
@@ -72,7 +73,7 @@ errno_t clearerr_s(
  `FILE` 構造体へのポインター  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は&0;、`stream` が NULL の場合は `EINVAL`。  
+ 正常終了した場合は 0、`stream` が NULL の場合は `EINVAL`。  
   
 ## <a name="remarks"></a>コメント  
  `clearerr_s` 関数は、`stream` のエラー インジケーターとファイルの終わりインジケーターをリセットします。 エラー インジケーターは自動的にクリアされません。指定のストリームのエラー インジケーターを設定すると、そのストリームに対する操作は、`clearerr_s`、`clearerr`、`fseek`、`fsetpos`、または `rewind` が呼び出されるまでエラー値を返し続けます。  
@@ -140,9 +141,6 @@ n
       nWrite error: Bad file descriptor  
 Will input cause an error? n  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   

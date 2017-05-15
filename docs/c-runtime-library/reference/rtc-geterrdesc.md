@@ -50,10 +50,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 4850b9e6da16ad2b446b532281d65cd3bf535698
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 00098336be0198102b6154a7d6252b024b3cf949
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="rtcgeterrdesc"></a>_RTC_GetErrDesc
@@ -70,10 +71,10 @@ ms.lasthandoff: 02/24/2017
   
 #### <a name="parameters"></a>パラメーター  
  *errnum*  
- 0 から `_RTC_NumErrors`によって戻される値より&1; 少ない値までの範囲の数値。  
+ 0 から `_RTC_NumErrors`によって戻される値より 1 少ない値までの範囲の数値。  
   
 ## <a name="return-value"></a>戻り値  
- 実行時エラー チェック システムによって検出されたエラーの&1; つの種類に関する簡単な説明が含まれている文字列。 エラーが&0; 未満であるか、[_RTC_NumErrors](../../c-runtime-library/reference/rtc-numerrors.md) によって返される値以上である場合、`_RTC_GetErrDesc` は NULL を返します。  
+ 実行時エラー チェック システムによって検出されたエラーの 1 つの種類に関する簡単な説明が含まれている文字列。 エラーが 0 未満であるか、[_RTC_NumErrors](../../c-runtime-library/reference/rtc-numerrors.md) によって返される値以上である場合、`_RTC_GetErrDesc` は NULL を返します。  
   
 ## <a name="requirements"></a>要件  
   
@@ -85,9 +86,6 @@ ms.lasthandoff: 02/24/2017
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [_RTC_NumErrors](../../c-runtime-library/reference/rtc-numerrors.md)   

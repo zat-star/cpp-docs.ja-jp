@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: f352a9efb06dc0267abcf1d4174c48dcbaae78a2
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 6cc4af94f5eae06cde244da58c4aa03e561821a7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltstringgt"></a>&lt;string&gt;
@@ -73,15 +74,15 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator+](../standard-library/string-operators.md#operator_add)|2 つの文字列オブジェクトを連結します。|  
-|[operator!=](../standard-library/string-operators.md#operator_neq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しくないかどうかを調べます。|  
-|[operator==](../standard-library/string-operators.md#operator_eq_eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しいかどうかを調べます。|  
-|[operator<](../standard-library/string-operators.md#operator_lt_)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより小さいかどうかを調べます。|  
-|[operator<=](../standard-library/string-operators.md#operator_lt__eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以下かどうかを調べます。|  
-|[operator<\<](../standard-library/string-operators.md#operator_lt__lt_)|出力ストリームに文字列を挿入するテンプレート関数。|  
-|[operator>](../standard-library/string-operators.md#operator_gt_)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより大きいかどうかを調べます。|  
-|[operator>=](../standard-library/string-operators.md#operator_gt__eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以上かどうかを調べます。|  
-|[operator>>](../standard-library/string-operators.md#operator_gt__gt_)|入力ストリームから文字列を抽出するテンプレート関数。|  
+|[operator+](../standard-library/string-operators.md#op_add)|2 つの文字列オブジェクトを連結します。|  
+|[operator!=](../standard-library/string-operators.md#op_neq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しくないかどうかを調べます。|  
+|[operator==](../standard-library/string-operators.md#op_eq_eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しいかどうかを調べます。|  
+|[operator<](../standard-library/string-operators.md#op_lt)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより小さいかどうかを調べます。|  
+|[operator<=](../standard-library/string-operators.md#op_lt_eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以下かどうかを調べます。|  
+|[operator<\<](../standard-library/string-operators.md#op_lt_lt)|出力ストリームに文字列を挿入するテンプレート関数。|  
+|[operator>](../standard-library/string-operators.md#op_gt)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより大きいかどうかを調べます。|  
+|[operator>=](../standard-library/string-operators.md#op_gt_eq)|演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以上かどうかを調べます。|  
+|[operator>>](../standard-library/string-operators.md#op_gt_gt)|入力ストリームから文字列を抽出するテンプレート関数。|  
   
 ### <a name="specialized-template-functions"></a>特殊テンプレート関数  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[getline テンプレート関数](../standard-library/string-functions.md#getline)|入力ストリームから文字列を行単位で抽出します。|  
+|[getline テンプレート](../standard-library/string-functions.md#getline)|入力ストリームから文字列を行単位で抽出します。|  
   
 ### <a name="classes"></a>クラス  
   

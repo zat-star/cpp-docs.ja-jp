@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 5dfcf2a0231bf961b0ca4ebebdec9871b7252fc7
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 4400582a792644b928c02db346bc7eae1087dc85
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="pow-powf-powl"></a>pow、powf、powl
@@ -127,7 +128,7 @@ long double powl(
   
  `pow` には、ストリーミング SIMD 拡張機能 (SSE2) を使用して実装されています。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](../../c-runtime-library/reference/set-sse2-enable.md)」をご覧ください。  
   
- C++ ではオーバーロードが可能であるため、`pow` のさまざまなオーバーロードを呼び出すことができます。 C プログラムでは、`pow` は常に&2; 個の double 値を受け取って、double 値を返します。  
+ C++ ではオーバーロードが可能であるため、`pow` のさまざまなオーバーロードを呼び出すことができます。 C プログラムでは、`pow` は常に 2 個の double 値を受け取って、double 値を返します。  
   
  `pow(int, int)` オーバーロードは使用できなくなりました。 このオーバーロードを使用すると、コンパイラは C2668 を生じる場合があります。 この問題を回避するには、最初のパラメーターを `double`、`float`、または `long double` にキャストします。  
   
@@ -165,12 +166,9 @@ int main( void )
 2.0 to the power of 3.0 is 8.0  
 ```  
   
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Math::Pow](https://msdn.microsoft.com/en-us/library/system.math.pow.aspx)  
-  
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [exp、expf](../../c-runtime-library/reference/exp-expf.md)   
+ [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
  [log、logf、log10、log10f](../../c-runtime-library/reference/log-logf-log10-log10f.md)   
  [sqrt、sqrtf、sqrtl](../../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)   
  [_CIpow](../../c-runtime-library/cipow.md)

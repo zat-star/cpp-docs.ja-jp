@@ -1,55 +1,73 @@
 ---
 title: "_makepath_s、_wmakepath_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_wmakepath_s"
-  - "_makepath_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-filesystem-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_wmakepath_s"
-  - "makepath_s"
-  - "_makepath_s"
-  - "wmakepath_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_makepath_s 関数"
-  - "wmakepath_s 関数"
-  - "パス"
-  - "_wmakepath_s 関数"
-  - "makepath_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _wmakepath_s
+- _makepath_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-filesystem-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _wmakepath_s
+- makepath_s
+- _makepath_s
+- wmakepath_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- _makepath_s function
+- wmakepath_s function
+- paths
+- _wmakepath_s function
+- makepath_s function
 ms.assetid: 4405e43c-3d63-4697-bb80-9b8dcd21d027
 caps.latest.revision: 29
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 29
----
-# _makepath_s、_wmakepath_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: 0d3ac02a0ac8dfa7f681c8585be7e1b6f41f0f82
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-パス名の要素からパス名を作成します。  これらの関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[\_makepath、\_wmakepath](../../c-runtime-library/reference/makepath-wmakepath.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="makepaths-wmakepaths"></a>_makepath_s、_wmakepath_s
+コンポーネントからパス名を作成します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_makepath、_wmakepath](../../c-runtime-library/reference/makepath-wmakepath.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t _makepath_s(  
@@ -86,67 +104,67 @@ errno_t _wmakepath_s(
 ); // C++ only  
 ```  
   
-#### パラメーター  
- \[出力\] `path`  
- 完全パス名のバッファー。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `path`  
+ 完全なパスのバッファー。  
   
- \[入力\] `sizeInWords`  
- バッファーのサイズ \(ワード数\)。  
+ [入力] `sizeInWords`  
+ バッファーのサイズ (単語単位)。  
   
- \[入力\] `sizeInBytes`  
- バッファーのサイズ \(バイト数\)。  
+ [入力] `sizeInBytes`  
+ バッファーのサイズ (バイト単位)。  
   
- \[入力\] `drive`  
- 目的のドライブに対応する文字 \(A、B など\) を指定します。後続のコロンは省略できます。  コロンを省略した場合、`_makepath_s` によって、コロンが自動的にパス名に挿入されます。  `drive` が `NULL` の場合、または空の文字列を指す場合、作成される `path` 文字列にドライブ文字は含まれません。  
+ [入力] `drive`  
+ 必要なドライブに対応する文字 (A、B など) と、この後に続くオプションのコロンを含んでいます。 `_makepath_s` ではコロンが見つからない場合、合成されるパスに自動的にコロンが挿入されます。 `drive` が `NULL` であるか空の文字列へのポインターである場合、合成された `path` 文字列にドライブ文字は含まれません。  
   
- \[入力\] `dir`  
- ドライブ指定子と実際のファイル名を除いて、ディレクトリのパスを指定します。  後続のスラッシュまたは円記号は省略できます。1 つの `dir` 引数には、スラッシュ \(\/\) か円記号 \(\\\)、またはその両方を使用することもできます。  後続のスラッシュ \(\/\) または円記号 \(\\\) は、指定しなくても自動的に挿入されます。  `dir` が `NULL` の場合、または空の文字列を指す場合、作成される `path` 文字列にディレクトリのパスは挿入されません。  
+ [入力] `dir`  
+ ドライブ指定子も実際のファイル名も含まない、ディレクトリのパスを含んでいます。 末尾のスラッシュは省略可能で、フォワード スラッシュ (/) またはバックスラッシュ (\\) のいずれかまたは両方が、単一の `dir` 引数内で使用できます。 末尾のスラッシュ (/ と \\ のいずれも) を指定していない場合は、スラッシュが自動的に挿入されます。 `dir` が `NULL` であるか空の文字列へのポインターである場合、合成された `path` 文字列にディレクトリ パスは挿入されません。  
   
- \[入力\] `fname`  
- 拡張子の付いていない基本ファイル名を指定します。  `fname` が `NULL` の場合、または空の文字列を指す場合、作成される `path` 文字列にファイル名は挿入されません。  
+ [入力] `fname`  
+ ファイル名拡張子を付けないベース ファイル名が含まれています。 `fname` が `NULL` であるか空の文字列へのポインターである場合、合成された `path` 文字列にファイル名は挿入されません。  
   
- \[入力\] `ext`  
- 実際のファイル名の拡張子を指定します。先頭のピリオド \(.\) は省略できます。  `ext` にピリオドがない場合、`_makepath_s` によって自動的にピリオドが挿入されます。  `ext` が `NULL` の場合、または空の文字列を指す場合、作成される `path` 文字列に拡張子は挿入されません。  
+ [入力] `ext`  
+ 先行するピリオド (.) の有無を問わず、実際のファイル名拡張子が含まれています。 `ext` にピリオドが含まれていない場合は、`_makepath_s` によってピリオドが自動的に挿入されます。 `ext` が `NULL` であるか空の文字列へのポインターである場合、合成された `path` 文字列に拡張子は挿入されません。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
-|`path`|`sizeInWords` \/ `sizeInBytes`|戻り値|`path` の内容|  
-|------------|------------------------------------|---------|----------------|  
+|`path`|`sizeInWords` / `sizeInBytes`|リターン|`path` の内容|  
+|------------|------------------------------------|------------|------------------------|  
 |`NULL`|任意|`EINVAL`|変更されない|  
-|任意|\<\= 0|`EINVAL`|変更されない|  
+|任意|<= 0|`EINVAL`|変更されない|  
   
- 上のいずれかのエラー条件が発生すると、これらの関数は「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーを呼び出します。  実行の継続 `errno` は`EINVAL` に設定され、関数から`EINVAL`\#\#\#.`NULL` はパラメーター `drive`、`fname`と `ext`で使用されます。  これらのパラメーターが null ポインターまたは空の文字列である場合の動作については、「解説」を参照してください。  
+ 上記のいずれかのエラー条件が発生すると、これらの関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から `EINVAL` が返されます。 `NULL` は、`drive`、`fname`、`ext` の各パラメーターで許可されています。 これらのパラメーターが Null ポインターまたは空の文字列である場合の動作の詳細については、「コメント」セクションを参照してください。  
   
-## 解説  
- `_makepath_s` 関数は、各構成要素からパスの文字列を作成し、結果を `path` に格納します。  `path` には、ドライブ文字、ディレクトリのパス、ファイル名、およびファイル名の拡張子が含まれます。  `_wmakepath_s` は `_makepath_s` のワイド文字バージョンであり、`_wmakepath_s` の引数はワイド文字列です。  それ以外では、`_wmakepath_s` と `_makepath_s` の動作は同じです。  
+## <a name="remarks"></a>コメント  
+ `_makepath_s` 関数は個別のコンポーネントから合成パス文字列を作成し、`path` に結果を格納します。 `path` に格納される可能性があるのは、ドライブ文字、ディレクトリ パス、ファイル名、ファイル名拡張子です。 `_wmakepath_s` は `_makepath_s` のワイド文字バージョンであり、`_wmakepath_s` の引数はワイド文字列です。 それ以外では、`_wmakepath_s` と `_makepath_s` の動作は同じです。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tmakepath_s`|`_makepath_s`|`_makepath_s`|`_wmakepath_s`|  
   
- `path` 引数は、絶対パスを保持するのに十分な大きさの空きバッファーを指す必要があります。  作成される `path` の長さは、Stdlib.h に定義されている定数 `_MAX_PATH` を超えることはできません。  
+ `path` 引数は、完全なパスを保持するのに十分な大きさの空のバッファーを指す必要があります。 合成 `path` は、Stdlib.h で定義されている、`_MAX_PATH` 定数以下にする必要があります。  
   
- パスが `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  さらに、`errno` が `EINVAL` に設定されます。  他のすべてのパラメーターでは、`NULL` 値が許容されます。  
+ path が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 さらに、`errno` が `EINVAL` に設定されます。 その他のすべてのパラメーターに対しては `NULL` 値が許可されます。  
   
- C\+\+ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる \(サイズの引数を指定する必要がなくなる\) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。  詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。  この動作を無効にするには、[\_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
+ これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_makepath_s`|\<stdlib.h\>|  
-|`_wmakepath_s`|\<stdlib.h\> または \<wchar.h\>|  
+|-------------|---------------------|  
+|`_makepath_s`|\<stdlib.h>|  
+|`_wmakepath_s`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_makepath_s.c  
@@ -186,7 +204,7 @@ int main( void )
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Path created with _makepath_s: c:\sample\crt\crt_makepath_s.c  
@@ -198,11 +216,8 @@ Path extracted with _splitpath_s:
   Ext: .c  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::IO::File::Create](https://msdn.microsoft.com/en-us/library/system.io.file.create.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
- [\_fullpath、\_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md)   
- [\_splitpath\_s、\_wsplitpath\_s](../../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)   
- [\_makepath、\_wmakepath](../../c-runtime-library/reference/makepath-wmakepath.md)
+ [_fullpath、_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md)   
+ [_splitpath_s、_wsplitpath_s](../../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)   
+ [_makepath、_wmakepath](../../c-runtime-library/reference/makepath-wmakepath.md)

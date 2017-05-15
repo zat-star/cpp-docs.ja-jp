@@ -60,10 +60,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: ffed1c851bba2187c3c9b6afbbfc615911210249
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 8352612a254b0abec8f632151246f5a32f39121a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="mkdir-wmkdir"></a>_mkdir、_wmkdir
@@ -86,7 +87,7 @@ int _wmkdir(
  新しいディレクトリのパス。  
   
 ## <a name="return-value"></a>戻り値  
- 新しいディレクトリが作成された場合、これらの各関数は値 0 を返します。 エラーが発生した場合、これらの関数は -1 を返し、`errno` を次のように設定します。  
+ 新しいディレクトリが作成された場合、これらの各関数は値 0 を返します。 エラー、関数の戻り値-1 とセット`errno`次のようにします。  
   
  `EEXIST`  
  `dirname` が既存のファイル、ディレクトリ、またはデバイスの名前であるため、ディレクトリは作成されませんでした。  
@@ -97,7 +98,7 @@ int _wmkdir(
  これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
- `_mkdir` 関数は、指定された *dirname* の新しいディレクトリを作成します。 `_mkdir` は、1 回の呼び出しにつき&1; つの新しいディレクトリしか作成できません。そのため、新しいディレクトリの名前となるのは `dirname` の最後のコンポーネントだけです。 `_mkdir` はパス区切り記号を変換しません。 Windows NT では、バックスラッシュ (\\) とスラッシュ (/) のどちらもランタイム ルーチンの文字列内の有効なパス区切り記号です。  
+ `_mkdir` 関数は、指定された *dirname* の新しいディレクトリを作成します。 `_mkdir` は、1 回の呼び出しにつき 1 つの新しいディレクトリしか作成できません。そのため、新しいディレクトリの名前となるのは `dirname` の最後のコンポーネントだけです。 `_mkdir` はパス区切り記号を変換しません。 Windows NT では、バックスラッシュ (\\) とスラッシュ (/) のどちらもランタイム ルーチンの文字列内の有効なパス区切り記号です。  
   
  `_wmkdir` 関数は、`_mkdir` 関数のワイド文字バージョンです。`dirname` 関数の引数 `_wmkdir` は、ワイド文字列です。 それ以外では、`_wmkdir` と `_mkdir` の動作は同じです。  
   
@@ -159,12 +160,6 @@ Directory '\testtmp' was successfully created
                2 Dir(s)  15,498,690,560 bytes free  
 Directory '\testtmp' was successfully removed  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::IO::Directory::CreateDirectory](https://msdn.microsoft.com/en-us/library/system.io.directory.createdirectory.aspx)  
-  
--   [System::IO::DirectoryInfo::CreateSubdirectory](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.createsubdirectory.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   

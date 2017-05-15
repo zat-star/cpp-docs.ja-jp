@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a7aef3b83378d36ff5db1ec14c401112818c8de1
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 46bfc6bc42e09348d0760f7d03d70c816fde31ed
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="rawstorageiterator-class"></a>raw_storage_iterator クラス
@@ -70,29 +71,29 @@ class raw_storage_iterator
   
 |||  
 |-|-|  
-|[raw_storage_iterator](#raw_storage_iterator__raw_storage_iterator)|指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。|  
+|[raw_storage_iterator](#raw_storage_iterator)|指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[element_type](#raw_storage_iterator__element_type)|生のストレージ反復子によって格納される要素を記述する型を提供します。|  
-|[iter_type](#raw_storage_iterator__iter_type)|生のストレージ反復子の基になる反復子を記述する型を提供します。|  
+|[element_type](#element_type)|生のストレージ反復子によって格納される要素を記述する型を提供します。|  
+|[iter_type](#iter_type)|生のストレージ反復子の基になる反復子を記述する型を提供します。|  
   
 ### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator*](#raw_storage_iterator__operator_star)|出力反復子式 * `ii` = `x` を実装するために使用される逆参照演算子。|  
-|[operator=](#raw_storage_iterator__operator_eq)|生のストレージ反復子式 * `i` = `x` をメモリへの格納用に実装するために使用される代入演算子。|  
-|[operator++](#raw_storage_iterator__operator_add_add)|生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。|  
+|[operator*](#op_star)|出力反復子式 * `ii` = `x` を実装するために使用される逆参照演算子。|  
+|[operator=](#op_eq)|生のストレージ反復子式 * `i` = `x` をメモリへの格納用に実装するために使用される代入演算子。|  
+|[operator++](#op_add_add)|生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
   
-##  <a name="raw_storage_iterator__element_type"></a>  raw_storage_iterator::element_type  
+##  <a name="element_type"></a>  raw_storage_iterator::element_type  
  生のストレージ反復子によって格納される要素を記述する型を提供します。  
   
 ```
@@ -102,7 +103,7 @@ typedef Type element_type;
 ### <a name="remarks"></a>コメント  
  この型は raw_storage_iterator クラス テンプレート パラメーター **Type** のシノニムです。  
   
-##  <a name="raw_storage_iterator__iter_type"></a>  raw_storage_iterator::iter_type  
+##  <a name="iter_type"></a>  raw_storage_iterator::iter_type  
  生のストレージ反復子の基になる反復子を記述する型を提供します。  
   
 ```
@@ -112,7 +113,7 @@ typedef ForwardIterator iter_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター **ForwardIterator** のシノニムです。  
   
-##  <a name="raw_storage_iterator__operator_star"></a>  raw_storage_iterator::operator*  
+##  <a name="op_star"></a>  raw_storage_iterator::operator*  
  生のストレージ反復子式 \* *ii* = *x* を実装するために使用される逆参照演算子。  
   
 ```
@@ -123,7 +124,7 @@ raw_storage_iterator<ForwardIterator, Type>& operator*();
  生のストレージ反復子への参照  
   
 ### <a name="remarks"></a>コメント  
- **ForwardIterator** の要件は、生のストレージ反復子で式 \* *ii* = *t* が有効であることを満たすことを必要とするのみで、**演算子**または `operator=` 自体については何も必要としないことです。 この実装のメンバー演算子は、**\*this** を返します。そのため、[operator=](#raw_storage_iterator__operator_eq)( **constType**&) は、\* *ptr* = `val` など、式内で実際の格納を実行できます。  
+ **ForwardIterator** の要件は、生のストレージ反復子で式 \* *ii* = *t* が有効であることを満たすことを必要とするのみで、**演算子**または `operator=` 自体については何も必要としないことです。 この実装のメンバー演算子は、**\*this** を返します。そのため、[operator=](#op_eq)( **constType**&) は、\* *ptr* = `val` など、式内で実際の格納を実行できます。  
   
 ### <a name="example"></a>例  
   
@@ -176,7 +177,7 @@ Constructing 5
 *\  
 ```  
   
-##  <a name="raw_storage_iterator__operator_eq"></a>  raw_storage_iterator::operator=  
+##  <a name="op_eq"></a>  raw_storage_iterator::operator=  
  生のストレージ反復子式 \* *i* = *x* をメモリへの格納用に実装するために使用される代入演算子。  
   
 ```
@@ -245,7 +246,7 @@ Constructing 5
 *\  
 ```  
   
-##  <a name="raw_storage_iterator__operator_add_add"></a>  raw_storage_iterator::operator++  
+##  <a name="op_add_add"></a>  raw_storage_iterator::operator++  
  生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。  
   
 ```
@@ -298,7 +299,7 @@ array 4 = 8
 *\  
 ```  
   
-##  <a name="raw_storage_iterator__raw_storage_iterator"></a>  raw_storage_iterator::raw_storage_iterator  
+##  <a name="raw_storage_iterator"></a>  raw_storage_iterator::raw_storage_iterator  
  指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。  
   
 ```

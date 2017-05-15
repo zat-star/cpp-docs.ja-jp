@@ -59,10 +59,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: f84bf4392de02ad95e637ee3f952f10496619b9c
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 64e215e42433ac7d69e8005f1e44f9ae8184bec0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="unlink-wunlink"></a>_unlink、_wunlink
@@ -84,9 +85,9 @@ int _wunlink(
  削除するファイルの名前。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、これらの各関数は 0 を返します。 それ以外の場合、関数は -1 を返し、`errno` を `EACCES` に設定します (パスに読み取り専用ファイルが指定されている場合)。または、`ENOENT` に設定します (ファイルまたはパスが見つからないか、パスにディレクトリが指定されている場合)。  
+ 正常に終了した場合、これらの各関数は 0 を返します。 関数は-1 を返しますそれ以外の場合、およびセット`errno`に`EACCES`、読み取り専用ファイル、つまり、パスを指定しますまたは`ENOENT`ファイルまたはパスが見つからない、またはパスがディレクトリを指定します。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `_unlink` 関数は、`filename` によって指定されたファイルを削除します。 `_wunlink` 関数は、`_unlink` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wunlink` は、ワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
@@ -134,9 +135,6 @@ This file will be deleted.
 ```  
 Deleted 'CRT_UNLINK.TXT'  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::IO::File::Delete](https://msdn.microsoft.com/en-us/library/system.io.file.delete.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

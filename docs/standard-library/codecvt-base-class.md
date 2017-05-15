@@ -1,69 +1,87 @@
 ---
 title: "codecvt_base クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "codecvt_base"
-  - "xlocale/std::codecvt_base"
-  - "std.codecvt_base"
-  - "std::codecvt_base"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "codecvt_base クラス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- codecvt_base
+- xlocale/std::codecvt_base
+dev_langs:
+- C++
+helpviewer_keywords:
+- codecvt_base class
 ms.assetid: 7e95c083-91b4-4b3f-8918-0d4ea244a040
 caps.latest.revision: 20
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
----
-# codecvt_base クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: d0c12f0dfb1b0ceb111f3c3313e78dd5c9197f70
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-変換の結果を示すためにファセットのメンバー関数には戻り値の型を使用する参照される **結果**と列挙型を定義するために使用される codecvt クラスの基本クラスです。  
+---
+# <a name="codecvtbase-class"></a>codecvt_base クラス
+変換の結果を示すためにファセットのメンバー関数の戻り値の型として使用される、**result** と呼ばれる列挙型を定義するために使用される codecvt クラスの基底クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class codecvt_base : public locale::facet {
+public:
+    enum result {ok, partial, error, noconv};
+    codecvt_base( size_t _Refs = 0);
+    bool always_noconv() const;
+    int max_length() const;
+    int encoding() const;
+    ~codecvt_base()
+
+protected:
+    virtual bool do_always_noconv() const;
+    virtual int do_max_length() const;
+    virtual int do_encoding() const;
+};
 ```  
-class codecvt_base : public locale::facet {  
-public:  
-    enum result {ok, partial, error, noconv};  
-    codecvt_base(  
-        size_t _Refs = 0  
-);  
-    bool always_noconv() const;  
-    int max_length() const;  
-    int encoding() const;  
-    ~codecvt_base()  
-protected:  
-    virtual bool do_always_noconv() const;  
-    virtual int do_max_length() const;  
-    virtual int do_encoding() const;  
-};  
-```  
   
-## 解説  
- クラスは、テンプレート クラス [codecvt](../standard-library/codecvt-class.md)のすべての特殊化に共通列挙体について説明します。  列挙体の結果は [do\_in](../Topic/codecvt::do_in.md) または [do\_out](../Topic/codecvt::do_out.md)から有効な戻り値について説明します。:  
+## <a name="remarks"></a>コメント  
+ このクラスは、テンプレート クラス [codecvt](../standard-library/codecvt-class.md) のすべての特殊化に共通する列挙型を表します。 列挙の結果には、次のような [do_in](../standard-library/codecvt-class.md#do_in) または [do_out](../standard-library/codecvt-class.md#do_out) からの可能な戻り値が示されます。  
   
--   内部や外部の文字エンコーディングとの間で変換が成功した場合**ok**。  
+- 内部と外部の文字エンコーディングの変換が正常に行われた場合は、**ok**。  
   
--   ターゲットが成功するには変換に十分な大きさ**部分**。  
+- 変換先が、変換を正常に行うのに十分な大きさでない場合は、**partial**。  
   
--   ソース シーケンスが不適格場合**エラー**。  
+- ソース シーケンスが無効な形式である場合は、**error**。  
   
--   関数が変換を実行する**noconv**。  
+- 関数で変換が行われない場合は、**noconv**。  
   
-## 必要条件  
- **ヘッダー:** の \<ロケール\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## 参照  
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

@@ -84,10 +84,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: eeeab09167f3330ab06dc664fd0163206b6b6ff8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 602b5d1f3cd490213f3f849200eb155456627694
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbcgraph-ismbcgraphl-ismbcprint-ismbcprintl-ismbcpunct-ismbcpunctl-ismbcblank-ismbcblankl-ismbcspace-ismbcspacel"></a>_ismbcgraph、_ismbcgraph_l、_ismbcprint、_ismbcprint_l、_ismbcpunct、_ismbcpunct_l、_ismbcblank、_ismbcblank_l、_ismbcspace、_ismbcspace_l
@@ -153,9 +154,9 @@ int _ismbcspace_l(
   
 |ルーチン|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
-|`_ismbcgraph`|グラフィック|`c` が空白 ( ) を除く ASCII またはカタカナの印刷可能な文字の&1; バイト表現である場合に限り、0 以外の値を返します。|  
-|`_ismbcprint`|印刷可能|`c` が空白 ( ) を含む ASCII またはカタカナの印刷可能な文字の&1; バイト表現である場合に限り、0 以外の値を返します。|  
-|`_ismbcpunct`|区切り記号|`c` が ASCII またはカタカナの区切り記号の&1; バイト表現である場合に限り、0 以外の値を返します。|  
+|`_ismbcgraph`|グラフィック|`c` が空白 ( ) を除く ASCII またはカタカナの印刷可能な文字の 1 バイト表現である場合に限り、0 以外の値を返します。|  
+|`_ismbcprint`|印刷可能|`c` が空白 ( ) を含む ASCII またはカタカナの印刷可能な文字の 1 バイト表現である場合に限り、0 以外の値を返します。|  
+|`_ismbcpunct`|区切り記号|`c` が ASCII またはカタカナの区切り記号の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcblank`|空白または水平タブ|`c` が空白文字または水平タブ文字の場合 (`c`=0x20 または `c`=0x09)、0 以外の値を返します。|  
 |`_ismbcspace`|空白|`c` が空白文字の場合 (`c`=0x20 または 0x09<=`c`<=0x0D)、0 以外の値を返します。|  
   
@@ -178,14 +179,6 @@ int _ismbcspace_l(
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
-  
--   [System::Char::IsPunctuation](https://msdn.microsoft.com/en-us/library/system.char.ispunctuation.aspx)  
-  
--   [System::Char::IsWhiteSpace](https://msdn.microsoft.com/en-us/library/system.char.iswhitespace.aspx)  
-  
--   `_ismbcgraph` および `_ismbcprint` の場合: 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [文字分類](../../c-runtime-library/character-classification.md)   

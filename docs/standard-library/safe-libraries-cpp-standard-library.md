@@ -36,10 +36,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 704101f267c1d63ffc5def918f031bfc9b257e67
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: f1698faaf860ab5b1e2e8579d2077c09c2a46114
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="safe-libraries-c-standard-library"></a>安全なライブラリ: C++ 標準ライブラリ
@@ -54,8 +55,8 @@ Visual C++ に付属しているライブラリ (C++ 標準ライブラリを含
   
 |潜在的に危険なメソッド|安全な同等のメソッド|  
 |-------------------------------|----------------------|  
-|[basic_string::copy](../standard-library/basic-string-class.md#basic_string__copy)|[basic_string::_Copy_s](../standard-library/basic-string-class.md#basic_string___copy_s)|  
-|[char_traits::copy](../standard-library/char-traits-struct.md#char_traits__copy)|[char_traits::_Copy_s](../standard-library/char-traits-struct.md#char_traits___copy_s)|  
+|[copy](../standard-library/basic-string-class.md#copy)|[basic_string::_Copy_s](../standard-library/basic-string-class.md#copy_s)|  
+|[copy](../standard-library/char-traits-struct.md#copy)|[char_traits::_Copy_s](../standard-library/char-traits-struct.md#copy_s)|  
   
  上記の潜在的に危険なメソッドのいずれかを呼び出したり、不適切に反復子を使用したりすると、コンパイラは[コンパイラの警告 (レベル 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) を生成します。 これらの警告を無効にする方法の詳細については、「[_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md)」を参照してください。  
   
@@ -64,7 +65,7 @@ Visual C++ に付属しているライブラリ (C++ 標準ライブラリを含
   
  [_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md)  
   
- [チェックを行う反復子](../standard-library/checked-iterators.md)  
+ [Checked Iterators](../standard-library/checked-iterators.md)  
   
  [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)  
   

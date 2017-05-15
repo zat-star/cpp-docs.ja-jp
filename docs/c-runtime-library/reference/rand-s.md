@@ -1,83 +1,100 @@
 ---
-title: "rand_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "rand_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "rand_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "暗号として安全な乱数"
-  - "生成 (擬似乱数を)"
-  - "数, 生成 (擬似乱数を)"
-  - "数, 擬似乱数"
-  - "擬似乱数"
-  - "rand_s 関数"
-  - "乱数, 暗号として安全な"
-  - "乱数, 生成"
+title: rand_s | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- rand_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- rand_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- generating pseudorandom numbers
+- random numbers, cryptographically secure
+- random numbers, generating
+- rand_s function
+- numbers, pseudorandom
+- cryptographically secure random numbers
+- pseudorandom numbers
+- numbers, generating pseudorandom
 ms.assetid: d6a0be60-997d-4904-8411-8aea6839cc94
 caps.latest.revision: 24
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# rand_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 5087948c5737f105e9bc694da1e866be659ff18f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
-疑似乱数を生成します。  この関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[rand](../Topic/rand.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="rands"></a>rand_s
+疑似乱数を生成します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [rand](../../c-runtime-library/reference/rand.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 errno_t rand_s(   unsigned int* randomValue);  
 ```  
   
-## 戻り値  
- 正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。  入力ポインター `randomValue` が null ポインターの場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。  実行の継続が許可された場合、この関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  何らかの理由で関数にエラーが発生すると、\*`randomValue` は 0 に設定されます。  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。 入力ポインター `randomValue` が Null ポインターの場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。 その他の何らかの理由で関数が失敗した場合、*`randomValue` は 0 に設定されます。  
   
-## 解説  
- `rand_s` 関数は、0 ～ `UINT_MAX` の範囲の整数の擬似乱数を入力ポインターに書き込みます。  `rand_s` 関数は、オペレーティング システムを使用して、暗号化によりセキュリティが強化された乱数を生成します。  この関数は [srand](../../c-runtime-library/reference/srand.md) 関数によって生成されるシードを使用しません。また、`rand` によって使用される乱数シーケンスにも影響しません。  
+## <a name="remarks"></a>コメント  
+ `rand_s` 関数は、0 ～ `UINT_MAX` の範囲の整数の擬似乱数を入力ポインターに書き込みます。 `rand_s` 関数では、オペレーティング システムを使用して、暗号強度が高い乱数を生成します。 この関数は [srand](../../c-runtime-library/reference/srand.md) 関数の生成したシードを使用せず、また `rand` の使用するランダムな数値のシーケンスに影響を与えません。  
   
- `rand_s` 関数を宣言するためには、インクルード ステートメントの前に定数 `_CRT_RAND_S` を定義する必要があります。たとえば、次の例のようになります。  
+ `rand_s` 関数を宣言するには、インクルード ステートメントの前に定数 `_CRT_RAND_S` を定義する必要があります。たとえば次の例のようになります。  
   
 ```  
 #define _CRT_RAND_S  
 #include <stdlib.h>  
 ```  
   
- `rand_s` は、その動作を [RtlGenRandom](http://msdn.microsoft.com/library/windows/desktop/aa387694) API に依存しています。この API は、Windows XP 以降でしか利用できません。  
+ `rand_s` は [RtlGenRandom](http://msdn.microsoft.com/library/windows/desktop/aa387694) API に依存しますが、この API は Windows XP 以降でのみ利用できます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`rand_s`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`rand_s`|\<stdlib.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_rand_s.c  
@@ -127,7 +144,7 @@ int main( void )
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 10  
@@ -153,9 +170,6 @@ int main( void )
 65.0712  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::Random Class](https://msdn.microsoft.com/en-us/library/system.random.aspx)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [srand](../../c-runtime-library/reference/srand.md)

@@ -34,10 +34,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 76f96a1e0b88e7b43a2d4efa55cc57e84efdb3b5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
+ms.openlocfilehash: ec13a255f456254f89ca84488d12fbf5ce0440b4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="lttypetraitsgt"></a>&lt;type_traits&gt;
@@ -52,9 +53,9 @@ ms.lasthandoff: 02/24/2017
 ## <a name="remarks"></a>コメント  
  `<type_traits>` のクラスとテンプレートは、コンパイル時に型の推定、分類および変換をサポートしたり、型関連のエラーを検出したり、ジェネリック コードを最適化したりするために使用されます。 これらのクラスとテンプレートには、型のプロパティについて記述する単項の型の特徴、型間の関係を記述する二項の型の特徴、および型のプロパティを変更する変換の特徴が含まれます。  
   
- 型の特徴をサポートするために、ヘルパー クラス `integral_constant` が定義されています。 これには、型の述語の基底クラスを形成するテンプレート特殊化 `true_type` と `false_type` があります。 *型の述語*は、1 つ以上の型引数を受け取るテンプレートです。 型の述語が *true を保持*する場合は、[true_type](../standard-library/type-traits-typedefs.md#true_type_typedef) からパブリックに (直接または間接的に) 派生されます。 型の述語が *false を保持*する場合は、[false_type](../standard-library/type-traits-typedefs.md#false_type_typedef) からパブリックに (直接または間接的に) 派生されます。  
+ 型の特徴をサポートするために、ヘルパー クラス `integral_constant` が定義されています。 これには、型の述語の基底クラスを形成するテンプレート特殊化 `true_type` と `false_type` があります。 *型の述語*は、1 つ以上の型引数を受け取るテンプレートです。 型の述語が *true を保持*する場合は、[true_type](../standard-library/type-traits-typedefs.md#true_type) からパブリックに (直接または間接的に) 派生されます。 型の述語が *false を保持*する場合は、[false_type](../standard-library/type-traits-typedefs.md#false_type) からパブリックに (直接または間接的に) 派生されます。  
   
- *型修飾子*または*変換の特徴*は、1 つ以上のテンプレート引数を受け取り、変更された型のシノニムである&1; つのメンバー、`type` を持つテンプレートです。  
+ *型修飾子*または*変換の特徴*は、1 つ以上のテンプレート引数を受け取り、変更された型のシノニムである 1 つのメンバー、`type` を持つテンプレートです。  
   
 ### <a name="alias-templates"></a>エイリアス テンプレート  
  型の特徴の式を簡略化するために、`typename some_trait<T>::type` の[エイリアス テンプレート](../cpp/aliases-and-typedefs-cpp.md)が提供されます。" `some_trait`" はテンプレート クラス名です。 たとえば、[add_const](../standard-library/add-const-class.md) には、その型 `add_const_t` のエイリアス テンプレートがあり、次のように定義されています。  
@@ -79,8 +80,8 @@ using add_const_t = typename add_const<T>::type;
 |||  
 |-|-|  
 |[integral_constant](../standard-library/integral-constant-class-bool-constant-class.md)|型および値から整数定数を作成します。|  
-|[true_type](../standard-library/type-traits-typedefs.md#true_type_typedef)|true 値を持つ整数定数を保持します。|  
-|[false_type](../standard-library/type-traits-typedefs.md#false_type_typedef)|false 値を持つ整数定数を保持します。|  
+|[true_type](../standard-library/type-traits-typedefs.md#true_type)|true 値を持つ整数定数を保持します。|  
+|[false_type](../standard-library/type-traits-typedefs.md#false_type)|false 値を持つ整数定数を保持します。|  
   
  主な型のカテゴリ  
   
@@ -134,7 +135,7 @@ using add_const_t = typename add_const<T>::type;
 |[is_default_constructible](../standard-library/type-traits-functions.md#is_default_constructible)|型に既定コンストラクターが存在するかどうかをテストします。|  
 |[is_copy_constructible](../standard-library/type-traits-functions.md#is_copy_constructible)|型にコピー コンストラクターが存在するかどうかをテストします。|  
 |[is_move_constructible](../standard-library/type-traits-functions.md#is_move_constructible)|型に移動コンストラクターが存在するかどうかをテストします。|  
-|[is_assignable](../standard-library/type-traits-functions.md#is_assignable)|最初の型に&2; 番目の型の値を割り当てることができるかどうかをテストします。|  
+|[is_assignable](../standard-library/type-traits-functions.md#is_assignable)|最初の型に 2 番目の型の値を割り当てることができるかどうかをテストします。|  
 |[is_copy_assignable](../standard-library/type-traits-functions.md#is_copy_assignable)|型に、その型の const 参照値を割り当てることができるかどうかをテストします。|  
 |[is_move_assignable](../standard-library/type-traits-functions.md#is_move_assignable)|型に、その型の rvalue 参照を割り当てることができるかどうかをテストします。|  
 |[is_destructible](../standard-library/is-destructible-class.md)|型が破棄可能かどうかをテストします。|  

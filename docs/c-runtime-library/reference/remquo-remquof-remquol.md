@@ -55,10 +55,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 304e7e441f85b329d75bc94d1ece5a84592beaf8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: fb7cbf4fe2450d574a4418e62c43dca699cde9b8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="remquo-remquof-remquol"></a>remquo、remquof、remquol
@@ -111,7 +112,7 @@ long double remquol(
 ## <a name="remarks"></a>コメント  
  `remquo` 関数は、`x` = `i` `*` `y` + `f` となる `x` / `y` の剰余 `f` を浮動小数点型で計算します。`i` は整数であり、`f` の符号は `x` と同じであり、`f` の絶対値は `y` の絶対値未満です。  
   
- C++ ではオーバーロードが可能であるため、`remquo` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`remquo` は常に&2; 個の double を受け取って、1 個の double を返します。  
+ C++ ではオーバーロードが可能であるため、`remquo` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`remquo` は常に 2 個の double を受け取って、1 個の double を返します。  
   
 ## <a name="requirements"></a>要件  
   
@@ -145,9 +146,6 @@ int main( void )
 The remainder of -10.00 / 3.00 is -1.000000  
 Approximate signed quotient is -3  
 ```  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Math::IEEERemainder](https://msdn.microsoft.com/en-us/library/system.math.ieeeremainder.aspx)  
   
 ## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   

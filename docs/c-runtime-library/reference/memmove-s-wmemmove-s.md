@@ -1,50 +1,67 @@
 ---
 title: "memmove_s、wmemmove_s | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "wmemmove_s"
-  - "memmove_s"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "wmemmove_s"
-  - "memmove_s"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "memmove_s 関数"
-  - "wmemmove_s 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- wmemmove_s
+- memmove_s
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- wmemmove_s
+- memmove_s
+dev_langs:
+- C++
+helpviewer_keywords:
+- wmemmove_s function
+- memmove_s function
 ms.assetid: a17619e4-1307-4bb0-98c6-77f8c68dab2d
 caps.latest.revision: 26
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 26
----
-# memmove_s、wmemmove_s
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
+ms.openlocfilehash: ca9796f61ad5a3d65d0f421c27133cc2b458f588
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/04/2017
 
-バッファーの内容をほかのバッファーに移動します。  これらの関数は、「[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md)」に説明されているように、[memmove、wmemmove](../../c-runtime-library/reference/memmove-wmemmove.md) のセキュリティが強化されたバージョンです。  
+---
+# <a name="memmoves-wmemmoves"></a>memmove_s、wmemmove_s
+バッファーを別のバッファーに移動します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [memmove、wmemmove](../../c-runtime-library/reference/memmove-wmemmove.md) です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -62,7 +79,7 @@ errno_t wmemmove_s(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `dest`  
  コピー先のオブジェクト。  
   
@@ -73,34 +90,34 @@ errno_t wmemmove_s(
  コピー元のオブジェクト。  
   
  `count`  
- コピーするバイト数 \(`memmove_s`\) または文字数 \(`wmemmove_s`\)。  
+ コピーするバイト数 (`memmove_s`) または文字数 (`wmemmove_s`)。  
   
-## 戻り値  
- 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します  
   
-### エラー条件  
+### <a name="error-conditions"></a>エラー条件  
   
 |`dest`|`numberOfElements`|`src`|戻り値|`dest` の内容|  
-|------------|------------------------|-----------|---------|----------------|  
+|------------|------------------------|-----------|------------------|------------------------|  
 |`NULL`|任意|任意|`EINVAL`|変更されない|  
 |任意|任意|`NULL`|`EINVAL`|変更されない|  
-|任意|\< `count`|任意|`ERANGE`|変更されない|  
+|任意|< `count`|任意|`ERANGE`|変更されない|  
   
-## 解説  
- `src` から `dest` に `count` バイトの文字をコピーします。コピー元とコピー先の領域の一部が重なり合っている場合、`memmove_s` 関数は、重なり合っている領域のコピー元の内容をコピーした後で上書きを行います。  
+## <a name="remarks"></a>コメント  
+ コピー`count`から文字のバイトを`src`に`dest`です。 コピー元とコピー先の領域の一部が重なり合っている場合、`memmove_s` は重なり合っている領域のコピー元のバイトをコピーした後で上書きします。  
   
- `dest` または `src` が null ポインターの場合、またはコピー先文字列が小さすぎる場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、これらの関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
+ `dest` または `src` が Null ポインターの場合、またはコピー先文字列が小さすぎる場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`memmove_s`|\<string.h\>|  
-|`wmemmove_s`|\<wchar.h\>|  
+|-------------|---------------------|  
+|`memmove_s`|\<string.h>|  
+|`wmemmove_s`|\<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_memmove_s.c  
@@ -129,21 +146,18 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Before: 0123456789  
  After: 0012345789  
 ```  
   
-## 同等の .NET Framework 関数  
- [System::Buffer::BlockCopy](https://msdn.microsoft.com/en-us/library/system.buffer.blockcopy.aspx)  
-  
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)   
- [\_memccpy](../../c-runtime-library/reference/memccpy.md)   
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
+ [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   
- [strcpy\_s、wcscpy\_s、\_mbscpy\_s](../../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)   
- [strcpy、wcscpy、\_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
- [strncpy\_s、\_strncpy\_s\_l、wcsncpy\_s、\_wcsncpy\_s\_l、\_mbsncpy\_s、\_mbsncpy\_s\_l](../Topic/strncpy_s,%20_strncpy_s_l,%20wcsncpy_s,%20_wcsncpy_s_l,%20_mbsncpy_s,%20_mbsncpy_s_l.md)   
- [strncpy、\_strncpy\_l、wcsncpy、\_wcsncpy\_l、\_mbsncpy、\_mbsncpy\_l](../../c-runtime-library/reference/strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md)
+ [strcpy_s、wcscpy_s、_mbscpy_s](../../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)   
+ [strcpy、wcscpy、_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
+ [strncpy_s、_strncpy_s_l、wcsncpy_s、_wcsncpy_s_l、_mbsncpy_s、_mbsncpy_s_l](../../c-runtime-library/reference/strncpy-s-strncpy-s-l-wcsncpy-s-wcsncpy-s-l-mbsncpy-s-mbsncpy-s-l.md)   
+ [strncpy、_strncpy_l、wcsncpy、_wcsncpy_l、_mbsncpy、_mbsncpy_l](../../c-runtime-library/reference/strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md)

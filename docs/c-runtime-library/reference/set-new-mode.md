@@ -51,10 +51,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 069a7dd22950e7ae9826ff2cf8c542025f14facd
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 57a578f8accf7244d71c0d8791a6e898ead7d242
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
 ---
 # <a name="setnewmode"></a>_set_new_mode
@@ -73,7 +74,7 @@ int _set_new_mode(
  `malloc` の新しいハンドラー モード。有効な値は 0 または 1 です。  
   
 ## <a name="return-value"></a>戻り値  
- `malloc` の以前のハンドラー モードのセットを返します。 戻り値 1 は、メモリの割り当てに失敗したときに、`malloc` が以前新しいハンドラー ルーチンを呼び出したことを示し、戻り値 0 は呼び出さなかったことを示します。 `newhandlermode` 引数が 0 または 1 と等しくない場合は、-1 を返します。  
+ `malloc` の以前のハンドラー モードのセットを返します。 戻り値 1 は、メモリの割り当てに失敗したときに、`malloc` が以前新しいハンドラー ルーチンを呼び出したことを示し、戻り値 0 は呼び出さなかったことを示します。 場合、`newhandlermode`引数が 0 または 1 と等しくない、-1 を返します。  
   
 ## <a name="remarks"></a>コメント  
  C++ の `_set_new_mode` 関数は [malloc](../../c-runtime-library/reference/malloc.md) の新しいハンドラー モードを設定します。 新しいハンドラー モードは、エラーが発生したときに、`malloc` が [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) によって設定された新しいハンドラー ルーチンを呼び出すかどうかを指定します。 既定では、`malloc` は、メモリの割り当てエラーの際に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすると、`malloc` がメモリの割り当てに失敗したときに、`malloc` 演算子が同じ理由で失敗したときと同じ方法で、`new` によって新しいハンドラー ルーチンを呼び出すことができます。 詳細については、*C++ 言語リファレンス*の「[new](../../cpp/new-operator-cpp.md) および [delete](../../cpp/delete-operator-cpp.md) 演算子」の説明をご覧ください。 既定の動作をオーバーライドするには、次の関数を呼び出します。  
@@ -92,10 +93,7 @@ _set_new_mode(1)
 |-------------|---------------------|  
 |`_set_new_mode`|\<new.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
+ 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   

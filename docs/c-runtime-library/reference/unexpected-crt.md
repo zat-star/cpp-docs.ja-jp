@@ -47,10 +47,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 33cebdc6982d1f91f4a6766776347f6c3cb89f3e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 7e1188d3cf2136e67d2e212640b2c2c29b7cf1f5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="unexpected-crt"></a>unexpected (CRT)
@@ -71,10 +72,7 @@ void unexpected( void );
 |-------------|---------------------|  
 |`unexpected`|\<eh.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- [System::Exception クラス](https://msdn.microsoft.com/en-us/library/system.exception.aspx)  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   

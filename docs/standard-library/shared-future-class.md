@@ -1,70 +1,216 @@
 ---
 title: "shared_future クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "future/std::shared_future"
-dev_langs: 
-  - "C++"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- future/std::shared_future
+- future/std::shared_future::shared_future
+- future/std::shared_future::get
+- future/std::shared_future::valid
+- future/std::shared_future::wait
+- future/std::shared_future::wait_for
+- future/std::shared_future::wait_until
+dev_langs:
+- C++
 ms.assetid: 454ebedd-f42b-405f-99a5-a25cc9ad7c90
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# shared_future クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 84b55dc763d4cd254e4aca55c01690ce5abf0152
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
-*非同期オブジェクトに*ついて説明します。  [今後](../standard-library/future-class.md) オブジェクトに対して、*非同期プロバイダーは*`shared_future` オブジェクトの任意の列に関連付けることができます。  
+---
+# <a name="sharedfuture-class"></a>shared_future クラス
+*非同期のリターン オブジェクト*を記述します。 [future](../standard-library/future-class.md) オブジェクトとは異なり、*非同期プロバイダー*を任意の数の `shared_future` オブジェクトに関連付けることができます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+template <class Ty>
+class shared_future;
 ```  
-template<class Ty>  
-class shared_future;  
-```  
   
-## 解説  
- *空*である `shared_future` オブジェクトの `valid`、`operator=`とデストラクター以外のメソッドを呼び出さないでください。  
+## <a name="remarks"></a>コメント  
+ `valid`、`operator=` のメソッド、および*空の* `shared_future` オブジェクト上のデストラクター以外は呼び出しません。  
   
- `shared_future` オブジェクトは同期されません。  複数のスレッドが同じオブジェクトのメソッドを呼び出すと、予測できない結果になるデータの競合が発生します。  
+ `shared_future` オブジェクトは同期されません。 同じオブジェクト上で複数のスレッドからメソッドを呼び出すことは、結果が予測不可能なデータ競合をもたらします。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[shared\_future::shared\_future コンストラクター](../Topic/shared_future::shared_future%20Constructor.md)|`shared_future` オブジェクトを構築します。|  
+|----------|-----------------|  
+|[shared_future](#shared_future)|`shared_future` オブジェクトを構築します。|  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[shared\_future::get メソッド](../Topic/shared_future::get%20Method.md)|*関連付けられた非同期状態*に格納される結果を取得します。|  
-|[shared\_future::valid メソッド](../Topic/shared_future::valid%20Method.md)|オブジェクトが空でないかどうかを指定します。|  
-|[shared\_future::wait メソッド](../Topic/shared_future::wait%20Method.md)|関連付けられた非同期状態の準備が整うまで現在のスレッドをブロックします。|  
-|[shared\_future::wait\_for メソッド](../Topic/shared_future::wait_for%20Method.md)|関連付けられた非同期状態までブロックの準備ができていないか、指定した時間が経過する。|  
-|[shared\_future::wait\_until メソッド](../Topic/shared_future::wait_until%20Method.md)|関連付けられた非同期状態までブロックは準備が整ったまたは指定した時点まで。|  
-  
-### パブリック演算子  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[shared\_future::operator\= 演算子](../Topic/shared_future::operator=%20Operator.md)|新しい関連の非同期状態を割り当てます。|  
+|----------|-----------------|  
+|[get](#get)|*関連付けられた非同期状態*に格納されている結果を取得します。|  
+|[有効です](#valid)|オブジェクトが空でないかどうかを指定します。|  
+|[待機](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
+|[wait_for](#wait_for)|関連付けられた非同期状態が準備できるまで、または指定した時間が経過するまでブロックします。|  
+|[wait_until](#wait_until)|関連付けられた非同期状態が準備できるまで、または指定した時点までブロックします。|  
   
-## 必要条件  
- **ヘッダー:** future  
+### <a name="public-operators"></a>パブリック演算子  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[shared_future::operator=](#op_eq)|新しい関連付けられた非同期状態を割り当てます。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
   
-## 参照  
+##  <a name="get"></a>shared_future::get
+ *関連付けられた非同期状態*に格納されている結果を取得します。  
+  
+```
+const Ty& get() const;
+
+Ty& get() const;
+
+void get() const;
+```  
+  
+### <a name="remarks"></a>コメント  
+ 結果が例外の場合は、そのメソッドが再スローします。 それ以外の場合、結果が返されます。  
+  
+ 結果を取得する前に、このメソッドは、関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。  
+  
+ 部分的特殊化 `shared_future<Ty&>` では、格納されている値は、実質的には*非同期プロバイダー*に戻り値として渡されたオブジェクトへの参照です。  
+  
+ 特殊化 `shared_future<void>` には格納されている値が存在しないため、このメソッドは `void` を返します。  
+  
+##  <a name="op_eq"></a>  shared_future::operator=  
+ 指定したオブジェクトから、*関連付けられた非同期状態*を転送します。  
+  
+```
+shared_future& operator=(shared_future&& Right) noexcept;
+shared_future& operator=(const shared_future& Right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Right`  
+ `shared_future` オブジェクト。  
+  
+### <a name="return-value"></a>戻り値  
+ `*this`  
+  
+### <a name="remarks"></a>コメント  
+ 最初の演算子では、操作の後、`Right` に関連付けられた非同期状態は既にありません。  
+  
+ 2 番目のメソッドでは、`Right` は関連付けられた非同期状態を維持します。  
+  
+##  <a name="shared_future"></a>  shared_future::shared_future コンストラクター  
+ `shared_future` オブジェクトを構築します。  
+  
+```
+shared_future() noexcept;
+shared_future(future<Ty>&& Right) noexcept;
+shared_future(shared_future&& Right) noexcept;
+shared_future(const shared_future& Right);
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Right`  
+ [future](../standard-library/future-class.md) または `shared_future` オブジェクト。  
+  
+### <a name="remarks"></a>コメント  
+ 1 つ目のコンストラクターは、*関連付けられた非同期状態*がない `shared_future` オブジェクトを構築します。  
+  
+ 2 つ目および 3 つ目のコンストラクターは、`shared_future` オブジェクトを構築し、`Right` から関連付けられた非同期状態を転送します。 `Right` に関連付けられた非同期状態は既にありません。  
+  
+ 4 つ目のコンストラクターは、`Right` と同じ関連付けられた非同期状態を持つ `shared_future` オブジェクトを構築します。  
+  
+##  <a name="valid"></a>shared_future::valid
+ オブジェクトが*関連付けられた非同期状態*であるかどうかを指定します。  
+  
+```
+bool valid() noexcept;
+```  
+  
+### <a name="return-value"></a>戻り値  
+ オブジェクトが関連付けられた非同期状態である場合は `true` を返します。それ以外の場合は `false` を返します。  
+  
+##  <a name="wait"></a>shared_future::wait
+ *関連付けられた非同期状態*が *ready* になるまで、現在のスレッドをブロックします。  
+  
+```
+void wait() const;
+```  
+  
+### <a name="remarks"></a>コメント  
+ 関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ、準備完了になります。  
+  
+##  <a name="wait_for"></a>shared_future::wait_for
+ 関連付けられた非同期状態が *ready* になるまで、または指定した時間が経過するまで、現在のスレッドをブロックします。  
+  
+```
+template <class Rep, class Period>
+future_status wait_for(
+    const chrono::duration<Rep, Period>& Rel_time) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Rel_time`  
+ スレッドがブロックする最大の時間間隔を指定する [chrono::duration](../standard-library/duration-class.md) オブジェクト。  
+  
+### <a name="return-value"></a>戻り値  
+ 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status)。  
+  
+### <a name="remarks"></a>コメント  
+ 関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ *ready* になります。  
+  
+##  <a name="wait_until"></a>shared_future::wait_until
+ 関連付けられた非同期状態が *ready* になるまで、または指定した時点後まで現在のスレッドをブロックします。  
+  
+```
+template <class Clock, class Duration>
+future_status wait_until(
+    const chrono::time_point<Clock, Duration>& Abs_time) const;
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `Abs_time`  
+ スレッドがブロックを解除できる時間を指定する [chrono::time_point](../standard-library/time-point-class.md) オブジェクト。  
+  
+### <a name="return-value"></a>戻り値  
+ 呼び出し側に戻る理由を示す [future_status](../standard-library/future-enums.md#future_status)。  
+  
+### <a name="remarks"></a>コメント  
+ 関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ、準備完了になります。  
+  
+## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [\<future\>](../standard-library/future.md)
+ [\<future>](../standard-library/future.md)
+
+
+
+

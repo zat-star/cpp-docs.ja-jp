@@ -38,10 +38,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b510fbe0b93f97222a093007300a3b3d054d1505
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: d3cfcde97a0f6c89b1f18c4026c6ab49db66fd96
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="syncshared-class"></a>sync_shared クラス
@@ -64,16 +65,16 @@ class sync_shared
   
 |||  
 |-|-|  
-|[allocate](#sync_shared__allocate)|メモリのブロックを割り当てます。|  
-|[deallocate](#sync_shared__deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
-|[equals](#sync_shared__equals)|2 つのキャッシュが等しいかどうかを比較します。|  
+|[allocate](#allocate)|メモリのブロックを割り当てます。|  
+|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
+|[equals](#equals)|2 つのキャッシュが等しいかどうかを比較します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
   
-##  <a name="sync_shared__allocate"></a>  sync_shared::allocate  
+##  <a name="allocate"></a>  sync_shared::allocate  
  メモリのブロックを割り当てます。  
   
 ```
@@ -92,7 +93,7 @@ void *allocate(std::size_t count);
 ### <a name="remarks"></a>コメント  
  メンバー関数はミューテックスをロックし、`cache.allocate(count)` を呼び出し、ミューテックスをロック解除し、以前の `cache.allocate(count)` の呼び出しの結果を返します。 `cache` はキャッシュ オブジェクトを表します。  
   
-##  <a name="sync_shared__deallocate"></a>  sync_shared::deallocate  
+##  <a name="deallocate"></a>  sync_shared::deallocate  
  指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
   
 ```
@@ -109,7 +110,7 @@ void deallocate(void* ptr, std::size_t count);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、ミューテックスをロックし、`cache.deallocate(ptr, count)` (`cache` はキャッシュ オブジェクトを表す) を呼び出し、その後ミューテックスをロック解除します。  
   
-##  <a name="sync_shared__equals"></a>  sync_shared::equals  
+##  <a name="equals"></a>  sync_shared::equals  
  2 つのキャッシュが等しいかどうかを比較します。  
   
 ```

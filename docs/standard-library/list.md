@@ -35,10 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 6c8b7cc67cc2c35b7a02cea7d60c812cf2d9bb92
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: ce9fb66784027d81acaac6e98ad0f6a6121da956
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltlistgt"></a>&lt;list&gt;
@@ -54,12 +55,12 @@ ms.lasthandoff: 02/24/2017
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/list-operators.md#operator_neq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しくないかどうかを調べます。|  
-|[operator<](../standard-library/list-operators.md#operator_lt_)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより小さいかどうかを調べます。|  
-|[operator\<=](../standard-library/list-operators.md#operator_lt__eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以下かどうかを調べます。|  
-|[operator==](../standard-library/list-operators.md#operator_eq_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しいかどうかを調べます。|  
-|[operator>](../standard-library/list-operators.md#operator_gt_)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより大きいかどうかを調べます。|  
-|[operator>=](../standard-library/list-operators.md#operator_gt__eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以上かどうかを調べます。|  
+|[operator!=](../standard-library/list-operators.md#op_neq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しくないかどうかを調べます。|  
+|[operator<](../standard-library/list-operators.md#op_lt)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより小さいかどうかを調べます。|  
+|[operator\<=](../standard-library/list-operators.md#op_gt_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以下かどうかを調べます。|  
+|[operator==](../standard-library/list-operators.md#op_eq_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しいかどうかを調べます。|  
+|[operator>](../standard-library/list-operators.md#op_gt)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより大きいかどうかを調べます。|  
+|[operator>=](../standard-library/list-operators.md#op_gt_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以上かどうかを調べます。|  
   
 ### <a name="classes"></a>クラス  
   

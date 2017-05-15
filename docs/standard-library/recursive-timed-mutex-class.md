@@ -10,6 +10,12 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - mutex/std::recursive_timed_mutex
+- mutex/std::recursive_timed_mutex::recursive_timed_mutex
+- mutex/std::recursive_timed_mutex::lock
+- mutex/std::recursive_timed_mutex::try_lock
+- mutex/std::recursive_timed_mutex::try_lock_for
+- mutex/std::recursive_timed_mutex::try_lock_until
+- mutex/std::recursive_timed_mutex::unlock
 dev_langs:
 - C++
 ms.assetid: 59cc2d5c-ed80-45f3-a0a8-05652a8ead7e
@@ -31,10 +37,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: a28e9521455f0380f412fc2aa81aecd713f9535a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 898661756cd21f362dc9d83dee6dab9b0c16fb8f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="recursivetimedmutex-class"></a>recursive_timed_mutex クラス
@@ -52,25 +59,25 @@ class recursive_timed_mutex;
   
 |名前|説明|  
 |----------|-----------------|  
-|[recursive_timed_mutex コンストラクター](#recursive_timed_mutex__recursive_timed_mutex_constructor)|ロックされていない `recursive_timed_mutex` オブジェクトを構築します。|  
-|[~recursive_timed_mutex デストラクター](#recursive_timed_mutex___dtorrecursive_timed_mutex_destructor)|`recursive_timed_mutex` オブジェクトによって使用されるすべてのリソースを解放します。|  
+|[recursive_timed_mutex](#recursive_timed_mutex)|ロックされていない `recursive_timed_mutex` オブジェクトを構築します。|  
+|[~recursive_timed_mutex デストラクター](#dtorrecursive_timed_mutex_destructor)|`recursive_timed_mutex` オブジェクトによって使用されるすべてのリソースを解放します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[lock](#recursive_timed_mutex__lock_method)|呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。|  
-|[try_lock](#recursive_timed_mutex__try_lock_method)|ブロックせずに `mutex` の所有権を取得しようとします。|  
-|[try_lock_for](#recursive_timed_mutex__try_lock_for_method)|指定した時間のあいだ `mutex` の所有権の取得を試みます。|  
-|[try_lock_until](#recursive_timed_mutex__try_lock_until_method)|指定した時刻まで `mutex` の所有権の取得を試みます。|  
-|[unlock](#recursive_timed_mutex__unlock_method)|`mutex` の所有権を解放します。|  
+|[lock](#lock)|呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。|  
+|[try_lock](#try_lock)|ブロックせずに `mutex` の所有権を取得しようとします。|  
+|[try_lock_for](#try_lock_for)|指定した時間のあいだ `mutex` の所有権の取得を試みます。|  
+|[try_lock_until](#try_lock_until)|指定した時刻まで `mutex` の所有権の取得を試みます。|  
+|[unlock](#unlock)|`mutex` の所有権を解放します。|  
   
 ## <a name="requirements"></a>要件  
- **ヘッダー:** mutex  
+ **ヘッダー:** \<ミュー テックス >  
   
  **名前空間:** std  
   
-##  <a name="a-namerecursivetimedmutexlockmethoda--lock"></a><a name="recursive_timed_mutex__lock_method"></a>  lock  
+##  <a name="lock"></a>  lock  
  呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。  
   
 ```cpp  
@@ -80,14 +87,14 @@ void lock();
 ### <a name="remarks"></a>コメント  
  呼び出しスレッドが既に `mutex` を所有している場合、メソッドが直ちに返され、以前のロックは有効のままになります。  
   
-##  <a name="a-namerecursivetimedmutexrecursivetimedmutexconstructora--recursivetimedmutex-constructor"></a><a name="recursive_timed_mutex__recursive_timed_mutex_constructor"></a>  recursive_timed_mutex コンストラクター  
+##  <a name="recursive_timed_mutex"></a>  recursive_timed_mutex コンストラクター  
  ロックされていない `recursive_timed_mutex` オブジェクトを構築します。  
   
 ```cpp  
 recursive_timed_mutex();
 ```  
   
-##  <a name="a-namerecursivetimedmutexdtorrecursivetimedmutexdestructora--recursivetimedmutex-destructor"></a><a name="recursive_timed_mutex___dtorrecursive_timed_mutex_destructor"></a>  ~recursive_timed_mutex デストラクター  
+##  <a name="dtorrecursive_timed_mutex_destructor"></a>  ~recursive_timed_mutex デストラクター  
  `recursive_timed_mutex` オブジェクトによって使用されるすべてのリソースを解放します。  
   
 ```cpp  
@@ -97,7 +104,7 @@ recursive_timed_mutex();
 ### <a name="remarks"></a>コメント  
  デストラクターの実行時にオブジェクトがロックされる場合の動作は未定義です。  
   
-##  <a name="a-namerecursivetimedmutextrylockmethoda--trylock"></a><a name="recursive_timed_mutex__try_lock_method"></a>  try_lock  
+##  <a name="try_lock"></a>  try_lock  
  ブロックせずに `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -110,7 +117,7 @@ bool try_lock() noexcept;
 ### <a name="remarks"></a>コメント  
  呼び出しスレッドが既に `mutex` を所有している場合、関数が直ちに `true` を返し、以前のロックは有効のままになります。  
   
-##  <a name="a-namerecursivetimedmutextrylockformethoda--trylockfor"></a><a name="recursive_timed_mutex__try_lock_for_method"></a>  try_lock_for  
+##  <a name="try_lock_for"></a>  try_lock_for  
  ブロックせずに `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -128,7 +135,7 @@ bool try_lock_for(const chrono::duration<Rep, Period>& Rel_time);
 ### <a name="remarks"></a>コメント  
  呼び出しスレッドが既に `mutex` を所有している場合、メソッドが直ちに `true` を返し、以前のロックは有効のままになります。  
   
-##  <a name="a-namerecursivetimedmutextrylockuntilmethoda--trylockuntil"></a><a name="recursive_timed_mutex__try_lock_until_method"></a>try_lock_until  
+##  <a name="try_lock_until"></a>try_lock_until  
  ブロックせずに `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -148,7 +155,7 @@ bool try_lock_until(const xtime* Abs_time);
 ### <a name="remarks"></a>コメント  
  呼び出しスレッドが既に `mutex` を所有している場合、メソッドが直ちに `true` を返し、以前のロックは有効のままになります。  
   
-##  <a name="a-namerecursivetimedmutexunlockmethoda--unlock"></a><a name="recursive_timed_mutex__unlock_method"></a>  unlock  
+##  <a name="unlock"></a>  unlock  
  `mutex` の所有権を解放します。  
   
 ```cpp  
@@ -156,7 +163,7 @@ void unlock();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメソッドが `mutex` の所有権を開放するのは、[lock](#recursive_timed_mutex__lock_method)、[try_lock](#recursive_timed_mutex__try_lock_method)、[try_lock_for](#recursive_timed_mutex__try_lock_for_method)、および [try_lock_until](#recursive_timed_mutex__try_lock_until_method) が `recursive_timed_mutex` オブジェクト上で正常に呼び出されたのと同じ回数だけ呼び出された後のみです。  
+ このメソッドが `mutex` の所有権を開放するのは、[lock](#lock)、[try_lock](#try_lock)、[try_lock_for](#try_lock_for)、および [try_lock_until](#try_lock_until) が `recursive_timed_mutex` オブジェクト上で正常に呼び出されたのと同じ回数だけ呼び出された後のみです。  
   
  呼び出しスレッドが `mutex` を所有していない場合の動作は未定義です。  
   

@@ -1,57 +1,74 @@
 ---
 title: "acos、acosf、acosl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "acosf"
-  - "acos"
-  - "acosl"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "acos"
-  - "acosl"
-  - "acosf"
-  - "math/acosf"
-  - "math/acosl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "acos 関数"
-  - "acosf 関数"
-  - "acosl 関数"
-  - "arccosine 関数"
-  - "三角関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- acosf
+- acos
+- acosl
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- acos
+- acosl
+- acosf
+- math/acosf
+- math/acosl
+dev_langs:
+- C++
+helpviewer_keywords:
+- acos function
+- acosl function
+- acosf function
+- trigonometric functions
+- arccosine function
 ms.assetid: 00b89c48-8faf-4824-aa95-fa4349a4975d
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# acos、acosf、acosl
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
+ms.openlocfilehash: 5b5b2e5bca54f65a6fa54d43f92f60a704135110
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/01/2017
 
+---
+# <a name="acos-acosf-acosl"></a>acos、acosf、acosl
 アークコサインを計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double acos(   
@@ -71,32 +88,32 @@ long double acosl(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `x`  
- アークコサイン \(逆コサイン\) を計算する –1 ～ 1 の間の値。  
+ 値-1 ~ 1 のアーク コサイン (逆余弦) を計算するため、範囲です。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  `acos` 関数は、0 ～ π ラジアンの範囲で `x` のアークコサインを返します。  
   
- 既定では、`x` が –1 未満または 1 よりも大きい場合、`acos` は不定値を返します。  
+ 既定では場合、`x`が-1 未満か、1 より大きい`acos`は不定値を返します。  
   
 |入力|SEH 例外|Matherr 例外|  
-|--------|------------|----------------|  
+|-----------|-------------------|-----------------------|  
 |± ∞|`INVALID`|`_DOMAIN`|  
-|± QNAN、IND|なし|`_DOMAIN`|  
-|&#124;x&#124; \> 1|`INVALID`|`_DOMAIN`|  
+|± QNAN、IND|none|`_DOMAIN`|  
+|&#124;x&#124;>1|`INVALID`|`_DOMAIN`|  
   
-## 解説  
- C\+\+ ではオーバーロードが可能であるため、`float` 型および `long double` 型を受け取って返す `acos` のオーバーロードを呼び出すことができます。  C プログラムでは、`acos` は常に `double` を受け取って返します。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、`acos` 型および `float` 型を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`acos` は常に `double` を受け取って返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|省略可能なヘッダー|  
-|----------|------------|---------------|  
-|`acos`, `acosf`, `acosl`|\<math.h\>|\<errno.h\>|  
+|-------------|---------------------|----------------------|  
+|`acos`、`acosf`、`acosl`|\<math.h>|\<errno.h>|  
   
-## 使用例  
- このプログラムは、\-1 ～ 1 の範囲の値の入力を求めます。  入力値がこの範囲外の場合、`_DOMAIN` エラー メッセージを生成します。  有効な値が入力された場合、プログラムはその値のアークサインとアークコサインを出力します。  
+## <a name="example"></a>例  
+ このプログラムは、-1 ～ 1 の範囲の値の入力を求めます。 入力値がこの範囲外の場合、`_DOMAIN` エラー メッセージを生成します。 有効な値が入力された場合、プログラムはその値のアークサインとアークコサインを出力します。  
   
 ```  
 // crt_asincos.c  
@@ -139,16 +156,16 @@ int main( int ac, char* av[] )
 }  
 ```  
   
-  **0.000000 のアークサイン \= 0.000000**  
-**0.000000 のアークコサイン \= 1.570796**   
-## 同等の .NET Framework 関数  
- [System::Math::Acos](https://msdn.microsoft.com/en-us/library/system.math.acos.aspx)  
+```Output  
+Arcsine of 0.000000 = 0.000000  
+Arccosine of 0.000000 = 1.570796  
+```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [asin、asinf、asinl](../../c-runtime-library/reference/asin-asinf-asinl.md)   
  [atan、atanf、atanl、atan2、atan2f、atan2l](../../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)   
  [cos、cosf、cosl、cosh、coshf、coshl](../../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)   
- [\_matherr](../../c-runtime-library/reference/matherr.md)   
+ [_matherr](../../c-runtime-library/reference/matherr.md)   
  [sin、sinf、sinl、sinh、sinhf、sinhl](../../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)   
  [tan、tanf、tanl、tanh、tanhf、tanhl](../../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)

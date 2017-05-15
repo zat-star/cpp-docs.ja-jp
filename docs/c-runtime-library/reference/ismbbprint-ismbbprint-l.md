@@ -55,10 +55,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 64d619e9826e896633aaa35d64d0148bede7879b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
+ms.openlocfilehash: 09187e54126553331a6100fa11c98a730434db12
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="ismbbprint-ismbbprintl"></a>_ismbbprint、_ismbbprint_l
@@ -84,13 +85,13 @@ int _ismbbprint_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbprint` は、式が以下の場合に&0; 以外の値を返します。  
+ `_ismbbprint` は、式が以下の場合に 0 以外の値を返します。  
   
 ```  
 isprint || _ismbbkprint  
 ```  
   
- `c` の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbprint` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `c`の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbprint` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
 ## <a name="requirements"></a>要件  
   
@@ -100,9 +101,6 @@ isprint || _ismbbkprint
 |`_ismbbprint_l`|\<mbctype.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数  
- 該当なし。 標準 C 関数を呼び出すには、 `PInvoke`を使用します。 詳細については、「[プラットフォーム呼び出しの例](http://msdn.microsoft.com/Library/15926806-f0b7-487e-93a6-4e9367ec689f)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
