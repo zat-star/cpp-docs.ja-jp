@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
 ms.openlocfilehash: ca8d4e9a44f4550d02e6d224ce0130d15e81da14
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -44,7 +45,7 @@ ms.lasthandoff: 02/24/2017
   
 - [出力文字列ストリーム コンストラクター](#vclrfoutputstringstreamconstructorsanchor2)  
   
-##  <a name="a-namevclrfoutputfilestreamconstructorsanchor1a-output-file-stream-constructors"></a><a name="vclrfoutputfilestreamconstructorsanchor1"></a> 出力ファイル ストリーム コンストラクター  
+##  <a name="vclrfoutputfilestreamconstructorsanchor1"></a> 出力ファイル ストリーム コンストラクター  
  2 つの方法のいずれかで、出力ファイル ストリームをコンストラクトできます。  
   
 -   既定のコンストラクターを使った後、`open` メンバー関数を呼び出します。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 02/24/2017
     ofstream myFile("filename", ios_base::out);
 ```  
   
-##  <a name="a-namevclrfoutputstringstreamconstructorsanchor2a-output-string-stream-constructors"></a><a name="vclrfoutputstringstreamconstructorsanchor2"></a> 出力文字列ストリーム コンストラクター  
+##  <a name="vclrfoutputstringstreamconstructorsanchor2"></a> 出力文字列ストリーム コンストラクター  
  出力文字列ストリームをコンストラクトするには、次のように `ostringstream` を使うことができます。  
   
 ```  

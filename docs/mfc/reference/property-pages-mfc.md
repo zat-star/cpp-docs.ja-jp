@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -34,9 +34,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
 ms.openlocfilehash: 50888697fe01d3a84d9aa4c6f5f92926e4681535
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -72,7 +73,7 @@ ms.lasthandoff: 02/24/2017
 |[END_PROPPAGEIDS](#end_proppageids)|プロパティ ページ Id の一覧を終了します。|  
 |[PROPPAGEID](#proppageid)|コントロール クラスのプロパティ ページを宣言します。|  
   
-##  <a name="a-nameddpcbindexa--ddpcbindex"></a><a name="ddp_cbindex"></a>DDP_CBIndex  
+##  <a name="ddp_cbindex"></a>DDP_CBIndex  
  プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるコンボ ボックスの現在の選択項目のインデックスの整数型のプロパティの値を同期する関数。  
   
 ```   
@@ -102,7 +103,7 @@ void AFXAPI DDP_CBIndex(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddpcbstringa--ddpcbstring"></a><a name="ddp_cbstring"></a>DDP_CBString  
+##  <a name="ddp_cbstring"></a>DDP_CBString  
  プロパティ ページの この関数を呼び出す`DoDataExchange`文字列プロパティの値をプロパティ ページにあるコンボ ボックスの現在の選択と同期します。  
   
 ```  
@@ -132,7 +133,7 @@ void AFXAPI DDP_CBString(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddpcbstringexacta--ddpcbstringexact"></a><a name="ddp_cbstringexact"></a>DDP_CBStringExact  
+##  <a name="ddp_cbstringexact"></a>DDP_CBStringExact  
  プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるコンボ ボックスの現在の選択内容を正確に一致する文字列プロパティの値を同期する関数。  
   
 ```  
@@ -162,7 +163,7 @@ void AFXAPI DDP_CBStringExact(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddpchecka--ddpcheck"></a><a name="ddp_check"></a>DDP_Check  
+##  <a name="ddp_check"></a>DDP_Check  
  プロパティ ページの [この関数を呼び出す`DoDataExchange`関連付けられたプロパティ ページ] チェック ボックス コントロールとプロパティの値を同期する関数。  
   
 ```   
@@ -192,7 +193,7 @@ void AFXAPI DDP_Check(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddplbindexa--ddplbindex"></a><a name="ddp_lbindex"></a>DDP_LBIndex  
+##  <a name="ddp_lbindex"></a>DDP_LBIndex  
  プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるリスト ボックスの現在の選択項目のインデックスの整数型のプロパティの値を同期する関数。  
   
 ```   
@@ -222,7 +223,7 @@ void AFXAPI DDP_LBIndex(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddplbstringa--ddplbstring"></a><a name="ddp_lbstring"></a>DDP_LBString  
+##  <a name="ddp_lbstring"></a>DDP_LBString  
  プロパティ ページの この関数を呼び出す`DoDataExchange`文字列プロパティの値をプロパティ ページにあるリスト ボックスの現在の選択と同期します。  
   
 ```   
@@ -252,7 +253,7 @@ void AFXAPI DDP_LBString(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddplbstringexacta--ddplbstringexact"></a><a name="ddp_lbstringexact"></a>DDP_LBStringExact  
+##  <a name="ddp_lbstringexact"></a>DDP_LBStringExact  
  プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるリスト ボックスの現在の選択内容を正確に一致する文字列プロパティの値を同期する関数。  
   
 ```   
@@ -282,7 +283,7 @@ void AFXAPI DDP_LBStringExact(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddppostprocessinga--ddppostprocessing"></a><a name="ddp_postprocessing"></a>DDP_PostProcessing  
+##  <a name="ddp_postprocessing"></a>DDP_PostProcessing  
  プロパティ ページの この関数を呼び出す`DoDataExchange`関数、プロパティの値は、保存されているときに、プロパティ ページから、コントロールへのプロパティの値の転送を完了します。  
   
 ```   
@@ -301,7 +302,7 @@ void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddpradioa--ddpradio"></a><a name="ddp_radio"></a>DDP_Radio  
+##  <a name="ddp_radio"></a>DDP_Radio  
  コントロールのこの関数を呼び出す`DoPropExchange`関連付けられたプロパティ ページのオプション ボタン コントロールとプロパティの値を同期する関数。  
   
 ```   
@@ -331,7 +332,7 @@ void AFXAPI DDP_Radio(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameddptexta--ddptext"></a><a name="ddp_text"></a>DDP_Text  
+##  <a name="ddp_text"></a>DDP_Text  
  コントロールのこの関数を呼び出す`DoDataExchange`関連付けられたプロパティ ページのコントロールとプロパティの値を同期する関数。  
   
 ```   
@@ -403,7 +404,7 @@ void AFXAPI DDP_Text(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-namebeginproppageidsa--beginproppageids"></a><a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS  
+##  <a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS  
  コントロールのプロパティ ページ Id のリストの定義を開始します。  
   
 ```   
@@ -425,7 +426,7 @@ BEGIN_PROPPAGEIDS(class_name,  count)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameendproppageidsa--endproppageids"></a><a name="end_proppageids"></a>END_PROPPAGEIDS  
+##  <a name="end_proppageids"></a>END_PROPPAGEIDS  
  プロパティ ページの ID のリストの定義を終了します。  
   
 ```   
@@ -439,7 +440,7 @@ END_PROPPAGEIDS(class_name)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameproppageida--proppageid"></a><a name="proppageid"></a>PROPPAGEID  
+##  <a name="proppageid"></a>PROPPAGEID  
  OLE コントロールで使用するためのプロパティ ページを追加します。  
   
 ```   

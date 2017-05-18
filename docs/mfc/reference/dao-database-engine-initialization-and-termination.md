@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -34,9 +34,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
 ms.openlocfilehash: b6119279234558998fad1f220239a29618c69cc5
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -50,7 +51,7 @@ DAO データベース エンジンが最初にする必要があります MFC D
 |[AfxDaoInit](#afxdaoinit)|DAO データベース エンジンを初期化します。|  
 |[AfxDaoTerm](#afxdaoterm)|データベース エンジンの初期化を終了します。|  
   
-##  <a name="a-nameafxdaoinita--afxdaoinit"></a><a name="afxdaoinit"></a>AfxDaoInit  
+##  <a name="afxdaoinit"></a>AfxDaoInit  
  この関数は、DAO データベース エンジンを初期化します。  
   
 ```  
@@ -68,7 +69,7 @@ throw(CDaoException*);
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="a-nameafxdaoterma--afxdaoterm"></a><a name="afxdaoterm"></a>AfxDaoTerm  
+##  <a name="afxdaoterm"></a>AfxDaoTerm  
  この関数は、データベース エンジンの初期化を終了します。  
   
 ```  

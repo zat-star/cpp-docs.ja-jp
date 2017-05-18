@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
 ms.openlocfilehash: fbbed22766f9029456f15c4a554ae91322e6a275
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -52,7 +53,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
    
-##  <a name="a-namebeginpropmapa--beginpropmap"></a><a name="begin_prop_map"></a>あり、その場合  
+##  <a name="begin_prop_map"></a>あり、その場合  
  オブジェクトのプロパティ マップの先頭をマークします。  
   
 ```
@@ -73,7 +74,7 @@ BEGIN_PROP_MAP(theClass)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing #&103;](../../atl/codesnippet/cpp/property-map-macros_1.h)]  
   
-##  <a name="a-namepropdataentrya--propdataentry"></a><a name="prop_data_entry"></a>するため  
+##  <a name="prop_data_entry"></a>するため  
  範囲、または ActiveX コントロールのサイズを示します。  
   
 ```
@@ -102,7 +103,7 @@ PROP_DATA_ENTRY( szDesc, member, vt)
   
  [!code-cpp[NVC_ATL_Windowing #&132;](../../atl/codesnippet/cpp/property-map-macros_3.h)]  
   
-##  <a name="a-namepropentrytypea--propentrytype"></a><a name="prop_entry_type"></a>PROP_ENTRY_TYPE  
+##  <a name="prop_entry_type"></a>PROP_ENTRY_TYPE  
  このマクロを使用すると、オブジェクトのプロパティ マップ プロパティの説明、プロパティの DISPID、およびプロパティ ページの CLSID を入力します。  
   
 ```
@@ -130,7 +131,7 @@ PROP_ENTRY_TYPE( szDesc, dispid, clsid, vt)
 ### <a name="example"></a>例  
  例を参照してください[あり、その場合](#begin_prop_map)します。  
   
-##  <a name="a-namepropentrytypeexa--propentrytypeex"></a><a name="prop_entry_type_ex"></a>PROP_ENTRY_TYPE_EX  
+##  <a name="prop_entry_type_ex"></a>PROP_ENTRY_TYPE_EX  
  ような[PROP_ENTRY_TYPE](#prop_entry_type)は、オブジェクトは、複数のデュアル インターフェイスをサポートしている場合、特定の IID を指定するようにします。  
   
 ```
@@ -163,7 +164,7 @@ PROP_ENTRY_TYPE_EX( szDesc, dispid, clsid, iidDispatch, vt)
   
  [!code-cpp[NVC_ATL_Windowing #&133;](../../atl/codesnippet/cpp/property-map-macros_4.h)]  
   
-##  <a name="a-nameproppagea--proppage"></a><a name="prop_page"></a>PROP_PAGE  
+##  <a name="prop_page"></a>PROP_PAGE  
  このマクロを使用すると、オブジェクトのプロパティ マップにプロパティ ページの CLSID を入力します。  
   
 ```
@@ -185,7 +186,7 @@ PROP_PAGE(clsid)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing #&134;](../../atl/codesnippet/cpp/property-map-macros_5.h)]  
   
-##  <a name="a-nameendpropmapa--endpropmap"></a><a name="end_prop_map"></a>マクロと  
+##  <a name="end_prop_map"></a>マクロと  
  オブジェクトのプロパティ マップの最後をマークします。  
   
 ```

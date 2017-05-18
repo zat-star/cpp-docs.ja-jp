@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -37,9 +37,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
 ms.openlocfilehash: f1ae094e7085017f03daab3f73323da13ab1be39
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -55,7 +56,7 @@ ms.lasthandoff: 02/24/2017
 |[DYNAMIC_DOWNCAST](#dynamic_downcast)|キャストが有効かどうかを確認中に、クラス オブジェクトへのポインターへのポインターをキャストします。|  
 |[STATIC_DOWNCAST](#static_downcast)|ポインターに関連する型の&1; つのクラスからオブジェクトへのポインターをキャストします。 デバッグ ビルドで、 **ASSERT**オブジェクトがない場合、ターゲットの種類"kind of""です。|  
   
-##  <a name="a-namedynamicdowncasta--dynamicdowncast"></a><a name="dynamic_downcast"></a>DYNAMIC_DOWNCAST  
+##  <a name="dynamic_downcast"></a>DYNAMIC_DOWNCAST  
  キャストが有効かどうかを確認中に、クラスのオブジェクトへのポインターへのポインターをキャストする便利な方法を提供します。  
   
 ```   
@@ -74,7 +75,7 @@ DYNAMIC_DOWNCAST(class, pointer)
   
  マウス ポインターによって参照されるオブジェクトがある場合、識別されたクラス"kind of""マクロは、適切なポインターを返します。 これがないかどうか、有効なキャスト、マクロを返します**NULL**します。  
   
-##  <a name="a-namestaticdowncasta--staticdowncast"></a><a name="static_downcast"></a>STATIC_DOWNCAST  
+##  <a name="static_downcast"></a>STATIC_DOWNCAST  
  キャスト*pobject*へのポインターを*、それ以外*オブジェクトです。  
   
 ```   

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
 ms.openlocfilehash: dbce962873194c1bdcb063537247650cff568e35
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -54,7 +55,7 @@ ms.lasthandoff: 02/24/2017
 |[ATL_NOINLINE](#atl_noinline)|関数を示す記号をインライン化することはできません。|  
 |[_ATL_SINGLE_THREADED](#_atl_single_threaded)|場合はシングル スレッド モデルを使用してすべてのオブジェクトを定義します。|  
   
-##  <a name="a-nameatlallwarningsa--atlallwarnings"></a><a name="_atl_all_warnings"></a>_ATL_ALL_WARNINGS  
+##  <a name="_atl_all_warnings"></a>_ATL_ALL_WARNINGS  
  により、ATL の以前のバージョンから変換されたプロジェクトでエラーにあるシンボル  
   
 ```
@@ -88,7 +89,7 @@ ms.lasthandoff: 02/24/2017
   
  Visual C .NET 2002 で生成された新しいプロジェクトにこれを反映`#define`stdafx.h に既定で設定します。  
   
-##  <a name="a-nameatlapartmentthreadeda--atlapartmentthreaded"></a><a name="_atl_apartment_threaded"></a>_ATL_APARTMENT_THREADED  
+##  <a name="_atl_apartment_threaded"></a>_ATL_APARTMENT_THREADED  
  1 つ以上のオブジェクトは、アパートメント スレッドを使う場合を定義します。  
   
 ```
@@ -98,7 +99,7 @@ _ATL_APARTMENT_THREADED
 ### <a name="remarks"></a>コメント  
  アパートメント スレッドを指定します。 参照してください[プロジェクトのスレッド モデルを指定する](../../atl/specifying-the-threading-model-for-a-project-atl.md)その他のオプション、スレッド処理と[オプション、ATL シンプル オブジェクト ウィザード](../../atl/reference/options-atl-simple-object-wizard.md)スレッド処理の詳細については、ATL オブジェクトで利用できるモデルです。  
   
-##  <a name="a-nameatlcstringexplicitconstructorsa--atlcstringexplicitconstructors"></a><a name="_atl_cstring_explicit_constructors"></a>_ATL_CSTRING_EXPLICIT_CONSTRUCTORS  
+##  <a name="_atl_cstring_explicit_constructors"></a>_ATL_CSTRING_EXPLICIT_CONSTRUCTORS  
  によって、`CString`コンス トラクターが明示的に意図しない変換を防止します。  
   
 ```
@@ -110,7 +111,7 @@ _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
   
  _T マクロを使用するとすべてのコンス トラクターの文字列引数に対して、_ATL_CSTRING_EXPLICIT_CONSTRUCTORS を定義し、_UNICODE が定義されているかどうかに関係なくコンパイル エラーを回避できます。  
   
-##  <a name="a-nameatlenableptmwarninga--atlenableptmwarning"></a><a name="_atl_enable_ptm_warning"></a>_ATL_ENABLE_PTM_WARNING  
+##  <a name="_atl_enable_ptm_warning"></a>_ATL_ENABLE_PTM_WARNING  
  メンバー関数へのポインターの ANSI C 標準に準拠した構文の使用を強制するために、このマクロを定義します。 このマクロを使用するとすると、メンバー関数へのポインターを初期化するために非標準の構文を使用する場合に生成される C4867 コンパイラ エラーが発生します。  
   
 ```
@@ -132,7 +133,7 @@ _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
   
  '<' 文字を追加するマップ マクロは、必要があります追加しないこと、もう一度コードに注意してください。  
   
-##  <a name="a-nameatlfreethreadeda--atlfreethreaded"></a><a name="_atl_free_threaded"></a>_ATL_FREE_THREADED  
+##  <a name="_atl_free_threaded"></a>_ATL_FREE_THREADED  
  無料またはニュートラル スレッドを使用して&1; つ以上のオブジェクトの場合を定義します。  
   
 ```
@@ -142,7 +143,7 @@ _ATL_FREE_THREADED
 ### <a name="remarks"></a>コメント  
  フリー スレッドを指定します。 フリー スレッドは、マルチ スレッド アパートメント モデルと同じです。 参照してください[プロジェクトのスレッド モデルを指定する](../../atl/specifying-the-threading-model-for-a-project-atl.md)その他のオプション、スレッド処理と[オプション、ATL シンプル オブジェクト ウィザード](../../atl/reference/options-atl-simple-object-wizard.md)スレッド処理の詳細については、ATL オブジェクトで利用できるモデルです。  
   
-##  <a name="a-nameatlmultithreadeda--atlmultithreaded"></a><a name="_atl_multi_threaded"></a>_ATL_MULTI_THREADED  
+##  <a name="_atl_multi_threaded"></a>_ATL_MULTI_THREADED  
  プロジェクトを表す記号では、無料またはニュートラル両方としてマークされているオブジェクトがあります。  
   
 ```
@@ -152,7 +153,7 @@ _ATL_MULTI_THREADED
 ### <a name="remarks"></a>コメント  
  このシンボルが定義されている場合は、ATL はグローバル データへのアクセスを正しく同期コードを取得します。 新しいコードは同等のマクロを使用する必要があります[_ATL_FREE_THREADED](#_atl_free_threaded)代わりにします。  
   
-##  <a name="a-nameatlnoautomaticnamespacea--atlnoautomaticnamespace"></a><a name="_atl_no_automatic_namespace"></a>_ATL_NO_AUTOMATIC_NAMESPACE  
+##  <a name="_atl_no_automatic_namespace"></a>_ATL_NO_AUTOMATIC_NAMESPACE  
  ATL として名前空間を既定で使用できないようにするシンボル  
   
 ```
@@ -162,7 +163,7 @@ _ATL_NO_AUTOMATIC_NAMESPACE
 ### <a name="remarks"></a>コメント  
  このシンボルが定義されていない場合は実行されます atlbase.h を含む**ATL 名前空間を使用して**名前付けの競合が発生既定では、です。 これを回避するのには、このシンボルを定義します。  
   
-##  <a name="a-nameatlnocomsupporta--atlnocomsupport"></a><a name="_atl_no_com_support"></a>_ATL_NO_COM_SUPPORT  
+##  <a name="_atl_no_com_support"></a>_ATL_NO_COM_SUPPORT  
  これが COM に関連するコードがプロジェクトでコンパイルされていることを防止記号です。  
   
 ```
