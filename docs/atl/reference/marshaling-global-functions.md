@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
 ms.openlocfilehash: dd4b8d50ec69974b7b2af29438b1657e1ce592b4
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -47,7 +48,7 @@ ms.lasthandoff: 02/24/2017
 |[AtlMarshalPtrInProc](#atlmarshalptrinproc)|新しいストリーム オブジェクトを作成し、指定されたインターフェイス ポインターをマーシャ リングします。|  
 |[AtlUnmarshalPtr](#atlunmarshalptr)|ストリームのマーシャ リング データをインターフェイス ポインターに変換します。|  
   
-##  <a name="a-nameatlfreemarshalstreama--atlfreemarshalstream"></a><a name="atlfreemarshalstream"></a>AtlFreeMarshalStream  
+##  <a name="atlfreemarshalstream"></a>AtlFreeMarshalStream  
  ストリーム内のマーシャリング データを解放し、次にストリーム ポインターも解放します。  
 
 ```
@@ -61,7 +62,7 @@ HRESULT AtlFreeMarshalStream(IStream* pStream);
 ### <a name="example"></a>例  
   例を参照してください[AtlMarshalPtrInProc](#atlmarshalptrinproc)します。  
   
-##  <a name="a-nameatlmarshalptrinproca--atlmarshalptrinproc"></a><a name="atlmarshalptrinproc"></a>AtlMarshalPtrInProc  
+##  <a name="atlmarshalptrinproc"></a>AtlMarshalPtrInProc  
  新しいストリーム オブジェクトを作成し、プロキシの CLSID をストリームに書き込みます。さらに、プロキシの初期化に必要なデータをストリームに書き込んで、指定されたインターフェイス ポインターをマーシャリングします。  
   
 ```
@@ -94,7 +95,7 @@ HRESULT AtlMarshalPtrInProc(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#50;](../../atl/codesnippet/cpp/marshaling-global-functions_1.cpp)]  
   
-##  <a name="a-nameatlunmarshalptra--atlunmarshalptr"></a><a name="atlunmarshalptr"></a>AtlUnmarshalPtr  
+##  <a name="atlunmarshalptr"></a>AtlUnmarshalPtr  
  ストリームのマーシャリング データをクライアントが使用できるインターフェイス ポインターに変換します。  
    
 ```

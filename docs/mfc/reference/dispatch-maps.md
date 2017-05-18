@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -35,9 +35,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
 ms.openlocfilehash: 48e5d1fe207089733caa5ed9e8ca30c2de21f95f
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -58,7 +59,7 @@ OLE オートメーションでは、メソッドを呼び出すと、アプリ�
 |[DISP_PROPERTY_PARAM](#disp_property_param)|Get と Set 関数のパラメーターと名前を受け取るための OLE オートメーション プロパティを定義します。|  
 |[DISP_DEFVALUE](#disp_defvalue)|既存のプロパティ オブジェクトの既定値を使用できます。|  
   
-##  <a name="a-namedeclaredispatchmapa--declaredispatchmap"></a><a name="declare_dispatch_map"></a>DECLARE_DISPATCH_MAP  
+##  <a name="declare_dispatch_map"></a>DECLARE_DISPATCH_MAP  
  場合、 `CCmdTarget`-プログラム内の派生クラスは、クラスがそのメソッドとプロパティを公開するディスパッチ マップを提供する必要がありますの OLE オートメーションをサポートしています。  
   
 ```   
@@ -79,7 +80,7 @@ DECLARE_DISPATCH_MAP()
 ### <a name="requirements"></a>要件  
  **ヘッダー:** afxwin.h  
 
-##  <a name="a-namebegindispatchmapa--begindispatchmap"></a><a name="begin_dispatch_map"></a>BEGIN_DISPATCH_MAP  
+##  <a name="begin_dispatch_map"></a>BEGIN_DISPATCH_MAP  
  ディスパッチ マップの定義を宣言します。  
   
 ```  
@@ -99,7 +100,7 @@ BEGIN_DISPATCH_MAP(theClass, baseClass)
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
 
-##  <a name="a-nameenddispatchmapa--enddispatchmap"></a><a name="end_dispatch_map"></a>END_DISPATCH_MAP  
+##  <a name="end_dispatch_map"></a>END_DISPATCH_MAP  
  ディスパッチ マップの定義を終了します。  
   
 ```   
@@ -112,7 +113,7 @@ END_DISPATCH_MAP()
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
 
-##  <a name="a-namedispfunctiona--dispfunction"></a><a name="disp_function"></a>DISP_FUNCTION  
+##  <a name="disp_function"></a>DISP_FUNCTION  
  ディスパッチ マップでは、OLE オートメーション関数を定義します。  
   
 ```   
@@ -198,7 +199,7 @@ DISP_FUNCTION(
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h 
 
-##  <a name="a-namedisppropertya--dispproperty"></a><a name="disp_property"></a>DISP_PROPERTY  
+##  <a name="disp_property"></a>DISP_PROPERTY  
  ディスパッチ マップ内の OLE オートメーション プロパティを定義します。  
   
 ```   
@@ -245,7 +246,7 @@ DISP_PROPERTY(
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h 
 
-##  <a name="a-namedisppropertyexa--disppropertyex"></a><a name="disp_property_ex"></a>DISP_PROPERTY_EX  
+##  <a name="disp_property_ex"></a>DISP_PROPERTY_EX  
  OLE オートメーションのプロパティと名前を取得およびディスパッチ マップ内のプロパティの値を設定するための関数を定義します。  
   
 ```   
@@ -281,7 +282,7 @@ DISP_PROPERTY_EX(
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h 
 
-##  <a name="a-namedisppropertynotifya--disppropertynotify"></a><a name="disp_property_notify"></a>DISP_PROPERTY_NOTIFY  
+##  <a name="disp_property_notify"></a>DISP_PROPERTY_NOTIFY  
  ディスパッチ マップ内には、通知付きの OLE オートメーション プロパティを定義します。  
   
 ```   
@@ -332,7 +333,7 @@ DISP_PROPERTY_NOTIFY(
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h 
 
-##  <a name="a-namedisppropertyparama--disppropertyparam"></a><a name="disp_property_param"></a>DISP_PROPERTY_PARAM  
+##  <a name="disp_property_param"></a>DISP_PROPERTY_PARAM  
  個別にアクセスされるプロパティを定義**取得**と`Set`メンバー関数。  
   
 ```   
@@ -387,7 +388,7 @@ DISP_PROPERTY_PARAM(
 ### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h 
 
-##  <a name="a-namedispdefvaluea--dispdefvalue"></a><a name="disp_defvalue"></a>DISP_DEFVALUE  
+##  <a name="disp_defvalue"></a>DISP_DEFVALUE  
  既存のプロパティ オブジェクトの既定値を使用できます。  
   
 ```   

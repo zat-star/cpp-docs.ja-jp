@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
 ms.openlocfilehash: 26eea5cc8ce8e18af84a9ca89e5ddc94272be44c
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -48,7 +49,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
 
-##  <a name="a-namebegincategorymapa--begincategorymap"></a><a name="begin_category_map"></a>BEGIN_CATEGORY_MAP  
+##  <a name="begin_category_map"></a>BEGIN_CATEGORY_MAP  
  カテゴリのマップの先頭をマークします。  
   
 ```
@@ -74,7 +75,7 @@ BEGIN_CATEGORY_MAP(theClass)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing&#100;](../../atl/codesnippet/cpp/category-macros_1.h)]  
   
-##  <a name="a-nameendcategorymapa--endcategorymap"></a><a name="end_category_map"></a>END_CATEGORY_MAP  
+##  <a name="end_category_map"></a>END_CATEGORY_MAP  
  カテゴリ マップの最後をマークします。  
   
 ```
@@ -84,7 +85,7 @@ END_CATEGORY_MAP()
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_CATEGORY_MAP](#begin_category_map)します。  
   
-##  <a name="a-nameimplementedcategorya--implementedcategory"></a><a name="implemented_category"></a>IMPLEMENTED_CATEGORY  
+##  <a name="implemented_category"></a>IMPLEMENTED_CATEGORY  
  追加、`IMPLEMENTED_CATEGORY`マクロをコンポーネントの[カテゴリ マップ](#begin_category_map)で識別されるカテゴリを実装するとして登録する必要があるかを指定する、`catID`パラメーター。  
   
 ```
@@ -117,7 +118,7 @@ IMPLEMENTED_CATEGORY(catID)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing&#100;](../../atl/codesnippet/cpp/category-macros_1.h)]  
   
-##  <a name="a-namerequiredcategorya--requiredcategory"></a><a name="required_category"></a>要求します。  
+##  <a name="required_category"></a>要求します。  
  追加、`REQUIRED_CATEGORY`マクロをコンポーネントの[カテゴリ マップ](#begin_category_map)で識別されるカテゴリを必要とするとして登録する必要があるかを指定する、`catID`パラメーター。  
   
 ```

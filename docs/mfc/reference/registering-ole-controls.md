@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -34,9 +34,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
 ms.openlocfilehash: 9c54fb7dc3802e78c8dc68df02ff55ef4732a36b
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -57,7 +58,7 @@ ms.lasthandoff: 02/24/2017
   
  `AfxOleRegisterTypeLib`通常の制御 DLL の実装で呼び出されます`DllRegisterServer`します。 同様に、`AfxOleUnregisterTypeLib`によって呼び出される`DllUnregisterServer`です。 `AfxOleRegisterControlClass`、 `AfxOleRegisterPropertyPageClass`、および`AfxOleUnregisterClass`通常と呼ばれる、`UpdateRegistry`コントロールのクラス ファクトリまたはプロパティ ページのメンバー関数。  
   
-##  <a name="a-nameafxoleregistercontrolclassa--afxoleregistercontrolclass"></a><a name="afxoleregistercontrolclass"></a>AfxOleRegisterControlClass  
+##  <a name="afxoleregistercontrolclass"></a>AfxOleRegisterControlClass  
  コントロール クラスを Windows の登録データベースに登録します。  
   
 ```   
@@ -172,7 +173,7 @@ BOOL AFXAPI AfxOleRegisterControlClass(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameafxoleregisterpropertypageclassa--afxoleregisterpropertypageclass"></a><a name="afxoleregisterpropertypageclass"></a>AfxOleRegisterPropertyPageClass  
+##  <a name="afxoleregisterpropertypageclass"></a>AfxOleRegisterPropertyPageClass  
  プロパティ ページのクラスを Windows の登録データベースに登録します。  
   
 ```  
@@ -210,7 +211,7 @@ BOOL AFXAPI AfxOleRegisterPropertyPageClass(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameafxoleregistertypeliba--afxoleregistertypelib"></a><a name="afxoleregistertypelib"></a>AfxOleRegisterTypeLib  
+##  <a name="afxoleregistertypelib"></a>AfxOleRegisterTypeLib  
  Windows 登録データベースのタイプ ライブラリを登録し、OLE コントロールを認識している他のコンテナーで使用されるタイプ ライブラリを使用します。  
   
 ```   
@@ -248,7 +249,7 @@ BOOL AfxOleRegisterTypeLib(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxdisp.h  
   
-##  <a name="a-nameafxoleunregisterclassa--afxoleunregisterclass"></a><a name="afxoleunregisterclass"></a>AfxOleUnregisterClass  
+##  <a name="afxoleunregisterclass"></a>AfxOleUnregisterClass  
  Windows 登録情報データベースからのコントロールまたはプロパティ ページ クラスのエントリを削除します。  
   
 ```   
@@ -268,7 +269,7 @@ BOOL AFXAPI AfxOleUnregisterClass(REFCLSID clsID, LPCSTR pszProgID);
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameafxoleunregistertypeliba--afxoleunregistertypelib"></a><a name="afxoleunregistertypelib"></a>AfxOleUnregisterTypeLib  
+##  <a name="afxoleunregistertypelib"></a>AfxOleUnregisterTypeLib  
  Windows 登録情報データベースからタイプ ライブラリのエントリを削除するには、この関数を呼び出します。  
   
 ```   

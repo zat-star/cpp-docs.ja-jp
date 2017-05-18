@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
 ms.openlocfilehash: 4ace3bb50d824827071260e3f43cec3cda32742f
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -52,7 +53,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
    
-##  <a name="a-nameatlcommoduleregisterservera--atlcommoduleregisterserver"></a><a name="atlcommoduleregisterserver"></a>AtlComModuleRegisterServer  
+##  <a name="atlcommoduleregisterserver"></a>AtlComModuleRegisterServer  
  オブジェクト マップのオブジェクトをすべて登録します。  
   
 ```
@@ -80,7 +81,7 @@ ATLINLINE ATLAPI AtlComModuleRegisterServer(
   
  この関数は[CAtlComModule::RegisterServer](catlcommodule-class.md#registerserver)します。  
   
-##  <a name="a-nameatlcommoduleunregisterservera--atlcommoduleunregisterserver"></a><a name="atlcommoduleunregisterserver"></a>AtlComModuleUnregisterServer  
+##  <a name="atlcommoduleunregisterserver"></a>AtlComModuleUnregisterServer  
  オブジェクト マップのオブジェクトの登録をすべて解除します。  
   
 ```
@@ -108,7 +109,7 @@ ATLINLINE ATLAPI AtlComModuleUnregisterServer(
   
  この関数は[CAtlComModule::UnregisterServer](catlcommodule-class.md#unregisterserver)します。  
   
-##  <a name="a-nameatlcommoduleregisterclassobjectsa--atlcommoduleregisterclassobjects"></a><a name="atlcommoduleregisterclassobjects"></a>AtlComModuleRegisterClassObjects  
+##  <a name="atlcommoduleregisterclassobjects"></a>AtlComModuleRegisterClassObjects  
  この関数は、クラス オブジェクトを登録するために呼び出されます。  
   
 ```
@@ -134,7 +135,7 @@ ATLINLINE ATLAPI AtlComModuleRegisterClassObjects(
 ### <a name="remarks"></a>コメント  
  このヘルパー関数が利用[CComModule::RegisterClassObjects](ccommodule-class.md#registerclassobjects) (ATL 7.0 では古い形式) と[CAtlExeModuleT::RegisterClassObjects](catlexemodulet-class.md#registerclassobjects)します。  
   
-##  <a name="a-nameatlcommodulerevokeclassobjectsa--atlcommodulerevokeclassobjects"></a><a name="atlcommodulerevokeclassobjects"></a>AtlComModuleRevokeClassObjects  
+##  <a name="atlcommodulerevokeclassobjects"></a>AtlComModuleRevokeClassObjects  
  クラス ファクトリをランニング オブジェクト テーブルから削除します。  
   
 ```
@@ -151,7 +152,7 @@ ATLINLINE ATLAPI AtlComModuleRevokeClassObjects(_ATL_COM_MODULE* pComModule);
 ### <a name="remarks"></a>コメント  
  このヘルパー関数が利用[CComModule::RevokeClassObjects](ccommodule-class.md#revokeclassobjects) (ATL 7.0 では古い形式) と[で](catlexemodulet-class.md#revokeclassobjects)します。  
   
-##  <a name="a-nameatlcommodulegetclassobjecta--atlcommodulegetclassobject"></a><a name="atlcommodulegetclassobject"></a>AtlComModuleGetClassObject  
+##  <a name="atlcommodulegetclassobject"></a>AtlComModuleGetClassObject  
  この関数は、クラス ファクトリを返すために呼び出されます。  
   
 ```

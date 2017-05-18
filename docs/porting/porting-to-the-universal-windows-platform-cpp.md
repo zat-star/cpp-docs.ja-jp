@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -30,9 +30,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 220ecd24c6056737d0338cc584663e4664ac81b1
 ms.openlocfilehash: 76a4bae07fd93a393084b6f108fead3ec32988f1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="porting-to-the-universal-windows-platform-c"></a>ユニバーサル Windows プラットフォームへの移植 (C++)
@@ -48,7 +50,7 @@ ms.openlocfilehash: 76a4bae07fd93a393084b6f108fead3ec32988f1
   
  UWP アプリケーションから従来のデスクトップ Win32 DLL を呼び出したい場合は、それも可能です。 このような手順を使用して、既存の従来 Windows デスクトップ C++ のアプリケーション用に、あるいはクロス プラットフォームの標準 C++ コード用に、UWP ユーザー インターフェイス層を作成することができます。 「[方法: ユニバーサル Windows アプリで既存の C++ コードを使用する](../porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app.md)」を参照してください。  
   
-##  <a name="a-namebk81storeappa-porting-a-windows-81-store-app-to-the-uwp"></a><a name="BK_81StoreApp"></a> UWP への Windows 8.1 ストア アプリの移植  
+##  <a name="BK_81StoreApp"></a> UWP への Windows 8.1 ストア アプリの移植  
  Windows 8.1 ストア アプリがある場合は、この手順を使用して、UWP と Windows 10 を実行しているいずれかのデバイスで動作させることができます。  まず、Visual Studio 2017 を使用してプロジェクトを Windows 8.1 プロジェクトとしてビルドし、コンパイラおよびライブラリの変更に起因する問題を最初に回避することをお勧めします。 それが完了したら、2 種類の方法でこれを Windows 10 UWP プロジェクトに変換することができます。 最も簡単な方法 (次の手順で説明) は、ユニバーサル Windows プロジェクトを作成してから、そこに既存のコードをコピーする方法です。 Windows 8.1 デスクトップと Windows 8.1 Phone でユニバーサル プロジェクトを使用していた場合、プロジェクトは XAML では 2 つの異なるレイアウトで始まりますが、表示サイズに合わせて調整する 1 つの動的レイアウトで終わります。  
   
 #### <a name="to-port-a-windows-81-store-app-to-the-uwp"></a>UWP に Windows 8.1 ストア アプリを移植するには  
@@ -92,7 +94,7 @@ ms.openlocfilehash: 76a4bae07fd93a393084b6f108fead3ec32988f1
   
 11. アプリでサポートされるデバイスの種類ごとに、エミュレーターまたは物理デバイスでアプリを実行してデバッグします。 エミュレーターを実行するには、仮想マシンではなく、物理コンピューター上で Visual Studio を実行する必要があります。  
   
-##  <a name="a-namebk81componenta-porting-a-windows-81-runtime-component-to-the-uwp"></a><a name="BK_81Component"></a> UWP への Windows 8.1 ランタイム コンポーネントの移植  
+##  <a name="BK_81Component"></a> UWP への Windows 8.1 ランタイム コンポーネントの移植  
  DLL、または Windows 8.1 ストア アプリで既に動作している Windows ランタイム コンポーネントがある場合は、この手順を使用して、UWP と Windows 10 でコンポーネントまたは DLL を使用できます。 基本的な手順は、新しいプロジェクトを作成し、それにコードをコピーすることです。  
   
 #### <a name="to-port-a-windows-81-runtime-component-to-the-uwp"></a>UWP への Windows 8.1 ランタイム コンポーネントの移植  
@@ -131,9 +133,4 @@ could not find assembly 'platform.winmd': please specify the assembly search pat
 ## <a name="see-also"></a>関連項目  
  [Visual C++ 移植ガイド](../porting/porting-to-the-universal-windows-platform-cpp.md)   
  [ユニバーサル Windows プラットフォーム (UWP) 向けアプリの開発](/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp)
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -37,9 +37,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
 ms.openlocfilehash: d2649ef9c8b0320a94ec28a2341baa0f768b07d0
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -58,7 +59,7 @@ ms.lasthandoff: 02/24/2017
 |[HashKey](#hashkey)|ハッシュ キーを計算します。|  
 |[SerializeElements](#serializeelements)|保存またはアーカイブからの要素を取得します。|  
   
-##  <a name="a-namecompareelementsa--compareelements"></a><a name="compareelements"></a>CompareElements  
+##  <a name="compareelements"></a>CompareElements  
  によって直接と呼ばれる [CList::Find] (clist class.md #not_found.md #clist__find と間接的に[cmap__lookup](cmap-class.md#lookup)と[cmap__operator](cmap-class.md#operator_at)します。  
   
 ```   
@@ -95,7 +96,7 @@ CompareElements(
 ### <a name="requirements"></a>要件  
    **ヘッダー:** afxtempl.h   
   
-##  <a name="a-namecopyelementsa--copyelements"></a><a name="copyelements"></a>CopyElements  
+##  <a name="copyelements"></a>CopyElements  
  この関数によって直接[CArray::Append](carray-class.md#append)と[CArray::Copy](carray-class.md#copy)します。  
   
 ```   
@@ -127,7 +128,7 @@ void AFXAPI CopyElements(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxtempl.h  
   
-##  <a name="a-namedumpelementsa--dumpelements"></a><a name="dumpelements"></a>DumpElements  
+##  <a name="dumpelements"></a>DumpElements  
  オーバーライドされた場合、コレクションの要素のテキスト形式のストリーム指向の診断出力を提供します。  
   
 ```   
@@ -160,7 +161,7 @@ void  AFXAPI DumpElements(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxtempl.h  
   
-##  <a name="a-namehashkeya--hashkey"></a><a name="hashkey"></a>HashKey  
+##  <a name="hashkey"></a>HashKey  
  指定したキーのハッシュ値を計算します。  
   
 ```  
@@ -196,7 +197,7 @@ template <> UINT AFXAPI HashKey(unsigned __int64 key)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxtempl.h 
   
-##  <a name="a-nameserializeelementsa--serializeelements"></a><a name="serializeelements"></a>SerializeElements  
+##  <a name="serializeelements"></a>SerializeElements  
  [CArray](carray-class.md)、 [CList](clist-class.md)、および[メンバー](cmap-class.md)要素にシリアル化には、この関数を呼び出します。  
   
 ```   

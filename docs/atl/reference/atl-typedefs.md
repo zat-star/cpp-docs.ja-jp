@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: 'index-page '
 dev_langs:
@@ -33,9 +33,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 347e7bf7cd9173fb2815f44fc052ec23ab4055a6
 ms.openlocfilehash: aa57212b602538e4e8d2854c6075562e72472796
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -61,7 +62,7 @@ Active Template Library には、次の typedef が含まれています。
 |[LPCURL](#lpcurl)|定数へのポインター [CUrl](../../atl/reference/curl-class.md)オブジェクトです。|  
 |[LPURL](#lpurl)|ポインター、 [CUrl](../../atl/reference/curl-class.md)オブジェクトです。|  
   
-##  <a name="a-nameatlbasemodulea--atlbasemodule"></a><a name="_atl_base_module"></a>_ATL_BASE_MODULE  
+##  <a name="_atl_base_module"></a>_ATL_BASE_MODULE  
  _ATL_BASE_MODULE70 に基づいて typedef と定義されます。  
   
 ```   
@@ -73,7 +74,7 @@ typedef ATL::_ATL_BASE_MODULE70 _ATL_BASE_MODULE;
   
  ATL 7.0 のモジュールのクラスの一部であるクラスは、_ATL_BASE_MODULE 構造体から派生します。  ATL モジュール クラスの詳細についてを参照してください[COM モジュール クラス](../../atl/com-modules-classes.md)します。  
   
-##  <a name="a-nameatlcommodulea--atlcommodule"></a><a name="_atl_com_module"></a>_ATL_COM_MODULE  
+##  <a name="_atl_com_module"></a>_ATL_COM_MODULE  
  _ATL_COM_MODULE70 に基づいて typedef と定義されます。  
   
 ```   
@@ -83,7 +84,7 @@ typedef ATL::_ATL_COM_MODULE70 _ATL_COM_MODULE;
 ### <a name="remarks"></a>コメント  
  COM 機能を使用する ATL プロジェクトによって使用されます。 基づく[_ATL_COM_MODULE70](../../atl/reference/atl-com-module70-structure.md)します。  
   
-##  <a name="a-nameatlmodulea--atlmodule"></a><a name="_atl_module"></a>_ATL_MODULE  
+##  <a name="_atl_module"></a>_ATL_MODULE  
  _ATL_MODULE70 に基づいて typedef と定義されます。  
   
 ```   
@@ -93,7 +94,7 @@ typedef ATL::_ATL_MODULE70 _ATL_MODULE;
 ### <a name="remarks"></a>コメント  
  基づく[_ATL_MODULE70](../../atl/reference/atl-module70-structure.md)します。  
   
-##  <a name="a-nameatlwinmodulea--atlwinmodule"></a><a name="_atl_win_module"></a>_ATL_WIN_MODULE  
+##  <a name="_atl_win_module"></a>_ATL_WIN_MODULE  
  _ATL_WIN_MODULE70 に基づいて typedef と定義されます。  
   
 ```   
@@ -104,20 +105,20 @@ typedef ATL::_ATL_WIN_MODULE70 _ATL_WIN_MODULE;
 ### <a name="remarks"></a>コメント  
  ウィンドウの機能を使用するすべての ATL プロジェクトによって使用されます。 基づく[_ATL_WIN_MODULE70](../../atl/reference/atl-win-module70-structure.md)します。  
   
-##  <a name="a-nameatlurlporta--atlurlport"></a><a name="atl_url_port"></a>ATL_URL_PORT 
+##  <a name="atl_url_port"></a>ATL_URL_PORT 
   使用される種類[CUrl](curl-class.md)ポート数を指定します。
 ```  
 typedef WORD ATL_URL_PORT;
 ```  
 
-##  <a name="a-nameccomdispatchdrivera--ccomdispatchdriver"></a><a name="ccomdispatchdriver"></a>CComDispatchDriver  
+##  <a name="ccomdispatchdriver"></a>CComDispatchDriver  
  このクラスは、COM インターフェイス ポインターを管理します。  
   
 ```   
 typedef CComQIPtr<IDispatch, &__uuidof(IDispatch)> CComDispatchDriver;   
 ```  
   
-##  <a name="a-nameccomglobalsthreadmodela--ccomglobalsthreadmodel"></a><a name="ccomglobalsthreadmodel"></a>CComGlobalsThreadModel  
+##  <a name="ccomglobalsthreadmodel"></a>CComGlobalsThreadModel  
  適切なスレッドに使用されるスレッド処理モデルに関係なく、モデルのメソッドを呼び出します。  
   
 ```   
@@ -151,7 +152,7 @@ typedef CComMultiThreadModel CComGlobalsThreadModel;
   
  使用`CComObjectThreadModel`1 つのオブジェクト クラス内で。 使用する`CComGlobalsThreadModel`オブジェクトまたは複数のスレッドでモジュールのリソースを保護する場合、プログラムにグローバルに使用可能にします。  
   
-##  <a name="a-nameccomobjectthreadmodela--ccomobjectthreadmodel"></a><a name="ccomobjectthreadmodel"></a>CComObjectThreadModel  
+##  <a name="ccomobjectthreadmodel"></a>CComObjectThreadModel  
  適切なスレッドに使用されるスレッド処理モデルに関係なく、モデルのメソッドを呼び出します。  
   
 ```   
@@ -185,7 +186,7 @@ typedef CComMultiThreadModel CComObjectThreadModel;
   
  使用`CComObjectThreadModel`1 つのオブジェクト クラス内で。 使用`CComGlobalsThreadModel`いずれかであるオブジェクトに複数のスレッドでモジュールのリソースを保護する場合や、プログラムにグローバルに使用可能です。  
   
-##  <a name="a-nameccontainedwindowa--ccontainedwindow"></a><a name="ccontainedwindow"></a>CContainedWindow  
+##  <a name="ccontainedwindow"></a>CContainedWindow  
  このクラスは、特殊化した**CContainedWindowT します。**  
   
 ```   
@@ -195,28 +196,28 @@ typedef CContainedWindowT<CWindow> CContainedWindow;
 ### <a name="remarks"></a>コメント  
  `CContainedWindow`特殊化[CContainedWindowT](../../atl/reference/ccontainedwindowt-class.md)します。 基本クラスまたは特徴 (traits) を変更する場合を使用して`CContainedWindowT`直接します。  
   
-##  <a name="a-namecpatha--cpath"></a><a name="cpath"></a>CPath  
+##  <a name="cpath"></a>CPath  
  特殊化した[CPathT](../../atl/reference/cpatht-class.md)を使用して`CString`します。  
   
 ```   
 typedef CPathT<CString> CPath;   
 ```  
   
-##  <a name="a-namecpathaa--cpatha"></a><a name="cpatha"></a>CPathA  
+##  <a name="cpatha"></a>CPathA  
  特殊化した[CPathT](../../atl/reference/cpatht-class.md)を使用して`CStringA`します。  
   
 ```   
 typedef CPathT<CStringA> CPathA;   
 ```  
   
-##  <a name="a-namecpathwa--cpathw"></a><a name="cpathw"></a>CPathW  
+##  <a name="cpathw"></a>CPathW  
  特殊化した[CPathT](../../atl/reference/cpatht-class.md)を使用して`CStringW`します。  
   
 ```   
 typedef ATL::CPathT<CStringW> CPathW;   
 ```  
   
-##  <a name="a-namecsimplevalarraya--csimplevalarray"></a><a name="csimplevalarray"></a>CSimpleValArray  
+##  <a name="csimplevalarray"></a>CSimpleValArray  
  単純型を格納する配列を表します。  
   
 ```   
@@ -226,14 +227,14 @@ typedef ATL::CPathT<CStringW> CPathW;
 ### <a name="remarks"></a>コメント  
  `CSimpleValArray`作成および単純なデータ型を含む配列を管理するために提供されます。 単純な #include の define [CSimpleArray](../../atl/reference/csimplearray-class.md)します。  
   
-##  <a name="a-namelpcurla--lpcurl"></a><a name="lpcurl"></a>LPCURL  
+##  <a name="lpcurl"></a>LPCURL  
  定数へのポインター [CUrl](../../atl/reference/curl-class.md)オブジェクトです。  
   
 ```   
 typedef const CUrl* LPCURL;   
 ```  
 
-##  <a name="a-namedefaultthreadtraitsa--defaultthreadtraits"></a><a name="defaultthreadtraits"></a>DefaultThreadTraits
+##  <a name="defaultthreadtraits"></a>DefaultThreadTraits
 既定のスレッドの特徴 (traits) クラス。
 
 ### <a name="syntax"></a>構文
@@ -248,7 +249,7 @@ typedef const CUrl* LPCURL;
 ## <a name="remarks"></a>コメント
 現在のプロジェクトでは、マルチ スレッド CRT を使用する場合は、DefaultThreadTraits が CRTThreadTraits として定義されます。 それ以外の場合、Win32ThreadTraits が使用されます。
   
-##  <a name="a-namelpurla--lpurl"></a><a name="lpurl"></a>LPURL  
+##  <a name="lpurl"></a>LPURL  
  ポインター、 [CUrl](../../atl/reference/curl-class.md)オブジェクトです。  
   
 ```   

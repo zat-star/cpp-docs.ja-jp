@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
 ms.openlocfilehash: 3a3abf5ad29b50c7f6708f02fd7c5aa193b3591c
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -54,7 +55,7 @@ ms.lasthandoff: 02/24/2017
  **ヘッダー:** atlcom.h  
   
     
-##  <a name="a-nameatlstaticregistrya--atlstaticregistry"></a><a name="_atl_static_registry"></a>_ATL_STATIC_REGISTRY  
+##  <a name="_atl_static_registry"></a>_ATL_STATIC_REGISTRY  
  ATL. への依存関係を避けるために、オブジェクト内にあるオブジェクトの登録コードをするかを示すシンボルDLL です。  
   
 ```
@@ -66,7 +67,7 @@ ms.lasthandoff: 02/24/2017
   
  [!code-cpp[NVC_ATL_EventHandlingSample&#5;](../../atl/codesnippet/cpp/registry-macros_1.cpp)]  
   
-##  <a name="a-namedeclarelibida--declarelibid"></a><a name="declare_libid"></a>DECLARE_LIBID  
+##  <a name="declare_libid"></a>DECLARE_LIBID  
  ATL を取得するための手段を提供、 *libid*のタイプ ライブラリ。  
   
 ```
@@ -83,14 +84,14 @@ DECLARE_LIBID( libid )
 ### <a name="example"></a>例  
  ATL ウィザードで生成されたプロジェクトの属性なしこのマクロを使用するサンプルが含まれます。  
   
-##  <a name="a-namedeclarenoregistrya--declarenoregistry"></a><a name="declare_no_registry"></a>DECLARE_NO_REGISTRY  
+##  <a name="declare_no_registry"></a>DECLARE_NO_REGISTRY  
  使用`DECLARE_NO_REGISTRY`をこのマクロが表示されるクラスの既定の ATL 登録を避けたい場合。  
   
 ```
 DECLARE_NO_REGISTRY()
 ```  
   
-##  <a name="a-namedeclareregistrya--declareregistry"></a><a name="declare_registry"></a>DECLARE_REGISTRY  
+##  <a name="declare_registry"></a>DECLARE_REGISTRY  
  システム レジストリに標準的なクラスの登録を入力またはシステム レジストリから削除されます。  
   
 ```
@@ -123,7 +124,7 @@ DECLARE_REGISTRY(
   
  ウィザードが自動的にレジストリのスクリプト ベースのサポートを実装して、追加オブジェクトを作成またはクラスの追加ウィザードを使用して制御するときに、[代入](#declare_registry_resourceid)ファイルにマクロです。 レジストリのスクリプトを使用したサポートしたくない場合は、使用してこのマクロを置き換える必要があります。`DECLARE_REGISTRY`します。 `DECLARE_REGISTRY`のみ、レジストリに上記で説明した&5; つの基本的なキーを挿入します。 その他のキーをレジストリに挿入するコードを手動で作成する必要があります。  
   
-##  <a name="a-namedeclareregistryappidresourceida--declareregistryappidresourceid"></a><a name="declare_registry_appid_resourceid"></a>DECLARE_REGISTRY_APPID_RESOURCEID  
+##  <a name="declare_registry_appid_resourceid"></a>DECLARE_REGISTRY_APPID_RESOURCEID  
  自動的に登録するために必要な情報を示す、 *appid*します。  
   
 ```
@@ -145,7 +146,7 @@ DECLARE_REGISTRY_APPID_RESOURCEID(
 ### <a name="example"></a>例  
  クラスの追加コード ウィザードを使用して ATL プロジェクトに追加されたクラスをこのマクロを使用するサンプルが含まれます。  
   
-##  <a name="a-namedeclareregistryresourcea--declareregistryresource"></a><a name="declare_registry_resource"></a>に  
+##  <a name="declare_registry_resource"></a>に  
  レジストリ ファイルを含む名前付きリソースを取得し、システム レジストリにオブジェクトを入力するか、システム レジストリから削除するスクリプトを実行します。  
   
 ```
@@ -168,7 +169,7 @@ DECLARE_REGISTRY_RESOURCE( x )
   
  置き換え可能パラメーターとスクリプトの詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)します。  
   
-##  <a name="a-namedeclareregistryresourceida--declareregistryresourceid"></a><a name="declare_registry_resourceid"></a>代入  
+##  <a name="declare_registry_resourceid"></a>代入  
  同じ[に](#declare_registry_resource)ウィザードで生成されたを使用する点を除いて**UINT**文字列名ではなく、リソースを識別するためにします。  
   
 ```

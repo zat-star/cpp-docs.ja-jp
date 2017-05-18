@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
 ms.openlocfilehash: efb7e7da896aea4e377225f4c1e2c9948e635705
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -46,7 +47,7 @@ ms.lasthandoff: 02/24/2017
 |[AtlHiMetricToPixel](#atlhimetrictopixel)|HIMETRIC 単位 (各単位は 0.01 ミリメートル) をピクセル単位に変換します。|  
 |[AtlPixelToHiMetric](#atlpixeltohimetric)|HIMETRIC 単位 (ピクセル) に変換します (各単位は 0.01 ミリメートル)。|  
   
-##  <a name="a-nameatlhimetrictopixela--atlhimetrictopixel"></a><a name="atlhimetrictopixel"></a>AtlHiMetricToPixel  
+##  <a name="atlhimetrictopixel"></a>AtlHiMetricToPixel  
  HIMETRIC 単位 (各単位は 0.01 mm) のオブジェクトのサイズを画面デバイス上のピクセル単位のサイズに変換します。  
   
  
@@ -69,7 +70,7 @@ extern void AtlHiMetricToPixel(
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="a-nameatlpixeltohimetrica--atlpixeltohimetric"></a><a name="atlpixeltohimetric"></a>AtlPixelToHiMetric  
+##  <a name="atlpixeltohimetric"></a>AtlPixelToHiMetric  
  画面デバイス上のピクセル単位のオブジェクトのサイズを HIMETRIC 単位 (各単位は 0.01 mm) のサイズに変換します。  
   
 ```

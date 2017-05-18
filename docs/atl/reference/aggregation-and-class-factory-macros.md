@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -32,9 +32,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
 ms.openlocfilehash: 4509f7be36e45cf96a938e30ec0f82ec0c9836b5
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -59,7 +60,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
    
-##  <a name="a-namedeclareaggregatablea--declareaggregatable"></a><a name="declare_aggregatable"></a>DECLARE_AGGREGATABLE  
+##  <a name="declare_aggregatable"></a>DECLARE_AGGREGATABLE  
  オブジェクトを集計できることを指定します。  
   
 ```
@@ -76,7 +77,7 @@ DECLARE_AGGREGATABLE( x )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing #&121;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_1.h)]  
   
-##  <a name="a-namedeclareclassfactorya--declareclassfactory"></a><a name="declare_classfactory"></a>DECLARE_CLASSFACTORY  
+##  <a name="declare_classfactory"></a>DECLARE_CLASSFACTORY  
  宣言[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)出荷時のクラスにします。  
   
 ```
@@ -89,7 +90,7 @@ DECLARE_CLASSFACTORY()
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#55;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_2.h)]  
   
-##  <a name="a-nameccomclassfactoryclassa--ccomclassfactory-class"></a><a name="ccomclassfactory_class"></a>CComClassFactory クラス  
+##  <a name="ccomclassfactory_class"></a>CComClassFactory クラス  
  このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイスです。  
   
 ```
@@ -114,7 +115,7 @@ public CComObjectRootEx<CComGlobalsThreadModel>
   
 - [DECLARE_CLASSFACTORY_SINGLETON](#declare_classfactory_singleton)を使用して[CComClassFactorySingleton](../../atl/reference/ccomclassfactorysingleton-class.md)を構築する&1; つの[CComObjectGlobal](../../atl/reference/ccomobjectglobal-class.md)オブジェクトです。  
   
-##  <a name="a-namedeclareclassfactoryexa--declareclassfactoryex"></a><a name="declare_classfactory_ex"></a>DECLARE_CLASSFACTORY_EX  
+##  <a name="declare_classfactory_ex"></a>DECLARE_CLASSFACTORY_EX  
  宣言`cf`出荷時のクラスにします。  
   
 ```
@@ -133,7 +134,7 @@ DECLARE_CLASSFACTORY_EX( cf )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&8;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_3.h)]  
   
-##  <a name="a-namedeclareclassfactory2a--declareclassfactory2"></a><a name="declare_classfactory2"></a>DECLARE_CLASSFACTORY2  
+##  <a name="declare_classfactory2"></a>DECLARE_CLASSFACTORY2  
  宣言[CComClassFactory2](../../atl/reference/ccomclassfactory2-class.md)出荷時のクラスにします。  
   
 ```
@@ -150,7 +151,7 @@ DECLARE_CLASSFACTORY2( lic )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&2;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_4.h)]  
   
-##  <a name="a-nameccomclassfactory2classa--ccomclassfactory2-class"></a><a name="ccomclassfactory2_class"></a>CComClassFactory2 クラス  
+##  <a name="ccomclassfactory2_class"></a>CComClassFactory2 クラス  
  このクラスは、実装、 [IClassFactory2](http://msdn.microsoft.com/library/windows/desktop/ms692720)インターフェイスです。  
   
 ```
@@ -183,7 +184,7 @@ class  CComClassFactory2 : public IClassFactory2,
   
  `CComClassFactory2`2 つの派生**CComClassFactory2Base**と*ライセンス*します。 **CComClassFactory2Base**から派生、 **IClassFactory2**と**CComObjectRootEx\< CComGlobalsThreadModel >**します。  
   
-##  <a name="a-namedeclareclassfactoryautothreada--declareclassfactoryautothread"></a><a name="declare_classfactory_auto_thread"></a>DECLARE_CLASSFACTORY_AUTO_THREAD  
+##  <a name="declare_classfactory_auto_thread"></a>DECLARE_CLASSFACTORY_AUTO_THREAD  
  宣言[CComClassFactoryAutoThread](../../atl/reference/ccomclassfactoryautothread-class.md)出荷時のクラスにします。  
   
 ```
@@ -198,7 +199,7 @@ DECLARE_CLASSFACTORY_AUTO_THREAD()
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&9;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_6.h)]  
   
-##  <a name="a-nameccomclassfactoryautothreadclassa--ccomclassfactoryautothread-class"></a><a name="ccomclassfactoryautothread_class"></a>CComClassFactoryAutoThread クラス  
+##  <a name="ccomclassfactoryautothread_class"></a>CComClassFactoryAutoThread クラス  
  このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイス、およびオブジェクトが複数のアパートメント内に作成することができます。  
   
 > [!IMPORTANT]
@@ -216,7 +217,7 @@ public CComObjectRootEx<CComGlobalsThreadModel>
   
  [!code-cpp[NVC_ATL_COM&9;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_6.h)]  
   
-##  <a name="a-namedeclareclassfactorysingletona--declareclassfactorysingleton"></a><a name="declare_classfactory_singleton"></a>DECLARE_CLASSFACTORY_SINGLETON  
+##  <a name="declare_classfactory_singleton"></a>DECLARE_CLASSFACTORY_SINGLETON  
  宣言[CComClassFactorySingleton](../../atl/reference/ccomclassfactorysingleton-class.md)出荷時のクラスにします。  
   
 ```
@@ -233,7 +234,7 @@ DECLARE_CLASSFACTORY_SINGLETON( obj )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM&#10;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_7.h)]  
   
-##  <a name="a-nameccomclassfactorysingletonclassa--ccomclassfactorysingleton-class"></a><a name="ccomclassfactorysingleton_class"></a>CComClassFactorySingleton クラス  
+##  <a name="ccomclassfactorysingleton_class"></a>CComClassFactorySingleton クラス  
  このクラスから派生[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)を使用して[CComObjectGlobal](../../atl/reference/ccomobjectglobal-class.md)を&1; つのオブジェクトを構築します。  
   
 > [!IMPORTANT]
@@ -255,7 +256,7 @@ class CComClassFactorySingleton : public CComClassFactory
   
  [!code-cpp[NVC_ATL_COM&#10;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_7.h)]  
   
-##  <a name="a-namedeclaregetcontrollingunknowna--declaregetcontrollingunknown"></a><a name="declare_get_controlling_unknown"></a>DECLARE_GET_CONTROLLING_UNKNOWN  
+##  <a name="declare_get_controlling_unknown"></a>DECLARE_GET_CONTROLLING_UNKNOWN  
  仮想関数を宣言`GetControllingUnknown`します。  
   
 ```
@@ -265,7 +266,7 @@ DECLARE_GET_CONTROLLING_UNKNOWN()
 ### <a name="remarks"></a>コメント  
  コンパイラ エラー メッセージが表示された場合、このマクロをオブジェクトに追加`GetControllingUnknown`は定義されていません (たとえば、 **CComAggregateCreator**)。  
   
-##  <a name="a-namedeclarenotaggregatablea--declarenotaggregatable"></a><a name="declare_not_aggregatable"></a>DECLARE_NOT_AGGREGATABLE  
+##  <a name="declare_not_aggregatable"></a>DECLARE_NOT_AGGREGATABLE  
  オブジェクトを集約できないことを指定します。  
   
 ```
@@ -284,7 +285,7 @@ DECLARE_NOT_AGGREGATABLE( x )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing #&121;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_1.h)]  
   
-##  <a name="a-namedeclareonlyaggregatablea--declareonlyaggregatable"></a><a name="declare_only_aggregatable"></a>集約  
+##  <a name="declare_only_aggregatable"></a>集約  
  オブジェクトを集約する必要があることを指定します。  
   
 ```
@@ -303,7 +304,7 @@ DECLARE_ONLY_AGGREGATABLE( x )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing #&125;](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_8.h)]  
   
-##  <a name="a-namedeclarepolyaggregatablea--declarepolyaggregatable"></a><a name="declare_poly_aggregatable"></a>DECLARE_POLY_AGGREGATABLE  
+##  <a name="declare_poly_aggregatable"></a>DECLARE_POLY_AGGREGATABLE  
  指定のインスタンス**CComPolyObject \< ** *x* ** > **オブジェクトの作成時に作成します。  
   
 ```
@@ -321,7 +322,7 @@ DECLARE_POLY_AGGREGATABLE( x )
   
  `DECLARE_POLY_AGGREGATABLE`マクロはフル コントロールを作成する、ATL コントロール ウィザードを使用する場合、自動的に、オブジェクトで宣言します。  
   
-##  <a name="a-namedeclareprotectfinalconstructa--declareprotectfinalconstruct"></a><a name="declare_protect_final_construct"></a>アグリゲート  
+##  <a name="declare_protect_final_construct"></a>アグリゲート  
 
  削除されるオブジェクトを保護する (中に[FinalConstruct](ccomobjectrootex-class.md#finalconstruct)) 内部オブジェクトが、カウントを 0 にデクリメントして参照カウントをインクリメントします。  
   
@@ -329,7 +330,7 @@ DECLARE_POLY_AGGREGATABLE( x )
 DECLARE_PROTECT_FINAL_CONSTRUCT()
 ```  
   
-##  <a name="a-namedeclareviewstatusa--declareviewstatus"></a><a name="declare_view_status"></a>DECLARE_VIEW_STATUS  
+##  <a name="declare_view_status"></a>DECLARE_VIEW_STATUS  
  指定する、ATL の ActiveX コントロールのコントロール クラスでこのマクロを置き、**な VIEWSTATUS**コンテナーへのフラグ。  
   
 ```

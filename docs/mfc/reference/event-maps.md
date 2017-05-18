@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -33,9 +33,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
 ms.openlocfilehash: 4c4777496ce609d7c2fa20da726f211264095b6e
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -74,7 +75,7 @@ ms.lasthandoff: 02/24/2017
 |[ON_OLEVERB](#on_oleverb)|OLE コントロールによって処理されるカスタム動詞を示します。|  
 |[ON_STDOLEVERB](#on_stdoleverb)|OLE コントロールの標準動詞マッピングを上書きします。|  
   
-##  <a name="a-namedeclareeventmapa--declareeventmap"></a><a name="declare_event_map"></a>DECLARE_EVENT_MAP  
+##  <a name="declare_event_map"></a>DECLARE_EVENT_MAP  
  各`COleControl`-プログラム内の派生クラスは、コントロールが発生するイベントを指定するためのイベント マップを提供できます。  
   
 ```   
@@ -89,7 +90,7 @@ DECLARE_EVENT_MAP()
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-namebegineventmapa--begineventmap"></a><a name="begin_event_map"></a>BEGIN_EVENT_MAP  
+##  <a name="begin_event_map"></a>BEGIN_EVENT_MAP  
  イベント マップの定義を開始します。  
   
 ```   
@@ -111,7 +112,7 @@ BEGIN_EVENT_MAP(theClass,  baseClass)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameendeventmapa--endeventmap"></a><a name="end_event_map"></a>END_EVENT_MAP  
+##  <a name="end_event_map"></a>END_EVENT_MAP  
  使用して、`END_EVENT_MAP`マクロ イベント マップの定義を終了します。  
   
 ```   
@@ -121,7 +122,7 @@ END_EVENT_MAP()
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameeventcustoma--eventcustom"></a><a name="event_custom"></a>については、「  
+##  <a name="event_custom"></a>については、「  
  カスタム イベントのイベント マップ エントリを定義します。  
   
 ```   
@@ -183,7 +184,7 @@ EVENT_CUSTOM(pszName, pfnFire,  vtsParams)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameeventcustomida--eventcustomid"></a><a name="event_custom_id"></a>EVENT_CUSTOM_ID  
+##  <a name="event_custom_id"></a>EVENT_CUSTOM_ID  
  関数で指定したディスパッチ ID に属するカスタム イベントを発生させるイベントを定義`dispid`します。  
   
 ```   
@@ -220,7 +221,7 @@ EVENT_CUSTOM_ID(
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxctl.h  
   
-##  <a name="a-nameonoleverba--onoleverb"></a><a name="on_oleverb"></a>ON_OLEVERB  
+##  <a name="on_oleverb"></a>ON_OLEVERB  
  このマクロは、カスタム動詞をコントロールの特定のメンバー関数にマップするメッセージ マップ エントリを定義します。  
   
 ```   
@@ -249,7 +250,7 @@ ON_OLEVERB(idsVerbName,  memberFxn)
 ### <a name="requirements"></a>要件  
   **ヘッダー** afxole.h  
   
-##  <a name="a-nameonstdoleverba--onstdoleverb"></a><a name="on_stdoleverb"></a>ON_STDOLEVERB  
+##  <a name="on_stdoleverb"></a>ON_STDOLEVERB  
  このマクロを使用すると、標準の動詞の既定の動作を上書きできます。  
   
 ```   

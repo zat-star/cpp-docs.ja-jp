@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -29,9 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 220ecd24c6056737d0338cc584663e4664ac81b1
 ms.openlocfilehash: 4ea001f8f60a771e46a99960c14201cf6afabc99
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="how-to-use-existing-c-code-in-a-universal-windows-platform-app"></a>方法: ユニバーサル Windows アプリで既存の C++ コードを使用する
@@ -74,7 +76,7 @@ UWP 環境でデスクトップ プログラムを実行できるようにする
   
 3.  [C++ ライブラリをWindows ランタイム コンポーネントに移植する](#BK_WinRTComponent)  
   
-##  <a name="a-namebkwin32dlla-using-a-win32-dll-in-a-universal-windows-platform-app"></a><a name="BK_Win32DLL"></a> ユニバーサル Windows プラットフォーム アプリで Win32 DLL を使用する  
+##  <a name="BK_Win32DLL"></a> ユニバーサル Windows プラットフォーム アプリで Win32 DLL を使用する  
  セキュリティと信頼性を向上させるため、ユニバーサル Windows アプリは制限付きランタイム環境で実行されます。したがって、従来の Windows デスクトップ アプリケーションの場合のようにネイティブ DLL を任意に使用することはできません。 DLL のソース コードがある場合、コードが UWP 上で実行されるように、コードを移植することができます。 まず、いくつかのプロジェクト設定とプロジェクト ファイル メタデータを変更し、プロジェクトを UWP プロジェクトとして識別させます。 /ZW オプションを使用してライブラリ コードをコンパイルする必要があります。これにより、C++/CX が使用可能になります。 特定の API 呼び出しは、環境と関連付けられているより厳密な制御のため、UWP アプリでは許可されていません。 「[Windows ランタイム アプリおよびユニバーサル Windows プラットフォーム (UWP) アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757.aspx)」をご覧ください。  
   
  次の手順は、__declspec(dllexport) を使用して関数を公開するネイティブ DLL がある場合に適用されます。  
@@ -209,7 +211,7 @@ UWP 環境でデスクトップ プログラムを実行できるようにする
   
     ```  
   
-##  <a name="a-namebkstaticliba-using-a-native-c-static-library-in-a-uwp-app"></a><a name="BK_StaticLib"></a> UWP アプリでネイティブ C++ スタティック ライブラリを使用する  
+##  <a name="BK_StaticLib"></a> UWP アプリでネイティブ C++ スタティック ライブラリを使用する  
  UWP プロジェクトでネイティブ C++ スタティック ライブラリを使用することはできますが、理解しておくべき制約と制限があります。 C++/CX でのスタティック ライブラリについては、最初にこの[トピック](https://msdn.microsoft.com/library/hh771041.aspx)をご覧ください。 UWP アプリからスタティック ライブラリのネイティブ コードにアクセスすることはできますが、このようなスタティック ライブラリにパブリックな参照型を作成することは推奨されていません。 /ZW オプションを使用してスタティック ライブラリをコンパイルすると、ライブラリアン (実際にはリンカー) により次の警告が表示されます。  
   
 ```  
@@ -230,7 +232,7 @@ LNK4264: archiving object file compiled with /ZW into a static library; note tha
   
      **ソリューション エクスプローラー**の **[参照]** ノードには参照を追加しないでください。 このメカニズムは、Windows ランタイム コンポーネントの場合のみ機能します。  
   
-##  <a name="a-namebkwinrtcomponenta-porting-a-c-library-to-a-windows-runtime-component"></a><a name="BK_WinRTComponent"></a> C++ ライブラリをWindows ランタイム コンポーネントに移植する  
+##  <a name="BK_WinRTComponent"></a> C++ ライブラリをWindows ランタイム コンポーネントに移植する  
  UWP アプリからスタティック ライブラリのネイティブ API を使用する場合、そのネイティブ ライブラリのソース コードがあるなら、コードを Windows ランタイム コンポーネントに移植できます。 これはスタティック ライブラリではなく、DLL になります。 これは任意の C++ UWP アプリで使用できますが、スタティック ライブラリの場合とは異なり、言語に関係なく、任意の UWP アプリ コードでクライアントが使用できる参照型およびその他の C++/CX コンストラクトを追加することができます。 したがって、C#、Visual Basic、または JavaScript からこれらの型にアクセスできます。  基本的な手順として、Windows ランタイム コンポーネント プロジェクトを作成して、これにスタティック ライブラリのコードをコピーし、次いで、標準 C++ コンパイルから /ZW コンパイルにコードを移行したことに起因するエラーを解決します。  
   
 #### <a name="to-port-a-c-library-to-a-windows-runtime-component"></a>C++ ライブラリを Windows ランタイム コンポーネントに移植するには  
@@ -257,8 +259,3 @@ LNK4264: archiving object file compiled with /ZW into a static library; note tha
   
 ## <a name="see-also"></a>関連項目  
  [ユニバーサル Windows プラットフォームへの移植](../porting/porting-to-the-universal-windows-platform-cpp.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

@@ -26,15 +26,16 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 9b35cb78e482ad9441939f1d7eae5d214d13ab4f
-ms.lasthandoff: 04/01/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ee7e4f3e09f5b1512182d17fda9033a45ad4aa5b
+ms.openlocfilehash: c4bfe76d3b57962fe10df1d55f6ec5b58f70a38a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
    
 # <a name="c-conformance-improvements-in-includevsdev15mdmiscincludesvsdev15mdmd"></a>[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] の C++ 準拠の強化
-
+Update Version 15.3 での改良点については、Visual Studio Update Version 15.3 の「[バグ修正](#update_153)」をご覧ください。
 ## <a name="new-language-features"></a>新しい言語機能  
 一般化された constexpr および集計用の NSDMI をサポートし、コンパイラは、C++ 14 標準で追加されたすべての機能に対応するようになりました。 コンパイラには、C++11 標準および C++98 標準の一部の機能がないことに注意してください。 コンパイラの現在の状態については、「[Visual C++ Language Conformance (Visual C++ 言語への準拠)](visual-cpp-language-conformance.md)」の表を参照してください。
 
@@ -278,16 +279,6 @@ static_assert(test2, "PASS2");
 C++ 標準によると、匿名の名前空間内で宣言されたクラスは内部リンケージがあるため、エクスポートすることができません。 Visual Studio 2015 以前のバージョンでは、この規則は適用されませんでした。 Visual Studio 2017 では、この規則は部分的に適用されます。 次は、Visual Studio 2017 で発生したエラーを表す例です: "error C2201: 'const `anonymous namespace'::S1::`vftable'': must have external linkage in order to be exported/imported."
 
 ```cpp
-namespace
-{
-    struct __declspec(dllexport) S1 { virtual void f() {} }; //C2201
-}
-```
-
-### <a name="classes-declared-in-anonymous-namespaces"></a>匿名の名前空間で宣言されたクラス
-C++ 標準によると、匿名の名前空間内で宣言されたクラスは内部リンケージがあるため、エクスポートすることができません。 Visual Studio 2015 以前のバージョンでは、この規則は適用されませんでした。 Visual Studio 2017 では、この規則は部分的に適用されます。 次は、Visual Studio 2017 で発生したエラーを表す例です: "error C2201: 'const `anonymous namespace'::S1::`vftable'': must have external linkage in order to be exported/imported."
-
-```cpp
 struct __declspec(dllexport) S1 { virtual void f() {} }; //C2201
 ```
 
@@ -357,6 +348,241 @@ void f(ClassLibrary1::Class1 ^r1, ClassLibrary1::Class2 ^r2)
        r2->Value;
 }
 ```
+
+## <a name="update_153"></a> Visual Studio 2017 Update Version 15.3
+### <a name="calls-to-deleted-member-templates"></a>削除されたメンバー テンプレートへの呼び出し
+Visual Studio の以前のバージョンでは、実行時のクラッシュの原因になる可能性がある、削除されたメンバー テンプレートの不適切な形式の呼び出しに対して、コンパイラがエラーの生成に失敗する場合がありました。 次のコードに対しては、C2280: "'int S<int>::f<int>(void)': 削除された関数を参照しようとしています" が生成されるようになりました。
+```cpp
+template<typename T> 
+struct S { 
+template<typename U> static int f() = delete; 
+}; 
+ 
+void g() 
+{ 
+decltype(S<int>::f<int>()) i; // this should fail 
+}
+```
+このエラーを解決するには、i を `int` として宣言します。
+
+### <a name="pre-condition-checks-for-type-traits"></a>型の特徴に対する前提条件の確認
+Visual Studio 2017 Update Version 15.3 では、型の特徴の前提条件の確認が向上し、標準にいっそう厳密に準拠するようになりました。 そのような確認の 1 つは割り当て可能に関するものです。 Update Version 15.3 では、次のコードに対して C2139 が生成されます。
+
+```cpp
+struct S; 
+enum E; 
+ 
+static_assert(!__is_assignable(S, S), "fail"); // this is allowed in VS2017 RTM, but should fail 
+static_assert(__is_convertible_to(E, E), "fail"); // this is allowed in VS2017 RTM, but should fail
+```
+
+### <a name="new-compiler-warning-and-runtime-checks-on-native-to-managed-marshaling"></a>コンパイラの新しい警告と、ネイティブからマネージへのマーシャリングの実行時チェック
+マネージ関数からネイティブ関数を呼び出すには、マーシャリングが必要です。 CLR はマーシャリングを実行しますが、C++ のセマンティクスを理解していません。 ネイティブ オブジェクトを値で渡した場合、CLR はオブジェクトのコピー コンストラクターを呼び出すか、または BitBlt を使いますが、それによって実行時に未定義の動作が発生する可能性があります。 
+ 
+今後は、削除されたコピー コンストラクターを含むネイティブ オブジェクトがネイティブとマネージの境界を越えて値で渡されることをコンパイル時に認識すると、コンパイラは警告を生成します。 コンパイル時に認識できない場合のためには、実行時チェックが挿入されて、不適切な形式のマーシャリングが発生すると直ちにプログラムが std::terminate を呼び出せるようにします。 Update Version 15.3 では、次のようなコードを実行すると、C4606 "'A': ネイティブとマネージの境界を越えて値渡しで引数を渡すには、有効なコピー コンストラクターが必要です。 それがない場合、ランタイムの動作は定義されていません" が発生します。
+```cpp
+class A 
+{ 
+public: 
+A() : p_(new int) {} 
+~A() { delete p_; } 
+ 
+A(A const &) = delete; 
+A(A &&rhs) { 
+p_ = rhs.p_; 
+} 
+ 
+private: 
+int *p_; 
+}; 
+ 
+#pragma unmanaged 
+ 
+void f(A a) 
+{ 
+} 
+ 
+#pragma managed 
+ 
+int main() 
+{ 
+    f(A()); // This call from managed to native requires marshalling. The CLR doesn't understand C++ and uses BitBlt, which will result in a double-free later. 
+}
+```
+このエラーを解決するには、`#pragma managed` ディレクティブを削除し、呼び出し元をネイティブとしてマークして、マーシャリングを回避します。 
+
+### <a name="experimental-api-warning-for-winrt"></a>WinRT に対する実験用 API の警告
+実験とフィードバックのためにリリースされている WinRT API は、`Windows.Foundation.Metadata.ExperimentalAttribute` で修飾されます。 Update Version 15.3 のコンパイラは、この属性を検出すると警告 C4698 を生成します。 以前のバージョンの Windows SDK に含まれる一部の API は、この属性で既に修飾されており、これらの API を呼び出すとこのコンパイラ警告のトリガーが始まります。 新しい Windows SDK では、付属するすべての型からこの属性が削除されていますが、古い SDK を使っている場合は、付属する型のすべての呼び出しでこの警告を抑制する必要があります。
+次のようなコードを実行すると、警告 C4698: "'Windows::Storage::IApplicationDataStatics2::GetForUserAsync' は、評価の目的でのみ提供されています。将来の更新で変更または削除されることがあります" が発生します。
+```cpp
+Windows::Storage::IApplicationDataStatics2::GetForUserAsync()
+```
+
+警告を無効にするには、#pragma を追加します。
+
+```cpp
+#pragma warning(push) 
+#pragma warning(disable:4698) 
+ 
+Windows::Storage::IApplicationDataStatics2::GetForUserAsync() 
+ 
+#pragma warning(pop)
+```
+### <a name="out-of-line-definition-of-a-template-member-function"></a>テンプレート メンバー関数のアウトオブライン定義 
+Update Version 15.3 では、クラスで宣言されていないテンプレート メンバー関数のアウトオブライン定義を検出すると、エラーが生成されます。 次のようなコードに対しては、エラー C2039: "'f': 'S' のメンバーではありません" が発生します。
+
+```cpp
+struct S {}; 
+ 
+template <typename T> 
+void S::f(T t) {}
+```
+
+このエラーを解決するには、次の宣言をクラスに追加します。
+
+```cpp
+struct S { 
+    template <typename T> 
+    void f(T t); 
+}; 
+template <typename T> 
+void S::f(T t) {}
+```
+
+### <a name="attempting-to-take-the-address-of-this-pointer"></a>"this" ポインターのアドレスを取得する試み
+C++ では、"this" は X へのポインター型の prvalue です。"this" のアドレスを取得すること、または左辺値参照にバインドすることはできません。 前のバージョンの Visual Studio では、キャストを実行することにより、この制限を回避できました。 Update Version 15.3 では、コンパイラはエラー C2664 を生成します。
+
+### <a name="conversion-to-an-inaccessible-base-class"></a>アクセスできない基底クラスへの変換
+Update Version 15.3 では、アクセスできない基底クラスに型を変換しようとすると、エラーになります。 コンパイラで発生するエラーは、  
+"エラー C2243: 'type cast': 'D *' から 'B *' の変換は存在しますが、アクセスできません" です。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 コンパイラは、このようなコードを検出すると、C2243 を生成するようになりました。
+
+```cpp
+#include <memory> 
+ 
+class B { }; 
+class D : B { }; // should be public B { }; 
+ 
+void f() 
+{ 
+   std::unique_ptr<B>(new D()); 
+}
+```
+### <a name="default-arguments-are-not-allowed-on-out-of-line-definitions-of-member-functions"></a>メンバー関数のアウトオブライン定義で既定の引数が許可されない
+テンプレート クラスのメンバー関数のアウトオブライン定義では、既定の引数が許可されません。  コンパイラは、/permissive で警告を発行し、/permissive- でハード エラーを発行します。以前のバージョンの Visual Studio では、次のような不適切な形式のコードにより、実行時クラッシュが発生する可能性がありました。 Update Version 15.3 では、警告 C5034: "A<T>::f': クラス テンプレートのメンバーのアウトオブライン定義において既定の引数を使用することはできません" が生成されます。
+```cpp
+ 
+template <typename T> 
+struct A { 
+    T f(T t, bool b = false); 
+}; 
+ 
+template <typename T> 
+T A<T>::f(T t, bool b = false) 
+{ 
+... 
+}
+```
+このエラーを解決するには、既定の引数 "= false" を削除します。 
+
+### <a name="use-of-offsetof-with-compound-member-designator"></a>複合メンバー指定子での offsetof の使用
+Update Version 15.3 では、m が "複合メンバー指定子" である offsetof(T, m) を使用し、/Wall オプションを指定してコンパイルすると、警告が発生します。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 Update Version 15.3 では、"warning C4841: non-standard extension used: compound member designator in offseto" (警告 C4841: 非標準の拡張機能が使用されています: offseto での複合メンバー指定子) が生成されます。
+
+```cpp
+  
+struct A { 
+int arr[10]; 
+}; 
+ 
+// warning C4841: non-standard extension used: compound member designator in offsetof 
+constexpr auto off = offsetof(A, arr[2]);
+```
+コードを修正するには、プラグマで警告を無効にするか、offsetof を使わないようにコードを変更します。 
+
+```cpp
+#pragma warning(push) 
+#pragma warning(disable: 4841) 
+constexpr auto off = offsetof(A, arr[2]); 
+#pragma warning(pop) 
+```
+
+### <a name="using-offsetof-with-static-data-member-or-member-function"></a>静的なデータ メンバーまたはメンバー関数での offsetof の使用
+Update Version 15.3 では、m が静的なデータ メンバーまたはメンバー関数である offsetof(T, m) を使うと、エラーになります。 以下のコードでは、"error C4597: undefined behavior: offsetof applied to member function 'foo'" (エラー C4597: 定義されていない動作: offsetof がメンバー関数 'foo' に適用されています) および "error C4597: undefined behavior: offsetof applied to static data member 'bar'" (エラー C4597: 定義されていない動作: offsetof が静的データ メンバー 'bar' に適用されています) が発生します。
+```cpp
+ 
+#include <cstddef> 
+ 
+struct A { 
+int foo() { return 10; } 
+static constexpr int bar = 0; 
+}; 
+ 
+constexpr auto off = offsetof(A, foo); 
+Constexpr auto off2 = offsetof(A, bar);
+```
+ 
+次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 このエラーを解決するには、定義されていない動作を呼び出さないようにコードを変更します。 これは、C++ 標準で許可されていない移植性のないコードです。
+
+### <a name="new-warning-on-declspec-attributes"></a>declspec 属性についての新しい警告
+Update Version 15.3 では、extern "C" リンケージ指定の前に __declspec(…) を適用した場合、コンパイラは属性を無視しないようになりました。 以前のコンパイラは属性を無視し、実行時に影響する可能性がありました。 `/Wall /WX` オプションが設定されている場合、次のコードでは、"warning C4768: __declspec attributes before linkage specification are ignored" (警告 C4768: リンケージ指定の前の __declspec 属性は無視されます) が発生します。
+
+```cpp
+ 
+__declspec(noinline) extern "C" HRESULT __stdcall
+```
+
+この警告を解決するには、extern "C" を先頭に配置します。
+
+```cpp
+extern "C" __declspec(noinline) HRESULT __stdcall
+```
+
+### <a name="decltype-and-calls-to-deleted-destructors"></a>decltype と削除されたデストラクターの呼び出し
+以前のバージョンの Visual Studio では、"decltype" と関連付けられた式での削除されたデストラクターの呼び出しを、コンパイラは検出しませんでした。 Update Version 15.3 では、次のようなコードでは、"エラー C2280: 'A<T>::~A(void)': 削除された関数を参照しようとしています" が発生します。
+
+```cpp
+template<typename T> 
+struct A 
+{ 
+   ~A() = delete; 
+}; 
+ 
+template<typename T> 
+auto f() -> A<T>; 
+ 
+template<typename T> 
+auto g(T) -> decltype((f<T>())); 
+ 
+void h() 
+{ 
+   g(42); 
+}
+```
+### <a name="unitialized-const-variables"></a>初期化されていない const 変数
+Visual Studio 2017 RTW リリースには、"const" 変数が初期化されていないと C++ コンパイラが診断を生成しないという回帰がありました。 この回帰は、Visual Studio 2017 Update 1 で修正されました。 次のコードでは、"警告 C4132: 'Value': const オブジェクトは初期化しなければなりません" が生成されます。
+
+```cpp
+const int Value;
+```
+このエラーを解決するに、`Value` に値を割り当てます。
+
+### <a name="empty-declarations"></a>空の宣言
+Visual Studio 2017 Update Version 15.3 では、組み込み型だけでなくすべての型で、空の宣言が警告されるようになりました。 次のコードでは、4 つの宣言すべてに対し、レベル 2 の警告 C4091 が生成されます。
+
+```cpp
+struct A {};
+template <typename> struct B {};
+enum C { c1, c2, c3 };
+ 
+int;    // warning C4091 : '' : ignored on left of 'int' when no variable is declared
+A;      // warning C4091 : '' : ignored on left of 'main::A' when no variable is declared
+B<int>; // warning C4091 : '' : ignored on left of 'B<int>' when no variable is declared
+C;      // warning C4091 : '' : ignored on left of 'C' when no variable is declared
+```
+
+警告を解決をするには、空の宣言をコメントにするか、削除します。  名前のないオブジェクトが副作用 (RAII など) を意図したものである場合、名前を指定する必要があります。
+ 
+警告は、/Wv:18 では除外され、警告レベル W2 では既定で有効になります。
+
 
 ## <a name="see-also"></a>関連項目  
 [Visual C++ 言語への準拠](visual-cpp-language-conformance.md)  

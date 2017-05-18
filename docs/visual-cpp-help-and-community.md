@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -30,9 +30,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5c6fbfc8699d7d66c40b0458972d8b6ef0dcc705
-ms.openlocfilehash: 4d67a376c8a000b48984f8a290b0d042c33a0f7c
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
+ms.openlocfilehash: f09027c947478aa07cbefe13114edde8932c4a2d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="visual-c-help-and-community"></a>Visual C++ のヘルプおよびコミュニティ
@@ -49,10 +51,10 @@ ms.openlocfilehash: 4d67a376c8a000b48984f8a290b0d042c33a0f7c
 |タイトル|説明|  
 |-----------|-----------------|  
 |[Visual C++](visual-cpp-in-visual-studio.md)|Visual C++ のリファレンスと概念説明が含まれています。 MSDN ライブラリの一部です。|  
-|[Windows デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=256534)|C++ および他の言語を使用して [!INCLUDE[win8](build/reference/includes/win8_md.md)] 用アプリを開発する方法に関する情報が含まれています。 Windows デベロッパー センターの一部です。C++ コンテンツは、ドキュメントと言語リファレンスに関するノードに含まれています。|  
+|[Windows デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=256534)|C++ および他の言語を使用して [!INCLUDE[win8](build/reference/includes/win8_md.md)]用アプリを開発する方法に関する情報が含まれています。 Windows デベロッパー センターの一部です。C++ コンテンツは、ドキュメントと言語リファレンスに関するノードに含まれています。|  
   
 ### <a name="online-and-offline-documentation"></a>オンラインおよびオフラインのドキュメント  
- MSDN ライブラリおよび Windows デベロッパー センターのコンテンツをオンラインで確認できます。 このコンテンツは、頻繁に更新されます。  
+ Microsoft デベロッパー コンテンツをオンラインで見ることができます。 このコンテンツは定期的に更新されます。 
   
  コンテンツをダウンロードして、オフラインのヘルプ ビューアーでローカル表示することもできます。 オフラインのドキュメントは、関連コンテンツのまとまりであるブックごとに編成されます。ブックも、定期的に更新されます。 ダウンロード可能になった時点で必要なブックをダウンロードすることができます。 詳細については、[Microsoft ヘルプ ビューアー](/visualstudio/ide/microsoft-help-viewer)を参照してください。  
   
@@ -64,8 +66,3 @@ ms.openlocfilehash: 4d67a376c8a000b48984f8a290b0d042c33a0f7c
 |[Channel 9](http://go.microsoft.com/fwlink/p/?LinkId=251694)|ビデオ インタビューや講義が含まれています。 C++ コンテンツを検索するには、Channel 9 ホーム ページの検索ボックスを使用します。|  
 |[Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=256535)|Visual Studio および関連する開発ツールに関する記事やニュースが含まれています。|  
 |[MSDN フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=256538)|Microsoft 公式のフォーラムです。質問を投稿し、その回答を Microsoft やコミュニティ内の専門家から得ることができます。 特に C++ に関連するフォーラムを検索するには、フォーラムのホーム ページの検索ボックスを使用します。|
-
-
-<!--HONumber=Feb17_HO4-->
-
-

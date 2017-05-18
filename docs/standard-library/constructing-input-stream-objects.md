@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
 ms.openlocfilehash: 7e8c664bd6632f480ba53b9dedea914bbc8e4dd7
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -44,7 +45,7 @@ ms.lasthandoff: 02/24/2017
   
 - [入力文字列ストリーム コンストラクター](#vclrfinputstringstreamconstructorsanchor9)  
   
-##  <a name="a-namevclrfinputfilestreamconstructorsanchor8a-input-file-stream-constructors"></a><a name="vclrfinputfilestreamconstructorsanchor8"></a> 入力ファイル ストリーム コンストラクター  
+##  <a name="vclrfinputfilestreamconstructorsanchor8"></a> 入力ファイル ストリーム コンストラクター  
  入力ファイル ストリームは、2 つの方法で作成できます。  
   
 -   `void` 引数コンストラクターを使った後、`open` メンバー関数を呼び出します。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 02/24/2017
     ifstream myFile("filename");
 ```  
   
-##  <a name="a-namevclrfinputstringstreamconstructorsanchor9a-input-string-stream-constructors"></a><a name="vclrfinputstringstreamconstructorsanchor9"></a> 入力文字列ストリーム コンストラクター  
+##  <a name="vclrfinputstringstreamconstructorsanchor9"></a> 入力文字列ストリーム コンストラクター  
  入力文字列ストリーム コンストラクターには、事前に割り当てられて初期化された記憶域のアドレスが必要です。  
   
 ```  

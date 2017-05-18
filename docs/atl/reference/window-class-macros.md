@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 dev_langs:
@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: 8cdedc5cfac9d49df812ae6fcfcc548201b1edb5
 ms.openlocfilehash: f32926b6efd4ffb9c0541c0574a479c13dac01df
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -48,7 +49,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
    
-##  <a name="a-namedeclarewndclassa--declarewndclass"></a><a name="declare_wnd_class"></a>DECLARE_WND_CLASS  
+##  <a name="declare_wnd_class"></a>DECLARE_WND_CLASS  
  新しいウィンドウ クラスの名前を指定できます。 ATL の ActiveX コントロールのコントロール クラスには、このマクロを配置します。  
   
 ```
@@ -81,7 +82,7 @@ DECLARE_WND_CLASS( WndClassName )
   
  詳細については、ATL でのウィンドウを使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)します。  
 
-##  <a name="a-namedeclarewndclass2a--declarewndclass2"></a><a name="declare_wnd_class2"></a>DECLARE_WND_CLASS2  
+##  <a name="declare_wnd_class2"></a>DECLARE_WND_CLASS2  
  (Visual Studio 2017)DECLARE_WND_CLASS には、/permissive-option でコンパイルすると、依存名エラーの発生を回避する追加のパラメーターと同じです。
   
 ```
@@ -99,7 +100,7 @@ DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
 /Permissive-option を使用している場合、DECLARE_WND_CLASS と、コンパイル エラーが依存している名前が含まれています。 DECLARE_WND_CLASS2 では、このマクロが使用され、下にある、/permissive-flag エラーは発生しませんクラスを明示的に名前を付ける必要があります。
 このマクロは、それ以外の場合と同じ[DECLARE_WND_CLASS](#declare_wnd_class)します。
    
-##  <a name="a-namedeclarewndsuperclassa--declarewndsuperclass"></a><a name="declare_wnd_superclass"></a>DECLARE_WND_SUPERCLASS  
+##  <a name="declare_wnd_superclass"></a>DECLARE_WND_SUPERCLASS  
  クラスのパラメーターを指定できます。 ATL の ActiveX コントロールのコントロール クラスには、このマクロを配置します。  
   
 ```
@@ -127,7 +128,7 @@ DECLARE_WND_SUPERCLASS( WndClassName, OrigWndClassName )
   
  詳細については、ATL でのウィンドウを使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)します。  
   
-##  <a name="a-namedeclarewndclassexa--declarewndclassex"></a><a name="declare_wnd_class_ex"></a>場合は  
+##  <a name="declare_wnd_class_ex"></a>場合は  
  新しいウィンドウ クラスの基になる既存のウィンドウ クラスの名前を指定できます。 ATL の ActiveX コントロールのコントロール クラスには、このマクロを配置します。  
   
 ```
