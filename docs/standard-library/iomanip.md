@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -36,10 +36,11 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 71c6a6f3d9c8c256628f609c6a3e65f6b72df952
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
+ms.openlocfilehash: 753e2a5bab18a3643456504bda2ab84df530754e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/29/2017
 
 ---
 # <a name="ltiomanipgt"></a>&lt;iomanip&gt;
@@ -53,7 +54,7 @@ ms.lasthandoff: 02/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- これらの各マニピュレーターは、`basic_istream`\<**Elem**, **Tr**>`::`[operator>>](../standard-library/istream-operators.md#operator_gt__gt_) と `basic_ostream`\<**Elem**, **Tr**>`::`[operator<<](../standard-library/ostream-operators.md#operator_lt__lt_) の両方をオーバーロードする、**T1** から **T10** の未指定の型を返します。  
+ これらの各マニピュレーターは、`basic_istream`\<**Elem**, **Tr**>`::`[operator>>](../standard-library/istream-operators.md#op_gt_gt) と `basic_ostream`\<**Elem**, **Tr**>`::`[operator<<](../standard-library/ostream-operators.md#op_lt_lt) の両方をオーバーロードする、**T1** から **T10** の未指定の型を返します。  
   
 ### <a name="manipulators"></a>マニピュレーター  
   
