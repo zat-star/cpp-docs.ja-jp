@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -38,51 +38,56 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1519fde9f60f9cb9b45db4a4921f2bec5185e549
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
+ms.openlocfilehash: 507270783542ca0f76632c180b23330653b0018f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/24/2017
 
 ---
 # <a name="secure-template-overloads"></a>セキュリティ保護されたテンプレート オーバーロード
-多くの CRT 関数が、新しいセキュリティが強化されたバージョンに置き換えられています (たとえば、`strcpy` はセキュリティが強化された `strcpy_s` に置き換わっています)。 CRT では、セキュリティが強化されたバリアントに簡単に遷移するためのテンプレート オーバーロードが用意されています。  
+Microsoft は、セキュリティが強化されたバージョンを優先するため、多くの C ランタイム ライブラリ (CRT) 関数を非推奨にしています。 たとえば、`strcpy_s` は `strcpy` の代わりになるセキュリティ強化版です。 非推奨の関数は、メモリを上書きできる操作を禁止しないので、セキュリティ バグの一般的な原因になります。 既定では、このような関数を使うと、コンパイラは非推奨の警告を生成します。 CRT では、セキュリティが強化されたバリアントに簡単に遷移するため、これらの関数の C++ テンプレート オーバーロードが用意されています。  
   
- たとえば、`strcpy` が使用されなくなっているため、次のコードでは警告が発生します。  
+たとえば、`strcpy` が使用されなくなっているため、次のコード スニペットでは警告が発生します。  
   
- `char szBuf[10];`  
+```cpp  
+char szBuf[10];  
+strcpy(szBuf, "test"); // warning: deprecated  
+```
   
- `strcpy(szBuf, "test"); // warning: deprecated`  
+非推奨の警告は、コードが安全ではない可能性があることを伝えます。 コードがメモリを上書きできないことを確認した場合は、いくつかの選択肢があります。 警告を無視する、CRT ヘッダーの include ステートメントの前でシンボル `_CRT_SECURE_NO_WARNINGS` を定義して警告を抑制する、または `strcpy_s` を使うようにコードを更新することができます。  
   
- この警告は無視してかまいません。 シンボル `_CRT_SECURE_NO_WARNINGS` を定義して警告を抑制するか、コードを更新して `strcpy_s` を使用します。  
+```cpp  
+char szBuf[10];  
+strcpy_s(szBuf, 10, "test"); // security-enhanced _s function  
+```
   
- `char szBuf[10];`  
+テンプレート オーバーロードを使用することもできます。 `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` を 1 に定義した場合、セキュリティが強化されたバリアントを自動的に呼び出す、標準 CRT 関数のテンプレート オーバーロードが有効になります。 `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` が 1 の場合、コードを変更する必要はありません。 内部では、`strcpy` の呼び出しが `strcpy_s` の呼び出しに変換され、サイズ引数が自動的に指定されます。  
   
- `strcpy_s(szBuf, 10, "test"); // security-enhanced _s function`  
+```cpp  
+#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 1  
   
- テンプレート オーバーロードを使用することもできます。 `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` を 1 に定義すると、セキュリティが強化されたバリアントを自動的に呼び出す、標準 CRT 関数のテンプレート オーバーロードが有効になります。 `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` が 1 の場合、コードを変更する必要はありません。 内部では、`strcpy` の呼び出しが `strcpy_s` の呼び出しに変換され、サイズ引数が自動的に指定されます。  
+// ...  
   
- `#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 1`  
+char szBuf[10];  
+strcpy(szBuf, "test"); // ==> strcpy_s(szBuf, 10, "test")  
+```  
   
- `...`  
-  
- `char szBuf[10];`  
-  
- `strcpy(szBuf, "test"); // ==> strcpy_s(szBuf, 10, "test")`  
-  
- `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` は、`strncpy` などのカウントを確認する関数には影響しません。 カウント関数に対するテンプレート オーバーロードを有効にするには、`_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT` を 1 に定義します。 ただし、定義する前に、コードがバッファー サイズ (よくある間違い) ではなく、文字数を渡しているかどうかを確認しておく必要があります。 また、セキュリティで保護されたバリアントを呼び出す場合、関数の呼び出し後、バッファーの最後に明示的に null 終端文字を書き込むコードも必要です。 切り捨て動作が必要な場合は、「[_TRUNCATE](../c-runtime-library/truncate.md)」を参照してください。  
+マクロ `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` は、`strncpy` などのカウントを確認する関数には影響しません。 カウント関数に対するテンプレート オーバーロードを有効にするには、`_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT` を 1 に定義します。 ただし、定義する前に、コードがバッファー サイズ (よくある間違い) ではなく、文字数を渡しているかどうかを確認しておく必要があります。 また、セキュリティで保護されたバリアントを呼び出す場合、関数の呼び出し後、バッファーの最後に明示的に null 終端文字を書き込むコードも必要です。 切り捨て動作が必要な場合は、「[_TRUNCATE](../c-runtime-library/truncate.md)」を参照してください。  
   
 > [!NOTE]
 >  マクロ `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT` では、`_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` も 1 と定義されている必要があります。 `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT` が 1 と定義されていて、`_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` が 0 と定義されている場合、アプリケーションはテンプレート オーバーロードを実行しません。  
   
- `_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES` を 1 に定義すると、セキュリティで保護されたバリアント (名前の最後に "_s" が付いています) のテンプレート オーバーロードが有効になります。 この場合、`_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES` が 1 であれば、元のコードに対して小さな変更が 1 つ必要になります。  
+`_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES` を 1 に定義すると、セキュリティで保護されたバリアント (名前の最後に "_s" が付いています) のテンプレート オーバーロードが有効になります。 この場合、`_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES` が 1 であれば、元のコードに対して小さな変更が 1 つ必要になります。  
   
- `#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1`  
+```cpp  
+#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1  
   
- `...`  
+// ...  
   
- `char szBuf[10];`  
-  
- `strcpy_s(szBuf, "test"); // ==> strcpy_s(szBuf, 10, "test")`  
+char szBuf[10];  
+strcpy_s(szBuf, "test"); // ==> strcpy_s(szBuf, 10, "test")  
+```  
   
  関数名のみ変更する必要があります ("_s" を追加します)。サイズ引数については、テンプレート オーバーロードが処理します。  
   
@@ -90,27 +95,27 @@ ms.lasthandoff: 02/24/2017
   
  これらのテンプレート オーバーロードは、静的な配列に対してのみ作用します。 動的に割り当てられるバッファーの場合、ソース コードにさらに変更が必要になります。 上記の例をもう一度使用します。  
   
- `#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 1`  
+```cpp  
+#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 1  
   
- `...`  
+// ...  
   
- `char *szBuf = (char*)malloc(10);`  
-  
- `strcpy(szBuf, "test"); // still deprecated; have to change to`  
-  
- `// strcpy_s(szBuf, 10, "test");`  
+char *szBuf = (char*)malloc(10);  
+strcpy(szBuf, "test"); // still deprecated; you have to change it to  
+                       // strcpy_s(szBuf, 10, "test");  
+```  
   
  および  
   
- `#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1`  
+```cpp  
+#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1  
   
- `...`  
+// ...  
   
- `char *szBuf = (char*)malloc(10);`  
-  
- `strcpy_s(szBuf, "test"); // doesn't compile; have to change to`  
-  
- `// strcpy_s(szBuf, 10, "test");`  
+char *szBuf = (char*)malloc(10);  
+strcpy_s(szBuf, "test"); // doesn't compile; you have to change it to  
+                         // strcpy_s(szBuf, 10, "test");  
+```  
   
 ## <a name="see-also"></a>関連項目  
  [CRT のセキュリティ機能](../c-runtime-library/security-features-in-the-crt.md)   

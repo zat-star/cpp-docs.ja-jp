@@ -21,9 +21,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
 ms.openlocfilehash: c6ac9fb7400bd0c37d1da5a0c6bd66ccbf7abd6c
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -606,7 +607,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
      また、コンパイラは特定の診断を行いませんが、インラインの operator new の形式は不適切であると見なされます。  
   
--   **非クラス型で 'operator* type*()' (ユーザー定義の変換) を呼び出す  
+-   **非クラス型で 'operator* type*()' (ユーザー定義の変換) を呼び出す**  
   
      以前のバージョンのコンパイラでは 'operator *type*()' を非クラス型で呼び出すことが許可されていましたが、それは何の警告もなく無視されていました。 この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2228 を発行します。  
   

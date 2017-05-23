@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -32,10 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 705a5fd040b3cba1d3e8be1ac9e2a22ef1f98eb9
-ms.openlocfilehash: 4e419ebbdd1a5fcc178436f2ec6151a3d02c1a21
-ms.lasthandoff: 04/05/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 5ef479e2818cb9226830cc34f3fe9f8e59202e89
+ms.openlocfilehash: bb69ad913af2fd4777c5b4e64bde0758beb73822
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/28/2017
 
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
@@ -317,7 +318,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
     |has_trivial_move_assign|is_trivially_move_assignable|  
     |has_trivial_destructor|is_trivially_destructible|  
   
--   **launch::any ポリシーと launch::sync ポリシー** The nonstandard launch::any ポリシーと launch::sync ポリシー were removed. 代わりに、launch::any では、launch:async &#124; launch:deferred を使用します。 launch::sync では、launch::deferred を使用します。 「[launch 列挙型](../standard-library/future-enums.md#launch_enumeration)」を参照してください。  
+-   **launch::any ポリシーと launch::sync ポリシー** The nonstandard launch::any ポリシーと launch::sync ポリシー were removed. 代わりに、launch::any では、launch:async &#124; launch:deferred を使用します。 launch::sync では、launch::deferred を使用します。 「[launch 列挙型](../standard-library/future-enums.md#launch)」を参照してください。  
   
 ####  <a name="BK_MFC"></a> MFC と ATL  
   
@@ -864,6 +865,752 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
 -   **コピー コンストラクター**  
   
      [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)]の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
+
+<!--From here to VS_Update1 added 04/21/2017-->
+
+-   **extern "C" として宣言される main に戻り値の型が必要になった**  
+
+次のコードに対しては、C4430 が発生するようになりました。 
+```cpp
+extern "C" __cdecl main(){} // C4430
+```
+このエラーを解決するには、戻り値の型を追加します。
+```cpp
+extern "C" int __cdecl main(){} // OK
+```
+
+ -   **メンバーの初期化子では typename を使用できない**  
+
+次のコードに対しては、C2059 が発生するようになりました。
+ ```cpp
+template<typename T>
+struct S1 : public T::type
+{
+    S1() : typename T::type() // C2059
+    {
+    }
+};
+
+struct S2 {
+    typedef S2 type;
+};
+
+S1<S2> s;
+```
+このエラーを解決するには、初期化子から `typename` を削除します。
+```cpp
+S1() : T::type() // OK
+...
+```
+
+-   **明示的な特殊化でのストレージ クラスは無視される** 
+
+次のコードに対しては、静的ストレージ クラスの指定子は無視されます。 
+```cpp
+template <typename T>
+void myfunc(T h)
+{
+}
+
+template<>
+static void myfunc(double h) // static is ignored
+{
+}
+
+```
+
+-   **クラス テンプレート内部の static_assert で定数を使うと常にエラーになる**  
+
+次のコードに対しては、static_assert は常にエラーになります。
+```cpp
+template <size_t some_value>
+struct S1
+{
+    static_assert(false, "default not valid"); // always invoked
+
+};
+
+//other partial specializations here
+```
+
+この問題を回避するには、値を構造体内にラップします。
+```cpp
+template <size_t some_value>
+struct constant_false {
+    static const bool value = false;
+};
+
+template <size_t some_value>
+struct S1
+{
+    static_assert(constant_false<some_value>::value, "default not valid");
+};
+
+//other partial specializations here
+```
+
+-   **事前宣言に適用される規則(C にのみ適用)**  
+
+次のコードに対しては、C2065 が発生するようになりました。
+```cpp
+struct token_s;
+typedef int BOOL;
+typedef int INT;
+
+
+
+typedef int(*PFNTERM)(PTOKEN, BOOL, INT); // C2065: 'PTOKEN' : undeclared identifier
+```
+
+この問題を修正するには、適切な事前宣言を追加します。
+
+```cpp
+struct token_s;
+typedef int BOOL;
+typedef int INT;
+
+// forward declarations:
+typedef struct token_s TOKEN; 
+typedef TOKEN *PTOKEN;
+
+typedef int(*PFNTERM)(PTOKEN, BOOL, INT);
+```
+
+-   **関数ポインター型のより一貫した適用**  
+
+次のコードに対しては、C2197 が発生するようになりました。
+
+```cpp
+typedef int(*F1)(int);
+typedef int(*F2)(int, int);
+
+void func(F1 f, int v1, int v2)
+{
+    f(v1, v2); // C2197
+}
+```
+
+-   **オーバーロード関数のあいまいな呼び出し**  
+
+次のコードに対しては、C266: "'N::bind': オーバーロード関数の呼び出しを解決することができません" が発生するようになりました。
+```cpp 
+template<typename R, typename T, typename T1, typename A1>
+void bind(R(T::*)(T1), A1&&);
+
+namespace N
+{
+    template <typename T, typename R, typename ... Tx>
+    void bind(R(T::*)(Tx...), T* ptr);
+}
+
+using namespace N;
+
+class Manager
+{
+public:
+    void func(bool initializing);
+
+    void mf()
+    {
+        bind(&Manager::func, this); //C2668
+    }
+};
+```
+
+このエラーを解決するには、バインドの呼び出し N::bind(...) を完全に修飾します。 ただし、この変更が宣言されていない識別子によるマニフェストの場合は (C2065)、代わりに "using" 宣言で解決するのが適切な場合があります。
+
+このパターンは、ComPtr および Microsoft::WRL 名前空間内の他の型で頻繁に発生します。
+
+-   **不適切なアドレス指定の修正**  
+
+次のコードに対しては、C2440: "'=': 'type *' から 'type' に変換できません" が発生するようになりました。 このエラーを解決するには、&(type) を (type) に、また (&f()) を (f()) に変更します。
+ 
+```cpp
+\\ C
+typedef void (*type)(void);
+ 
+void f(int i, type p);
+void g(int);
+void h(void)
+{
+    f(0, &(type)g);
+}
+ 
+\\ C++
+typedef void(*type)(void);
+ 
+type f();
+ 
+void g(type);
+ 
+void h()
+{
+    g(&f());
+}
+
+```
+
+-   **文字列リテラルは定数配列である**  
+
+次のコードに対しては、"C2664: 'void f(void *)': 引数 1 を 'const char (*)[2]' から 'void *' へ変換できません" が発生します。
+```cpp
+void f(void *);
+ 
+void h(void)
+{
+    f(&__FUNCTION__); 
+    void *p = &"";
+}
+```
+
+このエラーを解決するには、関数パラメーターの型を "const void*" に変更するか、または h の本体を次のように変更します。
+
+```cpp
+void h(void)
+{
+    char name[] = __FUNCTION__;
+    f( name); 
+    void *p = &"";
+}
+
+```
+
+-   **C++ 11 の UDL の文字列**  
+
+次のコードに対しては、エラー C3688: "リテラル サフィックス 'L' が無効です。リテラル演算子またはリテラル演算子テンプレート 'operator ""L' が見つかりません" が発生するようになりました。
+
+
+```cpp
+#define MACRO
+
+#define STRCAT(x, y) x\#\#y
+
+int main(){
+
+    auto *val1 = L"string"MACRO;
+    auto *val2 = L"hello "L"world";
+
+    std::cout << STRCAT(L"hi ", L"there");
+}
+```
+このエラーを解決するには、コードを次のように変更します。
+
+```cpp
+#define MACRO
+
+// Remove ##. Strings are automatically
+// concatenated so they are not needed
+#define STRCAT(x, y) x y
+
+int main(){
+    //Add space after closing quote
+    auto *val1 = L"string" MACRO;
+    auto *val2 = L"hello " L"world";
+
+    std::cout << STRCAT(L"hi ", L"there");
+}
+
+```
+上記の例で、`MACRO` は 2 つのトークン (文字列に続くマクロ) として解析されなくなります。  今度は、1 つのトークン UDL として解析されます。  同じことが L""L"" にも当てはまり、以前は L"" および L"" として解析されていたものが、L""L および "" として解析されるようになります。
+
+文字列連結の規則も標準への準拠に取り込まれました。つまり、L"a" "b" は L"ab" と同じです。 以前のエディションの Visual Studio では、文字幅の異なる文字列の連結は受け入れられませんでした。
+
+
+-   **C++11 の空の文字の削除**  
+
+次のコードに対しては、エラー C2137: "空の文字定数" が発生するようになりました。
+
+```cpp
+bool check(wchar_t c){
+    return c == L''; //implicit null character
+}
+```
+
+このエラーを解決するには、コードを次のように変更します。
+
+```cpp
+bool check(wchar_t c){
+    return c == L'\0';
+}
+```
+
+-   **MFC の例外はコピーできないため値によってキャッチできない**  
+
+MFC アプリケーションの次のコードに対しては、エラー C2316: "'D' がデストラクターとしてキャッチできない、またはコピー コンストラクターがアクセスできないか削除されています" が発生するようになりました。
+
+```cpp
+struct B {
+public:
+    B();
+private:
+    B(const B &);
+};
+
+struct D : public B {
+};
+
+int main()
+{
+    try
+    {
+    }
+    catch (D) // C2316
+    {
+    }
+}
+
+```
+コードを修正するには、catch ブロックを "catch (const D &)" に変更してもかまいませんが、一般にもっとよい解決策は、MFC TRY/CATCH マクロを使うことです。
+
+-   **alignof がキーワードになった**  
+
+次のコードに対しては、エラー C2332: "'class': タグ名がありません" が発生するようになりました。 コードを修正するには、クラスの名前を変更するか、または、クラスが alignof と同じ処理を実行している場合は、単にクラスを新しいキーワードに置き換えます。
+```cpp
+class alignof{}
+```
+
+-   **constexpr がキーワードになった**  
+
+次のコードに対しては、エラー C2059: "構文エラー: ')'" が発生するようになりました。 コードを修正するには、"constexpr" という名前の関数または変数の名前をすべて変更する必要があります。 
+```cpp
+int constexpr() {return 1;}
+```
+
+-   **移動可能な型は const にできない**  
+
+関数が移動することを意図した型を返す場合、その戻り値の型を const にすることはできません。
+
+-   **削除されたコピー コンストラクター**  
+
+次のコードに対しては、C2280: "'S::S(S &&)': 削除された関数を参照しようとしています" が発生するようになりました。
+
+```cpp
+struct S{
+    S(int, int);
+    S(const S&) = delete;
+    S(S&&) = delete;
+};
+
+S s2 = S(2, 3); //C2280
+```
+このエラーを修正するには、S2 に対して直接の初期化を使います。
+```cpp
+struct S{
+    S(int, int);
+    S(const S&) = delete;
+    S(S&&) = delete;
+};
+
+S s2 = {2,3}; //OK
+```
+
+-   **関数ポインターへの変換は、ラムダ キャプチャがない場合にのみ生成される**  
+
+Visual Studio 2015 では、次のコードに対しては C2664 が発生します。 
+
+```cpp
+void func(int(*)(int)) {}
+
+int main() {
+
+    func([=](int val) { return val; });
+}
+```
+このエラーを解決するには、キャプチャ リストから `=` を削除します。
+
+-   **変換演算子を含むあいまいな呼び出し**  
+
+次のコードに対しては、エラー C2440: "'type cast': 'S2' から 'S1' に変換できません" が発生するようになりました。
+
+```cpp 
+struct S1 {
+    S1(int);
+};
+
+struct S2 {
+    operator S1();
+    operator int();
+};
+
+void f(S2 s2)
+{
+
+    (S1)s2;
+
+}
+```
+このエラーを解決するには、変換演算子を明示的に呼び出します。
+
+```cpp
+void f(S2 s2)
+{
+    //Explicitly call the conversion operator
+    s2.operator S1();
+    // Or
+    S1((int)s2);
+}
+
+```
+
+次のコードに対しては、エラー C2593: "'operator =' があいまいです" が発生するようになりました。
+
+```cpp
+struct S1 {};
+
+struct S2 {
+    operator S1&();
+    operator S1() const;
+};
+
+void f(S1 *p, S2 s)
+{
+    *p = s;
+}
+```
+このエラーを解決するには、変換演算子を明示的に呼び出します。
+```cpp
+void f(S1 *p, S2 s)
+{
+       *p = s.operator S1&();
+}
+```
+
+-   **非静的データ メンバーの初期化 (NSDMI) での無効なコピー初期化の修正**  
+
+次のコードに対しては、エラー C2664: "'S1::S1(S1 &&)': 引数 1 を 'bool' から 'const S1 &' へ変換できません" が発生するようになりました。
+```cpp
+struct S1 {
+    explicit S1(bool);
+};
+
+struct S2 {
+    S1 s2 = true; // error
+};
+```
+このエラーを修正するには、直接の初期化を使います。
+```cpp
+struct S2 {
+S1 s1{true}; // OK
+};
+```
+
+-   **decltype ステートメント内のコンストラクターへのアクセス**  
+
+次のコードに対しては、C2248: 'S::S': "クラス 'S' で宣言されているプライベート メンバーにアクセスできません" が発生するようになりました。
+```cpp
+class S {
+    S();
+public:
+    int i;
+};
+
+class S2 {
+    auto f() -> decltype(S().i);
+};
+```
+このエラーを解決するには、S に S2 のフレンド宣言を追加します。
+```cpp
+class S {
+    S();
+    friend class S2; // Make S2 a friend
+public:
+    int i;
+};
+```
+
+-   **ラムダの既定のコンストラクターが暗黙的に削除される**  
+
+次のコードに対しては、エラー C3497: "ラムダのインスタンスは作成できません" が発生するようになりました。
+```cpp
+void func(){
+    auto lambda = [](){};    
+ 
+    decltype(lambda) other;
+}
+```
+このエラーを解決するには、既定のコンストラクターを呼び出す必要がないようにします。 ラムダが何もキャプチャしない場合は、関数ポインターにキャストできます。
+
+-   **削除された代入演算子でのラムダ**  
+
+次のコードに対しては、エラー C2280 が発生するようになりました。
+
+```cpp
+#include <memory>
+#include <type_traits>
+
+template <typename T, typename D>
+std::unique_ptr<T, typename std::remove_reference<D &&>::type> wrap_unique(T *p, D &&d);
+
+void f(int i)
+{
+    auto encodedMsg = wrap_unique<unsigned char>(nullptr, [i](unsigned char *p) {
+    });
+    encodedMsg = std::move(encodedMsg);
+}
+```
+このエラーを解決するには、ラムダをファンクター クラスに置き換えるか、代入演算子を使う必要がないようにします。
+
+-   **削除されたコピー コンストラクターでのオブジェクト移動の試み**  
+
+次のコードに対しては、エラー C2280: "'moveable::moveable(const moveable &)': 削除された関数を参照しようとしています" が発生するようになりました。
+```cpp
+struct moveable {
+
+    moveable() = default;
+    moveable(moveable&&) = default;
+    moveable(const moveable&) = delete;
+};
+
+struct S {
+    S(moveable && m) :
+        m_m(m)//copy constructor deleted
+    {}
+    moveable m_m;
+};
+
+```
+このエラーを解決するには、代わりに std::move を使います。
+```cpp
+S(moveable && m) :
+    m_m(std::move(m))
+```
+-   **ローカル クラスは、同じ関数で後に定義されている他のローカル クラスを参照できない**  
+
+次のコードに対しては、エラー C2079: "'s' が未定義の struct 'main::S2' で使用しています" が発生するようになりました。
+```cpp
+int main()
+{
+    struct S2;
+    struct S1 {
+        void f() {
+            S2 s;
+        }
+    };
+    struct S2 {};
+}
+```
+このエラーを解決するには、S2 の定義を上に移動します。
+```cpp
+int main()
+{
+    struct S2 { //moved up
+    };
+ 
+struct S1 {
+    void f() {
+        S2 s;
+        }
+    };
+}
+```
+
+-   **派生コンストラクターの本体内の保護された既定コンストラクターは呼び出すことができない**  
+
+次のコードに対しては、エラー C2248: "'S1::S1': クラス 'S1' で宣言されている保護されているメンバーにアクセスできません" が発生するようになりました。
+```cpp
+struct S1 {
+protected:
+    S1();
+};
+
+struct S2 : public S1 {
+    S2() {
+        S1();
+    }
+};
+```
+このエラーを解決するには、S2 でコンストラクターから S1() の呼び出しを削除し、必要がある場合は別の関数に配置します。
+
+-   **{} がポインターへの変換を妨げる**  
+
+次のコードに対しては、C2439: "'S::p': 指定されたメンバーは初期化できません" が発生するようになりました。    
+```cpp
+struct S {
+    S() : p({ 0 }) {}
+    void *p;
+};
+```
+このエラーを解決するには、0 を囲む中かっこを削除するか、または次の例で示すように代わりに `nullptr` を使います。
+```cpp
+struct S {
+    S() : p(nullptr) {}
+    void *p;
+};
+```
+
+-   **正しくないマクロ定義とかっこ付きの使用法**  
+
+次の例に対しては、エラー C2008: "';': マクロ定義内で指定された文字の使い方が間違っています" が発生するようになりました。
+```cpp
+#define A; //cause of error
+
+struct S {
+    A(); // error
+};
+```
+この問題を解決するには、先頭の行を `#define A();` に変更します。
+
+次のコードに対しては、エラー C2059: "構文エラー: ')'" が発生します。
+```cpp
+
+//notice the space after 'A'
+#define A () ;
+
+struct S {
+    A();
+};
+```
+このコードを修正するには、A と () の間のスペースを削除します。
+
+次のコードに対しては、エラー C2091: "関数は関数を返せません" が発生します。
+
+```cpp
+
+#define DECLARE void f()
+
+struct S {
+    DECLARE();
+};
+```
+このエラーを解決するには、S の DECLARE の後のかっこを削除して、`DECLARE;` にします。
+
+次のコードに対しては、エラー C2062: "型 'int' は予期されていません" が発生します。
+
+```cpp
+#define A (int)
+
+struct S {
+    A a;
+};
+```
+この問題を解決するには、A を次のように定義します。
+```cpp
+#define A int
+```
+
+-   **宣言内の余分なかっこ**  
+
+次のコードに対しては、エラー C2062: "型 'int' は予期されていません" が発生します。
+```cpp
+
+struct S {
+    int i;
+    (int)j;
+};
+```
+このエラーを解決するには、`j` からかっこを削除します。 明確にするためにかっこが必要な場合は、typedef を使います。
+
+-   **コンパイラで生成されるコンストラクターと __declspec(novtable)**  
+
+Visual Studio 2015 では、仮想基底クラスを使う抽象クラスのインライン コンパイラによって生成されるコンストラクターで、__declspec(dllimport) と組み合わせて使うと __declspec(novtable) の不適切な使用が公開される可能性が高くなっています。
+
+-   **auto では初期化子リストの直接適用に含まれる式が 1 つでなければならない** 次のコードに対しては、エラー C3518: "'testPositions': 初期化子リストを直接適用するコンテキストでは、'auto' の型は、単一の初期化子式からのみ推測できます" が発生するようになりました。
+
+```cpp
+auto testPositions{
+    std::tuple<int, int>{13, 33},
+    std::tuple<int, int>{-23, -48},
+    std::tuple<int, int>{38, -12},
+    std::tuple<int, int>{-21, 17}
+};
+```
+このエラーを解決する 1 つの可能性は、testPositions を次のように初期化することです。
+
+```cpp
+std::tuple<int, int> testPositions[]{
+    std::tuple<int, int>{13, 33},
+    std::tuple<int, int>{-23, -48},
+    std::tuple<int, int>{38, -12},
+    std::tuple<int, int>{-21, 17}
+};
+```
+
+-   **is_convertible に対する型のチェックと型へのポインター**  
+
+次のコードでは、静的アサーションが失敗するようになりました。 
+
+```cpp
+struct B1 {
+private:
+    B1(const B1 &);
+};
+struct B2 : public B1 {};
+struct D : public B2 {};
+
+static_assert(std::is_convertible<D, B2>::value, "fail");
+```
+このエラーを解決するには、D および B2 へのポインターを比較するように static_assert を変更します。
+
+```cpp
+static_assert(std::is_convertible<D*, B2*>::value, "fail");
+```
+
+-   **declspec(novtable) 宣言が一貫している必要がある**  
+
+declspec 宣言は、すべてのライブラリで一貫している必要があります。 次のコードに対しては、単一定義規則 (ODR) 違反が発生するようになりました。
+
+```cpp
+
+//a.cpp
+class __declspec(dllexport)
+    A {
+public:
+    A();
+    A(const A&);
+    virtual ~A();
+private:
+    int i;
+};
+
+A::A() {}
+A::~A() {}
+A::A(const A&) {}
+
+//b.cpp
+// compile with cl.exe /nologo /LD /EHsc /Osx b.cpp
+#pragma comment(lib, "A")
+class __declspec(dllimport) A
+{
+public: A();
+         A(const A&);
+         virtual ~A();
+private:
+    int i;
+};
+
+struct __declspec(novtable) __declspec(dllexport) B
+    : virtual public A {
+    virtual void f() = 0;
+};
+
+//c.cpp
+#pragma comment(lib, "A")
+#pragma comment(lib, "B")
+class __declspec(dllimport) A
+{
+public:
+    A();
+    A(const A&);
+    virtual ~A();
+private:
+    int i;
+};
+struct  /* __declspec(novtable) */ __declspec(dllimport) B // Error. B needs to be novtable here also.
+    : virtual public A
+{
+    virtual void f() = 0;
+};
+
+struct C : virtual B
+{
+    virtual void f();
+};
+
+void C::f() {}
+C c;
+```
+
+
   
 ###  <a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
   
@@ -2795,3 +3542,4 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 ## <a name="see-also"></a>関連項目  
 [Visual Studio における Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)
+

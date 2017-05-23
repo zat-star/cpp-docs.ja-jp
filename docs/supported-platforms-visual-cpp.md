@@ -56,7 +56,7 @@ ms.lasthandoff: 02/24/2017
 |Android **|X|X|X|  
 |iOS **|X|X|x|  
   
- \** Visual Studio 2015、Visual Studio 2013、および Visual Studio 2012 Update 1 以降に含まれている Windows XP プラットフォーム ツールセットを使用して、Windows XP および [!INCLUDE[WinXPSvr](build/includes/winxpsvr_md.md)] プロジェクトに設定できます。 このプラットフォーム ツールセットを使用する方法については、「[Windows XP 用プログラムの構成](build/configuring-programs-for-windows-xp.md)」を参照してください。 プラットフォーム ツールセットの変更に関する詳細については、「[方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する](build/how-to-modify-the-target-framework-and-platform-toolset.md)」を参照してください。  
+ \* Visual Studio 2015、Visual Studio 2013、および Visual Studio 2012 Update 1 以降に含まれている Windows XP プラットフォーム ツールセットを使用して、Windows XP および [!INCLUDE[WinXPSvr](build/includes/winxpsvr_md.md)] プロジェクトに設定できます。 このプラットフォーム ツールセットを使用する方法については、「[Windows XP 用プログラムの構成](build/configuring-programs-for-windows-xp.md)」を参照してください。 プラットフォーム ツールセットの変更に関する詳細については、「[方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する](build/how-to-modify-the-target-framework-and-platform-toolset.md)」を参照してください。  
   
  ** Visual Studio 2015 セットアップでオプションの Visual C++ for Cross Platform Mobile Development コンポーネントをインストールして、iOS または Android プラットフォームをターゲットにすることができます。 手順については、「[クロス プラットフォーム モバイル開発用の Visual C++ のインストール](/visualstudio/cross-platform/install-visual-cpp-for-cross-platform-mobile-development)」を参照してください。 iOS コードをビルドするには、Mac コンピューターがあり、他の要件を満たしている必要があります。 前提条件とインストール手順については、「[iOS を使用してビルドするためのツールのインストールおよび構成](/visualstudio/cross-platform/install-and-configure-tools-to-build-using-ios)」を参照してください。 ターゲット ハードウェアに合わせて、x86 または ARM コードをビルドできます。 iOS シミュレーター、Microsoft Visual Studio Emulator for Android、一部の Android デバイスのビルドには x86 構成を使用します。 iOS デバイスとほとんどのデバイスのビルドには ARM 構成を使用します。  
   
