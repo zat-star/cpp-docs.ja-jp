@@ -134,7 +134,9 @@ ms.lasthandoff: 02/24/2017
 ---
 # <a name="cmfcribbonbar-class"></a>CMFCRibbonBar クラス
 `CMFCRibbonBar` クラスは、Office 2007 で使用されているものに似たリボン バーを実装します。  
-  
+
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+   
 ## <a name="syntax"></a>構文  
   
 ```  
@@ -1259,7 +1261,7 @@ virtual void OnClickButton(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="oneditcontextmenu"></a>CMFCRibbonBar::OnEditContextMenu  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnEditContextMenu(
@@ -1304,7 +1306,7 @@ BOOL OnSetAccData(long lVal);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="onshowribboncontextmenu"></a>CMFCRibbonBar::OnShowRibbonContextMenu  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL OnShowRibbonContextMenu(
@@ -1325,7 +1327,7 @@ virtual BOOL OnShowRibbonContextMenu(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="onshowribbonqatmenu"></a>CMFCRibbonBar::OnShowRibbonQATMenu  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL OnShowRibbonQATMenu(

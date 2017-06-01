@@ -54,6 +54,8 @@ ms.lasthandoff: 02/24/2017
 ---
 # <a name="ctabbedpane-class"></a>派生クラス
 切り離し可能なタブを持つペインの機能を実装します。  
+
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ## <a name="syntax"></a>構文  
   
@@ -173,7 +175,7 @@ pTabbedBar->GetUnderlyingWindow ()->EnableTabDetach (1,
  **ヘッダー:** afxTabbedPane.h  
   
 ##  <a name="detachpane"></a>CTabbedPane::DetachPane  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL DetachPane(
@@ -208,7 +210,7 @@ static void EnableTabAutoColor(BOOL bEnable = TRUE);
  既定では、このオプションは無効です。  
   
 ##  <a name="floattab"></a>CTabbedPane::FloatTab  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL FloatTab(
@@ -250,7 +252,7 @@ virtual void GetTabArea(
  このメソッドをオーバーライドして、 `CTabbedPane`-この動作を変更するクラスを派生します。  
   
 ##  <a name="gettabwnd"></a>CTabbedPane::GetTabWnd  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 CMFCTabCtrl* GetTabWnd() const;  
@@ -261,7 +263,7 @@ CMFCTabCtrl* GetTabWnd() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="hasautohidemode"></a>CTabbedPane::HasAutoHideMode  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL HasAutoHideMode() const;  

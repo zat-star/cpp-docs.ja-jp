@@ -59,7 +59,8 @@ ms.lasthandoff: 02/24/2017
 ---
 # <a name="cmfcautohidebar-class"></a>CMFCAutoHideBar クラス
 `CMFCAutoHideBar` クラスは、自動非表示機能を実装している、特殊なツール バー クラスです。  
-  
+
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]    
 ## <a name="syntax"></a>構文  
   
 ```  
@@ -157,7 +158,7 @@ CMFCAutoHideButton* AddAutoHideWindow(
 - `CBRS_ALIGN_BOTTOM`  
   
 ##  <a name="allowshowonpanemenu"></a>CMFCAutoHideBar::AllowShowOnPaneMenu  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL AllowShowOnPaneMenu() const;  
@@ -168,7 +169,7 @@ virtual BOOL AllowShowOnPaneMenu() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="calcfixedlayout"></a>CMFCAutoHideBar::CalcFixedLayout  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual CSize CalcFixedLayout(
@@ -194,7 +195,7 @@ CMFCAutoHideBar();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="create"></a>CMFCAutoHideBar::Create  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL Create(
@@ -255,7 +256,7 @@ int CMFCAutoHideBar::m_nShowAHWndDelay = 400;
  ユーザーが上にマウス カーソルを置いたときに、`CMFCAutoHideButton`フレームワークは、関連するウィンドウを表示する前にわずかな遅延があります。 このパラメーターは、その待機時間をミリ秒単位の長さを指定します。  
   
 ##  <a name="onshowcontrolbarmenu"></a>CMFCAutoHideBar::OnShowControlBarMenu  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL OnShowControlBarMenu(CPoint);
@@ -299,7 +300,7 @@ virtual void SetActiveInGroup(BOOL bActive);
  参照してください[CPane::SetActiveInGroup](../../mfc/reference/cpane-class.md#setactiveingroup)します。  
   
 ##  <a name="setrecentvisiblestate"></a>CMFCAutoHideBar::SetRecentVisibleState  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 void SetRecentVisibleState(BOOL bState);
