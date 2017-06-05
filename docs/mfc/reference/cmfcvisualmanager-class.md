@@ -212,6 +212,8 @@ ms.lasthandoff: 02/24/2017
 ---
 # <a name="cmfcvisualmanager-class"></a>CMFCVisualManager クラス
 グローバル レベルでアプリケーションの外観変更のサポートを提供します。 `CMFCVisualManager` クラスは、一貫したスタイルを使用してアプリケーションの GUI コントロールを描画する機能を提供するクラスと連携します。 これらの連携するクラスはビジュアル マネージャーと呼ばれ、 `CMFCBaseVisualManager`から継承されます。  
+
+ [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ## <a name="syntax"></a>構文  
   
@@ -459,7 +461,7 @@ CMFCVisualManager::GetInstance ()->RedrawAll ();
  **ヘッダー:** afxvisualmanager.h  
   
 ##  <a name="adjustframes"></a>CMFCVisualManager::AdjustFrames  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 static void __stdcall AdjustFrames();
@@ -468,7 +470,7 @@ static void __stdcall AdjustFrames();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="adjusttoolbars"></a>CMFCVisualManager::AdjustToolbars  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 static void __stdcall AdjustToolbars();
@@ -490,7 +492,7 @@ virtual BOOL AlwaysHighlight3DTabs() const;
  派生のビジュアル マネージャーでは、この関数をオーバーライドし、返す`TRUE`場合は 3D のタブは常に強調表示される必要があります。 このメソッドの既定の実装`FALSE`します。  
   
 ##  <a name="cmfcvisualmanager"></a>CMFCVisualManager::CMFCVisualManager  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 CMFCVisualManager(BOOL bTemporary = FALSE);
@@ -502,7 +504,7 @@ CMFCVisualManager(BOOL bTemporary = FALSE);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="destroyinstance"></a>CMFCVisualManager::DestroyInstance  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 static void __stdcall DestroyInstance(BOOL bAutoDestroyOnly = FALSE);
@@ -514,7 +516,7 @@ static void __stdcall DestroyInstance(BOOL bAutoDestroyOnly = FALSE);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="dodrawheadersortarrow"></a>CMFCVisualManager::DoDrawHeaderSortArrow  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 void DoDrawHeaderSortArrow(
@@ -533,7 +535,7 @@ void DoDrawHeaderSortArrow(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="drawcomboborderwinxp"></a>CMFCVisualManager::DrawComboBorderWinXP  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL DrawComboBorderWinXP(CDC*,
@@ -553,7 +555,7 @@ virtual BOOL DrawComboBorderWinXP(CDC*,
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="drawcombodropbuttonwinxp"></a>CMFCVisualManager::DrawComboDropButtonWinXP  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL DrawComboDropButtonWinXP(CDC*,
@@ -573,7 +575,7 @@ virtual BOOL DrawComboDropButtonWinXP(CDC*,
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="drawpushbuttonwinxp"></a>CMFCVisualManager::DrawPushButtonWinXP  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL DrawPushButtonWinXP(CDC*,
@@ -593,7 +595,7 @@ virtual BOOL DrawPushButtonWinXP(CDC*,
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="drawtextonglass"></a>CMFCVisualManager::DrawTextOnGlass  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL DrawTextOnGlass(
@@ -618,7 +620,7 @@ virtual BOOL DrawTextOnGlass(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="enabletoolbarbuttonfill"></a>CMFCVisualManager::EnableToolbarButtonFill  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 void EnableToolbarButtonFill(BOOL bEnable = TRUE);
@@ -677,7 +679,7 @@ virtual COLORREF GetCaptionBarTextColor(CMFCCaptionBar* pBar);
  キャプション バーのテキストの色をカスタマイズする派生クラスでは、このメソッドをオーバーライドします。 オーバーライド メソッドでは、目的の色を返します。  
   
 ##  <a name="getcaptionbuttonextraborder"></a>CMFCVisualManager::GetCaptionButtonExtraBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual CSize GetCaptionButtonExtraBorder() const;  
@@ -688,7 +690,7 @@ virtual CSize GetCaptionButtonExtraBorder() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getdockingpanecaptionextraheight"></a>CMFCVisualManager::GetDockingPaneCaptionExtraHeight  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetDockingPaneCaptionExtraHeight() const;  
@@ -714,7 +716,7 @@ virtual int GetDockingTabsBordersSize();
  ドッキング タブ付きコントロール バーの境界線のサイズを変更する場合は、カスタム ビジュアル マネージャーでこのメソッドをオーバーライドします。 既定の実装では、-1 が返されます。  
   
 ##  <a name="gethighlightedmenuitemtextcolor"></a>CMFCVisualManager::GetHighlightedMenuItemTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetHighlightedMenuItemTextColor(CMFCToolBarMenuButton* pButton);
@@ -754,7 +756,7 @@ virtual int GetMDITabsBordersSize();
  MDITabs ウィンドウの境界線のサイズをカスタマイズする派生クラスでオーバーライドします。  
   
 ##  <a name="getmenuimagemargin"></a>CMFCVisualManager::GetMenuImageMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetMenuImageMargin() const;  
@@ -765,7 +767,7 @@ virtual int GetMenuImageMargin() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getmenuitemtextcolor"></a>CMFCVisualManager::GetMenuItemTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetMenuItemTextColor(
@@ -827,7 +829,7 @@ virtual int GetPopupMenuBorderSize() const;
  アプリケーションのポップアップ メニューの境界線のサイズをカスタマイズするには、このメソッドをオーバーライドします。  
   
 ##  <a name="getpopupmenugap"></a>CMFCVisualManager::GetPopupMenuGap  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetPopupMenuGap() const;  
@@ -872,7 +874,7 @@ virtual COLORREF GetPropertyGridGroupTextColor(CMFCPropertyGridCtrl* pPropList);
  アプリケーションのプロパティ リストのテキストの色をカスタマイズするには、この関数をオーバーライドします。  
   
 ##  <a name="getribbonhyperlinktextcolor"></a>CMFCVisualManager::GetRibbonHyperlinkTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetRibbonHyperlinkTextColor(CMFCRibbonLinkCtrl* pHyperLink);
@@ -886,7 +888,7 @@ virtual COLORREF GetRibbonHyperlinkTextColor(CMFCRibbonLinkCtrl* pHyperLink);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonpopupbordersize"></a>CMFCVisualManager::GetRibbonPopupBorderSize  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetRibbonPopupBorderSize(const CMFCRibbonPanelMenu*) const;  
@@ -900,7 +902,7 @@ virtual int GetRibbonPopupBorderSize(const CMFCRibbonPanelMenu*) const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonquickaccesstoolbarchevronoffset"></a>CMFCVisualManager::GetRibbonQuickAccessToolBarChevronOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetRibbonQuickAccessToolBarChevronOffset();
@@ -911,7 +913,7 @@ virtual int GetRibbonQuickAccessToolBarChevronOffset();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonquickaccesstoolbarrightmargin"></a>CMFCVisualManager::GetRibbonQuickAccessToolBarRightMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetRibbonQuickAccessToolBarRightMargin();
@@ -922,7 +924,7 @@ virtual int GetRibbonQuickAccessToolBarRightMargin();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonquickaccesstoolbartextcolor"></a>CMFCVisualManager::GetRibbonQuickAccessToolBarTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetRibbonQuickAccessToolBarTextColor(BOOL bDisabled = FALSE);
@@ -936,7 +938,7 @@ virtual COLORREF GetRibbonQuickAccessToolBarTextColor(BOOL bDisabled = FALSE);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonslidercolors"></a>CMFCVisualManager::GetRibbonSliderColors  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void GetRibbonSliderColors(
@@ -959,7 +961,7 @@ virtual void GetRibbonSliderColors(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getribbonstatusbartextcolor"></a>CMFCVisualManager::GetRibbonStatusBarTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetRibbonStatusBarTextColor(CMFCRibbonStatusBar* pStatusBar);
@@ -973,7 +975,7 @@ virtual COLORREF GetRibbonStatusBarTextColor(CMFCRibbonStatusBar* pStatusBar);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getshowallmenuitemsheight"></a>CMFCVisualManager::GetShowAllMenuItemsHeight  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetShowAllMenuItemsHeight(
@@ -990,7 +992,7 @@ virtual int GetShowAllMenuItemsHeight(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getsmartdockingbaseguidecolors"></a>CMFCVisualManager::GetSmartDockingBaseGuideColors  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void GetSmartDockingBaseGuideColors(
@@ -1005,7 +1007,7 @@ virtual void GetSmartDockingBaseGuideColors(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getsmartdockinghighlighttonecolor"></a>CMFCVisualManager::GetSmartDockingHighlightToneColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetSmartDockingHighlightToneColor();
@@ -1028,7 +1030,7 @@ virtual AFX_SMARTDOCK_THEME GetSmartDockingTheme();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="getstatusbarpanetextcolor"></a>CMFCVisualManager::GetStatusBarPaneTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetStatusBarPaneTextColor(
@@ -1092,7 +1094,7 @@ virtual void GetTabFrameColors(
  タブ ウィンドウを描画するときに、フレームワークが使用されている色のセットをカスタマイズする場合は、派生クラスでは、この関数をオーバーライドします。  
   
 ##  <a name="gettabhorzmargin"></a>CMFCVisualManager::GetTabHorzMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetTabHorzMargin(const CMFCBaseTabCtrl*);
@@ -1106,7 +1108,7 @@ virtual int GetTabHorzMargin(const CMFCBaseTabCtrl*);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettabtextcolor"></a>CMFCVisualManager::GetTabTextColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetTabTextColor(
@@ -1125,7 +1127,7 @@ virtual COLORREF GetTabTextColor(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanegroupcaptionheight"></a>CMFCVisualManager::GetTasksPaneGroupCaptionHeight  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneGroupCaptionHeight() const;  
@@ -1136,7 +1138,7 @@ int GetTasksPaneGroupCaptionHeight() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanegroupcaptionhorzoffset"></a>CMFCVisualManager::GetTasksPaneGroupCaptionHorzOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneGroupCaptionHorzOffset() const;  
@@ -1147,7 +1149,7 @@ int GetTasksPaneGroupCaptionHorzOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanegroupcaptionvertoffset"></a>CMFCVisualManager::GetTasksPaneGroupCaptionVertOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneGroupCaptionVertOffset() const;  
@@ -1158,7 +1160,7 @@ int GetTasksPaneGroupCaptionVertOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanegroupvertoffset"></a>CMFCVisualManager::GetTasksPaneGroupVertOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneGroupVertOffset() const;  
@@ -1169,7 +1171,7 @@ int GetTasksPaneGroupVertOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanehorzmargin"></a>CMFCVisualManager::GetTasksPaneHorzMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneHorzMargin() const;  
@@ -1180,7 +1182,7 @@ int GetTasksPaneHorzMargin() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspaneiconhorzoffset"></a>CMFCVisualManager::GetTasksPaneIconHorzOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneIconHorzOffset() const;  
@@ -1191,7 +1193,7 @@ int GetTasksPaneIconHorzOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspaneiconvertoffset"></a>CMFCVisualManager::GetTasksPaneIconVertOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneIconVertOffset() const;  
@@ -1202,7 +1204,7 @@ int GetTasksPaneIconVertOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanetaskhorzoffset"></a>CMFCVisualManager::GetTasksPaneTaskHorzOffset  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneTaskHorzOffset() const;  
@@ -1213,7 +1215,7 @@ int GetTasksPaneTaskHorzOffset() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettaskspanevertmargin"></a>CMFCVisualManager::GetTasksPaneVertMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 int GetTasksPaneVertMargin() const;  
@@ -1248,7 +1250,7 @@ virtual COLORREF GetToolbarButtonTextColor(
  アプリケーションのツールバー ボタンのテキストの色をカスタマイズするには、この関数をオーバーライドします。  
   
 ##  <a name="gettoolbarcustomizebuttonmargin"></a>CMFCVisualManager::GetToolBarCustomizeButtonMargin  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual int GetToolBarCustomizeButtonMargin() const;  
@@ -1259,7 +1261,7 @@ virtual int GetToolBarCustomizeButtonMargin() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettoolbardisabledcolor"></a>CMFCVisualManager::GetToolbarDisabledColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetToolbarDisabledColor() const;  
@@ -1283,7 +1285,7 @@ virtual COLORREF GetToolbarDisabledTextColor();
  使用できるツール バー ボタンのテキストの色を設定する場合は、カスタム ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="gettoolbarhighlightcolor"></a>CMFCVisualManager::GetToolbarHighlightColor  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF GetToolbarHighlightColor();
@@ -1294,7 +1296,7 @@ virtual COLORREF GetToolbarHighlightColor();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="gettooltipinfo"></a>CMFCVisualManager::GetToolTipInfo  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL GetToolTipInfo(
@@ -1321,7 +1323,7 @@ virtual BOOL HasOverlappedAutoHideButtons() const;
  `TRUE`自動的に隠すボタンが重なり合う場合`FALSE`が存在しない場合。  
   
 ##  <a name="isautodestroy"></a>CMFCVisualManager::IsAutoDestroy  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 BOOL IsAutoDestroy() const;  
@@ -1332,7 +1334,7 @@ BOOL IsAutoDestroy() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="isdefaultwinxppopupbutton"></a>CMFCVisualManager::IsDefaultWinXPPopupButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsDefaultWinXPPopupButton(CMFCDesktopAlertWndButton*) const;  
@@ -1385,7 +1387,7 @@ BOOL IsFadeInactiveImage() const;
  アクティブ化またはを呼び出して照明効果を非アクティブ化できる[CMFCVisualManager::SetFadeInactiveImage](#setfadeinactiveimage)します。 照明効果は、どの利用不可のイメージがグレー表示されています。  
   
 ##  <a name="isframemenucheckeditems"></a>CMFCVisualManager::IsFrameMenuCheckedItems  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 BOOL IsFrameMenuCheckedItems() const;  
@@ -1396,7 +1398,7 @@ BOOL IsFrameMenuCheckedItems() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ishighlightonenotetabs"></a>CMFCVisualManager::IsHighlightOneNoteTabs  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsHighlightOneNoteTabs() const;  
@@ -1407,7 +1409,7 @@ virtual BOOL IsHighlightOneNoteTabs() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ishighlightwholemenuitem"></a>CMFCVisualManager::IsHighlightWholeMenuItem  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsHighlightWholeMenuItem();
@@ -1418,7 +1420,7 @@ virtual BOOL IsHighlightWholeMenuItem();
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="islayeredribbonkeytip"></a>CMFCVisualManager::IsLayeredRibbonKeyTip  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsLayeredRibbonKeyTip() const;  
@@ -1455,7 +1457,7 @@ virtual BOOL IsOfficeXPStyleMenus() const;
  [CMFCPopupMenu クラス](../../mfc/reference/cmfcpopupmenu-class.md)メニューおよび影を描画する必要がある場合は、このメソッドを呼び出します。 既定では、このメソッドが戻る`FALSE`します。 Office XP のポップアップ メニューのようなポップアップ メニューを使用する場合は、カスタム ビジュアル マネージャーでは、このメソッドをオーバーライドし、返す`TRUE`します。  
   
 ##  <a name="isoffsetpressedbutton"></a>CMFCVisualManager::IsOffsetPressedButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsOffsetPressedButton() const;  
@@ -1476,7 +1478,7 @@ virtual BOOL IsOwnerDrawCaption();
  `TRUE`アプリケーション内のすべてのフレーム ウィンドウ、オーナー描画キャプションがある場合`FALSE`それ以外の場合。  
   
 ##  <a name="isownerdrawmenucheck"></a>CMFCVisualManager::IsOwnerDrawMenuCheck  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsOwnerDrawMenuCheck();
@@ -1497,7 +1499,7 @@ BOOL IsShadowHighlightedImage() const;
  ビジュアル マネージャーが強調表示されたイメージの下に影を表示する場合は 0 以外。それ以外の場合は 0 です。  
   
 ##  <a name="istoolbarbuttonfillenabled"></a>CMFCVisualManager::IsToolbarButtonFillEnabled  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 BOOL IsToolbarButtonFillEnabled() const;  
@@ -1508,7 +1510,7 @@ BOOL IsToolbarButtonFillEnabled() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="istoolbarroundshape"></a>CMFCVisualManager::IsToolbarRoundShape  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsToolbarRoundShape(CMFCToolBar*);
@@ -1522,7 +1524,7 @@ virtual BOOL IsToolbarRoundShape(CMFCToolBar*);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="iswindowsthemingsupported"></a>CMFCVisualManager::IsWindowsThemingSupported  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL IsWindowsThemingSupported() const;  
@@ -1533,7 +1535,7 @@ virtual BOOL IsWindowsThemingSupported() const;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="onactivateapp"></a>CMFCVisualManager::OnActivateApp  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnActivateApp(
@@ -1667,7 +1669,7 @@ virtual void OnDrawButtonBorder(
  ツール バー ボタンの状態には、 `ButtonsIsRegular`、 `ButtonsIsPressed`、または`ButtonsIsHighlighted`です。  
   
 ##  <a name="ondrawbuttonseparator"></a>CMFCVisualManager::OnDrawButtonSeparator  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawButtonSeparator(
@@ -1719,7 +1721,7 @@ virtual void OnDrawCaptionBarBorder(
  キャプション バーの境界線の外観をカスタマイズする派生クラスでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawcaptionbarbuttonborder"></a>CMFCVisualManager::OnDrawCaptionBarButtonBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawCaptionBarButtonBorder(
@@ -1746,7 +1748,7 @@ virtual void OnDrawCaptionBarButtonBorder(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawcaptionbarinfoarea"></a>CMFCVisualManager::OnDrawCaptionBarInfoArea  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawCaptionBarInfoArea(
@@ -1804,7 +1806,7 @@ virtual void OnDrawCaptionButton (
  キャプション ボタンの外観をカスタマイズする派生クラスでは、このメソッドをオーバーライドします。  
   
 ##  <a name="ondrawcheckbox"></a>CMFCVisualManager::OnDrawCheckBox  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawCheckBox(
@@ -1825,7 +1827,7 @@ virtual void OnDrawCheckBox(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawcheckboxex"></a>CMFCVisualManager::OnDrawCheckBoxEx  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawCheckBoxEx(
@@ -1918,7 +1920,7 @@ virtual void OnDrawComboDropButton(
  コンボ ボックス ボタンのドロップダウン ボタンの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawcontrolborder"></a>CMFCVisualManager::OnDrawControlBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawControlBorder(CWnd* pWndCtrl);
@@ -1992,7 +1994,7 @@ virtual void OnDrawEditBorder(
  境界線をカスタマイズする場合は、派生ビジュアル マネージャーでは、このメソッドをオーバーライドして、`CMFCToolBarEditBoxButton`オブジェクトです。  
   
 ##  <a name="ondrawexpandingbox"></a>CMFCVisualManager::OnDrawExpandingBox  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawExpandingBox(
@@ -2100,7 +2102,7 @@ virtual void OnDrawHeaderCtrlSortArrow(
  場合`bIsUp`は`TRUE`、ビジュアル マネージャーは、並べ替えの上向きの矢印を描画します。 ある場合`FALSE`、ビジュアル マネージャーは、並べ替えの下向きの矢印を描画します。 オーバーライド`OnDrawHeaderCtrlSortArrow`並べ替えボタンの外観をカスタマイズする派生クラスでします。  
   
 ##  <a name="ondrawmenuarrowoncustomizelist"></a>CMFCVisualManager::OnDrawMenuArrowOnCustomizeList  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMenuArrowOnCustomizeList(
@@ -2140,7 +2142,7 @@ virtual void OnDrawMenuBorder(
  このメソッドの既定の実装では、標準のメニューの境界線が表示されます。 メニューの境界線の外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawmenucheck"></a>CMFCVisualManager::OnDrawMenuCheck  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMenuCheck(
@@ -2161,7 +2163,7 @@ virtual void OnDrawMenuCheck(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawmenuitembutton"></a>CMFCVisualManager::OnDrawMenuItemButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMenuItemButton(
@@ -2182,7 +2184,7 @@ virtual void OnDrawMenuItemButton(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawmenulabel"></a>CMFCVisualManager::OnDrawMenuLabel  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF OnDrawMenuLabel(
@@ -2199,7 +2201,7 @@ virtual COLORREF OnDrawMenuLabel(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawmenuresizebar"></a>CMFCVisualManager::OnDrawMenuResizeBar  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMenuResizeBar(
@@ -2251,7 +2253,7 @@ virtual void OnDrawMenuScrollButton(
  メニュー スクロール ボタンの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。 メニュー項目の全体的な高さが、ポップアップ メニューの高さを超えると、ポップアップ メニューの端にスクロール ボタンのメニューが表示されます。  
   
 ##  <a name="ondrawmenushadow"></a>CMFCVisualManager::OnDrawMenuShadow  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMenuShadow(
@@ -2313,7 +2315,7 @@ virtual void OnDrawMenuSystemButton(
  このメソッドの既定の実装を呼び出す[CDC::DrawFrameControl](../../mfc/reference/cdc-class.md#drawframecontrol)で、`DFC_CAPTION`型です。 システム ボタンの外観をカスタマイズするビジュアル マネージャーを派生クラスでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawminiframeborder"></a>CMFCVisualManager::OnDrawMiniFrameBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawMiniFrameBorder(
@@ -2435,7 +2437,7 @@ virtual COLORREF OnDrawPaneCaption(
  ウィンドウのキャプションの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawpanedivider"></a>CMFCVisualManager::OnDrawPaneDivider  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawPaneDivider(
@@ -2454,7 +2456,7 @@ virtual void OnDrawPaneDivider(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawpopupwindowborder"></a>CMFCVisualManager::OnDrawPopupWindowBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawPopupWindowBorder(
@@ -2469,7 +2471,7 @@ virtual void OnDrawPopupWindowBorder(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawpopupwindowbuttonborder"></a>CMFCVisualManager::OnDrawPopupWindowButtonBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawPopupWindowButtonBorder(
@@ -2486,7 +2488,7 @@ virtual void OnDrawPopupWindowButtonBorder(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawpopupwindowcaption"></a>CMFCVisualManager::OnDrawPopupWindowCaption  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF OnDrawPopupWindowCaption(
@@ -2662,7 +2664,7 @@ virtual COLORREF OnDrawRibbonCategoryCaption(
  リボン カテゴリのキャプション バーの外観をカスタマイズする派生クラスでは、このメソッドをオーバーライドします。 キャプション バーの詳細については、次を参照してください。 [CMFCRibbonContextCaption クラス](../../mfc/reference/cmfcribboncontextcaption-class.md)します。  
   
 ##  <a name="ondrawribboncategoryscroll"></a>CMFCVisualManager::OnDrawRibbonCategoryScroll  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonCategoryScroll(
@@ -2703,7 +2705,7 @@ virtual COLORREF OnDrawRibbonCategoryTab(
  リボン カテゴリ タブの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。 リボン カテゴリの詳細については、次を参照してください。 [CMFCRibbonCategory クラス](../../mfc/reference/cmfcribboncategory-class.md)します。  
   
 ##  <a name="ondrawribboncheckboxonlist"></a>CMFCVisualManager::OnDrawRibbonCheckBoxOnList  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonCheckBoxOnList(
@@ -2724,7 +2726,7 @@ virtual void OnDrawRibbonCheckBoxOnList(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawribboncolorpalettebox"></a>CMFCVisualManager::OnDrawRibbonColorPaletteBox  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonColorPaletteBox(
@@ -2776,7 +2778,7 @@ virtual void OnDrawRibbonDefaultPaneButton(
  既定のボタンの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawribbondefaultpanebuttoncontext"></a>CMFCVisualManager::OnDrawRibbonDefaultPaneButtonContext  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonDefaultPaneButtonContext(
@@ -2791,7 +2793,7 @@ virtual void OnDrawRibbonDefaultPaneButtonContext(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawribbondefaultpanebuttonindicator"></a>CMFCVisualManager::OnDrawRibbonDefaultPaneButtonIndicator  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonDefaultPaneButtonIndicator(
@@ -2812,7 +2814,7 @@ virtual void OnDrawRibbonDefaultPaneButtonIndicator(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawribbongalleryborder"></a>CMFCVisualManager::OnDrawRibbonGalleryBorder  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonGalleryBorder(
@@ -2829,7 +2831,7 @@ virtual void OnDrawRibbonGalleryBorder(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawribbongallerybutton"></a>CMFCVisualManager::OnDrawRibbonGalleryButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonGalleryButton(
@@ -2844,7 +2846,7 @@ virtual void OnDrawRibbonGalleryButton(
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="ondrawribbonkeytip"></a>CMFCVisualManager::OnDrawRibbonKeyTip  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonKeyTip(
@@ -2928,7 +2930,7 @@ virtual void OnDrawRibbonMainPanelFrame(
  フレームの外観をカスタマイズする場合は、派生ビジュアル マネージャーでは、このメソッドをオーバーライドして、`CMFCRibbonMainPanel`です。  
   
 ##  <a name="ondrawribbonmenucheckframe"></a>CMFCVisualManager::OnDrawRibbonMenuCheckFrame  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawRibbonMenuCheckFrame(
@@ -3224,7 +3226,7 @@ virtual COLORREF OnDrawRibbonTabsFrame(
  リボンのタブのセットを囲むフレームをカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawscrollbuttons"></a>CMFCVisualManager::OnDrawScrollButtons  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawScrollButtons(
@@ -3272,7 +3274,7 @@ virtual void OnDrawSeparator(
  関連するアイコンのグループを区切るためには、コントロール バーの区切り記号を使用します。 このメソッドの既定の実装には、標準の区切り記号が表示されます。 区切り記号の外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawshowallmenuitems"></a>CMFCVisualManager::OnDrawShowAllMenuItems  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawShowAllMenuItems(
@@ -3706,7 +3708,7 @@ virtual void OnDrawTasksGroupCaption(
  キャプションをカスタマイズする派生クラスでは、このメソッドをオーバーライドして、`CMFCTasksPaneTaskGroup`です。  
   
 ##  <a name="ondrawtasksgroupicon"></a>CMFCVisualManager::OnDrawTasksGroupIcon  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawTasksGroupIcon(
@@ -3754,7 +3756,7 @@ virtual void OnDrawTearOffCaption(
  ティアオフ バーのキャプションの外観をカスタマイズする派生クラスでこのメソッドをオーバーライドします。  
   
 ##  <a name="ondrawtoolboxframe"></a>CMFCVisualManager::OnDrawToolBoxFrame  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnDrawToolBoxFrame(
@@ -3791,7 +3793,7 @@ virtual BOOL OnEraseMDIClientArea(
  ビジュアル マネージャー MDI クライアント領域を消去するカスタム コードを実行するには、このメソッドをオーバーライドします。  
   
 ##  <a name="onerasepopupwindowbutton"></a>CMFCVisualManager::OnErasePopupWindowButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnErasePopupWindowButton(
@@ -3976,7 +3978,7 @@ virtual void OnFillButtonInterior(
  ツール バー ボタンの状態には、 `ButtonsIsRegular`、 `ButtonsIsPressed`、または`ButtonsIsHighlighted`です。  
   
 ##  <a name="onfillcaptionbarbutton"></a>CMFCVisualManager::OnFillCaptionBarButton  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF OnFillCaptionBarButton(
@@ -4273,7 +4275,7 @@ virtual void OnFillRibbonMenuFrame(
  メニュー バーの外観をカスタマイズする場合は、派生ビジュアル マネージャーでは、このメソッドをオーバーライドして、`CMFCRibbonMainPanel`です。  
   
 ##  <a name="onfillribbonquickaccesstoolbarpopup"></a>CMFCVisualManager::OnFillRibbonQuickAccessToolBarPopup  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual void OnFillRibbonQuickAccessToolBarPopup(
@@ -4438,7 +4440,7 @@ virtual void OnHighlightRarelyUsedMenuItems(
  強調表示されたメニュー コマンドの外観をカスタマイズする場合は、派生ビジュアル マネージャーでこのメソッドをオーバーライドします。  
   
 ##  <a name="onncactivate"></a>CMFCVisualManager::OnNcActivate  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual BOOL OnNcActivate(
@@ -4520,7 +4522,7 @@ static void RedrawAll();
 ```  
   
 ##  <a name="ribboncategorycolortorgb"></a>CMFCVisualManager::RibbonCategoryColorToRGB  
- [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
+
   
 ```  
 virtual COLORREF RibbonCategoryColorToRGB(AFX_RibbonCategoryColor color);
