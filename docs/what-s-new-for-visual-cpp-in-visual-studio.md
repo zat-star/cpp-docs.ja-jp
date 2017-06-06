@@ -26,9 +26,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
 ms.openlocfilehash: 71ae904790532cde7ffe559648ccd13a59b88051
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/01/2017
 
 ---
@@ -187,7 +188,7 @@ Android および iOS を対象とするモバイル アプリを、Visual Studi
 
 ## <a name="c-code-analysis"></a>C++ コードの分析
 
-[C++ コア ガイドライン](https://github.com/isocpp/CppCoreGuidelines)を適用するための C++ コア チェッカーが Visual Studio で配布されています。 プロジェクトのプロパティ ページの [Code Analysis Extensions] (コード分析の拡張機能) ダイアログでチェックを有効にするだけで、拡張機能がコード分析の実行時に含まれます。 
+[C++ コア ガイドライン](https://github.com/isocpp/CppCoreGuidelines)を適用するための C++ コア チェッカーが Visual Studio で配布されています。 プロジェクトのプロパティ ページの [Code Analysis Extensions]\(コード分析の拡張機能) ダイアログでチェックを有効にするだけで、拡張機能がコード分析の実行時に含まれます。 
 
 ![CppCoreCheck](media/CppCoreCheck.png "CppCoreCheck properties page") 
 
