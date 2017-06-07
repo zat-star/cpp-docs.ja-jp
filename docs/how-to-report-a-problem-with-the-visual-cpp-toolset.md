@@ -20,9 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5c6fbfc8699d7d66c40b0458972d8b6ef0dcc705
 ms.openlocfilehash: 2ea129ac94cb1ddc7486ba69280dc0390896e088
+ms.contentlocale: ja-jp
+ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="how-to-report-a-problem-with-the-visual-c-toolset"></a>Visual C++ ツールセットで問題を報告する方法
@@ -40,7 +42,7 @@ Visual C++ のコンパイラ、リンカー、その他のツールを使って
   
  レポートは、Microsoft にとっても他の開発者にとっても重要です。 Visual C++ の向上にご協力いただきありがとうございます。  
   
-##  <a name="a-namepreparea-how-to-prepare-your-report"></a><a name="prepare"></a> レポートを準備する方法  
+##  <a name="prepare"></a> レポートを準備する方法  
  完全な情報がないと弊社のコンピューターで問題を再現するのはとても困難なので、質の高いレポートを作成することが重要です。 レポートの質がよいほど、より効果的に問題を再現して診断できます。  
   
  レポートには少なくとも次の情報を含める必要があります。  
@@ -144,7 +146,7 @@ INTERNAL COMPILER ERROR in 'd:\o\dev\otools\bin\x64\cl.exe'
     Help menu, or open the Technical Support help file for more information   
 ```  
   
-####  <a name="a-namebackendcrasha-backend-code-generation-crash"></a><a name="backend_crash"></a> バックエンド (コード生成) のクラッシュ  
+####  <a name="backend_crash"></a> バックエンド (コード生成) のクラッシュ  
  バックエンドのクラッシュは、コンパイラのコード生成フェーズの間に発生します。 通常、コンパイラは、[致命的なエラー C1001](error-messages/compiler-errors-1/fatal-error-c1001.md) を出力し、問題に関連するソース コード ファイルと行番号を参照していない場合があります。ファイル compiler\utc\src\p2\main.c が言及されていることがよくありますが、この詳細は無視してかまいません。  
   
  この種のクラッシュの場合は、リンク時のコード生成 (LTCG) を使っている場合は[リンク再現コード](#link_repro)を、使っていない場合は[前処理済み再現コード](#preprocessed_repro)を提供してください。 LTGC は、`/GL` コマンド ライン引数を cl.exe に指定することによって有効になります。  
@@ -217,7 +219,7 @@ CONTEXT:
   
  この種のクラッシュの場合は、リンク時のコード生成 (LTCG) を使っている場合は[リンク再現コード](#link_repro)を、使っていない場合は[前処理済み再現コード](#preprocessed_repro)を提供してください。 LTGC は、`/GL` コマンド ライン引数を cl.exe に指定することによって有効になります。  
   
-##  <a name="a-namesenda-ways-to-send-your-report"></a><a name="send"></a> レポートを送信する方法  
+##  <a name="send"></a> レポートを送信する方法  
  レポートを提出するには複数の方法があります。 Microsoft Connect でのバグの報告、メールでの送信、Visual Studio に組み込まれている問題の報告ツールの使用などを使うことができます。 レポートに最適な選択肢は、発生した問題の種類、レポートを調査するエンジニアとの連絡方法、進捗状況を追跡するかどうか、コミュニティとレポートを共有するかどうかによって異なります。  
   
 > [!NOTE]
@@ -239,7 +241,7 @@ CONTEXT:
  [Visual Studio および .NET Framework のフィードバック](https://connect.microsoft.com/VisualStudio/feedback/LoadSubmitFeedbackForm)に関する Connect ページのドロップダウンで製品を選ぶことにより、他の Visual Studio および .Net Framework の製品についての問題を報告できます。  
   
 ### <a name="send-an-email"></a>メールを送信する  
- メールは、Visual C++ チームにレポートを直接送るもう&1; つの方法です。アドレスは [compilercrash@microsoft.com](mailto:compilercrash@microsoft.com) です。  
+ メールは、Visual C++ チームにレポートを直接送るもう 1 つの方法です。アドレスは [compilercrash@microsoft.com](mailto:compilercrash@microsoft.com) です。  
   
  メールによる問題の報告は、Microsoft Connect のような充実したコミュニティは利用できませんが、再現コードが大きい場合に適していることがあります。 また、作業環境がインターネットに接続されていない場合、または他の理由で Microsoft Connect を使用できない場合は、メールが最善または唯一のオプションになります。  
   
@@ -268,7 +270,7 @@ Source code and repro steps:
 > [!TIP]
 >  Visual Studio で発生する可能性がある、ツールセットに関係しない他の種類の問題 (たとえば、UI の問題、IDE の機能の不具合、一般的なクラッシュなど) の場合は、問題の報告ツールを使うのが特に適しています。このツールのスクリーンショット機能や、発生した問題をもたらした UI 操作を記録する機能が役に立ちます。 これらの他の種類のエラーを報告するには Microsoft Connect も適していますが、問題の報告ツールのような追加機能はありません。 これらの他の種類のエラーの報告には、compilercrash@microsoft.com へのメール送信は使わないでください。  
   
-##  <a name="a-namegeneratea-generating-repros"></a><a name="generate"></a> 再現手順の生成  
+##  <a name="generate"></a> 再現手順の生成  
  再現コードは、報告する問題を実際に示す完全な自己完結型のコード例です。 再現コードはコード スニペットでは**ありません**。ビルドして実行する完全な例 (または、報告している問題によって生成されるエラー以外) でなければなりません。 標準ヘッダーの場合であっても、必要な #include ディレクティブをすべて含む必要があります。  
   
  さらに、適切な再現コードとは次のようなものです。  
@@ -285,11 +287,11 @@ Source code and repro steps:
   
  異なる種類の問題の報告に使うさまざまな種類の再現コードを生成する手順を次に示します。  
   
-###  <a name="a-namepreprocessedreproa-preprocessed-repos"></a><a name="preprocessed_repro"></a> 前処理済み再現コード  
+###  <a name="preprocessed_repro"></a> 前処理済み再現コード  
  前処理済みの再現コードは、問題を示す単一のソース ファイルであり、元のソース ファイルを処理することによって C プリプロセッサの出力から生成されます。 この処理では、インクルードされているヘッダーがインライン化されて他のソース ファイルとヘッダー ファイルへの依存関係が削除され、ローカル環境に依存する可能性のあるマクロ、#ifdefs、その他のプリプロセッサ コマンドも解決されます。  
   
 > [!NOTE]
->  問題の原因が標準ライブラリの実装におけるバグの可能性がある場合、通常、問題が解決済みかどうかを確認するために最新の作業中の実装に置き換えるので、前処理済みの再現コードは最も役に立ちません。 この場合は、再現コードを前処理しないでください。また、問題を&1; つのソース ファイルに減らすことができない場合は、コードを .zip ファイルなどにパッケージ化するか、IDE プロジェクトの再現コード (後の「[その他の再現コード](#other_repros)」を参照) の使用を検討してください。  
+>  問題の原因が標準ライブラリの実装におけるバグの可能性がある場合、通常、問題が解決済みかどうかを確認するために最新の作業中の実装に置き換えるので、前処理済みの再現コードは最も役に立ちません。 この場合は、再現コードを前処理しないでください。また、問題を 1 つのソース ファイルに減らすことができない場合は、コードを .zip ファイルなどにパッケージ化するか、IDE プロジェクトの再現コード (後の「[その他の再現コード](#other_repros)」を参照) の使用を検討してください。  
   
 ##### <a name="to-preprocess-a-source-code-file"></a>ソース コード ファイルを前処理するには  
   
@@ -313,8 +315,8 @@ Source code and repro steps:
   
  最後に、レポートにこの再現コードを添付します。  
   
-###  <a name="a-namelinkreproa-link-repros"></a><a name="link_repro"></a> リンク再現コード  
- リンク再現コードは、ビルド成果物を含む&1; つのディレクトリであり、リンク時コード生成 (LTCG) が関係するバックエンド クラッシュやリンカー クラッシュなど、リンク時に発生する問題を全体として再現します。含まれるビルド成果物は、問題を再現できるようにリンカー入力として必要なものです。 リンク再現コードは、リンカーによって提供される機能を使って簡単に作成できます。  
+###  <a name="link_repro"></a> リンク再現コード  
+ リンク再現コードは、ビルド成果物を含む 1 つのディレクトリであり、リンク時コード生成 (LTCG) が関係するバックエンド クラッシュやリンカー クラッシュなど、リンク時に発生する問題を全体として再現します。含まれるビルド成果物は、問題を再現できるようにリンカー入力として必要なものです。 リンク再現コードは、リンカーによって提供される機能を使って簡単に作成できます。  
   
 ##### <a name="to-generate-a-link-repro"></a>リンク再現コードを生成するには:  
   
@@ -332,12 +334,7 @@ Source code and repro steps:
   
  最後に、ディレクトリ全体を .zip ファイルなどに圧縮することで再現コードをパッケージ化し、レポートに添付します。  
   
-###  <a name="a-nameotherreprosa-other-repros"></a><a name="other_repros"></a> その他の再現コード  
+###  <a name="other_repros"></a> その他の再現コード  
  1 つのソース ファイルまたは前処理済み再現コードに問題をまとめることができず、問題にリンク再現コードが必要ない場合は、IDE プロジェクトを調査できます。 プロジェクト内のコードは最小限であり、このドキュメントのすべてのガイダンスが同じように適用されます。  
   
  最小限の IDE プロジェクトとして再現コードを作成し、ディレクトリ構造全体を .zip ファイルなどに圧縮してパッケージ化した後、レポートに添付します。
-
-
-<!--HONumber=Feb17_HO4-->
-
-
