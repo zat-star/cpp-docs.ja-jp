@@ -33,9 +33,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
 ms.openlocfilehash: ed87b11ce1938abb0ef7b31cc9ca03e6b0f76903
+ms.contentlocale: ja-jp
 ms.lasthandoff: 02/24/2017
 
 ---
@@ -66,7 +67,7 @@ ms.lasthandoff: 02/24/2017
 ## <a name="using-the-commit-to-disk-feature-with-existing-code"></a>既存のコードと共にディスク コミット機能を使用する  
  既定では、[fflush](../c-runtime-library/reference/fflush.md) または [_flushall](../c-runtime-library/reference/flushall.md) ライブラリ関数への呼び出しは、オペレーティング システムによって保持されるバッファーにデータを書き込みます。 オペレーティング システムでは、ディスクにデータを実際に書き込むための最適な時間を決定します。 ランタイム ライブラリのディスク コミット機能を使用すると、重要なデータをオペレーティング システムのバッファーではなく、ディスクに直接書き込むことができます。 既存のプログラムのオブジェクト ファイルと COMMODE.OBJ をリンクさせて書き直すことなく、既存のプログラムにこの機能を提供することができます。  
   
- 生成される実行ファイルでは、`fflush` への呼び出しはバッファーの内容をディスクに直接書き込み、`_flushall` への呼び出しはすべてのバッファーの内容をディスクに書き込みます。 これら&2; つの関数のみが、COMMODE.OBJ の影響を受けます。  
+ 生成される実行ファイルでは、`fflush` への呼び出しはバッファーの内容をディスクに直接書き込み、`_flushall` への呼び出しはすべてのバッファーの内容をディスクに書き込みます。 これら 2 つの関数のみが、COMMODE.OBJ の影響を受けます。  
   
  **END Microsoft 固有の仕様**  
   

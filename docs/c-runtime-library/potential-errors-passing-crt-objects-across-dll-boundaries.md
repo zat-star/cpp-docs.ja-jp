@@ -139,7 +139,7 @@ int main( void )
 MYLIB has not been set.  
 ```  
   
- CRT のコピーが&1; つだけ使用されるように DLL と .exe ファイルの両方が構築されている場合、このプログラムは正常に実行され、次が出力されます。  
+ CRT のコピーが 1 つだけ使用されるように DLL と .exe ファイルの両方が構築されている場合、このプログラムは正常に実行され、次が出力されます。  
   
 ```  
 New MYLIB variable is: c:\mylib;c:\yourlib  

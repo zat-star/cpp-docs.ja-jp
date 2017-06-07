@@ -63,7 +63,7 @@ ms.lasthandoff: 02/24/2017
   
  *operator punctuator*  
   
- 上記の&1; つではない非空白文字のそれぞれ  
+ 上記の 1 つではない非空白文字のそれぞれ  
   
  *header-name*:  
  **\<**  *path-spec*  **> "**  *path spec*  **"**  
