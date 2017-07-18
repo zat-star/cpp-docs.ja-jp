@@ -56,7 +56,7 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
   
 -   プログラムを実行するために C++ 再頒布可能パッケージとランタイム コンポーネントを探している場合、 [Microsoft ダウンロード センター](http://www.microsoft.com/en-us/download/) にアクセスして検索ボックスに **Visual C++** と入力してください。  
   
--   C++ プログラミングの概念については、そうした内容を記載した Web サイトが多数あるので、そのようなサイトを利用するか、C++ の考案者である Bjarne Stroustrup による「 [プログラミング -- C++ 利用の原理と実践 (第&2; 版)](http://stroustrup.com/Programming/) 」を入手してください。 Visual C++ コンテンツは、C++ の基礎知識を前提として作成されています。  
+-   C++ プログラミングの概念については、そうした内容を記載した Web サイトが多数あるので、そのようなサイトを利用するか、C++ の考案者である Bjarne Stroustrup による「 [プログラミング -- C++ 利用の原理と実践 (第 2 版)](http://stroustrup.com/Programming/) 」を入手してください。 Visual C++ コンテンツは、C++ の基礎知識を前提として作成されています。  
   
 -   Visual C++ コンパイラが必要な場合、 [https://www.visualstudio.com/](https://www.visualstudio.com/)から Visual Studio の有料版または無料版をダウンロードする必要があります。  
 

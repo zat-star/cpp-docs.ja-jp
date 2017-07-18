@@ -42,7 +42,7 @@ ms.lasthandoff: 02/24/2017
 
 ---
 # <a name="c-character-constants"></a>C 文字定数
-"文字定数" は、表現できる文字セットの&1; 文字を単一引用符 (**' '**) で囲むことによって作成されます。 文字定数は、[実行文字セット](../c-language/execution-character-set.md)の文字を表すために使用されます。  
+"文字定数" は、表現できる文字セットの 1 文字を単一引用符 (**' '**) で囲むことによって作成されます。 文字定数は、[実行文字セット](../c-language/execution-character-set.md)の文字を表すために使用されます。  
   
 ## <a name="syntax"></a>構文  
  *character-constant*:  

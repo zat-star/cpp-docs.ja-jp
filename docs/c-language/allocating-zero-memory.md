@@ -42,7 +42,7 @@ ms.lasthandoff: 02/24/2017
 # <a name="allocating-zero-memory"></a>ゼロ メモリの割り当て
 **ANSI 4.10.3** 要求されたサイズがゼロの場合の `calloc`、`malloc`、または `realloc` 関数の動作  
   
- `calloc`、`malloc`、および `realloc` 関数は、引数として&0; を受け入れます。 実際のメモリの割り当てはありませんが、有効なポインターが返され、メモリ ブロックは realloc によって後で変更できます。  
+ `calloc`、`malloc`、および `realloc` 関数は、引数として 0 を受け入れます。 実際のメモリの割り当てはありませんが、有効なポインターが返され、メモリ ブロックは realloc によって後で変更できます。  
   
 ## <a name="see-also"></a>関連項目  
  [ライブラリ関数](../c-language/library-functions.md)

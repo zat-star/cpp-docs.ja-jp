@@ -121,7 +121,7 @@ ms.lasthandoff: 03/07/2017
 |LIBCPMTD.LIB|マルチスレッド、静的リンク|**/MTd**|_DEBUG、_MT|  
 |MSVCPRTD.LIB|マルチスレッド、動的リンク (MSVCP\<version>D.DLL 用のインポート ライブラリ)|**/MDd**|_DEBUG、_MT、_DLL|  
   
- プロジェクトのリリース バージョンをビルドすると、既定では、選択したコンパイラ オプション (マルチスレッド、DLL、/clr) に応じて、基本 C ランタイム ライブラリ (LIBCMT.LIB、MSVCMRT.LIB、MSVCRT.LIB) の&1; つがリンクされます。 コードに [C++ 標準ライブラリのヘッダー ファイル](../standard-library/cpp-standard-library-header-files.md)の&1; つがインクルードされている場合は、コンパイル時に [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] によって自動的に C++ 標準ライブラリがリンクされます。 例:  
+ プロジェクトのリリース バージョンをビルドすると、既定では、選択したコンパイラ オプション (マルチスレッド、DLL、/clr) に応じて、基本 C ランタイム ライブラリ (LIBCMT.LIB、MSVCMRT.LIB、MSVCRT.LIB) の 1 つがリンクされます。 コードに [C++ 標準ライブラリのヘッダー ファイル](../standard-library/cpp-standard-library-header-files.md)の 1 つがインクルードされている場合は、コンパイル時に [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] によって自動的に C++ 標準ライブラリがリンクされます。 例:  
   
 ```  
 #include <ios>   
