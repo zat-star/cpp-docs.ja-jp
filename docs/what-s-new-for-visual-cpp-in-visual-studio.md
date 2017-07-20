@@ -27,16 +27,16 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 71ae904790532cde7ffe559648ccd13a59b88051
+ms.sourcegitcommit: ed0e4505b68c2ea198e0771b6301e685daa8662e
+ms.openlocfilehash: 58b5a3f2e5ce491ba7ba185c90bb6b4a2dca3101
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 06/30/2017
 
 ---
 
 # <a name="whats-new-for-visual-c-in-includevsdev15mdmiscincludesvsdev15mdmd"></a>[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] での Visual C# の新機能
 
-[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] には、Visual C++ 環境に対する多くの更新プログラムと修正プログラムが導入されています。 250 以上のバグを修正し、コンパイラおよびツールの問題をレポートしてきました。その多くは [Microsoft Connect](https://connect.microsoft.com/VisualStudio "Microsoft Connect") を通じてお客様から寄せられたものです。 バグ レポートをお寄せいただきありがとうございました。  Visual Studio 全体の新機能について詳しくは、「[[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] の新機能](https://go.microsoft.com/fwlink/?linkid=834481)」をご覧ください。
+[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] には、Visual C++ 環境に対する多くの更新プログラムと修正プログラムが導入されています。 250 以上のバグを修正し、コンパイラおよびツールの問題をレポートしてきました。その多くは [Microsoft Connect](https://connect.microsoft.com/VisualStudio "Microsoft Connect") を通じてお客様から寄せられたものです。 バグ レポートをお寄せいただきありがとうございました。  Visual Studio 全体の新機能の詳細については、「[[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] の新機能](https://go.microsoft.com/fwlink/?linkid=834481)」を参照してください。
 
 <!--The compiler and tools version number in [!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] is 14.10.24629. -->
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 04/01/2017
 * STL の改善点の詳細については、[Visual Studio 2017 RTM における STL の修正](https://blogs.msdn.microsoft.com/vcblog/2017/02/06/stl-fixes-in-vs-2017-rtm/)に関する記事をご覧ください。
 
 ### <a name="open-source-library-support"></a>オープン ソース ライブラリのサポート  
-Vcpkg は、Visual Studio でオープン ソースの C++ スタティック ライブラリと DLL を取得してビルドするプロセスを大幅に単純化するオープン ソースのコマンド ライン ツールです。 詳しくは、「[Vcpkg updates: Static linking is now available](https://blogs.msdn.microsoft.com/vcblog/2016/11/01/vcpkg-updates-static-linking-is-now-available/)」(Vcpkg の更新: 静的リンクを使用できるようになりました) をご覧ください。
+Vcpkg は、Visual Studio でオープン ソースの C++ スタティック ライブラリと DLL を取得してビルドするプロセスを大幅に単純化するオープン ソースのコマンド ライン ツールです。 詳細については、「[vcpkg: C++ 用のパッケージ マネージャー](vcpkg.md)」を参照してください。
 
 ### <a name="cpprest-sdk-290"></a>CPPRest SDK 2.9.0  
 C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、バージョン 2.9.0 に更新されました。 詳しくは、「[CppRestSDK 2.9.0 is available on GitHub](https://blogs.msdn.microsoft.com/vcblog/2016/10/21/cpprestsdk-2-9-0-is-available-on-github/)」(CppRestSDK 2.9.0 が GitHub で入手可能) をご覧ください。
@@ -144,9 +144,9 @@ C++ 用のクロスプラットフォーム Web API である CPPRestSDK が、�
 Visual Studio 2017 で導入された [フォルダーを開く] 機能を使うと、ソリューションまたはプロジェクトを作成することなく、ソース コードを含むフォルダーでコーディング、ビルド、デバッグを行うことができます。 これにより、プロジェクトが MSBuild ベースではない場合でも、Visual Studio を簡単に使い始めることができます。 [フォルダーを開く] では、Visual Studio で MSBuild プロジェクトに対して既に提供されている、強力なコード理解、編集、ビルド、デバッグの機能にアクセスできます。 詳しくは、「[Bring your C++ codebase to Visual Studio with “Open Folder”](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/bring-your-c-codebase-to-visual-studio-with-open-folder/)」([フォルダーを開く] で C++ コードベースを Visual Studio に取り込む) をご覧ください。
 
 * [フォルダーを開く] のエクスペリエンスが改善されました。 以下の json ファイルを使って、エクスペリエンスをカスタマイズできます。
-  -    CppProperties.json: IntelliSense および参照エクスペリエンスをカスタマイズします。
-  -    Tasks.json: ビルド ステップをカスタマイズします。 
-  -    Launch.json: デバッグ エクスペリエンスをカスタマイズします。
+  - CppProperties.json: IntelliSense および参照エクスペリエンスをカスタマイズします。
+  - Tasks.json: ビルド ステップをカスタマイズします。 
+  - Launch.json: デバッグ エクスペリエンスをカスタマイズします。
 
 ### <a name="cmake-support-via-open-folder"></a>[フォルダーを開く] での CMake のサポート
 Visual Studio 2017 では、MSBuild プロジェクト ファイル (.vcxproj) を変換しなくても、CMake プロジェクトを使用できるようになりました。 詳細については、「[CMake support in Visual Studio](https://blogs.msdn.microsoft.com/vcblog/2016/10/05/cmake-support-in-visual-studio/)」 (Visual Studio での CMake のサポート) と「[CMake support in Visual Studio 2017 - what’s new in the RC.2 update](https://blogs.msdn.microsoft.com/vcblog/2016/12/20/cmake-support-in-visual-studio-2017-whats-new-in-the-rc-update/)」 (Visual Studio 2017 での CMake のサポート - RC.2 更新の新機能) をご覧ください。 [フォルダーを開く] で CMake プロジェクトを開くと、C++ の編集、ビルド、およびデバッグ用の環境が自動的に構成されます。
