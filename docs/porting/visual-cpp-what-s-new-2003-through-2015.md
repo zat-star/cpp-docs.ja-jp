@@ -22,10 +22,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: c6ac9fb7400bd0c37d1da5a0c6bd66ccbf7abd6c
+ms.sourcegitcommit: 3c1955bece0c8cdadb4a151ee06fa006402666a4
+ms.openlocfilehash: 7995451c0c89fbef55bd96291978775f89932f3b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 06/08/2017
 
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 2003 ～ 2015 の新機能
@@ -527,7 +527,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
 -   **コピー コンストラクター**  
   
-     [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)]の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
+     [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と Visual Studio 2015 の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
   
 ##  <a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
   
@@ -607,7 +607,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
   
      また、コンパイラは特定の診断を行いませんが、インラインの operator new の形式は不適切であると見なされます。  
   
--   **非クラス型で 'operator* type* ()' (ユーザー定義の変換) を呼び出す**  
+-   **非クラス型で 'operator *type*()' (ユーザー定義の変換) を呼び出す**  
   
      以前のバージョンのコンパイラでは 'operator *type*()' を非クラス型で呼び出すことが許可されていましたが、それは何の警告もなく無視されていました。 この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2228 を発行します。  
   
@@ -1389,7 +1389,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     warning C4467: Usage of ATL attributes is deprecated  
     ```  
   
-     コンパイラからサポートが削除されるまで、属性が指定された ATL コードを今後も使い続ける場合は、`/Wv:18` または `/wd:4467` コマンド ライン引数をコンパイラに渡すことで、またはソース コードに `#pragma warning(disable:4467)` を追加することで、この警告を無効にすることができます。  
+     コンパイラからサポートが削除されるまで、属性が指定された ATL コードを今後も使い続ける場合は、`/Wv:18` または `/wd4467` コマンド ライン引数をコンパイラに渡すことで、またはソース コードに `#pragma warning(disable:4467)` を追加することで、この警告を無効にすることができます。  
   
      例 1 (変更前)  
   

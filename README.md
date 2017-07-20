@@ -1,4 +1,4 @@
-## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
+ ## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
 このプロジェクトでは、[Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)が採用されています。
 詳細については「[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」(倫理規定 FAQ) を参照し、さらに疑問や意見がある場合は [opencode@microsoft.com](mailto:opencode@microsoft.com) にご連絡ください。
@@ -7,7 +7,9 @@
 
 ようこそ このリポジトリには、開発作業中である Visual C++ のテクニカル ドキュメント用のソース ファイルが含まれます。 トピックは、[Visual C++ ドキュメント サイト](https://docs.microsoft.com/cpp)で公開されています。
 
-Visual Basic と Visual C# のドキュメントは別のリポジトリ [http://github.com/dotnet/core-docs](http://github.com/dotnet/core-docs) にあり、Visual Studio のドキュメントは [http://github.com/Microsoft/visualstudio-docs](http://github.com/Microsoft/visualstudio-docs) のリポジトリにあります。
+このリポジトリは、2017 年 6 月 23 日に Microsoft/vcppdocs から MicrosoftDocs/cpp-docs-pr に移動されました。
+
+Visual Basic と Visual C# のドキュメントは別のリポジトリ [http://github.com/dotnet/core-docs](http://github.com/dotnet/core-docs) にあり、Visual Studio 2017 のドキュメントは [http://github.com/Microsoft/visualstudio-docs](http://github.com/Microsoft/visualstudio-docs) のリポジトリにあります。
 
 ## <a name="contributing-to-the-documentation"></a>ドキュメントへの貢献
 
