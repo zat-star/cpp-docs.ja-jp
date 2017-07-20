@@ -30,17 +30,17 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d8916543ac7432a75e6651a8ca4e123567c2fc1d
+ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
+ms.openlocfilehash: b118e825ef61d826049a1452ee4275951c0ca440
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 # <a name="porting-guide-spy"></a>移植のガイド: Spy++
 この移植のケース スタディは、一般的な移植プロジェクトのアイデア、発生する可能性がある問題の種類、および移植の問題に対応するための一般的なヒントとコツを理解できるように設計されています。 プロジェクトの移植に関するエクスペリエンスは、コードの仕様により大きく依存するため、移植をわかりやすく案内するためのものではありません。  
   
 ## <a name="spy"></a>Spy++  
- Spy++ は Windows デスクトップで広く使用される GUI 診断ツールであり、Windows デスクトップのユーザー インターフェイス要素に関するあらゆる種類の情報を提供します。 ウィンドウの完全な階層を表示し、各ウィンドウとコントロールについてのメタデータへのアクセスを提供します。 この便利なアプリケーションは、多年にわたって、Visual Studio に付属しています。 最後にコンパイルされたのが Visual C++ 6.0 で、[!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] に移植された古いバージョンも見つかっています。 Visual Studio 2017 のエクスペリエンスをほぼ同じになります。
+ Spy++ は Windows デスクトップで広く使用される GUI 診断ツールであり、Windows デスクトップのユーザー インターフェイス要素に関するあらゆる種類の情報を提供します。 ウィンドウの完全な階層を表示し、各ウィンドウとコントロールについてのメタデータへのアクセスを提供します。 この便利なアプリケーションは、多年にわたって、Visual Studio に付属しています。 最後にコンパイルされたのが Visual C++ 6.0 で、Visual Studio 2015 に移植された古いバージョンも見つかっています。 Visual Studio 2017 のエクスペリエンスをほぼ同じになります。
   
  私たちは、MFC と Win32 API を使用する Windows デスクトップ アプリケーションの移植で、特に Visual C++ 6.0 以降の Visual C++ のリリースごとに更新されていない古いプロジェクトでは、このようなケースが標準的であると考えました。  
   
@@ -84,7 +84,7 @@ warning MSB8012: TargetPath(...\spyxx\spyxxhk\.\..\Debug\SpyxxHk.dll) does not m
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxv_w32.h(40): fatal error C1189: #error:  MFC does not support WINVER less than 0x0501.  Please change the definition of WINVER in your project properties or precompiled header.  
 ```  
   
- Windows XP は Microsoft によってサポートされなくなったので、[!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] で対象にすることが許可されていても、アプリケーションでのサポートを段階的に停止し、新しいバージョンの Windows を採用するようユーザーに推奨してください。  
+ Windows XP は Microsoft によってサポートされなくなったので、Visual Studio 2015 で対象にすることが許可されていても、アプリケーションでのサポートを段階的に停止し、新しいバージョンの Windows を採用するようユーザーに推奨してください。  
   
  エラーを解消するには、**[プロジェクトのプロパティ]** の設定を、現在対象にしている Windows の最小バージョンに更新します。 さまざまな Windows リリースの値を示した表については、[ここ](http://msdn.microsoft.com/library/windows/desktop/aa383745.aspx)を参照してください。  
   

@@ -32,19 +32,19 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 7c75629d56e6d8e5291b7d1f7cca9995ab9a50da
-ms.openlocfilehash: d8515fc613f95ae5d6395e33b49482488bcc488d
+ms.sourcegitcommit: 3c1955bece0c8cdadb4a151ee06fa006402666a4
+ms.openlocfilehash: 524be35ec1e1db511b7fd4c2ab2b87d83c54325c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 06/08/2017
 
 ---
 # <a name="introduction-to-visual-c-for-unix-users"></a>Visual C++ の紹介 (UNIX ユーザー向け)
-このトピックでは、[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] を初めて使用し、[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] で生産性を向上したい UNIX ユーザー向けの情報を提供します。  
+このトピックでは、Visual C++ を初めて使用し、Visual C++ で生産性を向上したい UNIX ユーザー向けの情報を提供します。  
   
 ## <a name="getting-started-on-the-command-line"></a>コマンドラインに関する概要  
- UNIX のコマンドライン環境を使用するのと同様の方法で、コマンドラインから [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] を使用できます。 Microsoft バージョンの UNIX make ユーティリティである NMAKE.EXE を含むコマンド ラインの C と C++ コンパイラ (CL.EXE) およびツールを使用して、コマンド プロンプトからコンパイルします。  
+ UNIX のコマンドライン環境を使用する場合と同様の方法で、コマンドラインから Visual C++ を使用できます。 Microsoft バージョンの UNIX make ユーティリティである NMAKE.EXE を含むコマンド ラインの C と C++ コンパイラ (CL.EXE) およびツールを使用して、コマンド プロンプトからコンパイルします。  
   
- UNIX では、コマンドは /usr/bin などの共通のフォルダーにインストールされます。 [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] では、コマンドライン ツールはインストール ディレクトリの VC\bin (標準インストールでは Program Files\Microsoft Visual Studio 8\VC\bin) にインストールされます。 コマンドライン ツールを使用するには、Common7\Tools のインストール ディレクトリにある、vsvars32.bat を実行します。 これは、bin ディレクトリをパスに追加し、コマンド ラインから Visual C++ プログラムをコンパイルするために必要なその他のパスを設定します。 詳細については、「[コマンド ラインでのビルド](../build/building-on-the-command-line.md)」および「[チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)」を参照してください。  
+ UNIX では、コマンドは /usr/bin などの共通のフォルダーにインストールされます。 Visual C++ では、コマンドライン ツールはインストール ディレクトリの VC\bin (標準インストールでは Program Files\Microsoft Visual Studio 8\VC\bin) にインストールされます。 コマンドライン ツールを使用するには、Common7\Tools のインストール ディレクトリにある、vsvars32.bat を実行します。 これは、bin ディレクトリをパスに追加し、コマンド ラインから Visual C++ プログラムをコンパイルするために必要なその他のパスを設定します。 詳細については、「[コマンド ラインでのビルド](../build/building-on-the-command-line.md)」および「[チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)」を参照してください。  
   
 > [!NOTE]
 >  **[スタート]** メニューの **[Visual Studio のコマンド ライン プロンプト]** を使用してコマンド プロンプトを開く場合、vsvars32.bat が実行されます。  
@@ -60,10 +60,10 @@ ms.lasthandoff: 02/24/2017
  それぞれが別のセットのコンパイラ オプションや別の言語でビルドされている可能性がある複数のライブラリおよび実行可能ファイルから構成されるアプリケーションは、1 つの*ソリューション*の一部である複数のプロジェクトに格納されます。 ソリューションは、複数のプロジェクトをグループ化するためのコンテナーの抽象化です。 プロジェクトに関する情報は、拡張子が .prj のプロジェクト ファイルに格納されます。 詳細については、「[Visual Studio のソリューションおよびプロジェクト](/visualstudio/ide/solutions-and-projects-in-visual-studio)」および「[C++ デスクトップ開発のための Visual Studio IDE の使用](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)」を参照してください。  
   
 ## <a name="importing-your-existing-code"></a>既存のコードをインポートする  
- [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] を使用して、メイクファイルを使用または使用せずにコンパイルするよう設定される既存のコードを使用し、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] プロジェクトに配置できます。 詳細については、「**既存コード ファイルからの新しいプロジェクトの作成ウィザード**」を参照してください。 詳細については、「[方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)」を参照してください。  
+ Visual C++ を使用して、メイクファイルを使用または使用せずにコンパイルするよう設定される既存のコードを使用し、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] プロジェクトに配置できます。 詳細については、「**既存コード ファイルからの新しいプロジェクトの作成ウィザード**」を参照してください。 詳細については、「[方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)」を参照してください。  
   
 ## <a name="creating-a-new-project"></a>新規プロジェクトの作成  
- 開発環境では、新しいプロジェクトを作成できます。 [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] はさまざまな共通プロジェクトの標準的なコードを提供する多数のテンプレートを提供します。 アプリケーション ウィザードを使用して、様々な種類のアプリケーション用のコードのアウトラインを持つプロジェクトを生成することができます。  
+ 開発環境では、新しいプロジェクトを作成できます。 Visual C++ はさまざまな共通プロジェクトの標準的なコードを提供する多数のテンプレートを提供します。 アプリケーション ウィザードを使用して、様々な種類のアプリケーション用のコードのアウトラインを持つプロジェクトを生成することができます。  
   
  まず、**コンソール アプリケーション (Win32) ウィザード**を使用して、空のプロジェクトを作成できます。 **[空のプロジェクト]** チェック ボックスをオンにします。 これで、新規および既存のファイルをプロジェクトに後で追加できます。  
   
@@ -83,4 +83,4 @@ ms.lasthandoff: 02/24/2017
  詳細については、「[UNIX から Win32 への移植](../porting/porting-from-unix-to-win32.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual C++ ガイド ツアー](http://msdn.microsoft.com/en-us/499cb66f-7df1-45d6-8b6b-33d94fd1f17c)
+ [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)
