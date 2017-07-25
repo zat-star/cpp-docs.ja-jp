@@ -1,34 +1,52 @@
 ---
 title: "汎用テキストのプログラム例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_TCHAR 型"
-  - "マップ、TCHAR.H データ型"
-  - "汎用テキストの例 [CRT]"
-  - "TCHAR 型"
-  - "TCHAR.H データ型、マップ"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- _TCHAR type
+- mappings, TCHAR.H data types
+- generic-text example [CRT]
+- TCHAR type
+- TCHAR.H data types, mapping
 ms.assetid: a03de0db-8118-4bd9-a03f-640e8dfc5ed3
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# 汎用テキストのプログラム例
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 0cdc18215fe80c4165ffa03a5d789af0ebc95b40
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="a-sample-generic-text-program"></a>汎用テキストのプログラム例
+**Microsoft 固有の仕様**  
   
- 次のプログラムは、GENTEXT.C、TCHAR.H で定義された汎用テキスト マッピングの詳細な説明する:  
+ 次のプログラム GENTEXT.C は、TCHAR.H で定義された汎用テキスト マップの使用のより詳細な図を提供します。  
   
 ```  
 // GENTEXT.C  
@@ -69,7 +87,7 @@ int __cdecl _tmain(int argc, _TCHAR **argv, _TCHAR **envp)
   
 ```  
   
- `_MBCS` が定義されている GENTEXT.C は次の MBCS にプログラムをマップする:  
+ `_MBCS` が定義されている場合、GENTEXT.C は次の MBCS プログラムに割り当てられます。  
   
 ```  
 // crt_mbcsgtxt.c  
@@ -107,7 +125,7 @@ int __cdecl main(int argc, char **argv, char **envp)
 }  
 ```  
   
- `_UNICODE` が定義されている GENTEXT.C はプログラムの Unicode 次のバージョンにマップします。  `main`の代替として Unicode プログラムで`wmain` を使用する方法の詳細については、*C 言語リファレンス*の [wmain を使用する](../c-language/using-wmain.md) を参照します。  
+ `_UNICODE` が定義されている場合、GENTEXT.C は次のプログラムの Unicode バージョンに割り当てられます。 Unicode プログラムで `main` の代わりに `wmain` を使用する詳細については、「*C 言語リファレンス*」の「[wmain の使用](../c-language/using-wmain.md)」を参照してください。  
   
 ```  
 // crt_unicgtxt.c  
@@ -145,7 +163,7 @@ int __cdecl wmain(int argc, wchar_t **argv, wchar_t **envp)
 }  
 ```  
   
- `_MBCS` が `_UNICODE` も定義されていない場合、GENTEXT.C は前 ASCII コードを次のように、マップする:  
+ `_MBCS` と `_UNICODE` のいずれも定義されていない場合、GENTEXT.C は次のように 1 バイトの ASCII コードに割り当てられます。  
   
 ```  
 // crt_sbcsgtxt.c  
@@ -184,7 +202,7 @@ int __cdecl main(int argc, char **argv, char **envp)
   
  **END Microsoft 固有の仕様**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   
