@@ -33,10 +33,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ef479e2818cb9226830cc34f3fe9f8e59202e89
-ms.openlocfilehash: bb69ad913af2fd4777c5b4e64bde0758beb73822
+ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
+ms.openlocfilehash: 482b404293cc1eea9879b09de52fb277cc1bd2a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/28/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
@@ -109,7 +109,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **new と delete** 以前のバージョンのライブラリでは、実装定義演算子の new 関数と delete 関数は、ランタイム ライブラリ DLL (たとえば、msvcr120.dll) からエクスポートされていました。 現在、これらの演算子関数は常に (ランタイム ライブラリ DLL を使用する場合でも) 静的にバイナリにリンクされています。  
   
-     これはネイティブ コードまたは混合コード (/clr) の互換性に影響する変更点ではありませんが、[/clr:pure](../build/reference/clr-common-language-runtime-compilation.md) としてコンパイルされるコードでは、これによってコードのコンパイルが失敗する可能性があります。 コードを /clr:pure としてコンパイルする場合、#include \<new> または #include \<new.h> を追加してこの変更によるビルド エラーを回避する必要があります。 [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] では /clr:pure は推奨されておらず、将来のリリースでは削除される可能性があります。  
+     これはネイティブ コードまたは混合コード (/clr) の互換性に影響する変更点ではありませんが、[/clr:pure](../build/reference/clr-common-language-runtime-compilation.md) としてコンパイルされるコードでは、これによってコードのコンパイルが失敗する可能性があります。 コードを /clr:pure としてコンパイルする場合、#include \<new> または #include \<new.h> を追加してこの変更によるビルド エラーを回避する必要があります。 Visual Studio 2015 では /clr:pure は推奨されておらず、将来のリリースでは削除される可能性があります。  
   
 #### <a name="processh"></a>\<process.h>  
   
@@ -260,7 +260,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
 ####  <a name="BK_STL"></a> C++ 標準ライブラリ  
  新しい最適化とデバッグのチェックを有効にするために、C++ 標準ライブラリの Visual Studio の実装では、バイナリの互換性がバージョンごとに意図的に保たれていません。 そのため、C++ 標準ライブラリを使用すると、異なるバージョンを使用してコンパイルされたオブジェクト ファイルとスタティック ライブラリは 1 つのバイナリ (EXE または DLL) に混在させることができず、C++ 標準ライブラリ オブジェクトは異なるバージョンを使用してコンパイルされたバイナリ間で渡すことができません。 混在があると、_MSC_VER の不一致に関するリンカー エラーが発生します  (_MSC_VER はコンパイラのメジャー バージョンを含むマクロです。たとえば Visual Studio 2013 では 1800 です)。このチェックでは、DLL の混在を検出できず、Visual C++ 2008 以前のバージョンが関係する混在も検出できません。  
   
--   **C++ 標準ライブラリ インクルード ファイル** C++ 標準ライブラリ ヘッダーのインクルード構造に対していくつかの変更が加えられました。 C++ 標準ライブラリ ヘッダーは、指定されていない方法での相互インクルードを許可されています。 一般に、C++ 標準に応じて必要なすべてのヘッダーを注意深くインクルードし、どの C++ 標準ライブラリ ヘッダーにどの C++ 標準ライブラリ ヘッダーが含まれるかは関係ないようにするようコードを記述する必要があります。 これにより、バージョン間およびプラットフォーム間でのコードの移植が可能になります。 少なくとも [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] でのヘッダーに関する 2 つの変更がユーザー コードに影響を与えます。 1 つ目として、\<string> に \<iterator> が含まれなくなりました。 2 つ目として、現在、\<tuple> は、すべての \<array> は含まない std::array を宣言します。これは、次のコード構成体の組み合わせによってコードに障害を起こす可能性があります。コードに "array" という名前の変数があり、using-directive "using namespace std;" があります。\<tuple> を含む C++ 標準ライブラリ ヘッダー (\<functional> など) を組み込みますが、これは現在、std::array を宣言します。  
+-   **C++ 標準ライブラリ インクルード ファイル** C++ 標準ライブラリ ヘッダーのインクルード構造に対していくつかの変更が加えられました。 C++ 標準ライブラリ ヘッダーは、指定されていない方法での相互インクルードを許可されています。 一般に、C++ 標準に応じて必要なすべてのヘッダーを注意深くインクルードし、どの C++ 標準ライブラリ ヘッダーにどの C++ 標準ライブラリ ヘッダーが含まれるかは関係ないようにするようコードを記述する必要があります。 これにより、バージョン間およびプラットフォーム間でのコードの移植が可能になります。 少なくとも Visual Studio 2015 でのヘッダーに関する 2 つの変更がユーザー コードに影響を与えます。 1 つ目として、\<string> に \<iterator> が含まれなくなりました。 2 つ目として、現在、\<tuple> は、すべての \<array> は含まない std::array を宣言します。これは、次のコード構成体の組み合わせによってコードに障害を起こす可能性があります。コードに "array" という名前の変数があり、using-directive "using namespace std;" があります。\<tuple> を含む C++ 標準ライブラリ ヘッダー (\<functional> など) を組み込みますが、これは現在、std::array を宣言します。  
   
 -   **steady_clock** [steady_clock](../standard-library/steady-clock-struct.md) の \<chrono> 実装が変更され、安定性と単調性のための C++ 標準の要件を満たすようになりました。 現在、steady_clock は [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904.aspx) に基づき、high_resolution_clock は steady_clock の typedef です。 結果として、Visual C++ では現在、steady_clock::time_point は chrono::time_point<steady_clock> の typedef です。ただし、他の実装では異なる場合があります。  
   
@@ -280,7 +280,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **std::allocator::deallocate** Visual C++ 2013 以前では、std::allocator::deallocate(p, n) は、n に対して渡されていた引数が無視されていました。  C++ 標準では常に、p を返した割り当ての呼び出しに最初の引数として渡される値と n が同等である必要がありました。 しかし、現在のバージョンでは、n の値は検査されます。 標準で必要なものとは異なる引数を n に渡すコードは、ランタイムにクラッシュする可能性があります。  
   
--   **hash_map および hash_set** 非標準ヘッダー ファイルの hash_map と hash_set は [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] では推奨されておらず、将来のリリースでは削除されます。 代わりに unordered_map と unordered_set を使用してください。  
+-   **hash_map および hash_set** 非標準ヘッダー ファイルの hash_map と hash_set は Visual Studio 2015 では推奨されておらず、将来のリリースでは削除されます。 代わりに unordered_map と unordered_set を使用してください。  
   
 -   **comparators and operator()** 現在、関連コンテナー (\<map> ファミリ) では、比較子に const を呼び出せる関数呼び出し演算子がある必要があります。 比較子クラス宣言の次のコードは現在、コンパイルに失敗します。  
   
@@ -294,7 +294,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
     bool operator()(const X& a, const X& b) const  
     ```  
   
--   **型の特徴** The old names for 型の特徴 from an earlier version of the C++ draft standard have been removed. これらは C++11 で変更されており、[!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)] では C++11 値に更新されました。 古い名前と新しい名前を次の表に示します。  
+-   **型の特徴** The old names for 型の特徴 from an earlier version of the C++ draft standard have been removed. これらは C++11 で変更されており、Visual Studio 2015 では C++11 値に更新されました。 古い名前と新しい名前を次の表に示します。  
   
     |古い名前|新しい名前|  
     |--------------|--------------|  
@@ -864,7 +864,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 -   **コピー コンストラクター**  
   
-     [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と [!INCLUDE[vs_dev14](../ide/includes/vs_dev14_md.md)]の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
+     [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と Visual Studio 2015 の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
 
 <!--From here to VS_Update1 added 04/21/2017-->
 

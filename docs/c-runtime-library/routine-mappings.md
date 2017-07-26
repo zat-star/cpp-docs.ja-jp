@@ -1,41 +1,58 @@
 ---
 title: "ルーチンのマップ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.mappings"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_tWinMain"
-  - "汎用テキスト マップ"
-  - "TCHAR.H データ型, リスト (ルーチン マッピングの)"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.mappings
+dev_langs:
+- C++
+helpviewer_keywords:
+- _tWinMain
+- TCHAR.H data types, list of routine mappings
+- generic-text mappings
 ms.assetid: 38f33d3b-0f7b-430d-8a4f-75e27c6f1c42
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# ルーチンのマップ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 1b716aacca01e72f917fe4b4083c79d39546b6c4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-汎用テキスト ルーチンのマップは TCHAR.H で定義されます。  `_tccpy` と `_tclen` は MBCS モデルの関数にマップされます。これらは完全を期すために SBCS モデルまたは Unicode モデルのマクロまたはインライン関数にマップされます。  汎用テキスト ルーチンの詳細については、`SBCS`、`_MBCS`、または `_UNICODE` に関連するルーチンのヘルプ トピックを参照してください。  
+---
+# <a name="routine-mappings"></a>ルーチンのマップ
+汎用テキスト ルーチンのマップは TCHAR.H で定義されます。 `_tccpy` と `_tclen` は MBCS モデルの関数にマップされます。これらは完全を期すために SBCS モデルまたは Unicode モデルのマクロまたはインライン関数にマップされます。 汎用テキスト ルーチンの詳細については、`SBCS`、`_MBCS`、または `_UNICODE` に関連するルーチンのヘルプ トピックを参照してください。  
   
- 次の表の左の列に一覧されている個々のルーチンに関する詳細な情報は、このドキュメントでは参照できません。  ただし、対応する `SBCS`、`_MBCS`、または `_UNICODE` に関連するルーチンの情報は簡単に検索できます。  以下で一覧されている汎用テキスト ルーチンを検索するには、**\[ヘルプ\]** メニューの **\[検索\]** を使用します。  
+ 次の表の左の列に一覧されている個々のルーチンに関する詳細な情報は、このドキュメントでは参照できません。 ただし、対応する `SBCS`、`_MBCS`、または `_UNICODE` に関連するルーチンの情報は簡単に検索できます。 以下に一覧表示されている汎用テキスト ルーチンを検索するには、**[ヘルプ]** メニューの **[検索]** コマンドを使用します。  
   
- 関連情報については、「[TCHAR.H における汎用テキストのマッピング](../Topic/Generic-Text%20Mappings%20in%20Tchar.h.md)」を参照してください。  
+ 関連情報については、「[Generic-Text Mappings in TCHAR.H. (Tchar.h における汎用テキストのマッピング)](../text/generic-text-mappings-in-tchar-h.md)」をご覧ください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|汎用テキスト ルーチンの名前|SBCS \(\_UNICODE & MBCS が未定義の場合\)|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|--------------------|---------------------------------------|-----------------------|--------------------------|  
+|汎用テキスト ルーチンの名前|SBCS (_UNICODE & MBCS が未定義の場合)|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|--------------------------------|-------------------------------------------|--------------------|-----------------------|  
 |`_cgetts`|`_cgets`|`_cgets`|`_cgetws`|  
 |`_cgetts_s`|`_cgets_s`|`_cgets_s`|`_cgetws_s`|  
 |`_cputts`|`_cputs`|`_cputs`|`_cputws`|  
@@ -271,7 +288,7 @@ caps.handback.revision: 9
 |`_vtprintf`|`vprintf`|`vprintf`|`vwprintf`|  
 |`_vtprintf_s`|`vprintf_s`|`vprintf_s`|`vwprintf_s`|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   
