@@ -1,78 +1,95 @@
 ---
-title: "__dllonexit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "__dllonexit"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr100.dll"
-  - "msvcr80.dll"
-  - "msvcr120.dll"
-  - "msvcr90.dll"
-  - "msvcr120_clr0400.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "__dllonexit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__dllonexit"
+title: __dllonexit | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- __dllonexit
+apilocation:
+- msvcrt.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr100.dll
+- msvcr80.dll
+- msvcr120.dll
+- msvcr90.dll
+- msvcr120_clr0400.dll
+apitype: DLLExport
+f1_keywords:
+- __dllonexit
+dev_langs:
+- C++
+helpviewer_keywords:
+- __dllonexit
 ms.assetid: 708f2ceb-f95c-46b0-a58d-d68b3fa36f12
 caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
----
-# __dllonexit
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 147458732658b5e08efa880fc9e7e76ebcd7da63
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
+---
+# <a name="dllonexit"></a>__dllonexit
 終了時に呼び出されるルーチンを登録します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-_onexit_t __dllonexit(  
-   _onexit_t func,  
+_onexit_t __dllonexit(   _onexit_t func,  
    _PVFV **  pbegin,   
    _PVFV **  pend   
    )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `func`  
  終了時に実行する関数へのポインター。  
   
  `pbegin`  
- この関数のリストの先頭を実行する変数へのポインターはデタッチを指します。  
+ デタッチ時に実行する関数のリストの先頭を示す変数へのポインター。  
   
  `pend`  
- その変数へのポインターは、関数のリストの最後の実行にデタッチを指します。  
+ デタッチ時に実行する関数のリストの末尾を示す変数へのポインター。  
   
-## 戻り値  
- 関数ポインター、ユーザーに成功した。  それ以外の場合は Null ポインター。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合、ユーザーの関数へのポインター。 失敗した場合、null ポインター。  
   
-## 解説  
- `__dllonexit` 関数は [\_onexit](../c-runtime-library/reference/onexit-onexit-m.md) 関数に似ていますが、この関数によって使用されるグローバル変数がこのルーチンに表示されません。  グローバル変数の代わりに、この関数は `pbegin` と `pend` パラメーターを使用します。  
+## <a name="remarks"></a>コメント  
+ `__dllonexit` 関数は [_onexit](../c-runtime-library/reference/onexit-onexit-m.md) 関数に似ていますが、_onexit 関数で使われるグローバル変数をこのルーチンでは参照できない点が異なります。 グローバル変数の代わりに、この関数は `pbegin` および `pend` パラメーターを使います。  
   
- MSVCRT.LIB とリンクする DLL の `_onexit` と `atexit` 関数は独自の atexit\/\_onexit のリストを保持する必要があります。  このルーチンは、このような DLL によって呼び出されるワーカーです。  
+ MSVCRT.LIB とリンクされた DLL の `_onexit` および `atexit` 関数は、それ自体で atexit/_onexit リストを保持する必要があります。 このルーチンは、そのような DLL によって呼び出されるワーカーです。  
   
- `_PVFV` の型は `typedef void (__cdecl *_PVFV)(void)`として定義されます。  
+ `_PVFV` 型は、`typedef void (__cdecl *_PVFV)(void)` と定義されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチン|必須ファイル|  
-|----------|------------|  
-|\_\_dllonexit|onexit.c|  
+|ルーチン|必要なファイル|  
+|-------------|-------------------|  
+|__dllonexit|onexit.c|  
   
-## 参照  
- [\_onexit、\_onexit\_m](../c-runtime-library/reference/onexit-onexit-m.md)
+## <a name="see-also"></a>関連項目  
+ [_onexit、_onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)
