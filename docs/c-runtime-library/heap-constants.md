@@ -1,47 +1,64 @@
 ---
 title: "ヒープ定数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_HEAPBADPTR"
-  - "_HEAPEMPTY"
-  - "_HEAPBADBEGIN"
-  - "_HEAPOK"
-  - "_HEAPBADNODE"
-  - "_HEAPEND"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_HEAPBADBEGIN 定数"
-  - "_HEAPBADNODE 定数"
-  - "_HEAPBADPTR 定数"
-  - "_HEAPEMPTY 定数"
-  - "_HEAPEND 定数"
-  - "_HEAPOK 定数"
-  - "ヒープ定数"
-  - "HEAPBADBEGIN 定数"
-  - "HEAPBADNODE 定数"
-  - "HEAPBADPTR 定数"
-  - "HEAPEMPTY 定数"
-  - "HEAPEND 定数"
-  - "HEAPOK 定数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _HEAPBADPTR
+- _HEAPEMPTY
+- _HEAPBADBEGIN
+- _HEAPOK
+- _HEAPBADNODE
+- _HEAPEND
+dev_langs:
+- C++
+helpviewer_keywords:
+- _HEAPOK constants
+- _HEAPEND constants
+- HEAPBADBEGIN constants
+- _HEAPBADNODE constants
+- HEAPBADNODE constants
+- HEAPBADPTR constants
+- _HEAPEMPTY constants
+- HEAPEND constants
+- HEAPOK constants
+- HEAPEMPTY constants
+- _HEAPBADBEGIN constants
+- _HEAPBADPTR constants
+- heap constants
 ms.assetid: 3f751bb9-2dc4-486f-b5f5-9061c96d3754
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ヒープ定数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 378df280df8255b8a8e94656425da1b3c3468dd2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-## 構文  
+---
+# <a name="heap-constants"></a>ヒープ定数
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -49,20 +66,20 @@ caps.handback.revision: 6
   
 ```  
   
-## 解説  
- これらの定数は、ヒープの状態を示す戻り値が異なります。  
+## <a name="remarks"></a>コメント  
+ これらの定数は、ヒープの状態を示す戻り値を提供します。  
   
 |定数|説明|  
-|--------|--------|  
-|`_HEAPBADBEGIN`|最初のヘッダー情報が無効見つかりません。または、ではありません。|  
-|`_HEAPBADNODE`|不適切なノードが見つかりました、ヒープが傷つきます。|  
-|`_HEAPBADPTR`|**\_HEAPINFO** 構造体の**\_pentry** フィールドはヒープ \(`_heapwalk` ルーチンのみ\) への有効なポインターは含まれません。|  
-|`_HEAPEMPTY`|ヒープを初期化されませんでした。|  
-|`_HEAPEND`|ヒープの末尾が正常に達した \(`_heapwalk` ルーチンのみ\)。|  
-|`_HEAPOK`|ヒープは、一貫しています \(`_heapset` と `_heapchk` ルーチンのみ\)。  エラーがこれまで; **\_HEAPINFO** 構造体は次のエントリ \(`_heapwalk` ルーチンのみ\) に関する情報が含まれます。|  
+|--------------|-------------|  
+|`_HEAPBADBEGIN`|初期ヘッダー情報が見つからないか無効です。|  
+|`_HEAPBADNODE`|不適切なノードが検出されたか、ヒープが破損しています。|  
+|`_HEAPBADPTR`|**_HEAPINFO** 構造体の **_pentry** フィールドに、ヒープへの有効なポインターが含まれていません (`_heapwalk` ルーチンのみ)。|  
+|`_HEAPEMPTY`|ヒープが初期化されていません。|  
+|`_HEAPEND`|ヒープの末尾に正常に到達しました (`_heapwalk` ルーチンのみ)。|  
+|`_HEAPOK`|ヒープに一貫性があります (`_heapset` ルーチンと `_heapchk` ルーチンのみ)。 これまでのところエラーはありません。**_HEAPINFO** 構造体に、次のエントリに関する情報が含まれています (`_heapwalk` ルーチンのみ)。|  
   
-## 参照  
- [\_heapchk](../c-runtime-library/reference/heapchk.md)   
- [\_heapset](../c-runtime-library/heapset.md)   
- [\_heapwalk](../Topic/_heapwalk.md)   
+## <a name="see-also"></a>関連項目  
+ [_heapchk](../c-runtime-library/reference/heapchk.md)   
+ [_heapset](../c-runtime-library/heapset.md)   
+ [_heapwalk](../c-runtime-library/reference/heapwalk.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

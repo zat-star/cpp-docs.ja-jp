@@ -1,28 +1,45 @@
 ---
 title: "ライブラリ関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 90c096ab-31df-479e-91d8-289900dc0bff
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# ライブラリ関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 1c57ba02eb88b5097945e1e6c0e7560dc61d0d25
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
+---
+# <a name="library-functions"></a>ライブラリ関数
 -   [NULL マクロ](../c-language/null-macro.md)  
   
--   [assert 関数によって出力される診断](../Topic/Diagnostic%20Printed%20by%20the%20assert%20Function.md)  
+-   [assert 関数によって出力される診断](../c-language/diagnostic-printed-by-the-assert-function.md)  
   
 -   [文字テスト](../c-language/character-testing.md)  
   
@@ -32,15 +49,15 @@ caps.handback.revision: 9
   
 -   [fmod 関数](../c-language/fmod-function.md)  
   
--   [signal 関数](../Topic/signal%20Function%20\(C\).md)  
+-   [signal 関数](../c-language/signal-function-c.md)  
   
--   [既定のシグナル](../Topic/Default%20Signals.md)  
+-   [既定のシグナル](../c-language/default-signals.md)  
   
--   [改行文字の終了](../Topic/Terminating%20Newline%20Characters.md)  
+-   [改行文字の終了](../c-language/terminating-newline-characters.md)  
   
 -   [空白行](../c-language/blank-lines.md)  
   
--   [Null 文字](../Topic/Null%20Characters.md)  
+-   [Null 文字](../c-language/null-characters.md)  
   
 -   [追加モードのファイル位置](../c-language/file-position-in-append-mode.md)  
   
@@ -54,33 +71,33 @@ caps.handback.revision: 9
   
 -   [ファイル アクセス制限](../c-language/file-access-limits.md)  
   
--   [開いているファイルの削除](../Topic/Deleting%20Open%20Files.md)  
+-   [開いているファイルの削除](../c-language/deleting-open-files.md)  
   
 -   [存在する名前を使用した名前変更](../c-language/renaming-with-a-name-that-exists.md)  
   
 -   [ポインター値の読み取り](../c-language/reading-pointer-values.md)  
   
--   [範囲の読み取り](../Topic/Reading%20Ranges.md)  
+-   [範囲の読み取り](../c-language/reading-ranges.md)  
   
 -   [ファイル位置エラー](../c-language/file-position-errors.md)  
   
 -   [perror 関数によって生成されるメッセージ](../c-language/messages-generated-by-the-perror-function.md)  
   
--   [ゼロ メモリの割り当て](../Topic/Allocating%20Zero%20Memory.md)  
+-   [ゼロ メモリの割り当て](../c-language/allocating-zero-memory.md)  
   
 -   [abort 関数](../c-language/abort-function-c.md)  
   
 -   [atexit 関数](../c-language/atexit-function-c.md)  
   
--   [環境名](../Topic/Environment%20Names.md)  
+-   [環境名](../c-language/environment-names.md)  
   
 -   [システム関数](../c-language/system-function.md)  
   
--   [strerror 関数](../Topic/strerror%20Function.md)  
+-   [strerror 関数](../c-language/strerror-function.md)  
   
 -   [タイム ゾーン](../c-language/time-zone.md)  
   
 -   [clock 関数](../c-language/clock-function-c.md)  
   
-## 参照  
- [実装で定義する動作](../c-language/implementation-defined-behavior.md)
+## <a name="see-also"></a>関連項目  
+ [実装で定義された動作](../c-language/implementation-defined-behavior.md)

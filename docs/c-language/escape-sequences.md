@@ -1,92 +1,109 @@
 ---
 title: "エスケープ シーケンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "(') 単一引用符"
-  - "? シンボル"
-  - "? シンボル, エスケープ シーケンス文字"
-  - "\ シンボル、エスケープ シーケンス内"
-  - "\a エスケープ シーケンス"
-  - "\f エスケープ シーケンス"
-  - "\n エスケープ シーケンス"
-  - "\r エスケープ シーケンス"
-  - "\t エスケープ シーケンス"
-  - "\v エスケープ シーケンス"
-  - "バックスペース エスケープ シーケンス"
-  - "ビープ音文字 \a エスケープ シーケンス"
-  - "復帰"
-  - "コントロール文字エスケープ シーケンス"
-  - "二重円記号"
-  - "エスケープ文字"
-  - "エスケープ シーケンス"
-  - "フォームフィード \f エスケープ シーケンス"
-  - "16 進数のエスケープ シーケンス"
-  - "水平タブ \t エスケープ シーケンス"
-  - "改行 \n エスケープ シーケンス文字"
-  - "非グラフィカル コントロール文字"
-  - "8 進数のエスケープ シーケンス"
-  - "疑問符, リテラル"
-  - "引用符, single"
-  - "タブ \t エスケープ シーケンス"
-  - "垂直タブ \v エスケープ シーケンス"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- "\r escape sequence"
+- double backslash
+- horizontal-tab 	 escape sequence
+- (') single quotation mark
+- "bell character \a escape sequence"
+- escape sequences
+- hexadecimal escape sequence
+- carriage returns
+- tab 	 escape sequence
+- "\f escape sequence"
+- quotation marks, single
+- "formfeed \f escape sequence"
+- "\v escape sequence"
+- control character escape sequences
+- " symbol in escape sequences"
+- octal escape sequence
+- escape characters
+- "newline character \n escape sequence"
+- nongraphic control characters
+- question mark, literal
+- "\n escape sequence"
+- "vertical tab \v escape sequence"
+- "\a escape sequence"
+- '? symbol'
+- '? symbol, escape sequence character'
+- "	 escape sequence"
+- backspace escape sequence
 ms.assetid: 5aef377f-a76c-4d5c-aa04-8308758ad6a8
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# エスケープ シーケンス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: f8c15c7419f440626f590488a3e7bf52a2282041
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-先頭に円記号 \(**\\**\) が指定されている、アルファベットや数字で構成される文字の組み合わせは、"エスケープ シーケンス" と呼ばれます。 改行文字や単一引用符など、文字定数内の特定の文字を表すには、エスケープ シーケンスを使用する必要があります。  エスケープ シーケンスは 1 つの文字と見なされるため、文字定数として有効です。  
+---
+# <a name="escape-sequences"></a>エスケープ シーケンス
+先頭に円記号 (**\\**) が指定されている、アルファベットや数字で構成される文字の組み合わせは、"エスケープ シーケンス" と呼ばれます。 改行文字や単一引用符など、文字定数内の特定の文字を表すには、エスケープ シーケンスを使用する必要があります。 エスケープ シーケンスは 1 つの文字と見なされるため、文字定数として有効です。  
   
- 通常、エスケープ シーケンスは、ターミナルとプリンターでは、復帰とタブ移動などの操作を指定するために使用されます。  これらは、印字できない文字と、二重引用符 \(**"**\) などの通常は特別な意味を持つ文字のリテラル表現を提供するためにも使用されます。  次の表は、ANSI エスケープ シーケンスと、それが何を表すかを示す一覧です。  
+ 通常、エスケープ シーケンスは、ターミナルとプリンターでは、復帰とタブ移動などの操作を指定するために使用されます。 これらは、印字できない文字と、二重引用符 (**"**) などの通常は特別な意味を持つ文字のリテラル表現を提供するためにも使用されます。 次の表は、ANSI エスケープ シーケンスと、それが何を表すかを示す一覧です。  
   
- 文字シーケンスがトライグラフとして誤って解釈されるような場合、疑問符の前に円記号 \(**\\?**\) を置くと、リテラル疑問符を指定できます。  詳細については、「[トライグラフ](../Topic/Trigraphs.md)」を参照してください。  
+ 文字シーケンスがトライグラフとして誤って解釈されるような場合、疑問符の前に円記号 (**\\?**) を置くと、リテラル疑問符を指定できます。 詳細については、「[トライグラフ](../c-language/trigraphs.md)」を参照してください。  
   
-### エスケープ シーケンス  
+### <a name="escape-sequences"></a>エスケープ シーケンス  
   
 |エスケープ シーケンス|表現|  
-|-----------------|--------|  
-|**\\a**|ベル \(警告\)|  
-|**\\b**|Backspace|  
-|**\\f**|フォーム フィード|  
-|**\\n**|改行|  
-|**\\r**|キャリッジ リターン|  
-|**\\t**|水平タブ|  
-|**\\v**|垂直タブ|  
+|---------------------|----------------|  
+|**\a**|ベル (警告)|  
+|**\b**|バックスペース|  
+|**\f**|フォーム フィード|  
+|**\n**|改行|  
+|**\r**|キャリッジ リターン|  
+|**\t**|水平タブ|  
+|**\v**|垂直タブ|  
 |**\\'**|単一引用符|  
 |**\\"**|二重引用符|  
 |**\\\\**|円記号|  
 |**\\?**|リテラル疑問符|  
 |**\\** *ooo*|8 進表記の ASCII 文字|  
-|**\\x** *hh*|16 進表記の ASCII 文字|  
-|**\\x** *hhhh*|このエスケープ シーケンスがワイド文字定数または Unicode 文字列リテラルで使用されている場合は、16 進表記の Unicode 文字。<br /><br /> たとえば、`WCHAR f = L'\x4e00'` または `WCHAR b[] = L"The Chinese character for one is \x4e00"` のようにします。|  
+|**\x** *hh*|16 進表記の ASCII 文字|  
+|**\x** *hhhh*|このエスケープ シーケンスがワイド文字定数または Unicode 文字列リテラルで使用されている場合は、16 進表記の Unicode 文字。<br /><br /> たとえば、`WCHAR f = L'\x4e00'` または `WCHAR b[] = L"The Chinese character for one is \x4e00"` のようにします。|  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
- 表に示されていない文字の前に円記号が指定されていると、コンパイラは未定義の文字を文字そのものとして処理します。  たとえば、`\c` は `c` として処理されます。  
+ 表に示されていない文字の前に円記号が指定されていると、コンパイラは未定義の文字を文字そのものとして処理します。 たとえば、`\c` は `c` として処理されます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
- エスケープ シーケンスは、ディスプレイ デバイスに非グラフィカル制御文字を渡すことができます。  たとえば、ESC 文字 \(**\\033**\) は、端末またはプリンターの制御コマンドの最初の文字としてよく使用されます。  一部のエスケープ シーケンスはデバイス固有です。  たとえば、垂直タブとフォーム フィードのエスケープ シーケンス \(**\\v** と **\\f**\) は、画面出力には影響しませんが、適切なプリンター操作を実行します。  
+ エスケープ シーケンスは、ディスプレイ デバイスに非グラフィカル制御文字を渡すことができます。 たとえば、ESC 文字 (**\033**) は、端末またはプリンターの制御コマンドの最初の文字としてよく使用されます。 一部のエスケープ シーケンスはデバイス固有です。 たとえば、垂直タブとフォーム フィードのエスケープ シーケンス (**\v** と **\f**) は、画面出力には影響しませんが、適切なプリンター操作を実行します。  
   
- また、円記号 \(**\\**\) を連結文字としても使用できます。  円記号のすぐ後に改行文字 \(Enter キーを押すことに相当します\) があると、コンパイラは円記号と改行文字を無視し、前の行の一部として次の行を処理します。  これは、主に、1 行より長いプリプロセッサ定義で便利です。  例:  
+ また、円記号 (**\\**) を連結文字としても使用できます。 円記号のすぐ後に改行文字 (Enter キーを押すことに相当します) があると、コンパイラは円記号と改行文字を無視し、前の行の一部として次の行を処理します。 これは、主に、1 行より長いプリプロセッサ定義で便利です。 例:  
   
 ```  
 #define assert(exp) \  
 ( (exp) ? (void) 0:_assert( #exp, __FILE__, __LINE__ ) )  
 ```  
   
-## 参照  
- [C 文字定数](../Topic/C%20Character%20Constants.md)
+## <a name="see-also"></a>関連項目  
+ [C 文字定数](../c-language/c-character-constants.md)

@@ -1,41 +1,58 @@
 ---
 title: "C ビット フィールド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビット フィールド"
-  - "bitfield"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- bitfields
+- bit fields
 ms.assetid: 9faf74c4-7fd5-4b44-ad18-04485193d06e
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# C ビット フィールド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: e0370ea8d0d519ca10f3035c7a84748d0888e8d7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-構造体または共用体のメンバーの宣言子に加えて、構造体の宣言子も "ビット フィールド" と呼ばれる指定のビット数になります。 その長さは、フィールド名の宣言子からコロンによって区切られます。  ビット フィールドは整数型として解釈されます。  
+---
+# <a name="c-bit-fields"></a>C ビット フィールド
+構造体または共用体のメンバーの宣言子に加えて、構造体の宣言子も "ビット フィールド" と呼ばれる指定のビット数になります。 その長さは、フィールド名の宣言子からコロンによって区切られます。 ビット フィールドは整数型として解釈されます。  
   
-## 構文  
- *struct\-declarator*:  
+## <a name="syntax"></a>構文  
+ *struct-declarator*:  
  *declarator*  
   
- *type\-specifier declarator*  opt               **:**  *constant\-expression*  
+ *type-specifier declarator* opt**:** *constant-expression*  
   
- *constant\-expression* は、フィールドの幅 \(ビット単位\) を指定します。  `declarator` の *type\-specifier* は、`unsigned int`、**signed int**、または `int` である必要があります。*constant\-expression* は負ではない整数値である必要があります。  値がゼロの場合、宣言には `declarator` がありません。  ビット フィールド、ビット フィールドへのポインター、およびビット フィールドを返す関数の配列は使用できません。  省略可能な `declarator` はビット フィールドの名前を指定します。  ビット フィールドは構造体の一部としてしか宣言できません。  アドレス演算子 \(**&**\) は、ビット フィールド コンポーネントに適用できません。  
+ *constant-expression* は、フィールドの幅 (ビット単位) を指定します。 `declarator` の *type-specifier* は、`unsigned int`、**signed int**、または `int` である必要があります。*constant-expression* は負ではない整数値である必要があります。 値がゼロの場合、宣言には `declarator` がありません。 ビット フィールド、ビット フィールドへのポインター、およびビット フィールドを返す関数の配列は使用できません。 省略可能な `declarator` はビット フィールドの名前を指定します。 ビット フィールドは構造体の一部としてしか宣言できません。 アドレス演算子 (**&**) は、ビット フィールド コンポーネントに適用できません。  
   
- 名前のないビット フィールドは参照できません。実行時の内容は予測できません。  これらはアラインメントのために "ダミー" フィールドとして使用できます。  幅が 0 として指定された、名前のないビット フィールドは、*struct\-declaration\-list* 内でそれに続くメンバーのストレージが、`int` 境界で開始されることを保証します。  
+ 名前のないビット フィールドは参照できません。実行時の内容は予測できません。 これらはアラインメントのために "ダミー" フィールドとして使用できます。 幅が 0 として指定された、名前のないビット フィールドは、*struct-declaration-list* 内でそれに続くメンバーのストレージが、`int` 境界で開始されることを保証します。  
   
- ビット フィールドは、ビット パターンを含めるための十分な長さを持つ必要があります。  たとえば、次の 2 つのステートメントは正しくありません。  
+ ビット フィールドは、ビット パターンを含めるための十分な長さを持つ必要があります。 たとえば、次の 2 つのステートメントは正しくありません。  
   
 ```  
 short a:17;        /* Illegal! */  
@@ -54,15 +71,15 @@ struct
 } screen[25][80];  
 ```  
   
- 配列には 2,000 の要素が含まれます。  各要素は、`icon`、`color`、`underline`、および `blink` の 4 つのビット フィールド メンバーを含む個別の構造体です。  各構造体のサイズは 2 バイトです。  
+ 配列には 2,000 の要素が含まれます。 各要素は、`icon`、`color`、`underline`、および `blink` の 4 つのビット フィールド メンバーを含む個別の構造体です。 各構造体のサイズは 2 バイトです。  
   
- ビット フィールドには、整数型と同じセマンティクスがあります。  これは、ビット フィールドにあるビット数にかかわらず、同じ基本型の変数が使用される場合とまったく同じように、式でビット フィールドが使用されることを意味します。  
+ ビット フィールドには、整数型と同じセマンティクスがあります。 これは、ビット フィールドにあるビット数にかかわらず、同じ基本型の変数が使用される場合とまったく同じように、式でビット フィールドが使用されることを意味します。  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
- `int` として定義されたビット フィールドは、符号付きとして扱われます。  ANSI C 規格への Microsoft 拡張機能を使用すると、ビット フィールドに対して `char` および **long** 型 \(**Signed** と `unsigned` の両方\) が許されます。  **long**、**short**、または `char` \(**Signed** または `unsigned`\) 基本型の名前のないビット フィールドは、基本型に適した境界に強制的にアラインメントされます。  
+ `int` として定義されたビット フィールドは、符号付きとして扱われます。 ANSI C 規格への Microsoft 拡張機能を使用すると、ビット フィールドに対して `char` および **long** 型 (**Signed** と `unsigned` の両方) が許されます。 **long**、**short**、または `char` (**Signed** または `unsigned`) 基本型の名前のないビット フィールドは、基本型に適した境界に強制的にアラインメントされます。  
   
- ビット フィールドは、整数内で最下位ビットから最上位ビットへと割り当てられます。  次のコードでは、  
+ ビット フィールドは、整数内で最下位ビットから最上位ビットへと割り当てられます。 次のコードでは、  
   
 ```  
 struct mybitfields  
@@ -87,9 +104,9 @@ int main( void );
 cccccccb bbbbaaaa  
 ```  
   
- 8086 ファミリのプロセッサは整数値の下位バイトを上位バイトの前に格納するため、上記の整数 `0x01F2` は、後に `0x01` が続く `0xF2` として物理メモリに格納されます。  
+ 8086 ファミリのプロセッサは整数値の下位バイトを上位バイトの前に格納するため、上記の整数 `0x01F2` は、後に `0xF2` が続く `0x01` として物理メモリに格納されます。  
   
  **END Microsoft 固有の仕様**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [構造体宣言](../c-language/structure-declarations.md)

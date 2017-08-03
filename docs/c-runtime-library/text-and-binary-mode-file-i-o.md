@@ -1,48 +1,65 @@
 ---
 title: "テキスト モードとバイナリ モードのファイル入出力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.io"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バイナリ アクセス"
-  - "バイナリ アクセス, バイナリ モードのファイル I/O"
-  - "ファイル [C++], オープン関数"
-  - "関数 [CRT], ファイル アクセス"
-  - "I/O [CRT], バイナリ"
-  - "I/O [CRT], テキスト ファイル"
-  - "I/O [CRT], 変換モード"
-  - "テキスト ファイル, I/O"
-  - "変換モード (ファイル I/O)"
-  - "変換, モード"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.io
+dev_langs:
+- C++
+helpviewer_keywords:
+- files [C++], open functions
+- I/O [CRT], text files
+- functions [CRT], file access
+- binary access, binary mode file I/O
+- translation, modes
+- I/O [CRT], binary
+- text files, I/O
+- I/O [CRT], translation modes
+- translation modes (file I/O)
+- binary access
 ms.assetid: 3196e321-8b87-4609-b302-cd6f3c516051
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# テキスト モードとバイナリ モードのファイル入出力
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: a788242344c7cb3b89765e7476fdd23dbf68982d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-ファイル I\/O 操作はファイルを開くモードで 2 種類の変換モード、テキストまたはバイナリの 1 つがで行われます。  データ ファイルは、通常、テキスト モードで処理されます。  ファイルの変換モードを制御するには、1 つが:できます  
+---
+# <a name="text-and-binary-mode-file-io"></a>テキスト モードとバイナリ モードのファイル入出力
+ファイル I/O 操作は、ファイルを開いたモードによって、2 つの変換モード、テキストまたはバイナリのいずれかで行われます。 通常、データ ファイルはテキスト モードで処理されます。 ファイル変換モードを制御するには、以下を行います。  
   
--   選択されたファイルを開くときに現在の既定の設定を保持し、別のモードを指定します。  
+-   現在の既定の設定を保持し、選択したファイルを開く場合にのみ、別のモードを指定します。  
   
--   出力新しく開かれたファイルの既定のモードを変更するには [\_set\_fmode](../c-runtime-library/reference/set-fmode.md) 関数を使用します。  現在の既定のモードは、[\_get\_fmode](../c-runtime-library/reference/get-fmode.md) を使用します。  最初の既定の設定は、テキスト モード \(`_O_TEXT`\) です。  
+-   関数 [_set_fmode](../c-runtime-library/reference/set-fmode.md) を使用して、新しく開くファイルの既定のモードを変更します。 [_get_fmode](../c-runtime-library/reference/get-fmode.md) を使用して、現在の既定のモードを取得します。 初期の既定値はテキスト モード (`_O_TEXT`) です。  
   
--   変更します。プログラムのグローバル変数 [\_fmode](../c-runtime-library/fmode.md) の設定によって直接変換を既定モード。  関数 `_set_fmode` はこの変数の値を設定しますが、これらを直接設定できます。  
+-   プログラム内でグローバル変数 [_fmode](../c-runtime-library/fmode.md) を設定することで、既定の変換モードを直接変更します。 関数 `_set_fmode` でこの変数の値を設定しますが、直接設定することもできます。  
   
- [\_open](../c-runtime-library/reference/open-wopen.md)、[fopen](../c-runtime-library/reference/fopen-wfopen.md)、[fopen\_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)、[freopen](../c-runtime-library/reference/freopen-wfreopen.md)、[freopen\_s](../c-runtime-library/reference/freopen-s-wfreopen-s.md)、[\_fsopen](../c-runtime-library/reference/fsopen-wfsopen.md) または [\_sopen\_s](../c-runtime-library/reference/sopen-s-wsopen-s.md)などのファイル Open 関数を呼び出すと、関数 [\_set\_fmode](../c-runtime-library/reference/set-fmode.md)に適切な引数を指定して、`_fmode` の現在の既定の設定をオーバーライドできます。  `stdin`、`stdout`と `stderr` のストリームは、テキスト モードで既定で開きます; これらのファイルを開くときにもこの既定をオーバーライドできます。  使用 [\_setmode](../c-runtime-library/reference/setmode.md) はファイルの後でファイル記述子を使用して変換モードを変更する開いています。  
+ [_open](../c-runtime-library/reference/open-wopen.md)、[fopen](../c-runtime-library/reference/fopen-wfopen.md)、[fopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)、[freopen](../c-runtime-library/reference/freopen-wfreopen.md)、[freopen_s](../c-runtime-library/reference/freopen-s-wfreopen-s.md)、[_fsopen](../c-runtime-library/reference/fsopen-wfsopen.md)、または[_sopen_s](../c-runtime-library/reference/sopen-s-wsopen-s.md) などのファイルを開く関数を呼び出すときに、関数 [_set_fmode](../c-runtime-library/reference/set-fmode.md) に適切な引数を指定することで、`_fmode` の現在の既定の設定を上書きすることができます。 `stdin`、`stdout`、`stderr` ストリームは常に既定でテキスト モードで開きます。これらのファイルのいずれかを開くときに、この既定の設定を上書きすることもできます。 ファイルを開いた後、ファイル記述子を使用して変換モードを変更するには、[_setmode](../c-runtime-library/reference/setmode.md) を使用します。  
   
-## 参照  
- [入出力](../Topic/Input%20and%20Output.md)   
+## <a name="see-also"></a>関連項目  
+ [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

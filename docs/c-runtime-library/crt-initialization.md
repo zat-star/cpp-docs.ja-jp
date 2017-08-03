@@ -1,32 +1,49 @@
 ---
 title: "CRT の初期化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRT 初期化 [C++]"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRT initialization [C++]
 ms.assetid: e7979813-1856-4848-9639-f29c86b74ad7
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# CRT の初期化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: a4542c86e571a338a08479feedbbb27347776137
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-ここでは、CRT がネイティブ コードのグローバル状態を初期化する方法について説明します。  
+---
+# <a name="crt-initialization"></a>CRT の初期化
+このトピックでは、CRT がネイティブ コードのグローバル状態を初期化する方法について説明します。  
   
- 既定では、リンカー独自のスタートアップ コードを提供する CRT ライブラリが含まれています。  このスタートアップ コードはコンソール アプリケーションで CRT ライブラリ、呼び出しのグローバルの初期化子を初期化し、次にユーザーが指定した `main` 関数を呼び出します。  
+ 既定では、リンカーには、独自のスタートアップ コードを提供する CRT ライブラリが含まれています。 このスタートアップ コードは、CRT ライブラリを初期化し、グローバル初期化子を呼び出し、コンソール アプリケーション用のユーザー指定の `main` 関数を呼び出します。  
   
-## グローバル オブジェクトの初期化  
+## <a name="initializing-a-global-object"></a>グローバル オブジェクトの初期化  
  次のコードがあるとします。  
   
 ```  
@@ -43,13 +60,13 @@ int main()
 }  
 ```  
   
- C\/C\+\+ の標準に従って、`func()` は `main()` が実行される前に呼び出す必要があります。  ただし、ユーザーがそれを呼び出します。  
+ C と C++ の標準に従えば、`func()` は `main()` を実行する前に呼び出す必要があります。 では、呼び出し元は何でしょうか。  
   
- これを決定する 1 とおりの方法が `func()`にブレークポイントを設定し、アプリケーションをデバッグし、スタックをチェックします。  これは、CRT ソース・コードが Visual Studio に用意されているためです。  
+ これを決定する 1 つの方法は、`func()` 内にブレークポイントを設定し、アプリケーションをデバッグし、スタックを調査することです。 これは Visual Studio に CRT ソース コードが含まれているから可能なことです。  
   
- スタックの関数を参照する場合、検出したときに、それらの CRT が関数ポインターのリストをループして、それぞれを呼び出していることがわかります。  これらの関数は、クラス インスタンスの `func()` またはコンストラクターに似ています。  
+ スタック上の関数を参照すると、CRT が関数ポインターのリスト内をループしており、見つかるたびに 1 つの関数を呼び出していることがわかります。 これらの関数は `func()` またはクラス インスタンスのコンストラクターに似ています。  
   
- CRT は Visual C\+\+ コンパイラの関数ポインターのリストを取得します。  コンパイラはグローバルの初期化子を参照するとき、`CRT` がセクション名であり、`XCU` がグループ名\) `.CRT$XCU` セクションの動的な初期化子を生成します。   \(main.cpp と同様に、C の場合は.\)、C\+\+ ファイルとしてコンパイルすると、これらの動的な初期化子の一覧を取得するには **dumpbin \/all main.obj**コマンドを実行し、`.CRT$XCU` セクションを検索します。  これは次のようになります。:  
+ CRT は Visual C++ コンパイラから関数ポインターのリストを取得します。 コンパイラがグローバル初期化子を確認すると、`.CRT$XCU` セクション内に動的初期化子を生成します (`CRT` はセクション名、`XCU` はグループ名です)。 これらの動的初期化子を取得するには、**dumpbin /all main.obj** コマンドを実行し、(main.cpp が C ファイルではなく C++ ファイルとしてコンパイルされるときに) `.CRT$XCU` セクションを検索します 。 これは次のようになります。  
   
 ```  
 SECTION HEADER #6  
@@ -77,17 +94,17 @@ RELOCATIONS #6
  00000000  DIR32                      00000000         C  ??__Egi@@YAXXZ (void __cdecl `dynamic initializer for 'gi''(void))  
 ```  
   
- CRT は 2 個のポインターを定義する:  
+ CRT では、2 つのポインターを定義します。  
   
--   『`.CRT$XCA`』の「`__xc_a`」  
+-   『`__xc_a`』の「`.CRT$XCA`」  
   
--   『`.CRT$XCZ`』の「`__xc_z`」  
+-   『`__xc_z`』の「`.CRT$XCZ`」  
   
- グループの両方に `__xc_a` と `__xc_z`で定義されている他のシンボルがありません。  
+ 両グループとも、`__xc_a` と `__xc_z` を除いては、定義された他のシンボルはありません。  
   
- これで、リンカーは `.CRT` のさまざまなグループを読み込む場合、1 個のセクションでそれらを組み合わせて、アルファベット順に並べ替えます。  これは、Visual C\+\+ コンパイラが `.CRT$XCU`に配置\) ユーザー定義のグローバルな初期化子 `.CRT$XCA` の後に、`.CRT$XCZ`の前に常に送信されることを意味します。  
+ リンカーがさまざまな `.CRT` グループを読み取るとき、グループを 1 つのセクションに結合し、アルファベット順に並べ替えます。 つまり、ユーザー定義のグローバル初期化子 (Visual C++ コンパイラではこれは `.CRT$XCU` 内にあります) は常に `.CRT$XCA` の後にあり、`.CRT$XCZ` の前にあります。  
   
- セクションは次のようになります。:  
+ セクションは次のようになります。  
   
 ```  
 .CRT$XCA  
@@ -99,7 +116,7 @@ RELOCATIONS #6
             __xc_z  
 ```  
   
- したがって、CRT ライブラリが `__xc_a` の両方を使用して、グローバル変数初期化子の開始と終了を確認 `__xc_z` はイメージが読み込まれた後、メモリに配置される方法に一覧表示されます。  
+ イメージが読み込まれたあとに初期化子がメモリに配置されるため、CRT ライブラリは `__xc_a` と `__xc_z` の両方を使用してグローバル初期化子リストの先頭と末尾を決定します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

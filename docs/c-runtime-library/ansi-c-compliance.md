@@ -1,41 +1,58 @@
 ---
 title: "ANSI C 準拠 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Ansi"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ANSI [C++], C 規格"
-  - "互換性 [C++], ANSI C"
-  - "準拠 (ANSI C に)"
-  - "規則 [C++], Microsoft 拡張機能"
-  - "Microsoft 拡張機能の名前付け規則"
-  - "名前付け規則 [C++], Microsoft ライブラリ"
-  - "アンダースコア (_)"
-  - "アンダースコア (_), 先行する"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Ansi
+dev_langs:
+- C++
+helpviewer_keywords:
+- underscores, leading
+- compatibility [C++], ANSI C
+- compliance with ANSI C
+- conventions [C++], Microsoft extensions
+- underscores
+- naming conventions [C++], Microsoft library
+- ANSI [C++], C standard
+- Microsoft extensions naming conventions
 ms.assetid: 6be271bf-eecf-491a-a928-0ee2dd60e3b9
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ANSI C 準拠
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 7e6c5d4045f0b71890a34d845b898844ca550ca8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-ランタイム システムのすべての Microsoft 固有の ID の名前付け規則 \(関数、マクロ、定数、変数、型定義など\) ANSI 準拠です。  このドキュメントでは、ANSI\/ISO C の標準に準拠したランタイム関数は注意して互換 ANSI として。  ANSI 準拠アプリケーションはこれらの ANSI 互換性のある関数を使用してください。  
+---
+# <a name="ansi-c-compliance"></a>ANSI C 準拠
+ランタイム システムのすべての Microsoft 固有の識別子 (関数、マクロ、定数、変数、型の定義など) の名前付け規則は、ANSI に準拠しています。 このドキュメントでは、ANSI/ISO C 標準に従うランタイム関数は、いずれも ANSI 互換であることが記載されています。 ANSI 準拠アプリケーションでは、これらの ANSI 互換の関数だけを使用してください。  
   
- Microsoft 固有の関数とグローバル変数には、名前にアンダースコア \(\) が付きます。  これらの名前は、コードの範囲内では、ローカルにのみをオーバーライドできます。  たとえば、Microsoft のランタイム ヘッダー ファイルが含まれる場合、場合も、ローカルに同じ名前のローカル変数を宣言すると、`_open` という名前の Microsoft 固有の関数をオーバーライドできます。  ただし、独自のグローバル関数またはグローバル変数の場合、この名前は使用できません。  
+ Microsoft 固有の関数とグローバル変数の名前は、1 つのアンダースコアで始まります。 これらの名前は、ローカルでのみ、コードのスコープ内で上書きできます。 たとえば、Microsoft ランタイム ヘッダー ファイルをインクルードするとき、`_open` という名前の Microsoft 固有の関数を、同じ名前のローカル変数を宣言することで上書きできます。 ただし、独自のグローバル関数またはグローバル変数としてこの名前を使用することはできません。  
   
- Microsoft 固有のマクロとマニフェスト定数の名前は 2 個のアンダースコア \(またはすぐに大文字に続く一つの先頭にアンダースコア \(\) が付きます。  これらの ID のスコープは、絶対です。  たとえば、Microsoft 固有の ID **\_UPPER** のこのような理由で使用できません。  
+ Microsoft 固有のマクロとマニフェスト定数の名前は、2 つのアンダー スコア、または先頭の 1 つのアンダースコアとその直後の大文字で始まります。 これらの識別子のスコープは絶対です。 たとえば、この理由から Microsoft 固有の識別子 **_UPPER** を使用することはできません。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [互換性](../c-runtime-library/compatibility.md)

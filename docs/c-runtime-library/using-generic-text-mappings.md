@@ -1,112 +1,129 @@
 ---
 title: "汎用テキスト マップの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_UNICODE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_MBCS データ型"
-  - "_T 型"
-  - "_TCHAR 型"
-  - "_TEXT 型"
-  - "_TINT 型"
-  - "_TSCHAR 型"
-  - "_TUCHAR 型"
-  - "_TXCHAR 型"
-  - "_UNICODE 定数"
-  - "汎用テキストのデータ型"
-  - "汎用テキスト マップ"
-  - "マップ, 汎用テキスト"
-  - "MBCS データ型"
-  - "T 型"
-  - "TCHAR 型"
-  - "TCHAR.H データ型, マップ (定義済みの)"
-  - "TEXT 型"
-  - "TINT 型"
-  - "TSCHAR 型"
-  - "TUCHAR 型"
-  - "TXCHAR 型"
-  - "UNICODE 定数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _UNICODE
+dev_langs:
+- C++
+helpviewer_keywords:
+- _TXCHAR type
+- TINT type
+- _TCHAR type
+- TSCHAR type
+- TEXT type
+- TCHAR type
+- TCHAR.H data types, mappings defined in
+- generic-text data types
+- _TINT type
+- TUCHAR type
+- _UNICODE constant
+- TXCHAR type
+- generic-text mappings
+- _TSCHAR type
+- T type
+- mappings, generic-text
+- _TUCHAR type
+- MBCS data type
+- _MBCS data type
+- _TEXT type
+- UNICODE constant
+- _T type
 ms.assetid: 2848121c-e51f-4b9b-a2e6-833ece4b0cb3
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 汎用テキスト マップの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 17a3f4f7be76be9f23160e351466fee4f70b9272
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="using-generic-text-mappings"></a>汎用テキスト マップの使用
+**Microsoft 固有の仕様**  
   
- さまざまな国際市場向けのコード開発を単純化するために、Microsoft ランタイム ライブラリには、多くのデータ型、ルーチン、およびそのほかのオブジェクトに Microsoft 固有の「汎用テキスト マップ」を提供します。  これらの割り当ては TCHAR.H.で定義されます。  文字セットの 3 種類のいずれかにコンパイルできるジェネリック コードを記述するために、これらの名前のマッピングを使用する: SBCS ASCII \(\)、マニフェスト定数に、MBCS、Unicode、`#define` のステートメントを使用して定義します。  汎用テキスト マッピングは ANSI 互換の Microsoft 拡張機能です。  
+ さまざまな国際市場に対応したコード開発を容易にするために、Microsoft ランタイム ライブラリには、多くのデータ型やルーチン、オブジェクトなどで利用できる Microsoft 固有の "汎用テキスト" マップが用意されています。 これらのマップは、TCHAR.H で定義されています。 これらの名前のマップを使用して、`#define` ステートメントを使用して定義するマニフェスト定数に応じて ASCII (SBCS)、MBCS、Unicode という 3 種類の文字セットのいずれかにコンパイルされるジェネリック コードを書き込むことができます。 汎用テキスト マッピングは Microsoft 固有の拡張機能であり、ANSI とは互換性がありません。  
   
-### 汎用テキスト マッピング用のプリプロセッサ ディレクティブ  
+### <a name="preprocessor-directives-for-generic-text-mappings"></a>汎用テキスト マッピング用のプリプロセッサ ディレクティブ  
   
-|\#define|コンパイル後の状態|例|  
-|--------------|---------------|-------|  
-|`_UNICODE`|Unicode \(ワイド文字\)|`_tcsrev` は `_wcsrev` に割り当てられます。|  
+|#define|コンパイル後の状態|例|  
+|--------------|----------------------|-------------|  
+|`_UNICODE`|Unicode (ワイド文字)|`_tcsrev` は `_wcsrev` に割り当てられます。|  
 |`_MBCS`|マルチバイト文字|`_tcsrev` は `_mbsrev` に割り当てられます。|  
-|なし \(既定: `_UNICODE` が `_MBCS` が定義されていません\)|SBCS ASCII \(\)|`strrev`への`_tcsrev`のマップ|  
+|なし (既定では `_UNICODE` も `_MBCS` も未定義)|SBCS (ASCII)|`_tcsrev` は `strrev` に割り当てられます。|  
   
- たとえば `_UNICODE`が定義されている `MBCS` がプログラム内で定義されている場合は `_wcsrev`マップします TCHAR.H で定義された汎用テキスト関数 `_tcsrev`に `mbsrev` に。  `strrev`にそれ `_tcsrev`の対応マップです。  
+ たとえば、TCHAR.H で定義した汎用テキスト関数 `_tcsrev` は、プログラムで `MBCS` を定義した場合には `mbsrev` にマップされ、`_UNICODE` を定義した場合には `_wcsrev` にマップされます。 それ以外の場合、`_tcsrev` は `strrev` にマップされます。  
   
- これらの定数を定義する `_UNICODE` が入力を定義すると、`char` をマップします `_MBCS` が定義されている場合、TCHAR.H で定義された汎用テキスト データ型 `_TCHAR`は、`wchar_t` を入力するに `char` を入力する。  他のデータ型のマッピングは、プログラミングの便宜上 TCHAR.H で提供されますが、`_TCHAR` は最も有用な型です。  
+ 同じく TCHAR.H で定義した汎用テキストのデータ型 `_TCHAR` は、`_MBCS` を定義した場合には `char` 型にマップされ、`_UNICODE` を定義した場合には `wchar_t` 型にマップされ、どちらの定数も定義しない場合は `char` 型にマップされます。 プログラミングに便利なように、TCHAR.H には他のデータ型のマッピングも用意されていますが、`_TCHAR` が最も使いやすいデータ型です。  
   
-### 汎用テキストのデータ型のマップ  
+### <a name="generic-text-data-type-mappings"></a>汎用テキストのデータ型のマップ  
   
-|汎用テキスト データ型名|SBCS \(定義されていない\_UNICODE、\_MBCS\)|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|------------------|---------------------------------------|-----------------------|--------------------------|  
+|汎用テキストのデータ型の名前|SBCS (_UNICODE、_MBCS が未定義の場合)|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|----------------------------------|--------------------------------------------|--------------------|-----------------------|  
 |`_TCHAR`|`char`|`char`|`wchar_t`|  
 |`_TINT`|`int`|`int`|`wint_t`|  
 |`_TSCHAR`|`signed char`|`signed char`|`wchar_t`|  
 |`_TUCHAR`|`unsigned char`|`unsigned char`|`wchar_t`|  
 |`_TXCHAR`|`char`|`unsigned char`|`wchar_t`|  
-|`_T` または `_TEXT`|影響なし \(プリプロセッサによって削除される\)|影響なし \(プリプロセッサによって削除される\)|`L` \(文字または文字列に従っている Unicode に対応する\) への変換|  
+|`_T` または `_TEXT`|影響なし (プリプロセッサによって削除される)|影響なし (プリプロセッサによって削除される)|`L` (後続の文字または文字列を対応する Unicode の文字または文字列に変換する)|  
   
- 汎用テキスト ルーチンのマップの一覧については、変数、そのほかのオブジェクトは、[汎用テキストのマッピング](../c-runtime-library/generic-text-mappings.md)を参照します。  
+ ルーチンや変数などのオブジェクトの汎用テキスト マップの詳細な一覧については、「[汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)」をご覧ください。  
   
- 次のコードは、MBCS、および Unicode SBCS モデルに対応するために、`_TCHAR` と `_tcsrev` の使用例です。  
+ MBCS、Unicode、および SBCS の各モデルにマッピングするために、`_TCHAR` と `_tcsrev` を使用するコード例を次に示します。  
   
 ```  
 _TCHAR *RetVal, *szString;  
 RetVal = _tcsrev(szString);  
 ```  
   
- `MBCS` が定義されていると、プリプロセッサによって次のコードには、フラグメントをマップします:  
+ `MBCS` を定義した場合は、プリプロセッサによって上述のコードが次のコードにマップされます。  
   
 ```  
 char *RetVal, *szString;  
 RetVal = _mbsrev(szString);  
 ```  
   
- `_UNICODE` が定義されていると、プリプロセッサによって次のコードに同じフラグメントをマップします:  
+ `_UNICODE` を定義した場合は、プリプロセッサによって同じコードが次のコードにマップされます。  
   
 ```  
 wchar_t *RetVal, *szString;  
 RetVal = _wcsrev(szString);  
 ```  
   
- `_MBCS` が `_UNICODE` も定義されていない場合、プリプロセッサは前 ASCII コードを次のように、フラグメントをマップします:  
+ `_MBCS` と `_UNICODE` のどちらも定義しなかった場合は、プリプロセッサによって同様のコードが次のような 1 バイトの ASCII コードにマップされます。  
   
 ```  
 char *RetVal, *szString;  
 RetVal = strrev(szString);  
 ```  
   
- したがって、単一のソース・コード ファイルの記述と保守を、文字セットの 3 種類のいずれかに固有のルーチンを実行するようにコンパイルできます。  
+ このように、1 つのソース コード ファイルを記述、保守、コンパイルすることで、3 種類のそれぞれの文字セットに固有のルーチンを実行できます。  
   
  **END Microsoft 固有の仕様**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   

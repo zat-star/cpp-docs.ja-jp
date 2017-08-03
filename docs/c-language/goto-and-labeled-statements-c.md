@@ -1,50 +1,67 @@
 ---
 title: "goto ステートメントとラベル付きステートメント (C) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "goto"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "goto キーワード [C]"
-  - "labeled ステートメント"
-  - "ステートメント, labeled"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- goto
+dev_langs:
+- C++
+helpviewer_keywords:
+- labeled statement
+- statements, labeled
+- goto keyword [C]
 ms.assetid: 3d0473dc-4b18-4fcc-9616-31a38499d7d7
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# goto ステートメントとラベル付きステートメント (C)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 2e42906c932375ec62597868f7c106712bd25cbc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-`goto` ステートメントは、特定のラベルに制御を移します。  この特定のラベルは、同じ関数内に存在する必要があり、同じ関数内の 1 つのステートメントの前にのみ指定できます。  
+---
+# <a name="goto-and-labeled-statements-c"></a>goto ステートメントとラベル付きステートメント (C)
+`goto` ステートメントは、特定のラベルに制御を移します。 この特定のラベルは、同じ関数内に存在する必要があり、同じ関数内の 1 つのステートメントの前にのみ指定できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
  *statement*:  
- *labeled\-statement*  
+ *labeled-statement*  
   
- *jump\-statement*  
+ *jump-statement*  
   
- *jump\-statement*:  
+ *jump-statement*:  
  **goto**  *identifier*  **;**  
   
- *labeled\-statement*:  
+ *labeled-statement*:  
  *identifier*  **:**  *statement*  
   
  ステートメント ラベルは `goto` ステートメントに対してのみ意味を持ちます。他のコンテキストでは、ラベル付きステートメントはラベルに関係なく実行されます。  
   
- *jump\-statement* は同じ関数に存在する必要があり、同じ関数の特定のステートメントの前にのみ指定できます。  `goto` に続く *identifier* の名前のセットには独自の名前空間があるため、名前が他の識別子に干渉することはありません。  ラベルは再宣言できません。  詳細については、「[Name Spaces \(名前空間\)](../c-language/name-spaces.md)」を参照してください。  
+ *jump-statement* は同じ関数に存在する必要があり、同じ関数の特定のステートメントの前にのみ指定できます。 `goto` に続く *identifier* の名前のセットには独自の名前空間があるため、名前が他の識別子に干渉することはありません。 ラベルは再宣言できません。 詳細については、「[名前空間](../c-language/name-spaces.md)」を参照してください。  
   
- 可能な限り、`goto` より **break**、**continue**、および `return` ステートメントを使用することをお勧めします。  **break** ステートメントは、ループの 1 つのレベルから抜けるだけであるため、`goto` は、深い入れ子になっているループ内からループを終了する場合に必要になることがあります。  
+ 可能な限り、`goto` より **break**、**continue**、および `return` ステートメントを使用することをお勧めします。 **break** ステートメントは、ループの 1 つのレベルから抜けるだけであるため、`goto` は、深い入れ子になっているループ内からループを終了する場合に必要になることがあります。  
   
  `goto` ステートメントの例を次に示します。  
   
@@ -76,5 +93,5 @@ int main()
   
  この例で `goto` ステートメントは、`i` が 5 に等しい場合に、`stop` というラベルの位置に制御を移します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ステートメント](../c-language/statements-c.md)

@@ -1,37 +1,54 @@
 ---
-title: "naked (C) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エピローグ コード"
-  - "naked キーワード [C]"
-  - "naked キーワード [C], ストレージ クラス属性"
-  - "プロローグ コード"
+title: naked (C) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- naked keyword [C], storage-class attribute
+- naked keyword [C]
+- prolog code
+- epilog code
 ms.assetid: 23b1209b-93ba-46ad-a60f-2327c1933eaf
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# naked (C)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 24266f2241ddb60d4a5403447a87caaa08ddaf08
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="naked-c"></a>naked (C)
+**Microsoft 固有の仕様**  
   
- naked ストレージ クラス属性は C 言語への Microsoft 固有の拡張機能です。  コンパイラは、naked ストレージ クラス属性を指定して宣言されている関数に対しては、プロローグ コードおよびエピローグ コードを含まないコードを生成します。  naked 関数は、インライン アセンブラー コードを使用してプロローグとエピローグのコード シーケンスを独自に作成する必要がある場合に便利です。  naked 関数は、仮想デバイス ドライバーの記述時に特に便利です。  
+ naked ストレージ クラス属性は C 言語への Microsoft 固有の拡張機能です。 コンパイラは、naked ストレージ クラス属性を指定して宣言されている関数に対しては、プロローグ コードおよびエピローグ コードを含まないコードを生成します。 naked 関数は、インライン アセンブラー コードを使用してプロローグとエピローグのコード シーケンスを独自に作成する必要がある場合に便利です。 naked 関数は、仮想デバイス ドライバーの記述時に特に便利です。  
   
  naked 属性の使用に関する具体的情報については、「[naked 関数](../c-language/naked-functions.md)」を参照してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [C 拡張ストレージ クラス属性](../c-language/c-extended-storage-class-attributes.md)

@@ -47,10 +47,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
-ms.openlocfilehash: 57de8d43336f8fd5c82da17f42cf6f8292600148
+ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
+ms.openlocfilehash: 232da2506389337f6b37412161492c103db5b971
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 # <a name="crt-library-features"></a>CRT ライブラリの機能
@@ -59,7 +59,7 @@ ms.lasthandoff: 03/07/2017
 ## <a name="c-run-time-libraries-crt"></a>C ランタイム ライブラリ (CRT)  
  C ランタイム ライブラリ (CRT) は、ISO C99 標準ライブラリが組み込まれている C++ 標準ライブラリの一部です。 この CRT を実装する Visual C++ ライブラリは、ネイティブ コード開発と、ネイティブとマネージの混合コードと .NET 向けの純粋マネージ コードの両方の開発をサポートします。 CRT のすべてのバージョンがマルチスレッド開発をサポートします。 ほとんどのライブラリが、ライブラリを直接コードにリンクする静的リンクと、コードで共通 DLL ファイルを使用できるようにする動的リンクの両方をサポートします。  
   
- Visual Studio 2015 より、CRT が新しいバイナリにリファクタリングされました。 ユニバーサル CRT (UCRT) には、標準の C99 CRT ライブラリからエクスポートされた関数とグローバルが含まれています。 UCRT は Windows コンポーネントであり、Windows 10 の一部として出荷されます。 UCRT 用のスタティック ライブラリ、DLL インポート ライブラリ、およびヘッダー ファイルが Windows 10 SDK に含まれています。 Visual C++ をインストールすると、Visual Studio セットアップによって、UCRT を使用するために必要な Windows 10 SDK のサブセットがインストールされます。 UCRT は、Visual Studio 2015 以降のバージョンでサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist を使用して再配布することができます。 詳細については、「[Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
+ Visual Studio 2015 より、CRT が新しいバイナリにリファクタリングされました。 ユニバーサル CRT (UCRT) には、標準の C99 CRT ライブラリからエクスポートされた関数とグローバルが含まれています。 UCRT は Windows コンポーネントであり、Windows 10 の一部として出荷されます。 UCRT 用のスタティック ライブラリ、DLL インポート ライブラリ、およびヘッダー ファイルが Windows 10 SDK に含まれています。 Visual C++ をインストールすると、Visual Studio セットアップによって、UCRT を使用するために必要な Windows 10 SDK のサブセットがインストールされます。 UCRT は、Visual Studio 2015 以降のバージョンでサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist を使用して再配布することができます。 詳細については、「 [Redistributing Visual C++ Files](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
   
  次の表に、UCRT を実装するライブラリの一覧を示します。  
   
@@ -87,7 +87,7 @@ ms.lasthandoff: 03/07/2017
   
 |ライブラリ|特性|オプション|プリプロセッサ ディレクティブ|  
 |-------------|---------------------|------------|-----------------------------|  
-|libcmt.lib|ネイティブ CRT スタートアップをコードに静的にリンクします。|**/MT**|_MT|  
+|LIBCMT.lib|ネイティブ CRT スタートアップをコードに静的にリンクします。|**/MT**|_MT|  
 |libcmtd.lib|ネイティブ CRT スタートアップのデバッグ バージョンを静的にリンクします。 再頒布可能パッケージではありません。|**/MTd**|_DEBUG、_MT|  
 |msvcrt.lib|DLL UCRT および vcruntime で使用するためのネイティブ CRT スタートアップ用のスタティック ライブラリ。|**/MD**|_MT、_DLL|  
 |msvcrtd.lib|DLL UCRT および vcruntime で使用するためのネイティブ CRT スタートアップのデバッグ バージョン用のスタティック ライブラリ。 再頒布可能パッケージではありません。|**/MDd**|_DEBUG、_MT、_DLL|  
@@ -108,7 +108,7 @@ ms.lasthandoff: 03/07/2017
   
  **/clr** と共に CTR を使用する方法の詳細については、「[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)」を参照してください。**/clr:pure** については、「[純粋で検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)」を参照してください。  
   
- アプリケーションのデバッグ バージョンをビルドするには、[_DEBUG](../c-runtime-library/debug.md) フラグが定義され、アプリケーションが上の表のいずれかのライブラリのデバッグ バージョンとリンクされている必要があります。 ライブラリ ファイルのデバッグ バージョンの使い方の詳細については、「[CRT のデバッグ技術](/visualstudio/debugger/crt-debugging-techniques)」を参照してください。  
+ アプリケーションのデバッグ バージョンをビルドするには、[_DEBUG](../c-runtime-library/debug.md) フラグが定義され、アプリケーションが上の表のいずれかのライブラリのデバッグ バージョンとリンクされている必要があります。 ライブラリ ファイルのデバッグ バージョンの使い方の詳細については、「 [CRT のデバッグ技術](/visualstudio/debugger/crt-debugging-techniques)」を参照してください。  
   
  この CRT のバージョンは、C99 標準に完全には準拠していません。 具体的には、\<tgmath.h> ヘッダーと CX_LIMITED_RANGE/FP_CONTRACT プラグマ マクロがサポートされていません。 標準 IO 関数内のパラメーター指定子の意味などの特定の要素で、既定で、従来の解釈が使用されます。 /Zc コンパイラ準拠オプションを使用して、リンカー オプションを指定し、ライブラリ準拠の一部の側面を制御することができます。  
   
@@ -116,19 +116,19 @@ ms.lasthandoff: 03/07/2017
   
 |C++ 標準ライブラリ|特性|オプション|プリプロセッサ ディレクティブ|  
 |----------------------------|---------------------|------------|-----------------------------|  
-|LIBCPMT.LIB|マルチスレッド、静的リンク|**/MT**|_MT|  
+|LIBCPMT.lib|マルチスレッド、静的リンク|**/MT**|_MT|  
 |MSVCPRT.LIB|マルチスレッド、動的リンク (MSVCP\<version>.dll 用のインポート ライブラリ)|**/MD**|_MT、_DLL|  
 |LIBCPMTD.LIB|マルチスレッド、静的リンク|**/MTd**|_DEBUG、_MT|  
 |MSVCPRTD.LIB|マルチスレッド、動的リンク (MSVCP\<version>D.DLL 用のインポート ライブラリ)|**/MDd**|_DEBUG、_MT、_DLL|  
   
- プロジェクトのリリース バージョンをビルドすると、既定では、選択したコンパイラ オプション (マルチスレッド、DLL、/clr) に応じて、基本 C ランタイム ライブラリ (LIBCMT.LIB、MSVCMRT.LIB、MSVCRT.LIB) の 1 つがリンクされます。 コードに [C++ 標準ライブラリのヘッダー ファイル](../standard-library/cpp-standard-library-header-files.md)の 1 つがインクルードされている場合は、コンパイル時に [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] によって自動的に C++ 標準ライブラリがリンクされます。 例:  
+ プロジェクトのリリース バージョンをビルドすると、既定では、選択したコンパイラ オプション (マルチスレッド、DLL、/clr) に応じて、基本 C ランタイム ライブラリ (LIBCMT.LIB、MSVCMRT.LIB、MSVCRT.LIB) の 1 つがリンクされます。 コードに [C++ 標準ライブラリのヘッダー ファイル](../standard-library/cpp-standard-library-header-files.md)の 1 つがインクルードされている場合は、コンパイル時に Visual C++ によって自動的に C++ 標準ライブラリがリンクされます。 例:  
   
 ```  
 #include <ios>   
 ```  
   
 ## <a name="what-problems-exist-if-an-application-uses-more-than-one-crt-version"></a>アプリケーションで複数の CRT バージョンを使用した場合に発生する問題  
- 複数の DLL または EXE がある場合は、異なるバージョンの [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] を使用しているかどうかにかかわらず、複数の CRT が使用される可能性があります。 たとえば、CRT を複数の DLL に静的にリンクした場合に同じ問題が発生します。 この静的 CRT の問題が発生した場合は、 **/MD** でコンパイルして CRT DLL を使用するという対処が一般的です。 DLL で DLL 境界を越えて CRT リソースを渡すと、CRT の不一致によって問題が発生します。その場合は、Visual C++ でプロジェクトをコンパイルし直す必要があります。  
+ 複数の DLL または EXE がある場合は、異なるバージョンの Visual C++ を使用しているかどうかにかかわらず、複数の CRT が使用される可能性があります。 たとえば、CRT を複数の DLL に静的にリンクした場合に同じ問題が発生します。 この静的 CRT の問題が発生した場合は、 **/MD** でコンパイルして CRT DLL を使用するという対処が一般的です。 DLL で DLL 境界を越えて CRT リソースを渡すと、CRT の不一致によって問題が発生します。その場合は、Visual C++ でプロジェクトをコンパイルし直す必要があります。  
   
  複数のバージョンの CRT を使用するプロジェクトでは、DLL の境界を超えて特定の CRT オブジェクト (ファイル ハンドル、ロケール、環境変数など) を渡す場合には注意を要します。 発生する可能性のある問題とその対処法の詳細については、「[DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー](../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md)」を参照してください。  
   

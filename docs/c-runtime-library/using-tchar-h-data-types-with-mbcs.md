@@ -1,82 +1,97 @@
 ---
 title: "TCHAR.H データ型の _MBCS 定義下での使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_mbcs"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "_MBCS データ型"
-  - "MBCS データ型"
-  - "TCHAR.H データ型"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _mbcs
+dev_langs:
+- C++
+helpviewer_keywords:
+- TCHAR.H data types
+- MBCS data type
+- _MBCS data type
 ms.assetid: 48f471e7-9d2b-4a39-b841-16a0e15c0a18
 caps.latest.revision: 8
-caps.handback.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# TCHAR.H データ型の _MBCS 定義下での使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: ec4f2b6245e024541a0247ebafbabc534ba9ded4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="using-tcharh-data-types-with-mbcs"></a>TCHAR.H データ型の _MBCS 定義下での使用
+**Microsoft 固有の仕様**  
   
- 汎用テキスト ルーチンのマップのテーブル \([汎用テキストのマッピング](../c-runtime-library/generic-text-mappings.md)を参照してください\) ように `_MBCS` マニフェスト定数を定義すると、汎用テキスト ルーチンは、次の種類の 1 かのルーチンにマップ:  
+ 汎用テキスト ルーチンのマッピングの表に示すように (「[汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)」をご覧ください)、マニフェスト定数の `_MBCS` が定義されていると、指定した汎用テキスト ルーチンは次のようなルーチンのいずれかにマップされます。  
   
--   マルチバイトのバイト、文字、および文字列を適切に処理する SBCS ルーチン。  この場合、文字列引数は `char*`型であると想定されます。  たとえば、`printf`への `_tprintf` マップ; `printf` の文字列引数は `char*`型です。  文字列の型に `_TCHAR` の汎用テキスト データ型を使用すると、`printf` の正式な、実際のパラメーターの型は `_TCHAR*` が `char*`にマッピングされるため、一致します。  
+-   マルチバイト、文字、文字列を適切に処理する SBCS ルーチン。 この場合、文字列引数は `char*` 型であることを想定しています。 たとえば、`_tprintf` は `printf` にマップされ、`printf` への文字列引数は `char*` 型になります。 文字列型として汎用テキストのデータ型である `_TCHAR` を使用する場合、`_TCHAR*` は `char*` にマップされるため `printf` の仮パラメーターと実パラメーターの型は一致します。  
   
--   MBCS 固有のルーチン。  この場合、文字列引数は `unsigned char*`型であると想定されます。  たとえば、`_tcsrev`は `_mbsrev`にマップします `unsigned char*`型の文字列を想定し、返します。  再度 `char`を入力するに `_TCHAR`が割り当てられている可能性のある型の競合がある場合は、文字列の型に `_TCHAR`の汎用テキスト データ型を使用する場合。  
+-   MBCS 固有ルーチン。 この場合、文字列引数は `unsigned char*` 型であることを想定しています。 たとえば、`_tcsrev` は、`unsigned char*` 型の文字列を必要とし、それを返す `_mbsrev` にマップされます。 上記と同じように、文字列型として汎用テキストのデータ型である `_TCHAR` を使用する場合、`_TCHAR` が `char` にマップされるため、今度は型が競合する可能性があります。  
   
- 型の不一致を回避するための解決策として、次に 3 種類紹介します。これを無視すると、C のコンパイラでは警告が、C\+\+ のコンパイラではエラーが発生します。  
+ この型の競合 (および C コンパイラの警告または C++ コンパイラのエラーという結果) を回避するためには、次のような 3 つの解決方法があります。  
   
--   既定の動作を使用します。  TCHAR.H は次の例のようにランタイム ライブラリのルーチンに対する汎用テキスト ルーチンのプロトタイプを提供します。  
+-   既定の動作を使用します。 次の例のように、TCHAR.H はランタイム ライブラリのルーチンに対して汎用テキスト ルーチンのプロトタイプを提供します。  
   
     ```  
     char *_tcsrev(char *);  
     ```  
   
-     `_tcsrev` の既定の設定では、プロトタイプは LIBC.LIB のサンクによって `_mbsrev` に割り当てられます。  これは `_TCHAR *` から `unsigned char *`に `_mbsrev` 入力パラメーターと戻り値の型 \(`char *`など\) を変更します。  このメソッドは `_TCHAR`を使用しますが、関数呼び出しのオーバーヘッドに比較的低速ですと一致する型になります。  
+     既定では、`_tcsrev` のプロトタイプは LIBC.LIB のサンクを介して `_mbsrev` にマップされます。 これにより、`_mbsrev` 受信パラメーターと `_TCHAR *` (`char *` など) から `unsigned char *` に送信される戻り値の型が変更されます。 この方法なら `_TCHAR` を使用するときに確実に型が一致しますが、関数呼び出しのオーバーヘッドにより比較的低速になります。  
   
--   コード内に次のプリプロセッサ ステートメントを組み込むことにより、関数をインライン展開します。  
+-   コードに次のプリプロセッサ ステートメントを組み込むことにより、関数のインライン展開を使用します。  
   
     ```  
     #define _USE_INLINING  
     ```  
   
-     このメソッドにより適切な MBCS ルーチンに対する汎用テキスト ルーチンを直接割り当てられます。インライン関数サンクは、TCHAR.H で。  TCHAR.H の次のコード例の例はこれがどのようにする方法の例を示します。  
+     この方法では、TCHAR.H で提供されるインライン関数サンクにより、汎用テキスト ルーチンが直接、適切な MBCS ルーチンにマップされます。 どのようにマップされるかについては、例として TCHAR.H から抜粋した次のコードをご覧ください。  
   
     ```  
     __inline char *_tcsrev(char *_s1)  
     {return (char *)_mbsrev((unsigned char *)_s1);}  
     ```  
   
-     インライン展開は、型の一致を保証するだけでなく、実行時間が増えることもないため、使用できる場合には最良の解決策です。  
+     インライン展開を使用できる場合は、この方法が最適な解決法になります。確実に型が一致し、追加の時間コストが発生しないからです。  
   
--   コード内に次のプリプロセッサ ステートメントを組み込むことにより「ダイレクト マッピング」。  
+-   コードに次のプリプロセッサ ステートメントを組み込むことにより、"直接マッピング" を使用します。  
   
     ```  
     #define _MB_MAP_DIRECT  
     ```  
   
-     既定の動作を使用しない場合やインライン展開を使用できない場合は、これが高速な方法となります。  これは汎用テキスト ルーチンを TCHAR.H.の次の例のように MBCS ルーチンのバージョンにマクロによって直接割り当てられます。  
+     この方法は、既定の動作を使用したくない場合、またはインライン展開を使用できない場合の代替手段であり、高速です。 この方法では、TCHAR.H から抜粋した次の例のように、汎用テキスト ルーチンがマクロによって直接、MBCS バージョンのルーチンにマップされます。  
   
     ```  
     #define _tcschr _mbschr  
     ```  
   
- この方法を使うと、適切なデータ型を文字列引数に使用され、戻り値を指す\) ようにするためです。  適切な型の不一致には、`_TXCHAR` の汎用テキスト データ型を使用できるようにするために型キャストを使用できます。  `_TXCHAR` は MBCS コードの `unsigned char` を入力する SBCS のコード マップの `char` を入力するようにマップします。  汎用テキスト マクロに関する詳細については、「[汎用テキストのマッピング](../c-runtime-library/generic-text-mappings.md)」を参照してください。  
+ この方法を採用する場合は、文字列の引数と文字列の戻り値に適切なデータ型を使用するように注意する必要があります。 適切に型を一致させるために型キャストを使用できます。または、汎用テキストのデータ型である `_TXCHAR` を使用できます。 `_TXCHAR` は SBCS コードでは `char` 型にマップされますが、MBCS コードでは `unsigned char` 型にマップされます。 汎用テキストのマクロの詳細については、「[汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)」をご覧ください。  
   
  **END Microsoft 固有の仕様**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [国際化](../c-runtime-library/internationalization.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
