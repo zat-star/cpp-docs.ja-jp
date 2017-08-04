@@ -80,7 +80,7 @@ ms.lasthandoff: 05/18/2017
  `_LK_NBLCK` と同じ。  
   
  `_LK_UNLCK`  
- 指定したバイトのロックを解除します  (バイトはすでにロックされている必要があります)。  
+ 指定したバイトをロック解除します。 (バイトはすでにロックされている必要があります)。  
   
 ## <a name="see-also"></a>関連項目  
  [_locking](../c-runtime-library/reference/locking.md)   

@@ -48,7 +48,7 @@ ms.lasthandoff: 05/18/2017
 |[bitand](../c-runtime-library/reference/bitand.md)|& 演算子の代替手段。|  
 |[bitor](../c-runtime-library/reference/bitor.md)|&#124; 演算子の代替手段。|  
 |[compl](../c-runtime-library/reference/compl.md)|~ 演算子の代替手段。|  
-|[not](../c-runtime-library/reference/not.md)|! 演算子 の代替手段。|  
+|[not](../c-runtime-library/reference/not.md)|! 演算子の 代替手段。|  
 |[not_eq](../c-runtime-library/reference/not-eq.md)|!= 演算子の代替手段。|  
 |[または](../c-runtime-library/reference/or.md)|&#124;&#124; 演算子の代替手段。|  
 |[or_eq](../c-runtime-library/reference/or-eq.md)|&#124;= 演算子の代替手段。|  
