@@ -1,31 +1,48 @@
 ---
 title: "配列の格納 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C]"
-  - "配列 [C], ストレージ"
-  - "ストレージ, 配列"
-  - "配列の格納"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- storage, arrays
+- arrays [C], storage
+- arrays [C]
+- storing arrays
 ms.assetid: c1331216-cf51-45f6-8072-a3fedc7cb367
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 配列の格納
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 2c1ca5de8ab53b04d3fcd37d19293120e8acee51
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-配列型に関連付けられたストレージは、そのすべての要素に必要なストレージです。  配列の要素は、最初の要素から最後の要素まで、連続した増加メモリ位置に保存されます。  
+---
+# <a name="storage-of-arrays"></a>配列の格納
+配列型に関連付けられたストレージは、そのすべての要素に必要なストレージです。 配列の要素は、最初の要素から最後の要素まで、連続した増加メモリ位置に保存されます。  
   
-## 参照  
- [配列の宣言](../Topic/Array%20Declarations.md)
+## <a name="see-also"></a>関連項目  
+ [配列の宣言](../c-language/array-declarations.md)

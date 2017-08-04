@@ -1,34 +1,51 @@
 ---
 title: "extern ストレージ クラス指定子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "extern キーワード [C]"
-  - "extern キーワード [C], ストレージ クラス指定子"
-  - "外部リンケージ, extern 修飾子"
-  - "外部リンケージ, ストレージ クラス指定子"
-  - "ストレージ クラス指定子, extern"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- extern keyword [C]
+- storage class specifiers, extern
+- extern keyword [C], storage class specifier
+- external linkage, storage-class specifiers
+- external linkage, extern modifier
 ms.assetid: 6e16d927-291f-49e4-986c-9d91a482a441
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# extern ストレージ クラス指定子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: be8f7e83ef2157157c2cea241eefe49453e0060f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-`extern` のストレージ クラス指定子で宣言された変数は、プログラムのソース ファイルのいずれかの外部レベルで定義されている同じ名前の変数への参照です。  内部 `extern` 宣言は、ブロック内で外部レベル変数定義を表示するために使用されます。  外部レベルで宣言されていない限り、`extern` キーワードを使用して宣言された変数は、宣言されたブロックでのみ使用できます。  
+---
+# <a name="extern-storage-class-specifier"></a>extern ストレージ クラス指定子
+`extern` のストレージ クラス指定子で宣言された変数は、プログラムのソース ファイルのいずれかの外部レベルで定義されている同じ名前の変数への参照です。 内部 `extern` 宣言は、ブロック内で外部レベル変数定義を表示するために使用されます。 外部レベルで宣言されていない限り、`extern` キーワードを使用して宣言された変数は、宣言されたブロックでのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
  この例では、内部および外部レベルの宣言を示しています。  
   
 ```  
@@ -76,11 +93,11 @@ void other( void )
 }  
 ```  
   
- この例では、変数 `i` は初期値 1 の外部レベルで定義されます。  `main` 関数内の `extern` 宣言は、外部レベル `i` への参照を宣言するために使用されます。  初期化子は省略されるため、**static** 変数 `a` は、既定で 0 に初期化されます。  `printf` の呼び出しにより、値 1、0、0、および 0 が出力されます。  
+ この例では、変数 `i` は初期値 1 の外部レベルで定義されます。 `extern` 関数内の `main` 宣言は、外部レベル `i` への参照を宣言するために使用されます。 初期化子は省略されるため、**static** 変数 `a` は、既定で 0 に初期化されます。 `printf` の呼び出しにより、値 1、0、0、および 0 が出力されます。  
   
- `other` 関数では、**static** ポインター変数 `external_i` を初期化するために、グローバル変数 `i` のアドレスが使用されます。  グローバル変数の有効期間が **static** である、つまりプログラム実行中にアドレスが変わることがないので、これは機能します。  次に、変数 `i` は、初期値 16 を持つローカル変数として再定義されます。  この再定義は、ローカル変数用にその名前が使用されていることによって隠されている外部レベルの `i` の値には影響しません。  グローバル `i` の値には、ポインター `external_i` を通じて、このブロック内で間接的な方法でのみアクセスできるようになりました。  ポインターに **auto** 変数 `i` のアドレスを割り当てようとしましたが、ブロックが入力されるたびに異なる可能性があるため機能しません。  変数 `a` は **static** 変数として宣言され、2 に初期化されます。  内部レベルの **static** 変数は宣言されているブロック内でのみ表示されるため、`a` は `main` の `a` と競合しません。  
+ `other` 関数では、**static** ポインター変数 `external_i` を初期化するために、グローバル変数 `i` のアドレスが使用されます。 グローバル変数の有効期間が **static** である、つまりプログラム実行中にアドレスが変わることがないので、これは機能します。 次に、変数 `i` は、初期値 16 を持つローカル変数として再定義されます。 この再定義は、ローカル変数用にその名前が使用されていることによって隠されている外部レベルの `i` の値には影響しません。 グローバル `i` の値には、ポインター `external_i` を通じて、このブロック内で間接的な方法でのみアクセスできるようになりました。 ポインターに **auto** 変数 `i` のアドレスを割り当てようとしましたが、ブロックが入力されるたびに異なる可能性があるため機能しません。 変数 `a` は **static** 変数として宣言され、2 に初期化されます。 内部レベルの **static** 変数は宣言されているブロック内でのみ表示されるため、`a` は `main` の `a` と競合しません。  
   
- 変数 `a` は 2 だけ増加し、結果は 4 です。  `other` 関数が同じプログラムで再び呼び出される場合、`a` の初期値は 4 になります。  内部静的変数は、プログラムが終了したときに値を保持し、値を保持したまま、宣言されているブロックに入ります。  
+ 変数 `a` は 2 だけ増加し、結果は 4 です。 `other` 関数が同じプログラムで再び呼び出される場合、`a` の初期値は 4 になります。 内部静的変数は、プログラムが終了したときに値を保持し、値を保持したまま、宣言されているブロックに入ります。****  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [内部レベル宣言のストレージ クラス指定子](../c-language/storage-class-specifiers-for-internal-level-declarations.md)

@@ -1,82 +1,104 @@
 ---
-title: "C 列挙体の宣言 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "#define ディレクティブ, 代替"
-  - "宣言, 列挙型"
-  - "宣言 (列挙型を)"
-  - "define ディレクティブ (#define), 代替"
-  - "列挙子, 宣言"
-  - "名前付き定数, 列挙型宣言"
+title: "C 列挙型の宣言 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- declarations, enumerations
+- define directive (#define), alternative to
+- enumerators, declaring
+- '#define directive, alternative to'
+- named constants, enumeration declarations
+- declaring enumerations
 ms.assetid: bd18f673-4dda-4bc1-92fd-d1ce10074910
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# C 列挙体の宣言
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 90d3b0837adb2bd646ef39f4898377c41a030a81
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-列挙体は、名前が付いた一連の整数定数で構成されます。  列挙型の宣言では、列挙タグ \(省略可能\) の名前を指定し、名前が付いた一連の整数識別子を定義します \(これらの識別子は、"列挙セット"、"列挙定数"、"列挙子"、または "メンバー" と呼ばれます\)。  列挙型の変数には、その型で定義された列挙セットの 1 つの値が格納されます。  
+---
+# <a name="c-enumeration-declarations"></a>C 列挙体の宣言
+列挙体は、名前が付いた一連の整数定数で構成されます。 列挙型の宣言では、列挙タグ (省略可能) の名前を指定し、名前が付いた一連の整数識別子を定義します (これらの識別子は、"列挙セット"、"列挙定数"、"列挙子"、または "メンバー" と呼ばれます)。 列挙型の変数には、その型で定義された列挙セットの 1 つの値が格納されます。  
   
- `enum` 型の変数はインデックス式で使用でき、すべての算術演算子および関係演算子のオペランドとしても使用できます。  列挙体は `#define` プリプロセッサ ディレクティブの代わりとして使用できます。これには、値が自動的に生成され、標準のスコープ規則に準拠できるという利点があります。  
+ `enum` 型の変数はインデックス式で使用でき、すべての算術演算子および関係演算子のオペランドとしても使用できます。 列挙体は `#define` プリプロセッサ ディレクティブの代わりとして使用できます。これには、値が自動的に生成され、標準のスコープ規則に準拠できるという利点があります。  
   
- ANSI C では、列挙定数の値を定義する式は常に `int` 型となります。したがって、列挙変数に関連付けられる変数は、1 つの `int` 値で必要となるストレージです。  列挙定数または列挙型の値は、C 言語の整数式が許可されているすべての場所で使用できます。  
+ ANSI C では、列挙定数の値を定義する式は常に `int` 型となります。したがって、列挙変数に関連付けられる変数は、1 つの `int` 値で必要となるストレージです。 列挙定数または列挙型の値は、C 言語の整数式が許可されているすべての場所で使用できます。  
   
-## 構文  
- *enum\-specifier*:  
- **enum**  *identifier*  opt **{** *enumerator\-list* **}**  
+## <a name="syntax"></a>構文  
+ *enum-specifier*:  
+ **enum**  *identifier* opt**{** *enumerator-list* **}**  
   
  **enum**  *identifier*  
   
- *identifier* \(省略可能\) は、*enumerator\-list* で定義される列挙型を指定します。  この識別子は、列挙子リストで指定された列挙体の"タグ" とも呼ばれます。  次に例を示します。  
+ *identifier* (省略可能) は、*enumerator-list* で定義される列挙型を指定します。 この識別子は、列挙子リストで指定された列挙体の"タグ" とも呼ばれます。 次に例を示します。  
   
 ```  
   
-enum identifier { enumerator-list }  
+enum  
+identifier  
+{  
+enumerator-list  
+}  
+  
 ```  
   
- 上記の形式の型指定子は、*enumerator\-list*  非終端要素で指定された列挙体のタグとして *identifier* を宣言しています。  *enumerator\-list* は "列挙定数" を定義します。 *enumerator\-list* については、この後で詳しく説明します。  
+ 上記の形式の型指定子は、*enumerator-list* 非終端要素で指定された列挙型のタグとして *identifier* を宣言しています。 *enumerator-list* は "列挙定数" を定義します。 *enumerator-list* については、この後で詳しく説明します。  
   
- タグが宣言されている場合、それ以降の宣言でそのタグを使用し、*enumerator\-list* を省略しているときは、その前に宣言された列挙型を指定します。  タグは定義された列挙型を参照する必要があり、その列挙型は現在のスコープに含まれている必要があります。  列挙型は他の場所で定義されるので、*enumerator\-list* はこの宣言に含まれません。  列挙体から派生した型の宣言、および列挙型の `typedef` 宣言では、列挙型を定義する前に列挙タグを使用できます。  
+ タグの宣言を参照できる場合、それ以降の宣言でそのタグを使用し、*enumerator-list* を省略しているときは、その前に宣言された列挙型を指定します。 タグは定義された列挙型を参照する必要があり、その列挙型は現在のスコープに含まれている必要があります。 列挙型は他の場所で定義されるため、*enumerator-list* はこの宣言に含まれません。 列挙体から派生した型の宣言、および列挙型の `typedef` 宣言では、列挙型を定義する前に列挙タグを使用できます。  
   
-## 構文  
- *enumerator\-list*:  
+## <a name="syntax"></a>構文  
+ *enumerator-list*:  
  *enumerator*  
   
- *enumerator\-list* **,**  `enumerator`  
+ *enumerator-list* **、**  `enumerator`  
   
  `enumerator`:  
- *enumeration\-constant*  
+ *enumeration-constant*  
   
- *enumeration\-constant*  **\=**  *constant\-expression*  
+ *enumeration-constant*  **=**  *constant-expression*  
   
- *enumeration\-constant*:  
+ *enumeration-constant*:  
  *identifier*  
   
- *enumeration\-list* 内の各 *enumeration\-constant* は、列挙セットを構成する 1 つの値に名前を付けます。  既定では、最初の *enumeration\-constant* は値 0 に関連付けられます。  リスト内の次の *enumeration\-constant* は、他の値を明示的に関連付けない限り、\(*constant\-expression* \+ 1\) の値に関連付けられます。  *enumeration\-constant* の名前はその値と同じです。  
+ *enumeration-list* 内の各 *enumeration-constant* は、列挙型セットを構成する 1 つの値に名前を付けます。 既定では、最初の *enumeration-constant* は 0 の値に関連付けられます。 リスト内の次の *enumeration-constant* は、他の値を明示的に関連付けない限り、(*constant-expression* + 1) の値に関連付けられます。 *enumeration-constant* の名前はその値と同じです。  
   
- *enumeration\-constant \= constant\-expression* を使用すれば、既定の値順序をオーバーライドできます。  したがって、*enumerator\-list* に *enumeration\-constant \= constant\-expression* がある場合、*enumeration\-constant* は *constant\-expression* が指定する値に関連付けられます。  *constant\-expression* は `int` 型であることが条件となりますが、負の値でもかまいません。  
+ *enumeration-constant = constant-expression* を使用すれば、既定の値の順序をオーバーライドできます。 したがって、*enumerator-list* に *enumeration-constant = constant-expression* がある場合、*enumeration-constant* は *constant-expression* が指定する値に関連付けられます。 *constant-expression* は `int` 型であることが条件となりますが、負の値でもかまいません。  
   
  列挙セットのメンバーには次の規則が適用されます。  
   
--   列挙セットには重複する定数値を含めることができます。  たとえば、同じセット内の異なる 2 つの識別子に値 0 を関連付け、それぞれ `null` および `zero` という名前を付けることができます。  
+-   列挙セットには重複する定数値を含めることができます。 たとえば、同じセット内の異なる 2 つの識別子に値 0 を関連付け、それぞれ `null` および `zero` という名前を付けることができます。  
   
 -   列挙リストの識別子は、参照範囲が同じである同一スコープ内の他の識別子と異なっている必要があります。これは、他の列挙リストの通常の変数名や識別子についても同様です。  
   
--   列挙タグは通常のスコープ規則に従います。  参照範囲が同じである他の列挙体タグ、構造体タグ、共用体タグと異なる必要があります。  
+-   列挙タグは通常のスコープ規則に従います。 参照範囲が同じである他の列挙体タグ、構造体タグ、共用体タグと異なる必要があります。  
   
-## 例  
+## <a name="examples"></a>例  
  次に、列挙体宣言の例を示します。  
   
 ```  
@@ -92,7 +114,7 @@ enum DAY            /* Defines an enumeration type    */
 } workday;  
 ```  
   
- 既定では、値 0 は `saturday` に関連付けられます。  ここでは、識別子 `sunday` を明示的に 0 に設定しています。  既定では、その他の識別子には値 1 ～ 5 が割り当てられます。  
+ 既定では、値 0 は `saturday` に関連付けられます。 ここでは、識別子 `sunday` を明示的に 0 に設定しています。 既定では、その他の識別子には値 1 ～ 5 が割り当てられます。  
   
  この例では、`DAY` セットの値を `today` 変数に割り当てます。  
   
@@ -100,7 +122,7 @@ enum DAY            /* Defines an enumeration type    */
 enum DAY today = wednesday;  
 ```  
   
- 列挙定数の名前を使用して値を割り当てていることに注意してください。  `DAY` 列挙型は前に宣言されているので、必要なのは `DAY` 列挙タグのみです。  
+ 列挙定数の名前を使用して値を割り当てていることに注意してください。 `DAY` 列挙型は前に宣言されているので、必要なのは `DAY` 列挙タグのみです。  
   
  列挙データ型の変数に整数値を明示的に割り当てるため、型キャストを使用します。  
   
@@ -145,11 +167,11 @@ if ( match_flag == false )
     end_flag = true;  
 ```  
   
- 名前のない列挙データ型を宣言することもできます。  データ型の名前を省略して、変数を宣言できます。  `response` 変数は、定義された型の変数です。  
+ 名前のない列挙データ型を宣言することもできます。 データ型の名前を省略して、変数を宣言できます。 `response` 変数は、定義された型の変数です。  
   
 ```  
 enum { yes, no } response;  
 ```  
   
-## 参照  
- [列挙体](../cpp/enumerations-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [列挙型](../cpp/enumerations-cpp.md)

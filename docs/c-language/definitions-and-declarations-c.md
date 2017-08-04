@@ -1,30 +1,47 @@
 ---
 title: "定義と宣言 (C) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エクスポート関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- export functions
 ms.assetid: d150395a-89d4-4298-9ac4-08f84fe1261c
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 定義と宣言 (C)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: e6523addc4ad4403c3dd74b5101081178b3ed2ec
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="definitions-and-declarations-c"></a>定義と宣言 (C)
+**Microsoft 固有の仕様**  
   
- DLL インターフェイスは、システム内のプログラムによってエクスポートされることがわかっているすべての項目 \(関数とデータ\)、つまり、**dllimport** または `dllexport` として宣言されたすべての項目を参照します。  DLL インターフェイスに含まれるすべての宣言では、**dllimport** か `dllexport` の属性を指定する必要があります。  ただし、定義で指定できるのは `dllexport` 属性のみです。  たとえば、次の関数定義はコンパイラ エラーになります。  
+ DLL インターフェイスは、システム内のプログラムによってエクスポートされることがわかっているすべての項目 (関数とデータ)、つまり、**dllimport** または `dllexport` として宣言されたすべての項目を参照します。 DLL インターフェイスに含まれるすべての宣言では、**dllimport** か `dllexport` の属性を指定する必要があります。 ただし、定義で指定できるのは `dllexport` 属性のみです。 たとえば、次の関数定義はコンパイラ エラーになります。  
   
 ```  
 #define DllImport   __declspec( dllimport )  
@@ -55,7 +72,7 @@ DllImport int i = 10;      /* Error; this is a definition. */
 DllExport int i = 10;      /* Okay: this is an export definition. */  
 ```  
   
- `dllexport` の使用は定義を意味し、**dllimport** は宣言を意味します。  宣言を強制するには、`dllexport` と共に `extern` キーワードを使用する必要があります。このようにしない場合、暗黙の定義になります。  
+ `dllexport` の使用は定義を意味し、**dllimport** は宣言を意味します。 宣言を強制するには、`extern` と共に `dllexport` キーワードを使用する必要があります。このようにしない場合、暗黙の定義になります。  
   
 ```  
 #define DllImport   __declspec( dllimport )  
@@ -67,5 +84,5 @@ Dllimport int j;          /* a declaration. */
   
  **END Microsoft 固有の仕様**  
   
-## 参照  
- [DLL インポートおよびエクスポート関数](../Topic/DLL%20Import%20and%20Export%20Functions.md)
+## <a name="see-also"></a>関連項目  
+ [DLL インポートおよびエクスポート関数](../c-language/dll-import-and-export-functions.md)

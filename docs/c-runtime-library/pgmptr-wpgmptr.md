@@ -1,69 +1,86 @@
 ---
 title: "_pgmptr、_wpgmptr | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "pgmptr"
-  - "_pgmptr"
-  - "wpgmptr"
-  - "_wpgmptr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_pgmptr 関数"
-  - "_wpgmptr 関数"
-  - "pgmptr 関数"
-  - "wpgmptr 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- pgmptr
+- _pgmptr
+- wpgmptr
+- _wpgmptr
+dev_langs:
+- C++
+helpviewer_keywords:
+- wpgmptr function
+- _wpgmptr function
+- _pgmptr function
+- pgmptr function
 ms.assetid: 4d44b515-0eff-4136-8bc4-684195f218f5
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# _pgmptr、_wpgmptr
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 221d1bd8259d8922695e9060eb8f2ada63d63631
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-実行可能ファイルのパスです。  推奨される; [\_get\_pgmptr](../c-runtime-library/reference/get-pgmptr.md) と [\_get\_wpgmptr](../c-runtime-library/reference/get-wpgmptr.md)を使用します。  
+---
+# <a name="pgmptr-wpgmptr"></a>_pgmptr、_wpgmptr
+実行可能ファイルのパスです。 非推奨。[_get_pgmptr](../c-runtime-library/reference/get-pgmptr.md) と [_get_wpgmptr](../c-runtime-library/reference/get-wpgmptr.md) を使用してください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 extern char *_pgmptr;  
 extern wchar_t *_wpgmptr;  
 ```  
   
-## 解説  
- プログラムがコマンド インタープリター \(Cmd.exe\) から実行する場合、`_pgmptr` は実行可能ファイルへの完全パスに自動的に初期化されます。  たとえば、Hello.exe が C:\\BIN にある C:\\BIN がパスに存在する場合、`_pgmptr` は C:\\BIN\\Hello.exe に実行するときに設定され、P:  
+## <a name="remarks"></a>コメント  
+ コマンド インタープリター (Cmd.exe) からプログラムを実行すると、`_pgmptr` は実行可能ファイルの完全なパスに自動的に初期化されます。 たとえば、Hello.exe が C:\BIN にあり、C:\BIN がパス内にある場合は、次のように、実行時に `_pgmptr` が C:\BIN\Hello.exe に設定されます。  
   
 ```  
 C> hello   
 ```  
   
- プログラムをコマンド ラインから実行する場合、`_pgmptr` はプログラム名 \(ファイル名拡張子のないファイルの基本名\)、ファイル名、相対パス、完全パスで初期化される場合があります。  
+ プログラムがコマンド ラインから実行されない場合は、`_pgmptr` はプログラム名 (ファイルの基本名。ファイル名拡張子を除く)、またはファイル名、相対パス、または完全なパスに初期化される可能性があります。  
   
- `_wpgmptr` は `wmain`を使用するプログラムの `_pgmptr` のワイド文字に相当します。  
+ `_wpgmptr` は、ワイド文字版の `_pgmptr` で、`wmain` を使用するプログラムで使用されます。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tpgmptr`|`_pgmptr`|`_pgmptr`|`_wpgmptr`|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |変数|必須ヘッダー|  
-|--------|------------|  
-|`_pgmptr`, `_wpgmptr`|\<stdlib.h\>|  
+|--------------|---------------------|  
+|`_pgmptr`, `_wpgmptr`|\<stdlib.h>|  
   
-## 使用例  
- 次のプログラムは `_pgmptr`の使用方法を示します。  
+## <a name="example"></a>例  
+ 次のプログラムで、`_pgmptr` の使用方法を示します。  
   
 ```  
 // crt_pgmptr.c  
@@ -80,7 +97,7 @@ int main( void )
 }  
 ```  
   
- `%S` へ `%Fs` と `wmain`へ `main` を変更することで `_wpgmptr` を使用できます。  
+ `%Fs` を `%S`に、`main` を `wmain` に変更することで、`_wpgmptr` を使用できます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [グローバル変数](../c-runtime-library/global-variables.md)

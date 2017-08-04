@@ -1,139 +1,156 @@
 ---
 title: "errno 定数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ENOEXEC"
-  - "ENOMEM"
-  - "E2BIG"
-  - "STRUNCATE"
-  - "ENOENT"
-  - "EMFILE"
-  - "EBADF"
-  - "EDEADLOCK"
-  - "EXDEV"
-  - "EILSEQ"
-  - "EINVAL"
-  - "EDOM"
-  - "EACCES"
-  - "ERANGE"
-  - "ENOSPC"
-  - "EAGAIN"
-  - "EEXIST"
-  - "ECHILD"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "E2BIG 定数"
-  - "EACCES 定数"
-  - "EAGAIN 定数"
-  - "EBADF 定数"
-  - "ECHILD 定数"
-  - "EDEADLOCK 定数"
-  - "EDOM 定数"
-  - "EEXIST 定数"
-  - "EILSEQ 定数"
-  - "EINVAL 定数"
-  - "EMFILE 定数"
-  - "ENOENT 定数"
-  - "ENOEXEC 定数"
-  - "ENOMEM 定数"
-  - "ENOSPC 定数"
-  - "ERANGE 定数"
-  - "errno 定数"
-  - "EXDEV 定数"
-  - "STRUNCATE 定数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ENOEXEC
+- ENOMEM
+- E2BIG
+- STRUNCATE
+- ENOENT
+- EMFILE
+- EBADF
+- EDEADLOCK
+- EXDEV
+- EILSEQ
+- EINVAL
+- EDOM
+- EACCES
+- ERANGE
+- ENOSPC
+- EAGAIN
+- EEXIST
+- ECHILD
+dev_langs:
+- C++
+helpviewer_keywords:
+- ENOEXEC constant
+- EBADF constant
+- EAGAIN constant
+- EINVAL constant
+- ENOENT constant
+- errno constants
+- E2BIG constant
+- EMFILE constant
+- EDEADLOCK constant
+- ENOSPC constant
+- EDOM constant
+- ENOMEM constant
+- EACCES constant
+- EEXIST constant
+- STRUNCATE constant
+- ERANGE constant
+- ECHILD constant
+- EXDEV constant
+- EILSEQ constant
 ms.assetid: 47089258-d5a5-4cd8-b193-223894dea0cf
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# errno 定数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 993d61cf94df06c01623f231f3a4915d0ec8cc41
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-## 構文  
+---
+# <a name="errno-constants"></a>errno 定数
+## <a name="syntax"></a>構文  
   
 ```  
   
 #include <errno.h>  
 ```  
   
-## 解説  
- **errno** 値は、各種エラーが発生したときに [errno](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) 変数に割り当てられる定数です。  
+## <a name="remarks"></a>コメント  
+ **errno** 値は、各種エラーが発生したときに [errno](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) 変数に割り当てられる定数です。  
   
- ERRNO.H には、**errno** 値が定義されています。  ただし、ERRNO.H に指定されているすべての定義が 32 ビット Windows オペレーティング システムで使用されるわけではありません。  ERRNO.H の値の一部は、UNIX 系のオペレーティング システムとの互換性を目的としています。  
+ ERRNO.H には、**errno** 値の定義が含まれています。 ただし、ERRNO.H に指定されているすべての定義が 32 ビット Windows オペレーティング システムで使用されるわけではありません。 ERRNO.H の値の一部は、UNIX 系のオペレーティング システムとの互換性を維持することを目的としています。  
   
- 32 ビット Windows オペレーティング システムの **errno** 値は、XENIX システムの **errno** 値のサブセットです。  したがって、**errno** 値は、Windows オペレーティング システムのシステム コールが返す実際のエラー コードと必ずしも同じとは限りません。  実際のオペレーティング システムのエラー コードにアクセスするには、この値を含む [\_doserrno](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) 変数を使用します。  
+ 32 ビット Windows オペレーティング システムの **errno** 値は、XENIX システムの **errno** 値のサブセットです。 したがって、**errno** 値は、Windows オペレーティング システムのシステム コールが返す実際のエラー コードと必ずしも同じとは限りません。 実際のオペレーティング システムのエラー コードにアクセスするには、この値を含む [_doserrno](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) 変数を使用します。  
   
  次の **errno** 値がサポートされています。  
   
  **ECHILD**  
- 子プロセスが存在しない。  
+ 子プロセスが存在しません。  
   
  **EAGAIN**  
- これ以上プロセスを生成できない。  これ以上プロセス スロットが足りないか、メモリが不足か、または最大の入れ子レベルに達したために、新しいプロセスの生成に失敗します。  
+ これ以上プロセスを生成できません。 これ以上プロセス スロットが足りないか、メモリが不足しているか、または最大の入れ子レベルに達したために、新しいプロセスの生成に失敗しました。  
   
  **E2BIG**  
- 引数リストが長すぎる。  
+ 引数リストが長すぎます。  
   
  **EACCES**  
- アクセス許可が拒否された。  ファイルのアクセス権の設定により、指定されたアクセスができません。  このエラーは、ファイルまたはディレクトリにアクセスしたときのモードが、ファイルまたはディレクトリの属性に合わない場合に発生します。  
+ アクセス許可は拒否されました。 ファイルのアクセス許可の設定では、指定したアクセスは許可されません。 このエラーは、ファイルまたはディレクトリにアクセスしたときのモードが、ファイルまたはディレクトリの属性に合わない場合に発生します。  
   
- たとえば、開いていないファイルから読み出そうとしたり、既存の読み取り専用ファイルを書き込みモードで開こうとしたり、ファイルでなくディレクトリを開こうとしたりすると、このエラーが発生します。  MS\-DOS オペレーティング システムの Version 3.0 以降では、**EACCES** がロック違反または共有違反を示す場合があります。  
+ たとえば、開いていないファイルから読み出そうとしたり、既存の読み取り専用ファイルを書き込みモードで開こうとしたり、ファイルでなくディレクトリを開こうとしたりすると、このエラーが発生します。 MS-DOS オペレーティング システムのバージョン 3.0 以降では、**EACCES** がロック違反または共有違反を示す場合があります。  
   
- また、ファイルまたはディレクトリを既存のディレクトリと同じ名前に変更しようとしたり、既存のディレクトリを削除しようとした場合にも、このエラーが発生します。  
+ また、ファイルまたはディレクトリを既存のディレクトリと同じ名前に変更しようとした場合や、既存のディレクトリを削除しようとした場合にも、このエラーが発生します。  
   
  **EBADF**  
- 不正なファイル番号。  次の 2 つの原因があります。1\) 指定されたファイル記述子が有効な値でないか、開いているファイルを参照していないとき。2\) 読み取り専用モードで開いているファイル、またはデバイスに書き込もうとしたとき。  
+ ファイル番号が正しくありません。 次の 2 つの原因が考えられます。1) 指定されたファイル記述子が有効な値でないか、開いているファイルを参照していないとき。 2) 読み取り専用モードで開いているファイル、またはデバイスに書き込もうとしたとき。  
   
  **EDEADLOCK**  
- リソースのデットロックが発生する可能性がある。  数値演算関数の引数が、関数の定義域内にありません。  
+ リソース デッドロックが発生します。 数値演算関数の引数が、関数の定義域内にありません。  
   
  **EDOM**  
- 数値演算関数の引数が関数のドメイン外の値である。  
+ 算術演算引数が使用されました。  
   
  **EEXIST**  
- ファイルが存在する。  既に存在するファイルを作成しようとしています。  たとえば、**\_O\_CREAT** フラグおよび **\_O\_EXCL** フラグが **\_open** 呼び出しで指定されますが、指定した名前のファイルが既に存在している場合があります。  
+ ファイルが存在します。 既に存在するファイルを作成しようとしています。 たとえば、**_O_CREAT** フラグと **_O_EXCL** フラグが **_open** の呼び出しで指定されますが、指定した名前のファイルが既に存在しています。  
   
  **EILSEQ**  
- 無効なバイト シーケンス。たとえば、MBCS 文字列に含まれています。  
+ 無効なバイト シーケンス (たとえば、MBCS 文字列)。  
   
  **EINVAL**  
- 不正な引数。  関数の引数のいずれかに無効な値が指定されています。  たとえば、**fseek** 呼び出しでファイル ポインターを移動するとき、指定した元の位置がファイルの先頭より前にある場合です。  
+ 引数が無効です。 関数の引数のいずれかに無効な値が指定されています。 たとえば、**fseek** の呼び出しでファイル ポインターの位置決めをするときに、起点として与えられた値がファイルの先頭より前にある場合です。  
   
  **EMFILE**  
- 開いているファイルが多すぎる。  使用できるファイル記述子が不足しているため、これ以上ファイルを開くことができません。  
+ 開いているファイルが多すぎます。 使用できるファイル記述子が不足しているため、これ以上ファイルを開くことができません。  
   
  **ENOENT**  
- ファイルまたはディレクトリがない。  指定されたファイルまたはディレクトリが存在しないか、見つかりません。  このメッセージは、指定のファイルが存在しない場合、またはパスのコンポーネントが既存のディレクトリを指定していない場合に発生します。  
+ 該当するファイルまたはディレクトリがありません。 指定したファイルまたはディレクトリは存在しないか、見つかりません。 このメッセージは、指定のファイルが存在しない場合、またはパスのコンポーネントが既存のディレクトリを指定していない場合に発生します。  
   
  **ENOEXEC**  
- 実行ファイルのエラー。  実行可能形式でないか、無効な実行可能ファイル形式のファイルを実行しようとしました。  
+ 実行形式エラーです。 実行可能形式でないか、無効な実行可能ファイル形式のファイルを実行しようとしました。  
   
  **ENOMEM**  
- メモリ不足。  メモリ不足のため、目的の操作を実行できません。  たとえば、このメッセージは、子プロセスを実行するためのメモリが不足している場合や、**\_getcwd** 呼び出しでの割り当て要求を満たすことができない場合に生成されます。  
+ コアが不足しています。 メモリ不足のため、目的の操作を実行できません。 たとえば、このメッセージは、子プロセスを実行するためのメモリが不足している場合や、**_getcwd** の呼び出しで割り当て要求を満たすことができない場合に生成されます。  
   
  **ENOSPC**  
- デバイスの空き領域不足。  デバイスの書き込み可能領域が不足しています。たとえば、ディスクが満杯の場合です。  
+ デバイスに空き領域がありません。 デバイスの書き込み可能領域が不足しています (たとえば、ディスクが満杯の場合です)。  
   
  **ERANGE**  
- 結果が大きすぎる。  数値演算関数の引数が大きすぎて、結果の有効数字の一部または全部が失われます。  このエラーは、引数が予想よりも大きい場合に他の関数でも発生することがあります。たとえば、**\_getcwd** の *buffer* 引数が予想より大きい場合です。  
+ 結果が大きすぎます。 数値演算関数の引数が大きすぎて、結果の有効数字の一部またはすべてが失われます。 このエラーは、引数が予想よりも大きい場合に他の関数でも発生することがあります (たとえば、**_getcwd** の *buffer* の引数が予想より長い場合です)。  
   
  **EXDEV**  
- デバイス間リンク。  **rename** 関数を使用して、ファイルを別のデバイスに移動しようとしました。  
+ デバイス間リンクがあります。 **rename** 関数を使用して、ファイルを別のデバイスに移動しようとしました。  
   
  **STRUNCATE**  
- 結果として切り詰められる文字列のコピーまたは連結。  「[\_TRUNCATE](../c-runtime-library/truncate.md)」を参照してください。  
+ 結果として切り詰められる文字列のコピーまたは連結です。 [_TRUNCATE](../c-runtime-library/truncate.md) をご覧ください。  
   
- Posix との互換性のために、次の値がサポートされています。  これらは、非 Posix システムで必要とされる値です。  
+ Posix との互換性のために、次の値がサポートされています。 これらは、非 Posix システムで必要とされる値です。  
   
 ```  
 #define E2BIG [argument list too long]  
@@ -217,5 +234,5 @@ caps.handback.revision: 8
 #define EXDEV [cross device link]  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [グローバル定数](../c-runtime-library/global-constants.md)

@@ -1,56 +1,73 @@
 ---
 title: "コンソール入出力とポート入出力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.io"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "I/O [CRT], コンソール"
-  - "I/O [CRT], ポート"
-  - "I/O ルーチン, コンソール入出力とポート入出力"
-  - "ポート, I/O ルーチン"
-  - "ルーチン"
-  - "ルーチン, コンソール入出力とポート入出力"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.io
+dev_langs:
+- C++
+helpviewer_keywords:
+- routines, console and port I/O
+- routines
+- ports, I/O routines
+- I/O [CRT], console
+- I/O [CRT], port
+- I/O routines, console and port I/O
 ms.assetid: 0eee1c92-9b3d-41e0-a43a-257e546eeec8
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンソール入出力とポート入出力
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: f252a10b0d340b6fceac2c2372cdf991764c83c4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-これらのルーチンは、コンソールまたは指定したポートで読み取ったり書き込んだりします。  コンソール I\/O ルーチンは、ストリーム I\/O または低水準 I\/O のライブラリ ルーチンと互換性がありません。  コンソールまたはポートを開く必要がないまたは I\/O が実行される前に終了したため、このカテゴリに開くまたは終わりルーチンがありません。  Windows オペレーティング システムでは、これらの関数の出力をコンソールに送信され、リダイレクトすることはできません。  
+---
+# <a name="console-and-port-io"></a>コンソール入出力とポート入出力
+これらのルーチンは、コンソールまたは指定したポートで読み取りと書き込みを行います。 コンソール入出力は、ストリーム入出力や低レベルの入出力ライブラリ ルーチンとは互換性がありません。 入出力を実行する前にコンソールやポートを開くまたは閉じる必要はないため、このカテゴリには開くまたは閉じるルーチンはありません。 Windows オペレーティング システムでは、これらの関数からの出力は常にコンソールに送られ、リダイレクトできません。  
   
-### コンソールとポート I\/O ルーチン  
+### <a name="console-and-port-io-routines"></a>コンソール入出力ルーチンとポート入出力ルーチン  
   
-|ルーチン|使用方法|  
-|----------|----------|  
-|[\_cgets、\_cgetws](../c-runtime-library/cgets-cgetws.md)、[\_cgets\_s、\_cgetws\_s](../Topic/_cgets_s,%20_cgetws_s.md)|コンソールから読み取られた文字列|  
-|[\_cprintf、\_cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)、[\_cprintf\_s、\_cprintf\_s\_l、\_cwprintf\_s、\_cwprintf\_s\_l](../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md)|コンソールに書式付きデータを書き込みます。|  
-|[\_cputs](../Topic/_cputs,%20_cputws.md)|コンソールに文字列を書き込みます。|  
-|[\_cscanf、\_cwscanf](../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)、[\_cscanf\_s、\_cscanf\_s\_l、\_cwscanf\_s、\_cwscanf\_s\_l](../c-runtime-library/reference/cscanf-s-cscanf-s-l-cwscanf-s-cwscanf-s-l.md)|コンソールから書式付きデータを読み込みます。|  
-|[\_getch、\_getwch](../Topic/_getch,%20_getwch.md)|コンソールから文字を読み取ります。|  
-|[\_getche、\_getwche](../Topic/_getch,%20_getwch.md)|コンソールから文字を読み取ったりエコーします。|  
-|[\_inp](../c-runtime-library/inp-inpw-inpd.md)|指定した I\/O ポートから 1 バイトを読み取ります。|  
-|[\_inpd](../c-runtime-library/inp-inpw-inpd.md)|指定した I\/O ポートからダブル ワードを読み取ります。|  
-|[\_inpw](../c-runtime-library/inp-inpw-inpd.md)|指定した I\/O ポートから 2 バイト"を参照してください。|  
-|[\_kbhit](../c-runtime-library/reference/kbhit.md)|コンソールのキーストロークを探します; コンソールから読み取る前に使用します。|  
-|[\_outp](../Topic/_outp,%20_outpw,%20_outpd.md)|1 バイト指定 I\/O ポートを記述します。|  
-|[\_outpd](../Topic/_outp,%20_outpw,%20_outpd.md)|ダブル ワード指定 I\/O ポートを記述します。|  
-|[\_outpw](../Topic/_outp,%20_outpw,%20_outpd.md)|Word 指定 I\/O ポートを記述します。|  
-|[\_putch、\_putwch](../Topic/_putch,%20_putwch.md)|コンソールに文字を書き込みます。|  
-|[\_ungetch、\_ungetwch](../c-runtime-library/reference/ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)|したがって、コンソールから「Unget」の最後に読み取られた文字は次に読み取られた文字になります。|  
+|ルーチン|用途|  
+|-------------|---------|  
+|[_cgets、_cgetws](../c-runtime-library/cgets-cgetws.md)、[_cgets_s、_cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md)|コンソールから文字列を読み取る|  
+|[_cprintf、_cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)、[_cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l](../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md)|コンソールに書式付きデータを書き込む|  
+|[_cputs](../c-runtime-library/reference/cputs-cputws.md)|コンソールに文字列を書き込む|  
+|[_cscanf、_cwscanf](../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)、[_cscanf_s、_cscanf_s_l、_cwscanf_s、_cwscanf_s_l](../c-runtime-library/reference/cscanf-s-cscanf-s-l-cwscanf-s-cwscanf-s-l.md)|コンソールから書式付きデータを読み取る|  
+|[_getch、_getwch](../c-runtime-library/reference/getch-getwch.md)|コンソールから文字を読み取る|  
+|[_getche、_getwche](../c-runtime-library/reference/getch-getwch.md)|コンソールから文字を読み取り、エコーする|  
+|[_inp](../c-runtime-library/inp-inpw-inpd.md)|指定した I/O ポートから 1 バイトを読み取る|  
+|[_inpd](../c-runtime-library/inp-inpw-inpd.md)|指定した I/O ポートからダブル ワードを読み取る|  
+|[_inpw](../c-runtime-library/inp-inpw-inpd.md)|指定した I/O ポートから 2 バイト ワードを読み取る|  
+|[_kbhit](../c-runtime-library/reference/kbhit.md)|コンソールのキーボード操作をチェックし、コンソールからの読み取りを試みる前に使用する|  
+|[_outp](../c-runtime-library/outp-outpw-outpd.md)|指定した I/O ポートに 1 バイトを書き込む|  
+|[_outpd](../c-runtime-library/outp-outpw-outpd.md)|指定した I/O ポートにダブル ワードを書き込む|  
+|[_outpw](../c-runtime-library/outp-outpw-outpd.md)|指定した I/O ポートにワードを書き込む|  
+|[_putch、_putwch](../c-runtime-library/reference/putch-putwch.md)|コンソールに文字を書き込む|  
+|[_ungetch、_ungetwch](../c-runtime-library/reference/ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)|コンソールから読み取った最後の文字を "戻す" ことで次の読み取り文字にする|  
   
-## 参照  
- [入出力](../Topic/Input%20and%20Output.md)   
+## <a name="see-also"></a>関連項目  
+ [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

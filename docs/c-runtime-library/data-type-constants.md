@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -113,10 +113,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: a33c5071549695c11ba4820679d5d7059b7f5a5c
-ms.lasthandoff: 04/01/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 1406e086818ea6f71d32e345aaf3d0d79b91940c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
 ---
 # <a name="data-type-constants"></a>データ型定数
@@ -151,9 +152,9 @@ ms.lasthandoff: 04/01/2017
   
 |定数|値|説明|  
 |--------------|-----------|-----------------|  
-|**DBL_DIG**|15|# 有効桁数|  
+|**DBL_DIG**|15|有効桁数|  
 |**DBL_EPSILON**|2.2204460492503131e-016|1.0+**DBL_EPSILON** !=1.0 のように最小|  
-|**DBL_MANT_DIG**|53|# 仮数部のビット数|  
+|**DBL_MANT_DIG**|53|仮数部のビット数|  
 |**DBL_MAX**|1.7976931348623158e+308|最大値|  
 |**DBL_MAX_10_EXP**|308|最大 10 進指数|  
 |**DBL_MAX_EXP**|1024|最大 2 進指数|  

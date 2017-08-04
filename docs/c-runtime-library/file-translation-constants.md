@@ -1,60 +1,77 @@
 ---
 title: "ファイル変換定数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "c.constants.file"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "定数 [C++], ファイル変換モード"
-  - "ファイル変換 [C++]"
-  - "ファイル変換 [C++], 定数"
-  - "変換定数"
-  - "変換, 定数"
-  - "変換, ファイル変換定数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- c.constants.file
+dev_langs:
+- C++
+helpviewer_keywords:
+- translation constants
+- file translation [C++], constants
+- translation, file translation constants
+- translation, constants
+- constants [C++], file translation mode
+- file translation [C++]
 ms.assetid: 49b13bf3-442e-4d19-878b-bd1029fa666a
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ファイル変換定数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: e3005ebe8d36f77a470634b9fdd0003d9b6bb8d5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-## 構文  
+---
+# <a name="file-translation-constants"></a>ファイル変換定数
+## <a name="syntax"></a>構文  
   
 ```  
   
 #include <stdio.h>  
 ```  
   
-## 解説  
- これらの定数は、変換モードを指定します。**"b"** または **"t"**\)。  モードは文字にアクセス \(**"r"**、**"w"**、**"a"**、**"r\+"**、**"w\+"**、**"a\+"**\) の型が含まれます。  
+## <a name="remarks"></a>コメント  
+ これらの定数は、変換モードを指定します (**"b"** または **"t"**)。 このモードは、アクセスの種類 (**"r"**、**"w"**、**"a"**、**"r+"**、**"w+"**、**"a+"**) を指定する文字列に含まれます。  
   
- 変換モードは次のとおりです。:  
+ 変換モードは次のとおりです。  
   
  **t**  
- テキスト \(変換\) モードで開きます。  このモードでは、復帰とライン フィード \(CR\-LF\) の組み合わせは、入力時に一つのライン フィード \(LF\) に変換され、LF の文字が出力の CR\-LF の組み合わせに変換されます。  また、Ctrl \+ Z は入力時に EOF \(end\-of\-file\) 文字として解釈されます。  \/書き込み用に読み取るか、読み取ることで開かれたファイルでは `fopen` がファイル末尾に Ctrl \+ Z があるかどうかを確認し、それを、可能な場合は削除します。  これは `fseek` と `ftell` 関数を使用すると、ファイルの終了内で移動するには `fseek` ファイル末尾付近で正しく動作してしまうためです。  
+ テキスト (変換) モードで開きます。 このモードでは、復帰と改行 (CR-LF) の組み合わせは入力時に 1 つの改行 (LF) 文字に変換され、LF 文字は出力時に CR-LF の組み合わせに変換されます。 また、Ctrl + Z は入力時に EOF (end-of-file) 文字として解釈されます。 読み取り用または読み取り/書き込み用にファイルを開いた場合、`fopen` はファイルの終端に Ctrl + Z があるかどうかを確認し、それを削除できる場合は削除します。 この処理が行われる理由は、CTRL+Z で終わるファイルの中身を `fseek` 関数および `ftell` 関数で移動するとき、ファイル末尾付近で `fseek` が正しく動作しないことがあるためです。  
   
 > [!NOTE]
->  **t** オプションは `fopen` と `freopen`の ANSI 標準の一部ではありません。  これは ANSI 互換が必要な場合は Microsoft 拡張機能で使用しないでください。  
+>  **t** のオプションは、`fopen` と `freopen` の ANSI 標準の一部ではありません。 これは Microsoft 拡張機能です。ANSI 互換が必要な場合は使用しないでください。  
   
  **b**  
- バイナリ \(無変換\) モードで開きます。  上記の変換は行われません。  
+ バイナリ (無変換) モードで開きます。 上の変換は行われません。  
   
- **t** または **b** を mode に指定しないと、変換モードは既定のモードの変数 [\_fmode](../c-runtime-library/fmode.md)によって定義されます。  テキストとバイナリ モードの使用方法の詳細については、「[テキストとバイナリ モードは I\/O があります](../c-runtime-library/text-and-binary-mode-file-i-o.md)」を参照してください。  
+ **t** または **b** を *mode* に指定しない場合、変換モードは既定のモード変数 [_fmode](../c-runtime-library/fmode.md) によって定義されます。 テキスト モードとバイナリ モードの使用の詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../c-runtime-library/text-and-binary-mode-file-i-o.md)」をご覧ください。  
   
-## 参照  
- [\_fdopen、\_wfdopen](../Topic/_fdopen,%20_wfdopen.md)   
- [fopen、\_wfopen](../c-runtime-library/reference/fopen-wfopen.md)   
- [freopen、\_wfreopen](../c-runtime-library/reference/freopen-wfreopen.md)   
- [\_fsopen、\_wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md)   
+## <a name="see-also"></a>関連項目  
+ [_fdopen、_wfdopen](../c-runtime-library/reference/fdopen-wfdopen.md)   
+ [fopen、_wfopen](../c-runtime-library/reference/fopen-wfopen.md)   
+ [freopen、_wfreopen](../c-runtime-library/reference/freopen-wfreopen.md)   
+ [_fsopen、_wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

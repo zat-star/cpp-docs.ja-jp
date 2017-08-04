@@ -1,48 +1,65 @@
 ---
 title: "main 関数とプログラム実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "開始ポイント, プログラム"
-  - "main 関数"
-  - "main 関数, プログラムの実行"
-  - "プログラムの起動 [C++]"
-  - "プログラム [C++], 終了"
-  - "スタートアップ コード, main 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- program startup [C++]
+- entry points, program
+- main function, program execution
+- startup code, main function
+- main function
+- programs [C++], terminating
 ms.assetid: 5984f1bd-072d-4e06-8640-122fb1454401
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# main 関数とプログラム実行
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 22a1294a8b9206d5c2f190f2c391fd83cd57841d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-すべての C プログラムには主要な \(メイン\) 関数があり、その名前は **main** である必要があります。  コードが Unicode プログラミング モデルに準拠する場合、**main** のワイド文字バージョンである **wmain** を使用できます。  **main** 関数は、プログラム実行の開始点として動作します。  通常は、プログラム内の他の関数への呼び出しを指示することによって、プログラムの実行を制御します。  プログラムは通常、**main** の最後に実行を停止しますが、さまざまな理由により、プログラムのその他の場所で終了する場合もあります。  特定のエラーが検出された場合などに、プログラムを強制的に終了することもできます。  そのためには、**exit** 関数を使用します。  [exit](../c-runtime-library/reference/exit-exit-exit.md) 関数の説明および使用例については、「ランタイム ライブラリ リファレンス」を参照してください。  
+---
+# <a name="main-function-and-program-execution"></a>main 関数とプログラム実行
+すべての C プログラムには主要な (メイン) 関数があり、その名前は **main** である必要があります。 コードが Unicode プログラミング モデルに準拠する場合、**main** のワイド文字バージョンである **wmain** を使用できます。 **main** 関数は、プログラム実行の開始点として動作します。 通常は、プログラム内の他の関数への呼び出しを指示することによって、プログラムの実行を制御します。 プログラムは通常、**main** の最後に実行を停止しますが、さまざまな理由により、プログラムのその他の場所で終了する場合もあります。 特定のエラーが検出された場合などに、プログラムを強制的に終了することもできます。 そのためには、**exit** 関数を使用します。 [exit](../c-runtime-library/reference/exit-exit-exit.md) 関数の説明および使用例については、「*ランタイム ライブラリ リファレンス*」を参照してくださ。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 main( int argc, char *argv[ ], char *envp[ ] )  
 ```  
   
-## 解説  
- ソース プログラム内の関数は、1 つ以上の特定のタスクを実行します。  **main** 関数は、これらの関数を呼び出して、それぞれのタスクを実行することができます。  **main** が別の関数を呼び出すときは、その関数の最初のステートメントから実行が開始されるように、その関数に実行制御を渡します。  関数は、`return` ステートメントが実行されたとき、または関数の終わりに達したときに、**main** に制御を戻します。  
+## <a name="remarks"></a>コメント  
+ ソース プログラム内の関数は、1 つ以上の特定のタスクを実行します。 **main** 関数は、これらの関数を呼び出して、それぞれのタスクを実行することができます。 **main** が別の関数を呼び出すときは、その関数の最初のステートメントから実行が開始されるように、その関数に実行制御を渡します。 関数は、`return` ステートメントが実行されたとき、または関数の終わりに達したときに、**main** に制御を戻します。  
   
- **main** も含めて、任意の関数を、パラメーターを持つように宣言できます。  "パラメーター" または "仮パラメーター" という用語は、関数に渡された値を受け取る識別子を指します。  パラメーターに引数を渡す方法については、「[パラメーター](../c-language/parameters.md)」を参照してください。  ある関数が別の関数を呼び出すとき、呼び出される関数は呼び出す関数からパラメーターの値を受け取ります。  これらの値は、"引数" と呼ばれます。 **main** には、コマンド ラインから引数を受け取れるように、次の形式を使用して仮パラメーターを宣言できます。  
+ **main** も含めて、任意の関数を、パラメーターを持つように宣言できます。 "パラメーター" または "仮パラメーター" という用語は、関数に渡された値を受け取る識別子を指します。 パラメーターに引数を渡す方法については、「[パラメーター](../c-language/parameters.md)」を参照してください。 ある関数が別の関数を呼び出すとき、呼び出される関数は呼び出す関数からパラメーターの値を受け取ります。 これらの値は、"引数" と呼ばれます。 **main** には、コマンド ラインから引数を受け取れるように、次の形式を使用して仮パラメーターを宣言できます。  
   
- **main** 関数に情報を渡す場合、パラメーターの名前は従来から `argc` および `argv` になっていますが、C コンパイラでこれらの名前でなければならないとされているわけではありません。  `argc` と `argv` の型は、C 言語によって定義されています。  従来、**main** に 3 番目のパラメーターが 渡される場合、その名前は `envp` とされています。  このセクションで後から示す各例で、これら 3 つのパラメーターを使用してコマンド ライン引数にアクセスする方法を説明します。  以降のセクションでは、これらのパラメーターについて説明します。  
+ **main** 関数に情報を渡す場合、パラメーターの名前は従来から `argc` および `argv` になっていますが、C コンパイラでこれらの名前でなければならないとされているわけではありません。 `argc` と `argv` の型は、C 言語によって定義されています。 従来、**main** に 3 番目のパラメーターが 渡される場合、その名前は `envp` とされています。 このセクションで後から示す各例で、これら 3 つのパラメーターを使用してコマンド ライン引数にアクセスする方法を説明します。 以降のセクションでは、これらのパラメーターについて説明します。  
   
- **main** のワイド文字バージョンについては、「[Using wmain \(wmain の使用\)](../c-language/using-wmain.md)」を参照してください。  
+ **main** のワイド文字バージョンについては、「[wmain の使用](../c-language/using-wmain.md)」を参照してください。  
   
-## 参照  
- [main: プログラムの起動](../Topic/main:%20Program%20Startup.md)
+## <a name="see-also"></a>関連項目  
+ [main: プログラムの起動](../cpp/main-program-startup.md)

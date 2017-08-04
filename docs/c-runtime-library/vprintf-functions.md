@@ -1,99 +1,116 @@
 ---
 title: "vprintf 系関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apilocation: 
-  - "msvcr110.dll"
-  - "msvcr120.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr80.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "vprintf"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "書式設定テキスト [C++]"
-  - "vprintf 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apilocation:
+- msvcr110.dll
+- msvcr120.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr110_clr0400.dll
+- msvcr80.dll
+apitype: DLLExport
+f1_keywords:
+- vprintf
+dev_langs:
+- C++
+helpviewer_keywords:
+- vprintf function
+- formatted text [C++]
 ms.assetid: 02ac7c51-eab1-4bf0-bf4c-77065e3fa744
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# vprintf 系関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: a9cf253e0d22ee539ff7d49d46b34f984e883e7e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-`vprintf` の関数は、引数リストへのポインターを使用し、特定のデスティネーションに指定したデータを書き込みます。  関数は、パラメーターの検証関数では、パラメーターは書式指定文字列で使用する順序を指定するための前の文字列、出力先とサポートで使用するかどうかが異なります。  
+---
+# <a name="vprintf-functions"></a>vprintf 系関数
+`vprintf` の各関数は引数リストへのポインターを受け取り、指定されたデータを書式設定して特定の出力先に書き込みます。 各関数のパラメーターの検証内容は、ワイド文字列と 1 バイト文字列のどちらを使用するか、出力先がどこか、書式設定文字列でのパラメーターの使用順序を指定できるか、などの点が異なります。  
   
 |||  
 |-|-|  
-|[\_vcprintf、\_vcwprintf](../c-runtime-library/reference/vcprintf-vcprintf-l-vcwprintf-vcwprintf-l.md)|[vfprintf、vfwprintf](../c-runtime-library/reference/vfprintf-vfprintf-l-vfwprintf-vfwprintf-l.md)|  
-|[\_vfprintf\_p、\_vfprintf\_p\_l、\_vfwprintf\_p、\_vfwprintf\_p\_l](../c-runtime-library/reference/vfprintf-p-vfprintf-p-l-vfwprintf-p-vfwprintf-p-l.md)|[vfprintf\_s、\_vfprintf\_s\_l、vfwprintf\_s、\_vfwprintf\_s\_l](../Topic/vfprintf_s,%20_vfprintf_s_l,%20vfwprintf_s,%20_vfwprintf_s_l.md)|  
-|[vprintf、vwprintf](../c-runtime-library/reference/vprintf-vprintf-l-vwprintf-vwprintf-l.md)|[\_vprintf\_p、\_vprintf\_p\_l、\_vwprintf\_p、\_vwprintf\_p\_l](../c-runtime-library/reference/vprintf-p-vprintf-p-l-vwprintf-p-vwprintf-p-l.md)|  
-|[vprintf\_s、\_vprintf\_s\_l、vwprintf\_s、\_vwprintf\_s\_l](../c-runtime-library/reference/vprintf-s-vprintf-s-l-vwprintf-s-vwprintf-s-l.md)|[vsprintf、vswprintf](../c-runtime-library/reference/vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md)|  
-|[\_vsprintf\_p、\_vsprintf\_p\_l、\_vswprintf\_p、\_vswprintf\_p\_l](../Topic/_vsprintf_p,%20_vsprintf_p_l,%20_vswprintf_p,%20_vswprintf_p_l.md)|[vsprintf\_s、\_vsprintf\_s\_l、vswprintf\_s、\_vswprintf\_s\_l](../c-runtime-library/reference/vsprintf-s-vsprintf-s-l-vswprintf-s-vswprintf-s-l.md)|  
-|[\_vscprintf、\_vscprintf\_l、\_vscwprintf、\_vscwprintf\_l](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|[\_vsnprintf、\_vsnwprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md)|  
+|[_vcprintf、_vcwprintf](../c-runtime-library/reference/vcprintf-vcprintf-l-vcwprintf-vcwprintf-l.md)|[vfprintf、vfwprintf](../c-runtime-library/reference/vfprintf-vfprintf-l-vfwprintf-vfwprintf-l.md)|  
+|[_vfprintf_p、_vfprintf_p_l、_vfwprintf_p、_vfwprintf_p_l](../c-runtime-library/reference/vfprintf-p-vfprintf-p-l-vfwprintf-p-vfwprintf-p-l.md)|[vfprintf_s、_vfprintf_s_l、vfwprintf_s、_vfwprintf_s_l](../c-runtime-library/reference/vfprintf-s-vfprintf-s-l-vfwprintf-s-vfwprintf-s-l.md)|  
+|[vprintf、vwprintf](../c-runtime-library/reference/vprintf-vprintf-l-vwprintf-vwprintf-l.md)|[_vprintf_p、_vprintf_p_l、_vwprintf_p、_vwprintf_p_l](../c-runtime-library/reference/vprintf-p-vprintf-p-l-vwprintf-p-vwprintf-p-l.md)|  
+|[vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l](../c-runtime-library/reference/vprintf-s-vprintf-s-l-vwprintf-s-vwprintf-s-l.md)|[vsprintf、vswprintf](../c-runtime-library/reference/vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md)|  
+|[_vsprintf_p、_vsprintf_p_l、_vswprintf_p、_vswprintf_p_l](../c-runtime-library/reference/vsprintf-p-vsprintf-p-l-vswprintf-p-vswprintf-p-l.md)|[vsprintf_s、_vsprintf_s_l、vswprintf_s、_vswprintf_s_l](../c-runtime-library/reference/vsprintf-s-vsprintf-s-l-vswprintf-s-vswprintf-s-l.md)|  
+|[_vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|[_vsnprintf、_vsnwprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md)|  
   
-## 解説  
- `vprintf` の機能を次の表に示すように、対応する関数と似ています。  ただし、`vprintf` の各関数は、引数リストに対応する機能の各関数が引数リストを受け取る場合は、ポインターを受け取ります。  
+## <a name="remarks"></a>コメント  
+ `vprintf` の各関数は、次の表にまとめたとおり、対応する関数に似ています。 ただし、`vprintf` の各関数は引数リストへのポインターを受け取るのに対し、対応する各関数は引数リストを受け取ります。  
   
- 前への出力のこれらの関数の形式のデータは次のとおりです。  
+ 次のように、これらの関数はデータを書式設定して出力先に書き込みます。  
   
-|関数|対応する関数|出力先|パラメーターの検証|位置指定パラメーター サポート|  
-|--------|------------|---------|---------------|---------------------|  
-|`_vcprintf`|[\_cprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)|コンソール|null をチェックします。|no|  
-|`_vcwprintf`|[\_cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)|コンソール|null をチェックします。|no|  
-|`vfprintf`|[fprintf](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)|*Stream*|null をチェックします。|no|  
-|**vfprintf\_p**|[fprintf\_p](../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)|*Stream*|空白と有効な形式を確認します。|可|  
-|`vfprintf_s`|[fprintf\_s](../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)|*Stream*|空白と有効な形式を確認します。|no|  
-|`vfwprintf`|[fwprintf](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)|*Stream*|null をチェックします。|no|  
-|**vfwprintf\_p**|[fwprintf\_p](../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)|*Stream*|空白と有効な形式を確認します。|可|  
-|`vfwprintf_s`|[fwprintf\_s](../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)|*Stream*|空白と有効な形式を確認します。|no|  
-|`vprintf`|[printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)|`Stdout`|null をチェックします。|no|  
-|**vprintf\_p**|[printf\_p](../c-runtime-library/reference/printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)|`Stdout`|空白と有効な形式を確認します。|可|  
-|`vprintf_s`|[printf\_s](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`Stdout`|空白と有効な形式を確認します。|no|  
-|`vwprintf`|[wprintf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)|`Stdout`|null をチェックします。|no|  
-|**vwprintf\_p**|[wprintf\_p](../c-runtime-library/reference/printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)|`Stdout`|空白と有効な形式を確認します。|可|  
-|`vwprintf_s`|[wprintf\_s](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`Stdout`|空白と有効な形式を確認します。|no|  
-|**vsprintf**|[sprintf](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
-|**vsprintf\_p**|[sprintf\_p](../c-runtime-library/reference/sprintf-p-sprintf-p-l-swprintf-p-swprintf-p-l.md)|buffer が指すメモリ|空白と有効な形式を確認します。|可|  
-|`vsprintf_s`|[sprintf\_s](../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)|buffer が指すメモリ|空白と有効な形式を確認します。|no|  
-|`vswprintf`|[swprintf](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
-|**vswprintf\_p**|[swprintf\_p](../c-runtime-library/reference/sprintf-p-sprintf-p-l-swprintf-p-swprintf-p-l.md)|buffer が指すメモリ|空白と有効な形式を確認します。|可|  
-|`vswprintf_s`|[swprintf\_s](../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)|buffer が指すメモリ|空白と有効な形式を確認します。|no|  
-|`_vscprintf`|[\_vscprintf](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
-|`_vscwprintf`|[\_vscwprintf](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
-|`_vsnprintf`|[\_snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
-|`_vsnwprintf`|[\_snwprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)|buffer が指すメモリ|null をチェックします。|no|  
+|関数|対応する関数|出力先|パラメーターの検証|位置指定パラメーターのサポート|  
+|--------------|--------------------------|------------------------|--------------------------|----------------------------------|  
+|`_vcprintf`|[_cprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)|コンソール|Null を確認します。|no|  
+|`_vcwprintf`|[_cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)|コンソール|Null を確認します。|no|  
+|`vfprintf`|[fprintf](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)|*ストリーム*|Null を確認します。|no|  
+|**vfprintf_p**|[fprintf_p](../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)|*ストリーム*|Null と有効な書式を確認します。|可|  
+|`vfprintf_s`|[fprintf_s](../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)|*ストリーム*|Null と有効な書式を確認します。|no|  
+|`vfwprintf`|[fwprintf](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)|*ストリーム*|Null を確認します。|no|  
+|**vfwprintf_p**|[fwprintf_p](../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)|*ストリーム*|Null と有効な書式を確認します。|可|  
+|`vfwprintf_s`|[fwprintf_s](../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)|*ストリーム*|Null と有効な書式を確認します。|no|  
+|`vprintf`|[printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)|`Stdout`|Null を確認します。|no|  
+|**vprintf_p**|[printf_p](../c-runtime-library/reference/printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)|`Stdout`|Null と有効な書式を確認します。|可|  
+|`vprintf_s`|[printf_s](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`Stdout`|Null と有効な書式を確認します。|no|  
+|`vwprintf`|[wprintf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)|`Stdout`|Null を確認します。|no|  
+|**vwprintf_p**|[wprintf_p](../c-runtime-library/reference/printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)|`Stdout`|Null と有効な書式を確認します。|可|  
+|`vwprintf_s`|[wprintf_s](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`Stdout`|Null と有効な書式を確認します。|no|  
+|**vsprintf**|[sprintf](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
+|**vsprintf_p**|[sprintf_p](../c-runtime-library/reference/sprintf-p-sprintf-p-l-swprintf-p-swprintf-p-l.md)|*バッファー*によって指し示されるメモリ|Null と有効な書式を確認します。|可|  
+|`vsprintf_s`|[sprintf_s](../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)|*バッファー*によって指し示されるメモリ|Null と有効な書式を確認します。|no|  
+|`vswprintf`|[swprintf](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
+|**vswprintf_p**|[swprintf_p](../c-runtime-library/reference/sprintf-p-sprintf-p-l-swprintf-p-swprintf-p-l.md)|*バッファー*によって指し示されるメモリ|Null と有効な書式を確認します。|可|  
+|`vswprintf_s`|[swprintf_s](../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)|*バッファー*によって指し示されるメモリ|Null と有効な書式を確認します。|no|  
+|`_vscprintf`|[_vscprintf](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
+|`_vscwprintf`|[_vscwprintf](../c-runtime-library/reference/vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
+|`_vsnprintf`|[_snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
+|`_vsnwprintf`|[_snwprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)|*バッファー*によって指し示されるメモリ|Null を確認します。|no|  
   
- `argptr` 引数に VARARGS.H と STDARG.H.で定義されている型 `va_list`があります。  `argptr` の変数は **va\_start,** によって初期化されなければなり、`va_arg` の以降の呼び出しによって再初期化される場合があります。; `argptr` は *format 引数* の対応する仕様に従って出力に変換され、送信された引数リストの先頭をポイントするようになります。  *形式に*[printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)関数の format と同じフォームと関数があります。  これらの関数によって `va_end`を呼び出しません。  `vprintf` の各関数の詳細については、前の表に示したように、対応する関数の説明を参照してください。  
+ 引数 `argptr` は、VARARGS.H と STDARG.H で定義される `va_list` 型を持ちます。 変数 `argptr` は **va_start** によって初期化される必要があり、後続の `va_arg` の呼び出しによって再初期化される必要があります。次に、`argptr` は引数 *format* の対応する仕様に従って出力用に変換および転送される引数リストの先頭を指し示します。 *format* は、[printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) の引数 *format* と同じ書式と関数を持ちます。 これらの関数は、`va_end` を呼び出しません。 各 `vprintf` 関数の詳細については、上の表にある対応する関数の説明をご覧ください。  
   
- `_vsnprintf` は **vsprintf** の *バッファー*に *バイト数* より多いを記述することです。  
+ `_vsnprintf` は **vsprintf** とは異なり、vsprintf 内でわずか *count* バイトを*バッファー*に書き込むだけです。  
   
- 名前の **w** の挿入辞でこれらの関数の各バージョンは **w** の挿入辞せずに対応する関数のワイド文字バージョンであり、; これらのワイド文字単位の各関数では、*バッファー* と *形式は* ワイド文字列です。  それ以外の場合は、ワイド文字関数は、SBCS の対応する関数と同様に動作します。  
+ 名前に挿入辞 **w** を持つバージョンのこれらの関数は、挿入辞 **w** を持たない関数と対応関係にあるワイド文字バージョンの関数です。これらのワイド文字の各関数では、*バッファー* と *format* がワイド文字列になります。 それ以外のワイド文字の各関数は SBCS の対応する関数と全く同じ動作をします。  
   
- **\_s** と **\_p** のサフィックスが付いているこれらの関数の各バージョンはセキュリティが強化されたバージョンです。  これらのバージョンは無効な書式指定文字が使用されている場合\) 書式指定文字列が整形式でない場合、書式指定文字列を使用すると、例外が生成されます。たとえば。  
+ サフィックス **_s** と **_p** を持つこれらの関数のバージョンは、セキュリティが強化されたバージョンです。 これらのバージョンでは、書式設定文字列を検証し、書式設定文字列が整形式ではない場合 (たとえば、無効な書式設定文字が使用されている場合) に例外が発生します。  
   
- **\_p** のサフィックスが付いているこれらの関数のバージョンが、指定された書式指定文字列で引数を使用する順序を指定できます。  詳細については、「[printf\_p の位置指定パラメーター](../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
+ サフィックス **_p** を持つこれらの関数のバージョンによって、書式設定文字列内での指定された引数の置き換え順序を指定できます。 詳細については、「[printf_p の位置指定パラメーター](../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
   
- **vsprintf**、`vswprintf`、`_vsnprintf` と `_vsnwprintf`用にコピーが重なり合う文字列間にした場合の動作は未定義です。  
+ **vsprintf**、`vswprintf`、`_vsnprintf`、および `_vsnwprintf` については、重なり合う文字列間でコピーした場合の動作は未定義です。  
   
 > [!IMPORTANT]
->  format にユーザー定義の文字列を指定します。  詳細については、「[Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795)」を参照してください。  これらの関数のセキュリティが強化されたバージョンを使用する場合は **\_s** \(または **\_p** サフィックス\)、ユーザー指定の書式指定文字列は、ユーザーが指定した文字列に無効な書式指定文字が含まれている場合は無効なパラメーターの例外を生成する可能性があります。  
+>  *format* にユーザー定義の文字列を指定しないでください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。 これらの関数 (サフィックス **_s** または **_p** のどちらか) のセキュリティが強化されたバージョンを使用する場合、ユーザー指定の書式設定文字列は、ユーザー指定文字列に無効な書式設定文字が含まれている場合に無効なパラメーター例外をトリガーします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../c-runtime-library/stream-i-o.md)   
- [fprintf、\_fprintf\_l、fwprintf、\_fwprintf\_l](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [printf、\_printf\_l、wprintf、\_wprintf\_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [sprintf、\_sprintf\_l、swprintf、\_swprintf\_l、\_\_swprintf\_l](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
- [va\_arg、va\_copy、va\_end、va\_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)
+ [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
+ [printf、_printf_l、wprintf、_wprintf_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
+ [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
+ [va_arg、va_copy、va_end、va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)

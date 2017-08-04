@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 0c3e8919083d3f5f3ab6345de0a2a6817b93205e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: e5d4790cccc280a6a2d23a66c6959fd07bdefa9b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
 ---
 # <a name="directives-to-the-preprocessor"></a>プリプロセッサへのディレクティブ
@@ -44,7 +45,7 @@ ms.lasthandoff: 02/24/2017
   
  このステートメントは、コンパイル前に `MAX` で `100` を置き換えるようコンパイラに指示します。 C コンパイラのプリプロセッサ ディレクティブは次のとおりです。  
   
-|#define|#endif|#ifdef|#線|  
+|#define|#endif|#ifdef|#line|  
 |--------------|-------------|-------------|------------|  
 |`#elif`|`#error`|**#ifndef**|**#pragma**|  
 |`#else`|`#if`|`#include`|`#undef`|  

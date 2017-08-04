@@ -1,49 +1,66 @@
 ---
 title: "ファイル定数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_O_EXCL"
-  - "_O_RDWR"
-  - "_O_APPEND"
-  - "_O_RDONLY"
-  - "_O_TRUNC"
-  - "_O_CREAT"
-  - "_O_WRONLY"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_O_APPEND 定数"
-  - "_O_CREAT 定数"
-  - "_O_EXCL 定数"
-  - "_O_RDONLY 定数"
-  - "_O_RDWR 定数"
-  - "_O_TRUNC 定数"
-  - "_O_WRONLY 定数"
-  - "O_APPEND 定数"
-  - "O_CREAT 定数"
-  - "O_EXCL 定数"
-  - "O_RDONLY 定数"
-  - "O_RDWR 定数"
-  - "O_TRUNC 定数"
-  - "O_WRONLY 定数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _O_EXCL
+- _O_RDWR
+- _O_APPEND
+- _O_RDONLY
+- _O_TRUNC
+- _O_CREAT
+- _O_WRONLY
+dev_langs:
+- C++
+helpviewer_keywords:
+- _O_RDWR constant
+- O_EXCL constant
+- O_RDWR constant
+- O_WRONLY constant
+- O_APPEND constant
+- O_CREAT constant
+- _O_CREAT constant
+- _O_APPEND constant
+- _O_EXCL constant
+- O_TRUNC constant
+- _O_RDONLY constant
+- _O_TRUNC constant
+- O_RDONLY constant
+- _O_WRONLY constant
 ms.assetid: c8fa5548-9ac2-4217-801d-eb45e86f2fa4
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ファイル定数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 354d107b9bbaf3f60153fbce5ee66b14e2a5b96d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-## 構文  
+---
+# <a name="file-constants"></a>ファイル定数
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -51,33 +68,33 @@ caps.handback.revision: 6
   
 ```  
   
-## 解説  
- これらの定数の一つ以上から形成される整数式が許可される読み取りまたは書き込み操作の種類を決定します。  これは変換モード定数と一つ以上の定数を組み合わせることによって作成されます。  
+## <a name="remarks"></a>コメント  
+ 以下の 1 つまたは複数の定数で形成される整数式によって、許可される読み取りまたは書き込みの操作の種類が決定されます。 これは、1 つまたは複数の定数と、変換モードの定数を組み合わせることによって形成されます。  
   
- ファイル定数は次のとおりです。:  
+ ファイル定数は次のとおりです。  
   
  `_O_APPEND`  
- 任意の書き込み操作の前にファイルの末尾にファイル ポインターを移動します。  
+ 書き込み操作の前に、ファイル ポインターの位置をファイルの終端に変更します。  
   
  `_O_CREAT`  
- 書き込み用の新しいファイルを作成し、開きます; これは *ファイル名* で指定されたファイルがある場合は影響しません。  
+ 書き込み用の新しいファイルを作成して開きます。*filename* で指定されたファイルが存在する場合は、効果がありません。  
   
  `_O_EXCL`  
- *ファイル名* で指定されたファイルがある場合は、エラー値を返します。  `_O_CREAT`とともに使用された場合にのみ適用されます。  
+ *filename* で指定されたファイルが存在する場合は、エラー値を返します。 `_O_CREAT` と共に使用された場合にのみ適用されます。  
   
  `_O_RDONLY`  
- 読み取り専用のファイルを開くを; このフラグは、指定 `_O_RDWR` が `_O_WRONLY` も指定できます。  
+ 読み取り専用のファイルを開きます。このフラグを指定すると、`_O_RDWR` と `_O_WRONLY` は指定できません。  
   
  `_O_RDWR`  
- 読み取りと書き込みの両方のモードでファイルを開くを; このフラグは、指定 `_O_RDONLY` が `_O_WRONLY` も指定できます。  
+ 読み取りと書き込み両方のファイルを開きます。このフラグを指定すると、`_O_RDONLY` と `_O_WRONLY` は指定できません。  
   
  `_O_TRUNC`  
- 長さに既存のファイルを開き、切り捨てられる; ファイルはアクセス許可を記述する必要があります。  ファイルの内容が破棄されます。  このフラグが指定されている場合、`_O_RDONLY`を指定できません。  
+ 既存のファイルを開き、長さをゼロに切り詰めます。ファイルに書き込みアクセス許可が必要です。 ファイルの内容は破棄されます。 このフラグを指定すると、`_O_RDONLY` は指定できません。  
   
  `_O_WRONLY`  
- 書き込み用のファイルだけを開くを; このフラグは、指定 `_O_RDONLY` が `_O_RDWR` も指定できます。  
+ 書き込み専用のファイルを開きます。このフラグを指定すると、`_O_RDONLY` と `_O_RDWR` は指定できません。  
   
-## 参照  
- [\_open、\_wopen](../c-runtime-library/reference/open-wopen.md)   
- [\_sopen、\_wsopen](../c-runtime-library/reference/sopen-wsopen.md)   
+## <a name="see-also"></a>関連項目  
+ [_open、_wopen](../c-runtime-library/reference/open-wopen.md)   
+ [_sopen、_wsopen](../c-runtime-library/reference/sopen-wsopen.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

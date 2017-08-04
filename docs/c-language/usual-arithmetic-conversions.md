@@ -1,35 +1,52 @@
 ---
 title: "通常の算術変換 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "算術変換 [C++]"
-  - "算術演算子 [C++], 型変換"
-  - "変換 [C++], 算術"
-  - "データ型変換 [C++], 算術"
-  - "演算子 [C], 算術変換"
-  - "型変換 [C++], 算術"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- arithmetic conversions [C++]
+- type conversion [C++], arithmetic
+- operators [C], arithmetic conversions
+- data type conversion [C++], arithmetic
+- conversions [C++], arithmetic
+- arithmetic operators [C++], type conversions
 ms.assetid: bfa49803-0efd-45d0-b987-111412a140d7
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 通常の算術変換
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
+ms.openlocfilehash: 2dd676c9e566e0b0ed67a2ea6d9f1222582f0815
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
-ほとんどの C 演算子は、式のオペランドを共通型に取り込むか、コンピューター操作に使用される整数のサイズに short 値を拡張する型変換を実行します。  C 演算子によって実行される変換は、特定の演算子およびオペランドの型によって異なります。  ただし、多くの演算子は、整数型および浮動小数点型のオペランドに対して同様の変換を実行します。  これらの変換は "算術変換" と呼ばれます。 オペランド値を互換性のある型に変換しても、その値は変更されません。  
+---
+# <a name="usual-arithmetic-conversions"></a>通常の算術変換
+ほとんどの C 演算子は、式のオペランドを共通型に取り込むか、コンピューター操作に使用される整数のサイズに short 値を拡張する型変換を実行します。 C 演算子によって実行される変換は、特定の演算子およびオペランドの型によって異なります。 ただし、多くの演算子は、整数型および浮動小数点型のオペランドに対して同様の変換を実行します。 これらの変換は "算術変換" と呼ばれます。 オペランド値を互換性のある型に変換しても、その値は変更されません。  
   
- 以下にまとめた算術変換は、"通常の算術変換" と呼ばれます。 これらの手順は、数値型を要求する二項演算子の場合にのみ適用されます。  目的は、結果の型でもある共通型を導入することです。  実際にどの変換が行われるかを確認するために、コンパイラは式のバイナリ操作に次のアルゴリズムを適用します。  次の手順は優先順ではありません。  
+ 以下にまとめた算術変換は、"通常の算術変換" と呼ばれます。 これらの手順は、数値型を要求する二項演算子の場合にのみ適用されます。 目的は、結果の型でもある共通型を導入することです。 実際にどの変換が行われるかを確認するために、コンパイラは式のバイナリ操作に次のアルゴリズムを適用します。 次の手順は優先順ではありません。  
   
 1.  どちらかのオペランドが `long double` 型の場合、もう一方のオペランドは `long double` 型に変換されます。  
   
@@ -37,7 +54,7 @@ caps.handback.revision: 7
   
 3.  上の 2 つの条件が満たされず、どちらかのオペランドが **float** 型の場合、もう一方のオペランドも **float** 型に変換されます。  
   
-4.  上の 3 つの条件が満たされない場合 \(どのオペランドも浮動小数点型でない場合\)、オペランドに対して次のように整数変換が実行されます。  
+4.  上の 3 つの条件が満たされない場合 (どのオペランドも浮動小数点型でない場合)、オペランドに対して次のように整数変換が実行されます。  
   
     -   どちらかのオペランドが `unsigned long` 型の場合、もう一方のオペランドは `unsigned long` 型に変換されます。  
   
@@ -67,5 +84,5 @@ dVal = ulVal + fVal; /* ulVal converted to float
                       */   
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [C 演算子](../c-language/c-operators.md)
