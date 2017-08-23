@@ -35,11 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: dfe2d5cb2180585879bba9f912253f71f7aa3805
+ms.translationtype: HT
+ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
+ms.openlocfilehash: eaa816f145dc46ca45ea761ab52f9c3bb7d9e343
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="c-run-time-library-reference"></a>C ランタイム ライブラリ リファレンス
@@ -76,8 +76,8 @@ Microsoft ランタイム ライブラリでは、Microsoft Windows オペレー
  [ランタイム エラー チェック](../c-runtime-library/run-time-error-checking.md)  
  ランタイム エラー チェックをサポートする関数へのリンクがあります。  
   
- [ランタイム ライブラリの動作](../build/run-time-library-behavior.md)  
- CRT DLL へのエントリ ポイントについて説明します。  
+ [DLL と Visual C++ ランタイム ライブラリの動作](../build/run-time-library-behavior.md)  
+ DLL に使用されるエントリ ポイントとスタートアップ コードについて説明します。  
   
  [Visual C++ ライブラリ](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
  Visual C++ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および C++ 標準ライブラリが含まれます。  

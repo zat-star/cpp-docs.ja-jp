@@ -33,15 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: dfbd15b0da6e09b825a1562f006416e975603ab5
+ms.translationtype: HT
+ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
+ms.openlocfilehash: 51f99c8990015c6a9f3d50c31a370df5e3e22dbf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="language-strings"></a>Language Strings
-`setlocale` 関数と `_create_locale` 関数は、Unicode コード ページを使用しない、オペレーティング システムの Windows NLS API によってサポートされている言語を使用できます。 オペレーティング システムのバージョンによってサポートされている言語の一覧については、[各国語サポートの (NLS) の API リファレンス](http://msdn.microsoft.com/goglobal/bb896001.aspx)に関するページをご覧ください。 言語識別文字列は、サポート対象の言語の一覧の **[Language]** と **[Language name abbreviation]** の列の値のいずれかです。 C ランタイム ライブラリの実装では、以下の言語識別文字列がサポートされます。  
+`setlocale` 関数と `_create_locale` 関数は、Unicode コード ページを使用しない、オペレーティング システムの Windows NLS API によってサポートされている言語を使用できます。 オペレーティング システムのバージョンによってサポートされている言語の一覧については、[各国語サポートの (NLS) の API リファレンス](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)に関するページをご覧ください。 言語識別文字列は、サポート対象の言語の一覧の **[Language]** と **[Language name abbreviation]** の列の値のいずれかです。 オペレーティング システムのバージョンごとの言語サポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。   
+  
+C ランタイム ライブラリの実装では、以下の言語識別文字列がサポートされます。  
   
 |言語識別文字列|同等のロケール名|  
 |---------------------|----------------------------|  
