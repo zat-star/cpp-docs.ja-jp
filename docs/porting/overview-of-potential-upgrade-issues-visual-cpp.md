@@ -11,10 +11,11 @@ caps.latest.revision: 5
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 24ae58e6d8948572248a1595c59714bdf2c6f3f5
-ms.lasthandoff: 04/01/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 8d1d9d769d4cb7df5c34b42f6c104ef3c2e959bd
+ms.openlocfilehash: 8edf2d66cefca86fe51a64c9a15f83e9de040f63
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="overview-of-potential-upgrade-issues-visual-c"></a>アップグレード時の潜在的な問題の概要 (Visual C++)
@@ -166,6 +167,5 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
  詳細については、「[Porting from MBCS to Unicode](porting-guide-spy-increment.md#porting_to_unicode)」 (MBCS から Unicode に移植する) を参照してください。 MBCS と Unicode の一般的な情報については、「[Text and Strings in Visual C++](../text/text-and-strings-in-visual-cpp.md)」 (Visual C++ のテキストと文字列) と「[Internationalization](../c-runtime-library/internationalization.md)」 (国際化) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)
- [Visual Studio 2017 での C++ 適合性強化](../cpp-conformance-improvements-2017.md)
+ [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md) [Visual Studio 2017 での C++ 適合性強化](../cpp-conformance-improvements-2017.md)
 
