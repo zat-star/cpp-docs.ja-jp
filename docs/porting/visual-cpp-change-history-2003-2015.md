@@ -32,11 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
-ms.openlocfilehash: 482b404293cc1eea9879b09de52fb277cc1bd2a0
+ms.translationtype: HT
+ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
+ms.openlocfilehash: 5c910e117ea484b6b181b0d81de84cdc22a53fc1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/01/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
@@ -69,7 +69,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
 #### <a name="general-changes"></a>一般的な変更  
   
--   **リファクタリング バイナリ** CRT ライブラリは 2 つの異なるバイナリにリファクタリングされています。その 1 つはユニバーサル CRT (ucrtbase) で、標準機能のほとんどが含まれています。もう 1 つは VC ランタイム ライブラリ (vcruntime140) で、例外処理や組み込み関数などのコンパイラ関連の機能が含まれています。 既定のプロジェクト設定を使用している場合は、この変更によって影響を受けません。リンカーは、新しい既定のライブラリを自動的に使用するからです。 プロジェクトの [ **リンカー** ] プロパティの [ **すべての既定のライブラリの無視** ] を [ **はい** ] に設定するか、コマンドラインで /NODEFAULTLIB リンカー オプションを使用する場合、([ **追加の依存ファイル** ] プロパティの) ライブラリのリストを更新して、新しいリファクタリング ライブラリを組み込む必要があります。 古い CRT ライブラリ (libcmt.lib、libcmtd.lib、msvcrt.lib、msvcrtd.lib) をリファクタリングした同等のライブラリで置き換えます。 2 つのリファクタリング ライブラリのそれぞれについて、静的 (.lib) バージョンと動的 (.dll) バージョンがあり、リリース (サフィックスなし) バージョンとデバッグ (サフィックス "d" を持つ) バージョンがあります。 動的バージョンには、リンク先インポート ライブラリがあります。 2 つのリファクタリング ライブラリとは、ユニバーサル CRT (具体的には ucrtbase.dll または .lib、ucrtbased.dll または .lib)、と VC ランタイム ライブラリ (libvcruntime.lib、libvcruntime.dll、libvcruntimed.lib、および libvcruntimed.dll) です。 「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
+-   **リファクタリング バイナリ** CRT ライブラリは 2 つの異なるバイナリにリファクタリングされています。その 1 つはユニバーサル CRT (ucrtbase) で、標準機能のほとんどが含まれています。もう 1 つは VC ランタイム ライブラリ (vcruntime) で、例外処理や組み込み関数などのコンパイラ関連の機能が含まれています。 既定のプロジェクト設定を使用している場合は、この変更によって影響を受けません。リンカーは、新しい既定のライブラリを自動的に使用するからです。 プロジェクトの [ **リンカー** ] プロパティの [ **すべての既定のライブラリの無視** ] を [ **はい** ] に設定するか、コマンドラインで /NODEFAULTLIB リンカー オプションを使用する場合、([ **追加の依存ファイル** ] プロパティの) ライブラリのリストを更新して、新しいリファクタリング ライブラリを組み込む必要があります。 古い CRT ライブラリ (libcmt.lib、libcmtd.lib、msvcrt.lib、msvcrtd.lib) をリファクタリングした同等のライブラリで置き換えます。 2 つのリファクタリング ライブラリのそれぞれについて、静的 (.lib) バージョンと動的 (.dll) バージョンがあり、リリース (サフィックスなし) バージョンとデバッグ (サフィックス "d" を持つ) バージョンがあります。 動的バージョンには、リンク先インポート ライブラリがあります。 2 つのリファクタリング ライブラリとは、ユニバーサル CRT (具体的には ucrtbase.dll または .lib、ucrtbased.dll または .lib)、と VC ランタイム ライブラリ (libvcruntime.lib、vcruntime*version*.dll、libvcruntimed.lib、vcruntimed*version*.dll) です。 Visual Studio 2015 と Visual Studio 2017 における*バージョン*は 140 です。 「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
   
 #### <a name="localeh"></a>\<locale.h>  
   
@@ -1423,7 +1423,7 @@ struct S2 : public S1 {
 
 -   **{} がポインターへの変換を妨げる**  
 
-次のコードに対しては、C2439: "'S::p': 指定されたメンバーは初期化できません" が発生するようになりました。    
+次のコードに対しては、C2439: "'S::p': 指定されたメンバーは初期化できません" が発生するようになりました。   
 ```cpp
 struct S {
     S() : p({ 0 }) {}
