@@ -1,5 +1,5 @@
 ---
-title: "リンカ ツール エラー LNK2001 |Microsoft ドキュメント"
+title: Linker Tools Error LNK2001 | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,100 +33,100 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: c7a2d48507c5c6f5f6c469f0a524e6e392bdd166
+ms.translationtype: MT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: b84789e0de5b8da870dbfa7cb636440704cc022e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="linker-tools-error-lnk2001"></a>リンカ ツール エラー LNK2001
-未解決の外部シンボル"*シンボル*"  
+# <a name="linker-tools-error-lnk2001"></a>Linker Tools Error LNK2001
+unresolved external symbol "*symbol*"  
   
-参照またはへの呼び出しは、コンパイルされたコードは*シンボル*が、そのシンボルがリンカーに指定されたオブジェクト ファイル、ライブラリのいずれかで定義されていません。  
+The compiled code makes a reference or call to *symbol*, but that symbol isn't defined in any of the libraries or object files specified to the linker.  
   
-このエラー メッセージの致命的なエラーが続く[LNK1120](../../error-messages/tool-errors/linker-tools-error-lnk1120.md)です。 エラー LNK1120 を修正する LNK2001 と LNK2019 のすべてのエラーを修正する必要があります。  
+This error message is followed by fatal error [LNK1120](../../error-messages/tool-errors/linker-tools-error-lnk1120.md). You must fix all LNK2001 and LNK2019 errors to fix error LNK1120.  
   
-## <a name="possible-causes"></a>考えられる原因  
+## <a name="possible-causes"></a>Possible causes  
   
-このエラーが発生するさまざまな方法がありますが、関数またはリンカーできません変数への参照を含むすべての*解決*定義を見つけられないか。 コンパイラがシンボルがない場合に特定できます*宣言*がない場合ではありません*定義*定義が別のソース ファイルまたはライブラリ内であるので、します。 シンボルが参照されるが、定義されていることはありません、リンカーでエラーが発生します。  
+There are many ways to get this error, but all of them involve a reference to a function or variable that the linker can't *resolve*, or find a definition for. The compiler can identify when a symbol is not *declared*, but not when it is not *defined*, because the definition may be in a different source file or library. If a symbol is referred to but never defined, the linker generates an error.  
   
-### <a name="coding-issues"></a>コードの問題  
+### <a name="coding-issues"></a>Coding issues  
   
-ソース コードまたはモジュール定義 (.def) が一致しない場合、このエラーは発生するファイル。 たとえば、変数の名前を付ける場合`var1`で 1 つの C++ ソース ファイルととしてアクセスを試みる`VAR1`このエラーを生成する、別のです。 この問題を解決するには、使用は一貫したスペルし、名前、大文字と小文字です。  
+This error can be caused by mismatched case in your source code or module-definition (.def) file. For example, if you name a variable `var1` in one C++ source file and try to access it as `VAR1` in another, this error is generated. To fix this issue, use consistently spelled and cased names.  
   
-このエラーは、使用するプロジェクトで発生することができます[関数のインライン展開](../../error-messages/tool-errors/function-inlining-problems.md)ヘッダー ファイルではなく、ソース ファイルで関数を定義する場合。 それを定義するソース ファイルの外部関数のインライン展開を表示できません。 この問題を解決するには、宣言されているヘッダーの関数のインライン展開を定義します。  
+This error can be caused in a project that uses [function inlining](../../error-messages/tool-errors/function-inlining-problems.md) if you define the functions in a source file rather than in a header file. Inlined functions can't be seen outside the source file that defines them. To fix this issue, define the inlined functions in the headers where they are declared.  
   
-使用せず、C++ プログラムから C の関数を呼び出す場合は、このエラーを発生することができます、 `extern "C"` C 関数の宣言。 コンパイラが C および C++ コードでは、さまざまな内部シンボルの名前付け規則を使用し、リンカー検索シンボルを解決するときに内部シンボルの名前です。 この問題を解決するには、`extern "C"`コンパイラが、これらのシンボルを C 内部名前付け規則を使用する C++ コードで使用する C 関数のすべての宣言をラップするラッパー。 コンパイラ オプション[/Tp](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md)と[/Tc](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md)ファイルとしてコンパイル C++ または C が、それぞれ、ファイル名拡張子に関係なくコンパイラが発生します。 これらのオプションには、内部の関数名が予期したものと異なる可能性があります。  
+This error can be caused if you call a C function from a C++ program without using an `extern "C"` declaration for the C function. The compiler uses different internal symbol naming conventions for C and C++ code, and it is the internal symbol name that the linker looks for when resolving symbols. To fix this issue, use an `extern "C"` wrapper around all declarations of C functions used in your C++ code, which causes the compiler to use the C internal naming convention for those symbols. Compiler options [/Tp](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md) and [/Tc](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md) cause the compiler to compile files as C++ or C, respectively, regardless of the filename extension. These options can cause internal function names different from what you expect.  
   
-このエラーは、関数または外部リンケージを持たないデータを参照しようとして発生することができます。 C++ では、インライン関数と`const`として明示的に指定されていない限り、データが内部リンケージを持ちます`extern`です。 この問題を解決するには明示的な使用`extern`シンボルの宣言が定義するソース ファイルの外部に呼ばれます。  
+This error can be caused by an attempt to reference functions or data that don't have external linkage. In C++, inline functions and `const` data have internal linkage unless explicitly specified as `extern`. To fix this issue, use explicit `extern` declarations on symbols referred to outside the defining source file.  
   
-このエラーは、によって発生することができます、[関数本体または変数がありません](../../error-messages/tool-errors/missing-function-body-or-variable.md)定義します。 このエラーは、宣言、定義していない、変数、関数、またはクラス コードにする場合に共通です。 コンパイラでは、関数プロトタイプのみが必要か`extern`エラーは、リンカーないオブジェクト ファイルを生成する変数の宣言は、その関数のコードまたは予約された変数の領域がないため、関数への呼び出しや、変数への参照を解決できません。 この問題を解決するには、すべての参照先の関数と変数完全に定義されているソース ファイルまたはライブラリが、リンクに含まれていることを確認します。  
+This error can be caused by a [missing function body or variable](../../error-messages/tool-errors/missing-function-body-or-variable.md) definition. This error is common when you declare, but don't define, variables, functions, or classes in your code. The compiler only needs a function prototype or `extern` variable declaration to generate an object file without error, but the linker cannot resolve a call to the function or a reference to the variable because there is no function code or variable space reserved. To fix this issue, make sure that every referenced function and variable is fully defined in a source file or library included in your link.  
   
-このエラーは、戻り値およびパラメーター型またはと一致しない場合、関数定義で呼び出し規約を使用する関数呼び出しによって発生することができます。 オブジェクトの C++ ファイルで[装飾の名前を付けます](../../error-messages/tool-errors/name-decoration.md)はその他のオブジェクト ファイルから関数への呼び出しを解決するときに、一致するシンボルとして使用する最終の装飾関数名に、呼び出し規約、クラスまたは名前空間のスコープ、および関数の戻り値およびパラメーターの型が組み込まれています。 この問題を修正するには、同じスコープ、型、および呼び出し規約の宣言、定義、およびすべての関数への呼び出しを使用することになっていることを確認します。  
+This error can be caused by a function call that uses return and parameter types or calling conventions that do not match those in the function definition. In C++ object files, [Name decoration](../../error-messages/tool-errors/name-decoration.md) incorporates the calling convention, class or namespace scope, and return and parameter types of a function into the final decorated function name, which is used as the symbol to match when calls to the function from other object files are resolved. To fix this issue, make sure that the declaration, definition, and calls to the function all use the same scopes, types, and calling conventions.  
   
-このエラーはクラス定義の関数プロトタイプが含まれますに失敗するときに、C++ コードで発生することができます[実装が含まれて](../../error-messages/tool-errors/missing-function-body-or-variable.md)関数のし、それを呼び出します。 この問題を解決するには、クラスのメンバーの宣言と呼ばれるすべての定義を指定することを確認します。  
+This error can be caused in C++ code when you include a function prototype in a class definition but fail to [include the implementation](../../error-messages/tool-errors/missing-function-body-or-variable.md) of the function, and then call it. To fix this issue, be sure to provide a definition for all called declared members of a class.  
   
-このエラーは、抽象基本クラスからの純粋仮想関数を呼び出そうとすると、発生することができます。 純粋仮想関数には、基本クラス実装がありません。 この問題を解決するには、仮想関数を呼び出すすべて実装されていることを確認します。  
+This error can be caused by an attempt to call a pure virtual function from an abstract base class. A pure virtual function has no base class implementation. To fix this issue, make sure all called virtual functions are implemented.  
   
-このエラーは、関数内で宣言された変数を使用しようとして発生することができます ([ローカル変数](../../error-messages/tool-errors/automatic-function-scope-variables.md)) その関数のスコープ外です。 この問題を解決するには、スコープに含まれていない変数への参照を削除するか、変数を上位のスコープに移動します。  
+This error can be caused by trying to use a variable declared within a function ([a local variable](../../error-messages/tool-errors/automatic-function-scope-variables.md)) outside the scope of that function. To fix this issue, remove the reference to the variable that is not in scope, or move the variable to a higher scope.  
   
-ATL プロジェクトのリリース バージョンをビルドすると、CRT スタートアップ コードが必要であるメッセージを生成したときに、このエラーが発生することができます。 この問題を修正するには、次のいずれかの操作  
+This error can occur when you build a Release version of an ATL project, producing a message that CRT startup code is required. To fix this issue, do one of the following,  
   
--   削除`_ATL_MIN_CRT`CRT スタートアップ コードが含まれるようにプリプロセッサの一覧からを定義します。 参照してください[[全般] プロパティ ページ (プロジェクト)](../../ide/general-property-page-project.md)詳細についてはします。  
+-   Remove `_ATL_MIN_CRT` from the list of preprocessor defines to allow CRT startup code to be included. See [General Property Page (Project)](../../ide/general-property-page-project.md) for more information.  
   
--   可能であれば、CRT スタートアップ コードを必要とする CRT 関数の呼び出しを削除します。 代わりに、対応する win32 関数を使用します。 たとえば、使用して`lstrcmp`の代わりに`strcmp`です。 CRT スタートアップ コードを必要とする既知の関数は、文字列および浮動小数点関数の一部を示します。  
+-   If possible, remove calls to CRT functions that require CRT startup code. Instead, use their Win32 equivalents. For example, use `lstrcmp` instead of `strcmp`. Known functions that require CRT startup code are some of the string and floating point functions.  
   
-### <a name="compilation-and-link-issues"></a>コンパイルとリンクの問題  
+### <a name="compilation-and-link-issues"></a>Compilation and link issues  
   
-このエラーは、プロジェクトのライブラリへの参照がない場合に発生することができます (です。LIB) またはオブジェクト (です。OBJ) ファイルです。 この問題を解決するには、プロジェクトに必要なライブラリまたはオブジェクト ファイルへの参照を追加します。 詳細については、次を参照してください。[リンカー入力としての .lib ファイル](../../build/reference/dot-lib-files-as-linker-input.md)です。  
+This error can occur when the project is missing a reference to a library (.LIB) or object (.OBJ) file. To fix this issue, add a reference to the required library or object file to your project. For more information, see [.lib Files as Linker Input](../../build/reference/dot-lib-files-as-linker-input.md).  
   
-このエラーは、使用する場合に発生することができます、 [/NODEFAULTLIB](../../build/reference/nodefaultlib-ignore-libraries.md)または[/Zl](../../build/reference/zl-omit-default-library-name.md)オプション。 これらのオプションを指定するときに 明示的に含めていた場合を除き、プロジェクトに必要なコードが含まれているライブラリはリンクされません。 この問題を解決するには、リンクのコマンドラインで使用するすべてのライブラリを明示的に指定します。 これらのオプションを使用する場合、多くの不足している CRT または標準ライブラリ関数名が表示された場合、リンクに、CRT、標準のライブラリ Dll ファイルまたはライブラリ ファイルを明示的に含めます。  
+This error can occur if you use the [/NODEFAULTLIB](../../build/reference/nodefaultlib-ignore-libraries.md) or [/Zl](../../build/reference/zl-omit-default-library-name.md) options. When you specify these options, libraries that contain required code are not linked into the project unless you have explicitly included them. To fix this issue, explicitly include all the libraries you use on the link command line. If you see many missing CRT or Standard Library function names when you use these options, explicitly include the CRT and Standard Library DLLs or library files in the link.  
 
-使用してコンパイルする場合、 **/clr**オプションで、.cctor に未解決の参照があります。 この問題を修正するのを参照してください。[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)詳細についてはします。  
+If you compile using the **/clr** option, there can be a missing reference to .cctor. To fix this issue, see [Initialization of Mixed Assemblies](../../dotnet/initialization-of-mixed-assemblies.md) for more information.  
   
-このエラーは、アプリケーションのデバッグ バージョンを作成するときに、リリース モード ライブラリにリンクする場合に発生することができます。 同様に、オプションを使用する場合**/MTd**または**/MDd**定義または`_DEBUG`リリース ライブラリにリンクして、その他の問題の多く可能性がある未解決の外部参照には、表示されるはずです。 ような問題が発生もリリース モードのデバッグ ライブラリと一緒にビルドをリンクします。 この問題を解決するには、デバッグ ビルドでデバッグ ライブラリを使用して、小売り業で小売りライブラリのビルドを確認します。  
+This error can occur if you link to the release mode libraries when building a debug version of an application. Similarly, if you use options **/MTd** or **/MDd** or define `_DEBUG` and then link to the release libraries, you should expect many potential unresolved externals, among other problems. Linking a release mode build with the debug libraries also causes similar problems. To fix this issue, make sure you use the debug libraries in your debug builds, and retail libraries in your retail builds.  
   
-このエラーは、ライブラリの 1 つのバージョンからシンボルをコードから参照が、リンカーのライブラリの別のバージョンを指定する場合に発生します。 一般に、オブジェクト ファイルまたは別のバージョンのコンパイラに組み込まれているライブラリを混在させることはできません。 新しいバージョンに含まれているライブラリには、以前のバージョン、およびその逆に含まれているライブラリで見つからないシンボルが格納されて可能性があります。 この問題を解決するには、それらを一緒にリンクする前にすべてのオブジェクト ファイルと同じバージョンのコンパイラとライブラリを構築します。  
+This error can occur if your code refers to a symbol from one version of a library, but you supply a different version of the library to the linker. Generally, you can't mix object files or libraries that are built for different versions of the compiler. The libraries that ship in a new version may contain symbols that cannot be found in the libraries included with previous versions, and vice-versa. To fix this issue, build all the object files and libraries with the same version of the compiler before linking them together.  
   
--  ツールは、& #124 です。オプション & #124 です。プロジェクト & #124 です。Vc++ ディレクトリ ダイアログの ライブラリ ファイルの選択 では、ライブラリの検索順序を変更することができます。 プロジェクトのプロパティ ページ ダイアログ ボックスで リンカー フォルダーでは、期限切れの可能性があるパスもあります。  
+-  The Tools &#124; Options &#124; Projects &#124; VC++ Directories dialog, under the Library files selection, allows you to change the library search order. The Linker folder in the project's Property Pages dialog box may also contain paths that could be out of date.  
   
--  この問題が表示されます (おそらく別の場所に)、新しい SDK がインストールされているし、新しい場所を指す検索順序は更新されません。 通常、新しい SDK にパスを配置する必要がありますを含めるおよび lib の既定の Visual C の場所の前にディレクトリ。 また、埋め込みパスを含むプロジェクトは、有効であっても別の場所にインストールされている、新しいバージョンで追加された新機能の期限切れである古いパスに指す場合があります。  
+-  This problem may appear when a new SDK is installed (perhaps to a different location), and the search order is not updated to point to the new location. Normally, you should put the path to new SDK include and lib directories in front of the default Visual C++ location. Also, a project containing embedded paths may still point to old paths that are valid, but out of date for new functionality added by the new version that is installed to a different location.  
   
--   コマンドラインでビルドして、独自の環境変数を作成した場合は、ツール、ライブラリ、およびヘッダー ファイルへのパスが、一貫したバージョンに送られることを確認します。 詳細については、「[コマンド ライン ビルドのパスと環境変数を設定する](../../build/setting-the-path-and-environment-variables-for-command-line-builds.md)」を参照してください。
+-   If you build at the command line and have created your own environment variables, verify that the paths to tools, libraries, and header files go to a consistent version. For more information, see [Set the Path and Environment Variables for Command-Line Builds](../../build/setting-the-path-and-environment-variables-for-command-line-builds.md)
   
-現在の標準はありません[C++ の名前付け](../../error-messages/tool-errors/name-decoration.md)コンパイラ販売元間またはコンパイラの異なるバージョン間でさえもします。 そのため、他のコンパイラでコンパイルされたオブジェクト ファイルをリンク可能性がありますいない、同じ名前付けスキームを生成およびエラー LNK2001 が発生するためです。  
+There is currently no standard for [C++ naming](../../error-messages/tool-errors/name-decoration.md) between compiler vendors or even between different versions of a compiler. Therefore, linking object files compiled with other compilers may not produce the same naming scheme and thus cause error LNK2001.  
   
-[コンパイル オプションのミキシングのインラインと非インライン](../../error-messages/tool-errors/function-inlining-problems.md)モジュールごとに異なることができます LNK2001 が発生します。 C++ ライブラリがオンになっている関数のインライン展開で作成されたかどうか (**/Ob1**または**/Ob2**) がになっているインライン展開は、関数を記述する、対応するヘッダー ファイル (ありません`inline`キーワード)、このエラーが発生します。 この問題を解決する関数を定義する`inline`ヘッダー ファイルを他のソース ファイルが含まれます。  
+[Mixing inline and non-inline compile options](../../error-messages/tool-errors/function-inlining-problems.md) on different modules can cause LNK2001. If a C++ library is created with function inlining turned on (**/Ob1** or **/Ob2**) but the corresponding header file describing the functions has inlining turned off (no `inline` keyword), this error occurs. To fix this issue, define the functions `inline` in the header file you include in other source files.  
   
-使用する場合、`#pragma inline_depth`コンパイラ ディレクティブを確認するが、 [2 以上のセットの値](../../error-messages/tool-errors/function-inlining-problems.md)、またを使用するかどうかを確認し、 [/Ob1](../../build/reference/ob-inline-function-expansion.md)または[/Ob2](../../build/reference/ob-inline-function-expansion.md)コンパイラ オプション。  
+If you use the `#pragma inline_depth` compiler directive, make sure you have a [value of 2 or greater set](../../error-messages/tool-errors/function-inlining-problems.md), and make sure you also use the [/Ob1](../../build/reference/ob-inline-function-expansion.md) or [/Ob2](../../build/reference/ob-inline-function-expansion.md) compiler option.  
   
-このエラーは、リンクを省略した場合に発生する可能性が/NOENTRY をリソース専用 DLL を作成するときにオプションです。 この問題を解決するには、リンクのコマンドに/NOENTRY オプションを追加します。  
+This error can occur if you omit the LINK option /NOENTRY when you create a resource-only DLL. To fix this issue, add the /NOENTRY option to the link command.  
   
-このエラーは、プロジェクトに正しくない/SUBSYSTEM または/ENTRY 設定を使用する場合に発生することができます。 たとえば、コンソール アプリケーションを書く/SUBSYSTEM:WINDOWS を指定すると、未解決の外部エラーが生成の`WinMain`します。 この問題を解決するには、プロジェクトの種類にオプションが一致していることを確認します。 これらのオプションとエントリ ポイントの詳細については、次を参照してください。、 [/SUBSYSTEM](../../build/reference/subsystem-specify-subsystem.md)と[/ENTRY](../../build/reference/entry-entry-point-symbol.md)リンカー オプション。  
+This error can occur if you use incorrect /SUBSYSTEM or /ENTRY settings in your project. For example, if you write a console application and specify /SUBSYSTEM:WINDOWS, an unresolved external error is generated for `WinMain`. To fix this issue, make sure you match the options to the project type. For more information on these options and entry points, see the [/SUBSYSTEM](../../build/reference/subsystem-specify-subsystem.md) and [/ENTRY](../../build/reference/entry-entry-point-symbol.md) linker options.  
   
-### <a name="exported-symbol-issues"></a>エクスポートされたシンボルの問題  
+### <a name="exported-symbol-issues"></a>Exported symbol issues  
   
-このエラーは、.def ファイルに一覧表示、エクスポートが見つからない場合に発生します。 存在しない、スペルが正しいか、C の装飾名を使用する可能性があります。 .Def ファイルには、装飾名は取りません。 この問題を修正するには、不要なエクスポートを削除して`extern "C"`エクスポートされたシンボルを宣言します。  
+This error occurs when an export listed in a .def file is not found. This could be because it does not exist, is spelled incorrectly, or uses C++ decorated names. A .def file does not take decorated names. To fix this issue, remove unneeded exports, and use `extern "C"` declarations for exported symbols.  
   
-## <a name="what-is-an-unresolved-external-symbol"></a>未解決の外部シンボルとは何ですか。  
+## <a name="what-is-an-unresolved-external-symbol"></a>What is an unresolved external symbol?  
   
-A*シンボル*関数またはコンパイル済みのオブジェクト ファイルまたはライブラリによって内部的に使用するグローバル変数の名前を指定します。 シンボルは*定義*関数本体のコンパイル済みコードの配置場所のグローバル変数または関数の場合、記憶域が割り当てられているオブジェクト ファイルにします。 *外部シンボル*記号の*参照*、つまり、使用または 1 つのオブジェクト ファイルで呼び出されますが、別のライブラリまたはオブジェクト ファイルで定義されています。 *エクスポートされたシンボル*は、オブジェクト ファイルまたはそれを定義するライブラリによって公開されている使用可能です。 リンカーである必要があります*解決*、または、対応する定義、アプリケーションまたは DLL にリンクされている場合は、オブジェクト ファイルで参照されているすべての外部シンボルを検索します。 リンカーは、リンクされたファイルのいずれかで一致するエクスポートされたシンボルを見つけることによって、外部シンボルを解決できないときにエラーを生成します。    
+A *symbol* is the name for a function or global variable used internally by a compiled object file or library. A symbol is *defined* in the object file where storage is allocated for a global variable, or for a function, where the compiled code for the function body is placed. An *external symbol* is a symbol that's *referenced*, that is, used or called in one object file, but defined in a different library or object file. An *exported symbol* is one that's made publicly available by the object file or library that defines it. The linker must *resolve*, or find the matching definition for, every external symbol referenced by an object file when it is linked into an application or DLL. The linker generates an error when it can't resolve an external symbol by finding a matching exported symbol in any of the linked files.    
   
-## <a name="use-the-decorated-name-to-find-the-error"></a>装飾名を使用して、エラーを見つけます
+## <a name="use-the-decorated-name-to-find-the-error"></a>Use the decorated name to find the error
   
-C++ コンパイラとリンカーの使用[名前の装飾](../../error-messages/tool-errors/name-decoration.md)とも呼ばれる、*名前マングル*変数の型または戻り値の型、パラメーターの型、スコープ、およびシンボル名の関数の呼び出し規則に関する追加情報をエンコードします。 この装飾名は、外部シンボルを解決するのには、リンカーが検索シンボル名です。  
+The C++ compiler and linker use [Name Decoration](../../error-messages/tool-errors/name-decoration.md), also known as *name-mangling*, to encode extra information about the type of a variable or the return type, parameter types, scope, and calling convention of a function in the symbol name. This decorated name is the symbol name the linker searches for to resolve external symbols.  
   
-追加情報がシンボル名の一部となり、ために、関数または変数の宣言は関数または変数の定義と一致しない場合にリンク エラーが発生することができます。 これは、ソース ファイルをコンパイルするときに別のコンパイラ フラグを使用する場合、同じヘッダー ファイルが呼び出し元のコードと定義のコードの両方で使用される場合でもに発生することができます。 たとえば、すれば、このエラーを使用するコードがコンパイルされている場合、`__vectorcall`呼び出し規約、ですが、既定値を使用してそれを呼び出すクライアントが必要ですが、ライブラリにリンク`__cdecl`または`__fastcall`呼び出し規約です。 この場合、シンボルが違って、呼び出し規約が異なるため   
+Because the extra information becomes part of the symbol name, a link error can result if the declaration of a function or variable does not exactly match the definition of the function or variable. This can happen even if the same header file is used in both the calling code and the defining code, if different compiler flags are used when compiling the source files. For example, you can get this error if your code is compiled to use the `__vectorcall` calling convention, but you link to a library that expects clients to call it using the default `__cdecl` or `__fastcall` calling convention. In this case, the symbols do not match because the calling conventions are different   
   
-この種のエラーの原因を確認するために、リンカーのエラー メッセージが両方"フレンドリ名が表示、"ソース コード、および未解決の外部シンボルの装飾名 (かっこ内) で使用される名前です。 その他の装飾名と比較することができる、装飾名を変換する方法を理解する必要はありません。 期待される記号名と実際のシンボル名の比較にコンパイラに含まれているコマンド ライン ツールを使用することができます。  
+To help you find the cause of this kind of error, the linker error message shows you both the "friendly name," the name used in source code, and the decorated name (in parentheses) for the unresolved external symbol. You don't need to know how to translate the decorated name to be able to compare it with other decorated names. You can use command line tools that are included with the compiler to compare the expected symbol name and the actual symbol name:  
 
--   [/Exports](../../build/reference/dash-exports.md)と[/symbols](../../build/reference/symbols.md) DUMPBIN コマンド ライン ツールのオプションを使用して、どのシンボルが、.dll やオブジェクト ファイルまたはライブラリ ファイルで定義されているを発見できます。 エクスポートされた装飾する装飾名、リンカー検索の名前が一致することを確認するのにには、これを使用できます。  
+-   The [/EXPORTS](../../build/reference/dash-exports.md) and [/SYMBOLS](../../build/reference/symbols.md) options of the DUMPBIN command line tool can help you discover which symbols are defined in your .dll and object or library files. You can use this to verify that the exported decorated names match the decorated names the linker searches for.  
   
-場合によっては、リンカーは、シンボルの装飾名のみをレポートできます。 UNDNAME コマンド ライン ツールを使用すると、装飾名の非装飾形式を取得します。  
+In some cases, the linker can only report the decorated name for a symbol. You can use the UNDNAME command line tool to get the undecorated form of a decorated name.  
   
-## <a name="additional-resources"></a>その他の技術情報  
+## <a name="additional-resources"></a>Additional resources  
   
-LNK2001 の考えられる原因および解決方法に関する詳細については、スタック オーバーフローの質問を参照してください。 [、未定義の参照/未解決外部シンボルというエラーと、その修正方法?](http://stackoverflow.com/q/12573816/2002113)です。  
+For more information about possible causes and solutions for LNK2001, see the Stack Overflow question [What is an undefined reference/unresolved external symbol error and how do I fix it?](http://stackoverflow.com/q/12573816/2002113).  
 
 

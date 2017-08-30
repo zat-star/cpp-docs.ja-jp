@@ -1,44 +1,66 @@
 ---
-title: "方法 : 既存のコードから C++ プロジェクトを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++, 作成 (既存のコードからプロジェクトを)"
+title: 'How to: Create a C++ Project from Existing Code | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- C++, creating projects from existing code
 ms.assetid: e328a938-395c-48ea-9e35-dd433de12b31
 caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 方法 : 既存のコードから C++ プロジェクトを作成する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: b0d8cf66dd95d2eeab454c01cae85d4f625fe5d9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-[!INCLUDE[vsPro](../ide/includes/vspro_md.md)] および [!INCLUDE[vsUltShort](../ide/includes/vsultshort_md.md)] で、**既存コード ファイルからの新しいプロジェクトの作成**ウィザードを使用すると、既存のコード ファイルを Visual C\+\+ プロジェクトに移植できます。  このウィザードは、Express Edition では使用できません。  
+---
+# <a name="how-to-create-a-c-project-from-existing-code"></a>How to: Create a C++ Project from Existing Code
+
+In Visual Studio, you can port your existing code files into a Visual C++ project by using the **Create New Project From Existing Code Files** wizard. This wizard is not available in older Express editions of Visual Studio. This wizard creates a new solution and project that uses the MSBuild system to manage your source files and build configuration.  
   
- 既存のコード ファイルを Visual C\+\+ プロジェクトに移植することで、[IntelliSense](../Topic/Using%20IntelliSense.md)、**呼び出しブラウザー**、[プロパティ マネージャー](../misc/property-manager.md)などの IDE 機能を使用できるようになります。  
+Porting your existing code files into a Visual C++ project enables you to use all of the native MSBuild project management features built into the IDE. If you prefer to use your existing build system, such as nmake makefiles, CMake, or alternatives, you can use the Open Folder option instead. For more information, see [Open Folder projects in Visual C++](../ide/non-msbuild-projects.md). Both options let you use IDE features such as [IntelliSense](/visualstudio/ide/using-intellisense) and [Project Properties](../ide/working-with-project-properties.md).  
   
-### 既存のコードから C\+\+ プロジェクトを作成するには  
+### <a name="to-create-a-c-project-from-existing-code"></a>To create a C++ project from existing code  
   
-1.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[既存のコードからプロジェクトを作成\]** をクリックします。  
+1.  On the **File** menu, point to **New**, and then click **Project From Existing Code**.  
   
-2.  **既存コード ファイルからの新しいプロジェクトの作成**ウィザードの最初のページで、**\[作成するプロジェクトの種類を入力してください\]** ボックスの一覧の **\[Visual C\+\+\]** をクリックします。  
+1.  On the first page of the **Create New Project from Existing Code Files** wizard, select **Visual C++** in the **What type of project would you like to create** list. Choose **Next** to continue. 
   
-3.  ウィザードの残りのページで、作成する新規プロジェクトの設定を指定します。  
+1.  Specify your project location and the directory for your source files. For details on this page, see [Specify Project Location and Source Files, Create New Project From Existing Code Files Wizard](../ide/specify-project-location-and-source-files.md). Choose **Next** to continue.  
   
-4.  **\[完了\]** をクリックして、プロジェクトを生成します。  
+1.  Specify the project settings to use. For details on this page, see [Specify Project Settings, Create New Project From Existing Code Files Wizard](../ide/specify-project-settings-create-new-project-from-existing-code-files-wizard.md). Choose **Next** to continue.  
+
+1.  Specify the Debug configuration settings to use. For details on this page, see [Specify Debug Configuration Settings, Create New Project From Existing Code Files Wizard](../ide/specify-debug-configuration-settings.md). Choose **Next** to continue.  
+
+1.  Specify the Release configuration settings to use. For details on this page, see [Specify Release Configuration Settings, Create New Project From Existing Code Files Wizard](../ide/specify-release-configuration.md). Choose **Finish** to generate the new project.  
   
-## 参照  
- [\[プロジェクトの場所とソース ファイルの指定\] \(既存コード ファイルからの新しいプロジェクトの作成ウィザード\)](../Topic/Specify%20Project%20Location%20and%20Source%20Files,%20Create%20New%20Project%20From%20Existing%20Code%20Files%20Wizard.md)   
- [\[プロジェクト設定の指定\] \(既存コード ファイルからの新しいプロジェクトの作成ウィザード\)](../Topic/Specify%20Project%20Settings,%20Create%20New%20Project%20From%20Existing%20Code%20Files%20Wizard.md)   
- [\[デバッグ構成の設定の指定\] \(既存コード ファイルからの新しいプロジェクトの作成ウィザード\)](../Topic/Specify%20Debug%20Configuration%20Settings,%20Create%20New%20Project%20From%20Existing%20Code%20Files%20Wizard.md)   
- [\[リリースの構成の設定\] \(既存コード ファイルからの新しいプロジェクトの作成ウィザード\)](../Topic/Specify%20Release%20Configuration%20Settings,%20Create%20New%20Project%20From%20Existing%20Code%20Files%20Wizard.md)
+## <a name="see-also"></a>See Also  
+
+[Specify Project Location and Source Files, Create New Project From Existing Code Files Wizard](../ide/specify-project-location-and-source-files.md)   
+[Specify Project Settings, Create New Project From Existing Code Files Wizard](../ide/specify-project-settings-create-new-project-from-existing-code-files-wizard.md)   
+[Specify Debug Configuration Settings, Create New Project From Existing Code Files Wizard](../ide/specify-debug-configuration-settings.md)   
+[Specify Release Configuration Settings, Create New Project From Existing Code Files Wizard](../ide/specify-release-configuration.md)

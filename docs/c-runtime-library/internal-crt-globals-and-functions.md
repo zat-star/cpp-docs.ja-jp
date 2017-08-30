@@ -1,5 +1,5 @@
 ---
-title: "内部 CRT グローバルおよび関数 | Microsoft Docs"
+title: Internal CRT Globals and Functions | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -18,6 +18,8 @@ apiname:
 - __C_specific_handler
 - _calloc_base
 - _chkesp
+- __chkstk
+- _chkstk
 - _chvalidator
 - _chvalidator_l
 - _CIacos
@@ -295,6 +297,7 @@ apilocation:
 - api-ms-win-crt-conio-l1-1-0.dll
 - vcruntime140_app.dll
 - msvcp140_app.dll
+- ntdll.dll
 apitype: DLLExport
 f1_keywords:
 - __acrt_iob_func
@@ -306,6 +309,8 @@ f1_keywords:
 - __C_specific_handler
 - _calloc_base
 - _chkesp
+- __chkstk
+- _chkstk
 - _chvalidator
 - _chvalidator_l
 - _CIacos
@@ -580,6 +585,8 @@ helpviewer_keywords:
 - __C_specific_handler
 - _calloc_base
 - _chkesp
+- __chkstk
+- _chkstk
 - _chvalidator
 - _chvalidator_l
 - _CIacos
@@ -843,41 +850,25 @@ helpviewer_keywords:
 - _Xbad_alloc
 - _Xlength_error
 ms.assetid: 99a27f11-fa5a-449e-bfbb-aab578d1cc4f
-caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ac823b16dbcb3ef2bac984a8d0634ac51198dae4
-ms.openlocfilehash: e82838570d8c01d4ecc36fda384a102c415618ae
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 0afa07af22d787e669f32d21c021bec02e2de42e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="internal-crt-globals-and-functions"></a>内部 CRT グローバルおよび関数  
+# <a name="internal-crt-globals-and-functions"></a>Internal CRT Globals and Functions  
   
-C ランタイム (CRT) ライブラリには、パブリック ライブラリ インターフェイスをサポートするためにのみ使用される関数およびグローバル変数が含まれています。 それらの一部は、実装の詳細としてパブリック ヘッダーで公開されています。 これらの関数およびグローバル変数にはパブリック エクスポートを使用してアクセスできますが、コードでの使用を目的としていません。 これらの関数および変数を使用しているコードがある場合は、代わりにパブリック ライブラリの同等のものを使用するように変更することをお勧めします。 これらの関数はバージョンによって異なる場合があります。 識別しやすいように、ここに一覧を示します。 追加のドキュメントが存在する場合はリンクが提供されますが、一般的に、これらの実装の詳細は説明されません。  
+The C runtime (CRT) library contains functions and global variables that are used only to support the public library interface. Some of them are exposed in public headers as implementation details. Although these functions and global variables are accessible through public exports, they are not intended for use by your code. We recommend that you change any code that uses these functions and variables to use public library equivalents instead. These functions may change from version to version. They are listed here to help you identify them. Links are provided when additional documentation exists, but in general, these implementation details are not documented.  
   
-## <a name="internal-crt-globals-and-value-macros"></a>内部 CRT グローバルおよび値マクロ  
+## <a name="internal-crt-globals-and-value-macros"></a>Internal CRT Globals and Value Macros  
   
-次のグローバル変数およびマクロ定義が CRT を実装するために使用されます。  
+These global variables and macro definitions are used to implement the CRT.  
   
-|名前|  
+|Name|  
 |----------|  
 |__badioinfo|  
 |[_acmdln](../c-runtime-library/acmdln-tcmdln-wcmdln.md)|  
@@ -892,10 +883,11 @@ C ランタイム (CRT) ライブラリには、パブリック ライブラリ 
 |[_wcmdln](../c-runtime-library/acmdln-tcmdln-wcmdln.md)|  
 |__winitenv|  
   
-## <a name="internal-crt-functions-and-function-macros"></a>内部 CRT 関数および関数マクロ  
- 次の関数および関数マクロは、CRT と C++ 標準ライブラリを実装するために使用されます。  
+## <a name="internal-crt-functions-and-function-macros"></a>Internal CRT Functions and Function Macros
+
+These functions and function macros are used to implement the CRT and the C++ Standard Library.  
   
-|名前|  
+|Name|  
 |----------|  
 |__acrt_iob_func|  
 |__AdjustPointer|  
@@ -905,6 +897,8 @@ C ランタイム (CRT) ライブラリには、パブリック ライブラリ 
 |__C_specific_handler|  
 |_calloc_base|  
 |_chkesp|  
+|__chkstk|  
+|_chkstk|  
 |_chvalidator|  
 |_chvalidator_l|  
 |_CIacos|  
@@ -1197,5 +1191,6 @@ C ランタイム (CRT) ライブラリには、パブリック ライブラリ 
 |_Xbad_alloc|  
 |_Xlength_error|  
   
-## <a name="see-also"></a>関連項目  
- [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
+## <a name="see-also"></a>See Also
+
+[Run-Time Routines by Category](../c-runtime-library/run-time-routines-by-category.md)

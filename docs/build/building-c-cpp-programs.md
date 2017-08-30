@@ -1,62 +1,77 @@
 ---
-title: "C/C++ プログラムのビルド | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vcbuilding"
-  - "buildingaprogramVC"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビルド [C++]"
-  - "ビルド [C++], オプション"
-  - "プロジェクト [C++], ビルド"
-  - "Visual C++ プロジェクト, ビルド"
-  - "Visual C++, ビルド オプション"
+title: Building C/C++ Programs | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vcbuilding
+- buildingaprogramVC
+dev_langs:
+- C++
+helpviewer_keywords:
+- builds [C++]
+- Visual C++ projects, building
+- projects [C++], building
+- builds [C++], options
+- Visual C++, build options
 ms.assetid: fa6ed4ff-334a-4d99-b5e2-a1f83d2b3008
 caps.latest.revision: 15
-caps.handback.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# C/C++ プログラムのビルド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 05e5b8707d968707f12c1a9b19c511adaa99ddd2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Visual C\+\+ プロジェクトは、Visual Studio またはコマンド ラインでビルドできます。  Visual Studio IDE は、[MSBuild](../Topic/MSBuild%20\(Visual%20C++\).md) を使用してプロジェクトやソリューションをビルドします。  コマンド ラインでは、C\/C\+\+ コンパイラ \(cl.exe\) と リンカー \(link.exe\) を使用して単純なプロジェクトをビルドできます。  コマンド ラインでより複雑なプロジェクトをビルドするには、MSBuild または [NMAKE](../build/nmake-reference.md) を使用できます。  [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] を使用してプロジェクトとソリューションをビルドする方法の概要については、「[Visual Studio でのアプリケーションのビルド](../Topic/Compiling%20and%20Building%20in%20Visual%20Studio.md)」を参照してください。  
+---
+# <a name="building-cc-programs"></a>Building C/C++ Programs
+
+You can build Visual C++ projects either in Visual Studio or on the command line. The Visual Studio IDE uses [MSBuild](../build/msbuild-visual-cpp.md) to build projects and solutions. On the command line, you can use the C/C++ compiler (cl.exe) and linker (link.exe) to build simple projects. To build more complex projects on the command line, you can use MSBuild or [NMAKE](../build/nmake-reference.md). For an overview about how to use [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] to build projects and solutions, see [Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio).  
   
-## このセクションの内容  
- [Visual Studio での C\+\+ プロジェクトのビルド](../ide/building-cpp-projects-in-visual-studio.md)  
- Visual Studio IDE を使用して C\/C\+\+ プロジェクトをビルドする方法について説明します。  
+## <a name="in-this-section"></a>In This Section  
+
+[Building C++ Projects in Visual Studio](../ide/building-cpp-projects-in-visual-studio.md)  
+Discusses how to use the Visual Studio IDE to build your C/C++ project.  
   
- [コマンド ラインでのビルド](../Topic/Building%20on%20the%20Command%20Line.md)  
- Visual Studio に含まれている C\/C\+\+ コマンド ライン コンパイラおよびビルド ツールの使用方法について説明します。  
+[Build C/C++ code on the command line](../build/building-on-the-command-line.md)  
+Discusses how to use the C/C++ command-line compiler and build tools that are included in Visual Studio.  
   
- [C\/C\+\+ 分離アプリケーションおよび side\-by\-side アセンブリのビルド](../build/building-c-cpp-isolated-applications-and-side-by-side-assemblies.md)  
- アプリケーションの分離、side\-by\-side アセンブリなどの考え方に基づいた Windows デスクトップ アプリケーションの配置モデルについて説明します。  
+[Building C/C++ Isolated Applications and Side-by-side Assemblies](../build/building-c-cpp-isolated-applications-and-side-by-side-assemblies.md)  
+Describes the deployment model for Windows Desktop applications, based on the idea of isolated applications and side-by-side assemblies.  
   
- [C\/C\+\+ ビルドのリファレンス](../Topic/C-C++%20Building%20Reference.md)  
- C\+\+ でのプログラムのビルド、コンパイラ オプションとリンカー オプション、およびさまざまなビルド ツールに関する参照記事へのリンクがあります。  
+[C/C++ Building Reference](../build/reference/c-cpp-building-reference.md)  
+Provides links to reference articles about program building in C++, compiler and linker options, and various build tools.  
   
- [64 ビット用プログラムの構成](../build/configuring-programs-for-64-bit-visual-cpp.md)  
- 64 ビット ツール セットを使用し、64 ビット アーキテクチャをターゲットとして Visual Studio とコマンド ラインを設定する方法について説明し、コードを 64 ビット アーキテクチャに移行するときに一般的に発生する、移行に関する問題について説明します。  
+[Configure Visual C++ for 64-bit, x64 targets](../build/configuring-programs-for-64-bit-visual-cpp.md)  
+Describes how to configure both Visual Studio and the command line to use the 64-bit toolset and how to target 64-bit architectures, and discusses common migration issues when code is moved to 64-bit architectures.  
   
- [ARM プロセッサ用プログラムの構成](../Topic/Configuring%20Programs%20for%20ARM%20Processors%20\(Visual%20C++\).md)  
- ARM プロセッサで使用される用語について説明し、コードを ARM アーキテクチャに移行するときに一般的に発生する、移行に関する問題について説明します。  
+[Configure Visual C++ for ARM processors](../build/configuring-programs-for-arm-processors-visual-cpp.md)  
+Describes the conventions used by ARM processors, and discusses common migration issues when code is moved to ARM architectures.  
   
- [Windows XP 用 C\+\+ 11 プログラムの構成](../build/configuring-programs-for-windows-xp.md)  
- Windows XP 開発をターゲットとしてプラットフォーム ツールセットを設定する方法について説明します。  
+[Configuring Programs for Windows XP](../build/configuring-programs-for-windows-xp.md)  
+Describes how to set the Platform Toolset to target Windows XP development.  
   
-## 関連項目  
- [NIB: Samples Included in Visual C\+\+](http://msdn.microsoft.com/ja-jp/c9ec56b3-2bbd-49b4-8a4c-9ed4b78b7a84)  
- Visual C\+\+ の機能や、Visual C\+\+ がサポートするライブラリとテクノロジを示すサンプル コードへのリンクがあります。  
-  
- [Visual Studio でのアプリケーションのビルド](../Topic/Compiling%20and%20Building%20in%20Visual%20Studio.md)  
- Visual Studio のビルド システムとツールについて説明します。
+## <a name="related-sections"></a>Related Sections  
+ [Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio)  
+ Describes the Visual Studio build system and tools.

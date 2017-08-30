@@ -1,58 +1,75 @@
 ---
-title: "コンパイラおよびリンカーでの Unicode のサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.UseUnicodeResponseFiles"
-  - "VC.Project.VCLibrarianTool.UseUnicodeResponseFiles"
-  - "VC.Project.VCCLCompilerTool.UseUnicodeResponseFiles"
-  - "VC.Project.VCXDCMakeTool.UseUnicodeResponseFiles"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Unicode, Visual C++"
+title: Unicode Support in the Compiler and Linker | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.UseUnicodeResponseFiles
+- VC.Project.VCLibrarianTool.UseUnicodeResponseFiles
+- VC.Project.VCCLCompilerTool.UseUnicodeResponseFiles
+- VC.Project.VCXDCMakeTool.UseUnicodeResponseFiles
+dev_langs:
+- C++
+helpviewer_keywords:
+- Unicode, Visual C++
 ms.assetid: acc1d322-56b9-4696-a30e-2af891a4e288
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# コンパイラおよびリンカーでの Unicode のサポート
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 650d8fd430ff0825f0e2fb08d279c509dc62c5a6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-このトピックでは、Visual C\+\+ ビルド ツールでの Unicode のサポートについて説明します。  
+---
+# <a name="unicode-support-in-the-compiler-and-linker"></a>Unicode Support in the Compiler and Linker
+This topic describes Unicode support in the Visual C++ build tools.  
   
- ファイル名  
- コマンド ラインまたはコンパイラ ディレクティブ \(\#include など\) で指定されるファイル名に、Unicode 文字を含めることができるようになりました。  
+ Filenames  
+ Filenames specified on the command line or in compiler directives (such as #include) may now contain Unicode characters.  
   
- ソース コード ファイル  
- 識別子、マクロ、文字列リテラル、文字リテラル、およびコメントで、Unicode 文字がサポートされるようになりました。また、ユニバーサル文字名もサポートされるようになりました。  
+ Source code files  
+ Unicode characters are now supported in identifiers, macros, string and character literals, and in comments.  Universal character names are also now supported.  
   
- Unicode は、次のエンコーディングのソース コード ファイルに入力できます。  
+ Unicode can be input into a source code file in the following encodings:  
   
--   BOM \(Byte Order Mark\) 付き、または BOM なしの UTF\-16 リトル エンディアン。  
+-   UTF-16 little endian with or without byte order mark (BOM)  
   
--   BOM 付き、または BOM なしの UTF\-16 ビッグ エンディアン。  
+-   UTF-16 big endian with or without BOM  
   
--   BOM 付きの UTF\-8  
+-   UTF-8 with BOM  
   
- 出力  
- コンパイル時に、コンパイラは UTF\-16 で診断をコンソールに出力します。コンソールに表示できる文字は、コンソール ウィンドウのプロパティによって決まりますファイルにリダイレクトされるコンパイラ出力は、現在の ANSI コンソール コードページになります。  
+ Output  
+ During compilation, compiler outputs diagnostics to the console in UTF-16.  The characters that can be displayed at your console depend on the console window properties.  Compiler output redirected to a file is in the current ANSI console codepage.  
   
- リンカー応答ファイルおよび .DEF ファイル  
- 応答ファイルおよび DEF ファイルは、BOM 付きの UTF\-16、または ANSI にできます。以前は ANSI だけがサポートされていました。  
+ Linker response files and .DEF files  
+ Response files and DEF files can be either UTF-16 with a Byte Order Mark or ANSI.  Previously only ANSI was supported.  
   
- .asm ダンプおよび .cod ダンプ  
- .asm ダンプおよび .cod ダンプは、MASM との互換性のために、既定で ANSI になっています。UTF\-8 を出力するには \/FAu を使用します。\/FAs を指定した場合、混在したソースが直接出力されるため、文字が正しく表示されない可能性があります。たとえば、ソース コードが UTF\-8 の場合に \/FAsu を指定しなかった場合などがこれにあたります。  
+ .asm and .cod dumps  
+ .asm and .cod dumps are in ANSI by default for compatibility with MASM.  Use /FAu to output UTF-8.  Note that if you specify /FAs, the intermingled source will just be directly printed and may look garbled, for example if source code is UTF-8 and you didn't specify /FAsu.  
   
- 開発環境で Unicode ファイル名を有効にするには \(「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照\)、適切なツールを選択するか、既定で有効になっている **\[UNICODE 応答ファイルの使用\]** プロパティを選択します。  この既定値を変更するのは、Unicode をサポートしていないコンパイラを使用するように開発環境を変更する場合などです。  
+ You can enable Unicode file names in the development environment (see  [Working with Project Properties](../../ide/working-with-project-properties.md)) by selecting the appropriate tool and by selecting the **Enable Unicode Response Files** property, which is enabled by default. One reason you might change this default is if you modify your development environment to use a compiler that does not have Unicode support.  
   
-## 参照  
- [コマンド ラインでのビルド](../Topic/Building%20on%20the%20Command%20Line.md)
+## <a name="see-also"></a>See Also  
+ [Build C/C++ code on the command line](../../build/building-on-the-command-line.md)

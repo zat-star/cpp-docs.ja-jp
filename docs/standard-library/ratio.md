@@ -58,42 +58,46 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 39fdef1976a506c36a553d575c83462e7c6e9ee0
+ms.translationtype: MT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 492599963f479e3a4190c31b99156d4f7695f316
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 08/30/2017
 
 ---
 # <a name="ltratiogt"></a>&lt;ratio&gt;
-コンパイル時に、有理数の格納および操作に使用される定数およびテンプレートを定義するには、標準ヘッダー \<ratio> を含めます。  
+
+Include the standard header \<ratio> to define constants and templates that are used to store and manipulate rational numbers at compile time.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 #include <ratio>  
 ```  
   
-### <a name="ratio-structure"></a>ratio 構造体  
+### <a name="ratio-template"></a>ratio Template  
 
-```
-struct ratio
+```cpp
+template<std::intmax_t Numerator, std::intmax_t Denominator = 1>
+   struct ratio // holds the ratio of Numerator to Denominator
 {
-    static constexpr intmax_t num;
-    static constexpr intmax_t den;
-    typedef ratio<num, den>  type;
-};
+   static constexpr std::intmax_t num;
+   static constexpr std::intmax_t den;
+   typedef ratio<num, den> type;
+}
 ```  
- [ratio 構造体](http://msdn.microsoft.com/en-us/3f7961f4-802b-4251-b3c3-090ef91c0dba)は、`num` / `den` == N / D で `num` と `den` が共通係数を持たないように、静的な定数 `num` および `den` を定義します。 `num` / `den` は、テンプレート クラスによって表される `value` です。 したがって、`type` は `num` == N0 および `den` == D0 のインスタンス化 `ratio<N0, D0>` を指定します。  
+
+The template `ratio` defines the static constants `num` and `den` such that `num` / `den` == Numerator / Denominator and `num` and `den` have no common factors. `num` / `den` is the value that is represented by the template class. Therefore, `type` designates the instantiation `ratio<num, den>`.  
   
-### <a name="specializations"></a>特殊化  
- また、\<ratio> は、次の形式で `ratio` の特殊化を定義します。  
+### <a name="specializations"></a>Specializations
+
+\<ratio> also defines specializations of `ratio` that have the following form.  
   
- `template <class R1, class R2> struct ratio_specialization`  
+`template <class R1, class R2> struct ratio_specialization`  
   
- それぞれの特殊化は、`ratio` の特殊化である必要がある&2; つのテンプレート パラメーターを使用します。 `type` の値は関連する論理操作によって決定されます。  
+Each specialization takes two template parameters that must also be specializations of `ratio`. The value of `type` is determined by an associated logical operation.  
   
-|名前|`type` 値|  
+|Name|`type` Value|  
 |----------|------------------|  
 |`ratio_add`|`R1 + R2`|  
 |`ratio_divide`|`R1 / R2`|  
@@ -106,17 +110,19 @@ struct ratio
 |`ratio_not_equal`|`!(R1 == R2)`|  
 |`ratio_subtract`|`R1 - R2`|  
   
-### <a name="typedefs"></a>typedef  
+### <a name="typedefs"></a>typedefs  
+
+For convenience, the header defines ratios for the standard SI prefixes:
   
-```
-typedef ratio<1,  1000000000000000000> atto;
-typedef ratio<1,     1000000000000000> femto;
-typedef ratio<1,        1000000000000> pico;
+```cpp
+typedef ratio<1, 1000000000000000000> atto;
+typedef ratio<1, 1000000000000000> femto;
+typedef ratio<1, 1000000000000> pico;
 typedef ratio<1, 1000000000> nano;
 typedef ratio<1, 1000000> micro;
 typedef ratio<1, 1000> milli;
-typedef ratio<1,  100> centi;
-typedef ratio<1,   10> deci;
+typedef ratio<1, 100> centi;
+typedef ratio<1, 10> deci;
 typedef ratio<10, 1> deca;
 typedef ratio<100, 1> hecto;
 typedef ratio<1000, 1> kilo;
@@ -127,8 +133,8 @@ typedef ratio<1000000000000000, 1> peta;
 typedef ratio<1000000000000000000, 1> exa;
 ```  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 
