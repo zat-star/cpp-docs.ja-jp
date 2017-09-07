@@ -26,16 +26,16 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3c1955bece0c8cdadb4a151ee06fa006402666a4
-ms.openlocfilehash: d00951204a358ec064f69035b7dd6ac5adc08ed9
+ms.translationtype: HT
+ms.sourcegitcommit: 467fc9fdbdf1df73590e5ca498067eb2a5b5c900
+ms.openlocfilehash: 42b93960a6e0b829f3501c92a081953cf1051be4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/14/2017
 
 ---
    
 # <a name="c-conformance-improvements-in-includevsdev15mdmiscincludesvsdev15mdmd"></a>[!INCLUDE[vs_dev15_md](misc/includes/vs_dev15_md.md)] の C++ 準拠の強化
-Update Version 15.3 での改良点については、Visual Studio Update Version 15.3 の「[バグ修正](#update_153)」をご覧ください。
+
 ## <a name="new-language-features"></a>新しい言語機能  
 一般化された constexpr および集計用の NSDMI をサポートし、コンパイラは、C++ 14 標準で追加されたすべての機能に対応するようになりました。 コンパイラには、C++11 標準および C++98 標準の一部の機能がないことに注意してください。 コンパイラの現在の状態については、「[Visual C++ Language Conformance (Visual C++ 言語への準拠)](visual-cpp-language-conformance.md)」の表を参照してください。
 
@@ -55,12 +55,33 @@ Update Version 15.3 での改良点については、Visual Studio Update Versio
 
 **汎用化された範囲ベースの for loop** (コンパイラ スイッチが不要) 範囲ベースの for loop で、begin() および end() が同じ型のオブジェクトを返す必要がなくなりました。 これにより、end() が、Ranges-V3 範囲で定義されている範囲で使用されるような sentinel オブジェクトを返すことができます。 詳細については、「[Generalizing the Range-Based For Loop](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0184r0.html)」 (範囲ベースの for loop の汎用化) と「[range-v3 library on GitHub](https://github.com/ericniebler/range-v3)」 (GitHub 上の range-v3 ライブラリ) を参照してください。 
 
+**Visual Studio 2017 バージョン 15.3**:
+
+**constexpr ラムダ** 定数式でラムダ式を使用できるようになりました。 詳しくは、「[Constexpr Lambda (Constexpr ラムダ)](http://open-std.org/JTC1/SC22/WG21/docs/papers/2015/n4487.pdf)」をご覧ください。
+
+**関数テンプレートでの if constexpr** 関数テンプレートに、`if constexpr` ステートメントを含めてコンパイル時の分岐を有効にできます。 詳細については、「[if constexpr](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0128r1.html)」をご覧ください。
+
+**初期化子を含む選択ステートメント** `if`ステートメントには、ステートメント自体のブロック スコープで変数を導入する初期化子を含めることができます。 詳しくは、「[Selection statements with initializer (初期化子を持つ選択ステートメント)](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0305r1.html)」をご覧ください。
+
+**[[maybe_unused]] および [[nodiscard]] 属性** エンティティを使用しない場合に警告を発生させない、または関数呼び出しの戻り値が破棄されたら警告を発生させる、新しい属性です。 詳しくは、「[Wording for maybe_unused attribute (maybe_unused 属性の表現)](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0212r0.pdf)」と「[Proposal of unused,nodiscard and fallthrough attributes (unused、nodiscard、fallthrough 属性の提案)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0068r0.pdf)」をご覧ください。
+
+**属性の名前空間の繰り返しのない使用** 1 つの属性リストで 1 つの名前空間の識別子のみを有効にする新しい構文です。 詳しくは、「[Attributes in C++ (C++ における属性)](cpp/attributes2.md)」をご覧ください。
+
+**構造化バインド** 値が、配列、std::tuple または std::pair のいずれかである、または、すべてのパブリックの非静的データ メンバーを持つときに、1 つの宣言で、そのコンポーネントの個別の名前を持つ値を格納できるようになりました。 詳しくは、「[Structured Bindings (構造化バインド)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0144r0.pdf)」をご覧ください。
+
+**列挙型クラスの値の構築ルール** 定義で列挙子を導入せず、ソースがリスト初期化構文を使用している場合に、スコープ列挙の基になる型から列挙型自体への、暗黙的な/非縮小の変換が使用できるようになりました。 詳しくは、「[Construction Rules for enum class Values (列挙型クラスの値の構築ルール)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0138r2.pdf)」をご覧ください。
+
+***this を値でキャプチャする**  ラムダ式の "\*this" オブジェクトが値でキャプチャできるようになりました。 これにより、特に新しいコンピューター アーキテクチャで、並列で非同期の操作でラムダが呼び出されるシナリオを実現できます。 詳しくは、「[Lambda Capture of \*this by Value as [=,\*this] (*this の [=,*this] としての値によるラムダ キャプチャ)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0018r3.html)」をご覧ください。
+
+**bool** operator++ の operator++ 削除は、`bool` 型ではサポートされなくなりました。 詳しくは、「[Remove Deprecated operator++(bool) (非推奨の operator++(bool) の削除)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0002r1.html)」をご覧ください。
+
+**非推奨の "register" キーワードの削除** `register` キーワードは、以前は非推奨でしたが (Visual C++ コンパイラでは無視される)、言語から削除されました。 詳しくは、「[Remove Deprecated Use of the register Keyword (register キーワードの非推奨使用の削除)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0001r1.html)」をご覧ください。
 
 Visual Studio 2015 更新プログラム 3 での準拠の機能強化の完全な一覧については、「[Visual C++ What's New 2003 through 2015](https://msdn.microsoft.com/en-us/library/mt723604.aspx)」 (Visual C++ 2003 から 2015 の新機能) を参照してください。
 
 ## <a name="bug-fixes"></a>バグ修正
 ### <a name="copy-list-initialization"></a>Copy-list-initialization
-Visual Studio 2017 は、初期化子リストを使用したオブジェクト作成に関連するコンパイラ エラーを正しく発生させます。このエラーは、Visual Studio 2015 でキャッチされず、そのためにクラッシュや未定義の実行時の動作の原因になることがありました。  N4594 13.3.1.7p1 のとおり、copy-list-initialization で、コンパイラは、オーバーロードの解決のために明示的なコンストラクターを考慮する必要がありますが、そのオーバーロードが実際に選択された場合にエラーを発生させる必要があります。 
+Visual Studio 2017 は、初期化子リストを使用したオブジェクト作成に関連するコンパイラ エラーを正しく発生させます。このエラーは、Visual Studio 2015 でキャッチされず、そのためにクラッシュや未定義の実行時の動作の原因になることがありました。 N4594 13.3.1.7p1 のとおり、copy-list-initialization で、コンパイラは、オーバーロードの解決のために明示的なコンストラクターを考慮する必要がありますが、そのオーバーロードが実際に選択された場合にエラーを発生させる必要があります。 
 
 次の 2 つの例は、Visual Studio 2017 ではなく Visual Studio 2015 でコンパイルします。
 ```cpp  
@@ -276,14 +297,14 @@ constexpr bool test2 = !IsCallable<int*, int>::value;
 static_assert(test2, "PASS2");
 ```
 ### <a name="classes-declared-in-anonymous-namespaces"></a>匿名の名前空間で宣言されたクラス
-C++ 標準によると、匿名の名前空間内で宣言されたクラスは内部リンケージがあるため、エクスポートすることができません。 Visual Studio 2015 以前のバージョンでは、この規則は適用されませんでした。 Visual Studio 2017 では、この規則は部分的に適用されます。 次は、Visual Studio 2017 で発生したエラーを表す例です: "error C2201: 'const `anonymous namespace'::S1::`vftable'': must have external linkage in order to be exported/imported."
+C++ 標準によると、匿名の名前空間内で宣言されたクラスは内部リンケージがあるため、エクスポートすることができません。 Visual Studio 2015 以前のバージョンでは、この規則は適用されませんでした。 Visual Studio 2017 では、この規則は部分的に適用されます。 次の例は、Visual Studio 2017 で発生したエラーを表します: "エラー C2201: const anonymous namespace::S1::vftable:ブロック内に関数の宣言がありますが、extern を宣言していません。"
 
 ```cpp
 struct __declspec(dllexport) S1 { virtual void f() {} }; //C2201
 ```
 
 ### <a name="default-initializers-for-value-class-members-ccli"></a>値クラス メンバー (C++/CLI) の既定の初期化子
-Visual Studio 2015 以前では、コンパイラは、値クラスのメンバーの既定のメンバーの初期化子を許可しました (ただし無視しました)。  値クラスの既定の初期化子は、常にメンバーを 0 に初期化します。既定のコンストラクターは許可されません。  Visual Studio 2017 年では、この例に示すように、既定メンバー初期化子は、コンパイラ エラーを発生させます。
+Visual Studio 2015 以前では、コンパイラは、値クラスのメンバーの既定のメンバーの初期化子を許可しました (ただし無視しました)。 値クラスの既定の初期化子は、常にメンバーを 0 に初期化します。既定のコンストラクターは許可されません。 Visual Studio 2017 年では、この例に示すように、既定メンバー初期化子は、コンパイラ エラーを発生させます。
 
 ```cpp  
 value struct V
@@ -349,7 +370,7 @@ void f(ClassLibrary1::Class1 ^r1, ClassLibrary1::Class2 ^r2)
 }
 ```
 
-## <a name="update_153"></a> Visual Studio 2017 Update Version 15.3
+## <a name="update_153"></a>Visual Studio 2017 バージョン 15.3 でのバグ修正
 ### <a name="calls-to-deleted-member-templates"></a>削除されたメンバー テンプレートへの呼び出し
 Visual Studio の以前のバージョンでは、実行時のクラッシュの原因になる可能性がある、削除されたメンバー テンプレートの不適切な形式の呼び出しに対して、コンパイラがエラーの生成に失敗する場合がありました。 次のコードに対しては、C2280: "'int S<int>::f<int>(void)': 削除された関数を参照しようとしています" が生成されるようになりました。
 ```cpp
@@ -366,7 +387,7 @@ void g()
 このエラーを解決するには、i を `int` として宣言します。
 
 ### <a name="pre-condition-checks-for-type-traits"></a>型の特徴に対する前提条件の確認
-Visual Studio 2017 Update Version 15.3 では、型の特徴の前提条件の確認が向上し、標準にいっそう厳密に準拠するようになりました。 そのような確認の 1 つは割り当て可能に関するものです。 Update Version 15.3 では、次のコードに対して C2139 が生成されます。
+Visual Studio 2017 バージョン 15.3 では、型の特徴の前提条件の確認が向上し、標準にいっそう厳密に準拠するようになりました。 そのような確認の 1 つは割り当て可能に関するものです。 Update Version 15.3 では、次のコードに対して C2139 が生成されます。
 
 ```cpp
 struct S; 
@@ -412,7 +433,7 @@ int main()
 このエラーを解決するには、`#pragma managed` ディレクティブを削除し、呼び出し元をネイティブとしてマークして、マーシャリングを回避します。 
 
 ### <a name="experimental-api-warning-for-winrt"></a>WinRT に対する実験用 API の警告
-実験とフィードバックのためにリリースされている WinRT API は、`Windows.Foundation.Metadata.ExperimentalAttribute` で修飾されます。 Update Version 15.3 のコンパイラは、この属性を検出すると警告 C4698 を生成します。 以前のバージョンの Windows SDK に含まれる一部の API は、この属性で既に修飾されており、これらの API を呼び出すとこのコンパイラ警告のトリガーが始まります。 新しい Windows SDK では、付属するすべての型からこの属性が削除されていますが、古い SDK を使っている場合は、付属する型のすべての呼び出しでこの警告を抑制する必要があります。
+実験とフィードバックのためにリリースされている WinRT API は、`Windows.Foundation.Metadata.ExperimentalAttribute` で修飾されます。 Visual Studio 2017 バージョン 15.3 のコンパイラは、この属性を検出すると警告 C4698 を生成します。 以前のバージョンの Windows SDK に含まれる一部の API は、この属性で既に修飾されており、これらの API を呼び出すとこのコンパイラ警告のトリガーが始まります。 新しい Windows SDK では、付属するすべての型からこの属性が削除されていますが、古い SDK を使っている場合は、付属する型のすべての呼び出しでこの警告を抑制する必要があります。
 次のようなコードを実行すると、警告 C4698: "'Windows::Storage::IApplicationDataStatics2::GetForUserAsync' は、評価の目的でのみ提供されています。将来の更新で変更または削除されることがあります" が発生します。
 ```cpp
 Windows::Storage::IApplicationDataStatics2::GetForUserAsync() //C4698
@@ -429,7 +450,7 @@ Windows::Storage::IApplicationDataStatics2::GetForUserAsync()
 #pragma warning(pop)
 ```
 ### <a name="out-of-line-definition-of-a-template-member-function"></a>テンプレート メンバー関数のアウトオブライン定義 
-Update Version 15.3 では、クラスで宣言されていないテンプレート メンバー関数のアウトオブライン定義を検出すると、エラーが生成されます。 次のようなコードに対しては、エラー C2039: "'f': 'S' のメンバーではありません" が発生します。
+Visual Studio 2017 バージョン 15.3 では、クラスで宣言されていないテンプレート メンバー関数のアウトオブライン定義を検出すると、エラーが生成されます。 次のようなコードに対しては、エラー C2039: "'f': 'S' のメンバーではありません" が発生します。
 
 ```cpp
 struct S {}; 
@@ -450,11 +471,10 @@ void S::f(T t) {}
 ```
 
 ### <a name="attempting-to-take-the-address-of-this-pointer"></a>"this" ポインターのアドレスを取得する試み
-C++ では、"this" は X へのポインター型の prvalue です。"this" のアドレスを取得すること、または左辺値参照にバインドすることはできません。 前のバージョンの Visual Studio では、キャストを実行することにより、この制限を回避できました。 Update Version 15.3 では、コンパイラはエラー C2664 を生成します。
+C++ では、"this" は X へのポインター型の prvalue です。"this" のアドレスを取得すること、または左辺値参照にバインドすることはできません。 前のバージョンの Visual Studio では、キャストを実行することにより、この制限を回避できました。 Visual Studio 2017 バージョン 15.3 では、コンパイラはエラー C2664 を生成します。
 
 ### <a name="conversion-to-an-inaccessible-base-class"></a>アクセスできない基底クラスへの変換
-Update Version 15.3 では、アクセスできない基底クラスに型を変換しようとすると、エラーになります。 コンパイラで発生するエラーは、  
-"エラー C2243: 'type cast': 'D *' から 'B *' の変換は存在しますが、アクセスできません" です。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 コンパイラは、このようなコードを検出すると、C2243 を生成するようになりました。
+Visual Studio 2017 バージョン 15.3 では、アクセスできない基底クラスに型を変換しようとすると、エラーになります。 コンパイラによって "エラー C2243: 'type cast': 'D *' から 'B *' の変換は存在しますが、アクセスできません" が生成されます。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 コンパイラは、このようなコードを検出すると、C2243 を生成するようになりました。
 
 ```cpp
 #include <memory> 
@@ -468,7 +488,9 @@ void f()
 }
 ```
 ### <a name="default-arguments-are-not-allowed-on-out-of-line-definitions-of-member-functions"></a>メンバー関数のアウトオブライン定義で既定の引数が許可されない
-テンプレート クラスのメンバー関数のアウトオブライン定義では、既定の引数が許可されません。  コンパイラは、/permissive で警告を発行し、/permissive- でハード エラーを発行します。以前のバージョンの Visual Studio では、次のような不適切な形式のコードにより、実行時クラッシュが発生する可能性がありました。 Update Version 15.3 では、警告 C5034: "A<T>::f': クラス テンプレートのメンバーのアウトオブライン定義において既定の引数を使用することはできません" が生成されます。
+テンプレート クラス内のメンバー関数のアウトオブライン定義では、既定の引数が許可されません。コンパイラは /permissive では警告を発し、/permissive- ではハード エラーを発します。 
+
+Visual Studio の以前のバージョンでは、形式が間違っている次のコードでランタイム クラッシュが発生する可能性がありました。 Visual Studio 2017 バージョン 15.3 では、警告 C5034: "'A<T>::f': クラス テンプレートのメンバーのアウトオブライン定義において既定の引数を使用することはできません" が生成されます。
 ```cpp
  
 template <typename T> 
@@ -485,7 +507,7 @@ T A<T>::f(T t, bool b = false) // C5034
 このエラーを解決するには、既定の引数 "= false" を削除します。 
 
 ### <a name="use-of-offsetof-with-compound-member-designator"></a>複合メンバー指定子での offsetof の使用
-Update Version 15.3 では、m が "複合メンバー指定子" である offsetof(T, m) を使用し、/Wall オプションを指定してコンパイルすると、警告が発生します。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 Update Version 15.3 では、"warning C4841: non-standard extension used: compound member designator in offseto" (警告 C4841: 非標準の拡張機能が使用されています: offseto での複合メンバー指定子) が生成されます。
+Visual Studio 2017 バージョン 15.3 では、m が "複合メンバー指定子" である offsetof(T, m) を使用して、/Wall オプションを指定してコンパイルすると、警告が発生します。 次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 Visual Studio 2017 バージョン 15.3 では、"警告 C4841: 非標準の拡張機能が使用されています:複合メンバー指定子が offsetof で使用されています" が生成されます。
 
 ```cpp
   
@@ -506,7 +528,7 @@ constexpr auto off = offsetof(A, arr[2]);
 ```
 
 ### <a name="using-offsetof-with-static-data-member-or-member-function"></a>静的なデータ メンバーまたはメンバー関数での offsetof の使用
-Update Version 15.3 では、m が静的なデータ メンバーまたはメンバー関数である offsetof(T, m) を使うと、エラーになります。 以下のコードでは、"error C4597: undefined behavior: offsetof applied to member function 'foo'" (エラー C4597: 定義されていない動作: offsetof がメンバー関数 'foo' に適用されています) および "error C4597: undefined behavior: offsetof applied to static data member 'bar'" (エラー C4597: 定義されていない動作: offsetof が静的データ メンバー 'bar' に適用されています) が発生します。
+Visual Studio 2017 バージョン 15.3 では、m が静的なデータ メンバーまたはメンバー関数である offsetof(T, m) を使うと、エラーになります。 以下のコードでは、"error C4597: undefined behavior: offsetof applied to member function 'foo'" (エラー C4597: 定義されていない動作: offsetof がメンバー関数 'foo' に適用されています) および "error C4597: undefined behavior: offsetof applied to static data member 'bar'" (エラー C4597: 定義されていない動作: offsetof が静的データ メンバー 'bar' に適用されています) が発生します。
 ```cpp
  
 #include <cstddef> 
@@ -520,10 +542,10 @@ constexpr auto off = offsetof(A, foo);
 Constexpr auto off2 = offsetof(A, bar);
 ```
  
-次のコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 このエラーを解決するには、定義されていない動作を呼び出さないようにコードを変更します。 これは、C++ 標準で許可されていない移植性のないコードです。
+このコードは形式が不適切であり、実行時にクラッシュが発生する可能性があります。 このエラーを解決するには、定義されていない動作を呼び出さないようにコードを変更します。 これは、C++ 標準で許可されていない移植性のないコードです。
 
 ### <a name="new-warning-on-declspec-attributes"></a>declspec 属性についての新しい警告
-Update Version 15.3 では、extern "C" リンケージ指定の前に __declspec(…) を適用した場合、コンパイラは属性を無視しないようになりました。 以前のコンパイラは属性を無視し、実行時に影響する可能性がありました。 `/Wall /WX` オプションが設定されている場合、次のコードでは、"warning C4768: __declspec attributes before linkage specification are ignored" (警告 C4768: リンケージ指定の前の __declspec 属性は無視されます) が発生します。
+Visual Studio 2017 バージョン 15.3 では、extern "C" リンケージ指定の前に __declspec(…) を適用した場合、コンパイラは属性を無視しないようになりました。 以前のコンパイラは属性を無視し、実行時に影響する可能性がありました。 `/Wall /WX` オプションが設定されている場合、次のコードでは、"warning C4768: __declspec attributes before linkage specification are ignored" (警告 C4768: リンケージ指定の前の __declspec 属性は無視されます) が発生します。
 
 ```cpp
  
@@ -538,7 +560,7 @@ extern "C" __declspec(noinline) HRESULT __stdcall
 この警告は既定ではオフになっており、`/Wall /WX` でコンパイルされたコードにのみ影響します。
 
 ### <a name="decltype-and-calls-to-deleted-destructors"></a>decltype と削除されたデストラクターの呼び出し
-以前のバージョンの Visual Studio では、"decltype" と関連付けられた式での削除されたデストラクターの呼び出しを、コンパイラは検出しませんでした。 Update Version 15.3 では、次のようなコードでは、"エラー C2280: 'A<T>::~A(void)': 削除された関数を参照しようとしています" が発生します。
+以前のバージョンの Visual Studio では、"decltype" と関連付けられた式での削除されたデストラクターの呼び出しを、コンパイラは検出しませんでした。 Visual Studio 2017 バージョン 15.3 では、次のようなコードでは、"エラー C2280: 'A<T>::~A(void)': 削除された関数を参照しようとしています" が発生します。
 
 ```cpp
 template<typename T> 
@@ -559,7 +581,7 @@ void h()
 }
 ```
 ### <a name="uninitialized-const-variables"></a>初期化されていない const 変数
-Visual Studio 2017 RTW リリースには、"const" 変数が初期化されていないと C++ コンパイラが診断を生成しないという回帰がありました。 この回帰は、Visual Studio 2017 Update 1 で修正されました。 次のコードでは、"警告 C4132: 'Value': const オブジェクトは初期化しなければなりません" が生成されます。
+Visual Studio 2017 RTW リリースには、"const" 変数が初期化されていないと C++ コンパイラが診断を生成しないという回帰がありました。 この回帰は、Visual Studio 2017 バージョン 15.3 で修正されました。 次のコードでは、"警告 C4132: 'Value': const オブジェクトは初期化しなければなりません" が生成されます。
 
 ```cpp
 const int Value; //C4132
@@ -567,7 +589,7 @@ const int Value; //C4132
 このエラーを解決するに、`Value` に値を割り当てます。
 
 ### <a name="empty-declarations"></a>空の宣言
-Visual Studio 2017 Update Version 15.3 では、組み込み型だけでなくすべての型で、空の宣言が警告されるようになりました。 次のコードでは、4 つの宣言すべてに対し、レベル 2 の警告 C4091 が生成されます。
+Visual Studio 2017 バージョン 15.3 では、組み込み型だけでなくすべての型で、空の宣言が警告されるようになりました。 次のコードでは、4 つの宣言すべてに対し、レベル 2 の警告 C4091 が生成されます。
 
 ```cpp
 struct A {};
@@ -580,13 +602,13 @@ B<int>; // warning C4091 : '' : ignored on left of 'B<int>' when no variable is 
 C;      // warning C4091 : '' : ignored on left of 'C' when no variable is declared
 ```
 
-警告を解決するには、空の宣言をコメントにするか、削除します。  名前のないオブジェクトが副作用 (RAII など) を意図したものである場合、名前を指定する必要があります。
+警告を解決するには、空の宣言をコメントにするか、削除します。 名前のないオブジェクトが副作用 (RAII など) を意図したものである場合、名前を指定する必要があります。
  
 警告は、/Wv:18 では除外され、警告レベル W2 では既定で有効になります。
 
 
 ### <a name="stdisconvertible-for-array-types"></a>配列型の std::is_convertible
-以前のバージョンのコンパイラでは、配列型の [std::is_convertible](standard-library/is-convertible-class.md) で正しい結果が得られませんでした。 そのため、ライブラリの作成者は `std::is_convertable<…>` 型の特徴を使用する場合に、Visual C++ コンパイラを特例処理する必要がありました。 次の例では、静的アサートは以前のバージョンの Visual Studio では成功しますが、Visual Studio 2017 Update バージョン 15.3 では失敗します。
+以前のバージョンのコンパイラでは、配列型の [std::is_convertible](standard-library/is-convertible-class.md) で正しい結果が得られませんでした。 そのため、ライブラリの作成者は `std::is_convertible<…>` 型の特徴を使用する場合に、Visual C++ コンパイラを特例処理する必要がありました。 次の例では、静的アサートは以前のバージョンの Visual Studio では成功しますが、Visual Studio 2017 バージョン 15.3 では失敗します。
 
 ```cpp
 #include <type_traits>
@@ -594,9 +616,9 @@ C;      // warning C4091 : '' : ignored on left of 'C' when no variable is decla
 using Array = char[1];
  
 static_assert(std::is_convertible<Array, Array>::value);
-static_assert((std::is_convertible<const Array, const Array>::value), "");
-static_assert((std::is_convertible<Array&, Array>::value), "");
-static_assert((std::is_convertible<Array, Array&>::value), "");
+static_assert(std::is_convertible<const Array, const Array>::value, "");
+static_assert(std::is_convertible<Array&, Array>::value, "");
+static_assert(std::is_convertible<Array, Array&>::value, "");
 ```
 
 **std::is_convertible<From, To>** は、以下のように、虚数関数定義の形式が適切であるかどうかを確認して計算されます。
@@ -605,7 +627,7 @@ static_assert((std::is_convertible<Array, Array&>::value), "");
 ``` 
 
 ### <a name="private-destructors-and-stdisconstructible"></a>プライベート デストラクターと std::is_constructible
-以前のバージョンのコンパイラでは、[std::is_constructible](standard-library/is-constructible-class.md) の結果の判定時にデストラクターがプライベートかどうかは無視されていました。 ここではこれについて考えます。 次の例では、静的アサートは以前のバージョンの Visual Studio では成功しますが、Visual Studio 2017 Update バージョン 15.3 では失敗します。
+以前のバージョンのコンパイラでは、[std::is_constructible](standard-library/is-constructible-class.md) の結果の判定時にデストラクターがプライベートかどうかは無視されていました。 ここではこれについて考えます。 次の例では、静的アサートは以前のバージョンの Visual Studio では成功しますが、Visual Studio 2017 バージョン 15.3 では失敗します。
 
 ```cpp
 #include <type_traits>
@@ -627,7 +649,7 @@ static_assert(std::is_constructible<PrivateDtor, int>::value);
 この呼び出しはデストラクターの呼び出しを意味します。
 
 ### <a name="c2668-ambiguous-overload-resolution"></a>C2668: あいまいなオーバーロードの解決
-以前のバージョンのコンパイラでは、宣言と引数依存の参照の両方を使用して、複数の候補が見つかったときに、あいまいさを検出できない場合がありました。 このような場合、誤ったオーバーロードが選択され、ランタイムが予期しない動作になることがあります。 次の例では、Visual Studio 2017 Update バージョン 15.3 で適切に "C2668 'f': オーバーロードされた関数への呼び出しがあいまいです" と示されます。
+以前のバージョンのコンパイラでは、宣言と引数依存の参照の両方を使用して、複数の候補が見つかったときに、あいまいさを検出できない場合がありました。 このような場合、誤ったオーバーロードが選択され、ランタイムが予期しない動作になることがあります。 次の例では、Visual Studio 2017 バージョン 15.3 で適切に "C2668 'f': オーバーロードされた関数への呼び出しがあいまいです" と示されます。
 
 ```cpp
 namespace N {
@@ -654,7 +676,7 @@ void f()
 
 ### <a name="c2660-local-function-declarations-and-argument-dependent-lookup"></a>C2660: ローカル関数宣言と引数依存の参照
 ローカル関数宣言では、外側のスコープ内の関数が非表示になり、引数依存の参照が無効になります。
-ただし、以前のバージョンの Visual C++ コンパイラでは引数依存の参照が実行され、誤ったオーバーロードが選択されて、ランタイムが予期しない動作になる可能性がありました。 通常、このエラーは、ローカル関数宣言のシグネチャが正しくないことが原因で発生します。 次の例では、Visual Studio 2017 Update バージョン 15.3 で "C2660 'f': 関数に 2 個の引数を指定できません" というエラーが正しく発生します。
+ただし、以前のバージョンの Visual C++ コンパイラでは引数依存の参照が実行され、誤ったオーバーロードが選択されて、ランタイムが予期しない動作になる可能性がありました。 通常、このエラーは、ローカル関数宣言のシグネチャが正しくないことが原因で発生します。 次の例では、Visual Studio 2017 バージョン 15.3 で "C2660 'f': 関数に 2 個の引数を指定できません" というエラーが正しく発生します。
 
 ```cpp
 struct S {}; 
@@ -672,7 +694,7 @@ void g()
 問題を修正するには、**f(S)** シグネチャを変更するか、削除します。
 
 ### <a name="c5038-order-of-initialization-in-initializer-lists"></a>C5038: 初期化子リストの初期化の順序
-クラス メンバーは、初期化子リストに表示される順序ではなく、宣言される順序で初期化されます。 以前のバージョンのコンパイラでは、初期化子リストの順序が宣言の順序と異なる場合に警告されませんでした。 そのため、あるメンバーの初期化が、既に初期化されている、リスト内の別のメンバーに依存していた場合に、ランタイム動作が未定義になることがありました。 次の例では、Visual Studio 2017 Update バージョン 15.3 (/Wall または /WX を使用) は、"C5038: データ メンバー 'A::x' の後にデータ メンバー 'A::y' が初期化されます" という内容の警告を出します。
+クラス メンバーは、初期化子リストに表示される順序ではなく、宣言される順序で初期化されます。 以前のバージョンのコンパイラでは、初期化子リストの順序が宣言の順序と異なる場合に警告されませんでした。 そのため、あるメンバーの初期化が、既に初期化されている、リスト内の別のメンバーに依存していた場合に、ランタイム動作が未定義になることがありました。 次の例では、Visual Studio 2017 バージョン 15.3 (/Wall を使用) は、"C5038: データ メンバー 'A::x' の後にデータ メンバー 'A::y' が初期化されます" という内容の警告を出します。
 
 ```cpp
 struct A
@@ -685,7 +707,7 @@ struct A
 ```
 問題を修正するには、宣言と同じ順序になるように初期化子リストを並べ替えます。 初期化子のいずれかまたは両方で基底クラス メンバーが参照される場合に同様の警告が発生します。
 
-警告は既定ではオフになっており、/Wall または /WX でコンパイルされたコードにのみ影響することに注意してください。
+警告は既定ではオフになっており、/Wall でコンパイルされたコードにのみ影響することに注意してください。
 
 ## <a name="see-also"></a>関連項目  
 [Visual C++ 言語への準拠](visual-cpp-language-conformance.md)  

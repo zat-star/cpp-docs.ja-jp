@@ -1,72 +1,91 @@
 ---
-title: "方法 : Visual C++ プロジェクトを 64 ビット プラットフォーム用に設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プラットフォーム [C++]、64 ビット"
-  - "64 ビット プログラミング [C++]、構成 (プロジェクトを)"
-  - "プロジェクト構成 [C++]"
+title: 'How to: Configure Visual C++ Projects to Target 64-Bit, x64 Platforms | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- platforms [C++], 64-bit
+- 64-bit programming [C++], configuring projects
+- project configurations [C++]
 ms.assetid: 2b9ae001-df36-4750-83b2-982145d632ad
 caps.latest.revision: 22
-caps.handback.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# 方法 : Visual C++ プロジェクトを 64 ビット プラットフォーム用に設定する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 835f5f5b2fcfacb162fddaa902c7a1070e9d3773
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Visual Studio でプロジェクト構成を使用して、64 ビットのプラットフォームを対象とするように C\+\+ アプリケーションを設定できます。 Win32 プロジェクトの設定を 64 ビットのプロジェクト構成に移行することもできます。  
+---
+# <a name="how-to-configure-visual-c-projects-to-target-64-bit-x64-platforms"></a>How to: Configure Visual C++ Projects to Target 64-Bit, x64 Platforms
+
+You can use the project configurations in the Visual Studio IDE to set up C++ applications to target 64-bit, x64 platforms. You can also migrate Win32 project settings into a 64-bit project configuration.  
   
-### 64 ビットのプラットフォームを対象とするように C\+\+ アプリケーションを設定するには  
+### <a name="to-set-up-c-applications-to-target-64-bit-platforms"></a>To set up C++ applications to target 64-bit platforms  
   
-1.  構成する C\+\+ プロジェクトを開きます。  
+1.  Open the C++ project that you want to configure.  
   
-2.  そのプロジェクトのプロパティ ページが開きます。 詳細については、「[方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)」を参照してください。  
-  
-    > [!NOTE]
-    >  .NET プロジェクトの場合、**\[構成プロパティ\]** ノードまたはその子ノードのいずれかが **\[\<プロジェクト名\> プロパティ ページ\]** ダイアログ ボックスで選択されていることを確認してください。選択されていない場合、**\[構成マネージャー\]** ボタンは使用不可のままになります。  
-  
-3.  **\[構成マネージャー\]** ボタンを選択して **\[構成マネージャー\]** ダイアログ ボックスを開きます。  
-  
-4.  **\[アクティブ ソリューション プラットフォーム\]** ドロップダウン リストで、**\<新規…\>** オプションを選択して **\[新しいソリューション プラットフォーム\]** ダイアログ ボックスを開きます。  
-  
-5.  **\[新しいプラットフォームを入力または選択してください\]** ドロップダウン リストで、64 ビットのプラットフォームを選択します。  
+2.  Open the property pages for that project. For more information, see [Working with Project Properties](../ide/working-with-project-properties.md).  
   
     > [!NOTE]
-    >  **\[新しいソリューション プラットフォーム\]** ダイアログ ボックスで、**\[設定のコピー元\]** オプションを使用して、既存のプロジェクト設定を新しい 64 ビットのプロジェクト構成にコピーします。  
+    >  For .NET projects, make sure that the **Configuration Properties** node, or one of its child nodes, is selected in the **\<Projectname> Property Pages** dialog box; otherwise, the **Configuration Manager** button remains unavailable.  
   
-6.  **\[OK\]** を選択します。 前の手順で選択したプラットフォームが **\[構成マネージャー\]** ダイアログ ボックスの **\[アクティブ ソリューション プラットフォーム\]** の下に表示されます。  
+3.  Choose the **Configuration Manager** button to open the **Configuration Manager** dialog box.  
   
-7.  **\[構成マネージャー\]** ダイアログ ボックスの **\[閉じる\]** ボタンを選択し、**\[\<プロジェクト名\> プロパティ ページ\]** ダイアログ ボックスの **\[OK\]** ボタンを選択します。  
+4.  In the **Active Solution Platform** drop-down list, select the **\<New...>** option to open the **New Solution Platform** dialog box.  
   
-### Win32 プロジェクトの設定を 64 ビットのプロジェクト構成に移行するには  
-  
--   64 ビットのプラットフォームを対象とするプロジェクトの設定中に **\[新しいソリューション プラットフォーム\]** ダイアログ ボックスが開いたら、**\[設定のコピー元\]** ドロップダウン リストで **\[Win32\]** を選択します。 これらのプロジェクト設定は、プロジェクト レベルで自動的に更新されます。  
-  
-    -   [\/MACHINE](../build/reference/machine-specify-target-platform.md) リンカー オプションは **\/MACHINE:X64** に設定されます。  
-  
-    -   **\[出力の登録\]** はオフにされます。 詳細については、「[\[リンカー\] プロパティ ページ](../Topic/Linker%20Property%20Pages.md)」を参照してください。  
-  
-    -   **\[ターゲット環境\]** は **\/env x64** に設定されます。 詳細については、「[\[全般\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20General.md)」を参照してください。  
-  
-    -   **\[パラメーターの確認\]** はクリアされ、既定値にリセットされます。 詳細については、「[\[詳細\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20Advanced.md)」を参照してください。  
-  
-    -   **\[デバッグ情報の形式\]** が Win32 プロジェクト構成で **\/ZI** に設定された場合、64 ビットのプロジェクト構成では **\/Zi** に設定されます。 詳細については、「[\/Z7、\/Zi、\/ZI \(デバッグ情報の形式\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md)」を参照してください。  
+5.  In the **Type or select the new platform** drop-down list, select a 64-bit target platform.  
   
     > [!NOTE]
-    >  プロジェクトのプロパティは、ファイル レベルでオーバーライドされる場合、いずれも変更されません。  
+    >  In the **New Solution Platform** dialog box, you can use the **Copy settings from** option to copy existing project settings into the new 64-bit project configuration.  
   
-## 参照  
- [64 ビット アプリケーション](../Topic/64-bit%20Applications.md)   
- [64 ビット用プログラムの構成](../build/configuring-programs-for-64-bit-visual-cpp.md)   
- [64 ビット アプリケーションをデバッグする](../Topic/Debug%2064-Bit%20Applications.md)
+6.  Choose the **OK** button. The platform that you selected in the preceding step appears under **Active Solution Platform** in the **Configuration Manager** dialog box.  
+  
+7.  Choose the **Close** button in the **Configuration Manager** dialog box, and then choose the **OK** button in the **\<Projectname> Property Pages** dialog box.  
+  
+### <a name="to-copy-win32-project-settings-into-a-64-bit-project-configuration"></a>To copy Win32 project settings into a 64-bit project configuration  
+  
+-   When the **New Solution Platform** dialog box is open while you set up a project to target a 64-bit platform, in the **Copy settings from** drop-down list, select **Win32**. These project settings are automatically updated on the project level:  
+  
+    -   The [/MACHINE](../build/reference/machine-specify-target-platform.md) linker option is set to **/MACHINE:X64**.  
+  
+    -   **Register Output** is turned OFF. For more information, see [Linker Property Pages](../ide/linker-property-pages.md).  
+  
+    -   **Target Environment** is set to **/env x64**. For more information, see [MIDL Property Pages: General](../ide/midl-property-pages-general.md).  
+  
+    -   **Validate Parameters** is cleared and reset to the default value. For more information, see [MIDL Property Pages: Advanced](../ide/midl-property-pages-advanced.md).  
+  
+    -   If **Debug Information Format** was set to **/ZI** in the Win32 project configuration, then it is set to **/Zi** in the 64-bit project configuration. For more information, see [/Z7, /Zi, /ZI (Debug Information Format)](../build/reference/z7-zi-zi-debug-information-format.md).  
+  
+    > [!NOTE]
+    >  None of these project properties are changed if they are overridden on the file level.  
+  
+## <a name="see-also"></a>See Also  
+
+[.NET Framework 64-bit Applications](/dotnet/framework/64-bit-apps)   
+[Configure Visual C++ for 64-bit, x64 targets](../build/configuring-programs-for-64-bit-visual-cpp.md)   
+[Debug 64-Bit Applications](/visualstudio/debugger/debug-64-bit-applications)

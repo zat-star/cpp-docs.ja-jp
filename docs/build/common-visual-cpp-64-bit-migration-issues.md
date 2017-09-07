@@ -1,60 +1,78 @@
 ---
-title: "Visual C++ の 64 ビットへの移行に関する一般的な問題 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "32 ビット コードの移植 [C++]"
-  - "64 ビット アプリケーション [C++]"
-  - "64 ビット コンパイラ [C++], 移行"
-  - "64 ビット コンパイラ [C++], 移植 (32 ビット コードの)"
-  - "64 ビット プログラミング [C++], 移行"
-  - "移行 [C++], 64 ビット コードの問題"
-  - "移植 (32 ビット コードを 64 ビット コードに)"
-  - "アップグレード (Visual C++ アプリケーションの), 32 ビット コード"
-  - "Win64 [C++]"
+title: Common Visual C++ 64-bit Migration Issues | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- 64-bit programming [C++], migration
+- 64-bit compiler [C++], migration
+- porting 32-bit code to 64-bit code
+- upgrading Visual C++ applications, 32-bit code
+- migration [C++], 64-bit code issues
+- 32-bit code porting [C++]
+- 64-bit applications [C++]
+- 64-bit compiler [C++], porting 32-bit code
+- Win64 [C++]
 ms.assetid: d17fb838-7513-4e2d-8b27-a1666f17ad76
 caps.latest.revision: 19
-caps.handback.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# Visual C++ の 64 ビットへの移行に関する一般的な問題
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 90c4e0486be4556282f1a8402196e4237fca1ab6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Visual C\+\+ を使用して、64 ビット Windows オペレーティング システムで実行するアプリケーションを作成する場合は、以下の点を考慮する必要があります。  
+---
+# <a name="common-visual-c-64-bit-migration-issues"></a>Common Visual C++ 64-bit Migration Issues
+
+When you use Visual C++ to create applications to run on a 64-bit Windows operating system, you should be aware of the following issues:  
   
--   `int` と `long` は、64 ビット Windows オペレーティング システム上で 32 ビット値です。  64 ビット プラットフォーム用にコンパイルする必要があるプログラムでは、ポインターを 32 ビット変数に割り当てないように注意してください。  ポインターは、64 ビットのプラットフォームでは 64 ビットなので、ポインターを 32 ビット変数に割り当てると、ポインター値を切り捨てることになります。  
+-   An `int` and a `long` are 32-bit values on 64-bit Windows operating systems. For programs that you plan to compile for 64-bit platforms, you should be careful not to assign pointers to 32-bit variables. Pointers are 64-bit on 64-bit platforms, and you will truncate the pointer value if you assign it to a 32-bit variable.  
   
--   `size_t`、`time_t`、および  `ptrdiff_t` は、64 ビット Windows オペレーティング システム上で 64 ビット値です。  
+-   `size_t`, `time_t`, and `ptrdiff_t` are 64-bit values on 64-bit Windows operating systems.  
   
--   `time_t` は、Visual C\+\+ 2005 以前の Visual C\+\+ バージョンの 32 ビット Windows オペレーティング システムでは 32 ビット値です。  現在は、`time_t` は既定で 64 ビット整数です。  詳細については、「[時間管理](../c-runtime-library/time-management.md)」を参照してください。  
+-   `time_t` is a 32-bit value on 32-bit Windows operating systems in Visual C++ versions before Visual C++ 2005. `time_t` is now a 64-bit integer by default. For more information, see [Time Management](../c-runtime-library/time-management.md).  
   
-     コード内で `int` 値を使用する場所について、およびその値を `size_t` または `time_t` のどちらの値として処理するかについて考慮する必要があります。  32 ビットよりも大きくなると、`int` ストレージに返されるときにデータが切り捨てられます。  
+     You should be aware of where your code takes an `int` value and processes it as a `size_t` or `time_t` value. It is possible that the number could grow to be larger than a 32-bit number and data will be truncated when it is passed back to the `int` storage.  
   
- %x \(16 進数 `int` 形式\) `printf` 修飾子は、64 ビット Windows オペレーティング システム上では期待どおりに動作しません。  この修飾子は、渡された値の最初の 32 ビットしか操作しません。  
+The %x (hex `int` format) `printf` modifier will not work as expected on a 64-bit Windows operating system. It will only operate on the first 32 bits of the value that is passed to it.  
   
--   32 ビット整数型を 16 進数形式で表示するには、%I32x を使用します。  
+-   Use %I32x to display a 32-bit integral type in hex format.  
   
--   64 ビット整数型を 16 進数形式で表示するには、%I64x を使用します。  
+-   Use %I64x to display a 64-bit integral type in hex format.  
   
--   %p \(ポインターに対応する 16 進数形式\) は、64 ビット Windows オペレーティング システム上で期待どおりに動作します。  
+-   The %p (hex format for a pointer) will work as expected on a 64-bit Windows operating system.  
   
- 詳細については次を参照してください:  
+For more information, see:  
   
--   [コンパイラ オプション](../build/reference/compiler-options.md)  
+-   [Compiler Options](../build/reference/compiler-options.md)  
   
--   [\<caps:sentence id\="tgt18" sentenceid\="8228b16e9fef41dbba1af1d78bf0cc87" class\="tgtSentence"\>移行に関するヒント\<\/caps:sentence\>](http://msdn.microsoft.com/library/windows/desktop/aa384214)  
+-   [Migration Tips](http://msdn.microsoft.com/library/windows/desktop/aa384214)  
   
-## 参照  
- [64 ビット用プログラムの構成](../build/configuring-programs-for-64-bit-visual-cpp.md)   
- [プログラムの移植](http://msdn.microsoft.com/ja-jp/c36c44b3-5a9b-4bb4-9b7a-469aa770ed00)
+## <a name="see-also"></a>See Also  
+
+[Configure Visual C++ for 64-bit, x64 targets](../build/configuring-programs-for-64-bit-visual-cpp.md)   
+[Visual C++ Porting and Upgrading Guide](../porting/visual-cpp-porting-and-upgrading-guide.md)

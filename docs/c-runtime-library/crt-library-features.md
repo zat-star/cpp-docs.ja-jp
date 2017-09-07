@@ -46,11 +46,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
-ms.openlocfilehash: 232da2506389337f6b37412161492c103db5b971
+ms.translationtype: HT
+ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
+ms.openlocfilehash: 0ae005c2367f891e0b7a91e3f7e45d42d852fb78
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/01/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="crt-library-features"></a>CRT ライブラリの機能
@@ -96,7 +96,7 @@ ms.lasthandoff: 06/01/2017
 |msvcurt.lib|**廃止** 純粋マネージ CRT 用のスタティック ライブラリ。|**/clr:pure**||  
 |msvcurtd.lib|**廃止** 純粋マネージ CRT のデバッグ バージョン用のスタティック ライブラリ。 再頒布可能パッケージではありません。|**/clr:pure**||  
   
- C ランタイム ライブラリを指定するコンパイラ オプションを使用せずにコマンド ラインからプログラムをリンクした場合、リンカーは静的にリンクされた CRT ライブラリ (libcmt.lib、libvcruntime.lib、および libucrt.lib) を使用します。  
+ C ランタイム ライブラリを指定するコンパイラ オプションを使用せずにコマンド ラインからプログラムをリンクした場合、リンカーは静的にリンクされた CRT ライブラリ (libcmt.lib、libvcruntime.lib、libucrt.lib) を使用します。  
   
  静的にリンクされた CRT を使用すると、暗黙的に、C ランタイム ライブラリによって保存されるステータス情報は CRT のそのインスタンスに対してローカルなものになります。 たとえば、静的にリンクされた CRT を使用している状態で [strtok、_strtok_l、wcstok、_wcstok_l、_mbstok、_mbstok_l](../c-runtime-library/reference/strtok-strtok-l-wcstok-wcstok-l-mbstok-mbstok-l.md) を使用した場合、`strtok` パーサーの位置は、静的な CRT の別のインスタンスにリンクされた同じプロセス内 (ただし DLL または EXE は別) のコードで使用される `strtok` の状態とは無関係になります。 反対に、動的にリンクされた CRT では、CRT に動的にリンクされるプロセス内のすべてのコードに対して状態が共有されます。 この問題は、セキュリティが強化された新しいバージョンの関数では発生しません。たとえば、 `strtok_s` にはこの問題はありません。  
   

@@ -1,5 +1,5 @@
 ---
-title: "アップグレード時の潜在的な問題の概要 (Visual C++) | Microsoft ドキュメント"
+title: Overview of potential upgrade issues (Visual C++) | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -11,161 +11,161 @@ caps.latest.revision: 5
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 24ae58e6d8948572248a1595c59714bdf2c6f3f5
-ms.lasthandoff: 04/01/2017
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 0175894cb7cc220d3e30cf545ce3aa723f0fb8a6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="overview-of-potential-upgrade-issues-visual-c"></a>アップグレード時の潜在的な問題の概要 (Visual C++)
-長年にわたり、Visual C++ コンパイラでは、C++ 言語自体、C++ 標準ライブラリ、C ランタイム (CRT)、およびその他のライブラリ (MFC や ATL など) における変更と併せて、多くの変更が行われてきました。 その結果、Visual C++ の以前のバージョンからアプリケーションをアップグレードした場合、以前は正常にコンパイルされていたコードにおいてコンパイラおよびリンカーに関するエラーや警告が発生する場合があります。 元のコード ベースが古いほど、このようなエラーが発生する可能性は高くなります。 この記事では、発生する可能性が高い問題を最も一般的な方法で分類して概説するとともに、詳細情報へのリンクも示します。  
+# <a name="overview-of-potential-upgrade-issues-visual-c"></a>Overview of potential upgrade issues (Visual C++)
+Over the years, the Visual C++ compiler has undergone many changes, along with changes in the C++ language itself, the C++ Standard Library, the C runtime (CRT), and other libraries such as MFC and ATL. As a result, when upgrading an application from an earlier version of Visual C++ you might encounter compiler and linker errors and warnings in code that previously compiled cleanly. The older the original code base, the greater the potential for such errors. This overview summarizes the most common classes of issues you are likely to encounter, and provides links to more detailed information.  
   
- 注: 以前は、アップグレードが Visual Studio の複数のバージョンにまたがる場合には、1 度に 1 つずつ段階的にバージョンをアップグレードすることをお勧めしていました。 しかし、現在、この方法はお勧めしていません。 コード ベースの古さの程度に関係なく、ほとんどの場合は Visual Studio の最新バージョンへアップグレードする方がより簡単であることが判明しました。  
+ Note: In the past, we have recommended that upgrades that span several versions of Visual Studio should be performed incrementally one version at a time. We no longer recommend this approach. We have found that it is almost always simpler to upgrade to the most current version of Visual Studio no matter how old the code base.  
   
- アップグレード プロセスに関する質問またはコメントについては、Microsoft の vcupgrade にお送りください。  
+ Questions or comments about the upgrade process can be sent to vcupgrade at microsoft.  
   
-## <a name="library-and-toolset-dependencies"></a>ライブラリとツールセットの依存関係  
- アプリケーションを Visual C++ コンパイラの新しいバージョンにアップグレードする場合は、アプリケーションがリンクしているすべての lib および Dll もアップグレードすることを強くお勧めします。多くの場合は、この作業が必要となります。 そのためには、ソース コードへのアクセス権を持っているか、あるいは、ライブラリ ベンダーから、同じメジャー バージョンの Visual C++ コンパイラでコンパイルされた新しいバイナリ ファイルが提供されている必要があります。 この条件のいずれかを満たしている場合、バイナリの互換性について説明するこのセクションをスキップすることができます。 どちらの条件も満たしていない場合は、アップグレードされたアプリケーションでライブラリを使用できない可能性があります。 このセクションの情報を参照することで、アップグレードを続行することができるかどうかを判断することができます。  
+## <a name="library-and-toolset-dependencies"></a>Library and toolset dependencies  
+ When upgrading an application to a new version of the Visual C++ compiler, it is strongly advisable and in many cases necessary to also upgrade all libs and DLLs that the application links to. This requires either that you have access to the source code, or that the library vendor can provide new binary files compiled with the same major version of the Visual C++ compiler. If one of these conditions is true, then you can skip this section, which deals with the details of binary compatibility. If neither of these are the case, then you might not be able to use the libraries in your upgraded application. The information in this section will help you understand whether you can proceed with the upgrade.  
   
-### <a name="toolset"></a>ツールセット  
- obj および lib ファイル形式は、適切に定義されており、変わることはほとんどありません。 時々これらのファイル形式には追加が行われる場合がありますが、この追加は一般には、新しいツールセットが以前のツールセットによって生成されたオブジェクト ファイルやライブラリを利用する機能に影響はありません。 ここで、1 つの重要な例外として、/GL (リンク時コード生成/プログラム全体の最適化) を使用してコンパイルする場合が挙げられます。 /GL を使用してコンパイルした場合、その結果として生成されたオブジェクト ファイルをリンクするには、そのファイルの生成に使用したツールセットと同じものしか使用できません。 よって、/GL および Visual Studio 2017 (v141) コンパイラを使用してオブジェクト ファイルを生成する場合、生成されたファイルは Visual Studio 2017 (v141) リンカーを使用してリンクする必要があります。 このことは、/GL オブジェクトの内部データ構造がツールセットのメジャー バージョン間で安定性がなく、新しいツールセットが以前のデータ形式を理解できないことに原因があります。  
+### <a name="toolset"></a>Toolset  
+ The obj and lib file formats are well-defined and rarely change. Sometimes additions are made to these file formats, but these additions generally do not affect the ability of newer toolsets to consume object files and libraries produced by older toolsets. The one big exception here is if you compile using /GL (Link-Time Code Generation / Whole Program Optimization). If you compile using /GL, the resulting object file can only be linked using the same toolset that was used to produce it. So, if you produce an object file with /GL and using the Visual Studio 2017 (v141) compiler, you must link it using the Visual Studio 2017 (v141) linker. This is because the internal data structures within the /GL objects are not stable across major versions of the toolset and newer toolsets do not understand the older data formats.  
   
- C++ のアプリケーション バイナリ インターフェイス (ABI) は安定性がありません。 Visual C++ では、リリースのすべてのマイナー バージョンについては安定した ABI を維持しています。 たとえば、Visual Studio 2017 とそのすべての更新プログラムは、バイナリ互換性があります。 しかし、ABI は、Visual C++ のメジャー バージョン間では必ずしも互換性はありません (2015 と 2017 の場合は例外であり、_両者には_バイナリ互換性があります)。 つまり、弊社では、C++ の型レイアウト、名前の修飾、例外処理、または C++ ABI のその他の部分に重大な変更を加える場合があるということです。 したがって、C++ リンケージを使用した外部シンボルがオブジェクト ファイルに含まれている場合、そのオブジェクト ファイルは、Visual C++ ツールセットの異なるメジャー バージョンで生成されたオブジェクト ファイルと正しくリンクできないことがあります。 ここで、"機能しない場合がある" という表現には、リンクがまったく機能しないことがある (名前の修飾が変更された場合など)、リンクは正常であるが実行時に機能しないことがある (型のレイアウトが変更された場合など)、多くの場合はたまたま動作していると考えられ問題は発生しないなど、さまざまな意味が考えられます。 また、C++ ABI は安定していなくても、C ABI および COM に必要な C++ ABI のサブセットは安定性していることに注目してください。  
+ C++ does not have a stable application binary interface (ABI). Visual C++ maintains a stable ABI for all minor versions of a release. For example, Visual Studio 2017 and all its updates are binary compatible. But the ABI is not necessarily compatible across major versions of Visual C++ (except for 2015 and 2017, which _are_ binary compatible). That is, we may make breaking changes to C++ type layout, name decoration, exception handling, and other parts of the C++ ABI. Thus, if you have an object file that has external symbols with C++ linkage, that object file may not link correctly with object files produced with a different major version of the Visual C++ toolset. Note that here, "may not work" has many possible outcomes: the link may  fail entirely (e.g. if name decoration changed), the link may succeed and things may not work at runtime (e.g. if type layout changed), or things may happen to work in many cases and nothing will go wrong. Note also that while the C++ ABI is not stable, the C ABI and the subset of the C++ ABI required for COM are stable.  
   
-### <a name="libraries"></a>ライブラリ  
+### <a name="libraries"></a>Libraries  
 
- 特定のバージョンの Visual C++ ライブラリ ヘッダーを使用してソース ファイルをコンパイルする場合 (ヘッダーを #including して)、結果として生成されるオブジェクト ファイルは、同じバージョンの Visual C++ ライブラリとリンクする必要があります。 たとえば、Visual Studio 2017 \<immintrin.h> を使用してソース ファイルをコンパイルした場合は、Visual Studio 2017 vcruntime ライブラリとリンクする必要があります。 同様に、Visual Studio 2017 \<iostream> を使用してソース ファイルをコンパイルした場合は、Visual Studio 2017 標準 C++ ライブラリである msvcprt とリンクする必要があります。 mixing-and-matching は、サポートされていません。  
+ If you compile a source file using a particular version of the Visual C++ libraries headers (by #including the headers), the resulting object file must be linked with the same version of the Visual C++ libraries. So, for example, if your source file is compiled with the Visual Studio 2017 \<immintrin.h>, you must link with the Visual Studio 2017 vcruntime library. Similarly, if your source file is compiled with the Visual Studio 2017 \<iostream>, you must link with the Visual Studio 2017 Standard C++ library, msvcprt. Mixing-and-matching is not supported.  
   
- C++ 標準ライブラリについては、Visual Studio 2010 以降、標準ヘッダーに `#pragma detect_mismatch` を使用したことにより、mixing-and-matching は明示的に禁止されています。 互換性のないオブジェクト ファイルとのリンクを試みた場合、または誤った標準ライブラリとのリンクを試みた場合、リンクは失敗します。  
+ For the C++ Standard Library, mixing-and-matching has been explicitly disallowed via use of `#pragma detect_mismatch` in the standard headers since Visual Studio 2010. If you try to link incompatible object files, or if you try to link with the wrong standard library, the link will fail.  
   
- CRT については、mixing-and-matching はサポートされていませんでしたが、少なくとも Visual Studio 2015 および Universal CRT までは、多くの場合、問題なく動作していました。これは、長い期間、API サーフェイスにあまり変更がなかったことによります。 Universal CRT では下位互換性の問題が解決され、将来的に下位互換性を維持できるようになりました。 すなわち、今後、バージョン管理の対象となる Universal CRT バイナリを新たに導入する計画はありません。 その代わり、既存の Universal CRT を適切に更新できるようになりました。  
+ For the CRT, mixing-and-matching was never supported, but it often just worked, at least until Visual Studio 2015 and the Universal CRT, because the API surface did not change much over time. The Universal CRT broke backwards compatibility so that in the future we can maintain backwards compatibility. In other words, we have no plans to introduce new, versioned Universal CRT binaries in the future. Instead, the existing Universal CRT is now updated in-place.  
   
- 以前のバージョンの Microsoft C ランタイム ヘッダーでコンパイルされたオブジェクト ファイル (およびライブラリ) との部分的なリンク互換性を提供するために、弊社では Visual Studio 2015 以降のバージョンにライブラリ legacy_stdio_definitions.lib を提供しています。 このライブラリは、Universal CRT から削除された関数とデータ エクスポートの大部分に対して互換性シンボルを提供します。 legacy_stdio_definitions.lib によって提供される一連の互換性シンボルは、Windows SDK に含まれるライブラリ内のすべての依存関係を含む、ほとんどの依存関係を十分に満たしています。 ただし、Universal CRT から一部のシンボルは削除されています。それらについては、前述のように互換性シンボルになることはできません。 これらのシンボルには、いくつかの関数 (\__iob_func など) とデータ エクスポート (\__imp\_\__iob、\__imp\_\__pctype、\__imp\_\__mb_cur_max) が含まれています。  
+ To provide partial link compatibility with object files (and libraries) compiled with older versions of the Microsoft C Runtime headers, we provide a library, legacy_stdio_definitions.lib, with Visual Studio 2015 and later. This library provides compatibility symbols for most of the functions and data exports that were removed from the Universal CRT. The set of compatibility symbols provided by legacy_stdio_definitions.lib is sufficient to satisfy most dependencies, including all of the dependencies in libraries included in the Windows SDK. However, there are some symbols that were removed from the Universal CRT for which it is not possible to provide compatibility symbols like this. These symbols include some functions (e.g., \__iob_func) and the data exports (e.g., \__imp\_\__iob, \__imp\_\__pctype, \__imp\_\__mb_cur_max).  
   
- 以前のバージョンの C ランタイム ヘッダーでビルドされたスタティック ライブラリがある場合は、次の処理 (この順番で) をお勧めします。  
+ If you have a static library that was built with an older version of the C Runtime headers, we recommend the following actions (in this order):  
   
-1.  Visual C++ 2017 および Universal CRT のヘッダーを使用してスタティック ライブラリをリビルドして、Universal CRT とのリンクをサポートします。 これは、完全にサポートされた (最適な) オプションです。  
+1.  Rebuild the static library using Visual C++ 2017 and the Universal CRT headers to support linking with the Universal CRT. This is the fully supported (and thus best) option.  
   
-2.  スタティック ライブラリをリビルドできない場合 (またはリビルドしたくない場合)、legacy_stdio_definitions.lib とのリンクを試みることができます。 それがスタティック ライブラリのリンク時の依存関係を満たしている場合は、スタティック ライブラリをバイナリ内で使用しながら十分にテストすることにより、スタティック ライブラリが [Universal CRT に加えられた動作関係の変更](visual-cpp-change-history-2003-2015.md#BK_CRT)のいずれからも悪影響を受けていないことを確認します。  
+2.  If you cannot (or do not want to) rebuild the static library, you may try linking with legacy_stdio_definitions.lib. If it satisfies the link-time dependencies of your static library, you will want to thoroughly test the static library as it is used in the binary, to make sure that it is not adversely affected by any of the [behavioral changes that were made to the Universal CRT](visual-cpp-change-history-2003-2015.md#BK_CRT).  
   
-3.  legacy_stdio_definitions.lib がスタティック ライブラリの依存関係を満たしていない場合、または前途した動作関係の変更によりスタティック ライブラリが Universal CRT で動作しない場合は、Microsoft C ランタイムの正しいバージョンとリンクする DLL にスタティック ライブラリをカプセル化することをお勧めします。 たとえば、Visual C++ 2013 を使用してスタティック ライブラリがビルドされているならば、Visual C++ 2013 および Visual C++ 2013 ライブラリを使用してこの DLL もビルドします。 DLL を生成してライブラリに取り込むことにより、特定のバージョンの Microsoft C ランタイムに対する依存関係を示す実装の詳細をカプセル化します  (DLL インターフェイスで、それがどの C ランタイムを使用しているかという詳細が漏れないように注意する必要があります。たとえば、DLL 境界を越えて FILE* を返したり、malloc で割り当てられたポインターを返して呼び出し元にそれを解放するよう求めたりすることにより、発生します。)  
+3.  If your static library’s dependencies are not satisfied by legacy_stdio_definitions.lib or if the library does not work with the Universal CRT due to the aforementioned behavioral changes, we would recommend encapsulating your static library into a DLL that you link with the correct version of the Microsoft C Runtime. For example, if the static library was built using Visual C++ 2013, you would want to build this DLL using Visual C++ 2013 and the Visual C++ 2013 libraries as well. By building the library into a DLL, you encapsulate the implementation detail that is its dependency on a particular version of the Microsoft C Runtime. (Note that you will want to be careful that the DLL interface does not leak details of which C Runtime it uses, e.g. by returning a FILE* across the DLL boundary or by returning a malloc-allocated pointer and expecting the caller to free it.)  
   
- 単一のプロセスで複数の CRT を使用することは、それ自体問題ではありません (実際に、ほとんどのプロセスでは最終的に複数の CRT DLL を読み込みます。たとえば、Windows オペレーティング システムのコンポーネントは msvcrt.dll に依存し、CLR は独自のプライベート CRT に依存します)。 さまざまな CRT からの状態を混ぜると、問題が発生します。 たとえば、msvcr110.dll!malloc でメモリを割り当ててから、msvcr120.dll!free でそのメモリの割り当て解除を試みたり、msvcr110!fopen で FILE を開いてから、msvcr120!fread でその FILE からの読み取りを試みたりしないでください。 さまざまな CRT からの状態を混ぜ合わせない限り、1 つのプロセスで複数の CRT を安全に読み込むことができます。  
+ Use of multiple CRTs in a single process is not in and of itself problematic (indeed, most processes will end up loading multiple CRT DLLs; for example, Windows operating system components will depend on msvcrt.dll and the CLR will depend on its own private CRT). Problems arise when you jumble state from different CRTs. For example, you should not allocate memory using msvcr110.dll!malloc and attempt to deallocate that memory using msvcr120.dll!free, and you should not attempt to open a FILE using msvcr110!fopen and attempt to read from that FILE using msvcr120!fread. As long as you don’t jumble state from different CRTs, you can safely have multiple CRTs loaded in a single process.  
   
- 詳細については、「[Upgrade your code to the Universal CRT](upgrade-your-code-to-the-universal-crt.md)」 (コードを Universal CRT にアップグレードする) を参照してください。  
+ For more information, see [Upgrade your code to the Universal CRT](upgrade-your-code-to-the-universal-crt.md).  
   
-## <a name="errors-due-to-project-settings"></a>プロジェクトの設定に起因するエラー  
- アップグレード プロセスを開始するには、Visual Studio の最新バージョンで以前のプロジェクト/ソリューション/ワークスペースを開くだけです。 Visual Studio は、以前のプロジェクトの設定に基づいて新しいプロジェクトを作成します。 以前のプロジェクトに、ライブラリが存在するか、または非標準的な場所にハードコーディングされたパスが存在する場合、それらのパス内のファイルは、プロジェクトで既定の設定が使用されていると、コンパイラに表示されない可能性があります。 詳細については、「[Linker OutputFile setting](porting-guide-spy-increment.md#linker_output_settings)」 (リンカーの OutputFile の設定) を参照してください。  
+## <a name="errors-due-to-project-settings"></a>Errors due to project settings  
+ To begin the upgrade process, simply open an older project/solution/workspace in the latest version of Visual Studio. Visual Studio will create a new project based on the old project settings. If the older project has library or include paths that are hard-coded to non-standard locations, it is possible that the files in those paths won’t be visible to the compiler when the project uses the default settings. For more information, see [Linker OutputFile setting](porting-guide-spy-increment.md#linker_output_settings).  
   
- 全般的に見て、プロジェクト コードを適切に整理することにより、プロジェクトの保守を容易にすると共にアップグレードされたコードを可能な限りすばやくコンパイルできるようにするには今が絶好の機会です。 ソース コードがすでに適切に整理されていて、以前のプロジェクトが Visual Studio 2010 以降でコンパイルされている場合は、新旧両方のコンパイラでのコンパイルをサポートするように新しいプロジェクト ファイルを手動で編集することができます。 次の例では、Visual Studio 2015 および Visual Studio 2017 の場合のコンパイル方法を示します。  
+ In general, now is a great time to organize your project code properly in order to simplify project maintenance and help get your upgraded code compiling as quickly as possible. If your source code is already well-organized, and your older project is compiled with Visual Studio 2010 or later, you can manually edit the new project file to support compilation on both the old and new compiler. The following example shows how to compile for both Visual Studio 2015 and Visual Studio 2017:  
   
 ```  
 <PlatformToolset Condition="'$(VisualStudioVersion)'=='14.0'">v140</PlatformToolset>  
 <PlatformToolset Condition="'$(VisualStudioVersion)'=='15.0'">v141</PlatformToolset>   
 ```  
   
-### <a name="lnk2019-unresolved-external"></a>LNK2019: 未解決の外部シンボル  
- 未解決のシンボルの場合、プロジェクト設定の修正が必要なことがあります。  
+### <a name="lnk2019-unresolved-external"></a>LNK2019: Unresolved external  
+ For unresolved symbols, you might need to fix up your project settings.  
   
--   ソース ファイルが既定以外の場所にある場合に、プロジェクトの include ディレクトリへのパスを追加しましたか?  
+-   If the source file is in a non-default location, did you add the path to the project’s include directories?  
   
--   .lib ファイル内に外部シンボルが定義されている場合、プロジェクト プロパティ内に lib パスを指定していますか? また、そこには .lib ファイルの適切なバージョンが実際に置かれていますか?  
+-   If the external is defined in a .lib file, have you specified the lib path in the project properties and is the correct version of the .lib file actually located there?  
   
--   異なるバージョンの Visual Studio でコンパイルされた .lib ファイルへのリンクを試みていますか? 試みている場合は、ライブラリとツールセットの依存関係に関する前のセクションを参照してください。  
+-   Are you attempting to link to a .lib file that was compiled with a different version of Visual Studio? If so, see the previous section on library and toolset dependencies.  
   
--   呼び出しサイトにおける引数の型は、関数の既存のオーバー ロードと実際に一致していますか? 関数のシグネチャ内で、および関数を呼び出すコード内で typedef の基になる型が、予期していたものと一致しているかどうかを確認します。  
+-   Do the types of the arguments at the call site actually match an existing overload of the function? Verify the underlying types for any typedefs in the function’s signature and in the code that calls the function are what you expect them to be.  
   
- 未解決シンボル エラーのトラブルシューティングを実行するには、dumpbin.exe を使用して、バイナリで定義されているシンボルを調べることができます。 次のコマンド ラインを試行して、ライブラリで定義されているシンボルを表示してください。  
+ To troubleshoot unresolved symbol errors, you can try using dumpbin.exe to examine the symbols defined in a binary. Try the following command line to view symbols defined in a library:  
   
 ```  
 dumpbin.exe /LINKERMEMBER somelibrary.lib  
 ```  
   
-### <a name="zcwchart-wchart-is-native-type"></a>/Zc:wchar_t (wchar_t をネイティブ型として認識)  
- (Visual C++ 6.0 以前では、wchar_t は、組み込み型として実装されていたのではなく、符号なし Short の typedef として wchar.h で宣言されていました)。C++ 標準では wchar_t は組み込み型とする必要があります。 typedef バージョンを使用すると、移植性の問題が発生することがあります。 以前のバージョンの Visual C++ からアップグレードしているとき、コードが wchar_t を符号なし short に暗黙的に変換しようとしたために C2664 コンパイル エラーが発生した場合は、/Zc:wchar_t- を設定するのではなく、コードを変更してエラーを修正することをお勧めします。 「[/Zc:wchar_t (wchar_t をネイティブ型として認識)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
+### <a name="zcwchart-wchart-is-native-type"></a>/Zc:wchar_t (wchar_t Is Native Type)  
+ (In Visual C++ 6.0 and earlier, wchar_t was not implemented as a built-in type, but was declared in wchar.h as a typedef for unsigned short.) The C++ standard requires that wchar_t be a built-in type. Using the typedef version can cause portability problems. If you upgrade from earlier versions of Visual C++ and encounter compiler error C2664 because the code is trying to implicitly convert a wchar_t to unsigned short, we recommend that you change the code to fix the error, instead of setting /Zc:wchar_t-. For more information, see [/Zc:wchar_t (wchar_t Is Native Type)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md).  
   
-### <a name="upgrading-with-the-linker-options-nodefaultlib-entry-and-noentry"></a>リンカー オプション /NODEFAULTLIB、/ENTRY、および /NOENTRY を使用したアップグレード  
- /NODEFAULTLIB リンカー オプション (または [すべての既定のライブラリの無視] リンカー プロパティ) は、CRT などの既定のライブラリ内で自動的にリンクしないようにリンカーに指示します。 これは、各ライブラリが、入力として個別にリストされる必要があることを意味します。 このライブラリ リストは、プロジェクトのプロパティの [リンカー] セクションにある [追加の依存関係] プロパティに指定されます。  
+### <a name="upgrading-with-the-linker-options-nodefaultlib-entry-and-noentry"></a>Upgrading with the linker options /NODEFAULTLIB, /ENTRY, and /NOENTRY  
+ The /NODEFAULTLIB linker option (or the Ignore All Default Libraries linker property) tells the linker not to automatically link in the default libraries such as the CRT. This means that each library has to be listed as input individually. This list of libraries is given in the Additional Dependencies property in the Linker section of the Project Properties.  
   
- このオプションを使用しているプロジェクトでは、アップグレード時に問題が発生します。これは、既定のいくつかのライブラリで名前の変更が行われていることが原因です。 各ライブラリは [追加の依存関係] プロパティ内か、またはリンカーのコマンドライン内にリストする必要があるため、現在の名前が使用されるようにライブラリのリストを更新する必要があります。  
+ Projects that use this option present a problem when upgrading, because the names of some of the default libraries have changed. Because each library has to be listed in the Additional Dependencies property or on the linker command line, you need to update the list of libraries to use the current names.  
   
- 次の表に、Visual Studio 2015 以降、名前が変更されたライブラリを示します。 アップグレードするには、1 番目の列内の名前を、2 番目の列内の名前に置き換える必要があります。  これらのライブラリの一部はインポート ライブラリですが、そのことは重要ではありません。  
+ The following table shows the libraries whose names changed starting with Visual Studio 2015. To upgrade, you need to replace the names in the first column with the names in the second column.  Some of these libraries are import libraries, but that shouldn’t matter.  
   
 |||  
 |-|-|  
-|次を使用していた場合|次のコード行への置き換えが必要|  
-|libcmt.lib|libucrt.lib、libvcruntime.lib|  
-|libcmtd.lib|libucrtd.lib、libvcruntimed.lib|  
-|msvcrt.lib|ucrt.lib、vcruntime.lib|  
-|msvcrtd.lib|ucrtd.lib、vcruntimed.lib|  
+|If you were using:|You need to replace it with:|  
+|libcmt.lib|libucrt.lib, libvcruntime.lib|  
+|libcmtd.lib|libucrtd.lib, libvcruntimed.lib|  
+|msvcrt.lib|ucrt.lib, vcruntime.lib|  
+|msvcrtd.lib|ucrtd.lib, vcruntimed.lib|  
   
- また、/ENTRY オプションあるいは /NOENTRY オプションを使用する場合 (これらには既定のライブラリをバイパスする効果もある)、同じ問題が発生します。  
+ The same issue applies also if you use the /ENTRY option or the /NOENTRY option, which also have the effect of bypassing the default libraries.  
   
-## <a name="errors-due-to-improved-language-conformance"></a>言語の適合性強化に起因するエラー  
- Visual C++ コンパイラは、長年にわたり、C++ 標準への適合性を絶えず強化してきました。 Visual C++ の以前のバージョンでコンパイルされたコードは、Visual Studio 2017 でコンパイルできない場合があります。これは、以前は無視または明示的に許容されていたエラーに適切にエラー フラグが付けられるようになったことによります。  
+## <a name="errors-due-to-improved-language-conformance"></a>Errors due to improved language conformance  
+ The Visual C++ compiler has continuously improved its conformance to the C++ standard over the years. Code that compiled in earlier versions of Visual C++ might fail to compile in Visual Studio 2017 because the compiler correctly flags an error that it previously ignored or explicitly allowed.  
   
- たとえば、/Zc:forScope スイッチは、Visual C++ の歴史の早い段階で導入されました。 このスイッチでは、ループ変数に対する非準拠の動作が許可されます。 このスイッチは使用されなくなりました。将来のバージョンでは削除される可能性があります。 コードをアップグレードする際は、このスイッチを使用しないことを強く推奨します。 詳細については、「[/Zc:forScope- is deprecated](porting-guide-spy-increment.md#deprecated_forscope)」 (/Zc:forScope- は使用しないでください) を参照してください。  
+ For example, the /Zc:forScope switch was introduced early in the history of Visual C++. It permits non-conforming behavior for loop variables. That switch is now deprecated and might be removed in future versions. It is highly recommended to not use that switch when upgrading your code. For more information, see [/Zc:forScope- is deprecated](porting-guide-spy-increment.md#deprecated_forscope).  
   
- アップグレード時によく発生するコンパイラ エラーの例として、非 const 引数が const パラメーターに渡された場合に発生するエラーが挙げられます。 Visual C++ の以前のバージョンでは、これに対して常にエラー フラグが付けられるわけではありませんでした。 詳細については、「[コンパイラのより厳密な変換](porting-guide-spy-increment.md#stricter_conversions)」を参照してください。  
+ One example of a common compiler error you might see when upgrading is when a non-const argument is passed to a const parameter. Older versions of Visual C++ did not always flag this as an error. For more information, see [The compiler's more strict conversions](porting-guide-spy-increment.md#stricter_conversions).  
   
- 特定の適合性強化の詳細については、[Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md) (Visual C++ 2003 ～ 2015 での互換性に影響する変更点) および「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
+ For more information on specific conformance improvements, see [Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md) and [C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md).  
   
-## <a name="errors-involving-stdinth-integral-types"></a>\<stdint.h> 整数型に関連するエラー  
- \<stdint.h> ヘッダーでは、組み込みの整数型とは異なり、すべてのプラットフォームで指定の長さを保持することが保証される typedef および macro を定義します。 例として、uint32_t や int64_t が挙げられます。 Visual Studio 2010 で、Visual C++ には \<stdint.h> が追加されました。 2010 より前に記述されたコードは、型に関するプライベート定義を備えている場合がありますが、それらの定義は \<stdint.h> 定義と常に整合するとは限りません。  
+## <a name="errors-involving-stdinth-integral-types"></a>Errors involving \<stdint.h> integral types  
+ The \<stdint.h> header defines typedefs and macros that, unlike built-in integral types, are guaranteed to have a specified length on all platforms. Some examples are uint32_t and int64_t. Visual C++ added \<stdint.h> in Visual Studio 2010. Code that was written before 2010 might have provided private definitions for those types and those definitions might not always be consistent with the \<stdint.h> definitions.  
   
- エラー C2371 が発生し、stdint 型が関係している場合、その多くは、コード内またはサードパーティ製の lib ファイル内のヘッダー内でその型が定義されていることを意味します。  アップグレード時には、\<stdint.h> のカスタム定義を削除する必要がありますが、最初に、カスタム定義を現在の標準的な定義と比較して、新たな問題を招かないことを確認してください。  
+ If the error is C2371, and a stdint type is involved, it probably means that the type is defined in a header either in your code or a third-party lib file.  When upgrading, you should eliminate any custom definitions of \<stdint.h> types, but first compare the custom definitions to the current standard definitions to ensure you are not introducing new problems.  
   
- F12 キー (**定義へ移動**) を押すと、問題の型が定義されている場所を確認できます。  
+ You can press F12 **Go to Definition** to see where the type in question is defined.  
   
- ここでは、[/showIncludes](../build/reference/showincludes-list-include-files.md) コンパイラ オプションが役に立ちます。 プロジェクトの [プロパティ ページ] ダイアログ ボックスで、**[C/C++]**、**[詳細設定]** ページの順に開き、**[インクルード ファイルの表示]** を **[はい]** に設定します。 次にプロジェクトをリビルドし、出力ウィンドウで #includes の一覧を確認します。  各ヘッダーは、それぞれが含まれているヘッダーの下にインデントされます。  
+ The [/showIncludes](../build/reference/showincludes-list-include-files.md) compiler option can be useful here. In the Property Pages dialog box for your project, open the **C/C++**, **Advanced** page and set **Show Includes** to **Yes**. Then rebuild your project and see the list of #includes in the output window.  Each header is indented under the header that includes it.  
   
-## <a name="errors-involving-crt-functions"></a>CRT の関数に関係するエラー  
- C ランタイムには、長年にわたり、多くの変更が加えられてきました。 セキュリティで保護された関数のバージョンが多数追加された一方で、削除された関数もありました。 また、この記事で前述したように、Microsoft のRT 実装は、Visual Studio 2015 で新しいバイナリと関連する .lib ファイルにリファクタリングされました。  
+## <a name="errors-involving-crt-functions"></a>Errors involving CRT functions  
+ Many changes have been made to the C runtime over the years. Many secure versions of functions have been added, and some have been removed. Also, as described earlier in this article, Microsoft’s implementation of the CRT was refactored in Visual Studio 2015 into new binaries and associated .lib files.  
   
- エラーが CRT 関数に関係している場合は、追加情報がないかどうか、「[Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md)」 (Visual C++ 2003 ～ 2015 での互換性に影響する変更点) または「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を検索してください。 エラーが LNK2019 (未解決の外部シンボル) である場合は、関数が削除されていないことを確認してください。 関数がまだ存在し、呼び出し元のコードも正しい場合は、プロジェクトで /NODEFAULTLIB が使用されているかどうかを確認します。 それが使用されている場合は、プロジェクトで新しい Universal (UCRT) ライブラリを使用するように、ライブラリのリストを更新する必要があります。 ライブラリと依存関係の詳細については、上記セクションを参照してください。  
+ If an error involves a CRT function, search the [Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md) or [C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md) to see if those topics contain any additional information. If the error is LNK2019, unresolved external, make sure the function has not been removed. Otherwise, if you are sure that the function still exists, and the calling code is correct, check to see whether your project uses /NODEFAULTLIB. If so you need to update the list of libraries so that the project uses the new universal (UCRT) libraries. See the section above on Library and dependencies for more information.  
   
- エラーが printf または scanf 関数に関係している場合は、いずれの関数も stdio.h なしで非公開に定義されているのではないか確認してください。 そのようになっている場合は、プライベート定義を削除するか、legacy_stdio_definitions.lib (Project &#124; Properties &#124; Linker &#124; Linker Input) にリンクします。 Windows SDK 8.1 以前のバージョンとリンクする場合は、legacy_stdio_definitions.lib を追加します。  
+ If the error involves printf or scanf, make sure that you are not privately defining either function without including stdio.h. If so, either remove the private definitions or link to legacy_stdio_definitions.lib (Project &#124; Properties &#124; Linker &#124; Linker Input). If you are linking with Windows SDK 8.1 or earlier, then add legacy_stdio_definitions.lib.  
   
- エラーが書式文字列の引数に関係している場合は、おそらく、コンパイラが標準の適用に厳格であることが原因です。 詳細については、変更履歴を参照してください。 ここで取り上げたエラーは、セキュリティ上のリスクを招く可能性があるので、十分に注意してください。  
+ If the error involves format string arguments, this is probably because the compiler is stricter about enforcing the standard. See the change history for more information. Please pay close attention to any errors here because they can potentially represent a security risk.  
   
-## <a name="errors-due-to-changes-in-the-c-standard"></a>C++ 標準での変更によるエラー  
- C++ 標準自体、進化の過程で常に下位互換性が保たれていたわけではありませんでした。 C++11 での移動セマンティクス、新しいキーワード、および言語および標準ライブラリに関するその他の機能の導入は、コンパイラのエラーや異なるランタイム動作を引き起こす可能性があります。  
+## <a name="errors-due-to-changes-in-the-c-standard"></a>Errors due to changes in the C++ standard  
+ The C++ standard itself has evolved in ways that are not always backward compatible. The introduction in C++11 of move semantics, new keywords, and other language and standard library features can potentially cause compiler errors and even different runtime behavior.  
   
- たとえば、以前の C++ プログラムには、iostream.h ヘッダーが含まれている場合があります。 このヘッダーは、C++ の歴史の早い段階で使用されなくなり、最終的には Visual C++ から完全に削除されました。 前述の状況に該当する場合は、\<iostream> を使用してコードを書き直す必要があります。 詳細については、「[古い iostreams コードを更新する](porting-guide-spy-increment.md#updating_iostreams_code)」を参照してください。  
+ For example, an old C++ program might include the iostream.h header. This header was deprecated early in the history of C++ and was eventually removed completely from Visual C++. In this case, you will need to use \<iostream> and rewrite your code. For more information, see [Updating old iostreams code](porting-guide-spy-increment.md#updating_iostreams_code).  
   
-### <a name="c4838-narrowing-conversion-warning"></a>C4838: 縮小変換に関する警告  
- C++ 標準では、符号なし整数値から符号付き整数値への変換を縮小変換と見なすように指定することになりました。 Visual Studio 2015 より前の Visual C++ コンパイラでは、この警告が通知されませんでした。 各警告の内容を調べて、コードの正確性に影響がないことを確認する必要があります。  
+### <a name="c4838-narrowing-conversion-warning"></a>C4838: narrowing conversion warning  
+ The C++ standard now specifies that conversions from unsigned to signed integral values are considered as narrowing conversions. The Visual C++ compiler did not raise this warning prior to Visual Studio 2015. You should inspect each occurrence to make sure the narrowing does not impact the correctness of your code.  
   
-## <a name="warnings-to-use-secure-crt-functions"></a>セキュリティで保護された CRT 関数を使用するように助言する警告  
- 時間をかけて、C ランタイム関数のセキュリティで保護されたバージョンが導入されてきました。 セキュリティ保護されていない古いバージョンは引き続き使用できますが、セキュリティで保護されたバージョンを使用するようにコードを変更することをお勧めします。 セキュリティで保護されていないバージョンが使用されている場合は、コンパイラが警告を発行するようになります。 これらの警告は、無効にすることも無視することもできます。 ソリューション内のすべてのプロジェクトに対して警告を無効にするには、**[表示 &#124; プロパティ マネージャー]** の順に開き、警告を無効にするすべてのプロジェクトを選択し、選択した項目を右クリックして、**[プロパティ &#124; C/C++ &#124; 詳細 &#124; 指定の警告を無効にする]** の順に選択します。 ドロップダウン矢印をクリックし、[編集] をクリックします。 テキスト ボックスに「4996」と入力します  (プレフィックス "C" を含めないでください)。詳細については、「[Secure CRT を使用するよう移植する](porting-guide-spy-increment.md#porting_to_secure_crt)」を参照してください。  
+## <a name="warnings-to-use-secure-crt-functions"></a>Warnings to use secure CRT functions  
+ Over the years, secure versions of C runtime functions have been introduced. Although the old, non-secure versions are still available, it is recommended to change your code to use the secure versions. The compiler will issue a warning for usage of the non-secure versions. You can choose to disable or ignore these warnings. To disable the warning for all projects in your solution, open **View &#124; Property Manager**, select all projects for which you want to disable the warning, then right-click on the selected items and choose **Properties &#124; C/C++ &#124; Advanced &#124; Disable Specific Warnings**. Click the drop-down arrow and then click on Edit. Enter 4996 into the text box. (Don't include the 'C' prefix.) For more information, see [Porting to use the Secure CRT](porting-guide-spy-increment.md#porting_to_secure_crt).  
   
-## <a name="errors-due-to-changes-in-windows-apis-or-obsolete-sdks"></a>Windows API または古い SDK での変更に起因するエラー  
- 長年にわたり、Windows API とデータ型が追加されてきました。これらは変更されたり削除されたりすることもありました。 また、他にも、コア オペレーティング システムに付属していない SDK の中には登場しては消えていったものがあります。 そのため、古いプログラムには、もはや存在しない API の呼び出しが含まれている場合があります。 また、サポート対象外となった他の Microsoft SDK の API への呼び出しが含まれていることもあります。  Windows API または以前の Microsoft SDK の API に関連するエラーが発生した場合、API が削除されているか、またはセキュリティが強化された新しい関数に置き換えられている可能性があります。  
+## <a name="errors-due-to-changes-in-windows-apis-or-obsolete-sdks"></a>Errors due to changes in Windows APIs or obsolete SDKs  
+ Over the years, Windows APIs and data types have been added, and sometimes changed or removed. Also, other SDKs that did not belong to the core operating system have come and gone. Older programs may therefore contain calls to APIs that no longer exist. They may also contain calls to APIs in other Microsoft SDKs that are no longer supported.  If you see an error involving a Windows API or an API from an older Microsoft SDK, it is possible that an API has been removed and/or superseded by a newer, more secure function.  
   
- 現行の API について、および特定の Windows API で最低限サポートされるオペレーティング システムについては、「[Windows API Index](https://msdn.microsoft.com/en-us/library/ff818516\(v=vs.85\).aspx)」 (Windows API インデックス) を参照してください。  
+ For more information about the current API set and the minimum supported operating systems for a specific Windows API, see [Windows API Index](https://msdn.microsoft.com/en-us/library/ff818516\(v=vs.85\).aspx) and navigate to the API in question.  
   
-### <a name="windows-version"></a>Windows のバージョン  
- Windows API を直接または間接的に使用するプログラムをアップグレードする場合は、サポートする最低限の Windows バージョンを判断する必要があります。 ほとんどの場合は、Windows 7 が適切な選択となります。 詳細については、「[ヘッダー ファイルの問題](porting-guide-spy-increment.md#header_file_problems)」を参照してください。 WINVER マクロでは、プログラムを実行できる最も古い Windows バージョンが定義されます。 MFC プログラムで WINVER が 0x0501 (Windows XP) に設定されている場合、警告が表示されます。これは、コンパイラ自体は XP モードを備えているにもかかわらず、MFC で XP がサポートされなくなったことに原因があります。  
+### <a name="windows-version"></a>Windows version  
+ When upgrading a program that uses the Windows API either directly or indirectly, you will need to decide the minimum Windows version to support. In most cases Windows 7 is a good choice. For more information see [Header file problems](porting-guide-spy-increment.md#header_file_problems). The WINVER macro defines the oldest version of Windows that your program is designed to run on. If your MFC program sets WINVER to 0x0501 (Windows XP) you will get a warning because MFC no longer supports XP, even though the compiler itself has an XP mode.  
   
- 詳細については、「[ターゲットの Windows バージョンを更新する](porting-guide-spy-increment.md#updating_winver)」および「[その他の期限切れのヘッダー ファイル](porting-guide-spy-increment.md#outdated_header_files)」を参照してください。  
+ For more information, see [Updating the Target Windows Version](porting-guide-spy-increment.md#updating_winver) and [More outdated header files](porting-guide-spy-increment.md#outdated_header_files).  
   
-## <a name="atl--mfc"></a>ATL/MFC  
- ATL および MFC は比較的安定した API ですが、変更が行われる場合があります。 詳細については、「[Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md)」 (Visual C++ 2003 ～ 2015 での互換性に影響する変更点)、「[What's New for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」 (Visual Studio 2017 での Visual C++ の新機能)、「[C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」 (Visual Studio 2017 での C++ 適合性強化) を参照してください。  
+## <a name="atl--mfc"></a>ATL / MFC  
+ ATL and MFC are relatively stable APIs but changes are made occasionally. See the [Visual C++ change history 2003 - 2015](visual-cpp-change-history-2003-2015.md) for more information and [What's New for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md) and [C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md).  
   
-### <a name="lnk-2005-dllmain12-already-defined-in-msvcrtdlib"></a>MSVCRTD.lib で定義済みの LNK 2005 _DllMain@12  
- このエラーは MFC アプリケーションで発生することがあります。 CRT ライブラリと MFC ライブラリの間での順序付けの問題を示します。 最初に MFC をリンクして、new および delete 演算子が提供されるようにする必要があります。 エラーを修復するには、/NODEFAULTLIB スイッチを使用して、既定のライブラリ MSVCRTD.lib と mfcs140d.lib を無視します。 次に、これらの lib を追加の依存関係として追加します。  
+### <a name="lnk-2005-dllmain12-already-defined-in-msvcrtdlib"></a>LNK 2005 _DllMain@12 already defined in MSVCRTD.lib  
+ This error can occur in MFC applications. It indicates an ordering issue between the CRT library and the MFC library. MFC needs to be linked first so that it provides new and delete operators. To fix the error, use the /NODEFAULTLIB switch to Ignore these default libraries: MSVCRTD.lib and mfcs140d.lib. Then add these same libs as additional dependencies.  
   
-## <a name="32-vs-64-bit"></a>32 ビットと 64 ビット  
- 元のコードを 32 ビット システム用にコンパイルする場合は、新しい 32 ビット アプリの代わりに、または新しい 32 ビット アプリに加えて、64 ビット バージョンを作成することができます。 一般には、まずプログラムを 32 ビット モードでコンパイルしてから、64 ビット モードでのコンパイルを試みてください。 64 ビットのコンパイルは単純ですが、場合によって、32 ビットのビルドで隠れていたバグが明らかになることがあります。  
+## <a name="32-vs-64-bit"></a>32 vs 64 bit  
+ If your original code is compiled for 32-bit systems, you have the option of creating a 64-bit version instead of or in addition to a new 32-bit app. In general, you should get your program compiling in 32-bit mode first, and then attempt 64-bit. Compiling for 64-bit is straightforward, but in some cases it can reveal bugs that were hidden by 32-bit builds.  
   
- また、ポインターのサイズ、時間、およびサイズ値、さらに printf 関数と scanf 関数での書式指定子に関連して発生する可能性のあるコンパイル時およびランタイムの問題にも注意する必要があります。 詳細については、「[64 ビット用プログラムの構成 (Visual C++)](../build/configuring-programs-for-64-bit-visual-cpp.md)」および「[Visual C++ の 64 ビットへの移行に関する一般的な問題](../build/common-visual-cpp-64-bit-migration-issues.md)」を参照してください。 移行に関する追加のヒントは、「[64 ビット Windows プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb427430\(v=vs.85\).aspx)」を参照してください。  
+ Also, you should be aware of possible compile-time and runtime issues relating to pointer size, time and size values, and format specifiers in printf and scanf functions. For more information, see [Configure Visual C++ for 64-bit, x64 targets](../build/configuring-programs-for-64-bit-visual-cpp.md) and [Common Visual C++ 64-bit Migration Issues](../build/common-visual-cpp-64-bit-migration-issues.md). For additional migration tips, see [Programming Guide for 64-bit Windows](https://msdn.microsoft.com/library/windows/desktop/bb427430\(v=vs.85\).aspx).  
   
-## <a name="unicode-vs-mbcsascii"></a>Unicode と MBCS/ASCII  
- Unicode が標準化される前、多くのプログラムでは、ASCII 文字セットに含まれていない文字を表現するためにマルチバイト文字セット (MBCS) が使用されていました。 古い MFC プロジェクトでは MBCS が既定の設定となっていました。しかし、そのようなプログラムをアップグレードすると、MBCS ではなく Unicode を使用するように助言する警告が表示されます。 Unicode への変換には開発コストをかけるだけの価値がないと判断した場合、警告は無効または無視してもかまいません。 ソリューション内のすべてのプロジェクトに対して警告を無効にするには、**[表示 &#124; プロパティ マネージャー]** を開き、警告を無効にするすべてのプロジェクトを選択し、選択した項目を右クリックして、**[プロパティ &#124; C/C++ &#124; 詳細 &#124; 指定の警告を無効にする]** を選択します。 ドロップダウン矢印をクリックし、[編集] をクリックします。 テキスト ボックスに「4996」と入力します  (プレフィックス "C" を含めないでください)。  
+## <a name="unicode-vs-mbcsascii"></a>Unicode vs MBCS/ASCII  
+ Before Unicode was standardized, many programs used the Multibyte Character Set (MBCS) to represent characters that were not included in the ASCII character set. In older MFC projects, MBCS was the default setting, and when you upgrade such a program, you will see warnings that advise to use Unicode instead. You may choose to disable or ignore the warning if you decide that converting to Unicode is not worth the development cost. To disable it for all projects in your solution, open **View &#124; Property Manager**, select all projects for which you want to disable the warning, then right-click on the selected items and choose **Properties &#124; C/C++ &#124; Advanced &#124; Disable Specific Warnings**. Click the drop-down arrow and then click on Edit. Enter 4996 into the text box. (Don't include the 'C' prefix.)  
   
- 詳細については、「[Porting from MBCS to Unicode](porting-guide-spy-increment.md#porting_to_unicode)」 (MBCS から Unicode に移植する) を参照してください。 MBCS と Unicode の一般的な情報については、「[Text and Strings in Visual C++](../text/text-and-strings-in-visual-cpp.md)」 (Visual C++ のテキストと文字列) と「[Internationalization](../c-runtime-library/internationalization.md)」 (国際化) を参照してください。  
+ For more information, see [Porting from MBCS to Unicode](porting-guide-spy-increment.md#porting_to_unicode). For general information about MBCS vs. Unicode, see [Text and Strings in Visual C++](../text/text-and-strings-in-visual-cpp.md) and [Internationalization](../c-runtime-library/internationalization.md) .  
   
-## <a name="see-also"></a>関連項目  
- [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)
- [Visual Studio 2017 での C++ 適合性強化](../cpp-conformance-improvements-2017.md)
+## <a name="see-also"></a>See Also  
+ [Upgrading Projects from Earlier Versions of Visual C++](upgrading-projects-from-earlier-versions-of-visual-cpp.md) [C++ conformance improvements in Visual Studio 2017](../cpp-conformance-improvements-2017.md)
 

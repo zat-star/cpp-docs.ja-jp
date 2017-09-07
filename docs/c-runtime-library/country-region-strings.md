@@ -33,15 +33,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 708651f59ceff638482264e3fc57228e8a1822b2
+ms.translationtype: HT
+ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
+ms.openlocfilehash: 272ce38cee55661a3f4a1eb751c8808b355b59be
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="countryregion-strings"></a>Country/Region Strings
-国/地域識別文字列を言語識別文字列と組み合わせて、 `setlocale`、 `_wsetlocale`、 `_create_locale`、および `_wcreate_locale` の関数のロケール指定を作成できます。 さまざまな Windows オペレーティング システムのバージョンでサポートされている国/地域名のリストについては、「[各国語サポート (NLS) API のリファレンス](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。以下のリストの国/地域識別文字列は、**[Locale - Language Country/Region]** 列にある国の値、または **[Country or Region name abbreviation]** 列にある省略形を表しています。  
+国/地域識別文字列を言語識別文字列と組み合わせて、 `setlocale`、 `_wsetlocale`、 `_create_locale`、および `_wcreate_locale` の関数のロケール指定を作成できます。 さまざまなバージョンの Windows オペレーティング システムでサポートされている国/地域名の一覧については、「[National Language Support (NLS) API Reference (各国語サポート (NLS) API リファレンス)](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)」をご覧ください。 一覧では、国/地域の文字列は **Locale - Language Country/Region** 列のいずれかの国の値、または **Country or Region name abbreviation** 列の省略形のいずれかとなります。 Windows オペレーティング システムのバージョンごとの言語サポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。  
   
  C ランタイム ライブラリの実装では、次の追加の国/地域識別文字列および省略形もサポートされています。  
   

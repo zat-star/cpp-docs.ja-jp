@@ -1,111 +1,134 @@
 ---
-title: "Visual C++ の ARM への移行に関する一般的な問題 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: Common Visual C++ ARM Migration Issues | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 0f4c434e-0679-4331-ba0a-cc15dd435a46
 caps.latest.revision: 12
-caps.handback.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# Visual C++ の ARM への移行に関する一般的な問題
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 81eb7a76198fa6a306df8a5dc786475cf9186f92
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Visual C\+\+ で同じソース・コードは x86 または x64 アーキテクチャに比べて ARM のアーキテクチャの異なる結果が生じることがあります。  
+---
+# <a name="common-visual-c-arm-migration-issues"></a>Common Visual C++ ARM Migration Issues
+
+The same Visual C++ source code might produce different results on the ARM architecture than it does on x86 or x64 architectures.  
   
-## 移行に関する問題のソース  
- がの場合、x86 からコードを移行するか、ARM のアーキテクチャを x64 が未定義を開始する可能性がある実装定義したソース・コードの構造とアーキテクチャ関連するときに発生する可能性のある多くの問題または未指定の動作。  
+## <a name="sources-of-migration-issues"></a>Sources of migration issues  
+
+Many issues that you might encounter when you migrate code from the x86 or x64 architectures to the ARM architecture are related to source-code constructs that might invoke undefined, implementation-defined, or unspecified behavior.  
   
- 未定義の動作  
- C\+\+ 標準で定義されていない例の結果、適切でない操作に時間をかけた浮動小数点値を符号なし整数に変換するか、または負に、レベルが発生した型の bit 数を超えているいくつかの位置によって値を転送する動作。  
+*Undefined Behavior*  
+Behavior that the C++ standard does not define, and that's caused by an operation that has no reasonable result—for example, converting a floating-point value to an unsigned integer, or shifting a value by a number of positions that is negative or exceeds the number of bits in its promoted type.  
   
- 実装定義の動作  
- C\+\+ 標準では、コンパイラの販売元を定義および文書化するように要求する動作。  プログラムでは、実装定義される動作とそれが移植可能ではない場合でも、安全に依存する場合があります。  実装で定義されている動作の例では、組み込みデータ型と配置の要件のサイズが含まれます。  実装定義の動作によって影響を受ける操作の例では可変個引数リストにアクセスします。  
+*Implementation-defined Behavior*  
+Behavior that the C++ standard requires the compiler vendor to define and document. A program can safely rely on implementation-defined behavior, even though doing so might not be portable. Examples of implementation-defined behavior include the sizes of built-in data types and their alignment requirements. An example of an operation that might be affected by implementation-defined behavior is accessing the variable arguments list.  
   
- 未定義の動作  
- この動作は、非確定的な意図的に C\+\+ の標準リーフ。  動作が非確定的考慮されますが、未定義の動作の特定の呼び出しは、コンパイラの実装によって決まります。  ただし、結果を事前に決定したり、対応する呼び出し間で一貫した動作を保証するコンパイラの販売元の要件はありません。ドキュメントの要件はありません。  未定義の動作の例では、サブ式含む関数の引数が評価される順序はです。  
+*Unspecified Behavior*  
+Behavior that the C++ standard leaves intentionally non-deterministic. Although the behavior is considered non-deterministic, particular invocations of unspecified behavior are determined by the compiler implementation. However, there is no requirement for a compiler vendor to predetermine the result or guarantee consistent behavior between comparable invocations, and there is no requirement for documentation. An example of unspecified behavior is the order in which sub-expressions—which include arguments to a function call—are evaluated.  
   
- ARM と x86 または C\+\+ の標準とは別に対話する x64 アーキテクチャのハードウェアの違いに他の移行に関する問題は、属性ができます。  たとえば、x86 および x64 アーキテクチャの厳密なメモリ モデルは `volatile`\-修飾変数が特定の種類のスレッド間通信を以前転送するためのいくつかのプロパティできます。  ただし、ARM のアーキテクチャの弱いメモリ モデルは、この使用方法はサポートされませんが、C\+\+ 標準では、要求します。  
+Other migration issues can be attributed to hardware differences between ARM and x86 or x64 architectures that interact with the C++ standard differently. For example, the strong memory model of the x86 and x64 architecture gives `volatile`-qualified variables some additional properties that have been used to facilitate certain kinds of inter-thread communication in the past. But the ARM architecture's weak memory model doesn't support this use, nor does the C++ standard require it.  
   
 > [!IMPORTANT]
->  `volatile` が x86 および x64 のスレッド間通信の制限付きの実行に使用できるいくつかのプロパティの取得がこれらの追加プロパティは一般に、スレッド間通信を実行するだけでは不十分です。  C\+\+ 標準では、このような通信が適切な同期プリミティブを代わりにを使用することによって実行されたことをお勧めします。  
+>  Although `volatile` gains some properties that can be used to implement limited forms of inter-thread communication on x86 and x64, these additional properties are not sufficient to implement inter-thread communication in general. The C++ standard recommends that such communication be implemented by using appropriate synchronization primitives instead.  
   
- 異なるプラットフォームがこれらの種類の動作を異なる方法で表現する可能性があるため、プラットフォーム間でのソフトウェアを移植すると、特定のプラットフォームの動作に依存している場合、難しいバグの傾向があります。  これらの種類の動作の多くを確認することで、安定しているように見えることがありますが、依存関係は少なくとも未定義または未指定の動作の場合、移植性の低いと、エラーです。  このドキュメントの引用される動作に依存したりすることはありません。将来のコンパイラまたは CPU の実装で変更できます。  
+Because different platforms might express these kinds of behavior differently, porting software between platforms can be difficult and bug-prone if it depends on the behavior of a specific platform. Although many of these kinds of behavior can be observed and might appear stable, relying on them is at least non-portable, and in the cases of undefined or unspecified behavior, is also an error. Even the behavior that's cited in this document should not be relied on, and could change in future compilers or CPU implementations.  
   
-## 例の移行に関する問題  
- このドキュメントの残りの部分では、これらの C\+\+ 言語要素の動作の違いが異なるプラットフォームが異なる結果がどのように生成されるかを説明します。  
+## <a name="example-migration-issues"></a>Example migration issues  
+
+The rest of this document describes how the different behavior of these C++ language elements can produce different results on different platforms.  
   
-### 符号なし整数への浮動小数点の変換  
- ARM アーキテクチャで、32 ビット整数と浮動小数点値の変換を表す整数ができる最も近い値に浮動小数点値を表す整数ができる範囲外にある場合は飽和します。  x86 および x64 アーキテクチャでも符号なしである場合、整数変換のラップは \-2147483648 に、整数が署名されます。  これらのアーキテクチャはいずれも直接より小さな整数型への浮動小数点値の変換をサポートしない; 代わりに、32 の bit への変換が実行されて結果は、ミニに切り捨てられます。  
+### <a name="conversion-of-floating-point-to-unsigned-integer"></a>Conversion of Floating-point to Unsigned Integer  
+
+On the ARM architecture, conversion of a floating-point value to a 32-bit integer saturates to the nearest value that the integer can represent if the floating-point value is outside the range that the integer can represent. On the x86 and x64 architectures, the conversion wraps around if the integer is unsigned, or is set to -2147483648 if the integer is signed. None of these architectures directly support the conversion of floating-point values to smaller integer types; instead, the conversions are performed to 32 bits, and the results are truncated to a smaller size.  
   
- ARM のアーキテクチャ用に、彩度、および切り捨てが、32 ビット整数を飽和の限界させたりする、完全な 32 ビット整数を飽和するには、小さい型が表すことができる小さすぎるなるより大きい値の省略された結果をと unsigned 型への変換が正しく小さい符号なしの型をことを意味します。  変換は、32 ビット符号付き整数で正しく飽和しますが、飽和するため切り捨てが正飽和値の \-1 と負飽和の値は 0 で、符号付き整数が発生します。  小さい符号付き整数への変換は予測不可能である省略された結果を生成します。  
+For the ARM architecture, the combination of saturation and truncation means that conversion to unsigned types correctly saturates smaller unsigned types when it saturates a 32-bit integer, but produces a truncated result for values that are larger than the smaller type can represent but too small to saturate the full 32-bit integer. Conversion also saturates correctly for 32-bit signed integers, but truncation of saturated, signed integers results in -1 for positively-saturated values and 0 for negatively-saturated values. Conversion to a smaller signed integer produces a truncated result that's unpredictable.  
   
- x86 および x64 アーキテクチャでは、符号なしの整数変換のラップアラウンドの動作およびオーバーフローの符号付き整数の変換の明示的な評価の組み合わせは、切り捨てとともに、大きすぎるほとんどのシフトの結果を予測不可能になります。  
+For the x86 and x64 architectures, the combination of wrap-around behavior for unsigned integer conversions and explicit valuation for signed integer conversions on overflow, together with truncation, make the results for most shifts unpredictable if they are too large.  
   
- これらのプラットフォームは、整数型への非数 \(NaN ではありません\) の変換をどのように処理されるかは異なります。  ARM、0x00000000 に NaN\) ファイルに変換します; x86 および x64 では、0x80000000 に変換します。  
+These platforms also differ in how they handle conversion of NaN (Not-a-Number) to integer types. On ARM, NaN converts to 0x00000000; on x86 and x64, it converts to 0x80000000.  
   
- 浮動小数点変換はに変換されます。値は、整数型の範囲内にあることがわかっている場合にのみ使用できます。  
+Floating-point conversion can only be relied on if you know that the value is within the range of the integer type that it's being converted to.  
   
-### シフト演算子 \(\<\< \>\>\) 動作  
- ARM アーキテクチャでは、値パターンが繰り返し開始する前に 255 までの bit 左または右に転送できます。  x86 および x64\) アーキテクチャ パターンで、は 32 の倍数で、パターンのソースが 64 ビット変数である繰り返されます; x64、64 の倍数、およびソフトウェアの実装が使用されている x86 の 256 のすべての複数のケース、そのパターンの繰り返しでは。  たとえば、の 32 ビット変数に値 1 は、32 の位置に左に転送し、ARM の結果は 0 ですが、x86 の結果は 1 で、x64 に結果も 1.です。  ただし、3 つすべてのプラットフォームの値のソースが 64 ビット変数の場合、結果は 4294967296 で、も 64 x64 の位置を移した、ARM の x86 および 256 の位置の値は折り返されません "の周囲に"。  
+### <a name="shift-operator---behavior"></a>Shift Operator (<\< >>) Behavior  
+
+On the ARM architecture, a value can be shifted left or right up to 255 bits before the pattern begins to repeat. On x86 and x64 architectures, the pattern is repeated at every multiple of 32 unless the source of the pattern is a 64-bit variable; in that case, the pattern repeats at every multiple of 64 on x64, and every multiple of 256 on x86, where a software implementation is employed. For example, for a 32-bit variable that has a value of 1 shifted left by 32 positions, on ARM the result is 0, on x86 the result is 1, and on x64 the result is also 1. However, if the source of the value is a 64-bit variable, then the result on all three platforms is 4294967296, and the value doesn't "wrap around" until it's shifted 64 positions on x64, or 256 positions on ARM and x86.  
   
- ソース型の bit 数を超えているシフト演算の結果は未定義であるため、コンパイラは一定の動作が全ての状況で必要ではありません。  たとえば、シフトの両方のオペランドがコンパイル時にわからない場合、コンパイラはより、シフトの結果内部ルーチンを使用し、シフト演算の代わりに結果に置き換えることでプログラムを最適化できます。  シフト量が CPU によって実装されると同じシフトの式の結果とは異なるには大きすぎて、または負の場合、内部ルーチンの結果は可能性があります。  
+Because the result of a shift operation that exceeds the number of bits in the source type is undefined, the compiler is not required to have consistent behavior in all situations. For example, if both operands of a shift are known at compile time, the compiler may optimize the program by using an internal routine to precompute the result of the shift and then substituting the result in place of the shift operation. If the shift amount is too large, or negative, the result of the internal routine might be different than the result of the same shift expression as executed by the CPU.  
   
-### 可変個の引数 \(varargs\) の動作  
- ARM アーキテクチャで、スタックに渡されます可変個引数リストからパラメーターは配置します。  たとえば、64 ビットのパラメーターは 64 ビットの境界に揃えられます。  x86 および x64 に、スタックに渡される引数は、配置の対象外であるため、厳密に詰まりません。  この違いにより、`printf` などの variadic 関数は、x86 または x64 アーキテクチャのある値のサブセットで行う場合でも、可変個引数リストの予想レイアウトが正確に一致する ARM の埋め込みとして指定されているメモリ アドレスを読み取ることができます。  次の例について考えます。  
+### <a name="variable-arguments-varargs-behavior"></a>Variable Arguments (varargs) Behavior  
+
+On the ARM architecture, parameters from the variable arguments list that are passed on the stack are subject to alignment. For example, a 64-bit parameter is aligned on a 64-bit boundary. On x86 and x64, arguments that are passed on the stack are not subject to alignment and pack tightly. This difference can cause a variadic function like `printf` to read memory addresses that were intended as padding on ARM if the expected layout of the variable arguments list is not matched exactly, even though it might work for a subset of some values on the x86 or x64 architectures. Consider this example:  
   
-```  
+```C  
 // notice that a 64-bit integer is passed to the function, but '%d' is used to read it.  
 // on x86 and x64 this may work for small values because %d will “parse” the low-32 bits of the argument.  
 // on ARM the calling convention will align the 64-bit value and the code will print a random value  
-printf("%d\n", 1LL);  
-  
+printf("%d\n", 1LL);     
 ```  
   
- この場合、バグは、正しいファイル形式仕様が使用されていることを確認することで、引数の配置と見なされるように修正できます。  このコードは適切です:  
+In this case, the bug can be fixed by making sure that the correct format specification is used so that that the alignment of the argument is considered. This code is correct:  
   
-```  
+```C  
 // CORRECT: use %I64d for 64-bit integers  
 printf("%I64d\n", 1LL);  
-  
 ```  
   
-### 引数の評価順序  
- ARM、x86 および x64 プロセッサが大きく異なるため、コンパイラの実装に異なる条件、および最適化の異なる機会を参照したりできます。  このため、他の要素とともに呼び出し規約と最適化の設定を使用した場合、そのほかの要因が変更されたときにコンパイラは、各アーキテクチャの異なる順序で関数の引数を評価する場合があります。  これにより、予期せず変更する特定の評価の順序に依存するアプリケーションの動作が発生する可能性があります。  
+### <a name="argument-evaluation-order"></a>Argument evaluation order  
+
+Because ARM, x86, and x64 processors are so different, they can present different requirements to compiler implementations, and also different opportunities for optimizations. Because of this, together with other factors like calling-convention and optimization settings, a compiler might evaluate function arguments in a different order on different architectures or when the other factors are changed. This can cause the behavior of an app that relies on a specific evaluation order to change unexpectedly.  
   
- 関数の引数が同じ呼び出しの関数に他の引数に影響を与える副作用があるときにこの種類のエラーが発生することがあります。  通常、このような依存関係を回避しやすくなりますが、リークが困難または演算子のオーバーロードによってできます。依存関係によってマスク。  このコード例を使用する:  
+This kind of error can occur when arguments to a function have side effects that impact other arguments to the function in the same call. Usually this kind of dependency is easy to avoid, but it can sometimes be obscured by dependencies that are difficult to discern, or by operator overloading. Consider this code example:  
   
-```  
+```cpp  
 handle memory_handle;  
   
 memory_handle->acquire(*p);  
-  
 ```  
   
- これは、これに似たものに正しく定義された、`->` と `*` オーバーロードされた演算子の場合、このコードの変換です:されます。  
+This appears well-defined, but if `->` and `*` are overloaded operators, then this code is translated to something that resembles this:  
   
-```  
+```cpp  
 Handle::acquire(operator->(memory_handle), operator*(p));  
 ```  
   
- と `operator->(memory_handle)` と `operator*(p)`間に依存関係がある場合、コードは特定の評価の順序、そこでのようになります。元のコードが可能な依存関係ではありませんが、依存する場合があります。  
+And if there's a dependency between `operator->(memory_handle)` and `operator*(p)`, the code might rely on a specific evaluation order, even though the original code looks like there is no possible dependency.  
   
-### volatile キーワードの既定の動作  
- Microsoft C\+\+ コンパイラは、コンパイラ スイッチを使用して指定できるストレージの volatile 修飾子の 2 種類の解釈をサポートします。  **\/volatile:ms** スイッチは、そのアーキテクチャの厳密なメモリ モデルに" Microsoft 拡張正確揮発性セマンティクスを厳密な命令が保証され、ようにする Microsoft のコンパイラの x86 および x64 の通常の場合、選択します。  **\/volatile:iso** スイッチは、厳密な C\+\+ の標準揮発性セマンティクスを選択して厳密な命令が保証されます。  
+### <a name="volatile-keyword-default-behavior"></a>volatile Keyword Default Behavior  
+
+The Microsoft C++ compiler supports two different interpretations of the `volatile` storage qualifier that you can specify by using compiler switches. The **/volatile:ms** switch selects the Microsoft extended volatile semantics that guarantee strong ordering, as has been the traditional case for x86 and x64 on the Microsoft compiler because of the strong memory model on those architectures. The **/volatile:iso** switch selects the strict C++ standard volatile semantics that don't guarantee strong ordering.  
   
- ARM アーキテクチャで、既定値は、ARM のプロセッサが弱く順序付けられたメモリ モデルを持つため、ARM のソフトウェアに **\/volatile:ms** の拡張機能に依存しないレガシがなく、通常、ソフトウェアとやり取りする必要がないため **\/volatile:iso** です。  ただし、拡張機能を使用するには兵器プログラムをコンパイルするために、まだ場合に便利、または必須です。  ISO C\+\+ セマンティクスを使用するプログラムを移植するにはたとえば、は、高価場合があります。また、ドライバー ソフトウェアが正しく機能するために、従来のセマンティクスに準拠する必要がある場合があります。  このような場合、**\/volatile:ms** スイッチを使用して; ただし、ARM のターゲットの従来の揮発性セマンティクスを再作成するために、コンパイラは個別にまたは `volatile` の変数の書き込みに基づいてパフォーマンス低下を招きます持つことができる強力な命令を実装するために読み取られるメモリ バリアを挿入する必要があります。  
+On the ARM architecture, the default is **/volatile:iso** because ARM processors have a weakly ordered memory model, and because ARM software doesn’t have a legacy of relying on the extended semantics of **/volatile:ms** and doesn't usually have to interface with software that does. However, it's still sometimes convenient or even required to compile an ARM program to use the extended semantics. For example, it may be too costly to port a program to use the ISO C++ semantics, or driver software might have to adhere to the traditional semantics to function correctly. In these cases, you can use the **/volatile:ms** switch; however, to recreate the traditional volatile semantics on ARM targets, the compiler must insert memory barriers around each read or write of a `volatile` variable to enforce strong ordering, which can have a negative impact on performance.  
   
- x86 および x64 アーキテクチャで、既定値はこれらのアーキテクチャについては、Microsoft C\+\+ コンパイラを使用して既に作成されているソフトウェアの多くは、**\/volatile:ms** に依存するためです。  x86 および x64 プログラムをコンパイルすると、従来の揮発性セマンティクスの不要な信頼を回避し、移植性を昇格させるのに役立つ **\/volatile:iso** スイッチを指定できます。  
+On the x86 and x64 architectures, the default is **/volatile:ms** because much of the software that has already been created for these architectures by using the Microsoft C++ compiler relies on them. When you compile x86 and x64 programs, you can specify the **/volatile:iso** switch to help avoid unnecessary reliance on the traditional volatile semantics, and to promote portability.  
   
-## 参照  
- [ARM プロセッサ用プログラムの構成](../Topic/Configuring%20Programs%20for%20ARM%20Processors%20\(Visual%20C++\).md)
+## <a name="see-also"></a>See Also  
+
+[Configure Visual C++ for ARM processors](../build/configuring-programs-for-arm-processors-visual-cpp.md)

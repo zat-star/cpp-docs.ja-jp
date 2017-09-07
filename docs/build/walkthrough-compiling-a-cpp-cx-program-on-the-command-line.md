@@ -1,50 +1,66 @@
 ---
-title: "チュートリアル: コマンド ラインでの C++/CX プログラムのコンパイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: 'Walkthrough: Compiling a C++/CX Program on the Command Line | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 626f5544-69ed-4736-83a9-f11389b371b2
 caps.latest.revision: 8
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# チュートリアル: コマンド ラインでの C++/CX プログラムのコンパイル
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 82ce88b7769c37ee6219df59c19490537cfe2571
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Windows ランタイムをターゲットにする Visual C\+\+ プログラムを作成して、コマンド ライン上に構築できます。  Visual C\+\+ は Visual C\+\+ コンポーネント拡張 \(C\+\+\/CX\) をサポートしており、Windows ランタイム プログラミング モデルをターゲットにするための追加のタイプとオペレーターがあります。  C\+\+\/CX を使って Windows Phone 8.1、Windows Store、および Windows デスクトップのアプリを作成できます。  詳細については、「[C\+\+\/CX のツアー](http://msdn.microsoft.com/magazine/dn166929.aspx)」および「[Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
+---
+# <a name="walkthrough-compiling-a-ccx-program-on-the-command-line"></a>Walkthrough: Compiling a C++/CX Program on the Command Line
+You can create Visual C++ programs that target the Windows Runtime and build them on the command line. Visual C++ supports Visual C++ component extensions (C++/CX), which has additional types and operators to target the Windows Runtime programming model. You can use C++/CX to build apps for Windows Phone 8.1, Windows Store, and Windows desktop. For more information, see [A Tour of C++/CX](http://msdn.microsoft.com/magazine/dn166929.aspx) and [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md).  
   
- このチュートリアルでは、テキスト エディターを使って基本的な C\+\+\/CX プログラムを作成し、コマンド ラインでコンパイルします。  \(表示されているプログラムをタイプするのではなく、自分の C\+\+\/CX プログラムを使用するか、別のヘルプ記事の C\+\+\/CX コード サンプルを使用できます。  この手法は UI 要素が含まれていない小さなモジュールをビルドおよびテストするのに便利です。\)  
+ In this walkthrough, you use a text editor to create a basic C++/CX program, and then compile it on the command line. (You can use your own C++/CX program instead of typing the one that's shown, or you can use a C++/CX code sample from another help article. This technique is useful for building and testing small modules that contain no UI elements.)  
   
 > [!NOTE]
->  Visual Studio IDE を使って C\+\+\/CX プログラムをコンパイルすることもできます。  IDE には、コマンド ラインでは利用できない、デザイン、デバッグ、エミュレーション、および配置のサポートが含まれているため、Windows ストア アプリをビルドする場合は IDE を使用することをお勧めします。  詳細については、「[Create a basic C\+\+ Store app](http://msdn.microsoft.com/library/windows/apps/dn263168)」を参照してください。  
+>  You can also use the Visual Studio IDE to compile C++/CX programs. Because the IDE includes design, debugging, emulation, and deployment support that isn't available on the command line, we recommend that you use the IDE to build Windows Store apps. For more information, see [Create a basic C++ Store app](http://msdn.microsoft.com/library/windows/apps/dn263168).  
   
-## 必須コンポーネント  
- C\+\+ 言語の基本を理解している必要があります。  
+## <a name="prerequisites"></a>Prerequisites  
+ You must understand the fundamentals of the C++ language.  
   
-## C\+\+\/CX プログラムのコンパイル  
- C\+\+\/CX のコンパイルを有効にするには、[\/ZW](../build/reference/zw-windows-runtime-compilation.md) コンパイラ オプションを使用する必要があります。  Visual C\+\+ コンパイラは、Windows Runtime をターゲットにする .exe ファイルを生成し、必要なライブラリにリンクします。  
+## <a name="compiling-a-ccx-program"></a>Compiling a C++/CX Program  
+ To enable compilation for C++/CX, you must use the [/ZW](../build/reference/zw-windows-runtime-compilation.md) compiler option. The Visual C++ compiler generates an .exe file that targets the Windows Runtime, and links to the required libraries.  
   
-#### コマンド ラインで C\+\+\/CX アプリケーションをコンパイルするには:  
+#### <a name="to-compile-a-ccx-application-on-the-command-line"></a>To compile a C++/CX application on the command line  
   
-1.  **\[開発者コマンド プロンプト\]** ウィンドウを開きます。  \(**\[スタート\]** ウィンドウで、**\[アプリ\]** を開きます。  使用しているバージョンの [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] の **\[Visual Studio ツール\]** フォルダーを開き、**\[開発者コマンド プロンプト\]** ショートカットを選択します\)。コマンド プロンプト ウィンドウを開く方法の詳細については、「[コマンド ライン ビルドのパスと環境変数の設定](../build/setting-the-path-and-environment-variables-for-command-line-builds.md)」を参照してください。  
+1.  Open a **Developer Command Prompt** window. (On the **Start** window, open **Apps**. Open the **Visual Studio Tools** folder under your version of [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)], and then choose the **Developer Command Prompt** shortcut.) For more information about how to open a Developer Command Prompt window, see [Build C/C++ code on the command line](../build/building-on-the-command-line.md).  
   
-     コンピューターのオペレーティング システムと構成によっては、コードを正常にコンパイルするために管理者の資格情報が必要な場合があります。  管理者としてコマンド プロンプト ウィンドウを実行するには、**\[開発者コマンド プロンプト\]** のショートカット メニューを開いて **\[管理者として実行\]** を選択します。  
+     Administrator credentials may be required to successfully compile the code, depending on the computer's operating system and configuration. To run the Command Prompt window as an administrator, open the shortcut menu for **Developer Command Prompt** and then choose **Run as administrator**.  
   
-2.  コマンド プロンプトで、「**notepad basiccx.cpp**」と入力します。  
+2.  At the command prompt, enter **notepad basiccx.cpp**.  
   
-     ファイルを作成するかどうかを確認するメッセージが表示されたら、**\[はい\]** を選択します。  
+     Choose **Yes** when you are prompted to create a file.  
   
-3.  メモ帳で、次の行を入力します。  
+3.  In Notepad, enter these lines:  
   
     ```cpp  
     using namespace Platform;  
@@ -56,20 +72,21 @@ Windows ランタイムをターゲットにする Visual C\+\+ プログラム�
   
     ```  
   
-4.  メニュー バーで、**\[ファイル\]**、**\[保存\]** の順に選択します。  
+4.  On the menu bar, choose **File**, **Save**.  
   
-     Windows Runtime [プラットフォーム名前空間](../Topic/Platform%20namespace%20\(C++-CX\).md) 名前空間を使用する Visual C\+\+ ソース ファイルが作成されました。  
+     You have created a Visual C++ source file that uses the Windows Runtime [Platform namespace](../cppcx/platform-namespace-c-cx.md) namespace.  
   
-5.  コマンド プロンプトで、「**cl \/EHsc \/ZW basiccx.cpp \/link \/SUBSYSTEM:CONSOLE**」と入力します。  cl.exe コンパイラは、ソース コードを .obj ファイルにコンパイルした後、リンカーを実行して basiccx.exe という名前の実行プログラムを生成します。  \([\/EHsc](../build/reference/eh-exception-handling-model.md) コンパイラ オプションは C\+\+ 例外処理モデルを指定し、[\/link](../Topic/-link%20\(Pass%20Options%20to%20Linker\).md) フラグはコンソール アプリケーションを指定します。\)  
+5.  At the command prompt, enter **cl /EHsc /ZW basiccx.cpp /link /SUBSYSTEM:CONSOLE**. The cl.exe compiler compiles the source code into an .obj file, and then runs the linker to generate an executable program named basiccx.exe. (The [/EHsc](../build/reference/eh-exception-handling-model.md) compiler option specifies the C++ exception-handling model, and the [/link](../build/reference/link-pass-options-to-linker.md) flag specifies a console application.)  
   
-6.  basiccx.exe プログラムを実行するには、コマンド プロンプトで「**basiccx**」と入力します。  
+6.  To run the basiccx.exe program, at the command prompt, enter **basiccx**.  
   
-     プログラムは、次のテキストを表示して終了します。  
+     The program displays this text and exits:  
   
-  **これは C\+\+\/CX プログラムです。**  
+    ```Output  
+    This is a C++/CX program.  
+    ```  
   
-## 参照  
- [Visual C\+\+ Guided Tour](http://msdn.microsoft.com/ja-jp/499cb66f-7df1-45d6-8b6b-33d94fd1f17c)   
- [C\+\+ 言語リファレンス](../cpp/cpp-language-reference.md)   
- [C\/C\+\+ プログラムのビルド](../build/building-c-cpp-programs.md)   
- [コンパイラ オプション](../build/reference/compiler-options.md)
+## <a name="see-also"></a>See Also  
+ [C++ Language Reference](../cpp/cpp-language-reference.md)   
+ [Building C/C++ Programs](../build/building-c-cpp-programs.md)   
+ [Compiler Options](../build/reference/compiler-options.md)

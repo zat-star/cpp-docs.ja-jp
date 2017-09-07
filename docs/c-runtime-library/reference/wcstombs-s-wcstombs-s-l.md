@@ -1,11 +1,11 @@
 ---
-title: "wcstombs_s、_wcstombs_s_l | Microsoft Docs"
+title: wcstombs_s, _wcstombs_s_l | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -56,17 +56,18 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: c407068c475f866062f8973fbacf70fcf6e6cae9
+ms.translationtype: MT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 913ee4f1b4b9e9c228ef13d78d26742529bbdc0e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="wcstombss-wcstombssl"></a>wcstombs_s、_wcstombs_s_l
-ワイド文字のシーケンスを、対応するマルチバイト文字のシーケンスに変換します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおりセキュリティが強化されたバージョンの [wcstombs、_wcstombs_l](../../c-runtime-library/reference/wcstombs-wcstombs-l.md) です。  
+# <a name="wcstombss-wcstombssl"></a>wcstombs_s, _wcstombs_s_l
+
+Converts a sequence of wide characters to a corresponding sequence of multibyte characters. A version of [wcstombs, _wcstombs_l](../../c-runtime-library/reference/wcstombs-wcstombs-l.md) with security enhancements as described in [Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 errno_t wcstombs_s(  
@@ -76,6 +77,7 @@ errno_t wcstombs_s(
    const wchar_t *wcstr,  
    size_t count   
 );  
+
 errno_t _wcstombs_s_l(  
    size_t *pReturnValue,  
    char *mbstr,  
@@ -84,6 +86,7 @@ errno_t _wcstombs_s_l(
    size_t count,  
    _locale_t locale  
 );  
+
 template <size_t size>  
 errno_t wcstombs_s(  
    size_t *pReturnValue,  
@@ -91,6 +94,7 @@ errno_t wcstombs_s(
    const wchar_t *wcstr,  
    size_t count   
 ); // C++ only  
+
 template <size_t size>  
 errno_t _wcstombs_s_l(  
    size_t *pReturnValue,  
@@ -101,74 +105,78 @@ errno_t _wcstombs_s_l(
 ); // C++ only  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- [出力] `pReturnValue`  
- 変換された文字数。  
+#### <a name="parameters"></a>Parameters  
+
+[out] *pReturnValue*  
+The number of characters converted.  
   
- [出力] `mbstr`  
- 結果として変換されたマルチバイト文字の文字列のバッファーのアドレス。  
+[out] *mbstr*  
+The address of a buffer for the resulting converted multibyte character string.  
   
- [入力] `sizeInBytes`  
- `mbstr` バッファーのサイズ (バイト数)。  
+[in] *sizeInBytes*  
+The size in bytes of the *mbstr* buffer.  
   
- [入力] `wcstr`  
- 変換するワイド文字の文字列を指します。  
+[in] *wcstr*  
+Points to the wide character string to be converted.  
   
- [入力] `count`  
- `mbstr` バッファーに格納する最大バイト数 (終端の null を含みません) か、[_TRUNCATE](../../c-runtime-library/truncate.md)。  
+[in] *count*  
+The maximum number of bytes to store in the *mbstr* buffer, not including the terminating null character, or [_TRUNCATE](../../c-runtime-library/truncate.md).  
   
- [入力] `locale`  
- 使用するロケール。  
+[in] *locale*  
+The locale to use.  
   
-## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
+## <a name="return-value"></a>Return Value  
+
+Zero if successful, an error code on failure.  
   
-|エラー条件|戻り値および `errno`|  
+|Error condition|Return value and `errno`|  
 |---------------------|------------------------------|  
-|`mbstr` が `NULL` で `sizeInBytes` > 0|`EINVAL`|  
-|`wcstr` は `NULL` です|`EINVAL`|  
-|コピー先のバッファーが小さすぎて変換後の文字列を含めることができません (`count` が `_TRUNCATE` の場合を除きます。下記の「解説」を参照してください)|`ERANGE`|  
+|*mbstr* is `NULL` and *sizeInBytes* > 0|`EINVAL`|  
+|*wcstr* is `NULL`|`EINVAL`|  
+|The destination buffer is too small to contain the converted string (unless *count* is `_TRUNCATE`; see Remarks below)|`ERANGE`|  
   
- これらのいずれかの条件が発生すると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター例外が呼び出されます。 実行の続行が許可された場合、関数はエラー コードを返し、表に示すように `errno` を設定します。  
+If any of these conditions occurs, the invalid parameter exception is invoked as described in [Parameter Validation](../../c-runtime-library/parameter-validation.md) . If execution is allowed to continue, the function returns an error code and sets `errno` as indicated in the table.  
   
-## <a name="remarks"></a>コメント  
- `wcstombs_s` 関数は、`wcstr` が指すワイド文字の文字列を、`mbstr` が指すバッファーに格納されるマルチバイト文字に変換します。 これらの条件のいずれかが満たされるまで、各文字に対して変換が続きます。  
+## <a name="remarks"></a>Remarks  
+
+The `wcstombs_s` function converts a string of wide characters pointed to by *wcstr* into multibyte characters stored in the buffer pointed to by *mbstr*. The conversion will continue for each character until one of these conditions is met:  
   
--   ワイド文字の null が検出されました。  
+-   A null wide character is encountered  
   
--   変換できないワイド文字が検出されました。  
+-   A wide character that cannot be converted is encountered  
   
--   `mbstr` バッファーに格納されているバイト数が `count` と同じです。  
+-   The number of bytes stored in the *mbstr* buffer equals *count*.  
   
- 変換先の文字列は、エラーの場合を含め、常に null で終わります。  
+The destination string is always null-terminated (even in the case of an error).  
   
- `count` が特殊値 [_TRUNCATE](../../c-runtime-library/truncate.md) の場合、`wcstombs_s` は null 終端文字用の空きを残して、コピー先のバッファーに収まる限りの文字列を変換します。  
+If *count* is the special value [_TRUNCATE](../../c-runtime-library/truncate.md), then `wcstombs_s` converts as much of the string as will fit into the destination buffer, while still leaving room for a null terminator. If the string is truncated, the return value is `STRUNCATE`, and the conversion is considered successful.  
   
- `wcstombs_s` は、元の文字列を正常に変換すると、null 終端文字を含む変換後の文字列のサイズ (バイト数) を `*``pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`mbstr` 引数が `NULL` である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `mbstr` が `NULL` の場合は、`count` は無視されることに注意してください。  
+If `wcstombs_s` successfully converts the source string, it puts the size in bytes of the converted string, including the null terminator, into `*pReturnValue` (provided *pReturnValue* is not `NULL`). This occurs even if the *mbstr* argument is `NULL` and provides a way to determine the required buffer size. Note that if *mbstr* is `NULL`, *count* is ignored.  
   
- マルチバイト文字に変換できないワイド文字が検出された場合、`wcstombs_s` は `*``pReturnValue` に 0 を入れ、コピー先バッファーを空文字列に設定し、`errno` を `EILSEQ` に設定して、`EILSEQ` を返します。  
+If `wcstombs_s` encounters a wide character it cannot convert to a multibyte character, it puts 0 in `*pReturnValue`, sets the destination buffer to an empty string, sets `errno` to `EILSEQ`, and returns `EILSEQ`.  
   
- `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、`wcstombs_s` の動作は未定義です。  
+If the sequences pointed to by *wcstr* and *mbstr* overlap, the behavior of `wcstombs_s` is undefined.  
   
 > [!IMPORTANT]
->  `wcstr` と `mbstr` が重なり合わず、変換するワイド文字の数が `count` に適切に反映されていることを確認します。  
+>  Ensure that *wcstr* and *mbstr* do not overlap, and that *count* correctly reflects the number of wide characters to convert.  
   
- `wcstombs_s` は、ロケールに依存するあらゆる動作に現在のロケールを使用します。`_wcstombs_s_l` は、渡されたロケールを代わりに使用することを除いて `wcstombs` と同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+`wcstombs_s` uses the current locale for any locale-dependent behavior; `_wcstombs_s_l` is identical to `wcstombs` except that it uses the locale passed in instead. For more information, see [Locale](../../c-runtime-library/locale.md).  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+In C++, using these functions is simplified by template overloads; the overloads can infer buffer length automatically (eliminating the need to specify a size argument) and they can automatically replace older, non-secure functions with their newer, secure counterparts. For more information, see [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>Requirements  
   
-|ルーチン|必須ヘッダー|  
+|Routine|Required header|  
 |-------------|---------------------|  
 |`wcstombs_s`|\<stdlib.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+For additional compatibility information, see [Compatibility](../../c-runtime-library/compatibility.md).  
   
-## <a name="example"></a>例  
- このプログラムは、`wcstombs_s` 関数の動作を示しています。  
+## <a name="example"></a>Example  
+
+This program illustrates the behavior of the `wcstombs_s` function.  
   
-```  
+```C  
 // crt_wcstombs_s.c  
 // This example converts a wide character  
 // string to a multibyte character string.  
@@ -209,11 +217,12 @@ Convert wide-character string:
     Multibyte character: Hello, world.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [_mbclen、mblen、_mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   
- [mbstowcs、_mbstowcs_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md)   
- [mbtowc、_mbtowc_l](../../c-runtime-library/reference/mbtowc-mbtowc-l.md)   
- [wctomb_s、_wctomb_s_l](../../c-runtime-library/reference/wctomb-s-wctomb-s-l.md)   
- [WideCharToMultiByte](http://msdn.microsoft.com/library/windows/desktop/dd374130)
+## <a name="see-also"></a>See Also  
+
+[Data Conversion](../../c-runtime-library/data-conversion.md)   
+[Locale](../../c-runtime-library/locale.md)   
+[_mbclen, mblen, _mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   
+[mbstowcs, _mbstowcs_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md)   
+[mbtowc, _mbtowc_l](../../c-runtime-library/reference/mbtowc-mbtowc-l.md)   
+[wctomb_s, _wctomb_s_l](../../c-runtime-library/reference/wctomb-s-wctomb-s-l.md)   
+[WideCharToMultiByte](http://msdn.microsoft.com/library/windows/desktop/dd374130)

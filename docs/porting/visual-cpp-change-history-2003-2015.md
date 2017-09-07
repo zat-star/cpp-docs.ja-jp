@@ -1,7 +1,7 @@
 ---
-title: "Visual C++ 2003 ～ 2015 の変更履歴 | Microsoft Docs"
+title: Visual C++ change history 2003 - 2015 | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 08/30/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -32,141 +32,141 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
-ms.openlocfilehash: 482b404293cc1eea9879b09de52fb277cc1bd2a0
+ms.translationtype: HT
+ms.sourcegitcommit: 42abd4adfe10b032849bfec391874cd249793c32
+ms.openlocfilehash: f77417b92138854d71740494680e9bb72c38f789
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/01/2017
+ms.lasthandoff: 08/31/2017
 
 ---
-# <a name="visual-c-change-history-2003---2015"></a>Visual C++ 2003 ～ 2015 の変更履歴
-この記事では、Visual Studio 2003 から Visual Studio 2015 の互換性に影響する変更についてすべて説明します。この記事の「新しい動作」や「現在」という語は、Visual Studio 2015 以降を指します。 「従来の動作」や「以前」という語は、Visual Studio 2013 以前のリリースを指します。 
+# <a name="visual-c-change-history-2003---2015"></a>Visual C++ change history 2003 - 2015
+This article describes all the breaking changes from Visual Studio 2015 going back to Visual Studio 2003, and in this article the terms "new behavior" or "now" refer to Visual Studio 2015 and later. The terms "old behavior" and "before" refer to Visual Studio 2013 and earlier releases. 
  
- Visual Studio 2017 の詳細については、「[What's new for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md)」(Visual Studio 2017 の Visual C++ の新機能)、「[Conformance Improvements in Visual C++ in Visual Studio 2017](../cpp-conformance-improvements-2017.md)」(Visual Studio 2017 の C++ 準拠の強化) を参照してください。 
+ For information about Visual Studio 2017, see [What's new for Visual C++ in Visual Studio 2017](../what-s-new-for-visual-cpp-in-visual-studio.md) and [Conformance Improvements in Visual C++ in Visual Studio 2017](../cpp-conformance-improvements-2017.md). 
  > [!NOTE]
- > Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
+ > There are no binary breaking changes between Visual Studio 2015 and Visual Studio 2017.
 
-Visual C++ コンパイラの新しいバージョンにアップグレードすると、以前にコンパイルと動作が正常に行えたコードでコンパイルやランタイム エラーが発生する場合があります。 新しいバージョンでこのような問題を引き起こす変更は *互換性に影響する変更*と呼ばれ、通常は C++ 言語の基準、関数シグネチャ、またはメモリ オブジェクトのレイアウトの変更によって必要となります。  
+When you upgrade to a new version of the Visual C++ compiler, you might encounter compilation and/or runtime errors in code that previously compiled and ran correctly. Changes in the new version that cause such problems are known as *breaking changes*, and typically they're required by modifications in the C++ language standard, function signatures, or the layout of objects in memory.  
   
- 検出や診断が難しいランタイム エラーを回避するには、異なるバージョンのコンパイラを使用してコンパイルされたバイナリには静的にリンクしないことをお勧めします。 また、EXE または DLL プロジェクトをアップグレードする場合、リンクするライブラリもアップグレードします。 CRT (C Runtime) または C++ 標準ライブラリ (C++ Standard Library) 型を使用している場合は、異なるバージョンのコンパイラを使用してコンパイルされたバイナリ間 (DLL を含む) で渡さないでください。 詳細については、「[DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー](../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md)」を参照してください。  
+ To avoid run-time errors that are difficult to detect and diagnose, we recommend that you never statically link to binaries that were compiled by using different versions of the compiler. Also, when you upgrade an EXE or DLL project, make sure to upgrade the libraries that it links to. If you're using CRT (C Runtime) or C++ Standard Library (C++ Standard Library) types, don't pass them between binaries (including DLLs) that were compiled by using different versions of the compiler. For more information, see [Potential Errors Passing CRT Objects Across DLL Boundaries](../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md).  
   
- さらに、COM インターフェイスまたは POD オブジェクトではないオブジェクトで、特定のレイアウトに依存するコードを記述しないことをお勧めします。 このようなコードを記述している場合、アップグレード後に動作することを確認する必要があります。 詳細については、「[ABI の境界での移植性](../cpp/portability-at-abi-boundaries-modern-cpp.md)」を参照してください。  
+ We further recommend that you never write code that depends on a particular layout for an object that is not a COM interface or a POD object. If you do write such code, then you must ensure that it works after you upgrade. For more information, see [Portability At ABI Boundaries](../cpp/portability-at-abi-boundaries-modern-cpp.md).  
   
- また、コンパイラの準拠に関する継続的な強化によって、コンパイラが既存のソース コードを認識する方法が変わる可能性があります。 このような場合、以前にビルドして問題なく実行できていたコードでも、ビルド時に新しいエラーや異なるエラーが発生したり、動作が変わったりする可能性があります。 このドキュメントで説明しているような互換性に影響する変更ではありませんが、問題を解決するためにソース コードの変更が必要な場合があります。  
+ Additionally, ongoing improvements to compiler conformance can sometimes change how the compiler understands your existing source code. When this happens, you might encounter new or different errors during your build, or even behavioral differences in code that previously built and seemed to run correctly. Although these are not breaking changes like the ones discussed in this document, source code changes might be needed to resolve these issues.  
   
   
-1.  [C ランタイム (CRT) ライブラリの互換性に影響する変更点](#BK_CRT)  
+1.  [C Runtime (CRT) Library Breaking Changes](#BK_CRT)  
   
-2.  [標準 C++ と C++ 標準ライブラリの互換性に影響する変更](#BK_STL)  
+2.  [Standard C++ and C++ Standard Library Breaking Changes](#BK_STL)  
   
-3.  [MFC と ATL の互換性に影響する変更点](#BK_MFC)  
+3.  [MFC and ATL Breaking Changes](#BK_MFC)  
   
-4.  [同時実行ランタイムの互換性に影響する変更点](#BK_ConcRT)  
+4.  [Concurrency Runtime Breaking Changes](#BK_ConcRT)  
   
-## <a name="VC_2015"></a> Visual C++ 2015 の準拠に関する変更  
+## <a name="VC_2015"></a> Visual C++ 2015 Conformance Changes  
   
-###  <a name="BK_CRT"></a> C ランタイム ライブラリ (CRT)  
+###  <a name="BK_CRT"></a> C Runtime Library (CRT)  
   
-#### <a name="general-changes"></a>一般的な変更  
+#### <a name="general-changes"></a>General Changes  
   
--   **リファクタリング バイナリ** CRT ライブラリは 2 つの異なるバイナリにリファクタリングされています。その 1 つはユニバーサル CRT (ucrtbase) で、標準機能のほとんどが含まれています。もう 1 つは VC ランタイム ライブラリ (vcruntime140) で、例外処理や組み込み関数などのコンパイラ関連の機能が含まれています。 既定のプロジェクト設定を使用している場合は、この変更によって影響を受けません。リンカーは、新しい既定のライブラリを自動的に使用するからです。 プロジェクトの [ **リンカー** ] プロパティの [ **すべての既定のライブラリの無視** ] を [ **はい** ] に設定するか、コマンドラインで /NODEFAULTLIB リンカー オプションを使用する場合、([ **追加の依存ファイル** ] プロパティの) ライブラリのリストを更新して、新しいリファクタリング ライブラリを組み込む必要があります。 古い CRT ライブラリ (libcmt.lib、libcmtd.lib、msvcrt.lib、msvcrtd.lib) をリファクタリングした同等のライブラリで置き換えます。 2 つのリファクタリング ライブラリのそれぞれについて、静的 (.lib) バージョンと動的 (.dll) バージョンがあり、リリース (サフィックスなし) バージョンとデバッグ (サフィックス "d" を持つ) バージョンがあります。 動的バージョンには、リンク先インポート ライブラリがあります。 2 つのリファクタリング ライブラリとは、ユニバーサル CRT (具体的には ucrtbase.dll または .lib、ucrtbased.dll または .lib)、と VC ランタイム ライブラリ (libvcruntime.lib、libvcruntime.dll、libvcruntimed.lib、および libvcruntimed.dll) です。 「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
+-   **Refactored binaries** The CRT Library  has been refactored into a two different binaries, a Universal CRT (ucrtbase), which contains most of the standard functionality, and a VC Runtime Library (vcruntime), which contains the compiler-related functionality, such as exception handling, and intrinsics. If you are using the default project settings, then this change does not impact you since the linker will use the new default libraries automatically. If you have set the project's **Linker** property **Ignore All Default Libraries** to **Yes** or you are using the /NODEFAULTLIB linker option on the command line, then you must update your list of libraries (in the **Additional Dependencies** property) to include the new, refactored libraries. Replace the old CRT library (libcmt.lib, libcmtd.lib, msvcrt.lib, msvcrtd.lib) with the equivalent refactored libraries. For each of the two refactored libraries, there are static (.lib) and dynamic (.dll) versions, and release (with no suffix) and debug versions (with the "d" suffix). The dynamic versions have an import library that you link with. The two refactored libraries are Universal CRT, specifically ucrtbase.dll or .lib, ucrtbased.dll or .lib, and the VC runtime library, libvcruntime.lib, vcruntime*version*.dll, libvcruntimed.lib, and vcruntimed*version*.dll. The *version* in both Visual Studio 2015 and Visual Studio 2017 is 140. See [CRT Library Features](../c-runtime-library/crt-library-features.md).  
   
 #### <a name="localeh"></a>\<locale.h>  
   
--   **localeconv** [localeconv](../c-runtime-library/reference/localeconv.md) 関数は、[スレッドごとのロケール](../parallel/multithreading-and-locales.md)が有効なときに正常に機能します。 以前のバージョンのライブラリでは、この関数はスレッドのロケールではなくグローバル ロケールの lconv データを返していました。  
+-   **localeconv** The [localeconv](../c-runtime-library/reference/localeconv.md) function declared in locale.h now works correctly when [per-thread locale](../parallel/multithreading-and-locales.md) is enabled. In previous versions of the library, this function would return the lconv data for the global locale, not the thread's locale.  
   
-     スレッドごとのロケールを使用する場合、localeconv の使用を確認し、返される lconv データがグローバル ロケール用であることがコードで想定されているかどうかを確認し、必要に応じて変更する必要があります。  
+     If you use per thread locale, you should check your use of localeconv to see if your code assumes that the lconv data returned is for the global locale and modify it appropriately.  
   
 #### <a name="mathh"></a>\<math.h>  
   
--   **数値演算ライブラリ関数の C++ のオーバーロード** 以前のバージョンでは、\<math.h> は、数値演算ライブラリ関数の C++ オーバーロードの (すべてではなく) いくつかを定義していました。 \<cmath> はそれ以外のオーバーロードを定義するため、すべてのオーバーロードを取得するには、\<cmath> ヘッダーを組み込む必要がありました。 そのため、\<math.h> だけしか組み込まれていないコードでは、関数のオーバーロードの解決方法に問題が生じていました。 現在は、すべての C++ オーバーロードが \<math.h> から削除されており、\<cmath> にのみ存在しています。  
+-   **C++ overloads of math library functions** In previous versions, \<math.h> defined some, but not all, of the C++ overloads for the math library functions. \<cmath> defined the remaining overloads, so to get all of the overloads, one needed to include the \<cmath> header. This led to problems with function overload resolution in code that only included \<math.h>. Now, all C++ overloads have been removed from \<math.h> and are now present only in \<cmath>.  
   
-     エラーを解決するには、\<math.h> から削除された関数の宣言を取得する <cmath> を組み込んでください。 移動された関数を次の表に示します。  
+     To resolve errors, include <cmath> to get the declarations of the functions that were removed from \<math.h>. The following table lists the functions that were moved.  
   
-     移動された関数:  
+     Functions that were moved:  
   
-    1.  double abs(double) および float abs(float)  
+    1.  double abs(double) and float abs(float)  
   
-    2.  double pow(double, int)、float pow(float, float)、float pow(float, int)、long double pow(long double, long double)、long double pow(long double, int)  
+    2.  double pow(double, int), float pow(float, float), float pow(float, int), long double pow(long double, long double), long double pow(long double, int)  
   
-    3.  次の浮動小数点関数の float バージョンおよび long double バージョン: acos、acosh、asin、asinh、atan、atanh、atan2、cbrt、ceil、copysign、cos、cosh、erf、erfc、exp、exp2、expm1、fabs、fdim、floor、fma、fmax、fmin、fmod、frexp、hypot、ilogb、ldexp、lgamma、llrint、llround、log、log10、log1p、log2、lrint、lround、modf、nearbyint、nextafter、nexttoward、remainder、remquo、rint、round、scalbln、scalbn、sin、sinh、sqrt、tan、tanh、tgamma、trunc  
+    3.  float and long double versions of floating point functions acos, acosh, asin, asinh, atan, atanh, atan2, cbrt, ceil, copysign, cos, cosh, erf, erfc, exp, exp2, expm1, fabs, fdim, floor, fma, fmax, fmin, fmod, frexp, hypot, ilogb, ldexp, lgamma, llrint, llround, log, log10, log1p, log2, lrint, lround, modf, nearbyint, nextafter, nexttoward, remainder, remquo, rint, round, scalbln, scalbn, sin, sinh, sqrt, tan, tanh, tgamma, trunc  
   
-     math.h ヘッダーだけが組み込まれている浮動小数点型の abs を使用するコードがある場合、浮動小数点バージョンは使用できなくなります。そのため、浮動小数点引数を持つ場合でも、現バージョンでは、abs(int) の呼び出しで解決します。 これによって、次のエラーが生成されます。  
+     If you have code that uses abs with a floating point type that only includes the math.h header, the floating point versions will no longer be available, so the call, even with a floating point argument, now resolves to abs(int). This produces the error:  
   
     ```Output  
     warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data  
     ```  
   
-     この警告の修正方法は、abs の呼び出しを、abs の浮動小数点バージョン (double 引数の場合は fabs、float 引数の場合は fabsf) で置き換えるか、cmath ヘッダーを組み込んで abs を引き続き使用するかのどちらかです。  
+     The fix for this warning is to replace the call to abs with a floating point version of abs, such as fabs for a double argument or fabsf for a float argument, or include the cmath header and continue to use abs.  
   
--   **浮動小数点の準拠** NaNs 値や無限大値などの特殊なケースの入力に関する IEEE-754 仕様および C11 Annex F 仕様に対する準拠を改善するために、多くの変更が数値演算ライブラリに対して加えられています。 たとえば、簡易な NaN 入力 (以前のバージョンのライブラリでは、多くの場合、エラーとして扱われていた) はエラーとして扱われなくなりました。 [IEEE 754 標準](http://grouper.ieee.org/groups/754) と [C11 標準](http://www.iso-9899.info/wiki/The_Standard)の付録 F をご覧ください。  
+-   **Floating point conformance** Many changes to the math library have been made to improve conformance to the IEEE-754 and C11 Annex F specifications with respect to special case inputs such as NaNs and infinities. For example, quiet NaN inputs, which were often treated as errors in previous versions of the library, are no longer treated as errors. See [IEEE 754 Standard](http://grouper.ieee.org/groups/754) and Annex F of the [C11 Standard](http://www.iso-9899.info/wiki/The_Standard).  
   
-     これらの変更によってコンパイル時エラーが発生することはありませんが、プログラムの動作が変わる可能性はあり、標準に従ってより正確に動作するようになる可能性があります。  
+     These changes won't cause compile-time errors, but might cause programs to behave differently and more correctly according to the standard.  
   
--   **FLT_ROUNDS** Visual Studio 2013 で FLT_ROUNDS マクロは定数式に拡張されましたが、これは正しくありませんでした。丸めモードは実行時に (たとえば、fesetround を呼び出すことにより) 構成することができるからです。 FLT_ROUNDS マクロは動的になり、現在の丸めモードを正確に反映します。  
+-   **FLT_ROUNDS** In Visual Studio 2013, the FLT_ROUNDS macro expanded to a constant expression, which was incorrect because the rounding mode is configurable at runtime, for example, by calling fesetround. The FLT_ROUNDS macro is now dynamic and correctly reflects the current rounding mode.  
   
-#### <a name="new-and-newh"></a>\<new> と \<new.h>  
+#### <a name="new-and-newh"></a>\<new> and \<new.h>  
   
--   **new と delete** 以前のバージョンのライブラリでは、実装定義演算子の new 関数と delete 関数は、ランタイム ライブラリ DLL (たとえば、msvcr120.dll) からエクスポートされていました。 現在、これらの演算子関数は常に (ランタイム ライブラリ DLL を使用する場合でも) 静的にバイナリにリンクされています。  
+-   **new and delete** In previous versions of the library, the implementation-defined operator new and delete functions were exported from the runtime library DLL (for example, msvcr120.dll). These operator functions are now always statically linked into your binaries, even when using the runtime library DLLs.  
   
-     これはネイティブ コードまたは混合コード (/clr) の互換性に影響する変更点ではありませんが、[/clr:pure](../build/reference/clr-common-language-runtime-compilation.md) としてコンパイルされるコードでは、これによってコードのコンパイルが失敗する可能性があります。 コードを /clr:pure としてコンパイルする場合、#include \<new> または #include \<new.h> を追加してこの変更によるビルド エラーを回避する必要があります。 Visual Studio 2015 では /clr:pure は推奨されておらず、将来のリリースでは削除される可能性があります。  
+     This is not a breaking change for native or mixed code (/clr), however for code compiled as [/clr:pure](../build/reference/clr-common-language-runtime-compilation.md), this might cause your code to fail to compile. If you compile code as /clr:pure, you may need to add #include \<new> or #include \<new.h> to work around build errors due to this change. Note that /clr:pure is deprecated in Visual Studio 2015 and might be removed in future releases.  
   
 #### <a name="processh"></a>\<process.h>  
   
--   **_beginthread と _beginthreadex** [_beginthread](../c-runtime-library/reference/beginthread-beginthreadex.md) と [_beginthreadex](../c-runtime-library/reference/beginthread-beginthreadex.md) 関数には、モジュールへの参照が含まれています。そのモジュールで、スレッドの期間に関するスレッド プロシージャが定義されています。 これは、スレッドの実行が完了するまでモジュールがアンロードされないようにする上で役立ちます。  
+-   **_beginthread and _beginthreadex** The [_beginthread](../c-runtime-library/reference/beginthread-beginthreadex.md) and [_beginthreadex](../c-runtime-library/reference/beginthread-beginthreadex.md) functions now hold a reference to the module in which the thread procedure is defined for the duration of the thread. This helps to ensure that modules are not unloaded until a thread has run to completion.  
   
 #### <a name="stdargh"></a>\<stdarg.h>  
   
--   **va_start と参照型** 現在、[va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md) は C++ コードをコンパイルするときに、渡される引数が参照型でないことをコンパイル時に検証します。 参照型の引数は、C++ 標準では禁止されています。  
+-   **va_start and reference types** When compiling C++ code, [va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md) now validates at compile-time that the argument passed to it is not of reference type. Reference-type arguments are prohibited by the C++ Standard.  
   
-#### <a name="stdioh-and-conioh"></a>\<stdio.h> と \<conio.h>  
+#### <a name="stdioh-and-conioh"></a>\<stdio.h> and \<conio.h>  
   
--   **現在、関数の printf ファミリと scanf ファミリは、インラインで定義されています。** printf 関数と scanf 関数すべての定義は、\<stdio.h>、\<conio.h>、およびその他の CRT ヘッダーにインラインで移動されました。 これは、プログラムで適切な CRT ヘッダーを組み込まずにこれらの関数をローカルで宣言した場合にリンカー エラー (LNK2019、外部シンボルは未解決です) につながる互換性に影響する変更点です。 可能な場合、CRT ヘッダーが組み込まれるよう (つまり、#include \<stdio.h> を追加するよう) またインライン関数が組み込まれるようコードを更新してください。これらのヘッダー ファイルが組み込まれるようコードを変更しない場合、別の方法として、付加的なライブラリをリンカー入力 legacy_stdio_definitions.lib に追加することもできます。  
+-   **The printf and scanf family of functions are now defined inline.** The definitions of all of the printf and scanf functions have been moved inline into \<stdio.h>, \<conio.h>, and other CRT headers. This is a breaking change that leads to a linker error (LNK2019, unresolved external symbol) for any programs that declared these functions locally without including the appropriate CRT headers. If possible, you should update the code to include the CRT headers (that is, add #include \<stdio.h>) and the inline functions, but if you do not want to modify your code to include these header files, an alternative solution is to add an additional library to your linker input, legacy_stdio_definitions.lib.  
   
-     このライブラリを IDE のリンカー入力に追加するには、プロジェクト ノードのコンテキスト メニューを開き、[ **プロパティ**] を選択し、[ **プロジェクトのプロパティ** ] ダイアログ ボックスで [ **リンカー**] を選択し、[ **リンカー入力** ] を編集して legacy_stdio_definitions.lib をセミコロン区切りリストに追加します。  
+     To add this library to your linker input in the IDE, open the context menu for the project node, choose **Properties**, then in the **Project Properties** dialog box, choose **Linker**, and edit the **Linker Input** to add legacy_stdio_definitions.lib to the semi-colon-separated list.  
   
-     プロジェクトが、2015 より前のリリースの Visual C++ でコンパイルされた静的ライブラリとリンクする場合、リンカーによって、未解決の外部シンボルが報告される可能性があります。 これらのエラーは、_iob、_iob_func、または _imp\_* 形式の特定の stdio 関数の関連インポートの内部 stdio 定義を参照する可能性があります。 Microsoft は、プロジェクトをアップグレードするときに、最新バージョンの Visual C++ コンパイラおよびライブラリですべての静的ライブラリを再コンパイルすることを推奨しています。 ライブラリが、ソースを使用できないサード パーティ ライブラリである場合、更新されたバイナリをサード パーティから要求するか、そのライブラリの使用を、古いバージョンの Visual C++ コンパイラおよびライブラリでコンパイルする別個の DLL にカプセル化する必要があります。  
+     If your project links with static libraries that were compiled with a release of Visual C++ earlier than 2015, the linker might report an unresolved external symbol. These errors might reference internal stdio definitions for _iob, _iob_func, or related imports for certain stdio functions in the form of _imp\_*. Microsoft recommends that you recompile all static libraries with the latest version of the Visual C++ compiler and libraries when you upgrade a project. If the library is a third-party library for which source is not available, you should either request an updated binary from the third party or encapsulate your usage of that library into a separate DLL that you compile with the older version of the Visual C++ compiler and libraries.  
   
     > [!WARNING]
-    >  Windows SDK 8.1 以前とリンクする場合、これらの未解決外部シンボル エラーが発生する可能性があります。 その場合、前述のように、legacy_stdio_definitions.lib をリンカー入力に追加することにより、エラーを解決する必要があります。  
+    >  If you are linking with Windows SDK 8.1 or earlier, you might encounter these unresolved external symbol errors. In that case, you should resolve the error by adding legacy_stdio_definitions.lib to the linker input as described previously.  
   
-     未解決シンボル エラーのトラブルシューティングを実行するには、[dumpbin.exe](../build/reference/dumpbin-reference.md) を使用して、バイナリで定義されているシンボルを調べることができます。 次のコマンド ラインを試行して、ライブラリで定義されているシンボルを表示してください。  
+     To troubleshoot unresolved symbol errors, you can try using [dumpbin.exe](../build/reference/dumpbin-reference.md) to examine the symbols defined in a binary. Try the following command line to view symbols defined in a library.  
   
     ```cpp  
     dumpbin.exe /LINKERMEMBER somelibrary.lib  
     ```  
   
--   **gets と _getws** [gets](../c-runtime-library/gets-getws.md) と [_getws](../c-runtime-library/gets-getws.md) 関数は削除されました。 gets 関数は、安全に使用できないため、C11 の標準ライブラリから削除されました。 _getws 関数は、gets に相当する Microsoft 拡張です (ただしワイド文字列)。 これらの関数の代わりとして、[fgets](../c-runtime-library/reference/fgets-fgetws.md)、[fgetws](../c-runtime-library/reference/fgets-fgetws.md)、[gets_s](../c-runtime-library/reference/gets-s-getws-s.md)、および [_getws_s](../c-runtime-library/reference/gets-s-getws-s.md) の使用を検討してください。  
+-   **gets and _getws** The [gets](../c-runtime-library/gets-getws.md) and [_getws](../c-runtime-library/gets-getws.md) functions have been removed. The gets function was removed from the C Standard Library in C11 because it cannot be used securely. The _getws function was a Microsoft extension that was equivalent to gets but for wide strings. As alternatives to these functions, consider use of [fgets](../c-runtime-library/reference/fgets-fgetws.md), [fgetws](../c-runtime-library/reference/fgets-fgetws.md), [gets_s](../c-runtime-library/reference/gets-s-getws-s.md), and [_getws_s](../c-runtime-library/reference/gets-s-getws-s.md).  
   
--   **_cgets と _cgetws** [_cgets](../c-runtime-library/cgets-cgetws.md) と [_cgetws](../c-runtime-library/cgets-cgetws.md) 関数は削除されました。 これらの関数の代わりに、[_cgets_s](../c-runtime-library/reference/cgets-s-cgetws-s.md) と [_cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md) の使用を検討してください。  
+-   **_cgets and _cgetws** The [_cgets](../c-runtime-library/cgets-cgetws.md) and [_cgetws](../c-runtime-library/cgets-cgetws.md) functions have been removed. As alternatives to these functions, consider use of [_cgets_s](../c-runtime-library/reference/cgets-s-cgetws-s.md) and [_cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).  
   
--   **無限大および NaN の書式設定** 以前のバージョンでは、無限大および NaNs は、Visual C++ 固有の sentinel 文字列のセットを使用して書式設定されていました。  
+-   **Infinity and NaN Formatting** In previous versions, infinities and NaNs would be formatted using a set of Visual C++-specific sentinel strings.  
   
-    -   無限大: 1.#INF  
+    -   Infinity: 1.#INF  
   
-    -   簡易な NaN: 1.#QNAN  
+    -   Quiet NaN: 1.#QNAN  
   
-    -   シグナリング NaN: 1.#SNAN  
+    -   Signaling NaN: 1.#SNAN  
   
-    -   無限大 NaN: 1.#IND  
+    -   Indefinite NaN: 1.#IND  
   
-     これらにはすべて、プレフィックスとして符号が付けられていた可能性があります。また、書式設定はフィールドの幅と精度に応じて若干異なる可能性があります (まれな例として、printf("%.2f\n", INFINITY) は 1.#J と出力されます。これは、#INF が 2 桁の精度に「丸められる」ためです)。 C99 で、無限大と NaNs の書式設定の方法に関して新たな要件が導入されました。 現在、Visual C++ の実装は、これらの要件に準拠しています。 新しい文字列は、次のとおりです。  
+     Any of these may have been prefixed by a sign and may have been formatted slightly differently depending on field width and precision (sometimes with unusual effects, e.g. printf("%.2f\n", INFINITY) would print 1.#J because the #INF would be "rounded" to a precision of 2 digits). C99 introduced new requirements on how infinities and NaNs are to be formatted. The Visual C++ implementation now conforms to these requirements. The new strings are as follows:  
   
-    -   無限台: inf  
+    -   Infinity: inf  
   
-    -   簡易な NaN: nan  
+    -   Quiet NaN: nan  
   
-    -   シグナリング NaN: nan(snan)  
+    -   Signaling NaN: nan(snan)  
   
-    -   無限大 NaN:nan(ind)  
+    -   Indefinite NaN:nan(ind)  
   
-     これらにはすべて、プレフィックスとして符号が付けられます。 大文字の書式指定子が使用される場合 (%f ではなく %F)、文字列は大文字で出力されます (inf ではなく INF)。これは必須です。  
+     Any of these may be prefixed by a sign. If a capital format specifier is used (%F instead of %f) then the strings are printed in capital letters (INF instead of inf), as is required.  
   
-     [scanf](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md) 関数はこれらの新しい文字列を解析するよう変更され、これらの文字列は、printf および scanf によってラウンド トリップされます。  
+     The [scanf](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md) functions have been modified to parse these new strings, so these strings will round-trip through printf and scanf.  
   
--   **浮動小数点の書式設定と解析** 新しい浮動小数点の書式設定と解析のアルゴリズムが導入され、正確性が向上しました。 この変更は、関数ファミリ [printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) や [scanf](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)、[strtod](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md) などの関数に影響を与えます。  
+-   **Floating point formatting and parsing** New floating point formatting and parsing algorithms have been introduced to improve correctness. This change affects the [printf](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) and [scanf](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md) families of functions, as well as functions like [strtod](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md).  
   
-     従来の書式設定アルゴリズムでは、限られた桁数のみを生成し、残りの小数点以下表示桁数はゼロで埋められていました。 通常は、元の浮動小数点の値にラウンドトリップする文字列を生成するのにこれで十分ですが、正確な値 (またはそれに最も近い 10 進表現) が必要な場合は十分ではありません。 新しい書式設定アルゴリズムでは、値を表す (または指定された有効桁数を埋める) ために必要な桁数が生成されます。 改善の一例として、大きな 2 の冪の出力結果をご覧ください。  
+     The old formatting algorithms would generate only a limited number of digits, then would fill the remaining decimal places with zero. This is usually good enough to generate strings that will round-trip back to the original floating point value, but it's not great if you want the exact value (or the closest decimal representation thereof). The new formatting algorithms generate as many digits as are required to represent the value (or to fill the specified precision). As an example of the improvement; consider the results when printing a large power of two:  
   
     ```cpp  
     printf("%.0f\n", pow(2.0, 80))  
@@ -177,126 +177,126 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
         Old:  1208925819614629200000000    New:  1208925819614629174706176  
     ```  
   
-     従来の解析アルゴリズムでは、入力文字列の最大 17 桁の有効桁数のみが考慮され、残りの桁は破棄されていました。 文字列によって表される値に非常に近い概算値を生成するにはこれで十分であり、結果は通常、正しく丸められた結果に非常に近い値になっていました。 新しい実装では、存在するすべての桁数を考慮に入れ、すべての入力を正しく丸めた結果が生成されます (最大長 768 桁)。 加えて、現在、これらの関数は丸めモードを採用しています (fesetround によって制御可能)。  これらの関数は異なる結果を出力する可能性があるため、これは互換性に影響する潜在的な動作の変更点になります。 新しい結果は常に、古い結果より正しくなります。  
+     The old parsing algorithms would consider only up to 17 significant digits from the input string and would discard the rest of the digits. This is sufficient to generate a very close approximation of the value represented by the string, and the result is usually very close to the correctly rounded result. The new implementation considers all present digits and produces the correctly rounded result for all inputs (up to 768 digits in length). In addition, these functions now respect the rounding mode (controllable via fesetround).  This is a potentially breaking behavior change because these functions might output different results. The new results are always more correct than the old results.  
   
--   **16 進数および無限大/NaN 浮動小数点の解析** 前述のとおり、現在、浮動小数点の解析アルゴリズムは、16 進数の浮動小数点文字列 (%a および %A printf 書式指定子によって生成されるものなど) および printf 関数によって生成されるすべての無限大および NaN 文字列を解析します。  
+-   **Hexadecimal and infinity/NaN floating point parsing** The floating point parsing algorithms will now parse hexadecimal floating point strings (such as those generated by the %a and %A printf format specifiers) and all infinity and NaN strings that are generated by the printf functions, as described above.  
   
--   **%A および %a のゼロ パディング** %a および %A 書式指定子は、浮動小数点の数値を、16 進数の仮数部およびバイナリの指数として書式設定します。 以前のバージョンでは、printf 関数は文字列をゼロで埋め込んでいましたが、それは正しくありませんでした。 たとえば、printf("%07.0a\n", 1.0) は 00x1p+0 と出力されますが、本来、print 0x01p+0 と出力されるべきです。 これは修正されました。  
+-   **%A and %a zero padding** The %a and %A format specifiers format a floating point number as a hexadecimal mantissa and binary exponent. In previous versions, the printf functions would incorrectly zero-pad strings. For example, printf("%07.0a\n", 1.0) would print 00x1p+0, where it should print 0x01p+0. This has been fixed.  
   
--   **%A と %a の有効桁数** %A と %a の書式指定子の既定の有効桁数は、以前のバージョンのライブラリでは 6 桁でした。 現在、既定の有効桁数は、C 標準に準拠して 13 桁です。  
+-   **%A and %a precision** The default precision of the %A and %a format specifiers was 6 in previous versions of the library. The default precision is now 13 for conformance with the C Standard.  
   
-     これは、%A または %a を持つ書式文字列を使用する関数の出力におけるランタイム動作の変更です。 従来の動作では、%A 指定子を使用する出力は "1.1A2B3Cp+111" でした。 現在、同じ値の出力は "1.1A2B3C4D5E6F7p+111" です。 従来の動作を取得するには、有効桁数を指定します (たとえば %.6A)。 「[精度指定](../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md#precision)」を参照してください。  
+     This is a runtime behavior change in the output of any function that uses a format string with %A or %a. In the old behavior, the output using the %A specifier might be "1.1A2B3Cp+111". Now the output for the same value is "1.1A2B3C4D5E6F7p+111". To get the old behavior, you can specify the precision, for example, %.6A. See [Precision Specification](../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md#precision).  
   
--   **%F 指定子** 現在、%F 書式/変換指定子がサポートされています。 無限大と NaNs が大文字で書式設定される点を除き、機能的には %f 書式指定子と同等です。  
+-   **%F specifier** The %F format/conversion specifier is now supported. It is functionally equivalent to the %f format specifier, except that infinities and NaNs are formatted using capital letters.  
   
-     以前のバージョンでは、実装で F と N を長さの修飾子として使用していました。 この動作は、アドレス空間がセグメント化されていた時代に由来するもので、これらの長さ修飾子は、遠近ポインター (それぞれ %Fp、%Ns) を示すために使用されていました。 この動作は削除されました。 現在、%F を検出した場合、%F 書式指定子として扱われます。%N を検出した場合、無効なパラメーターとして扱われます。  
+     In previous versions, the implementation used to parse F and N as length modifiers. This behavior dated back to the age of segmented address spaces: these length modifiers were used to indicate far and near pointers, respectively, as in %Fp or %Ns. This behavior has been removed. If %F is encountered, it is now treated as the %F format specifier; if %N is encountered, it is now treated as an invalid parameter.  
   
--   **指数の書式設定** %e および %E 書式指定子は、浮動小数点の数値を、10 進数の仮数部および指数として書式設定します。 場合によっては、%g および %G 書式指定子もこの形式で数値を書式設定します。 以前のバージョンでは、CRT は 3 桁の指数部を持つ文字列を常に生成していました。 たとえば、printf("%e\n", 1.0) は 1.000000e+000 を出力していました。 これは正しくありませんでした。C では、指数部を 1 桁または 2 桁のみを使って表すことができる場合、2 桁のみを出力する必要があります。  
+-   **Exponent formatting** The %e and %E format specifiers format a floating point number as a decimal mantissa and exponent. The %g and %G format specifiers also format numbers in this form in some cases. In previous versions, the CRT would always generate strings with three-digit exponents. For example, printf("%e\n", 1.0) would print 1.000000e+000. This was incorrect: C requires that if the exponent is representable using only one or two digits, then only two digits are to be printed.  
   
-     Visual Studio 2005 では、グローバル準拠スイッチ [_set_output_format](../c-runtime-library/set-output-format.md) が追加されました。 プログラムは、この関数を引数 _TWO_DIGIT_EXPONENT を使って呼び出し、指数部出力の準拠を有効にすることができました。 既定の動作が変更され、標準に準拠する指数印刷モードに変更なりました。  
+     In Visual Studio 2005 a global conformance switch was added: [_set_output_format](../c-runtime-library/set-output-format.md). A program could call this function with the argument _TWO_DIGIT_EXPONENT, to enable conforming exponent printing. The default behavior has been changed to the standards-conforming exponent printing mode.  
   
--   **書式文字列の検証** 以前のバージョンでは、printf 関数と scanf 関数が、多くの無効な書式文字列を自動的に受け入れていました。ただし、ときどき普通でない影響が生じていました。 たとえば、%hlhlhld は %d として扱われていました。 現在、無効な書式文字列はすべて、無効なパラメーターとして扱われます。  
+-   **Format string validation** In previous versions, the printf and scanf functions would silently accept many invalid format strings, sometimes with unusual effects. For example, %hlhlhld would be treated as %d. All invalid format strings are now treated as invalid parameters.  
   
--   **fopen モードの文字列の検証**  
+-   **fopen mode string validation**  
   
-     以前のバージョンでは、fopen 関数ファミリは、正しくない一部のモード文字列を自動的に受け入れていました (たとえば、r+b+)。 現在、無効なモード文字列は検出され、無効なパラメーターとして扱われます。  
+     In previous versions, the fopen family of functions silently accepted some invalid mode strings (e.g. r+b+). Invalid mode strings are now detected and treated as invalid parameters.  
   
--   **_O_U8TEXT モード**  
+-   **_O_U8TEXT mode**  
   
-     現在、[_setmode](../c-runtime-library/reference/setmode.md) 関数は、_O_U8TEXT モードで開かれるストリームのモードを正しく報告します。 以前のバージョンのライブラリでは、そのようなストリームは _O_WTEXT で開かれるものとして報告されていました。  
+     The [_setmode](../c-runtime-library/reference/setmode.md) function now correctly reports the mode for streams opened in_O_U8TEXT mode. In previous versions of the library, it would report such streams as being opened in _O_WTEXT.  
   
-     エンコードが UTF-8 のストリームの _O_WTEXT モードをコードが解釈する場合、これは互換性に影響する変更です。 アプリケーションで UTF_8 がサポートされていない場合、増加するこの共通エンコードのサポートを追加することを検討してください。  
+     This is a breaking change if your code interprets the _O_WTEXT mode for streams where the encoding is UTF-8. If your application doesn't support UTF_8, consider adding support for this increasingly common encoding.  
   
--   **snprintf と vsnprintf** [snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md) と [vsnprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) 関数が実装されました。 古いコードは CRT ライブラリによって実装されていなかったため、これらの関数の定義マクロ バージョンを提供していました。しかし、新しいバージョンではこれらが不要になりました。 \<stdio.h> を組み込む前に [snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md) または [vsnprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) がマクロとして定義されている場合、現在コンパイルは、マクロが定義された場所を示すエラーとともに失敗します。  
+-   **snprintf and vsnprintf** The [snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md) and [vsnprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) functions are now implemented. Older code often provided definitions macro versions of these functions because they were not implemented by the CRT library, but these are no longer needed in newer versions. If [snprintf](../c-runtime-library/reference/snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md) or [vsnprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) is defined as a macro before including \<stdio.h>, compilation now fails with an error that indicates where the macro was defined.  
   
-     通常、この問題は、ユーザー コードの snprintf または vsnprintf の宣言を削除することによって修正されます。  
+     Normally, the fix to this problem is to delete any declarations of snprintf or vsnprintf in user code.  
   
--   **tmpnam は使用可能なファイル名を生成する** 以前のバージョンでは、tmpnam 関数および tmpnam_s 関数は、ドライブのルートにファイル名を生成していました (\sd3c など)。 現在、これらの関数は、一時ディレクトリに使用可能なファイル名パスを生成します。  
+-   **tmpnam Generates Usable File Names** In previous versions, the tmpnam and tmpnam_s functions generated file names in the root of the drive (such as \sd3c.). These functions now generate usable file name paths in a temporary directory.  
   
--   **FILE カプセル化** 以前のバージョンでは、FILE 型が \<stdio.h> で完全に定義されていたため、ユーザー コードが FILE に達して、その内部構造を変更することができました。 stdio ライブラリが変更され、実装に関する詳細が隠されるようになりました。 この一環として、現在、\<stdio.h> で定義される FILE は不透明な型であり、そのメンバーは、CRT 自体の外部からアクセスできません。  
+-   **FILE Encapsulation** In previous versions, the FILE type was completely defined in \<stdio.h>, so it was possible for user code to reach into a FILE and modify its internals. The stdio library has been changed to hide implementation details. As part of this, FILE as defined in \<stdio.h> is now an opaque type and its members are inaccessible from outside of the CRT itself.  
   
--   **_outp と _inp** 関数 [_outp](../c-runtime-library/outp-outpw-outpd.md)、[_outpw](../c-runtime-library/outp-outpw-outpd.md)、[_outpd](../c-runtime-library/outp-outpw-outpd.md)、[_inp](../c-runtime-library/inp-inpw-inpd.md)、[_inpw](../c-runtime-library/inp-inpw-inpd.md)、および [_inpd](../c-runtime-library/inp-inpw-inpd.md) は削除されました。  
+-   **_outp and _inp** The functions [_outp](../c-runtime-library/outp-outpw-outpd.md), [_outpw](../c-runtime-library/outp-outpw-outpd.md), [_outpd](../c-runtime-library/outp-outpw-outpd.md), [_inp](../c-runtime-library/inp-inpw-inpd.md), [_inpw](../c-runtime-library/inp-inpw-inpd.md), and [_inpd](../c-runtime-library/inp-inpw-inpd.md) have been removed.  
   
-#### <a name="stdlibh-malloch-and-sysstath"></a>\<stdlib.h>、\<malloc.h>、および \<sys/stat.h>  
+#### <a name="stdlibh-malloch-and-sysstath"></a>\<stdlib.h>, \<malloc.h>, and \<sys/stat.h>  
   
--   **strtof および wcstof** The strtof および wcstof functions failed to set errno to ERANGE when the value was not representable as a float. これは修正されました。 (このエラーはこれら 2 つの関数に固有のものでした。strtod 関数、wcstod 関数、strtold 関数、および wcstold 関数は影響を受けませんでした。)これはランタイムについて互換性に影響する変更点です。  
+-   **strtof and wcstof** The strtof and wcstof functions failed to set errno to ERANGE when the value was not representable as a float. This has been fixed. (Note that this error was specific to these two functions; the strtod, wcstod, strtold, and wcstold functions were unaffected.) This is a runtime breaking change.  
   
--   **整列された割り当て関数**以前のバージョンでは、整列された割り当て関数 (_aligned_malloc、_aligned_offset_malloc など) は、配置が 0 のブロックに関する要求を自動的に受け入れていました。 要求された配置は 2 のべき乗でなければならず、ゼロは不可でした。 これは修正されており、配置 0 の要求は現在、無効なパラメーターとして扱われます。 これはランタイムについて互換性に影響する変更点です。  
+-   **Aligned allocation functions** In previous versions, the aligned allocation functions (_aligned_malloc, _aligned_offset_malloc, etc.) would silently accept requests for a block with an alignment of 0. The requested alignment must be a power of two, which zero is not. This has been fixed, and a requested alignment of 0 is now treated as an invalid parameter. This is a runtime breaking change.  
   
--   **ヒープ関数** _heapadd 関数、_heapset 関数、および _heapused 関数が削除されました。 Windows ヒープを使用するよう CRT が更新されたため、これらの関数は機能しなくなりました。  
+-   **Heap functions** The _heapadd, _heapset, and _heapused functions have been removed. These functions have been nonfunctional since the CRT was updated to use the Windows heap.  
   
--   **smallheap** smalheap リンク オプションは削除されました。 「[リンク オプション](../c-runtime-library/link-options.md)」を参照してください。  
+-   **smallheap** The smalheap link option has been removed. See [Link Options](../c-runtime-library/link-options.md).  
   
 #### <a name="stringh"></a>\<string.h>  
   
--   **wcstok** wcstok 関数のシグネチャが変更され、C 標準で必要なものと一致するようになりました。 以前のバージョンのライブラリでは、この関数のシグネチャは次のとおりでした。  
+-   **wcstok** The signature of the wcstok function has been changed to match what is required by the C Standard. In previous versions of the library, the signature of this function was:  
   
     ```cpp  
     wchar_t* wcstok(wchar_t*, wchar_t const*)  
     ```  
   
-     strtok と同様、これはスレッドごとの内部コンテキストを使用して、呼び出しの状態を追跡していました。 現在、この関数のシグネチャは wchar_t* wcstok(wchar_t\*, wchar_t const\*, wchar_t\*\*) になり、呼び出し元は関数に対する 3 番目の引数としてコンテキストを渡すことが必須になりました。  
+     It used an internal, per-thread context to track state across calls, as is done for strtok. The function now has the signature wchar_t* wcstok(wchar_t\*, wchar_t const\*, wchar_t\*\*), and requires the caller to pass the context as a third argument to the function.  
   
-     古いシグネチャとともに新しい _wcstok 関数が追加され、移植が簡単になりました。 C++ コードをコンパイルする際にも、古いシグネチャを持つ wcstok のインライン オーバーロードが存在します。 このオーバーロードは、非推奨として宣言されます。 C コードでは、_CRT_NON_CONFORMING_WCSTOK を定義し、wcstok の代わりに _wcstok が使用されるようにすることもできます。  
+     A new _wcstok function has been added with the old signature to ease porting. When compiling C++ code, there is also an inline overload of wcstok that has the old signature. This overload is declared as deprecated. In C code, you may define_CRT_NON_CONFORMING_WCSTOK to cause _wcstok to be used in place of wcstok.  
   
 #### <a name="timeh"></a>\<time.h>  
   
--   **clock** 以前のバージョンでは、Windows API [GetSystemTimeAsFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724397.aspx) を使用して [clock](../c-runtime-library/reference/clock.md) 関数が実装されていました。 この実装により、clock 関数はシステム時刻の影響を受け、単調になることがありませんでした。 現在は、 [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904.aspx) によって clock 関数が再実装されたため、単調になっています。  
+-   **clock** In previous versions, the [clock](../c-runtime-library/reference/clock.md) function was implemented using the Windows API [GetSystemTimeAsFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724397.aspx). With this implementation, the clock function was sensitive to the system time, and was thus not necessarily monotonic. The clock function has been reimplemented in terms of [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904.aspx) and is now monotonic.  
   
--   **fstat と _utime** 以前のバージョンでは、[_stat](../c-runtime-library/reference/stat-functions.md) 関数、[fstat](../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md) 関数、および [_utime](../c-runtime-library/reference/utime-utime32-utime64-wutime-wutime32-wutime64.md) 関数での夏時間の処理が正しくありませんでした。 Visual Studio 2013 より前では、これらの関数はすべて、標準時刻をあたかも夏時間にあるかのようにに調整していましたが、これは正しい処理ではありませんでした。  
+-   **fstat and _utime** In previous versions, the [_stat](../c-runtime-library/reference/stat-functions.md), [fstat](../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md), and [_utime](../c-runtime-library/reference/utime-utime32-utime64-wutime-wutime32-wutime64.md) functions handle daylight savings time incorrectly. Prior to Visual Studio 2013, all of these functions incorrectly adjusted standard time times as if they were in daylight time.  
   
-     Visual Studio 2013 では、_stat 関数ファミリでは問題が解決されましたが、fstat 関数ファミリと _utime 関数ファミリでは修正されていませんでした。 これは、関数間の不整合による問題につながっていました。 fstat および _utime の関数ファミリは現在修正され、これらすべての関数が、正確かつ一貫して夏時間を処理できるようになりました。  
+     In Visual Studio 2013, the problem was fixed in the _stat family of functions, but the similar problems in the fstat and _utime families of functions were not fixed. This led to problems due to the inconsistency between the functions. The fstat and _utime families of functions have now been fixed, so all of these functions now handle daylight savings time correctly and consistently.  
   
--   **asctime** 以前のバージョンでは、[asctime](../c-runtime-library/reference/asctime-wasctime.md) 関数は、1 桁の日の先頭をゼロで埋めていました (たとえば、Fri Jun 06 08:00:00 2014)。 この仕様では、そのような日の先頭を空白で埋める必要があります (たとえば、Fri Jun  6 08:00:00 2014)。 これは修正されました。  
+-   **asctime** In previous versions, the [asctime](../c-runtime-library/reference/asctime-wasctime.md) function would pad single-digit days with a leading zero, for example: Fri Jun 06 08:00:00 2014. The specification requires that such days be padded with a leading space, e.g. Fri Jun  6 08:00:00 2014. This has been fixed.  
   
--   **strftime および wcsftime** The strftime および wcsftime functions now support the %C, %D, %e, %F, %g, %G, %h, %n, %r, %R, %t, %T, %u, and %V format specifiers. さらに、E 修飾子と O 修飾子は、解析はされますが、無視されます。  
+-   **strftime and wcsftime** The strftime and wcsftime functions now support the %C, %D, %e, %F, %g, %G, %h, %n, %r, %R, %t, %T, %u, and %V format specifiers. Additionally, the E and O modifiers are parsed but ignored.  
   
-     %c 書式指定子は、現行ロケールの "適切な日時の表記" を生成するものとして指定されます。 C ロケールでは、%a %b %e %T %Y と同じになるよう、この表記が必要です。 これは asctime によって生成される書式と同じです。 以前のバージョンでは、%c 書式指定子は MM/DD/YY HH:MM:SS 表記を使用して時刻を書式設定していましたが、これは正しくありませんでした。 これは修正されました。  
+     The %c format specifier is specified as producing an "appropriate date and time representation" for the current locale. In the C locale, this representation is required to be the same as %a %b %e %T %Y. This is the same form as is produced by asctime. In previous versions, the %c format specifier incorrectly formatted times using a MM/DD/YY HH:MM:SS representation. This has been fixed.  
   
--   **timespec および TIME_UTC** 現在、\<time.h> ヘッダーは、C11 標準から timespec 型と timespec_get 関数を定義します。 さらに、現在、timespec_get 関数で使用する TIME_UTC マクロが定義されています。 これは、そのいずれかの定義が競合しているコードに関して、互換性に影響する変更点です。  
+-   **timespec and TIME_UTC** The \<time.h> header now defines the timespec type and the timespec_get function from the C11 Standard. In addition, the TIME_UTC macro, for use with the timespec_get function, is now defined. This is a breaking change for code that has a conflicting definition for any of these.  
   
--   **CLOCKS_PER_SEC** 現在、CLOCKS_PER_SEC マクロは type clock_t の型の整数に拡張されており、これは C 言語で必要です。  
+-   **CLOCKS_PER_SEC** The CLOCKS_PER_SEC macro now expands to an integer of type clock_t, as required by the C language.  
   
-####  <a name="BK_STL"></a> C++ 標準ライブラリ  
- 新しい最適化とデバッグのチェックを有効にするために、C++ 標準ライブラリの Visual Studio の実装では、バイナリの互換性がバージョンごとに意図的に保たれていません。 そのため、C++ 標準ライブラリを使用すると、異なるバージョンを使用してコンパイルされたオブジェクト ファイルとスタティック ライブラリは 1 つのバイナリ (EXE または DLL) に混在させることができず、C++ 標準ライブラリ オブジェクトは異なるバージョンを使用してコンパイルされたバイナリ間で渡すことができません。 混在があると、_MSC_VER の不一致に関するリンカー エラーが発生します  (_MSC_VER はコンパイラのメジャー バージョンを含むマクロです。たとえば Visual Studio 2013 では 1800 です)。このチェックでは、DLL の混在を検出できず、Visual C++ 2008 以前のバージョンが関係する混在も検出できません。  
+####  <a name="BK_STL"></a> C++ Standard Library  
+ To enable new optimizations and debugging checks, the Visual Studio implementation of the C++ Standard Library intentionally breaks binary compatibility from one version to the next. Therefore, when the C++ Standard Library is used, object files and static libraries that are compiled by using different versions can't be mixed in one binary (EXE or DLL), and C++ Standard Library objects can't be passed between binaries that are compiled by using different versions. Such mixing emits linker errors about _MSC_VER mismatches. (_MSC_VER is the macro that contains the compiler's major version—for example, 1800 for Visual Studio 2013.) This check cannot detect DLL mixing, and cannot detect mixing that involves Visual C++ 2008 or earlier.  
   
--   **C++ 標準ライブラリ インクルード ファイル** C++ 標準ライブラリ ヘッダーのインクルード構造に対していくつかの変更が加えられました。 C++ 標準ライブラリ ヘッダーは、指定されていない方法での相互インクルードを許可されています。 一般に、C++ 標準に応じて必要なすべてのヘッダーを注意深くインクルードし、どの C++ 標準ライブラリ ヘッダーにどの C++ 標準ライブラリ ヘッダーが含まれるかは関係ないようにするようコードを記述する必要があります。 これにより、バージョン間およびプラットフォーム間でのコードの移植が可能になります。 少なくとも Visual Studio 2015 でのヘッダーに関する 2 つの変更がユーザー コードに影響を与えます。 1 つ目として、\<string> に \<iterator> が含まれなくなりました。 2 つ目として、現在、\<tuple> は、すべての \<array> は含まない std::array を宣言します。これは、次のコード構成体の組み合わせによってコードに障害を起こす可能性があります。コードに "array" という名前の変数があり、using-directive "using namespace std;" があります。\<tuple> を含む C++ 標準ライブラリ ヘッダー (\<functional> など) を組み込みますが、これは現在、std::array を宣言します。  
+-   **C++ Standard Library include files** Some changes have been made to the include structure in the C++ Standard Library headers. C++ Standard Library headers are allowed to include each other in unspecified ways. In general, you should write your code so that it carefully includes all of the headers that it needs according to the C++ standard and doesn't rely on which C++ Standard Library headers include which other C++ Standard Library headers. This makes code portable across versions and platforms. At least two header changes in Visual Studio 2015 affect user code. First, \<string> no longer includes \<iterator>. Second, \<tuple> now declares std::array without including all of \<array>, which can break code through the following combination of code constructs: your code has a variable named "array", and you have a using-directive "using namespace std;", and you include a C++ Standard Library header (such as \<functional>) that includes \<tuple>, which now declares std::array.  
   
--   **steady_clock** [steady_clock](../standard-library/steady-clock-struct.md) の \<chrono> 実装が変更され、安定性と単調性のための C++ 標準の要件を満たすようになりました。 現在、steady_clock は [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904.aspx) に基づき、high_resolution_clock は steady_clock の typedef です。 結果として、Visual C++ では現在、steady_clock::time_point は chrono::time_point<steady_clock> の typedef です。ただし、他の実装では異なる場合があります。  
+-   **steady_clock** The \<chrono> implementation of [steady_clock](../standard-library/steady-clock-struct.md) has changed to meet the C++ Standard requirements for steadiness and monotonicity. steady_clock is now based on [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904.aspx) and high_resolution_clock is now a typedef for steady_clock. As a result, in Visual C++ steady_clock::time_point is now a typedef for chrono::time_point<steady_clock>; however, this is not necessarily the case for other implementations.  
   
--   **アロケーターおよび const** 現在、両サイドで const 引数を受け入れるには、アロケーターの等価/非等価の比較が必要です。  アロケーターがこれらの演算子を次のように定義するとします。  
+-   **allocators and const** We now require allocator equality/inequality comparisons to accept const arguments on both sides.  If your allocators define these operators as follows:  
   
     ```cpp  
     bool operator==(const MyAlloc& other)  
     ```  
   
-     それを const メンバーとして宣言するために、これを更新する必要があります。  
+     You should update these to declare them as const members.  
   
     ```cpp  
     bool operator==(const MyAlloc& other) const  
     ```  
   
--   **const elements** C++ 標準には常に、const 要素の禁止コンテナーがあります (vector\<const T> や set\<const T> など)。 Visual C++ 2013 以前では、そのようなコンテナーは受け入れられていました。 現在のバージョンでは、そのようなコンテナーをコンパイルすることはできません。  
+-   **const elements** The C++ standard has always forbidden containers of const elements (such as vector\<const T> or set\<const T>). Visual C++ 2013 and earlier accepted such containers. In the current version, such containers fail to compile.  
   
--   **std::allocator::deallocate** Visual C++ 2013 以前では、std::allocator::deallocate(p, n) は、n に対して渡されていた引数が無視されていました。  C++ 標準では常に、p を返した割り当ての呼び出しに最初の引数として渡される値と n が同等である必要がありました。 しかし、現在のバージョンでは、n の値は検査されます。 標準で必要なものとは異なる引数を n に渡すコードは、ランタイムにクラッシュする可能性があります。  
+-   **std::allocator::deallocate** In Visual C++ 2013 and earlier, std::allocator::deallocate(p, n) ignored the argument passed in for n.  The C++ standard has always required that n be equal to the value passed as the first argument to the invocation of allocate which returned p. However, in the current version, the value of n is inspected. Code that passes arguments for n that differ from what the standard requires might crash at runtime.  
   
--   **hash_map および hash_set** 非標準ヘッダー ファイルの hash_map と hash_set は Visual Studio 2015 では推奨されておらず、将来のリリースでは削除されます。 代わりに unordered_map と unordered_set を使用してください。  
+-   **hash_map and hash_set** The non-standard header files hash_map and hash_set are deprecated in Visual Studio 2015 and will be removed in a future release. Use unordered_map and unordered_set instead.  
   
--   **comparators and operator()** 現在、関連コンテナー (\<map> ファミリ) では、比較子に const を呼び出せる関数呼び出し演算子がある必要があります。 比較子クラス宣言の次のコードは現在、コンパイルに失敗します。  
+-   **comparators and operator()** Associative containers (the \<map> family) now require their comparators to have const-callable function call operators. The following code in a comparator class declaration now fails to compile:  
   
     ```cpp  
     bool operator()(const X& a, const X& b)  
     ```  
   
-     このエラーを解決するには、関数の宣言を次のように変更します。  
+     To resolve this error, change the function declaration to:  
   
     ```cpp  
     bool operator()(const X& a, const X& b) const  
     ```  
   
--   **型の特徴** The old names for 型の特徴 from an earlier version of the C++ draft standard have been removed. これらは C++11 で変更されており、Visual Studio 2015 では C++11 値に更新されました。 古い名前と新しい名前を次の表に示します。  
+-   **type traits** The old names for type traits from an earlier version of the C++ draft standard have been removed. These were changed in C++11 and have been updated to the C++11 values in Visual Studio 2015. The following table shows the old and new names.  
   
-    |古い名前|新しい名前|  
+    |Old name|New name|  
     |--------------|--------------|  
     |add_reference|add_lvalue_reference|  
     |has_default_constructor|is_default_constructible|  
@@ -318,50 +318,50 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
     |has_trivial_move_assign|is_trivially_move_assignable|  
     |has_trivial_destructor|is_trivially_destructible|  
   
--   **launch::any ポリシーと launch::sync ポリシー** The nonstandard launch::any ポリシーと launch::sync ポリシー were removed. 代わりに、launch::any では、launch:async &#124; launch:deferred を使用します。 launch::sync では、launch::deferred を使用します。 「[launch 列挙型](../standard-library/future-enums.md#launch)」を参照してください。  
+-   **launch::any and launch::sync policies** The nonstandard launch::any and launch::sync policies were removed. Instead, for launch::any, use launch:async &#124; launch:deferred. For launch::sync, use launch::deferred. See [launch Enumeration](../standard-library/future-enums.md#launch).  
   
-####  <a name="BK_MFC"></a> MFC と ATL  
+####  <a name="BK_MFC"></a> MFC and ATL  
   
--   **Microsoft Foundation Classes (MFC)** はサイズが大きすぎるため、Visual Studio の "標準" インストールから除外されました。 MFC をインストールするには、Visual Studio 2015 セットアップでカスタム インストール オプションを選択します。 Visual Studio 2015 が既にインストールされている場合、MFC をインストールできます。そのためには、Visual Studio セットアップを再実行し、カスタム インストール オプションを選択し、Microsoft Foundation Classes を選択します。 Visual Studio セットアップの再実行は、コントロール パネル、プログラムと機能か、インストール メディアからすることができます。  
+-   **Microsoft Foundation Classes (MFC)** is no longer included in a "Typical" install of Visual Studio because of its large size. To install MFC, choose the Custom install option in Visual Studio 2015 setup. If you already have Visual Studio 2015 installed, you can install MFC by re-running Visual Studio setup, choosing the Custom install option, and choosing Microsoft Foundation Classes. You can re-run Visual Studio setup from the Control Panel, Programs and Features, or from the installation media.  
   
-     Visual C++ 再頒布可能パッケージにも、引き続きこのライブラリが含まれています。  
+     The Visual C++ Redistributable Package still includes this library.  
   
-####  <a name="BK_ConcRT"></a> 同時実行ランタイム  
+####  <a name="BK_ConcRT"></a> Concurrency Runtime  
   
--   **concurrency::Context::Yield と競合する Windows.h の Yield マクロ** 以前、同時実行ランタイムは #undef を使用して Yield マクロの定義を解除し、Windows.h h で定義されている Yield マクロと concurrency::Context::Yield 関数の間の競合を回避していました。 この #undef は削除され、競合しない同等の新しい API 呼び出し [concurrency::Context::YieldExecution](../parallel/concrt/reference/context-class.md#yieldexecution) が追加されました。 Yield との競合を回避するには、コードを更新して代わりに YieldExecution 関数を呼び出すか、次の例に示すように、呼び出しサイトで Yield 関数名を括弧で囲みます。  
+-   **Yield macro from Windows.h conflicting with concurrency::Context::Yield** The Concurrency Runtime previously used #undef to undefine the Yield macro to avoid conflicts between the Yield macro defined in Windows.h h and the concurrency::Context::Yield function. This #undef has been removed and a new non-conflicting equivalent API call [concurrency::Context::YieldExecution](../parallel/concrt/reference/context-class.md#yieldexecution) has been added. To work around conflicts with Yield, you can either update your code to call the YieldExecution function instead, or surround the Yield function name with parentheses at call sites, as in the following example:  
   
     ```cpp  
     (concurrency::Context::Yield)();  
     ```  
   
-## <a name="compiler-conformance-improvements-in-visual-c-2015"></a>Visual C++ 2015 のコンパイラ準拠の強化  
- 以前のバージョンからコードをアップグレードすると、Visual C++ 2015 の準拠に関する強化によるコンパイラ エラーが生じる可能性があります。 これらの改善は、旧バージョンの Visual C++ からのバイナリの互換性に影響する変更ではありませんが、以前にはないコンパイラ エラーが発生する可能性があります。 詳細については、「[Visual C++ 2003 ～ 2015 の新機能](../porting/visual-cpp-what-s-new-2003-through-2015.md)」を参照してください。  
+## <a name="compiler-conformance-improvements-in-visual-c-2015"></a>Compiler Conformance Improvements in Visual C++ 2015  
+ When upgrading code from previous versions, you might also encounter compiler errors that are due to conformance improvements made in Visual C++ 2015. These improvements do not break binary compatibility from earlier versions of Visual C++, but they can produce compiler errors where none were emitted before. For more information, see [Visual C++ What's New 2003 through 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).  
   
- Visual C++ 2015 では、コンパイラの準拠に関する継続的な強化によって、コンパイラが既存のソース コードを認識する方法が変わる可能性があります。 このような場合、以前にビルドして問題なく実行できていたコードでも、ビルド時に新しいエラーや異なるエラーが発生したり、動作が変わったりする可能性があります。  
+ In Visual C++ 2015, ongoing improvements to compiler conformance can sometimes change how the compiler understands your existing source code. When this happens, you might encounter new or different errors during your build, or even behavioral differences in code that previously built and seemed to run correctly.  
   
- 幸いなことに、これらの変更はほとんどのソース コードにほとんど、またはまったく影響がありません。また、変更に対応するためにソース コードやその他の変更が必要な場合でも、通常は軽微で簡単な変更で済みます。 以前は問題がなかったソース コードで、変更が必要な *(修正前の)* コード例と、正しい *(修正後の)* コード例を多数紹介します。  
+ Fortunately, these differences  have little or no impact on most of your source code and when source code or other changes are needed to address these differences,  fixes are usually small and straight-forward. We've included many examples of previously-acceptable source code that might need to be changed *(before)* and the fixes to correct them *(after)*.  
   
- これらの変更点はソース コードや他のビルド成果物に影響はあっても、Visual C++ の異なるバージョン間のバイナリの互換性には影響がありません。 より重大な変更で、*互換性に影響する変更*の場合、バイナリの互換性に影響が及ぶ可能性がありますが、このようなバイナリの互換性に影響する変更は、Visual C++ のメジャーバージョンが異なる場合にのみ発生します。 たとえば、Visual C++ 2013 と Visual C++ 2015 間などです。 Visual C++ 2013 と Visual C++ 2015 の間の互換性に影響する変更点については、「[Visual C++ 2015 の準拠に関する変更](#VC_2015)」を参照してください。  
+ Although these differences can affect your source code or other build artifacts, they don't affect binary compatibility between updates to Visual C++ versions. A more-severe kind of change, the  *breaking change* can affect binary compatibility, but these kinds of binary compatibility breaks only occur between major versions of Visual C++. For example, between Visual C++ 2013 and Visual C++ 2015. For information on the breaking changes that occurred between Visual C++ 2013 and Visual C++ 2015, see [Visual C++ 2015 Conformance Changes](#VC_2015).  
   
--   [Visual C++ 2015 の準拠の強化](#VS_RTM)  
+-   [Conformance Improvements in Visual C++ 2015](#VS_RTM)  
   
--   [更新プログラム 1 の準拠の強化](#VS_Update1)  
+-   [Conformance Improvements in Update 1](#VS_Update1)  
   
--   [更新プログラム 2 の準拠の強化](#VS_Update2)  
+-   [Conformance Improvements in Update 2](#VS_Update2)  
   
--   [更新プログラム 3 の準拠の強化](#VS_Update3)  
+-   [Conformance Improvements in Update 3](#VS_Update3)  
   
-###  <a name="VS_RTM"></a> Visual C++ 2015 の準拠の強化  
+###  <a name="VS_RTM"></a> Conformance Improvements in Visual C++ 2015  
   
--   /Zc:forScope - オプション  
+-   /Zc:forScope- option  
   
-     コンパイラ オプション **/Zc:forScope-** は使用できなくなりました。今後のリリースからは削除されます。  
+     The compiler option **/Zc:forScope-** is deprecated and will be removed in a future release.  
   
     ```cpp  
     Command line warning  D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release  
     ```  
   
-     このオプションは通常、標準ではスコープから外れるポイントの後のループ変数を使用する、非標準のコードを許可するために使用されていました。 これは /Za オプションを使ってコンパイルするときにのみ必要でした。/Za がない場合は、ループの後でも常に for ループ変数が使用できるからです。 標準への準拠を考慮しない場合 (たとえば、コードを他のコンパイラに移植しない場合)、/Za オプションをオフにする (または、[言語拡張機能の無効化] プロパティを [いいえ] に設定する) こともできます。 移植可能で標準に準拠したコードの記述を考慮する場合、標準に準拠するようコードを再記述する必要があります。そのためには、変数の宣言をループの外側に移動します。  
+     The option was usually used in order to allow nonstandard code that uses loop variables after the point where, according to the standard, they should have gone out of scope. It was only necessary when you are compiling with the /Za option, since without /Za, using a for loop variable after the end of the loop is always allowed. If you don't care about standards conformance (for example, if your code isn't meant to portable to other compilers), you could turn off the /Za option (or set the Disable Language Extensions property to No). If you do care about writing portable, standards-compliant code, you should rewrite your code so that it conforms to the standard by moving the declaration of such variables to a point outside the loop.  
   
     ```cpp  
     // C2065 expected  
@@ -374,17 +374,17 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
--   **/Zg コンパイラ オプション**  
+-   **/Zg compiler option**  
   
-     /Zg コンパイラ オプション (関数プロトタイプの生成) は使用できなくなりました。 前バージョンで、このコンパイラ オプションは使用できなくなりました。  
+     The /Zg compiler option (Generate Function Prototypes) is no longer available. This compiler option was previously deprecated.  
   
--   mstest.exe のコマンド ラインから C++/CLI で単体テストを実行できなくなりました。 代わりに、vstest.console.exe を使用します。 「[VSTest.Console.exe のコマンド ライン オプション](/devops-test-docs/test/vstest-console-exe-command-line-options)」を参照してください。  
+-   You can no longer run unit tests with C++/CLI from the command-line with mstest.exe. Instead, use vstest.console.exe. See [VSTest.Console.exe command-line options](/devops-test-docs/test/vstest-console-exe-command-line-options).  
   
--   **mutable キーワード**  
+-   **mutable keyword**  
   
-     `mutable` ストレージ クラス指定子は、エラーなしで以前コンパイルされていた場所で使用できなくなりました。 現在、コンパイラによってエラー C2071 (無効なストレージ クラス) が出されます。 標準では、変更可能な指定子はクラスのデータ メンバーの名前にのみ適用でき、const または static として宣言された名前には適用できません。また、参照メンバーにも適用できません。  
+     The `mutable` storage class specifier is no longer allowed in places where previously it compiled without error. Now, the compiler gives error C2071 (illegal storage class). According to the standard, the mutable specifier can be applied only to names of class data members, and cannot be applied to names declared const or static, and cannot be applied to reference members.  
   
-     次に例を示します。  
+     For example, consider the following code:  
   
     ```cpp  
     struct S   
@@ -394,17 +394,17 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     以前のバージョンの Visual C++ コンパイラはこれを受け入れていましたが、現在のコンパイラでは次のエラーが出されます。  
+     Previous versions of the Visual C++ compiler accepted this, but now the compiler gives the following error:  
   
     ```Output  
     error C2071: 'S::r': illegal storage class  
     ```  
   
-     エラーを修正するには、単に冗長の変更可能なキーワードを削除します。  
+     To fix the error, simply remove the redundant mutable keyword.  
   
--   **char_16_t と char32_t**  
+-   **char_16_t and char32_t**  
   
-     `char16_t` または `char32_t` を typedef の別名として使用できなくなりました。これらの型は現在、組み込みとして扱われているからです。 ユーザーとライブラリの作成者が char16_t と char32_t をそれぞれ、uint16_t、uint32_t の別名として定義することが一般的でした。  
+     You can no longer use `char16_t` or `char32_t` as aliases in a typedef, because these types are now treated as built-in. It was common for users and library authors to define char16_t and char32_t as aliases of uint16_t and uint32_t, respectively.  
   
     ```cpp  
     #include <cstdint>  
@@ -422,11 +422,11 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     コードを更新するには、typedef 宣言を削除してこれらの名前と競合するその他の ID の名前を変更します。  
+     To update your code, remove the typedef declarations and rename any other identifiers that collide with these names.  
   
--   **非型テンプレート パラメーター**  
+-   **Non-type template parameters**  
   
-     非型テンプレート パラメーターを含む特定のコードは現在、明示的なテンプレート引数を指定すると、型の互換性について正しくチェックされます。 たとえば、次のコードは、以前のバージョンの Visual C++ でエラーなしでコンパイルしたものです。  
+     Certain code that involves non-type template parameters is now correctly checked for type compatibility when you provide explicit template arguments. For example, the following code compiled without error in previous versions of Visual C++.  
   
     ```cpp  
     struct S1  
@@ -448,27 +448,27 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     現在のコンパイラは、正しくエラーを出します。テンプレート パラメーターの型がテンプレートの引数と一致しないからです (パラメーターは const メンバーへのポインターですが、関数 f は非 const です)。  
+     The current compiler correctly gives an error, because the template parameter type doesn't match the template argument (the parameter is a pointer to a const member, but the function f is non-const):  
   
     ```Output  
     error C2893: Failed to specialize function template 'void S2::f(void)'note: With the following template arguments:note: 'C=S1'note: 'Function=S1::f'  
     ```  
   
-     コードのこのエラーに対処するには、使用するテンプレート引数の型が、テンプレート パラメーターの宣言された型と一致することを確認してください。  
+     To address this error in your code, make sure that the type of the template argument you use matches the declared type of the template parameter.  
   
 -   **__declspec(align)**  
   
-     コンパイラは関数で `__declspec(align)` を受け入れなくなりました。 これは常に無視されていましたが、コンパイラ エラーを生成するようになりました。  
+     The compiler no longer accepts `__declspec(align)` on functions. This was always ignored, but now it produces a compiler error.  
   
     ```cpp  
     error C3323: 'alignas' and '__declspec(align)' are not allowed on function declarations  
     ```  
   
-     この問題を修正するには、関数の宣言から `__declspec(align)` を削除してください。 これは影響がなかったため、削除しても何も変わりません。  
+     To fix this problem, remove `__declspec(align)` from the function declaration. Since it had no effect, removing it does not change anything.  
   
--   **例外処理**  
+-   **Exception handling**  
   
-     例外処理への変更がいくつかあります。 まず、例外オブジェクトはコピー可能または移動可能にする必要があります。 次のコードは [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)] ではコンパイルされますが、[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] ではコンパイルされません。  
+     There are a couple of changes to exception handling. First, exception objects have to be either copyable or movable. The following code compiled in [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)], but does not compile in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)]:  
   
     ```cpp  
     struct S  
@@ -486,7 +486,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     問題は、コピー コンストラクターはプライベートであるために通常の例外処理とは異なりオブジェクトをコピーできないことです。 コピー コンストラクターが `explicit`として宣言されている場合も同じことが当てはまります。  
+     The problem is that the copy constructor is private, so the object cannot be copied as happens in the normal course of handling an exception. The same applies when the copy constructor is declared `explicit`.  
   
     ```cpp  
     struct S  
@@ -502,9 +502,9 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     コードを更新するには、例外オブジェクトのコピー コンストラクターがパブリックであり、 `explicit`とマークされていないことを確認します。  
+     To update your code, make sure that the copy constructor for your exception object is public and not marked `explicit`.  
   
-     値によって例外をキャッチする場合も、例外オブジェクトをコピー可能にする必要があります。 次のコードは [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)] ではコンパイルされますが、[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] ではコンパイルされません。  
+     Catching an exception by value also requires the exception object to be copyable. The following code compiled in [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)], but does not compile in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)]:  
   
     ```cpp  
     struct B  
@@ -529,7 +529,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     この問題を解決するには、 `catch` のパラメーターの型を参照に変更します。  
+     You can fix this issue by changing the parameter type for the `catch` to a reference.  
   
     ```cpp  
     catch (D& d)  
@@ -538,9 +538,9 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
--   **マクロに続く文字列リテラル**  
+-   **String literals followed by macros**  
   
-     このバージョンでは、コンパイラはユーザー定義リテラルをサポートするようになりました。 その結果、空白文字の介入がないマクロに続く文字列リテラルはユーザー定義のリテラルとして解釈されます。これにより、エラーまたは予期しない結果が起こる可能性があります。 たとえば、以前のコンパイラでは次のコードが正常にコンパイルされていました。  
+     The compiler now supports user defined literals. As a consequence, string literals followed by macros without any intervening whitespace are interpreted as user-defined literals, which might produce errors or unexpected results. For example, in previous compilers the following code compiled successfully:  
   
     ```cpp  
     #define _x "there"  
@@ -555,36 +555,36 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     コンパイラはこれを、マクロに続く "hello" というリテラル文字列として解釈していました。これは "there" に拡張され、2 つの文字列リテラルが 1 つに連結されていました。 [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] では、コンパイラはこれをユーザー定義リテラルと解釈しますが、一致するユーザー定義リテラル _x が定義されていないため、エラーになります。  
+     The compiler interpreted this as a string literal "hello" followed by a macro, which is expanded "there", and then the two string literals were concatenated into one. In [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)], the compiler interprets this as a user-defined literal, but since there is no matching user-defined literal _x defined, it gives an error.  
   
     ```Output  
     error C3688: invalid literal suffix '_x'; literal operator or literal operator template 'operator ""_x' not found  
     note: Did you forget a space between the string literal and the prefix of the following string literal?  
     ```  
   
-     この問題を解決するには、文字列リテラルとマクロの間に空白に追加します。  
+     To fix this problem, add a space between the string literal and the macro.  
   
--   **隣接する文字列リテラル**  
+-   **Adjacent string literals**  
   
-     以前と同様、文字列の解析に関連する変更のため、空白なしの隣接する文字列リテラル (ワイド文字列リテラルまたはナロー文字列リテラルのいずれか) は、以前のバージョンの Visual C++ では、単一の連結文字列と解釈されていました。 [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] では、2 つの文字列間に空白を追加する必要があります。 たとえば、次のコードを変更する必要があります。  
+     Similarly to the previous, due to related changes in string parsing, adjacent string literals (either wide or narrow character string literals) without any whitespace were interpreted as a single concatenated string in previous releases of Visaul C++. In [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)], you must now add whitespace between the two strings. For example, the following code must be changed:  
   
     ```cpp  
     char * str = "abc""def";  
     ```  
   
-     単に 2 つの文字列間に空白を追加します。  
+     Simply add a space in between the two strings.  
   
     ```cpp  
     char * str = "abc" "def";  
     ```  
   
--   **placement new と delete**  
+-   **Placement new and delete**  
   
-     C++14 標準に準拠させるために delete 演算子に対して変更が加えられました。 標準の変更について詳しくは、「 [C++ サイズの割り当て解除](http://isocpp.org/files/papers/n3778.html)」をご覧ください。 変更により、size パラメーターを取るグローバルな delete 演算子のフォームが追加されます。 互換性に影響する変更は、(placement new 演算子と一致させるために) 以前同じシグネチャで delete 演算子を使用していた場合、コンパイラ エラーを受け取ります (これは C2956 というエラーで、placement new が使用されるポイントで発生します。それは、一致する適切な delete 演算子の識別をコンパイラが試行するコードの場所だからです)。  
+     A change has been made to the delete operator in order to bring it into conformance with C++14 standard. Details of the standards change can be found at [C++ Sized Deallocation](http://isocpp.org/files/papers/n3778.html). The changes add a form of the global delete operator that takes a size parameter. The breaking change is that if you were previously using an operator delete with the same signature (to correspond with a placement new operator), you will receive a compiler error (C2956, which occurs at the point where the placement new is used, since that's the position in code where the compiler tries to identify an appropriate matching delete operator).  
   
-     関数 `void operator delete(void *, size_t)` は、C++11 の placement new 関数 "void \* operator new(size_t, size_t)" に対応する placement delete 演算子でした。 現在、C++14 サイズの割り当て解除では、この delete 関数は *通常の解放関数* (グローバルな delete 演算子) です。 標準では、placement new の使用で対応する delete 関数を検索し、通常の解放関数を見つけた場合、プログラムの形式が不適切である必要があります。  
+     The function `void operator delete(void *, size_t)` was a placement delete operator corresponding to the placement new function "void \* operator new(size_t, size_t)" in C++11. With C++14 sized deallocation, this delete function is now a *usual deallocation function* (global delete operator). The standard requires that if the use of a placement new looks up a corresponding delete function and finds a usual deallocation function, the program is ill-formed.  
   
-     たとえば、コードで placement new と placement delete の両方を定義するとします。  
+     For example, suppose your code defines both a placement new and a placement delete:  
   
     ```cpp  
     void * operator new(std::size_t, std::size_t);  
@@ -592,22 +592,22 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     この問題は、定義した placement delete 演算子と新しいグローバル サイズの delete 演算子の間の関数シグネチャの一致により発生します。 placement new 演算子および delete 演算子で size_t とは異なる型を使用できるかどうかを検討してください。  size_t typedef の型はコンパイラによって異なります。これは Visual C++ の符号なし整数の typedef です。 適切なソリューションでは、次のように列挙型を使用します。  
+     The problem occurs because of the match in function signatures between a placement delete operator you've defined, and the new global sized delete operator. Consider whether you can use a different type other than size_t for any placement new and delete operators.  Note that the type of the size_t typedef is compiler-dependent; it is a typedef for unsigned int in Visual C++. A good solution is to use an enumerated type such as this:  
   
     ```cpp  
     enum class my_type : size_t {};  
   
     ```  
   
-     次に、placement new と delete の定義を変更し、size_t の代わりにこの型を 2 番目の引数として使用します。 placement new の呼び出しを更新して新しい型を渡したり (たとえば、 `static_cast<my_type>` を使用することにより整数値から変換する)、new と delete の定義を更新して整数型にキャスト バックしたりする必要もあります。 これに対して列挙型を使用する必要はありません。size_t メンバーを持つクラス型も機能します。  
+     Then, change your definition of placement new and delete to use this type as the second argument instead of size_t. You’ll also need to update the calls to placement new to pass the new type (for example, by using `static_cast<my_type>` to convert from the integer value) and update the definition of new and delete to cast back to the integer type. You don’t need to use an enum for this; a class type with a size_t member would also work.  
   
-     代わりの方法として、placement new を完全に除去することもできます。 コードで placement new を使用してメモリ プールを実装する場合 (placement 引数が割り振られるまたは削除されるオブジェクトのサイズである)、独自のカスタム メモリ プール コードをサイズ割り当て解除機能で置き換えるほうが良い可能性があります。配置関数を削除でき、配置関数の代わりに独自の 2 つの引数 delete 演算子だけを使用することができます。  
+     An alternative solution is that you might be able to eliminate the placement new altogether. If your code uses placement new to implement a memory pool where the placement argument is the size of the object being allocated or deleted, then sized deallocation feature might be suitable to replace your own custom memory pool code, and you can get rid of the placement functions and just use your own two-argument delete operator instead of the placement functions.  
   
-     コードを即時に更新しない場合は、コンパイラ オプション /Zc:sizedDealloc- を使用して、従来の動作に戻すことができます。 このオプションを使用すると、2 つの引数を持つ削除関数が存在せず、placement delete 演算子との競合は発生しません。  
+     If you don't want to update your code immediately, you can revert to the old behavior by using the compiler option /Zc:sizedDealloc-. If you use this option, the two-argument delete functions don’t exist and won't cause a conflict with your placement delete operator.  
   
--   **共用体データ メンバー**  
+-   **Union data members**  
   
-     共用体データ メンバーで参照型を使用することはできなくなりました。 次のコードは [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)] で正常にコンパイルされますが、[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] ではエラーになります。  
+     Data members of unions can no longer have reference types. The following code compiled successfully in [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)], but produces an error in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)].  
   
     ```cpp  
     union U1   
@@ -625,7 +625,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     上のコードを実行すると、次のエラーが生成されます。  
+     The preceding code produces the following errors:  
   
     ```Output  
   
@@ -634,9 +634,9 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     この問題に対処するには、参照型をポインターか値に変更します。 ポインターに型を変更する場合、共用体フィールドを使用するコードでの変更が必要です。 コードを値に変更すると、共用体に格納されているデータが変更されます。これは、他のフィールドに影響を与えます。共用体型のフィールドは同じメモリを共有するからです。 値のサイズによっては、共用体のサイズも変更される場合があります。  
+     To address this issue, change reference types either to a pointer or a value. Changing the type to a pointer requires changes in the code that uses the union field. Changing the code to a value would change the data stored in the union, which affects other fields since fields in union types share the same memory. Depending on the size of the value, it might also change the size of the union.  
   
--   匿名共用体の標準への適合が改善されました。 以前のバージョンのコンパイラでは、匿名共用体に対して明示的なコンストラクターとデストラクターが生成されていました。 これらは [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] で削除されています。  
+-   Anonymous unions are now more conformant to the standard. Previous versions of the compiler generated an explicit constructor and destructor for anonymous unions. These are deleted in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)].  
   
     ```cpp  
     struct S   
@@ -654,7 +654,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     上のコードを実行すると、[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] で次のエラーが生成されます。  
+     The preceding code generates the following error in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)]:  
   
     ```cpp  
     error C2280: '<unnamed-type-u>::<unnamed-type-u>(void)': attempting to reference a deleted function  
@@ -662,7 +662,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     この問題を解決するには、コンストラクターおよび/またはデストラクターの独自の定義を提供してください。  
+     To resolve this issue, provide your own definitions of the constructor and/or destructor.  
   
     ```cpp  
     struct S   
@@ -681,9 +681,9 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
--   **匿名構造体を持つ共用体**  
+-   **Unions with anonymous structs**  
   
-     標準と準拠させるために、共用体の匿名構造体メンバーのランタイムの動作が変更されました。 共用体の匿名構造体のメンバーのコンストラクターは、そのような共用体の作成時に暗黙的に呼び出されなくなりました。 また、共用体の匿名構造体のメンバーのデストラクターも、共用体がスコープから外れたときに暗黙的に呼び出されなくなりました。 次のコードを検討します。共用体 U に匿名構造体が含まれています。この匿名構造体には、名前付き構造体 S のメンバーが含まれており、その構造体にはデストラクターが含まれています。  
+     In order to conform with the standard, the runtime behavior has changed for members of anonymous structures in unions. The constructor for anonymous structure members in a union is no longer implicitly called when such a union is created. Also, the destructor for anonymous structure members in a union is no longer implicitly called when the union goes out of scope. Consider the following code, in which a union U contains an anonymous structure that contains a member which is a named structure S that has a destructor.  
   
     ```cpp  
     #include <stdio.h>  
@@ -719,13 +719,13 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)] では、S のコンストラクターは共用体の作成時に呼び出され、S のデストラクターは関数 f のスタックがクリーンアップされるときに呼び出されます。 しかし、[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)] では、コンストラクターとデストラクターは呼び出されません。 コンパイラによって、この動作の変更に関する警告が出されます。  
+     In [!INCLUDE[cpp_dev12_long](../build/reference/includes/cpp_dev12_long_md.md)], the constructor for S is called when the union is created, and the destructor for S is called when the stack for function f is cleaned up. But in [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)], the constructor and destructor are not called. The compiler gives a warning about this behavior change.  
   
     ```Output  
     warning C4587: 'U::s': behavior change: constructor is no longer implicitly calledwarning C4588: 'U::s': behavior change: destructor is no longer implicitly called  
     ```  
   
-     元の動作を復元するには、匿名構造体に名前を付けます。 非匿名構造体の実行時の動作は、コンパイラのバージョンに関係なく、同じです。  
+     To restore the original behavior, give the anonymous structure a name. The runtime behavior of non-anonymous structures is the same, regardless of the compiler version.  
   
     ```cpp  
     #include <stdio.h>  
@@ -762,7 +762,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     別の方法として、新しい関数にコンストラクターとデストラクターのコードを移動し、共用体のコンストラクターおよびデストラクターからこれらの関数の呼び出しを追加します。  
+     Alternatively, try moving the constructor and destructor code into new functions, and add calls to these functions from the constructor and destructor for the union.  
   
     ```cpp  
     #include <stdio.h>  
@@ -799,11 +799,11 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
--   **テンプレートの解決**  
+-   **Template resolution**  
   
-     テンプレートの名前解決に変更が加えられています。 C++ では、名前解決の候補を検討する場合、一致の可能性として検討されている 1 つ以上の名前により、無効なテンプレート インスタンス化が生成される可能性があります。 これらの無効なインスタンス化は通常、それ自体はコンパイラ エラーの原因にはなりません。これは SFINAE (Substitution Failure Is Not An Error: 置き換えの失敗はエラーではない) と呼ばれます。  
+     Changes have been made to name resolution for templates. In C++, when considering candidates for the resolution of a name, it can be the case that one or more names under consideration as potential matches produces an invalid template instantiation. These invalid instantiations do not normally cause compiler errors, a principle which is known as SFINAE (Substitution Failure Is Not An Error).  
   
-     SFINAE のコンパイラがクラス テンプレートの特殊化のインスタンス化を必要とする場合は、この処理中に発生したエラーはコンパイラ エラーです。 以前のバージョンでは、コンパイラはこのようなエラーを無視していました。 次に例を示します。  
+     Now, if SFINAE requires the compiler to instantiate the specialization of a class template, then any errors that occur during this process are compiler errors. In previous versions, the compiler would ignore such errors. For example, consider the following code:  
   
     ```cpp  
     #include <type_traits>  
@@ -843,7 +843,7 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     現在のコンパイラでコンパイルすると、次のエラーが表示されます。  
+     If you compile with the current compiler, you get the following error:  
   
     ```Output  
   
@@ -858,30 +858,30 @@ Visual C++ コンパイラの新しいバージョンにアップグレードす
   
     ```  
   
-     これは、is_base_of の最初の呼び出しの時点でクラス 'D' がまだ定義されていないためです。  
+     This is because at the point of the first invocation of the is_base_of the class 'D' has not yet been defined.  
   
-     この場合の修正は、クラスが定義されるまでそのような型の特徴を使用しないことです。 B と D の定義をコード ファイルの先頭に移動すると、エラーが解決されます。 定義がヘッダー ファイルにある場合、ヘッダー ファイルの include ステートメントの順序を確認し、問題のあるテンプレートが使用される前にクラス定義がコンパイルされるようにしてください。  
+     In this case, the fix is not to use such type traits until the class has been defined. If you move the definitions of B and D to the beginning of the code file, the error is resolved. If the definitions are in header files, check the order of the include statements for the header files to make sure that any class definitions are compiled before the problematic templates are used.  
   
--   **コピー コンストラクター**  
+-   **Copy constructors**  
   
-     [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] と Visual Studio 2015 の両方において、コンパイラは、クラスにユーザー定義の移動コンストラクターがあり、ユーザー定義のコピー コンストラクターはない場合に、そのクラスのコピー コンストラクターを生成します。 Dev14 では、この暗黙的に生成されたコピー コンストラクターは "= delete" とマークされています。  
+     In both [!INCLUDE[vs_dev12](../atl-mfc-shared/includes/vs_dev12_md.md)] and Visual Studio 2015, the compiler generates a copy constructor for a class if that class has a user-defined move constructor but no user-defined copy constructor. In Dev14, this implicitly generated copy constructor is also marked "= delete".  
 
 <!--From here to VS_Update1 added 04/21/2017-->
 
--   **extern "C" として宣言される main に戻り値の型が必要になった**  
+-   **main declared as extern "C" now requires a return type.**  
 
-次のコードに対しては、C4430 が発生するようになりました。 
+The following code now produces C4430. 
 ```cpp
 extern "C" __cdecl main(){} // C4430
 ```
-このエラーを解決するには、戻り値の型を追加します。
+To fix the error, add the return type:
 ```cpp
 extern "C" int __cdecl main(){} // OK
 ```
 
- -   **メンバーの初期化子では typename を使用できない**  
+ -   **typename is not allowed in a member initializer**  
 
-次のコードに対しては、C2059 が発生するようになりました。
+The following code now produces C2059:
  ```cpp
 template<typename T>
 struct S1 : public T::type
@@ -897,15 +897,15 @@ struct S2 {
 
 S1<S2> s;
 ```
-このエラーを解決するには、初期化子から `typename` を削除します。
+To fix the error, remove `typename` from the initializer:
 ```cpp
 S1() : T::type() // OK
 ...
 ```
 
--   **明示的な特殊化でのストレージ クラスは無視される** 
+-   **The storage class on explicit specializations is ignored.** 
 
-次のコードに対しては、静的ストレージ クラスの指定子は無視されます。 
+In the following code, the static storage class specifier is ignored 
 ```cpp
 template <typename T>
 void myfunc(T h)
@@ -919,9 +919,9 @@ static void myfunc(double h) // static is ignored
 
 ```
 
--   **クラス テンプレート内部の static_assert で定数を使うと常にエラーになる**  
+-   **A constant used in a static_assert inside a class template will always fail.**  
 
-次のコードに対しては、static_assert は常にエラーになります。
+The following code causes the static_assert to always fail:
 ```cpp
 template <size_t some_value>
 struct S1
@@ -933,7 +933,7 @@ struct S1
 //other partial specializations here
 ```
 
-この問題を回避するには、値を構造体内にラップします。
+To work around this, wrap the value in a struct:
 ```cpp
 template <size_t some_value>
 struct constant_false {
@@ -949,9 +949,9 @@ struct S1
 //other partial specializations here
 ```
 
--   **事前宣言に適用される規則(C にのみ適用)**  
+-   **Rules enforced for forward declarations. (Applies only to C.)**  
 
-次のコードに対しては、C2065 が発生するようになりました。
+The following code now produces C2065:
 ```cpp
 struct token_s;
 typedef int BOOL;
@@ -962,7 +962,7 @@ typedef int INT;
 typedef int(*PFNTERM)(PTOKEN, BOOL, INT); // C2065: 'PTOKEN' : undeclared identifier
 ```
 
-この問題を修正するには、適切な事前宣言を追加します。
+To fix the problem add the proper forward declarations:
 
 ```cpp
 struct token_s;
@@ -976,9 +976,9 @@ typedef TOKEN *PTOKEN;
 typedef int(*PFNTERM)(PTOKEN, BOOL, INT);
 ```
 
--   **関数ポインター型のより一貫した適用**  
+-   **More consistent enforcement of function pointer types**  
 
-次のコードに対しては、C2197 が発生するようになりました。
+The following code now produces C2197:
 
 ```cpp
 typedef int(*F1)(int);
@@ -990,9 +990,9 @@ void func(F1 f, int v1, int v2)
 }
 ```
 
--   **オーバーロード関数のあいまいな呼び出し**  
+-   **Ambiguous calls to overloaded functions**  
 
-次のコードに対しては、C266: "'N::bind': オーバーロード関数の呼び出しを解決することができません" が発生するようになりました。
+The following code now produces C266: 'N::bind': ambiguous call to overloaded function
 ```cpp 
 template<typename R, typename T, typename T1, typename A1>
 void bind(R(T::*)(T1), A1&&);
@@ -1017,13 +1017,13 @@ public:
 };
 ```
 
-このエラーを解決するには、バインドの呼び出し N::bind(...) を完全に修飾します。 ただし、この変更が宣言されていない識別子によるマニフェストの場合は (C2065)、代わりに "using" 宣言で解決するのが適切な場合があります。
+To fix the error, you can fully qualify the call to bind: N::bind(...). However, if this change is manifest through an undeclared identifier (C2065), then it may be appropriate to fix this with a 'using' declaration instead.
 
-このパターンは、ComPtr および Microsoft::WRL 名前空間内の他の型で頻繁に発生します。
+This pattern happens frequently with ComPtr and other types in the Microsoft::WRL namespace.
 
--   **不適切なアドレス指定の修正**  
+-   **Fix incorrect address of**  
 
-次のコードに対しては、C2440: "'=': 'type *' から 'type' に変換できません" が発生するようになりました。 このエラーを解決するには、&(type) を (type) に、また (&f()) を (f()) に変更します。
+The following code now produces C2440:  '=': cannot convert from 'type *' to 'type'. To fix the error, change &(type) to (type) and (&f()) to (f()).
  
 ```cpp
 \\ C
@@ -1050,9 +1050,9 @@ void h()
 
 ```
 
--   **文字列リテラルは定数配列である**  
+-   **String literal is a constant array**  
 
-次のコードに対しては、"C2664: 'void f(void *)': 引数 1 を 'const char (*)[2]' から 'void *' へ変換できません" が発生します。
+The following code now produces C2664: 'void f(void *)': cannot convert argument 1 from 'const char (*)[2]' to 'void *'
 ```cpp
 void f(void *);
  
@@ -1063,7 +1063,7 @@ void h(void)
 }
 ```
 
-このエラーを解決するには、関数パラメーターの型を "const void*" に変更するか、または h の本体を次のように変更します。
+To fix the error, change the function parameter type to 'const void*', or else change the body of h to look like this:
 
 ```cpp
 void h(void)
@@ -1075,9 +1075,9 @@ void h(void)
 
 ```
 
--   **C++ 11 の UDL の文字列**  
+-   **C++11 UDL strings**  
 
-次のコードに対しては、エラー C3688: "リテラル サフィックス 'L' が無効です。リテラル演算子またはリテラル演算子テンプレート 'operator ""L' が見つかりません" が発生するようになりました。
+The following code now produces error C3688: invalid literal suffix 'L'; literal operator or literal operator template 'operator ""L' not found
 
 
 ```cpp
@@ -1093,7 +1093,7 @@ int main(){
     std::cout << STRCAT(L"hi ", L"there");
 }
 ```
-このエラーを解決するには、コードを次のように変更します。
+To fix the error, change the code to this:
 
 ```cpp
 #define MACRO
@@ -1111,14 +1111,14 @@ int main(){
 }
 
 ```
-上記の例で、`MACRO` は 2 つのトークン (文字列に続くマクロ) として解析されなくなります。  今度は、1 つのトークン UDL として解析されます。  同じことが L""L"" にも当てはまり、以前は L"" および L"" として解析されていたものが、L""L および "" として解析されるようになります。
+In the example above, `MACRO` is no longer parsed as two tokens (a string followed by a macro).  Now it is parsed as a single token UDL.  The same applies to L""L"", which was parsed previously as L"" and L"", and is now parsed as L""L and "".
 
-文字列連結の規則も標準への準拠に取り込まれました。つまり、L"a" "b" は L"ab" と同じです。 以前のエディションの Visual Studio では、文字幅の異なる文字列の連結は受け入れられませんでした。
+String concatenation rules were also brought into compliance with the standard, which means L"a" "b" is equivalent to L"ab". Previous editions of Visual Studio did not accept concatenation of strings with different character width.
 
 
--   **C++11 の空の文字の削除**  
+-   **C++11 empty character removed**  
 
-次のコードに対しては、エラー C2137: "空の文字定数" が発生するようになりました。
+The following code now produces error C2137: empty character constant
 
 ```cpp
 bool check(wchar_t c){
@@ -1126,7 +1126,7 @@ bool check(wchar_t c){
 }
 ```
 
-このエラーを解決するには、コードを次のように変更します。
+To fix the error, change the code to this:
 
 ```cpp
 bool check(wchar_t c){
@@ -1134,9 +1134,9 @@ bool check(wchar_t c){
 }
 ```
 
--   **MFC の例外はコピーできないため値によってキャッチできない**  
+-   **MFC exceptions can't be caught by value because they are not copyable**  
 
-MFC アプリケーションの次のコードに対しては、エラー C2316: "'D' がデストラクターとしてキャッチできない、またはコピー コンストラクターがアクセスできないか削除されています" が発生するようになりました。
+The following code in an MFC application now causes error C2316: 'D': cannot be caught as the destructor and/or copy constructor are inaccessible or deleted
 
 ```cpp
 struct B {
@@ -1160,29 +1160,29 @@ int main()
 }
 
 ```
-コードを修正するには、catch ブロックを "catch (const D &)" に変更してもかまいませんが、一般にもっとよい解決策は、MFC TRY/CATCH マクロを使うことです。
+To fix the code, you can change the catch block to `catch (const D &)' but the better solution is usually to use the MFC TRY/CATCH macros.
 
--   **alignof がキーワードになった**  
+-   **alignof is now a keyword**  
 
-次のコードに対しては、エラー C2332: "'class': タグ名がありません" が発生するようになりました。 コードを修正するには、クラスの名前を変更するか、または、クラスが alignof と同じ処理を実行している場合は、単にクラスを新しいキーワードに置き換えます。
+The following code now produces error C2332: 'class': missing tag name. To fix the code you must rename the class or, if the class is performing the same work as alignof, just replace the class with the new keyword.
 ```cpp
 class alignof{}
 ```
 
--   **constexpr がキーワードになった**  
+-   **constexpr is now a keyword**  
 
-次のコードに対しては、エラー C2059: "構文エラー: ')'" が発生するようになりました。 コードを修正するには、"constexpr" という名前の関数または変数の名前をすべて変更する必要があります。 
+The following code now produces error C2059: syntax error: ')'. To fix the code, you must rename any function or variable names that are called "constexpr". 
 ```cpp
 int constexpr() {return 1;}
 ```
 
--   **移動可能な型は const にできない**  
+-   **Movable types cannot be const**  
 
-関数が移動することを意図した型を返す場合、その戻り値の型を const にすることはできません。
+When a function returns a type that is intended to be moved, its return type should not be const.
 
--   **削除されたコピー コンストラクター**  
+-   **Deleted copy constructors**  
 
-次のコードに対しては、C2280: "'S::S(S &&)': 削除された関数を参照しようとしています" が発生するようになりました。
+The following code now produces C2280 'S::S(S &&)': attempting to reference a deleted function:
 
 ```cpp
 struct S{
@@ -1193,7 +1193,7 @@ struct S{
 
 S s2 = S(2, 3); //C2280
 ```
-このエラーを修正するには、S2 に対して直接の初期化を使います。
+To fix the error, use direct initialization for S2:
 ```cpp
 struct S{
     S(int, int);
@@ -1204,9 +1204,9 @@ struct S{
 S s2 = {2,3}; //OK
 ```
 
--   **関数ポインターへの変換は、ラムダ キャプチャがない場合にのみ生成される**  
+-   **Conversion to function pointer only generated when no lambda capture**  
 
-Visual Studio 2015 では、次のコードに対しては C2664 が発生します。 
+The following code produces C2664 in Visual Studio 2015. 
 
 ```cpp
 void func(int(*)(int)) {}
@@ -1216,11 +1216,11 @@ int main() {
     func([=](int val) { return val; });
 }
 ```
-このエラーを解決するには、キャプチャ リストから `=` を削除します。
+To fix the error, remove the `=` from the capture list.
 
--   **変換演算子を含むあいまいな呼び出し**  
+-   **Ambiguous calls involving conversion operators**  
 
-次のコードに対しては、エラー C2440: "'type cast': 'S2' から 'S1' に変換できません" が発生するようになりました。
+The following code now produces error C2440: 'type cast': cannot convert from 'S2' to 'S1':
 
 ```cpp 
 struct S1 {
@@ -1239,7 +1239,7 @@ void f(S2 s2)
 
 }
 ```
-このエラーを解決するには、変換演算子を明示的に呼び出します。
+To fix the error, explicitly call the conversion operator:
 
 ```cpp
 void f(S2 s2)
@@ -1252,7 +1252,7 @@ void f(S2 s2)
 
 ```
 
-次のコードに対しては、エラー C2593: "'operator =' があいまいです" が発生するようになりました。
+The following code now produces error C2593: 'operator =' is ambiguous:
 
 ```cpp
 struct S1 {};
@@ -1267,7 +1267,7 @@ void f(S1 *p, S2 s)
     *p = s;
 }
 ```
-このエラーを解決するには、変換演算子を明示的に呼び出します。
+To fix the error, explicitly call the conversion operator:
 ```cpp
 void f(S1 *p, S2 s)
 {
@@ -1275,9 +1275,9 @@ void f(S1 *p, S2 s)
 }
 ```
 
--   **非静的データ メンバーの初期化 (NSDMI) での無効なコピー初期化の修正**  
+-   **Fix invalid copy initialization in non-static data member initialization (NSDMI)**  
 
-次のコードに対しては、エラー C2664: "'S1::S1(S1 &&)': 引数 1 を 'bool' から 'const S1 &' へ変換できません" が発生するようになりました。
+The following code now produces error C2664: 'S1::S1(S1 &&)': cannot convert argument 1 from 'bool' to 'const S1 &':
 ```cpp
 struct S1 {
     explicit S1(bool);
@@ -1287,16 +1287,16 @@ struct S2 {
     S1 s2 = true; // error
 };
 ```
-このエラーを修正するには、直接の初期化を使います。
+To fix the error, use direct initialization:
 ```cpp
 struct S2 {
 S1 s1{true}; // OK
 };
 ```
 
--   **decltype ステートメント内のコンストラクターへのアクセス**  
+-   **Accessing constructors inside decltype statements**  
 
-次のコードに対しては、C2248: 'S::S': "クラス 'S' で宣言されているプライベート メンバーにアクセスできません" が発生するようになりました。
+The following code now produces C2248: 'S::S': cannot access private member declared in class 'S':
 ```cpp
 class S {
     S();
@@ -1308,7 +1308,7 @@ class S2 {
     auto f() -> decltype(S().i);
 };
 ```
-このエラーを解決するには、S に S2 のフレンド宣言を追加します。
+To fix the error, add a friend declaration for S2 in S:
 ```cpp
 class S {
     S();
@@ -1318,9 +1318,9 @@ public:
 };
 ```
 
--   **ラムダの既定のコンストラクターが暗黙的に削除される**  
+-   **Default ctor of lambda is implicitly deleted**  
 
-次のコードに対しては、エラー C3497: "ラムダのインスタンスは作成できません" が発生するようになりました。
+The following code now produces error C3497: you cannot construct an instance of a lambda:
 ```cpp
 void func(){
     auto lambda = [](){};    
@@ -1328,11 +1328,11 @@ void func(){
     decltype(lambda) other;
 }
 ```
-このエラーを解決するには、既定のコンストラクターを呼び出す必要がないようにします。 ラムダが何もキャプチャしない場合は、関数ポインターにキャストできます。
+To fix the error, remove the need for the default constructor to be called. If the lambda does not capture anything then it can be cast to a function pointer.
 
--   **削除された代入演算子でのラムダ**  
+-   **Lambdas with a deleted assignment operator**  
 
-次のコードに対しては、エラー C2280 が発生するようになりました。
+The following code now produces error C2280:
 
 ```cpp
 #include <memory>
@@ -1348,11 +1348,11 @@ void f(int i)
     encodedMsg = std::move(encodedMsg);
 }
 ```
-このエラーを解決するには、ラムダをファンクター クラスに置き換えるか、代入演算子を使う必要がないようにします。
+To fix the error, replace the lambda with a functor class or remove the need to use the assignment operator.
 
--   **削除されたコピー コンストラクターでのオブジェクト移動の試み**  
+-   **Attempting to move an object with deleted copy constructor**  
 
-次のコードに対しては、エラー C2280: "'moveable::moveable(const moveable &)': 削除された関数を参照しようとしています" が発生するようになりました。
+The following code now produces  error C2280: 'moveable::moveable(const moveable &)': attempting to reference a deleted function
 ```cpp
 struct moveable {
 
@@ -1369,14 +1369,14 @@ struct S {
 };
 
 ```
-このエラーを解決するには、代わりに std::move を使います。
+To fix the error, use std::move instead:
 ```cpp
 S(moveable && m) :
     m_m(std::move(m))
 ```
--   **ローカル クラスは、同じ関数で後に定義されている他のローカル クラスを参照できない**  
+-   **Local class can't reference other local class defined later in the same function**  
 
-次のコードに対しては、エラー C2079: "'s' が未定義の struct 'main::S2' で使用しています" が発生するようになりました。
+The following code now produces error C2079: 's' uses undefined struct 'main::S2'
 ```cpp
 int main()
 {
@@ -1389,7 +1389,7 @@ int main()
     struct S2 {};
 }
 ```
-このエラーを解決するには、S2 の定義を上に移動します。
+To fix the error, move up the definition of S2:
 ```cpp
 int main()
 {
@@ -1404,9 +1404,9 @@ struct S1 {
 }
 ```
 
--   **派生コンストラクターの本体内の保護された既定コンストラクターは呼び出すことができない**  
+-   **Cannot call a protected base ctor in the body of derived ctor.**  
 
-次のコードに対しては、エラー C2248: "'S1::S1': クラス 'S1' で宣言されている保護されているメンバーにアクセスできません" が発生するようになりました。
+The following code now produces error C2248: 'S1::S1': cannot access protected member declared in class 'S1'
 ```cpp
 struct S1 {
 protected:
@@ -1419,18 +1419,18 @@ struct S2 : public S1 {
     }
 };
 ```
-このエラーを解決するには、S2 でコンストラクターから S1() の呼び出しを削除し、必要がある場合は別の関数に配置します。
+To fix the error, in S2 remove the call to S1() from the constructor and if necessary put it in another function.
 
--   **{} がポインターへの変換を妨げる**  
+-   **{} prevents conversion to pointer**  
 
-次のコードに対しては、C2439: "'S::p': 指定されたメンバーは初期化できません" が発生するようになりました。    
+The following code now produces C2439 'S::p': member could not be initialized   
 ```cpp
 struct S {
     S() : p({ 0 }) {}
     void *p;
 };
 ```
-このエラーを解決するには、0 を囲む中かっこを削除するか、または次の例で示すように代わりに `nullptr` を使います。
+To fix the error, remove the braces from around the 0 or else use `nullptr` instead, as shown in this example:
 ```cpp
 struct S {
     S() : p(nullptr) {}
@@ -1438,9 +1438,9 @@ struct S {
 };
 ```
 
--   **正しくないマクロ定義とかっこ付きの使用法**  
+-   **Incorrect macro definition and usage with parentheses**  
 
-次の例に対しては、エラー C2008: "';': マクロ定義内で指定された文字の使い方が間違っています" が発生するようになりました。
+The following example now produces error C2008: ';': unexpected in macro definition
 ```cpp
 #define A; //cause of error
 
@@ -1448,9 +1448,9 @@ struct S {
     A(); // error
 };
 ```
-この問題を解決するには、先頭の行を `#define A();` に変更します。
+To fix the problem change the top line to `#define A();`
 
-次のコードに対しては、エラー C2059: "構文エラー: ')'" が発生します。
+The following code produces error C2059: syntax error: ')'
 ```cpp
 
 //notice the space after 'A'
@@ -1460,9 +1460,9 @@ struct S {
     A();
 };
 ```
-このコードを修正するには、A と () の間のスペースを削除します。
+To fix the code remove the space between A and ().
 
-次のコードに対しては、エラー C2091: "関数は関数を返せません" が発生します。
+The following code produces error C2091: function returns function:
 
 ```cpp
 
@@ -1472,9 +1472,9 @@ struct S {
     DECLARE();
 };
 ```
-このエラーを解決するには、S の DECLARE の後のかっこを削除して、`DECLARE;` にします。
+To fix the error, remove the parentheses after DECLARE in S: `DECLARE;`.
 
-次のコードに対しては、エラー C2062: "型 'int' は予期されていません" が発生します。
+The following code produces error C2062: type 'int' unexpected
 
 ```cpp
 #define A (int)
@@ -1483,14 +1483,14 @@ struct S {
     A a;
 };
 ```
-この問題を解決するには、A を次のように定義します。
+To fix the problem, define A like this:
 ```cpp
 #define A int
 ```
 
--   **宣言内の余分なかっこ**  
+-   **Extra parens in declarations**  
 
-次のコードに対しては、エラー C2062: "型 'int' は予期されていません" が発生します。
+The following code produces error C2062: type 'int' unexpected
 ```cpp
 
 struct S {
@@ -1498,13 +1498,13 @@ struct S {
     (int)j;
 };
 ```
-このエラーを解決するには、`j` からかっこを削除します。 明確にするためにかっこが必要な場合は、typedef を使います。
+To fix the error, remove the parens from `j`. If the parens are needed for clarity, then use a typedef.
 
--   **コンパイラで生成されるコンストラクターと __declspec(novtable)**  
+-   **Compiler-generated constructors and __declspec(novtable)**  
 
-Visual Studio 2015 では、仮想基底クラスを使う抽象クラスのインライン コンパイラによって生成されるコンストラクターで、__declspec(dllimport) と組み合わせて使うと __declspec(novtable) の不適切な使用が公開される可能性が高くなっています。
+In Visual Studio 2015, there is an increased likelihood that inline compiler-generated constructors of abstract classes with virtual base classes may expose improper usage of __declspec(novtable) when used in combination with __declspec(dllimport).
 
--   **auto では初期化子リストの直接適用に含まれる式が 1 つでなければならない** 次のコードに対しては、エラー C3518: "'testPositions': 初期化子リストを直接適用するコンテキストでは、'auto' の型は、単一の初期化子式からのみ推測できます" が発生するようになりました。
+-   **auto requires single expression in direct-list-initialization** The following code now produces error C3518: 'testPositions': in a direct-list-initialization context the type for 'auto' can only be deduced from a single initializer expression
 
 ```cpp
 auto testPositions{
@@ -1514,7 +1514,7 @@ auto testPositions{
     std::tuple<int, int>{-21, 17}
 };
 ```
-このエラーを解決する 1 つの可能性は、testPositions を次のように初期化することです。
+To fix the error, one possibility is to initialize testPositions as follows:
 
 ```cpp
 std::tuple<int, int> testPositions[]{
@@ -1525,9 +1525,9 @@ std::tuple<int, int> testPositions[]{
 };
 ```
 
--   **is_convertible に対する型のチェックと型へのポインター**  
+-   **Checking types vs. pointers to types for is_convertible**  
 
-次のコードでは、静的アサーションが失敗するようになりました。 
+The following code now causes the static assertion to fail. 
 
 ```cpp
 struct B1 {
@@ -1539,15 +1539,15 @@ struct D : public B2 {};
 
 static_assert(std::is_convertible<D, B2>::value, "fail");
 ```
-このエラーを解決するには、D および B2 へのポインターを比較するように static_assert を変更します。
+To fix the error, change the static_assert so that it compares pointers to D and B2:
 
 ```cpp
 static_assert(std::is_convertible<D*, B2*>::value, "fail");
 ```
 
--   **declspec(novtable) 宣言が一貫している必要がある**  
+-   **declspec(novtable) declarations must be consistent**  
 
-declspec 宣言は、すべてのライブラリで一貫している必要があります。 次のコードに対しては、単一定義規則 (ODR) 違反が発生するようになりました。
+declspec declarations must be consistent across all libraries. The following code will now produce a one-definition rule (ODR) violation:
 
 ```cpp
 
@@ -1612,11 +1612,11 @@ C c;
 
 
   
-###  <a name="VS_Update1"></a>更新プログラム 1 の準拠の強化  
+###  <a name="VS_Update1"></a> Conformance Improvements in Update 1  
   
--   **プライベートの仮想基底クラスと間接継承**  
+-   **Private virtual base classes and indirect inheritance**  
   
-     以前のバージョンのコンパイラでは、派生クラスは*間接的に派生した*`private virtual`基本クラスのメンバー関数を呼び出すことができました。 この従来の動作は正しい動作ではなく、C++ 標準に準拠していません。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。その結果、コンパイラ エラー C2280 を発行します。  
+     Previous versions of the compiler allowed a derived class to call member functions of its *indirectly-derived*`private virtual` base classes. This old behavior was incorrect and does not conform to the C++ standard. The compiler no longer accepts code written in this way and issues compiler error C2280 as a result.  
   
     ```Output  
   
@@ -1624,7 +1624,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     class base  
@@ -1643,7 +1643,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     class base;  // as above  
@@ -1658,7 +1658,7 @@ C c;
   
     ```  
   
-     または  
+     -or -  
   
     ```cpp  
     class base;  // as above  
@@ -1673,9 +1673,9 @@ C c;
   
     ```  
   
--   **オーバーロードされた operator new と operator delete**  
+-   **Overloaded operator new and operator delete**  
   
-     以前のバージョンのコンパイラでは、メンバー以外の `operator new` とメンバー以外の `operator delete` を static として宣言することや、グローバル名前空間以外の名前空間で宣言することが許可されていました。  この従来の動作のせいで、プログラマが意図した `new` または `delete` 演算子の実装がプログラムによって呼び出されないという危険性が生じ、結果として、問題のあるランタイム動作が警告なしに生じていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2323 を発行します。  
+     Previous versions of the compiler allowed non-member `operator new` and non-member `operator delete` to be declared static, and to be declared in namespaces other than the global namespace.  This old behavior created a risk that the program would not call the `new` or `delete` operator implementation that the programmer intended, resulting in silent bad runtime behavior. The compiler no longer accepts code written in this way and issues compiler error C2323 instead.  
   
     ```Output  
   
@@ -1683,25 +1683,25 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     static inline void * __cdecl operator new(size_t cb, const std::nothrow_t&)  // error C2323  
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     void * __cdecl operator new(size_t cb, const std::nothrow_t&)  // removed 'static inline'  
   
     ```  
   
-     また、コンパイラは特定の診断を行いませんが、インラインの operator new の形式は不適切であると見なされます。  
+     Additionally, although the compiler doesn't give a specific diagnostic, inline operator new is considered ill-formed.  
   
--   **非クラス型で 'operator *type*()' (ユーザー定義の変換) を呼び出す**  
+-   **Calling 'operator *type*()' (user-defined conversion) on non-class types**  
   
-     以前のバージョンのコンパイラでは 'operator *type*()' を非クラス型で呼び出すことが許可されていましたが、それは何の警告もなく無視されていました。 この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C2228 を発行します。  
+     Previous versions of the compiler allowed 'operator *type*()' to be called on non-class types while silently ignoring it. This old behavior created a risk of silent bad code generation, resulting in unpredictable runtime behavior. The compiler no longer accepts code written in this way and issues compiler error C2228 instead.  
   
     ```Output  
   
@@ -1709,7 +1709,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     typedef int index_t;  
@@ -1721,7 +1721,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     typedef int index_t;  
@@ -1733,15 +1733,15 @@ C c;
   
     ```  
   
--   **詳細な型指定子の冗長な typename**  
+-   **Redundant typename in elaborated type specifiers**  
   
-     以前のバージョンのコンパイラでは、詳細な型指定子内で `typename` を指定できました。この方法で記述されたコードは意味的に正しくありません。 コンパイラはこの方法で記述されたコードを受け入れなくなりました。代わりにコンパイラ エラー C3406 を発行します。  
+     Previous versions of the compiler allowed `typename` in an elaborated type specifiers; code written in this way is semantically incorrect. The compiler no longer accepts code written in this way and issues compiler error C3406 instead.  
   
     ```Output  
     error C3406: 'typename' cannot be used in an elaborated type specifier  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     template <typename class T>  
@@ -1749,7 +1749,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     template <class T>  // alternatively, could be 'template <typename T>'; 'typename' is not elaborating a type specifier in this case  
@@ -1757,11 +1757,11 @@ C c;
   
     ```  
   
--   **初期化子リストからの配列の型推論**  
+-   **Type deduction of arrays from an initializer list**  
   
-     以前のバージョンのコンパイラでは、初期化子リストからの配列の型推論はサポートされていませんでした。 コンパイラでこの形式の型推論がサポートされるようになりました。その結果、初期化子リストを使用した関数テンプレートへの呼び出しがあいまいになったり、以前のバージョンのコンパイラとは異なるオーバーロードが選ばれたりする可能性があります。 これらの問題を解決するには、プログラマの意図したオーバーロードをプログラムが明示的に指定する必要があります。  
+     Previous versions of the compiler did not support type deduction of arrays from an initializer list. The compiler now supports this form of type deduction and, as a result, calls to function templates using initializer lists might now be ambiguous or a different overload might be chosen than in previous versions of the compiler. To resolve these issues, the program must now explicitly specify the overload that the programmer intended.  
   
-     この新しい動作により、オーバーロードの解決で過去の候補と同程度に優れた追加候補が検討されると、呼び出しはあいまいになり、結果としてコンパイラはコンパイラ エラー C2668 を発行します。  
+     When this new behavior causes overload resolution to consider an additional candidate that is equally as good as the historic candidate, the call becomes ambiguous and the compiler issues compiler error C2668 as a result.  
   
     ```Output  
   
@@ -1769,7 +1769,7 @@ C c;
   
     ```  
   
-     例 1: オーバーロード関数のあいまいな呼び出し (変更前)  
+     Example 1: Ambiguous call to overloaded function (before)  
   
     ```cpp  
     // In previous versions of the compiler, code written in this way would unambiguously call f(int, Args...)  
@@ -1787,7 +1787,7 @@ C c;
   
     ```  
   
-     例 1: オーバーロード関数のあいまいな呼び出し (変更後)  
+     Example 1: ambiguous call to overloaded function (after)  
   
     ```cpp  
     template < typename... Args>  
@@ -1804,9 +1804,9 @@ C c;
   
     ```  
   
-     この新しい動作により、オーバーロードの解決で過去の候補よりも適合度の高い追加候補が検討されると、呼び出しはあいまいにならずに新しい候補に解決され、プログラムの動作は変化します。これはプログラマの意図した動作とは異なる場合があります。  
+     When this new behavior causes overload resolution to consider an additional candidate that is a better match than the historic candidate, the call resolves unambiguously to the new candidate, causing a change in program behavior that is probably different than the programmer intended.  
   
-     例 2: オーバーロードの解決の変更 (変更前)  
+     Example 2: change in overload resolution (before)  
   
     ```cpp  
     // In previous versions of the compiler, code written in this way would unambiguously call f(S, Args...)  
@@ -1830,7 +1830,7 @@ C c;
   
     ```  
   
-     例 2: オーバーロードの解決の変更 (変更後)  
+     Example 2: change in overload resolution (after)  
   
     ```cpp  
     struct S;  // as before  
@@ -1849,9 +1849,9 @@ C c;
   
     ```  
   
--   **switch ステートメントの警告の復元**  
+-   **Restoration of switch statement warnings**  
   
-     前のバージョンのコンパイラで、 `switch` ステートメント関連の、以前から存在していた警告が削除されました。今ではこれらの警告は復元されています。 コンパイラは復元された警告を発行するようになり、特定の case (既定の case を含む) に関連する警告が、switch ステートメントの最後の行ではなく、問題のある case を含む行で発行されるようになりました。 この結果、以前とは異なる行でそれらの警告が発行されるようになり、以前は `#pragma warning(disable:####)` を使用して抑制できていた警告も、意図どおりに抑制できなくなる可能性があります。 意図どおりにこれらの警告を抑制するには、問題がある可能性のある最初の case の上の行まで `#pragma warning(disable:####)` ディレクティブを移動しなければならない場合があります。 復元された警告を次に示します。  
+     A Previous version of the compiler removed previously-existing warnings related to `switch` statements; these warnings have now been restored. The compiler now issues the restored warnings, and warnings related to specific cases (including the default case) are now issued on the line containing the offending case, rather than on the last line of the switch statement. As a result of now issuing those warnings on different lines than in the past, warnings previously suppressed by using `#pragma warning(disable:####)` may no longer be suppressed as intended. To suppress these warnings as intended, it might be necessary to move the `#pragma warning(disable:####)` directive to a line above the first potentially-offending case. The following are the restored warnings.  
   
     ```Output  
     warning C4060: switch statement contains no 'case' or 'default' labels  
@@ -1895,7 +1895,7 @@ C c;
     Warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given  
     ```  
   
-     C4063 の例 (変更前)  
+     Example of C4063 (before)  
   
     ```cpp  
     class settings  
@@ -1929,7 +1929,7 @@ C c;
   
     ```  
   
-     C4063 の例 (変更後)  
+     Example of C4063 (after)  
   
     ```cpp  
     class settings { ... };  // as above  
@@ -1955,41 +1955,41 @@ C c;
   
     ```  
   
-     その他の復元の警告の例については、それらのドキュメントをご覧ください。  
+     Examples of the other restored warnings are provided in their documentation.  
   
--   **#include: パス名で親ディレクトリの指定子 '..' を使用する** (/Wall /WX にのみ影響)  
+-   **#include: use of parent-directory specifier '..' in pathname** (only affects /Wall /WX)  
   
-     以前のバージョンのコンパイラでは、親ディレクトリの指定子の使用が検出されませんでした '… ' パス名で  `#include` ディレクティブです。 この方法で記述されたコードは通常、プロジェクトの相対パスが正しく使用されていないためにプロジェクトの外部に存在するヘッダーをインクルードすることを目的としています。 この従来の動作のせいで、プログラマが意図したものとは異なるソース ファイルをインクルードしてプログラムがコンパイルされる危険性や、これらの相対パスを他のビルド環境に移植できない危険性が生じました。 コンパイラは、この方法で書かれたコードを検出してプログラマに通知し、有効な場合にはオプションのコンパイラ警告 C4464 を発行するようになりました。  
+     Previous versions of the compiler did not detect the use of the parent-directory specifier '..' in the pathname of  `#include` directives. Code written in this way is usually intended to include headers that exist outside of the project by incorrectly using project-relative paths. This old behavior created a risk that the program could be compiled by including a different source file than the programmer intended, or that these relative paths would not be portable to other build environments. The compiler now detects and notifies the programmer of code written in this way and issues an optional compiler warning C4464, if enabled.  
   
     ```Output  
     warning C4464: relative include path contains '..'  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     #include "..\headers\C4426.h"  // emits warning C4464  
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     #include "C4426.h"  // add absolute path to 'headers\' to your project's include directories  
   
     ```  
   
-     さらに、コンパイラは特定の診断を示しませんが、プロジェクトのインクルード ディレクトリを指定する場合、親ディレクトリの指定子".." を使用することもお勧めします。  
+     Additionally, although the compiler does not give a specific diagnostic, we also recommend that the parent-directory specifier ".." should note be used to specify your project's include directories.  
   
--   **#pragma optimize() がヘッダー ファイルの終わりを超える** (/Wall /WX にのみ影響)  
+-   **#pragma optimize() extends past end of header file** (only affects /Wall /WX)  
   
-     以前のバージョンのコンパイラでは、翻訳単位内に含まれるヘッダー ファイルをエスケープする最適化フラグの設定の変更は検出されませんでした。 コンパイラは、この方法で書かれたコードを検出してプログラマに通知し、有効な場合には、問題のある `#include`の位置でオプションのコンパイラ警告 C4426 を発行するようになりました。 この警告が発行されるのは、この変更が、コンパイラに対するコマンドライン引数によって設定された最適化フラグと競合する場合のみです。  
+     Previous versions of the compiler did not detect changes to  optimization flag settings that escape a header file included within a translation unit. The compiler now detects and notifies the programmer of code written in this way and issues an optional compiler warning C4426 at the location of the offending `#include`, if enabled. This warning is only issued if the changes conflict with the optimization flags set by command-line arguments to the compiler.  
   
     ```Output  
     warning C4426: optimization flags changed after including header, may be due to #pragma optimize()  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     // C4426.h  
@@ -2002,7 +2002,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     // C4426.h  
@@ -2016,15 +2016,15 @@ C c;
   
     ```  
   
--   **#pragma warning(push)** と **#pragma warning(pop) の不一致** (/Wall /WX にのみ影響)  
+-   **Mismatched #pragma warning(push)** and **#pragma warning(pop)** (only affects /Wall /WX)  
   
-     以前のバージョンのコンパイラでは、`#pragma warning(push)` の状態の変更が、異なるソース ファイルの `#pragma warning(pop)` 状態の変更とペアになっていても (故意であることはまれですが)、それを検出しませんでした。 この従来の動作のせいで、プログラマの意図と異なる一連の警告が有効な状態でプログラムがコンパイルされる危険性が生じ、結果として、問題のあるランタイム動作が警告なしに発生する原因となっていました。 コンパイラは、この方法で書かれたコードを検出してプログラマに通知し、有効な場合には、一致する `#pragma warning(pop)` の位置でオプションのコンパイラの警告 C5031 を発行するようになりました。 この警告には、対応する #pragma warning(push) の場所を参照するメモが含まれます。  
+     Previous versions of the compiler did not detect `#pragma warning(push)` state changes being paired with `#pragma warning(pop)` state changes in a different source file, which is rarely intended. This old behavior created a risk that the program would be compiled with a different set of warnings enabled than the programmer intended, possibly resulting in silent bad runtime behavior. The compiler now detects and notifies the programmer of code written in this way and issues an optional compiler warning C5031 at the location of the matching `#pragma warning(pop)`, if enabled. This warning includes a note referencing the location of the corresponding #pragma warning(push).  
   
     ```Output  
     warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     // C5031_part1.h  
@@ -2047,7 +2047,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     // C5031_part1.h  
@@ -2072,17 +2072,17 @@ C c;
   
     ```  
   
-     一般的ではありませんが、意図的にこの方法でコードを記述する場合があります。 この方法で記述されたコードは `#include` の順序の変更の影響を受けます。可能な場合は、自己完結型の方法を使用してソース コード ファイルで警告状態を管理することをお勧めします。  
+     Though uncommon, code written in this way is sometimes intentional. Code written in this way is sensitive to changes in `#include` order; when possible, we recommend that source code files manage warning state in a self-contained way.  
   
--   **一致していない #pragma warning(push)** (/Wall /WX にのみ影響)  
+-   **Unmatched #pragma warning(push)** (only affects /Wall /WX)  
   
-     以前のバージョンのコンパイラでは、翻訳単位の末尾で一致していない `#pragma warning(push)` の状態の変更は検出されませんでした。 コンパイラは、この方法で書かれたコードを検出してプログラマに通知し、有効な場合には、一致していない #pragma warning(push) の位置でオプションのコンパイラ警告 C5032 を発行するようになりました。 この警告が発行されるのは、翻訳単位にコンパイル エラーがない場合のみです。  
+     Previous versions of the compiler did not detect unmatched `#pragma warning(push)` state changes at the end of a translation unit. The compiler now detects and notifies the programmer of code written in this way and issues an optional compiler warning C5032 at the location of the unmatched #pragma warning(push), if enabled. This warning is only issued if there are no compilation errors in the translation unit.  
   
     ```Output  
     warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     // C5032.h  
@@ -2098,7 +2098,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     // C5032.h  
@@ -2115,23 +2115,23 @@ C c;
   
     ```  
   
--   **#pragma 警告状態の追跡が強化された結果、追加の警告が発行される場合があります。**  
+-   **Additional warnings might be issued as a result of improved #pragma warning state tracking**  
   
-     以前のバージョンのコンパイラでは、#pragma 警告状態の変化の追跡が不十分なため、すべての意図された警告を発行できませんでした。 この動作により、プログラマの意図したものとは異なる状況で、事実上、特定の警告が抑制される危険性がありました。 コンパイラは #pragma 警告状態をより確実に追跡するようになりました (特にテンプレート内部での #pragma 警告状態の変化に関連するもの)。また `#pragma warning(push)` と `#pragma warning(pop)`の意図しない使用をプログラマが見つける手助けとして、新しい警告 C5031 と C5032 を必要に応じて発行するようになりました。  
+     Previous versions of the compiler tracked #pragma warning state changes insufficiently well to issue all intended warnings. This behavior created a risk that certain warnings would be effectively suppressed in circumstances different than the programmer intended. The compiler now tracks #pragma warning state more robustly -- especially related to #pragma warning state changes inside of templates -- and optionally issues new warnings C5031 and C5032 which are intended to help the programmer locate unintended uses of `#pragma warning(push)` and `#pragma warning(pop)`.  
   
-     \#pragma 警告状態の変更の追跡が強化された結果、以前は誤って抑制されていた警告、または以前は誤って診断されていた問題に関連する警告が発行されるようになる場合があります。  
+     As a result of improved #pragma warning state change tracking, warnings formerly incorrectly suppressed or warnings related to issues formerly misdiagnosed might now be issued.  
   
--   **制御が渡らないコードの識別の強化**  
+-   **Improved identification of unreachable code**  
   
-     C++ 標準ライブラリが変更されたり、以前のバージョンのコンパイラよりも関数呼び出しのインライン化機能が強化されたりしたため、コンパイラは特定のコードに制御が渡らないことを示せるようになりました。 この新しい動作の結果、警告 C4720 のインスタンスが新しく、あるいはより頻繁に発行される可能性があります。  
+     C++ Standard Library changes and improved ability to inline function calls over previous versions of the compiler might allow the compiler to prove that certain code is now unreachable. This new behavior can result in new and more-frequently issued instances of warning C4720.  
   
     ```Output  
     warning C4720: unreachable code  
     ```  
   
-     多くの場合、この警告が発行されるのは、最適化を有効にしてコンパイルするときだけです。最適化により、より多くの関数呼び出しがインライン化されたり、冗長なコードが削除されたり、コードに制御が渡っていないことを他の方法で判別できるようになったりするためです。 警告 C4720 の新しいインスタンスが try/catch ブロックで頻繁に発生 (特に [std::find](assetId:///std::find?qualifyHint=False&autoUpgrade=True)の使用に関連して) していることが確認されています。  
+     In many cases, this warning might only be issued when compiling with optimizations enabled, since optimizations may inline more function calls, eliminate redundant code, or otherwise make it possible to determine that certain code is unreachable. We have observed that new instances of warning C4720 have frequently occurred in try/catch blocks, especially in relation to use of [std::find](assetId:///std::find?qualifyHint=False&autoUpgrade=True).  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     try  
@@ -2144,7 +2144,7 @@ C c;
     }  
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     try  
@@ -2157,20 +2157,20 @@ C c;
     }  
     ```  
   
-###  <a name="VS_Update2"></a> 更新プログラム 2 の準拠の強化  
+###  <a name="VS_Update2"></a> Conformance Improvements in Update 2  
   
--   **SFINAE 式の部分的なサポートの結果として、追加の警告とエラーが発行される場合がある**  
+-   **Additional warnings and errors might be issued as a result of partial support for expression SFINAE**  
   
-     以前のバージョンのコンパイラは、SFINAE 式のサポートがなかったため、`decltype` 指定子内の特定の種類の式を解析しませんでした。 この従来の動作は正しい動作ではなく、C++ 標準に準拠していません。 コンパイラは、継続的な適合性の向上により、これらの式を解析し、SFINAE 式を部分的にサポートするようになりました。 その結果、コンパイラは、以前のバージョンのコンパイラが解析しなかった式で検出された警告とエラーを発行します。  
+     Previous versions of the compiler did not parse certain kinds of expressions inside `decltype` specifiers due to lack of  support for expression SFINAE. This old behavior was incorrect and does not conform to the C++ standard. The compiler now parses these expressions and has partial support for expression SFINAE due to  ongoing conformance improvements. As a result, the compiler now issues warnings and errors found in  expressions that previous versions of the compiler did not parse.  
   
-     この新しい動作が、まだ宣言されていない型を含む `decltype` 式を解析するとき、コンパイラは結果としてコンパイラ エラー C2039 を発行します。  
+     When this new behavior parses a `decltype` expression that includes a type that has not yet been declared, the compiler issues compiler error C2039 as a result.  
   
     ```Output  
   
     error C2039: 'type': is not a member of '`global namespace''  
     ```  
   
-     例 1: 宣言されていない型の使用 (変更前)  
+     Example 1:  use of an undeclared type (before)  
   
     ```cpp  
     struct s1  
@@ -2184,7 +2184,7 @@ C c;
   
     ```  
   
-     例 1 (変更後)  
+     Example 1 (after)  
   
     ```cpp  
     struct s1  
@@ -2200,7 +2200,7 @@ C c;
   
     ```  
   
-     依存名が型であることを指定するために必要な `typename` キーワードが欠落している `decltype` 式がこの新しい動作によって解析されると、コンパイラは、コンパイラ エラー C2923 と共にコンパイラの警告 C4346 を発行します。  
+     When this new behavior parses a `decltype` expression that is missing a necessary use of the `typename` keyword to specify that a dependent name is a type, the compiler issues  compiler warning C4346 together with compiler error C2923.  
   
     ```Output  
   
@@ -2213,7 +2213,7 @@ C c;
     error C2923: 's1': 'S2<T>::Type' is not a valid template type argument for parameter 'T'  
     ```  
   
-     例 2: 依存名が型ではない (変更前)  
+     Example 2: dependent name is not a type (before)  
   
     ```cpp  
     template < typename T>  
@@ -2239,7 +2239,7 @@ C c;
   
     ```  
   
-     例 2 (変更後)  
+     Example 2 (after)  
   
     ```cpp  
     template < typename T> struct s1 { ... };  // as above  
@@ -2256,9 +2256,9 @@ C c;
   
     ```  
   
--   `volatile` **メンバー変数が、暗黙的に定義されたコンストラクターと代入演算子を防止する**  
+-   `volatile` **member variables prevent implicitly defined constructors and assignment operators**  
   
-     以前のバージョンのコンパイラは、`volatile` メンバー変数を持つクラスが、自動的に生成された既定のコピー/移動コンストラクターと既定のコピー/移動代入演算子を持つことを許可していました。 この従来の動作は正しい動作ではなく、C++ 標準に準拠していません。 コンパイラは、揮発性のメンバー変数を持つクラスが、非単純コンストラクションと代入演算子を持つとみなすようになりました。それにより、これらの演算子の既定の実装が自動的に生成されることを防止します。  そのようなクラスが共用体 (またはクラス内の無名共用体) のメンバーである場合は、共用体のコピー/移動コンストラクターとコピー/移動代入演算子 (または無名共用体を含むクラス) は、暗黙的に削除済みとして定義されます。 明示的に定義することなく、共用体 (または無名共用体を含むクラス) を構築またはコピーしようとするとエラーとなり、結果として、コンパイラはコンパイラ エラー C2280 を発行します。  
+     Previous versions of the compiler allowed a class that has `volatile` member variables to have default copy/move constructors and default copy/move assignment operators automatically generated. This old behavior was incorrect and does not conform to the C++ standard. The compiler now considers a class that has volatile member variables to have non-trivial construction and assignment operators which prevents default implementations of these operators from being automatically generated.  When such a class is a member of a union (or an anonymous union inside of a class), the copy/move constructors and copy/move assignment operators of the union (or the class containing the unonymous union) will be implicitly defined as deleted. Attempting to construct or copy the union (or class containing the anonymous union) without explicitly defining them is an error and the compiler  issues compiler error C2280 as a result.  
   
     ```Output  
   
@@ -2266,7 +2266,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     struct A  
@@ -2290,7 +2290,7 @@ C c;
     B b2(b1);  // error C2280  
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     struct A  
@@ -2314,15 +2314,15 @@ C c;
     B b2(b1);  // error C2280  
     ```  
   
--   **静的メンバー関数は、CV 修飾子をサポートしていません。**  
+-   **Static member functions do not support cv-qualifiers.**  
   
-     以前のバージョンの Visual C++ 2015 は、静的メンバー関数が CV 修飾子を持つことを許可していました。 この動作は、Visual C++ 2015 および Visual C++ 2015 Update 1 での回帰が原因です。Visual C++ 2013 および Visual C++ の以前のバージョンは、この方法で記述されたコードを拒否します。 Visual C++ 2015 および Visual C++ 2015 Update 1 の動作は正しいものではなく、C++ 標準に準拠していません。  Visual Studio 2015 Update 2 は、この方法で記述されたコードを拒否し、コンパイラ エラー C2511 を代わりに発行します。  
+     Previous versions of Visual C++ 2015 allowed static member functions to have cv-qualifiers. This behavior is due to a regression in Visual C++ 2015 and Visual C++ 2015 Update 1; Visual C++ 2013 and previous versions of Visual C++ reject code written in this way. The behavior of Visual C++ 2015 and Visual C++ 2015 Update 1 is incorrect and does not conform to the C++ standard.  Visual Studio 2015 Update 2 rejects code written in this way and issues compiler error C2511 instead.  
   
     ```Output  
     error C2511: 'void A::func(void) const': overloaded member function not found in 'A'  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     struct A  
@@ -2334,7 +2334,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example(after)  
   
     ```cpp  
     struct A  
@@ -2346,9 +2346,9 @@ C c;
   
     ```  
   
--   **列挙型の事前宣言は、WinRT コードでは許可されていません** (/ZW にのみ影響)  
+-   **Forward declaration of enum is not allowed in WinRT code** (affects /ZW only)  
   
-     管理された C++ コードが /clr コンパイラ スイッチを使用して .Net Framework 用にコンパイルされる場合と同様に、Windows ランタイム (WinRT) 用にコンパイルされたコードは、`enum` 型が事前に宣言されることを許可しません。 この動作により、列挙型のサイズが常にわかり、WinRT 型システムに正しくプロジェクションを実行することができます。 コンパイラは、この方法で記述されたコードを拒否し、コンパイラ エラー C3197 と共にコンパイラ エラー C2599 を発行します。  
+     Code compiled for the Windows Runtime (WinRT) doesn't allow `enum` types to be forward declared, similarly to when managed C++ code is compiled for the .Net Framework using the /clr compiler switch. This behavior is ensures that the size of an enumeration is always known and can be correctly projected to the WinRT type system. The compiler rejects code written in this way and  issues compiler error C2599 together with compiler error C3197.  
   
     ```Output  
   
@@ -2362,7 +2362,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     namespace A {  
@@ -2387,7 +2387,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
               // forward declaration of CustomEnum removed  
@@ -2410,9 +2410,9 @@ C c;
   
     ```  
   
--   **オーバーロードされた非メンバー operator new と operator delete をインラインで宣言できない** (レベル 1 (/W1) 既定で有効)  
+-   **Overloaded non-member operator new and operator delete may not be declared inline** (Level 1 (/W1) on-by-default)  
   
-     以前のバージョンのコンパイラは、非メンバー operator new と operator delete 関数がインラインで宣言されるときに警告を発行しません。 この方法で記述されたコードは、形式が正しくなく (診断は必要なし)、new 演算子と delete 演算子の不一致 (特に、サイズ割り当て解除と共に使用された場合) から生じるメモリの問題を引き起こす可能性があります。この問題を診断するのは難しい場合があります。   コンパイラは警告 C4595 を発行するようになったので、この方法で記述されたコードを識別しやすくなりました。  
+     Previous versions of the compiler do not issue a warning when non-member operator new and operator delete functions are declared inline. Code written in this way is ill-formed (no diagnostic required) and can cause memory issues  resulting from mismatched new and delete operators (especially when used together with sized deallocation) that can be difficult to diagnose.   The compiler now issues compiler warning C4595 to help identify code written in this way.  
   
     ```Output  
   
@@ -2420,7 +2420,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
               inline void* operator new(size_t sz)  // warning C4595  
@@ -2430,7 +2430,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
               void* operator new(size_t sz)  // removed inline  
@@ -2440,17 +2440,17 @@ C c;
   
     ```  
   
-     この方法で記述されたコードを修正するには、演算子の定義をヘッダー ファイルから対応するソース ファイルに移動することが必要な場合があります。  
+     Fixing code that's written in this way might require that the operator definitions be moved out of a header file and into a corresponding source file.  
   
-###  <a name="VS_Update3"></a> 更新プログラム 3 の準拠の強化  
+###  <a name="VS_Update3"></a> Conformance Improvements in Update 3  
   
--   **std::is_convertable は self-assignment** (標準ライブラリ) を検出するようになりました  
+-   **std::is_convertable now detects self-assignment**  (standard library)  
   
-     以前のバージョンの `std::is_convertable` type-trait は、コピー コンストラクターが削除済みまたはプライベートの場合、クラス型の自己代入を正しく検出していませんでした。 コピー コンストラクターが削除済みまたはプライベートの場合でも、クラス型の自己代入時にも `std::is_convertable<>::value` が正しく `false` に設定されるようになりました。  
+     Previous versions of the `std::is_convertable` type-trait did not correctly detect self-assignment of a class type when its copy constructor is deleted or private. Now, `std::is_convertable<>::value` is correctly set to `false` when applied to a class type with a deleted or private copy constructor.  
   
-     この変更に関連するコンパイラの診断はありません。  
+     There is no compiler diagnostic associated with this change.  
   
-     例  
+     Example  
   
     ```cpp  
     #include <type_traits>  
@@ -2470,18 +2470,18 @@ C c;
     static_assert(std::is_convertible<X1&, X1>::value, "BOOM");static_assert(std::is_convertible<X2&, X2>::value, "BOOM");  
     ```  
   
-     以前のバージョンの Visual C++ では、`std::is_convertable<>::value` が不適切に `true` に設定されているため、この例の一番下にある静的なアサーションは成功します。 新しいバージョンでは、`std::is_convertable<>::value` は正しく `false` に設定され、静的なアサーションが失敗するようになりました。  
+     In previous versions of Visual C++, the static assertions at the bottom of this example pass because `std::is_convertable<>::value` was incorrectly set to `true`. Now, `std::is_convertable<>::value` is correctly set to `false`, causing the static assertions to fail.  
   
--   **既定値にされた、または削除された単純なコピー コンストラクターと移動コンストラクターのアクセス指定子の尊重**  
+-   **Defaulted or deleted trivial copy and move constructors respect access specifiers**  
   
-     以前のバージョンのコンパイラは、既定値にされた、または削除された単純なコピー コンストラクターと移動コンストラクターを呼び出し前に確認していませんでした。 この従来の動作は正しい動作ではなく、C++ 標準に準拠していません。 場合によっては、この従来の動作のせいで、問題のあるコードが警告なしに生成される危険性が生じ、結果として、予期しないランタイム動作の原因となっていました。 コンパイラは、既定値に指定された、または削除された単純なコピー コンストラクターと移動コンストラクターをチェックし、呼び出し可能かどうかを判断し、呼び出し不能と判断した場合に、コンパイラの警告 C2248 を結果として返します。  
+     Previous versions of the compiler did not check the access specifier of defaulted or deleted trivial copy and move constructors before allowing them to be called. This old behavior was incorrect and does not conform to the C++ standard. In some cases, this old  behavior created a risk of silent bad code generation, resulting in unpredictable runtime behavior. The compiler now checks the access specifier  of defaulted or deleted trivial copy and move constructors to determine whether it can be called, and if not, issues compiler warning C2248 as a result.  
   
     ```Output  
   
     error C2248: 'S::S' cannot access private member declared in class 'S'  
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```cpp  
     class S {  
@@ -2501,7 +2501,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```cpp  
     class S {  
@@ -2521,17 +2521,17 @@ C c;
   
     ```  
   
--   **属性が指定された ATL コードのサポートの非推奨化** (デフォルトでレベル 1 (/W1))  
+-   **Deprecation of attributed ATL code support** (Level 1 (/W1) on-by-default)  
   
-     以前のバージョンのコンパイラは、属性が指定された ATL コードをサポートしていました。 [Visual C++ 2008 から始まった](https://msdn.microsoft.com/library/bb384632\(v=vs.90\).aspx)、属性が指定された ATL コードのサポートを停止する次のフェーズとして、属性が指定された ATL コードは非推奨になりました。 コンパイラは、非推奨になったこの種類のコードを特定するために、コンパイラの警告 C4467 を発行するようになりました。  
+     Previous versions of the compiler supported attributed ATL code. As the next phase of removing support for attributed ATL code that [began in Visual C++ 2008](https://msdn.microsoft.com/library/bb384632\(v=vs.90\).aspx), attributed ATL code has been deprecated. The compiler now issues compiler warning C4467 to help identify this kind of deprecated code.  
   
     ```Output  
     warning C4467: Usage of ATL attributes is deprecated  
     ```  
   
-     コンパイラからサポートが削除されるまで、属性が指定された ATL コードを今後も使い続ける場合は、`/Wv:18` または `/wd:4467` コマンド ライン引数をコンパイラに渡すことで、またはソース コードに `#pragma warning(disable:4467)` を追加することで、この警告を無効にすることができます。  
+     If you want to continue using attributed ATL code until support is removed from the compiler, you can disable this warning by passing the `/Wv:18` or `/wd:4467` command line arguments to the compiler, or by adding  `#pragma warning(disable:4467)` in your source code.  
   
-     例 1 (変更前)  
+     Example 1 (before)  
   
     ```cpp  
               [uuid("594382D9-44B0-461A-8DE3-E06A3E73C5EB")]  
@@ -2539,16 +2539,16 @@ C c;
   
     ```  
   
-     例 1 (変更後)  
+     Example 1 (after)  
   
     ```cpp  
     __declspec(uuid("594382D9-44B0-461A-8DE3-E06A3E73C5EB")) A {};  
   
     ```  
   
-     非推奨になった ATL 属性の使用を防ぐために、次のコード例のように、IDL ファイルを作成する場合があります。  
+     Sometimes you might need or want to create an IDL file to avoid the use deprecated ATL attributes, as in the example code below  
   
-     例 2 (変更後)  
+     Example 2 (before)  
   
     ```cpp  
     [emitidl];  
@@ -2568,11 +2568,11 @@ C c;
   
     ```  
   
-     まず、*.idl ファイルを作成します。vc140.idl で生成されるファイルを使用して、インターフェイスと注釈を含む \*.idl ファイルを取得することができます。  
+     First, create the *.idl file; the vc140.idl generated file can be used to obtain an \*.idl file containing the interfaces and annotations.  
   
-     次に、MIDL 手順をビルドに追加し、C++ インターフェイス定義が生成されるようにします。  
+     Next, add a MIDL step to your build to make sure that the C++ interface definitions are generated.  
   
-     例 2 IDL (変更後)  
+     Example 2 IDL (after)  
   
     ```cpp  
     import "docobj.idl";  
@@ -2603,9 +2603,9 @@ C c;
   
     ```  
   
-     次に、以下のコード例のように、実装ファイルで ATL を直接使用します。  
+     Then, use ATL directly in the implementation file, as in the example code below.  
   
-     例 2 実装 (変更後)  
+     Example 2  Implementation (after)  
   
     ```cpp  
     #include <idl.header.h>  
@@ -2623,9 +2623,9 @@ C c;
   
     ```  
   
--   **プリコンパイル済みヘッダー (PCH) ファイルと一致しない #include ディレクティブ** (/Wall /WX にのみ影響)  
+-   **Precompiled header (PCH) files and mismatched #include directives** (only affects /Wall /WX)  
   
-     以前のバージョンのコンパイラは、プリコンパイル済みヘッダー (PCH) ファイルの使用時に、`-Yc` と `-Yu` のコンパイル間のソース ファイルの `#include` ディレクティブ一致しない場合でも、受け入れていました。 この方法で記述されたコードは、コンパイラで処理できなくなります。   コンパイラは、PCH ファイルの使用時に `#include` ディレクティブの不一致を特定できるようにコンパイラの警告 CC4598 を発行するようになりました。  
+     Previous versions of the compiler accepted mismatched `#include` directives in source files between `-Yc` and `-Yu` compilations when using precompiled header (PCH)  files. Code written in this way is no longer accepted by the compiler.   The compiler now issues compiler warning CC4598 to help identify mismatched `#include` directives when using PCH files.  
   
     ```Output  
   
@@ -2633,7 +2633,7 @@ C c;
   
     ```  
   
-     例 (変更前):  
+     Example (before):  
   
      X.cpp (-Ycc.h)  
   
@@ -2653,7 +2653,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
      X.cpp (-Ycc.h)  
   
@@ -2673,9 +2673,9 @@ C c;
   
     ```  
   
--   **プリコンパイル済みヘッダー (PCH) ファイルと一致しない include ディレクトリ** (/Wall /WX にのみ影響)  
+-   **Precompiled header (PCH) files and mismatched include directories** (only affects /Wall /WX)  
   
-     プリコンパイル済みヘッダー (PCH) ファイルの使用時に、以前のバージョンのコンパイラは、コンパイラ `-Yc` と `-Yu` のコンパイルで一致しない include ディレクトリ (`-I`) コマンド ライン引数を受け入れていました。 この方法で記述されたコードは、コンパイラで処理できなくなります。   コンパイラは、PCH ファイルの使用時に include ディレクトリ (`-I`) コマンド ライン引数を特定できるコンパイラの警告 CC4599 を発行するようになりました。  
+     Previous versions of the compiler accepted mismatched include directory (`-I`) command line arguments to the compiler between `-Yc` and `-Yu` compilations when using precompiled header (PCH)  files. Code written in this way is no longer accepted by the compiler.   The compiler now issues compiler warning CC4599 to help identify mismatched include directory (`-I`) command line arguments when using PCH files.  
   
     ```Output  
   
@@ -2683,7 +2683,7 @@ C c;
   
     ```  
   
-     例 (変更前)  
+     Example (before)  
   
     ```ms-dos  
   
@@ -2692,7 +2692,7 @@ C c;
   
     ```  
   
-     例 (変更後)  
+     Example (after)  
   
     ```ms-dos  
   
@@ -2701,11 +2701,11 @@ C c;
   
     ```  
   
-## <a name="visual-c-2013-conformance-changes"></a>Visual C++ 2013 の準拠に関する変更  
+## <a name="visual-c-2013-conformance-changes"></a>Visual C++ 2013 Conformance Changes  
   
-### <a name="compiler"></a>コンパイラ  
+### <a name="compiler"></a>Compiler  
   
--   final のキーワードは、以前はコンパイルできましたが、現在は未解決のシンボル エラーを生成します。  
+-   The final keyword now generates an unresolved symbol error where it would have compiled previously:  
   
     ```cpp  
     struct S1 {  
@@ -2723,9 +2723,9 @@ C c;
   
     ```  
   
-     呼び出しが仮想呼び出しであったことが原因で、以前のバージョンではエラーは発生しませんでした。とはいえ、このプログラムは実行時にクラッシュする結果になりました。 現在は、クラスが final であると認識されるため、リンカー エラーが発生します。 この例でエラーを解決するには、S2::f の定義を含む obj に対してリンクを行うことになります。  
+     In earlier versions, an error wasn't issued because the call was a virtual call; nevertheless, the program would crash at runtime. Now, a linker error is issued because the class is known to be final. In this example, to fix the error, you would link against the obj that contains the definition of S2::f.  
   
--   コンパイラは現在 ISO C++ 標準に準拠しているため、名前空間の中でフレンド関数を使用する場合は、そのフレンド関数を参照する前に再宣言する必要があります。そうしない場合は、エラーが発生します。 たとえば、次はコンパイルされなくなります。  
+-   When you use friend functions in namespaces, you must re-declare the friend function before you refer to it or you will get an error because the compiler now conforms to the ISO C++ Standard. For example, this no longer compiles:  
   
     ```cpp  
     namespace NS {  
@@ -2741,7 +2741,7 @@ C c;
   
     ```  
   
-     このコードを修正するには、次のようにフレンド関数を宣言します。  
+     To correct this code, declare the friend function:  
   
     ```cpp  
     namespace NS {  
@@ -2758,7 +2758,7 @@ C c;
   
     ```  
   
--   C++ 標準では、クラス内で明示的な特殊化は許可されません。 Visual C++ では、特定の状況でこの作業を実行できますが、次の例のような状況では、現在はエラーが生成されます。コンパイラが、2 番目の関数が最初の関数の特殊化であることを認識しないのが原因です。  
+-   The C++ Standard does not allow explicit specialization in a class. Although Visual C++ allows it in some cases, in cases such as the following example, an error is now generated because the compiler doesn't consider the second function to be a specialization of the first one.  
   
     ```cpp  
     template < int N>  
@@ -2772,14 +2772,14 @@ C c;
   
     ```  
   
-     このコードを修正するには、2 番目の関数を変更します。  
+     To correct this code, modify the second function:  
   
     ```cpp  
     template <> void f(char& val);  
   
     ```  
   
--   Visual C++ では、次の例に示す 2 つの関数のあいまいさの解消が行われなくなりました。現在ではエラーが出力されます。  
+-   Visual C++ no longer tries to disambiguate the two functions in the following example, and now emits an error:  
   
     ```cpp  
     template< typename T> void Func(T* t = nullptr);  
@@ -2791,7 +2791,7 @@ C c;
   
     ```  
   
-     このコードを修正するには、呼び出しを明確にします。  
+     To correct this code, clarify the call:  
   
     ```cpp  
     template< typename T> void Func(T* t = nullptr);  
@@ -2803,7 +2803,7 @@ C c;
   
     ```  
   
--   コンパイラが C++11 に準拠するまで次のコードはコンパイルされ、x を int 型に解決していました。  
+-   Before the compiler was made compliant with ISO C++11, the following code would have compiled and caused x to resolve to type int:  
   
     ```cpp  
     auto x = {0};  
@@ -2811,7 +2811,7 @@ C c;
   
     ```  
   
-     現在は、このコードは x を std::initializer_list\<int> 型に解決し、x を int 型に代入しようとする次の行でエラーが発生します (既定では変換は行われません)。このコードを修正するには、int を使って auto を置換します。  
+     This code now resolves x to a type of std::initializer_list\<int> and causes an error on the next line that tries to assign x to type int. (There is no conversion by default.) To correct this code, use int to replace auto:  
   
     ```cpp  
     int x = {0};  
@@ -2819,7 +2819,7 @@ C c;
   
     ```  
   
--   初期化の際に右辺値の型が左辺値の型と一致しない場合、集約の初期化は許可されなくなり、ISO C++11 基準では縮小変換を使用しない場合は均一な初期化が必要なためエラーが発行されます。 以前は、縮小変換が使用できる場合、エラーの代わりに[コンパイラの警告 (レベル 4) C4242](../error-messages/compiler-warnings/compiler-warning-level-4-c4242.md) 警告が発行されていました。  
+-   Aggregate initialization is no longer allowed when the type of the right-hand value does not match the type of the left-hand value that's being initialized, and an error is issued because the ISO C++11 Standard requires uniform initialization to work without narrowing conversions. Previously, if a narrowing conversion was available, a [Compiler Warning (level 4) C4242](../error-messages/compiler-warnings/compiler-warning-level-4-c4242.md) warning would have been issued instead of an error.  
   
     ```cpp  
     int i = 0;  
@@ -2827,7 +2827,7 @@ C c;
   
     ```  
   
-     このコードを修正するには、明示的な縮小変換を追加します。  
+     To correct this code, add an explicit narrowing conversion:  
   
     ```cpp  
     int i = 0;  
@@ -2835,14 +2835,14 @@ C c;
   
     ```  
   
--   次の初期化は、もう許可されません。  
+-   The following initialization is no longer allowed:  
   
     ```cpp  
     void *p = {{0}};  
   
     ```  
   
-     このコードを修正するには、次の形式のどちらかを使用します。  
+     To correct this code, use either of these forms:  
   
     ```cpp  
     void *p = 0;  
@@ -2851,7 +2851,7 @@ C c;
   
     ```  
   
--   名前参照が変更されました。 次のコードは、Visual Studio 2012 の Visual C++ と Visual Studio 2013 の Visual C++ で結果が異なります。  
+-   Name lookup has changed. The following code is resolved differently in Visual C++ in Visual Studio 2012 and Visual C++ in Visual Studio 2013:  
   
     ```cpp  
     enum class E1 { a };  
@@ -2865,9 +2865,9 @@ C c;
   
     ```  
   
-     Visual Studio 2012 の Visual C++ の場合、式 E1::b の E1 はグローバル スコープで ::E1 に解決されます。 Visual Studio 2013 の Visual C++ では、式 E1::b の E1 は main() で typedef E2 に解決され、型は ::E2 になります。  
+     In Visual C++ in Visual Studio 2012, the E1 in expression E1::b resolved to ::E1 in the global scope. In Visual C++ in Visual Studio 2013, E1 in expression E1::b resolves to the typedef E2 definition in main() and has type ::E2.  
   
--   オブジェクトのレイアウトが変更されました。 x64 では、クラスのオブジェクト レイアウトが以前のリリースから変更される場合があります。 仮想関数が存在するものの仮想関数を持つ基底クラスがない場合は、コンパイラのオブジェクト モデルは、データ メンバーのレイアウトの後で仮想関数テーブルにポインターを挿入します。 これは、レイアウトがすべての場合に最適となるわけではないことを意味します。 以前のリリースでは、x64 の最適化によってレイアウトが調整されましたが、複雑なコードでは正常に機能しなかったため、Visual Studio 2013 の Visual C++ では削除されました。 たとえば、次のコードについて考えます。  
+-   Object layout has changed. On x64, the object layout of a class may change from previous releases. If it has a virtual function but it doesn’t have a base class that has a virtual function, the object model of the compiler inserts a pointer to a virtual function table after the data member layout. This means the layout may not be optimal in all cases. In previous releases, an optimization for x64 would try to improve the layout for you, but because it failed to work correctly in complex code situations, it was removed in Visual C++ in Visual Studio 2013. For example, consider this code:  
   
     ```cpp  
     __declspec(align(16)) struct S1 {  
@@ -2881,7 +2881,7 @@ C c;
   
     ```  
   
--   Visual Studio 2013 の Visual C++ では、x64 の sizeof(S2) の結果は 48 ですが、以前のリリースでは 32 に評価されます。 これを x64 の Visual Studio 2013 の Visual C++ で 32 と評価されるようにするには、仮想関数があるダミー基底クラスを追加します。  
+-   In Visual C++ in Visual Studio 2013, the result of sizeof(S2) on x64 is 48, but in previous releases, it evaluates to 32. To make this evaluate to 32 in Visual C++ in Visual Studio 2013 for x64, add a dummy base class that has a virtual function:  
   
     ```cpp  
     __declspec(align(16)) struct S1 {  
@@ -2898,7 +2898,7 @@ C c;
   
     ```  
   
-     以前のリリースでは最適化の対象となったコードの場所を探すには、該当するリリースのコンパイラと /W3 のコンパイラ オプションを併用し、警告 4370 をオンにします。 例:  
+     To find places in your code that an earlier release would have tried to optimize, use a compiler from that release together with the /W3 compiler option and turn on Warning 4370. For example:  
   
     ```cpp  
     #pragma warning(default:4370)  
@@ -2914,9 +2914,9 @@ C c;
   
     ```  
   
-     Visual Studio 2013 の Visual C++ 以前の Visual C++ コンパイラでは、このコードで "C4370: 'S2': パッキングの改善のために、前バージョンのコンパイラからクラスのレイアウトが変更されました" というメッセージが出力されます。  
+     On Visual C++ compilers before Visual C++ in Visual Studio 2013, this code outputs this message: warning C4370: 'S2' : layout of class has changed from a previous version of the compiler due to better packing  
   
-     x86 コンパイラでは、すべてのバージョンの Visual C++ で同じ標準以下のレイアウト問題があります。 たとえば、次のコードが x86 でコンパイルされた場合を考えます。  
+     The x86 compiler has the same sub-optimal layout issue in all versions of Visual C++. For example, if this code is compiled for x86:  
   
     ```cpp  
     struct S {  
@@ -2927,7 +2927,7 @@ C c;
   
     ```  
   
-     sizeof(S) の結果は 24 です。 しかし、これは先ほど説明した x64 の代替手段を使用すると 16 に減らせます。  
+     The result of sizeof(S) is 24. However, this can be reduced to 16 if you use the workaround just mentioned for x64:  
   
     ```cpp  
     struct dummy {  
@@ -2942,34 +2942,34 @@ C c;
   
     ```  
   
-### <a name="standard-library"></a>標準ライブラリ  
- Visual Studio 2013 の Visual C++ は、Visual C++ 2010 で実装された _ITERATOR_DEBUG_LEVEL の不一致を検出し、RuntimeLibrary の不一致も検出します。 これらは、コンパイラ オプション /MT (静的なリリース)、/MTd (静的なデバッグ)、/MD (動的なリリース)、および /MDd (動的なデバッグ) が混在する場合に発生します。  
+### <a name="standard-library"></a>Standard Library  
+ Visual C++ in Visual Studio 2013 detects mismatches in _ITERATOR_DEBUG_LEVEL, which was implemented in Visual C++ 2010, and RuntimeLibrary mismatches. These occur when compiler options /MT (static release), /MTd (static debug), /MD (dynamic release), and /MDd (dynamic debug) are mixed.  
   
--   コードが、以前のリリースのシミュレートされたエイリアスのテンプレートを検出した場合、変更する必要があります。 たとえば、allocator_traits\<A>::rebind_alloc\<U>::other ではなく、allocator_traits\<A>::rebind_alloc\<U> と記述する必要があります。 ratio_add\<R1, R2>::type は必要でなくなり、ratio_add\<R1, R2> を使うことが勧められていますが、前者でもコンパイルは可能です。これは、ratio\<N, D> を使用して圧縮するには、typedef "型" が必要であるためです (既に圧縮されている場合も同じ型を使用します)。  
+-   If your code acknowledges the previous release's simulated alias templates, you have to change it. For example, instead of allocator_traits\<A>::rebind_alloc\<U>::other, now you have to say allocator_traits\<A>::rebind_alloc\<U>. Although ratio_add\<R1, R2>::type is no longer necessary and we now recommend that you say ratio_add\<R1, R2>, the former will still compile because ratio\<N, D> is required to have a "type" typedef for a reduced ratio, which will be the same type if it's already reduced.  
   
--   call std::min() または std::max() を呼び出す場合、#include \<algorithm> を使用する必要があります。  
+-   You must use #include \<algorithm> when you call std::min() or std::max().  
   
--   既存のコードが、以前のリリースのシミュレートされたスコープを指定された列挙型、つまり名前空間の中でラップされている、スコープを指定されていない従来の列挙型を使用している場合は、そのコードを変更する必要があります。 たとえば、型 std::future_status::future_status を参照していた場合、std::future_status と記述する必要があります。 ただし、ほとんどのコードは影響を受けません。たとえば、std::future_status::ready は引き続きコンパイルされます。  
+-   If your existing code uses the previous release’s simulated scoped enums—traditional unscoped enums wrapped in namespaces—you have to change it. For example, if you referred to the type std::future_status::future_status, now you have to say std::future_status. However, most code is unaffected—for example, std::future_status::ready still compiles.  
   
--   explicit operator bool() は、演算子 unspecified-bool-type() よりも厳格です。 明示的な演算子 bool() は、明示的にブールへ変換できます。たとえば、shared_ptr\<X> sp の場合、static_cast\<bool>(sp) と bool b(sp) のいずれも有効です。また、if (sp)、!sp、sp && などのブール値検証可能なブールへの "状況依存型変換" も用意されています。 ただし、明示的な演算子 bool() は、ブールへの暗黙的な変換を許可していないため、bool b = sp と記述することはできません。また、ブールの返り値の型を指定しても、return sp と記述することはできません。  
+-   explicit operator bool() is stricter than operator unspecified-bool-type(). explicit operator bool() permits explicit conversions to bool—for example, given shared_ptr\<X> sp, both static_cast\<bool>(sp) and bool b(sp) are valid—and Boolean-testable "contextual conversions" to bool—for example, if (sp), !sp, sp && whatever. However, explicit operator bool() forbids implicit conversions to bool, so you can't say bool b = sp; and given a bool return type, you can't say return sp.  
   
--   現在は、実際の可変個引数テンプレートが実装されているため、_VARIADIC_MAX と関連マクロは何の影響も及ぼしません。 依然として _VARIADIC_MAX を定義している場合は、無視されます。 シミュレートされた可変個引数テンプレートを他の方法でサポートすることを意図して Microsoft のマクロ メカニズムを活用していた場合は、コードを変更する必要があります。  
+-   Now that real variadic templates are implemented, _VARIADIC_MAX and related macros have no effect. If you're still defining _VARIADIC_MAX, it is just ignored. If you acknowledged our macro machinery intended to support simulated variadic templates in any other way, you have to change your code.  
   
--   通常のキーワードに加えて、C++ 標準ライブラリ ヘッダーは状況依存のキーワード "override" と "final" のマクロ化を禁止するようになりました。  
+-   In addition to ordinary keywords, C++ Standard Library headers now forbid the macro-izing of the context-sensitive keywords "override" and "final".  
   
--   reference_wrapper/ref()/cref() では、一時オブジェクトへのバインディングが禁止されるようになりました。  
+-   reference_wrapper/ref()/cref() now forbid binding to temporary objects.  
   
--   \<random> は、コンパイル時の事前条件を厳密に実装するようになりました。  
+-   \<random> now strictly enforces its compile-time preconditions.  
   
--   さまざまな C++ 標準ライブラリ型の特徴は、"T は完全な型であるものとする" という事前条件を持つことです。 コンパイラは、このことをより厳密に実装するようになりましたが、あらゆる状況でこのことを強制するとは限りません  (C++ 標準ライブラリ事前条件に違反すると、未定義の動作がトリガーされるため、標準では、強制を保証していません)。  
+-   Various C++ Standard Library type traits have the precondition "T shall be a complete type". Although the compiler now enforces this more strictly, it may not enforce it in all situations. (Because C++ Standard Library precondition violations trigger undefined behavior, the Standard doesn't guarantee enforcement.)  
   
--   C++ 標準ライブラリは /clr:oldSyntax をサポートしていません。  
+-   The C++ Standard Library does not support /clr:oldSyntax.  
   
--   C++11 仕様の common_type では、予期しない結果が生じることがありました。特に、common_type\<int, int>::type が int&& を返すことは問題でした。 そこで、Visual C++ では「Proposed Resolution for Library Working Group issue 2141 (ライブラリ ワークグループの懸案事項 2141 に対して推奨される解決)」が実装され、common_type\<int, int="">::type が int を返すようになりました。  
+-   The C++11 specification for common_type<> had unexpected and undesired consequences; in particular, it makes common_type\<int, int>::type return int&&. Therefore, Visual C++ implements the Proposed Resolution for Library Working Group issue 2141, which makes common_type\<int, int="">::type return int.  
   
-     この変更の副作用として、ID の場合に機能しなくなりました (common_type\<T が常に型 T になるとは限らないからです)。 これは、上記の「推奨される解決」に準拠していますが、コードの互換性に影響があります。  
+     As a side-effect of this change, the identity case no longer works (common_type\<T> does not always result in type T). This complies with the Proposed Resolution, but it breaks any code that relied on the previous behavior.  
   
-     ID 型の特徴が必要な場合、<type_traits> で定義された非標準の std::identity は \<void> で機能しないので使用しないでください。 代わりに、要件に応じた独自の ID 対応の動作を実装します。 次に例を示します。  
+     If you require an identity type trait, don't use the non-standard std::identity that's defined in <type_traits>                 because it won't work for \<void>                 . Instead, implement your own identity type trait to suit your needs. Here's an example:  
   
     ```cpp  
     template < typename T> struct Identity {  
@@ -2978,49 +2978,49 @@ C c;
   
     ```  
   
-### <a name="mfc-and-atl"></a>MFC と ATL  
+### <a name="mfc-and-atl"></a>MFC and ATL  
   
--   Unicode が非常に一般的になり、MBCS の使用が大幅に減少しているため、MFC MBCS ライブラリはもう Visual Studio に含まれていません。 この変更により、新しいコントロールとメッセージの多くは Unicode 専用になったため、MFC は Windows SDK 自体により緊密に整合するようになりました。 ただし、MFC の MBCS ライブラリをどうしても引き続き使用する必要がある場合は、MSDN ダウンロード センターからダウンロードできます。 Visual C++ 再頒布可能パッケージにも、引き続きこのライブラリが含まれています。  
+-  **Visual Studio 2013 only**: MFC MBCS Library is not included in Visual Studio because Unicode is so popular and use of MBCS is significantly reduced. This change also keeps MFC more closely aligned with the Windows SDK itself, because many of the new controls and messages are Unicode-only. However, if you must continue to use the MFC MBCS library, you can download it from the MSDN Download Center at [Multibyte MFC Library for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40770). The Visual C++ Redistributable Package still includes this library.  (Note: The MBCS DLL is included in Visual C++ setup components in Visual Studio 2015 and later).
   
--   MFC リボンのアクセシビリティが変更されました。  1 レベルのアーキテクチャではなく、階層的なアーキテクチャが用意されました。 CRibbonBar::EnableSingleLevelAccessibilityMode() を呼び出して、以前の動作を使用することもできます。  
+-   Accessibility for the MFC ribbon is changed.  Instead of a one-level architecture, there is now a hierarchical architecture. You can still use the old behavior by calling CRibbonBar::EnableSingleLevelAccessibilityMode().  
   
--   CDatabase::GetConnect メソッドは削除されました。 セキュリティを改善するために、接続文字列は暗号化された状態で格納され、必要な場合にのみ復号化されるようになりました。プレーンテキストとして返すことはできません。  この文字列を取得するには、CDatabase::Dump メソッドを使用する必要があります。  
+-   CDatabase::GetConnect method is removed. To improve security, the connection string is now stored encrypted and is decrypted only as needed; it cannot be returned as plain text.  The string can be obtained by using the CDatabase::Dump method.  
   
--   CWnd::OnPowerBroadcast のシグネチャが変更されました。 このメッセージ ハンドラーのシグネチャは、2 番目のパラメーターとして LPARAM を受け取るように変更されました。  
+-   Signature of CWnd::OnPowerBroadcast is changed. The signature of this message handler is changed to take an LPARAM as the second parameter.  
   
--   メッセージ ハンドラーに対応するためにシグネチャが変更されました。 新しく追加された ON_WM_* メッセージ ハンドラーを使用するために、次の関数のパラメーター リストが変更されました。  
+-   Signatures are changed to accommodate message handlers. The parameter lists of the following functions have been changed to use newly added ON_WM_* message handlers:  
   
-    -   CWnd::OnDisplayChange は (WPARAM, LPARAM) から (UINT, int, int) に変更され、メッセージ マップに新しい ON_WM_DISPLAYCHANGE マクロを使用できるようになりました。  
+    -   CWnd::OnDisplayChange changed to (UINT, int, int) instead of (WPARAM, LPARAM) so that the new ON_WM_DISPLAYCHANGE macro can be used in the message map.  
   
-    -   CFrameWnd::OnDDEInitiate は (WPARAM, LPARAM) から (CWnd*, UINT, UNIT) に変更され、メッセージ マップに新しい ON_WM_DDE_INITIATE マクロを使用できるようになりました。  
+    -   CFrameWnd::OnDDEInitiate changed to (CWnd*, UINT, UNIT) instead of (WPARAM, LPARAM) so that the new ON_WM_DDE_INITIATE macro can be used in the message map.  
   
-    -   CFrameWnd::OnDDEExecute は (WPARAM, LPARAM) から (CWnd*, HANDLE) に変更され、メッセージ マップに新しい ON_WM_DDE_EXECUTE マクロを使用できるようになりました。  
+    -   CFrameWnd::OnDDEExecute changed to (CWnd*, HANDLE) instead of (WPARAM, LPARAM) so that the new ON_WM_DDE_EXECUTE macro can be used in the message map.  
   
-    -   CFrameWnd::OnDDETerminate のパラメーターは (WPARAM, LPARAM) から (CWnd*) に変更され、メッセージ マップに新しい ON_WM_DDE_TERMINATE マクロを使用できるようになりました。  
+    -   CFrameWnd::OnDDETerminate changed to (CWnd*) as the parameter instead of (WPARAM, LPARAM) so that the new ON_WM_DDE_TERMINATE macro can be used in the message map.  
   
-    -   CMFCMaskedEdit::OnCut は (WPARAM, LPARAM) からパラメーターなしに変更され、メッセージ マップで新しい ON_WM_CUT マクロを使用できるようになりました。  
+    -   CMFCMaskedEdit::OnCut changed to no parameters instead of (WPARAM, LPARAM) so that the new ON_WM_CUT macro can be used in the message map.  
   
-    -   CMFCMaskedEdit::OnClear は (WPARAM, LPARAM) からパラメーターなしに変更され、メッセージ マップで新しい ON_WM_CLEAR マクロを使用できるようになりました。  
+    -   CMFCMaskedEdit::OnClear changed to no parameters instead of (WPARAM, LPARAM) so that the new ON_WM_CLEAR macro can be used in the message map.  
   
-    -   CMFCMaskedEdit::OnPaste は (WPARAM, LPARAM) からパラメーターなしに変更され、メッセージ マップで新しい ON_WM_PASTE マクロを使用できるようになりました。  
+    -   CMFCMaskedEdit::OnPaste changed to no parameters instead of (WPARAM, LPARAM) so that the new ON_WM_PASTE macro can be used in the message map.  
   
--   \#ifdefs は MFC ヘッダー ファイル内から削除されました。 MFC ヘッダー ファイル内に存在していた、サポートされていないバージョンの Windows (WINVER &lt; 0x0501) に関連する多数の #ifdef () が削除されました。  
+-   \#ifdefs in the MFC header files are removed. Numerous #ifdefs in the MFC header files related to unsupported versions of Windows (WINVER &lt; 0x0501) are removed.  
   
--   ATL DLL (atl120.dll) が削除されました。 ATL は、ヘッダーおよび 1 つのスタティック ライブラリ (atls.lib) として提供されるようになりました。  
+-   ATL DLL (atl120.dll) is removed. ATL is now provided as headers and a static library (atls.lib).  
   
--   atlsd.lib、atlsn.lib、および atlsnd.lib が削除されました。 atls.lib は、文字セットに対する依存関係を持たず、デバッグ/リリースに固有のコードも含まなくなりました。 これは、Unicode/ANSI のどちらでも、またデバッグ/リリースのどちらでも同じ動作をするため、このライブラリのただ 1 つのバージョンが必要とされるようになりました。  
+-   Atlsd.lib, atlsn.lib, and atlsnd.lib are removed. Atls.lib no longer has character-set dependencies or code that's specific for debug/release. Because it works the same for Unicode/ANSI and debug/release, only one version of the library is required.  
   
--   ATL DLL と共に ATL/MFC Trace Tool が削除され、トレース機構が簡略化されました。 CTraceCategory コンストラクターは 1 つのパラメーター (カテゴリ名) を受け取り、TRACE マクロは CRT のデバッグ レポート関数を呼び出します。  
+-   ATL/MFC Trace tool is removed together with the ATL DLL, and the tracing mechanism is simplified. The CTraceCategory constructor now takes one parameter (the category name), and the TRACE macros call the CRT debug reporting functions.  
   
-## <a name="visual-c-2012-breaking-changes"></a>Visual C++ 2012 の互換性に影響する変更  
+## <a name="visual-c-2012-breaking-changes"></a>Visual C++ 2012 Breaking Changes  
   
-### <a name="compiler"></a>コンパイラ  
+### <a name="compiler"></a>Compiler  
   
--   /Yl コンパイラ オプションは変更されました。 コンパイラは既定でこのオプションを使用しますが、状況によっては LNK2011 エラーが発生する可能性があります。 詳細については、「[/Yl (Inject PCH Reference for Debug Library)](../build/reference/yl-inject-pch-reference-for-debug-library.md)」(/Yl (デバッグ ライブラリの PCH 参照の挿入)) を参照してください。  
+-   The /Yl compiler option has changed. By default, the compiler uses this option, which can lead to LNK2011 errors under certain conditions. For more information, see [/Yl (Inject PCH Reference for Debug Library)](../build/reference/yl-inject-pch-reference-for-debug-library.md).  
   
--   /clr を使用してコンパイルするコードでは、enum クラス キーワードで、共通言語ランタイム (CLR) enum ではなく C++11 enum を定義します。 CLR enum を定義するには、アクセシビリティを明示する必要があります。  
+-   In code that's compiled by using /clr, the enum class keyword defines a C++11 enum, not a common language runtime (CLR) enum. To define a CLR enum, you must be explicit about its accessibility.  
   
--   依存名を明確に区別するには、テンプレート キーワードを使用します (C++ 言語標準の準拠)。 次の例では、あいまいさを解決するために、強調表示されたテンプレート キーワードを使用する必要があります。 詳細については、「[Name Resolution for Dependent Types](../cpp/name-resolution-for-dependent-types.md)」(依存する型の名前解決) を参照してください。  
+-   Use the template keyword to explicitly disambiguate a dependent name (C++ Language Standard compliance). In the following example, the highlighted template keyword is mandatory to resolve the ambiguity. For more information, see [Name Resolution for Dependent Types](../cpp/name-resolution-for-dependent-types.md).  
   
     ```cpp  
     template < typename X = "", typename = "" AY = "">  
@@ -3028,7 +3028,7 @@ C c;
   
     ```  
   
--   float 型の定数式は、次の例のようにテンプレート引数として使用できなくなりました。  
+-   Constant expression of type float is no longer allowed as a template argument, as shown in the following example.  
   
     ```cpp  
     template<float n=3.14>  
@@ -3036,104 +3036,96 @@ C c;
   
     ```  
   
--   /GS コマンドライン オプションを使用してコンパイルし、off-by-one の脆弱性があるコードの場合、次の疑似コード例で示すように、実行時にプロセスが停止する可能性があります。  
+-   Code that's compiled by using the /GS command-line option and that has an off-by-one vulnerability may lead to process termination at                 runtime, as shown in the following pseudocode example.  
   
     ```cpp  
     char buf[MAX]; int cch; ManipulateString(buf, &cch); // ... buf[cch] = '\0'; // if cch >= MAX, process will terminate  
     ```  
   
--   x86 ビルドの既定のアーキテクチャは SSE2 に変更されたため、コンパイラから SSE 命令が発せられる可能性があります。その結果、XMM レジスタを使用して浮動小数点演算が実行されます。 以前の動作に戻すには、/arch:IA32 コンパイラ フラグを使用してアーキテクチャを IA32 と指定します。  
+-   The default architecture for x86 builds is changed to SSE2; therefore, the compiler may emit SSE instructions, and will use the XMM                 registers to perform floating-point calculations. If you want to revert to previous behavior, then use the /arch:IA32 compiler flag to specify the                 architecture as IA32.  
   
--   コンパイラから、以前は発行されなかった[コンパイラの警告 (レベル 4) C4703](../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md) と C4701 が発行される可能性があります。 コンパイラでは、ポインター型の初期化されていないローカル変数の使用がより厳格にチェックされるようになりました。  
+-   The compiler may issue warnings [Compiler Warning (level 4) C4703](../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md) and C4701 where previously it did not. The compiler applies stronger checks for use of                 uninitialized local variables of pointer type.  
   
--   新しいリンカー フラグ /HIGHENTROPYVA を指定すると、通常 Windows 8 では、メモリの割り当てが実行され、64 ビット アドレスが返されます                 (Windows 8 より前のバージョンでは、多くの場合、このような割り当てによって 2 GB 未満のアドレスが返されていました)。その結果、既存のコードのポインター切り捨てのバグが明らかになる可能性があります。 既定では、このスイッチはオンです。  この動作を無効にするには、/HIGHENTROPYVA:NO を指定します。  
+-   When the new linker flag /HIGHENTROPYVA is specified, Windows 8 typically causes memory allocations to return a 64-bit address.                 (Prior to Windows 8, such allocations more often returned addresses that were less than 2 GB.)  This may expose pointer truncation bugs in existing code. By default, this switch is on.  To disable this behavior, specify /HIGHENTROPYVA:NO.  
   
--   マネージ コンパイラ (Visual Basic/C#) は、マネージ ビルドの場合に /HIGHENTROPYVA もサポートしています。  ただし、この場合、/HIGHENTROPYVA スイッチは既定でオフです。  
+-   The managed compiler (Visual Basic/C#) also supports /HIGHENTROPYVA for managed builds.  However, in this case,                 the /HIGHENTROPYVAswitch is off by default.  
   
 ### <a name="ide"></a>IDE  
   
--   C++/CLI で Windows フォーム アプリケーションを作成しないことをお勧めしますが、既存の C++/CLI UI アプリケーションの保守はサポートされます。 Windows フォーム アプリケーションやその他の .NET UI アプリケーションを作成する必要がある場合は、C# または Visual Basic を使用してください。 C++/CLI は、相互運用性の目的でのみ使用してください。  
+-   Although we recommend that you do not create Windows Forms applications in C++/CLI, maintenance of existing C++/CLI UI applications is supported. If you have to create a Windows Forms application, or any other .NET UI application, use C# or Visual Basic. Use C++/CLI for interoperability purposes only.  
   
-### <a name="parallel-patterns-library-and-concurrency-runtime-library"></a>並列パターン ライブラリと同時実行ランタイム ライブラリ  
- UmsThreadDefault の SchedulerType 列挙型は非推奨になりました。 UmsThreadDefault を指定すると、非推奨の警告が生成され、内部的に ThreadScheduler にマップされます。  
+### <a name="parallel-patterns-library-and-concurrency-runtime-library"></a>Parallel Patterns Library and Concurrency Runtime Library  
+ The SchedulerType enumeration of UmsThreadDefault is deprecated. Specification of UmsThreadDefault produces a deprecated warning, and internally maps back to the ThreadScheduler.  
   
-### <a name="standard-library"></a>標準ライブラリ  
+### <a name="standard-library"></a>Standard Library  
   
--   C++98/03 標準と C++11 標準間の互換性に影響する変更に伴い、明示的なテンプレート引数を使用して (inmake_pair\<int, int>(x, y) として) make_pair() を呼び出しても、一般的に Visual Studio 2012 の Visual C++ ではコンパイルされなくなりました。 この問題を解決するには、make_pair(x, y) のように明示的なテンプレート引数を常に指定せずに make_pair() を呼び出す必要があります。 明示的なテンプレート引数を指定すると、この関数の目的を達成できません。 結果の型を正確に制御する必要がある場合は、pair\<short, short>(int1, int2) のように make_pair ではなく pair を使用します。  
+-   Following a breaking change between the C++98/03 and C++11 standards, using explicit template arguments to call make_pair()—as inmake_pair\<int, int>(x, y)—typically does not compile in Visual C++ in Visual Studio 2012. The solution is to always call make_pair()without explicit template arguments—as in make_pair(x, y). Providing explicit template arguments defeats the purpose of the function. If you require precise control over the resulting type, use pair instead of make_pair—as in pair\<short, short>(int1, int2).  
   
--   C++98/03 標準と C++11 標準間には、互換性に影響する変更がもう 1 つあります。A が暗黙的に B に変換可能で、B が暗黙的に C に変換可能でも、A が暗黙的に C に変換可能ではない場合、C++98/03 と Visual C++ 2010 は pair\<A, X> を (暗黙的または明示的に) pair\<C, X> に変換できます (その他の型である X はここで取り上げませんが、ペアの最初の型に固有ではありません)。Visual Studio 2012 の C++11 と Visual C++ は、A が暗黙的に C に変換可能であると検出するため、オーバーロードの解決法からペアの変換が削除されます。 これは、多くのシナリオでは、よい結果になる変更です。 たとえば、この変更で、func(const pair\<int, int>&) と func(const pair\<string, string>&) のオーバーロードと、pair\<const char *, const char \*> を指定した func() の呼び出しはコンパイルされるようになります。 ただし、積極的なペアの変換に依存するコードの場合、これは互換性に影響する変更です。 通常、このようなコードを修正するには、変換の一部を明示的に実行します。たとえば、make_pair(static_cast\<B>(a), x) を pair\<C, X> を受け取る関数に渡します。  
+-   Another breaking change between the C++98/03 and C++11 standards: When A is implicitly convertible to B and B is implicitly convertible to C, but A is not implicitly convertible to C, C++98/03 and Visual C++ 2010 permitted pair\<A, X> to be converted (implicitly or explicitly) to pair\<C, X>. (The other type, X, is not of interest here, and this is not specific to the first type in the pair.) Because C++11 and Visual C++ in Visual Studio 2012 detect that A is not implicitly convertible to C, they remove the pair conversion from overload resolution. This is a positive change for many scenarios. For example, overloading func(const pair\<int, int>&) and func(const pair\<string, string>&), and calling func() with pair\<const char *, const char \*> will compile with this change. However, this change breaks code that relied on aggressive pair conversions. Such code can typically be fixed by performing one part of the conversion explicitly—for example, by passing make_pair(static_cast\<B>(a), x) to a function that expects pair\<C, X>.  
   
--   Visual C++ 2010 は、プロセッサのメカニズムでオーバーロードと特殊化を排除することで、引数の上限が 10 個の可変個引数テンプレート (たとえば、make_shared\<T>(arg1, arg2, argN)) をシミュレートしていました。 Visual Studio 2012 の Visual C++ では、引数の上限は 5 個まで減ったので、多くのユーザーは、コンパイル時間とコンパイラのメモリ使用量が改善されました。 ただし、プロジェクト全体で _VARIADIC_MAX を 10 と明示的に定義することで、以前の上限を設定できます。  
+-   Visual C++ 2010 simulated variadic templates—for example, make_shared\<T>(arg1, arg2, argN)—up to a limit of 10 arguments, by stamping out overloads and specializations with preprocessor machinery. In Visual C++ in Visual Studio 2012, this limit is reduced to 5 arguments to improve compile times and compiler memory consumption for the majority of users. However, you can set the previous limit by explicitly defining _VARIADIC_MAX as 10, project-wide.  
   
--   C++ 標準ライブラリのヘッダーを含める場合、C++11 17.6.4.3.1 [macro.names]/2 では、キーワードのマクロ化が禁止されるようになりました。 マクロ化されたキーワードが検出されると、ヘッダーからコンパイラ エラーが発行されます (_ALLOW_KEYWORD_MACROS を定義すると、このようなコードをコンパイルできますが、使用しないことが強く推奨されます)。例外として、マクロ化された new は既定で許可されています。これは、ヘッダーが #pragma push_macro("new")/#undef new/#pragma pop_macro("new") を使用して自身を包括的に防御しているためです。 _ENFORCE_BAN_OF_MACRO_NEW を定義すると、その名前が示すとおりの処理が実行されます。  
+-   C++11 17.6.4.3.1 [macro.names]/2 forbids macro-izing keywords when C++ Standard Library headers are included. The headers now emit compiler errors if they detect macro-ized keywords. (Defining _ALLOW_KEYWORD_MACROS allows such code to compile, but we strongly discourage that usage.) As an exception, macro-ized new is permitted by default, because the headers comprehensively defend themselves by using #pragma push_macro("new")/#undef new/#pragma pop_macro("new"). Defining _ENFORCE_BAN_OF_MACRO_NEW does exactly what its name implies.  
   
--   多様な最適化とデバッグのチェックを実装するために、C++ 標準ライブラリの実装では、バイナリの互換性が Visual Studio のバージョン (2005、2008、2010、2012) ごとに意図的に保たれていません。 C++ 標準ライブラリを使用すると、異なるバージョンを使用してコンパイルされたオブジェクト ファイルとスタティック ライブラリは 1 つのバイナリ (EXE または DLL) に混在させることができず、C++ 標準ライブラリ オブジェクトは異なるバージョンを使用してコンパイルされたバイナリ間で渡すことができません。 Visual C++ 2010 を使用してコンパイルした (C++ 標準ライブラリを使用する) オブジェクト ファイルとスタティック ライブラリと、Visual Studio 2012 の Visual C++ を使用してコンパイルしたオブジェクト ファイルとスタティック ライブラリが混在すると、_MSC_VER の不一致に関するリンカー エラーが発生します (この _MSC_VER は、コンパイラのメジャー バージョン (Visual Studio 2012 の Visual C++ の場合は 1700) を含むマクロです)。 このチェックでは、DLL の混在を検出できず、Visual C++ 2008 以前のバージョンが関係する混在も検出できません。  
+-   To implement various optimizations and debugging checks, the C++ Standard Library implementation intentionally breaks binary compatibility among versions of Visual Studio (2005, 2008, 2010, 2012). When the C++ Standard Library is used, this forbids the mixing of object files and static libraries that are compiled by using different versions into one binary (EXE or DLL), and forbids the passing of C++ Standard Library objects between binaries that are compiled by using different versions. The mixing of object files and static libraries (using the C++ Standard Library that were compiled by using Visual C++ 2010 with those that were compiled by using Visual C++ in Visual Studio 2012 emits linker errors about _MSC_VER mismatch, where _MSC_VER is the macro that contains the compiler's major version (1700 for Visual C++ in Visual Studio 2012). This check cannot detect DLL mixing, and cannot detect mixing that involves Visual C++ 2008 or earlier.  
   
--   Visual Studio 2012 の Visual C++ では、Visual C++ 2010 で実装された _ITERATOR_DEBUG_LEVEL の不一致の検出に加え、ランタイム ライブラリの不一致も検出します。 これらは、コンパイラ オプション /MT (静的なリリース)、/MTd (静的なデバッグ)、/MD (動的なリリース)、および /MDd (動的なデバッグ) が混在する場合に発生します。  
+-   In addition to detecting _ITERATOR_DEBUG_LEVEL mismatches, which was implemented in Visual C++ 2010, Visual C++ in Visual Studio 2012 detects Runtime Library mismatches. These occur when the compiler options /MT (static release), /MTd (static debug), /MD (dynamic release), and /MDd (dynamic debug) are mixed.  
   
--   operator\<()、operator>()、operator\<=()、および operator>=() は、以前は std::unordered_map および stdext::hash_map ファミリに使用できましたが、実際には実装しても役に立っていませんでした。 これらの標準ではない演算子は、Visual Studio 2012 の Visual C++ から削除されました。 また、thestd::unordered_map ファミリの operator==() および operator!=() の実装は、stdext::hash_map ファミリも対象にするように拡張されました (新しいコードでは、stdext::hash_map の使用は推奨されません)。  
+-   operator\<(), operator>(), operator\<=(), and operator>=() were previously available for the std::unordered_map andstdext::hash_map families of containers, although their implementations were not actually useful. These non-standard operators have been removed in Visual C++ in Visual Studio 2012. Additionally, the implementation of operator==() and operator!=() for thestd::unordered_map family has been extended to cover the stdext::hash_map family. (We recommend that you avoid the use of thestdext::hash_map family in new code.)  
   
--   C++11 22.4.1.4 [locale.codecvt] は、codecvt::length() と codecvt::do_length() が変更可能な stateT& パラメーターを受け取ることを規定していますが、Visual C++ 2010 は定数の stateT& を受け取ります。 Visual Studio 2012 の Visual C++ は、標準で必須のパラメーターとして stateT& を受け取ります。 この違いは、仮想関数 do_length() を上書きする場合に重要になります。  
+-   C++11 22.4.1.4 [locale.codecvt] specifies that codecvt::length() and codecvt::do_length() should take modifiable stateT&parameters, but Visual C++ 2010 took const stateT&. Visual C++ in Visual Studio 2012 takes stateT& as mandated by the standard. This difference is significant for anyone who is attempting to override the virtual function do_length().  
   
 ### <a name="crt"></a>CRT  
   
--   C ランタイム (CRT) ヒープは new と malloc() に使用されますが、プライベートではなくなりました。 CRT はプロセス ヒープを使用するようになりました。 つまり、DLL がアンロードされてもヒープは破棄されないので、CRT に静的にリンクされている DLL は、DLL コードで割り当てられたメモリがアンロード前に確実にクリーンアップされるようにする必要があります。  
+-   The C Runtime (CRT) heap, which is used for new and malloc(), is no longer private. The CRT now uses the process heap. This means that the heap is not destroyed when a DLL is unloaded, so DLLs that link statically to the CRT must ensure memory that's allocated by the DLL code is cleaned up before it’s unloaded.  
   
--   iscsymf() 関数は負の値でアサートします。  
+-   The iscsymf() function asserts with negative values.  
   
--   threadlocaleinfostruct 構造体は、ロケール関数の変更に対応するために変更されました。  
+-   The threadlocaleinfostruct struct has changed to accommodate the changes to locale functions.  
   
--   memxxx()、strxxx() などの対応する組み込みがある CRT 関数は intrin.h から削除されました。 これらの関数のためにのみ intrin.h を含めた場合、今後は対応する CRT ヘッダーも含める必要があります。  
+-   CRT functions that have corresponding intrinsics such as memxxx(), strxxx() are removed from intrin.h. If you included intrin.h only for these functions, you must now include the corresponding CRT headers.  
   
-### <a name="mfc-and-atl"></a>MFC と ATL  
+### <a name="mfc-and-atl"></a>MFC and ATL  
   
--   Fusion のサポート (afxcomctl32.h) が削除されました。そのため、afxcomctl32.h に定義されているすべてのメソッドは削除されました。 ヘッダー ファイル afxcomctl32.h と afxcomctl32.inl は削除されました。  
+-   Removed Fusion support (afxcomctl32.h); therefore, all methods that are defined in afxcomctl32.h have been removed. Header files afxcomctl32.h and afxcomctl32.inl have been deleted.  
   
--   CDockablePane::RemoveFromDefaultPaneDividier の名前は CDockablePane::RemoveFromDefaultPaneDivider に変更されました。  
+-   Changed the name of CDockablePane::RemoveFromDefaultPaneDividier to CDockablePane::RemoveFromDefaultPaneDivider.  
   
--   LPCTSTR を使用するように CFileDialog::SetDefExt のシグネチャは変更されました。そのため、Unicode のビルドに影響があります。  
+-   Changed the signature of CFileDialog::SetDefExt to use LPCTSTR; therefore, Unicode builds are affected.  
   
--   互換性のために残されていた ATL トレース カテゴリは削除されました。  
+-   Removed obsolete ATL tracing categories.  
   
--   定数 CRect を受け取るように CBasePane::MoveWindow のシグネチャは変更されました。  
+-   Changed the signature of CBasePane::MoveWindow to take a const CRect.  
   
--   CMFCEditBrowseCtrl::EnableBrowseButton のシグネチャは変更されました。  
+-   Changed the signature of CMFCEditBrowseCtrl::EnableBrowseButton.  
   
--   CMFCBaseTabCtrl から m_fntTabs と m_fntTabsBold は削除されました。  
+-   Removed m_fntTabs and m_fntTabsBold from CMFCBaseTabCtrl.  
   
--   CMFCRibbonStatusBarPane コンストラクターにパラメーターが追加されました (これは既定のパラメーターなので、ソースの重大な変更ではありません)。  
+-   Added a parameter to the CMFCRibbonStatusBarPane constructors. (It is a default parameter, and so it is not source-breaking.)  
   
--   CMFCRibbonCommandsListBox コンストラクターにパラメーターが追加されました (これは既定のパラメーターなので、ソースの重大な変更ではありません)。  
+-   Added a parameter to the CMFCRibbonCommandsListBox constructor. (It is a default parameter, and so it is not source-breaking.)  
   
--   AFXTrackMouse API (と関連する timer proc) が削除されました。 代わりに Win32 TrackMouseEvent API を使用してください。  
+-   Removed the AFXTrackMouse API (and related timer proc). Use the Win32 TrackMouseEvent API instead.  
   
--   CFolderPickerDialog コンストラクターにパラメーターが追加されました (これは既定のパラメーターなので、ソースの重大な変更ではありません)。  
+-   Added a parameter to the CFolderPickerDialog constructor. (It is a default parameter, and so it is not source-breaking.)  
   
--   CFileStatus 構造体のサイズは変更されました。m_attribute のメンバーは、(GetFileAttributes から返される値に合わせて) BYTE から DWORD に変更されました。  
+-   CFileStatus structure size changed: The m_attribute member changed from BYTE to DWORD (to match the value that's returned fromGetFileAttributes).  
   
--   Unicode ビルドの場合、CRichEditCtrl と CRichEditView は、RICHEDIT_CLASS (RichEdit 3.0 コントロール) ではなく MSFTEDIT_CLASS (RichEdit 4.1 コントロール) を使用します。  
+-   CRichEditCtrl and CRichEditView use MSFTEDIT_CLASS (RichEdit 4.1 control) instead of RICHEDIT_CLASS (RichEdit 3.0 control) in Unicode builds.  
   
--   Windows Vista、Windows 7、Windows 8 では、AFX_GLOBAL_DATA::IsWindowsThemingDrawParentBackground は常に TRUE なので、削除されました。  
+-   Removed AFX_GLOBAL_DATA::IsWindowsThemingDrawParentBackground because it is always TRUE on Windows Vista, Windows 7, and Windows 8.  
   
--   Windows Vista、Windows 7、Windows 8 では、AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable は常に TRUE なので、削除されました。  
+-   Removed AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable because it is always TRUE on Windows Vista, Windows 7, and Windows 8.  
   
--   AFX_GLOBAL_DATA::DwmExtendFrameIntoClientArea は削除されました。 Windows Vista、Windows 7、Windows 8 では、Windows API を直接呼び出してください。  
+-   Removed AFX_GLOBAL_DATA::DwmExtendFrameIntoClientArea. Call Windows API directly on Windows Vista, Windows 7, and Windows 8.  
   
--   AFX_GLOBAL_DATA::DwmDefWindowProc は削除されました。 Windows Vista、Windows 7、Windows 8 では、Windows API を直接呼び出してください。  
+-   Removed AFX_GLOBAL_DATA::DwmDefWindowProc. Call Windows API directly on Windows Vista, Windows 7, and Windows 8.  
   
--   名前の競合を排除するために、AFX_GLOBAL_DATA::DwmIsCompositionEnabled の名前は IsDwmCompositionEnabled に変更されました。  
+-   Renamed AFX_GLOBAL_DATA::DwmIsCompositionEnabled to IsDwmCompositionEnabled to eliminate name collision.  
   
--   複数の MFC の内部タイマーの識別子を変更し、定義を afxres.h (AFX_TIMER_ID_*) に移動しました。  
+-   Changed identifiers for a number of MFC internal timers and moved the definitions to afxres.h (AFX_TIMER_ID_*).  
   
--   ON_WM_EXITSIZEMOVE マクロに合わせて OnExitSizeMove メソッドのシグネチャは変更されました。  
-  
-    -   CFrameWndEx  
-  
-    -   CMDIFrameWndEx  
-  
-    -   CPaneFrameWnd  
-  
--   ON_WM_DWMCOMPOSITIONCHANGED マクロに合わせて OnDWMCompositionChanged の名前とシグネチャは変更されました。  
+-   Changed the signature of OnExitSizeMove method to agree with the ON_WM_EXITSIZEMOVE macro:  
   
     -   CFrameWndEx  
   
@@ -3141,7 +3133,15 @@ C c;
   
     -   CPaneFrameWnd  
   
--   ON_WM_MOUSELEAVE マクロに合わせて OnMouseLeave メソッドのシグネチャは変更されました。  
+-   Changed the name and signature of OnDWMCompositionChanged to agree with the ON_WM_DWMCOMPOSITIONCHANGED macro:  
+  
+    -   CFrameWndEx  
+  
+    -   CMDIFrameWndEx  
+  
+    -   CPaneFrameWnd  
+  
+-   Changed the signature of OnMouseLeave method to agree with the ON_WM_MOUSELEAVE macro:  
   
     -   CMFCCaptionBar  
   
@@ -3167,21 +3167,21 @@ C c;
   
     -   CMFCAutoHideBar  
   
--   ON_WM_POWERBROADCAST マクロに合わせて OnPowerBroadcast のシグネチャは変更されました。  
+-   Changed the signature of OnPowerBroadcast to agree with the ON_WM_POWERBROADCAST macro:  
   
     -   CFrameWndEx  
   
     -   CMDIFrameWndEx  
   
--   ON_WM_STYLECHANGED マクロに合わせて OnStyleChanged のシグネチャは変更されました。  
+-   Changed the signature of OnStyleChanged to agree with the ON_WM_STYLECHANGED macro:  
   
     -   CMFCListCtrl  
   
     -   CMFCStatusBar  
   
--   内部メソッド FontFamalyProcFonts の名前は FontFamilyProcFonts に変更されました。  
+-   Renamed the internal method FontFamalyProcFonts to FontFamilyProcFonts.  
   
--   一部の状況で発生するメモリ リークを排除するために、多数のグローバル静的 CString オブジェクトが削除されました (#defines に置き換えられました)。また、次のクラス メンバー変数が削除されました。  
+-   Removed numerous global static CString objects to eliminate memory leaks in some situations (replaced with #defines), and the following class member variables:  
   
     -   CKeyBoardManager::m_strDelimiter  
   
@@ -3203,13 +3203,13 @@ C c;
   
     -   CMFCPropertyGridProperty::m_strFormat  
   
--   CKeyboardManager::ShowAllAccelerators のシグネチャが変更されました。また、アクセラレータの区切り文字パラメーターが削除されました。  
+-   Changed the signature of CKeyboardManager::ShowAllAccelerators and removed the accelerator delimiter parameter.  
   
--   CPropertyPage::GetParentSheet が追加されました。CPropertyPage クラスで GetParent の代わりに呼び出して、正しい親シート ウィンドウを取得してください。これは CPropertyPage の親ウィンドウまたは親の親ウィンドウの場合があります。 必要に応じて、GetParent ではなく GetParentSheet を呼び出すようにコードを変更します。  
+-   Added CPropertyPage::GetParentSheet, and in the CPropertyPage class, call it instead of GetParent to get the correct parent sheet window, which may be the parent or a grandparent window to CPropertyPage. You might have to change your code to call GetParentSheet instead ofGetParent.  
   
--   バランスが取れておらず、誤って無効になる警告を引き起こす ATLBASE.H の #pragma warning(push) が修正されました。 ATLBASE.H が解析された後、警告は適切に有効になるようになりました。  
+-   Fixed unbalanced #pragma warning(push) in ATLBASE.H, which caused warnings to be disabled incorrectly. Those warnings are now enabled correctly after ATLBASE.H has been parsed.  
   
--   D2D に関連するメソッドが AFX_GLOBAL_DATA から _AFX_D2D_STATE に移動されました。  
+-   Moved D2D-related methods from AFX_GLOBAL_DATA to _AFX_D2D_STATE:  
   
     -   GetDirectD2dFactory  
   
@@ -3225,113 +3225,113 @@ C c;
   
     -   D2D1MakeRotateMatrix  
   
-    -   たとえば、afxGlobalData.IsD2DInitialized を呼び出す代わりに AfxGetD2DState->IsD2DInitialized を呼び出します。  
+    -   Instead of calling, for example, afxGlobalData.IsD2DInitialized, call AfxGetD2DState->IsD2DInitialized.  
   
--   互換性のために残されていた ATL*.CPP ファイルが \atlmfc\include\ フォルダーから削除されました。  
+-   Removed obsolete ATL*.CPP files from the \atlmfc\include\ folder.  
   
--   DLLMain の要件を満たすために、afxGlobalData の初期化は CRT の初期化時ではなくオンデマンドに移動されました。  
+-   Moved afxGlobalData initialization to on-demand instead of at CRT initialization time, to satisfy DLLMain requirements.  
   
--   RemoveButtonByIndex メソッドは CMFCOutlookBarPane クラスに移動されました。  
+-   Added the RemoveButtonByIndex method to the CMFCOutlookBarPane class.  
   
--   CMFCCmdUsageCount::IsFreqeuntlyUsedCmd は IsFrequentlyUsedCmd に修正されました。  
+-   Corrected CMFCCmdUsageCount::IsFreqeuntlyUsedCmd to IsFrequentlyUsedCmd.  
   
--   RestoreOriginalstate のいくつかのインスタンスは RestoreOriginalState に修正されました (CMFCToolBar、CMFCMenuBar、CMFCOutlookBarPane)。  
+-   Corrected several instances of RestoreOriginalstate to RestoreOriginalState (CMFCToolBar, CMFCMenuBar, CMFCOutlookBarPane).  
   
--   使用されていないメソッド (SetCaptionStyle、IsDrawCaption、IsHideDisabledButtons、GetRecentSiblingPaneInfo、CanAdjustLayout) が CDockablePane から削除されました。  
+-   Removed unused methods from CDockablePane: SetCaptionStyle, IsDrawCaption, IsHideDisabledButtons, GetRecentSiblingPaneInfo, andCanAdjustLayout.  
   
--   CDockablePane の静的メンバー変数 m_bCaptionText と m_bHideDisabledButtons が削除されました。  
+-   Removed CDockablePane static member variables m_bCaptionText and m_bHideDisabledButtons.  
   
--   オーバーライド DeleteString メソッドが CMFCFontComboBox に追加されました。  
+-   Added an override DeleteString method to CMFCFontComboBox.  
   
--   使用されていないメソッド (GetMinLength と IsLastPaneOnLastRow) が CPane から削除されました。  
+-   Removed unused methods from CPane: GetMinLength and IsLastPaneOnLastRow.  
   
--   CPane::GetDockSiteRow(CDockingPanesRow *) の名前が CPane::SetDockSiteRow に変更されました。  
+-   Renamed CPane::GetDockSiteRow(CDockingPanesRow *) to CPane::SetDockSiteRow.  
   
-## <a name="visual-c-2010-breaking-changes"></a>Visual C++ 2010 の互換性に影響する変更  
+## <a name="visual-c-2010-breaking-changes"></a>Visual C++ 2010 Breaking Changes  
   
-### <a name="compiler"></a>コンパイラ  
+### <a name="compiler"></a>Compiler  
   
--   auto キーワードの既定の意味が変更されました。 古い意味はまれにしか使用されないので、ほとんどのアプリケーションはこの変更の影響を受けません。  
+-   The auto keyword has a new default meaning. Because use of the old meaning is rare, most applications will not be affected by this change.  
   
--   新しい static_assert キーワードが導入されました。コード内で既にこの名前の識別子がある場合は、名前の競合が発生します。  
+-   The new static_assert keyword is introduced, which will cause a name conflict if there is already an identifier by that name in your code.  
   
--   新しいラムダ表記をサポートすると、IDL uuid 属性の引用符なしの GUID のコーディングはサポートされなくなります。  
+-   Support for the new lambda notation excludes support for coding an unquoted GUID in an IDL uuid attribute.  
   
--   .NET Framework 4 では、破損状態例外という概念を導入しました。これは、プロセスが回復不能な破損状態のままになる例外です。 既定では、他のすべての例外をキャッチする /EHa コンパイラ オプションを使用しても、破損状態例外をキャッチできません。                 破損状態例外を明示的にキャッチするには、__try-\__except ステートメントを使用します。 または、[HandledProcessCorruptedStateExceptions] 属性を適用して、破損状態例外をキャッチする関数を有効にします。  この変更は、主に、破損状態例外をキャッチする必要があるシステム プログラマに影響があります。 8 つの例外として、STATUS_ACCESS_VIOLATION、STATUS_STACK_OVERFLOW、EXCEPTION_ILLEGAL_INSTRUCTION、EXCEPTION_IN_PAGE_ERROR、EXCEPTION_INVALID_DISPOSITION、EXCEPTION_NONCONTINUABLE_EXCEPTION、EXCEPTION_PRIV_INSTRUCTION、STATUS_UNWIND_CONSOLIDATE があります。                 これらの例外の詳細については、[GetExceptionCode](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679356.aspx) マクロを参照してください。  
+-   The .NET Framework 4 introduces the concept of corrupted state exceptions, which are exceptions that leave a process in an unrecoverable                 corrupted state. By default, you cannot catch a corrupted state exception, even with the /EHa compiler option that catches all other exceptions.                 To explicitly catch a corrupted state exception, use __try-\__except statements. Or, apply the [HandledProcessCorruptedStateExceptions]attribute                 to enable a function to catch corrupted state exceptions.  This change affects primarily system programmers who might have to catch a corrupted                 state exception. The eight exceptions are STATUS_ACCESS_VIOLATION, STATUS_STACK_OVERFLOW, EXCEPTION_ILLEGAL_INSTRUCTION,                 EXCEPTION_IN_PAGE_ERROR, EXCEPTION_INVALID_DISPOSITION, EXCEPTION_NONCONTINUABLE_EXCEPTION, EXCEPTION_PRIV_INSTRUCTION, STATUS_UNWIND_CONSOLIDATE.                 For more information about these exceptions, see the [GetExceptionCode](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679356.aspx) macro.  
   
--   /GS コンパイラ オプションは改善され、以前のバージョンよりも包括的にバッファー オーバーランを防ぐことができるようになりました。 このバージョンでは、スタックに追加のセキュリティ チェックが挿入され、パフォーマンスが低下する可能性があります。 特定の関数についてセキュリティ チェックを挿入しないようにコンパイラに指示するには、新しい __declspec(safebuffers) キーワードを使用します。  
+-   The revised /GS compiler option guards against buffer overruns more comprehensively than in earlier versions. This version might insert additional security checks in the stack that might decrease performance. Use the new __declspec(safebuffers) keyword to instruct the compiler to not insert security checks for a particular function.  
   
--   /GL (プログラム全体の最適化) と /clr (共通言語ランタイムのコンパイル) という 2 つのコンパイラ オプションを指定してコンパイルすると、/GLoption は無視されます。 この組み合わせのコンパイラ オプションではほとんどメリットがないため、この変更が加えられました。 この変更の結果、ビルドのパフォーマンスは改善されました。  
+-   If you compile with both the /GL (Whole Program Optimization) and /clr (Common Language Runtime Compilation) compiler options, the /GLoption is ignored. This change was made because the combination of compiler options provided little benefit. As a result of this change, the performance of the build is improved.  
   
--   Visual C++ 2010 の既定では、トライグラフのサポートは無効です。 トライグラフのサポートを有効にするには、/Zc:trigraphs コンパイラ オプションを使用します。 トライグラフは、2 つの連続する疑問符 ("??") と、一意の 3 番目の文字で構成されます。 コンパイラはトライグラフを対応する区切り文字に置き換えます。 たとえば、"??=" というトライグラフは '#' という文字に置き換えられます。 トライグラフは、一部の区切り文字に対応する適切なグラフィック表示がない文字セットを含む C ソース ファイルで使用できます。  
+-   By default, support for trigraphs is disabled in Visual C++ 2010 . Use the /Zc:trigraphs compiler option to enable trigraphs support. A trigraph consists of two consecutive question marks ("??") followed by a unique third character. The compiler replaces a trigraph with a corresponding punctuation character. For example, the compiler replaces the "??=" trigraph with the '#' character. Use trigraphs in C source files that use a character set that does not contain convenient graphic representations for some punctuation characters.  
   
--   リンカーは Windows 98 の最適化をサポートしなくなりました。 /OPT (最適化) オプションで /OPT:WIN98 または /OPT:NOWIN98 を指定すると、コンパイル時エラーが発生します。  
+-   The linker no longer supports optimizing for Windows 98. The /OPT (Optimizations) option produces a compile time error if you specify/OPT:WIN98 or /OPT:NOWIN98.  
   
--   RuntimeLibrary および DebugInformationFormat ビルド システム プロパティで指定されている既定のコンパイラ オプションは変更されました。 これらのプロパティは、既定で、Visual C++ リリース 7.0 ～ 10.0 で作成されたプロジェクトで指定されます。 Visual C++ 6.0 で作成したプロジェクトを移行する場合は、これらのプロパティの値を指定するかどうかを検討してください。  
+-   The default compiler options that are specified by the RuntimeLibrary and DebugInformationFormat build system properties have been changed. By default, these build properties are specified in projects that are created by Visual C++ releases 7.0 through 10.0. If you migrate a project that was created by Visual C++ 6.0, consider whether to specify a value for these properties.  
   
--   Visual C++ 2010 では、RuntimeLibrary = MultiThreaded (/MD)、DebugInformationFormat = ProgramDatabase (/Zi) です。 Visual C++ 9.0 では、RuntimeLibrary = MultiThreaded (/MT)、DebugInformationFormat = Disabled です。  
+-   In Visual C++ 2010, RuntimeLibrary = MultiThreaded (/MD) and DebugInformationFormat = ProgramDatabase (/Zi). In Visual C++ 9.0,RuntimeLibrary = MultiThreaded (/MT) and DebugInformationFormat = Disabled.  
   
 ### <a name="clr"></a>CLR  
   
--   Microsoft C# と Visual Basic のコンパイラから、非プライマリ相互運用機能アセンブリ (非 PIA) を生成できるようになりました。 非 PIA アセンブリは、関連するプライマリ相互運用機能アセンブリ (PIA) を展開しなくても COM 型を使用できます。 Visual C# または Visual Basic で生成された非 PIA アセンブリを使用する場合は、コンパイル コマンドで PIA アセンブリを参照してから、ライブラリを使用する非 PIA アセンブリを参照する必要があります。  
+-   The Microsoft C# and Visual Basic compilers can now produce a no primary interop assembly (no-PIA). A no-PIA assembly can use COM types without the deployment of the relevant primary interop assembly (PIA). When consuming no-PIA assemblies produced by Visual C# or Visual Basic, you must reference the PIA assembly on the compile command before you reference any no-PIA assembly that uses the library.  
   
-### <a name="visual-c-projects-and-msbuild"></a>Visual C++ プロジェクトと MSBuild  
+### <a name="visual-c-projects-and-msbuild"></a>Visual C++ Projects and MSBuild  
   
--   Visual C++ プロジェクトは MSBuild ツールに基づくようになりました。 その結果、プロジェクト ファイルでは、新しい XML ファイル形式と .vcxproj ファイルのサフィックスを使用します。 Visual C++ 2010 は、プロジェクト ファイルを以前のバージョンの Visual Studio から新しいファイル形式に自動的に変換します。 以前のビルド ツールの VCBUILD.exe、またはプロジェクト ファイルのサフィックス .vcproj に依存している場合、既存のプロジェクトは影響を受けます。  
+-   Visual C++ projects are now based on the MSBuild tool. Consequently, project files use a new XML file format and a .vcxproj file suffix. Visual C++ 2010 automatically converts project files from earlier versions of Visual Studio to the new file format. An existing project is affected if it depends on the previous build tool, VCBUILD.exe, or project file suffix, .vcproj.  
   
--   以前のリリースの Visual C++ では、プロパティ シートの遅延評価をサポートしていました。 たとえば、親プロパティ シートが子プロパティ シートをインポートし、子に定義されている変数を親が使用して他の変数を定義することができます。 遅延評価によって、子プロパティ シートがインポートされる前であっても、親が子の変数を使用できるようになります。 MSBuild は早期評価のみをサポートしているため、Visual C++ 2010 では、プロジェクト シート変数は定義前に使用できません。  
+-   In earlier releases, Visual C++ supported the late evaluation of property sheets. For example, a parent property sheet could import a child property sheet, and the parent could use a variable defined in the child to define other variables. Late evaluation enabled the parent to use the child variable even before the child property sheet was imported. In Visual C++ 2010, a project sheet variable cannot be used before it is defined because MSBuild supports only early evaluation.  
   
 ### <a name="ide"></a>IDE  
   
--   アプリケーションの終了ダイアログ ボックスで、アプリケーションは終了しなくなります。 以前のリリースでは、abort() または terminate() 関数でアプリケーションの製品版ビルドを閉じると、C ランタイム ライブラリのコンソール ウィンドウまたはダイアログ ボックスにアプリケーションの終了メッセージが表示されていました。 メッセージの一部を引用すると、"このアプリケーションは、通常と異なる方法でランタイムにアプリケーションを中止するように要求しました。 詳細については、アプリケーションのサポート チームに問い合わせてください" と表示されていました。                 Windows では、現在の終了ハンドラー (通常は Windows エラー レポート (ワトソン博士) ダイアログ ボックスや Visual Studio デバッガー) が続けて表示されるので、アプリケーションの終了メッセージは重複しています。 Visual Studio 2010 以降、C ランタイム ライブラリではこのメッセージが表示されなくなりました。 また、ランタイムでは、デバッガーの起動前にアプリケーションが終了しなくなりました。 アプリケーションの終了メッセージの以前の動作に依存している場合にのみ、これは互換性に影響する変更です。  
+-   The application termination dialog box no longer ends an application. In previous releases, when the abort() or terminate() function closed the                 retail build of an application, the C Run-Time Library displayed an application termination message in a console window or dialog box. The message said in part, "This                 application has requested the Runtime to terminate it in an unusual way. Please contact the application's support team for more information."                 The application termination message was redundant because Windows subsequently displayed the current termination handler, which was usually the Windows Error Reporting                 (Dr. Watson) dialog box or the Visual Studio debugger. Starting in Visual Studio 2010, the C Run-Time Library does not display the message. Furthermore, the runtime                 prevents the application from ending before a debugger starts. This is a breaking change only if you depend on the previous behavior of the application termination                 message.  
   
--   特に Visual Studio 2010 では、IntelliSense は C++/CLI コードまたは属性に使用できません。[すべての参照の検索] はローカル変数には使用できません。また、コード モデルでは、インポートしたアセンブリから型名を取得したり、型を完全修飾名に解決したりすることはできません。  
+-   Specifically for Visual Studio 2010, IntelliSense does not work for C++/CLI code or attributes, Find All References does not work for local                 variables, and Code Model does not retrieve type names from imported assemblies or resolve types to their fully qualified names.  
   
-### <a name="libraries"></a>ライブラリ  
+### <a name="libraries"></a>Libraries  
   
--   SafeInt クラスは Visual C++ に含まれていません。また、別のダウンロードにも含まれなくなりました。 "SafeInt" というクラスを開発した場合にのみ、これは互換性に影響する変更です。  
+-   The SafeInt class is included in Visual C++ and is no longer in a separate download. This is a breaking change only if you have developed a class that is also named "SafeInt".  
   
--   ライブラリ展開モデルは、特定バージョンのダイナミック リンク ライブラリを検索するためにマニフェストを使用しなくなりました。 各ダイナミック リンク ライブラリの名前にはバージョン番号が含まれているので、その名前を使用してライブラリを特定してください。  
+-   The libraries deployment model no longer uses manifests to find a particular version of a dynamic link library. Instead, the name of each dynamic link library contains its version number, and you use that name to locate the library.  
   
--   以前のバージョンの Visual Studio では、ランタイム ライブラリを再ビルドできます。 Visual C++ 2010 は、C ランタイム ライブラリ ファイルの独自のコピーのビルドをサポートしなくなりました。  
+-   In previous versions of Visual Studio, you could rebuild the run time libraries. Visual C++ 2010 no longer supports building your own copies of the C run time library files.  
   
-### <a name="standard-library"></a>標準ライブラリ  
+### <a name="standard-library"></a>Standard Library  
   
--   \<iterator> ヘッダーは、他の多くのヘッダー ファイルに自動的に含まれなくなりました。 定義されているスタンドアロンの反復子をサポートする必要がある場合は、そのヘッダーを明示的に含めます。以前のビルド ツールの VCBUILD.exe、またはプロジェクト ファイルのサフィックス .vcproj.interator> ヘッダーに依存している場合、既存のプロジェクトは影響を受けます。  
+-   The \<iterator>                 header is no longer included automatically by many other header files. Instead, include that header explicitly if you require support                 for the standalone iterators defined in the An existing project is affected if it depends on the previous build tool, VCBUILD.exe, or project file suffix,                  .vcproj.interator> header.  
   
--   \<algorithm> ヘッダーの checked_* 関数と unchecked_\* 関数は削除されました。 また、\<iterator>> ヘッダーの checked_iteratorclass は削除され、unchecked_array_iterator クラスは追加されました。  
+-   In the \<algorithm>                 header, the checked_* and unchecked_\* functions are removed. And in the \<iterator>> header, the                  checked_iteratorclass is removed, and the unchecked_array_iterator class has been added.  
   
--   CComPtr::CComPtr(int) コンストラクターは削除されました。 このコンストラクターを使用すると、NULL マクロから CComPtr オブジェクトを構築できますが、必須ではなく、ゼロ以外の整数から無意味な構造を構築できます。  
+-   The CComPtr::CComPtr(int) constructor is removed. That constructor allowed a CComPtr object to be constructed from the NULL macro, but was unnecessary and allowed nonsensical constructions from non-zero integers.  
   
-     CComPtr は NULL から構築できます。これは 0 と定義されますが、リテラル 0 以外の整数から構築されると失敗します。 代わりに nullptr を使用してください。  
+     A CComPtr can still be constructed from NULL, which is defined as 0, but will fail if constructed from an integer other than literal 0. use nullptr instead.  
   
--   次の ctype メンバー関数 (ctype::_Do_narrow_s、ctype::_Do_widen_s、ctype::_narrow_s、ctype::_widen_s) は削除されました。 これらのメンバー関数のいずれかをアプリケーションで使用する場合は、対応するセキュリティで保護されていないバージョン (ctype::do_narrow,ctype::do_widen、ctype::narrow, ctype::widen) に置き換えます。  
+-   The following ctype member functions were removed: ctype::_Do_narrow_s, ctype::_Do_widen_s, ctype::_narrow_s, ctype::_widen_s. If an application uses one of these member functions, you must replace it with the corresponding non-secure version: ctype::do_narrow,ctype::do_widen, ctype::narrow, ctype::widen.  
   
-### <a name="crt-mfc-and-atl-libraries"></a>CRT、MFC、ATL ライブラリ  
+### <a name="crt-mfc-and-atl-libraries"></a>CRT, MFC, and ATL Libraries  
   
--   CRT、MFC、および ATL ライブラリをビルドするために、ユーザー サポートは削除されました。 たとえば、適切な nmake ファイルが指定されていないとします。                 一方、ユーザーは、これらのライブラリのソース コードに対してアクセス権を持っています。 また、Microsoft がこれらのライブラリのビルドに使用する MSBuild オプションについて説明したドキュメントが、Visual C++ チーム ブログに投稿され可能性があります。  
+-   Support has been removed for users to build the CRT, MFC, and ATL libraries. For example, an appropriate nmake file is not provided.                 However, users still have access to the source code for these libraries. And a document that describes the MSBuild options that Microsoft uses to build these                 libraries will probably be posted in a Visual C++ Team Blog.  
   
--   IA64 の MFC のサポートは削除されました。 ただし、IA64 の CRT と ATL のサポートはまだ提供されています。  
+-   MFC support for IA64 has been removed. However, support for the CRT and ATL on IA64 is still provided.  
   
--   MFC モジュール定義 (.def) ファイルでは序数が再利用されなくなりました。 この変更は、マイナー バージョン間で序数の違いがないことを示します。また、サービス パックとクイック修正エンジニアリング リリースのバイナリの互換性は改善される予定です。  
+-   Ordinals are no longer reused in MFC module-definition (.def) files. This change means ordinals will not be different between minor versions, and binary compatibility for service packs and quick fix engineering releases will be improved.  
   
--   新しい仮想関数が CDocTemplate クラスに追加されました。 この新しい仮想関数は [CDocTemplate Class](../mfc/reference/cdoctemplate-class.md) です。 以前のバージョンの OpenDocumentFile には 2 つのパラメーターがありました。 新しいバージョンのパラメーターは 3 つです。 再起動マネージャーをサポートするには、CDocTemplate から派生したクラスで、3 つのパラメーターがあるバージョンを実装する必要があります。 新しいパラメーターは bAddToMRU です。  
+-   A new virtual function was added to the CDocTemplate class. This new virtual function is [CDocTemplate Class](../mfc/reference/cdoctemplate-class.md). The previous version of OpenDocumentFile had two parameters. The new version has three parameters. To support the restart manager, any class derived from CDocTemplate must implement the version that has three parameters. The new parameter is bAddToMRU.  
   
-### <a name="macros-and-environment-variables"></a>マクロと環境変数  
+### <a name="macros-and-environment-variables"></a>Macros and Environment Variables  
   
--   環境変数 __MSVCRT_HEAP_SELECT はサポートされなくなりました。 この環境変数は削除されました。これに代わる機能はありません。  
+-   The environment variable __MSVCRT_HEAP_SELECT is no longer supported. This environment variable is removed and there is no replacement.  
   
-### <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler リファレンス  
+### <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler Reference  
   
--   Microsoft Macro Assembler リファレンス コンパイラからいくつかのディレクティブが削除されました。 削除されたディレクティブは、.186、.286、.286P、.287、.8086、.8087、および .NO87 です。  
+-   Several directives were removed from the Microsoft Macro Assembler Reference compiler. The removed directives are .186, .286, .286P, .287,.8086, .8087, and .NO87.  
   
-## <a name="visual-c-2008-breaking-changes"></a>Visual C++ 2008 の互換性に影響する変更  
+## <a name="visual-c-2008-breaking-changes"></a>Visual C++ 2008 Breaking Changes  
   
-### <a name="compiler"></a>コンパイラ  
+### <a name="compiler"></a>Compiler  
   
--   Windows 95、Windows 98、Windows ME、および Windows NT プラットフォームはサポートされなくなりました。 これらのオペレーティング システムは対象のプラットフォーム一覧から削除されました。  
+-   The Windows 95, Windows 98, Windows ME, and Windows NT platforms are no longer supported. These operating systems have been removed from the list of targeted platforms.  
   
--   コンパイラは、ATL サーバーと直接関連する複数の属性をサポートしなくなりました。 次の属性はサポートされなくなりました。  
+-   The compiler no longer supports multiple attributes that were directly associated with ATL Server. The following attributes are no longer supported:  
   
     -   perf_counter  
   
@@ -3349,21 +3349,21 @@ C c;
   
     -   tag_name  
   
-### <a name="visual-c-projects"></a>Visual C++ プロジェクト  
+### <a name="visual-c-projects"></a>Visual C++ Projects  
   
--   以前のバージョンの Visual Studio からプロジェクトをアップグレードする場合、必要に応じて 0x0500 以上になるように WINVER マクロと _WIN32_WINNT マクロを変更します。  
+-   When upgrading projects from previous versions of Visual Studio, you might have to modify the WINVER and _WIN32_WINNT macros so that they are greater than or equal to 0x0500.  
   
--   Visual Studio 2008 以降、新しいプロジェクト ウィザードでは C++ SQL Server プロジェクトを作成するオプションがなくなりました。 以前のバージョンの Visual Studio を使用して作成した SQL Server プロジェクトは、今後も適切にコンパイルされ、動作します。  
+-   Beginning with Visual Studio 2008, the new project wizard does not have an option to create a C++ SQL Server project. SQL Server projects created by using an earlier version of Visual Studio will still compile and work correctly.  
   
--   Windows API ヘッダー ファイル Winable.h は削除されました。 代わりに Winuser.h をインクルードしてください。  
+-   The Windows API header file Winable.h has been removed. Include Winuser.h instead.  
   
--   Windows API ライブラリ Rpcndr.lib は削除されました。 代わりに rpcrt4.lib とリンクしてください。  
+-   The Windows API library Rpcndr.lib has been removed. Link with rpcrt4.lib instead.  
   
 ### <a name="crt"></a>CRT  
   
--   Windows 95、Windows 98、Windows Millennium Edition、および Windows NT 4.0 のサポートは削除されました。  
+-   Support for Windows 95, Windows 98, Windows Millennium Edition, and Windows NT 4.0 has been removed.  
   
--   次のグローバル変数は削除されました。  
+-   The following global variables have been removed:  
   
     -   _osplatform  
   
@@ -3375,7 +3375,7 @@ C c;
   
     -   _winver  
   
--   次の関数は削除されました。 代わりに Windows API 関数 GetVersion または GetVersionEx を使用してください。  
+-   The following functions have been removed. Use the Windows API functions GetVersion or GetVersionEx instead:  
   
     -   _get_osplatform  
   
@@ -3387,159 +3387,159 @@ C c;
   
     -   _get_winver  
   
--   SAL 注釈の構文は変更されました。 詳細については、「[SAL 注釈](../c-runtime-library/sal-annotations.md)」を参照してください。  
+-   The syntax for SAL Annotations has changed. For more information, see [SAL Annotations](../c-runtime-library/sal-annotations.md).  
   
--   IEEE フィルターは SSE 4.1 命令セットをサポートするようになりました。 詳細については、「[_fpieee_flt](../c-runtime-library/reference/fpieee-flt.md)_fpieee_flt」を参照してください。  
+-   The IEEE filter now supports the SSE 4.1 instruction set. For more information, see [_fpieee_flt](../c-runtime-library/reference/fpieee-flt.md)_fpieee_flt.  
   
--   Visual Studio に付属する C ランタイム ライブラリは、システム DLL msvcrt.dll に依存しなくなりました。  
+-   The C Run-Time Libraries that ship with Visual Studio are no longer dependent on the system DLL msvcrt.dll.  
   
-### <a name="standard-library"></a>標準ライブラリ  
+### <a name="standard-library"></a>Standard Library  
   
--   Windows 95、Windows 98、Windows Millennium Edition、および Windows NT 4.0 のサポートは削除されました。  
+-   Support for Windows 95, Windows 98, Windows Millennium Edition, and Windows NT 4.0 has been removed.  
   
--   _HAS_ITERATOR_DEBUGGING を定義してデバッグ モードでコンパイルすると (Visual Studio 2010 以降は [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) に置き換えられます)、反復子が基礎となるコンテナーの境界を越えて増加または減少しようとしたときに、アプリケーションはアサートするようになりました。  
+-   When compiling in debug mode with _HAS_ITERATOR_DEBUGGING defined (superseded by [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) after Visual Studio 2010), an application will now assert when an iterator attempts to increment or decrement past the bounds of the underlying container.  
   
--   スタック クラスのメンバー変数 c は保護済みと宣言されるようになりました。 以前は、このメンバー変数はパブリックと宣言されていました。  
+-   The member variable c of the stack Class is now declared protected. Previously, this member variable was declared public.  
   
--   money_get::do_get の動作は変更されました。 以前は、frac_digits で呼び出されたよりも多くの小数点以下桁数で金額を解析すると、do_get はすべてを使用していました。 現在は、最高でも frac_digits 文字まで使用すると、do_get は解析を停止します。  
+-   The behavior of money_get::do_get has changed. Previously, when parsing a monetary amount with more fraction digits than are called for by frac_digits, do_get used to consume them all. Now, do_get stops parsing after consuming at most frac_digits characters.  
   
 ### <a name="atl"></a>ATL  
   
--   CRT に依存することなく ATL をビルドすることはできません。 以前のバージョンの Visual Studio では、#define ATL_MIN_CRT を使用して、ATL プロジェクトの CRT への依存を最小限にすることができます。 Visual C++ 2008 では、ATL_MIN_CRT を定義しているかどうかにかかわらず、すべての ATL プロジェクトの CRT への依存は最小限です。  
+-   ATL cannot be built without a dependency on CRT. In earlier versions of Visual Studio, you could use #define ATL_MIN_CRT to make an ATL project minimally dependent on CRT. In Visual C++ 2008, all ATL projects are minimally dependent on CRT regardless of whether ATL_MIN_CRT is defined.  
   
--   ATL サーバーのコードベースは、CodePlex の共有ソース プロジェクトとしてリリースされており、Visual Studio の一部としてはインストールされません。 atlenc.h のクラスのデータ エンコードとデコード、および atlutil.h と atlpath のユーティリティ関数とクラスは残され、ATL ライブラリの一部になりました。 ATL サーバーに関連する一部のファイルは、Visual Studio に含まれなくなりました。  
+-   The ATL Server codebase has been released as a shared source project on CodePlex and is not installed as part of Visual Studio. Data encoding and decoding classes from atlenc.h and utility functions and classes from atlutil.h and atlpath.h have been kept and are now part of the ATL library. Several files associated with ATL Server are no longer part of Visual Studio.  
   
--   一部の関数は DLL に含まれなくなりました。 これらの関数はインポート ライブラリに含まれています。 これは、関数を静的に使用するコードには影響がありません。 これらの関数を動的に使用するコードにのみ影響があります。  
+-   Some functions are no longer included in the DLL. They are still located in the import library. This will not affect code that uses the functions statically. It will affect only the code that uses these functions dynamically.  
   
--   マクロ PROP_ENTRY と PROP_ENTRY_EX は非推奨になり、セキュリティ上の理由からマクロ PROP_ENTRY_TYPE と PROP_ENTRY_TYPE_EX に置き換えられました。  
+-   The macros PROP_ENTRY and PROP_ENTRY_EX have been deprecated and replaced with the macros PROP_ENTRY_TYPE andPROP_ENTRY_TYPE_EX for security reasons.  
   
-### <a name="atlmfc-shared-classes"></a>ATL/MFC 共有クラス  
+### <a name="atlmfc-shared-classes"></a>ATL/MFC Shared Classes  
   
--   CRT に依存することなく ATL をビルドすることはできません。 以前のバージョンの Visual Studio では、#define ATL_MIN_CRT を使用して、ATL プロジェクトの CRT への依存を最小限にすることができます。 Visual C++ 2008 では、ATL_MIN_CRT を定義しているかどうかにかかわらず、すべての ATL プロジェクトの CRT への依存は最小限です。  
+-   ATL cannot be built without a dependency on CRT. In earlier versions of Visual Studio, you could use #define ATL_MIN_CRT to make an ATL project minimally dependent on CRT. In Visual C++ 2008, all ATL projects are minimally dependent on CRT regardless of whether ATL_MIN_CRT is defined.  
   
--   ATL サーバーのコードベースは、CodePlex の共有ソース プロジェクトとしてリリースされており、Visual Studio の一部としてはインストールされません。 atlenc.h のクラスのデータ エンコードとデコード、および atlutil.h と atlpath のユーティリティ関数とクラスは残され、ATL ライブラリの一部になりました。 ATL サーバーに関連する一部のファイルは、Visual Studio に含まれなくなりました。  
+-   The ATL Server codebase has been released as a shared source project on CodePlex and is not installed as part of Visual Studio. Data encoding and decoding classes from atlenc.h and utility functions and classes from atlutil.h and atlpath.h have been kept and are now part of the ATL library. Several files associated with ATL Server are no longer part of Visual Studio.  
   
--   一部の関数は DLL に含まれなくなりました。 これらの関数はインポート ライブラリに含まれています。 これは、関数を静的に使用するコードには影響がありません。 これらの関数を動的に使用するコードにのみ影響があります。  
+-   Some functions are no longer included in the DLL. They are still located in the import library. This will not affect code that uses the functions statically. It will affect only the code that uses these functions dynamically.  
   
 ### <a name="mfc"></a>MFC  
   
--   CTime クラス: CTime クラスは西暦 1900 年 1 月 1 日以降の日付を使用できるようになりました (以前は西暦 1970 年 1 月 1 日以降でした)。              
--   MFC ダイアログのコントロールのタブ オーダー: タブ オーダーに MFC ActiveX コントロールが挿入されている場合、MFC ダイアログに含まれる複数のコントロールは正しいタブ オーダーになりません。 今回の変更で、この問題は解決します。  
+-   CTime Class: The CTime class now accepts dates starting from 1/1/1900 C.E. instead of 1/1/1970 C.E.              
+-   Tab order of controls in MFC dialogs: The correct tab order of multiple controls in an MFC dialog is disturbed if an MFC ActiveX control is inserted in the tab order. This change corrects that problem.  
   
-     たとえば、ActiveX コントロールといくつかの編集コントロールがある MFC ダイアログ アプリケーションを作成します。 ActiveX コントロールを編集コントロールのタブ オーダーの中間に配置します。 アプリケーションを起動し、タブ オーダーが ActiveX コントロールの後である編集コントロールをクリックし、Tab キーを押します。 今回の変更前は、フォーカスはタブ オーダーの次の編集コントロールではなく、ActiveX コントロールの次の編集コントロールに移動していました。  
+     For example, create an MFC dialog application that has an ActiveX control and several edit controls. Position the ActiveX control in the middle of the tab order of the edit controls. Start the application, click an edit control whose tab order is after the ActiveX control, then tab. Prior to this change, the focus went to the edit control following the ActiveX control instead of the next edit control in the tab order.  
   
--   CFileDialog クラス: CFileDialog クラスのカスタム テンプレートは Windows Vista に自動的に移植できません。 使用することはできますが、Windows Vista スタイルのダイアログの機能や外観を追加することはできません。  
+-   CFileDialog Class:   Custom templates for the CFileDialog class cannot be automatically ported to Windows Vista. They are still usable, but will not have the additional functionality or looks of Windows Vista style dialogs.  
   
--   CWnd クラスと CFrameWnd クラス: CWnd::GetMenuBarInfo メソッドは削除されました。  
+-   CWnd Class and CFrameWnd Class:    The CWnd::GetMenuBarInfo method was removed.  
   
-     CFrameWnd::GetMenuBarInfo メソッドは仮想メソッドではなくなりました。 詳細については、Windows SDK の GetMenuBarInfo 関数を参照してください。  
+     The CFrameWnd::GetMenuBarInfo method is now a non-virtual method. For more information, see GetMenuBarInfo Functionin the Windows SDK.  
   
--   MFC ISAPI のサポート: MFC は、Internet Server Application Programming Interface (ISAPI) を使用したアプリケーションのビルドをサポートしなくなりました。 ISAPI アプリケーションをビルドするには、ISAPI 拡張機能を直接呼び出してください。  
+-   MFC ISAPI support:  MFC no longer supports building applications with the Internet Server Application Programming Interface (ISAPI). If you want to build an ISAPI application, call the ISAPI extensions directly.  
   
--   非推奨になった ANSI API: ANSI バージョンの一部の MFC メソッドは非推奨になりました。 今後のアプリケーションでは、これらのメソッドの Unicode バージョンを使用してください。 詳細については、「Windows Vista コモン コントロールの作成要件」を参照してください。  
+-   Deprecated ANSI APIs:    The ANSI versions of several MFC methods are deprecated. Use the Unicode versions of those methods in your future applications. For more information, see Build Requirements for Windows Vista Common Controls.  
   
-## <a name="visual-c-2005-breaking-changes"></a>Visual C++ 2005 の互換性に影響する変更  
+## <a name="visual-c-2005-breaking-changes"></a>Visual C++ 2005 Breaking Changes  
   
 ### <a name="crt"></a>CRT  
   
--   多くの関数は非推奨になりました。 「Deprecated CRT Functions」(非推奨の CRT 関数) を参照してください。  
+-   Many functions have been deprecated. See Deprecated CRT Functions.  
   
--   多くの関数はパラメーターを検証し、パラメーターが無効な場合は実行を停止するようになりました。 無効なパラメーターを渡しているコードで、無効なパラメーターを無視するか単にエラー コードを返すだけの関数に依存しているコードの場合、これは互換性に影響する変更です。 「Parameter Validation」(パラメーターの検証) を参照してください。  
+-   Many functions now validate their parameters, halting execution if given invalid parameters. This may break code that passes invalid parameters and relies on the function ignoring them or just returning an error code. See Parameter Validation.  
   
--   ファイル記述子の値 -2 は、出力に stdout と stderr を使用できないことを示すために使用されるようになりました。たとえば、コンソール ウィンドウがない Windows アプリケーションで使用されます。 以前に使用されていた値は -1 でした。 詳細については、「[_fileno](../c-runtime-library/reference/fileno.md)」を参照してください  
+-   The file descriptor value -2 is now used to indicate that stdout and stderr are not available for output, as for example in a Windows application that has no console window. The previous value used was -1. For more information, see [_fileno](../c-runtime-library/reference/fileno.md).  
   
--   シングルスレッドの CRT ライブラリ libc.lib と libcd.lib は削除されました。 マルチスレッドの CRT ライブラリを使用してください。 /ML コンパイラ フラグはサポートされなくなりました。 マルチスレッドのコードとシングルスレッドのコード間のパフォーマンスの違いが重要な問題になる場合に、一部の関数のロックなしバージョンが追加されました。  
+-   The single-threaded CRT libraries, libc.lib and libcd.lib, have been removed. Use the multi-threaded CRT libraries. The /ML compiler flag is no longer supported. Non-locking versions of some functions have been added in cases where the performance difference between the multithreaded code and the single-threaded code is potentially significant.  
   
--   pow のオーバーロードである double pow(int, int) は、標準への準拠を改善するために削除されました。  
+-   The overload of pow, double pow(int, int), was removed to better conform with the standard.  
   
--   %n 書式指定子は、安全性に欠ける性質があるので、どの printf ファミリの関数でも既定でサポートされなくなりました。 %n が指定された場合の既定の動作は、無効なパラメーター ハンドラーを呼び出すことです。 %n のサポートを有効にするには、_set_printf_count_output (および see_get_printf_count_output) を使用します。  
+-   The %n format specifier is no longer supported by default in any of the printf family of functions because it is inherently insecure. The default behavior if %n is encountered is to invoke the invalid parameter handler. To enable %n support, use _set_printf_count_output (also see_get_printf_count_output).  
   
--   sprintf は、符号付きゼロの負の符号を出力するようになりました。  
+-   sprintf now prints the negative sign of a signed zero.  
   
--   標準への準拠のために swprintf は変更され、size パラメーターが必須になりました。 size パラメーターを指定しない swprintf の形式は非推奨になりました。  
+-   swprintf has been changed to conform with the Standard; it now requires a size parameter. The form of swprintf without a size parameter has been deprecated.  
   
--   _set_security_error_handler は削除されました。 その関数の呼び出しは削除してください。既定のハンドラーの方がはるかに安全にセキュリティ エラーを処理できます。  
+-   _set_security_error_handler has been removed. Remove any calls to that function; the default handler is a much safer way of dealing with security errors.  
   
--   time_t は 64 ビット値です (_USE_32BIT_TIME_T が定義されていない場合)。  
+-   time_t is now a 64-bit value (unless _USE_32BIT_TIME_T is defined).  
   
--   _spawn、_wspawn 関数は、C 標準の規定に従い、成功時には errno が変更されません。  
+-   The _spawn, _wspawn Functions now leave errno untouched on success, as specified by the C Standard.  
   
--   RTC は既定でワイド文字を使用するようになりました。  
+-   RTC now uses wide characters by default.  
   
--   浮動小数点制御ワードのサポート関数は、/CLR または /CLR:PURE を指定してコンパイルしたアプリケーションの場合に非推奨になりました。 影響を受ける関数は _clear87、_clearfp、_control87、_controlfp、_fpreset、_status87、_statusfp です。 _CRT_MANAGED_FP_NO_DEPRECATE を定義して、非推奨の警告を無効にすることができます。ただし、マネージ コードでこれらの関数を使用することは予測不能でサポートされません。  
+-   Floating-point control word support functions have been deprecated for applications compiled with /CLR or /CLR:PURE. The affected functions are _clear87, _clearfp, _control87, _controlfp, _fpreset, _status87, _statusfp. You can disable the deprecation warning by defining _CRT_MANAGED_FP_NO_DEPRECATE, but the use of these functions in managed code is unpredictable and unsupported.  
   
--   一部の関数は定数ポインターを返すようになりました。 古い定数ではない動作は、_CONST_RETURN を定義して復元することができます。 影響を受ける関数は次のとおりです。  
+-   Some functions now return const pointers. The old, non-const behavior can be reinstated by defining _CONST_RETURN. The affected functions are  
   
-    1.  memchr、wmemchr  
+    1.  memchr, wmemchr  
   
-    2.  strchr、wcschr、_mbschr、_mbschr_l  
+    2.  strchr, wcschr, _mbschr, _mbschr_l  
   
-    3.  strpbrk、wcspbrk、_mbspbrk、_mbspbrk_l  
+    3.  strpbrk, wcspbrk, _mbspbrk, _mbspbrk_l  
   
-    4.  strrchr、wcsrchr、_mbsrchr、_mbsrchr_l  
+    4.  strrchr, wcsrchr, _mbsrchr, _mbsrchr_l  
   
-    5.  strstr、wcsstr、_mbsstr、_mbsstr_l  
+    5.  strstr, wcsstr, _mbsstr, _mbsstr_l  
   
--   Setargv.obj または Wsetargv.obj とリンクするときに、コマンド ラインのワイルドカード文字を二重引用符で囲んでワイルドカード文字の展開を抑制できなくなりました。 詳細については、「[ワイルドカード引数の展開](../c-language/expanding-wildcard-arguments.md)」を参照してください。  
+-   When linking with Setargv.obj or Wsetargv.obj, it is no longer possible to suppress the expansion of a wildcard character on the command line by enclosing it in double quotes. For more information, see [Expanding Wildcard Arguments](../c-language/expanding-wildcard-arguments.md).  
   
-### <a name="standard-library-2005"></a>標準ライブラリ (2005)  
+### <a name="standard-library-2005"></a>Standard Library (2005)  
   
--   (\<exception> ヘッダーにある) 例外クラスは std 名前空間に移動されました。 以前のバージョンでは、このクラスはグローバル名前空間に含まれていました。 例外クラスが見つからないというエラーを解決するには、ステートメントで名前空間 std を使用してコードに追加します。  
+-   The exception class (located in the \<exception> header) has been moved to the std namespace. In previous versions, this class was in the global namespace. To resolve any errors indicating that the exception class cannot be found, add the following using statement to your code:                 using namespace std;  
   
--   valarray::resize() を呼び出すと、valarray の内容は失われ、既定値で置き換えられます。 resize() メソッドは、ベクターのように動的に増加するのではなく、valarray を再初期化するためのものです。  
+-   When calling valarray::resize(), the contents of the valarray will be lost and will be replaced by default values. The resize() method is intended to reinitialize the valarray rather than grow it dynamically like a vector.  
   
--   デバッグ反復子: デバッグ バージョンの C ランタイム ライブラリを使用してビルドし、反復子を正しく使用していないアプリケーションは、実行時にアサートが表示されるようになることがあります。 これらのアサートを無効にするには、_HAS_ITERATOR_DEBUGGING (Visual Studio 2010 以降は [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) に置き換えられます) を 0 に定義する必要があります。 詳細については、「[Debug Iterator Support](../standard-library/debug-iterator-support.md)」(反復子のデバッグのサポート) を参照してください。  
+-   Debug Iterators: Applications built with a debug version of the C-Runtime Library and which use iterators incorrectly might begin to see asserts at runtime. To disable these asserts, you must define _HAS_ITERATOR_DEBUGGING (superseded by [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) after Visual Studio 2010) to 0. For more information, see [Debug Iterator Support](../standard-library/debug-iterator-support.md)  
   
-## <a name="visual-c-net-2003-breaking-changes"></a>Visual C++ .NET 2003 の互換性に影響する変更  
+## <a name="visual-c-net-2003-breaking-changes"></a>Visual C++ .NET 2003 Breaking Changes  
   
-### <a name="compiler"></a>コンパイラ  
+### <a name="compiler"></a>Compiler  
   
--   定義済みプリプロセッサ ディレクティブ (C2004) には閉じかっこが必須になりました。  
+-   Closing parentheses now required for the defined preprocessor directive (C2004).  
   
--   明示的な特殊化では、プライマリ テンプレートからテンプレート パラメーターを検索できなくなりました ([コンパイラ エラー C2146](../error-messages/compiler-errors-1/compiler-error-c2146.md))。  
+-   Explicit specializations no longer find template parameters from primary template ([Compiler Error C2146](../error-messages/compiler-errors-1/compiler-error-c2146.md)).  
   
--   保護されたメンバー (n) には、(n) がメンバーであるクラス (A) から継承されたクラス (B) のメンバー関数経由でアクセスする必要があります ([コンパイラ エラー C2247](../error-messages/compiler-errors-1/compiler-error-c2247.md))。  
+-   A protected member (n) can only be accessed through a member function of a class (B) that inherits from the class (A) of which it (n) is a member ([Compiler Error C2247](../error-messages/compiler-errors-1/compiler-error-c2247.md)).  
   
--   コンパイラのアクセシビリティ チェックが改善され、アクセスできない基底クラスが検出されるようになりました ([コンパイラ エラー C2248](../error-messages/compiler-errors-1/compiler-error-c2248.md))。  
+-   Improved accessibility checks in compiler now detect inaccessible base classes ([Compiler Error C2248](../error-messages/compiler-errors-1/compiler-error-c2248.md)).  
   
--   デストラクターまたはコピー コンストラクターにアクセスできない場合、例外をキャッチできません (C2316)。  
+-   An exception cannot be caught if the destructor and/or copy constructor is inaccessible (C2316).  
   
--   関数に対するポインターの既定の引数は使用できなくなりました ([コンパイラ エラー C2383](../error-messages/compiler-errors-1/compiler-error-c2383.md))。  
+-   Default arguments on pointers to functions no longer allowed ([Compiler Error C2383](../error-messages/compiler-errors-1/compiler-error-c2383.md)).  
   
--   静的データ メンバーは派生クラスを使って初期化できません ([コンパイラ エラー C2477](../error-messages/compiler-errors-1/compiler-error-c2477.md))。  
+-   A static data member cannot be initialized via derived class ([Compiler Error C2477](../error-messages/compiler-errors-1/compiler-error-c2477.md)).  
   
--   typedef の初期化は標準で許可されておらず、コンパイラ エラーが生成されるようになりました ([コンパイラ エラー C2513](../error-messages/compiler-errors-2/compiler-error-c2513.md))。  
+-   The initialization of a typedef is not allowed by the standard and now generates a compiler error ([Compiler Error C2513](../error-messages/compiler-errors-2/compiler-error-c2513.md)).  
   
--   ブールは適切な型になりました ([コンパイラ エラー C2632](../error-messages/compiler-errors-2/compiler-error-c2632.md))。  
+-   bool is now a proper type ([Compiler Error C2632](../error-messages/compiler-errors-2/compiler-error-c2632.md)).  
   
--   オーバーロードされた演算子がある場合、UDC であいまいさが生じるようになりました ([C2666](../error-messages/compiler-errors-2/compiler-error-c2666.md))。  
+-   A UDC can now create ambiguity with overloaded operators ([C2666](../error-messages/compiler-errors-2/compiler-error-c2666.md)).  
   
--   多くの式が Null ポインター定数と見なされるようになりました ([コンパイラ エラー C2668](../error-messages/compiler-errors-2/compiler-error-c2668.md))。  
+-   More expressions are now considered valid null pointer constants ([Compiler Error C2668](../error-messages/compiler-errors-2/compiler-error-c2668.md)).  
   
--   以前にコンパイラが暗示していた位置に template<> の指定が必須になりました ([コンパイラ エラー C2768](../error-messages/compiler-errors-2/compiler-error-c2768.md))。  
+-   template<> is now required in places where the compiler would previously imply it ([Compiler Error C2768](../error-messages/compiler-errors-2/compiler-error-c2768.md)).  
   
--   テンプレート クラスの特殊化で関数が既に明示的に特殊化されている場合、クラス外でのメンバー関数の明示的な特殊化は有効ではなくなりました ([コンパイラ エラー C2910](../error-messages/compiler-errors-2/compiler-error-c2910.md))。  
+-   The expilicit specialization of a member function ourside the class is not valid if the function has already been explicitly specialized via a template class specialization ([Compiler Error C2910](../error-messages/compiler-errors-2/compiler-error-c2910.md)).  
   
--   浮動小数点の非型テンプレート パラメーターは使用できなくなりました ([コンパイラ エラー C2993](../error-messages/compiler-errors-2/compiler-error-c2993.md))。  
+-   Floating point non-type template parameters are no longer allowed ([Compiler Error C2993](../error-messages/compiler-errors-2/compiler-error-c2993.md)).  
   
--   クラス テンプレートはテンプレート型引数として使用できなくなりました (C3206)。  
+-   Class templates are not allowed as template type arguments (C3206).  
   
--   フレンド関数名は、含まれる名前空間に導入されなくなりました ([コンパイラ エラー C3767](../error-messages/compiler-errors-2/compiler-error-c3767.md))。  
+-   Friend function names are no longer introduced into containing namespace ([Compiler Error C3767](../error-messages/compiler-errors-2/compiler-error-c3767.md)).  
   
--   コンパイラでは、マクロ内の余分なコンマが使用できなくなります (C4002)。  
+-   The compiler will no longer accept extra commas in a macro (C4002).  
   
--   形式 () の初期化子で構築される POD 型のオブジェクトは既定初期化されます (C4345)。  
+-   An object of POD type constructed with an initializer of the form () will be default-initialized (C4345).  
   
--   依存する名前を型として扱う場合、typename は必須になりました ([コンパイラの警告 (レベル 1) C4346](../error-messages/compiler-warnings/compiler-warning-level-1-c4346.md))。  
+-   typename is now required if a dependent name is to be treated as a type ([Compiler Warning (level 1) C4346](../error-messages/compiler-warnings/compiler-warning-level-1-c4346.md)).  
   
--   誤ってテンプレートの特殊化と見なされていた関数は、そのように見なされなくなりました (C4347)。  
+-   Functions that were incorrectly considered template specializations are no longer considered so (C4347).  
   
--   静的データ メンバーは派生クラスを使って初期化できません (C4356)。  
+-   Static data members cannot be initialized via derived class (C4356).  
   
--   戻り値の型で使用する前に、クラス テンプレートの特殊化を定義する必要がなくなりました ([コンパイラの警告 (レベル 3) C4686](../error-messages/compiler-warnings/compiler-warning-level-3-c4686.md))。  
+-   A class template specialization needs to be defined before it was used in a return type ([Compiler Warning (level 3) C4686](../error-messages/compiler-warnings/compiler-warning-level-3-c4686.md)).  
   
--   コンパイラは到達不能なコードをレポートするようになりました (C4702)。  
+-   The compiler now reports unreachable code (C4702).  
   
-## <a name="see-also"></a>関連項目  
-[Visual Studio における Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)
+## <a name="see-also"></a>See Also  
+[What's New for Visual C++ in Visual Studio](../what-s-new-for-visual-cpp-in-visual-studio.md)
 

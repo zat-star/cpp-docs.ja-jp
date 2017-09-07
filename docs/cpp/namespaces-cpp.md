@@ -1,39 +1,55 @@
 ---
-title: "名前空間 (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "namespace_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "グローバル名前空間"
-  - "名前空間 [C++]"
-  - "名前空間 [C++], C++"
-  - "名前空間 [C++], global"
-  - "Visual C++, 名前空間"
+title: Namespaces (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 08/30/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- namespace_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- namespaces [C++], C++
+- namespaces [C++]
+- namespaces [C++], global
+- global namespace
+- Visual C++, namespaces
 ms.assetid: d1a5a9ab-1cad-47e6-a82d-385bb77f4188
 caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 名前空間 (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 42abd4adfe10b032849bfec391874cd249793c32
+ms.openlocfilehash: deb5926f15e4efad4378a9930f1e353e9af58516
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/31/2017
 
-名前空間は、その内部にある識別子 \(型、関数、変数などの名前\) のスコープを定める宣言領域です。  名前空間は、コードを論理グループにまとめるため、およびコード ベースに複数のライブラリが含まれる場合に特に発生する名前の競合を回避するために使用されます。  名前空間スコープのすべての識別子は互いどうしを修飾なしで参照できます。  名前空間の外の識別子がメンバーにアクセスするときには、識別子ごとに完全修飾名を使用するか \(`std::vector<std::string> vec;` など\)、単一の識別子のために [using 宣言](../cpp/using-declaration.md)を使用するか \(`using std::string`\)、名前空間内のすべての識別子のために [using ディレクティブ](../misc/using-directive-cpp.md) を使用することができます \(`using namespace std;`\)。  ヘッダー ファイル内のコードは、常に完全修飾された名前空間の名前を使用する必要があります。  
+---
+# <a name="namespaces-c"></a>Namespaces (C++)
+A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it. Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. All identifiers at namespace scope are visible to one another without qualification. Identifiers outside the namespace can access the members by using the fully qualified name for each identifier, for example `std::vector<std::string> vec;`, or else by a [using Declaration](../cpp/using-declaration.md) for a single identifier (`using std::string`), or a [using Directive](../cpp/namespaces-cpp.md#using_directives) for all the identifiers in the namespace (`using namespace std;`). Code in header files should always use the fully qualified namespace name.  
   
- 次の例は、名前空間宣言とともに、名前空間の外部のコードがメンバーにアクセスできる 3 つの方法を示しています。  
+ The following example shows a namespace declaration and three ways that code outside the namespace can accesses their members.  
   
-```  
+```cpp  
 namespace ContosoData  
 {      
     class ObjectManager   
@@ -45,45 +61,46 @@ namespace ContosoData
 }  
 ```  
   
- 完全修飾名の使用:  
+ Use the fully qualified name:  
   
-```  
+```cpp  
 ContosoData::ObjectManager mgr;  
 mgr.DoSomething();  
 ContosoData::Func(mgr);  
 ```  
   
- using 宣言を使用すると、1 つの識別子をスコープに挿入できます。  
+ Use a using declaration to bring one identifier into scope:  
   
-```  
-using WidgetsUnlimited::ObjectManager;  
+```cpp  
+using ContosoData::ObjectManager;  
 ObjectManager mgr;  
 mgr.DoSomething();  
   
 ```  
   
- using ディレクティブを使用すると、名前空間にあるすべてのものをスコープに挿入できます。  
+ Use a using directive to bring everything in the namespace into scope:  
   
-```  
-using namespace WidgetsUnlimited;  
+```cpp  
+using namespace ContosoData;
+  
 ObjectManager mgr;  
 mgr.DoSomething();  
 Func(mgr);  
   
 ```  
   
-## using ディレクティブ  
- `using` ディレクティブは、**namespace** 内のすべての名前を *namespace\-name* なしで明示的な修飾子として使用できるようにします。  名前空間で複数の異なる識別子を使用する場合は、実装ファイル \(つまり   \*.cpp\) で using ディレクティブを使用します。1 つか 2 つの識別子しか使用しない場合は、名前空間にあるすべての識別子をスコープに挿入するのではなく、これらの識別子のみをスコープに挿入する using 宣言を検討してください。  ローカル変数に名前空間変数と同じ名前が付いている場合、名前空間変数が不可視になります。  グローバル変数と同じ名前の名前空間変数を使用するとエラーになります。  
+## <a id="using_directives"></a> using directives  
+ The `using` directive allows all the names in a **namespace** to be used without the *namespace-name* as an explicit qualifier. Use a using directive in an implementation file (i.e. *.cpp) if you are using several different identifiers in a namespace; if you are just using one or two identifiers, then consider a using declaration to only bring those identifiers into scope and not all the identifiers in the namespace. If a local variable has the same name as a namespace variable, the namespace variable is hidden. It is an error to have a namespace variable with the same name as a global variable.  
   
 > [!NOTE]
->  using ディレクティブは、.cpp ファイルの冒頭に配置するか \(ファイル スコープ\)、クラス内または関数定義内に配置できます。  
+>  A using directive can be placed at the top of a .cpp file (at file scope), or inside a class or function definition.  
 >   
->  通常は、using ディレクティブをヘッダー ファイル \(\*.h\) に配置することは避けてください。このヘッダーをインクルードするすべてのファイルが、名前空間にあるすべてのものをスコープに挿入して、デバッグが非常に困難な名前の隠蔽の問題や名前の競合の問題を引き起こすことがあるためです。  ヘッダー ファイルには常に完全修飾名を使用してください。  完全修飾名が長すぎる場合は、名前空間のエイリアスを使用して短縮します。  \(以下を参照してください。\)  
+>  In general, avoid putting using directives in header files (*.h) because any file that includes that header will bring everything in the namespace into scope, which can cause name hiding and name collision problems that are very difficult to debug. Always use fully qualified names in a header file. If those names get too long, you can use a namespace alias to shorten them. (See below.)  
   
-## 名前空間と名前空間のメンバーの宣言  
- 一般的に、名前空間はヘッダー ファイル内で宣言します。  関数の実装が別のファイルにある場合は、次の例のように関数名を修飾します。  
+## <a name="declaring-namespaces-and-namespace-members"></a>Declaring namespaces and namespace members  
+ Typically, you declare a namespace in a header file. If your function implementations are in a separate file, then qualify the function names, as in this example.  
   
-```  
+```cpp  
 //contosoData.h   
 #pragma once  
 namespace ContosoDataServer  
@@ -94,26 +111,26 @@ namespace ContosoDataServer
 }  
 ```  
   
- ファイルの冒頭に using ディレクティブを配置している場合でも、contosodata.cpp での関数の実装では完全修飾名を使用する必要があります。  
+ Function implementations in contosodata.cpp should use the fully qualified name, even if you place a `using` directive at the top of the file:  
   
-```  
+```cpp  
 #include "contosodata.h"  
 using namespace ContosoDataServer;   
   
-void ContosoDataServer::Foo()  
+void ContosoDataServer::Foo() // use fully-qualified name here  
 {  
-   //no qualification because using directive above  
+   // no qualification needed for Bar()  
    Bar();   
 }  
   
 int ContosoDataServer::Bar(){return 0;}  
 ```  
   
- 名前空間は、1 つのファイルにある複数のブロック、および複数のファイルで宣言できます。  コンパイラは、プリプロセス時にパーツを結合します。結果として生成される名前空間には、すべてのパーツで宣言されるすべてのメンバーが含まれます。  この一例が、標準ライブラリの各ヘッダー ファイルで宣言されている std 名前空間です。  
+ A namespace can be declared in multiple blocks in a single file, and in multiple files. The compiler joins the parts together during preprocessing and the resulting namespace contains all the members declared in all the parts. An example of this is the std namespace which is declared in each of the header files in the standard library.  
   
- 名前付き名前空間のメンバーは、定義する名前の[明示的な修飾](../misc/explicit-qualification.md)によって宣言された名前空間の外部で定義できます。  ただし、定義は、宣言の名前空間を囲う名前空間内で、宣言の位置の後に記述する必要があります。  例:  
+ Members of a named namespace can be defined outside the namespace in which they are declared by explicit qualification of the name being defined. However, the definition must appear after the point of declaration in a namespace that encloses the declaration's namespace. For example:  
   
-```  
+```cpp  
 // defining_namespace_members.cpp  
 // C2039 expected  
 namespace V {  
@@ -129,18 +146,18 @@ namespace V {
 }  
 ```  
   
- このエラーは、名前空間のメンバーが複数のヘッダー ファイルで宣言されており、かつこれらのヘッダーを正しい順序でインクルードしなかった場合に発生します。  
+ This error can occur when namespace members are declared across multiple header files, and you have not included those headers in the correct order.  
   
-## グローバル名前空間  
- 識別子は、明示的な名前空間で宣言されていない場合は、暗黙のグローバル名前空間の一部になります。  通常は、可能であれば、グローバル スコープで宣言することは避けるようにしてください。ただし、エントリ ポイントの [main 関数](../c-language/main-function-and-program-execution.md) は、グローバル名前空間に置く必要があるので、除きます。  グローバル識別子を明示的に修飾するには、`::SomeFunction(x);` のように、名前のないスコープ解決演算子を使用します。  これにより、識別子は他のあらゆる名前空間にある同じ名前のすべてのものから区別され、コードも他のユーザーに理解しやすいものになります。  
+## <a name="the-global-namespace"></a>The global namespace  
+ If an identifier is not declared in an explicit namespace, it is part of the implicit global namespace. In general, try to avoid making declarations at global scope when possible, except for the entry point [main Function](../c-language/main-function-and-program-execution.md), which is required to be in the global namespace. To explicitly qualify a global identifier, use the scope resolution operator with no name, as in `::SomeFunction(x);`. This will differentiate the identifier from anything with the same name in any other namespace, and it will also help to make your code easier for others to understand.  
   
-## std 名前空間  
- すべての C\+\+ 標準ライブラリの型と関数は、std 名前空間、または std 内で入れ子になった名前空間で宣言されます。  
+## <a name="the-std-namespace"></a>The std namespace  
+ All C++ standard library types and functions are declared in the `std` namespace or namespaces nested inside `std`.  
   
-## 入れ子になった名前空間  
- 名前空間は入れ子にすることができます。  次の例に示すように、入れ子になった通常の名前空間には、その親メンバーへの非修飾のアクセス権がありますが、親メンバーには \(インラインとして宣言されていない限り\) 入れ子になった名前空間への非修飾のアクセス権がありません。  
+## <a name="nested-namespaces"></a>Nested namespaces  
+ Namespaces may be nested. An ordinary nested namespace has unqualified access to its parent’s members, but the parent members do not have unqualified access to the nested namespace (unless it is declared as inline), as shown in the following example:  
   
-```  
+```cpp  
 namespace ContosoDataServer  
 {  
     void Foo();   
@@ -157,12 +174,12 @@ namespace ContosoDataServer
 }  
 ```  
   
- 入れ子になった通常の名前空間は、親の名前空間のパブリック インターフェイスの一部ではない内部実装の詳細をカプセル化するために使用できます。  
+ Ordinary nested namespaces can be used to encapsulate internal implementation details that are not part of the public interface of the parent namespace.  
   
-## インライン名前空間 \(C\+\+ 11\)  
- 入れ子になった通常の名前空間とは対照的に、インライン名前空間のメンバーは親の名前空間のメンバーとして扱われます。  この特性のおかげで、オーバーロードされた関数に対する引数依存の参照を、親の名前空間と入れ子のインライン名前空間にオーバーロードを持つ関数に対して使用できます。  また、インライン名前空間で宣言されているテンプレートの特殊化を親の名前空間で宣言することもできます。  次の例は、外部のコードを既定でインライン名前空間にバインドする方法を示しています。  
+## <a name="inline-namespaces-c-11"></a>Inline namespaces (C++ 11)  
+ In contrast to an ordinary nested namespace, members of an inline namespace are treated as members of the parent namespace. This characteristic enables argument dependent lookup on overloaded functions to work on functions that have overloads in a parent and a nested inline namespace. It also enables you to declare a specialization in a parent namespace for a template that is declared in the inline namespace. The following example shows how external code binds to the inline namespace by default:  
   
-```  
+```cpp  
 //Header.h  
 #include <string>  
   
@@ -194,9 +211,9 @@ int main()
 }  
 ```  
   
- 次の例は、インライン名前空間で宣言されているテンプレートの特殊化を親で宣言する方法を示しています。  
+ The following example shows how you can declare a specialization in a parent of a template that is declared in an inline namespace:  
   
-```  
+```cpp  
 namespace Parent  
 {  
     inline namespace new_ns  
@@ -213,13 +230,13 @@ namespace Parent
   
 ```  
   
- ライブラリのパブリック インターフェイスに対する変更を管理するためのバージョン管理のメカニズムとして、インライン名前空間を使用することができます。  たとえば、単一の親名前空間を作成し、インターフェイスの各バージョンを、親の中に入れ子になっている、それぞれ独自の名前空間にカプセル化することができます。  最新または最優先のバージョンを保持する名前空間をインラインとして修飾することで、これを親の名前空間の直接のメンバーであるかのように公開できます。  Parent::Class を呼び出すクライアント コードは、新しいコードに自動的にバインドされます。  古いバージョンを使用するクライアントは、そのコードを持つ入れ子になった名前空間への完全修飾パスを使用すれば、引き続き古いバージョンにアクセスできます。  
+ You can use inline namespaces as a versioning mechanism to manage changes to the public interface of a library. For example, you can create a single parent namespace, and encapsulate each version of the interface in its own namespace nested inside the parent. The namespace that holds the most recent or preferred version is qualified as inline, and is therefore exposed as if it were a direct member of the parent namespace. Client code that invokes the Parent::Class will automatically bind to the new code. Clients that prefer to use the older version can still access it by using the fully qualified path to the nested namespace that has that code.  
   
- inline キーワードは、コンパイル単位内の名前空間の最初の宣言に適用する必要があります。  
+ The inline keyword must be applied to the first declaration of the namespace in a compilation unit.  
   
- 次の例は、あるインターフェイスの 2 つのバージョンを示しています。それぞれ入れ子になった名前空間に置かれています。  `v_20` 名前空間には、`v_10` インターフェイスからの変更があり、インラインとしてマークされます。  新しいライブラリを使用し、`Contoso::Funcs::Add` を呼び出すクライアント コードは、v\_20 バージョンを呼び出します。  `Contoso::Funcs::Divide` を呼び出そうとするコードは、コンパイル時エラーになります。  その関数が実際に必要な場合は、明示的に `Contoso::v_10::Funcs::Divide` を呼び出して引き続き `v_10` バージョンにアクセスすることができます。  
+ The following example shows two versions of an interface, each in a nested namespace. The `v_20` namespace has some modification from the `v_10` interface and is marked as inline. Client code that uses the new library and calls `Contoso::Funcs::Add` will invoke the v_20 version. Code that attempts to call `Contoso::Funcs::Divide` will now get a compile time error. If they really need that function, they can still access the `v_10` version by explicitly calling `Contoso::v_10::Funcs::Divide`.  
   
-```  
+```cpp  
 namespace Contoso  
 {  
     namespace v_10  
@@ -254,29 +271,28 @@ namespace Contoso
   
 ```  
   
-## 名前空間エイリアス  
- 名前空間の名前は一意である必要があります。つまり、多くの場合、短くなりすぎないようにする必要があります。  名前が長くてコードが読みにくい場合、または using ディレクティブを使用できないヘッダー ファイルに入力するのが面倒な場合は、実際の名前の省略形として機能する名前空間のエイリアスを作成することができます。  例:  
+## <a id="namespace_aliases"></a> Namespace aliases  
+ Namespace names need to be unique, which means that often they should not be too short. If the length of a name makes code difficult to read, or is tedious to type in a header file where using directives can’t be used, then you can make a namespace alias which serves as an abbreviation for the actual name. For example:  
   
-```  
+```cpp  
 namespace a_very_long_namespace_name { class Foo {}; }  
 namespace AVLNN = a_very_long_namespace_name;  
 void Bar(AVLNN::Foo foo){ }  
   
 ```  
   
-## 匿名または名前のない名前空間  
- 名前を付けないで明示的な名前空間を作成することができます。  
+## <a name="anonymous-or-unnamed-namespaces"></a>anonymous or unnamed namespaces  
+ You can create an explicit namespace but not give it a name:  
   
-```  
+```cpp  
 namespace  
 {  
     int MyFunc(){}  
 }  
 ```  
   
- これは、名前のない名前空間または匿名の名前空間と呼ばれ、名前のある名前空間を作成せずに、他のファイルのコードに対して変数の宣言を不可視にする \(つまり  内部リンケージを付与する\) 場合に役立ちます。  同じファイル内のすべてのコードは名前のない名前空間の識別子を参照できますが、そのファイルの外 \(より厳密に言えば、翻訳単位の外\) では、識別子および名前空間自体が不可視になります。  
+ This is called an unnamed or anonymous namespace and it is useful when you want to make variable declarations invisible to code in other files (i.e. give them internal linkage) without having to create a named namespace. All code in the same file can see the identifiers in an unnamed namespace but the identifiers, along with the namespace itself, are not visible outside that file—or more precisely outside the translation unit.  
   
-## 解説  
-  
-## 参照  
- [宣言](../misc/declarations.md)
+## <a name="see-also"></a>See Also  
+ [Declarations and Definitions](declarations-and-definitions-cpp.md)
+

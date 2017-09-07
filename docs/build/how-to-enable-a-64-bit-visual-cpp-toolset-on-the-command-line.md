@@ -1,69 +1,70 @@
 ---
-title: "方法: 64 ビットの Visual C++ ツールセットをコマンド ラインから有効にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "64 ビット コンパイラ [C++], コマンド ラインの使用"
-  - "64 ビット コンパイラ [C++], ツールセットを有効化 (コマンド ラインで)"
-  - "コマンド ライン [C++], 64 ビット コンパイラ"
-  - "IPF"
-  - "IPF, コマンド ライン コンパイラ"
-  - "Itanium [C++]"
-  - "Itanium [C++], コマンド ライン コンパイラ"
-  - "x64 [C++]"
-  - "x64 [C++], コマンド ライン コンパイラ"
+title: 'How to: Enable a 64-Bit Visual C++ Toolset on the Command Line | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- x64 [C++]
+- 64-bit compiler [C++], command line usage
+- 64-bit compiler [C++], toolset enabling at command line
+- command line [C++], 64-bit compiler
+- Itanium [C++], command-line compiler
+- IPF
+- Itanium [C++]
+- IPF, command-line compiler
+- x64 [C++], command-line compiler
 ms.assetid: 4da93a19-e20d-4778-902a-5eee9a6a90b5
 caps.latest.revision: 30
-caps.handback.revision: 30
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
----
-# 方法: 64 ビットの Visual C++ ツールセットをコマンド ラインから有効にする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 88cd06c4ca6ac57fdb677cfc56fd8972983df4c1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/30/2017
 
-Visual C\+\+ には、32 ビット、64 ビット、または ARM ベースの Windows オペレーティング システム上で実行できるアプリを作成するためのコンパイラが用意されています。  
+---
+# <a name="how-to-enable-a-64-bit-x64-hosted-visual-c-toolset-on-the-command-line"></a>How to: Enable a 64-Bit, x64 hosted Visual C++ toolset on the command line
+
+Visual C++ includes compilers, linkers, and other tools that you can use to create platform-specific versions of your apps that can run on 32-bit, 64-bit, or ARM-based Windows operating systems. Other optional Visual Studio workloads let you use C++ tools to target other platforms, such as iOS, Android, and Linux. The default build architecture uses 32-bit, x86-hosted tools to build 32-bit, x86-native Windows code. However, you probably have a 64-bit computer. You can take advantage of the processor and memory space available to 64-bit code by using the 64-bit, x64-hosted toolset when you build code for x86, x64, or ARM processors.
   
 > [!NOTE]
->  各エディションの Visual C\+\+ に付属している特定のツールの詳細については、「[Visual Studio エディションでの Visual C\+\+ ツールおよびテンプレート](../ide/visual-cpp-tools-and-templates-in-visual-studio-editions.md)」を参照してください。  
+>  For information about the specific tools that are included with each Visual C++ edition, see [Visual C++ Tools and Features in Visual Studio Editions](../ide/visual-cpp-tools-and-features-in-visual-studio-editions.md).  
 >   
->  Visual Studio IDE で 64 ビット アプリケーションを作成する方法については、「[方法 : Visual C\+\+ プロジェクトを 64 ビット プラットフォーム用に設定する](../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)」を参照してください。  
+>  For information about how to use the Visual Studio IDE to create 64-bit applications, see [How to: Configure Visual C++ Projects to Target 64-Bit, x64 Platforms](../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md).  
   
- [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] には、x86、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]、および ARM を対象とする 32 ビット、x86 ホスト、ネイティブ、および ARM の各コンパイラが用意されています。  [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] が 64 ビット Windows オペレーティング システムにインストールされている場合、32 ビット、x86 ホスト ネイティブ、およびクロス コンパイラに加え、64 ビット、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] ホスト ネイティブ、およびクロス コンパイラが、各対象 \(x86、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]、および ARM\) に対してインストールされます。  それぞれの対象の 32 ビットと 64 ビットのコンパイラでは、同一のコードが生成されますが、64 ビット コンパイラは、プリコンパイル済みヘッダーのシンボルと、プログラム全体の最適化 \([\/GL](../build/reference/gl-whole-program-optimization.md)、[\/LTCG](../build/reference/ltcg-link-time-code-generation.md)\) オプションに対応するため、より多くのメモリをサポートしています。  32 ビット コンパイラを使用していてメモリ制限の問題に直面した場合は、64 ビット コンパイラを試してください。  
+When you install a C++ workload in the Visual Studio installer, it always installs 32-bit, x86-hosted, native and cross compiler tools to build x86 and x64 code. If you include the Universal Windows Platform workload, it also installs x86-hosted cross compiler tools to build ARM code. If you install these workloads on a 64-bit, x64 processor, you also get 64-bit native and cross compiler tools to build x86, x64, and ARM code. The 32-bit and 64-bit tools generate identical code, but the 64-bit tools support more memory for precompiled header symbols and the Whole Program Optimization ([/GL](../build/reference/gl-whole-program-optimization.md) and [/LTCG](../build/reference/ltcg-link-time-code-generation.md)) options. If you run into memory limits when you use the 32-bit tools, try the 64-bit tools.  
+
+## <a name="use-a-64-bit-hosted-developer-command-prompt-shortcut"></a>Use a 64-bit hosted developer command prompt shortcut
   
- Visual Studio が 64 ビット Windows オペレーティング システムにインストールされている場合、64 ビット [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] ネイティブ コンパイラおよび x86 クロス コンパイラ用の追加のコマンド プロンプト ショートカットを使用できます。  Windows 8 でこれらのコマンド プロンプトにアクセスするには、**\[スタート\]** 画面で **\[すべてのアプリ\]** を開きます。  インストールされたバージョンの **\[[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)]\]** の下で、**\[Visual Studio ツール\]** を開き、ネイティブツールまたはクロスツールのいずれかのコマンド プロンプトを選択します。  これ以前のバージョンの Windows では、**\[スタート\]** をクリックし、**\[すべてのプログラム\]**、**\[[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)]\]**、**\[Visual Studio ツール\]** の順にクリックしてコマンド プロンプトを選択します。  
+When Visual Studio is installed on a 64-bit Windows operating system, additional developer command prompt shortcuts for the 64-bit, x64-hosted native and cross compilers are available. To access these command prompts on Windows 10, on the **Start** menu, open the folder for your version of Visual Studio, for example **Visual Studio 2017**, and then choose one of the x64 native or cross-tool developer command prompts. To access these command prompts on Windows 8, on the **Start** screen, open **All apps**. Under the heading for the installed version of Visual Studio, open the **Visual Studio** folder (in older versions of Visual Studio, it may be named **Visual Studio Tools**). On earlier versions of Windows, choose **Start**, expand **All Programs**, the folder for your version of **Visual Studio** (and on older versions of Visual Studio, **Visual Studio Tools**). For more information, see [Developer command prompt shortcuts](../build/building-on-the-command-line.md#developer_command_prompt_shortcuts).  
   
-## Vcvarsall.bat  
- どのコンパイラも、コマンド ラインから使用できます。これには、vcvarsall.bat コマンド ファイルを実行し、パスと環境変数を構成してコンパイラ ツールセットを有効にします。  x86 または ARM プラットフォームを対象とする 64 ビット ツールセットを有効にするコマンド プロンプト ショートカットがないため、コマンド プロンプト ウィンドウで vcvarsall.bat を使用して 64 ビット ツールセットを代わりに使用します。  詳細については、「[コマンド ライン ビルドのパスと環境変数の設定](../build/setting-the-path-and-environment-variables-for-command-line-builds.md)」を参照してください。  
+## <a name="use-vcvarsallbat-to-set-a-64-bit-hosted-build-architecture"></a>Use Vcvarsall.bat to set a 64-bit hosted build architecture
   
- 次の手順では、コマンド プロンプトを設定して x86、x64、ARM プラットフォームを対象とした 64 ビット ネイティブ ツールセットを使用する方法を示しています。  
+Any of the native or cross compiler tools build configurations can be used on the command line by running the vcvarsall.bat command file. This command file configures the path and environment variables that enable a particular build architecture in an existing command prompt window. For specific instructions, see [Developer command files and locations](../build/building-on-the-command-line.md#developer_command_files) .  
   
-#### vcvarsall.bat を実行して 64 ビット ツールセットを使用するには  
-  
-1.  コマンド プロンプトで、[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] インストール ディレクトリに変更します  \(システムおよび [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] のインストールによって異なりますが、一般的な場所は C:\\Program Files \(x86\)\\Microsoft Visual Studio *version*\\VC\\ です\)。たとえば、次のように入力します。  
-  
-     cd "\\Program Files \(x86\)\\Microsoft Visual Studio 12.0\\VC"  
-  
-2.  x64 プラットフォームを対象とする 64 ビット コマンドライン ビルドのコマンド プロンプト ウィンドウを設定するには、コマンド プロンプトで次のように入力します。  
-  
-     `vcvarsall amd64`  
-  
-3.  x86 プラットフォームを対象とする 64 ビット コマンドライン ビルドのコマンド プロンプト ウィンドウを設定するには、コマンド プロンプトで次のように入力します。  
-  
-     `vcvarsall amd64_x86`  
-  
-4.  ARM プラットフォームを対象とする 64 ビット コマンドライン ビルドのコマンド プロンプト ウィンドウを設定するには、コマンド プロンプトで次のように入力します。  
-  
-     `vcvarsall amd64_arm`  
-  
-## 参照  
- [64 ビット用プログラムの構成](../build/configuring-programs-for-64-bit-visual-cpp.md)
+## <a name="see-also"></a>See Also  
+
+[Configure Visual C++ for 64-bit, x64 targets](../build/configuring-programs-for-64-bit-visual-cpp.md)

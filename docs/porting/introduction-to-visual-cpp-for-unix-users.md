@@ -1,5 +1,5 @@
 ---
-title: "Visual C++ の紹介 (UNIX ユーザー向け) | Microsoft Docs"
+title: Introduction to Visual C++ for UNIX Users | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -31,56 +31,65 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3c1955bece0c8cdadb4a151ee06fa006402666a4
-ms.openlocfilehash: 524be35ec1e1db511b7fd4c2ab2b87d83c54325c
+ms.translationtype: HT
+ms.sourcegitcommit: a43e0425c129cf99ed2374845a4350017bebb188
+ms.openlocfilehash: 6eaba7ea947bc6a9c79c67745876bc0d67e73314
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="introduction-to-visual-c-for-unix-users"></a>Visual C++ の紹介 (UNIX ユーザー向け)
-このトピックでは、Visual C++ を初めて使用し、Visual C++ で生産性を向上したい UNIX ユーザー向けの情報を提供します。  
+# <a name="introduction-to-visual-c-for-unix-users"></a>Introduction to Visual C++ for UNIX Users
+
+This topic provides information for UNIX users who are new to Visual C++ and want to become productive with Visual C++ and the Visual Studio Integrated Development Environment (IDE).  
   
-## <a name="getting-started-on-the-command-line"></a>コマンドラインに関する概要  
- UNIX のコマンドライン環境を使用する場合と同様の方法で、コマンドラインから Visual C++ を使用できます。 Microsoft バージョンの UNIX make ユーティリティである NMAKE.EXE を含むコマンド ラインの C と C++ コンパイラ (CL.EXE) およびツールを使用して、コマンド プロンプトからコンパイルします。  
+## <a name="getting-started-on-the-command-line"></a>Getting Started on the Command Line  
+
+You can use Visual C++ from the command line in a similar way that you would use a UNIX command-line environment. You compile from the command prompt by using the command-line C and C++ compiler (CL.EXE), linker (LINK.EXE), and other tools, including NMAKE.EXE, the Microsoft version of the UNIX make utility.  
   
- UNIX では、コマンドは /usr/bin などの共通のフォルダーにインストールされます。 Visual C++ では、コマンドライン ツールはインストール ディレクトリの VC\bin (標準インストールでは Program Files\Microsoft Visual Studio 8\VC\bin) にインストールされます。 コマンドライン ツールを使用するには、Common7\Tools のインストール ディレクトリにある、vsvars32.bat を実行します。 これは、bin ディレクトリをパスに追加し、コマンド ラインから Visual C++ プログラムをコンパイルするために必要なその他のパスを設定します。 詳細については、「[コマンド ラインでのビルド](../build/building-on-the-command-line.md)」および「[チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)」を参照してください。  
+In UNIX, commands are installed in a common folder, such as /usr/bin. In Visual C++, the command-line tools are installed in your Visual Studio installation directory in the VC\bin subdirectory and its subdirectories. Unlike UNIX, these tools are not available in a plain command prompt window. To use the command-line tools, use a developer command prompt shortcut, or run a developer command file such as vcvarsall.bat. This sets up the path and other environment variables that are necessary to compile Visual C++ programs from the command line. For more information, see [Build C/C++ code on the command line](../build/building-on-the-command-line.md) and [Walkthrough: Compiling a Native C++ Program on the Command Line](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md).  
   
-> [!NOTE]
->  **[スタート]** メニューの **[Visual Studio のコマンド ライン プロンプト]** を使用してコマンド プロンプトを開く場合、vsvars32.bat が実行されます。  
+To open a developer command prompt shortcut, enter *developer command prompt* in the desktop search control and choose the **Developer Command Prompt** result for your version of Visual Studio. To choose a developer command prompt that is preconfigured for a particular host and target architecture, open the **Start** menu (the Windows icon in the corner of the desktop) and then scroll to the folder for your version of Visual Studio, such as **Visual Studio 2017**. Open the folder and choose the command prompt shortcut for your preferred host and target architecture.
   
- Visual Studio デバッガー、ステートメント入力候補などのより強力な機能を活用するには、開発環境を使用する必要があります。  
+To take advantage of more powerful features, such as the Visual Studio debugger, IntelliSense code look-up and statement completion, visual designers, project management, and so on, you need to use the Visual Studio IDE.  
   
-## <a name="debugging-your-code"></a>コードのデバッグ  
- コマンドラインを使用して開発用ワークステーションでアプリケーションを実行する場合、コードでメモリ アクセス違反、ハンドルされない例外や、その他の回復不能なエラーが発生したときに、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] デバッガーを実行するダイアログ ボックスが表示されます。 **[OK]** をクリックすると、Visual Studio の開発環境が起動し、障害発生時点でデバッガーが開きます。 この方法でアプリケーションをデバッグすることができますが、このケースでは、[/Z7、/Zi、/ZI (デバッグ情報の形式)](../build/reference/z7-zi-zi-debug-information-format.md) スイッチを使用してコンパイルした場合にのみ、ソースを利用できます。 詳細については、「[ネイティブ コードのデバッグ](/visualstudio/debugger/debugging-native-code)」および「[C++ デスクトップ開発のための Visual Studio IDE の使用](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)」を参照してください。  
+## <a name="debugging-your-code"></a>Debugging Your Code  
+
+If you use the command line and run your applications on your development workstation, you will see that a dialog box to run the [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] debugger is displayed when your code encounters a memory access violation, unhandled exception, or other unrecoverable errors. If you click **OK**, then the Visual Studio development environment is started, and the debugger will open to the point of failure. It is possible to debug your applications this way, and, in this case, your source code would only be available if you compiled with the [/Z7, /Zi, /ZI (Debug Information Format)](../build/reference/z7-zi-zi-debug-information-format.md) switch. For more information, see [Debugging Native Code](/visualstudio/debugger/debugging-native-code) and [Using the Visual Studio IDE for C++ Desktop Development](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md).  
   
-## <a name="using-the-development-environment"></a>開発環境を使用する  
- 開発環境を使用すると、*プロジェクト*でソース コードを編集してビルドしやすくなります。 プロジェクトは、ライブラリまたは実行可能ファイルなどの 1 つの単位にコンパイルされる、ソースと関連ファイルのコレクションです。 プロジェクトには、ファイルをビルドする方法に関する情報も含まれます。 プロジェクトに関する情報は、拡張子が .prj のプロジェクト ファイルに格納されます。  
+## <a name="using-the-development-environment"></a>Using the Development Environment  
+
+It is easier to use the development environment to edit and build your source code in a *project*. A project is a collection of source and related files that will be compiled into a single unit, such as a library or executable. A project also contains information on how the files are to be built. Information about projects is stored in a project file with the extension .prj.  
   
- それぞれが別のセットのコンパイラ オプションや別の言語でビルドされている可能性がある複数のライブラリおよび実行可能ファイルから構成されるアプリケーションは、1 つの*ソリューション*の一部である複数のプロジェクトに格納されます。 ソリューションは、複数のプロジェクトをグループ化するためのコンテナーの抽象化です。 プロジェクトに関する情報は、拡張子が .prj のプロジェクト ファイルに格納されます。 詳細については、「[Visual Studio のソリューションおよびプロジェクト](/visualstudio/ide/solutions-and-projects-in-visual-studio)」および「[C++ デスクトップ開発のための Visual Studio IDE の使用](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)」を参照してください。  
+An application that consists of multiple libraries and executables, each potentially built with a different set of compiler options or even in a different language, are stored in multiple projects that are part of a single *solution*. A solution is an abstraction for a container to group multiple projects together. Information about solutions is stored in a solution file with the extension .sln. For more information, see [Solutions and Projects in Visual Studio](/visualstudio/ide/solutions-and-projects-in-visual-studio) and [Using the Visual Studio IDE for C++ Desktop Development](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md).  
   
-## <a name="importing-your-existing-code"></a>既存のコードをインポートする  
- Visual C++ を使用して、メイクファイルを使用または使用せずにコンパイルするよう設定される既存のコードを使用し、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] プロジェクトに配置できます。 詳細については、「**既存コード ファイルからの新しいプロジェクトの作成ウィザード**」を参照してください。 詳細については、「[方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)」を参照してください。  
+## <a name="importing-your-existing-code"></a>Importing Your Existing Code 
+ 
+You can use Visual C++ to build existing code that is set up to compile with or without a makefile and put it into a [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] project. For more information, see [How to: Create a C++ Project from Existing Code](../ide/how-to-create-a-cpp-project-from-existing-code.md).  
   
-## <a name="creating-a-new-project"></a>新規プロジェクトの作成  
- 開発環境では、新しいプロジェクトを作成できます。 Visual C++ はさまざまな共通プロジェクトの標準的なコードを提供する多数のテンプレートを提供します。 アプリケーション ウィザードを使用して、様々な種類のアプリケーション用のコードのアウトラインを持つプロジェクトを生成することができます。  
+## <a name="creating-a-new-project"></a>Creating a New Project  
+
+You can create new projects in the development environment. Visual C++ provides numerous templates that provide standard code for various common projects. You can use application wizards to generate projects with code outlines for various application types.  
   
- まず、**コンソール アプリケーション (Win32) ウィザード**を使用して、空のプロジェクトを作成できます。 **[空のプロジェクト]** チェック ボックスをオンにします。 これで、新規および既存のファイルをプロジェクトに後で追加できます。  
+You can start with an empty project by using the **Console Application (Win32) Wizard**. Select the **Empty Project** check box. You can then add new and existing files to the project later.  
   
- プロジェクトを作成するときに、プロジェクトの名前を付けてください。 既定では、プロジェクト名は、ダイナミック リンク ライブラリ (DLL) の名前またはプロジェクトからビルドされる実行可能ファイルと等しくなります。 詳細については、「[ソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照してください。  
+When you create a project, you must name the project. By default, the project name equals the name of the dynamic-link library (DLL) or executable that is build from the project. For more information, see [Creating Solutions and Projects](/visualstudio/ide/creating-solutions-and-projects).  
   
-## <a name="microsoft-specific-modifiers"></a>Microsoft 固有の修飾子  
- Visual C++ には、標準の c++ プログラミング言語のいくつかの拡張機能が含まれています。 これらの拡張機能は、ストレージ クラス属性、関数の呼び出し規約、ベース アドレス指定などを指定するために使用されます。 すべての Visual C++ の拡張機能の完全な一覧については、「[Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)」を参照してください。  
+## <a name="microsoft-specific-modifiers"></a>Microsoft-Specific Modifiers  
+
+Visual C++ contains several extensions to the standard C++ programming language to support programming for Windows operating systems. These extensions are used to specify storage class attributes, function calling conventions, and based addressing, among other things. For a complete list of all Visual C++ extensions, see [Microsoft-Specific Modifiers](../cpp/microsoft-specific-modifiers.md).  
   
- **/Za** コンパイラ オプションを使用して、C++ へのすべての Microsoft 固有の拡張機能を無効にすることができます。 複数のプラットフォームで実行するコードを記述する場合、このオプションが推奨されます。 **/Za** コンパイラ オプションの詳細については、「[/Za、/Ze (言語拡張機能の無効化)](../build/reference/za-ze-disable-language-extensions.md)」を参照してください。 Visual C++ の準拠の詳細については、「[非標準動作](../cpp/nonstandard-behavior.md)」を参照してください。  
+You can disable all Microsoft-specific extensions to C++ by using the **/Za** compiler option. This option is recommended if you want to write code to run on multiple platforms. For more information on the **/Za** compiler option, see [/Za, /Ze (Disable Language Extensions)](../build/reference/za-ze-disable-language-extensions.md). For more information on Visual C++ conformance, see [Nonstandard Behavior](../cpp/nonstandard-behavior.md).  
   
-## <a name="precompiled-headers"></a>プリコンパイル済みヘッダー  
- Microsoft C および C++ コンパイラは、インライン コードを含む、C または C++ コードをプリコンパイルするためのオプションを提供します。 このパフォーマンス機能を使用して、安定したコードの本体をコンパイルし、ファイル内のコードのコンパイル済みの状態を格納します。さらに、後続のコンパイル中に、プリコンパイルされたコードと開発中のコードを結合できます。 安定したコードは再コンパイルする必要がないので、後続のコンパイルが高速化します。  
+## <a name="precompiled-headers"></a>Precompiled Headers  
+
+The Microsoft C and C++ compilers provide options for precompiling any C or C++ code, including inline code. Using this performance feature, you can compile a stable body of code, store the compiled state of the code in a file, and, during subsequent compilations, combine the precompiled code with code that is still under development. Each subsequent compilation is faster because the stable code does not need to be recompiled.  
   
- 既定では、プリコンパイル済みのすべてのコードは、ファイル **stdafx.h** と **stdafx.cpp** で指定されます。 **[プリコンパイル済みヘッダー]** オプションをオフにしない限り、**[新しいプロジェクト]** ウィザードは自動的にこれらのファイルを作成します。 プリコンパイルされたヘッダーの詳細については、「[プリコンパイル済みヘッダー ファイルの作成](../build/reference/creating-precompiled-header-files.md)」を参照してください。  
+By default, all precompiled code is specified in the files **stdafx.h** and **stdafx.cpp**. The **New Project** wizard will automatically create these files for you unless you deselect the **Precompiled header** option. For more information on precompiled headers, see [Creating Precompiled Header Files](../build/reference/creating-precompiled-header-files.md).  
   
-## <a name="related-sections"></a>関連項目  
- 詳細については、「[UNIX から Win32 への移植](../porting/porting-from-unix-to-win32.md)」を参照してください。  
+## <a name="related-sections"></a>Related Sections  
+
+For more information, see [Porting from UNIX to Win32](../porting/porting-from-unix-to-win32.md).  
   
-## <a name="see-also"></a>関連項目  
- [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)
+## <a name="see-also"></a>See Also  
+
+[Building C/C++ Programs](../build/building-c-cpp-programs.md)
