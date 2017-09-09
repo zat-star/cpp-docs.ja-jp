@@ -53,65 +53,69 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 6387edb05977f90fe9fb2419a1eccb47ac0b7b43
+ms.translationtype: MT
+ms.sourcegitcommit: 0286098cb87ecfea244269a8e5756829759b82f7
+ms.openlocfilehash: d4c7de72212754553ccd97127e02bbea4280e98f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="read"></a>_read
-ファイルからデータを読み取ります。  
+
+Reads data from a file.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
-  
-      int _read(  
+int _read(  
    int fd,  
    void *buffer,  
    unsigned int count   
 );  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- `fd`  
- 開いているファイルを参照するファイル記述子。  
+### <a name="parameters"></a>Parameters  
+
+*fd*  
+File descriptor referring to the open file.  
   
- *バッファー*  
- データの格納場所。  
+*buffer*  
+Storage location for data.  
   
- *count*  
- 最大バイト数。  
+*count*  
+Maximum number of bytes.  
   
-## <a name="return-value"></a>戻り値  
- _**読み取り**小さい場合があります、読み取られたバイト数を返しますより*カウント*よりも少ない場合*カウント*ファイル内の残りのバイト数または各キャリッジ リターンとラインが (CR-LF) のペアをフィードする場合は、1 つの改行文字に置き換えられます、ファイルがテキスト モードで開かれた場合。 戻り値ではその単一の改行文字だけがカウントされます。 この置き換えは、ファイル ポインターには影響しません。  
+## <a name="return-value"></a>Return Value  
+
+`_read` returns the number of bytes read, which might be less than *count* if there are fewer than *count* bytes left in the file or if the file was opened in text mode, in which case each carriage return-line feed pair `\r\n` is replaced with a single linefeed character `\n`. Only the single linefeed character is counted in the return value. The replacement does not affect the file pointer.  
   
- この関数はファイルの終わりで読み取りをすると、0 を返します。 `fd` が無効であるか、ファイルが読み取り用に開かれていないか、ファイルがロックされているかの場合、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラ―が呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EBADF`に設定します。  
+If the function tries to read at end of file, it returns 0. If *fd* is not valid, the file is not open for reading, or the file is locked, the invalid parameter handler is invoked, as described in [Parameter Validation](../../c-runtime-library/parameter-validation.md). If execution is allowed to continue, the function returns -1 and sets `errno` to `EBADF`.  
   
- *バッファー*が **NULL** の場合は、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` は `EINVAL` に設定されます。  
+If *buffer* is **NULL**, the invalid parameter handler is invoked. If execution is allowed to continue, the function returns -1 and `errno` is set to `EINVAL`.  
   
- このリターン コードとその他のリターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+For more information about this and other return codes, see [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).  
   
-## <a name="remarks"></a>コメント  
- `_read` 関数は *count* の最大バイトを、`fd` に関連付けられているファイルから*バッファー*に読み込みます。 読み取り操作は、指定されたファイルに関連付けられたファイル ポインターの現在の位置で開始されます。 読み取り操作後、ファイル ポインターは、次の未読の文字を指します。  
+## <a name="remarks"></a>Remarks  
+
+The `_read` function reads a maximum of *count* bytes into *buffer* from the file associated with *fd*. The read operation begins at the current position of the file pointer associated with the given file. After the read operation, the file pointer points to the next unread character.  
   
- ファイルがテキスト モードで開かれた場合、ファイルの終わりを示すインジケーターとして扱われる CTRL + Z の文字が `_read` で検出された時点で、読み取りは終了します。 ファイルの終わりのインジケーターをクリアするには、[_lseek](../../c-runtime-library/reference/lseek-lseeki64.md) を使用します。  
+If the file was opened in text mode, the read terminates when `_read` encounters a CTRL+Z character, which is treated as an end-of-file indicator. Use [_lseek](../../c-runtime-library/reference/lseek-lseeki64.md) to clear the end-of-file indicator.  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>Requirements  
   
-|ルーチン|必須ヘッダー|  
+|Routine|Required header|  
 |-------------|---------------------|  
 |`_read`|\<io.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+For more compatibility information, see [Compatibility](../../c-runtime-library/compatibility.md).  
   
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
+## <a name="libraries"></a>Libraries  
+
+All versions of the [C run-time libraries](../../c-runtime-library/crt-library-features.md).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
-```  
+```C  
 // crt_read.c  
 /* This program opens a file named crt_read.txt  
  * and tries to read 60,000 bytes from  
@@ -149,22 +153,24 @@ int main( void )
 }  
 ```  
   
-## <a name="input-crtreadtxt"></a>入力: crt_read.txt  
+### <a name="input-crtreadtxt"></a>Input: crt_read.txt  
   
 ```  
 Line one.  
 Line two.  
 ```  
   
-## <a name="output"></a>出力  
+### <a name="output"></a>Output  
   
 ```  
 Read 19 bytes from file  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [fread](../../c-runtime-library/reference/fread.md)   
- [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [_write](../../c-runtime-library/reference/write.md)
+## <a name="see-also"></a>See Also  
+
+[Low-Level I/O](../../c-runtime-library/low-level-i-o.md)   
+[_creat, _wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
+[fread](../../c-runtime-library/reference/fread.md)   
+[_open, _wopen](../../c-runtime-library/reference/open-wopen.md)   
+[_write](../../c-runtime-library/reference/write.md)
+

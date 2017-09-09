@@ -1,83 +1,100 @@
 ---
-title: "環境変数 CL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cl.exe コンパイラ, 環境変数"
-  - "環境変数, CL コンパイラ"
-  - "INCLUDE 環境変数"
-  - "LIBPATH 環境変数"
+title: CL Environment Variables | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- cl
+dev_langs:
+- C++
+helpviewer_keywords:
+- INCLUDE environment variable
+- cl.exe compiler, environment variables
+- LIBPATH environment variable
+- environment variables, CL compiler
 ms.assetid: 2606585b-a681-42ee-986e-1c9a2da32108
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 環境変数 CL
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 0286098cb87ecfea244269a8e5756829759b82f7
+ms.openlocfilehash: 0a70eb5486b80be0451be89549b51c7335cd03fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
-CL ツールでは、次の環境変数を使用します。  
+---
+# <a name="cl-environment-variables"></a>CL Environment Variables
+The CL tool uses the following environment variables:  
   
--   CL と \_CL\_ \(定義されている場合\)。  CL ツールは、処理の前に、コマンド ライン引数の先頭に環境変数 CL に定義されているオプションと引数を追加し、\_CL\_ に定義されているオプションと引数をコマンド ライン引数の末尾に追加します。  
+-   CL and _CL\_, if defined. The CL tool prepends the options and arguments defined in the CL environment variable to the command line arguments, and appends the options and arguments defined in _CL\_, before processing.  
   
--   INCLUDE。Visual C\+\+ インストールの \\include サブディレクトリを示す必要があります。  
+-   INCLUDE, which must point to the \include subdirectory of your Visual C++ installation.  
   
--   LIBPATH。[\#using](../../preprocessor/hash-using-directive-cpp.md) を使用して参照するメタデータ ファイルを検索するディレクトリを指定します。  LIBPATH の詳細については、`#using` の説明を参照してください。  
+-   LIBPATH, which specifies directories to search for metadata files referenced with [#using](../../preprocessor/hash-using-directive-cpp.md). See `#using` for more information on LIBPATH.  
   
- CL または \_CL\_ 環境変数は、次の構文を使用して設定できます。  
+ You can set the CL or _CL\_ environment variable using the following syntax:  
   
 ```  
 SET CL=[ [option] ... [file] ...] [/link link-opt ...]  
 SET _CL_=[ [option] ... [file] ...] [/link link-opt ...]  
 ```  
   
- CL および \_CL\_ 環境変数の詳細については、「[コンパイラのコマンド ライン構文](../../build/reference/compiler-command-line-syntax.md)」を参照してください。  
+ For details on the arguments to the CL and _CL\_ environment variables, see [Compiler Command-Line Syntax](../../build/reference/compiler-command-line-syntax.md).  
   
- これらの環境変数を使用してよく使用するファイルやオプションを定義し、コマンド ラインを使用して特定用途向けの特定のファイルおよびオプションを定義できます。  CL および \_CL\_ 環境変数は、1,024 文字 \(コマンド ラインの入力の制限\) に制限されます。  
+ You can use these environment variables to define the files and options you use most often and use the command line to define specific files and options for specific purposes. The CL and _CL\_ environment variables are limited to 1024 characters (the command-line input limit).  
   
- \/D オプションを使用して等号 \(\=\) を使用するシンボルを定義することはできません。  等号の代わりにシャープ記号 \(\#\) を使用することができます。  このように、CL または \_CL\_ 環境変数を使用して、明示的な値を持つプリプロセッサ定数を定義できます \(たとえば、`DEBUG=1` を定義する `/DDEBUG#1`\)。  
+ You cannot use the /D option to define a symbol that uses an equal sign (=). You can substitute the number sign (#) for an equal sign. In this way, you can use the CL or _CL_environment variables to define preprocessor constants with explicit values—for example, `/DDEBUG#1` to define `DEBUG=1`.  
   
- 関連情報については、「[環境変数の設定](../../build/setting-the-path-and-environment-variables-for-command-line-builds.md)」を参照してください。  
+ For related information, see [Set Environment Variables](../../build/setting-the-path-and-environment-variables-for-command-line-builds.md).  
   
-## 使用例  
- CL 環境変数の設定例を次に示します。  
+## <a name="examples"></a>Examples  
+ The following is an example of setting the CL environment variable:  
   
 ```  
 SET CL=/Zp2 /Ox /I\INCLUDE\MYINCLS \LIB\BINMODE.OBJ  
 ```  
   
- この環境変数が設定されているときにコマンド ラインで「`CL INPUT.C`」と入力した場合、次のコマンドは有効です。  
+ When this environment variable is set, if you enter `CL INPUT.C` at the command line, this is the effective command:  
   
 ```  
 CL /Zp2 /Ox /I\INCLUDE\MYINCLS \LIB\BINMODE.OBJ INPUT.C  
 ```  
   
- 次の例では、単純な CL コマンドを実行すると、FILE1.c および FILE2.c の各ソース ファイルがコンパイルされ、FILE1.obj、FILE2.obj、および FILE3.obj の各オブジェクト ファイルがリンクされます。  
+ The following example causes a plain CL command to compile the source files FILE1.c and FILE2.c, and then link the object files FILE1.obj, FILE2.obj, and FILE3.obj:  
   
 ```  
 SET CL=FILE1.C FILE2.C  
 SET _CL_=FILE3.OBJ  
 CL  
-  
 ```  
   
- これは、次のコマンド ラインと同じ効果を持ちます。  
+ This has the same effect as the following command line:  
   
 ```  
 CL FILE1.C FILE2.C FILE3.OBJ  
 ```  
   
-## 参照  
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [コンパイラ オプション](../../build/reference/compiler-options.md)
+## <a name="see-also"></a>See Also  
+ [Setting Compiler Options](../../build/reference/setting-compiler-options.md)   
+ [Compiler Options](../../build/reference/compiler-options.md)
+
