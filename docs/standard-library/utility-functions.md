@@ -1,5 +1,5 @@
 ---
-title: "&lt;utility&gt; 関数 | Microsoft Docs"
+title: '&lt;utility&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,38 +15,45 @@ f1_keywords:
 ms.assetid: b1df38cd-3a59-4098-9c81-83342eb719a4
 caps.latest.revision: 7
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 814fa9960e5507846f9d2846c15bdde7177b8678
-ms.lasthandoff: 02/24/2017
+helpviewer_keywords:
+- std::exchange [C++]
+- std::forward [C++]
+- std::make_pair [C++]
+- std::move [C++]
+- std::swap [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: e215a80647ad3927325cd9ffbd59e9029eeace7b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltutilitygt-functions"></a>&lt;utility&gt; 関数
+# <a name="ltutilitygt-functions"></a>&lt;utility&gt; functions
 ||||  
 |-|-|-|  
-|[exchange](#exchange)|[forward](#forward)|[get 関数 &lt;utility&gt;](#get)|  
+|[exchange](#exchange)|[forward](#forward)|[get Function &lt;utility&gt;](#get)|  
 |[make_pair](#make_pair)|[move](#move)|[swap](#swap)|  
   
 ##  <a name="exchange"></a>  exchange  
- **(C++14)** オブジェクトに新しい値を代入し、古い値を返します。  
+ **(C++14)** Assigns a new value to an object and returns its old value.  
   
 ```cpp  
 template <class T, class Other = T>
 T exchange(T& val, Other&& new_val)
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- new_val の値を受け取るオブジェクト。  
+ The object that will receive the value of new_val.  
   
  `new_val`  
- 値が val にコピーまたは移動されるオブジェクト。  
+ The object whose value is copied or moved into val.  
   
-### <a name="remarks"></a>コメント  
- 複合型の場合、`exchange` は、move コンストラクターが使用可能な場合に古い値がコピーされることを防ぎ、一時オブジェクトの場合や移動された場合は新しい値がコピーされることを防いで任意の型を新しい値として受け入れ、利用可能な任意の変換代入演算子を利用します。 左側の引数が右側に移動またはコピーされないという点で、exchange 関数は [std::swap](../standard-library/algorithm-functions.md#swap) と異なります。  
+### <a name="remarks"></a>Remarks  
+ For complex types, `exchange` avoids copying the old value when a move constructor is available, avoids copying the new value if it’s a temporary object or is moved, and accepts any type as the new value, using any available converting assignment operator. The exchange function is different from [std::swap](../standard-library/algorithm-functions.md#swap) in that the left argument is not moved or copied to the right argument.  
   
-### <a name="example"></a>例  
-  次の例は、`exchange` を使用する方法を示しています。 実際には、`exchange` はコピーすると負荷がかかる大きなオブジェクトでの利用に最も適しています。  
+### <a name="example"></a>Example  
+  The following example shows how to use `exchange`. In the real world, `exchange` is most useful with large objects that are expensive to copy:  
   
 ```  
 #include <utility>  
@@ -77,7 +84,7 @@ The new value of c1 after exchange is: 2
 ```  
   
 ##  <a name="forward"></a>  forward  
- 引数が右辺値または右辺値参照である場合に、条件付きで引数を右辺値参照にキャストします。 これによって、完全転送をサポートする転送関数に対する引数の右辺値性が復元されます。  
+ Conditionally casts its argument to an rvalue reference if the argument is an rvalue or rvalue reference. This restores the rvalue-ness of an argument to the forwarding function in support of perfect forwarding.  
   
 ```
 template <class Type>    // accepts lvalues
@@ -87,25 +94,25 @@ template <class Type>    // accepts everything else
 constexpr Type&& forward(typename remove_reference<Type>::type&& Arg) noexcept
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Type`|`Arg` で渡される値の型は、`Arg` の型とは異なる場合があります。 通常、転送関数のテンプレート引数によって決まります。|  
-|`Arg`|キャストする引数。|  
+|`Type`|The type of the value passed in `Arg`, which might be different than the type of `Arg`. Typically determined by a template argument of the forwarding function.|  
+|`Arg`|The argument to cast.|  
   
-### <a name="return-value"></a>戻り値  
- `Arg` に渡された値が最初は右辺値または右辺値参照であった場合、`Arg` への右辺値参照を返します。それ以外の場合は、型を変更しないで `Arg` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns an rvalue reference to `Arg` if the value passed in `Arg` was originally an rvalue or a reference to an rvalue; otherwise, returns `Arg` without modifying its type.  
   
-### <a name="remarks"></a>コメント  
- `forward` を呼び出すために明示的なテンプレート引数を指定する必要があります。  
+### <a name="remarks"></a>Remarks  
+ You must specify an explicit template argument to call `forward`.  
   
- `forward` は引数を転送しません。 代わりに、引数が元から右辺値または右辺値参照であった場合、条件付きで引数を右辺値参照にキャストすることにより、`forward` は、転送された引数の元の型の情報を使って、コンパイラでオーバーロードを解決できるようにします。 転送関数の引数の明確な型は元の型とは異なる場合があります。たとえば、右辺値が関数の引数として使用され、パラメーター名にバインドされている場合、名前を付けると、その値が実際に右辺値として存在するかどうかに関係なく左辺値になります。`forward` は引数の右辺値性を復元します。  
+ `forward` does not forward its argument. Instead, by conditionally casting its argument to an rvalue reference if it was originally an rvalue or rvalue reference, `forward` enables the compiler to perform overload resolution with knowledge of the forwarded argument's original type. The apparent type of an argument to a forwarding function might be different than its original type—for example, when an rvalue is used as an argument to a function and is bound to a parameter name; having a name makes it an lvalue, regardless of whether the value actually exists as an rvalue— `forward` restores the rvalue-ness of the argument.  
   
- オーバーロードの解決を実行するために引数の元の値の右辺値性を復元することは、*完全転送*と呼ばれます。 完全転送によって、テンプレート関数はいずれかの参照型の引数を受け取り、正しいオーバーロードの解決に必要な場合に引数の右辺値性を復元できます。 完全転送を使用することによって、右辺値の移動セマンティクスを保持することができ、引数の参照型のみが異なる関数にオーバーロードを用意する必要がなくなります。  
+ Restoring the rvalue-ness of an argument's original value in order to perform overload resolution is known as *perfect forwarding*. Perfect forwarding enables a template function to accept an argument of either reference type and to restore its rvalue-ness when it's necessary for correct overload resolution. By using perfect forwarding, you can preserve move semantics for rvalues and avoid having to provide overloads for functions that vary only by the reference type of their arguments.  
   
 ##  <a name="get"></a>  get  
- `pair` オブジェクトから、インデックスの位置または型を使用して要素を取得します。  
+ Gets an element from a `pair` object by index position, or by type.  
   
 ```
 // get reference to element at Index in pair Pr
@@ -148,27 +155,27 @@ template <class T2, class T1>
 constexpr T2&& get(pair<T1, T2>&& Pr) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Index`  
- 指定した要素の 0 ベースのインデックス。  
+ The 0-based index of the designated element.  
   
  `T1`  
- 1 番目の pair 要素の型。  
+ The type of the first pair element.  
   
  `T2`  
- 2 番目の pair 要素の型。  
+ The type of the second pair element.  
   
  `pr`  
- 選択する pair。  
+ The pair to select from.  
   
-### <a name="remarks"></a>コメント  
- 各テンプレート関数は、 `pair` 引数の要素への参照を返します。  
+### <a name="remarks"></a>Remarks  
+ The template functions each return a reference to an element of its `pair` argument.  
   
- インデックスを使用したオーバーロードでは、関数は、 `Index` の値が 0 の場合は `pr.first` を返し、 `Index` の値が 1 の場合は `pr.second`を返します。 型 `RI` は、返される要素の型です。  
+ For the indexed overloads, if the value of `Index` is 0 the functions return `pr.first` and if the value of `Index` is 1 the functions return `pr.second`. The type `RI` is the type of the returned element.  
   
- インデックス パラメーターがないオーバーロードでは、返される要素は型の引数によって推測されます。 `get<T>(Tuple)` に含まれる型 T の要素の数が&1; より多いか少ない場合、 `pr` を呼び出すと、コンパイラ エラーが生成されます。  
+ For the overloads that do not have an Index parameter, the element to return is deduced by the type argument. Calling `get<T>(Tuple)` will produce a compiler error if `pr` contains more or less than one element of type T.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 #include <utility>  
@@ -200,7 +207,7 @@ int main()
 ```  
   
 ##  <a name="make_pair"></a>  make_pair  
- `pair` 型のオブジェクトを作成するために使用できるテンプレート関数。コンポーネントの型は、パラメーターとして渡されるデータ型に基づいて自動的に選択されます。  
+ A template function that you can use to construct objects of type `pair`, where the component types are automatically chosen based on the data types that are passed as parameters.  
   
 ```
 template <class T, class U>
@@ -216,78 +223,78 @@ template <class T, class U>
 pair<T, U> make_pair(T&& Val1, U&& Val2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Val1`  
- `pair` の最初の要素を初期化する値。  
+ Value that initializes the first element of `pair`.  
   
  `Val2`  
- `pair` の&2; 番目の要素を初期化する値。  
+ Value that initializes the second element of `pair`.  
   
-### <a name="return-value"></a>戻り値  
- 作成されたペア オブジェクト: `pair`< `T`, `U`>( `Val1`, `Val2`)  
+### <a name="return-value"></a>Return Value  
+ The pair object that's constructed: `pair`< `T`, `U`>( `Val1`, `Val2`).  
   
-### <a name="remarks"></a>コメント  
- `make_pair` は、[reference_wrapper Class](../standard-library/reference-wrapper-class.md) 型のオブジェクトを参照型に変換し、減衰配列および関数をポインターに変換します。  
+### <a name="remarks"></a>Remarks  
+ `make_pair` converts object of type [reference_wrapper Class](../standard-library/reference-wrapper-class.md) to reference types and converts decaying arrays and functions to pointers.  
   
- 返された `pair` オブジェクトで、`T` は次のように決定されます。  
+ In the returned `pair` object, `T` is determined as follows:  
   
--   入力の型 `T` が `reference_wrapper<X>` である場合、戻り値の型 `T` は `X&` です。  
+-   If the input type `T` is `reference_wrapper<X>`, the returned type `T` is `X&`.  
   
--   それ以外の場合、戻り値の型 `T` は `decay<T>::type` になります。 [decay Class](../standard-library/decay-class.md) がサポートされない場合、戻り値の型 `T` は、入力の型 `T` と同じです。  
+-   Otherwise, the returned type `T` is `decay<T>::type`. If [decay Class](../standard-library/decay-class.md) is not supported, the returned type `T` is the same as the input type `T`.  
   
- 戻り値の型 `U` は、入力の型 `U` から同様に決定されます。  
+ The returned type `U` is similarly determined from the input type `U`.  
   
- `make_pair` の利点の&1; つは、格納されるオブジェクトの型がコンパイラによって自動的に決定され、明示的に指定する必要がないことです。 `make_pair<int, int>(1, 2)` を使用する場合は、`make_pair` などの明示的なテンプレート引数を使用しないでください。これは、不必要に詳細になり、複雑な右辺値参照の問題が追加され、コンパイル エラーの原因となる可能性があるためです。 この例の場合、正しい構文は `make_pair(1, 2)` です。  
+ One advantage of `make_pair` is that the types of objects that are being stored are determined automatically by the compiler and do not have to be explicitly specified. Don't use explicit template arguments such as `make_pair<int, int>(1, 2)` when you use `make_pair` because it is unnecessarily verbose and adds complex rvalue reference problems that might cause compilation failure. For this example, the correct syntax would be `make_pair(1, 2)`  
   
- `make_pair` ヘルパー関数は、入力パラメーターとしてペアを必要とする関数に&2; 個の値を渡すこともできます。  
+ The `make_pair` helper function also makes it possible to pass two values to a function that requires a pair as an input parameter.  
   
-### <a name="example"></a>例  
-  `make_pair` ヘルパー関数を使用してペアを宣言して初期化する方法の例については、「[pair 構造体](../standard-library/pair-structure.md)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example about how to use the helper function `make_pair` to declare and initialize a pair, see [pair Structure](../standard-library/pair-structure.md).  
   
 ##  <a name="move"></a>  move  
- 無条件に引数を右辺値参照にキャストし、型の移動が有効である場合に型が移動できることを通知します。  
+ Unconditionally casts its argument to an rvalue reference, and thereby signals that it can be moved if its type is move-enabled.  
   
 ```
 template <class Type>
 constexpr typename remove_reference<Type>::type&& move(Type&& Arg) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Type`|`Arg` で渡された引数の型と、参照縮小規則から推論される型。|  
-|`Arg`|キャストする引数。 `Arg` の型が右辺値参照として指定されているように見えますが、`move` では、左辺値参照を右辺値参照にバインドできるため、左辺値参照も受け取ります。|  
+|`Type`|A type deduced from the type of the argument passed in `Arg`, together with the reference collapsing rules.|  
+|`Arg`|The argument to cast. Although the type of `Arg` appears to be specified as an rvalue reference, `move` also accepts lvalue arguments because lvalue references can bind to rvalue references.|  
   
-### <a name="return-value"></a>戻り値  
- 型が参照型であるかどうかに関係なく、右辺値参照としての `Arg`。  
+### <a name="return-value"></a>Return Value  
+ `Arg` as an rvalue reference, whether or not its type is a reference type.  
   
-### <a name="remarks"></a>コメント  
- テンプレート引数 `Type` は明示的に指定されるものではなく、`Arg` で渡される値の型から推論されます。 `Type` の型は、参照縮小規則に従ってさらに調整されます。  
+### <a name="remarks"></a>Remarks  
+ The template argument `Type` is not intended to be specified explicitly, but to be deduced from the type of the value passed in `Arg`. The type of `Type` is further adjusted according to the reference collapsing rules.  
   
- `move` は引数を移動しません。 代わりに、その引数 (左辺値である可能性がある) を無条件に右辺値参照にキャストすることにより、型の移動が有効である場合、コンパイラは `Arg` に渡された値をコピーではなく移動できます。 型の移動が有効ではない場合は、代わりにコピーされます。  
+ `move` does not move its argument. Instead, by unconditionally casting its argument—which might be an lvalue—to an rvalue reference, it enables the compiler to subsequently move, rather than copy, the value passed in `Arg` if its type is move-enabled. If its type is not move-enabled, it is copied instead.  
   
- `Arg` で渡された値が左辺値である場合、つまり、名前を持つ場合や、そのアドレスを取得できる場合、移動が発生したときに無効になります。 移動した後、名前またはアドレスによって、`Arg` に渡された値を参照しないでください。  
+ If the value passed in `Arg` is an lvalue—that is, it has a name or its address can be taken—it's invalidated when the move occurs. Do not refer to the value passed in `Arg` by its name or address after it's been moved.  
   
 ##  <a name="swap"></a>  swap  
- 2 つの [pair 構造体](../standard-library/pair-structure.md)オブジェクトの要素を交換します。  
+ Exchanges the elements of two [pair Structure](../standard-library/pair-structure.md) objects.  
   
 ```
 template <class T, class U>  
 void swap(pair<T, U>& left, pair<T, U>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`pair` 型のオブジェクト。|  
-|`right`|`pair` 型のオブジェクト。|  
+|`left`|An object of type `pair`.|  
+|`right`|An object of type `pair`.|  
   
-### <a name="remarks"></a>コメント  
- `swap` の利点の&1; つは、格納されるオブジェクトの型がコンパイラによって自動的に決定され、明示的に指定する必要がないことです。 `swap<int, int>(1, 2)` を使用する場合は、`swap` などの明示的なテンプレート引数を使用しないでください。これは、不必要に詳細になり、複雑な右辺値参照の問題が追加され、コンパイル エラーの原因となる可能性があるためです。  
+### <a name="remarks"></a>Remarks  
+ One advantage of `swap` is that the types of objects that are being stored are determined automatically by the compiler and do not have to be explicitly specified. Don't use explicit template arguments such as `swap<int, int>(1, 2)` when you use `swap` because it is unnecessarily verbose and adds complex rvalue reference problems that might cause compilation failure.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<utility>](../standard-library/utility.md)
 
 

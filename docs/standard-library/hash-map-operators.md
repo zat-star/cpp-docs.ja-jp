@@ -1,23 +1,27 @@
 ---
-title: "&lt;hash_map&gt; 演算子 | Microsoft Docs"
+title: '&lt;hash_map&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- hash_map/std::operator!=
+- hash_map/std::operator==
+dev_langs:
+- C++
 ms.assetid: 24b9bb9e-e983-4060-bce5-2c7c8161ee61
 caps.latest.revision: 13
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 7d47da5bcdb614e5eaf43fbabbe836226e3f907b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 11e3f989709f34b43ec7c84601c157a7e9b0d163
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="lthashmapgt-operators"></a>&lt;hash_map&gt; 演算子
+# <a name="lthashmapgt-operators"></a>&lt;hash_map&gt; operators
 |||  
 |-|-|  
 |[operator!=](#op_neq)|[operator!=](#op_neq)|
@@ -25,30 +29,30 @@ ms.lasthandoff: 04/29/2017
 ##  <a name="op_neq"></a>  operator!=  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_map クラス](../standard-library/unordered-map-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_map Class](../standard-library/unordered-map-class.md).  
   
- 演算子の左辺の hash_map オブジェクトが右辺の hash_map オブジェクトと等しくないかどうかを調べます。  
+ Tests if the hash_map object on the left side of the operator is not equal to the hash_map object on the right side.  
   
 ```  
 bool operator!=(const hash_map <Key, Type, Traits, Allocator>& left, const hash_map <Key, Type, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_map` 型のオブジェクト。  
+ An object of type `hash_map`.  
   
  `right`  
- `hash_map` 型のオブジェクト。  
+ An object of type `hash_map`.  
   
-### <a name="return-value"></a>戻り値  
- hash_maps が等しくない場合は **true**、hash_maps が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_maps are not equal; **false** if hash_maps are equal.  
   
-### <a name="remarks"></a>コメント  
- hash_map オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_maps は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_map objects is based on a pairwise comparison of their elements. Two hash_maps are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
- メンバー、 [< hash_map >](../standard-library/hash-map.md)と[< hash_set >](../standard-library/hash-set.md)でファイルのヘッダー、 [ stdext Namespace](../standard-library/stdext-namespace.md)です。  
+ Members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files in the [ stdext Namespace](../standard-library/stdext-namespace.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_map_op_ne.cpp  
@@ -91,28 +95,28 @@ The hash_maps hm1 and hm3 are equal.
 ##  <a name="op_eq_eq"></a>  operator== 
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_map クラス](../standard-library/unordered-map-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_map Class](../standard-library/unordered-map-class.md).  
   
- 演算子の左辺の hash_map オブジェクトが右辺の hash_map オブジェクトと等しいかどうかを調べます。  
+ Tests if the hash_map object on the left side of the operator is equal to the hash_map object on the right side.  
   
 ```  
 bool operator==(const hash_map <Key, Type, Traits, Allocator>& left, const hash_map <Key, Type, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_map` 型のオブジェクト。  
+ An object of type `hash_map`.  
   
  `right`  
- `hash_map` 型のオブジェクト。  
+ An object of type `hash_map`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の hash_map が演算子の右辺の hash_map と等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_map on the left side of the operator is equal to the hash_map on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- hash_map オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_maps は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_map objects is based on a pairwise comparison of their elements. Two hash_maps are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
     
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_map_op_eq.cpp  
@@ -155,28 +159,28 @@ The hash_maps hm1 and hm3 are equal.
 ##  <a name="op_neq"></a>  operator!=  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
+>  This API is obsolete. The alternative is [unordered_multimap Class](../standard-library/unordered-multimap-class.md).  
   
- 演算子の左側の hash_multimap オブジェクトが右側の hash_multimap オブジェクトと等しくないかどうかをテストします。  
+ Tests if the hash_multimap object on the left side of the operator is not equal to the hash_multimap object on the right side.  
   
 ```  
 bool operator!=(const hash_multimap <Key, Type, Traits, Allocator>& left, const hash_multimap <Key, Type, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_multimap` 型のオブジェクト。  
+ An object of type `hash_multimap`.  
   
  `right`  
- `hash_multimap` 型のオブジェクト。  
+ An object of type `hash_multimap`.  
   
-### <a name="return-value"></a>戻り値  
- hash_multimaps が等しくない場合は **true**、hash_multimaps が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_multimaps are not equal; **false** if hash_multimaps are equal.  
   
-### <a name="remarks"></a>コメント  
- hash_multimap オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_multimaps は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_multimap objects is based on a pairwise comparison of their elements. Two hash_multimaps are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
    
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_multimap_op_ne.cpp  
@@ -219,28 +223,28 @@ The hash_multimaps hm1 and hm3 are equal.
 ##  <a name="op_eq_eq"></a>  operator==  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代替が必要な場合は、[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)をご使用ください。  
+>  This API is obsolete. The alternative is [unordered_multimap Class](../standard-library/unordered-multimap-class.md).  
   
- 演算子の左側の hash_multimap オブジェクトが右側の hash_multimap オブジェクトと等しいかどうかをテストします。  
+ Tests if the hash_multimap object on the left side of the operator is equal to the hash_multimap object on the right side.  
   
 ```  
 bool operator==(const hash_multimap <Key, Type, Traits, Allocator>& left, const hash_multimap <Key, Type, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_multimap` 型のオブジェクト。  
+ An object of type `hash_multimap`.  
   
  `right`  
- `hash_multimap` 型のオブジェクト。  
+ An object of type `hash_multimap`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の hash_multimap が演算子の右辺の hash_multimap と等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_multimap on the left side of the operator is equal to the hash_multimap on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- hash_multimap オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_multimaps は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_multimap objects is based on a pairwise comparison of their elements. Two hash_multimaps are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_multimap_op_eq.cpp  
@@ -280,7 +284,7 @@ The hash_multimaps hm1 and hm2 are not equal.
 The hash_multimaps hm1 and hm3 are equal.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<hash_map>](../standard-library/hash-map.md)
 
 

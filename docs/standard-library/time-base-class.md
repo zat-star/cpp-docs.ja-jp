@@ -1,5 +1,5 @@
 ---
-title: "time_base クラス | Microsoft Docs"
+title: time_base Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- time_base
 - locale/std::time_base
 dev_langs:
 - C++
@@ -34,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 54b8f19ef063727c21559ab85e85255643131b87
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 6342dfcacd83a83a39877b39328e5c2563205a25
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="timebase-class"></a>time_base クラス
-このクラスは、time_get テンプレート クラスのファセットの基底クラスとして使用されます。**dateorder** 列挙型とこの型の複数の定数のみを定義します。  
+# <a name="timebase-class"></a>time_base Class
+The class serves as a base class for facets of template class time_get, defining just the enumerated type **dateorder** and several constants of this type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class time_base : public locale::facet {
@@ -61,26 +60,26 @@ public:
 };
 ```  
   
-## <a name="remarks"></a>コメント  
- 各定数は、日付部分を順序付けるための異なる方法を特徴付けます。 定数は次のとおりです。  
+## <a name="remarks"></a>Remarks  
+ Each constant characterizes a different way to order the components of a date. The constants are:  
   
-- **no_order** は、特定の順序を指定しません。  
+- **no_order** specifies no particular order.  
   
-- **dmy** は、2 December 1979 のように日、月、年という順序を指定します。  
+- **dmy** specifies the order day, month, then year, as in 2 December 1979.  
   
-- **dmy** は、December 2, 1979 のように、月、日、年という順序を指定します。  
+- **mdy** specifies the order month, day, then year, as in December 2, 1979.  
   
-- **ymd** は、1979/12/2 のように、年、月、日という順序を指定します。  
+- **ymd** specifies the order year, month, then day, as in 1979/12/2.  
   
-- **ymd** は、1979: 2 Dec のように、年、日、月という順序を指定します。  
+- **ydm** specifies the order year, day, then month, as in 1979: 2 Dec.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

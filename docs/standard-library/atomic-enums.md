@@ -1,25 +1,29 @@
 ---
-title: "&lt;atomic&gt; 列挙型 | Microsoft Docs"
+title: '&lt;atomic&gt; enums | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- atomic/std::memory_order
 ms.assetid: cd3a81c5-a19e-448f-952a-c34c717f21a9
 caps.latest.revision: 11
+helpviewer_keywords:
+- std::memory_order
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 94167b5068e3fb1370528d42c80d338a486cd68e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 4d0c60a908d795d8bf9fa7643471c6c9f29cc1cf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltatomicgt-enums"></a>&lt;atomic&gt; 列挙型
+# <a name="ltatomicgt-enums"></a>&lt;atomic&gt; enums
   
-##  <a name="memory_order_enum"></a>  memory_order 列挙型  
- メモリ位置に対する同期操作のシンボル名を提供します。 これらの操作は、1 つのスレッドの割り当てが別のスレッドにおいて表示される方法に影響します。  
+##  <a name="memory_order_enum"></a>  memory_order Enum  
+ Supplies symbolic names for synchronization operations on memory locations. These operations affect how assignments in one thread become visible in another.  
   
 ```
 typedef enum memory_order {
@@ -32,18 +36,18 @@ typedef enum memory_order {
 } memory_order;
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 |||  
 |-|-|  
-|`memory_order_relaxed`|順序付けは必要ありません。|  
-|`memory_order_consume`|読み込み操作は、メモリ位置に対する消費操作として機能します。|  
-|`memory_order_acquire`|読み込み操作は、メモリ位置に対する取得操作として機能します。|  
-|`memory_order_release`|格納操作は、メモリ位置に対する開放操作として機能します。|  
-|`memory_order_acq_rel`|`memory_order_acquire` と `memory_order_release` を組み合わせます。|  
-|`memory_order_seq_cst`|`memory_order_acquire` と `memory_order_release` を組み合わせます。 `memory_order_seq_cst` としてマークされたメモリ アクセスには、順番に一貫性がある必要があります。|  
+|`memory_order_relaxed`|No ordering required.|  
+|`memory_order_consume`|A load operation acts as a consume operation on the memory location.|  
+|`memory_order_acquire`|A load operation acts as an acquire operation on the memory location.|  
+|`memory_order_release`|A store operation acts as a release operation on the memory location.|  
+|`memory_order_acq_rel`|Combines `memory_order_acquire` and `memory_order_release`.|  
+|`memory_order_seq_cst`|Combines `memory_order_acquire` and `memory_order_release`. Memory accesses that are marked as `memory_order_seq_cst` must be sequentially consistent.|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<atomic>](../standard-library/atomic.md)
 
 

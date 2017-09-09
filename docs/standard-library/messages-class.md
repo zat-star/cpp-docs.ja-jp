@@ -1,5 +1,5 @@
 ---
-title: "messages クラス | Microsoft Docs"
+title: messages Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- messages
 - xlocmes/std::messages
 - locale/std::messages::char_type
 - locale/std::messages::string_type
@@ -22,7 +21,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- messages class
+- std::messages [C++]
+- std::messages [C++], char_type
+- std::messages [C++], string_type
+- std::messages [C++], close
+- std::messages [C++], do_close
+- std::messages [C++], do_get
+- std::messages [C++], do_open
+- std::messages [C++], get
+- std::messages [C++], open
 ms.assetid: c4c71f40-4f24-48ab-9f7c-daccd8d5bd83
 caps.latest.revision: 18
 author: corob-msft
@@ -42,108 +49,108 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 8a3c647c9c64f2783bf2bc6d2eee86d7107af8d2
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d81b70d987cbf9c6a08ea5db6338606531d5f0a5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="messages-class"></a>messages クラス
-このテンプレート クラスは、特定のロケールの国際化メッセージのカタログからローカライズされたメッセージを取得するためにロケールのファセットとして使用できるオブジェクトを表します。  
+# <a name="messages-class"></a>messages Class
+The template class describes an object that can serve as a locale facet to retrieve localized messages from a catalog of internationalized messages for a given locale.  
   
- 現在、messages クラスは実装されていますが、メッセージはありません。  
+ Currently, while the messages class is implemented, there are no messages.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class CharType>  
 class messages : public messages_base;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- ロケールの文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters in a locale.  
   
-## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
+## <a name="remarks"></a>Remarks  
+ As with any locale facet, the static object ID has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in **id.**  
   
- このファセットは基本的に基底クラスの messages_base で定義されているメッセージのカタログを開き、必要な情報を取得し、カタログを閉じます。  
+ This facet basically opens a catalog of messages defined in the base class messages_base, retrieves the information required, and closes the catalog.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[messages](#messages)|メッセージのファセット コンストラクター関数。|  
+|[messages](#messages)|The message facet constructor function.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|メッセージを表示するために使用される文字型。|  
-|[string_type](#string_type)|`basic_string` 型の文字を格納する `CharType` 型の文字列を表す型。|  
+|[char_type](#char_type)|A character type that is used display messages.|  
+|[string_type](#string_type)|A type that describes a string of type `basic_string` containing characters of type `CharType`.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[close](#close)|メッセージ カタログを閉じます。|  
-|[do_close](#do_close)|メッセージ カタログを閉じるために呼び出される仮想関数。|  
-|[do_get](#do_get)|メッセージ カタログを取得するために呼び出される仮想関数。|  
-|[do_open](#do_open)|メッセージ カタログを開くために呼び出される仮想関数。|  
-|[get](#get)|メッセージ カタログを取得します。|  
-|[open](#open)|メッセージ カタログを開きます。|  
+|[close](#close)|Closes the message catalog.|  
+|[do_close](#do_close)|A virtual function called to lose the message catalog.|  
+|[do_get](#do_get)|A virtual function called to retrieve the message catalog.|  
+|[do_open](#do_open)|A virtual function called to open the message catalog.|  
+|[get](#get)|Retrieves the message catalog.|  
+|[open](#open)|Opens the message catalog.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  messages::char_type  
- メッセージを表示するために使用される文字型。  
+ A character type that is used display messages.  
   
 ```
 typedef CharType char_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
 ##  <a name="close"></a>  messages::close  
- メッセージ カタログを閉じます。  
+ Closes the message catalog.  
   
 ```
 void close(catalog _Catval) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catval`  
- 終了するカタログ。  
+ The catalog to be closed.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_close](#do_close)(_ *Catval*) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The member function calls [do_close](#do_close)(_ *Catval*).  
   
 ##  <a name="do_close"></a>  messages::do_close  
- メッセージ カタログを閉じるために呼び出される仮想関数。  
+ A virtual function called to lose the message catalog.  
   
 ```
 virtual void do_close(catalog _Catval) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catval`  
- 終了するカタログ。  
+ The catalog to be closed.  
   
-### <a name="remarks"></a>コメント  
- プロテクト メンバー関数は、メッセージ カタログ `_Catval` を閉じます。メッセージ カタログは、[do_open](#do_open) への事前の呼び出しで開かれている必要があります。  
+### <a name="remarks"></a>Remarks  
+ The protected member function closes the message catalog `_Catval`, which must have been opened by an earlier call to [do_open](#do_open).  
   
- *_Catval* は、以前に開かれ、まだ閉じていないカタログから取得する必要があります。  
+ *_Catval* must be obtained from a previously opened catalog that is not closed.  
   
-### <a name="example"></a>例  
-  [close](#close) の例 (`do_close` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [close](#close), which calls `do_close`.  
   
 ##  <a name="do_get"></a>  messages::do_get  
- メッセージ カタログを取得するために呼び出される仮想関数。  
+ A virtual function called to retrieve the message catalog.  
   
 ```
 virtual string_type do_get(
@@ -153,30 +160,30 @@ virtual string_type do_get(
     const string_type& _Dfault) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catval`  
- 検索されるメッセージ カタログを示す識別値。  
+ The identification value specifying the message catalog to be searched.  
   
  `_Set`  
- メッセージ カタログ内のメッセージの検索に使用される最初の識別値。  
+ The first identified used to locate a message in a message catalog.  
   
  `_Message`  
- メッセージ カタログ内のメッセージの検索に使用される 2 番目の識別値。  
+ The second identified used to locate a message in a message catalog.  
   
  `_Dfault`  
- 失敗した場合に返される文字列。  
+ The string to be returned on failure.  
   
-### <a name="return-value"></a>戻り値  
- 失敗した場合は、`_Dfault` のコピーを返します。 それ以外の場合は、指定したメッセージ シーケンスのコピーを返します。  
+### <a name="return-value"></a>Return Value  
+ It returns a copy of `_Dfault` on failure. Otherwise, it returns a copy of the specified message sequence.  
   
-### <a name="remarks"></a>コメント  
- プロテクト メンバー関数は、メッセージ カタログ `_Catval` からメッセージ シーケンスを取得しようとします。 その際に、`_Set`、`_Message`、および `_Dfault` を使用する場合があります。  
+### <a name="remarks"></a>Remarks  
+ The protected member function tries to obtain a message sequence from the message catalog `_Catval`. It may make use of `_Set`, `_Message`, and `_Dfault` in doing so.  
   
-### <a name="example"></a>例  
-  [get](#get) の例 (`do_get` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get](#get), which calls `do_get`.  
   
 ##  <a name="do_open"></a>  messages::do_open  
- メッセージ カタログを開くために呼び出される仮想関数。  
+ A virtual function called to open the message catalog.  
   
 ```
 virtual catalog do_open(
@@ -184,26 +191,26 @@ virtual catalog do_open(
     const locale& _Loc) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catname`  
- 検索されるカタログの名前。  
+ The name of the catalog to be searched.  
   
  `_Loc`  
- カタログ内で検索されるロケール。  
+ The locale being searched for in the catalog.  
   
-### <a name="return-value"></a>戻り値  
- 失敗した場合、0 より小さい値を返します。 それ以外の場合は、後で [get](#get) を呼び出すときに、この戻り値を最初の引数として使用できます。  
+### <a name="return-value"></a>Return Value  
+ It returns a value that compares less than zero on failure. Otherwise, the returned value can be used as the first argument on a later call to [get](#get).  
   
-### <a name="remarks"></a>コメント  
- プロテクト メンバー関数は、名前が `_Catname` であるメッセージ カタログを開こうとします。 その際に、ロケール `_Loc` を使用する場合があります。  
+### <a name="remarks"></a>Remarks  
+ The protected member function tries to open a message catalog whose name is `_Catname`. It may make use of the locale `_Loc` in doing so  
   
- 後で [close](#close) を呼び出すときに、この戻り値を引数として使用する必要があります。  
+ The return value should be used as the argument on a later call to [close](#close).  
   
-### <a name="example"></a>例  
-  [open](#open) の例 (`do_open` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [open](#open), which calls `do_open`.  
   
 ##  <a name="get"></a>  messages::get  
- メッセージ カタログを取得します。  
+ Retrieves the message catalog.  
   
 ```
 string_type get(
@@ -213,27 +220,27 @@ string_type get(
     const string_type& _Dfault) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catval`  
- 検索されるメッセージ カタログを示す識別値。  
+ The identification value specifying the message catalog to be searched.  
   
  `_Set`  
- メッセージ カタログ内のメッセージの検索に使用される最初の識別値。  
+ The first identified used to locate a message in a message catalog.  
   
  `_Message`  
- メッセージ カタログ内のメッセージの検索に使用される 2 番目の識別値。  
+ The second identified used to locate a message in a message catalog.  
   
  `_Dfault`  
- 失敗した場合に返される文字列。  
+ The string to be returned on failure.  
   
-### <a name="return-value"></a>戻り値  
- 失敗した場合は、`_Dfault` のコピーを返します。 それ以外の場合は、指定したメッセージ シーケンスのコピーを返します。  
+### <a name="return-value"></a>Return Value  
+ It returns a copy of `_Dfault` on failure. Otherwise, it returns a copy of the specified message sequence.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get](#do_get)( `_Catval`, `_Set`, `_Message`, `_Dfault`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get](#do_get)( `_Catval`, `_Set`, `_Message`, `_Dfault`).  
   
 ##  <a name="messages"></a>  messages::messages  
- メッセージのファセット コンストラクター関数。  
+ The message facet constructor function.  
   
 ```
 explicit messages(
@@ -244,28 +251,28 @@ protected: messages(
     size_t _Refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Refs`  
- オブジェクトのメモリ管理の種類を指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
  `_Locname`  
- ロケールの名前。  
+ The name of the locale.  
   
-### <a name="remarks"></a>コメント  
- `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `_Refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- デストラクターが保護されているため、利用できる直接的な例はありません。  
+ No direct examples are possible, because the destructor is protected.  
   
- コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
+ The constructor initializes its base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`).  
   
 ##  <a name="open"></a>  messages::open  
- メッセージ カタログを開きます。  
+ Opens the message catalog.  
   
 ```
 catalog open(
@@ -273,33 +280,33 @@ catalog open(
     const locale& _Loc) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Catname`  
- 検索されるカタログの名前。  
+ The name of the catalog to be searched.  
   
  `_Loc`  
- カタログ内で検索されるロケール。  
+ The locale being searched for in the catalog.  
   
-### <a name="return-value"></a>戻り値  
- 失敗した場合、0 より小さい値を返します。 それ以外の場合は、後で [get](#get) を呼び出すときに、この戻り値を最初の引数として使用できます。  
+### <a name="return-value"></a>Return Value  
+ It returns a value that compares less than zero on failure. Otherwise, the returned value can be used as the first argument on a later call to [get](#get).  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_open](#do_open)( `_Catname`, `_Loc`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_open](#do_open)( `_Catname`, `_Loc`).  
   
 ##  <a name="string_type"></a>  messages::string_type  
- **CharType** 型の文字を格納する `basic_string` 型の文字列を表す型。  
+ A type that describes a string of type `basic_string` containing characters of type **CharType**.  
   
 ```
 typedef basic_string<CharType, Traits, Allocator> string_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、オブジェクトにメッセージ シーケンスのコピーを格納できるテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes a specialization of template class [basic_string](../standard-library/basic-string-class.md) whose objects can store copies of the message sequences.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [messages_base クラス](../standard-library/messages-base-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [messages_base Class](../standard-library/messages-base-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

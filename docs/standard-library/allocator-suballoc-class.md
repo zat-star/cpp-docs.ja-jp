@@ -1,5 +1,5 @@
 ---
-title: "allocator_suballoc クラス | Microsoft Docs"
+title: allocator_suballoc Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- allocators::allocator_suballoc
-- allocator_suballoc
 - allocators/stdext::allocators::allocator_suballoc
-- stdext::allocators::allocator_suballoc
 - allocators/stdext::allocator_suballoc
 dev_langs:
 - C++
@@ -37,38 +34,38 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: b4b41a1be1880e32bd353699c74fa9964cb3db0c
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 3b9542d4a5999d9f7cb903f903bdb329452cb3bf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="allocatorsuballoc-class"></a>allocator_suballoc クラス
-[cache_suballoc](../standard-library/cache-suballoc-class.md) 型のキャッシュを使用して、`Type` 型のオブジェクトに対し、ストレージの割り当てと解放を管理するオブジェクトを記述します。  
+# <a name="allocatorsuballoc-class"></a>allocator_suballoc Class
+Describes an object that manages storage allocation and freeing for objects of type `Type` using a cache of type [cache_suballoc](../standard-library/cache-suballoc-class.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Type>  
 class allocator_suballoc;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Type`|アロケーターによって割り当てられた要素の型。|  
+|`Type`|The type of elements allocated by the allocator.|  
   
-## <a name="remarks"></a>コメント  
- [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) マクロは、このクラスを次のステートメント内の `name` パラメーターとして渡します: `ALLOCATOR_DECL(CACHE_SUBALLOC, SYNC_DEFAULT, allocator_suballoc);`  
+## <a name="remarks"></a>Remarks  
+ The [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) macro passes this class as the `name` parameter in the following statement: `ALLOCATOR_DECL(CACHE_SUBALLOC, SYNC_DEFAULT, allocator_suballoc);`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<allocators>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<allocators>  
   
- **名前空間:** stdext  
+ **Namespace:** stdext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

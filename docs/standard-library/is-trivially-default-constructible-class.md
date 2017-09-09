@@ -1,5 +1,5 @@
 ---
-title: "is_trivially_default_constructible クラス | Microsoft Docs"
+title: is_trivially_default_constructible Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_trivially_default_constructible
 - type_traits/std::is_trivially_default_constructible
 dev_langs:
 - C++
@@ -34,50 +33,50 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: dd41fbdcc33250bc60a0b919b17dd52862549a77
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 7378e982af31c1030012934924a053666fb4fff2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="istriviallydefaultconstructible-class"></a>is_trivially_default_constructible クラス
-型に自明な既定コンストラクターが存在するかどうかをテストします。  
+# <a name="istriviallydefaultconstructible-class"></a>is_trivially_default_constructible Class
+Tests if type has trivial default constructor.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Ty>
 struct is_trivially_default_constructible;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- 型 `Ty` が自明なコンストラクターを持つクラスである場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `Ty` is a class that has a trivial constructor, otherwise it holds false.  
   
- クラス `Ty` の既定コンストラクターが自明であるのは、以下の場合です。  
+ A default constructor for a class `Ty` is trivial if:  
   
--   暗黙的に宣言された既定のコンス トラクターである  
+-   it is an implicitly declared default constructor  
   
--   クラス `Ty` に仮想関数がない  
+-   the class `Ty` has no virtual functions  
   
--   クラス `Ty` に仮想基底がない  
+-   the class `Ty` has no virtual bases  
   
--   クラス `Ty` のすべての直接基底に自明なコンストラクターがある  
+-   all the direct bases of the class `Ty` have trivial constructors  
   
--   クラス型のすべての非静的データ メンバーのクラスに自明なコンストラクターがある  
+-   the classes of all the non-static data members of class type have trivial constructors  
   
--   クラスの型配列のすべての非静的データ メンバーのクラスに自明なコンストラクターがある  
+-   the classes of all the non-static data members of type array of class have trivial constructors  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

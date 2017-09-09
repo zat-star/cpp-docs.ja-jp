@@ -1,5 +1,5 @@
 ---
-title: "conditional クラス | Microsoft Docs"
+title: conditional Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- conditional
 - type_traits/std::conditional
 dev_langs:
 - C++
@@ -35,17 +34,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: b7e187e8ddbb4a9457b5fe9eddda152464d7518d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ac4654577ee1869050a2750587bdef36f170432e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="conditional-class"></a>conditional クラス
-指定された条件に基づいて、2 つの型のいずれかを選択します。  
+# <a name="conditional-class"></a>conditional Class
+Selects one of two types, depending on the specified condition.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <bool B, class T1, class T2>  
@@ -55,25 +54,25 @@ template <bool _Test, class _T1, class _T2>
 using conditional_t = typename conditional<_Test, _T1, _T2>::type;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `B`  
- 選択される型を決定する値。  
+ The value that determines the selected type.  
   
  `T1`  
- B が true の場合の型の結果。  
+ The type result when B is true.  
   
  `T2`  
- B が false の場合の型の結果。  
+ The type result when B is false.  
   
-## <a name="remarks"></a>コメント  
- テンプレート メンバー typedef `conditional<B, T1, T2>::type` は、 `T1` が `B` に評価されるときは `true`として、 `T2` が `B` に評価されるときは `false`として評価されます。  
+## <a name="remarks"></a>Remarks  
+ The template member typedef `conditional<B, T1, T2>::type` evaluates to `T1` when `B` evaluates to `true`, and evaluates to `T2` when `B` evaluates to `false`.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

@@ -1,48 +1,52 @@
 ---
-title: "&lt;unordered_map&gt; 演算子 | Microsoft Docs"
+title: '&lt;unordered_map&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- unordered_map/std::operator!=
+- unordered_map/std::operator==
+dev_langs:
+- C++
 ms.assetid: 9d5add0b-84bd-4a79-bd82-3f58b55145ed
 caps.latest.revision: 7
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 464759b2da6de2af311184cfb0066d56be2c3557
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: bb9ba280f15d1ce6ac28e67e9d6b9e0d76ba270c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltunorderedmapgt-operators"></a>&lt;unordered_map&gt; 演算子
+# <a name="ltunorderedmapgt-operators"></a>&lt;unordered_map&gt; operators
 |||||  
 |-|-|-|-|  
 |[operator!=](#op_neq)|[operator==](#op_eq_eq)|[operator!=](#op_neq_multimap)|[operator==](#op_eq_eq_multimap)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左側の [unordered_map](../standard-library/unordered-map-class.md) オブジェクトが右側の unordered_map オブジェクトと等しくないかどうかをテストします。  
+ Tests whether the [unordered_map](../standard-library/unordered-map-class.md) object on the left side of the operator is not equal to the unordered_map object on the right side.  
   
 ```
 bool operator!=(const unordered_map <Key, Type, Hash, Pred, Allocator>& left, const unordered_map <Key, Type, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_map` 型のオブジェクト。  
+ An object of type `unordered_map`.  
   
  `right`  
- `unordered_map` 型のオブジェクト。  
+ An object of type `unordered_map`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_map が等しくない場合は、`true`。等しい場合は、`false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_maps are not equal; `false` if they are equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_map オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在し、一方のコンテナー内の要素がもう一方のコンテナー内の要素の順列である場合、2 つの unordered_map は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_map objects is not affected by the arbitrary order in which they store their elements. Two unordered_maps are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_map_op_ne.cpp  
@@ -75,7 +79,7 @@ int main( )
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `um1 != um2: true`  
   
@@ -84,26 +88,26 @@ int main( )
  `um2 != um3: true`  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左側の [unordered_map](../standard-library/unordered-map-class.md) オブジェクトが右側の unordered_map オブジェクトと等しいかどうかをテストします。  
+ Tests whether the [unordered_map](../standard-library/unordered-map-class.md) object on the left side of the operator is equal to the unordered_map object on the right side.  
   
 ```
 bool operator==(const unordered_map <Key, Type, Hash, Pred, Allocator>& left, const unordered_map <Key, Type, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_map` 型のオブジェクト。  
+ An object of type `unordered_map`.  
   
  `right`  
- `unordered_map` 型のオブジェクト。  
+ An object of type `unordered_map`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_map が等しい場合は、`true`。等しくない場合は、`false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_maps are equal; `false` if they are not equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_map オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在し、一方のコンテナー内の要素がもう一方のコンテナー内の要素の順列である場合、2 つの unordered_map は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_map objects is not affected by the arbitrary order in which they store their elements. Two unordered_maps are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_map_op_eq.cpp  
@@ -136,7 +140,7 @@ int main( )
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `um1 == um2: false`  
   
@@ -145,26 +149,26 @@ int main( )
  `um2 == um3: false`  
   
 ##  <a name="op_neq_multimap"></a>  operator!=  
- 演算子の左側の [unordered_multimap](../standard-library/unordered-multimap-class.md) オブジェクトが右側の unordered_multimap オブジェクトと等しくないかどうかをテストします。  
+ Tests whether the [unordered_multimap](../standard-library/unordered-multimap-class.md) object on the left side of the operator is not equal to the unordered_multimap object on the right side.  
   
 ```
 bool operator!=(const unordered_multimap <Key, Type, Hash, Pred, Allocator>& left, const unordered_multimap <Key, Type, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_multimap` 型のオブジェクト。  
+ An object of type `unordered_multimap`.  
   
  `right`  
- `unordered_multimap` 型のオブジェクト。  
+ An object of type `unordered_multimap`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_multimap が等しくない場合は、`true`。等しい場合は、`false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_multimaps are not equal; `false` if they are equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_multimap オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在し、一方のコンテナー内の要素がもう一方のコンテナー内の要素の順列である場合、2 つの unordered_multimap は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_multimap objects is not affected by the arbitrary order in which they store their elements. Two unordered_multimaps are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are not equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_multimap_op_ne.cpp  
@@ -198,7 +202,7 @@ int main( )
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `um1 != um2: true`  
   
@@ -207,26 +211,26 @@ int main( )
  `um2 != um3: true`  
   
 ##  <a name="op_eq_eq_multimap"></a>  operator==  
- 演算子の左側の [unordered_multimap](../standard-library/unordered-multimap-class.md) オブジェクトが右側の unordered_multimap オブジェクトと等しいかどうかをテストします。  
+ Tests whether the [unordered_multimap](../standard-library/unordered-multimap-class.md) object on the left side of the operator is equal to the unordered_multimap object on the right side.  
   
 ```
 bool operator==(const unordered_multimap <Key, Type, Hash, Pred, Allocator>& left, const unordered_multimap <Key, Type, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_multimap` 型のオブジェクト。  
+ An object of type `unordered_multimap`.  
   
  `right`  
- `unordered_multimap` 型のオブジェクト。  
+ An object of type `unordered_multimap`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_multimap が等しい場合は、`true`。等しくない場合は、`false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_multimaps are equal; `false` if they are not equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_multimap オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在し、一方のコンテナー内の要素がもう一方のコンテナー内の要素の順列である場合、2 つの unordered_multimap は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_multimap objects is not affected by the arbitrary order in which they store their elements. Two unordered_multimaps are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_multimap_op_eq.cpp  
@@ -260,7 +264,7 @@ int main( )
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `um1 == um2: false`  
   
@@ -268,7 +272,7 @@ int main( )
   
  `um2 == um3: false`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<unordered_map>](../standard-library/unordered-map.md)
 
 

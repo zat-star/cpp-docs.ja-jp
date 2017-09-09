@@ -1,5 +1,5 @@
 ---
-title: "discard_block_engine クラス | Microsoft Docs"
+title: discard_block_engine Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- discard_block_engine
 - random/std::discard_block_engine
 dev_langs:
 - C++
@@ -34,51 +33,51 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: b770c9b353f126939a1d70c195b9cc421cb2e06e
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: f98da1248f00e34f3660f613e5a95b8ffc101c56
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="discardblockengine-class"></a>discard_block_engine クラス
-ベースとなるエンジンから返された値を破棄することによってランダム シーケンスを生成します。  
+# <a name="discardblockengine-class"></a>discard_block_engine Class
+Generates a random sequence by discarding values returned by its base engine.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Engine, size_t P, size_t R>  
 class discard_block_engine;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Engine`  
- ベースのエンジンの型。  
+ The base engine type.  
   
  `P`  
- **ブロック サイズ**。 各ブロックの値の数。  
+ **Block size**. The number of values in each block.  
   
  `R`  
- **使用されるブロック**。 使用される各ブロックの値の数。 残りは破棄されます (`P` - `R`)。 **前提条件**: `0 < R ≤ P`  
+ **Used block**. The number of values in each block that are used. The rest are discarded ( `P` - `R`). **Precondition**: `0 < R ≤ P`  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
 ||||  
 |-|-|-|  
 |`discard_block_engine::discard_block_engine`|`discard_block_engine::base`|`discard_block_engine::discard`|  
 |`discard_block_engine::operator()`|`discard_block_engine::base_type`|`discard_block_engine::seed`|  
   
- エンジンのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+ For more information about engine members, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
- このテンプレート クラスは、ベースのエンジンによって返された値の一部を破棄することで値を生成するエンジン アダプターを表します。  
+## <a name="remarks"></a>Remarks  
+ This template class describes an engine adaptor that produces values by discarding some of the values returned by its base engine.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

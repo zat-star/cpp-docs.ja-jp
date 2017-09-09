@@ -1,5 +1,5 @@
 ---
-title: "lognormal_distribution クラス | Microsoft Docs"
+title: lognormal_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- lognormal_distribution
 - random/std::lognormal_distribution
 - random/std::lognormal_distribution::reset
 - random/std::lognormal_distribution::m
@@ -27,7 +26,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- lognormal_distribution class
+- std::lognormal_distribution [C++]
+- std::lognormal_distribution [C++], reset
+- std::lognormal_distribution [C++], m
+- std::lognormal_distribution [C++], s
+- std::lognormal_distribution [C++], param
+- std::lognormal_distribution [C++], min
+- std::lognormal_distribution [C++], max
+- std::lognormal_distribution [C++], param_type
+- std::lognormal_distribution [C++], param_type
 ms.assetid: f2d6a431-6c3a-4370-b12e-4adb4ddf6cc4
 caps.latest.revision: 15
 author: corob-msft
@@ -47,17 +54,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 3c5d969e7250987471f88579d30e36d7838a9ed1
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 145806b7b8994283b21ebcf2a3b0033eece9a1cc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="lognormaldistribution-class"></a>lognormal_distribution クラス
-対数正規分布を生成します。  
+# <a name="lognormaldistribution-class"></a>lognormal_distribution Class
+Generates a log normal distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```  
 template <class RealType = double>  
 class lognormal_distribution  
@@ -84,33 +91,33 @@ public:
    result_type max() const;
    };  
 ```  
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+The floating-point result type, defaults to `double`. For possible types, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
-テンプレート クラスは、ユーザー指定の整数型、または何も指定されない場合は `double` 型で、対数正規分布に従って分布されている値を生成する分布について説明します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The template class describes a distribution that produces values of a user-specified integral type, or type `double` if none is provided, distributed according to the Log Normal Distribution. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[lognormal_distribution](#lognormal_distribution)|`lognormal_distribution::m`|`lognormal_distribution::param`|  
 |`lognormal_distribution::operator()`|`lognormal_distribution::s`|[param_type](#param_type)|  
   
-プロパティ関数 `m()` および `s()` は、格納されている分布パラメーター *m* および *s* に対してそれぞれの値を返します。  
+The property functions `m()` and `s()` return the values for the stored distribution parameters *m* and *s*, respectively.  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-LogNormal 分布の詳細については、Wolfram MathWorld の記事「[LogNormal Distribution](http://go.microsoft.com/fwlink/LinkId=400917)」をご覧ください。  
+For detailed information about the LogNormal distribution, see the Wolfram MathWorld article [LogNormal Distribution](http://go.microsoft.com/fwlink/LinkId=400917).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -194,38 +201,38 @@ Distribution for 10 samples:
     10: 5.4406507912  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="lognormal_distribution"></a>  lognormal_distribution::lognormal_distribution  
- 分布を作成します。  
+ Constructs the distribution.  
   
 ```  
 explicit lognormal_distribution(RealType m = 0.0, RealType s = 1.0);
 explicit lognormal_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *m*  
-`m` 分布パラメーター。  
+The `m` distribution parameter.  
   
 *s*  
-`s` 分布パラメーター。  
+The `s` distribution parameter.  
   
 *parm*  
-分布の作成に使用される `param_type` の構造体。  
+The `param_type` structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < s`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < s`  
   
-1 つ目のコンストラクターは、格納されている値 `m` と `s` にそれぞれ *m* と *s* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `m` value holds the value *m* and whose stored `s` value holds the value *s*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  lognormal_distribution::param_type  
-分布のパラメーターを格納します。  
+Stores the parameters of the distribution.  
   
 ```  
 struct param_type {  
@@ -238,22 +245,22 @@ struct param_type {
    bool operator!=(const param_type& right) const;
 };  
 ```    
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *m*  
-`m` 分布パラメーター。  
+The `m` distribution parameter.  
   
 *s*  
-`s` 分布パラメーター。  
+The `s` distribution parameter.  
   
 *right*  
-比較に使用される `param_type` 構造体。  
+The `param_type` structure used to compare.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < s`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < s`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [\<random>](../standard-library/random.md)
 
 

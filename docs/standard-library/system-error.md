@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std.<system_error>
-- std::<system_error>
-- <system_error>
-- system_error
+- std::<system_error>", "<system_error>", "system_error
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,76 +33,74 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 8f3441306b21ca1111cf2fd2d377a1b233e7ad86
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: c2c7c690a05fc47dc2e3a40457a5361a1c0b3278
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltsystemerrorgt"></a>&lt;system_error&gt;
-例外クラス `system_error` を定義するヘッダー `<system_error>` と、低レベルのシステム エラーを処理する関連テンプレートを含みます。  
+Include the header `<system_error>` to define the exception class `system_error` and related templates for processing low-level system errors.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <system_error>  
 ```  
   
-### <a name="objects"></a>オブジェクト  
+### <a name="objects"></a>Objects  
   
 |||  
 |-|-|  
-|[generic_category](../standard-library/system-error-functions.md#generic_category)|一般的なエラーのカテゴリを表します。|  
-|[system_category](../standard-library/system-error-functions.md#system_category)|低レベル システム オーバーフローによって発生したエラーのカテゴリを表します。|  
+|[generic_category](../standard-library/system-error-functions.md#generic_category)|Represents the category for generic errors.|  
+|[system_category](../standard-library/system-error-functions.md#system_category)|Represents the category for errors caused by low-level system overflows.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[generic_errno](../standard-library/system-error-typedefs.md#generic_errno)|`<errno.h>` の Posix で定義されているすべてのエラーコードのマクロにシンボル名を提供する列挙型を表す型。|  
+|[generic_errno](../standard-library/system-error-typedefs.md#generic_errno)|A type that represents the enumeration that provides the symbolic names for all the error-code macros defined by Posix in `<errno.h>`.|  
   
-### <a name="functions"></a>関数  
-  
-|||  
-|-|-|  
-|[make_error_code](../standard-library/system-error-functions.md#make_error_code)|
-          `error_code` オブジェクトを作成します。|  
-|[make_error_condition](../standard-library/system-error-functions.md#make_error_condition)|
-          `error_condition` オブジェクトを作成します。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[operator==](../standard-library/system-error-operators.md#op_eq_eq)|演算子の左辺のオブジェクトが右辺のオブジェクトと等しいかどうかを調べます。|  
-|[operator!=](../standard-library/system-error-operators.md#op_neq)|演算子の左側のオブジェクトが右側のオブジェクトと等しくないかどうかを調べます。|  
-|[operator<](../standard-library/system-error-operators.md#op_lt)|オブジェクトが比較のために渡されるオブジェクトより小さいかどうかをテストします。|  
+|[make_error_code](../standard-library/system-error-functions.md#make_error_code)|Creates an `error_code` object.|  
+|[make_error_condition](../standard-library/system-error-functions.md#make_error_condition)|Creates an `error_condition` object.|  
   
-### <a name="enumerations"></a>列挙体  
-  
-|||  
-|-|-|  
-|[errc](../standard-library/system-error-enums.md#errc)|`<errno.h>` の Posix で定義されているすべてのエラー コードのマクロにシンボル名を提供します。|  
-  
-### <a name="classes-and-structs"></a>クラスと構造体  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[error_category](../standard-library/error-category-class.md)|エラー コードのカテゴリを表すオブジェクトの抽象的な共通基底を表します。|  
-|[error_code](../standard-library/error-code-class.md)|実装固有の低レベルなシステム エラーを表します。|  
-|[error_condition](../standard-library/error-condition-class.md)|ユーザー定義のエラー コードを表します。|  
-|[is_error_code_enum](../standard-library/is-error-code-enum-class.md)|[error_code クラス](../standard-library/error-code-class.md)列挙型をテストする型の述語を表します。|  
-|[is_error_condition_enum](../standard-library/is-error-condition-enum-class.md)|[error_condition クラス](../standard-library/error-condition-class.md) 列挙型をテストする型の述語を表します。|  
-|[system_error](../standard-library/system-error-class.md)|低レベル システム オーバーフローをレポートするためにスローされるすべての例外のための基底クラスを表します。|  
+|[operator==](../standard-library/system-error-operators.md#op_eq_eq)|Tests if the object on the left side of the operator is equal to the object on the right side.|  
+|[operator!=](../standard-library/system-error-operators.md#op_neq)|Tests if the object on the left side of the operator is not equal to the object on the right side.|  
+|[operator<](../standard-library/system-error-operators.md#op_lt)|Tests if an object is less than the object passed in for comparison.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<system_error>  
+### <a name="enumerations"></a>Enumerations  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[errc](../standard-library/system-error-enums.md#errc)|Provides symbolic names for all the error-code macros defined by Posix in `<errno.h>`.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+### <a name="classes-and-structs"></a>Classes and Structs  
+  
+|||  
+|-|-|  
+|[error_category](../standard-library/error-category-class.md)|Represents the abstract, common base for objects that describes a category of error codes.|  
+|[error_code](../standard-library/error-code-class.md)|Represents low-level system errors that are implementation-specific.|  
+|[error_condition](../standard-library/error-condition-class.md)|Represents user-defined error codes.|  
+|[is_error_code_enum](../standard-library/is-error-code-enum-class.md)|Represents a type predicate that tests for the [error_code Class](../standard-library/error-code-class.md) enumeration.|  
+|[is_error_condition_enum](../standard-library/is-error-condition-enum-class.md)|Represents a type predicate that tests for the [error_condition Class](../standard-library/error-condition-class.md) enumeration.|  
+|[system_error](../standard-library/system-error-class.md)|Represents the base class for all exceptions thrown to report a low-level system overflow.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<system_error>  
+  
+ **Namespace:** std  
+  
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 

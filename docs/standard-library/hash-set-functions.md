@@ -1,5 +1,5 @@
 ---
-title: "&lt;hash_set&gt; 関数 | Microsoft Docs"
+title: '&lt;hash_set&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,14 +12,14 @@ f1_keywords:
 ms.assetid: 557a0162-3728-4537-97dc-f9f6cc7ece94
 caps.latest.revision: 7
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 2743e67d8077cdf75b51a3dce914ced0894a3392
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cb98cfbaa2716569df75913af054f4d764dc11df
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="lthashsetgt-functions"></a>&lt;hash_set&gt; 関数
+# <a name="lthashsetgt-functions"></a>&lt;hash_set&gt; functions
 |||  
 |-|-|  
 |[swap](#swap)|[swap (hash_multiset)](#swap_hash_multiset)|  
@@ -27,9 +27,9 @@ ms.lasthandoff: 04/29/2017
 ##  <a name="swap"></a>  swap  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 2 つの hash_set の要素を交換します。  
+ Exchanges the elements of two hash_sets.  
   
 ```
 void swap(
@@ -37,56 +37,56 @@ void swap(
     hash_set <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 交換する要素を提供する hash_set (hash_set `left` の要素と要素を交換する hash_set)。  
+ The hash_set providing the elements to be swapped, or the hash_set whose elements are to be exchanged with those of the hash_set `left`.  
   
  `left`  
- 要素が hash_set `right` の要素と交換される hash_set。  
+ The hash_set whose elements are to be exchanged with those of the hash_set `right`.  
   
-### <a name="remarks"></a>コメント  
- `swap` テンプレート関数は、コンテナー クラス hash_set に特化したアルゴリズムであり、メンバー関数 `left``.`[swap](../standard-library/hash-set-class.md#swap)(`right`) を実行します。 これは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョン  
+### <a name="remarks"></a>Remarks  
+ The `swap` template function is an algorithm specialized on the container class hash_set to execute the member function `left.`[swap](../standard-library/hash-set-class.md#swap)( `right`). This is an instance of the partial ordering of function templates by the compiler. When template functions are overloaded in such a way that the match of the template with the function call is not unique, then the compiler will select the most specialized version of the template function. The general version of the template function  
   
  **template \<class T> void swap(T&, T&),**  
   
- は、algorithm クラスにあり、代入によって機能し、処理は低速です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
+ in the algorithm class works by assignment and is a slow operation. The specialized version in each container is much faster as it can work with the internal representation of the container class.  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ In Visual C++ .NET 2003, members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are no longer in the std namespace, but rather have been moved into the stdext namespace. See [The stdext Namespace](../standard-library/stdext-namespace.md) for more information.  
   
-### <a name="example"></a>例  
-  `swap` のテンプレート バージョンの使用例については、メンバー クラス [hash_set::swap](../standard-library/hash-set-class.md#swap) のコード例をご覧ください。  
+### <a name="example"></a>Example  
+  See the code example for the member class [hash_set::swap](../standard-library/hash-set-class.md#swap) for an example that uses the template version of `swap`.  
   
-##  <a name="swap_hash_multiset"></a> swap (hash_multiset)  
+##  <a name="swap_hash_multiset"></a>  swap (hash_multiset)  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 2 つの hash_multiset の要素を交換します。  
+ Exchanges the elements of two hash_multisets.  
   
 ```
 void swap(hash_multiset <Key, Traits, Allocator>& left, hash_multiset <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 交換する要素を提供する hash_multiset (hash_multiset `left` の要素と要素を交換する hash_multiset)。  
+ The hash_multiset providing the elements to be swapped, or the hash_multiset whose elements are to be exchanged with those of the hash_multiset `left`.  
   
  `left`  
- 要素が hash_multiset `right` の要素と交換される hash_multiset。  
+ The hash_multiset whose elements are to be exchanged with those of the hash_multiset `right`.  
   
-### <a name="remarks"></a>コメント  
- `swap` テンプレート関数は、コンテナー クラス hash_multiset に特化したアルゴリズムであり、メンバー関数 `left``.`[swap](../standard-library/hash-multiset-class.md#swap)(`right`) を実行します。 これは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョン  
+### <a name="remarks"></a>Remarks  
+ The `swap` template function is an algorithm specialized on the container class hash_multiset to execute the member function `left.`[swap](../standard-library/hash-multiset-class.md#swap)( `right`). This is an instance of the partial ordering of function templates by the compiler. When template functions are overloaded in such a way that the match of the template with the function call is not unique, then the compiler will select the most specialized version of the template function. The general version of the template function  
   
  **template \<class T> void swap(T&, T&),**  
   
- は、algorithm クラスにあり、代入によって機能し、処理は低速です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
+ in the algorithm class works by assignment and is a slow operation. The specialized version in each container is much faster as it can work with the internal representation of the container class.  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ In Visual C++ .NET 2003, members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are no longer in the std namespace, but rather have been moved into the stdext namespace. See [The stdext Namespace](../standard-library/stdext-namespace.md) for more information.  
   
-### <a name="example"></a>例  
-  `swap` のテンプレート バージョンの使用例については、メンバー クラス [hash_multiset::swap](../standard-library/hash-multiset-class.md#swap) のコード例をご覧ください。  
+### <a name="example"></a>Example  
+  See the code example for the member class [hash_multiset::swap](../standard-library/hash-multiset-class.md#swap) for an example that uses the template version of `swap`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<hash_set>](../standard-library/hash-set.md)
 
 

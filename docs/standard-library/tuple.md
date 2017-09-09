@@ -33,50 +33,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 212b2b5af678bd39b4ecc7d6622c71db20db5a26
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fa99b5815a0612727d163ca65440fea13dafedbc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="lttuplegt"></a>&lt;tuple&gt;
-さまざまな型のオブジェクトを保持するインスタンスを持つテンプレート `tuple` を定義します。  
+Defines a template `tuple` whose instances hold objects of varying types.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <tuple>  
 ```  
   
-### <a name="classes"></a>クラス  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[tuple](../standard-library/tuple-class.md)|要素の固定長シーケンスをラップします。|  
-|[tuple_element クラス](../standard-library/tuple-element-class-tuple.md)|`tuple` 要素の型をラップします。|  
-|[tuple_size クラス](../standard-library/tuple-size-class-tuple.md)|`tuple` の要素数をラップします。|  
+|[tuple](../standard-library/tuple-class.md)|Wraps a fixed-length sequence of elements.|  
+|[tuple_element Class](../standard-library/tuple-element-class-tuple.md)|Wraps the type of a `tuple` element.|  
+|[tuple_size Class](../standard-library/tuple-size-class-tuple.md)|Wraps `tuple` element count.|  
   
-### <a name="operators"></a>演算子  
-  
-|||  
-|-|-|  
-|[operator==](../standard-library/tuple-operators.md#op_eq_eq)|`tuple` オブジェクトどうしが等しいかどうかの比較|  
-|[operator!=](../standard-library/tuple-operators.md#op_neq)|`tuple` オブジェクトどうしが等しくないかどうかの比較|  
-|[operator<](../standard-library/tuple-operators.md#op_lt)|`tuple` オブジェクトどうしの大小関係の比較 (未満)|  
-|[operator<=](../standard-library/tuple-operators.md#op_lt_eq)|`tuple` オブジェクトどうしの大小関係の比較 (以下)|  
-|[operator>](../standard-library/tuple-operators.md#op_gt)|`tuple` オブジェクトどうしの大小関係の比較 (より大きい)|  
-|[operator>=](../standard-library/tuple-operators.md#op_gt_eq)|`tuple` オブジェクトどうしの大小関係の比較 (以上)|  
-  
-### <a name="functions"></a>関数  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[get](../standard-library/tuple-functions.md#get)|`tuple` オブジェクトから要素を取得します。|  
-|[make_tuple](../standard-library/tuple-functions.md#make_tuple)|要素値から `tuple` を作成します。|  
-|[tie](../standard-library/tuple-functions.md#tie)|要素参照から `tuple` を作成します。|  
+|[operator==](../standard-library/tuple-operators.md#op_eq_eq)|Comparison of `tuple` objects, equal|  
+|[operator!=](../standard-library/tuple-operators.md#op_neq)|Comparison of `tuple` objects, not equal|  
+|[operator<](../standard-library/tuple-operators.md#op_lt)|Comparison of `tuple` objects, less than|  
+|[operator<=](../standard-library/tuple-operators.md#op_lt_eq)|Comparison of `tuple` objects, less than or equal|  
+|[operator>](../standard-library/tuple-operators.md#op_gt)|Comparison of `tuple` objects, greater than|  
+|[operator>=](../standard-library/tuple-operators.md#op_gt_eq)|Comparison of `tuple` objects, greater than or equal|  
   
-## <a name="see-also"></a>関連項目  
+### <a name="functions"></a>Functions  
+  
+|||  
+|-|-|  
+|[get](../standard-library/tuple-functions.md#get)|Gets an element from a `tuple` object.|  
+|[make_tuple](../standard-library/tuple-functions.md#make_tuple)|Makes a `tuple` from element values.|  
+|[tie](../standard-library/tuple-functions.md#tie)|Makes a `tuple` from element references.|  
+  
+## <a name="see-also"></a>See Also  
  [\<array>](../standard-library/array.md)
 
 

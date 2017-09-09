@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- <vector>
-- std.<vector>
-- std::<vector>
+- <vector>", "std::<vector>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,21 +33,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 77c13a5f8d813bbeaa0dae2307769a575bb22fa8
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d1f299db45d83e5d669703d6df0c966aefd89c82
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltvectorgt"></a>&lt;vector&gt;
-コンテナー テンプレート クラス vector と、いくつかのサポート テンプレートを定義します。  
+Defines the container template class vector and several supporting templates.  
   
- `vector` 指定された型の要素を直線上のシーケンスに編成するコンテナーです。 このシーケンスでは、任意の要素を高速にランダム アクセスしたり、動的に追加および削除したりできます。 `vector` は、ランダム アクセスのパフォーマンスを重視するシーケンスに適したコンテナーです。  
+ The `vector` is a container that organizes elements of a given type in a linear sequence. It enables fast random access to any element, and dynamic additions and removals to and from the sequence. The `vector` is the preferred container for a sequence when random-access performance is at a premium.  
   
- クラス `vector` の詳細については、「[vector クラス](../standard-library/vector-class.md)」をご覧ください。 特殊化 `vector<bool>` の詳細については、「[vector\<bool> クラス](../standard-library/vector-bool-class.md)」をご覧ください。  
+ For more information about the class `vector`, see [vector Class](../standard-library/vector-class.md). For information about the specialization `vector<bool>`, see [vector\<bool> Class](../standard-library/vector-bool-class.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 namespace std {  
@@ -99,50 +97,50 @@ void swap (
 }  // namespace std  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- 型  
- ベクター内に格納されるデータ型に対するテンプレート パラメーター。  
+#### <a name="parameters"></a>Parameters  
+ Type  
+ The template parameter for the type of data stored in the vector.  
   
- アロケーター  
- メモリの割り当てと解放を担当する格納されたアロケーター オブジェクトのテンプレート パラメーター。  
+ Allocator  
+ The template parameter for the stored allocator object responsible for memory allocation and deallocation.  
   
  `left`  
- 比較演算の最初の (左辺の) ベクター  
+ The first (left) vector in a compare operation  
   
  `right`  
- 比較演算の 2 つ目の (右辺の) ベクター。  
+ The second (right) vector in a compare operation.  
   
-### <a name="operators"></a>演算子  
-  
-|||  
-|-|-|  
-|[operator! =](../standard-library/vector-operators.md#op_neq)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクトと等しくないかどうかを調べます。|  
-|[operator<](../standard-library/vector-operators.md#op_lt)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクトより小さいかどうかを調べます。|  
-|[operator\<=](../standard-library/vector-operators.md#op_gt_eq)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクト以下かどうかを調べます。|  
-|[operator==](../standard-library/vector-operators.md#op_eq_eq)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクトと等しいかどうかを調べます。|  
-|[operator>](../standard-library/vector-operators.md#op_gt)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクトより大きいかどうかを調べます。|  
-|[operator>=](../standard-library/vector-operators.md#op_gt_eq)|演算子の左辺のベクター オブジェクトが右辺のベクター オブジェクト以上かどうかを調べます。|  
-  
-### <a name="classes"></a>クラス  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[vector クラス](../standard-library/vector-class.md)|指定された型の要素を直線上に配置し、任意の要素に対する高速なランダム アクセスを可能にするシーケンス コンテナーのテンプレート クラスです。|  
+|[operator! =](../standard-library/vector-operators.md#op_neq)|Tests if the vector object on the left side of the operator is not equal to the vector object on the right side.|  
+|[operator<](../standard-library/vector-operators.md#op_lt)|Tests if the vector object on the left side of the operator is less than the vector object on the right side.|  
+|[operator\<=](../standard-library/vector-operators.md#op_gt_eq)|Tests if the vector object on the left side of the operator is less than or equal to the vector object on the right side.|  
+|[operator==](../standard-library/vector-operators.md#op_eq_eq)|Tests if the vector object on the left side of the operator is equal to the vector object on the right side.|  
+|[operator>](../standard-library/vector-operators.md#op_gt)|Tests if the vector object on the left side of the operator is greater than the vector object on the right side.|  
+|[operator>=](../standard-library/vector-operators.md#op_gt_eq)|Tests if the vector object on the left side of the operator is greater than or equal to the vector object on the right side.|  
   
-### <a name="specializations"></a>特殊化  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[vector\<bool> クラス](../standard-library/vector-bool-class.md)|テンプレート クラス vector を型 `bool` の要素に対して完全に特殊化したもので、基になる型のアロケーターを特殊化で使用します。|  
+|[vector Class](../standard-library/vector-class.md)|A template class of sequence containers that arrange elements of a given type in a linear arrangement and allow fast random access to any element.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<vector>  
+### <a name="specializations"></a>Specializations  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[vector\<bool> Class](../standard-library/vector-bool-class.md)|A full specialization of the template class vector for elements of type `bool` with an allocator for the underlying type used by the specialization.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="requirements"></a>Requirements  
+ **Header:** \<vector>  
+  
+ **Namespace:** std  
+  
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "decay クラス | Microsoft Docs"
+title: decay Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- decay
 - type_traits/std::decay
 dev_langs:
 - C++
@@ -34,17 +33,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: cb75f00c4f7dfc46122c8e69e5572de1ec23f8ed
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 2fd24a6f493cce88804abedf275c8038d0e05067
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="decay-class"></a>decay クラス
-値で渡されように型を生成します。 型を非参照、非定数、非揮発性にします。または、関数からの型または配列型へのポインターを作成します。  
+# <a name="decay-class"></a>decay Class
+Produces the type as passed by value. Makes the type non-reference, non-const, non-volatile, or makes a pointer to the type from a function or an array type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T>
@@ -54,27 +53,27 @@ template <class T>
 using decay_t = typename decay<T>::type;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 変更する型。  
+ The type to modify.  
   
-## <a name="remarks"></a>コメント  
- 型が引数として値で渡されたかのように結果の型を生成するには、decay テンプレートを使います。 テンプレート クラスのメンバー typedef `type` は、次の段階で定義された修飾型を保持します。  
+## <a name="remarks"></a>Remarks  
+ Use the decay template to produce the resulting type as if the type was passed by value as an argument. The template class member typedef `type` holds a modified type that is defined in the following stages:  
   
--   型 `U` が `remove_reference<T>::type` として定義されます。  
+-   The type `U` is defined as `remove_reference<T>::type`.  
   
--   `is_array<U>::value` が true の場合、修飾型 `type` は `remove_extent<U>::type *` になります。  
+-   If `is_array<U>::value` is true, the modified type `type` is `remove_extent<U>::type *`.  
   
--   `is_function<U>::value` が true の場合、修飾型 `type` は `add_pointer<U>::type` になります。  
+-   Otherwise, if `is_function<U>::value` is true, the modified type `type` is `add_pointer<U>::type`.  
   
--   それ以外の場合、修飾型 `type` は `remove_cv<U>::type` になります。  
+-   Otherwise, the modified type `type` is `remove_cv<U>::type`.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

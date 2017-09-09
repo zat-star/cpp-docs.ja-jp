@@ -1,5 +1,5 @@
 ---
-title: "bitset クラス | Microsoft Docs"
+title: bitset Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - bitset/std::bitset
-- bitset
 - bitset/std::bitset::element_type
 - bitset/std::bitset::all
 - bitset/std::bitset::any
@@ -28,7 +27,21 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- bitset class
+- std::bitset [C++]
+- std::bitset [C++], element_type
+- std::bitset [C++], all
+- std::bitset [C++], any
+- std::bitset [C++], count
+- std::bitset [C++], flip
+- std::bitset [C++], none
+- std::bitset [C++], reset
+- std::bitset [C++], set
+- std::bitset [C++], size
+- std::bitset [C++], test
+- std::bitset [C++], to_string
+- std::bitset [C++], to_ullong
+- std::bitset [C++], to_ulong
+- std::bitset [C++], reference
 ms.assetid: 28b86964-87b4-429c-8124-b6c251b6c50b
 caps.latest.revision: 21
 author: corob-msft
@@ -48,109 +61,109 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 8e3518fb40cdd3e8bdd14b5ed64f4cc6dbcb1058
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 1c8e1e5aee495d11911aef2723e8e243a155fc63
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="bitset-class"></a>bitset クラス
-固定数のビットで構成されるシーケンスを格納するオブジェクト型を記述します。これらのビットによって、一連の項目または条件のフラグを保持するためのコンパクトな方法が提供されます。 bitset クラスでは、ビットのコレクションを含み、各ビットへの一定時間のアクセスを提供する bitset 型のオブジェクトに対する操作をサポートします。  
+# <a name="bitset-class"></a>bitset Class
+Describes a type of object that stores a sequence consisting of a fixed number of bits that provide a compact way of keeping flags for a set of items or conditions. The bitset class supports operations on objects of type bitset that contain a collection of bits and provide constant-time access to each bit.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <size_t N>  
 class bitset  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *N*  
- **size_t** 型の 0 以外の整数で bitset オブジェクト内のビット数を指定します。この値はコンパイル時に認識される必要があります。  
+ Specifies the number of bits in the bitset object with a nonzero integer of type **size_t** that must be known at compile time.  
   
-## <a name="remarks"></a>コメント  
- よく似ている [vector\<bool> クラス](../standard-library/vector-bool-class.md)とは異なり、bitset クラスには反復子がなく、C++ 標準ライブラリのコンテナーでもありません。 また、**bitset\<N\>** が宣言されている場合、テンプレート パラメーター **N** で指定したサイズに従い、コンパイル時のサイズが特定の値に固定されている点でも vector\<bool> とは異なっています。  
+## <a name="remarks"></a>Remarks  
+ Unlike the similar [vector\<bool> Class](../standard-library/vector-bool-class.md), the bitset class does not have iterators and is not a C++ Standard Library container. It also differs from vector\<bool> by being of some specific size that is fixed at compile time in accordance with the size specified by the template parameter **N** when the **bitset\<N\>** is declared.  
   
- ビットは、その値が 1 の場合は設定され、0 の場合にはリセットされます。 ビットの反転や切り替えとは、その値を 1 から 0 へ、あるいは 0 から 1 へ変更することです。 ビットセット内の **N** ビットには、0 ～ **N** - 1 の整数値でインデックスが付けられます。0 は最初のビット位置、**N** - 1 は最終的なビット位置へのインデックスを表します。  
+ A bit is set if its value is 1 and reset if its value is 0. To flip or invert a bit is to change its value from 1 to 0 or from 0 to 1. The **N** bits in a bitset are indexed by integer values from 0 to **N** - 1, where 0 indexes the first bit position and **N** - 1 the final bit position.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[bitset](#bitset)|クラス `bitset\<N>` のオブジェクトを構築し、ビットを 0 か、指定した値、または文字列の文字から取得した値に初期化します。|  
+|[bitset](#bitset)|Constructs an object of class `bitset\<N>` and initializes the bits to zero, to some specified value, or to values obtained from characters in a string.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[element_type](#element_type)|データ型 `bool` の同意語で、`bitset` 内の要素のビットを参照するために使用できる型。|  
+|[element_type](#element_type)|A type that is a synonym for the data type `bool` and can be used to reference element bits in a `bitset`.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[all](#all)|この `bitset` のビットがすべて `true` に設定されているかどうかをテストします。|  
-|[any](#any)|このメンバー関数は、シーケンス内のいずれかのビットが 1 に設定されているかどうかをテストします。|  
-|[count](#count)|このメンバー関数は、ビット シーケンスで設定されているビットの数を返します。|  
-|[flip](#flip)|`bitset` 内のすべてのビットの値を反転させるか、指定した位置の単一のビットを反転させます。|  
-|[none](#none)|`bitset` オブジェクト内のどのビットも 1 に設定されていないかどうかをテストします。|  
-|[reset](#reset)|`bitset` 内のすべてのビットを 0 にリセットするか、指定した位置の 1 つのビットを 0 にリセットします。|  
-|[set](#set)|`bitset` 内のすべてのビットを 1 に設定するか、指定した位置の 1 つのビットを 1 に設定します。|  
-|[size](#size)|`bitset` オブジェクト内のビット数を返します。|  
-|[test](#test)|`bitset` 内の指定した位置のビットが 1 に設定されているかどうかをテストします。|  
-|[to_string](#to_string)|`bitset` オブジェクトを文字列形式に変換します。|  
-|[to_ullong](#to_ullong)|`unsigned long long` として `bitset` のビット値の合計を返します。|  
-|[to_ulong](#to_ulong)|`bitset` オブジェクトを `unsigned long` に変換します。これにより、`bitset` の初期化に使用する場合に含まれるビットのシーケンスが生成されます。|  
-  
-### <a name="member-classes"></a>メンバー クラス  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[reference](#reference)|`bitset` クラスの `operator[]` 用ヘルパー クラスとして、個々のビットへのアクセスと操作に使用される `bitset` に含まれるビットへの参照を提供するプロキシ クラス。|  
+|[all](#all)|Tests all of the bits in this `bitset` to determine whether they are all set to `true`.|  
+|[any](#any)|The member function tests whether any bit in the sequence is set to 1.|  
+|[count](#count)|The member function returns the number of bits set in the bit sequence.|  
+|[flip](#flip)|Inverts the value of all the bits in a `bitset` or inverts a single bit at a specified position.|  
+|[none](#none)|Tests if no bit has been set to 1 in a `bitset` object.|  
+|[reset](#reset)|Resets all the bits in a `bitset` to 0 or resets a bit at a specified position to 0.|  
+|[set](#set)|Sets all the bits in a `bitset` to 1 or sets a bit at a specified position to 1.|  
+|[size](#size)|Returns the number of bits in a `bitset` object.|  
+|[test](#test)|Tests whether the bit at a specified position in a `bitset` is set to 1.|  
+|[to_string](#to_string)|Converts a `bitset` object to a string representation.|  
+|[to_ullong](#to_ullong)|Returns the sum of the bit values in the `bitset` as an `unsigned long long`.|  
+|[to_ulong](#to_ulong)|Converts a `bitset` object to the `unsigned long` that would generate the sequence of bits contained if used to initialize the `bitset`.|  
   
-### <a name="operators"></a>演算子  
+### <a name="member-classes"></a>Member Classes  
   
 |||  
 |-|-|  
-|[operator!=](#op_neq)|指定した `bitset` とターゲット `bitset` が等しくないことをテストします。|  
-|[operator&=](#op_and_eq)|`AND` 論理演算を使用して、ビットセットのビットごとの組み合わせを実行します。|  
-|[operator<<](#op_lshift)|`bitset` 内のビットを、指定した位置数だけ左側にシフトさせ、その結果を新しい `bitset` に返します。|  
-|[operator<<=](#op_lshift_eq)|`bitset` 内のビットを、指定した位置数だけ左側にシフトさせ、その結果を対象とする `bitset` に返します。|  
-|[operator==](#op_eq_eq)|指定した `bitset` とターゲット `bitset` が等しいことをテストします。|  
-|[operator>>](#op_rshift)|`bitset` 内のビットを、指定した位置数だけ右側にシフトさせ、その結果を新しい `bitset` に返します。|  
-|[operator>>=](#op_rshift_eq)|`bitset` 内のビットを、指定した位置数だけ右側にシフトさせ、その結果を対象とする `bitset` に返します。|  
-|[operator&#91;&#93;](#op_at)|`bitset` が変更可能な場合、`bitset` 内の指定した位置のビットへの参照を返します。それ以外の場合は、その位置のビットの値を返します。|  
-|[operator^=](#op_xor_eq)|排他的 `OR` 演算を使用して、ビットセットのビットごとの組み合わせを実行します。|  
-|[operator&#124;=](#op_or_eq')|包括的 `OR` 演算を使用して、ビットセットのビットごとの組み合わせを実行します。|  
-|[operator~](#op_dtor)|ターゲット `bitset` 内のすべてのビットを反転させ、その結果を返します。|  
+|[reference](#reference)|A proxy class that provides references to bits contained in a `bitset` that is used to access and manipulate the individual bits as a helper class for the `operator[]` of class `bitset`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<bitset>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator!=](#op_neq)|Tests a target `bitset` for inequality with a specified `bitset`.|  
+|[operator&=](#op_and_eq)|Performs a bitwise combination of bitsets with the logical `AND` operation.|  
+|[operator<<](#op_lshift)|Shifts the bits in a `bitset` to the left a specified number of positions and returns the result to a new `bitset`.|  
+|[operator<<=](#op_lshift_eq)|Shifts the bits in a `bitset` to the left a specified number of positions and returns the result to the targeted `bitset`.|  
+|[operator==](#op_eq_eq)|Tests a target `bitset` for equality with a specified `bitset`.|  
+|[operator>>](#op_rshift)|Shifts the bits in a `bitset` to the right a specified number of positions and returns the result to a new `bitset`.|  
+|[operator>>=](#op_rshift_eq)|Shifts the bits in a `bitset` to the right a specified number of positions and returns the result to the targeted `bitset`.|  
+|[operator&#91;&#93;](#op_at)|Returns a reference to a bit at a specified position in a `bitset` if the `bitset` is modifiable; otherwise, it returns the value of the bit at that position.|  
+|[operator^=](#op_xor_eq)|Performs a bitwise combination of bitsets with the exclusive `OR` operation.|  
+|[operator&#124;=](#op_or_eq')|Performs a bitwise combination of bitsets with the inclusive `OR` operation.|  
+|[operator~](#op_dtor)|Inverts all the bits in a target `bitset` and returns the result.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<bitset>  
+  
+ **Namespace:** std  
   
 ##  <a name="all"></a>  bitset::all  
- このビットセットのビットすべてが true に設定されているかどうかを判別するテストを行います。  
+ Tests all of the bits in this bitset to determine if they are all set to true.  
   
 ```  
 bool all() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- このセット内のすべてのビットが true の場合、true を返します。 1 つ以上のビットが false の場合は、**false** を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns true if all bits in this set are true. Returns **false** if one or more bits are false.  
   
 ##  <a name="any"></a>  bitset::any  
- シーケンス内のいずれかのビットが 1 に設定されているかどうかをテストします。  
+ Tests whether any bit in the sequence is set to 1.  
   
 ```  
 bool any() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ビットセット内に 1 に設定されているビットがあれば **true** を、すべてのビットが 0 に設定されていれば **false** を返します。  
+### <a name="return-value"></a>Return Value  
+ **true** if any bit in the bitset is set to 1; **false** if all the bits are 0.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_any.cpp  
@@ -202,7 +215,7 @@ None of the bits in bitset b1 are set to 1.
 ```  
   
 ##  <a name="bitset"></a>  bitset::bitset  
- クラス `bitset\<N>` のオブジェクトを構築し、ビットを 0 か、指定した値、または文字列の文字から取得した値に初期化します。  
+ Constructs an object of class `bitset\<N>` and initializes the bits to zero, or to some specified value, or to values obtained from characters in a string.  
   
 ```  
 bitset();
@@ -231,44 +244,44 @@ explicit bitset(
     CharType _One = CharType ('1'));
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- 符号なし整数。構築中のビットセット内のビットを 2 つの表現で初期化するとき、その基数が使用されます。  
+ The unsigned integer whose base two representation is used to initialize the bits in the bitset being constructed.  
   
  `str`  
- ビットセットのビット値の初期化に 0 と 1 の文字列が使用されます。  
+ The string of zeros and ones used to initialize the bitset bit values.  
   
  `_CStr`  
- ビットセットのビット値の初期化に 0 と 1 の C スタイルの文字列が使用されます。  
+ A C-style string of zeros and ones used to initialize the bitset bit values.  
   
  `_Pos`  
- 文字列内の文字の位置。左から右に数え、ゼロから始まります。ビットセット内の最初のビットの初期化に使用されます。  
+ The position of the character in the string, counting from left to right and starting with zero, used to initialize the first bit in the bitset.  
   
  `count`  
- ビットセット内のビットの初期値を提供するために使用される文字列内の文字数。  
+ The number of characters in the string that is used to provide initial values for the bits in the bitset.  
   
  `_Zero`  
- 0 を表すために使用される文字。 既定値は '0' です。  
+ The character that is used to represent a zero. The default is '0'.  
   
  `_One`  
- 1 を表すために使用される文字。 既定値は '1' です。  
+ The character that is used to represent a one. The default is '1'.  
   
-### <a name="remarks"></a>コメント  
- 3 つのコンストラクターを利用し、クラス `bitset\<N>` のオブジェクトを構築できます。  
+### <a name="remarks"></a>Remarks  
+ Three constructors can be used to construct obects of class `bitset\<N>`:  
   
--   最初のコンストラクターはパラメーターを受け取らず、クラス `bitset\<N>` のオブジェクトを構築し、すべての N ビットを既定値の 0 に初期化します。  
+-   The first constructor accepts no parameters, constructs an object of class `bitset\<N>` and initializes all N bits to a default value of zero.  
   
--   2 番目のコンストラクターはクラス `bitset\<N>` のオブジェクトを構築し、単一 `unsigned long long` パラメーターを利用してビットを初期化します。  
+-   The second constructor constructs an object of class `bitset\<N>` and initializes the bits by using the single `unsigned long long` parameter.  
   
--   3 番目のコンストラクターはクラス `bitset\<N>` のオブジェクトを構築し、0 と 1 の C スタイル文字列で与えられた文字に対応する値に N ビットを初期化します。 文字列を文字列型に型変換せずにコンストラクターを呼び出します。例: `bitset<5> b5("01011");`  
+-   The third constructor constructs an object of class `bitset\<N>`, initializing the N bits to values that correspond to the characters provided in a c-style character string of zeros and ones. You call the constructor without casting the string into a string type: `bitset<5> b5("01011");`  
   
- 2 つのコンストラクター テンプレートも提供されています。  
+ There are also two constructor templates provided:  
   
--   最初のコンストラクター テンプレートはクラス `bitset\<N>` のオブジェクトを構築し、0 と 1 の文字列で与えられた文字のビットを初期化します。 文字列の文字に 0 か 1 以外の文字がある場合、このコンストラクターはクラス [invalid argument](../standard-library/invalid-argument-class.md) のオブジェクトをスローします。 指定位置(`_Pos`) が文字列の長さを超えている場合、このコンストラクターはクラス [out_of_range](../standard-library/out-of-range-class.md) のオブジェクトをスローします。 このコンストラクターは、位置 `_Pos + j` で文字列の文字が 1 のビットのみをビットセットの位置 *j* に配置します。 既定では、`_Pos` は 0 です。  
+-   The first constructor template constructs an object of class `bitset\<N>` and initializes bits from the characters provided in a string of zeros and ones. If any characters of the string are other than 0 or 1, the constructor throws an object of class [invalid argument](../standard-library/invalid-argument-class.md). If the position specified ( `_Pos`) is beyond the length of the string, then the constructor throws an object of class [out_of_range](../standard-library/out-of-range-class.md). The constructor sets only those bits at position *j* in the bitset for which the character in the string at position `_Pos + j` is 1. By default, `_Pos` is 0.  
   
--   2 番目のコンストラクター テンプレートは最初のコンストラクターに似ていますが、パラメーター (`count`) が追加されています。このパラメーターは、初期化するビット数の指定に使用されます。 任意のパラメーターも 2 つあります。`_Zero` と `_One` です。それぞれ、`str` のどの文字を 0 ビットまたは 1 ビットとして解釈するか示します。  
+-   The second constructor template is similar to the first, but includes an additional parameter ( `count`) that is used to specify the number of bits to initialize. It also has two optional parameters, `_Zero` and `_One`, which indicate what character in `str` is to be interpreted to mean a 0 bit and a 1 bit, respectively.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_bitset.cpp  
@@ -344,19 +357,19 @@ The set of bits in bitset<9> b7( bitval, 2 ) is ( 110011011 ).
 ```  
   
 ##  <a name="count"></a>  bitset::count  
- ビット シーケンスで設定されたビット数を返します。  
+ Returns the number of bits set in the bit sequence.  
   
 ```  
 size_t count() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-ビット シーケンスで設定されたビット数。  
+The number of bits set in the bit sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
-bitset::count メンバー関数の使用例を次に示します。  
+The following example demonstrates the use of the bitset::count member function.  
   
 ```cpp  
 // bitset_count.cpp  
@@ -399,13 +412,13 @@ The number of bits in the bitset set to 1 is: 4.
 ```  
   
 ##  <a name="element_type"></a>  bitset::element_type  
- データ型 `bool` の同意語で、ビットセット内の要素のビットを参照するために使用できる型。  
+ A type that is a synonym for the data type `bool` and can be used to reference element bits in a bitset.  
   
 ```  
 typedef bool element_type;  
 ```  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_elem_type.cpp  
@@ -454,24 +467,24 @@ The bit at position 2 of bitset b1has a value of 1.
 ```  
   
 ##  <a name="flip"></a>  bitset::flip  
- ビットセット内のすべてのビットの値を反転させるか、指定した位置の単一のビットを反転させます。  
+ Inverts the value of all the bits in a bitset or inverts a single bit at a specified position.  
   
 ```  
 bitset\<N>& flip();  
 bitset\<N>& flip(size_t _Pos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- 値を反転させるビットの位置。  
+ The position of the bit whose value is to be inverted.  
   
-### <a name="return-value"></a>戻り値  
- メンバー関数が呼び出された変更後ビットセットのコピー。  
+### <a name="return-value"></a>Return Value  
+ A copy of the modified bitset for which the member function was invoked.  
   
-### <a name="remarks"></a>コメント  
- 2 番目のメンバー関数は、パラメーターとして指定された位置が、ビットが反転された **bitset\<***N***>** のサイズ *N* より大きい場合、[out_of_range](../standard-library/out-of-range-class.md) 例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ The second member function throws an [out_of_range](../standard-library/out-of-range-class.md) exception if the position specified as a parameter is greater than the size *N* of the **bitset\<***N***>** whose bit was inverted.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_flip.cpp  
@@ -523,16 +536,16 @@ After flipping the fourth bit, the bitset becomes: ( 10001 )
 ```  
   
 ##  <a name="none"></a>  bitset::none  
- ビットセット オブジェクト内のどのビットも 1 に設定されていないかどうかをテストします。  
+ Tests if no bit has been set to 1 in a bitset object.  
   
 ```  
 bool none() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ビットセットに 1 に設定されているビットがない場合は **true** を、1 に設定されているビットが 1 つでもあれば **false** を返します。  
+### <a name="return-value"></a>Return Value  
+ **true** if no bit in the bitset has been set to 1; **false** if at least one bit has been set to 1.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_none.cpp  
@@ -578,23 +591,23 @@ None of the bits in bitset b1 are set to 1.
 ```  
   
 ##  <a name="op_neq"></a>  bitset::operator!=  
- 指定したビットセットとターゲット ビットセットが等しくないことをテストします。  
+ Tests a target bitset for inequality with a specified bitset.  
   
 ```  
 bool operator!=(const bitset\<N>& right) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 不等性についてターゲット ビットセットと比較されるビットセット。  
+ The bitset that is to be compared to the target bitset for inequality.  
   
-### <a name="return-value"></a>戻り値  
- ビットセットが異なる場合は **true** を、同じ場合は **false** を返します。  
+### <a name="return-value"></a>Return Value  
+ **true** if the bitsets are different; **false** if they are the same.  
   
-### <a name="remarks"></a>コメント  
- メンバー演算子関数で不等性をテストするとき、ビットセットは同じサイズにする必要があります。  
+### <a name="remarks"></a>Remarks  
+ Bitsets must be of the same size to be tested for inequality by the member operator function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_NE.cpp  
@@ -636,25 +649,25 @@ Bitset b1 is different from bitset b3.
 ```  
   
 ##  <a name="op_and_eq"></a>  bitset::operator&amp;=  
- **AND** 論理演算を使用して、ビットセットのビットごとの組み合わせを実行します。  
+ Performs a bitwise combination of bitsets with the logical **AND** operation.  
   
 ```  
 bitset\<N>& operator&=(const bitset\<N>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- ビット単位でターゲット ビットセットと結合するビットセット。  
+ The bitset that is to be combined bitwise with the target bitset.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターとして指定されたビットセットとビット単位で **AND** 演算された結果として生成される変更後ターゲット ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The modified target bitset that results from the bitwise **AND** operation with the bitset specified as a parameter.  
   
-### <a name="remarks"></a>コメント  
- **AND** 演算子で結合された 2 つのビットは、各ビットが true の場合に **true** を返します。各ビットが true ではない場合、その組み合わせは **false** を返します。  
+### <a name="remarks"></a>Remarks  
+ Two bits combined by the **AND** operator return **true** if each bit is true; otherwise, their combination returns **false**.  
   
- メンバー演算子関数では、**AND** 演算子でビット単位で結合するとき、ビットセットのサイズを同じにする必要があります。  
+ Bitsets must be of the same size to be combined bitwise with the **AND** operator by the member operator function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_bitwise.cpp  
@@ -700,23 +713,23 @@ The parameter bitset b2 remains: ( 01011 ).
 
 ##  <a name="op_lshift"></a> bitset::operator\<\<    
   
-ビットセット内のビットを、指定した位置数だけ左側にシフトさせ、その結果を新しいビットセットに返します。  
+Shifts the bits in a bitset to the left a specified number of positions and returns the result to a new bitset.  
   
 ```  
 bitset\<N> operator<<(size_t _Pos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内のビットを左側にシフトするときの位置数。  
+ The number of positions to the left that the bits in the bitset are to be shifted.  
   
-### <a name="return-value"></a>戻り値  
- 必要な位置数だけビットを左にシフトした変更後ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The modified bitset with the bits shifted to the left the required number of positions.  
   
-### <a name="remarks"></a>コメント  
- メンバー演算子関数は **bitset**( **\*this**) **<<= pos** を返します。[<<=](#op_lshift_eq) は、指定された位置数だけビットセット内のビットを左側にシフトし、結果をターゲット ビットセットに返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator function returns **bitset**( **\*this**) **<<= pos,** where [<<=](#op_lshift_eq) shifts the bits in a bitset to the left a specified number of positions and returns the result to the targeted bitset.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_LS.cpp  
@@ -748,23 +761,23 @@ int main( )
 ```  
   
 ##  <a name="op_lshift_eq"></a>  bitset::operator&lt;&lt;=  
- ビットセット内のビットを、指定した位置数だけ左側にシフトさせ、その結果を対象とするビットセットに返します。  
+ Shifts the bits in a bitset to the left a specified number of positions and returns the result to the targeted bitset.  
   
 ```  
 bitset\<N>& operator<<=(size_t _Pos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内のビットを左側にシフトするときの位置数。  
+ The number of positions to the left the bits in the bitset are to be shifted.  
   
-### <a name="return-value"></a>戻り値  
- 必要な位置数だけビットを左側にシフトした変更後ターゲット ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The targeted bitset modified so that the bits have been shifted to the left the required number of positions.  
   
-### <a name="remarks"></a>コメント  
- その位置までシフトする要素がない場合、この関数はビットを消去し、値 0 にします。  
+### <a name="remarks"></a>Remarks  
+ If no element exists to shift into the position, the function clears the bit to a value of 0.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_LSE.cpp  
@@ -791,23 +804,23 @@ After shifting the bits 2 positions to the left,
 ```  
   
 ##  <a name="op_eq_eq"></a>  bitset::operator==  
- 指定したビットセットとターゲット ビットセットが等しいことをテストします。  
+ Tests a target bitset for equality with a specified bitset.  
   
 ```  
 bool operator==(const bitset\<N>& right) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- ターゲット ビットセットと比較し、等しいかどうかを判定するビットセット。  
+ The bitset that is to be compared to the target bitset for equality.  
   
-### <a name="return-value"></a>戻り値  
- ビットセットが同じ場合は **true** を、異なる場合は **false** を返します。  
+### <a name="return-value"></a>Return Value  
+ **true** if the bitsets are the same; **false** if they are different.  
   
-### <a name="remarks"></a>コメント  
- メンバー演算子関数で等しいかどうかをテストするとき、ビットセットは同じサイズにする必要があります。  
+### <a name="remarks"></a>Remarks  
+ Bitsets must be of the same size to be tested for equality by the member operator function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_EQ.cpp  
@@ -848,20 +861,20 @@ Bitset b1 is different from bitset b3.
 ```  
   
 ##  <a name="op_rshift"></a>  bitset::operator&gt;&gt;  
- ビットセット内のビットを、指定した位置数だけ右側にシフトさせ、その結果を新しいビットセットに返します。  
+ Shifts the bits in a bitset to the right a specified number of positions and returns the result to a new bitset.  
   
 ```  
 bitset\<N> operator>>(size_t _Pos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内のビットを右側にシフトするときの位置数。  
+ The number of positions to the right the bits in the bitset are to be shifted.  
   
-### <a name="return-value"></a>戻り値  
- ターゲット ビットセットを基準にして必要な位置数だけビットが右側にシフトされた新しいビットセット。  
+### <a name="return-value"></a>Return Value  
+ A new bitset where the bits have been shifted to the right the required number of positions relative to the targeted bitset.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_RS.cpp  
@@ -898,23 +911,23 @@ After shifting the bits 1 position to the right,
 ```  
   
 ##  <a name="op_rshift_eq"></a>  bitset::operator&gt;&gt;=  
- ビットセット内のビットを、指定した位置数だけ右側にシフトさせ、その結果を対象とするビットセットに返します。  
+ Shifts the bits in a bitset to the right a specified number of positions and returns the result to the targeted bitset.  
   
 ```  
 bitset\<N>& operator>>=(size_t _Pos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内のビットを右側にシフトするときの位置数。  
+ The number of positions to the right the bits in the bitset are to be shifted.  
   
-### <a name="return-value"></a>戻り値  
- 必要な位置数だけビットを右側にシフトした変更後ターゲット ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The targeted bitset modified so that the bits have been shifted to the right the required number of positions.  
   
-### <a name="remarks"></a>コメント  
- その位置までシフトする要素がない場合、この関数はビットを消去し、値 0 にします。  
+### <a name="remarks"></a>Remarks  
+ If no element exists to shift into the position, the function clears the bit to a value of 0.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_RSE.cpp  
@@ -942,21 +955,21 @@ After shifting the bits 2 positions to the right,
 ```  
   
 ##  <a name="op_at"></a>  bitset::operator[]  
- ビットセットが変更可能な場合、ビットセット内の指定した位置のビットへの参照を返します。それ以外の場合は、その位置のビットの値を返します。  
+ Returns a reference to a bit at a specified position in a bitset if the bitset is modifiable; otherwise, it returns the value of the bit at that position.  
   
 ```  
 bool operator[](size_t _Pos) const;
 reference operator[](size_t _Pos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内のビットの位置。  
+ The position locating the bit within the bitset.  
   
-### <a name="remarks"></a>コメント  
-ビルドで [\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md) を 1 か 2 に定義すると、ビットセットの境界の外にある要素にアクセスしようとすると、実行可能ファイルでランタイム エラーが発生します。 詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+When you define [\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md) as 1 or 2 in your build, a runtime error will occur in your executable if you attempt to access an element outside the bounds of the bitset. For more informations, see [Checked Iterators](../standard-library/checked-iterators.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_REF.cpp  
@@ -983,25 +996,25 @@ int main( )
 ```  
   
 ##  <a name="op_xor_eq"></a>  bitset::operator^=  
- 排他的 `OR` 演算を使用して、ビットセットのビットごとの組み合わせを実行します。  
+ Performs a bitwise combination of bitsets with the exclusive `OR` operation.  
   
 ```  
 bitset\<N>& operator^=(const bitset\<N>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- ビット単位でターゲット ビットセットと結合するビットセット。  
+ The bitset that is to be combined bitwise with the target bitset.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターとして指定されたビットセットとビット単位で排他的 `OR` 演算された結果として生成される変更後ターゲット ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The modified target bitset that results from the bitwise exclusive `OR` operation with the bitset specified as a parameter.  
   
-### <a name="remarks"></a>コメント  
- 排他的 **OR** 演算子で結合された 2 つのビットは、両方ではなくいずれかが **true** の場合に **true** を返し、そうでない場合に **false** を返します。  
+### <a name="remarks"></a>Remarks  
+ Two bits combined by the exclusive **OR** operator return **true** if at least one, but not both, of the bits is **true**; otherwise, their combination returns **false**.  
   
- メンバー演算子関数では、排他的 `OR` 演算子でビット単位で結合するとき、ビットセットのサイズを同じにする必要があります。  
+ Bitsets must be of the same size to be combined bitwise with the exclusive `OR` operator by the member operator function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_bitwiseOR.cpp  
@@ -1045,25 +1058,25 @@ The parameter bitset b2 remains: ( 01011 ).
 ```  
   
 ##  <a name="op_or_eq"></a>  bitset::operator&#124;=  
- 包括的 `OR` 演算を使用して、ビットセットのビットごとの組み合わせを実行します。  
+ Performs a bitwise combination of bitsets with the inclusive `OR` operation.  
   
 ```  
 bitset\<N>& operator|=(const bitset\<N>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- ビット単位でターゲット ビットセットと結合するビットセット。  
+ The bitset that is to be combined bitwise with the target bitset.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターとして指定されたビットセットとビット単位で両立的 `OR` 演算された結果として生成される変更後ターゲット ビットセット。  
+### <a name="return-value"></a>Return Value  
+ The modified target bitset that results from the bitwise inclusive `OR` operation with the bitset specified as a parameter.  
   
-### <a name="remarks"></a>コメント  
- 両立的 `OR` 演算子で結合された 2 つのビットは、いずれかが **true** の場合に **true** を返し、両方とも **false** の場合に **false** を返します。  
+### <a name="remarks"></a>Remarks  
+ Two bits combined by the inclusive `OR` operator return **true** if at least one of the bits is **true**; if both bits are **false**, their combination returns **false**.  
   
- メンバー演算子関数では、両立的 `OR` 演算子でビット単位で結合するとき、ビットセットのサイズを同じにする必要があります。  
+ Bitsets must be of the same size to be combined bitwise with the inclusive `OR` operator by the member operator function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_BIO.cpp  
@@ -1108,16 +1121,16 @@ The parameter bitset b2 remains: ( 01011 ).
 ```  
   
 ##  <a name="op_dtor"></a>  bitset::operator~  
- ターゲット ビットセット内のすべてのビットを反転させ、その結果を返します。  
+ Inverts all the bits in a target bitset and returns the result.  
   
 ```  
 bitset\<N> operator~() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ターゲット ビットセットを基準にしてすべてのビットが反転されたビットセット。  
+### <a name="return-value"></a>Return Value  
+ The bitset with all its bits inverted with respect to the targeted bitset.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_op_invert.cpp  
@@ -1151,7 +1164,7 @@ Bitset b3 = b1.flip( ) is: ( 11000 ).
 ```  
   
 ##  <a name="reference"></a>  bitset::reference  
- ビットセット クラスのビットセット用ヘルパー クラスとして、個々のビットへのアクセスと操作に使用される `operator[]` に含まれるビットへの参照を提供するプロキシ クラス。  
+ A proxy class that provides references to bits contained in a bitset that is used to access and manipulate the individual bits as a helper class for the `operator[]` of class bitset.  
   
 ```  
 class reference {  
@@ -1165,28 +1178,28 @@ public:
 };  
 ```    
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- ビットセットのビットに割り当てる型が `bool` のオブジェクトの値。  
+ The value of the object of type `bool` to be assigned to a bit in a bitset.  
   
  `_Bitref`  
- フォーム *x [ i ]* のビットセット *x* の位置 *i* のビット参照。  
+ A reference of the form *x [ i ]* to the bit at position *i* in bitset *x*.  
   
-### <a name="return-value"></a>戻り値  
- クラス参照の第 1、第 2、第 5 メンバー関数に対して引数位置により指定されるビットセットのビット参照。そして、**true** または **false**。これは、クラス参照の第 3 と第 4 メンバー関数に対してビットセットの変更後ビットの値を反映します。  
+### <a name="return-value"></a>Return Value  
+ A reference to the bit in the bitset specified by the argument position for the first, second, and fifth member functions of class reference, and **true** or **false**, to reflect the value of the modified bit in the bitset for the third and fourth member functions of class reference.  
   
-### <a name="remarks"></a>コメント  
- クラス `reference` は、ビットセット `operator[]` のヘルパー クラスとしてのみ存在します。 このメンバー クラスは、ビットセット内の個別ビットにアクセスできるオブジェクトを表します。 *b* を型 `bool` のオブジェクト、*x* と *y* を型 **bitset\<***N***>** のオブジェクト、*i* と *j* をそのようなオブジェクト内で有効な位置とします。 表記 *x [i]* は、ビットセット *x* の位置 *i* のビットを指します。 クラス `reference` のメンバー関数は、次の演算を順に与えます。  
+### <a name="remarks"></a>Remarks  
+ The class `reference` exists only as a helper class for the bitset `operator[]`. The member class describes an object that can access an individual bit within a bitset. Let *b* be an object of type `bool`, *x* and *y* objects of type **bitset\<***N***>**, and *i* and *j* valid positions within such an object. The notation *x [i]* references the bit at position *i* in bitset *x*. The member functions of class `reference` provide, in order, the following operations:  
   
-|操作|定義|  
+|Operation|Definition|  
 |---------------|----------------|  
-|*x*[*i*] = *b*|ビットセット *x* のビット位置 *i* に `bool` 値 *b* を保存します。|  
-|*x*[*i*] = *y*[*j*]|ビットセット *x* のビット位置 *i* にビット *y*[ *j*] の値を保存します。|  
-|*b* = ~ *x*[*i*]|`bool` *b* にビット *x*[ *i*] の反転値を保存します。|  
-|*b* = *x*[*i*]|`bool` *b* にビット *x*[ *i*] の値を保存します。|  
-|*x*[*i*]. `flip`( )|*x* のビット位置 *i* にビット *x*[ *i*] の反転値を保存します。|  
+|*x*[*i*] = *b*|Stores `bool` value *b* at bit position *i* in bitset *x*.|  
+|*x*[*i*] = *y*[*j*]|Stores the value of the bit *y*[ *j*] at bit position *i* in bitset *x*.|  
+|*b* = ~ *x*[*i*]|Stores the flipped value of the bit *x*[ *i*] in `bool` *b*.|  
+|*b* = *x*[*i*]|Stores the value of the bit *x*[ *i*] in `bool` *b*.|  
+|*x*[*i*]. `flip`( )|Stores the flipped value of the bit *x*[ *i*] back at bit position *i* in *x*.|  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_reference.cpp  
@@ -1269,24 +1282,24 @@ After a second flip, the value of the position 4 bit in b2 is now: 1.
 ```  
   
 ##  <a name="reset"></a>  bitset::reset  
- ビットセット内のすべてのビットを 0 にリセットするか、指定した位置の 1 つのビットを 0 にリセットします。  
+ Resets all the bits in a bitset to 0 or resets a bit at a specified position to 0.  
   
 ```  
 bitset\<N>& reset();  
 bitset\<N>& reset(size_t _Pos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内で 0 にリセットするビットの位置。  
+ The position of the bit in the bitset to be reset to 0.  
   
-### <a name="return-value"></a>戻り値  
- メンバー関数が呼び出されたビットセットのコピー。  
+### <a name="return-value"></a>Return Value  
+ A copy of the bitset for which the member function was invoked.  
   
-### <a name="remarks"></a>コメント  
- 2 番目のメンバー関数は、指定された位置がビットセットのサイズより大きい場合、[out_of_range](../standard-library/out-of-range-class.md) 例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ The second member function throws an [out_of_range](../standard-library/out-of-range-class.md) exception if the position specified is greater than the size of the bitset.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_reset.cpp  
@@ -1325,7 +1338,7 @@ The collecion of bits obtained from resetting all
 ```  
   
 ##  <a name="set"></a>  bitset::set  
- ビットセット内のすべてのビットを 1 に設定するか、指定した位置の 1 つのビットを 1 に設定します。  
+ Sets all the bits in a bitset to 1 or sets a bit at a specified position to 1.  
   
 ```   
 bitset\<N>& set();
@@ -1335,20 +1348,20 @@ bitset\<N>& set(
     bool val = true);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内で、ある値を割り当てるように設定するビットの位置。  
+ The position of the bit in the bitset to be set to assigned a value.  
   
  `val`  
- 指定された位置のビットに割り当てる値。  
+ The value to be assigned to the bit at the position specified.  
   
-### <a name="return-value"></a>戻り値  
- メンバー関数が呼び出されたビットセットのコピー。  
+### <a name="return-value"></a>Return Value  
+ A copy of the bitset for which the member function was invoked.  
   
-### <a name="remarks"></a>コメント  
- 2 番目のメンバー関数は、指定された位置がビットセットのサイズより大きい場合、[out_of_range](../standard-library/out-of-range-class.md) 例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ The second member function throws an [out_of_range](../standard-library/out-of-range-class.md) exception if the position specified is greater than the size of the bitset.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // bitset_set.cpp  
@@ -1387,17 +1400,17 @@ The collecion of bits obtained from setting all the
 ```  
   
 ##  <a name="size"></a>  bitset::size  
- bitset オブジェクト内のビット数を返します。  
+ Returns the number of bits in a bitset object.  
   
 ```  
 size_t size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- bitset\<N> 内のビットの数、*N*。  
+### <a name="return-value"></a>Return Value  
+ The number of bits, *N*, in a bitset\<N>.  
   
-### <a name="example"></a>例  
-  bitset::size メンバー関数の使用例を次に示します。  
+### <a name="example"></a>Example  
+  The following example demonstrates the use of the bitset::size member function.  
   
 ```cpp  
 // bitset_size.cpp  
@@ -1428,20 +1441,20 @@ The number of bits in bitset b1 is: 5.
 ```  
   
 ##  <a name="test"></a>  bitset::test  
- ビットセット内の指定した位置のビットが 1 に設定されているかどうかをテストします。  
+ Tests whether the bit at a specified position in a bitset is set to 1.  
   
 ```  
 bool test(size_t _Pos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pos`  
- ビットセット内でその値をテストするビットの位置。  
+ The position of the bit in the bitset to be tested for its value.  
   
-### <a name="return-value"></a>戻り値  
- 引数位置により指定されたビットが 1 に設定されている場合は **true** を、それ以外の場合は **false** を返します。  
+### <a name="return-value"></a>Return Value  
+ **true** if the bit specified by the argument position is set to 1; otherwise, **false**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は [out_of_range](../standard-library/out-of-range-class.md) をスローします。
+### <a name="remarks"></a>Remarks  
+ The member function throws an [out_of_range](../standard-library/out-of-range-class.md)
 
 

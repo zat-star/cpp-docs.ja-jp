@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- codecvt_utf8
 - codecvt/std::codecvt_utf8
 dev_langs:
 - C++
@@ -34,35 +33,35 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5187996fc377bca8633360082d07f7ec8a68ee57
-ms.openlocfilehash: 1f6c2724747d22aa662779fa8f6433647a7853f3
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 8294e0edecb56016671223ee7f0d23e6ff0c3d71
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="codecvtutf8"></a>codecvt_utf8
-UCS-2 または UCS-4 としてエンコードされたワイド文字と、UTF-8 としてエンコードされたバイト ストリームを変換する[ロケール](../standard-library/locale-class.md) ファセットを表します。
+Represents a [locale](../standard-library/locale-class.md) facet that converts between wide characters encoded as UCS-2 or UCS-4, and a byte stream encoded as UTF-8.
 
 ```
 template<class Elem, unsigned long Maxcode = 0x10ffff, codecvt_mode Mode = (codecvt_mode)0>
 class codecvt_utf8 : public std::codecvt<Elem, char, StateType>
 ```
 
-## <a name="parameters"></a>パラメーター
+## <a name="parameters"></a>Parameters
 
 `Elem`  
-ワイド文字要素型。  
+The wide-character element type.  
 `Maxcode`  
-ロケール ファセットの文字の最大数。  
+The maximum number of characters for the locale facet.  
 `Mode`  
-ロケール ファセットの構成情報。  
+Configuration information for the locale facet.  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-このバイト ストリームはバイナリ ファイルまたはテキスト ファイルに書き込むことができます。  
+The byte stream can be written to either a binary file or a text file.  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>Requirements
 
-ヘッダー: <codecvt> 名前空間: std
+Header: <codecvt> Namespace: std
 

@@ -1,5 +1,5 @@
 ---
-title: "is_convertible クラス | Microsoft Docs"
+title: is_convertible Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_convertible
 - type_traits/std::is_convertible
 dev_langs:
 - C++
@@ -35,34 +34,34 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 381fa9297dd9fad3efd84078a000fea65af0abfd
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ca63e76acd1f1d7c892489dd86376d040b8f614a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isconvertible-class"></a>is_convertible クラス
-一方の型をもう一方の型に変換できるかどうかをテストします。  
+# <a name="isconvertible-class"></a>is_convertible Class
+Tests if one type is convertible to another.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class From, class To>  
 struct is_convertible;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `From`  
- 変換前の型。  
+ The type to convert from.  
   
  `Ty`  
- 変換後の型。  
+ The type to convert to.  
   
-## <a name="remarks"></a>コメント  
- `To to = from;` という式が正しい形式である場合、型述語のインスタンスは true を保持します (`from` は型 `From` のオブジェクト)。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the expression `To to = from;`, where `from` is an object of type `From`, is well-formed.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_convertible.cpp   
@@ -95,12 +94,12 @@ is_convertible<trivial, trivial> == true
 is_convertible<char, int> == true  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_base_of クラス](../standard-library/is-base-of-class.md)
+ [is_base_of Class](../standard-library/is-base-of-class.md)
 

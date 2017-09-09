@@ -1,5 +1,5 @@
 ---
-title: "tuple_element クラス | Microsoft Docs"
+title: tuple_element Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,13 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- tuple_element
-- std::tuple_element
-- utility/std::tuple_element
+- tuple_element", "std::tuple_element", "utility/std::tuple_element
 dev_langs:
 - C++
 helpviewer_keywords:
-- tuple_element Class
+- ', '
 ms.assetid: 4c51a6c1-ce81-462f-8c6c-291d69f2b77c
 caps.latest.revision: 23
 author: corob-msft
@@ -35,17 +33,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: aadbf7d2c6fece48ab29c1b818995464a790c38b
-ms.openlocfilehash: b5568eb951738b1c0c53321d7430c84db6bac9ec
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 86d3e1e93b6a0bedbae20c2dacec7c393c0dd3a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="tupleelement-class"></a>tuple_element クラス
-`tuple` 要素をラップします。 `array` 要素および `pair` 要素のラップの特殊化。  
+# <a name="tupleelement-class"></a>tuple_element Class
+Wraps a `tuple` element. Specializations wrap `array` elements and `pair` elements.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 // CLASS tuple_element (find element by index)  
@@ -82,36 +80,36 @@ template <class T1, class T2>
    struct tuple_element<1, pair<T1, T2>>;
 ```  
   
-### <a name="parameters"></a>パラメーター  
-*インデックス*  
-指定した要素のインデックス。  
+### <a name="parameters"></a>Parameters  
+*Index*  
+The index of the designated element.  
   
 *Tuple*  
-組の型。  
+The type of the tuple.  
   
 *Elem*  
-配列要素の型。  
+The type of an array element.  
   
 *Size*  
-配列のサイズ。  
+The size of the array.  
 
-*T1* ペアの 1 番目の要素の型。
+*T1* The type of the first element in a pair.
   
 *T2*  
-ペアの 2 番目の要素の型。
+The type of the second element in a pair.
 
-## <a name="remarks"></a>コメント  
-このテンプレート クラス `tuple_element` では、タプル型 `Tuple` のインデックス `Index` にある型のシノニムである typedef `type` が入れ子になっています。  
+## <a name="remarks"></a>Remarks  
+The template class `tuple_element` has a nested typedef `type` that is a synonym for the type at index `Index` of the tuple type `Tuple`.  
 
-Typedef `tuple_element_t` は `tuple_element<Index, Tuple>::type` の便利なエイリアスです。  
+The typedef `tuple_element_t` is a convenient alias for `tuple_element<Index, Tuple>::type`.  
   
-配列のテンプレート クラスの特殊化では、同じ型の `Size` 要素のタプルとして `array` にインターフェイスを提供します。 それぞれの特殊化は入れ子の typedef `type` を持ち、これは `Index` の `array`要素の型のシノニムであり、const-volatile 制限が保持されます。  
+The template class specialization for arrays provides an interface to an `array` as a tuple of `Size` elements, each of which has the same type. Each specialization has a nested typedef `type` that is a synonym for the type of the `Index` element of the `array`, with any const-volatile qualifications preserved.  
   
-`pair` の型のテンプレートの特殊化では、それぞれ 1 つのメンバーの typedef である `type` を提供します。これはペアの指定された位置にある要素の型のシノニムであり、const または volatile の制限が保持されます。 Typedef `tuple_element_t` は `tuple_element<N, pair<T1, T2>>::type` の便利なエイリアスです。  
+The template specializations for `pair` types each provide a single member typedef, `type`, which is a synonym for the type of the element at the specified position in the pair, with any const and/or volatile qualifications preserved. The typedef `tuple_element_t` is a convenient alias for `tuple_element<N, pair<T1, T2>>::type`.  
   
-使用して、 [get 関数&lt;ユーティリティ&gt;](../standard-library/utility-functions.md#get)または指定した種類の指定位置にある要素を返します。 
+Use the [get Function &lt;utility&gt;](../standard-library/utility-functions.md#get) to return the element at a specified position, or of a specified type. 
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <tuple>  
@@ -136,7 +134,7 @@ int main() {
 0 1.5 Tail  
 ```  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <array>   
@@ -166,7 +164,7 @@ int main()
  0  
 ```  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <utility>   
@@ -197,10 +195,10 @@ int main() {
  0 1.333  
 ```  
 
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<tuple>  
- **ヘッダー:** \<array> (配列の特殊化用)  **ヘッダー:** \<utility> (ペアの特殊化用)  **名前空間:** std  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<tuple>  
+ **Header:** \<array> (for array specialization) **Header:** \<utility> (for pair specializations) **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [tuple ](../standard-library/tuple-class.md)
 

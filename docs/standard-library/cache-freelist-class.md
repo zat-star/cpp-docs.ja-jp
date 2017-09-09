@@ -1,5 +1,5 @@
 ---
-title: "cache_freelist クラス | Microsoft Docs"
+title: cache_freelist Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - allocators/stdext::cache_freelist
-- stdext::cache_freelist
-- cache_freelist
 - allocators/stdext::cache_freelist::allocate
 - allocators/stdext::cache_freelist::deallocate
 dev_langs:
 - C++
 helpviewer_keywords:
-- cache_freelist class
+- stdext::cache_freelist
+- stdext::cache_freelist [C++], allocate
+- stdext::cache_freelist [C++], deallocate
 ms.assetid: 840694de-36ba-470f-8dae-2b723d5a8cd9
 caps.latest.revision: 19
 author: corob-msft
@@ -37,97 +37,97 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 7d15c40a0116e8d6de2346a7da74045c2a7ee795
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d57430ebb8046a4b30aa112563feea7d6fc77cf2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="cachefreelist-class"></a>cache_freelist クラス
-1 つのサイズのメモリ ブロックを割り当ておよび割り当て解除する[ブロック アロケーター](../standard-library/allocators-header.md)を定義します。  
+# <a name="cachefreelist-class"></a>cache_freelist Class
+Defines a [block allocator](../standard-library/allocators-header.md) that allocates and deallocates memory blocks of a single size.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <std::size_t Sz, class Max>  
 class cache_freelist
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Sz`|割り当てられる配列内の要素の数。|  
-|`Max`|フリー リストの最大サイズを表す max クラスです。 [max_fixed_size](../standard-library/max-fixed-size-class.md)、[max_none](../standard-library/max-none-class.md)、[max_unbounded](../standard-library/max-unbounded-class.md)、[max_variable_size](../standard-library/max-variable-size-class.md) のいずれかにすることができます。|  
+|`Sz`|The number of elements in the array to be allocated.|  
+|`Max`|The max class representing the maximum size of the free list. This can be [max_fixed_size](../standard-library/max-fixed-size-class.md), [max_none](../standard-library/max-none-class.md), [max_unbounded](../standard-library/max-unbounded-class.md), or [max_variable_size](../standard-library/max-variable-size-class.md).|  
   
-## <a name="remarks"></a>コメント  
- cache_freelist テンプレート クラスは、サイズが `Sz` であるフリー リストを保持します。 フリー リストがいっぱいになると、`operator delete` を使用してメモリ ブロックの割り当てを解除します。 フリー リストが空になると、`operator new` を使用して新しいメモリ ブロックを割り当てます。 フリー リストの最大サイズは、max クラスで `Max` パラメーターに渡されたクラスによって決定されます。  
+## <a name="remarks"></a>Remarks  
+ The cache_freelist template class maintains a free list of memory blocks of size `Sz`. When the free list is full it uses `operator delete` to deallocate memory blocks. When the free list is empty it uses `operator new` to allocate new memory blocks. The maximum size of the free list is determined by the class max class passed in the `Max` parameter.  
   
- 各メモリ ブロックは、`Sz` バイトの使用可能なメモリと、`operator new` および `operator delete` に必要なデータを保持します。  
+ Each memory block holds `Sz` bytes of usable memory and the data that `operator new` and `operator delete` require.  
   
-### <a name="constructors"></a>コンストラクター  
-  
-|||  
-|-|-|  
-|[cache_freelist](#cache_freelist)|`cache_freelist` 型のオブジェクトを構築します。|  
-  
-### <a name="member-functions"></a>メンバー関数  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[allocate](#allocate)|メモリのブロックを割り当てます。|  
-|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
+|[cache_freelist](#cache_freelist)|Constructs an object of type `cache_freelist`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<allocators>  
+### <a name="member-functions"></a>Member Functions  
   
- **名前空間:** stdext  
+|||  
+|-|-|  
+|[allocate](#allocate)|Allocates a block of memory.|  
+|[deallocate](#deallocate)|Frees a specified number of objects from storage beginning at a specified position.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<allocators>  
+  
+ **Namespace:** stdext  
   
 ##  <a name="allocate"></a>  cache_freelist::allocate  
- メモリのブロックを割り当てます。  
+ Allocates a block of memory.  
   
 ```
 void *allocate(std::size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`count`|割り当てられる配列内の要素の数。|  
+|`count`|The number of elements in the array to be allocated.|  
   
-### <a name="return-value"></a>戻り値  
- 割り当てられたオブジェクトへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the allocated object.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="cache_freelist"></a>  cache_freelist::cache_freelist  
- `cache_freelist` 型のオブジェクトを構築します。  
+ Constructs an object of type `cache_freelist`.  
   
 ```
 cache_freelist();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="deallocate"></a>  cache_freelist::deallocate  
- 指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
+ Frees a specified number of objects from storage beginning at a specified position.  
   
 ```
 void deallocate(void* ptr, std::size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`ptr`|記憶域から割り当てを解除される最初のオブジェクトへのポインター。|  
-|`count`|記憶域から割り当てを解除されるオブジェクトの数。|  
+|`ptr`|A pointer to the first object to be deallocated from storage.|  
+|`count`|The number of objects to be deallocated from storage.|  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

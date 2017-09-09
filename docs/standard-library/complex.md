@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- <complex>
-- std.<complex>
-- std::<complex>
+- <complex>", "std::<complex>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,40 +33,40 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 02d651b3e3ca4dc643b01463a85762a6427b8e83
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 03b72414921c6de42a7e5c4dd5bd91d1630c4ee4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltcomplexgt"></a>&lt;complex&gt;
-コンテナー テンプレート クラスを定義**複雑な**とそのサポート用テンプレート。  
+Defines the container template class **complex** and its supporting templates.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <complex>  
 ```  
   
-## <a name="remarks"></a>コメント  
- 複素数は、順序付けされた実数のペアです。 純粋に幾何学的な見地からすれば、複素平面は実数からなる 2 次元平面です。 複素平面には代数構造が加えられているため、実数平面とは異なる特殊な性質を持ちます。 この代数構造には次の 2 つの基本的な演算が含まれます。  
+## <a name="remarks"></a>Remarks  
+ A complex number is an ordered pair of real numbers. In purely geometrical terms, the complex plane is the real, two-dimensional plane. The special qualities of the complex plane that distinguish it from the real plane are due to its having an additional algebraic structure. This algebraic structure has two fundamental operations:  
   
 -   Addition defined as (*a*, *b*) + (*c*, *d*) = (*a* + *c*, *b* + *d*)  
   
 -   Multiplication defined as (*a*, *b*) \* (*c*, *d*) = (*ac* - *bd*, *ad* + *bc*)  
   
- 複素数の加算や乗算を伴う複素数の集合は、標準の代数学的な意味での体 (field) です。  
+ The set of complex numbers with the operations of complex addition and complex multiplication are a field in the standard algebraic sense:  
   
--   実数の体 (field) における実数の加算や乗算と全く同様、加算や乗算の演算には交換法則や結合法則が成り立ち、加法に対する乗法の分配法則も成り立ちます。  
+-   The operations of addition and multiplication are commutative and associative and multiplication distributes over addition exactly as it does with real addition and multiplication on the field of real numbers.  
   
--   複素数 (0, 0) が加法と (1, 0) が乗法です。  
+-   The complex number (0, 0) is the additive identity and (1, 0) is the multiplicative identity.  
   
--   複素数の加法に関する逆元 (*、*、 *b*) は (-*、*、-*b*)、およびすべてのような複雑な数値を除く逆数 (0, 0) が  
+-   The additive inverse for a complex number (*a*, *b*) is (-*a*, -*b*), and the multiplicative inverse for all such complex numbers except (0, 0) is  
   
      (*a*/(*a*<sup>2</sup> + *b*<sup>2</sup>), -*b*/(*a*<sup>2</sup> + *b*<sup>2</sup>))  
   
- 複素数を表す*z* = (*、*、 *b*) 形式で*z* = *、* + *bi*ここで、*すれば*<sup>2</sup> =-1 で、規則複素数のセットとそのコンポーネントは、実数の集合の代数を適用することができます。 例:  
+ By representing a complex number *z* = (*a*, *b*) in the form *z* = *a* + *bi*, where *i*<sup>2</sup> = -1, the rules for the algebra of the set of real numbers can be applied to the set of complex numbers and to their components. For example:  
   
   (1 + 2*i*) \* (2 + 3*i*)  
   = 1 \* (2 + 3*i*) + 2*i* \* (2 + 3*i*)  
@@ -76,9 +74,9 @@ ms.lasthandoff: 04/29/2017
   = (2 - 6) + (3 + 4)*i*  
   = -4 + 7*i*  
   
- 複素数系は体 (field) ですが、順序体 (ordered field) ではありません。 あるため、実数とそのサブセットのフィールドのような不等式には実数複素数には適用できませんの複素数の順序がありません。  
+ The system of complex numbers is a field, but it is not an ordered field. There is no ordering of the complex numbers as there is for the field of real numbers and its subsets, so inequalities cannot be applied to complex numbers as they are to real numbers.  
   
- 複素数 *z* を表す形式としては、次の 3 つが一般的です。  
+ There are three common forms of representing a complex number *z*:  
   
 -   Cartesian: *z* = *a* + *bi*  
   
@@ -86,75 +84,75 @@ ms.lasthandoff: 04/29/2017
   
 -   Exponential: *z* = *r* \* *e*<sup>*ip*</sup>  
   
- これらの標準的な複素数の表現で使用される用語は、次のように呼ばれます。  
+ The terms used in these standard representations of a complex number are referred to as follows:  
   
--   デカルト形式の実数要素、または実数部 *a*。  
+-   The real Cartesian component or real part *a*.  
   
--   デカルト形式の虚数要素、または虚数部 *b*。  
+-   The imaginary Cartesian component or imaginary part *b*.  
   
--   係数、もしくは複素数の絶対値*r*です。  
+-   The modulus or absolute value of a complex number *r*.  
   
--   偏角または位相角*p* (ラジアン単位)。  
+-   The argument or phase angle *p* in radians.  
   
- 複数の値を返すことができる関数は - π より大きく、その引数としての主値を返すときに必要でない限りよりまたは等しい + π 一価にしています。 すべての角度をラジアン単位で表す必要がありますが、円で囲んだ 2 π ラジアン (360 °) がある場合。  
+ Unless otherwise specified, functions that can return multiple values are required to return a principal value for their arguments greater than -π and less than or equal to +π to keep them single valued. All angles must be expressed in radians, where there are 2π radians (360 degrees) in a circle.  
   
-### <a name="functions"></a>関数  
-  
-|||  
-|-|-|  
-|[abs](../standard-library/complex-functions.md#abs)|複素数の係数を計算します。|  
-|[arg](../standard-library/complex-functions.md#arg)|複素数から偏角を抽出します。|  
-|[conj](../standard-library/complex-functions.md#conj)|複素数の複素共役を返します。|  
-|[cos](../standard-library/complex-functions.md#cos)|複素数のコサインを返します。|  
-|[cosh](../standard-library/complex-functions.md#cosh)|複素数のハイパーボリック コサインを返します。|  
-|[exp](../standard-library/complex-functions.md#exp)|複素数の指数関数を返します。|  
-|[imag](../standard-library/complex-functions.md#imag)|複素数の虚数部を抽出します。|  
-|[log](../standard-library/complex-functions.md#log)|複素数の自然対数を返します。|  
-|[log10](../standard-library/complex-functions.md#log10)|複素数の底 10 の対数を返します。|  
-|[norm](../standard-library/complex-functions.md#norm)|複素数のノルムを抽出します。|  
-|[polar](../standard-library/complex-functions.md#polar)|デカルト形式で、指定した係数と偏角に対応する複素数を返します。|  
-|[pow](../standard-library/complex-functions.md#pow)|複素数の底を、別の複素数で累乗することによって得られる複素数を評価します。|  
-|[real](../standard-library/complex-functions.md#real)|複素数の実数部を抽出します。|  
-|[sin](../standard-library/complex-functions.md#sin)|複素数のサインを返します。|  
-|[sinh](../standard-library/complex-functions.md#sinh)|複素数のハイパーボリック サインを返します。|  
-|[sqrt](../standard-library/complex-functions.md#sqrt)|複素数の平方根を返します。|  
-|[tan](../standard-library/complex-functions.md#tan)|複素数のタンジェントを返します。|  
-|[tanh](../standard-library/complex-functions.md#tanh)|複素数のハイパーボリック タンジェントを返します。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/complex-operators.md#op_neq)|2 つの複素数の間の非同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator*](../standard-library/complex-operators.md#op_star)|2 つの複素数を乗算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator+](../standard-library/complex-operators.md#op_add)|2 つの複素数を加算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator-](../standard-library/complex-operators.md#operator-)|2 つの複素数を減算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator/](../standard-library/complex-operators.md#op_div)|2 つの複素数を除算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator<\<](../standard-library/complex-operators.md#op_lt_lt)|出力ストリームに複素数を挿入するテンプレート関数。|  
-|[operator==](../standard-library/complex-operators.md#op_eq_eq)|2 つの複素数の間の同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。|  
-|[operator>>](../standard-library/complex-operators.md#op_gt_gt)|入力ストリームから複素数を抽出するテンプレート関数。|  
+|[abs](../standard-library/complex-functions.md#abs)|Calculates the modulus of a complex number.|  
+|[arg](../standard-library/complex-functions.md#arg)|Extracts the argument from a complex number.|  
+|[conj](../standard-library/complex-functions.md#conj)|Returns the complex conjugate of a complex number.|  
+|[cos](../standard-library/complex-functions.md#cos)|Returns the cosine of a complex number.|  
+|[cosh](../standard-library/complex-functions.md#cosh)|Returns the hyperbolic cosine of a complex number.|  
+|[exp](../standard-library/complex-functions.md#exp)|Returns the exponential function of a complex number.|  
+|[imag](../standard-library/complex-functions.md#imag)|Extracts the imaginary component of a complex number.|  
+|[log](../standard-library/complex-functions.md#log)|Returns the natural logarithm of a complex number.|  
+|[log10](../standard-library/complex-functions.md#log10)|Returns the base 10 logarithm of a complex number.|  
+|[norm](../standard-library/complex-functions.md#norm)|Extracts the norm of a complex number.|  
+|[polar](../standard-library/complex-functions.md#polar)|Returns the complex number, which corresponds to a specified modulus and argument, in Cartesian form.|  
+|[pow](../standard-library/complex-functions.md#pow)|Evaluates the complex number obtained by raising a base that is a complex number to the power of another complex number.|  
+|[real](../standard-library/complex-functions.md#real)|Extracts the real component of a complex number.|  
+|[sin](../standard-library/complex-functions.md#sin)|Returns the sine of a complex number.|  
+|[sinh](../standard-library/complex-functions.md#sinh)|Returns the hyperbolic sine of a complex number.|  
+|[sqrt](../standard-library/complex-functions.md#sqrt)|Returns the square root of a complex number.|  
+|[tan](../standard-library/complex-functions.md#tan)|Returns the tangent of a complex number.|  
+|[tanh](../standard-library/complex-functions.md#tanh)|Returns the hyperbolic tangent of a complex number.|  
   
-### <a name="classes"></a>クラス  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[complex\<double>](../standard-library/complex-double.md)|明示的に特化したテンプレート クラスは両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**二重**複素数の実数部を表し、次の虚数部を表します。|  
-|[complex\<float>](../standard-library/complex-float.md)|明示的に特化したテンプレート クラスは、両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**float**複素数の実数部を表し、次の虚数部を表します。|  
-|[complex\<long double>](../standard-library/complex-long-double.md)|明示的に特化したテンプレート クラスは両方の種類のオブジェクトの順序付けされたペアを格納するオブジェクトを表します**long double**複素数の実数部を表し、次の虚数部を表します。|  
-|[complex](../standard-library/complex-class.md)|このテンプレート クラスは、複素数の算術演算に使用する複素数系を表すオブジェクトを記述します。|  
+|[operator!=](../standard-library/complex-operators.md#op_neq)|Tests for inequality between two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator*](../standard-library/complex-operators.md#op_star)|Multiplies two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator+](../standard-library/complex-operators.md#op_add)|Adds two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator-](../standard-library/complex-operators.md#operator-)|Subtracts two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator/](../standard-library/complex-operators.md#op_div)|Divides two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator<\<](../standard-library/complex-operators.md#op_lt_lt)|A template function that inserts a complex number into the output stream.|  
+|[operator==](../standard-library/complex-operators.md#op_eq_eq)|Tests for equality between two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.|  
+|[operator>>](../standard-library/complex-operators.md#op_gt_gt)|A template function that extracts a complex value from the input stream.|  
   
-### <a name="literals"></a>リテラル  
- \<complex> ヘッダーでは次の[ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)が定義されており、実数部が 0 および虚数部が入力パラメーターの値である複素数を作成します。  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|`constexpr complex<long double> operator""il(long double d)`<br /><br /> `constexpr complex<long double> operator""il(unsigned long long d)`|返します。`complex<long double>{0.0L, static_cast<long double>(d)}`|  
-|`constexpr complex<double> operator""i(long double d)`<br /><br /> `constexpr complex<double> operator""i(unsigned long long d)`|`complex<double>{0.0, static_cast<double>(d)}` を返します。|  
-|`constexpr complex<float> operator""if(long double d)`<br /><br /> `constexpr complex<float> operator""if(unsigned long long d)`|`complex<float>{0.0f, static_cast<float>(d)}` を返します。|  
+|[complex\<double>](../standard-library/complex-double.md)|The explicitly specialized template class describes an object that stores an ordered pair of objects, both of type **double**, where the first represents the real part of a complex number and the second represents the imaginary part.|  
+|[complex\<float>](../standard-library/complex-float.md)|The explicitly specialized template class describes an object that stores an ordered pair of objects, both of type **float**, where the first represents the real part of a complex number and the second represents the imaginary part.|  
+|[complex\<long double>](../standard-library/complex-long-double.md)|The explicitly specialized template class describes an object that stores an ordered pair of objects, both of type **long double**, where the first represents the real part of a complex number and the second represents the imaginary part.|  
+|[complex](../standard-library/complex-class.md)|The template class describes an object used to represent the complex number system and perform complex arithmetic operations.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+### <a name="literals"></a>Literals  
+ The \<complex> header defines the following [user-defined literals](../cpp/user-defined-literals-cpp.md) which create a complex number with the real part being zero and the imaginary part being the value of the input parameter.  
+  
+|||  
+|-|-|  
+|`constexpr complex<long double> operator""il(long double d)`<br /><br /> `constexpr complex<long double> operator""il(unsigned long long d)`|Returns: `complex<long double>{0.0L, static_cast<long double>(d)}`|  
+|`constexpr complex<double> operator""i(long double d)`<br /><br /> `constexpr complex<double> operator""i(unsigned long long d)`|Returns: `complex<double>{0.0, static_cast<double>(d)}`.|  
+|`constexpr complex<float> operator""if(long double d)`<br /><br /> `constexpr complex<float> operator""if(unsigned long long d)`|Returns: `complex<float>{0.0f, static_cast<float>(d)}`.|  
+  
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

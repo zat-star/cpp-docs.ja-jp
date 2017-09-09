@@ -1,5 +1,5 @@
 ---
-title: "is_nothrow_constructible クラス | Microsoft Docs"
+title: is_nothrow_constructible Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
-- is_nothrow_constructible
 - type_traits/std::is_nothrow_constructible
 dev_langs:
 - C++
@@ -35,38 +34,39 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: bf39b973c39fd024de6b4b75b3cc47aeb5bec9d8
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 07552a8a7222cbd00f4375ea7fa1771b96c4a5b4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isnothrowconstructible-class"></a>is_nothrow_constructible クラス
-指定された引数型の使用時に型を構築できるかどうか、およびスローしないと判明しているかどうかをテストします。  
+# <a name="isnothrowconstructible-class"></a>is_nothrow_constructible Class
+Tests whether a type is constructible and is known not to throw when the specified argument types are used.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T, class... Args>  
 struct is_nothrow_constructible;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 照会する型。  
+ The type to query.  
   
  `Args`  
- `T` のコンストラクター内の一致させる引数型。  
+ The argument types to match in a constructor of `T`.  
   
-## <a name="remarks"></a>コメント  
- 型の述語のインスタンスは、型 `T` が `Args` の引数型を使用して構築可能であり、コンストラクターがスローしないとコンパイラによって認識されている場合 true を保持します。それ以外の場合は false を保持します。 型 `T` を構築できるのは、変数定義 `T t(std::declval<Args>()...);` が整形式である場合です。 `T` と `Args` のすべての型は両方とも、完全な型、`void`、または不明なバインドの配列にする必要があります。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `T` is constructible by using the argument types in `Args`, and the constructor is known by the compiler not to throw; otherwise it holds false. Type `T` is constructible if the variable definition `T t(std::declval<Args>()...);` is well-formed. Both `T` and all the types in `Args` must be complete types, `void`, or arrays of unknown bound.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

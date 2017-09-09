@@ -1,5 +1,5 @@
 ---
-title: "&lt;exception&gt; 関数 | Microsoft ドキュメント"
+title: '&lt;exception&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -20,13 +20,25 @@ f1_keywords:
 ms.assetid: c09ac569-5e35-4fe8-872d-ca5810274dd7
 caps.latest.revision: 12
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 08d2a2161a2596cebb27175c55023d5313c7b908
-ms.lasthandoff: 02/24/2017
+helpviewer_keywords:
+- std::current_exception [C++]
+- std::get_terminate [C++]
+- std::get_unexpected [C++]
+- std::make_exception_ptr [C++]
+- std::rethrow_exception [C++]
+- std::set_terminate [C++]
+- std::set_unexpected [C++]
+- std::terminate [C++]
+- std::uncaught_exception [C++]
+- std::unexpected [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ac885e7157fb144f45403d493473b3ae1a8921a4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltexceptiongt-functions"></a>&lt;exception&gt; 関数
+# <a name="ltexceptiongt-functions"></a>&lt;exception&gt; functions
 ||||  
 |-|-|-|  
 |[current_exception](#current_exception)|[get_terminate](#get_terminate)|[get_unexpected](#get_unexpected)|  
@@ -35,83 +47,83 @@ ms.lasthandoff: 02/24/2017
 |[unexpected](#unexpected)|  
   
 ##  <a name="current_exception"></a>  current_exception  
- 現在の例外へのスマート ポインターを取得します。  
+ Obtains a smart pointer to the current exception.  
   
 ```cpp  
 exception_ptr current_exception();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の例外を指す [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ An [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) object pointing to the current exception.  
   
-### <a name="remarks"></a>コメント  
- catch ブロックで `current_exception` 関数を呼び出します。 例外が処理中で、catch ブロックで例外をキャッチできる場合、`current_exception` 関数は、例外を参照する `exception_ptr` オブジェクトを返します。 それ以外の場合、関数は null `exception_ptr` オブジェクトを返します。  
+### <a name="remarks"></a>Remarks  
+ Call the `current_exception` function in a catch block. If an exception is in flight and the catch block can catch the exception, the `current_exception` function returns an `exception_ptr` object that references the exception. Otherwise, the function returns a null `exception_ptr` object.  
   
- `current_exception` 関数は、`catch` ステートメントが[例外宣言](../cpp/try-throw-and-catch-statements-cpp.md)ステートメントを指定しているかどうかに関係なく、処理中の例外をキャプチャします。  
+ The `current_exception` function captures the exception that is in flight regardless of whether the `catch` statement specifies an [exception-declaration](../cpp/try-throw-and-catch-statements-cpp.md) statement.  
   
- 現在の例外のデストラクターは、例外を再スローしない場合、`catch` ブロックの最後に呼び出されます。 ただし、デストラクターで `current_exception` 関数を呼び出しても、その関数は現在の例外を参照する `exception_ptr` オブジェクトを返します。  
+ The destructor for the current exception is called at the end of the `catch` block if you do not rethrow the exception. However, even if you call the `current_exception` function in the destructor, the function returns an `exception_ptr` object that references the current exception.  
   
- `current_exception` 関数を連続して呼び出すと、現在の例外のさまざまなコピーを参照する `exception_ptr` オブジェクトが返されます。 その結果、オブジェクトは、異なるコピーを参照しているため、コピーが同じバイナリ値を持っている場合でも、比較においては等しくないと評価されます。  
+ Successive calls to the `current_exception` function return `exception_ptr` objects that refer to different copies of the current exception. Consequently, the objects compare as unequal because they refer to different copies, even though the copies have the same binary value.  
   
 ##  <a name="make_exception_ptr"></a>  make_exception_ptr  
- 例外のコピーを保持する [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) オブジェクトを作成します。  
+ Creates an [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) object that holds a copy of an exception.  
   
 ```cpp  
 template <class E>  
 exception_ptr make_exception_ptr(E Except);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Except`  
- コピーする例外を持つクラス。 通常は、[例外クラス](../standard-library/exception-class.md) オブジェクトを `make_exception_ptr` 関数への引数として指定しますが、任意のクラスのオブジェクトを引数に使用できます。  
+ The class with the exception to copy. Usually, you specify an [exception class](../standard-library/exception-class.md) object as the argument to the `make_exception_ptr` function, although any class object can be the argument.  
   
-### <a name="return-value"></a>戻り値  
- `Except` に関する現在の例外のコピーを指す [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ An [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) object pointing to a copy of the current exception for `Except`.  
   
-### <a name="remarks"></a>コメント  
- `make_exception_ptr` 関数を呼び出すことは、C++ 例外をスローし、その例外を catch ブロック内でキャッチしてから、[current_exception](../standard-library/exception-functions.md#current_exception) 関数を呼び出し、例外を参照する `exception_ptr` オブジェクトを返すことと同じです。 `make_exception_ptr` 関数の Microsoft 実装は、例外のスローとキャッチよりも効果的です。  
+### <a name="remarks"></a>Remarks  
+ Calling the `make_exception_ptr` function is equivalent to throwing a C++ exception, catching it in a catch block, and then calling the [current_exception](../standard-library/exception-functions.md#current_exception) function to return an `exception_ptr` object that references the exception. The Microsoft implementation of the `make_exception_ptr` function is more efficient than throwing and then catching an exception.  
   
- 通常、アプリケーションは `make_exception_ptr` 関数を必要とせず、使用は推奨されていません。  
+ An application typically does not require the `make_exception_ptr` function, and we discourage its use.  
   
 ##  <a name="rethrow_exception"></a>  rethrow_exception  
- パラメーターとして渡された例外をスローします。  
+ Throws an exception passed as a parameter.  
   
 ```cpp  
 void rethrow_exception(exception_ptr P);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `P`  
- 再スローするためにキャッチされる例外。 `P` が null の [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) である場合、関数は [std::bad_exception](../standard-library/bad-exception-class.md) をスローします。  
+ The caught exception to re-throw. If `P` is a null [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr), the function throws [std::bad_exception](../standard-library/bad-exception-class.md).  
   
-### <a name="remarks"></a>コメント  
- キャッチした例外を `exception_ptr` オブジェクトに保存すると、プライマリ スレッドはオブジェクトを処理できます。 プライマリ スレッドで、引数として `rethrow_exception` オブジェクトを指定して `exception_ptr` 関数を呼び出します。 `rethrow_exception` 関数は `exception_ptr` オブジェクトから例外を抽出し、プライマリ スレッドのコンテキストで例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ After you store a caught exception in an `exception_ptr` object, the primary thread can process the object. In your primary thread, call the `rethrow_exception` function together with the `exception_ptr` object as its argument. The `rethrow_exception` function extracts the exception from the `exception_ptr` object and then throws the exception in the context of the primary thread.  
   
 ##  <a name="get_terminate"></a>  get_terminate  
- 現在の `terminate_handler` 関数を取得します。  
+ Obtains the current `terminate_handler` function.  
   
 ```cpp  
 terminate_handler get_terminate();
 ```  
   
 ##  <a name="set_terminate"></a>  set_terminate  
- プログラムの終了時に呼び出される新しい `terminate_handler` を設定します。  
+ Establishes a new `terminate_handler` to be called at the termination of the program.  
   
 ```  
 terminate_handler set_terminate(terminate_handler fnew) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fnew`  
- 終了時に呼び出される関数。  
+ The function to be called at termination.  
   
-### <a name="return-value"></a>戻り値  
- 終了時に呼び出されていた、以前の関数のアドレス。  
+### <a name="return-value"></a>Return Value  
+ The address of the previous function that used to be called at termination.  
   
-### <a name="remarks"></a>コメント  
- この関数は、新しい [terminate_handler](../standard-library/exception-typedefs.md#terminate_handler) を関数 * `fnew` として確立します。 したがって、`fnew` を null ポインターにすることはできません。 この関数は、以前の終了ハンドラーのアドレスを返します。  
+### <a name="remarks"></a>Remarks  
+ The function establishes a new [terminate_handler](../standard-library/exception-typedefs.md#terminate_handler) as the function * `fnew`. Thus, `fnew` must not be a null pointer. The function returns the address of the previous terminate handler.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // exception_set_terminate.cpp  
@@ -141,32 +153,32 @@ int main()
 ```  
   
 ##  <a name="get_unexpected"></a>  get_unexpected  
- 現在の `unexpected_handler` 関数を取得します。  
+ Obtains the current `unexpected_handler` function.  
   
 ```cpp  
 unexpected_handler get_unexpected();
 ```  
   
 ##  <a name="set_unexpected"></a>  set_unexpected  
- 予期しない例外が発生したときに新しい `unexpected_handler` が存在するように設定します。  
+ Establishes a new `unexpected_handler` to be when an unexpected exception is encountered.  
   
 ```  
 unexpected_handler set_unexpected(unexpected_handler fnew) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fnew`  
- 予期しない例外が発生したときに呼び出される関数。  
+ The function to be called when an unexpected exception is encountered.  
   
-### <a name="return-value"></a>戻り値  
- 以前の `unexpected_handler` のアドレス。  
+### <a name="return-value"></a>Return Value  
+ The address of the previous `unexpected_handler`.  
   
-### <a name="remarks"></a>コメント  
- `fnew` を null ポインターにすることはできません。  
+### <a name="remarks"></a>Remarks  
+ `fnew` must not be a null pointer.  
   
- C++ 標準では、関数が throw のリストにない例外をスローした場合に、`unexpected` を呼び出す必要があります。 現在の実装では、これをサポートしていません。 次の例では、`unexpected` を直接呼び出し、その後で `unexpected_handler` を呼び出します。  
+ The C++ Standard requires that `unexpected` is called when a function throws an exception that is not on its throw list. The current implementation does not support this. The following example calls `unexpected` directly, which then calls the `unexpected_handler`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // exception_set_unexpected.cpp  
@@ -193,31 +205,31 @@ int main()
 ```  
   
 ##  <a name="terminate"></a>  terminate  
- 終了ハンドラーを呼び出します。  
+ Calls a terminate handler.  
   
 ```  
 void terminate();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数は、`void` 型の関数である終了ハンドラーを呼び出します。 **terminate** がプログラムによって直接呼び出される場合、終了ハンドラーは、[set_terminate](../standard-library/exception-functions.md#set_terminate) の呼び出しによって最も新しく設定されたものとなります。 **terminate** がスロー式の評価中に他のいくつかの理由のいずれかによって呼び出された場合、終端のハンドラーはスロー式の評価直後に有効になったものとなります。  
+### <a name="remarks"></a>Remarks  
+ The function calls a terminate handler, a function of type `void`. If **terminate** is called directly by the program, the terminate handler is the one most recently set by a call to [set_terminate](../standard-library/exception-functions.md#set_terminate). If **terminate** is called for any of several other reasons during evaluation of a throw expression, the terminate handler is the one in effect immediately after evaluating the throw expression.  
   
- 終了ハンドラーは、呼び出し元に戻らない場合があります。 プログラムの起動時、終了ハンドラーは **abort** を呼び出す関数です。  
+ A terminate handler may not return to its caller. At program startup, the terminate handler is a function that calls **abort**.  
   
-### <a name="example"></a>例  
-  **terminate** の使用例については、「[set_unexpected](../standard-library/exception-functions.md#set_unexpected)」を参照してください。  
+### <a name="example"></a>Example  
+  See [set_unexpected](../standard-library/exception-functions.md#set_unexpected) for an example of the use of **terminate**.  
   
 ##  <a name="uncaught_exception"></a>  uncaught_exception  
- スローされた例外が現在処理されている場合にのみ `true` を返します。  
+ Returns `true` only if a thrown exception is being currently processed.  
   
 ```  
 bool uncaught_exception();
 ```  
   
-### <a name="return-value"></a>戻り値  
- スロー式の評価が完了してから、一致するハンドラー内の例外宣言の初期化が完了するまで、またはスロー式の結果として [unexpected](../standard-library/exception-functions.md#unexpected) を呼び出すまでは、`true` を返します。 具体的には、`uncaught_exception` は、例外のアンワインド中に呼び出されるデストラクターから呼び出された場合に、`true` を返します。 デバイス上で、`uncaught_exception` は Windows CE 5.00 以降のバージョン (Windows Mobile 2005 プラットフォームを含む) でのみサポートされます。  
+### <a name="return-value"></a>Return Value  
+ Returns `true` after completing evaluation of a throw expression and before completing initialization of the exception declaration in the matching handler or calling [unexpected](../standard-library/exception-functions.md#unexpected) as a result of the throw expression. In particular, `uncaught_exception` will return `true` when called from a destructor that is being invoked during an exception unwind. On devices, `uncaught_exception` is only supported on Windows CE 5.00 and higher versions, including Windows Mobile 2005 platforms.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // exception_uncaught_exception.cpp  
@@ -271,31 +283,31 @@ In Test::~Test("outside try block")
 ```  
   
 ##  <a name="unexpected"></a>  unexpected  
- 予期しないハンドラーを呼び出します。  
+ Calls the unexpected handler.  
   
 ```  
 void unexpected();
 ```  
   
-### <a name="remarks"></a>コメント  
- C++ 標準では、関数が throw のリストにない例外をスローした場合に、`unexpected` を呼び出す必要があります。 現在の実装では、これをサポートしていません。 次の例では、予期しないハンドラーを呼び出す `unexpected` を直接呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The C++ Standard requires that `unexpected` is called when a function throws an exception that is not on its throw list. The current implementation does not support this. The example calls `unexpected` directly, which calls the unexpected handler.  
   
- この関数は、`void` 型の関数である予期しないハンドラーを呼び出します。 `unexpected` がプログラムによって直接呼び出される場合、予期しないハンドラーは、[set_unexpected](../standard-library/exception-functions.md#set_unexpected) の呼び出しによって最も新しく設定されたものとなります。  
+ The function calls an unexpected handler, a function of type `void`. If `unexpected` is called directly by the program, the unexpected handler is the one most recently set by a call to [set_unexpected](../standard-library/exception-functions.md#set_unexpected).  
   
- 予期しないハンドラーは、呼び出し元に戻らない場合があります。 次の処理を行って実行を終了する場合があります。  
+ An unexpected handler may not return to its caller. It may terminate execution by:  
   
--   例外指定内にリストされた型のオブジェクトをスローする。予期しないハンドラーがプログラムから直接呼び出される場合は任意の型のオブジェクトをスローする。  
+-   Throwing an object of a type listed in the exception specification or an object of any type if the unexpected handler is called directly by the program.  
   
--   [bad_exception](../standard-library/bad-exception-class.md) 型のオブジェクトをスローする。  
+-   Throwing an object of type [bad_exception](../standard-library/bad-exception-class.md).  
   
--   [terminate](../standard-library/exception-functions.md#terminate)、**abort**、または **exit**( `int`) を呼び出す。  
+-   Calling [terminate](../standard-library/exception-functions.md#terminate), **abort** or **exit**( `int`).  
   
- プログラムの起動時に、予期しないハンドラーは、[terminate](../standard-library/exception-functions.md#terminate) を呼び出す関数となります。  
+ At program startup, the unexpected handler is a function that calls [terminate](../standard-library/exception-functions.md#terminate).  
   
-### <a name="example"></a>例  
-  **unexpected** の使用例については、「[set_unexpected](../standard-library/exception-functions.md#set_unexpected)」を参照してください。  
+### <a name="example"></a>Example  
+  See [set_unexpected](../standard-library/exception-functions.md#set_unexpected) for an example of the use of **unexpected.**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<exception>](../standard-library/exception.md)
 
 

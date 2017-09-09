@@ -1,15 +1,14 @@
 ---
-title: "shared_ptr クラス | Microsoft Docs"
+title: shared_ptr Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- shared_ptr
 - memory/std::shared_ptr
 - memory/std::shared_ptr::element_type
 - memory/std::shared_ptr::get
@@ -32,7 +31,21 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- shared_ptr class
+- std::shared_ptr [C++]
+- std::shared_ptr [C++], element_type
+- std::shared_ptr [C++], get
+- std::shared_ptr [C++], owner_before
+- std::shared_ptr [C++], reset
+- std::shared_ptr [C++], swap
+- std::shared_ptr [C++], unique
+- std::shared_ptr [C++], use_count
+- std::shared_ptr [C++], element_type
+- std::shared_ptr [C++], get
+- std::shared_ptr [C++], owner_before
+- std::shared_ptr [C++], reset
+- std::shared_ptr [C++], swap
+- std::shared_ptr [C++], unique
+- std::shared_ptr [C++], use_count
 ms.assetid: 1469fc51-c658-43f1-886c-f4530dd84860
 caps.latest.revision: 28
 author: corob-msft
@@ -52,30 +65,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: ead4dff36cf75d7a1519cee10aed39a30b6e88b8
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a6fd55efcd0501cd794cdffa506b5cbb6b04ff5c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="sharedptr-class"></a>shared_ptr クラス
-参照カウント スマート ポインターを、動的に割り当てられたオブジェクトにラップします。  
+# <a name="sharedptr-class"></a>shared_ptr Class
+Wraps a reference-counted smart pointer around a dynamically allocated object.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```
 template <class T>
 class shared_ptr; 
 ```  
   
-## <a name="remarks"></a>コメント  
- shared_ptr クラスは、参照カウントを使ってリソースを管理するオブジェクトを表します。 `shared_ptr` オブジェクトは、所有しているリソースへのポインターまたは null ポインターを効率的に保持します。 複数の `shared_ptr` オブジェクトが 1 つのリソースを所有することもできます。その場合、特定のリソースを所有する最後の `shared_ptr` オブジェクトが破棄された時点で、リソースが解放されます。  
+## <a name="remarks"></a>Remarks  
+ The shared_ptr class describes an object that uses reference counting to manage resources. A `shared_ptr` object effectively holds a pointer to the resource that it owns or holds a null pointer. A resource can be owned by more than one `shared_ptr` object; when the last `shared_ptr` object that owns a particular resource is destroyed, the resource is freed.  
   
- `shared_ptr` は、再割り当てまたはリセットされるとリソースの所有を停止します。  
+ A `shared_ptr` stops owning a resource when it is reassigned or reset.  
   
- テンプレートの引数 `T` は、特定のメンバー関数について注記がある場合を除き、不完全な型になる場合があります。  
+ The template argument `T` might be an incomplete type except as noted for certain member functions.  
   
- `shared_ptr<T>` オブジェクトを `G*` 型のリソース ポインターまたは `shared_ptr<G>` から構築する場合、ポインターの型 `G*` は `T*` に変換可能であることが必要です。 この条件が満たされていない場合、コードはコンパイルされません。 例:  
+ When a `shared_ptr<T>` object is constructed from a resource pointer of type `G*` or from a `shared_ptr<G>`, the pointer type `G*` must be convertible to `T*`. If it is not, the code will not compile. For example:  
   
 ```cpp  
 #include <memory>  
@@ -93,101 +106,101 @@ shared_ptr<int> sp5(new G); // error, G* not convertible to int*
 shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared_ptr<F>  
 ```  
   
- `shared_ptr` オブジェクトがリソースを所有するためには、次のいずれかの条件を満たしている必要があります。  
+ A `shared_ptr` object owns a resource:  
   
--   そのリソースへのポインターを使って構築されている。  
+-   if it was constructed with a pointer to that resource,  
   
--   そのリソースを所有する `shared_ptr` オブジェクトから構築されている。  
+-   if it was constructed from a `shared_ptr` object that owns that resource,  
   
--   そのリソースを指し示す [weak_ptr クラス](../standard-library/weak-ptr-class.md) オブジェクトから構築されている。  
+-   if it was constructed from a [weak_ptr Class](../standard-library/weak-ptr-class.md) object that points to that resource, or  
   
--   そのリソースの所有権が、[shared_ptr::operator=](#op_eq) またはメンバー関数 [shared_ptr::reset](#reset) の呼び出しのいずれかによって割り当てられている。  
+-   if ownership of that resource was assigned to it, either with [shared_ptr::operator=](#op_eq) or by calling the member function [shared_ptr::reset](#reset).  
   
- リソースを所有する `shared_ptr` オブジェクトは、コントロール ブロックを共有します。 コントロール ブロックは以下の情報を保持します。  
+ The `shared_ptr` objects that own a resource share a control block. The control block holds:  
   
--   リソースを所有する `shared_ptr` オブジェクトの数。  
+-   the number of `shared_ptr` objects that own the resource,  
   
--   リソースを指す `weak_ptr` オブジェクトの数。  
+-   the number of `weak_ptr` objects that point to the resource,  
   
--   リソースの削除子 (存在する場合)  
+-   the deleter for that resource if it has one,  
   
--   コントロール ブロックのカスタム アロケーター (存在する場合)  
+-   the custom allocator for the control block if it has one.  
   
- null ポインターを使用して初期化される `shared_ptr` オブジェクトにはコントロール ブロックが存在し、空ではありません。 `shared_ptr` オブジェクトがリソースを所有するのは、そのリソースが解放されるまでの間です。 `weak_ptr` オブジェクトがリソースを指しているのは、そのリソースが解放されるまでの間です。  
+ A `shared_ptr` object that is initialized by using a null pointer has a control block and is not empty. After a `shared_ptr` object releases a resource, it no longer owns that resource. After a `weak_ptr` object releases a resource, it no longer points to that resource.  
   
- リソースを所有する `shared_ptr` オブジェクトの数がゼロになると、リソースを削除するか、リソースのアドレスを削除子に渡すことによって、リソースが解放されます。どちらの方法で解放されるかは、最初にリソースの所有権が作成された方法によって決定されます。 リソースを所有する `shared_ptr` オブジェクトの数がゼロになり、そのリソースを指す `weak_ptr` オブジェクトの数がゼロになると、コントロール ブロックのカスタム アロケーターを使用して (存在する場合)、コントロール ブロックが解放されます。  
+ When the number of `shared_ptr` objects that own a resource becomes zero, the resource is freed, either by deleting it or by passing its address to a deleter, depending on how ownership of the resource was originally created. When the number of `shared_ptr` objects that own a resource is zero, and the number of `weak_ptr` objects that point to that resource is zero, the control block is freed, using the custom allocator for the control block if it has one.  
   
- 空の `shared_ptr` オブジェクトは、リソースを一切所有せず、コントロール ブロックも持ちません。  
+ An empty `shared_ptr` object does not own any resources and has no control block.  
   
- 削除子は、メンバー関数 `operator()` を持つ関数オブジェクトです。 この型はコピーによって構築可能であること、また、コピー コンストラクターおよびデストラクターによって例外がスローされないことが必要です。 削除子は、削除するオブジェクトを指定する 1 つのパラメーターを受け入れます。  
+ A deleter is a function object that has a member function `operator()`. Its type must be copy constructible, and its copy constructor and destructor must not throw exceptions. It accepts one parameter, the object to be deleted.  
   
- 一部の関数では、結果として生成される `shared_ptr<T>` または `weak_ptr<T>` オブジェクトのプロパティを定義する引数リストが使用されます。 その場合、引数リストは次のような方法で指定できます。  
+ Some functions take an argument list that defines properties of the resulting `shared_ptr<T>` or `weak_ptr<T>` object. You can specify such an argument list in several ways:  
   
- 引数なし: 結果として生成されるオブジェクトは、空の `shared_ptr` オブジェクトまたは空の `weak_ptr` オブジェクトです。  
+ no arguments -- the resulting object is an empty `shared_ptr` object or an empty `weak_ptr` object.  
   
- `ptr` -- 管理対象リソースへの `Other*` 型のポインター。 `T` は完全な型である必要があります。 コントロール ブロックを割り当てることができないため関数が失敗した場合、`delete ptr` という式が評価されます。  
+ `ptr` -- a pointer of type `Other*` to the resource to be managed. `T` must be a complete type. If the function fails (because the control block cannot be allocated) it evaluates the expression `delete ptr`.  
   
- `ptr, dtor`: 管理対象リソースに対する `Other*` 型のポインターおよびそのリソースの削除子です。 コントロール ブロックを割り当てることができなかったことが原因で関数が失敗した場合、`dtor(ptr)` が呼び出されます (明確に定義されていることが必要)。  
+ `ptr, dtor` -- a pointer of type `Other*` to the resource to be managed and a deleter for that resource. If the function fails (because the control block cannot be allocated), it calls `dtor(ptr)`, which must be well defined.  
   
- `ptr, dtor, alloc` -- 管理対象リソース、そのリソースの削除子、および割り当てと解放を行う必要があるすべてのストレージを管理するためのアロケーターへの `Other*` 型のポインター。 コントロール ブロックを割り当てることができなかったことが原因で関数が失敗した場合、`dtor(ptr)` が呼び出されます (明確に定義されていることが必要)。  
+ `ptr, dtor, alloc` -- a pointer of type `Other*` to the resource to be managed, a deleter for that resource, and an allocator to manage any storage that must be allocated and freed. If the function fails (because the control block can't be allocated) it calls `dtor(ptr)`, which must be well defined.  
   
- `sp`: 管理対象のリソースを所有する `shared_ptr<Other>` オブジェクトです。  
+ `sp` -- a `shared_ptr<Other>` object that owns the resource to be managed.  
   
- `wp`: 管理対象のリソースを指し示す `weak_ptr<Other>` オブジェクトです。  
+ `wp` -- a `weak_ptr<Other>` object that points to the resource to be managed.  
   
- `ap`: 管理対象のリソースへのポインターを保持する `auto_ptr<Other>` オブジェクトです。 関数が成功した場合は、`ap.release()` が呼び出されます。関数が失敗した場合は、`ap` は変更されません。  
+ `ap` -- an `auto_ptr<Other>` object that holds a pointer to the resource to be managed. If the function succeeds it calls `ap.release()`; otherwise it leaves `ap` unchanged.  
   
- いずれの場合も、ポインターの型 `Other*` は `T*` に変換可能である必要があります。  
+ In all cases, the pointer type `Other*` must be convertible to `T*`.  
   
-## <a name="thread-safety"></a>スレッド セーフ  
- 複数のスレッドが異なる `shared_ptr` オブジェクト (所有権を共有するコピーである場合も含めて) に対する読み取りと書き込みを同時に行うことができます。  
+## <a name="thread-safety"></a>Thread Safety  
+ Multiple threads can read and write different `shared_ptr` objects at the same time, even when the objects are copies that share ownership.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="constructors"></a>コンストラクター  
-  
-|||  
-|-|-|  
-|[shared_ptr](#shared_ptr)|`shared_ptr` を構築します。|  
-|[shared_ptr::~shared_ptr](#dtorshared_ptr)|`shared_ptr` を破棄します。|  
-  
-### <a name="methods"></a>メソッド  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[element_type](#element_type)|要素の型。|  
-|[get](#get)|所有されているリソースのアドレスを取得します。|  
-|[owner_before](#owner_before)|この `shared_ptr` が、指定されたポインターの前に順序付けされている (またはそれよりも少ない) 場合は true を返します。|  
-|[reset](#reset)|所有されたリソースを置き換えます。|  
-|[swap](#swap)|2 つの `shared_ptr` オブジェクトを交換します。|  
-|[unique](#unique)|所有されたリソースが一意であるかどうかをテストします。|  
-|[use_count](#use_count)|リソース所有者の数をカウントします。|  
+|[shared_ptr](#shared_ptr)|Constructs a `shared_ptr`.|  
+|[shared_ptr::~shared_ptr](#dtorshared_ptr)|Destroys a `shared_ptr`.|  
   
-### <a name="operators"></a>演算子  
+### <a name="methods"></a>Methods  
   
 |||  
 |-|-|  
-|[shared_ptr::operator boolean-type](#op_boolean-type)|所有されたリソースが存在するかどうかをテストします。|  
-|[shared_ptr::operator*](#op_star)|指定された値を取得します。|  
-|[shared_ptr::operator=](#op_eq)|所有されたリソースを置き換えます。|  
-|[shared_ptr::operator-&gt;](#operator-_gt)|指定された値へのポインターを取得します。|  
+|[element_type](#element_type)|The type of an element.|  
+|[get](#get)|Gets address of owned resource.|  
+|[owner_before](#owner_before)|Returns true if this `shared_ptr` is ordered before (or less than) the provided pointer.|  
+|[reset](#reset)|Replace owned resource.|  
+|[swap](#swap)|Swaps two `shared_ptr` objects.|  
+|[unique](#unique)|Tests if owned resource is unique.|  
+|[use_count](#use_count)|Counts numbers of resource owners.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[shared_ptr::operator boolean-type](#op_boolean-type)|Tests if an owned resource exists.|  
+|[shared_ptr::operator*](#op_star)|Gets the designated value.|  
+|[shared_ptr::operator=](#op_eq)|Replaces the owned resource.|  
+|[shared_ptr::operator-&gt;](#operator-_gt)|Gets a pointer to the designated value.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
+  
+ **Namespace:** std  
   
 ##  <a name="element_type"></a>  shared_ptr::element_type  
- 要素の型。  
+ The type of an element.  
   
 ```  
 typedef T element_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `T`のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter `T`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_element_type.cpp   
@@ -212,16 +225,16 @@ int main()
 ```  
   
 ##  <a name="get"></a>  shared_ptr::get  
- 所有されているリソースのアドレスを取得します。  
+ Gets address of owned resource.  
   
 ```  
 T *get() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、所有されたリソースのアドレスを返します。 オブジェクトがリソースを所有していない場合は、0 を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the address of the owned resource. If the object does not own a resource it returns 0.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_get.cpp   
@@ -249,16 +262,16 @@ sp0.get() == 0 == true
 ```  
   
 ##  <a name="shared_ptr__operator_boolean-type"></a>  shared_ptr::operator boolean-type  
- 所有されたリソースが存在するかどうかをテストします。  
+ Tests if an owned resource exists.  
   
 ```  
 operator boolean-type() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- この演算子は、`bool` に変換可能な型の値を返します。 `bool` への変換結果は、`true` の場合は `get() != 0`、それ以外の場合は `false` です。  
+### <a name="remarks"></a>Remarks  
+ The operator returns a value of a type that is convertible to `bool`. The result of the conversion to `bool` is `true` when `get() != 0`, otherwise `false`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_operator_bool.cpp   
@@ -287,16 +300,16 @@ int main()
 ```  
   
 ##  <a name="op_star"></a>  shared_ptr::operator*  
- 指定された値を取得します。  
+ Gets the designated value.  
   
 ```  
 T& operator*() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- 間接演算子は `*get()` を返します。 つまり、格納されたポインターは、null にすることはできません。  
+### <a name="remarks"></a>Remarks  
+ The indirection operator returns `*get()`. Hence, the stored pointer must not be null.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_operator_st.cpp   
@@ -320,7 +333,7 @@ int main()
 ```  
   
 ##  <a name="op_eq"></a>  shared_ptr::operator=  
- 所有されたリソースを置き換えます。  
+ Replaces the owned resource.  
   
 ```  
 shared_ptr& operator=(const shared_ptr& sp);
@@ -341,17 +354,17 @@ template <class Other, class Deletor>
 shared_ptr& operator=(unique_ptr<Other, Deletor>&& ap);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `sp`  
- コピーする共有ポインター。  
+ The shared pointer to copy.  
   
  `ap`  
- コピーする自動ポインター。  
+ The auto pointer to copy.  
   
-### <a name="remarks"></a>コメント  
- すべての演算子は、現在 `*this` によって所有されているリソースの参照数をデクリメントし、オペランド シーケンスで指定されたリソースの所有権を `*this` に割り当てます。 参照数がゼロになる場合は、リソースが解放されます。 演算子が失敗した場合、`*this` は変更されません。  
+### <a name="remarks"></a>Remarks  
+ The operators all decrement the reference count for the resource currently owned by `*this` and assign ownership of the resource named by the operand sequence to `*this`. If the reference count falls to zero, the resource is released. If an operator fails it leaves `*this` unchanged.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_operator_as.cpp   
@@ -382,16 +395,16 @@ int main()
 ```  
   
 ##  <a name="shared_ptr__operator-_gt"></a>  shared_ptr::operator-&gt;  
- 指定された値へのポインターを取得します。  
+ Gets a pointer to the designated value.  
   
 ```  
 T * operator->() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- `sp` がクラス `shared_ptr<T>` のオブジェクトである場合に式 `sp->member` が `(sp.get())->member` と同様に動作するよう、選択演算子は `get()` を返します。 そのため、格納されているポインターを null にすることはできず、`T` はメンバー `member` を持つクラス、構造体、または共用体型にする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The selection operator returns `get()`, so that the expression `sp->member` behaves the same as `(sp.get())->member` where `sp` is an object of class `shared_ptr<T>`. Hence, the stored pointer must not be null, and `T` must be a class, structure, or union type with a member `member`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_operator_ar.cpp   
@@ -418,7 +431,7 @@ sp0->second == 2
 ```  
   
 ##  <a name="owner_before"></a>  shared_ptr::owner_before  
- この `shared_ptr` が、指定されたポインターの前に順序付けされている (またはそれよりも少ない) 場合は true を返します。  
+ Returns true if this `shared_ptr` is ordered before (or less than) the provided pointer.  
   
 ```  
 template <class Other>  
@@ -428,15 +441,15 @@ template <class Other>
 bool owner_before(const weak_ptr<Other>& ptr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- `shared_ptr` または `weak_ptr` への `lvalue` 参照。  
+ An `lvalue` reference to either a `shared_ptr` or a `weak_ptr`.  
   
-### <a name="remarks"></a>コメント  
- `*this` が `ordered before``ptr` の場合にのみ、テンプレート メンバー関数は true を返します。  
+### <a name="remarks"></a>Remarks  
+ The template member function returns true if `*this` is `ordered before` `ptr`.  
   
 ##  <a name="reset"></a>  shared_ptr::reset  
- 所有されたリソースを置き換えます。  
+ Replace owned resource.  
   
 ```  
 void reset();
@@ -451,29 +464,29 @@ template <class Other, class D, class A>
 void reset(Other *ptr, D dtor, A alloc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- 引数ポインターによって制御される型。  
+ The type controlled by the argument pointer.  
   
  `D`  
- 削除子の型。  
+ The type of the deleter.  
   
  `ptr`  
- コピーするポインター。  
+ The pointer to copy.  
   
  `dtor`  
- コピーする削除子。  
+ The deleter to copy.  
   
  `A`  
- アロケーターの型。  
+ The type of the allocator.  
   
  `alloc`  
- コピーするアロケーター。  
+ The allocator to copy.  
   
-### <a name="remarks"></a>コメント  
- すべての演算子は、現在 `*this` によって所有されているリソースの参照数をデクリメントし、オペランド シーケンスで指定されたリソースの所有権を `*this` に割り当てます。 参照数がゼロになる場合は、リソースが解放されます。 演算子が失敗した場合、`*this` は変更されません。  
+### <a name="remarks"></a>Remarks  
+ The operators all decrement the reference count for the resource currently owned by `*this` and assign ownership of the resource named by the operand sequence to `*this`. If the reference count falls to zero, the resource is released. If an operator fails it leaves `*this` unchanged.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_reset.cpp   
@@ -521,7 +534,7 @@ int main()
 ```  
   
 ##  <a name="shared_ptr"></a>  shared_ptr::shared_ptr  
- `shared_ptr` を構築します。  
+ Constructs a `shared_ptr`.  
   
 ```  
 shared_ptr();
@@ -569,38 +582,38 @@ template <class Other, class D>
 shared_ptr(const unique_ptr<Other, D>& up) = delete;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- 引数ポインターによって制御される型。  
+ The type controlled by the argument pointer.  
   
  `ptr`  
- コピーするポインター。  
+ The pointer to copy.  
   
  `D`  
- 削除子の型。  
+ The type of the deleter.  
   
  `A`  
- アロケーターの型。  
+ The type of the allocator.  
   
  `dtor`  
- 削除子。  
+ The deleter.  
   
  `ator`  
- アロケーター。  
+ The allocator.  
   
  `sp`  
- コピーするスマート ポインター。  
+ The smart pointer to copy.  
   
  `wp`  
- ウィーク ポインター。  
+ The weak pointer.  
   
  `ap`  
- コピーする自動ポインター。  
+ The auto pointer to copy.  
   
-### <a name="remarks"></a>コメント  
- それぞれのコンストラクターは、オペランド シーケンスで指定されたリソースを所有するオブジェクトを構築します。 コンストラクター `shared_ptr(const weak_ptr<Other>& wp)` は、`wp.expired()` の場合に型 [bad_weak_ptr クラス](../standard-library/bad-weak-ptr-class.md)の例外オブジェクトをスローします。  
+### <a name="remarks"></a>Remarks  
+ The constructors each construct an object that owns the resource named by the operand sequence. The constructor `shared_ptr(const weak_ptr<Other>& wp)` throws an exception object of type [bad_weak_ptr Class](../standard-library/bad-weak-ptr-class.md) if `wp.expired()`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_construct.cpp   
@@ -654,16 +667,16 @@ int main()
 ```  
   
 ##  <a name="dtorshared_ptr"></a>  shared_ptr::~shared_ptr  
- `shared_ptr` を破棄します。  
+ Destroys a `shared_ptr`.  
   
 ```  
 ~shared_ptr();
 ```  
   
-### <a name="remarks"></a>コメント  
- デストラクターは、現在 `*this` によって所有されるリソースの参照数をデクリメントします。 参照数がゼロになる場合は、リソースが解放されます。  
+### <a name="remarks"></a>Remarks  
+ The destructor decrements the reference count for the resource currently owned by `*this`. If the reference count falls to zero, the resource is released.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_destroy.cpp   
@@ -708,20 +721,20 @@ use count == 1
 ```  
   
 ##  <a name="swap"></a>  shared_ptr::swap  
- 2 つの `shared_ptr` オブジェクトを交換します。  
+ Swaps two `shared_ptr` objects.  
   
 ```  
 void swap(shared_ptr& sp);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `sp`  
- 交換先の共有ポインター。  
+ The shared pointer to swap with.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、最初に `*this` が所有してその後 `sp` が所有するリソースと、最初に `sp` が所有してその後 `*this` が所有するリソースを残します。 この関数は 2 つのリソースの参照数を変更せず、例外をスローしません。  
+### <a name="remarks"></a>Remarks  
+ The member function leaves the resource originally owned by `*this` subsequently owned by `sp`, and the resource originally owned by `sp` subsequently owned by `*this`. The function does not change the reference counts for the two resources and it does not throw any exceptions.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_swap.cpp   
@@ -776,16 +789,16 @@ int main()
 ```  
   
 ##  <a name="unique"></a>  shared_ptr::unique  
- 所有されたリソースが一意であるかどうかをテストします。  
+ Tests if owned resource is unique.  
   
 ```  
 bool unique() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、`*this` が所有するリソースを所有する `shared_ptr` オブジェクトが他にない場合に `true` を返し、それ以外の場合は `false` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns `true` if no other `shared_ptr` object owns the resource that is owned by `*this`, otherwise `false`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_unique.cpp   
@@ -822,16 +835,16 @@ sp1.unique() == false
 ```  
   
 ##  <a name="use_count"></a>  shared_ptr::use_count  
- リソース所有者の数をカウントします。  
+ Counts numbers of resource owners.  
   
 ```  
 long use_count() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、`*this` が所有するリソースを所有する `shared_ptr` オブジェクトの数を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the number of `shared_ptr` objects that own the resource that is owned by `*this`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__memory__shared_ptr_use_count.cpp   
@@ -859,9 +872,9 @@ sp1.use_count() == 1
 sp1.use_count() == 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [weak_ptr クラス](../standard-library/weak-ptr-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [weak_ptr Class](../standard-library/weak-ptr-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

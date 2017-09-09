@@ -1,5 +1,5 @@
 ---
-title: "poisson_distribution クラス | Microsoft Docs"
+title: poisson_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- poisson_distribution
 - random/std::poisson_distribution
 - random/std::poisson_distribution::reset
 - random/std::poisson_distribution::mean
@@ -25,7 +24,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- poisson_distribution class
+- std::poisson_distribution [C++]
+- std::poisson_distribution [C++], reset
+- std::poisson_distribution [C++], mean
+- std::poisson_distribution [C++], param
+- std::poisson_distribution [C++], min
+- std::poisson_distribution [C++], max
+- std::poisson_distribution [C++], param_type
+- std::poisson_distribution [C++], param_type
 ms.assetid: 09614281-349a-45f7-8e95-c0196be0a937
 caps.latest.revision: 19
 author: corob-msft
@@ -45,17 +51,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a8a87f4101cca4a709d594ac2ad19726eb505c00
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d7237dd8a273323eb8424223848bde9d647c06da
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="poissondistribution-class"></a>poisson_distribution クラス
-ポワソン分布を生成します。  
+# <a name="poissondistribution-class"></a>poisson_distribution Class
+Generates a Poisson distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template<class IntType = int>
@@ -86,33 +92,33 @@ public:
    };  
 ``` 
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
 *IntType*  
-結果を表す整数型。既定値は `int` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+The integer result type, defaults to `int`. For possible types, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
-このテンプレート クラスは、ポワソン分布を使用してユーザー指定の整数型の値を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The template class describes a distribution that produces values of a user-specified integral type with a Poisson distribution. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[poisson_distribution](#poisson_distribution)|`poisson_distribution::mean`|`poisson_distribution::param`|  
 |`poisson_distribution::operator()`||[param_type](#param_type)|  
   
-プロパティ関数 `mean()` は、格納されている分布パラメーター *mean* の値を返します。  
+The property function `mean()` returns the value for stored distribution parameter *mean*.  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-ポワソン分布の詳細については、Wolfram MathWorld の記事「[ポワソン分布](http://go.microsoft.com/fwlink/LinkId=401112)」をご覧ください。  
+For detailed information about the Poisson distribution, see the Wolfram MathWorld article [Poisson Distribution](http://go.microsoft.com/fwlink/LinkId=401112).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -166,7 +172,7 @@ int main()
   
 ```  
   
-最初のテスト:  
+First test:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.
@@ -183,7 +189,7 @@ Distribution for 100 samples:
     5 :  
 ```  
   
-2 回目のテスト:  
+Second test:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.
@@ -210,35 +216,35 @@ Distribution for 100 samples:
    17 :  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="poisson_distribution"></a>  poisson_distribution::poisson_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit poisson_distribution(RealType mean = 1.0);
 explicit binomial_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *mean*  
-`mean` 分布パラメーター。  
+The `mean` distribution parameter.  
   
 *parm*  
-分布の作成に使用されるパラメーターの構造体。  
+The parameter structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
- **前提条件:** `0.0 < mean`  
+### <a name="remarks"></a>Remarks  
+ **Precondition:** `0.0 < mean`  
   
-1 つ目のコンストラクターは、格納されている `mean` の値が *mean* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `mean` value holds the value *mean*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  poisson_distribution::param_type  
-分布のパラメーターを格納します。  
+Stores the parameters of the distribution.  
   
 ```    
 struct param_type {  
@@ -251,15 +257,15 @@ struct param_type {
    };  
 ```  
   
-### <a name="parameters"></a>パラメーター  
-[poisson_distribution](#poisson_distribution) のコンストラクター パラメーターをご覧ください。  
+### <a name="parameters"></a>Parameters  
+See constructor parameters for [poisson_distribution](#poisson_distribution).  
   
-### <a name="remarks"></a>コメント  
- **前提条件:** `0.0 < mean`  
+### <a name="remarks"></a>Remarks  
+ **Precondition:** `0.0 < mean`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

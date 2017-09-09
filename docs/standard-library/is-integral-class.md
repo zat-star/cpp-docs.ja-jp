@@ -1,5 +1,5 @@
 ---
-title: "is_integral クラス | Microsoft Docs"
+title: is_integral Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_integral
 - type_traits/std::is_integral
 dev_langs:
 - C++
@@ -35,33 +34,33 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 71e6db05a48cfc5433afc3dda38c3005ad24a7e8
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 9892390db54cabe7c6bbb1b6df7f55b997eae98a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isintegral-class"></a>is_integral クラス
-型が整数かどうかをテストします。  
+# <a name="isintegral-class"></a>is_integral Class
+Tests if type is integral.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Ty>  
 struct is_integral;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- 型 `Ty` が整数型の&1; つ、または整数型の&1; つの `cv-qualified` 形式である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `Ty` is one of the integral types, or a `cv-qualified` form of one of the integral types, otherwise it holds false.  
   
- 整数型は、`bool`、`char`、`unsigned char`、`signed char`、`wchar_t`、`short`、`unsigned short`、`int`、`unsigned int`、`long`、`unsigned long` のいずれかです。 さらに、それらを提供するコンパイラの場合、整数の型は `long long`、`unsigned long long`、`__int64`、`unsigned __int64` のいずれかにすることもできます。  
+ An integral type is one of `bool`, `char`, `unsigned char`, `signed char`, `wchar_t`, `short`, `unsigned short`, `int`, `unsigned int`, `long`, and `unsigned long`. In addition, with compilers that provide them, an integral type can be one of `long long`, `unsigned long long`, `__int64`, and `unsigned __int64`.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_integral.cpp   
@@ -94,13 +93,13 @@ is_integral<int> == true
 is_integral<float> == false  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_enum クラス](../standard-library/is-enum-class.md)   
- [is_floating_point クラス](../standard-library/is-floating-point-class.md)
+ [is_enum Class](../standard-library/is-enum-class.md)   
+ [is_floating_point Class](../standard-library/is-floating-point-class.md)
 

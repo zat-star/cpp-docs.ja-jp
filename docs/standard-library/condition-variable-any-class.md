@@ -1,5 +1,5 @@
 ---
-title: "condition_variable_any クラス | Microsoft Docs"
+title: condition_variable_any Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -37,71 +37,79 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 0c72f22ed2962b3d1a200e99ace2c56d69194c78
+helpviewer_keywords:
+- std::condition_variable_any
+- std::condition_variable_any::condition_variable_any
+- std::condition_variable_any::notify_all
+- std::condition_variable_any::notify_one
+- std::condition_variable_any::wait
+- std::condition_variable_any::wait_for
+- std::condition_variable_any::wait_until
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: bbb4ce1dc861727543608fcea3261621e5251dad
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="conditionvariableany-class"></a>condition_variable_any クラス
-`condition_variable_any` 型を持つイベントを待機するには、クラス `mutex` を使用します。  
+# <a name="conditionvariableany-class"></a>condition_variable_any Class
+Use the class `condition_variable_any` to wait for an event that has any `mutex` type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class condition_variable_any;
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[condition_variable_any](#condition_variable_any)|`condition_variable_any` オブジェクトを構築します。|  
+|[condition_variable_any](#condition_variable_any)|Constructs a `condition_variable_any` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[notify_all](#notify_all)|`condition_variable_any` オブジェクトを待機しているすべてのスレッドのブロックを解除します。|  
-|[notify_one](#notify_one)|`condition_variable_any` オブジェクトを待機しているスレッドの 1 つのブロックを解除します。|  
-|[待機](#wait)|スレッドをブロックします。|  
-|[wait_for](#wait_for)|スレッドをブロックし、スレッドがブロック解除されるまでの時間間隔を設定します。|  
-|[wait_until](#wait_until)|スレッドをブロックし、スレッドがブロック解除される最大の時刻を設定します。|  
+|[notify_all](#notify_all)|Unblocks all threads that are waiting for the `condition_variable_any` object.|  
+|[notify_one](#notify_one)|Unblocks one of the threads that are waiting for the `condition_variable_any` object.|  
+|[wait](#wait)|Blocks a thread.|  
+|[wait_for](#wait_for)|Blocks a thread, and sets a time interval after which the thread unblocks.|  
+|[wait_until](#wait_until)|Blocks a thread, and sets a maximum point in time at which the thread unblocks.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<condition_variable >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<condition_variable>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="condition_variable_any"></a>  condition_variable_any::condition_variable_any コンストラクター  
- `condition_variable_any` オブジェクトを構築します。  
+##  <a name="condition_variable_any"></a>  condition_variable_any::condition_variable_any Constructor  
+ Constructs a `condition_variable_any` object.  
   
 ```
 condition_variable_any();
 ```  
   
-### <a name="remarks"></a>コメント  
- 十分なメモリが使用できない場合、コンストラクターは `not_enough_memory` エラー コードがある [system_error](../standard-library/system-error-class.md) オブジェクトをスローします。 他のリソースをいくつか使用できないためにオブジェクトが構築できない場合、コンストラクターは `system_error` エラー コードがある `resource_unavailable_try_again` オブジェクトをスローします。  
+### <a name="remarks"></a>Remarks  
+ If not enough memory is available, the constructor throws a [system_error](../standard-library/system-error-class.md) object that has a `not_enough_memory` error code. If the object cannot be constructed because some other resource is not available, the constructor throws a `system_error` object that has a `resource_unavailable_try_again` error code.  
   
 ##  <a name="notify_all"></a>  condition_variable_any::notify_all  
- `condition_variable_any` オブジェクトを待機しているすべてのスレッドのブロックを解除します。  
+ Unblocks all threads that are waiting for the `condition_variable_any` object.  
   
 ```
 void notify_all() noexcept;
 ```  
   
 ##  <a name="notify_one"></a>  condition_variable_any::notify_one  
- `condition_variable_any` オブジェクトを待機しているスレッドの 1 つのブロックを解除します。  
+ Unblocks one of the threads that are waiting on the `condition_variable_any` object.  
   
 ```
 void notify_one() noexcept;
 ```  
   
 ##  <a name="wait"></a>  condition_variable_any::wait  
- スレッドをブロックします。  
+ Blocks a thread.  
   
 ```
 template <class Lock>  
@@ -111,17 +119,17 @@ template <class Lock, class Predicate>
 void wait(Lock& Lck, Predicate Pred);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Lck`  
- 任意の型の `mutex` オブジェクト。  
+ A `mutex` object of any type.  
   
  `Pred`  
- `true` または `false` を返す任意の式。  
+ Any expression that returns `true` or `false`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメソッドは `condition_variable_any` オブジェクトが [notify_one](../standard-library/condition-variable-class.md#notify_one) または [notify_all](../standard-library/condition-variable-class.md#notify_all) への呼び出しによって通知されるまでブロックします。 また、擬似的に開始することもできます。  
+### <a name="remarks"></a>Remarks  
+ The first method blocks until the `condition_variable_any` object is signaled by a call to [notify_one](../standard-library/condition-variable-class.md#notify_one) or [notify_all](../standard-library/condition-variable-class.md#notify_all). It can also wake up spuriously.  
   
- 実際には、2 つ目のメソッドは次のコードを実行します。  
+ The second method in effect executes the following code.  
   
 ```
 while (!Pred())
@@ -129,7 +137,7 @@ while (!Pred())
 ```    
   
 ##  <a name="wait_for"></a>  condition_variable_any::wait_for  
- スレッドをブロックし、スレッドがブロック解除されるまでの時間間隔を設定します。  
+ Blocks a thread, and sets a time interval after which the thread unblocks.  
   
 ```
 template <class Lock, class Rep, class Period>
@@ -139,25 +147,25 @@ template <class Lock, class Rep, class Period, class Predicate>
 bool wait_for(Lock& Lck, const chrono::duration<Rep, Period>& Rel_time, Predicate Pred);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Lck`  
- 任意の型の `mutex` オブジェクト。  
+ A `mutex` object of any type.  
   
  `Rel_time`  
- スレッドが開始するまでの時間の長さを指定する `chrono::duration` オブジェクト。  
+ A `chrono::duration` object that specifies the amount of time before the thread wakes up.  
   
  `Pred`  
- `true` または `false` を返す任意の式。  
+ Any expression that returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- `cv_status::timeout` が経過したときに待機が終了した場合、最初のメソッドは `Rel_time` を返します。 それ以外の場合、メソッドは `cv_status::no_timeout` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first method returns `cv_status::timeout` if the wait terminates when `Rel_time` has elapsed. Otherwise, the method returns `cv_status::no_timeout`.  
   
- 2 番目のメソッドは、`Pred` の値を返します。  
+ The second method returns the value of `Pred`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメソッドは `condition_variable_any` オブジェクトが [notify_one](../standard-library/condition-variable-class.md#notify_one) または [notify_all](../standard-library/condition-variable-class.md#notify_all) への呼び出しによって通知されるか、時間間隔 `Rel_time` が経過するまでブロックします。 また、擬似的に開始することもできます。  
+### <a name="remarks"></a>Remarks  
+ The first method blocks until the `condition_variable_any` object is signaled by a call to [notify_one](../standard-library/condition-variable-class.md#notify_one) or [notify_all](../standard-library/condition-variable-class.md#notify_all), or until the time interval `Rel_time` has elapsed. It can also wake up spuriously.  
   
- 実際には、2 つ目のメソッドは次のコードを実行します。  
+ The second method in effect executes the following code.  
   
 ```cpp  
 while(!Pred())
@@ -168,7 +176,7 @@ return true;
 ```  
   
 ##  <a name="wait_until"></a>  condition_variable_any::wait_until  
- スレッドをブロックし、スレッドがブロック解除される最大の時刻を設定します。  
+ Blocks a thread, and sets a maximum point in time at which the thread unblocks.  
   
 ```
 template <class Lock, class Clock, class Duration>
@@ -190,25 +198,25 @@ void wait_until(
     Predicate Pred);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Lck`  
- ミューテックス オブジェクト。  
+ A mutex object.  
   
  `Abs_time`  
- [chrono::time_point](../standard-library/time-point-class.md) オブジェクト。  
+ A [chrono::time_point](../standard-library/time-point-class.md) object.  
   
  `Pred`  
- `true` または `false` を返す任意の式。  
+ Any expression that returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- `cv_status` が経過すると待機が終了する場合に、`cv_status::timeout` 型の戻り値の `Abs_time` を返すメソッド。 それ以外の場合、メソッドは `cv_status::no_timeout` を返します。  
+### <a name="return-value"></a>Return Value  
+ Methods that return a `cv_status` type return `cv_status::timeout` if the wait terminates when `Abs_time` elapses. Otherwise, the methods return `cv_status::no_timeout`.  
   
- `bool` の `Pred` 戻り値を返すメソッド。  
+ Methods that return a `bool` return the value of `Pred`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメソッドは `condition_variable` オブジェクトが [notify_one](../standard-library/condition-variable-class.md#notify_one) または [notify_all](../standard-library/condition-variable-class.md#notify_all) への呼び出しによって通知されるか、`Abs_time` までブロックします。 また、擬似的に開始することもできます。  
+### <a name="remarks"></a>Remarks  
+ The first method blocks until the `condition_variable` object is signaled by a call to [notify_one](../standard-library/condition-variable-class.md#notify_one) or [notify_all](../standard-library/condition-variable-class.md#notify_all), or until `Abs_time`. It can also wake up spuriously.  
   
- 実際には、2 つ目のメソッドは次のコードを実行します。  
+ The second method in effect executes the following code.  
   
 ```
 while(!Pred())
@@ -218,10 +226,10 @@ while(!Pred())
 return true;
 ```  
   
- 3 つ目のメソッドと 4 つ目のメソッドは、`xtime` 型のオブジェクトへのポインターを使用して、`chrono::time_point` オブジェクトを置き換えます。 `xtime` オブジェクトは、シグナルを待機する時間の最大値を指定します。  
+ The third and fourth methods use a pointer to an object of type `xtime` to replace the `chrono::time_point` object. The `xtime` object specifies the maximum amount of time to wait for a signal.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [<condition_variable>](../standard-library/condition-variable.md)
 
 

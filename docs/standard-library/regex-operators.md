@@ -1,5 +1,5 @@
 ---
-title: "&lt;regex&gt; 演算子 | Microsoft Docs"
+title: '&lt;regex&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,14 +19,14 @@ dev_langs:
 ms.assetid: ec623e65-c186-491f-aa18-6b12b47e1127
 caps.latest.revision: 12
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: c5bf713f65c26a1a46becf846fa21f17ac867628
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 507f422cf476e7d6c928c22c516ee2e242282b04
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltregexgt-operators"></a>&lt;regex&gt; 演算子
+# <a name="ltregexgt-operators"></a>&lt;regex&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|  
@@ -34,7 +34,7 @@ ms.lasthandoff: 04/29/2017
 |[operator==](#op_eq_eq)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- さまざまなオブジェクトが等しくないかどうかの比較。  
+ Not equal comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -71,26 +71,26 @@ bool operator!=(const match_results<BidIt, Alloc>& left,
     const match_results<BidIt, Alloc>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各々のテンプレート演算子は `!(left == right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator returns `!(left == right)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_ne.cpp   
@@ -151,7 +151,7 @@ sub != 'a' == true
 ```  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- さまざまなオブジェクトが他方より小さいかどうかの比較。  
+ Less than comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -184,26 +184,26 @@ bool operator<(const sub_match<BidIt>& left,
     const typename iterator_traits<BidIt>::value_type& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各テンプレート演算子はその引数を文字列型に変換し、`left` の変換値が `right` の変換値より小さい場合にのみ true を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator converts its arguments to a string type and returns true only if the converted value of `left` compares less than the converted value of `right`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_lt.cpp   
@@ -259,7 +259,7 @@ sub < 'a' == false
 ```  
   
 ##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
- ストリームに sub_match を挿入します。  
+ Inserts a sub_match in a stream.  
   
 ```  
 template <class Elem, class IOtraits, class Alloc, class BidIt>  
@@ -267,29 +267,29 @@ basic_ostream<Elem, IOtraits>& operator<<(basic_ostream<Elem, IOtraits>& os,
     const sub_match<BidIt>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Elem`  
- 要素型。  
+ The element type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `os`  
- 出力ストリーム。  
+ The output stream.  
   
  `right`  
- 挿入するオブジェクト。  
+ The object to insert.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート演算子は `os << right.str()` を返します。  
+### <a name="remarks"></a>Remarks  
+ The template operator returns `os << right.str()`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_ins.cpp   
@@ -317,7 +317,7 @@ whole match: caaa
 ```  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- さまざまなオブジェクトが他方以下かどうかの比較。  
+ Less than or equal comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -350,26 +350,26 @@ bool operator<=(const sub_match<BidIt>& left,
     const typename iterator_traits<BidIt>::value_type& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各々のテンプレート演算子は `!(right < left)` を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator returns `!(right < left)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_le.cpp   
@@ -425,7 +425,7 @@ sub <= 'a' == false
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- さまざまなオブジェクトが等しいかどうかの比較。  
+ Equal comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -462,34 +462,34 @@ bool operator==(const match_results<BidIt, Alloc>& left,
     const match_results<BidIt, Alloc>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各テンプレート演算子はそれぞれの引数を文字列型に変換し、変換後のオブジェクトが等しいかどうかを比較した結果を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator converts each of its arguments to a string type and returns the result of comparing the converted objects for equality.  
   
- テンプレート演算子は、その引数を文字列型に変換するとき、次の変換のうち最初に当てはまるものを使用します。  
+ When a template operator converts its arguments to a string type it uses the first of the following transformations that applies:  
   
- - テンプレート クラス `match_results` または `sub_match` の特殊化である型の引数が、`str` メンバー関数の呼び出しにより変換される  
+ arguments whose types are a specialization of template class `match_results` or `sub_match` are converted by calling the `str` member function;  
   
- - テンプレート クラス `basic_string` の特殊化である型の引数が、変更されない  
+ arguments whose types are a specialization of the template class `basic_string` are unchanged;  
   
- - その他のすべての引数の型が、テンプレート クラス `basic_string` の適切な特殊化のコンストラクターに引数の値を渡すことによって変換される  
+ all other argument types are converted by passing the argument value to the constructor for an appropriate specialization of the template class `basic_string`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_eq.cpp   
@@ -550,7 +550,7 @@ sub == 'a' == false
 ```  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- さまざまなオブジェクトが他方より大きいかどうかの比較。  
+ Greater than comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -583,26 +583,26 @@ bool operator>(const sub_match<BidIt>& left,
     const typename iterator_traits<BidIt>::value_type& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各々のテンプレート演算子は `right < left` を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator returns `right < left`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_gt.cpp   
@@ -658,7 +658,7 @@ sub > 'a' == true
 ```  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- さまざまなオブジェクトが他方以上かどうかの比較。  
+ Greater than or equal comparison for various objects.  
   
 ```  
 template <class BidIt>  
@@ -691,26 +691,26 @@ bool operator>=(const sub_match<BidIt>& left,
     const typename iterator_traits<BidIt>::value_type& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `BidIt`  
- 反復子の型。  
+ The iterator type.  
   
  `IOtraits`  
- 文字列の特徴 (traits) クラス。  
+ The string traits class.  
   
  `Alloc`  
- アロケーター クラス。  
+ The allocator class.  
   
  `left`  
- 比較する左のオブジェクト。  
+ The left object to compare.  
   
  `right`  
- 比較する右のオブジェクト。  
+ The right object to compare.  
   
-### <a name="remarks"></a>コメント  
- 各々のテンプレート演算子は `!(left < right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ Each template operator returns `!(left < right)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__operator_ge.cpp   
@@ -764,14 +764,14 @@ sub >= "aab" == false
 sub >= 'a' == true  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [\<regex>](../standard-library/regex.md)  
-[regex_constants クラス](../standard-library/regex-constants-class.md)  
-[regex_error クラス](../standard-library/regex-error-class.md)  
-[\<regex> 系関数](../standard-library/regex-functions.md)  
-[regex_iterator クラス](../standard-library/regex-iterator-class.md)  
-[regex_token_iterator クラス](../standard-library/regex-token-iterator-class.md)  
-[regex_traits クラス](../standard-library/regex-traits-class.md)  
+[regex_constants Class](../standard-library/regex-constants-class.md)  
+[regex_error Class](../standard-library/regex-error-class.md)  
+[\<regex> functions](../standard-library/regex-functions.md)  
+[regex_iterator Class](../standard-library/regex-iterator-class.md)  
+[regex_token_iterator Class](../standard-library/regex-token-iterator-class.md)  
+[regex_traits Class](../standard-library/regex-traits-class.md)  
 [\<regex> typedefs](../standard-library/regex-typedefs.md)  
 
 

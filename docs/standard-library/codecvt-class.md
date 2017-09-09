@@ -1,5 +1,5 @@
 ---
-title: "codecvt クラス | Microsoft Docs"
+title: codecvt Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- codecvt
 - xlocale/std::codecvt
 - locale/std::codecvt::extern_type
 - locale/std::codecvt::intern_type
@@ -31,7 +30,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- codecvt class
+- std::codecvt [C++]
+- std::codecvt [C++], extern_type
+- std::codecvt [C++], intern_type
+- std::codecvt [C++], state_type
+- std::codecvt [C++], always_noconv
+- std::codecvt [C++], do_always_noconv
+- std::codecvt [C++], do_encoding
+- std::codecvt [C++], do_in
+- std::codecvt [C++], do_length
+- std::codecvt [C++], do_max_length
+- std::codecvt [C++], do_out
+- std::codecvt [C++], do_unshift
+- std::codecvt [C++], encoding
+- std::codecvt [C++], in
+- std::codecvt [C++], length
+- std::codecvt [C++], max_length
+- std::codecvt [C++], out
+- std::codecvt [C++], unshift
 ms.assetid: 37d3efa1-2b7f-42b6-b04f-7a972c8c2c86
 caps.latest.revision: 23
 author: corob-msft
@@ -51,114 +67,114 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 2f96bb4a2eb577eb490b492ec425220ea5ce9eb3
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: b6d5be54b532879b685bd5200dec575610d61489
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="codecvt-class"></a>codecvt クラス
-ロケールのファセットとして使用できるオブジェクトを表すテンプレート クラス。 プログラム内で文字をエンコードするために使用される値のシーケンスと、プログラム外で文字をエンコードするために使用される値のシーケンスとの変換を制御できます。  
+# <a name="codecvt-class"></a>codecvt Class
+A template class that describes an object that can serve as a locale facet. It is able to control conversions between a sequence of values used to encode characters within the program and a sequence of values used to encode characters outside the program.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType, class Byte, class StateType>  
 class codecvt : public locale::facet, codecvt_base;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters.  
   
  `Byte`  
- 文字をエンコードするためにプログラム外で使用される型。  
+ A type used to encode characters outside a program.  
   
  `StateType`  
- 文字表現の内部型と外部型との変換の中間状態を表すために使用できる型。  
+ A type that can be used to represent intermediate states of a conversion between internal and external types of character representations.  
   
-## <a name="remarks"></a>コメント  
- テンプレート クラスは、`CharType` 型の値のシーケンスと `Byte` 型の値のシーケンスとの変換を制御するために、[ロケール ファセット](../standard-library/locale-class.md#facet_class)として使用できるオブジェクトを表します。 `StateType` クラスは変換を特徴付けます。また、`StateType` クラスのオブジェクトは変換中に必要な状態情報を格納します。  
+## <a name="remarks"></a>Remarks  
+ The template class describes an object that can serve as a [locale facet](../standard-library/locale-class.md#facet_class), to control conversions between a sequence of values of type `CharType` and a sequence of values of type `Byte`. The class `StateType` characterizes the transformation -- and an object of class `StateType` stores any necessary state information during a conversion.  
   
- 内部エンコードでは、1 文字あたりのバイト数が固定された表現、通常 `char` 型または `wchar_t` 型を使用します。  
+ The internal encoding uses a representation with a fixed number of bytes per character, usually either type `char` or type `wchar_t`.  
   
- すべてのロケールのファセットと同様、静的オブジェクト `id` に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、`id` に一意の正の値が格納されます。  
+ As with any locale facet, the static object `id` has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in `id`.  
   
- [do_in](#do_in) と [do_out](#do_out) のテンプレート バージョンでは、常に `codecvt_base::noconv` が返されます。  
+ The template versions of [do_in](#do_in) and [do_out](#do_out) always return `codecvt_base::noconv`.  
   
- C++ 標準ライブラリは複数の明示的な特殊化を定義します。  
+ The C++ Standard Library defines several explicit specializations:  
   
  `template<>`  
   
  `codecvt<wchar_t, char, mbstate_t>`  
   
- これは、`wchar_t` シーケンスと `char` シーケンスとの変換を実行します。  
+ converts between `wchar_t` and `char` sequences.  
   
  `template<>`  
   
  `codecvt<char16_t, char, mbstate_t>`  
   
- これは、UTF-16 としてエンコードされる `char16_t` シーケンスと UTF-8 としてエンコードされる `char` シーケンスとの変換を実行します。  
+ converts between `char16_t` sequences encoded as UTF-16 and `char` sequences encoded as UTF-8.  
   
  `template<>`  
   
  `codecvt<char32_t, char, mbstate_t>`  
   
- これは、UTF-32 (UCS-4) としてエンコードされる `char32_t` シーケンスと UTF-8 としてエンコードされる `char` シーケンスとの変換を実行します。  
+ converts between `char32_t` sequences encoded as UTF-32 (UCS-4) and `char` sequences encoded as UTF-8.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[codecvt](#codecvt)|変換を処理するためにロケールのファセットとして機能する `codecvt` クラスのオブジェクトのコンストラクター。|  
+|[codecvt](#codecvt)|The constructor for objects of class `codecvt` that serves as a locale facet to handle conversions.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[extern_type](#extern_type)|外部表現に使用される文字型。|  
-|[intern_type](#intern_type)|内部表現に使用される文字型。|  
-|[state_type](#state_type)|内部表現と外部表現との変換時の中間状態を表すために使用される文字型。|  
+|[extern_type](#extern_type)|A character type that is used for external representations.|  
+|[intern_type](#intern_type)|A character type that is used for internal representations.|  
+|[state_type](#state_type)|A character type that is used to represent intermediate states during conversions between internal and external representations.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[always_noconv](#always_noconv)|変換を実行する必要がないかどうかをテストします。|  
-|[do_always_noconv](#do_always_noconv)|変換を実行する必要がないかどうかをテストするために呼び出される仮想関数。|  
-|[do_encoding](#do_encoding)|`Byte` ストリームのエンコードが状態に依存する場合に、使用される `Byte` と生成される `CharType` との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定する仮想関数。|  
-|[do_in](#do_in)|内部の `Byte` のシーケンスを外部の `CharType` のシーケンスに変換するために呼び出される仮想関数。|  
-|[do_length](#do_length)|特定の外部 `Byte` シーケンスから生成された内部 `Byte` が特定の数を超えずに最大となる `CharType` 数を特定し、その `Byte` 数を返す仮想関数。|  
-|[do_max_length](#do_max_length)|1 つの内部 `CharType` を生成するために必要な最大外部 Byte 数を返す仮想関数。|  
-|[do_out](#do_out)|内部の `CharType` のシーケンスを外部の Byte のシーケンスに変換するために呼び出される仮想関数。|  
-|[do_unshift](#do_unshift)|状態に依存する変換で、`Byte` のシーケンスの最後の文字を完了するために必要な `Byte` を提供するために呼び出される仮想関数。|  
-|[encoding](#encoding)|`Byte` ストリームのエンコードが状態に依存する場合に、使用される `Byte` と生成される `CharType` との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定します。|  
-|[in](#in)|`Byte` のシーケンスの外部表現を、`CharType` のシーケンスの内部表現に変換します。|  
-|[length](#length)|特定の外部 `Byte` シーケンスから生成された内部 `Byte` が特定の数を超えずに最大となる `CharType` 数を特定し、その `Byte` 数を返します。|  
-|[max_length](#max_length)|1 つの内部 `Byte` を生成するために必要な最大外部 `CharType` 数を返します。|  
-|[out](#out)|内部の `CharType` のシーケンスを外部の `Byte` のシーケンスに変換します。|  
-|[unshift](#unshift)|状態に依存する変換で、`Byte` のシーケンスの最後の文字を完了するために必要な外部の `Byte` を提供します。|  
+|[always_noconv](#always_noconv)|Tests whether no conversions need be done.|  
+|[do_always_noconv](#do_always_noconv)|A virtual function called to test whether no conversions need be done.|  
+|[do_encoding](#do_encoding)|A virtual function that tests if the encoding of the `Byte` stream is state dependent, whether the ratio between the `Byte`s used and the `CharType`s produced is constant, and, if so, determines the value of that ratio.|  
+|[do_in](#do_in)|A virtual function called to convert a sequence of internal `Byte`s to a sequence of external `CharType`s.|  
+|[do_length](#do_length)|A virtual function that determines how many `Byte`s from a given sequence of external `Byte`s produce not more than a given number of internal `CharType`s and returns that number of `Byte`s.|  
+|[do_max_length](#do_max_length)|A virtual function that returns the maximum number of external Bytes necessary to produce one internal `CharType`.|  
+|[do_out](#do_out)|A virtual function called to convert a sequence of internal `CharType`s to a sequence of external Bytes.|  
+|[do_unshift](#do_unshift)|A virtual function called to provide the `Byte`s needed in a state-dependent conversion to complete the last character in a sequence of `Byte`s.|  
+|[encoding](#encoding)|Tests if the encoding of the `Byte` stream is state dependent, whether the ratio between the `Byte`s used and the `CharType`s produced is constant, and, if so, determines the value of that ratio.|  
+|[in](#in)|Converts an external representation of a sequence of `Byte`s to an internal representation of a sequence of `CharType`s.|  
+|[length](#length)|Determines how many `Byte`s from a given sequence of external `Byte`s produce not more than a given number of internal `CharType`s and returns that number of `Byte`s.|  
+|[max_length](#max_length)|Returns the maximum number of external `Byte`s necessary to produce one internal `CharType`.|  
+|[out](#out)|Converts a sequence of internal `CharType`s to a sequence of external `Byte`s.|  
+|[unshift](#unshift)|Provides the external `Byte`s needed in a state-dependent conversion to complete the last character in the sequence of `Byte`s.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="always_noconv"></a>  codecvt::always_noconv  
- 変換を実行する必要がないかどうかをテストします。  
+ Tests whether no conversions need be done.  
   
 ```  
 bool always_noconv() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 変換する必要がない場合は **true**、少なくとも 1 回は変換する必要がある場合は **false** のブール値。  
+### <a name="return-value"></a>Return Value  
+ A Boolean value that is **true** if no conversions need be done; **false** is at least one needs to be done.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_always_noconv](#do_always_noconv) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_always_noconv](#do_always_noconv).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_always_noconv.cpp  
@@ -194,63 +210,63 @@ At least one conversion is required.
 ```  
   
 ##  <a name="codecvt"></a>  codecvt::codecvt  
- 変換を処理するためにロケール ファセットとして機能する codecvt クラスのオブジェクトのコンストラクター。  
+ The constructor for objects of class codecvt that serves as a locale facet to handle conversions.  
   
 ```  
 explicit codecvt(size_t _Refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Refs`  
- オブジェクトのメモリ管理のタイプを指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
-### <a name="remarks"></a>コメント  
- `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `_Refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- コンス トラクターは、その`locale::facet`とベース オブジェクト**ロケール::**[ファセット](../standard-library/locale-class.md#facet_class)(`_Refs`)。  
+ The constructor initializes its `locale::facet` base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)(`_Refs`).  
   
 ##  <a name="do_always_noconv"></a>  codecvt::do_always_noconv  
- 変換を実行する必要がないかどうかをテストするために呼び出される仮想関数。  
+ A virtual function called to test whether no conversions need be done.  
   
 ```  
 virtual bool do_always_noconv() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- protected 仮想メンバー関数は、[do_in](#do_in) または [do_out](#do_out) のすべての呼び出しで **noconv** が返された場合にのみ、**true** を返します。  
+### <a name="return-value"></a>Return Value  
+ The protected virtual member function returns **true** only if every call to [do_in](#do_in) or [do_out](#do_out) returns **noconv**.  
   
- テンプレート バージョンでは常に **true** が返されます。  
+ The template version always returns **true**.  
   
-### <a name="example"></a>例  
-  [always_noconv](#always_noconv) の例 (`do_always_noconv` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [always_noconv](#always_noconv), which calls `do_always_noconv`.  
   
 ##  <a name="do_encoding"></a>  codecvt::do_encoding  
- **Byte** ストリームのエンコードが状態に依存する場合に、使用される **Byte** と生成される **CharType** との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定する仮想関数。  
+ A virtual function that tests if the encoding of the **Byte** stream is state dependent, whether the ratio between the **Byte**s used and the **CharType**s produced is constant and, if so, determines the value of that ratio.  
   
 ```  
 virtual int do_encoding() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- protected 仮想メンバー関数は次の値を返します。  
+### <a name="return-value"></a>Return Value  
+ The protected virtual member function returns:  
   
--   -1 場合型のシーケンスのエンコーディング`extern_type`状態は、依存します。  
+-   -1, if the encoding of sequences of type `extern_type` is state dependent.  
   
--   エンコードがさまざまな長さのシーケンスに関係する場合は、0。  
+-   0, if the encoding involves sequences of varying lengths.  
   
-- エンコードが長さ *N* のシーケンスのみに関係する場合は、*N*。  
+- *N*, if the encoding involves only sequences of length *N*  
   
-### <a name="example"></a>例  
-  [encoding](#encoding) の例 (`do_encoding` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [encoding](#encoding), which calls `do_encoding`.  
   
 ##  <a name="do_in"></a>  codecvt::do_in  
- 外部の **Byte** のシーケンスを内部の **CharType** のシーケンスに変換するために呼び出される仮想関数。  
+ A virtual function called to convert a sequence of external **Byte**s to a sequence of internal **CharType**s.  
   
 ```  
 virtual result do_in(
@@ -263,47 +279,47 @@ virtual result do_in(
     CharType*& next2,) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 変換されるシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the sequence to be converted.  
   
  `last1`  
- 変換されるシーケンスの末尾へのポインター。  
+ Pointer to the end of the sequence to be converted.  
   
  `next1`  
- 変換されたシーケンスの末尾の後の、最初の非変換文字へのポインター。  
+ Pointer beyond the end of the converted sequence, to the first unconverted character.  
   
  `first2`  
- 変換されたシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the converted sequence.  
   
  `last2`  
- 変換されたシーケンスの末尾へのポインター。  
+ Pointer to the end of the converted sequence.  
   
  `next2`  
- 変換された最後の **CharType** の後の **CharType** (対象シーケンスの変更されていない最初の文字) へのポインター。  
+ Pointer to the **CharType** that comes after the last converted **CharType**, to the first unaltered character in the destination sequence.  
   
-### <a name="return-value"></a>戻り値  
- 操作の成功、一部成功、または失敗を示す戻り値。 この関数では次の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ A return that indicates the success, partial success, or failure of the operation. The function returns:  
   
-- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
+- **codecvt_base::error** if the source sequence is ill formed.  
   
-- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
+- `codecvt_base::noconv` if the function performs no conversion.  
   
-- 変換に成功した場合は、**codecvt_base::ok**。  
+- **codecvt_base::ok** if the conversion succeeds.  
   
-- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
+- **codecvt_base::partial** if the source is insufficient or if the destination is not large enough, for the conversion to succeed.  
   
-### <a name="remarks"></a>コメント  
- `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 それ以外の場合、格納されている値は指定されません。  
+### <a name="remarks"></a>Remarks  
+ `_State` must represent the initial conversion state at the beginning of a new source sequence. The function alters its stored value as needed to reflect the current state of a successful conversion. Its stored value is otherwise unspecified.  
   
-### <a name="example"></a>例  
-  [in](#in) の例 (`do_in` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [in](#in), which calls `do_in`.  
   
 ##  <a name="do_length"></a>  codecvt::do_length  
- 特定の外部 **Byte** シーケンスから生成された内部 **CharType** が特定の数を超えずに最大となる **Byte** 数を特定し、その **Byte** 数を返す仮想関数。  
+ A virtual function that determines how many **Byte**s from a given sequence of external **Byte**s produce not more than a given number of internal **CharType**s and returns that number of **Byte**s.  
   
 ```  
 virtual int do_length(
@@ -313,50 +329,50 @@ virtual int do_length(
     size_t _Len2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 外部シーケンスの先頭へのポインター。  
+ Pointer to the beginning of the external sequence.  
   
  `last1`  
- 外部シーケンスの末尾へのポインター。  
+ Pointer to the end of the external sequence.  
   
  `_Len2`  
- メンバー関数で返すことができる **Byte** の最大数。  
+ The maximum number of **Byte**s that can be returned by the member function.  
   
-### <a name="return-value"></a>戻り値  
- [ `first1`, `last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数を表す整数。  
+### <a name="return-value"></a>Return Value  
+ An integer that represents a count of the maximum number of conversions, not greater than `_Len2`, defined by the external source sequence at [ `first1`, `last1`).  
   
-### <a name="remarks"></a>コメント  
- protected 仮想メンバー関数は、`_State` (状態のコピー)、一部のバッファー `_Buf`、およびポインター `next1` と `next2` について、`do_in` (`_State`、`first1`、`last1`、`next1`、`_Buf`、`_Buf` + `_Len2`、`next2`) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function effectively calls `do_in`( `_State`, `first1`, `last1`, `next1`, `_Buf`, `_Buf` + `_Len2`, `next2`) for `_State` (a copy of state), some buffer `_Buf`, and pointers `next1`and `next2`.  
   
- これは、後、返します`next2`  -  **buf**です。 したがって、[ `first1`, `last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数がカウントされます。  
+ It then returns `next2` - **buf**. Thus, it counts the maximum number of conversions, not greater than `_Len2`, defined by the source sequence at [ `first1`, `last1`).  
   
- テンプレートのバージョンが常の小さい方を返します`last1`  -  `first1`と`_Len2`です。  
+ The template version always returns the lesser of `last1` - `first1` and `_Len2`.  
   
-### <a name="example"></a>例  
-  [length](#length) の例 (**do_length** を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [length](#length), which calls **do_length**.  
   
 ##  <a name="do_max_length"></a>  codecvt::do_max_length  
- 1 つの内部 **CharType** を生成するために必要な最大外部 **Byte** 数を返す仮想関数。  
+ A virtual function that returns the maximum number of external **Byte**s necessary to produce one internal **CharType**.  
   
 ```  
 virtual int do_max_length() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 1 つの **CharType** を生成するために必要な最大 **Byte** 数。  
+### <a name="return-value"></a>Return Value  
+ The maximum number of **Byte**s necessary to produce one **CharType**.  
   
-### <a name="remarks"></a>コメント  
- protected 仮想メンバー関数は、`first1` と `last1` の任意の有効な値の [do_length](#do_length)( `first1`, `last1`, 1) で返すことができる最大許容値を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function returns the largest permissible value that can be returned by [do_length](#do_length)( `first1`, `last1`, 1) for arbitrary valid values of `first1` and `last1`.  
   
-### <a name="example"></a>例  
-  [max_length](#max_length) の例 (`do_max_length` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [max_length](#max_length), which calls `do_max_length`.  
   
 ##  <a name="do_out"></a>  codecvt::do_out  
- 内部の **CharType** のシーケンスを外部の **Byte** のシーケンスに変換するために呼び出される仮想関数。  
+ A virtual function called to convert a sequence of internal **CharType**s to a sequence of external **Byte**s.  
   
 ```  
 virtual result do_out(
@@ -369,47 +385,47 @@ virtual result do_out(
     Byte*& next2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 変換されるシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the sequence to be converted.  
   
  `last1`  
- 変換されるシーケンスの末尾へのポインター。  
+ Pointer to the end of the sequence to be converted.  
   
  `next1`  
- 変換された最後の **CharType** の後の、最初の未変換 **CharType** へのポインターの参照。  
+ Reference to a pointer to the first unconverted **CharType**, after the last **CharType** converted.  
   
  `first2`  
- 変換されたシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the converted sequence.  
   
  `last2`  
- 変換されたシーケンスの末尾へのポインター。  
+ Pointer to the end of the converted sequence.  
   
  `next2`  
- 変換された最後の **Byte** の後の、最初の未変換 **Byte** へのポインターの参照。  
+ Reference to a pointer to the first unconverted **Byte**, after the last **Byte** converted.  
   
-### <a name="return-value"></a>戻り値  
- この関数では次の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ The function returns:  
   
-- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
+- **codecvt_base::error** if the source sequence is ill formed.  
   
-- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
+- `codecvt_base::noconv` if the function performs no conversion.  
   
-- 変換に成功した場合は、**codecvt_base::ok**。  
+- **codecvt_base::ok** if the conversion succeeds.  
   
-- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
+- **codecvt_base::partial** if the source is insufficient or if the destination is not large enough for the conversion to succeed.  
   
-### <a name="remarks"></a>コメント  
- `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 それ以外の場合、格納されている値は指定されません。  
+### <a name="remarks"></a>Remarks  
+ `_State` must represent the initial conversion state at the beginning of a new source sequence. The function alters its stored value as needed to reflect the current state of a successful conversion. Its stored value is otherwise unspecified.  
   
-### <a name="example"></a>例  
-  [out](#out) の例 (`do_out` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [out](#out), which calls `do_out`.  
   
 ##  <a name="do_unshift"></a>  codecvt::do_unshift  
- 状態に依存する変換で、**Byte** のシーケンスの最後の文字を完了するために必要な **Byte** を提供するために呼び出される仮想関数。  
+ A virtual function called to provide the **Byte**s needed in a state-dependent conversion to complete the last character in a sequence of **Byte**s.  
   
 ```  
 virtual result do_unshift(
@@ -419,60 +435,60 @@ virtual result do_unshift(
     Byte*& next2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first2`  
- 対象範囲内の最初の位置へのポインター。  
+ Pointer to the first position in the destination range.  
   
  `last2`  
- 対象範囲内の最後の位置へのポインター。  
+ Pointer to the last position in the destination range.  
   
  `next2`  
- 対象シーケンス内の変更されていない最初の要素へのポインター。  
+ Pointer to the first unaltered element in the destination sequence.  
   
-### <a name="return-value"></a>戻り値  
- この関数では次の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ The function returns:  
   
-- _ *State* が無効な状態を表す場合は、**codecvt_base::error**。  
+- **codecvt_base::error** if _ *State* represents an invalid state  
   
-- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
+- `codecvt_base::noconv` if the function performs no conversion  
   
-- 変換に成功した場合は、**codecvt_base::ok**。  
+- **codecvt_base::ok** if the conversion succeeds  
   
-- 変換先が、変換を正常に行うのに十分な大きさでない場合は、**codecvt_base::partial**。  
+- **codecvt_base::partial** if the destination is not large enough for the conversion to succeed  
   
-### <a name="remarks"></a>コメント  
- protected 仮想メンバー関数は、ソース要素 **CharType**(0) を、終了要素 **Byte**(0) 以外の、[ `first2`, `last2`) 内に格納されている対象シーケンスに変換しようとします。 対象シーケンス内の変更されていない最初の要素へのポインター `next2` に常に格納します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function tries to convert the source element **CharType**(0) to a destination sequence that it stores within [ `first2`, `last2`), except for the terminating element **Byte**(0). It always stores in `next2` a pointer to the first unaltered element in the destination sequence.  
   
- _ *State* は、新しいソース シーケンスの先頭で最初の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 通常、ソース要素 **CharType**(0) を変換した場合、現在の状態は初期の変換状態のままになります。  
+ _ *State* must represent the initial conversion state at the beginning of a new source sequence. The function alters its stored value as needed to reflect the current state of a successful conversion. Typically, converting the source element **CharType**(0) leaves the current state in the initial conversion state.  
   
-### <a name="example"></a>例  
-  [unshift](#unshift) の例 (`do_unshift` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [unshift](#unshift), which calls `do_unshift`.  
   
 ##  <a name="encoding"></a>  codecvt::encoding  
- **Byte** ストリームのエンコードが状態に依存する場合に、使用される **Byte** と生成される **CharType** との比率が一定であるかどうかをテストし、一定である場合は、その比率の値を特定します。  
+ Tests if the encoding of the **Byte** stream is state dependent, whether the ratio between the **Byte**s used and the **CharType**s produced is constant, and, if so, determines the value of that ratio.  
   
 ```  
 int encoding() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 戻り値が正の値の場合、その値は、**CharType** 文字の生成に必要な **Byte** 文字の定数になります。  
+### <a name="return-value"></a>Return Value  
+ If the return value is positive then that value is the constant number of **Byte** characters required to produce the **CharType** character.  
   
- protected 仮想メンバー関数は次の値を返します。  
+ The protected virtual member function returns:  
   
--   -1 場合型のシーケンスのエンコーディング`extern_type`状態は、依存します。  
+-   -1, if the encoding of sequences of type `extern_type` is state dependent.  
   
--   エンコードがさまざまな長さのシーケンスに関係する場合は、0。  
+-   0, if the encoding involves sequences of varying lengths.  
   
-- エンコードが長さ *N* のシーケンスのみに関係する場合は、*N*。  
+- *N*, if the encoding involves only sequences of length *N.*  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_encoding](#do_encoding) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_encoding](#do_encoding).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_encoding.cpp  
@@ -500,17 +516,17 @@ int main( )
 ```  
   
 ##  <a name="extern_type"></a>  codecvt::extern_type  
- 外部表現に使用される文字型。  
+ A character type that is used for external representations.  
   
 ```  
 typedef Byte extern_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **Byte** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **Byte**.  
   
 ##  <a name="in"></a>  codecvt::in  
- **Byte** のシーケンスの外部表現を、**CharType** のシーケンスの内部表現に変換します。  
+ Converts an external representation of a sequence of **Byte**s to an internal representation of a sequence of **CharType**s.  
   
 ```  
 result in(
@@ -523,45 +539,45 @@ result in(
     CharType*& next2,) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 変換されるシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the sequence to be converted.  
   
  `last1`  
- 変換されるシーケンスの末尾へのポインター。  
+ Pointer to the end of the sequence to be converted.  
   
  `next1`  
- 変換されたシーケンスの末尾の後の、最初の未変換文字へのポインター。  
+ Pointer beyond the end of the converted sequence to the first unconverted character.  
   
  `first2`  
- 変換されたシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the converted sequence.  
   
  `last2`  
- 変換されたシーケンスの末尾へのポインター。  
+ Pointer to the end of the converted sequence.  
   
  `next2`  
- 変換された最後の **CharType** の後の **CharType** (対象シーケンスの変更されていない最初の文字) へのポインター。  
+ Pointer to the **CharType** that comes after the last converted **Chartype** to the first unaltered character in the destination sequence.  
   
-### <a name="return-value"></a>戻り値  
- 操作の成功、一部成功、または失敗を示す戻り値。 この関数では次の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ A return that indicates the success, partial success or failure of the operation. The function returns:  
   
-- ソース シーケンスが無効な形式である場合は、**codecvt_base::error**。  
+- **codecvt_base::error** if the source sequence is ill formed.  
   
-- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
+- `codecvt_base::noconv` if the function performs no conversion.  
   
-- 変換に成功した場合は、**codecvt_base::ok**。  
+- **codecvt_base::ok** if the conversion succeeds.  
   
-- 変換を正常に行うのに、ソースが十分でないか、変換先が十分な大きさでない場合は、**codecvt_base::partial**。  
+- **codecvt_base::partial** if the source is insufficient or if the destination is not large enough for the conversion to succeed.  
   
-### <a name="remarks"></a>コメント  
- `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 部分変換後に、`_State` は、新しい文字の到着時に変換を再開できるように設定する必要があります。  
+### <a name="remarks"></a>Remarks  
+ `_State` must represent the initial conversion state at the beginning of a new source sequence. The function alters its stored value, as needed, to reflect the current state of a successful conversion. After a partial conversion, `_State` must be set so as to allow the conversion to resume when new characters arrive.  
   
- メンバー関数は、[do_in](#do_in)( `_State`, _ *First1,  last1,  next1, First2, _Llast2,  next2*) を返します。  
+ The member function returns [do_in](#do_in)( `_State`, _ *First1,  last1,  next1, First2, _Llast2,  next2*).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_in.cpp  
@@ -599,17 +615,17 @@ It worked! The converted string is:
 ```  
   
 ##  <a name="intern_type"></a>  codecvt::intern_type  
- 内部表現に使用される文字型。  
+ A character type that is used for internal representations.  
   
 ```  
 typedef CharType intern_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
 ##  <a name="length"></a>  codecvt::length  
- 特定の外部 **Byte** シーケンスから生成された内部 **CharType** が特定の数を超えずに最大となる **Byte** 数を特定し、その **Byte** 数を返します。  
+ Determines how many **Byte**s from a given sequence of external **Byte**s produce not more than a given number of internal **CharType**s and returns that number of **Byte**s.  
   
 ```  
 int length(
@@ -619,26 +635,26 @@ int length(
     size_t _Len2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 外部シーケンスの先頭へのポインター。  
+ Pointer to the beginning of the external sequence.  
   
  `last1`  
- 外部シーケンスの末尾へのポインター。  
+ Pointer to the end of the external sequence.  
   
  `_Len2`  
- メンバー関数で返すことができる Byte の最大数。  
+ The maximum number of Bytes that can be returned by the member function.  
   
-### <a name="return-value"></a>戻り値  
- [ `first1`, `last1`) で外部ソース シーケンスによって定義されている `_Len2` 以下の、最大変換数を表す整数。  
+### <a name="return-value"></a>Return Value  
+ An integer that represents a count of the maximum number of conversions, not greater than `_Len2`, defined by the external source sequence at [ `first1`, `last1`).  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_length](#do_length)( *_State,  first1*, `last1`, `_Len2`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_length](#do_length)( *_State,  first1*, `last1`, `_Len2`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_length.cpp  
@@ -668,19 +684,19 @@ The length of the string is: 50.
 ```  
   
 ##  <a name="max_length"></a>  codecvt::max_length  
- 1 つの内部 **CharType** を生成するために必要な最大外部 **Byte** 数を返します。  
+ Returns the maximum number of external **Byte**s necessary to produce one internal **CharType**.  
   
 ```  
 int max_length() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 1 つの **CharType** を生成するために必要な最大 **Byte** 数。  
+### <a name="return-value"></a>Return Value  
+ The maximum number of **Byte**s necessary to produce one **CharType**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_max_length](#do_max_length) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_max_length](#do_max_length).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_max_length.cpp  
@@ -704,7 +720,7 @@ int main( )
 ```  
   
 ##  <a name="out"></a>  codecvt::out  
- 内部の **CharType** のシーケンスを外部の **Byte** のシーケンスに変換します。  
+ Converts a sequence of internal **CharType**s to a sequence of external **Byte**s.  
   
 ```  
 result out(
@@ -717,35 +733,35 @@ result out(
     Byte*& next2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first1`  
- 変換されるシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the sequence to be converted.  
   
  `last1`  
- 変換されるシーケンスの末尾へのポインター。  
+ Pointer to the end of the sequence to be converted.  
   
  `next1`  
- 変換された最後の **CharType** の後の、最初の未変換 **CharType** へのポインターの参照。  
+ Reference to a pointer to the first unconverted **CharType** after the last **CharType** converted.  
   
  `first2`  
- 変換されたシーケンスの先頭へのポインター。  
+ Pointer to the beginning of the converted sequence.  
   
  `last2`  
- 変換されたシーケンスの末尾へのポインター。  
+ Pointer to the end of the converted sequence.  
   
  `next2`  
- 変換された最後の **Byte** の後の、最初の未変換 **Byte** へのポインターの参照。  
+ Reference to a pointer to the first unconverted **Byte** after the last converted **Byte**.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数は、[do_out](#do_out)( `_State`, `first1`, `last1`, `next1`, `first2`, `last2`, `next2`) を返します。  
+### <a name="return-value"></a>Return Value  
+ The member function returns [do_out](#do_out)( `_State`, `first1`, `last1`, `next1`, `first2`, `last2`, `next2`).  
   
-### <a name="remarks"></a>コメント  
- 詳細については、「[codecvt::do_out](#do_out)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [codecvt::do_out](#do_out).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // codecvt_out.cpp  
@@ -783,17 +799,17 @@ It worked: The converted string is:
 ```  
   
 ##  <a name="state_type"></a>  codecvt::state_type  
- 内部表現と外部表現との変換時の中間状態を表すために使用される文字型。  
+ A character type that is used to represent intermediate states during conversions between internal and external representations.  
   
 ```  
 typedef StateType state_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **StateType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **StateType**.  
   
 ##  <a name="unshift"></a>  codecvt::unshift  
- 状態に依存する変換で、**Byte** のシーケンスの最後の文字を完了するために必要な **Byte** を提供します。  
+ Provides the **Byte**s needed in a state-dependent conversion to complete the last character in a sequence of **Byte**s.  
   
 ```  
 result unshift(
@@ -803,41 +819,41 @@ result unshift(
     Byte*& next2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_State`  
- メンバー関数の呼び出し間で維持される変換の状態。  
+ The conversion state that is maintained between calls to the member function.  
   
  `first2`  
- 対象範囲内の最初の位置へのポインター。  
+ Pointer to the first position in the destination range.  
   
  `last2`  
- 対象範囲内の最後の位置へのポインター。  
+ Pointer to the last position in the destination range.  
   
  `next2`  
- 対象シーケンス内の変更されていない最初の要素へのポインター。  
+ Pointer to the first unaltered element in the destination sequence.  
   
-### <a name="return-value"></a>戻り値  
- この関数では次の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ The function returns:  
   
-- 無効な状態を表す場合は、**codecvt_base::error**。  
+- **codecvt_base::error** if state represents an invalid state.  
   
-- 関数で変換が行われない場合は、`codecvt_base::noconv`。  
+- `codecvt_base::noconv` if the function performs no conversion.  
   
-- 変換に成功した場合は、**codecvt_base::ok**。  
+- **codecvt_base::ok** if the conversion succeeds.  
   
-- 変換先が、変換を正常に行うのに十分な大きさでない場合は、**codecvt_base::partial**。  
+- **codecvt_base::partial** if the destination is not large enough for the conversion to succeed.  
   
-### <a name="remarks"></a>コメント  
- protected 仮想メンバー関数は、ソース要素 **CharType**(0) を、終了要素 **Byte**(0) 以外の、[ `first2`, `last2`) 内に格納されている対象シーケンスに変換しようとします。 対象シーケンス内の変更されていない最初の要素へのポインター `next2` に常に格納します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function tries to convert the source element **CharType**(0) to a destination sequence that it stores within [ `first2`, `last2`), except for the terminating element **Byte**(0). It always stores in `next2` a pointer to the first unaltered element in the destination sequence.  
   
- `_State` は、新しいソース シーケンスの先頭で初期の変換状態を表す必要があります。 関数は、変換に成功した現在の状態を反映するために必要に応じて、格納されている値を変更します。 通常、ソース要素 **CharType**(0) を変換した場合、現在の状態は初期の変換状態のままになります。  
+ `_State` must represent the initial conversion state at the beginning of a new source sequence. The function alters its stored value, as needed, to reflect the current state of a successful conversion. Typically, converting the source element **CharType**(0) leaves the current state in the initial conversion state.  
   
- このメンバー関数は、[do_unshift](#do_unshift)( `_State`, `first2`, `last2`, `next2` ) を返します。  
+ The member function returns [do_unshift](#do_unshift)( `_State`, `first2`, `last2`, `next2` ).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [コード ページ](../c-runtime-library/code-pages.md)   
- [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [Code Pages](../c-runtime-library/code-pages.md)   
+ [Locale Names, Languages, and Country/Region Strings](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

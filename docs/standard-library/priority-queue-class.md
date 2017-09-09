@@ -1,5 +1,5 @@
 ---
-title: "priority_queue クラス | Microsoft Docs"
+title: priority_queue Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- priority_queue
 - queue/std::priority_queue::container_type
 - queue/std::priority_queue::size_type
 - queue/std::priority_queue::value_type
@@ -21,7 +20,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- priority_queue class
+- std::priority_queue [C++], container_type
+- std::priority_queue [C++], size_type
+- std::priority_queue [C++], value_type
+- std::priority_queue [C++], empty
+- std::priority_queue [C++], pop
+- std::priority_queue [C++], push
+- std::priority_queue [C++], size
+- std::priority_queue [C++], top
 ms.assetid: 69fca9cc-a449-4be4-97b7-02ca5db9cbb2
 caps.latest.revision: 25
 author: corob-msft
@@ -41,105 +47,105 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 31191f5109242dc239ac0237a2eab6ff459fe41b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: b9c684ff7931a22a5164f32c053d5f551fc0dafc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="priorityqueue-class"></a>priority_queue クラス
-基になるコンテナー型の先頭にあって常に最大になるか、または優先順位が最も高くなる要素へのアクセスを制限することにより、機能の制限を提供するテンプレート コンテナーのアダプター クラスです。 priority_queue に新しい要素を追加でき、priority_queue の最上位の要素を検査または削除できます。  
+# <a name="priorityqueue-class"></a>priority_queue Class
+A template container adaptor class that provides a restriction of functionality limiting access to the top element of some underlying container type, which is always the largest or of the highest priority. New elements can be added to the priority_queue and the top element of the priority_queue can be inspected or removed.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Type, class Container= vector <Type>, class Compare= less <typename Container ::value_type>>  
 class priority_queue  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *Type*  
- priority_queue に格納される要素のデータ型。  
+ The element data type to be stored in the priority_queue.  
   
  `Container`  
- priority_queue を実装するために使用する基になるコンテナーの型。  
+ The type of the underlying container used to implement the priority_queue.  
   
  *Compare*  
- 2 つの要素の値を並べ替えキーとして比較して、priority_queue 内の要素の相対順序を決定できる関数オブジェクトを提供する型。 この引数は省略可能であり、既定値は二項述語 **less***\<***typename** *Container***::value_type***>* です。  
+ The type that provides a function object that can compare two element values as sort keys to determine their relative order in the priority_queue. This argument is optional and the binary predicate **less***\<***typename** *Container***::value_type***>* is the default value.  
   
-## <a name="remarks"></a>コメント  
- queue オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#value_type) と同義で、2 番目のテンプレート パラメーターで指定する、基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
+## <a name="remarks"></a>Remarks  
+ The elements of class **Type** stipulated in the first template parameter of a queue object are synonymous with [value_type](#value_type) and must match the type of element in the underlying container class **Container** stipulated by the second template parameter. The **Type** must be assignable, so that it is possible to copy objects of that type and to assign values to variables of that type.  
   
- priority_queue では、クラス **Traits** の格納されている関数オブジェクトを呼び出すことによって、priority_queue が制御するシーケンスを並べ替えます。 通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。  
+ The priority_queue orders the sequence it controls by calling a stored function object of class **Traits**. In general, the elements need be merely less than comparable to establish this order: so that, given any two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. On a more technical note, the comparison function is a binary predicate that induces a strict weak ordering in the standard mathematical sense.  
   
- priority_queue に適した基になるコンテナー クラスには、[deque クラス](../standard-library/deque-class.md)および既定の [vector クラス](../standard-library/vector-class.md)、または `front`、`push_back`、および `pop_back` の各操作をサポートするその他すべてのシーケンス コンテナーがあります。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
+ Suitable underlying container classes for priority_queue include [deque Class](../standard-library/deque-class.md) and the default [vector Class](../standard-library/vector-class.md) or any other sequence container that supports the operations of `front`, `push_back`, and `pop_back` and a random-access iterator. The underlying container class is encapsulated within the container adaptor, which exposes only the limited set of the sequence container member functions as a public interface.  
   
- `priority_queue` での要素の追加および要素の削除の両方に、対数の複雑さがあります。 `priority_queue` 内の要素へのアクセスには、定数の複雑さがあります。  
+ Adding elements to and removing elements from a `priority_queue` both have logarithmic complexity. Accessing elements in a `priority_queue` has constant complexity.  
   
- C++ 標準ライブラリで定義されたコンテナー アダプターには、stack、queue、および priority_queue の 3 つの種類があります。 それぞれが、基になるコンテナー クラスの機能を制限して、標準的なデータ構造に正確に制御されたインターフェイスを提供します。  
+ There are three types of container adaptors defined by the C++ Standard Library: stack, queue, and priority_queue. Each restricts the functionality of some underlying container class to provide a precisely controlled interface to a standard data structure.  
   
--   [stack クラス](../standard-library/stack-class.md)は、後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
+-   The [stack Class](../standard-library/stack-class.md) supports a last-in, first-out (LIFO) data structure. A good analogue to keep in mind would be a stack of plates. Elements (plates) may be inserted, inspected, or removed only from the top of the stack, which is the last element at the end of the base container. The restriction to accessing only the top element is the reason for using the stack class.  
   
--   [queue クラス](../standard-library/queue-class.md)は、先入れ先出し (FIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 このように一番前と一番後ろの要素にのみアクセスできる制限があることが、queue クラスを使用する理由です。  
+-   The [queue Class](../standard-library/queue-class.md) supports a first-in, first-out (FIFO) data structure. A good analogue to keep in mind would be people lining up for a bank teller. Elements (people) may be added to the back of the line and are removed from the front of the line. Both the front and the back of a line may be inspected. The restriction to accessing only the front and back elements in this way is the reason for using the queue class.  
   
--   priority_queue クラスは、最も大きな要素が常に先頭の位置になるように、その要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
+-   The priority_queue class orders its elements so that the largest element is always at the top position. It supports insertion of an element and the inspection and removal of the top element. A good analogue to keep in mind would be people lining up where they are arranged by age, height, or some other criterion.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[priority_queue](#priority_queue)|空であるか、基本のコンテナー オブジェクトまたはその他の `priority_queue` の範囲のコピーである `priority_queue` を構築します。|  
+|[priority_queue](#priority_queue)|Constructs a `priority_queue` that is empty or that is a copy of a range of a base container object or of other `priority_queue`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#container_type)|`priority_queue` によって適合されるように、基本のコンテナーを提供する型。|  
-|[size_type](#size_type)|`priority_queue` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_type](#value_type)|`priority_queue` 内に要素として格納されるオブジェクトの種類を表す型。|  
+|[container_type](#container_type)|A type that provides the base container to be adapted by a `priority_queue`.|  
+|[size_type](#size_type)|An unsigned integer type that can represent the number of elements in a `priority_queue`.|  
+|[value_type](#value_type)|A type that represents the type of object stored as an element in a `priority_queue`.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[empty](#empty)|`priority_queue` が空かどうかをテストします。|  
-|[pop](#pop)|最上位から `priority_queue` の最大の要素を削除します。|  
-|[push](#push)|operator< からの要素の優先順位に基づいて、優先順位キューに要素を追加します。|  
-|[size](#size)|`priority_queue` 内の要素数を返します。|  
-|[top](#top)|`priority_queue` の最上位にある最大要素への const 参照を返します。|  
+|[empty](#empty)|Tests if the `priority_queue` is empty.|  
+|[pop](#pop)|Removes the largest element of the `priority_queue` from the top position.|  
+|[push](#push)|Adds an element to the priority queue based on the priority of the element from operator<.|  
+|[size](#size)|Returns the number of elements in the `priority_queue`.|  
+|[top](#top)|Returns a const reference to the largest element at the top of the `priority_queue`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<queue>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<queue>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="container_type"></a>  priority_queue::container_type  
- 適合されるように、基本のコンテナーを提供する型。  
+ A type that provides the base container to be adapted.  
   
 ```  
 typedef Container container_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Container` のシノニムです。 C++ 標準ライブラリのシーケンス コンテナー クラス `deque` と既定のクラス `vector` は、priority_queue オブジェクトの基本のコンテナーとして使用するための要件を満たしています。 要件を満たすユーザー定義型を使用することもできます。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter `Container`. The C++ Standard Library sequence container class `deque` and the default class `vector` meet the requirements to be used as the base container for a priority_queue object. User-defined types satisfying the requirements may also be used.  
   
- `Container` の詳細については、「[priority_queue クラス](../standard-library/priority-queue-class.md)」トピックの「コメント」セクションを参照してください。  
+ For more information on `Container`, see the Remarks section of the [priority_queue Class](../standard-library/priority-queue-class.md) topic.  
   
-### <a name="example"></a>例  
-  `container_type` の宣言方法や使用例については、[priority_queue](#priority_queue) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [priority_queue](#priority_queue) for an example of how to declare and use `container_type`.  
   
 ##  <a name="empty"></a>  priority_queue::empty  
- priority_queue が空かどうかをテストします。  
+ Tests if a priority_queue is empty.  
   
 ```  
 bool empty() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- priority_queue が空である場合は **true**、priority_queue が空でない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the priority_queue is empty; **false** if the priority_queue is nonempty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_empty.cpp  
@@ -174,16 +180,16 @@ The priority_queue s2 is empty.
 ```  
   
 ##  <a name="pop"></a>  priority_queue::pop  
- 最上位から priority_queue の最大の要素を削除します。  
+ Removes the largest element of the priority_queue from the top position.  
   
 ```  
 void pop();
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数を適用するには、priority_queue を空にすることはできません。 priority_queue の最上位は、常に、コンテナー内の最大要素に占有されます。  
+### <a name="remarks"></a>Remarks  
+ The priority_queue must be nonempty to apply the member function. The top of the priority_queue is always occupied by the largest element in the container.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_pop.cpp  
@@ -228,7 +234,7 @@ After a pop, the element at the top of the priority_queue is 20.
 ```  
   
 ##  <a name="priority_queue"></a>  priority_queue::priority_queue  
- 空であるか、基本のコンテナー オブジェクトまたは別の priority_queue の範囲のコピーである priority_queue を構築します。  
+ Constructs a priority_queue that is empty or that is a copy of a range of a base container object or of another priority_queue.  
   
 ```  
 priority_queue();
@@ -249,30 +255,30 @@ template <class InputIterator>
 priority_queue(InputIterator first, InputIterator last, const Traits&_comp, const container_type& _Cont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *_ comp*  
- priority_queue 内の要素の並べ替えに使用される、**constTraits** 型の比較関数。既定では基本コンテナーの関数を比較します。  
+ The comparison function of type **constTraits** used to order the elements in the priority_queue, which defaults to compare function of the base container.  
   
  `_Cont`  
- 構築された priority_queue がコピーになる元の基本コンテナー。  
+ The base container of which the constructed priority_queue is to be a copy.  
   
  `right`  
- 構築される set のコピー元となる priority_queue。  
+ The priority_queue of which the constructed set is to be a copy.  
   
  `first`  
- コピーする要素範囲内の最初の要素の位置。  
+ The position of the first element in the range of elements to be copied.  
   
  `last`  
- コピーする要素範囲を超える最初の要素の位置。  
+ The position of the first element beyond the range of elements to be copied.  
   
-### <a name="remarks"></a>コメント  
- 最初の 3 つの各コンストラクターは、空の初期 priority_queue を指定します。2 番目のコンストラクターも要素の順序を確立するために使用する比較関数の型 (`comp`) を指定し、3 番目のコンストラクターは使用する `container_type` (`_Cont`) を明示的に指定します。 キーワード **explicit** は、特定の種類の自動型変換が実行されないようにします。  
+### <a name="remarks"></a>Remarks  
+ Each of the first three constructors specifies an empty initial priority_queue, the second also specifying the type of comparison function ( `comp`) to be used in establishing the order of the elements and the third explicitly specifying the `container_type` ( `_Cont`) to be used. The keyword **explicit** suppresses certain kinds of automatic type conversion.  
   
- 4 番目のコンストラクターは、priority_queue `right` のコピーを指定します。  
+ The fourth constructor specifies a copy of the priority_queue `right`.  
   
- 最後の 3 つのコンス トラクターは、範囲をコピー [* 最初に、最終 *) のいくつかのコンテナー クラスの比較関数の種類を指定するときになるほど、priority_queue を初期化するために値を使用して**特徴 (traits)**と`container_type`です。  
+ The last three constructors copy the range [ * first,  last*) of some container and use the values to initialize a priority_queue with increasing explicitness in specifying the type of comparison function of class **Traits** and `container_type`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_ctor.cpp  
@@ -384,20 +390,20 @@ int main( )
 ```  
   
 ##  <a name="push"></a>  priority_queue::push  
- operator< からの要素の優先順位に基づいて、優先順位キューに要素を追加します。  
+ Adds an element to the priority queue based on the priority of the element from operator<.  
   
 ```  
 void push(const Type& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- priority_queue の最上位に追加された要素。  
+ The element added to the top of the priority_queue.  
   
-### <a name="remarks"></a>コメント  
- priority_queue の最上位は、コンテナー内の最大要素に占有される位置です。  
+### <a name="remarks"></a>Remarks  
+ The top of the priority_queue is the position occupied by the largest element in the container.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_push.cpp  
@@ -430,16 +436,16 @@ The element at the top of the priority_queue is 30.
 ```  
   
 ##  <a name="size"></a>  priority_queue::size  
- priority_queue 内の要素の数を返します。  
+ Returns the number of elements in the priority_queue.  
   
 ```  
 size_type size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- priority_queue の現在の長さ。  
+### <a name="return-value"></a>Return Value  
+ The current length of the priority_queue.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_size.cpp  
@@ -469,32 +475,32 @@ The priority_queue length is now 2.
 ```  
   
 ##  <a name="size_type"></a>  priority_queue::size_type  
- priority_queue 内の要素の数を表すことができる符号なし整数型。  
+ An unsigned integer type that can represent the number of elements in a priority_queue.  
   
 ```  
 typedef typename Container::size_type size_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、priority_queue によって採用された基本コンテナーの `size_type` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the `size_type` of the base container adapted by the priority_queue.  
   
-### <a name="example"></a>例  
-  `size_type` の宣言方法や使用例については、[size](#size) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [size](#size) for an example of how to declare and use `size_type`.  
   
 ##  <a name="top"></a>  priority_queue::top  
- priority_queue の最上位にある最大要素への const 参照を返します。  
+ Returns a const reference to the largest element at the top of the priority_queue.  
   
 ```  
 const_reference top() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- **Traits** 関数によって決定される priority_queue オブジェクトの最大要素への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the largest element, as determined by the **Traits** function, object of the priority_queue.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数を適用するには、priority_queue を空にすることはできません。  
+### <a name="remarks"></a>Remarks  
+ The priority_queue must be nonempty to apply the member function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_top.cpp  
@@ -527,16 +533,16 @@ The element at the top of the priority_queue is 30.
 ```  
   
 ##  <a name="value_type"></a>  priority_queue::value_type  
- priority_queue 内に要素として格納されるオブジェクトの種類を表す型。  
+ A type that represents the type of object stored as an element in a priority_queue.  
   
 ```  
 typedef typename Container::value_type value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、priority_queue によって採用された基本コンテナーの `value_type` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the `value_type` of the base container adapted by the priority_queue.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // pqueue_value_type.cpp  
@@ -566,8 +572,8 @@ The value_type is AnInt = 69
 The element at the top of the priority_queue is 69.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

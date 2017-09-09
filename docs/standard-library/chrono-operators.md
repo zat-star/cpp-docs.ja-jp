@@ -1,5 +1,5 @@
 ---
-title: "&lt;chrono&gt; 演算時 | Microsoft Docs"
+title: '&lt;chrono&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -11,23 +11,23 @@ f1_keywords:
 ms.assetid: c5a19267-4684-40c1-b7a9-cc1012b058f3
 caps.latest.revision: 8
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a58daf9d43392ffa89872ab0a76e680b63dbb977
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: c7403464027d1e08a926dc6edb67b8cb8a37523a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltchronogt-operators"></a>&lt;chrono&gt; 演算子
+# <a name="ltchronogt-operators"></a>&lt;chrono&gt; operators
 ||||  
 |-|-|-|  
-|[modulo 演算子](#op_modulo)|[operator!=](#op_neq)|[operator&gt;](#op_gt)|  
+|[operator modulo](#op_modulo)|[operator!=](#op_neq)|[operator&gt;](#op_gt)|  
 |[operator&gt;=](#op_gt_eq)|[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|  
 |[operator*](#op_star)|[operator+](#op_add)|[operator-](#operator-)|  
 |[operator/](#op_div)|[operator==](#op_eq_eq)|  
   
 ##  <a name="operator-"></a>  operator-  
- [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトの減算または否定の演算子。  
+ Operator for subtraction or negation of [duration](../standard-library/duration-class.md) and [time_point](../standard-library/time-point-class.md) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -50,28 +50,28 @@ constexpr typename common_type<Duration1, Duration2>::type
        const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
  `Time`  
- `time_point` オブジェクト。  
+ A `time_point` object.  
   
  `Dur`  
- `duration` オブジェクト。  
+ A `duration` object.  
   
-### <a name="return-value"></a>戻り値  
- 最初の関数は、間隔の長さが 2 つの引数の期間の違いである `duration` オブジェクトを返します。  
+### <a name="return-value"></a>Return Value  
+ The first function returns a `duration` object whose interval length is the difference between the time intervals of the two arguments.  
   
- 2 番目の関数は、`time_point` で指定された時点から `Dur` によって表される期間の拒否によって転置される時点を表す `Time` オブジェクトを返します。  
+ The second function returns a `time_point` object that represents a point in time that is displaced, by the negation of the time interval that is represented by `Dur`, from the point in time that is specified by `Time`.  
   
- 3 番目の関数は、`duration` と `Left` 間の時間間隔を表す `Right` オブジェクトを返します。  
+ The third function returns a `duration` object that represents the time interval between `Left` and `Right`.  
   
 ##  <a name="op_neq"></a>  operator!=  
- [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの非等値演算子。  
+ Inequality operator for [duration](../standard-library/duration-class.md) or [time_point](../standard-library/time-point-class.md) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -86,18 +86,18 @@ constexpr bool operator!=(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- 各関数から返される値は `!(Left == Right)` です。  
+### <a name="return-value"></a>Return Value  
+ Each function returns `!(Left == Right)`.  
   
 ##  <a name="op_star"></a>  operator*  
- [duration](../standard-library/chrono-operators.md#op_star) オブジェクトの乗算演算子。  
+ Multiplication operator for [duration](../standard-library/chrono-operators.md#op_star) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2>  
@@ -115,22 +115,22 @@ constexpr duration<typename common_type<Rep1, Rep2>::type, Period2>
        Period2>& Dur);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Dur`  
- `duration` オブジェクト。  
+ A `duration` object.  
   
  `Mult`  
- 整数値。  
+ An integral value.  
   
-### <a name="return-value"></a>戻り値  
- 各関数は、間隔が `duration` の長さを乗算した `Mult` である `Dur` オブジェクトを返します。  
+### <a name="return-value"></a>Return Value  
+ Each function returns a `duration` object whose interval length is `Mult` multiplied by the length of `Dur`.  
   
- `is_convertible<Rep2, common_type<Rep1, Rep2>>` が *true* にならない限り、最初の関数はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
+ Unless `is_convertible<Rep2, common_type<Rep1, Rep2>>`*holds true*, the first function does not participate in overload resolution. For more information, sssee [<type_traits>](../standard-library/type-traits.md).  
   
- `is_convertible<Rep1, common_type<Rep1, Rep2>>` が *true* にならない限り、2 番目の関数はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
+ Unless `is_convertible<Rep1, common_type<Rep1, Rep2>>`*holds true*, the second function does not participate in overload resolution. For more information, see [<type_traits>](../standard-library/type-traits.md).  
   
 ##  <a name="op_div"></a>  operator/  
- [duration](../standard-library/chrono-operators.md#op_star) オブジェクトの除算演算子。  
+ Division operator for [duration](../standard-library/chrono-operators.md#op_star) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2>  
@@ -147,28 +147,28 @@ constexpr typename common_type<Rep1, Rep2>::type
      const duration<Rep2, Period2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Dur`  
- `duration` オブジェクト。  
+ A `duration` object.  
   
  `Div`  
- 整数値。  
+ An integral value.  
   
  `Left`  
- 左側の `duration` オブジェクト。  
+ The left `duration` object.  
   
  `Right`  
- 右側の `duration` オブジェクト。  
+ The right `duration` object.  
   
-### <a name="return-value"></a>戻り値  
- 最初の演算子は、間隔の長さが `Dur` の値で除算した `Div` の長さである duration オブジェクトを返します。  
+### <a name="return-value"></a>Return Value  
+ The first operator returns a duration object whose interval length is the length of `Dur` divided by the value `Div`.  
   
- 2 番目の演算子は、`Left` と `Right` の間隔の長さの比率を返します。  
+ The second operator returns the ratio of the interval lengths of `Left` and `Right`.  
   
- `is_convertible<Rep2, common_type<Rep1, Rep2>>` が *true を保持*せず、かつ `Rep2` が `duration` のインスタンス化ではない限り、最初の演算子はオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
+ Unless `is_convertible<Rep2, common_type<Rep1, Rep2>>`*holds true*, and `Rep2` is not an instantiation of `duration`, the first operator does not participate in overload resolution. For more information, see [<type_traits>](../standard-library/type-traits.md).  
   
 ##  <a name="op_add"></a>  operator+  
- [duration](../standard-library/duration-class.md) および [time_point](../standard-library/time-point-class.md) オブジェクトを追加します。  
+ Adds [duration](../standard-library/duration-class.md) and [time_point](../standard-library/time-point-class.md) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -192,26 +192,26 @@ time_point<Clock, constexpr typename common_type<duration<Rep1, Period1>, Durati
       const time_point<Clock, Duration2>& Time);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
  `Time`  
- `time_point` オブジェクト。  
+ A `time_point` object.  
   
  `Dur`  
- `duration` オブジェクト。  
+ A `duration` object.  
   
-### <a name="return-value"></a>戻り値  
- 最初の関数は `duration` と `Left` の間隔の合計と同じ時間間隔がある `Right` オブジェクトを返します。  
+### <a name="return-value"></a>Return Value  
+ The first function returns a `duration` object that has a time interval that is equal to the sum of the intervals of `Left` and `Right`.  
   
- 2 番目と 3 番目の関数は、`time_point`時点からの間隔 `Dur` によって、転置される時点を表す `Time` オブジェクトを返します。  
+ The second and third functions return a `time_point` object that represents a point in time that is displaced, by the interval `Dur`, from the point in time `Time`.  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- 一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトが、もう一方の `duration` または `time_point` オブジェクト未満かどうかを判断します。  
+ Determines whether one [duration](../standard-library/duration-class.md) or [time_point](../standard-library/time-point-class.md) object is less than another `duration` or `time_point` object.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -226,20 +226,20 @@ constexpr bool operator<(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- `true` の間隔の長さが `Left` の間隔の長さ未満である場合、最初の関数は `Right` を返します。 それ以外の場合、関数は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first function returns `true` if the interval length of `Left` is less than the interval length of `Right`. Otherwise, the function returns `false`.  
   
- `true` が `Left` に先行する場合、2 番目の関数は `Right` を返します。 それ以外の場合、関数は `false` を返します。  
+ The second function returns `true` if `Left` precedes `Right`. Otherwise, the function returns `false`.  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値未満かどうかを判断します。  
+ Determines whether one [duration](../standard-library/duration-class.md) or [time_point](../standard-library/time-point-class.md) object is less than or equal to another `duration` or `time_point` object.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -253,18 +253,18 @@ constexpr bool operator<=(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- 各関数から返される値は `!(Right < Left)` です。  
+### <a name="return-value"></a>Return Value  
+ Each function returns `!(Right < Left)`.  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 2 つの `duration` オブジェクトが同じ長さの時間間隔を表しているかどうか、または 2 つの `time_point` オブジェクトが同じ時点を表しているかどうかを判断します。  
+ Determines whether two `duration` objects represent time intervals that have the same length, or whether two `time_point` objects represent the same point in time.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -278,20 +278,20 @@ constexpr bool operator==(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- 最初の関数は、`true` と `Left` が同じ長さの時間間隔を表す場合に `Right` を返します。 それ以外の場合、関数は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first function returns `true` if `Left` and `Right` represent time intervals that have the same length. Otherwise, the function returns `false`.  
   
- 2 番目の関数は、`true` と `Left` が同じ時点を表す場合に `Right` を返します。 それ以外の場合、関数は `false` を返します。  
+ The second function returns `true` if `Left` and `Right` represent the same point in time. Otherwise, the function returns `false`.  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 1 つの [duration](../standard-library/duration-class.md) オブジェクトまたは [time_point](../standard-library/time-point-class.md) オブジェクトが、別の `duration` オブジェクトまたは `time_point` オブジェクトより大きいかどうかを判断します。  
+ Determines whether one [duration](../standard-library/duration-class.md) or [time_point](../standard-library/time-point-class.md) object is greater than another `duration` or `time_point` object.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -305,18 +305,18 @@ constexpr bool operator>(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- 各関数から返される値は `Right < Left` です。  
+### <a name="return-value"></a>Return Value  
+ Each function returns `Right < Left`.  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値以上かどうかを判断します。  
+ Determines whether one [duration](../standard-library/duration-class.md) or [time_point](../standard-library/time-point-class.md) object is greater than or equal to another `duration` or `time_point` object.  
   
 ```  
 template <class Rep1, class Period1, class Rep2, class Period2>  
@@ -330,18 +330,18 @@ constexpr bool operator>=(
     const time_point<Clock, Duration2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Left`  
- 左側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The left `duration` or `time_point` object.  
   
  `Right`  
- 右側の `duration` オブジェクトまたは `time_point` オブジェクト。  
+ The right `duration` or `time_point` object.  
   
-### <a name="return-value"></a>戻り値  
- 各関数から返される値は `!(Left < Right)` です。  
+### <a name="return-value"></a>Return Value  
+ Each function returns `!(Left < Right)`.  
   
-##  <a name="op_modulo"></a>  modulo 演算子  
- [duration](../standard-library/duration-class.md) オブジェクトに対する剰余演算の演算子。  
+##  <a name="op_modulo"></a>  operator modulo  
+ Operator for modulo operations on [duration](../standard-library/duration-class.md) objects.  
   
 ```  
 template <class Rep1, class Period1, class Rep2>  
@@ -357,25 +357,25 @@ constexpr typename common_type<duration<Rep1, _Period1>, duration<Rep2, Period2>
      const duration<Rep2, Period2>& Right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Dur`  
- `duration` オブジェクト。  
+ A `duration` object.  
   
  `Div`  
- 整数値。  
+ An integral value.  
   
  `Left`  
- 左側の `duration` オブジェクト。  
+ The left `duration` object.  
   
  `Right`  
- 右側の `duration` オブジェクト。  
+ The right `duration` object.  
   
-### <a name="return-value"></a>戻り値  
- 最初の関数は、間隔の長さが `Dur` を `Div` で除算した剰余となっている `duration` オブジェクトを返します。  
+### <a name="return-value"></a>Return Value  
+ The first function returns a `duration` object whose interval length is `Dur` modulo `Div`.  
   
- 2 番目の関数は、`Left` を `Right` で除算した剰余を表す値を返します。  
+ The second function returns a value that represents `Left` modulo `Right`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<chrono>](../standard-library/chrono.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "random_device クラス | Microsoft Docs"
+title: random_device Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- random_device
 - random/std::random_device
 - random/std::random_device::min
 - random/std::random_device::max
@@ -20,7 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- random_device class
+- std::random_device [C++]
+- std::random_device [C++], min
+- std::random_device [C++], max
+- std::random_device [C++], entropy
+- std::random_device [C++], entropy
 ms.assetid: 4393d515-0cb6-4e0d-a2ba-c780f05dc1bf
 caps.latest.revision: 27
 author: corob-msft
@@ -40,17 +43,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 842e4f9b53a06373df8e00f64b1ab24a48a5c6b9
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a648fa7c939371e0138a9d279ddfefd405e26db6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="randomdevice-class"></a>random_device クラス
-外部デバイスからランダム シーケンスを生成します。  
+# <a name="randomdevice-class"></a>random_device Class
+Generates a random sequence from an external device.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class random_device {  
@@ -74,24 +77,24 @@ public:
    };  
 ```  
 
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
 |||  
 |-|-|  
-|[random_device](#random_device)|[エントロピ](#entropy)|  
+|[random_device](#random_device)|[entropy](#entropy)|  
 |[random_device::operator()](#op_call)||  
   
-## <a name="remarks"></a>コメント  
-このクラスは乱数のソースを表します。ISO C++ 標準では、非確定的または暗号的に安全であることが認められていますが、要求されていはいません。 Visual Studio の実装では、生成される値は非確定的で暗号的に安全ですが、エンジンやエンジン アダプター ([mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md) など、大部分のアプリケーションで選択される高品質で高速のエンジン) から作成されるジェネレーターよりも実行は遅いです。  
+## <a name="remarks"></a>Remarks  
+The class describes a source of random numbers, and is allowed but not required to be non-deterministic or cryptographically secure by the ISO C++ Standard. In the Visual Studio implementation the values produced are non-deterministic and cryptographically secure, but runs more slowly than generators created from engines and engine adaptors (such as [mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md), the high quality and fast engine of choice for most applications).  
   
-`random_device` の結果は、閉じた範囲 [ `0, 2`<sup>32</sup>) で一様に分布します。  
+`random_device` results are uniformly distributed in the closed range [ `0, 2`<sup>32</sup>).  
   
-`random_device` が非ブロッキング呼び出しになることは保証されていません。  
+`random_device` is not guaranteed to result in a non-blocking call.  
   
-一般に、`random_device` は、エンジンまたはエンジン アダプターで作成された他のジェネレーターにシードを設定するために使用されます。 詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+Generally, `random_device` is used to seed other generators created with engines or engine adaptors. For more information, see [\<random>](../standard-library/random.md).  
   
-## <a name="example"></a>例  
-次のコードは、このクラスの基本的な機能と結果の例を示しています。 `random_device` の持つ非確定的な特性のため、**出力**セクションに表示される乱数値は各人の結果と一致しません。 これは想定されている正常な動作です。  
+## <a name="example"></a>Example  
+The following code demonstrates basic functionality of this class and example results. Because of the non-deterministic nature of `random_device`, the random values shown in the **Output** section will not match your results. This is normal and expected.  
   
 ```cpp  
 // random_device_engine.cpp   
@@ -123,44 +126,44 @@ a random value == 3633694716
 a random value == 213725214
 ```  
   
-これは単純な例であり、このジェネレーターの一般的な使用例を表しているわけではありません。 代表的なコード サンプルについては、「[\<random>](../standard-library/random.md)」を参照してください。  
+This example is simplistic and not representative of the general use-case for this generator. For a more representative code example, see [\<random>](../standard-library/random.md).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="random_device"></a>  random_device::random_device  
-ジェネレーターを構築します。  
+Constructs the generator.  
   
 ```  
 random_device(const std::string& = "");
 ```  
   
-### <a name="remarks"></a>コメント  
-このコンストラクターは、文字列パラメーターを無視して必要に応じてジェネレーターを初期化します。 `random_device` を初期化できなかった場合は、[exception](../standard-library/exception-class.md) から派生された実装定義型の値をスローします。  
+### <a name="remarks"></a>Remarks  
+The constructor initializes the generator as needed, ignoring the string parameter. Throws a value of an implementation-defined type derived from [exception](../standard-library/exception-class.md) if the `random_device` could not be initialized.  
   
 ##  <a name="entropy"></a>  random_device::entropy  
-乱数発生源の無作為性を推定します。  
+Estimates the randomness of the source.  
   
 ```  
 double entropy() const noexcept;  
 ```  
   
-### <a name="remarks"></a>コメント  
-このメンバー関数は、乱数発生源がどの程度の無作為性を持っているかの推定値を返します。評価の単位には、ビットが使用されます。  
+### <a name="remarks"></a>Remarks  
+The member function returns an estimate of the randomness of the source, as measured in bits.  
   
 ##  <a name="op_call"></a>  random_device::operator()  
-乱数値を返します。  
+Returns a random value.  
   
 ```  
 result_type operator()();
 ```  
   
-### <a name="remarks"></a>コメント  
-閉区間 [ `min, max`] で、メンバー関数 `min()` および `max()` で定義されたように、一様に分布した値を返します。 乱数が取得できない場合は、[exception](../standard-library/exception-class.md) から導出される実装定義型の値をスローします。  
+### <a name="remarks"></a>Remarks  
+Returns values uniformly distributed in the closed interval [ `min, max`] as determined by member functions `min()` and `max()`. Throws a value of an implementation-defined type derived from [exception](../standard-library/exception-class.md) if a random number could not be obtained.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [\<random>](../standard-library/random.md)
 
 

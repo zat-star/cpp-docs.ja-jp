@@ -33,51 +33,51 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 3458390f8e6dcaee229346c66d569a5486ae74c4
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 780406772c509cb1320e1b8a1124cdc535b9c852
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltarraygt"></a>&lt;array&gt;
-コンテナーのテンプレート クラス `array` と複数のサポート用テンプレートを定義します。  
+Defines the container template class `array` and several supporting templates.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <array>  
 ```  
   
-### <a name="classes"></a>クラス  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[array](../standard-library/array-class-stl.md)|要素の固定長シーケンスを格納します。|  
-|[tuple_element](../standard-library/tuple-element-class-tuple.md)|配列要素の型をラップします。|  
-|[tuple_size](../standard-library/tuple-size-class-tuple.md)|配列要素のサイズをラップします。|  
+|[array](../standard-library/array-class-stl.md)|Stores a fixed-length sequence of elements.|  
+|[tuple_element](../standard-library/tuple-element-class-tuple.md)|Wraps the type of an array element.|  
+|[tuple_size](../standard-library/tuple-size-class-tuple.md)|Wraps the size of an array element.|  
   
-### <a name="operators"></a>演算子  
-  
-|||  
-|-|-|  
-|[operator==](../standard-library/array-operators.md#op_eq_eq)|配列の比較 (等しい)|  
-|[operator!=](../standard-library/array-operators.md#op_neq)|配列の比較 (等しくない)|  
-|[operator\<](../standard-library/array-operators.md#op_lt)|配列の比較 (より小さい)|  
-|[operator>=](../standard-library/array-operators.md#op_gt_eq)|配列の比較 (以上)|  
-|[operator>](../standard-library/array-operators.md#op_gt)|配列の比較 (より大きい)|  
-|[operator<=](../standard-library/array-operators.md#op_lt_eq)|配列の比較 (以下)|  
-  
-### <a name="functions"></a>関数  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[get](../standard-library/array-functions.md#get)|指定した配列要素を取得します。|  
-|[swap](../standard-library/array-functions.md#swap)|1 つの配列の内容を別の配列の内容と交換します。|  
+|[operator==](../standard-library/array-operators.md#op_eq_eq)|array comparison, equal|  
+|[operator!=](../standard-library/array-operators.md#op_neq)|array comparison, not equal|  
+|[operator\<](../standard-library/array-operators.md#op_lt)|array comparison, less than|  
+|[operator>=](../standard-library/array-operators.md#op_gt_eq)|array comparison, greater than or equal|  
+|[operator>](../standard-library/array-operators.md#op_gt)|array comparison, greater than|  
+|[operator<=](../standard-library/array-operators.md#op_lt_eq)|array comparison, less than or equal|  
   
-## <a name="see-also"></a>関連項目  
+### <a name="functions"></a>Functions  
+  
+|||  
+|-|-|  
+|[get](../standard-library/array-functions.md#get)|Get specified array element.|  
+|[swap](../standard-library/array-functions.md#swap)|Exchanges the contents of one array with the contents of another array.|  
+  
+## <a name="see-also"></a>See Also  
  [\<tuple>](../standard-library/tuple.md)   
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 

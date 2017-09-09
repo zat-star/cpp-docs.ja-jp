@@ -1,16 +1,15 @@
 ---
-title: "time_get クラス | Microsoft Docs"
+title: time_get Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - xloctime/std::time_get
-- time_get
 - locale/std::time_get::char_type
 - locale/std::time_get::iter_type
 - locale/std::time_get::date_order
@@ -30,7 +29,23 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- time_get class
+- std::time_get [C++]
+- std::time_get [C++], char_type
+- std::time_get [C++], iter_type
+- std::time_get [C++], date_order
+- std::time_get [C++], do_date_order
+- std::time_get [C++], do_get
+- std::time_get [C++], do_get_date
+- std::time_get [C++], do_get_monthname
+- std::time_get [C++], do_get_time
+- std::time_get [C++], do_get_weekday
+- std::time_get [C++], do_get_year
+- std::time_get [C++], get
+- std::time_get [C++], get_date
+- std::time_get [C++], get_monthname
+- std::time_get [C++], get_time
+- std::time_get [C++], get_weekday
+- std::time_get [C++], get_year
 ms.assetid: 869d5f5b-dbab-4628-8333-bdea7e272023
 caps.latest.revision: 21
 author: corob-msft
@@ -50,17 +65,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 10a39553b9747ebe336939b641c54780c653c5d6
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: b4a902f2b06cae219920f90fd1c6a33aa7291ec4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="timeget-class"></a>time_get クラス
-このテンプレート クラスは、`CharType` 型のシーケンスから時刻値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
+# <a name="timeget-class"></a>time_get Class
+The template class describes an object that can serve as a locale facet to control conversions of sequences of type `CharType` to time values.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType,  
@@ -68,77 +83,77 @@ template <class CharType,
 class time_get : public time_base;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters.  
   
  `InputIterator`  
- 時刻値の読み取り元の反復子。  
+ The iterator from which the time values are read.  
   
-## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
+## <a name="remarks"></a>Remarks  
+ As with any locale facet, the static object ID has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in **id.**  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[time_get](#time_get)|`time_get` 型のオブジェクトのコンストラクター。|  
+|[time_get](#time_get)|The constructor for objects of type `time_get`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|ロケールによって使用される文字を表すために使用される型。|  
-|[iter_type](#iter_type)|入力反復子を表す型。|  
+|[char_type](#char_type)|A type that is used to describe a character used by a locale.|  
+|[iter_type](#iter_type)|A type that describes an input iterator.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[date_order](#date_order)|ファセットによって使用される日付順序を返します。|  
-|[do_date_order](#do_date_order)|ファセットによって使用される日付順序を返すために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_get](#do_get)|文字データを読み取り、時刻値に変換します。|  
-|[do_get_date](#do_get_date)|`x` の `strftime` 指定子によって生成される日付として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_get_monthname](#do_get_monthname)|月の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_get_time](#do_get_time)|`X` の `strftime` 指定子によって生成される日付として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_get_weekday](#do_get_weekday)|曜日の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。|  
-|[do_get_year](#do_get_year)|年の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。|  
-|[get](#get)|文字データのソースからデータを読み取り、そのデータを time 構造体に格納される時刻に変換します。|  
-|[get_date](#get_date)|`x` の `strftime` 指定子によって生成される日付として文字列を解析します。|  
-|[get_monthname](#get_monthname)|月の名前として文字列を解析します。|  
-|[get_time](#get_time)|`X` の `strftime` 指定子によって生成される日付として文字列を解析します。|  
-|[get_weekday](#get_weekday)|曜日の名前として文字列を解析します。|  
-|[get_year](#get_year)|年の名前として文字列を解析します。|  
+|[date_order](#date_order)|Returns the date order used by a facet.|  
+|[do_date_order](#do_date_order)|A protected virtual member function that is called to return the date order used by a facet.|  
+|[do_get](#do_get)|Reads and converts character data to a time value.|  
+|[do_get_date](#do_get_date)|A protected virtual member function that is called to parse a string as the date produced by the `x` specifier for `strftime`.|  
+|[do_get_monthname](#do_get_monthname)|A protected virtual member function that is called to parse a string as the name of the month.|  
+|[do_get_time](#do_get_time)|A protected virtual member function that is called to parse a string as the date produced by the `X` specifier for `strftime`.|  
+|[do_get_weekday](#do_get_weekday)|A protected virtual member function that is called to parse a string as the name of the day of the week.|  
+|[do_get_year](#do_get_year)|A protected virtual member function that is called to parses a string as the name of the year.|  
+|[get](#get)|Reads from a source of character data and converts that data to a time that is stored in a time struct.|  
+|[get_date](#get_date)|Parses a string as the date produced by the `x` specifier for `strftime`.|  
+|[get_monthname](#get_monthname)|Parses a string as the name of the month.|  
+|[get_time](#get_time)|Parses a string as the date produced by the `X` specifier for `strftime`.|  
+|[get_weekday](#get_weekday)|Parses a string as the name of the day of the week.|  
+|[get_year](#get_year)|Parses a string as the name of the year.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  time_get::char_type  
- ロケールによって使用される文字を表すために使用される型。  
+ A type that is used to describe a character used by a locale.  
   
 ```  
 typedef CharType char_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
 ##  <a name="date_order"></a>  time_get::date_order  
- ファセットによって使用される日付順序を返します。  
+ Returns the date order used by a facet.  
   
 ```  
 dateorder date_order() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファセットによって使用される日付順序。  
+### <a name="return-value"></a>Return Value  
+ The date order used by a facet.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_date_order](#do_date_order) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_date_order](#do_date_order).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_date_order.cpp  
@@ -183,23 +198,23 @@ English_United Kingdom.1252(day, month, year)
 ```  
   
 ##  <a name="do_date_order"></a>  time_get::do_date_order  
- ファセットによって使用される日付順序を返すために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to return the date order used by a facet.  
   
 ```  
 virtual dateorder do_date_order() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファセットによって使用される日付順序。  
+### <a name="return-value"></a>Return Value  
+ The date order used by a facet.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、日付の部分が [do_get_date](#do_get_date) と一致する順序を示す、**time_base::dateorder** 型の値を返します。 この実装では、値は **time_base::mdy** であり、December 2, 1979 の形式の日付に対応します。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function returns a value of type **time_base::dateorder**, which describes the order in which date components are matched by [do_get_date](#do_get_date). In this implementation, the value is **time_base::mdy**, corresponding to dates of the form December 2, 1979.  
   
-### <a name="example"></a>例  
-  [date_order](#date_order) の例 (`do_date_order` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [date_order](#date_order), which calls `do_date_order`.  
   
 ##  <a name="do_get"></a>  time_get::do_get  
- 文字データを読み取り、時刻値に変換します。 1 つの変換指定子と修飾子を受け取ります。  
+ Reads and converts character data to a time value. Accepts one conversion specifier and modifier.  
   
 ```  
 virtual iter_type  
@@ -213,86 +228,86 @@ virtual iter_type
     char mod) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ An Input iterator that indicates the start of the sequence to convert.  
   
  `last`  
- シーケンスの終了位置を示す入力反復子。  
+ An Input iterator that indicates the end of the sequence.  
   
  `iosbase`  
- ストリーム オブジェクト。  
+ A stream object.  
   
  `state`  
- エラーを示すために適切なビットマスク要素が設定されている iosbase のフィールドです。  
+ A field in iosbase where appropriate bitmask elements are set to indicate errors.  
   
  `ptm`  
- 時間を格納する時間構造体へのポインター。  
+ A pointer to the time structure where the time is to be stored.  
   
  `fmt`  
- 変換指定子の文字。  
+ A conversion specifier character.  
   
  `mod`  
- 省略可能な修飾子文字。  
+ An optional modifier character.  
   
-### <a name="return-value"></a>戻り値  
- 変換されない最初の要素を指定する反復子を返します。 変換に失敗した場合は、`state` で `ios_base::failbit` が設定され、`first` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns an iterator that designates the first unconverted element. A conversion failure sets `ios_base::failbit` in `state` and returns `first`.  
   
-### <a name="remarks"></a>コメント  
- この仮想メンバー関数は、範囲 `[``first``,` `last``)` にある 1 つ以上の入力要素を変換およびスキップし、`*pt` の 1 つ以上のメンバーに格納されている値を判別します。 変換に失敗した場合は、`state` で `ios_base::failbit` が設定され、`first` を返します。 それ以外の場合、この関数は変換されていないの最初の要素を示す反復子を返します。  
+### <a name="remarks"></a>Remarks  
+ The virtual member function converts and skips one or more input elements in the range [`first`, `last`) to determine the values stored in one or more members of `*pt`. A conversion failure sets `ios_base::failbit` in `state` and returns `first`. Otherwise, the function returns an iterator designating the first unconverted element.  
   
- 変換指定子は、次のとおりです。  
+ The conversion specifiers are:  
   
- `'a'` または `'A'`。動作は、[time_get::get_weekday](#get_weekday) と同じです。  
+ `'a'` or `'A'` -- behaves the same as [time_get::get_weekday](#get_weekday).  
   
- `'b'`、`'B'`、または `'h'`。動作は、[time_get::get_monthname](#get_monthname) と同じです。  
+ `'b'`, `'B'`, or `'h'` -- behaves the same as [time_get::get_monthname](#get_monthname).  
   
- `'c'`。動作は `"%b %d %H : %M : %S %Y"` と同じです。  
+ `'c'` -- behaves the same as `"%b %d %H : %M : %S %Y"`.  
   
- `'C'`。範囲 [0, 99] の 10 進入力フィールドを値 `val` に変換し、`val * 100 - 1900` を `pt-&tm_year` に格納します。  
+ `'C'` -- converts a decimal input field in the range [0, 99] to the value `val` and stores `val * 100 - 1900` in `pt-&tm_year`.  
   
- `'d'` または `'e'`。範囲 [1, 31] の 10 進入力フィールドを変換し、値を `pt-&tm_mday` に格納します。  
+ `'d'` or `'e'` -- converts a decimal input field in the range [1, 31] and stores its value in `pt-&tm_mday`.  
   
- `'D'`。動作は `"%m / %d / %y"` と同じです。  
+ `'D'` -- behaves the same as `"%m / %d / %y"`.  
   
- `'H'`。範囲 [0, 23] の 10 進入力フィールドを変換し、値を `pt-&tm_hour` に格納します。  
+ `'H'` -- converts a decimal input field in the range [0, 23] and stores its value in `pt-&tm_hour`.  
   
- `'I'`。範囲 [0, 11] の 10 進入力フィールドを変換し、値を `pt-&tm_hour` に格納します。  
+ `'I'` -- converts a decimal input field in the range [0, 11] and stores its value in `pt-&tm_hour`.  
   
- `'j'`。範囲 [1, 366] の 10 進入力フィールドを変換し、値を `pt-&tm_yday` に格納します。  
+ `'j'` -- converts a decimal input field in the range [1, 366] and stores its value in `pt-&tm_yday`.  
   
- `'m'`。範囲 [1, 12] の 10 進入力フィールドを値 `val` に変換し、`val - 1` とその値を `pt-&tm_mon` に格納します。  
+ `'m'` -- converts a decimal input field in the range [1, 12] to the value `val` and stores `val - 1` in and stores its value in `pt-&tm_mon`.  
   
- `'M'`。範囲 [0, 59] の 10 進入力フィールドを変換し、値を `pt-&tm_min` に格納します。  
+ `'M'` -- converts a decimal input field in the range [0, 59] and stores its value in `pt-&tm_min`.  
   
- `'n'` または `'t'`。動作は `" "` と同じです。  
+ `'n'` or `'t'` -- behaves the same as `" "`.  
   
- `'p'`。"AM" または "am" を 0 に、"PM" または "pm" を 12 に変換し、その値を `pt-&tm_hour` に追加します。  
+ `'p'` -- converts "AM" or "am" to zero and "PM" or "PM" to 12 and adds this value to `pt-&tm_hour`.  
   
- `'r'`。動作は `"%I : %M : %S %p"` と同じです。  
+ `'r'` -- behaves the same as `"%I : %M : %S %p"`.  
   
- `'R'`。動作は `"%H %M"` と同じです。  
+ `'R'` -- behaves the same as `"%H %M"`.  
   
- `'S'`。範囲 [0, 59] の 10 進入力フィールドを変換し、値を `pt-&tm_sec` に格納します。  
+ `'S'` -- converts a decimal input field in the range [0, 59] and stores its value in `pt-&tm_sec`.  
   
- `'T'` または `'X'`。動作は `"%H : %M : S"` と同じです。  
+ `'T'` or `'X'` -- behaves the same as `"%H : %M : S"`.  
   
- `'U'`。範囲 [0, 53] の 10 進入力フィールドを変換し、値を `pt-&tm_yday` に格納します。  
+ `'U'` -- converts a decimal input field in the range [0, 53] and stores its value in `pt-&tm_yday`.  
   
- `'w'`。範囲 [0, 6] の 10 進入力フィールドを変換し、値を `pt-&tm_wday` に格納します。  
+ `'w'` -- converts a decimal input field in the range [0, 6] and stores its value in `pt-&tm_wday`.  
   
- `'W'`。範囲 [0, 53] の 10 進入力フィールドを変換し、値を `pt-&tm_yday` に格納します。  
+ `'W'` -- converts a decimal input field in the range [0, 53] and stores its value in `pt-&tm_yday`.  
   
- `'x'`。動作は `"%d / %m / %y"` と同じです。  
+ `'x'` -- behaves the same as `"%d / %m / %y"`.  
   
- `'y'`。範囲 [0, 99] の 10 進入力フィールドを値 `val` に変換し、`val < 69  val + 100 : val` を `pt-&tm_year` に格納します。  
+ `'y'` -- converts a decimal input field in the range [0, 99] to the value `val` and stores `val < 69  val + 100 : val` in `pt-&tm_year`.  
   
- `'Y'`。動作は、[time_get::get_year](#get_year) と同じです。  
+ `'Y'` -- behaves the same as [time_get::get_year](#get_year).  
   
- その他の変換指定子は、`state` に `ios_base::failbit` を設定して返します。 この実装では、修飾子には効果がありません。  
+ Any other conversion specifier sets `ios_base::failbit` in `state` and returns. In this implementation, any modifier has no effect.  
   
 ##  <a name="do_get_date"></a>  time_get::do_get_date  
- `strftime` の *x* 指定子によって生成される日付として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to parse a string as the date produced by the *x* specifier for `strftime`.  
   
 ```  
 virtual iter_type do_get_date(iter_type first,
@@ -302,43 +317,43 @@ virtual iter_type do_get_date(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 日付の情報を格納する場所へのポインター。  
+ A pointer to where the date information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の先頭から始め、空でない完全な日付入力フィールドを認識するまで、連続した要素との一致を試みます。 成功するに変換このフィールドを同等の値には、コンポーネントとして**tm::tm\_mon**、 **tm::tm\_日**、および**tm::tm\_年**で結果を格納および`ptm->tm_mon`、 `ptm->tm_day`、および`ptm->tm_year`、それぞれします。 これは、日付入力フィールドを超える先頭の要素を示す反復子を返します。 それ以外の場合、関数は、設定`iosbase::failbit`で`state`です。 これは、有効な日付入力フィールドのプレフィックスを超える先頭の要素を示す反復子を返します。 いずれの場合も、戻り値が `last` と等しい場合、関数は `state` に `ios_base::eofbit` を設定します。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function tries to match sequential elements beginning at first in the sequence [ `first`, `last`) until it has recognized a complete, nonempty date input field. If successful, it converts this field to its equivalent value as the components **tm::tm\_mon**, **tm::tm\_day**, and **tm::tm\_year**, and stores the results in `ptm->tm_mon`, `ptm->tm_day`, and `ptm->tm_year`, respectively. It returns an iterator designating the first element beyond the date input field. Otherwise, the function sets `iosbase::failbit` in `state`. It returns an iterator designating the first element beyond any prefix of a valid date input field. In either case, if the return value equals `last`, the function sets `ios_base::eofbit` in `state`.  
   
- 日付入力フィールドの形式はロケールに依存します。 既定のロケールの場合、日付入力フィールドは MMM DD, YYYY の形式になります。各要素の説明は次のとおりです。  
+ The format for the date input field is locale dependent. For the default locale, the date input field has the form MMM DD, YYYY, where:  
   
--   MMM は、[get_monthname](#get_monthname) を呼び出すことで一致します。月を示します。  
+-   MMM is matched by calling [get_monthname](#get_monthname), giving the month.  
   
--   DD は数字のシーケンスで、対応する数値が範囲 [1, 31] 内である必要があります。日にちを示します。  
+-   DD is a sequence of decimal digits whose corresponding numeric value must be in the range [1, 31], giving the day of the month.  
   
--   YYYY は、[get_year](#get_year) を呼び出すことで一致します。年を示します。  
+-   YYYY is matched by calling [get_year](#get_year), giving the year.  
   
- リテラルのスペースとカンマは、入力シーケンス内の対応する要素と一致する必要があります。  
+ The literal spaces and commas must match corresponding elements in the input sequence.  
   
-### <a name="example"></a>例  
-  [get_date](#get_date) の例 (`do_get_date` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get_date](#get_date), which calls `do_get_date`.  
   
 ##  <a name="do_get_monthname"></a>  time_get::do_get_monthname  
- 月の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to parse a string as the name of the month.  
   
 ```  
 virtual iter_type do_get_monthname(iter_type first,
@@ -348,35 +363,35 @@ virtual iter_type do_get_monthname(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 使用されません。  
+ Unused.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定する出力パラメーター。  
+ An output parameter that sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 月の情報を格納する場所へのポインター。  
+ A pointer to where the month information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の先頭から始め、空でない完全な月入力フィールドを認識するまで、連続した要素との一致を試みます。 かどうか成功すると、このフィールドに変換コンポーネントとその等価**tm::tm\_mon**、し、結果で格納`ptm->tm_mon`です。 これは、月入力フィールドを超える先頭の要素を示す反復子を返します。 それ以外の場合、関数は、設定`ios_base::failbit`で*状態*です。 これは、有効な月入力フィールドのプレフィックスを超える先頭の要素を示す反復子を返します。 どちらの場合、戻り値に等しい場合`last`、関数のセットを`ios_base::eofbit`で*状態*です。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function tries to match sequential elements beginning at first in the sequence [ `first`, `last`) until it has recognized a complete, nonempty month input field. If successful, it converts this field to its equivalent value as the component **tm::tm\_mon**, and stores the result in `ptm->tm_mon`. It returns an iterator designating the first element beyond the month input field. Otherwise, the function sets `ios_base::failbit` in *state*. It returns an iterator designating the first element beyond any prefix of a valid month input field. In either case, if the return value equals `last`, the function sets `ios_base::eofbit` in *state*.  
   
- 月入力フィールドは、Jan、January、Feb、February などのようなロケール固有のシーケンスのセットの最長のものに一致するシーケンスです。 変換後の値は、January 以降の月を示す数値です。  
+ The month input field is a sequence that matches the longest of a set of locale-specific sequences, such as Jan, January, Feb, February, and so on. The converted value is the number of months since January.  
   
-### <a name="example"></a>例  
-  [get_monthname](#get_monthname) の例 (`do_get_monthname` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get_monthname](#get_monthname), which calls `do_get_monthname`.  
   
 ##  <a name="do_get_time"></a>  time_get::do_get_time  
- `strftime` の *X* 指定子によって生成される日付として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to parse a string as the date produced by the *X* specifier for `strftime`.  
   
 ```  
 virtual iter_type do_get_time(iter_type first,
@@ -386,43 +401,43 @@ virtual iter_type do_get_time(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 使用されません。  
+ Unused.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 日付の情報を格納する場所へのポインター。  
+ A pointer to where the date information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の先頭から始め、空でない完全な時刻入力フィールドを認識するまで、連続した要素との一致を試みます。 成功するに変換このフィールドを同等の値には、コンポーネントとして**tm::tm_hour**、 **tm::tm_min**、および**tm::tm_sec**で結果を格納および`ptm->tm_hour`、 `ptm->tm_min`、および`ptm->tm_sec`、それぞれします。 これは、時刻入力フィールドを超える先頭の要素を示す反復子を返します。 それ以外の場合、関数は、設定`ios_base::failbit`で*状態*です。 これは、有効な時刻入力フィールドのプレフィックスを超える先頭の要素を示す反復子を返します。 どちらの場合、戻り値に等しい場合`last`、関数のセットを`ios_base::eofbit`で*状態*です。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function tries to match sequential elements beginning at first in the sequence [ `first`, `last`) until it has recognized a complete, nonempty time input field. If successful, it converts this field to its equivalent value as the components **tm::tm_hour**, **tm::tm_min**, and **tm::tm_sec**, and stores the results in `ptm->tm_hour`, `ptm->tm_min`, and `ptm->tm_sec`, respectively. It returns an iterator designating the first element beyond the time input field. Otherwise, the function sets `ios_base::failbit` in *state*. It returns an iterator designating the first element beyond any prefix of a valid time input field. In either case, if the return value equals `last`, the function sets `ios_base::eofbit` in *state*.  
   
- この実装では、時刻入力フィールドは HH:MM:SS の形式になります。各要素の説明は次のとおりです。  
+ In this implementation, the time input field has the form HH:MM:SS, where:  
   
--   HH は数字のシーケンスで、対応する数値が範囲 [0, 24) 内である必要があります。時刻を示します。  
+-   HH is a sequence of decimal digits whose corresponding numeric value must be in the range [0, 24), giving the hour of the day.  
   
--   MM は数字のシーケンスで、対応する数値が範囲 [0, 60) 内である必要があります。正時からの経過分数を示します。  
+-   MM is a sequence of decimal digits whose corresponding numeric value must be in the range [0, 60), giving the minutes past the hour.  
   
--   SS は数字のシーケンスで、対応する数値が範囲 [0, 60) 内である必要があります。正分からの経過秒数を示します。  
+-   SS is a sequence of decimal digits whose corresponding numeric value must be in the range [0, 60), giving the seconds past the minute.  
   
- リテラルのコロンは、入力シーケンス内の対応する要素と一致する必要があります。  
+ The literal colons must match corresponding elements in the input sequence.  
   
-### <a name="example"></a>例  
-  [get_time](#get_time) の例 (`do_get_time` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get_time](#get_time), which calls `do_get_time`.  
   
 ##  <a name="do_get_weekday"></a>  time_get::do_get_weekday  
- 曜日の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to parse a string as the name of the day of the week.  
   
 ```  
 virtual iter_type do_get_weekday(iter_type first,
@@ -432,35 +447,35 @@ virtual iter_type do_get_weekday(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 曜日の情報を格納する場所へのポインター。  
+ A pointer to where the weekday information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、シーケンス [ `first`, `last`) の `first` から始め、空でない完全な曜日入力フィールドを認識するまで、連続した要素との一致を試みます。 かどうか成功すると、このフィールドに変換コンポーネントとその等価**tm::tm\_wday**、し、結果で格納`ptm->tm_wday`です。 これは、曜日入力フィールドを超える先頭の要素を示す反復子を返します。 それ以外の場合、関数は、設定`ios_base::failbit`で*状態*です。 これは、有効な曜日入力フィールドのプレフィックスを超える先頭の要素を示す反復子を返します。 どちらの場合、戻り値に等しい場合`last`、関数のセットを`ios_base::eofbit`で*状態*です。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function tries to match sequential elements beginning at `first` in the sequence [ `first`, `last`) until it has recognized a complete, nonempty weekday input field. If successful, it converts this field to its equivalent value as the component **tm::tm\_wday**, and stores the result in `ptm->tm_wday`. It returns an iterator designating the first element beyond the weekday input field. Otherwise, the function sets `ios_base::failbit` in *state*. It returns an iterator designating the first element beyond any prefix of a valid weekday input field. In either case, if the return value equals `last`, the function sets `ios_base::eofbit` in *state*.  
   
- 曜日入力フィールドは、Sun、Sunday、Mon、Monday などのようなロケール固有のシーケンスのセットの最長のものに一致するシーケンスです。 変換後の値は、Sunday 以降の曜日を示す数値です。  
+ The weekday input field is a sequence that matches the longest of a set of locale-specific sequences, such as Sun, Sunday, Mon, Monday, and so on. The converted value is the number of days since Sunday.  
   
-### <a name="example"></a>例  
-  [get_weekday](#get_weekday) の例 (`do_get_weekday` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get_weekday](#get_weekday), which calls `do_get_weekday`.  
   
 ##  <a name="do_get_year"></a>  time_get::do_get_year  
- 年の名前として文字列を解析するために呼び出されるプロテクト仮想メンバー関数。  
+ A protected virtual member function that is called to parses a string as the name of the year.  
   
 ```  
 virtual iter_type do_get_year(iter_type first,
@@ -470,35 +485,35 @@ virtual iter_type do_get_year(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 年の情報を格納する場所へのポインター。  
+ A pointer to where the year information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、シーケンス [`first`, `last`) の `first` から始め、空でない完全な年入力フィールドを認識するまで、連続した要素との一致を試みます。 かどうか成功すると、このフィールドに変換コンポーネントとその等価**tm::tm\_年**、し、結果で格納`ptm->tm_year`です。 これは、年入力フィールドを超える先頭の要素を示す反復子を返します。 それ以外の場合、関数は、設定`ios_base::failbit`で*状態*です。 これは、有効な年入力フィールドのプレフィックスを超える先頭の要素を示す反復子を返します。 どちらの場合、戻り値に等しい場合`last`、関数のセットを`ios_base::eofbit`で*状態*です。  
+### <a name="remarks"></a>Remarks  
+ The virtual protected member function tries to match sequential elements beginning at `first` in the sequence [ `first`, `last`) until it has recognized a complete, nonempty year input field. If successful, it converts this field to its equivalent value as the component **tm::tm\_year**, and stores the result in `ptm->tm_year`. It returns an iterator designating the first element beyond the year input field. Otherwise, the function sets `ios_base::failbit` in *state*. It returns an iterator designating the first element beyond any prefix of a valid year input field. In either case, if the return value equals `last`, the function sets `ios_base::eofbit` in *state*.  
   
- 年入力フィールドは、対応する数値が範囲 [1900, 2036) 内である必要があります。 格納される値は、この値から 1900 を引いた値です。 この実装では、範囲 [69, 136) の値は、[1969, 2036) の範囲の年を表します。 範囲 [0, 69) の値も許容されますが、特定の変換環境に応じて [1900, 1969) または [2000, 2069) のいずれかの範囲の年を表すことがあります。  
+ The year input field is a sequence of decimal digits whose corresponding numeric value must be in the range [1900, 2036). The stored value is this value minus 1900. In this implementation, values in the range [69, 136) represent the range of years [1969, 2036). Values in the range [0, 69) are also permissible, but may represent either the range of years [1900, 1969) or [2000, 2069), depending on the specific translation environment.  
   
-### <a name="example"></a>例  
-  [get_year](#get_year) の例 (`do_get_year` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [get_year](#get_year), which calls `do_get_year`.  
   
 ##  <a name="get"></a>  time_get::get  
- 文字データのソースからデータを読み取り、そのデータを time 構造体に格納される時刻に変換します。 最初の関数は 1 個の変換指定子と修飾子を受け取り、2 番目の関数は複数個受け取ります。  
+ Reads from a source of character data and converts that data to a time that is stored in a time struct. The first function accepts one conversion specifier and modifier, the second accepts several.  
   
 ```  
 iter_type get(
@@ -520,50 +535,50 @@ iter_type get(
     char_type* fmt_last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換するシーケンスの開始位置を示す入力反復子。  
+ Input iterator that indicates where the sequence to be converted starts.  
   
  `last`  
- 変換するシーケンスの終了位置を示す入力反復子。  
+ Input iterator that indicates the end of the sequence to be converted.  
   
  `iosbase`  
- ストリーム。  
+ The stream.  
   
  `state`  
- 適切なビットマスク要素を設定して、ストリームの状態がエラーであることを示します。  
+ The appropriate bitmask elements are set for the stream state to indicate errors.  
   
  `ptm`  
- 時間を格納する時間構造体へのポインター。  
+ Pointer to the time structure where the time is to be stored.  
   
  `fmt`  
- 変換指定子の文字。  
+ A conversion specifier character.  
   
  `mod`  
- 省略可能な修飾子文字。  
+ An optional modifier character.  
   
  `fmt_first`  
- 形式のディレクティブの開始位置を指します。  
+ Points to where the format directives start.  
   
  `fmt_last`  
- 形式のディレクティブの終了位置を指します。  
+ Points to the end of the format directives.  
   
-### <a name="return-value"></a>戻り値  
- データを time 構造体の割り当てに使用された後に最初の文字に反復子を返します`*ptm`です。  
+### <a name="return-value"></a>Return Value  
+ Returns an iterator to the first character after the data that was used to assign the time struct `*ptm`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は `do_get(first, last, iosbase, state, ptm, fmt, mod)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first member function returns `do_get(first, last, iosbase, state, ptm, fmt, mod)`.  
   
- 2 番目のメンバー関数は `[fmt_first, fmt_last)` で区切られた形式の制御下で `do_get` を呼び出します。 この形式はフィールドのシーケンスとして扱われ、`[first, last)` で区切られたゼロ個以上の入力要素の変換をそれぞれのフィールドが決定します。 これは、変換されていない最初の要素を指定する反復子を返します。 フィールドには次の 3 つの種類があります。  
+ The second member function calls `do_get` under the control of the format delimited by `[fmt_first, fmt_last)`. It treats the format as a sequence of fields, each of which determines the conversion of zero or more input elements delimited by `[first, last)`. It returns an iterator designating the first unconverted element. There are three kinds of fields:  
   
- 形式で、パーセント (%) が続く省略可能な修飾子`mod`[EOQ #]、セットに続く変換指定子`fmt`、置換`first`によって返される値を持つ`do_get(first, last, iosbase, state, ptm, fmt, mod)`です。 変換に失敗した場合は、`state` で `ios_base::failbit` を設定して返します。  
+ A per cent (%) in the format, followed by an optional modifier `mod` in the set [EOQ#], followed by a conversion specifier `fmt`, replaces `first` with the value returned by `do_get(first, last, iosbase, state, ptm, fmt, mod)`. A conversion failure sets `ios_base::failbit` in `state` and returns.  
   
- この形式の空白要素は、ゼロ個以上の入力の空白要素をスキップします。  
+ A whitespace element in the format skips past zero or more input whitespace elements.  
   
- 形式内の他の要素は次の入力要素と一致する必要があり、その要素はスキップされます。 一致に失敗した場合は、`state` で `ios_base::failbit` を設定して返します。  
+ Any other element in the format must match the next input element, which is skipped. A match failure sets `ios_base::failbit` in `state` and returns.  
   
 ##  <a name="get_date"></a>  time_get::get_date  
- `strftime` の *x* 指定子によって生成される日付として文字列を解析します。  
+ Parses a string as the date produced by the *x* specifier for `strftime`.  
   
 ```  
 iter_type get_date(iter_type first,
@@ -573,31 +588,31 @@ iter_type get_date(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 日付の情報を格納する場所へのポインター。  
+ A pointer to where the date information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get_date](#do_get_date)( `first`, `last`, `iosbase`, `state`, `ptm`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get_date](#do_get_date)( `first`, `last`, `iosbase`, `state`, `ptm`).  
   
- 月のカウントが 0 から 11 であることに注意してください。  
+ Note that months are counted from 0 to 11.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_get_date.cpp  
@@ -653,7 +668,7 @@ tm_isdst: 0
 ```  
   
 ##  <a name="get_monthname"></a>  time_get::get_monthname  
- 月の名前として文字列を解析します。  
+ Parses a string as the name of the month.  
   
 ```  
 iter_type get_monthname(iter_type first,
@@ -663,29 +678,29 @@ iter_type get_monthname(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 使用されません。  
+ Unused.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定する出力パラメーター。  
+ An output parameter that sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 月の情報を格納する場所へのポインター。  
+ A pointer to where the month information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get_monthname](#do_get_monthname)( `first`, `last`, `iosbase`, `state`, `ptm`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get_monthname](#do_get_monthname)( `first`, `last`, `iosbase`, `state`, `ptm`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_get_monthname.cpp  
@@ -741,7 +756,7 @@ tm_isdst: 0
 ```  
   
 ##  <a name="get_time"></a>  time_get::get_time  
- `strftime` の *X* 指定子によって生成される日付として文字列を解析します。  
+ Parses a string as the date produced by the *X* specifier for `strftime`.  
   
 ```  
 iter_type get_time(iter_type first,
@@ -751,29 +766,29 @@ iter_type get_time(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 使用されません。  
+ Unused.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 日付の情報を格納する場所へのポインター。  
+ A pointer to where the date information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get_time](#do_get_time)( `first`, `last`, `iosbase`, `state`, `ptm`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get_time](#do_get_time)( `first`, `last`, `iosbase`, `state`, `ptm`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_get_time.cpp  
@@ -818,7 +833,7 @@ tm_hour: 11
 ```  
   
 ##  <a name="get_weekday"></a>  time_get::get_weekday  
- 曜日の名前として文字列を解析します。  
+ Parses a string as the name of the day of the week.  
   
 ```  
 iter_type get_weekday(iter_type first,
@@ -828,29 +843,29 @@ iter_type get_weekday(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 曜日の情報を格納する場所へのポインター。  
+ A pointer to where the weekday information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get_weekday](#do_get_weekday)( `first`, `last`, `iosbase`, `state`, `ptm`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get_weekday](#do_get_weekday)( `first`, `last`, `iosbase`, `state`, `ptm`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_get_weekday.cpp  
@@ -891,7 +906,7 @@ tm_wday: 3
 ```  
   
 ##  <a name="get_year"></a>  time_get::get_year  
- 年の名前として文字列を解析します。  
+ Parses a string as the name of the year.  
   
 ```  
 iter_type get_year(iter_type first,
@@ -901,29 +916,29 @@ iter_type get_year(iter_type first,
     tm* ptm) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換されるシーケンスの開始位置を示す入力反復子。  
+ Input iterator addressing the beginning of the sequence to be converted.  
   
  `last`  
- 変換されるシーケンスの終了位置を示す入力反復子。  
+ Input iterator addressing the end of the sequence to be converted.  
   
  `iosbase`  
- 書式設定フラグ。これが設定されている場合、通貨記号は省略可能です。それ以外の場合は必須です。  
+ A format flag which when set indicates that the currency symbol is optional; otherwise, it is required.  
   
  `state`  
- 操作が成功したかどうかに基づき、ストリームの状態に適したビットマスク要素を設定します。  
+ Sets the appropriate bitmask elements for the stream state according to whether the operations succeeded.  
   
  `ptm`  
- 年の情報を格納する場所へのポインター。  
+ A pointer to where the year information is to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 入力フィールドを超える先頭の要素を示す入力反復子。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first element beyond the input field.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_get_year](#do_get_year)( `first`, `last`, `iosbase`, `state`, `ptm`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_get_year](#do_get_year)( `first`, `last`, `iosbase`, `state`, `ptm`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // time_get_get_year.cpp  
@@ -965,42 +980,42 @@ tm_year: 28
 ```  
   
 ##  <a name="iter_type"></a>  time_get::iter_type  
- 入力反復子を表す型。  
+ A type that describes an input iterator.  
   
 ```  
 typedef InputIterator iter_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **InputIterator** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **InputIterator**.  
   
 ##  <a name="time_get"></a>  time_get::time_get  
- `time_get` 型のオブジェクトのコンストラクター。  
+ The constructor for objects of type `time_get`.  
   
 ```  
 explicit time_get(size_t refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `refs`  
- オブジェクトのメモリ管理のタイプを指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
-### <a name="remarks"></a>コメント  
- `refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- デストラクターが保護されているため、利用できる直接的な例はありません。  
+ No direct examples are possible, because the destructor is protected.  
   
- コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `refs`) を使用して、その基本オブジェクトを初期化します。  
+ The constructor initializes its base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)( `refs`).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [time_base クラス](../standard-library/time-base-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [time_base Class](../standard-library/time-base-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

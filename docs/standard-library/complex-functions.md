@@ -1,5 +1,5 @@
 ---
-title: "&lt;complex&gt; 関数 | Microsoft Docs"
+title: '&lt;complex&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -28,14 +28,33 @@ f1_keywords:
 ms.assetid: 58b14e94-0e0c-493e-8237-8b4d685904a2
 caps.latest.revision: 14
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 928ed213f4605ea1b39d2d5cf92673bc055aaf4a
+helpviewer_keywords:
+- std::abs [C++]
+- std::arg [C++]
+- std::conj [C++]
+- std::cos [C++]
+- std::cosh [C++]
+- std::exp [C++]
+- std::imag [C++]
+- std::log [C++]
+- std::log10
+- std::norm [C++]
+- std::polar [C++]
+- std::pow [C++]
+- std::real [C++]
+- std::sin [C++]
+- std::sinh [C++]
+- std::sqrt [C++]
+- std::tan [C++]
+- std::tanh [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 14714c92087492199c47580144dfbd64afece59a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltcomplexgt-functions"></a>&lt;complex&gt; 関数
+# <a name="ltcomplexgt-functions"></a>&lt;complex&gt; functions
 ||||  
 |-|-|-|  
 |[abs](#abs)|[arg](#arg)|[conj](#conj)|
@@ -46,24 +65,24 @@ ms.lasthandoff: 04/19/2017
 |[sqrt](#sqrt)|[tan](#tan)|[tanh](#tanh)|  
   
 ##  <a name="abs"></a>  abs  
- 複素数の係数を計算します。  
+ Calculates the modulus of a complex number.  
   
 ```  
 template <class Type>  
 Type abs(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 係数を特定する複素数。  
+ The complex number whose modulus is to be determined.  
   
-### <a name="return-value"></a>戻り値  
- 複素数の係数。  
+### <a name="return-value"></a>Return Value  
+ The modulus of a complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数の*係数*は、複素数を表すベクトル長の測定単位です。 複素数 a + bi の係数は sqrt (a<sup>2</sup> + b<sup>2</sup>) で、&#124;a + bi&#124; と記述されます。 複素数 a + bi の*ノルム*は (a<sup>2</sup> + b<sup>2</sup>) であるため、複素数の係数はそのノルムの平方根になります。  
+### <a name="remarks"></a>Remarks  
+ The *modulus* of a complex number is a measure of the length of the vector representing the complex number. The modulus of a complex number                         a + bi is                         sqrt (a<sup>2</sup> + b<sup>2</sup>),  written                         &#124;a + bi&#124;. The *norm* of a complex number                         a + bi is (a<sup>2</sup> + b<sup>2</sup>), so the modulus of a complex number is the square root of its norm.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_abs.cpp  
@@ -129,24 +148,24 @@ The complex numbers c2 & c3 have the same principal arguments.
 ```  
   
 ##  <a name="arg"></a>  arg  
- 複素数から偏角を抽出します。  
+ Extracts the argument from a complex number.  
   
 ```  
 template <class Type>  
 Type arg(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 偏角を特定する複素数。  
+ The complex number whose argument is to be determined.  
   
-### <a name="return-value"></a>戻り値  
- 複素数の偏角。  
+### <a name="return-value"></a>Return Value  
+ The argument of the complex number.  
   
-### <a name="remarks"></a>コメント  
- *引数*複雑なベクターが複素平面に正の値の実際の軸となる角度がします。 複素数の*a + bi*、引数が行って、アーク タンジェントと等しい (*b/、*)。 角度は、正の実軸から反時計方向に測定した場合は正方向、時計方向に測定した場合は負方向になります。 プリンシパルの値がおよび、- π より小さい大きいよりまたは等しい + π。  
+### <a name="remarks"></a>Remarks  
+ The *argument* is the angle that the complex vector makes with the positive real axis in the complex plane. For a complex number *a + bi*, the argument is equal to arctan(*b/a*). The angle has a positive sense when measured in a counterclockwise direction from the positive real axis and a negative sense when measured in a clockwise direction. The principal values are greater than -pi and less than or equal to +pi.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_arg.cpp  
@@ -212,24 +231,24 @@ The complex numbers c2 & c3 have the same principal arguments.
 ```  
   
 ##  <a name="conj"></a>  conj  
- 複素数の複素共役を返します。  
+ Returns the complex conjugate of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> conj(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 複素共役が返される複素数。  
+ The complex number whose complex conjugate is being returned.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数の複素共役。  
+### <a name="return-value"></a>Return Value  
+ The complex conjugate of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数の複素共役*a + bi*は*-bi*です。 複素数とその共役の積は、数値 *a*2 + *b*2 のノルムです。  
+### <a name="remarks"></a>Remarks  
+ The complex conjugate of a complex number *a + bi* is *a - bi*. The product of a complex number and its conjugate is the norm of the number *a*2 + *b*2.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_conj.cpp  
@@ -283,28 +302,28 @@ The norm of (c1 * conj (c1) ) is c1 * c2 = 25
 ```  
   
 ##  <a name="cos"></a>  cos  
- 複素数のコサインを返します。  
+ Returns the cosine of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> cos(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- コサインを特定する複素数。  
+ The complex number whose cosine is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のコサインである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the cosine of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のコサインを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex cosines:  
   
  cos ( *z*) = (1/2)\*( exp ( *iz*) + exp (- *iz*) )  
   
  cos ( *z*) = cos ( *a* + *bi*) = cos ( *a*) cosh ( *b*) - isin ( *a*) sinh ( *b*)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_cos.cpp  
@@ -370,28 +389,28 @@ The complex components cos (vci), where abs (vci) = 1
 ```  
   
 ##  <a name="cosh"></a>  cosh  
- 複素数のハイパーボリック コサインを返します。  
+ Returns the hyperbolic cosine of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> cosh(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- ハイパーボリック コサインを特定する複素数。  
+ The complex number whose hyperbolic cosine is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のハイパーボリック コサインである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the hyperbolic cosine of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のハイパーボリック コサインを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex hyperbolic cosines:  
   
  cos ( *z*) = (1/2)\*( exp ( *z*) + exp (- *z*) )  
   
  cos ( *z*) = cosh ( *a + bi*) = cosh ( *a*) cos ( *b*) + isinh ( *a*) sin ( *b*)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_cosh.cpp  
@@ -457,21 +476,21 @@ The complex components cosh (vci), where abs (vci) = 1
 ```  
   
 ##  <a name="exp"></a>  exp  
- 複素数の指数関数を返します。  
+ Returns the exponential function of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> exp(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 指数を特定する複素数。  
+ The complex number whose exponential is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数の指数である複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the exponential of the input complex number.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_exp.cpp  
@@ -525,24 +544,24 @@ int main() {
 ```  
   
 ##  <a name="imag"></a>  imag  
- 複素数の虚数部を抽出します。  
+ Extracts the imaginary component of a complex number.  
   
 ```  
 template <class Type>  
 Type imag(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 実数部が抽出される複素数。  
+ The complex number whose real part is to be extracted.  
   
-### <a name="return-value"></a>戻り値  
- グローバル関数としての複素数の虚数部。  
+### <a name="return-value"></a>Return Value  
+ The imaginary part of the complex number as a global function.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、複素数の実数部を変更するのに使用することはできません。 実数部を変更するには、新しい複素数に成分値を割り当てる必要があります。  
+### <a name="remarks"></a>Remarks  
+ This template function cannot be used to modify the real part of the complex number. To change the real part, a new complex number must be assigned the component value.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complexc_imag.cpp  
@@ -573,24 +592,24 @@ The imaginary part of c1 is imag ( c1 ) = 3.
 ```  
   
 ##  <a name="log"></a>  log  
- 複素数の自然対数を返します。  
+ Returns the natural logarithm of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> log(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 自然対数を特定する複素数。  
+ The complex number whose natural logarithm is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数の自然対数である複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the natural logarithm of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 分岐切断線は負の実軸に沿っています。  
+### <a name="remarks"></a>Remarks  
+ The branch cuts are along the negative real axis.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_log.cpp  
@@ -639,24 +658,24 @@ int main() {
 ```  
   
 ##  <a name="log10"></a>  log10  
- 複素数の底 10 の対数を返します。  
+ Returns the base 10 logarithm of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> log10(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 底 10 の対数を特定する複素数。  
+ The complex number whose base 10 logarithm is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数の底 10 の対数である複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the base 10 logarithm of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 分岐切断線は負の実軸に沿っています。  
+### <a name="remarks"></a>Remarks  
+ The branch cuts are along the negative real axis.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_log10.cpp  
@@ -705,24 +724,24 @@ int main() {
 ```  
   
 ##  <a name="norm"></a>  norm  
- 複素数のノルムを抽出します。  
+ Extracts the norm of a complex number.  
   
 ```  
 template <class Type>  
 Type norm(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- ノルムを特定する複素数。  
+ The complex number whose norm is to be determined.  
   
-### <a name="return-value"></a>戻り値  
- 複素数のノルム。  
+### <a name="return-value"></a>Return Value  
+ The norm of a complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数 *a + bi* のノルムは *(a*<sup>2</sup> *+ b*<sup>2</sup>*) になります。* 複素数のノルムは、その係数の平方根となります。 複素数の係数は、複素数を表すベクトル長の測定単位です。 複素数 *a + bi* の係数は `sqrt`*(a*<sup>2</sup> *+ b*<sup>2</sup>*)* で、*&#124;a + bi&#124;* と記述されます。  
+### <a name="remarks"></a>Remarks  
+ The norm of a complex number *a + bi* is *(a*<sup>2</sup> *+ b*<sup>2</sup>*).* The norm of a complex number is the square of its modulus. The modulus of a complex number is a measure of the length of the vector representing the complex number. The modulus of a complex number *a + bi* is `sqrt`*(a*<sup>2</sup> *+ b*<sup>2</sup>*),* written *&#124;a + bi&#124;.*  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_norm.cpp  
@@ -784,27 +803,27 @@ The modulus of c2 is the square root of the norm: sqrt ( normc2 ) = 5.
 ```  
   
 ##  <a name="polar"></a>  polar  
- デカルト形式で、指定した係数と偏角に対応する複素数を返します。  
+ Returns the complex number, which corresponds to a specified modulus and argument, in Cartesian form.  
   
 ```  
 template <class Type>  
 complex<Type> polar(const Type& _Modulus, const Type& _Argument = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *_Modulus*  
- 入力される複素数の係数。  
+ The modulus of the complex number being input.  
   
  *_Argument*  
- 入力される複素数の偏角。  
+ The argument of the complex number being input.  
   
-### <a name="return-value"></a>戻り値  
- 極形式で指定されたデカルト形式の複素数。  
+### <a name="return-value"></a>Return Value  
+ Cartesian form of the complex number specified in polar form.  
   
-### <a name="remarks"></a>コメント  
- 複素数の極形式、剰余を提供する*r*と引数*p*これらのパラメーターが実数部と虚数部のデカルト コンポーネントに関連する場所、 *、*と*b*式によって*、* r = \* cos *p*と*b* = *r* \* sin *p*です。  
+### <a name="remarks"></a>Remarks  
+ The polar form of a complex number provides the modulus *r* and the argument *p*, where these parameters are related to the real and imaginary Cartesian components *a* and *b* by the equations *a* = r \* cos *p* and *b* = *r* \* sin *p*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_polar.cpp  
@@ -857,7 +876,7 @@ Argument of c2 is recovered from c2 using:
 ```  
   
 ##  <a name="pow"></a>  pow  
- 複素数の底を、別の複素数で累乗することによって得られる複素数を評価します。  
+ Evaluates the complex number obtained by raising a base that is a complex number to the power of another complex number.  
   
 ```  
 template <class Type>  
@@ -873,22 +892,22 @@ template <class Type>
 complex<Type> pow(const Type& _Base, const complex<Type>& _Power);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Base`  
- 複素数、または底をメンバー関数で累乗する複素数のパラメーター型の数値。  
+ The complex number or number that is of the parameter type for the complex number that is the base to be raised to a power by the member function.  
   
  *_Power*  
- 整数または複素数、あるいは底をメンバー関数で累乗する場合の指数である複素数のパラメーター型の数値。  
+ The integer or complex number or number that is of the parameter type for the complex number that is the power that the base is to be raised to by the member function.  
   
-### <a name="return-value"></a>戻り値  
- 指定された底を指定された指数で累乗して得られた複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number obtained by raising the specified base to the specified power.  
   
-### <a name="remarks"></a>コメント  
- 関数はそれぞれ効率的に両方のオペランドを戻り値の型に変換してから、変換した **left** の **right** 乗を返します。  
+### <a name="remarks"></a>Remarks  
+ The functions each effectively convert both operands to the return type, and then return the converted **left** to the power **right**.  
   
- 分岐切断線は負の実軸に沿っています。  
+ The branch cut is along the negative real axis.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_pow.cpp  
@@ -998,24 +1017,24 @@ The argument of ce4 is: -1.14473 radians, which is -65.5882 degrees.
 ```  
   
 ##  <a name="real"></a>  real  
- 複素数の実数部を抽出します。  
+ Extracts the real component of a complex number.  
   
 ```  
 template <class Type>  
 Type real(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 実数部が抽出される複素数。  
+ The complex number whose real part is to be extracted.  
   
-### <a name="return-value"></a>戻り値  
- グローバル関数としての複素数の実数部。  
+### <a name="return-value"></a>Return Value  
+ The real part of the complex number as a global function.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、複素数の実数部を変更するのに使用することはできません。 実数部を変更するには、新しい複素数に成分値を割り当てる必要があります。  
+### <a name="remarks"></a>Remarks  
+ This template function cannot be used to modify the real part of the complex number. To change the real part, a new complex number must be assigned the component value.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_real.cpp  
@@ -1046,28 +1065,28 @@ The imaginary part of c1 is imag ( c1 ) = 3.
 ```  
   
 ##  <a name="sin"></a>  sin  
- 複素数のサインを返します。  
+ Returns the sine of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> sin(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- サインを特定する複素数。  
+ The complex number whose sine is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のサインである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the sine of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のサインを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex sines:  
   
  sin ( *z*) = (1/2 *i*)\*( exp ( *iz*) - exp (- *iz*) )  
   
  sin ( *z*) = sin ( *a + bi*) = sin ( *a*) cosh ( *b*) + icos ( *a*) sinh ( *b*)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_sin.cpp  
@@ -1133,28 +1152,28 @@ The complex components sin (vci), where abs (vci) = 1
 ```  
   
 ##  <a name="sinh"></a>  sinh  
- 複素数のハイパーボリック サインを返します。  
+ Returns the hyperbolic sine of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> sinh(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- ハイパーボリック サインを特定する複素数。  
+ The complex number whose hyperbolic sine is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のハイパーボリック サインである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the hyperbolic sine of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のハイパーボリック サインを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex hyperbolic sines:  
   
  sinh ( *z*) = (1/2)\*( exp ( *z*) - exp (- *z*) )  
   
  sinh ( *z*) = sinh ( *a + bi*) = sinh ( *a*) cos ( *b*) + *i*cosh ( *a*) sin ( *b*)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_sinh.cpp  
@@ -1220,28 +1239,28 @@ The complex components sinh (vci), where abs (vci) = 1
 ```  
   
 ##  <a name="sqrt"></a>  sqrt  
- 複素数の平方根を計算します。  
+ Calculates the square root of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> sqrt(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- 平方根を求める対象の複素数。  
+ The complex number whose square root is to be found.  
   
-### <a name="return-value"></a>戻り値  
- 複素数の平方根。  
+### <a name="return-value"></a>Return Value  
+ The square root of a complex number.  
   
-### <a name="remarks"></a>コメント  
- 平方根の半開区間には位相角があります (-pi/2, pi/2)。  
+### <a name="remarks"></a>Remarks  
+ The square root will have a phase angle in the half-open interval (-pi/2, pi/2].  
   
- 複素平面の分岐切断線は負の実軸に沿っています。  
+ The branch cuts in the complex plane are along the negative real axis.  
   
- 複素数の平方根には係数 (入力数の平方根) と偏角 (入力数の半分) があります。  
+ The square root of a complex number will have a modulus that is the square root of the input number and an argument that is one-half that of the input number.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_sqrt.cpp  
@@ -1293,26 +1312,26 @@ The argument of c2 = ( 1 / 2 ) * arg ( c1 ) =0.785398 radians,
 ```  
   
 ##  <a name="tan"></a> tan  
- 複素数のタンジェントを返します。  
+ Returns the tangent of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> tan(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- タンジェントを特定する複素数。  
+ The complex number whose tangent is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のタンジェントである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the tangent of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のコタンジェントを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex cotangent:  
   
  tan ( *z*) = sin ( *z*) / cos ( *z*) = ( exp ( *iz*) - exp (- *iz*) ) / *i*( exp ( *iz*) + exp (- *iz*) )  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_tan.cpp  
@@ -1378,26 +1397,26 @@ The complex components tan (vci), where abs (vci) = 1
 ```  
   
 ##  <a name="tanh"></a>  tanh  
- 複素数のハイパーボリック タンジェントを返します。  
+ Returns the hyperbolic tangent of a complex number.  
   
 ```  
 template <class Type>  
 complex<Type> tanh(const complex<Type>& complexNum);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `complexNum`  
- ハイパーボリック タンジェントを特定する複素数。  
+ The complex number whose hyperbolic tangent is being determined.  
   
-### <a name="return-value"></a>戻り値  
- 入力された複素数のハイパーボリック タンジェントである複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that is the hyperbolic tangent of the input complex number.  
   
-### <a name="remarks"></a>コメント  
- 複素数のハイパーボリック コタンジェントを定義する単位元は次のようになります。  
+### <a name="remarks"></a>Remarks  
+ Identities defining the complex hyperbolic cotangent:  
   
  tanh ( *z*) = sinh ( *z*) / cosh ( *z*) = ( exp ( *z*) - exp (- *z*) ) / ( exp ( *z*) + exp (- *z*) )  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_tanh.cpp  
@@ -1462,7 +1481,7 @@ The complex components tanh (vci), where abs (vci) = 1
 (-0.761594,-8.68604e-014)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<complex>](../standard-library/complex.md)
 
 

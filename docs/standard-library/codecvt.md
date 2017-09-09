@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- codecvt
-- std::<codecvt>
-- std.<codecvt>
-- <codecvt>
+- codecvt", "std::<codecvt>", "<codecvt>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,74 +33,74 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
-ms.openlocfilehash: 75f527ca1e0742a1958076b49446b257793c69a5
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ebfd3f17d03d7cdb83a5ac8d25e6a1fda472cebb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltcodecvtgt"></a>&lt;codecvt&gt;
-テンプレート クラス [codecvt](../standard-library/codecvt-class.md) に基づいてオブジェクトを記述するいくつかのテンプレート クラスを定義します。 これらのオブジェクトは、`Elem` 型の値のシーケンスと `char` 型の値のシーケンスとの変換を制御する[ロケール ファセット](../standard-library/locale-class.md#facet_class)として使用できます。  
+Defines several template classes that describe objects based on template class [codecvt](../standard-library/codecvt-class.md). These objects can serve as [locale facets](../standard-library/locale-class.md#facet_class) that control conversions between a sequence of values of type `Elem` and a sequence of values of type `char`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <codecvt>  
   
 ```  
   
-## <a name="remarks"></a>コメント  
- このヘッダーで宣言されているロケール ファセットは、いくつかの文字エンコード間の変換を行います。 ワイド文字 (固定サイズの整数で表され、プログラム内に格納される) については、次のようになります。  
+## <a name="remarks"></a>Remarks  
+ The locale facets declared in this header convert between several character encodings. For wide characters (stored within the program in fixed-size integers):  
   
--   UCS-4 は、プログラムにおける Unicode (ISO 10646) のエンコード形式です。  
+-   UCS-4 is Unicode (ISO 10646) encoded within the program  
   
--   UCS-4 は、32 ビットの整数で表される、プログラムにおける Unicode (ISO 10646) のエンコード形式です。  
+-   UCS-4 is Unicode (ISO 10646) encoded within the program as a 32-bit integer.  
   
--   UCS-2 は、プログラムにおける Unicode のエンコード形式です。  
+-   UCS-2 is Unicode encoded within the program  
   
--   UCS-2 は、16 ビットの整数で表される、プログラムにおける Unicode のエンコード形式です。  
+-   UCS-2 is Unicode encoded within the program as a 16-bit integer.  
   
--   UTF-16 は、1 つまたは で表される、プログラムにおける Unicode のエンコード形式です。  
+-   UTF-16 is Unicode encoded within the program as either one  
   
--   UTF-16 は、1 つまたは 2 つの 16 ビットの整数で表される、プログラムにおける Unicode のエンコード形式です  (これは、標準 C または標準 C++ の有効なワイド文字エンコードの要件をすべて満たしているわけではないことに注意してください。 しかし、これ自体は広く利用されています)。  
+-   UTF-16 is Unicode encoded within the program as either one or two 16-bit integers. (Note that this does not meet all the requirements of a valid wide-character encoding for Standard C or Standard C++. Nevertheless it is widely used as such.)  
   
- バイト ストリーム (ファイルに格納されるか、バイト シーケンスとして送信されるか、あるいは `char` の配列でプログラム内に格納される) については、次のようになります。  
+ For byte streams (stored in a file, transmitted as a byte sequence, or stored within the program in an array of `char`):  
   
--   UTF-8 は Unicode のエンコード形式です。  
+-   UTF-8 is Unicode encoded  
   
--   UTF-8 は、バイト順が確定されている 1 つ以上の 8 ビット バイトで表される、バイト ストリームにおける Unicode のエンコード形式です。  
+-   UTF-8 is Unicode encoded within a byte stream as one or more eight-bit bytes with a deterministic byte order.  
   
--   UTF-16LE は Unicode のエンコード形式です。  
+-   UTF-16LE is Unicode encoded  
   
--   UTF-16LE は、16 ビット整数がそれぞれ 2 つの 8 ビット バイト (最初が下位バイト) で表される UTF-16 と同様のバイト ストリームにおける Unicode のエンコード形式です。  
+-   UTF-16LE is Unicode encoded within a byte stream as UTF-16 with each 16-bit integer presented as two eight-bit bytes, less significant byte first.  
   
--   UTF-16BE は Unicode のエンコード形式です。  
+-   UTF-16BE is Unicode encoded  
   
--   UTF-16BE は、16 ビット整数がそれぞれ 2 つの 8 ビット バイト (最初が上位バイト) で表される、UTF-16 と同様のバイト ストリームにおける Unicode のエンコード形式です。  
+-   UTF-16BE is Unicode encoded within a byte stream as UTF-16 with each 16-bit integer presented as two eight-bit bytes, more significant byte first.  
   
-### <a name="enumerations"></a>列挙体  
-  
-|||  
-|-|-|  
-|[codecvt_mode](../standard-library/codecvt-enums.md#codecvt_mode)|ロケール ファセットの構成情報を指定します。|  
-  
-### <a name="classes"></a>クラス  
+### <a name="enumerations"></a>Enumerations  
   
 |||  
 |-|-|  
-|[codecvt_utf8](codecvt-utf8-class.md)|UCS-2 または UCS-4 としてエンコードされたワイド文字と、UTF-8 としてエンコードされたバイト ストリームを変換するロケール ファセットを表します。|  
-|[codecvt_utf8_utf16](codecvt-utf8-utf16-class.md)|UTF-16 としてエンコードされたワイド文字と、UTF-8 としてエンコードされたバイト ストリームを変換するロケール ファセットを表します。|  
-|[codecvt_utf16](codecvt-utf16-class.md)|UCS-2 または UCS-4 としてエンコードされたワイド文字と、UTF-16LE または UTF-16BE としてエンコードされたバイト ストリームを変換するロケール ファセットを表します。|  
+|[codecvt_mode](../standard-library/codecvt-enums.md#codecvt_mode)|Specifies configuration information for locale facets.|  
+  
+### <a name="classes"></a>Classes  
+  
+|||  
+|-|-|  
+|[codecvt_utf8](codecvt-utf8-class.md)|Represents a locale facet that converts between wide characters encoded as UCS-2 or UCS-4, and a byte stream encoded as UTF-8.|  
+|[codecvt_utf8_utf16](codecvt-utf8-utf16-class.md)|Represents a locale facet that converts between wide characters encoded as UTF-16 and a byte stream encoded as UTF-8.|  
+|[codecvt_utf16](codecvt-utf16-class.md)|Represents a locale facet that converts between wide characters encoded as UCS-2 or UCS-4 and a byte stream encoded as UTF-16LE or UTF-16BE.|  
 
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<codecvt>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<codecvt>  
   
- **名前空間:** stdt  
+ **Namespace:** stdt  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 

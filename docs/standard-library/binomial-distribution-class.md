@@ -1,5 +1,5 @@
 ---
-title: "binomial_distribution クラス | Microsoft Docs"
+title: binomial_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- binomial_distribution
 - random/std::binomial_distribution
 - random/std::binomial_distribution::reset
 - random/std::binomial_distribution::p
@@ -27,7 +26,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- binomial_distribution class
+- std::binomial_distribution [C++]
+- std::binomial_distribution [C++], reset
+- std::binomial_distribution [C++], p
+- std::binomial_distribution [C++], t
+- std::binomial_distribution [C++], param
+- std::binomial_distribution [C++], min
+- std::binomial_distribution [C++], max
+- std::binomial_distribution [C++], param_type
+- std::binomial_distribution [C++], param_type
 ms.assetid: b7c8a26a-da8c-45a5-a3a8-208f7a3609ce
 caps.latest.revision: 22
 author: corob-msft
@@ -47,17 +54,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 38de1b8245612bca84c381c143b4a12e9f08c83e
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cf9727a3c8b88840b7f31f250b136398fe5ab207
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="binomialdistribution-class"></a>binomial_distribution クラス
-二項分布を生成します。  
+# <a name="binomialdistribution-class"></a>binomial_distribution Class
+Generates a binomial distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template<class IntType = int>
@@ -88,35 +95,35 @@ public:
    result_type max() const;
    };  
 ```  
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
 *IntType*  
-結果を表す整数型。既定値は `int` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+The integer result type, defaults to `int`. For possible types, see [\<random>](../standard-library/random.md).  
   
-*URNG* Uniform Random Number Generator エンジン。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+*URNG* The uniform random number generator engine. For possible types, see [\<random>](../standard-library/random.md).  
 
-## <a name="remarks"></a>コメント  
-このテンプレート クラスは、二項分布の離散確率関数に従って分布した、ユーザー指定の整数型の値または型 `int` の値 (指定がない場合) を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The template class describes a distribution that produces values of a user-specified integral type, or type `int` if none is provided, distributed according to the Binomial Distribution discrete probability function. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[binomial_distribution](#binomial_distribution)|`binomial_distribution::t`|`binomial_distribution::param`|  
 |`binomial_distribution::operator()`|`binomial_distribution::p`|[param_type](#param_type)|  
   
-プロパティ メンバー `t()` と `p()` はそれぞれ、格納されている分布パラメーター `t` と `p` の値を返します。  
+The property members `t()` and `p()` return the currently stored distribution parameter values `t` and `p` respectively.  
   
-プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-二項分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[二項分布](http://go.microsoft.com/fwlink/LinkId=398469)」を参照してください。  
+For detailed information about the binomial distribution discrete probability function, see the Wolfram MathWorld article [Binomial Distribution](http://go.microsoft.com/fwlink/LinkId=398469).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -171,7 +178,7 @@ int main()
 }  
 ```  
   
-最初の実行:  
+First run:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.  
@@ -195,7 +202,7 @@ Histogram for 100 samples:
     12 :  
 ```  
   
-2 回目の実行:  
+Second run:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.  
@@ -219,7 +226,7 @@ Histogram for 100 samples:
     16 ::  
 ```  
   
-3 回目の実行:  
+Third run:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.  
@@ -241,38 +248,38 @@ Histogram for 100 samples:
     21 :  
 ```  
   
-## <a name="requirements"></a>要件  
-**ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+**Header:** \<random>  
   
-**名前空間:** std  
+**Namespace:** std  
   
 ##  <a name="binomial_distribution"></a>  binomial_distribution::binomial_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit binomial_distribution(result_type t = 1, double p = 0.5);
 explicit binomial_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *t*  
-`t` 分布パラメーター。  
+The `t` distribution parameter.  
   
 *p*  
-`p` 分布パラメーター。  
+The `p` distribution parameter.  
   
 *parm*  
-分布の作成に使用される `param_type` の構造体。  
+The `param_type` structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0 ≤ t` および `0.0 ≤ p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0 ≤ t` and `0.0 ≤ p ≤ 1.0`  
   
-1 つ目のコンストラクターは、格納されている値 `p` と `t` にそれぞれ *p* と *t* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `p` value holds the value *p* and whose stored `t` value holds the value *t*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  binomial_distribution::param_type  
-分布のすべてのパラメーターを格納します。  
+Stores all the parameters of the distribution.  
   
 ```cpp  
 struct param_type {  
@@ -286,22 +293,22 @@ struct param_type {
    };  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *t*  
-`t` 分布パラメーター。  
+The `t` distribution parameter.  
   
 *p*  
-`p` 分布パラメーター。  
+The `p` distribution parameter.  
   
 *right*  
- このオブジェクトと比較する `param_type` オブジェクト。  
+ The `param_type` object to compare to this.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0 ≤ t` および `0.0 ≤ p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0 ≤ t` and `0.0 ≤ p ≤ 1.0`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

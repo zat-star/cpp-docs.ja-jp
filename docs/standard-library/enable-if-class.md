@@ -1,5 +1,5 @@
 ---
-title: "enable_if クラス | Microsoft Docs"
+title: enable_if Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- enable_if
 - type_traits/std::enable_if
 dev_langs:
 - C++
@@ -35,47 +34,47 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: febf80876856eb8f27ccb00310f9ceece30c2047
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 773882e76efa464d7770779bdfa1fd86272ee048
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="enableif-class"></a>enable_if クラス
-SFINAE オーバーロード解決用のタイプのインスタンスを条件によって作成する 入れ子の typedef `enable_if<Condition,Type>::type` は `Type` のシノニムで、`Condition` が `true` の場合のみ存在します。  
+# <a name="enableif-class"></a>enable_if Class
+Conditionally makes an instance of a type for SFINAE overload resolution. The nested typedef `enable_if<Condition,Type>::type` exists—and is a synonym for `Type`—if and only if `Condition` is `true`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <bool B, class T = void>
 struct enable_if;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `B`  
- 結果の型の存在を定義する値。  
+ The value that determines the existence of the resulting type.  
   
  `T`  
- `B` が true の場合にインスタンスを作成するタイプ。  
+ The type to instantiate if `B` is true.  
   
-## <a name="remarks"></a>コメント  
- `B` がs true の場合、`enable_if<B, T>` は "type" という名前の入れ子の typedef を持ちます。これは `T` のシノニムです。  
+## <a name="remarks"></a>Remarks  
+ If `B` is true, `enable_if<B, T>` has a nested typedef named "type" that's a synonym for `T`.  
   
- `B` が false の場合、`enable_if<B, T>` は "type" という名前の入れ子の typedef を持ちません。  
+ If `B` is false, `enable_if<B, T>` doesn't have a nested typedef named "type".  
   
- このエイリアス テンプレートが提供されています。  
+ This alias template is provided:  
   
 ```cpp  
 template <bool B, class T = void>
 using enable_if_t = typename enable_if<B,T>::type;
 ```  
   
- C++ では、テンプレート パラメーターの置き換えの失敗は、それ自体はエラーではありません。これは *SFINAE* (substitution failure is not an error: 置き換えの失敗はエラーではない) と呼ばれます。 一般的に、`enable_if` はオーバーロード解決から候補を外す (つまりオーバーロード セットを除外する) ために使用します。一方を優先させて他方の定義が拒否されることもあります。 これは、SFINAE の動作に適合します。 SFINAE の詳細については、Wikipedia の「[Substitution failure is not an error](http://go.microsoft.com/fwlink/LinkId=394798)」を参照してください。  
+ In C++, substitution failure of template parameters is not an error in itself—this is referred to as *SFINAE* (substitution failure is not an error). Typically, `enable_if` is used to remove candidates from overload resolution—that is, it culls the overload set—so that one definition can be rejected in favor of another. This conforms to SFINAE behavior. For more information about SFINAE, see [Substitution failure is not an error](http://go.microsoft.com/fwlink/LinkId=394798) on Wikipedia.  
   
- 次に、4 つのシナリオの例を示します。  
+ Here are four example scenarios:  
   
--   シナリオ 1: 関数の戻り値の型をラッピングする  
+-   Scenario 1: Wrapping the return type of a function:  
   
  ```cpp  
     template <your_stuff>  
@@ -89,7 +88,7 @@ yourfunction(args) {// ...
  }
 ```  
   
--   シナリオ 2: 既定の引数を持つ関数パラメーターを追加する  
+-   Scenario 2: Adding a function parameter that has a default argument:  
   
  ```cpp  
     template <your_stuff>  
@@ -98,14 +97,14 @@ your_return_type_if_present
  }
 ```  
   
--   シナリオ 3: 既定の引数を持つテンプレート パラメーターを追加する  
+-   Scenario 3: Adding a template parameter that has a default argument:  
   
  ```cpp  
     template <your_stuff, typename Dummy = enable_if_t<your_condition>>  
 rest_of_function_declaration_goes_here
 ```  
   
--   シナリオ 4: 関数がテンプレート化されていない引数を持っている場合、その型をラッピングできる  
+-   Scenario 4: If your function has a non-templated argument, you can wrap its type:  
   
  ```cpp  
     template <typename T>  
@@ -115,9 +114,9 @@ s) {// ...
  }
 ```  
   
- シナリオ 1 は、コンストラクターおよび変換演算子では機能しません。それらは戻り値の型を持たないためです。  
+ Scenario 1 doesn't work with constructors and conversion operators because they don't have return types.  
   
- シナリオ 2 では、パラメーターは名前がないままです。 `::type Dummy = BAR` とすることもできますが、名前`Dummy` は重要ではなく、名前を付けることは "未参照のパラメーター" 警告をトリガーする可能性があります。 関数パラメーターの型 `FOO`、および既定の引数`BAR` を選択する必要があります。  `int` および `0` とすることもできますが、このコードのユーザーが範囲外の整数を誤って関数に渡し、その整数が無視される可能性があります。 代わりに、`void **`、および`0` または `nullptr` のいずれかを使用することをお勧めします。`void **` に変換できるものはほとんどないからです。  
+ Scenario 2 leaves the parameter unnamed. You could say `::type Dummy = BAR`, but the name `Dummy` is irrelevant, and giving it a name is likely to trigger an "unreferenced parameter" warning. You have to choose a `FOO` function parameter type and `BAR` default argument.  You could say `int` and `0`, but then users of your code could accidentally pass to the function an extra integer that would be ignored. Instead, we recommend that you use `void **` and either `0` or `nullptr` because almost nothing is convertible to `void **`:  
   
 ```cpp  
 template <your_stuff>  
@@ -126,22 +125,22 @@ yourfunction(args, typename enable_if<your_condition, void **>::type = nullptr) 
 }
 ```  
   
- シナリオ 2 は通常のコンストラクターでも機能します。  ただし、変換演算子は追加のパラメーターをとることができないため、シナリオ&2; は変換演算子では機能しません。  また、[variadic](../cpp/ellipses-and-variadic-templates.md) コンストラクターでも機能しません。追加パラメーターを付加することによって、関数のパラメーターは非推定コンテキストをパックするため、`enable_if` の目的は達成できないからです。  
+ Scenario 2 also works for ordinary constructors.  However, it doesn't work for conversion operators because they can't take extra parameters.  It also doesn't work for [variadic](../cpp/ellipses-and-variadic-templates.md) constructors because adding extra parameters makes the function parameter pack a non-deduced context and thereby defeats the purpose of `enable_if`.  
   
- シナリオ 3 は、`Dummy` という名前を使用しますが、これは任意です。 単に "`typename = typename`" だけで機能しますが、少し変に見えるかもしれないので、"dummy" という名前を使用できます。関数定義で使用される可能性のある名前は使用しないでください。 `enable_if` に型を指定しない場合、既定値は void になります。ユーザーは `Dummy` が何かを気にしなくていないため、これは非常に理にかなっています。 これは、変換演算子や [variadic](../cpp/ellipses-and-variadic-templates.md) コンストラクターなど、すべてにおいて機能します。  
+ Scenario 3 uses the name `Dummy`, but it's optional. Just " `typename = typename`" would work, but if you think that looks weird, you can use a "dummy" name—just don't use one that might also be used in the function definition. If you don't give a type to `enable_if`, it defaults to void, and that's perfectly reasonable because you don't care what `Dummy` is. This works for everything, including conversion operators and [variadic](../cpp/ellipses-and-variadic-templates.md) constructors.  
   
- シナリオ 4 は、戻り値の型を持たないコンストラクターで機能するため、シナリオ 1 のラッピングの制約を解決します。  ただし、シナリオ 4 は非テンプレート関数の引数に限定されますが、このような引数は必ず利用できるわけではありません  (テンプレート関数の引数でシナリオ 4 を使用すると、テンプレート引数の推定が機能しません)。  
+ Scenario 4 works in constructors that don't have return types, and thereby solves the wrapping limitation of Scenario 1.  However, Scenario 4 is limited to non-templated function arguments, which aren't always available.  (Using Scenario 4 on a templated function argument prevents template argument deduction from working on it.)  
   
- `enable_if` は強力ですが、誤って使用すると危険です。  enable_if の目的はオーバーロードの解決前に候補を除外することなので、誤って使用すると、その影響によって混乱が生じます。  次に、いくつか推奨例を示します。  
+ `enable_if` is powerful, but also dangerous if it's misused.  Because its purpose is to make candidates vanish before overload resolution, when it's misused, its effects can be very confusing.  Here are some recommendations:  
   
--   コンパイル時に実装を選択するのに、`enable_if` を使用しないでください。 1 つの `enable_if` を `CONDITION` に対して記述し、別の enable_if を `!CONDITION` に記述しないでください。  代わりに、*タグ ディスパッチ* パターン (たとえば、反復子で与えられる強さによって実装を選択するアルゴリズム) を使用してください。  
+-   Do not use `enable_if` to select between implementations at compile-time. Don't ever write one `enable_if` for `CONDITION` and another for `!CONDITION`.  Instead, use a *tag dispatch* pattern—for example, an algorithm that selects implementations depending on the strengths of the iterators they're given.  
   
--   `enable_if` を使用して要件を強制しないでください。  テンプレート パターンを検証しようとして検証に失敗し、他の実装を選択する代わりにエラーが生じた場合は、[static_assert](../cpp/static-assert.md) を使用します。  
+-   Do not use `enable_if` to enforce requirements.  If you want to validate template parameters, and if the validation fails, cause an error instead of selecting another implementation, use [static_assert](../cpp/static-assert.md).  
   
--   他の方法では、優れたコードが曖昧になってしまうようなオーバーロード セットがある場合には、`enable_if` を使用します。  ほとんどの場合、これは暗黙に変換されるコンストラクターで発生します。  
+-   Use `enable_if` when you have an overload set that makes otherwise good code ambiguous.  Most often, this occurs in implicitly converting constructors.  
   
-## <a name="example"></a>例  
- この例では、C++ 標準ライブラリのテンプレート関数 [std::make_pair()](../standard-library/utility-functions.md#make_pair) が `enable_if` をどのように利用するかを示しています。  
+## <a name="example"></a>Example  
+ This example explains how the C++ Standard Library template function [std::make_pair()](../standard-library/utility-functions.md#make_pair) takes advantage of `enable_if`.  
   
 ```cpp  
 void func(const pair<int, int>&);
@@ -151,16 +150,16 @@ void func(const pair<string, string>&);
 func(make_pair("foo", "bar"));
 ```  
   
-  この例では、`make_pair("foo", "bar")` は `pair<const char *, const char *>` を返します。 オーバーロード解決では、どの `func()` が必要かを決定する必要があります。 `pair<A, B>` は、`pair<X, Y>` から暗黙に変換されるコンストラクターを持っています。  これは新しいものではなく、C++98 にありました。 ただし C++98/03 では、暗黙に変換されるコンストラクターのシグネチャは、`pair<int, int>(const pair<const char *, const char *>&)` の場合でも必ず存在します。  オーバーロード解決では、コンストラクタを爆発的に増やすようなインスタンス化を試行しても問題になりません。`const char *` は暗黙に`int` に変換されず、関数定義がインスタンス化される前に、シグネチャを見ているだけだからです。  そのため、この例のコードは曖昧です。シグネチャは、`pair<const char *, const char *>` を `pair<int, int>` と `pair<string, string>` の両方に変換するために存在するからです。  
+  In this example, `make_pair("foo", "bar")` returns `pair<const char *, const char *>`. Overload resolution has to determine which `func()` you want. `pair<A, B>` has an implicitly converting constructor from `pair<X, Y>`.  This isn't new—it was in C++98. However, in C++98/03, the implicitly converting constructor's signature always exists, even if it's `pair<int, int>(const pair<const char *, const char *>&)`.  Overload resolution doesn't care that an attempt to instantiate that constructor explodes horribly because `const char *` isn't implicitly convertible to `int`; it's only looking at signatures, before function definitions are instantiated.  Therefore, the example code is ambiguous, because signatures exist to convert `pair<const char *, const char *>` to both `pair<int, int>` and `pair<string, string>`.  
   
- C++11 は、`enable_if` を使用してこの曖昧さを解決しました。`pair<A, B>(const pair<X, Y>&)` が、以下の場合**のみ**、つまり `const X&` が `A` に暗黙に変換され、`const Y&` が `B` に暗黙に変換される場合のみ存在するようにしています。  これにより、オーバーロード解決は、`pair<const char *, const char *>` が `pair<int, int>` に変換されないこと、および `pair<string, string>` となるオーバーロードが実行可能であることを決定できます。  
+ C++11 solved this ambiguity by using `enable_if` to make sure `pair<A, B>(const pair<X, Y>&)` exists **only** when `const X&` is implicitly convertible to `A` and `const Y&` is implicitly convertible to `B`.  This allows overload resolution to determine that `pair<const char *, const char *>` is not convertible to `pair<int, int>` and that the overload that takes `pair<string, string>` is viable.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

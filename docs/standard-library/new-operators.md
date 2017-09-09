@@ -1,5 +1,5 @@
 ---
-title: "&lt;new&gt; 演算子 | Microsoft Docs"
+title: '&lt;new&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,21 +12,21 @@ f1_keywords:
 ms.assetid: d1af4b56-9a95-4c65-ab01-bf43e982c7bd
 caps.latest.revision: 8
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 52633103180338b6db7b96f2d76391f58e1f4c35
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: e5e0dc48d0aeb09da07654043addd81b096bbcc6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltnewgt-operators"></a>&lt;new&gt; 演算子
+# <a name="ltnewgt-operators"></a>&lt;new&gt; operators
 ||||  
 |-|-|-|  
 |[operator delete](#op_delete)|[operator delete[]](#op_delete_arr)|[operator new](#op_new)|  
 |[operator new[]](#op_new_arr)|  
   
 ##  <a name="op_delete"></a>  operator delete  
- 個々のオブジェクトに対するストレージの割り当てを解除する削除式によって呼び出される関数。  
+ The function called by a delete expression to deallocate storage for individual of objects.  
   
 ```
 void operator delete(void* ptr) throw();
@@ -38,24 +38,24 @@ void operator delete(void* ptr,
     const std::nothrow_t&) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 削除によって値が無効になるポインター。  
+ The pointer whose value is to be rendered invalid by the deletion.  
   
-### <a name="remarks"></a>コメント  
- 1 番目の関数は、`ptr` の値を無効にするために delete 式によって呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の [operator new](../standard-library/new-operators.md#op_new)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。  
+### <a name="remarks"></a>Remarks  
+ The first function is called by a delete expression to render the value of `ptr` invalid. The program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The required behavior is to accept a value of `ptr` that is null or that was returned by an earlier call to [operator new](../standard-library/new-operators.md#op_new)( **size_t**).  
   
- null 値の `ptr` に対する既定の動作では、何も実行されません。 その他の `ptr` の値は、前述のとおり、呼び出しによって以前に返された値である必要があります。 このような null 以外の値の `ptr` に対する既定の動作では、以前の呼び出しによって割り当てられたストレージが再利用されます。 このような再利用されるストレージの一部またはすべてが、どのような条件で後続の `operator new`( **size_t**)、または `calloc`( **size_t**)、`malloc`( **size_t**)、`realloc`( **void\***, **size_t**) のいずれかの呼び出しによって割り当てられるかは不定です。  
+ The default behavior for a null value of `ptr` is to do nothing. Any other value of `ptr` must be a value returned earlier by a call as previously described. The default behavior for such a nonnull value of `ptr` is to reclaim storage allocated by the earlier call. It is unspecified under what conditions part or all of such reclaimed storage is allocated by a subsequent call to `operator new`( **size_t**), or to any of `calloc`( **size_t**), `malloc`( **size_t**), or `realloc`( **void\***, **size_t**).  
   
- 2 番目の関数は、**new**( **std::size_t**) の形式の new 式に対応する配置 delete 式で呼び出されます。 何も実行されません。  
+ The second function is called by a placement delete expression corresponding to a new expression of the form **new**( **std::size_t**). It does nothing.  
   
- 3 番目の関数は、**new**( **std::size_t**, **conststd::nothrow_t&**) の形式の new 式に対応する配置 delete 式で呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の `operator new`( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 既定の動作では、**delete**( `ptr`) が評価されます。  
+ The third function is called by a placement delete expression corresponding to a new expression of the form **new**( **std::size_t**, **conststd::nothrow_t&**). The program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The required behavior is to accept a value of `ptr` that is null or that was returned by an earlier call to `operator new`( **size_t**). The default behavior is to evaluate **delete**( `ptr`).  
   
-### <a name="example"></a>例  
-  `operator delete` の使用例については、「[operator new](../standard-library/new-operators.md#op_new)」を参照してください。  
+### <a name="example"></a>Example  
+  See [operator new](../standard-library/new-operators.md#op_new) for an example that use `operator delete`.  
   
 ##  <a name="op_delete_arr"></a>  operator delete[]  
- オブジェクトの配列に対するストレージの割り当てを解除する削除式によって呼び出される関数。  
+ The function called by a delete expression to deallocate storage for an array of objects.  
   
 ```
 void operator delete[](void* ptr) throw();
@@ -67,22 +67,22 @@ void operator delete[](void* ptr,
     const std::nothrow_t&) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 削除によって値が無効になるポインター。  
+ The pointer whose value is to be rendered invalid by the deletion.  
   
-### <a name="remarks"></a>コメント  
- 1 番目の関数は、`ptr` の値を無効にするために `delete[]` 式によって呼び出されます。 関数は置き換え可能です。プログラムでこの関数のシグネチャを持つ関数を定義でき、これが C++ 標準ライブラリで定義された既定のバージョンに置き換わるためです。 必要な動作は、null であるかまたは以前の [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 null 値の `ptr` に対する既定の動作では、何も実行されません。 その他の `ptr` の値は、前述のとおり、呼び出しによって以前に返された値である必要があります。 このような null 以外の値の `ptr` に対する既定の動作では、以前の呼び出しによって割り当てられたストレージが再利用されます。 このような再利用されるストレージの一部またはすべてが、どのような条件で後続の [operator new](../standard-library/new-operators.md#op_new)( **size_t**)、または `calloc`( **size_t**)、`malloc`( **size_t**)、`realloc`( **void\***, **size_t**) のいずれかの呼び出しによって割り当てられるかは不定です。  
+### <a name="remarks"></a>Remarks  
+ The first function is called by an `delete[]` expression to render the value of `ptr` invalid. The function is replaceable because the program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The required behavior is to accept a value of `ptr` that is null or that was returned by an earlier call to [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)( **size_t**). The default behavior for a null value of `ptr` is to do nothing. Any other value of `ptr` must be a value returned earlier by a call as previously described. The default behavior for such a nonnull value of `ptr` is to reclaim storage allocated by the earlier call. It is unspecified under what conditions part or all of such reclaimed storage is allocated by a subsequent call to [operator new](../standard-library/new-operators.md#op_new)( **size_t**), or to any of `calloc`( **size_t**), `malloc`( **size_t**), or `realloc`( **void\***, **size_t**).  
   
- 2 番目の関数は、`new[]`( **std::size_t**) の形式の `new[]` 式に対応する配置 `delete[]` 式で呼び出されます。 何も実行されません。  
+ The second function is called by a placement `delete[]` expression corresponding to a `new[]` expression of the form `new[]`( **std::size_t**). It does nothing.  
   
- 3 番目の関数は、`new[]`( **std::size_t**, **const std::nothrow_t&**) の形式の `new[]` 式に対応する配置 delete 式で呼び出されます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、null であるかまたは以前の operator `new[]`( **size_t**) の呼び出しで返された `ptr` の値を受け入れることです。 既定の動作では、`delete[]`( `ptr`) が評価されます。  
+ The third function is called by a placement delete expression corresponding to a `new[]` expression of the form `new[]`( **std::size_t**, **const std::nothrow_t&**). The program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The required behavior is to accept a value of `ptr` that is null or that was returned by an earlier call to operator `new[]`( **size_t**). The default behavior is to evaluate `delete[]`( `ptr`).  
   
-### <a name="example"></a>例  
-  `operator delete[]` の使用例については、「[operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr)」を参照してください。  
+### <a name="example"></a>Example  
+  See [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr) for examples of the use of `operator delete[]`.  
   
 ##  <a name="op_new"></a>  operator new  
- new 式によって個々のオブジェクトにストレージを割り当てるために呼び出される関数。  
+ The function called by a new-expression to allocate storage for individual objects.  
   
 ```
 void* operator new(std::size_t count) throw(bad_alloc);
@@ -94,46 +94,46 @@ void* operator new(std::size_t count,
     void* ptr) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 割り当てられるストレージのバイト数。  
+ The number of bytes of storage to be allocated.  
   
  `ptr`  
- 返されるポインター。  
+ The pointer to be returned.  
   
-### <a name="return-value"></a>戻り値  
- 新たに割り当てられるストレージの最下位バイト アドレスへのポインター。 または `ptr.`  
+### <a name="return-value"></a>Return Value  
+ A pointer to the lowest byte address of the newly-allocated storage. Or `ptr.`  
   
-### <a name="remarks"></a>コメント  
- 1 番目の関数は new 式によって呼び出され、そのサイズのオブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ別の関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。つまり、関数は置き換え可能です。  
+### <a name="remarks"></a>Remarks  
+ The first function is called by a new expression to allocate `count` bytes of storage suitably aligned to represent any object of that size. The program can define an alternate function with this function signature that replaces the default version defined by the C++ Standard Library and so is replaceable.  
   
- 必要な動作は、要求されたとおりにストレージを割り当てできる場合にのみ、null 以外のポインターを返すことです。 このようなそれぞれの割り当てによって、ストレージが、割り当て済みの他のストレージから分離されます。 後続の呼び出しで割り当てられるストレージの順序および連続性は不定です。 最初の格納値は不定です。 返されるポインターは、割り当てられたストレージの開始位置 (最下位バイト アドレス) を指します。 カウントがゼロの場合、返される値は、この関数によって返される他のどの値とも等しくなりません。  
+ The required behavior is to return a nonnull pointer only if storage can be allocated as requested. Each such allocation yields a pointer to storage disjoint from any other allocated storage. The order and contiguity of storage allocated by successive calls is unspecified. The initial stored value is unspecified. The returned pointer points to the start (lowest byte address) of the allocated storage. If count is zero, the value returned does not compare equal to any other value returned by the function.  
   
- 既定の動作ではループが実行されます。 ループ内で、関数はまず要求されたストレージの割り当てを試みます。 試行に `malloc`( **size_t**) の呼び出しが含まれるかどうかは不定です。 試行が成功した場合、関数は割り当てられたストレージへのポインターを返します。 それ以外の場合、関数は指定された[new ハンドラー](../standard-library/new-typedefs.md#new_handler)を呼び出します。 呼び出された関数が戻った場合、ループが繰り返されます。 ループは、要求されたストレージ割り当ての試行に成功したとき、または呼び出された関数が戻らなかったときに終了します。  
+ The default behavior is to execute a loop. Within the loop, the function first attempts to allocate the requested storage. Whether the attempt involves a call to `malloc`( **size_t**) is unspecified. If the attempt is successful, the function returns a pointer to the allocated storage. Otherwise, the function calls the designated [new handler](../standard-library/new-typedefs.md#new_handler). If the called function returns, the loop repeats. The loop terminates when an attempt to allocate the requested storage is successful or when a called function does not return.  
   
- new ハンドラーに必要な動作は、次の操作のいずれかを実行することです。  
+ The required behavior of a new handler is to perform one of the following operations:  
   
--   さらに多くのストレージを割り当てに使用できるようにして、戻ります。  
+-   Make more storage available for allocation and then return.  
   
--   **abort** または **exit**( `int`) のいずれかを呼び出します。  
+-   Call either **abort** or **exit**( `int`).  
   
--   **bad_alloc** 型のオブジェクトをスローします。  
+-   Throw an object of type **bad_alloc.**  
   
- [new ハンドラー](../standard-library/new-typedefs.md#new_handler)の既定の動作では、`bad_alloc` 型のオブジェクトがスローされます。 Null ポインターは既定の new ハンドラーを指定します。  
+ The default behavior of a [new handler](../standard-library/new-typedefs.md#new_handler) is to throw an object of type `bad_alloc`. A null pointer designates the default new handler.  
   
- 後続の `operator new`( **size_t**) の呼び出しで割り当てられるストレージの順序および連続性は、そこに格納される初期値と同様に不定です。  
+ The order and contiguity of storage allocated by successive calls to `operator new`( **size_t**) is unspecified, as are the initial values stored there.  
   
- 2 番目の関数は配置 new 式によって呼び出され、そのサイズのオブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ別の関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。つまり、関数は置き換え可能です。  
+ The second function is called by a placement new expression to allocate `count` bytes of storage suitably aligned to represent any object of that size. The program can define an alternate function with this function signature that replaces the default version defined by the C++ Standard Library and so is replaceable.  
   
- 既定の動作では、その関数が成功した場合に `operator new`( `count`) が返されます。 それ以外の場合は、Null ポインターが返されます。  
+ The default behavior is to return `operator new`( `count`) if that function succeeds. Otherwise, it returns a null pointer.  
   
- 3 番目の関数は、**new**( *args*) T の形式の配置 **new** 式によって呼び出されます。ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 これは、既知のアドレスにあるオブジェクトの構築に役立ちます。 *ptr* が返されます。  
+ The third function is called by a placement **new** expression, of the form **new** ( *args*) T. Here, *args* consists of a single object pointer. This can be useful for constructing an object at a known address. The function returns *ptr*.  
   
- `operator new` によって割り当てられたストレージを解放するには、[operator delete](../standard-library/new-operators.md#op_delete) を呼び出します。  
+ To free storage allocated by `operator new`, call [operator delete](../standard-library/new-operators.md#op_delete).  
   
- スローする場合またはスローしない場合の動作については、「[new および delete 演算子](../cpp/new-and-delete-operators.md)」を参照してください。  
+ For information on throwing or nonthrowing behavior of new, see [The new and delete Operators](../cpp/new-and-delete-operators.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // new_op_new.cpp  
@@ -177,7 +177,7 @@ int main( )
 ```  
   
 ##  <a name="op_new_arr"></a>  operator new[]  
- new 式によってオブジェクトの配列にストレージを割り当てるために呼び出される割り当て関数。  
+ The allocation function called by a new expression to allocate storage for an array of objects.  
   
 ```
 void* operator new[](std::size_t count) throw(std::bad_alloc);
@@ -189,28 +189,28 @@ void* operator new[](std::size_t count,
     void* ptr) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 配列オブジェクトに割り当てられるストレージのバイト数。  
+ The number of bytes of storage to be allocated for the array object.  
   
  `ptr`  
- 返されるポインター。  
+ The pointer to be returned.  
   
-### <a name="return-value"></a>戻り値  
- 新たに割り当てられるストレージの最下位バイト アドレスへのポインター。 または `ptr.`  
+### <a name="return-value"></a>Return Value  
+ A pointer to the lowest byte address of the newly-allocated storage. Or `ptr.`  
   
-### <a name="remarks"></a>コメント  
- 1 番目の関数は `new[]` 式によって呼び出され、そのサイズ以下の配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 必要な動作は、[operator new](../standard-library/new-operators.md#op_new)( **size_t**) の場合と同じです。 既定の動作では、`operator new`( `count`) が返されます。  
+### <a name="remarks"></a>Remarks  
+ The first function is called by a `new[]` expression to allocate `count` bytes of storage suitably aligned to represent any array object of that size or smaller. The program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The required behavior is the same as for [operator new](../standard-library/new-operators.md#op_new)( **size_t**). The default behavior is to return `operator new`( `count`).  
   
- 2 番目の関数は配置 `new[]` 式によって呼び出され、そのサイズの配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 既定の動作では、その関数が成功した場合に **operatornew**( `count`) が返されます。 それ以外の場合は、Null ポインターが返されます。  
+ The second function is called by a placement `new[]` expression to allocate `count` bytes of storage suitably aligned to represent any array object of that size. The program can define a function with this function signature that replaces the default version defined by the C++ Standard Library. The default behavior is to return **operatornew**( `count`) if that function succeeds. Otherwise, it returns a null pointer.  
   
- 3 番目の関数は、**new** ( *args*) **T**[ **N**] の形式の配置 `new[]` 式によって呼び出されます。 ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 `ptr` が返されます。  
+ The third function is called by a placement `new[]` expression, of the form **new** ( *args*) **T**[ **N**]. Here, *args* consists of a single object pointer. The function returns `ptr`.  
   
- `operator new[]` によって割り当てられたストレージを解放するには、[operator delete&#91;&#93;](../standard-library/new-operators.md#op_delete_arr) を呼び出します。  
+ To free storage allocated by `operator new[]`, call [operator delete&#91;&#93;](../standard-library/new-operators.md#op_delete_arr).  
   
- スローする場合またはスローしない場合の動作については、「[new および delete 演算子](../cpp/new-and-delete-operators.md)」を参照してください。  
+ For information on throwing or nonthrowing behavior of new, see [The new and delete Operators](../cpp/new-and-delete-operators.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // new_op_alloc.cpp  
@@ -251,7 +251,7 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<new>](../standard-library/new.md)
 
 

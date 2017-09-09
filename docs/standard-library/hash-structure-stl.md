@@ -1,5 +1,5 @@
 ---
-title: "hash 構造体 (C++ 標準ライブラリ) | Microsoft Docs"
+title: hash Structure (C++ Standard Library)| Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -31,17 +31,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 1af8dc2f8fef535883088c413827a98a35539980
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 3a5e3c107bc5105e7de92bcb6b42c7de20baf475
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="hash-structure-c-standard-library"></a>hash 構造体 (C++ 標準ライブラリ)
-`Val` によって一意に決定される値を返すメンバー関数を定義します。 メンバー関数は、`thread::id` 型の値をインデックス値の分布にマッピングするために適した[ハッシュ](../standard-library/hash-class.md)関数を定義します。  
+# <a name="hash-structure-c-standard-library"></a>hash Structure (C++ Standard Library)
+Defines a member function that returns a value that's uniquely determined by `Val`. The member function defines a [hash](../standard-library/hash-class.md) function that's suitable for mapping values of type `thread::id` to a distribution of index values.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <>  
@@ -54,13 +54,13 @@ struct hash<thread::id> :
 };  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<スレッド >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<thread>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [\<スレッド>](../standard-library/thread.md)   
- [unary_function 構造体](../standard-library/unary-function-struct.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [\<thread>](../standard-library/thread.md)   
+ [unary_function Struct](../standard-library/unary-function-struct.md)
 

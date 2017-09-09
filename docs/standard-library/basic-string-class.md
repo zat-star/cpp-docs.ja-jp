@@ -1,5 +1,5 @@
 ---
-title: "basic_string クラス |Microsoft Docs"
+title: basic_string Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- basic_string
 - xstring/std::basic_string
 - string/std::basic_string::allocator_type
 - string/std::basic_string::const_iterator
@@ -69,7 +68,62 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- basic_string class
+- std::basic_string [C++]
+- std::basic_string [C++], allocator_type
+- std::basic_string [C++], const_iterator
+- std::basic_string [C++], const_pointer
+- std::basic_string [C++], const_reference
+- std::basic_string [C++], const_reverse_iterator
+- std::basic_string [C++], difference_type
+- std::basic_string [C++], iterator
+- std::basic_string [C++], npos
+- std::basic_string [C++], pointer
+- std::basic_string [C++], reference
+- std::basic_string [C++], reverse_iterator
+- std::basic_string [C++], size_type
+- std::basic_string [C++], traits_type
+- std::basic_string [C++], value_type
+- std::basic_string [C++], append
+- std::basic_string [C++], assign
+- std::basic_string [C++], at
+- std::basic_string [C++], back
+- std::basic_string [C++], begin
+- std::basic_string [C++], c_str
+- std::basic_string [C++], capacity
+- std::basic_string [C++], cbegin
+- std::basic_string [C++], cend
+- std::basic_string [C++], clear
+- std::basic_string [C++], compare
+- std::basic_string [C++], copy
+- std::basic_string [C++], crbegin
+- std::basic_string [C++], crend
+- std::basic_string [C++], _Copy_s
+- std::basic_string [C++], data
+- std::basic_string [C++], empty
+- std::basic_string [C++], end
+- std::basic_string [C++], erase
+- std::basic_string [C++], find
+- std::basic_string [C++], find_first_not_of
+- std::basic_string [C++], find_first_of
+- std::basic_string [C++], find_last_not_of
+- std::basic_string [C++], find_last_of
+- std::basic_string [C++], front
+- std::basic_string [C++], get_allocator
+- std::basic_string [C++], insert
+- std::basic_string [C++], length
+- std::basic_string [C++], max_size
+- std::basic_string [C++], pop_back
+- std::basic_string [C++], push_back
+- std::basic_string [C++], rbegin
+- std::basic_string [C++], rend
+- std::basic_string [C++], replace
+- std::basic_string [C++], reserve
+- std::basic_string [C++], resize
+- std::basic_string [C++], rfind
+- std::basic_string [C++], shrink_to_fit
+- std::basic_string [C++], size
+- std::basic_string [C++], substr
+- std::basic_string [C++], swap
 ms.assetid: a9c3e0a2-39bf-4c8a-b093-9abe30839591
 caps.latest.revision: 19
 author: corob-msft
@@ -89,133 +143,133 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 062f7fdf2d3d57dc08a0e632326ccbc228eb7df6
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 20e7039ed73d28f124c7a06b1e8436a99a024d8b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="basicstring-class"></a>basic_string クラス
-`basic_string` テンプレート クラスのオブジェクトによって制御されるシーケンスは C++ の標準文字列クラスで、通常文字列と呼ばれますが、C++ 標準ライブラリ全体で使用される C スタイルの null で終わる文字列と混同しないようにしてください。 標準 C++ 文字列は、比較と連結演算子、反復子、C++ 標準ライブラリ アルゴリズム、クラスのアロケーターによって管理されるメモリのコピーおよび割り当てなど、通常の型として文字列の使用を有効にするコンテナーです。 標準 C++ 文字列を C スタイルの null で終わる文字列に変換する場合は、[basic_string::c_str](#c_str) メンバーを使用します。  
+# <a name="basicstring-class"></a>basic_string Class
+The sequences controlled by an object of template class `basic_string` are the Standard C++ string class and are usually referred to as strings, but they should not be confused with the null-terminated C-style strings used throughout the C++ Standard Library. The Standard C++ string is a container that enables the use of strings as normal types, such as comparison and concatenation operations, iterators, C++ Standard Library algorithms, and copying and assigning with class allocator managed memory. If you need to convert a Standard C++ string to a null-terminated C-style string, use the [basic_string::c_str](#c_str) member.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType, class Traits = char_traits<CharType>, class Allocator = allocator<CharType>>  
 class basic_string;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 文字列に格納される単一文字のデータ型。 C++ 標準ライブラリでは、`char` 型の要素に型定義 [string](../standard-library/string-typedefs.md#string)、`wchar_t` に [wstring](../standard-library/string-typedefs.md#wstring)、`char16_t` に [u16string](../standard-library/string-typedefs.md#u16string)、`char32_t` に [u32string](../standard-library/string-typedefs.md#u32string) を使用した、このテンプレート クラスの特殊化が提供されます。  
+ The data type of a single character to be stored in the string. The C++ Standard Library provides specializations of this template class, with the type definitions [string](../standard-library/string-typedefs.md#string) for elements of type `char`, [wstring](../standard-library/string-typedefs.md#wstring), for `wchar_t`, [u16string](../standard-library/string-typedefs.md#u16string) for `char16_t`, and [u32string](../standard-library/string-typedefs.md#u32string) for `char32_t`.  
   
  `Traits`  
- basic_string 特化の **CharType** 要素のさまざまな重要なプロパティは、クラス **Traits** によって記述されます。 既定値は `char_traits`< `CharType`> です。  
+ Various important properties of the **CharType** elements in a basic_string specialization are described by the class **Traits**. The default value is `char_traits`< `CharType`>.  
   
  `Allocator`  
- メモリの文字列の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 既定値は **allocator**< `CharType`> です。  
+ The type that represents the stored allocator object that encapsulates details about the string's allocation and deallocation of memory. The default value is **allocator**< `CharType`>.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[basic_string](#basic_string)|空または特定の文字によって初期化される文字列、または他の文字列オブジェクトまたは C 文字列の全体または一部のコピーである文字列を作成します。|  
+|[basic_string](#basic_string)|Constructs a string that is empty or initialized by specific characters or that is a copy of all or part of some other string object or C-string.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[allocator_type](#allocator_type)|文字列オブジェクトの `allocator` クラス型を表す型。|  
-|[const_iterator](#const_iterator)|文字列内の `const` 要素にアクセスし、読み取ることができるランダム アクセス反復子を提供する型。|  
-|[const_pointer](#const_pointer)|文字列内の `const` 要素へのポインターを提供する型。|  
-|[const_reference](#const_reference)|読み取りと `const` 操作の実行のために、文字列に格納された `const` 要素への参照を提供する型。|  
-|[const_reverse_iterator](#const_reverse_iterator)|文字列内の任意の `const` 要素を読み取ることができるランダム アクセス反復子を提供する型。|  
-|[difference_type](#difference_type)|同じ文字列内の要素を参照する 2 反復子の違いを提供する型。|  
-|[iterator](#iterator)|文字列内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
-|[npos](#npos)|"Not found"いずれかを示す-1 または「残りの文字をすべて」に初期化された符号なし整数値検索機能に失敗するとします。|  
-|[pointer](#pointer)|文字列または文字アレイ内の文字要素へのポインターを提供する型。|  
-|[reference](#reference)|文字列に格納されている要素への参照を提供する型。|  
-|[reverse_iterator](#reverse_iterator)|反転文字列内の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
-|[size_type](#size_type)|文字列の要素の数の符号なし整数型。|  
-|[traits_type](#traits_type)|文字列に格納されている要素の文字の特徴の型。|  
-|[value_type](#value_type)|文字列に格納された文字の型を表す型。|  
+|[allocator_type](#allocator_type)|A type that represents the `allocator` class for a string object.|  
+|[const_iterator](#const_iterator)|A type that provides a random-access iterator that can access and read a `const` element in the string.|  
+|[const_pointer](#const_pointer)|A type that provides a pointer to a `const` element in a string.|  
+|[const_reference](#const_reference)|A type that provides a reference to a `const` element stored in a string for reading and performing `const` operations.|  
+|[const_reverse_iterator](#const_reverse_iterator)|A type that provides a random-access iterator that can read any `const` element in the string.|  
+|[difference_type](#difference_type)|A type that provides the difference between two iterators that refer to elements within the same string.|  
+|[iterator](#iterator)|A type that provides a random-access iterator that can read or modify any element in a string.|  
+|[npos](#npos)|An unsigned integral value initialized to -1 that indicates either "not found" or "all remaining characters" when a search function fails.|  
+|[pointer](#pointer)|A type that provides a pointer to a character element in a string or character array.|  
+|[reference](#reference)|A type that provides a reference to an element stored in a string.|  
+|[reverse_iterator](#reverse_iterator)|A type that provides a random-access iterator that can read or modify an element in a reversed string.|  
+|[size_type](#size_type)|An unsigned integral type for the number of elements in a string.|  
+|[traits_type](#traits_type)|A type for the character traits of the elements stored in a string.|  
+|[value_type](#value_type)|A type that represents the type of characters stored in a string.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[append](#append)|文字列の末尾に文字を追加します。|  
-|[assign](#assign)|文字列の内容に新しい文字の値を割り当てます。|  
-|[at](#at)|文字列内の指定した位置にある要素への参照を返します。|  
+|[append](#append)|Adds characters to the end of a string.|  
+|[assign](#assign)|Assigns new character values to the contents of a string.|  
+|[at](#at)|Returns a reference to the element at a specified location in the string.|  
 |[back](#back)||  
-|[begin](#begin)|文字列の 1 つ目の要素を示す反復子を返します。|  
-|[c_str](#c_str)|C スタイルの null で終わる文字列として、文字列の内容を変換します。|  
-|[capacity](#capacity)|文字列のメモリ割り当てを増やさずに文字列に格納できる要素の最大数を返します。|  
-|[cbegin](#cbegin)|文字列の 1 つ目の要素を示す定数反復子を返します。|  
-|[cend](#cend)|文字列内の最後の要素の次の場所を指す定数反復子を返します。|  
-|[clear](#clear)|文字列のすべての要素を消去します。|  
-|[compare](#compare)|2 つの文字列が等しいかどうか、または一方が辞書式に他方よりも小さいかどうかを判断するために、特定の文字列を含む文字列を比較します。|  
-|[copy](#copy)|コピー元の文字列のインデックス位置からターゲットの文字配列に最大で指定された文字数をコピーします。 使用しないでください。 代わりに [basic_string::_Copy_s](#copy_s) を使用します。|  
-|[crbegin](#crbegin)|反転文字列内の最初の要素を示す定数反復子を返します。|  
-|[crend](#crend)|反転文字列内の最後の要素の次の場所を指す定数反復子を返します。|  
-|[_Copy_s](#copy_s)|コピー元の文字列のインデックス位置からターゲットの文字配列に最大で指定された文字数をコピーします。|  
-|[data](#data)|文字列の内容を文字配列に変換します。|  
-|[empty](#empty)|文字列に文字が含まれているかどうかをテストします。|  
-|[end](#end)|文字列内の最後の要素の次の場所を指す反復子を返します。|  
-|[erase](#erase)|指定した位置から文字列の要素または要素範囲を削除します。|  
-|[find](#find)|指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で前方に検索します。|  
-|[find_first_not_of](#find_first_not_of)|指定された文字列の要素ではない最初の文字を文字列で検索します。|  
-|[find_first_of](#find_first_of)|指定された文字列の要素と一致する最初の文字を文字列で検索します。|  
-|[find_last_not_of](#find_last_not_of)|指定された文字列の要素ではない最後の文字を文字列で検索します。|  
-|[find_last_of](#find_last_of)|指定された文字列の要素である最後の文字を文字列で検索します。|  
-|[front](#front)|文字列内の最初の要素への参照を返します。|  
-|[get_allocator](#get_allocator)|文字列の構築に使用される `allocator` オブジェクトのコピーを返します。|  
-|[insert](#insert)|指定した位置の文字列に要素、複数の要素、または要素の範囲を挿入します。|  
-|[length](#length)|文字列内の現在の要素数を返します。|  
-|[max_size](#max_size)|文字列が含むことができる最大文字数を返します。|  
-|[pop_back](#pop_back)|文字列の最後の要素を消去します。|  
-|[push_back](#push_back)|文字列の末尾に要素を追加します。|  
-|[rbegin](#rbegin)|反転文字列の 1 つ目の要素への反復子を返します。|  
-|[rend](#rend)|反転文字列内の最後の要素の先を示す反復子を返します。|  
-|[replace](#replace)|指定された場所の文字列の要素を指定された文字、または他の範囲、文字列、または C 文字列からコピーされた文字で置き換えます。|  
-|[reserve](#reserve)|文字列のキャパシティを少なくとも指定した数に設定します。|  
-|[resize](#resize)|要素を必要に応じて追加または削除して、文字列の新しいサイズを指定します。|  
-|[rfind](#rfind)|指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で後方に検索します。|  
-|[shrink_to_fit](#shrink_to_fit)|文字列の余分なキャパシティを破棄します。|  
-|[size](#size)|文字列内の現在の要素数を返します。|  
-|[substr](#substr)|指定された位置から始まる文字列から最大でいくつかの文字の部分文字列をコピーします。|  
-|[swap](#swap)|2 つの文字列の内容を交換します。|  
+|[begin](#begin)|Returns an iterator addressing the first element in the string.|  
+|[c_str](#c_str)|Converts the contents of a string as a C-style, null-terminated, string.|  
+|[capacity](#capacity)|Returns the largest number of elements that could be stored in a string without increasing the memory allocation of the string.|  
+|[cbegin](#cbegin)|Returns a const iterator addressing the first element in the string.|  
+|[cend](#cend)|Returns a const iterator that addresses the location succeeding the last element in a string.|  
+|[clear](#clear)|Erases all elements of a string.|  
+|[compare](#compare)|Compares a string with a specified string to determine if the two strings are equal or if one is lexicographically less than the other.|  
+|[copy](#copy)|Copies at most a specified number of characters from an indexed position in a source string to a target character array. Deprecated. Use [basic_string::_Copy_s](#copy_s) instead.|  
+|[crbegin](#crbegin)|Returns a const iterator that addresses the first element in a reversed string.|  
+|[crend](#crend)|Returns a const iterator that addresses the location succeeding the last element in a reversed string.|  
+|[_Copy_s](#copy_s)|Copies at most a specified number of characters from an indexed position in a source string to a target character array.|  
+|[data](#data)|Converts the contents of a string into an array of characters.|  
+|[empty](#empty)|Tests whether the string contains characters.|  
+|[end](#end)|Returns an iterator that addresses the location succeeding the last element in a string.|  
+|[erase](#erase)|Removes an element or a range of elements in a string from a specified position.|  
+|[find](#find)|Searches a string in a forward direction for the first occurrence of a substring that matches a specified sequence of characters.|  
+|[find_first_not_of](#find_first_not_of)|Searches through a string for the first character that is not any element of a specified string.|  
+|[find_first_of](#find_first_of)|Searches through a string for the first character that matches any element of a specified string.|  
+|[find_last_not_of](#find_last_not_of)|Searches through a string for the last character that is not any element of a specified string.|  
+|[find_last_of](#find_last_of)|Searches through a string for the last character that is an element of a specified string.|  
+|[front](#front)|Returns a reference to the first element in a string.|  
+|[get_allocator](#get_allocator)|Returns a copy of the `allocator` object used to construct the string.|  
+|[insert](#insert)|Inserts an element or a number of elements or a range of elements into the string at a specified position.|  
+|[length](#length)|Returns the current number of elements in a string.|  
+|[max_size](#max_size)|Returns the maximum number of characters a string could contain.|  
+|[pop_back](#pop_back)|Erases the last element of the string.|  
+|[push_back](#push_back)|Adds an element to the end of the string.|  
+|[rbegin](#rbegin)|Returns an iterator to the first element in a reversed string.|  
+|[rend](#rend)|Returns an iterator that points just beyond the last element in a reversed string.|  
+|[replace](#replace)|Replaces elements in a string at a specified position with specified characters or characters copied from other ranges or strings or C-strings.|  
+|[reserve](#reserve)|Sets the capacity of the string to a number at least as great as a specified number.|  
+|[resize](#resize)|Specifies a new size for a string, appending or erasing elements as required.|  
+|[rfind](#rfind)|Searches a string in a backward direction for the first occurrence of a substring that matches a specified sequence of characters.|  
+|[shrink_to_fit](#shrink_to_fit)|Discards the excess capacity of the string.|  
+|[size](#size)|Returns the current number of elements in a string.|  
+|[substr](#substr)|Copies a substring of at most some number of characters from a string beginning from a specified position.|  
+|[swap](#swap)|Exchange the contents of two strings.|  
   
-### <a name="operators"></a>演算子  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[operator+=](#op_add_eq)|文字列に文字を追加します。|  
-|[operator=](#op_eq)|文字列の内容に新しい文字の値を割り当てます。|  
-|[operator&#91;&#93;](#op_at)|文字列に指定したインデックスのある文字への参照を提供します。|  
+|[operator+=](#op_add_eq)|Appends characters to a string.|  
+|[operator=](#op_eq)|Assigns new character values to the contents of a string.|  
+|[operator&#91;&#93;](#op_at)|Provides a reference to the character with a specified index in a string.|  
   
-## <a name="remarks"></a>コメント  
- 関数が [max_size](#max_size) の要素よりも長いシーケンスを生成するように指示された場合、関数は [length_error](../standard-library/length-error-class.md) 型のオブジェクトをスローして長さエラーを報告します。  
+## <a name="remarks"></a>Remarks  
+ If a function is asked to generate a sequence longer than [max_size](#max_size) elements, the function reports a length error by throwing an object of type [length_error](../standard-library/length-error-class.md).  
   
- 被制御シーケンスの要素を指定する参照、ポインター、および反復子は、被制御シーケンスを変更する関数の呼び出しの後、または非 **const** メンバー関数への最初の呼び出しの後、無効になることがあります。  
+ References, pointers, and iterators that designate elements of the controlled sequence can become invalid after any call to a function that alters the controlled sequence, or after the first call to a non- **const** member function.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<string>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<string>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="allocator_type"></a>  basic_string::allocator_type  
- 文字列オブジェクトの allocator クラスを表す型。  
+ A type that represents the allocator class for a string object.  
   
 ```  
 typedef Allocator allocator_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型はテンプレート パラメーター **Allocator** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **Allocator**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_allocator_type.cpp  
@@ -235,7 +289,7 @@ int main( )
 ```  
   
 ##  <a name="append"></a>  basic_string::append  
- 文字列の末尾に文字を追加します。  
+ Adds characters to the end of a string.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& append(
@@ -271,35 +325,35 @@ basic_string<CharType, Traits, Allocator>& append(
     const_iterator last);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 追加される C 文字列。  
+ The C-string to be appended.  
   
  `str`  
- 文字が追加される文字列。  
+ The string whose characters are to be appended.  
   
  `_Off`  
- 追加する文字の元の文字列の一部のインデックス。  
+ The index of the part of the source string supplying the characters to be appended.  
   
  `count`  
- ソース文字列から追加される最大文字数。  
+ The number of characters to be appended, at most, from the source string.  
   
  `_Ch`  
- 追加される文字値。  
+ The character value to be appended.  
   
  `first`  
- 追加される範囲内の先頭の要素の位置を示す入力反復子。  
+ An input iterator addressing the first element in the range to be appended.  
   
  `last`  
- 追加される範囲の最後の要素の次の要素の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the position of the one beyond the last element in the range to be appended.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数によって渡された文字が付加される文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the string object that is being appended with the characters passed by the member function.  
   
-### <a name="remarks"></a>コメント  
- 文字は、[operator+=](#op_add_eq) またはメンバー関数 **append** または [push_back](#push_back) を使用して文字列に追加することができます。 `operator+=` が単一引数値を追加するのに対し、複数引数の **append** メンバー関数では、文字列の特定の部分を指定して追加できます。  
+### <a name="remarks"></a>Remarks  
+ Characters may be appended to a string using the [operator+=](#op_add_eq) or the member functions **append** or [push_back](#push_back). `operator+=` appends single-argument values while the multiple-argument **append** member function allows a specific part of a string to be specified for adding.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_append.cpp  
@@ -392,7 +446,7 @@ The appended string str1 is: Hello World.
 ```  
   
 ##  <a name="assign"></a>  basic_string::assign  
- 文字列の内容に新しい文字の値を割り当てます。  
+ Assigns new character values to the contents of a string.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& assign(
@@ -428,35 +482,35 @@ basic_string<CharType, Traits, Allocator>& assign(
     const_iterator last);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 対象の文字列に割り当てられる C 文字列の文字を指すポインター。  
+ A pointer to the characters of the C-string to be assigned to the target string.  
   
  `count`  
- ソース文字列から追加される最大文字数。  
+ The number of characters to be appended, at most, from the source string.  
   
  `str`  
- 対象の文字列に割り当てられる文字のソース文字列。  
+ The source string whose characters are to be assigned to the target string.  
   
  `_Ch`  
- 割り当てられる文字値。  
+ The character value to be assigned.  
   
  `first`  
- ターゲット範囲に割り当てられるソース文字列の範囲の最初の文字の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the first character in the range of the source string to be assigned to the target range.  
   
  `last`  
- ターゲット範囲に割り当てられるソース文字列の範囲の最後の文字の次の文字の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the one beyond the last character in the range of the source string to be assigned to the target range.  
   
  `off`  
- 割り当てられる新しい文字の開始位置。  
+ The position at which new characters will start to be assigned.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数によって新しい文字が割り当てられる文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the string object that is being assigned new characters by the member function.  
   
-### <a name="remarks"></a>コメント  
- 文字列には、新しい文字値を割り当てることができます。 新しい値には、文字列および C 文字列または単一の文字を指定できます。 新しい値が 1 つのパラメーターで記述できる場合には、[operator=](#op_eq) を使用できます。それ以外の場合は、複数のパラメーターを持つメンバー関数 **assign** を使用して、対象の文字列に割り当てる文字列の部分を指定できます。  
+### <a name="remarks"></a>Remarks  
+ The strings can be assigned new character values. The new value can be either a string and C-string or a single character. The [operator=](#op_eq) may be used if the new value can be described by a single parameter; otherwise the member function **assign**, which has multiple parameters, can be used to specify which part of the string is to be assigned to a target string.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_assign.cpp  
@@ -549,7 +603,7 @@ The string str1 assigned a range of string str2f is: World.
 ```  
   
 ##  <a name="at"></a>  basic_string::at  
- 文字列に指定したインデックスのある文字への参照を提供します。  
+ Provides a reference to the character with a specified index in a string.  
   
 ```  
 const_reference at(size_type _Off) const;
@@ -558,23 +612,23 @@ const_reference at(size_type _Off) const;
 reference at(size_type _Off);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- 参照される要素の位置のインデックス。  
+ The index of the position of the element to be referenced.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターのインデックスで指定した位置の文字列の文字への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the character of the string at the position specified by the parameter index.  
   
-### <a name="remarks"></a>コメント  
- 文字列の最初の要素がゼロから始まるインデックスと、次の要素が連続した正の整数によってインデックスが作成できるように長さの文字列*n*が、 *n*th 要素は、数によってインデックス付けされた*n -* 1 です。  
+### <a name="remarks"></a>Remarks  
+ The first element of the string has an index of zero and the following elements are indexed consecutively by the positive integers, so that a string of length *n* has an *n*th element indexed by the number *n -* 1.  
   
- メンバー [operator&#91;&#93;](#op_at) は、メンバー関数 **at** より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
+ The member [operator&#91;&#93;](#op_at) is faster than the member function **at** for providing read and write access to the elements of a string.  
   
- メンバー `operator[]` では、パラメーターとして渡されたインデックスが有効かどうかがチェックされませんが、メンバー関数 **at** ではチェックされるため、有効性が不明な場合にはこちらを使用する必要があります。 メンバー関数 **at** に渡された無効なインデックス (インデックスが 0 未満または文字列のサイズ以上) は、[out_of_range クラス](../standard-library/out-of-range-class.md)例外をスローします。 無効なインデックスが `operator[]` に渡されると、未定義の動作が発生しますが、文字列の長さと等しいインデックスは、const 文字列の有効なインデックスで、このインデックスが渡されると演算子は null 文字を返します。  
+ The member `operator[]` does not check whether the index passed as a parameter is valid but the member function **at** does and so should be used if the validity is not certain. An invalid index, which is an index less that zero or greater than or equal to the size of the string, passed to the member function **at** throws an [out_of_range Class](../standard-library/out-of-range-class.md) exception. An invalid index passed to the `operator[]` results in undefined behavior, but the index equal to the length of the string is a valid index for const strings and the operator returns the null-character when passed this index.  
   
- 返された参照は、文字列の再割り当てまたは非 **const** 文字列の変更によって無効化される可能性があります。  
+ The reference returned may be invalidated by string reallocations or modifications for the non- **const** strings.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_at.cpp  
@@ -614,7 +668,7 @@ int main( )
 ```  
   
 ##  <a name="back"></a>  basic_string::back  
- 文字列の最後の要素への参照を返します。  
+ Returns a reference to the last element in the string.  
   
 ```  
 const_reference back() const;
@@ -623,13 +677,13 @@ const_reference back() const;
 reference back();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列の最後の要素 (空以外でなければなりません) への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the last element of the string, which must be non-empty.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="basic_string"></a>  basic_string::basic_string  
- 特定の文字によって初期化された空の文字列を作成します。または、他の文字列オブジェクトか C スタイル (null で終わる) 文字列の全体または一部のコピーである文字列を作成します。  
+ Constructs a string that is empty, initialized by specific characters, or is a copy of all or part of another string object or C style (null-terminated) string.  
   
 ```  
 basic_string();
@@ -699,40 +753,40 @@ basic_string(
     const_iterator last);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 作成される `string` の初期化に使用される文字が含まれた C 文字列。 この値を null ポインターにすることはできません。  
+ The C-string whose characters are to be used to initialize the `string` being constructed. This value cannot be a null pointer.  
   
  `_Al`  
- 作成される文字列オブジェクトのストレージ アロケーター クラス。  
+ The storage allocator class for the string object being constructed.  
   
  `count`  
- 初期化される文字数。  
+ The number of characters to be initialized.  
   
  `right`  
- 作成される文字列を初期化するための文字列。  
+ The string to initialize the string being constructed.  
   
  `_Roff`  
- 作成される文字列の文字値を初期化するために最初に使用される、文字列内の文字のインデックス。  
+ The index of a character in a string that is the first to be used to initialize character values for the string being constructed.  
   
  `_Ch`  
- 作成される文字列にコピーされる文字値。  
+ The character value to be copied into the string being constructed.  
   
  `first`  
- 挿入されるソース範囲内の先頭の要素の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the first element in the source range to be inserted.  
   
  `last`  
- 挿入されるソース範囲の最後の要素の次の要素の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the position of the one beyond the last element in the source range to be inserted.  
   
-### <a name="return-value"></a>戻り値  
- コンストラクターによって作成される文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the string object that is being constructed by the constructors.  
   
-### <a name="remarks"></a>コメント  
- すべてのコンストラクターは [basic_string::allocator_type](#allocator_type) を格納し、被制御シーケンスを初期化します。 アロケーター オブジェクトは、引数 `al` が指定されていれば、この引数です。 コピー コンストラクターの場合は、`right.`[basic_string::get_allocator](#get_allocator)`()` です。 それ以外の場合は `Alloc()` です。  
+### <a name="remarks"></a>Remarks  
+ All constructors store an [basic_string::allocator_type](#allocator_type) and initialize the controlled sequence. The allocator object is the argument `al`, if present. For the copy constructor, it is `right.`[basic_string::get_allocator](#get_allocator)`()`. Otherwise, it is `Alloc()`.  
   
- 被制御シーケンスは、残りのオペランドで指定された、オペランド シーケンスのコピーに初期化されます。 オペランド シーケンスを含まないコンストラクターは、空の初期被制御シーケンスを指定します。 `InputIterator` がテンプレート コンストラクターの整数型の場合、オペランド シーケンス _F `irst,  last` は `(size_type) first, (value_type) last` と同じ動作になります。  
+ The controlled sequence is initialized to a copy of the operand sequence specified by the remaining operands. A constructor without an operand sequence specifies an empty initial controlled sequence. If `InputIterator` is an integer type in a template constructor, the operand sequence _F `irst,  last` behaves the same as `(size_type) first, (value_type) last`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_ctor.cpp  
@@ -782,7 +836,7 @@ int main( )
 ```  
   
 ##  <a name="begin"></a>  basic_string::begin  
- 文字列の 1 つ目の要素を示す反復子を返します。  
+ Returns an iterator addressing the first element in the string.  
   
 ```  
 const_iterator begin() const;
@@ -791,10 +845,10 @@ const_iterator begin() const;
 iterator begin();
 ```  
   
-### <a name="return-value"></a>戻り値  
- シーケンスの最初の要素または空のシーケンスの末尾の次の位置を示すランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A random-access iterator that addresses the first element of the sequence or just beyond the end of an empty sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_begin.cpp  
@@ -831,21 +885,21 @@ int main( ) {
 ```  
   
 ##  <a name="c_str"></a>  basic_string::c_str  
- C スタイルの null で終わる文字列として、文字列の内容を変換します。  
+ Converts the contents of a string as a C-style, null-terminated string.  
   
 ```  
 const value_type *c_str() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 呼び出し文字列の C スタイル バージョンへのポインター。  ポインター値は、オブジェクトの basic_string クラスでデストラクターなどの非 const 関数を呼び出した後に無効になります。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the C-style version of the invoking string.  The pointer value is not valid after calling a non-const function, including the destructor, in the basic_string class on the object.  
   
-### <a name="remarks"></a>コメント  
- C++ テンプレート クラス basic_string\<char> に属している string 型のオブジェクトは、null で終了する必要はありません。 null 文字 '\0' は、C 文字列では文字列の末尾をマークするための特殊文字として使用されますが、string 型のオブジェクトでは特別な意味を持たず、他の文字と同様に文字列の一部にすることができます。 定数 **char\*** から文字列への自動変換がありますが、この文字列クラスは C スタイル文字列から **basic_string\<char >** 型のオブジェクトへの自動変換を提供していません。  
+### <a name="remarks"></a>Remarks  
+ Objects of type string belonging to the C++ template class basic_string\<char> are not necessarily null terminated. The null character ' \0 ' is used as a special character in a C-string to mark the end of the string but has no special meaning in an object of type string and may be a part of the string just like any other character. There is an automatic conversion from const **char\*** into strings, but the string class does not provide for automatic conversions from C-style strings to objects of type **basic_string\<char>**.  
   
- 返された C スタイル文字列は、変更 (文字列へのポインターが無効になる可能性があるため) または削除 (文字列には有効期限があり、クラス文字列によって所有されているため) しないでください。  
+ The returned C-style string should not be modified, as this could invalidate the pointer to the string, or deleted, as the string has a limited lifetime and is owned by the class string.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_c_str.cpp  
@@ -892,19 +946,19 @@ The length of C-style string str1 = 11
 ```  
   
 ##  <a name="capacity"></a>  basic_string::capacity  
- 文字列のメモリ割り当てを増やさずに文字列に格納できる要素の最大数を返します。  
+ Returns the largest number of elements that could be stored in a string without increasing the memory allocation of the string.  
   
 ```  
 size_type capacity() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列を保持するためにメモリに現在割り当てられている記憶域のサイズ。  
+### <a name="return-value"></a>Return Value  
+ The size of storage currently allocated in memory to hold the string.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、被制御シーケンスを保持するために現在割り当てられている記憶域を返します (値は [size](#size) 以上)。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the storage currently allocated to hold the controlled sequence, a value at least as large as [size](#size).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_capacity.cpp  
@@ -959,19 +1013,19 @@ int main( )
 ```  
   
 ##  <a name="cbegin"></a>  basic_string::cbegin  
- 範囲内の最初の要素を示す `const` 反復子を返します。  
+ Returns a `const` iterator that addresses the first element in the range.  
   
 ```  
 const_iterator cbegin() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 範囲の最初の要素、または空の範囲の末尾の次の位置 (空の範囲の場合、`const`) を指し示す `cbegin() == cend()` ランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A `const` random-access iterator that points at the first element of the range, or the location just beyond the end of an empty range (for an empty range, `cbegin() == cend()`).  
   
-### <a name="remarks"></a>コメント  
- `cbegin` の戻り値で範囲内の要素を変更することはできません。  
+### <a name="remarks"></a>Remarks  
+ With the return value of `cbegin`, the elements in the range cannot be modified.  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ You can use this member function in place of the `begin()` member function to guarantee that the return value is `const_iterator`. Typically, it's used in conjunction with the [auto](../cpp/auto-cpp.md) type deduction keyword, as shown in the following example. In the example, consider `Container` to be a modifiable (non- `const`) container of any kind that supports `begin()` and `cbegin()`.  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -982,19 +1036,19 @@ auto i2 = Container.cbegin();
 ```  
   
 ##  <a name="cend"></a>  basic_string::cend  
- 範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
+ Returns a `const` iterator that addresses the location just beyond the last element in a range.  
   
 ```  
 const_iterator cend() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 範囲の末尾の次の位置を指し示す `const` ランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A `const` random-access iterator that points just beyond the end of the range.  
   
-### <a name="remarks"></a>コメント  
- `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
+### <a name="remarks"></a>Remarks  
+ `cend` is used to test whether an iterator has passed the end of its range.  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ You can use this member function in place of the `end()` member function to guarantee that the return value is `const_iterator`. Typically, it's used in conjunction with the [auto](../cpp/auto-cpp.md) type deduction keyword, as shown in the following example. In the example, consider `Container` to be a modifiable (non- `const`) container of any kind that supports `end()` and `cend()`.  
   
 ```cpp  
 auto i1 = Container.end();
@@ -1004,19 +1058,19 @@ auto i2 = Container.cend();
 // i2 is Container<T>::const_iterator  
 ```  
   
- `cend` によって返された値は逆参照しないでください。  
+ The value returned by `cend` should not be dereferenced.  
   
 ##  <a name="clear"></a>  basic_string::clear  
- 文字列のすべての要素を消去します。  
+ Erases all elements of a string.  
   
 ```  
 void clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数が呼び出された文字列は空になります。  
+### <a name="remarks"></a>Remarks  
+ The string on which the member function is called will be empty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_clear.cpp  
@@ -1056,7 +1110,7 @@ Nothing printed above because the string str1 is empty.
 ```  
   
 ##  <a name="compare"></a>  basic_string::compare  
- 2 つの文字列が等しいかどうか、または一方が辞書順で他方よりも小さいかどうかを判断するために、指定した文字列で大文字と小文字を区別した比較を実行します。  
+ Performs a case sensitive comparison with a specified string to determine if the two strings are equal or if one is lexicographically less than the other.  
   
 ```  
 int compare(
@@ -1094,37 +1148,37 @@ int compare(
     size_type _Num2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- オペランド文字列と比較する文字列。  
+ The string that is to be compared to the operand string.  
   
  `_Pos1`  
- 比較の開始位置を示すオペランド文字列のインデックス。  
+ The index of the operand string at which the comparison begins.  
   
  `_Num1`  
- 比較するオペランド文字列の最大文字数。  
+ The maximum number of characters from the operand string to be compared.  
   
  `_Num2`  
- 比較するパラメーター文字列の最大文字数。  
+ The maximum number of characters from the parameter string to be compared.  
   
  `_Off`  
- 比較の開始位置を示すパラメーター文字列のインデックス。  
+ The index of the parameter string at which the comparison begins.  
   
  `count`  
- 比較するパラメーター文字列の最大文字数。  
+ The maximum number of characters from the parameter string to be compared.  
   
  `ptr`  
- オペランド文字列と比較する C 文字列。  
+ The C-string to be compared to the operand string.  
   
-### <a name="return-value"></a>戻り値  
- オペランド文字列がパラメーター文字列より小さい場合は負の値、2 つの文字列が等しい場合は 0、オペランド文字列がパラメーター文字列より大きい場合は正の値になります。  
+### <a name="return-value"></a>Return Value  
+ A negative value if the operand string is less than the parameter string; zero if the two strings are equal; or a positive value if the operand string is greater than the parameter string.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数 **compare** は、使用状況に応じてパラメーターのすべてまたは部分をオペランド文字列と比較します。  
+### <a name="remarks"></a>Remarks  
+ The **compare** member functions compare either all or part of the parameter and operand strings depending on which in used.  
   
- 比較では、大文字と小文字を区別します。  
+ The comparison performed is case sensitive.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_compare.cpp  
@@ -1318,33 +1372,33 @@ The 3 characters from position 2 of the operand string are equal to
 ```  
   
 ##  <a name="const_iterator"></a>  basic_string::const_iterator  
- 文字列内の **const** 要素にアクセスし、読み取ることができるランダム アクセス反復子を提供する型。  
+ A type that provides a random-access iterator that can access and read a **const** element in the string.  
   
 ```  
 typedef implementation-defined const_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `const_iterator` 型は文字値の変更には使用できず、順方向に文字列を反復処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ A type `const_iterator` cannot be used to modify the value of a character and is used to iterate through a string in a forward direction.  
   
-### <a name="example"></a>例  
-  `const_iterator` の宣言方法や使用方法の例については、[begin](#begin) の例をご覧ください。  
+### <a name="example"></a>Example  
+  See the example for [begin](#begin) for an example of how to declare and use `const_iterator`.  
   
 ##  <a name="const_pointer"></a>  basic_string::const_pointer  
- 文字列内の **const** 要素へのポインターを提供する型。  
+ A type that provides a pointer to a **const** element in a string.  
   
 ```  
 typedef typename allocator_type::const_pointer const_pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は **allocator_type::const_pointer** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for **allocator_type::const_pointer**.  
   
- **string** 型の場合、これは `char`* と同じになります。  
+ For type **string**, it is equivalent to `char`*.  
   
- const が宣言されているポインターは、宣言時に初期化する必要があります。 const ポインターは常に同じメモリ位置を指しますが、定数データまたは非定数データを指すこともできます。  
+ Pointers that are declared const must be initialized when they are declared. Const pointers always point to the same memory location and may point to constant or nonconstant data.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_const_ptr.cpp  
@@ -1369,37 +1423,37 @@ The C-string cstr1c is: Out There.
 ```  
   
 ##  <a name="const_reference"></a>  basic_string::const_reference  
- **const** 操作の読み取りと実行のために、文字列に格納された **const** 要素への参照を提供する型。  
+ A type that provides a reference to a **const** element stored in a string for reading and performing **const** operations.  
   
 ```  
 typedef typename allocator_type::const_reference const_reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `const_reference` 型で要素の値を変更することはできません。  
+### <a name="remarks"></a>Remarks  
+ A type `const_reference` cannot be used to modify the value of an element.  
   
- この型は **allocator_type::const_reference** のシノニムです。 文字列 **type** の場合、これは const **char&** と同じになります。  
+ The type is a synonym for **allocator_type::const_reference**. For string **type**, it is equivalent to const **char&**.  
   
-### <a name="example"></a>例  
-  `const_reference` の宣言方法や使用方法の例については、[at](#at) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [at](#at) for an example of how to declare and use `const_reference`.  
   
 ##  <a name="const_reverse_iterator"></a>  basic_string::const_reverse_iterator  
- 文字列内の任意の **const** 要素を読み取ることができるランダム アクセス反復子を提供する型。  
+ A type that provides a random-access iterator that can read any **const** element in the string.  
   
 ```  
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `const_reverse_iterator` 型は文字の値を変更できず、逆の順序で文字列を反復処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ A type `const_reverse_iterator` cannot modify the value of a character and is used to iterate through a string in reverse.  
   
-### <a name="example"></a>例  
-  `const_reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [rbegin](#rbegin) for an example of how to declare and use `const_reverse_iterator`.  
   
 ##  <a name="copy"></a>  basic_string::copy  
- コピー元の文字列のインデックス位置からターゲットの文字配列に最大で指定された文字数をコピーします。  
+ Copies at most a specified number of characters from an indexed position in a source string to a target character array.  
   
- 渡された値が正しいことの確認を呼び出し元に依存するため、このメソッドは安全ではない可能性があります。 代わりに [basic_string::_Copy_s](#copy_s) の使用を検討してください。  
+ This method is potentially unsafe, as it relies on the caller to check that the passed values are correct. Consider using [basic_string::_Copy_s](#copy_s) instead.  
   
 ```  
 size_type copy(
@@ -1408,23 +1462,23 @@ size_type copy(
     size_type _Off = 0) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 要素のコピー先のターゲット文字配列。  
+ The target character array to which the elements are to be copied.  
   
  _ `Count`  
- ソース文字列からコピーされる最大文字数。  
+ The number of characters to be copied, at most, from the source string.  
   
  `_Off`  
- ソース文字列内のコピーの作成開始位置。  
+ The beginning position in the source string from which copies are to be made.  
   
-### <a name="return-value"></a>戻り値  
- 実際にコピーされた文字数。  
+### <a name="return-value"></a>Return Value  
+ The number of characters actually copied.  
   
-### <a name="remarks"></a>コメント  
- null 文字はコピーの末尾には追加されません。  
+### <a name="remarks"></a>Remarks  
+ A null character is not appended to the end of the copy.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_copy.cpp  
@@ -1474,29 +1528,29 @@ The copied characters array2 is: World
 ```  
   
 ##  <a name="crbegin"></a>  basic_string::crbegin  
- 反転文字列内の最初の要素を示す定数反復子を返します。  
+ Returns a const iterator that addresses the first element in a reversed string.  
   
 ```  
 const_reverse_iterator crbegin() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列の末尾の次の位置を指し示す反転反復子。 この位置が反転文字列の先頭に指定されます。  
+### <a name="return-value"></a>Return Value  
+ A reverse iterator that points just beyond the end of the string. The position designates the beginning of the reverse string.  
   
 ##  <a name="crend"></a>  basic_string::crend  
- 反転文字列内の最後の要素の次の場所を指す定数反復子を返します。  
+ Returns a const iterator that addresses the location succeeding the last element in a reversed string.  
   
 ```  
 const_reverse_iterator crend() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 反転文字列内の最後の要素の次の場所 (通常の順序の文字列内の最初の要素の前の場所) を指す定数反転反復子。  
+### <a name="return-value"></a>Return Value  
+ A const reverse iterator that addresses the location succeeding the last element in a reversed string (the location that had preceded the first element in the unreversed string).  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="copy_s"></a>  basic_string::_Copy_s  
- コピー元の文字列のインデックス位置からターゲットの文字配列に最大で指定された文字数をコピーします。  
+ Copies at most a specified number of characters from an indexed position in a source string to a target character array.  
   
 ```  
 size_type _Copy_s(
@@ -1506,26 +1560,26 @@ size_type _Copy_s(
     size_type _Off = 0) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dest`  
- 要素のコピー先のターゲット文字配列。  
+ The target character array to which the elements are to be copied.  
   
  `dest_size`  
- `dest` のサイズ。  
+ The size of `dest`.  
   
  _ `Count`  
- ソース文字列からコピーされる最大文字数。  
+ The number of characters to be copied, at most, from the source string.  
   
  `_Off`  
- ソース文字列内のコピーの作成開始位置。  
+ The beginning position in the source string from which copies are to be made.  
   
-### <a name="return-value"></a>戻り値  
- 実際にコピーされた文字数。  
+### <a name="return-value"></a>Return Value  
+ The number of characters actually copied.  
   
-### <a name="remarks"></a>コメント  
- null 文字はコピーの末尾には追加されません。  
+### <a name="remarks"></a>Remarks  
+ A null character is not appended to the end of the copy.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string__Copy_s.cpp  
@@ -1573,23 +1627,23 @@ The copied characters array2 is: World
 ```  
   
 ##  <a name="data"></a>  basic_string::data  
- 文字列の内容を文字配列に変換します。  
+ Converts the contents of a string into an array of characters.  
   
 ```  
 const value_type *data() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列のコンテンツを含む配列の最初の要素を指すポインター、または空の配列の場合は、逆参照できない null 以外のポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first element of the array containing the contents of the string, or, for an empty array, a non-null pointer that cannot be dereferenced.  
   
-### <a name="remarks"></a>コメント  
- C++ テンプレート クラス basic_string \<char> に属している string 型のオブジェクトは、null で終了する必要はありません。 null 文字が追加されないため、**data** の戻り値の型は有効な C 文字列ではありません。 null 文字 '\0' は、C 文字列では文字列の末尾をマークするための特殊文字として使用されますが、string 型のオブジェクトでは特別な意味を持たず、他の文字と同様に文字列オブジェクトの一部にすることができます。  
+### <a name="remarks"></a>Remarks  
+ Objects of type string belonging to the C++ template class basic_string \<char> are not necessarily null terminated. The return type for **data** is not a valid C-string, because no null character gets appended. The null character ' \0 ' is used as a special character in a C-string to mark the end of the string, but has no special meaning in an object of type string and may be a part of the string object just like any other character.  
   
- 定数 **char\*** から文字列への自動変換がありますが、この文字列クラスは C スタイル文字列から **basic_string \<char>** 型のオブジェクトへの自動変換を提供しません。  
+ There is an automatic conversion from const **char\*** into strings, but the string class does not provide for automatic conversions from C-style strings to objects of type **basic_string \<char>**.  
   
- 返された文字列は、変更 (文字列へのポインターが無効になる可能性があるため) または削除 (文字列には有効期限があり、クラス文字列によって所有されているため) しないでください。  
+ The returned string should not be modified, because this could invalidate the pointer to the string, or deleted, because the string has a limited lifetime and is owned by the class string.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_data.cpp  
@@ -1636,18 +1690,18 @@ The length of C-style string str1 = 11
 ```  
   
 ##  <a name="difference_type"></a>  basic_string::difference_type  
- 同じ文字列内の要素を参照する 2 反復子の違いを提供する型。  
+ A type that provides the difference between two iterators that refer to elements within the same string.  
   
 ```  
 typedef typename allocator_type::difference_type difference_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 符号付き整数型は、被制御シーケンス内にある 2 つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。  
+### <a name="remarks"></a>Remarks  
+ The signed integer type describes an object that can represent the difference between the addresses of any two elements in the controlled sequence.  
   
- **string** 型の場合、これは **ptrdiff_t** と同じになります。  
+ For type **string**, it is equivalent to **ptrdiff_t**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_diff_type.cpp  
@@ -1682,19 +1736,19 @@ The difference is: 6.
 ```  
   
 ##  <a name="empty"></a>  basic_string::empty  
- 文字列に文字が含まれているかどうかをテストします。  
+ Tests whether the string contains characters or not.  
   
 ```  
 bool empty() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列オブジェクトに文字が含まれていない場合は **true**、1 つ以上の文字が含まれている場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object contains no characters; **false** if it has at least one character.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[size](#size) == 0 と同じです。  
+### <a name="remarks"></a>Remarks  
+ The member function is equivalent to [size](#size) == 0.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_empty.cpp  
@@ -1727,7 +1781,7 @@ int main() {
 ```  
   
 ##  <a name="end"></a>  basic_string::end  
- 文字列内の最後の要素の次の場所を指す反復子を返します。  
+ Returns an iterator that addresses the location succeeding the last element in a string.  
   
 ```  
 const_iterator end() const;
@@ -1736,15 +1790,15 @@ const_iterator end() const;
 iterator end();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列内の最後の要素の次の位置を指すランダム アクセス反復子を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a random-access iterator that addresses the location succeeding the last element in a string.  
   
-### <a name="remarks"></a>コメント  
- **end** は、反復子が文字列の末尾に達したかどうかをテストするためによく使用されます。 **end** によって返された値は逆参照しないでください。  
+### <a name="remarks"></a>Remarks  
+ **end** is often used to test whether an iterator has reached the end of its string. The value returned by **end** should not be dereferenced.  
   
- **end** の戻り値が `const_iterator` に割り当てられている場合、文字列オブジェクトを変更することはできません。 **end** の戻り値が **iterator** に割り当てられている場合、文字列オブジェクトを変更することはできません。  
+ If the return value of **end** is assigned to a `const_iterator`, the string object cannot be modified. If the return value of **end** is assigned to an **iterator**, the string object can be modified.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_end.cpp  
@@ -1798,7 +1852,7 @@ The string str2 is empty.
 ```  
   
 ##  <a name="erase"></a>  basic_string::erase  
- 指定した位置から文字列の要素または要素範囲を削除します。  
+ Removes an element or a range of elements in a string from a specified position.  
   
 ```  
 iterator erase(
@@ -1813,29 +1867,29 @@ basic_string<CharType, Traits, Allocator>& erase(
     size_type count = npos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 消去範囲内の最初の要素の位置を示す反復子。  
+ An iterator addressing the position of the first element in the range to be erased.  
   
  `last`  
- 消去範囲内の最後の要素の次の位置を示す反復子。  
+ An iterator addressing the position one past the last element in the range to be erased.  
   
  `_It`  
- 消去される文字列内の要素の位置を示す反復子。  
+ An iterator addressing the position of the element in the string to be erased.  
   
  `_Pos`  
- 削除される文字列内の最初の文字のインデックス。  
+ The index of the first character in the string to be removed.  
   
  `count`  
- *_Pos* で始まる文字列の範囲内に同じ数の要素がある場合に削除される要素の数。  
+ The number of elements that will be removed if there are as many in the range of the string beginning with *_Pos*.  
   
-### <a name="return-value"></a>戻り値  
- 最初の 2 つのメンバー関数には、メンバー関数によって削除される最後の文字の後の最初の文字を指定する反復子。 3 番目のメンバー関数には、要素を消去する文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ For the first two member functions, an iterator addressing the first character after the last character removed by the member function. For the third member function, a reference to the string object from which the elements have been erased.  
   
-### <a name="remarks"></a>コメント  
- 3 番目のメンバー関数は **\*this** を返します。  
+### <a name="remarks"></a>Remarks  
+ The third member function returns **\*this**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_erase.cpp  
@@ -1897,7 +1951,7 @@ The modified string object str3m is: Hello .
 ```  
   
 ##  <a name="find"></a>  basic_string::find  
- 指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で前方に検索します。  
+ Searches a string in a forward direction for the first occurrence of a substring that matches a specified sequence of characters.  
   
 ```  
 size_type find(
@@ -1921,26 +1975,26 @@ size_type find(
     size_type _Off = 0) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を開始する位置のインデックス。  
+ Index of the position at which the search is to begin.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、検索する部分文字列の最初の文字のインデックス、それ以外の場合 `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the first character of the substring searched for when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_find.cpp  
@@ -2072,7 +2126,7 @@ The index of the 1st element of 'clear' in str4 is: 0
 ```  
   
 ##  <a name="find_first_not_of"></a>  basic_string::find_first_not_of  
- 指定された文字列の要素ではない最初の文字を文字列で検索します。  
+ Searches through a string for the first character that is not an element of a specified string.  
   
 ```  
 size_type find_first_not_of(
@@ -2096,26 +2150,26 @@ size_type find_first_not_of(
     size_type _Off = 0) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を開始する位置のインデックス。  
+ Index of the position at which the search is to begin.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、検索する部分文字列の最初の文字のインデックス、それ以外の場合 `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the first character of the substring searched for when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_find_first_not_of.cpp  
@@ -2260,7 +2314,7 @@ The index of the 1st non occurrence of an element of '12' in str4 after
 ```  
   
 ##  <a name="find_first_of"></a>  basic_string::find_first_of  
- 指定された文字列の要素と一致する最初の文字を文字列で検索します。  
+ Searches through a string for the first character that matches any element of a specified string.  
   
 ```  
 size_type find_first_of(
@@ -2284,26 +2338,26 @@ size_type find_first_of(
     size_type _Off = 0) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を開始する位置のインデックス。  
+ Index of the position at which the search is to begin.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、検索する部分文字列の最初の文字のインデックス、それ以外の場合 `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the first character of the substring searched for when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_find_first_of.cpp  
@@ -2447,7 +2501,7 @@ The index of the 1st occurrence of an element of 'a2' in str4 after
 ```  
   
 ##  <a name="find_last_not_of"></a>  basic_string::find_last_not_of  
- 指定された文字列の要素ではない最後の文字を文字列で検索します。  
+ Searches through a string for the last character that is not any element of a specified string.  
   
 ```  
 size_type find_last_not_of(
@@ -2471,26 +2525,26 @@ size_type find_last_not_of(
     size_type _Off = npos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を終了する位置のインデックス。  
+ Index of the position at which the search is to finish.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、検索する部分文字列の最初の文字のインデックス、それ以外の場合 `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the first character of the substring searched for when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_find_last_not_of.cpp  
@@ -2636,7 +2690,7 @@ The index of the last occurrence of an element not in '12'
 ```  
   
 ##  <a name="find_last_of"></a>  basic_string::find_last_of  
- 指定された文字列の要素と一致する最後の文字を文字列で検索します。  
+ Searches through a string for the last character that matches any element of a specified string.  
   
 ```  
 size_type find_last_of(
@@ -2663,26 +2717,26 @@ size_type find_last_of(
     size_type _Off = npos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を終了する位置のインデックス。  
+ Index of the position at which the search is to finish.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は検索する部分文字列の最後の文字のインデックス、それ以外の場合は `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the last character of the substring searched for when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_find_last_of.cpp  
@@ -2813,7 +2867,7 @@ The index of the last occurrence of an element of 'a2' in str4 before
 ```  
   
 ##  <a name="front"></a>  basic_string::front  
- 文字列内の最初の要素への参照を返します。  
+ Returns a reference to the first element in a string.  
   
 ```  
 const_reference front() const;
@@ -2822,27 +2876,27 @@ const_reference front() const;
 reference front();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列の最初の要素への参照。空以外でなければなりません。  
+### <a name="return-value"></a>Return Value  
+ A reference to the first element of the string, which must be non-empty.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="get_allocator"></a>  basic_string::get_allocator  
- 文字列の構築に使用されるアロケーター オブジェクトのコピーを返します。  
+ Returns a copy of the allocator object used to construct the string.  
   
 ```  
 allocator_type get_allocator() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列で使用されるアロケーター。  
+### <a name="return-value"></a>Return Value  
+ The allocator used by the string.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、格納されているアロケーター オブジェクトを返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the stored allocator object.  
   
- この文字列クラスのアロケーターは、クラスがどのようにストレージを管理するかを指定します。 コンテナー クラスで提供される既定のアロケーターは、ほとんどのプログラミング要件に対応しています。 独自のアロケーター クラスを作成して使用することは、C++ における高度な作業の 1 つです。  
+ Allocators for the string class specify how the class manages storage. The default allocators supplied with container classes are sufficient for most programming needs. Writing and using your own allocator class is an advanced C++ topic.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_get_allocator.cpp  
@@ -2868,7 +2922,7 @@ int main( )
 ```  
   
 ##  <a name="insert"></a>  basic_string::insert  
- 指定した位置の文字列に要素、複数の要素、または要素の範囲を挿入します。  
+ Inserts an element or a number of elements or a range of elements into the string at a specified position.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& insert(
@@ -2923,38 +2977,38 @@ void insert(
     const_iterator last);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *_P0*  
- 新しい文字の挿入ポイントの背後の位置にあるインデックス。  
+ The index of the position behind the point of insertion the new characters.  
   
  `ptr`  
- C 文字列全体または一部がこの文字列に挿入されます。  
+ The C-string to be wholly or partly inserted into the string.  
   
  `count`  
- 挿入する文字の数。  
+ The number of characters to be inserted.  
   
  `str`  
- 文字列全体または一部が対象の文字列に挿入されます。  
+ The string to be wholly or partly inserted into the target string.  
   
  `_Off`  
- 追加する文字の元の文字列の一部のインデックス。  
+ The index of the part of the source string supplying the characters to be appended.  
   
  `_Ch`  
- 挿入する要素の文字の値。  
+ The character value of the elements to be inserted.  
   
  `_It`  
- 文字を挿入する背後の位置を示す反復子。  
+ An iterator addressing the position behind which a character is to be inserted.  
   
  `first`  
- 挿入されるソース範囲内の先頭の要素の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the first element in the source range to be inserted.  
   
  `last`  
- 挿入されるソース範囲の最後の要素の次の要素の位置を示す、入力反復子、const_pointer、または const_iterator。  
+ An input iterator, const_pointer, or const_iterator addressing the position of the one beyond the last element in the source range to be inserted.  
   
-### <a name="return-value"></a>戻り値  
- メンバー関数に応じて、メンバー関数によって新しい文字が割り当てられている文字列オブジェクトへの参照、または (個々の文字の挿入の場合) 挿入する文字の位置を示す反復子のいずれかを示すか、または何も示しません。  
+### <a name="return-value"></a>Return Value  
+ Either a reference to the string object that is being assigned new characters by the member function or, in the case of individual character insertions, an iterator addressing the position of the character inserted, or none, depending on the particular member function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_insert.cpp  
@@ -3044,29 +3098,29 @@ The string with a character inserted from a range is: ABCDeeeHIJ
 ```  
   
 ##  <a name="iterator"></a>  basic_string::iterator  
- 文字列内の **const** 要素にアクセスし、読み取ることができるランダム アクセス反復子を提供する型。  
+ A type that provides a random-access iterator that can access and read a **const** element in the string.  
   
 ```  
 typedef implementation-defined iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- **iterator** 型は文字値の変更に使用でき、順方向に文字列を反復処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ A type **iterator** can be used to modify the value of a character and is used to iterate through a string in a forward direction.  
   
-### <a name="example"></a>例  
-  **iterator** の宣言方法や使用方法の例については、[begin](#begin) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [begin](#begin) for an example of how to declare and use **iterator**.  
   
 ##  <a name="length"></a>  basic_string::length  
- 文字列内の現在の要素数を返します。  
+ Returns the current number of elements in a string.  
   
 ```  
 size_type length() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は [size](#size) と同じです。  
+### <a name="remarks"></a>Remarks  
+ The member function is the same as [size](#size).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_length.cpp  
@@ -3121,19 +3175,19 @@ int main( )
 ```  
   
 ##  <a name="max_size"></a>  basic_string::max_size  
- 文字列が含むことができる最大文字数を返します。  
+ Returns the maximum number of characters a string could contain.  
   
 ```  
 size_type max_size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列が含むことができる最大文字数。  
+### <a name="return-value"></a>Return Value  
+ The maximum number of characters a string could contain.  
   
-### <a name="remarks"></a>コメント  
- 操作が最大サイズを超える長さの文字列を生成すると、[length_error Class](../standard-library/length-error-class.md) 型の例外がスローされます。  
+### <a name="remarks"></a>Remarks  
+ A exception of type [length_error Class](../standard-library/length-error-class.md) is thrown when an operation produces a string with a length greater than the maximum size.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_max_size.cpp  
@@ -3188,20 +3242,20 @@ int main( )
 ```  
   
 ##  <a name="npos"></a>  basic_string::npos  
- "Not found"いずれかを示す-1 または「残りの文字をすべて」に初期化された符号なし整数値検索機能に失敗するとします。  
+ An unsigned integral value initialized to -1 that indicates either "not found" or "all remaining characters" when a search function fails.  
   
 ```  
 static const size_type npos = -1;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `npos` の値に対して戻り値がチェックされる際に、戻り値が [size_type](#size_type) 型で、`int` または `unsigned` のどちらでもない場合を除き、機能しない場合があります。  
+### <a name="remarks"></a>Remarks  
+ When the return value is to be checked for the `npos` value, it might not work unless the return value is of type [size_type](#size_type) and not either `int` or `unsigned`.  
   
-### <a name="example"></a>例  
-  `npos` の宣言方法や使用方法の例については、[find](#find) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [find](#find) for an example of how to declare and use `npos`.  
   
 ##  <a name="op_add_eq"></a>  basic_string::operator+=  
- 文字列に文字を追加します。  
+ Appends characters to a string.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& operator+=(
@@ -3214,23 +3268,23 @@ basic_string<CharType, Traits, Allocator>& operator+=(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 追加される文字。  
+ The character to be appended.  
   
  `ptr`  
- 追加される C 文字列の文字。  
+ The characters of the C-string to be appended.  
   
  `right`  
- 追加される文字列の文字。  
+ The characters of the string to be appended.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数によって渡された文字が付加される文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the string object that is being appended with the characters passed by the member function.  
   
-### <a name="remarks"></a>コメント  
- 文字は、`operator+=` またはメンバー関数 [append](#append) または [push_back](#push_back) を使用して文字列に追加することができます。 `operator+=` が単一引数値を追加するのに対し、複数引数の append メンバー関数では、文字列の特定の部分を指定して追加できます。  
+### <a name="remarks"></a>Remarks  
+ Characters may be appended to a string using the `operator+=` or the member functions [append](#append) or [push_back](#push_back). The `operator+=` appends single-argument values while the multiple argument append member function allows a specific part of a string to be specified for adding.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_op_app.cpp  
@@ -3286,7 +3340,7 @@ The doubly appended strig str1 is: Hello Wide World.
 ```  
   
 ##  <a name="op_eq"></a>  basic_string::operator=  
- 文字列の内容に新しい文字の値を割り当てます。  
+ Assigns new character values to the contents of a string.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& operator=(
@@ -3302,23 +3356,23 @@ basic_string<CharType, Traits, Allocator>& operator=(
     const basic_string<CharType, Traits, Allocator>&& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 割り当てられる文字値。  
+ The character value to be assigned.  
   
  `ptr`  
- 対象の文字列に割り当てられる C 文字列の文字を指すポインター。  
+ A pointer to the characters of the C-string to be assigned to the target string.  
   
  `right`  
- 対象の文字列に割り当てられる文字のソース文字列。  
+ The source string whose characters are to be assigned to the target string.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数によって新しい文字が割り当てられる文字列オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the string object that is being assigned new characters by the member function.  
   
-### <a name="remarks"></a>コメント  
- 文字列には、新しい文字値を割り当てることができます。 新しい値には、文字列および C 文字列または単一の文字を指定できます。 新しい値が 1 つのパラメーターで記述できる場合には、`operator=` を使用できます。それ以外の場合は、複数のパラメーターを持つメンバー関数 [assign](#assign) を使用して、対象の文字列に割り当てる文字列の部分を指定できます。  
+### <a name="remarks"></a>Remarks  
+ The strings may be assigned new character values. The new value may be either a string and C-string or a single character. The `operator=` may be used if the new value can be described by a single parameter, otherwise the member function [assign](#assign), which has multiple parameters, may be used to specify which part of the string is to be assigned to a target string.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_op_assign.cpp  
@@ -3376,32 +3430,32 @@ The string str1 reassigned with string str3c is: World.
 ```  
   
 ##  <a name="op_at"></a>  basic_string::operator[]  
- 文字列に指定したインデックスのある文字への参照を提供します。  
+ Provides a reference to the character with a specified index in a string.  
   
 ```  
 const_reference operator[](size_type _Off) const;  
 reference operator[](size_type _Off);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- 参照される要素の位置のインデックス。  
+ The index of the position of the element to be referenced.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターのインデックスで指定した位置の文字列の文字への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the character of the string at the position specified by the parameter index.  
   
-### <a name="remarks"></a>コメント  
- 文字列の最初の要素はゼロから始まるインデックスを持ち、次の要素は連続した正の整数によってインデックスが作成されます。これにより、長さ *n* の文字列が *n* - 1 の数でインデックスが作成された *n* 番目の要素を持つようになります。  
+### <a name="remarks"></a>Remarks  
+ The first element of the string has an index of zero, and the following elements are indexed consecutively by the positive integers, so that a string of length *n* has an *n*th element indexed by the number *n* - 1.  
   
- `operator[]` はメンバー関数 [at](#at) より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
+ `operator[]` is faster than the member function [at](#at) for providing read and write access to the elements of a string.  
   
- `operator[]` では、パラメーターとして渡されたインデックスが有効かどうかがチェックされませんが、メンバー関数 **at** ではチェックされるため、有効性が不明な場合にはこちらを使用する必要があります。 メンバー関数 **at** に渡された無効なインデックス (インデックスが 0 未満または文字列のサイズ以上) は、[out_of_range クラス](../standard-library/out-of-range-class.md)例外をスローします。 無効なインデックスが `operator[]` に渡されると、未定義の動作が発生しますが、文字列の長さと等しいインデックスは、const 文字列の有効なインデックスで、このインデックスが渡されると演算子は null 文字を返します。  
+ `operator[]` does not check whether the index passed as a parameter is valid, but the member function **at** does and so should be used in the validity is not certain. An invalid index (an index less that zero or greater than or equal to the size of the string) passed to the member function **at** throws an [out_of_range Class](../standard-library/out-of-range-class.md) exception. An invalid index passed to `operator[]` results in undefined behavior, but the index equal to the length of the string is a valid index for const strings and the operator returns the null character when passed this index.  
   
- 返された参照は、文字列の再割り当てまたは非 **const** 文字列の変更によって無効化される可能性があります。  
+ The reference returned may be invalidated by string reallocations or modifications for the non- **const** strings.  
   
- [\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md) を 1 または 2 に設定してコンパイルすると、文字列の境界の外にある要素にアクセスしようとするとランタイム エラーが発生します。 詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
+ When compiling with [\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md) set to 1 or 2, a runtime error will occur if you attempt to access an element outside the bounds of the string. For more information, see [Checked Iterators](../standard-library/checked-iterators.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_op_ref.cpp  
@@ -3441,18 +3495,18 @@ int main( )
 ```  
   
 ##  <a name="pointer"></a>  basic_string::pointer  
- 文字列または文字アレイ内の文字要素へのポインターを提供する型。  
+ A type that provides a pointer to a character element in a string or character array.  
   
 ```  
 typedef typename allocator_type::pointer pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は **allocator_type::pointer** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for **allocator_type::pointer**.  
   
- **string** 型の場合、これは **char\*** と同じになります。  
+ For type **string**, it is equivalent to **char\***.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_pointer.cpp  
@@ -3476,30 +3530,30 @@ The C-string cstr1b is: Out There.
 ```  
   
 ##  <a name="pop_back"></a>  basic_string::pop_back  
- 文字列の最後の要素を消去します。  
+ Erases the last element of the string.  
   
 ```  
 void pop_back();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、事実上 `erase(size() - 1)` を呼び出して、シーケンスの最後の要素 (空であってはなりません) を消去します。  
+### <a name="remarks"></a>Remarks  
+ This member function effectively calls `erase(size() - 1)` to erase the last element of the sequence, which must be non-empty.  
   
 ##  <a name="push_back"></a>  basic_string::push_back  
- 文字列の末尾に要素を追加します。  
+ Adds an element to the end of the string.  
   
 ```  
 void push_back(value_type _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 文字列の末尾に追加する文字。  
+ The character to be added to the end of the string.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は効果的に [insert](#insert)( [end](#end), _ *Ch* ) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The member function effectively calls [insert](#insert)( [end](#end), _ *Ch* ).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_push_back.cpp  
@@ -3538,7 +3592,7 @@ The modified string str1 is: abc
 ```  
   
 ##  <a name="rbegin"></a>  basic_string::rbegin  
- 反転文字列の 1 つ目の要素への反復子を返します。  
+ Returns an iterator to the first element in a reversed string.  
   
 ```  
 const_reverse_iterator rbegin() const;
@@ -3547,17 +3601,17 @@ const_reverse_iterator rbegin() const;
 reverse_iterator rbegin();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 対応する通常の順序の文字列の最後の要素を指す、反転文字列内の最初の要素へのランダム アクセス反復子を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a random-access iterator to the first element in a reversed string, addressing what would be the last element in the corresponding unreversed string.  
   
-### <a name="remarks"></a>コメント  
- `rbegin` は、[begin](#begin) が文字列で使用されているのと同じように、反転文字列で使用されます。  
+### <a name="remarks"></a>Remarks  
+ `rbegin` is used with a reversed string just as [begin](#begin) is used with a string.  
   
- `rbegin` の戻り値が `const_reverse_iterator` に割り当てられている場合、文字列オブジェクトを変更することはできません。 `rbegin` の戻り値が `reverse_iterator` に割り当てられている場合、文字列オブジェクトを変更することができます。  
+ If the return value of `rbegin` is assigned to a `const_reverse_iterator`, the string object cannot be modified. If the return value of `rbegin` is assigned to a `reverse_iterator`, the string object can be modified.  
   
- `rbegin` は、逆方向の文字列の反復処理を初期化するために使用できます。  
+ `rbegin` can be used to initialize an iteration through a string backwards.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_rbegin.cpp  
@@ -3612,24 +3666,24 @@ The string str2 is empty.
 ```  
   
 ##  <a name="reference"></a>  basic_string::reference  
- 文字列に格納されている要素への参照を提供する型。  
+ A type that provides a reference to an element stored in a string.  
   
 ```  
 typedef typename allocator_type::reference reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- **reference** 型を使って要素の値を変更できます。  
+### <a name="remarks"></a>Remarks  
+ A type **reference** can be used to modify the value of an element.  
   
- この型は **allocator_type::reference** のシノニムです。  
+ The type is a synonym for **allocator_type::reference**.  
   
- **string** 型の場合、これは **chr&** と同じになります。  
+ For type **string**, it is equivalent to **chr&**.  
   
-### <a name="example"></a>例  
-  **reference** の宣言方法や使用方法の例については、[at](#at) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [at](#at) for an example of how to declare and use **reference**.  
   
 ##  <a name="rend"></a>  basic_string::rend  
- 反転文字列内の最後の要素の次の位置を指す反復子を返します。  
+ Returns an iterator that addresses the location succeeding the last element in a reversed string.  
   
 ```  
 const_reverse_iterator rend() const;
@@ -3638,19 +3692,19 @@ const_reverse_iterator rend() const;
 reverse_iterator rend();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 反転文字列内の最後の要素の次の位置を指す逆順ランダム アクセス反復子を返します。  
+### <a name="return-value"></a>Return Value  
+ A reverse random-access iterator that addresses the location succeeding the last element in a reversed string.  
   
-### <a name="remarks"></a>コメント  
- `rend` は、[end](#end) が文字列で使用されているのと同じように、反転文字列で使用されます。  
+### <a name="remarks"></a>Remarks  
+ `rend` is used with a reversed string just as [end](#end) is used with a string.  
   
- `rend` の戻り値が `const_reverse_iterator` に割り当てられている場合、文字列オブジェクトを変更することはできません。 `rend` の戻り値が `reverse_iterator` に割り当てられている場合、文字列オブジェクトを変更することができます。  
+ If the return value of `rend` is assigned to a `const_reverse_iterator`, the string object cannot be modified. If the return value of `rend` is assigned to a `reverse_iterator`, the string object can be modified.  
   
- `rend` を使って、逆順反復子が文字列の末尾に達したかどうかをテストできます。  
+ `rend` can be used to test whether a reverse iterator has reached the end of its string.  
   
- `rend` によって返された値は逆参照しないでください。  
+ The value returned by `rend` should not be dereferenced.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_rend.cpp  
@@ -3705,7 +3759,7 @@ The string str2 is empty.
 ```  
   
 ##  <a name="replace"></a>  basic_string::replace  
- 指定された場所の文字列の要素を指定された文字、または他の範囲、文字列、または C 文字列からコピーされた文字で置き換えます。  
+ Replaces elements in a string at a specified position with specified characters or characters copied from other ranges or strings or C-strings.  
   
 ```  
 basic_string<CharType, Traits, Allocator>& replace(
@@ -3779,47 +3833,47 @@ basic_string<CharType, Traits, Allocator>& replace(
     const_iterator last);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- オペランド文字列の文字のソースとなる文字列。  
+ The string that is to be a source of characters for the operand string.  
   
  `_Pos1`  
- 置換の開始位置を示すオペランド文字列のインデックス。  
+ The index of the operand string at which the replacement begins.  
   
  `_Num1`  
- オペランド文字列内で置換する最大文字数。  
+ The maximum number of characters to be replaced in the operand string.  
   
  *_Pos2*  
- コピーの開始位置を示すパラメーター文字列のインデックス。  
+ The index of the parameter string at which the copying begins.  
   
  `_Num2`  
- パラメーター C 文字列から使用する最大文字数。  
+ The maximum number of characters to be used from the parameter C-string.  
   
  `ptr`  
- オペランド文字列の文字のソースとなる C 文字列。  
+ The C-string that is to be a source of characters for the operand string.  
   
  `_Ch`  
- オペランド文字列にコピーする文字。  
+ The character to be copied into the operand string.  
   
  * first0*  
- オペランド文字列内で削除される最初の文字を指定する反復子。  
+ An iterator addressing the first character to be removed in the operand string.  
   
- * last0 *  
- オペランド文字列内で削除される最後の文字を指定する反復子。  
+ * last0*  
+ An iterator addressing the last character to be removed in the operand string.  
   
  `first`  
- パラメーター文字列にコピーされる最初の文字を指定する、反復子、const_pointer、または const_iterator。  
+ An iterator, const_pointer, or const_iterator addressing the first character to be copied in the parameter string.  
   
  `last`  
- パラメーター文字列にコピーされる最後の文字を指定する、反復子、const_pointer、または const_iterator。  
+ An iterator, const_pointer, or const_iterator addressing the last character to be copied in the parameter string.  
   
  `count`  
- `_Ch` がオペランド文字列にコピーされる回数。  
+ The number of times `_Ch` is copied into the operand string.  
   
-### <a name="return-value"></a>戻り値  
- 置換が行われたオペランド文字列。  
+### <a name="return-value"></a>Return Value  
+ The operand string with the replacement made.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_replace.cpp  
@@ -3999,24 +4053,24 @@ The result of s7o.replace (IterF3 ,IterL3 ,IterF4 ,IterL4)
 ```  
   
 ##  <a name="reserve"></a>  basic_string::reserve  
- 文字列のキャパシティを少なくとも指定した数に設定します。  
+ Sets the capacity of the string to a number at least as great as a specified number.  
   
 ```  
 void reserve(size_type count = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- メモリが予約されている文字数。  
+ The number of characters for which memory is being reserved.  
   
-### <a name="remarks"></a>コメント  
- 再割り当ては時間のかかるプロセスで、文字列内の文字を参照するすべての参照、ポインター、および反復子が無効になるため、十分な容量を確保することが重要です。  
+### <a name="remarks"></a>Remarks  
+ Having sufficient capacity is important because reallocations is a time-consuming process and invalidates all references, pointers, and iterators that refer to characters in a string.  
   
- string 型のオブジェクトの容量の概念は、vector 型のオブジェクトの場合と同様です。 vector とは異なり、メンバー関数 **reserve** は、オブジェクトの容量を縮小するために呼び出すことができます。 要求は非バインドで、発生する場合もあればしない場合もあります。 パラメーターの既定値は 0 なので、**reserve** の呼び出しは、文字列内の現在の文字数に合わせて文字列の容量を縮小するための非バインド要求です。 容量は現在の文字数より小さくなることはありません。  
+ The concept of capacity for objects of type strings is the same as for objects of type vector. Unlike vector, the member function **reserve** may be called to shrink the capacity of an object. The request is nonbinding and may or may not happen. As the default value for the parameter is zero, a call of **reserve** is a non-binding request to shrink the capacity of the string to fit the number of characters currently in the string. The capacity is never reduced below the current number of characters.  
   
- `reserve` の呼び出しは、文字列の容量を縮小できる唯一の方法です。 ただし、前述のように、この要求は非バインドで発生しない場合があります。  
+ Calling `reserve` is the only possible way to shrink the capacity of a string. However, as noted above, this request is nonbinding and may not happen.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_reserve.cpp  
@@ -4086,7 +4140,7 @@ The reduced capacity of string str1 is: 47.
 ```  
   
 ##  <a name="resize"></a>  basic_string::resize  
- 要素を必要に応じて追加または削除して、文字列の新しいサイズを指定します。  
+ Specifies a new size for a string, appending or erasing elements as required.  
   
 ```  
 void resize(
@@ -4097,17 +4151,17 @@ void resize(
     _Elem _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 文字列の新しいサイズ。  
+ The new size of the string.  
   
  `_Ch`  
- 文字が追加された値は、追加の要素が必要な場合は初期化されます。  
+ The value that appended characters are initialized with if additional elements are required.  
   
-### <a name="remarks"></a>コメント  
- 結果のサイズが最大文字数を超えている場合、フォームは `length_error` をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the resulting size exceeds the maximum number of characters, the form throws `length_error`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_resize.cpp  
@@ -4193,20 +4247,20 @@ The capacity of downsized string str1 is: 47.
 ```  
   
 ##  <a name="reverse_iterator"></a>  basic_string::reverse_iterator  
- 文字列に格納されている要素への参照を提供する型。  
+ A type that provides a reference to an element stored in a string.  
   
 ```  
 typedef std::reverse_iterator<iterator> reverse_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `reverse_iterator` 型は文字の値を変更するために使用でき、逆の順序で文字列を反復処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ A type `reverse_iterator` can be used to modify the value of a character and is used to iterate through a string in reverse.  
   
-### <a name="example"></a>例  
-  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [rbegin](#rbegin) for an example of how to declare and use `reverse_iterator`.  
   
 ##  <a name="rfind"></a>  basic_string::rfind  
- 指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で後方に検索します。  
+ Searches a string in a backward direction for the first occurrence of a substring that matches a specified sequence of characters.  
   
 ```  
 size_type rfind(
@@ -4230,26 +4284,26 @@ size_type rfind(
     size_type _Off = npos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- メンバー関数が検索される文字値。  
+ The character value for which the member function is to search.  
   
  `_Off`  
- 検索を開始する位置のインデックス。  
+ Index of the position at which the search is to begin.  
   
  `ptr`  
- メンバー関数が検索される C 文字列。  
+ The C-string for which the member function is to search.  
   
  `count`  
- メンバー関数が検索される C 文字列で、最初の文字から順方向に数えた文字数。  
+ The number of characters, counting forward from the first character, in the C-string for which the member function is to search.  
   
  `str`  
- メンバー関数が検索される文字列。  
+ The string for which the member function is to search.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は、逆順での検索で最後に出現した部分文字列の最初の文字のインデックス、それ以外の場合は `npos`。  
+### <a name="return-value"></a>Return Value  
+ The index of the last occurrence, when searched backwards, of the first character of the substring when successful; otherwise `npos`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_rfind.cpp  
@@ -4381,26 +4435,26 @@ The index of the 1st element of 'clear' in str4 is: 17
 ```  
   
 ##  <a name="shrink_to_fit"></a>  basic_string::shrink_to_fit  
- 文字列の余分なキャパシティを破棄します。  
+ Discards the excess capacity of the string.  
   
 ```  
 void shrink_to_fit();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、コンテナー内の不要な記憶域を削除します。  
+### <a name="remarks"></a>Remarks  
+ This member function eliminates any unneeded storage in the container.  
   
 ##  <a name="size"></a>  basic_string::size  
- 文字列内の現在の要素数を返します。  
+ Returns the current number of elements in a string.  
   
 ```  
 size_type size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字列の長さ。  
+### <a name="return-value"></a>Return Value  
+ The length of the string.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_size.cpp  
@@ -4455,18 +4509,18 @@ int main( )
 ```  
   
 ##  <a name="size_type"></a>  basic_string::size_type  
- 文字列内の要素とインデックスの数を表すことができる符号なし整数型。  
+ An unsigned integer type that can represent the number of elements and indices in a string.  
   
 ```  
 typedef typename allocator_type::size_type size_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- これは **allocator_type::size_type** と同じです。  
+### <a name="remarks"></a>Remarks  
+ It is equivalent to **allocator_type::size_type**.  
   
- **string** 型の場合、これは **size_t** と同じになります。  
+ For type **string**, it is equivalent to **size_t**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_size_type.cpp  
@@ -4496,7 +4550,7 @@ The capacity of string str1 is: 15.
 ```  
   
 ##  <a name="substr"></a>  basic_string::substr  
- 指定された位置から始まる文字列から最大でいくつかの文字の部分文字列をコピーします。  
+ Copies a substring of at most some number of characters from a string beginning from a specified position.  
   
 ```  
 basic_string<CharType, Traits, Allocator> substr(
@@ -4504,17 +4558,17 @@ basic_string<CharType, Traits, Allocator> substr(
     size_type count = npos) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- 文字列のコピーが作成された位置の要素を特定するインデックス (既定値は 0)。  
+ An index locating the element at the position from which the copy of the string is made, with a default value of 0.  
   
  `count`  
- コピーされる文字数 (ある場合)。  
+ The number of characters that are to be copied if they are present.  
   
-### <a name="return-value"></a>戻り値  
- 最初の引数で指定した位置で開始する文字列オペランドの要素のコピーである部分文字列オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A substring object that is a copy of elements of the string operand beginning at the position specified by the first argument.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_substr.cpp  
@@ -4552,29 +4606,29 @@ The default substring str3 is:
 ```  
   
 ##  <a name="swap"></a>  basic_string::swap  
- 2 つの文字列の内容を交換します。  
+ Exchange the contents of two strings.  
   
 ```  
 void swap(
     basic_string<CharType, Traits, Allocator>& str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- 要素がターゲットの文字列内の要素と交換されるソース文字列。  
+ The source string whose elements are to be exchanged with those in the destination string.  
   
-### <a name="remarks"></a>コメント  
- 交換される文字列に同じアロケーター オブジェクトがある場合、`swap` メンバー関数は以下のように動作します。  
+### <a name="remarks"></a>Remarks  
+ If the strings being swapped have the same allocator object, the `swap` member function:  
   
--   一定時間で発生します。  
+-   Occurs in constant time.  
   
--   例外をスローしません。  
+-   Throws no exceptions.  
   
--   2 つの文字列内の要素を指定する参照、ポインター、または反復子を無効にします。  
+-   Invalidates no references, pointers, or iterators that designate elements in the two strings.  
   
- それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
+ Otherwise, it performs a number of element assignments and constructor calls proportional to the number of elements in the two controlled sequences.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_swap.cpp  
@@ -4610,31 +4664,31 @@ After swapping string s1 and s2:
 ```  
   
 ##  <a name="traits_type"></a>  basic_string::traits_type  
- 文字列に格納されている要素の文字の特徴の型。  
+ A type for the character traits of the elements stored in a string.  
   
 ```  
 typedef Traits traits_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は 2 番目のテンプレート パラメーター **Traits** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the second template parameter **Traits**.  
   
- **string** 型の場合、これは **char_traits\<char>** と同じになります。  
+ For type **string**, it is equivalent to **char_traits\<char>**.  
   
-### <a name="example"></a>例  
-  `traits_type` の宣言方法や使用方法の例については、[copy](../standard-library/char-traits-struct.md#copy) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [copy](../standard-library/char-traits-struct.md#copy) for an example of how to declare and use `traits_type`.  
   
 ##  <a name="value_type"></a>  basic_string::value_type  
- 文字列に格納された文字の型を表す型。  
+ A type that represents the type of characters stored in a string.  
   
 ```  
 typedef typename allocator_type::value_type value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- これは **traits_type::char_type** と同じで、**string** 型のオブジェクトの `char` と同じです。  
+### <a name="remarks"></a>Remarks  
+ It is equivalent to **traits_type::char_type** and is equivalent to `char` for objects of type **string**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_string_value_type.cpp  
@@ -4660,8 +4714,8 @@ The character ch1 is: G.
 The character ch2 is: H.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<string>](../standard-library/string.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

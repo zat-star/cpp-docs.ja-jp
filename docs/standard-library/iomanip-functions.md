@@ -1,5 +1,5 @@
 ---
-title: "&lt;iomanip&gt; 関数 | Microsoft Docs"
+title: '&lt;iomanip&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -21,14 +21,26 @@ f1_keywords:
 ms.assetid: 3ddde610-70cc-4cfa-8a89-3e83d1d356a8
 caps.latest.revision: 10
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: cc990171c1196a35f0fe90d99ee1cbdbca337c9a
+helpviewer_keywords:
+- std::get_money [C++]
+- std::get_time [C++]
+- std::put_money [C++]
+- std::put_time [C++]
+- std::quoted [C++]
+- std::resetiosflags [C++]
+- std::setbase [C++]
+- std::setfill [C++]
+- std::setiosflags [C++]
+- std::setprecision [C++]
+- std::setw [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 32d7b79f7ccefb3b0ab349fd646c8001f0eddda3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt; 関数
+# <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt; functions
 ||||  
 |-|-|-|  
 |[get_money](#iomanip_get_money)|[get_time](#iomanip_get_time)|[put_money](#iomanip_put_money)|  
@@ -37,86 +49,86 @@ ms.lasthandoff: 04/29/2017
 |[setprecision](#setprecision)|[setw](#setw)|  
   
 ##  <a name="iomanip_get_money"></a>  get_money  
- 目的の形式を使用して、ストリームから通貨値を抽出し、パラメーターの値を返します。  
+ Extracts a monetary value from a stream using the desired format, and returns the value in a parameter.  
   
 ```  
 template <class Money>  
 T7 get_money(Money& _Amount, bool _Intl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  _Amount  
- 抽出した通貨値。  
+ The extracted monetary value.  
   
  _Intl  
- `true` の場合は、国際対応形式を使用します。 既定値は `false` です。  
+ If `true`, use international format. The default value is `false`.  
   
-### <a name="remarks"></a>コメント  
- マニピュレーターは、ストリーム `str` から抽出されたときに、国際対応形式を示す `_Intl` を使用して、`str` に関連付けられているロケール ファセット `money_get` のメンバー関数 `get` を呼び出す `formatted input function` として動作するオブジェクトを返します。 成功すると、この呼び出しによって、抽出された通貨値が `_Amount` に格納されます。 その後、マニピュレーターが `str` を返します。  
+### <a name="remarks"></a>Remarks  
+ The manipulator returns an object that, when extracted from the stream `str`, behaves as a `formatted input function` that calls the member function `get` for the locale facet `money_get` associated with `str`, using `_Intl` to indicate international format. If successful, the call stores in `_Amount` the extracted monetary value. The manipulator then returns `str`.  
   
- `Money` は `long double` 型であるか、`str` と同じ要素および特徴パラメーターを持つ `basic_string` のインスタンス化である必要があります。  
+ `Money` must be of type `long double` or an instantiation of `basic_string` with the same element and traits parameters as `str`.  
   
 ##  <a name="iomanip_get_time"></a>  get_time  
- 目的の形式を使用して、ストリームから時刻値を抽出します。 時間構造体として、パラメーターの値を返します。  
+ Extracts a time value from a stream using a desired format. Returns the value in a parameter as a time structure.  
   
 ```  
 template <class Elem>  
 T10 put_time(struct tm *_Tptr, const Elem *_Fmt);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Tptr`  
- 時間構造体の形式の時刻。  
+ The time in the form of a time structure.  
   
  `_Fmt`  
- 時刻値を取得するために使用する目的の形式。  
+ The desired format to use to obtain the time value.  
   
-### <a name="remarks"></a>コメント  
- マニピュレーターは、ストリーム `str` から抽出されたときに、時間構造体を示す `tptr` および null で終わる書式文字列の先頭を示す `fmt` を使用して、`str` に関連付けられているロケール ファセット `time_get` のメンバー関数 `get` を呼び出す `formatted input function` として動作するオブジェクトを返します。 成功した場合、この呼び出しによって、抽出された時刻フィールドに関連付けられている値が時間構造体に格納されます。 その後、マニピュレーターが `str` を返します。  
+### <a name="remarks"></a>Remarks  
+ The manipulator returns an object that, when extracted from the stream `str`, behaves as a `formatted input function` that calls the member function `get` for the locale facet `time_get` associated with `str`, using `tptr` to indicate the time structure and `fmt` to indicate the beginning of a null-terminated format string. If successful, the call stores in the time structure the values associated with any extracted time fields. The manipulator then returns `str`.  
   
 ##  <a name="iomanip_put_money"></a>  put_money  
- 目的の形式を使用してストリームに金額を挿入します。  
+ Inserts a monetary amount using the desired format into a stream.  
   
 ```  
 template <class Money>  
 T8 put_money(const Money& _Amount, bool _Intl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Amount`  
- ストリームに挿入する金額。  
+ The monetary amount to insert into the stream.  
   
  `_Intl`  
- マニピュレーターが国際対応形式を使用する必要がある場合は `true` に設定し、国際対応形式を使用しない場合は `false` に設定します。  
+ Set to `true` if manipulator should use international format, `false` if it should not.  
   
-### <a name="return-value"></a>戻り値  
- `str` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `str`.  
   
-### <a name="remarks"></a>コメント  
- マニピュレーターは、ストリーム `str` に挿入されたときに、`str` に関連付けられているロケール ファセット `money_put` のメンバー関数 `put` を呼び出す書式付き出力関数として動作するオブジェクトを返します。 成功した場合、この呼び出しは、充てん要素として国際対応形式および `str.fill()` を示す `_Intl` を使用して、適切に書式設定された `amount` を挿入します。 その後、マニピュレーターが `str` を返します。  
+### <a name="remarks"></a>Remarks  
+ The manipulator returns an object that, when inserted into the stream `str`, behaves as a formatted output function that calls the member function `put` for the locale facet `money_put` associated with `str`. If successful, the call inserts `amount` suitably formatted, using `_Intl` to indicate international format and `str.fill()`, as the fill element. The manipulator then returns `str`.  
   
- `Money` は `long double` 型であるか、`str` と同じ要素および特徴パラメーターを持つ `basic_string` のインスタンス化である必要があります。  
+ `Money` must be of type `long double` or an instantiation of `basic_string` with the same element and traits parameters as `str`.  
   
 ##  <a name="iomanip_put_time"></a>  put_time  
- 指定された形式を使用して、時間構造体内の時刻値をストリームに書き込みます。  
+ Writes a time value from a time structure to a stream by using a specified format.  
   
 ```  
 template <class Elem>  
 T10 put_time(struct tm* _Tptr, const Elem* _Fmt);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Tptr`  
- 時間構造体で提供される、ストリームに書き込む時刻値。  
+ The time value to write to the stream, provided in a time structure.  
   
  `_Fmt`  
- 時刻値を書き込むための目的の形式。  
+ The desired format to write the time value.  
   
-### <a name="remarks"></a>コメント  
- マニピュレーターは、ストリーム `str` に挿入されるときに、`formatted output function` として動作するオブジェクトを返します。 出力関数は、`str` に関連付けられているロケール ファセット `time_put` のメンバー関数 `put` を呼び出します。 出力関数は、`_Tptr` を使用して時間構造体を示し、`_Fmt` を使用して NUL で終わる書式文字列の先頭を示します。 成功した場合、この呼び出しは、書式文字列からのリテラル テキストと時間構造体からの変換された値を挿入します。 その後、マニピュレーターが `str` を返します。  
+### <a name="remarks"></a>Remarks  
+ The manipulator returns an object that, when inserted into the stream `str`, behaves as a `formatted output function`. The output function calls the member function `put` for the locale facet `time_put` associated with `str`. The output function uses `_Tptr` to indicate the time structure and `_Fmt` to indicate the beginning of a NUL-terminated format string. If successful, the call inserts literal text from the format string and converted values from the time structure. The manipulator then returns `str`.  
   
 ##  <a name="quoted"></a>  quoted  
- **(C++14 の新機能)** >> 演算子と << 演算子を使用したストリームとの文字列のラウンド トリップを有効にする、便利な iostream マニピュレーター。  
+ **(New in C++14)** An iostream manipulator that enables convenient round-tripping of strings into and out of streams using the >> and << operators.  
   
 ```  
 quoted(std::string str) // or wstring  
@@ -125,21 +137,21 @@ quoted(std::string str, char delimiter, char escape) // or wide versions
 quoted(const char* str, char delimiter, char escape) // or wide versions  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- std::string、char*、文字列リテラル、または未加工の文字列リテラル、あるいはこれらのさまざまなバージョン (例: std::wstring, wchar_t\*)。  
+ A std::string, char*, string literal or raw string literal, or a wide version of any of these (e.g. std::wstring, wchar_t\*).  
   
  `delimiter`  
- 文字列の先頭と末尾の区切り記号として使用するユーザー指定の文字またはワイド文字。  
+ A user-specified character, or wide character, to use as the delimiter for the beginning and end of the string.  
   
  `escape`  
- 文字列内のエスケープ シーケンスのエスケープ文字として使用する、ユーザー指定の文字またはワイド文字。  
+ A user-specified character, or wide character, to use as the escape character for escape sequences within the string.  
   
-### <a name="remarks"></a>コメント  
- 「[挿入演算子と制御形式の使用](../standard-library/using-insertion-operators-and-controlling-format.md)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ See [Using Insertion Operators and Controlling Format](../standard-library/using-insertion-operators-and-controlling-format.md).  
   
-### <a name="example"></a>例  
-  この例では、ナロー文字列を使用した既定の区切り文字とエスケープ文字と共に `quoted` を使用する方法を示します。 ワイド文字列は、同様にサポートされています。  
+### <a name="example"></a>Example  
+  This example shows how to use `quoted` with the default delimiter and escape character using narrow strings. Wide strings are equally supported.  
   
 ```cpp  
 #include <iostream>  
@@ -194,8 +206,8 @@ Press Enter to exit
 */  
 ```  
   
-### <a name="example"></a>例  
-  カスタムの区切り記号やエスケープ文字を指定する方法を次に示します。  
+### <a name="example"></a>Example  
+  The following example shows how to provide custom a delimiter and/or escape character:  
   
 ```cpp  
 #include <iostream>  
@@ -279,117 +291,117 @@ Press Enter to exit
 ```  
   
 ##  <a name="resetiosflags"></a>  resetiosflags  
- 指定したフラグをクリアします。  
+ Clears the specified flags.  
   
 ```  
 T1 resetiosflags(ios_base::fmtflags Mask);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Mask`  
- オフにするフラグ。  
+ The flags to clear.  
   
-### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [setf](../standard-library/ios-base-class.md#setf)( `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags), _ *Mask*), and then returns **str**.  
+### <a name="return-value"></a>Return Value  
+ The manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. [setf](../standard-library/ios-base-class.md#setf)( `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags), _ *Mask*), and then returns **str**.  
   
-### <a name="example"></a>例  
-  `resetiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
+### <a name="example"></a>Example  
+  See [setw](../standard-library/iomanip-functions.md#setw) for an example of using `resetiosflags`.  
   
 ##  <a name="setbase"></a>  setbase  
- 整数の基数を設定します。  
+ Set base for integers.  
   
 ```  
 T3 setbase(int _Base);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Base`  
- 基数。  
+ The number base.  
   
-### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 `setf`(**マスク**、 [ios_base::basefield](../standard-library/ios-base-class.md#fmtflags))、しを返します**str**です。 ここで、**mask** は、次のように判断されます。  
+### <a name="return-value"></a>Return Value  
+ The manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. `setf`( **mask**, [ios_base::basefield](../standard-library/ios-base-class.md#fmtflags)), and then returns **str**. Here, **mask** is determined as follows:  
   
--   _ *Base* が 8 の場合、**mask** は `ios_base::`[oct](../standard-library/ios-functions.md#oct) になります。  
+-   If _ *Base* is 8, then **mask** is `ios_base::`[oct](../standard-library/ios-functions.md#oct).  
   
--   _ *Base* が 10 の場合、mask は `ios_base::`[dec](../standard-library/ios-functions.md#dec) になります。  
+-   If _ *Base* is 10, then mask is `ios_base::`[dec](../standard-library/ios-functions.md#dec).  
   
--   _ *Base* が 16 の場合、**mask** は `ios_base::`[hex](../standard-library/ios-functions.md#hex) になります。  
+-   If _ *Base* is 16, then **mask** is `ios_base::`[hex](../standard-library/ios-functions.md#hex).  
   
--   _ *Base* がその他の値の場合、mask は `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags)(0) になります。  
+-   If _ *Base* is any other value, then mask is `ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags)(0).  
   
-### <a name="example"></a>例  
-  `setbase` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
+### <a name="example"></a>Example  
+  See [setw](../standard-library/iomanip-functions.md#setw) for an example of using `setbase`.  
   
 ##  <a name="setfill"></a>  setfill  
- 右揃えの表示でスペースを埋めるために使用する文字を設定します。  
+ Sets the character that will be used to fill spaces in a right-justified display.  
   
 ```  
 template <class Elem>  
 T4 setfill(Elem Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Ch`  
- 右揃えの表示でスペースを埋めるために使用する文字。  
+ The character that will be used to fill spaces in a right-justified display.  
   
-### <a name="return-value"></a>戻り値  
- テンプレート マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [塗りつぶし](../standard-library/basic-ios-class.md#fill)( `Ch`)、しを返します**str**です。 **Elem** 型は、ストリーム **str** の要素型と同じである必要があります。  
+### <a name="return-value"></a>Return Value  
+ The template manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. [fill](../standard-library/basic-ios-class.md#fill)( `Ch`), and then returns **str**. The type **Elem** must be the same as the element type for the stream **str**.  
   
-### <a name="example"></a>例  
-  `setfill` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
+### <a name="example"></a>Example  
+  See [setw](../standard-library/iomanip-functions.md#setw) for an example of using `setfill`.  
   
 ##  <a name="setiosflags"></a>  setiosflags  
- 指定したフラグを設定します。  
+ Sets the specified flags.  
   
 ```  
 T2 setiosflags(ios_base::fmtflags Mask);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Mask`  
- 設定するフラグ。  
+ The flags to set.  
   
-### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [setf](../standard-library/ios-base-class.md#setf)(_*マスク*)、しを返します**str**です。  
+### <a name="return-value"></a>Return Value  
+ The manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. [setf](../standard-library/ios-base-class.md#setf)(_ *Mask*), and then returns **str**.  
   
-### <a name="example"></a>例  
-  `setiosflags` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
+### <a name="example"></a>Example  
+  See [setw](../standard-library/iomanip-functions.md#setw) for an example of using `setiosflags`.  
   
 ##  <a name="setprecision"></a>  setprecision  
- 浮動小数点値の有効桁数を設定します。  
+ Sets the precision for floating-point values.  
   
 ```  
 T5 setprecision(streamsize Prec);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Prec`  
- 浮動小数点値の有効桁数。  
+ The precision for floating-point values.  
   
-### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [有効桁数](../standard-library/ios-base-class.md#precision)( `Prec`)、しを返します**str**です。  
+### <a name="return-value"></a>Return Value  
+ The manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. [precision](../standard-library/ios-base-class.md#precision)( `Prec`), and then returns **str**.  
   
-### <a name="example"></a>例  
-  `setprecision` の使用例については、「[setw](../standard-library/iomanip-functions.md#setw)」を参照してください。  
+### <a name="example"></a>Example  
+  See [setw](../standard-library/iomanip-functions.md#setw) for an example of using `setprecision`.  
   
 ##  <a name="setw"></a>  setw  
- ストリーム内の次の要素に対して表示フィールドの幅を指定します。  
+ Specifies the width of the display field for the next element in the stream.  
   
 ```  
 T6 setw(streamsize Wide);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Wide`  
- 表示フィールドの幅です。  
+ The width of the display field.  
   
-### <a name="return-value"></a>戻り値  
- マニピュレーター オブジェクトを返しますから取り出した、またはストリームに挿入されたときに**str**、呼び出し**str**です。 [幅](../standard-library/ios-base-class.md#width)(_*ワイド*)、しを返します**str**です。  
+### <a name="return-value"></a>Return Value  
+ The manipulator returns an object that, when extracted from or inserted into the stream **str**, calls **str**. [width](../standard-library/ios-base-class.md#width)(_ *Wide*), then returns **str**.  
   
-### <a name="remarks"></a>コメント  
- setw は、ストリーム内の次の要素についてのみ幅を設定します。幅を指定する各要素の前に setw を挿入する必要があります。  
+### <a name="remarks"></a>Remarks  
+ setw sets the width only for the next element in the stream and must be inserted before each element whose width you want to specify.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iomanip_setw.cpp   
@@ -604,7 +616,7 @@ l4 = 4096
 l5 = 65536  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<iomanip>](../standard-library/iomanip.md)
 
 

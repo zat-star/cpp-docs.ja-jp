@@ -1,5 +1,5 @@
 ---
-title: "promise クラス | Microsoft Docs"
+title: promise Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -38,87 +38,96 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 2f052d1af76e8f874e2bbe0187a82b838e47f45e
+helpviewer_keywords:
+- std::promise [C++]
+- std::promise [C++], promise
+- std::promise [C++], get_future
+- std::promise [C++], set_exception
+- std::promise [C++], set_exception_at_thread_exit
+- std::promise [C++], set_value
+- std::promise [C++], set_value_at_thread_exit
+- std::promise [C++], swap
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fb4ba5da5b2d7a65e1214e97b19ccf00d1bcca1c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="promise-class"></a>promise クラス
-*非同期プロバイダー*を記述します。  
+# <a name="promise-class"></a>promise Class
+Describes an *asynchronous provider*.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Ty>
 class promise;
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[promise](#promise)|`promise` オブジェクトを構築します。|  
+|[promise](#promise)|Constructs a `promise` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[get_future](#get_future)|この約束に関連付けられている [future](../standard-library/future-class.md) を返します。|  
-|[set_exception](#set_exception)|この約束の結果をアトミックに設定して、例外を示します。|  
-|[set_exception_at_thread_exit](#set_exception_at_thread_exit)|この約束の結果をアトミックに設定して例外を示し、現在のスレッドのすべてのスレッド ローカルのオブジェクトが破棄された後にのみ通知を配信します (通常はスレッド終了時)。|  
-|[set_value](#set_value)|この約束の結果をアトミックに設定して、値を示します。|  
-|[set_value_at_thread_exit](#set_value_at_thread_exit)|この約束の結果をアトミックに設定して値を示し、現在のスレッドのすべてのスレッド ローカルのオブジェクトが破棄された後にのみ通知を配信します (通常はスレッド終了時)。|  
-|[swap](#swap)|この promise の*関連付けられた非同期状態*を、指定した promise オブジェクトの状態と交換します。|  
+|[get_future](#get_future)|Returns a [future](../standard-library/future-class.md) associated with this promise.|  
+|[set_exception](#set_exception)|Atomically sets the result of this promise to indicate an exception.|  
+|[set_exception_at_thread_exit](#set_exception_at_thread_exit)|Atomically sets the result of this promise to indicate an exception, and delivers the notification only after all thread-local objects in the current thread have been destroyed (usually at thread exit).|  
+|[set_value](#set_value)|Atomically sets the result of this promise to indicate a value.|  
+|[set_value_at_thread_exit](#set_value_at_thread_exit)|Atomically sets the result of this promise to indicate a value, and delivers the notification only after all thread-local objects in the current thread have been destroyed (usually at thread exit).|  
+|[swap](#swap)|Exchanges the *associated asynchronous state* of this promise with that of a specified promise object.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[promise::operator=](#op_eq)|この約束オブジェクトの共有状態の割り当て。|  
+|[promise::operator=](#op_eq)|Assignment of the shared state of this promise object.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `promise`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<将来 >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<future>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="get_future"></a>  promise::get_future  
- この promise と同じ*関連付けられた非同期状態*の [future](../standard-library/future-class.md) オブジェクトを返します。  
+ Returns a [future](../standard-library/future-class.md) object that has the same *associated asynchronous state* as this promise.  
   
 ```
 future<Ty> get_future();
 ```  
   
-### <a name="remarks"></a>コメント  
- promise オブジェクトが空の場合、このメソッドは `no_state` の [error_code](../standard-library/error-code-class.md) を持つ [future_error](../standard-library/future-error-class.md) をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the promise object is empty, this method throws a [future_error](../standard-library/future-error-class.md) that has an [error_code](../standard-library/error-code-class.md) of `no_state`.  
   
- このメソッドが同じ関連付けられた非同期状態を持つ約束オブジェクトに対して既に呼び出されている場合、メソッドは `future_error` の `error_code` を持つ `future_already_retrieved` をスローします。  
+ If this method has already been called for a promise object that has the same associated asynchronous state, the method throws a `future_error` that has an `error_code` of `future_already_retrieved`.  
   
 ##  <a name="op_eq"></a>  promise::operator=  
- 指定した `promise` オブジェクトから*関連付けられた非同期状態*を転送します。  
+ Transfers the *associated asynchronous state* from a specified `promise` object.  
   
 ```
 promise& operator=(promise&& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- `promise` オブジェクト。  
+ A `promise` object.  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
  `*this`  
   
-### <a name="remarks"></a>コメント  
- この演算子は `Other` から関連付けられた非同期状態を転送します。 転送後、`Other` は*空*になります。  
+### <a name="remarks"></a>Remarks  
+ This operator transfers the associated asynchronous state from `Other`. After the transfer, `Other` is *empty*.  
   
-##  <a name="promise"></a>  promise::promise コンストラクター  
- `promise` オブジェクトを構築します。  
+##  <a name="promise"></a>  promise::promise Constructor  
+ Constructs a `promise` object.  
   
 ```
 promise();
@@ -127,58 +136,58 @@ promise(allocator_arg_t, const Alloc& Al);
 promise(promise&& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Al`  
- メモリ割り当て。 詳細については、「[\<allocators>](../standard-library/allocators-header.md)」をご覧ください。  
+ A memory allocator. See [\<allocators>](../standard-library/allocators-header.md) for more information.  
   
  `Other`  
- `promise` オブジェクト。  
+ A `promise` object.  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のコンストラクターは、*空の*`promise` オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ The first constructor constructs an *empty*`promise` object.  
   
- 2 つ目のコンストラクターは、空の `promise` オブジェクトを構築して、`Al` をメモリの割り当てに使用します。  
+ The second constructor constructs an empty `promise` object and uses `Al` for memory allocation.  
   
- 3 つ目のコンストラクターは、`promise` オブジェクトを構築し、関連付けられた非同期状態を `Other` から転送し、`Other` を空のままにします。  
+ The third constructor constructs a `promise` object and transfers the associated asynchronous state from `Other`, and leaves `Other` empty.  
   
 ##  <a name="set_exception"></a>  promise::set_exception  
- アトミックに例外をこの `promise` オブジェクトの結果として格納し、*関連付けられた非同期状態*を*準備完了*に設定します。  
+ Atomically stores an exception as the result of this `promise` object and sets the *associated asynchronous state* to *ready*.  
   
 ```
 void set_exception(exception_ptr Exc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Exc`  
- このメソッドにより例外結果として格納されている [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr)。  
+ An [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) that's stored by this method as the exception result.  
   
-### <a name="remarks"></a>コメント  
- `promise` オブジェクトに関連付けられた非同期状態がない場合、このメソッドは `no_state` のエラー コードを持つ [future_error](../standard-library/future-error-class.md) をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the `promise` object has no associated asynchronous state, this method throws a [future_error](../standard-library/future-error-class.md) that has an error code of `no_state`.  
   
- `set_exception`、[set_exception_at_thread_exit](#set_exception_at_thread_exit)、[set_value](#set_value)、または [set_value_at_thread_exit](#set_value_at_thread_exit) が同じ関連付けられた非同期状態を持つ `promise` オブジェクトに対して呼び出されている場合、このメソッドは `promise_already_satisfied` のエラー コードを持つ `future_error` をスローします。  
+ If `set_exception`, [set_exception_at_thread_exit](#set_exception_at_thread_exit), [set_value](#set_value), or [set_value_at_thread_exit](#set_value_at_thread_exit) has already been called for a `promise` object that has the same associated asynchronous state, this method throws a `future_error` that has an error code of `promise_already_satisfied`.  
   
- このメソッドの結果として、関連付けられた非同期状態に対してブロックされているすべてのスレッドのブロックが解除されます。  
+ As a result of this method, any threads that are blocked on the associated asynchronous state become unblocked.  
   
 ##  <a name="set_exception_at_thread_exit"></a>  promise::set_exception_at_thread_exit  
- この `promise` の結果をアトミックに設定して例外を示し、現在のスレッドのすべてのスレッド ローカルのオブジェクトが破棄された後にのみ通知を配信します (通常はスレッド終了時)。  
+ Atomically sets the result of this `promise` to indicate an exception, delivering the notification only after all thread-local objects in the current thread have been destroyed (usually at thread exit).  
   
 ```
 void set_exception_at_thread_exit(exception_ptr Exc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Exc`  
- このメソッドにより例外結果として格納されている [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr)。  
+ An [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) that's stored by this method as the exception result.  
   
-### <a name="remarks"></a>コメント  
- promise オブジェクトに*関連付けられた非同期状態*がない場合、このメソッドは `no_state` のエラー コードを持つ [future_error](../standard-library/future-error-class.md) をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the promise object has no *associated asynchronous state*, this method throws a [future_error](../standard-library/future-error-class.md) that has an error code of `no_state`.  
   
- [set_exception](#set_exception)、`set_exception_at_thread_exit`、[set_value](#set_value)、または [set_value_at_thread_exit](#set_value_at_thread_exit) が同じ関連付けられた非同期状態を持つ `promise` オブジェクトに対して既に呼び出されている場合、このメソッドは `promise_already_satisfied` のエラー コードを持つ `future_error` をスローします。  
+ If [set_exception](#set_exception), `set_exception_at_thread_exit`, [set_value](#set_value), or [set_value_at_thread_exit](#set_value_at_thread_exit) has already been called for a `promise` object that has the same associated asynchronous state, this method throws a `future_error` that has an error code of `promise_already_satisfied`.  
   
- [set_exception](#set_exception) とは対照的に、このメソッドでは、関連付けられた非同期状態は、現在のスレッドのすべてのスレッド ローカルのオブジェクトが破棄されるまでは準備完了に設定されません。 通常、関連付けられた非同期状態に対してブロックされたスレッドは、現在のスレッドが終了するまでブロック解除されません。  
+ In contrast to [set_exception](#set_exception), this method does not set the associated asynchronous state to ready until after all thread-local objects in the current thread have been destroyed. Typically, threads that are blocked on the associated asynchronous state are not unblocked until the current thread exits.  
   
 ##  <a name="set_value"></a>  promise::set_value  
- アトミックに値をこの `promise` オブジェクトの結果として格納し、*関連付けられた非同期状態* を*準備完了*に設定します。  
+ Atomically stores a value as the result of this `promise` object and sets the *associated asynchronous state* to *ready*.  
   
 ```
 void promise::set_value(const Ty& Val);
@@ -187,27 +196,27 @@ void promise<Ty&>::set_value(Ty& Val);
 void promise<void>::set_value();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Val`  
- 結果として格納される値。  
+ The value to be stored as the result.  
   
-### <a name="remarks"></a>コメント  
- `promise` オブジェクトに関連付けられた非同期状態がない場合、このメソッドは `no_state` のエラー コードを持つ [future_error](../standard-library/future-error-class.md) をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the `promise` object has no associated asynchronous state, this method throws a [future_error](../standard-library/future-error-class.md) that has an error code of `no_state`.  
   
- [set_exception](#set_exception)、[set_exception_at_thread_exit](#set_exception_at_thread_exit)、`set_value`、または [set_value_at_thread_exit](#set_value_at_thread_exit) が同じ関連付けられた非同期状態の `promise` オブジェクトに対して呼び出されている場合、このメソッドは `promise_already_satisfied` のエラー コードを持つ `future_error` をスローします。  
+ If [set_exception](#set_exception), [set_exception_at_thread_exit](#set_exception_at_thread_exit), `set_value`, or [set_value_at_thread_exit](#set_value_at_thread_exit) has already been called for a `promise` object that has the same associated asynchronous state, this method throws a `future_error` that has an error code of `promise_already_satisfied`.  
   
- このメソッドの結果として、関連付けられた非同期状態に対してブロックされているすべてのスレッドのブロックが解除されます。  
+ As a result of this method, any threads that are blocked on the associated asynchronous state become unblocked.  
   
- 最初のメソッドは、`Val` が関連付けられた非同期状態にコピーされたときにスローされるすべての例外もスローします。 この状況では、関連付けられた非同期状態は準備完了に設定されません。  
+ The first method also throws any exception that is thrown when `Val` is copied into the associated asynchronous state. In this situation, the associated asynchronous state is not set to ready.  
   
- 2 番目のメソッドは、`Val` が関連付けられた非同期状態に移動されたときにスローされるすべての例外もスローします。 この状況では、関連付けられた非同期状態は準備完了に設定されません。  
+ The second method also throws any exception that is thrown when `Val` is moved into the associated asynchronous state. In this situation, the associated asynchronous state is not set to ready.  
   
- 部分的特殊化 `promise<Ty&>` の場合、格納されている値は、実際には `Val` への参照です。  
+ For the partial specialization `promise<Ty&>`, the stored value is in effect a reference to `Val`.  
   
- 特殊化 `promise<void>` の場合、格納されている値は存在しません。  
+ For the specialization `promise<void>`, no stored value exists.  
   
 ##  <a name="set_value_at_thread_exit"></a>  promise::set_value_at_thread_exit  
- アトミックにこの `promise` オブジェクトの結果として値を格納します。  
+ Atomically stores a value as the result of this `promise` object.  
   
 ```
 void promise::set_value_at_thread_exit(const Ty& Val);
@@ -216,38 +225,38 @@ void promise<Ty&>::set_value_at_thread_exit(Ty& Val);
 void promise<void>::set_value_at_thread_exit();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Val`  
- 結果として格納される値。  
+ The value to be stored as the result.  
   
-### <a name="remarks"></a>コメント  
- promise オブジェクトに*関連付けられた非同期状態*がない場合、このメソッドは `no_state` のエラー コードを持つ [future_error](../standard-library/future-error-class.md) をスローします。  
+### <a name="remarks"></a>Remarks  
+ If the promise object has no *associated asynchronous state*, this method throws a [future_error](../standard-library/future-error-class.md) that has an error code of `no_state`.  
   
- [set_exception](#set_exception)、[set_exception_at_thread_exit](#set_exception_at_thread_exit)、[set_value](#set_value)、または `set_value_at_thread_exit` が同じ関連付けられた非同期状態の `promise` オブジェクトに対して呼び出されている場合、このメソッドは `promise_already_satisfied` のエラー コードを持つ `future_error` をスローします。  
+ If [set_exception](#set_exception), [set_exception_at_thread_exit](#set_exception_at_thread_exit), [set_value](#set_value), or `set_value_at_thread_exit` has already been called for a `promise` object that has the same associated asynchronous state, this method throws a `future_error` that has an error code of `promise_already_satisfied`.  
   
- `set_value` とは対照的に、関連付けられた非同期状態は、現在のスレッドのスレッド ローカルのオブジェクトがすべて破棄されるまでは準備完了に設定されません。 通常、関連付けられた非同期状態に対してブロックされたスレッドは、現在のスレッドが終了するまでブロック解除されません。  
+ In contrast to `set_value`, the associated asynchronous state is not set to ready until after all thread-local objects in the current thread have been destroyed. Typically, threads that are blocked on the associated asynchronous state are not unblocked until the current thread exits.  
   
- 最初のメソッドは、`Val` が関連付けられた非同期状態にコピーされたときにスローされるすべての例外もスローします。  
+ The first method also throws any exception that is thrown when `Val` is copied into the associated asynchronous state.  
   
- 2 番目のメソッドは、`Val` が関連付けられた非同期状態に移動されたときにスローされるすべての例外もスローします。  
+ The second method also throws any exception that is thrown when `Val` is moved into the associated asynchronous state.  
   
- 部分的特殊化 `promise<Ty&>` の場合、格納されている値は、事実上 `Val` への参照です。  
+ For the partial specialization `promise<Ty&>`, the stored value is effectively a reference to `Val`.  
   
- 特殊化 `promise<void>` の場合、格納されている値は存在しません。  
+ For the specialization `promise<void>`, no stored value exists.  
   
 ##  <a name="swap"></a>  promise::swap  
- この約束オブジェクトに*関連付けられた非同期状態*を指定したオブジェクトのものと交換します。  
+ Exchanges the *associated asynchronous state* of this promise object with that of a specified object.  
   
 ```
 void swap(promise& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- `promise` オブジェクト。  
+ A `promise` object.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 

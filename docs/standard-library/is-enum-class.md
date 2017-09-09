@@ -1,5 +1,5 @@
 ---
-title: "is_enum クラス | Microsoft Docs"
+title: is_enum Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_enum
 - type_traits/std::is_enum
 dev_langs:
 - C++
@@ -35,31 +34,31 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 1e57d67f920b6742c8ba6b732675c00a8b0df992
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a5a0c18678d6b679e4d02eabfdc052957fd94ec1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isenum-class"></a>is_enum クラス
-型が列挙型であるかどうかをテストします。  
+# <a name="isenum-class"></a>is_enum Class
+Tests if type is an enumeration.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Ty>  
 struct is_enum;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- 型 `Ty` が列挙型または列挙型の `cv-qualified` 形式である場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `Ty` is an enumeration type or a `cv-qualified` form of an enumeration type, otherwise it holds false.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_enum.cpp   
@@ -95,12 +94,12 @@ is_enum<color> == true
 is_enum<int> == false  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_integral クラス](../standard-library/is-integral-class.md)
+ [is_integral Class](../standard-library/is-integral-class.md)
 

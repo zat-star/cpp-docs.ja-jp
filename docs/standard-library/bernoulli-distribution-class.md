@@ -1,5 +1,5 @@
 ---
-title: "bernoulli_distribution クラス | Microsoft Docs"
+title: bernoulli_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- bernoulli_distribution
 - random/std::bernoulli_distribution
 - random/std::bernoulli_distribution::reset
 - random/std::bernoulli_distribution::p
@@ -25,7 +24,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- bernoulli_distribution class
+- std::bernoulli_distribution [C++]
+- std::bernoulli_distribution [C++], reset
+- std::bernoulli_distribution [C++], p
+- std::bernoulli_distribution [C++], param
+- std::bernoulli_distribution [C++], min
+- std::bernoulli_distribution [C++], max
+- std::bernoulli_distribution [C++], param_type
+- std::bernoulli_distribution [C++], param_type
 ms.assetid: 586bcde1-95ca-411a-bf17-4aaf19482f34
 caps.latest.revision: 22
 author: corob-msft
@@ -45,17 +51,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 6711efe0bf60bc9320e1d97c83de50dcc3020971
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: af7aee87a8e1dd47a6548ac0edb4057b54b0bb2d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="bernoullidistribution-class"></a>bernoulli_distribution クラス
-ベルヌイ分布を生成します。  
+# <a name="bernoullidistribution-class"></a>bernoulli_distribution Class
+Generates a Bernoulli distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class bernoulli_distribution  
@@ -85,33 +91,33 @@ public:
    };  
 ```
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-*URNG* Uniform Random Number Generator エンジン。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+*URNG* The uniform random number generator engine. For possible types, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
-このクラスは、ベルヌイ分布の離散確率関数に従って分布した、型 `bool` の値を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The class describes a distribution that produces values of type `bool`, distributed according to the Bernoulli distribution discrete probability function. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[bernoulli_distribution](#bernoulli_distribution)|`bernoulli_distribution::p`|`bernoulli_distribution::param`|  
 |`bernoulli_distribution::operator()`||[param_type](#param_type)|  
   
-プロパティ メンバー `p()` は、現在格納されている分布パラメーター値 `p` を返します。  
+The property member `p()` returns the currently stored distribution parameter value `p`.  
   
-プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-ベルヌイ分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[ベルヌイ分布](http://go.microsoft.com/fwlink/LinkId=398467)」を参照してください。  
+For detailed information about the Bernoulli distribution discrete probability function, see the Wolfram MathWorld article [Bernoulli Distribution](http://go.microsoft.com/fwlink/LinkId=398467).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -171,35 +177,35 @@ false :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  true :::::::::::::::::::::::::::::::::::::::::
 ```  
   
-## <a name="requirements"></a>要件  
-**ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+**Header:** \<random>  
   
-**名前空間:** std  
+**Namespace:** std  
   
 ##  <a name="bernoulli_distribution"></a>  bernoulli_distribution::bernoulli_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit bernoulli_distribution(double p = 0.5);
 explicit bernoulli_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *p*  
- 格納されている `p` 分布パラメーター。  
+ The stored `p` distribution parameter.  
   
 *parm*  
- 分布の作成に使用される `param_type` の構造体。  
+ The `param_type` structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
- **前提条件:** `0.0 ≤ p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+ **Precondition:** `0.0 ≤ p ≤ 1.0`  
   
-1 つ目のコンストラクターは、格納されている `p` の値が *p* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `p` value holds the value *p*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  bernoulli_distribution::param_type  
-分布のパラメーターを含みます。  
+Contains the parameters of the distribution.  
   
 struct param_type {  
    typedef bernoulli_distribution distribution_type;  
@@ -207,16 +213,16 @@ struct param_type {
 
    bool operator==(const param_type& right) const; bool operator!=(const param_type& right) const; };  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *p*  
-格納されている `p` 分布パラメーター。  
+The stored `p` distribution parameter.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 ≤ p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 ≤ p ≤ 1.0`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

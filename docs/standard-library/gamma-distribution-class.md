@@ -1,5 +1,5 @@
 ---
-title: "gamma_distribution クラス | Microsoft Docs"
+title: gamma_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- gamma_distribution
 - random/std::gamma_distribution
 - random/std::gamma_distribution::reset
 - random/std::gamma_distribution::alpha
@@ -27,8 +26,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- gamma_distribution
-- gamma_distribution class
+- std::gamma_distribution [C++]
+- std::gamma_distribution [C++], reset
+- std::gamma_distribution [C++], alpha
+- std::gamma_distribution [C++], beta
+- std::gamma_distribution [C++], param
+- std::gamma_distribution [C++], min
+- std::gamma_distribution [C++], max
+- std::gamma_distribution [C++], param_type
+- std::gamma_distribution [C++], param_type
 ms.assetid: 2a6798ac-6152-41d7-8ef6-d684d92f1572
 caps.latest.revision: 18
 author: corob-msft
@@ -48,17 +54,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 4dc6623f129a73bde85ab350777f948bce09c091
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 40c0f316e5179f2450e8966138dfd630e94cc328
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="gammadistribution-class"></a>gamma_distribution クラス
-ガンマ分布を生成します。  
+# <a name="gammadistribution-class"></a>gamma_distribution Class
+Generates a gamma distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```  
 template<class RealType = double>
 class gamma_distribution {
@@ -87,35 +93,35 @@ public:
     result_type max() const;
 };
 ```    
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。  
+The floating-point result type, defaults to `double`. For possible types, see [\<random>](../standard-library/random.md).  
   
-*URNG* Uniform Random Number Generator エンジン。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+*URNG* The uniform random number generator engine. For possible types, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
-このテンプレート クラスは、ガンマ分布に従って分布した、ユーザー指定の浮動小数点型の値または型 `double` の値 (指定がない場合) を生成する分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The template class describes a distribution that produces values of a user-specified floating-point type, or type `double` if none is provided, distributed according to the Gamma Distribution. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[gamma_distribution](#gamma_distribution)|`gamma_distribution::alpha`|`gamma_distribution::param`|  
 |`gamma_distribution::operator()`|`gamma_distribution::beta`|[param_type](#param_type)|  
   
-プロパティ関数 `alpha()` と `beta()` はそれぞれ、格納されている分布パラメーター *alpha* と *beta* の値を返します。  
+The property functions `alpha()` and `beta()` return their respective values for stored distribution parameters *alpha* and *beta*.  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-ガンマ分布の詳細については、Wolfram MathWorld の記事「[ガンマ分布](http://go.microsoft.com/fwlink/LinkId=401111)」を参照してください。  
+For detailed information about the gamma distribution, see the Wolfram MathWorld article [Gamma Distribution](http://go.microsoft.com/fwlink/LinkId=401111).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -198,38 +204,38 @@ Distribution for 10 samples:
     10: 2.1201210996  
 ```  
   
-## <a name="requirements"></a>要件  
-**ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+**Header:** \<random>  
   
-**名前空間:** std  
+**Namespace:** std  
   
 ##  <a name="gamma_distribution"></a>  gamma_distribution::gamma_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit gamma_distribution(result_type alpha = 1.0, result_type beta = 1.0);
 explicit gamma_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *alpha*  
-`alpha` 分布パラメーター。  
+The `alpha` distribution parameter.  
   
 *beta*  
-`beta` 分布パラメーター。  
+The `beta` distribution parameter.  
   
 *parm*  
-分布の作成に使用されるパラメーターの構造体。  
+The parameter structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < alpha` および `0.0 < beta`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < alpha` and `0.0 < beta`  
   
-1 つ目のコンストラクターは、格納されている値 `alpha` と `beta` にそれぞれ *alpha* と *beta* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `alpha` value holds the value *alpha* and whose stored `beta` value holds the value *beta*.  
   
-2 つ目のコンストラクターは、格納パラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  gamma_distribution::param_type  
-分布のパラメーターを格納します。  
+Stores the parameters of the distribution.  
   
 ```cpp   
 struct param_type {  
@@ -242,22 +248,22 @@ struct param_type {
    bool operator!=(const param_type& right) const;
    };  
 ```  
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *alpha*  
-`alpha` 分布パラメーター。  
+The `alpha` distribution parameter.  
   
 *beta*  
-`beta` 分布パラメーター。  
+The `beta` distribution parameter.  
   
 *right*  
-これと比較する `param_type` インスタンス。  
+The `param_type` instance to compare this to.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < alpha` および `0.0 < beta`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < alpha` and `0.0 < beta`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [\<random>](../standard-library/random.md)
 
 

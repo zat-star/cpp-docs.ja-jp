@@ -1,15 +1,14 @@
 ---
-title: "minus 構造体 | Microsoft Docs"
+title: minus Struct | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- minus
 - xfunctional/std::minus
 dev_langs:
 - C++
@@ -36,16 +35,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: e2ed81d3d990e9c9f2a9a21d04fabcbbfbb94f9a
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: c877325af09f3ad486a6965e2652b829213ffbbf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="minus-struct"></a>minus 構造体
-引数に対して減算演算 (二項 `operator-`) を実行する定義済みの関数オブジェクト。  
+# <a name="minus-struct"></a>minus Struct
+A predefined function object that performs the subtraction operation (binary `operator-`)  on its arguments.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Type = void>
@@ -64,20 +64,20 @@ struct minus<void>
  };
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- `Type`、`T`、`U`  
- 指定または推論された型のオペランドを受け取る二項 `operator-` をサポートする型。  
+#### <a name="parameters"></a>Parameters  
+ `Type`, `T`, `U`  
+ A type that supports a binary `operator-` that takes operands of the specified or inferred types.  
   
  `Left`  
- 演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
+ The left operand of the operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `T`.  
   
  `Right`  
- 演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
+ The right operand of the operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `U`.  
   
-## <a name="return-value"></a>戻り値  
- `Left``-``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator-` によって返された型が含まれます。  
+## <a name="return-value"></a>Return Value  
+ The result of `Left - Right`. The specialized template does perfect forwarding of the result, which has the type returned by `operator-`.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // functional_minus.cpp  
@@ -132,14 +132,14 @@ The element-wise differences between v1 and v2 are: ( 2 3 4 5 6 7 )
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<functional>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<functional>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 
 

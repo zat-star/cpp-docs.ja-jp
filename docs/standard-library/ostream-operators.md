@@ -1,31 +1,34 @@
 ---
-title: "&lt;ostream&gt; 演算子 | Microsoft Docs"
+title: '&lt;ostream&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- ostream/std::operator&lt;&lt;
+dev_langs:
+- C++
 ms.assetid: 9282a62e-a3d1-4371-a284-fbc9515bb9a2
 caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 097b3ec2a7b097eb2137e1fd5fe59eabc0da537f
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 8f133af1d58a083492aa0631f51721a94a6d612f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltostreamgt-operators"></a>&lt;ostream&gt; 演算子
+# <a name="ltostreamgt-operators"></a>&lt;ostream&gt; operators
 ||  
 |-|  
 |[operator&lt;&lt;](#op_lt_lt)|  
   
 ##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
- さまざまな型をストリームに書き込みます。  
+ Writes various types to the stream.  
   
 ```
 template <class _Elem, class _Tr>
@@ -84,32 +87,32 @@ basic_ostream <_Elem, _Tr>& operator<<(
     Ty val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 単一の文字。  
+ A character.  
   
  `_Elem`  
- 要素型。  
+ The element type.  
   
  `_Ostr`  
- `basic_ostream` オブジェクト。  
+ A `basic_ostream` object.  
   
  `str`  
- 文字列。  
+ A character string.  
   
  `_Tr`  
- 文字の特徴 (traits)。  
+ Character traits.  
   
  `val`  
- 型  
+ The type  
   
-### <a name="return-value"></a>戻り値  
- ストリーム。  
+### <a name="return-value"></a>Return Value  
+ The stream.  
   
-### <a name="remarks"></a>コメント  
- `basic_ostream`クラスもいくつかの挿入演算子を定義します。 詳細については、[basic_ostream::operator&lt;&lt;](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt)をご覧ください。  
+### <a name="remarks"></a>Remarks  
+ The `basic_ostream` class also defines several insertion operators. For more information, see [basic_ostream::operator&lt;&lt;](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt).  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -118,9 +121,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- 長さ N = `str` で始まるシーケンスの `traits_type::`[length](../standard-library/char-traits-struct.md#length)(`str`) とし、シーケンスを挿入しています。 N < `_Ostr.`[width](../standard-library/ios-base-class.md#width) の場合は、関数はまた `_Ostr.``width` - N 充填文字の繰り返しを挿入します。 繰り返し場合、シーケンスの前に (`_Ostr`です。 [flags](../standard-library/ios-base-class.md#flags) & `adjustfield` != [left](../standard-library/ios-functions.md#left). それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` が返されます。  
+ determines the length N = `traits_type::`[length](../standard-library/char-traits-struct.md#length)( `str`) of the sequence beginning at `str`, and inserts the sequence. If N < `_Ostr.`[width](../standard-library/ios-base-class.md#width), then the function also inserts a repetition of `_Ostr.width` - N fill characters. The repetition precedes the sequence if ( `_Ostr`. [flags](../standard-library/ios-base-class.md#flags) & `adjustfield` != [left](../standard-library/ios-functions.md#left). Otherwise, the repetition follows the sequence. The function returns `_Ostr`.  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -129,9 +132,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```  
   
- 要素 `_Ch`を挿入しています。 1 < `_Ostr.width` である場合、この関数はまた `_Ostr.width` - 1 充填文字の繰り返しを挿入します。 `_Ostr.flags & adjustfield != left` である場合、繰り返しはシーケンスに先行します。 それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` を返します。  
+ inserts the element `_Ch`. If 1 < `_Ostr.width`, then the function also inserts a repetition of `_Ostr.width` - 1 fill characters. The repetition precedes the sequence if `_Ostr.flags & adjustfield != left`. Otherwise, the repetition follows the sequence. It returns `_Ostr`.  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -140,7 +143,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     const char *str);
 ```  
   
- 次の関数と同様に動作します。  
+ behaves the same as  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -149,9 +152,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- 異なる点は、`str` で始まるシーケンスの各要素 `_Ch` が、`_Ostr.`[put](../standard-library/basic-ostream-class.md#put)(`_Ostr.`[widen](../standard-library/basic-ios-class.md#widen)(`_Ch`)) を呼び出すことにより、`Elem` 型のオブジェクトに変換されることです。  
+ except that each element `_Ch` of the sequence beginning at `str` is converted to an object of type `Elem` by calling `_Ostr.`[put](../standard-library/basic-ostream-class.md#put)( `_Ostr.`[widen](../standard-library/basic-ios-class.md#widen)( `_Ch`)).  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp
 template <class _Elem, class _Tr>
@@ -160,7 +163,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     char _Ch);
 ```  
   
- 次の関数と同様に動作します。  
+ behaves the same as  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -169,9 +172,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```  
   
- 異なる点は、`_Ostr.put`(`_Ostr.widen`(`_Ch`)) を呼び出すことにより、`_Ch` が `Elem` 型のオブジェクトに変換されることです。  
+ except that `_Ch` is converted to an object of type `Elem` by calling `_Ostr.put`( `_Ostr.widen`( `_Ch`)).  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Tr>
@@ -180,7 +183,7 @@ basic_ostream<char, _Tr>& operator<<(
     const char *str);
 ```  
   
- 次の関数と同様に動作します。  
+ behaves the same as  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -189,9 +192,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- (要素を挿入する前に拡張する必要はありません。)  
+ (It does not have to widen the elements before inserting them.)  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Tr>
@@ -200,7 +203,7 @@ basic_ostream<char, Tr>& operator<<(
     char _Ch);
 ```  
   
- 次の関数と同様に動作します。  
+ behaves the same as  
   
 ```cpp  
 template <class _Elem, class _Tr>
@@ -209,9 +212,9 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```  
   
- (`_Ch`を挿入する前に拡張する必要はありません。)  
+ (It does not have to widen `_Ch` before inserting it.)  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Tr>
@@ -220,9 +223,9 @@ basic_ostream<char, _Tr>& operator<<(
     const signed char *str);
 ```  
   
- `_Ostr` << ( `const char *`) `str` を返します。  
+ returns `_Ostr` << ( `const char *`) `str`.  
   
- 下記のテンプレート関数は  
+ The template function  
   
 ```cpp  
 template <class _Tr>
@@ -231,9 +234,9 @@ basic_ostream<char, _Tr>& operator<<(
     signed char _Ch);
 ```  
   
- `_Ostr` << ( `char`) `_Ch`を返します。  
+ returns `_Ostr` << ( `char`) `_Ch`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class _Tr>
@@ -242,9 +245,9 @@ basic_ostream<char, _Tr>& operator<<(
     const unsigned char *str);
 ```  
   
- `_Ostr` << ( `const char *`) `str`を返します。  
+ returns `_Ostr` << ( `const char *`) `str`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class _Tr>
@@ -253,9 +256,9 @@ basic_ostream<char, _Tr>& operator<<(
     unsigned char _Ch);
 ```  
   
- `_Ostr` << ( `char`) `_Ch`を返します。  
+ returns `_Ostr` << ( `char`) `_Ch`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class _Elem, class _Tr, class T>
@@ -264,12 +267,12 @@ basic_ostream<_Elem, _Tr>& operator<<(
     T val);
 ```  
   
- `_Ostr` `<<` `val` を返します (さらに `_Ostr` への [RValue Reference](../cpp/rvalue-reference-declarator-amp-amp.md) をそのプロセス内の lvalue に変換します)。  
+ returns `_Ostr` `<<` `val` (and converts a [RValue Reference](../cpp/rvalue-reference-declarator-amp-amp.md) to `_Ostr` to an lvalue in the process).  
   
-### <a name="example"></a>例  
-  `operator<<` の使用例は、[flush](../standard-library/ostream-functions.md#flush) をご覧ください。  
+### <a name="example"></a>Example  
+  See [flush](../standard-library/ostream-functions.md#flush) for an example using `operator<<`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<ostream>](../standard-library/ostream.md)
 
 

@@ -1,23 +1,39 @@
 ---
-title: "&lt;iterator&gt; 演算子 | Microsoft Docs"
+title: '&lt;iterator&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- iterator/std::operator!=
+- iterator/std::operator&gt;
+- iterator/std::operator&gt;=
+- iterator/std::operator&lt;
+- iterator/std::operator&lt;=
+- iterator/std::operator+
+- iterator/std::operator-
+- iterator/std::operator==
+dev_langs:
+- C++
 ms.assetid: b7c664f0-49d4-4993-b5d1-9ac4859fdddc
 caps.latest.revision: 10
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a369890d41b58fb3865780291822b4e7e045e919
+helpviewer_keywords:
+- std::operator!= (iterator)
+- std::operator&gt; (iterator)
+- std::operator&gt;= (iterator)
+- std::operator&lt; (iterator)
+- std::operator&lt;= (iterator), std::operator== (iterator)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 129433eebdc988b863d1a61d2ceaf220cd897096
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltiteratorgt-operators"></a>&lt;iterator&gt; 演算子
+# <a name="ltiteratorgt-operators"></a>&lt;iterator&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|  
@@ -25,7 +41,7 @@ ms.lasthandoff: 04/29/2017
 |[operator-](#operator-)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しくないかどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is not equal to the iterator object on the right side.  
   
 ```  
 template <class RandomIterator>  
@@ -38,20 +54,20 @@ template <class CharType, class Tr>
 bool operator!=(const istreambuf_iterator<CharType, Traits>& left, const istreambuf_iterator<CharType, Traits>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **iterator** 型のオブジェクト。  
+ An object of type **iterator**.  
   
  `right`  
- **iterator** 型のオブジェクト。  
+ An object of type **iterator**.  
   
-### <a name="return-value"></a>戻り値  
- 反復子オブジェクトが等しくない場合は **true**、反復子オブジェクトが等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the iterator objects are not equal; **false** if the iterator objects are equal.  
   
-### <a name="remarks"></a>コメント  
- コンテナー内の同じ要素に対応する場合は、1 つの反復子オブジェクトが別の反復子オブジェクトと等しくなります。 2 つの反復子がコンテナー内の異なる要素を指す場合、これらの反復子は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is equal to another if they address the same elements in a container. If two iterators point to different elements in a container, then they are not equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_ne.cpp  
@@ -114,7 +130,7 @@ The iterators are not equal.
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクトと等しいかどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is equal to the iterator object on the right side.  
   
 ```  
 template <class RandomIterator1, class RandomIterator2>  
@@ -138,22 +154,22 @@ bool operator==(
     const istreambuf_iterator<CharType, Traits>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
  `right`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
-### <a name="return-value"></a>戻り値  
- 反復子オブジェクトが等しい場合は `true`、反復子オブジェクトが等しくない場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the iterator objects are equal; `false` if the iterator objects are not equal.  
   
-### <a name="remarks"></a>コメント  
- コンテナー内の同じ要素に対応する場合は、1 つの反復子オブジェクトが別の反復子オブジェクトと等しくなります。 2 つの反復子がコンテナー内の異なる要素を指す場合、これらの反復子は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is equal to another if they address the same elements in a container. If two iterators point to different elements in a container, then they are not equal.  
   
- 最初の 2 つのテンプレート演算子は、`left` と `right` の両方に同じ反復子が格納されている場合にのみ true を返します。 3 番目のテンプレート演算子は、`left` と `right` の両方に同じストリーム ポインターが格納されている場合にのみ true を返します。 4 番目のテンプレート演算子は ` left.equal ( right)` を返します。  
+ The first two template operators return true only if both `left` and `right` store the same iterator. The third template operator returns true only if both `left` and `right` store the same stream pointer. The fourth template operator returns ` left.equal ( right)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_eq.cpp  
@@ -216,27 +232,27 @@ The iterators are not equal.
 ```  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより小さいかどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is less than the iterator object on the right side.  
   
 ```  
 template <class RandomIterator>  
 bool operator<(const reverse_iterator<RandomIterator>& left, const reverse_iterator<RandomIterator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **iterator** 型のオブジェクト。  
+ An object of type **iterator**.  
   
  `right`  
- **iterator** 型のオブジェクト。  
+ An object of type **iterator**.  
   
-### <a name="return-value"></a>戻り値  
- 式の左側の反復子が式の右側の反復子未満の場合は **true**、式の右側の反復子以上の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the iterator on the left side of the expression is less than the iterator on the right side of the expression; **false** if it is greater than or equal to the iterator on the right.  
   
-### <a name="remarks"></a>コメント  
- 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素よりも前にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト未満となります。 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素と同じ要素またはその要素よりも後にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト以上となります。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is less than another if it addresses an element that occurs earlier in the container than the element addressed by the other iterator object. One iterator object is not less than another if it addresses either the same element as the other iterator object or an element that occurs later in the container than the element addressed by the other iterator object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_lt.cpp  
@@ -303,27 +319,27 @@ The iterator rVPOS1 is less than the iterator rVPOS2.
 ```  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以下かどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is less than or equal to the iterator object on the right side.  
   
 ```  
 template <class RandomIterator>  
 bool operator<=(const reverse_iterator<RandomIterator>& left, const reverse_iterator<RandomIterator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
  `right`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
-### <a name="return-value"></a>戻り値  
- 式の左側の反復子が右側の反復子以下の場合は **true**、右側の反復子より大きい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the iterator on the left side of the expression is less than or equal to the iterator on the right side of the expression; **false** if it is greater than the iterator on the right.  
   
-### <a name="remarks"></a>コメント  
- 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素と同じ要素またはその要素よりも前にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト以下となります。 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素よりも後にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクトより大きくなります。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is less than or equal to another if it addresses the same element or an element that occurs earlier in the container than the element addressed by the other iterator object. One iterator object is greater than another if it addresses an element that occurs later in the container than the element addressed by the other iterator object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_le.cpp  
@@ -394,27 +410,27 @@ The iterator rVPOS1 is less than or equal to the iterator rVPOS2.
 ```  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクトより大きいかどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is greater than the iterator object on the right side.  
   
 ```  
 template <class RandomIterator>  
 bool operator>(const reverse_iterator<RandomIterator>& left, const reverse_iterator<RandomIterator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
  `right`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
-### <a name="return-value"></a>戻り値  
- 式の左側の反復子が式の右側の反復子より大きい場合は **true**、式の右側の反復子以下の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the iterator on the left side of the expression is greater than the iterator on the right side of the expression; **false** if it is less than or equal to the iterator on the right.  
   
-### <a name="remarks"></a>コメント  
- 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素よりも後にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクトより大きくなります。 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素と同じ要素またはその要素よりも前にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト以下となります。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is greater than another if it addresses an element that occurs later in the container than the element addressed by the other iterator object. One iterator object is not greater than another if it addresses either the same element as the other iterator object or an element that occurs earlier in the container than the element addressed by the other iterator object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_gt.cpp  
@@ -479,27 +495,27 @@ The iterator rVPOS1 is greater than the iterator rVPOS2.
 ```  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 演算子の左側の反復子オブジェクトが右側の反復子オブジェクト以上かどうかを調べます。  
+ Tests if the iterator object on the left side of the operator is greater than or equal to the iterator object on the right side.  
   
 ```  
 template <class RandomIterator>  
 bool operator>=(const reverse_iterator<RandomIterator>& left, const reverse_iterator<RandomIterator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
  `right`  
- iterator 型のオブジェクト。  
+ An object of type iterator.  
   
-### <a name="return-value"></a>戻り値  
- 式の左側の反復子が式の右側の反復子以上の場合は **true**、式の右側の反復子未満の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the iterator on the left side of the expression is greater than or equal to the iterator on the right side of the expression; **false** if it is less than the iterator on the right.  
   
-### <a name="remarks"></a>コメント  
- 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素と同じ要素またはその要素よりも後にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト以上となります。 1 つの反復子オブジェクトが、別の反復子オブジェクトが対応する要素よりも前にコンテナーで発生する要素に対応する場合、その反復子オブジェクトは別の反復子オブジェクト未満となります。  
+### <a name="remarks"></a>Remarks  
+ One iterator object is greater than or equal to another if it addresses the same element or an element that occurs later in the container than the element addressed by the other iterator object. One iterator object is less than another if it addresses an element that occurs earlier in the container than the element addressed by the other iterator object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_ge.cpp  
@@ -570,7 +586,7 @@ The iterator rVPOS1 is greater than or equal to the iterator rVPOS2.
 ```  
   
 ##  <a name="op_add"></a>  operator+  
- 反復子にオフセットを追加し、新しいオフセット位置に挿入された要素をアドレス指定する `move_iterator` または `reverse_iterator` アドレスを返します。  
+ Adds an offset to an iterator and returns a `move_iterator` or a `reverse_iterator` addressing the inserted element at the new offset position.  
   
 ```  
 template <class RandomIterator, class Diff>  
@@ -586,17 +602,17 @@ operator+(
     const reverse_iterator<RandomIterator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- const move_iterator または const reverse_iterator がオフセットされる位置の数。  
+ The number of positions the const move_iterator or const reverse_iterator is to be offset.  
   
  `right`  
- オフセットされる反復子。  
+ The iterator to be offset.  
   
-### <a name="return-value"></a>戻り値  
- 合計 `right` + `_Off` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the sum `right` + `_Off`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_insert.cpp  
@@ -646,7 +662,7 @@ The iterator rVPOS1 now points to the fifth element
 ```  
   
 ##  <a name="operator-"></a>  operator-  
- ある反復子を別の反復子から減算し、その差異を返します。  
+ Subtracts one iterator from another and returns the difference.  
   
 ```  
 template <class RandomIterator1, class RandomIterator2>  
@@ -660,24 +676,24 @@ Tdiff operator-(
     const reverse_iterator<RandomIterator2>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 反復子。  
+ An iterator.  
   
  `right`  
- 反復子。  
+ An iterator.  
   
-### <a name="return-value"></a>戻り値  
- 2 つの反復子の相違点。`.`  
+### <a name="return-value"></a>Return Value  
+ The difference between two iterators `.`  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のテンプレート演算子は `left.base() - right.base()` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template operator returns `left.base() - right.base()`.  
   
- 2 つ目のテンプレート演算子は `right.current - left.current` を返します。  
+ The second template operator returns `right.current - left.current`.  
   
- `Tdiff` は、返される式の種類によって決まります。 それ以外の場合は `RandomIterator1::difference_type` です。  
+ `Tdiff` is determined by the type of the returned expression. Otherwise, it is `RandomIterator1::difference_type`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // iterator_op_sub.cpp  
@@ -734,7 +750,7 @@ The iterator rVPOS2 now points to the fifth element
 The difference: rVPOS2 - rVPOS1= 4.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<iterator>](../standard-library/iterator.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "underlying_type クラス | Microsoft Docs"
+title: underlying_type Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
-- underlying_type
 - type_traits/std::underlying_type
 dev_langs:
 - C++
@@ -35,35 +34,36 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 95012fdeb3ac78d5e1cc76e03ed851a0b9701f5e
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 9c70d546726ace71a2696f729da0506be028650d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="underlyingtype-class"></a>underlying_type クラス
-列挙型の基になる整数型を生成します。  
+# <a name="underlyingtype-class"></a>underlying_type Class
+Produces the underlying integral type for an enumeration type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T>  
 struct underlying_type;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 変更する型。  
+ The type to modify.  
   
-## <a name="remarks"></a>コメント  
- `T` が列挙型の場合、テンプレート クラスのメンバー typedef `type` は `T` の基になる整数型に名前を付けます。それ以外の場合はメンバー typedef `type` はありません。  
+## <a name="remarks"></a>Remarks  
+ The `type` member typedef of the template class names the underlying integral type of `T`, when `T` is an enumeration type, otherwise there is no member typedef `type`.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

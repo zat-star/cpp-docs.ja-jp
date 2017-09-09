@@ -1,5 +1,5 @@
 ---
-title: "&lt;functional&gt; 演算子 | Microsoft Docs"
+title: '&lt;functional&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -20,20 +20,20 @@ caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: f38d129aab8703b6077b2848d7b71bb0a07e0ea7
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 1b6e189f5940fdbf7a9399a74ba0efaebf6ce823
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltfunctionalgt-operators"></a>&lt;functional&gt; 演算子
+# <a name="ltfunctionalgt-operators"></a>&lt;functional&gt; operators
 |||  
 |-|-|  
 |[operator!=](#op_neq)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 呼び出し可能オブジェクトが空かどうかをテストします。  
+ Tests if callable object is empty.  
   
 ```  
 template <class Fty>  
@@ -43,20 +43,20 @@ template <class Fty>
 bool operator==(null_ptr_type npc, const function<Fty>& f);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Fty`  
- ラップする関数の型。  
+ The function type to wrap.  
   
  `f`  
- 関数オブジェクト  
+ The function object  
   
  `npc`  
- null ポインター  
+ A null pointer.  
   
-### <a name="remarks"></a>コメント  
- どちらの演算子も、`function` オブジェクトへの参照である引数と null ポインター定数である引数を受け取ります。 `function` オブジェクトが空の場合にのみ、両方とも true を返します。  
+### <a name="remarks"></a>Remarks  
+ The operators both take an argument that is a reference to a `function` object and an argument that is a null pointer constant. Both return true only if the `function` object is empty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__functional__operator_eq.cpp
@@ -90,7 +90,7 @@ empty == false
 ```  
   
 ##  <a name="op_neq"></a>  operator!=  
- 呼び出し可能オブジェクトが空かどうかをテストします。  
+ Tests if callable object is not empty.  
   
 ```  
 template <class Fty>  
@@ -100,20 +100,20 @@ template <class Fty>
 bool operator!=(null_ptr_type npc, const function<Fty>& f);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Fty`  
- ラップする関数の型。  
+ The function type to wrap.  
   
  `f`  
- 関数オブジェクト  
+ The function object  
   
  `npc`  
- null ポインター  
+ A null pointer.  
   
-### <a name="remarks"></a>コメント  
- どちらの演算子も、`function` オブジェクトへの参照である引数と null ポインター定数である引数を受け取ります。 `function` オブジェクトが空ではない場合にのみ、両方とも true を返します。  
+### <a name="remarks"></a>Remarks  
+ The operators both take an argument that is a reference to a `function` object and an argument that is a null pointer constant. Both return true only if the `function` object is not empty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__functional__operator_ne.cpp   
@@ -146,7 +146,7 @@ not empty == false
 not empty == true  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<functional>](../standard-library/functional.md)
 
 

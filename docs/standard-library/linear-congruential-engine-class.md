@@ -1,5 +1,5 @@
 ---
-title: "linear_congruential_engine クラス | Microsoft Docs"
+title: linear_congruential_engine Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- linear_congruential_engine
 - random/std::linear_congruential_engine
 dev_langs:
 - C++
@@ -34,17 +33,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: bbb733e102af57627c00006816bb8d955877d0f8
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 633e8219aa39a503af2e716deb41d25cdcd8f751
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="linearcongruentialengine-class"></a>linear_congruential_engine クラス
-線形合同法アルゴリズムでランダム シーケンスを生成します。  
+# <a name="linearcongruentialengine-class"></a>linear_congruential_engine Class
+Generates a random sequence by the linear congruential algorithm.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```  
 class linear_congruential_engine{  
    public:  // types  
@@ -68,61 +67,61 @@ class linear_congruential_engine{
    void discard(unsigned long long z);
    };  
 ```  
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `UIntType`  
- 結果を表す符号なし整数型。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+ The unsigned integer result type. For possible types, see [\<random>](../standard-library/random.md).  
   
  `A`  
- **乗数**です。 **Precondition**: セクションの「解説」を参照してください。  
+ **Multiplier**. **Precondition**: See Remarks section.  
   
  `C`  
- **インクリメント**です。 **Precondition**: セクションの「解説」を参照してください。  
+ **Increment**. **Precondition**: See Remarks section.  
   
  `M`  
- **剰余**です。 **Precondition**:「解説」を参照してください。  
+ **Modulus**. **Precondition**: See remarks.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
 ||||  
 |-|-|-|  
 |`linear_congruential_engine::linear_congruential_engine`|`linear_congruential_engine::min`|`linear_congruential_engine::discard`|  
 |`linear_congruential_engine::operator()`|`linear_congruential_engine::max`|`linear_congruential_engine::seed`|  
   
- `default_seed` は、`1u` として定義されているメンバー定数で、`linear_congruential_engine::seed` および単一値コンストラクターの既定のパラメーター値として使用されます。  
+ `default_seed` is a member constant, defined as `1u`, used as the default parameter value for `linear_congruential_engine::seed` and the single value constructor.  
   
- エンジンのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+ For more information about engine members, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
- `linear_congruential_engine` テンプレート クラスは、最も単純なジェネレーター エンジンですが、速度や品質は最高というわけではありません。 このエンジンを改良したものが [substract_with_carry_engine](../standard-library/subtract-with-carry-engine-class.md) です。 これらのエンジンはいずれも、[mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md) ほど高速ではなく、結果も高品質ではありません。  
+## <a name="remarks"></a>Remarks  
+ The `linear_congruential_engine` template class is the simplest generator engine, but not the fastest or highest quality. An improvement over this engine is the [substract_with_carry_engine](../standard-library/subtract-with-carry-engine-class.md). Neither of these engines is as fast or with as high quality results as the [mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md).  
   
- このエンジンは、漸化式 ( *周期*) `x(i) = (A * x(i-1) + C) mod M` を使用して、ユーザー指定の符号なし整数型の値を生成します。  
+ This engine produces values of a user-specified unsigned integral type using the recurrence relation ( *period*) `x(i) = (A * x(i-1) + C) mod M`.  
   
- `M` が 0 の場合、この剰余演算に使用される値は `numeric_limits<result_type>::max() + 1` です。 エンジンの状態は、最後に返された値か、または `operator()` に対して呼び出しが行われなかった場合はシード値になります。  
+ If `M` is zero, the value used for this modulus operation is `numeric_limits<result_type>::max() + 1`. The engine's state is the last value returned, or the seed value if no call has been made to `operator()`.  
   
- `M` が 0 以外の場合、テンプレート引数 `A` と `C` の値は `M` 未満である必要があります。  
+ If `M` is not zero, the values of the template arguments `A` and `C` must be less than `M`.  
   
- このエンジンから直接ジェネレーターを構築できますが、定義済みの typedef のいずれかを使用することもできます。  
+ Although you can construct a generator from this engine directly, you can also use one of these predefined typedefs.  
   
- `minstd_rand0`: 1988 年の最小標準エンジン (ルイス、グッドマン、ミラー、1969 年)。  
+ `minstd_rand0`: 1988 minimal standard engine (Lewis, Goodman, and Miller, 1969).  
   
 ```  
 typedef linear_congruential_engine<unsigned int, 16807, 0, 2147483647> minstd_rand0;  
 ```  
   
- `minstd_rand`: `minstd_rand0` の改良版最小標準エンジン (パーク、ミラー、ストックマイヤー、1993 年)。  
+ `minstd_rand`: Updated minimal standard engine `minstd_rand0` (Park, Miller, and Stockmeyer, 1993).  
   
 ```  
 typedef linear_congruential_engine<unsigned int, 48271, 0, 2147483647> minstd_rand;  
 ```  
   
- 線形合同法エンジン アルゴリズムの詳細については、Wikipedia の記事「[Linear congruential generator (線形合同法)](http://go.microsoft.com/fwlink/LinkId=402446)」を参照してください。  
+ For detailed information about the linear congruential engine algorithm, see the Wikipedia article [Linear congruential generator](http://go.microsoft.com/fwlink/LinkId=402446).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

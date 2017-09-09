@@ -1,5 +1,5 @@
 ---
-title: "is_trivially_constructible クラス | Microsoft Docs"
+title: is_trivially_constructible Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
-- is_trivially_constructible
 - type_traits/std::is_trivially_constructible
 dev_langs:
 - C++
@@ -35,38 +34,39 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 4acc8f686d918391966949134a5c2b3c1a0a41a5
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fe756def468770270140ebc7cb6c9a91f2b926b2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="istriviallyconstructible-class"></a>is_trivially_constructible クラス
-指定した引数型の使用時に型を自明に構築できるかどうかをテストします。  
+# <a name="istriviallyconstructible-class"></a>is_trivially_constructible Class
+Tests whether a type is trivially constructible when the specified argument types are used.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T, class... Args>  
 struct is_trivially_constructible;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 照会する型。  
+ The type to query.  
   
  `Args`  
- `T` のコンストラクター内の一致させる引数型。  
+ The argument types to match in a constructor of `T`.  
   
-## <a name="remarks"></a>コメント  
- 型述語のインスタンスは、型 `T` が `Args` の引数型を使用して自明に構築可能な場合 true を保持します。それ以外の場合は false を保持します。 型 `T` が自明に構築可能であるのは、変数定義 `T t(std::declval<Args>()...);` の形式が適切であり、自明ではない操作を呼び出さないことがわかっている場合です。 `T` と `Args` のすべての型はともに、完全な型、`void`、または不明なバインドの配列にする必要があります。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `T` is trivially constructible by using the argument types in `Args`, otherwise it holds false. Type `T` is trivially constructible if the variable definition `T t(std::declval<Args>()...);` is well-formed and is known to call no non-trivial operations. Both `T` and all the types in `Args` must be complete types, `void`, or arrays of unknown bound.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)
 
 

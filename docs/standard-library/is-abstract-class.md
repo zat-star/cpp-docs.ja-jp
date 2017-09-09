@@ -1,5 +1,5 @@
 ---
-title: "is_abstract クラス | Microsoft Docs"
+title: is_abstract Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_abstract
 - type_traits/std::is_abstract
 dev_langs:
 - C++
@@ -35,31 +34,31 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 04d82fcbd251ae743db18301e9e65ea6898c967c
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 2639b07774fe8f7784c19776e5e4071b62f92708
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isabstract-class"></a>is_abstract クラス
-型が抽象クラスであるかどうかをテストします。  
+# <a name="isabstract-class"></a>is_abstract Class
+Tests if type is abstract class.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Ty>  
 struct is_abstract;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- 型 `Ty` が純粋仮想関数が&1; つ以上存在するクラスである場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true if the type `Ty` is a class that has at least one pure virtual function, otherwise it holds false.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_abstract.cpp   
@@ -93,12 +92,12 @@ is_abstract<trivial> == false
 is_abstract<abstract> == true  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_polymorphic クラス](../standard-library/is-polymorphic-class.md)
+ [is_polymorphic Class](../standard-library/is-polymorphic-class.md)
 

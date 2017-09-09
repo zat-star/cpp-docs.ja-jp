@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- <functional>
-- functional/std::<functional>
-- std::<functional>
+- <functional>", "functional/std::<functional>", "std::<functional>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,152 +34,152 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: e4c3cbb6d11758ff15909c6062b7430f6679f6de
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 0863a6bc58f28a18c6e5b6d301c792009882a36c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltfunctionalgt"></a>&lt;functional&gt;
-*関数オブジェクト* (ファンクターとも呼ばれます) とそれらのバインダーの作成に役立つ C++ 標準ライブラリ関数を定義します。 関数オブジェクトは、`operator()` を定義するオブジェクトの種類です。 関数オブジェクトは関数ポインターとしても使用できますが、一般的に、関数オブジェクトは、関数呼び出しの実行中にアクセスできる追加情報を格納するために使用されます。  
+Defines C++ Standard Library functions that help construct *function objects*—also known as functors—and their binders. A function object is an object of a type that defines `operator()`. A function object can be a function pointer, but more typically, the object is used to store additional information that can be accessed during a function call.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <functional>  
 ```  
   
-## <a name="remarks"></a>コメント  
- アルゴリズムでは、単項および二項という 2 種類の関数オブジェクトが使用されます。 単項関数オブジェクトは 1 つの引数を必要とし、二項関数オブジェクトは 2 つの引数を必要とします。 関数オブジェクトと関数ポインターは述語としてアルゴリズムに渡すことができますが、関数オブジェクトは適応性があり、C++ 標準ライブラリのスコープ、柔軟性、効率が向上します。 たとえば、値をアルゴリズムに渡す前に、その値を関数にバインドする必要がある場合は、関数ポインターを使用できないことがあります。 関数アダプターを利用すると、関数ポインターが、値にバインドできる適応性のある関数オブジェクトに変換されます。 ヘッダー \<functional> には、メンバー関数を適応性のある関数オブジェクトとして呼び出すことができるメンバー関数アダプターも含まれます。 関数が引数と戻り値の型を指定する入れ子になった型宣言を持っている場合、それらの関数は適応性があります。 C++ 標準では、すべての標準オブジェクト クラスで、unary_function 基底クラスや binary_function 基底クラスから継承することによって、この適応性を実装する必要があります。 関数オブジェクトとそのアダプターを使用すると、C++ 標準ライブラリで既存のアプリケーションをアップグレードでき、ライブラリと C++ プログラミング環境との統合に役立てることができます。  
+## <a name="remarks"></a>Remarks  
+ Algorithms require two types of function objects: unary and binary. Unary function objects require one argument, and binary function objects require two arguments. A function object and function pointers can be passed as a predicate to an algorithm, but function objects are also adaptable and increase the scope, flexibility, and efficiency of the C++ Standard Library. If, for example, a value needed to be bound to a function before being passed to an algorithm, then a function pointer could not be used. Function adaptors convert function pointers into adaptable function objects that can be bound to a value. The header \<functional> also contains member function adaptors that allow member functions to be called as adaptable function objects. Functions are adaptable if they have nested type declarations specifying their argument and return types. The C++ Standard requires that this adaptability is implemented by having all standard object classes inherit from the unary_function or binary_function base classes. Function objects and their adaptors allow the C++ Standard Library to upgrade existing applications and help integrate the library into the C++ programming environment.  
   
- \<functional> 内の関数オブジェクトの [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] 実装には、*透過的な演算子のファンクター*が含まれます。このファンクターは、標準関数オブジェクトの特殊化であり、テンプレート パラメーターを使用しません。また、関数の引数の完全転送と結果の完全取得を実行します。 この機能は、C++14 ドラフト標準の仕様の一部です。 これらのテンプレートの特殊化では、算術演算子のファンクター、比較演算子のファンクター、論理演算子のファンクター、ビットごとの演算子のファンクターを呼び出すときに、引数の型を指定する必要はありません。 ユーザー独自の型または異なる種類の型の組み合わせに対して算術演算子、比較演算子、論理演算子、ビットごとの演算子をオーバーロードしてから、透過的な演算子のファンクターを関数の引数として使用できます。 たとえば、ユーザー独自の型 *MyType* が `operator<` を実装する場合、型 `sort(my_collection.begin(), my_collection.end(), less<MyType>())` を明示的に指定する代わりに、`sort(my_collection.begin(), my_collection.end(), less<>())` を呼び出すことができます。  
+ The Visual C++ implementation of the function objects in \<functional> includes *transparent operator functors*, which are specializations of standard function objects and take no template parameters, and perform perfect forwarding of the function arguments and perfect return of the result. This feature is part of the C++14 Draft Standard specification. These template specializations do not require that you specify argument types when you invoke arithmetic, comparison, logical, and bitwise operator functors. You can overload arithmetic, comparison, logical, or bitwise operators for your own types, or for heterogeneous combinations of types, and then use the transparent operator functors as function arguments. For example, if your type *MyType* implements `operator<`, you can call `sort(my_collection.begin(), my_collection.end(), less<>())` instead of explicitly specifying the type `sort(my_collection.begin(), my_collection.end(), less<MyType>())`.  
   
-## <a name="c11c14-implementation"></a>C++11/C++14 実装  
- C++11/C++14 の Visual C++ 実装では、次の機能が追加されます。  
+## <a name="c11c14-implementation"></a>C++11/C++14 Implementation  
+ The following features are added in the Visual C++ implementation of C++11/C++14:  
   
--   *呼び出しシグネチャ*は、戻り値の型の名前の後に、かっこで囲まれたコンマ区切りのリスト (0 個以上の引数の型が含まれます) が続きます。  
+-   A *call signature* is the name of a return type followed by a parenthesized comma-separated list of zero or more argument types.  
   
--   *呼び出し可能型* は、関数へのポインター、メンバー関数へのポインター、メンバー データへのポインター、関数呼び出し演算子のすぐ左にオブジェクトを示すことができるクラス型のいずれかになります。  
+-   A *callable type* is a pointer to function, a pointer to member function, a pointer to member data, or a class type whose objects can appear immediately to the left of a function call operator.  
   
--   *呼び出し可能オブジェクト*は、呼び出し可能型のオブジェクトです。  
+-   A *callable object* is an object of a callable type.  
   
--   *呼び出しラッパーの型*は、呼び出し可能オブジェクトを保持する型であり、オブジェクトに転送される呼び出し操作をサポートします。  
+-   A *call wrapper type* is a type that holds a callable object and supports a call operation that forwards to that object.  
   
--   *呼び出しラッパー*は、呼び出しラッパーの型のオブジェクトです。  
+-   A *call wrapper* is an object of a call wrapper type.  
   
--   *ターゲット オブジェクト*は、呼び出しラッパー オブジェクトによって保持される呼び出し可能オブジェクトです。  
+-   A *target object* is the callable object held by a call wrapper object.  
   
- 擬似関数 `INVOKE(f, t1, t2, ..., tN)` は、次のいずれかを意味します。  
+ The pseudo-function `INVOKE(f, t1, t2, ..., tN)` means one of the following things:  
   
-- `(t1.*f)(t2, ..., tN)`。`f` がクラス `T` のメンバー関数へのポインターであり、`t1` が型 `T` のオブジェクト、型 `T` のオブジェクトへの参照、`T` から派生した型のオブジェクトへの参照のいずれかである場合。  
+- `(t1.*f)(t2, ..., tN)` when `f` is a pointer to member function of class `T` and `t1` is an object of type `T` or a reference to an object of type `T` or a reference to an object of a type derived from `T`.  
   
-- `((*t1).*f)(t2, ..., tN)`。`f` がクラス `T` のメンバー関数へのポインターであり、`t1` が上で説明した以外の型のオブジェクトである場合。  
+- `((*t1).*f)(t2, ..., tN)` when `f` is a pointer to member function of class `T` and `t1` is not one of the types described in the previous item.  
   
-- `t1.*f`。N == 1 で、`f` がクラス `T` のメンバー データへのポインターであり、`t1` が型 `T` のオブジェクト、型 `T` のオブジェクトへの参照、`T` から派生した型のオブジェクトへの参照のいずれかである場合。  
+- `t1.*f` when N == 1 and `f` is a pointer to member data of a class `T` and `t1` is an object of type `T` or a reference to an object of type `T` or a reference to an object of a type derived from `T`.  
   
-- `(*t1).*f`。N == 1 で、`f` がクラス `T` のメンバー データへのポインターであり、`t1` が上で説明した以外の型のオブジェクトである場合。  
+- `(*t1).*f` when N == 1 and `f` is a pointer to member data of a class `T` and `t1` is not one of the types described in the previous item.  
   
-- `f(t1, t2, ..., tN)`。上記のいずれのケースにも該当しない場合。  
+- `f(t1, t2, ..., tN)` in all other cases.  
   
- 擬似関数 `INVOKE(f, t1, t2, ..., tN, R)` は、暗黙的に `INVOKE(f, t1, t2, ..., tN)` に変換される `R` を意味します。  
+ The pseudo-function `INVOKE(f, t1, t2, ..., tN, R)` means `INVOKE(f, t1, t2, ..., tN)` implicitly converted to `R`.  
   
- 呼び出しラッパーに*弱い結果型*が含まれている場合は、そのメンバー型 `result_type` の種類は、ラッパーのターゲット オブジェクトの型 `T` に基づいて次のようなります。  
+ If a call wrapper has a *weak result type*, the type of its member type `result_type` is based on the type `T` of the target object of the wrapper, as follows:  
   
--   `T` が関数へのポインターである場合、`result_type` は 戻り値の型 `T` のシノニムになります。  
+-   If `T` is a pointer to function, `result_type` is a synonym for the return type of `T`.  
   
--   `T` がメンバー関数へのポインターである場合、`result_type` は 戻り値の型 `T` のシノニムになります。  
+-   If `T` is a pointer to member function, `result_type` is a synonym for the return type of `T`.  
   
--   `T` がメンバー型 `result_type` を持つクラス型である場合、`result_type` は `T::result_type` のシノニムになります。  
+-   If `T` is a class type that has a member type `result_type`, then `result_type` is a synonym for `T::result_type`.  
   
--   それ以外の場合は、メンバー `result_type` は存在しません。  
+-   Otherwise, there is no member `result_type`.  
   
- すべての呼び出しラッパーには、移動コンストラクターとコピー コンストラクターが含まれています。 *単純な呼び出しラッパー*とは、代入演算子を含んでおり、そのコピー コンストラクター、移動コンストラクター、代入演算子が例外をスローしない呼び出しラッパーです。 *転送呼び出しラッパー*とは、任意の引数リストを使用して呼び出すことができ、ラップされた呼び出し可能オブジェクトに引数を参照として渡す呼び出しラッパーです。 すべての右辺値引数は右辺値参照として渡され、左辺値引数は左辺値参照として渡されます。  
+ Every call wrapper has a move constructor and a copy constructor. A *simple call wrapper* is a call wrapper that has an assignment operator and whose copy constructor, move constructor, and assignment operator do not throw exceptions. A *forwarding call wrapper* is a call wrapper that can be called by using an arbitrary argument list and that delivers the arguments to the wrapped callable object as references. All rvalue arguments are delivered as rvalue references, and lvalue arguments are delivered as lvalue references.  
   
-### <a name="classes"></a>クラス  
-  
-|||  
-|-|-|  
-|[bad_function_call](../standard-library/bad-function-call-class.md)|[function](../standard-library/function-class.md) オブジェクトが空であるために、そのオブジェクトでの `operator()` の呼び出しが失敗したことを示す場合にスローされる例外を記述するクラス。|  
-|[binary_negate](../standard-library/binary-negate-class.md)|指定した二項関数の戻り値を否定するメンバー関数を提供するテンプレート クラス。|  
-|[binder1st](../standard-library/binder1st-class.md)|指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
-|[binder2nd](../standard-library/binder2nd-class.md)|指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するコンストラクターを提供するテンプレート クラス。|  
-|[const_mem_fun_ref_t](../standard-library/const-mem-fun-ref-t-class.md)|参照引数による初期化を行うときに、引数を使用しない const メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[const_mem_fun_t](../standard-library/const-mem-fun-t-class.md)|ポインター引数による初期化を行うときに、引数を使用しない const メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[const_mem_fun1_ref_t](../standard-library/const-mem-fun1-ref-t-class.md)|参照引数による初期化を行うときに、1 つの引数を使用する const メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[const_mem_fun1_t](../standard-library/const-mem-fun1-t-class.md)|ポインター引数による初期化を行うときに、1 つの引数を使用する const メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[function](../standard-library/function-class.md)|呼び出し可能オブジェクトをラップするクラス。|  
-|[hash](../standard-library/hash-class.md)|値のハッシュ コードを計算するクラス。|  
-|[is_bind_expression](../standard-library/is-bind-expression-class.md)|`bind` を呼び出すことによって特定の型が生成されるかどうかをテストするクラス。|  
-|[is_placeholder](../standard-library/is-placeholder-class.md)|特定の型がプレースホルダーであるかどうかをテストするクラス。|  
-|[mem_fun_ref_t](../standard-library/mem-fun-ref-t-class.md)|参照引数による初期化を行うときに、引数を使用しない **non_const** メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[mem_fun_t](../standard-library/mem-fun-t-class.md)|ポインター引数による初期化を行うときに、引数を使用しない **non_const** メンバー関数を単項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[mem_fun1_ref_t](../standard-library/mem-fun1-ref-t-class.md)|参照引数による初期化を行うときに、1 つの引数を使用する **non_const** メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[mem_fun1_t](../standard-library/mem-fun1-t-class.md)|ポインター引数による初期化を行うときに、1 つの引数を使用する **non_const** メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。|  
-|[pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md)|二項関数ポインターを適応性のある二項関数に変換します。|  
-|[pointer_to_unary_function](../standard-library/pointer-to-unary-function-class.md)|単項関数ポインターを適応性のある単項関数に変換します。|  
-|[reference_wrapper](../standard-library/reference-wrapper-class.md)|参照をラップするクラス。|  
-|[unary_negate](../standard-library/unary-negate-class.md)|指定した単項関数の戻り値を否定するメンバー関数を提供するテンプレート クラス。|  
-  
-### <a name="functions"></a>関数  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[bind](../standard-library/functional-functions.md#bind)|呼び出し可能オブジェクトに引数をバインドします。|  
-|[bind1st](../standard-library/functional-functions.md#bind1st)|指定した値に二項関数の 1 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
-|[bind2nd](../standard-library/functional-functions.md#bind2nd)|指定した値に二項関数の 2 番目の引数をバインドして二項関数オブジェクトを単項関数オブジェクトに変換するアダプターを作成するヘルパー テンプレート関数。|  
-|[bit_and](../standard-library/functional-functions.md#bit_and)|2 つのパラメーターのビットごとの論理 AND (二項演算子 &) を返します。|  
-|[bit_not](../standard-library/functional-functions.md#bit_not)|パラメーターのビットごとの論理補数 (演算子 ~) を返します。|  
-|[bit_or](../standard-library/functional-functions.md#bit_or)|2 つのパラメーターのビットごとの論理 OR (演算子&#124;) を返します。|  
-|[bit_xor](../standard-library/functional-functions.md#bit_xor)|2 つのパラメーターのビットごとの論理 XOR (演算子 ^) を返します。|  
-|[cref](../standard-library/functional-functions.md#cref)|引数から const の `reference_wrapper` を構築します。|  
-|[mem_fn](../standard-library/functional-functions.md#mem_fn)|単純な呼び出しラッパーを生成します。|  
-|[mem_fun](../standard-library/functional-functions.md#mem_fun)|ポインター引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
-|[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)|参照引数による初期化を行うときに、メンバー関数の関数オブジェクト アダプターを作成するために使用されるヘルパー テンプレート関数。|  
-|[not1](../standard-library/functional-functions.md#not1)|単項述語の補数を返します。|  
-|[not2](../standard-library/functional-functions.md#not2)|二項述語の補数を返します。|  
-|[ptr_fun](../standard-library/functional-functions.md#ptr_fun)|単項関数ポインターと二項関数ポインターをそれぞれ適応性のある単項関数および二項関数に変換するために使用されるヘルパー テンプレート関数。|  
-|[ref](../standard-library/functional-functions.md#ref)|引数から `reference_wrapper` を構築します。|  
-|[swap](../standard-library/functional-functions.md#swap)|2 つの `function` オブジェクトを交換します。|  
+|[bad_function_call](../standard-library/bad-function-call-class.md)|A class that describes an exception thrown to indicate that a call to `operator()` on a [function](../standard-library/function-class.md) object failed because the object was empty.|  
+|[binary_negate](../standard-library/binary-negate-class.md)|A template class providing a member function that negates the return value of a specified binary function.|  
+|[binder1st](../standard-library/binder1st-class.md)|A template class providing a constructor that converts a binary function object into a unary function object by binding the first argument of the binary function to a specified value.|  
+|[binder2nd](../standard-library/binder2nd-class.md)|A template class providing a constructor that converts a binary function object into a unary function object by binding the second argument of the binary function to a specified value.|  
+|[const_mem_fun_ref_t](../standard-library/const-mem-fun-ref-t-class.md)|An adapter class that allows a const member function that takes no arguments to be called as a unary function object when initialized with a reference argument.|  
+|[const_mem_fun_t](../standard-library/const-mem-fun-t-class.md)|An adapter class that allows a const member function that takes no arguments to be called as a unary function object when initialized with a pointer argument.|  
+|[const_mem_fun1_ref_t](../standard-library/const-mem-fun1-ref-t-class.md)|An adapter class that allows a const member function that takes a single argument to be called as a binary function object when initialized with a reference argument.|  
+|[const_mem_fun1_t](../standard-library/const-mem-fun1-t-class.md)|An adapter class that allows a const member function that takes a single argument to be called as a binary function object when initialized with a pointer argument.|  
+|[function](../standard-library/function-class.md)|A class that wraps a callable object.|  
+|[hash](../standard-library/hash-class.md)|A class that computes a hash code for a value.|  
+|[is_bind_expression](../standard-library/is-bind-expression-class.md)|A class that tests if a particular type is generated by calling `bind`.|  
+|[is_placeholder](../standard-library/is-placeholder-class.md)|A class that tests if a particular type is a placeholder.|  
+|[mem_fun_ref_t](../standard-library/mem-fun-ref-t-class.md)|An adapter class that allows a **non_const** member function that takes no arguments to be called as a unary function object when initialized with a reference argument.|  
+|[mem_fun_t](../standard-library/mem-fun-t-class.md)|An adapter class that allows a **non_const** member function that takes no arguments to be called as a unary function object when initialized with a pointer argument.|  
+|[mem_fun1_ref_t](../standard-library/mem-fun1-ref-t-class.md)|An adapter class that allows a **non_const** member function that takes a single argument to be called as a binary function object when initialized with a reference argument.|  
+|[mem_fun1_t](../standard-library/mem-fun1-t-class.md)|An adapter class that allows a **non_const** member function that takes a single argument to be called as a binary function object when initialized with a pointer argument.|  
+|[pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md)|Converts a binary function pointer into an adaptable binary function.|  
+|[pointer_to_unary_function](../standard-library/pointer-to-unary-function-class.md)|Converts a unary function pointer into an adaptable unary function.|  
+|[reference_wrapper](../standard-library/reference-wrapper-class.md)|A class that wraps a reference.|  
+|[unary_negate](../standard-library/unary-negate-class.md)|A template class providing a member function that negates the return value of a specified unary function.|  
   
-### <a name="structs"></a>構造体  
-  
-|||  
-|-|-|  
-|[binary_function](../standard-library/binary-function-struct.md)|二項関数オブジェクトを提供する派生クラスによって継承される可能性がある型を定義する空の基底クラス。|  
-|[divides](../standard-library/divides-struct.md)|クラスには、指定した値型の要素に対して算術演算 (除算) を実行する定義済みの関数オブジェクトが用意されています。|  
-|[equal_to](../standard-library/equal-to-struct.md)|指定した型の値がその型の他の値と等しいかどうかをテストする二項述語。|  
-|[greater](../standard-library/greater-struct.md)|指定した型の値がその型の他の値よりも大きいかどうかをテストする二項述語。|  
-|[greater_equal](../standard-library/greater-equal-struct.md)|指定した型の値がその型の他の値以上であるかどうかをテストする二項述語。|  
-|[less](../standard-library/less-struct.md)|指定した型の値がその型の他の値よりも小さいかどうかをテストする二項述語。|  
-|[less_equal](../standard-library/less-equal-struct.md)|指定した型の値がその型の他の値以下であるかどうかをテストする二項述語。|  
-|[logical_and](../standard-library/logical-and-struct.md)|クラスには、指定した値型の要素に対して論理積演算を実行する定義済みの関数オブジェクトが用意されており、結果の真偽をテストします。|  
-|[logical_not](../standard-library/logical-not-struct.md)|クラスには、指定した値型の要素に対して論理否定演算を実行する定義済みの関数オブジェクトが用意されており、結果の真偽をテストします。|  
-|[logical_or](../standard-library/logical-or-struct.md)|クラスには、指定した値型の要素に対して論理和演算を実行する定義済みの関数オブジェクトが用意されており、結果の真偽をテストします。|  
-|[minus](../standard-library/minus-struct.md)|クラスには、指定した値型の要素に対して算術演算 (減算) を実行する定義済みの関数オブジェクトが用意されています。|  
-|[modulus](../standard-library/modulus-struct.md)|クラスには、指定した値型の要素に対して算術演算 (剰余) を実行する定義済みの関数オブジェクトが用意されています。|  
-|[multiplies](../standard-library/multiplies-struct.md)|クラスには、指定した値型の要素に対して算術演算 (乗算) を実行する定義済みの関数オブジェクトが用意されています。|  
-|[negate](../standard-library/negate-struct.md)|クラスには、要素の値の負数を返す定義済みの関数オブジェクトが用意されています。|  
-|[not_equal_to](../standard-library/not-equal-to-struct.md)|指定した型の値がその型の他の値と等しくないかどうかをテストする二項述語。|  
-|[plus](../standard-library/plus-struct.md)|クラスには、指定した値型の要素に対して算術演算 (加算) を実行する定義済みの関数オブジェクトが用意されています。|  
-|[unary_function](../standard-library/unary-function-struct.md)|単項関数オブジェクトを提供する派生クラスによって継承される可能性がある型を定義する空の基底クラス。|  
-  
-### <a name="objects"></a>オブジェクト  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[_1.._M](../standard-library/1-object.md)|置き換え可能な引数のプレースホルダーです。|  
+|[bind](../standard-library/functional-functions.md#bind)|Binds arguments to a callable object.|  
+|[bind1st](../standard-library/functional-functions.md#bind1st)|A helper template function that creates an adaptor to convert a binary function object into a unary function object by binding the first argument of the binary function to a specified value.|  
+|[bind2nd](../standard-library/functional-functions.md#bind2nd)|A helper template function that creates an adaptor to convert a binary function object into a unary function object by binding the second argument of the binary function to a specified value.|  
+|[bit_and](../standard-library/functional-functions.md#bit_and)|Returns the bitwise logical AND (binary operator&) of the two parameters.|  
+|[bit_not](../standard-library/functional-functions.md#bit_not)|Returns the bitwise logical complement (operator~) of the parameter.|  
+|[bit_or](../standard-library/functional-functions.md#bit_or)|Returns the bitwise logical OR (operator&#124;) of the two parameters.|  
+|[bit_xor](../standard-library/functional-functions.md#bit_xor)|Returns the bitwise logical XOR (operator^) of the two parameters.|  
+|[cref](../standard-library/functional-functions.md#cref)|Constructs a const `reference_wrapper` from an argument.|  
+|[mem_fn](../standard-library/functional-functions.md#mem_fn)|Generates a simple call wrapper.|  
+|[mem_fun](../standard-library/functional-functions.md#mem_fun)|Helper template functions used to construct function object adaptors for member functions when initialized with pointer arguments.|  
+|[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)|A helper template function used to construct function object adaptors for member functions when initialized with reference arguments.|  
+|[not1](../standard-library/functional-functions.md#not1)|Returns the complement of a unary predicate.|  
+|[not2](../standard-library/functional-functions.md#not2)|Returns the complement of a binary predicate.|  
+|[ptr_fun](../standard-library/functional-functions.md#ptr_fun)|A helper template function used to convert unary and binary function pointers, respectively, into unary and binary adaptable functions.|  
+|[ref](../standard-library/functional-functions.md#ref)|Constructs a `reference_wrapper` from an argument.|  
+|[swap](../standard-library/functional-functions.md#swap)|Swaps two `function` objects.|  
   
-### <a name="operators"></a>演算子  
+### <a name="structs"></a>Structs  
   
 |||  
 |-|-|  
-|[operator==](../standard-library/functional-operators.md#op_eq_eq)|呼び出し可能オブジェクトの等価比較を否定します。|  
-|[operator!=](../standard-library/functional-operators.md#op_neq)|呼び出し可能オブジェクトの非等価比較を否定します。|  
+|[binary_function](../standard-library/binary-function-struct.md)|An empty base class that defines types that may be inherited by derived class that provides a binary function object.|  
+|[divides](../standard-library/divides-struct.md)|The class provides a predefined function object that performs the arithmetic operation of division on elements of a specified value type.|  
+|[equal_to](../standard-library/equal-to-struct.md)|A binary predicate that tests whether a value of a specified type is equal to another value of that type.|  
+|[greater](../standard-library/greater-struct.md)|A binary predicate that tests whether a value of a specified type is greater than another value of that type.|  
+|[greater_equal](../standard-library/greater-equal-struct.md)|A binary predicate that tests whether a value of a specified type is greater than or equal to another value of that type.|  
+|[less](../standard-library/less-struct.md)|A binary predicate that tests whether a value of a specified type is less than another value of that type.|  
+|[less_equal](../standard-library/less-equal-struct.md)|A binary predicate that tests whether a value of a specified type is less than or equal to another value of that type.|  
+|[logical_and](../standard-library/logical-and-struct.md)|The class provides a predefined function object that performs the logical operation of conjunction on elements of a specified value type and tests for the truth or falsity of the result.|  
+|[logical_not](../standard-library/logical-not-struct.md)|The class provides a predefined function object that performs the logical operation of negation on elements of a specified value type and tests for the truth or falsity of the result.|  
+|[logical_or](../standard-library/logical-or-struct.md)|The class provides a predefined function object that performs the logical operation of disjunction on elements of a specified value type and tests for the truth or falsity of the result.|  
+|[minus](../standard-library/minus-struct.md)|The class provides a predefined function object that performs the arithmetic operation of subtraction on elements of a specified value type.|  
+|[modulus](../standard-library/modulus-struct.md)|The class provides a predefined function object that performs the arithmetic operation of modulus on elements of a specified value type.|  
+|[multiplies](../standard-library/multiplies-struct.md)|The class provides a predefined function object that performs the arithmetic operation of multiplication on elements of a specified value type.|  
+|[negate](../standard-library/negate-struct.md)|The class provides a predefined function object that returns the negative of an element value.|  
+|[not_equal_to](../standard-library/not-equal-to-struct.md)|A binary predicate that tests whether a value of a specified type is not equal to another value of that type.|  
+|[plus](../standard-library/plus-struct.md)|The class provides a predefined function object that performs the arithmetic operation of addition on elements of a specified value type.|  
+|[unary_function](../standard-library/unary-function-struct.md)|An empty base class that defines types that may be inherited by derived class that provides a unary function object.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+### <a name="objects"></a>Objects  
+  
+|||  
+|-|-|  
+|[_1.._M](../standard-library/1-object.md)|Placeholders for replaceable arguments.|  
+  
+### <a name="operators"></a>Operators  
+  
+|||  
+|-|-|  
+|[operator==](../standard-library/functional-operators.md#op_eq_eq)|Disallows equality comparison of callable objects.|  
+|[operator!=](../standard-library/functional-operators.md#op_neq)|Disallows inequality comparison of callable objects.|  
+  
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

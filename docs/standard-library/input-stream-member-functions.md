@@ -1,5 +1,5 @@
 ---
-title: "入力ストリームのメンバー関数 | Microsoft Docs"
+title: Input Stream Member Functions | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,6 @@ dev_langs:
 helpviewer_keywords:
 - input stream objects
 - input streams, member functions
-f1_keywords: []
 ms.assetid: b4b9465d-0da9-4ccf-859d-72a68418982e
 caps.latest.revision: 7
 author: corob-msft
@@ -33,34 +32,34 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 04820d66b272d284940971d1661b4c41f116aa2f
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d3f69e0bfc0aadc8f0985e0ffb8130f2c18446fe
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="input-stream-member-functions"></a>入力ストリームのメンバー関数
-入力ストリームのメンバー関数は、ディスク入力に使用します。 次のようなメンバー関数があります。  
+# <a name="input-stream-member-functions"></a>Input Stream Member Functions
+Input stream member functions are used for disk input. The member functions include:  
   
-- [入力ストリームの open 関数](#vclrftheopenfunctionforinputstreamsanchor11)  
+- [The open Function for Input Streams](#vclrftheopenfunctionforinputstreamsanchor11)  
   
-- [Get](#vclrfthegetfunctionanchor12)  
+- [The get](#vclrfthegetfunctionanchor12)  
   
-- [Getline](#vclrfthegetlinefunctionanchor13)  
+- [The getline](#vclrfthegetlinefunctionanchor13)  
   
-- [読み取り](#vclrfthereadfunctionanchor14)  
+- [The read](#vclrfthereadfunctionanchor14)  
   
-- [seekg 関数と tellg 関数](#vclrftheseekgandtellgfunctionsanchor7)  
+- [The seekg and tellg Functions](#vclrftheseekgandtellgfunctionsanchor7)  
   
-- [入力ストリームの close 関数](#vclrftheclosefunctionforinputstreamsanchor15)  
+- [The close Function for Input Streams](#vclrftheclosefunctionforinputstreamsanchor15)  
   
-##  <a name="vclrftheopenfunctionforinputstreamsanchor11"></a>入力ストリームの open 関数  
- 入力ファイル ストリーム (ifstream) を使用している場合は、そのストリームを特定のディスク ファイルに関連付ける必要があります。 これを行うには、コンストラクターで行うか、**open** 関数を使用することができます。 いずれの場合も、引数は同じです。  
+##  <a name="vclrftheopenfunctionforinputstreamsanchor11"></a> The open Function for Input Streams  
+ If you are using an input file stream (ifstream), you must associate that stream with a specific disk file. You can do this in the constructor, or you can use the **open** function. In either case, the arguments are the same.  
   
- 入力ストリームに関連付けられているファイルを開く場合、通常は [ios_base::openmode](../standard-library/ios-base-class.md#openmode) フラグを指定します (既定のモードは **ios::in** です)。 一覧については、 **open_mode**フラグを参照してください[開く](#vclrftheopenfunctionforinputstreamsanchor11)です。 フラグは、ビットごとの OR ( &#124; ) 演算子と組み合わせることができます。  
+ You generally specify an [ios_base::openmode](../standard-library/ios-base-class.md#openmode) flag when you open the file associated with an input stream (the default mode is **ios::in**). For a list of the **open_mode** flags, see [The open](#vclrftheopenfunctionforinputstreamsanchor11). The flags can be combined with the bitwise OR ( &#124; ) operator.  
   
- ファイルを読み取るには、まず **fail** メンバー関数を使用して、そのファイルが存在するかどうかを調べます。  
+ To read a file, first use the **fail** member function to determine whether it exists:  
   
 ```  
 istream ifile("FILENAME");
@@ -69,10 +68,10 @@ if (ifile.fail())
 // The file does not exist ...  
 ```  
   
-##  <a name="vclrfthegetfunctionanchor12"></a>Get
- 書式設定されていない **get** メンバー関数は、**>>** 演算子のように機能しますが、例外が 2 つあります。 1 番目は、**get** 関数には余白が含まれますが、抽出では、**skipws** フラグが設定されている場合 (既定) に余白が除外される点です。 2 番目は、**get** 関数では、関連付けられた出力ストリーム (`cout` など) がフラッシュされる可能性が低い点です。  
+##  <a name="vclrfthegetfunctionanchor12"></a> The get
+ The unformatted **get** member function works like the **>>** operator with two exceptions. First, the **get** function includes white-space characters, whereas the extractor excludes white space when the **skipws** flag is set (the default). Second, the **get** function is less likely to cause a tied output stream (`cout`, for example) to be flushed.  
   
- **get** 関数の一種は、バッファー アドレスと読み取る文字の最大数を指定します。 これは、次の例のように、特定の変数に送信される文字数を制限する場合に役立ちます。  
+ A variation of the **get** function specifies a buffer address and the maximum number of characters to read. This is useful for limiting the number of characters sent to a specific variable, as this example shows:  
   
 ```  
 // ioo_get_function.cpp  
@@ -91,22 +90,22 @@ int main()
 }  
 ```  
   
-### <a name="input"></a>入力  
+### <a name="input"></a>Input  
   
 ```  
 1234  
 ```  
   
-### <a name="sample-output"></a>出力例  
+### <a name="sample-output"></a>Sample Output  
   
 ```  
 1234  
 ```  
   
-##  <a name="vclrfthegetlinefunctionanchor13"></a>Getline
- **getline** メンバー関数は **get** 関数に似ています。 両方の関数で、入力の終端文字を指定する 3 番目の引数を使用できます。 既定値は改行文字です。 両方の関数は、必須の終端文字用に 1 つの文字を予約します。 ただし、**get** は終端文字をストリームに残し、**getline** は終端文字を削除します。  
+##  <a name="vclrfthegetlinefunctionanchor13"></a> The getline
+ The **getline** member function is similar to the **get** function. Both functions allow a third argument that specifies the terminating character for input. The default value is the newline character. Both functions reserve one character for the required terminating character. However, **get** leaves the terminating character in the stream and **getline** removes the terminating character.  
   
- 次の例では、入力ストリームの終端文字を指定します。  
+ The following example specifies a terminating character for the input stream:  
   
 ```  
 // getline_func.cpp  
@@ -123,16 +122,16 @@ int main( )
 }  
 ```  
   
-### <a name="input"></a>入力  
+### <a name="input"></a>Input  
   
 ```  
 test  
 ```  
   
-##  <a name="vclrfthereadfunctionanchor14"></a>読み取り
- **read** メンバー関数は、メモリの指定した領域に対するファイルからのバイト数を読み取ります。 length 引数は、読み取られるバイト数を決定します。 この引数を含めないと、ファイルの物理的な末尾に達した場合、またはテキストモードのファイルでは埋め込まれた `EOF` 文字が読み取られた場合に、読み取りが停止します。  
+##  <a name="vclrfthereadfunctionanchor14"></a> The read
+ The **read** member function reads bytes from a file to a specified area of memory. The length argument determines the number of bytes read. If you do not include that argument, reading stops when the physical end of file is reached or, in the case of a text-mode file, when an embedded `EOF` character is read.  
   
- この例では、給与ファイルからのバイナリ レコードを構造体に読み取ります。  
+ This example reads a binary record from a payroll file into a structure:  
   
 ```  
 #include <fstream>  
@@ -158,10 +157,10 @@ int main()
 }  
 ```  
   
- プログラムでは、データ レコードが、構造体で指定されているとおりに、終端文字キャリッジ リターンや改行文字を含まずに正確に書式設定されていることが想定されます。  
+ The program assumes that the data records are formatted exactly as specified by the structure with no terminating carriage-return or linefeed characters.  
   
-##  <a name="vclrftheseekgandtellgfunctionsanchor7"></a>seekg 関数と tellg 関数  
- 入力ファイル ストリームは、データを次に読み取るファイル内の位置を指す内部ポインターを保持します。 次に示すように、`seekg` 関数を使用してこのポインターを設定します。  
+##  <a name="vclrftheseekgandtellgfunctionsanchor7"></a> The seekg and tellg Functions  
+ Input file streams keep an internal pointer to the position in the file where data is to be read next. You set this pointer with the `seekg` function, as shown here:  
   
 ```  
 #include <iostream>  
@@ -187,9 +186,9 @@ int main( )
 }  
 ```  
   
- `seekg` を使用してレコード指向のデータ管理システムを実装するには、固定長のレコード サイズを、ファイルの末尾を基準にしたバイト位置を取得するレコード番号で乗算してから、**get** オブジェクトを使用してレコードを読み取ります。  
+ To use `seekg` to implement record-oriented data management systems, multiply the fixed-length record size by the record number to obtain the byte position relative to the end of the file, and then use the **get** object to read the record.  
   
- `tellg` メンバー関数は、読み取るファイルの現在の位置を返します。 この値の型は `streampos` (\<iostream> で定義されている `typedef`) です。 次の例では、ファイルを読み取り、スペースの位置を示すメッセージを表示します。  
+ The `tellg` member function returns the current file position for reading. This value is of type `streampos`, a `typedef` defined in \<iostream>. The following example reads a file and displays messages showing the positions of spaces.  
   
 ```  
 #include <fstream>  
@@ -214,10 +213,10 @@ int main( )
 }  
 ```  
   
-##  <a name="vclrftheclosefunctionforinputstreamsanchor15"></a>入力ストリームの close 関数  
- **close** メンバー関数は、入力ファイル ストリームに関連付けられているディスク ファイルを閉じ、オペレーティング システム ファイル ハンドルを解放します。 [ifstream](../standard-library/basic-ifstream-class.md) デストラクターによってファイルが閉じられますが、同じストリーム オブジェクトの別のファイルを開く必要がある場合は **close** 関数を使用できます。  
+##  <a name="vclrftheclosefunctionforinputstreamsanchor15"></a> The close Function for Input Streams  
+ The **close** member function closes the disk file associated with an input file stream and frees the operating system file handle. The [ifstream](../standard-library/basic-ifstream-class.md) destructor closes the file for you, but you can use the **close** function if you need to open another file for the same stream object.  
   
-## <a name="see-also"></a>関連項目  
- [入力ストリーム](../standard-library/input-streams.md)
+## <a name="see-also"></a>See Also  
+ [Input Streams](../standard-library/input-streams.md)
 
 

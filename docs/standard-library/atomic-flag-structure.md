@@ -1,5 +1,5 @@
 ---
-title: "atomic_flag 構造体 |Microsoft Docs"
+title: atomic_flag Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,67 +33,67 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 9fe3617331c7019956af5d64789624e299c17242
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cd9b53126f07bc2ab847d4921a7cdc569e6f5ea0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="atomicflag-structure"></a>atomic_flag 構造体
-`bool` フラグをアトミックに設定およびクリアするオブジェクトについて記述します。 アトミック フラグの操作は常にロック制御不要です。  
+# <a name="atomicflag-structure"></a>atomic_flag Structure
+Describes an object that atomically sets and clears a `bool` flag. Operations on atomic flags are always lock-free.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 struct atomic_flag;
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[clear](#clear)|格納されたフラグを `false` に設定します。|  
-|[test_and_set](#test_and_set)|格納されたフラグを `true` に設定し、フラグの初期値を返します。|  
+|[clear](#clear)|Sets the stored flag to `false`.|  
+|[test_and_set](#test_and_set)|Sets the stored flag to `true` and returns the initial flag value.|  
   
-## <a name="remarks"></a>コメント  
- `atomic_flag` オブジェクトは、[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear)、[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit)、[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set)、および [atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit) の非メンバー関数に渡すことができます。 これらは、`ATOMIC_FLAG_INIT` の値を使用して初期化できます。  
+## <a name="remarks"></a>Remarks  
+ `atomic_flag` objects can be passed to the non-member functions [atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear), [atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit), [atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set), and [atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit). They can be initialized by using the value `ATOMIC_FLAG_INIT`.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<アトミック >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<atomic>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="clear"></a>atomic_flag::clear
- 指定された [memory_order](../standard-library/atomic-enums.md#memory_order_enum) の制約内で、`*this` に格納されている `bool` フラグを `false` に設定します。  
+##  <a name="clear"></a>  atomic_flag::clear
+ Sets the `bool` flag that is stored in `*this` to `false`, within the specified [memory_order](../standard-library/atomic-enums.md#memory_order_enum) constraints.  
   
 ```
 void atomic_flag::clear(memory_order Order = memory_order_seq_cst) volatile noexcept;
 void atomic_flag::clear(memory_order Order = memory_order_seq_cst) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Order`  
- [memory_order](../standard-library/atomic-enums.md#memory_order_enum)。  
+ A [memory_order](../standard-library/atomic-enums.md#memory_order_enum).  
   
-##  <a name="test_and_set"></a>atomic_flag::test_and_set
- 指定された [memory_order](../standard-library/atomic-enums.md#memory_order_enum) の制約内で、`*this` に格納されている `bool` フラグを `true` に設定します。  
+##  <a name="test_and_set"></a>  atomic_flag::test_and_set
+ Sets the `bool` flag that is stored in `*this` to `true`, within the specified [memory_order](../standard-library/atomic-enums.md#memory_order_enum) constraints.  
   
 ```
 bool atomic_flag::test_and_set(memory_order Order = memory_order_seq_cst) volatile noexcept;
 bool atomic_flag::test_and_set(memory_order Order = memory_order_seq_cst) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Order`  
- [memory_order](../standard-library/atomic-enums.md#memory_order_enum)。  
+ A [memory_order](../standard-library/atomic-enums.md#memory_order_enum).  
   
-### <a name="return-value"></a>戻り値  
- `*this` に格納されているフラグの初期値。  
+### <a name="return-value"></a>Return Value  
+ The initial value of the flag that is stored in `*this`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<atomic>](../standard-library/atomic.md)
 
 

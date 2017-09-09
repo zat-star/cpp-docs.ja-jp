@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- <list>
-- std.<list>
-- std::<list>
+- <list>", "std::<list>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,42 +33,42 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: ce9fb66784027d81acaac6e98ad0f6a6121da956
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fb74624184e764b66561f3bf1e59a632ee1cef58
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltlistgt"></a>&lt;list&gt;
-コンテナーのテンプレート クラス list と複数のサポート用テンプレートを定義します。  
+Defines the container template class list and several supporting templates.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <list>  
 ```  
   
-### <a name="operators"></a>演算子  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/list-operators.md#op_neq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しくないかどうかを調べます。|  
-|[operator<](../standard-library/list-operators.md#op_lt)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより小さいかどうかを調べます。|  
-|[operator\<=](../standard-library/list-operators.md#op_gt_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以下かどうかを調べます。|  
-|[operator==](../standard-library/list-operators.md#op_eq_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクトと等しいかどうかを調べます。|  
-|[operator>](../standard-library/list-operators.md#op_gt)|演算子の左辺の list オブジェクトが右辺の list オブジェクトより大きいかどうかを調べます。|  
-|[operator>=](../standard-library/list-operators.md#op_gt_eq)|演算子の左辺の list オブジェクトが右辺の list オブジェクト以上かどうかを調べます。|  
+|[operator!=](../standard-library/list-operators.md#op_neq)|Tests if the list object on the left side of the operator is not equal to the list object on the right side.|  
+|[operator<](../standard-library/list-operators.md#op_lt)|Tests if the list object on the left side of the operator is less than the list object on the right side.|  
+|[operator\<=](../standard-library/list-operators.md#op_gt_eq)|Tests if the list object on the left side of the operator is less than or equal to the list object on the right side.|  
+|[operator==](../standard-library/list-operators.md#op_eq_eq)|Tests if the list object on the left side of the operator is equal to the list object on the right side.|  
+|[operator>](../standard-library/list-operators.md#op_gt)|Tests if the list object on the left side of the operator is greater than the list object on the right side.|  
+|[operator>=](../standard-library/list-operators.md#op_gt_eq)|Tests if the list object on the left side of the operator is greater than or equal to the list object on the right side.|  
   
-### <a name="classes"></a>クラス  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[list クラス](../standard-library/list-class.md)|要素を線形の配置に維持し、シーケンス内の任意の場所での効率的な挿入と削除を可能にする、シーケンス コンテナーのテンプレート クラス。|  
+|[list Class](../standard-library/list-class.md)|A template class of sequence containers that maintain their elements in a linear arrangement and allow efficient insertions and deletions at any location within the sequence.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

@@ -16,10 +16,11 @@ f1_keywords:
 ms.assetid: 0b962632-3439-44de-bf26-20c67a7f0ff3
 caps.latest.revision: 13
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: d9f9dd5f13f0f4559455ff8d8cf09bab5350b1f0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: e75ab5322859bb88941968e9c1a6673fdf025ae2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltiosgt-typedefs"></a>&lt;ios&gt; typedefs
@@ -29,17 +30,17 @@ ms.lasthandoff: 02/24/2017
 |[streamsize](#streamsize)|[wios](#wios)|[wstreampos](#wstreampos)|  
   
 ##  <a name="ios"></a>  ios  
- 従来の iostream ライブラリの ios クラスをサポートします。  
+ Supports the ios class from the old iostream library.  
   
 ```  
 typedef basic_ios<char, char_traits<char>> ios;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 型はテンプレート クラス [basic_ios](../standard-library/basic-ios-class.md) の同意語で、既定の文字の特性を持つ型 `char` の要素に対して特殊化されています。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for template class [basic_ios](../standard-library/basic-ios-class.md), specialized for elements of type `char` with default character traits.  
   
 ##  <a name="streamoff"></a>  streamoff  
- 内部操作をサポートします。  
+ Supports internal operations.  
   
 ```  
 #ifdef _WIN64  
@@ -49,20 +50,20 @@ typedef basic_ios<char, char_traits<char>> ios;
 #endif  
 ```  
   
-### <a name="remarks"></a>コメント  
- 型は、さまざまなストリーム位置決め操作に関連するオフセット バイト数を格納できるオブジェクトを記述する、符号付き整数です。 この表現は、少なくとも 32 ビットあります。 これは、ストリーム内の任意のバイト位置を表すのに必ずしも十分なサイズとは限りません。 **streamoff(-1)** の値は、通常誤ったオフセットを示します。  
+### <a name="remarks"></a>Remarks  
+ The type is a signed integer that describes an object that can store a byte offset involved in various stream positioning operations. Its representation has at least 32 value bits. It is not necessarily large enough to represent an arbitrary byte position within a stream. The value **streamoff(-1)** generally indicates an erroneous offset.  
   
 ##  <a name="streampos"></a>  streampos  
- バッファー ポインターまたはファイル ポインターの現在の位置を保持します。  
+ Holds the current position of the buffer pointer or file pointer.  
   
 ```  
 typedef fpos<mbstate_t> streampos;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、[fpos](../standard-library/fpos-class.md)< `mbstate_t`> の同意語です。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for [fpos](../standard-library/fpos-class.md)< `mbstate_t`>.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ios_streampos.cpp  
@@ -86,7 +87,7 @@ int main( )
 ```  
   
 ##  <a name="streamsize"></a>  streamsize  
- ストリームのサイズを表します。  
+ Denotes the size of the stream.  
   
 ```  
 #ifdef _WIN64  
@@ -96,11 +97,11 @@ int main( )
 #endif  
 ```  
   
-### <a name="remarks"></a>コメント  
- 型は、さまざまなストリーム操作に関連する要素数のカウントを格納できるオブジェクトを記述する、符号付き整数です。 この表現は、少なくとも 16 ビットあります。 これは、ストリーム内の任意のバイト位置を表すのに必ずしも十分なサイズとは限りません。  
+### <a name="remarks"></a>Remarks  
+ The type is a signed integer that describes an object that can store a count of the number of elements involved in various stream operations. Its representation has at least 16 bits. It is not necessarily large enough to represent an arbitrary byte position within a stream.  
   
-### <a name="example"></a>例  
-  次のプログラムをコンパイルおよび実行した後に、test.txt ファイルの中身を見て、`streamsize` の設定の効果を確認します。  
+### <a name="example"></a>Example  
+  After compiling and running the following program, look at the file test.txt to see the effect of setting `streamsize`.  
   
 ```  
 // ios_streamsize.cpp  
@@ -119,26 +120,26 @@ int main( )
 ```  
   
 ##  <a name="wios"></a>  wios  
- 従来の iostream ライブラリの wios クラスをサポートします。  
+ Supports the wios class from the old iostream library.  
   
 ```  
 typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 型はテンプレート クラス [basic_ios](../standard-library/basic-ios-class.md) の同意語で、既定の文字の特性を持つ型 `wchar_t` の要素に対して特殊化されています。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for template class [basic_ios](../standard-library/basic-ios-class.md), specialized for elements of type `wchar_t` with default character traits.  
   
 ##  <a name="wstreampos"></a>  wstreampos  
- バッファー ポインターまたはファイル ポインターの現在の位置を保持します。  
+ Holds the current position of the buffer pointer or file pointer.  
   
 ```  
 typedef fpos<mbstate_t> wstreampos;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、[fpos](../standard-library/fpos-class.md)< `mbstate_t`> の同意語です。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for [fpos](../standard-library/fpos-class.md)< `mbstate_t`>.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ios_wstreampos.cpp  
@@ -160,7 +161,7 @@ int main( )
 7  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<ios>](../standard-library/ios.md)
 
 

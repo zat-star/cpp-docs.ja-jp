@@ -1,5 +1,5 @@
 ---
-title: "steady_clock 構造体 | Microsoft Docs"
+title: steady_clock struct | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -31,50 +31,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 332008ed313eeae7f04f39165424a9280c2aed8c
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 8332ccdd3349f52acb2c913f68fe5ced2805a848
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="steadyclock-struct"></a>steady_clock 構造体
-`steady` クロックを表します。  
+# <a name="steadyclock-struct"></a>steady_clock struct
+Represents a `steady` clock.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct steady_clock;  
 ```  
   
-## <a name="remarks"></a>コメント  
- Windows では、steady_clock は QueryPerformanceCounter 関数をラップします。  
+## <a name="remarks"></a>Remarks  
+ On Windows, steady_clock wraps the QueryPerformanceCounter function.  
   
- `now()` の最初の呼び出しによって返される値が、常に `now()` の以降の呼び出しによって返される値以下である場合、クロックは*単調*になります。  
+ A clock is *monotonic* if the value that is returned by a first call to `now()` is always less than or equal to the value that is returned by a subsequent call to `now()`.  
   
- *単調*であり、かつクロック ティックの間隔が一定のクロックは*安定*しています。  
+ A clock is *steady* if it is *monotonic* and if the time between clock ticks is constant.  
   
- High_resolution_clock は、steady_clock の typdef です。  
+ High_resolution_clock is a typdef for steady_clock.  
   
-## <a name="public-functions"></a>パブリック関数  
+## <a name="public-functions"></a>Public functions  
   
-|関数|説明|  
+|Function|Description|  
 |--------------|-----------------|  
-|now|現在の時刻を time_point 値として返します。|  
+|now|Returns the current time as a time_point value.|  
   
-## <a name="public-constants"></a>パブリック定数  
+## <a name="public-constants"></a>Public Constants  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`system_clock::is_steady`|`true` を保持します。 `steady_clock` は*安定*しています。|  
+|`system_clock::is_steady`|Holds `true`. A `steady_clock` is *steady*.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<chrono >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<chrono>  
   
- **名前空間:** std::chrono  
+ **Namespace:** std::chrono  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)   
- [system_clock 構造体](../standard-library/system-clock-structure.md)
+ [system_clock Structure](../standard-library/system-clock-structure.md)
 

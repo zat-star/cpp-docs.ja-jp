@@ -1,15 +1,14 @@
 ---
-title: "ctype クラス | Microsoft Docs"
+title: ctype Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ctype
 - xlocale/std::ctype
 - locale/std::ctype::char_type
 - locale/std::ctype::do_is
@@ -29,7 +28,22 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ctype class
+- std::ctype [C++]
+- std::ctype [C++], char_type
+- std::ctype [C++], do_is
+- std::ctype [C++], do_narrow
+- std::ctype [C++], do_scan_is
+- std::ctype [C++], do_scan_not
+- std::ctype [C++], do_tolower
+- std::ctype [C++], do_toupper
+- std::ctype [C++], do_widen
+- std::ctype [C++], is
+- std::ctype [C++], narrow
+- std::ctype [C++], scan_is
+- std::ctype [C++], scan_not
+- std::ctype [C++], tolower
+- std::ctype [C++], toupper
+- std::ctype [C++], widen
 ms.assetid: 3627154c-49d9-47b5-b28f-5bbedee38e3b
 caps.latest.revision: 19
 author: corob-msft
@@ -49,119 +63,119 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 2e99ceb296bd3f620ce1bd58e8b0de6b6132299b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: bc317befaaea6c504d97738fe29afc2478ff0042
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ctype-class"></a>ctype クラス
-文字の分類、大文字と小文字の変換、およびネイティブ文字セットとロケールで使用される文字セットとの変換に使用されるふぁセットを提供するクラス。  
+# <a name="ctype-class"></a>ctype Class
+A class that provides a facet that is used to classify characters, convert from upper and lower cases, and convert between the native character set and that set used by the locale.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType>  
 class ctype : public ctype_base;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters.  
   
-## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。 分類の条件は、基底クラス ctype_base の入れ子になったビットマスク型で提供されます。  
+## <a name="remarks"></a>Remarks  
+ As with any locale facet, the static object ID has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in **id.** Classification criteria are provided a nested bitmask type in the base class ctype_base.  
   
- C++ 標準ライブラリは、このテンプレート クラスの 2 つの明示的な特殊化を定義します。  
+ The C++ Standard Library defines two explicit specializations of this template class:  
   
-- [ctype](../standard-library/ctype-char-class.md)< `char`>。違いが別個に記述される明示的な特殊化です。  
+- [ctype](../standard-library/ctype-char-class.md)< `char`>, an explicit specialization whose differences are described separately.  
   
-- **ctype**< `wchar_t`>。要素をワイド文字として扱います。  
+- **ctype**< `wchar_t`>, which treats elements as wide characters.  
   
- テンプレート クラス **ctype**\< **CharType**> のその他の特殊化。  
+ Other specializations of template class **ctype**\< **CharType**>:  
   
--   式 ( `char`) **ch** を使用して、**CharType** 型の値 ***ch*** を、`char` 型の値に変換します。  
+-   Convert a value ***ch*** of type **CharType** to a value of type `char` with the expression ( `char`) **ch**.  
   
--   式 **CharType** ( **byte**) を使用して、`char` 型の値 ***byte*** を、**CharType** 型の値に変換します。  
+-   Convert a value ***byte*** of type `char` to a value of type **CharType** with the expression **CharType** ( **byte**).  
   
- 他の操作はすべて明示的な特殊化 **ctype**< `char`> の場合と同様に `char` 値に対して実行されます。  
+ All other operations are performed on `char` values in the same way as for the explicit specialization **ctype**< `char`>.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[ctype](#ctype)|文字のロケール ファセットとして機能する `ctype` クラスのオブジェクトのコンストラクター。|  
+|[ctype](#ctype)|Constructor for objects of class `ctype` that serve as locale facets for characters.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|ロケールによって使用される文字を表す型。|  
+|[char_type](#char_type)|A type that describes a character used by a locale.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[do_is](#do_is)|1 つの文字が特定の属性を持つかどうかをテストしたり、範囲内の各文字の属性を分類して配列に格納したりするために呼び出される仮想関数。|  
-|[do_narrow](#do_narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの `char` 型の対応する文字に変換するために呼び出される仮想関数。|  
-|[do_scan_is](#do_scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索するために呼び出される仮想関数。|  
-|[do_scan_not](#do_scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索するために呼び出される仮想関数。|  
-|[do_tolower](#do_tolower)|文字または文字の範囲を小文字に変換するために呼び出される仮想関数。|  
-|[do_toupper](#do_toupper)|文字または文字の範囲を大文字に変換するために呼び出される仮想関数。|  
-|[do_widen](#do_widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換するために呼び出される仮想関数。|  
-|[is](#is)|1 つの文字が特定の属性を持つかどうかをテストするか、範囲内の各文字の属性を分類して配列に格納します。|  
-|[narrow](#narrow)|ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの char 型の対応する文字に変換します。|  
-|[scan_is](#scan_is)|指定されたマスクに一致する範囲内の最初の文字を検索します。|  
-|[scan_not](#scan_not)|指定されたマスクに一致しない範囲内の最初の文字を検索します。|  
-|[tolower](#tolower)|文字または文字の範囲を小文字に変換します。|  
-|[toupper](#toupper)|文字または文字の範囲を大文字に変換します。|  
-|[widen](#widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。|  
+|[do_is](#do_is)|A virtual function called to test whether a single character has a particular attribute, or classify the attributes of each character in a range and stores them in an array.|  
+|[do_narrow](#do_narrow)|A virtual function called to convert a character of type `CharType` used by a locale to the corresponding character of type `char` in the native character set.|  
+|[do_scan_is](#do_scan_is)|A virtual function called to locate the first character in a range that matches a specified mask.|  
+|[do_scan_not](#do_scan_not)|A virtual function called to locate the first character in a range that does not match a specified mask.|  
+|[do_tolower](#do_tolower)|A virtual function called to convert a character or a range of characters to their lower case.|  
+|[do_toupper](#do_toupper)|A virtual function called to convert a character or a range of characters to upper case.|  
+|[do_widen](#do_widen)|A virtual function called to converts a character of type `char` in the native character set to the corresponding character of type `CharType` used by a locale.|  
+|[is](#is)|Tests whether a single character has a particular attribute, or classifies the attributes of each character in a range and stores them in an array.|  
+|[narrow](#narrow)|Converts a character of type `CharType` used by a locale to the corresponding character of type char in the native character set.|  
+|[scan_is](#scan_is)|Locates the first character in a range that matches a specified mask.|  
+|[scan_not](#scan_not)|Locates the first character in a range that does not match a specified mask.|  
+|[tolower](#tolower)|Converts a character or a range of characters to lower case.|  
+|[toupper](#toupper)|Converts a character or a range of characters to upper case.|  
+|[widen](#widen)|Converts a character of type `char` in the native character set to the corresponding character of type `CharType` used by a locale.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  ctype::char_type  
- ロケールによって使用される文字を表す型。  
+ A type that describes a character used by a locale.  
   
 ```  
 typedef CharType char_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
-### <a name="example"></a>例  
-  戻り値として `char_type` を使用する例については、メンバー関数 [widen](#widen) をご覧ください。  
+### <a name="example"></a>Example  
+  See the member function [widen](#widen) for an example that uses `char_type` as a return value.  
   
 ##  <a name="ctype"></a>  ctype::ctype  
- 文字のロケール ファセットとして機能する ctype クラスのオブジェクトのコンストラクター。  
+ Constructor for objects of class ctype that serve as locale facets for characters.  
   
 ```  
 explicit ctype(size_t _Refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Refs`  
- オブジェクトのメモリ管理のタイプを指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
-### <a name="remarks"></a>コメント  
- `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `_Refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- デストラクターが保護されているため、利用できる直接的な例はありません。  
+ No direct examples are possible, because the destructor is protected.  
   
- コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`) を使用して、その `locale::facet` 基本オブジェクトを初期化します。  
+ The constructor initializes its `locale::facet` base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`).  
   
 ##  <a name="do_is"></a>  ctype::do_is  
- 1 つの文字が特定の属性を持つかどうかをテストしたり、範囲内の各文字の属性を分類して配列に格納したりするために呼び出される仮想関数。  
+ A virtual function called to test whether a single character has a particular attribute, or classify the attributes of each character in a range and stores them in an array.  
   
 ```  
 virtual bool do_is(
@@ -175,35 +189,35 @@ virtual const CharType *do_is(
     mask* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字をテストするマスク値。  
+ The mask value for which the character is to be tested.  
   
  `ch`  
- 属性をテストする文字。  
+ The character whose attributes are to be tested.  
   
  `first`  
- 属性を分類する範囲の最初の文字を示すポインター。  
+ A pointer to the first character in the range whose attributes are to be classified.  
   
  `last`  
- 属性を分類する範囲の最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range whose attributes are to be classified.  
   
  `dest`  
- 各文字の属性の特徴になるマスク値を格納する配列の先頭を示すポインター。  
+ A pointer to the beginning of the array where the mask values characterizing the attributes of each of the characters are to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、テストされた文字にマスク値により表される属性が含まれる場合、ブール値 **true** を返します。そのような属性が含まれない場合、**false** を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns a Boolean value that is **true** if the character tested has the attribute described by the mask value; **false** if it fails to have the attribute.  
   
- 2 番目のメンバー関数は、範囲内の各文字の属性を特徴付けるマスク値を含む配列を返します。  
+ The second member function returns an array containing the mask values characterizing the attributes of each of the characters in the range.  
   
-### <a name="remarks"></a>コメント  
- 文字の属性を分類するマスク値は、ctype の派生元である、クラス [ctype_base](../standard-library/ctype-base-class.md) により提供されます。 最初のメンバー関数は、ビットマスクと呼ばれ、ビット単位の論理演算子 (&#124;、&、^、~) によりマスク値の組み合わせから形成されるその最初のパラメーターの式を受け取ります。  
+### <a name="remarks"></a>Remarks  
+ The mask values classifying the attributes of the characters are provided by the class [ctype_base](../standard-library/ctype-base-class.md), from which ctype derives. The first member function can accept expressions for its first parameter referred to as bitmasks and formed from the combination of mask values by the logical bitwise operators (&#124; , & , ^ , ~).  
   
-### <a name="example"></a>例  
-  [is](#is) の例 (`do_is` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [is](#is), which calls `do_is`.  
   
 ##  <a name="do_narrow"></a>  ctype::do_narrow  
- ロケールで使用される `CharType` 型の文字を、ネイティブ文字セットの `char` 型の対応する文字に変換するために呼び出される仮想関数。  
+ A virtual function called to convert a character of type `CharType` used by a locale to the corresponding character of type `char` in the native character set.  
   
 ```  
 virtual char do_narrow(
@@ -218,35 +232,35 @@ virtual const CharType* do_narrow(
     char* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 変換されるロケールにより使用される型 `Chartype` の文字。  
+ The character of type `Chartype` used by the locale to be converted.  
   
  `default`  
- 型 `CharType` の文字に対となる型 `char` の文字がない場合にメンバー関数が割り当てる既定値。  
+ The default value to be assigned by the member function to characters of type `CharType` that do not have counterpart characters of type `char`.  
   
  `first`  
- 変換の対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters to be converted.  
   
  `last`  
- 変換の対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters to be converted.  
   
  `dest`  
- 変換後の文字範囲を格納する宛先範囲のうち、型 `char` の最初の文字を示す const ポインター。  
+ A const pointer to the first character of type `char` in the destination range that stores the converted range of characters.  
   
-### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、対になる片方が定義されていない場合、型 `CharType` または `default` のパラメーター文字に対応する型 char のネイティブ文字を返します。  
+### <a name="return-value"></a>Return Value  
+ The first protected member function returns the native character of type char that corresponds to the parameter character of type `CharType` or `default` if no counterpart is defined.  
   
- 保護されている 2 番目のメンバー関数は、型 `CharType` の文字から変換されたネイティブ文字の宛先範囲を示すポインターを返します。  
+ The second protected member function returns a pointer to the destination range of native characters converted from characters of type `CharType`.  
   
-### <a name="remarks"></a>コメント  
- メンバー テンプレート関数のストアが 2 番目に保護されている`dest`[ `I`] 値`do_narrow`( `first` [ `I`]、 `default`)、用`I`間隔 [0、 `last`  -  `first`)。  
+### <a name="remarks"></a>Remarks  
+ The second protected member template function stores in `dest`[ `I`] the value `do_narrow`( `first` [ `I`], `default`), for `I` in the interval [0, `last` - `first`).  
   
-### <a name="example"></a>例  
-  [narrow](#narrow) の例 (`do_narrow` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [narrow](#narrow), which calls `do_narrow`.  
   
 ##  <a name="do_scan_is"></a>  ctype::do_scan_is  
- 指定されたマスクに一致する範囲内の最初の文字を検索するために呼び出される仮想関数。  
+ A virtual function called to locate the first character in a range that matches a specified mask.  
   
 ```  
 virtual const CharType *do_scan_is(
@@ -255,27 +269,27 @@ virtual const CharType *do_scan_is(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字により照合されるマスク値。  
+ The mask value to be matched by a character.  
   
  `first`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range to be scanned.  
   
  `last`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range to be scanned.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたマスクに一致する範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last.` を返します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first character in a range that does match a specified mask. If no such value exists, the function returns `last.`  
   
-### <a name="remarks"></a>コメント  
- 保護されているメンバー関数は、[do_is](#do_is)( `maskVal`, * `ptr`) が true となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected member function returns the smallest pointer `ptr` in the range [ `first`, `last`) for which [do_is](#do_is)( `maskVal`, * `ptr`) is true.  
   
-### <a name="example"></a>例  
-  [scan_is](#scan_is) の例 (`do_scan_is` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [scan_is](#scan_is), which calls `do_scan_is`.  
   
 ##  <a name="do_scan_not"></a>  ctype::do_scan_not  
- 指定されたマスクに一致しない範囲内の最初の文字を検索するために呼び出される仮想関数。  
+ A virtual function called to locate the first character in a range that does not match a specified mask.  
   
 ```  
 virtual const CharType *do_scan_not(
@@ -284,27 +298,27 @@ virtual const CharType *do_scan_not(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字により照合されないマスク値。  
+ The mask value not to be matched by a character.  
   
  `first`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range to be scanned.  
   
  `last`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range to be scanned.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたマスクに一致しない範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last` を返します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first character in a range that doesn't match a specified mask. If no such value exists, the function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 保護されているメンバー関数は、[do_is](#do_is)( `maskVal`, * `ptr`) が false となっている範囲 [ `first`, `last`) 内の最小ポインター `ptr` を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected member function returns the smallest pointer `ptr` in the range [ `first`, `last`) for which [do_is](#do_is)( `maskVal`, * `ptr`) is false.  
   
-### <a name="example"></a>例  
-  [scan_not](#scan_not) の例 (`do_scan_not` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [scan_not](#scan_not), which calls `do_scan_not`.  
   
 ##  <a name="do_tolower"></a>  ctype::do_tolower  
- 文字または文字の範囲を小文字に変換するために呼び出される仮想関数。  
+ A virtual function called to convert a character or a range of characters to lower case.  
   
 ```  
 virtual CharType do_tolower(CharType ch) const;
@@ -315,27 +329,27 @@ virtual const CharType *do_tolower(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 小文字に変換される文字。  
+ The character to be converted to lower case.  
   
  `first`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters whose cases are to be converted.  
   
  `last`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters whose cases are to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、パラメーター `ch` を小文字で返します。 小文字の形態が存在しない場合、`ch` を返します。 保護されている 2 番目のメンバー関数は `last` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first protected member function returns the lowercase form of the parameter `ch`. If no lowercase form exists, it returns `ch`. The second protected member function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 2 番目のプロテクト メンバー テンプレート関数は、各要素を置き換えます`first`[ `I`] の`I`の間隔 [0、 `last`  -  `first`) と`do_tolower`( `first` [ `I`])。  
+### <a name="remarks"></a>Remarks  
+ The second protected member template function replaces each element `first` [ `I`], for `I` in the interval [0, `last` - `first`), with `do_tolower`( `first` [ `I`]).  
   
-### <a name="example"></a>例  
-  [tolower](#tolower) の例 (`do_tolower` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [tolower](#tolower), which calls `do_tolower`.  
   
 ##  <a name="do_toupper"></a>  ctype::do_toupper  
- 文字または文字の範囲を大文字に変換するために呼び出される仮想関数。  
+ A virtual function called to convert a character or a range of characters to upper case.  
   
 ```  
 virtual CharType do_toupper(CharType ch) const;
@@ -346,27 +360,27 @@ virtual const CharType *do_toupper(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 大文字に変換される文字。  
+ The character to be converted to upper case.  
   
  `first`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters whose cases are to be converted.  
   
  `last`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to character immediately following the last character in the range of characters whose cases are to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、パラメーター `ch` を大文字で返します。 大文字の形態が存在しない場合、`ch` を返します。 保護されている 2 番目のメンバー関数は `last` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first protected member function returns the uppercase form of the parameter `ch`. If no uppercase form exists, it returns `ch`. The second protected member function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 2 番目のプロテクト メンバー テンプレート関数は、各要素を置き換えます`first`[ `I`] の`I`の間隔 [0、 `last`  -  `first`) と`do_toupper`( `first` [ `I`])。  
+### <a name="remarks"></a>Remarks  
+ The second protected member template function replaces each element `first` [ `I`], for `I` in the interval [0, `last` - `first`), with `do_toupper`( `first` [ `I`]).  
   
-### <a name="example"></a>例  
-  [toupper](#toupper) の例 (`do_toupper` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [toupper](#toupper), which calls `do_toupper`.  
   
 ##  <a name="do_widen"></a>  ctype::do_widen  
- ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換するために呼び出される仮想関数。  
+ A virtual function called to converts a character of type `char` in the native character set to the corresponding character of type `CharType` used by a locale.  
   
 ```  
 virtual CharType do_widen(char byte) const;
@@ -378,32 +392,32 @@ virtual const char *do_widen(
     CharType* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `byte`  
- 変換するネイティブ文字セットのうち、型 `char` の文字。  
+ The character of type `char` in the native character set to be converted.  
   
  `first`  
- 変換の対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters to be converted.  
   
  `last`  
- 変換の対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters to be converted.  
   
  `dest`  
- 変換後の文字範囲を格納する宛先範囲のうち、型 `CharType` の最初の文字を示すポインター。  
+ A pointer to the first character of type `CharType` in the destination range that stores the converted range of characters.  
   
-### <a name="return-value"></a>戻り値  
- 保護されている最初のメンバー関数は、ネイティブ型 `char` のパラメーター文字に対応する型 `CharType` の文字を返します。  
+### <a name="return-value"></a>Return Value  
+ The first protected member function returns the character of type `CharType` that corresponds to the parameter character of native type `char`.  
   
- 保護されている 2 番目のメンバー関数は、型 `char` のネイティブ文字から変換されたロケールで使用される型 `CharType` の文字の宛先範囲を示すポインターを返します。  
+ The second protected member function returns a pointer to the destination range of characters of type `CharType` used by a locale converted from native characters of type `char`.  
   
-### <a name="remarks"></a>コメント  
- 保護されている 2 番目のメンバー テンプレート関数は、値 `do_widen`( `first`[ `I`]) を `dest`[ `I`] に格納します。`I` の間隔は [0, `last` - `first`) です。  
+### <a name="remarks"></a>Remarks  
+ The second protected member template function stores in `dest`[ `I`] the value `do_widen`( `first`[ `I`]), for `I` in the interval [0, `last` - `first`).  
   
-### <a name="example"></a>例  
-  [widen](#widen) の例 (`do_widen` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [widen](#widen), which calls `do_widen`.  
   
 ##  <a name="is"></a>  ctype::is  
- 1 つの文字が特定の属性を持つかどうかをテストするか、範囲内の各文字の属性を分類して配列に格納します。  
+ Tests whether a single character has a particular attribute or classifies the attributes of each character in a range and stores them in an array.  
   
 ```  
 bool is(mask maskVal, CharType ch) const;
@@ -415,31 +429,31 @@ const CharType *is(
     mask* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字をテストするマスク値。  
+ The mask value for which the character is to be tested.  
   
  `ch`  
- 属性をテストする文字。  
+ The character whose attributes are to be tested.  
   
  `first`  
- 属性を分類する範囲の最初の文字を示すポインター。  
+ A pointer to the first character in the range whose attributes are to be classified.  
   
  `last`  
- 属性を分類する範囲の最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range whose attributes are to be classified.  
   
  `dest`  
- 各文字の属性の特徴になるマスク値を格納する配列の先頭を示すポインター。  
+ A pointer to the beginning of the array where the mask values characterizing the attributes of each of the characters are to be stored.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、テストされた文字にマスク値により表される属性が含まれる場合、`true` を返します。そのような属性が含まれない場合、`false` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns `true` if the character tested has the attribute described by the mask value; `false` if it fails to have the attribute.  
   
- 2 番目のメンバー関数は、属性を分類する範囲の最後の文字を示すポインターを返します。  
+ The second member function returns a pointer to the last character in the range whose attributes are to be classified.  
   
-### <a name="remarks"></a>コメント  
- 文字の属性を分類するマスク値は、ctype の派生元である、クラス [ctype_base クラス](../standard-library/ctype-base-class.md)により提供されます。 最初のメンバー関数は、ビットマスクと呼ばれ、ビット単位の論理演算子 (&#124;、&、^、~) によりマスク値の組み合わせから形成されるその最初のパラメーターの式を受け取ります。  
+### <a name="remarks"></a>Remarks  
+ The mask values classifying the attributes of the characters are provided by the class [ctype_base Class](../standard-library/ctype-base-class.md), from which ctype derives. The first member function can accept expressions for its first parameter referred to as bitmasks and formed from the combination of mask values by the logical bitwise operators (&#124; , & , ^ , ~).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_is.cpp  
@@ -479,7 +493,7 @@ int main() {
 ```  
   
 ##  <a name="narrow"></a>  ctype::narrow  
- ロケールにより使用される型 `CharType` の文字を、ネイティブ文字セットの型 `char` の該当文字に変換します。  
+ Converts characters of type `CharType` used by a locale to the corresponding characters of type `char` in the native character set.  
   
 ```  
 char narrow(CharType ch, char default = '\0') const;
@@ -492,31 +506,31 @@ const CharType* narrow(
     char* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 変換されるロケールにより使用される型 `Chartype` の文字。  
+ The character of type `Chartype` used by the locale to be converted.  
   
  `default`  
- 型 `CharType` の文字に対となる型 `char` の文字がない場合にメンバー関数が割り当てる既定値。  
+ The default value to be assigned by the member function to characters of type `CharType` that do not have counterpart characters of type `char`.  
   
  `first`  
- 変換の対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters to be converted.  
   
  `last`  
- 変換の対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters to be converted.  
   
  `dest`  
- 変換後の文字範囲を格納する宛先範囲のうち、型 `char` の最初の文字を示す const ポインター。  
+ A const pointer to the first character of type `char` in the destination range that stores the converted range of characters.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、対になる片方が定義されていない場合、型 `CharType``default` のパラメーター文字に対応する型 `char` のネイティブ文字を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns the native character of type `char` that corresponds to the parameter character of type `CharType default` if not counterpart is defined.  
   
- 2 番目のメンバー関数は、型 `CharType` の文字から変換されたネイティブ文字の宛先範囲を示すポインターを返します。  
+ The second member function returns a pointer to the destination range of native characters converted from characters of type `CharType`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_narrow](#do_narrow)( `ch`, `default`) を返します。 2 番目のメンバー関数は、[do_narrow](#do_narrow) ( `first`, `last`, `default`, `dest`) を返します。 基本ソース文字にのみ、`narrow` の下で一意の逆像 `CharType` が与えられることが約束されます。 これの基本ソース文字については、`narrow` ( [widen](#widen) ( **c** ), 0 ) == **c** という不変式が適用されます。  
+### <a name="remarks"></a>Remarks  
+ The first member function returns [do_narrow](#do_narrow)( `ch`, `default`). The second member function returns [do_narrow](#do_narrow) ( `first`, `last`, `default`, `dest`). Only the basic source characters are guaranteed to have a unique inverse image `CharType` under `narrow`. For these basic source characters, the following invariant holds: `narrow` ( [widen](#widen) ( **c** ), 0 ) == **c**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_narrow.cpp  
@@ -543,7 +557,7 @@ Xhello everyone
 ```  
   
 ##  <a name="scan_is"></a>  ctype::scan_is  
- 指定されたマスクに一致する範囲内の最初の文字を検索します。  
+ Locates the first character in a range that matches a specified mask.  
   
 ```  
 const CharType *scan_is(
@@ -552,23 +566,23 @@ const CharType *scan_is(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字により照合されるマスク値。  
+ The mask value to be matched by a character.  
   
  `first`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range to be scanned.  
   
  `last`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range to be scanned.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたマスクに一致する範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last.` を返します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first character in a range that does match a specified mask. If no such value exists, the function returns `last.`  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_scan_is](#do_scan_is)( `maskVal`, `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_scan_is](#do_scan_is)( `maskVal`, `first`, `last`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_scan_is.cpp  
@@ -595,7 +609,7 @@ The first punctuation is "," at position: 5
 ```  
   
 ##  <a name="scan_not"></a>  ctype::scan_not  
- 指定されたマスクに一致しない範囲内の最初の文字を検索します。  
+ Locates the first character in a range that does not match a specified mask.  
   
 ```  
 const CharType *scan_not(
@@ -604,23 +618,23 @@ const CharType *scan_not(
     const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `maskVal`  
- 文字により照合されないマスク値。  
+ The mask value not to be matched by a character.  
   
  `first`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range to be scanned.  
   
  `last`  
- スキャンの対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range to be scanned.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたマスクに一致しない範囲内の最初の文字を示すポインター。 そのような値が存在しない場合、この関数は `last` を返します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first character in a range that does not match a specified mask. If no such value exists, the function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[do_scan_not](#do_scan_not)( `maskVal`, `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_scan_not](#do_scan_not)( `maskVal`, `first`, `last`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_scan_not.cpp  
@@ -647,7 +661,7 @@ First nonalpha character is "," at position: 5
 ```  
   
 ##  <a name="tolower"></a>  ctype::tolower  
- 文字または文字の範囲を小文字に変換します。  
+ Converts a character or a range of characters to lower case.  
   
 ```  
 CharType tolower(CharType ch) const;
@@ -656,25 +670,25 @@ CharType tolower(CharType ch) const;
 const CharType *tolower(CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 小文字に変換される文字。  
+ The character to be converted to lower case.  
   
  `first`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters whose cases are to be converted.  
   
  `last`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters whose cases are to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、パラメーター `ch` を小文字で返します。 小文字の形態が存在しない場合、`ch` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns the lowercase form of the parameter `ch`. If no lowercase form exists, it returns `ch`.  
   
- 2 番目のメンバー関数は `last` を返します。  
+ The second member function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_tolower](#do_tolower)( `ch`) を返します。 2 番目のメンバー関数は、[do_tolower](#do_tolower)( `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The first member function returns [do_tolower](#do_tolower)( `ch`). The second member function returns [do_tolower](#do_tolower)( `first`, `last`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_tolower.cpp  
@@ -700,32 +714,32 @@ The lowercase string is: hello, my name is john
 ```  
   
 ##  <a name="toupper"></a>  ctype::toupper  
- 文字または文字の範囲を大文字に変換します。  
+ Converts a character or a range of characters to upper case.  
   
 ```  
 CharType toupper(CharType ch) const; 
 const CharType *toupper(CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ch`  
- 大文字に変換される文字。  
+ The character to be converted to uppercase.  
   
  `first`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters whose cases are to be converted.  
   
  `last`  
- 大文字/小文字を変換する一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters whose cases are to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、パラメーター `ch` を大文字で返します。 大文字の形態が存在しない場合、`ch` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns the uppercase form of the parameter `ch`. If no uppercase form exists, it returns `ch`.  
   
- 2 番目のメンバー関数は `last` を返します。  
+ The second member function returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_toupper](#do_toupper)( `ch`) を返します。 2 番目のメンバー関数は、[do_toupper](#do_toupper)( `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The first member function returns [do_toupper](#do_toupper)( `ch`). The second member function returns [do_toupper](#do_toupper)( `first`, `last`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_toupper.cpp  
@@ -751,35 +765,35 @@ The uppercase string is: HELLO, MY NAME IS JOHN
 ```  
   
 ##  <a name="widen"></a>  ctype::widen  
- ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。  
+ Converts a character of type `char` in the native character set to the corresponding character of type `CharType` used by a locale.  
   
 ```  
 CharType widen(char byte) const; 
 const char *widen(const char* first, const char* last, CharType* dest) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `byte`  
- 変換するネイティブ文字セットのうち、型 char の文字。  
+ The character of type char in the native character set to be converted.  
   
  `first`  
- 変換の対象となる一定範囲の文字のうち、最初の文字を示すポインター。  
+ A pointer to the first character in the range of characters to be converted.  
   
  `last`  
- 変換の対象となる一定範囲の文字のうち、最初の文字の直後に続く文字を示すポインター。  
+ A pointer to the character immediately following the last character in the range of characters to be converted.  
   
  `dest`  
- 変換後の文字範囲を格納する宛先範囲のうち、型 `CharType` の最初の文字を示すポインター。  
+ A pointer to the first character of type `CharType` in the destination range that stores the converted range of characters.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は、ネイティブ型 `char` のパラメーター文字に対応する型 `CharType` の文字を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns the character of type `CharType` that corresponds to the parameter character of native type `char`.  
   
- 2 番目のメンバー関数は、型 `char` のネイティブ文字から変換されたロケールで使用される型 `CharType` の文字の宛先範囲を示すポインターを返します。  
+ The second member function returns a pointer to the destination range of characters of type `CharType` used by a locale converted from native characters of type `char`.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、[do_widen](#do_widen)( `byte`) を返します。 2 番目のメンバー関数は、[do_widen](#do_widen)( `first`, `last`, `dest`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The first member function returns [do_widen](#do_widen)( `byte`). The second member function returns [do_widen](#do_widen)( `first`, `last`, `dest`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // ctype_widen.cpp  
@@ -809,8 +823,8 @@ Hello everyone!
 Hello everyone!  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

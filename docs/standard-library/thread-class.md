@@ -1,5 +1,5 @@
 ---
-title: "thread クラス | Microsoft Docs"
+title: thread Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -40,100 +40,110 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: b1c5282d284a70917c6c14511bacda305180d778
+helpviewer_keywords:
+- std::thread [C++]
+- std::thread [C++], thread
+- std::thread [C++], detach
+- std::thread [C++], get_id
+- std::thread [C++], hardware_concurrency
+- std::thread [C++], join
+- std::thread [C++], joinable
+- std::thread [C++], native_handle
+- std::thread [C++], swap
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a1fbc3d94a1f2081bc29fd7b469f87bc54b89728
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="thread-class"></a>thread クラス
-アプリケーション内の実行スレッドを観察および管理するために使用するオブジェクトを定義します。  
+# <a name="thread-class"></a>thread Class
+Defines an object that's used to observe and manage a thread of execution within an application.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class thread;
 ```  
   
-## <a name="remarks"></a>コメント  
- アプリケーション内の実行スレッドを観察および管理するために `thread` オブジェクトを使用できます。 既定のコンストラクターを使用して作成されたスレッド オブジェクトは、実行スレッドに関連付けられていません。 呼び出し可能オブジェクトを使用して構築されたスレッド オブジェクトは、新しい実行スレッドを作成し、そのスレッドで呼び出し可能オブジェクトを呼び出します。 スレッド オブジェクトは移動できますが、コピーできません。 したがって、実行スレッドは 1 つのスレッド オブジェクトだけに関連付けることができます。  
+## <a name="remarks"></a>Remarks  
+ You can use a `thread` object to observe and manage a thread of execution within an application. A thread object that's created by using the default constructor is not associated with any thread of execution. A thread object that's constructed by using a callable object creates a new thread of execution and calls the callable object in that thread. Thread objects can be moved but not copied. Therefore, a thread of execution can be associated with only one thread object.  
   
- すべての実行スレッドに `thread::id` 型の一意の識別子があります。 関数 `this_thread::get_id` は呼び出しスレッドの識別子を返します。 メンバー関数 `thread::get_id` は、スレッド オブジェクトによって管理されるスレッドの識別子を返します。 既定で構築されるスレッド オブジェクトの場合、`thread::get_id` メソッドは、呼び出し時に結合できる実行スレッドに対して、既定で構築されるスレッド オブジェクトすべてで同じで、`this_thread::get_id` によって返される値とは異なる値を持つオブジェクトを返します。  
+ Every thread of execution has a unique identifier of type `thread::id`. The function `this_thread::get_id` returns the identifier of the calling thread. The member function `thread::get_id` returns the identifier of the thread that's managed by a thread object. For a default-constructed thread object, the `thread::get_id` method returns an object that has a value that's the same for all default-constructed thread objects and different from the value that's returned by `this_thread::get_id` for any thread of execution that could be joined at the time of the call.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-classes"></a>パブリック クラス  
+### <a name="public-classes"></a>Public Classes  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[thread::id クラス](#id_class)|関連するスレッドを一意に識別します。|  
+|[thread::id Class](#id_class)|Uniquely identifies the associated thread.|  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[thread](#thread)|`thread` オブジェクトを構築します。|  
+|[thread](#thread)|Constructs a `thread` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[デタッチ](#detach)|`thread` オブジェクトから関連するスレッドをデタッチします。|  
-|[get_id](#get_id)|関連付けられたスレッドの一意の識別子を返します。|  
-|[hardware_concurrency](#hardware_concurrency)|静的。 ハードウェア スレッド コンテキストの数の見積もりを返します。|  
-|[join](#join)|関連のスレッドが完了するまでブロックします。|  
-|[参加可能です](#joinable)|関連付けられたスレッドが結合可能かどうかを指定します。|  
-|[native_handle](#native_handle)|スレッド ハンドルを表す実装固有の型を返します。|  
-|[swap](#swap)|オブジェクトの状態を指定した `thread` オブジェクトと交換します。|  
+|[detach](#detach)|Detaches the associated thread from the `thread` object.|  
+|[get_id](#get_id)|Returns the unique identifier of the associated thread.|  
+|[hardware_concurrency](#hardware_concurrency)|Static. Returns an estimate of the number of hardware thread contexts.|  
+|[join](#join)|Blocks until the associated thread completes.|  
+|[joinable](#joinable)|Specifies whether the associated thread is joinable.|  
+|[native_handle](#native_handle)|Returns the implementation-specific type that represents the thread handle.|  
+|[swap](#swap)|Swaps the object state with a specified `thread` object.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[thread::operator=](#op_eq)|スレッドを現在の `thread` オブジェクトと関連付けます。|  
+|[thread::operator=](#op_eq)|Associates a thread with the current `thread` object.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<スレッド >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<thread>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="detach"></a>thread::detach
- 関連するスレッドをデタッチします。 オペレーティング システムは、終了時にスレッド リソースを解放することが必要になります。  
+##  <a name="detach"></a>  thread::detach
+ Detaches the associated thread. The operating system becomes responsible for releasing thread resources on termination.  
   
 ```
 void detach();
 ```  
   
-### <a name="remarks"></a>コメント  
- `detach` を呼び出した後、後続の [get_id](#get_id) 呼び出しによって [id](#id_class) が返されます。  
+### <a name="remarks"></a>Remarks  
+ After a call to `detach`, subsequent calls to [get_id](#get_id) return [id](#id_class).  
   
- 呼び出し元のオブジェクトに関連付けられているスレッドが結合可能でない場合、関数は、エラー コード `invalid_argument` で [system_error](../standard-library/system-error-class.md) をスローします。  
+ If the thread that's associated with the calling object is not joinable, the function throws a [system_error](../standard-library/system-error-class.md) that has an error code of `invalid_argument`.  
   
- 呼び出し元のオブジェクトに関連付けられているスレッドが無効な場合、関数は、エラー コード `no_such_process` で `system_error` をスローします。  
+ If the thread that's associated with the calling object is invalid, the function throws a `system_error` that has an error code of `no_such_process`.  
   
-##  <a name="get_id"></a>thread::get_id
- 関連付けられたスレッドの一意の識別子を返します。  
+##  <a name="get_id"></a>  thread::get_id
+ Returns a unique identifier for the associated thread.  
   
 ```
 id get_id() const noexcept;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関連付けられたスレッドを一意に識別する [thread::id](#id_class) オブジェクト、またはオブジェクトに関連付けられているスレッドがない場合は `thread::id()`。  
+### <a name="return-value"></a>Return Value  
+ A [thread::id](#id_class) object that uniquely identifies the associated thread, or `thread::id()` if no thread is associated with the object.  
   
-##  <a name="hardware_concurrency"></a>thread::hardware_concurrency
- ハードウェア スレッド コンテキストの数の見積もりを返す静的メソッド。  
+##  <a name="hardware_concurrency"></a>  thread::hardware_concurrency
+ Static method that returns an estimate of the number of hardware thread contexts.  
   
 ```
 static unsigned int hardware_concurrency() noexcept;
 ```  
   
-### <a name="return-value"></a>戻り値  
- ハードウェア スレッド コンテキストの数の見積もり。 値を計算できない場合や、値が適切に定義されていない場合、このメソッドは 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ An estimate of the number of hardware thread contexts. If the value cannot be computed or is not well defined, this method returns 0.  
   
-##  <a name="id_class"></a>  thread::id クラス  
- プロセス内の各実行スレッドの一意の識別子を提供します。  
+##  <a name="id_class"></a>  thread::id Class  
+ Provides a unique identifier for each thread of execution in the process.  
   
 ```
 class thread::id {
@@ -141,76 +151,76 @@ class thread::id {
 };
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定のコンストラクターは、既存のスレッドのオブジェクトについて、`thread::id` オブジェクトに等しいオブジェクトを作成しません。  
+### <a name="remarks"></a>Remarks  
+ The default constructor creates an object that does not compare equal to the `thread::id` object for any existing thread.  
   
- 既定で構築される `thread::id` オブジェクトは等しいものになります。  
+ All default-constructed `thread::id` objects compare equal.  
   
-##  <a name="join"></a>thread::join
- 呼び出し元のオブジェクトに関連付けられている実行スレッドが完了するまでブロックします。  
+##  <a name="join"></a>  thread::join
+ Blocks until the thread of execution that's associated with the calling object completes.  
   
 ```
 void join();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出しが成功すると、呼び出し元のオブジェクトの後続の [get_id](#get_id) 呼び出しは、既存のどのスレッドの `thread::id` にも等しくない既定の [thread::id](#id_class) を返します。呼び出しが成功しなかった場合、`get_id` によって返される値は変更されません。  
+### <a name="remarks"></a>Remarks  
+ If the call succeeds, subsequent calls to [get_id](#get_id) for the calling object return a default [thread::id](#id_class) that does not compare equal to the `thread::id` of any existing thread; if the call does not succeed, the value that's returned by `get_id` is unchanged.  
   
-##  <a name="joinable"></a>thread::joinable
- 関連付けられたスレッドが*結合可能*かどうかを指定します。  
+##  <a name="joinable"></a>  thread::joinable
+ Specifies whether the associated thread is *joinable*.  
   
 ```
 bool joinable() const noexcept;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関連付けられたスレッドが*結合可能*な場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the associated thread is *joinable*; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- `get_id() != id()` の場合、スレッド オブジェクトは*結合可能*です。  
+### <a name="remarks"></a>Remarks  
+ A thread object is *joinable* if `get_id() != id()`.  
   
-##  <a name="native_handle"></a>thread::native_handle
- スレッド ハンドルを表す実装固有の型を返します。 スレッド ハンドルは、実装固有の方法で使用できます。  
+##  <a name="native_handle"></a>  thread::native_handle
+ Returns the implementation-specific type that represents the thread handle. The thread handle can be used in implementation-specific ways.  
   
 ```
 native_handle_type native_handle();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `native_handle_type` は、`void *` としてキャストされる Win32 `HANDLE` と定義されます。  
+### <a name="return-value"></a>Return Value  
+ `native_handle_type` is defined as a Win32 `HANDLE` that's cast as `void *`.  
   
 ##  <a name="op_eq"></a>  thread::operator=  
- 指定したオブジェクトのスレッドを現在のオブジェクトに関連付けます。  
+ Associates the thread of a specified object with the current object.  
   
 ```
 thread& operator=(thread&& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- `thread` オブジェクト。  
+ A `thread` object.  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
  `*this`  
   
-### <a name="remarks"></a>コメント  
- メソッドは、呼び出し元のオブジェクトが結合可能である場合、デタッチを呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The method calls detach if the calling object is joinable.  
   
- 関連付けが行われると、`Other` が既定で構築される状態に設定されます。  
+ After the association is made, `Other` is set to a default-constructed state.  
   
-##  <a name="swap"></a>thread::swap
- オブジェクトの状態を、指定された `thread` オブジェクトの状態と交換します。  
+##  <a name="swap"></a>  thread::swap
+ Swaps the object state with that of a specified `thread` object.  
   
 ```
 void swap(thread& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Other`  
- `thread` オブジェクト。  
+ A `thread` object.  
   
-##  <a name="thread"></a>  thread::thread コンストラクター  
- `thread` オブジェクトを構築します。  
+##  <a name="thread"></a>  thread::thread Constructor  
+ Constructs a `thread` object.  
   
 ```
 thread() noexcept;
@@ -220,25 +230,25 @@ explicit thread(Fn&& F, Args&&... A);
 thread(thread&& Other) noexcept;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `F`  
- スレッドによって実行されるアプリケーション定義関数。  
+ An application-defined function to be executed by the thread.  
   
  `A`  
- `F` に渡す引数のリスト。  
+ A list of arguments to be passed to `F`.  
   
  `Other`  
- 既存の `thread` オブジェクト。  
+ An existing `thread` object.  
   
-### <a name="remarks"></a>コメント  
- 最初のコンストラクターは、実行スレッドに関連付けられていないオブジェクトを構築します。 構築されたオブジェクトの `get_id` への呼び出しによって返される値は `thread::id()` です。  
+### <a name="remarks"></a>Remarks  
+ The first constructor constructs an object that's not associated with a thread of execution. The value that's returned by a call to `get_id` for the constructed object is `thread::id()`.  
   
- 2 番目のコンストラクターは、新しい実行スレッドに関連付けられているオブジェクトを構築し、[\<functional>](../standard-library/functional.md) で定義されている擬似関数 `INVOKE` を実行します。 新しいスレッドを開始するのに十分なリソースがない場合、関数は、エラー コード `resource_unavailable_try_again` で [system_error](../standard-library/system-error-class.md) オブジェクトをスローします。 `F` への呼び出しが、キャッチされない例外で終了する場合、[terminate](../standard-library/exception-functions.md#terminate) が呼び出されます。  
+ The second constructor constructs an object that's associated with a new thread of execution and executes the pseudo-function `INVOKE` that's defined in [\<functional>](../standard-library/functional.md). If not enough resources are available to start a new thread, the function throws a [system_error](../standard-library/system-error-class.md) object that has an error code of `resource_unavailable_try_again`. If the call to `F` terminates with an uncaught exception, [terminate](../standard-library/exception-functions.md#terminate) is called.  
   
- 3 番目のコンストラクターは、`Other` に関連付けられているスレッドに関連付けられているオブジェクトを構築します。 `Other` は既定で構築される状態に設定されます。  
+ The third constructor constructs an object that's associated with the thread that's associated with `Other`. `Other` is then set to a default-constructed state.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [\<thread>](../standard-library/thread.md)
 
 

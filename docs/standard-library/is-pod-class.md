@@ -1,5 +1,5 @@
 ---
-title: "is_pod クラス | Microsoft Docs"
+title: is_pod Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_pod
 - type_traits/std::is_pod
 dev_langs:
 - C++
@@ -35,55 +34,55 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 28baed4badda4f2c1d7e5b20235fe8d40c2a7195
-ms.openlocfilehash: 2236d6a9796b1353b919a63620606242cde169bd
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ecbad6c19819f6d99ec7cfd3d34d61e1e0201569
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ispod-class"></a>is_pod クラス
-型が POD かどうかをテストします。  
+# <a name="ispod-class"></a>is_pod Class
+Tests if type is POD.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T>
 struct is_pod;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
 *T*  
-照会する型。  
+The type to query.  
   
-## <a name="remarks"></a>コメント  
-型 *T* が POD (Plain Old Data) である場合、`is_pod<T>::value` は `true` です。 それ以外の場合は `false` です。  
+## <a name="remarks"></a>Remarks  
+`is_pod<T>::value` is `true` if the type *T* is Plain Old Data (POD). Otherwise it is `false`.  
   
-演算型、列挙型、ポインター型、およびメンバーへのポインター型は、POD です。  
+Arithmetic types, enumeration types, pointer types, and pointer to member types are POD.  
   
-POD 型の cv-qualified バージョンは、それ自体が POD 型です。  
+A cv-qualified version of a POD type is itself a POD type.  
   
-POD の配列は、それ自体が POD です。  
+An array of POD is itself POD.  
   
-すべての非静的データ メンバーが POD である構造体または共用体は、次に該当する場合、それ自体が POD です。  
+A struct or union, all of whose non-static data members are POD, is itself POD if it has:  
   
--   ユーザーが宣言したコンストラクターを持たない。  
+-   No user-declared constructors.  
   
--   非静的なプライベートまたはプロテクト データ メンバーを持たない。  
+-   No private or protected non-static data members.  
   
--   基底クラスを持たない。  
+-   No base classes.  
   
--   仮想関数を持たない。  
+-   No virtual functions.  
   
--   参照型の非静的データ メンバーを持たない。  
+-   No non-static data members of reference type.  
   
--   ユーザー定義のコピー代入演算子を持たない。  
+-   No user-defined copy assignment operator.  
   
--   ユーザー定義のデストラクターを持たない。  
+-   No user-defined destructor.  
   
-したがって、POD 型の構造体や配列を含む POD 型の構造体や配列を再帰的に構築できます。  
+Therefore, you can recursively build POD structs and arrays that contain POD structs and arrays.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_pod.cpp   
@@ -119,12 +118,12 @@ is_pod<int> == true
 is_pod<throws> == false  
 ```  
   
-## <a name="requirements"></a>要件  
-**ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+**Header:** \<type_traits>  
   
-**名前空間:** std  
+**Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [<type_traits>](../standard-library/type-traits.md)
 
 

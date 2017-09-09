@@ -1,5 +1,5 @@
 ---
-title: "duration_values 構造体 | Microsoft Docs"
+title: duration_values Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,76 +34,76 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: b170debfdb4759b41963bc0faca13b3db11ad39a
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 71c90fc57ee4e7b6bb7628426401dd72ec3de20f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="durationvalues-structure"></a>duration_values 構造体
-[duration](../standard-library/duration-class.md) テンプレート パラメーター `Rep` に対して特定の値を提供します。  
+# <a name="durationvalues-structure"></a>duration_values Structure
+Provides specific values for the [duration](../standard-library/duration-class.md) template parameter `Rep`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Rep>  
 struct duration_values;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[max](#max)|静的。 `Rep` 型の値の上限を指定します。|  
-|[min](#min)|静的。 `Rep` 型の値の下限を指定します。|  
-|[0](#zero)|静的。 `Rep(0)` を返します。|  
+|[max](#max)|Static. Specifies the upper limit for a value of type `Rep`.|  
+|[min](#min)|Static. Specifies the lower limit for a value of type `Rep`.|  
+|[zero](#zero)|Static. Returns `Rep(0)`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<chrono >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<chrono>  
   
- **名前空間:** std::chrono  
+ **Namespace:** std::chrono  
   
 ##  <a name="max"></a>  duration_values::max  
- `Ref` 型の値の上限の境界を返す静的メソッドです。  
+ Static method that returns the upper bound for values of type `Ref`.  
   
 ```  
 static constexpr Rep max();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 実際には、`numeric_limits<Rep>::max()` を返します。  
+### <a name="return-value"></a>Return Value  
+ In effect, returns `numeric_limits<Rep>::max()`.  
   
-### <a name="remarks"></a>コメント  
- `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#zero) より大きい必要があります。  
+### <a name="remarks"></a>Remarks  
+ When `Rep` is a user-defined type, the return value must be greater than [duration_values::zero](#zero).  
   
 ##  <a name="min"></a>  duration_values::min  
- `Ref` 型の値の下限の境界を返す静的メソッドです。  
+ Static method that returns the lower bound for values of type `Ref`.  
   
 ```  
 static constexpr Rep min();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 実際には、`numeric_limits<Rep>::lowest()` を返します。  
+### <a name="return-value"></a>Return Value  
+ In effect, returns `numeric_limits<Rep>::lowest()`.  
   
-### <a name="remarks"></a>コメント  
- `Rep` がユーザー定義型の場合、戻り値は [duration_values::zero](#zero) 以下である必要があります。  
+### <a name="remarks"></a>Remarks  
+ When `Rep` is a user-defined type, the return value must be less than or equal to [duration_values::zero](#zero).  
   
 ##  <a name="zero"></a>  duration_values::zero  
- `Rep(0)` を返します。  
+ Returns `Rep(0)`.  
   
 ```  
 static constexpr Rep zero();
 ```  
   
-### <a name="remarks"></a>コメント  
- `Rep` がユーザー定義型の場合、戻り値は追加の無限を示す必要があります。  
+### <a name="remarks"></a>Remarks  
+ When `Rep` is a user-defined type, the return value must represent the additive infinity.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "ostrstream クラス | Microsoft Docs"
+title: ostrstream Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- ostrstream
 - strstream/std::ostrstream::freeze
 - strstream/std::ostrstream::pcount
 - strstream/std::ostrstream::rdbuf
@@ -17,7 +16,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ostrstream class
+- std::ostrstream [C++], freeze
+- std::ostrstream [C++], pcount
+- std::ostrstream [C++], rdbuf
+- std::ostrstream [C++], str
 ms.assetid: e2e34679-b266-4728-a8e1-8eda5d400e46
 caps.latest.revision: 20
 author: corob-msft
@@ -37,67 +39,67 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 2ed85552778f3bbf7346001e4dd4c858177ce49b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 0ad2a1c11d7f15d8c91f623dfafc08babab1926e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ostrstream-class"></a>ostrstream クラス
-クラス [strstreambuf](../standard-library/strstreambuf-class.md) のストリーム バッファーへの、要素とエンコードされたオブジェクトの挿入を制御するオブジェクトを表します。  
+# <a name="ostrstream-class"></a>ostrstream Class
+Describes an object that controls insertion of elements and encoded objects into a stream buffer of class [strstreambuf](../standard-library/strstreambuf-class.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class ostrstream : public ostream
 ```  
   
-## <a name="remarks"></a>コメント  
- このオブジェクトは、クラス `strstreambuf` のオブジェクトを格納します。  
+## <a name="remarks"></a>Remarks  
+ The object stores an object of class `strstreambuf`.  
   
 > [!NOTE]
->  このクラスは使用されていません。 代わりに、[ostringstream](../standard-library/sstream-typedefs.md#ostringstream) または [wostringstream](../standard-library/sstream-typedefs.md#wostringstream) を使用することを検討します。  
+>  This class is deprecated. Consider using [ostringstream](../standard-library/sstream-typedefs.md#ostringstream) or [wostringstream](../standard-library/sstream-typedefs.md#wostringstream) instead.  
   
-### <a name="constructors"></a>コンストラクター  
-  
-|||  
-|-|-|  
-|[ostrstream](#ostrstream)|`ostrstream` 型のオブジェクトを構築します。|  
-  
-### <a name="member-functions"></a>メンバー関数  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[freeze](#freeze)|ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。|  
-|[pcount](#pcount)|被制御シーケンスに書き込まれる要素の数を返します。|  
-|[rdbuf](#rdbuf)|ストリームの関連付けられた `strstreambuf` オブジェクトへのポインターを返します。|  
-|[str](#str)|[freeze](../standard-library/strstreambuf-class.md#freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。|  
+|[ostrstream](#ostrstream)|Constructs an object of type `ostrstream`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<strstream>  
+### <a name="member-functions"></a>Member Functions  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[freeze](#freeze)|Causes a stream buffer to be unavailable through stream buffer operations.|  
+|[pcount](#pcount)|Returns a count of the number of elements written to the controlled sequence.|  
+|[rdbuf](#rdbuf)|Returns a pointer to the stream's associated `strstreambuf` object.|  
+|[str](#str)|Calls [freeze](../standard-library/strstreambuf-class.md#freeze), and then returns a pointer to the beginning of the controlled sequence.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<strstream>  
+  
+ **Namespace:** std  
   
 ##  <a name="freeze"></a>  ostrstream::freeze  
- ストリーム バッファーの操作により、ストリーム バッファーを使用不可にします。  
+ Causes a stream buffer to be unavailable through stream buffer operations.  
   
 ```
 void freeze(bool _Freezeit = true);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Freezeit`  
- ストリームを停止させるかどうか示す `bool`。  
+ A `bool` indicating whether you want the stream to be frozen.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は [rdbuf](#rdbuf) -> [freeze](../standard-library/strstreambuf-class.md#freeze)(_ *Freezeit*) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The member function calls [rdbuf](#rdbuf) -> [freeze](../standard-library/strstreambuf-class.md#freeze)(_ *Freezeit*).  
   
-### <a name="example"></a>例  
-  **freeze**の使用例は、[strstream::freeze](../standard-library/strstreambuf-class.md#freeze) をご覧ください。  
+### <a name="example"></a>Example  
+  See [strstream::freeze](../standard-library/strstreambuf-class.md#freeze) for an example that uses **freeze**.  
   
 ##  <a name="ostrstream"></a>  ostrstream::ostrstream  
- `ostrstream` 型のオブジェクトを構築します。  
+ Constructs an object of type `ostrstream`.  
   
 ```
 ostrstream();
@@ -107,76 +109,76 @@ ostrstream(char* ptr,
     ios_base::openmode _Mode = ios_base::out);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- バッファー。  
+ The buffer.  
   
  `count`  
- バッファーのサイズ (バイト単位)。  
+ The size of the buffer in bytes.  
   
  `_Mode`  
- バッファーの入出力モード。 詳細については、[ios_base::openmode](../standard-library/ios-base-class.md#openmode) をご覧ください。  
+ The input and output mode of the buffer. See [ios_base::openmode](../standard-library/ios-base-class.md#openmode) for more information.  
   
-### <a name="remarks"></a>コメント  
- 両方のコンストラクターは、[ostream](../standard-library/ostream-typedefs.md#ostream)(**sb**) を呼び出すことにより基本クラスを初期化します。ここで、**sb** は [strstreambuf](../standard-library/strstreambuf-class.md) 型の格納されているオブジェクトです。 最初のコンストラクターはまた、`strstreambuf` を呼び出して **sb** を初期化します。 2 番目のコンストラクターは、次のどちらかの方法で基本クラスを初期化します。  
+### <a name="remarks"></a>Remarks  
+ Both constructors initialize the base class by calling [ostream](../standard-library/ostream-typedefs.md#ostream)( **sb**), where **sb** is the stored object of class [strstreambuf](../standard-library/strstreambuf-class.md). The first constructor also initializes **sb** by calling `strstreambuf`. The second constructor initializes the base class one of two ways:  
   
--   `_Mode` & **ios_base::app**== 0 の場合、`ptr` は `count` 要素の配列の最初の要素を指定する必要があり、コンストラクターは `strstreambuf`(`ptr`, `count`, `ptr`) を呼び出します。  
+-   If `_Mode` & **ios_base::app**== 0, then `ptr` must designate the first element of an array of `count` elements, and the constructor calls `strstreambuf`( `ptr`, `count`, `ptr`).  
   
--   それ以外の場合、`ptr` は count 要素の配列の最初の要素を指定する必要があります。この count 要素は C 文字列を含み、最初の要素が `ptr` によって指定されるものです。そしてコンストラクターは `strstreambuf`(`ptr`, `count`, `ptr` + `strlen`(`ptr`)) を呼び出します。  
+-   Otherwise, `ptr` must designate the first element of an array of count elements that contains a C string whose first element is designated by `ptr`, and the constructor calls `strstreambuf`( `ptr`, `count`, `ptr` + `strlen`( `ptr`) ).  
   
 ##  <a name="pcount"></a>  ostrstream::pcount  
- 被制御シーケンスに書き込まれる要素の数を返します。  
+ Returns a count of the number of elements written to the controlled sequence.  
   
 ```
 streamsize pcount() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 被制御シーケンスに書き込まれる要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements written to the controlled sequence.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[rdbuf](#rdbuf) -> [pcount](../standard-library/strstreambuf-class.md#pcount) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [rdbuf](#rdbuf) -> [pcount](../standard-library/strstreambuf-class.md#pcount).  
   
-### <a name="example"></a>例  
-  `pcount` の使用例は、[strstream::pcount](../standard-library/strstreambuf-class.md#pcount) をご覧ください。  
+### <a name="example"></a>Example  
+  See [strstream::pcount](../standard-library/strstreambuf-class.md#pcount) for a sample that uses `pcount`.  
   
 ##  <a name="rdbuf"></a>  ostrstream::rdbuf  
- ストリームの関連付けられた strstreambuf オブジェクトへのポインターを返します。  
+ Returns a pointer to the stream's associated strstreambuf object.  
   
 ```
 strstreambuf *rdbuf() const
 ```  
   
-### <a name="return-value"></a>戻り値  
- ストリームの関連付けられた strstreambuf オブジェクトへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the stream's associated strstreambuf object.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は **pointer** 型の格納されたストリーム バッファーのアドレスを [strstreambuf](../standard-library/strstreambuf-class.md) に返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the address of the stored stream buffer of type **pointer** to [strstreambuf](../standard-library/strstreambuf-class.md).  
   
-### <a name="example"></a>例  
-  `rdbuf` の使用例は、[strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount) をご覧ください。  
+### <a name="example"></a>Example  
+  See [strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount) for a sample that uses `rdbuf`.  
   
 ##  <a name="str"></a>  ostrstream::str  
- [freeze](../standard-library/strstreambuf-class.md#freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。  
+ Calls [freeze](../standard-library/strstreambuf-class.md#freeze), and then returns a pointer to the beginning of the controlled sequence.  
   
 ```
 char *str();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 被制御シーケンスの先頭へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the beginning of the controlled sequence.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[rdbuf](#rdbuf) -> [str](../standard-library/strstreambuf-class.md#str) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [rdbuf](#rdbuf) -> [str](../standard-library/strstreambuf-class.md#str).  
   
-### <a name="example"></a>例  
-  **str** の使用例は、[strstream::str](../standard-library/strstreambuf-class.md#str) をご覧ください。  
+### <a name="example"></a>Example  
+  See [strstream::str](../standard-library/strstreambuf-class.md#str) for a sample that uses **str**.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [ostream](../standard-library/ostream-typedefs.md#ostream)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [iostream プログラミング](../standard-library/iostream-programming.md)   
- [iostreams の規則](../standard-library/iostreams-conventions.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [iostream Programming](../standard-library/iostream-programming.md)   
+ [iostreams Conventions](../standard-library/iostreams-conventions.md)
 
 
 

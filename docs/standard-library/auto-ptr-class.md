@@ -1,5 +1,5 @@
 ---
-title: "auto_ptr クラス | Microsoft Docs"
+title: auto_ptr Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- auto_ptr
 - memory/std::auto_ptr
 - memory/std::auto_ptr::element_type
 - memory/std::auto_ptr::get
@@ -18,7 +17,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- auto_ptr class
+- std::auto_ptr [C++]
+- std::auto_ptr [C++], element_type
+- std::auto_ptr [C++], get
+- std::auto_ptr [C++], release
+- std::auto_ptr [C++], reset
 ms.assetid: 7f9108b6-9eb3-4634-b615-cf7aa814f23b
 caps.latest.revision: 26
 author: corob-msft
@@ -38,21 +41,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 320dbc4d09bfcc65fce8471ce23e127f28deb6b9
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a60c75b2bf00ef780e08682eb82b6c8218bc5f0f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="autoptr-class"></a>auto_ptr クラス
-コントロールがあるブロックを離れるときに確実にリソースが自動的に破棄されるように、リソースの周囲にスマート ポインターをラップします。  
+# <a name="autoptr-class"></a>auto_ptr Class
+Wraps a smart pointer around a resource that ensures the resource is destroyed automatically when control leaves a block.  
   
- より高機能なこの `unique_ptr` クラスは `auto_ptr` に代わるものです。 詳細については、「[unique_ptr クラス](../standard-library/unique-ptr-class.md)」をご覧ください。  
+ The more capable `unique_ptr` class supersedes `auto_ptr`. For more information, see [unique_ptr Class](../standard-library/unique-ptr-class.md).  
   
- `throw()` および例外処理の詳細については、「[例外の仕様 (スロー)](../cpp/exception-specifications-throw-cpp.md)」をご覧ください。  
+ For more information about `throw()` and exception handling, see [Exception Specifications (throw)](../cpp/exception-specifications-throw-cpp.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
  ```   
 class auto_ptr {
 public:
@@ -75,57 +78,57 @@ public:
     void reset(Type* ptr = 0);
 };
 ```  
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `right`  
- 既存のリソースの取得元となる `auto_ptr`。  
+ The `auto_ptr` from which to get an existing resource.  
   
  `ptr`  
- 格納されたポインターを置換するように指定されたポインター。  
+ The pointer specified to replace the stored pointer.  
   
-## <a name="remarks"></a>コメント  
- このテンプレート クラスと呼ばれる、スマート ポインターを記述する、 `auto_ptr`、割り当てられたオブジェクトにします。 このポインターは、null であるか、`new` によって割り当てられたオブジェクトを指定する必要があります。 `auto_ptr` は、格納されている値が別のオブジェクトに割り当てられている場合、所有権を転送します。 (転送後、格納されている値は null ポインターに置換されます。)`auto_ptr<Type>` のデストラクターが割り当てられたオブジェクトを削除します。 `auto_ptr<Type>` は、コントロールがブロックを離れるとき、例外がスローされる場合であっても、割り当てられたオブジェクトが確実に自動的に削除するようにします。 同じオブジェクトを所有する 2 つの `auto_ptr<Type>` オブジェクトを構成しないでください。  
+## <a name="remarks"></a>Remarks  
+ The template class describes a smart pointer, called an `auto_ptr`, to an allocated object. The pointer must be either null or designate an object allocated by `new`. The `auto_ptr` transfers ownership if its stored value is assigned to another object. (It replaces the stored value after a transfer with a null pointer.) The destructor for `auto_ptr<Type>` deletes the allocated object. The `auto_ptr<Type>` ensures that an allocated object is automatically deleted when control leaves a block, even through a thrown exception. You should not construct two `auto_ptr<Type>` objects that own the same object.  
   
- `auto_ptr<Type>` オブジェクトを関数呼び出しの引数として値渡しで渡せます。 `auto_ptr` を標準ライブラリのコンテナーの要素にすることはできません。 C++ 標準ライブラリのコンテナーを持つ `auto_ptr<Type>` オブジェクトのシーケンスを確実に管理することはできません。  
+ You can pass an `auto_ptr<Type>` object by value as an argument to a function call. An `auto_ptr` cannot be an element of any Standard Library container. You cannot reliably manage a sequence of `auto_ptr<Type>` objects with a C++ Standard Library container.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[auto_ptr](#auto_ptr)|`auto_ptr` 型のオブジェクトのコンストラクター。|  
+|[auto_ptr](#auto_ptr)|The constructor for objects of type `auto_ptr`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[element_type](#element_type)|この型は、テンプレート パラメーター `Type` のシノニムです。|  
+|[element_type](#element_type)|The type is a synonym for the template parameter `Type`.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[get](#get)|このメンバー関数は、格納されているポインター `myptr` を返します。|  
-|[release](#release)|このメンバーは、格納されたポインター `myptr` を null ポインターで置換して、以前に格納されたポインターを返します。|  
-|[reset](#reset)|このメンバー関数は、関数呼び出しの結果として格納されているポインター値 `myptr` が変化する場合に限り、式 `delete myptr` を評価します。 その後、格納されたポインターを `ptr` で置換します。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[operator=](#op_eq)|1 つの `auto_ptr` オブジェクトから別のオブジェクトに所有権を転送する代入演算子。|  
-|[operator*](#op_star)|`auto_ptr` 型のオブジェクトの逆参照演算子。|  
-|[operator->](#operator-_gt)|メンバーにアクセスできるようにする演算子。|  
-|[operator auto_ptr\<Other>](#op_auto_ptr_lt_other_gt)|1 つの種類の `auto_ptr` から別の種類の `auto_ptr` にキャストします。|  
-|[operator auto_ptr_ref\<Other>](#op_auto_ptr_ref_lt_other_gt)|`auto_ptr` から `auto_ptr_ref` にキャストします。|  
+|[get](#get)|The member function returns the stored pointer `myptr`.|  
+|[release](#release)|The member replaces the stored pointer `myptr` with a null pointer and returns the previously stored pointer.|  
+|[reset](#reset)|The member function evaluates the expression `delete myptr`, but only if the stored pointer value `myptr` changes as a result of function call. It then replaces the stored pointer with `ptr`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator=](#op_eq)|An assignment operator that transfers ownership from one `auto_ptr` object to another.|  
+|[operator*](#op_star)|The dereferencing operator for objects of type `auto_ptr`.|  
+|[operator->](#operator-_gt)|The operator for allowing member access.|  
+|[operator auto_ptr\<Other>](#op_auto_ptr_lt_other_gt)|Casts from one kind of `auto_ptr` to another kind of `auto_ptr`.|  
+|[operator auto_ptr_ref\<Other>](#op_auto_ptr_ref_lt_other_gt)|Casts from an `auto_ptr` to an `auto_ptr_ref`.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
+  
+ **Namespace:** std  
   
 ##  <a name="auto_ptr"></a>  auto_ptr::auto_ptr  
- `auto_ptr` 型のオブジェクトのコンストラクター。  
+ The constructor for objects of type `auto_ptr`.  
   
 ```   
 explicit auto_ptr(Type* ptr  = 0) throw();
@@ -138,21 +141,21 @@ template <class Other>
 auto _ptr(auto _ptr<Other>& right) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- `auto_ptr` がカプセル化するオブジェクトへのポインター。  
+ The pointer to the object that `auto_ptr` encapsulates.  
   
  `right`  
- コンストラクターによってコピーされる `auto_ptr` オブジェクト。  
+ The `auto_ptr` object to be copied by the constructor.  
   
-### <a name="remarks"></a>コメント  
- 最初のコンストラクターは、`ptr` を **myptr** (割り当てられたオブジェクトへの格納されたポインター) に格納します。 2 番目のコンストラクターは、`right` に格納されているポインターの所有権を転送します。これは `right`. [release](#release) を **myptr** に格納することで行います。  
+### <a name="remarks"></a>Remarks  
+ The first constructor stores `ptr` in **myptr**, the stored pointer to the allocated object. The second constructor transfers ownership of the pointer stored in `right`, by storing `right`. [release](#release) in **myptr**.  
   
- 3 番目のコンストラクターは 2 番目と同じ動作をしますが、**right**. `ref`。 **release** を **myptr** に格納する点が異なります。ここで、`ref` は `right` に格納されている参照です。  
+ The third constructor behaves the same as the second, except that it stores **right**. `ref`. **release** in **myptr**, where `ref` is the reference stored in `right`.  
   
- テンプレート コンストラクターの動作は、**Other** へのポインターが **Type** に暗黙的に変換できる場合は、2 番目のコンストラクターと同じです。  
+ The template constructor behaves the same as the second constructor, provided that a pointer to **Other** can be implicitly converted to a pointer to **Type**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_auto_ptr.cpp  
@@ -212,7 +215,7 @@ Destructing 00311AF8
 ```  
   
 ##  <a name="element_type"></a>  auto_ptr::element_type  
- この型は、テンプレート パラメーター **Type** のシノニムです。  
+ The type is a synonym for the template parameter **Type**.  
   
 ```  
  
@@ -220,16 +223,16 @@ typedef Type element  _type;
 ```  
   
 ##  <a name="get"></a>  auto_ptr::get  
- このメンバー関数は、格納されているポインター **myptr** を返します。  
+ The member function returns the stored pointer **myptr**.  
   
 ```   
 Type *get() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 格納されているポインター **myptr**。  
+### <a name="return-value"></a>Return Value  
+ The stored pointer **myptr**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_get.cpp  
@@ -277,7 +280,7 @@ Destructing 00311B88 Value: 6
 ```  
   
 ##  <a name="op_eq"></a>  auto_ptr::operator=  
- 1 つの `auto_ptr` オブジェクトから別のオブジェクトに所有権を転送する代入演算子。  
+ An assignment operator that transfers ownership from one `auto_ptr` object to another.  
   
 ```  
 template <class Other>  
@@ -286,63 +289,63 @@ auto_ptr<Type>& operator=(auto_ptr<Type>& right) throw();
 auto_ptr<Type>& operator=(auto_ptr_ref<Type> right) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- `auto_ptr` 型のオブジェクト。  
+ An object of type `auto_ptr`.  
   
-### <a name="return-value"></a>戻り値  
- 型 `auto_ptr`\< **Type**> のオブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to an object of type `auto_ptr`\< **Type**>.  
   
-### <a name="remarks"></a>コメント  
- この割り当ては、割り当ての結果として格納されているポインター値 **myptr** が変化する場合に限り、式 **delete myptr** を評価します。 その後、*Right* に格納されているポインターの所有権を転送します。これは、\_ *Right*. [release](#release) を **myptr** に格納することで行います。 関数は **\*this** を返します。  
+### <a name="remarks"></a>Remarks  
+ The assignment evaluates the expression **delete myptr**, but only if the stored pointer **myptr** changes as a result of the assignment. It then transfers ownership of the pointer stored in _ *Right*, by storing \_ *Right*. [release](#release) in **myptr**. The function returns **\*this**.  
   
-### <a name="example"></a>例  
-  メンバー演算子の使用例は、「[auto_ptr::auto_ptr](#auto_ptr)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example of the use of the member operator, see [auto_ptr::auto_ptr](#auto_ptr).  
   
 ##  <a name="op_star"></a>  auto_ptr::operator*  
- `auto_ptr` 型のオブジェクトの逆参照演算子。  
+ The dereferencing operator for objects of type `auto_ptr`.  
   
 ```   
 Type& operator*() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインターが所有する型 **Type** のオブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to an object of type **Type** that the pointer owns.  
   
-### <a name="remarks"></a>コメント  
- 間接演算子は `*`[get](#get) を返します。 つまり、格納されたポインターは、null にすることはできません。  
+### <a name="remarks"></a>Remarks  
+ The indirection operator returns `*`[get](#get). Hence, the stored pointer must not be null.  
   
-### <a name="example"></a>例  
-  メンバー関数の使用方法の例は、「[auto_ptr::auto_ptr](#auto_ptr)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example of how to use the member function, see [auto_ptr::auto_ptr](#auto_ptr).  
   
 ##  <a name="auto_ptr__operator-_gt"></a>  auto_ptr::operator-&gt;  
- メンバーにアクセスできるようにする演算子。  
+ The operator for allowing member access.  
   
 ```   
 Type * operator->() const throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- **auto_ptr** が所有するオブジェクトのメンバー。  
+### <a name="return-value"></a>Return Value  
+ A member of the object that **auto_ptr** owns.  
   
-### <a name="remarks"></a>コメント  
- 選択演算子は [get](#get)`( )` を返して、式 *ap*-> **member** が ( *ap*. **get**( ) )-> **member** と同じ動作をするようにします。ここで、*ap* はクラス `auto_ptr`\< **Type**> のオブジェクトです。 そのため、格納されているポインターを null にすることはできず、**Type** はメンバー **member** を持つクラス、構造体、または共用体型にする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The selection operator returns [get](#get)`( )`, so that the expression *ap*-> **member** behaves the same as ( *ap*. **get**( ) )-> **member**, where *ap* is an object of class `auto_ptr`\< **Type**>. Hence, the stored pointer must not be null, and **Type** must be a class, struct, or union type with a **member** member.  
   
-### <a name="example"></a>例  
-  メンバー関数の使用方法の例は、「[auto_ptr::auto_ptr](#auto_ptr)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example of how to use the member function, see [auto_ptr::auto_ptr](#auto_ptr).  
   
 ##  <a name="op_auto_ptr_lt_other_gt"></a>  auto_ptr::operator auto_ptr&lt;Other&gt;  
- 1 つの種類の `auto_ptr` から別の種類の `auto_ptr` にキャストします。  
+ Casts from one kind of `auto_ptr` to another kind of `auto_ptr`.  
   
 ```   
 template <class Other>  
 operator auto _ptr<Other>() throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 型キャスト演算子は `auto_ptr` \< **Other**>( **\*this**) を返します。  
+### <a name="return-value"></a>Return Value  
+ The type cast operator returns `auto_ptr` \< **Other**>( **\*this**).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_op_auto_ptr.cpp  
@@ -360,17 +363,17 @@ int main()
 ```  
   
 ##  <a name="op_auto_ptr_ref_lt_other_gt"></a>  auto_ptr::operator auto_ptr_ref&lt;Other&gt;  
- `auto_ptr` から **auto_ptr_ref** にキャストします。  
+ Casts from an `auto_ptr` to an **auto_ptr_ref**.  
   
 ```   
 template <class Other>  
 operator auto _ptr  _ref<Other>() throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 型キャスト演算子は **auto_ptr_ref**\< **Other**>( **\*this**) を返します。  
+### <a name="return-value"></a>Return Value  
+ The type cast operator returns **auto_ptr_ref**\< **Other**>( **\*this**).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_op_auto_ptr_ref.cpp  
@@ -419,19 +422,19 @@ main exiting
 ```  
   
 ##  <a name="release"></a>  auto_ptr::release  
- このメンバーは、格納されたポインター **myptr** を null ポインターで置換して、以前に格納されたポインターを返します。  
+ The member replaces the stored pointer **myptr** with a null pointer and returns the previously stored pointer.  
   
 ```   
 Type *release() throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以前に格納されたポインター。  
+### <a name="return-value"></a>Return Value  
+ The previously stored pointer.  
   
-### <a name="remarks"></a>コメント  
- このメンバーは、格納されたポインター **myptr** を null ポインターで置換して、以前に格納されたポインターを返します。  
+### <a name="remarks"></a>Remarks  
+ The member replaces the stored pointer **myptr** with a null pointer and returns the previously stored pointer.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_release.cpp  
@@ -478,17 +481,17 @@ Destructing 00311B88 Value: 6
 ```  
   
 ##  <a name="reset"></a>  auto_ptr::reset  
- このメンバー関数は、式を評価する**削除** **myptr**、場合に限り、格納されているポインター値**myptr**関数呼び出しの結果として変更します。 その後、格納されたポインターを **ptr** で置換します。  
+ The member function evaluates the expression **delete** **myptr**, but only if the stored pointer value **myptr** changes as a result of a function call. It then replaces the stored pointer with **ptr**.  
   
 ```   
 void reset(Type* ptr = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 格納されたポインター **myptr** を置換するように指定されたポインター。  
+ The pointer specified to replace the stored pointer **myptr**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // auto_ptr_reset.cpp  
@@ -535,8 +538,8 @@ pi2 == pi3
 Destructing 00311B88 Value: 6  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [unique_ptr クラス](../standard-library/unique-ptr-class.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [unique_ptr Class](../standard-library/unique-ptr-class.md)
 
 

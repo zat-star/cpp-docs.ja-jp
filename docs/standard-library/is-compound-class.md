@@ -1,15 +1,14 @@
 ---
-title: "is_compound クラス | Microsoft Docs"
+title: is_compound Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_compound
 - type_traits/std::is_compound
 dev_langs:
 - C++
@@ -35,30 +34,31 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 2137c8a92c3821137ab1669b4b9162fd309d0fbe
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 11ef1e4b7d65849961ab6596bf95866485d4b68a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="iscompound-class"></a>is_compound クラス
-指定した型が基本型でないかどうかを調べます。  
+# <a name="iscompound-class"></a>is_compound Class
+Tests if the specified type is not fundamental.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Ty>  
 struct is_compound;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- `Ty` の型が基本型である場合、型述語のインスタンスは `false` を保持します (つまり、[is_fundamental](../standard-library/is-fundamental-class.md)`<``Ty``>` は `true` を保持します)。それ以外の場合は、`true` を保持します。 したがって、`Ty` が配列型、関数型、`void` またはオブジェクトや関数へのポインター、参照、クラス、共用体、列挙体、非静的クラス メンバーへのポインター、または、これらのいずれかの *cv で修飾された*形式である場合、述語は `true` を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds `false` if the type of `Ty` is a fundamental type (that is, if [is_fundamental](../standard-library/is-fundamental-class.md)`<Ty>` holds `true`); otherwise, it holds `true`. Thus, the predicate holds `true` if `Ty` is an array type, a function type, a pointer to `void` or an object or a function, a reference, a class, a union, an enumeration, or a pointer to non-static class member, or a *cv-qualified* form of one of them.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // std__type_traits__is_compound.cpp   
@@ -100,12 +100,12 @@ is_compound<void *> == true
 is_compound<int> == false  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_class クラス](../standard-library/is-class-class.md)
+ [is_class Class](../standard-library/is-class-class.md)
 

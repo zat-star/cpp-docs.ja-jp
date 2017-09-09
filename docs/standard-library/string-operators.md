@@ -1,23 +1,42 @@
 ---
-title: "&lt;string&gt; 演算子 | Microsoft Docs"
+title: '&lt;string&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- string/std::operator!=
+- string/std::operator&gt;
+- string/std::operator&gt;&gt;
+- string/std::operator&gt;=
+- string/std::operator&lt;
+- string/std::operator&lt;&lt;
+- string/std::operator&lt;=
+- string/std::operator+
+- string/std::operator==
+dev_langs:
+- C++
 ms.assetid: 33ce8f05-06c7-45d3-a0cb-bcd27cf93910
 caps.latest.revision: 11
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 7ed2e8ebcfec6c7d592969208c155daa0e27724e
+helpviewer_keywords:
+- std::operator!= (string)
+- std::operator&gt; (string)
+- std::operator&gt;&gt; (string)
+- std::operator&gt;= (string)
+- std::operator&lt; (string)
+- std::operator&lt;&lt; (string)
+- std::operator&lt;= (string), std::operator== (string)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 7df007a987c224f4a0e0fff25ebdf6b8cc8ec1c7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltstringgt-operators"></a>&lt;string&gt; 演算子
+# <a name="ltstringgt-operators"></a>&lt;string&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;&gt;](#op_gt_gt)|  
@@ -25,7 +44,7 @@ ms.lasthandoff: 04/29/2017
 |[operator&lt;=](#op_lt_eq)|[operator+](#op_add)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_add"></a>  operator+  
- 2 つの文字列オブジェクトを連結します。  
+ Concatenates two string objects.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -89,20 +108,20 @@ basic_string<CharType, Traits, Allocator>&& operator+(
     const basic_string<CharType, Traits, Allocator>&& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 連結する C スタイルの文字列または型 `basic_string` のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be concatenated.  
   
  `right`  
- 連結する C スタイルの文字列または型 `basic_string` のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be concatenated.  
   
-### <a name="return-value"></a>戻り値  
- 入力文字列を連結した文字列。  
+### <a name="return-value"></a>Return Value  
+ The string that is the concatenation of the input strings.  
   
-### <a name="remarks"></a>コメント  
- 関数はそれぞれ `operator+` をオーバーロードして、テンプレート クラス [basic_string クラス](../standard-library/basic-string-class.md)の 2 つのオブジェクトを連結します。 すべては実質的に戻り値`basic_string` \< **CharType**、 **Traits**、**アロケーター**> (_*左*)。 [append](../standard-library/basic-string-class.md#append)(\_ *Right*).  
+### <a name="remarks"></a>Remarks  
+ The functions each overload `operator+` to concatenate two objects of template class [basic_string Class](../standard-library/basic-string-class.md). All effectively return `basic_string`\< **CharType**, **Traits**, **Allocator**>(_ *Left*). [append](../standard-library/basic-string-class.md#append)(\_ *Right*).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_con.cpp  
@@ -155,7 +174,7 @@ The string concatenating s1 & s3 is: antiheroine!
 ```  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しくないかどうかを調べます。  
+ Tests if the string object on the left side of the operator is not equal to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -174,20 +193,20 @@ bool operator!=(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと辞書順で等しくない場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is not lexicographically equal to the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列オブジェクト間の比較は、文字のペアの辞書順比較に基づいています。 2 つの文字列は、同じ数の文字を持ち、各文字の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between string objects is based on a pairwise lexicographical comparison of their characters. Two strings are equal if they have the same number of characters and their respective character values are the same. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_ne.cpp  
@@ -242,7 +261,7 @@ The strings s3 & s2 are not equal.
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと等しいかどうかを調べます。  
+ Tests if the string object on the left side of the operator is equal to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -261,20 +280,20 @@ bool operator==(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトと辞書順で等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is lexicographically equal to the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列オブジェクト間の比較は、文字のペアの辞書順比較に基づいています。 2 つの文字列は、同じ数の文字を持ち、各文字の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between string objects is based on a pairwise lexicographical comparison of their characters. Two strings are equal if they have the same number of characters and their respective character values are the same. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_eq.cpp  
@@ -329,7 +348,7 @@ The strings s3 & s2 are not equal.
 ```  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより小さいかどうかを調べます。  
+ Tests if the string object on the left side of the operator is less than to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -348,26 +367,26 @@ bool operator<(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが辞書順で右辺の文字列オブジェクト未満の場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is lexicographically less than the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列間の辞書順比較は、次の条件を満たすまで文字ごとに比較します。  
+### <a name="remarks"></a>Remarks  
+ A lexicographical comparison between strings compares them character by character until:  
   
--   2 つの対応する文字が等しくない場合、比較の結果は文字列間の比較の結果として取得されます。  
+-   It finds two corresponding characters unequal, and the result of their comparison is taken as the result of the comparison between the strings.  
   
--   不等が見つからなくても、1 つの文字列に他より多くの文字がある場合、短い文字列は長い文字列より小さいと見なされます。  
+-   It finds no inequalities, but one string has more characters than the other, and the shorter string is considered less than the longer string.  
   
--   不等が見つからず、各文字列の文字数が同じである場合、文字列が等しくなります。  
+-   It finds no inequalities and finds that the strings have the same number of characters, and so the strings are equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_lt.cpp  
@@ -421,7 +440,7 @@ The string s3 is less than the string s2.
 ```  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以下かどうかを調べます。  
+ Tests if the string object on the left side of the operator is less than or equal to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -440,26 +459,26 @@ bool operator<=(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが辞書順で右辺の文字列オブジェクト以下の場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is lexicographically less than or equal to the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列間の辞書順比較は、次の条件を満たすまで文字ごとに比較します。  
+### <a name="remarks"></a>Remarks  
+ A lexicographical comparison between strings compares them character by character until:  
   
--   2 つの対応する文字が等しくない場合、比較の結果は文字列間の比較の結果として取得されます。  
+-   It finds two corresponding characters unequal, and the result of their comparison is taken as the result of the comparison between the strings.  
   
--   不等が見つからなくても、1 つの文字列に他より多くの文字がある場合、短い文字列は長い文字列より小さいと見なされます。  
+-   It finds no inequalities, but one string has more characters than the other, and the shorter string is considered less than the longer string.  
   
--   不等が見つからず、各文字列の文字数が同じである場合、文字列が等しくなります。  
+-   It finds no inequalities and finds that the strings have the same number of characters, so the strings are equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_le.cpp  
@@ -520,7 +539,7 @@ The string s2 is greater than the string s3.
 ```  
   
 ##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
- 出力ストリームに文字列を書き込むテンプレート関数。  
+ A template function that writes a string into the output stream.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -529,21 +548,21 @@ basic_ostream<CharType, Traits>& operator<<(
     const basic_string<CharType, Traits, Allocator>& str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  _Ostr  
- 書き込み先の出力ストリーム。  
+ The output stream being written to.  
   
  `str`  
- 出力ストリームに入力される文字列。  
+ The string to be entered into the output stream.  
   
-### <a name="return-value"></a>戻り値  
- 指定された文字列の値を出力ストリーム `_Ostr` に書き込みます。  
+### <a name="return-value"></a>Return Value  
+ Writes the value of the specified string to the output stream `_Ostr`.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は **operator<<** をオーバーロードして、テンプレート クラス [basic_string](../standard-library/basic-string-class.md) のオブジェクト _ *Str* ストリーム \_ *Ostr* に挿入します。 関数を効果的に返します\_ *Ostr*です。 **write**( \_ *Str*. [c_str](../standard-library/basic-string-class.md#c_str), \_ *Str*. [size](../standard-library/basic-string-class.md#size)).  
+### <a name="remarks"></a>Remarks  
+ The template function overloads **operator<<** to insert an object _ *Str* of template class [basic_string](../standard-library/basic-string-class.md) into the stream \_ *Ostr.* The function effectively returns \_ *Ostr*. **write**( \_ *Str*. [c_str](../standard-library/basic-string-class.md#c_str), \_ *Str*. [size](../standard-library/basic-string-class.md#size)).  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクトより大きいかどうかを調べます。  
+ Tests if the string object on the left side of the operator is greater than to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -562,26 +581,26 @@ bool operator>(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが辞書順で右辺の文字列オブジェクトよりも大きい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is lexicographically greater than the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列間の辞書順比較は、次の条件を満たすまで文字ごとに比較します。  
+### <a name="remarks"></a>Remarks  
+ A lexicographical comparison between strings compares them character by character until:  
   
--   2 つの対応する文字が等しくない場合、比較の結果は文字列間の比較の結果として取得されます。  
+-   It finds two corresponding characters unequal, and the result of their comparison is taken as the result of the comparison between the strings.  
   
--   不等が見つからなくても、1 つの文字列に他より多くの文字がある場合、短い文字列は長い文字列より小さいと見なされます。  
+-   It finds no inequalities, but one string has more characters than the other, and the shorter string is considered less than the longer string.  
   
--   不等が見つからず、各文字列の文字数が同じである場合、文字列が等しくなります。  
+-   It finds no inequalities and finds that the strings have the same number of characters, and so the strings are equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_gt.cpp  
@@ -642,7 +661,7 @@ The string s2 is greater than the string s3.
 ```  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 演算子の左辺の文字列オブジェクトが右辺の文字列オブジェクト以上かどうかを調べます。  
+ Tests if the string object on the left side of the operator is greater than or equal to the string object on the right side.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -661,26 +680,26 @@ bool operator>=(
     const basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
  `right`  
- 比較する C スタイルの文字列または `basic_string` 型のオブジェクト。  
+ A C-style string or an object of type `basic_string` to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の文字列オブジェクトが辞書順で右辺の文字列オブジェクト以上の場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the string object on the left side of the operator is lexicographically greater than or equal to the string object on the right side; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- 文字列間の辞書順比較は、次の条件を満たすまで文字ごとに比較します。  
+### <a name="remarks"></a>Remarks  
+ A lexicographical comparison between strings compares them character by character until:  
   
--   2 つの対応する文字が等しくない場合、比較の結果は文字列間の比較の結果として取得されます。  
+-   It finds two corresponding characters unequal, and the result of their comparison is taken as the result of the comparison between the strings.  
   
--   不等が見つからなくても、1 つの文字列に他より多くの文字がある場合、短い文字列は長い文字列より小さいと見なされます。  
+-   It finds no inequalities, but one string has more characters than the other, and the shorter string is considered less than the longer string.  
   
--   不等が見つからず、各文字列の文字数が同じである場合、文字列が等しくなります。  
+-   It finds no inequalities and finds the strings have the same number of characters, and so the strings are equal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_ge.cpp  
@@ -741,7 +760,7 @@ The string s2 is greater than or equal to the string s3.
 ```  
   
 ##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
- 入力ストリームから文字列を読み取るテンプレート関数。  
+ A template function that reads a string from an input stream.  
   
 ```  
 template <class CharType, class Traits, class Allocator>  
@@ -750,32 +769,32 @@ basic_istream<CharType, Traits>& operator>>(
     basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Istr`  
- シーケンスを抽出するために使用する入力ストリーム  
+ The input stream used to extract the sequence  
   
  `right`  
- 入力ストリームから抽出される文字列。  
+ The string that is being extracted from the input stream.  
   
-### <a name="return-value"></a>戻り値  
- 指定した文字列の値を読み取ります`_Istr`にそれを返しますと`right`です。  
+### <a name="return-value"></a>Return Value  
+ Reads the value of the specified string from `_Istr` and returns it into `right`.  
   
-### <a name="remarks"></a>コメント  
- `skipws` フラグが設定されていない場合、演算子は先頭の余白をスキップします。 次の文字が余白か、ファイルの終わりに到達するまでは、次のすべての文字を読み取ります。  
+### <a name="remarks"></a>Remarks  
+ The operator skips the leading white spaces unless the `skipws` flag is set. It reads all the following characters until the next character is a white space or the end of the file is reached.  
   
- テンプレート関数は **operator>>** をオーバーロードして、`right` で制御されるシーケンスをストリーム `_Istr` から抽出された要素のシーケンスで置き換えます。 抽出は、次で停止します。  
+ The template function overloads **operator>>** to replace the sequence controlled by `right` with a sequence of elements extracted from the stream `_Istr`. Extraction stops:  
   
--   ファイルの終わり。  
+-   At end of file.  
   
--   関数が `_Istr` を抽出した後。 **width** 要素 (その値が 0 以外の場合)。  
+-   After the function extracts `_Istr`. **width** elements, if that value is nonzero.  
   
- 関数が `_Istr` を抽出した後。 [max_size](../standard-library/basic-string-class.md#max_size) 要素。  
+ After the function extracts `_Istr`. [max_size](../standard-library/basic-string-class.md#max_size) elements.  
   
--   関数が [use_facet](../standard-library/basic-filebuf-class.md#open)< **ctype**\< **CharType**> >( `getloc`) の要素 *ch* を抽出した後。 **is**( **ctype**\< **CharType**>:: **space**, *ch*) が true の場合、文字が戻されます。  
+-   After the function extracts an element *ch* for which [use_facet](../standard-library/basic-filebuf-class.md#open)< **ctype**\< **CharType**> >( `getloc`). **is**( **ctype**\< **CharType**>:: **space**, *ch*) is true, in which case the character is put back.  
   
- 関数が要素を抽出しなかった場合、[setstate](../standard-library/basic-ios-class.md#setstate)( `ios_base::failbit`) を呼び出します。 いずれの場合を呼び出す**istr**です。 **幅**(0) を返しますと\***この**です。  
+ If the function extracts no elements, it calls [setstate](../standard-library/basic-ios-class.md#setstate)( `ios_base::failbit`). In any case, it calls **istr**. **width**(0) and returns \* **this**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_op_read_.cpp  
@@ -794,6 +813,6 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<string>](../standard-library/string.md)
 

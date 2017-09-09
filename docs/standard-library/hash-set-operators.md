@@ -1,23 +1,27 @@
 ---
-title: "&lt;hash_set&gt; 演算子 | Microsoft Docs"
+title: '&lt;hash_set&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- hash_set/std::operator!=
+- hash_set/std::operator==
+dev_langs:
+- C++
 ms.assetid: 403d8e4e-0b3f-43fb-bc5a-8100c4f331c5
 caps.latest.revision: 13
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 5434d1dc44724cf876a42323140877ba38cb2b45
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: f01351ff8564091ac6778b8846bfd52d18eb896c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="lthashsetgt-operators"></a>&lt;hash_set&gt; 演算子
+# <a name="lthashsetgt-operators"></a>&lt;hash_set&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator!= (hash_multiset)](#op_neq_hash_multiset)|[operator==](#op_eq_eq)|  
@@ -26,30 +30,30 @@ ms.lasthandoff: 04/29/2017
 ##  <a name="op_neq"></a>  operator!=  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 演算子の左辺の hash_set オブジェクトが右辺の hash_set オブジェクトと等しくないかどうかを調べます。  
+ Tests if the hash_set object on the left side of the operator is not equal to the hash_set object on the right side.  
   
 ```  
 bool operator!=(const hash_set <Key, Traits, Allocator>& left, const hash_set <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_set` 型のオブジェクト。  
+ An object of type `hash_set`.  
   
  `right`  
- `hash_set` 型のオブジェクト。  
+ An object of type `hash_set`.  
   
-### <a name="return-value"></a>戻り値  
- hash_sets が等しくない場合は **true**、hash_sets が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_sets are not equal; **false** if hash_sets are equal.  
   
-### <a name="remarks"></a>コメント  
- hash_set オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_sets は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_set objects is based on a pairwise comparison between their elements. Two hash_sets are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
- メンバー、 [< hash_map >](../standard-library/hash-map.md)と[< hash_set >](../standard-library/hash-set.md)ヘッダー ファイルは、 [stdext Namespace](../standard-library/stdext-namespace.md)です。
+ Members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are in the [stdext Namespace](../standard-library/stdext-namespace.md).
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_set_op_ne.cpp  
@@ -91,30 +95,30 @@ The hash_sets hs1 and hs3 are equal.
 ##  <a name="op_eq_eq"></a>  operator==  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 演算子の左辺の hash_set オブジェクトが右辺の hash_set オブジェクトと等しいかどうかを調べます。  
+ Tests if the hash_set object on the left side of the operator is equal to the hash_set object on the right side.  
   
 ```  
 bool operator!==(const hash_set <Key, Traits, Allocator>& left, const hash_set <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_set` 型のオブジェクト。  
+ An object of type `hash_set`.  
   
  `right`  
- `hash_set` 型のオブジェクト。  
+ An object of type `hash_set`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の hash_set が演算子の右辺の hash_set と等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_set on the left side of the operator is equal to the hash_set on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- hash_set オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_sets は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_set objects is based on a pairwise comparison of their elements. Two hash_sets are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ In Visual C++ .NET 2003, members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are no longer in the std namespace, but rather have been moved into the stdext namespace. See [The stdext Namespace](../standard-library/stdext-namespace.md) for more information.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_set_op_eq.cpp  
@@ -156,30 +160,30 @@ The hash_sets s1 and s3 are equal.
 ##  <a name="neq_hash_multiset"></a>  operator!= (hash_multiset)  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 演算子の左側の hash_multiset オブジェクトが右側の hash_multiset オブジェクトと等しくないかどうかをテストします。  
+ Tests if the hash_multiset object on the left side of the operator is not equal to the hash_multiset object on the right side.  
   
 ```  
 bool operator!=(const hash_multiset <Key, Traits, Allocator>& left, const hash_multiset <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_multiset` 型のオブジェクト。  
+ An object of type `hash_multiset`.  
   
  `right`  
- `hash_multiset` 型のオブジェクト。  
+ An object of type `hash_multiset`.  
   
-### <a name="return-value"></a>戻り値  
- hash_multisets が等しくない場合は **true**、hash_multisets が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_multisets are not equal; **false** if hash_multisets are equal.  
   
-### <a name="remarks"></a>コメント  
- hash_multiset オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_multisets は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_multiset objects is based on a pairwise comparison between their elements. Two hash_multisets are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間に存在しなくなりましたが、stdext 名前空間に移動されました。 詳細については、「[stdext 名前空間](../standard-library/stdext-namespace.md)」をご覧ください。  
+ In Visual C++ .NET 2003, members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are no longer in the std namespace, but rather have been moved into the stdext namespace. See [The stdext Namespace](../standard-library/stdext-namespace.md) for more information.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hashset_op_ne.cpp  
@@ -221,30 +225,30 @@ The hash_multisets hs1 and hs3 are equal.
 ##  <a name="eq_eq_hash_multiset"></a>  operator== (hash_multiset)  
   
 > [!NOTE]
->  この API は、互換性のために残されています。 代わりに、[unordered_set クラス](../standard-library/unordered-set-class.md)を使用してください。  
+>  This API is obsolete. The alternative is [unordered_set Class](../standard-library/unordered-set-class.md).  
   
- 演算子の左側の hash_multiset オブジェクトが右側の hash_multiset オブジェクトと等しいかどうかをテストします。  
+ Tests if the hash_multiset object on the left side of the operator is equal to the hash_multiset object on the right side.  
   
 ```  
 bool operator!==(const hash_multiset <Key, Traits, Allocator>& left, const hash_multiset <Key, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `hash_multiset` 型のオブジェクト。  
+ An object of type `hash_multiset`.  
   
  `right`  
- `hash_multiset` 型のオブジェクト。  
+ An object of type `hash_multiset`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の hash_multiset が演算子の右辺の hash_multiset と等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the hash_multiset on the left side of the operator is equal to the hash_multiset on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- hash_multiset オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの hash_multisets は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between hash_multiset objects is based on a pairwise comparison of their elements. Two hash_multisets are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
- Visual C++ .NET 2003 では、[<hash_map>](../standard-library/hash-map.md) ヘッダー ファイルと [<hash_set>](../standard-library/hash-set.md) ヘッダー ファイルのメンバーは、std 名前空間ではなく、stdext 名前空間に移動されました。 参照してください[、stdext 名前空間](../standard-library/stdext-namespace.md)詳細についてはします。  
+ In Visual C++ .NET 2003, members of the [<hash_map>](../standard-library/hash-map.md) and [<hash_set>](../standard-library/hash-set.md) header files are no longer in the std namespace, but rather have been moved into the stdext namespace. See [The stdext namespace](../standard-library/stdext-namespace.md) for more information.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // hash_multiset_op_eq.cpp  
@@ -283,7 +287,7 @@ The hash_multisets s1 and s2 are not equal.
 The hash_multisets s1 and s2 are equal.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<hash_set>](../standard-library/hash-set.md)
 
 

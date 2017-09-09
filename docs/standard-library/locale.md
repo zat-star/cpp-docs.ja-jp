@@ -1,97 +1,114 @@
 ---
-title: "&lt;locale&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "<locale>"
-  - "std.<locale>"
-  - "locale/std::<locale>"
-  - "std::<locale>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "locale ヘッダー"
+title: '&lt;locale&gt; | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- <locale>", "locale/std::<locale>", "std::<locale>
+dev_langs:
+- C++
+helpviewer_keywords:
+- locale header
 ms.assetid: ca56f9d2-7128-44da-8df1-f4c78c17fbf2
 caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# &lt;locale&gt;
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 2af54128b164e80e5d2960613c21a4f2784062c9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
-文字分類と文字列の照合順序の国際化サポートを含む、数値、通貨、暦のデータの表示や書式設定に関するさまざまな文化的慣習をカプセル化および操作するために、C\+\+ プログラムで使用できるテンプレート クラスおよび関数を定義します。  
+---
+# <a name="ltlocalegt"></a>&lt;locale&gt;
+Defines template classes and functions that C++ programs can use to encapsulate and manipulate different cultural conventions regarding the representation and formatting of numeric, monetary, and calendric data, including internationalization support for character classification and string collation.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
-  
 #include <locale>  
   
 ```  
   
-### Functions  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[has\_facet](../Topic/has_facet.md)|特定のファセットが指定されたロケールに格納されているかどうかをテストします。|  
-|[isalnum](../Topic/isalnum.md)|ロケールの要素が英字または数字であるかどうかをテストします。|  
-|[isalpha](../Topic/isalpha.md)|ロケールの要素が英字であるかどうかをテストします。|  
-|[iscntrl](../Topic/iscntrl.md)|ロケールの要素が制御文字であるかどうかをテストします。|  
-|[isdigit](../Topic/isdigit.md)|ロケールの要素が数字であるかどうかをテストします。|  
-|[isgraph](../Topic/isgraph.md)|ロケールの要素が英字または句読点であるかどうかをテストします。|  
-|[islower](../Topic/islower.md)|ロケールの要素が小文字であるかどうかをテストします。|  
-|[isprint](../Topic/isprint.md)|ロケールの要素が印刷可能な文字であるかどうかをテストします。|  
-|[ispunct](../Topic/ispunct.md)|ロケールの要素が句読点であるかどうかをテストします。|  
-|[isspace](../Topic/isspace.md)|ロケールの要素が空白文字であるかどうかをテストします。|  
-|[isupper](../Topic/isupper.md)|ロケールの要素が大文字であるかどうかをテストします。|  
-|[isxdigit](../Topic/isxdigit.md)|ロケールの要素が 16 進数を表すために使用される文字であるかどうかをテストします。|  
-|[tolower](../Topic/tolower.md)|文字を小文字に変換します。|  
-|[toupper](../Topic/toupper.md)|文字を大文字に変換します。|  
-|[use\_facet](../Topic/use_facet.md)|ロケールに格納されている指定された型のファセットへの参照を返します。|  
+|[has_facet](../standard-library/locale-functions.md#has_facet)|Tests if a particular facet is stored in a specified locale.|  
+|[isalnum](../standard-library/locale-functions.md#isalnum)|Tests whether an element in a locale is an alphabetic or a numeric character.|  
+|[isalpha](../standard-library/locale-functions.md#isalpha)|Tests whether an element in a locale is alphabetic character.|  
+|[iscntrl](../standard-library/locale-functions.md#iscntrl)|Tests whether an element in a locale is a control character.|  
+|[isdigit](../standard-library/locale-functions.md#isdigit)|Tests whether an element in a locale is a numeric character.|  
+|[isgraph](../standard-library/locale-functions.md#isgraph)|Tests whether an element in a locale is an alphanumeric or punctuation character.|  
+|[islower](../standard-library/locale-functions.md#islower)|Tests whether an element in a locale is lower case.|  
+|[isprint](../standard-library/locale-functions.md#isprint)|Tests whether an element in a locale is a printable character.|  
+|[ispunct](../standard-library/locale-functions.md#ispunct)|Tests whether an element in a locale is a punctuation character.|  
+|[isspace](../standard-library/locale-functions.md#isspace)|Tests whether an element in a locale is a whitespace character.|  
+|[isupper](../standard-library/locale-functions.md#isupper)|Tests whether an element in a locale is upper case.|  
+|[isxdigit](../standard-library/locale-functions.md#isxdigit)|Tests whether an element in a locale is a character used to represent a hexadecimal number.|  
+|[tolower](../standard-library/locale-functions.md#tolower)|Converts a character to lower case.|  
+|[toupper](../standard-library/locale-functions.md#toupper)|Converts a character to upper case.|  
+|[use_facet](../standard-library/locale-functions.md#use_facet)|Returns a reference to a facet of a specified type stored in a locale.|  
   
-### クラス  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[codecvt](../standard-library/codecvt-class.md)|内部と外部の文字エンコーディングの変換に使用されるファセットを提供するテンプレート クラス。|  
-|[codecvt\_base](../standard-library/codecvt-base-class.md)|変換の結果を示すためにファセットのメンバー関数の戻り値の型として使用される、**result** と呼ばれる列挙型を定義するために使用される codecvt クラスの基底クラス。|  
-|[codecvt\_byname](../Topic/codecvt_byname%20Class.md)|特定のロケールの照合ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。変換に関する文化的領域に固有の情報を取得できるようにします。|  
-|[collate](../standard-library/collate-class.md)|文字列の並べ替え規則を処理するためのファセットを提供する照合テンプレート クラス。|  
-|[collate\_byname](../Topic/collate_byname%20Class.md)|特定のロケールの照合ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。文字列の並べ替え規則に関する文化的領域に固有の情報を取得できるようにします。|  
-|[ctype](../standard-library/ctype-class.md)|文字の分類、大文字と小文字の変換、およびネイティブ文字セットとロケールで使用される文字セットとの変換に使用されるファセットを提供するテンプレート クラス。|  
-|[ctype\<char\>](../standard-library/ctype-char-class.md)|`char` 型への **ctype\<CharType\>** テンプレート クラスの明示的な特殊化クラス。`char` 型の文字のさまざまなプロパティを設定するロケール ファセットとして使用できるオブジェクトを表します。|  
-|[ctype\_base](../standard-library/ctype-base-class.md)|個々の文字または範囲全体の文字を分類またはテストするための列挙型を定義するために使用される ctype クラスの基底クラス。|  
-|[ctype\_byname](../standard-library/ctype-byname-class.md)|特定のロケールの ctype ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。文字の分類や、大文字と小文字およびネイティブと指定されたロケールの文字セットでの文字の変換を実行できるようにします。|  
-|[ロケール](../standard-library/locale-class.md)|特定のローカライズされた環境を集合的に定義する一連のファセットとして、カルチャ固有の情報をカプセル化するロケール オブジェクトを表すクラス。|  
-|[メッセージ](../standard-library/messages-class.md)|このテンプレート クラスは、特定のロケールの国際化メッセージのカタログからローカライズされたメッセージを取得するためにロケールのファセットとして使用できるオブジェクトを表します。|  
-|[messages\_base](../Topic/messages_base%20Class.md)|メッセージのカタログの `int` 型を表す基底クラス。|  
-|[messages\_byname](../standard-library/messages-byname-class.md)|特定のロケールのメッセージ ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。ローカライズされたメッセージを取得できるようにします。|  
-|[money\_base](../Topic/money_base%20Class.md)|個々の文字または範囲全体の文字を分類またはテストするための列挙型を定義するために使用される ctype クラスの基底クラス。|  
-|[money\_get](../standard-library/money-get-class.md)|**CharType** 型のシーケンスから通貨値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[money\_put](../standard-library/money-put-class.md)|通貨値から **CharType** 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[moneypunct](../Topic/moneypunct%20Class.md)|通貨入力フィールドまたは通貨出力フィールドを表すために使用される **CharType** 型のシーケンスを表すロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[moneypunct\_byname](../standard-library/moneypunct-byname-class.md)|特定のロケールの moneypunct ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。通貨の入力または出力フィールドを書式設定できるようにします。|  
-|[num\_get](../Topic/num_get%20Class.md)|**CharType** 型のシーケンスから数値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[num\_put](../standard-library/num-put-class.md)|数値から **CharType** 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[numpunct](../standard-library/numpunct-class.md)|数値とブール式の書式設定および区切りに関する情報を表すために使用される、**CharType** 型のシーケンスを表すロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[numpunct\_byname](../standard-library/numpunct-byname-class.md)|特定のロケールの moneypunct ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。数値とブール式の書式設定および区切りを有効にします。|  
-|[time\_base](../Topic/time_base%20Class.md)|time\_get テンプレート クラスのファセットの基底クラスとして使用されるクラス。dateorder 列挙型とこの方の複数の定数のみを定義します。|  
-|[time\_get](../standard-library/time-get-class.md)|**CharType** 型のシーケンスから時刻値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[time\_get\_byname](../standard-library/time-get-byname-class.md)|time\_get\<**CharType**, **InputIterator**\> 型のロケール ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。|  
-|[time\_put](../standard-library/time-put-class.md)|時刻値から **CharType** 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。|  
-|[time\_put\_byname](../standard-library/time-put-byname-class.md)|`time_put`\<**CharType**, **OutputIterator**\> 型のロケール ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。|  
-|[wbuffer\_convert クラス](../standard-library/wbuffer-convert-class.md)|バイト ストリーム バッファーとの間の要素の転送を制御するストリーム バッファーを説明します。|  
-|[wstring\_convert クラス](../standard-library/wstring-convert-class.md)|ワイド文字列とバイト文字列間の変換を実行するテンプレート クラス。|  
+|[codecvt](../standard-library/codecvt-class.md)|A template class that provides a facet used to convert between internal and external character encodings.|  
+|[codecvt_base](../standard-library/codecvt-base-class.md)|A base class for the codecvt class that is used to define an enumeration type referred to as **result**, used as the return type for the facet member functions to indicate the result of a conversion.|  
+|[codecvt_byname](../standard-library/codecvt-byname-class.md)|A derived template class that describes an object that can serve as a collate facet of a given locale, enabling the retrieval of information specific to a cultural area concerning conversions.|  
+|[collate](../standard-library/collate-class.md)|A collate template class that provides a facet that handles string sorting conventions.|  
+|[collate_byname](../standard-library/collate-byname-class.md)|A derived template class that describes an object that can serve as a collate facet of a given locale, enabling the retrieval of information specific to a cultural area concerning string sorting conventions.|  
+|[ctype](../standard-library/ctype-class.md)|A template class that provides a facet that is used to classify characters, convert from upper- and lowercase and between the native character set and that set used by the locale.|  
+|[ctype\<char>](../standard-library/ctype-char-class.md)|A class that is an explicit specialization of template class **ctype\<CharType**> to type `char`, describing an object that can serve as a locale facet to characterize various properties of a character of type `char`.|  
+|[ctype_base](../standard-library/ctype-base-class.md)|A base class for the ctype class that is used to define enumeration types used to classify or test characters either individually or within entire ranges.|  
+|[ctype_byname](../standard-library/ctype-byname-class.md)|A derived template class that describes an object that can serve as a ctype facet of a given locale, enabling the classification of characters and conversion of characters between case and native and locale specified character sets.|  
+|[locale](../standard-library/locale-class.md)|A class that describes a locale object that encapsulates culture-specific information as a set of facets that collectively define a specific localized environment.|  
+|[messages](../standard-library/messages-class.md)|A template class that describes an object that can serve as a locale facet to retrieve localized messages from a catalog of internationalized messages for a given locale.|  
+|[messages_base](../standard-library/messages-base-class.md)|A base class that describes an `int` type for the catalog of messages.|  
+|[messages_byname](../standard-library/messages-byname-class.md)|A derived template class that describes an object that can serve as a message facet of a given locale, enabling the retrieval of localized messages.|  
+|[money_base](../standard-library/money-base-class.md)|A base class for the ctype class that is used to define enumeration types used to classify or test characters either individually or within entire ranges.|  
+|[money_get](../standard-library/money-get-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of sequences of type **CharType** to monetary values.|  
+|[money_put](../standard-library/money-put-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of monetary values to sequences of type **CharType**.|  
+|[moneypunct](../standard-library/moneypunct-class.md)|A template class that describes an object that can serve as a locale facet to describe the sequences of type **CharType** used to represent a monetary input field or a monetary output field.|  
+|[moneypunct_byname](../standard-library/moneypunct-byname-class.md)|A derived template class that describes an object that can serve as a moneypunct facet of a given locale enabling the formatting monetary input or output fields.|  
+|[num_get](../standard-library/num-get-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of sequences of type **CharType** to numeric values.|  
+|[num_put](../standard-library/num-put-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of numeric values to sequences of type **CharType**.|  
+|[numpunct](../standard-library/numpunct-class.md)|A template class that describes an object that can serve as a local facet to describe the sequences of type **CharType** used to represent information about the formatting and punctuation of numeric and Boolean expressions.|  
+|[numpunct_byname](../standard-library/numpunct-byname-class.md)|A derived template class that describes an object that can serve as a moneypunct facet of a given locale enabling the formatting and punctuation of numeric and Boolean expressions.|  
+|[time_base](../standard-library/time-base-class.md)|A class that serves as a base class for facets of template class time_get, defining just the enumerated type dateorder and several constants of this type.|  
+|[time_get](../standard-library/time-get-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of sequences of type **CharType** to time values.|  
+|[time_get_byname](../standard-library/time-get-byname-class.md)|A derived template class that describes an object that can serve as a locale facet of type time_get\<**CharType**, **InputIterator**>.|  
+|[time_put](../standard-library/time-put-class.md)|A template class that describes an object that can serve as a locale facet to control conversions of time values to sequences of type **CharType**.|  
+|[time_put_byname](../standard-library/time-put-byname-class.md)|A derived template class that describes an object that can serve as a locale facet of type `time_put`\<**CharType**, **OutputIterator**>.|  
+|[wbuffer_convert Class](../standard-library/wbuffer-convert-class.md)|Describes a stream buffer that controls the transmission of elements to and from a byte stream buffer.|  
+|[wstring_convert Class](../standard-library/wstring-convert-class.md)|A template class that performs conversions between a wide string and a byte string.|  
   
-## 参照  
- [コード ページ](../c-runtime-library/code-pages.md)   
- [ロケール名、言語、および国\/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
- [C\+\+ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Code Pages](../c-runtime-library/code-pages.md)   
+ [Locale Names, Languages, and Country/Region Strings](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+
+
+

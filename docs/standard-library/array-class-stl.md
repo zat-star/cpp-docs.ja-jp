@@ -1,5 +1,5 @@
 ---
-title: "array クラス (C++ 標準ライブラリ) |Microsoft Docs"
+title: array Class (C++ Standard Library)| Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- array
 - array/std::array
 - array/std::array::const_iterator
 - array/std::array::const_pointer
@@ -74,7 +73,66 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- array class
+- std::array [C++]
+- std::array [C++], const_iterator
+- std::array [C++], const_pointer
+- std::array [C++], const_reference
+- std::array [C++], const_reverse_iterator
+- std::array [C++], difference_type
+- std::array [C++], iterator
+- std::array [C++], pointer
+- std::array [C++], reference
+- std::array [C++], reverse_iterator
+- std::array [C++], size_type
+- std::array [C++], value_type
+- std::array [C++], assign
+- std::array [C++], at
+- std::array [C++], back
+- std::array [C++], begin
+- std::array [C++], cbegin
+- std::array [C++], cend
+- std::array [C++], crbegin
+- std::array [C++], crend
+- std::array [C++], data
+- std::array [C++], empty
+- std::array [C++], end
+- std::array [C++], fill
+- std::array [C++], front
+- std::array [C++], max_size
+- std::array [C++], rbegin
+- std::array [C++], rend
+- std::array [C++], size
+- std::array [C++], swap
+- ', '
+- std::array [C++], const_iterator
+- std::array [C++], const_pointer
+- std::array [C++], const_reference
+- std::array [C++], const_reverse_iterator
+- std::array [C++], difference_type
+- std::array [C++], iterator
+- std::array [C++], pointer
+- std::array [C++], reference
+- std::array [C++], reverse_iterator
+- std::array [C++], size_type
+- std::array [C++], value_type
+- std::array [C++], assign
+- std::array [C++], at
+- std::array [C++], back
+- std::array [C++], begin
+- std::array [C++], cbegin
+- std::array [C++], cend
+- std::array [C++], crbegin
+- std::array [C++], crend
+- std::array [C++], data
+- std::array [C++], empty
+- std::array [C++], end
+- std::array [C++], fill
+- std::array [C++], front
+- std::array [C++], max_size
+- std::array [C++], rbegin
+- std::array [C++], rend
+- std::array [C++], size
+- std::array [C++], swap
 ms.assetid: fdfd43a5-b2b5-4b9e-991f-93bf10fb4293
 caps.latest.revision: 22
 author: corob-msft
@@ -94,93 +152,93 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 9ac4c0becd32ca50e4f56fb38218b4c69cc4d0bd
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: f202256a16b30d606317d457778ab4eda3eea715
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="array-class-c-standard-library"></a>array クラス (C++ 標準ライブラリ)
-長さ `N` の `Ty` 型の要素のシーケンスを制御するオブジェクトを記述します。 このシーケンスは、`array<Ty, N>` オブジェクト内に含まれる `Ty` の配列として格納されます。  
+# <a name="array-class-c-standard-library"></a>array Class (C++ Standard Library)
+Describes an object that controls a sequence of length `N` of elements of type `Ty`. The sequence is stored as an array of `Ty`, contained in the `array<Ty, N>` object.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Ty, std::size_t N>  
 class array;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|`Ty`|要素の型。|  
-|`N`|要素の数。|  
+|Parameter|Description|  
+|`Ty`|The type of an element.|  
+|`N`|The number of elements.|  
   
-## <a name="members"></a>メンバー  
-  
-|||  
-|-|-|  
-|型定義|説明|  
-|[const_iterator](#const_iterator)|被制御シーケンスの定数反復子の型です。|  
-|[const_pointer](#const_pointer)|要素への定数ポインターの型です。|  
-|[const_reference](#const_reference)|要素への定数参照の型です。|  
-|[const_reverse_iterator](#const_reverse_iterator)|被制御シーケンスの定数反転反復子の型です。|  
-|[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[iterator](#iterator)|被制御シーケンスの反復子の型です。|  
-|[pointer](#pointer)|要素へのポインターの型です。|  
-|[reference](#reference)|要素への参照の型です。|  
-|[reverse_iterator](#reverse_iterator)|被制御シーケンスの反転反復子の型です。|  
-|[size_type](#size_type)|2 つの要素間の距離を表す、符号なしの型です。|  
-|[value_type](#value_type)|要素の型。|  
+## <a name="members"></a>Members  
   
 |||  
 |-|-|  
-|メンバー関数|説明|  
-|[array](#array)|配列オブジェクトを構築します。|  
-|[assign](#assign)|すべての要素を置換します。|  
-|[at](#at)|指定した位置にある要素にアクセスします。|  
-|[back](#back)|最後の要素にアクセスします。|  
-|[begin](#begin)|被制御シーケンスの先頭を指定します。|  
-|[cbegin](#cbegin)|配列内の最初の要素を示すランダム アクセスの定数反復子を返します。|  
-|[cend](#cend)|配列の末尾の次の位置を指し示すランダム アクセス定数反復子を返します。|  
-|[crbegin](#crbegin)|反転された配列内の最初の要素への定数反復子を返します。|  
-|[crend](#crend)|反転された配列内の末尾の要素への定数反復子を返します。|  
-|[data](#data)|最初の要素のアドレスを取得します。|  
-|[empty](#empty)|要素が存在するかどうかをテストします。|  
-|[end](#end)|被制御シーケンスの末尾を指定します。|  
-|[fill](#fill)|すべての要素を、指定された値に置き換えます。|  
-|[front](#front)|最初の要素にアクセスします。|  
-|[max_size](#max_size)|要素の数をカウントします。|  
-|[rbegin](#rbegin)|反転被制御シーケンスの先頭を指定します。|  
-|[rend](#rend)|反転被制御シーケンスの末尾を指定します。|  
-|[size](#size)|要素の数をカウントします。|  
-|[swap](#swap)|2 つのコンテナーのコンテンツを交換します。|  
+|Type Definition|Description|  
+|[const_iterator](#const_iterator)|The type of a constant iterator for the controlled sequence.|  
+|[const_pointer](#const_pointer)|The type of a constant pointer to an element.|  
+|[const_reference](#const_reference)|The type of a constant reference to an element.|  
+|[const_reverse_iterator](#const_reverse_iterator)|The type of a constant reverse iterator for the controlled sequence.|  
+|[difference_type](#difference_type)|The type of a signed distance between two elements.|  
+|[iterator](#iterator)|The type of an iterator for the controlled sequence.|  
+|[pointer](#pointer)|The type of a pointer to an element.|  
+|[reference](#reference)|The type of a reference to an element.|  
+|[reverse_iterator](#reverse_iterator)|The type of a reverse iterator for the controlled sequence.|  
+|[size_type](#size_type)|The type of an unsigned distance between two elements.|  
+|[value_type](#value_type)|The type of an element.|  
   
 |||  
 |-|-|  
-|演算子|説明|  
-|[array::operator=](#op_eq)|被制御シーケンスを置き換えます。|  
-|[array::operator[]](#op_at)|指定した位置にある要素にアクセスします。|  
+|Member Function|Description|  
+|[array](#array)|Constructs an array object.|  
+|[assign](#assign)|Replaces all elements.|  
+|[at](#at)|Accesses an element at a specified position.|  
+|[back](#back)|Accesses the last element.|  
+|[begin](#begin)|Designates the beginning of the controlled sequence.|  
+|[cbegin](#cbegin)|Returns a random-access const iterator to the first element in the array.|  
+|[cend](#cend)|Returns a random-access const iterator that points just beyond the end of the array.|  
+|[crbegin](#crbegin)|Returns a const iterator to the first element in a reversed array.|  
+|[crend](#crend)|Returns a const iterator to the end of a reversed array.|  
+|[data](#data)|Gets the address of the first element.|  
+|[empty](#empty)|Tests whether elements are present.|  
+|[end](#end)|Designates the end of the controlled sequence.|  
+|[fill](#fill)|Replaces all elements with a specified value.|  
+|[front](#front)|Accesses the first element.|  
+|[max_size](#max_size)|Counts the number of elements.|  
+|[rbegin](#rbegin)|Designates the beginning of the reversed controlled sequence.|  
+|[rend](#rend)|Designates the end of the reversed controlled sequence.|  
+|[size](#size)|Counts the number of elements.|  
+|[swap](#swap)|Swaps the contents of two containers.|  
   
-## <a name="remarks"></a>コメント  
- この型は、既定のコンストラクター `array()` と既定代入演算子 `operator=` を持ち、`aggregate` の要件を満たします。 そのため、`array<Ty, N>` 型のオブジェクトは、集計初期化子を使用して初期化できます。 次に例を示します。  
+|||  
+|-|-|  
+|Operator|Description|  
+|[array::operator=](#op_eq)|Replaces the controlled sequence.|  
+|[array::operator[]](#op_at)|Accesses an element at a specified position.|  
+  
+## <a name="remarks"></a>Remarks  
+ The type has a default constructor `array()` and a default assignment operator `operator=`, and satisfies the requirements for an `aggregate`. Therefore, objects of type `array<Ty, N>` can be initialized by using an aggregate initializer. For example,  
   
 ```  
 array<int, 4> ai = { 1, 2, 3 };  
 ```  
   
- このコードは、4 つの整数値を保持するオブジェクト `ai` を作成し、最初の 3 つの要素はそれぞれ値 1、2、3 に初期化し、4 番目の要素は 0 に初期化します。  
+ creates the object `ai` that holds four integer values, initializes the first three elements to the values 1, 2, and 3, respectively, and initializes the fourth element to 0.  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>Requirements  
  **Header:** \<array>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="array"></a>  array::array  
- 配列オブジェクトを構築します。  
+ Constructs an array object.  
   
 ```  
 array();
@@ -188,16 +246,16 @@ array();
 array(const array& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *right*  
- 挿入するオブジェクトまたは範囲。  
+ Object or range to insert.  
   
-### <a name="remarks"></a>コメント  
-既定のコンストラクター `array()` は、被制御シーケンスを初期化されない状態 (または既定の初期化された状態) のままにします。 これを使用して、初期化されていない被制御シーケンスを指定します。  
+### <a name="remarks"></a>Remarks  
+The default constructor `array()` leaves the controlled sequence uninitialized (or default initialized). You use it to specify an uninitialized controlled sequence.  
   
-コピー コンストラクター `array(const array& right)` は、被制御シーケンスをシーケンス [*right*`.begin()`, *right*`.end()`) で初期化します。 これを使用して、配列オブジェクト *right* によって制御されるシーケンスのコピーである最初の被制御シーケンスを指定します。  
+The copy constructor `array(const array& right)` initializes the controlled sequence with the sequence [*right*`.begin()`, *right*`.end()`). You use it to specify an initial controlled sequence that is a copy of the sequence controlled by the array object *right*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_array.cpp   
@@ -235,20 +293,20 @@ int main()
 ```  
   
 ##  <a name="assign"></a>  array::assign  
-C++ 11 では廃止され、[fill](#fill) に置き換えられています。 すべての要素を置換します。  
+Obsolete in C++11, replaced by [fill](#fill). Replaces all elements.  
   
 ```  
 void assign(const Ty& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- 代入する値。  
+ The value to assign.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、`*this` によって制御されているシーケンスを、値 `val` の `N` 個の要素の繰り返しで置き換えます。  
+### <a name="remarks"></a>Remarks  
+ The member function replaces the sequence controlled by `*this` with a repetition of `N` elements of value `val`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_assign.cpp   
@@ -287,7 +345,7 @@ int main()
 ```  
   
 ##  <a name="at"></a>  array::at  
- 指定した位置にある要素にアクセスします。  
+ Accesses an element at a specified position.  
   
 ```  
 reference at(size_type off);
@@ -295,14 +353,14 @@ reference at(size_type off);
 constexpr const_reference at(size_type off) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `off`  
- アクセスする要素の位置。  
+ Position of element to access.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、`off` 位置にある被制御シーケンスの要素への参照を返します。 その位置が無効の場合、関数はクラス `out_of_range` のオブジェクトをスローします。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reference to the element of the controlled sequence at position `off`. If that position is invalid, the function throws an object of class `out_of_range`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_at.cpp   
@@ -332,7 +390,7 @@ int main()
 ```  
   
 ##  <a name="back"></a>  array::back  
- 最後の要素にアクセスします。  
+ Accesses the last element.  
   
 ```  
 reference back();
@@ -340,10 +398,10 @@ reference back();
 constexpr const_reference back() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、被制御シーケンスの最後の要素への参照を返します。被制御シーケンスを空にすることはできません。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reference to the last element of the controlled sequence, which must be non-empty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_back.cpp   
@@ -377,17 +435,17 @@ int main()
 ```  
   
 ##  <a name="begin"></a>  array::begin  
- 被制御シーケンスの先頭を指定します。  
+ Designates the beginning of the controlled sequence.  
   
 ```  
 iterator begin() noexcept;  
 const_iterator begin() const noexcept;  
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、シーケンスの最初の要素 (または空のシーケンスの末尾の次の位置) を示すランダム アクセス反復子を返します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a random-access iterator that points at the first element of the sequence (or just beyond the end of an empty sequence).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_begin.cpp   
@@ -422,19 +480,19 @@ int main()
 ```  
   
 ##  <a name="cbegin"></a>  array::cbegin  
- 範囲内の最初の要素を示す `const` 反復子を返します。  
+ Returns a `const` iterator that addresses the first element in the range.  
   
 ```  
 const_iterator cbegin() const noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 範囲の最初の要素、または空の範囲の末尾の次の位置 (空の範囲の場合、`const`) を指し示す `cbegin() == cend()` ランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A `const` random-access iterator that points at the first element of the range, or the location just beyond the end of an empty range (for an empty range, `cbegin() == cend()`).  
   
-### <a name="remarks"></a>コメント  
- `cbegin` の戻り値で範囲内の要素を変更することはできません。  
+### <a name="remarks"></a>Remarks  
+ With the return value of `cbegin`, the elements in the range cannot be modified.  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ You can use this member function in place of the `begin()` member function to guarantee that the return value is `const_iterator`. Typically, it's used in conjunction with the [auto](../cpp/auto-cpp.md) type deduction keyword, as shown in the following example. In the example, consider `Container` to be a modifiable (non- `const`) container of any kind that supports `begin()` and `cbegin()`.  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -445,19 +503,19 @@ auto i2 = Container.cbegin();
 ```  
   
 ##  <a name="cend"></a>  array::cend  
- 範囲内の最後の要素の次の位置を指す `const` 反復子を返します。  
+ Returns a `const` iterator that addresses the location just beyond the last element in a range.  
   
 ```  
 const_iterator cend() const noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 範囲の末尾の次の位置を指し示すランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A random-access iterator that points just beyond the end of the range.  
   
-### <a name="remarks"></a>コメント  
- `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
+### <a name="remarks"></a>Remarks  
+ `cend` is used to test whether an iterator has passed the end of its range.  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ You can use this member function in place of the `end()` member function to guarantee that the return value is `const_iterator`. Typically, it's used in conjunction with the [auto](../cpp/auto-cpp.md) type deduction keyword, as shown in the following example. In the example, consider `Container` to be a modifiable (non- `const`) container of any kind that supports `end()` and `cend()`.  
   
 ```cpp  
 auto i1 = Container.end();
@@ -467,19 +525,19 @@ auto i2 = Container.cend();
 // i2 is Container<T>::const_iterator  
 ```  
   
- `cend` によって返された値は逆参照しないでください。  
+ The value returned by `cend` should not be dereferenced.  
   
 ##  <a name="const_iterator"></a>  array::const_iterator  
- 被制御シーケンスの定数反復子の型です。  
+ The type of a constant iterator for the controlled sequence.  
   
 ```  
 typedef implementation-defined const_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスの定数ランダム アクセス反復子として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a constant random-access iterator for the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_const_iterator.cpp  
@@ -521,16 +579,16 @@ it2: 0
 ```  
   
 ##  <a name="const_pointer"></a>  array::const_pointer  
- 要素への定数ポインターの型です。  
+ The type of a constant pointer to an element.  
   
 ```  
 typedef const Ty *const_pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、シーケンスの要素への定数ポインターとして使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a constant pointer to elements of the sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_const_pointer.cpp   
@@ -565,16 +623,16 @@ int main()
 ```  
   
 ##  <a name="const_reference"></a>  array::const_reference  
- 要素への定数参照の型です。  
+ The type of a constant reference to an element.  
   
 ```  
 typedef const Ty& const_reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスの要素への定数参照として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a constant reference to an element of the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_const_reference.cpp   
@@ -609,16 +667,16 @@ int main()
 ```  
   
 ##  <a name="const_reverse_iterator"></a>  array::const_reverse_iterator  
- 被制御シーケンスの定数反転反復子の型です。  
+ The type of a constant reverse iterator for the controlled sequence.  
   
 ```  
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスの定数反転反復子として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a constant reverse iterator for the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_const_reverse_iterator.cpp   
@@ -653,19 +711,19 @@ int main()
 ```  
   
 ##  <a name="crbegin"></a>  array::crbegin  
- 反転された配列内の最初の要素への定数反復子を返します。  
+ Returns a const iterator to the first element in a reversed array.  
   
 ```  
 const_reverse_iterator crbegin() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 反転された配列の最初の要素を指すか、反転されていない配列の最後の要素だったものを指す、定数逆順ランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A const reverse random-access iterator addressing the first element in a reversed array or addressing what had been the last element in the unreversed array.  
   
-### <a name="remarks"></a>コメント  
- 戻り値が `crbegin` の場合、配列オブジェクトは変更できません。  
+### <a name="remarks"></a>Remarks  
+ With the return value of `crbegin`, the array object cannot be modified.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // array_crbegin.cpp  
@@ -696,25 +754,25 @@ The first element of the reversed array is 2.
 ```  
   
 ##  <a name="crend"></a>  array::crend  
- 逆順の配列内の最後の要素の次の位置を指す定数反復子を返します。  
+ Returns a const iterator that addresses the location succeeding the last element in a reversed array.  
   
 ```  
 const_reverse_iterator crend() const noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 逆順の配列内の最後の要素の次の位置 (通常の順序の配列内の最初の要素の前の位置) を指す定数逆順ランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A const reverse random-access iterator that addresses the location succeeding the last element in a reversed array (the location that had preceded the first element in the unreversed array).  
   
-### <a name="remarks"></a>コメント  
- `crend` は、[array::cend](#cend) が配列で使用されるときと同様の方法により、逆順の配列で使用されます。  
+### <a name="remarks"></a>Remarks  
+ `crend` is used with a reversed array just as [array::cend](#cend) is used with a array.  
   
- 戻り値が (適切にデクリメントされた) `crend` の場合、配列オブジェクトは変更できません。  
+ With the return value of `crend` (suitably decremented), the array object cannot be modified.  
   
- `crend` を使用して、逆順反復子が配列の末尾に達したかどうかをテストできます。  
+ `crend` can be used to test to whether a reverse iterator has reached the end of its array.  
   
- `crend` によって返された値は逆参照しないでください。  
+ The value returned by `crend` should not be dereferenced.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // array_crend.cpp  
@@ -739,7 +797,7 @@ int main( )
 ```  
   
 ##  <a name="data"></a>  array::data  
- 最初の要素のアドレスを取得します。  
+ Gets the address of the first element.  
   
 ```  
 Ty *data();
@@ -747,10 +805,10 @@ Ty *data();
 const Ty *data() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、被制御シーケンス内の最初の要素のアドレスを返します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return the address of the first element in the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_data.cpp   
@@ -785,16 +843,16 @@ int main()
 ```  
   
 ##  <a name="difference_type"></a>  array::difference_type  
- 2 つの要素間の距離を表す、符号付きの型です。  
+ The type of a signed distance between two elements.  
   
 ```  
 typedef std::ptrdiff_t difference_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 符号付き整数型は、被制御シーケンス内にある 2 つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。 これは `std::ptrdiff_t` 型のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The signed integer type describes an object that can represent the difference between the addresses of any two elements in the controlled sequence. It is a synonym for the type `std::ptrdiff_t`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_difference_type.cpp   
@@ -829,16 +887,16 @@ int main()
 ```  
   
 ##  <a name="empty"></a>  array::empty  
- 要素が存在しないかどうかをテストします。  
+ Tests whether no elements are present.  
   
 ```  
 constexpr bool empty() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- `N == 0` の場合にのみ、メンバー関数は true を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns true only if `N == 0`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_empty.cpp   
@@ -879,7 +937,7 @@ true
 ```  
   
 ##  <a name="end"></a>  array::end  
- 被制御シーケンスの末尾を指定します。  
+ Designates the end of the controlled sequence.  
   
 ```  
 reference end();
@@ -887,10 +945,10 @@ reference end();
 const_reference end() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、シーケンスの最後を越えたところを示すランダム アクセス反復子を返します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a random-access iterator that points just beyond the end of the sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_end.cpp   
@@ -925,23 +983,23 @@ int main()
 ```  
   
 ##  <a name="fill"></a>  array::fill  
- 配列を消去し、空の配列に指定された要素をコピーします。  
+ Erases a array and copies the specified elements to the empty array.  
   
 ```  
 void fill(const Type& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|`val`|配列に挿入される要素の値。|  
+|Parameter|Description|  
+|`val`|The value of the element being inserted into the array.|  
   
-### <a name="remarks"></a>コメント  
- `fill` は、配列の各要素を、指定された値に置き換えます。  
+### <a name="remarks"></a>Remarks  
+ `fill` replaces each element of the array with the specified value.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // array_fill.cpp  
@@ -969,7 +1027,7 @@ int main( )
 ```  
   
 ##  <a name="front"></a>  array::front  
- 最初の要素にアクセスします。  
+ Accesses the first element.  
   
 ```  
 reference front();
@@ -977,10 +1035,10 @@ reference front();
 constexpr const_reference front() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、被制御シーケンスの最初の要素への参照を返します。被制御シーケンスを空にすることはできません。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reference to the first element of the controlled sequence, which must be non-empty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_front.cpp   
@@ -1014,16 +1072,16 @@ int main()
 ```  
   
 ##  <a name="iterator"></a>  array::iterator  
- 被制御シーケンスの反復子の型です。  
+ The type of an iterator for the controlled sequence.  
   
 ```  
 typedef implementation-defined iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスのランダム アクセス反復子として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a random-access iterator for the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_iterator.cpp   
@@ -1065,16 +1123,16 @@ it2: 0
 ```  
   
 ##  <a name="max_size"></a>  array::max_size  
- 要素の数をカウントします。  
+ Counts the number of elements.  
   
 ```  
 constexpr size_type max_size() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、`N` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns `N`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_max_size.cpp   
@@ -1108,7 +1166,7 @@ int main()
 ```  
   
 ##  <a name="op_at"></a>  array::operator[]  
- 指定した位置にある要素にアクセスします。  
+ Accesses an element at a specified position.  
   
 ```  
 reference operator[](size_type off);
@@ -1116,16 +1174,16 @@ reference operator[](size_type off);
 constexpr const_reference operator[](size_type off) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `off`  
- アクセスする要素の位置。  
+ Position of element to access.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、`off` 位置にある被制御シーケンスの要素への参照を返します。 その位置が無効な場合、動作は定義されません。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reference to the element of the controlled sequence at position `off`. If that position is invalid, the behavior is undefined.  
   
-`array` の要素への参照を取得するのに使用できる非メンバー [get](array-functions.md#get) 関数もあります。  
+There is also a non-member [get](array-functions.md#get) function available to get a reference to an element of an `array`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_operator_sub.cpp   
@@ -1160,20 +1218,20 @@ int main()
 ```  
   
 ##  <a name="op_eq"></a>  array::operator=  
- 被制御シーケンスを置き換えます。  
+ Replaces the controlled sequence.  
   
 ```  
 array <Value>%  operator=(array <Value>% right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- 右  
- コピーするコンテナー。  
+### <a name="parameters"></a>Parameters  
+ right  
+ Container to copy.  
   
-### <a name="remarks"></a>コメント  
- メンバー演算子は、`right` の各要素を被制御シーケンスの対応する要素に割り当ててから、`*this` を返します。 これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーと置き換えます。  
+### <a name="remarks"></a>Remarks  
+ The member operator assigns each element of `right` to the corresponding element of the controlled sequence, then returns `*this`. You use it to replace the controlled sequence with a copy of the controlled sequence in `right`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_operator_as.cpp   
@@ -1212,16 +1270,16 @@ int main()
 ```  
   
 ##  <a name="pointer"></a>  array::pointer  
- 要素へのポインターの型です。  
+ The type of a pointer to an element.  
   
 ```  
 typedef Ty *pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、シーケンスの要素へのポインターとして使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a pointer to elements of the sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_pointer.cpp   
@@ -1256,17 +1314,17 @@ int main()
 ```  
   
 ##  <a name="rbegin"></a>  array::rbegin  
- 反転被制御シーケンスの先頭を指定します。  
+ Designates the beginning of the reversed controlled sequence.  
   
 ```  
 reverse_iterator rbegin()noexcept;  
 const_reverse_iterator rbegin() const noexcept;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、被制御シーケンスの最後を越えたところを示す反転反復子を返します。 したがって、反転シーケンスの先頭を指定します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reverse iterator that points just beyond the end of the controlled sequence. Hence, it designates the beginning of the reverse sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_rbegin.cpp   
@@ -1301,16 +1359,16 @@ int main()
 ```  
   
 ##  <a name="reference"></a>  array::reference  
- 要素への参照の型です。  
+ The type of a reference to an element.  
   
 ```  
 typedef Ty& reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスの要素への参照として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a reference to an element of the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_reference.cpp   
@@ -1345,17 +1403,17 @@ int main()
 ```  
   
 ##  <a name="rend"></a>  array::rend  
- 反転被制御シーケンスの末尾を指定します。  
+ Designates the end of the reversed controlled sequence.  
   
 ```  
 reverse_iterator rend()noexcept;  
 const_reverse_iterator rend() const noexcept;  
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、シーケンスの最初の要素 (または空のシーケンスの末尾の次の位置) を示す反転反復子を返します。 したがって、反転シーケンスの末尾を指定します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return a reverse iterator that points at the first element of the sequence (or just beyond the end of an empty sequence)). Hence, it designates the end of the reverse sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_rend.cpp   
@@ -1390,16 +1448,16 @@ int main()
 ```  
   
 ##  <a name="reverse_iterator"></a>  array::reverse_iterator  
- 被制御シーケンスの反転反復子の型です。  
+ The type of a reverse iterator for the controlled sequence.  
   
 ```  
 typedef std::reverse_iterator<iterator> reverse_iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、被制御シーケンスの反転反復子として使用できるオブジェクトを表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can serve as a reverse iterator for the controlled sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_reverse_iterator.cpp   
@@ -1434,16 +1492,16 @@ int main()
 ```  
   
 ##  <a name="size"></a>  array::size  
- 要素の数をカウントします。  
+ Counts the number of elements.  
   
 ```  
 constexpr size_type size() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、`N` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns `N`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_size.cpp   
@@ -1477,16 +1535,16 @@ int main()
 ```  
   
 ##  <a name="size_type"></a>  array::size_type  
- 2 つの要素間の距離を表す、符号なしの型です。  
+ The type of an unsigned distance between two element.  
   
 ```  
 typedef std::size_t size_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 符号なし整数型は、被制御シーケンスの長さを表すことができるオブジェクトを表します。 これは `std::size_t` 型のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The unsigned integer type describes an object that can represent the length of any controlled sequence. It is a synonym for the type `std::size_t`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_size_type.cpp   
@@ -1521,22 +1579,22 @@ int main()
 ```  
   
 ##  <a name="swap"></a>  array::swap  
-この配列の内容を別の配列と交換します。  
+Swaps the contents of this array with another array.  
   
 ```  
 void swap(array& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- コンテンツを交換する配列。  
+ Array to swap contents with.  
   
-### <a name="remarks"></a>コメント  
-このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 さまざまな要素の割り当てを実行し、`N` に比例してコンストラクターを呼び出します。  
+### <a name="remarks"></a>Remarks  
+The member function swaps the controlled sequences between `*this` and `right`. It performs a number of element assignments and constructor calls proportional to `N`.  
 
-2 つの `array` インスタンスを交換するのに使用できる非メンバー [swap](array-functions.md#swap) 関数もあります。  
+There is also a non-member [swap](array-functions.md#swap) function available to swap two `array` instances.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_swap.cpp   
@@ -1584,16 +1642,16 @@ int main()
 ```  
   
 ##  <a name="value_type"></a>  array::value_type  
- 要素の型。  
+ The type of an element.  
   
 ```  
 typedef Ty value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Ty`のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter `Ty`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__array_value_type.cpp   
@@ -1631,7 +1689,7 @@ int main()
 0 1 2 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<array>](../standard-library/array.md)
 
 

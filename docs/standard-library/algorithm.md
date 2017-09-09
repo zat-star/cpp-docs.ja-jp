@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- <algorithm>
-- std::<algorithm>
-- algorithm/std::<algorithm>
-- std.<algorithm>
+- <algorithm>", "std::<algorithm>", "algorithm/std::<algorithm>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -38,131 +35,131 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
-ms.openlocfilehash: 8deaefffa7afe676a7c8634c4c6c40e784aed982
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fc54dbec350a71651e52745262d77cfdb865a0f6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltalgorithmgt"></a>&lt;algorithm&gt;
-アルゴリズムを実行する C++ 標準ライブラリ コンテナーのテンプレート関数を定義します。  
+Defines C++ Standard Library container template functions that perform algorithms.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 (see relevant links below for specific algorithm syntax)
 ```  
   
-## <a name="remarks"></a>コメント  
- C++ 標準ライブラリ アルゴリズムは、さまざまなデータ構造体を操作できるため汎用的です。 操作できるデータ構造には、`vector` や `list` などの C++ 標準ライブラリ コンテナー クラスだけではなく、特定のアルゴリズムの要件を満たす、プログラムで定義されたデータ構造や要素の配列も含まれます。 C++ 標準ライブラリ アルゴリズムは、反復子によって間接的にコンテナー要素にアクセスし、走査することによって、このレベルの一般性を実現します。  
+## <a name="remarks"></a>Remarks  
+ The C++ Standard Library algorithms are generic because they can operate on a variety of data structures. The data structures that they can operate on include not only the C++ Standard Library container classes such as `vector` and `list`, but also program-defined data structures and arrays of elements that satisfy the requirements of a particular algorithm. C++ Standard Library algorithms achieve this level of generality by accessing and traversing the elements of a container indirectly through iterators.  
   
- C++ 標準ライブラリ アルゴリズムは、通常、開始位置または終了位置によって指定される反復子範囲を処理します。 参照される範囲は、範囲内のすべてのポインターが逆参照可能であるという意味において有効であり、かつ各範囲のシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ C++ Standard Library algorithms process iterator ranges that are typically specified by their beginning or ending positions. The ranges referred to must be valid in the sense that all pointers in the ranges must be dereferenceable and, within the sequences of each range, the last position must be reachable from the first by incrementation.  
   
- C++ 標準ライブラリ アルゴリズムでは、各 C++ 標準ライブラリ コンテナーの操作およびメンバー関数でサポートされている操作を拡張し、たとえば、異なる型のコンテナー オブジェクトを同時に操作できるようにします。 2 個のサフィックスがアルゴリズムの目的に関する情報を伝えるために使用されています。  
+ The C++ Standard Library algorithms extend the actions supported by the operations and member functions of each C++ Standard Library container and allow working, for example, with different types of container objects at the same time. Two suffixes have been used to convey information about the purpose of the algorithms.  
   
--   `_if` サフィックスは、アルゴリズムの値が、要素自体の値ではなく、要素の値を操作する関数オブジェクトと共に使用されることを示します。 `find_if` アルゴリズムは、値が関数オブジェクトによって指定されている基準を満たす要素を検索し、`find` アルゴリズムは、特定の値を検索します。  
+-   The `_if` suffix indicates that the algorithm is used with function objects operating on the values of the elements rather than on the values of the elements themselves. The `find_if` algorithm looks for elements whose values satisfy the criterion specified by a function object, and the `find` algorithm searches for a particular value.  
   
--   _copy サフィックスは、アルゴリズムが要素の値を操作するだけではなく、変更された値をターゲット範囲にコピーすることを示します。 `reverse` アルゴリズムは、範囲内の要素の順序を反転し、`reverse_copy` アルゴリズムは、さらに結果をターゲット範囲にコピーします。  
+-   The _copy suffix indicates that the algorithm not only manipulates the values of the elements but also copies the modified values into a destination range. The `reverse` algorithm reverses the order of the elements within a range, and the `reverse_copy` algorithm also copies the result into a destination range.  
   
- C++ 標準ライブラリ アルゴリズムは、通常、その目的や要件に関する事項を示すグループに分類されます。 これには、要素の値を変更する変更アルゴリズムと、要素の値を変更しない非変更アルゴリズムが含まれます。 変換アルゴリズムは、要素の順序を変更しますが、要素の値は変更しません。 削除アルゴリズムは、範囲または範囲のコピーから要素を除去できます。 並べ替えアルゴリズムは、さまざまな方法で要素の順序を変更し、並べ替えられた範囲アルゴリズムは、要素が特定の方法で並べ替えられたアルゴリズムに対してのみ機能します。  
+ C++ Standard Library algorithms are often classified into groups that indicate something about their purpose or requirements. These include modifying algorithms that change the value of elements as compared with non-modifying algorithms that do not. Mutating algorithms change the order of elements, but not the values of their elements. Removing algorithms can eliminate elements from a range or a copy of a range. Sorting algorithms reorder the elements in a range in various ways and sorted range algorithms only act on algorithms whose elements have been sorted in a particular way.  
   
- 数値処理のために提供される C++ 標準ライブラリ数値アルゴリズムには独自のヘッダー ファイル [\<numeric>](../standard-library/numeric.md) があり、関数オブジェクトとアダプターはヘッダー [\<functional>](../standard-library/functional.md) で定義されます。ブール値を返す関数オブジェクトは述語と呼ばれます。 既定の二項述語は比較 `operator<` です。 通常、順序を並べ替える要素は、小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。  
+ The C++ Standard Library numeric algorithms that are provided for numerical processing have their own header file [\<numeric>](../standard-library/numeric.md), and function objects and adaptors are defined in the header [\<functional>](../standard-library/functional.md) Function objects that return Boolean values are known as predicates. The default binary predicate is the comparison `operator<`. In general, the elements being ordered need to be less than comparable so that, given any two elements, it can be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering among the nonequivalent elements.  
   
-### <a name="functions"></a>関数  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[adjacent_find](../standard-library/algorithm-functions.md#adjacent_find)|等しいか、または指定された条件を満たす 2 個の隣接する要素を検索します。|  
-|[all_of](../standard-library/algorithm-functions.md#all_of)|特定の範囲内の各要素について条件が存在するときに、`true` を返します。|  
-|[any_of](../standard-library/algorithm-functions.md#any_of)|指定された要素の範囲内で条件が少なくとも 1 回存在するときに、`true` を返します。|  
-|[binary_search](../standard-library/algorithm-functions.md#binary_search)|並べ替えられた範囲に、指定された値と等しい要素が存在するか、または二項述語で指定された意味で、指定された値と等価の要素が存在するかどうかをテストします。|  
-|[copy](../standard-library/algorithm-functions.md#copy)|要素のソース シーケンス全体を繰り返し、順方向の新しい位置を割り当てて、ソース範囲内からターゲットの範囲に要素の値を割り当てます。|  
-|[copy_backward](../standard-library/algorithm-functions.md#copy_backward)|要素のソース シーケンス全体を繰り返し、逆方向の新しい位置を割り当てて、ソース範囲内からターゲットの範囲に要素の値を割り当てます。|  
-|[copy_if](../standard-library/algorithm-functions.md#copy_if)|特定の範囲内で指定された条件が `true` であるすべての要素をコピーします。|  
-|[copy_n](../standard-library/algorithm-functions.md#copy_n)|指定された数の要素をコピーします。|  
-|[count](../standard-library/algorithm-functions.md#count)|範囲内で値が指定された値と一致する要素の数を返します。|  
-|[count_if](../standard-library/algorithm-functions.md#count_if)|範囲内で値が指定された条件と一致する要素の数を返します。|  
-|[equal](../standard-library/algorithm-functions.md#equal)|二項述語によって指定された等値または等価について、2 つの範囲を要素ごとに比較します。|  
-|[equal_range](../standard-library/algorithm-functions.md#equal_range)|順序付けられた範囲内で、最初の位置が指定された要素の位置以下で、2 番目の位置が要素の位置を超える位置のペアを検索します。ここで、シーケンス内の位置を確立するために使用される等価または順序付けの意味は、二項述語によって指定できます。|  
-|[fill](../standard-library/algorithm-functions.md#fill)|指定された範囲のすべての要素に同じ新しい値を割り当てます。|  
-|[fill_n](../standard-library/algorithm-functions.md#fill_n)|特定の要素で始まる要素範囲で、指定された数の要素に新しい値を割り当てます。|  
-|[find](../standard-library/algorithm-functions.md#find)|範囲内で指定された値を持つ要素が最初に出現する位置を検索します。|  
-|[find_end](../standard-library/algorithm-functions.md#find_end)|範囲内で指定されたシーケンスと等しい、つまり二項述語で指定された意味で等価である最後のサブシーケンスを検索します。|  
-|[find_first_of](../standard-library/algorithm-functions.md#find_first_of)|対象範囲内で複数の値のうち最初に出現するもの、つまり二項述語で指定された意味で、指定された要素のセットと等価である複数の要素のうち最初に出現するものを検索します。|  
-|[find_if](../standard-library/algorithm-functions.md#find_if)|範囲内で指定された条件を満たす要素が最初に出現する位置を検索します。|  
-|[find_if_not](../standard-library/algorithm-functions.md#find_if_not)|指定された範囲内で条件を満たさない最初の要素を返します。|  
-|[for_each](../standard-library/algorithm-functions.md#for_each)|範囲内で順方向順序で各要素に対して指定された関数を適用し、関数オブジェクトを返します。|  
-|[generate](../standard-library/algorithm-functions.md#generate)|範囲内の各要素に関数オブジェクトによって生成される値を割り当てます。|  
-|[generate_n](../standard-library/algorithm-functions.md#generate_n)|範囲内の指定された数の要素に関数オブジェクトによって生成される値を割り当て、最後に割り当てられた値を 1 つ超えた位置を返します。|  
-|[includes](../standard-library/algorithm-functions.md#includes)|1 つの並べ替えられた範囲に、別の並べ替えられた範囲内のすべての要素が含まれるかどうかをテストします。要素間の順序または等価の基準は二項述語によって指定できます。|  
-|[inplace_merge](../standard-library/algorithm-functions.md#inplace_merge)|2 つの連続する並べ替えられた範囲の要素を単一の並べ替えられた範囲として連結します。順序の基準は二項述語によって指定できます。|  
-|[is_heap](../standard-library/algorithm-functions.md#is_heap)|指定された範囲の要素がヒープを形成する場合は `true` を返します。|  
-|[is_heap_until](../standard-library/algorithm-functions.md#is_heap_until)|指定された範囲が最後の要素までヒープを形成する場合は `true` を返します。|  
-|[is_partitioned](../standard-library/algorithm-functions.md#is_partitioned)|特定の範囲で条件が `true` になるすべての要素が、`true` になる要素の前にある場合は、`false` を返します。|  
-|[is_permutation](../standard-library/algorithm-functions.md#is_permutation)|特定の範囲の要素が有効な順列を形成するかどうかを決定します。|  
-|[is_sorted](../standard-library/algorithm-functions.md#is_sorted)|指定された範囲の要素が並べ替えられた順序になっている場合は `true` を返します。|  
-|[is_sorted_until](../standard-library/algorithm-functions.md#is_sorted_until)|指定された範囲の要素が並べ替えられた順序になっている場合は `true` を返します。|  
-|[iter_swap](../standard-library/algorithm-functions.md#iter_swap)|指定された反復子のペアで参照される 2 個の値を交換します。|  
-|[lexicographical_compare](../standard-library/algorithm-functions.md#lexicographical_compare)|2 つのシーケンスを要素ごとに比較して、2 つのうちどちらが小さいかを判断します。|  
-|[lower_bound](../standard-library/algorithm-functions.md#lower_bound)|順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値と等価以上の値を持つ最初の要素の位置を検索します。|  
-|[make_heap](../standard-library/algorithm-functions.md#make_heap)|指定された範囲の要素を、最初の要素が最大であるヒープに変換します。並べ替えの基準は二項述語によって指定できます。|  
-|[max](../standard-library/algorithm-functions.md#max)|2 つのオブジェクトを比較し、大きい方のオブジェクトを返します。順序の基準は、二項述語によって指定できます。|  
-|[max_element](../standard-library/algorithm-functions.md#max_element)|並べ替え基準をバイナリ述語で指定できる、指定された範囲内の最大の要素の最初の出現箇所を検索します。|  
-|[merge](../standard-library/algorithm-functions.md#merge)|2 つの並べ替えられたソース範囲のすべての要素を単一の並べ替えられたターゲット範囲として連結します。順序の基準は二項述語によって指定できます。|  
-|[min](../standard-library/algorithm-functions.md#min)|2 つのオブジェクトを比較し、小さい方のオブジェクトを返します。順序の基準は、二項述語によって指定できます。|  
-|[min_element](../standard-library/algorithm-functions.md#min_element)|指定された範囲内の最小の要素の最初の出現箇所を検索します。順序の基準は二項述語によって指定できます。|  
-|[minmax](../standard-library/algorithm-functions.md#minmax)|2 つの入力パラメーターを比較し、それらを昇順のペアとして返します。|  
-|[minmax_element](../standard-library/algorithm-functions.md#minmax_element)|[min_element](../standard-library/algorithm-functions.md#min_element) と [max_element](../standard-library/algorithm-functions.md#max_element) によって実行される作業を 1 回の呼び出しで実行します。|  
-|[mismatch](../standard-library/algorithm-functions.md#mismatch)|二項述語によって指定された等値または等価について、2 つの範囲を要素ごとに比較し、相違点が発生する最初の位置を検索します。|  
-|[&lt;alg&gt; move](../standard-library/algorithm-functions.md#alg_move)|指定された範囲に関連付けられている要素を移動します。|  
-|[move_backward](../standard-library/algorithm-functions.md#move_backward)|ある反復子の要素を別の反復子に移動します。 移動は、指定した範囲の最後の要素から開始され、その範囲内の先頭の要素で終了します。|  
-|[next_permutation](../standard-library/algorithm-functions.md#next_permutation)|範囲内の要素の順序を変更し、元の順序を辞書式に次に大きい順列 (存在する場合) に置き換えます。next の意味は二項述語によって指定できます。|  
-|[none_of](../standard-library/algorithm-functions.md#none_of)|特定の範囲内の要素について条件が存在しないときに、`true` を返します。|  
-|[nth_element](../standard-library/algorithm-functions.md#nth_element)|範囲内のシーケンスの *n* 番目の要素を正しく検索し、その要素の前にあるすべての要素がその要素以下、シーケンス内でその要素に続くすべての要素がその要素以上になるようにして、要素の範囲を分割します。|  
-|[partial_sort](../standard-library/algorithm-functions.md#partial_sort)|範囲内で指定された数の、より小さい要素を、降順以外の順序、または二項述語で指定された順序の基準に従って配置します。|  
-|[partial_sort_copy](../standard-library/algorithm-functions.md#partial_sort_copy)|ソース範囲からターゲット範囲に要素をコピーします。ソース要素は小なりまたは指定された別の二項述語によって並べ替えられます。|  
-|[partition](../standard-library/algorithm-functions.md#partition)|範囲内の要素を 2 つの分離されたセットに分類し、単項述語を満たす要素が単項述語を満たさない要素よりも前に来るように配置します。|  
-|[partition_copy](../standard-library/algorithm-functions.md#partition_copy)|条件が `true` である要素を 1 つターゲットにコピーし、条件が `false` である要素を別のターゲットにコピーします。 要素は指定された範囲に含まれている必要があります。|  
-|[partition_point](../standard-library/algorithm-functions.md#partition_point)|特定の範囲内で条件を満たさない最初の要素を返します。 要素は、条件を満たす要素が条件を満たさない要素の前に来るように並べ替えられます。|  
-|[pop_heap](../standard-library/algorithm-functions.md#pop_heap)|ヒープの先頭と範囲内の最後から 2 番目の位置との間で最大の要素を削除し、残りの要素から新しいヒープを形成します。|  
-|[prev_permutation](../standard-library/algorithm-functions.md#prev_permutation)|範囲内の要素の順序を変更し、元の順序を辞書式に次に大きい順列 (存在する場合) に置き換えます。next の意味は二項述語によって指定できます。|  
-|[push_heap](../standard-library/algorithm-functions.md#push_heap)|範囲の末尾にある要素を、範囲内の以前の要素で構成される既存のヒープに追加します。|  
-|[random_shuffle](../standard-library/algorithm-functions.md#random_shuffle)|範囲内の *N* 個の要素のシーケンスを、ランダムに選択された *N*! 個の可能な配置の 1 つに再配置します。|  
-|[remove](../standard-library/algorithm-functions.md#remove)|特定の範囲から指定された値を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。|  
-|[remove_copy](../standard-library/algorithm-functions.md#remove_copy)|ソース範囲からターゲット範囲に要素をコピーしますが、指定された値の要素はコピーされません。残りの要素の順序に影響を及ぼすことはなく、新しいターゲット範囲の末尾を返します。|  
-|[remove_copy_if](../standard-library/algorithm-functions.md#remove_copy_if)|ソース範囲からターゲット範囲に要素をコピーしますが、述語を満たす要素はコピーされません。残りの要素の順序に影響を及ぼすことはなく、新しいターゲット範囲の末尾を返します。|  
-|[remove_if](../standard-library/algorithm-functions.md#remove_if)|特定の範囲から述語を満たす要素を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。|  
-|[replace](../standard-library/algorithm-functions.md#replace)|範囲内の各要素が指定された値に一致するかどうかを調べ、一致する場合は置き換えます。|  
-|[replace_copy](../standard-library/algorithm-functions.md#replace_copy)|ソース範囲内の各要素が指定された値に一致するかどうかを調べ、一致する場合は置き換えて結果を新しいターゲット範囲にコピーします。|  
-|[replace_copy_if](../standard-library/algorithm-functions.md#replace_copy_if)|ソース範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えて結果を新しいターゲット範囲にコピーします。|  
-|[replace_if](../standard-library/algorithm-functions.md#replace_if)|範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えます。|  
-|[reverse](../standard-library/algorithm-functions.md#reverse)|範囲内の要素の順序を反転させます。|  
-|[reverse_copy](../standard-library/algorithm-functions.md#reverse_copy)|ソース範囲内の要素の順序を反転し、結果をターゲット範囲にコピーします。|  
-|[rotate](../standard-library/algorithm-functions.md#rotate)|2 つの隣接する範囲の要素を交換します。|  
-|[rotate_copy](../standard-library/algorithm-functions.md#rotate_copy)|ソース範囲内の 2 つの隣接する範囲の要素を交換し、結果をターゲット範囲にコピーします。|  
-|[search](../standard-library/algorithm-functions.md#search)|要素が特定の要素シーケンス内の要素と等しいか、または要素が二項述語で指定される意味において特定のシーケンス内の要素と等価であるシーケンスが、対象範囲内で最初に出現する位置を検索します。|  
-|[search_n](../standard-library/algorithm-functions.md#search_n)|特定の値を持つか、二項述語によって指定される値と関連する、指定された数の要素で構成される範囲内の最初のサブシーケンスを検索します。|  
-|[set_difference](../standard-library/algorithm-functions.md#set_difference)|1 つの並べ替えられたソース範囲内に属するが、2 番目の並べ替えられたソース範囲には属さないすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。|  
-|[set_intersection](../standard-library/algorithm-functions.md#set_intersection)|両方の並べ替えられたソース範囲に属するすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。|  
-|[set_symmetric_difference](../standard-library/algorithm-functions.md#set_symmetric_difference)|並べ替えられたソース範囲の一方には属するが、両方には属さないすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。|  
-|[set_union](../standard-library/algorithm-functions.md#set_union)|2 つの並べ替えられたソース範囲の少なくとも一方に属するすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。|  
-|[sort](../standard-library/algorithm-functions.md#sort)|指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って配置します。|  
-|[shuffle](../standard-library/algorithm-functions.md#shuffle)|乱数ジェネレーターを使用して、指定の範囲の要素をシャッフル (並べ替え) します。|  
-|[sort_heap](../standard-library/algorithm-functions.md#sort_heap)|ヒープを並べ替えられた範囲に変換します。|  
-|[stable_partition](../standard-library/algorithm-functions.md#stable_partition)|範囲内の要素を 2 つの分離されたセットに分類し、等価要素の相対順序は維持して、単項述語を満たす要素が単項述語を満たさない要素よりも前に来るように配置します。|  
-|[stable_sort](../standard-library/algorithm-functions.md#stable_sort)|指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って、等価要素の相対順序を維持して配置します。|  
-|[swap](../standard-library/algorithm-functions.md#swap)|2 種類のオブジェクトの間で、最初のオブジェクトの内容を 2 番目のオブジェクトに割り当て、2 番目のオブジェクトの内容を最初のオブジェクトに割り当てて、要素の値を交換します。|  
-|[swap_ranges](../standard-library/algorithm-functions.md#swap_ranges)|1 つの範囲の要素を、同じサイズの別の範囲の要素と交換します。|  
-|[transform](../standard-library/algorithm-functions.md#transform)|指定された関数オブジェクトをソース範囲内の各要素、または 2 つのソース範囲内の要素のペアに適用し、関数オブジェクトの戻り値をターゲット範囲にコピーします。|  
-|[unique](../standard-library/algorithm-functions.md#unique)|指定された範囲内の互いに隣接する重複要素を削除します。|  
-|[unique_copy](../standard-library/algorithm-functions.md#unique_copy)|互いに隣接する重複要素を除き、ソース範囲の要素をターゲット範囲にコピーします。|  
-|[upper_bound](../standard-library/algorithm-functions.md#upper_bound)|順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値を超える値を持つ最初の要素の位置を検索します。|  
+|[adjacent_find](../standard-library/algorithm-functions.md#adjacent_find)|Searches for two adjacent elements that are either equal or satisfy a specified condition.|  
+|[all_of](../standard-library/algorithm-functions.md#all_of)|Returns `true` when a condition is present at each element in the given range.|  
+|[any_of](../standard-library/algorithm-functions.md#any_of)|Returns `true` when a condition is present at least once in the specified range of elements.|  
+|[binary_search](../standard-library/algorithm-functions.md#binary_search)|Tests whether there is an element in a sorted range that is equal to a specified value or that is equivalent to it in a sense specified by a binary predicate.|  
+|[copy](../standard-library/algorithm-functions.md#copy)|Assigns the values of elements from a source range to a destination range, iterating through the source sequence of elements and assigning them new positions in a forward direction.|  
+|[copy_backward](../standard-library/algorithm-functions.md#copy_backward)|Assigns the values of elements from a source range to a destination range, iterating through the source sequence of elements and assigning them new positions in a backward direction.|  
+|[copy_if](../standard-library/algorithm-functions.md#copy_if)|Copy all elements in a given range that test `true` for a specified condition|  
+|[copy_n](../standard-library/algorithm-functions.md#copy_n)|Copies a specified number of elements.|  
+|[count](../standard-library/algorithm-functions.md#count)|Returns the number of elements in a range whose values match a specified value.|  
+|[count_if](../standard-library/algorithm-functions.md#count_if)|Returns the number of elements in a range whose values match a specified condition.|  
+|[equal](../standard-library/algorithm-functions.md#equal)|Compares two ranges element by element either for equality or equivalence in a sense specified by a binary predicate.|  
+|[equal_range](../standard-library/algorithm-functions.md#equal_range)|Finds a pair of positions in an ordered range, the first less than or equivalent to the position of a specified element and the second greater than the element's position, where the sense of equivalence or ordering used to establish the positions in the sequence may be specified by a binary predicate.|  
+|[fill](../standard-library/algorithm-functions.md#fill)|Assigns the same new value to every element in a specified range.|  
+|[fill_n](../standard-library/algorithm-functions.md#fill_n)|Assigns a new value to a specified number of elements in a range starting with a particular element.|  
+|[find](../standard-library/algorithm-functions.md#find)|Locates the position of the first occurrence of an element in a range that has a specified value.|  
+|[find_end](../standard-library/algorithm-functions.md#find_end)|Looks in a range for the last subsequence that is identical to a specified sequence or that is equivalent in a sense specified by a binary predicate.|  
+|[find_first_of](../standard-library/algorithm-functions.md#find_first_of)|Searches for the first occurrence of any of several values within a target range or for the first occurrence of any of several elements that are equivalent in a sense specified by a binary predicate to a specified set of the elements.|  
+|[find_if](../standard-library/algorithm-functions.md#find_if)|Locates the position of the first occurrence of an element in a range that satisfies a specified condition.|  
+|[find_if_not](../standard-library/algorithm-functions.md#find_if_not)|Returns the first element in the indicated range that does not satisfy a condition.|  
+|[for_each](../standard-library/algorithm-functions.md#for_each)|Applies a specified function object to each element in a forward order within a range and returns the function object.|  
+|[generate](../standard-library/algorithm-functions.md#generate)|Assigns the values generated by a function object to each element in a range.|  
+|[generate_n](../standard-library/algorithm-functions.md#generate_n)|Assigns the values generated by a function object to a specified number of element is a range and returns to the position one past the last assigned value.|  
+|[includes](../standard-library/algorithm-functions.md#includes)|Tests whether one sorted range contains all the elements contained in a second sorted range, where the ordering or equivalence criterion between elements may be specified by a binary predicate.|  
+|[inplace_merge](../standard-library/algorithm-functions.md#inplace_merge)|Combines the elements from two consecutive sorted ranges into a single sorted range, where the ordering criterion may be specified by a binary predicate.|  
+|[is_heap](../standard-library/algorithm-functions.md#is_heap)|Returns `true` if the elements in the specified range form a heap.|  
+|[is_heap_until](../standard-library/algorithm-functions.md#is_heap_until)|Returns `true` if the specified range forms a heap until the last element.|  
+|[is_partitioned](../standard-library/algorithm-functions.md#is_partitioned)|Returns `true` if all the elements in the given range that test `true` for a condition come before any elements that test `false`.|  
+|[is_permutation](../standard-library/algorithm-functions.md#is_permutation)|Determines whether the elements in a given range form a valid permutation.|  
+|[is_sorted](../standard-library/algorithm-functions.md#is_sorted)|Returns `true` if the elements in the specified range are in sorted order.|  
+|[is_sorted_until](../standard-library/algorithm-functions.md#is_sorted_until)|Returns `true` if the elements in the specified range are in sorted order.|  
+|[iter_swap](../standard-library/algorithm-functions.md#iter_swap)|Exchanges two values referred to by a pair of specified iterators.|  
+|[lexicographical_compare](../standard-library/algorithm-functions.md#lexicographical_compare)|Compares element by element between two sequences to determine which is lesser of the two.|  
+|[lower_bound](../standard-library/algorithm-functions.md#lower_bound)|Finds the position of the first element in an ordered range that has a value greater than or equivalent to a specified value, where the ordering criterion may be specified by a binary predicate.|  
+|[make_heap](../standard-library/algorithm-functions.md#make_heap)|Converts elements from a specified range into a heap in which the first element is the largest and for which a sorting criterion may be specified with a binary predicate.|  
+|[max](../standard-library/algorithm-functions.md#max)|Compares two objects and returns the larger of the two, where the ordering criterion may be specified by a binary predicate.|  
+|[max_element](../standard-library/algorithm-functions.md#max_element)|Finds the first occurrence of largest element in a specified range where the ordering criterion may be specified by a binary predicate.|  
+|[merge](../standard-library/algorithm-functions.md#merge)|Combines all the elements from two sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.|  
+|[min](../standard-library/algorithm-functions.md#min)|Compares two objects and returns the lesser of the two, where the ordering criterion may be specified by a binary predicate.|  
+|[min_element](../standard-library/algorithm-functions.md#min_element)|Finds the first occurrence of smallest element in a specified range where the ordering criterion may be specified by a binary predicate.|  
+|[minmax](../standard-library/algorithm-functions.md#minmax)|Compares two input parameters and returns them as a pair, in order of least to greatest.|  
+|[minmax_element](../standard-library/algorithm-functions.md#minmax_element)|Performs the work performed by [min_element](../standard-library/algorithm-functions.md#min_element) and [max_element](../standard-library/algorithm-functions.md#max_element) in one call.|  
+|[mismatch](../standard-library/algorithm-functions.md#mismatch)|Compares two ranges element by element either for equality or equivalent in a sense specified by a binary predicate and locates the first position where a difference occurs.|  
+|[&lt;alg&gt; move](../standard-library/algorithm-functions.md#alg_move)|Move elements associated with a specified range.|  
+|[move_backward](../standard-library/algorithm-functions.md#move_backward)|Moves the elements of one iterator to another. The move starts with the last element in a specified range, and ends with the first element in that range.|  
+|[next_permutation](../standard-library/algorithm-functions.md#next_permutation)|Reorders the elements in a range so that the original ordering is replaced by the lexicographically next greater permutation if it exists, where the sense of next may be specified with a binary predicate.|  
+|[none_of](../standard-library/algorithm-functions.md#none_of)|Returns `true` when a condition is never present among elements in the given range.|  
+|[nth_element](../standard-library/algorithm-functions.md#nth_element)|Partitions a range of elements, correctly locating the *n*th element of the sequence in the range so that all the elements in front of it are less than or equal to it and all the elements that follow it in the sequence are greater than or equal to it.|  
+|[partial_sort](../standard-library/algorithm-functions.md#partial_sort)|Arranges a specified number of the smaller elements in a range into a nondescending order or according to an ordering criterion specified by a binary predicate.|  
+|[partial_sort_copy](../standard-library/algorithm-functions.md#partial_sort_copy)|Copies elements from a source range into a destination range where the source elements are ordered by either less than or another specified binary predicate.|  
+|[partition](../standard-library/algorithm-functions.md#partition)|Classifies elements in a range into two disjoint sets, with those elements satisfying a unary predicate preceding those that fail to satisfy it.|  
+|[partition_copy](../standard-library/algorithm-functions.md#partition_copy)|Copies elements for which a condition is `true` to one destination, and for which the condition is `false` to another. The elements must come from a specified range.|  
+|[partition_point](../standard-library/algorithm-functions.md#partition_point)|Returns the first element in the given range that does not satisfy the condition. The elements are sorted so that those that satisfy the condition come before those that do not.|  
+|[pop_heap](../standard-library/algorithm-functions.md#pop_heap)|Removes the largest element from the front of a heap to the next-to-last position in the range and then forms a new heap from the remaining elements.|  
+|[prev_permutation](../standard-library/algorithm-functions.md#prev_permutation)|Reorders the elements in a range so that the original ordering is replaced by the lexicographically next greater permutation if it exists, where the sense of next may be specified with a binary predicate.|  
+|[push_heap](../standard-library/algorithm-functions.md#push_heap)|Adds an element that is at the end of a range to an existing heap consisting of the prior elements in the range.|  
+|[random_shuffle](../standard-library/algorithm-functions.md#random_shuffle)|Rearranges a sequence of *N* elements in a range into one of *N*! possible arrangements selected at random.|  
+|[remove](../standard-library/algorithm-functions.md#remove)|Eliminates a specified value from a given range without disturbing the order of the remaining elements and returning the end of a new range free of the specified value.|  
+|[remove_copy](../standard-library/algorithm-functions.md#remove_copy)|Copies elements from a source range to a destination range, except that elements of a specified value are not copied, without disturbing the order of the remaining elements and returning the end of a new destination range.|  
+|[remove_copy_if](../standard-library/algorithm-functions.md#remove_copy_if)|Copies elements from a source range to a destination range, except that satisfying a predicate are not copied, without disturbing the order of the remaining elements and returning the end of a new destination range.|  
+|[remove_if](../standard-library/algorithm-functions.md#remove_if)|Eliminates elements that satisfy a predicate from a given range without disturbing the order of the remaining elements and returning the end of a new range free of the specified value.|  
+|[replace](../standard-library/algorithm-functions.md#replace)|Examines each element in a range and replaces it if it matches a specified value.|  
+|[replace_copy](../standard-library/algorithm-functions.md#replace_copy)|Examines each element in a source range and replaces it if it matches a specified value while copying the result into a new destination range.|  
+|[replace_copy_if](../standard-library/algorithm-functions.md#replace_copy_if)|Examines each element in a source range and replaces it if it satisfies a specified predicate while copying the result into a new destination range.|  
+|[replace_if](../standard-library/algorithm-functions.md#replace_if)|Examines each element in a range and replaces it if it satisfies a specified predicate.|  
+|[reverse](../standard-library/algorithm-functions.md#reverse)|Reverses the order of the elements within a range.|  
+|[reverse_copy](../standard-library/algorithm-functions.md#reverse_copy)|Reverses the order of the elements within a source range while copying them into a destination range|  
+|[rotate](../standard-library/algorithm-functions.md#rotate)|Exchanges the elements in two adjacent ranges.|  
+|[rotate_copy](../standard-library/algorithm-functions.md#rotate_copy)|Exchanges the elements in two adjacent ranges within a source range and copies the result to a destination range.|  
+|[search](../standard-library/algorithm-functions.md#search)|Searches for the first occurrence of a sequence within a target range whose elements are equal to those in a given sequence of elements or whose elements are equivalent in a sense specified by a binary predicate to the elements in the given sequence.|  
+|[search_n](../standard-library/algorithm-functions.md#search_n)|Searches for the first subsequence in a range that of a specified number of elements having a particular value or a relation to that value as specified by a binary predicate.|  
+|[set_difference](../standard-library/algorithm-functions.md#set_difference)|Unites all of the elements that belong to one sorted source range, but not to a second sorted source range, into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.|  
+|[set_intersection](../standard-library/algorithm-functions.md#set_intersection)|Unites all of the elements that belong to both sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.|  
+|[set_symmetric_difference](../standard-library/algorithm-functions.md#set_symmetric_difference)|Unites all of the elements that belong to one, but not both, of the sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.|  
+|[set_union](../standard-library/algorithm-functions.md#set_union)|Unites all of the elements that belong to at least one of two sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.|  
+|[sort](../standard-library/algorithm-functions.md#sort)|Arranges the elements in a specified range into a nondescending order or according to an ordering criterion specified by a binary predicate.|  
+|[shuffle](../standard-library/algorithm-functions.md#shuffle)|Shuffles (rearranges) elements for a given range using a random number generator.|  
+|[sort_heap](../standard-library/algorithm-functions.md#sort_heap)|Converts a heap into a sorted range.|  
+|[stable_partition](../standard-library/algorithm-functions.md#stable_partition)|Classifies elements in a range into two disjoint sets, with those elements satisfying a unary predicate preceding those that fail to satisfy it, preserving the relative order of equivalent elements.|  
+|[stable_sort](../standard-library/algorithm-functions.md#stable_sort)|Arranges the elements in a specified range into a nondescending order or according to an ordering criterion specified by a binary predicate and preserves the relative ordering of equivalent elements.|  
+|[swap](../standard-library/algorithm-functions.md#swap)|Exchanges the values of the elements between two types of objects, assigning the contents of the first object to the second object and the contents of the second to the first.|  
+|[swap_ranges](../standard-library/algorithm-functions.md#swap_ranges)|Exchanges the elements of one range with the elements of another, equal sized range.|  
+|[transform](../standard-library/algorithm-functions.md#transform)|Applies a specified function object to each element in a source range or to a pair of elements from two source ranges and copies the return values of the function object into a destination range.|  
+|[unique](../standard-library/algorithm-functions.md#unique)|Removes duplicate elements that are adjacent to each other in a specified range.|  
+|[unique_copy](../standard-library/algorithm-functions.md#unique_copy)|Copies elements from a source range into a destination range except for the duplicate elements that are adjacent to each other.|  
+|[upper_bound](../standard-library/algorithm-functions.md#upper_bound)|Finds the position of the first element in an ordered range that has a value that is greater than a specified value, where the ordering criterion may be specified by a binary predicate.|  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 
 

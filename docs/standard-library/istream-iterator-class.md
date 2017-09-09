@@ -1,5 +1,5 @@
 ---
-title: "istream_iterator クラス | Microsoft Docs"
+title: istream_iterator Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,14 +10,16 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - iterator/std::istream_iterator
-- istream_iterator
 - iterator/std::istream_iterator::char_type
 - iterator/std::istream_iterator::istream_type
 - iterator/std::istream_iterator::traits_type
 dev_langs:
 - C++
 helpviewer_keywords:
-- istream_iterator class
+- std::istream_iterator [C++]
+- std::istream_iterator [C++], char_type
+- std::istream_iterator [C++], istream_type
+- std::istream_iterator [C++], traits_type
 ms.assetid: fb52a8cd-7f71-48d1-b73e-4b064e2a8d16
 caps.latest.revision: 18
 author: corob-msft
@@ -37,17 +39,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 37c517bf764e9a9840d549aa9f223ad0942d8c48
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 296d0b25dac878a88446d0ab19526960a3db0a2e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="istreamiterator-class"></a>istream_iterator クラス
-入力反復子オブジェクトを表します。 このクラスは、入力ストリームから `Type` クラスのオブジェクトを抽出します。これには、格納している `basic_istream`< `CharType`, `Traits`> への `pointer` 型のオブジェクトを介してアクセスします。  
+# <a name="istreamiterator-class"></a>istream_iterator Class
+Describes an input iterator object. It extracts objects of class `Type` from an input stream, which it accesses through an object it stores, of type `pointer` to `basic_istream`< `CharType`, `Traits`>.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Type, class CharType = char, class Traits = char_traits<CharType>, class Distance = ptrdiff_t,>  
@@ -58,59 +60,59 @@ class istream_iterator
     const Type&>;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Type`  
- 入力ストリームから抽出されるオブジェクトの型。  
+ The type of object to be extracted from the input stream.  
   
  `CharType`  
- `istream_iterator` の文字型を表す型。 この引数は省略可能であり、既定値は `char` です。  
+ The type that represents the character type for the `istream_iterator`. This argument is optional and the default value is `char`.  
   
  `Traits`  
- `istream_iterator` の文字型を表す型。 この引数は省略可能であり、既定値は `char_traits`< `CharType`> です。  
+ The type that represents the character type for the `istream_iterator`. This argument is optional and the default value is `char_traits`< `CharType`>.  
   
  `Distance`  
- `istream_iterator` の相違点の種類を表す符号付き整数型。 この引数は省略可能であり、既定値は `ptrdiff_t` です。  
+ A signed integral type that represents the difference type for the `istream_iterator`. This argument is optional and the default value is `ptrdiff_t`.  
   
- null 以外の格納されたポインターを使用して istream_iterator クラスのオブジェクトを構築またはインクリメントすると、オブジェクトは、関連付けられている入力ストリームから `Type` 型のオブジェクトを抽出および格納することを試行します。 抽出が失敗した場合、オブジェクトは効果的に格納されたポインターを null ポインターに置き換え、シーケンス終端のインジケーターを作成します。  
+ After constructing or incrementing an object of class istream_iterator with a nonnull stored pointer, the object attempts to extract and store an object of type `Type` from the associated input stream. If the extraction fails, the object effectively replaces the stored pointer with a null pointer, thus making an end-of-sequence indicator.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[istream_iterator](#istream_iterator)|既定の `istream_iterator` または読み取り元の反復子のストリーム型に初期化される `istream_iterator` として、ストリームの終わり反復子を構築します。|  
+|[istream_iterator](#istream_iterator)|Constructs either an end-of-stream iterator as the default `istream_iterator` or a `istream_iterator` initialized to the iterator's stream type from which it reads.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|`istream_iterator` の文字型を提供する型。|  
-|[istream_type](#istream_type)|`istream_iterator` のストリーム型を提供する型。|  
-|[traits_type](#traits_type)|`istream_iterator` の文字特性型を提供する型。|  
+|[char_type](#char_type)|A type that provides for the character type of the `istream_iterator`.|  
+|[istream_type](#istream_type)|A type that provides for the stream type of the `istream_iterator`.|  
+|[traits_type](#traits_type)|A type that provides for the character traits type of the `istream_iterator`.|  
   
-### <a name="operators"></a>演算子  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[operator*](#op_star)|逆参照演算子は、`Type` で指定された `istream_iterator` 型の格納されたオブジェクトを返します。|  
-|[operator->](#operator-_gt)|メンバーの値 (存在する場合) を返します。|  
-|[operator++](#op_add_add)|入力ストリームからインクリメントされたオブジェクトを抽出するか、オブジェクトをインクリメントする前にオブジェクトをコピーして、そのコピーを返します。|  
+|[operator*](#op_star)|The dereferencing operator returns the stored object of type `Type` addressed by the `istream_iterator`.|  
+|[operator->](#operator-_gt)|Returns the value of a member, if any.|  
+|[operator++](#op_add_add)|Either extracts an incremented object from the input stream or copies the object before incrementing it and returns the copy.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<iterator>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<iterator>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  istream_iterator::char_type  
- `istream_iterator` の文字型を提供する型。  
+ A type that provides for the character type of the `istream_iterator`.  
   
 ```
 typedef CharType char_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **Chartype** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **Chartype**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_char_type.cpp  
@@ -147,7 +149,7 @@ int main( )
 ```  
   
 ##  <a name="istream_iterator"></a>  istream_iterator::istream_iterator  
- 既定の `istream_iterator` または読み取り元の反復子のストリーム型に初期化される `istream_iterator` として、ストリームの終わり反復子を構築します。  
+ Constructs either an end-of-stream iterator as the default `istream_iterator` or a `istream_iterator` initialized to the iterator's stream type from which it reads.  
   
 ```
 istream_iterator();
@@ -155,16 +157,16 @@ istream_iterator();
 istream_iterator(istream_type& _Istr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Istr`  
- `istream_iterator` を初期化するために読み込まれる入力ストリーム。  
+ The input stream to be read use to initialize the `istream_iterator`.  
   
-### <a name="remarks"></a>コメント  
- 最初のコンストラクターは、null ポインターを使用して入力ストリーム ポインターを初期化し、ストリームの終わり反復子を作成します。 2 番目のコンストラクターは、*&_Istr* を使用して入力ストリーム ポインターを初期化してから、**Type** 型のオブジェクトの抽出と格納を試みます。  
+### <a name="remarks"></a>Remarks  
+ The First constructor initializes the input stream pointer with a null pointer and creates an end-of-stream iterator. The second constructor initializes the input stream pointer with *&_Istr*, then attempts to extract and store an object of type **Type**.  
   
- ストリームの終わり反復子は、`istream_iterator` がストリームの終わりに達しているかどうかのテストに使用できます。  
+ The end-of-stream iterator can be use to test whether an `istream_iterator` has reached the end of a stream.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_istream_iterator.cpp  
@@ -199,29 +201,29 @@ int main( )
 ```  
   
 ##  <a name="istream_type"></a>  istream_iterator::istream_type  
- `istream_iterator` のストリーム型を提供する型。  
+ A type that provides for the stream type of the `istream_iterator`.  
   
 ```
 typedef basic_istream<CharType, Traits> istream_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、`basic_istream`\< **CharType**, **Traits**> のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for `basic_istream`\< **CharType**, **Traits**>.  
   
-### <a name="example"></a>例  
-  `istream_type` を宣言して使用する方法の例については、[istream_iterator](#istream_iterator) に関するセクションを参照してください。  
+### <a name="example"></a>Example  
+  See [istream_iterator](#istream_iterator) for an example of how to declare and use `istream_type`.  
   
 ##  <a name="op_star"></a>  istream_iterator::operator*  
- 逆参照演算子は、`istream_iterator` で指定された **Type** 型の格納されたオブジェクトを返します。  
+ The dereferencing operator returns the stored object of type **Type** addressed by the `istream_iterator`.  
   
 ```
 const Type& operator*() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- **Type** 型の格納されているオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The stored object of type **Type**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_operator.cpp  
@@ -254,21 +256,21 @@ int main( )
 ```  
   
 ##  <a name="istream_iterator__operator-_gt"></a>  istream_iterator::operator-&gt;  
- メンバーの値 (存在する場合) を返します。  
+ Returns the value of a member, if any.  
   
 ```
 const Type* operator->() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- メンバーの値 (存在する場合)。  
+### <a name="return-value"></a>Return Value  
+ The value of a member, if any.  
   
-### <a name="remarks"></a>コメント  
- *i* -> は (\* *i*) と同等です。 *m*  
+### <a name="remarks"></a>Remarks  
+ *i* -> is equivalent to (\* *i*). *m*  
   
- この演算子は、**&\*\*this** を返します。  
+ The operator returns **&\*\*this**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_operator_vm.cpp  
@@ -301,7 +303,7 @@ int main( )
 ```  
   
 ##  <a name="op_add_add"></a>  istream_iterator::operator++  
- 入力ストリームからインクリメントされたオブジェクトを抽出するか、オブジェクトをインクリメントする前にオブジェクトをコピーして、そのコピーを返します。  
+ Either extracts an incremented object from the input stream or copies the object before incrementing it and returns the copy.  
   
 ```
 istream_iterator<Type, CharType, Traits, Distance>& operator++();
@@ -309,10 +311,10 @@ istream_iterator<Type, CharType, Traits, Distance>& operator++();
 istream_iterator<Type, CharType, Traits, Distance> operator++(int);
 ```  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー演算子は、入力ストリームから抽出された **Type** 型のインクリメントされたオブジェクトへの参照を返し、2 番目のメンバー関数が、このオブジェクトのコピーを返します。  
+### <a name="return-value"></a>Return Value  
+ The first member operator returns a reference to the incremented object of type **Type** extracted from the input stream and the second member function returns a copy of the object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_operator_incr.cpp  
@@ -345,16 +347,16 @@ int main( )
 ```  
   
 ##  <a name="traits_type"></a>  istream_iterator::traits_type  
- `istream_iterator` の文字特性型を提供する型。  
+ A type that provides for the character traits type of the `istream_iterator`.  
   
 ```
 typedef Traits traits_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **Traits** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **Traits**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_iterator_traits_type.cpp  
@@ -389,12 +391,12 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [input_iterator_tag 構造体](../standard-library/input-iterator-tag-struct.md)   
- [iterator 構造体](../standard-library/iterator-struct.md)   
+## <a name="see-also"></a>See Also  
+ [input_iterator_tag Struct](../standard-library/input-iterator-tag-struct.md)   
+ [iterator Struct](../standard-library/iterator-struct.md)   
  [\<iterator>](../standard-library/iterator.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 
 

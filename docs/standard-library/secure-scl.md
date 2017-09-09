@@ -33,40 +33,40 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9e2bfb1095c28ea3592c5af2b89cb2fbeddcb60c
-ms.openlocfilehash: f3712b4417c0fed972d9a20b6d82479561cce4b0
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 2b08c83eddb92ac2df89c4038cd87845a83c3159
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="securescl"></a>_SECURE_SCL
   
-[_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) に置き換えられています。このマクロは、[チェックを行う反復子](../standard-library/checked-iterators.md)を有効にするかどうかを定義します。 既定では、チェックを行う反復子はデバッグ ビルドで有効になっており、製品版ビルドで無効になっています。  
+Superseded by [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md), this macro defines whether [Checked Iterators](../standard-library/checked-iterators.md) are enabled. By default, checked iterators are enabled in Debug builds, and disabled in Retail builds.  
   
 > [!IMPORTANT]
-> `_SECURE_SCL` マクロは直接使用されなくなりました。 代わりに、`_ITERATOR_DEBUG_LEVEL` を使用して、チェックを行う反復子の設定を制御します。 詳細については、「[_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md)」を参照してください。  
+> Direct use of the `_SECURE_SCL` macro is deprecated. Instead, use `_ITERATOR_DEBUG_LEVEL` to control checked iterator settings. For more information, see [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md).  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
   
-チェックを行う反復子が有効になっている場合、反復子の安全でない使用によってランタイム エラーが発生し、プログラムが終了します。 チェックを行う反復子を有効にするには、`_ITERATOR_DEBUG_LEVEL` を 1 または 2 に設定します。 これは、`_SECURE_SCL` を 1 または enabled に設定するのと同等です。  
+When checked iterators are enabled, unsafe iterator use causes a runtime error and the program is terminated. To enable checked iterators, set `_ITERATOR_DEBUG_LEVEL` to 1 or 2. This is equivalent to a `_SECURE_SCL` setting of 1, or enabled:  
   
 ```  
 #define _ITERATOR_DEBUG_LEVEL 1  
 ```  
   
-チェックを行う反復子を無効にするには、`_ITERATOR_DEBUG_LEVEL` を 0 に設定します。 これは、`_SECURE_SCL` を 0 または disabled に設定するのと同等です。  
+To disable checked iterators, set `_ITERATOR_DEBUG_LEVEL` to 0. This is equivalent to a `_SECURE_SCL` setting of 0, or disabled:  
   
 ```  
 #define _ITERATOR_DEBUG_LEVEL 0  
 ```  
   
-チェックを行う反復子に関する警告を無効にする方法の詳細については、「[_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md)」を参照してください。  
+For information on how to disable warnings about checked iterators, see [_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md)   
-[チェックを行う反復子](../standard-library/checked-iterators.md)   
-[反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)   
-[安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)
+[Checked Iterators](../standard-library/checked-iterators.md)   
+[Debug Iterator Support](../standard-library/debug-iterator-support.md)   
+[Safe Libraries: C++ Standard Library](../standard-library/safe-libraries-cpp-standard-library.md)
 
 

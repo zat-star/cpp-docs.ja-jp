@@ -1,5 +1,5 @@
 ---
-title: "istreambuf_iterator クラス | Microsoft Docs"
+title: reverse_iterator Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- reverse_iterator
 - xutility/std::reverse_iterator
 - iterator/std::reverse_iterator::difference_type
 - iterator/std::reverse_iterator::iterator_type
@@ -20,7 +19,13 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- reverse_iterator class
+- std::reverse_iterator [C++]
+- std::reverse_iterator [C++], difference_type
+- std::reverse_iterator [C++], iterator_type
+- std::reverse_iterator [C++], pointer
+- std::reverse_iterator [C++], reference
+- std::reverse_iterator [C++], base
+- std::reverse_iterator [C++], operator_star
 ms.assetid: c0b34d04-ae9a-4999-9aff-28b313897ffa
 caps.latest.revision: 21
 author: corob-msft
@@ -40,96 +45,96 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 91d9ed990039984894135accce5846a16bfbd7fb
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 27d970627c5511a0bf184fa43c37f19a4820a715
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="reverseiterator-class"></a>reverse_iterator クラス
-このテンプレート クラスは、逆方向でのみランダム アクセス反復子または双方向反復子のように動作する反転反復子オブジェクトを表す反復子アダプターです。 これは範囲の後方走査を有効にします。  
+# <a name="reverseiterator-class"></a>reverse_iterator Class
+The template class is an iterator adaptor that describes a reverse iterator object that behaves like a random-access or bidirectional iterator, only in reverse. It enables the backward traversal of a range.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class RandomIterator>  
 class reverse_iterator  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  RandomIterator  
- 逆方向に動作するように適合させる反復子を表す型。  
+ The type that represents the iterator to be adapted to operate in reverse.  
   
-## <a name="remarks"></a>コメント  
- 既存の C++ 標準ライブラリのコンテナーは、`reverse_iterator` 型および `const_reverse_iterator` 型も定義し、反転反復子を返すメンバー関数 `rbegin` および `rend` を備えています。 これらの反復子には、上書きセマンティクスがあります。 `reverse_iterator`挿入セマンティクスと、ストリームで使用することもできますが提供されるように、アダプターがこの機能を補完します。  
+## <a name="remarks"></a>Remarks  
+ Existing C++ Standard Library containers also define `reverse_iterator` and `const_reverse_iterator` types and have member functions `rbegin` and `rend` that return reverse iterators. These iterators have overwrite semantics. The `reverse_iterator` adaptor supplements this functionality as it offers insert semantics and can also be used with streams.  
   
- `reverse_iterator`双方向反復子を呼び出してはならない、メンバーのいずれかの機能を必要とする`operator+=`、 `operator+`、 `operator-=`、 `operator-`、または`operator[]`、これはランダム アクセス反復子でのみ使用可能性があります。  
+ The `reverse_iterator` that requires a bidirectional iterator must not call any of the member functions `operator+=`, `operator+`, `operator-=`, `operator-`, or `operator[]`, which may only be used with random-access iterators.  
   
- 反復子の範囲は [*最初*、*最後*), 左側の角かっこを含めることを示しますが、*最初*を示し、右側のかっこの要素の追加は、最大ただし*最後*自体です。 同じ要素は、反転シーケンスに含まれる [ **rev** - *最初*、 **rev** - *最後*) ように場合*最後*し、最初の要素、シーケンス内の 1 つまでの末尾要素は、 **rev** - *最初*に反転シーケンス ポイントで\*(*最後*- 1)。 すべての反転反復子を基になる反復子に関連付ける識別子は、次のとおりです。  
+ The range of an iterator is [*first*, *last*), where the square bracket on the left indicates the inclusion of *first* and the parenthesis on the right indicates the inclusion of elements up to but excluding *last* itself. The same elements are included in the reversed sequence [ **rev** - *first*, **rev** - *last*) so that if *last* is the one-past-the-end element in a sequence, then the first element **rev** - *first* in the reversed sequence points to \*(*last* - 1). The identity which relates all reverse iterators to their underlying iterators is:  
   
  &\*( **reverse_iterator** ( *i* ) ) == &\*( *i* - 1 ).  
   
- 実際には、反転シーケンスで reverse_iterator は、元のシーケンスで反復子が参照する要素の 1 つ次の (右側にある) 要素を参照することを意味します。 したがって、反復子がシーケンス (2、4、6、8) で要素 6 を指定する場合、`reverse_iterator` は反転シーケンス (8、6、4、2) の 4 要素を指定します。  
+ In practice, this means that in the reversed sequence the reverse_iterator will refer to the element one position beyond (to the right of) the element that the iterator had referred to in the original sequence. So if an iterator addressed the element 6 in the sequence (2, 4, 6, 8), then the `reverse_iterator` will address the element 4 in the reversed sequence (8, 6, 4, 2).  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[reverse_iterator](#reverse_iterator)|基になる反復子の既定の `reverse_iterator` または `reverse_iterator` を構築します。|  
+|[reverse_iterator](#reverse_iterator)|Constructs a default `reverse_iterator` or a `reverse_iterator` from an underlying iterator.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[difference_type](#difference_type)|同じコンテナー内の要素を参照する 2 つの `reverse_iterator` の違いを提供する型。|  
-|[iterator_type](#iterator_type)|`reverse_iterator` に基になる反復子を提供する型。|  
-|[pointer](#pointer)|`reverse_iterator` によってアドレス指定される要素へのポインターを提供する型。|  
-|[reference](#reference)|`reverse_iterator` によってアドレス指定される要素への参照を提供する型。|  
+|[difference_type](#difference_type)|A type that provides the difference between two `reverse_iterator`s referring to elements within the same container.|  
+|[iterator_type](#iterator_type)|A type that provides the underlying iterator for a `reverse_iterator`.|  
+|[pointer](#pointer)|A type that provides a pointer to an element addressed by a `reverse_iterator`.|  
+|[reference](#reference)|A type that provides a reference to an element addressed by a `reverse_iterator`.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[base](#base)|その `reverse_iterator` から基になる反復子を復元します。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[operator_star](#op_star)|`reverse_iterator` がアドレス指定する要素を返します。|  
-|[operator+](#op_add)|反復子にオフセットを追加し、新しいオフセット位置に挿入された要素をアドレス指定する新しい `reverse_iterator` アドレスを返します。|  
-|[operator++](#op_add_add)|`reverse_iterator` を次の要素にインクリメントします。|  
-|[operator+=](#op_add_eq)|指定したオフセットを `reverse_iterator` から追加します。|  
-|[operator-](#operator-)|`reverse_iterator` からオフセットを減算し、オフセット位置にある要素を指定する `reverse_iterator` を返します。|  
-|[operator--](#operator--)|`reverse_iterator` を直前の要素にデクリメントします。|  
-|[operator-=](#operator-_eq)|指定されたオフセットを `reverse_iterator` から減算します。|  
-|[operator->](#operator-_gt)|`reverse_iterator` によってアドレス指定される要素へのポインターを返します。|  
-|[operator&#91;&#93;](#op_at)|`reverse_iterator` によってアドレス指定される要素からの要素のオフセットへの参照を返します。|  
+|[base](#base)|Recovers the underlying iterator from its `reverse_iterator`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<iterator>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator_star](#op_star)|Returns the element that a `reverse_iterator` addresses.|  
+|[operator+](#op_add)|Adds an offset to an iterator and returns the new `reverse_iterator` addressing the inserted element at the new offset position.|  
+|[operator++](#op_add_add)|Increments the `reverse_iterator` to the next element.|  
+|[operator+=](#op_add_eq)|Adds a specified offset from a `reverse_iterator`.|  
+|[operator-](#operator-)|Subtracts an offset from a `reverse_iterator` and returns a `reverse_iterator` addressing the element at the offset position.|  
+|[operator--](#operator--)|Decrements the `reverse_iterator` to the previous element.|  
+|[operator-=](#operator-_eq)|Subtracts a specified offset from a `reverse_iterator`.|  
+|[operator->](#operator-_gt)|Returns a pointer to the element addressed by the `reverse_iterator`.|  
+|[operator&#91;&#93;](#op_at)|Returns a reference to an element offset from the element addressed by a `reverse_iterator` by a specified number of positions.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<iterator>  
+  
+ **Namespace:** std  
   
 ##  <a name="base"></a>  reverse_iterator::base  
- その `reverse_iterator` から基になる反復子を復元します。  
+ Recovers the underlying iterator from its `reverse_iterator`.  
   
 ```   
 RandomIterator base() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- `reverse_iterator` の基になる反復子。  
+### <a name="return-value"></a>Return Value  
+ The iterator underlying the `reverse_iterator`.  
   
-### <a name="remarks"></a>コメント  
- すべての反転反復子を基になる反復子に関連付ける識別子は、次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The identity that relates all reverse iterators to their underlying iterators is:  
   
  &\*( `reverse_iterator` ( *i* ) ) == &\*( *i* - 1 ).  
   
- 実際には、反転シーケンスで `reverse_iterator` は、元のシーケンスで反復子が参照する要素の 1 つ次の (右側にある) 要素を参照することを意味します。 したがって、反復子がシーケンス (2、4、6、8) で要素 6 を指定する場合、`reverse_iterator` は反転シーケンス (8、6、4、2) の 4 要素を指定します。  
+ In practice, this means that in the reversed sequence the `reverse_iterator` will refer to the element one position beyond (to the right of) the element that the iterator had referred to in the original sequence. So if an iterator addressed the element 6 in the sequence (2, 4, 6, 8), then the `reverse_iterator` will address the element 4 in the reversed sequence (8, 6, 4, 2).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_base.cpp  
@@ -179,47 +184,47 @@ int main( )
 ```  
   
 ##  <a name="difference_type"></a>  reverse_iterator::difference_type  
- 同じコンテナー内の要素を参照する 2 つの `reverse_iterator` の違いを提供する型。  
+ A type that provides the difference between two `reverse_iterator`s referring to elements within the same container.  
   
 ```   
 typedef typename iterator_traits<RandomIterator>::difference_type  difference_type; 
 ```  
   
-### <a name="remarks"></a>コメント  
- `reverse_iterator` の差の型は、反復子の差の型と同じです。  
+### <a name="remarks"></a>Remarks  
+ The `reverse_iterator` difference type is the same as the iterator difference type.  
   
- この型は、反復子の特徴型名 `iterator_traits`\< **RandomIterator**> **::pointer** のシノニムです。  
+ The type is a synonym for the iterator trait typename `iterator_traits`\< **RandomIterator**> **::pointer**.  
   
-### <a name="example"></a>例  
-  `difference_type` を宣言して使用する方法の例については、[reverse_iterator::operator&#91;&#93](#op_at) に関するページを参照してください。  
+### <a name="example"></a>Example  
+  See [reverse_iterator::operator&#91;&#93;](#op_at) for an example of how to declare and use `difference_type`.  
   
 ##  <a name="iterator_type"></a>  reverse_iterator::iterator_type  
- `reverse_iterator` に基になる反復子を提供する型。  
+ A type that provides the underlying iterator for a `reverse_iterator`.  
   
 ```  
 typedef RandomIterator iterator_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Iterator`のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter `Iterator`.  
   
-### <a name="example"></a>例  
-  `iterator_type` を宣言して使用する方法の例については、[reverse_iterator::base](#base) を参照してください。  
+### <a name="example"></a>Example  
+  See [reverse_iterator::base](#base) for an example of how to declare and use `iterator_type`.  
   
 ##  <a name="op_star"></a>  reverse_iterator::operator*  
- reverse_iterator が指す要素を返します。  
+ Returns the element that a reverse_iterator addresses.  
   
 ```   
 reference operator*() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- reverse_iterator により指される要素の値。  
+### <a name="return-value"></a>Return Value  
+ The value of the elements addressed by the reverse_iterator.  
   
-### <a name="remarks"></a>コメント  
- この演算子を返します\*(**現在**- 1)。  
+### <a name="remarks"></a>Remarks  
+ The operator returns \*( **current** - 1).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_ref.cpp  
@@ -263,23 +268,23 @@ int main( )
 ```  
   
 ##  <a name="op_add"></a>  reverse_iterator::operator+  
- 反復子にオフセットを追加し、新しいオフセット位置に挿入された要素をアドレス指定する新しい `reverse_iterator` アドレスを返します。  
+ Adds an offset to an iterator and returns the new `reverse_iterator` addressing the inserted element at the new offset position.  
   
 ```  
 reverse_iterator<RandomIterator> operator+(difference_type Off) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Off`  
- 逆順反復子に追加するオフセット。  
+ The offset to be added to the reverse iterator.  
   
-### <a name="return-value"></a>戻り値  
- オフセット要素を指す `reverse_iterator`。  
+### <a name="return-value"></a>Return Value  
+ A `reverse_iterator` addressing the offset element.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用できるのは、`reverse_iterator` がランダムアクセス反復子の要件を満たす場合のみです。  
+### <a name="remarks"></a>Remarks  
+ This member function may only be used if the `reverse_iterator` satisfies the requirements for a random-access iterator.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_add.cpp  
@@ -335,20 +340,20 @@ After the +2 offset, the iterator rVPOS2 points
 ```  
   
 ##  <a name="op_add_add"></a>  reverse_iterator::operator++  
- reverse_iterator を直前の要素にインクリメントします。  
+ Increments the reverse_iterator to the previous element.  
   
 ```  
 reverse_iterator<RandomIterator>& operator++();
 reverse_iterator<RandomIterator> operator++(int);
 ```  
   
-### <a name="return-value"></a>戻り値  
- 最初の演算子は、プリインクリメントされた `reverse_iterator` を返し、2 番目のポストインクリメント演算子は、インクリメントされた `reverse_iterator` のコピーを返します。  
+### <a name="return-value"></a>Return Value  
+ The first operator returns the preincremented `reverse_iterator` and the second, the postincrement operator, returns a copy of the incremented `reverse_iterator`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用できるのは、`reverse_iterator` が双方向反復子の要件を満たす場合のみです。  
+### <a name="remarks"></a>Remarks  
+ This member function may only be used if the `reverse_iterator` satisfies the requirements for a bidirectional iterator.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_incr.cpp  
@@ -405,20 +410,20 @@ After incrementing, the iterator rVPOS1 points
 ```  
   
 ##  <a name="op_add_eq"></a>  reverse_iterator::operator+=  
- 指定したオフセットを reverse_iterator から追加します。  
+ Adds a specified offset from a reverse_iterator.  
   
 ```  
 reverse_iterator<RandomIterator>& operator+=(difference_type Off);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Off`  
- 反復子をインクリメントするオフセット。  
+ The offset by which to increment the iterator.  
   
-### <a name="return-value"></a>戻り値  
- `reverse_iterator` によってアドレス指定される要素への参照を返します。  
+### <a name="return-value"></a>Return Value  
+ A reference to the element addressed by the `reverse_iterator`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_addoff.cpp  
@@ -475,23 +480,23 @@ After the +2 offset, the iterator rVPOS1 now points
 ```  
   
 ##  <a name="reverse_iterator__operator-"></a>  reverse_iterator::operator-  
- `reverse_iterator` からオフセットを減算し、オフセット位置にある要素を指定する `reverse_iterator` を返します。  
+ Subtracts an offset from a `reverse_iterator` and returns a `reverse_iterator` addressing the element at the offset position.  
   
 ```  
 reverse_iterator<RandomIterator> operator-(difference_type Off) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Off`  
- reverse_iterator から減算するオフセット。  
+ The offset to be subtracted from the reverse_iterator.  
   
-### <a name="return-value"></a>戻り値  
- オフセット要素を指す `reverse_iterator`。  
+### <a name="return-value"></a>Return Value  
+ A `reverse_iterator` addressing the offset element.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用できるのは、`reverse_iterator` がランダムアクセス反復子の要件を満たす場合のみです。  
+### <a name="remarks"></a>Remarks  
+ This member function may only be used if the `reverse_iterator` satisfies the requirements for a random-access iterator.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_sub.cpp  
@@ -548,20 +553,20 @@ After the -2 offset, the iterator rVPOS2 points
 ```  
   
 ##  <a name="reverse_iterator__operator--"></a>  reverse_iterator::operator--  
- reverse_iterator を直前の要素にデクリメントします。  
+ Decrements the reverse_iterator to the previous element.  
   
 ```  
 reverse_iterator<RandomIterator>& operator--();
 reverse_iterator<RandomIterator> operator--(int);
 ```  
   
-### <a name="return-value"></a>戻り値  
- 最初の演算子はプリデクリメントされた `reverse_iterator` を返し、2 番目のポストデクリメント演算子は、デクリメントされた `reverse_iterator` のコピーを返します。  
+### <a name="return-value"></a>Return Value  
+ The first operator returns the predecremented `reverse_iterator` and the second, the postdecrement operator, returns a copy of the decremented `reverse_iterator`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用できるのは、`reverse_iterator` が双方向反復子の要件を満たす場合のみです。  
+### <a name="remarks"></a>Remarks  
+ This member function may only be used if the `reverse_iterator` satisfies the requirements for a bidirectional iterator.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_decr.cpp  
@@ -618,22 +623,22 @@ After the decrement, the iterator rVPOS1 points
 ```  
   
 ##  <a name="reverse_iterator__operator-_eq"></a>  reverse_iterator::operator-=  
- 指定されたオフセットを `reverse_iterator` から減算します。  
+ Subtracts a specified offset from a `reverse_iterator`.  
   
 ```  
 reverse_iterator<RandomIterator>& operator-=(difference_type Off);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Off`  
- `reverse_iterator` から減算されるオフセット。  
+ The offset to be subtracted from the `reverse_iterator`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用できるのは、`reverse_iterator` がランダムアクセス反復子の要件を満たす場合のみです。  
+### <a name="remarks"></a>Remarks  
+ This member function may only be used if the `reverse_iterator` satisfies the requirements for a random-access iterator.  
   
- 演算子は **current** + _ *Off* を評価します。 その後、**\* this** を返します。  
+ The operator evaluates **current** + _ *Off*. then returns **\*this**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_op_suboff.cpp  
@@ -690,19 +695,19 @@ After the -2 offset, the iterator rVPOS1 now points
 ```  
   
 ##  <a name="reverse_iterator__operator-_gt"></a>  reverse_iterator::operator-&gt;  
- `reverse_iterator` によってアドレス指定される要素へのポインターを返します。  
+ Returns a pointer to the element addressed by the `reverse_iterator`.  
   
 ```   
 pointer operator->() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- `reverse_iterator` によってアドレス指定される要素へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the element addressed by the `reverse_iterator`.  
   
-### <a name="remarks"></a>コメント  
- この演算子は、**&\*\*this** を返します。  
+### <a name="remarks"></a>Remarks  
+ The operator returns **&\*\*this**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_ptrto.cpp  
@@ -766,23 +771,23 @@ The reverse_iterator rpos points to:
 ```  
   
 ##  <a name="op_at"></a>  reverse_iterator::operator[]  
- `reverse_iterator` によってアドレス指定される要素からの要素のオフセットへの参照を返します。  
+ Returns a reference to an element offset from the element addressed by a `reverse_iterator` by a specified number of positions.  
   
 ```   
 reference operator[](difference_type Off) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Off`  
- `reverse_iterator` アドレスからのオフセット。  
+ The offset from the `reverse_iterator` address.  
   
-### <a name="return-value"></a>戻り値  
- オフセット要素への参照。  
+### <a name="return-value"></a>Return Value  
+ The reference to the element offset.  
   
-### <a name="remarks"></a>コメント  
- この演算子は、**\***( **\*this** + `Off` を返します。  
+### <a name="remarks"></a>Remarks  
+ The operator returns **\***( **\*this** + `Off`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_ret_ref.cpp  
@@ -840,16 +845,16 @@ The iterator rpos now points to: 2.
 ```  
   
 ##  <a name="pointer"></a>  reverse_iterator::pointer  
- `reverse_iterator` によってアドレス指定される要素へのポインターを提供する型。  
+ A type that provides a pointer to an element addressed by a `reverse_iterator`.  
   
 ```  
 typedef typename iterator_traits<RandomIterator>::pointer pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、反復子の特徴型名 `iterator_traits`\< *RandomIterator*> **::pointer** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the iterator trait typename `iterator_traits`\< *RandomIterator*> **::pointer**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_pointer.cpp  
@@ -910,20 +915,20 @@ The iterator rpos points to:
 ```  
   
 ##  <a name="reference"></a>  reverse_iterator::reference  
- reverse_iterator によってアドレス指定される要素への参照を提供する型。  
+ A type that provides a reference to an element addressed by a reverse_iterator.  
   
 ```  
 typedef typename iterator_traits<RandomIterator>::reference reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、反復子の特徴型名 `iterator_traits`\< *RandomIterator*> **::reference** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the iterator trait typename `iterator_traits`\< *RandomIterator*> **::reference**.  
   
-### <a name="example"></a>例  
-  **reference** の宣言方法および使用方法の例については、[reverse_iterator::operator&#91;&#93;](#op_at) または [reverse_iterator::operator*](#op_star) に関するページを参照してください。  
+### <a name="example"></a>Example  
+  See [reverse_iterator::operator&#91;&#93;](#op_at) or [reverse_iterator::operator*](#op_star) for examples of how to declare and use **reference**.  
   
 ##  <a name="reverse_iterator"></a>  reverse_iterator::reverse_iterator  
- 基になる反復子の既定の `reverse_iterator` または `reverse_iterator` を構築します。  
+ Constructs a default `reverse_iterator` or a `reverse_iterator` from an underlying iterator.  
   
 ```   
 reverse_iterator();  
@@ -933,21 +938,21 @@ template <class Type>
 reverse_iterator(const reverse_iterator<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- `reverse_iterator` に適合させる反復子。  
+ The iterator that is to be adapted to a `reverse_iterator`.  
   
-### <a name="return-value"></a>戻り値  
- 既定の `reverse_iterator`、または基になる反復子を適合させる `reverse_iterator`。  
+### <a name="return-value"></a>Return Value  
+ A default `reverse_iterator` or a `reverse_iterator` adapting an underlying iterator.  
   
-### <a name="remarks"></a>コメント  
- すべての反転反復子を基になる反復子に関連付ける識別子は、次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The identity which relates all reverse iterators to their underlying iterators is:  
   
  &\*( `reverse_iterator` ( *i* ) ) == &\*( *i* - 1 ).  
   
- 実際には、反転シーケンスで reverse_iterator は、元のシーケンスで反復子が参照する要素の 1 つ次の (右側にある) 要素を参照することを意味します。 したがって、反復子がシーケンス (2、4、6、8) で要素 6 を指定する場合、`reverse_iterator` は反転シーケンス (8、6、4、2) の 4 要素を指定します。  
+ In practice, this means that in the reversed sequence the reverse_iterator will refer to the element one position beyond (to the right of) the element that the iterator had referred to in the original sequence. So if an iterator addressed the element 6 in the sequence (2, 4, 6, 8), then the `reverse_iterator` will address the element 4 in the reversed sequence (8, 6, 4, 2).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // reverse_iterator_reverse_iterator.cpp  
@@ -990,9 +995,9 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<iterator>](../standard-library/iterator.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

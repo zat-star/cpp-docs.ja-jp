@@ -1,5 +1,5 @@
 ---
-title: "seed_seq クラス |Microsoft Docs"
+title: seed_seq Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- seed_seq
 - random/std::seed_seq
 - random/std::seed_seq::result_type
 - random/std::seed_seq::generate
@@ -18,7 +17,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- seed_seq class
+- std::seed_seq [C++]
+- std::seed_seq [C++], result_type
+- std::seed_seq [C++], generate
+- std::seed_seq [C++], size
+- std::seed_seq [C++], param
 ms.assetid: cba114f7-9ac6-4f2f-b773-9c84805401d6
 caps.latest.revision: 19
 author: corob-msft
@@ -38,17 +41,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: b637e311971b71564244f9bbdcfc37973a514710
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: bbcb40d865c562cca2f8cc2b427fbf93a7c9d191
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="seedseq-class"></a>seed_seq Class
-乱数エンジンにランダム化されたシードを提供できる符号なし整数値のベクターを格納します。  
+Stores a vector of unsigned integer values that can supply a randomized seed for a random-number engine.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```  
 class seed_seq  
    {  
@@ -77,40 +80,40 @@ public:
    void operator=(const seed_seq&) = delete;  
    };  
 ```  
-## <a name="types"></a>種類  
+## <a name="types"></a>Types  
  `typedef unsigned int result_type;`   
-シード シーケンスの要素の型。 32 ビット符号なし整数型。  
+The type of the elements of the seed sequence. A 32-bit unsigned integer type.  
   
-## <a name="constructors"></a>コンストラクター  
+## <a name="constructors"></a>Constructors  
  `seed_seq();`   
-既定のコンストラクター。空の内部シーケンスを持つために初期化します。  
+Default constructor, initializes to have an empty internal sequence.  
   
  `template<class T>`   
  `seed_seq(initializer_list<T> initlist);`   
-内部シーケンスを設定するには、`initlist` を使用します。                   
-`T` は整数型である必要があります。  
+Uses `initlist` to set the internal sequence.                   
+`T` must be an integer type.  
   
  `template<class InputIterator>`   
  `seed_seq(InputIterator begin, InputIterator end);`   
-指定された入力反復子の範囲内のすべての要素を使用して、内部シーケンスを初期化します。                  
-`iterator_traits<InputIterator>::value_type` は整数型である必要があります。  
+Initializes the internal sequence using all elements in the input iterator range provided.                  
+`iterator_traits<InputIterator>::value_type` must be an integer type.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="generating-functions"></a>関数の生成  
+### <a name="generating-functions"></a>Generating Functions  
  `template<class RandomAccessIterator> void generate(RandomAccessIterator begin,          RandomAccessIterator end);`   
-内部アルゴリズムを使用して、指定されたシーケンスの要素を設定します。 このアルゴリズムは、`seed_seq` が初期化された内部シーケンスによって影響を受けます。                          
-`begin == end` の場合は何も処理しません。  
+Populates the elements of the provided sequence using an internal algorithm. This algorithm is affected by the internal sequence with which `seed_seq` was initialized.                          
+Does nothing if `begin == end`.  
   
-### <a name="property-functions"></a>プロパティ関数  
+### <a name="property-functions"></a>Property Functions  
  `size_t size() const;`   
-`seed_seq` 内の要素数を返します。  
+Returns the number of elements in the `seed_seq`.  
   
  `template<class OutputIterator> void param(OutputIterator dest) const;`   
-内部シーケンスを、出力反復子 `dest` へコピーします。  
+Copies the internal sequence into the output iterator `dest`.  
   
-## <a name="example"></a>例  
- 次のコード例は、3 つのコンストラクターを実行し、配列に割り当てられたときに結果の `seed_seq` インスタンスから出力を生成します。 `seed_seq` を乱数ジェネレーターで使用する例については、「[\<random>](../standard-library/random.md)」をご覧ください。  
+## <a name="example"></a>Example  
+ The following code example exercises the three constructors and generates output from the resulting `seed_seq` instances when assigned to an array. For an example that uses `seed_seq` with a random number generator, see [\<random>](../standard-library/random.md).  
   
 ```cpp  
 #include <iostream>  
@@ -177,15 +180,15 @@ Generating a sequence of 5 elements into an array:
 1985355432  
 ```  
   
-## <a name="remarks"></a>コメント  
- このクラスのメンバー関数は例外をスローしません。  
+## <a name="remarks"></a>Remarks  
+ Member functions of this class do not throw exceptions.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

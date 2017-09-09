@@ -1,49 +1,64 @@
 ---
-title: "&lt;deque&gt; の演算子 | Microsoft Docs"
+title: '&lt;deque&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- deque/std::operator!=
+- deque/std::operator&gt;
+- deque/std::operator&gt;=
+- deque/std::operator&lt;
+- deque/std::operator&lt;=
+- deque/std::operator==
+dev_langs:
+- C++
 ms.assetid: 482d7c92-54c7-493b-99e6-2a73617481a5
 caps.latest.revision: 7
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 9d7f8ff1d198e8608cb5aa96852dc5b263277e02
+helpviewer_keywords:
+- std::operator!= (deque)
+- std::operator&gt; (deque)
+- std::operator&gt;= (deque)
+- std::operator&lt; (deque)
+- std::operator&lt;= (deque)
+- std::operator== (deque)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ab28c65e454f536e40a3a3c78d3d8dfbf4af3a2f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltdequegt-operators"></a>&lt;deque&gt; の演算子
+# <a name="ltdequegt-operators"></a>&lt;deque&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|  
 |[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクトと等しくないかどうかを調べます。  
+ Tests if the deque object on the left side of the operator is not equal to the deque object on the right side.  
   
 ```
 bool operator!=(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- deque オブジェクトが等しくない場合は **true**、deque オブジェクトが等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque objects are not equal; **false** if the deque objects are equal.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの deque オブジェクトは、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. Two deque objects are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_ne.cpp  
@@ -70,26 +85,26 @@ The deques are not equal.
 ```  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクトより小さいかどうかを調べます。  
+ Tests if the deque object on the left side of the operator is less than the deque object on the right side.  
   
 ```
 bool operator<(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の deque が演算子の右辺の deque 未満である場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque on the left side of the operator is less than and not equal to the deque on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つのオブジェクト間の小なり関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. The less-than relationship between two objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_lt.cpp  
@@ -120,26 +135,26 @@ Deque c1 is less than deque c2.
 ```  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクト以下かどうかを調べます。  
+ Tests if the deque object on the left side of the operator is less than or equal to the deque object on the right side.  
   
 ```
 bool operator<=(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の deque が演算子の右辺の deque 以下である場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque on the left side of the operator is less than or equal to the deque on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つのオブジェクト間の "以下" 関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. The less than or equal to relationship between two objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_le.cpp  
@@ -171,26 +186,26 @@ Deque c1 is less than or equal to deque c2.
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクトと等しいかどうかを調べます。  
+ Tests if the deque object on the left side of the operator is equal to the deque object on the right side.  
   
 ```
 bool operator==(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の deque が演算子の右辺の deque と等しい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque on the left side of the operator is equal to the deque on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの deque は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. Two deques are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_eq.cpp  
@@ -225,26 +240,26 @@ The deques are not equal.
 ```  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクトより大きいかどうかを調べます。  
+ Tests if the deque object on the left side of the operator is greater than the deque object on the right side.  
   
 ```
 bool operator>(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の deque が演算子の右辺の deque より大きい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque on the left side of the operator is greater than the deque on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つのオブジェクト間の大なり関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. The greater-than relationship between two objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_gt.cpp  
@@ -277,26 +292,26 @@ Deque c1 is greater than deque c2.
 ```  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 演算子の左側の deque オブジェクトが右側の deque オブジェクト以上かどうかを調べます。  
+ Tests if the deque object on the left side of the operator is greater than or equal to the deque object on the right side.  
   
 ```
 bool operator>=(const deque<Type, Allocator>& left, const deque<Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
  `right`  
- `deque` 型のオブジェクト。  
+ An object of type `deque`.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の deque が演算子の右辺の deque 以上である場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the deque on the left side of the operator is greater than or equal to the deque on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- deque オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つのオブジェクト間の "以上" 関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between deque objects is based on a pairwise comparison of their elements. The greater than or equal to relationship between two objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // deque_op_ge.cpp  
@@ -327,7 +342,7 @@ Deque c1 is greater than or equal to deque c2.
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<deque>](../standard-library/deque.md)
 
 

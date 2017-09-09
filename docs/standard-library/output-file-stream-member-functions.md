@@ -1,5 +1,5 @@
 ---
-title: "出力ファイル ストリームのメンバー関数 | Microsoft Docs"
+title: Output File Stream Member Functions | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -11,8 +11,7 @@ ms.topic: article
 dev_langs:
 - C++
 helpviewer_keywords:
-- output streams, member functions
-f1_keywords: []
+- output streams [C++], member functions
 ms.assetid: 38aaf710-8035-4a34-a0c4-123a5327f28a
 caps.latest.revision: 8
 author: corob-msft
@@ -32,24 +31,24 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: baa226c95d396232ea8ac545c839352c5df4c22f
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 571e2c0248317511773e9d33cf6745b446d82b7f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="output-file-stream-member-functions"></a>出力ファイル ストリームのメンバー関数
-出力ストリームのメンバー関数は、マニピュレーターと同等のタイプ、書式設定されていない書き込み操作を実行するタイプ、それ以外はストリーム状態を変更し、同等のマニピュレーターまたは挿入演算子を持たないタイプの 3 つがあります。 書式設定された順次出力の場合、挿入演算子とマニピュレーターのみを使用することがあります。 ランダム アクセス バイナリ ディスク出力の場合、挿入演算子の有無を問わず、他のメンバー関数を使用します。  
+# <a name="output-file-stream-member-functions"></a>Output File Stream Member Functions
+Output stream member functions have three types: those that are equivalent to manipulators, those that perform unformatted write operations, and those that otherwise modify the stream state and have no equivalent manipulator or insertion operator. For sequential, formatted output, you might use only insertion operators and manipulators. For random-access binary disk output, you use other member functions, with or without insertion operators.  
   
-## <a name="the-open-function-for-output-streams"></a>出力ストリームの open 関数  
- 出力ファイル ストリーム ([ofstream](../standard-library/basic-ofstream-class.md)) を使用するには、コンストラクターまたは **open** 関数で、そのストリームを特定のディスク ファイルに関連付ける必要があります。 **open** 関数を使用する場合、一連のファイルで同じストリーム オブジェクトを再利用することができます。 いずれの場合も、ファイルを記述する引数は同じです。  
+## <a name="the-open-function-for-output-streams"></a>The open Function for Output Streams  
+ To use an output file stream ([ofstream](../standard-library/basic-ofstream-class.md)), you must associate that stream with a specific disk file in the constructor or the **open** function. If you use the **open** function, you can reuse the same stream object with a series of files. In either case, the arguments describing the file are the same.  
   
- 出力ストリームに関連付けられているファイルを開く場合、通常は **open_mode** フラグを指定します。 `ios` クラスで列挙子として定義されているこれらのフラグを、ビットごとの OR ( &#124; ) 演算子と組み合わせることができます。 列挙子のリストについては、「[ios_base::openmode](../standard-library/ios-base-class.md#openmode)」を参照してください。  
+ When you open the file associated with an output stream, you generally specify an **open_mode** flag. You can combine these flags, which are defined as enumerators in the `ios` class, with the bitwise OR ( &#124; ) operator. See [ios_base::openmode](../standard-library/ios-base-class.md#openmode) for a list of the enumerators.  
   
- 3 つの一般的な出力ストリームの状況では、モード オプションが関連します。  
+ Three common output stream situations involve mode options:  
   
--   ファイルを作成します。 ファイルが既に存在する場合は、古いバージョンが削除されます。  
+-   Creating a file. If the file already exists, the old version is deleted.  
   
  ```  
     ostream ofile("FILENAME");
@@ -59,13 +58,13 @@ ms.lasthandoff: 04/29/2017
 // Equivalent to above  
 ```  
   
--   既存のファイルにレコードを追加するか、存在しない場合はファイルを作成します。  
+-   Appending records to an existing file or creating one if it does not exist.  
   
  ```  
     ofstream ofile("FILENAME", ios::app);
 ```  
   
--   同じストリームで一度に 1 つずつ、2 のファイルを開きます。  
+-   Opening two files, one at a time, on the same stream.  
   
  ```  
     ofstream ofile();
@@ -83,8 +82,8 @@ ofile.open("FILE1",
 // FILE2 closed  // When ofile goes out of scope it is destroyed.  
 ```  
   
-## <a name="the-put"></a>Put
- **put** 関数は、1 つの文字を出力ストリームに書き込みます。 次の 2 つのステートメントは既定では同じですが、2 番目は、ストリームの format 引数の影響を受けます。  
+## <a name="the-put"></a>The put
+ The **put** function writes one character to the output stream. The following two statements are the same by default, but the second is affected by the stream's format arguments:  
   
 ```  
 cout.put('A');
@@ -93,8 +92,8 @@ cout.put('A');
 cout <<'A'; // Format arguments 'width' and 'fill' apply   
 ```  
   
-## <a name="the-write"></a>書き込み
- **write** 関数は、出力ファイル ストリームにメモリ ブロックを書き込みます。 length 引数は、書き込まれるバイト数を指定します。 この例は、出力ファイル ストリームを作成し、`Date` 構造体のバイナリ値をそれに書き込みます。  
+## <a name="the-write"></a>The write
+ The **write** function writes a block of memory to an output file stream. The length argument specifies the number of bytes written. This example creates an output file stream and writes the binary value of the `Date` structure to it:  
   
 ```  
 // write_function.cpp  
@@ -115,55 +114,55 @@ int main( )
 }  
 ```  
   
- **write** 関数は null 文字に達しても停止しないため、完全なクラス構造が記述されます。 関数は、`char` ポインターと、書き込む文字のカウントという 2 つの引数を取ります。 構造体オブジェクトのアドレスの前にある **char\*** への必須のキャストに注意してください。  
+ The **write** function does not stop when it reaches a null character, so the complete class structure is written. The function takes two arguments: a `char` pointer and a count of characters to write. Note the required cast to **char\*** before the address of the structure object.  
   
-## <a name="the-seekp-and-tellp-functions"></a>seekp 関数と tellp 関数  
- 出力ファイル ストリームは、データを次に書き込む位置を指す内部ポインターを保持します。 `seekp` メンバー関数は、このポインターを設定し、それによりランダム アクセス ディスク ファイル出力を提供します。 `tellp` メンバー関数は、ファイル位置を返します。 `seekp` と `tellp` に同等の入力ストリーム関数を使用する例については、「[seekg 関数と tellg 関数](../standard-library/input-stream-member-functions.md)」を参照してください。  
+## <a name="the-seekp-and-tellp-functions"></a>The seekp and tellp Functions  
+ An output file stream keeps an internal pointer that points to the position where data is to be written next. The `seekp` member function sets this pointer and thus provides random-access disk file output. The `tellp` member function returns the file position. For examples that use the input stream equivalents to `seekp` and `tellp`, see [The seekg and tellg Functions](../standard-library/input-stream-member-functions.md).  
   
-## <a name="the-close-function-for-output-streams"></a>出力ストリームの close 関数  
- **close** メンバー関数は、出力ファイル ストリームに関連付けられているディスク ファイルを閉じます。 すべてのディスク出力を完了するには、ファイルを閉じる必要があります。 必要に応じて、`ofstream` デストラクターによってファイルが閉じられますが、同じストリーム オブジェクトの別のファイルを開く必要がある場合は **close** 関数を使用できます。  
+## <a name="the-close-function-for-output-streams"></a>The close Function for Output Streams  
+ The **close** member function closes the disk file associated with an output file stream. The file must be closed to complete all disk output. If necessary, the `ofstream` destructor closes the file for you, but you can use the **close** function if you need to open another file for the same stream object.  
   
- 出力ストリーム デストラクターが自動的にストリームのファイルを閉じるのは、コンストラクターまたは **open** メンバー関数がファイルを開いた場合のみです。 コンストラクターを既に開いているファイルのファイル記述子に渡すか、**attach** メンバー関数を使用する場合は、ファイルを明示的に閉じる必要があります。  
+ The output stream destructor automatically closes a stream's file only if the constructor or the **open** member function opened the file. If you pass the constructor a file descriptor for an already-open file or use the **attach** member function, you must close the file explicitly.  
   
-##  <a name="vclrferrorprocessingfunctionsanchor10"></a> エラー処理関数  
- ストリームへの書き込み中にエラーがないかテストするには、これらのメンバー関数を使用します。  
+##  <a name="vclrferrorprocessingfunctionsanchor10"></a> Error Processing Functions  
+ Use these member functions to test for errors while writing to a stream:  
   
-|関数|戻り値|  
+|Function|Return value|  
 |--------------|------------------|  
-|[bad](http://msdn.microsoft.com/Library/4038d331-e9c9-48b0-bf49-c6505744469c)|回復不可能なエラーがある場合は **true**。|  
-|[fail](http://msdn.microsoft.com/Library/619f1b36-1e72-4551-8b48-888ae4e370d2)|回復不可能なエラーがある場合、または変換エラーなどの "予想された" 状態である場合、またはファイルが見つからない場合は **true** を返します。 多くの場合、0 個の引数を指定して **clear** を呼び出した後、処理を再開できます。|  
-|[good](http://msdn.microsoft.com/Library/77f0aa17-2ae1-48ae-8040-592d301e3972)|エラー条件 (回復不可能かどうかを問わず) がなく、ファイルの終わりフラグが設定されていない場合は **true** を返します。|  
-|[eof](http://msdn.microsoft.com/Library/3087f631-1268-49cd-86cf-ff4108862329)|ファイルの終わり条件で **true** を返します。|  
-|[clear](http://msdn.microsoft.com/Library/dc172694-1267-45f8-8f5c-e822e16fc271)|内部エラー状態を設定します。 既定の引数を指定して呼び出すと、すべてのエラー ビットがクリアされます。|  
-|[rdstate](http://msdn.microsoft.com/Library/e235e4e2-7e95-4777-a160-3938d263dd9c)|現在のエラー状態を返します。|  
+|[bad](http://msdn.microsoft.com/Library/4038d331-e9c9-48b0-bf49-c6505744469c)|Returns **true** if there is an unrecoverable error.|  
+|[fail](http://msdn.microsoft.com/Library/619f1b36-1e72-4551-8b48-888ae4e370d2)|Returns **true** if there is an unrecoverable error or an "expected" condition, such as a conversion error, or if the file is not found. Processing can often resume after a call to **clear** with a zero argument.|  
+|[good](http://msdn.microsoft.com/Library/77f0aa17-2ae1-48ae-8040-592d301e3972)|Returns **true** if there is no error condition (unrecoverable or otherwise) and the end-of-file flag is not set.|  
+|[eof](http://msdn.microsoft.com/Library/3087f631-1268-49cd-86cf-ff4108862329)|Returns **true** on the end-of-file condition.|  
+|[clear](http://msdn.microsoft.com/Library/dc172694-1267-45f8-8f5c-e822e16fc271)|Sets the internal error state. If called with the default arguments, it clears all error bits.|  
+|[rdstate](http://msdn.microsoft.com/Library/e235e4e2-7e95-4777-a160-3938d263dd9c)|Returns the current error state.|  
   
- The **!** 同じ機能を実行する演算子をオーバー ロード、**失敗**関数。 したがって次のような式があるとします。  
+ The **!** operator is overloaded to perform the same function as the **fail** function. Thus the expression:  
   
 ```  
 if(!cout)...  
 ```  
   
- 上の式は、下の式と同等です。  
+ is equivalent to:  
   
 ```  
 if(cout.fail())...  
 ```  
   
- **Void\*()**と逆の働きをする演算子をオーバー ロード、 **!** 演算子です。したがって次のような式があるとします。  
+ The **void\*()** operator is overloaded to be the opposite of the **!** operator; thus the expression:  
   
 ```  
 if(cout)...  
 ```  
   
- 上の式は、下の式と同等です。  
+ is equal to:  
   
 ```  
 if(!cout.fail())...  
 ```  
   
- **void\*()** 演算子は、**good** と同等です。これは、ファイルの終わりをテストしないためです。  
+ The **void\*()** operator is not equivalent to **good** because it does not test for the end of file.  
   
-## <a name="see-also"></a>関連項目  
- [出力ストリーム](../standard-library/output-streams.md)
+## <a name="see-also"></a>See Also  
+ [Output Streams](../standard-library/output-streams.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "sync_per_thread クラス |Microsoft Docs"
+title: sync_per_thread Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,8 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- stdext::sync_per_thread
-- sync_per_thread
 - allocators/stdext::sync_per_thread
 - allocators/stdext::sync_per_thread::allocate
 - allocators/stdext::sync_per_thread::deallocate
@@ -18,7 +16,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- sync_per_thread class
+- stdext::sync_per_thread
+- stdext::sync_per_thread [C++], allocate
+- stdext::sync_per_thread [C++], deallocate
+- stdext::sync_per_thread [C++], equals
 ms.assetid: 47bf75f8-5b02-4760-b1d3-3099d08fe14c
 caps.latest.revision: 19
 author: corob-msft
@@ -38,98 +39,98 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 71d2dd481c2c14303c71ec461ddcb5c041859531
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 8d0f0ca6f449e1b220f553f8f1ba378abf43069a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="syncperthread-class"></a>sync_per_thread クラス
-スレッドごとに個別のキャッシュ オブジェクトを提供する[同期フィルター](../standard-library/allocators-header.md)を記述します。  
+# <a name="syncperthread-class"></a>sync_per_thread Class
+Describes a [synchronization filter](../standard-library/allocators-header.md) that provides a separate cache object for each thread.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Cache>  
 class sync_per_thread
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Cache`|同期フィルターに関連付けられているキャッシュの型。 これは、[cache_chunklist](../standard-library/cache-chunklist-class.md)、[cache_freelist](../standard-library/cache-freelist-class.md)、[cache_suballoc](../standard-library/cache-suballoc-class.md) のいずれかです。|  
+|`Cache`|The type of cache associated with the synchronization filter. This can be [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md), or [cache_suballoc](../standard-library/cache-suballoc-class.md).|  
   
-## <a name="remarks"></a>コメント  
- `sync_per_thread` を使用するアロケーターは、1 つのスレッドに割り当てられたブロックの割り当てを別のスレッドから解除できなくても、比較したときに等しい結果になりえます。 これらのアロケーターのいずれかを使用するときに、1 つのスレッドに割り当てられているメモリー ブロックが他のスレッドから参照できないようにする必要があります。 つまり、これらアロケーターのいずれかを使用するコンテナーは 1 つのスレッドによってのみアクセスする必要があります。  
+## <a name="remarks"></a>Remarks  
+ Allocators that use `sync_per_thread` can compare equal even though blocks allocated in one thread cannot be deallocated from another thread. When using one of these allocators memory blocks allocated in one thread should not be made visible to other threads. In practice this means that a container that uses one of these allocators should only be accessed by a single thread.  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[allocate](#allocate)|メモリのブロックを割り当てます。|  
-|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
-|[equals](#equals)|2 つのキャッシュが等しいかどうかを比較します。|  
+|[allocate](#allocate)|Allocates a block of memory.|  
+|[deallocate](#deallocate)|Frees a specified number of objects from storage beginning at a specified position.|  
+|[equals](#equals)|Compares two caches for equality.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<allocators>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<allocators>  
   
- **名前空間:** stdext  
+ **Namespace:** stdext  
   
 ##  <a name="allocate"></a>  sync_per_thread::allocate  
- メモリのブロックを割り当てます。  
+ Allocates a block of memory.  
   
 ```
 void *allocate(std::size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`count`|割り当てられる配列内の要素の数。|  
+|`count`|The number of elements in the array to be allocated.|  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、呼び出しの結果を、現在のスレッドに属しているキャッシュ オブジェクトの `cache::allocate(count)` に返します。 現在のスレッドにキャッシュ オブジェクトが割り当てられていない場合は、最初にキャッシュ オブジェクトを割り当ててください。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the result of a call to `cache::allocate(count)` on the cache object belonging to the current thread. If no cache object has been allocated for the current thread, it first allocates one.  
   
 ##  <a name="deallocate"></a>  sync_per_thread::deallocate  
- 指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
+ Frees a specified number of objects from storage beginning at a specified position.  
   
 ```
 void deallocate(void* ptr, std::size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`ptr`|記憶域から割り当てを解除される最初のオブジェクトへのポインター。|  
-|`count`|記憶域から割り当てを解除されるオブジェクトの数。|  
+|`ptr`|A pointer to the first object to be deallocated from storage.|  
+|`count`|The number of objects to be deallocated from storage.|  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、現在のスレッドに属しているキャッシュ オブジェクトの `deallocate` を呼び出します。 現在のスレッドにキャッシュ オブジェクトが割り当てられていない場合は、最初にキャッシュ オブジェクトを割り当ててください。  
+### <a name="remarks"></a>Remarks  
+ The member function calls `deallocate` on the cache object belonging to the current thread. If no cache object has been allocated for the current thread, it first allocates one.  
   
 ##  <a name="equals"></a>  sync_per_thread::equals  
- 2 つのキャッシュが等しいかどうかを比較します。  
+ Compares two caches for equality.  
   
 ```
 bool equals(const sync<Cache>& Other) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Cache`|同期フィルターのキャッシュ オブジェクト。|  
-|`Other`|等しいかどうかを比較するキャッシュ オブジェクト。|  
+|`Cache`|The cache object of the synchronization filter.|  
+|`Other`|The cache object to compare for equality.|  
   
-### <a name="return-value"></a>戻り値  
- このオブジェクトまたは現在のスレッドの `Other` にキャッシュ オブジェクトが割り当てられていない場合は `false` です。 そうでない場合は、`operator==` を 2 つのキャッシュ オブジェクトに割り当てた結果を返します。  
+### <a name="return-value"></a>Return Value  
+ `false` if no cache object has been allocated for this object or for `Other` in the current thread. Otherwise it returns the result of applying `operator==` to the two cache objects.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

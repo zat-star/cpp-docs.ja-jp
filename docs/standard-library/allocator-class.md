@@ -1,5 +1,5 @@
 ---
-title: "allocator クラス |Microsoft Docs"
+title: allocator Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- allocator
 - memory/std::allocator
 - memory/std::allocator::const_pointer
 - memory/std::allocator::const_reference
@@ -28,7 +27,21 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- allocator class
+- std::allocator [C++]
+- std::allocator [C++], const_pointer
+- std::allocator [C++], const_reference
+- std::allocator [C++], difference_type
+- std::allocator [C++], pointer
+- std::allocator [C++], reference
+- std::allocator [C++], size_type
+- std::allocator [C++], value_type
+- std::allocator [C++], address
+- std::allocator [C++], allocate
+- std::allocator [C++], construct
+- std::allocator [C++], deallocate
+- std::allocator [C++], destroy
+- std::allocator [C++], max_size
+- std::allocator [C++], rebind
 ms.assetid: 3fd58076-56cc-43bb-ad58-b4b7c9c6b410
 caps.latest.revision: 20
 author: corob-msft
@@ -48,110 +61,110 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a2447e0e42cc0a7fdc22db9de415f6dde46c40a5
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cb70a813a39fb0b4fc8311eed3fd44371f6839db
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="allocator-class"></a>allocator クラス
-このテンプレート クラスは、**Type** 型のオブジェクトの配列に対し、ストレージの割り当てと解放を管理するオブジェクトを記述します。 **allocator** クラスのオブジェクトは、C++ 標準ライブラリのいくつかのコンテナー テンプレート クラスのコンストラクターで指定されている既定のアロケーター オブジェクトです。  
+# <a name="allocator-class"></a>allocator Class
+The template class describes an object that manages storage allocation and freeing for arrays of objects of type **Type**. An object of class **allocator** is the default allocator object specified in the constructors for several container template classes in the C++ Standard Library.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Type>  
 class allocator  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *Type*  
- ストレージが割り当てまたは割り当て解除されるオブジェクトの型。  
+ The type of object for which storage is being allocated or deallocated.  
   
-## <a name="remarks"></a>コメント  
- すべての C++ 標準ライブラリのコンテナーには、**allocator** を既定値として持つテンプレート パラメーターがあります。 カスタム アロケーターを持つコンテナーを作成すると、そのコンテナーの要素の割り当てと解放を制御できます。  
+## <a name="remarks"></a>Remarks  
+ All the C++ Standard Library containers have a template parameter that defaults to **allocator**. Constructing a container with a custom allocator provide control over allocation and freeing of that container's elements.  
   
- たとえば、アロケーター オブジェクトは、プライベート ヒープまたは共有メモリ内でストレージを割り当てたり、小さなまたは大きなオブジェクトのサイズ用に最適化したりできます。 さらに、種類の型定義を介して、共有メモリを管理する特殊なアクセサー オブジェクトを経由で要素にアクセスすること、または自動ガベージ コレクションを実行することを指定できます。 そのため、アロケーター オブジェクトを使用してストレージを割り当てるクラスでは、C++ 標準ライブラリのコンテナーと同様に、これらの型を使用してポインターおよび参照オブジェクトを宣言する必要があります。  
+ For example, an allocator object might allocate storage on a private heap or in shared memory, or it might optimize for small or large object sizes. It might also specify, through the type definitions it supplies, that elements be accessed through special accessor objects that manage shared memory, or perform automatic garbage collection. Hence, a class that allocates storage using an allocator object should use these types for declaring pointer and reference objects, as the containers in the C++ Standard Library do.  
   
- **(C_++98/03 のみ)** allocator クラスから派生するときは、`_Other` typedef で新しく派生するクラスを参照する [rebind](#rebind) 構造体を指定する必要があります。  
+ **(C_++98/03 only)**When you derive from allocator class, you have to provide a [rebind](#rebind) struct, whose `_Other` typedef references your newly-derived class.  
   
- したがって、アロケーターは、次の型を定義します。  
+ Thus, an allocator defines the following types:  
   
-- [pointer](#pointer) は、**Type** へのポインターのように動作します。  
+- [pointer](#pointer) behaves like a pointer to **Type**.  
   
-- [const_pointer](#const_pointer) は、**Type** への const ポインターのように動作します。  
+- [const_pointer](#const_pointer) behaves like a const pointer to **Type**.  
   
-- [reference](#reference) は、**Type** の参照のように動作します。  
+- [reference](#reference) behaves like a reference to **Type**.  
   
-- [const_reference](#const_reference) は、**Type** の定数参照のように動作します。  
+- [const_reference](#const_reference) behaves like a const reference to **Type**.  
   
- これらの **Type** は、割り当てられる要素に対してポインターと参照が従う必要がある形式を指定します  (**allocator** クラスの明確な定義があるにもかかわらず、[allocator::pointer](#pointer) は、必ずしもすべてのアロケーター オブジェクトで **Type**\* と同じではありません)。  
+ These **Type**s specify the form that pointers and references must take for allocated elements. ( [allocator::pointer](#pointer) is not necessarily the same as **Type**\* for all allocator objects, even though it has this obvious definition for class **allocator**.)  
   
- **C++ 11 以降:** アロケーターでの移動操作を有効にするには、最小限のアロケーター インターフェイスを使用し、さらにコピー コンストラクター、== 演算子、! = 演算子、allocate、および deallocate を実装します。 詳細および例については、「[アロケーター](../standard-library/allocators.md)」を参照してください。  
+ **C++11 and later:**  To enable move operations in your allocator, use the minimal allocator interface and implement copy constructor, == and != operators, allocate and deallocate. For more information and an example, see [Allocators](../standard-library/allocators.md)  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[allocator](#allocator)|`allocator` オブジェクトを作成するために使用するコンストラクター。|  
+|[allocator](#allocator)|Constructors used to create `allocator` objects.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[const_pointer](#const_pointer)|アロケーターによって管理されるオブジェクトの型に対する定数ポインターを提供する型。|  
-|[const_reference](#const_reference)|アロケーターによって管理されるオブジェクトの型に対する定数参照を提供する型。|  
-|[difference_type](#difference_type)|アロケーターによって管理されるオブジェクトの型に対するポインターの値の差を表すことができる符号付き整数型。|  
-|[pointer](#pointer)|アロケーターによって管理されるオブジェクトの型に対するポインターを提供する型。|  
-|[reference](#reference)|アロケーターによって管理されるオブジェクトの型に対する参照を提供する型。|  
-|[size_type](#size_type)|テンプレート クラス `allocator` のオブジェクトが割り当てることができる、シーケンスの長さを表すことのできる符号なし整数型。|  
-|[value_type](#value_type)|アロケーターによって管理される型。|  
+|[const_pointer](#const_pointer)|A type that provides a constant pointer to the type of object managed by the allocator.|  
+|[const_reference](#const_reference)|A type that provides a constant reference to type of object managed by the allocator.|  
+|[difference_type](#difference_type)|A signed integral type that can represent the difference between values of pointers to the type of object managed by the allocator.|  
+|[pointer](#pointer)|A type that provides a pointer to the type of object managed by the allocator.|  
+|[reference](#reference)|A type that provides a reference to the type of object managed by the allocator.|  
+|[size_type](#size_type)|An unsigned integral type that can represent the length of any sequence that an object of template class `allocator` can allocate.|  
+|[value_type](#value_type)|A type that is managed by the allocator.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[address](#address)|値が指定されたオブジェクトのアドレスを検索します。|  
-|[allocate](#allocate)|指定された要素数だけは格納できるメモリのブロックを割り当てます。|  
-|[construct](#construct)|指定された値で初期化され、指定されたアドレスに配置される、指定された型のオブジェクトを構築します。|  
-|[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
-|[destroy](#destroy)|オブジェクトが格納されたメモリの割り当てを解除せずに、オブジェクトのデストラクターを呼び出します。|  
-|[max_size](#max_size)|空きメモリがすべて使用される前に `allocator` クラスによって割り当てることのできる、型 `Type` の要素の数を返します。|  
-|[rebind](#rebind)|1 つの型のオブジェクトのアロケーターを使用して別の型のオブジェクトのストレージの割り当てを可能にする構造体。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[operator=](#op_eq)|`allocator` オブジェクトを別の `allocator` オブジェクトに割り当てます。|  
+|[address](#address)|Finds the address of an object whose value is specified.|  
+|[allocate](#allocate)|Allocates a block of memory large enough to store at least some specified number of elements.|  
+|[construct](#construct)|Constructs a specific type of object at a specified address that is initialized with a specified value.|  
+|[deallocate](#deallocate)|Frees a specified number of objects from storage beginning at a specified position.|  
+|[destroy](#destroy)|Calls an objects destructor without deallocating the memory where the object was stored.|  
+|[max_size](#max_size)|Returns the number of elements of type `Type` that could be allocated by an object of class `allocator` before the free memory is used up.|  
+|[rebind](#rebind)|A structure that enables an allocator for objects of one type to allocate storage for objects of another type.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator=](#op_eq)|Assigns one `allocator` object to another `allocator` object.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
+  
+ **Namespace:** std  
   
 ##  <a name="address"></a>  allocator::address  
- 値が指定されたオブジェクトのアドレスを検索します。  
+ Finds the address of an object whose value is specified.  
   
 ```  
 pointer address(reference val) const;
 const_pointer address(const_reference val) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- アドレスが検索対象となっているオブジェクトの const 値または nonconst 値。  
+ The const or nonconst value of the object whose address is being searched for.  
   
-### <a name="return-value"></a>戻り値  
- 見つかった const 値または nonconst 値のそれぞれのオブジェクトに対する const ポインターまたは nonconst ポインター。  
+### <a name="return-value"></a>Return Value  
+ A const or nonconst pointer to the object found of, respectively, const or nonconst value.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、割り当てられた要素のためにポインターが取得しなければならない形式で、`val` のアドレスを返します。  
+### <a name="remarks"></a>Remarks  
+ The member functions return the address of `val`, in the form that pointers must take for allocated elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_address.cpp  
@@ -196,26 +209,26 @@ The integer addressed by v1Ptr has a value of: *v1Ptr = 8.
 ```  
   
 ##  <a name="allocate"></a>  allocator::allocate  
- 指定された要素数だけは格納できるメモリのブロックを割り当てます。  
+ Allocates a block of memory large enough to store at least some specified number of elements.  
   
 ```  
 pointer allocate(size_type count, const void* _Hint);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 十分な記憶域を割り当てる要素の数。  
+ The number of elements for which sufficient storage is to be allocated.  
   
  *_Hint*  
- アロケーター オブジェクトを支援できる const ポインターは、記憶域への要求を、要求の前に割り当てられたオブジェクトのアドレスを見つけることで満たします。  
+ A const pointer that may assist the allocator object satisfy the request for storage by locating the address of an object allocated prior to the request.  
   
-### <a name="return-value"></a>戻り値  
- 割り当てられたオブジェクトへのポインター、またはメモリが割り当てられていない場合は null。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the allocated object or null if memory was not allocated.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、演算子 new( `count`) を呼び出すことで、**Type** 型の count 要素の配列に対し、記憶域を割り当てます。 この関数は、割り当てられたオブジェクトへのポインターを返します。 hint 引数は、参照の局所性を向上することにおいて、一部のアロケーターに役立ちます。有効な選択肢は、同じアロケーターによって以前に割り当てられ、まだ割り当て解除されていないオブジェクトのアドレスです。 hint を指定しない場合は、代わりに Null ポインター引数を使用します。  
+### <a name="remarks"></a>Remarks  
+ The member function allocates storage for an array of count elements of type **Type**, by calling operator new( `count`). It returns a pointer to the allocated object. The hint argument helps some allocators in improving locality of reference; a valid choice is the address of an object earlier allocated by the same allocator object and not yet deallocated. To supply no hint, use a null pointer argument instead.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_allocate.cpp  
@@ -252,7 +265,7 @@ int main( )
 ```  
   
 ##  <a name="allocator"></a>  allocator::allocator  
- オブジェクトを割り当てるために使用するコンストラクター。  
+ Constructors used to create allocator objects.  
   
 ```  
 allocator();
@@ -261,14 +274,14 @@ template <class Other>
 allocator(const allocator<Other>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- コピーするアロケーター オブジェクト。  
+ The allocator object to be copied.  
   
-### <a name="remarks"></a>コメント  
- コンストラクターは何も行いません。 ただし、通常は、別のアロケーター オブジェクトから構築されたアロケーター オブジェクトは、それと等しいことを比較し、オブジェクトの割り当ての混在と、2 つのアロケーター オブジェクト間の解放を許可する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The constructor does nothing. In general, however, an allocator object constructed from another allocator object should compare equal to it and permit intermixing of object allocation and freeing between the two allocator objects.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_allocator.cpp  
@@ -332,16 +345,16 @@ The allocator objects cAlloc & Alloc are equal.
 ```  
   
 ##  <a name="const_pointer"></a>  allocator::const_pointer  
- アロケーターによって管理されるオブジェクトの型に対する定数ポインターを提供する型。  
+ A type that provides a constant pointer to the type of object managed by the allocator.  
   
 ```  
 typedef const value_type *const_pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- ポインター型は、式 **\*ptr** を通じて指定できるオブジェクト **ptr** を記述します。これは、テンプレート クラス アロケーターのオブジェクトを割り当てることができる任意の const オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ The pointer type describes an object **ptr** that can designate, through the expression **\*ptr**, any const object that an object of template class allocator can allocate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_const_ptr.cpp  
@@ -385,16 +398,16 @@ The integer's address found has a value of: 10.
 ```  
   
 ##  <a name="const_reference"></a>  allocator::const_reference  
- アロケーターによって管理されるオブジェクトの型に対する定数参照を提供する型。  
+ A type that provides a constant reference to type of object managed by the allocator.  
   
 ```  
 typedef const value_type& const_reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 参照型は、テンプレート クラス アロケーターのオブジェクトを割り当てることができる任意の const オブジェクトを指定できるオブジェクトを記述します。  
+### <a name="remarks"></a>Remarks  
+ The reference type describes an object that can designate any const object that an object of template class allocator can allocate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_const_ref.cpp  
@@ -449,7 +462,7 @@ The value of the element referred to by vcref,
 ```  
   
 ##  <a name="construct"></a>  allocator::construct  
- 指定された値で初期化され、指定されたアドレスに配置される、指定された型のオブジェクトを構築します。  
+ Constructs a specific type of object at a specified address that is initialized with a specified value.  
   
 ```  
 void construct(pointer ptr, const Type& val);
@@ -458,17 +471,17 @@ template <class _Other>
 void construct(pointer ptr, _Other&&...   val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- オブジェクトが構築される場所へのポインター。  
+ A pointer to the location where the object is to be constructed.  
   
  `val`  
- 構築されるオブジェクトが初期化される値。  
+ The value with which the object being constructed is to be initialized.  
   
-### <a name="remarks"></a>コメント  
- 最初のメンバー関数は、**new** ( ( `void` \*) `ptr` ) **Type** ( `val` ) と同じです。  
+### <a name="remarks"></a>Remarks  
+ The first member function is equivalent to **new** ( ( `void` \*) `ptr` ) **Type** ( `val` ).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_construct.cpp  
@@ -518,40 +531,40 @@ The modified vector v1 is:
 ```  
   
 ##  <a name="deallocate"></a>  allocator::deallocate  
- 指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。  
+ Frees a specified number of objects from storage beginning at a specified position.  
   
 ```  
 void deallocate(pointer ptr, size_type count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 記憶域から割り当てを解除される最初のオブジェクトへのポインター。  
+ A pointer to the first object to be deallocated from storage.  
   
  `count`  
- 記憶域から割り当てを解除されるオブジェクトの数。  
+ The number of objects to be deallocated from storage.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、型の数のオブジェクトの配列の記憶域を解放**型**始点`ptr`、呼び出すことによって`operator delete(ptr)`です。 ポインター `ptr` は、同じサイズと型の配列オブジェクトを割り当てる **\*this** と等しいことを比較するアロケーター オブジェクトに対し、[allocate](#allocate) を呼び出すことで、既に返されているはずです。 `deallocate` は例外をスローしません。  
+### <a name="remarks"></a>Remarks  
+ The member function frees storage for the array of count objects of type **Type** beginning at `ptr`, by calling `operator delete(ptr)`. The pointer `ptr` must have been returned earlier by a call to [allocate](#allocate) for an allocator object that compares equal to **\*this**, allocating an array object of the same size and type. `deallocate` never throws an exception.  
   
-### <a name="example"></a>例  
-  メンバー関数の使用例については、「[allocator::allocate](#allocate)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example using the member function, see [allocator::allocate](#allocate).  
   
 ##  <a name="destroy"></a>  allocator::destroy  
- オブジェクトが格納されたメモリの割り当てを解除せずに、オブジェクトのデストラクターを呼び出します。  
+ Calls an objects destructor without deallocating the memory where the object was stored.  
   
 ```  
 void destroy(pointer ptr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 破棄するオブジェクトのアドレスを指定するポインター。  
+ A pointer designating the address of the object to be destroyed.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数によって指定されたオブジェクトを破棄する`ptr`、デストラクターを呼び出すことによって`ptr->`**型**::**~ 型**です。  
+### <a name="remarks"></a>Remarks  
+ The member function destroys the object designated by `ptr`, by calling the destructor `ptr->`**Type**::**~Type**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_destroy.cpp  
@@ -601,16 +614,16 @@ The modified vector v1 is:
 ```  
   
 ##  <a name="difference_type"></a>  allocator::difference_type  
- アロケーターによって管理されるオブジェクトの型に対するポインターの値の差を表すことができる符号付き整数型。  
+ A signed integral type that can represent the difference between values of pointers to the type of object managed by the allocator.  
   
 ```  
 typedef ptrdiff_t difference_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 符号付き整数型は、テンプレート クラス アロケーターのオブジェクトが割り当てることができるシーケンス内にある 2 つの要素のアドレスの違いを表すことのできるオブジェクトを記述します。  
+### <a name="remarks"></a>Remarks  
+ The signed integer type describes an object that can represent the difference between the addresses of any two elements in a sequence that an object of template class allocator can allocate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_diff_type.cpp  
@@ -660,16 +673,16 @@ The difference between the integer's addresses is: 8.
 ```  
   
 ##  <a name="max_size"></a>  allocator::max_size  
- 空きメモリがすべて使用される前にクラス アロケーター オブジェクトによって割り当てることのできる、**Type** 型の要素の数を返します。  
+ Returns the number of elements of type **Type** that could be allocated by an object of class allocator before the free memory is used up.  
   
 ```  
 size_type max_size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 割り当てることができる要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements that could be allocated.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_max_size.cpp  
@@ -727,24 +740,24 @@ int main( )
 ```  
   
 ##  <a name="op_eq"></a>  allocator::operator=  
- 1 つのアロケーター オブジェクトを別のアロケーター オブジェクトに割り当てます。  
+ Assigns one allocator object to another allocator object.  
   
 ```  
 template <class Other>  
 allocator<Type>& operator=(const allocator<Other>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- このような別のオブジェクトに割り当てられるアロケーター オブジェクト。  
+ An allocator object to be assigned to another such object.  
   
-### <a name="return-value"></a>戻り値  
- アロケーター オブジェクトへの参照  
+### <a name="return-value"></a>Return Value  
+ A reference to the allocator object  
   
-### <a name="remarks"></a>コメント  
- テンプレートの代入演算子は、何も行いません。 ただし、通常は、別のアロケーター オブジェクトに割り当てられたアロケーター オブジェクトは、それと等しいことを比較し、オブジェクトの割り当ての混在と、2 つのアロケーター オブジェクト間の解放を許可する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The template assignment operator does nothing. In general, however, an allocator object assigned to another allocator object should compare equal to it and permit intermixing of object allocation and freeing between the two allocator objects.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_op_assign.cpp  
@@ -786,16 +799,16 @@ int main( )
 ```  
   
 ##  <a name="pointer"></a>  allocator::pointer  
- アロケーターによって管理されるオブジェクトの型に対するポインターを提供する型。  
+ A type that provides a pointer to the type of object managed by the allocator.  
   
 ```  
 typedef value_type *pointer;  
 ```  
   
-### <a name="remarks"></a>コメント  
- ポインター型は、式 **\*ptr** を通じて指定できるオブジェクト **ptr** を記述します。これは、テンプレート クラスのアロケーター オブジェクトを割り当てることができる任意のオブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ The pointer type describes an object **ptr** that can designate, through the expression **\*ptr**, any object that an object of template class allocator can allocate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_ptr.cpp  
@@ -839,32 +852,32 @@ The integer addressed by v1Ptr has a value of: *v1Ptr = 12.
 ```  
   
 ##  <a name="rebind"></a>  allocator::rebind  
- 1 つの型のオブジェクトのアロケーターを使用して別の型のオブジェクトのストレージの割り当てを可能にする構造体。  
+ A structure that enables an allocator for objects of one type to allocate storage for objects of another type.  
 ```  
 struct rebind {    typedef allocator<_Other> other ;    };  
 ```  
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *other*  
- メモリが割り当てられる要素の型。  
+ The type of element for which memory is being allocated.  
   
-### <a name="remarks"></a>コメント  
- この構造体は、実装されているコンテナーの要素の型とは異なる型のメモリの割り当てに役立ちます。  
+### <a name="remarks"></a>Remarks  
+ This structure is useful for allocating memory for type that differs from the element type of the container being implemented.  
   
- メンバー テンプレート クラスは、型 other を定義します。 その唯一の目的は、所定の型名 **allocator**\< **Type**> で、型名 **allocator**\<_ **Other**> を提供することです。  
+ The member template class defines the type other. Its sole purpose is to provide the type name **allocator**\<_ **Other**>, given the type name **allocator**\< **Type**>.  
   
- たとえば、型 **A** のアロケーター オブジェクト **al** の場合、次の式で型 **_Other** のオブジェクトを割り当てることができます。  
+ For example, given an allocator object **al** of type **A**, you can allocate an object of type **_Other** with the expression:  
   
 ```  
 A::rebind<Other>::other(al).allocate(1, (Other *)0)  
 ```  
   
- または、次のように型を記述して、ポインター型を指定することができます。  
+ Or, you can name its pointer type by writing the type:  
   
 ```  
 A::rebind<Other>::other::pointer  
 ```  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_rebind.cpp  
@@ -890,16 +903,16 @@ int main( )
 ```  
   
 ##  <a name="reference"></a>  allocator::reference  
- アロケーターによって管理されるオブジェクトの型に対する参照を提供する型。  
+ A type that provides a reference to the type of object managed by the allocator.  
   
 ```  
 typedef value_type& reference;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 参照型は、テンプレート クラスのアロケーター オブジェクトを割り当てることができる任意のオブジェクトを指定できるオブジェクトを記述します。  
+### <a name="remarks"></a>Remarks  
+ The reference type describes an object that can designate any object that an object of template class allocator can allocate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_reference.cpp  
@@ -948,13 +961,13 @@ The element referred to by vref after being modified is: 150.
 ```  
   
 ##  <a name="size_type"></a>  allocator::size_type  
- テンプレート クラス アロケーターのオブジェクトが割り当てることができる、シーケンスの長さを表すことのできる符号なし整数型。  
+ An unsigned integral type that can represent the length of any sequence that an object of template class allocator can allocate.  
   
 ```  
 typedef size_t size_type;  
 ```  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_size_type.cpp  
@@ -992,16 +1005,16 @@ int main( )
 ```  
   
 ##  <a name="value_type"></a>  allocator::value_type  
- アロケーターによって管理される型。  
+ A type that is managed by the allocator.  
   
 ```  
 typedef Type value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **Type** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **Type**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // allocator_value_type.cpp  
@@ -1050,7 +1063,7 @@ The modified vector v is:
  ( 150 200 300 400 500 600 700 ).  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

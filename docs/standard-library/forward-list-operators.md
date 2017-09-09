@@ -1,30 +1,45 @@
 ---
-title: "&lt;forward_list&gt; 演算子 | Microsoft ドキュメント"
+title: '&lt;forward_list&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- forward_list/std::operator!=
+- forward_list/std::operator==
+- forward_list/std::operatoroperator&gt;
+- forward_list/std::operatoroperator&gt=;
+- forward_list/std::operatoroperator&lt;
+- forward_list/std::operatoroperator&lt;=
+dev_langs:
+- C++
 ms.assetid: 57492e09-3836-4dbc-9ae5-78ecf506c190
 caps.latest.revision: 11
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: ddf548e760d723bff19b58ac8dfe6ec60acdbbcc
+helpviewer_keywords:
+- std::operator!= (forward_list)
+- std::operator== (forward_list)
+- std::operatoroperator&gt; (forward_list)
+- std::operatoroperator&gt=; (forward_list)
+- std::operatoroperator&lt; (forward_list)
+- std::operatoroperator&lt;= (forward_list)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: c00c7d1e506e60a0a8612601835ef4a91b98ea99
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltforwardlistgt-operators"></a>&lt;forward_list&gt; 演算子
+# <a name="ltforwardlistgt-operators"></a>&lt;forward_list&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|  
 |[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクトと等しいかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is equal to the forward list object on the right side.  
   
 ```
 bool operator==(
@@ -32,18 +47,18 @@ bool operator==(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、テンプレート クラス `forward_list` の 2 つのオブジェクトを比較する `operator==` をオーバーロードします。 `distance(left.begin(), end()) == distance(right.begin(),right.end()) && equal(left. begin(),left. end(),right.begin())` が返されます。  
+### <a name="remarks"></a>Remarks  
+ This template function overloads `operator==` to compare two objects of template class `forward_list`. The function returns `distance(left.begin(), end()) == distance(right.begin(),right.end()) && equal(left. begin(),left. end(),right.begin())`.  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクトと等しくないかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is not equal to the forward list object on the right side.  
   
 ```
 bool operator!=(
@@ -51,21 +66,21 @@ bool operator!=(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="return-value"></a>戻り値  
- リストが等しくない場合は **true**、リストが等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the lists are not equal; **false** if the lists are equal.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は `!(left == right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ This template function returns `!(left == right)`.  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクトより小さいかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is less than the forward list object on the right side.  
   
 ```
 bool operator<(
@@ -73,21 +88,21 @@ bool operator<(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺のリストが演算子の右辺のリストより小さい場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the list on the left side of the operator is less than but not equal to the list on the right side of the operator; otherwise `false`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、テンプレート クラス `forward_list` の 2 つのオブジェクトを比較する `operator<` をオーバーロードします。 `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())` が返されます。  
+### <a name="remarks"></a>Remarks  
+ This template function overloads `operator<` to compare two objects of template class `forward_list`. The function returns `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())`.  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクト以下であるかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is less than or equal to the forward list object on the right side.  
   
 ```
 bool operator<=(
@@ -95,21 +110,21 @@ bool operator<=(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺のリストが演算子の右辺のリスト以下である場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the list on the left side of the operator is less than or equal to the list on the right side of the operator; otherwise `false`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は `!(right < left)` を返します。  
+### <a name="remarks"></a>Remarks  
+ This template function returns `!(right < left)`.  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクトより大きいかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is greater than the forward list object on the right side.  
   
 ```
 bool operator>(
@@ -117,21 +132,21 @@ bool operator>(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺のリストが演算子の右辺のリストより大きい場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the list on the left side of the operator is greater than the list on the right side of the operator; otherwise `false`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は `right < left` を返します。  
+### <a name="remarks"></a>Remarks  
+ This template function returns `right < left`.  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクト以上であるかどうかを調べます。  
+ Tests if the forward list object on the left side of the operator is greater than or equal to the forward list object on the right side.  
   
 ```
 bool operator>=(
@@ -139,20 +154,20 @@ bool operator>=(
     const forward_list <Type, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|`forward_list` 型のオブジェクト。|  
-|`right`|`forward_list` 型のオブジェクト。|  
+|`left`|An object of type `forward_list`.|  
+|`right`|An object of type `forward_list`.|  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の前方リストが演算子の右辺の前方リスト以上である場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if the forward list on the left side of the operator is greater than or equal to the forward list on the right side of the operator; otherwise `false`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は `!(left < right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The template function returns `!(left < right)`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<forward_list>](../standard-library/forward-list.md)
 
 

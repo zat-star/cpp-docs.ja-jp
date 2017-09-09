@@ -1,5 +1,5 @@
 ---
-title: "raw_storage_iterator クラス | Microsoft Docs"
+title: raw_storage_iterator Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,14 +9,15 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- raw_storage_iterator
 - memory/std::raw_storage_iterator
 - memory/std::raw_storage_iterator::element_type
 - memory/std::raw_storage_iterator::iter_type
 dev_langs:
 - C++
 helpviewer_keywords:
-- raw_storage_iterator class
+- std::raw_storage_iterator [C++]
+- std::raw_storage_iterator [C++], element_type
+- std::raw_storage_iterator [C++], iter_type
 ms.assetid: 6f033f15-f48e-452a-a326-647ea2cf346f
 caps.latest.revision: 17
 author: corob-msft
@@ -36,97 +37,97 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 46bfc6bc42e09348d0760f7d03d70c816fde31ed
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 5a513b9b27c72c36f831eba839538910914d4057
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="rawstorageiterator-class"></a>raw_storage_iterator クラス
-アルゴリズムの結果を初期化されていないメモリに格納するために用意されたアダプター クラスです。  
+# <a name="rawstorageiterator-class"></a>raw_storage_iterator Class
+An adaptor class that is provided to enable algorithms to store their results into uninitialized memory.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class OutputIterator, class Type>  
 class raw_storage_iterator
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `OutputIterator`  
- 格納されるオブジェクトの出力反復子を指定します。  
+ Specifies the output iterator for the object being stored.  
   
  *Type*  
- ストレージが割り当てられるオブジェクトの型。  
+ The type of object for which storage is being allocated.  
   
-## <a name="remarks"></a>コメント  
- このクラスは、生成するシーケンス内に **Type** 型のオブジェクトを構築する出力反復子を記述します。 `raw_storage_iterator`\< **ForwardIterator**, **Type**> クラスのオブジェクトは、オブジェクトを構築する際に指定した **ForwardIterator** クラスの前方反復子オブジェクトを介してストレージにアクセスします。 **ForwardIterator** クラスの最初のオブジェクトの場合、式 **&\*first** で、生成されたシーケンス内の次のオブジェクト (**Type** 型) に未構築のストレージを指定する必要があります。  
+## <a name="remarks"></a>Remarks  
+ The class describes an output iterator that constructs objects of type **Type** in the sequence it generates. An object of class `raw_storage_iterator`\< **ForwardIterator**, **Type**> accesses storage through a forward iterator object, of class **ForwardIterator**, that you specify when you construct the object. For an object first of class **ForwardIterator**, the expression **&\*first** must designate unconstructed storage for the next object (of type **Type**) in the generated sequence.  
   
- このアダプター クラスは、メモリの割り当てとオブジェクトの構築を分離する必要がある場合に使用されます。 `raw_storage_iterator` は、`malloc` 関数を使用して割り当てられたメモリなど、初期化されていないストレージにオブジェクトをコピーするために使用できます。  
+ This adaptor class is used when it is necessary to separate memory allocation and object construction. The `raw_storage_iterator` can be used to copy objects into uninitialized storage, such as memory allocated using the `malloc` function.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[raw_storage_iterator](#raw_storage_iterator)|指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。|  
+|[raw_storage_iterator](#raw_storage_iterator)|Constructs a raw storage iterator with a specified underlying output iterator.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[element_type](#element_type)|生のストレージ反復子によって格納される要素を記述する型を提供します。|  
-|[iter_type](#iter_type)|生のストレージ反復子の基になる反復子を記述する型を提供します。|  
+|[element_type](#element_type)|Provides a type that describes an element to be stored a raw storage iterator.|  
+|[iter_type](#iter_type)|Provides a type that describes an iterator that underlies a raw storage iterator.|  
   
-### <a name="operators"></a>演算子  
+### <a name="operators"></a>Operators  
   
 |||  
 |-|-|  
-|[operator*](#op_star)|出力反復子式 * `ii` = `x` を実装するために使用される逆参照演算子。|  
-|[operator=](#op_eq)|生のストレージ反復子式 * `i` = `x` をメモリへの格納用に実装するために使用される代入演算子。|  
-|[operator++](#op_add_add)|生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。|  
+|[operator*](#op_star)|A dereferencing operator used to implement the output iterator expression * `ii` = `x`.|  
+|[operator=](#op_eq)|An assignment operator used to implement the raw storage iterator expression * `i` = `x` for storing in memory.|  
+|[operator++](#op_add_add)|Preincrement and postincrement operators for raw storage iterators.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="element_type"></a>  raw_storage_iterator::element_type  
- 生のストレージ反復子によって格納される要素を記述する型を提供します。  
+ Provides a type that describes an element to be stored a raw storage iterator.  
   
 ```
 typedef Type element_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は raw_storage_iterator クラス テンプレート パラメーター **Type** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the raw_storage_iterator class template parameter **Type**.  
   
 ##  <a name="iter_type"></a>  raw_storage_iterator::iter_type  
- 生のストレージ反復子の基になる反復子を記述する型を提供します。  
+ Provides a type that describes an iterator that underlies a raw storage iterator.  
   
 ```
 typedef ForwardIterator iter_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **ForwardIterator** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **ForwardIterator**.  
   
 ##  <a name="op_star"></a>  raw_storage_iterator::operator*  
- 生のストレージ反復子式 \* *ii* = *x* を実装するために使用される逆参照演算子。  
+ A dereferencing operator used to implement the raw storage iterator expression \* *ii* = *x*.  
   
 ```
 raw_storage_iterator<ForwardIterator, Type>& operator*();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 生のストレージ反復子への参照  
+### <a name="return-value"></a>Return Value  
+ A reference to the raw storage iterator  
   
-### <a name="remarks"></a>コメント  
- **ForwardIterator** の要件は、生のストレージ反復子で式 \* *ii* = *t* が有効であることを満たすことを必要とするのみで、**演算子**または `operator=` 自体については何も必要としないことです。 この実装のメンバー演算子は、**\*this** を返します。そのため、[operator=](#op_eq)( **constType**&) は、\* *ptr* = `val` など、式内で実際の格納を実行できます。  
+### <a name="remarks"></a>Remarks  
+ The requirements for a **ForwardIterator** are that the raw storage iterator must satisfy require only the expression \* *ii* = *t* be valid and that it says nothing about the **operator** or the `operator=` on their own. The member operators in this implementation returns **\*this**, so that [operator=](#op_eq)( **constType**&) can perform the actual store in an expression, such as \* *ptr* = `val`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // raw_storage_iterator_op_deref.cpp  
@@ -178,26 +179,26 @@ Constructing 5
 ```  
   
 ##  <a name="op_eq"></a>  raw_storage_iterator::operator=  
- 生のストレージ反復子式 \* *i* = *x* をメモリへの格納用に実装するために使用される代入演算子。  
+ Assignment operator used to implement the raw storage iterator expression \* *i* = *x* for storing in memory.  
   
 ```
 raw_storage_iterator<ForwardIterator, Type>& operator=(
     const Type& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- メモリに挿入される **Type** 型のオブジェクトの値。  
+ The value of the object of type **Type** to be inserted into memory.  
   
-### <a name="return-value"></a>戻り値  
- この演算子は、メモリに `val` を挿入し、生のストレージ反復子への参照を返します。  
+### <a name="return-value"></a>Return Value  
+ The operator inserts `val` into memory, and then returns a reference to the raw storage iterator.  
   
-### <a name="remarks"></a>コメント  
- **ForwardIterator** の要件は、生のストレージ反復子で式 \* *ii* = *t* が有効であることを満たすことを必要とするのみで、**演算子**または `operator=` 自体については何も必要としないことです。 これらのメンバー演算子は **\*this** を返します。  
+### <a name="remarks"></a>Remarks  
+ The requirements for a **ForwardIterator** state that the raw storage iterator must satisfy require only the expression \* *ii* = *t* be valid, and that it says nothing about the **operator** or the `operator=` on their own. These member operators return **\*this**.  
   
- 代入演算子は、placement new 式 **new** ( ( `void` \*)&\* **first**) **Type**( `val`) を評価することによって、格納された反復子の値 first を使用して出力シーケンス内に次のオブジェクトを構築します。  
+ The assignment operator constructs the next object in the output sequence using the stored iterator value first, by evaluating the placement new expression **new** ( ( `void` \*)&\* **first**) **Type**( `val`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // raw_storage_iterator_op_assign.cpp  
@@ -247,7 +248,7 @@ Constructing 5
 ```  
   
 ##  <a name="op_add_add"></a>  raw_storage_iterator::operator++  
- 生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。  
+ Preincrement and postincrement operators for raw storage iterators.  
   
 ```
 raw_storage_iterator<ForwardIterator, Type>& operator++();
@@ -255,19 +256,19 @@ raw_storage_iterator<ForwardIterator, Type>& operator++();
 raw_storage_iterator<ForwardIterator, Type> operator++(int);
 ```  
   
-### <a name="return-value"></a>戻り値  
- 生のストレージ反復子または生のストレージ反復子への参照。  
+### <a name="return-value"></a>Return Value  
+ An raw storage iterator or a reference to an raw storage iterator.  
   
-### <a name="remarks"></a>コメント  
- 最終的に最初の演算子は、関連付けられている入力ストリームから **CharType** 型のオブジェクトの抽出と格納を試行します。 2 つ目の演算子は、オブジェクトのコピーを作成して、オブジェクトをインクリメントしてから、そのコピーを返します。  
+### <a name="remarks"></a>Remarks  
+ The first operator eventually attempts to extract and store an object of type **CharType** from the associated input stream. The second operator makes a copy of the object, increments the object, and then returns the copy.  
   
- 最初の preincrement 演算子は格納されている出力反復子オブジェクトをインクリメントしてから、**\*this** を返します。  
+ The first preincrement operator increments the stored output iterator object, and then returns **\*this**.  
   
- 2 つ目の postincrement 演算子は **\*this** のコピーを作成し、格納されている出力反復子オブジェクトをインクリメントしてからコピーを返します。  
+ The second postincrement operator makes a copy of **\*this**, increments the stored output iterator object, and then returns the copy.  
   
- コンストラクターは **first** を出力反復子オブジェクトとして格納します。  
+ The constructor stores **first** as the output iterator object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // raw_storage_iterator_op_incr.cpp  
@@ -300,17 +301,17 @@ array 4 = 8
 ```  
   
 ##  <a name="raw_storage_iterator"></a>  raw_storage_iterator::raw_storage_iterator  
- 指定した基になる出力反復子を使用して、生のストレージの反復子を構築します。  
+ Constructs a raw storage iterator with a specified underlying output iterator.  
   
 ```
 explicit raw_storage_iterator(ForwardIterator first);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 構築されている `raw_storage_iterator` オブジェクトを基にすることになる前方反復子。  
+ The forward iterator that is to underlie the `raw_storage_iterator` object being constructed.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // raw_storage_iterator_ctor.cpp  
@@ -390,8 +391,8 @@ array 3 = 4
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

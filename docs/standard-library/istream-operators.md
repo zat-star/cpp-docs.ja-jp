@@ -1,28 +1,31 @@
 ---
-title: "&lt;istream&gt; 演算子 | Microsoft Docs"
+title: '&lt;istream&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- istream/std::operator&gt;&gt;
+dev_langs:
+- C++
 ms.assetid: 7174da41-f301-4a34-b631-0ab918b188d2
 caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: f73a5e24fd3864a46ac0c50bbdb18a1089a4a05e
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 99f20cdf8aa0a8fd19bac697fdac1bb2f642bf8e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltistreamgt-operators"></a>&lt;istream&gt; 演算子
+# <a name="ltistreamgt-operators"></a>&lt;istream&gt; operators
  
 ##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
- ストリームから文字と文字列を抽出します。  
+ Extracts characters and strings from the stream.  
   
 ```  
 template <class Elem, class Tr>  
@@ -61,26 +64,26 @@ basic_istream<Elem, Tr>& operator>>(
     Type& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Ch`  
- 単一の文字。  
+ A character.  
   
  `Istr`  
- ストリーム。  
+ A stream.  
   
  `str`  
- 文字列。  
+ A string.  
   
  `val`  
- 型。  
+ A type.  
   
-### <a name="return-value"></a>戻り値  
- ストリーム  
+### <a name="return-value"></a>Return Value  
+ The stream  
   
-### <a name="remarks"></a>コメント  
- `basic_istream` クラスもいくつかの抽出演算子を定義します。 詳細については、「[basic_istream::operator >>](../standard-library/basic-istream-class.md#op_gt_gt)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ The `basic_istream` class also defines several extraction operators. For more information, see [basic_istream::operator>>](../standard-library/basic-istream-class.md#op_gt_gt).  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Elem, class Tr>  
@@ -88,11 +91,11 @@ basic_istream<Elem, Tr>& operator>>(
     basic_istream<Elem, Tr>& Istr, Elem* str);
 ```  
   
- 最大で *N* - 1 の要素を抽出し、_ *Str* から始まる配列にこれらを格納します。 `Istr`. [width](../standard-library/ios-base-class.md#width) が 0 より大きい場合、*N* は `Istr`. **width** です。そうでない場合は、宣言できる **Elem** の最大の配列のサイズになります。 この関数は常に、格納する抽出された要素の後に値 **Elem()** を格納します。 抽出は、ファイルの最後の早い段階で、値 **Elem**(0) (これは抽出されません) を持つ文字、または [ws](../standard-library/istream-functions.md#ws) によって破棄される任意の要素 (これは抽出されません) で停止します。 関数が要素を抽出しなかった場合、`Istr`. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr`. **width**(0) が呼び出され、`Istr` が返されます。  
+ extracts up to *N* - 1 elements and stores them in the array starting at _ *Str*. If `Istr`. [width](../standard-library/ios-base-class.md#width) is greater than zero, *N* is `Istr`. **width**; otherwise, it is the size of the largest array of **Elem** that can be declared. The function always stores the value **Elem()** after any extracted elements it stores. Extraction stops early on end of file, on a character with value **Elem**(0) (which is not extracted), or on any element (which is not extracted) that would be discarded by [ws](../standard-library/istream-functions.md#ws). If the function extracts no elements, it calls `Istr`. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**). In any case, it calls `Istr`. **width**(0) and returns `Istr`.  
   
- **セキュリティに関するメモ** 入力ストリームから抽出された、null で終わる文字列が、コピー先バッファー `str` のサイズを超えないようにする必要があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
+ **Security Note** The null-terminated string being extracted from the input stream must not exceed the size of the destination buffer `str`. For more information, see [Avoiding Buffer Overruns](http://msdn.microsoft.com/library/windows/desktop/ms717795).  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Elem, class Tr>  
@@ -100,9 +103,9 @@ basic_istream<Elem, Tr>& operator>>(
     basic_istream<Elem, Tr>& Istr, Elem& Ch);
 ```  
   
- 可能な場合は要素を抽出し、この要素を `Ch` に格納します。 そうでない場合は、**is**. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr` を返します。  
+ extracts an element, if it is possible, and stores it in `Ch`. Otherwise, it calls **is**. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**). In any case, it returns `Istr`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Tr>  
@@ -110,9 +113,9 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, signed char* str);
 ```  
   
- `Istr` >> ( `char`**\***) `str` を返します。  
+ returns `Istr` >> ( `char`**\***) `str`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Tr>  
@@ -120,9 +123,9 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, signed char& Ch);
 ```  
   
- `Istr` >> ( **char&**) `Ch` を返します。  
+ returns `Istr` >> ( **char&**) `Ch`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Tr>  
@@ -130,9 +133,9 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, unsigned char* str);
 ```  
   
- `Istr` >> ( **char \***) `str` を返します。  
+ returns `Istr` >> ( **char \***) `str`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Tr>  
@@ -140,9 +143,9 @@ basic_istream<char, Tr>& operator>>(
     basic_istream<char, Tr>& Istr, unsigned char& Ch);
 ```  
   
- `Istr` >> ( **char&**) `Ch` を返します。  
+ returns `Istr` >> ( **char&**) `Ch`.  
   
- 下記のテンプレート関数は  
+ The template function:  
   
 ```cpp  
 template <class Elem, class Tr, class Type>  
@@ -151,9 +154,9 @@ basic_istream<Elem, Tr>& operator>>(
     Type& val);
 ```  
   
- `Istr` `>>` `val` を返します (さらに、その過程で `Istr` に対する `rvalue reference` を `lvalue` に変換します)。  
+ returns `Istr` `>>` `val` (and converts an `rvalue reference` to `Istr` to an `lvalue` in the process).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // istream_op_extract.cpp  
@@ -172,7 +175,7 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<istream>](../standard-library/istream.md)
 
 

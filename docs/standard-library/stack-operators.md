@@ -1,20 +1,35 @@
 ---
-title: "&lt;stack&gt; 演算子 | Microsoft Docs"
+title: '&lt;stack&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- stack/std::operator!=
+- stack/std::operator&gt;
+- stack/std::operator&gt;=
+- stack/std::operator&lt;
+- stack/std::operator&lt;=
+- stack/std::operator==
+dev_langs:
+- C++
 ms.assetid: 9c1fc282-2f61-4727-9e80-84ea5d4934a2
 caps.latest.revision: 13
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 0f71a4dbef2f1128f9c29a2cc3993f78a06c4318
+helpviewer_keywords:
+- std::operator!= (stack)
+- std::operator&gt; (stack)
+- std::operator&gt;= (stack)
+- std::operator&lt; (stack)
+- std::operator&lt;= (stack)
+- std::operator== (stack)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 6f217361b36b5f16360308fd94970de9c3a86669
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltstackgt-operators"></a>&lt;stack&gt; operators
@@ -24,26 +39,26 @@ ms.lasthandoff: 04/29/2017
 |[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクトと等しくないかどうかを調べます。  
+ Tests if the stack object on the left side of the operator is not equal to stack object on the right side.  
   
 ```  
 bool operator!=(const stack <Type, Container>& left, const stack <Type, Container>& right,);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- stack 同士が等しくない場合は **true**、stack 同士が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stacks or stacks are not equal; **false** if stacks or stacks are equal.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stacks objects is based on a pairwise comparison of their elements. Two stacks are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_me.cpp  
@@ -84,27 +99,27 @@ The stacks s1 and s2 are not equal.
 The stacks s1 and s3 are equal.  
 ```  
   
-##  <a name="op_lt"></a> 演算子&lt;  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクトより小さいかどうかを調べます。  
+##  <a name="op_lt"></a>  operator&lt;  
+ Tests if the stack object on the left side of the operator is less than the stack object on the right side.  
   
 ```  
 bool operator<(const stack <Type, Container>& left, const stack <Type, Container>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の queue が演算子の右辺の queue 未満である場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stack on the left side of the operator is less than and not equal to the stack on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack オブジェクト間の小なり関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stack objects is based on a pairwise comparison of their elements. The less-than relationship between two stack objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_lt.cpp  
@@ -165,26 +180,26 @@ The stack s1 from the top down is: ( 8 6 4 2 ).
 ```  
   
 ##  <a name="op_lt_eq"></a>  operator&lt;=  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクト以下かどうかを調べます。  
+ Tests if the stack object on the left side of the operator is less than or equal to the stack object on the right side.  
   
 ```  
 bool operator<=(const stack <Type, Container>& left, const stack <Type, Container>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の stack が演算子の右辺の stack 以下である場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stack on the left side of the operator is less than or equal to the stack on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack オブジェクト間の "以下" 関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stack objects is based on a pairwise comparison of their elements. The less than or equal to relationship between two stack objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_le.cpp  
@@ -228,26 +243,26 @@ The stack s1 is less than or equal to the stack s3.
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクトと等しいかどうかを調べます。  
+ Tests if the stack object on the left side of the operator is equal to stack object on the right side.  
   
 ```  
 bool operator==(const stack <Type, Container>& left, const stack <Type, Container>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- stack 同士が等しい場合は **true**、stack 同士が等しくない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stacks or stacks are equal; **false** if stacks or stacks are not equal.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack は、同じ数の要素を持ち、各要素の値が同じである場合に等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stack objects is based on a pairwise comparison of their elements. Two stacks are equal if they have the same number of elements and their respective elements have the same values. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_eq.cpp  
@@ -289,26 +304,26 @@ The stacks s1 and s3 are equal.
 ```  
   
 ##  <a name="op_gt"></a>  operator&gt;  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクトより大きいかどうかを調べます。  
+ Tests if the stack object on the left side of the operator is greater than the stack object on the right side.  
   
 ```  
 bool operator>(const stack <Type, Container>& left, const stack <Type, Container>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の stack が演算子の右辺の stack より大きい場合や等しくない場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stack on the left side of the operator is greater than and not equal to the stack on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack オブジェクト間の大なり関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stack objects is based on a pairwise comparison of their elements. The greater-than relationship between two stack objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_gt.cpp  
@@ -354,26 +369,26 @@ The stack s1 is greater than the stack s3.
 ```  
   
 ##  <a name="op_gt_eq"></a>  operator&gt;=  
- 演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクト以上かどうかを調べます。  
+ Tests if the stack object on the left side of the operator is greater than or equal to the stack object on the right side.  
   
 ```  
 bool operator>=(const stack <Type, Container>& left, const stack <Type, Container>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
  `right`  
- **stack** 型のオブジェクト。  
+ An object of type **stack**.  
   
-### <a name="return-value"></a>戻り値  
- 演算子の左辺の stack が演算子の右辺の stack より厳密に小さい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stack on the left side of the operator is strictly less than the stack on the right side of the operator; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- stack オブジェクト間の比較は、要素のペアの比較に基づいています。 2 つの stack オブジェクト間の "以上" 関係は、最初の等しくない要素のペアの比較に基づいています。  
+### <a name="remarks"></a>Remarks  
+ The comparison between stack objects is based on a pairwise comparison of their elements. The greater than or equal to relationship between two stack objects is based on a comparison of the first pair of unequal elements.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_op_ge.cpp  
@@ -417,7 +432,7 @@ The stack s1 is less than the stack s2.
 The stack s1 is greater than or equal to the stack s3.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<stack>](../standard-library/stack.md)
 
 

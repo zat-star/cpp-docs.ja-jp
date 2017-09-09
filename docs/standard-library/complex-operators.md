@@ -1,23 +1,37 @@
 ---
-title: "&lt;complex&gt; 演算子 | Microsoft Docs"
+title: '&lt;complex&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- complex/std::operator!=
+- complex/std::operator&gt;&gt;
+- complex/std::operator&lt;&lt;
+- complex/std::operator*
+- complex/std::operator+
+- complex/std::operator-
+- complex/std::operator/
+- complex/std::operator==
+dev_langs:
+- C++
 ms.assetid: aa282604-dcb9-46a2-bf1d-34c50aa6c4ba
 caps.latest.revision: 11
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: ef11e8bca4971b4fb07669907b2234c90a040ef8
+helpviewer_keywords:
+- std::operator!= (complex)
+- std::operator&gt;&gt; (complex)
+- std::operator&lt;&lt; (complex), std::operator== (complex)
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 92d32d428e109c8e52d25328025e98030d5fc304
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltcomplexgt-operators"></a>&lt;complex&gt; 演算子
+# <a name="ltcomplexgt-operators"></a>&lt;complex&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&gt;&gt;](#op_gt_gt)|[operator&lt;&lt;](#op_lt_lt)|  
@@ -25,7 +39,7 @@ ms.lasthandoff: 04/29/2017
 |[operator/](#op_div)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 2 つの複素数の間の非同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Tests for inequality between two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```  
  
@@ -45,22 +59,22 @@ bool operator!=(
     const complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
+ A complex number or object of its parameter type to be tested for inequality.  
   
  `right`  
- 非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
+ A complex number or object of its parameter type to be tested for inequality.  
   
-### <a name="return-value"></a>戻り値  
- 数値が等しくない場合は **true**、数値が等しい場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the numbers are not equal; **false** if numbers are equal.  
   
-### <a name="remarks"></a>コメント  
- 複素数が等しいのは、その実数部が等しく、かつその虚数部も等しい場合だけです。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ Two complex numbers are equal if and only if their real parts are equal and their imaginary parts are equal. Otherwise, they are unequal.  
   
- データを特定の形式に変換せずに比較テストを実行できるようにするために、操作はオーバーロードされます。  
+ The operation is overloaded so that comparison tests can be executed without the conversion of the data to a particular format.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_NE.cpp  
@@ -161,7 +175,7 @@ The complex numbers cl3b & cr3b are equal.
 ```  
   
 ##  <a name="op_star"></a>  operator*  
- 2 つの複素数を乗算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Multiplies two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```  
  
@@ -181,20 +195,20 @@ complex<Type> operator*(
     const complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 2 つの複素数の 1 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
+ The first of two complex numbers or a number that is of the parameter type for a complex number that is to be multiplied by the * operation.  
   
  `right`  
- 2 つの複素数の 2 番目、または * 演算で乗算される複素数のパラメーター型の数値。  
+ The second of two complex numbers or a number that is of the parameter type for a complex number that is to be multiplied by the * operation.  
   
-### <a name="return-value"></a>戻り値  
- 値と型がパラメーター入力で指定された 2 つの数値を乗算した結果の複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that results from the multiplication of the two numbers whose value and type are specified by the parameter inputs.  
   
-### <a name="remarks"></a>コメント  
- データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。  
+### <a name="remarks"></a>Remarks  
+ The operation is overloaded so that simple arithmetic operations can be executed without the conversion of the data to a particular format.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_mult.cpp  
@@ -255,7 +269,7 @@ int main( )
 ```  
   
 ##  <a name="op_add"></a>  operator+  
- 2 つの複素数を加算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Adds two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```  
  
@@ -278,20 +292,20 @@ template <class Type>
 complex<Type> operator+(const complex<Type>& left);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 2 つの複素数の 1 番目、または + 演算で加算される複素数のパラメーター型の数値。  
+ The first of two complex numbers or a number that is of the parameter type for a complex number that is to be added by the + operation.  
   
  `right`  
- 2 つの複素数の 2 番目、または + 演算で加算される複素数のパラメーター型の数値。  
+ The second of two complex numbers or a number that is of the parameter type for a complex number that is to be added by the + operation.  
   
-### <a name="return-value"></a>戻り値  
- 値と型がパラメーター入力で指定された 2 つの数値を加算した結果の複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that results from the addition of the two numbers whose value and type are specified by the parameter inputs.  
   
-### <a name="remarks"></a>コメント  
- データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。 単項演算子を返します`left`です。  
+### <a name="remarks"></a>Remarks  
+ The operation is overloaded so that simple arithmetic operations can be executed without the conversion of the data to a particular format. The unary operator returns `left`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_add.cpp  
@@ -392,7 +406,7 @@ The argument of cs4 is: 0.927295 radians, which is 53.1301 degrees.
 ```  
   
 ##  <a name="operator-"></a>  operator-  
- 2 つの複素数を減算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Subtracts two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```   
 template <class Type>  
@@ -414,22 +428,22 @@ template <class Type>
 complex<Type> operator-(const complex<Type>& left);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 2 つの複素数の 1 番目、または - 演算で減算される複素数のパラメーター型の数値。  
+ The first of two complex numbers or a number that is of the parameter type for a complex number that is to be subtracted by the - operation.  
   
  `right`  
- 2 つの複素数の 2 番目、または - 演算で減算される複素数のパラメーター型の数値。  
+ The second of two complex numbers or a number that is of the parameter type for a complex number that is to be subtracted by the - operation.  
   
-### <a name="return-value"></a>戻り値  
- 値がパラメーター入力で指定された 2 つの数値の `left` から `right` を減算した結果の複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that results from the subtraction of `right` from `left`, the two numbers whose values are specified by the parameter inputs.  
   
-### <a name="remarks"></a>コメント  
- データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。  
+### <a name="remarks"></a>Remarks  
+ The operation is overloaded so that simple arithmetic operations can be executed without the conversion of the data to a particular format.  
   
- 単項演算子は、複素数の符号を変更し、実数部が入力した数値の実数部の負であり、虚数部が入力した数値の虚数部の負の値を返します。  
+ The unary operator changes the sign of a complex number and returns a value whose real part is the negative of the real part of the number input and whose imaginary part is the negative of the imaginary part of the number input.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_sub.cpp  
@@ -530,7 +544,7 @@ The argument of cs4 is: -2.2143 radians, which is -126.87 degrees.
 ```  
   
 ##  <a name="op_div"></a>  operator/  
- 2 つの複素数を除算します。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Divides two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```   
 template <class Type>  
@@ -549,20 +563,20 @@ complex<Type> operator*(
     const complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 複素数、または / 演算における分母で除算される分子である複素数のパラメーター型の数値。  
+ A complex number or a number that is of the parameter type for a complex number that is the numerator to be divided by the denominator with the / operation.  
   
  `right`  
- 複素数、または / 演算における分子を除算する場合に使用される分母である複素数のパラメーター型の数値。  
+ A complex number or a number that is of the parameter type for a complex number that is the denominator to be used to divide the numerator with the / operation.  
   
-### <a name="return-value"></a>戻り値  
- パラメーター入力で指定された値の分母で分子を除算した結果の複素数。  
+### <a name="return-value"></a>Return Value  
+ The complex number that results from the division of the numerator by the denominator, the values of which are specified by the parameter inputs.  
   
-### <a name="remarks"></a>コメント  
- データを特定の形式に変換せずに単純な算術演算を実行できるようにするために、演算はオーバーロードされます。  
+### <a name="remarks"></a>Remarks  
+ The operation is overloaded so that simple arithmetic operations can be executed without the conversion of the data to a particular format.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_div.cpp  
@@ -646,7 +660,7 @@ The argument of cs3 is: -0.523599 radians, which is -30 degrees.
 ```  
   
 ##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
- 出力ストリームに指定された複素数を挿入します。  
+ Inserts a complex number specified into the output stream.  
   
 ```   
 template <class Type, class Elem, class Traits>  
@@ -655,20 +669,20 @@ basic_ostream<Elem, Traits>& operator<<(
     const complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Ostr`  
- 複素数が入力される出力ストリーム。  
+ The output stream into which the complex number is being entered.  
   
  `right`  
- 出力ストリームに入力される複素数。  
+ The complex number to be entered into the output stream  
   
-### <a name="return-value"></a>戻り値  
- 指定された複素数の値は、デカルト形式 (*実数部, 虚数部*) で `Ostr` に記述されます。  
+### <a name="return-value"></a>Return Value  
+ Writes the value of the specified complex number to the `Ostr` in a Cartesian format: ( *real part, imaginary part* ).  
   
-### <a name="remarks"></a>コメント  
- 出力ストリームはオーバーロードされるため、どの形式の複素数も受け入れられ、その既定の出力形式はデカルト形式となります。  
+### <a name="remarks"></a>Remarks  
+ The output stream is overloaded so that it will accept any form of a complex number, and its default output format is the Cartesian format.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_insert.cpp  
@@ -704,7 +718,7 @@ The argument of c2 is: 0.523599 radians, which is 30 degrees.
 ```  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 2 つの複素数の間の同等性をテストします。その一方または両方が実数部と虚数部の型のサブセットに属している場合があります。  
+ Tests for equality between two complex numbers, one or both of which may belong to the subset of the type for the real and imaginary parts.  
   
 ```  
  
@@ -724,22 +738,22 @@ bool operator==(
     const complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
+ A complex number or object of its parameter type to be tested for inequality.  
   
  `right`  
- 非等値をテストする複素数またはそのパラメーター型のオブジェクト。  
+ A complex number or object of its parameter type to be tested for inequality.  
   
-### <a name="return-value"></a>戻り値  
- 数値が等しい場合は **true**、数値が等しくない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the numbers are equal; **false** if numbers are not equal.  
   
-### <a name="remarks"></a>コメント  
- 複素数が等しいのは、その実数部が等しく、かつその虚数部も等しい場合だけです。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ Two complex numbers are equal if and only if their real parts are equal and their imaginary parts are equal. Otherwise, they are unequal.  
   
- データを特定の形式に変換せずに比較テストを実行できるようにするために、操作はオーバーロードされます。  
+ The operation is overloaded so that comparison tests can be executed without the conversion of the data to a particular format.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_EQ.cpp  
@@ -840,7 +854,7 @@ The complex numbers cl3b & cr3b are equal.
 ```  
   
 ##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
- 入力ストリームから複素数の値を抽出します。  
+ Extracts a complex value from the input stream.  
   
 ```  
  
@@ -850,26 +864,26 @@ basic_istream<Elem, Traits>& operator>>(
    complex<Type>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Istr`  
- 複素数が抽出される入力ストリーム。  
+ The input stream from which the complex number is being extracted.  
   
  `right`  
- 入力ストリームから抽出される複素数。  
+ The complex number that is being extracted from the input stream.  
   
-### <a name="return-value"></a>戻り値  
- 指定した複素数の値を読み取ります`Istr`にそれを返しますと`right`です。  
+### <a name="return-value"></a>Return Value  
+ Reads the value of the specified complex number from `Istr` and returns it into `right`.  
   
-### <a name="remarks"></a>コメント  
- 有効な入力形式は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The valid input formats are  
   
-- *(実数部, 虚数部)*  
+- *( real part, imaginary part )*  
   
-- *(実数部)*  
+- *( real part )*  
   
-- *実数部*  
+- *real part*  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // complex_op_extract.cpp  
@@ -896,7 +910,7 @@ int main( )
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<complex>](../standard-library/complex.md)
 
 

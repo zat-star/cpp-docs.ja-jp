@@ -1,5 +1,5 @@
 ---
-title: "&lt;array&gt; 関数 | Microsoft Docs"
+title: '&lt;array&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -17,22 +17,26 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 326e4fddbf29e706faa4e726ece331a0fe64471b
+helpviewer_keywords:
+- std::array [C++], get
+- std::get [C++]
+- std::swap [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d7bb16b490d20934a263147c0d6e28694e006552
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltarraygt-functions"></a>&lt;array&gt; 関数
-\<array> ヘッダーには、`array` オブジェクトで動作する `get` と`swap` の 2 つの非メンバー関数が含まれています。  
+# <a name="ltarraygt-functions"></a>&lt;array&gt; functions
+The \<array> header includes two non-member functions, `get` and `swap`, that operate on `array` objects.  
   
 |||  
 |-|-|  
 |[get](#get)|[swap](#swap)|  
   
 ##  <a name="get"></a>  get  
-配列の指定した要素への参照を返します。  
+Returns a reference to the specified element of the array.  
   
 ```  
 template <int Index, class T, size_t N>  
@@ -45,20 +49,20 @@ template <int Index, class T, size_t N>
 constexpr T&& get(array<T, N>&& arr) noexcept;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Index`  
- 要素のオフセット。  
+ The element offset.  
   
  `T`  
- 要素の型。  
+ The type of an element.  
   
  `N`  
- 配列の要素数。  
+ The number of elements in the array.  
   
  `arr`  
- 選択する配列。  
+ The array to select from.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 #include <array>   
@@ -91,30 +95,30 @@ int main()
 ```  
   
 ##  <a name="swap"></a>  swap  
-2 つの `array` オブジェクトを交換する `std::swap` の非メンバー テンプレートの特殊化。  
+A non-member template specialization of `std::swap` that swaps two `array` objects.  
   
 ```  
 template <class Ty, std::size_t N>  
 void swap(array<Ty, N>& left, array<Ty, N>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Ty`  
- 要素の型。  
+ The type of an element.  
   
  `N`  
- 配列のサイズ。  
+ The size of the array.  
   
  `left`  
- 交換する最初の配列。  
+ The first array to swap.  
   
  `right`  
- 交換する 2 番目の配列。  
+ The second array to swap.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、`left.swap(right)` を実行します。  
+### <a name="remarks"></a>Remarks  
+ The template function executes `left.swap(right)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__array__swap.cpp   
@@ -160,7 +164,7 @@ int main()
 0 1 2 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<array>](../standard-library/array.md)
 
 

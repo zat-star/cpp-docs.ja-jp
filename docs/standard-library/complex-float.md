@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::complex<float>
-- std.complex<float>
-- complex<float>
+- std::complex<float>", "complex<float>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b3c76d33bcdf1e5882bd09b49c73dcef4d0474b3
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: c6dcc25f08b2a57e9992b9e85dc3ff0b3d39af9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="complexltfloatgt"></a>complex&lt;float&gt;
-順序付けされたオブジェクトのペア (いずれも **float*** *型) を格納するオブジェクトについて説明します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。  
+Describes an object that stores an ordered pair of objects both of type **float***,* the first representing the real part of a complex number and the second representing the imaginary part.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <>
@@ -67,25 +65,25 @@ constexpr complex(
 };
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `_RealVal`  
- 構築される複素数の実数部の **float** 型の値。  
+ The value of type **float** for the real part of the complex number being constructed.  
   
  `_ImagVal`  
- 構築される複素数の虚数部の **float** 型の値。  
+ The value of type **float** for the imaginary part of the complex number being constructed.  
   
  `complexNum`  
- **double** 型または `long double` 型で、その実数部と虚数部の値が、構築される **float** 型の複素数の初期化に使用される複素数。  
+ The complex number of type **double** or of type `long double` whose real and imaginary parts are used to initialize a complex number of type **float** being constructed.  
   
-## <a name="return-value"></a>戻り値  
- **float** 型の複素数。  
+## <a name="return-value"></a>Return Value  
+ A complex number of type **float**.  
   
-## <a name="remarks"></a>コメント  
- テンプレート クラス complex の **float** 型の complex クラスに対する明示的な特殊化と、テンプレート クラスによって定義されるコンストラクター内でのみ使用するテンプレート クラスとは異なります。 **float** から **double** への変換は暗黙的に行えますが、安全性の低い **float** から `long double` への変換は **explicit** でなければなりません。 **explicit** を使用すると、割り当て構文を使用した型変換による開始は禁止されます。  
+## <a name="remarks"></a>Remarks  
+ The explicit specialization of the template class complex to a complex class of type **float** differs from the template class only in the constructors it defines. The conversion from **float** to **double** is allowed to be implicit, but the less safe conversion from **float** to `long double` is required to be **explicit**. The use of **explicit** rules out the initiation with type conversion using assignment syntax.  
   
- テンプレート クラス `complex` の詳細については、「[complex クラス](../standard-library/complex-class.md)」を参照してください。 テンプレート クラス `complex` のメンバー一覧については、以下を参照してください。  
+ For more information on the template class `complex`, see [complex Class](../standard-library/complex-class.md). For a list of members of the template class `complex`, see .  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // complex_comp_flt.cpp  
@@ -140,14 +138,14 @@ Argument of c3 is recovered from c3 using:
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー**: \<complex>  
+## <a name="requirements"></a>Requirements  
+ **Header**: \<complex>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [complex クラス](../standard-library/complex-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [complex Class](../standard-library/complex-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

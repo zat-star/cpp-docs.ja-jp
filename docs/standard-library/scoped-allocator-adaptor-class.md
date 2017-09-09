@@ -1,5 +1,5 @@
 ---
-title: "scoped_allocator_adaptor クラス | Microsoft Docs"
+title: scoped_allocator_adaptor Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- scoped_allocator_adaptor
 - scoped_allocator/std::scoped_allocator_adaptor
 - scoped_allocator/std::scoped_allocator_adaptor::rebind Struct
 - scoped_allocator/std::scoped_allocator_adaptor::allocate
@@ -23,7 +22,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- scoped_allocator_adaptor Class
+- std::scoped_allocator_adaptor
+- std::scoped_allocator_adaptor::allocate
+- std::scoped_allocator_adaptor::construct
+- std::scoped_allocator_adaptor::deallocate
+- std::scoped_allocator_adaptor::destroy
+- std::scoped_allocator_adaptor::inner_allocator
+- std::scoped_allocator_adaptor::max_size
+- std::scoped_allocator_adaptor::outer_allocator
+- std::scoped_allocator_adaptor::select_on_container_copy_construction
 ms.assetid: 0d9b06a1-9a4a-4669-9470-8805cae48e89
 caps.latest.revision: 10
 author: corob-msft
@@ -43,110 +50,110 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 3fa8c1304da253183c7f201811238f14d0da3193
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cbf58ee13f1eab65f7fe76996cb7840c88059a85
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="scopedallocatoradaptor-class"></a>scoped_allocator_adaptor クラス
-アロケーターの入れ子を表します。  
+# <a name="scopedallocatoradaptor-class"></a>scoped_allocator_adaptor Class
+Represents a nest of allocators.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 template <class Outer, class... Inner>  
 class scoped_allocator_adaptor;  
 ```  
   
-## <a name="remarks"></a>コメント  
- このテンプレート クラスは、1 つまたは複数のアロケーターの入れ子をカプセル化します。 このような各クラスは、`outer_allocator_type` 型の最も外側のアロケーターである `Outer` のシノニムを持ちます。これは、`scoped_allocator_adaptor` オブジェクトのパブリック ベースです。 `Outer` はコンテナーで使用されるメモリの割り当てに使用されます。 このアロケーター基本オブジェクトへの参照を取得するには、`outer_allocator` を呼び出します。  
+## <a name="remarks"></a>Remarks  
+ The template class encapsulates a nest of one or more allocators. Each such class has an outermost allocator of type `outer_allocator_type`, a synonym for `Outer`, which is a public base of the `scoped_allocator_adaptor` object. `Outer` is used to allocate memory to be used by a container. You can obtain a reference to this allocator base object by calling `outer_allocator`.  
   
- 入れ子の残りの部分には `inner_allocator_type` 型が含まれます。 内部のアロケーターを使用して、コンテナー内の要素にメモリを割り当てます。 格納されているこの型のオブジェクトへの参照を取得するには、`inner_allocator` を呼び出します。 `Inner...` が空ではない場合、`inner_allocator_type` は型 `scoped_allocator_adaptor<Inner...>` を持ち、`inner_allocator` はメンバー オブジェクトを指定します。 それ以外の場合、`inner_allocator_type` は型 `scoped_allocator_adaptor<Outer>` を持ち、`inner_allocator` はオブジェクト全体を指定します。  
+ The remainder of the nest has type `inner_allocator_type`. An inner allocator is used to allocate memory for elements within a container. You can obtain a reference to the stored object of this type by calling `inner_allocator`. If `Inner...` is not empty, `inner_allocator_type` has type `scoped_allocator_adaptor<Inner...>`, and `inner_allocator` designates a member object. Otherwise, `inner_allocator_type` has type `scoped_allocator_adaptor<Outer>`, and `inner_allocator` designates the entire object.  
   
- 入れ子は、必要に応じて、最も内側のカプセル化されたアロケーターをレプリケートする任意の深さがあるかのように動作します。  
+ The nest behaves as if it has arbitrary depth, replicating its innermost encapsulated allocator as needed.  
   
- このテンプレート クラスの動作を説明する場合、表示されるインターフェイスの一部ではないいくつかの概念が役立ちます。 *最も外側のアロケーター*は、コンストラクトのすべての呼び出しを仲介し、メソッドを破棄します。 再帰関数 `OUTERMOST(X)` で効率的に定義されます。ここで `OUTERMOST(X)` は、次のいずれかです。  
+ Several concepts that are not a part of the visible interface aid in describing the behavior of this template class. An *outermost allocator* mediates all calls to the construct and destroy methods. It is effectively defined by the recursive function `OUTERMOST(X)`, where `OUTERMOST(X)` is one of the following.  
   
--   `X.outer_allocator()` が整形式である場合、`OUTERMOST(X)` は `OUTERMOST(X.outer_allocator())` です。  
+-   If `X.outer_allocator()` is well formed, then `OUTERMOST(X)` is `OUTERMOST(X.outer_allocator())`.  
   
--   それ以外の場合、`OUTERMOST(X)` は `X` です。  
+-   Otherwise, `OUTERMOST(X)` is `X`.  
   
- 説明のために 3 つの型が定義されています。  
+ Three types are defined for the sake of exposition:  
   
-|型|説明|  
+|Type|Description|  
 |----------|-----------------|  
-|`Outermost`|`OUTERMOST(*this)` の型。|  
+|`Outermost`|The type of `OUTERMOST(*this)`.|  
 |`Outermost_traits`|`allocator_traits<Outermost>`|  
 |`Outer_traits`|`allocator_traits<Outer>`|  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[scoped_allocator_adaptor](#scoped_allocator_adaptor)|`scoped_allocator_adaptor` オブジェクトを構築します。|  
+|[scoped_allocator_adaptor](#scoped_allocator_adaptor)|Constructs a `scoped_allocator_adaptor` object.|  
   
-### <a name="typedefs"></a>Typedef  
+### <a name="typedefs"></a>Typedefs  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`const_pointer`|この型は、アロケーター `Outer` に関連付けられている `const_pointer` のシノニムです。|  
-|`const_void_pointer`|この型は、アロケーター `Outer` に関連付けられている `const_void_pointer` のシノニムです。|  
-|`difference_type`|この型は、アロケーター `Outer` に関連付けられている `difference_type` のシノニムです。|  
-|`inner_allocator_type`|この型は、入れ子になったアダプター `scoped_allocator_adaptor<Inner...>` の型のシノニムです。|  
-|`outer_allocator_type`|この型は、基本アロケーター `Outer` の型のシノニムです。|  
-|`pointer`|この型は、アロケーター `Outer` に関連付けられている `pointer` のシノニムです。|  
-|`propagate_on_container_copy_assignment`|`Outer_traits::propagate_on_container_copy_assignment` が true を保持するか、または `inner_allocator_type::propagate_on_container_copy_assignment` が true を保持する場合にのみ、この型は true を保持します。|  
-|`propagate_on_container_move_assignment`|`Outer_traits::propagate_on_container_move_assignment` が true を保持するか、または `inner_allocator_type::propagate_on_container_move_assignment` が true を保持する場合にのみ、この型は true を保持します。|  
-|`propagate_on_container_swap`|`Outer_traits::propagate_on_container_swap` が true を保持するか、または `inner_allocator_type::propagate_on_container_swap` が true を保持する場合にのみ、この型は true を保持します。|  
-|`size_type`|この型は、アロケーター `Outer` に関連付けられている `size_type` のシノニムです。|  
-|`value_type`|この型は、アロケーター `Outer` に関連付けられている `value_type` のシノニムです。|  
-|`void_pointer`|この型は、アロケーター `Outer` に関連付けられている `void_pointer` のシノニムです。|  
+|`const_pointer`|This type is a synonym for the `const_pointer` that is associated with the allocator `Outer`.|  
+|`const_void_pointer`|This type is a synonym for the `const_void_pointer` that is associated with the allocator `Outer`.|  
+|`difference_type`|This type is a synonym for the `difference_type` that is associated with the allocator `Outer`.|  
+|`inner_allocator_type`|This type is a synonym for the type of the nested adaptor `scoped_allocator_adaptor<Inner...>`.|  
+|`outer_allocator_type`|This type is a synonym for the type of the base allocator `Outer`.|  
+|`pointer`|This type is a synonym for the `pointer` associated with the allocator `Outer`.|  
+|`propagate_on_container_copy_assignment`|The type holds true only if `Outer_traits::propagate_on_container_copy_assignment` holds true or `inner_allocator_type::propagate_on_container_copy_assignment` holds true.|  
+|`propagate_on_container_move_assignment`|The type holds true only if `Outer_traits::propagate_on_container_move_assignment` holds true or `inner_allocator_type::propagate_on_container_move_assignment` holds true.|  
+|`propagate_on_container_swap`|The type holds true only if `Outer_traits::propagate_on_container_swap` holds true or `inner_allocator_type::propagate_on_container_swap` holds true.|  
+|`size_type`|This type is a synonym for the `size_type` associated with the allocator `Outer`.|  
+|`value_type`|This type is a synonym for the `value_type` associated with the allocator `Outer`.|  
+|`void_pointer`|This type is a synonym for the `void_pointer` associated with the allocator `Outer`.|  
   
-### <a name="structs"></a>構造体  
+### <a name="structs"></a>Structs  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[scoped_allocator_adaptor::rebind 構造体](#rebind_struct)|`scoped_allocator_adaptor\<Other, Inner...>` のシノニムとして `Outer::rebind\<Other>::other` 型を定義します。|  
+|[scoped_allocator_adaptor::rebind Struct](#rebind_struct)|Defines the type `Outer::rebind\<Other>::other` as a synonym for `scoped_allocator_adaptor\<Other, Inner...>`.|  
   
-### <a name="methods"></a>メソッド  
+### <a name="methods"></a>Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[allocate](#allocate)|`Outer` アロケーターを使用してメモリを割り当てます。|  
-|[construct](#construct)|オブジェクトを構築します。|  
-|[deallocate](#deallocate)|外側のアロケーターを使用してオブジェクトの割り当てを解除します。|  
-|[destroy](#destroy)|指定したオブジェクトを破棄します。|  
-|[inner_allocator](#inner_allocator)|`inner_allocator_type` 型の格納されているオブジェクトへの参照を取得します。|  
-|[max_size](#max_size)|外側のアロケーターが割り当てることができるオブジェクトの最大数を指定します。|  
-|[outer_allocator](#outer_allocator)|`outer_allocator_type` 型の格納されているオブジェクトへの参照を取得します。|  
-|[select_on_container_copy_construction](#select_on_container_copy_construction)|対応するアロケーターごとに `select_on_container_copy_construction` を呼び出すことによって、格納されている各アロケーター オブジェクトが初期化された新しい `scoped_allocator_adaptor` オブジェクトを作成します。|  
+|[allocate](#allocate)|Allocates memory by using the `Outer` allocator.|  
+|[construct](#construct)|Constructs an object.|  
+|[deallocate](#deallocate)|Deallocates objects by using the outer allocator.|  
+|[destroy](#destroy)|Destroys a specified object.|  
+|[inner_allocator](#inner_allocator)|Retrieves a reference to the stored object of type `inner_allocator_type`.|  
+|[max_size](#max_size)|Determines the maximum number of objects that can be allocated by the outer allocator.|  
+|[outer_allocator](#outer_allocator)|Retrieves a reference to the stored object of type `outer_allocator_type`.|  
+|[select_on_container_copy_construction](#select_on_container_copy_construction)|Creates a new `scoped_allocator_adaptor` object with each stored allocator object initialized by calling `select_on_container_copy_construction` for each corresponding allocator.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<scoped_allocator>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<scoped_allocator>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="allocate"></a>scoped_allocator_adaptor::allocate
- `Outer` アロケーターを使用してメモリを割り当てます。  
+##  <a name="allocate"></a>  scoped_allocator_adaptor::allocate
+ Allocates memory by using the `Outer` allocator.  
   
 ```cpp  
 pointer allocate(size_type count);pointer allocate(size_type count, const_void_pointer hint);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 十分な記憶域を割り当てる要素の数。  
+ The number of elements for which sufficient storage is to be allocated.  
   
  `hint`  
- 要求の前に割り当てられたオブジェクトのアドレスを見つけることによって、アロケーター オブジェクトを支援できるポインター。  
+ A pointer that might assist the allocator object by locating the address of an object allocated prior to the request.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメンバー関数は `Outer_traits::allocate(outer_allocator(), count)` を返します。 2 番目のメンバー関数は `Outer_traits::allocate(outer_allocator(), count, hint)` を返します。  
+### <a name="return-value"></a>Return Value  
+ The first member function returns `Outer_traits::allocate(outer_allocator(), count)`. The second member function returns `Outer_traits::allocate(outer_allocator(), count, hint)`.  
   
-##  <a name="construct"></a>scoped_allocator_adaptor::construct
- オブジェクトを構築します。  
+##  <a name="construct"></a>  scoped_allocator_adaptor::construct
+ Constructs an object.  
   
 ```cpp  
 template <class Ty, class... Atypes>  
@@ -171,104 +178,104 @@ template <class Ty1, class Ty2, class Uy1, class Uy2>
 void construct(pair<Ty1, Ty2>* ptr, pair<Uy1, Uy2>&& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- オブジェクトが構築されるメモリの場所へのポインター。  
+ A pointer to the memory location where the object is to be constructed.  
   
  `args`  
- 引数リスト。  
+ A list of arguments.  
   
  `first`  
- ペアの最初の型のオブジェクト。  
+ An object of the first type in a pair.  
   
  `second`  
- ペアの 2 番目の型のオブジェクト。  
+ An object of the second type in a pair.  
   
  `right`  
- 移動またはコピーされる既存のオブジェクト。  
+ An existing object to be moved or copied.  
   
-### <a name="remarks"></a>コメント  
- `Outermost_traits::construct(OUTERMOST(*this), ptr, xargs...)` を呼び出して、最初のメソッドで `ptr` にオブジェクトを構築します。ここで `xargs...` は、次のいずれかです。  
+### <a name="remarks"></a>Remarks  
+ The first method constructs the object at `ptr` by calling `Outermost_traits::construct(OUTERMOST(*this), ptr, xargs...)`, where `xargs...` is one of the following.  
   
--   `uses_allocator<Ty, inner_allocator_type>` が false を保持する場合、`xargs...` は `args...` です。  
+-   If `uses_allocator<Ty, inner_allocator_type>` holds false, then `xargs...` is `args...`.  
   
--   `uses_allocator<Ty, inner_allocator_type>` が true を保持し、`is_constructible<Ty, allocator_arg_t, inner_allocator_type, args...>` が true を保持する場合、`xargs...` は `allocator_arg, inner_allocator(), args...` です。  
+-   If `uses_allocator<Ty, inner_allocator_type>` holds true, and `is_constructible<Ty, allocator_arg_t, inner_allocator_type, args...>` holds true, then `xargs...` is `allocator_arg, inner_allocator(), args...`.  
   
--   `uses_allocator<Ty, inner_allocator_type>` が true を保持し、`is_constructible<Ty, args..., inner_allocator()>` が true を保持する場合、`xargs...` は `args..., inner_allocator()` です。  
+-   If `uses_allocator<Ty, inner_allocator_type>` holds true, and `is_constructible<Ty, args..., inner_allocator()>` holds true, then `xargs...` is `args..., inner_allocator()`.  
   
- `Outermost_traits::construct(OUTERMOST(*this), &ptr->first, xargs...)` (`xargs...` は前出のリストのように変更された `first...`) および `Outermost_traits::construct(OUTERMOST(*this), &ptr->second, xargs...)` (`xargs...` は前出のリストのように変更された `second...`) を呼び出して、2 番目のメソッドで `ptr` にペア オブジェクトを構築します。  
+ The second method constructs the pair object at `ptr` by calling `Outermost_traits::construct(OUTERMOST(*this), &ptr->first, xargs...)`, where `xargs...` is `first...` modified as in the above list, and `Outermost_traits::construct(OUTERMOST(*this), &ptr->second, xargs...)`, where `xargs...` is `second...` modified as in the above list.  
   
- 3 番目のメソッドの動作は `this->construct(ptr, piecewise_construct, tuple<>, tuple<>)` と同じです。  
+ The third method behaves the same as `this->construct(ptr, piecewise_construct, tuple<>, tuple<>)`.  
   
- 4 番目のメソッドの動作は `this->construct(ptr, piecewise_construct, forward_as_tuple(std::forward<Uy1>(first), forward_as_tuple(std::forward<Uy2>(second))` と同じです。  
+ The fourth method behaves the same as `this->construct(ptr, piecewise_construct, forward_as_tuple(std::forward<Uy1>(first), forward_as_tuple(std::forward<Uy2>(second))`.  
   
- 5 番目のメソッドの動作は `this->construct(ptr, piecewise_construct, forward_as_tuple(right.first), forward_as_tuple(right.second))` と同じです。  
+ The fifth method behaves the same as `this->construct(ptr, piecewise_construct, forward_as_tuple(right.first), forward_as_tuple(right.second))`.  
   
- 6 番目のメソッドの動作は `this->construct(ptr, piecewise_construct, forward_as_tuple(std::forward<Uy1>(right.first), forward_as_tuple(std::forward<Uy2>(right.second))` と同じです。  
+ The sixth method behaves the same as `this->construct(ptr, piecewise_construct, forward_as_tuple(std::forward<Uy1>(right.first), forward_as_tuple(std::forward<Uy2>(right.second))`.  
   
-##  <a name="deallocate"></a>scoped_allocator_adaptor::deallocate
- 外側のアロケーターを使用してオブジェクトの割り当てを解除します。  
+##  <a name="deallocate"></a>  scoped_allocator_adaptor::deallocate
+ Deallocates objects by using the outer allocator.  
   
 ```cpp  
 void deallocate(pointer ptr, size_type count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 割り当て解除されるオブジェクトの開始位置へのポインター。  
+ A pointer to the starting location of the objects to be deallocated.  
   
  `count`  
- 割り当てを解除するオブジェクトの数。  
+ The number of objects to deallocate.  
   
-##  <a name="destroy"></a>scoped_allocator_adaptor::destroy
- 指定したオブジェクトを破棄します。  
+##  <a name="destroy"></a>  scoped_allocator_adaptor::destroy
+ Destroys a specified object.  
   
 ```cpp  
 template <class Ty>  
 void destroy(Ty* ptr)  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 破棄するオブジェクトへのポインター。  
+ A pointer to the object to be destroyed.  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
  `Outermost_traits::destroy(OUTERMOST(*this), ptr)`  
   
-##  <a name="inner_allocator"></a>scoped_allocator_adaptor::inner_allocator
- `inner_allocator_type` 型の格納されているオブジェクトへの参照を取得します。  
+##  <a name="inner_allocator"></a>  scoped_allocator_adaptor::inner_allocator
+ Retrieves a reference to the stored object of type `inner_allocator_type`.  
   
 ```cpp  
 inner_allocator_type& inner_allocator() noexcept;  
 const inner_allocator_type& inner_allocator() const noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `inner_allocator_type` 型の格納されているオブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the stored object of type `inner_allocator_type`.  
   
-##  <a name="max_size"></a>scoped_allocator_adaptor::max_size
- 外側のアロケーターが割り当てることができるオブジェクトの最大数を指定します。  
+##  <a name="max_size"></a>  scoped_allocator_adaptor::max_size
+ Determines the maximum number of objects that can be allocated by the outer allocator.  
   
 ```cpp  
 size_type max_size();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
  `Outer_traits::max_size(outer_allocator())`  
   
-##  <a name="outer_allocator"></a>scoped_allocator_adaptor::outer_allocator
- `outer_allocator_type` 型の格納されているオブジェクトへの参照を取得します。  
+##  <a name="outer_allocator"></a>  scoped_allocator_adaptor::outer_allocator
+ Retrieves a reference to the stored object of type `outer_allocator_type`.  
   
 ```cpp  
 outer_allocator_type& outer_allocator() noexcept;  
 const outer_allocator_type& outer_allocator() const noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `outer_allocator_type` 型の格納されているオブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the stored object of type `outer_allocator_type`.  
   
-##  <a name="rebind_struct"></a>  scoped_allocator_adaptor::rebind 構造体  
- `scoped_allocator_adaptor\<Other, Inner...>` のシノニムとして `Outer::rebind\<Other>::other` 型を定義します。  
+##  <a name="rebind_struct"></a>  scoped_allocator_adaptor::rebind Struct  
+ Defines the type `Outer::rebind\<Other>::other` as a synonym for `scoped_allocator_adaptor\<Other, Inner...>`.  
   
 struct rebind{  
    typedef Other_traits::rebind\<Other>  
@@ -276,8 +283,8 @@ struct rebind{
    typedef scoped_allocator_adaptor\<Other_alloc, Inner...> other;  
    };  
   
-##  <a name="scoped_allocator_adaptor"></a>  scoped_allocator_adaptor::scoped_allocator_adaptor コンストラクター  
- `scoped_allocator_adaptor` オブジェクトを構築します。  
+##  <a name="scoped_allocator_adaptor"></a>  scoped_allocator_adaptor::scoped_allocator_adaptor Constructor  
+ Constructs a `scoped_allocator_adaptor` object.  
   
 ```cpp  
 scoped_allocator_adaptor();
@@ -294,31 +301,31 @@ scoped_allocator_adaptor(Outer2&& al,
     const Inner&... rest) noexcept;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 既存の `scoped_allocator_adaptor`。  
+ An existing `scoped_allocator_adaptor`.  
   
  `al`  
- 外側のアロケーターとして使用する既存のアロケーター。  
+ An existing allocator to be used as the outer allocator.  
   
  `rest`  
- 内側のアロケーターとして使用するアロケーターのリスト。  
+ A list of allocators to be used as the inner allocators.  
   
-### <a name="remarks"></a>コメント  
- 1 番目のコンストラクターは、格納されているアロケーター オブジェクトを既定で構築します。 次の 3 つのコンストラクターは、それぞれ `right` 内の対応するオブジェクトから、格納されているアロケーター オブジェクトを構築します。 最後のコンストラクターは、引数リストの対応する引数から、格納されているアロケーター オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ The first constructor default constructs its stored allocator objects. Each of the next three constructors constructs its stored allocator objects from the corresponding objects in `right`. The last constructor constructs its stored allocator objects from the corresponding arguments in the argument list.  
   
-##  <a name="select_on_container_copy_construction"></a>scoped_allocator_adaptor::select_on_container_copy_construction
- 対応するアロケーターごとに `select_on_container_copy_construction` を呼び出すことによって、格納されている各アロケーター オブジェクトが初期化された新しい `scoped_allocator_adaptor` オブジェクトを作成します。  
+##  <a name="select_on_container_copy_construction"></a>  scoped_allocator_adaptor::select_on_container_copy_construction
+ Creates a new `scoped_allocator_adaptor` object with each stored allocator object initialized by calling `select_on_container_copy_construction` for each corresponding allocator.  
   
 ```cpp  
 scoped_allocator_adaptor select_on_container_copy_construction();
 ```  
   
-### <a name="return-value"></a>戻り値  
- このメソッドは、実質的に `scoped_allocator_adaptor(Outer_traits::select_on_container_copy_construction(*this), inner_allocator().select_on_container_copy_construction())` を返します。 結果は、対応するアロケーター `al` に対して `al.select_on_container_copy_construction()` を呼び出すことによって、格納されている各アロケーター オブジェクトが初期化された新しい `scoped_allocator_adaptor` オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ This method effectively returns `scoped_allocator_adaptor(Outer_traits::select_on_container_copy_construction(*this), inner_allocator().select_on_container_copy_construction())`. The result is a new `scoped_allocator_adaptor` object with each stored allocator object initialized by calling `al.select_on_container_copy_construction()` for the corresponding allocator `al`.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)
 
 
 

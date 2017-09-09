@@ -1,5 +1,5 @@
 ---
-title: "system_clock 構造体 | Microsoft Docs"
+title: system_clock Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -36,122 +36,122 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 053b2930d25bb7b1ec073764801530860511ac1b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 79e5cf6fa1d5fd952b74fcc2c444f6c169778247
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="systemclock-structure"></a>system_clock 構造体
-システムのリアルタイム クロックに基づく*クロックの型*を表します。  
+# <a name="systemclock-structure"></a>system_clock Structure
+Represents a *clock type* that is based on the real-time clock of the system.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct system_clock;  
 ```  
   
-## <a name="remarks"></a>コメント  
- *クロック型*は、UTC で現在時刻を取得するために使用されます。 型は [duration](../standard-library/duration-class.md) とクラス テンプレート [time_point](../standard-library/time-point-class.md) のインスタンス化を具体化し、時間を返す静的メンバー関数 `now()` を定義します。  
+## <a name="remarks"></a>Remarks  
+ A *clock type* is used to obtain the current time as UTC. The type embodies an instantiation of [duration](../standard-library/duration-class.md) and the class template [time_point](../standard-library/time-point-class.md), and defines a static member function `now()` that returns the time.  
   
- `now()` への最初の呼び出しによって返される値が、`now()` への以降の呼び出しによって返される値以下である場合、クロックは常に*単調*になります。  
+ A clock is *monotonic* if the value that is returned by a first call to `now()` is always less than or equal to the value that is returned by a subsequent call to `now()`.  
   
- *単調*で、クロックのティック間の時間が一定のクロックは*安定しています*。  
+ A clock is *steady* if it is *monotonic* and if the time between clock ticks is constant.  
   
- この実装では、`system_clock` は `high_resolution_clock` と同じ意味です。  
+ In this implementation, a `system_clock` is synonymous with a `high_resolution_clock`.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-typedefs"></a>パブリック typedef  
+### <a name="public-typedefs"></a>Public Typedefs  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`system_clock::duration`|`duration<rep, period>` と同義。|  
-|`system_clock::period`|`duration` に含まれるインスタンス化のティック間隔を表すために使用される型と同義です。|  
-|`system_clock::rep`|`duration` に含まれるインスタンス化のクロック ティックの数を表すために使用される型と同義です。|  
-|`system_clock::time_point`|`time_point<Clock, duration>` と同義です。ここで、`Clock` はクロック型自体または同じエポックに基づいた別のクロック型と同義で、同じ入れ子になった `duration` 型を持っています。|  
+|`system_clock::duration`|A synonym for `duration<rep, period>`.|  
+|`system_clock::period`|A synonym for the type that is used to represent the tick period in the contained instantiation of `duration`.|  
+|`system_clock::rep`|A synonym for the type that is used to represent the number of clock ticks in the contained instantiation of `duration`.|  
+|`system_clock::time_point`|A synonym for `time_point<Clock, duration>`, where `Clock` is a synonym for either the clock type itself or another clock type that is based on the same epoch and has the same nested `duration` type.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[from_time_t](#from_time_t)|静的。 指定された時間に最も近い `time_point` を返します。|  
-|[今](#now)|静的。 現在の時間を返します。|  
-|[to_time_t](#to_time_t)|静的。 指定された `time_t` に最も近い `time_point` オブジェクトを返します。|  
+|[from_time_t](#from_time_t)|Static. Returns a `time_point` that most closely approximates a specified time.|  
+|[now](#now)|Static. Returns the current time.|  
+|[to_time_t](#to_time_t)|Static. Returns a `time_t` object that most closely approximates a specified `time_point`.|  
   
-### <a name="public-constants"></a>パブリック定数  
+### <a name="public-constants"></a>Public Constants  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[system_clock::is_monotonic 定数](#is_monotonic_constant)|クロック型が単調かどうかを指定します。|  
-|[system_clock::is_steady 定数](#is_steady_constant)|クロック型が一定かどうかを指定します。|  
+|[system_clock::is_monotonic Constant](#is_monotonic_constant)|Specifies whether the clock type is monotonic.|  
+|[system_clock::is_steady Constant](#is_steady_constant)|Specifies whether the clock type is steady.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<chrono >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<chrono>  
   
- **名前空間:** std::chrono  
+ **Namespace:** std::chrono  
   
-##  <a name="from_time_t"></a>system_clock::from_time_t
- `Tm` によって表される時刻に最も近い [time_point](../standard-library/time-point-class.md) を返す静的メソッド。  
+##  <a name="from_time_t"></a>  system_clock::from_time_t
+ Static method that returns a [time_point](../standard-library/time-point-class.md) that most closely approximates the time that is represented by `Tm`.  
   
 ```  
 static time_point from_time_t(time_t Tm) noexcept;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Tm`  
- [time_t](../c-runtime-library/standard-types.md) オブジェクト  
+ A [time_t](../c-runtime-library/standard-types.md) object.  
   
-##  <a name="is_monotonic_constant"></a>  system_clock::is_monotonic 定数  
- クロックの型が単調かどうかを指定する静的な値。  
+##  <a name="is_monotonic_constant"></a>  system_clock::is_monotonic Constant  
+ Static value that specifies whether the clock type is monotonic.  
   
 ```  
 static const bool is_monotonic = false;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この実装では、`system_clock::is_monotonic` は常に `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ In this implementation, `system_clock::is_monotonic` always returns `false`.  
   
-### <a name="remarks"></a>コメント  
- `now()` への最初の呼び出しによって返される値が、`now()` への以降の呼び出しによって返される値以下である場合、クロックは常に*単調*になります。  
+### <a name="remarks"></a>Remarks  
+ A clock is *monotonic* if the value that is returned by a first call to `now()` is always less than or equal to the value that is returned by a subsequent call to `now()`.  
   
-##  <a name="is_steady_constant"></a>  system_clock::is_steady 定数  
- クロックの型が*安定している*かどうかを指定する静的な値。  
+##  <a name="is_steady_constant"></a>  system_clock::is_steady Constant  
+ Static value that specifies whether the clock type is *steady*.  
   
 ```  
 static const bool is_steady = false;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この実装では、`system_clock::is_steady` は常に `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ In this implementation, `system_clock::is_steady` always returns `false`.  
   
-### <a name="remarks"></a>コメント  
- [単調](#is_monotonic_constant)で、クロックのティック間の時間が一定のクロックは*安定しています*。  
+### <a name="remarks"></a>Remarks  
+ A clock is *steady* if it is [monotonic](#is_monotonic_constant) and if the time between clock ticks is constant.  
   
-##  <a name="now"></a>system_clock::now
- 現在時刻を返す静的メソッドです。  
+##  <a name="now"></a>  system_clock::now
+ Static method that returns the current time.  
   
 ```  
 static time_point now() noexcept;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在時刻を表す [time_point](../standard-library/time-point-class.md) オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A [time_point](../standard-library/time-point-class.md) object that represents the current time.  
   
-##  <a name="to_time_t"></a>system_clock::to_time_t
- `Time` によって表される時刻に最も近い [time_t](../c-runtime-library/standard-types.md) を返す静的メソッド。  
+##  <a name="to_time_t"></a>  system_clock::to_time_t
+ Static method that returns a [time_t](../c-runtime-library/standard-types.md) that most closely approximates the time that is represented by `Time`.  
   
 ```  
 static time_t to_time_t(const time_point& Time) noexcept;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `Time`  
- [time_point](../standard-library/time-point-class.md) オブジェクト。  
+ A [time_point](../standard-library/time-point-class.md) object.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)   
- [steady_clock 構造体](../standard-library/steady-clock-struct.md)
+ [steady_clock struct](../standard-library/steady-clock-struct.md)
 

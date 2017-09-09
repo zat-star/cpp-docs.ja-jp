@@ -1,5 +1,5 @@
 ---
-title: "stack クラス | Microsoft Docs"
+title: stack Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- stack
 - stack/std::stack::container_type
 - stack/std::stack::size_type
 - stack/std::stack::value_type
@@ -21,8 +20,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- stack, stack class
-- stack class
+- std::stack [C++], container_type
+- std::stack [C++], size_type
+- std::stack [C++], value_type
+- std::stack [C++], empty
+- std::stack [C++], pop
+- std::stack [C++], push
+- std::stack [C++], size
+- std::stack [C++], top
 ms.assetid: 02151c1e-eab0-41b8-be94-a839ead78ecf
 caps.latest.revision: 22
 author: corob-msft
@@ -42,98 +47,98 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 57f6d4a94348e8565a8c8e21b248335d9d9c651d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: f09ff7fca199d2d30c35954a69ee292ee61e151e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="stack-class"></a>stack クラス
-基になるコンテナー型に最も新しく追加された要素へのアクセスを制限することにより、機能の制限を提供するテンプレート コンテナーのアダプター クラスです。 stack クラスは、スタック操作のみがコンテナーで実行されることが明確であることが重要な場合に使用されます。  
+# <a name="stack-class"></a>stack Class
+A template container adaptor class that provides a restriction of functionality limiting access to the element most recently added to some underlying container type. The stack class is used when it is important to be clear that only stack operations are being performed on the container.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Type, class Container= deque <Type>>  
 class stack  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *Type*  
- スタックに格納される要素のデータ型。  
+ The element data type to be stored in the stack.  
   
  `Container`  
- スタックを実装するために使用する基になるコンテナーの型。 既定値は、クラス `deque`*\<Type>* です。  
+ The type of the underlying container used to implement the stack. The default value is the class `deque`*\<Type>*.  
   
-## <a name="remarks"></a>コメント  
- stack オブジェクトの最初のテンプレート パラメーターで指定するクラス **Type** の要素は [value_type](#value_type) と同義で、2 番目のテンプレート パラメーターで指定する基になるコンテナー クラス **Container** 内の要素の型と一致する必要があります。 **Type** は割り当て可能にして、対象の型のオブジェクトをコピーできるように、および対象の型の変数に値を割り当てられるようにする必要があります。  
+## <a name="remarks"></a>Remarks  
+ The elements of class **Type** stipulated in the first template parameter of a stack object are synonymous with [value_type](#value_type) and must match the type of element in the underlying container class **Container** stipulated by the second template parameter. The **Type** must be assignable, so that it is possible to copy objects of that type and to assign values to variables of that type.  
   
- スタックに適した基になるコンテナー クラスには、[deque](../standard-library/deque-class.md)、[list クラス](../standard-library/list-class.md)、および [vector クラス](../standard-library/vector-class.md)、または **back**、`push_back`、および `pop_back` の各操作をサポートするその他すべてのシーケンス コンテナーがあります。 基になるコンテナー クラスは、コンテナー アダプター内にカプセル化されます。コンテナー アダプターは、限られた一連のシーケンス コンテナーのメンバーの関数のみをパブリック インターフェイスとして公開します。  
+ Suitable underlying container classes for stack include [deque](../standard-library/deque-class.md), [list class](../standard-library/list-class.md), and [vector class](../standard-library/vector-class.md), or any other sequence container that supports the operations of **back**, `push_back`, and `pop_back`. The underlying container class is encapsulated within the container adaptor, which exposes only the limited set of the sequence container member functions as a public interface.  
   
- stack オブジェクトは、クラス **Type** の要素が等価比較できる場合にのみ等価比較でき、クラス **Type** の要素が小なり比較できる場合にのみ小なり比較できます。  
+ The stack objects are equality comparable if and only if the elements of class **Type** are equality comparable and are less-than comparable if and only if the elements of class **Type** are less-than comparable.  
   
--   stack クラスは、後入れ先出し (LIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、積み重ねられた皿です。 要素 (皿) は、積み重ねの一番上からのみ挿入、検査、または削除できます。積み重ねの一番上に相当するのは、基本のコンテナーの末尾にある最後の要素です。 一番上の要素にのみアクセスできる制限があることが、stack クラスを使用する理由です。  
+-   The stack class supports a last-in, first-out (LIFO) data structure. A good analogue to keep in mind would be a stack of plates. Elements (plates) may be inserted, inspected, or removed only from the top of the stack, which is the last element at the end of the base container. The restriction to accessing only the top element is the reason for using the stack class.  
   
--   [queue クラス](../standard-library/queue-class.md)は、先入れ先出し (FIFO) のデータ構造をサポートしています。 思い描くのに助けとなるのは、銀行の窓口で並んでいる人です。 要素 (人々) は、列の一番後ろに追加され、列の一番前から取り除くことができます。 列の一番前と一番後ろの両方を検査できます。 このように一番前と一番後ろの要素にのみアクセスできる制限があることが、queue クラスを使用する理由です。  
+-   The [queue class](../standard-library/queue-class.md) supports a first-in, first-out (FIFO) data structure. A good analogue to keep in mind would be people lining up for a bank teller. Elements (people) may be added to the back of the line and are removed from the front of the line. Both the front and the back of a line may be inspected. The restriction to accessing only the front and back elements in this way is the reason fur using the queue class.  
   
--   [Priority_queue クラス](../standard-library/priority-queue-class.md)は、最も大きな要素が常に先頭の位置になるように、その要素を並べ替えます。 要素の挿入、および先頭の要素の検査と削除をサポートしています。 思い描くのに助けとなるのは、年齢、身長、またはその他の条件によって整列している人です。  
+-   The [priority_queue class](../standard-library/priority-queue-class.md) orders its elements so that the largest element is always at the top position. It supports insertion of an element and the inspection and removal of the top element. A good analogue to keep in mind would be people lining up where they are arranged by age, height, or some other criterion.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[stack](#stack)|空であるか、基本のコンテナー オブジェクトのコピーである `stack` を構築します。|  
+|[stack](#stack)|Constructs a `stack` that is empty or that is a copy of a base container object.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[container_type](#container_type)|`stack` によって適合されるように、基本のコンテナーを提供する型。|  
-|[size_type](#size_type)|`stack` 内の要素の数を表すことができる符号なし整数型。|  
-|[value_type](#value_type)|`stack` 内に要素として格納されるオブジェクトの種類を表す型。|  
+|[container_type](#container_type)|A type that provides the base container to be adapted by a `stack`.|  
+|[size_type](#size_type)|An unsigned integer type that can represent the number of elements in a `stack`.|  
+|[value_type](#value_type)|A type that represents the type of object stored as an element in a `stack`.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[empty](#empty)|`stack` が空かどうかをテストします。|  
-|[pop](#pop)|`stack` の先頭から要素を削除します。|  
-|[push](#push)|`stack` の先頭に要素を追加します。|  
-|[size](#size)|`stack` 内の要素数を返します。|  
-|[top](#top)|`stack` の先頭にある要素への参照を返します。|  
+|[empty](#empty)|Tests if the `stack` is empty.|  
+|[pop](#pop)|Removes the element from the top of the `stack`.|  
+|[push](#push)|Adds an element to the top of the `stack`.|  
+|[size](#size)|Returns the number of elements in the `stack`.|  
+|[top](#top)|Returns a reference to an element at the top of the `stack`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<stack>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<stack>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="container_type"></a>  stack::container_type  
- 適合されるように、基本のコンテナーを提供する型。  
+ A type that provides the base container to be adapted.  
   
 ```  
 typedef Container container_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Container` のシノニムです。 3 つの C++ 標準ライブラリ シーケンス コンテナー クラス (vector クラス、list クラス、既定の deque クラス) はすべて、stack オブジェクトの基本のコンテナーとしての使用要件を満たしています。 こうした要件を満たすユーザー定義型を使用することもできます。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter `Container`. All three C++ Standard Library sequence container classes — the vector class, list class, and the default class deque — meet the requirements to be used as the base container for a stack object. User-defined types satisfying these requirements may also be used.  
   
- `Container`の詳細については、[stack クラス](../standard-library/stack-class.md)のトピックのコメントに関するセクションを参照してください。  
+ For more information on `Container`, see the Remarks section of the [stack Class](../standard-library/stack-class.md) topic.  
   
-### <a name="example"></a>例  
-  `container_type` の宣言方法や使用方法の例については、[stack::stack](#stack) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [stack::stack](#stack) for an example of how to declare and use `container_type`.  
   
 ##  <a name="empty"></a>  stack::empty  
- stack が空かどうかをテストします。  
+ Tests if a stack is empty.  
   
 ```  
 bool empty() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- set が空の場合は **true**、set が空ではない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the stack is empty; **false** if the stack is nonempty.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_empty.cpp  
@@ -167,16 +172,16 @@ The stack s2 is empty.
 ```  
   
 ##  <a name="pop"></a>  stack::pop  
- stack の先頭から要素を削除します。  
+ Removes the element from the top of the stack.  
   
 ```  
 void pop();
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数を適用するには、stack を空にすることはできません。 stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
+### <a name="remarks"></a>Remarks  
+ The stack must be nonempty to apply the member function. The top of the stack is the position occupied by the most recently added element and is the last element at the end of the container.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_pop.cpp  
@@ -221,20 +226,20 @@ After a pop, the element at the top of the stack is 20.
 ```  
   
 ##  <a name="push"></a>  stack::push  
- stack の先頭に要素を追加します。  
+ Adds an element to the top end of the stack.  
   
 ```  
 void push(const Type& val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `val`  
- スタックの先頭に追加される要素。  
+ The element added to the top of the stack.  
   
-### <a name="remarks"></a>コメント  
- stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
+### <a name="remarks"></a>Remarks  
+ The top of the stack is the position occupied by the most recently added element and is the last element at the end of the container.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_push.cpp  
@@ -267,16 +272,16 @@ The element at the top of the stack is 30.
 ```  
   
 ##  <a name="size"></a>  stack::size  
- stack 内の要素数を返します。  
+ Returns the number of elements in the stack.  
   
 ```  
 size_type size() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- stack の現在の長さ。  
+### <a name="return-value"></a>Return Value  
+ The current length of the stack.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_size.cpp  
@@ -306,20 +311,20 @@ The stack length is now 2.
 ```  
   
 ##  <a name="size_type"></a>  stack::size_type  
- stack 内の要素の数を表すことができる符号なし整数型。  
+ An unsigned integer type that can represent the number of elements in a stack.  
   
 ```  
 typedef typename Container::size_type size_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、stack によって採用された基本コンテナーの `size_type` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for `size_type` of the base container adapted by the stack.  
   
-### <a name="example"></a>例  
-  `size_type` の宣言方法や使用方法の例については、[size](#size) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [size](#size) for an example of how to declare and use `size_type`.  
   
 ##  <a name="stack"></a>  stack::stack  
- 空であるか、基本のコンテナー クラスのコピーである stack を構築します。  
+ Constructs a stack that is empty or that is a copy of a base container class.  
   
 ```  
 stack();
@@ -327,11 +332,11 @@ stack();
 explicit stack(const container_type& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 構築される container のコピー元となる container。  
+ The container of which the constructed stack is to be a copy.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_stack.cpp  
@@ -371,7 +376,7 @@ The element at the top of stack vsi2 is 1.
 ```  
   
 ##  <a name="top"></a>  stack::top  
- stack の先頭にある要素への参照を返します。  
+ Returns a reference to an element at the top of the stack.  
   
 ```  
 reference top();
@@ -379,15 +384,15 @@ reference top();
 const_reference top() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- stack の先頭にあるコンテナーの最後の要素への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the last element in the container at the top of the stack.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数を適用するには、stack を空にすることはできません。 stack の先頭は最も直近に追加された要素によって占有される位置であり、コンテナーの末尾にある最後の要素になります。  
+### <a name="remarks"></a>Remarks  
+ The stack must be nonempty to apply the member function. The top of the stack is the position occupied by the most recently added element and is the last element at the end of the container.  
   
- **top** の戻り値が `const_reference` に割り当てられている場合、stack オブジェクトを変更することはできません。 **top** の戻り値が **reference** に割り当てられている場合、stack オブジェクトを変更することはできません。  
+ If the return value of **top** is assigned to a `const_reference`, the stack object cannot be modified. If the return value of **top** is assigned to a **reference**, the stack object can be modified.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_top.cpp  
@@ -419,16 +424,16 @@ The next integer down is 1.
 ```  
   
 ##  <a name="value_type"></a>  stack::value_type  
- stack 内に要素として格納されるオブジェクトの種類を表す型。  
+ A type that represents the type of object stored as an element in a stack.  
   
 ```  
 typedef typename Container::value_type value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、stack によって採用された基本コンテナーの `value_type` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for `value_type` of the base container adapted by the stack.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // stack_value_type.cpp  
@@ -457,8 +462,8 @@ The value_type is AnInt = 69
 The element at the top of the stack is 69.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 
