@@ -1,32 +1,52 @@
 ---
-title: "alignof と alignas (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: alignof and alignas (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: 1d18aa8a-9621-4fb5-86e5-4cc86d5187f4
 caps.latest.revision: 2
-caps.handback.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# alignof と alignas (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: fa0553d259c2ef33b33cede107a9a2f54612bd7f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-`alignas` 型指定子は、変数およびユーザー定義型のカスタムの配置を指定する移植可能な C\+\+ の標準的な方法です。  `alignof` 演算子も同様に、指定された型または変数の配置を取得する、標準的で移植可能な方法です。  
+---
+# <a name="alignof-and-alignas-c"></a>alignof and alignas (C++)
+The `alignas` type specifier is a portable, C++ standard way to specify custom alignment of variables and user defined types. The `alignof` operator is likewise a standard, portable way to obtain the alignment of a specified type or variable.  
   
-## 例  
- クラス、スタックまたは共用体、あるいは個々のメンバーで `alignas` を使用できます。  複数の `alignas` 指定子が検出された場合、コンパイラは、最も厳密なもの \(最大値を持つもの\) を選択します。  
+## <a name="example"></a>Example  
+ You can use `alignas` on a class, struck or union, or on individual members. When multiple `alignas` specifiers are encountered, the compiler will choose the strictest one, (the one with the largest value).  
   
-```  
+```cpp  
+// alignas_alignof.cpp
+// compile with: cl /EHsc alignas_alignof.cpp
+#include <iostream>
+
 struct alignas(16) Bar  
 {      
     int i;       // 4 bytes  
@@ -34,10 +54,12 @@ struct alignas(16) Bar
     alignas(4) char arr[3];  
     short s;          // 2 bytes  
 };  
-…  
-cout << alignof(Bar) << endl; // output: 16  
-  
+
+int main()
+{  
+    std::cout << alignof(Bar) << std::endl; // output: 16  
+}  
 ```  
   
-## 参照  
- [アラインメント](../cpp/alignment-cpp-declarations.md)
+## <a name="see-also"></a>See Also  
+ [Alignment](../cpp/alignment-cpp-declarations.md)

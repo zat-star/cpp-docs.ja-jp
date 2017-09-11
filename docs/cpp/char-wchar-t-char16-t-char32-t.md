@@ -1,44 +1,58 @@
 ---
-title: "char、wchar_t、char16_t、char32_t | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "char_cpp"
-  - "char16_t_cpp"
-  - "whchar_t_cpp"
-  - "char32_t_cpp"
-dev_langs: 
-  - "C++"
+title: char, wchar_t, char16_t, char32_t | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- char_cpp
+- char16_t_cpp
+- whchar_t_cpp
+- char32_t_cpp
+dev_langs:
+- C++
 ms.assetid: 6b33e9f5-455b-4e49-8f12-a150cbfe2e5b
 caps.latest.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 2
----
-# char、wchar_t、char16_t、char32_t
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: ed34959adc927aefd97299704285994897f4e6ef
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-型 char、wchar\_t、char16\_t および char32\_t は英数字だけでなく、英数字以外のグリフと印刷されない文字を表す組み込み型です。  char のサイズは 8 ビット、wchar\_t と char16\_t のサイズは 16 ビット、char32\_t のサイズは 32 ビットです。  
+---
+# <a name="char-wchart-char16t-char32t"></a>char, wchar_t, char16_t, char32_t
+The types char, wchar_t, char16_t and char32_t are built in types that represent alphanumeric characters as well as non-alphanumeric glyphs and non-printing characters. char is eight bits in size, wchar_t and char16_t are 16 bits in size, and char32_t is 32 bits.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
-```vb  
-char     ch1{ 'a' };  
-wchar_t  ch2{ 'a' }; // or {L'a'}  
-char16_t ch3{ L'a' };// or {L'a'}  
-char32_t ch4{ L'a' };// or {L'a'}  
+```cpp  
+char     ch1{ 'a' };    wchar_t  ch2{ 'a' }; // or {L'a'}    char16_t ch3{ L'a' };// or {L'a'}    char32_t ch4{ L'a' };// or {L'a'}  
 ```  
   
-## 解説  
- `char` 型は C および C\+\+ の元の文字型でした。  ASCII 文字セット、またはいずれかの ISO 8859 文字セット、または UTF\-8 文字セットの文字を格納するために使用できます。  `unsigned char` 型は、C\+\+ の組み込み型でない *byte* を表すためにしばしば使用されます。  char 型は、多くの言語でテキストに適していません。  一般に、最新のプログラムでは、テキストを表すためにいずれかのワイド文字型を使用する必要があります。  Unicode は、  
+## <a name="remarks"></a>Remarks  
+ The `char` type was the original character type in C and C++. It can be used to store characters from the ASCII character set or any of the ISO-8859 character sets, or the UTF-8 character set. The type `unsigned char` is often used to represent a *byte* which is not a built-in type in C++. The char type is not suitable for text in many languages. In general, modern programs should use one of the wide character types to represent text. Unicode is the  
   
- C\+\+ 標準ライブラリでは、basic\_string 型はナロー文字列とワイド文字列の両方に向けて特殊化されています。  文字が char 型の場合は std::string を使用し、文字が wchar\_t 型の場合は std::wstring を使用します。  std::stringstream と std::cout など、テキストを表すその他の型は、ナロー文字列とワイド文字列向けに特殊化されています。  
+ In the C++ standard library, the basic_string type is specialized for both narrow and wide strings. Use std::string when the characters are of type char, and std::wstring when the characters are of type wchar_t. Other types that represent text, including std::stringstream and std::cout have specializations for narrow and wide strings.  
   
-## 必要条件
+## <a name="requirements"></a>Requirements

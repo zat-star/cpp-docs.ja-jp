@@ -1,44 +1,59 @@
 ---
-title: "エラーと例外の処理 (Modern C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: Errors and Exception Handling (Modern C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: a6c111d0-24f9-4bbb-997d-3db4569761b7
 caps.latest.revision: 19
-caps.handback.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# エラーと例外の処理 (Modern C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 4f2e5173d1179e404cfbe13a19bf84d1ac5a865c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-最新の C++ のほとんどのシナリオでは、論理エラーとランタイム エラーの両方を報告および処理する方法として、例外を使用することが推奨されます。 これは特に、エラーを検出した関数からその処理方法を認識するためのコンテキストを持つ関数までの間に、複数の関数がスタックに含まれる可能性がある場合に当てはまります。 例外は、エラーを検出して情報を呼び出し履歴に渡すコードに関する、正しく定義された正式な方法を提供します。  
+---
+# <a name="errors-and-exception-handling-modern-c"></a>Errors and Exception Handling (Modern C++)
+In modern C++, in most scenarios, the preferred way to report and handle both logic errors and runtime errors is to use exceptions. This is especially true when the stack might contain several function calls between the function that detects the error and the function that has the context to know how to handle it. Exceptions provide a formal, well-defined way for code that detects errors to pass the information up the call stack.  
   
- プログラム エラーは通常 2 つのカテゴリに分類されます。1 つは、プログラミングの間違いにより生じる論理エラー ("範囲外のインデックス" エラーなど) で、もう 1 つはプログラマの種類に分ける通常は: 誤り、たとえば、「有効範囲外のインデックス」エラーのプログラムによる論理エラー、およびプログラマが制御できないランタイム エラー ("ネットワーク サービスが利用不可" エラーなど) です。 C スタイル プログラミングと COM では、特定の関数のエラー コードまたはステータス コードを表す値を返すか、エラーが報告されたかどうかを確認するすべての関数呼び出しの後に呼び出し元がオプションで取得する可能性があるグローバル変数を設定することで、エラー レポートが管理されます。 たとえば、COM プログラミングは HRESULT 戻り値を使用してエラーを呼び出し元に通知します。また、Win32 API には、呼び出し履歴により報告された最後のエラーを取得する GetLastError 関数があります。 どちらの場合も、呼び出し元がコードを認識し、適切に応答することにかかっています。 呼び出し元が明示的にエラー コードを処理しない場合、プログラムが警告なしにクラッシュしたり、不適切なデータで実行を続けて間違った結果が生成される可能性があります。  
+ Program errors are generally divided into two categories: logic errors that are caused by programming mistakes, for example, an "index out of range" error, and runtime errors that are beyond the control of programmer, for example, a "network service unavailable" error. In C-style programming and in COM, error reporting is managed either by returning a value that represents an error code or a status code for a particular function, or by setting a global variable that the caller may optionally retrieve after every function call to see whether errors were reported. For example, COM programming uses the HRESULT return value to communicate errors to the caller, and the Win32 API has the GetLastError function to retrieve the last error that was reported by the call stack. In both of these cases, it's up to the caller to recognize the code and respond to it appropriately. If the caller doesn't explicitly handle the error code, the program might crash without warning, or continue to execute with bad data and produce incorrect results.  
   
- 最新の C++ では、次の理由で例外が推奨されます。  
+ Exceptions are preferred in modern C++ for the following reasons:  
   
--   例外は、エラー状態の認識と処理を呼び出し元コードに強制します。 ハンドルされない例外は、プログラムの実行を停止します。  
+-   An exception forces calling code to recognize an error condition and handle it. Unhandled exceptions stop program execution.  
   
--   例外は、エラーを処理できる呼び出し履歴内のポイントにジャンプします。 中間関数は、例外を伝達することができます。 他のレイヤーに合わせる必要はありません。  
+-   An exception jumps to the point in the call stack that can handle the error. Intermediate functions can let the exception propagate. They do not have to coordinate with other layers.  
   
--   例外のスタック アンワインド機構は、例外のスロー後に明確に定義された規則に従ってスコープ内のすべてのオブジェクトを破棄します。  
+-   The exception stack-unwinding mechanism destroys all objects in scope according to well-defined rules after an exception is thrown.  
   
--   例外によって、エラーを検出したコードとエラーを処理するコードを明確な区別することができるようになります。  
+-   An exception enables a clean separation between the code that detects the error and the code that handles the error.  
   
- 簡略化された次の例は、C++ で例外をスローしてキャッチするのに必要な構文を示しています。  
+ The following simplified example shows the necessary syntax for throwing and catching exceptions in C++.  
   
 ```cpp  
-  
 #include <stdexcept>  
 #include <limits>  
 #include <iostream>  
@@ -73,41 +88,42 @@ int main()
   
 ```  
   
- C++ の例外は、C# や Java などの言語と似ています。  `try` ブロック、例外がある場合 *スロー* ことが *キャッチ* 最初が関連付けられている `catch` が例外のと同じ型のブロックです。 言い換えると、実行が `throw` ステートメントから `catch` ステートメントにジャンプします。 使用可能な catch ブロックが見つからない場合、`std::terminate` が呼び出されてプログラムが終了します。 C++ では、どの種類もスローされる可能性があります。ただし、`std::exception` から直接または間接的に派生した型をスローすることをお勧めします。 前の例では、例外の種類で [invalid_argument](../standard-library/invalid-argument-class.md), 、標準ライブラリで定義された、 [\< stdexcept>](../standard-library/stdexcept.md) ヘッダー ファイルです。 C++ には、例外がスローされた場合にすべてのリソースが解放されることを確証するための `finally` ブロックが用意されていません (必要ありません)。 スマート ポインターを使用する Resource Acquisition Is Initialization (RAII) の表現形式には、リソース クリーンアップのための必須機能が用意されています。 詳細については、次を参照してください。 [方法: 例外安全性のための設計](../cpp/how-to-design-for-exception-safety.md)します。 C++ のスタック アンワインド機構については、次を参照してください。 [例外とスタック アンワインド](../cpp/exceptions-and-stack-unwinding-in-cpp.md)します。  
+ Exceptions in C++ resemble those in languages such as C# and Java. In the `try` block, if an exception is *thrown* it will be *caught* by the first associated `catch` block whose type matches that of the exception. In other words, execution jumps from the `throw` statement to the `catch` statement. If no usable catch block is found, `std::terminate` is invoked and the program exits. In C++, any type may be thrown; however, we recommend that you throw a type that derives directly or indirectly from `std::exception`. In the previous example, the exception type, [invalid_argument](../standard-library/invalid-argument-class.md), is defined in the standard library in the [\<stdexcept>](../standard-library/stdexcept.md) header file. C++ does not provide, and does not require, a `finally` block to make sure that all resources are released if an exception is thrown. The resource acquisition is initialization (RAII) idiom, which uses smart pointers, provides the required functionality for resource cleanup. For more information, see [How to: Design for Exception Safety](../cpp/how-to-design-for-exception-safety.md). For information about the C++ stack-unwinding mechanism, see [Exceptions and Stack Unwinding](../cpp/exceptions-and-stack-unwinding-in-cpp.md).  
   
-## <a name="basic-guidelines"></a>基本的なガイドライン  
- 堅牢なエラー処理は、どのプログラミング言語でも簡単ではありません。 例外には、適切なエラー処理をサポートする機能がいくつか用意されていますが、すべての処理を自動的に行うことはできません。 例外機構の利点を理解するため、コードをデザインするときに例外を念頭に置いてください。  
+## <a name="basic-guidelines"></a>Basic guidelines  
+ Robust error handling is challenging in any programming language. Although exceptions provide several features that support good error handling, they can't do all the work for you. To realize the benefits of the exception mechanism, keep exceptions in mind as you design your code.  
   
--   発生することのないエラーをチェックするには、アサートを使用します。 発生する可能性があるエラー (たとえば、パブリック関数のパラメーターにおける入力検証のエラーなど) をチェックするには、例外を使用します。 詳細については、「セクションを参照してください。 **例外とします。アサーション**します。  
+-   Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur, for example, errors in input validation on parameters of public functions. For more information, see the section titled **Exceptions vs. Assertions**.  
   
--   例外は、エラーを処理するコードが、1 つ以上の介在する関数呼び出しによりエラーを検出したコードから切り離されている可能性がある場合に使用します。 エラーを処理するコードが、エラーを検出したコードに密に結合されている場合は、パフォーマンスが重要なループで代わりにエラー コードを使用するかどうかを検討します。 詳細については例外を使用しない場合、次を参照してください。 [(NOTINBUILD) ときにない例外の使用に](http://msdn.microsoft.com/ja-jp/e810df8b-2217-4e81-bae5-02f0a69f1346)します。  
+-   Use exceptions when the code that handles the error might be separated from the code that detects the error by one or more intervening function calls. Consider whether to use error codes instead in performance-critical loops when code that handles the error is tightly-coupled to the code that detects it. 
   
--   例外をスローまたは伝達する可能性のある関数ごとに、strong 保証、basic 保証、nothrow (noexcept) 保証の 3 つの例外保証のいずれかを指定します。 詳細については、次を参照してください。 [方法: 例外安全性のための設計](../cpp/how-to-design-for-exception-safety.md)します。  
+-   For every function that might throw or propagate an exception, provide one of the three exception guarantees: the strong guarantee, the basic guarantee, or the nothrow (noexcept) guarantee. For more information, see [How to: Design for Exception Safety](../cpp/how-to-design-for-exception-safety.md).  
   
--   値渡しで例外をスローし、参照渡しでそれらの例外をキャッチします。 処理できない例外をキャッチしないでください。 詳細については、次を参照してください。 [スローおよびキャッチする例外 (C++) (NOTINBUILD) ガイドライン](http://msdn.microsoft.com/ja-jp/0a9b0a3a-64c5-43f5-a080-fca69b89e839)します。  
+-   Throw exceptions by value, catch them by reference. Don’t catch what you can't handle. 
   
--   C++11 で廃止された例外指定を使用しないでください。 詳細については、「セクションを参照してください。 **例外指定と noexcept**します。  
+-   Don't use exception specifications, which are deprecated in C++11. For more information, see the section titled **Exception specifications and noexcept**.  
   
--   標準ライブラリの例外の種類は、適用するときに使用します。 カスタム例外型から派生、 [例外クラス](../standard-library/exception-class1.md) 階層です。 詳細については、次を参照してください。 [(NOTINBUILD) する方法: 標準のライブラリの例外オブジェクトを使用して](http://msdn.microsoft.com/ja-jp/ad1fb785-ed4e-4d94-8e84-964353aed7b6)します。  
+-   Use standard library exception types when they apply. Derive custom exception types from the [exception Class](../standard-library/exception-class.md) hierarchy.  
   
--   例外がデストラクターまたはメモリ解放関数からエスケープしないようにしてください。  
+-   Don't allow exceptions to escape from destructors or memory-deallocation functions.  
   
-## <a name="exceptions-and-performance"></a>例外とパフォーマンス  
- 例外がスローされない場合、例外機構によるパフォーマンスの低下はごくわずかです。 例外がスローされた場合、スタックの走査およびアンワインドによるパフォーマンスの低下は、関数呼び出しとほぼ同程度です。 `try` ブロックが入力された後に呼び出し履歴を追跡するには、追加のデータ構造が必要で、例外がスローされた場合にスタックをアンワインドするには追加の命令が必要です。 ただし、ほとんどの場合、パフォーマンスの低下とメモリ使用量の増加はそれほど大きくありません。 パフォーマンスに対する例外の悪影響は、メモリ制約が非常に大きいシステムでのみ大きくなる可能性があります。エラーが定期的に発生する可能性が高く、エラーを処理するコードがエラーを報告したコードに密に結合されている、パフォーマンスが重要なループでも大きくなる可能性があります。 いずれの場合も、プロファイリングや測定を行わずに例外の実際の影響を把握することは不可能です。 影響が大きくなるまれな場合でも、優れたデザインの例外ポリシーにより実現する正確さの向上、管理の容易さ、他の利点と比較することができます。  
+## <a name="exceptions-and-performance"></a>Exceptions and performance  
+ The exception mechanism has a very minimal performance cost if no exception is thrown. If an exception is thrown, the cost of the stack traversal and unwinding is roughly comparable to the cost of a function call. Additional data structures are required to track the call stack after a `try` block is entered, and additional instructions are required to unwind the stack if an exception is thrown. However, in most scenarios, the cost in performance and memory footprint is not significant. The adverse effect of exceptions on performance is likely to be significant only on very memory-constrained systems, or in performance-critical loops where an error is likely to occur regularly and the code to handle it is tightly coupled to the code that reports it. In any case, it's impossible to know the actual cost of exceptions without profiling and measuring. Even in those rare cases when the cost is significant, you can weigh it against the increased correctness, easier maintainability, and other advantages that are provided by a well-designed exception policy.  
   
-## <a name="exceptions-vs-assertions"></a>例外とアサーション  
- 例外とアサーションは、プログラムのランタイム エラーを検出する 2 つの別個の機構です。 開発時にアサートを使用して、すべてのコードが正しい場合は true になることがない条件をテストします。 エラーはコード内に修正が必要な箇所があることを示しており、プログラムが実行時から回復する必要がある条件を表しているわけではないため、例外を使用してそのようなエラーを処理するポイントはありません。 デバッガーでプログラムの状態を検査できるように、アサートはステートメントで実行を停止します。例外は、該当する最初のキャッチ ハンドラーから実行を続行します。 コードが正しい場合でも実行時に発生する可能性があるエラー条件 ("ファイルが見つかりません" や "メモリ不足" など) をチェックするには、例外を使用します。 回復によりログにメッセージが出力され、プログラムが終了するだけの場合でも、これらの条件から回復することができます。 必ず、例外を使用してパブリックの関数への引数をチェックしてください。 関数にエラーがない場合でも、ユーザーが渡す引数を完全に制御できないことがあります。  
+## <a name="exceptions-vs-assertions"></a>Exceptions vs. assertions  
+ Exceptions and asserts are two distinct mechanisms for detecting run-time errors in a program. Use asserts to test for conditions during development that should never be true if all your code is correct. There is no point in handling such an error by using an exception because the error indicates that something in the code has to be fixed, and doesn't represent a condition that the program has to recover from at run time. An assert stops execution at the statement so that you can inspect the program state in the debugger; an exception continues execution from the first appropriate catch handler. Use exceptions to check error conditions that might occur at run time even if your code is correct, for example, "file not found" or "out of memory." You might want to recover from these conditions, even if the recovery just outputs a message to a log and ends the program. Always check arguments to public functions by using exceptions. Even if your function is error-free, you might not have complete control over arguments that a user might pass to it.  
   
-## <a name="c-exceptions-versus-windows-seh-exceptions"></a>C++ 例外と Windows SEH 例外  
- C プログラムと C++ プログラムのどちらでも、Windows オペレーティング システムの構造化例外処理 (SEH) 機構を使用できます。 SEH の概念は、C++ 例外の概念と似ていますが、SEH は `__try` と `__except`の代わりに `__finally`、`try`、`catch` の各構成体を使用する点が異なります。 Visual C++ では、C++ 例外が SEH 用に実装されています。 ただし、C++ コードを記述するときは、C++ 例外構文を使用してください。  
+## <a name="c-exceptions-versus-windows-seh-exceptions"></a>C++ exceptions versus Windows SEH exceptions  
+ Both C and C++ programs can use the structured exception handling (SEH) mechanism in the Windows operating system. The concepts in SEH resemble those in C++ exceptions, except that SEH uses the `__try`, `__except`, and `__finally` constructs instead of `try` and `catch`. In Visual C++, C++ exceptions are implemented for SEH. However, when you write C++ code, use the C++ exception syntax.  
   
- SEH の詳細については、次を参照してください。 [構造化例外処理 (c/c++)](../cpp/structured-exception-handling-c-cpp.md)します。  
+ For more information about SEH, see [Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md).  
   
-## <a name="exception-specifications-and-noexcept"></a>例外指定と noexcept  
- 例外指定は、関数がスローする可能性がある例外を指定する方法として C++ に導入されました。 ただし、実際には例外指定に問題があることがわかったため、C++11 ドラフト標準では廃止されています。 例外がどの例外のエスケープも許可しないことを示す `throw()` を除き、例外指定を使用しないことをお勧めします。 型の例外の指定を使用する場合 `throw(`*型*`)`, 、注意してくださいを [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] 特定の方法で、標準とは異なります。 詳細については、次を参照してください。 [例外の仕様 (スロー)](../cpp/exception-specifications-throw-cpp.md)します。 `noexcept` 指定子は、`throw()` の推奨される代替手段として C++11 に導入されました。  
+## <a name="exception-specifications-and-noexcept"></a>Exception specifications and noexcept  
+ Exception specifications were introduced in C++ as a way to specify the exceptions that a function might throw. However, exception specifications proved problematic in practice, and are deprecated in the C++11 draft standard. We recommend that you do not use exception specifications except for `throw()`, which indicates that the function allows no exceptions to escape. If you must use exception specifications of the type `throw(`*type*`)`, be aware that Visual C++ departs from the standard in certain ways. For more information, see [Exception Specifications (throw)](../cpp/exception-specifications-throw-cpp.md). The `noexcept` specifier is introduced in C++11 as the preferred alternative to `throw()`.  
   
-## <a name="see-also"></a>「  
- [方法: 例外的なと非例外コードの間のインターフェイス](../cpp/how-to-interface-between-exceptional-and-non-exceptional-code.md)   
- [C++ へおかえり](../Topic/Welcome%20Back%20to%20C++%20\(Modern%20C++\).md)   
- [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
- [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [How to: Interface Between Exceptional and Non-Exceptional Code](../cpp/how-to-interface-between-exceptional-and-non-exceptional-code.md)   
+ [Welcome Back to C++](../cpp/welcome-back-to-cpp-modern-cpp.md)   
+ [C++ Language Reference](../cpp/cpp-language-reference.md)   
+ [C++ Standard Library](../standard-library/cpp-standard-library-reference.md)
+

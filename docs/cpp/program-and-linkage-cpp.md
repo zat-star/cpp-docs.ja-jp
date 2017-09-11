@@ -1,27 +1,43 @@
 ---
-title: "プログラムとリンケージ (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: Program and Linkage  (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: a6493ba0-24e2-4c89-956e-9da1dea660cb
 caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# プログラムとリンケージ (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 794da36cdbb9371f3d1d5f44755c11c0782b32fe
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-プログラムは、互いにリンクされている 1 つ以上の翻訳単位で構成されます。  実行は、**main** 関数を含む翻訳単位で \(概念的に\) 開始されます   \(翻訳単位の詳細については、『[プリプロセッサ リファレンス](../preprocessor/phases-of-translation.md)』の「*変換の段階*」を参照してください\)。 **main** 関数の詳細については、「[プログラムの起動: main 関数](../Topic/main:%20Program%20Startup.md)」を参照してください。  
+---
+# <a name="program-and-linkage--c"></a>Program and Linkage  (C++)
+A program consists of one or more translation units linked together. Execution (conceptually) begins in the translation unit that contains the function **main**. (For more information on translation units, see [Phases of Translation](../preprocessor/phases-of-translation.md), in the *Preprocessor Reference*.) For more information about the **main** function, see [Program Startup: the main Function](../cpp/main-program-startup.md).)  
   
-## 参照  
- [基本的な概念](../cpp/basic-concepts-cpp.md)
+## <a name="see-also"></a>See Also  
+ [Basic Concepts](../cpp/basic-concepts-cpp.md)

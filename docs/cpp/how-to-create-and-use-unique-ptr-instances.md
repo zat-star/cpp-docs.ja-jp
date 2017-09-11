@@ -1,59 +1,76 @@
 ---
-title: "方法: unique_ptr インスタンスを作成して使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: 'How to: Create and Use unique_ptr Instances | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 9a373030-e587-452f-b9a5-c5f9d58b7673
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# 方法: unique_ptr インスタンスを作成して使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: e1dbcea010f4dfde35a604bfc640fb9cb3a792c3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-[unique\_ptr](../standard-library/unique-ptr-class.md) は、ポインターを共有しません。  別の `unique_ptr` にコピーすることも、値によって関数に渡すことも、コピーの作成が必要な標準テンプレート ライブラリ \(STL: Standard Template Library\) のアルゴリズムで使用することもできません。  `unique_ptr` ができるのは移動だけです。  この場合、メモリ リソースの所有権は別の `unique_ptr` に移動し、元の `unique_ptr` はそれ以降、所有権を失います。  複数の所有者がオブジェクトを所有するとプログラム ロジックが複雑になるため、所有者を 1 人に制限することをお勧めします。  したがって、プレーンな C\+\+ オブジェクト用のスマート ポインターが必要な場合は `unique_ptr` を使用し、`unique_ptr` を構成する場合は [make\_unique](../Topic/make_unique.md) ヘルパー関数を使用します。  
+---
+# <a name="how-to-create-and-use-uniqueptr-instances"></a>How to: Create and Use unique_ptr Instances
+A [unique_ptr](../standard-library/unique-ptr-class.md) does not share its pointer. It cannot be copied to another `unique_ptr`, passed by value to a function, or used in any C++ Standard Library algorithm that requires copies to be made. A `unique_ptr` can only be moved. This means that the ownership of the memory resource is transferred to another `unique_ptr` and the original `unique_ptr` no longer owns it. We recommend that you restrict an object to one owner, because multiple ownership adds complexity to the program logic. Therefore, when you need a smart pointer for a plain C++ object, use `unique_ptr`, and when you construct a `unique_ptr`, use the [make_unique](../standard-library/memory-functions.md#make_unique) helper function.  
   
- 次の図では、2 つの `unique_ptr` のインスタンス間での所有権の移転を示します。  
+ The following diagram illustrates the transfer of ownership between two `unique_ptr` instances.  
   
- ![unique&#95;ptr の所有権の移動](../cpp/media/unique_ptr.png "unique\_ptr")  
+ ![Moving the ownership of a unique&#95;ptr](../cpp/media/unique_ptr.png "unique_ptr")  
   
- `unique_ptr` は、STL の `<memory>` ヘッダーで定義されます。  これは、生のポインターと同じくらい効率的で、STL コンテナーで使用できます。  STL コンテナーに `unique_ptr` インスタンスを追加すると、`unique_ptr` の移動コンストラクターによってコピー操作が不要になるため効率的です。  
+ `unique_ptr` is defined in the `<memory>` header in the C++ Standard Library. It is exactly is efficient as a raw pointer and can be used in C++ Standard Library containers. The addition of `unique_ptr` instances to C++ Standard Library containers is efficient because the move constructor of the `unique_ptr` eliminates the need for a copy operation.  
   
-## 使用例  
- 次の例では、`unique_ptr` インスタンスを作成し、関数間で渡す方法を示します。  
+## <a name="example"></a>Example  
+ The following example shows how to create `unique_ptr` instances and pass them between functions.  
   
  [!code-cpp[stl_smart_pointers#210](../cpp/codesnippet/CPP/how-to-create-and-use-unique-ptr-instances_1.cpp)]  
   
- これらの例は、`unique_ptr` の基本的な機能として、移動はできるが、コピーはできないことを示しています。「移動」は `unique_ptr` に所有権を移転し、元の `unique_ptr` をリセットします。  
+ These examples demonstrate this basic characteristic of `unique_ptr`: it can be moved, but not copied. "Moving" transfers ownership to a new `unique_ptr` and resets the old `unique_ptr`.  
   
-## 使用例  
- 次の例では、`unique_ptr` インスタンスを作成し、ベクター内で使用する方法を示します。  
+## <a name="example"></a>Example  
+ The following example shows how to create `unique_ptr` instances and use them in a vector.  
   
  [!code-cpp[stl_smart_pointers#211](../cpp/codesnippet/CPP/how-to-create-and-use-unique-ptr-instances_2.cpp)]  
   
- ループの範囲で、`unique_ptr` が参照によって渡されることに注意してください。  ここで値によって渡そうとすると、`unique_ptr` コピー コンストラクターが削除されるため、コンパイラによってエラーがスローされます。  
+ In the range for  loop, notice that the `unique_ptr` is passed by reference. If you try to pass by value here, the compiler will throw an error because the `unique_ptr` copy constructor is deleted.  
   
-## 使用例  
- 次の例では、クラス メンバーである `unique_ptr` を初期化する方法を示しています。  
+## <a name="example"></a>Example  
+ The following example shows how to initialize a `unique_ptr` that is a class member.  
   
  [!code-cpp[stl_smart_pointers#212](../cpp/codesnippet/CPP/how-to-create-and-use-unique-ptr-instances_3.cpp)]  
   
-## 使用例  
- [make\_unique](../Topic/make_unique.md) を使用することで、配列への `unique_ptr` を作成できます。ただし、`make_unique` で配列要素を初期化することはできません。  
+## <a name="example"></a>Example  
+ You can use [make_unique](../standard-library/memory-functions.md#make_unique) to create a `unique_ptr` to an array, but you cannot use `make_unique` to initialize the array elements.  
   
  [!code-cpp[stl_smart_pointers#213](../cpp/codesnippet/CPP/how-to-create-and-use-unique-ptr-instances_4.cpp)]  
   
- その他の例については、「[make\_unique](../Topic/make_unique.md)」を参照してください。  
+ For more examples, see [make_unique](../standard-library/memory-functions.md#make_unique).  
   
-## 参照  
- [スマート ポインター](../cpp/smart-pointers-modern-cpp.md)   
- [make\_unique](../Topic/make_unique.md)
+## <a name="see-also"></a>See Also  
+ [Smart Pointers](../cpp/smart-pointers-modern-cpp.md)   
+ [make_unique](../standard-library/memory-functions.md#make_unique)
